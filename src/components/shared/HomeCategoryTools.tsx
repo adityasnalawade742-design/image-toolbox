@@ -1,5 +1,6 @@
 import React from 'react';
-import { CATEGORIES, TOOLS, ToolCategory } from '../../config/tools';
+import { CATEGORIES, TOOLS } from '../../config/tools';
+import type { ToolCategory } from '../../config/tools';
 import { getAllLocalizedTools } from '../../i18n/tools';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import {

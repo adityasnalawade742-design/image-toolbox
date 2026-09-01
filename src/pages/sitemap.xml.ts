@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { SITE_CONFIG } from '../config/site';
 import { TOOLS } from '../config/tools';
 import { SUPPORTED_LOCALES } from '../i18n/locales';
-import { SupportedLocale } from '../i18n/types';
+import type { SupportedLocale } from '../i18n/types';
 
 export const GET: APIRoute = async () => {
   const baseUrl = SITE_CONFIG.url.replace(/\/$/, '');

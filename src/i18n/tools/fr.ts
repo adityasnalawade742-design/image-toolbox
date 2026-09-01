@@ -1,4 +1,4 @@
-import { LocalizedToolItem } from '../types';
+import type { LocalizedToolItem } from '../types';
 
 export const frTools: Record<string, LocalizedToolItem> = {
   "crop-image": {

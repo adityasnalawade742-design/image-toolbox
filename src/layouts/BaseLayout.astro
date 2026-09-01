@@ -58,7 +58,7 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
 
     <!-- Structured Data JSON-LD -->
     {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
   </head>
   <body class="min-h-screen bg-canvas text-ink flex flex-col font-sans">

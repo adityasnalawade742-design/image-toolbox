@@ -1,4 +1,4 @@
-import { LocalizedHomeData } from '../types';
+import type { LocalizedHomeData } from '../types';
 
 export const enHome: LocalizedHomeData = {
   hero: {

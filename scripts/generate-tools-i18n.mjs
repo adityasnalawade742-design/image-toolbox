@@ -63,11 +63,11 @@ for (const loc of locales) {
     };
   }
 
-  const fileContent = `import { LocalizedToolItem } from '../types';\n\nexport const ${loc}Tools: Record<string, LocalizedToolItem> = ${JSON.stringify(dict, null, 2)};\n`;
+  const fileContent = `import type { LocalizedToolItem } from '../types';\n\nexport const ${loc}Tools: Record<string, LocalizedToolItem> = ${JSON.stringify(dict, null, 2)};\n`;
   writeFileSync(resolve(process.cwd(), `src/i18n/tools/${loc}.ts`), fileContent, 'utf8');
 }
 
-const indexContent = `import { LocalizedToolItem } from '../types';
+const indexContent = `import type { LocalizedToolItem } from '../types';
 import { enTools } from './en';
 import { esTools } from './es';
 import { frTools } from './fr';
@@ -115,4 +115,4 @@ export { enTools, esTools, frTools, deTools, ptTools, itTools, jaTools, koTools,
 `;
 
 writeFileSync(resolve(process.cwd(), 'src/i18n/tools/index.ts'), indexContent, 'utf8');
-console.log('✅ Generated 9 tool dictionaries successfully!');
+console.log('✅ Generated 9 tool dictionaries with type-only imports successfully!');

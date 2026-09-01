@@ -1,4 +1,4 @@
-import { LocalizedToolItem } from '../types';
+import type { LocalizedToolItem } from '../types';
 import { enTools } from './en';
 import { esTools } from './es';
 import { frTools } from './fr';

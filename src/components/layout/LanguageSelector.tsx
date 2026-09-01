@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 import { languages, defaultLang, showDefaultLang } from '../../i18n/ui';
-import { SupportedLocale } from '../../i18n/types';
+import type { SupportedLocale } from '../../i18n/types';
 
 interface Props {
   currentLocale: string;

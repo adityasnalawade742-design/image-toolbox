@@ -5,8 +5,8 @@ import { getToolBySlug } from '../config/tools';
 import { getLocalizedToolContent } from '../i18n/tools';
 import { getWebApplicationSchema, getBreadcrumbSchema, getFAQSchema } from '../lib/seo/schema';
 import { SITE_CONFIG } from '../config/site';
-import { useTranslations, useTranslatedPath } from '../i18n/utils';
-import { ui } from '../i18n/ui';
+import { useTranslatedPath } from '../i18n/utils';
+import type { ui } from '../i18n/ui';
 
 interface Props {
   slug: string;
@@ -21,7 +21,6 @@ if (!tool) {
 }
 
 const locContent = getLocalizedToolContent(slug, locale);
-const t = useTranslations(locale);
 const translatePath = useTranslatedPath(locale);
 
 const title = locContent.seoTitle || `${tool.name} — Free Online Tool — Image Toolbox`;

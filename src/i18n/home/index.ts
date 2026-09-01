@@ -1,4 +1,4 @@
-import { LocalizedHomeData, SupportedLocale } from '../types';
+import type { LocalizedHomeData, SupportedLocale } from '../types';
 import { enHome } from './en';
 import { esHome } from './es';
 import { frHome } from './fr';

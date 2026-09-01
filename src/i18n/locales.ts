@@ -1,4 +1,4 @@
-import { LocaleInfo, SupportedLocale } from './types';
+import type { LocaleInfo, SupportedLocale } from './types';
 
 export const SUPPORTED_LOCALES: Record<SupportedLocale, LocaleInfo> = {
   en: { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', hrefLang: 'en' },

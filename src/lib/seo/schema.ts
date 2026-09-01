@@ -1,5 +1,3 @@
-import { SITE_CONFIG } from '../../config/site';
-
 export function getWebApplicationSchema(toolName: string, description: string, url: string, locale: string = 'en') {
   return {
     '@context': 'https://schema.org',
