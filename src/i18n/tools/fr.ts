@@ -1404,5 +1404,44 @@ export const frTools: Record<string, LocalizedToolItem> = {
         "answer": "No. All processing happens in your browser memory."
       }
     ]
-  }
+  },
+  "ai-image-upscaler": {
+  "name": "Agrandisseur d'Image par IA",
+  "shortName": "Agrandir IA",
+  "tagline": "Améliorez la résolution de vos photos avec la super-résolution neuronale 2× et 4× dans votre navigateur.",
+  "seoTitle": "Agrandisseur d'Image IA Gratuit — Super-Résolution 2x et 4x Online",
+  "seoDescription": "Agrandissez vos images avec l’intelligence artificielle directement dans votre navigateur. Zéro envoi vers un serveur, 100% privé.",
+  "keywords": [
+    "agrandisseur image ia",
+    "super resolution ia",
+    "augmenter resolution photo",
+    "ia gratuite"
+  ],
+  "howToSteps": [
+    {
+      "title": "Déposez votre image",
+      "description": "Glissez-déposez une image JPG, PNG ou WebP."
+    },
+    {
+      "title": "Choisissez le facteur",
+      "description": "Sélectionnez le mode 2× ou 4×."
+    },
+    {
+      "title": "Téléchargez",
+      "description": "Téléchargez votre image haute résolution."
+    }
+  ],
+  "features": [
+    {
+      "title": "100% Local",
+      "description": "Traitement entièrement exécuté dans votre navigateur."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Mes images sont-elles envoyées sur un serveur ?",
+      "answer": "Non. Tout le calcul neuronal a lieu en local sur votre appareil."
+    }
+  ]
+},
 };

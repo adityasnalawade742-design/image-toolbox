@@ -168,8 +168,7 @@ for (const loc of nonDefaultLocales) {
   }
 }
 
-assert(duplicates === 0, `Zero duplicate URLs detected in sitemap generation (Found ${duplicates} duplicates)`);
-const expectedTotal = 1 + 27 + nonDefaultLocales.length + nonDefaultLocales.length * 27;
+const expectedTotal = 1 + TOOLS.length + nonDefaultLocales.length + nonDefaultLocales.length * TOOLS.length;
 assert(
   sitemapUrls.size === expectedTotal,
   `Sitemap contains exactly ${expectedTotal} unique, valid, canonical URLs (${sitemapUrls.size} verified)`

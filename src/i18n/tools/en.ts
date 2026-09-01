@@ -1404,5 +1404,57 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "answer": "No. All processing happens in your browser memory."
       }
     ]
-  }
+  },
+  "ai-image-upscaler": {
+  "name": "AI Image Upscaler",
+  "shortName": "AI Upscaler",
+  "tagline": "Enhance photo resolution with 2× and 4× neural super-resolution in your browser.",
+  "seoTitle": "AI Image Upscaler Online — Free 2x & 4x Neural Super-Resolution",
+  "seoDescription": "Upscale and enhance images with AI super-resolution directly in your browser. 2x and 4x scaling with zero server uploads and 100% privacy.",
+  "keywords": [
+    "ai image upscaler",
+    "ai super resolution",
+    "upscale image online",
+    "enhance photo resolution",
+    "sub-pixel cnn"
+  ],
+  "howToSteps": [
+    {
+      "title": "Upload Photo",
+      "description": "Drag and drop any JPG, PNG, or WebP photo into the workspace."
+    },
+    {
+      "title": "Choose Scale Factor",
+      "description": "Select 2× or 4× neural super-resolution mode."
+    },
+    {
+      "title": "Download Upscaled Image",
+      "description": "Inspect the before/after comparison and download the enhanced high-resolution file."
+    }
+  ],
+  "features": [
+    {
+      "title": "100% In-Browser Inference",
+      "description": "Neural network runs entirely on your device via WebGPU / WebGL."
+    },
+    {
+      "title": "Sub-Pixel Super-Resolution",
+      "description": "Reconstructs high-frequency edge gradients on the luminance channel."
+    },
+    {
+      "title": "Interactive Before/After Slider",
+      "description": "Compare original and AI-upscaled details side by side."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is my image uploaded to any server or AI API?",
+      "answer": "No. All neural inference runs 100% client-side inside your browser memory."
+    },
+    {
+      "question": "What is the maximum supported resolution?",
+      "answer": "Input images up to 4 Megapixels (e.g. 2000×2000 px) are supported to prevent browser memory limits."
+    }
+  ]
+},
 };

@@ -40,6 +40,7 @@ import { SvgToPngControls } from '../tools/SvgToPngControls';
 import { BulkCompressorWorkspace } from '../tools/BulkCompressorWorkspace';
 import { BulkResizerWorkspace } from '../tools/BulkResizerWorkspace';
 import { Base64ToImageWorkspace } from '../tools/Base64ToImageWorkspace';
+import { AiUpscalerWorkspace } from '../tools/AiUpscalerWorkspace';
 
 interface Props {
   slug: string;
@@ -48,10 +49,11 @@ interface Props {
 }
 
 export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
-  // Delegate dedicated batch/decoder tools directly
+  // Delegate dedicated batch/decoder/AI tools directly
   if (slug === 'bulk-image-compressor') return <BulkCompressorWorkspace />;
   if (slug === 'bulk-image-resizer') return <BulkResizerWorkspace />;
   if (slug === 'base64-to-image') return <Base64ToImageWorkspace />;
+  if (slug === 'ai-image-upscaler') return <AiUpscalerWorkspace />;
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [filename, setFilename] = useState<string>('image');

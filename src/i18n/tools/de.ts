@@ -1404,5 +1404,44 @@ export const deTools: Record<string, LocalizedToolItem> = {
         "answer": "No. All processing happens in your browser memory."
       }
     ]
-  }
+  },
+  "ai-image-upscaler": {
+  "name": "KI Bild-Upscaler",
+  "shortName": "KI Skalieren",
+  "tagline": "Erhöhe die Bildauflösung mit 2× und 4× neuronaler Super-Resolution direkt im Browser.",
+  "seoTitle": "KI Bild-Upscaler Online — Kostenlose 2x & 4x Bildvergrößerung",
+  "seoDescription": "Bilder mit künstlicher Intelligenz hochskalieren und schärfen. 100% lokale Verarbeitung im Browser ohne Uploads.",
+  "keywords": [
+    "ki bild upscaler",
+    "bildauflösung verbessern ki",
+    "super resolution online",
+    "foto vergrößern ohne qualitätsverlust"
+  ],
+  "howToSteps": [
+    {
+      "title": "Bild hochladen",
+      "description": "Ziehe ein JPG-, PNG- oder WebP-Bild in den Bereich."
+    },
+    {
+      "title": "Skalierung wählen",
+      "description": "Wähle 2× oder 4× Vergrößerung."
+    },
+    {
+      "title": "Herunterladen",
+      "description": "Vergleiche das Vorher/Nachher und lade das hochauflösende Bild herunter."
+    }
+  ],
+  "features": [
+    {
+      "title": "100% Privatsphäre",
+      "description": "Das neuronale Netz läuft vollständig auf deiner Hardware."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Werden Daten hochgeladen?",
+      "answer": "Nein, das Modell rechnet direkt im Arbeitsspeicher deines Browsers."
+    }
+  ]
+},
 };

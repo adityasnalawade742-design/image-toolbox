@@ -536,4 +536,55 @@ export const trTools: Record<string, LocalizedToolItem> = {
       { question: '4x ölçekleme boyutu nasıl etkiler?', answer: 'Örneğin 500x500 piksellik bir SVG vektörü tam 2000x2000 piksel yüksek kaliteli PNG olarak dışa aktarılır.' },
     ],
   },
+  "ai-image-upscaler": {
+  "name": "Yapay Zeka ile Resim Büyütme (AI Upscaler)",
+  "shortName": "AI Büyüt",
+  "tagline": "Tarayıcınızda 2× ve 4× nöral süper çözünürlük ile fotoğrafları netleştirip büyütün.",
+  "seoTitle": "AI Resim Büyütme ve Netleştirme — Ücretsiz 2x & 4x Süper Çözünürlük",
+  "seoDescription": "Fotoğraflarınızı yapay zeka süper çözünürlük ile sunucuya yüklemeden 2 kat ve 4 kat büyütün. %100 gizli ve ücretsiz.",
+  "keywords": [
+    "ai resim büyütme",
+    "fotoğraf netleştirme yapay zeka",
+    "resim çözünürlüğü artırma",
+    "super resolution online"
+  ],
+  "howToSteps": [
+    {
+      "title": "Fotoğrafı Yükleyin",
+      "description": "Büyütmek istediğiniz JPG, PNG veya WebP görselini seçin."
+    },
+    {
+      "title": "Büyütme Oranını Seçin",
+      "description": "2× veya 4× nöral süper çözünürlük modunu belirleyin."
+    },
+    {
+      "title": "Yüksek Kalitede İndirin",
+      "description": "Önce/Sonra karşılaştırmasını inceleyip yüksek çözünürlüklü görseli indirin."
+    }
+  ],
+  "features": [
+    {
+      "title": "%100 Tarayıcı İçi Çıkarım",
+      "description": "Nöral ağ doğrudan cihazınızın donanımı (WebGPU/WebGL) üzerinde çalışır."
+    },
+    {
+      "title": "Alt-Piksel Süper Çözünürlük",
+      "description": "Parlaklık kanalında yüksek frekanslı kenar gradyanlarını yeniden sentezler."
+    },
+    {
+      "title": "Canlı Önce/Sonra Kaydırıcısı",
+      "description": "Orijinal ve AI ile büyütülmüş görseli yan yana sürükleyerek karşılaştırın."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Resimlerim bir sunucuya yükleniyor mu?",
+      "answer": "Hayır. Tüm yapay zeka işlemleri %100 cihazınızın tarayıcı belleğinde gerçekleşir."
+    },
+    {
+      "question": "Maksimum desteklenen çözünürlük nedir?",
+      "answer": "Tarayıcı bellek sınırlarını korumak için 4 Megapiksele kadar (örn. 2000×2000 px) giriş görselleri desteklenir."
+    }
+  ]
+},
 };

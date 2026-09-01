@@ -1404,5 +1404,44 @@ export const jaTools: Record<string, LocalizedToolItem> = {
         "answer": "No. All processing happens in your browser memory."
       }
     ]
-  }
+  },
+  "ai-image-upscaler": {
+  "name": "AI画像高画質化・拡大",
+  "shortName": "AI拡大",
+  "tagline": "ブラウザ内で2倍・4倍のニューラル超解像により写真を劣化なく高解像度化。",
+  "seoTitle": "AI画像拡大・高画質化ツール — 無料 2倍・4倍 超解像 (サーバー送信なし)",
+  "seoDescription": "ブラウザ上で完結するAI画像拡大ツール。サーバーへの画像アップロードなしで2倍・4倍の超解像処理を行い、高画質で保存できます。",
+  "keywords": [
+    "ai画像拡大",
+    "画像高画質化",
+    "写真超解像",
+    "ai高画質化無料"
+  ],
+  "howToSteps": [
+    {
+      "title": "画像をアップロード",
+      "description": "JPG、PNG、WebP形式の画像をドラッグ＆ドロップします。"
+    },
+    {
+      "title": "倍率を選択",
+      "description": "2倍または4倍の超解像モードを選択します。"
+    },
+    {
+      "title": "高画質画像をダウンロード",
+      "description": "Before/Afterスライダーで確認して保存します。"
+    }
+  ],
+  "features": [
+    {
+      "title": "100% ブラウザ内処理",
+      "description": "WebGPU / WebGLを活用し、端末内だけで安全に推論を実行。"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "画像はサーバーに送信されますか？",
+      "answer": "いいえ。画像データは一切サーバーに送信されず、端末内で安全に処理されます。"
+    }
+  ]
+},
 };
