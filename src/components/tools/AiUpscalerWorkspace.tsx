@@ -4,20 +4,26 @@ import {
   Sparkles,
   Download,
   ShieldCheck,
-  RefreshCw,
   Zap,
   Info,
   XCircle,
+  Cloud,
+  Cpu,
 } from 'lucide-react';
-import { runAiSuperResolution, runStandardCanvasUpscale, type UpscaleResult } from '../../lib/ai/upscalerEngine.ts';
+import {
+  runCloudRealEsrganUpscale,
+  runAiSuperResolution,
+  runStandardCanvasUpscale,
+  type UpscaleResult,
+} from '../../lib/ai/upscalerEngine.ts';
 import { getAIModel } from '../../lib/ai/modelRegistry.ts';
 
 export function AiUpscalerWorkspace() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [engine, setEngine] = useState<'ai-neural' | 'standard-canvas'>('ai-neural');
-  const [scale, setScale] = useState<2 | 4>(2);
+  const [engine, setEngine] = useState<'cloud-realesrgan' | 'ai-neural' | 'standard-canvas'>('cloud-realesrgan');
+  const [scale, setScale] = useState<2 | 4>(4);
   const [progressMsg, setProgressMsg] = useState<string>('');
   const [progressPercent, setProgressPercent] = useState<number>(0);
   const [result, setResult] = useState<UpscaleResult | null>(null);
@@ -28,7 +34,6 @@ export function AiUpscalerWorkspace() {
   const abortControllerRef = useRef<AbortController | null>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Clean up object URLs
   useEffect(() => {
     return () => {
       if (abortControllerRef.current) {
@@ -67,7 +72,7 @@ export function AiUpscalerWorkspace() {
   };
 
   const handleProcess = async () => {
-    if (!imgElement) return;
+    if (!imgElement || !selectedFile) return;
 
     setIsProcessing(true);
     setErrorMsg(null);
@@ -78,7 +83,19 @@ export function AiUpscalerWorkspace() {
     abortControllerRef.current = abortController;
 
     try {
-      if (engine === 'ai-neural') {
+      if (engine === 'cloud-realesrgan') {
+        const res = await runCloudRealEsrganUpscale(
+          selectedFile,
+          scale,
+          abortController.signal,
+          (percent, msg) => {
+            setProgressPercent(percent);
+            setProgressMsg(msg);
+          }
+        );
+        setProgressPercent(100);
+        setResult(res);
+      } else if (engine === 'ai-neural') {
         const res = await runAiSuperResolution(
           imgElement,
           scale,
@@ -136,6 +153,8 @@ export function AiUpscalerWorkspace() {
   }, [result]);
 
   const activeModel = getAIModel(scale);
+  const imgWidth = imgElement?.naturalWidth || imgElement?.width || 1;
+  const imgHeight = imgElement?.naturalHeight || imgElement?.height || 1;
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6">
@@ -163,7 +182,7 @@ export function AiUpscalerWorkspace() {
           </p>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-300 border border-gray-700">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>100% Private — Image never leaves your device</span>
+            <span>Private & Fast — Choose Cloud Ultra Real-ESRGAN or 100% In-Browser AI</span>
           </div>
         </div>
       )}
@@ -179,46 +198,83 @@ export function AiUpscalerWorkspace() {
                 Upscale Configuration
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                Original: {imgElement.width} × {imgElement.height} px
+                Original: {imgWidth} × {imgHeight} px
               </p>
             </div>
 
             {/* Engine Selection */}
             <div className="space-y-2">
               <label className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                Processing Mode
+                AI & Upscaling Engine
               </label>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-2">
+                {/* 1. Cloud Ultra AI (Real-ESRGAN) */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEngine('cloud-realesrgan');
+                    setScale(4);
+                  }}
+                  className={`w-full p-3 rounded-xl border text-left transition-all ${
+                    engine === 'cloud-realesrgan'
+                      ? 'border-indigo-500 bg-indigo-950/40 text-white shadow-lg shadow-indigo-950/40'
+                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-bold text-sm text-indigo-300">
+                      <Cloud className="w-4 h-4 text-indigo-400" />
+                      <span>Cloud Ultra AI</span>
+                    </div>
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-indigo-900 text-indigo-200">
+                      Highest Quality
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">Real-ESRGAN 4K Neural Network (Oracle Cloud)</p>
+                </button>
+
+                {/* 2. Browser Local AI */}
                 <button
                   type="button"
                   onClick={() => setEngine('ai-neural')}
-                  className={`p-3 rounded-xl border text-left transition-all ${
+                  className={`w-full p-3 rounded-xl border text-left transition-all ${
                     engine === 'ai-neural'
                       ? 'border-primary-500 bg-primary-950/40 text-white'
                       : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-1.5 font-bold text-sm">
-                    <Sparkles className="w-4 h-4 text-primary-400" />
-                    <span>AI Neural</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-bold text-sm text-primary-300">
+                      <Cpu className="w-4 h-4 text-primary-400" />
+                      <span>Browser Local AI</span>
+                    </div>
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
+                      100% Private
+                    </span>
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">ONNX Runtime Web</p>
+                  <p className="text-xs text-gray-400 mt-1">ONNX Runtime Web (Zero Server Uploads)</p>
                 </button>
 
+                {/* 3. Standard Fast Bicubic */}
                 <button
                   type="button"
                   onClick={() => setEngine('standard-canvas')}
-                  className={`p-3 rounded-xl border text-left transition-all ${
+                  className={`w-full p-3 rounded-xl border text-left transition-all ${
                     engine === 'standard-canvas'
                       ? 'border-amber-500 bg-amber-950/40 text-white'
                       : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
                   }`}
                 >
-                  <div className="flex items-center gap-1.5 font-bold text-sm">
-                    <Zap className="w-4 h-4 text-amber-400" />
-                    <span>Standard</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-bold text-sm text-amber-300">
+                      <Zap className="w-4 h-4 text-amber-400" />
+                      <span>Standard Fast</span>
+                    </div>
+                    <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-amber-950 text-amber-300">
+                      Instant
+                    </span>
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">Fast 2D Bicubic</p>
+                  <p className="text-xs text-gray-400 mt-1">HTML5 2D Canvas Interpolation</p>
                 </button>
               </div>
             </div>
@@ -232,45 +288,51 @@ export function AiUpscalerWorkspace() {
                 <button
                   type="button"
                   onClick={() => setScale(2)}
-                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all ${
+                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all cursor-pointer ${
                     scale === 2
                       ? 'border-primary-500 bg-primary-600 text-white'
                       : 'border-gray-800 bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
-                  2× Scale ({imgElement.width * 2}×{imgElement.height * 2})
+                  2× Scale ({imgWidth * 2}×{imgHeight * 2})
                 </button>
                 <button
                   type="button"
                   onClick={() => setScale(4)}
-                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all ${
+                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all cursor-pointer ${
                     scale === 4
                       ? 'border-primary-500 bg-primary-600 text-white'
                       : 'border-gray-800 bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
-                  4× Scale ({imgElement.width * 4}×{imgElement.height * 4})
+                  4× Scale ({imgWidth * 4}×{imgHeight * 4})
                 </button>
               </div>
             </div>
 
-            {/* Model & Architecture Details */}
-            {engine === 'ai-neural' && (
-              <div className="p-3.5 rounded-xl bg-gray-800/60 border border-gray-700/60 text-xs space-y-2">
-                <div className="flex items-center justify-between text-gray-300">
-                  <span className="text-gray-400">Model:</span>
-                  <span className="font-semibold text-white">{activeModel.name}</span>
-                </div>
-                <div className="flex items-center justify-between text-gray-300">
-                  <span className="text-gray-400">Download Size:</span>
-                  <span className="font-mono text-emerald-400">{activeModel.sizeKb} KB (Cached locally)</span>
-                </div>
-                <div className="flex items-center justify-between text-gray-300">
-                  <span className="text-gray-400">Inference:</span>
-                  <span className="text-primary-300">In-Browser Tensor Ops</span>
-                </div>
+            {/* Engine Info Box */}
+            <div className="p-3.5 rounded-xl bg-gray-800/60 border border-gray-700/60 text-xs space-y-2">
+              <div className="flex items-center justify-between text-gray-300">
+                <span className="text-gray-400">Model:</span>
+                <span className="font-semibold text-white">
+                  {engine === 'cloud-realesrgan'
+                    ? 'Real-ESRGAN x4plus (Flagship)'
+                    : engine === 'ai-neural'
+                    ? activeModel.name
+                    : '2D Bicubic Resampling'}
+                </span>
               </div>
-            )}
+              <div className="flex items-center justify-between text-gray-300">
+                <span className="text-gray-400">Processing:</span>
+                <span className="font-mono text-emerald-400">
+                  {engine === 'cloud-realesrgan'
+                    ? 'Oracle Cloud (4 ARM64 Cores)'
+                    : engine === 'ai-neural'
+                    ? 'In-Browser Tensor Ops'
+                    : 'Instant Browser 2D Canvas'}
+                </span>
+              </div>
+            </div>
 
             {/* Action Buttons */}
             <div className="space-y-2 pt-2">
@@ -281,7 +343,9 @@ export function AiUpscalerWorkspace() {
                   className="w-full py-3.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer"
                 >
                   <Sparkles className="w-5 h-5" />
-                  <span>Start {engine === 'ai-neural' ? 'Neural' : 'Standard'} Upscale</span>
+                  <span>
+                    Start {engine === 'cloud-realesrgan' ? 'Ultra AI' : engine === 'ai-neural' ? 'Local AI' : 'Standard'} Upscale
+                  </span>
                 </button>
               ) : (
                 <button
@@ -290,7 +354,7 @@ export function AiUpscalerWorkspace() {
                   className="w-full py-3.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
                   <XCircle className="w-5 h-5" />
-                  <span>Cancel Inference</span>
+                  <span>Cancel Upscale</span>
                 </button>
               )}
 
@@ -303,7 +367,7 @@ export function AiUpscalerWorkspace() {
                   setResult(null);
                   setErrorMsg(null);
                 }}
-                className="w-full py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm font-medium transition-all"
+                className="w-full py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm font-medium transition-all cursor-pointer"
               >
                 Choose Different Image
               </button>
@@ -338,33 +402,39 @@ export function AiUpscalerWorkspace() {
           <div className="lg:col-span-2 space-y-4">
             <div className="relative min-h-[420px] bg-gray-950 border border-gray-800 rounded-2xl overflow-hidden flex items-center justify-center p-4">
               {result ? (
-                <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
-                  {/* Split Comparison Viewer */}
-                  <div className="relative w-full max-w-2xl aspect-video bg-gray-900 rounded-xl overflow-hidden border border-gray-800 select-none">
+                <div className="w-full flex flex-col items-center justify-center space-y-4">
+                  {/* Dynamic Aspect Ratio Split Comparison Viewer */}
+                  <div
+                    className="relative w-full max-w-2xl bg-gray-900 rounded-xl overflow-hidden border border-gray-800 select-none shadow-2xl"
+                    style={{
+                      aspectRatio: `${imgWidth} / ${imgHeight}`,
+                      maxHeight: '65vh',
+                    }}
+                  >
                     {/* Before (Original) */}
                     <img
                       src={imgElement.src}
                       alt="Original"
-                      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                      className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     />
 
-                    {/* After (Upscaled) with Clip Path */}
+                    {/* After (Upscaled) with Pixel-Matched Clip Path */}
                     <div
-                      className="absolute inset-0 overflow-hidden"
+                      className="absolute inset-0 overflow-hidden pointer-events-none"
                       style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
                     >
                       <canvas
                         ref={previewCanvasRef}
-                        className="w-full h-full object-contain pointer-events-none"
+                        className="w-full h-full object-cover pointer-events-none"
                       />
                     </div>
 
                     {/* Draggable Divider */}
                     <div
-                      className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-2xl flex items-center justify-center"
+                      className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-2xl flex items-center justify-center pointer-events-none"
                       style={{ left: `${sliderPos}%` }}
                     >
-                      <div className="w-6 h-6 rounded-full bg-white text-gray-900 shadow-md flex items-center justify-center text-xs font-bold">
+                      <div className="w-7 h-7 rounded-full bg-white text-gray-900 shadow-xl flex items-center justify-center text-xs font-bold border border-gray-300">
                         ↔
                       </div>
                     </div>
@@ -376,14 +446,14 @@ export function AiUpscalerWorkspace() {
                       max="100"
                       value={sliderPos}
                       onChange={(e) => setSliderPos(Number(e.target.value))}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize"
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-10"
                     />
 
                     {/* Labels */}
-                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] text-gray-300 font-semibold uppercase tracking-wider pointer-events-none">
-                      Original ({imgElement.width}×{imgElement.height})
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/75 backdrop-blur-md text-[10px] text-gray-300 font-semibold uppercase tracking-wider pointer-events-none border border-white/10">
+                      Original ({imgWidth}×{imgHeight})
                     </div>
-                    <div className="absolute top-3 right-3 px-2 py-1 rounded bg-primary-950/80 border border-primary-500/40 backdrop-blur-md text-[10px] text-primary-300 font-semibold uppercase tracking-wider pointer-events-none">
+                    <div className="absolute top-3 right-3 px-2 py-1 rounded bg-primary-950/85 border border-primary-500/50 backdrop-blur-md text-[10px] text-primary-300 font-semibold uppercase tracking-wider pointer-events-none shadow-md">
                       Upscaled ({result.width}×{result.height})
                     </div>
                   </div>
@@ -391,15 +461,13 @@ export function AiUpscalerWorkspace() {
                   {/* Result Stats Banner */}
                   <div className="w-full max-w-2xl flex flex-wrap items-center justify-between gap-3 p-3 bg-gray-900/80 border border-gray-800 rounded-xl text-xs">
                     <div className="flex items-center gap-2">
-                      <span className="text-gray-400">Duration:</span>
-                      <span className="font-mono text-white">{result.inferenceDurationMs} ms</span>
+                      <span className="text-gray-400">Model:</span>
+                      <span className="font-semibold text-white">{result.modelName || 'Super Resolution'}</span>
                     </div>
-                    {result.providerLabel && (
-                      <div className="flex items-center gap-2">
-                        <span className="text-gray-400">Provider:</span>
-                        <span className="font-medium text-emerald-400">{result.providerLabel}</span>
-                      </div>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-400">Duration:</span>
+                      <span className="font-mono text-emerald-400">{result.inferenceDurationMs} ms</span>
+                    </div>
                     <div className="flex items-center gap-2">
                       <span className="text-gray-400">Resolution:</span>
                       <span className="font-mono text-primary-300">{result.width} × {result.height} px</span>
@@ -440,7 +508,7 @@ export function AiUpscalerWorkspace() {
                     className="max-h-72 rounded-xl object-contain mx-auto border border-gray-800 shadow-xl"
                   />
                   <p className="text-xs text-gray-400">
-                    Ready to upscale. Click "Start {engine === 'ai-neural' ? 'Neural' : 'Standard'} Upscale" on the left.
+                    Ready to upscale. Click "Start {engine === 'cloud-realesrgan' ? 'Ultra AI' : engine === 'ai-neural' ? 'Local AI' : 'Standard'} Upscale" on the left.
                   </p>
                 </div>
               )}
@@ -451,5 +519,3 @@ export function AiUpscalerWorkspace() {
     </div>
   );
 }
-
-export default AiUpscalerWorkspace;

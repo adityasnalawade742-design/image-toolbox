@@ -1,0 +1,14 @@
+[Unit]
+Description=Real-ESRGAN AI Super Resolution API
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ai-upscaler-api
+ExecStart=/home/ubuntu/ai-upscaler-api/venv/bin/python /home/ubuntu/ai-upscaler-api/main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

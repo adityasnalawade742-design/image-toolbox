@@ -1,5 +1,5 @@
 /**
- * Real AI Super-Resolution Orchestrator & Standard Fast Upscaler
+ * Real AI Super-Resolution Orchestrator (Cloud Real-ESRGAN, Browser ONNX, Standard Fast)
  */
 import { extractYCbCrFromImage } from './imagePreprocessor.ts';
 import { loadSuperResolutionSession } from './modelLoader.ts';
@@ -7,19 +7,75 @@ import { runTiledNeuralInference, type InferenceProgressCallback } from './tiled
 import { reconstructRgbCanvas } from './postprocessor.ts';
 import { getAIModel } from './modelRegistry.ts';
 
+export const CLOUD_AI_ENDPOINT = 'http://130.210.63.16/api/upscale';
+
 export interface UpscaleResult {
   canvas: HTMLCanvasElement;
   width: number;
   height: number;
   scale: 2 | 4;
-  engine: 'ai-neural' | 'standard-canvas';
+  engine: 'cloud-realesrgan' | 'ai-neural' | 'standard-canvas';
   providerLabel?: string;
   modelName?: string;
   inferenceDurationMs: number;
 }
 
 /**
- * Execute Genuine In-Browser AI Super-Resolution using ONNX Runtime Web
+ * Execute Cloud Ultra AI Super-Resolution using Oracle VPS (Real-ESRGAN Flagship)
+ */
+export async function runCloudRealEsrganUpscale(
+  file: File,
+  scale: 2 | 4 = 4,
+  abortSignal?: AbortSignal,
+  onProgress?: (percent: number, msg: string) => void
+): Promise<UpscaleResult> {
+  const startTime = performance.now();
+  onProgress?.(10, 'Sending image to Oracle Cloud Real-ESRGAN backend...');
+
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('scale', scale.toString());
+
+  onProgress?.(30, 'Executing Real-ESRGAN 4K deep neural network on 4 ARM64 cores...');
+
+  const response = await fetch(CLOUD_AI_ENDPOINT, {
+    method: 'POST',
+    body: formData,
+    signal: abortSignal,
+  });
+
+  if (!response.ok) {
+    const errText = await response.text().catch(() => 'Server error');
+    throw new Error(`Cloud AI server error: ${errText || response.statusText}`);
+  }
+
+  onProgress?.(80, 'Receiving high-definition super-resolved image...');
+  const blob = await response.blob();
+  const imgBitmap = await createImageBitmap(blob);
+
+  const canvas = document.createElement('canvas');
+  canvas.width = imgBitmap.width;
+  canvas.height = imgBitmap.height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Failed to create Canvas 2D context');
+  ctx.drawImage(imgBitmap, 0, 0);
+
+  const duration = Math.round(performance.now() - startTime);
+
+  return {
+    canvas,
+    width: imgBitmap.width,
+    height: imgBitmap.height,
+    scale,
+    engine: 'cloud-realesrgan',
+    providerLabel: 'Oracle Cloud Ampere A1 (PyTorch Real-ESRGAN)',
+    modelName: 'RealESRGAN_x4plus (Flagship 4K)',
+    inferenceDurationMs: duration,
+  };
+}
+
+/**
+ * Execute In-Browser AI Super-Resolution using ONNX Runtime Web (ESPCN)
  */
 export async function runAiSuperResolution(
   img: HTMLImageElement,
@@ -114,6 +170,8 @@ export async function runStandardCanvasUpscale(
     height: outH,
     scale,
     engine: 'standard-canvas',
+    providerLabel: 'Browser 2D Canvas Engine',
+    modelName: 'Bicubic Interpolation',
     inferenceDurationMs: duration,
   };
 }
