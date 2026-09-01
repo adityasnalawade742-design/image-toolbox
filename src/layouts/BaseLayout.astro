@@ -2,7 +2,9 @@
 import '../styles/global.css';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { LanguageBanner } from '../components/layout/LanguageBanner';
 import { SITE_CONFIG } from '../config/site';
+import { getHreflangLinks, getLocalizedUrl } from '../i18n/locales';
 
 interface Props {
   title?: string;
@@ -10,33 +12,38 @@ interface Props {
   canonicalUrl?: string;
   jsonLdSchemas?: Record<string, unknown>[];
   ogImage?: string;
+  locale?: string;
+  toolSlug?: string;
 }
 
 const {
+  locale = 'en',
+  toolSlug = '',
   title = `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
   description = SITE_CONFIG.description,
-  canonicalUrl = Astro.url.href,
+  canonicalUrl,
   jsonLdSchemas = [],
   ogImage = `${SITE_CONFIG.url}/og-image.png`,
 } = Astro.props;
 
-const locales = SITE_CONFIG.locales || ['en', 'es', 'pt', 'de', 'fr', 'ja'];
+const baseSiteUrl = (SITE_CONFIG.url || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/+$/, '');
+const computedCanonical = canonicalUrl || `${baseSiteUrl}${getLocalizedUrl(toolSlug, locale)}`;
+const hreflangList = getHreflangLinks(toolSlug, baseSiteUrl);
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang={locale} class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    <link rel="canonical" href={computedCanonical} />
 
-    {/* Hreflang tags */}
-    {locales.map((loc) => (
-      <link rel="alternate" hreflang={loc} href={canonicalUrl} />
+    {/* Exact Absolute Multi-Country Hreflang Tags + x-default */}
+    {hreflangList.map((item) => (
+      <link rel="alternate" hreflang={item.lang} href={item.href} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     {/* Favicon & Theme */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -47,9 +54,9 @@ const locales = SITE_CONFIG.locales || ['en', 'es', 'pt', 'de', 'fr', 'ja'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    {/* Open Graph / Facebook */}
+    {/* Open Graph / Social */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={computedCanonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -63,7 +70,7 @@ const locales = SITE_CONFIG.locales || ['en', 'es', 'pt', 'de', 'fr', 'ja'];
 
     {/* JSON-LD Schemas */}
     {jsonLdSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
 
     {/* Inline Theme Init Script */}
@@ -77,10 +84,13 @@ const locales = SITE_CONFIG.locales || ['en', 'es', 'pt', 'de', 'fr', 'ja'];
     </script>
   </head>
   <body class="min-h-screen flex flex-col bg-white dark:bg-[#090d16] bg-grid-pattern text-slate-900 dark:text-slate-100 antialiased font-sans">
-    <Header />
+    {/* Non-intrusive Language Recommendation Banner */}
+    <LanguageBanner client:idle currentLocale={locale} toolSlug={toolSlug} />
+    
+    <Header locale={locale} toolSlug={toolSlug} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>

@@ -1,0 +1,40 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { ToolWorkspace } from '../../components/shared/ToolWorkspace';
+import { TOOLS_REGISTRY } from '../../config/tools';
+import { NON_DEFAULT_LOCALES } from '../../i18n/locales';
+import type { ToolItem } from '../../types/tool';
+
+export function getStaticPaths() {
+  const activeTools = TOOLS_REGISTRY.filter((t) => t.status === 'active');
+  const paths = [];
+
+  for (const localeConfig of NON_DEFAULT_LOCALES) {
+    for (const tool of activeTools) {
+      paths.push({
+        params: {
+          locale: localeConfig.code,
+          tool: tool.slug,
+        },
+        props: {
+          tool,
+          locale: localeConfig.code,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+interface Props {
+  tool: ToolItem;
+  locale: string;
+}
+
+const { tool, locale } = Astro.props;
+---
+
+<ToolLayout tool={tool} locale={locale}>
+  <ToolWorkspace client:load toolSlug={tool.slug} />
+</ToolLayout>

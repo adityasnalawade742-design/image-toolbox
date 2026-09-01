@@ -1,10 +1,19 @@
 ---
-import { TOOLS_REGISTRY, CATEGORIES_CONFIG } from '../../config/tools';
+import { TOOLS_REGISTRY } from '../../config/tools';
 import { SITE_CONFIG } from '../../config/site';
+import { getUIStrings } from '../../i18n/ui';
+import { getLocalizedToolContent } from '../../i18n/tools';
+import { getLocalizedUrl } from '../../i18n/locales';
 
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'en' } = Astro.props;
+const ui = getUIStrings(locale);
 const currentYear = new Date().getFullYear();
-const activeTools = TOOLS_REGISTRY.filter((t) => t.status === 'active');
 
+const activeTools = TOOLS_REGISTRY.filter((t) => t.status === 'active');
 const editTools = activeTools.filter((t) => t.category === 'edit');
 const optimizeTools = activeTools.filter((t) => t.category === 'optimize');
 const convertTools = activeTools.filter((t) => t.category === 'convert');
@@ -24,7 +33,7 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           </svg>
         </div>
         <div>
-          <div class="font-semibold text-slate-900 dark:text-slate-100 text-sm">100% Private Processing</div>
+          <div class="font-semibold text-slate-900 dark:text-slate-100 text-sm">{ui.privacyBadge}</div>
           <div class="text-slate-500 text-xs">Images never leave your browser</div>
         </div>
       </div>
@@ -63,10 +72,10 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           <div class="w-6 h-6 rounded-lg bg-sky-500 flex items-center justify-center text-white text-xs font-black">
             IT
           </div>
-          <span>Image Toolbox</span>
+          <span>{ui.brandName}</span>
         </div>
         <p class="text-xs text-slate-500 leading-relaxed">
-          {SITE_CONFIG.description}
+          {ui.supportingMessage}
         </p>
       </div>
 
@@ -76,13 +85,16 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           Edit & Transform
         </div>
         <ul class="space-y-2">
-          {editTools.map((tool) => (
-            <li>
-              <a href={`/${tool.slug}`} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
-                {tool.name}
-              </a>
-            </li>
-          ))}
+          {editTools.map((tool) => {
+            const locTool = getLocalizedToolContent(tool.slug, locale);
+            return (
+              <li>
+                <a href={getLocalizedUrl(tool.slug, locale)} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                  {locTool.shortName || locTool.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
@@ -92,13 +104,16 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           Optimize & Compress
         </div>
         <ul class="space-y-2">
-          {optimizeTools.map((tool) => (
-            <li>
-              <a href={`/${tool.slug}`} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
-                {tool.name}
-              </a>
-            </li>
-          ))}
+          {optimizeTools.map((tool) => {
+            const locTool = getLocalizedToolContent(tool.slug, locale);
+            return (
+              <li>
+                <a href={getLocalizedUrl(tool.slug, locale)} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                  {locTool.shortName || locTool.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
@@ -108,13 +123,16 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           Convert Formats
         </div>
         <ul class="space-y-2">
-          {convertTools.map((tool) => (
-            <li>
-              <a href={`/${tool.slug}`} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
-                {tool.name}
-              </a>
-            </li>
-          ))}
+          {convertTools.map((tool) => {
+            const locTool = getLocalizedToolContent(tool.slug, locale);
+            return (
+              <li>
+                <a href={getLocalizedUrl(tool.slug, locale)} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                  {locTool.shortName || locTool.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
@@ -124,13 +142,16 @@ const utilDevTools = activeTools.filter((t) => t.category === 'utilities' || t.c
           Utilities & Dev
         </div>
         <ul class="space-y-2">
-          {utilDevTools.map((tool) => (
-            <li>
-              <a href={`/${tool.slug}`} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
-                {tool.name}
-              </a>
-            </li>
-          ))}
+          {utilDevTools.map((tool) => {
+            const locTool = getLocalizedToolContent(tool.slug, locale);
+            return (
+              <li>
+                <a href={getLocalizedUrl(tool.slug, locale)} class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                  {locTool.shortName || locTool.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

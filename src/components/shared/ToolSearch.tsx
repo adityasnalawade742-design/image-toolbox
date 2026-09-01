@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   Search, 
@@ -21,10 +23,12 @@ import {
   Globe, 
   Binary, 
   Code, 
-  FileCode,
-  Sparkles
+  FileCode
 } from 'lucide-react';
 import { getActiveTools } from '@/config/tools';
+import { getLocalizedToolContent } from '@/i18n/tools';
+import { getUIStrings } from '@/i18n/ui';
+import { getLocalizedUrl } from '@/i18n/locales';
 
 const ICON_MAP: Record<string, React.ElementType> = {
   Crop,
@@ -47,26 +51,44 @@ const ICON_MAP: Record<string, React.ElementType> = {
   FileCode
 };
 
-export const ToolSearch: React.FC = () => {
+interface ToolSearchProps {
+  locale?: string;
+}
+
+export const ToolSearch: React.FC<ToolSearchProps> = ({ locale = 'en' }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const ui = getUIStrings(locale);
   const activeTools = getActiveTools();
 
-  // Filter tools by query across name, tagline, description, keywords, category, and slug
+  // Map tools with their localized data
+  const localizedTools = activeTools.map(tool => {
+    const loc = getLocalizedToolContent(tool.slug, locale);
+    return {
+      ...tool,
+      displayName: loc.name || tool.name,
+      displayTagline: loc.tagline || tool.tagline,
+      searchKeywords: [...tool.keywords, ...(loc.keywords || [])],
+      localizedPath: getLocalizedUrl(tool.slug, locale)
+    };
+  });
+
+  // Filter tools by query across localized name, tagline, keywords, and slug
   const results = query.trim() === ''
-    ? activeTools
-    : activeTools.filter(tool => {
+    ? localizedTools
+    : localizedTools.filter(tool => {
         const q = query.toLowerCase().trim();
         return (
+          tool.displayName.toLowerCase().includes(q) ||
+          tool.displayTagline.toLowerCase().includes(q) ||
           tool.name.toLowerCase().includes(q) ||
           tool.tagline.toLowerCase().includes(q) ||
-          tool.seoDescription.toLowerCase().includes(q) ||
           tool.category.toLowerCase().includes(q) ||
           tool.slug.toLowerCase().includes(q) ||
-          tool.keywords.some(k => k.toLowerCase().includes(q))
+          tool.searchKeywords.some(k => k.toLowerCase().includes(q))
         );
       });
 
@@ -102,7 +124,7 @@ export const ToolSearch: React.FC = () => {
       setSelectedIndex(prev => (prev - 1 + results.length) % (results.length || 1));
     } else if (e.key === 'Enter' && results[selectedIndex]) {
       e.preventDefault();
-      window.location.href = `/${results[selectedIndex].slug}`;
+      window.location.href = results[selectedIndex].localizedPath;
       setIsOpen(false);
     }
   };
@@ -113,10 +135,12 @@ export const ToolSearch: React.FC = () => {
       <button
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:border-sky-500/50 transition-all text-xs focus:outline-none focus:ring-2 focus:ring-sky-500"
-        aria-label="Search tools"
+        aria-label={ui.searchToolsPlaceholder}
       >
         <Search className="w-3.5 h-3.5" />
-        <span className="hidden sm:inline">Search 27 tools...</span>
+        <span className="hidden sm:inline">
+          {locale === 'en' ? 'Search 27 tools...' : ui.searchToolsPlaceholder.replace(' (Ctrl + K)...', '')}
+        </span>
         <span className="inline sm:hidden">Search...</span>
         <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-slate-200/60 dark:bg-slate-800 text-[10px] font-mono text-slate-400">
           <Command className="w-2.5 h-2.5" />K
@@ -145,7 +169,7 @@ export const ToolSearch: React.FC = () => {
                   setSelectedIndex(0);
                 }}
                 onKeyDown={handleKeyDown}
-                placeholder="Search tools (e.g. 'crop', 'compress', 'jpg to webp', 'palette')..."
+                placeholder={ui.searchToolsPlaceholder}
                 className="w-full py-4 px-3 bg-transparent text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none"
               />
               {query && (
@@ -174,7 +198,7 @@ export const ToolSearch: React.FC = () => {
                   return (
                     <a
                       key={tool.id}
-                      href={`/${tool.slug}`}
+                      href={tool.localizedPath}
                       onClick={() => setIsOpen(false)}
                       onMouseEnter={() => setSelectedIndex(idx)}
                       className={`flex items-center justify-between p-3 rounded-xl transition-all ${
@@ -193,10 +217,10 @@ export const ToolSearch: React.FC = () => {
                         </div>
                         <div className="min-w-0">
                           <div className="font-semibold text-xs sm:text-sm truncate">
-                            {tool.name}
+                            {tool.displayName}
                           </div>
                           <div className="text-[11px] text-slate-500 truncate">
-                            {tool.tagline}
+                            {tool.displayTagline}
                           </div>
                         </div>
                       </div>
@@ -209,7 +233,7 @@ export const ToolSearch: React.FC = () => {
                 })
               ) : (
                 <div className="py-12 text-center text-slate-400 text-xs">
-                  No tools matching &quot;{query}&quot; found.
+                  {ui.noToolsFound}
                 </div>
               )}
             </div>

@@ -1,17 +1,25 @@
 import { ToolItem } from '@/types/tool';
 import { SITE_CONFIG } from '@/config/site';
+import { getLocalizedToolContent } from '@/i18n/tools';
+import { getUIStrings } from '@/i18n/ui';
+import { getLocalizedUrl } from '@/i18n/locales';
 
-export function generateToolStructuredData(tool: ToolItem) {
+export function generateToolStructuredData(tool: ToolItem, locale: string = 'en') {
   const schemaList: Record<string, unknown>[] = [];
-  const BASE_URL = SITE_CONFIG.url;
+  const BASE_URL = (SITE_CONFIG.url || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/+$/, '');
+
+  const loc = getLocalizedToolContent(tool.slug, locale);
+  const ui = getUIStrings(locale);
+  const toolUrl = `${BASE_URL}${getLocalizedUrl(tool.slug, locale)}`;
+  const homeUrl = `${BASE_URL}${getLocalizedUrl('', locale)}`;
 
   // 1. WebApplication Schema
   schemaList.push({
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: tool.name,
-    url: `${BASE_URL}/${tool.slug}`,
-    description: tool.seoDescription,
+    name: loc.name || tool.name,
+    url: toolUrl,
+    description: loc.seoDescription || tool.seoDescription,
     applicationCategory: 'MultimediaApplication',
     operatingSystem: 'All modern web browsers',
     browserRequirements: 'Requires JavaScript and HTML5 Canvas support',
@@ -30,30 +38,31 @@ export function generateToolStructuredData(tool: ToolItem) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
-        item: BASE_URL
+        name: ui.home,
+        item: homeUrl
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Tools',
-        item: `${BASE_URL}#tools`
+        name: ui.tools,
+        item: `${homeUrl}#tools`
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: tool.name,
-        item: `${BASE_URL}/${tool.slug}`
+        name: loc.name || tool.name,
+        item: toolUrl
       }
     ]
   });
 
-  // 3. FAQPage Schema (if FAQs exist)
-  if (tool.faqs && tool.faqs.length > 0) {
+  // 3. FAQPage Schema
+  const faqs = loc.faqs && loc.faqs.length > 0 ? loc.faqs : tool.faqs;
+  if (faqs && faqs.length > 0) {
     schemaList.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: tool.faqs.map(faq => ({
+      mainEntity: faqs.map(faq => ({
         '@type': 'Question',
         name: faq.question,
         acceptedAnswer: {
@@ -67,17 +76,20 @@ export function generateToolStructuredData(tool: ToolItem) {
   return schemaList;
 }
 
-export function generateWebsiteStructuredData() {
-  const BASE_URL = SITE_CONFIG.url;
+export function generateWebsiteStructuredData(locale: string = 'en') {
+  const BASE_URL = (SITE_CONFIG.url || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/+$/, '');
+  const ui = getUIStrings(locale);
+  const homeUrl = `${BASE_URL}${getLocalizedUrl('', locale)}`;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: SITE_CONFIG.name,
-    url: BASE_URL,
-    description: SITE_CONFIG.description,
+    name: ui.brandName,
+    url: homeUrl,
+    description: ui.supportingMessage,
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${BASE_URL}/?q={search_term_string}`,
+      target: `${homeUrl}?q={search_term_string}`,
       'query-input': 'required name=search_term_string'
     }
   };

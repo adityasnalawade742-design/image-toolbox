@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { 
   Crop, 
@@ -21,18 +23,46 @@ import {
   Sparkles
 } from 'lucide-react';
 import { TOOLS_REGISTRY, CATEGORIES_CONFIG } from '@/config/tools';
+import { getLocalizedToolContent } from '@/i18n/tools';
+import { getUIStrings } from '@/i18n/ui';
+import { getHomeContent } from '@/i18n/home';
+import { getLocalizedUrl } from '@/i18n/locales';
 
-export const HomeCategoryTools: React.FC = () => {
+interface HomeCategoryToolsProps {
+  locale?: string;
+}
+
+export const HomeCategoryTools: React.FC<HomeCategoryToolsProps> = ({ locale = 'en' }) => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  const ui = getUIStrings(locale);
+  const homeContent = getHomeContent(locale);
+
+  // Map category labels from home localization
+  const localizedCategories = [
+    { id: 'all', label: ui.allTools },
+    ...CATEGORIES_CONFIG.map(cat => {
+      const match = homeContent.categories?.find(c => c.id === cat.id);
+      return {
+        id: cat.id,
+        label: match?.label || cat.label
+      };
+    })
+  ];
+
   const filteredTools = TOOLS_REGISTRY.filter(tool => {
     if (tool.status !== 'active') return false;
+    const loc = getLocalizedToolContent(tool.slug, locale);
     const matchesCat = activeCategory === 'all' || tool.category === activeCategory;
-    const matchesSearch = !searchQuery.trim() || 
-      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      tool.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      tool.keywords.some(k => k.toLowerCase().includes(searchQuery.toLowerCase()));
+    const q = searchQuery.toLowerCase().trim();
+    const matchesSearch = !q || 
+      loc.name.toLowerCase().includes(q) || 
+      loc.tagline.toLowerCase().includes(q) ||
+      tool.name.toLowerCase().includes(q) || 
+      tool.tagline.toLowerCase().includes(q) ||
+      tool.keywords.some(k => k.toLowerCase().includes(q)) ||
+      loc.keywords.some(k => k.toLowerCase().includes(q));
     return matchesCat && matchesSearch;
   });
 
@@ -68,7 +98,7 @@ export const HomeCategoryTools: React.FC = () => {
         
         {/* Category Pill Filters */}
         <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
-          {CATEGORIES_CONFIG.map(cat => {
+          {localizedCategories.map(cat => {
             const isActive = activeCategory === cat.id;
             return (
               <button
@@ -92,7 +122,7 @@ export const HomeCategoryTools: React.FC = () => {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Filter tools..."
+            placeholder={ui.filterTools}
             className="w-full pl-9 pr-3 py-1.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:border-sky-500"
           />
           <svg className="w-4 h-4 absolute left-3 top-2 text-slate-400 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -105,44 +135,48 @@ export const HomeCategoryTools: React.FC = () => {
 
       {/* Tool Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {filteredTools.map((tool) => (
-          <a
-            key={tool.slug}
-            href={`/${tool.slug}`}
-            className="group p-5 rounded-2xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/50 hover:border-sky-500/50 hover:bg-sky-500/[0.02] dark:hover:bg-sky-500/[0.04] transition-all flex flex-col justify-between space-y-4 hover:shadow-lg hover:shadow-sky-500/5"
-          >
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="p-2.5 rounded-xl bg-sky-500/10 dark:bg-sky-500/10 border border-sky-500/20 group-hover:scale-110 transition-transform">
-                  {renderIcon(tool.iconName)}
-                </div>
-                <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
-                  {tool.category}
-                </span>
-              </div>
-              
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-500 transition-colors">
-                  {tool.name}
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                  {tool.tagline}
-                </p>
-              </div>
-            </div>
+        {filteredTools.map((tool) => {
+          const loc = getLocalizedToolContent(tool.slug, locale);
+          const toolUrl = getLocalizedUrl(tool.slug, locale);
 
-            <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800/60 text-xs font-semibold text-sky-600 dark:text-sky-400">
-              <span>Open Tool</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </a>
-        ))}
+          return (
+            <a
+              key={tool.slug}
+              href={toolUrl}
+              className="group p-5 rounded-2xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/50 hover:border-sky-500/50 hover:bg-sky-500/[0.02] dark:hover:bg-sky-500/[0.04] transition-all flex flex-col justify-between space-y-4 hover:shadow-lg hover:shadow-sky-500/5"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="p-2.5 rounded-xl bg-sky-500/10 dark:bg-sky-500/10 border border-sky-500/20 group-hover:scale-110 transition-transform">
+                    {renderIcon(tool.iconName)}
+                  </div>
+                  <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                    {tool.category}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100 group-hover:text-sky-500 transition-colors">
+                    {loc.name || tool.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    {loc.tagline || tool.tagline}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs font-semibold text-sky-600 dark:text-sky-400">
+                <span>{loc.shortName || tool.shortName}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       {filteredTools.length === 0 && (
-        <div className="text-center py-16 space-y-2">
-          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">No tools found</p>
-          <p className="text-xs text-slate-500">Try a different search query or category filter</p>
+        <div className="py-16 text-center text-slate-400 text-xs">
+          {ui.noToolsFound}
         </div>
       )}
 

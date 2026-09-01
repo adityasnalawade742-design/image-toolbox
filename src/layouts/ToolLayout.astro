@@ -4,21 +4,35 @@ import { ToolItem } from '../types/tool';
 import { getRelatedTools } from '../config/tools';
 import { generateToolStructuredData } from '../lib/seo/schema';
 import { SITE_CONFIG } from '../config/site';
+import { getLocalizedToolContent } from '../i18n/tools';
+import { getUIStrings } from '../i18n/ui';
+import { getLocalizedUrl } from '../i18n/locales';
 
 interface Props {
   tool: ToolItem;
+  locale?: string;
 }
 
-const { tool } = Astro.props;
+const { tool, locale = 'en' } = Astro.props;
+
+const loc = getLocalizedToolContent(tool.slug, locale);
+const ui = getUIStrings(locale);
 const relatedTools = getRelatedTools(tool.slug);
-const schemas = generateToolStructuredData(tool);
-const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
+const schemas = generateToolStructuredData(tool, locale);
+
+const homeUrl = getLocalizedUrl('', locale);
+const allToolsUrl = `${homeUrl}#tools`;
+
+const steps = loc.howToSteps && loc.howToSteps.length > 0 ? loc.howToSteps : tool.howToSteps;
+const featuresList = loc.features && loc.features.length > 0 ? loc.features : tool.features;
+const faqsList = loc.faqs && loc.faqs.length > 0 ? loc.faqs : tool.faqs;
 ---
 
 <BaseLayout
-  title={`${tool.name} — ${tool.seoTitle || SITE_CONFIG.name}`}
-  description={tool.seoDescription || tool.tagline}
-  canonicalUrl={canonicalUrl}
+  title={`${loc.name || tool.name} — ${loc.seoTitle || SITE_CONFIG.name}`}
+  description={loc.seoDescription || loc.tagline || tool.seoDescription}
+  locale={locale}
+  toolSlug={tool.slug}
   jsonLdSchemas={schemas}
 >
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-12">
@@ -26,23 +40,23 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
     {/* Top Header & Breadcrumbs (Pure Static HTML) */}
     <div class="space-y-3 text-center sm:text-left">
       <nav aria-label="Breadcrumb" class="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-slate-500">
-        <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+        <a href={homeUrl} class="hover:text-sky-500 transition-colors">{ui.home}</a>
         <span>/</span>
-        <a href="/#tools" class="hover:text-sky-500 transition-colors">Tools</a>
+        <a href={allToolsUrl} class="hover:text-sky-500 transition-colors">{ui.tools}</a>
         <span>/</span>
-        <span class="text-slate-900 dark:text-slate-200 font-semibold">{tool.name}</span>
+        <span class="text-slate-900 dark:text-slate-200 font-semibold">{loc.name || tool.name}</span>
       </nav>
 
       <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
-        {tool.name}
+        {loc.name || tool.name}
       </h1>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-        {tool.tagline}
+        {loc.tagline || tool.tagline}
       </p>
     </div>
 
     {/* Interactive React Island Slot */}
-    <section aria-label={`${tool.name} workspace`} class="w-full">
+    <section aria-label={`${loc.name || tool.name} workspace`} class="w-full">
       <slot />
     </section>
 
@@ -50,7 +64,7 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
     <div class="pt-8 border-t border-slate-200 dark:border-slate-800 space-y-12 max-w-4xl mx-auto">
       
       {/* How to Use Steps */}
-      {tool.howToSteps && tool.howToSteps.length > 0 && (
+      {steps && steps.length > 0 && (
         <section class="space-y-4">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,12 +76,12 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
               <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path>
             </svg>
             <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-              How to {tool.name}
+              {ui.howToUse} — {loc.name || tool.name}
             </h2>
           </div>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {tool.howToSteps.map((step, idx) => (
+            {steps.map((step, idx) => (
               <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-2">
                 <div class="flex items-center gap-2">
                   <span class="w-6 h-6 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-xs font-bold flex items-center justify-center">
@@ -87,18 +101,18 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
       )}
 
       {/* Key Features & Specifications */}
-      {tool.features && tool.features.length > 0 && (
+      {featuresList && featuresList.length > 0 && (
         <section class="space-y-4">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
             <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-              Key Features & Privacy Benefits
+              {ui.featuresTitle}
             </h2>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {tool.features.map((feat) => (
+            {featuresList.map((feat) => (
               <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-xs text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-800/60">
                 <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -112,7 +126,7 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
       )}
 
       {/* Semantic Native HTML5 FAQ Accordion (Zero JS) */}
-      {tool.faqs && tool.faqs.length > 0 && (
+      {faqsList && faqsList.length > 0 && (
         <section class="space-y-4">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,12 +135,12 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
             <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-              Frequently Asked Questions
+              {ui.frequentlyAskedQuestions}
             </h2>
           </div>
 
           <div class="divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
-            {tool.faqs.map((faq) => (
+            {faqsList.map((faq) => (
               <details class="group transition-colors">
                 <summary class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer list-none select-none">
                   <span>{faq.question}</span>
@@ -147,22 +161,25 @@ const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
       {relatedTools.length > 0 && (
         <section class="pt-4 space-y-4">
           <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-            Related Tools
+            {ui.relatedTools}
           </h2>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {relatedTools.map((rel) => (
-              <a
-                href={`/${rel.slug}`}
-                class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 hover:border-sky-500/50 hover:bg-sky-500/5 transition-all group block space-y-1"
-              >
-                <div class="font-semibold text-xs text-slate-900 dark:text-slate-100 group-hover:text-sky-500 transition-colors">
-                  {rel.name}
-                </div>
-                <div class="text-[11px] text-slate-500 line-clamp-1">
-                  {rel.tagline}
-                </div>
-              </a>
-            ))}
+            {relatedTools.map((rel) => {
+              const relLoc = getLocalizedToolContent(rel.slug, locale);
+              return (
+                <a
+                  href={getLocalizedUrl(rel.slug, locale)}
+                  class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 hover:border-sky-500/50 hover:bg-sky-500/5 transition-all group block space-y-1"
+                >
+                  <div class="font-semibold text-xs text-slate-900 dark:text-slate-100 group-hover:text-sky-500 transition-colors">
+                    {relLoc.name || rel.name}
+                  </div>
+                  <div class="text-[11px] text-slate-500 line-clamp-1">
+                    {relLoc.tagline || rel.tagline}
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </section>
       )}

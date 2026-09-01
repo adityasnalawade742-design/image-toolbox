@@ -1,96 +1,99 @@
-# Search Engine Optimization (SEO) Architecture — Image Toolbox
+# Search Engine Optimization (SEO) & Internationalization (i18n) Architecture — Image Toolbox
 
-**Topic Clusters, Structured Data, Content Architecture & Localization Roadmap**
+**Complete Multi-Country URL Architecture, Hreflang Configuration, Search Intent Matrix, and Canonical Rules**
 
 ---
 
-## 1. Information Architecture & URL Strategy
+## 1. Information Architecture & URL Hierarchy
 
-Every tool has an independent, highly targeted, indexable route with unique search intent:
+Image Toolbox implements a scalable, high-performance static internationalization structure across **9 major search markets** with **252 statically prerendered routes**:
 
 ```
-/ (Homepage)
+Global English Canonical:
+/ (Global & India Homepage)
 ├── /crop-image            (Intent: "crop image online", "free photo cropper")
 ├── /resize-image          (Intent: "resize image", "change image dimensions")
 ├── /compress-image        (Intent: "compress image online", "reduce image file size")
-└── (Phase 2/3 Clusters)
-    ├── /rotate-image
-    ├── /flip-image
-    ├── /convert-image
-    ├── /jpg-to-png
-    ├── /png-to-jpg
-    ├── /jpg-to-webp
-    ├── /resize-image-for-instagram
-    └── /resize-image-for-youtube
+└── (All 27 active tool routes...)
+
+Localized Market Prefixes:
+├── /es/                   (Spanish Homepage)
+│   ├── /es/crop-image     (Intent: "recortar imagen online", "cortar fotos gratis")
+│   ├── /es/resize-image   (Intent: "redimensionar imagen online", "cambiar tamaño foto")
+│   └── (All 27 Spanish tool routes...)
+├── /fr/                   (French Homepage + 27 tools)
+├── /de/                   (German Homepage + 27 tools)
+├── /pt/                   (Portuguese Homepage + 27 tools)
+├── /it/                   (Italian Homepage + 27 tools)
+├── /ja/                   (Japanese Homepage + 27 tools)
+├── /ko/                   (Korean Homepage + 27 tools)
+└── /id/                   (Indonesian Homepage + 27 tools)
+```
+
+### URL Rule Summary:
+1. **Unprefixed URLs Remain Canonical for English**: `/` and `/[tool]` are the permanent, global English versions.
+2. **Zero Duplicate English Pages**: We do not create `/en/` routes to avoid content duplication.
+3. **8 Localized Market Prefixes**: `/{locale}` and `/{locale}/[tool]` for `es`, `fr`, `de`, `pt`, `it`, `ja`, `ko`, `id`.
+4. **All 252 Routes Static & HTTP 200**: Statically compiled by Astro into the `dist/` production bundle.
+
+---
+
+## 2. Supported Languages & Country Mapping Strategy
+
+| Language Code | Language | Native Name | Target Geographic Markets | URL Prefix |
+| :--- | :--- | :--- | :--- | :--- |
+| `en` | English | English | Global, India, United States, United Kingdom, Canada, Australia | `/` (Unprefixed) |
+| `es` | Spanish | Español | Spain, Mexico, Argentina, Colombia, Chile, Peru | `/es/` |
+| `fr` | French | Français | France, Canada, Belgium, Switzerland | `/fr/` |
+| `de` | German | Deutsch | Germany, Austria, Switzerland | `/de/` |
+| `pt` | Portuguese | Português | Brazil, Portugal | `/pt/` |
+| `it` | Italian | Italiano | Italy, Switzerland | `/it/` |
+| `ja` | Japanese | 日本語 | Japan | `/ja/` |
+| `ko` | Korean | 한국어 | South Korea | `/ko/` |
+| `id` | Indonesian | Bahasa Indonesia | Indonesia | `/id/` |
+
+---
+
+## 3. Strict India Localization Rule
+
+* **India MUST remain English by default**: `https://image-toolbox.aditya-s-nalawade742.workers.dev/` (and tool URLs like `/crop-image`) are the designated primary Indian experience.
+* **No IP Redirections**: Search crawlers and Indian visitors are **never** redirected to Hindi (`/hi/`) or another regional dialect.
+* **Zero Intrusive Banner for India**: Browser language checks for `-in` or `hi` will not trigger language switch suggestions.
+
+---
+
+## 4. Multi-Country Hreflang & Canonical Specifications
+
+Every page automatically generates complete `<link rel="alternate" hreflang="..." href="...">` tags referencing absolute URLs across all 9 languages, plus `x-default`:
+
+```html
+<!-- Example on /crop-image or /es/crop-image -->
+<link rel="canonical" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/crop-image" />
+<link rel="alternate" hreflang="en" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/crop-image" />
+<link rel="alternate" hreflang="es" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/es/crop-image" />
+<link rel="alternate" hreflang="fr" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/fr/crop-image" />
+<link rel="alternate" hreflang="de" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/de/crop-image" />
+<link rel="alternate" hreflang="pt" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/pt/crop-image" />
+<link rel="alternate" hreflang="it" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/it/crop-image" />
+<link rel="alternate" hreflang="ja" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/ja/crop-image" />
+<link rel="alternate" hreflang="ko" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/ko/crop-image" />
+<link rel="alternate" hreflang="id" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/id/crop-image" />
+<link rel="alternate" hreflang="x-default" href="https://image-toolbox.aditya-s-nalawade742.workers.dev/crop-image" />
 ```
 
 ---
 
-## 2. On-Page Structure & Content Hierarchy
+## 5. Schema.org Structured Data Localization
 
-To maximize SEO without compromising UX, every tool page strictly follows this vertical structure:
-
-```
-[ Top Header / Nav ]
-        ↓
-1. Breadcrumbs (Home → Image Tools → Tool Name)
-2. Primary H1 (Clear, focused search phrase e.g. "Crop Image Online")
-3. Brief Lead Paragraph (1–2 concise sentences explaining the utility)
-4. INTERACTIVE TOOL WORKSPACE (Positioned immediately above the fold)
-        ↓
-5. Step-by-Step "How to Use" Guide (Structured ordered list)
-6. Feature Highlights & Technical Specifications (Quality, Privacy, Formats)
-7. Frequently Asked Questions (Accordion UI with valid FAQ Schema)
-8. Related Tools Cluster (Contextual internal linking cards)
-        ↓
-[ Global Footer with Category Links ]
-```
+All structured data is generated dynamically per locale:
+1. **`WebApplication`**: Localized tool `name`, `description`, and `url`.
+2. **`BreadcrumbList`**: Localized breadcrumb names (`Home / Inicio`, `Tools / Herramientas`, `[Tool Name]`).
+3. **`FAQPage`**: Questions and answers strictly in the target locale (no English FAQs on Spanish/Japanese pages).
+4. **`WebSite`**: Localized search action and description on homepages.
 
 ---
 
-## 3. Schema.org Structured Data
+## 6. Sitemap & Robots Configuration
 
-Each page automatically injects clean JSON-LD schema into the document `<head>`:
-
-### 1. `SoftwareApplication` / `WebApplication`
-- `name`: "Image Toolbox — [Tool Name]"
-- `applicationCategory`: "MultimediaApplication" / "PhotoEditor"
-- `operatingSystem`: "All modern web browsers (Chrome, Safari, Firefox, Edge)"
-- `offers`: `{ "@type": "Offer", "price": "0", "priceCurrency": "USD" }`
-
-### 2. `BreadcrumbList`
-- Hierarchical crumbs mapping `Home` → `Tools` → `[Specific Tool]`.
-
-### 3. `FAQPage`
-- Injected on tool pages where curated, human-written FAQs are present.
-
-### 4. `WebSite` & `Organization`
-- Injected on the root homepage with site search capabilities.
-
----
-
-## 4. Internationalization (i18n) & Localization Architecture
-
-### Core Rules:
-1. **Primary Language**: English (`en`).
-2. **India Default**: India traffic defaults to English (`en`). There is **zero** automatic redirection of Indian IP addresses to Hindi.
-3. **Language Selection**: User preferences are remembered via localStorage or clean path prefixes (`/es/crop-image`, `/fr/crop-image`) in future phases.
-4. **Hreflang Implementation**: Future multilingual pages will specify exact alternate hreflang tags:
-   ```html
-   <link rel="alternate" hreflang="en" href="https://imagetoolbox.com/crop-image" />
-   <link rel="alternate" hreflang="es" href="https://imagetoolbox.com/es/crop-image" />
-   <link rel="alternate" hreflang="x-default" href="https://imagetoolbox.com/crop-image" />
-   ```
-5. **No Thin Machine-Translated Spam**: Each localized page must correspond to genuine keyword search intent in the target language.
-
----
-
-## 5. Topic Clusters & Internal Linking
-
-To build topical authority, tools cross-link within logical clusters:
-
-| Cluster | Core Tool | Related Tools Link Matrix |
-| :--- | :--- | :--- |
-| **Editing** | `/crop-image` | `/resize-image`, `/rotate-image`, `/flip-image` |
-| **Sizing** | `/resize-image` | `/crop-image`, `/compress-image`, `/resize-image-for-instagram` |
-| **Optimization** | `/compress-image` | `/resize-image`, `/jpg-to-webp`, `/png-to-webp` |
+* **`sitemap.xml`**: Indexes all **252 valid production URLs** with `lastmod`, `changefreq`, and `priority`.
+* **`robots.txt`**: Fully permits indexing of all language prefixes (`Allow: /`) and specifies `Sitemap: https://.../sitemap.xml`.

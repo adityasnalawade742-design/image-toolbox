@@ -1,16 +1,18 @@
 # Architecture & Technical Design — Image Toolbox
 
-**Component Topology, Client-Side Processing Pipeline, and Future Backend Abstraction**
+**Astro 5 Islands Architecture, Client-Side HTML5 Canvas Pipeline, and Internationalization (i18n) Engine**
 
 ---
 
 ## 1. Technology Stack
 
-- **Framework**: Next.js 14+ (App Router, React Server Components for SEO pages, Client Components for interactive tool viewports).
+- **Framework**: Astro 5 (Static Generation mode, Static Server-Rendered HTML pages for maximum Core Web Vitals and SEO performance).
+- **Client Islands**: React 18+ (Hydrated on-demand via `client:load` and `client:idle` for interactive tool workspaces and search modals).
+- **Internationalization (i18n)**: Compile-time Static Multi-Locale Prerendering (`src/i18n/` directory structure) with zero runtime bundle bloat.
 - **Language**: TypeScript 5+ (Strict Mode enabled).
-- **Styling**: Tailwind CSS 3.4+ (Zero-runtime utility CSS, custom design tokens, dark mode class strategy).
+- **Styling**: Tailwind CSS 3.4+ (Zero-runtime utility CSS, custom design tokens, dark mode class strategy, ambient precision grid).
 - **Icons**: `lucide-react` (Tree-shakeable, lightweight SVG icons).
-- **Core Runtime**: Client-Side HTML5 Canvas API, `createImageBitmap`, `OffscreenCanvas` (where supported), Web Blob/File APIs, URL Object Lifecycles.
+- **Core Engine**: Pure Client-Side HTML5 Canvas API, `createImageBitmap`, Web Worker threads, Web Blob/File APIs, Object URL Lifecycles.
 
 ---
 
@@ -19,110 +21,52 @@
 ```
 image-toolbox/
 ├── src/
-│   ├── app/                      # Next.js App Router Pages
-│   │   ├── layout.tsx            # Root layout with Header, Footer, Providers
-│   │   ├── page.tsx              # Homepage with Hero, Tool Grid, FAQs
-│   │   ├── crop-image/page.tsx   # /crop-image tool page
-│   │   ├── resize-image/page.tsx # /resize-image tool page
-│   │   ├── compress-image/page.tsx # /compress-image tool page
-│   │   ├── globals.css           # Tailwind base, utilities, design tokens
-│   │   ├── sitemap.ts            # Dynamic SEO XML sitemap generator
-│   │   └── robots.ts             # Robots.txt configuration
+│   ├── config/                   # Site config & tools registry
+│   │   ├── site.ts               # Site metadata, dynamic domain resolution, supported locales
+│   │   └── tools.ts              # Central Tool Registry (metadata, categories, default copy)
 │   │
-│   ├── components/               # UI Component Hierarchy
-│   │   ├── layout/               # Header, Footer, Navigation, LanguagePicker
-│   │   ├── shared/               # DropZone, ToolLayout, Breadcrumbs, FAQSection, RelatedTools
-│   │   └── tools/                # Specialized tool controllers (CropView, ResizeView, CompressView)
+│   ├── i18n/                     # Centralized Internationalization Engine
+│   │   ├── types.ts              # TypeScript schemas for UI, tool content, and homepage
+│   │   ├── locales.ts            # Supported locales, URL helpers, country mappings
+│   │   ├── ui/                   # UI strings per locale (en, es, fr, de, pt, it, ja, ko, id)
+│   │   ├── tools/                # Tool titles, H1s, how-tos, features, FAQs per locale
+│   │   └── home/                 # Homepage hero, categories, trust pillars per locale
 │   │
-│   ├── config/
-│   │   ├── tools.ts              # Central Tool Registry (metadata, routes, categories, SEO)
-│   │   └── i18n.ts               # Localized string keys & language configuration
+│   ├── components/               # Astro & React Component Hierarchy
+│   │   ├── layout/               # Header.astro, Footer.astro, LanguageSelector.tsx, LanguageBanner.tsx
+│   │   ├── shared/               # ToolSearch.tsx, ToolWorkspace.tsx, HomeCategoryTools.tsx, HomeDropZone.tsx
+│   │   └── tools/                # 27 Specialized React Canvas views (CropView, CompressView, etc.)
+│   │
+│   ├── layouts/
+│   │   ├── BaseLayout.astro      # Multi-locale hreflang, self-canonical, JSON-LD, dark mode
+│   │   └── ToolLayout.astro      # Static localized breadcrumbs, H1, how-to, features, FAQs
 │   │
 │   ├── lib/
-│   │   ├── canvas/               # Pure Browser Canvas Processing Engine
-│   │   │   ├── crop.ts           # Canvas crop extraction, transformation, circle masking
-│   │   │   ├── resize.ts         # High-quality multi-step downsampling / upsampling
-│   │   │   ├── compress.ts       # Blob generation, quality quantization, size calculation
-│   │   │   └── file-utils.ts     # MIME validation, format conversion, download triggers
-│   │   │
-│   │   └── seo/                  # Schema JSON-LD generators (SoftwareApp, FAQPage, BreadcrumbList)
+│   │   ├── canvas/               # Browser Canvas Image Engine (crop, resize, compress, svg, etc.)
+│   │   └── seo/                  # Localized JSON-LD Schema generators (WebApplication, FAQPage, BreadcrumbList)
 │   │
-│   └── types/
-│       ├── tool.ts               # Tool metadata, categories, aspect ratios
-│       └── image.ts              # Image item models, dimensions, export settings
+│   └── pages/
+│       ├── index.astro           # Global English homepage (/)
+│       ├── [tool].astro          # Global English tool pages (/[tool])
+│       ├── [locale]/
+│       │   ├── index.astro       # Localized homepages (/[locale])
+│       │   └── [tool].astro      # Localized tool pages (/[locale]/[tool])
+│       ├── sitemap.xml.ts        # Dynamic 252-URL static sitemap generator
+│       └── robots.txt.ts         # Robots.txt configuration
 │
-├── public/                       # Static assets, favicon, manifest
-├── DESIGN.md                     # Design system source of truth
-├── PRODUCT_SPEC.md               # Product requirements and phase roadmaps
+├── dist/                         # 252 Prerendered static HTML pages + CSS/JS bundles
+├── DESIGN.md                     # Design system tokens and specifications
+├── PRODUCT_SPEC.md               # Product requirements and tool capabilities
 ├── ARCHITECTURE.md               # This document
-├── SEO.md                        # SEO strategy and cluster architecture
+├── SEO.md                        # SEO strategy and multi-country cluster architecture
 ├── SECURITY.md                   # Client-side security and sanitization
-└── DEPLOYMENT.md                 # Vercel deployment and future Oracle Cloud API proxy
+└── DEPLOYMENT.md                 # Cloudflare Pages / Workers deployment guide
 ```
 
 ---
 
-## 3. Cropping Engine Architectural Decision
+## 3. Client-Side Image Processing Isolation
 
-### Evaluation: Native Custom Canvas Cropper vs. Library
-- **Decision**: We utilize a lightweight, focused canvas-based cropping viewport integrated with standard browser touch/mouse interaction.
-- **Rationale**:
-  1. Complete control over memory lifecycle and canvas extraction.
-  2. Zero external dependencies loaded on non-crop pages.
-  3. Seamless support for rotation (-180° to +180°), flip transformations, aspect ratio constraints, circular avatar masking, and touch pinch/drag without bundle bloat.
-  4. Decoupled processing logic inside `src/lib/canvas/crop.ts` that executes outside React's render loop.
-
----
-
-## 4. Processing Pipeline & Memory Lifecycle
-
-```
-[ User Input ]
-      │ (Drag & Drop, File Dialog, or Clipboard Paste Ctrl+V)
-      ▼
-[ Validation Layer ]
-      │ (MIME check, extension verification, file size guard < 50MB)
-      ▼
-[ File -> ImageBitmap / Object URL ]
-      │ (FileReader / URL.createObjectURL)
-      ▼
-[ Canvas Processing Engine (lib/canvas/) ]
-      ├── Pure functional transforms (rotate, scale, crop, filter)
-      ├── Memory safe high-resolution buffer allocation
-      └── Format conversion (image/webp, image/jpeg, image/png)
-      ▼
-[ Blob & Download Trigger ]
-      │ (URL.createObjectURL -> <a> download -> revokeObjectURL)
-      ▼
-[ Complete Local Garbage Collection ]
-```
-
-### Memory Management Rules
-1. Every created Object URL (`URL.createObjectURL`) must be explicitly released via `URL.revokeObjectURL()` after image unmounting or download completion.
-2. Large canvases are resized via temporary off-screen canvases and dereferenced immediately to allow the browser garbage collector to reclaim RAM.
-
----
-
-## 5. Decoupled Future Backend Architecture
-
-While Phase 1 is **100% client-side**, the codebase is architected with a service provider interface:
-
-```typescript
-export interface ImageProcessor {
-  process(file: File, options: ProcessOptions): Promise<ProcessedResult>;
-}
-
-// Phase 1 Implementation:
-export const browserProcessor: ImageProcessor = { ... };
-
-// Future Phase (Oracle VPS Backend Integration):
-export const apiProcessor: ImageProcessor = {
-  process: async (file, options) => {
-    const formData = new FormData();
-    formData.append('file', file);
-    return fetch('https://api.example.com/v1/process', { method: 'POST', body: formData });
-  }
-};
-```
-
-This ensures that adding an optional Oracle Cloud API in the future requires **zero UI rewrites**.
+* **Zero Server Uploads**: All 27 tools operate entirely on the client side using HTML5 Canvas and browser Web APIs.
+* **Zero Network Latency**: Photos are processed directly in device memory (`RAM`), providing instant live preview feedback.
+* **Privacy by Design**: No telemetry, analytics tracking of user photos, or server logging.
