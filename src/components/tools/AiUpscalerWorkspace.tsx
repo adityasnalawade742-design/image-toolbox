@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
-  UploadCloud,
   Download,
   Sparkles,
   Zap,
@@ -9,16 +8,15 @@ import {
   AlertTriangle,
   RotateCcw,
   Sliders,
-  CheckCircle2,
+  XCircle,
   Layers,
 } from 'lucide-react';
 import {
-  detectAccelerationCapabilities,
   validateUpscalerInput,
   runAiSuperResolution,
+  runStandardCanvasUpscale,
 } from '../../lib/ai/upscalerEngine';
 import type {
-  AccelerationInfo,
   UpscaleProgress,
   UpscaleResult,
 } from '../../lib/ai/upscalerEngine';
@@ -27,18 +25,17 @@ import { loadImage, downloadBlob } from '../../lib/canvas/engine';
 export function AiUpscalerWorkspace() {
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [filename, setFilename] = useState<string>('image');
-  const [fileSize, setFileSize] = useState<number>(0);
   const [origW, setOrigW] = useState<number>(0);
   const [origH, setOrigH] = useState<number>(0);
 
-  // Settings
-  const [scale, setScale] = useState<2 | 4>(2);
+  // Settings & Modes
+  const [processingMode, setProcessingMode] = useState<'ai' | 'standard'>('ai');
+  const [standardScale, setStandardScale] = useState<2 | 4>(2);
   const [format, setFormat] = useState<'image/png' | 'image/webp' | 'image/jpeg'>('image/png');
   const [viewMode, setViewMode] = useState<'split' | 'side-by-side'>('split');
-  const [splitPos, setSplitPos] = useState<number>(50); // percentage 0 - 100
+  const [splitPos, setSplitPos] = useState<number>(50);
 
-  // Acceleration & Progress
-  const [accelInfo, setAccelInfo] = useState<AccelerationInfo | null>(null);
+  // Progress & Execution
   const [progress, setProgress] = useState<UpscaleProgress>({
     stage: 'idle',
     percent: 0,
@@ -51,11 +48,7 @@ export function AiUpscalerWorkspace() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const splitContainerRef = useRef<HTMLDivElement>(null);
   const isDraggingSplitRef = useRef(false);
-
-  // Detect WebGPU / WebGL on mount
-  useEffect(() => {
-    detectAccelerationCapabilities().then(setAccelInfo);
-  }, []);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const handleFile = async (file: File) => {
     try {
@@ -69,7 +62,6 @@ export function AiUpscalerWorkspace() {
       }
 
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
-      setFileSize(file.size);
 
       const img = await loadImage(file);
       setImageElement(img);
@@ -79,7 +71,7 @@ export function AiUpscalerWorkspace() {
       setOrigW(nw);
       setOrigH(nh);
 
-      const validation = validateUpscalerInput(nw, nh, scale);
+      const validation = validateUpscalerInput(nw, nh, processingMode === 'ai' ? 3 : standardScale);
       if (!validation.isValid) {
         setErrorMessage(validation.error || 'Image resolution not supported');
       }
@@ -94,23 +86,46 @@ export function AiUpscalerWorkspace() {
     try {
       setIsProcessing(true);
       setErrorMessage(null);
+      abortControllerRef.current = new AbortController();
 
-      const res = await runAiSuperResolution(imageElement, scale, (p) => {
-        setProgress(p);
-      });
+      let res: UpscaleResult;
+
+      if (processingMode === 'ai') {
+        res = await runAiSuperResolution(
+          imageElement,
+          abortControllerRef.current.signal,
+          (p) => setProgress(p)
+        );
+      } else {
+        res = await runStandardCanvasUpscale(
+          imageElement,
+          standardScale,
+          (p) => setProgress(p)
+        );
+      }
 
       setResult(res);
       setIsProcessing(false);
     } catch (err: any) {
       setIsProcessing(false);
-      setErrorMessage(err.message || 'An error occurred during AI upscaling');
+      if (err.message?.includes('cancelled')) {
+        setProgress({ stage: 'idle', percent: 0, message: 'Processing cancelled by user' });
+      } else {
+        setErrorMessage(err.message || 'An error occurred during super-resolution');
+      }
+    }
+  };
+
+  const handleCancel = () => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
     }
   };
 
   const handleDownload = () => {
     if (!result) return;
     const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-    downloadBlob(result.blob, `${filename}-${result.scale}x-upscaled.${ext}`);
+    downloadBlob(result.blob, `${filename}-${result.scale}x-${result.mode}.${ext}`);
   };
 
   // Split view dragging
@@ -130,26 +145,23 @@ export function AiUpscalerWorkspace() {
     isDraggingSplitRef.current = false;
   };
 
-  const validation = origW > 0 ? validateUpscalerInput(origW, origH, scale) : null;
+  const effectiveScale = processingMode === 'ai' ? 3 : standardScale;
+  const validation = origW > 0 ? validateUpscalerInput(origW, origH, effectiveScale) : null;
 
   return (
     <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-6">
-      {/* Top Hardware Acceleration Badge */}
+      {/* Top Architecture & Privacy Badge */}
       <div className="flex flex-wrap items-center justify-between gap-3 px-3 py-2 bg-surface-elevated border border-hairline rounded-lg text-xs">
         <div className="flex items-center gap-2">
-          {accelInfo?.hasWebGPU ? (
-            <Zap className="w-4 h-4 text-accent-green shrink-0" />
-          ) : (
-            <Cpu className="w-4 h-4 text-accent-blue shrink-0" />
-          )}
+          <Sparkles className="w-4 h-4 text-accent-blue shrink-0" />
           <span className="font-medium text-ink">
-            {accelInfo ? accelInfo.label : 'Detecting hardware acceleration...'}
+            {result?.provider || 'Real ONNX Neural Super-Resolution & Fast Canvas Upscaler'}
           </span>
         </div>
 
         <div className="flex items-center gap-2 text-mute">
           <ShieldCheck className="w-3.5 h-3.5 text-accent-green" />
-          <span>100% Client-Side Neural Inference</span>
+          <span>100% Client-Side In-Browser • Zero Server Uploads</span>
         </div>
       </div>
 
@@ -185,10 +197,10 @@ export function AiUpscalerWorkspace() {
           </div>
           <div>
             <h3 className="text-sm font-semibold text-ink tracking-tight">
-              Select or Drop an Image for AI Super-Resolution
+              Select or Drop an Image for Super-Resolution
             </h3>
             <p className="text-xs text-mute mt-1">
-              Supports PNG, JPG, WebP • 2× and 4× Neural Upscaling • 100% In-Browser Privacy
+              Supports PNG, JPG, WebP • Real ONNX Neural Super-Resolution & Fast Standard Upscaling
             </p>
           </div>
           <button
@@ -199,7 +211,7 @@ export function AiUpscalerWorkspace() {
           </button>
         </div>
       ) : (
-        /* Active AI Workbench */
+        /* Active Workbench */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Canvas / Comparison Viewer (7 Cols) */}
           <div className="lg:col-span-7 space-y-3">
@@ -214,14 +226,12 @@ export function AiUpscalerWorkspace() {
                 viewMode === 'split' ? (
                   /* Split Before / After Slider */
                   <div className="relative w-full h-full flex items-center justify-center min-h-[380px] max-h-[550px] p-2">
-                    {/* Upscaled Result (Base Image) */}
                     <img
                       src={result.canvas.toDataURL()}
-                      alt="AI Upscaled"
+                      alt="Upscaled Result"
                       className="max-w-full max-h-[500px] object-contain rounded"
                     />
 
-                    {/* Original Image (Clipped Left Overlay) */}
                     <div
                       style={{ clipPath: `polygon(0 0, ${splitPos}% 0, ${splitPos}% 100%, 0 100%)` }}
                       className="absolute inset-0 flex items-center justify-center p-2"
@@ -229,11 +239,10 @@ export function AiUpscalerWorkspace() {
                       <img
                         src={imageElement.src}
                         alt="Original"
-                        className="max-w-full max-h-[500px] object-contain rounded filter blur-[0.2px]"
+                        className="max-w-full max-h-[500px] object-contain rounded"
                       />
                     </div>
 
-                    {/* Split Divider Line & Drag Handle */}
                     <div
                       style={{ left: `${splitPos}%` }}
                       onMouseDown={handleMouseDown}
@@ -244,12 +253,11 @@ export function AiUpscalerWorkspace() {
                       </div>
                     </div>
 
-                    {/* Overlay Badges */}
                     <div className="absolute top-4 left-4 px-2 py-1 bg-canvas/80 backdrop-blur rounded text-[10px] font-mono text-mute border border-hairline pointer-events-none">
                       Original ({origW}×{origH})
                     </div>
                     <div className="absolute top-4 right-4 px-2 py-1 bg-canvas/80 backdrop-blur rounded text-[10px] font-mono text-accent-green border border-hairline pointer-events-none">
-                      AI {result.scale}× ({result.outputWidth}×{result.outputHeight})
+                      {result.mode === 'ai' ? 'Neural AI' : 'Standard'} {result.scale}× ({result.outputWidth}×{result.outputHeight})
                     </div>
                   </div>
                 ) : (
@@ -260,8 +268,10 @@ export function AiUpscalerWorkspace() {
                       <span className="text-[11px] font-mono text-mute">Original ({origW}×{origH})</span>
                     </div>
                     <div className="space-y-1.5 text-center">
-                      <img src={result.canvas.toDataURL()} alt="AI Upscaled" className="max-h-[350px] mx-auto rounded border border-hairline shadow-lg" />
-                      <span className="text-[11px] font-mono text-accent-green">AI {result.scale}× ({result.outputWidth}×{result.outputHeight})</span>
+                      <img src={result.canvas.toDataURL()} alt="Upscaled" className="max-h-[350px] mx-auto rounded border border-hairline shadow-lg" />
+                      <span className="text-[11px] font-mono text-accent-green">
+                        {result.mode === 'ai' ? 'Neural AI' : 'Standard'} {result.scale}× ({result.outputWidth}×{result.outputHeight})
+                      </span>
                     </div>
                   </div>
                 )
@@ -274,7 +284,7 @@ export function AiUpscalerWorkspace() {
                     className="max-w-full max-h-[420px] object-contain rounded shadow-2xl"
                   />
                   <div className="text-xs text-mute font-mono">
-                    Ready to upscale: {origW} × {origH} px → {validation?.outputWidth} × {validation?.outputHeight} px ({scale}×)
+                    Ready to upscale: {origW} × {origH} px → {validation?.outputWidth} × {validation?.outputHeight} px ({effectiveScale}×)
                   </div>
                 </div>
               )}
@@ -318,65 +328,110 @@ export function AiUpscalerWorkspace() {
             </div>
           </div>
 
-          {/* Right AI Controls & Parameters (5 Cols) */}
+          {/* Right Controls & Model Parameters (5 Cols) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-ink flex items-center gap-2">
                 <Sliders className="w-3.5 h-3.5 text-accent-blue" />
-                <span>AI Super-Resolution Settings</span>
+                <span>Super-Resolution Settings</span>
               </h4>
 
-              {/* Scale Factor Selection */}
+              {/* Mode Selection */}
               <div className="space-y-2">
-                <label className="text-xs font-medium text-body">Upscale Factor</label>
+                <label className="text-xs font-medium text-body">Inference Engine</label>
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     disabled={isProcessing}
-                    onClick={() => setScale(2)}
+                    onClick={() => setProcessingMode('ai')}
                     className={`py-2 px-3 rounded-md border text-xs font-semibold flex flex-col items-center justify-center gap-0.5 transition-all ${
-                      scale === 2
+                      processingMode === 'ai'
                         ? 'bg-white text-black border-white shadow'
                         : 'bg-surface-card text-body hover:text-ink border-hairline hover:bg-surface'
                     }`}
                   >
-                    <span className="text-sm font-bold">2× Scale</span>
+                    <span className="text-sm font-bold flex items-center gap-1">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      AI Neural
+                    </span>
                     <span className="text-[10px] opacity-75">
-                      {origW * 2} × {origH * 2} px
+                      ESPCN Model (3×)
                     </span>
                   </button>
 
                   <button
                     type="button"
                     disabled={isProcessing}
-                    onClick={() => setScale(4)}
+                    onClick={() => setProcessingMode('standard')}
                     className={`py-2 px-3 rounded-md border text-xs font-semibold flex flex-col items-center justify-center gap-0.5 transition-all ${
-                      scale === 4
+                      processingMode === 'standard'
                         ? 'bg-white text-black border-white shadow'
                         : 'bg-surface-card text-body hover:text-ink border-hairline hover:bg-surface'
                     }`}
                   >
-                    <span className="text-sm font-bold">4× Scale</span>
+                    <span className="text-sm font-bold flex items-center gap-1">
+                      <Zap className="w-3.5 h-3.5" />
+                      Standard
+                    </span>
                     <span className="text-[10px] opacity-75">
-                      {origW * 4} × {origH * 4} px
+                      Fast Canvas 2D
                     </span>
                   </button>
                 </div>
               </div>
 
-              {/* Model Specifications */}
+              {/* Standard Scale Selection if in standard mode */}
+              {processingMode === 'standard' && (
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-body">Standard Scale</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setStandardScale(2)}
+                      className={`py-1.5 px-3 rounded border text-xs font-medium ${
+                        standardScale === 2 ? 'bg-surface border-hairline-strong text-ink' : 'bg-surface-card border-hairline text-mute'
+                      }`}
+                    >
+                      2× Fast Upscale
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setStandardScale(4)}
+                      className={`py-1.5 px-3 rounded border text-xs font-medium ${
+                        standardScale === 4 ? 'bg-surface border-hairline-strong text-ink' : 'bg-surface-card border-hairline text-mute'
+                      }`}
+                    >
+                      4× Fast Upscale
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Model Specifications & Specs */}
               <div className="p-3 bg-surface-card border border-hairline rounded text-xs space-y-1.5 font-mono text-mute">
                 <div className="flex justify-between">
+                  <span>Engine:</span>
+                  <span className="text-ink font-sans">
+                    {processingMode === 'ai' ? 'ONNX Runtime Web' : 'HTML5 Canvas 2D'}
+                  </span>
+                </div>
+                <div className="flex justify-between">
                   <span>Architecture:</span>
-                  <span className="text-ink font-sans">ESPCN Sub-Pixel CNN</span>
+                  <span className="text-ink font-sans">
+                    {processingMode === 'ai' ? 'ESPCN Sub-Pixel CNN' : 'High-Quality Bicubic'}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Inference:</span>
-                  <span className="text-ink font-sans">{accelInfo?.type.toUpperCase() || 'WASM'}</span>
+                  <span>Model Weights:</span>
+                  <span className="text-accent-green">
+                    {processingMode === 'ai' ? '239 KB (Hugging Face ONNX Zoo)' : '0 KB (Native Browser)'}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Luminance Channel:</span>
-                  <span className="text-accent-green">High-Pass Sharpened</span>
+                  <span>Inference Hardware:</span>
+                  <span className="text-ink font-sans">
+                    {processingMode === 'ai' ? 'WebGPU / WebGL / WASM SIMD' : 'GPU Canvas Composite'}
+                  </span>
                 </div>
               </div>
 
@@ -427,19 +482,36 @@ export function AiUpscalerWorkspace() {
               )}
             </div>
 
-            {/* Main Action CTA Button */}
+            {/* Main Action / Cancel CTA Buttons */}
             {!result ? (
-              <button
-                type="button"
-                disabled={isProcessing || !validation?.isValid}
-                onClick={handleStartUpscale}
-                className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px] disabled:opacity-50"
-              >
-                <Sparkles className="w-4 h-4 text-black" />
-                <span>
-                  {isProcessing ? 'Processing Super-Resolution...' : `Start ${scale}× AI Super-Resolution`}
-                </span>
-              </button>
+              <div className="space-y-2">
+                <button
+                  type="button"
+                  disabled={isProcessing || !validation?.isValid}
+                  onClick={handleStartUpscale}
+                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px] disabled:opacity-50"
+                >
+                  <Sparkles className="w-4 h-4 text-black" />
+                  <span>
+                    {isProcessing
+                      ? 'Processing Super-Resolution...'
+                      : processingMode === 'ai'
+                      ? 'Start Real AI Neural Super-Resolution'
+                      : `Start Standard Fast Upscale (${standardScale}×)`}
+                  </span>
+                </button>
+
+                {isProcessing && (
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    className="w-full py-2 px-3 bg-surface-card hover:bg-surface border border-accent-red/30 text-accent-red font-medium text-xs rounded-md flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <XCircle className="w-3.5 h-3.5" />
+                    <span>Cancel Inference</span>
+                  </button>
+                )}
+              </div>
             ) : (
               <button
                 type="button"
@@ -447,7 +519,7 @@ export function AiUpscalerWorkspace() {
                 className="w-full py-3 px-4 bg-accent-green hover:bg-emerald-400 text-black font-bold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px]"
               >
                 <Download className="w-4 h-4" />
-                <span>Download AI {result.scale}× Upscaled Image</span>
+                <span>Download Enhanced Image ({result.outputWidth}×{result.outputHeight})</span>
               </button>
             )}
           </div>
