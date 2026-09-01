@@ -7,7 +7,7 @@ import { runTiledNeuralInference, type InferenceProgressCallback } from './tiled
 import { reconstructRgbCanvas } from './postprocessor.ts';
 import { getAIModel } from './modelRegistry.ts';
 
-export const CLOUD_AI_ENDPOINT = 'http://130.210.63.16/api/upscale';
+export const CLOUD_AI_ENDPOINT = '/api/upscale';
 
 export interface UpscaleResult {
   canvas: HTMLCanvasElement;
@@ -21,7 +21,7 @@ export interface UpscaleResult {
 }
 
 /**
- * Execute Cloud Ultra AI Super-Resolution using Oracle VPS (Real-ESRGAN Flagship)
+ * Execute Cloud Ultra AI Super-Resolution using Oracle VPS (Real-ESRGAN Flagship via Cloudflare Edge)
  */
 export async function runCloudRealEsrganUpscale(
   file: File,
@@ -36,7 +36,7 @@ export async function runCloudRealEsrganUpscale(
   formData.append('file', file);
   formData.append('scale', scale.toString());
 
-  onProgress?.(30, 'Executing Real-ESRGAN 4K deep neural network on 4 ARM64 cores...');
+  onProgress?.(30, 'Executing Real-ESRGAN 4K neural network on Oracle Ampere A1 cores...');
 
   const response = await fetch(CLOUD_AI_ENDPOINT, {
     method: 'POST',
@@ -45,11 +45,11 @@ export async function runCloudRealEsrganUpscale(
   });
 
   if (!response.ok) {
-    const errText = await response.text().catch(() => 'Server error');
-    throw new Error(`Cloud AI server error: ${errText || response.statusText}`);
+    const errData = await response.json().catch(() => ({ error: response.statusText }));
+    throw new Error(errData.error || errData.details || `Cloud AI server error (${response.status})`);
   }
 
-  onProgress?.(80, 'Receiving high-definition super-resolved image...');
+  onProgress?.(85, 'Receiving high-definition super-resolved image...');
   const blob = await response.blob();
   const imgBitmap = await createImageBitmap(blob);
 
