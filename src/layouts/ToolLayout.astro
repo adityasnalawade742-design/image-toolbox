@@ -1,0 +1,173 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { ToolItem } from '../types/tool';
+import { getRelatedTools } from '../config/tools';
+import { generateToolStructuredData } from '../lib/seo/schema';
+import { SITE_CONFIG } from '../config/site';
+
+interface Props {
+  tool: ToolItem;
+}
+
+const { tool } = Astro.props;
+const relatedTools = getRelatedTools(tool.slug);
+const schemas = generateToolStructuredData(tool);
+const canonicalUrl = `${SITE_CONFIG.url}/${tool.slug}`;
+---
+
+<BaseLayout
+  title={`${tool.name} — ${tool.seoTitle || SITE_CONFIG.name}`}
+  description={tool.seoDescription || tool.tagline}
+  canonicalUrl={canonicalUrl}
+  jsonLdSchemas={schemas}
+>
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-12">
+    
+    {/* Top Header & Breadcrumbs (Pure Static HTML) */}
+    <div class="space-y-3 text-center sm:text-left">
+      <nav aria-label="Breadcrumb" class="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-slate-500">
+        <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/#tools" class="hover:text-sky-500 transition-colors">Tools</a>
+        <span>/</span>
+        <span class="text-slate-900 dark:text-slate-200 font-semibold">{tool.name}</span>
+      </nav>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+        {tool.name}
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
+        {tool.tagline}
+      </p>
+    </div>
+
+    {/* Interactive React Island Slot */}
+    <section aria-label={`${tool.name} workspace`} class="w-full">
+      <slot />
+    </section>
+
+    {/* Static SEO Content Section (Zero JS, 100% Indexable) */}
+    <div class="pt-8 border-t border-slate-200 dark:border-slate-800 space-y-12 max-w-4xl mx-auto">
+      
+      {/* How to Use Steps */}
+      {tool.howToSteps && tool.howToSteps.length > 0 && (
+        <section class="space-y-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="10" y1="6" x2="21" y2="6"></line>
+              <line x1="10" y1="12" x2="21" y2="12"></line>
+              <line x1="10" y1="18" x2="21" y2="18"></line>
+              <path d="M4 6h1v4"></path>
+              <path d="M4 10h2"></path>
+              <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path>
+            </svg>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
+              How to {tool.name}
+            </h2>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {tool.howToSteps.map((step, idx) => (
+              <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-xs font-bold flex items-center justify-center">
+                    {idx + 1}
+                  </span>
+                  <h3 class="font-semibold text-sm text-slate-900 dark:text-slate-100">
+                    {step.title}
+                  </h3>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-8">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Key Features & Specifications */}
+      {tool.features && tool.features.length > 0 && (
+        <section class="space-y-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
+              Key Features & Privacy Benefits
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {tool.features.map((feat) => (
+              <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-xs text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-800/60">
+                <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>{feat}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Semantic Native HTML5 FAQ Accordion (Zero JS) */}
+      {tool.faqs && tool.faqs.length > 0 && (
+        <section class="space-y-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div class="divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+            {tool.faqs.map((faq) => (
+              <details class="group transition-colors">
+                <summary class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer list-none select-none">
+                  <span>{faq.question}</span>
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 group-open:text-sky-500 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </summary>
+                <div class="px-5 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related Tools Links */}
+      {relatedTools.length > 0 && (
+        <section class="pt-4 space-y-4">
+          <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">
+            Related Tools
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {relatedTools.map((rel) => (
+              <a
+                href={`/${rel.slug}`}
+                class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 hover:border-sky-500/50 hover:bg-sky-500/5 transition-all group block space-y-1"
+              >
+                <div class="font-semibold text-xs text-slate-900 dark:text-slate-100 group-hover:text-sky-500 transition-colors">
+                  {rel.name}
+                </div>
+                <div class="text-[11px] text-slate-500 line-clamp-1">
+                  {rel.tagline}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+    </div>
+
+  </div>
+</BaseLayout>
