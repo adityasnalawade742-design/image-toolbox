@@ -120,7 +120,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'rotate-image': {
-    "name": "Rotate Image",
+    "name": "이미지 회전",
     "shortName": "Rotate",
     "tagline": "Online Rotate Image — Fast, private, and client-side processing",
     "seoTitle": "Rotate Image Online Free (KO) — Image Toolbox",
@@ -158,7 +158,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'flip-image': {
-    "name": "Flip Image",
+    "name": "이미지 뒤집기",
     "shortName": "Flip",
     "tagline": "Online Flip Image — Fast, private, and client-side processing",
     "seoTitle": "Flip Image Online Free (KO) — Image Toolbox",
@@ -576,7 +576,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'image-analyzer': {
-    "name": "Image Analyzer",
+    "name": "이미지 분석기",
     "shortName": "Analyzer",
     "tagline": "Online Image Analyzer — Fast, private, and client-side processing",
     "seoTitle": "Image Analyzer Online Free (KO) — Image Toolbox",
@@ -804,7 +804,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'round-image': {
-    "name": "Round Image",
+    "name": "이미지 둥글게 자르기",
     "shortName": "Round Corners",
     "tagline": "Online Round Image — Fast, private, and client-side processing",
     "seoTitle": "Round Image Online Free (KO) — Image Toolbox",
@@ -842,7 +842,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'favicon-generator': {
-    "name": "Favicon Generator",
+    "name": "파비콘 생성기",
     "shortName": "Favicon",
     "tagline": "Online Favicon Generator — Fast, private, and client-side processing",
     "seoTitle": "Favicon Generator Online Free (KO) — Image Toolbox",

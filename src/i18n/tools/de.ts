@@ -120,7 +120,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'rotate-image': {
-    "name": "Rotate Image",
+    "name": "Bild Drehen",
     "shortName": "Rotate",
     "tagline": "Online Rotate Image — Fast, private, and client-side processing",
     "seoTitle": "Rotate Image Online Free (DE) — Image Toolbox",
@@ -158,7 +158,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'flip-image': {
-    "name": "Flip Image",
+    "name": "Bild Spiegeln",
     "shortName": "Flip",
     "tagline": "Online Flip Image — Fast, private, and client-side processing",
     "seoTitle": "Flip Image Online Free (DE) — Image Toolbox",
@@ -576,7 +576,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'image-analyzer': {
-    "name": "Image Analyzer",
+    "name": "Bildanalyse-Tool",
     "shortName": "Analyzer",
     "tagline": "Online Image Analyzer — Fast, private, and client-side processing",
     "seoTitle": "Image Analyzer Online Free (DE) — Image Toolbox",
@@ -804,7 +804,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'round-image': {
-    "name": "Round Image",
+    "name": "Bild Abrunden",
     "shortName": "Round Corners",
     "tagline": "Online Round Image — Fast, private, and client-side processing",
     "seoTitle": "Round Image Online Free (DE) — Image Toolbox",
@@ -842,7 +842,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'favicon-generator': {
-    "name": "Favicon Generator",
+    "name": "Favicon-Generator",
     "shortName": "Favicon",
     "tagline": "Online Favicon Generator — Fast, private, and client-side processing",
     "seoTitle": "Favicon Generator Online Free (DE) — Image Toolbox",

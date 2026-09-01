@@ -124,7 +124,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'rotate-image': {
-    "name": "Rotate Image",
+    "name": "画像を回転・傾き補正",
     "shortName": "Rotate",
     "tagline": "Online Rotate Image — Fast, private, and client-side processing",
     "seoTitle": "Rotate Image Online Free (JA) — Image Toolbox",
@@ -162,7 +162,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'flip-image': {
-    "name": "Flip Image",
+    "name": "画像を反転・ミラー",
     "shortName": "Flip",
     "tagline": "Online Flip Image — Fast, private, and client-side processing",
     "seoTitle": "Flip Image Online Free (JA) — Image Toolbox",
@@ -580,7 +580,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'image-analyzer': {
-    "name": "Image Analyzer",
+    "name": "画像解析・プロパティ確認",
     "shortName": "Analyzer",
     "tagline": "Online Image Analyzer — Fast, private, and client-side processing",
     "seoTitle": "Image Analyzer Online Free (JA) — Image Toolbox",
@@ -808,7 +808,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'round-image': {
-    "name": "Round Image",
+    "name": "画像を丸く切り抜き",
     "shortName": "Round Corners",
     "tagline": "Online Round Image — Fast, private, and client-side processing",
     "seoTitle": "Round Image Online Free (JA) — Image Toolbox",
@@ -846,7 +846,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ]
 },
   'favicon-generator': {
-    "name": "Favicon Generator",
+    "name": "ファビコン作成ツール",
     "shortName": "Favicon",
     "tagline": "Online Favicon Generator — Fast, private, and client-side processing",
     "seoTitle": "Favicon Generator Online Free (JA) — Image Toolbox",
