@@ -1,5 +1,5 @@
-import React from 'react';
-import { BarChart2, CheckCircle2, XCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { BarChart2, CheckCircle2, XCircle, Copy, Check } from 'lucide-react';
 
 interface Props {
   filename: string;
@@ -20,6 +20,8 @@ export function AnalyzerControls({
   height,
   hasTransparency,
 }: Props) {
+  const [copied, setCopied] = useState(false);
+
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
     if (bytes < 1024) return `${bytes} B`;
@@ -53,11 +55,28 @@ export function AnalyzerControls({
     { label: 'Uncompressed RAM', value: `~${uncompressedMem} MB (Raw RGBA)` },
   ];
 
+  const handleCopyReport = () => {
+    const text = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency ? 'Present' : 'None'}`).join('\n');
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 text-xs font-semibold text-ink">
-        <BarChart2 className="w-4 h-4 text-accent-blue" />
-        <span>Technical Image Specifications</span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2 text-xs font-semibold text-ink">
+          <BarChart2 className="w-4 h-4 text-accent-blue" />
+          <span>Technical Specifications</span>
+        </div>
+        <button
+          type="button"
+          onClick={handleCopyReport}
+          className="flex items-center gap-1 text-xs text-mute hover:text-ink transition-colors px-2 py-1 bg-surface-card border border-hairline rounded"
+        >
+          {copied ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
+          <span>{copied ? 'Copied' : 'Copy Report'}</span>
+        </button>
       </div>
 
       <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs">

@@ -26,25 +26,49 @@ export function CropControls({ imgWidth, imgHeight, cropX, cropY, cropW, cropH, 
     onChange({ x, y, width: targetW, height: targetH });
   };
 
-  const presets = [
-    { label: 'Full', action: () => onChange({ x: 0, y: 0, width: imgWidth, height: imgHeight }) },
+  const standardRatios = [
+    { label: 'Original', action: () => onChange({ x: 0, y: 0, width: imgWidth, height: imgHeight }) },
     { label: '1:1 Square', action: () => applyPreset(1, 1) },
-    { label: '4:3', action: () => applyPreset(4, 3) },
-    { label: '16:9', action: () => applyPreset(16, 9) },
-    { label: '9:16 Story', action: () => applyPreset(9, 16) },
+    { label: '4:3 Standard', action: () => applyPreset(4, 3) },
+    { label: '16:9 Widescreen', action: () => applyPreset(16, 9) },
+    { label: '9:16 Vertical', action: () => applyPreset(9, 16) },
+    { label: '2:3 Portrait', action: () => applyPreset(2, 3) },
+  ];
+
+  const socialPresets = [
     { label: 'Avatar (1:1)', action: () => applyPreset(1, 1) },
-    { label: 'Instagram Post (1:1)', action: () => applyPreset(1, 1) },
-    { label: 'YouTube Thumb (16:9)', action: () => applyPreset(16, 9) },
-    { label: 'YouTube Banner (16:9)', action: () => applyPreset(16, 9) },
+    { label: 'IG Post (1:1)', action: () => applyPreset(1, 1) },
+    { label: 'IG Portrait (4:5)', action: () => applyPreset(4, 5) },
+    { label: 'IG Story (9:16)', action: () => applyPreset(9, 16) },
+    { label: 'YT Thumb (16:9)', action: () => applyPreset(16, 9) },
+    { label: 'YT Banner (16:9)', action: () => applyPreset(16, 9) },
+    { label: 'Pinterest Pin (2:3)', action: () => applyPreset(2, 3) },
   ];
 
   return (
     <div className="space-y-4">
-      {/* Quick Presets */}
+      {/* Standard Aspect Ratios */}
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Quick Crop Presets</label>
+        <label className="text-xs font-medium text-body">Standard Aspect Ratios</label>
         <div className="grid grid-cols-3 gap-1.5 text-xs">
-          {presets.map((p) => (
+          {standardRatios.map((p) => (
+            <button
+              key={p.label}
+              type="button"
+              onClick={p.action}
+              className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded-md text-[11px] text-body hover:text-ink transition-colors text-center truncate"
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Social Media Presets */}
+      <div className="space-y-1.5 pt-2 border-t border-hairline">
+        <label className="text-xs font-medium text-body">Social Media Presets</label>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-xs">
+          {socialPresets.map((p) => (
             <button
               key={p.label}
               type="button"
