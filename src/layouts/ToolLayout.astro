@@ -1,0 +1,144 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { ToolWorkspace } from '../components/shared/ToolWorkspace';
+import { getToolBySlug } from '../config/tools';
+import { getLocalizedToolContent } from '../i18n/tools';
+import { getWebApplicationSchema, getBreadcrumbSchema, getFAQSchema } from '../lib/seo/schema';
+import { SITE_CONFIG } from '../config/site';
+import { useTranslations, useTranslatedPath } from '../i18n/utils';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  slug: string;
+  locale?: keyof typeof ui;
+}
+
+const { slug, locale = 'en' } = Astro.props;
+const tool = getToolBySlug(slug);
+
+if (!tool) {
+  return Astro.redirect('/404');
+}
+
+const locContent = getLocalizedToolContent(slug, locale);
+const t = useTranslations(locale);
+const translatePath = useTranslatedPath(locale);
+
+const title = locContent.seoTitle || `${tool.name} — Free Online Tool — Image Toolbox`;
+const description = locContent.seoDescription || tool.description;
+const canonicalUrl = `${SITE_CONFIG.url}${locale === 'en' ? `/${slug}` : `/${locale}/${slug}`}`;
+
+const appSchema = getWebApplicationSchema(locContent.name || tool.name, description, canonicalUrl, locale);
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', url: SITE_CONFIG.url },
+  { name: tool.name, url: canonicalUrl },
+]);
+const faqSchema = getFAQSchema(locContent.faqs || []);
+
+const jsonLd = [appSchema, breadcrumbSchema, faqSchema].filter(Boolean);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  currentSlug={slug}
+  canonicalUrl={canonicalUrl}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-12">
+    <!-- Breadcrumbs & Header -->
+    <div class="space-y-4">
+      <nav class="flex items-center gap-2 text-xs text-mute font-medium">
+        <a href={translatePath('/')} class="hover:text-ink transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-body">{locContent.name || tool.name}</span>
+      </nav>
+
+      <div class="space-y-2">
+        <div class="flex items-center gap-2.5">
+          <h1 class="text-2xl sm:text-4xl font-semibold text-ink tracking-tight">
+            {locContent.name || tool.name}
+          </h1>
+          {tool.badge && (
+            <span class="px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-accent-blue bg-accent-blue-soft rounded-xs">
+              {tool.badge}
+            </span>
+          )}
+        </div>
+        <p class="text-sm text-mute max-w-3xl leading-relaxed">
+          {locContent.tagline || tool.description}
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Interactive Canvas Island -->
+    <ToolWorkspace
+      client:load
+      slug={slug}
+      toolName={locContent.name || tool.name}
+      accept={tool.accept}
+    />
+
+    <!-- How-to Steps -->
+    {locContent.howToSteps && locContent.howToSteps.length > 0 && (
+      <section class="space-y-6 pt-8 border-t border-hairline">
+        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-red"></span>
+          <span>How to use {locContent.name || tool.name}</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {locContent.howToSteps.map((step, idx) => (
+            <div class="p-5 rounded-lg bg-surface border border-hairline space-y-2">
+              <div class="w-6 h-6 rounded-md bg-surface-card border border-hairline flex items-center justify-center text-xs font-mono text-ink">
+                {idx + 1}
+              </div>
+              <h3 class="text-xs font-semibold text-ink">{step.title}</h3>
+              <p class="text-xs text-mute leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Features -->
+    {locContent.features && locContent.features.length > 0 && (
+      <section class="space-y-6 pt-8 border-t border-hairline">
+        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-green"></span>
+          <span>Why use Image Toolbox?</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {locContent.features.map((feature) => (
+            <div class="p-5 rounded-lg bg-surface border border-hairline space-y-1.5">
+              <h3 class="text-xs font-semibold text-body">{feature.title}</h3>
+              <p class="text-xs text-mute leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ Accordion -->
+    {locContent.faqs && locContent.faqs.length > 0 && (
+      <section class="space-y-6 pt-8 border-t border-hairline">
+        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-yellow"></span>
+          <span>Frequently Asked Questions</span>
+        </h2>
+        <div class="space-y-2.5">
+          {locContent.faqs.map((faq) => (
+            <details class="group p-4 rounded-lg bg-surface border border-hairline open:border-hairline-strong transition-colors">
+              <summary class="flex items-center justify-between cursor-pointer list-none text-xs font-medium text-body group-hover:text-ink">
+                <span>{faq.question}</span>
+                <span class="text-ash group-open:rotate-180 transition-transform font-mono text-[10px]">▼</span>
+              </summary>
+              <p class="text-xs text-mute mt-3 leading-relaxed pt-2 border-t border-hairline-soft">
+                {faq.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</BaseLayout>

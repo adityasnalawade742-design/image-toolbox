@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { HomeDropZone } from '../../components/shared/HomeDropZone';
+import { HomeCategoryTools } from '../../components/shared/HomeCategoryTools';
+import { getLocalizedHomeData } from '../../i18n/home';
+import { SUPPORTED_LOCALES } from '../../i18n/locales';
+import { getFAQSchema } from '../../lib/seo/schema';
+import { SITE_CONFIG } from '../../config/site';
+import { SupportedLocale } from '../../i18n/types';
+
+export async function getStaticPaths() {
+  const locales = (Object.keys(SUPPORTED_LOCALES) as SupportedLocale[]).filter((l) => l !== 'en');
+  return locales.map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+const homeData = getLocalizedHomeData(locale as string);
+const faqSchema = getFAQSchema(homeData.faqs);
+const canonicalUrl = `${SITE_CONFIG.url}/${locale}/`;
+---
+
+<BaseLayout
+  title={`${homeData.hero.title} — Image Toolbox`}
+  description={homeData.hero.subtitle}
+  currentSlug=""
+  canonicalUrl={canonicalUrl}
+  jsonLd={faqSchema ? [faqSchema] : undefined}
+>
+  <div class="space-y-20">
+    <!-- Localized Hero Section -->
+    <section class="relative text-center space-y-6 pt-6 sm:pt-10 max-w-4xl mx-auto rounded-2xl p-6 sm:p-10 raycast-hero-stripe border border-hairline-soft">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-elevated border border-hairline text-ink text-xs font-medium">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-red animate-pulse"></span>
+        <span>{homeData.hero.badge}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-semibold text-ink tracking-tight leading-[1.1]">
+        {homeData.hero.title}
+      </h1>
+
+      <p class="text-sm sm:text-base text-mute max-w-2xl mx-auto leading-relaxed">
+        {homeData.hero.subtitle}
+      </p>
+
+      <!-- Localized DropZone -->
+      <div class="pt-4 max-w-3xl mx-auto">
+        <HomeDropZone
+          client:load
+          locale={locale as string}
+          title={homeData.hero.dropzoneTitle}
+          subtitle={homeData.hero.dropzoneSubtitle}
+        />
+      </div>
+    </section>
+
+    <!-- Trust Pillars -->
+    <section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {homeData.trustPillars.map((pillar) => (
+        <div class="p-5 rounded-lg bg-surface border border-hairline hover:border-hairline-strong transition-all space-y-2">
+          <div class="w-8 h-8 rounded-md bg-surface-card border border-hairline flex items-center justify-center text-accent-green text-xs font-bold">
+            ✓
+          </div>
+          <h3 class="text-sm font-semibold text-ink tracking-tight">{pillar.title}</h3>
+          <p class="text-xs text-mute leading-relaxed">{pillar.description}</p>
+        </div>
+      ))}
+    </section>
+
+    <!-- Localized Tools by Category -->
+    <HomeCategoryTools
+      client:load
+      locale={locale as string}
+      categoryNames={homeData.categoryNames}
+    />
+
+    <!-- Localized FAQs -->
+    <section class="space-y-6 pt-8 border-t border-hairline max-w-4xl mx-auto">
+      <h2 class="text-lg sm:text-xl font-semibold text-ink tracking-tight text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-2.5">
+        {homeData.faqs.map((faq) => (
+          <details class="group p-4 rounded-lg bg-surface border border-hairline open:border-hairline-strong transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer list-none text-xs font-medium text-body group-hover:text-ink">
+              <span>{faq.question}</span>
+              <span class="text-ash group-open:rotate-180 transition-transform font-mono text-[10px]">▼</span>
+            </summary>
+            <p class="text-xs text-mute mt-3 leading-relaxed pt-2 border-t border-hairline-soft">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

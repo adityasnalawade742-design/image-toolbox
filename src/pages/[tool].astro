@@ -1,0 +1,14 @@
+---
+import ToolLayout from '../layouts/ToolLayout.astro';
+import { TOOLS } from '../config/tools';
+
+export async function getStaticPaths() {
+  return TOOLS.map((tool) => ({
+    params: { tool: tool.slug },
+  }));
+}
+
+const { tool } = Astro.params;
+---
+
+<ToolLayout slug={tool as string} locale="en" />

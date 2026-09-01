@@ -1,0 +1,60 @@
+---
+import { SITE_CONFIG } from '../../config/site';
+import { LanguageSelector } from './LanguageSelector';
+import { ToolSearch } from '../shared/ToolSearch';
+import { useTranslations, useTranslatedPath } from '../../i18n/utils';
+import { ui } from '../../i18n/ui';
+
+interface Props {
+  locale?: keyof typeof ui;
+  currentSlug?: string;
+}
+
+const { locale = 'en', currentSlug = '' } = Astro.props;
+const t = useTranslations(locale);
+const translatePath = useTranslatedPath(locale);
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-canvas/80 border-b border-hairline">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+    <!-- Brand Logo -->
+    <a href={translatePath('/')} class="flex items-center gap-2.5 group">
+      <div class="w-8 h-8 rounded-md bg-surface-card border border-hairline flex items-center justify-center group-hover:border-accent-red transition-colors">
+        <svg class="w-4 h-4 text-accent-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2v14a2 2 0 0 0 2 2h14"/>
+          <path d="M18 22V8a2 2 0 0 0-2-2H2"/>
+        </svg>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-semibold text-sm text-ink tracking-tight group-hover:text-white transition-colors">
+          Image Toolbox
+        </span>
+        <span class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono font-medium text-mute bg-surface-elevated border border-hairline rounded">
+          Raycast UI
+        </span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="hidden md:flex items-center gap-1">
+      <a href={translatePath('/#edit-transform')} class="px-3 py-1.5 text-xs font-medium text-body hover:text-ink hover:bg-surface-elevated rounded-md transition-colors">
+        {t('nav.edit')}
+      </a>
+      <a href={translatePath('/#optimize-compress')} class="px-3 py-1.5 text-xs font-medium text-body hover:text-ink hover:bg-surface-elevated rounded-md transition-colors">
+        {t('nav.compress')}
+      </a>
+      <a href={translatePath('/#convert-formats')} class="px-3 py-1.5 text-xs font-medium text-body hover:text-ink hover:bg-surface-elevated rounded-md transition-colors">
+        {t('nav.convert')}
+      </a>
+      <a href={translatePath('/#utilities')} class="px-3 py-1.5 text-xs font-medium text-body hover:text-ink hover:bg-surface-elevated rounded-md transition-colors">
+        {t('nav.utilities')}
+      </a>
+    </nav>
+
+    <!-- Search + Language Selector -->
+    <div class="flex items-center gap-2">
+      <ToolSearch client:idle locale={locale} />
+      <LanguageSelector client:idle currentLocale={locale} currentSlug={currentSlug} />
+    </div>
+  </div>
+</header>

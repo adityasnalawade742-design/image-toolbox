@@ -1,0 +1,29 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { TOOLS } from '../../config/tools';
+import { SUPPORTED_LOCALES } from '../../i18n/locales';
+import { SupportedLocale } from '../../i18n/types';
+import { ui } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const nonDefaultLocales = (Object.keys(SUPPORTED_LOCALES) as SupportedLocale[]).filter((l) => l !== 'en');
+  const paths = [];
+
+  for (const locale of nonDefaultLocales) {
+    for (const tool of TOOLS) {
+      paths.push({
+        params: {
+          locale,
+          tool: tool.slug,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { locale, tool } = Astro.params;
+---
+
+<ToolLayout slug={tool as string} locale={locale as keyof typeof ui} />
