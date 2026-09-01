@@ -29,9 +29,10 @@ const description = locContent.seoDescription || tool.description;
 const canonicalUrl = `${SITE_CONFIG.url}${locale === 'en' ? `/${slug}` : `/${locale}/${slug}`}`;
 
 const appSchema = getWebApplicationSchema(locContent.name || tool.name, description, canonicalUrl, locale);
+const homeUrl = `${SITE_CONFIG.url}${translatePath('/')}`;
 const breadcrumbSchema = getBreadcrumbSchema([
-  { name: 'Home', url: SITE_CONFIG.url },
-  { name: tool.name, url: canonicalUrl },
+  { name: 'Home', url: homeUrl },
+  { name: locContent.name || tool.name, url: canonicalUrl },
 ]);
 const faqSchema = getFAQSchema(locContent.faqs || []);
 

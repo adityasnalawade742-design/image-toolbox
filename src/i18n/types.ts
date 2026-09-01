@@ -1,4 +1,4 @@
-export type SupportedLocale = 'en' | 'es' | 'fr' | 'de' | 'pt' | 'it' | 'ja' | 'ko' | 'id';
+export type SupportedLocale = 'en' | 'es' | 'fr' | 'de' | 'pt' | 'it' | 'ja' | 'ko' | 'id' | 'tr';
 
 export interface LocaleInfo {
   code: SupportedLocale;

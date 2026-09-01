@@ -1,4 +1,4 @@
-import type { LocaleInfo, SupportedLocale } from './types';
+import type { LocaleInfo, SupportedLocale } from './types.ts';
 
 export const SUPPORTED_LOCALES: Record<SupportedLocale, LocaleInfo> = {
   en: { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', hrefLang: 'en' },
@@ -10,12 +10,13 @@ export const SUPPORTED_LOCALES: Record<SupportedLocale, LocaleInfo> = {
   ja: { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵', hrefLang: 'ja' },
   ko: { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷', hrefLang: 'ko' },
   id: { code: 'id', name: 'Indonesian', nativeName: 'Bahasa Indonesia', flag: '🇮🇩', hrefLang: 'id' },
+  tr: { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷', hrefLang: 'tr' },
 };
 
 export const DEFAULT_LOCALE: SupportedLocale = 'en';
 
-export function getHreflangLinks(currentSlug: string = '', baseUrl: string = 'https://image-toolbox.aditya-s-nalawade742.workers.dev') {
-  const cleanBase = baseUrl.replace(/\/$/, '');
+export function getHreflangLinks(currentSlug: string = '', baseUrl?: string) {
+  const cleanBase = (baseUrl || (typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/$/, '');
   const cleanSlug = currentSlug.replace(/^\//, '');
 
   const links: { lang: string; href: string }[] = [];

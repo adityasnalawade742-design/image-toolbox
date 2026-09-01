@@ -1,13 +1,14 @@
-import type { LocalizedToolItem } from '../types';
-import { enTools } from './en';
-import { esTools } from './es';
-import { frTools } from './fr';
-import { deTools } from './de';
-import { ptTools } from './pt';
-import { itTools } from './it';
-import { jaTools } from './ja';
-import { koTools } from './ko';
-import { idTools } from './id';
+import type { LocalizedToolItem } from '../types.ts';
+import { enTools } from './en.ts';
+import { esTools } from './es.ts';
+import { frTools } from './fr.ts';
+import { deTools } from './de.ts';
+import { ptTools } from './pt.ts';
+import { itTools } from './it.ts';
+import { jaTools } from './ja.ts';
+import { koTools } from './ko.ts';
+import { idTools } from './id.ts';
+import { trTools } from './tr.ts';
 
 const TOOL_DICTIONARIES: Record<string, Record<string, LocalizedToolItem>> = {
   en: enTools,
@@ -19,6 +20,7 @@ const TOOL_DICTIONARIES: Record<string, Record<string, LocalizedToolItem>> = {
   ja: jaTools,
   ko: koTools,
   id: idTools,
+  tr: trTools,
 };
 
 export function getLocalizedToolContent(slug: string, locale: string = 'en'): LocalizedToolItem {
@@ -42,4 +44,4 @@ export function getAllLocalizedTools(locale: string = 'en'): Record<string, Loca
   return TOOL_DICTIONARIES[loc] || TOOL_DICTIONARIES.en;
 }
 
-export { enTools, esTools, frTools, deTools, ptTools, itTools, jaTools, koTools, idTools };
+export { enTools, esTools, frTools, deTools, ptTools, itTools, jaTools, koTools, idTools, trTools };

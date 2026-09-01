@@ -8,6 +8,7 @@ export const languages = {
   ja: '日本語',
   ko: '한국어',
   id: 'Bahasa Indonesia',
+  tr: 'Türkçe',
 } as const;
 
 export const defaultLang = 'en' as const;
@@ -211,6 +212,28 @@ export const ui = {
     'workspace.processed': 'Diproses',
     'footer.privacy': '100% Privasi di Browser: Foto Anda diproses secara lokal dan tidak pernah diunggah ke server mana pun.',
     'footer.rights': 'Hak cipta dilindungi.',
+  },
+  tr: {
+    'nav.allTools': 'Tüm Araçlar',
+    'nav.edit': 'Düzenle',
+    'nav.compress': 'Sıkıştır',
+    'nav.convert': 'Dönüştür',
+    'nav.utilities': 'Araçlar',
+    'search.placeholder': '27 hassas resim aracında ara... (Ctrl+K)',
+    'search.noResults': 'Eşleşen araç bulunamadı.',
+    'dropzone.title': 'Resimlerinizi buraya sürükleyin veya seçmek için tıklayın',
+    'dropzone.subtitle': 'PNG, JPG, WebP, SVG, AVIF desteklenir — %100 tarayıcı içi güvenli işleme',
+    'dropzone.button': 'Resim Seç',
+    'banner.message': 'İngilizce görüntülüyorsunuz. Türkçe sürümüne geçmek ister misiniz?',
+    'banner.switch': 'Değiştir',
+    'banner.dismiss': 'Kapat',
+    'workspace.uploadNew': 'Farklı Resim Yükle',
+    'workspace.download': 'İşlenmiş Resmi İndir',
+    'workspace.processing': 'İşleniyor...',
+    'workspace.original': 'Orijinal',
+    'workspace.processed': 'İşlendi',
+    'footer.privacy': '%100 Tarayıcı İçi Gizlilik: Fotoğraflarınız yalnızca cihazınızda işlenir ve hiçbir zaman harici bir sunucuya yüklenmez.',
+    'footer.rights': 'Tüm hakları saklıdır.',
   },
 } as const;
 

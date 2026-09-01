@@ -27,6 +27,7 @@ export function LanguageBanner({ currentLocale = 'en', currentSlug = '' }: Props
     else if (browserLang.startsWith('ja')) detectedCode = 'ja';
     else if (browserLang.startsWith('ko')) detectedCode = 'ko';
     else if (browserLang.startsWith('id')) detectedCode = 'id';
+    else if (browserLang.startsWith('tr')) detectedCode = 'tr';
 
     if (detectedCode && detectedCode !== currentLocale && languages[detectedCode as keyof typeof languages]) {
       setSuggestion({

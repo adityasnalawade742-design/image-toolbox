@@ -1,8 +1,8 @@
-import type { LocalizedHomeData, SupportedLocale } from '../types';
-import { enHome } from './en';
-import { esHome } from './es';
-import { frHome } from './fr';
-import { deHome, ptHome, itHome, jaHome, koHome, idHome } from './others';
+import type { LocalizedHomeData, SupportedLocale } from '../types.ts';
+import { enHome } from './en.ts';
+import { esHome } from './es.ts';
+import { frHome } from './fr.ts';
+import { deHome, ptHome, itHome, jaHome, koHome, idHome, trHome } from './others.ts';
 
 const HOME_DICTIONARIES: Record<SupportedLocale, LocalizedHomeData> = {
   en: enHome,
@@ -14,6 +14,7 @@ const HOME_DICTIONARIES: Record<SupportedLocale, LocalizedHomeData> = {
   ja: jaHome,
   ko: koHome,
   id: idHome,
+  tr: trHome,
 };
 
 export function getLocalizedHomeData(locale: string = 'en'): LocalizedHomeData {

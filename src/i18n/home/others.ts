@@ -161,3 +161,30 @@ export const idHome: LocalizedHomeData = {
     { question: 'Format apa saja yang didukung?', answer: 'Mendukung PNG, JPG, WebP, SVG, AVIF, GIF, dan ICO.' },
   ],
 };
+
+export const trHome: LocalizedHomeData = {
+  hero: {
+    badge: '🔒 %100 Tarayıcı İçi Güvenli Resim İşleme',
+    title: 'Hassas Resim Araçları, Doğrudan Tarayıcınızda',
+    subtitle: 'Sunucuya hiçbir şey yüklemeden fotoğraflarınızı anında kırpın, boyutlandırın, sıkıştırın, dönüştürün ve inceleyin.',
+    dropzoneTitle: 'Resimlerinizi Buraya Sürükleyip Bırakın',
+    dropzoneSubtitle: 'veya seçmek için tıklayın • PNG, JPG, WebP, SVG, AVIF, GIF',
+  },
+  trustPillars: [
+    { title: 'Sıfır Sunucu Yüklemesi', description: 'Tüm resim işleme işlemleri doğrudan cihazınızdaki HTML5 Canvas üzerinde gerçekleşir.', icon: 'ShieldCheck' },
+    { title: 'Kayıpsız Hassasiyet', description: 'Donanım hızlandırmalı modern algoritmalar ile en yüksek netlik korunur.', icon: 'Sparkles' },
+    { title: 'Anında Hız', description: 'Ağ bekleme süresi, internet trafiği veya yükleme kuyrukları olmadan ışık hızında.', icon: 'Zap' },
+  ],
+  categoryNames: {
+    'edit-transform': 'Düzenle ve Dönüştür',
+    'optimize-compress': 'Optimize Et ve Sıkıştır',
+    'convert-formats': 'Format Dönüştür',
+    'utilities': 'İnceleme ve Araçlar',
+    'developer': 'Geliştirici Araçları',
+  },
+  faqs: [
+    { question: 'Resimlerim herhangi bir sunucuya yükleniyor mu?', answer: 'Hayır. Image Toolbox %100 istemci tarafında çalışır. Fotoğraflarınız asla cihazınızdan dışarı çıkmaz.' },
+    { question: 'Kullanım veya boyut sınırı var mı?', answer: 'Hayır. İstediğiniz kadar görseli hiçbir ücret ödemeden ve sınırsızca işleyebilirsiniz.' },
+    { question: 'Hangi resim formatları destekleniyor?', answer: 'PNG, JPG, WebP, SVG, AVIF, GIF ve ICO formatları tam olarak desteklenmektedir.' },
+  ],
+};
