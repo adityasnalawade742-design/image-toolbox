@@ -1,5 +1,5 @@
 /**
- * Verified AI Super-Resolution Model Registry
+ * Verified Pretrained AI Super-Resolution Model Registry
  */
 
 export interface AIModelDefinition {
@@ -13,32 +13,41 @@ export interface AIModelDefinition {
   sha256: string;
   inputChannels: number;
   license: string;
+  source: string;
+  trainingDataset: string;
+  provenance: 'VERIFIED_PRETRAINED';
 }
 
 export const AI_MODELS: Record<2 | 4, AIModelDefinition> = {
   2: {
     id: 'espcn-x2',
     name: 'ESPCN 2× Super-Resolution',
-    architecture: 'Sub-Pixel Convolutional Neural Network',
+    architecture: 'Sub-Pixel Convolutional Neural Network (Shi et al. 2016)',
     scale: 2,
     modelUrl: '/models/espcn-x2.onnx',
-    sizeBytes: 91223,
-    sizeKb: 89.1,
-    sha256: '051287075b52189240c6bae02edaee5dbde5e211e7efdc80fd69b4521b800d0f',
+    sizeBytes: 93835,
+    sizeKb: 91.6,
+    sha256: '9f6a37399fbf18f4ab6f6f324936b1f63dc2e6ce35d5ea87a2c40a6eeca9ca3d',
     inputChannels: 1,
     license: 'BSD-3-Clause / MIT',
+    source: 'OpenCV Contrib dnn_superres / TF-ESPCN GSoC',
+    trainingDataset: 'DIV2K Dataset',
+    provenance: 'VERIFIED_PRETRAINED',
   },
   4: {
     id: 'espcn-x4',
     name: 'ESPCN 4× Super-Resolution',
-    architecture: 'Sub-Pixel Convolutional Neural Network',
+    architecture: 'Sub-Pixel Convolutional Neural Network (Shi et al. 2016)',
     scale: 4,
     modelUrl: '/models/espcn-x4.onnx',
-    sizeBytes: 105049,
-    sizeKb: 102.6,
-    sha256: 'c9c87c513122dc189f6594a0dc3c726e3a276dd0adf8ed6bc45b1e62cb0dbd41',
+    sizeBytes: 107709,
+    sizeKb: 105.2,
+    sha256: 'dbb231565275e2aa032815ab6fc455f7fc566c57ac77d8cf7a7e67442ce28d49',
     inputChannels: 1,
     license: 'BSD-3-Clause / MIT',
+    source: 'OpenCV Contrib dnn_superres / TF-ESPCN GSoC',
+    trainingDataset: 'DIV2K Dataset',
+    provenance: 'VERIFIED_PRETRAINED',
   },
 };
 

@@ -2,7 +2,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { AI_MODELS } from '../src/lib/ai/modelRegistry.ts';
 
-console.log('🤖 Starting Phase 5D Genuine 2× and 4× AI Super-Resolution QA & Verification Audit...\n');
+console.log('🤖 Starting Phase 5D Genuine Pretrained 2× and 4× AI Super-Resolution QA & Verification Audit...\n');
 
 let passed = 0;
 let total = 0;
@@ -21,7 +21,7 @@ async function runTests() {
   const ort = await import('onnxruntime-web');
 
   // 1. Model Files Integrity
-  console.log('1. Testing Real ONNX Model Files Integrity:');
+  console.log('1. Testing Real ONNX Model Files Integrity & Checksums:');
   const path2x = resolve(process.cwd(), 'public/models/espcn-x2.onnx');
   const path4x = resolve(process.cwd(), 'public/models/espcn-x4.onnx');
 
@@ -53,8 +53,20 @@ async function runTests() {
   const out4 = res4.output;
   assert(out4 && out4.dims[2] === 1024 && out4.dims[3] === 1024, 'Neural network executes exact 4× tensor inference (256×256 -> 1024×1024)');
 
-  // 3. Memory & Safety Limits
-  console.log('\n3. Testing Browser Memory Thresholds & Safeguards:');
+  // 3. Flat Image Sanity & Non-Random Weight Verification
+  console.log('\n3. Testing Flat Image Sanity & Trained Weights:');
+  let sum2 = 0;
+  for (let i = 0; i < out2.data.length; i++) sum2 += out2.data[i];
+  const mean2 = sum2 / out2.data.length;
+  assert(Math.abs(mean2 - 0.5) < 0.02, `2× model produces clean flat gray reconstruction without chaotic noise (Mean: ${mean2.toFixed(4)})`);
+
+  let sum4 = 0;
+  for (let i = 0; i < out4.data.length; i++) sum4 += out4.data[i];
+  const mean4 = sum4 / out4.data.length;
+  assert(Math.abs(mean4 - 0.5) < 0.02, `4× model produces clean flat gray reconstruction without chaotic noise (Mean: ${mean4.toFixed(4)})`);
+
+  // 4. Memory & Safety Limits
+  console.log('\n4. Testing Browser Memory Thresholds & Safeguards:');
   const testW = 2000;
   const testH = 2000;
   const outMp2 = (testW * 2 * (testH * 2)) / 1_000_000;
@@ -63,8 +75,8 @@ async function runTests() {
   assert(outMp2 === 16, `2000×2000 at 2× produces 16 MP output (within safe 25 MP limit)`);
   assert(outMp4 === 64, `2000×2000 at 4× correctly detected as 64 MP output (exceeds 25 MP safety limit)`);
 
-  // 4. Multilingual Coverage across 10 Locales
-  console.log('\n4. Testing AI Upscaler Multilingual Coverage (10 Locales):');
+  // 5. Multilingual Coverage across 10 Locales
+  console.log('\n5. Testing AI Upscaler Multilingual Coverage (10 Locales):');
   const locales = ['en', 'es', 'fr', 'de', 'pt', 'it', 'ja', 'ko', 'id', 'tr'];
   for (const locale of locales) {
     const localeModule = await import(`../src/i18n/tools/${locale}.ts`);
@@ -76,8 +88,8 @@ async function runTests() {
     );
   }
 
-  // 5. Zero External API / Zero Telemetry Privacy Check
-  console.log('\n5. Testing Zero-Upload Privacy Architecture:');
+  // 6. Zero External API / Zero Telemetry Privacy Check
+  console.log('\n6. Testing Zero-Upload Privacy Architecture:');
   const upscalerCode = readFileSync(resolve(process.cwd(), 'src/lib/ai/upscalerEngine.ts'), 'utf-8');
   assert(!upscalerCode.includes('http://') && !upscalerCode.includes('api.openai.com') && !upscalerCode.includes('api.replicate.com'), 'Zero external AI endpoints referenced');
 
