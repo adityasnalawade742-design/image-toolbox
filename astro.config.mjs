@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://imagetoolbox.com',
+  site: 'https://image-toolbox.aditya-s-nalawade742.workers.dev',
   output: 'static',
   integrations: [
     react(),
