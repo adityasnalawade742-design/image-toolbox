@@ -1,118 +1,110 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
-  Download,
+  UploadCloud,
   Sparkles,
-  Zap,
+  Download,
   ShieldCheck,
-  Cpu,
-  AlertTriangle,
-  RotateCcw,
-  Sliders,
+  RefreshCw,
+  Zap,
+  Info,
   XCircle,
-  Layers,
 } from 'lucide-react';
-import {
-  validateUpscalerInput,
-  runAiSuperResolution,
-  runStandardCanvasUpscale,
-} from '../../lib/ai/upscalerEngine';
-import type {
-  UpscaleProgress,
-  UpscaleResult,
-} from '../../lib/ai/upscalerEngine';
-import { loadImage, downloadBlob } from '../../lib/canvas/engine';
+import { runAiSuperResolution, runStandardCanvasUpscale, type UpscaleResult } from '../../lib/ai/upscalerEngine.ts';
+import { getAIModel } from '../../lib/ai/modelRegistry.ts';
 
 export function AiUpscalerWorkspace() {
-  const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
-  const [filename, setFilename] = useState<string>('image');
-  const [origW, setOrigW] = useState<number>(0);
-  const [origH, setOrigH] = useState<number>(0);
-
-  // Settings & Modes
-  const [processingMode, setProcessingMode] = useState<'ai' | 'standard'>('ai');
-  const [standardScale, setStandardScale] = useState<2 | 4>(2);
-  const [format, setFormat] = useState<'image/png' | 'image/webp' | 'image/jpeg'>('image/png');
-  const [viewMode, setViewMode] = useState<'split' | 'side-by-side'>('split');
-  const [splitPos, setSplitPos] = useState<number>(50);
-
-  // Progress & Execution
-  const [progress, setProgress] = useState<UpscaleProgress>({
-    stage: 'idle',
-    percent: 0,
-    message: '',
-  });
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [engine, setEngine] = useState<'ai-neural' | 'standard-canvas'>('ai-neural');
+  const [scale, setScale] = useState<2 | 4>(2);
+  const [progressMsg, setProgressMsg] = useState<string>('');
+  const [progressPercent, setProgressPercent] = useState<number>(0);
   const [result, setResult] = useState<UpscaleResult | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [sliderPos, setSliderPos] = useState<number>(50);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const splitContainerRef = useRef<HTMLDivElement>(null);
-  const isDraggingSplitRef = useRef(false);
   const abortControllerRef = useRef<AbortController | null>(null);
+  const previewCanvasRef = useRef<HTMLCanvasElement>(null);
 
-  const handleFile = async (file: File) => {
-    try {
-      setErrorMessage(null);
-      setResult(null);
-      setProgress({ stage: 'idle', percent: 0, message: '' });
+  // Clean up object URLs
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []);
 
-      if (file.size > 50 * 1024 * 1024) {
-        setErrorMessage('File size exceeds 50 MB limit.');
+  const handleFileSelect = (file: File) => {
+    if (!file.type.startsWith('image/')) {
+      setErrorMsg('Please select a valid image file (PNG, JPG, WebP).');
+      return;
+    }
+    setErrorMsg(null);
+    setSelectedFile(file);
+    setResult(null);
+
+    const img = new Image();
+    img.onload = () => {
+      if (img.width < 16 || img.height < 16) {
+        setErrorMsg('Image is too small (minimum 16×16 px).');
+        setSelectedFile(null);
+        setImgElement(null);
         return;
       }
+      setImgElement(img);
+    };
+    img.src = URL.createObjectURL(file);
+  };
 
-      setFilename(file.name.replace(/\.[^/.]+$/, ''));
-
-      const img = await loadImage(file);
-      setImageElement(img);
-
-      const nw = img.naturalWidth || img.width;
-      const nh = img.naturalHeight || img.height;
-      setOrigW(nw);
-      setOrigH(nh);
-
-      const validation = validateUpscalerInput(nw, nh, processingMode === 'ai' ? 3 : standardScale);
-      if (!validation.isValid) {
-        setErrorMessage(validation.error || 'Image resolution not supported');
-      }
-    } catch {
-      setErrorMessage('Failed to decode image.');
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFileSelect(e.dataTransfer.files[0]);
     }
   };
 
-  const handleStartUpscale = async () => {
-    if (!imageElement) return;
+  const handleProcess = async () => {
+    if (!imgElement) return;
+
+    setIsProcessing(true);
+    setErrorMsg(null);
+    setProgressPercent(5);
+    setProgressMsg('Initializing upscale process...');
+
+    const abortController = new AbortController();
+    abortControllerRef.current = abortController;
 
     try {
-      setIsProcessing(true);
-      setErrorMessage(null);
-      abortControllerRef.current = new AbortController();
-
-      let res: UpscaleResult;
-
-      if (processingMode === 'ai') {
-        res = await runAiSuperResolution(
-          imageElement,
-          abortControllerRef.current.signal,
-          (p) => setProgress(p)
+      if (engine === 'ai-neural') {
+        const res = await runAiSuperResolution(
+          imgElement,
+          scale,
+          abortController.signal,
+          (_curr, _total, percent, msg) => {
+            setProgressPercent(percent);
+            setProgressMsg(msg);
+          }
         );
+        setResult(res);
       } else {
-        res = await runStandardCanvasUpscale(
-          imageElement,
-          standardScale,
-          (p) => setProgress(p)
-        );
+        setProgressMsg('Executing 2D bicubic interpolation...');
+        setProgressPercent(50);
+        const res = await runStandardCanvasUpscale(imgElement, scale);
+        setProgressPercent(100);
+        setResult(res);
       }
-
-      setResult(res);
-      setIsProcessing(false);
     } catch (err: any) {
-      setIsProcessing(false);
-      if (err.message?.includes('cancelled')) {
-        setProgress({ stage: 'idle', percent: 0, message: 'Processing cancelled by user' });
+      if (abortController.signal.aborted || err?.message?.includes('cancelled')) {
+        setProgressMsg('Operation cancelled by user.');
       } else {
-        setErrorMessage(err.message || 'An error occurred during super-resolution');
+        setErrorMsg(err.message || 'An error occurred during upscaling.');
       }
+    } finally {
+      setIsProcessing(false);
+      abortControllerRef.current = null;
     }
   };
 
@@ -122,409 +114,342 @@ export function AiUpscalerWorkspace() {
     }
   };
 
-  const handleDownload = () => {
+  const handleDownload = (format: 'png' | 'jpeg' | 'webp' = 'png') => {
     if (!result) return;
-    const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-    downloadBlob(result.blob, `${filename}-${result.scale}x-${result.mode}.${ext}`);
+    const link = document.createElement('a');
+    link.download = `upscaled-${scale}x-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
+    link.href = result.canvas.toDataURL(`image/${format}`, 0.95);
+    link.click();
   };
 
-  // Split view dragging
-  const handleMouseDown = () => {
-    isDraggingSplitRef.current = true;
-  };
+  // Render canvas preview
+  useEffect(() => {
+    if (result && previewCanvasRef.current) {
+      const cvs = previewCanvasRef.current;
+      cvs.width = result.width;
+      cvs.height = result.height;
+      const ctx = cvs.getContext('2d');
+      if (ctx) {
+        ctx.drawImage(result.canvas, 0, 0);
+      }
+    }
+  }, [result]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDraggingSplitRef.current || !splitContainerRef.current) return;
-    const rect = splitContainerRef.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
-    const pct = Math.round((x / rect.width) * 100);
-    setSplitPos(pct);
-  };
-
-  const handleMouseUp = () => {
-    isDraggingSplitRef.current = false;
-  };
-
-  const effectiveScale = processingMode === 'ai' ? 3 : standardScale;
-  const validation = origW > 0 ? validateUpscalerInput(origW, origH, effectiveScale) : null;
+  const activeModel = getAIModel(scale);
 
   return (
-    <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-6">
-      {/* Top Architecture & Privacy Badge */}
-      <div className="flex flex-wrap items-center justify-between gap-3 px-3 py-2 bg-surface-elevated border border-hairline rounded-lg text-xs">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-accent-blue shrink-0" />
-          <span className="font-medium text-ink">
-            {result?.provider || 'Real ONNX Neural Super-Resolution & Fast Canvas Upscaler'}
-          </span>
-        </div>
-
-        <div className="flex items-center gap-2 text-mute">
-          <ShieldCheck className="w-3.5 h-3.5 text-accent-green" />
-          <span>100% Client-Side In-Browser • Zero Server Uploads</span>
-        </div>
-      </div>
-
-      {errorMessage && (
-        <div className="flex items-center gap-2 p-3 bg-accent-red/10 border border-accent-red/20 rounded-lg text-xs text-accent-red">
-          <AlertTriangle className="w-4 h-4 shrink-0" />
-          <span>{errorMessage}</span>
-        </div>
-      )}
-
-      {!imageElement ? (
-        /* Empty Upload Dropzone */
+    <div className="w-full max-w-5xl mx-auto space-y-6">
+      {/* Upload Drop Zone */}
+      {!selectedFile && (
         <div
           onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
-          }}
+          onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
-          className="border border-dashed border-hairline hover:border-hairline-strong rounded-lg p-12 sm:p-16 text-center cursor-pointer bg-surface-elevated/40 hover:bg-surface-elevated transition-all flex flex-col items-center justify-center space-y-4"
+          className="border-2 border-dashed border-gray-700 hover:border-primary-500 rounded-2xl p-12 text-center cursor-pointer transition-all duration-200 bg-gray-900/50 hover:bg-gray-800/50 group"
         >
           <input
             ref={fileInputRef}
             type="file"
             accept="image/png,image/jpeg,image/webp"
             className="hidden"
-            onChange={(e) => {
-              if (e.target.files?.[0]) handleFile(e.target.files[0]);
-            }}
+            onChange={(e) => e.target.files?.[0] && handleFileSelect(e.target.files[0])}
           />
-          <div className="w-12 h-12 rounded-lg bg-surface-card border border-hairline flex items-center justify-center text-accent-blue">
-            <Sparkles className="w-6 h-6" />
+          <div className="w-16 h-16 rounded-full bg-primary-950/60 text-primary-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <UploadCloud className="w-8 h-8" />
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-ink tracking-tight">
-              Select or Drop an Image for Super-Resolution
-            </h3>
-            <p className="text-xs text-mute mt-1">
-              Supports PNG, JPG, WebP • Real ONNX Neural Super-Resolution & Fast Standard Upscaling
-            </p>
+          <h3 className="text-xl font-bold text-white mb-2">Upload Image to Upscale</h3>
+          <p className="text-gray-400 text-sm max-w-md mx-auto mb-4">
+            Drag and drop your image here, or click to browse. Supports JPG, PNG, and WebP.
+          </p>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-300 border border-gray-700">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>100% Private — Image never leaves your device</span>
           </div>
-          <button
-            type="button"
-            className="px-4 py-2 rounded-md bg-white text-black font-medium text-xs hover:bg-neutral-200 transition-colors"
-          >
-            Choose Image
-          </button>
         </div>
-      ) : (
-        /* Active Workbench */
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Canvas / Comparison Viewer (7 Cols) */}
-          <div className="lg:col-span-7 space-y-3">
-            <div
-              ref={splitContainerRef}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseUp}
-              className="relative rounded-lg border border-hairline overflow-hidden canvas-checkerboard flex items-center justify-center min-h-[380px] max-h-[550px] select-none"
-            >
+      )}
+
+      {/* Main Workspace */}
+      {selectedFile && imgElement && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Controls Sidebar */}
+          <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5">
+            <div>
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-primary-400" />
+                Upscale Configuration
+              </h3>
+              <p className="text-xs text-gray-400 mt-1">
+                Original: {imgElement.width} × {imgElement.height} px
+              </p>
+            </div>
+
+            {/* Engine Selection */}
+            <div className="space-y-2">
+              <label className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                Processing Mode
+              </label>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEngine('ai-neural')}
+                  className={`p-3 rounded-xl border text-left transition-all ${
+                    engine === 'ai-neural'
+                      ? 'border-primary-500 bg-primary-950/40 text-white'
+                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-1.5 font-bold text-sm">
+                    <Sparkles className="w-4 h-4 text-primary-400" />
+                    <span>AI Neural</span>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">ONNX Runtime Web</p>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setEngine('standard-canvas')}
+                  className={`p-3 rounded-xl border text-left transition-all ${
+                    engine === 'standard-canvas'
+                      ? 'border-amber-500 bg-amber-950/40 text-white'
+                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-1.5 font-bold text-sm">
+                    <Zap className="w-4 h-4 text-amber-400" />
+                    <span>Standard</span>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">Fast 2D Bicubic</p>
+                </button>
+              </div>
+            </div>
+
+            {/* Scale Factor Selection */}
+            <div className="space-y-2">
+              <label className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                Scale Factor
+              </label>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setScale(2)}
+                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all ${
+                    scale === 2
+                      ? 'border-primary-500 bg-primary-600 text-white'
+                      : 'border-gray-800 bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  2× Scale ({imgElement.width * 2}×{imgElement.height * 2})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setScale(4)}
+                  className={`py-2.5 px-4 rounded-xl border font-bold text-sm transition-all ${
+                    scale === 4
+                      ? 'border-primary-500 bg-primary-600 text-white'
+                      : 'border-gray-800 bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  4× Scale ({imgElement.width * 4}×{imgElement.height * 4})
+                </button>
+              </div>
+            </div>
+
+            {/* Model & Architecture Details */}
+            {engine === 'ai-neural' && (
+              <div className="p-3.5 rounded-xl bg-gray-800/60 border border-gray-700/60 text-xs space-y-2">
+                <div className="flex items-center justify-between text-gray-300">
+                  <span className="text-gray-400">Model:</span>
+                  <span className="font-semibold text-white">{activeModel.name}</span>
+                </div>
+                <div className="flex items-center justify-between text-gray-300">
+                  <span className="text-gray-400">Download Size:</span>
+                  <span className="font-mono text-emerald-400">{activeModel.sizeKb} KB (Cached locally)</span>
+                </div>
+                <div className="flex items-center justify-between text-gray-300">
+                  <span className="text-gray-400">Inference:</span>
+                  <span className="text-primary-300">In-Browser Tensor Ops</span>
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="space-y-2 pt-2">
+              {!isProcessing ? (
+                <button
+                  type="button"
+                  onClick={handleProcess}
+                  className="w-full py-3.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer"
+                >
+                  <Sparkles className="w-5 h-5" />
+                  <span>Start {engine === 'ai-neural' ? 'Neural' : 'Standard'} Upscale</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleCancel}
+                  className="w-full py-3.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                >
+                  <XCircle className="w-5 h-5" />
+                  <span>Cancel Inference</span>
+                </button>
+              )}
+
+              <button
+                type="button"
+                disabled={isProcessing}
+                onClick={() => {
+                  setSelectedFile(null);
+                  setImgElement(null);
+                  setResult(null);
+                  setErrorMsg(null);
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm font-medium transition-all"
+              >
+                Choose Different Image
+              </button>
+            </div>
+
+            {/* Progress Display */}
+            {isProcessing && (
+              <div className="p-4 rounded-xl bg-gray-950 border border-gray-800 space-y-3 animate-pulse">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-gray-300 font-medium">{progressMsg}</span>
+                  <span className="text-primary-400 font-mono font-bold">{progressPercent}%</span>
+                </div>
+                <div className="w-full h-2 rounded-full bg-gray-800 overflow-hidden">
+                  <div
+                    className="h-full bg-primary-500 transition-all duration-200"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {errorMsg && (
+              <div className="p-3.5 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-200 text-xs flex items-start gap-2">
+                <Info className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                <span>{errorMsg}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Preview & Comparison Area */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="relative min-h-[420px] bg-gray-950 border border-gray-800 rounded-2xl overflow-hidden flex items-center justify-center p-4">
               {result ? (
-                viewMode === 'split' ? (
-                  /* Split Before / After Slider */
-                  <div className="relative w-full h-full flex items-center justify-center min-h-[380px] max-h-[550px] p-2">
+                <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
+                  {/* Split Comparison Viewer */}
+                  <div className="relative w-full max-w-2xl aspect-video bg-gray-900 rounded-xl overflow-hidden border border-gray-800 select-none">
+                    {/* Before (Original) */}
                     <img
-                      src={result.canvas.toDataURL()}
-                      alt="Upscaled Result"
-                      className="max-w-full max-h-[500px] object-contain rounded"
+                      src={imgElement.src}
+                      alt="Original"
+                      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                     />
 
+                    {/* After (Upscaled) with Clip Path */}
                     <div
-                      style={{ clipPath: `polygon(0 0, ${splitPos}% 0, ${splitPos}% 100%, 0 100%)` }}
-                      className="absolute inset-0 flex items-center justify-center p-2"
+                      className="absolute inset-0 overflow-hidden"
+                      style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
                     >
-                      <img
-                        src={imageElement.src}
-                        alt="Original"
-                        className="max-w-full max-h-[500px] object-contain rounded"
+                      <canvas
+                        ref={previewCanvasRef}
+                        className="w-full h-full object-contain pointer-events-none"
                       />
                     </div>
 
+                    {/* Draggable Divider */}
                     <div
-                      style={{ left: `${splitPos}%` }}
-                      onMouseDown={handleMouseDown}
-                      className="absolute top-0 bottom-0 w-0.5 bg-white cursor-ew-resize flex items-center justify-center z-20 shadow-2xl"
+                      className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-2xl flex items-center justify-center"
+                      style={{ left: `${sliderPos}%` }}
                     >
-                      <div className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center text-[10px] font-bold shadow-lg">
+                      <div className="w-6 h-6 rounded-full bg-white text-gray-900 shadow-md flex items-center justify-center text-xs font-bold">
                         ↔
                       </div>
                     </div>
 
-                    <div className="absolute top-4 left-4 px-2 py-1 bg-canvas/80 backdrop-blur rounded text-[10px] font-mono text-mute border border-hairline pointer-events-none">
-                      Original ({origW}×{origH})
-                    </div>
-                    <div className="absolute top-4 right-4 px-2 py-1 bg-canvas/80 backdrop-blur rounded text-[10px] font-mono text-accent-green border border-hairline pointer-events-none">
-                      {result.mode === 'ai' ? 'Neural AI' : 'Standard'} {result.scale}× ({result.outputWidth}×{result.outputHeight})
-                    </div>
-                  </div>
-                ) : (
-                  /* Side-by-Side View */
-                  <div className="grid grid-cols-2 gap-3 w-full p-3 items-center">
-                    <div className="space-y-1.5 text-center">
-                      <img src={imageElement.src} alt="Original" className="max-h-[350px] mx-auto rounded border border-hairline" />
-                      <span className="text-[11px] font-mono text-mute">Original ({origW}×{origH})</span>
-                    </div>
-                    <div className="space-y-1.5 text-center">
-                      <img src={result.canvas.toDataURL()} alt="Upscaled" className="max-h-[350px] mx-auto rounded border border-hairline shadow-lg" />
-                      <span className="text-[11px] font-mono text-accent-green">
-                        {result.mode === 'ai' ? 'Neural AI' : 'Standard'} {result.scale}× ({result.outputWidth}×{result.outputHeight})
-                      </span>
-                    </div>
-                  </div>
-                )
-              ) : (
-                /* Pre-inference Preview */
-                <div className="p-4 flex flex-col items-center justify-center text-center space-y-3">
-                  <img
-                    src={imageElement.src}
-                    alt="Original Preview"
-                    className="max-w-full max-h-[420px] object-contain rounded shadow-2xl"
-                  />
-                  <div className="text-xs text-mute font-mono">
-                    Ready to upscale: {origW} × {origH} px → {validation?.outputWidth} × {validation?.outputHeight} px ({effectiveScale}×)
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* View Mode & Reset Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 px-3 py-2 bg-surface-elevated border border-hairline rounded-md text-xs font-mono text-mute">
-              <div className="flex items-center gap-2">
-                {result && (
-                  <div className="flex items-center gap-1 bg-surface-card rounded p-0.5 border border-hairline">
-                    <button
-                      type="button"
-                      onClick={() => setViewMode('split')}
-                      className={`px-2 py-1 rounded text-[11px] ${viewMode === 'split' ? 'bg-surface text-ink font-semibold' : 'text-mute hover:text-ink'}`}
-                    >
-                      Split View
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setViewMode('side-by-side')}
-                      className={`px-2 py-1 rounded text-[11px] ${viewMode === 'side-by-side' ? 'bg-surface text-ink font-semibold' : 'text-mute hover:text-ink'}`}
-                    >
-                      Side by Side
-                    </button>
-                  </div>
-                )}
-                <span>Memory Peak: ~{validation?.memoryEstimateMb || 10} MB</span>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setImageElement(null);
-                  setResult(null);
-                }}
-                className="text-[11px] text-mute hover:text-ink transition-colors flex items-center gap-1"
-              >
-                <RotateCcw className="w-3 h-3" />
-                <span>Upload New Image</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Right Controls & Model Parameters (5 Cols) */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-ink flex items-center gap-2">
-                <Sliders className="w-3.5 h-3.5 text-accent-blue" />
-                <span>Super-Resolution Settings</span>
-              </h4>
-
-              {/* Mode Selection */}
-              <div className="space-y-2">
-                <label className="text-xs font-medium text-body">Inference Engine</label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    disabled={isProcessing}
-                    onClick={() => setProcessingMode('ai')}
-                    className={`py-2 px-3 rounded-md border text-xs font-semibold flex flex-col items-center justify-center gap-0.5 transition-all ${
-                      processingMode === 'ai'
-                        ? 'bg-white text-black border-white shadow'
-                        : 'bg-surface-card text-body hover:text-ink border-hairline hover:bg-surface'
-                    }`}
-                  >
-                    <span className="text-sm font-bold flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      AI Neural
-                    </span>
-                    <span className="text-[10px] opacity-75">
-                      ESPCN Model (3×)
-                    </span>
-                  </button>
-
-                  <button
-                    type="button"
-                    disabled={isProcessing}
-                    onClick={() => setProcessingMode('standard')}
-                    className={`py-2 px-3 rounded-md border text-xs font-semibold flex flex-col items-center justify-center gap-0.5 transition-all ${
-                      processingMode === 'standard'
-                        ? 'bg-white text-black border-white shadow'
-                        : 'bg-surface-card text-body hover:text-ink border-hairline hover:bg-surface'
-                    }`}
-                  >
-                    <span className="text-sm font-bold flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5" />
-                      Standard
-                    </span>
-                    <span className="text-[10px] opacity-75">
-                      Fast Canvas 2D
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Standard Scale Selection if in standard mode */}
-              {processingMode === 'standard' && (
-                <div className="space-y-2">
-                  <label className="text-xs font-medium text-body">Standard Scale</label>
-                  <div className="grid grid-cols-2 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setStandardScale(2)}
-                      className={`py-1.5 px-3 rounded border text-xs font-medium ${
-                        standardScale === 2 ? 'bg-surface border-hairline-strong text-ink' : 'bg-surface-card border-hairline text-mute'
-                      }`}
-                    >
-                      2× Fast Upscale
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setStandardScale(4)}
-                      className={`py-1.5 px-3 rounded border text-xs font-medium ${
-                        standardScale === 4 ? 'bg-surface border-hairline-strong text-ink' : 'bg-surface-card border-hairline text-mute'
-                      }`}
-                    >
-                      4× Fast Upscale
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Model Specifications & Specs */}
-              <div className="p-3 bg-surface-card border border-hairline rounded text-xs space-y-1.5 font-mono text-mute">
-                <div className="flex justify-between">
-                  <span>Engine:</span>
-                  <span className="text-ink font-sans">
-                    {processingMode === 'ai' ? 'ONNX Runtime Web' : 'HTML5 Canvas 2D'}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Architecture:</span>
-                  <span className="text-ink font-sans">
-                    {processingMode === 'ai' ? 'ESPCN Sub-Pixel CNN' : 'High-Quality Bicubic'}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Model Weights:</span>
-                  <span className="text-accent-green">
-                    {processingMode === 'ai' ? '239 KB (Hugging Face ONNX Zoo)' : '0 KB (Native Browser)'}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Inference Hardware:</span>
-                  <span className="text-ink font-sans">
-                    {processingMode === 'ai' ? 'WebGPU / WebGL / WASM SIMD' : 'GPU Canvas Composite'}
-                  </span>
-                </div>
-              </div>
-
-              {/* Memory / Safety Warnings */}
-              {validation?.warning && (
-                <div className="p-2.5 bg-accent-yellow/10 border border-accent-yellow/20 rounded text-[11px] text-accent-yellow">
-                  {validation.warning}
-                </div>
-              )}
-
-              {/* Output Format (when result is ready) */}
-              {result && (
-                <div className="space-y-2 pt-2 border-t border-hairline text-xs">
-                  <span className="text-body block font-medium">Export Format</span>
-                  <div className="grid grid-cols-3 gap-1.5">
-                    {(['image/png', 'image/webp', 'image/jpeg'] as const).map((fmt) => (
-                      <button
-                        key={fmt}
-                        type="button"
-                        onClick={() => setFormat(fmt)}
-                        className={`py-1.5 text-center text-xs rounded font-medium border transition-colors ${
-                          format === fmt
-                            ? 'bg-surface border-hairline-strong text-ink font-semibold'
-                            : 'bg-surface-card border-hairline text-mute hover:text-ink'
-                        }`}
-                      >
-                        {fmt.replace('image/', '').toUpperCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Progress State Indicator */}
-              {isProcessing && (
-                <div className="space-y-2 pt-2 border-t border-hairline">
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-ink font-medium">{progress.message}</span>
-                    <span className="text-accent-blue font-bold">{progress.percent}%</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-surface-card rounded-full overflow-hidden">
-                    <div
-                      style={{ width: `${progress.percent}%` }}
-                      className="h-full bg-accent-blue transition-all duration-200"
+                    {/* Range Input Overlay */}
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={sliderPos}
+                      onChange={(e) => setSliderPos(Number(e.target.value))}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize"
                     />
+
+                    {/* Labels */}
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] text-gray-300 font-semibold uppercase tracking-wider pointer-events-none">
+                      Original ({imgElement.width}×{imgElement.height})
+                    </div>
+                    <div className="absolute top-3 right-3 px-2 py-1 rounded bg-primary-950/80 border border-primary-500/40 backdrop-blur-md text-[10px] text-primary-300 font-semibold uppercase tracking-wider pointer-events-none">
+                      Upscaled ({result.width}×{result.height})
+                    </div>
                   </div>
+
+                  {/* Result Stats Banner */}
+                  <div className="w-full max-w-2xl flex flex-wrap items-center justify-between gap-3 p-3 bg-gray-900/80 border border-gray-800 rounded-xl text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-400">Duration:</span>
+                      <span className="font-mono text-white">{result.inferenceDurationMs} ms</span>
+                    </div>
+                    {result.providerLabel && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-400">Provider:</span>
+                        <span className="font-medium text-emerald-400">{result.providerLabel}</span>
+                      </div>
+                    )}
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-400">Resolution:</span>
+                      <span className="font-mono text-primary-300">{result.width} × {result.height} px</span>
+                    </div>
+                  </div>
+
+                  {/* Download Options */}
+                  <div className="w-full max-w-2xl flex items-center justify-end gap-3 pt-2">
+                    <button
+                      type="button"
+                      onClick={() => handleDownload('png')}
+                      className="py-2.5 px-5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm flex items-center gap-2 transition-all cursor-pointer shadow-lg shadow-primary-950/50"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span>Download PNG (Lossless)</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDownload('webp')}
+                      className="py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-sm transition-all cursor-pointer"
+                    >
+                      <span>WebP</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDownload('jpeg')}
+                      className="py-2.5 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-sm transition-all cursor-pointer"
+                    >
+                      <span>JPG</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center space-y-3">
+                  <img
+                    src={imgElement.src}
+                    alt="Original Preview"
+                    className="max-h-72 rounded-xl object-contain mx-auto border border-gray-800 shadow-xl"
+                  />
+                  <p className="text-xs text-gray-400">
+                    Ready to upscale. Click "Start {engine === 'ai-neural' ? 'Neural' : 'Standard'} Upscale" on the left.
+                  </p>
                 </div>
               )}
             </div>
-
-            {/* Main Action / Cancel CTA Buttons */}
-            {!result ? (
-              <div className="space-y-2">
-                <button
-                  type="button"
-                  disabled={isProcessing || !validation?.isValid}
-                  onClick={handleStartUpscale}
-                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px] disabled:opacity-50"
-                >
-                  <Sparkles className="w-4 h-4 text-black" />
-                  <span>
-                    {isProcessing
-                      ? 'Processing Super-Resolution...'
-                      : processingMode === 'ai'
-                      ? 'Start Real AI Neural Super-Resolution'
-                      : `Start Standard Fast Upscale (${standardScale}×)`}
-                  </span>
-                </button>
-
-                {isProcessing && (
-                  <button
-                    type="button"
-                    onClick={handleCancel}
-                    className="w-full py-2 px-3 bg-surface-card hover:bg-surface border border-accent-red/30 text-accent-red font-medium text-xs rounded-md flex items-center justify-center gap-1.5 transition-colors"
-                  >
-                    <XCircle className="w-3.5 h-3.5" />
-                    <span>Cancel Inference</span>
-                  </button>
-                )}
-              </div>
-            ) : (
-              <button
-                type="button"
-                onClick={handleDownload}
-                className="w-full py-3 px-4 bg-accent-green hover:bg-emerald-400 text-black font-bold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px]"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download Enhanced Image ({result.outputWidth}×{result.outputHeight})</span>
-              </button>
-            )}
           </div>
         </div>
       )}
     </div>
   );
 }
+
+export default AiUpscalerWorkspace;

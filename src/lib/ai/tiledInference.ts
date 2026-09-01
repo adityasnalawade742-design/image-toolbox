@@ -3,6 +3,7 @@
  */
 import type { PreprocessedImage } from './imagePreprocessor.ts';
 import { generateTileGrid } from './imagePreprocessor.ts';
+import { getOrt } from './modelLoader.ts';
 
 export interface InferenceProgressCallback {
   (currentTile: number, totalTiles: number, percent: number, stageMessage: string): void;
@@ -14,11 +15,11 @@ export interface InferenceProgressCallback {
 export async function runTiledNeuralInference(
   session: any,
   preprocessed: PreprocessedImage,
-  scale: number = 3,
+  scale: 2 | 4 = 2,
   abortSignal?: AbortSignal,
   onProgress?: InferenceProgressCallback
 ): Promise<Float32Array> {
-  const ort = await import('onnxruntime-web');
+  const ort = await getOrt();
 
   const { width, height, yChannel } = preprocessed;
   const outWidth = width * scale;
@@ -27,9 +28,9 @@ export async function runTiledNeuralInference(
   const outYChannel = new Float32Array(outWidth * outHeight);
   const blendWeights = new Float32Array(outWidth * outHeight);
 
-  const TILE_DIM = 224;
+  const tileSize = 256;
   const overlap = 16;
-  const tiles = generateTileGrid(width, height, TILE_DIM, overlap, scale);
+  const tiles = generateTileGrid(width, height, tileSize, overlap, scale);
   const totalTiles = tiles.length;
 
   for (let i = 0; i < totalTiles; i++) {
@@ -38,19 +39,18 @@ export async function runTiledNeuralInference(
     }
 
     const tile = tiles[i];
-    
-    // Fixed 224x224 tensor input required by the ONNX model graph
-    const tileData = new Float32Array(TILE_DIM * TILE_DIM);
+    const tilePixels = tile.w * tile.h;
+    const tileData = new Float32Array(tilePixels);
 
-    // Copy available tile pixels into 224x224 buffer
+    // Copy tile pixels from full Y channel
     for (let row = 0; row < tile.h; row++) {
       const srcOffset = (tile.y + row) * width + tile.x;
-      const dstOffset = row * TILE_DIM;
+      const dstOffset = row * tile.w;
       tileData.set(yChannel.subarray(srcOffset, srcOffset + tile.w), dstOffset);
     }
 
-    // Create real Float32 Tensor [1, 1, 224, 224]
-    const inputTensor = new ort.Tensor('float32', tileData, [1, 1, TILE_DIM, TILE_DIM]);
+    // Dynamic Float32 Tensor [1, 1, tile.h, tile.w]
+    const inputTensor = new ort.Tensor('float32', tileData, [1, 1, tile.h, tile.w]);
 
     // Real ONNX Neural Inference Session Run
     const inputName = session.inputNames[0] || 'input';
@@ -62,9 +62,14 @@ export async function runTiledNeuralInference(
 
     const outTileW = tile.w * scale;
     const outTileH = tile.h * scale;
-    const modelOutDim = TILE_DIM * scale; // 672
 
-    // Splice tile into reconstructed full Y channel with edge feathering
+    // Single tile optimization (no blending needed if only 1 tile)
+    if (totalTiles === 1) {
+      outYChannel.set(outData);
+      break;
+    }
+
+    // Multi-tile splicing with linear feathering
     for (let row = 0; row < outTileH; row++) {
       const targetY = tile.outY + row;
       if (targetY >= outHeight) continue;
@@ -74,12 +79,12 @@ export async function runTiledNeuralInference(
         if (targetX >= outWidth) continue;
 
         const outIdx = targetY * outWidth + targetX;
-        const tileIdx = row * modelOutDim + col;
+        const tileIdx = row * outTileW + col;
 
-        // Linear feathering weight near tile borders to blend seams
+        // Linear feathering near tile borders to blend seams
         const edgeDistX = Math.min(col, outTileW - 1 - col);
         const edgeDistY = Math.min(row, outTileH - 1 - row);
-        const weight = Math.min(1.0, Math.min(edgeDistX, edgeDistY) / (overlap * scale || 1) + 0.1);
+        const weight = Math.min(1.0, Math.min(edgeDistX, edgeDistY) / (overlap * scale || 1) + 0.05);
 
         outYChannel[outIdx] = (outYChannel[outIdx] * blendWeights[outIdx] + outData[tileIdx] * weight) / (blendWeights[outIdx] + weight);
         blendWeights[outIdx] += weight;
@@ -89,7 +94,7 @@ export async function runTiledNeuralInference(
     const percent = Math.round(((i + 1) / totalTiles) * 100);
     onProgress?.(i + 1, totalTiles, percent, `Processing neural tile ${i + 1}/${totalTiles} (${percent}%)...`);
 
-    // Yield main thread briefly so UI remains responsive
+    // Yield main thread so UI stays responsive
     await new Promise((r) => setTimeout(r, 0));
   }
 

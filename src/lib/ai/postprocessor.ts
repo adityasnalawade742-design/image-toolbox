@@ -9,41 +9,66 @@ import type { PreprocessedImage } from './imagePreprocessor.ts';
 export async function reconstructRgbCanvas(
   preprocessed: PreprocessedImage,
   outYChannel: Float32Array,
-  scale: number = 3
+  scale: 2 | 4 = 2
 ): Promise<HTMLCanvasElement> {
-  const { width: srcW, height: srcH, cbChannel, crChannel } = preprocessed;
-  const targetW = srcW * scale;
-  const targetH = srcH * scale;
+  const { width, height, cbChannel, crChannel } = preprocessed;
+  const outWidth = width * scale;
+  const outHeight = height * scale;
 
   const canvas = document.createElement('canvas');
-  canvas.width = targetW;
-  canvas.height = targetH;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('Failed to get 2D context for RGB reconstruction');
+  canvas.width = outWidth;
+  canvas.height = outHeight;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  if (!ctx) throw new Error('Failed to create Canvas 2D context for reconstruction');
 
-  const imgData = ctx.createImageData(targetW, targetH);
+  const imgData = ctx.createImageData(outWidth, outHeight);
   const data = imgData.data;
 
-  for (let y = 0; y < targetH; y++) {
-    const srcY = Math.min(srcH - 1, Math.floor(y / scale));
-    for (let x = 0; x < targetW; x++) {
-      const srcX = Math.min(srcW - 1, Math.floor(x / scale));
-      const srcIdx = srcY * srcW + srcX;
-      const outIdx = (y * targetW + x) * 4;
+  // Upscale Cb and Cr using bilinear interpolation on canvas for fast smooth chroma
+  const chromaCanvas = document.createElement('canvas');
+  chromaCanvas.width = width;
+  chromaCanvas.height = height;
+  const chromaCtx = chromaCanvas.getContext('2d');
+  
+  if (chromaCtx) {
+    const origChromaData = chromaCtx.createImageData(width, height);
+    for (let i = 0; i < width * height; i++) {
+      const idx = i * 4;
+      origChromaData.data[idx] = Math.round(cbChannel[i] * 255);
+      origChromaData.data[idx + 1] = Math.round(crChannel[i] * 255);
+      origChromaData.data[idx + 2] = 0;
+      origChromaData.data[idx + 3] = 255;
+    }
+    chromaCtx.putImageData(origChromaData, 0, 0);
 
-      const Y = Math.max(0.0, Math.min(1.0, outYChannel[y * targetW + x])) * 255.0;
-      const Cb = cbChannel[srcIdx] * 255.0 - 128;
-      const Cr = crChannel[srcIdx] * 255.0 - 128;
+    const scaledChromaCanvas = document.createElement('canvas');
+    scaledChromaCanvas.width = outWidth;
+    scaledChromaCanvas.height = outHeight;
+    const scaledChromaCtx = scaledChromaCanvas.getContext('2d');
+    if (scaledChromaCtx) {
+      scaledChromaCtx.imageSmoothingEnabled = true;
+      scaledChromaCtx.imageSmoothingQuality = 'high';
+      scaledChromaCtx.drawImage(chromaCanvas, 0, 0, outWidth, outHeight);
+      const scaledChromaData = scaledChromaCtx.getImageData(0, 0, outWidth, outHeight).data;
 
-      // Inverse ITU-R BT.601 YCbCr Matrix
-      const R = Y + 1.402 * Cr;
-      const G = Y - 0.344136 * Cb - 0.714136 * Cr;
-      const B = Y + 1.772 * Cb;
+      // Inverse YCbCr to RGB conversion
+      const numPixels = outWidth * outHeight;
+      for (let i = 0; i < numPixels; i++) {
+        const idx = i * 4;
+        const y = outYChannel[i] * 255.0;
+        const cb = scaledChromaData[idx] - 128;
+        const cr = scaledChromaData[idx + 1] - 128;
 
-      data[outIdx] = Math.max(0, Math.min(255, Math.round(R)));
-      data[outIdx + 1] = Math.max(0, Math.min(255, Math.round(G)));
-      data[outIdx + 2] = Math.max(0, Math.min(255, Math.round(B)));
-      data[outIdx + 3] = 255;
+        // ITU-R BT.601 Inverse Matrix
+        const r = Math.max(0, Math.min(255, y + 1.402 * cr));
+        const g = Math.max(0, Math.min(255, y - 0.344136 * cb - 0.714136 * cr));
+        const b = Math.max(0, Math.min(255, y + 1.772 * cb));
+
+        data[idx] = Math.round(r);
+        data[idx + 1] = Math.round(g);
+        data[idx + 2] = Math.round(b);
+        data[idx + 3] = 255; // Full opacity
+      }
     }
   }
 

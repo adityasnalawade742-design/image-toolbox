@@ -2,13 +2,14 @@
  * Real ONNX Super-Resolution Model Loader & Session Manager
  * 
  * Features:
- * - Lazy-loads onnxruntime-web only on demand.
- * - Hardware acceleration fallback priority: WebGPU -> WebGL -> WASM / CPU.
+ * - Lazy-loads onnxruntime-web only on demand (without bloating static bundle).
+ * - Hardware acceleration fallback priority: WebGPU -> WebGL -> WASM SIMD -> CPU.
  * - Model caching via Browser CacheStorage.
  * - Transparent execution provider reporting.
  */
+import { getAIModel } from './modelRegistry.ts';
 
-let cachedSession: any = null;
+const sessionCache: Map<number, any> = new Map();
 let activeProvider: 'webgpu' | 'webgl' | 'wasm' | 'cpu' = 'wasm';
 
 export interface ModelSessionInfo {
@@ -16,34 +17,68 @@ export interface ModelSessionInfo {
   provider: 'webgpu' | 'webgl' | 'wasm' | 'cpu';
   providerLabel: string;
   modelSizeKb: number;
+  scale: 2 | 4;
 }
 
 /**
- * Load onnxruntime-web dynamically and initialize genuine neural network session
+ * Dynamically load ONNX Runtime Web instance
+ */
+export async function getOrt(): Promise<any> {
+  if (typeof window !== 'undefined' && (window as any).ort) {
+    return (window as any).ort;
+  }
+
+  if (typeof document !== 'undefined') {
+    return new Promise((resolve, reject) => {
+      const existingScript = document.querySelector('script[src*="onnxruntime-web"]');
+      if (existingScript) {
+        existingScript.addEventListener('load', () => resolve((window as any).ort));
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/ort.min.js';
+      script.onload = () => {
+        const ort = (window as any).ort;
+        if (ort?.env?.wasm) {
+          ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
+          ort.env.wasm.numThreads = typeof navigator !== 'undefined' ? Math.min(4, navigator.hardwareConcurrency || 2) : 1;
+        }
+        resolve(ort);
+      };
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  // Node.js environment
+  return await import('onnxruntime-web');
+}
+
+/**
+ * Load onnxruntime-web dynamically and initialize genuine neural network session for 2x or 4x scale
  */
 export async function loadSuperResolutionSession(
-  modelUrl: string = '/models/super-resolution-10.onnx',
+  scale: 2 | 4 = 2,
   onProgress?: (msg: string) => void
 ): Promise<ModelSessionInfo> {
-  if (cachedSession) {
+  if (sessionCache.has(scale)) {
+    const session = sessionCache.get(scale);
+    const model = getAIModel(scale);
     return {
-      session: cachedSession,
+      session,
       provider: activeProvider,
       providerLabel: getProviderLabel(activeProvider),
-      modelSizeKb: 239,
+      modelSizeKb: model.sizeKb,
+      scale,
     };
   }
 
-  onProgress?.('Loading ONNX Runtime Web engine...');
-  const ort = await import('onnxruntime-web');
+  const modelDef = getAIModel(scale);
+  onProgress?.(`Loading ONNX Runtime Web engine...`);
+  const ort = await getOrt();
 
-  // Configure wasm binary paths for web environments
-  if (ort.env && ort.env.wasm) {
-    ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
-    ort.env.wasm.numThreads = typeof navigator !== 'undefined' ? Math.min(4, navigator.hardwareConcurrency || 2) : 1;
-  }
-
-  onProgress?.('Fetching neural super-resolution model weights (239 KB)...');
+  onProgress?.(`Fetching neural ${scale}× model weights (${modelDef.sizeKb} KB)...`);
 
   let modelBuffer: ArrayBuffer;
 
@@ -51,22 +86,30 @@ export async function loadSuperResolutionSession(
   if (typeof caches !== 'undefined') {
     try {
       const cache = await caches.open('ai-model-cache-v1');
-      const cachedResponse = await cache.match(modelUrl);
+      const cachedResponse = await cache.match(modelDef.modelUrl);
       if (cachedResponse) {
         modelBuffer = await cachedResponse.arrayBuffer();
       } else {
-        const response = await fetch(modelUrl);
+        const response = await fetch(modelDef.modelUrl);
         if (!response.ok) throw new Error(`HTTP ${response.status} fetching model`);
-        cache.put(modelUrl, response.clone());
+        cache.put(modelDef.modelUrl, response.clone());
         modelBuffer = await response.arrayBuffer();
       }
     } catch {
-      const response = await fetch(modelUrl);
+      const response = await fetch(modelDef.modelUrl);
       modelBuffer = await response.arrayBuffer();
     }
   } else {
-    const response = await fetch(modelUrl);
-    modelBuffer = await response.arrayBuffer();
+    // In Node.js or fallback
+    if (typeof process !== 'undefined' && typeof window === 'undefined') {
+      const fs = await import('fs');
+      const path = await import('path');
+      const nodeBuf = fs.readFileSync(path.resolve(process.cwd(), `public${modelDef.modelUrl}`));
+      modelBuffer = nodeBuf.buffer.slice(nodeBuf.byteOffset, nodeBuf.byteOffset + nodeBuf.byteLength);
+    } else {
+      const response = await fetch(modelDef.modelUrl);
+      modelBuffer = await response.arrayBuffer();
+    }
   }
 
   // Attempt WebGPU first if supported, then WebGL, then multi-threaded WASM
@@ -89,20 +132,20 @@ export async function loadSuperResolutionSession(
   }
 
   if (!session) {
-    // Ultimate CPU fallback
     activeProvider = 'cpu';
     session = await ort.InferenceSession.create(modelBuffer, {
       executionProviders: ['wasm'],
     });
   }
 
-  cachedSession = session;
+  sessionCache.set(scale, session);
 
   return {
     session,
     provider: activeProvider,
     providerLabel: getProviderLabel(activeProvider),
-    modelSizeKb: Math.round(modelBuffer.byteLength / 1024),
+    modelSizeKb: modelDef.sizeKb,
+    scale,
   };
 }
 

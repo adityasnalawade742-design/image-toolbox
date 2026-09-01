@@ -59,15 +59,31 @@ export function extractYCbCrFromImage(img: HTMLImageElement): PreprocessedImage 
 }
 
 /**
- * Compute 224x224 tile coordinates with overlap margin for ESPCN ONNX model
+ * Compute adaptive tile coordinates with overlap margin
  */
 export function generateTileGrid(
   width: number,
   height: number,
-  tileSize: number = 224,
+  tileSize: number = 256,
   overlap: number = 16,
-  scale: number = 3
+  scale: 2 | 4 = 2
 ): TileCoordinates[] {
+  // If the image is small enough, process as single tile for best speed & quality
+  if (width <= tileSize && height <= tileSize) {
+    return [
+      {
+        x: 0,
+        y: 0,
+        w: width,
+        h: height,
+        outX: 0,
+        outY: 0,
+        outW: width * scale,
+        outH: height * scale,
+      },
+    ];
+  }
+
   const tiles: TileCoordinates[] = [];
   const stride = tileSize - overlap * 2;
 
