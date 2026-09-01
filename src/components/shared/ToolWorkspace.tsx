@@ -4,7 +4,7 @@ import {
   Download,
   Archive,
   Sliders,
-  Sparkles,
+  AlertCircle,
 } from 'lucide-react';
 import {
   loadImage,
@@ -13,6 +13,7 @@ import {
   downloadBlob,
   generateFaviconBundle,
   extractDominantPalette,
+  checkImageTransparency,
 } from '../../lib/canvas/engine';
 import type {
   TextOverlayOptions,
@@ -57,6 +58,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
   const [outputBytes, setOutputBytes] = useState<number>(0);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
 
   // Tool specific states
   const [origW, setOrigW] = useState<number>(0);
@@ -126,10 +129,73 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   // Format & Quality
   const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp'>('image/png');
   const [quality, setQuality] = useState<number>(85);
-  const [isProcessing, setIsProcessing] = useState<boolean>(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFile = async (file: File) => {
+    try {
+      setErrorMessage(null);
+      const maxSizeBytes = 50 * 1024 * 1024; // 50MB
+      if (file.size > maxSizeBytes) {
+        setErrorMessage('File size exceeds the 50 MB limit. Please select a smaller image.');
+        return;
+      }
+
+      setFilename(file.name.replace(/\.[^/.]+$/, ''));
+      setFileSize(file.size);
+      setMimeType(file.type || 'image/png');
+
+      const img = await loadImage(file);
+      setImageElement(img);
+
+      const nw = img.naturalWidth || img.width;
+      const nh = img.naturalHeight || img.height;
+      setOrigW(nw);
+      setOrigH(nh);
+      setWidth(nw);
+      setHeight(nh);
+      setCrop({ x: 0, y: 0, width: nw, height: nh });
+
+      // Detect real alpha channel transparency
+      const isTransparent = checkImageTransparency(img);
+      setHasRealTransparency(isTransparent);
+
+      // Set tool-specific default formats
+      if (slug.includes('webp') || slug === 'compress-image') {
+        setFormat('image/webp');
+      } else if (slug.includes('jpg') || slug.includes('jpeg')) {
+        setFormat('image/jpeg');
+      } else {
+        setFormat('image/png');
+      }
+
+      // Extract initial palette
+      const initialPalette = extractDominantPalette(img, paletteCount);
+      setPaletteColors(initialPalette);
+    } catch {
+      setErrorMessage('Failed to decode image. The file format may be unsupported or corrupted.');
+    }
+  };
+
+  // Global Clipboard Paste (Ctrl+V) listener
+  useEffect(() => {
+    const handlePaste = (e: ClipboardEvent) => {
+      const items = e.clipboardData?.items;
+      if (!items) return;
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].type.startsWith('image/')) {
+          const file = items[i].getAsFile();
+          if (file) {
+            handleFile(file);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener('paste', handlePaste);
+    return () => window.removeEventListener('paste', handlePaste);
+  }, []);
 
   // Check cached image from homepage dropzone
   useEffect(() => {
@@ -146,44 +212,6 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
         });
     }
   }, []);
-
-  const handleFile = async (file: File) => {
-    try {
-      setIsProcessing(true);
-      setFilename(file.name.replace(/\.[^/.]+$/, ''));
-      setFileSize(file.size);
-      setMimeType(file.type || 'image/png');
-
-      const img = await loadImage(file);
-      setImageElement(img);
-
-      const nw = img.naturalWidth || img.width;
-      const nh = img.naturalHeight || img.height;
-      setOrigW(nw);
-      setOrigH(nh);
-      setWidth(nw);
-      setHeight(nh);
-      setCrop({ x: 0, y: 0, width: nw, height: nh });
-
-      // Set tool-specific default formats
-      if (slug.includes('webp') || slug === 'compress-image') {
-        setFormat('image/webp');
-      } else if (slug.includes('jpg') || slug.includes('jpeg')) {
-        setFormat('image/jpeg');
-      } else {
-        setFormat('image/png');
-      }
-
-      // Extract initial palette
-      const initialPalette = extractDominantPalette(img, paletteCount);
-      setPaletteColors(initialPalette);
-
-      setIsProcessing(false);
-    } catch (err) {
-      console.error(err);
-      setIsProcessing(false);
-    }
-  };
 
   // Re-extract palette when palette count changes
   useEffect(() => {
@@ -298,7 +326,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   };
 
   return (
-    <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl">
+    <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
+      {errorMessage && (
+        <div className="flex items-center gap-2 p-3 bg-accent-red/10 border border-accent-red/20 rounded-lg text-xs text-accent-red">
+          <AlertCircle className="w-4 h-4 shrink-0" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
+
       {!imageElement ? (
         /* Empty Upload State */
         <div
@@ -327,7 +362,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
               Select or Drop an Image for {toolName}
             </h3>
             <p className="text-xs text-mute mt-1">
-              Supports PNG, JPG, WebP, SVG, AVIF — 100% Client-Side In-Browser Processing
+              Supports PNG, JPG, WebP, SVG, AVIF (Max 50 MB) • Paste image with <kbd className="font-mono bg-surface px-1.5 py-0.5 rounded border border-hairline text-ink">Ctrl+V</kbd>
             </p>
           </div>
           <button
@@ -474,7 +509,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   mimeType={mimeType}
                   width={origW}
                   height={origH}
-                  hasTransparency={format === 'image/png' || format === 'image/webp'}
+                  hasTransparency={hasRealTransparency}
                 />
               )}
 

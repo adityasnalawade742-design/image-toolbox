@@ -33,11 +33,32 @@ export function BulkResizerWorkspace() {
   const handleFilesAdded = async (files: FileList | File[]) => {
     const newItems: QueueItem[] = [];
     const maxFiles = 50;
+    const maxSizeBytes = 50 * 1024 * 1024; // 50 MB
 
     for (let i = 0; i < files.length; i++) {
       if (queue.length + newItems.length >= maxFiles) break;
       const file = files[i];
-      if (file.type.startsWith('image/')) {
+      if (!file.type.startsWith('image/')) {
+        newItems.push({
+          id: `${file.name}-${Date.now()}-${Math.random()}`,
+          file,
+          name: file.name,
+          originalWidth: 0,
+          originalHeight: 0,
+          status: 'error',
+          errorMsg: 'Unsupported non-image file',
+        });
+      } else if (file.size > maxSizeBytes) {
+        newItems.push({
+          id: `${file.name}-${Date.now()}-${Math.random()}`,
+          file,
+          name: file.name,
+          originalWidth: 0,
+          originalHeight: 0,
+          status: 'error',
+          errorMsg: 'Exceeds 50 MB limit',
+        });
+      } else {
         try {
           const img = await loadImage(file);
           newItems.push({
@@ -49,7 +70,15 @@ export function BulkResizerWorkspace() {
             status: 'pending',
           });
         } catch {
-          // ignore corrupted
+          newItems.push({
+            id: `${file.name}-${Date.now()}-${Math.random()}`,
+            file,
+            name: file.name,
+            originalWidth: 0,
+            originalHeight: 0,
+            status: 'error',
+            errorMsg: 'Corrupted or unreadable image',
+          });
         }
       }
     }
@@ -321,6 +350,32 @@ export function BulkResizerWorkspace() {
                 </button>
               </div>
             )}
+            {/* Common Options: Format & Upscale Safety */}
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-hairline text-xs">
+              <div className="flex items-center gap-2">
+                <span className="text-body">Format:</span>
+                <select
+                  value={format}
+                  disabled={isProcessing}
+                  onChange={(e) => setFormat(e.target.value as any)}
+                  className="bg-surface-card border border-hairline rounded px-2 py-1 text-ink focus:outline-none"
+                >
+                  <option value="image/png">PNG (Lossless)</option>
+                  <option value="image/jpeg">JPEG (JPG)</option>
+                  <option value="image/webp">WebP (Optimal)</option>
+                </select>
+              </div>
+
+              <label className="flex items-center gap-2 cursor-pointer select-none text-mute hover:text-ink">
+                <input
+                  type="checkbox"
+                  checked={preventUpscale}
+                  onChange={(e) => setPreventUpscale(e.target.checked)}
+                  className="rounded border-hairline bg-surface-card accent-white cursor-pointer"
+                />
+                <span>Prevent Upscaling (keep smaller originals)</span>
+              </label>
+            </div>
           </div>
 
           {/* Queue List Table */}

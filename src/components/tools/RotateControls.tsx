@@ -7,12 +7,6 @@ interface Props {
 }
 
 export function RotateControls({ rotation, onChange }: Props) {
-  const quickAngles = [
-    { label: '90° CW', angle: (rotation + 90) % 360 },
-    { label: '180°', angle: 180 },
-    { label: '270° CW', angle: 270 },
-  ];
-
   return (
     <div className="space-y-4">
       {/* Quick Buttons */}

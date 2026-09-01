@@ -402,3 +402,26 @@ export function extractDominantPalette(img: HTMLImageElement, colorCount: number
 
   return palette;
 }
+
+// Check real alpha channel transparency by sampling pixels
+export function checkImageTransparency(img: HTMLImageElement): boolean {
+  try {
+    const canvas = document.createElement('canvas');
+    const sampleW = Math.min(100, img.naturalWidth || img.width);
+    const sampleH = Math.min(100, img.naturalHeight || img.height);
+    canvas.width = sampleW;
+    canvas.height = sampleH;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return false;
+    ctx.drawImage(img, 0, 0, sampleW, sampleH);
+    const data = ctx.getImageData(0, 0, sampleW, sampleH).data;
+    for (let i = 3; i < data.length; i += 4) {
+      if (data[i] < 250) {
+        return true;
+      }
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}

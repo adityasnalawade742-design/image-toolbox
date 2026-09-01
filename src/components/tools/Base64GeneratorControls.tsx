@@ -30,7 +30,7 @@ export function Base64GeneratorControls({ outputString, isDataUri = false }: Pro
   const htmlSnippet = `<img src="${dataUriString.slice(0, 50)}..." alt="Embedded Image" />`;
   const cssSnippet = `background-image: url("${dataUriString.slice(0, 50)}...");`;
 
-  const copySnippet = (text: string, id: string) => {
+  const copySnippet = (id: string) => {
     const fullText = id === 'html'
       ? `<img src="${dataUriString}" alt="Embedded Image" />`
       : `background-image: url("${dataUriString}");`;
@@ -79,7 +79,7 @@ export function Base64GeneratorControls({ outputString, isDataUri = false }: Pro
           <span className="truncate max-w-[240px]">{htmlSnippet}</span>
           <button
             type="button"
-            onClick={() => copySnippet(htmlSnippet, 'html')}
+            onClick={() => copySnippet('html')}
             className="flex items-center gap-1 text-mute hover:text-ink font-sans text-[10px] ml-2 shrink-0"
           >
             {copiedSnippet === 'html' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
@@ -91,7 +91,7 @@ export function Base64GeneratorControls({ outputString, isDataUri = false }: Pro
           <span className="truncate max-w-[240px]">{cssSnippet}</span>
           <button
             type="button"
-            onClick={() => copySnippet(cssSnippet, 'css')}
+            onClick={() => copySnippet('css')}
             className="flex items-center gap-1 text-mute hover:text-ink font-sans text-[10px] ml-2 shrink-0"
           >
             {copiedSnippet === 'css' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}

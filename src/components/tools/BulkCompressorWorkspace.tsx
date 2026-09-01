@@ -32,11 +32,30 @@ export function BulkCompressorWorkspace() {
   const handleFilesAdded = (files: FileList | File[]) => {
     const newItems: QueueItem[] = [];
     const maxFiles = 50;
+    const maxSizeBytes = 50 * 1024 * 1024; // 50 MB
 
     for (let i = 0; i < files.length; i++) {
       if (queue.length + newItems.length >= maxFiles) break;
       const file = files[i];
-      if (file.type.startsWith('image/')) {
+      if (!file.type.startsWith('image/')) {
+        newItems.push({
+          id: `${file.name}-${Date.now()}-${Math.random()}`,
+          file,
+          name: file.name,
+          originalSize: file.size,
+          status: 'error',
+          errorMsg: 'Unsupported non-image file format',
+        });
+      } else if (file.size > maxSizeBytes) {
+        newItems.push({
+          id: `${file.name}-${Date.now()}-${Math.random()}`,
+          file,
+          name: file.name,
+          originalSize: file.size,
+          status: 'error',
+          errorMsg: 'File exceeds 50 MB limit',
+        });
+      } else {
         newItems.push({
           id: `${file.name}-${Date.now()}-${Math.random()}`,
           file,
@@ -258,7 +277,7 @@ export function BulkCompressorWorkspace() {
           {/* Queue List Table */}
           <div className="border border-hairline rounded-lg overflow-hidden divide-y divide-hairline-soft bg-surface">
             <div className="px-4 py-2 bg-surface-card flex items-center justify-between text-[11px] font-semibold text-mute uppercase tracking-wider">
-              <span>File Queue ({queue.length} items)</span>
+              <span>File Queue ({queue.length} items • {formatBytes(totalOrigSize)} {completedCount > 0 ? `→ ${formatBytes(totalOutSize)}` : ''})</span>
               <span>{completedCount}/{queue.length} Completed</span>
             </div>
 
