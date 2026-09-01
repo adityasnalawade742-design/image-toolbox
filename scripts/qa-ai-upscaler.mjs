@@ -1,7 +1,5 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
-import { TOOLS } from '../src/config/tools.ts';
-import { ui } from '../src/i18n/ui.ts';
 import { AI_MODELS } from '../src/lib/ai/modelRegistry.ts';
 
 console.log('🤖 Starting Phase 5D Genuine 2× and 4× AI Super-Resolution QA & Verification Audit...\n');
@@ -43,17 +41,17 @@ async function runTests() {
   assert(session2 && session2.inputNames.length === 1, 'ESPCN 2× ONNX session initialized with input tensor');
   assert(session4 && session4.inputNames.length === 1, 'ESPCN 4× ONNX session initialized with input tensor');
 
-  // Test 2x inference
-  const in2 = new ort.Tensor('float32', new Float32Array(64 * 64).fill(0.5), [1, 1, 64, 64]);
+  // Test 2x inference with fixed 256x256 tensor
+  const in2 = new ort.Tensor('float32', new Float32Array(256 * 256).fill(0.5), [1, 1, 256, 256]);
   const res2 = await session2.run({ input: in2 });
   const out2 = res2.output;
-  assert(out2 && out2.dims[2] === 128 && out2.dims[3] === 128, 'Neural network executes exact 2× tensor inference (64×64 -> 128×128)');
+  assert(out2 && out2.dims[2] === 512 && out2.dims[3] === 512, 'Neural network executes exact 2× tensor inference (256×256 -> 512×512)');
 
-  // Test 4x inference
-  const in4 = new ort.Tensor('float32', new Float32Array(64 * 64).fill(0.5), [1, 1, 64, 64]);
+  // Test 4x inference with fixed 256x256 tensor
+  const in4 = new ort.Tensor('float32', new Float32Array(256 * 256).fill(0.5), [1, 1, 256, 256]);
   const res4 = await session4.run({ input: in4 });
   const out4 = res4.output;
-  assert(out4 && out4.dims[2] === 256 && out4.dims[3] === 256, 'Neural network executes exact 4× tensor inference (64×64 -> 256×256)');
+  assert(out4 && out4.dims[2] === 1024 && out4.dims[3] === 1024, 'Neural network executes exact 4× tensor inference (256×256 -> 1024×1024)');
 
   // 3. Memory & Safety Limits
   console.log('\n3. Testing Browser Memory Thresholds & Safeguards:');

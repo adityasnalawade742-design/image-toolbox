@@ -40,9 +40,9 @@ async function auditModel(filePath, expectedScale) {
   assert(session.inputNames.length === 1, `Model has exactly 1 input tensor ('${session.inputNames[0]}')`);
   assert(session.outputNames.length === 1, `Model has exactly 1 output tensor ('${session.outputNames[0]}')`);
 
-  // Test execution with 100x100 spatial tensor
-  const testW = 100;
-  const testH = 100;
+  // Test execution with fixed 256x256 spatial tensor
+  const testW = 256;
+  const testH = 256;
   const testData = new Float32Array(testW * testH).fill(0.5);
   const inputTensor = new ort.Tensor('float32', testData, [1, 1, testH, testW]);
 

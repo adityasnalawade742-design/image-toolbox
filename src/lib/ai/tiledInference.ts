@@ -9,6 +9,8 @@ export interface InferenceProgressCallback {
   (currentTile: number, totalTiles: number, percent: number, stageMessage: string): void;
 }
 
+const TILE_DIM = 256;
+
 /**
  * Execute real ONNX tensor inference across image tiles
  */
@@ -28,10 +30,10 @@ export async function runTiledNeuralInference(
   const outYChannel = new Float32Array(outWidth * outHeight);
   const blendWeights = new Float32Array(outWidth * outHeight);
 
-  const tileSize = 256;
   const overlap = 16;
-  const tiles = generateTileGrid(width, height, tileSize, overlap, scale);
+  const tiles = generateTileGrid(width, height, TILE_DIM, overlap, scale);
   const totalTiles = tiles.length;
+  const modelOutDim = TILE_DIM * scale;
 
   for (let i = 0; i < totalTiles; i++) {
     if (abortSignal?.aborted) {
@@ -39,18 +41,19 @@ export async function runTiledNeuralInference(
     }
 
     const tile = tiles[i];
-    const tilePixels = tile.w * tile.h;
-    const tileData = new Float32Array(tilePixels);
+    
+    // Fixed 256x256 buffer required by the ONNX neural model graph
+    const tileData = new Float32Array(TILE_DIM * TILE_DIM);
 
-    // Copy tile pixels from full Y channel
+    // Copy available tile pixels into 256x256 buffer
     for (let row = 0; row < tile.h; row++) {
       const srcOffset = (tile.y + row) * width + tile.x;
-      const dstOffset = row * tile.w;
+      const dstOffset = row * TILE_DIM;
       tileData.set(yChannel.subarray(srcOffset, srcOffset + tile.w), dstOffset);
     }
 
-    // Dynamic Float32 Tensor [1, 1, tile.h, tile.w]
-    const inputTensor = new ort.Tensor('float32', tileData, [1, 1, tile.h, tile.w]);
+    // Fixed Float32 Tensor [1, 1, 256, 256]
+    const inputTensor = new ort.Tensor('float32', tileData, [1, 1, TILE_DIM, TILE_DIM]);
 
     // Real ONNX Neural Inference Session Run
     const inputName = session.inputNames[0] || 'input';
@@ -63,13 +66,7 @@ export async function runTiledNeuralInference(
     const outTileW = tile.w * scale;
     const outTileH = tile.h * scale;
 
-    // Single tile optimization (no blending needed if only 1 tile)
-    if (totalTiles === 1) {
-      outYChannel.set(outData);
-      break;
-    }
-
-    // Multi-tile splicing with linear feathering
+    // Splice tile into output Y buffer
     for (let row = 0; row < outTileH; row++) {
       const targetY = tile.outY + row;
       if (targetY >= outHeight) continue;
@@ -79,7 +76,7 @@ export async function runTiledNeuralInference(
         if (targetX >= outWidth) continue;
 
         const outIdx = targetY * outWidth + targetX;
-        const tileIdx = row * outTileW + col;
+        const tileIdx = row * modelOutDim + col;
 
         // Linear feathering near tile borders to blend seams
         const edgeDistX = Math.min(col, outTileW - 1 - col);
