@@ -11,6 +11,8 @@ import {
   Loader2,
   ArrowRight,
   Sparkles,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import {
   loadImage,
@@ -163,6 +165,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif'>('image/png');
   const [quality, setQuality] = useState<number>(85);
   const [useVpsEngine, setUseVpsEngine] = useState<boolean>(true);
+  const [showMoreTools, setShowMoreTools] = useState<boolean>(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -985,12 +988,24 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
 
                 {/* Cross-Tool Workflow Handoff Bar */}
                 {slug !== 'favicon-generator' && slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
-                  <div className="pt-3 border-t border-hairline space-y-2">
-                    <span className="text-[11px] font-semibold text-mute uppercase tracking-wider block">
-                      Continue In Another Tool:
-                    </span>
+                  <div className="pt-2.5 border-t border-hairline/80 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-medium text-mute">
+                        Next action:
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setShowMoreTools(!showMoreTools)}
+                        className="text-[10px] text-mute hover:text-ink transition-colors flex items-center gap-1 py-0.5 px-1.5 rounded hover:bg-surface-elevated"
+                      >
+                        <span>{showMoreTools ? 'Less tools' : 'More tools'}</span>
+                        {showMoreTools ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                      </button>
+                    </div>
+
+                    {/* Primary top 2 complementary actions */}
                     <div className="grid grid-cols-2 gap-1.5 text-xs">
-                      {slug !== 'compress-image' && (
+                      {slug !== 'compress-image' ? (
                         <button
                           type="button"
                           onClick={() => handleSendToTool('compress-image')}
@@ -999,8 +1014,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                           <span>Compress</span>
                           <ArrowRight className="w-3 h-3 text-mute" />
                         </button>
-                      )}
-                      {slug !== 'crop-image' && (
+                      ) : (
                         <button
                           type="button"
                           onClick={() => handleSendToTool('crop-image')}
@@ -1010,7 +1024,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                           <ArrowRight className="w-3 h-3 text-mute" />
                         </button>
                       )}
-                      {slug !== 'resize-image' && (
+
+                      {slug !== 'resize-image' ? (
                         <button
                           type="button"
                           onClick={() => handleSendToTool('resize-image')}
@@ -1019,28 +1034,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                           <span>Resize</span>
                           <ArrowRight className="w-3 h-3 text-mute" />
                         </button>
-                      )}
-                      {slug !== 'add-text-to-image' && (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('add-text-to-image')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Add Text</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      )}
-                      {slug !== 'watermark-image' && (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('watermark-image')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Watermark</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      )}
-                      {slug !== 'photo-filters' && (
+                      ) : (
                         <button
                           type="button"
                           onClick={() => handleSendToTool('photo-filters')}
@@ -1051,6 +1045,52 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                         </button>
                       )}
                     </div>
+
+                    {/* Secondary tools revealed only on demand */}
+                    {showMoreTools && (
+                      <div className="grid grid-cols-2 gap-1.5 text-xs pt-1 animate-in fade-in duration-200">
+                        {slug !== 'crop-image' && slug !== 'compress-image' && (
+                          <button
+                            type="button"
+                            onClick={() => handleSendToTool('crop-image')}
+                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                          >
+                            <span>Crop</span>
+                            <ArrowRight className="w-3 h-3 text-mute" />
+                          </button>
+                        )}
+                        {slug !== 'add-text-to-image' && (
+                          <button
+                            type="button"
+                            onClick={() => handleSendToTool('add-text-to-image')}
+                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                          >
+                            <span>Add Text</span>
+                            <ArrowRight className="w-3 h-3 text-mute" />
+                          </button>
+                        )}
+                        {slug !== 'watermark-image' && (
+                          <button
+                            type="button"
+                            onClick={() => handleSendToTool('watermark-image')}
+                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                          >
+                            <span>Watermark</span>
+                            <ArrowRight className="w-3 h-3 text-mute" />
+                          </button>
+                        )}
+                        {slug !== 'photo-filters' && slug !== 'resize-image' && (
+                          <button
+                            type="button"
+                            onClick={() => handleSendToTool('photo-filters')}
+                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                          >
+                            <span>Filters</span>
+                            <ArrowRight className="w-3 h-3 text-mute" />
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
