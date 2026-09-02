@@ -13,6 +13,8 @@ import {
 } from 'lucide-react';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 
+import { saveHandoffImage } from '../../lib/storage/handoffStorage';
+
 interface Props {
   locale?: string;
   title?: string;
@@ -57,10 +59,9 @@ export function HomeDropZone({
     }
   };
 
-  const handleLaunchTool = (slug: string) => {
+  const handleLaunchTool = async (slug: string) => {
     if (!stagedFile) return;
-    sessionStorage.setItem('it_cached_image', stagedFile.dataUrl);
-    sessionStorage.setItem('it_cached_filename', stagedFile.name);
+    await saveHandoffImage(stagedFile.dataUrl, stagedFile.name);
     window.location.href = getTargetUrl(slug);
   };
 

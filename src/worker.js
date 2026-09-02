@@ -5,11 +5,13 @@ export default {
     // Handle Cloud AI Upscale API route
     if (url.pathname === '/api/upscale' && request.method === 'POST') {
       try {
-        // Forward request to Oracle VPS Real-ESRGAN backend via hostname
-        const vpsResponse = await fetch('http://130.210.63.16.sslip.io/api/upscale', {
+        const endpoint = env?.CLOUD_AI_ENDPOINT || 'http://130.210.63.16.sslip.io/api/upscale';
+        // Forward request to Oracle VPS Real-ESRGAN backend with 30s timeout
+        const vpsResponse = await fetch(endpoint, {
           method: 'POST',
           headers: request.headers,
           body: request.body,
+          signal: AbortSignal.timeout(30000),
         });
 
         const headers = new Headers(vpsResponse.headers);
@@ -23,10 +25,14 @@ export default {
           headers,
         });
       } catch (err) {
+        const isTimeout = err?.name === 'TimeoutError' || err?.message?.includes('timeout');
         return new Response(
-          JSON.stringify({ error: 'Failed to connect to Oracle Cloud AI backend', details: err.message }),
+          JSON.stringify({
+            error: isTimeout ? 'Cloud AI backend request timed out after 30s' : 'Failed to connect to Oracle Cloud AI backend',
+            details: err?.message || 'Unknown error',
+          }),
           {
-            status: 502,
+            status: isTimeout ? 504 : 502,
             headers: {
               'Content-Type': 'application/json',
               'Access-Control-Allow-Origin': '*',

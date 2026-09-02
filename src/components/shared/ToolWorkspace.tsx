@@ -28,6 +28,7 @@ import type {
   BorderOptions,
   ImageProcessingOptions,
 } from '../../lib/canvas/engine';
+import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
@@ -55,6 +56,7 @@ import { PhotoFiltersWorkspace } from '../tools/PhotoFiltersWorkspace';
 import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
 import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
 import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
+import { ErrorBoundary } from './ErrorBoundary';
 
 interface Props {
   slug: string;
@@ -63,15 +65,15 @@ interface Props {
 }
 
 export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
-  // Delegate dedicated batch/decoder/AI/creative tools directly
-  if (slug === 'bulk-image-compressor') return <BulkCompressorWorkspace />;
-  if (slug === 'bulk-image-resizer') return <BulkResizerWorkspace />;
-  if (slug === 'base64-to-image') return <Base64ToImageWorkspace />;
-  if (slug === 'ai-image-upscaler') return <AiUpscalerWorkspace />;
-  if (slug === 'photo-filters') return <PhotoFiltersWorkspace />;
-  if (slug === 'meme-generator') return <MemeGeneratorWorkspace />;
-  if (slug === 'split-image') return <ImageSplitterWorkspace />;
-  if (slug === 'censor-image') return <CensorImageWorkspace />;
+  // Delegate dedicated batch/decoder/AI/creative tools directly with ErrorBoundary protection
+  if (slug === 'bulk-image-compressor') return <ErrorBoundary><BulkCompressorWorkspace /></ErrorBoundary>;
+  if (slug === 'bulk-image-resizer') return <ErrorBoundary><BulkResizerWorkspace /></ErrorBoundary>;
+  if (slug === 'base64-to-image') return <ErrorBoundary><Base64ToImageWorkspace /></ErrorBoundary>;
+  if (slug === 'ai-image-upscaler') return <ErrorBoundary><AiUpscalerWorkspace /></ErrorBoundary>;
+  if (slug === 'photo-filters') return <ErrorBoundary><PhotoFiltersWorkspace /></ErrorBoundary>;
+  if (slug === 'meme-generator') return <ErrorBoundary><MemeGeneratorWorkspace /></ErrorBoundary>;
+  if (slug === 'split-image') return <ErrorBoundary><ImageSplitterWorkspace /></ErrorBoundary>;
+  if (slug === 'censor-image') return <ErrorBoundary><CensorImageWorkspace /></ErrorBoundary>;
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
@@ -240,20 +242,19 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     return () => window.removeEventListener('paste', handlePaste);
   }, []);
 
-  // Check cached image from homepage dropzone
+  // Check cached handoff image from homepage dropzone or cross-tool handoff
   useEffect(() => {
-    const cached = sessionStorage.getItem('it_cached_image');
-    const cachedName = sessionStorage.getItem('it_cached_filename');
-    if (cached) {
-      sessionStorage.removeItem('it_cached_image');
-      sessionStorage.removeItem('it_cached_filename');
-      fetch(cached)
-        .then((res) => res.blob())
-        .then((blob) => {
-          const file = new File([blob], cachedName || 'image.png', { type: blob.type });
-          handleFile(file);
-        });
-    }
+    consumeHandoffImage().then((cached) => {
+      if (cached) {
+        fetch(cached.dataUrl)
+          .then((res) => res.blob())
+          .then((blob) => {
+            const file = new File([blob], cached.filename || 'image.png', { type: blob.type });
+            handleFile(file);
+          })
+          .catch((err) => console.warn('Failed to parse cached handoff blob:', err));
+      }
+    });
   }, []);
 
   // Re-extract palette when palette count changes
@@ -494,14 +495,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     }
   };
 
-  const handleSendToTool = (targetSlug: string) => {
+  const handleSendToTool = async (targetSlug: string) => {
     if (!imageElement) return;
     try {
       const options = getProcessingOptions(true);
       const fullResCanvas = processCanvas(imageElement, options);
       const dataUrl = fullResCanvas.toDataURL('image/png');
-      sessionStorage.setItem('it_cached_image', dataUrl);
-      sessionStorage.setItem('it_cached_filename', `${filename || 'image'}`);
+      await saveHandoffImage(dataUrl, `${filename || 'image'}`);
 
       const currentPath = window.location.pathname;
       const pathParts = currentPath.split('/').filter(Boolean);
@@ -515,13 +515,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   };
 
   return (
-    <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
-      {errorMessage && (
-        <div className="flex items-center gap-2 p-3 bg-accent-red/10 border border-accent-red/20 rounded-lg text-xs text-accent-red">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <span>{errorMessage}</span>
-        </div>
-      )}
+    <ErrorBoundary fallbackTitle={`Error in ${toolName} Workspace`}>
+      <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
+        {errorMessage && (
+          <div className="flex items-center gap-2 p-3 bg-accent-red/10 border border-accent-red/20 rounded-lg text-xs text-accent-red">
+            <AlertCircle className="w-4 h-4 shrink-0" />
+            <span>{errorMessage}</span>
+          </div>
+        )}
 
       {!imageElement ? (
         /* Empty Upload State */
@@ -993,5 +994,6 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
         </div>
       )}
     </div>
+    </ErrorBoundary>
   );
 }
