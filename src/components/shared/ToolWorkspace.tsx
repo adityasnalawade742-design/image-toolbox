@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   UploadCloud,
   Download,
@@ -9,6 +9,8 @@ import {
   Check,
   Code,
   Loader2,
+  ArrowRight,
+  Sparkles,
 } from 'lucide-react';
 import {
   loadImage,
@@ -425,6 +427,26 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     }
   };
 
+  const handleSendToTool = (targetSlug: string) => {
+    if (!imageElement) return;
+    try {
+      const options = getProcessingOptions(true);
+      const fullResCanvas = processCanvas(imageElement, options);
+      const dataUrl = fullResCanvas.toDataURL('image/png');
+      sessionStorage.setItem('it_cached_image', dataUrl);
+      sessionStorage.setItem('it_cached_filename', `${filename || 'image'}`);
+
+      const currentPath = window.location.pathname;
+      const pathParts = currentPath.split('/').filter(Boolean);
+      const supportedLocales = ['es', 'fr', 'de', 'pt', 'it', 'ja', 'ko', 'id', 'tr'];
+      const localePrefix = supportedLocales.includes(pathParts[0]) ? `/${pathParts[0]}` : '';
+
+      window.location.href = `${localePrefix}/${targetSlug}`;
+    } catch (err) {
+      console.error('Failed to hand off image to next tool:', err);
+    }
+  };
+
   return (
     <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
       {errorMessage && (
@@ -774,6 +796,87 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                       </>
                     )}
                   </button>
+                )}
+
+                {/* Cross-Tool Workflow Handoff Bar */}
+                {slug !== 'favicon-generator' && slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
+                  <div className="pt-3 border-t border-hairline space-y-2">
+                    <span className="text-[11px] font-semibold text-mute uppercase tracking-wider block">
+                      Continue In Another Tool:
+                    </span>
+                    <div className="grid grid-cols-2 gap-1.5 text-xs">
+                      {slug !== 'compress-image' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('compress-image')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Compress</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'crop-image' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('crop-image')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Crop</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'resize-image' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('resize-image')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Resize</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'add-text-to-image' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('add-text-to-image')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Add Text</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'watermark-image' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('watermark-image')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Watermark</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'photo-filters' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('photo-filters')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>Filters</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                      {slug !== 'ai-image-upscaler' && (
+                        <button
+                          type="button"
+                          onClick={() => handleSendToTool('ai-image-upscaler')}
+                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
+                        >
+                          <span>AI Upscaler</span>
+                          <ArrowRight className="w-3 h-3 text-mute" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
                 )}
               </div>
             )}

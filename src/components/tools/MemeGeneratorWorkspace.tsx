@@ -16,20 +16,52 @@ import {
 
 const MEME_TEMPLATES = [
   {
-    name: 'Dark Studio',
-    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23111827"/><circle cx="400" cy="300" r="280" fill="%231f2937"/><rect x="80" y="60" width="640" height="480" rx="24" fill="%230f172a" stroke="%23374151" stroke-width="4"/></svg>',
+    name: 'Drake Reject / Approve',
+    topDefault: 'WRITING 500 LINES OF CODE',
+    bottomDefault: 'USING A 1-LINE CSS PROPERTY',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 700 700"><rect width="700" height="700" fill="%23f1f5f9"/><line x1="0" y1="350" x2="700" y2="350" stroke="%23cbd5e1" stroke-width="4"/><line x1="350" y1="0" x2="350" y2="700" stroke="%23cbd5e1" stroke-width="4"/><rect width="350" height="350" fill="%23fee2e2"/><text x="175" y="180" font-family="sans-serif" font-size="70" text-anchor="middle" fill="%23ef4444">🙅‍♂️</text><text x="175" y="240" font-family="sans-serif" font-weight="bold" font-size="20" text-anchor="middle" fill="%23991b1b">NAH...</text><rect y="350" width="350" height="350" fill="%23dcfce7"/><text x="175" y="530" font-family="sans-serif" font-size="70" text-anchor="middle" fill="%2322c55e">👉</text><text x="175" y="590" font-family="sans-serif" font-weight="bold" font-size="20" text-anchor="middle" fill="%23166534">THAT ONE!</text></svg>',
+  },
+  {
+    name: 'Two Buttons Dilemma',
+    topDefault: 'SWEATING OVER THE CHOICE',
+    bottomDefault: 'FIX BUG  vs  ADD NEW FEATURE',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500"><rect width="700" height="500" fill="%231e293b"/><circle cx="240" cy="180" r="80" fill="%23ef4444" stroke="%23b91c1c" stroke-width="8"/><circle cx="460" cy="180" r="80" fill="%233b82f6" stroke="%231d4ed8" stroke-width="8"/><path d="M350 320 Q 350 480 350 500" stroke="%2394a3b8" stroke-width="8" fill="none"/><circle cx="350" cy="380" r="60" fill="%23fde047"/><text x="350" y="390" font-size="40" text-anchor="middle">😰</text></svg>',
+  },
+  {
+    name: 'Buff Doge vs Cheems',
+    topDefault: 'BROWSERS IN 2010',
+    bottomDefault: 'BROWSERS IN 2026 WITH 32GB RAM',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"><rect width="400" height="500" fill="%23fef3c7"/><rect x="400" width="400" height="500" fill="%23f3f4f6"/><line x1="400" y1="0" x2="400" y2="500" stroke="%23cbd5e1" stroke-width="4"/><text x="200" y="260" font-size="100" text-anchor="middle">🐕💪</text><text x="200" y="340" font-family="sans-serif" font-weight="bold" font-size="22" text-anchor="middle" fill="%2392400e">ULTRA POWERFUL</text><text x="600" y="260" font-size="80" text-anchor="middle">🐶🥺</text><text x="600" y="340" font-family="sans-serif" font-weight="bold" font-size="22" text-anchor="middle" fill="%236b7280">OUT OF MEMORY</text></svg>',
+  },
+  {
+    name: 'Expanding Brain',
+    topDefault: 'NORMAL SOLUTION',
+    bottomDefault: 'GALAXY BRAIN 1-LINER',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"><rect width="600" height="200" fill="%231e1e24"/><rect y="200" width="600" height="200" fill="%232b1055"/><rect y="400" width="600" height="200" fill="%233b0764"/><rect y="600" width="600" height="200" fill="%23581c87"/><text x="500" y="120" font-size="60" text-anchor="middle">🧠</text><text x="500" y="320" font-size="65" text-anchor="middle">⚡🧠</text><text x="500" y="520" font-size="70" text-anchor="middle">✨🧠✨</text><text x="500" y="720" font-size="75" text-anchor="middle">🌌🧠🌌</text><line x1="0" y1="200" x2="600" y2="200" stroke="%23ffffff" stroke-width="2" opacity="0.3"/><line x1="0" y1="400" x2="600" y2="400" stroke="%23ffffff" stroke-width="2" opacity="0.3"/><line x1="0" y1="600" x2="600" y2="600" stroke="%23ffffff" stroke-width="2" opacity="0.3"/><line x1="380" y1="0" x2="380" y2="800" stroke="%23ffffff" stroke-width="3" opacity="0.4"/></svg>',
+  },
+  {
+    name: 'Distracted Focus',
+    topDefault: 'ME WORKING ON MY MAIN PROJECT',
+    bottomDefault: 'BUILDING A NEW RANDOM SIDE PROJECT',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"><rect width="800" height="500" fill="%230f172a"/><circle cx="200" cy="220" r="90" fill="%23ec4899" opacity="0.3"/><text x="200" y="240" font-size="70" text-anchor="middle">💃</text><circle cx="480" cy="220" r="90" fill="%233b82f6" opacity="0.3"/><text x="480" y="240" font-size="70" text-anchor="middle">🚶‍♂️👀</text><circle cx="700" cy="220" r="90" fill="%2364748b" opacity="0.3"/><text x="700" y="240" font-size="70" text-anchor="middle">🤦‍♀️</text></svg>',
+  },
+  {
+    name: 'Change My Mind',
+    topDefault: 'IMAGE TOOLBOX IS THE FASTEST SUITE',
+    bottomDefault: 'CHANGE MY MIND',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"><rect width="800" height="500" fill="%23f8fafc"/><rect x="100" y="160" width="600" height="260" rx="16" fill="%23ffffff" stroke="%230f172a" stroke-width="8"/><circle cx="400" cy="100" r="60" fill="%233b82f6"/><text x="400" y="115" font-size="50" text-anchor="middle">☕</text><text x="400" y="320" font-family="Impact" font-size="36" text-anchor="middle" fill="%230f172a">CHANGE MY MIND</text></svg>',
   },
   {
     name: 'Cyberpunk Neon',
+    topDefault: 'WHEN THE UI HAS NEON GLOW',
+    bottomDefault: '1000% MORE ENGAGEMENT',
     url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%25" stop-color="%23090d16"/><stop offset="100%25" stop-color="%232b1055"/></linearGradient></defs><rect width="800" height="600" fill="url(%23g)"/><circle cx="700" cy="100" r="160" fill="%23f43f5e" opacity="0.25"/><circle cx="100" cy="500" r="200" fill="%2306b6d4" opacity="0.25"/><rect x="60" y="60" width="680" height="480" rx="16" fill="none" stroke="%23ec4899" stroke-width="3"/></svg>',
   },
   {
-    name: 'Clean Studio White',
-    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23f8fafc"/><rect x="50" y="50" width="700" height="500" rx="20" fill="%23ffffff" stroke="%23e2e8f0" stroke-width="6"/></svg>',
-  },
-  {
-    name: 'Split Comparison',
-    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="400" height="600" fill="%23ef4444"/><rect x="400" width="400" height="600" fill="%2310b981"/><line x1="400" y1="0" x2="400" y2="600" stroke="%23ffffff" stroke-width="8"/></svg>',
+    name: 'Dark Studio Clean',
+    topDefault: 'TOP CAPTION HERE',
+    bottomDefault: 'BOTTOM CAPTION HERE',
+    url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23111827"/><circle cx="400" cy="300" r="280" fill="%231f2937"/><rect x="80" y="60" width="640" height="480" rx="24" fill="%230f172a" stroke="%23374151" stroke-width="4"/></svg>',
   },
 ];
 
@@ -62,13 +94,15 @@ export function MemeGeneratorWorkspace() {
     img.src = URL.createObjectURL(file);
   };
 
-  const handleTemplateSelect = (url: string) => {
+  const handleTemplateSelect = (template: (typeof MEME_TEMPLATES)[0]) => {
     const img = new Image();
     img.onload = () => {
       setImgElement(img);
-      setSelectedFile(new File([], 'template.svg', { type: 'image/svg+xml' }));
+      setSelectedFile(new File([], `${template.name}.svg`, { type: 'image/svg+xml' }));
+      if (template.topDefault) setTopText(template.topDefault);
+      if (template.bottomDefault) setBottomText(template.bottomDefault);
     };
-    img.src = url;
+    img.src = template.url;
   };
 
   // Re-draw Canvas whenever state changes
@@ -202,7 +236,7 @@ export function MemeGeneratorWorkspace() {
                 <button
                   key={idx}
                   type="button"
-                  onClick={() => handleTemplateSelect(t.url)}
+                  onClick={() => handleTemplateSelect(t)}
                   className="group relative rounded-xl overflow-hidden border border-gray-800 hover:border-primary-500 transition-all aspect-video cursor-pointer"
                 >
                   <img
@@ -221,24 +255,40 @@ export function MemeGeneratorWorkspace() {
       )}
 
       {imgElement && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-          {/* Canvas Live Preview Area (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="lg:col-span-2 space-y-4 order-1 lg:order-2">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4 min-h-[360px] sm:min-h-[480px] flex items-center justify-center">
-              <canvas
-                ref={canvasRef}
-                className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-gray-800"
-              />
-            </div>
+        <div className="space-y-4">
+          {/* Quick Template Switcher Strip */}
+          <div className="flex items-center gap-2 overflow-x-auto p-2 bg-surface-card border border-hairline rounded-lg text-xs">
+            <span className="text-mute font-medium whitespace-nowrap pl-1">Templates:</span>
+            {MEME_TEMPLATES.map((t, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => handleTemplateSelect(t)}
+                className="px-2.5 py-1 bg-surface-elevated hover:bg-surface border border-hairline hover:border-hairline-strong rounded text-[11px] text-body hover:text-ink transition-colors whitespace-nowrap"
+              >
+                {t.name}
+              </button>
+            ))}
           </div>
 
-          {/* Controls Sidebar (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5 max-h-[85vh] overflow-y-auto custom-scrollbar order-2 lg:order-1">
-            <div className="flex items-center justify-between">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Smile className="w-4 h-4 text-primary-400" />
-                <span>Meme Text & Styling</span>
-              </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+            {/* Canvas Live Preview Area (Order 1 on mobile, Order 2 on desktop) */}
+            <div className="lg:col-span-2 space-y-4 order-1 lg:order-2">
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4 min-h-[360px] sm:min-h-[480px] flex items-center justify-center">
+                <canvas
+                  ref={canvasRef}
+                  className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-gray-800"
+                />
+              </div>
+            </div>
+
+            {/* Controls Sidebar (Order 2 on mobile, Order 1 on desktop) */}
+            <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5 max-h-[85vh] overflow-y-auto custom-scrollbar order-2 lg:order-1">
+              <div className="flex items-center justify-between">
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <Smile className="w-4 h-4 text-primary-400" />
+                  <span>Meme Text & Styling</span>
+                </h3>
               <button
                 type="button"
                 onClick={() => {
@@ -481,6 +531,7 @@ export function MemeGeneratorWorkspace() {
             </div>
           </div>
         </div>
+      </div>
       )}
     </div>
   );
