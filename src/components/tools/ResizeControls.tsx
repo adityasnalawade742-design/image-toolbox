@@ -28,10 +28,25 @@ export function ResizeControls({
 }: Props) {
   const [mode, setMode] = useState<'pixels' | 'percentage'>('pixels');
   const [percent, setPercent] = useState<number>(100);
+  const [localW, setLocalW] = useState<string>(String(width || ''));
+  const [localH, setLocalH] = useState<string>(String(height || ''));
+
+  // Sync incoming props to local inputs if external change
+  React.useEffect(() => {
+    setLocalW(String(width));
+  }, [width]);
+
+  React.useEffect(() => {
+    setLocalH(String(height));
+  }, [height]);
 
   const aspectRatio = originalWidth / originalHeight;
 
-  const handleWidthInput = (val: number) => {
+  const handleWidthInput = (raw: string) => {
+    setLocalW(raw);
+    const val = parseInt(raw, 10);
+    if (isNaN(val) || val <= 0) return;
+
     let newW = val;
     if (preventUpscale && newW > originalWidth) newW = originalWidth;
     onWidthChange(newW);
@@ -39,10 +54,15 @@ export function ResizeControls({
       let newH = Math.round(newW / aspectRatio);
       if (preventUpscale && newH > originalHeight) newH = originalHeight;
       onHeightChange(newH);
+      setLocalH(String(newH));
     }
   };
 
-  const handleHeightInput = (val: number) => {
+  const handleHeightInput = (raw: string) => {
+    setLocalH(raw);
+    const val = parseInt(raw, 10);
+    if (isNaN(val) || val <= 0) return;
+
     let newH = val;
     if (preventUpscale && newH > originalHeight) newH = originalHeight;
     onHeightChange(newH);
@@ -50,6 +70,7 @@ export function ResizeControls({
       let newW = Math.round(newH * aspectRatio);
       if (preventUpscale && newW > originalWidth) newW = originalWidth;
       onWidthChange(newW);
+      setLocalW(String(newW));
     }
   };
 
@@ -134,11 +155,8 @@ export function ResizeControls({
                 type="number"
                 min="1"
                 max={preventUpscale ? originalWidth : 10000}
-                value={width || ''}
-                onChange={(e) => {
-                  const v = parseInt(e.target.value);
-                  if (!isNaN(v)) handleWidthInput(v);
-                }}
+                value={localW}
+                onChange={(e) => handleWidthInput(e.target.value)}
                 className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
               />
             </div>
@@ -148,11 +166,8 @@ export function ResizeControls({
                 type="number"
                 min="1"
                 max={preventUpscale ? originalHeight : 10000}
-                value={height || ''}
-                onChange={(e) => {
-                  const v = parseInt(e.target.value);
-                  if (!isNaN(v)) handleHeightInput(v);
-                }}
+                value={localH}
+                onChange={(e) => handleHeightInput(e.target.value)}
                 className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
               />
             </div>

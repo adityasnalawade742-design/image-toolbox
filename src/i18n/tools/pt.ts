@@ -1443,4 +1443,172 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Filtros e Efeitos de Foto",
+    "shortName": "Filtros",
+    "tagline": "Aplique filtros de cor, efeitos vintage e iluminação direto no navegador.",
+    "seoTitle": "Filtros para Fotos Online Grátis — Efeitos e Ajustes de Cor",
+    "seoDescription": "Aplique filtros cinematográficos, contraste, saturação e estilo vintage online e grátis. 100% privado.",
+    "keywords": [
+      "filtros de fotos online",
+      "efeitos para fotos gratis",
+      "editar cores foto"
+    ],
+    "howToSteps": [
+      {
+        "title": "Envie sua Foto",
+        "description": "Arraste ou cole com Ctrl+V."
+      },
+      {
+        "title": "Escolha o Filtro",
+        "description": "Ajuste brilho, saturação e vinheta."
+      },
+      {
+        "title": "Baixe o Resultado",
+        "description": "Salve a foto em alta resolução."
+      }
+    ],
+    "features": [
+      {
+        "title": "Aceleração por GPU",
+        "description": "Renderização instantânea."
+      },
+      {
+        "title": "100% Privado",
+        "description": "Fotos ficam apenas no seu aparelho."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "É grátis?",
+        "answer": "Sim, 100% gratuito e sem limites."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Gerador de Memes",
+    "shortName": "Memes",
+    "tagline": "Crie memes virais com textos personalizados e sem marca d’água.",
+    "seoTitle": "Gerador de Memes Online Grátis — Sem Marca d’Água",
+    "seoDescription": "Crie memes personalizados com fonte Impact, cores personalizadas e download sem marcas d’água.",
+    "keywords": [
+      "gerador de memes",
+      "criar meme online gratis",
+      "fazer memes"
+    ],
+    "howToSteps": [
+      {
+        "title": "Escolha a Imagem",
+        "description": "Envie sua foto ou escolha um modelo."
+      },
+      {
+        "title": "Edite o Texto",
+        "description": "Escreva as legendas superior e inferior."
+      },
+      {
+        "title": "Baixe o Meme",
+        "description": "Exporte em PNG ou JPG de alta qualidade."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sem Marca d’Água",
+        "description": "Memes limpos para compartilhar."
+      },
+      {
+        "title": "100% Privado",
+        "description": "Sem uploads para servidores."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Tem marca d’água?",
+        "answer": "Não, todos os memes são 100% limpos."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Divisor de Imagens e Grade",
+    "shortName": "Dividir",
+    "tagline": "Divida fotos em grade 3×3 para Instagram com download em arquivo ZIP.",
+    "seoTitle": "Divisor de Fotos Online — Grade 3x3 do Instagram em ZIP",
+    "seoDescription": "Corte fotos em grade 3x3 para o Instagram ou carrosséis panorâmicos. Baixe todos os blocos em um arquivo ZIP.",
+    "keywords": [
+      "dividir foto em 3x3",
+      "grade instagram online",
+      "cortar imagem"
+    ],
+    "howToSteps": [
+      {
+        "title": "Envie a Imagem",
+        "description": "Arraste sua foto ou panorama."
+      },
+      {
+        "title": "Escolha a Grade",
+        "description": "Selecione 3×3 ou grade personalizada."
+      },
+      {
+        "title": "Baixe em ZIP",
+        "description": "Baixe todas as partes compactadas."
+      }
+    ],
+    "features": [
+      {
+        "title": "Download ZIP em 1 Clique",
+        "description": "Todas as partes organizadas."
+      },
+      {
+        "title": "Qualidade Sem Perdas",
+        "description": "Preserva 100% da nitidez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Como postar no Instagram?",
+        "answer": "Poste as imagens na ordem inversa (#9 ao #1)."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Censurar e Desfocar Foto",
+    "shortName": "Censurar",
+    "tagline": "Oculte rostos, placas e dados confidenciais com desfoque ou pixelização.",
+    "seoTitle": "Censurar e Desfocar Imagem Online — Pixelar e Proteger Privacidade",
+    "seoDescription": "Desfoque rostos, placas de veículos e documentos confidenciais online grátis. Remoção automática de metadados EXIF.",
+    "keywords": [
+      "desfocar rosto online",
+      "pixelar imagem gratis",
+      "censurar documento"
+    ],
+    "howToSteps": [
+      {
+        "title": "Envie sua Imagem",
+        "description": "Escolha a foto para censurar."
+      },
+      {
+        "title": "Marque as Áreas",
+        "description": "Arraste sobre os dados confidenciais."
+      },
+      {
+        "title": "Baixe Protegida",
+        "description": "Salve a foto higienizada."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vários Modos",
+        "description": "Desfoque Gaussiano, Mosaico e Tarjas Pretas."
+      },
+      {
+        "title": "Remoção de EXIF",
+        "description": "Apaga dados de GPS e câmera."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "A censura pode ser revertida?",
+        "answer": "Não, os dados são permanentemente substituídos."
+      }
+    ]
+  }
 };

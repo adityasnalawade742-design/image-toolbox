@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Copy, Check, Palette } from 'lucide-react';
+import { Copy, Check, Palette, FileCode, Download } from 'lucide-react';
+import { downloadBlob, canvasToBlob } from '../../lib/canvas/engine';
 
 interface Props {
   palette: string[];
@@ -9,7 +10,7 @@ interface Props {
 
 export function PaletteGeneratorControls({ palette, colorCount, onCountChange }: Props) {
   const [copiedHex, setCopiedHex] = useState<string | null>(null);
-  const [copiedAll, setCopiedAll] = useState(false);
+  const [copiedMsg, setCopiedMsg] = useState<string | null>(null);
 
   const copyHex = (hex: string) => {
     navigator.clipboard.writeText(hex);
@@ -17,11 +18,51 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
     setTimeout(() => setCopiedHex(null), 1500);
   };
 
-  const copyAllPalette = () => {
-    const text = palette.join(', ');
-    navigator.clipboard.writeText(text);
-    setCopiedAll(true);
-    setTimeout(() => setCopiedAll(false), 1500);
+  const copyCssVars = () => {
+    const css = `:root {\n` + palette.map((c, i) => `  --color-${i + 1}: ${c};`).join('\n') + `\n}`;
+    navigator.clipboard.writeText(css);
+    setCopiedMsg('CSS Variables Copied!');
+    setTimeout(() => setCopiedMsg(null), 1800);
+  };
+
+  const copyJson = () => {
+    navigator.clipboard.writeText(JSON.stringify(palette, null, 2));
+    setCopiedMsg('JSON Array Copied!');
+    setTimeout(() => setCopiedMsg(null), 1800);
+  };
+
+  const downloadSwatchPng = async () => {
+    const swatchW = 120;
+    const swatchH = 160;
+    const canvas = document.createElement('canvas');
+    canvas.width = swatchW * palette.length + 40;
+    canvas.height = swatchH + 60;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Background
+    ctx.fillStyle = '#0a0d14';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    palette.forEach((hex, i) => {
+      const x = 20 + i * swatchW;
+      const y = 20;
+
+      // Color card
+      ctx.fillStyle = hex;
+      ctx.beginPath();
+      ctx.roundRect(x, y, swatchW - 10, swatchH - 40, 10);
+      ctx.fill();
+
+      // Hex code label
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 12px Inter, monospace, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(hex, x + (swatchW - 10) / 2, y + swatchH - 12);
+    });
+
+    const blob = await canvasToBlob(canvas, 'image/png');
+    downloadBlob(blob, `color-palette-${Date.now()}.png`);
   };
 
   return (
@@ -33,7 +74,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
           <span>Dominant Swatches</span>
         </label>
         <div className="flex items-center gap-1">
-          {[3, 5, 6, 8].map((num) => (
+          {[3, 4, 5, 6, 8].map((num) => (
             <button
               key={num}
               type="button"
@@ -76,15 +117,42 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
         ))}
       </div>
 
-      {/* Copy All Palette Button */}
-      <button
-        type="button"
-        onClick={copyAllPalette}
-        className="w-full py-2 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
-      >
-        {copiedAll ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
-        <span>{copiedAll ? 'Copied Full Palette to Clipboard!' : 'Copy Full Palette (HEX list)'}</span>
-      </button>
+      {/* Export Actions */}
+      <div className="space-y-2 pt-2 border-t border-hairline">
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={copyCssVars}
+            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
+          >
+            <FileCode className="w-3.5 h-3.5 text-accent-blue" />
+            <span>Copy CSS</span>
+          </button>
+          <button
+            type="button"
+            onClick={copyJson}
+            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
+          >
+            <Copy className="w-3.5 h-3.5 text-accent-green" />
+            <span>Copy JSON</span>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          onClick={downloadSwatchPng}
+          className="w-full py-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
+        >
+          <Download className="w-3.5 h-3.5 text-accent-amber" />
+          <span>Download Palette Swatch Sheet (.PNG)</span>
+        </button>
+
+        {copiedMsg && (
+          <div className="p-2 bg-surface-card border border-hairline-strong rounded text-center text-xs font-semibold text-accent-green">
+            {copiedMsg}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

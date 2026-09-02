@@ -587,4 +587,172 @@ export const trTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Fotoğraf Filtreleri ve Efektler",
+    "shortName": "Filtreler",
+    "tagline": "Estetik renk filtreleri, vintage efektler ve ışık kontrollerini tarayıcınızda uygulayın.",
+    "seoTitle": "Ücretsiz Fotoğraf Filtreleri Online — Renk Efektleri ve Ayarlar",
+    "seoDescription": "Fotoğraflarınıza sinematik filtreler, kontrast, doygunluk ve vintage efektleri ücretsiz uygulayın. %100 gizli ve güvenli.",
+    "keywords": [
+      "fotoğraf filtreleri online",
+      "fotoğraf efektleri ücretsiz",
+      "renk düzenleme"
+    ],
+    "howToSteps": [
+      {
+        "title": "Fotoğrafı Yükle",
+        "description": "Resmi sürükleyin veya Ctrl+V ile yapıştırın."
+      },
+      {
+        "title": "Filtreyi Seç",
+        "description": "Sinematik veya vintage ayarlarını uygulayın."
+      },
+      {
+        "title": "Sonucu İndir",
+        "description": "Geliştirilmiş fotoğrafı yüksek kalitede kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "GPU Hızlandırma",
+        "description": "Tarayıcıda anında işleme."
+      },
+      {
+        "title": "100% Gizlilik",
+        "description": "Fotoğraflarınız cihazınızda kalır."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bu araç ücretsiz mi?",
+        "answer": "Evet, sınırsız ve tamamen ücretsizdir."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Meme Oluşturucu (Caps Yapıcı)",
+    "shortName": "Meme Yapıcı",
+    "tagline": "Filigransız, özel yazılı viral memeler ve capsler oluşturun.",
+    "seoTitle": "Meme Oluşturucu Online Ücretsiz — Filigransız Caps Yapma",
+    "seoDescription": "Klasik Impact yazı tipi ve özel renklerle kendi memelerinizi oluşturun. Filigransız yüksek çözünürlüklü indirme.",
+    "keywords": [
+      "meme oluşturucu",
+      "caps yapma online",
+      "meme maker ücretsiz"
+    ],
+    "howToSteps": [
+      {
+        "title": "Resim Seç",
+        "description": "Fotoğraf yükleyin veya şablon seçin."
+      },
+      {
+        "title": "Yazıyı Düzenle",
+        "description": "Üst ve alt metinleri yazın."
+      },
+      {
+        "title": "Meme’i İndir",
+        "description": "Yüksek çözünürlükte kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Filigran Yok",
+        "description": "Paylaşıma hazır temiz görseller."
+      },
+      {
+        "title": "100% Gizli",
+        "description": "Sunucuya yükleme yapılmaz."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Filigran ekleniyor mu?",
+        "answer": "Hayır, tüm görseller %100 filigransızdır."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Resim Bölücü & Izgara Kesici",
+    "shortName": "Resim Bölücü",
+    "tagline": "Fotoğrafları Instagram 3×3 ızgarasına veya panoramaya bölün ve ZIP olarak indirin.",
+    "seoTitle": "Resim Bölücü Online — Instagram 3x3 Izgara & Panorama ZIP",
+    "seoDescription": "Fotoğrafları Instagram 3x3 profil ızgaralarına veya kaydırılabilir panoramalara bölün. Tek tıkla ZIP formatında indirin.",
+    "keywords": [
+      "resmi 3x3 bölme",
+      "instagram ızgara yapıcı",
+      "resim kesici"
+    ],
+    "howToSteps": [
+      {
+        "title": "Fotoğrafı Yükle",
+        "description": "Resmi veya panoramayı sürükleyin."
+      },
+      {
+        "title": "Izgarayı Seç",
+        "description": "3×3 veya özel satır/sütun seçin."
+      },
+      {
+        "title": "ZIP İndir",
+        "description": "Numaralandırılmış tüm parçaları kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Tek Tıkla ZIP İndirme",
+        "description": "Tüm parçalar düzenli olarak arşivlenir."
+      },
+      {
+        "title": "Kayıpsız Kalite",
+        "description": "Orijinal piksel netliği korunur."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Instagram’a nasıl yüklenir?",
+        "answer": "Kareleri sondan başa doğru (#9’dan #1’e) sırayla yükleyin."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Fotoğraf Sansürleme ve Bulanıklaştırma",
+    "shortName": "Sansürle",
+    "tagline": "Yüzleri, plakaları ve gizli bilgileri bulanıklaştırma veya mozaikle gizleyin.",
+    "seoTitle": "Fotoğraf Sansürleme ve Bulanıklaştırma Online — Gizlilik ve EXIF Silme",
+    "seoDescription": "Fotoğraflardaki yüzleri, araç plakalarını ve hassas belgeleri ücretsiz sansürleyin. EXIF verileri otomatik silinir.",
+    "keywords": [
+      "yüz bulanıklaştırma",
+      "fotoğraf sansürleme",
+      "mozaik yapma online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Görseli Yükle",
+        "description": "Sansürlenecek fotoğrafı seçin."
+      },
+      {
+        "title": "Alanları Çiz",
+        "description": "Gizlenecek yerlerin üzerini fareyle çizin."
+      },
+      {
+        "title": "Güvenle İndir",
+        "description": "Temizlenmiş fotoğrafı kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Çoklu Mod",
+        "description": "Gauss Bulanıklığı, Mozaik ve Siyah Bant."
+      },
+      {
+        "title": "EXIF Temizleme",
+        "description": "GPS ve kamera bilgilerini otomatik siler."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Sansür geri alınabilir mi?",
+        "answer": "Hayır, pikseller kalıcı olarak değiştirilir."
+      }
+    ]
+  }
 };

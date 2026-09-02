@@ -5,10 +5,12 @@ After=network.target
 [Service]
 User=ubuntu
 WorkingDirectory=/home/ubuntu/ai-upscaler-api
-ExecStart=/home/ubuntu/ai-upscaler-api/venv/bin/python /home/ubuntu/ai-upscaler-api/main.py
+ExecStart=/home/ubuntu/ai-upscaler-api/venv/bin/uvicorn main:app --host 127.0.0.1 --port 8000 --workers 2
 Restart=always
-RestartSec=5
+RestartSec=3
 Environment=PYTHONUNBUFFERED=1
+Environment=OMP_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
 
 [Install]
 WantedBy=multi-user.target

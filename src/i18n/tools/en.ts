@@ -1457,4 +1457,208 @@ export const enTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Photo Filters & Effects",
+    "shortName": "Filters",
+    "tagline": "Apply aesthetic color presets, vintage film effects, vignette, and lighting controls in your browser.",
+    "seoTitle": "Photo Filters & Effects Online — Free Color Grading & Presets",
+    "seoDescription": "Apply cinematic photo filters, contrast, saturation, and vintage presets online for free. 100% private in-browser editing.",
+    "keywords": [
+      "photo filters online",
+      "image effects free",
+      "color grading presets",
+      "vintage photo editor"
+    ],
+    "howToSteps": [
+      {
+        "title": "Upload Photo",
+        "description": "Drag and drop your photo or paste from clipboard (Ctrl+V)."
+      },
+      {
+        "title": "Choose Preset or Adjust",
+        "description": "Select a preset (Cinematic, Vintage, Cyberpunk, Noir) or fine-tune brightness, contrast, and vignette."
+      },
+      {
+        "title": "Download Result",
+        "description": "Compare before/after and download your enhanced image in lossless PNG or WebP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Instant GPU Acceleration",
+        "description": "Real-time Canvas and WebGL rendering with zero delay."
+      },
+      {
+        "title": "100% Private",
+        "description": "Your photos never leave your device."
+      },
+      {
+        "title": "Before/After Comparison",
+        "description": "Swipeable split comparison slider to inspect fine color adjustments."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this Photo Filters tool free?",
+        "answer": "Yes, it is 100% free with unlimited usage."
+      },
+      {
+        "question": "Does it reduce image quality?",
+        "answer": "No, all filters are rendered at full original resolution."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Meme Generator",
+    "shortName": "Meme Maker",
+    "tagline": "Create viral memes with customizable top/bottom Impact captions, outline colors, and high-res export.",
+    "seoTitle": "Meme Generator Online — Free Viral Meme Maker Without Watermarks",
+    "seoDescription": "Create custom memes online for free with classic Impact fonts, custom colors, and zero watermarks. Fast and private.",
+    "keywords": [
+      "meme generator",
+      "meme maker online",
+      "free meme generator no watermark",
+      "create memes"
+    ],
+    "howToSteps": [
+      {
+        "title": "Select Image or Template",
+        "description": "Upload any photo or pick from popular starter meme templates."
+      },
+      {
+        "title": "Customize Captions",
+        "description": "Type top and bottom captions, choose fonts, colors, and outline widths."
+      },
+      {
+        "title": "Download Meme",
+        "description": "Export your meme instantly in high-resolution PNG or JPG format."
+      }
+    ],
+    "features": [
+      {
+        "title": "No Watermarks",
+        "description": "Generate clean memes without any branding or forced watermarks."
+      },
+      {
+        "title": "Classic & Modern Typography",
+        "description": "Impact, Arial, Comic Sans with adjustable outlines and shadows."
+      },
+      {
+        "title": "100% Client-Side Privacy",
+        "description": "Images stay strictly on your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this meme generator add watermarks?",
+        "answer": "No. All generated memes are 100% watermark-free."
+      },
+      {
+        "question": "Can I upload my own pictures?",
+        "answer": "Yes, you can upload any image or paste from clipboard."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Image Splitter & Grid Cutter",
+    "shortName": "Split Grid",
+    "tagline": "Cut photos into Instagram 3×3 grids, panoramic carousel slices, and custom tile matrices with 1-click ZIP download.",
+    "seoTitle": "Image Splitter & Grid Cutter — Instagram 3x3 Grid & Panorama Slices",
+    "seoDescription": "Split photos into Instagram 3x3 grid tiles, swipeable panorama carousels, or custom rows and columns. Free batch ZIP export.",
+    "keywords": [
+      "image splitter",
+      "instagram grid cutter",
+      "split photo into 3x3",
+      "panorama carousel splitter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Upload Image",
+        "description": "Drag and drop your photo or panorama."
+      },
+      {
+        "title": "Select Split Mode",
+        "description": "Choose Instagram 3×3 Grid, Panorama 3×1, or custom row × column counts."
+      },
+      {
+        "title": "Download Slices",
+        "description": "Download all tiles in a single organized ZIP file or click any tile to download individually."
+      }
+    ],
+    "features": [
+      {
+        "title": "1-Click Batch ZIP Export",
+        "description": "Automatically archives all numbered tiles into a single download."
+      },
+      {
+        "title": "Social Media Presets",
+        "description": "Optimized for Instagram 9-grid profiles and swipeable carousels."
+      },
+      {
+        "title": "Lossless Tile Cutting",
+        "description": "Preserves 100% of original image clarity and pixels."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I upload a 3x3 grid to Instagram?",
+        "answer": "Upload the numbered tiles starting from #9 to #1 in reverse order so they align perfectly on your profile."
+      },
+      {
+        "question": "Is there a limit on how many tiles I can cut?",
+        "answer": "You can customize up to 10×10 (100 tiles) per image for free."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Blur & Pixelate Censor",
+    "shortName": "Censor Photo",
+    "tagline": "Redact sensitive info, faces, license plates, and private numbers with Gaussian blur, mosaic pixelation, or blackout bars.",
+    "seoTitle": "Blur & Pixelate Image Online — Free Photo Redaction & Privacy Tool",
+    "seoDescription": "Blur faces, redact sensitive documents, and pixelate license plates online. 100% private in-browser redaction with automatic EXIF removal.",
+    "keywords": [
+      "censor image online",
+      "blur face in photo",
+      "pixelate sensitive info",
+      "redact document online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Upload Document or Photo",
+        "description": "Drag and drop the image you want to redact."
+      },
+      {
+        "title": "Draw Redaction Boxes",
+        "description": "Click and drag over sensitive areas with Mosaic Pixelation, Blur, or Blackout mode."
+      },
+      {
+        "title": "Download Sanitized Image",
+        "description": "Save the redacted image with all sensitive metadata stripped."
+      }
+    ],
+    "features": [
+      {
+        "title": "Multiple Censor Modes",
+        "description": "Mosaic Pixelation, Heavy Gaussian Blur, and Opaque Blackout bars."
+      },
+      {
+        "title": "EXIF Metadata Auto-Stripping",
+        "description": "Removes GPS coordinates, device info, and camera metadata automatically."
+      },
+      {
+        "title": "100% Client-Side Privacy",
+        "description": "Your confidential documents and faces never touch any server."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can someone unblur or reverse the censored image?",
+        "answer": "No. The pixelation permanently replaces the original pixel data during rendering."
+      },
+      {
+        "question": "Are my private documents safe?",
+        "answer": "Yes. All redactions are performed entirely in your browser memory."
+      }
+    ]
+  }
 };

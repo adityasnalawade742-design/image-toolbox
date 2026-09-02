@@ -1,13 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   UploadCloud,
   Download,
   Archive,
   Sliders,
   AlertCircle,
+  Copy,
+  Check,
+  Code,
+  Loader2,
 } from 'lucide-react';
 import {
   loadImage,
+  createImageProxy,
   processCanvas,
   canvasToBlob,
   downloadBlob,
@@ -19,9 +24,11 @@ import type {
   TextOverlayOptions,
   WatermarkOptions,
   BorderOptions,
+  ImageProcessingOptions,
 } from '../../lib/canvas/engine';
 
 import { CropControls } from '../tools/CropControls';
+import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
 import { ResizeControls } from '../tools/ResizeControls';
 import { RotateControls } from '../tools/RotateControls';
 import { FlipControls } from '../tools/FlipControls';
@@ -41,6 +48,10 @@ import { BulkCompressorWorkspace } from '../tools/BulkCompressorWorkspace';
 import { BulkResizerWorkspace } from '../tools/BulkResizerWorkspace';
 import { Base64ToImageWorkspace } from '../tools/Base64ToImageWorkspace';
 import { AiUpscalerWorkspace } from '../tools/AiUpscalerWorkspace';
+import { PhotoFiltersWorkspace } from '../tools/PhotoFiltersWorkspace';
+import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
+import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
+import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
 
 interface Props {
   slug: string;
@@ -49,19 +60,25 @@ interface Props {
 }
 
 export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
-  // Delegate dedicated batch/decoder/AI tools directly
+  // Delegate dedicated batch/decoder/AI/creative tools directly
   if (slug === 'bulk-image-compressor') return <BulkCompressorWorkspace />;
   if (slug === 'bulk-image-resizer') return <BulkResizerWorkspace />;
   if (slug === 'base64-to-image') return <Base64ToImageWorkspace />;
   if (slug === 'ai-image-upscaler') return <AiUpscalerWorkspace />;
+  if (slug === 'photo-filters') return <PhotoFiltersWorkspace />;
+  if (slug === 'meme-generator') return <MemeGeneratorWorkspace />;
+  if (slug === 'split-image') return <ImageSplitterWorkspace />;
+  if (slug === 'censor-image') return <CensorImageWorkspace />;
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
+  const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
   const [filename, setFilename] = useState<string>('image');
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
   const [outputBytes, setOutputBytes] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
+  const [copiedToast, setCopiedToast] = useState<boolean>(false);
 
   // Tool specific states
   const [origW, setOrigW] = useState<number>(0);
@@ -72,7 +89,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [preventUpscale, setPreventUpscale] = useState<boolean>(false);
 
   // Crop
-  const [crop, setCrop] = useState<{ x: number; y: number; width: number; height: number }>({ x: 0, y: 0, width: 0, height: 0 });
+  const [crop, setCrop] = useState<{ x: number; y: number; width: number; height: number }>({
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+  });
+  const [cropLockAspect, setCropLockAspect] = useState<boolean>(false);
+  const [isCropCircle, setIsCropCircle] = useState<boolean>(false);
 
   // Rotate & Flip
   const [rotation, setRotation] = useState<number>(0);
@@ -101,6 +125,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     position: 'bottom-right',
     rotation: 0,
     repeat: false,
+    imageScale: 20,
   });
 
   // Border
@@ -134,6 +159,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const renderTimeoutRef = useRef<number | null>(null);
+  const rafRef = useRef<number | null>(null);
 
   const handleFile = async (file: File) => {
     try {
@@ -151,13 +178,24 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       const img = await loadImage(file);
       setImageElement(img);
 
+      // Generate downscaled proxy for silky-smooth preview interactions
+      const proxy = await createImageProxy(img, 1200);
+      setPreviewImageElement(proxy);
+
       const nw = img.naturalWidth || img.width;
       const nh = img.naturalHeight || img.height;
       setOrigW(nw);
       setOrigH(nh);
       setWidth(nw);
       setHeight(nh);
-      setCrop({ x: 0, y: 0, width: nw, height: nh });
+
+      if (slug === 'crop-image') {
+        const padX = Math.round(nw * 0.075);
+        const padY = Math.round(nh * 0.075);
+        setCrop({ x: padX, y: padY, width: Math.max(20, nw - padX * 2), height: Math.max(20, nh - padY * 2) });
+      } else {
+        setCrop({ x: 0, y: 0, width: nw, height: nh });
+      }
 
       // Detect real alpha channel transparency
       const isTransparent = checkImageTransparency(img);
@@ -223,89 +261,130 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     }
   }, [paletteCount, imageElement]);
 
-  // Main Canvas Rendering Pipeline
-  useEffect(() => {
-    if (!imageElement || !canvasRef.current) return;
+  const [isRendering, setIsRendering] = useState<boolean>(false);
 
-    try {
-      let targetW = width;
-      let targetH = height;
+  // Compute current processing options
+  const getProcessingOptions = useCallback((forExport: boolean = false): ImageProcessingOptions => {
+    let targetW = width;
+    let targetH = height;
 
-      if (slug === 'svg-to-png') {
-        targetW = origW * svgScale;
-        targetH = origH * svgScale;
-      }
-
-      const processed = processCanvas(imageElement, {
-        width: targetW,
-        height: targetH,
-        rotation,
-        flipH,
-        flipV,
-        crop: slug === 'crop-image' && (crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0) ? crop : undefined,
-        textOverlay: slug === 'add-text-to-image' ? textOptions : undefined,
-        watermark: slug === 'watermark-image' ? watermarkOptions : undefined,
-        border: slug === 'add-border-to-image' ? borderOptions : undefined,
-        cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
-        isCircle: slug === 'round-image' ? isCircleAvatar : false,
-        backgroundColor: slug === 'png-to-jpg' || (slug === 'round-image' && format === 'image/jpeg') ? bgFillColor : undefined,
-      });
-
-      const displayCanvas = canvasRef.current;
-      displayCanvas.width = processed.width;
-      displayCanvas.height = processed.height;
-      const ctx = displayCanvas.getContext('2d');
-      if (ctx) {
-        ctx.clearRect(0, 0, displayCanvas.width, displayCanvas.height);
-        ctx.drawImage(processed, 0, 0);
-      }
-
-      // Generate Base64 / Data URI outputs
-      if (slug === 'image-to-base64' || slug === 'image-to-data-uri') {
-        const dataUrl = displayCanvas.toDataURL(format, quality / 100);
-        setBase64Output(slug === 'image-to-base64' ? dataUrl.split(',')[1] : dataUrl);
-      }
-
-      // Calculate output size metrics
-      canvasToBlob(displayCanvas, format, quality / 100).then((b) => {
-        setOutputBytes(b.size);
-      });
-    } catch (err) {
-      console.error('Canvas processing error:', err);
+    if (slug === 'svg-to-png') {
+      targetW = origW * svgScale;
+      targetH = origH * svgScale;
     }
+
+    return {
+      width: targetW,
+      height: targetH,
+      rotation,
+      flipH,
+      flipV,
+      crop: (forExport || slug !== 'crop-image') && (crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0) ? crop : undefined,
+      textOverlay: slug === 'add-text-to-image' ? textOptions : undefined,
+      watermark: slug === 'watermark-image' ? watermarkOptions : undefined,
+      border: slug === 'add-border-to-image' ? borderOptions : undefined,
+      cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
+      isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle : false),
+      backgroundColor: slug === 'png-to-jpg' || ((slug === 'round-image' || slug === 'crop-image') && format === 'image/jpeg') ? bgFillColor : undefined,
+    };
   }, [
-    imageElement,
     width,
     height,
-    crop,
+    slug,
+    origW,
+    origH,
+    svgScale,
     rotation,
     flipH,
     flipV,
+    crop,
     textOptions,
     watermarkOptions,
     borderOptions,
     roundRadius,
     isCircleAvatar,
+    format,
     bgFillColor,
-    svgScale,
+  ]);
+
+  // Main Debounced Canvas Rendering Pipeline
+  useEffect(() => {
+    const activeImg = previewImageElement || imageElement;
+    if (!activeImg || !canvasRef.current) return;
+
+    if (renderTimeoutRef.current) clearTimeout(renderTimeoutRef.current);
+    setIsRendering(true);
+
+    renderTimeoutRef.current = window.setTimeout(() => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+
+      rafRef.current = requestAnimationFrame(() => {
+        try {
+          const options = getProcessingOptions(false);
+          const processed = processCanvas(activeImg, options);
+
+          const displayCanvas = canvasRef.current;
+          if (!displayCanvas) return;
+
+          displayCanvas.width = processed.width;
+          displayCanvas.height = processed.height;
+          const ctx = displayCanvas.getContext('2d');
+          if (ctx) {
+            ctx.clearRect(0, 0, displayCanvas.width, displayCanvas.height);
+            ctx.drawImage(processed, 0, 0);
+          }
+
+          // Generate Base64 / Data URI outputs
+          if (slug === 'image-to-base64' || slug === 'image-to-data-uri') {
+            const dataUrl = displayCanvas.toDataURL(format, quality / 100);
+            setBase64Output(slug === 'image-to-base64' ? dataUrl.split(',')[1] : dataUrl);
+          }
+
+          // Calculate output size metrics
+          canvasToBlob(displayCanvas, format, quality / 100).then((b) => {
+            setOutputBytes(b.size);
+          });
+        } catch (err) {
+          console.error('Canvas processing error:', err);
+        } finally {
+          setIsRendering(false);
+        }
+      });
+    }, 60);
+
+    return () => {
+      if (renderTimeoutRef.current) clearTimeout(renderTimeoutRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [
+    imageElement,
+    previewImageElement,
+    getProcessingOptions,
     format,
     quality,
     slug,
-    origW,
-    origH,
   ]);
 
-  // Eyedropper pixel sampler
+  // Eyedropper pixel sampler directly from full original image for 100% lossless color precision
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current || !imageElement) return;
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
-    const x = Math.floor(((e.clientX - rect.left) / rect.width) * canvas.width);
-    const y = Math.floor(((e.clientY - rect.top) / rect.height) * canvas.height);
+    const normX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const normY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
 
-    const ctx = canvas.getContext('2d');
+    const fullW = imageElement.naturalWidth || imageElement.width;
+    const fullH = imageElement.naturalHeight || imageElement.height;
+    const srcX = Math.floor(normX * fullW);
+    const srcY = Math.floor(normY * fullH);
+
+    const offCanvas = document.createElement('canvas');
+    offCanvas.width = 1;
+    offCanvas.height = 1;
+    const ctx = offCanvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) return;
-    const pixel = ctx.getImageData(x, y, 1, 1).data;
+    ctx.drawImage(imageElement, srcX, srcY, 1, 1, 0, 0, 1, 1);
+    const pixel = ctx.getImageData(0, 0, 1, 1).data;
     const hex = `#${((1 << 24) + (pixel[0] << 16) + (pixel[1] << 8) + pixel[2]).toString(16).slice(1)}`.toUpperCase();
     setSelectedHex(hex);
     setColorHistory((prev) => {
@@ -315,16 +394,35 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   };
 
   const handleDownload = async () => {
-    if (!canvasRef.current || !imageElement) return;
+    if (!imageElement) return;
 
     if (slug === 'favicon-generator') {
       await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
       return;
     }
 
-    const blob = await canvasToBlob(canvasRef.current, format, quality / 100);
+    // Always process from full-resolution original source image for pristine output quality
+    const options = getProcessingOptions(true);
+    const fullResCanvas = processCanvas(imageElement, options);
+    const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
     const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
     downloadBlob(blob, `${filename}-processed.${ext}`);
+  };
+
+  const handleCopyImage = async () => {
+    if (!imageElement) return;
+    try {
+      const options = getProcessingOptions(true);
+      const fullResCanvas = processCanvas(imageElement, options);
+      const blob = await canvasToBlob(fullResCanvas, 'image/png', 1.0);
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob }),
+      ]);
+      setCopiedToast(true);
+      setTimeout(() => setCopiedToast(false), 2200);
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
+    }
   };
 
   return (
@@ -377,21 +475,41 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       ) : (
         /* Active Workbench */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Canvas Viewport (7 Cols) */}
-          <div className="lg:col-span-7 space-y-3">
-            <div className="relative rounded-lg border border-hairline overflow-hidden canvas-checkerboard flex items-center justify-center min-h-[380px] max-h-[550px] p-4">
-              <canvas
-                ref={canvasRef}
-                onClick={slug.includes('color') ? handleCanvasClick : undefined}
-                className={`max-w-full max-h-[500px] object-contain rounded shadow-2xl ${
-                  slug.includes('color') ? 'cursor-crosshair' : ''
-                }`}
-              />
+          {/* Canvas Viewport (Order 1 on Desktop, Order 2 on Mobile) */}
+          <div className="lg:col-span-7 space-y-3 order-2 lg:order-1">
+            <div className="relative rounded-lg border border-hairline overflow-hidden canvas-checkerboard flex items-center justify-center min-h-[340px] sm:min-h-[380px] max-h-[550px] p-4">
+              <div className="relative inline-flex items-center justify-center max-w-full max-h-[500px]">
+                <canvas
+                  ref={canvasRef}
+                  onClick={slug.includes('color') ? handleCanvasClick : undefined}
+                  className={`max-w-full max-h-[500px] object-contain rounded shadow-2xl block ${
+                    slug.includes('color') ? 'cursor-crosshair' : ''
+                  }`}
+                />
+                {slug === 'crop-image' && canvasRef.current && (
+                  <InteractiveCropOverlay
+                    origWidth={origW}
+                    origHeight={origH}
+                    crop={crop}
+                    lockAspect={cropLockAspect}
+                    isCircle={isCropCircle}
+                    canvasElement={canvasRef.current}
+                    onCropChange={setCrop}
+                  />
+                )}
+              </div>
+
+              {isRendering && (
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-surface/85 backdrop-blur border border-hairline rounded text-[10px] text-mute font-mono">
+                  <Loader2 className="w-3 h-3 animate-spin text-accent-blue" />
+                  <span>Processing...</span>
+                </div>
+              )}
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-3 px-3 py-2 bg-surface-elevated border border-hairline rounded-md text-xs font-mono text-mute">
               <div className="flex items-center gap-3">
-                <span>{canvasRef.current?.width || width} × {canvasRef.current?.height || height} px</span>
+                <span>{origW} × {origH} px</span>
                 <span>•</span>
                 <span>Format: {format.replace('image/', '').toUpperCase()}</span>
               </div>
@@ -399,6 +517,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 type="button"
                 onClick={() => {
                   setImageElement(null);
+                  setPreviewImageElement(null);
                 }}
                 className="text-[11px] text-mute hover:text-ink transition-colors"
               >
@@ -407,8 +526,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
             </div>
           </div>
 
-          {/* Right Precision Control Panel (5 Cols) */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Precision Control Panel (Order 2 on Desktop, Order 1 on Mobile) */}
+          <div className="lg:col-span-5 space-y-4 order-1 lg:order-2">
             <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-ink flex items-center gap-2">
                 <Sliders className="w-3.5 h-3.5 text-accent-blue" />
@@ -424,6 +543,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   cropY={crop.y}
                   cropW={crop.width}
                   cropH={crop.height}
+                  lockAspect={cropLockAspect}
+                  isCircle={isCropCircle}
+                  onLockAspectChange={setCropLockAspect}
+                  onIsCircleChange={setIsCropCircle}
                   onChange={setCrop}
                 />
               )}
@@ -547,7 +670,37 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 />
               )}
 
-              {/* Universal Output Format and Quality (for tools that don't have dedicated format blocks) */}
+              {slug === 'favicon-generator' && (
+                <div className="p-3.5 bg-surface-card border border-hairline rounded-lg space-y-2 text-xs">
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-ink flex items-center gap-1.5">
+                      <Code className="w-3.5 h-3.5 text-accent-blue" />
+                      <span>HTML &lt;head&gt; Snippet</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const htmlSnippet = `<link rel="icon" type="image/x-icon" href="/favicon.ico">\n<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n<link rel="manifest" href="/site.webmanifest">`;
+                        navigator.clipboard.writeText(htmlSnippet);
+                        setCopiedToast(true);
+                        setTimeout(() => setCopiedToast(false), 2200);
+                      }}
+                      className="text-[11px] text-mute hover:text-ink transition-colors flex items-center gap-1"
+                    >
+                      <Copy className="w-3 h-3" />
+                      <span>Copy Code</span>
+                    </button>
+                  </div>
+                  <pre className="p-2.5 bg-surface rounded border border-hairline text-[10px] font-mono text-mute overflow-x-auto select-all leading-relaxed">
+{`<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">`}
+                  </pre>
+                </div>
+              )}
+
+              {/* Universal Output Format and Quality */}
               {![
                 'compress-image',
                 'image-to-base64',
@@ -557,41 +710,72 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 'image-palette-generator',
               ].includes(slug) && (
                 <div className="space-y-2 pt-2 border-t border-hairline text-xs">
-                  <div className="flex items-center justify-between">
-                    <span className="text-body">Quality</span>
-                    <span className="font-mono text-ink font-medium">{quality}%</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="10"
-                    max="100"
-                    value={quality}
-                    onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
-                    className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
-                  />
+                  {format === 'image/png' ? (
+                    <div className="flex items-center justify-between py-1 text-mute text-[11px]">
+                      <span>PNG Quality</span>
+                      <span className="font-mono text-ink">Lossless (100%)</span>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center justify-between">
+                        <span className="text-body">Output Quality</span>
+                        <span className="font-mono text-ink font-medium">{quality}%</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="10"
+                        max="100"
+                        value={quality}
+                        onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
+                        className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+                      />
+                    </>
+                  )}
                 </div>
               )}
             </div>
 
-            {/* Primary Action CTA Button */}
+            {/* Action CTA Buttons (Download & Copy to Clipboard) */}
             {slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
-              <button
-                type="button"
-                onClick={handleDownload}
-                className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[40px]"
-              >
-                {slug === 'favicon-generator' ? (
-                  <>
-                    <Archive className="w-4 h-4" />
-                    <span>Download Favicon Package (.ZIP)</span>
-                  </>
-                ) : (
-                  <>
-                    <Download className="w-4 h-4" />
-                    <span>Download {toolName.replace(' Image', '')}</span>
-                  </>
+              <div className="space-y-2">
+                <button
+                  type="button"
+                  onClick={handleDownload}
+                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px]"
+                >
+                  {slug === 'favicon-generator' ? (
+                    <>
+                      <Archive className="w-4 h-4" />
+                      <span>Download Favicon Package (.ZIP)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      <span>Download {toolName.replace(' Image', '')}</span>
+                    </>
+                  )}
+                </button>
+
+                {slug !== 'favicon-generator' && (
+                  <button
+                    type="button"
+                    onClick={handleCopyImage}
+                    className="w-full py-2.5 px-4 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-body hover:text-ink font-medium text-xs rounded-md flex items-center justify-center gap-2 transition-all h-[38px]"
+                  >
+                    {copiedToast ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-400" />
+                        <span className="text-emerald-400 font-semibold">Image Copied to Clipboard!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>Copy Image to Clipboard</span>
+                      </>
+                    )}
+                  </button>
                 )}
-              </button>
+              </div>
             )}
           </div>
         </div>

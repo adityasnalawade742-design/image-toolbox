@@ -17,7 +17,7 @@ interface QueueItem {
 
 export function BulkResizerWorkspace() {
   const [queue, setQueue] = useState<QueueItem[]>([]);
-  const [mode, setMode] = useState<'percentage' | 'pixels'>('percentage');
+  const [mode, setMode] = useState<'percentage' | 'pixels' | 'fit'>('percentage');
   const [percentage, setPercentage] = useState<number>(50);
   const [fixedWidth, setFixedWidth] = useState<number>(1200);
   const [fixedHeight, setFixedHeight] = useState<number>(800);
@@ -106,6 +106,11 @@ export function BulkResizerWorkspace() {
         if (mode === 'percentage') {
           targetW = Math.round((item.originalWidth * percentage) / 100);
           targetH = Math.round((item.originalHeight * percentage) / 100);
+        } else if (mode === 'fit') {
+          const scale = Math.min(fixedWidth / item.originalWidth, fixedHeight / item.originalHeight);
+          const effectiveScale = preventUpscale ? Math.min(1, scale) : scale;
+          targetW = Math.round(item.originalWidth * effectiveScale);
+          targetH = Math.round(item.originalHeight * effectiveScale);
         } else {
           if (lockAspect) {
             const aspect = item.originalWidth / item.originalHeight;
@@ -117,7 +122,7 @@ export function BulkResizerWorkspace() {
           }
         }
 
-        if (preventUpscale) {
+        if (preventUpscale && mode !== 'fit') {
           targetW = Math.min(targetW, item.originalWidth);
           targetH = Math.min(targetH, item.originalHeight);
         }
@@ -256,6 +261,15 @@ export function BulkResizerWorkspace() {
                   }`}
                 >
                   Exact Pixels
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMode('fit')}
+                  className={`px-3 py-1 rounded font-medium ${
+                    mode === 'fit' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
+                  }`}
+                >
+                  Fit Within Box
                 </button>
               </div>
 

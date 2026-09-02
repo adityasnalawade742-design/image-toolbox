@@ -1443,4 +1443,172 @@ export const idTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Filter & Efek Foto",
+    "shortName": "Filter",
+    "tagline": "Terapkan filter warna estetik, efek vintage, dan pencahayaan di browser.",
+    "seoTitle": "Filter Foto Online Gratis — Efek Warna & Grading",
+    "seoDescription": "Terapkan filter sinematik, kontras, saturasi, dan efek vintage pada foto secara gratis. 100% aman dan privat.",
+    "keywords": [
+      "filter foto online",
+      "efek foto gratis",
+      "edit warna foto"
+    ],
+    "howToSteps": [
+      {
+        "title": "Unggah Foto",
+        "description": "Tarik foto atau tempel dengan Ctrl+V."
+      },
+      {
+        "title": "Pilih Filter",
+        "description": "Pilih preset sinematik atau atur slider."
+      },
+      {
+        "title": "Unduh Hasil",
+        "description": "Simpan foto dengan resolusi penuh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Akselerasi GPU",
+        "description": "Pemrosesan instan di browser."
+      },
+      {
+        "title": "100% Privat",
+        "description": "Foto tidak keluar dari perangkat Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah ini gratis?",
+        "answer": "Ya, 100% gratis tanpa batas."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Pembuat Meme",
+    "shortName": "Meme",
+    "tagline": "Buat meme viral dengan teks kustom tanpa watermark.",
+    "seoTitle": "Pembuat Meme Online Gratis — Tanpa Watermark",
+    "seoDescription": "Buat meme kustom dengan font Impact klasik, warna kustom, dan unduh resolusi tinggi tanpa watermark.",
+    "keywords": [
+      "pembuat meme",
+      "bikin meme online",
+      "meme maker gratis"
+    ],
+    "howToSteps": [
+      {
+        "title": "Pilih Gambar",
+        "description": "Unggah foto atau pilih template."
+      },
+      {
+        "title": "Tulis Teks",
+        "description": "Atur tulisan atas dan bawah."
+      },
+      {
+        "title": "Unduh Meme",
+        "description": "Simpan format PNG atau JPG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Tanpa Watermark",
+        "description": "Meme bersih siap dibagikan."
+      },
+      {
+        "title": "100% Privat",
+        "description": "Tanpa upload ke server."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ada watermark?",
+        "answer": "Tidak, semua meme 100% bebas watermark."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Pemotong & Pemisah Gambar Grid",
+    "shortName": "Pemisah Grid",
+    "tagline": "Potong foto jadi grid Instagram 3×3 atau panorama dengan unduhan ZIP.",
+    "seoTitle": "Pemotong Gambar Online — Grid Instagram 3x3 Format ZIP",
+    "seoDescription": "Potong foto menjadi grid 3x3 untuk Instagram atau karosel panorama. Unduh semua potongan dalam satu file ZIP.",
+    "keywords": [
+      "potong foto jadi 3x3",
+      "grid instagram online",
+      "pemotong gambar"
+    ],
+    "howToSteps": [
+      {
+        "title": "Unggah Foto",
+        "description": "Tarik foto atau gambar panorama."
+      },
+      {
+        "title": "Pilih Grid",
+        "description": "Pilih mode 3×3 atau kustom."
+      },
+      {
+        "title": "Unduh ZIP",
+        "description": "Unduh semua potongan bernomor."
+      }
+    ],
+    "features": [
+      {
+        "title": "Unduh ZIP 1-Klik",
+        "description": "Semua potongan tersusun rapi."
+      },
+      {
+        "title": "Kualitas Tanpa Kompresi",
+        "description": "Menjaga 100% ketajaman."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bagaimana cara upload ke IG?",
+        "answer": "Upload potongan dengan urutan terbalik (#9 ke #1)."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Sensor & Sensor Buram Foto",
+    "shortName": "Sensor",
+    "tagline": "Sembunyikan wajah, plat nomor, dan data pribadi dengan efek buram atau mosaik.",
+    "seoTitle": "Sensor & Buramkan Gambar Online — Lindungi Privasi & Hapus EXIF",
+    "seoDescription": "Buramkan wajah, plat nomor mobil, dan dokumen pribadi online gratis. Penghapusan metadata EXIF otomatis.",
+    "keywords": [
+      "buramkan wajah foto",
+      "sensor gambar online",
+      "pixelate foto"
+    ],
+    "howToSteps": [
+      {
+        "title": "Unggah Gambar",
+        "description": "Pilih foto yang ingin disensor."
+      },
+      {
+        "title": "Tandai Area",
+        "description": "Tarik mouse di atas data sensitif."
+      },
+      {
+        "title": "Unduh Gambar",
+        "description": "Simpan foto yang telah disanitasi."
+      }
+    ],
+    "features": [
+      {
+        "title": "Banyak Mode",
+        "description": "Gaussian Blur, Pixelate Mosaik, dan Kotak Hitam."
+      },
+      {
+        "title": "Hapus EXIF",
+        "description": "Hapus data GPS dan kamera otomatis."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah sensor bisa dibuka kembali?",
+        "answer": "Tidak, data piksel diganti secara permanen."
+      }
+    ]
+  }
 };

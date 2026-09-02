@@ -21,7 +21,7 @@ export interface UpscaleResult {
 }
 
 /**
- * Execute Cloud Ultra AI Super-Resolution using Oracle VPS (Real-ESRGAN Flagship via Cloudflare Edge)
+ * Execute Cloud Ultra AI Super-Resolution using Oracle VPS (Real-ESRGAN v3 High-Speed via Cloudflare Edge)
  */
 export async function runCloudRealEsrganUpscale(
   file: File,
@@ -30,13 +30,13 @@ export async function runCloudRealEsrganUpscale(
   onProgress?: (percent: number, msg: string) => void
 ): Promise<UpscaleResult> {
   const startTime = performance.now();
-  onProgress?.(10, 'Sending image to Oracle Cloud Real-ESRGAN backend...');
+  onProgress?.(15, 'Sending image to Oracle Cloud Real-ESRGAN backend...');
 
   const formData = new FormData();
   formData.append('file', file);
   formData.append('scale', scale.toString());
 
-  onProgress?.(30, 'Executing Real-ESRGAN 4K neural network on Oracle Ampere A1 cores...');
+  onProgress?.(40, 'Executing Real-ESRGAN v3 Neural Super-Resolution on 4 ARM64 cores...');
 
   const response = await fetch(CLOUD_AI_ENDPOINT, {
     method: 'POST',
@@ -68,8 +68,8 @@ export async function runCloudRealEsrganUpscale(
     height: imgBitmap.height,
     scale,
     engine: 'cloud-realesrgan',
-    providerLabel: 'Oracle Cloud Ampere A1 (PyTorch Real-ESRGAN)',
-    modelName: 'RealESRGAN_x4plus (Flagship 4K)',
+    providerLabel: 'Oracle Cloud Ampere A1 (PyTorch Real-ESRGAN v3)',
+    modelName: 'RealESRGAN_v3 (Compact 4K)',
     inferenceDurationMs: duration,
   };
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BarChart2, CheckCircle2, XCircle, Copy, Check } from 'lucide-react';
+import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers } from 'lucide-react';
 
 interface Props {
   filename: string;
@@ -30,10 +30,28 @@ export function AnalyzerControls({
   };
 
   const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
-  const divisor = gcd(width, height);
+  const divisor = gcd(width, height) || 1;
   const aspectFraction = `${width / divisor}:${height / divisor}`;
   const megapixels = ((width * height) / 1000000).toFixed(2);
   const uncompressedMem = ((width * height * 4) / (1024 * 1024)).toFixed(1);
+
+  // Dynamic Color Depth calculation
+  const cleanFmt = (format || '').toLowerCase();
+  const isJpg = cleanFmt.includes('jpg') || cleanFmt.includes('jpeg');
+  let colorDepth = '24-bit TrueColor (8-bit/channel RGB)';
+  if (isJpg) {
+    colorDepth = '24-bit TrueColor (RGB, No Alpha)';
+  } else if (hasTransparency) {
+    colorDepth = '32-bit RGBA (24-bit RGB + 8-bit Alpha)';
+  } else {
+    colorDepth = '24-bit TrueColor (RGB, Opaque)';
+  }
+
+  // Print Size Calculations
+  const printW300 = (width / 300).toFixed(1);
+  const printH300 = (height / 300).toFixed(1);
+  const printWcm = ((width / 300) * 2.54).toFixed(1);
+  const printHcm = ((height / 300) * 2.54).toFixed(1);
 
   const metrics = [
     { label: 'Filename', value: filename },
@@ -41,22 +59,24 @@ export function AnalyzerControls({
     { label: 'Format', value: format.toUpperCase() },
     { label: 'MIME Type', value: mimeType || `image/${format.toLowerCase()}` },
     { label: 'Dimensions', value: `${width} × ${height} px` },
-    { label: 'Aspect Ratio', value: `${aspectFraction} (${(width / height).toFixed(2)}:1)` },
+    { label: 'Aspect Ratio', value: `${aspectFraction} (${(width / (height || 1)).toFixed(2)}:1)` },
     { label: 'Resolution', value: `${megapixels} Megapixels` },
-    { label: 'Color Depth', value: '24-bit RGB + Alpha (32-bit)' },
+    { label: 'Color Depth', value: colorDepth },
     {
       label: 'Transparency (Alpha)',
-      value: hasTransparency ? (
-        <span className="flex items-center gap-1 text-accent-green font-medium"><CheckCircle2 className="w-3.5 h-3.5" /> Present</span>
+      value: hasTransparency && !isJpg ? (
+        <span className="flex items-center gap-1 text-accent-green font-medium"><CheckCircle2 className="w-3.5 h-3.5" /> Present (Alpha Channel)</span>
       ) : (
-        <span className="flex items-center gap-1 text-mute"><XCircle className="w-3.5 h-3.5" /> None (Opaque)</span>
+        <span className="flex items-center gap-1 text-mute"><XCircle className="w-3.5 h-3.5" /> None (100% Opaque)</span>
       ),
     },
-    { label: 'Uncompressed RAM', value: `~${uncompressedMem} MB (Raw RGBA)` },
+    { label: 'Print Size (@300 DPI)', value: `${printW300}" × ${printH300}" (${printWcm} × ${printHcm} cm)` },
+    { label: 'Web Display (@72 DPI)', value: `${(width / 72).toFixed(1)}" × ${(height / 72).toFixed(1)}"` },
+    { label: 'Uncompressed RAM', value: `~${uncompressedMem} MB (Raw RGBA buffer)` },
   ];
 
   const handleCopyReport = () => {
-    const text = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency ? 'Present' : 'None'}`).join('\n');
+    const text = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency && !isJpg ? 'Present' : 'None'}`).join('\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);

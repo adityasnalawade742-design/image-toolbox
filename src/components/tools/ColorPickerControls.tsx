@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Copy, Check, Pipette } from 'lucide-react';
-import { hexToRgb, rgbToHsl } from '../../lib/canvas/engine';
+import { hexToRgb, rgbToHsl, rgbToHsv, rgbToCmyk } from '../../lib/canvas/engine';
 
 interface Props {
   selectedHex: string;
@@ -13,9 +13,13 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
 
   const rgb = hexToRgb(selectedHex);
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+  const hsv = rgbToHsv(rgb.r, rgb.g, rgb.b);
+  const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
 
   const rgbString = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
   const hslString = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+  const hsvString = `hsv(${hsv.h}°, ${hsv.s}%, ${hsv.v}%)`;
+  const cmykString = `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
 
   const copyText = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -79,6 +83,30 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
             >
               {copiedType === 'HSL' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'HSL' ? 'Copied' : 'Copy'}</span>
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
+            <span className="text-body">HSV: <strong className="text-ink">{hsvString}</strong></span>
+            <button
+              type="button"
+              onClick={() => copyText(hsvString, 'HSV')}
+              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+            >
+              {copiedType === 'HSV' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
+              <span>{copiedType === 'HSV' ? 'Copied' : 'Copy'}</span>
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
+            <span className="text-body">CMYK: <strong className="text-ink">{cmykString}</strong></span>
+            <button
+              type="button"
+              onClick={() => copyText(cmykString, 'CMYK')}
+              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+            >
+              {copiedType === 'CMYK' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
+              <span>{copiedType === 'CMYK' ? 'Copied' : 'Copy'}</span>
             </button>
           </div>
         </div>

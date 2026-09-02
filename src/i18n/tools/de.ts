@@ -1444,4 +1444,172 @@ export const deTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Fotofilter und Farbeffekte",
+    "shortName": "Filter",
+    "tagline": "Wende ästhetische Farbfilter, Vintage-Effekte und Beleuchtungsregler im Browser an.",
+    "seoTitle": "Fotofilter Online Kostenlos — Farbeffekte und Bildoptimierung",
+    "seoDescription": "Wende cineastische Fotofilter, Helligkeit, Kontrast und Vintage-Presets kostenlos online an. 100% privat im Browser.",
+    "keywords": [
+      "fotofilter online",
+      "bildeffekte kostenlos",
+      "farbfilter foto"
+    ],
+    "howToSteps": [
+      {
+        "title": "Foto Hochladen",
+        "description": "Bild hineinziehen oder mit Strg+V einfügen."
+      },
+      {
+        "title": "Filter Auswählen",
+        "description": "Wähle Presets wie Cinematic, Vintage oder Noir."
+      },
+      {
+        "title": "Ergebnis Herunterladen",
+        "description": "Speichere das bearbeitete Bild in voller Qualität."
+      }
+    ],
+    "features": [
+      {
+        "title": "GPU-Beschleunigung",
+        "description": "Sofortiges Rendern im Browser."
+      },
+      {
+        "title": "100% Datenschutz",
+        "description": "Fotos verlassen dein Gerät nicht."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ist dieses Tool kostenlos?",
+        "answer": "Ja, 100% kostenlos und unbegrenzt nutzbar."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Meme Generator",
+    "shortName": "Meme Maker",
+    "tagline": "Erstelle virale Memes mit individuellen Texten und ohne Wasserzeichen.",
+    "seoTitle": "Meme Generator Online Kostenlos — Ohne Wasserzeichen",
+    "seoDescription": "Erstelle Memes mit klassischer Impact-Schrift, Farben und Export in hoher Auflösung ohne Wasserzeichen.",
+    "keywords": [
+      "meme generator",
+      "memes erstellen online",
+      "meme maker kostenlos"
+    ],
+    "howToSteps": [
+      {
+        "title": "Bild Auswählen",
+        "description": "Foto hochladen oder Vorlage wählen."
+      },
+      {
+        "title": "Text Anpassen",
+        "description": "Oben und unten Text eingeben."
+      },
+      {
+        "title": "Meme Herunterladen",
+        "description": "Als PNG oder JPG speichern."
+      }
+    ],
+    "features": [
+      {
+        "title": "Keine Wasserzeichen",
+        "description": "Saubere Memes zum direkten Teilen."
+      },
+      {
+        "title": "100% Privat",
+        "description": "Keine Server-Uploads."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Gibt es Wasserzeichen?",
+        "answer": "Nein, alle Memes sind 100% wasserzeichenfrei."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Bildteiler & Grid Cutter",
+    "shortName": "Teilen",
+    "tagline": "Teile Fotos in Instagram 3×3 Raster und Karussells mit ZIP-Download.",
+    "seoTitle": "Bildteiler Online — Instagram 3x3 Raster & Panorama ZIP",
+    "seoDescription": "Schneide Bilder in Instagram 3x3 Raster oder Panorama-Karussells. Lade alle Kacheln in einer ZIP-Datei herunter.",
+    "keywords": [
+      "bild in 3x3 teilen",
+      "instagram grid cutter",
+      "bild teilen online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Foto Hochladen",
+        "description": "Bild oder Panorama hineinziehen."
+      },
+      {
+        "title": "Raster Wählen",
+        "description": "Instagram 3×3 oder eigenes Raster wählen."
+      },
+      {
+        "title": "ZIP Herunterladen",
+        "description": "Alle Kacheln auf einmal herunterladen."
+      }
+    ],
+    "features": [
+      {
+        "title": "1-Klick ZIP-Download",
+        "description": "Automatisch nummerierte Kacheln."
+      },
+      {
+        "title": "Verlustfreie Qualität",
+        "description": "Volle Pixel-Schärfe."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wie auf Instagram posten?",
+        "answer": "Kacheln in umgekehrter Reihenfolge (#9 bis #1) hochladen."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Bild Verpixeln & Zensieren",
+    "shortName": "Zensieren",
+    "tagline": "Mache Gesichter, Kennzeichen und vertrauliche Daten durch Unschärfe oder Mosaik unkenntlich.",
+    "seoTitle": "Bild Zensieren & Verpixeln Online — Datenschutz & Weichzeichner",
+    "seoDescription": "Verpixele Gesichter, Kennzeichen und Dokumente kostenlos online. 100% privat mit automatischer EXIF-Entfernung.",
+    "keywords": [
+      "gesicht verpixeln online",
+      "bild zensieren",
+      "dokument schwärzen"
+    ],
+    "howToSteps": [
+      {
+        "title": "Bild Hochladen",
+        "description": "Foto zum Zensieren auswählen."
+      },
+      {
+        "title": "Bereiche Markieren",
+        "description": "Bereiche mit Weichzeichner oder Mosaik abdecken."
+      },
+      {
+        "title": "Geschützt Herunterladen",
+        "description": "Bereinigtes Bild ohne Metadaten speichern."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mehrere Modi",
+        "description": "Gaußscher Weichzeichner, Mosaik und schwarze Balken."
+      },
+      {
+        "title": "EXIF-Entfernung",
+        "description": "Löscht GPS- und Kameradaten automatisch."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Kann die Zensur rückgängig gemacht werden?",
+        "answer": "Nein, die Pixeldaten werden dauerhaft überschrieben."
+      }
+    ]
+  }
 };

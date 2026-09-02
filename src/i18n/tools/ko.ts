@@ -1444,4 +1444,172 @@ export const koTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "사진 필터 및 효과",
+    "shortName": "필터",
+    "tagline": "시네마틱 프리셋, 빈티지 효과, 비네팅을 브라우저에서 바로 적용하세요.",
+    "seoTitle": "무료 사진 필터 및 효과 온라인 — 감성 색감 보정",
+    "seoDescription": "사진에 시네마틱 감성 필터, 대비, 채도, 레트로 효과를 무료로 적용하세요. 100% 안전한 브라우저 처리.",
+    "keywords": [
+      "사진 필터 온라인",
+      "이미지 보정 무료",
+      "색감 보정"
+    ],
+    "howToSteps": [
+      {
+        "title": "사진 업로드",
+        "description": "이미지를 드래그하거나 Ctrl+V로 붙여넣기."
+      },
+      {
+        "title": "필터 선택",
+        "description": "프리셋 또는 세부 슬라이더로 조절."
+      },
+      {
+        "title": "결과 다운로드",
+        "description": "고화질로 바로 저장."
+      }
+    ],
+    "features": [
+      {
+        "title": "GPU 가속",
+        "description": "지연 없는 실시간 렌더링."
+      },
+      {
+        "title": "100% 개인정보 보호",
+        "description": "사진이 기기를 벗어나지 않습니다."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "무료인가요?",
+        "answer": "네, 100% 완전 무료입니다."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "밈 생성기 (짤 만들기)",
+    "shortName": "밈 생성기",
+    "tagline": "워터마크 없이 원하는 문구를 넣어 나만의 재미있는 짤을 만드세요.",
+    "seoTitle": "무료 밈 생성기 — 워터마크 없는 짤방 만들기",
+    "seoDescription": "사진에 텍스트를 넣어 개성 있는 밈을 만드세요. 워터마크 없이 고화질로 무료 다운로드 가능.",
+    "keywords": [
+      "밈 생성기",
+      "짤 만들기",
+      "짤방 만들기 무료"
+    ],
+    "howToSteps": [
+      {
+        "title": "이미지 선택",
+        "description": "사진을 올리거나 템플릿 선택."
+      },
+      {
+        "title": "문구 입력",
+        "description": "상단 및 하단 자막 입력."
+      },
+      {
+        "title": "밈 저장",
+        "description": "고화질로 다운로드."
+      }
+    ],
+    "features": [
+      {
+        "title": "워터마크 없음",
+        "description": "깔끔한 이미지 생성."
+      },
+      {
+        "title": "개인정보 보호",
+        "description": "서버 전송 없음."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "워터마크가 생기나요?",
+        "answer": "아니요, 전혀 생기지 않습니다."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "이미지 분할 및 그리드 자르기",
+    "shortName": "이미지 분할",
+    "tagline": "인스타그램 3×3 그리드 및 파노라마 슬라이스 분할 후 ZIP 압축 다운로드.",
+    "seoTitle": "이미지 분할 온라인 — 인스타 3x3 그리드 분할 ZIP 다운로드",
+    "seoDescription": "사진을 인스타그램 3x3 피드 그리드나 파노라마 슬라이드로 깔끔하게 분할하세요. 일괄 ZIP 다운로드 지원.",
+    "keywords": [
+      "이미지 분할",
+      "인스타 3x3 자르기",
+      "사진 분할"
+    ],
+    "howToSteps": [
+      {
+        "title": "사진 업로드",
+        "description": "분할할 사진을 드롭."
+      },
+      {
+        "title": "그리드 선택",
+        "description": "인스타 3×3 또는 원하는 행/열 설정."
+      },
+      {
+        "title": "ZIP 다운로드",
+        "description": "번호 매겨진 조각들을 한 번에 저장."
+      }
+    ],
+    "features": [
+      {
+        "title": "1클릭 ZIP 저장",
+        "description": "모든 조각을 압축파일로 다운로드."
+      },
+      {
+        "title": "화질 손실 없음",
+        "description": "원본 해상도 완벽 유지."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "인스타에 어떻게 올리나요?",
+        "answer": "마지막 번호부터 역순(#9→#1)으로 업로드하세요."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "사진 모자이크 및 블러 처리",
+    "shortName": "모자이크",
+    "tagline": "얼굴, 차량 번호판, 개인정보를 모자이크, 흐림 효과 또는 블랙바로 가리세요.",
+    "seoTitle": "사진 모자이크 및 블러 처리 온라인 — 개인정보 보호 및 EXIF 삭제",
+    "seoDescription": "사진 속 얼굴이나 민감한 서류, 번호판을 모자이크로 가리세요. EXIF 위치 정보도 자동 삭제.",
+    "keywords": [
+      "사진 모자이크",
+      "얼굴 가리기",
+      "이미지 블러"
+    ],
+    "howToSteps": [
+      {
+        "title": "사진 업로드",
+        "description": "가릴 사진 선택."
+      },
+      {
+        "title": "영역 지정",
+        "description": "가릴 부분을 드래그하여 지정."
+      },
+      {
+        "title": "저장",
+        "description": "개인정보가 제거된 이미지 다운로드."
+      }
+    ],
+    "features": [
+      {
+        "title": "다양한 모드",
+        "description": "모자이크, 가우시안 블러, 블랙바."
+      },
+      {
+        "title": "EXIF 삭제",
+        "description": "위치 정보 자동 제거."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "모자이크를 복원할 수 있나요?",
+        "answer": "아니요, 픽셀이 완전히 덮어씌워지므로 복원 불가능합니다."
+      }
+    ]
+  }
 };

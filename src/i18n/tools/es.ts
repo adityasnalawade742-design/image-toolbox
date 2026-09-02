@@ -1448,4 +1448,172 @@ export const esTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Filtros y Efectos para Fotos",
+    "shortName": "Filtros",
+    "tagline": "Aplica ajustes de color, efectos cinematográficos y estilo vintage en tu navegador.",
+    "seoTitle": "Filtros para Fotos Online Gratis — Efectos y Ajustes de Color",
+    "seoDescription": "Aplica filtros cinematográficos, brillo, contraste y efectos vintage a tus fotos online gratis. 100% privado en tu navegador.",
+    "keywords": [
+      "filtros fotos online",
+      "efectos fotos gratis",
+      "editar color foto"
+    ],
+    "howToSteps": [
+      {
+        "title": "Sube tu Foto",
+        "description": "Arrastra tu imagen o pega con Ctrl+V."
+      },
+      {
+        "title": "Elige un Filtro",
+        "description": "Selecciona ajustes cinematográficos, vintage o noir."
+      },
+      {
+        "title": "Descarga el Resultado",
+        "description": "Guarda la foto editada en alta calidad."
+      }
+    ],
+    "features": [
+      {
+        "title": "Aceleración por GPU",
+        "description": "Renderizado instantáneo."
+      },
+      {
+        "title": "100% Privado",
+        "description": "Tus fotos no salen de tu dispositivo."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Es gratis esta herramienta?",
+        "answer": "Sí, es 100% gratuita e ilimitada."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Generador de Memes",
+    "shortName": "Memes",
+    "tagline": "Crea memes virales con textos Impact personalizados y sin marcas de agua.",
+    "seoTitle": "Generador de Memes Online Gratis — Sin Marcas de Agua",
+    "seoDescription": "Crea memes personalizados con fuentes clásicas Impact, colores a medida y descarga en alta resolución sin marcas de agua.",
+    "keywords": [
+      "generador de memes",
+      "crear memes online gratis",
+      "hacer memes"
+    ],
+    "howToSteps": [
+      {
+        "title": "Sube tu Imagen",
+        "description": "Elige una foto o plantilla de meme."
+      },
+      {
+        "title": "Escribe el Texto",
+        "description": "Personaliza los textos superior e inferior."
+      },
+      {
+        "title": "Descarga tu Meme",
+        "description": "Exporta en PNG o JPG de alta resolución."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sin Marcas de Agua",
+        "description": "Memes limpios y listos para compartir."
+      },
+      {
+        "title": "100% Privado",
+        "description": "Tus imágenes no se envían a servidores."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Añade marcas de agua?",
+        "answer": "No, todos los memes son 100% limpios."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Divisor de Imágenes y Cuadrícula",
+    "shortName": "Dividir",
+    "tagline": "Divide fotos en cuadrículas 3×3 de Instagram y panoramas con descarga en ZIP.",
+    "seoTitle": "Divisor de Imágenes Online — Cuadrícula 3x3 de Instagram en ZIP",
+    "seoDescription": "Corta fotos en cuadrículas 3x3 para Instagram o carruseles panorámicos. Descarga todas las partes en un solo archivo ZIP.",
+    "keywords": [
+      "cortar foto en 3x3",
+      "divisor de imagenes",
+      "grid instagram online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Sube tu Foto",
+        "description": "Arrastra tu foto o imagen panorámica."
+      },
+      {
+        "title": "Elige la Cuadrícula",
+        "description": "Selecciona modo 3×3 de Instagram o filas y columnas personalizadas."
+      },
+      {
+        "title": "Descarga en ZIP",
+        "description": "Descarga todas las partes en un solo archivo comprimido."
+      }
+    ],
+    "features": [
+      {
+        "title": "Descarga ZIP en 1 Clic",
+        "description": "Organiza todas las partes numeradas."
+      },
+      {
+        "title": "Calidad Sin Pérdidas",
+        "description": "Conserva el 100% de la nitidez original."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Cómo subir a Instagram?",
+        "answer": "Sube las fotos en orden inverso (#9 al #1) para que se vean alineadas."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Censurar y Difuminar Foto",
+    "shortName": "Censurar",
+    "tagline": "Oculta rostros, matrículas y datos confidenciales con desenfoque o pixelado.",
+    "seoTitle": "Censurar y Difuminar Imágenes Online — Pixelado y Privacidad",
+    "seoDescription": "Difumina caras, matrículas y datos bancarios en fotos online gratis. Procesamiento 100% privado con eliminación automática de metadatos EXIF.",
+    "keywords": [
+      "difuminar cara foto",
+      "pixelar imagen online",
+      "censurar datos privados"
+    ],
+    "howToSteps": [
+      {
+        "title": "Sube tu Imagen",
+        "description": "Arrastra el documento o foto que deseas proteger."
+      },
+      {
+        "title": "Dibuja las Áreas",
+        "description": "Haz clic y arrastra sobre los datos sensibles."
+      },
+      {
+        "title": "Descarga Protegida",
+        "description": "Guarda la imagen saneada sin metadatos."
+      }
+    ],
+    "features": [
+      {
+        "title": "Múltiples Modos",
+        "description": "Desenfoque Gaussiano, Pixelado Mosaico y Barras Negras."
+      },
+      {
+        "title": "Eliminación de EXIF",
+        "description": "Borra datos de geolocalización y cámara."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Se puede revertir el censurado?",
+        "answer": "No. El pixelado reemplaza permanentemente los datos originales."
+      }
+    ]
+  }
 };

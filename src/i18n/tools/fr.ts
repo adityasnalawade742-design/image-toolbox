@@ -1444,4 +1444,172 @@ export const frTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Filtres et Effets Photo",
+    "shortName": "Filtres",
+    "tagline": "Appliquez des réglages de couleurs, effets vintage et cinématographiques dans votre navigateur.",
+    "seoTitle": "Filtres Photo en Ligne Gratuits — Effets et Retouche Couleur",
+    "seoDescription": "Appliquez des filtres cinématographiques, contraste, saturation et effets vintage en ligne gratuitement. 100% privé.",
+    "keywords": [
+      "filtres photo en ligne",
+      "effets photo gratuits",
+      "retouche couleur photo"
+    ],
+    "howToSteps": [
+      {
+        "title": "Téléchargez votre Photo",
+        "description": "Glissez-déposez ou collez avec Ctrl+V."
+      },
+      {
+        "title": "Ajustez les Filtres",
+        "description": "Choisissez un préréglage ou ajustez les curseurs."
+      },
+      {
+        "title": "Téléchargez le Résultat",
+        "description": "Enregistrez votre photo sublimée."
+      }
+    ],
+    "features": [
+      {
+        "title": "Accélération GPU",
+        "description": "Rendu instantané dans le navigateur."
+      },
+      {
+        "title": "100% Privé",
+        "description": "Vos photos restent sur votre appareil."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Cet outil est-il gratuit ?",
+        "answer": "Oui, 100% gratuit et illimité."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Générateur de Mèmes",
+    "shortName": "Mèmes",
+    "tagline": "Créez des mèmes viraux avec textes personnalisés et sans filigrane.",
+    "seoTitle": "Générateur de Mèmes en Ligne Gratuit — Sans Filigrane",
+    "seoDescription": "Créez des mèmes personnalisés avec police Impact, couleurs sur mesure et téléchargement haute résolution sans filigrane.",
+    "keywords": [
+      "générateur de mèmes",
+      "créer mème en ligne",
+      "faire un mème"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choisissez une Image",
+        "description": "Téléversez une photo ou un modèle de mème."
+      },
+      {
+        "title": "Personnalisez le Texte",
+        "description": "Écrivez vos légendes supérieure et inférieure."
+      },
+      {
+        "title": "Téléchargez votre Mème",
+        "description": "Exportez en haute résolution PNG ou JPG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sans Filigrane",
+        "description": "Mèmes propres prêts à partager."
+      },
+      {
+        "title": "100% Privé",
+        "description": "Aucun envoi sur un serveur."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Y a-t-il un filigrane ?",
+        "answer": "Non, tous les mèmes sont 100% sans filigrane."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Découpeur d’Images et Grille",
+    "shortName": "Découper",
+    "tagline": "Découpez vos photos en grille 3×3 pour Instagram avec téléchargement ZIP.",
+    "seoTitle": "Découpeur d’Images en Grille 3x3 Instagram — Téléchargement ZIP",
+    "seoDescription": "Divisez vos photos en grille 3x3 pour Instagram ou en carrousels panoramiques. Téléchargez toutes les parties en un seul fichier ZIP.",
+    "keywords": [
+      "découper photo en 3x3",
+      "grille instagram",
+      "diviser image"
+    ],
+    "howToSteps": [
+      {
+        "title": "Téléchargez la Photo",
+        "description": "Glissez votre photo ou panorama."
+      },
+      {
+        "title": "Choisissez la Grille",
+        "description": "Sélectionnez le format 3×3 ou personnalisé."
+      },
+      {
+        "title": "Téléchargez le ZIP",
+        "description": "Récupérez toutes les découpes numérotées."
+      }
+    ],
+    "features": [
+      {
+        "title": "Téléchargement ZIP en 1 Clic",
+        "description": "Archive automatique de tous les morceaux."
+      },
+      {
+        "title": "Qualité Sans Perte",
+        "description": "Conserve 100% des pixels d’origine."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Comment publier sur Instagram ?",
+        "answer": "Publiez les morceaux dans l’ordre inverse (#9 à #1)."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Flouter et Censurer une Photo",
+    "shortName": "Censurer",
+    "tagline": "Masquez visages, plaques et données sensibles par flou ou pixellisation.",
+    "seoTitle": "Flouter et Censurer une Image en Ligne — Pixellisation et Confidentialité",
+    "seoDescription": "Floutez des visages, plaques d’immatriculation et documents confidentiels en ligne gratuitement. Suppression automatique des métadonnées EXIF.",
+    "keywords": [
+      "flouter visage photo",
+      "pixelliser image en ligne",
+      "censurer document"
+    ],
+    "howToSteps": [
+      {
+        "title": "Téléchargez votre Image",
+        "description": "Glissez la photo à anonymiser."
+      },
+      {
+        "title": "Dessinez les Zones",
+        "description": "Sélectionnez les parties à flouter ou pixelliser."
+      },
+      {
+        "title": "Téléchargez l’Image",
+        "description": "Enregistrez la photo nettoyée de ses métadonnées."
+      }
+    ],
+    "features": [
+      {
+        "title": "Plusieurs Modes",
+        "description": "Flou Gaussien, Pixellisation Mosaïque et Barres Noires."
+      },
+      {
+        "title": "Suppression EXIF",
+        "description": "Supprime les coordonnées GPS et données appareil."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Le floutage est-il réversible ?",
+        "answer": "Non, les pixels sont définitivement modifiés."
+      }
+    ]
+  }
 };

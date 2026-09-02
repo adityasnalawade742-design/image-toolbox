@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { UploadCloud, Download, AlertCircle, FileCode, CheckCircle2 } from 'lucide-react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { UploadCloud, Download, AlertCircle, FileCode, CheckCircle2, Clipboard, Loader2, Play } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
 
 export function Base64ToImageWorkspace() {
@@ -7,16 +7,21 @@ export function Base64ToImageWorkspace() {
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [format, setFormat] = useState<'image/png' | 'image/jpeg' | 'image/webp'>('image/png');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [isDecoding, setIsDecoding] = useState<boolean>(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const debounceTimeoutRef = useRef<number | null>(null);
 
-  const handleDecode = async (text: string) => {
-    setInputText(text);
+  const performDecode = useCallback(async (text: string) => {
     if (!text.trim()) {
       setImageElement(null);
       setErrorMsg(null);
+      setIsDecoding(false);
       return;
     }
+
+    setIsDecoding(true);
+    setErrorMsg(null);
 
     let cleanSrc = text.trim();
     if (!cleanSrc.startsWith('data:image/')) {
@@ -29,18 +34,57 @@ export function Base64ToImageWorkspace() {
       setErrorMsg(null);
     } catch {
       setImageElement(null);
-      setErrorMsg('Invalid Base64 or unsupported image data');
+      setErrorMsg('Invalid Base64 string or corrupted image payload.');
+    } finally {
+      setIsDecoding(false);
+    }
+  }, []);
+
+  const handleTextChange = (text: string) => {
+    setInputText(text);
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    if (!text.trim()) {
+      setImageElement(null);
+      setErrorMsg(null);
+      return;
+    }
+
+    // Debounce decoding by 350ms to prevent UI freezing on huge strings
+    debounceTimeoutRef.current = window.setTimeout(() => {
+      performDecode(text);
+    }, 350);
+  };
+
+  const handlePasteClipboard = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (text) {
+        setInputText(text);
+        performDecode(text);
+      }
+    } catch {
+      // Fallback
     }
   };
 
   const handleFileUpload = (file: File) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      const result = e.target?.result as string;
-      handleDecode(result);
+      const result = (e.target?.result as string) || '';
+      setInputText(result);
+      performDecode(result);
     };
     reader.readAsText(file);
   };
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimeoutRef.current) clearTimeout(debounceTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!imageElement || !canvasRef.current) return;
@@ -71,13 +115,23 @@ export function Base64ToImageWorkspace() {
               <FileCode className="w-4 h-4 text-accent-blue" />
               <span>Paste Base64 or Data URI</span>
             </label>
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="text-[11px] text-mute hover:text-ink transition-colors"
-            >
-              Or Upload .txt file
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handlePasteClipboard}
+                className="flex items-center gap-1 text-[11px] text-body hover:text-ink transition-colors px-2 py-0.5 bg-surface-card border border-hairline rounded"
+              >
+                <Clipboard className="w-3 h-3" />
+                <span>Paste</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="text-[11px] text-mute hover:text-ink transition-colors"
+              >
+                Upload .txt
+              </button>
+            </div>
             <input
               ref={fileInputRef}
               type="file"
@@ -89,13 +143,36 @@ export function Base64ToImageWorkspace() {
             />
           </div>
 
-          <textarea
-            rows={10}
-            value={inputText}
-            onChange={(e) => handleDecode(e.target.value)}
-            placeholder="Paste your base64 string or data:image/png;base64,... here"
-            className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-xs font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
-          />
+          <div className="relative">
+            <textarea
+              rows={10}
+              value={inputText}
+              onChange={(e) => handleTextChange(e.target.value)}
+              placeholder="Paste your base64 string or data:image/png;base64,... here"
+              className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-xs font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
+            />
+            {isDecoding && (
+              <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-surface-elevated/90 border border-hairline rounded text-[11px] text-accent-blue font-medium shadow">
+                <Loader2 className="w-3 h-3 animate-spin" />
+                <span>Decoding...</span>
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] text-mute font-mono">
+              {inputText.length > 0 ? `${inputText.length.toLocaleString()} characters` : 'Ready for input'}
+            </span>
+            <button
+              type="button"
+              onClick={() => performDecode(inputText)}
+              disabled={!inputText.trim() || isDecoding}
+              className="flex items-center gap-1.5 px-3 py-1 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded text-xs font-medium text-ink transition-colors disabled:opacity-40"
+            >
+              <Play className="w-3 h-3 text-accent-green" />
+              <span>Decode Immediately</span>
+            </button>
+          </div>
 
           {errorMsg ? (
             <div className="flex items-center gap-2 p-2.5 bg-accent-red/10 border border-accent-red/20 rounded-md text-xs text-accent-red">

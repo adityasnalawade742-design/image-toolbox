@@ -1443,4 +1443,172 @@ export const itTools: Record<string, LocalizedToolItem> = {
     }
   ]
 },
+  "photo-filters": {
+    "name": "Filtri ed Effetti Foto",
+    "shortName": "Filtri",
+    "tagline": "Applica filtri colore, effetti vintage e controlli di luce nel browser.",
+    "seoTitle": "Filtri Foto Online Gratis — Effetti e Correzione Colore",
+    "seoDescription": "Applica filtri cinematografici, contrasto e saturazione online gratis. 100% privato nel tuo browser.",
+    "keywords": [
+      "filtri foto online",
+      "effetti foto gratis",
+      "ritocco colore"
+    ],
+    "howToSteps": [
+      {
+        "title": "Carica la Foto",
+        "description": "Trascina o incolla con Ctrl+V."
+      },
+      {
+        "title": "Regola i Filtri",
+        "description": "Scegli preset o regola i cursori."
+      },
+      {
+        "title": "Scarica il Risultato",
+        "description": "Salva l’immagine migliorata."
+      }
+    ],
+    "features": [
+      {
+        "title": "Accelerazione GPU",
+        "description": "Rendering immediato."
+      },
+      {
+        "title": "100% Privato",
+        "description": "Le foto non lasciano il tuo dispositivo."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "È gratuito?",
+        "answer": "Sì, 100% gratuito e senza limiti."
+      }
+    ]
+  },
+  "meme-generator": {
+    "name": "Generatore di Meme",
+    "shortName": "Meme",
+    "tagline": "Crea meme virali con testi personalizzati e senza filigrana.",
+    "seoTitle": "Generatore di Meme Online Gratis — Senza Filigrana",
+    "seoDescription": "Crea meme personalizzati con font Impact, colori su misura e download in alta risoluzione senza filigrane.",
+    "keywords": [
+      "generatore di meme",
+      "creare meme online gratis",
+      "fare meme"
+    ],
+    "howToSteps": [
+      {
+        "title": "Carica Immagine",
+        "description": "Carica una foto o scegli un modello."
+      },
+      {
+        "title": "Inserisci il Testo",
+        "description": "Scrivi il testo sopra e sotto."
+      },
+      {
+        "title": "Scarica il Meme",
+        "description": "Esporta in PNG o JPG ad alta risoluzione."
+      }
+    ],
+    "features": [
+      {
+        "title": "Nessuna Filigrana",
+        "description": "Meme puliti pronti per la condivisione."
+      },
+      {
+        "title": "100% Privato",
+        "description": "Nessun caricamento su server."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ci sono filigrane?",
+        "answer": "No, tutti i meme sono privi di filigrana."
+      }
+    ]
+  },
+  "split-image": {
+    "name": "Divisore Immagini e Griglia",
+    "shortName": "Dividi",
+    "tagline": "Dividi foto in griglie 3×3 per Instagram e scarica in archivio ZIP.",
+    "seoTitle": "Divisore Immagini Online — Griglia 3x3 Instagram in ZIP",
+    "seoDescription": "Taglia foto in griglie 3x3 per Instagram o caroselli panoramici. Scarica tutte le parti in un unico file ZIP.",
+    "keywords": [
+      "dividere foto in 3x3",
+      "griglia instagram online",
+      "tagliare immagini"
+    ],
+    "howToSteps": [
+      {
+        "title": "Carica la Foto",
+        "description": "Trascina la foto o panorama."
+      },
+      {
+        "title": "Seleziona la Griglia",
+        "description": "Scegli 3×3 o righe e colonne personalizzate."
+      },
+      {
+        "title": "Scarica in ZIP",
+        "description": "Scarica tutte le sezioni numerate."
+      }
+    ],
+    "features": [
+      {
+        "title": "Download ZIP in 1 Clic",
+        "description": "Archivio automatico di tutte le sezioni."
+      },
+      {
+        "title": "Qualità Senza Perdite",
+        "description": "Conserva il 100% della nitidezza."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Come pubblicare su Instagram?",
+        "answer": "Pubblica i riquadri in ordine inverso (dal #9 al #1)."
+      }
+    ]
+  },
+  "censor-image": {
+    "name": "Sfocare e Censurare Foto",
+    "shortName": "Censura",
+    "tagline": "Nascondi volti, targhe e dati sensibili con sfocatura o pixelatura.",
+    "seoTitle": "Censurare e Sfocare Immagini Online — Pixelare e Proteggere Privacy",
+    "seoDescription": "Sfoca volti, targhe e documenti riservati online gratis. Rimozione automatica dei metadati EXIF.",
+    "keywords": [
+      "sfocare volto foto",
+      "pixelare immagine gratis",
+      "censurare documento"
+    ],
+    "howToSteps": [
+      {
+        "title": "Carica l’Immagine",
+        "description": "Scegli la foto da proteggere."
+      },
+      {
+        "title": "Disegna le Aree",
+        "description": "Trascina sopra le informazioni riservate."
+      },
+      {
+        "title": "Scarica Protetta",
+        "description": "Salva la foto senza metadati."
+      }
+    ],
+    "features": [
+      {
+        "title": "Varie Modalità",
+        "description": "Sfocatura Gaussiana, Mosaico e Barre Nere."
+      },
+      {
+        "title": "Rimozione EXIF",
+        "description": "Elimina dati GPS e fotocamera."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "La censura è reversibile?",
+        "answer": "No, i pixel vengono sovrascritti definitivamente."
+      }
+    ]
+  }
 };

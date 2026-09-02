@@ -389,11 +389,44 @@ export function AiUpscalerWorkspace() {
               </div>
             )}
 
-            {/* Error Message */}
+            {/* Error Message with Graceful Fallback Guidance */}
             {errorMsg && (
-              <div className="p-3.5 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-200 text-xs flex items-start gap-2">
-                <Info className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>{errorMsg}</span>
+              <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-200 text-xs space-y-2.5">
+                <div className="flex items-start gap-2">
+                  <Info className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="font-semibold text-rose-100">Upscale Notice</div>
+                    <p className="text-rose-200/90 leading-relaxed">{errorMsg}</p>
+                  </div>
+                </div>
+
+                {engine === 'cloud-realesrgan' && (
+                  <div className="pt-2 border-t border-rose-800/60 space-y-1.5">
+                    <span className="text-[11px] text-rose-300 font-medium">Switch to client-side engine (100% offline & available):</span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEngine('ai-neural');
+                          setErrorMsg(null);
+                        }}
+                        className="px-3 py-1.5 bg-rose-900/60 hover:bg-rose-800 border border-rose-700 rounded-lg text-xs font-semibold text-white transition-colors"
+                      >
+                        Use Browser Local AI
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEngine('standard-canvas');
+                          setErrorMsg(null);
+                        }}
+                        className="px-3 py-1.5 bg-rose-900/60 hover:bg-rose-800 border border-rose-700 rounded-lg text-xs font-semibold text-white transition-colors"
+                      >
+                        Use Standard Fast
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
