@@ -19,6 +19,45 @@ import {
 import { getAIModel } from '../../lib/ai/modelRegistry.ts';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader.ts';
 
+async function prepareImageForCloudUpscale(img: HTMLImageElement, file: File, scale: number): Promise<File> {
+  const inW = img.naturalWidth || img.width;
+  const inH = img.naturalHeight || img.height;
+  const targetOutputPixels = inW * inH * scale * scale;
+
+  if (targetOutputPixels <= 35_000_000) {
+    return file;
+  }
+
+  // Auto-fit so maximum output is safely 32 Megapixels
+  const maxInPixels = 32_000_000 / (scale * scale);
+  const scaleRatio = Math.sqrt(maxInPixels / (inW * inH));
+  const newW = Math.max(64, Math.round(inW * scaleRatio));
+  const newH = Math.max(64, Math.round(inH * scaleRatio));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = newW;
+  canvas.height = newH;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return file;
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img, 0, 0, newW, newH);
+
+  return new Promise<File>((resolve) => {
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        resolve(file);
+        return;
+      }
+      resolve(
+        new File([blob], file.name.replace(/\.[^.]+$/, '') + '-optimized.png', {
+          type: 'image/png',
+        })
+      );
+    }, 'image/png');
+  });
+}
+
 export function AiUpscalerWorkspace() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
@@ -75,6 +114,14 @@ export function AiUpscalerWorkspace() {
         return;
       }
       setImgElement(img);
+
+      // Smart Default: If image is already high resolution (e.g. phone camera photo), select 2x for instant speed & 4K quality
+      const inPixels = (img.naturalWidth || img.width) * (img.naturalHeight || img.height);
+      if (inPixels * 16 > 36_000_000) {
+        setScale(2);
+      } else {
+        setScale(4);
+      }
     };
     img.src = URL.createObjectURL(activeFile);
   };
@@ -99,14 +146,11 @@ export function AiUpscalerWorkspace() {
 
     try {
       if (engine === 'cloud-realesrgan') {
-        const outPixels = (imgElement.naturalWidth || imgElement.width) * (imgElement.naturalHeight || imgElement.height) * (scale * scale);
-        if (outPixels > 36_000_000) {
-          throw new Error(
-            `Output resolution (${(imgElement.naturalWidth || imgElement.width) * scale}×${(imgElement.naturalHeight || imgElement.height) * scale} = ${(outPixels / 1_000_000).toFixed(1)} MP) exceeds Cloud AI 36 Megapixel limit. Try 2× scale or In-Browser AI Engine.`
-          );
-        }
+        setProgressMsg('Optimizing image for Cloud Neural Super-Resolution...');
+        const readyFile = await prepareImageForCloudUpscale(imgElement, selectedFile, scale);
+
         const res = await runCloudRealEsrganUpscale(
-          selectedFile,
+          readyFile,
           scale,
           abortController.signal,
           (percent, msg) => {
@@ -234,7 +278,9 @@ export function AiUpscalerWorkspace() {
                   type="button"
                   onClick={() => {
                     setEngine('cloud-realesrgan');
-                    setScale(4);
+                    if (imgElement && (imgElement.naturalWidth || imgElement.width) * (imgElement.naturalHeight || imgElement.height) * 16 > 36_000_000) {
+                      setScale(2);
+                    }
                   }}
                   className={`w-full p-3 rounded-xl border text-left transition-all ${
                     engine === 'cloud-realesrgan'
