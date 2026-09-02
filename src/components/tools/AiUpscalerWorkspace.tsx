@@ -17,6 +17,7 @@ import {
   type UpscaleResult,
 } from '../../lib/ai/upscalerEngine.ts';
 import { getAIModel } from '../../lib/ai/modelRegistry.ts';
+import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader.ts';
 
 export function AiUpscalerWorkspace() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -42,13 +43,27 @@ export function AiUpscalerWorkspace() {
     };
   }, []);
 
-  const handleFileSelect = (file: File) => {
-    if (!file.type.startsWith('image/')) {
-      setErrorMsg('Please select a valid image file (PNG, JPG, WebP).');
+  const handleFileSelect = async (file: File) => {
+    setErrorMsg(null);
+    let activeFile = file;
+
+    if (isHeicFile(file)) {
+      try {
+        setProgressMsg('Converting iPhone HEIC photo...');
+        const convertedBlob = await convertHeicToBlob(file);
+        activeFile = new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.png'), {
+          type: 'image/png',
+        });
+      } catch (err) {
+        setErrorMsg('Failed to convert iPhone HEIC photo.');
+        return;
+      }
+    } else if (!file.type.startsWith('image/')) {
+      setErrorMsg('Please select a valid image file (PNG, JPG, WebP, HEIC).');
       return;
     }
-    setErrorMsg(null);
-    setSelectedFile(file);
+
+    setSelectedFile(activeFile);
     setResult(null);
 
     const img = new Image();
@@ -61,7 +76,7 @@ export function AiUpscalerWorkspace() {
       }
       setImgElement(img);
     };
-    img.src = URL.createObjectURL(file);
+    img.src = URL.createObjectURL(activeFile);
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -84,6 +99,12 @@ export function AiUpscalerWorkspace() {
 
     try {
       if (engine === 'cloud-realesrgan') {
+        const outPixels = (imgElement.naturalWidth || imgElement.width) * (imgElement.naturalHeight || imgElement.height) * (scale * scale);
+        if (outPixels > 36_000_000) {
+          throw new Error(
+            `Output resolution (${(imgElement.naturalWidth || imgElement.width) * scale}×${(imgElement.naturalHeight || imgElement.height) * scale} = ${(outPixels / 1_000_000).toFixed(1)} MP) exceeds Cloud AI 36 Megapixel limit. Try 2× scale or In-Browser AI Engine.`
+          );
+        }
         const res = await runCloudRealEsrganUpscale(
           selectedFile,
           scale,

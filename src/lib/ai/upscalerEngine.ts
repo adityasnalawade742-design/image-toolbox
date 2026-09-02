@@ -46,7 +46,12 @@ export async function runCloudRealEsrganUpscale(
 
   if (!response.ok) {
     const errData = await response.json().catch(() => ({ error: response.statusText }));
-    throw new Error(errData.error || errData.details || `Cloud AI server error (${response.status})`);
+    const errorMsg =
+      (typeof errData.detail === 'string' ? errData.detail : null) ||
+      errData.error ||
+      errData.details ||
+      `Cloud AI server error (${response.status})`;
+    throw new Error(errorMsg);
   }
 
   onProgress?.(85, 'Receiving high-definition super-resolved image...');
