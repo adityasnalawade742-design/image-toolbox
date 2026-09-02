@@ -53,7 +53,18 @@ export default {
       });
     }
 
-    // Serve static assets for all other routes
-    return env.ASSETS.fetch(request);
+    // Serve static assets for all other routes with production security headers
+    const assetResponse = await env.ASSETS.fetch(request);
+    const secHeaders = new Headers(assetResponse.headers);
+    secHeaders.set('X-Frame-Options', 'DENY');
+    secHeaders.set('X-Content-Type-Options', 'nosniff');
+    secHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+    secHeaders.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+
+    return new Response(assetResponse.body, {
+      status: assetResponse.status,
+      statusText: assetResponse.statusText,
+      headers: secHeaders,
+    });
   },
 };

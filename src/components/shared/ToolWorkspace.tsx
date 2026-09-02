@@ -514,6 +514,41 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     }
   };
 
+  // Pro Keyboard Shortcuts (Ctrl+S to save, Ctrl+C to copy, Esc to clear)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeTag = document.activeElement?.tagName?.toLowerCase();
+      const isInput = activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select';
+
+      // Ctrl/Cmd + S -> Instant Download
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        if (imageElement) {
+          e.preventDefault();
+          handleDownload();
+        }
+      }
+
+      // Ctrl/Cmd + C -> Copy Processed Image to Clipboard (when not selecting input text)
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !isInput) {
+        const selection = window.getSelection()?.toString();
+        if (!selection && imageElement) {
+          e.preventDefault();
+          handleCopyImage();
+        }
+      }
+
+      // Escape -> Clear current image
+      if (e.key === 'Escape' && imageElement && !isInput) {
+        setImageElement(null);
+        setPreviewImageElement(null);
+        setErrorMessage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [imageElement, filename, format, quality, handleDownload, handleCopyImage]);
+
   return (
     <ErrorBoundary fallbackTitle={`Error in ${toolName} Workspace`}>
       <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
