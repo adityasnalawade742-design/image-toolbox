@@ -14,6 +14,7 @@ import {
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 
 import { saveHandoffImage } from '../../lib/storage/handoffStorage';
+import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
 
 interface Props {
   locale?: string;
@@ -35,10 +36,11 @@ const TOOLS = [
 export function HomeDropZone({
   locale = 'en',
   title = 'Drop your images here or click to browse',
-  subtitle = 'Supports PNG, JPG, WebP, SVG, AVIF, GIF — 100% in-browser processing',
+  subtitle = 'Supports PNG, JPG, WebP, SVG, AVIF, HEIC, GIF — 100% in-browser processing',
 }: Props) {
   const [isDragging, setIsDragging] = useState(false);
   const [stagedFile, setStagedFile] = useState<{ dataUrl: string; name: string } | null>(null);
+  const [isConvertingHeic, setIsConvertingHeic] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const getTargetUrl = (slug: string) => {
@@ -48,8 +50,29 @@ export function HomeDropZone({
     return `/${locale}/${slug}`;
   };
 
-  const handleFileSelect = (file: File) => {
-    if (file && file.type.startsWith('image/')) {
+  const handleFileSelect = async (file: File) => {
+    if (!file) return;
+
+    if (isHeicFile(file)) {
+      try {
+        setIsConvertingHeic(true);
+        const convertedBlob = await convertHeicToBlob(file);
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const dataUrl = e.target?.result as string;
+          const pngName = file.name.replace(/\.(heic|heif)$/i, '.png');
+          setStagedFile({ dataUrl, name: pngName });
+          setIsConvertingHeic(false);
+        };
+        reader.readAsDataURL(convertedBlob);
+        return;
+      } catch (err) {
+        console.error('Failed to convert HEIC image:', err);
+        setIsConvertingHeic(false);
+      }
+    }
+
+    if (file.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onload = (e) => {
         const dataUrl = e.target?.result as string;
@@ -113,7 +136,7 @@ export function HomeDropZone({
 
           <div className="flex items-center gap-3 pt-2">
             <span className="px-4 py-2 rounded-md bg-white text-black text-xs font-medium hover:bg-neutral-200 transition-colors">
-              Choose Image
+              {isConvertingHeic ? 'Decoding iPhone HEIC...' : 'Choose Image'}
             </span>
             <span className="text-[11px] text-mute flex items-center gap-1">
               or <kbd className="raycast-keycap px-1.5 py-0.5 rounded-xs text-[10px]">Ctrl+V</kbd>

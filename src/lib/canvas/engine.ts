@@ -54,7 +54,7 @@ export interface ImageProcessingOptions {
   backgroundColor?: string; // For JPG conversion / background fill
 }
 
-export function loadImage(src: string | File): Promise<HTMLImageElement> {
+export function loadImage(src: string | File | Blob): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -643,4 +643,13 @@ export function checkImageTransparency(img: HTMLImageElement): boolean {
   } catch {
     return false;
   }
+}
+
+export function formatBytes(bytes: number, decimals: number = 1): string {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }

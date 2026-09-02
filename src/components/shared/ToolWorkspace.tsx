@@ -29,6 +29,7 @@ import type {
   ImageProcessingOptions,
 } from '../../lib/canvas/engine';
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
+import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
@@ -176,11 +177,23 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
         return;
       }
 
+      let activeFile: File | Blob = file;
+      if (isHeicFile(file)) {
+        try {
+          const convertedBlob = await convertHeicToBlob(file);
+          activeFile = new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.png'), { type: 'image/png' });
+        } catch (heicErr) {
+          console.error('HEIC decoding failed:', heicErr);
+          setErrorMessage('Failed to decode iPhone HEIC image. Please ensure the file is not corrupted.');
+          return;
+        }
+      }
+
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
       setFileSize(file.size);
-      setMimeType(file.type || 'image/png');
+      setMimeType(activeFile.type || 'image/png');
 
-      const img = await loadImage(file);
+      const img = await loadImage(activeFile);
       setImageElement(img);
 
       // Generate downscaled proxy for silky-smooth preview interactions

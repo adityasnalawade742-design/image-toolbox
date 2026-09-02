@@ -8,6 +8,8 @@
     "build": "astro build && node scripts/post-build.mjs",
     "preview": "astro preview",
     "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "deploy": "wrangler deploy"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@astrojs/tailwind": "^5.1.5",
     "astro": "^5.4.1",
     "clsx": "^2.1.1",
+    "heic2any": "^0.0.4",
     "jszip": "^3.10.1",
     "lucide-react": "^0.475.0",
     "onnxruntime-web": "^1.29.0",
@@ -29,8 +32,12 @@
     "@types/node": "^20.17.19",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@vite-pwa/astro": "^1.2.0",
+    "@vitest/coverage-v8": "^4.1.11",
     "autoprefixer": "^10.4.20",
+    "happy-dom": "^20.13.1",
     "postcss": "^8.5.2",
+    "vitest": "^4.1.11",
     "wrangler": "^3.109.2"
   }
 }
