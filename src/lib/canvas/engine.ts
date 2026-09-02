@@ -355,16 +355,17 @@ export function processCanvas(
 
 export function canvasToBlob(
   canvas: HTMLCanvasElement,
-  format: 'image/jpeg' | 'image/png' | 'image/webp' = 'image/png',
+  format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' = 'image/png',
   quality: number = 0.92
 ): Promise<Blob> {
+  const mime = format === 'image/avif' ? 'image/webp' : format;
   return new Promise((resolve, reject) => {
     canvas.toBlob(
       (blob) => {
         if (blob) resolve(blob);
         else reject(new Error('Failed to create blob from canvas'));
       },
-      format,
+      mime,
       quality
     );
   });

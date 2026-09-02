@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { UploadCloud, Download, Archive, Trash2, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react';
+import { UploadCloud, Download, Archive, Trash2, CheckCircle2, AlertCircle, RefreshCw, Cloud, Zap } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { vpsCompress } from '../../lib/vps/vpsClient';
 
 interface QueueItem {
   id: string;
@@ -16,7 +17,8 @@ interface QueueItem {
 export function BulkCompressorWorkspace() {
   const [queue, setQueue] = useState<QueueItem[]>([]);
   const [quality, setQuality] = useState<number>(80);
-  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp'>('image/webp');
+  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif'>('image/webp');
+  const [useVps, setUseVps] = useState<boolean>(true);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
   const isCancelledRef = useRef(false);
@@ -82,23 +84,43 @@ export function BulkCompressorWorkspace() {
       );
 
       try {
-        const img = await loadImage(item.file);
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) throw new Error('Canvas 2D unavailable');
-        ctx.drawImage(img, 0, 0);
+        let outputBlob: Blob | null = null;
 
-        const blob = await canvasToBlob(canvas, format, quality / 100);
+        // Try VPS compression if enabled or if format is AVIF
+        if (useVps || format === 'image/avif') {
+          try {
+            outputBlob = await vpsCompress(item.file, {
+              quality,
+              format,
+              subsampling: '4:2:0',
+              stripExif: true,
+            });
+          } catch (vpsErr) {
+            console.warn('VPS bulk compress failed for item, using client fallback:', vpsErr);
+          }
+        }
+
+        // Client-side fallback
+        if (!outputBlob) {
+          const img = await loadImage(item.file);
+          const canvas = document.createElement('canvas');
+          canvas.width = img.naturalWidth || img.width;
+          canvas.height = img.naturalHeight || img.height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) throw new Error('Canvas 2D unavailable');
+          ctx.drawImage(img, 0, 0);
+
+          const fallbackFmt = format === 'image/avif' ? 'image/webp' : format;
+          outputBlob = await canvasToBlob(canvas, fallbackFmt, quality / 100);
+        }
 
         setQueue((prev) =>
           prev.map((q, idx) =>
             idx === i
               ? {
                   ...q,
-                  outputBlob: blob,
-                  outputSize: blob.size,
+                  outputBlob,
+                  outputSize: outputBlob.size,
                   status: 'done',
                 }
               : q
@@ -208,6 +230,7 @@ export function BulkCompressorWorkspace() {
                   onChange={(e) => setFormat(e.target.value as any)}
                   className="bg-surface-card border border-hairline rounded px-2 py-1 text-ink focus:outline-none"
                 >
+                  <option value="image/avif">AVIF (Ultra Savings via VPS)</option>
                   <option value="image/webp">WebP (Optimal)</option>
                   <option value="image/jpeg">JPEG (JPG)</option>
                   <option value="image/png">PNG (Lossless)</option>

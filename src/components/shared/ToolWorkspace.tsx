@@ -30,6 +30,7 @@ import type {
 } from '../../lib/canvas/engine';
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
+import { vpsCompress } from '../../lib/vps/vpsClient';
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
@@ -76,6 +77,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
+  const [rawFile, setRawFile] = useState<File | null>(null);
   const [filename, setFilename] = useState<string>('image');
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
@@ -158,8 +160,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [base64Output, setBase64Output] = useState<string>('');
 
   // Format & Quality
-  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp'>('image/png');
+  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif'>('image/png');
   const [quality, setQuality] = useState<number>(85);
+  const [useVpsEngine, setUseVpsEngine] = useState<boolean>(true);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -190,6 +193,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
       setFileSize(file.size);
       setMimeType(activeFile.type || 'image/png');
+      setRawFile(file);
 
       const img = await loadImage(activeFile);
       setImageElement(img);
@@ -485,8 +489,30 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     // Always process from full-resolution original source image for pristine output quality
     const options = getProcessingOptions(true);
     const fullResCanvas = processCanvas(imageElement, options);
-    const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
-    const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
+
+    // If AVIF is selected or VPS compression is preferred for compress-image
+    if (format === 'image/avif' || (slug === 'compress-image' && useVpsEngine)) {
+      try {
+        // Convert full resolution canvas to intermediate PNG blob for lossless transmission
+        const intermediatePngBlob = await canvasToBlob(fullResCanvas, 'image/png', 1.0);
+        const vpsBlob = await vpsCompress(intermediatePngBlob, {
+          quality,
+          format,
+          subsampling: '4:2:0',
+          stripExif: true,
+        });
+        const ext = format === 'image/avif' ? 'avif' : format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
+        downloadBlob(vpsBlob, `${filename}-processed.${ext}`);
+        return;
+      } catch (vpsErr) {
+        console.warn('VPS compression failed, falling back to local canvas engine:', vpsErr);
+      }
+    }
+
+    // Standard client-side fallback
+    const fallbackFmt = format === 'image/avif' ? 'image/webp' : format;
+    const blob = await canvasToBlob(fullResCanvas, fallbackFmt, quality / 100);
+    const ext = fallbackFmt === 'image/webp' ? 'webp' : fallbackFmt === 'image/jpeg' ? 'jpg' : 'png';
     downloadBlob(blob, `${filename}-processed.${ext}`);
   };
 
@@ -790,6 +816,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   format={format}
                   onQualityChange={setQuality}
                   onFormatChange={setFormat}
+                  useVps={useVpsEngine}
+                  onToggleVps={setUseVpsEngine}
                 />
               )}
 
@@ -813,6 +841,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   width={origW}
                   height={origH}
                   hasTransparency={hasRealTransparency}
+                  activeFile={rawFile}
                 />
               )}
 

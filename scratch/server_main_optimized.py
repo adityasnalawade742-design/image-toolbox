@@ -204,3 +204,206 @@ async def upscale_image(
     }
 
     return Response(content=buf.getvalue(), media_type="image/png", headers=headers)
+
+
+# --- 4. High-Efficiency Compression Microservice ---
+@app.post("/api/compress")
+async def compress_image(
+    file: UploadFile = File(...),
+    quality: int = Form(80),
+    format: str = Form("webp"),
+    subsampling: str = Form("4:2:0"),
+    strip_exif: bool = Form(True)
+):
+    quality = max(5, min(100, quality))
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="Empty file provided")
+
+    try:
+        pil_img = Image.open(io.BytesIO(content))
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid image format: {str(e)}")
+
+    target_fmt = format.lower().replace("image/", "").replace("jpeg", "jpg")
+    out_buf = io.BytesIO()
+
+    save_kwargs = {}
+    if target_fmt in ["jpg", "jpeg"]:
+        if pil_img.mode in ("RGBA", "P"):
+            bg = Image.new("RGB", pil_img.size, (255, 255, 255))
+            if pil_img.mode == "RGBA":
+                bg.paste(pil_img, mask=pil_img.split()[3])
+            else:
+                bg.paste(pil_img)
+            pil_img = bg
+        elif pil_img.mode != "RGB":
+            pil_img = pil_img.convert("RGB")
+
+        save_kwargs = {
+            "format": "JPEG",
+            "quality": quality,
+            "optimize": True,
+            "subsampling": 2 if subsampling == "4:2:0" else 0,
+        }
+        media_type = "image/jpeg"
+    elif target_fmt == "webp":
+        save_kwargs = {
+            "format": "WEBP",
+            "quality": quality,
+            "method": 6,
+        }
+        media_type = "image/webp"
+    elif target_fmt == "avif":
+        save_kwargs = {
+            "format": "AVIF",
+            "quality": quality,
+        }
+        media_type = "image/avif"
+    elif target_fmt == "png":
+        save_kwargs = {
+            "format": "PNG",
+            "optimize": True,
+        }
+        media_type = "image/png"
+    else:
+        raise HTTPException(status_code=400, detail=f"Unsupported format: {format}")
+
+    try:
+        pil_img.save(out_buf, **save_kwargs)
+    except Exception as e:
+        # Fallback if AVIF plugin not present or error occurs
+        if target_fmt == "avif":
+            pil_img.save(out_buf, format="WEBP", quality=quality, method=6)
+            media_type = "image/webp"
+        else:
+            raise HTTPException(status_code=500, detail=f"Encoding failed: {str(e)}")
+
+    out_buf.seek(0)
+    out_bytes = out_buf.getvalue()
+    savings_pct = max(0, round(((len(content) - len(out_bytes)) / max(1, len(content))) * 100, 1))
+
+    headers = {
+        "X-Original-Size": str(len(content)),
+        "X-Compressed-Size": str(len(out_bytes)),
+        "X-Savings-Percent": str(savings_pct),
+        "X-Target-Format": target_fmt,
+    }
+
+    return Response(content=out_bytes, media_type=media_type, headers=headers)
+
+
+# --- 5. True Next-Gen Image Format Converter (AVIF/WebP/PNG/JPG) ---
+@app.post("/api/convert")
+async def convert_image(
+    file: UploadFile = File(...),
+    target_format: str = Form("avif"),
+    quality: int = Form(85)
+):
+    return await compress_image(file=file, quality=quality, format=target_format)
+
+
+# --- 6. AI & Algorithmic Photo Enhancement (Denoise & Smart Sharpen) ---
+@app.post("/api/enhance")
+async def enhance_image(
+    file: UploadFile = File(...),
+    mode: str = Form("denoise"), # 'denoise' | 'sharpen' | 'contrast'
+    strength: float = Form(1.0)
+):
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="Empty file provided")
+
+    try:
+        pil_img = Image.open(io.BytesIO(content)).convert("RGB")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid image format: {str(e)}")
+
+    img_np = np.array(pil_img)
+    has_opencv = False
+    try:
+        import cv2
+        has_opencv = True
+    except ImportError:
+        pass
+
+    if mode == "denoise":
+        if has_opencv:
+            h = int(10 * max(0.2, min(strength, 2.0)))
+            img_np = cv2.fastNlMeansDenoisingColored(img_np, None, h, h, 7, 21)
+        else:
+            from PIL import ImageFilter
+            pil_img = pil_img.filter(ImageFilter.SMOOTH_MORE)
+            img_np = np.array(pil_img)
+    elif mode == "sharpen":
+        from PIL import ImageEnhance, ImageFilter
+        pil_img = pil_img.filter(ImageFilter.UnsharpMask(radius=2, percent=int(150 * strength), threshold=3))
+        img_np = np.array(pil_img)
+    elif mode == "contrast":
+        from PIL import ImageOps
+        pil_img = ImageOps.autocontrast(pil_img, cutoff=1)
+        img_np = np.array(pil_img)
+
+    out_pil = Image.fromarray(img_np)
+    buf = io.BytesIO()
+    out_pil.save(buf, format="PNG")
+    buf.seek(0)
+
+    headers = {
+        "X-Enhance-Mode": mode,
+        "X-Enhance-Engine": "OpenCV-NLMeans" if (mode == "denoise" and has_opencv) else "PIL-Kernel",
+    }
+
+    return Response(content=buf.getvalue(), media_type="image/png", headers=headers)
+
+
+# --- 7. Deep EXIF, Camera, and GPS Metadata Analysis ---
+@app.post("/api/analyze")
+async def analyze_metadata(file: UploadFile = File(...)):
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="Empty file provided")
+
+    try:
+        pil_img = Image.open(io.BytesIO(content))
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid image: {str(e)}")
+
+    w, h = pil_img.size
+    result = {
+        "dimensions": f"{w}x{h}",
+        "width": w,
+        "height": h,
+        "format": pil_img.format or "UNKNOWN",
+        "mode": pil_img.mode,
+        "is_animated": getattr(pil_img, "is_animated", False),
+        "exif": {},
+        "gps": None,
+    }
+
+    try:
+        from PIL.ExifTags import TAGS, GPSTAGS
+        raw_exif = pil_img.getexif()
+        if raw_exif:
+            for tag_id, value in raw_exif.items():
+                tag_name = TAGS.get(tag_id, str(tag_id))
+                # Skip large binary dumps
+                if isinstance(value, bytes) and len(value) > 64:
+                    continue
+                try:
+                    result["exif"][tag_name] = str(value)
+                except Exception:
+                    pass
+
+            # Check IFD GPS tags
+            gps_ifd = raw_exif.get_ifd(0x8825)
+            if gps_ifd:
+                gps_data = {}
+                for g_id, g_val in gps_ifd.items():
+                    g_name = GPSTAGS.get(g_id, str(g_id))
+                    gps_data[g_name] = str(g_val)
+                result["gps"] = gps_data
+    except Exception as exif_err:
+        result["exif_error"] = str(exif_err)
+
+    return result

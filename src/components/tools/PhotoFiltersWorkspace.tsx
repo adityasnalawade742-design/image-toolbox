@@ -13,7 +13,10 @@ import {
   Copy,
   Check,
   Zap,
+  Loader2,
+  Wand2,
 } from 'lucide-react';
+import { vpsEnhance } from '../../lib/vps/vpsClient';
 
 interface FilterPreset {
   id: string;
@@ -63,8 +66,35 @@ export function PhotoFiltersWorkspace() {
   const [showComparison, setShowComparison] = useState<boolean>(false);
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
 
+  const [isEnhancing, setIsEnhancing] = useState<boolean>(false);
+  const [enhanceNotice, setEnhanceNotice] = useState<string | null>(null);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const splitContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleVpsEnhance = async (mode: 'denoise' | 'sharpen') => {
+    if (!selectedFile) return;
+    try {
+      setIsEnhancing(true);
+      setEnhanceNotice(mode === 'denoise' ? 'Applying Non-Local Means Denoising via VPS...' : 'Applying Unsharp Mask Edge Clarification via VPS...');
+      const enhancedBlob = await vpsEnhance(selectedFile, mode, 1.2);
+      const url = URL.createObjectURL(enhancedBlob);
+      const newImg = new Image();
+      newImg.onload = () => {
+        setImgElement(newImg);
+        setIsEnhancing(false);
+        setEnhanceNotice(`Applied AI ${mode === 'denoise' ? 'Denoise' : 'Smart Sharpen'} successfully!`);
+        setTimeout(() => setEnhanceNotice(null), 3000);
+      };
+      newImg.src = url;
+    } catch (err: any) {
+      console.warn('VPS enhancement failed:', err);
+      setIsEnhancing(false);
+      setEnhanceNotice('VPS enhancement unavailable, applied client sharpening filter.');
+      setSharpness(35);
+      setTimeout(() => setEnhanceNotice(null), 3500);
+    }
+  };
 
   const handleFileSelect = (file: File) => {
     if (!file.type.startsWith('image/')) return;
@@ -215,6 +245,44 @@ export function PhotoFiltersWorkspace() {
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Reset</span>
               </button>
+            </div>
+
+            {/* AI Pro Enhancements (Oracle VPS Powered) */}
+            <div className="space-y-2 p-3 bg-primary-950/30 border border-primary-800/40 rounded-xl">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-semibold text-primary-300 flex items-center gap-1.5">
+                  <Wand2 className="w-3.5 h-3.5 text-primary-400" />
+                  <span>Pro AI Enhancements</span>
+                </span>
+                <span className="text-[10px] font-mono uppercase bg-primary-900/60 text-primary-300 px-1.5 py-0.5 rounded border border-primary-700/50">
+                  VPS Cloud
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <button
+                  type="button"
+                  disabled={isEnhancing}
+                  onClick={() => handleVpsEnhance('denoise')}
+                  className="py-2 px-2.5 rounded-lg border border-primary-700/60 bg-primary-900/40 hover:bg-primary-900/70 text-xs font-medium text-white flex items-center justify-center gap-1.5 transition-all disabled:opacity-50"
+                >
+                  {isEnhancing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5 text-amber-300" />}
+                  <span>AI Denoise</span>
+                </button>
+                <button
+                  type="button"
+                  disabled={isEnhancing}
+                  onClick={() => handleVpsEnhance('sharpen')}
+                  className="py-2 px-2.5 rounded-lg border border-primary-700/60 bg-primary-900/40 hover:bg-primary-900/70 text-xs font-medium text-white flex items-center justify-center gap-1.5 transition-all disabled:opacity-50"
+                >
+                  {isEnhancing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Zap className="w-3.5 h-3.5 text-primary-300" />}
+                  <span>AI Sharpen</span>
+                </button>
+              </div>
+              {enhanceNotice && (
+                <p className="text-[11px] text-primary-200/90 leading-tight pt-1">
+                  {enhanceNotice}
+                </p>
+              )}
             </div>
 
             {/* Presets Carousel / Grid */}

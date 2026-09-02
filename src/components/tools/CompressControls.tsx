@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
-import { Zap, AlertCircle, Target, Sliders } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Zap, AlertCircle, Target, Sliders, Cloud, Check } from 'lucide-react';
+import { isVpsOnline } from '../../lib/vps/vpsClient';
 
 interface Props {
   originalBytes: number;
   outputBytes: number;
   quality: number;
-  format: 'image/jpeg' | 'image/png' | 'image/webp';
+  format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif';
   onQualityChange: (q: number) => void;
-  onFormatChange: (f: 'image/jpeg' | 'image/png' | 'image/webp') => void;
+  onFormatChange: (f: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif') => void;
+  useVps?: boolean;
+  onToggleVps?: (use: boolean) => void;
 }
 
 export function CompressControls({
@@ -17,9 +20,16 @@ export function CompressControls({
   format,
   onQualityChange,
   onFormatChange,
+  useVps = true,
+  onToggleVps,
 }: Props) {
   const [compressMode, setCompressMode] = useState<'quality' | 'target'>('quality');
   const [targetKb, setTargetKb] = useState<number>(100);
+  const [vpsAvailable, setVpsAvailable] = useState<boolean>(true);
+
+  useEffect(() => {
+    isVpsOnline().then(setVpsAvailable);
+  }, []);
 
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
@@ -170,23 +180,51 @@ export function CompressControls({
 
       {/* Format Selector */}
       <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-xs font-medium text-body">Target Output Format</label>
-        <div className="grid grid-cols-3 gap-2 text-xs">
-          {(['image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
+        <div className="flex items-center justify-between">
+          <label className="text-xs font-medium text-body">Target Output Format</label>
+          {vpsAvailable && onToggleVps && (
+            <button
+              type="button"
+              onClick={() => onToggleVps(!useVps)}
+              className={`flex items-center gap-1 text-[11px] px-2 py-0.5 rounded transition-colors ${
+                useVps
+                  ? 'bg-accent-blue/15 text-accent-blue border border-accent-blue/30 font-medium'
+                  : 'bg-surface text-mute hover:text-body border border-hairline'
+              }`}
+            >
+              <Cloud className="w-3 h-3" />
+              <span>{useVps ? 'VPS Engine Active' : 'Client Engine'}</span>
+            </button>
+          )}
+        </div>
+        <div className="grid grid-cols-4 gap-1.5 text-xs">
+          {(['image/avif', 'image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
             <button
               key={fmt}
               type="button"
               onClick={() => onFormatChange(fmt)}
-              className={`py-1.5 rounded-md border text-center font-medium transition-colors ${
+              className={`py-1.5 rounded-md border text-center font-medium transition-colors text-xs ${
                 format === fmt
-                  ? 'bg-surface-card border-hairline-strong text-ink font-bold'
+                  ? 'bg-surface-card border-hairline-strong text-ink font-bold shadow-sm'
                   : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
               }`}
             >
-              {fmt === 'image/webp' ? 'WebP (Best)' : fmt === 'image/jpeg' ? 'JPG' : 'PNG'}
+              {fmt === 'image/avif'
+                ? 'AVIF (Ultra)'
+                : fmt === 'image/webp'
+                ? 'WebP'
+                : fmt === 'image/jpeg'
+                ? 'JPG'
+                : 'PNG'}
             </button>
           ))}
         </div>
+        {format === 'image/avif' && (
+          <p className="text-[11px] text-accent-blue/90 leading-relaxed pt-1 flex items-center gap-1">
+            <Zap className="w-3 h-3 shrink-0" />
+            <span>AVIF delivers up to 50% smaller files than WebP via Oracle VPS encoding.</span>
+          </p>
+        )}
       </div>
     </div>
   );

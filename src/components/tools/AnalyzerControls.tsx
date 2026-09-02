@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers, Camera, MapPin, Sparkles, Loader2 } from 'lucide-react';
+import { vpsAnalyzeMetadata, type ExifAnalysisResult } from '../../lib/vps/vpsClient';
 
 interface Props {
   filename: string;
@@ -9,6 +10,7 @@ interface Props {
   width: number;
   height: number;
   hasTransparency: boolean;
+  activeFile?: File | Blob | null;
 }
 
 export function AnalyzerControls({
@@ -19,8 +21,20 @@ export function AnalyzerControls({
   width,
   height,
   hasTransparency,
+  activeFile,
 }: Props) {
   const [copied, setCopied] = useState(false);
+  const [exifData, setExifData] = useState<ExifAnalysisResult | null>(null);
+  const [isAnalyzingExif, setIsAnalyzingExif] = useState(false);
+
+  useEffect(() => {
+    if (!activeFile) return;
+    setIsAnalyzingExif(true);
+    vpsAnalyzeMetadata(activeFile)
+      .then((res) => setExifData(res))
+      .catch(() => setExifData(null))
+      .finally(() => setIsAnalyzingExif(false));
+  }, [activeFile]);
 
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
@@ -106,6 +120,37 @@ export function AnalyzerControls({
             <span className="text-ink font-mono font-medium truncate text-right">{m.value}</span>
           </div>
         ))}
+      </div>
+
+      {/* Deep EXIF & Hardware Metadata Section */}
+      <div className="space-y-2 pt-2 border-t border-hairline">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-xs font-semibold text-ink">
+            <Camera className="w-4 h-4 text-emerald-400" />
+            <span>Camera & Hardware EXIF</span>
+          </div>
+          {isAnalyzingExif && (
+            <span className="flex items-center gap-1 text-[11px] text-mute font-mono">
+              <Loader2 className="w-3 h-3 animate-spin text-accent-blue" />
+              <span>Scanning tags...</span>
+            </span>
+          )}
+        </div>
+
+        {exifData && Object.keys(exifData.exif || {}).length > 0 ? (
+          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs max-h-60 overflow-y-auto">
+            {Object.entries(exifData.exif).map(([tag, val]) => (
+              <div key={tag} className="py-1.5 flex items-center justify-between gap-4 text-[11px]">
+                <span className="text-mute font-medium truncate max-w-[140px]">{tag}</span>
+                <span className="text-ink font-mono truncate max-w-[180px] text-right">{val}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-xs text-mute flex items-center justify-between">
+            <span>{isAnalyzingExif ? 'Extracting deep camera markers...' : 'No camera EXIF metadata embedded in this image file.'}</span>
+          </div>
+        )}
       </div>
     </div>
   );
