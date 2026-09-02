@@ -6,6 +6,7 @@ export interface TextOverlayOptions {
   opacity: number;
   position: 'top' | 'center' | 'bottom' | 'custom';
   customYPercent?: number; // 0 to 100
+  customXPercent?: number; // 0 to 100
   bold?: boolean;
   italic?: boolean;
   textAlign?: 'left' | 'center' | 'right';
@@ -222,8 +223,13 @@ export function processCanvas(
     }
 
     let posX = canvas.width / 2;
-    if (tOpt.textAlign === 'left') posX = 30;
-    else if (tOpt.textAlign === 'right') posX = canvas.width - 30;
+    if (tOpt.position === 'custom' && tOpt.customXPercent !== undefined) {
+      posX = (canvas.width * tOpt.customXPercent) / 100;
+    } else if (tOpt.textAlign === 'left') {
+      posX = 30;
+    } else if (tOpt.textAlign === 'right') {
+      posX = canvas.width - 30;
+    }
 
     // Measure maximum line width for background badge
     if (tOpt.backgroundColor) {

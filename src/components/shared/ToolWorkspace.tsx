@@ -31,6 +31,7 @@ import type {
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
+import { InteractiveTextOverlay } from '../tools/InteractiveTextOverlay';
 import { ResizeControls } from '../tools/ResizeControls';
 import { RotateControls } from '../tools/RotateControls';
 import { FlipControls } from '../tools/FlipControls';
@@ -368,6 +369,72 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   ]);
 
   // Eyedropper pixel sampler directly from full original image for 100% lossless color precision
+  const [loupe, setLoupe] = useState<{
+    visible: boolean;
+    x: number;
+    y: number;
+    hex: string;
+    rgb: string;
+    matrix: string[];
+  }>({
+    visible: false,
+    x: 0,
+    y: 0,
+    hex: '#FFFFFF',
+    rgb: 'rgb(255, 255, 255)',
+    matrix: [],
+  });
+
+  const handleCanvasMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!slug.includes('color') || !canvasRef.current || !imageElement) return;
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.clientX - rect.left;
+    const clientY = e.clientY - rect.top;
+    const normX = Math.max(0, Math.min(1, clientX / rect.width));
+    const normY = Math.max(0, Math.min(1, clientY / rect.height));
+
+    const fullW = imageElement.naturalWidth || imageElement.width;
+    const fullH = imageElement.naturalHeight || imageElement.height;
+    const srcX = Math.floor(normX * fullW);
+    const srcY = Math.floor(normY * fullH);
+
+    const offCanvas = document.createElement('canvas');
+    offCanvas.width = 7;
+    offCanvas.height = 7;
+    const ctx = offCanvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return;
+    ctx.drawImage(imageElement, srcX - 3, srcY - 3, 7, 7, 0, 0, 7, 7);
+    const imgData = ctx.getImageData(0, 0, 7, 7).data;
+
+    const matrix: string[] = [];
+    for (let i = 0; i < 49; i++) {
+      const idx = i * 4;
+      matrix.push(`rgb(${imgData[idx]}, ${imgData[idx + 1]}, ${imgData[idx + 2]})`);
+    }
+
+    const centerIdx = 24 * 4;
+    const r = imgData[centerIdx];
+    const g = imgData[centerIdx + 1];
+    const b = imgData[centerIdx + 2];
+    const hex = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`.toUpperCase();
+
+    setLoupe({
+      visible: true,
+      x: clientX,
+      y: clientY,
+      hex,
+      rgb: `rgb(${r}, ${g}, ${b})`,
+      matrix,
+    });
+  };
+
+  const handleCanvasMouseLeave = () => {
+    if (slug.includes('color')) {
+      setLoupe((prev) => ({ ...prev, visible: false }));
+    }
+  };
+
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current || !imageElement) return;
     const canvas = canvasRef.current;
@@ -504,6 +571,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 <canvas
                   ref={canvasRef}
                   onClick={slug.includes('color') ? handleCanvasClick : undefined}
+                  onMouseMove={slug.includes('color') ? handleCanvasMouseMove : undefined}
+                  onMouseLeave={slug.includes('color') ? handleCanvasMouseLeave : undefined}
                   className={`max-w-full max-h-[500px] object-contain rounded shadow-2xl block ${
                     slug.includes('color') ? 'cursor-crosshair' : ''
                   }`}
@@ -518,6 +587,46 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                     canvasElement={canvasRef.current}
                     onCropChange={setCrop}
                   />
+                )}
+                {slug === 'add-text-to-image' && canvasRef.current && (
+                  <InteractiveTextOverlay
+                    canvasElement={canvasRef.current}
+                    options={textOptions}
+                    onChange={setTextOptions}
+                  />
+                )}
+                {/* Floating Eyedropper Magnifier Loupe */}
+                {slug.includes('color') && loupe.visible && (
+                  <div
+                    className="absolute pointer-events-none z-30 -translate-x-1/2 -translate-y-full pb-3 transition-opacity"
+                    style={{
+                      left: `${loupe.x}px`,
+                      top: `${loupe.y}px`,
+                    }}
+                  >
+                    <div className="flex flex-col items-center">
+                      <div className="w-20 h-20 rounded-full border-2 border-white shadow-2xl overflow-hidden relative bg-black/80 flex items-center justify-center">
+                        {/* 7x7 Zoom Matrix */}
+                        <div className="grid grid-cols-7 grid-rows-7 w-full h-full">
+                          {loupe.matrix.map((col, idx) => (
+                            <div key={idx} style={{ backgroundColor: col }} className="w-full h-full" />
+                          ))}
+                        </div>
+                        {/* Reticle / Center Target */}
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div className="w-3 h-3 border border-white/90 shadow-sm rounded-xs" />
+                        </div>
+                      </div>
+                      {/* Color Tag Badge */}
+                      <div className="mt-1 px-2 py-0.5 bg-black/90 text-white rounded text-[10px] font-mono font-semibold shadow-lg border border-white/20 flex items-center gap-1">
+                        <span
+                          className="w-2 h-2 rounded-full border border-white/30"
+                          style={{ backgroundColor: loupe.hex }}
+                        />
+                        <span>{loupe.hex}</span>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
 
