@@ -1405,49 +1405,6 @@ export const esTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
-  "ai-image-upscaler": {
-  "name": "Escalador de Imágenes por IA",
-  "shortName": "Escalar IA",
-  "tagline": "Aumenta la resolución de tus fotos con superresolución neuronal 2× y 4× en tu navegador.",
-  "seoTitle": "Escalador de Imágenes con IA Online — Superresolución 2x y 4x Gratis",
-  "seoDescription": "Aumenta la calidad y resolución de tus fotos con IA directamente en tu navegador. Procesamiento 100% privado y gratuito.",
-  "keywords": [
-    "escalador de imagenes ia",
-    "aumentar resolucion foto ia",
-    "superresolucion online",
-    "mejorar calidad foto"
-  ],
-  "howToSteps": [
-    {
-      "title": "Sube tu Imagen",
-      "description": "Arrastra y suelta cualquier foto JPG, PNG o WebP."
-    },
-    {
-      "title": "Elige el Factor de Escala",
-      "description": "Selecciona el modo de superresolución 2× o 4×."
-    },
-    {
-      "title": "Descarga el Resultado",
-      "description": "Compara el antes/después y descarga la imagen mejorada en alta resolución."
-    }
-  ],
-  "features": [
-    {
-      "title": "Inferencia 100% en el Navegador",
-      "description": "La red neuronal se ejecuta en tu dispositivo sin servidores."
-    },
-    {
-      "title": "Superresolución Subpíxel",
-      "description": "Reconstruye gradientes de alta frecuencia en el canal de luminancia."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "¿Mis imágenes se envían a un servidor?",
-      "answer": "No. Todo el procesamiento se realiza en la memoria de tu navegador."
-    }
-  ]
-},
   "photo-filters": {
     "name": "Filtros y Efectos para Fotos",
     "shortName": "Filtros",

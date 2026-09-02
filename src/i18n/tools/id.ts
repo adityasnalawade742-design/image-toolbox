@@ -1405,44 +1405,6 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
-  "ai-image-upscaler": {
-  "name": "Peningkat Resolusi Gambar AI",
-  "shortName": "Tingkatkan AI",
-  "tagline": "Tingkatkan resolusi foto dengan super-resolusi saraf 2× dan 4× langsung di browser Anda.",
-  "seoTitle": "Peningkat Resolusi Gambar AI Online — Super-Resolusi 2x & 4x Gratis",
-  "seoDescription": "Tingkatkan kualitas dan ukuran foto dengan AI langsung di browser Anda tanpa unggah ke server.",
-  "keywords": [
-    "peningkat resolusi gambar ai",
-    "ai super resolution",
-    "perjelas foto online"
-  ],
-  "howToSteps": [
-    {
-      "title": "Unggah Gambar",
-      "description": "Pilih gambar JPG, PNG, atau WebP."
-    },
-    {
-      "title": "Pilih Skala",
-      "description": "Pilih mode 2× atau 4×."
-    },
-    {
-      "title": "Unduh Hasil",
-      "description": "Simpan gambar resolusi tinggi."
-    }
-  ],
-  "features": [
-    {
-      "title": "100% di Browser",
-      "description": "Diproses secara lokal di perangkat Anda."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Apakah gambar saya aman?",
-      "answer": "Ya, gambar tidak pernah meninggalkan perangkat Anda."
-    }
-  ]
-},
   "photo-filters": {
     "name": "Filter & Efek Foto",
     "shortName": "Filter",

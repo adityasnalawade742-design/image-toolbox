@@ -1405,44 +1405,6 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
-  "ai-image-upscaler": {
-  "name": "Upscaler de Imagem por IA",
-  "shortName": "Escalar IA",
-  "tagline": "Aumente a resolução de suas fotos com super-resolução neural 2× e 4× no seu navegador.",
-  "seoTitle": "Upscaler de Imagem com IA Online — Super-Resolução 2x e 4x Grátis",
-  "seoDescription": "Aumente o tamanho e a nitidez das suas imagens com inteligência artificial no navegador. Sem uploads e 100% gratuito.",
-  "keywords": [
-    "upscaler imagem ia",
-    "aumentar resolucao foto ia",
-    "melhorar qualidade imagem online"
-  ],
-  "howToSteps": [
-    {
-      "title": "Envie a Imagem",
-      "description": "Arraste e solte uma imagem JPG, PNG ou WebP."
-    },
-    {
-      "title": "Escolha a Escala",
-      "description": "Selecione 2× ou 4×."
-    },
-    {
-      "title": "Baixe o Resultado",
-      "description": "Salve a imagem em alta resolução."
-    }
-  ],
-  "features": [
-    {
-      "title": "100% no Navegador",
-      "description": "Inferência neural direta no seu dispositivo."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Minhas fotos são enviadas para algum servidor?",
-      "answer": "Não. Todo o processo ocorre localmente no seu navegador."
-    }
-  ]
-},
   "photo-filters": {
     "name": "Filtros e Efeitos de Foto",
     "shortName": "Filtros",

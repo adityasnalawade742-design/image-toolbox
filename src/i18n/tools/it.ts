@@ -1405,44 +1405,6 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
-  "ai-image-upscaler": {
-  "name": "Upscaler Immagini con IA",
-  "shortName": "Ingrandisci IA",
-  "tagline": "Migliora la risoluzione delle tue foto con la super-risoluzione neurale 2× e 4× nel browser.",
-  "seoTitle": "Upscaler Immagini IA Online — Super-Risoluzione 2x e 4x Gratis",
-  "seoDescription": "Ingrandisci e migliora la qualità delle tue foto con l’intelligenza artificiale direttamente nel browser.",
-  "keywords": [
-    "upscaler immagini ia",
-    "aumentare risoluzione foto ia",
-    "migliorare foto online"
-  ],
-  "howToSteps": [
-    {
-      "title": "Carica Immagine",
-      "description": "Seleziona una foto JPG, PNG o WebP."
-    },
-    {
-      "title": "Scegli il Fattore",
-      "description": "Seleziona 2× o 4×."
-    },
-    {
-      "title": "Scarica",
-      "description": "Salva l’immagine ad alta risoluzione."
-    }
-  ],
-  "features": [
-    {
-      "title": "100% nel Browser",
-      "description": "Elaborazione neurale locale e privata."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Le mie immagini vengono salvate online?",
-      "answer": "No. Tutto viene elaborato nella memoria del tuo browser."
-    }
-  ]
-},
   "photo-filters": {
     "name": "Filtri ed Effetti Foto",
     "shortName": "Filtri",

@@ -1050,16 +1050,6 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                           <ArrowRight className="w-3 h-3 text-mute" />
                         </button>
                       )}
-                      {slug !== 'ai-image-upscaler' && (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('ai-image-upscaler')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>AI Upscaler</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      )}
                     </div>
                   </div>
                 )}

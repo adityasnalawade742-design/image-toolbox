@@ -1405,45 +1405,6 @@ export const koTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
-  "ai-image-upscaler": {
-  "name": "AI 이미지 업스케일러",
-  "shortName": "AI 확대",
-  "tagline": "브라우저 내에서 2배 및 4배 뉴럴 초해상화로 사진 해상도와 선명도를 향상시킵니다.",
-  "seoTitle": "AI 이미지 업스케일러 — 무료 2배·4배 사진 고화질 확대",
-  "seoDescription": "서버 업로드 없이 브라우저에서 직접 AI 초해상화 모델로 사진을 2배, 4배 고화질로 확대하세요.",
-  "keywords": [
-    "ai 이미지 업스케일러",
-    "사진 고화질 변환",
-    "이미지 해상도 높이기",
-    "ai 사진 확대"
-  ],
-  "howToSteps": [
-    {
-      "title": "이미지 업로드",
-      "description": "JPG, PNG, WebP 이미지를 작업 공간에 끌어다 놓습니다."
-    },
-    {
-      "title": "배율 선택",
-      "description": "2배 또는 4배 모드를 선택합니다."
-    },
-    {
-      "title": "다운로드",
-      "description": "전후 비교를 확인하고 고해상도 이미지를 저장합니다."
-    }
-  ],
-  "features": [
-    {
-      "title": "100% 로컬 브라우저 연산",
-      "description": "외부 서버 전송 없이 사용자 기기에서 직접 신경망을 실행합니다."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "이미지가 서버에 저장되나요?",
-      "answer": "아닙니다. 모든 과정은 브라우저 메모리 내에서만 처리됩니다."
-    }
-  ]
-},
   "photo-filters": {
     "name": "사진 필터 및 효과",
     "shortName": "필터",
