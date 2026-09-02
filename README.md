@@ -7,7 +7,7 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-**Image Toolbox** is a lightning-fast, privacy-first web application featuring **24 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, ONNX Runtime Web, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
+**Image Toolbox** is a lightning-fast, privacy-first web application featuring **23 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
 
 🌐 **Live Demo:** [https://image-toolbox.aditya-s-nalawade742.workers.dev/](https://image-toolbox.aditya-s-nalawade742.workers.dev/)
 
@@ -47,10 +47,7 @@
 - **Photo Filters** — 14 real-time visual presets (Cyberpunk, Cinematic, Vintage, Noir, Sunset, Emerald, etc.) + custom adjustment sliders.
 - **Image Analyzer** — Detailed image inspection (dimensions, megapixels, aspect ratio, color depth, transparency).
 
-### 🤖 5. AI Super-Resolution
-- **AI Image Upscaler** — 4× super-resolution powered by ONNX Runtime Web client-side models and optional high-performance Real-ESRGAN backend.
-
-### 🛠️ 6. Developer Utilities
+### 🛠️ 5. Developer Utilities
 - **Favicon Generator** — Generates complete multi-resolution bundle (`favicon.ico`, `16x16`, `32x32`, `180x180` Apple Touch, `192x192`, `512x512` Android, and `manifest.json`) inside a single ZIP with HTML install tags.
 - **Image to Base64** & **Base64 to Image** — Bidirectional converter with CSS and HTML Data URI generators.
 

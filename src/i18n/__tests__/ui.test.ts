@@ -22,7 +22,7 @@ describe('Internationalization (i18n) Configuration', () => {
   });
 
   it('contains valid tool definitions in TOOLS registry', () => {
-    expect(TOOLS.length).toBeGreaterThanOrEqual(24);
+    expect(TOOLS.length).toBeGreaterThanOrEqual(23);
     TOOLS.forEach((tool) => {
       expect(tool.slug).toBeTruthy();
       expect(tool.name).toBeTruthy();

@@ -117,17 +117,6 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp',
   },
   {
-    slug: 'ai-image-upscaler',
-    name: 'AI Image Upscaler',
-    shortName: 'AI Upscaler',
-    description: 'Neural 2× and 4× super-resolution upscaling using in-browser sub-pixel convolutional inference.',
-    category: 'edit-transform',
-    iconName: 'Sparkles',
-    accept: 'image/png,image/jpeg,image/webp',
-    popular: true,
-    badge: 'AI',
-  },
-  {
     slug: 'photo-filters',
     name: 'Photo Filters & Effects',
     shortName: 'Filters',

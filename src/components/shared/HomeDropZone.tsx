@@ -9,6 +9,7 @@ import {
   EyeOff,
   Grid,
   Smile,
+  CircleDot,
   X,
 } from 'lucide-react';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
@@ -28,7 +29,7 @@ const TOOLS = [
   { slug: 'resize-image', name: 'Resize Image', desc: 'Exact pixel dimensions or scale %', icon: Maximize2 },
   { slug: 'photo-filters', name: 'Photo Filters', desc: 'Cinematic, Vintage, Cyberpunk', icon: Sliders },
   { slug: 'censor-image', name: 'Blur / Censor', desc: 'Redact faces & private data', icon: EyeOff },
-  { slug: 'ai-image-upscaler', name: 'AI Super-Resolution', desc: '4× Ultra-HD Enhancement', icon: Sparkles },
+  { slug: 'round-image', name: 'Round Corners', desc: 'Circular avatars & curved borders', icon: CircleDot },
   { slug: 'split-image', name: 'Split Image Grid', desc: 'Instagram 3×3 & Carousels', icon: Grid },
   { slug: 'meme-generator', name: 'Meme Generator', desc: 'Impact captions & viral templates', icon: Smile },
 ];
