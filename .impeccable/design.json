@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T11:11:44.816Z",
+  "title": "Design System: Image Toolbox",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Coated Paper",
+        "canonical": "#fbfbf9",
+        "oklch": "oklch(98.8% 0.003 106)",
+        "tonalRamp": [
+          "oklch(15% 0.003 106)",
+          "oklch(26% 0.003 106)",
+          "oklch(38% 0.003 106)",
+          "oklch(49% 0.003 106)",
+          "oklch(61% 0.003 106)",
+          "oklch(72% 0.003 106)",
+          "oklch(84% 0.003 106)",
+          "oklch(95% 0.003 106)"
+        ]
+      },
+      "paper-stock": {
+        "role": "neutral",
+        "displayName": "Paper Stock",
+        "canonical": "#f1f1ec",
+        "oklch": "oklch(95.7% 0.007 107)",
+        "tonalRamp": [
+          "oklch(15% 0.007 107)",
+          "oklch(26% 0.007 107)",
+          "oklch(38% 0.007 107)",
+          "oklch(49% 0.007 107)",
+          "oklch(61% 0.007 107)",
+          "oklch(72% 0.007 107)",
+          "oklch(84% 0.007 107)",
+          "oklch(95% 0.007 107)"
+        ]
+      },
+      "paper-bright": {
+        "role": "neutral",
+        "displayName": "Bright Sheet",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "key-ink": {
+        "role": "primary",
+        "displayName": "Key Ink",
+        "canonical": "#141414",
+        "oklch": "oklch(19.1% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "body-ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#2b2b29",
+        "oklch": "oklch(28.8% 0.004 107)",
+        "tonalRamp": [
+          "oklch(15% 0.004 107)",
+          "oklch(26% 0.004 107)",
+          "oklch(38% 0.004 107)",
+          "oklch(49% 0.004 107)",
+          "oklch(61% 0.004 107)",
+          "oklch(72% 0.004 107)",
+          "oklch(84% 0.004 107)",
+          "oklch(95% 0.004 107)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite Spot Ink",
+        "canonical": "#5b5b58",
+        "oklch": "oklch(47.0% 0.005 107)",
+        "tonalRamp": [
+          "oklch(15% 0.005 107)",
+          "oklch(26% 0.005 107)",
+          "oklch(38% 0.005 107)",
+          "oklch(49% 0.005 107)",
+          "oklch(61% 0.005 107)",
+          "oklch(72% 0.005 107)",
+          "oklch(84% 0.005 107)",
+          "oklch(95% 0.005 107)"
+        ]
+      },
+      "pencil": {
+        "role": "neutral",
+        "displayName": "Pencil Rule",
+        "canonical": "#cfcfc8",
+        "oklch": "oklch(85.3% 0.010 107)",
+        "tonalRamp": [
+          "oklch(15% 0.010 107)",
+          "oklch(26% 0.010 107)",
+          "oklch(38% 0.010 107)",
+          "oklch(49% 0.010 107)",
+          "oklch(61% 0.010 107)",
+          "oklch(72% 0.010 107)",
+          "oklch(84% 0.010 107)",
+          "oklch(95% 0.010 107)"
+        ]
+      },
+      "pencil-soft": {
+        "role": "neutral",
+        "displayName": "Soft Pencil Rule",
+        "canonical": "#e4e4de",
+        "oklch": "oklch(91.7% 0.008 107)",
+        "tonalRamp": [
+          "oklch(15% 0.008 107)",
+          "oklch(26% 0.008 107)",
+          "oklch(38% 0.008 107)",
+          "oklch(49% 0.008 107)",
+          "oklch(61% 0.008 107)",
+          "oklch(72% 0.008 107)",
+          "oklch(84% 0.008 107)",
+          "oklch(95% 0.008 107)"
+        ]
+      },
+      "nonrepro-blue": {
+        "role": "neutral",
+        "displayName": "Non-repro Blue",
+        "canonical": "#9fd3e6",
+        "oklch": "oklch(83.7% 0.060 222)",
+        "tonalRamp": [
+          "oklch(15% 0.060 222)",
+          "oklch(26% 0.060 222)",
+          "oklch(38% 0.060 222)",
+          "oklch(49% 0.060 222)",
+          "oklch(61% 0.060 222)",
+          "oklch(72% 0.060 222)",
+          "oklch(84% 0.060 222)",
+          "oklch(95% 0.060 222)"
+        ]
+      },
+      "checker-tint": {
+        "role": "neutral",
+        "displayName": "Checker Tint",
+        "canonical": "#ebebe5",
+        "oklch": "oklch(93.8% 0.008 107)",
+        "tonalRamp": [
+          "oklch(15% 0.008 107)",
+          "oklch(26% 0.008 107)",
+          "oklch(38% 0.008 107)",
+          "oklch(49% 0.008 107)",
+          "oklch(61% 0.008 107)",
+          "oklch(72% 0.008 107)",
+          "oklch(84% 0.008 107)",
+          "oklch(95% 0.008 107)"
+        ]
+      },
+      "process-cyan": {
+        "role": "secondary",
+        "displayName": "Process Cyan",
+        "canonical": "#00a0df",
+        "oklch": "oklch(66.7% 0.143 236)",
+        "tonalRamp": [
+          "oklch(15% 0.098 236)",
+          "oklch(26% 0.126 236)",
+          "oklch(38% 0.143 236)",
+          "oklch(49% 0.143 236)",
+          "oklch(61% 0.143 236)",
+          "oklch(72% 0.143 236)",
+          "oklch(84% 0.143 236)",
+          "oklch(95% 0.122 236)"
+        ]
+      },
+      "process-magenta": {
+        "role": "secondary",
+        "displayName": "Process Magenta",
+        "canonical": "#e4007c",
+        "oklch": "oklch(59.6% 0.242 359)",
+        "tonalRamp": [
+          "oklch(15% 0.098 359)",
+          "oklch(26% 0.126 359)",
+          "oklch(38% 0.155 359)",
+          "oklch(49% 0.183 359)",
+          "oklch(61% 0.208 359)",
+          "oklch(72% 0.180 359)",
+          "oklch(84% 0.151 359)",
+          "oklch(95% 0.122 359)"
+        ]
+      },
+      "process-yellow": {
+        "role": "secondary",
+        "displayName": "Process Yellow",
+        "canonical": "#ffe100",
+        "oklch": "oklch(90.7% 0.188 99)",
+        "tonalRamp": [
+          "oklch(15% 0.098 99)",
+          "oklch(26% 0.126 99)",
+          "oklch(38% 0.155 99)",
+          "oklch(49% 0.183 99)",
+          "oklch(61% 0.188 99)",
+          "oklch(72% 0.180 99)",
+          "oklch(84% 0.151 99)",
+          "oklch(95% 0.122 99)"
+        ]
+      },
+      "status-red": {
+        "role": "tertiary",
+        "displayName": "Status Red",
+        "canonical": "#c2006a",
+        "oklch": "oklch(52.9% 0.215 358)",
+        "tonalRamp": [
+          "oklch(15% 0.098 358)",
+          "oklch(26% 0.126 358)",
+          "oklch(38% 0.155 358)",
+          "oklch(49% 0.183 358)",
+          "oklch(61% 0.208 358)",
+          "oklch(72% 0.180 358)",
+          "oklch(84% 0.151 358)",
+          "oklch(95% 0.122 358)"
+        ]
+      },
+      "status-red-soft": {
+        "role": "tertiary",
+        "displayName": "Status Red Soft",
+        "canonical": "#fbe3ef",
+        "oklch": "oklch(93.9% 0.030 346)",
+        "tonalRamp": [
+          "oklch(15% 0.030 346)",
+          "oklch(26% 0.030 346)",
+          "oklch(38% 0.030 346)",
+          "oklch(49% 0.030 346)",
+          "oklch(61% 0.030 346)",
+          "oklch(72% 0.030 346)",
+          "oklch(84% 0.030 346)",
+          "oklch(95% 0.030 346)"
+        ]
+      },
+      "status-green": {
+        "role": "tertiary",
+        "displayName": "Status Green",
+        "canonical": "#1d7440",
+        "oklch": "oklch(49.5% 0.115 152)",
+        "tonalRamp": [
+          "oklch(15% 0.098 152)",
+          "oklch(26% 0.115 152)",
+          "oklch(38% 0.115 152)",
+          "oklch(49% 0.115 152)",
+          "oklch(61% 0.115 152)",
+          "oklch(72% 0.115 152)",
+          "oklch(84% 0.115 152)",
+          "oklch(95% 0.115 152)"
+        ]
+      },
+      "status-green-soft": {
+        "role": "tertiary",
+        "displayName": "Status Green Soft",
+        "canonical": "#e1f1e6",
+        "oklch": "oklch(94.3% 0.022 156)",
+        "tonalRamp": [
+          "oklch(15% 0.022 156)",
+          "oklch(26% 0.022 156)",
+          "oklch(38% 0.022 156)",
+          "oklch(49% 0.022 156)",
+          "oklch(61% 0.022 156)",
+          "oklch(72% 0.022 156)",
+          "oklch(84% 0.022 156)",
+          "oklch(95% 0.022 156)"
+        ]
+      },
+      "status-amber": {
+        "role": "tertiary",
+        "displayName": "Status Amber",
+        "canonical": "#7d6300",
+        "oklch": "oklch(51.1% 0.104 91)",
+        "tonalRamp": [
+          "oklch(15% 0.098 91)",
+          "oklch(26% 0.104 91)",
+          "oklch(38% 0.104 91)",
+          "oklch(49% 0.104 91)",
+          "oklch(61% 0.104 91)",
+          "oklch(72% 0.104 91)",
+          "oklch(84% 0.104 91)",
+          "oklch(95% 0.104 91)"
+        ]
+      },
+      "status-amber-soft": {
+        "role": "tertiary",
+        "displayName": "Status Amber Soft",
+        "canonical": "#fff6bf",
+        "oklch": "oklch(96.7% 0.071 100)",
+        "tonalRamp": [
+          "oklch(15% 0.071 100)",
+          "oklch(26% 0.071 100)",
+          "oklch(38% 0.071 100)",
+          "oklch(49% 0.071 100)",
+          "oklch(61% 0.071 100)",
+          "oklch(72% 0.071 100)",
+          "oklch(84% 0.071 100)",
+          "oklch(95% 0.071 100)"
+        ]
+      },
+      "status-blue": {
+        "role": "tertiary",
+        "displayName": "Status Blue",
+        "canonical": "#00729e",
+        "oklch": "oklch(52.0% 0.109 234)",
+        "tonalRamp": [
+          "oklch(15% 0.098 234)",
+          "oklch(26% 0.109 234)",
+          "oklch(38% 0.109 234)",
+          "oklch(49% 0.109 234)",
+          "oklch(61% 0.109 234)",
+          "oklch(72% 0.109 234)",
+          "oklch(84% 0.109 234)",
+          "oklch(95% 0.109 234)"
+        ]
+      },
+      "status-blue-soft": {
+        "role": "tertiary",
+        "displayName": "Status Blue Soft",
+        "canonical": "#dff2f9",
+        "oklch": "oklch(94.9% 0.022 222)",
+        "tonalRamp": [
+          "oklch(15% 0.022 222)",
+          "oklch(26% 0.022 222)",
+          "oklch(38% 0.022 222)",
+          "oklch(49% 0.022 222)",
+          "oklch(61% 0.022 222)",
+          "oklch(72% 0.022 222)",
+          "oklch(84% 0.022 222)",
+          "oklch(95% 0.022 222)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home headline only; 40px phone, 56px sm, 64px lg."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Tool page H1; 34px phone, 48px sm."
+      },
+      "title": {
+        "displayName": "Section Title",
+        "purpose": "Section heads on a 2px key-ink rule; 26px on tool pages, 28-40px on home."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Taglines and intros, 17-19px, max 75ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explanations, FAQ answers, feature text, 15-16px."
+      },
+      "item": {
+        "displayName": "Item",
+        "purpose": "Tool names, FAQ questions, step titles, panel headings."
+      },
+      "label": {
+        "displayName": "Slug Label",
+        "purpose": "Uppercase graphite field labels, ticket keys and ruled list headers. Never a decorative tag over a headline."
+      },
+      "measure": {
+        "displayName": "Measure",
+        "purpose": "Every pixel, byte, percent and count, in tabular figures."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Literal code only: favicon snippets, Base64, error text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "none",
+        "value": "none",
+        "purpose": "The whole Tailwind shadow scale resolves to none; depth is paper tone plus ink rules."
+      }
+    ],
+    "borders": [
+      {
+        "name": "rule",
+        "value": "1px solid #141414",
+        "purpose": "Containers, fields, buttons, segment dividers, list headers."
+      },
+      {
+        "name": "section-rule",
+        "value": "2px solid #141414",
+        "purpose": "Under section titles."
+      },
+      {
+        "name": "hairline",
+        "value": "1px solid #cfcfc8 (pencil) or #e4e4de (pencil-soft)",
+        "purpose": "Inner dividers between list rows and panel groups."
+      },
+      {
+        "name": "selected",
+        "value": "outline: 2px solid #141414; outline-offset: -2px; background: #f1f1ec",
+        "purpose": "Ruled selected state for segments and pressed rule buttons."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid #00a0df; outline-offset: 2px",
+        "purpose": "Global focus-visible ring."
+      }
+    ],
+    "patterns": [
+      {
+        "name": "proof-grid",
+        "value": "#ffffff with 1px rgba(159, 211, 230, 0.55) lines every 24px",
+        "purpose": "Empty drop sheet only."
+      },
+      {
+        "name": "crop-marks",
+        "value": "14px marks, 6px gap outside each corner, 1px #141414",
+        "purpose": "Proof sheet and image."
+      },
+      {
+        "name": "checkerboard",
+        "value": "16px tiles of #ebebe5 on #ffffff",
+        "purpose": "Transparency under images."
+      },
+      {
+        "name": "color-bar",
+        "value": "6px strip in four equal blocks: #00a0df, #e4007c, #ffe100, #141414",
+        "purpose": "Top of the masthead."
+      }
+    ],
+    "motion": [
+      {
+        "name": "registration-snap",
+        "value": "520ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "C, M, Y 2px outlines start 3-5px off-register, lock onto the image and fade when it lands. Reduced motion shows the registered state only."
+      },
+      {
+        "name": "hover",
+        "value": "150ms color transitions",
+        "purpose": "Hover grounds and ink-button inversion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all animation and transition durations 0.01ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "container",
+        "value": "1280px"
+      },
+      {
+        "name": "control-panel",
+        "value": "23rem"
+      }
+    ],
+    "openDecisions": [
+      {
+        "name": "Grid snap for crop/resize",
+        "status": "open, pending owner decision",
+        "body": "The direction contract raised crop and resize snapping to a visible hairline grid. Not implemented; the non-repro grid appears only on the empty drop sheet. Not a rule of the system."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button (Download)",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "The single solid key-ink action on a page: Download. Inverts to paper on hover.",
+      "html": "<button class=\"ds-btn-ink\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 3v12M7 10l5 5 5-5M5 21h14\"/></svg><span>Download JPG</span></button>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:0 16px;background:#141414;color:#fbfbf9;border:1px solid #141414;border-radius:0;font-family:'Barlow', system-ui, sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:background-color .15s,color .15s}.ds-btn-ink:hover{background:#fbfbf9;color:#141414}.ds-btn-ink:focus-visible{outline:2px solid #00a0df;outline-offset:2px}.ds-btn-ink:disabled{opacity:.6;cursor:wait}"
+    },
+    {
+      "name": "Rule Button",
+      "kind": "button",
+      "refersTo": "button-rule",
+      "description": "Secondary actions: paper-bright with a 1px key-ink rule (Copy image, Reload, Lock ratio).",
+      "html": "<button class=\"ds-btn-rule\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><rect x=\"9\" y=\"9\" width=\"12\" height=\"12\"/><path d=\"M5 15V3h12\"/></svg><span>Copy image</span></button>",
+      "css": ".ds-btn-rule{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 12px;background:#ffffff;color:#141414;border:1px solid #141414;border-radius:0;font-family:'Barlow', system-ui, sans-serif;font-weight:500;font-size:15px;cursor:pointer;transition:background-color .15s}.ds-btn-rule:hover{background:#f1f1ec}.ds-btn-rule:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    },
+    {
+      "name": "Segmented Options",
+      "kind": "chip",
+      "refersTo": "segment-on",
+      "description": "A ruled group of options; the selected one gets the ruled state (2px inset ink outline on paper stock), never a solid fill.",
+      "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"Save as\"><button class=\"ds-seg-btn\" aria-pressed=\"true\">JPG</button><button class=\"ds-seg-btn\" aria-pressed=\"false\">PNG</button><button class=\"ds-seg-btn\" aria-pressed=\"false\">WEBP</button><button class=\"ds-seg-btn\" aria-pressed=\"false\">AVIF</button></div>",
+      "css": ".ds-seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #141414;width:23rem;max-width:100%}.ds-seg-btn{min-height:40px;background:#ffffff;color:#141414;border:0;border-left:1px solid #141414;border-radius:0;font-family:'Barlow', system-ui, sans-serif;font-weight:600;font-size:14px;cursor:pointer;transition:background-color .15s}.ds-seg-btn:first-child{border-left:0}.ds-seg-btn:hover{background:#f1f1ec}.ds-seg-btn[aria-pressed=\"true\"]{background:#f1f1ec;font-weight:700;outline:2px solid #141414;outline-offset:-2px}.ds-seg-btn:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    },
+    {
+      "name": "Measure Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Number field: paper-bright, 1px key-ink border, tabular figures, slug label above.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-slug\">Width (px)</span><input class=\"ds-input\" type=\"number\" value=\"1020\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:6px;width:11rem}.ds-slug{font-family:'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#5b5b58}.ds-input{min-height:40px;padding:0 10px;background:#ffffff;color:#141414;border:1px solid #141414;border-radius:0;font-family:'Barlow', system-ui, sans-serif;font-size:15px;font-variant-numeric:tabular-nums}.ds-input:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky paper bar under a 6px CMYK color bar; swappable text wordmark and category links with ink marks.",
+      "html": "<header class=\"ds-mast\"><div class=\"ds-bar\"><span></span><span></span><span></span><span></span></div><div class=\"ds-mast-row\"><a class=\"ds-mark\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><path d=\"M12 2v20M2 12h20\"/></svg>IMAGE TOOLBOX</a><nav class=\"ds-nav\"><a href=\"#\"><i style=\"background:#e4007c\"></i>Edit &amp; Transform</a><a href=\"#\"><i style=\"background:#00a0df\"></i>Optimize &amp; Compress</a><a href=\"#\"><i style=\"background:#ffe100\"></i>Convert Formats</a><a href=\"#\"><i style=\"background:#141414\"></i>Inspect &amp; Utilities</a></nav></div></header>",
+      "css": ".ds-mast{background:#fbfbf9;border-bottom:1px solid #141414}.ds-bar{display:grid;grid-template-columns:repeat(4,1fr);height:6px}.ds-bar span:nth-child(1){background:#00a0df}.ds-bar span:nth-child(2){background:#e4007c}.ds-bar span:nth-child(3){background:#ffe100}.ds-bar span:nth-child(4){background:#141414}.ds-mast-row{display:flex;align-items:center;gap:24px;height:56px;padding:0 16px}.ds-mark{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;font-family:'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em}.ds-nav{display:flex;gap:20px}.ds-nav a{display:flex;align-items:center;gap:8px;color:#141414;text-decoration:none;font-family:'Barlow', system-ui, sans-serif;font-weight:500;font-size:15px;white-space:nowrap}.ds-nav a:hover{text-decoration:underline;text-underline-offset:.2em}.ds-nav a:focus-visible{outline:2px solid #00a0df;outline-offset:2px}.ds-nav i{width:10px;height:10px;display:inline-block}"
+    },
+    {
+      "name": "Control Panel",
+      "kind": "card",
+      "refersTo": "control-panel",
+      "description": "The 23rem ruled settings panel beside the proof sheet.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-head\">Settings</h2><div class=\"ds-panel-body\"><div class=\"ds-row\"><span class=\"ds-k\">Quality</span><span class=\"ds-v\">85%</span></div><input class=\"ds-range\" type=\"range\" value=\"85\"></div></section>",
+      "css": ".ds-panel{width:23rem;max-width:100%;background:#ffffff;border:1px solid #141414;border-radius:0}.ds-panel-head{margin:0;padding:10px 16px;border-bottom:1px solid #141414;font-family:'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#5b5b58}.ds-panel-body{padding:16px}.ds-row{display:flex;justify-content:space-between;align-items:baseline}.ds-k{font-family:'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#5b5b58}.ds-v{font-family:'Barlow', system-ui, sans-serif;font-weight:600;font-size:15px;color:#141414;font-variant-numeric:tabular-nums}.ds-range{width:100%;accent-color:#141414}.ds-range:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    },
+    {
+      "name": "Proof Sheet Drop Zone",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The empty proof sheet: crop-marked, non-repro gridded drop target that is a real button. Turns process yellow on drag-over.",
+      "html": "<div class=\"ds-drop-wrap\"><button class=\"ds-drop\"><svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><rect x=\"6\" y=\"9\" width=\"28\" height=\"22\"/><path d=\"M6 26l8-8 6 6 4-4 10 10\"/><circle cx=\"27\" cy=\"15\" r=\"2.5\"/></svg><span class=\"ds-drop-t\">Drop an image here</span><span class=\"ds-drop-b\">Choose image</span><span class=\"ds-drop-h\">or paste with Ctrl+V</span></button></div>",
+      "css": ".ds-drop-wrap{padding:24px}.ds-drop{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;padding:64px 24px;border:1px solid #141414;border-radius:0;color:#141414;cursor:pointer;background-color:#ffffff;background-image:linear-gradient(to right,rgba(159,211,230,.55) 1px,transparent 1px),linear-gradient(to bottom,rgba(159,211,230,.55) 1px,transparent 1px);background-size:24px 24px;transition:background-color .15s}.ds-drop:hover{background-color:#f1f1ec}.ds-drop:focus-visible{outline:2px solid #00a0df;outline-offset:2px}.ds-drop::before,.ds-drop::after{content:'';position:absolute;inset:-20px;pointer-events:none;background:linear-gradient(#141414,#141414) left 20px top 0/1px 14px no-repeat,linear-gradient(#141414,#141414) left 0 top 20px/14px 1px no-repeat,linear-gradient(#141414,#141414) right 20px top 0/1px 14px no-repeat,linear-gradient(#141414,#141414) right 0 top 20px/14px 1px no-repeat}.ds-drop::after{transform:scaleY(-1)}.ds-drop-t{font-family:'Barlow', system-ui, sans-serif;font-weight:600;font-size:22px}.ds-drop-b{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:#141414;color:#fbfbf9;font-family:'Barlow', system-ui, sans-serif;font-weight:600}.ds-drop-h{font-family:'Barlow', system-ui, sans-serif;font-size:14px;color:#5b5b58}"
+    },
+    {
+      "name": "Job Ticket",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Slug-line band under the sheet stating source and output: W x H in tabular figures, format, bytes, signed saving.",
+      "html": "<div class=\"ds-ticket\"><span><b class=\"ds-tk\">Source</b><strong>1200 × 800 px</strong> <em>JPG · 125.2 KB</em></span><span><b class=\"ds-tk\">Output</b><strong>1020 × 680 px</strong> <em>JPG · 70.5 KB · −44%</em></span><a href=\"#\">Replace image</a></div>",
+      "css": ".ds-ticket{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 24px;padding:8px 0;border-top:1px solid #141414;border-bottom:1px solid #141414;font-family:'Barlow', system-ui, sans-serif;font-size:14px;font-variant-numeric:tabular-nums;letter-spacing:.01em}.ds-tk{font-family:'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#5b5b58;margin-right:8px}.ds-ticket strong{font-weight:600;color:#141414}.ds-ticket em{font-style:normal;color:#5b5b58}.ds-ticket a{margin-left:auto;color:#141414;font-weight:500}.ds-ticket a:hover{text-decoration:none}.ds-ticket a:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    },
+    {
+      "name": "Category Index List",
+      "kind": "custom",
+      "refersTo": "category-mark",
+      "description": "Ruled tool list headed by a process-ink square; every tool listed, no folding.",
+      "html": "<div class=\"ds-index\"><h3><i style=\"background:#e4007c\"></i>Edit &amp; Transform<span>14</span></h3><a href=\"#\"><strong>Crop Image</strong><span>Cut out the part of a photo you want.</span></a><a href=\"#\"><strong>Resize Image</strong><span>Change width and height in pixels.</span></a></div>",
+      "css": ".ds-index{width:20rem;font-family:'Barlow', system-ui, sans-serif}.ds-index h3{display:flex;align-items:center;gap:10px;margin:0;padding-bottom:8px;border-bottom:1px solid #141414;font-size:17px;font-weight:600;color:#141414}.ds-index h3 i{width:16px;height:16px;display:inline-block}.ds-index h3 span{margin-left:auto;font-size:13px;font-weight:400;color:#5b5b58;font-variant-numeric:tabular-nums}.ds-index a{display:block;padding:10px 0;border-bottom:1px solid #e4e4de;text-decoration:none}.ds-index a strong{display:block;font-size:16px;font-weight:600;color:#141414}.ds-index a span{display:block;font-size:14px;line-height:1.375;color:#5b5b58}.ds-index a:hover strong{text-decoration:underline}.ds-index a:focus-visible{outline:2px solid #00a0df;outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Press Proof Sheet",
+    "overview": "Every image is placed on a press proof sheet: measured, marked, and passed for press. The page is coated paper printed in key-black ink, ruled with 1px lines, and annotated the way a print shop annotates a proof: crop marks at the corners of the image, dimension lines that state its pixel size, a CMYK control strip across the masthead, and a slug-line job ticket under the sheet that says exactly what goes in and what comes out. Color is quarantined. The four process inks appear only as flat category marks and in the control strip; everything else is ink on paper, so the user's own image is the most colorful thing on screen.\n\nThe density is that of a printed index, not a dashboard. Tool lists are typeset as ruled columns with no folding and no icon tiles; controls sit in a ruled panel beside the sheet; the single solid black block on a tool page is the Download button. The world refuses the category default (white page, colorful icon tiles, giant rounded blue upload button) and the dark developer-tool look this site previously wore. There are no gradients, glows, shadows or rounded cards anywhere in the chrome.\n\nEvery number is real and set in tabular figures. That is the trust mechanism: the visitor sees their image measured the moment it lands and the output ticket reports the real format, pixels and bytes.",
+    "keyCharacteristics": [
+      "Coated paper ground, key-black ink, graphite for secondary text.",
+      "Square corners everywhere; 1px ink rules divide and contain; 2px ink rules head sections.",
+      "Process inks (magenta, cyan, yellow, key) and a registration mark encode tool categories and nothing else.",
+      "Crop marks, dimension lines, a non-repro blue layout grid and a CMYK strip are the decorative vocabulary; each one also carries information.",
+      "Barlow / Barlow Semi Condensed with tabular figures for every measurement.",
+      "One solid key-ink action per page; selection is shown by a heavier rule, not a fill."
+    ],
+    "rules": [
+      {
+        "name": "The Color Quarantine Rule",
+        "body": "Process inks mark categories, the CMYK strip, focus, caret and selection. They never fill buttons, panels, headings or backgrounds. If a chrome element is colored, it must be a category mark.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Solid Block Rule",
+        "body": "Download (`.btn-ink`) is the only solid key-ink block on a tool page. Selected options use the ruled state (2px key-ink outline inset on paper stock), never a solid fill. Small measure tags laid on the image are annotations, not controls, and are exempt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Non-Repro Rule",
+        "body": "Non-repro blue is the printer's invisible guide color: grid lines only, and only on the empty sheet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number a user reads as a measurement (W × H px, KB, %, counts) is set in tabular figures. Use the measure role; never a monospace face for numbers.",
+        "section": "typography"
+      },
+      {
+        "name": "The Slug Is A Label Rule",
+        "body": "The uppercase slug style names a field, a ticket key or a ruled list. It is never placed above a headline as a decorative tag.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phrase Break Rule",
+        "body": "Headings balance their lines. Japanese headings break at phrase boundaries (`word-break: auto-phrase`); Korean text never breaks inside a word (`keep-all`).",
+        "section": "typography"
+      },
+      {
+        "name": "The Full Index Rule",
+        "body": "The tool index shows every tool, grouped by category ink, with no accordion, carousel or \"show more\".",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Stock Rule",
+        "body": "No box-shadow, glow, blur or gradient fill in the chrome. Layering is told by paper tone and ink rules only.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Crop Mark Rule",
+        "body": "The proof sheet and the image on it carry 14px crop marks offset 6px outside each corner. Any element with crop marks needs padding around it (20px phone, 24px sm) so the marks are not clipped.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** set every container, field and button with square corners and a 1px key-ink rule; head sections with a 2px key-ink rule.",
+      "**Do** mark selection with the ruled state (2px key-ink inset outline on paper stock) so Download stays the only solid key-ink block.",
+      "**Do** set every pixel, byte, percent and count in Barlow with tabular figures.",
+      "**Do** pair each tool or category with its process-ink square, and keep that ink to the mark.",
+      "**Do** report real numbers in the job ticket: source and output W × H, format, bytes, signed saving.",
+      "**Do** leave 20-24px of padding around crop-marked elements.",
+      "**Do** keep the panel's labels fitting 23rem in German and break CJK headings at phrases (`auto-phrase` for Japanese, `keep-all` for Korean).",
+      "**Do** keep the site name as live, swappable text in the masthead and footer."
+    ],
+    "donts": [
+      "**Don't** use box-shadows, glows, blurs, gradient fills or rounded cards in the chrome.",
+      "**Don't** fill buttons, segments, panels or headings with a process ink; process inks are category marks, the color bar, focus, caret and selection only.",
+      "**Don't** use the non-repro blue for anything but grid lines on the empty sheet.",
+      "**Don't** fill a selected option with solid key ink.",
+      "**Don't** put the uppercase slug style above headlines as a decorative tag.",
+      "**Don't** fold or truncate the tool index, and don't present tools as colorful icon tiles.",
+      "**Don't** set measurements in a monospace face; monospace is for literal code only.",
+      "**Don't** place ad slots beside upload, download or handoff controls."
+    ]
+  }
+}

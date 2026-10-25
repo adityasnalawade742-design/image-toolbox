@@ -143,12 +143,12 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
                       aria-selected={isSelected}
                       onClick={() => go(tool.slug)}
                       onMouseEnter={() => setSelectedIndex(idx)}
-                      className={`flex items-center gap-3 px-4 py-3 cursor-pointer ${isSelected ? 'bg-process-key text-paper' : 'text-ink'}`}
+                      className={`flex items-center gap-3 px-4 py-3 cursor-pointer ${isSelected ? 'seg-on' : 'text-ink'}`}
                     >
                       <span className={`w-3 h-3 shrink-0 ${CATEGORY_INK[tool.category].className}`} aria-hidden="true" />
                       <span className="min-w-0 flex-1">
                         <span className="block text-[15px] font-semibold">{loc?.name || tool.name}</span>
-                        <span className={`block text-[13px] truncate ${isSelected ? 'text-paper/80' : 'text-graphite'}`}>
+                        <span className="block text-[13px] truncate text-graphite">
                           {loc?.tagline || tool.description}
                         </span>
                       </span>

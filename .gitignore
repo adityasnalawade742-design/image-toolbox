@@ -24,3 +24,4 @@ Thumbs.db
 *.sln
 *.sw?
 .wrangler/
+.impeccable/review/

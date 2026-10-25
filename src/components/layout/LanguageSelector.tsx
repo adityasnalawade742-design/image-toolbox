@@ -85,12 +85,12 @@ export function LanguageSelector({ currentLocale = 'en', currentSlug = '', langu
                 lang={info.hrefLang}
                 aria-current={isSelected ? 'true' : undefined}
                 className={`flex items-center justify-between gap-3 px-4 py-2.5 text-[15px] transition-colors ${
-                  isSelected ? 'bg-process-key text-paper font-semibold' : 'text-ink hover:bg-paper-stock'
+                  isSelected ? 'seg-on' : 'text-ink hover:bg-paper-stock'
                 }`}
               >
                 <span>{info.nativeName}</span>
                 {info.name !== info.nativeName && (
-                  <span className={`text-[13px] ${isSelected ? 'text-paper/80' : 'text-graphite'}`}>{info.name}</span>
+                  <span className="text-[13px] text-graphite">{info.name}</span>
                 )}
               </a>
             );
