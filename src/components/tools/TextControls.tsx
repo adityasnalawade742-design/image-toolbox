@@ -39,6 +39,8 @@ export function TextControls({ options, onChange }: Props) {
   ];
 
   const id = (name: string) => `${idBase}-${name}`;
+  // Where the text sits horizontally before it is moved: follows the alignment, like the engine
+  const customX = options.customXPercent ?? (options.textAlign === 'left' ? 5 : options.textAlign === 'right' ? 95 : 50);
 
   return (
     <div className="space-y-5">
@@ -102,6 +104,24 @@ export function TextControls({ options, onChange }: Props) {
       {/* Custom vertical position */}
       {options.position === 'custom' && (
         <div className="space-y-1.5 p-3 bg-paper-stock border border-pencil">
+          {/* Horizontal position: the keyboard route to what dragging the text does */}
+          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+            <label htmlFor={id('x')} className="text-ink">
+              {t('ctl.text.horizontalPosition')}
+            </label>
+            <span className="font-semibold text-ink" data-measure>
+              {customX}%
+            </span>
+          </div>
+          <input
+            id={id('x')}
+            type="range"
+            min="0"
+            max="100"
+            value={customX}
+            onChange={(e) => onChange({ ...options, customXPercent: parseInt(e.target.value) })}
+            className="w-full"
+          />
           <div className="flex items-baseline justify-between gap-2 text-[15px]">
             <label htmlFor={id('y')} className="text-ink">
               {t('ctl.text.verticalPosition')}
@@ -237,7 +257,7 @@ export function TextControls({ options, onChange }: Props) {
             type="checkbox"
             checked={!!options.dropShadow}
             onChange={(e) => onChange({ ...options, dropShadow: e.target.checked })}
-            className="w-4 h-4 shrink-0"
+           
           />
           <span>{t('ctl.text.shadow')}</span>
         </label>
@@ -258,7 +278,7 @@ export function TextControls({ options, onChange }: Props) {
                   strokeColor: options.strokeColor || '#000000',
                 });
               }}
-              className="w-4 h-4 shrink-0"
+             
             />
             <span className="font-medium">{t('ctl.text.outline')}</span>
           </label>
@@ -312,7 +332,7 @@ export function TextControls({ options, onChange }: Props) {
                   backgroundOpacity: options.backgroundOpacity ?? 0.8,
                 });
               }}
-              className="w-4 h-4 shrink-0"
+             
             />
             <span className="font-medium">{t('ctl.text.background')}</span>
           </label>

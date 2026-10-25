@@ -3,7 +3,7 @@ import { SITE_CONFIG } from '../config/site';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { LanguageBanner } from '../components/layout/LanguageBanner';
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { getHreflangLinks, SUPPORTED_LOCALES } from '../i18n/locales';
 import '../styles/global.css';
 
@@ -24,6 +24,7 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const hreflangLinks = getHreflangLinks(currentSlug, SITE_CONFIG.url);
 const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname}`;
 ---
@@ -68,10 +69,11 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-paper text-ink flex flex-col font-sans">
+    <a href="#main" class="skip-link">{t('nav.skip')}</a>
     <LanguageBanner client:idle currentLocale={lang} currentSlug={currentSlug} />
     <Header locale={lang} currentSlug={currentSlug} />
     
-    <main id="main" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <main id="main" tabindex="-1" class="flex-1 focus:outline-none w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       <slot />
     </main>
 

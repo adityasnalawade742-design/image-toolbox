@@ -33,7 +33,7 @@ export function BorderControls({ options, onChange }: Props) {
             return (
               <button key={m.id} type="button" aria-pressed={selected} onClick={() => onChange({ ...options, mode: m.id })} className={segButton(selected)}>
                 <span className="text-[14px] font-semibold">{m.label}</span>
-                <span className={`text-[13px] ${selected ? 'text-paper' : 'text-graphite'}`}>{m.hint}</span>
+                <span className="text-[13px] text-graphite">{m.hint}</span>
               </button>
             );
           })}

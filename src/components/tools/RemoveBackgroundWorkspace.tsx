@@ -188,7 +188,7 @@ export function RemoveBackgroundWorkspace() {
               {sourceUrl && (showOriginal || !cutout) && (
                 <img src={sourceUrl} alt="" className={`block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
               )}
-              <canvas ref={canvasRef} className={`max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${cutout && !showOriginal ? 'block' : 'hidden'}`} />
+              <canvas ref={canvasRef} role="img" aria-label={t('ctl.bg.result')} className={`max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${cutout && !showOriginal ? 'block' : 'hidden'}`} />
             </div>
 
             {isRunning && (
@@ -218,7 +218,7 @@ export function RemoveBackgroundWorkspace() {
                 {showOriginal ? t('ctl.bg.showResult') : t('ctl.bg.showOriginal')}
               </button>
             )}
-            <label className="ml-auto text-ink underline hover:no-underline cursor-pointer">
+            <label className="ml-auto inline-flex items-center min-h-[40px] text-ink underline hover:no-underline cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink">
               {t('ws.replace')}
               <input
                 type="file"
@@ -265,7 +265,7 @@ export function RemoveBackgroundWorkspace() {
           )}
         </div>
 
-        <div className="space-y-5 lg:sticky lg:top-24">
+        <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
           <div className="border border-ink bg-paper-bright">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <Eraser className="w-4 h-4 text-ink" aria-hidden="true" />

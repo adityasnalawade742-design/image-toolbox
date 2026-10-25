@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': 'Resimleri seçin',
   'ws.dropHint': 'JPG, PNG, WebP ve diğerleri, en fazla 50 MB. Ctrl+V ile de yapıştırabilirsiniz.',
   'ws.rendering': 'Önizleme güncelleniyor…',
+  'ws.pickerHelp': 'Renk seçmek için resme tıklayın. Klavyeyle resmi seçin, ok tuşlarıyla hareket edin (daha büyük adımlar için Shift tuşunu basılı tutun) ve seçmek için Enter tuşuna basın.',
+  'ws.pickerPicked': 'Seçilen renk: {hex}',
+  'ws.pickerValue': '{hex}, soldan yüzde {x}, üstten yüzde {y}',
+  'ws.pickerLabel': 'Resminiz üzerinde renk seçici',
+  'ws.previewLabel': 'Geçerli ayarlarla resminizin önizlemesi',
   'ws.source': 'Kaynak',
   'ws.output': 'Çıktı',
   'ws.replace': 'Resmi değiştir',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': 'Orta',
   'ctl.text.posBottom': 'Alt',
   'ctl.text.posCustom': 'Özel',
+  'ctl.text.horizontalPosition': 'Yatay konum',
   'ctl.text.verticalPosition': 'Dikey konum',
   'ctl.text.dragHint': 'Metni resmin üzerinde sürükleyerek de taşıyabilirsiniz.',
   'ctl.text.style': 'Stil',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'GPS konumu',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Renk seçmek için resme tıklayın',
+  'ctl.color.emptyTitle': 'Resimden bir renk seçin',
   'ctl.color.emptyHelp': 'HEX, RGB, HSL, HSV ve CMYK değerleri burada görünür.',
   'ctl.color.pickAnother': 'Başka bir renk seçmek için resmin herhangi bir yerine tıklayın.',
   'ctl.color.selected': 'Seçilen renk',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': 'Parça',
   'ctl.split.tileCount': '{count} parça',
   'ctl.split.tapHint': 'Yalnızca o parçayı indirmek için bir parça seçin.',
-  'ctl.split.downloadTile': 'Parçayı indir (satır {row}, sütun {col})',
+  'ctl.split.downloadTile': 'Parça {n} indir (satır {row}, sütun {col})',
   'ctl.split.downloadAll': 'Tüm parçaları indir ({count}, ZIP)',
   'ctl.split.zipping': 'Parçalar paketleniyor… %{percent}',
   'ctl.split.zipProgress': 'ZIP ilerlemesi',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'Sansür ayarları',
-  'ctl.censor.hint': 'Bir alanı kapatmak için fotoğrafın üzerinde sürükleyin. Dokunmatik ekranda da çalışır.',
+  'ctl.censor.hint': 'Bir alanı kapatmak için fotoğrafın üzerinde sürükleyin. Dokunmatik ekranda da çalışır; dilerseniz “Kutu ekle” ile kutu ekleyip konumunu ve boyutunu ayarlayın.',
   'ctl.censor.shape': 'Şekil',
   'ctl.censor.shapeRect': 'Dikdörtgen',
   'ctl.censor.shapeOval': 'Oval',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': 'Blok boyutu',
   'ctl.censor.blurStrength': 'Bulanıklık gücü',
   'ctl.censor.boxes': 'Kutular',
+  'ctl.censor.editBox': '{n}. kutunun konumu ve boyutu',
+  'ctl.censor.removeBox': '{n}. kutuyu kaldır',
+  'ctl.censor.boxN': 'Kutu {n}',
+  'ctl.censor.noBoxes': 'Henüz kutu yok. Fotoğrafın üzerinde sürükleyin veya buradan ekleyin.',
+  'ctl.censor.addBox': 'Kutu ekle',
   'ctl.censor.undo': 'Son kutuyu geri al',
   'ctl.censor.undoShortcut': 'Ctrl+Z de son kutuyu geri alır.',
   'ctl.censor.clearAll': 'Tüm kutuları kaldır',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': 'Resmi kopyala',
   'ctl.censor.copied': 'Panoya kopyalandı',
   'ctl.censor.errCopy': 'Tarayıcınız resmin kopyalanmasını engelledi. Bunun yerine İndir’i kullanın.',
-  'ctl.censor.canvasLabel': 'Sansürlenecek fotoğraf. Kutu çizmek için sürükleyin.',
+  'ctl.censor.canvasLabel': 'Sansürlenecek fotoğraf. Kutu çizmek için sürükleyin veya ayarlardaki “Kutu ekle” düğmesini kullanın.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': 'En fazla 50 resim bırakın',

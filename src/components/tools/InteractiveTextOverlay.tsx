@@ -129,7 +129,8 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
-        aria-label={t('ctl.textOverlay.handle')}
+        // Pointer shortcut only: the position menu and sliders in the panel are the accessible route
+        aria-hidden="true"
         title={t('ctl.textOverlay.hint')}
         className={`absolute ${alignShift} -translate-y-1/2 pointer-events-auto cursor-move touch-none group`}
         style={{
@@ -146,7 +147,7 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
           <span className="text-[13px] font-semibold whitespace-nowrap select-none">
             {options.text.length > 28 ? `${options.text.slice(0, 28)}…` : options.text}
           </span>
-          <span className={`text-[12px] whitespace-nowrap ${isDragging ? 'text-paper' : 'text-graphite'}`} data-measure>
+          <span className="text-[12px] whitespace-nowrap text-graphite" data-measure>
             {xPct}%, {yPct}%
           </span>
         </div>

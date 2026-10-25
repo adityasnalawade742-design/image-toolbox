@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': '画像を選択',
   'ws.dropHint': 'JPG、PNG、WebPなどに対応（最大50 MB）。Ctrl+Vで貼り付けることもできます。',
   'ws.rendering': 'プレビューを更新中…',
+  'ws.pickerHelp': '画像をクリックすると色を取得できます。キーボードでは画像を選択し、矢印キーで移動して（Shift キーで大きく移動）、Enter キーで取得します。',
+  'ws.pickerPicked': '{hex} を取得しました',
+  'ws.pickerValue': '{hex}、左から {x}%、上から {y}%',
+  'ws.pickerLabel': '画像のカラーピッカー',
+  'ws.previewLabel': '現在の設定を適用した画像のプレビュー',
   'ws.source': '元画像',
   'ws.output': '出力',
   'ws.replace': '画像を変更',
@@ -129,6 +134,7 @@ export const strings = {
   'ctl.text.posCenter': '中央',
   'ctl.text.posBottom': '下',
   'ctl.text.posCustom': 'カスタム',
+  'ctl.text.horizontalPosition': '横の位置',
   'ctl.text.verticalPosition': '縦の位置',
   'ctl.text.dragHint': '画像上のテキストをドラッグして動かすこともできます。',
   'ctl.text.style': 'スタイル',
@@ -305,7 +311,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'GPS位置情報',
 
   // Color picker
-  'ctl.color.emptyTitle': '画像をクリックして色を取得',
+  'ctl.color.emptyTitle': '画像から色を取得',
   'ctl.color.emptyHelp': 'HEX、RGB、HSL、HSV、CMYKの値がここに表示されます。',
   'ctl.color.pickAnother': '画像のどこかをクリックすると、別の色を取得できます。',
   'ctl.color.selected': '取得した色',
@@ -445,7 +451,7 @@ export const strings = {
   'ctl.split.tile': 'タイル',
   'ctl.split.tileCount': '{count}枚のタイル',
   'ctl.split.tapHint': 'タイルを選ぶと、そのタイルだけをダウンロードできます。',
-  'ctl.split.downloadTile': 'タイル {row}-{col} をダウンロード',
+  'ctl.split.downloadTile': 'タイル {n} をダウンロード（{row} 行 {col} 列）',
   'ctl.split.downloadAll': '全{count}枚をダウンロード（ZIP）',
   'ctl.split.zipping': 'タイルをまとめています… {percent}%',
   'ctl.split.zipProgress': 'ZIPの進行状況',
@@ -454,7 +460,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'モザイクの設定',
-  'ctl.censor.hint': '写真の上をドラッグして範囲を隠します。タッチ操作にも対応しています。',
+  'ctl.censor.hint': '写真の上をドラッグして範囲を隠します。タッチ操作にも対応しています。「範囲を追加」で追加して、位置とサイズを指定することもできます。',
   'ctl.censor.shape': '形',
   'ctl.censor.shapeRect': '四角形',
   'ctl.censor.shapeOval': '楕円',
@@ -468,6 +474,11 @@ export const strings = {
   'ctl.censor.blockSize': 'ブロックの大きさ',
   'ctl.censor.blurStrength': 'ぼかしの強さ',
   'ctl.censor.boxes': '範囲',
+  'ctl.censor.editBox': '範囲 {n} の位置とサイズ',
+  'ctl.censor.removeBox': '範囲 {n} を削除',
+  'ctl.censor.boxN': '範囲 {n}',
+  'ctl.censor.noBoxes': 'まだ範囲がありません。写真の上をドラッグするか、ここで追加してください。',
+  'ctl.censor.addBox': '範囲を追加',
   'ctl.censor.undo': '最後の範囲を取り消す',
   'ctl.censor.undoShortcut': 'Ctrl+Zでも最後の範囲を取り消せます。',
   'ctl.censor.clearAll': 'すべての範囲を削除',
@@ -477,7 +488,7 @@ export const strings = {
   'ctl.censor.copy': '画像をコピー',
   'ctl.censor.copied': 'クリップボードにコピーしました',
   'ctl.censor.errCopy': 'ブラウザが画像のコピーをブロックしました。代わりにダウンロードをご利用ください。',
-  'ctl.censor.canvasLabel': '加工する写真。ドラッグして範囲を描きます。',
+  'ctl.censor.canvasLabel': '加工する写真。ドラッグして範囲を描くか、設定の「範囲を追加」を使います。',
 
   // ===== Batch group =====
   // Shared bulk queue wording

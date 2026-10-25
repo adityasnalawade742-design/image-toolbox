@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': 'Bilder auswählen',
   'ws.dropHint': 'JPG, PNG, WebP und mehr, bis 50 MB. Du kannst auch mit Ctrl+V einfügen.',
   'ws.rendering': 'Vorschau wird aktualisiert …',
+  'ws.pickerHelp': 'Klicke ins Bild, um eine Farbe aufzunehmen. Mit der Tastatur: Bild auswählen, mit den Pfeiltasten bewegen (mit Umschalt in größeren Schritten) und mit Enter aufnehmen.',
+  'ws.pickerPicked': '{hex} aufgenommen',
+  'ws.pickerValue': '{hex}, {x} % von links, {y} % von oben',
+  'ws.pickerLabel': 'Farbwähler auf deinem Bild',
+  'ws.previewLabel': 'Vorschau deines Bildes mit den aktuellen Einstellungen',
   'ws.source': 'Quelle',
   'ws.output': 'Ergebnis',
   'ws.replace': 'Bild ersetzen',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': 'Mitte',
   'ctl.text.posBottom': 'Unten',
   'ctl.text.posCustom': 'Eigene',
+  'ctl.text.horizontalPosition': 'Horizontale Position',
   'ctl.text.verticalPosition': 'Vertikale Position',
   'ctl.text.dragHint': 'Du kannst den Text auch direkt im Bild verschieben.',
   'ctl.text.style': 'Stil',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'GPS-Standort',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Klicke ins Bild, um eine Farbe aufzunehmen',
+  'ctl.color.emptyTitle': 'Nimm eine Farbe aus dem Bild auf',
   'ctl.color.emptyHelp': 'Hier erscheinen ihre Werte als HEX, RGB, HSL, HSV und CMYK.',
   'ctl.color.pickAnother': 'Klicke auf eine beliebige Stelle im Bild, um eine weitere Farbe aufzunehmen.',
   'ctl.color.selected': 'Gewählte Farbe',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': 'Kachel',
   'ctl.split.tileCount': '{count} Kacheln',
   'ctl.split.tapHint': 'Wähle eine Kachel, um nur diese herunterzuladen.',
-  'ctl.split.downloadTile': 'Kachel {row}, {col} herunterladen',
+  'ctl.split.downloadTile': 'Kachel {n} herunterladen (Zeile {row}, Spalte {col})',
   'ctl.split.downloadAll': 'Alle {count} Kacheln herunterladen (ZIP)',
   'ctl.split.zipping': 'Kacheln werden gepackt … {percent} %',
   'ctl.split.zipProgress': 'ZIP-Fortschritt',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'Zensur-Einstellungen',
-  'ctl.censor.hint': 'Zieh über das Foto, um einen Bereich abzudecken. Das klappt auch per Touch.',
+  'ctl.censor.hint': 'Zieh über das Foto, um einen Bereich abzudecken. Das klappt auch per Touch – oder füge mit „Bereich hinzufügen“ einen hinzu und lege Position und Größe fest.',
   'ctl.censor.shape': 'Form',
   'ctl.censor.shapeRect': 'Rechteck',
   'ctl.censor.shapeOval': 'Oval',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': 'Blockgröße',
   'ctl.censor.blurStrength': 'Stärke der Unschärfe',
   'ctl.censor.boxes': 'Bereiche',
+  'ctl.censor.editBox': 'Position und Größe von Bereich {n}',
+  'ctl.censor.removeBox': 'Bereich {n} entfernen',
+  'ctl.censor.boxN': 'Bereich {n}',
+  'ctl.censor.noBoxes': 'Noch keine Bereiche. Zieh über das Foto oder füge hier einen hinzu.',
+  'ctl.censor.addBox': 'Bereich hinzufügen',
   'ctl.censor.undo': 'Letzten Bereich entfernen',
   'ctl.censor.undoShortcut': 'Auch mit Ctrl+Z entfernst du den letzten Bereich.',
   'ctl.censor.clearAll': 'Alle Bereiche entfernen',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': 'Bild kopieren',
   'ctl.censor.copied': 'In die Zwischenablage kopiert',
   'ctl.censor.errCopy': 'Dein Browser hat das Kopieren des Bildes blockiert. Nutze stattdessen „Herunterladen“.',
-  'ctl.censor.canvasLabel': 'Foto zum Zensieren. Zieh, um einen Bereich zu zeichnen.',
+  'ctl.censor.canvasLabel': 'Foto zum Zensieren. Zieh, um einen Bereich zu zeichnen, oder nutze „Bereich hinzufügen“ in den Einstellungen.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': 'Bis zu 50 Bilder ablegen',

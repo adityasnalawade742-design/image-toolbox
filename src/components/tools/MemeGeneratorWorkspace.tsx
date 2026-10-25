@@ -326,7 +326,7 @@ export function MemeGeneratorWorkspace() {
           <div className="min-w-0 space-y-3">
             <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
-                <canvas ref={canvasRef} className="block max-h-[70vh] w-auto max-w-full object-contain" />
+                <canvas ref={canvasRef} role="img" aria-label={t('ws.previewLabel')} className="block max-h-[70vh] w-auto max-w-full object-contain" />
               </div>
             </div>
 
@@ -345,7 +345,7 @@ export function MemeGeneratorWorkspace() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+                className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
               >
                 {t('ws.replace')}
               </button>
@@ -371,7 +371,7 @@ export function MemeGeneratorWorkspace() {
           </div>
 
           {/* Ruled control panel */}
-          <div className="space-y-5 lg:sticky lg:top-24">
+          <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
             <div className="border border-ink bg-paper-bright">
               <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-ink">
                 <h2 className="slug flex items-center gap-2">
@@ -381,7 +381,7 @@ export function MemeGeneratorWorkspace() {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="flex items-center gap-1 text-[14px] font-medium text-ink underline hover:no-underline"
+                  className="flex items-center gap-1 min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
                 >
                   <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                   {t('ctl.meme.reset')}
@@ -526,7 +526,7 @@ export function MemeGeneratorWorkspace() {
                       type="checkbox"
                       checked={isUppercase}
                       onChange={(e) => setIsUppercase(e.target.checked)}
-                      className="w-4 h-4 accent-ink cursor-pointer"
+                      className="accent-ink"
                     />
                   </label>
                 </div>

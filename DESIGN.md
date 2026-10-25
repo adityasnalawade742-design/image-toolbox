@@ -169,7 +169,7 @@ Ink on coated paper, with four flat process inks held in reserve for category ma
 
 ### Secondary (process inks, category and press-mark use only)
 - **Process Magenta** (`process-magenta`): category mark for Edit & Transform; second chip of the color bar; text caret.
-- **Process Cyan** (`process-cyan`): category mark for Optimize & Compress; first chip of the color bar; the global focus ring.
+- **Process Cyan** (`process-cyan`): category mark for Optimize & Compress; first chip of the color bar. The global focus ring uses Focus Cyan (`#0072b0`), a darker shade of it: process cyan on paper is only 2.85:1, below the 3:1 a focus indicator needs (WCAG 1.4.11).
 - **Process Yellow** (`process-yellow`): category mark for Convert Formats; third chip of the color bar; text selection highlight; the drop sheet while a file is dragged over it.
 - **Registration** (key-ink crosshair on paper-bright, inside a 1px key-ink square): category mark for Developer tools. Inspect & Utilities uses a solid key-ink square.
 
@@ -259,7 +259,7 @@ Square corners without exception: every radius token in the Tailwind theme resol
 Ink on paper: one solid action, everything else ruled.
 - **Shape:** square (0 radius), 1px border.
 - **Ink (primary):** key-ink fill, paper text, Barlow 600, 16px, 44px minimum height (52px in the panel, 48px in the mobile rail), full width in the panel. Icon plus label ("Download JPG"). Used once per page.
-- **Hover / Focus:** inverts to paper ground with key-ink text and keeps its rule. Focus is a 2px process-cyan outline offset 2px, site-wide. Disabled: 60% opacity, wait cursor.
+- **Hover / Focus:** inverts to paper ground with key-ink text and keeps its rule. Focus is a 2px Focus Cyan (`#0072b0`) outline offset 2px, site-wide. Disabled: 60% opacity, wait cursor.
 - **Rule (secondary):** paper-bright ground, key-ink 1px border, Barlow 500, 40px minimum height; hover to paper stock. Copy image, Reload, All tools, Lock ratio.
 - **Text action:** underlined key-ink text that drops its underline on hover (Replace image).
 
@@ -277,7 +277,7 @@ Ink on paper: one solid action, everything else ruled.
 ### Inputs / Fields
 - **Style:** paper-bright ground, 1px key-ink border, square, 40px minimum height, 15px key-ink text in tabular figures; units in graphite beside the field.
 - **Range and checkboxes:** native controls with key-ink accent color.
-- **Focus:** the global process-cyan 2px outline.
+- **Focus:** the global Focus Cyan 2px outline.
 - **Error:** status-red text with a line alert icon; alert blocks use the red soft tint with a 1px status-red rule.
 
 ### Navigation (masthead)

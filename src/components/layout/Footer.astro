@@ -29,10 +29,10 @@ const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
 
     <div>
       <h2 class="slug mb-3">{t('footer.popular')}</h2>
-      <ul class="space-y-2 text-[15px]">
+      <ul class="text-[15px]">
         {popularTools.map((tool) => (
           <li>
-            <a href={translatePath(`/${tool.slug}`)} class="flex items-center gap-2 text-ink hover:underline">
+            <a href={translatePath(`/${tool.slug}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
               <span class:list={['w-2 h-2 shrink-0', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
               {locTools[tool.slug]?.name || tool.name}
             </a>
@@ -43,10 +43,10 @@ const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
 
     <div>
       <h2 class="slug mb-3">{t('footer.categories')}</h2>
-      <ul class="space-y-2 text-[15px]">
+      <ul class="text-[15px]">
         {CATEGORY_ORDER.map((cat) => (
           <li>
-            <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 text-ink hover:underline">
+            <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
               <span class:list={['w-2 h-2 shrink-0', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
               {categoryNames[cat]}
             </a>
@@ -60,8 +60,8 @@ const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[13px] text-graphite">
       <p>© {new Date().getFullYear()} {SITE_CONFIG.name}</p>
       <div class="flex items-center gap-5">
-        <a href={SITE_CONFIG.sourceUrl} rel="noopener" class="text-ink hover:underline">{t('footer.source')}</a>
-        <a href="/sitemap.xml" class="text-ink hover:underline">{t('footer.sitemap')}</a>
+        <a href={SITE_CONFIG.sourceUrl} rel="noopener" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.source')}</a>
+        <a href="/sitemap.xml" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.sitemap')}</a>
       </div>
     </div>
   </div>

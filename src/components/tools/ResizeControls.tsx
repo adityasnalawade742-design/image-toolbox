@@ -194,7 +194,7 @@ export function ResizeControls({
       {/* Options */}
       <div className="pt-4 border-t border-pencil space-y-1 text-[15px] text-ink">
         <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer">
-          <input type="checkbox" checked={lockAspect} onChange={(e) => onLockAspectChange(e.target.checked)} className="w-4 h-4 shrink-0" />
+          <input type="checkbox" checked={lockAspect} onChange={(e) => onLockAspectChange(e.target.checked)} />
           <span>{t('ctl.resize.lockRatio')}</span>
         </label>
 
@@ -209,7 +209,7 @@ export function ResizeControls({
                 if (height > originalHeight) onHeightChange(originalHeight);
               }
             }}
-            className="w-4 h-4 shrink-0"
+           
           />
           <span>
             {t('ctl.resize.preventUpscale')}{' '}

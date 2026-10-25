@@ -10,7 +10,9 @@
     "check": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "a11y": "node scripts/a11y/audit.mjs",
+    "a11y:keys": "node scripts/a11y/keyboard-flows.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -41,6 +43,7 @@
     "@vite-pwa/astro": "^1.2.0",
     "@vitest/coverage-v8": "^4.1.11",
     "autoprefixer": "^10.4.20",
+    "axe-core": "^4.14.0",
     "happy-dom": "^20.13.1",
     "postcss": "^8.5.2",
     "vitest": "^4.1.11",

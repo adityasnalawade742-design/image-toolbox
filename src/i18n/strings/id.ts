@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': 'Pilih gambar',
   'ws.dropHint': 'JPG, PNG, WebP, dan lainnya, hingga 50 MB. Anda juga bisa menempel dengan Ctrl+V.',
   'ws.rendering': 'Memperbarui pratinjau…',
+  'ws.pickerHelp': 'Klik gambar untuk mengambil warna. Dengan keyboard, pilih gambar, gerakkan dengan tombol panah (tahan Shift untuk langkah lebih besar), lalu tekan Enter untuk mengambil.',
+  'ws.pickerPicked': 'Warna diambil: {hex}',
+  'ws.pickerValue': '{hex}, {x}% dari kiri, {y}% dari atas',
+  'ws.pickerLabel': 'Pemilih warna pada gambar Anda',
+  'ws.previewLabel': 'Pratinjau gambar Anda dengan pengaturan saat ini',
   'ws.source': 'Asli',
   'ws.output': 'Hasil',
   'ws.replace': 'Ganti gambar',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': 'Tengah',
   'ctl.text.posBottom': 'Bawah',
   'ctl.text.posCustom': 'Khusus',
+  'ctl.text.horizontalPosition': 'Posisi horizontal',
   'ctl.text.verticalPosition': 'Posisi vertikal',
   'ctl.text.dragHint': 'Anda juga bisa menggeser teks di atas gambar.',
   'ctl.text.style': 'Gaya',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'Lokasi GPS',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Klik gambar untuk mengambil warna',
+  'ctl.color.emptyTitle': 'Ambil warna dari gambar',
   'ctl.color.emptyHelp': 'Nilai HEX, RGB, HSL, HSV, dan CMYK-nya muncul di sini.',
   'ctl.color.pickAnother': 'Klik di mana saja pada gambar untuk mengambil warna lain.',
   'ctl.color.selected': 'Warna terpilih',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': 'Potongan',
   'ctl.split.tileCount': '{count} potongan',
   'ctl.split.tapHint': 'Pilih satu potongan untuk mengunduh potongan itu saja.',
-  'ctl.split.downloadTile': 'Unduh potongan {row}, {col}',
+  'ctl.split.downloadTile': 'Unduh potongan {n} (baris {row}, kolom {col})',
   'ctl.split.downloadAll': 'Unduh semua {count} potongan (ZIP)',
   'ctl.split.zipping': 'Mengemas potongan… {percent}%',
   'ctl.split.zipProgress': 'Progres ZIP',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'Pengaturan sensor',
-  'ctl.censor.hint': 'Seret di atas foto untuk menutupi suatu area. Bisa juga dengan sentuhan.',
+  'ctl.censor.hint': 'Seret di atas foto untuk menutupi suatu area. Bisa juga dengan sentuhan, atau gunakan “Tambah area” lalu atur posisi dan ukurannya.',
   'ctl.censor.shape': 'Bentuk',
   'ctl.censor.shapeRect': 'Persegi panjang',
   'ctl.censor.shapeOval': 'Oval',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': 'Ukuran kotak',
   'ctl.censor.blurStrength': 'Kekuatan blur',
   'ctl.censor.boxes': 'Area sensor',
+  'ctl.censor.editBox': 'Posisi dan ukuran area {n}',
+  'ctl.censor.removeBox': 'Hapus area {n}',
+  'ctl.censor.boxN': 'Area {n}',
+  'ctl.censor.noBoxes': 'Belum ada area. Seret di atas foto atau tambahkan di sini.',
+  'ctl.censor.addBox': 'Tambah area',
   'ctl.censor.undo': 'Urungkan area terakhir',
   'ctl.censor.undoShortcut': 'Ctrl+Z juga mengurungkan area terakhir.',
   'ctl.censor.clearAll': 'Hapus semua area',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': 'Salin gambar',
   'ctl.censor.copied': 'Disalin ke papan klip',
   'ctl.censor.errCopy': 'Browser Anda memblokir penyalinan gambar. Gunakan Unduh sebagai gantinya.',
-  'ctl.censor.canvasLabel': 'Foto yang akan disensor. Seret untuk menggambar area.',
+  'ctl.censor.canvasLabel': 'Foto yang akan disensor. Seret untuk menggambar area, atau gunakan “Tambah area” di pengaturan.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': 'Letakkan hingga 50 gambar',
