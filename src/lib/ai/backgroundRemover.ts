@@ -1,6 +1,7 @@
 /**
- * On-device background removal. The model runs in a Web Worker (transformers.js + ONNX Runtime);
- * images never leave the browser. Models download once and are then served from the browser cache.
+ * On-device background removal in Web Workers; images never leave the browser.
+ * "Fast" (portrait): MODNet via transformers.js. "Best quality" (hq): IMG.LY's ISNet via @imgly/background-removal.
+ * Models download once and are then served from the browser cache.
  */
 import type { RemovalDevice, RemovalMode } from './backgroundRemoval.worker';
 
@@ -15,6 +16,7 @@ export interface RemovalProgress {
 }
 
 let worker: Worker | null = null;
+let imglyWorker: Worker | null = null;
 let nextId = 1;
 
 function getWorker(): Worker {
@@ -22,41 +24,25 @@ function getWorker(): Worker {
   return worker;
 }
 
-/** True when the browser exposes a usable WebGPU adapter (required for the high-quality model) */
-export async function hasWebGPU(): Promise<boolean> {
-  try {
-    const gpu = (navigator as any).gpu;
-    return !!gpu && !!(await gpu.requestAdapter());
-  } catch {
-    return false;
-  }
+function getImglyWorker(): Worker {
+  if (!imglyWorker) imglyWorker = new Worker(new URL('./imglyRemoval.worker.ts', import.meta.url), { type: 'module' });
+  return imglyWorker;
 }
 
-/**
- * Remove the background. Returns RGBA pixels at the input image's size, with the background transparent.
- * Tries WebGPU first when available and falls back to WebAssembly.
- */
+/** Remove the background. Returns RGBA pixels at the input image's size, with the background transparent. */
 export async function removeBackground(
   image: Blob,
   mode: RemovalMode,
   onProgress?: (p: RemovalProgress) => void
 ): Promise<ImageData> {
-  const devices: RemovalDevice[] = (await hasWebGPU()) ? ['webgpu', 'wasm'] : ['wasm'];
-  let lastError: unknown;
-  for (const device of devices) {
-    // The high-quality model is too large to run without a GPU
-    if (mode === 'hq' && device === 'wasm') break;
-    try {
-      return await run(image, mode, device, onProgress);
-    } catch (err) {
-      lastError = err;
-    }
-  }
-  throw lastError instanceof Error ? lastError : new Error('Background removal is not available in this browser');
+  if (mode === 'hq') return run(image, mode, 'wasm', onProgress, getImglyWorker());
+  // MODNet always runs on WebAssembly: ONNX Runtime's WebGPU backend returns corrupted mattes on common
+  // Intel integrated GPUs (verified on UHD Gen 12), and was ~4x slower there
+  return run(image, mode, 'wasm', onProgress);
 }
 
-function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?: (p: RemovalProgress) => void) {
-  const w = getWorker();
+function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?: (p: RemovalProgress) => void, target?: Worker) {
+  const w = target || getWorker();
   const id = nextId++;
   // Several files download in parallel (model, config); report their combined progress
   const files = new Map<string, { loaded: number; total: number }>();
@@ -82,7 +68,9 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
     };
     const onError = (e: ErrorEvent) => {
       cleanup();
-      worker = null; // a crashed worker is replaced on the next call
+      // a crashed worker is replaced on the next call
+      if (w === worker) worker = null;
+      if (w === imglyWorker) imglyWorker = null;
       reject(new Error(e.message || 'Background removal worker failed'));
     };
     const cleanup = () => {

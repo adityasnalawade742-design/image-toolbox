@@ -2518,12 +2518,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Rimuovi sfondo",
     shortName: "Rimuovi sfondo",
-    tagline: "Rimuovi lo sfondo da una foto con un modello di IA che funziona sul tuo dispositivo, e salva un PNG trasparente.",
+    tagline: "Rimuovi lo sfondo da una foto con un’IA che funziona sul tuo dispositivo, e salva un PNG trasparente.",
     intro:
-      "Rimuovi sfondo ritaglia il soggetto principale di una foto ed elimina tutto ciò che c’è dietro. Usa un modello di IA che funziona nel browser, quindi le tue immagini non lasciano mai il dispositivo. La modalità Persone usa un modello piccolo e veloce che funziona bene sui telefoni ed è ideale per le persone, mentre la modalità Oggetti (HQ) usa un modello più grande per prodotti, animali e altri oggetti. Salva il risultato come PNG trasparente, oppure mettilo su un colore pieno e salvalo in PNG o JPG.",
+      "Rimuovi sfondo ritaglia il soggetto principale di una foto ed elimina tutto ciò che c’è dietro, usando un modello di IA che funziona nel browser, quindi le tue immagini non lasciano mai il dispositivo. Scegli Veloce, un modello più piccolo, rapido e ideale per le foto di persone, oppure Massima qualità, un modello più grande con risultati migliori su qualsiasi soggetto, compresi prodotti, animali e oggetti. Salva il risultato come PNG trasparente, oppure mettilo su un colore pieno.",
     seoTitle: "Rimuovere sfondo immagine – Gratis, sul dispositivo",
     seoDescription:
-      "Rimuovi gratis lo sfondo dalle immagini con un’IA che funziona nel browser. Ottieni un PNG trasparente o uno sfondo a tinta unita. Le foto restano sul dispositivo.",
+      "Rimuovere sfondo immagine gratis con un’IA nel browser. Scegli il modello veloce o la massima qualità e salva un PNG trasparente. Foto sempre sul dispositivo.",
     keywords: [
       "rimuovere sfondo immagine",
       "rimuovere sfondo foto gratis",
@@ -2539,14 +2539,14 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "Trascina, scegli o incolla un’immagine JPG, PNG o WebP.",
       },
       {
-        title: "Scegli una modalità",
+        title: "Scegli un modello",
         description:
-          "Persone è selezionata per impostazione predefinita ed è ideale per le persone. Scegli Oggetti (HQ) per prodotti, animali e altri soggetti, meglio se in un browser da computer.",
+          "Veloce è selezionato per impostazione predefinita e funziona bene per le foto di persone. Scegli Massima qualità per prodotti, animali, oggetti o ogni volta che vuoi i bordi più puliti.",
       },
       {
-        title: "Attendi il risultato",
+        title: "Scarica il modello una volta",
         description:
-          "La prima volta il modello viene scaricato nel browser; poi viene caricato dalla cache del browser. Lo sfondo viene quindi rimosso sul tuo dispositivo.",
+          "La prima volta che usi un modello, il browser lo scarica: circa 33 MB per Veloce e circa 100 MB per Massima qualità, che chiede conferma prima di iniziare. Dopo resta salvato nel browser.",
       },
       {
         title: "Scegli lo sfondo e scarica",
@@ -2559,12 +2559,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "Il modello funziona nel browser, quindi le tue foto non vengono mai caricate su un server.",
       },
       {
-        title: "Due modelli",
-        description: "Un modello Persone piccolo e veloce, e un modello Oggetti (HQ) più grande per prodotti, animali e oggetti.",
+        title: "Due modelli tra cui scegliere",
+        description: "Veloce è rapido e ideale per le persone. Massima qualità è più grande e più lento, ma dà risultati migliori su qualsiasi soggetto.",
       },
       {
-        title: "Scaricato una sola volta",
-        description: "Il browser conserva il modello dopo il primo uso, quindi le immagini successive partono molto più in fretta.",
+        title: "Si scarica una volta sola",
+        description: "Ogni modello resta salvato nel browser dopo il primo utilizzo, e lo strumento mostra quali sono già stati scaricati.",
       },
       {
         title: "Sfondo trasparente o colorato",
@@ -2578,19 +2578,19 @@ export const itTools: Record<string, LocalizedToolItem> = {
           "No. Nel browser viene scaricato solo il modello di IA. Le foto vengono elaborate sul tuo dispositivo e non vengono inviate da nessuna parte.",
       },
       {
-        question: "Perché il primo utilizzo richiede più tempo?",
+        question: "Qual è la differenza tra Veloce e Massima qualità?",
         answer:
-          "Prima bisogna scaricare il modello: circa da 7 a 13 MB per la modalità Persone e circa 115 MB per la modalità Oggetti (HQ). Il browser lo conserva, quindi gli utilizzi successivi partono molto più in fretta.",
+          "Veloce usa un modello più piccolo (circa 33 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 15–30 secondi, con risultati migliori su prodotti, animali, oggetti e persone.",
       },
       {
-        question: "Quale modalità devo usare?",
+        question: "Perché il primo utilizzo richiede più tempo?",
         answer:
-          "Usa Persone per le foto di persone: è veloce e funziona sui telefoni. Usa Oggetti (HQ) per prodotti, animali e altri soggetti, soprattutto quando i bordi sono importanti.",
+          "Prima bisogna scaricare il modello. Massima qualità chiede conferma prima di scaricare il suo modello da 100 MB. Dopo il primo utilizzo il browser conserva il modello, quindi le foto successive partono molto più in fretta.",
       },
       {
         question: "Funziona su iPhone e telefoni Android?",
         answer:
-          "Sì, la modalità Persone è pensata per funzionare sui telefoni. La modalità Oggetti (HQ) è molto più grande e funziona meglio in un browser da computer con supporto WebGPU; su un telefono può essere lenta o esaurire la memoria.",
+          "Sì. Veloce è la scelta migliore sui telefoni. Anche Massima qualità funziona sui telefoni, ma lì il download più pesante e i tempi di elaborazione più lunghi si notano di più, soprattutto con i dati mobili.",
       },
       {
         question: "Posso mettere un nuovo colore di sfondo dietro il soggetto?",
@@ -2600,7 +2600,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Perché alcuni bordi non sono perfetti?",
         answer:
-          "Capelli sottili, pelo, vetro e soggetti con colori simili allo sfondo sono difficili per qualsiasi modello. Prova la modalità Oggetti (HQ), o usa una foto con un contrasto netto tra soggetto e sfondo.",
+          "Capelli sottili, pelo, vetro e soggetti con colori simili allo sfondo sono difficili per qualsiasi modello. Prova Massima qualità, oppure usa una foto con un contrasto netto tra soggetto e sfondo.",
       },
     ],
   },

@@ -2518,12 +2518,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Supprimer l’arrière-plan",
     shortName: "Supprimer le fond",
-    tagline: "Supprimez l’arrière-plan d’une photo avec un modèle d’IA qui fonctionne sur votre appareil, et enregistrez un PNG transparent.",
+    tagline: "Supprimez l’arrière-plan d’une photo avec une IA qui fonctionne sur votre appareil, et enregistrez un PNG transparent.",
     intro:
-      "Supprimer l’arrière-plan détoure le sujet principal d’une photo et retire tout ce qui se trouve derrière. L’outil utilise un modèle d’IA qui fonctionne dans votre navigateur : vos images ne quittent jamais votre appareil. Le mode Personnes utilise un petit modèle rapide qui fonctionne bien sur téléphone et convient surtout aux personnes, tandis que le mode Objets (HQ) utilise un modèle plus grand pour les produits, les animaux et les autres objets. Enregistrez le résultat en PNG transparent, ou placez-le sur une couleur unie et enregistrez-le en PNG ou JPG.",
+      "Supprimer l’arrière-plan détoure le sujet principal d’une photo et retire tout ce qui se trouve derrière. L’outil utilise un modèle d’IA qui fonctionne dans votre navigateur : vos images ne quittent jamais votre appareil. Choisissez « Rapide », un modèle plus petit, rapide et idéal pour les photos de personnes, ou « Qualité maximale », un modèle plus grand qui donne de meilleurs résultats sur tous les sujets, y compris les produits, les animaux et les objets. Enregistrez le résultat en PNG transparent, ou placez-le sur une couleur unie.",
     seoTitle: "Supprimer l’arrière-plan d’une image – Gratuit, en local",
     seoDescription:
-      "Supprimez l’arrière-plan d’une image gratuitement, avec une IA intégrée à votre navigateur. PNG transparent ou fond uni. Vos photos restent sur votre appareil.",
+      "Supprimer l’arrière-plan d’une image gratuitement, par IA dans le navigateur : modèle rapide ou qualité maximale, PNG transparent. Vos photos restent en local.",
     keywords: [
       "supprimer l’arrière-plan d’une image",
       "supprimer le fond d’une photo",
@@ -2539,14 +2539,14 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "Déposez, choisissez ou collez une image JPG, PNG ou WebP.",
       },
       {
-        title: "Choisissez un mode",
+        title: "Choisissez un modèle",
         description:
-          "Personnes est sélectionné par défaut et convient surtout aux personnes. Choisissez Objets (HQ) pour les produits, les animaux et les autres sujets, de préférence sur un navigateur d’ordinateur.",
+          "« Rapide » est sélectionné par défaut et convient bien aux photos de personnes. Choisissez « Qualité maximale » pour les produits, les animaux, les objets, ou chaque fois que vous voulez les contours les plus nets.",
       },
       {
-        title: "Attendez le résultat",
+        title: "Téléchargez le modèle une seule fois",
         description:
-          "La première fois, le modèle est téléchargé dans votre navigateur ; ensuite, il est chargé depuis le cache du navigateur. L’arrière-plan est alors supprimé sur votre appareil.",
+          "La première fois que vous utilisez un modèle, votre navigateur le télécharge : environ 33 MB pour « Rapide » et environ 100 MB pour « Qualité maximale », qui vous demande votre accord avant de commencer. Ensuite, il reste stocké dans votre navigateur.",
       },
       {
         title: "Choisissez le fond et téléchargez",
@@ -2559,12 +2559,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "Le modèle fonctionne dans votre navigateur : vos photos ne sont jamais envoyées sur un serveur.",
       },
       {
-        title: "Deux modèles",
-        description: "Un petit modèle rapide pour les personnes, et un modèle plus grand, de haute qualité, pour les produits, les animaux et les objets.",
+        title: "Deux modèles au choix",
+        description: "« Rapide » est vif et idéal pour les personnes. « Qualité maximale » est plus lourd et plus lent, mais donne de meilleurs résultats sur tous les sujets.",
       },
       {
         title: "Téléchargé une seule fois",
-        description: "Votre navigateur garde le modèle après la première utilisation : les images suivantes démarrent bien plus vite.",
+        description: "Chaque modèle est stocké dans votre navigateur après sa première utilisation, et l’outil indique ceux qui sont déjà téléchargés.",
       },
       {
         title: "Fond transparent ou coloré",
@@ -2578,19 +2578,19 @@ export const frTools: Record<string, LocalizedToolItem> = {
           "Non. Seul le modèle d’IA est téléchargé dans votre navigateur. Vos photos sont traitées sur votre appareil et ne sont envoyées nulle part.",
       },
       {
-        question: "Pourquoi la première utilisation prend-elle plus de temps ?",
+        question: "Quelle est la différence entre « Rapide » et « Qualité maximale » ?",
         answer:
-          "Le modèle doit d’abord être téléchargé : environ 7 à 13 MB pour le mode Personnes et environ 115 MB pour le mode Objets (HQ). Votre navigateur le garde, donc les utilisations suivantes démarrent bien plus vite.",
+          "« Rapide » utilise un modèle plus petit (environ 33 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 15 à 30 secondes, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
       },
       {
-        question: "Quel mode choisir ?",
+        question: "Pourquoi la première utilisation prend-elle plus de temps ?",
         answer:
-          "Utilisez Personnes pour les photos de personnes : il est rapide et fonctionne sur téléphone. Utilisez Objets (HQ) pour les produits, les animaux et les autres sujets, surtout quand les contours comptent.",
+          "Le modèle doit d’abord être téléchargé. « Qualité maximale » vous demande votre accord avant de télécharger son modèle de 100 MB. Après la première utilisation, votre navigateur garde le modèle, donc les photos suivantes démarrent bien plus vite.",
       },
       {
         question: "Est-ce que cela fonctionne sur iPhone et Android ?",
         answer:
-          "Oui, le mode Personnes est conçu pour fonctionner sur téléphone. Le mode Objets (HQ) est bien plus lourd et fonctionne mieux dans un navigateur d’ordinateur compatible WebGPU ; sur un téléphone, il peut être lent ou manquer de mémoire.",
+          "Oui. « Rapide » est le meilleur choix sur téléphone. « Qualité maximale » fonctionne aussi sur téléphone, mais son téléchargement plus lourd et son traitement plus long s’y font davantage sentir, surtout avec des données mobiles.",
       },
       {
         question: "Puis-je mettre une nouvelle couleur de fond derrière le sujet ?",
@@ -2600,7 +2600,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Pourquoi certains contours ne sont-ils pas parfaits ?",
         answer:
-          "Les cheveux fins, la fourrure, le verre et les sujets de couleur proche de l’arrière-plan sont difficiles pour tous les modèles. Essayez le mode Objets (HQ), ou utilisez une photo avec un contraste net entre le sujet et l’arrière-plan.",
+          "Les cheveux fins, la fourrure, le verre et les sujets de couleur proche de l’arrière-plan sont difficiles pour tous les modèles. Essayez « Qualité maximale », ou utilisez une photo avec un contraste net entre le sujet et l’arrière-plan.",
       },
     ],
   },

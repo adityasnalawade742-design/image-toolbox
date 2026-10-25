@@ -2518,12 +2518,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Quitar fondo",
     shortName: "Quitar fondo",
-    tagline: "Quita el fondo de una foto con un modelo de IA que funciona en tu dispositivo y guarda un PNG transparente.",
+    tagline: "Quita el fondo de una foto con IA que funciona en tu dispositivo y guarda un PNG transparente.",
     intro:
-      "Quitar fondo recorta el sujeto principal de una foto y elimina todo lo que hay detrás. Usa un modelo de IA que funciona en tu navegador, así que tus imágenes nunca salen de tu dispositivo. El modo Personas usa un modelo pequeño y rápido que funciona bien en teléfonos y es ideal para retratos, mientras que el modo Objetos (HQ) usa un modelo más grande para productos, mascotas y otros objetos. Guarda el resultado como PNG transparente, o ponlo sobre un color sólido y guárdalo en PNG o JPG.",
+      "Quitar fondo recorta el sujeto principal de una foto y elimina todo lo que hay detrás. Usa un modelo de IA que funciona en tu navegador, así que tus imágenes nunca salen de tu dispositivo. Elige Rápido, un modelo más pequeño, ágil e ideal para fotos de personas, o Máxima calidad, un modelo más grande con mejores resultados en cualquier sujeto, incluidos productos, mascotas y objetos. Guarda el resultado como PNG transparente o ponlo sobre un color sólido.",
     seoTitle: "Quitar fondo de imagen gratis, en tu dispositivo",
     seoDescription:
-      "Quitar fondo de imagen gratis con IA que funciona en tu navegador. Obtén un PNG transparente o un fondo de color sólido. Tus fotos no salen de tu dispositivo.",
+      "Quitar fondo de imagen gratis con IA en tu navegador: elige modelo rápido o máxima calidad y guarda un PNG transparente. Tus fotos no salen de tu dispositivo.",
     keywords: [
       "quitar fondo de imagen",
       "eliminar fondo de foto",
@@ -2539,14 +2539,14 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "Suelta, elige o pega una imagen JPG, PNG o WebP.",
       },
       {
-        title: "Elige un modo",
+        title: "Elige un modelo",
         description:
-          "Personas está seleccionado por defecto y es ideal para fotos de gente. Elige Objetos (HQ) para productos, mascotas y otros sujetos, mejor en un navegador de escritorio.",
+          "Rápido viene seleccionado por defecto y funciona bien con fotos de personas. Elige Máxima calidad para productos, mascotas, objetos o siempre que quieras los bordes más limpios.",
       },
       {
-        title: "Espera el resultado",
+        title: "Descarga el modelo una vez",
         description:
-          "La primera vez, el modelo se descarga en tu navegador; después se carga desde la caché del navegador. Luego el fondo se quita en tu dispositivo.",
+          "La primera vez que usas un modelo, tu navegador lo descarga: unos 33 MB para Rápido y unos 100 MB para Máxima calidad, que pregunta antes de empezar. Después queda guardado en tu navegador.",
       },
       {
         title: "Elige el fondo y descarga",
@@ -2559,12 +2559,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "El modelo se ejecuta dentro de tu navegador, así que tus fotos nunca se suben a un servidor.",
       },
       {
-        title: "Dos modelos",
-        description: "Un modelo Personas pequeño y rápido para gente, y un modelo Objetos (HQ) más grande para productos, mascotas y objetos.",
+        title: "Dos modelos para elegir",
+        description: "Rápido es ágil e ideal para personas. Máxima calidad es más grande y más lento, pero da mejores resultados con cualquier sujeto.",
       },
       {
         title: "Se descarga una vez",
-        description: "Tu navegador guarda el modelo tras el primer uso, así que las siguientes imágenes empiezan mucho más rápido.",
+        description: "Cada modelo se guarda en tu navegador tras su primer uso, y la herramienta muestra cuáles ya están descargados.",
       },
       {
         title: "Fondo transparente o de color",
@@ -2578,19 +2578,19 @@ export const esTools: Record<string, LocalizedToolItem> = {
           "No. Solo se descarga el modelo de IA en tu navegador. Tus fotos se procesan en tu dispositivo y no se envían a ningún sitio.",
       },
       {
-        question: "¿Por qué el primer uso tarda más?",
+        question: "¿Qué diferencia hay entre Rápido y Máxima calidad?",
         answer:
-          "Primero hay que descargar el modelo: unos 7 a 13 MB para el modo Personas y unos 115 MB para el modo Objetos (HQ). Tu navegador lo guarda, así que los siguientes usos empiezan mucho más rápido.",
+          "Rápido usa un modelo más pequeño (unos 33 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 15–30 segundos, con mejores resultados en productos, mascotas, objetos y personas.",
       },
       {
-        question: "¿Qué modo debo usar?",
+        question: "¿Por qué el primer uso tarda más?",
         answer:
-          "Usa Personas para fotos de gente; es rápido y funciona en teléfonos. Usa Objetos (HQ) para productos, mascotas y otros sujetos, sobre todo cuando los bordes importan.",
+          "Primero hay que descargar el modelo. Máxima calidad pregunta antes de descargar su modelo de 100 MB. Después del primer uso, tu navegador guarda el modelo, así que las siguientes fotos empiezan mucho más rápido.",
       },
       {
         question: "¿Funciona en teléfonos iPhone y Android?",
         answer:
-          "Sí, el modo Personas está pensado para funcionar en teléfonos. El modo Objetos (HQ) es mucho más grande y funciona mejor en un navegador de escritorio compatible con WebGPU; en un teléfono puede ir lento o quedarse sin memoria.",
+          "Sí. Rápido es la mejor opción en teléfonos. Máxima calidad también funciona en teléfonos, pero su descarga más grande y su procesamiento más largo se notan más ahí, sobre todo con datos móviles.",
       },
       {
         question: "¿Puedo poner un nuevo color de fondo detrás del sujeto?",
@@ -2600,7 +2600,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Por qué algunos bordes no quedan perfectos?",
         answer:
-          "El pelo fino, el pelaje, el cristal y los sujetos con colores parecidos al fondo son difíciles para cualquier modelo. Prueba el modo Objetos (HQ) o usa una foto con un contraste claro entre el sujeto y el fondo.",
+          "El pelo fino, el pelaje, el cristal y los sujetos con colores parecidos al fondo son difíciles para cualquier modelo. Prueba Máxima calidad o usa una foto con un contraste claro entre el sujeto y el fondo.",
       },
     ],
   },

@@ -54,6 +54,12 @@ export default defineConfig({
             options: { cacheName: 'wasm-codecs', expiration: { maxEntries: 8 } },
           },
           {
+            // "Best quality" background removal model and runtime (IMG.LY), so it also works offline after one use
+            urlPattern: ({ url }) => url.hostname === 'staticimgly.com' && url.pathname.startsWith('/@imgly/background-removal-data/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'imgly-models', expiration: { maxEntries: 200 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+          {
             urlPattern: ({ url }) => url.hostname === 'cdn.jsdelivr.net' && url.pathname.startsWith('/npm/onnxruntime-web@'),
             handler: 'CacheFirst',
             options: { cacheName: 'onnx-runtime', expiration: { maxEntries: 8 }, cacheableResponse: { statuses: [0, 200] } },

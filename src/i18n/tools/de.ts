@@ -2518,12 +2518,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Hintergrund entfernen",
     shortName: "Freistellen",
-    tagline: "Entferne den Hintergrund eines Fotos mit einem KI-Modell, das auf deinem Gerät läuft, und speichere ein transparentes PNG.",
+    tagline: "Entferne den Hintergrund eines Fotos mit KI, die auf deinem Gerät läuft, und speichere ein transparentes PNG.",
     intro:
-      "Hintergrund entfernen stellt das Hauptmotiv eines Fotos frei und entfernt alles dahinter. Dafür nutzt es ein KI-Modell, das in deinem Browser läuft, deine Bilder verlassen also nie dein Gerät. Der Modus „Personen“ nutzt ein kleines, schnelles Modell, das gut auf Handys läuft und sich am besten für Menschen eignet. Der Modus „Objekte (HQ)“ nutzt ein größeres Modell für Produkte, Haustiere und andere Objekte. Speichere das Ergebnis als transparentes PNG oder setze es auf eine Volltonfarbe und speichere als PNG oder JPG.",
+      "Hintergrund entfernen stellt das Hauptmotiv eines Fotos frei und entfernt alles dahinter. Dafür nutzt es ein KI-Modell, das in deinem Browser läuft, deine Bilder verlassen also nie dein Gerät. Wähle „Schnell“, ein kleineres Modell, das flott arbeitet und sich am besten für Fotos von Menschen eignet, oder „Beste Qualität“, ein größeres Modell mit besseren Ergebnissen bei jedem Motiv, auch bei Produkten, Haustieren und Objekten. Speichere das Ergebnis als transparentes PNG oder setze es auf eine Volltonfarbe.",
     seoTitle: "Hintergrund entfernen – kostenlos, auf deinem Gerät",
     seoDescription:
-      "Hintergrund entfernen, kostenlos und mit KI direkt im Browser: transparentes PNG oder einfarbiger Hintergrund. Deine Fotos verlassen nie dein Gerät.",
+      "Hintergrund entfernen, kostenlos mit KI im Browser: schnelles Modell oder beste Qualität wählen, transparentes PNG speichern. Fotos bleiben auf deinem Gerät.",
     keywords: [
       "hintergrund entfernen",
       "bild hintergrund entfernen",
@@ -2539,14 +2539,14 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Zieh ein JPG-, PNG- oder WebP-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        title: "Modus wählen",
+        title: "Modell wählen",
         description:
-          "„Personen“ ist voreingestellt und eignet sich am besten für Menschen. Wähle „Objekte (HQ)“ für Produkte, Haustiere und andere Motive, am besten in einem Desktop-Browser.",
+          "„Schnell“ ist voreingestellt und eignet sich gut für Fotos von Menschen. Wähle „Beste Qualität“ für Produkte, Haustiere, Objekte oder immer dann, wenn du möglichst saubere Kanten willst.",
       },
       {
-        title: "Auf das Ergebnis warten",
+        title: "Modell einmalig herunterladen",
         description:
-          "Beim ersten Mal wird das Modell in deinen Browser geladen, danach kommt es aus dem Browser-Cache. Anschließend wird der Hintergrund auf deinem Gerät entfernt.",
+          "Wenn du ein Modell zum ersten Mal nutzt, lädt dein Browser es herunter: etwa 33 MB für „Schnell“ und etwa 100 MB für „Beste Qualität“, das vorher nachfragt. Danach ist es in deinem Browser gespeichert.",
       },
       {
         title: "Hintergrund wählen und herunterladen",
@@ -2559,12 +2559,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Das Modell läuft in deinem Browser, deine Fotos werden also nie auf einen Server hochgeladen.",
       },
       {
-        title: "Zwei Modelle",
-        description: "Ein kleines, schnelles Modell für Personen und ein größeres HQ-Modell für Produkte, Haustiere und Objekte.",
+        title: "Zwei Modelle zur Auswahl",
+        description: "„Schnell“ arbeitet flott und eignet sich am besten für Menschen. „Beste Qualität“ ist größer und langsamer, liefert aber bei jedem Motiv bessere Ergebnisse.",
       },
       {
-        title: "Einmal geladen",
-        description: "Dein Browser speichert das Modell nach der ersten Nutzung, spätere Bilder starten also viel schneller.",
+        title: "Einmal heruntergeladen",
+        description: "Jedes Modell wird nach der ersten Nutzung in deinem Browser gespeichert, und das Tool zeigt, welche bereits heruntergeladen sind.",
       },
       {
         title: "Transparenter oder farbiger Hintergrund",
@@ -2578,19 +2578,19 @@ export const deTools: Record<string, LocalizedToolItem> = {
           "Nein. Nur das KI-Modell wird in deinen Browser geladen. Deine Fotos werden auf deinem Gerät verarbeitet und nirgendwohin gesendet.",
       },
       {
-        question: "Warum dauert die erste Nutzung länger?",
+        question: "Was ist der Unterschied zwischen „Schnell“ und „Beste Qualität“?",
         answer:
-          "Das Modell muss zuerst heruntergeladen werden: etwa 7 bis 13 MB für den Modus „Personen“ und etwa 115 MB für den Modus „Objekte (HQ)“. Dein Browser speichert es, spätere Nutzungen starten also viel schneller.",
+          "„Schnell“ nutzt ein kleineres Modell (etwa 33 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht etwa 15–30 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
       },
       {
-        question: "Welchen Modus soll ich nutzen?",
+        question: "Warum dauert die erste Nutzung länger?",
         answer:
-          "Nutze „Personen“ für Fotos von Menschen. Er ist schnell und läuft auch auf Handys. Nutze „Objekte (HQ)“ für Produkte, Haustiere und andere Motive, vor allem wenn es auf saubere Kanten ankommt.",
+          "Das Modell muss zuerst heruntergeladen werden. „Beste Qualität“ fragt nach, bevor es sein 100-MB-Modell herunterlädt. Nach der ersten Nutzung speichert dein Browser das Modell, spätere Fotos starten also viel schneller.",
       },
       {
         question: "Funktioniert das auf iPhone und Android?",
         answer:
-          "Ja, der Modus „Personen“ ist für Handys ausgelegt. Der Modus „Objekte (HQ)“ ist viel größer und läuft am besten in einem Desktop-Browser mit WebGPU-Unterstützung. Auf dem Handy kann er langsam sein oder zu wenig Arbeitsspeicher haben.",
+          "Ja. „Schnell“ ist auf Handys die beste Wahl. „Beste Qualität“ läuft auch auf Handys, aber der größere Download und die längere Verarbeitung fallen dort stärker auf, besonders mit mobilen Daten.",
       },
       {
         question: "Kann ich eine neue Hintergrundfarbe hinter das Motiv setzen?",
@@ -2600,7 +2600,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Warum sind manche Kanten nicht perfekt?",
         answer:
-          "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch den Modus „Objekte (HQ)“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund.",
+          "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch „Beste Qualität“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund.",
       },
     ],
   },

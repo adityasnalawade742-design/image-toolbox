@@ -2518,12 +2518,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Remover fundo",
     shortName: "Remover fundo",
-    tagline: "Remova o fundo de uma foto com um modelo de IA que roda no seu dispositivo e salve um PNG transparente.",
+    tagline: "Remova o fundo de uma foto com IA que roda no seu dispositivo e salve um PNG transparente.",
     intro:
-      "Remover fundo recorta o assunto principal de uma foto e remove tudo o que está atrás dele. Ele usa um modelo de IA que roda no seu navegador, então suas imagens nunca saem do seu dispositivo. O modo Pessoas usa um modelo pequeno e rápido que funciona bem no celular e é melhor para pessoas, enquanto o modo Objetos (HQ) usa um modelo maior para produtos, animais de estimação e outros objetos. Salve o resultado como PNG transparente, ou coloque sobre uma cor sólida e salve em PNG ou JPG.",
+      "Remover fundo recorta o assunto principal de uma foto e remove tudo o que está atrás dele, usando um modelo de IA que roda no seu navegador, então suas imagens nunca saem do seu dispositivo. Escolha Rápido, um modelo menor que é ágil e melhor para fotos de pessoas, ou Melhor qualidade, um modelo maior com resultados melhores em qualquer assunto, incluindo produtos, animais de estimação e objetos. Salve o resultado como PNG transparente ou coloque-o sobre uma cor sólida.",
     seoTitle: "Remover fundo de imagem grátis, no seu aparelho",
     seoDescription:
-      "Remover fundo de imagem grátis com IA que roda no seu navegador. Gere um PNG transparente ou um fundo de cor sólida. Suas fotos nunca saem do seu dispositivo.",
+      "Remover fundo de imagem grátis com IA que roda no navegador. Use um modelo rápido ou a melhor qualidade e salve um PNG transparente. As fotos ficam no aparelho.",
     keywords: [
       "remover fundo de imagem",
       "removedor de fundo",
@@ -2539,14 +2539,14 @@ export const ptTools: Record<string, LocalizedToolItem> = {
         description: "Arraste, escolha ou cole uma imagem JPG, PNG ou WebP.",
       },
       {
-        title: "Escolha um modo",
+        title: "Escolha um modelo",
         description:
-          "Pessoas vem selecionado por padrão e é melhor para pessoas. Escolha Objetos (HQ) para produtos, animais de estimação e outros assuntos, de preferência em um navegador de computador.",
+          "Rápido vem selecionado por padrão e funciona bem para fotos de pessoas. Escolha Melhor qualidade para produtos, animais de estimação, objetos ou sempre que quiser as bordas mais limpas.",
       },
       {
-        title: "Aguarde o resultado",
+        title: "Baixe o modelo uma vez",
         description:
-          "Na primeira vez, o modelo é baixado para o seu navegador; depois disso, ele é carregado do cache do navegador. Então o fundo é removido no seu dispositivo.",
+          "Na primeira vez que você usa um modelo, seu navegador o baixa: cerca de 33 MB para o Rápido e cerca de 100 MB para o Melhor qualidade, que pergunta antes de começar. Depois disso, ele fica guardado no seu navegador.",
       },
       {
         title: "Escolha o fundo e baixe",
@@ -2559,12 +2559,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
         description: "O modelo roda dentro do seu navegador, então suas fotos nunca são enviadas para um servidor.",
       },
       {
-        title: "Dois modelos",
-        description: "Um modelo Pessoas pequeno e rápido, e um modelo Objetos (HQ) maior para produtos, animais de estimação e objetos.",
+        title: "Dois modelos à escolha",
+        description: "O Rápido é ágil e melhor para pessoas. O Melhor qualidade é maior e mais lento, mas dá resultados melhores em qualquer assunto.",
       },
       {
         title: "Baixado uma vez",
-        description: "Seu navegador guarda o modelo depois do primeiro uso, então as próximas imagens começam bem mais rápido.",
+        description: "Cada modelo fica guardado no seu navegador depois do primeiro uso, e a ferramenta mostra quais já foram baixados.",
       },
       {
         title: "Fundo transparente ou colorido",
@@ -2578,19 +2578,19 @@ export const ptTools: Record<string, LocalizedToolItem> = {
           "Não. Só o modelo de IA é baixado para o seu navegador. Suas fotos são processadas no seu dispositivo e não são enviadas para lugar nenhum.",
       },
       {
-        question: "Por que o primeiro uso demora mais?",
+        question: "Qual é a diferença entre Rápido e Melhor qualidade?",
         answer:
-          "O modelo precisa ser baixado primeiro: cerca de 7 a 13 MB no modo Pessoas e cerca de 115 MB no modo Objetos (HQ). Seu navegador o guarda, então os próximos usos começam bem mais rápido.",
+          "O Rápido usa um modelo menor (cerca de 33 MB) e leva cerca de 5 segundos por foto; funciona bem para pessoas, mas pode deixar passar partes de objetos. O Melhor qualidade usa um modelo maior (cerca de 100 MB) e leva cerca de 15–30 segundos, com resultados melhores em produtos, animais de estimação, objetos e pessoas.",
       },
       {
-        question: "Qual modo devo usar?",
+        question: "Por que o primeiro uso demora mais?",
         answer:
-          "Use Pessoas para fotos de pessoas; é rápido e funciona no celular. Use Objetos (HQ) para produtos, animais de estimação e outros assuntos, principalmente quando as bordas importam.",
+          "O modelo precisa ser baixado primeiro. O Melhor qualidade pergunta antes de baixar o seu modelo de 100 MB. Depois do primeiro uso, seu navegador guarda o modelo, então as próximas fotos começam bem mais rápido.",
       },
       {
         question: "Funciona em celulares iPhone e Android?",
         answer:
-          "Sim, o modo Pessoas foi feito para rodar no celular. O modo Objetos (HQ) é bem maior e funciona melhor em um navegador de computador com suporte a WebGPU; no celular ele pode ficar lento ou ficar sem memória.",
+          "Sim. O Rápido é a melhor escolha no celular. O Melhor qualidade também roda no celular, mas o download maior e o processamento mais demorado são mais perceptíveis nele, principalmente nos dados móveis.",
       },
       {
         question: "Posso colocar uma nova cor de fundo atrás do assunto?",
@@ -2600,7 +2600,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Por que algumas bordas não ficam perfeitas?",
         answer:
-          "Cabelos finos, pelos, vidro e assuntos com cores parecidas com as do fundo são difíceis para qualquer modelo. Tente o modo Objetos (HQ), ou use uma foto com contraste claro entre o assunto e o fundo.",
+          "Cabelos finos, pelos, vidro e assuntos com cores parecidas com as do fundo são difíceis para qualquer modelo. Experimente o Melhor qualidade, ou use uma foto com contraste claro entre o assunto e o fundo.",
       },
     ],
   },

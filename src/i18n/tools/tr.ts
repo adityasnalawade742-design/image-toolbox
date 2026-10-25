@@ -2518,12 +2518,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Arka Plan Kaldırma",
     shortName: "Arka Planı Sil",
-    tagline: "Cihazınızda çalışan bir yapay zekâ modeliyle fotoğrafın arka planını kaldırın ve saydam bir PNG kaydedin.",
+    tagline: "Cihazınızda çalışan yapay zekâ ile fotoğrafın arka planını kaldırın ve saydam bir PNG kaydedin.",
     intro:
-      "Arka Plan Kaldırma, bir fotoğrafın ana konusunu keser ve arkasındaki her şeyi kaldırır. Tarayıcınızda çalışan bir yapay zekâ modeli kullanır, bu yüzden resimleriniz cihazınızdan asla çıkmaz. İnsanlar (portre) modu, telefonlarda iyi çalışan ve insanlar için en uygun olan küçük, hızlı bir model kullanır; Nesneler (HQ) modu ise ürünler, evcil hayvanlar ve diğer nesneler için daha büyük bir model kullanır. Sonucu saydam bir PNG olarak kaydedin veya düz bir rengin üzerine yerleştirip PNG ya da JPG olarak kaydedin.",
+      "Arka Plan Kaldırma, bir fotoğrafın ana konusunu keser ve arkasındaki her şeyi kaldırır. Tarayıcınızda çalışan bir yapay zekâ modeli kullanır, bu yüzden resimleriniz cihazınızdan asla çıkmaz. İki model arasından seçim yapabilirsiniz: Hızlı, çabuk çalışan ve insan fotoğrafları için en uygun olan daha küçük bir modeldir; En iyi kalite ise ürünler, evcil hayvanlar ve nesneler dahil her konuda daha iyi sonuç veren daha büyük bir modeldir. Sonucu saydam bir PNG olarak kaydedin veya düz bir rengin üzerine yerleştirin.",
     seoTitle: "Arka Plan Silme – Ücretsiz, Cihazınızda Çalışır",
     seoDescription:
-      "Resim arka planını ücretsiz silin; yapay zekâ tarayıcınızda çalışır. Saydam PNG veya düz renkli bir arka plan alın. Fotoğraflarınız cihazınızdan çıkmaz.",
+      "Arka plan silme ücretsiz; yapay zekâ tarayıcınızda çalışır. Hızlı modeli veya en iyi kaliteyi seçin, saydam PNG kaydedin. Fotoğraflarınız cihazınızda kalır.",
     keywords: [
       "arka plan silme",
       "resim arka planı kaldırma",
@@ -2539,14 +2539,14 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Bir JPG, PNG veya WebP resmi bırakın, seçin ya da yapıştırın.",
       },
       {
-        title: "Bir mod seçin",
+        title: "Bir model seçin",
         description:
-          "Varsayılan olarak İnsanlar seçilidir ve insanlar için en iyisidir. Ürünler, evcil hayvanlar ve diğer konular için Nesneler (HQ) modunu, tercihen bir masaüstü tarayıcıda seçin.",
+          "Varsayılan olarak Hızlı seçilidir ve insan fotoğraflarında iyi çalışır. Ürünler, evcil hayvanlar ve nesneler için ya da en temiz kenarları istediğiniz her durumda En iyi kalite seçeneğini seçin.",
       },
       {
-        title: "Sonucu bekleyin",
+        title: "Modeli bir kez indirin",
         description:
-          "İlk seferde model tarayıcınıza indirilir; sonrasında tarayıcı önbelleğinden yüklenir. Ardından arka plan cihazınızda kaldırılır.",
+          "Bir modeli ilk kullandığınızda tarayıcınız onu indirir: Hızlı için yaklaşık 33 MB, En iyi kalite için yaklaşık 100 MB. En iyi kalite, indirme başlamadan önce size sorar. Sonrasında model tarayıcınızda saklanır.",
       },
       {
         title: "Arka planı seçin ve indirin",
@@ -2559,12 +2559,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Model tarayıcınızın içinde çalışır, bu yüzden fotoğraflarınız asla bir sunucuya yüklenmez.",
       },
       {
-        title: "İki model",
-        description: "İnsanlar için küçük ve hızlı bir portre modeli; ürünler, evcil hayvanlar ve nesneler için daha büyük, yüksek kaliteli bir model.",
+        title: "Seçebileceğiniz iki model",
+        description: "Hızlı, çabuk çalışır ve insanlar için en iyisidir. En iyi kalite daha büyük ve daha yavaştır, ancak her konuda daha iyi sonuç verir.",
       },
       {
         title: "Bir kez indirilir",
-        description: "Tarayıcınız modeli ilk kullanımdan sonra saklar, bu yüzden sonraki resimler çok daha hızlı başlar.",
+        description: "Her model ilk kullanımdan sonra tarayıcınızda saklanır ve araç hangilerinin zaten indirildiğini gösterir.",
       },
       {
         title: "Saydam veya renkli arka plan",
@@ -2578,19 +2578,19 @@ export const trTools: Record<string, LocalizedToolItem> = {
           "Hayır. Tarayıcınıza yalnızca yapay zekâ modeli indirilir. Fotoğraflarınız cihazınızda işlenir ve hiçbir yere gönderilmez.",
       },
       {
-        question: "İlk kullanım neden daha uzun sürüyor?",
+        question: "Hızlı ile En iyi kalite arasındaki fark nedir?",
         answer:
-          "Önce modelin indirilmesi gerekir: İnsanlar (portre) modu için yaklaşık 7 ile 13 MB, Nesneler (HQ) modu için yaklaşık 115 MB. Tarayıcınız modeli saklar, bu yüzden sonraki kullanımlar çok daha hızlı başlar.",
+          "Hızlı daha küçük bir model (yaklaşık 33 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yaklaşık 15–30 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
       },
       {
-        question: "Hangi modu kullanmalıyım?",
+        question: "İlk kullanım neden daha uzun sürüyor?",
         answer:
-          "İnsan fotoğrafları için İnsanlar modunu kullanın; hızlıdır ve telefonlarda çalışır. Ürünler, evcil hayvanlar ve diğer konular için, özellikle kenarlar önemliyse Nesneler (HQ) modunu kullanın.",
+          "Önce modelin indirilmesi gerekir. En iyi kalite, 100 MB boyutundaki modelini indirmeden önce size sorar. İlk kullanımdan sonra tarayıcınız modeli saklar, bu yüzden sonraki fotoğraflar çok daha hızlı başlar.",
       },
       {
         question: "iPhone ve Android telefonlarda çalışır mı?",
         answer:
-          "Evet, İnsanlar (portre) modu telefonlarda çalışacak şekilde tasarlanmıştır. Nesneler (HQ) modu çok daha büyüktür ve en iyi WebGPU destekli bir masaüstü tarayıcıda çalışır; telefonda yavaş olabilir veya belleği yetmeyebilir.",
+          "Evet. Telefonlarda en iyi seçim Hızlı modelidir. En iyi kalite de telefonlarda çalışır, ancak daha büyük indirme boyutu ve daha uzun işlem süresi orada, özellikle mobil veride, daha fazla hissedilir.",
       },
       {
         question: "Konunun arkasına yeni bir arka plan rengi koyabilir miyim?",
@@ -2600,7 +2600,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bazı kenarlar neden kusursuz değil?",
         answer:
-          "İnce saçlar, tüyler, cam ve arka planla benzer renklere sahip konular her model için zordur. Nesneler (HQ) modunu deneyin veya konu ile arka plan arasında belirgin kontrast olan bir fotoğraf kullanın.",
+          "İnce saçlar, tüyler, cam ve arka planla benzer renklere sahip konular her model için zordur. En iyi kalite seçeneğini deneyin veya konu ile arka plan arasında belirgin kontrast olan bir fotoğraf kullanın.",
       },
     ],
   },

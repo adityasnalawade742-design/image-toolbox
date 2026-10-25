@@ -2521,12 +2521,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "remove-background": {
     name: "Hapus Background",
     shortName: "Hapus BG",
-    tagline: "Hapus background foto dengan model AI yang berjalan di perangkat Anda, lalu simpan sebagai PNG transparan.",
+    tagline: "Hapus background foto dengan AI yang berjalan di perangkat Anda, lalu simpan sebagai PNG transparan.",
     intro:
-      "Hapus Background memisahkan subjek utama foto dan menghapus semua yang ada di belakangnya. Alat ini memakai model AI yang berjalan di browser Anda, jadi gambar Anda tidak pernah meninggalkan perangkat. Mode Orang memakai model kecil dan cepat yang lancar di HP dan paling cocok untuk orang, sedangkan mode Objek (HQ) memakai model yang lebih besar untuk produk, hewan peliharaan, dan objek lain. Simpan hasilnya sebagai PNG transparan, atau taruh di atas warna polos dan simpan sebagai PNG atau JPG.",
+      "Hapus Background memisahkan subjek utama foto dan menghapus semua yang ada di belakangnya. Alat ini memakai model AI yang berjalan di browser Anda, jadi gambar Anda tidak pernah meninggalkan perangkat. Pilih Cepat, model lebih kecil yang cepat dan paling cocok untuk foto orang, atau Kualitas terbaik, model lebih besar dengan hasil lebih baik untuk subjek apa pun, termasuk produk, hewan peliharaan, dan objek. Simpan hasilnya sebagai PNG transparan, atau taruh di atas warna polos.",
     seoTitle: "Hapus Background Foto – Gratis, di Perangkat Anda",
     seoDescription:
-      "Hapus background foto gratis dengan AI di browser Anda. Dapatkan PNG transparan atau background warna polos. Foto Anda tidak pernah meninggalkan perangkat.",
+      "Hapus background foto gratis dengan AI di browser Anda. Pilih model Cepat atau Kualitas terbaik, lalu simpan PNG transparan. Foto tetap di perangkat Anda.",
     keywords: [
       "hapus background foto",
       "remove background",
@@ -2542,14 +2542,14 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Letakkan, pilih, atau tempel gambar JPG, PNG, atau WebP.",
       },
       {
-        title: "Pilih mode",
+        title: "Pilih model",
         description:
-          "Orang dipilih secara default dan paling cocok untuk foto orang. Pilih Objek (HQ) untuk produk, hewan peliharaan, dan subjek lain, sebaiknya di browser desktop.",
+          "Cepat dipilih secara default dan cocok untuk foto orang. Pilih Kualitas terbaik untuk produk, hewan peliharaan, objek, atau kapan pun Anda menginginkan tepian paling bersih.",
       },
       {
-        title: "Tunggu hasilnya",
+        title: "Unduh model sekali",
         description:
-          "Pada pemakaian pertama, model diunduh ke browser Anda; setelah itu model dimuat dari cache browser. Background lalu dihapus di perangkat Anda.",
+          "Saat pertama kali Anda memakai sebuah model, browser Anda mengunduhnya: sekitar 33 MB untuk Cepat dan sekitar 100 MB untuk Kualitas terbaik, yang meminta konfirmasi sebelum mulai. Setelah itu model tersimpan di browser Anda.",
       },
       {
         title: "Pilih background dan unduh",
@@ -2562,12 +2562,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Model berjalan di dalam browser Anda, jadi foto Anda tidak pernah diunggah ke server.",
       },
       {
-        title: "Dua model",
-        description: "Model Orang yang kecil dan cepat untuk foto orang, dan model Objek (HQ) yang lebih besar untuk produk, hewan peliharaan, dan objek.",
+        title: "Dua model untuk dipilih",
+        description: "Cepat memproses dengan cepat dan paling cocok untuk orang. Kualitas terbaik lebih besar dan lebih lambat, tetapi memberi hasil lebih baik untuk subjek apa pun.",
       },
       {
         title: "Diunduh sekali",
-        description: "Browser Anda menyimpan model setelah pemakaian pertama, jadi gambar berikutnya dimulai jauh lebih cepat.",
+        description: "Setiap model disimpan di browser Anda setelah pemakaian pertama, dan alat ini menunjukkan model mana yang sudah diunduh.",
       },
       {
         title: "Background transparan atau berwarna",
@@ -2581,19 +2581,19 @@ export const idTools: Record<string, LocalizedToolItem> = {
           "Tidak. Hanya model AI yang diunduh ke browser Anda. Foto Anda diproses di perangkat Anda dan tidak dikirim ke mana pun.",
       },
       {
-        question: "Kenapa pemakaian pertama lebih lama?",
+        question: "Apa bedanya Cepat dan Kualitas terbaik?",
         answer:
-          "Model harus diunduh dulu: sekitar 7 hingga 13 MB untuk mode Orang dan sekitar 115 MB untuk mode Objek (HQ). Browser Anda menyimpannya, jadi pemakaian berikutnya dimulai jauh lebih cepat.",
+          "Cepat memakai model lebih kecil (sekitar 33 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 15–30 detik, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
       },
       {
-        question: "Mode mana yang sebaiknya saya pakai?",
+        question: "Kenapa pemakaian pertama lebih lama?",
         answer:
-          "Pakai Orang untuk foto orang; mode ini cepat dan bisa dipakai di HP. Pakai Objek (HQ) untuk produk, hewan peliharaan, dan subjek lain, terutama jika tepiannya penting.",
+          "Model harus diunduh dulu. Kualitas terbaik meminta konfirmasi sebelum mengunduh modelnya yang berukuran 100 MB. Setelah pemakaian pertama, browser Anda menyimpan model, jadi foto berikutnya dimulai jauh lebih cepat.",
       },
       {
         question: "Apakah bisa dipakai di HP iPhone dan Android?",
         answer:
-          "Bisa, mode Orang dirancang untuk berjalan di HP. Mode Objek (HQ) jauh lebih besar dan paling baik di browser desktop yang mendukung WebGPU; di HP mode ini bisa lambat atau kehabisan memori.",
+          "Bisa. Cepat adalah pilihan terbaik di HP. Kualitas terbaik juga berjalan di HP, tetapi unduhan yang lebih besar dan waktu proses yang lebih lama lebih terasa di sana, terutama dengan data seluler.",
       },
       {
         question: "Bisakah saya memberi warna background baru di belakang subjek?",
@@ -2603,7 +2603,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kenapa beberapa tepian tidak sempurna?",
         answer:
-          "Rambut halus, bulu, kaca, dan subjek dengan warna yang mirip dengan background sulit bagi model mana pun. Coba mode Objek (HQ), atau pakai foto dengan kontras yang jelas antara subjek dan background.",
+          "Rambut halus, bulu, kaca, dan subjek dengan warna yang mirip dengan background sulit bagi model mana pun. Coba Kualitas terbaik, atau pakai foto dengan kontras yang jelas antara subjek dan background.",
       },
     ],
   },

@@ -2516,92 +2516,82 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
   },
   "remove-background": {
-    name: "Remove Background",
-    shortName: "Remove BG",
-    tagline: "Remove the background from a photo with an AI model that runs on your device, and save a transparent PNG.",
-    intro:
-      "Remove Background cuts out the main subject of a photo and removes everything behind it. It uses an AI model that runs in your browser, so your images never leave your device. Portrait mode uses a small, fast model that works well on phones and is best for people, while High quality mode uses a larger model for products, pets and other objects. Save the result as a transparent PNG, or put it on a solid color and save as PNG or JPG.",
-    seoTitle: "Remove Background from Image – Free, On-Device",
-    seoDescription:
-      "Remove image backgrounds for free with AI that runs in your browser. Get a transparent PNG or a solid color background. Your photos never leave your device.",
-    keywords: [
+    "name": "Remove Background",
+    "shortName": "Remove BG",
+    "tagline": "Remove the background from a photo with AI that runs on your device, and save a transparent PNG.",
+    "intro": "Remove Background cuts out the main subject of a photo and removes everything behind it, using an AI model that runs in your browser, so your images never leave your device. Choose Fast, a smaller model that is quick and best for photos of people, or Best quality, a larger model with better results on any subject, including products, pets and objects. Save the result as a transparent PNG, or put it on a solid color.",
+    "seoTitle": "Remove Background from Image – Free, On-Device",
+    "seoDescription": "Remove image backgrounds for free with AI that runs in your browser. Pick a fast model or best quality, then save a transparent PNG. Photos stay on your device.",
+    "keywords": [
       "remove background from image",
       "background remover",
       "remove background from photo free",
       "make background transparent",
       "transparent background maker",
       "cut out image background",
-      "remove background online",
+      "remove background online"
     ],
-    howToSteps: [
+    "howToSteps": [
       {
-        title: "Upload a photo",
-        description: "Drop, choose or paste a JPG, PNG or WebP image.",
+        "title": "Upload a photo",
+        "description": "Drop, choose or paste a JPG, PNG or WebP image."
       },
       {
-        title: "Choose a mode",
-        description:
-          "Portrait is selected by default and is best for people. Choose High quality / objects for products, pets and other subjects, ideally on a desktop browser.",
+        "title": "Choose a model",
+        "description": "Fast is selected by default and works well for photos of people. Choose Best quality for products, pets, objects, or whenever you want the cleanest edges."
       },
       {
-        title: "Wait for the result",
-        description:
-          "The first time, the model is downloaded to your browser; after that it is loaded from the browser cache. The background is then removed on your device.",
+        "title": "Download the model once",
+        "description": "The first time you use a model, your browser downloads it: about 33 MB for Fast and about 100 MB for Best quality, which asks before it starts. After that it is stored in your browser."
       },
       {
-        title: "Choose the background and download",
-        description: "Keep it transparent and save as PNG, or pick a solid color and save as PNG or JPG.",
-      },
+        "title": "Choose the background and download",
+        "description": "Keep it transparent and save as PNG, or pick a solid color and save as PNG or JPG."
+      }
     ],
-    features: [
+    "features": [
       {
-        title: "AI that runs on your device",
-        description: "The model runs inside your browser, so your photos are never uploaded to a server.",
+        "title": "AI that runs on your device",
+        "description": "The model runs inside your browser, so your photos are never uploaded to a server."
       },
       {
-        title: "Two models",
-        description: "A small, fast Portrait model for people, and a larger High quality model for products, pets and objects.",
+        "title": "Two models to choose from",
+        "description": "Fast is quick and best for people. Best quality is larger and slower but gives better results on any subject."
       },
       {
-        title: "Downloaded once",
-        description: "Your browser stores the model after the first use, so later images start much faster.",
+        "title": "Downloaded once",
+        "description": "Each model is stored in your browser after its first use, and the tool shows which ones are already downloaded."
       },
       {
-        title: "Transparent or colored background",
-        description: "Save a transparent PNG, or place the subject on a solid color of your choice.",
-      },
+        "title": "Transparent or colored background",
+        "description": "Save a transparent PNG, or place the subject on a solid color of your choice."
+      }
     ],
-    faqs: [
+    "faqs": [
       {
-        question: "Are my photos uploaded to a server?",
-        answer:
-          "No. Only the AI model is downloaded to your browser. Your photos are processed on your device and are not sent anywhere.",
+        "question": "Are my photos uploaded to a server?",
+        "answer": "No. Only the AI model is downloaded to your browser. Your photos are processed on your device and are not sent anywhere."
       },
       {
-        question: "Why does the first use take longer?",
-        answer:
-          "The model must be downloaded first: about 7 to 13 MB for Portrait mode and about 115 MB for High quality mode. Your browser stores it, so later uses start much faster.",
+        "question": "What is the difference between Fast and Best quality?",
+        "answer": "Fast uses a smaller model (about 33 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 15–30 seconds, with better results on products, pets, objects and people."
       },
       {
-        question: "Which mode should I use?",
-        answer:
-          "Use Portrait for photos of people; it is fast and works on phones. Use High quality / objects for products, pets and other subjects, especially when the edges matter.",
+        "question": "Why does the first use take longer?",
+        "answer": "The model has to be downloaded first. Best quality asks before downloading its 100 MB model. After the first use, your browser stores the model, so later photos start much faster."
       },
       {
-        question: "Does it work on iPhone and Android phones?",
-        answer:
-          "Yes, Portrait mode is designed to run on phones. High quality mode is much larger and works best in a desktop browser with WebGPU support; on a phone it can be slow or run out of memory.",
+        "question": "Does it work on iPhone and Android phones?",
+        "answer": "Yes. Fast is the best choice on phones. Best quality also runs on phones, but its larger download and longer processing time are more noticeable there, especially on mobile data."
       },
       {
-        question: "Can I put a new background color behind the subject?",
-        answer:
-          "Yes. Choose a solid color, then save as PNG or JPG. For a transparent background, save as PNG.",
+        "question": "Can I put a new background color behind the subject?",
+        "answer": "Yes. Choose a solid color, then save as PNG or JPG. For a transparent background, save as PNG."
       },
       {
-        question: "Why are some edges not perfect?",
-        answer:
-          "Fine hair, fur, glass, and subjects with colors similar to the background are hard for any model. Try High quality mode, or use a photo with clear contrast between the subject and the background.",
-      },
-    ],
+        "question": "Why are some edges not perfect?",
+        "answer": "Fine hair, fur, glass, and subjects with colors similar to the background are hard for any model. Try Best quality, or use a photo with clear contrast between the subject and the background."
+      }
+    ]
   },
 };
