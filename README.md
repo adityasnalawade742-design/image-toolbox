@@ -5,7 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 **Image Toolbox** is a lightning-fast, privacy-first web application featuring **23 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
 
@@ -114,4 +114,10 @@ npm run deploy
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0). See [`LICENSE`](LICENSE).
+
+The background remover's "Best quality" mode uses [@imgly/background-removal](https://github.com/imgly/background-removal-js), which is AGPL-3.0; because of that, the whole site is distributed under AGPL-3.0, and anyone who uses the hosted site can get its source code from this repository (linked in the site footer). If you deploy a modified version, you must offer your modified source to its users in the same way.
+
+Third-party models, downloaded by the browser at runtime and not redistributed here:
+- MODNet ("Fast" background removal), Apache-2.0, via [Xenova/modnet](https://huggingface.co/Xenova/modnet)
+- IMG.LY ISNet ("Best quality" background removal), AGPL-3.0, served from IMG.LY's CDN

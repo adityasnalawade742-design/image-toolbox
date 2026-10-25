@@ -31,6 +31,7 @@ export const frUi: Record<string, string> = {
   'footer.popular': 'Outils populaires',
   'footer.categories': 'Catégories',
   'footer.sitemap': 'Plan du site',
+  'footer.source': "Code source (AGPL-3.0)",
   'footer.toolCount': '{count} outils · 10 langues · sans inscription',
   'workspace.uploadNew': 'Choisir une autre image',
   'workspace.download': 'Télécharger l’image traitée',

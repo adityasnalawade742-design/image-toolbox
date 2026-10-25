@@ -31,6 +31,7 @@ export const ptUi: Record<string, string> = {
   'footer.popular': 'Ferramentas populares',
   'footer.categories': 'Categorias',
   'footer.sitemap': 'Mapa do site',
+  'footer.source': "Código-fonte (AGPL-3.0)",
   'footer.toolCount': '{count} ferramentas · 10 idiomas · sem cadastro',
   'workspace.uploadNew': 'Enviar outra imagem',
   'workspace.download': 'Baixar imagem processada',

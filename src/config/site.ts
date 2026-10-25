@@ -4,6 +4,8 @@ export const SITE_CONFIG = {
   description: 'Free, private, and ultra-fast client-side image processing. Crop, resize, compress, convert, and inspect images directly in your browser with zero server uploads.',
   url: ((typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || (import.meta.env?.PUBLIC_SITE_URL) || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/$/, ''),
   author: 'Web Image Tools',
+  // AGPL-3.0 section 13: the site must offer its source code to everyone who uses it over the network
+  sourceUrl: (typeof process !== 'undefined' && process.env?.PUBLIC_SOURCE_URL) || (import.meta.env?.PUBLIC_SOURCE_URL) || 'https://github.com/adityasnalawade742-design/image-toolbox',
   locale: 'en',
-  defaultTheme: 'dark',
+  defaultTheme: 'light',
 };

@@ -31,6 +31,7 @@ export const esUi: Record<string, string> = {
   'footer.popular': 'Herramientas populares',
   'footer.categories': 'Categorías',
   'footer.sitemap': 'Mapa del sitio',
+  'footer.source': "Código fuente (AGPL-3.0)",
   'footer.toolCount': '{count} herramientas · 10 idiomas · sin registro',
   'workspace.uploadNew': 'Subir otra imagen',
   'workspace.download': 'Descargar imagen procesada',

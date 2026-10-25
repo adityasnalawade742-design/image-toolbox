@@ -31,6 +31,7 @@ export const jaUi: Record<string, string> = {
   'footer.popular': '人気のツール',
   'footer.categories': 'カテゴリ',
   'footer.sitemap': 'サイトマップ',
+  'footer.source': "ソースコード（AGPL-3.0）",
   'footer.toolCount': '{count}個のツール · 10言語 · 登録不要',
   'workspace.uploadNew': '別の画像をアップロード',
   'workspace.download': '処理した画像をダウンロード',

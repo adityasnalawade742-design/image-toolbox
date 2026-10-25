@@ -31,6 +31,7 @@ export const idUi: Record<string, string> = {
   'footer.popular': 'Alat populer',
   'footer.categories': 'Kategori',
   'footer.sitemap': 'Peta situs',
+  'footer.source': "Kode sumber (AGPL-3.0)",
   'footer.toolCount': '{count} alat · 10 bahasa · tanpa daftar',
   'workspace.uploadNew': 'Unggah Gambar Lain',
   'workspace.download': 'Unduh Gambar Hasil',

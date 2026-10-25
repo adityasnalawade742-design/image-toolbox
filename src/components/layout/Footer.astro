@@ -58,8 +58,11 @@ const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
 
   <div class="border-t border-pencil">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[13px] text-graphite">
-      <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. {t('footer.rights')}</p>
-      <a href="/sitemap.xml" class="text-ink hover:underline">{t('footer.sitemap')}</a>
+      <p>© {new Date().getFullYear()} {SITE_CONFIG.name}</p>
+      <div class="flex items-center gap-5">
+        <a href={SITE_CONFIG.sourceUrl} rel="noopener" class="text-ink hover:underline">{t('footer.source')}</a>
+        <a href="/sitemap.xml" class="text-ink hover:underline">{t('footer.sitemap')}</a>
+      </div>
     </div>
   </div>
 </footer>

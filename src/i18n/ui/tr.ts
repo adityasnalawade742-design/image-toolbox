@@ -31,6 +31,7 @@ export const trUi: Record<string, string> = {
   'footer.popular': 'Popüler araçlar',
   'footer.categories': 'Kategoriler',
   'footer.sitemap': 'Site haritası',
+  'footer.source': "Kaynak kodu (AGPL-3.0)",
   'footer.toolCount': '{count} araç · 10 dil · üyelik gerekmez',
   'workspace.uploadNew': 'Farklı resim yükle',
   'workspace.download': 'İşlenen resmi indir',

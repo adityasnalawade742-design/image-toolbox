@@ -31,6 +31,7 @@ export const koUi: Record<string, string> = {
   'footer.popular': '인기 도구',
   'footer.categories': '카테고리',
   'footer.sitemap': '사이트맵',
+  'footer.source': "소스 코드 (AGPL-3.0)",
   'footer.toolCount': '도구 {count}개 · 10개 언어 · 가입 불필요',
   'workspace.uploadNew': '다른 이미지 업로드',
   'workspace.download': '처리된 이미지 다운로드',
