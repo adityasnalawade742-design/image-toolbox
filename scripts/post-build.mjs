@@ -20,3 +20,14 @@ if (fs.existsSync(distAstroDir)) {
     console.log(`[post-build] Successfully pruned ${cleaned} redundant onnxruntime WASM artifacts from dist/_astro`);
   }
 }
+
+// pdf.js loads fonts, character maps, colour profiles and image decoders on demand; serve them from the site
+// so PDF to JPG works offline and without third-party requests
+const pdfjsDir = path.resolve('node_modules/pdfjs-dist');
+if (fs.existsSync(path.resolve('dist'))) {
+  for (const sub of ['cmaps', 'standard_fonts', 'wasm', 'iccs']) {
+    const from = path.join(pdfjsDir, sub);
+    if (fs.existsSync(from)) fs.cpSync(from, path.resolve('dist/pdfjs', sub), { recursive: true });
+  }
+  console.log('[post-build] Copied pdf.js assets to dist/pdfjs');
+}
