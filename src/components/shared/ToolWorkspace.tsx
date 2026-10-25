@@ -10,6 +10,7 @@ import {
   extractDominantPalette,
   checkImageTransparency,
   formatBytes,
+  watermarkBox,
 } from '../../lib/canvas/engine';
 import type {
   TextOverlayOptions,
@@ -23,6 +24,7 @@ import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
 import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { installWindowDropGuard } from './useImageIntake';
 import { I18nProvider } from './I18nContext';
+import { DragFrameOverlay } from './DragFrameOverlay';
 import { createT, type Strings } from '../../i18n/strings';
 
 import { CropControls } from '../tools/CropControls';
@@ -82,6 +84,15 @@ const FAVICON_SNIPPET = `<link rel="icon" type="image/x-icon" href="/favicon.ico
 
 // Tools whose result is information (text, colors, metrics), not an edited image
 const NO_EXPORT_TOOLS = ['image-to-base64', 'image-to-data-uri', 'image-analyzer', 'image-color-picker', 'image-palette-generator'];
+
+// Text width in canvas pixels, for placing the watermark drag frame exactly over the drawn text
+let measureCtx: CanvasRenderingContext2D | null = null;
+function measureText(text: string, font: string): number {
+  measureCtx = measureCtx || document.createElement('canvas').getContext('2d');
+  if (!measureCtx) return 0;
+  measureCtx.font = font;
+  return measureCtx.measureText(text).width;
+}
 
 export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en', strings = {}, nextTools = [] }: Props) {
   const t = createT(strings);
@@ -813,6 +824,20 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   {slug === 'add-text-to-image' && canvasRef.current && (
                     <InteractiveTextOverlay canvasElement={canvasRef.current} options={textOptions} onChange={setTextOptions} />
                   )}
+                  {slug === 'watermark-image' && canvasRef.current && !(watermarkOptions.repeat && !watermarkOptions.imageElement) && (() => {
+                    const c = canvasRef.current;
+                    const box = watermarkBox(c.width, c.height, watermarkOptions, measureText);
+                    return (
+                      box && (
+                        <DragFrameOverlay
+                          canvasElement={c}
+                          boxes={[{ id: 'watermark', box, label: t('ctl.watermark.dragHint') }]}
+                          onMove={(_, x, y) => setWatermarkOptions((o) => ({ ...o, position: 'custom', customXPercent: x, customYPercent: y }))}
+                          hint={t('ctl.watermark.dragHint')}
+                        />
+                      )
+                    );
+                  })()}
                   {slug.includes('color') && loupe.visible && (
                     <div
                       className="absolute pointer-events-none z-30 -translate-x-1/2 -translate-y-full pb-3"

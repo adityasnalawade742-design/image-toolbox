@@ -26,7 +26,7 @@ export const creativeBStrings = {
 
   // Censor image
   'ctl.censor.settings': 'Censor settings',
-  'ctl.censor.hint': 'Drag across the photo to cover an area. Works with touch too, or use Add box and set its position and size.',
+  'ctl.censor.hint': 'Drag across the photo to cover an area. Drag a box to move it, or its corner to resize it. Works with touch too, or use Add box and set its position and size.',
   'ctl.censor.shape': 'Shape',
   'ctl.censor.shapeRect': 'Rectangle',
   'ctl.censor.shapeOval': 'Oval',

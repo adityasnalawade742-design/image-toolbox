@@ -27,10 +27,46 @@ export interface WatermarkOptions {
   opacity: number;
   color?: string;
   fontSize?: number;
-  position?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+  position?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'custom';
+  /** Centre of the watermark as a percentage of the image, when position is 'custom' (set by dragging) */
+  customXPercent?: number;
+  customYPercent?: number;
   rotation?: number;
   repeat?: boolean;
 }
+
+/**
+ * Where a single (non-tiled) watermark sits, in canvas pixels: its centre and unrotated size.
+ * Shared by the renderer and the drag frame on the preview, so the two can't drift apart.
+ */
+export function watermarkBox(canvasW: number, canvasH: number, wOpt: WatermarkOptions, measureText?: (text: string, font: string) => number) {
+  const margin = Math.max(24, Math.round(Math.min(canvasW, canvasH) * 0.03));
+  let w: number;
+  let h: number;
+  if (wOpt.imageElement) {
+    const img = wOpt.imageElement;
+    w = Math.max(20, Math.round(canvasW * ((wOpt.imageScale || 20) / 100)));
+    h = Math.round((w / (img.naturalWidth || img.width || 1)) * (img.naturalHeight || img.height || 1));
+  } else if (wOpt.text && wOpt.text.trim()) {
+    const size = watermarkFontSize(canvasW, wOpt);
+    w = measureText ? measureText(wOpt.text, watermarkFont(size)) : size * wOpt.text.length * 0.55;
+    h = size;
+  } else {
+    return null;
+  }
+  if (wOpt.position === 'custom' && wOpt.customXPercent !== undefined && wOpt.customYPercent !== undefined) {
+    return { cx: (canvasW * wOpt.customXPercent) / 100, cy: (canvasH * wOpt.customYPercent) / 100, w, h };
+  }
+  const pos = wOpt.position && wOpt.position !== 'custom' ? wOpt.position : 'bottom-right';
+  // 'center' is both axes; otherwise the position is '<vertical>-<horizontal>'
+  const [vPos, hPos] = pos === 'center' ? ['center', 'center'] : pos.split('-');
+  const cx = hPos === 'left' ? margin + w / 2 : hPos === 'center' ? canvasW / 2 : canvasW - margin - w / 2;
+  const cy = vPos === 'top' ? margin + h / 2 : vPos === 'center' ? canvasH / 2 : canvasH - margin - h / 2;
+  return { cx, cy, w, h };
+}
+
+export const watermarkFontSize = (canvasW: number, wOpt: WatermarkOptions) => wOpt.fontSize || Math.max(16, Math.round(canvasW / 25));
+export const watermarkFont = (size: number) => `600 ${size}px Inter, sans-serif`;
 
 export interface BorderOptions {
   width: number;
@@ -285,76 +321,50 @@ export function processCanvas(
   // 9. Draw Watermark (Text or Image/Logo)
   if (options.watermark) {
     const wOpt = options.watermark;
-    const margin = Math.max(24, Math.round(Math.min(canvas.width, canvas.height) * 0.03));
-    const pos = wOpt.position || 'bottom-right';
-    // 'center' is both axes; otherwise the position is '<vertical>-<horizontal>'
-    const [vPos, hPos] = pos === 'center' ? ['center', 'center'] : pos.split('-');
+    const tiled = !wOpt.imageElement && wOpt.repeat && wOpt.text && wOpt.text.trim();
 
-    if (wOpt.imageElement) {
-      // Image Logo Watermark
-      const wmImg = wOpt.imageElement;
-      const scale = (wOpt.imageScale || 20) / 100;
-      const wmTargetW = Math.max(20, Math.round(canvas.width * scale));
-      const wmTargetH = Math.round((wmTargetW / (wmImg.naturalWidth || wmImg.width || 1)) * (wmImg.naturalHeight || wmImg.height || 1));
-
-      let wx = canvas.width - wmTargetW - margin;
-      let wy = canvas.height - wmTargetH - margin;
-
-      if (hPos === 'left') wx = margin;
-      else if (hPos === 'center') wx = (canvas.width - wmTargetW) / 2;
-
-      if (vPos === 'top') wy = margin;
-      else if (vPos === 'center') wy = (canvas.height - wmTargetH) / 2;
-
+    if (tiled) {
+      const wmFontSize = watermarkFontSize(canvas.width, wOpt);
       ctx.save();
-      ctx.globalAlpha = wOpt.opacity !== undefined ? wOpt.opacity : 0.6;
-      ctx.drawImage(wmImg, wx, wy, wmTargetW, wmTargetH);
-      ctx.restore();
-    } else if (wOpt.text && wOpt.text.trim()) {
-      // Text Watermark
-      const wmFontSize = wOpt.fontSize || Math.max(16, Math.round(canvas.width / 25));
-      ctx.save();
-      ctx.font = `600 ${wmFontSize}px Inter, sans-serif`;
+      ctx.font = watermarkFont(wmFontSize);
       ctx.fillStyle = wOpt.color || '#ffffff';
       ctx.globalAlpha = wOpt.opacity !== undefined ? wOpt.opacity : 0.4;
-
-      if (wOpt.repeat) {
-        const stepX = wmFontSize * 10;
-        const stepY = wmFontSize * 6;
-        ctx.rotate(((wOpt.rotation ?? -30) * Math.PI) / 180);
-        for (let x = -canvas.width; x < canvas.width * 2; x += stepX) {
-          for (let y = -canvas.height; y < canvas.height * 2; y += stepY) {
-            ctx.fillText(wOpt.text, x, y);
-          }
+      const stepX = wmFontSize * 10;
+      const stepY = wmFontSize * 6;
+      ctx.rotate(((wOpt.rotation ?? -30) * Math.PI) / 180);
+      for (let x = -canvas.width; x < canvas.width * 2; x += stepX) {
+        for (let y = -canvas.height; y < canvas.height * 2; y += stepY) {
+          ctx.fillText(wOpt.text!, x, y);
         }
-      } else {
-        let x = canvas.width - margin;
-        let y = canvas.height - margin;
-        ctx.textAlign = 'right';
-        ctx.textBaseline = 'bottom';
-
-        if (hPos === 'left') {
-          x = margin;
-          ctx.textAlign = 'left';
-        } else if (hPos === 'center') {
-          x = canvas.width / 2;
-          ctx.textAlign = 'center';
-        }
-
-        if (vPos === 'top') {
-          y = margin;
-          ctx.textBaseline = 'top';
-        } else if (vPos === 'center') {
-          y = canvas.height / 2;
-          ctx.textBaseline = 'middle';
-        }
-
-        // Rotate around the text's own anchor so it stays in the chosen spot
-        ctx.translate(x, y);
-        ctx.rotate(((wOpt.rotation || 0) * Math.PI) / 180);
-        ctx.fillText(wOpt.text, 0, 0);
       }
       ctx.restore();
+    } else {
+      const box = watermarkBox(canvas.width, canvas.height, wOpt, (text, font) => {
+        ctx.save();
+        ctx.font = font;
+        const width = ctx.measureText(text).width;
+        ctx.restore();
+        return width;
+      });
+      if (box) {
+        ctx.save();
+        if (wOpt.imageElement) {
+          // Logo watermark
+          ctx.globalAlpha = wOpt.opacity !== undefined ? wOpt.opacity : 0.6;
+          ctx.drawImage(wOpt.imageElement, box.cx - box.w / 2, box.cy - box.h / 2, box.w, box.h);
+        } else {
+          // Text watermark, rotated around its own centre so it stays in the chosen spot
+          ctx.font = watermarkFont(watermarkFontSize(canvas.width, wOpt));
+          ctx.fillStyle = wOpt.color || '#ffffff';
+          ctx.globalAlpha = wOpt.opacity !== undefined ? wOpt.opacity : 0.4;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.translate(box.cx, box.cy);
+          ctx.rotate(((wOpt.rotation || 0) * Math.PI) / 180);
+          ctx.fillText(wOpt.text!, 0, 0);
+        }
+        ctx.restore();
+      }
     }
   }
 

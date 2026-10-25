@@ -51,8 +51,9 @@ export function CensorImageWorkspace() {
   // The box being edited in the panel; new boxes (drawn or added) become selected
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  // Drag-to-draw state
+  // Drag state: draw a new box, or move / resize an existing one
   const [isDrawing, setIsDrawing] = useState<boolean>(false);
+  const dragRef = useRef<{ mode: 'move' | 'resize'; id: string; start: { x: number; y: number }; orig: CensorBox } | null>(null);
   const [startPos, setStartPos] = useState<{ x: number; y: number } | null>(null);
   const [currentBox, setCurrentBox] = useState<{ x: number; y: number; w: number; h: number; shape?: 'rect' | 'circle' } | null>(null);
 
@@ -180,6 +181,14 @@ export function CensorImageWorkspace() {
         } else {
           ctx.strokeRect(bx, by, bw, bh);
         }
+        if (b.id === selectedId) {
+          const hs = handleSize();
+          ctx.setLineDash([]);
+          ctx.fillStyle = '#e4007c';
+          ctx.fillRect(bx + bw - hs / 2, by + bh - hs / 2, hs, hs);
+          ctx.strokeStyle = '#ffffff';
+          ctx.strokeRect(bx + bw - hs / 2, by + bh - hs / 2, hs, hs);
+        }
         ctx.restore();
       }
     });
@@ -199,48 +208,71 @@ export function CensorImageWorkspace() {
     };
   };
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  // Resize handle size in image pixels, so it is about 16 px on screen at any zoom
+  function handleSize() {
+    const canvas = canvasRef.current;
+    if (!canvas) return 16;
+    const rect = canvas.getBoundingClientRect();
+    return Math.max(8, Math.round(16 * (canvas.width / (rect.width || canvas.width))));
+  }
+
+  // Topmost box under a point: its corner handle resizes, its body moves
+  const hitTest = (p: { x: number; y: number }) => {
+    const hs = handleSize();
+    for (let i = boxes.length - 1; i >= 0; i--) {
+      const b = boxes[i];
+      if (b.id === selectedId && Math.abs(p.x - (b.x + b.w)) <= hs && Math.abs(p.y - (b.y + b.h)) <= hs) return { box: b, mode: 'resize' as const };
+      if (p.x >= b.x && p.x <= b.x + b.w && p.y >= b.y && p.y <= b.y + b.h) return { box: b, mode: 'move' as const };
+    }
+    return null;
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
     const coords = getCoordsFromPoint(e.clientX, e.clientY);
+    const hit = hitTest(coords);
+    if (hit) {
+      setSelectedId(hit.box.id);
+      dragRef.current = { mode: hit.mode, id: hit.box.id, start: coords, orig: hit.box };
+      return;
+    }
     setIsDrawing(true);
     setStartPos(coords);
     setCurrentBox({ x: coords.x, y: coords.y, w: 0, h: 0, shape });
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isDrawing || !startPos) return;
+  const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const coords = getCoordsFromPoint(e.clientX, e.clientY);
-
+    const drag = dragRef.current;
+    if (drag && imgElement) {
+      const natW = imgElement.naturalWidth || imgElement.width;
+      const natH = imgElement.naturalHeight || imgElement.height;
+      const dx = coords.x - drag.start.x;
+      const dy = coords.y - drag.start.y;
+      const o = drag.orig;
+      const next =
+        drag.mode === 'move'
+          ? { x: Math.max(0, Math.min(natW - o.w, o.x + dx)), y: Math.max(0, Math.min(natH - o.h, o.y + dy)) }
+          : { w: Math.max(10, Math.min(natW - o.x, o.w + dx)), h: Math.max(10, Math.min(natH - o.y, o.h + dy)) };
+      setBoxes((prev) => prev.map((b) => (b.id === drag.id ? { ...b, ...next } : b)));
+      return;
+    }
+    if (!isDrawing || !startPos) {
+      // Hover feedback for mouse users: what a press here would do
+      const hit = e.pointerType === 'mouse' ? hitTest(coords) : null;
+      e.currentTarget.style.cursor = hit ? (hit.mode === 'resize' ? 'nwse-resize' : 'move') : 'crosshair';
+      return;
+    }
     const x = Math.min(startPos.x, coords.x);
     const y = Math.min(startPos.y, coords.y);
     const w = Math.abs(coords.x - startPos.x);
     const h = Math.abs(coords.y - startPos.y);
-
-    setCurrentBox({ x, y, w, h, shape });
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
-    if (e.touches.length !== 1) return;
-    const touch = e.touches[0];
-    const coords = getCoordsFromPoint(touch.clientX, touch.clientY);
-    setIsDrawing(true);
-    setStartPos(coords);
-    setCurrentBox({ x: coords.x, y: coords.y, w: 0, h: 0, shape });
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
-    if (!isDrawing || !startPos || e.touches.length !== 1) return;
-    const touch = e.touches[0];
-    const coords = getCoordsFromPoint(touch.clientX, touch.clientY);
-
-    const x = Math.min(startPos.x, coords.x);
-    const y = Math.min(startPos.y, coords.y);
-    const w = Math.abs(coords.x - startPos.x);
-    const h = Math.abs(coords.y - startPos.y);
-
     setCurrentBox({ x, y, w, h, shape });
   };
 
   const handleEndDrawing = () => {
+    dragRef.current = null;
     if (isDrawing && currentBox && currentBox.w > 5 && currentBox.h > 5) {
       const id = String(Date.now());
       setSelectedId(id);
@@ -381,14 +413,10 @@ export function CensorImageWorkspace() {
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               <canvas
                 ref={canvasRef}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleEndDrawing}
-                onMouseLeave={handleEndDrawing}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleEndDrawing}
-                onTouchCancel={handleEndDrawing}
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handleEndDrawing}
+                onPointerCancel={handleEndDrawing}
                 role="img"
                 aria-label={t('ctl.censor.canvasLabel')}
                 className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-none"

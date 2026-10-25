@@ -206,7 +206,38 @@ export function WatermarkControls({ options, onChange }: Props) {
             );
           })}
         </div>
-        {positionDisabled && <p className="text-[13px] text-graphite">{t('ctl.watermark.positionTiled')}</p>}
+        {positionDisabled ? (
+          <p className="text-[13px] text-graphite">{t('ctl.watermark.positionTiled')}</p>
+        ) : (
+          <p className="text-[13px] text-graphite">{t('ctl.watermark.dragHint')}</p>
+        )}
+        {/* Free position: the keyboard route to what dragging the watermark does */}
+        {!positionDisabled && options.position === 'custom' && (
+          <div className="space-y-3 p-3 mt-2 bg-paper-stock border border-pencil">
+            {(
+              [
+                ['customXPercent', 'x', t('ctl.text.horizontalPosition')],
+                ['customYPercent', 'y', t('ctl.text.verticalPosition')],
+              ] as const
+            ).map(([key, axis, label]) => (
+              <div key={key} className="space-y-1">
+                <div className="flex items-baseline justify-between gap-2 text-[15px]">
+                  <label htmlFor={id(`wm-${axis}`)} className="text-ink">{label}</label>
+                  <span className="font-semibold text-ink" data-measure>{Math.round(options[key] ?? 50)}%</span>
+                </div>
+                <input
+                  id={id(`wm-${axis}`)}
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={Math.round(options[key] ?? 50)}
+                  onChange={(e) => onChange({ ...options, [key]: Number(e.target.value) })}
+                  className="w-full"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Opacity and rotation */}
