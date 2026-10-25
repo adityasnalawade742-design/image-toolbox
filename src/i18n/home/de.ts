@@ -5,7 +5,7 @@ export const deHome: LocalizedHomeData = {
     badge: '',
     title: 'Alle Bildtools, die du brauchst, an einem Ort',
     subtitle:
-      'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln, Hintergründe entfernen und Fotos bereinigen. Ohne Anmeldung, ohne Wasserzeichen, und deine Dateien bleiben auf deinem Gerät.',
+      'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln, Hintergründe entfernen und Fotos bereinigen. Ohne Anmeldung, ohne Wasserzeichen, und deine Bilder bleiben auf deinem Gerät.',
     dropzoneTitle: 'Bild ablegen und loslegen',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG oder iPhone-HEIC, bis 50 MB',
   },
@@ -23,9 +23,9 @@ export const deHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Nichts wird hochgeladen',
+      title: 'Bilder werden nie hochgeladen',
       description:
-        'Dein Browser verarbeitet die Bilder auf deinem eigenen Gerät. Du wartest also nicht auf einen Upload, und auf keinem Server liegt eine Kopie.',
+        'Dein Browser verarbeitet die Bilder auf deinem eigenen Gerät. Du wartest also nicht auf einen Upload, und auf keinem Server liegt eine Kopie. Einige Dokument-Tools, etwa Word in PDF, brauchen unseren Server: Sie sind gekennzeichnet, und die Dateien werden direkt danach gelöscht.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const deHome: LocalizedHomeData = {
     {
       question: 'Werden meine Bilder irgendwo hochgeladen?',
       answer:
-        'Nein. Jedes Tool läuft in deinem Browser. Deine Bilder werden also auf deinem eigenen Gerät verarbeitet und nie an einen Server gesendet. Der Hintergrund-Entferner lädt sein KI-Modell einmalig herunter und arbeitet danach ebenfalls auf deinem Gerät.',
+        'Nein. Jedes Bildtool läuft in deinem Browser. Deine Bilder werden also auf deinem eigenen Gerät verarbeitet und nie an einen Server gesendet. Der Hintergrund-Entferner lädt sein KI-Modell einmalig herunter und arbeitet danach ebenfalls auf deinem Gerät. Einige Dokument-Tools (Word in PDF, Excel in PDF, PowerPoint in PDF, PDF in Word, PDF komprimieren, PDF schützen, PDF entsperren, PDF-OCR, PDF in PDF/A und PDF reparieren) brauchen unseren Server: Sie sind mit „Nutzt unseren Server“ gekennzeichnet, und deine Datei wird gelöscht, sobald das Ergebnis zurückgeschickt ist.',
     },
     {
       question: 'Ist das wirklich kostenlos?',

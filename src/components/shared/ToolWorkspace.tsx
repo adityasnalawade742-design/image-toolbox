@@ -66,6 +66,7 @@ import { SignPdfWorkspace } from '../tools/pdf/SignPdfWorkspace';
 import { FillFormWorkspace } from '../tools/pdf/FillFormWorkspace';
 import { PdfMetadataWorkspace } from '../tools/pdf/PdfMetadataWorkspace';
 import { CropPdfWorkspace } from '../tools/pdf/CropPdfWorkspace';
+import { DocumentToolWorkspace } from '../tools/pdf/DocumentToolWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export interface NextTool {
@@ -131,6 +132,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'fill-pdf-form': <FillFormWorkspace />,
     'remove-pdf-metadata': <PdfMetadataWorkspace />,
     'crop-pdf': <CropPdfWorkspace />,
+    'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
+    'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
+    'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,
+    'pdf-to-word': <DocumentToolWorkspace tool="pdf-to-word" />,
+    'compress-pdf': <DocumentToolWorkspace tool="compress-pdf" />,
+    'protect-pdf': <DocumentToolWorkspace tool="protect-pdf" />,
+    'unlock-pdf': <DocumentToolWorkspace tool="unlock-pdf" />,
+    'ocr-pdf': <DocumentToolWorkspace tool="ocr-pdf" />,
+    'pdf-to-pdfa': <DocumentToolWorkspace tool="pdf-to-pdfa" />,
+    'repair-pdf': <DocumentToolWorkspace tool="repair-pdf" />,
   };
   if (standalone[slug]) {
     return (

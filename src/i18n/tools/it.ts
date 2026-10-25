@@ -3921,4 +3921,711 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "word-to-pdf": {
+    name: "Word in PDF",
+    shortName: "Word → PDF",
+    tagline: "Converti documenti Word in PDF mantenendo layout, font e immagini. Gratis, senza registrazione e senza filigrana.",
+    intro:
+      "Word in PDF trasforma i documenti Word in un PDF che appare uguale su ogni dispositivo ed è pronto da inviare via email, stampare o caricare su un portale. Accetta DOC, DOCX, ODT, RTF o TXT. Intestazioni, piè di pagina, numeri di pagina, tabelle e immagini vengono mantenuti. La conversione usa LibreOffice sul nostro server: il file viene inviato tramite una connessione crittografata ed eliminato non appena il PDF torna indietro.",
+    seoTitle: "Convertire Word in PDF – Gratis, senza registrazione",
+    seoDescription:
+      "Convertire Word in PDF online gratis: mantiene layout, font e immagini. Nessuna registrazione, nessuna filigrana; i file vengono eliminati subito dopo.",
+    keywords: [
+      "convertire word in pdf",
+      "word in pdf",
+      "da word a pdf",
+      "docx in pdf",
+      "doc in pdf",
+      "convertitore word pdf gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il file",
+        description: "Trascina o scegli un file DOC, DOCX, ODT, RTF o TXT fino a 50 MB.",
+      },
+      {
+        title: "Converti",
+        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Il PDF viene scaricato automaticamente; puoi scaricarlo di nuovo con il pulsante.",
+      },
+    ],
+    features: [
+      {
+        title: "Layout mantenuto",
+        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+      },
+      {
+        title: "Font comuni inclusi",
+        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la conversione.",
+      },
+      {
+        title: "Gratis",
+        description: "Nessuna registrazione, nessuna filigrana, nessun limite giornaliero.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il PDF sarà identico all’originale?",
+        answer:
+          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+      },
+      {
+        question: "Le revisioni e i commenti compaiono nel PDF?",
+        answer:
+          "Il documento viene convertito così come appare quando lo apri, quindi accetta o rifiuta prima le revisioni se non vuoi che siano visibili.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "excel-to-pdf": {
+    name: "Excel in PDF",
+    shortName: "Excel → PDF",
+    tagline: "Converti fogli di calcolo Excel in PDF mantenendo layout, font e immagini. Gratis, senza registrazione e senza filigrana.",
+    intro:
+      "Excel in PDF trasforma i fogli di calcolo Excel in un PDF che appare uguale su ogni dispositivo ed è pronto da inviare via email, stampare o caricare su un portale. Accetta XLS, XLSX, ODS o CSV. Ogni foglio con contenuto entra nel PDF, usando l’impostazione di pagina salvata nel file. La conversione usa LibreOffice sul nostro server: il file viene inviato tramite una connessione crittografata ed eliminato non appena il PDF torna indietro.",
+    seoTitle: "Convertire Excel in PDF – Gratis, senza registrazione",
+    seoDescription:
+      "Convertire Excel in PDF online gratis: mantiene layout, font e immagini. Nessuna registrazione, nessuna filigrana; i file vengono eliminati subito dopo.",
+    keywords: [
+      "convertire excel in pdf",
+      "excel in pdf",
+      "da excel a pdf",
+      "xlsx in pdf",
+      "xls in pdf",
+      "foglio excel in pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il file",
+        description: "Trascina o scegli un file XLS, XLSX, ODS o CSV fino a 50 MB.",
+      },
+      {
+        title: "Converti",
+        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Il PDF viene scaricato automaticamente; puoi scaricarlo di nuovo con il pulsante.",
+      },
+    ],
+    features: [
+      {
+        title: "Layout mantenuto",
+        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+      },
+      {
+        title: "Font comuni inclusi",
+        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la conversione.",
+      },
+      {
+        title: "Gratis",
+        description: "Nessuna registrazione, nessuna filigrana, nessun limite giornaliero.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il PDF sarà identico all’originale?",
+        answer:
+          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+      },
+      {
+        question: "Perché il mio foglio è diviso su più pagine?",
+        answer:
+          "Il PDF segue le impostazioni di stampa salvate nel foglio di calcolo. Per far stare un foglio in una sola pagina, imposta la scala di stampa su “Adatta alla pagina” in Excel prima di convertire.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "powerpoint-to-pdf": {
+    name: "PowerPoint in PDF",
+    shortName: "PPT → PDF",
+    tagline: "Converti presentazioni PowerPoint in PDF mantenendo layout, font e immagini. Gratis, senza registrazione e senza filigrana.",
+    intro:
+      "PowerPoint in PDF trasforma le presentazioni PowerPoint in un PDF che appare uguale su ogni dispositivo ed è pronto da inviare via email, stampare o caricare su un portale. Accetta PPT, PPTX o ODP. Ogni diapositiva diventa una pagina del PDF. La conversione usa LibreOffice sul nostro server: il file viene inviato tramite una connessione crittografata ed eliminato non appena il PDF torna indietro.",
+    seoTitle: "Convertire PowerPoint in PDF – Gratis, senza registrazione",
+    seoDescription:
+      "Convertire PowerPoint in PDF online gratis: mantiene layout, font e immagini. Nessuna registrazione, nessuna filigrana; i file vengono eliminati subito dopo.",
+    keywords: [
+      "convertire powerpoint in pdf",
+      "powerpoint in pdf",
+      "ppt in pdf",
+      "pptx in pdf",
+      "diapositive in pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il file",
+        description: "Trascina o scegli un file PPT, PPTX o ODP fino a 50 MB.",
+      },
+      {
+        title: "Converti",
+        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Il PDF viene scaricato automaticamente; puoi scaricarlo di nuovo con il pulsante.",
+      },
+    ],
+    features: [
+      {
+        title: "Layout mantenuto",
+        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+      },
+      {
+        title: "Font comuni inclusi",
+        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la conversione.",
+      },
+      {
+        title: "Gratis",
+        description: "Nessuna registrazione, nessuna filigrana, nessun limite giornaliero.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il PDF sarà identico all’originale?",
+        answer:
+          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+      },
+      {
+        question: "Animazioni e video vengono mantenuti?",
+        answer:
+          "No. Un PDF mostra ogni diapositiva come una pagina statica, quindi animazioni, transizioni e video incorporati vengono esclusi.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "pdf-to-word": {
+    name: "PDF in Word",
+    shortName: "PDF → Word",
+    tagline: "Trasforma un PDF in un documento Word (DOCX) modificabile. Gratis, senza registrazione.",
+    intro:
+      "PDF in Word converte un PDF in un file DOCX che puoi modificare in Word, Google Docs o LibreOffice. Funziona al meglio con i PDF creati da un documento di testo, come report esportati, lettere e moduli; testo, paragrafi e immagini diventano contenuto modificabile. I layout complessi, come riviste, colonne e moduli, possono richiedere qualche ritocco dopo. I PDF scansionati sono solo immagini di testo, quindi passali prima in OCR PDF. La conversione usa LibreOffice sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "PDF in Word – DOCX modificabile, gratis",
+    seoDescription:
+      "PDF in Word online gratis: converti un PDF in un file DOCX modificabile. Ideale per i PDF di testo; i file vengono eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "pdf in word",
+      "convertire pdf in word",
+      "da pdf a word",
+      "pdf in docx",
+      "pdf in word modificabile",
+      "pdf in doc gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF",
+        description: "Trascina o scegli un PDF fino a 50 MB.",
+      },
+      {
+        title: "Converti",
+        description: "Fai clic su Converti in Word. Il PDF viene convertito sul nostro server.",
+      },
+      {
+        title: "Modifica il documento",
+        description: "Apri il DOCX scaricato in Word, Google Docs o LibreOffice.",
+      },
+    ],
+    features: [
+      {
+        title: "Testo modificabile",
+        description: "Paragrafi e titoli diventano testo normale e modificabile.",
+      },
+      {
+        title: "Immagini mantenute",
+        description: "Le immagini del PDF vengono inserite nel documento.",
+      },
+      {
+        title: "Funziona con Word e Docs",
+        description: "Il DOCX si apre in Microsoft Word, Google Docs e LibreOffice.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la conversione.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Perché il documento è diverso dal PDF?",
+        answer:
+          "I PDF memorizzano posizioni esatte, mentre nei documenti Word il testo scorre. I documenti semplici si convertono bene; colonne, caselle di testo e moduli complessi possono richiedere aggiustamenti dopo la conversione.",
+      },
+      {
+        question: "Può convertire un PDF scansionato?",
+        answer:
+          "Un PDF scansionato contiene immagini di testo, non testo. Passalo prima in OCR PDF, poi converti in Word il PDF ricercabile.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "compress-pdf": {
+    name: "Comprimi PDF",
+    shortName: "Comprimi PDF",
+    tagline: "Rendi un PDF più leggero per email e moduli di caricamento, con tre livelli di qualità. Gratis, senza registrazione.",
+    intro:
+      "Comprimi PDF riduce il peso di un PDF perché rientri negli allegati email e nei limiti di dimensione dei portali di caricamento. Funziona al meglio con i PDF che contengono foto e scansioni, le cui immagini vengono ricompresse e ridimensionate; scegli Minimo per schermi ed email, Bilanciato per la maggior parte degli usi o Alta qualità per mantenere i dettagli in stampa. Il risultato mostra di quanto si è ridotto il file e, se un PDF è già compatto, riottieni l’originale invece di un file più grande. La compressione usa Ghostscript sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "Comprimere PDF – Riduci il peso del PDF, gratis",
+    seoDescription:
+      "Comprimere PDF online gratis: riduci il peso del file con tre livelli di qualità e vedi il risparmio. File eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "comprimere pdf",
+      "ridurre dimensioni pdf",
+      "comprimi pdf",
+      "compressore pdf",
+      "rimpicciolire pdf",
+      "comprimere pdf a 1 mb",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF",
+        description: "Trascina o scegli un PDF fino a 50 MB.",
+      },
+      {
+        title: "Scegli un livello",
+        description: "Minimo, Bilanciato o Alta qualità.",
+      },
+      {
+        title: "Comprimi e scarica",
+        description: "Vedi il peso prima e dopo e salva il PDF più leggero.",
+      },
+    ],
+    features: [
+      {
+        title: "Tre livelli di qualità",
+        description: "Da file adatti all’email a documenti con qualità di stampa.",
+      },
+      {
+        title: "Mai più grande",
+        description: "Se un PDF non può essere ridotto, riottieni l’originale.",
+      },
+      {
+        title: "Compressione vera",
+        description: "Le immagini vengono ricompresse e i contenuti duplicati uniti, cosa che gli strumenti nel browser non possono fare.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la compressione.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Di quanto si ridurrà il mio PDF?",
+        answer:
+          "Dipende dal contenuto. Le scansioni e i PDF pieni di foto spesso si riducono del 50–90%. I PDF di solo testo sono già leggeri e potrebbero cambiare appena.",
+      },
+      {
+        question: "Il testo resterà nitido?",
+        answer: "Sì. Il testo e la grafica vettoriale restano come sono; vengono ricompresse solo le immagini.",
+      },
+      {
+        question: "Il mio PDF deve stare sotto una certa dimensione. Cosa faccio?",
+        answer:
+          "Prova prima Minimo. Se è ancora troppo grande, dividi il PDF in parti con Dividi PDF e comprimi ogni parte.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "protect-pdf": {
+    name: "Proteggi PDF",
+    shortName: "Proteggi PDF",
+    tagline: "Aggiungi una password a un PDF con crittografia AES-256. Gratis, senza registrazione.",
+    intro:
+      "Proteggi PDF blocca un PDF con una password, così non può essere aperto senza. Usalo prima di inviare via email estratti conto, buste paga, documenti d’identità o contratti. Il PDF viene crittografato con AES-256, la crittografia più robusta supportata dai lettori PDF, e si apre normalmente in Acrobat, nei browser e nelle app per telefono una volta inserita la password. Scegli una password di almeno sei caratteri e conservala con cura: nessuno può recuperarla. La crittografia avviene con qpdf sul nostro server; il file e la password vengono eliminati subito dopo.",
+    seoTitle: "Proteggere PDF con password – AES-256, gratis",
+    seoDescription:
+      "Proteggere PDF con password online gratis: aggiungi la crittografia AES-256 al file. Il file e la password vengono eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "proteggere pdf con password",
+      "mettere password a pdf",
+      "crittografare pdf",
+      "bloccare pdf",
+      "proteggi pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF",
+        description: "Trascina o scegli un PDF fino a 50 MB.",
+      },
+      {
+        title: "Imposta una password",
+        description: "Digitala due volte; usa almeno sei caratteri.",
+      },
+      {
+        title: "Proteggi e scarica",
+        description: "Salva il PDF bloccato e conserva la password in un posto sicuro.",
+      },
+    ],
+    features: [
+      {
+        title: "Crittografia AES-256",
+        description: "La crittografia PDF più robusta, supportata da tutti i lettori moderni.",
+      },
+      {
+        title: "Si apre ovunque",
+        description: "Acrobat, browser e app per telefono chiedono la password.",
+      },
+      {
+        title: "Password mai conservata",
+        description: "Viene usata una volta per crittografare il file, poi scartata.",
+      },
+      {
+        title: "Gratis",
+        description: "Nessuna registrazione e nessuna filigrana.",
+      },
+    ],
+    faqs: [
+      {
+        question: "E se dimentico la password?",
+        answer:
+          "Non può essere recuperata, né da noi né da nessun altro. Tieni una copia dell’originale non protetto o conserva la password in un posto sicuro.",
+      },
+      {
+        question: "Posso rimuovere la password in seguito?",
+        answer: "Sì. Usa Sblocca PDF con la password corretta.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "unlock-pdf": {
+    name: "Sblocca PDF",
+    shortName: "Sblocca PDF",
+    tagline: "Rimuovi la password da un PDF che riesci ad aprire, così non te la chiede più. Gratis, senza registrazione.",
+    intro:
+      "Sblocca PDF rimuove la password da un PDF quando la conosci, così il file si apre senza chiederla ogni volta e può essere modificato, unito o firmato con gli altri strumenti di questo sito. Rimuove anche le restrizioni di stampa e copia presenti in alcuni PDF. Devi inserire la password corretta: questo strumento non indovina né forza le password. Lo sblocco avviene con qpdf sul nostro server; il file e la password vengono eliminati subito dopo.",
+    seoTitle: "Sbloccare PDF – Rimuovi la password dal PDF, gratis",
+    seoDescription:
+      "Sbloccare PDF online gratis: rimuovi la password da un PDF che riesci ad aprire. Il file e la password vengono eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "sbloccare pdf",
+      "rimuovere password pdf",
+      "togliere password pdf",
+      "decrittografare pdf",
+      "sbloccare pdf protetto",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF",
+        description: "Trascina o scegli il PDF protetto.",
+      },
+      {
+        title: "Inserisci la password",
+        description: "Digita la password che apre il PDF.",
+      },
+      {
+        title: "Sblocca e scarica",
+        description: "Salva una copia senza password.",
+      },
+    ],
+    features: [
+      {
+        title: "Niente più richieste di password",
+        description: "La copia sbloccata si apre direttamente.",
+      },
+      {
+        title: "Modificalo qui",
+        description: "Unisci, firma o organizza il PDF sbloccato con gli altri strumenti.",
+      },
+      {
+        title: "Restrizioni rimosse",
+        description: "Anche i limiti di stampa e copia vengono tolti.",
+      },
+      {
+        title: "Password mai conservata",
+        description: "Viene usata una volta, poi scartata insieme al file.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Può sbloccare un PDF se non conosco la password?",
+        answer: "No. Serve la password che apre il file. Questo strumento non indovina né forza le password.",
+      },
+      {
+        question: "Perché dice che la password è sbagliata?",
+        answer:
+          "Controlla maiuscole e spazi. Gli estratti conto usano spesso una combinazione, come parte del nome e la data di nascita; di solito chi li invia spiega il formato.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "ocr-pdf": {
+    name: "OCR PDF",
+    shortName: "OCR PDF",
+    tagline: "Rendi un PDF scansionato ricercabile e selezionabile riconoscendone il testo. Gratis, senza registrazione.",
+    intro:
+      "OCR PDF riconosce il testo in un PDF scansionato e lo aggiunge come livello invisibile, così puoi cercare, selezionare e copiare il testo mentre le pagine restano identiche. È utile per contratti scansionati, ricevute, libri e documenti vecchi. Scegli la lingua del documento per ottenere i risultati migliori; le pagine che contengono già testo restano come sono. Il riconoscimento usa Tesseract e OCRmyPDF sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "OCR PDF – Rendi ricercabili i PDF scansionati, gratis",
+    seoDescription:
+      "OCR PDF online gratis: rendi i PDF scansionati ricercabili e il loro testo copiabile. 10 lingue; i file vengono eliminati subito dopo.",
+    keywords: [
+      "ocr pdf",
+      "pdf ricercabile",
+      "pdf scansionato in testo",
+      "ocr pdf online",
+      "rendere pdf ricercabile",
+      "riconoscimento testo pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF scansionato",
+        description: "Trascina o scegli un PDF fino a 50 MB.",
+      },
+      {
+        title: "Scegli la lingua",
+        description: "Scegli la lingua in cui è scritto il documento.",
+      },
+      {
+        title: "Rendilo ricercabile",
+        description: "Scarica il PDF con testo selezionabile e ricercabile.",
+      },
+    ],
+    features: [
+      {
+        title: "Aspetto invariato",
+        description: "Il livello di testo è invisibile; la scansione non cambia.",
+      },
+      {
+        title: "Dieci lingue",
+        description: "Inglese, tedesco, spagnolo, francese, portoghese, italiano, giapponese, coreano, indonesiano e turco.",
+      },
+      {
+        title: "Salta le pagine con testo",
+        description: "Le pagine che hanno già testo non vengono rielaborate.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo il riconoscimento.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quanto è preciso?",
+        answer:
+          "Scansioni pulite e dritte a 300 dpi danno ottimi risultati. Scrittura a mano, foto a bassa risoluzione e font insoliti vengono riconosciuti in modo meno affidabile.",
+      },
+      {
+        question: "Posso convertire il risultato in Word?",
+        answer:
+          "Sì. Una volta che il PDF è ricercabile, PDF in Word può trasformarne il testo in un documento modificabile.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "pdf-to-pdfa": {
+    name: "PDF in PDF/A",
+    shortName: "PDF → PDF/A",
+    tagline: "Converti un PDF in PDF/A per l’archiviazione a lungo termine e i portali ufficiali. Gratis, senza registrazione.",
+    intro:
+      "PDF in PDF/A converte un PDF in PDF/A-2b, la versione del PDF per l’archiviazione che incorpora font e informazioni sul colore, così il documento avrà lo stesso aspetto anche tra decenni. Alcuni tribunali, portali fiscali, università e siti della pubblica amministrazione accettano solo caricamenti in PDF/A. La conversione usa OCRmyPDF e Ghostscript sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "Convertire PDF in PDF/A – PDF/A-2b, gratis",
+    seoDescription:
+      "Convertire PDF in PDF/A-2b online gratis, per l’archiviazione e i portali ufficiali. I file vengono eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "pdf in pdf/a",
+      "convertire pdf in pdf/a",
+      "convertitore pdf/a",
+      "pdf/a-2b",
+      "archiviare pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF",
+        description: "Trascina o scegli un PDF fino a 50 MB.",
+      },
+      {
+        title: "Converti",
+        description: "Fai clic su Converti in PDF/A.",
+      },
+      {
+        title: "Scarica",
+        description: "Carica il file PDF/A dove è richiesto.",
+      },
+    ],
+    features: [
+      {
+        title: "PDF/A-2b",
+        description: "Lo standard di archiviazione ampiamente accettato.",
+      },
+      {
+        title: "Font incorporati",
+        description: "Il testo appare uguale su qualsiasi computer.",
+      },
+      {
+        title: "Aspetto invariato",
+        description: "Le pagine mantengono contenuto e layout.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la conversione.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quale versione di PDF/A ottengo?",
+        answer:
+          "PDF/A-2b, accettato dalla maggior parte dei portali. Se un portale richiede specificamente PDF/A-1 o PDF/A-3, controlla le sue istruzioni.",
+      },
+      {
+        question: "Perché il file PDF/A è più grande?",
+        answer:
+          "Il PDF/A deve incorporare tutti i font e i profili colore perché il documento resti leggibile da solo, e questo aumenta il peso.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
+  "repair-pdf": {
+    name: "Ripara PDF",
+    shortName: "Ripara PDF",
+    tagline: "Ripara un PDF danneggiato che non si apre o mostra errori. Gratis, senza registrazione.",
+    intro:
+      "Ripara PDF ricostruisce la struttura interna di un PDF danneggiato, quello che non si apre, mostra un errore o si apre con pagine mancanti dopo un download interrotto o un’esportazione difettosa. Riscrive il file perché i lettori PDF possano leggerlo di nuovo e recupera ciò che è recuperabile. I file molto corrotti non sempre si possono salvare. La riparazione avviene con qpdf sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "Riparare PDF – Sistema i file PDF danneggiati, gratis",
+    seoDescription:
+      "Riparare PDF online gratis: sistema i file PDF danneggiati o corrotti che non si aprono. I file vengono eliminati subito dopo. Senza registrazione.",
+    keywords: [
+      "riparare pdf",
+      "riparare pdf danneggiato",
+      "pdf corrotto",
+      "riparare pdf online",
+      "pdf non si apre",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il PDF danneggiato",
+        description: "Trascina o scegli il PDF che non si apre correttamente.",
+      },
+      {
+        title: "Ripara",
+        description: "Fai clic su Ripara PDF per ricostruirne la struttura.",
+      },
+      {
+        title: "Scarica",
+        description: "Apri la copia riparata nel tuo lettore PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Ricostruisce la struttura",
+        description: "Corregge tabelle dei riferimenti incrociati e strutture del file danneggiate.",
+      },
+      {
+        title: "Conserva il possibile",
+        description: "Le pagine e i contenuti leggibili vengono mantenuti.",
+      },
+      {
+        title: "Veloce",
+        description: "La maggior parte dei file viene riparata in pochi secondi.",
+      },
+      {
+        title: "File eliminati subito",
+        description: "Nulla viene conservato dopo la riparazione.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ogni PDF può essere riparato?",
+        answer:
+          "No. Se parti del file mancano o sono state sovrascritte, non possono essere recuperate. Se puoi, prova a scaricare o esportare di nuovo l’originale.",
+      },
+      {
+        question: "Perché dice che il file non è un PDF?",
+        answer:
+          "Il file non inizia affatto come un PDF, quindi potrebbe essere un altro tipo di file o essere danneggiato in modo irreparabile.",
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer:
+          "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser.",
+      },
+      {
+        question: "C’è un limite di dimensione?",
+        answer: "I file possono arrivare a 50 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti.",
+      },
+    ],
+  },
 };

@@ -28,3 +28,6 @@ Thumbs.db
 
 # accessibility audit output
 .a11y-report/
+
+# document server secrets
+server/.env

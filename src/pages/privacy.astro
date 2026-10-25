@@ -9,13 +9,14 @@ const name = SITE_CONFIG.name;
 
 <InfoLayout
   title="Privacy Policy"
-  description={`How ${name} handles your images and data: tools run in your browser, images are never uploaded, and no accounts or tracking are needed.`}
+  description={`How ${name} handles your files and data: image tools run in your browser, images are never uploaded, and the few document tools that use our server delete files right after.`}
   path="privacy"
   updated="Last updated 25 October 2026"
 >
   <p>
     <strong>The short version:</strong> {name} works inside your browser. The images you open are processed on your own device and
-    are never uploaded to us. There are no accounts{adsEnabled ? '' : ', no analytics and no tracking cookies'}.
+    are never uploaded to us. A few document tools need our server: they are marked, and your file is deleted as soon as the result
+    is sent back. There are no accounts{adsEnabled ? '' : ', no analytics and no tracking cookies'}.
   </p>
 
   <h2>Who runs this site</h2>
@@ -35,6 +36,19 @@ const name = SITE_CONFIG.name;
     This also applies to the AI tools: the background remover downloads an AI model to your browser and runs it on your device. The
     model comes to you; your photo does not go anywhere.
   </p>
+
+  <h2>Document tools that use our server</h2>
+  <p>
+    Some jobs need software that can't run in a browser. These tools are marked “Uses our server” and show a notice before you
+    choose a file: Word to PDF, Excel to PDF, PowerPoint to PDF, PDF to Word, Compress PDF, Protect PDF, Unlock PDF, OCR PDF, PDF to
+    PDF/A and Repair PDF.
+  </p>
+  <ul>
+    <li><strong>What is sent:</strong> the file you choose and the options for that job, such as the password for Protect PDF or Unlock PDF.</li>
+    <li><strong>Where:</strong> through Cloudflare to a server we run on Oracle Cloud, over an encrypted (HTTPS) connection.</li>
+    <li><strong>How long:</strong> the file is processed in temporary memory and deleted as soon as the result is sent back, or when the job fails. Results are not kept either.</li>
+    <li><strong>What is not kept:</strong> file names, file contents and passwords are never stored or logged, and no one looks at them.</li>
+  </ul>
 
   <h2>Information your browser sends when you visit</h2>
   <p>

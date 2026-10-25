@@ -28,6 +28,8 @@ const INPUT = {
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
   'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
   'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],
+  'word-to-pdf': [S('sample.docx')], 'excel-to-pdf': [S('sample.xlsx')], 'powerpoint-to-pdf': [S('doc.pdf')], 'pdf-to-word': [S('doc.pdf')],
+  'compress-pdf': [S('doc.pdf')], 'protect-pdf': [S('doc.pdf')], 'unlock-pdf': [S('doc.pdf')], 'ocr-pdf': [S('scan.pdf')], 'pdf-to-pdfa': [S('doc.pdf')], 'repair-pdf': [S('doc.pdf')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

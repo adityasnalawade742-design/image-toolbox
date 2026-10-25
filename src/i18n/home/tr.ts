@@ -5,7 +5,7 @@ export const trHome: LocalizedHomeData = {
     badge: '',
     title: 'İhtiyacınız olan tüm resim araçları tek bir yerde',
     subtitle:
-      'Fotoğrafları ücretsiz olarak kırpın, boyutlandırın, sıkıştırın, dönüştürün, arka planlarını kaldırın ve temizleyin. Kayıt yok, filigran yok ve dosyalarınız cihazınızda kalır.',
+      'Fotoğrafları ücretsiz olarak kırpın, boyutlandırın, sıkıştırın, dönüştürün, arka planlarını kaldırın ve temizleyin. Kayıt yok, filigran yok ve resimleriniz cihazınızda kalır.',
     dropzoneTitle: 'Başlamak için bir resim bırakın',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG veya iPhone HEIC, en fazla 50 MB',
   },
@@ -23,9 +23,9 @@ export const trHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Hiçbir şey yüklenmez',
+      title: 'Resimler asla yüklenmez',
       description:
-        'Resimler kendi cihazınızda, tarayıcınız tarafından işlenir. Bu yüzden yükleme beklemesi olmaz ve sunucuda bir kopya kalmaz.',
+        'Resimler kendi cihazınızda, tarayıcınız tarafından işlenir. Bu yüzden yükleme beklemesi olmaz ve sunucuda bir kopya kalmaz. Word’den PDF’e Dönüştürme gibi birkaç belge aracı sunucumuza ihtiyaç duyar: bu araçlar işaretlidir ve dosyalar işlemden hemen sonra silinir.',
       icon: 'ShieldCheck',
     },
     {
@@ -46,7 +46,7 @@ export const trHome: LocalizedHomeData = {
     {
       question: 'Resimlerim bir yere yükleniyor mu?',
       answer:
-        'Hayır. Tüm araçlar tarayıcınızın içinde çalışır; resimleriniz kendi cihazınızda işlenir ve hiçbir sunucuya gönderilmez. Arka plan kaldırma aracı yapay zekâ modelini bir kez indirir, ardından o da cihazınızda çalışır.',
+        'Hayır. Tüm resim araçları tarayıcınızın içinde çalışır; resimleriniz kendi cihazınızda işlenir ve hiçbir sunucuya gönderilmez. Arka plan kaldırma aracı yapay zekâ modelini bir kez indirir, ardından o da cihazınızda çalışır. Birkaç belge aracı (Word, Excel ve PowerPoint’ten PDF’e Dönüştürme, PDF’ten Word’e Dönüştürme, PDF Sıkıştırma, PDF Koruma, PDF Kilidi Açma, PDF OCR, PDF’ten PDF/A’ya Dönüştürme ve PDF Onarma) sunucumuza ihtiyaç duyar: bu araçlar “Sunucumuzu kullanır” etiketiyle işaretlidir ve sonuç geri gönderilir gönderilmez dosyanız silinir.',
     },
     {
       question: 'Gerçekten ücretsiz mi?',

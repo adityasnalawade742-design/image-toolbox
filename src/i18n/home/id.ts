@@ -5,7 +5,7 @@ export const idHome: LocalizedHomeData = {
     badge: '',
     title: 'Semua alat gambar yang Anda butuhkan, di satu tempat',
     subtitle:
-      'Potong, ubah ukuran, kompres, konversi, hapus background, dan rapikan foto secara gratis. Tanpa daftar, tanpa watermark, dan file Anda tetap di perangkat Anda.',
+      'Potong, ubah ukuran, kompres, konversi, hapus background, dan rapikan foto secara gratis. Tanpa daftar, tanpa watermark, dan gambar Anda tetap di perangkat Anda.',
     dropzoneTitle: 'Letakkan gambar untuk memulai',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG, atau HEIC dari iPhone, hingga 50 MB',
   },
@@ -23,9 +23,9 @@ export const idHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Tidak ada yang diunggah',
+      title: 'Gambar tidak pernah diunggah',
       description:
-        'Gambar diproses oleh browser di perangkat Anda sendiri, jadi tidak ada waktu tunggu unggahan dan tidak ada salinan di server.',
+        'Gambar diproses oleh browser di perangkat Anda sendiri, jadi tidak ada waktu tunggu unggahan dan tidak ada salinan di server. Beberapa alat dokumen, seperti Word ke PDF, memerlukan server kami: alat-alat itu diberi tanda, dan file dihapus segera setelahnya.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const idHome: LocalizedHomeData = {
     {
       question: 'Apakah gambar saya diunggah ke suatu tempat?',
       answer:
-        'Tidak. Setiap alat berjalan di dalam browser Anda, jadi gambar diproses di perangkat Anda sendiri dan tidak pernah dikirim ke server. Alat penghapus background mengunduh model AI-nya sekali, lalu juga berjalan di perangkat.',
+        'Tidak. Setiap alat gambar berjalan di dalam browser Anda, jadi gambar diproses di perangkat Anda sendiri dan tidak pernah dikirim ke server. Alat penghapus background mengunduh model AI-nya sekali, lalu juga berjalan di perangkat. Beberapa alat dokumen (Word ke PDF, Excel ke PDF, PowerPoint ke PDF, PDF ke Word, Kompres PDF, Lindungi PDF, Buka Kunci PDF, OCR PDF, PDF ke PDF/A, dan Perbaiki PDF) memerlukan server kami: alat-alat itu diberi tanda “Memakai server kami”, dan file Anda dihapus begitu hasilnya dikirim kembali.',
     },
     {
       question: 'Apakah benar-benar gratis?',

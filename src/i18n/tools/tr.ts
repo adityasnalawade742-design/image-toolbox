@@ -3923,4 +3923,710 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "word-to-pdf": {
+    name: "Word'den PDF'e Dönüştürme",
+    shortName: "Word → PDF",
+    tagline: "Word belgelerini düzen, yazı tipleri ve resimler korunarak PDF'e dönüştürün. Ücretsiz; kayıt ve filigran yok.",
+    intro:
+      "Word'den PDF'e Dönüştürme, Word belgelerini her cihazda aynı görünen ve e-postayla göndermeye, yazdırmaya veya bir portala yüklemeye hazır bir PDF'e çevirir. DOC, DOCX, ODT, RTF veya TXT kabul eder. Üst bilgiler, alt bilgiler, sayfa numaraları, tablolar ve resimler korunur. Dönüştürme sunucumuzdaki LibreOffice ile yapılır: dosyanız şifreli bir bağlantı üzerinden gönderilir ve PDF geri gelir gelmez silinir.",
+    seoTitle: "Word PDF Çevirme – Ücretsiz, Kayıt Gerekmez",
+    seoDescription:
+      "Word PDF çevirme online ve ücretsiz: düzen, yazı tipleri ve resimler korunur. Kayıt ve filigran yok; dosyalar işlemden hemen sonra silinir.",
+    keywords: [
+      "word pdf çevirme",
+      "word'ü pdf'e dönüştürme",
+      "docx pdf çevirme",
+      "doc pdf çevirme",
+      "ücretsiz word pdf dönüştürücü",
+      "word'ü pdf olarak kaydetme",
+    ],
+    howToSteps: [
+      {
+        title: "Dosyanızı seçin",
+        description: "DOC, DOCX, ODT, RTF veya TXT biçiminde, en fazla 50 MB boyutunda bir dosya bırakın veya seçin.",
+      },
+      {
+        title: "Dönüştürün",
+        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "PDF otomatik olarak iner; düğmeyi kullanarak yeniden indirebilirsiniz.",
+      },
+    ],
+    features: [
+      {
+        title: "Düzen korunur",
+        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+      },
+      {
+        title: "Yaygın yazı tipleri dahil",
+        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Dönüştürmeden sonra hiçbir şey saklanmaz.",
+      },
+      {
+        title: "Ücretsiz",
+        description: "Kayıt yok, filigran yok, günlük sınır yok.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
+        answer:
+          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+      },
+      {
+        question: "İzlenen değişiklikler ve yorumlar PDF'te görünür mü?",
+        answer:
+          "Belge, açıldığında göründüğü haliyle dönüştürülür; bu yüzden görünmelerini istemiyorsanız izlenen değişiklikleri önce kabul edin veya reddedin.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "excel-to-pdf": {
+    name: "Excel'den PDF'e Dönüştürme",
+    shortName: "Excel → PDF",
+    tagline: "Excel tablolarını düzen, yazı tipleri ve resimler korunarak PDF'e dönüştürün. Ücretsiz; kayıt ve filigran yok.",
+    intro:
+      "Excel'den PDF'e Dönüştürme, Excel tablolarını her cihazda aynı görünen ve e-postayla göndermeye, yazdırmaya veya bir portala yüklemeye hazır bir PDF'e çevirir. XLS, XLSX, ODS veya CSV kabul eder. İçerik bulunan her çalışma sayfası, dosyada kayıtlı sayfa yapısı kullanılarak PDF'e eklenir. Dönüştürme sunucumuzdaki LibreOffice ile yapılır: dosyanız şifreli bir bağlantı üzerinden gönderilir ve PDF geri gelir gelmez silinir.",
+    seoTitle: "Excel PDF Çevirme – Ücretsiz, Kayıt Gerekmez",
+    seoDescription:
+      "Excel PDF çevirme online ve ücretsiz: düzen, yazı tipleri ve resimler korunur. Kayıt ve filigran yok; dosyalar işlemden hemen sonra silinir.",
+    keywords: [
+      "excel pdf çevirme",
+      "excel'i pdf'e dönüştürme",
+      "xlsx pdf çevirme",
+      "xls pdf çevirme",
+      "excel tablosunu pdf yapma",
+      "csv pdf çevirme",
+    ],
+    howToSteps: [
+      {
+        title: "Dosyanızı seçin",
+        description: "XLS, XLSX, ODS veya CSV biçiminde, en fazla 50 MB boyutunda bir dosya bırakın veya seçin.",
+      },
+      {
+        title: "Dönüştürün",
+        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "PDF otomatik olarak iner; düğmeyi kullanarak yeniden indirebilirsiniz.",
+      },
+    ],
+    features: [
+      {
+        title: "Düzen korunur",
+        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+      },
+      {
+        title: "Yaygın yazı tipleri dahil",
+        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Dönüştürmeden sonra hiçbir şey saklanmaz.",
+      },
+      {
+        title: "Ücretsiz",
+        description: "Kayıt yok, filigran yok, günlük sınır yok.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
+        answer:
+          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+      },
+      {
+        question: "Çalışma sayfam neden birkaç sayfaya bölünüyor?",
+        answer:
+          "PDF, tabloda kayıtlı yazdırma ayarlarını izler. Bir çalışma sayfasını tek sayfaya sığdırmak için dönüştürmeden önce Excel'de yazdırma ölçeklendirmesini “Sayfaya sığdır” olarak ayarlayın.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "powerpoint-to-pdf": {
+    name: "PowerPoint'ten PDF'e Dönüştürme",
+    shortName: "PPT → PDF",
+    tagline: "PowerPoint sunularını düzen, yazı tipleri ve resimler korunarak PDF'e dönüştürün. Ücretsiz; kayıt ve filigran yok.",
+    intro:
+      "PowerPoint'ten PDF'e Dönüştürme, PowerPoint sunularını her cihazda aynı görünen ve e-postayla göndermeye, yazdırmaya veya bir portala yüklemeye hazır bir PDF'e çevirir. PPT, PPTX veya ODP kabul eder. Her slayt bir PDF sayfası olur. Dönüştürme sunucumuzdaki LibreOffice ile yapılır: dosyanız şifreli bir bağlantı üzerinden gönderilir ve PDF geri gelir gelmez silinir.",
+    seoTitle: "PowerPoint PDF Çevirme – Ücretsiz, Kayıt Gerekmez",
+    seoDescription:
+      "PowerPoint PDF çevirme online ve ücretsiz: düzen, yazı tipleri ve resimler korunur. Kayıt ve filigran yok; dosyalar işlemden hemen sonra silinir.",
+    keywords: [
+      "powerpoint pdf çevirme",
+      "ppt pdf çevirme",
+      "pptx pdf çevirme",
+      "powerpoint'i pdf'e dönüştürme",
+      "slaytları pdf yapma",
+    ],
+    howToSteps: [
+      {
+        title: "Dosyanızı seçin",
+        description: "PPT, PPTX veya ODP biçiminde, en fazla 50 MB boyutunda bir dosya bırakın veya seçin.",
+      },
+      {
+        title: "Dönüştürün",
+        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "PDF otomatik olarak iner; düğmeyi kullanarak yeniden indirebilirsiniz.",
+      },
+    ],
+    features: [
+      {
+        title: "Düzen korunur",
+        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+      },
+      {
+        title: "Yaygın yazı tipleri dahil",
+        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Dönüştürmeden sonra hiçbir şey saklanmaz.",
+      },
+      {
+        title: "Ücretsiz",
+        description: "Kayıt yok, filigran yok, günlük sınır yok.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
+        answer:
+          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+      },
+      {
+        question: "Animasyonlar ve videolar korunur mu?",
+        answer:
+          "Hayır. PDF her slaydı sabit bir sayfa olarak gösterir; bu yüzden animasyonlar, geçişler ve gömülü videolar dahil edilmez.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "pdf-to-word": {
+    name: "PDF'ten Word'e Dönüştürme",
+    shortName: "PDF → Word",
+    tagline: "Bir PDF'i düzenlenebilir bir Word belgesine (DOCX) dönüştürün. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF'ten Word'e Dönüştürme, bir PDF'i Word, Google Docs veya LibreOffice'te düzenleyebileceğiniz bir DOCX dosyasına çevirir. En iyi sonucu, dışa aktarılmış raporlar, mektuplar ve formlar gibi bir metin belgesinden oluşturulmuş PDF'lerde verir; metin, paragraflar ve resimler düzenlenebilir içerik olarak aktarılır. Dergiler, sütunlar ve formlar gibi karmaşık düzenler sonradan biraz toparlama gerektirebilir. Taranmış PDF'ler yalnızca metnin resimlerinden oluşur; bu yüzden onları önce PDF OCR aracından geçirin. Dönüştürme sunucumuzdaki LibreOffice ile yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF Word Çevirme – Düzenlenebilir DOCX, Ücretsiz",
+    seoDescription:
+      "PDF Word çevirme online ve ücretsiz: PDF'i düzenlenebilir bir Word DOCX dosyasına dönüştürün. En iyi sonuç metin PDF'lerinde; dosyalar hemen silinir. Kayıt yok.",
+    keywords: [
+      "pdf word çevirme",
+      "pdf'i word'e dönüştürme",
+      "pdf docx çevirme",
+      "düzenlenebilir pdf word",
+      "ücretsiz pdf word dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi seçin",
+        description: "En fazla 50 MB boyutunda bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Dönüştürün",
+        description: "Word'e dönüştür düğmesine tıklayın. PDF sunucumuzda dönüştürülür.",
+      },
+      {
+        title: "Belgeyi düzenleyin",
+        description: "İndirilen DOCX dosyasını Word, Google Docs veya LibreOffice'te açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Düzenlenebilir metin",
+        description: "Paragraflar ve başlıklar normal, düzenlenebilir metne dönüşür.",
+      },
+      {
+        title: "Resimler korunur",
+        description: "PDF'teki resimler belgeye yerleştirilir.",
+      },
+      {
+        title: "Word ve Docs ile çalışır",
+        description: "DOCX dosyası Microsoft Word, Google Docs ve LibreOffice'te açılır.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Dönüştürmeden sonra hiçbir şey tutulmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Belgem neden PDF'ten farklı görünüyor?",
+        answer:
+          "PDF'ler öğelerin tam konumlarını saklarken Word belgelerinde metin akar. Basit belgeler iyi dönüşür; sütunlar, metin kutuları ve karmaşık formlar dönüştürmeden sonra düzeltme gerektirebilir.",
+      },
+      {
+        question: "Taranmış bir PDF'i dönüştürebilir mi?",
+        answer:
+          "Taranmış bir PDF metin değil, metnin resimlerini içerir. Önce PDF OCR aracından geçirin, ardından aranabilir PDF'i Word'e dönüştürün.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "compress-pdf": {
+    name: "PDF Sıkıştırma",
+    shortName: "PDF Sıkıştır",
+    tagline: "Bir PDF'i e-posta ve yükleme formları için üç kalite seviyesiyle küçültün. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF Sıkıştırma, bir PDF'in dosya boyutunu e-posta eklerine ve yükleme portallarının boyut sınırlarına sığacak şekilde küçültür. En iyi sonucu fotoğraf ve tarama içeren PDF'lerde verir; bu PDF'lerdeki resimler yeniden sıkıştırılır ve küçültülür. Ekranlar ve e-posta için En küçük, çoğu kullanım için Dengeli, baskıda ayrıntıyı korumak için Yüksek kalite seçeneğini seçin. Sonuç, dosyanın ne kadar küçüldüğünü gösterir; bir PDF zaten kompaktsa daha büyük bir dosya yerine orijinalini geri alırsınız. Sıkıştırma sunucumuzdaki Ghostscript ile yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF Sıkıştırma – PDF Boyutunu Küçültün, Ücretsiz",
+    seoDescription:
+      "PDF sıkıştırma online ve ücretsiz: üç kalite seviyesiyle PDF dosya boyutunu küçültün ve kazancı görün. Dosyalar hemen ardından silinir. Kayıt gerekmez.",
+    keywords: [
+      "pdf sıkıştırma",
+      "pdf boyutu küçültme",
+      "pdf küçültme",
+      "pdf sıkıştırıcı",
+      "online pdf sıkıştırma",
+      "pdf boyutunu düşürme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi seçin",
+        description: "En fazla 50 MB boyutunda bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Bir seviye seçin",
+        description: "En küçük, Dengeli veya Yüksek kalite.",
+      },
+      {
+        title: "Sıkıştırın ve indirin",
+        description: "Önceki ve sonraki boyutu görün, küçülen PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Üç kalite seviyesi",
+        description: "E-postaya uygun dosyalardan baskı kalitesinde belgelere kadar.",
+      },
+      {
+        title: "Asla daha büyük olmaz",
+        description: "Bir PDF küçültülemezse orijinalini geri alırsınız.",
+      },
+      {
+        title: "Gerçek sıkıştırma",
+        description: "Resimler yeniden sıkıştırılır ve yinelenen içerik birleştirilir; tarayıcı araçları bunu yapamaz.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Sıkıştırmadan sonra hiçbir şey tutulmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'im ne kadar küçülür?",
+        answer:
+          "İçeriğe bağlıdır. Taramalar ve fotoğraf ağırlıklı PDF'ler çoğu zaman %50–90 oranında küçülür. Yalnızca metin içeren PDF'ler zaten küçüktür ve neredeyse hiç değişmeyebilir.",
+      },
+      {
+        question: "Metin keskin kalır mı?",
+        answer: "Evet. Metin ve vektör grafikler olduğu gibi korunur; yalnızca resimler yeniden sıkıştırılır.",
+      },
+      {
+        question: "PDF'imin belirli bir boyutun altında olması gerekiyor. Ne yapmalıyım?",
+        answer:
+          "Önce En küçük seçeneğini deneyin. Hâlâ çok büyükse PDF Bölme aracıyla PDF'i parçalara ayırın ve her parçayı ayrı ayrı sıkıştırın.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "protect-pdf": {
+    name: "PDF Koruma",
+    shortName: "PDF Koru",
+    tagline: "Bir PDF'e AES-256 şifrelemeyle parola ekleyin. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF Koruma, bir PDF'i parolayla kilitler; böylece parola olmadan açılamaz. Banka hesap özetlerini, maaş bordrolarını, kimlik belgelerini veya sözleşmeleri e-postayla göndermeden önce kullanın. PDF, PDF okuyucuların desteklediği en güçlü şifreleme olan AES-256 ile şifrelenir ve parola girildikten sonra Acrobat'ta, tarayıcılarda ve telefon uygulamalarında normal şekilde açılır. En az altı karakterli bir parola seçin ve onu güvenli bir yerde saklayın: kimse onu kurtaramaz. Şifreleme sunucumuzda qpdf ile yapılır; dosya ve parola hemen ardından silinir.",
+    seoTitle: "PDF Şifreleme – AES-256 ile Parola Koyun, Ücretsiz",
+    seoDescription:
+      "PDF şifreleme online ve ücretsiz: bir PDF'e AES-256 şifrelemeyle parola ekleyin. Dosya ve parola işlemden hemen sonra silinir. Kayıt gerekmez.",
+    keywords: [
+      "pdf şifreleme",
+      "pdf'e şifre koyma",
+      "pdf parola koruma",
+      "pdf kilitleme",
+      "pdf'e parola ekleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi seçin",
+        description: "En fazla 50 MB boyutunda bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Bir parola belirleyin",
+        description: "İki kez yazın; en az altı karakter kullanın.",
+      },
+      {
+        title: "Koruyun ve indirin",
+        description: "Kilitli PDF'i kaydedin ve parolayı güvenli bir yerde saklayın.",
+      },
+    ],
+    features: [
+      {
+        title: "AES-256 şifreleme",
+        description: "Tüm modern okuyucuların desteklediği en güçlü PDF şifrelemesi.",
+      },
+      {
+        title: "Her yerde açılır",
+        description: "Acrobat, tarayıcılar ve telefon uygulamaları parolayı sorar.",
+      },
+      {
+        title: "Parola asla saklanmaz",
+        description: "Dosyayı şifrelemek için bir kez kullanılır, ardından atılır.",
+      },
+      {
+        title: "Ücretsiz",
+        description: "Kayıt yok, filigran yok.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Parolayı unutursam ne olur?",
+        answer:
+          "Parola kurtarılamaz; ne biz ne de başka biri kurtarabilir. Korumasız orijinalin bir kopyasını tutun veya parolayı güvenli bir yerde saklayın.",
+      },
+      {
+        question: "Parolayı daha sonra kaldırabilir miyim?",
+        answer: "Evet. Doğru parolayla PDF Kilidi Açma aracını kullanın.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "unlock-pdf": {
+    name: "PDF Kilidi Açma",
+    shortName: "PDF Kilidini Aç",
+    tagline: "Açabildiğiniz bir PDF'in parolasını kaldırın; böylece artık parola sormaz. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF Kilidi Açma, parolasını bildiğiniz bir PDF'ten parolayı kaldırır; böylece dosya her seferinde parola sormadan açılır ve bu sitedeki diğer araçlarla düzenlenebilir, birleştirilebilir veya imzalanabilir. Bazı PDF'lerdeki yazdırma ve kopyalama kısıtlamalarını da kaldırır. Doğru parolayı girmeniz gerekir: bu araç parola tahmin etmez veya kırmaz. Kilit açma işlemi sunucumuzda qpdf ile yapılır; dosya ve parola hemen ardından silinir.",
+    seoTitle: "PDF Kilidi Açma – PDF Parolasını Kaldırın, Ücretsiz",
+    seoDescription:
+      "PDF şifre kaldırma online ve ücretsiz: açabildiğiniz bir PDF'in parolasını kaldırın. Dosya ve parola işlemden hemen sonra silinir. Kayıt gerekmez.",
+    keywords: [
+      "pdf şifre kaldırma",
+      "pdf kilidi açma",
+      "pdf parolasını kaldırma",
+      "pdf şifre çözme",
+      "korumalı pdf'i açma",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi seçin",
+        description: "Korumalı PDF'i bırakın veya seçin.",
+      },
+      {
+        title: "Parolayı girin",
+        description: "PDF'i açan parolayı yazın.",
+      },
+      {
+        title: "Kilidi açın ve indirin",
+        description: "Parolasız bir kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Artık parola sorulmaz",
+        description: "Kilidi açılmış kopya doğrudan açılır.",
+      },
+      {
+        title: "Burada düzenleyin",
+        description: "Kilidi açılmış PDF'i diğer araçlarla birleştirin, imzalayın veya düzenleyin.",
+      },
+      {
+        title: "Kısıtlamalar kaldırılır",
+        description: "Yazdırma ve kopyalama sınırları da kalkar.",
+      },
+      {
+        title: "Parola asla saklanmaz",
+        description: "Bir kez kullanılır, ardından dosyayla birlikte atılır.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Parolayı bilmiyorsam PDF'in kilidini açabilir mi?",
+        answer: "Hayır. Dosyayı açan parolaya ihtiyacınız var. Bu araç parola tahmin etmez veya kırmaz.",
+      },
+      {
+        question: "Neden parolanın yanlış olduğunu söylüyor?",
+        answer:
+          "Büyük harfleri ve boşlukları kontrol edin. Banka hesap özetlerinde çoğu zaman adınızın bir kısmı ve doğum tarihiniz gibi bir birleşim kullanılır; gönderen genellikle biçimi açıklar.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "ocr-pdf": {
+    name: "PDF OCR",
+    shortName: "PDF OCR",
+    tagline: "Taranmış bir PDF'teki metni tanıyarak onu aranabilir ve seçilebilir hale getirin. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF OCR, taranmış bir PDF'teki metni tanır ve görünmez bir katman olarak ekler; böylece sayfalar tamamen aynı görünürken metni arayabilir, seçebilir ve kopyalayabilirsiniz. Taranmış sözleşmeler, fişler, kitaplar ve eski belgeler için kullanışlıdır. En iyi sonuç için belgenin dilini seçin; zaten metin içeren sayfalar olduğu gibi bırakılır. Tanıma sunucumuzdaki Tesseract ve OCRmyPDF ile yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF OCR – Taranmış PDF'leri Aranabilir Yapın, Ücretsiz",
+    seoDescription:
+      "PDF OCR online ve ücretsiz: taranmış PDF'leri OCR ile aranabilir hale getirin ve metnini kopyalanabilir yapın. 10 dil; dosyalar hemen ardından silinir.",
+    keywords: [
+      "pdf ocr",
+      "aranabilir pdf",
+      "taranmış pdf'i metne çevirme",
+      "online pdf ocr",
+      "pdf'i aranabilir yapma",
+      "pdf metin tanıma",
+    ],
+    howToSteps: [
+      {
+        title: "Taranmış PDF'inizi seçin",
+        description: "En fazla 50 MB boyutunda bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Dili seçin",
+        description: "Belgenin yazıldığı dili seçin.",
+      },
+      {
+        title: "Aranabilir hale getirin",
+        description: "Seçilebilir ve aranabilir metin içeren PDF'i indirin.",
+      },
+    ],
+    features: [
+      {
+        title: "Aynı görünür",
+        description: "Metin katmanı görünmezdir; tarama değişmez.",
+      },
+      {
+        title: "On dil",
+        description: "İngilizce, Almanca, İspanyolca, Fransızca, Portekizce, İtalyanca, Japonca, Korece, Endonezce ve Türkçe.",
+      },
+      {
+        title: "Metinli sayfaları atlar",
+        description: "Zaten metin içeren sayfalar yeniden işlenmez.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Tanımadan sonra hiçbir şey tutulmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ne kadar doğru?",
+        answer:
+          "300 dpi çözünürlükte temiz ve düz taramalar çok iyi sonuç verir. El yazısı, düşük çözünürlüklü fotoğraflar ve alışılmadık yazı tipleri daha az güvenilir şekilde tanınır.",
+      },
+      {
+        question: "Sonucu Word'e dönüştürebilir miyim?",
+        answer:
+          "Evet. PDF aranabilir hale geldikten sonra PDF'ten Word'e Dönüştürme aracı metnini düzenlenebilir bir belgeye çevirebilir.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "pdf-to-pdfa": {
+    name: "PDF'ten PDF/A'ya Dönüştürme",
+    shortName: "PDF → PDF/A",
+    tagline: "Bir PDF'i uzun süreli arşivleme ve resmi portallar için PDF/A'ya dönüştürün. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF'ten PDF/A'ya Dönüştürme, bir PDF'i PDF/A-2b biçimine dönüştürür. PDF/A-2b, yazı tiplerini ve renk bilgilerini dosyaya gömen arşiv amaçlı PDF sürümüdür; böylece belge onlarca yıl sonra da aynı görünür. Bazı mahkemeler, vergi portalları, üniversiteler ve kamu siteleri yalnızca PDF/A yüklemelerini kabul eder. Dönüştürme sunucumuzdaki OCRmyPDF ve Ghostscript ile yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF'i PDF/A'ya Dönüştürme – PDF/A-2b, Ücretsiz",
+    seoDescription:
+      "PDF'i PDF/A'ya dönüştürme online ve ücretsiz: arşivleme ve resmi portallar için PDF/A-2b oluşturun. Dosyalar hemen ardından silinir. Kayıt gerekmez.",
+    keywords: [
+      "pdf'i pdf/a'ya dönüştürme",
+      "pdf/a çevirme",
+      "pdf/a dönüştürücü",
+      "pdf/a-2b",
+      "pdf arşivleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi seçin",
+        description: "En fazla 50 MB boyutunda bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Dönüştürün",
+        description: "PDF/A'ya dönüştür düğmesine tıklayın.",
+      },
+      {
+        title: "İndirin",
+        description: "PDF/A dosyasını gereken yere yükleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "PDF/A-2b",
+        description: "Yaygın olarak kabul gören arşiv standardı.",
+      },
+      {
+        title: "Yazı tipleri gömülü",
+        description: "Metin her bilgisayarda aynı görünür.",
+      },
+      {
+        title: "Görünüm değişmez",
+        description: "Sayfalar içeriğini ve düzenini korur.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Dönüştürmeden sonra hiçbir şey tutulmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hangi PDF/A sürümünü alırım?",
+        answer:
+          "Çoğu portalın kabul ettiği PDF/A-2b. Bir portal özellikle PDF/A-1 veya PDF/A-3 istiyorsa portalın talimatlarını kontrol edin.",
+      },
+      {
+        question: "PDF/A dosyası neden daha büyük?",
+        answer:
+          "Belgenin tek başına okunabilir kalması için PDF/A tüm yazı tiplerini ve renk profillerini gömmek zorundadır; bu da boyutu artırır.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
+  "repair-pdf": {
+    name: "PDF Onarma",
+    shortName: "PDF Onar",
+    tagline: "Açılmayan veya hata veren hasarlı bir PDF'i onarın. Ücretsiz, kayıt gerekmez.",
+    intro:
+      "PDF Onarma, hasarlı bir PDF'in iç yapısını yeniden oluşturur; yarıda kalan bir indirme veya hatalı bir dışa aktarma sonrasında açılmayan, hata gösteren ya da eksik sayfalarla açılan dosyalar için kullanılır. Dosyayı PDF okuyucuların yeniden okuyabileceği şekilde baştan yazar ve kurtarılabilecek olanı kurtarır. Ağır hasarlı dosyalar her zaman kurtarılamaz. Onarım sunucumuzda qpdf ile yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF Onarma – Bozuk PDF Dosyalarını Düzeltin, Ücretsiz",
+    seoDescription:
+      "PDF onarma online ve ücretsiz: açılmayan hasarlı veya bozuk PDF dosyalarını düzeltin. Dosyalar işlemden hemen sonra silinir. Kayıt gerekmez.",
+    keywords: [
+      "pdf onarma",
+      "bozuk pdf düzeltme",
+      "online pdf onarma",
+      "hasarlı pdf kurtarma",
+      "pdf açılmıyor",
+    ],
+    howToSteps: [
+      {
+        title: "Hasarlı PDF'i seçin",
+        description: "Düzgün açılmayan PDF'i bırakın veya seçin.",
+      },
+      {
+        title: "Onarın",
+        description: "Yapısını yeniden oluşturmak için PDF'i onar düğmesine tıklayın.",
+      },
+      {
+        title: "İndirin",
+        description: "Onarılmış kopyayı PDF okuyucunuzda açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Yapıyı yeniden oluşturur",
+        description: "Bozuk çapraz başvuru tablolarını ve dosya yapısını düzeltir.",
+      },
+      {
+        title: "Kurtarılabileni korur",
+        description: "Okunabilir sayfalar ve içerik korunur.",
+      },
+      {
+        title: "Hızlı",
+        description: "Çoğu dosya saniyeler içinde onarılır.",
+      },
+      {
+        title: "Dosyalar hemen silinir",
+        description: "Onarımdan sonra hiçbir şey tutulmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Her PDF onarılabilir mi?",
+        answer:
+          "Hayır. Dosyanın bazı bölümleri eksikse veya üzerine yazılmışsa kurtarılamaz. Mümkünse orijinali yeniden indirmeyi veya dışa aktarmayı deneyin.",
+      },
+      {
+        question: "Neden dosyanın PDF olmadığını söylüyor?",
+        answer:
+          "Dosya hiç bir PDF gibi başlamıyor; bu yüzden farklı türde bir dosya olabilir ya da onarılamayacak kadar hasar görmüş olabilir.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer:
+          "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır.",
+      },
+      {
+        question: "Boyut sınırı var mı?",
+        answer: "Dosyalar en fazla 50 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir.",
+      },
+    ],
+  },
 };
