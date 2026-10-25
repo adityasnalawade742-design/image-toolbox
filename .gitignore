@@ -25,3 +25,6 @@ Thumbs.db
 *.sw?
 .wrangler/
 .impeccable/review/
+
+# accessibility audit output
+.a11y-report/

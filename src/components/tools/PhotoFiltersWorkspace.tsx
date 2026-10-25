@@ -357,7 +357,7 @@ export function PhotoFiltersWorkspace() {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="text-[14px] font-medium text-ink underline hover:no-underline"
+                  className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
                 >
                   {t('ws.replace')}
                 </button>
@@ -366,7 +366,7 @@ export function PhotoFiltersWorkspace() {
           </div>
 
           {/* Ruled control panel */}
-          <div className="space-y-5 lg:sticky lg:top-24">
+          <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
             <div className="border border-ink bg-paper-bright">
               <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-ink">
                 <h2 className="slug flex items-center gap-2">
@@ -376,7 +376,7 @@ export function PhotoFiltersWorkspace() {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="flex items-center gap-1 text-[14px] font-medium text-ink underline hover:no-underline"
+                  className="flex items-center gap-1 min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
                 >
                   <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                   {t('ctl.filters.reset')}

@@ -93,11 +93,28 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
               if (e.key === 'Escape') {
                 e.preventDefault();
                 close();
+                return;
+              }
+              // Modal: Tab cycles inside the dialog instead of reaching the page behind it
+              if (e.key === 'Tab') {
+                const focusable = [...e.currentTarget.querySelectorAll<HTMLElement>('input, button, a[href], [tabindex]:not([tabindex="-1"])')].filter(
+                  (el) => !el.hasAttribute('disabled') && el.getClientRects().length > 0
+                );
+                if (!focusable.length) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                  e.preventDefault();
+                  last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                  e.preventDefault();
+                  first.focus();
+                }
               }
             }}
           >
             <div className="color-bar" aria-hidden="true"><span /><span /><span /><span /></div>
-            <div className="flex items-center gap-3 px-4 h-14 border-b border-ink">
+            <div className="flex items-center gap-3 px-4 h-14 border-b border-ink focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-[#0072b0]">
               <Search className="w-5 h-5 text-ink shrink-0" aria-hidden="true" />
               <input
                 ref={inputRef}
@@ -125,8 +142,8 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
                 placeholder={t('search.placeholder', { count: TOOLS.length })}
                 className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none"
               />
-              <button type="button" onClick={close} className="p-1 text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
-                <X className="w-5 h-5" />
+              <button type="button" onClick={close} className="w-10 h-10 -mr-2 flex items-center justify-center text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 

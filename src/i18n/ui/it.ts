@@ -1,6 +1,7 @@
 // Page-chrome strings for 'it'. Missing keys fall back to English (see ../ui.ts).
 export const itUi: Record<string, string> = {
   'nav.allTools': 'Tutti gli strumenti',
+  'nav.skip': 'Vai al contenuto principale',
   'nav.edit': 'Modifica',
   'nav.compress': 'Comprimi',
   'nav.convert': 'Converti',

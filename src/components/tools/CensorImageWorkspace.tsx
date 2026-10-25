@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCircle } from 'lucide-react';
+import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCircle, Plus, X } from 'lucide-react';
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
@@ -48,6 +48,8 @@ export function CensorImageWorkspace() {
   const [format, setFormat] = useState<OutputFormat>('png');
   const [intensity, setIntensity] = useState<number>(14);
   const [boxes, setBoxes] = useState<CensorBox[]>([]);
+  // The box being edited in the panel; new boxes (drawn or added) become selected
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   // Drag-to-draw state
   const [isDrawing, setIsDrawing] = useState<boolean>(false);
@@ -165,8 +167,8 @@ export function CensorImageWorkspace() {
 
       ctx.restore();
 
-      // Draw dashed selection border if currently drawing
-      if (b.id === 'temp') {
+      // Dashed border on the box being drawn and on the selected box
+      if (b.id === 'temp' || b.id === selectedId) {
         ctx.save();
         ctx.strokeStyle = '#e4007c';
         ctx.lineWidth = Math.max(2, Math.round(naturalW / 600));
@@ -181,7 +183,7 @@ export function CensorImageWorkspace() {
         ctx.restore();
       }
     });
-  }, [imgElement, boxes, currentBox, isDrawing, censorMode, intensity, shape]);
+  }, [imgElement, boxes, currentBox, isDrawing, censorMode, intensity, shape, selectedId]);
 
   // Coordinate mapping from mouse/touch to image natural pixels
   const getCoordsFromPoint = (clientX: number, clientY: number) => {
@@ -240,10 +242,12 @@ export function CensorImageWorkspace() {
 
   const handleEndDrawing = () => {
     if (isDrawing && currentBox && currentBox.w > 5 && currentBox.h > 5) {
+      const id = String(Date.now());
+      setSelectedId(id);
       setBoxes((prev) => [
         ...prev,
         {
-          id: String(Date.now()),
+          id,
           ...currentBox,
           mode: censorMode,
           intensity: intensity,
@@ -262,6 +266,42 @@ export function CensorImageWorkspace() {
 
   const handleClearAll = () => {
     setBoxes([]);
+    setSelectedId(null);
+  };
+
+  // Keyboard and single-pointer alternative to drawing: add a centred box, then set its position and size
+  const handleAddBox = () => {
+    if (!imgElement) return;
+    const natW = imgElement.naturalWidth || imgElement.width;
+    const natH = imgElement.naturalHeight || imgElement.height;
+    const w = Math.max(10, Math.round(natW * 0.3));
+    const h = Math.max(10, Math.round(natH * 0.2));
+    const id = String(Date.now());
+    setBoxes((prev) => [...prev, { id, x: Math.round((natW - w) / 2), y: Math.round((natH - h) / 2), w, h, mode: censorMode, intensity, shape }]);
+    setSelectedId(id);
+  };
+
+  const handleRemoveBox = (id: string) => {
+    setBoxes((prev) => prev.filter((b) => b.id !== id));
+    if (selectedId === id) setSelectedId(null);
+  };
+
+  const updateSelectedBox = (field: 'x' | 'y' | 'w' | 'h', raw: string) => {
+    const value = parseInt(raw, 10);
+    if (Number.isNaN(value) || !imgElement) return;
+    const natW = imgElement.naturalWidth || imgElement.width;
+    const natH = imgElement.naturalHeight || imgElement.height;
+    setBoxes((prev) =>
+      prev.map((b) => {
+        if (b.id !== selectedId) return b;
+        const next = { ...b, [field]: value };
+        next.x = Math.max(0, Math.min(natW - 1, Math.round(next.x)));
+        next.y = Math.max(0, Math.min(natH - 1, Math.round(next.y)));
+        next.w = Math.max(1, Math.min(natW - next.x, Math.round(next.w)));
+        next.h = Math.max(1, Math.min(natH - next.y, Math.round(next.h)));
+        return next;
+      })
+    );
   };
 
   // Ctrl+Z / Cmd+Z removes the last box, unless the user is typing in a field
@@ -306,6 +346,8 @@ export function CensorImageWorkspace() {
   };
 
   const loaded = Boolean(selectedFile && imgElement);
+  const selectedIndex = boxes.findIndex((b) => b.id === selectedId);
+  const selectedBox = selectedIndex >= 0 ? boxes[selectedIndex] : null;
   const imgW = imgElement?.naturalWidth || imgElement?.width || 0;
   const imgH = imgElement?.naturalHeight || imgElement?.height || 0;
   const activeMode = MODES.find((m) => m.id === censorMode) ?? MODES[0];
@@ -347,6 +389,7 @@ export function CensorImageWorkspace() {
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleEndDrawing}
                 onTouchCancel={handleEndDrawing}
+                role="img"
                 aria-label={t('ctl.censor.canvasLabel')}
                 className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-none"
               />
@@ -366,7 +409,7 @@ export function CensorImageWorkspace() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+                className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
               >
                 {t('ws.replace')}
               </button>
@@ -375,7 +418,7 @@ export function CensorImageWorkspace() {
           </div>
 
           {/* Ruled control panel */}
-          <div className="space-y-5 lg:sticky lg:top-24">
+          <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
             <div className="border border-ink bg-paper-bright">
               <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                 <EyeOff className="w-4 h-4 text-ink" aria-hidden="true" />
@@ -433,6 +476,77 @@ export function CensorImageWorkspace() {
                     />
                   </label>
                 )}
+
+                {/* Boxes: everything drawing does, without dragging */}
+                <div className="space-y-3 pt-4 border-t border-ink">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="slug" id="censor-boxes-label">{t('ctl.censor.boxes')}</span>
+                    <button type="button" onClick={handleAddBox} className="btn-rule">
+                      <Plus className="w-4 h-4" aria-hidden="true" />
+                      <span>{t('ctl.censor.addBox')}</span>
+                    </button>
+                  </div>
+                  {boxes.length === 0 ? (
+                    <p className="text-[14px] text-graphite">{t('ctl.censor.noBoxes')}</p>
+                  ) : (
+                    <ul className="border border-ink divide-y divide-ink" aria-labelledby="censor-boxes-label">
+                      {boxes.map((b, i) => (
+                        <li key={b.id} className="flex">
+                          <button
+                            type="button"
+                            aria-pressed={b.id === selectedId}
+                            onClick={() => setSelectedId(b.id)}
+                            className={`flex-1 min-h-[40px] px-3 text-left text-[14px] font-semibold ${b.id === selectedId ? 'seg-on' : 'seg-off'}`}
+                          >
+                            {t('ctl.censor.boxN', { n: i + 1 })}
+                            <span className="ml-2 font-normal text-graphite" data-measure>
+                              {Math.round(b.w)} × {Math.round(b.h)} px
+                            </span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveBox(b.id)}
+                            aria-label={t('ctl.censor.removeBox', { n: i + 1 })}
+                            title={t('ctl.censor.removeBox', { n: i + 1 })}
+                            className="w-11 min-h-[40px] flex items-center justify-center border-l border-ink seg-off"
+                          >
+                            <X className="w-4 h-4" aria-hidden="true" />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {selectedBox && (
+                    <fieldset className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+                      <legend className="col-span-2 mb-1 text-[14px] text-graphite">{t('ctl.censor.editBox', { n: selectedIndex + 1 })}</legend>
+                      {(
+                        [
+                          ['x', t('ctl.crop.offsetX'), imgW - 1],
+                          ['y', t('ctl.crop.offsetY'), imgH - 1],
+                          ['w', t('ctl.crop.width'), imgW],
+                          ['h', t('ctl.crop.height'), imgH],
+                        ] as const
+                      ).map(([field, label, max]) => (
+                        <div key={field} className="space-y-1">
+                          <label htmlFor={`censor-box-${field}`} className="block text-[14px] text-graphite">
+                            {label} <span className="text-[13px]">(px)</span>
+                          </label>
+                          <input
+                            id={`censor-box-${field}`}
+                            type="number"
+                            inputMode="numeric"
+                            min={field === 'w' || field === 'h' ? 1 : 0}
+                            max={max}
+                            value={Math.round(selectedBox[field])}
+                            onChange={(e) => updateSelectedBox(field, e.target.value)}
+                            className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+                            data-measure
+                          />
+                        </div>
+                      ))}
+                    </fieldset>
+                  )}
+                </div>
 
                 {/* History */}
                 <div className="space-y-2 pt-4 border-t border-ink">

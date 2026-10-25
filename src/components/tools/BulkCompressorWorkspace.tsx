@@ -340,7 +340,7 @@ export function BulkCompressorWorkspace() {
       </div>
 
       {/* Ruled control panel */}
-      <div className="space-y-5 lg:sticky lg:top-24">
+      <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
         <div className="border border-ink bg-paper-bright">
           <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
             <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />

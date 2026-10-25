@@ -1,6 +1,7 @@
 // Page-chrome strings for 'tr'. Missing keys fall back to English (see ../ui.ts).
 export const trUi: Record<string, string> = {
   'nav.allTools': 'Tüm araçlar',
+  'nav.skip': 'Ana içeriğe geç',
   'nav.edit': 'Düzenle',
   'nav.compress': 'Sıkıştır',
   'nav.convert': 'Dönüştür',

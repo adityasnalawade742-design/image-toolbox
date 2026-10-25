@@ -1,6 +1,7 @@
 // Page-chrome strings for 'ja'. Missing keys fall back to English (see ../ui.ts).
 export const jaUi: Record<string, string> = {
   'nav.allTools': 'すべてのツール',
+  'nav.skip': 'メインコンテンツへスキップ',
   'nav.edit': '編集',
   'nav.compress': '圧縮',
   'nav.convert': '変換',

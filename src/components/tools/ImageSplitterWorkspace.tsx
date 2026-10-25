@@ -244,8 +244,8 @@ export function ImageSplitterWorkspace() {
                           key={`${r}-${c}`}
                           type="button"
                           onClick={() => downloadSingleSlice(r, c, tileNum - 1, format)}
-                          aria-label={t('ctl.split.downloadTile', { row: r + 1, col: c + 1 })}
-                          title={t('ctl.split.downloadTile', { row: r + 1, col: c + 1 })}
+                          aria-label={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
+                          title={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
                           className="relative flex items-center justify-center border border-process-magenta/80 hover:bg-process-key/20 focus-visible:bg-process-key/20 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-process-magenta transition-colors"
                         >
                           <span
@@ -277,7 +277,7 @@ export function ImageSplitterWorkspace() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+                className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
               >
                 {t('ws.replace')}
               </button>
@@ -286,7 +286,7 @@ export function ImageSplitterWorkspace() {
           </div>
 
           {/* Ruled control panel */}
-          <div className="space-y-5 lg:sticky lg:top-24">
+          <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
             <div className="border border-ink bg-paper-bright">
               <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                 <Grid3x3 className="w-4 h-4 text-ink" aria-hidden="true" />
@@ -310,7 +310,7 @@ export function ImageSplitterWorkspace() {
                           }`}
                         >
                           <span>{t(p.nameKey)}</span>
-                          <span className={selected ? 'text-paper' : 'text-graphite'} data-measure>
+                          <span className="text-graphite" data-measure>
                             {p.rows} × {p.cols}
                           </span>
                         </button>

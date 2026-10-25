@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': '이미지 선택',
   'ws.dropHint': 'JPG, PNG, WebP 등 최대 50 MB. Ctrl+V로 붙여넣어도 돼요.',
   'ws.rendering': '미리보기 업데이트 중…',
+  'ws.pickerHelp': '이미지를 클릭하면 색을 추출해요. 키보드로는 이미지를 선택하고 화살표 키로 이동한 뒤(Shift를 누르면 크게 이동) Enter를 눌러 추출하세요.',
+  'ws.pickerPicked': '{hex} 색을 추출했어요',
+  'ws.pickerValue': '{hex}, 왼쪽에서 {x}%, 위에서 {y}%',
+  'ws.pickerLabel': '이미지 색 추출기',
+  'ws.previewLabel': '현재 설정이 적용된 이미지 미리보기',
   'ws.source': '원본',
   'ws.output': '결과',
   'ws.replace': '이미지 바꾸기',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': '가운데',
   'ctl.text.posBottom': '아래',
   'ctl.text.posCustom': '직접 지정',
+  'ctl.text.horizontalPosition': '가로 위치',
   'ctl.text.verticalPosition': '세로 위치',
   'ctl.text.dragHint': '이미지 위의 텍스트를 끌어서 옮길 수도 있어요.',
   'ctl.text.style': '스타일',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'GPS 위치',
 
   // Color picker
-  'ctl.color.emptyTitle': '이미지를 클릭해 색을 추출하세요',
+  'ctl.color.emptyTitle': '이미지에서 색을 추출하세요',
   'ctl.color.emptyHelp': 'HEX, RGB, HSL, HSV, CMYK 값이 여기에 표시돼요.',
   'ctl.color.pickAnother': '이미지의 다른 곳을 클릭하면 다른 색을 추출해요.',
   'ctl.color.selected': '추출한 색',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': '조각',
   'ctl.split.tileCount': '조각 {count}개',
   'ctl.split.tapHint': '조각을 선택하면 그 조각만 다운로드해요.',
-  'ctl.split.downloadTile': '{row}행 {col}열 조각 다운로드',
+  'ctl.split.downloadTile': '조각 {n} 다운로드 ({row}행 {col}열)',
   'ctl.split.downloadAll': '조각 {count}개 모두 다운로드 (ZIP)',
   'ctl.split.zipping': '조각 묶는 중… {percent}%',
   'ctl.split.zipProgress': 'ZIP 진행률',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': '가리기 설정',
-  'ctl.censor.hint': '사진 위를 드래그해 가릴 영역을 지정하세요. 터치로도 돼요.',
+  'ctl.censor.hint': '사진 위를 드래그해 가릴 영역을 지정하세요. 터치로도 되고, ‘영역 추가’로 추가한 뒤 위치와 크기를 정할 수도 있어요.',
   'ctl.censor.shape': '모양',
   'ctl.censor.shapeRect': '사각형',
   'ctl.censor.shapeOval': '타원',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': '블록 크기',
   'ctl.censor.blurStrength': '블러 강도',
   'ctl.censor.boxes': '영역',
+  'ctl.censor.editBox': '영역 {n}의 위치와 크기',
+  'ctl.censor.removeBox': '영역 {n} 삭제',
+  'ctl.censor.boxN': '영역 {n}',
+  'ctl.censor.noBoxes': '아직 영역이 없어요. 사진 위를 드래그하거나 여기서 추가하세요.',
+  'ctl.censor.addBox': '영역 추가',
   'ctl.censor.undo': '마지막 영역 취소',
   'ctl.censor.undoShortcut': 'Ctrl+Z로도 마지막 영역을 취소할 수 있어요.',
   'ctl.censor.clearAll': '모든 영역 지우기',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': '이미지 복사',
   'ctl.censor.copied': '클립보드에 복사했어요',
   'ctl.censor.errCopy': '브라우저가 이미지 복사를 막았어요. 대신 다운로드를 이용해 주세요.',
-  'ctl.censor.canvasLabel': '가릴 사진. 드래그해서 영역을 그리세요.',
+  'ctl.censor.canvasLabel': '가릴 사진. 드래그해서 영역을 그리거나 설정의 ‘영역 추가’를 사용하세요.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': '이미지를 최대 50개까지 놓으세요',

@@ -1,6 +1,7 @@
 // Page-chrome strings for 'ko'. Missing keys fall back to English (see ../ui.ts).
 export const koUi: Record<string, string> = {
   'nav.allTools': '전체 도구',
+  'nav.skip': '본문으로 건너뛰기',
   'nav.edit': '편집',
   'nav.compress': '압축',
   'nav.convert': '변환',

@@ -1,6 +1,7 @@
 // Page-chrome strings for 'es'. Missing keys fall back to English (see ../ui.ts).
 export const esUi: Record<string, string> = {
   'nav.allTools': 'Todas las herramientas',
+  'nav.skip': 'Saltar al contenido principal',
   'nav.edit': 'Editar',
   'nav.compress': 'Comprimir',
   'nav.convert': 'Convertir',

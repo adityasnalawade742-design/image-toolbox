@@ -66,6 +66,7 @@ export const editStrings = {
   'ctl.text.posCenter': 'Center',
   'ctl.text.posBottom': 'Bottom',
   'ctl.text.posCustom': 'Custom',
+  'ctl.text.horizontalPosition': 'Horizontal position',
   'ctl.text.verticalPosition': 'Vertical position',
   'ctl.text.dragHint': 'You can also drag the text on the image.',
   'ctl.text.style': 'Style',

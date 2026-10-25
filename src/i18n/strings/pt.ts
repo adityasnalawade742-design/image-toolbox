@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': 'Escolher imagens',
   'ws.dropHint': 'JPG, PNG, WebP e outros, até 50 MB. Você também pode colar com Ctrl+V.',
   'ws.rendering': 'Atualizando a prévia…',
+  'ws.pickerHelp': 'Clique na imagem para escolher uma cor. Pelo teclado, selecione a imagem, mova com as setas (segure Shift para passos maiores) e pressione Enter para escolher.',
+  'ws.pickerPicked': 'Cor escolhida: {hex}',
+  'ws.pickerValue': '{hex}, {x}% a partir da esquerda, {y}% a partir do topo',
+  'ws.pickerLabel': 'Seletor de cor na sua imagem',
+  'ws.previewLabel': 'Prévia da sua imagem com as configurações atuais',
   'ws.source': 'Original',
   'ws.output': 'Resultado',
   'ws.replace': 'Trocar imagem',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': 'Centro',
   'ctl.text.posBottom': 'Embaixo',
   'ctl.text.posCustom': 'Personalizado',
+  'ctl.text.horizontalPosition': 'Posição horizontal',
   'ctl.text.verticalPosition': 'Posição vertical',
   'ctl.text.dragHint': 'Você também pode arrastar o texto na imagem.',
   'ctl.text.style': 'Estilo',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'Localização GPS',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Clique na imagem para escolher uma cor',
+  'ctl.color.emptyTitle': 'Escolha uma cor da imagem',
   'ctl.color.emptyHelp': 'Os valores HEX, RGB, HSL, HSV e CMYK aparecem aqui.',
   'ctl.color.pickAnother': 'Clique em qualquer ponto da imagem para escolher outra cor.',
   'ctl.color.selected': 'Cor escolhida',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': 'Parte',
   'ctl.split.tileCount': '{count} partes',
   'ctl.split.tapHint': 'Selecione uma parte para baixar só ela.',
-  'ctl.split.downloadTile': 'Baixar parte {row}, {col}',
+  'ctl.split.downloadTile': 'Baixar parte {n} (linha {row}, coluna {col})',
   'ctl.split.downloadAll': 'Baixar as {count} partes (ZIP)',
   'ctl.split.zipping': 'Compactando partes… {percent}%',
   'ctl.split.zipProgress': 'Progresso do ZIP',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'Configurações da censura',
-  'ctl.censor.hint': 'Arraste sobre a foto para cobrir uma área. Também funciona com toque.',
+  'ctl.censor.hint': 'Arraste sobre a foto para cobrir uma área. Também funciona com toque, ou use “Adicionar caixa” e defina a posição e o tamanho.',
   'ctl.censor.shape': 'Formato',
   'ctl.censor.shapeRect': 'Retângulo',
   'ctl.censor.shapeOval': 'Oval',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': 'Tamanho dos blocos',
   'ctl.censor.blurStrength': 'Intensidade do desfoque',
   'ctl.censor.boxes': 'Caixas',
+  'ctl.censor.editBox': 'Posição e tamanho da caixa {n}',
+  'ctl.censor.removeBox': 'Remover caixa {n}',
+  'ctl.censor.boxN': 'Caixa {n}',
+  'ctl.censor.noBoxes': 'Nenhuma caixa ainda. Arraste sobre a foto ou adicione uma aqui.',
+  'ctl.censor.addBox': 'Adicionar caixa',
   'ctl.censor.undo': 'Desfazer última caixa',
   'ctl.censor.undoShortcut': 'Ctrl+Z também desfaz a última caixa.',
   'ctl.censor.clearAll': 'Remover todas as caixas',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': 'Copiar imagem',
   'ctl.censor.copied': 'Copiado para a área de transferência',
   'ctl.censor.errCopy': 'Seu navegador bloqueou a cópia da imagem. Use Baixar.',
-  'ctl.censor.canvasLabel': 'Foto para censurar. Arraste para desenhar uma caixa.',
+  'ctl.censor.canvasLabel': 'Foto para censurar. Arraste para desenhar uma caixa ou use “Adicionar caixa” nas configurações.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': 'Arraste até 50 imagens',

@@ -1,6 +1,7 @@
 // Page-chrome strings for 'id'. Missing keys fall back to English (see ../ui.ts).
 export const idUi: Record<string, string> = {
   'nav.allTools': 'Semua Alat',
+  'nav.skip': 'Langsung ke konten utama',
   'nav.edit': 'Edit',
   'nav.compress': 'Kompres',
   'nav.convert': 'Konversi',

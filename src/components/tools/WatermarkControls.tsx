@@ -278,7 +278,7 @@ export function WatermarkControls({ options, onChange }: Props) {
               type="checkbox"
               checked={!!options.repeat}
               onChange={(e) => onChange({ ...options, repeat: e.target.checked })}
-              className="w-4 h-4 shrink-0"
+             
             />
             <span>{t('ctl.watermark.repeat')}</span>
           </label>

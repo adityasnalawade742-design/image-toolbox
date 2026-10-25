@@ -69,10 +69,10 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
   <div class="space-y-16 sm:space-y-20">
     <section class="space-y-6">
       <div class="space-y-3">
-        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-[14px] text-graphite">
-          <a href={translatePath('/')} class="text-ink hover:underline">{t('tool.home')}</a>
+        <nav aria-label="Breadcrumb" class="-my-1.5 flex items-center gap-2 text-[14px] text-graphite">
+          <a href={translatePath('/')} class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('tool.home')}</a>
           <span aria-hidden="true">/</span>
-          <a href={translatePath(`/#${tool.category}`)} class="flex items-center gap-1.5 text-ink hover:underline">
+          <a href={translatePath(`/#${tool.category}`)} class="flex items-center gap-1.5 min-h-[36px] text-ink hover:underline">
             <span class:list={['w-2.5 h-2.5', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
             {categoryName}
           </a>

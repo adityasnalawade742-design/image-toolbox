@@ -17,7 +17,7 @@ export const creativeBStrings = {
   'ctl.split.tile': 'Tile',
   'ctl.split.tileCount': '{count} tiles',
   'ctl.split.tapHint': 'Select a tile to download just that tile.',
-  'ctl.split.downloadTile': 'Download tile {row}, {col}',
+  'ctl.split.downloadTile': 'Download tile {n} (row {row}, column {col})',
   'ctl.split.downloadAll': 'Download all {count} tiles (ZIP)',
   'ctl.split.zipping': 'Packing tiles… {percent}%',
   'ctl.split.zipProgress': 'ZIP progress',
@@ -26,7 +26,7 @@ export const creativeBStrings = {
 
   // Censor image
   'ctl.censor.settings': 'Censor settings',
-  'ctl.censor.hint': 'Drag across the photo to cover an area. Works with touch too.',
+  'ctl.censor.hint': 'Drag across the photo to cover an area. Works with touch too, or use Add box and set its position and size.',
   'ctl.censor.shape': 'Shape',
   'ctl.censor.shapeRect': 'Rectangle',
   'ctl.censor.shapeOval': 'Oval',
@@ -40,6 +40,11 @@ export const creativeBStrings = {
   'ctl.censor.blockSize': 'Block size',
   'ctl.censor.blurStrength': 'Blur strength',
   'ctl.censor.boxes': 'Boxes',
+  'ctl.censor.addBox': 'Add box',
+  'ctl.censor.noBoxes': 'No boxes yet. Drag on the photo, or add one here.',
+  'ctl.censor.boxN': 'Box {n}',
+  'ctl.censor.removeBox': 'Remove box {n}',
+  'ctl.censor.editBox': 'Position and size of box {n}',
   'ctl.censor.undo': 'Undo last box',
   'ctl.censor.undoShortcut': 'Ctrl+Z also undoes the last box.',
   'ctl.censor.clearAll': 'Remove all boxes',
@@ -49,5 +54,5 @@ export const creativeBStrings = {
   'ctl.censor.copy': 'Copy image',
   'ctl.censor.copied': 'Copied to clipboard',
   'ctl.censor.errCopy': 'Your browser blocked copying the image. Use Download instead.',
-  'ctl.censor.canvasLabel': 'Photo to censor. Drag to draw a box.',
+  'ctl.censor.canvasLabel': 'Photo to censor. Drag to draw a box, or use Add box in the settings.',
 } as const;

@@ -99,6 +99,10 @@ Visit `http://localhost:4321` in your browser.
 | `npm run build` | Builds all 330 localized static routes and prunes redundant WASM files |
 | `npm run preview` | Previews the production build locally |
 | `npm run deploy` | Deploys static assets and edge worker to Cloudflare Workers |
+| `npm run a11y` | Audits all 32 tools, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |
+| `npm run a11y:keys` | Walks the keyboard-only flows: skip link, search dialog, language list, color picker, censor boxes, text position |
+
+Both a11y scripts need `npm run build && npm run preview` running (pass another address as `npm run a11y -- http://host:port`). Set `CHROME_PATH` if Chrome is not in the default Windows location. Reports go to `.a11y-report/`.
 
 ---
 

@@ -473,14 +473,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     matrix: [],
   });
 
-  const handleCanvasMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!slug.includes('color') || !canvasRef.current || !imageElement) return;
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    const clientX = e.clientX - rect.left;
-    const clientY = e.clientY - rect.top;
-    const normX = Math.max(0, Math.min(1, clientX / rect.width));
-    const normY = Math.max(0, Math.min(1, clientY / rect.height));
+  // Picker position as a fraction of the image, shared by mouse and keyboard
+  const [pickPos, setPickPos] = useState({ x: 0.5, y: 0.5 });
+  const [pickAnnouncement, setPickAnnouncement] = useState('');
+
+  // Show the loupe at a normalized point of the image
+  const showLoupeAt = (normX: number, normY: number) => {
+    if (!canvasRef.current || !imageElement) return;
+    const rect = canvasRef.current.getBoundingClientRect();
+    const clientX = normX * rect.width;
+    const clientY = normY * rect.height;
 
     const fullW = imageElement.naturalWidth || imageElement.width;
     const fullH = imageElement.naturalHeight || imageElement.height;
@@ -517,6 +519,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     });
   };
 
+  const handleCanvasMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!slug.includes('color') || !canvasRef.current) return;
+    const rect = canvasRef.current.getBoundingClientRect();
+    const pos = {
+      x: Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)),
+      y: Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height)),
+    };
+    setPickPos(pos);
+    showLoupeAt(pos.x, pos.y);
+  };
+
   const handleCanvasMouseLeave = () => {
     if (slug.includes('color')) {
       setLoupe((prev) => ({ ...prev, visible: false }));
@@ -524,12 +537,31 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   };
 
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!canvasRef.current || !imageElement) return;
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    const normX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    const normY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    if (!canvasRef.current) return;
+    const rect = canvasRef.current.getBoundingClientRect();
+    pickAt(Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)), Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height)));
+  };
 
+  // Keyboard picking: arrows move the loupe (Shift for bigger steps), Enter or Space picks
+  const handleCanvasKeyDown = (e: React.KeyboardEvent<HTMLCanvasElement>) => {
+    const step = e.shiftKey ? 0.1 : 0.01;
+    const moves: Record<string, [number, number]> = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
+    if (moves[e.key]) {
+      e.preventDefault();
+      const pos = {
+        x: Math.max(0, Math.min(1, pickPos.x + moves[e.key][0])),
+        y: Math.max(0, Math.min(1, pickPos.y + moves[e.key][1])),
+      };
+      setPickPos(pos);
+      showLoupeAt(pos.x, pos.y);
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      pickAt(pickPos.x, pickPos.y);
+    }
+  };
+
+  const pickAt = (normX: number, normY: number) => {
+    if (!imageElement) return;
     const fullW = imageElement.naturalWidth || imageElement.width;
     const fullH = imageElement.naturalHeight || imageElement.height;
     const srcX = Math.floor(normX * fullW);
@@ -548,6 +580,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       const filtered = prev.filter((c) => c !== hex);
       return [...filtered, hex];
     });
+    setPickAnnouncement(t('ws.pickerPicked', { hex }));
   };
 
   const handleDownload = async () => {
@@ -709,13 +742,33 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
             <div className="min-w-0 space-y-3">
               <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 pt-14 pb-7 sm:px-20 sm:pt-16 sm:pb-10 overflow-hidden">
                 <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks registration-snap is-registering">
-                  <canvas
-                    ref={canvasRef}
-                    onClick={slug.includes('color') ? handleCanvasClick : undefined}
-                    onMouseMove={slug.includes('color') ? handleCanvasMouseMove : undefined}
-                    onMouseLeave={slug.includes('color') ? handleCanvasMouseLeave : undefined}
-                    className={`block max-w-full max-h-[55vh] sm:max-h-[540px] object-contain ${slug.includes('color') ? 'cursor-crosshair' : ''}`}
-                  />
+                  {slug.includes('color') ? (
+                    <canvas
+                      ref={canvasRef}
+                      tabIndex={0}
+                      role="slider"
+                      aria-label={t('ws.pickerLabel')}
+                      aria-describedby="ws-picker-help"
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-valuenow={Math.round(pickPos.x * 100)}
+                      aria-valuetext={t('ws.pickerValue', { hex: loupe.hex, x: Math.round(pickPos.x * 100), y: Math.round(pickPos.y * 100) })}
+                      onClick={handleCanvasClick}
+                      onMouseMove={handleCanvasMouseMove}
+                      onMouseLeave={handleCanvasMouseLeave}
+                      onKeyDown={handleCanvasKeyDown}
+                      onFocus={() => showLoupeAt(pickPos.x, pickPos.y)}
+                      onBlur={handleCanvasMouseLeave}
+                      className="block max-w-full max-h-[55vh] sm:max-h-[540px] object-contain cursor-crosshair"
+                    />
+                  ) : (
+                    <canvas
+                      ref={canvasRef}
+                      role="img"
+                      aria-label={t('ws.previewLabel')}
+                      className="block max-w-full max-h-[55vh] sm:max-h-[540px] object-contain"
+                    />
+                  )}
                   <span key={`c${registerTick}`} className="plate plate-c" aria-hidden="true" />
                   <span key={`m${registerTick}`} className="plate plate-m" aria-hidden="true" />
                   <span key={`y${registerTick}`} className="plate plate-y" aria-hidden="true" />
@@ -777,6 +830,12 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   )}
                 </div>
 
+                {slug.includes('color') && (
+                  <span className="sr-only" aria-live="polite">
+                    {pickAnnouncement}
+                  </span>
+                )}
+
                 {isRendering && (
                   <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-paper border border-ink text-[12px] text-ink" role="status">
                     <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
@@ -784,6 +843,12 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   </div>
                 )}
               </div>
+
+              {slug.includes('color') && (
+                <p id="ws-picker-help" className="text-[14px] text-graphite leading-relaxed">
+                  {t('ws.pickerHelp')}
+                </p>
+              )}
 
               {/* Job ticket: what goes in, what comes out */}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
@@ -809,7 +874,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+                  className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
                 >
                   {t('ws.replace')}
                 </button>
@@ -817,7 +882,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
             </div>
 
             {/* Ruled control panel */}
-            <div className="space-y-5 lg:sticky lg:top-24">
+            <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
               <div className="border border-ink bg-paper-bright">
                 <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                   <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
@@ -983,7 +1048,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                       <span aria-live="polite">{copiedToast ? t('ws.copiedShort') : t('ws.copyCode')}</span>
                     </button>
                   </div>
-                  <pre className="p-2.5 bg-paper border border-pencil text-[12px] font-code text-ink overflow-x-auto select-all leading-relaxed">{FAVICON_SNIPPET}</pre>
+                  <pre className="p-2.5 bg-paper border border-pencil text-[12px] font-code text-ink whitespace-pre-wrap break-all select-all leading-relaxed">{FAVICON_SNIPPET}</pre>
                 </div>
               )}
 

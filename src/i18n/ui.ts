@@ -27,6 +27,7 @@ export const showDefaultLang = false; // Preserves unprefixed canonicals (/crop-
 export const ui = {
   en: {
     'nav.allTools': 'All Tools',
+    'nav.skip': 'Skip to main content',
     'nav.edit': 'Edit',
     'nav.compress': 'Compress',
     'nav.convert': 'Convert',

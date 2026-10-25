@@ -53,9 +53,9 @@ export function LanguageBanner({ currentLocale = 'en', currentSlug = '' }: Props
   };
 
   return (
-    <div lang={suggestion} className="bg-process-yellow text-ink border-b border-ink">
+    <aside lang={suggestion} aria-labelledby="lang-banner-text" className="bg-process-yellow text-ink border-b border-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4 text-[15px]">
-        <span>{phrase(suggestion, 'banner.available', languageName)}</span>
+        <span id="lang-banner-text">{phrase(suggestion, 'banner.available', languageName)}</span>
         <div className="flex items-center gap-1 shrink-0">
           <a href={targetUrl} className="btn-ink min-h-[36px] px-3 text-[14px]">
             {phrase(suggestion, 'banner.switchTo', languageName)}
@@ -70,6 +70,6 @@ export function LanguageBanner({ currentLocale = 'en', currentSlug = '' }: Props
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

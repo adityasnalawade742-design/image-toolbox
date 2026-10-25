@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': "Choisir des images",
   'ws.dropHint': "JPG, PNG, WebP et plus, jusqu’à 50 MB. Vous pouvez aussi coller avec Ctrl+V.",
   'ws.rendering': "Mise à jour de l’aperçu…",
+  'ws.pickerHelp': "Cliquez sur l’image pour prendre une couleur. Au clavier, sélectionnez l’image, déplacez-vous avec les flèches (maintenez Maj pour aller plus vite) et appuyez sur Entrée pour prendre la couleur.",
+  'ws.pickerPicked': "Couleur prise : {hex}",
+  'ws.pickerValue': "{hex}, {x} % depuis la gauche, {y} % depuis le haut",
+  'ws.pickerLabel': "Pipette sur votre image",
+  'ws.previewLabel': "Aperçu de votre image avec les réglages actuels",
   'ws.source': "Source",
   'ws.output': "Résultat",
   'ws.replace': "Remplacer l’image",
@@ -278,7 +283,7 @@ export const strings = {
   'ctl.split.tile': "Tuile",
   'ctl.split.tileCount': "{count} tuiles",
   'ctl.split.tapHint': "Sélectionnez une tuile pour ne télécharger qu’elle.",
-  'ctl.split.downloadTile': "Télécharger la tuile {row}, {col}",
+  'ctl.split.downloadTile': "Télécharger la tuile {n} (ligne {row}, colonne {col})",
   'ctl.split.downloadAll': "Télécharger les {count} tuiles (ZIP)",
   'ctl.split.zipping': "Création du ZIP… {percent} %",
   'ctl.split.zipProgress': "Progression du ZIP",
@@ -287,7 +292,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': "Réglages de censure",
-  'ctl.censor.hint': "Faites glisser sur la photo pour masquer une zone. Fonctionne aussi au doigt.",
+  'ctl.censor.hint': "Faites glisser sur la photo pour masquer une zone. Fonctionne aussi au doigt, ou utilisez « Ajouter une zone » puis réglez sa position et sa taille.",
   'ctl.censor.shape': "Forme",
   'ctl.censor.shapeRect': "Rectangle",
   'ctl.censor.shapeOval': "Ovale",
@@ -301,6 +306,11 @@ export const strings = {
   'ctl.censor.blockSize': "Taille des blocs",
   'ctl.censor.blurStrength': "Intensité du flou",
   'ctl.censor.boxes': "Zones",
+  'ctl.censor.editBox': "Position et taille de la zone {n}",
+  'ctl.censor.removeBox': "Supprimer la zone {n}",
+  'ctl.censor.boxN': "Zone {n}",
+  'ctl.censor.noBoxes': "Aucune zone pour l’instant. Faites glisser sur la photo ou ajoutez-en une ici.",
+  'ctl.censor.addBox': "Ajouter une zone",
   'ctl.censor.undo': "Annuler la dernière zone",
   'ctl.censor.undoShortcut': "Ctrl+Z annule aussi la dernière zone.",
   'ctl.censor.clearAll': "Supprimer toutes les zones",
@@ -310,7 +320,7 @@ export const strings = {
   'ctl.censor.copy': "Copier l’image",
   'ctl.censor.copied': "Copiée dans le presse-papiers",
   'ctl.censor.errCopy': "Votre navigateur a bloqué la copie de l’image. Utilisez plutôt Télécharger.",
-  'ctl.censor.canvasLabel': "Photo à censurer. Faites glisser pour dessiner une zone.",
+  'ctl.censor.canvasLabel': "Photo à censurer. Faites glisser pour dessiner une zone, ou utilisez « Ajouter une zone » dans les réglages.",
 
   // Crop
   'ctl.crop.shape': "Forme",
@@ -378,6 +388,7 @@ export const strings = {
   'ctl.text.posCenter': "Centre",
   'ctl.text.posBottom': "Bas",
   'ctl.text.posCustom': "Personnalisé",
+  'ctl.text.horizontalPosition': "Position horizontale",
   'ctl.text.verticalPosition': "Position verticale",
   'ctl.text.dragHint': "Vous pouvez aussi faire glisser le texte sur l’image.",
   'ctl.text.style': "Style",
@@ -553,7 +564,7 @@ export const strings = {
   'ctl.exif.gpsLocation': "Position GPS",
 
   // Color picker
-  'ctl.color.emptyTitle': "Cliquez sur l’image pour prendre une couleur",
+  'ctl.color.emptyTitle': "Prenez une couleur dans l’image",
   'ctl.color.emptyHelp': "Ses valeurs HEX, RGB, HSL, HSV et CMYK s’affichent ici.",
   'ctl.color.pickAnother': "Cliquez n’importe où sur l’image pour prendre une autre couleur.",
   'ctl.color.selected': "Couleur choisie",

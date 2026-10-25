@@ -28,6 +28,11 @@ export const strings = {
   'ws.chooseImages': 'Scegli immagini',
   'ws.dropHint': 'JPG, PNG, WebP e altri, fino a 50 MB. Puoi anche incollarla con Ctrl+V.',
   'ws.rendering': 'Aggiornamento anteprima…',
+  'ws.pickerHelp': 'Clicca sull’immagine per scegliere un colore. Con la tastiera, seleziona l’immagine, spostati con le frecce (tieni premuto Maiusc per passi più ampi) e premi Invio per scegliere.',
+  'ws.pickerPicked': 'Colore scelto: {hex}',
+  'ws.pickerValue': '{hex}, {x}% da sinistra, {y}% dall’alto',
+  'ws.pickerLabel': 'Selettore di colore sulla tua immagine',
+  'ws.previewLabel': 'Anteprima della tua immagine con le impostazioni attuali',
   'ws.source': 'Originale',
   'ws.output': 'Risultato',
   'ws.replace': 'Sostituisci immagine',
@@ -128,6 +133,7 @@ export const strings = {
   'ctl.text.posCenter': 'Al centro',
   'ctl.text.posBottom': 'In basso',
   'ctl.text.posCustom': 'Personalizzata',
+  'ctl.text.horizontalPosition': 'Posizione orizzontale',
   'ctl.text.verticalPosition': 'Posizione verticale',
   'ctl.text.dragHint': 'Puoi anche trascinare il testo sull’immagine.',
   'ctl.text.style': 'Stile',
@@ -303,7 +309,7 @@ export const strings = {
   'ctl.exif.gpsLocation': 'Posizione GPS',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Clicca sull’immagine per scegliere un colore',
+  'ctl.color.emptyTitle': 'Scegli un colore dall’immagine',
   'ctl.color.emptyHelp': 'Qui compaiono i suoi valori HEX, RGB, HSL, HSV e CMYK.',
   'ctl.color.pickAnother': 'Clicca in un punto qualsiasi dell’immagine per scegliere un altro colore.',
   'ctl.color.selected': 'Colore scelto',
@@ -441,7 +447,7 @@ export const strings = {
   'ctl.split.tile': 'Riquadro',
   'ctl.split.tileCount': '{count} riquadri',
   'ctl.split.tapHint': 'Seleziona un riquadro per scaricare solo quello.',
-  'ctl.split.downloadTile': 'Scarica riquadro {row}, {col}',
+  'ctl.split.downloadTile': 'Scarica riquadro {n} (riga {row}, colonna {col})',
   'ctl.split.downloadAll': 'Scarica tutti i {count} riquadri (ZIP)',
   'ctl.split.zipping': 'Creazione ZIP… {percent}%',
   'ctl.split.zipProgress': 'Avanzamento ZIP',
@@ -450,7 +456,7 @@ export const strings = {
 
   // Censor image
   'ctl.censor.settings': 'Impostazioni censura',
-  'ctl.censor.hint': 'Trascina sulla foto per coprire un’area. Funziona anche al tocco.',
+  'ctl.censor.hint': 'Trascina sulla foto per coprire un’area. Funziona anche al tocco, oppure usa «Aggiungi riquadro» e imposta posizione e dimensioni.',
   'ctl.censor.shape': 'Forma',
   'ctl.censor.shapeRect': 'Rettangolo',
   'ctl.censor.shapeOval': 'Ovale',
@@ -464,6 +470,11 @@ export const strings = {
   'ctl.censor.blockSize': 'Dimensione blocchi',
   'ctl.censor.blurStrength': 'Intensità sfocatura',
   'ctl.censor.boxes': 'Riquadri',
+  'ctl.censor.editBox': 'Posizione e dimensioni del riquadro {n}',
+  'ctl.censor.removeBox': 'Rimuovi riquadro {n}',
+  'ctl.censor.boxN': 'Riquadro {n}',
+  'ctl.censor.noBoxes': 'Ancora nessun riquadro. Trascina sulla foto o aggiungine uno qui.',
+  'ctl.censor.addBox': 'Aggiungi riquadro',
   'ctl.censor.undo': 'Annulla ultimo riquadro',
   'ctl.censor.undoShortcut': 'Anche Ctrl+Z annulla l’ultimo riquadro.',
   'ctl.censor.clearAll': 'Rimuovi tutti i riquadri',
@@ -473,7 +484,7 @@ export const strings = {
   'ctl.censor.copy': 'Copia immagine',
   'ctl.censor.copied': 'Copiata negli appunti',
   'ctl.censor.errCopy': 'Il browser ha bloccato la copia dell’immagine. Usa Scarica.',
-  'ctl.censor.canvasLabel': 'Foto da censurare. Trascina per disegnare un riquadro.',
+  'ctl.censor.canvasLabel': 'Foto da censurare. Trascina per disegnare un riquadro, oppure usa «Aggiungi riquadro» nelle impostazioni.',
 
   // Shared bulk queue wording
   'ctl.bulk.dropTitle': 'Trascina fino a 50 immagini',

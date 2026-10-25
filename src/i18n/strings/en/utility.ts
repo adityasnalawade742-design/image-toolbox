@@ -95,7 +95,7 @@ export const utilityStrings = {
   'ctl.exif.gpsLocation': 'GPS location',
 
   // Color picker
-  'ctl.color.emptyTitle': 'Click the image to pick a color',
+  'ctl.color.emptyTitle': 'Pick a color from the image',
   'ctl.color.emptyHelp': 'Its HEX, RGB, HSL, HSV and CMYK values appear here.',
   'ctl.color.pickAnother': 'Click anywhere on the image to pick another color.',
   'ctl.color.selected': 'Picked color',
