@@ -1,5 +1,4 @@
-import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   originalWidth: number;
@@ -9,43 +8,47 @@ interface Props {
 }
 
 export function SvgToPngControls({ originalWidth, originalHeight, scale, onScaleChange }: Props) {
+  const t = useT();
   const scales = [1, 2, 4, 8];
   const outputW = originalWidth * scale;
   const outputH = originalHeight * scale;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <div className="space-y-1.5">
-        <label className="text-[14px] font-medium text-body flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-accent-yellow" />
-          <span>Vector Rasterization Resolution Scale</span>
-        </label>
-        <p className="text-[13px] text-mute">
-          Select scale multiplier for razor-sharp high-DPI lossless PNG export:
-        </p>
-
-        <div className="grid grid-cols-4 gap-2 pt-2 text-[14px]">
+        <span className="slug block">{t('ctl.svg.scale')}</span>
+        <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.svg.scale')}>
           {scales.map((s) => (
             <button
               key={s}
               type="button"
+              aria-pressed={scale === s}
               onClick={() => onScaleChange(s)}
-              className={`py-2 rounded-md border text-center font-bold font-mono transition-colors ${
-                scale === s
-                  ? 'bg-surface-card border-hairline-strong text-ink'
-                  : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
+              className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                scale === s ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
               }`}
+              data-measure
             >
               {s}x
             </button>
           ))}
         </div>
+        <p className="text-[13px] text-graphite leading-relaxed pt-1">{t('ctl.svg.help')}</p>
       </div>
 
-      {/* Calculated Output Dimensions Banner */}
-      <div className="p-3 bg-surface-card border border-hairline rounded-md flex items-center justify-between text-[14px]">
-        <span className="text-mute">Original: <strong className="text-ink font-mono">{originalWidth} × {originalHeight} px</strong></span>
-        <span className="text-accent-blue font-mono font-medium">{scale}x Output: {outputW} × {outputH} px</span>
+      {/* Calculated output dimensions */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.svg.size')}</span>
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+            <dt className="text-graphite">{t('ctl.svg.original')}</dt>
+            <dd className="text-ink font-semibold text-right" data-measure>{originalWidth} × {originalHeight} px</dd>
+          </div>
+          <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+            <dt className="text-graphite">{t('ctl.svg.output')}</dt>
+            <dd className="text-ink font-semibold text-right" data-measure>{outputW} × {outputH} px</dd>
+          </div>
+        </dl>
       </div>
     </div>
   );

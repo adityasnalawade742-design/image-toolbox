@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
-import { Bold, Italic, AlignLeft, AlignCenter, AlignRight, Square, Sliders, Type } from 'lucide-react';
+import { useId, useState } from 'react';
+import { Bold, Italic, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 import type { TextOverlayOptions } from '../../lib/canvas/engine';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   options: TextOverlayOptions;
   onChange: (opts: TextOverlayOptions) => void;
 }
 
+const segButton = (selected: boolean) =>
+  `min-h-[40px] min-w-[44px] px-2 flex items-center justify-center transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
+const fieldClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
+const swatchClass = 'w-10 h-10 shrink-0 p-0.5 border border-ink bg-paper-bright cursor-pointer';
+
 export function TextControls({ options, onChange }: Props) {
+  const t = useT();
+  const idBase = useId();
   const [hasStroke, setHasStroke] = useState(Boolean(options.strokeWidth && options.strokeWidth > 0));
   const [hasBg, setHasBg] = useState(Boolean(options.backgroundColor));
 
@@ -21,28 +32,46 @@ export function TextControls({ options, onChange }: Props) {
     'Impact, sans-serif',
   ];
 
+  const alignments = [
+    { id: 'left' as const, label: t('ctl.text.alignLeft'), Icon: AlignLeft },
+    { id: 'center' as const, label: t('ctl.text.alignCenter'), Icon: AlignCenter },
+    { id: 'right' as const, label: t('ctl.text.alignRight'), Icon: AlignRight },
+  ];
+
+  const id = (name: string) => `${idBase}-${name}`;
+
   return (
-    <div className="space-y-4">
-      {/* Text Input */}
+    <div className="space-y-5">
+      {/* Text */}
       <div className="space-y-1.5">
-        <label className="text-[14px] font-medium text-body">Text Caption (Multiline supported)</label>
+        <label htmlFor={id('text')} className="slug block">
+          {t('ctl.text.text')}
+        </label>
         <textarea
+          id={id('text')}
           rows={2}
           value={options.text}
           onChange={(e) => onChange({ ...options, text: e.target.value })}
-          placeholder="Enter your text here..."
-          className="w-full bg-surface-card border border-hairline rounded-md p-2.5 text-[14px] text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
+          placeholder={t('ctl.text.placeholder')}
+          aria-describedby={id('text-hint')}
+          className="w-full border border-ink bg-paper-bright p-2.5 text-[15px] text-ink placeholder:text-graphite resize-none"
         />
+        <p id={id('text-hint')} className="text-[13px] text-graphite">
+          {t('ctl.text.textHint')}
+        </p>
       </div>
 
-      {/* Typography & Position Controls */}
-      <div className="grid grid-cols-2 gap-2">
+      {/* Font and position */}
+      <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <span className="text-[13px] text-mute">Font Family</span>
+          <label htmlFor={id('font')} className="block text-[14px] text-graphite">
+            {t('ctl.text.font')}
+          </label>
           <select
+            id={id('font')}
             value={options.fontFamily || 'Inter, sans-serif'}
             onChange={(e) => onChange({ ...options, fontFamily: e.target.value })}
-            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-[14px] text-ink focus:outline-none focus:border-hairline-strong"
+            className={fieldClass}
           >
             {fontFamilies.map((f) => (
               <option key={f} value={f}>
@@ -53,139 +82,171 @@ export function TextControls({ options, onChange }: Props) {
         </div>
 
         <div className="space-y-1">
-          <span className="text-[13px] text-mute">Position</span>
+          <label htmlFor={id('position')} className="block text-[14px] text-graphite">
+            {t('ctl.text.position')}
+          </label>
           <select
+            id={id('position')}
             value={options.position}
             onChange={(e) => onChange({ ...options, position: e.target.value as 'top' | 'center' | 'bottom' | 'custom' })}
-            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-[14px] text-ink focus:outline-none focus:border-hairline-strong"
+            className={fieldClass}
           >
-            <option value="top">Top</option>
-            <option value="center">Center</option>
-            <option value="bottom">Bottom</option>
-            <option value="custom">Custom Y%</option>
+            <option value="top">{t('ctl.text.posTop')}</option>
+            <option value="center">{t('ctl.text.posCenter')}</option>
+            <option value="bottom">{t('ctl.text.posBottom')}</option>
+            <option value="custom">{t('ctl.text.posCustom')}</option>
           </select>
         </div>
       </div>
 
-      {/* Custom Y Slider if position === 'custom' */}
+      {/* Custom vertical position */}
       {options.position === 'custom' && (
-        <div className="space-y-1 p-2 bg-surface-card border border-hairline rounded-md">
-          <div className="flex justify-between text-[14px]">
-            <span className="text-body">Vertical Offset</span>
-            <span className="font-mono text-ink font-semibold">{options.customYPercent ?? 50}%</span>
+        <div className="space-y-1.5 p-3 bg-paper-stock border border-pencil">
+          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+            <label htmlFor={id('y')} className="text-ink">
+              {t('ctl.text.verticalPosition')}
+            </label>
+            <span className="font-semibold text-ink" data-measure>
+              {options.customYPercent ?? 50}%
+            </span>
           </div>
           <input
+            id={id('y')}
             type="range"
             min="5"
             max="95"
             value={options.customYPercent ?? 50}
             onChange={(e) => onChange({ ...options, customYPercent: parseInt(e.target.value) || 50 })}
-            className="w-full h-1 bg-surface-elevated rounded appearance-none cursor-pointer accent-ink"
+            className="w-full"
           />
+          <p className="text-[13px] text-graphite">{t('ctl.text.dragHint')}</p>
         </div>
       )}
 
-      {/* Style toggles: Bold, Italic, Alignment */}
-      <div className="flex items-center gap-1.5 p-1 bg-surface-card border border-hairline rounded-md">
-        <button
-          type="button"
-          onClick={() => onChange({ ...options, bold: !options.bold })}
-          className={`p-1.5 rounded transition-colors ${
-            options.bold ? 'bg-surface-elevated text-ink font-bold' : 'text-mute hover:text-ink'
-          }`}
-          title="Bold"
-        >
-          <Bold className="w-3.5 h-3.5" />
-        </button>
-        <button
-          type="button"
-          onClick={() => onChange({ ...options, italic: !options.italic })}
-          className={`p-1.5 rounded transition-colors ${
-            options.italic ? 'bg-surface-elevated text-ink italic' : 'text-mute hover:text-ink'
-          }`}
-          title="Italic"
-        >
-          <Italic className="w-3.5 h-3.5" />
-        </button>
+      {/* Style and alignment */}
+      <div className="space-y-1.5">
+        <span className="slug block" id={id('style')}>{t('ctl.text.style')}</span>
+        <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={id('style')}>
+            <button
+              type="button"
+              aria-pressed={!!options.bold}
+              aria-label={t('ctl.text.bold')}
+              title={t('ctl.text.bold')}
+              onClick={() => onChange({ ...options, bold: !options.bold })}
+              className={segButton(!!options.bold)}
+            >
+              <Bold className="w-4 h-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              aria-pressed={!!options.italic}
+              aria-label={t('ctl.text.italic')}
+              title={t('ctl.text.italic')}
+              onClick={() => onChange({ ...options, italic: !options.italic })}
+              className={segButton(!!options.italic)}
+            >
+              <Italic className="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
 
-        <div className="h-4 w-px bg-hairline mx-1" />
-
-        {(['left', 'center', 'right'] as const).map((align) => (
-          <button
-            key={align}
-            type="button"
-            onClick={() => onChange({ ...options, textAlign: align })}
-            className={`p-1.5 rounded transition-colors ${
-              (options.textAlign || 'center') === align ? 'bg-surface-elevated text-ink' : 'text-mute hover:text-ink'
-            }`}
-            title={`Align ${align}`}
-          >
-            {align === 'left' ? <AlignLeft className="w-3.5 h-3.5" /> : align === 'center' ? <AlignCenter className="w-3.5 h-3.5" /> : <AlignRight className="w-3.5 h-3.5" />}
-          </button>
-        ))}
+          <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.text.alignment')}>
+            {alignments.map(({ id: align, label, Icon }) => {
+              const selected = (options.textAlign || 'center') === align;
+              return (
+                <button
+                  key={align}
+                  type="button"
+                  aria-pressed={selected}
+                  aria-label={label}
+                  title={label}
+                  onClick={() => onChange({ ...options, textAlign: align })}
+                  className={segButton(selected)}
+                >
+                  <Icon className="w-4 h-4" aria-hidden="true" />
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Font Size & Opacity Sliders */}
-      <div className="space-y-3 pt-2 border-t border-hairline">
-        <div className="space-y-1">
-          <div className="flex justify-between text-[14px]">
-            <span className="text-body">Font Size</span>
-            <span className="font-mono text-ink font-semibold">{options.fontSize}px</span>
+      {/* Size and opacity */}
+      <div className="space-y-4 pt-4 border-t border-pencil">
+        <div className="space-y-1.5">
+          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+            <label htmlFor={id('size')} className="text-ink">
+              {t('ctl.text.size')}
+            </label>
+            <span className="font-semibold text-ink" data-measure>
+              {options.fontSize} px
+            </span>
           </div>
           <input
+            id={id('size')}
             type="range"
             min="12"
             max="240"
             value={options.fontSize}
             onChange={(e) => onChange({ ...options, fontSize: parseInt(e.target.value) || 36 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+            className="w-full"
           />
         </div>
 
-        <div className="space-y-1">
-          <div className="flex justify-between text-[14px]">
-            <span className="text-body">Text Opacity</span>
-            <span className="font-mono text-ink font-semibold">{Math.round(options.opacity * 100)}%</span>
+        <div className="space-y-1.5">
+          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+            <label htmlFor={id('opacity')} className="text-ink">
+              {t('ctl.text.opacity')}
+            </label>
+            <span className="font-semibold text-ink" data-measure>
+              {Math.round(options.opacity * 100)}%
+            </span>
           </div>
           <input
+            id={id('opacity')}
             type="range"
             min="10"
             max="100"
             value={Math.round(options.opacity * 100)}
             onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 100) / 100 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+            className="w-full"
           />
         </div>
       </div>
 
-      {/* Text Color & Drop Shadow */}
-      <div className="flex items-center justify-between pt-2 border-t border-hairline text-[14px]">
-        <div className="flex items-center gap-2">
-          <span className="text-body">Text Color</span>
+      {/* Color and shadow */}
+      <div className="space-y-2 pt-4 border-t border-pencil text-[15px]">
+        <div className="flex items-center gap-3">
+          <label htmlFor={id('color')} className="text-ink">
+            {t('ctl.text.color')}
+          </label>
           <input
+            id={id('color')}
             type="color"
             value={options.color}
             onChange={(e) => onChange({ ...options, color: e.target.value })}
-            className="w-6 h-6 rounded border border-hairline bg-transparent cursor-pointer"
+            className={swatchClass}
           />
-          <span className="font-mono text-mute">{options.color}</span>
+          <span className="text-[14px] text-graphite uppercase" data-measure>
+            {options.color}
+          </span>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer text-body hover:text-ink">
-          <span>Drop Shadow</span>
+        <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
           <input
             type="checkbox"
             checked={!!options.dropShadow}
             onChange={(e) => onChange({ ...options, dropShadow: e.target.checked })}
-            className="rounded border-hairline bg-surface-card text-accent-blue focus:ring-0"
+            className="w-4 h-4 shrink-0"
           />
+          <span>{t('ctl.text.shadow')}</span>
         </label>
       </div>
 
-      {/* Stroke / Outline Controls */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-[14px]">
-        <div className="flex items-center justify-between">
-          <label className="flex items-center gap-2 cursor-pointer text-body hover:text-ink">
+      {/* Outline */}
+      <div className="space-y-2 pt-4 border-t border-pencil text-[15px]">
+        <div className="flex items-center justify-between gap-3">
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
             <input
               type="checkbox"
               checked={hasStroke}
@@ -197,46 +258,49 @@ export function TextControls({ options, onChange }: Props) {
                   strokeColor: options.strokeColor || '#000000',
                 });
               }}
-              className="rounded border-hairline bg-surface-card text-accent-blue focus:ring-0"
+              className="w-4 h-4 shrink-0"
             />
-            <span className="font-medium">Text Stroke / Outline</span>
+            <span className="font-medium">{t('ctl.text.outline')}</span>
           </label>
 
           {hasStroke && (
-            <div className="flex items-center gap-2">
-              <input
-                type="color"
-                value={options.strokeColor || '#000000'}
-                onChange={(e) => onChange({ ...options, strokeColor: e.target.value })}
-                className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
-              />
-              <span className="font-mono text-[13px] text-mute">{options.strokeColor || '#000000'}</span>
-            </div>
+            <input
+              type="color"
+              value={options.strokeColor || '#000000'}
+              onChange={(e) => onChange({ ...options, strokeColor: e.target.value })}
+              aria-label={t('ctl.text.outlineColor')}
+              className={swatchClass}
+            />
           )}
         </div>
 
         {hasStroke && (
-          <div className="space-y-1">
-            <div className="flex justify-between text-[13px]">
-              <span className="text-mute">Stroke Thickness</span>
-              <span className="font-mono text-ink">{options.strokeWidth || 4}px</span>
+          <div className="space-y-1.5">
+            <div className="flex items-baseline justify-between gap-2">
+              <label htmlFor={id('stroke')} className="text-ink">
+                {t('ctl.text.outlineWidth')}
+              </label>
+              <span className="font-semibold text-ink" data-measure>
+                {options.strokeWidth || 4} px
+              </span>
             </div>
             <input
+              id={id('stroke')}
               type="range"
               min="1"
               max="20"
               value={options.strokeWidth || 4}
               onChange={(e) => onChange({ ...options, strokeWidth: parseInt(e.target.value) || 4 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+              className="w-full"
             />
           </div>
         )}
       </div>
 
-      {/* Background Badge Controls */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-[14px]">
-        <div className="flex items-center justify-between">
-          <label className="flex items-center gap-2 cursor-pointer text-body hover:text-ink">
+      {/* Background box */}
+      <div className="space-y-2 pt-4 border-t border-pencil text-[15px]">
+        <div className="flex items-center justify-between gap-3">
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
             <input
               type="checkbox"
               checked={hasBg}
@@ -248,37 +312,40 @@ export function TextControls({ options, onChange }: Props) {
                   backgroundOpacity: options.backgroundOpacity ?? 0.8,
                 });
               }}
-              className="rounded border-hairline bg-surface-card text-accent-blue focus:ring-0"
+              className="w-4 h-4 shrink-0"
             />
-            <span className="font-medium">Background Badge / Card</span>
+            <span className="font-medium">{t('ctl.text.background')}</span>
           </label>
 
           {hasBg && (
-            <div className="flex items-center gap-2">
-              <input
-                type="color"
-                value={options.backgroundColor || '#000000'}
-                onChange={(e) => onChange({ ...options, backgroundColor: e.target.value })}
-                className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
-              />
-              <span className="font-mono text-[13px] text-mute">{options.backgroundColor || '#000000'}</span>
-            </div>
+            <input
+              type="color"
+              value={options.backgroundColor || '#000000'}
+              onChange={(e) => onChange({ ...options, backgroundColor: e.target.value })}
+              aria-label={t('ctl.text.backgroundColor')}
+              className={swatchClass}
+            />
           )}
         </div>
 
         {hasBg && (
-          <div className="space-y-1">
-            <div className="flex justify-between text-[13px]">
-              <span className="text-mute">Badge Opacity</span>
-              <span className="font-mono text-ink">{Math.round((options.backgroundOpacity ?? 0.8) * 100)}%</span>
+          <div className="space-y-1.5">
+            <div className="flex items-baseline justify-between gap-2">
+              <label htmlFor={id('bg-opacity')} className="text-ink">
+                {t('ctl.text.backgroundOpacity')}
+              </label>
+              <span className="font-semibold text-ink" data-measure>
+                {Math.round((options.backgroundOpacity ?? 0.8) * 100)}%
+              </span>
             </div>
             <input
+              id={id('bg-opacity')}
               type="range"
               min="10"
               max="100"
               value={Math.round((options.backgroundOpacity ?? 0.8) * 100)}
               onChange={(e) => onChange({ ...options, backgroundOpacity: (parseInt(e.target.value) || 80) / 100 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+              className="w-full"
             />
           </div>
         )}

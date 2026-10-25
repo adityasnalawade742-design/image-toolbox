@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShieldCheck, Lock, MapPin, Camera, User, FileText } from 'lucide-react';
+import { ShieldCheck, MapPin, Camera, User, FileText } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   originalBytes: number;
@@ -7,6 +7,8 @@ interface Props {
 }
 
 export function MetadataStripperControls({ originalBytes, outputBytes }: Props) {
+  const t = useT();
+
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
     if (bytes < 1024) return `${bytes} B`;
@@ -14,41 +16,47 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
   };
 
   const guarantees = [
-    { icon: <MapPin className="w-4 h-4 text-accent-red" />, title: 'GPS Coordinates Removed', desc: 'Latitude, longitude, altitude, and location timestamps stripped.' },
-    { icon: <Camera className="w-4 h-4 text-accent-blue" />, title: 'Camera & Device Info Removed', desc: 'Camera model, lens, serial numbers, shutter speed, ISO data stripped.' },
-    { icon: <User className="w-4 h-4 text-accent-green" />, title: 'Author & Copyright Metadata Removed', desc: 'Creator tags, software signatures, editing software logs stripped.' },
-    { icon: <FileText className="w-4 h-4 text-accent-yellow" />, title: 'EXIF & IPTC Header Stripped', desc: 'Re-encoded purely from raw pixel buffers via HTML5 Canvas.' },
+    { key: 'gps', Icon: MapPin, title: t('ctl.metadata.gpsTitle'), desc: t('ctl.metadata.gpsDesc') },
+    { key: 'camera', Icon: Camera, title: t('ctl.metadata.cameraTitle'), desc: t('ctl.metadata.cameraDesc') },
+    { key: 'author', Icon: User, title: t('ctl.metadata.authorTitle'), desc: t('ctl.metadata.authorDesc') },
+    { key: 'blocks', Icon: FileText, title: t('ctl.metadata.blocksTitle'), desc: t('ctl.metadata.blocksDesc') },
   ];
 
   return (
-    <div className="space-y-4">
-      {/* Privacy Guarantee Card */}
-      <div className="p-4 bg-surface-card border border-hairline rounded-lg space-y-3">
-        <div className="flex items-center gap-2 text-[14px] font-semibold text-accent-green">
-          <ShieldCheck className="w-4 h-4" />
-          <span>100% Verified Client-Side Privacy Strip</span>
-        </div>
-
-        <div className="space-y-2.5">
-          {guarantees.map((g) => (
-            <div key={g.title} className="flex items-start gap-2.5 text-[14px]">
-              <div className="p-1 rounded bg-surface border border-hairline shrink-0 mt-0.5">
-                {g.icon}
+    <div className="space-y-5">
+      <div className="space-y-1.5">
+        <span className="slug block">{t('ctl.metadata.removed')}</span>
+        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft">
+          {guarantees.map(({ key, Icon, title, desc }) => (
+            <li key={key} className="flex items-start gap-3 px-3 py-2.5">
+              <Icon className="w-4 h-4 shrink-0 mt-0.5 text-ink" aria-hidden="true" />
+              <div className="min-w-0">
+                <div className="text-[14px] font-semibold text-ink">{title}</div>
+                <div className="text-[13px] text-graphite leading-relaxed">{desc}</div>
               </div>
-              <div>
-                <div className="font-medium text-ink">{g.title}</div>
-                <div className="text-[13px] text-mute">{g.desc}</div>
-              </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+        <p className="flex items-start gap-2 pt-1 text-[14px] text-accent-green font-medium">
+          <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+          <span>{t('ctl.metadata.local')}</span>
+        </p>
       </div>
 
-      {/* File Size Metric */}
+      {/* File size */}
       {outputBytes > 0 && (
-        <div className="p-3 bg-surface-card border border-hairline rounded-md flex items-center justify-between text-[14px]">
-          <span className="text-mute">Original: <strong className="text-ink font-mono">{formatSize(originalBytes)}</strong></span>
-          <span className="text-accent-green font-mono font-medium">Cleaned Output: {formatSize(outputBytes)}</span>
+        <div className="space-y-1.5 pt-4 border-t border-pencil">
+          <span className="slug block">{t('ctl.metadata.size')}</span>
+          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+            <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+              <dt className="text-graphite">{t('ctl.metadata.original')}</dt>
+              <dd className="text-ink font-semibold" data-measure>{formatSize(originalBytes)}</dd>
+            </div>
+            <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+              <dt className="text-graphite">{t('ctl.metadata.cleaned')}</dt>
+              <dd className="text-ink font-semibold" data-measure>{formatSize(outputBytes)}</dd>
+            </div>
+          </dl>
         </div>
       )}
     </div>

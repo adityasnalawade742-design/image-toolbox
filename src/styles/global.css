@@ -146,7 +146,7 @@
 
   /* Small-caps labels for slug lines, tickets and section rules */
   .slug {
-    @apply font-condensed font-semibold uppercase text-[11px] tracking-[0.08em] text-graphite;
+    @apply font-condensed font-semibold uppercase text-[12px] tracking-[0.08em] text-graphite;
   }
 
   /* Category ink marks */

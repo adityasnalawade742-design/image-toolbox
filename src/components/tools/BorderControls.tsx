@@ -1,86 +1,102 @@
-import React from 'react';
+import { useId } from 'react';
 import type { BorderOptions } from '../../lib/canvas/engine';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   options: BorderOptions;
   onChange: (opts: BorderOptions) => void;
 }
 
+const segButton = (selected: boolean) =>
+  `min-h-[52px] px-2.5 py-1.5 flex flex-col items-start justify-center text-left transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
 export function BorderControls({ options, onChange }: Props) {
+  const t = useT();
+  const idBase = useId();
+  const opacityPct = Math.round((options.opacity !== undefined ? options.opacity : 1) * 100);
+
+  const modes = [
+    { id: 'outside' as const, label: t('ctl.border.outside'), hint: t('ctl.border.outsideHint') },
+    { id: 'inside' as const, label: t('ctl.border.inside'), hint: t('ctl.border.insideHint') },
+  ];
+
   return (
-    <div className="space-y-4">
-      {/* Border Mode */}
+    <div className="space-y-5">
+      {/* Placement */}
       <div className="space-y-1.5">
-        <label className="text-[14px] font-medium text-body">Border Mode</label>
-        <div className="grid grid-cols-2 gap-2 text-[14px]">
-          <button
-            type="button"
-            onClick={() => onChange({ ...options, mode: 'outside' })}
-            className={`py-2 rounded-md border text-center transition-colors ${
-              options.mode === 'outside'
-                ? 'bg-surface-card border-hairline-strong text-ink font-semibold'
-                : 'bg-surface-card border-hairline text-mute hover:text-ink'
-            }`}
-          >
-            Outside (Expand Canvas)
-          </button>
-          <button
-            type="button"
-            onClick={() => onChange({ ...options, mode: 'inside' })}
-            className={`py-2 rounded-md border text-center transition-colors ${
-              options.mode === 'inside'
-                ? 'bg-surface-card border-hairline-strong text-ink font-semibold'
-                : 'bg-surface-card border-hairline text-mute hover:text-ink'
-            }`}
-          >
-            Inside (Preserve Size)
-          </button>
+        <span className="slug block" id={`${idBase}-mode`}>{t('ctl.border.placement')}</span>
+        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
+          {modes.map((m) => {
+            const selected = options.mode === m.id;
+            return (
+              <button key={m.id} type="button" aria-pressed={selected} onClick={() => onChange({ ...options, mode: m.id })} className={segButton(selected)}>
+                <span className="text-[14px] font-semibold">{m.label}</span>
+                <span className={`text-[13px] ${selected ? 'text-paper' : 'text-graphite'}`}>{m.hint}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Border Width Slider */}
-      <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-[14px]">
-          <span className="text-body">Border Width</span>
-          <span className="font-mono text-ink font-semibold">{options.width}px</span>
+      {/* Width */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <div className="flex items-baseline justify-between gap-2 text-[15px]">
+          <label htmlFor={`${idBase}-width`} className="text-ink">
+            {t('ctl.border.width')}
+          </label>
+          <span className="font-semibold text-ink" data-measure>
+            {options.width} px
+          </span>
         </div>
         <input
+          id={`${idBase}-width`}
           type="range"
           min="1"
           max="100"
           value={options.width}
           onChange={(e) => onChange({ ...options, width: parseInt(e.target.value) || 0 })}
-          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+          className="w-full"
         />
       </div>
 
-      {/* Border Color & Opacity */}
-      <div className="grid grid-cols-2 gap-3 pt-2 border-t border-hairline items-center text-[14px]">
-        <div className="flex items-center gap-2">
-          <span className="text-body">Color</span>
-          <input
-            type="color"
-            value={options.color}
-            onChange={(e) => onChange({ ...options, color: e.target.value })}
-            className="w-6 h-6 rounded border border-hairline bg-transparent cursor-pointer"
-          />
-          <span className="font-mono text-mute">{options.color}</span>
-        </div>
+      {/* Color */}
+      <div className="flex items-center gap-3 text-[15px]">
+        <label htmlFor={`${idBase}-color`} className="text-ink">
+          {t('ctl.border.color')}
+        </label>
+        <input
+          id={`${idBase}-color`}
+          type="color"
+          value={options.color}
+          onChange={(e) => onChange({ ...options, color: e.target.value })}
+          className="w-10 h-10 p-0.5 border border-ink bg-paper-bright cursor-pointer"
+        />
+        <span className="text-[14px] text-graphite uppercase" data-measure>
+          {options.color}
+        </span>
+      </div>
 
-        <div className="space-y-1">
-          <div className="flex justify-between text-[13px]">
-            <span className="text-mute">Opacity</span>
-            <span className="font-mono text-ink">{Math.round((options.opacity !== undefined ? options.opacity : 1) * 100)}%</span>
-          </div>
-          <input
-            type="range"
-            min="10"
-            max="100"
-            value={Math.round((options.opacity !== undefined ? options.opacity : 1) * 100)}
-            onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 100) / 100 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
-          />
+      {/* Opacity */}
+      <div className="space-y-1.5">
+        <div className="flex items-baseline justify-between gap-2 text-[15px]">
+          <label htmlFor={`${idBase}-opacity`} className="text-ink">
+            {t('ctl.border.opacity')}
+          </label>
+          <span className="font-semibold text-ink" data-measure>
+            {opacityPct}%
+          </span>
         </div>
+        <input
+          id={`${idBase}-opacity`}
+          type="range"
+          min="10"
+          max="100"
+          value={opacityPct}
+          onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 100) / 100 })}
+          className="w-full"
+        />
       </div>
     </div>
   );

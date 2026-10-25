@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Zap, AlertCircle, Target, Sliders, Check } from 'lucide-react';
+import { useId, useState } from 'react';
+import { AlertCircle, Target, Sliders, Info } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   originalBytes: number;
@@ -10,6 +11,11 @@ interface Props {
   onFormatChange: (f: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif') => void;
 }
 
+const segment = (active: boolean) =>
+  `min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${
+    active ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
 export function CompressControls({
   originalBytes,
   outputBytes,
@@ -18,6 +24,9 @@ export function CompressControls({
   onQualityChange,
   onFormatChange,
 }: Props) {
+  const t = useT();
+  const targetId = useId();
+  const qualityId = useId();
   const [compressMode, setCompressMode] = useState<'quality' | 'target'>('quality');
   const [targetKb, setTargetKb] = useState<number>(100);
 
@@ -33,6 +42,7 @@ export function CompressControls({
     : 0;
 
   const isLarger = outputBytes > originalBytes;
+  const isPng = format === 'image/png';
 
   const handleTargetKbChange = (kb: number) => {
     setTargetKb(kb);
@@ -51,140 +61,146 @@ export function CompressControls({
   const kbPresets = [50, 100, 200, 500];
 
   return (
-    <div className="space-y-4">
-      {/* Mode Switch: Quality Slider vs Target File Size */}
-      <div className="flex items-center gap-1.5 p-1 bg-surface-card border border-hairline rounded-md">
-        <button
-          type="button"
-          onClick={() => setCompressMode('quality')}
-          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
-            compressMode === 'quality' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
-          }`}
-        >
-          <Sliders className="w-3.5 h-3.5" />
-          <span>Quality Slider</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setCompressMode('target');
-            handleTargetKbChange(targetKb);
-          }}
-          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
-            compressMode === 'target' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
-          }`}
-        >
-          <Target className="w-3.5 h-3.5" />
-          <span>Target File Size</span>
-        </button>
+    <div className="space-y-5">
+      {/* Mode: quality slider or approximate file size */}
+      <div className="space-y-1.5">
+        <span className="slug block">{t('ctl.compress.mode')}</span>
+        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.mode')}>
+          <button
+            type="button"
+            aria-pressed={compressMode === 'quality'}
+            onClick={() => setCompressMode('quality')}
+            className={`${segment(compressMode === 'quality')} inline-flex items-center justify-center gap-1.5`}
+          >
+            <Sliders className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.compress.modeQuality')}</span>
+          </button>
+          <button
+            type="button"
+            aria-pressed={compressMode === 'target'}
+            onClick={() => {
+              setCompressMode('target');
+              handleTargetKbChange(targetKb);
+            }}
+            className={`${segment(compressMode === 'target')} inline-flex items-center justify-center gap-1.5`}
+          >
+            <Target className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.compress.modeTarget')}</span>
+          </button>
+        </div>
       </div>
 
-      {/* Live Savings Metric Banner */}
-      <div className="p-3.5 bg-surface-card border border-hairline rounded-lg space-y-2">
-        <div className="flex items-center justify-between text-[14px]">
-          <span className="text-mute">Original Size: <strong className="text-ink font-mono">{formatSize(originalBytes)}</strong></span>
-          <span className="text-mute">Output Size: <strong className="text-ink font-mono">{formatSize(outputBytes)}</strong></span>
-        </div>
-
-        {outputBytes > 0 && (
-          <div className="pt-1.5 border-t border-hairline flex items-center justify-between text-[14px]">
-            <span className="text-body font-medium">Compression Result</span>
-            {isLarger ? (
-              <span className="flex items-center gap-1 text-[13px] text-accent-yellow font-medium">
-                <AlertCircle className="w-3.5 h-3.5" />
-                <span>Output is larger than original</span>
-              </span>
-            ) : (
-              <span className="flex items-center gap-1 font-mono text-accent-green font-bold">
-                <Zap className="w-3.5 h-3.5" />
-                <span>Saved {savingsPct.toFixed(1)}%</span>
-              </span>
-            )}
+      {/* Live size readout */}
+      <div className="space-y-1.5">
+        <span className="slug block">{t('ctl.compress.result')}</span>
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+            <dt className="text-graphite">{t('ctl.compress.original')}</dt>
+            <dd className="text-ink font-semibold" data-measure>{formatSize(originalBytes)}</dd>
           </div>
-        )}
+          <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+            <dt className="text-graphite">{t('ctl.compress.output')}</dt>
+            <dd className="text-ink font-semibold" data-measure>{formatSize(outputBytes)}</dd>
+          </div>
+          {outputBytes > 0 && (
+            <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+              <dt className="text-graphite">{t('ctl.compress.change')}</dt>
+              {isLarger ? (
+                <dd className="flex items-center gap-1.5 text-accent-yellow font-semibold text-right">
+                  <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  <span>{t('ctl.compress.larger')}</span>
+                </dd>
+              ) : (
+                <dd className="text-accent-green font-semibold" data-measure>
+                  {t('ctl.compress.saved', { percent: savingsPct.toFixed(1) })}
+                </dd>
+              )}
+            </div>
+          )}
+        </dl>
       </div>
 
       {compressMode === 'target' ? (
-        /* Target KB Controls */
-        <div className="space-y-3 pt-2 border-t border-hairline">
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between text-[14px]">
-              <label className="text-body font-medium">Desired Max File Size</label>
-              <span className="font-mono text-ink font-semibold">{targetKb} KB</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                min="10"
-                max={Math.max(1000, Math.round(originalBytes / 1024))}
-                value={targetKb}
-                onChange={(e) => handleTargetKbChange(parseInt(e.target.value) || 50)}
-                className="w-28 bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-              />
-              <span className="text-[14px] text-mute font-mono">KB</span>
-            </div>
+        /* Approximate file size: a single quality estimate, not a search */
+        <div className="space-y-3 pt-4 border-t border-pencil">
+          <span className="slug block">{t('ctl.compress.targetSize')}</span>
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[15px]">
+            <label htmlFor={targetId} className="text-ink">{t('ctl.compress.aimFor')}</label>
+            <input
+              id={targetId}
+              type="number"
+              min="10"
+              max={Math.max(1000, Math.round(originalBytes / 1024))}
+              value={targetKb}
+              onChange={(e) => handleTargetKbChange(parseInt(e.target.value) || 50)}
+              className="w-28 border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink"
+              data-measure
+            />
+            <span className="text-graphite">KB</span>
           </div>
 
-          <div className="space-y-1">
-            <span className="text-[13px] text-mute">Quick Presets:</span>
-            <div className="grid grid-cols-4 gap-1.5 text-[14px]">
-              {kbPresets.map((kb) => (
-                <button
-                  key={kb}
-                  type="button"
-                  onClick={() => handleTargetKbChange(kb)}
-                  className={`py-1.5 rounded-md border text-center font-mono text-[14px] transition-colors ${
-                    targetKb === kb
-                      ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                      : 'bg-surface border-hairline text-mute hover:text-ink'
-                  }`}
-                >
-                  {kb} KB
-                </button>
-              ))}
-            </div>
+          <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.presets')}>
+            {kbPresets.map((kb) => (
+              <button
+                key={kb}
+                type="button"
+                aria-pressed={targetKb === kb}
+                onClick={() => handleTargetKbChange(kb)}
+                className={segment(targetKb === kb)}
+                data-measure
+              >
+                {kb} KB
+              </button>
+            ))}
           </div>
+
+          <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.compress.targetHelp')}</p>
+        </div>
+      ) : isPng ? (
+        /* PNG ignores quality, so there is no slider to show */
+        <div className="pt-4 border-t border-pencil">
+          <p className="flex items-start gap-2 text-[14px] text-ink leading-relaxed">
+            <Info className="w-4 h-4 shrink-0 mt-0.5 text-graphite" aria-hidden="true" />
+            <span>{t('ctl.compress.pngLossless')}</span>
+          </p>
         </div>
       ) : (
-        /* Quality Slider */
-        <div className="space-y-2 pt-2 border-t border-hairline">
-          <div className="flex items-center justify-between text-[14px]">
-            <span className="text-body">Compression Level</span>
-            <span className="font-mono text-ink font-semibold">{quality}% Quality</span>
+        /* Quality slider */
+        <div className="space-y-2 pt-4 border-t border-pencil">
+          <div className="flex items-baseline justify-between gap-4">
+            <label htmlFor={qualityId} className="slug">{t('ctl.compress.quality')}</label>
+            <span className="text-[15px] text-ink font-semibold" data-measure>{quality}%</span>
           </div>
           <input
+            id={qualityId}
             type="range"
             min="10"
             max="100"
             value={quality}
             onChange={(e) => onQualityChange(parseInt(e.target.value) || 80)}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
+            className="w-full"
           />
-          {format === 'image/png' && (
-            <p className="text-[13px] text-mute leading-relaxed">
-              Note: PNG is a lossless format. Converting to WebP or JPEG provides significantly higher file size reduction.
-            </p>
-          )}
+          <div className="flex justify-between gap-4 text-[13px] text-graphite" aria-hidden="true">
+            <span>{t('ctl.compress.smaller')}</span>
+            <span className="text-right">{t('ctl.compress.sharper')}</span>
+          </div>
         </div>
       )}
 
-      {/* Format Selector */}
-      <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-[14px] font-medium text-body">Target Output Format</label>
-        <div className="grid grid-cols-4 gap-1.5 text-[14px]">
+      {/* Output format */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.compress.format')}</span>
+        <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.format')}>
           {(['image/avif', 'image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
             <button
               key={fmt}
               type="button"
+              aria-pressed={format === fmt}
               onClick={() => onFormatChange(fmt)}
-              className={`py-1.5 rounded-md border text-center font-medium transition-colors text-[14px] ${
-                format === fmt
-                  ? 'bg-surface-card border-hairline-strong text-ink font-bold shadow-sm'
-                  : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
-              }`}
+              className={segment(format === fmt)}
             >
               {fmt === 'image/avif'
-                ? 'AVIF (Ultra)'
+                ? 'AVIF'
                 : fmt === 'image/webp'
                 ? 'WebP'
                 : fmt === 'image/jpeg'
@@ -194,10 +210,10 @@ export function CompressControls({
           ))}
         </div>
         {format === 'image/avif' && (
-          <p className="text-[13px] text-accent-blue/90 leading-relaxed pt-1 flex items-center gap-1">
-            <Zap className="w-3 h-3 shrink-0" />
-            <span>AVIF is usually smaller than WebP at similar quality. Encoding runs in your browser and can take a few seconds on large photos.</span>
-          </p>
+          <p className="text-[13px] text-graphite leading-relaxed pt-1">{t('ctl.compress.avifNote')}</p>
+        )}
+        {compressMode === 'target' && isPng && (
+          <p className="text-[13px] text-graphite leading-relaxed pt-1">{t('ctl.compress.pngLossless')}</p>
         )}
       </div>
     </div>

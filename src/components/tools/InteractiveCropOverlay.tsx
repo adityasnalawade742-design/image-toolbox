@@ -187,16 +187,16 @@ export function InteractiveCropOverlay({
                 fill="black"
               />
             ) : (
-              <rect x={boxX} y={boxY} width={boxW} height={boxH} fill="black" rx="2" />
+              <rect x={boxX} y={boxY} width={boxW} height={boxH} fill="black" />
             )}
           </mask>
         </defs>
-        <rect width="100%" height="100%" fill="rgba(0, 0, 0, 0.55)" mask="url(#crop-mask)" />
+        <rect width="100%" height="100%" fill="rgba(20, 20, 20, 0.55)" mask="url(#crop-mask)" />
       </svg>
 
       {/* Interactive Selection Box */}
       <div
-        className={`absolute border-2 border-white/90 shadow-2xl pointer-events-auto cursor-move touch-none ${
+        className={`absolute border-2 border-paper-bright outline outline-1 outline-ink pointer-events-auto cursor-move touch-none ${
           isCircle ? 'rounded-full' : ''
         }`}
         style={{
@@ -204,26 +204,25 @@ export function InteractiveCropOverlay({
           top: boxY,
           width: boxW,
           height: boxH,
-          boxShadow: '0 0 0 1px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,0,0,0.3)',
         }}
         onPointerDown={(e) => handlePointerDown('move', e)}
       >
         {/* Rule of Thirds Grid Lines */}
-        <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-40">
-          <div className="border-r border-b border-ink" />
-          <div className="border-r border-b border-ink" />
-          <div className="border-b border-ink" />
-          <div className="border-r border-b border-ink" />
-          <div className="border-r border-b border-ink" />
-          <div className="border-b border-ink" />
-          <div className="border-r border-b border-ink" />
-          <div className="border-r border-b border-ink" />
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-60">
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
           <div />
         </div>
 
         {/* Live Pixel Dimension Label */}
         <div
-          className={`absolute left-1/2 -translate-x-1/2 bg-black/90 text-ink border border-ink font-mono text-[12px] px-2 py-0.5 rounded shadow whitespace-nowrap pointer-events-none transition-all ${
+          className={`absolute left-1/2 -translate-x-1/2 bg-process-key text-paper text-[12px] font-semibold px-2 py-0.5 whitespace-nowrap pointer-events-none transition-all ${
             boxY < 28 ? 'top-2' : '-top-6'
           }`}
         >
@@ -232,54 +231,54 @@ export function InteractiveCropOverlay({
 
         {/* Corner Handles (Generous touch padding) */}
         <div
-          className="absolute -top-3 -left-3 w-6 h-6 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('nw', e)}
         >
-          <div className="w-3.5 h-3.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-3 -right-3 w-6 h-6 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('ne', e)}
         >
-          <div className="w-3.5 h-3.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 -left-3 w-6 h-6 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('sw', e)}
         >
-          <div className="w-3.5 h-3.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 -right-3 w-6 h-6 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('se', e)}
         >
-          <div className="w-3.5 h-3.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
 
         {/* Midpoint Edge Handles */}
         <div
-          className="absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-8 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('w', e)}
         >
-          <div className="w-2.5 h-5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-8 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('e', e)}
         >
-          <div className="w-2.5 h-5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-6 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('n', e)}
         >
-          <div className="w-5 h-2.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-5 h-2.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-6 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('s', e)}
         >
-          <div className="w-5 h-2.5 bg-process-key border border-black/50 rounded-sm shadow-md" />
+          <div className="w-5 h-2.5 bg-paper-bright border border-ink" />
         </div>
       </div>
     </div>

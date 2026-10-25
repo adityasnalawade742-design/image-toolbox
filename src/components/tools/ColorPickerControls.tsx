@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Copy, Check, Pipette } from 'lucide-react';
 import { hexToRgb, rgbToHsl, rgbToHsv, rgbToCmyk } from '../../lib/canvas/engine';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   selectedHex: string;
@@ -9,7 +10,11 @@ interface Props {
 }
 
 export function ColorPickerControls({ selectedHex, history, onSelectColor }: Props) {
+  const t = useT();
   const [copiedType, setCopiedType] = useState<string | null>(null);
+
+  // History only fills when the image is clicked, so an empty history means nothing has been picked yet
+  const hasPick = history.length > 0;
 
   const rgb = hexToRgb(selectedHex);
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
@@ -21,115 +26,96 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
   const hsvString = `hsv(${hsv.h}°, ${hsv.s}%, ${hsv.v}%)`;
   const cmykString = `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
 
+  const readouts = [
+    { type: 'HEX', value: selectedHex },
+    { type: 'RGB', value: rgbString },
+    { type: 'HSL', value: hslString },
+    { type: 'HSV', value: hsvString },
+    { type: 'CMYK', value: cmykString },
+  ];
+
   const copyText = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
     setCopiedType(type);
     setTimeout(() => setCopiedType(null), 1500);
   };
 
-  return (
-    <div className="space-y-4">
-      {/* Click image hint */}
-      <div className="flex items-center gap-2 p-2.5 bg-surface-card border border-hairline rounded-md text-[14px] text-body">
-        <Pipette className="w-4 h-4 text-accent-blue shrink-0" />
-        <span>Click or tap anywhere on the image preview to sample exact pixel colors.</span>
+  if (!hasPick) {
+    return (
+      <div className="flex items-start gap-3 border border-pencil bg-paper-stock p-4">
+        <Pipette className="w-5 h-5 shrink-0 mt-0.5 text-ink" aria-hidden="true" />
+        <div className="space-y-1">
+          <p className="text-[15px] font-semibold text-ink">{t('ctl.color.emptyTitle')}</p>
+          <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.color.emptyHelp')}</p>
+        </div>
       </div>
+    );
+  }
 
-      {/* Selected Color Preview Card */}
-      <div className="p-4 bg-surface-card border border-hairline rounded-lg space-y-3">
+  return (
+    <div className="space-y-5">
+      {/* Picked color */}
+      <div className="space-y-1.5">
+        <span className="slug block">{t('ctl.color.selected')}</span>
         <div className="flex items-center gap-3">
           <div
-            className="w-12 h-12 rounded-lg border border-ink shadow-inner shrink-0"
+            className="w-14 h-14 border border-ink shrink-0"
             style={{ backgroundColor: selectedHex }}
+            aria-hidden="true"
           />
-          <div className="space-y-0.5">
-            <div className="text-[14px] text-mute">Selected Color</div>
-            <div className="text-sm font-bold text-ink font-mono">{selectedHex}</div>
-          </div>
+          <div className="text-[22px] font-semibold text-ink leading-none" data-measure>{selectedHex}</div>
         </div>
-
-        {/* Readouts & Copy buttons */}
-        <div className="space-y-2 pt-2 border-t border-hairline text-[14px] font-mono">
-          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
-            <span className="text-body">HEX: <strong className="text-ink">{selectedHex}</strong></span>
-            <button
-              type="button"
-              onClick={() => copyText(selectedHex, 'HEX')}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
-            >
-              {copiedType === 'HEX' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-              <span>{copiedType === 'HEX' ? 'Copied' : 'Copy'}</span>
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
-            <span className="text-body">RGB: <strong className="text-ink">{rgbString}</strong></span>
-            <button
-              type="button"
-              onClick={() => copyText(rgbString, 'RGB')}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
-            >
-              {copiedType === 'RGB' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-              <span>{copiedType === 'RGB' ? 'Copied' : 'Copy'}</span>
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
-            <span className="text-body">HSL: <strong className="text-ink">{hslString}</strong></span>
-            <button
-              type="button"
-              onClick={() => copyText(hslString, 'HSL')}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
-            >
-              {copiedType === 'HSL' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-              <span>{copiedType === 'HSL' ? 'Copied' : 'Copy'}</span>
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
-            <span className="text-body">HSV: <strong className="text-ink">{hsvString}</strong></span>
-            <button
-              type="button"
-              onClick={() => copyText(hsvString, 'HSV')}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
-            >
-              {copiedType === 'HSV' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-              <span>{copiedType === 'HSV' ? 'Copied' : 'Copy'}</span>
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
-            <span className="text-body">CMYK: <strong className="text-ink">{cmykString}</strong></span>
-            <button
-              type="button"
-              onClick={() => copyText(cmykString, 'CMYK')}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
-            >
-              {copiedType === 'CMYK' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-              <span>{copiedType === 'CMYK' ? 'Copied' : 'Copy'}</span>
-            </button>
-          </div>
-        </div>
+        <p className="flex items-start gap-2 pt-1 text-[13px] text-graphite leading-relaxed">
+          <Pipette className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+          <span>{t('ctl.color.pickAnother')}</span>
+        </p>
       </div>
 
-      {/* Recent Color History (up to 12) */}
-      {history.length > 0 && (
-        <div className="space-y-1.5 pt-2 border-t border-hairline">
-          <label className="text-[14px] font-medium text-body">Recent Color History</label>
-          <div className="flex flex-wrap gap-1.5">
-            {history.slice(-12).reverse().map((hex, idx) => (
-              <button
-                key={`${hex}-${idx}`}
-                type="button"
-                onClick={() => onSelectColor(hex)}
-                className="w-7 h-7 rounded-md border border-hairline hover:border-hairline-strong transition-transform hover:scale-110 shadow"
-                style={{ backgroundColor: hex }}
-                title={`Select ${hex}`}
-              />
-            ))}
-          </div>
+      {/* Readouts with copy buttons */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.color.values')}</span>
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          {readouts.map(({ type, value }) => (
+            <div key={type} className="flex items-center gap-3 pl-3">
+              <dt className="w-11 shrink-0 text-graphite">{type}</dt>
+              <dd className="flex-1 min-w-0 py-2 text-ink font-semibold break-words" data-measure>{value}</dd>
+              <dd className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => copyText(value, type)}
+                  aria-label={t('ctl.color.copyValue', { model: type })}
+                  title={t('ctl.color.copyValue', { model: type })}
+                  className="w-10 h-10 inline-flex items-center justify-center text-ink hover:bg-paper-stock transition-colors"
+                >
+                  {copiedType === type ? <Check className="w-4 h-4 text-accent-green" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                </button>
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <span className="sr-only" aria-live="polite">
+          {copiedType ? t('ctl.color.copied', { model: copiedType }) : ''}
+        </span>
+      </div>
+
+      {/* Recent color history (up to 12) */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.color.history')}</span>
+        <div className="flex flex-wrap gap-1.5">
+          {history.slice(-12).reverse().map((hex, idx) => (
+            <button
+              key={`${hex}-${idx}`}
+              type="button"
+              onClick={() => onSelectColor(hex)}
+              aria-pressed={hex === selectedHex}
+              aria-label={t('ctl.color.useColor', { hex })}
+              title={hex}
+              className={`w-10 h-10 border ${hex === selectedHex ? 'border-ink outline outline-2 outline-offset-1 outline-ink' : 'border-pencil hover:border-ink'}`}
+              style={{ backgroundColor: hex }}
+            />
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

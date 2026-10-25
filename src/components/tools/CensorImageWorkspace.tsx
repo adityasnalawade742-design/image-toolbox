@@ -1,21 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {
-  UploadCloud,
-  EyeOff,
-  Download,
-  RotateCcw,
-  Sparkles,
-  ShieldCheck,
-  Trash2,
-  Undo,
-  Square,
-  Circle,
-  Grid,
-  Copy,
-  Check,
-} from 'lucide-react';
+import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCircle } from 'lucide-react';
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
+import { useT } from '../shared/I18nContext';
+import type { StringKey } from '../../i18n/strings';
+
+type CensorMode = 'pixelate' | 'blur' | 'blackout';
+type OutputFormat = 'png' | 'jpeg' | 'webp';
+
+const MODES: { id: CensorMode; labelKey: StringKey; descKey: StringKey }[] = [
+  { id: 'pixelate', labelKey: 'ctl.censor.modePixelate', descKey: 'ctl.censor.descPixelate' },
+  { id: 'blur', labelKey: 'ctl.censor.modeBlur', descKey: 'ctl.censor.descBlur' },
+  { id: 'blackout', labelKey: 'ctl.censor.modeBlackout', descKey: 'ctl.censor.descBlackout' },
+];
+
+const FORMAT_LABEL: Record<OutputFormat, string> = { png: 'PNG', jpeg: 'JPG', webp: 'WebP' };
+
+/** True when the keyboard focus is somewhere typing should win over shortcuts */
+function isTextField(target: EventTarget | null): boolean {
+  if (!(target instanceof HTMLElement)) return false;
+  if (target.isContentEditable) return true;
+  if (target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement) return true;
+  if (target instanceof HTMLInputElement) {
+    return !['range', 'checkbox', 'radio', 'button', 'submit', 'reset', 'color', 'file'].includes(target.type);
+  }
+  return false;
+}
 
 interface CensorBox {
   id: string;
@@ -29,11 +39,13 @@ interface CensorBox {
 }
 
 export function CensorImageWorkspace() {
+  const t = useT();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
 
   // Tool Config
-  const [censorMode, setCensorMode] = useState<'pixelate' | 'blur' | 'blackout'>('pixelate');
+  const [censorMode, setCensorMode] = useState<CensorMode>('pixelate');
+  const [format, setFormat] = useState<OutputFormat>('png');
   const [intensity, setIntensity] = useState<number>(14);
   const [boxes, setBoxes] = useState<CensorBox[]>([]);
 
@@ -44,7 +56,6 @@ export function CensorImageWorkspace() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFileSelect = (file: File) => {
     if (!file.type.startsWith('image/')) return;
@@ -157,7 +168,7 @@ export function CensorImageWorkspace() {
       // Draw dashed selection border if currently drawing
       if (b.id === 'temp') {
         ctx.save();
-        ctx.strokeStyle = '#38bdf8';
+        ctx.strokeStyle = '#e4007c';
         ctx.lineWidth = Math.max(2, Math.round(naturalW / 600));
         ctx.setLineDash([8, 8]);
         if (b.shape === 'circle') {
@@ -253,7 +264,21 @@ export function CensorImageWorkspace() {
     setBoxes([]);
   };
 
-  const handleDownload = (format: 'png' | 'jpeg' | 'webp' = 'png') => {
+  // Ctrl+Z / Cmd+Z removes the last box, unless the user is typing in a field
+  const hasBoxes = boxes.length > 0;
+  useEffect(() => {
+    if (!imgElement || !hasBoxes) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!(e.ctrlKey || e.metaKey) || e.shiftKey || e.altKey || e.key.toLowerCase() !== 'z') return;
+      if (isTextField(e.target)) return;
+      e.preventDefault();
+      setBoxes((prev) => prev.slice(0, -1));
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [imgElement, hasBoxes]);
+
+  const handleDownload = (format: OutputFormat = 'png') => {
     if (!canvasRef.current) return;
     const link = document.createElement('a');
     link.download = `redacted-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
@@ -262,9 +287,11 @@ export function CensorImageWorkspace() {
   };
 
   const [copiedToast, setCopiedToast] = useState(false);
+  const [copyError, setCopyError] = useState<string | null>(null);
 
   const handleCopyClipboard = async () => {
     if (!canvasRef.current) return;
+    setCopyError(null);
     try {
       const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, 'image/png', 1.0));
       if (blob) {
@@ -274,21 +301,41 @@ export function CensorImageWorkspace() {
       }
     } catch (err) {
       console.error('Copy to clipboard failed:', err);
+      setCopyError(t('ctl.censor.errCopy'));
     }
   };
 
+  const loaded = Boolean(selectedFile && imgElement);
+  const imgW = imgElement?.naturalWidth || imgElement?.width || 0;
+  const imgH = imgElement?.naturalHeight || imgElement?.height || 0;
+  const activeMode = MODES.find((m) => m.id === censorMode) ?? MODES[0];
+  const downloadLabel = t('ctl.censor.download', { format: FORMAT_LABEL[format] });
+
+  const segmentClass = (selected: boolean) =>
+    `min-h-[40px] px-2 text-[14px] font-semibold flex items-center justify-center gap-1.5 transition-colors ${
+      selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    }`;
+
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6">
+    <div className={`w-full max-w-6xl mx-auto space-y-6 ${loaded ? 'pb-20 lg:pb-0' : ''}`}>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
+          e.target.value = '';
+        }}
+      />
+
       {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
       {selectedFile && imgElement && (
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
-          {/* Interactive Drawing Canvas Area (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="min-w-0 order-1 space-y-4">
-            <div
-              ref={containerRef}
-              className="canvas-checkerboard border border-ink p-4 min-h-[360px] sm:min-h-[480px] flex items-center justify-center relative select-none touch-none"
-            >
+          {/* Proof sheet: drawing happens on the canvas only, so the page still scrolls around it on phones */}
+          <div className="min-w-0 space-y-3">
+            <div className="canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] sm:min-h-[420px] p-4 sm:p-8 select-none">
               <canvas
                 ref={canvasRef}
                 onMouseDown={handleMouseDown}
@@ -299,218 +346,152 @@ export function CensorImageWorkspace() {
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleEndDrawing}
                 onTouchCancel={handleEndDrawing}
-                className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-pencil cursor-crosshair touch-none"
+                aria-label={t('ctl.censor.canvasLabel')}
+                className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-none"
               />
             </div>
+
+            {/* Job ticket */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ws.source')}</span>
+                <span className="text-ink font-semibold">{imgW} × {imgH} px</span>
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ctl.censor.boxes')}</span>
+                <span className="text-ink font-semibold" aria-live="polite">{boxes.length}</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+              >
+                {t('ws.replace')}
+              </button>
+            </div>
+            <p className="text-[14px] text-graphite">{t('ctl.censor.hint')}</p>
           </div>
 
-          {/* Controls Sidebar (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="order-2 space-y-5 bg-paper-bright border border-ink p-5">
-            <div>
-              <h3 className="text-base font-bold text-ink flex items-center gap-2">
-                <EyeOff className="w-4 h-4 text-ink" />
-                <span>Censor Tool Settings</span>
-              </h3>
-              <p className="text-[14px] text-graphite mt-1">
-                Drag on the photo to draw a censor region. Touch supported on phones.
-              </p>
-            </div>
-
-            {/* Shape Switch: Rectangle vs Circle */}
-            <div className="space-y-2">
-              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
-                Redaction Shape
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShape('rect')}
-                  className={`py-2 px-3 rounded-xl border text-[14px] font-medium flex items-center justify-center gap-2 transition-all ${
-                    shape === 'rect'
-                      ? 'border-ink bg-paper-stock text-ink font-bold'
-                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
-                  }`}
-                >
-                  <Square className="w-3.5 h-3.5" />
-                  <span>Rectangle</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShape('circle')}
-                  className={`py-2 px-3 rounded-xl border text-[14px] font-medium flex items-center justify-center gap-2 transition-all ${
-                    shape === 'circle'
-                      ? 'border-ink bg-paper-stock text-ink font-bold'
-                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
-                  }`}
-                >
-                  <Circle className="w-3.5 h-3.5" />
-                  <span>Circle / Oval</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Censor Modes */}
-            <div className="space-y-2">
-              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
-                Redaction Style
-              </label>
-              <div className="space-y-2">
-                <button
-                  type="button"
-                  onClick={() => setCensorMode('pixelate')}
-                  className={`w-full p-3 rounded-xl border text-left transition-all ${
-                    censorMode === 'pixelate'
-                      ? 'border-ink bg-paper-stock text-ink shadow-md'
-                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-ink">Mosaic Pixelation</span>
-                    <Grid className="w-4 h-4 text-ink" />
+          {/* Ruled control panel */}
+          <div className="space-y-5 lg:sticky lg:top-24">
+            <div className="border border-ink bg-paper-bright">
+              <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
+                <EyeOff className="w-4 h-4 text-ink" aria-hidden="true" />
+                {t('ctl.censor.settings')}
+              </h2>
+              <div className="p-4 space-y-4 text-[15px]">
+                {/* Shape */}
+                <div className="space-y-1.5">
+                  <span className="slug">{t('ctl.censor.shape')}</span>
+                  <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.shape')}>
+                    <button type="button" aria-pressed={shape === 'rect'} onClick={() => setShape('rect')} className={segmentClass(shape === 'rect')}>
+                      <Square className="w-4 h-4" aria-hidden="true" />
+                      <span>{t('ctl.censor.shapeRect')}</span>
+                    </button>
+                    <button type="button" aria-pressed={shape === 'circle'} onClick={() => setShape('circle')} className={segmentClass(shape === 'circle')}>
+                      <Circle className="w-4 h-4" aria-hidden="true" />
+                      <span>{t('ctl.censor.shapeOval')}</span>
+                    </button>
                   </div>
-                  <p className="text-[14px] text-graphite mt-1">Retro block mosaic pixelation</p>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setCensorMode('blur')}
-                  className={`w-full p-3 rounded-xl border text-left transition-all ${
-                    censorMode === 'blur'
-                      ? 'border-ink bg-paper-stock text-ink shadow-md'
-                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-ink">Gaussian Blur</span>
-                    <Sparkles className="w-4 h-4 text-ink" />
-                  </div>
-                  <p className="text-[14px] text-graphite mt-1">Smooth heavy Gaussian defocus blur</p>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setCensorMode('blackout')}
-                  className={`w-full p-3 rounded-xl border text-left transition-all ${
-                    censorMode === 'blackout'
-                      ? 'border-ink bg-paper-stock text-ink shadow-md'
-                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-ink">Solid Blackout Bar</span>
-                    <Square className="w-4 h-4 text-graphite" />
-                  </div>
-                  <p className="text-[14px] text-graphite mt-1">100% opaque black redaction box</p>
-                </button>
-              </div>
-            </div>
-
-            {/* Intensity Slider */}
-            {censorMode !== 'blackout' && (
-              <div className="space-y-1.5 pt-2 border-t border-pencil">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>{censorMode === 'pixelate' ? 'Block Size' : 'Blur Radius'}</span>
-                  <span className="font-mono text-graphite">{intensity}px</span>
                 </div>
-                <input
-                  type="range"
-                  min="4"
-                  max="45"
-                  value={intensity}
-                  onChange={(e) => setIntensity(Number(e.target.value))}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-            )}
 
-            {/* Box List & History Actions */}
-            <div className="pt-3 border-t border-pencil space-y-2">
-              <div className="flex items-center justify-between text-[14px]">
-                <span className="text-graphite">
-                  Active Redactions: <strong className="text-ink">{boxes.length}</strong>
-                </span>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    disabled={boxes.length === 0}
-                    onClick={handleUndo}
-                    className="text-[14px] text-graphite hover:text-ink flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-paper-stock"
-                  >
-                    <Undo className="w-3.5 h-3.5" />
-                    <span>Undo</span>
-                  </button>
-                  <button
-                    type="button"
-                    disabled={boxes.length === 0}
-                    onClick={handleClearAll}
-                    className="text-[14px] text-accent-red hover:text-accent-red flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-paper-stock"
-                  >
-                    <Trash2 className="w-3.5 h-3.5" />
-                    <span>Clear</span>
-                  </button>
+                {/* Style */}
+                <div className="space-y-1.5 pt-4 border-t border-ink">
+                  <span className="slug">{t('ctl.censor.style')}</span>
+                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.style')}>
+                    {MODES.map((m) => (
+                      <button
+                        key={m.id}
+                        type="button"
+                        aria-pressed={censorMode === m.id}
+                        onClick={() => setCensorMode(m.id)}
+                        className={segmentClass(censorMode === m.id)}
+                      >
+                        {t(m.labelKey)}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-[14px] text-graphite">{t(activeMode.descKey)}</p>
                 </div>
-              </div>
-            </div>
 
-            {/* Download and Copy Buttons */}
-            <div className="pt-3 border-t border-pencil space-y-2">
-              <button
-                type="button"
-                onClick={() => handleDownload('png')}
-                className="w-full py-3 px-4 rounded-xl bg-process-key hover:bg-process-key text-ink font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download Redacted Image (PNG)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleCopyClipboard}
-                className="w-full py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
-              >
-                {copiedToast ? (
-                  <>
-                    <Check className="w-4 h-4 text-accent-green" />
-                    <span className="text-accent-green">Copied to Clipboard!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    <span>Copy Redacted Image</span>
-                  </>
+                {/* Strength */}
+                {censorMode !== 'blackout' && (
+                  <label className="block space-y-1.5">
+                    <span className="flex items-center justify-between">
+                      <span className="slug">{censorMode === 'pixelate' ? t('ctl.censor.blockSize') : t('ctl.censor.blurStrength')}</span>
+                      <span className="font-semibold text-ink" data-measure>{intensity} px</span>
+                    </span>
+                    <input
+                      type="range"
+                      min="4"
+                      max="45"
+                      value={intensity}
+                      onChange={(e) => setIntensity(Number(e.target.value))}
+                      className="w-full"
+                    />
+                  </label>
                 )}
-              </button>
 
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleDownload('webp')}
-                  className="py-2 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-body text-[14px] font-medium transition-all cursor-pointer text-center"
-                >
-                  Download WebP
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleDownload('jpeg')}
-                  className="py-2 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-body text-[14px] font-medium transition-all cursor-pointer text-center"
-                >
-                  Download JPG
+                {/* History */}
+                <div className="space-y-2 pt-4 border-t border-ink">
+                  <div className="grid grid-cols-2 gap-2">
+                    <button type="button" disabled={boxes.length === 0} onClick={handleUndo} className="btn-rule disabled:opacity-40 disabled:pointer-events-none">
+                      <Undo2 className="w-4 h-4" aria-hidden="true" />
+                      <span>{t('ctl.censor.undo')}</span>
+                    </button>
+                    <button type="button" disabled={boxes.length === 0} onClick={handleClearAll} className="btn-rule disabled:opacity-40 disabled:pointer-events-none">
+                      <Trash2 className="w-4 h-4" aria-hidden="true" />
+                      <span>{t('ctl.censor.clearAll')}</span>
+                    </button>
+                  </div>
+                  <p className="text-[13px] text-graphite">{t('ctl.censor.undoShortcut')}</p>
+                </div>
+
+                {/* Output format */}
+                <div className="space-y-1.5 pt-4 border-t border-ink">
+                  <span className="slug">{t('ctl.censor.saveAs')}</span>
+                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.outputFormat')}>
+                    {(['png', 'jpeg', 'webp'] as const).map((fmt) => (
+                      <button key={fmt} type="button" aria-pressed={format === fmt} onClick={() => setFormat(fmt)} className={segmentClass(format === fmt)}>
+                        {FORMAT_LABEL[fmt]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="hidden lg:block">
+                <button type="button" onClick={() => handleDownload(format)} className="btn-ink w-full min-h-[52px] text-[16px]">
+                  <Download className="w-5 h-5" aria-hidden="true" />
+                  <span>{downloadLabel}</span>
                 </button>
               </div>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedFile(null);
-                  setImgElement(null);
-                  setBoxes([]);
-                }}
-                className="w-full py-2 px-4 rounded-xl bg-transparent hover:bg-paper-stock text-graphite hover:text-ink text-[14px] font-medium transition-all cursor-pointer"
-              >
-                Choose Different Photo
+              <button type="button" onClick={handleCopyClipboard} className="btn-rule w-full">
+                {copiedToast ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                <span aria-live="polite">{copiedToast ? t('ctl.censor.copied') : t('ctl.censor.copy')}</span>
               </button>
+
+              {copyError && (
+                <p role="alert" className="flex items-start gap-1.5 text-[14px] text-accent-red leading-relaxed">
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{copyError}</span>
+                </p>
+              )}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Phones: the primary action stays under the thumb */}
+      {loaded && (
+        <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 bg-paper border-t border-ink px-4 py-3">
+          <button type="button" onClick={() => handleDownload(format)} className="btn-ink w-full min-h-[48px] text-[16px]">
+            <Download className="w-5 h-5" aria-hidden="true" />
+            <span>{downloadLabel}</span>
+          </button>
         </div>
       )}
     </div>

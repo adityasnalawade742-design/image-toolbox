@@ -1,25 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
-import {
-  UploadCloud,
-  Sliders,
-  RotateCcw,
-  Download,
-  Sparkles,
-  Sun,
-  Contrast,
-  Palette,
-  Eye,
-  Layers,
-  Copy,
-  Check,
-  Zap,
-} from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Sliders, RotateCcw, Download, Copy, Check, ChevronsLeftRight, AlertCircle } from 'lucide-react';
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
+import { useT } from '../shared/I18nContext';
+import type { StringKey } from '../../i18n/strings';
+import { formatBytes } from '../../lib/canvas/engine';
 
 interface FilterPreset {
   id: string;
-  name: string;
+  nameKey: StringKey;
   brightness: number;
   contrast: number;
   saturate: number;
@@ -29,22 +18,57 @@ interface FilterPreset {
   invert: number;
   blur: number;
   vignette: number;
-  sharpness?: number;
+  /** Extra contrast on top of `contrast` (labelled "Clarity"; it does not sharpen) */
+  clarity?: number;
 }
 
 const PRESETS: FilterPreset[] = [
-  { id: 'normal', name: 'Original', brightness: 100, contrast: 100, saturate: 100, sepia: 0, grayscale: 0, hueRotate: 0, invert: 0, blur: 0, vignette: 0, sharpness: 0 },
-  { id: 'cinematic', name: 'Cinematic', brightness: 105, contrast: 125, saturate: 110, sepia: 15, grayscale: 0, hueRotate: 345, invert: 0, blur: 0, vignette: 30, sharpness: 15 },
-  { id: 'vintage', name: 'Vintage 70s', brightness: 110, contrast: 90, saturate: 75, sepia: 40, grayscale: 0, hueRotate: 15, invert: 0, blur: 0, vignette: 40, sharpness: 0 },
-  { id: 'cyberpunk', name: 'Cyberpunk', brightness: 115, contrast: 135, saturate: 160, sepia: 0, grayscale: 0, hueRotate: 180, invert: 0, blur: 0, vignette: 25, sharpness: 25 },
-  { id: 'noir', name: 'Moody Noir', brightness: 95, contrast: 150, saturate: 0, sepia: 0, grayscale: 100, hueRotate: 0, invert: 0, blur: 0, vignette: 50, sharpness: 20 },
-  { id: 'sunset', name: 'Sunset Warm', brightness: 108, contrast: 115, saturate: 130, sepia: 25, grayscale: 0, hueRotate: 10, invert: 0, blur: 0, vignette: 20, sharpness: 10 },
-  { id: 'cool', name: 'Cool Fade', brightness: 105, contrast: 95, saturate: 85, sepia: 0, grayscale: 0, hueRotate: 200, invert: 0, blur: 0, vignette: 15, sharpness: 5 },
-  { id: 'dramatic', name: 'Dramatic HDR', brightness: 110, contrast: 140, saturate: 140, sepia: 0, grayscale: 0, hueRotate: 0, invert: 0, blur: 0, vignette: 35, sharpness: 30 },
-  { id: 'invert', name: 'Negative', brightness: 100, contrast: 100, saturate: 100, sepia: 0, grayscale: 0, hueRotate: 0, invert: 100, blur: 0, vignette: 0, sharpness: 0 },
+  { id: 'normal', nameKey: 'ctl.filters.preset.normal', brightness: 100, contrast: 100, saturate: 100, sepia: 0, grayscale: 0, hueRotate: 0, invert: 0, blur: 0, vignette: 0, clarity: 0 },
+  { id: 'cinematic', nameKey: 'ctl.filters.preset.cinematic', brightness: 105, contrast: 125, saturate: 110, sepia: 15, grayscale: 0, hueRotate: 345, invert: 0, blur: 0, vignette: 30, clarity: 15 },
+  { id: 'vintage', nameKey: 'ctl.filters.preset.vintage', brightness: 110, contrast: 90, saturate: 75, sepia: 40, grayscale: 0, hueRotate: 15, invert: 0, blur: 0, vignette: 40, clarity: 0 },
+  { id: 'cyberpunk', nameKey: 'ctl.filters.preset.cyberpunk', brightness: 115, contrast: 135, saturate: 160, sepia: 0, grayscale: 0, hueRotate: 180, invert: 0, blur: 0, vignette: 25, clarity: 25 },
+  { id: 'noir', nameKey: 'ctl.filters.preset.noir', brightness: 95, contrast: 150, saturate: 0, sepia: 0, grayscale: 100, hueRotate: 0, invert: 0, blur: 0, vignette: 50, clarity: 20 },
+  { id: 'sunset', nameKey: 'ctl.filters.preset.sunset', brightness: 108, contrast: 115, saturate: 130, sepia: 25, grayscale: 0, hueRotate: 10, invert: 0, blur: 0, vignette: 20, clarity: 10 },
+  { id: 'cool', nameKey: 'ctl.filters.preset.cool', brightness: 105, contrast: 95, saturate: 85, sepia: 0, grayscale: 0, hueRotate: 200, invert: 0, blur: 0, vignette: 15, clarity: 5 },
+  { id: 'dramatic', nameKey: 'ctl.filters.preset.dramatic', brightness: 110, contrast: 140, saturate: 140, sepia: 0, grayscale: 0, hueRotate: 0, invert: 0, blur: 0, vignette: 35, clarity: 30 },
+  { id: 'invert', nameKey: 'ctl.filters.preset.invert', brightness: 100, contrast: 100, saturate: 100, sepia: 0, grayscale: 0, hueRotate: 0, invert: 100, blur: 0, vignette: 0, clarity: 0 },
 ];
 
+type SaveFormat = 'png' | 'jpeg' | 'webp';
+const SAVE_FORMATS: SaveFormat[] = ['png', 'jpeg', 'webp'];
+const formatLabel = (f: SaveFormat) => (f === 'jpeg' ? 'JPG' : f.toUpperCase());
+
+function RangeField({
+  label,
+  value,
+  unit,
+  min,
+  max,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  unit: string;
+  min: number;
+  max: number;
+  onChange: (v: number) => void;
+}) {
+  return (
+    <label className="block space-y-1.5">
+      <span className="flex items-center justify-between gap-3">
+        <span className="text-ink">{label}</span>
+        <span className="font-semibold text-ink" data-measure>
+          {value}
+          {unit}
+        </span>
+      </span>
+      <input type="range" min={min} max={max} value={value} onChange={(e) => onChange(Number(e.target.value))} className="w-full" />
+    </label>
+  );
+}
+
 export function PhotoFiltersWorkspace() {
+  const t = useT();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
   const [activePreset, setActivePreset] = useState<string>('normal');
@@ -59,11 +83,13 @@ export function PhotoFiltersWorkspace() {
   const [invert, setInvert] = useState<number>(0);
   const [blur, setBlur] = useState<number>(0);
   const [vignette, setVignette] = useState<number>(0);
-  const [sharpness, setSharpness] = useState<number>(0);
+  const [clarity, setClarity] = useState<number>(0);
 
   const [sliderPos, setSliderPos] = useState<number>(50);
   const [showComparison, setShowComparison] = useState<boolean>(false);
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
+  const [copyError, setCopyError] = useState<boolean>(false);
+  const [saveFormat, setSaveFormat] = useState<SaveFormat>('png');
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const splitContainerRef = useRef<HTMLDivElement>(null);
@@ -91,7 +117,7 @@ export function PhotoFiltersWorkspace() {
     setInvert(preset.invert);
     setBlur(preset.blur);
     setVignette(preset.vignette);
-    setSharpness(preset.sharpness || 0);
+    setClarity(preset.clarity || 0);
   };
 
   const handleReset = () => {
@@ -107,8 +133,8 @@ export function PhotoFiltersWorkspace() {
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Could not create canvas context');
 
-    // Effective contrast with sharpness boost
-    const effectiveContrast = contrast + Math.round(sharpness * 0.35);
+    // Clarity is applied as extra contrast
+    const effectiveContrast = contrast + Math.round(clarity * 0.35);
 
     // Apply CSS Filters
     ctx.filter = `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blur}px)`;
@@ -134,7 +160,7 @@ export function PhotoFiltersWorkspace() {
     return canvas;
   };
 
-  const handleDownload = (format: 'png' | 'jpeg' | 'webp' = 'png') => {
+  const handleDownload = (format: SaveFormat = 'png') => {
     const canvas = renderCanvas();
     const link = document.createElement('a');
     link.download = `filtered-${activePreset}-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
@@ -143,6 +169,7 @@ export function PhotoFiltersWorkspace() {
   };
 
   const handleCopyClipboard = async () => {
+    setCopyError(false);
     try {
       const canvas = renderCanvas();
       const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, 'image/png', 1.0));
@@ -153,16 +180,17 @@ export function PhotoFiltersWorkspace() {
       }
     } catch (err) {
       console.error('Clipboard copy failed:', err);
+      setCopyError(true);
     }
   };
 
-  const effectiveContrast = contrast + Math.round(sharpness * 0.35);
+  const effectiveContrast = contrast + Math.round(clarity * 0.35);
   const filterStyle = {
     filter: `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blur}px)`,
     willChange: 'filter',
   };
 
-  // Touch tracking for split slider
+  // Pointer tracking for split slider
   const handleSplitPointerMove = (clientX: number) => {
     if (!splitContainerRef.current) return;
     const rect = splitContainerRef.current.getBoundingClientRect();
@@ -170,337 +198,93 @@ export function PhotoFiltersWorkspace() {
     setSliderPos(Math.round(pct));
   };
 
+  const handleSplitKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const step = e.shiftKey ? 10 : 1;
+    let next: number | null = null;
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = sliderPos - step;
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = sliderPos + step;
+    else if (e.key === 'PageDown') next = sliderPos - 10;
+    else if (e.key === 'PageUp') next = sliderPos + 10;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = 100;
+    if (next === null) return;
+    e.preventDefault();
+    setSliderPos(Math.max(0, Math.min(100, next)));
+  };
+
+  // Any manual slider change leaves the preset
+  const adjust = (setter: (v: number) => void) => (v: number) => {
+    setter(v);
+    setActivePreset('custom');
+  };
+
+  const activePresetDef = PRESETS.find((p) => p.id === activePreset);
+  const activePresetName = activePresetDef ? t(activePresetDef.nameKey) : t('ctl.filters.custom');
+  const downloadLabel = t('ws.download', { format: formatLabel(saveFormat) });
+  const sourceExt = selectedFile
+    ? (selectedFile.type.replace('image/', '').replace('svg+xml', 'svg').replace('jpeg', 'jpg') || 'image').toUpperCase()
+    : '';
+
+  const vignetteOverlay =
+    vignette > 0 ? (
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle, transparent ${100 - vignette}%, rgba(0,0,0,${vignette / 100}) 100%)`,
+        }}
+      />
+    ) : null;
+
+  const loaded = Boolean(selectedFile && imgElement);
+
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6">
+    <div className={`w-full max-w-6xl mx-auto ${loaded ? 'pb-20 lg:pb-0' : ''}`}>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
+          e.target.value = '';
+        }}
+      />
+
       {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
       {selectedFile && imgElement && (
-        <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem]">
-          {/* Controls Sidebar */}
-          <div className="order-2 space-y-5 bg-paper-bright border border-ink p-5">
-            <div className="flex items-center justify-between">
-              <h3 className="text-base font-bold text-ink flex items-center gap-2">
-                <Sliders className="w-4 h-4 text-ink" />
-                <span>Presets & Adjustments</span>
-              </h3>
-              <button
-                type="button"
-                onClick={handleReset}
-                className="text-[14px] text-graphite hover:text-ink flex items-center gap-1 transition-colors"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset</span>
-              </button>
-            </div>
-
-            {/* Presets Carousel / Grid */}
-            <div className="space-y-2">
-              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider">
-                Aesthetic Presets
-              </label>
-              <div className="grid grid-cols-3 gap-2">
-                {PRESETS.map((p) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    onClick={() => applyPreset(p)}
-                    className={`py-2 px-2.5 rounded-xl border text-[14px] font-medium transition-all ${
-                      activePreset === p.id
-                        ? 'border-ink bg-paper-stock text-ink shadow-md'
-                        : 'border-pencil bg-paper-stock text-graphite hover:text-ink hover:bg-paper-stock'
-                    }`}
-                  >
-                    {p.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Fine-Tuning Sliders */}
-            <div className="space-y-4 pt-2 border-t border-pencil">
-              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
-                Fine Adjustments
-              </label>
-
-              {/* Brightness */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span className="flex items-center gap-1.5"><Sun className="w-3.5 h-3.5 text-accent-yellow" /> Brightness</span>
-                  <span className="font-mono text-graphite">{brightness}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="200"
-                  value={brightness}
-                  onChange={(e) => {
-                    setBrightness(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Contrast */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span className="flex items-center gap-1.5"><Contrast className="w-3.5 h-3.5 text-blue-400" /> Contrast</span>
-                  <span className="font-mono text-graphite">{contrast}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="200"
-                  value={contrast}
-                  onChange={(e) => {
-                    setContrast(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Saturation */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span className="flex items-center gap-1.5"><Palette className="w-3.5 h-3.5 text-accent-red" /> Saturation</span>
-                  <span className="font-mono text-graphite">{saturate}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="200"
-                  value={saturate}
-                  onChange={(e) => {
-                    setSaturate(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Sepia */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>Sepia Warmth</span>
-                  <span className="font-mono text-graphite">{sepia}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={sepia}
-                  onChange={(e) => {
-                    setSepia(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Grayscale */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>Monochrome (B&W)</span>
-                  <span className="font-mono text-graphite">{grayscale}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={grayscale}
-                  onChange={(e) => {
-                    setGrayscale(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Hue Rotate */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>Hue Shift</span>
-                  <span className="font-mono text-graphite">{hueRotate}°</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="360"
-                  value={hueRotate}
-                  onChange={(e) => {
-                    setHueRotate(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Sharpness / Clarity */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span className="flex items-center gap-1.5"><Zap className="w-3.5 h-3.5 text-accent-yellow" /> Sharpness & Clarity</span>
-                  <span className="font-mono text-graphite">{sharpness}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={sharpness}
-                  onChange={(e) => {
-                    setSharpness(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Vignette */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>Vignette Edge</span>
-                  <span className="font-mono text-graphite">{vignette}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={vignette}
-                  onChange={(e) => {
-                    setVignette(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-
-              {/* Soft Blur */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[14px] text-body">
-                  <span>Soft Focus / Blur</span>
-                  <span className="font-mono text-graphite">{blur}px</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="20"
-                  value={blur}
-                  onChange={(e) => {
-                    setBlur(Number(e.target.value));
-                    setActivePreset('custom');
-                  }}
-                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
-                />
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="pt-4 border-t border-pencil space-y-2">
-              <button
-                type="button"
-                onClick={() => handleDownload('png')}
-                className="w-full py-3 px-4 rounded-xl bg-process-key hover:bg-process-key text-ink font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download PNG (Lossless)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleCopyClipboard}
-                className="w-full py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
-              >
-                {copiedToast ? (
-                  <>
-                    <Check className="w-4 h-4 text-accent-green" />
-                    <span className="text-accent-green">Copied to Clipboard!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    <span>Copy Filtered Image</span>
-                  </>
-                )}
-              </button>
-
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleDownload('webp')}
-                  className="py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold transition-all cursor-pointer text-center"
-                >
-                  Download WebP
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleDownload('jpeg')}
-                  className="py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold transition-all cursor-pointer text-center"
-                >
-                  Download JPG
-                </button>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedFile(null);
-                  setImgElement(null);
-                  handleReset();
-                }}
-                className="w-full py-2.5 px-4 rounded-xl bg-transparent hover:bg-paper-stock text-graphite hover:text-ink text-[14px] font-medium transition-all cursor-pointer"
-              >
-                Choose Different Photo
-              </button>
-            </div>
-          </div>
-
-          {/* Preview Area (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="min-w-0 order-1 space-y-4">
-            <div className="canvas-checkerboard border border-ink p-4 min-h-[360px] sm:min-h-[480px] flex flex-col items-center justify-center relative">
-              {/* Top View Toggle */}
-              <div className="w-full flex items-center justify-between mb-3 text-[14px]">
-                <span className="text-graphite">
-                  {imgElement.naturalWidth} × {imgElement.naturalHeight} px
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setShowComparison(!showComparison)}
-                  className={`px-3 py-1.5 rounded-lg border text-[14px] font-semibold flex items-center gap-1.5 transition-all ${
-                    showComparison
-                      ? 'border-ink bg-paper-stock text-ink'
-                      : 'border-pencil bg-paper-stock text-body hover:text-ink'
-                  }`}
-                >
-                  <Eye className="w-3.5 h-3.5" />
-                  <span>{showComparison ? 'Exit Split View' : 'Compare Split View'}</span>
-                </button>
-              </div>
-
-              {/* Main Image View */}
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
+          {/* Proof sheet */}
+          <div className="min-w-0 space-y-3">
+            <div className="canvas-checkerboard border border-ink p-4 sm:p-8 min-h-[300px] sm:min-h-[420px] flex items-center justify-center">
               {!showComparison ? (
-                <div className="relative max-h-[65vh] rounded-xl overflow-hidden shadow-2xl border border-pencil">
+                <div className="relative inline-flex max-w-full max-h-[65vh]">
                   <img
                     src={imgElement.src}
-                    alt="Filtered Preview"
+                    alt={t('ctl.filters.previewAlt')}
                     style={filterStyle}
-                    className="max-h-[65vh] object-contain transition-all duration-75"
+                    className="block max-w-full max-h-[65vh] object-contain"
                   />
-                  {vignette > 0 && (
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `radial-gradient(circle, transparent ${100 - vignette}%, rgba(0,0,0,${vignette / 100}) 100%)`,
-                      }}
-                    />
-                  )}
+                  {vignetteOverlay}
                 </div>
               ) : (
-                /* Split Comparison View with Touch Support */
+                /* Split comparison: drag, tap or use the arrow keys */
                 <div
                   ref={splitContainerRef}
+                  role="slider"
+                  tabIndex={0}
+                  aria-label={t('ctl.filters.compareSlider')}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={sliderPos}
+                  aria-valuetext={t('ctl.filters.compareValue', { value: sliderPos })}
+                  aria-orientation="horizontal"
+                  onKeyDown={handleSplitKeyDown}
+                  onMouseDown={(e) => handleSplitPointerMove(e.clientX)}
                   onMouseMove={(e) => e.buttons === 1 && handleSplitPointerMove(e.clientX)}
+                  onTouchStart={(e) => e.touches[0] && handleSplitPointerMove(e.touches[0].clientX)}
                   onTouchMove={(e) => e.touches[0] && handleSplitPointerMove(e.touches[0].clientX)}
-                  className="relative w-full max-w-2xl bg-paper-bright rounded-xl overflow-hidden border border-pencil select-none shadow-2xl touch-none cursor-ew-resize"
+                  className="relative w-full max-w-2xl overflow-hidden border border-ink select-none touch-none cursor-ew-resize focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
                   style={{
                     aspectRatio: `${imgElement.naturalWidth} / ${imgElement.naturalHeight}`,
                     maxHeight: '65vh',
@@ -509,7 +293,7 @@ export function PhotoFiltersWorkspace() {
                   {/* Before (Original) */}
                   <img
                     src={imgElement.src}
-                    alt="Original"
+                    alt={t('ctl.filters.originalAlt')}
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
 
@@ -520,40 +304,174 @@ export function PhotoFiltersWorkspace() {
                   >
                     <img
                       src={imgElement.src}
-                      alt="Filtered"
+                      alt={t('ctl.filters.filteredAlt')}
                       style={filterStyle}
                       className="w-full h-full object-cover pointer-events-none"
                     />
-                    {vignette > 0 && (
-                      <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background: `radial-gradient(circle, transparent ${100 - vignette}%, rgba(0,0,0,${vignette / 100}) 100%)`,
-                        }}
-                      />
-                    )}
+                    {vignetteOverlay}
                   </div>
 
                   {/* Divider Handle */}
                   <div
-                    className="absolute top-0 bottom-0 w-1 bg-process-key cursor-ew-resize shadow-2xl flex items-center justify-center pointer-events-none"
+                    className="absolute top-0 bottom-0 w-0.5 -ml-px bg-process-key flex items-center justify-center pointer-events-none"
                     style={{ left: `${sliderPos}%` }}
+                    aria-hidden="true"
                   >
-                    <div className="w-7 h-7 rounded-full bg-process-key text-paper shadow-xl flex items-center justify-center text-[14px] font-bold border border-pencil">
-                      ↔
-                    </div>
+                    <span className="w-8 h-8 shrink-0 rounded-full bg-process-key text-paper border border-paper flex items-center justify-center">
+                      <ChevronsLeftRight className="w-4 h-4" />
+                    </span>
                   </div>
 
-                  <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/75 backdrop-blur-md text-[12px] text-body font-semibold uppercase pointer-events-none border border-pencil">
-                    Original
-                  </div>
-                  <div className="absolute top-3 right-3 px-2 py-1 rounded bg-paper-stock border border-ink backdrop-blur-md text-[12px] text-ink font-semibold uppercase pointer-events-none">
-                    Filtered ({activePreset})
-                  </div>
+                  <span className="absolute top-2 left-2 px-1.5 py-0.5 bg-paper border border-ink text-[12px] font-semibold text-ink pointer-events-none" aria-hidden="true">
+                    {t('ctl.filters.original')}
+                  </span>
+                  <span className="absolute top-2 right-2 px-1.5 py-0.5 bg-paper border border-ink text-[12px] font-semibold text-ink pointer-events-none" aria-hidden="true">
+                    {t('ctl.filters.filtered', { preset: activePresetName })}
+                  </span>
                 </div>
               )}
             </div>
+
+            {/* Job ticket */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]">
+              <span className="flex items-baseline gap-2" data-measure>
+                <span className="slug">{t('ws.source')}</span>
+                <span className="text-ink font-semibold">
+                  {imgElement.naturalWidth} × {imgElement.naturalHeight} px
+                </span>
+                <span className="text-graphite">
+                  {sourceExt}
+                  {selectedFile.size > 0 && ` · ${formatBytes(selectedFile.size)}`}
+                </span>
+              </span>
+              <span className="ml-auto flex items-center gap-4">
+                <button
+                  type="button"
+                  aria-pressed={showComparison}
+                  onClick={() => setShowComparison(!showComparison)}
+                  className="btn-rule min-h-[36px] px-2.5 text-[14px]"
+                >
+                  <ChevronsLeftRight className="w-4 h-4" aria-hidden="true" />
+                  <span>{t('ctl.filters.compare')}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="text-[14px] font-medium text-ink underline hover:no-underline"
+                >
+                  {t('ws.replace')}
+                </button>
+              </span>
+            </div>
           </div>
+
+          {/* Ruled control panel */}
+          <div className="space-y-5 lg:sticky lg:top-24">
+            <div className="border border-ink bg-paper-bright">
+              <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-ink">
+                <h2 className="slug flex items-center gap-2">
+                  <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
+                  {t('ctl.filters.panel')}
+                </h2>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="flex items-center gap-1 text-[14px] font-medium text-ink underline hover:no-underline"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
+                  {t('ctl.filters.reset')}
+                </button>
+              </div>
+
+              <div className="p-4 space-y-4 text-[15px]">
+                {/* Presets */}
+                <div className="space-y-1.5">
+                  <span className="slug">{t('ctl.filters.presets')}</span>
+                  <div className="grid grid-cols-2 gap-2" role="group" aria-label={t('ctl.filters.presets')}>
+                    {PRESETS.map((p) => (
+                      <button
+                        key={p.id}
+                        type="button"
+                        aria-pressed={activePreset === p.id}
+                        onClick={() => applyPreset(p)}
+                        className={`min-h-[40px] px-2.5 py-1.5 border text-left text-[14px] font-medium leading-tight transition-colors ${
+                          activePreset === p.id
+                            ? 'bg-process-key text-paper border-process-key'
+                            : 'bg-paper-bright text-ink border-pencil hover:border-ink hover:bg-paper-stock'
+                        }`}
+                      >
+                        {t(p.nameKey)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Fine adjustments */}
+                <div className="space-y-4 pt-4 border-t border-ink">
+                  <span className="slug block">{t('ctl.filters.adjustments')}</span>
+                  <RangeField label={t('ctl.filters.brightness')} value={brightness} unit="%" min={0} max={200} onChange={adjust(setBrightness)} />
+                  <RangeField label={t('ctl.filters.contrast')} value={contrast} unit="%" min={0} max={200} onChange={adjust(setContrast)} />
+                  <RangeField label={t('ctl.filters.saturation')} value={saturate} unit="%" min={0} max={200} onChange={adjust(setSaturate)} />
+                  <RangeField label={t('ctl.filters.sepia')} value={sepia} unit="%" min={0} max={100} onChange={adjust(setSepia)} />
+                  <RangeField label={t('ctl.filters.grayscale')} value={grayscale} unit="%" min={0} max={100} onChange={adjust(setGrayscale)} />
+                  <RangeField label={t('ctl.filters.hue')} value={hueRotate} unit="°" min={0} max={360} onChange={adjust(setHueRotate)} />
+                  <RangeField label={t('ctl.filters.clarity')} value={clarity} unit="%" min={0} max={100} onChange={adjust(setClarity)} />
+                  <RangeField label={t('ctl.filters.vignette')} value={vignette} unit="%" min={0} max={100} onChange={adjust(setVignette)} />
+                  <RangeField label={t('ctl.filters.blur')} value={blur} unit=" px" min={0} max={20} onChange={adjust(setBlur)} />
+                </div>
+
+                {/* Save as */}
+                <div className="space-y-1.5 pt-4 border-t border-ink">
+                  <span className="slug">{t('ws.saveAs')}</span>
+                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                    {SAVE_FORMATS.map((fmt) => (
+                      <button
+                        key={fmt}
+                        type="button"
+                        aria-pressed={saveFormat === fmt}
+                        onClick={() => setSaveFormat(fmt)}
+                        className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                          saveFormat === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                        }`}
+                      >
+                        {formatLabel(fmt)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="space-y-2">
+              <div className="hidden lg:block">
+                <button type="button" onClick={() => handleDownload(saveFormat)} className="btn-ink w-full min-h-[52px] text-[16px]">
+                  <Download className="w-5 h-5" aria-hidden="true" />
+                  <span>{downloadLabel}</span>
+                </button>
+              </div>
+              {copyError && (
+                <p role="alert" className="flex items-start gap-1.5 text-[14px] text-accent-yellow leading-relaxed">
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{t('ws.errCopy')}</span>
+                </p>
+              )}
+              <button type="button" onClick={handleCopyClipboard} className="btn-rule w-full">
+                {copiedToast ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                <span aria-live="polite">{copiedToast ? t('ws.copied') : t('ws.copy')}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Phones: the primary action stays under the thumb */}
+      {loaded && (
+        <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 bg-paper border-t border-ink px-4 py-3">
+          <button type="button" onClick={() => handleDownload(saveFormat)} className="btn-ink w-full min-h-[48px] text-[16px]">
+            <Download className="w-5 h-5" aria-hidden="true" />
+            <span>{downloadLabel}</span>
+          </button>
         </div>
       )}
     </div>

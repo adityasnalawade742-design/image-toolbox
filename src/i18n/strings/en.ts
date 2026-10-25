@@ -3,6 +3,7 @@ import { utilityStrings } from './en/utility';
 import { creativeAStrings } from './en/creative-a';
 import { creativeBStrings } from './en/creative-b';
 import { batchStrings } from './en/batch';
+import { bgStrings } from './en/bg';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -72,6 +73,7 @@ export const en = {
   ...creativeAStrings,
   ...creativeBStrings,
   ...batchStrings,
+  ...bgStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

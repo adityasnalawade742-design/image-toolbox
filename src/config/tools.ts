@@ -117,6 +117,16 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
+    slug: 'remove-background',
+    name: 'Remove Background',
+    shortName: 'Remove BG',
+    description: 'Remove the background from photos with an AI model that runs on your device, then save a transparent PNG or add a color.',
+    category: 'edit-transform',
+    iconName: 'Eraser',
+    accept: 'image/png,image/jpeg,image/webp',
+    popular: true,
+  },
+  {
     slug: 'photo-filters',
     name: 'Photo Filters & Effects',
     shortName: 'Filters',

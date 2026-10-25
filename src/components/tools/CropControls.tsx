@@ -1,5 +1,7 @@
-import React from 'react';
+import { useEffect, useId, useState } from 'react';
 import { Lock, Unlock, Square, Circle, RotateCcw } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
+import type { StringKey } from '../../i18n/strings';
 
 interface Props {
   imgWidth: number;
@@ -15,6 +17,15 @@ interface Props {
   onChange: (crop: { x: number; y: number; width: number; height: number }) => void;
 }
 
+type Field = 'x' | 'y' | 'w' | 'h';
+
+const segButton = (selected: boolean) =>
+  `min-h-[40px] px-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
+const inputClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
+
 export function CropControls({
   imgWidth,
   imgHeight,
@@ -28,6 +39,18 @@ export function CropControls({
   onIsCircleChange,
   onChange,
 }: Props) {
+  const t = useT();
+  const idBase = useId();
+  // The exact width/height ratio of the chosen preset (or of the crop when the lock was switched on).
+  // Locked edits use this instead of the rounded crop so the ratio doesn't drift.
+  const [lockedRatio, setLockedRatio] = useState<number | null>(null);
+  // Text being typed in a number field; committed values come back through props
+  const [drafts, setDrafts] = useState<Partial<Record<Field, string>>>({});
+
+  useEffect(() => {
+    setLockedRatio(null);
+  }, [imgWidth, imgHeight]);
+
   const applyPreset = (ratioW: number, ratioH: number) => {
     let targetW = imgWidth;
     let targetH = Math.round((imgWidth * ratioH) / ratioW);
@@ -44,258 +67,275 @@ export function CropControls({
   };
 
   const handleFreeform = () => {
+    setLockedRatio(null);
     onLockAspectChange?.(false);
   };
 
   const handleReset = () => {
+    setLockedRatio(null);
     onLockAspectChange?.(false);
     onChange({ x: 0, y: 0, width: imgWidth, height: imgHeight });
   };
 
   const applyPresetWithLock = (ratioW: number, ratioH: number) => {
     applyPreset(ratioW, ratioH);
+    setLockedRatio(ratioW / ratioH);
     onLockAspectChange?.(true);
   };
 
   const currentRatio = (cropW / Math.max(1, cropH)).toFixed(2);
-  const origRatio = (imgWidth / Math.max(1, imgHeight)).toFixed(2);
+  const ratio = lockedRatio ?? cropW / Math.max(1, cropH);
 
-  const standardRatios = [
+  const isRatioSelected = (ratioW: number, ratioH: number) => {
+    if (!lockAspect) return false;
+    if (lockedRatio !== null) return Math.abs(lockedRatio - ratioW / ratioH) < 1e-9;
+    return currentRatio === (ratioW / ratioH).toFixed(2);
+  };
+
+  const standardRatios: Array<{ key: string; ratio?: string; label: string; action: () => void; isSelected: boolean }> = [
+    { key: 'free', label: t('ctl.crop.freeform'), action: handleFreeform, isSelected: !lockAspect },
     {
-      label: 'Freeform (Custom)',
-      action: handleFreeform,
-      isSelected: !lockAspect,
-    },
-    {
-      label: 'Original Ratio',
+      key: 'orig',
+      label: t('ctl.crop.original'),
       action: () => applyPresetWithLock(imgWidth, imgHeight),
-      isSelected: lockAspect && currentRatio === origRatio,
+      isSelected: isRatioSelected(imgWidth, Math.max(1, imgHeight)),
     },
-    {
-      label: '1:1 Square',
-      action: () => applyPresetWithLock(1, 1),
-      isSelected: lockAspect && currentRatio === (1 / 1).toFixed(2),
-    },
-    {
-      label: '4:3 Standard',
-      action: () => applyPresetWithLock(4, 3),
-      isSelected: lockAspect && currentRatio === (4 / 3).toFixed(2),
-    },
-    {
-      label: '16:9 Wide',
-      action: () => applyPresetWithLock(16, 9),
-      isSelected: lockAspect && currentRatio === (16 / 9).toFixed(2),
-    },
-    {
-      label: '9:16 Story',
-      action: () => applyPresetWithLock(9, 16),
-      isSelected: lockAspect && currentRatio === (9 / 16).toFixed(2),
-    },
-    {
-      label: '2:3 Portrait',
-      action: () => applyPresetWithLock(2, 3),
-      isSelected: lockAspect && currentRatio === (2 / 3).toFixed(2),
-    },
-    {
-      label: '3:2 Classic',
-      action: () => applyPresetWithLock(3, 2),
-      isSelected: lockAspect && currentRatio === (3 / 2).toFixed(2),
-    },
-    {
-      label: '21:9 Cinema',
-      action: () => applyPresetWithLock(21, 9),
-      isSelected: lockAspect && currentRatio === (21 / 9).toFixed(2),
-    },
+    ...(
+      [
+        [1, 1, 'ctl.crop.square'],
+        [4, 3, 'ctl.crop.standard'],
+        [16, 9, 'ctl.crop.wide'],
+        [9, 16, 'ctl.crop.story'],
+        [2, 3, 'ctl.crop.portrait'],
+        [3, 2, 'ctl.crop.classic'],
+        [21, 9, 'ctl.crop.cinema'],
+      ] as Array<[number, number, StringKey]>
+    ).map(([w, h, key]) => ({
+      key: `${w}:${h}`,
+      ratio: `${w}:${h}`,
+      label: t(key),
+      action: () => applyPresetWithLock(w, h),
+      isSelected: isRatioSelected(w, h),
+    })),
   ];
 
-  const socialPresets = [
-    { label: 'Instagram (1:1)', action: () => applyPresetWithLock(1, 1) },
-    { label: 'Insta Portrait (4:5)', action: () => applyPresetWithLock(4, 5) },
-    { label: 'Reels / TikTok (9:16)', action: () => applyPresetWithLock(9, 16) },
-    { label: 'YouTube Thumb (16:9)', action: () => applyPresetWithLock(16, 9) },
-    { label: 'X / Twitter Post (16:9)', action: () => applyPresetWithLock(16, 9) },
-    { label: 'Pinterest Pin (2:3)', action: () => applyPresetWithLock(2, 3) },
+  const socialPresets: Array<{ name: string; kind: string; w: number; h: number }> = [
+    { name: 'Instagram', kind: t('ctl.crop.socialPost'), w: 1, h: 1 },
+    { name: 'Instagram', kind: t('ctl.crop.socialPortrait'), w: 4, h: 5 },
+    { name: 'Reels / TikTok', kind: t('ctl.crop.socialStory'), w: 9, h: 16 },
+    { name: 'YouTube', kind: t('ctl.crop.socialThumbnail'), w: 16, h: 9 },
+    { name: 'X / Twitter', kind: t('ctl.crop.socialPost'), w: 16, h: 9 },
+    { name: 'Pinterest', kind: t('ctl.crop.socialPin'), w: 2, h: 3 },
+  ];
+
+  // Apply a parsed value for one field; the other side follows the locked ratio
+  const commit = (field: Field, val: number) => {
+    if (field === 'x') {
+      const x = Math.max(0, Math.min(imgWidth - 1, val));
+      onChange({ x, y: cropY, width: Math.min(cropW, imgWidth - x), height: cropH });
+    } else if (field === 'y') {
+      const y = Math.max(0, Math.min(imgHeight - 1, val));
+      onChange({ x: cropX, y, width: cropW, height: Math.min(cropH, imgHeight - y) });
+    } else if (field === 'w') {
+      let w = Math.max(1, Math.min(imgWidth - cropX, val));
+      if (lockAspect) {
+        let h = Math.max(1, Math.round(w / ratio));
+        if (h > imgHeight - cropY) {
+          h = imgHeight - cropY;
+          w = Math.max(1, Math.min(imgWidth - cropX, Math.round(h * ratio)));
+        }
+        onChange({ x: cropX, y: cropY, width: w, height: h });
+      } else {
+        onChange({ x: cropX, y: cropY, width: w, height: cropH });
+      }
+    } else {
+      let h = Math.max(1, Math.min(imgHeight - cropY, val));
+      if (lockAspect) {
+        let w = Math.max(1, Math.round(h * ratio));
+        if (w > imgWidth - cropX) {
+          w = imgWidth - cropX;
+          h = Math.max(1, Math.min(imgHeight - cropY, Math.round(w / ratio)));
+        }
+        onChange({ x: cropX, y: cropY, width: w, height: h });
+      } else {
+        onChange({ x: cropX, y: cropY, width: cropW, height: h });
+      }
+    }
+  };
+
+  const minFor = (field: Field) => (field === 'x' || field === 'y' ? 0 : 1);
+
+  const handleType = (field: Field, raw: string) => {
+    setDrafts((d) => ({ ...d, [field]: raw }));
+    const val = parseInt(raw, 10);
+    if (Number.isFinite(val) && val >= minFor(field)) commit(field, val);
+  };
+
+  const handleBlur = (field: Field) => {
+    setDrafts((d) => {
+      const next = { ...d };
+      delete next[field];
+      return next;
+    });
+  };
+
+  const fields: Array<{ field: Field; label: string; value: number; min: number; max: number }> = [
+    { field: 'x', label: t('ctl.crop.offsetX'), value: cropX, min: 0, max: Math.max(0, imgWidth - 1) },
+    { field: 'y', label: t('ctl.crop.offsetY'), value: cropY, min: 0, max: Math.max(0, imgHeight - 1) },
+    { field: 'w', label: t('ctl.crop.width'), value: cropW, min: 1, max: imgWidth - cropX },
+    { field: 'h', label: t('ctl.crop.height'), value: cropH, min: 1, max: imgHeight - cropY },
   ];
 
   return (
-    <div className="space-y-4">
-      {/* Shape Mode Switch: Rectangle vs Circle */}
+    <div className="space-y-5">
+      {/* Shape: rectangle or circle */}
       {onIsCircleChange && (
-        <div className="flex items-center gap-1.5 p-1 bg-surface-card border border-hairline rounded-md">
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(false);
-              onLockAspectChange?.(false);
-            }}
-            className={`flex-1 py-1.5 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
-              !isCircle ? 'bg-surface-elevated text-ink font-semibold shadow-sm' : 'text-mute hover:text-body'
-            }`}
-          >
-            <Square className="w-3.5 h-3.5" />
-            <span>Rectangle Crop</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(true);
-              applyPresetWithLock(1, 1);
-            }}
-            className={`flex-1 py-1.5 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
-              isCircle ? 'bg-surface-elevated text-ink font-semibold shadow-sm' : 'text-mute hover:text-body'
-            }`}
-          >
-            <Circle className="w-3.5 h-3.5" />
-            <span>Circle / Avatar (1:1)</span>
-          </button>
+        <div className="space-y-1.5">
+          <span className="slug block" id={`${idBase}-shape`}>{t('ctl.crop.shape')}</span>
+          <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-shape`}>
+            <button
+              type="button"
+              aria-pressed={!isCircle}
+              onClick={() => {
+                onIsCircleChange(false);
+                handleFreeform();
+              }}
+              className={segButton(!isCircle)}
+            >
+              <Square className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span>{t('ctl.crop.rectangle')}</span>
+            </button>
+            <button
+              type="button"
+              aria-pressed={isCircle}
+              onClick={() => {
+                onIsCircleChange(true);
+                applyPresetWithLock(1, 1);
+              }}
+              className={segButton(isCircle)}
+            >
+              <Circle className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span>{t('ctl.crop.circle')}</span>
+            </button>
+          </div>
         </div>
       )}
 
-      {/* Standard Aspect Ratios */}
+      {/* Aspect ratio */}
       <div className="space-y-1.5">
-        <div className="flex items-center justify-between text-[14px]">
-          <label className="font-medium text-body">Crop Mode & Aspect Ratios</label>
+        <div className="flex items-center justify-between gap-2">
+          <span className="slug" id={`${idBase}-ratio`}>{t('ctl.crop.aspectRatio')}</span>
           <button
             type="button"
             onClick={handleReset}
-            className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 min-h-[40px] -my-2 text-[14px] font-medium text-ink underline underline-offset-2 hover:no-underline"
           >
-            <RotateCcw className="w-3 h-3" />
-            <span>Fit All (100%)</span>
+            <RotateCcw className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.crop.reset')}</span>
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-1.5 text-[14px]">
-          {standardRatios.map((p) => (
+        <div className="grid grid-cols-2 gap-px bg-ink border border-ink" role="group" aria-labelledby={`${idBase}-ratio`}>
+          {standardRatios.map((p, i) => (
             <button
-              key={p.label}
+              key={p.key}
               type="button"
+              aria-pressed={p.isSelected}
               onClick={p.action}
-              className={`py-2 px-2 rounded-md border text-[13px] transition-all text-center truncate ${
-                p.isSelected
-                  ? 'bg-accent-blue/15 border-accent-blue/60 text-accent-blue font-bold shadow-sm'
-                  : 'bg-surface-card hover:bg-surface-elevated border-hairline hover:border-hairline-strong text-body hover:text-ink'
-              }`}
+              className={`${segButton(p.isSelected)} justify-start text-left ${i === 0 ? 'col-span-2' : ''}`}
             >
-              {p.label}
+              {p.ratio && (
+                <span data-measure className="w-9 shrink-0">
+                  {p.ratio}
+                </span>
+              )}
+              <span className={p.ratio ? 'font-medium' : ''}>{p.label}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Social Media Presets */}
-      <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-[14px] font-medium text-body">Social Media Presets</label>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-[14px]">
+      {/* Social media presets */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block" id={`${idBase}-social`}>{t('ctl.crop.socialPresets')}</span>
+        <div className="grid grid-cols-2 gap-px bg-ink border border-ink" role="group" aria-labelledby={`${idBase}-social`}>
           {socialPresets.map((p) => (
             <button
-              key={p.label}
+              key={`${p.name}-${p.w}:${p.h}`}
               type="button"
-              onClick={p.action}
-              className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded-md text-[13px] text-body hover:text-ink transition-colors text-center truncate"
+              onClick={() => applyPresetWithLock(p.w, p.h)}
+              className="min-h-[48px] px-2.5 py-1.5 flex flex-col items-start justify-center bg-paper-bright text-left text-ink hover:bg-paper-stock transition-colors"
             >
-              {p.label}
+              <span className="text-[14px] font-semibold">{p.name}</span>
+              <span className="text-[13px] text-graphite">
+                {p.kind} · <span data-measure>{p.w}:{p.h}</span>
+              </span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Manual Pixel Coordinates & Proportional Lock */}
-      <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-[14px]">
-          <label className="font-medium text-body">Crop Dimensions (Exact Pixels)</label>
+      {/* Exact pixel dimensions */}
+      <div className="space-y-2 pt-4 border-t border-pencil">
+        <div className="flex items-center justify-between gap-2">
+          <span className="slug">{t('ctl.crop.dimensions')}</span>
           {onLockAspectChange && (
             <button
               type="button"
-              onClick={() => onLockAspectChange(!lockAspect)}
-              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors"
+              aria-pressed={lockAspect}
+              onClick={() => {
+                if (!lockAspect) setLockedRatio(cropW / Math.max(1, cropH));
+                else setLockedRatio(null);
+                onLockAspectChange(!lockAspect);
+              }}
+              className="btn-rule text-[14px]"
             >
-              {lockAspect ? <Lock className="w-3.5 h-3.5 text-accent-blue" /> : <Unlock className="w-3.5 h-3.5" />}
-              <span>{lockAspect ? 'Ratio Locked' : 'Freeform'}</span>
+              {lockAspect ? <Lock className="w-4 h-4 shrink-0" aria-hidden="true" /> : <Unlock className="w-4 h-4 shrink-0" aria-hidden="true" />}
+              <span>{t('ctl.crop.lockRatio')}</span>
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
-          <div className="space-y-1">
-            <span className="text-[13px] text-mute">X Offset (px)</span>
-            <input
-              type="number"
-              min="0"
-              max={Math.max(0, imgWidth - 1)}
-              value={cropX}
-              onChange={(e) => {
-                const val = Math.max(0, Math.min(imgWidth - 1, parseInt(e.target.value) || 0));
-                onChange({ x: val, y: cropY, width: Math.min(cropW, imgWidth - val), height: cropH });
-              }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-            />
-          </div>
-          <div className="space-y-1">
-            <span className="text-[13px] text-mute">Y Offset (px)</span>
-            <input
-              type="number"
-              min="0"
-              max={Math.max(0, imgHeight - 1)}
-              value={cropY}
-              onChange={(e) => {
-                const val = Math.max(0, Math.min(imgHeight - 1, parseInt(e.target.value) || 0));
-                onChange({ x: cropX, y: val, width: cropW, height: Math.min(cropH, imgHeight - val) });
-              }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-            />
-          </div>
-          <div className="space-y-1">
-            <span className="text-[13px] text-mute">Width (px)</span>
-            <input
-              type="number"
-              min="1"
-              max={imgWidth - cropX}
-              value={cropW}
-              onChange={(e) => {
-                const val = Math.max(1, Math.min(imgWidth - cropX, parseInt(e.target.value) || 1));
-                if (lockAspect) {
-                  const targetH = Math.round(val / parseFloat(currentRatio));
-                  onChange({ x: cropX, y: cropY, width: val, height: Math.min(imgHeight - cropY, targetH) });
-                } else {
-                  onChange({ x: cropX, y: cropY, width: val, height: cropH });
-                }
-              }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-            />
-          </div>
-          <div className="space-y-1">
-            <span className="text-[13px] text-mute">Height (px)</span>
-            <input
-              type="number"
-              min="1"
-              max={imgHeight - cropY}
-              value={cropH}
-              onChange={(e) => {
-                const val = Math.max(1, Math.min(imgHeight - cropY, parseInt(e.target.value) || 1));
-                if (lockAspect) {
-                  const targetW = Math.round(val * parseFloat(currentRatio));
-                  onChange({ x: cropX, y: cropY, width: Math.min(imgWidth - cropX, targetW), height: val });
-                } else {
-                  onChange({ x: cropX, y: cropY, width: cropW, height: val });
-                }
-              }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-            />
-          </div>
+        <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+          {fields.map((f) => {
+            const id = `${idBase}-${f.field}`;
+            return (
+              <div key={f.field} className="space-y-1">
+                <label htmlFor={id} className="block text-[14px] text-graphite">
+                  {f.label} <span className="text-[13px]">(px)</span>
+                </label>
+                <input
+                  id={id}
+                  type="number"
+                  inputMode="numeric"
+                  min={f.min}
+                  max={f.max}
+                  value={drafts[f.field] ?? String(f.value)}
+                  onChange={(e) => handleType(f.field, e.target.value)}
+                  onBlur={() => handleBlur(f.field)}
+                  className={inputClass}
+                  data-measure
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Live Output Preview Info */}
-      <div className="p-3 bg-surface-card border border-hairline rounded-lg space-y-1 text-[14px]">
-        <div className="flex items-center justify-between text-[13px]">
-          <span className="text-body font-medium">Output Crop Size</span>
-          <span className="font-mono text-ink font-bold">{cropW} × {cropH} px</span>
+      {/* Output summary */}
+      <dl className="border-t border-ink pt-3 space-y-1 text-[14px]">
+        <div className="flex items-baseline justify-between gap-3">
+          <dt className="text-graphite">{t('ctl.crop.outputSize')}</dt>
+          <dd className="font-semibold text-ink" data-measure>
+            {cropW} × {cropH} px
+          </dd>
         </div>
-        <div className="flex items-center justify-between text-[13px] text-mute">
-          <span>Aspect Ratio</span>
-          <span className="font-mono text-ink">{(cropW / Math.max(1, cropH)).toFixed(2)}:1</span>
+        <div className="flex items-baseline justify-between gap-3">
+          <dt className="text-graphite">{t('ctl.crop.ratioValue')}</dt>
+          <dd className="text-ink" data-measure>
+            {(cropW / Math.max(1, cropH)).toFixed(2)}:1
+          </dd>
         </div>
-      </div>
+      </dl>
     </div>
   );
 }

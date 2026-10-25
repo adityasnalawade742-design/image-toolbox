@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Lock, Unlock } from 'lucide-react';
+import React, { useId, useState } from 'react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   originalWidth: number;
@@ -14,6 +14,13 @@ interface Props {
   onPreventUpscaleChange: (prevent: boolean) => void;
 }
 
+const segButton = (selected: boolean) =>
+  `min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
+const inputClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
+
 export function ResizeControls({
   originalWidth,
   originalHeight,
@@ -26,6 +33,8 @@ export function ResizeControls({
   onLockAspectChange,
   onPreventUpscaleChange,
 }: Props) {
+  const t = useT();
+  const idBase = useId();
   const [mode, setMode] = useState<'pixels' | 'percentage'>('pixels');
   const [percent, setPercent] = useState<number>(100);
   const [localW, setLocalW] = useState<string>(String(width || ''));
@@ -89,56 +98,56 @@ export function ResizeControls({
   const percentagePresets = [25, 50, 75, 100, 150, 200];
 
   return (
-    <div className="space-y-4">
-      {/* Mode Switch */}
-      <div className="flex items-center gap-1.5 p-1 bg-surface-card border border-hairline rounded-md">
-        <button
-          type="button"
-          onClick={() => setMode('pixels')}
-          className={`flex-1 py-1 text-[14px] font-medium rounded transition-colors ${
-            mode === 'pixels' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
-          }`}
-        >
-          Pixels
-        </button>
-        <button
-          type="button"
-          onClick={() => setMode('percentage')}
-          className={`flex-1 py-1 text-[14px] font-medium rounded transition-colors ${
-            mode === 'percentage' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
-          }`}
-        >
-          Percentage
-        </button>
+    <div className="space-y-5">
+      {/* Mode switch */}
+      <div className="space-y-1.5">
+        <span className="slug block" id={`${idBase}-mode`}>{t('ctl.resize.mode')}</span>
+        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
+          <button type="button" aria-pressed={mode === 'pixels'} onClick={() => setMode('pixels')} className={segButton(mode === 'pixels')}>
+            {t('ctl.resize.byPixels')}
+          </button>
+          <button
+            type="button"
+            aria-pressed={mode === 'percentage'}
+            onClick={() => setMode('percentage')}
+            className={segButton(mode === 'percentage')}
+          >
+            {t('ctl.resize.byPercent')}
+          </button>
+        </div>
       </div>
 
-      {/* Percentage Controls */}
       {mode === 'percentage' ? (
         <div className="space-y-3">
-          <div className="flex items-center justify-between text-[14px]">
-            <span className="text-body">Scale</span>
-            <span className="font-mono text-ink font-semibold">{percent}%</span>
+          <div className="space-y-1.5">
+            <div className="flex items-baseline justify-between gap-2 text-[15px]">
+              <label htmlFor={`${idBase}-scale`} className="text-ink">
+                {t('ctl.resize.scale')}
+              </label>
+              <span className="font-semibold text-ink" data-measure>
+                {percent}%
+              </span>
+            </div>
+            <input
+              id={`${idBase}-scale`}
+              type="range"
+              min="10"
+              max={preventUpscale ? 100 : 300}
+              value={percent}
+              onChange={(e) => handlePercentChange(parseInt(e.target.value) || 100)}
+              className="w-full"
+            />
           </div>
-          <input
-            type="range"
-            min="10"
-            max={preventUpscale ? 100 : 300}
-            value={percent}
-            onChange={(e) => handlePercentChange(parseInt(e.target.value) || 100)}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
-          />
-          <div className="grid grid-cols-6 gap-1 text-[13px] font-mono">
+          <div className="grid grid-cols-6 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.resize.presets')}>
             {percentagePresets.map((pct) => (
               <button
                 key={pct}
                 type="button"
+                aria-pressed={percent === pct}
                 disabled={preventUpscale && pct > 100}
                 onClick={() => handlePercentChange(pct)}
-                className={`py-1 rounded border transition-colors ${
-                  percent === pct
-                    ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                    : 'border-hairline text-mute hover:bg-surface-card hover:text-ink disabled:opacity-40 disabled:hover:bg-transparent'
-                }`}
+                className={`${segButton(percent === pct)} px-0 disabled:bg-paper-stock disabled:text-graphite disabled:cursor-not-allowed`}
+                data-measure
               >
                 {pct}%
               </button>
@@ -146,52 +155,50 @@ export function ResizeControls({
           </div>
         </div>
       ) : (
-        /* Pixels Controls */
-        <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-3 items-center">
-            <div className="space-y-1">
-              <span className="text-[13px] text-mute">Width (px)</span>
-              <input
-                type="number"
-                min="1"
-                max={preventUpscale ? originalWidth : 10000}
-                value={localW}
-                onChange={(e) => handleWidthInput(e.target.value)}
-                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-              />
-            </div>
-            <div className="space-y-1">
-              <span className="text-[13px] text-mute">Height (px)</span>
-              <input
-                type="number"
-                min="1"
-                max={preventUpscale ? originalHeight : 10000}
-                value={localH}
-                onChange={(e) => handleHeightInput(e.target.value)}
-                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
-              />
-            </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="space-y-1">
+            <label htmlFor={`${idBase}-w`} className="block text-[14px] text-graphite">
+              {t('ctl.resize.width')} <span className="text-[13px]">(px)</span>
+            </label>
+            <input
+              id={`${idBase}-w`}
+              type="number"
+              inputMode="numeric"
+              min="1"
+              max={preventUpscale ? originalWidth : 10000}
+              value={localW}
+              onChange={(e) => handleWidthInput(e.target.value)}
+              className={inputClass}
+              data-measure
+            />
+          </div>
+          <div className="space-y-1">
+            <label htmlFor={`${idBase}-h`} className="block text-[14px] text-graphite">
+              {t('ctl.resize.height')} <span className="text-[13px]">(px)</span>
+            </label>
+            <input
+              id={`${idBase}-h`}
+              type="number"
+              inputMode="numeric"
+              min="1"
+              max={preventUpscale ? originalHeight : 10000}
+              value={localH}
+              onChange={(e) => handleHeightInput(e.target.value)}
+              className={inputClass}
+              data-measure
+            />
           </div>
         </div>
       )}
 
-      {/* Toggles */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-[14px] text-body">
-        <label className="flex items-center justify-between cursor-pointer p-1.5 hover:bg-surface-card rounded transition-colors">
-          <span className="flex items-center gap-2">
-            {lockAspect ? <Lock className="w-3.5 h-3.5 text-accent-blue" /> : <Unlock className="w-3.5 h-3.5 text-mute" />}
-            <span>Lock Aspect Ratio</span>
-          </span>
-          <input
-            type="checkbox"
-            checked={lockAspect}
-            onChange={(e) => onLockAspectChange(e.target.checked)}
-            className="rounded border-hairline bg-surface-card text-accent-blue focus:ring-0"
-          />
+      {/* Options */}
+      <div className="pt-4 border-t border-pencil space-y-1 text-[15px] text-ink">
+        <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer">
+          <input type="checkbox" checked={lockAspect} onChange={(e) => onLockAspectChange(e.target.checked)} className="w-4 h-4 shrink-0" />
+          <span>{t('ctl.resize.lockRatio')}</span>
         </label>
 
-        <label className="flex items-center justify-between cursor-pointer p-1.5 hover:bg-surface-card rounded transition-colors">
-          <span>Prevent Upscaling (Max {originalWidth}×{originalHeight})</span>
+        <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer">
           <input
             type="checkbox"
             checked={preventUpscale}
@@ -202,8 +209,14 @@ export function ResizeControls({
                 if (height > originalHeight) onHeightChange(originalHeight);
               }
             }}
-            className="rounded border-hairline bg-surface-card text-accent-blue focus:ring-0"
+            className="w-4 h-4 shrink-0"
           />
+          <span>
+            {t('ctl.resize.preventUpscale')}{' '}
+            <span className="text-graphite" data-measure>
+              ({t('ctl.resize.maxSize', { width: originalWidth, height: originalHeight })})
+            </span>
+          </span>
         </label>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import React from 'react';
+import { useId } from 'react';
 import { FlipHorizontal, FlipVertical, RefreshCw } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   flipH: boolean;
@@ -8,48 +9,41 @@ interface Props {
   onFlipVChange: (val: boolean) => void;
 }
 
-export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Props) {
-  return (
-    <div className="space-y-3">
-      <label className="text-[14px] font-medium text-body">Flip Orientation</label>
-      <div className="grid grid-cols-2 gap-2 text-[14px]">
-        <button
-          type="button"
-          onClick={() => onFlipHChange(!flipH)}
-          className={`flex items-center justify-center gap-2 py-2 rounded-md border transition-colors ${
-            flipH
-              ? 'bg-surface-card border-hairline-strong text-ink font-semibold'
-              : 'bg-surface-card border-hairline text-body hover:text-ink'
-          }`}
-        >
-          <FlipHorizontal className="w-4 h-4 text-accent-blue" />
-          <span>Flip Horizontal</span>
-        </button>
+const segButton = (selected: boolean) =>
+  `min-h-[44px] px-2 flex items-center justify-center gap-2 text-[14px] font-semibold transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
 
-        <button
-          type="button"
-          onClick={() => onFlipVChange(!flipV)}
-          className={`flex items-center justify-center gap-2 py-2 rounded-md border transition-colors ${
-            flipV
-              ? 'bg-surface-card border-hairline-strong text-ink font-semibold'
-              : 'bg-surface-card border-hairline text-body hover:text-ink'
-          }`}
-        >
-          <FlipVertical className="w-4 h-4 text-accent-blue" />
-          <span>Flip Vertical</span>
-        </button>
+export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Props) {
+  const t = useT();
+  const idBase = useId();
+
+  return (
+    <div className="space-y-5">
+      <div className="space-y-1.5">
+        <span className="slug block" id={`${idBase}-flip`}>{t('ctl.flip.direction')}</span>
+        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-flip`}>
+          <button type="button" aria-pressed={flipH} onClick={() => onFlipHChange(!flipH)} className={segButton(flipH)}>
+            <FlipHorizontal className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.flip.horizontal')}</span>
+          </button>
+          <button type="button" aria-pressed={flipV} onClick={() => onFlipVChange(!flipV)} className={segButton(flipV)}>
+            <FlipVertical className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.flip.vertical')}</span>
+          </button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 pt-2 border-t border-hairline">
+      <div className="grid grid-cols-2 gap-2 pt-4 border-t border-pencil">
         <button
           type="button"
           onClick={() => {
             onFlipHChange(!flipH);
             onFlipVChange(!flipV);
           }}
-          className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-body hover:text-ink transition-colors"
+          className="btn-rule text-[14px]"
         >
-          Flip Both
+          {t('ctl.flip.both')}
         </button>
         <button
           type="button"
@@ -57,10 +51,10 @@ export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Pro
             onFlipHChange(false);
             onFlipVChange(false);
           }}
-          className="flex items-center justify-center gap-1 py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-mute hover:text-ink transition-colors"
+          className="btn-rule text-[14px]"
         >
-          <RefreshCw className="w-3 h-3" />
-          <span>Reset</span>
+          <RefreshCw className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <span>{t('ctl.flip.reset')}</span>
         </button>
       </div>
     </div>

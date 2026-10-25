@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Copy, Check, Code } from 'lucide-react';
+import { useId, useState } from 'react';
+import { Copy, Check } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   outputString: string;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export function Base64GeneratorControls({ outputString, isDataUri = false, mimeType = 'image/png' }: Props) {
+  const t = useT();
+  const outputId = useId();
   const [copied, setCopied] = useState(false);
   const [copiedSnippet, setCopiedSnippet] = useState<string | null>(null);
 
@@ -27,78 +30,67 @@ export function Base64GeneratorControls({ outputString, isDataUri = false, mimeT
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const altText = t('ctl.base64.altText');
   const dataUriString = isDataUri ? outputString : `data:${mimeType};base64,${outputString}`;
-  const htmlSnippet = `<img src="${dataUriString.slice(0, 50)}..." alt="Embedded Image" />`;
+  const htmlSnippet = `<img src="${dataUriString.slice(0, 50)}..." alt="${altText}" />`;
   const cssSnippet = `background-image: url("${dataUriString.slice(0, 50)}...");`;
 
   const copySnippet = (id: string) => {
     const fullText = id === 'html'
-      ? `<img src="${dataUriString}" alt="Embedded Image" />`
+      ? `<img src="${dataUriString}" alt="${altText}" />`
       : `background-image: url("${dataUriString}");`;
     navigator.clipboard.writeText(fullText);
     setCopiedSnippet(id);
     setTimeout(() => setCopiedSnippet(null), 2000);
   };
 
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between text-[14px]">
-        <label className="font-medium text-body flex items-center gap-1.5">
-          <Code className="w-3.5 h-3.5 text-accent-blue" />
-          <span>{isDataUri ? 'Generated Data URI' : 'Generated Base64 String'}</span>
-        </label>
-        <span className="font-mono text-mute text-[13px]">
-          {charCount.toLocaleString()} chars (~{formatSize(approxBytes)})
-        </span>
-      </div>
+  const snippets = [
+    { id: 'html', code: htmlSnippet, label: t('ctl.base64.copyHtml') },
+    { id: 'css', code: cssSnippet, label: t('ctl.base64.copyCss') },
+  ];
 
-      {/* Code Box */}
-      <div className="relative">
+  return (
+    <div className="space-y-5">
+      <div className="space-y-1.5">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+          <label htmlFor={outputId} className="slug">
+            {isDataUri ? t('ctl.base64.labelDataUri') : t('ctl.base64.labelBase64')}
+          </label>
+          <span className="text-[13px] text-graphite" data-measure>
+            {t('ctl.base64.length', { count: charCount.toLocaleString(), size: formatSize(approxBytes) })}
+          </span>
+        </div>
+
         <textarea
+          id={outputId}
           readOnly
           value={outputString}
           rows={6}
-          className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-[13px] font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none select-all"
+          className="block w-full border border-ink bg-paper-bright p-2.5 text-[13px] leading-relaxed font-code text-ink resize-none select-all break-all"
         />
+
+        <button type="button" onClick={handleCopy} className="btn-rule w-full text-[14px]">
+          {copied ? <Check className="w-4 h-4 text-accent-green" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+          <span aria-live="polite">
+            {copied ? t('ctl.base64.copied') : isDataUri ? t('ctl.base64.copyDataUri') : t('ctl.base64.copyBase64')}
+          </span>
+        </button>
       </div>
 
-      {/* 1-Click Copy Button */}
-      <button
-        type="button"
-        onClick={handleCopy}
-        className="w-full py-2 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
-      >
-        {copied ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
-        <span>{copied ? `Copied ${isDataUri ? 'Data URI' : 'Base64'} to Clipboard!` : `Copy ${isDataUri ? 'Data URI' : 'Base64'}`}</span>
-      </button>
-
-      {/* Code Snippet Helpers */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-[14px]">
-        <span className="text-mute block font-medium">Quick Embed Snippets:</span>
-
-        <div className="flex items-center justify-between p-2 bg-surface-card border border-hairline rounded text-[13px] font-mono text-body">
-          <span className="truncate max-w-[240px]">{htmlSnippet}</span>
-          <button
-            type="button"
-            onClick={() => copySnippet('html')}
-            className="flex items-center gap-1 text-mute hover:text-ink font-sans text-[12px] ml-2 shrink-0"
-          >
-            {copiedSnippet === 'html' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-            <span>{copiedSnippet === 'html' ? 'Copied' : 'Copy HTML'}</span>
-          </button>
-        </div>
-
-        <div className="flex items-center justify-between p-2 bg-surface-card border border-hairline rounded text-[13px] font-mono text-body">
-          <span className="truncate max-w-[240px]">{cssSnippet}</span>
-          <button
-            type="button"
-            onClick={() => copySnippet('css')}
-            className="flex items-center gap-1 text-mute hover:text-ink font-sans text-[12px] ml-2 shrink-0"
-          >
-            {copiedSnippet === 'css' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
-            <span>{copiedSnippet === 'css' ? 'Copied' : 'Copy CSS'}</span>
-          </button>
-        </div>
+      {/* Embed snippets */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.base64.snippets')}</span>
+        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft">
+          {snippets.map((s) => (
+            <li key={s.id} className="space-y-2 p-2.5">
+              <code className="block truncate text-[13px] font-code text-ink">{s.code}</code>
+              <button type="button" onClick={() => copySnippet(s.id)} className="btn-rule text-[14px]">
+                {copiedSnippet === s.id ? <Check className="w-4 h-4 text-accent-green" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                <span aria-live="polite">{copiedSnippet === s.id ? t('ctl.base64.copiedShort') : s.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
-import React from 'react';
+import { useId } from 'react';
 import { User } from 'lucide-react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   maxRadius: number;
@@ -12,6 +13,11 @@ interface Props {
   onBackgroundColorChange: (color: string) => void;
 }
 
+const segButton = (selected: boolean) =>
+  `min-h-[40px] px-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold transition-colors ${
+    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+  }`;
+
 export function RoundControls({
   maxRadius,
   radius,
@@ -22,79 +28,68 @@ export function RoundControls({
   onIsCircleChange,
   onBackgroundColorChange,
 }: Props) {
+  const t = useT();
+  const idBase = useId();
+
+  const presets = [
+    { key: 'small', label: t('ctl.round.small'), value: Math.round(maxRadius * 0.1) },
+    { key: 'medium', label: t('ctl.round.medium'), value: Math.round(maxRadius * 0.25) },
+    { key: 'large', label: t('ctl.round.large'), value: Math.round(maxRadius * 0.5) },
+    { key: 'none', label: t('ctl.round.none'), value: 0 },
+  ];
+
   return (
-    <div className="space-y-4">
-      {/* Circle Avatar CTA button */}
+    <div className="space-y-5">
+      {/* Circle avatar */}
       <button
         type="button"
+        aria-pressed={isCircle}
         onClick={() => {
           onIsCircleChange(true);
           onRadiusChange(maxRadius);
         }}
-        className={`w-full py-2.5 px-3 rounded-md border flex items-center justify-center gap-2 text-[14px] font-semibold transition-all ${
-          isCircle
-            ? 'bg-surface-card border-hairline-strong text-ink shadow'
-            : 'bg-surface-elevated hover:bg-surface-card border-hairline text-body hover:text-ink'
-        }`}
+        className="btn-rule w-full text-[15px] font-semibold"
       >
-        <User className="w-4 h-4 text-accent-blue" />
-        <span>Make Circle Avatar</span>
+        <User className="w-4 h-4 shrink-0" aria-hidden="true" />
+        <span>{t('ctl.round.circle')}</span>
       </button>
 
       {/* Presets */}
-      <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-[14px] font-medium text-body">Corner Radius Presets</label>
-        <div className="grid grid-cols-4 gap-1.5 text-[14px]">
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(false);
-              onRadiusChange(Math.round(maxRadius * 0.1));
-            }}
-            className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-mute hover:text-ink transition-colors"
-          >
-            Small
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(false);
-              onRadiusChange(Math.round(maxRadius * 0.25));
-            }}
-            className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-mute hover:text-ink transition-colors"
-          >
-            Medium
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(false);
-              onRadiusChange(Math.round(maxRadius * 0.5));
-            }}
-            className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-mute hover:text-ink transition-colors"
-          >
-            Large
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              onIsCircleChange(false);
-              onRadiusChange(0);
-            }}
-            className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-mute hover:text-ink transition-colors"
-          >
-            Square (0)
-          </button>
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <span className="slug block" id={`${idBase}-presets`}>{t('ctl.round.presets')}</span>
+        <div className="grid grid-cols-2 gap-px bg-ink border border-ink" role="group" aria-labelledby={`${idBase}-presets`}>
+          {presets.map((p) => {
+            const selected = !isCircle && radius === p.value;
+            return (
+              <button
+                key={p.key}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => {
+                  onIsCircleChange(false);
+                  onRadiusChange(p.value);
+                }}
+                className={segButton(selected)}
+              >
+                {p.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Radius Slider */}
-      <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-[14px]">
-          <span className="text-body">Custom Radius</span>
-          <span className="font-mono text-ink font-semibold">{isCircle ? 'Circular Mask' : `${radius}px`}</span>
+      {/* Radius slider */}
+      <div className="space-y-1.5">
+        <div className="flex items-baseline justify-between gap-2 text-[15px]">
+          <label htmlFor={`${idBase}-radius`} className="text-ink">
+            {t('ctl.round.radius')}
+          </label>
+          <span className="font-semibold text-ink" data-measure>
+            {isCircle ? t('ctl.round.circleMask') : `${radius} px`}
+          </span>
         </div>
         <input
+          id={`${idBase}-radius`}
           type="range"
           min="0"
           max={maxRadius}
@@ -104,38 +99,39 @@ export function RoundControls({
             onIsCircleChange(false);
             onRadiusChange(parseInt(e.target.value) || 0);
           }}
-          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink disabled:opacity-40"
+          className="w-full disabled:opacity-40 disabled:cursor-not-allowed"
         />
       </div>
 
-      {/* JPG Background Fill (Transparent PNGs saved to JPG need a background) */}
+      {/* JPG has no transparency, so the cut-away corners need a fill */}
       {format === 'image/jpeg' && (
-        <div className="p-3 bg-surface-card border border-hairline rounded-md space-y-2 text-[14px]">
-          <span className="text-mute block">JPG does not support transparency. Select corner fill:</span>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => onBackgroundColorChange('#ffffff')}
-              className={`px-2.5 py-1 rounded border text-[14px] ${
-                backgroundColor === '#ffffff' ? 'border-hairline-strong text-ink font-bold' : 'border-hairline text-mute'
-              }`}
-            >
-              White
-            </button>
-            <button
-              type="button"
-              onClick={() => onBackgroundColorChange('#000000')}
-              className={`px-2.5 py-1 rounded border text-[14px] ${
-                backgroundColor === '#000000' ? 'border-hairline-strong text-ink font-bold' : 'border-hairline text-mute'
-              }`}
-            >
-              Black
-            </button>
+        <div className="p-3 bg-accent-yellow-soft border border-pencil space-y-2.5">
+          <p className="text-[14px] text-ink">{t('ctl.round.jpgFill')}</p>
+          <div className="flex items-center gap-2">
+            <div className="grid grid-cols-2 flex-1 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.round.cornerFill')}>
+              <button
+                type="button"
+                aria-pressed={backgroundColor === '#ffffff'}
+                onClick={() => onBackgroundColorChange('#ffffff')}
+                className={segButton(backgroundColor === '#ffffff')}
+              >
+                {t('ctl.round.white')}
+              </button>
+              <button
+                type="button"
+                aria-pressed={backgroundColor === '#000000'}
+                onClick={() => onBackgroundColorChange('#000000')}
+                className={segButton(backgroundColor === '#000000')}
+              >
+                {t('ctl.round.black')}
+              </button>
+            </div>
             <input
               type="color"
               value={backgroundColor}
               onChange={(e) => onBackgroundColorChange(e.target.value)}
-              className="w-6 h-6 rounded border border-hairline bg-transparent cursor-pointer"
+              aria-label={t('ctl.round.customFill')}
+              className="w-10 h-10 shrink-0 p-0.5 border border-ink bg-paper-bright cursor-pointer"
             />
           </div>
         </div>

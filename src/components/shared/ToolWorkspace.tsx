@@ -50,6 +50,7 @@ import { PhotoFiltersWorkspace } from '../tools/PhotoFiltersWorkspace';
 import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
 import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
 import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
+import { RemoveBackgroundWorkspace } from '../tools/RemoveBackgroundWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export interface NextTool {
@@ -90,6 +91,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'meme-generator': <MemeGeneratorWorkspace />,
     'split-image': <ImageSplitterWorkspace />,
     'censor-image': <CensorImageWorkspace />,
+    'remove-background': <RemoveBackgroundWorkspace />,
   };
   if (standalone[slug]) {
     return (
@@ -995,7 +997,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                             aria-pressed={format === fmt}
                             onClick={() => setFormat(fmt)}
                             className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                              format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-paper hover:bg-paper-stock'
+                              format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
                             }`}
                           >
                             {formatExtension(fmt).toUpperCase()}

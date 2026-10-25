@@ -1,12 +1,24 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { UploadCloud, Download, AlertCircle, FileCode, CheckCircle2, Clipboard, Loader2, Play } from 'lucide-react';
-import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { Download, AlertCircle, CheckCircle2, Clipboard, Loader2, Play, FileText } from 'lucide-react';
+import { loadImage, canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
 import { normalizeBase64Image } from '../../lib/canvas/base64';
+import { useT } from '../shared/I18nContext';
+
+type DecodeFormat = 'image/png' | 'image/jpeg' | 'image/webp';
+const FORMATS: DecodeFormat[] = ['image/png', 'image/jpeg', 'image/webp'];
+const FORMAT_LABEL: Record<DecodeFormat, string> = { 'image/png': 'PNG', 'image/jpeg': 'JPG', 'image/webp': 'WebP' };
+
+/** "image/svg+xml" -> "SVG", "image/jpeg" -> "JPG" */
+function mimeLabel(mime: string): string {
+  return mime.replace('image/', '').replace('svg+xml', 'svg').replace('jpeg', 'jpg').toUpperCase();
+}
 
 export function Base64ToImageWorkspace() {
+  const t = useT();
   const [inputText, setInputText] = useState('');
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
-  const [format, setFormat] = useState<'image/png' | 'image/jpeg' | 'image/webp'>('image/png');
+  const [detected, setDetected] = useState<{ mime: string; bytes: number } | null>(null);
+  const [format, setFormat] = useState<DecodeFormat>('image/png');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [isDecoding, setIsDecoding] = useState<boolean>(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,22 +39,25 @@ export function Base64ToImageWorkspace() {
     const cleanSrc = normalizeBase64Image(text);
     if (!cleanSrc) {
       setImageElement(null);
-      setErrorMsg('This doesn’t look like Base64. Paste a Base64 string, a data: URI, or a CSS/HTML snippet that contains one.');
+      setErrorMsg(t('ctl.decode.errNotBase64'));
       setIsDecoding(false);
       return;
     }
 
     try {
       const img = await loadImage(cleanSrc);
+      const [, mime = 'image/png', payload = ''] = cleanSrc.match(/^data:([^;]+);base64,(.*)$/) || [];
+      const padding = payload.endsWith('==') ? 2 : payload.endsWith('=') ? 1 : 0;
+      setDetected({ mime, bytes: Math.max(0, Math.floor((payload.length * 3) / 4) - padding) });
       setImageElement(img);
       setErrorMsg(null);
     } catch {
       setImageElement(null);
-      setErrorMsg('Invalid Base64 string or corrupted image payload.');
+      setErrorMsg(t('ctl.decode.errInvalid'));
     } finally {
       setIsDecoding(false);
     }
-  }, []);
+  }, [t]);
 
   const handleTextChange = (text: string) => {
     setInputText(text);
@@ -70,7 +85,7 @@ export function Base64ToImageWorkspace() {
         performDecode(text);
       }
     } catch {
-      setErrorMsg('Clipboard access was blocked. Click the text box and press Ctrl+V (⌘V on Mac) instead.');
+      setErrorMsg(t('ctl.decode.errClipboard'));
     }
   };
 
@@ -81,6 +96,7 @@ export function Base64ToImageWorkspace() {
       setInputText(result);
       performDecode(result);
     };
+    reader.onerror = () => setErrorMsg(t('ctl.decode.errFile'));
     reader.readAsText(file);
   };
 
@@ -122,137 +138,141 @@ export function Base64ToImageWorkspace() {
     downloadBlob(blob, `decoded-image.${ext}`);
   };
 
+  const imgW = imageElement ? imageElement.naturalWidth || imageElement.width : 0;
+  const imgH = imageElement ? imageElement.naturalHeight || imageElement.height : 0;
+
   return (
-    <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* Left Input Area (6 Cols) */}
-        <div className="lg:col-span-6 space-y-3">
-          <div className="flex items-center justify-between text-[14px]">
-            <label className="font-semibold text-ink flex items-center gap-1.5">
-              <FileCode className="w-4 h-4 text-accent-blue" />
-              <span>Paste Base64 or Data URI</span>
-            </label>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={handlePasteClipboard}
-                className="flex items-center gap-1 text-[13px] text-body hover:text-ink transition-colors px-2 py-0.5 bg-surface-card border border-hairline rounded"
-              >
-                <Clipboard className="w-3 h-3" />
-                <span>Paste</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="text-[13px] text-mute hover:text-ink transition-colors"
-              >
-                Upload .txt
-              </button>
-            </div>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept=".txt,text/plain"
-              className="hidden"
-              onChange={(e) => {
-                if (e.target.files?.[0]) handleFileUpload(e.target.files[0]);
-              }}
-            />
-          </div>
-
-          <div className="relative">
-            <textarea
-              rows={10}
-              value={inputText}
-              onChange={(e) => handleTextChange(e.target.value)}
-              placeholder="Paste your base64 string or data:image/png;base64,... here"
-              className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-[14px] font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
-            />
-            {isDecoding && (
-              <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-surface-elevated/90 border border-hairline rounded text-[13px] text-accent-blue font-medium shadow">
-                <Loader2 className="w-3 h-3 animate-spin" />
-                <span>Decoding...</span>
-              </div>
-            )}
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-[13px] text-mute font-mono">
-              {inputText.length > 0 ? `${inputText.length.toLocaleString()} characters` : 'Ready for input'}
-            </span>
-            <button
-              type="button"
-              onClick={() => performDecode(inputText)}
-              disabled={!inputText.trim() || isDecoding}
-              className="flex items-center gap-1.5 px-3 py-1 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded text-[14px] font-medium text-ink transition-colors disabled:opacity-40"
-            >
-              <Play className="w-3 h-3 text-accent-green" />
-              <span>Decode Immediately</span>
+    <div className="grid gap-6 lg:gap-8 lg:grid-cols-2 items-start">
+      {/* Input sheet */}
+      <div className="min-w-0 space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <label htmlFor="base64-input" className="slug">{t('ctl.decode.inputLabel')}</label>
+          <div className="flex items-center gap-2">
+            <button type="button" onClick={handlePasteClipboard} className="btn-rule min-h-[36px] px-2.5 text-[14px]">
+              <Clipboard className="w-4 h-4" aria-hidden="true" />
+              <span>{t('ctl.decode.paste')}</span>
+            </button>
+            <button type="button" onClick={() => fileInputRef.current?.click()} className="btn-rule min-h-[36px] px-2.5 text-[14px]">
+              <FileText className="w-4 h-4" aria-hidden="true" />
+              <span>{t('ctl.decode.uploadTxt')}</span>
             </button>
           </div>
-
-          {errorMsg ? (
-            <div className="flex items-center gap-2 p-2.5 bg-accent-red/10 border border-accent-red/20 rounded-md text-[14px] text-accent-red">
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{errorMsg}</span>
-            </div>
-          ) : imageElement ? (
-            <div className="flex items-center gap-2 p-2.5 bg-accent-green/10 border border-accent-green/20 rounded-md text-[14px] text-accent-green font-medium">
-              <CheckCircle2 className="w-4 h-4 shrink-0" />
-              <span>Valid Image Decoded: {imageElement.naturalWidth} × {imageElement.naturalHeight} px</span>
-            </div>
-          ) : null}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".txt,text/plain"
+            className="hidden"
+            onChange={(e) => {
+              if (e.target.files?.[0]) handleFileUpload(e.target.files[0]);
+              e.target.value = ''; // allow picking the same file again
+            }}
+          />
         </div>
 
-        {/* Right Preview & Export Panel (6 Cols) */}
-        <div className="lg:col-span-6 space-y-4">
-          <div className="relative rounded-lg border border-hairline overflow-hidden canvas-checkerboard flex items-center justify-center min-h-[260px] max-h-[350px] p-4">
-            {imageElement ? (
-              <canvas
-                ref={canvasRef}
-                className="max-w-full max-h-[300px] object-contain rounded shadow-xl"
-              />
-            ) : (
-              <div className="text-center text-[14px] text-mute space-y-1">
-                <UploadCloud className="w-6 h-6 mx-auto text-ash" />
-                <p>Decoded image preview will appear here</p>
-              </div>
-            )}
-          </div>
+        <div className="relative">
+          <textarea
+            id="base64-input"
+            rows={12}
+            value={inputText}
+            onChange={(e) => handleTextChange(e.target.value)}
+            placeholder={t('ctl.decode.placeholder')}
+            spellCheck={false}
+            autoComplete="off"
+            className="block w-full border border-ink bg-paper-bright p-3 text-[14px] leading-relaxed font-code text-ink placeholder:text-graphite resize-y break-all"
+          />
+          {isDecoding && (
+            <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-paper border border-ink text-[13px] text-ink" role="status">
+              <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+              <span>{t('ctl.decode.decoding')}</span>
+            </div>
+          )}
+        </div>
 
-          {imageElement && (
-            <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-y border-ink py-2">
+          <span className="text-[14px] text-graphite" data-measure>
+            {inputText.length > 0 ? t('ctl.decode.chars', { count: inputText.length.toLocaleString() }) : t('ctl.decode.ready')}
+          </span>
+          <button
+            type="button"
+            onClick={() => performDecode(inputText)}
+            disabled={!inputText.trim() || isDecoding}
+            className="btn-rule min-h-[36px] px-2.5 text-[14px] disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <Play className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.decode.decodeNow')}</span>
+          </button>
+        </div>
+
+        {errorMsg ? (
+          <div role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[14px] text-accent-red">
+            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+            <span>{errorMsg}</span>
+          </div>
+        ) : imageElement ? (
+          <p role="status" className="flex items-center gap-2 text-[14px] text-accent-green font-semibold">
+            <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.decode.valid')}</span>
+          </p>
+        ) : null}
+      </div>
+
+      {/* Proof sheet and export */}
+      <div className="min-w-0 space-y-3">
+        <div className="canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] max-h-[420px] p-6 overflow-hidden">
+          {imageElement ? (
+            <canvas
+              ref={canvasRef}
+              role="img"
+              aria-label={t('ctl.decode.previewLabel')}
+              className="block max-w-full max-h-[360px] object-contain"
+            />
+          ) : (
+            <p className="bg-paper-bright border border-pencil px-3 py-1.5 text-[14px] text-graphite">{t('ctl.decode.emptyPreview')}</p>
+          )}
+        </div>
+
+        {imageElement && detected && (
+          <>
+            {/* Job ticket: what was decoded */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ctl.decode.decoded')}</span>
+                <span className="text-ink font-semibold">{imgW} × {imgH} px</span>
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ctl.decode.type')}</span>
+                <span className="text-ink font-semibold">{mimeLabel(detected.mime)}</span>
+                <span className="text-graphite">≈ {formatBytes(detected.bytes)}</span>
+              </span>
+            </div>
+
+            <div className="border border-ink bg-paper-bright p-4 space-y-4">
               <div className="space-y-1.5">
-                <label className="text-[14px] font-medium text-body">Export Format</label>
-                <div className="grid grid-cols-3 gap-2 text-[14px]">
-                  {(['image/png', 'image/jpeg', 'image/webp'] as const).map((fmt) => (
+                <span className="slug">{t('ctl.decode.saveAs')}</span>
+                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.decode.formatGroup')}>
+                  {FORMATS.map((fmt) => (
                     <button
                       key={fmt}
                       type="button"
+                      aria-pressed={format === fmt}
                       onClick={() => setFormat(fmt)}
-                      className={`py-1.5 rounded-md border text-center font-medium transition-colors ${
-                        format === fmt
-                          ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                          : 'bg-surface border-hairline text-mute hover:text-ink'
+                      className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                        format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
                       }`}
                     >
-                      {fmt === 'image/png' ? 'PNG' : fmt === 'image/jpeg' ? 'JPG' : 'WebP'}
+                      {FORMAT_LABEL[fmt]}
                     </button>
                   ))}
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={handleDownload}
-                className="w-full py-2.5 px-4 bg-process-key text-paper border border-ink hover:bg-paper hover:text-ink font-semibold text-[14px] rounded-md shadow-lg flex items-center justify-center gap-2 transition-all"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download Decoded Image</span>
+              <button type="button" onClick={handleDownload} className="btn-ink w-full min-h-[52px] text-[16px]">
+                <Download className="w-5 h-5" aria-hidden="true" />
+                <span>{t('ctl.decode.download', { format: FORMAT_LABEL[format] })}</span>
               </button>
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
     </div>
   );

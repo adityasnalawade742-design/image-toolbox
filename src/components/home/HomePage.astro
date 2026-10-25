@@ -22,7 +22,7 @@ const t = useTranslations(locale);
 const nameOf = (slug: string) => locTools[slug]?.name || TOOLS.find((t) => t.slug === slug)?.name || slug;
 
 // Offered right after an image is dropped: the everyday jobs first
-const QUICK = ['crop-image', 'compress-image', 'resize-image', 'convert-image', 'remove-image-metadata', 'photo-filters', 'censor-image', 'round-image', 'image-analyzer'];
+const QUICK = ['crop-image', 'remove-background', 'compress-image', 'resize-image', 'convert-image', 'remove-image-metadata', 'photo-filters', 'censor-image', 'round-image', 'image-analyzer'];
 const quickTools: QuickTool[] = QUICK.flatMap((slug) => {
   const tool = TOOLS.find((t) => t.slug === slug);
   return tool ? [{ slug, name: nameOf(slug), inkClass: CATEGORY_INK[tool.category].className }] : [];
