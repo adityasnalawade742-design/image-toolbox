@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Zap, AlertCircle, Target, Sliders, Cloud, Check } from 'lucide-react';
-import { isVpsOnline } from '../../lib/vps/vpsClient';
+import React, { useState } from 'react';
+import { Zap, AlertCircle, Target, Sliders, Check } from 'lucide-react';
 
 interface Props {
   originalBytes: number;
@@ -9,8 +8,6 @@ interface Props {
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif';
   onQualityChange: (q: number) => void;
   onFormatChange: (f: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif') => void;
-  useVps?: boolean;
-  onToggleVps?: (use: boolean) => void;
 }
 
 export function CompressControls({
@@ -20,16 +17,9 @@ export function CompressControls({
   format,
   onQualityChange,
   onFormatChange,
-  useVps = true,
-  onToggleVps,
 }: Props) {
   const [compressMode, setCompressMode] = useState<'quality' | 'target'>('quality');
   const [targetKb, setTargetKb] = useState<number>(100);
-  const [vpsAvailable, setVpsAvailable] = useState<boolean>(true);
-
-  useEffect(() => {
-    isVpsOnline().then(setVpsAvailable);
-  }, []);
 
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
@@ -180,23 +170,7 @@ export function CompressControls({
 
       {/* Format Selector */}
       <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between">
-          <label className="text-xs font-medium text-body">Target Output Format</label>
-          {vpsAvailable && onToggleVps && (
-            <button
-              type="button"
-              onClick={() => onToggleVps(!useVps)}
-              className={`flex items-center gap-1 text-[11px] px-2 py-0.5 rounded transition-colors ${
-                useVps
-                  ? 'bg-accent-blue/15 text-accent-blue border border-accent-blue/30 font-medium'
-                  : 'bg-surface text-mute hover:text-body border border-hairline'
-              }`}
-            >
-              <Cloud className="w-3 h-3" />
-              <span>{useVps ? 'VPS Engine Active' : 'Client Engine'}</span>
-            </button>
-          )}
-        </div>
+        <label className="text-xs font-medium text-body">Target Output Format</label>
         <div className="grid grid-cols-4 gap-1.5 text-xs">
           {(['image/avif', 'image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
             <button
@@ -222,7 +196,7 @@ export function CompressControls({
         {format === 'image/avif' && (
           <p className="text-[11px] text-accent-blue/90 leading-relaxed pt-1 flex items-center gap-1">
             <Zap className="w-3 h-3 shrink-0" />
-            <span>AVIF delivers up to 50% smaller files than WebP via Oracle VPS encoding.</span>
+            <span>AVIF is usually smaller than WebP at similar quality. Encoding runs in your browser and can take a few seconds on large photos.</span>
           </p>
         )}
       </div>

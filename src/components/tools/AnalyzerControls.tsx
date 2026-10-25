@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers, Camera, MapPin, Sparkles, Loader2 } from 'lucide-react';
-import { vpsAnalyzeMetadata, type ExifAnalysisResult } from '../../lib/vps/vpsClient';
+import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers, Camera, MapPin } from 'lucide-react';
+import { readExifSummary, type ExifSummary } from '../../lib/canvas/exifReader';
 
 interface Props {
   filename: string;
@@ -10,7 +10,8 @@ interface Props {
   width: number;
   height: number;
   hasTransparency: boolean;
-  activeFile?: File | Blob | null;
+  sourceFile?: File | null;
+  onRemoveMetadata?: () => void;
 }
 
 export function AnalyzerControls({
@@ -21,20 +22,24 @@ export function AnalyzerControls({
   width,
   height,
   hasTransparency,
-  activeFile,
+  sourceFile,
+  onRemoveMetadata,
 }: Props) {
   const [copied, setCopied] = useState(false);
-  const [exifData, setExifData] = useState<ExifAnalysisResult | null>(null);
-  const [isAnalyzingExif, setIsAnalyzingExif] = useState(false);
+  const [exif, setExif] = useState<ExifSummary | null>(null);
 
+  // Parsed locally from the original upload (before HEIC conversion, which drops EXIF)
   useEffect(() => {
-    if (!activeFile) return;
-    setIsAnalyzingExif(true);
-    vpsAnalyzeMetadata(activeFile)
-      .then((res) => setExifData(res))
-      .catch(() => setExifData(null))
-      .finally(() => setIsAnalyzingExif(false));
-  }, [activeFile]);
+    if (!sourceFile) return;
+    let cancelled = false;
+    setExif(null);
+    readExifSummary(sourceFile).then((summary) => {
+      if (!cancelled) setExif(summary);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [sourceFile]);
 
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
@@ -90,7 +95,9 @@ export function AnalyzerControls({
   ];
 
   const handleCopyReport = () => {
-    const text = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency && !isJpg ? 'Present' : 'None'}`).join('\n');
+    const lines = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency && !isJpg ? 'Present' : 'None'}`);
+    const exifLines = (exif?.tags || []).map((t) => `${t.label}: ${t.value}`);
+    const text = [...lines, ...exifLines].join('\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -122,33 +129,43 @@ export function AnalyzerControls({
         ))}
       </div>
 
-      {/* Deep EXIF & Hardware Metadata Section */}
+      {/* Camera EXIF Metadata (read in-browser) */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs font-semibold text-ink">
-            <Camera className="w-4 h-4 text-emerald-400" />
-            <span>Camera & Hardware EXIF</span>
-          </div>
-          {isAnalyzingExif && (
-            <span className="flex items-center gap-1 text-[11px] text-mute font-mono">
-              <Loader2 className="w-3 h-3 animate-spin text-accent-blue" />
-              <span>Scanning tags...</span>
-            </span>
-          )}
+        <div className="flex items-center gap-2 text-xs font-semibold text-ink">
+          <Camera className="w-4 h-4 text-accent-blue" />
+          <span>Camera & EXIF Metadata</span>
         </div>
 
-        {exifData && Object.keys(exifData.exif || {}).length > 0 ? (
-          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs max-h-60 overflow-y-auto">
-            {Object.entries(exifData.exif).map(([tag, val]) => (
-              <div key={tag} className="py-1.5 flex items-center justify-between gap-4 text-[11px]">
-                <span className="text-mute font-medium truncate max-w-[140px]">{tag}</span>
-                <span className="text-ink font-mono truncate max-w-[180px] text-right">{val}</span>
+        {exif?.hasGps && (
+          <div className="p-3 bg-accent-yellow-soft border border-accent-yellow/30 rounded-lg text-xs text-body space-y-2">
+            <p className="flex items-start gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-accent-yellow shrink-0 mt-0.5" />
+              <span>This photo contains its GPS location. Anyone you share the original file with can see where it was taken.</span>
+            </p>
+            {onRemoveMetadata && (
+              <button
+                type="button"
+                onClick={onRemoveMetadata}
+                className="px-2.5 py-1 bg-surface-card border border-hairline rounded text-ink font-medium hover:border-hairline-strong transition-colors"
+              >
+                Remove metadata
+              </button>
+            )}
+          </div>
+        )}
+
+        {exif && exif.tags.length > 0 ? (
+          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs">
+            {exif.tags.map((t) => (
+              <div key={t.label} className="py-2 flex items-center justify-between gap-4">
+                <span className="text-mute">{t.label}</span>
+                <span className="text-ink font-mono font-medium truncate text-right">{t.value}</span>
               </div>
             ))}
           </div>
         ) : (
-          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-xs text-mute flex items-center justify-between">
-            <span>{isAnalyzingExif ? 'Extracting deep camera markers...' : 'No camera EXIF metadata embedded in this image file.'}</span>
+          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-xs text-mute">
+            {exif ? 'No camera EXIF metadata in this file.' : 'Reading metadata…'}
           </div>
         )}
       </div>

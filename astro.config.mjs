@@ -7,6 +7,12 @@ import pwa from '@vite-pwa/astro';
 export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://image-toolbox.aditya-s-nalawade742.workers.dev',
   output: 'static',
+  vite: {
+    // The AVIF encoder worker code-splits its WASM codec, which requires ES module workers
+    worker: { format: 'es' },
+    // Pre-bundling breaks @jsquash's relative .wasm URLs in dev
+    optimizeDeps: { exclude: ['@jsquash/avif'] },
+  },
   integrations: [
     react(),
     tailwind({

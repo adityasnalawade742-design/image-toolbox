@@ -1,3 +1,5 @@
+import { encodeAvif } from './avifEncoder';
+
 export interface TextOverlayOptions {
   text: string;
   fontFamily?: string;
@@ -356,16 +358,24 @@ export function processCanvas(
 export function canvasToBlob(
   canvas: HTMLCanvasElement,
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' = 'image/png',
-  quality: number = 0.92
+  quality: number = 0.92,
+  avifCoalesceKey?: string
 ): Promise<Blob> {
-  const mime = format === 'image/avif' ? 'image/webp' : format;
+  // Browsers can't encode AVIF via toBlob, so route it through the WASM encoder
+  if (format === 'image/avif') {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return Promise.reject(new Error('Canvas 2D unavailable'));
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    return encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
+  }
+
   return new Promise((resolve, reject) => {
     canvas.toBlob(
       (blob) => {
         if (blob) resolve(blob);
         else reject(new Error('Failed to create blob from canvas'));
       },
-      mime,
+      format,
       quality
     );
   });
