@@ -6,6 +6,10 @@ import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT, useLocale } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
 import { wrapTextLines, formatBytes } from '../../lib/canvas/engine';
+import { DragFrameOverlay, type FrameBox } from '../shared/DragFrameOverlay';
+
+type CaptionId = 'top' | 'middle' | 'bottom';
+const CAPTION_LABEL: Record<CaptionId, StringKey> = { top: 'ctl.meme.capTop', middle: 'ctl.meme.capMiddle', bottom: 'ctl.meme.capBottom' };
 
 interface MemeTemplate {
   id: string;
@@ -108,6 +112,11 @@ export function MemeGeneratorWorkspace() {
   const [strokeWidth, setStrokeWidth] = useState<number>(4);
   const [isUppercase, setIsUppercase] = useState<boolean>(true);
   const [textAlign, setTextAlign] = useState<'left' | 'center' | 'right'>('center');
+  // Captions dragged off their default spot: centre as a percentage of the image
+  const [captionPos, setCaptionPos] = useState<Partial<Record<CaptionId, { x: number; y: number }>>>({});
+  // Where each caption was drawn (canvas pixels), for the drag frames and the position sliders
+  const [captionBoxes, setCaptionBoxes] = useState<{ id: CaptionId; box: FrameBox }[]>([]);
+  const [activeCaption, setActiveCaption] = useState<CaptionId>('top');
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
   const [copyError, setCopyError] = useState<boolean>(false);
   const [saveFormat, setSaveFormat] = useState<SaveFormat>('png');
@@ -125,6 +134,7 @@ export function MemeGeneratorWorkspace() {
     setSelectedFile(file);
     setTemplateId(null);
 
+    setCaptionPos({});
     const img = new Image();
     img.onload = () => setImgElement(img);
     img.src = URL.createObjectURL(file);
@@ -139,6 +149,7 @@ export function MemeGeneratorWorkspace() {
       setImgElement(img);
       setSelectedFile(new File([], `${template.id}.svg`, { type: 'image/svg+xml' }));
       setTemplateId(template.id);
+      setCaptionPos({});
       setTopText(t(template.topKey));
       setBottomText(t(template.bottomKey));
     };
@@ -192,44 +203,42 @@ export function MemeGeneratorWorkspace() {
     const sideMargin = Math.max(30, Math.round(w * 0.04));
     const textX = textAlign === 'center' ? w / 2 : textAlign === 'left' ? sideMargin : w - sideMargin;
 
-    const drawWrappedText = (text: string, startY: number, position: 'top' | 'middle' | 'bottom') => {
+    // Lay out each caption as a block: wrapped lines centred on one point, either its default spot or where it was dragged
+    ctx.textBaseline = 'middle';
+    const lineHeight = computedFontSize * 1.15;
+    const boxes: { id: CaptionId; box: FrameBox }[] = [];
+    const captions: [CaptionId, string][] = [
+      ['top', topText],
+      ['middle', middleText],
+      ['bottom', bottomText],
+    ];
+    for (const [id, text] of captions) {
+      if (!text.trim()) continue;
       const finalStr = isUppercase ? text.toUpperCase() : text;
       // Wrap long captions to the image width instead of letting them run off the edges
-      const lines = wrapTextLines(finalStr, w - sideMargin * 2, (s) => ctx.measureText(s).width);
-      const lineHeight = computedFontSize * 1.15;
-
-      if (position === 'middle') {
-        const totalHeight = lines.length * lineHeight;
-        const middleStartY = startY - totalHeight / 2 + lineHeight / 2;
-        lines.forEach((line, index) => {
-          const y = middleStartY + index * lineHeight;
-          if (strokeWidth > 0) ctx.strokeText(line, textX, y);
-          ctx.fillText(line, textX, y);
-        });
+      const lines = wrapTextLines(finalStr, w - sideMargin * 2, (str) => ctx.measureText(str).width);
+      const blockW = Math.max(...lines.map((l) => ctx.measureText(l).width));
+      const blockH = lines.length * lineHeight;
+      const custom = captionPos[id];
+      let cx: number;
+      let cy: number;
+      if (custom) {
+        cx = (custom.x / 100) * w;
+        cy = (custom.y / 100) * h;
       } else {
-        lines.forEach((line, index) => {
-          const y = position === 'top' ? startY + (index + 1) * lineHeight : startY - (lines.length - 1 - index) * lineHeight;
-          if (strokeWidth > 0) ctx.strokeText(line, textX, y);
-          ctx.fillText(line, textX, y);
-        });
+        cx = textAlign === 'center' ? w / 2 : textAlign === 'left' ? sideMargin + blockW / 2 : w - sideMargin - blockW / 2;
+        cy = id === 'top' ? 20 + computedFontSize * 0.1 + blockH / 2 : id === 'middle' ? h / 2 : h - 30 + computedFontSize * 0.2 - blockH / 2;
       }
-    };
-
-    // Draw Top Text
-    if (topText.trim()) {
-      drawWrappedText(topText, 20, 'top');
+      const x = textAlign === 'center' ? cx : textAlign === 'left' ? cx - blockW / 2 : cx + blockW / 2;
+      lines.forEach((line, i) => {
+        const y = cy - blockH / 2 + (i + 0.5) * lineHeight;
+        if (strokeWidth > 0) ctx.strokeText(line, x, y);
+        ctx.fillText(line, x, y);
+      });
+      boxes.push({ id, box: { cx, cy, w: blockW, h: blockH } });
     }
-
-    // Draw Middle Text
-    if (middleText.trim()) {
-      drawWrappedText(middleText, h / 2, 'middle');
-    }
-
-    // Draw Bottom Text
-    if (bottomText.trim()) {
-      drawWrappedText(bottomText, h - 30, 'bottom');
-    }
-  }, [imgElement, topText, middleText, bottomText, fontSize, font, textColor, strokeColor, strokeWidth, isUppercase, textAlign, fontTick]);
+    setCaptionBoxes(boxes);
+  }, [imgElement, topText, middleText, bottomText, fontSize, font, textColor, strokeColor, strokeWidth, isUppercase, textAlign, fontTick, captionPos]);
 
   const handleDownload = (format: SaveFormat = 'png') => {
     if (!canvasRef.current) return;
@@ -327,6 +336,15 @@ export function MemeGeneratorWorkspace() {
             <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
                 <canvas ref={canvasRef} role="img" aria-label={t('ws.previewLabel')} className="block max-h-[70vh] w-auto max-w-full object-contain" />
+                <DragFrameOverlay
+                  canvasElement={canvasRef.current}
+                  boxes={captionBoxes.map(({ id, box }) => ({ id, box, label: t(CAPTION_LABEL[id]) }))}
+                  onMove={(id, x, y) => {
+                    setActiveCaption(id as CaptionId);
+                    setCaptionPos((p) => ({ ...p, [id]: { x, y } }));
+                  }}
+                  hint={t('ctl.meme.dragHint')}
+                />
               </div>
             </div>
 
@@ -420,6 +438,64 @@ export function MemeGeneratorWorkspace() {
                     className={fieldClass}
                   />
                 </label>
+
+                {/* Caption position: the keyboard route to what dragging does */}
+                {captionBoxes.length > 0 && imgElement && (
+                  <div className="space-y-2 pt-4 border-t border-ink">
+                    <span className="slug block" id="meme-pos">{t('ctl.meme.position')}</span>
+                    <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="meme-pos">
+                      {(['top', 'middle', 'bottom'] as const).map((id) => {
+                        const present = captionBoxes.some((b) => b.id === id);
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            disabled={!present}
+                            aria-pressed={activeCaption === id && present}
+                            onClick={() => setActiveCaption(id)}
+                            className={`min-h-[40px] px-2 text-[14px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${activeCaption === id && present ? 'seg-on' : 'seg-off'}`}
+                          >
+                            {t(CAPTION_LABEL[id])}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {(() => {
+                      const current = captionBoxes.find((b) => b.id === activeCaption);
+                      if (!current) return null;
+                      const W = imgElement.naturalWidth || imgElement.width;
+                      const H = imgElement.naturalHeight || imgElement.height;
+                      const pos = captionPos[activeCaption] ?? { x: (current.box.cx / W) * 100, y: (current.box.cy / H) * 100 };
+                      return (['x', 'y'] as const).map((axis) => (
+                        <div key={axis} className="space-y-1">
+                          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+                            <label htmlFor={`meme-${axis}`} className="text-ink">
+                              {axis === 'x' ? t('ctl.text.horizontalPosition') : t('ctl.text.verticalPosition')}
+                            </label>
+                            <span className="font-semibold text-ink" data-measure>{Math.round(pos[axis])}%</span>
+                          </div>
+                          <input
+                            id={`meme-${axis}`}
+                            type="range"
+                            min="0"
+                            max="100"
+                            value={Math.round(pos[axis])}
+                            onChange={(e) => setCaptionPos((p) => ({ ...p, [activeCaption]: { ...pos, [axis]: Number(e.target.value) } }))}
+                            className="w-full"
+                          />
+                        </div>
+                      ));
+                    })()}
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="text-[13px] text-graphite">{t('ctl.meme.dragHint')}</p>
+                      {Object.keys(captionPos).length > 0 && (
+                        <button type="button" onClick={() => setCaptionPos({})} className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline">
+                          {t('ctl.meme.resetPositions')}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                )}
 
                 {/* Typography */}
                 <div className="space-y-4 pt-4 border-t border-ink">

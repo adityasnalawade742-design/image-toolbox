@@ -108,6 +108,7 @@ export const editStrings = {
   'ctl.watermark.logoScale': 'Logo size',
   'ctl.watermark.position': 'Position',
   'ctl.watermark.positionTiled': 'Position is not used when the watermark repeats.',
+  'ctl.watermark.dragHint': 'You can also drag the watermark on the image.',
   'ctl.watermark.topLeft': 'Top left',
   'ctl.watermark.topCenter': 'Top center',
   'ctl.watermark.topRight': 'Top right',
