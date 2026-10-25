@@ -64,6 +64,7 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
     {jsonLd && (
       <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
+    <slot name="head" />
   </head>
   <body class="min-h-screen bg-canvas text-ink flex flex-col font-sans">
     <LanguageBanner client:idle currentLocale={lang} currentSlug={currentSlug} />

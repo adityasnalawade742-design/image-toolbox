@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { UploadCloud, Download, Archive, Trash2, CheckCircle2, AlertCircle, RefreshCw, Cloud, Zap } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { formatExtension } from '../../lib/canvas/outputFormat';
+import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 
 interface QueueItem {
   id: string;
@@ -9,6 +11,10 @@ interface QueueItem {
   originalSize: number;
   outputBlob?: Blob;
   outputSize?: number;
+  /** Extension of the format this output was actually encoded in */
+  outputExt?: string;
+  /** Rejected when added (not an image / too large); never processed */
+  rejected?: boolean;
   status: 'pending' | 'processing' | 'done' | 'error';
   errorMsg?: string;
 }
@@ -44,7 +50,8 @@ export function BulkCompressorWorkspace() {
           name: file.name,
           originalSize: file.size,
           status: 'error',
-          errorMsg: 'Unsupported non-image file format',
+          rejected: true,
+          errorMsg: 'Not an image file',
         });
       } else if (file.size > maxSizeBytes) {
         newItems.push({
@@ -53,7 +60,8 @@ export function BulkCompressorWorkspace() {
           name: file.name,
           originalSize: file.size,
           status: 'error',
-          errorMsg: 'File exceeds 50 MB limit',
+          rejected: true,
+          errorMsg: 'Larger than 50 MB',
         });
       } else {
         newItems.push({
@@ -68,6 +76,15 @@ export function BulkCompressorWorkspace() {
     setQueue((prev) => [...prev, ...newItems]);
   };
 
+  // Changing settings invalidates finished results so "Compress All" re-runs them
+  useEffect(() => {
+    setQueue((prev) =>
+      prev.some((q) => q.status === 'done')
+        ? prev.map((q) => (q.status === 'done' ? { ...q, status: 'pending', outputBlob: undefined, outputSize: undefined } : q))
+        : prev
+    );
+  }, [quality, format]);
+
   const processQueue = async () => {
     setIsProcessing(true);
     isCancelledRef.current = false;
@@ -75,7 +92,7 @@ export function BulkCompressorWorkspace() {
     for (let i = 0; i < queue.length; i++) {
       if (isCancelledRef.current) break;
       const item = queue[i];
-      if (item.status === 'done') continue;
+      if (item.status === 'done' || item.rejected) continue;
 
       setQueue((prev) =>
         prev.map((q, idx) => (idx === i ? { ...q, status: 'processing' } : q))
@@ -88,9 +105,15 @@ export function BulkCompressorWorkspace() {
         canvas.height = img.naturalHeight || img.height;
         const ctx = canvas.getContext('2d');
         if (!ctx) throw new Error('Canvas 2D unavailable');
+        if (format === 'image/jpeg') {
+          // JPEG has no alpha; fill white so transparent areas don't turn black
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
         ctx.drawImage(img, 0, 0);
 
         const outputBlob = await canvasToBlob(canvas, format, quality / 100);
+        const outputExt = formatExtension((outputBlob.type || format) as typeof format);
 
         setQueue((prev) =>
           prev.map((q, idx) =>
@@ -99,6 +122,7 @@ export function BulkCompressorWorkspace() {
                   ...q,
                   outputBlob,
                   outputSize: outputBlob.size,
+                  outputExt,
                   status: 'done',
                 }
               : q
@@ -116,16 +140,14 @@ export function BulkCompressorWorkspace() {
     setIsProcessing(false);
   };
 
+  // The loop stops after the current file and clears isProcessing itself, so a second run can't overlap
   const cancelProcessing = () => {
     isCancelledRef.current = true;
-    setIsProcessing(false);
   };
 
   const downloadSingle = (item: QueueItem) => {
-    if (!item.outputBlob) return;
-    const ext = format === 'image/avif' ? 'avif' : format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-    const baseName = item.name.replace(/\.[^/.]+$/, '');
-    downloadBlob(item.outputBlob, `${baseName}-compressed.${ext}`);
+    if (!item.outputBlob || !item.outputExt) return;
+    downloadBlob(item.outputBlob, outputFileName(item.name, 'compressed', item.outputExt));
   };
 
   const downloadAllAsZip = async () => {
@@ -137,12 +159,11 @@ export function BulkCompressorWorkspace() {
       const JSZipModule = await import('jszip');
       const JSZip = JSZipModule.default;
       const zip = new JSZip();
-      const ext = format === 'image/avif' ? 'avif' : format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
+      const uniqueName = createUniqueNamer();
 
       doneItems.forEach((item) => {
-        if (item.outputBlob) {
-          const baseName = item.name.replace(/\.[^/.]+$/, '');
-          zip.file(`${baseName}-compressed.${ext}`, item.outputBlob);
+        if (item.outputBlob && item.outputExt) {
+          zip.file(uniqueName(outputFileName(item.name, 'compressed', item.outputExt)), item.outputBlob);
         }
       });
 
@@ -178,7 +199,8 @@ export function BulkCompressorWorkspace() {
           multiple
           className="hidden"
           onChange={(e) => {
-            if (e.target.files) handleFilesAdded(e.target.files);
+            if (e.target.files) handleFilesAdded(Array.from(e.target.files));
+            e.target.value = ''; // allow re-adding the same files after Clear All
           }}
         />
         <div className="w-10 h-10 rounded-lg bg-surface-card border border-hairline flex items-center justify-center text-accent-blue">
@@ -296,6 +318,9 @@ export function BulkCompressorWorkspace() {
                       {item.status === 'pending' && <span className="w-2 h-2 rounded-full bg-ash shrink-0" />}
                       {item.status === 'error' && <AlertCircle className="w-4 h-4 text-accent-red shrink-0" />}
                       <span className="truncate text-ink font-medium">{item.name}</span>
+                      {item.status === 'error' && item.errorMsg && (
+                        <span className="text-accent-red text-[11px] shrink-0">{item.errorMsg}</span>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-4 text-mute font-mono text-[11px]">
@@ -304,8 +329,8 @@ export function BulkCompressorWorkspace() {
                         <>
                           <span>→</span>
                           <span className="text-ink font-semibold">{formatBytes(item.outputSize)}</span>
-                          <span className="text-accent-green font-bold">
-                            {savings > 0 ? `-${savings.toFixed(0)}%` : '+0%'}
+                          <span className={`font-bold ${savings > 0 ? 'text-accent-green' : 'text-accent-yellow'}`}>
+                            {savings > 0 ? `-${savings.toFixed(0)}%` : `+${Math.abs(savings).toFixed(0)}% larger`}
                           </span>
                         </>
                       )}

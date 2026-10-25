@@ -33,6 +33,8 @@ import type {
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
 import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
+import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { installWindowDropGuard } from './useImageIntake';
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
@@ -67,6 +69,9 @@ interface Props {
   accept?: string;
 }
 
+// Tools whose result is information (text, colors, metrics), not an edited image
+const NO_EXPORT_TOOLS = ['image-to-base64', 'image-to-data-uri', 'image-analyzer', 'image-color-picker', 'image-palette-generator'];
+
 export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   // Delegate dedicated batch/decoder/creative tools directly with ErrorBoundary protection
   if (slug === 'bulk-image-compressor') return <ErrorBoundary><BulkCompressorWorkspace /></ErrorBoundary>;
@@ -83,6 +88,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
   const [sourceFile, setSourceFile] = useState<File | null>(null);
+  // Browser-displayable version of the upload (HEIC converted), used for byte-exact Base64 output
+  const [displayableFile, setDisplayableFile] = useState<Blob | null>(null);
   const [outputBytes, setOutputBytes] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
@@ -162,8 +169,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [base64Output, setBase64Output] = useState<string>('');
 
   // Format & Quality
-  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif'>('image/png');
+  const [format, setFormat] = useState<OutputFormat>('image/png');
+  const [formatSelectable, setFormatSelectable] = useState<boolean>(false);
   const [quality, setQuality] = useState<number>(85);
+  const [isExporting, setIsExporting] = useState<boolean>(false);
+  const [exportError, setExportError] = useState<string | null>(null);
   const [showMoreTools, setShowMoreTools] = useState<boolean>(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -194,10 +204,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
         }
       }
 
+      const sourceMime = isHeicFile(file) ? 'image/heic' : file.type || activeFile.type || 'image/png';
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
       setFileSize(file.size);
-      setMimeType(activeFile.type || 'image/png');
+      setMimeType(sourceMime);
       setSourceFile(file);
+      setDisplayableFile(activeFile);
+      setExportError(null);
 
       const img = await loadImage(activeFile);
       setImageElement(img);
@@ -225,14 +238,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       const isTransparent = checkImageTransparency(img);
       setHasRealTransparency(isTransparent);
 
-      // Set tool-specific default formats
-      if (slug.includes('webp') || slug === 'compress-image') {
-        setFormat('image/webp');
-      } else if (slug.includes('jpg') || slug.includes('jpeg')) {
-        setFormat('image/jpeg');
-      } else {
-        setFormat('image/png');
-      }
+      // Converters export their target format; editors keep the input format by default
+      const formatPolicy = getOutputFormatPolicy(slug, sourceMime);
+      setFormat(formatPolicy.format);
+      setFormatSelectable(formatPolicy.selectable);
 
       // Extract initial palette
       const initialPalette = extractDominantPalette(img, paletteCount);
@@ -258,7 +267,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       }
     };
     window.addEventListener('paste', handlePaste);
-    return () => window.removeEventListener('paste', handlePaste);
+    const removeDropGuard = installWindowDropGuard((file) => handleFile(file));
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+      removeDropGuard();
+    };
   }, []);
 
   // Check cached handoff image from homepage dropzone or cross-tool handoff
@@ -275,6 +288,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       }
     });
   }, []);
+
+  // Base64 / Data URI encode the original file bytes, not a re-rendered canvas
+  useEffect(() => {
+    if (!displayableFile || (slug !== 'image-to-base64' && slug !== 'image-to-data-uri')) return;
+    let cancelled = false;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (cancelled || typeof reader.result !== 'string') return;
+      setBase64Output(slug === 'image-to-base64' ? reader.result.split(',')[1] : reader.result);
+    };
+    reader.readAsDataURL(displayableFile);
+    return () => {
+      cancelled = true;
+    };
+  }, [displayableFile, slug]);
 
   // Re-extract palette when palette count changes
   useEffect(() => {
@@ -296,19 +324,27 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       targetH = origH * svgScale;
     }
 
+    const isCropped = crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0;
+    // Crop preview shows the whole image under the overlay; the export is exactly the selected region
+    if (slug === 'crop-image' && forExport && isCropped) {
+      targetW = Math.round(crop.width);
+      targetH = Math.round(crop.height);
+    }
+
     return {
       width: targetW,
       height: targetH,
       rotation,
       flipH,
       flipV,
-      crop: (forExport || slug !== 'crop-image') && (crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0) ? crop : undefined,
+      crop: (forExport || slug !== 'crop-image') && isCropped ? crop : undefined,
       textOverlay: slug === 'add-text-to-image' ? textOptions : undefined,
       watermark: slug === 'watermark-image' ? watermarkOptions : undefined,
       border: slug === 'add-border-to-image' ? borderOptions : undefined,
       cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
-      isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle : false),
-      backgroundColor: slug === 'png-to-jpg' || ((slug === 'round-image' || slug === 'crop-image') && format === 'image/jpeg') ? bgFillColor : undefined,
+      isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle && forExport : false),
+      // JPEG has no alpha channel, so transparent areas get the chosen fill instead of black
+      backgroundColor: format === 'image/jpeg' ? bgFillColor : undefined,
     };
   }, [
     width,
@@ -357,21 +393,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
             ctx.drawImage(processed, 0, 0);
           }
 
-          // Generate Base64 / Data URI outputs
-          if (slug === 'image-to-base64' || slug === 'image-to-data-uri') {
-            const dataUrl = displayCanvas.toDataURL(format, quality / 100);
-            setBase64Output(slug === 'image-to-base64' ? dataUrl.split(',')[1] : dataUrl);
+          // Calculate output size metrics (only the tools that display them pay for the encode)
+          if (slug === 'compress-image' || slug === 'remove-image-metadata') {
+            const estimateSeq = ++estimateSeqRef.current;
+            canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate')
+              .then((b) => {
+                if (estimateSeq === estimateSeqRef.current) setOutputBytes(b.size);
+              })
+              .catch((err) => {
+                if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
+              });
           }
-
-          // Calculate output size metrics
-          const estimateSeq = ++estimateSeqRef.current;
-          canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate')
-            .then((b) => {
-              if (estimateSeq === estimateSeqRef.current) setOutputBytes(b.size);
-            })
-            .catch((err) => {
-              if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
-            });
         } catch (err) {
           console.error('Canvas processing error:', err);
         } finally {
@@ -488,35 +520,48 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   };
 
   const handleDownload = async () => {
-    if (!imageElement) return;
+    if (!imageElement || isExporting) return;
+    setIsExporting(true);
+    setExportError(null);
 
-    if (slug === 'favicon-generator') {
-      await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
-      return;
+    try {
+      if (slug === 'favicon-generator') {
+        await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
+        return;
+      }
+
+      // Always process from full-resolution original source image for pristine output quality
+      const options = getProcessingOptions(true);
+      const fullResCanvas = processCanvas(imageElement, options);
+
+      const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
+      // Some browsers silently fall back to PNG for formats they can't encode (e.g. older Safari and WebP)
+      const actualFormat = (blob.type || format) as OutputFormat;
+      if (actualFormat !== format) {
+        setExportError(`Your browser can't save ${formatExtension(format).toUpperCase()}, so this was saved as ${formatExtension(actualFormat).toUpperCase()}.`);
+      }
+      downloadBlob(blob, `${filename}-processed.${formatExtension(actualFormat)}`);
+    } catch (err) {
+      console.error('Export failed:', err);
+      setExportError('Export failed. The image may be too large for this browser; try a smaller size or another format.');
+    } finally {
+      setIsExporting(false);
     }
-
-    // Always process from full-resolution original source image for pristine output quality
-    const options = getProcessingOptions(true);
-    const fullResCanvas = processCanvas(imageElement, options);
-
-    const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
-    const ext = format === 'image/avif' ? 'avif' : format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-    downloadBlob(blob, `${filename}-processed.${ext}`);
   };
 
   const handleCopyImage = async () => {
     if (!imageElement) return;
     try {
-      const options = getProcessingOptions(true);
-      const fullResCanvas = processCanvas(imageElement, options);
-      const blob = await canvasToBlob(fullResCanvas, 'image/png', 1.0);
-      await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob }),
-      ]);
+      // Hand ClipboardItem a promise synchronously; Safari rejects writes that happen after an await
+      const pngPromise = Promise.resolve().then(() =>
+        canvasToBlob(processCanvas(imageElement, getProcessingOptions(true)), 'image/png', 1.0)
+      );
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': pngPromise })]);
       setCopiedToast(true);
       setTimeout(() => setCopiedToast(false), 2200);
     } catch (err) {
       console.error('Failed to copy to clipboard:', err);
+      setExportError("Couldn't copy to the clipboard. Your browser may block it; use Download instead.");
     }
   };
 
@@ -703,7 +748,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
               <div className="flex items-center gap-3">
                 <span>{origW} × {origH} px</span>
                 <span>•</span>
-                <span>Format: {format.replace('image/', '').toUpperCase()}</span>
+                <span>Output: {formatExtension(format).toUpperCase()}</span>
               </div>
               <button
                 type="button"
@@ -822,7 +867,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 <AnalyzerControls
                   filename={filename}
                   fileSize={fileSize}
-                  format={format.replace('image/', '')}
+                  format={mimeType.replace('image/', '').replace('svg+xml', 'svg')}
                   mimeType={mimeType}
                   width={origW}
                   height={origH}
@@ -852,6 +897,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 <Base64GeneratorControls
                   outputString={base64Output}
                   isDataUri={slug === 'image-to-data-uri'}
+                  mimeType={displayableFile?.type || 'image/png'}
                 />
               )}
 
@@ -902,8 +948,42 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 'image-analyzer',
                 'image-color-picker',
                 'image-palette-generator',
+                'favicon-generator',
               ].includes(slug) && (
                 <div className="space-y-2 pt-2 border-t border-hairline text-xs">
+                  {formatSelectable && (
+                    <div className="space-y-1.5 pb-1">
+                      <span className="text-body">Save As</span>
+                      <div className="grid grid-cols-4 gap-1.5" role="group" aria-label="Output format">
+                        {(['image/jpeg', 'image/png', 'image/webp', 'image/avif'] as const).map((fmt) => (
+                          <button
+                            key={fmt}
+                            type="button"
+                            aria-pressed={format === fmt}
+                            onClick={() => setFormat(fmt)}
+                            className={`py-1.5 rounded-md border text-center font-medium transition-colors ${
+                              format === fmt
+                                ? 'bg-surface-card border-hairline-strong text-ink font-bold'
+                                : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
+                            }`}
+                          >
+                            {formatExtension(fmt).toUpperCase()}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {format === 'image/jpeg' && hasRealTransparency && slug !== 'png-to-jpg' && (
+                    <label className="flex items-center justify-between py-1 text-body">
+                      <span>Fill transparent areas</span>
+                      <input
+                        type="color"
+                        value={bgFillColor}
+                        onChange={(e) => setBgFillColor(e.target.value)}
+                        className="w-7 h-7 rounded border border-hairline bg-transparent cursor-pointer"
+                      />
+                    </label>
+                  )}
                   {format === 'image/png' ? (
                     <div className="flex items-center justify-between py-1 text-mute text-[11px]">
                       <span>PNG Quality</span>
@@ -920,6 +1000,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                         min="10"
                         max="100"
                         value={quality}
+                        aria-label="Output quality"
                         onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
                         className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
                       />
@@ -930,14 +1011,20 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
             </div>
 
             {/* Action CTA Buttons (Download & Copy to Clipboard) */}
-            {slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
+            {!NO_EXPORT_TOOLS.includes(slug) && (
               <div className="space-y-2">
                 <button
                   type="button"
                   onClick={handleDownload}
-                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px]"
+                  disabled={isExporting}
+                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px] disabled:opacity-60 disabled:cursor-wait"
                 >
-                  {slug === 'favicon-generator' ? (
+                  {isExporting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Preparing download…</span>
+                    </>
+                  ) : slug === 'favicon-generator' ? (
                     <>
                       <Archive className="w-4 h-4" />
                       <span>Download Favicon Package (.ZIP)</span>
@@ -945,10 +1032,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   ) : (
                     <>
                       <Download className="w-4 h-4" />
-                      <span>Download {toolName.replace(' Image', '')}</span>
+                      <span>Download {formatExtension(format).toUpperCase()}</span>
                     </>
                   )}
                 </button>
+
+                {exportError && (
+                  <p role="alert" className="flex items-start gap-1.5 text-[11px] text-accent-yellow leading-relaxed">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                    <span>{exportError}</span>
+                  </p>
+                )}
 
                 {slug !== 'favicon-generator' && (
                   <button

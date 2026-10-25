@@ -14,6 +14,7 @@ import {
   Check,
   Zap,
 } from 'lucide-react';
+import { useImageIntake } from '../shared/useImageIntake';
 
 interface FilterPreset {
   id: string;
@@ -74,6 +75,9 @@ export function PhotoFiltersWorkspace() {
     img.onload = () => setImgElement(img);
     img.src = URL.createObjectURL(file);
   };
+
+  // Images handed off from other tools / the homepage, and Ctrl+V paste
+  useImageIntake(handleFileSelect);
 
   const applyPreset = (preset: FilterPreset) => {
     setActivePreset(preset.id);

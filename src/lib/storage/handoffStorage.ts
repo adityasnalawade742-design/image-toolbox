@@ -48,9 +48,11 @@ export async function saveHandoffImage(dataUrl: string, filename: string): Promi
         filename,
         timestamp: Date.now(),
       };
-      const req = store.put(data, HANDOFF_KEY);
-      req.onsuccess = () => resolve();
-      req.onerror = () => reject(req.error);
+      store.put(data, HANDOFF_KEY);
+      // Resolve on commit, not on request success: callers navigate away immediately afterwards
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error);
     });
   } catch (err) {
     console.warn('IndexedDB write failed, falling back to sessionStorage:', err);

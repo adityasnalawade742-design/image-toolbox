@@ -4,9 +4,10 @@ import { Copy, Check, Code } from 'lucide-react';
 interface Props {
   outputString: string;
   isDataUri?: boolean;
+  mimeType?: string;
 }
 
-export function Base64GeneratorControls({ outputString, isDataUri = false }: Props) {
+export function Base64GeneratorControls({ outputString, isDataUri = false, mimeType = 'image/png' }: Props) {
   const [copied, setCopied] = useState(false);
   const [copiedSnippet, setCopiedSnippet] = useState<string | null>(null);
 
@@ -26,7 +27,7 @@ export function Base64GeneratorControls({ outputString, isDataUri = false }: Pro
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const dataUriString = isDataUri ? outputString : `data:image/png;base64,${outputString}`;
+  const dataUriString = isDataUri ? outputString : `data:${mimeType};base64,${outputString}`;
   const htmlSnippet = `<img src="${dataUriString.slice(0, 50)}..." alt="Embedded Image" />`;
   const cssSnippet = `background-image: url("${dataUriString.slice(0, 50)}...");`;
 

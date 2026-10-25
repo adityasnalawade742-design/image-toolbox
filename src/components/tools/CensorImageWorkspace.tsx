@@ -14,6 +14,7 @@ import {
   Copy,
   Check,
 } from 'lucide-react';
+import { useImageIntake } from '../shared/useImageIntake';
 
 interface CensorBox {
   id: string;
@@ -53,6 +54,9 @@ export function CensorImageWorkspace() {
     img.onload = () => setImgElement(img);
     img.src = URL.createObjectURL(file);
   };
+
+  // Images handed off from other tools / the homepage, and Ctrl+V paste
+  useImageIntake(handleFileSelect);
 
   // Shape selection
   const [shape, setShape] = useState<'rect' | 'circle'>('rect');
@@ -102,11 +106,10 @@ export function CensorImageWorkspace() {
         ctx.clip();
       }
 
-      if (b.mode === 'blackout') {
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(bx, by, bw, bh);
-      } else if (b.mode === 'pixelate') {
-        const blockSize = Math.max(4, b.intensity);
+      // Keep redaction strength consistent on high-resolution photos
+      const strength = b.intensity * Math.max(1, Math.max(naturalW, naturalH) / 1200);
+
+      const pixelate = (blockSize: number) => {
         const offCanvas = document.createElement('canvas');
         const offW = Math.max(1, Math.floor(bw / blockSize));
         const offH = Math.max(1, Math.floor(bh / blockSize));
@@ -120,16 +123,31 @@ export function CensorImageWorkspace() {
           ctx.drawImage(offCanvas, 0, 0, offW, offH, bx, by, bw, bh);
           ctx.imageSmoothingEnabled = true;
         }
+      };
+
+      if (b.mode === 'blackout') {
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(bx, by, bw, bh);
+      } else if (b.mode === 'pixelate') {
+        pixelate(Math.max(4, strength));
       } else if (b.mode === 'blur') {
-        // Blur directly from source image coordinates
+        // Opaque coarse base first: covers blur edge falloff at image borders and browsers without ctx.filter
+        pixelate(Math.max(8, strength * 2));
+
+        // Blur a padded region so the kernel never samples transparency inside the box, then keep the inner part
+        const pad = Math.ceil(strength * 2);
+        const sx = Math.max(0, bx - pad);
+        const sy = Math.max(0, by - pad);
+        const sw = Math.min(naturalW, bx + bw + pad) - sx;
+        const sh = Math.min(naturalH, by + bh + pad) - sy;
         const offCanvas = document.createElement('canvas');
-        offCanvas.width = bw;
-        offCanvas.height = bh;
+        offCanvas.width = sw;
+        offCanvas.height = sh;
         const offCtx = offCanvas.getContext('2d');
         if (offCtx) {
-          offCtx.filter = `blur(${b.intensity}px)`;
-          offCtx.drawImage(imgElement, bx, by, bw, bh, 0, 0, bw, bh);
-          ctx.drawImage(offCanvas, bx, by, bw, bh);
+          offCtx.filter = `blur(${strength}px)`;
+          offCtx.drawImage(imgElement, sx, sy, sw, sh, 0, 0, sw, sh);
+          ctx.drawImage(offCanvas, bx - sx, by - sy, bw, bh, bx, by, bw, bh);
         }
       }
 

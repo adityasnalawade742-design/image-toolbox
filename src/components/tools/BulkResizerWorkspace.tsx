@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { UploadCloud, Download, Archive, Trash2, CheckCircle2, AlertCircle, RefreshCw, Lock, Unlock } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 
 interface QueueItem {
   id: string;
@@ -11,6 +13,10 @@ interface QueueItem {
   targetWidth?: number;
   targetHeight?: number;
   outputBlob?: Blob;
+  /** Extension of the format this output was actually encoded in */
+  outputExt?: string;
+  /** Rejected when added (not an image / too large / unreadable); never processed */
+  rejected?: boolean;
   status: 'pending' | 'processing' | 'done' | 'error';
   errorMsg?: string;
 }
@@ -23,7 +29,8 @@ export function BulkResizerWorkspace() {
   const [fixedHeight, setFixedHeight] = useState<number>(800);
   const [lockAspect, setLockAspect] = useState<boolean>(true);
   const [preventUpscale, setPreventUpscale] = useState<boolean>(true);
-  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp'>('image/png');
+  // 'original' keeps each file's own format (resizing a JPEG photo into PNG would bloat it)
+  const [format, setFormat] = useState<'original' | 'image/jpeg' | 'image/png' | 'image/webp'>('original');
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
@@ -46,6 +53,7 @@ export function BulkResizerWorkspace() {
           originalWidth: 0,
           originalHeight: 0,
           status: 'error',
+          rejected: true,
           errorMsg: 'Unsupported non-image file',
         });
       } else if (file.size > maxSizeBytes) {
@@ -56,6 +64,7 @@ export function BulkResizerWorkspace() {
           originalWidth: 0,
           originalHeight: 0,
           status: 'error',
+          rejected: true,
           errorMsg: 'Exceeds 50 MB limit',
         });
       } else {
@@ -77,6 +86,7 @@ export function BulkResizerWorkspace() {
             originalWidth: 0,
             originalHeight: 0,
             status: 'error',
+            rejected: true,
             errorMsg: 'Corrupted or unreadable image',
           });
         }
@@ -85,6 +95,15 @@ export function BulkResizerWorkspace() {
     setQueue((prev) => [...prev, ...newItems]);
   };
 
+  // Changing settings invalidates finished results so "Resize All" re-runs them
+  useEffect(() => {
+    setQueue((prev) =>
+      prev.some((q) => q.status === 'done')
+        ? prev.map((q) => (q.status === 'done' ? { ...q, status: 'pending', outputBlob: undefined } : q))
+        : prev
+    );
+  }, [mode, percentage, fixedWidth, fixedHeight, lockAspect, preventUpscale, format]);
+
   const processQueue = async () => {
     setIsProcessing(true);
     isCancelledRef.current = false;
@@ -92,7 +111,7 @@ export function BulkResizerWorkspace() {
     for (let i = 0; i < queue.length; i++) {
       if (isCancelledRef.current) break;
       const item = queue[i];
-      if (item.status === 'done') continue;
+      if (item.status === 'done' || item.rejected) continue;
 
       setQueue((prev) =>
         prev.map((q, idx) => (idx === i ? { ...q, status: 'processing' } : q))
@@ -122,9 +141,11 @@ export function BulkResizerWorkspace() {
           }
         }
 
-        if (preventUpscale && mode !== 'fit') {
-          targetW = Math.min(targetW, item.originalWidth);
-          targetH = Math.min(targetH, item.originalHeight);
+        // An explicit percentage is the user's choice; only cap exact-pixel targets, scaling both sides together
+        if (preventUpscale && mode === 'pixels') {
+          const cap = Math.min(1, item.originalWidth / targetW, item.originalHeight / targetH);
+          targetW = Math.round(targetW * cap);
+          targetH = Math.round(targetH * cap);
         }
 
         const canvas = document.createElement('canvas');
@@ -132,9 +153,17 @@ export function BulkResizerWorkspace() {
         canvas.height = Math.max(1, targetH);
         const ctx = canvas.getContext('2d');
         if (!ctx) throw new Error('Canvas 2D context unavailable');
+        const outFormat: OutputFormat = format === 'original' ? exportableFormat(item.file.type) : format;
+        if (outFormat === 'image/jpeg') {
+          // JPEG has no alpha; fill white so transparent areas don't turn black
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.imageSmoothingQuality = 'high';
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        const blob = await canvasToBlob(canvas, format, 0.9);
+        const blob = await canvasToBlob(canvas, outFormat, 0.9);
+        const outputExt = formatExtension((blob.type || outFormat) as OutputFormat);
 
         setQueue((prev) =>
           prev.map((q, idx) =>
@@ -144,6 +173,7 @@ export function BulkResizerWorkspace() {
                   targetWidth: canvas.width,
                   targetHeight: canvas.height,
                   outputBlob: blob,
+                  outputExt,
                   status: 'done',
                 }
               : q
@@ -161,16 +191,14 @@ export function BulkResizerWorkspace() {
     setIsProcessing(false);
   };
 
+  // The loop stops after the current file and clears isProcessing itself, so a second run can't overlap
   const cancelProcessing = () => {
     isCancelledRef.current = true;
-    setIsProcessing(false);
   };
 
   const downloadSingle = (item: QueueItem) => {
-    if (!item.outputBlob) return;
-    const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-    const baseName = item.name.replace(/\.[^/.]+$/, '');
-    downloadBlob(item.outputBlob, `${baseName}-resized.${ext}`);
+    if (!item.outputBlob || !item.outputExt) return;
+    downloadBlob(item.outputBlob, outputFileName(item.name, 'resized', item.outputExt));
   };
 
   const downloadAllAsZip = async () => {
@@ -182,12 +210,11 @@ export function BulkResizerWorkspace() {
       const JSZipModule = await import('jszip');
       const JSZip = JSZipModule.default;
       const zip = new JSZip();
-      const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
+      const uniqueName = createUniqueNamer();
 
       doneItems.forEach((item) => {
-        if (item.outputBlob) {
-          const baseName = item.name.replace(/\.[^/.]+$/, '');
-          zip.file(`${baseName}-resized.${ext}`, item.outputBlob);
+        if (item.outputBlob && item.outputExt) {
+          zip.file(uniqueName(outputFileName(item.name, 'resized', item.outputExt)), item.outputBlob);
         }
       });
 
@@ -221,7 +248,8 @@ export function BulkResizerWorkspace() {
           multiple
           className="hidden"
           onChange={(e) => {
-            if (e.target.files) handleFilesAdded(e.target.files);
+            if (e.target.files) handleFilesAdded(Array.from(e.target.files));
+            e.target.value = ''; // allow re-adding the same files after Clear All
           }}
         />
         <div className="w-10 h-10 rounded-lg bg-surface-card border border-hairline flex items-center justify-center text-accent-blue">
@@ -374,6 +402,7 @@ export function BulkResizerWorkspace() {
                   onChange={(e) => setFormat(e.target.value as any)}
                   className="bg-surface-card border border-hairline rounded px-2 py-1 text-ink focus:outline-none"
                 >
+                  <option value="original">Same as original</option>
                   <option value="image/png">PNG (Lossless)</option>
                   <option value="image/jpeg">JPEG (JPG)</option>
                   <option value="image/webp">WebP (Optimal)</option>
@@ -408,6 +437,9 @@ export function BulkResizerWorkspace() {
                     {item.status === 'pending' && <span className="w-2 h-2 rounded-full bg-ash shrink-0" />}
                     {item.status === 'error' && <AlertCircle className="w-4 h-4 text-accent-red shrink-0" />}
                     <span className="truncate text-ink font-medium">{item.name}</span>
+                    {item.status === 'error' && item.errorMsg && (
+                      <span className="text-accent-red text-[11px] shrink-0">{item.errorMsg}</span>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-4 text-mute font-mono text-[11px]">

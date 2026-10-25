@@ -97,7 +97,7 @@ export function ToolSearch({ locale = 'en' }: Props) {
                     handleSelect(filteredTools[selectedIndex].slug);
                   }
                 }}
-                placeholder="Search 27 tools or actions..."
+                placeholder={`Search ${TOOLS.length} tools or actions...`}
                 className="w-full bg-transparent text-sm text-ink placeholder-ash focus:outline-none"
               />
               <button onClick={() => setIsOpen(false)} className="text-ash hover:text-ink">
@@ -151,7 +151,7 @@ export function ToolSearch({ locale = 'en' }: Props) {
                 <span className="flex items-center gap-1"><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">↵</kbd> Open</span>
                 <span className="flex items-center gap-1"><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">Esc</kbd> Close</span>
               </div>
-              <span className="font-mono">27 Tools</span>
+              <span className="font-mono">{TOOLS.length} Tools</span>
             </div>
           </div>
         </div>

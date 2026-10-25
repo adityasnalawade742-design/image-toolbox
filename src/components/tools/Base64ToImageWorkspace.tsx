@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { UploadCloud, Download, AlertCircle, FileCode, CheckCircle2, Clipboard, Loader2, Play } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { normalizeBase64Image } from '../../lib/canvas/base64';
 
 export function Base64ToImageWorkspace() {
   const [inputText, setInputText] = useState('');
@@ -23,9 +24,12 @@ export function Base64ToImageWorkspace() {
     setIsDecoding(true);
     setErrorMsg(null);
 
-    let cleanSrc = text.trim();
-    if (!cleanSrc.startsWith('data:image/')) {
-      cleanSrc = `data:image/png;base64,${cleanSrc}`;
+    const cleanSrc = normalizeBase64Image(text);
+    if (!cleanSrc) {
+      setImageElement(null);
+      setErrorMsg('This doesn’t look like Base64. Paste a Base64 string, a data: URI, or a CSS/HTML snippet that contains one.');
+      setIsDecoding(false);
+      return;
     }
 
     try {
@@ -66,7 +70,7 @@ export function Base64ToImageWorkspace() {
         performDecode(text);
       }
     } catch {
-      // Fallback
+      setErrorMsg('Clipboard access was blocked. Click the text box and press Ctrl+V (⌘V on Mac) instead.');
     }
   };
 
@@ -100,7 +104,20 @@ export function Base64ToImageWorkspace() {
 
   const handleDownload = async () => {
     if (!canvasRef.current) return;
-    const blob = await canvasToBlob(canvasRef.current, format, 0.92);
+    let source = canvasRef.current;
+    if (format === 'image/jpeg') {
+      // JPEG has no alpha; flatten onto white so transparent areas don't turn black
+      source = document.createElement('canvas');
+      source.width = canvasRef.current.width;
+      source.height = canvasRef.current.height;
+      const ctx = source.getContext('2d');
+      if (ctx) {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, source.width, source.height);
+        ctx.drawImage(canvasRef.current, 0, 0);
+      }
+    }
+    const blob = await canvasToBlob(source, format, 0.92);
     const ext = format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
     downloadBlob(blob, `decoded-image.${ext}`);
   };

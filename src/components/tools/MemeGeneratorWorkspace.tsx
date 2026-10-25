@@ -13,6 +13,8 @@ import {
   Copy,
   Check,
 } from 'lucide-react';
+import { useImageIntake } from '../shared/useImageIntake';
+import { wrapTextLines } from '../../lib/canvas/engine';
 
 const MEME_TEMPLATES = [
   {
@@ -94,6 +96,9 @@ export function MemeGeneratorWorkspace() {
     img.src = URL.createObjectURL(file);
   };
 
+  // Images handed off from other tools / the homepage, and Ctrl+V paste
+  useImageIntake(handleFileSelect);
+
   const handleTemplateSelect = (template: (typeof MEME_TEMPLATES)[0]) => {
     const img = new Image();
     img.onload = () => {
@@ -131,11 +136,13 @@ export function MemeGeneratorWorkspace() {
     ctx.lineJoin = 'round';
     ctx.miterLimit = 2;
 
-    const textX = textAlign === 'center' ? w / 2 : textAlign === 'left' ? 30 : w - 30;
+    const sideMargin = Math.max(30, Math.round(w * 0.04));
+    const textX = textAlign === 'center' ? w / 2 : textAlign === 'left' ? sideMargin : w - sideMargin;
 
     const drawWrappedText = (text: string, startY: number, position: 'top' | 'middle' | 'bottom') => {
       const finalStr = isUppercase ? text.toUpperCase() : text;
-      const lines = finalStr.split('\n');
+      // Wrap long captions to the image width instead of letting them run off the edges
+      const lines = wrapTextLines(finalStr, w - sideMargin * 2, (s) => ctx.measureText(s).width);
       const lineHeight = computedFontSize * 1.15;
 
       if (position === 'middle') {

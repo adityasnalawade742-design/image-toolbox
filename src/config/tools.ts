@@ -49,7 +49,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Crop photos with aspect ratio presets (1:1, 16:9, 4:3, 9:16) and custom precision grid handles.',
     category: 'edit-transform',
     iconName: 'Crop',
-    accept: 'image/png,image/jpeg,image/webp,image/avif,image/gif',
+    accept: 'image/png,image/jpeg,image/webp,image/avif,image/gif,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -59,7 +59,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Scale dimensions by percentage or exact pixel values with aspect ratio locking.',
     category: 'edit-transform',
     iconName: 'Scaling',
-    accept: 'image/png,image/jpeg,image/webp,image/avif',
+    accept: 'image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -69,7 +69,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Rotate images by 90°, 180°, 270°, or fine-tune angles with real-time preview.',
     category: 'edit-transform',
     iconName: 'RotateCw',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'flip-image',
@@ -78,7 +78,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Mirror photos horizontally or vertically with instant browser canvas rendering.',
     category: 'edit-transform',
     iconName: 'FlipHorizontal',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'add-text-to-image',
@@ -87,7 +87,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Overlay custom typography, captions, and watermarks with adjustable opacity, font, and color.',
     category: 'edit-transform',
     iconName: 'Type',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'watermark-image',
@@ -96,7 +96,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Protect creative assets by overlaying custom text or logo watermarks across images.',
     category: 'edit-transform',
     iconName: 'ShieldCheck',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'add-border-to-image',
@@ -105,7 +105,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Apply framed borders, margins, and custom color paddings around photos.',
     category: 'edit-transform',
     iconName: 'Square',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'round-image',
@@ -114,13 +114,13 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Create circular profile avatars and soft rounded corner graphics with alpha transparency.',
     category: 'edit-transform',
     iconName: 'CircleDot',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'photo-filters',
     name: 'Photo Filters & Effects',
     shortName: 'Filters',
-    description: 'Apply aesthetic color presets, brightness, contrast, saturation, vignette, and vintage film grain effects.',
+    description: 'Apply aesthetic color presets plus brightness, contrast, saturation, blur, and vignette adjustments.',
     category: 'edit-transform',
     iconName: 'Sliders',
     accept: 'image/png,image/jpeg,image/webp',
@@ -130,7 +130,7 @@ export const TOOLS: ToolDefinition[] = [
     slug: 'meme-generator',
     name: 'Meme Generator',
     shortName: 'Meme Maker',
-    description: 'Create viral memes with customizable top/bottom Impact captions, outline colors, and stickers.',
+    description: 'Create memes with top, middle, and bottom captions, outline colors, and ready-made templates.',
     category: 'edit-transform',
     iconName: 'Smile',
     accept: 'image/png,image/jpeg,image/webp',
@@ -165,7 +165,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Smart lossy/lossless image compression reducing size by up to 90% without quality loss.',
     category: 'optimize-compress',
     iconName: 'Minimize2',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -185,7 +185,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Strip GPS coordinates, camera model, timestamps, and private EXIF metadata from photos.',
     category: 'optimize-compress',
     iconName: 'ShieldAlert',
-    accept: 'image/png,image/jpeg,image/webp',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
 
   // Convert Formats (8)
@@ -193,10 +193,10 @@ export const TOOLS: ToolDefinition[] = [
     slug: 'convert-image',
     name: 'Universal Image Converter',
     shortName: 'Converter',
-    description: 'Convert between PNG, JPG, WebP, AVIF, GIF, BMP, and SVG formats instantly.',
+    description: 'Convert images (including GIF, BMP, SVG, and iPhone HEIC) to PNG, JPG, WebP, or AVIF instantly.',
     category: 'convert-formats',
     iconName: 'Repeat',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -272,7 +272,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Inspect exact pixel dimensions, aspect ratio, color depth, MIME type, and byte metrics.',
     category: 'utilities',
     iconName: 'BarChart2',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'image-color-picker',
@@ -281,7 +281,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Inspect and sample exact pixel colors using a precision magnifying eyedropper tool.',
     category: 'utilities',
     iconName: 'Pipette',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -291,7 +291,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Extract the dominant color palette and complementary swatches from any photo with Hex/RGB codes.',
     category: 'utilities',
     iconName: 'Palette',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
   },
 
   // Developer Tools (5)
@@ -302,7 +302,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate full multi-size favicon bundles (.ico, 16x16, 32x32, Apple Touch, Web Manifest) in a ZIP.',
     category: 'developer',
     iconName: 'Globe',
-    accept: 'image/png,image/jpeg,image/svg+xml',
+    accept: 'image/png,image/jpeg,image/svg+xml,image/heic,image/heif,.heic,.heif',
     badge: 'Popular',
     popular: true,
   },
@@ -313,7 +313,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Convert image files into Base64 encoded string data for inline CSS and HTML embeds.',
     category: 'developer',
     iconName: 'Binary',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'image-to-data-uri',
@@ -322,7 +322,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Generate ready-to-paste `data:image/...;base64` strings with single-click copying.',
     category: 'developer',
     iconName: 'Code',
-    accept: 'image/*',
+    accept: 'image/*,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'base64-to-image',

@@ -9,6 +9,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import JSZip from 'jszip';
+import { useImageIntake } from '../shared/useImageIntake';
 
 interface SplitPreset {
   id: string;
@@ -45,6 +46,9 @@ export function ImageSplitterWorkspace() {
     img.onload = () => setImgElement(img);
     img.src = URL.createObjectURL(file);
   };
+
+  // Images handed off from other tools / the homepage, and Ctrl+V paste
+  useImageIntake(handleFileSelect);
 
   const handlePresetSelect = (preset: SplitPreset) => {
     setActivePreset(preset.id);
