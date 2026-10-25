@@ -39,6 +39,7 @@ export const itHome: LocalizedHomeData = {
     'edit-transform': 'Modifica e trasforma',
     'optimize-compress': 'Ottimizza e comprimi',
     'convert-formats': 'Converti formati',
+    'pdf-documents': 'PDF e documenti',
     utilities: 'Analisi e utilità',
     developer: 'Strumenti per sviluppatori',
   },

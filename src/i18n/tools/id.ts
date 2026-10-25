@@ -3082,4 +3082,845 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "Gabungkan PDF",
+    shortName: "Gabung PDF",
+    tagline: "Gabungkan beberapa file PDF menjadi satu, sesuai urutan pilihan Anda. File digabungkan di perangkat Anda.",
+    intro:
+      "Gabungkan PDF menyatukan dua file PDF atau lebih menjadi satu dokumen. Tambahkan file, susun urutannya dengan tombol pindah, periksa halaman pertama setiap file, lalu unduh satu PDF berisi semua halaman secara berurutan. Ini cara cepat untuk mengirim laporan beserta lampirannya, beberapa halaman hasil scan, atau sekumpulan invoice dalam satu file. Penggabungan dilakukan di browser Anda, jadi dokumen Anda tidak pernah diunggah ke server.",
+    seoTitle: "Gabung PDF Online – Gratis, Tanpa Unggah File",
+    seoDescription:
+      "Gabung PDF jadi satu file langsung di browser Anda. Susun file dalam urutan apa pun, lalu unduh satu PDF. Gratis, privat, tanpa unggah file, tanpa watermark.",
+    keywords: [
+      "gabung pdf",
+      "gabungkan pdf",
+      "menggabungkan pdf",
+      "gabung pdf online gratis",
+      "satukan file pdf",
+      "merge pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih dua file PDF atau lebih. Anda bisa menambah file kapan saja.",
+      },
+      {
+        title: "Susun urutannya",
+        description: "Gunakan tombol atas dan bawah untuk mengatur file, dan hapus yang tidak Anda perlukan.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan satu PDF yang berisi semua halaman, file demi file.",
+      },
+    ],
+    features: [
+      {
+        title: "Berapa pun jumlah file",
+        description: "Gabungkan PDF sebanyak yang sanggup ditangani perangkat Anda, dengan total halaman yang ditampilkan.",
+      },
+      {
+        title: "Urutan Anda sendiri",
+        description: "Atur file dengan tombol yang juga bisa dipakai dari keyboard dan pembaca layar.",
+      },
+      {
+        title: "Halaman tidak berubah",
+        description: "Halaman disalin apa adanya tanpa kompresi ulang, jadi teks tetap tajam dan bisa dicari.",
+      },
+      {
+        title: "Privat dan gratis",
+        description: "File digabungkan di perangkat Anda, tanpa unggah, tanpa daftar, dan tanpa watermark.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah ada batas jumlah file yang bisa digabungkan?",
+        answer:
+          "Tidak ada batas tetap. Puluhan PDF biasa bisa diproses di sebagian besar perangkat; file yang sangat besar mungkin lambat di ponsel lama.",
+      },
+      {
+        question: "Apakah tautan dan bookmark tetap berfungsi?",
+        answer:
+          "Tautan di halaman tetap dipertahankan. Daftar bookmark (kerangka di panel samping pembaca PDF) tidak disalin ke file gabungan.",
+      },
+      {
+        question: "Apakah penggabungan menurunkan kualitas?",
+        answer:
+          "Tidak. Halaman disalin apa adanya, jadi teks, gambar, dan grafik vektor terlihat persis sama.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "Pisahkan PDF",
+    shortName: "Pisah PDF",
+    tagline: "Pisahkan PDF berdasarkan rentang halaman, setiap beberapa halaman, atau per halaman. Berjalan di perangkat Anda.",
+    intro:
+      "Pisahkan PDF memecah satu PDF menjadi beberapa PDF yang lebih kecil. Ketik rentang halaman seperti 1-3, 5, 8- untuk mendapatkan satu file per rentang, pisahkan setiap beberapa halaman untuk membagi hasil scan yang panjang menjadi bagian yang sama, atau simpan setiap halaman sebagai PDF tersendiri. Alat ini menampilkan daftar file yang akan Anda dapatkan sebelum diunduh, dan beberapa file dikirim bersama dalam satu ZIP. Pemisahan dilakukan di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat.",
+    seoTitle: "Pisah PDF Online – Per Halaman atau Rentang, Gratis",
+    seoDescription:
+      "Pisah PDF menjadi beberapa file berdasarkan rentang halaman, setiap N halaman, atau per halaman, langsung di browser Anda. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "pisah pdf",
+      "memisahkan pdf",
+      "split pdf",
+      "pisah halaman pdf",
+      "pisah pdf online gratis",
+      "memecah pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF. Halaman-halamannya muncul sebagai pratinjau.",
+      },
+      {
+        title: "Pilih cara memisahkan",
+        description: "Masukkan rentang halaman, pilih jumlah halaman per file, atau pisahkan setiap halaman.",
+      },
+      {
+        title: "Periksa daftarnya",
+        description: "Panel menampilkan setiap file yang akan Anda dapatkan beserta halamannya.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan satu PDF, atau ZIP jika ada beberapa file.",
+      },
+    ],
+    features: [
+      {
+        title: "Tiga cara memisahkan",
+        description: "Rentang khusus, kelompok halaman yang sama banyak, atau satu halaman per file.",
+      },
+      {
+        title: "Lihat sebelum menyimpan",
+        description: "Setiap file hasil dan nomor halamannya ditampilkan lebih dulu.",
+      },
+      {
+        title: "Satu unduhan ZIP",
+        description: "Beberapa file tiba bersamaan, diberi nama sesuai halamannya.",
+      },
+      {
+        title: "Privat",
+        description: "PDF dipisahkan di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara menulis rentang halaman?",
+        answer:
+          "Pisahkan rentang dengan koma. 1-3 berarti halaman 1 sampai 3, 5 berarti halaman 5 saja, dan 8- berarti halaman 8 sampai akhir. Setiap rentang menjadi PDF tersendiri.",
+      },
+      {
+        question: "Bisakah saya mendapatkan satu PDF berisi beberapa halaman saja?",
+        answer:
+          "Bisa. Masukkan satu rentang, misalnya 2-4, untuk mengunduh halaman itu saja. Ekstrak Halaman PDF juga memungkinkan Anda memilih halaman dengan mengekliknya.",
+      },
+      {
+        question: "Apakah pemisahan mengubah halaman?",
+        answer:
+          "Tidak. Halaman disalin apa adanya, jadi teks tetap tajam dan bisa dicari.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "Ekstrak Halaman PDF",
+    shortName: "Ekstrak Halaman",
+    tagline: "Pilih halaman yang Anda perlukan dari PDF dan simpan sebagai PDF baru. Berjalan di perangkat Anda.",
+    intro:
+      "Ekstrak Halaman PDF memungkinkan Anda memilih halaman dari PDF lewat pratinjaunya dan menyimpan halaman itu saja sebagai dokumen baru. Ini berguna untuk mengirim satu bab dari laporan panjang, halaman kontrak yang sudah ditandatangani, atau satu rekening koran dari sekumpulan dokumen. Centang halaman yang Anda inginkan, atau gunakan Pilih semua lalu hapus centang beberapa yang tidak perlu, kemudian unduh. File asli tidak diubah, dan semuanya terjadi di browser Anda.",
+    seoTitle: "Ekstrak Halaman PDF – Gratis, Tanpa Unggah File",
+    seoDescription:
+      "Ekstrak halaman PDF dengan memilihnya lewat pratinjau, lalu simpan sebagai PDF baru langsung di browser Anda. Gratis, privat, dan tidak ada file yang diunggah.",
+    keywords: [
+      "ekstrak halaman pdf",
+      "ambil halaman pdf",
+      "simpan halaman tertentu pdf",
+      "pilih halaman pdf",
+      "extract pdf pages",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF untuk melihat semua halamannya.",
+      },
+      {
+        title: "Centang halaman yang Anda inginkan",
+        description: "Gunakan kotak centang di bawah setiap halaman, atau Pilih semua lalu hapus centang yang tidak Anda perlukan.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF baru yang hanya berisi halaman itu, dalam urutan aslinya.",
+      },
+    ],
+    features: [
+      {
+        title: "Pilih lewat pratinjau",
+        description: "Lihat setiap halaman sebelum memilih.",
+      },
+      {
+        title: "Ramah keyboard",
+        description: "Setiap halaman punya kotak centang berlabel, jadi tidak perlu mouse.",
+      },
+      {
+        title: "Halaman tidak berubah",
+        description: "Halaman yang dipilih disalin apa adanya, dengan teks yang tajam dan bisa dicari.",
+      },
+      {
+        title: "Privat",
+        description: "Halaman diekstrak di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF asli saya diubah?",
+        answer:
+          "Tidak. PDF baru dibuat dari halaman yang Anda pilih; file asli tetap seperti semula.",
+      },
+      {
+        question: "Bisakah saya mengubah urutan halaman?",
+        answer:
+          "Halaman yang diekstrak tetap dalam urutan aslinya. Untuk mengubah urutan, memutar, atau menghapus halaman, gunakan Atur Halaman PDF.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "Atur Halaman PDF",
+    shortName: "Atur PDF",
+    tagline: "Ubah urutan, putar, dan hapus halaman PDF, lalu simpan PDF barunya. Berjalan di perangkat Anda.",
+    intro:
+      "Atur Halaman PDF menampilkan setiap halaman PDF agar Anda bisa merapikannya: pindahkan halaman ke depan atau ke belakang, tegakkan hasil scan yang miring ke samping, dan hapus halaman kosong atau yang tidak diinginkan. Setiap halaman punya tombolnya sendiri, yang juga bisa dipakai dari keyboard, dan dengan mouse Anda bisa menyeret halaman ke tempatnya. Batalkan semua perubahan mengembalikan semuanya seperti semula. Jika sudah pas, unduh PDF barunya. Semua ini terjadi di browser Anda, jadi dokumen tidak pernah diunggah.",
+    seoTitle: "Atur Halaman PDF – Ubah Urutan, Putar, Hapus",
+    seoDescription:
+      "Atur halaman PDF di browser Anda: ubah urutan, putar, dan hapus halaman dengan pratinjau, lalu unduh PDF barunya. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "atur halaman pdf",
+      "ubah urutan halaman pdf",
+      "hapus halaman pdf",
+      "pindah halaman pdf",
+      "susun ulang halaman pdf",
+      "menghapus halaman pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF untuk melihat semua halamannya.",
+      },
+      {
+        title: "Atur halamannya",
+        description: "Gunakan tombol di bawah setiap halaman untuk memindahkan, memutar, atau menghapusnya, atau seret halaman ke tempatnya.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF yang sudah diatur. Batalkan semua perubahan memulai lagi dari file asli.",
+      },
+    ],
+    features: [
+      {
+        title: "Pindah, putar, hapus",
+        description: "Semua operasi halaman dalam satu tampilan, dengan pratinjau yang langsung diperbarui.",
+      },
+      {
+        title: "Seret atau tombol",
+        description: "Seret dengan mouse, atau gunakan tombol yang juga bisa dipakai dengan keyboard dan pembaca layar.",
+      },
+      {
+        title: "Tanpa kehilangan kualitas",
+        description: "Halaman hanya disusun ulang, tidak dirender ulang, jadi teks tetap tajam dan bisa dicari.",
+      },
+      {
+        title: "Privat",
+        description: "PDF diatur di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah memutar halaman menurunkan kualitas?",
+        answer:
+          "Tidak. Rotasi disimpan sebagai pengaturan halaman, jadi tidak ada yang digambar ulang atau dikompres.",
+      },
+      {
+        question: "Bisakah saya membatalkan perubahan?",
+        answer:
+          "Bisa. Batalkan semua perubahan mengembalikan setiap halaman ke posisi dan rotasi aslinya. File asli Anda tidak pernah diubah.",
+      },
+      {
+        question: "Bisakah saya menambahkan halaman dari PDF lain?",
+        answer:
+          "Gabungkan file dengan Gabungkan PDF terlebih dahulu, lalu atur file gabungannya di sini.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "Putar PDF",
+    shortName: "Putar PDF",
+    tagline: "Putar semua halaman, atau hanya halaman yang Anda pilih, sebesar 90 atau 180 derajat. Berjalan di perangkat Anda.",
+    intro:
+      "Putar PDF memperbaiki halaman yang terbuka miring ke samping atau terbalik, masalah umum pada dokumen hasil scan dan foto yang disimpan sebagai PDF. Pilih 90 derajat ke kanan, 180 derajat, atau 90 derajat ke kiri, lalu terapkan ke semua halaman atau hanya ke halaman yang Anda centang. Pratinjau menampilkan hasilnya sebelum Anda mengunduh. Rotasi disimpan sebagai pengaturan halaman, jadi teks dan gambar tetap dalam kualitas penuh, dan tidak ada yang keluar dari browser Anda.",
+    seoTitle: "Putar PDF Online – Simpan Permanen, Gratis",
+    seoDescription:
+      "Putar PDF di browser Anda: putar semua halaman atau halaman tertentu sebesar 90 atau 180 derajat, lalu simpan permanen. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "putar pdf",
+      "memutar pdf",
+      "putar halaman pdf",
+      "rotate pdf",
+      "putar pdf dan simpan",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF untuk melihat halamannya.",
+      },
+      {
+        title: "Pilih rotasinya",
+        description: "Pilih 90° kanan, 180°, atau 90° kiri, untuk semua halaman atau halaman yang Anda centang.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF dengan halaman yang diputar secara permanen.",
+      },
+    ],
+    features: [
+      {
+        title: "Semua halaman atau yang dipilih",
+        description: "Perbaiki satu hasil scan yang miring tanpa menyentuh halaman lain.",
+      },
+      {
+        title: "Pratinjau langsung",
+        description: "Pratinjau halaman ikut berputar saat Anda memilih, sebelum apa pun disimpan.",
+      },
+      {
+        title: "Tanpa penurunan kualitas",
+        description: "Rotasi adalah pengaturan halaman, jadi tidak ada yang digambar ulang.",
+      },
+      {
+        title: "Privat",
+        description: "PDF diputar di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah rotasinya tersimpan permanen?",
+        answer:
+          "Ya. PDF yang diunduh akan terbuka dengan halaman yang sudah diputar di semua pembaca PDF.",
+      },
+      {
+        question: "Bisakah saya memutar halaman dengan sudut berbeda?",
+        answer:
+          "Gunakan Atur Halaman PDF, di mana setiap halaman punya tombol putarnya sendiri.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "Tambah Nomor Halaman ke PDF",
+    shortName: "Nomor Halaman",
+    tagline: "Beri nomor pada halaman PDF, dengan posisi, format, dan nomor awal pilihan Anda. Berjalan di perangkat Anda.",
+    intro:
+      "Tambah Nomor Halaman menaruh nomor di setiap halaman PDF, yang sering dibutuhkan untuk laporan, skripsi, dan handout cetak. Pilih salah satu dari enam posisi di atas atau bawah, format (1, 1 / N, atau – 1 –), nomor awal, ukuran teks, dan jarak dari tepi. Anda juga bisa membiarkan halaman pertama, misalnya sampul, tanpa nomor. Pratinjau menampilkan tampilan nomornya. Nomor ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah.",
+    seoTitle: "Tambah Nomor Halaman PDF – Gratis, Tanpa Unggah",
+    seoDescription:
+      "Tambah nomor halaman PDF langsung di browser Anda: pilih posisi, format, dan nomor awal, serta lewati halaman sampul. Gratis, privat, dan tanpa unggah file.",
+    keywords: [
+      "nomor halaman pdf",
+      "tambah nomor halaman pdf",
+      "memberi nomor halaman pdf",
+      "cara memberi nomor halaman di pdf",
+      "add page number pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF yang ingin diberi nomor.",
+      },
+      {
+        title: "Pilih gayanya",
+        description: "Pilih posisi, format, nomor awal, ukuran, dan jarak dari tepi.",
+      },
+      {
+        title: "Lewati sampul jika perlu",
+        description: "Centang opsinya agar halaman pertama tidak diberi nomor.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF yang sudah bernomor.",
+      },
+    ],
+    features: [
+      {
+        title: "Enam posisi",
+        description: "Atas atau bawah, di kiri, tengah, atau kanan.",
+      },
+      {
+        title: "Tiga format",
+        description: "Angka biasa, gaya “1 / 12”, atau “– 1 –”.",
+      },
+      {
+        title: "Nomor awal bebas",
+        description: "Lanjutkan penomoran dari dokumen lain, dan lewati halaman sampul.",
+      },
+      {
+        title: "Privat",
+        description: "Nomor ditambahkan di perangkat Anda; tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mulai dari nomor selain 1?",
+        answer:
+          "Bisa. Atur Mulai dari ke angka berapa pun, misalnya untuk melanjutkan dari bab sebelumnya.",
+      },
+      {
+        question: "Apakah nomornya akan menutupi konten saya?",
+        answer:
+          "Nomor ditempatkan di margin halaman. Jika margin halaman Anda sangat kecil, pilih jarak dari tepi yang lebih kecil atau ukuran teks yang lebih kecil.",
+      },
+      {
+        question: "Mengapa nomornya miring ke samping di beberapa halaman?",
+        answer:
+          "Beberapa PDF menyimpan halaman dalam keadaan diputar. Nomor mengikuti orientasi tersimpan halaman tersebut, jadi di halaman itu nomornya bisa tampak berputar. Perbaiki rotasinya dulu dengan Putar PDF atau Atur Halaman PDF.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "Watermark PDF",
+    shortName: "Watermark PDF",
+    tagline: "Bubuhkan teks atau logo di halaman PDF, lalu seret ke posisinya. Berjalan di perangkat Anda.",
+    intro:
+      "Watermark PDF menambahkan cap seperti RAHASIA, DRAF, nama Anda, atau logo Anda ke halaman PDF. Ketik teks dalam bahasa apa pun atau pilih gambar logo, lalu atur ukuran, opasitas, dan sudutnya, dan seret ke posisi yang Anda inginkan di pratinjau halaman, atau gunakan slider posisi. Terapkan ke semua halaman atau ke rentang halaman tertentu. Watermark ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah.",
+    seoTitle: "Watermark PDF Online – Teks atau Logo, Gratis",
+    seoDescription:
+      "Tambah watermark PDF berupa teks atau logo di browser Anda. Atur ukuran, opasitas, dan sudut, lalu seret ke posisinya. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "watermark pdf",
+      "tambah watermark pdf",
+      "cara memberi watermark di pdf",
+      "watermark pdf online",
+      "tambah logo ke pdf",
+      "cap pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF yang ingin diberi watermark.",
+      },
+      {
+        title: "Buat watermark",
+        description: "Ketik teksnya dan pilih warnanya, atau pilih gambar logo.",
+      },
+      {
+        title: "Tempatkan",
+        description: "Atur ukuran, opasitas, dan sudut, lalu seret di pratinjau atau gunakan slider.",
+      },
+      {
+        title: "Unduh",
+        description: "Pilih semua halaman atau rentang tertentu, lalu simpan PDF ber-watermark.",
+      },
+    ],
+    features: [
+      {
+        title: "Teks dalam bahasa apa pun",
+        description: "Teks digambar sebagai gambar, jadi semua aksara dan aksen tampil dengan benar.",
+      },
+      {
+        title: "Watermark logo",
+        description: "Gunakan logo PNG, JPG, WebP, atau SVG.",
+      },
+      {
+        title: "Seret ke posisinya",
+        description: "Pindahkan watermark di pratinjau halaman, atau gunakan slider yang juga bisa dipakai dengan keyboard.",
+      },
+      {
+        title: "Privat",
+        description: "Watermark ditambahkan di perangkat Anda; tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah watermark dihapus nanti?",
+        answer:
+          "Watermark ditambahkan sebagai gambar di atas halaman. Orang yang punya editor PDF masih bisa menghapusnya, jadi watermark lebih untuk mencegah orang menyalin daripada benar-benar menghalanginya.",
+      },
+      {
+        question: "Bisakah saya memberi watermark hanya pada beberapa halaman?",
+        answer:
+          "Bisa. Pilih Halaman lalu masukkan rentang seperti 1-3, 5.",
+      },
+      {
+        question: "Apakah watermark menutupi teks?",
+        answer:
+          "Turunkan opasitasnya agar halaman tetap mudah dibaca. 15–30% umum dipakai untuk watermark diagonal.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "Tanda Tangani PDF",
+    shortName: "Tanda Tangan PDF",
+    tagline: "Gambar, ketik, atau unggah tanda tangan Anda dan tempatkan di halaman mana pun dalam PDF. Berjalan di perangkat Anda.",
+    intro:
+      "Tanda Tangani PDF membubuhkan tanda tangan tulisan tangan Anda pada dokumen tanpa perlu mencetak dan memindainya. Gambar tanda tangan dengan mouse, jari, atau stylus, ketik nama Anda, atau gunakan foto tanda tangan Anda, yang latar putihnya bisa dibuat transparan. Lalu pilih halamannya, atur ukurannya, dan seret tanda tangan ke posisinya atau gunakan slider posisi. Tanda tangan ditambahkan di browser Anda, jadi dokumen dan tanda tangan Anda tidak pernah diunggah.",
+    seoTitle: "Tanda Tangan PDF Online – Gratis, Tanpa Unggah",
+    seoDescription:
+      "Tanda tangan PDF langsung di browser Anda: gambar, ketik, atau unggah tanda tangan, lalu tempatkan di halaman mana pun. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "tanda tangan pdf",
+      "tanda tangan pdf online",
+      "cara tanda tangan di pdf",
+      "tambah tanda tangan ke pdf",
+      "ttd pdf",
+      "tanda tangan elektronik pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih dokumen yang akan ditandatangani.",
+      },
+      {
+        title: "Buat tanda tangan Anda",
+        description: "Gambar, ketik nama Anda, atau pilih foto tanda tangan Anda.",
+      },
+      {
+        title: "Tempatkan",
+        description: "Pilih halaman, atur ukurannya, dan seret tanda tangan ke tempatnya, atau gunakan slider.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF yang sudah ditandatangani.",
+      },
+    ],
+    features: [
+      {
+        title: "Tiga cara tanda tangan",
+        description: "Gambar, ketik, atau unggah, dengan tinta biru atau hitam.",
+      },
+      {
+        title: "Tanda tangan bersih dari foto",
+        description: "Latar kertas pada foto tanda tangan bisa dibuat transparan.",
+      },
+      {
+        title: "Penempatan presisi",
+        description: "Seret di pratinjau, atau gunakan slider yang juga bisa dipakai dengan keyboard.",
+      },
+      {
+        title: "Privat",
+        description: "Dokumen dan tanda tangan Anda tetap di perangkat Anda.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah ini tanda tangan digital yang sah secara hukum?",
+        answer:
+          "Alat ini menambahkan gambar tanda tangan Anda, seperti menandatangani di atas kertas. Ini bukan tanda tangan digital tersertifikasi dengan sertifikat. Banyak formulir sehari-hari menerimanya, tetapi kontrak yang mewajibkan tanda tangan elektronik tersertifikasi memerlukan layanan tanda tangan khusus.",
+      },
+      {
+        question: "Bisakah saya menandatangani lebih dari satu halaman?",
+        answer:
+          "Tandatangani satu halaman, unduh, lalu buka lagi PDF yang sudah ditandatangani dan tempatkan tanda tangan di halaman berikutnya.",
+      },
+      {
+        question: "Apakah tanda tangan saya disimpan di suatu tempat?",
+        answer:
+          "Tidak. Tanda tangan hanya ada di browser Anda selama halaman terbuka dan di dalam PDF yang Anda unduh.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "Isi Formulir PDF",
+    shortName: "Isi Formulir",
+    tagline: "Isi kolom formulir PDF dan simpan, dengan opsi dikunci. Berjalan di perangkat Anda.",
+    intro:
+      "Isi Formulir PDF menemukan kolom yang bisa diisi dalam formulir PDF, seperti kotak teks, kotak centang, dan daftar drop-down, lalu menampilkan masing-masing dengan namanya agar Anda bisa mengisinya dengan cepat. Unduh PDF yang sudah diisi, atau ratakan agar jawaban menjadi bagian dari halaman dan tidak bisa diubah lagi. Ini praktis untuk formulir pendaftaran, formulir pajak, dan dokumen registrasi. Formulir diisi di browser Anda, jadi data pribadi Anda tidak pernah diunggah.",
+    seoTitle: "Isi Formulir PDF Online – Gratis dan Privat",
+    seoDescription:
+      "Isi formulir PDF di browser Anda: kolom teks, kotak centang, dan daftar pilihan. Ratakan formulir untuk mengunci jawaban. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "isi formulir pdf",
+      "isi pdf online",
+      "mengisi pdf",
+      "cara mengisi formulir pdf",
+      "fill pdf form",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan formulir PDF Anda",
+        description: "Letakkan atau pilih PDF yang memiliki kolom yang bisa diisi.",
+      },
+      {
+        title: "Isi kolomnya",
+        description: "Ketik di kolom teks, centang kotak centang, dan pilih dari daftar.",
+      },
+      {
+        title: "Kunci jika perlu",
+        description: "Centang Ratakan agar jawaban menjadi bagian dari halaman.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan formulir yang sudah diisi.",
+      },
+    ],
+    features: [
+      {
+        title: "Semua kolom umum",
+        description: "Kotak teks, teks multibaris, kotak centang, tombol radio, dan daftar drop-down.",
+      },
+      {
+        title: "Opsi ratakan",
+        description: "Kunci jawaban agar formulir tidak bisa diedit sesudahnya.",
+      },
+      {
+        title: "Kolom yang aksesibel",
+        description: "Setiap kolom adalah input berlabel biasa yang bisa dipakai dengan keyboard dan pembaca layar.",
+      },
+      {
+        title: "Privat",
+        description: "Jawaban Anda tetap di perangkat Anda; tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mengapa muncul pesan bahwa PDF saya tidak punya kolom yang bisa diisi?",
+        answer:
+          "Sebagian formulir hanyalah halaman cetak tanpa kolom formulir sungguhan, dan sebagian lagi memakai format lama (XFA) yang tidak bisa dibaca alat ini. Untuk formulir tanpa kolom, tambahkan tanda tangan dengan Tanda Tangani PDF atau cetak dan isi dengan tangan.",
+      },
+      {
+        question: "Apa fungsi Ratakan?",
+        answer:
+          "Ratakan mengubah jawaban menjadi konten halaman biasa. Formulir tampak sama, tetapi tidak ada yang bisa mengubah jawaban atau kolomnya.",
+      },
+      {
+        question: "Apakah kolom tanda tangan didukung?",
+        answer:
+          "Kolom tanda tangan dan tombol dilewati. Gunakan Tanda Tangani PDF untuk menempatkan tanda tangan Anda di halaman.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "Hapus Metadata PDF",
+    shortName: "Metadata PDF",
+    tagline: "Lihat dan hapus penulis, judul, software, dan tanggal yang tersembunyi dalam PDF. Berjalan di perangkat Anda.",
+    intro:
+      "File PDF sering membawa detail tersembunyi: nama penulis, judul dokumen, software yang membuatnya, serta kapan file dibuat dan diubah. Hapus Metadata PDF menampilkan apa yang tersimpan di file Anda dan mengunduh salinan tanpa informasi itu, yang berguna sebelum membagikan dokumen ke publik atau mengirim CV. Halamannya sendiri tidak diubah. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat.",
+    seoTitle: "Hapus Metadata PDF – Lihat dan Hapus, Gratis",
+    seoDescription:
+      "Hapus metadata PDF di browser Anda: lihat penulis, judul, software, dan tanggal yang tersembunyi dalam PDF, lalu hapus. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "hapus metadata pdf",
+      "menghapus metadata pdf",
+      "hapus author pdf",
+      "lihat metadata pdf",
+      "remove pdf metadata",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF untuk melihat informasi yang tersimpan di dalamnya.",
+      },
+      {
+        title: "Tinjau yang ditemukan",
+        description: "Daftar menampilkan judul, penulis, software, tanggal, dan metadata XMP.",
+      },
+      {
+        title: "Unduh salinan bersih",
+        description: "Simpan salinan dengan informasi tersebut dihapus.",
+      },
+    ],
+    features: [
+      {
+        title: "Lihat sebelum menghapus",
+        description: "Setiap detail yang tersimpan ditampilkan beserta nilainya.",
+      },
+      {
+        title: "Info dokumen dan XMP",
+        description: "Kedua tempat PDF menyimpan metadata dibersihkan.",
+      },
+      {
+        title: "Halaman tidak disentuh",
+        description: "Teks, gambar, dan tata letak tetap persis sama.",
+      },
+      {
+        title: "Privat",
+        description: "PDF dibersihkan di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apa saja yang dihapus?",
+        answer:
+          "Informasi dokumen (judul, penulis, subjek, kata kunci, software pembuat, producer, dan tanggal) serta stream metadata XMP.",
+      },
+      {
+        question: "Apakah semua data pribadi di PDF ikut terhapus?",
+        answer:
+          "Tidak. Teks di halaman, komentar, dan detail di dalam gambar yang disematkan (seperti data EXIF foto) tidak diubah. Periksa isinya sendiri sebelum membagikan.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "Potong PDF",
+    shortName: "Potong PDF",
+    tagline: "Pangkas margin setiap halaman dalam PDF. Berjalan di perangkat Anda.",
+    intro:
+      "Potong PDF memangkas tepi setiap halaman, menghilangkan margin putih yang lebar, tepi hasil scanner, atau tanda cetak agar konten memenuhi layar saat dibaca di ponsel. Atur seberapa banyak yang dipangkas dari atas, kanan, bawah, dan kiri, dan pratinjau menunjukkan bagian halaman yang tersisa. Pemotongan disimpan sebagai pengaturan halaman, jadi teks tetap dalam kualitas penuh. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah diunggah.",
+    seoTitle: "Potong PDF Online – Pangkas Margin Halaman, Gratis",
+    seoDescription:
+      "Potong PDF dan pangkas margin halaman di browser Anda dengan pratinjau langsung. Hilangkan tepi putih dan tepi scanner. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "potong pdf",
+      "crop pdf",
+      "pangkas margin pdf",
+      "hapus margin pdf",
+      "potong halaman pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF yang ingin dipotong.",
+      },
+      {
+        title: "Atur marginnya",
+        description: "Gunakan slider untuk setiap sisi; pratinjau menunjukkan bagian yang tersisa.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF dengan setiap halaman yang sudah dipotong.",
+      },
+    ],
+    features: [
+      {
+        title: "Kontrol empat sisi",
+        description: "Pangkas atas, kanan, bawah, dan kiri secara terpisah.",
+      },
+      {
+        title: "Pratinjau langsung",
+        description: "Area yang dipangkas diberi bayangan di halaman pertama.",
+      },
+      {
+        title: "Tanpa penurunan kualitas",
+        description: "Halaman tidak digambar ulang, jadi teks tetap tajam dan bisa dicari.",
+      },
+      {
+        title: "Privat",
+        description: "PDF dipotong di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah memotong membuat file lebih kecil?",
+        answer:
+          "Tidak. Area yang dipangkas disembunyikan, bukan dihapus, jadi ukuran file kurang lebih sama. Editor PDF masih bisa menampilkan area yang tersembunyi.",
+      },
+      {
+        question: "Bisakah saya memotong halaman secara berbeda?",
+        answer:
+          "Margin yang sama diterapkan ke setiap halaman. Untuk memotong halaman secara berbeda, pisahkan PDF, potong setiap bagian, lalu gabungkan lagi.",
+      },
+      {
+        question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa kata sandi, lalu gunakan salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibuka dan diubah oleh browser di perangkat Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
 };

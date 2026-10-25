@@ -38,6 +38,7 @@ export const frHome: LocalizedHomeData = {
     'edit-transform': 'Retouche et transformation',
     'optimize-compress': 'Optimisation et compression',
     'convert-formats': 'Conversion de formats',
+    'pdf-documents': 'PDF et documents',
     utilities: 'Analyse et utilitaires',
     developer: 'Outils pour développeurs',
   },

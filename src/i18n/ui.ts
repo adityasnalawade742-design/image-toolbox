@@ -32,6 +32,7 @@ export const ui = {
     'nav.compress': 'Compress',
     'nav.convert': 'Convert',
     'nav.utilities': 'Utilities',
+    'nav.pdf': 'PDF',
     'search.placeholder': 'Search 27 precision image tools... (Ctrl+K)',
     'search.noResults': 'No matching tools found.',
     'dropzone.title': 'Drop your images here or click to browse',

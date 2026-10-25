@@ -38,6 +38,7 @@ export const jaHome: LocalizedHomeData = {
     'edit-transform': '編集・変形',
     'optimize-compress': '最適化・圧縮',
     'convert-formats': '形式変換',
+    'pdf-documents': 'PDF・文書',
     utilities: '画像情報・便利ツール',
     developer: '開発者向けツール',
   },

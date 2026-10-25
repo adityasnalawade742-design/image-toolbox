@@ -3085,4 +3085,840 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "Unisci PDF",
+    shortName: "Unisci PDF",
+    tagline: "Combina più file PDF in uno solo, nell’ordine che scegli. I file vengono uniti sul tuo dispositivo.",
+    intro:
+      "Unisci PDF mette insieme due o più file PDF in un unico documento. Aggiungi i file, mettili in ordine con i pulsanti di spostamento, controlla la prima pagina di ciascuno e scarica un solo PDF con tutte le pagine in sequenza. È il modo rapido per inviare una relazione con i suoi allegati, varie pagine scansionate o un gruppo di fatture come un unico file. L’unione avviene nel tuo browser, quindi i tuoi documenti non vengono mai caricati su un server.",
+    seoTitle: "Unire PDF online – Gratis, senza upload",
+    seoDescription:
+      "Unire PDF nel browser: combina più file in uno solo, nell’ordine che vuoi, e scarica un unico PDF. Gratis, privato, senza upload e senza filigrana.",
+    keywords: [
+      "unire pdf",
+      "unire file pdf",
+      "unire pdf online gratis",
+      "combinare pdf",
+      "unire più pdf in uno",
+      "unisci pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi i PDF",
+        description: "Trascina o scegli due o più file PDF. Puoi aggiungerne altri in qualsiasi momento.",
+      },
+      {
+        title: "Mettili in ordine",
+        description: "Usa i pulsanti su e giù per ordinare i file, e rimuovi quelli che non ti servono.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva un unico PDF con tutte le pagine, un file dopo l’altro.",
+      },
+    ],
+    features: [
+      {
+        title: "Tutti i file che vuoi",
+        description: "Unisci tutti i PDF che il tuo dispositivo riesce a gestire, con il totale delle pagine sempre visibile.",
+      },
+      {
+        title: "Il tuo ordine",
+        description: "Ordina i file con pulsanti che funzionano anche da tastiera e con gli screen reader.",
+      },
+      {
+        title: "Pagine invariate",
+        description:
+          "Le pagine vengono copiate così come sono, senza ricompressione, quindi il testo resta nitido e ricercabile.",
+      },
+      {
+        title: "Privato e gratuito",
+        description: "I file vengono uniti sul tuo dispositivo, senza upload, senza registrazione e senza filigrana.",
+      },
+    ],
+    faqs: [
+      {
+        question: "C’è un limite al numero di file che posso unire?",
+        answer:
+          "Non c’è un limite fisso. Decine di PDF normali funzionano sulla maggior parte dei dispositivi; i file molto grandi possono essere lenti sui telefoni più vecchi.",
+      },
+      {
+        question: "I link e i segnalibri continueranno a funzionare?",
+        answer:
+          "I link nelle pagine vengono mantenuti. L’elenco dei segnalibri (la struttura nel pannello laterale del lettore PDF) non viene copiato nel file unito.",
+      },
+      {
+        question: "L’unione riduce la qualità?",
+        answer:
+          "No. Le pagine vengono copiate così come sono, quindi testo, immagini e grafica vettoriale restano identici.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "Dividi PDF",
+    shortName: "Dividi PDF",
+    tagline: "Dividi un PDF per intervalli di pagine, ogni tot pagine o in pagine singole. Funziona sul tuo dispositivo.",
+    intro:
+      "Dividi PDF suddivide un PDF in più file più piccoli. Inserisci intervalli di pagine come 1-3, 5, 8- per ottenere un file per ogni intervallo, dividi ogni tot pagine per tagliare una lunga scansione in parti uguali, oppure salva ogni pagina come PDF a sé. Lo strumento elenca i file che otterrai prima di scaricarli, e più file arrivano insieme in un unico ZIP. La divisione avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Dividere PDF online – Per pagine o intervalli, gratis",
+    seoDescription:
+      "Dividere PDF nel browser: separa un PDF in più file per intervalli di pagine, ogni N pagine o pagina per pagina. Gratis, privato, nessun upload.",
+    keywords: [
+      "dividere pdf",
+      "dividere pagine pdf",
+      "separare pagine pdf",
+      "dividere pdf online gratis",
+      "dividi pdf",
+      "separare pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF. Le sue pagine compaiono come anteprime.",
+      },
+      {
+        title: "Scegli come dividere",
+        description: "Inserisci gli intervalli di pagine, scegli un numero di pagine per file o dividi ogni pagina.",
+      },
+      {
+        title: "Controlla l’elenco",
+        description: "Il pannello mostra ogni file che otterrai e le sue pagine.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva un PDF, o uno ZIP quando i file sono più di uno.",
+      },
+    ],
+    features: [
+      {
+        title: "Tre modi per dividere",
+        description: "Intervalli personalizzati, gruppi uguali di pagine o una pagina per file.",
+      },
+      {
+        title: "Guarda prima di salvare",
+        description: "Ogni file risultante e i suoi numeri di pagina vengono elencati prima.",
+      },
+      {
+        title: "Un solo download ZIP",
+        description: "Più file arrivano insieme, con il nome delle loro pagine.",
+      },
+      {
+        title: "Privato",
+        description: "Il PDF viene diviso sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Come scrivo gli intervalli di pagine?",
+        answer:
+          "Separa gli intervalli con le virgole. 1-3 indica le pagine da 1 a 3, 5 indica solo la pagina 5 e 8- indica dalla pagina 8 alla fine. Ogni intervallo diventa un PDF a sé.",
+      },
+      {
+        question: "Posso ottenere un PDF con solo alcune pagine?",
+        answer:
+          "Sì. Inserisci un solo intervallo, per esempio 2-4, per scaricare solo quelle pagine. Anche Estrai pagine PDF ti permette di scegliere le pagine cliccandole.",
+      },
+      {
+        question: "La divisione modifica le pagine?",
+        answer: "No. Le pagine vengono copiate così come sono, quindi il testo resta nitido e ricercabile.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "Estrai pagine PDF",
+    shortName: "Estrai pagine",
+    tagline: "Scegli le pagine che ti servono da un PDF e salvale come nuovo PDF. Funziona sul tuo dispositivo.",
+    intro:
+      "Estrai pagine PDF ti permette di scegliere le pagine di un PDF dalle anteprime e di salvare solo quelle come nuovo documento. È utile per inviare un capitolo di una lunga relazione, la pagina firmata di un contratto o un singolo estratto conto da un gruppo di documenti. Spunta le pagine che vuoi, oppure usa Seleziona tutto e togli la spunta alle poche che non ti servono, poi scarica. Il file originale non viene modificato, e tutto avviene nel tuo browser.",
+    seoTitle: "Estrarre pagine da PDF – Gratis, senza upload",
+    seoDescription:
+      "Estrarre pagine da PDF nel browser: scegli le pagine dalle anteprime e salvale come nuovo PDF. Gratis, privato e niente viene caricato.",
+    keywords: [
+      "estrarre pagine da pdf",
+      "estrarre pagine pdf",
+      "estrai pagine pdf",
+      "salvare pagine di un pdf",
+      "selezionare pagine pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF per vederne tutte le pagine.",
+      },
+      {
+        title: "Spunta le pagine che vuoi",
+        description: "Usa la casella sotto ogni pagina, oppure Seleziona tutto e togli la spunta a quelle che non ti servono.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva un nuovo PDF con solo quelle pagine, nel loro ordine originale.",
+      },
+    ],
+    features: [
+      {
+        title: "Scegli dall’anteprima",
+        description: "Vedi ogni pagina prima di scegliere.",
+      },
+      {
+        title: "Adatto alla tastiera",
+        description: "Ogni pagina ha una casella di controllo con etichetta, quindi il mouse non serve.",
+      },
+      {
+        title: "Pagine invariate",
+        description: "Le pagine scelte vengono copiate così come sono, con testo nitido e ricercabile.",
+      },
+      {
+        title: "Privato",
+        description: "Le pagine vengono estratte sul tuo dispositivo e non vengono mai caricate.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il mio PDF originale viene modificato?",
+        answer:
+          "No. Viene creato un nuovo PDF con le pagine che hai scelto; il file originale resta com’era.",
+      },
+      {
+        question: "Posso cambiare l’ordine delle pagine?",
+        answer:
+          "Le pagine estratte mantengono il loro ordine originale. Per riordinare, ruotare o eliminare pagine, usa Organizza PDF.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "Organizza PDF",
+    shortName: "Organizza PDF",
+    tagline: "Riordina, ruota ed elimina le pagine di un PDF, poi salva il nuovo PDF. Funziona sul tuo dispositivo.",
+    intro:
+      "Organizza PDF mostra tutte le pagine di un PDF così puoi sistemarlo: sposta le pagine prima o dopo, raddrizza le scansioni di lato ed elimina le pagine bianche o indesiderate. Ogni pagina ha i suoi pulsanti, che funzionano anche da tastiera, e con il mouse puoi trascinare le pagine al loro posto. Annulla tutte le modifiche rimette tutto com’era. Quando è a posto, scarica il nuovo PDF. Tutto questo avviene nel tuo browser, quindi il documento non viene mai caricato.",
+    seoTitle: "Organizzare pagine PDF – Riordina, ruota, elimina",
+    seoDescription:
+      "Organizzare PDF nel browser: riordina, ruota ed elimina le pagine con le anteprime e scarica il nuovo PDF. Gratis, privato, nessun upload.",
+    keywords: [
+      "organizzare pdf",
+      "riordinare pagine pdf",
+      "spostare pagine pdf",
+      "eliminare pagine pdf",
+      "rimuovere pagine da pdf",
+      "organizza pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF per vederne tutte le pagine.",
+      },
+      {
+        title: "Sistema le pagine",
+        description:
+          "Usa i pulsanti sotto ogni pagina per spostarla, ruotarla o eliminarla, oppure trascina le pagine al loro posto.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF riorganizzato. Annulla tutte le modifiche riparte dall’originale.",
+      },
+    ],
+    features: [
+      {
+        title: "Sposta, ruota, elimina",
+        description: "Tutte le operazioni sulle pagine in un’unica vista, con anteprime che si aggiornano mentre lavori.",
+      },
+      {
+        title: "Trascinamento o pulsanti",
+        description: "Trascina con il mouse oppure usa i pulsanti, che funzionano anche con tastiera e screen reader.",
+      },
+      {
+        title: "Senza perdita",
+        description: "Le pagine vengono riordinate, non ridisegnate, quindi il testo resta nitido e ricercabile.",
+      },
+      {
+        title: "Privato",
+        description: "Il PDF viene riorganizzato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ruotare una pagina ne riduce la qualità?",
+        answer:
+          "No. La rotazione viene salvata come impostazione della pagina, quindi niente viene ridisegnato o compresso.",
+      },
+      {
+        question: "Posso annullare una modifica?",
+        answer:
+          "Sì. Annulla tutte le modifiche riporta ogni pagina alla posizione e alla rotazione originali. Il file originale non viene mai modificato.",
+      },
+      {
+        question: "Posso aggiungere pagine da un altro PDF?",
+        answer: "Prima combina i file con Unisci PDF, poi organizza qui il file unito.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "Ruota PDF",
+    shortName: "Ruota PDF",
+    tagline: "Ruota tutte le pagine, o solo quelle che scegli, di 90 o 180 gradi. Funziona sul tuo dispositivo.",
+    intro:
+      "Ruota PDF sistema le pagine che si aprono di lato o capovolte, un problema comune con i documenti scansionati e con le foto salvate come PDF. Scegli 90 gradi a destra, 180 gradi o 90 gradi a sinistra, e applica la rotazione a tutte le pagine o solo a quelle che spunti. Le anteprime mostrano il risultato prima del download. La rotazione viene salvata come impostazione della pagina, quindi testo e immagini mantengono la piena qualità, e niente lascia il tuo browser.",
+    seoTitle: "Ruotare PDF online – Gratis, in modo permanente",
+    seoDescription:
+      "Ruotare PDF nel browser: gira tutte le pagine o solo quelle scelte di 90 o 180 gradi e salva in modo permanente. Gratis, privato, nessun upload.",
+    keywords: [
+      "ruotare pdf",
+      "ruotare pagine pdf",
+      "girare pdf",
+      "ruotare pdf e salvare",
+      "ruota pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF per vederne le pagine.",
+      },
+      {
+        title: "Scegli la rotazione",
+        description: "Scegli 90° a destra, 180° o 90° a sinistra, per tutte le pagine o per quelle che spunti.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF con le pagine ruotate in modo definitivo.",
+      },
+    ],
+    features: [
+      {
+        title: "Tutte le pagine o solo alcune",
+        description: "Sistema una scansione di lato senza toccare il resto.",
+      },
+      {
+        title: "Anteprima in tempo reale",
+        description: "Le anteprime delle pagine ruotano mentre scegli, prima che venga salvato qualcosa.",
+      },
+      {
+        title: "Nessuna perdita di qualità",
+        description: "La rotazione è un’impostazione della pagina, quindi niente viene ridisegnato.",
+      },
+      {
+        title: "Privato",
+        description: "Il PDF viene ruotato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "La rotazione viene salvata in modo permanente?",
+        answer: "Sì. Il PDF scaricato si apre con le pagine ruotate in qualsiasi lettore PDF.",
+      },
+      {
+        question: "Posso ruotare le pagine di angoli diversi?",
+        answer: "Usa Organizza PDF, dove ogni pagina ha il suo pulsante di rotazione.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "Aggiungi numeri di pagina al PDF",
+    shortName: "Numeri di pagina",
+    tagline: "Numera le pagine di un PDF con la posizione, il formato e il numero iniziale che scegli. Funziona sul tuo dispositivo.",
+    intro:
+      "Aggiungi numeri di pagina mette un numero su ogni pagina di un PDF, cosa che spesso serve a relazioni, tesi e dispense stampate. Scegli una delle sei posizioni in alto o in basso, un formato (1, 1 / N o – 1 –), il numero iniziale, la dimensione del testo e la distanza dal bordo. Puoi anche lasciare senza numero la prima pagina, come una copertina. Un’anteprima mostra come apparirà il numero. I numeri vengono aggiunti nel tuo browser, quindi il documento non viene mai caricato.",
+    seoTitle: "Numerare pagine PDF – Gratis, senza upload",
+    seoDescription:
+      "Numerare le pagine di un PDF nel browser: scegli posizione, formato e numero iniziale, e salta la copertina. Gratis, privato, nessun upload.",
+    keywords: [
+      "numerare pagine pdf",
+      "aggiungere numeri di pagina pdf",
+      "inserire numeri di pagina pdf",
+      "numerazione pagine pdf",
+      "impaginare pdf numeri",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF da numerare.",
+      },
+      {
+        title: "Scegli lo stile",
+        description: "Scegli posizione, formato, numero iniziale, dimensione e distanza dal bordo.",
+      },
+      {
+        title: "Salta la copertina se serve",
+        description: "Spunta l’opzione per lasciare la prima pagina senza numero.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF numerato.",
+      },
+    ],
+    features: [
+      {
+        title: "Sei posizioni",
+        description: "In alto o in basso, a sinistra, al centro o a destra.",
+      },
+      {
+        title: "Tre formati",
+        description: "Numeri semplici, stile “1 / 12” o “– 1 –”.",
+      },
+      {
+        title: "Qualsiasi numero iniziale",
+        description: "Continua la numerazione di un altro documento e salta la copertina.",
+      },
+      {
+        title: "Privato",
+        description: "I numeri vengono aggiunti sul tuo dispositivo; niente viene caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso partire da un numero diverso da 1?",
+        answer: "Sì. Imposta Inizia da su qualsiasi numero, per esempio per continuare da un capitolo precedente.",
+      },
+      {
+        question: "I numeri copriranno il contenuto?",
+        answer:
+          "Vengono collocati nel margine della pagina. Se le tue pagine hanno margini molto stretti, scegli una distanza dal bordo minore o una dimensione del testo più piccola.",
+      },
+      {
+        question: "Perché su alcune pagine i numeri sono di lato?",
+        answer:
+          "Alcuni PDF memorizzano le pagine ruotate. Il numero segue l’orientamento memorizzato della pagina, quindi su quelle pagine può apparire girato. Prima correggi la rotazione con Ruota PDF o Organizza PDF.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "Filigrana PDF",
+    shortName: "Filigrana PDF",
+    tagline: "Applica un testo o un logo sulle pagine di un PDF, poi trascinalo al suo posto. Funziona sul tuo dispositivo.",
+    intro:
+      "Filigrana PDF aggiunge alle pagine di un PDF un timbro come RISERVATO, BOZZA, il tuo nome o il tuo logo. Scrivi il testo in qualsiasi lingua o scegli un’immagine del logo, poi imposta dimensione, opacità e angolo e trascinalo dove vuoi sull’anteprima della pagina, oppure usa i cursori di posizione. Applicalo a tutte le pagine o a un intervallo di pagine. La filigrana viene aggiunta nel tuo browser, quindi il documento non viene mai caricato.",
+    seoTitle: "Filigrana PDF online – Testo o logo, gratis",
+    seoDescription:
+      "Aggiungere una filigrana a un PDF nel browser: testo o logo, con dimensione, opacità e angolo, da trascinare al suo posto. Gratis, privato, nessun upload.",
+    keywords: [
+      "filigrana pdf",
+      "aggiungere filigrana pdf",
+      "inserire filigrana pdf",
+      "timbro pdf",
+      "aggiungere logo a pdf",
+      "filigrana riservato pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF da timbrare.",
+      },
+      {
+        title: "Crea la filigrana",
+        description: "Scrivi il testo e scegline il colore, oppure scegli un’immagine del logo.",
+      },
+      {
+        title: "Posizionala",
+        description: "Imposta dimensione, opacità e angolo, poi trascinala sull’anteprima o usa i cursori.",
+      },
+      {
+        title: "Scarica",
+        description: "Scegli tutte le pagine o un intervallo e salva il PDF con la filigrana.",
+      },
+    ],
+    features: [
+      {
+        title: "Testo in qualsiasi lingua",
+        description: "Il testo viene disegnato come immagine, quindi ogni alfabeto e accento appare correttamente.",
+      },
+      {
+        title: "Filigrane con logo",
+        description: "Usa un logo PNG, JPG, WebP o SVG.",
+      },
+      {
+        title: "Trascina al suo posto",
+        description: "Sposta la filigrana sull’anteprima della pagina o usa i cursori, che funzionano anche da tastiera.",
+      },
+      {
+        title: "Privato",
+        description: "La filigrana viene aggiunta sul tuo dispositivo; niente viene caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "La filigrana si può rimuovere in seguito?",
+        answer:
+          "Viene aggiunta come immagine sopra la pagina. Chi ha un editor PDF potrebbe comunque rimuoverla, quindi una filigrana scoraggia la copia più che impedirla.",
+      },
+      {
+        question: "Posso applicare la filigrana solo ad alcune pagine?",
+        answer: "Sì. Scegli Pagine e inserisci un intervallo come 1-3, 5.",
+      },
+      {
+        question: "La filigrana copre il testo?",
+        answer:
+          "Abbassa l’opacità per mantenere la pagina leggibile. Il 15–30% è il valore tipico per le filigrane diagonali.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "Firma PDF",
+    shortName: "Firma PDF",
+    tagline: "Disegna o scrivi la tua firma, o usane un’immagine, e posizionala su qualsiasi pagina di un PDF. Funziona sul tuo dispositivo.",
+    intro:
+      "Firma PDF mette la tua firma autografa su un documento senza stamparlo e scansionarlo. Disegna la firma con il mouse, il dito o un pennino, scrivi il tuo nome, oppure usa una foto della tua firma, il cui sfondo bianco può diventare trasparente. Poi scegli la pagina, imposta la dimensione e trascina la firma al suo posto, oppure usa i cursori di posizione. La firma viene aggiunta nel tuo browser, quindi né il documento né la tua firma vengono mai caricati.",
+    seoTitle: "Firmare PDF online – Gratis, senza upload",
+    seoDescription:
+      "Firmare un PDF nel browser: disegna o scrivi la tua firma, o usane un’immagine, e posizionala su qualsiasi pagina. Gratis, privato, niente viene caricato.",
+    keywords: [
+      "firmare pdf",
+      "firmare pdf online gratis",
+      "aggiungere firma a pdf",
+      "firma elettronica pdf",
+      "inserire firma su pdf",
+      "firma pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il documento da firmare.",
+      },
+      {
+        title: "Crea la tua firma",
+        description: "Disegnala, scrivi il tuo nome o scegli una foto della tua firma.",
+      },
+      {
+        title: "Posizionala",
+        description: "Scegli la pagina, imposta la dimensione e trascina la firma dove deve stare, oppure usa i cursori.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF firmato.",
+      },
+    ],
+    features: [
+      {
+        title: "Tre modi per firmare",
+        description: "Disegna, scrivi o usa un’immagine, con inchiostro blu o nero.",
+      },
+      {
+        title: "Firme pulite dalle foto",
+        description: "Lo sfondo della carta in una foto della firma può diventare trasparente.",
+      },
+      {
+        title: "Posizionamento preciso",
+        description: "Trascina sull’anteprima o usa i cursori, che funzionano anche da tastiera.",
+      },
+      {
+        title: "Privato",
+        description: "Il documento e la firma restano sul tuo dispositivo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "È una firma digitale con valore legale?",
+        answer:
+          "Aggiunge un’immagine della tua firma, come quando firmi su carta. Non è una firma digitale certificata con un certificato. Molti moduli di uso quotidiano la accettano, ma i contratti che richiedono una firma elettronica certificata hanno bisogno di un servizio di firma dedicato.",
+      },
+      {
+        question: "Posso firmare più di una pagina?",
+        answer:
+          "Firma una pagina, scarica, poi apri di nuovo il PDF firmato e posiziona la firma sulla pagina successiva.",
+      },
+      {
+        question: "La mia firma viene salvata da qualche parte?",
+        answer:
+          "No. Esiste solo nel tuo browser mentre la pagina è aperta e all’interno del PDF che scarichi.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "Compila modulo PDF",
+    shortName: "Compila modulo",
+    tagline: "Compila i campi di un modulo PDF e salvalo, anche bloccato se vuoi. Funziona sul tuo dispositivo.",
+    intro:
+      "Compila modulo PDF trova i campi compilabili di un modulo PDF, come caselle di testo, caselle di controllo ed elenchi a discesa, e li mostra uno per uno con il loro nome, così puoi completarli in fretta. Scarica il PDF compilato, oppure appiattiscilo perché le risposte diventino parte della pagina e non si possano più modificare. È comodo per domande di iscrizione, moduli fiscali e documenti di registrazione. Il modulo viene compilato nel tuo browser, quindi i tuoi dati personali non vengono mai caricati.",
+    seoTitle: "Compilare modulo PDF online – Gratis e privato",
+    seoDescription:
+      "Compilare PDF nel browser: campi di testo, caselle di controllo ed elenchi dei moduli compilabili. Appiattisci per bloccare le risposte. Gratis, nessun upload.",
+    keywords: [
+      "compilare pdf",
+      "compilare modulo pdf",
+      "compilare pdf online",
+      "pdf compilabile",
+      "riempire modulo pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il modulo PDF",
+        description: "Trascina o scegli un PDF con campi compilabili.",
+      },
+      {
+        title: "Compila i campi",
+        description: "Scrivi nei campi di testo, spunta le caselle e scegli dagli elenchi.",
+      },
+      {
+        title: "Bloccalo se serve",
+        description: "Spunta Appiattisci per rendere le risposte parte della pagina.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il modulo compilato.",
+      },
+    ],
+    features: [
+      {
+        title: "Tutti i campi comuni",
+        description: "Caselle di testo, testo su più righe, caselle di controllo, pulsanti di opzione ed elenchi a discesa.",
+      },
+      {
+        title: "Opzione Appiattisci",
+        description: "Blocca le risposte così il modulo non può più essere modificato.",
+      },
+      {
+        title: "Campi accessibili",
+        description: "Ogni campo è un normale campo di input con etichetta, che funziona con tastiera e screen reader.",
+      },
+      {
+        title: "Privato",
+        description: "Le tue risposte restano sul tuo dispositivo; niente viene caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Perché dice che il mio PDF non ha campi compilabili?",
+        answer:
+          "Alcuni moduli sono semplici pagine stampate senza veri campi, e alcuni usano un formato più vecchio (XFA) che questo strumento non sa leggere. Per i moduli senza campi, aggiungi una firma con Firma PDF oppure stampa e compila a mano.",
+      },
+      {
+        question: "Cosa fa Appiattisci?",
+        answer:
+          "Trasforma le risposte in normale contenuto della pagina. Il modulo ha lo stesso aspetto, ma nessuno può più modificare le risposte o i campi.",
+      },
+      {
+        question: "I campi firma sono supportati?",
+        answer: "I campi firma e i pulsanti vengono saltati. Usa Firma PDF per posizionare la tua firma sulla pagina.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "Rimuovi metadati PDF",
+    shortName: "Metadati PDF",
+    tagline: "Vedi e rimuovi autore, titolo, software e date nascosti in un PDF. Funziona sul tuo dispositivo.",
+    intro:
+      "I file PDF spesso contengono dettagli nascosti: il nome dell’autore, il titolo del documento, il software che l’ha creato e quando è stato creato e modificato. Rimuovi metadati PDF mostra cosa è salvato nel tuo file e scarica una copia senza queste informazioni, cosa utile prima di condividere pubblicamente un documento o di inviare un CV. Le pagine in sé non vengono modificate. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Rimuovere metadati PDF – Vedi ed elimina, gratis",
+    seoDescription:
+      "Rimuovere metadati PDF nel browser: vedi autore, titolo, software e date nascosti nel file ed eliminali. Gratis, privato e niente viene caricato.",
+    keywords: [
+      "rimuovere metadati pdf",
+      "eliminare metadati pdf",
+      "cancellare autore pdf",
+      "pulire metadati pdf",
+      "vedere metadati pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF per vedere le informazioni salvate al suo interno.",
+      },
+      {
+        title: "Controlla cosa è stato trovato",
+        description: "L’elenco mostra titolo, autore, software, date e metadati XMP.",
+      },
+      {
+        title: "Scarica la copia pulita",
+        description: "Salva una copia senza quelle informazioni.",
+      },
+    ],
+    features: [
+      {
+        title: "Guarda prima di rimuovere",
+        description: "Ogni dettaglio salvato viene elencato con il suo valore.",
+      },
+      {
+        title: "Informazioni documento e XMP",
+        description: "Vengono ripuliti entrambi i punti in cui i PDF conservano i metadati.",
+      },
+      {
+        title: "Pagine intatte",
+        description: "Testo, immagini e impaginazione restano esattamente uguali.",
+      },
+      {
+        title: "Privato",
+        description: "Il PDF viene ripulito sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Cosa viene rimosso esattamente?",
+        answer:
+          "Le informazioni del documento (titolo, autore, oggetto, parole chiave, software di creazione, produttore e date) e il flusso di metadati XMP.",
+      },
+      {
+        question: "Rimuove tutti i dati personali dal PDF?",
+        answer:
+          "No. Il testo sulle pagine, i commenti e i dettagli all’interno delle immagini incorporate (come i dati EXIF delle foto) non vengono modificati. Controlla il contenuto stesso prima di condividerlo.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "Ritaglia PDF",
+    shortName: "Ritaglia PDF",
+    tagline: "Rifila i margini di tutte le pagine di un PDF. Funziona sul tuo dispositivo.",
+    intro:
+      "Ritaglia PDF rifila i bordi di ogni pagina, eliminando ampi margini bianchi, bordi dello scanner o segni di stampa, così il contenuto riempie lo schermo quando leggi dal telefono. Imposta quanto rifilare in alto, a destra, in basso e a sinistra, e l’anteprima mostra quale parte della pagina resta. Il ritaglio viene salvato come impostazione della pagina, quindi il testo mantiene la piena qualità. Tutto avviene nel tuo browser, quindi il documento non viene mai caricato.",
+    seoTitle: "Ritagliare PDF online – Rifila i margini, gratis",
+    seoDescription:
+      "Ritagliare PDF nel browser: rifila i margini delle pagine con anteprima in tempo reale ed elimina bordi bianchi e dello scanner. Gratis, privato, nessun upload.",
+    keywords: [
+      "ritagliare pdf",
+      "ritagliare pagine pdf",
+      "tagliare margini pdf",
+      "rimuovere margini pdf",
+      "ritaglia pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF da ritagliare.",
+      },
+      {
+        title: "Imposta i margini",
+        description: "Usa i cursori per ogni lato; l’anteprima mostra cosa resta.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF con tutte le pagine ritagliate.",
+      },
+    ],
+    features: [
+      {
+        title: "Controllo sui quattro lati",
+        description: "Rifila separatamente il lato superiore, destro, inferiore e sinistro.",
+      },
+      {
+        title: "Anteprima in tempo reale",
+        description: "L’area rifilata viene ombreggiata sulla prima pagina.",
+      },
+      {
+        title: "Nessuna perdita di qualità",
+        description: "Le pagine non vengono ridisegnate, quindi il testo resta nitido e ricercabile.",
+      },
+      {
+        title: "Privato",
+        description: "Il PDF viene ritagliato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il ritaglio rende il file più leggero?",
+        answer:
+          "No. L’area rifilata viene nascosta, non eliminata, quindi il peso del file resta più o meno lo stesso. Un editor PDF può ancora mostrare l’area nascosta.",
+      },
+      {
+        question: "Posso ritagliare le pagine in modo diverso?",
+        answer:
+          "Gli stessi margini valgono per tutte le pagine. Per ritagliare le pagine in modo diverso, dividi il PDF, ritaglia ogni parte e poi uniscile di nuovo.",
+      },
+      {
+        question: "Posso usare un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia senza password e usa quella copia.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene aperto e modificato dal tuo browser sul tuo dispositivo, quindi contratti, estratti conto e altri documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
 };

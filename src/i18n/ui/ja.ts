@@ -6,6 +6,7 @@ export const jaUi: Record<string, string> = {
   'nav.compress': '圧縮',
   'nav.convert': '変換',
   'nav.utilities': '便利ツール',
+  'nav.pdf': 'PDF',
   'search.placeholder': '27種類の画像ツールを検索…（Ctrl+K）',
   'search.noResults': '該当するツールが見つかりません。',
   'dropzone.title': '画像をここにドロップ、またはクリックして選択',

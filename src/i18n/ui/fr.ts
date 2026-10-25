@@ -6,6 +6,7 @@ export const frUi: Record<string, string> = {
   'nav.compress': 'Compresser',
   'nav.convert': 'Convertir',
   'nav.utilities': 'Utilitaires',
+  'nav.pdf': 'PDF',
   'search.placeholder': 'Rechercher parmi 27 outils d’image… (Ctrl+K)',
   'search.noResults': 'Aucun outil ne correspond.',
   'dropzone.title': 'Déposez vos images ici ou cliquez pour parcourir',

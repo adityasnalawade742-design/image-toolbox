@@ -39,6 +39,7 @@ export const idHome: LocalizedHomeData = {
     'edit-transform': 'Edit & Ubah',
     'optimize-compress': 'Optimasi & Kompresi',
     'convert-formats': 'Konversi Format',
+    'pdf-documents': 'PDF & Dokumen',
     utilities: 'Inspeksi & Utilitas',
     developer: 'Alat Developer',
   },
