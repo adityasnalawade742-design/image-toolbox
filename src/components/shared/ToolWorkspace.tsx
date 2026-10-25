@@ -51,6 +51,10 @@ import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
 import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
 import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
 import { RemoveBackgroundWorkspace } from '../tools/RemoveBackgroundWorkspace';
+import { CompressToKbWorkspace } from '../tools/CompressToKbWorkspace';
+import { JpgToPdfWorkspace } from '../tools/JpgToPdfWorkspace';
+import { PdfToJpgWorkspace } from '../tools/PdfToJpgWorkspace';
+import { MergeImagesWorkspace } from '../tools/MergeImagesWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export interface NextTool {
@@ -92,6 +96,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'split-image': <ImageSplitterWorkspace />,
     'censor-image': <CensorImageWorkspace />,
     'remove-background': <RemoveBackgroundWorkspace />,
+    'compress-image-to-kb': <CompressToKbWorkspace />,
+    'jpg-to-pdf': <JpgToPdfWorkspace />,
+    'pdf-to-jpg': <PdfToJpgWorkspace />,
+    'merge-images': <MergeImagesWorkspace />,
   };
   if (standalone[slug]) {
     return (

@@ -23,6 +23,8 @@ const INPUT = {
   'webp-to-jpg': [S('photo.webp')], 'webp-to-png': [S('photo.webp')],
   'svg-to-png': [S('shape.svg')], 'favicon-generator': [S('photo.png')],
   'bulk-image-compressor': [S('photo.jpg'), S('photo2.png')], 'bulk-image-resizer': [S('photo.jpg'), S('photo2.png')],
+  'heic-to-jpg': [S('photo.heic')], 'heic-to-png': [S('photo.heic')], 'pdf-to-jpg': [S('doc.pdf')],
+  'jpg-to-pdf': [S('photo.jpg'), S('photo2.png')], 'merge-images': [S('photo.jpg'), S('photo2.png')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -124,6 +126,9 @@ for (const slug of list) {
     r.loadedAxe = await runAxe();
     r.extras = await extras();
     r.kbd = await keyboardWalk();
+    // Long translated labels can push the masthead past a laptop-width screen
+    await viewport(1280, 800, false); await sleep(400);
+    r.overflow1280 = await ev('document.documentElement.scrollWidth - innerWidth');
     await viewport(390, 844, true); await sleep(600);
     r.smallTargetsMobile = await smallTargets();
     await viewport(320, 700, true); await sleep(600);
@@ -131,11 +136,11 @@ for (const slug of list) {
     await send('Page.captureScreenshot', { format: 'png' }).then((s) => writeFileSync(join(OUT, `m-${slug}.png`), Buffer.from(s.result.data, 'base64')));
   } catch (err) { r.error = String(err).slice(0, 300); }
   const noRing = (r.kbd?.stops || []).filter((s) => !s.ring);
-  console.log(`${slug.padEnd(26)} axe empty ${r.emptyAxe?.length ?? '?'} loaded ${r.loadedAxe?.length ?? '?'} | stops ${r.kbd?.stops.length ?? '?'} noRing ${noRing.length}${r.kbd?.trap ? ' TRAP ' + r.kbd.trap : ''} | small ${r.smallTargetsMobile?.length ?? '?'} | reflow ${r.reflow320?.scrollWidth ?? '?'} | canvas unnamed ${r.extras?.unnamedCanvas ?? '?'}/${r.extras?.canvases ?? '?'} live ${r.extras?.live ?? '?'}${r.error ? ' ERR ' + r.error : ''}`);
+  console.log(`${slug.padEnd(26)} axe empty ${r.emptyAxe?.length ?? '?'} loaded ${r.loadedAxe?.length ?? '?'} | stops ${r.kbd?.stops.length ?? '?'} noRing ${noRing.length}${r.kbd?.trap ? ' TRAP ' + r.kbd.trap : ''} | small ${r.smallTargetsMobile?.length ?? '?'} | reflow ${r.reflow320?.scrollWidth ?? '?'}${r.overflow1280 > 0 ? ' DESKTOP-OVERFLOW ' + r.overflow1280 : ''} | canvas unnamed ${r.extras?.unnamedCanvas ?? '?'}/${r.extras?.canvases ?? '?'} live ${r.extras?.live ?? '?'}${r.error ? ' ERR ' + r.error : ''}`);
   report.push(r);
 }
 writeFileSync(join(OUT, ONLY ? 'report-partial.json' : 'report.json'), JSON.stringify(report, null, 1));
-const problems = report.filter((r) => r.error || r.emptyAxe?.length || r.loadedAxe?.length || r.kbd?.trap || r.kbd?.stops.some((s) => !s.ring) || r.smallTargetsMobile?.length || r.reflow320?.scrollWidth > 320 || r.extras?.unnamedCanvas);
+const problems = report.filter((r) => r.error || r.emptyAxe?.length || r.loadedAxe?.length || r.kbd?.trap || r.kbd?.stops.some((s) => !s.ring) || r.smallTargetsMobile?.length || r.reflow320?.scrollWidth > 320 || r.overflow1280 > 0 || r.extras?.unnamedCanvas);
 console.log(problems.length ? `
 ${problems.length} tool(s) need attention; details in .a11y-report/` : `
 All ${report.length} tools pass.`);

@@ -2604,4 +2604,483 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "compress-image-to-kb": {
+    name: "Resmi KB'a Sıkıştırma",
+    shortName: "KB'a Sıkıştır",
+    tagline: "Bir fotoğrafı çevrimiçi formlar için 20 KB, 50 KB veya 100 KB gibi kesin bir boyutun altına indirin. İşlem cihazınızda çalışır.",
+    intro:
+      "Birçok başvuru ve yükleme formu yalnızca 20 KB veya 50 KB gibi sabit bir boyutun altındaki fotoğrafları kabul eder; sıradan bir telefon fotoğrafı ise bunun kat kat üzerindedir. Resmi KB'a Sıkıştırma aracı, dosyayı seçtiğiniz sınırın altına indirir. Sınıra sığan en iyi kaliteyi bulana kadar kalite seviyelerini dener ve fotoğrafın ölçülerini yalnızca en düşük kalitede bile dosya fazla büyük kalacaksa küçültür. 35 × 45 mm pasaport fotoğrafı gibi kesin ölçüler de belirleyebilirsiniz; fotoğraf bu ölçüleri dolduracak şekilde ortadan kırpılır. Her şey tarayıcınızda gerçekleşir, bu yüzden kendi fotoğraflarınız ve belgelerinizin fotoğrafları asla yüklenmez.",
+    seoTitle: "Fotoğraf Boyutu Küçültme – 20 KB, 50 KB, 100 KB",
+    seoDescription:
+      "Fotoğraf boyutu 20 KB küçültme: resmi çevrimiçi formlar için 20 KB, 50 KB, 100 KB veya istediğiniz boyutun altına indirin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "fotoğraf boyutu 20 kb küçültme",
+      "resmi 50 kb yapma",
+      "fotoğraf 100 kb küçültme",
+      "resim boyutu kb küçültme",
+      "fotoğraf kb düşürme",
+      "jpg 200 kb küçültme",
+      "vesikalık fotoğraf kb küçültme",
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Bir JPG, PNG, WebP veya iPhone HEIC fotoğrafı bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Boyut sınırını seçin",
+        description: "10 KB ile 1 MB arasında bir değer seçin veya formunuzun istediği tam sınırı yazın.",
+      },
+      {
+        title: "Gerekirse ölçüleri ayarlayın",
+        description:
+          "Orijinal ölçüleri koruyun ya da pasaport fotoğrafı, 2 × 2 inç kare veya özel bir genişlik ve yükseklik seçin.",
+      },
+      {
+        title: "İndirin",
+        description: "Sonucun sınırın altında olduğunu belirttiğini kontrol edin, ardından JPG veya WebP dosyasını indirin.",
+      },
+    ],
+    features: [
+      {
+        title: "Her zaman sınırın altında",
+        description:
+          "Araç oluşturduğu gerçek dosyayı ölçer; bu yüzden indirdiğiniz dosya seçtiğiniz boyuta yalnızca yakın değil, ondan küçüktür.",
+      },
+      {
+        title: "Sığan en iyi kalite",
+        description: "Sınıra sığan en yüksek kaliteyi korur ve ölçüleri yalnızca gerektiğinde küçültür.",
+      },
+      {
+        title: "Pasaport ve özel ölçüler",
+        description:
+          "35 × 45 mm pasaport fotoğrafları ve 2 × 2 inç fotoğraflar için hazır ayarlar ya da ihtiyacınız olan her genişlik ve yükseklik.",
+      },
+      {
+        title: "Tasarımı gereği gizli",
+        description:
+          "Fotoğrafınız tarayıcınızda işlenir ve asla yüklenmez; bu, kimlik ve başvuru fotoğrafları için önemlidir.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Dosya gerçekten sınırın altında olacak mı?",
+        answer:
+          "Evet. Araç oluşturduğu gerçek dosyanın boyutunu kontrol eder ve yalnızca sınırınızın altındaysa başarı mesajı gösterir. Windows ve çoğu form gibi 1 KB'ı 1.024 bayt olarak sayar; bu yüzden bir form 1 KB'ı 1.000 bayt olarak sayarsa dosya yine sınırın altında kalır.",
+      },
+      {
+        question: "Fotoğrafımın ölçüleri neden değişti?",
+        answer:
+          "Ölçüleri koru seçiliyken araç önce kaliteyi düşürür. Dosya en düşük kalitede bile fazla büyükse genişliği ve yüksekliği sığana kadar adım adım küçültür. Sonuç mesajı bunun ne zaman olduğunu bildirir ve yeni ölçüleri gösterir.",
+      },
+      {
+        question: "Araç neden sınırıma ulaşamıyor?",
+        answer:
+          "Kesin ölçüler belirlediğinizde araç fotoğrafı küçültemez; bu yüzden büyük ölçülerle çok düşük bir sınıra ulaşmak mümkün olmayabilir. Sınırı yükseltin, daha küçük ölçüler seçin veya Ölçüleri koru seçeneğini işaretleyin.",
+      },
+      {
+        question: "Formum hangi boyut ve formatı istiyor?",
+        answer:
+          "Her form kendi kurallarını belirler. Azami dosya boyutu, piksel ya da milimetre cinsinden genişlik ve yükseklik ve format için formun talimatlarını okuyun, ardından aynı değerleri burada ayarlayın. JPG neredeyse her yerde kabul edilir.",
+      },
+      {
+        question: "Sıkıştırma kaliteyi düşürür mü?",
+        answer:
+          "Bir fotoğraf çok küçültüldüğünde her zaman biraz kalite kaybolur, ama araç sınırın izin verdiği kadarını korur. Yüzler için 30 KB veya üzeri bir sınır, pasaport fotoğrafı ölçülerinde genellikle temiz görünür.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer:
+          "Hayır. Fotoğraf cihazınızda tarayıcınız tarafından sıkıştırılır. Hiçbir şey bir sunucuya gönderilmez; bu yüzden kimlik fotoğrafları ve belgelerle güvenle kullanabilirsiniz.",
+      },
+    ],
+  },
+  "heic-to-jpg": {
+    name: "HEIC'ten JPG'ye",
+    shortName: "HEIC → JPG",
+    tagline: "iPhone HEIC fotoğraflarını JPG'ye dönüştürün; böylece her bilgisayarda, telefonda ve web sitesinde açılsınlar. Dönüştürme cihazınızda çalışır.",
+    intro:
+      "iPhone'lar ve birçok yeni telefon fotoğrafları, daha küçük dosyalarda iyi kalite sunan HEIC formatında kaydeder. Ancak birçok Windows bilgisayar, eski uygulama ve yükleme formu bu formatı açamaz. HEIC'ten JPG'ye aracı, fotoğrafı neredeyse her yerde çalışan standart bir JPG'ye dönüştürür. Fotoğraf tarayıcınızın içinde çözülür ve dönüştürülür, bu yüzden cihazınızdan hiç çıkmaz; dönüştürülen JPG de orijinalde saklanan konum, kamera ve tarih bilgilerini içermez.",
+    seoTitle: "HEIC JPG Dönüştürme – Ücretsiz, Yükleme Yok",
+    seoDescription:
+      "HEIC JPG dönüştürme tarayıcınızda: iPhone fotoğraflarını Windows, Mac, Android ve iPhone'da JPG'ye çevirin. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "heic jpg dönüştürme",
+      "heic'i jpg'ye çevirme",
+      "iphone fotoğrafını jpg yapma",
+      "heic dönüştürücü",
+      "heic jpeg çevirme",
+      "windows'ta heic açma",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC fotoğrafınızı ekleyin",
+        description: "iPhone'unuzdan veya bilgisayarınızdan bir .heic ya da .heif dosyası bırakın, seçin veya yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi bekleyin",
+        description: "Tarayıcınız fotoğrafı çözer. Büyük fotoğraflar birkaç saniye sürebilir.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "Dönüştürülen fotoğrafı kaydedin. Her fotoğraf görüntüleyicide, tarayıcıda ve yükleme formunda açılır.",
+      },
+    ],
+    features: [
+      {
+        title: "Her yerde çalışır",
+        description: "JPG; Windows, Mac ve Android'de, her tarayıcıda ve neredeyse her web sitesinde açılır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Fotoğraf cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+      {
+        title: "Konum bilgisi yok",
+        description: "Orijinaldeki GPS konumu, kamera bilgileri ve tarihler JPG'ye kopyalanmaz.",
+      },
+      {
+        title: "Düzenlemeye devam edin",
+        description: "Dönüştürülen fotoğrafı kırpmak, boyutlandırmak veya sıkıştırmak için doğrudan ilgili araca gönderin.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIC dosyası nedir?",
+        answer:
+          "HEIC (High Efficiency Image Container), iPhone'ların iOS 11'den beri varsayılan olarak kullandığı fotoğraf formatıdır. Fotoğrafları benzer kalitedeki bir JPG'nin yaklaşık yarısı kadar yerde saklar, ancak birçok bilgisayar ve web sitesi hâlâ bu formatı açamaz.",
+      },
+      {
+        question: "JPG aynı görünecek mi?",
+        answer:
+          "Evet, normal görüntülemede. JPG yüksek kalitede kaydedilir. JPG dosyaları genellikle HEIC orijinalinden büyüktür, çünkü JPG sıkıştırması daha az verimlidir.",
+      },
+      {
+        question: "Birden fazla HEIC fotoğrafı aynı anda dönüştürebilir miyim?",
+        answer:
+          "Bu araç fotoğrafları tek tek dönüştürür. Tek bir HEIC dosyası seri çekim gibi birden fazla resim içeriyorsa ilk resim dönüştürülür.",
+      },
+      {
+        question: "iPhone'umun JPG fotoğraf çekmesini nasıl sağlarım?",
+        answer:
+          "iPhone'da Ayarlar'ı, ardından Kamera'yı, sonra Biçimler'i açın ve En Uyumlu'yu seçin. Yeni fotoğraflar artık JPG olarak kaydedilir. Daha önce çektiğiniz fotoğraflar HEIC olarak kalır.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. HEIC çözücü tarayıcınızda çalışır, bu yüzden fotoğraf cihazınızda kalır.",
+      },
+    ],
+  },
+  "heic-to-png": {
+    name: "HEIC'ten PNG'ye",
+    shortName: "HEIC → PNG",
+    tagline: "iPhone HEIC fotoğraflarını düzenleme ve tasarım işleri için kayıpsız PNG'ye dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro:
+      "HEIC, iPhone'ların varsayılan fotoğraf formatıdır ve birçok tasarım aracı, eski uygulama ve web sitesi onu açamaz. HEIC'ten PNG'ye aracı, fotoğrafı kayıpsız bir format olan PNG'ye dönüştürür; böylece düzenleyip yeniden kaydettiğinizde ek ayrıntı kaybolmaz. Bu da onu rötuşlayacağınız, bir tasarıma yerleştireceğiniz veya dekupe edeceğiniz fotoğraflar için iyi bir seçim yapar. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden fotoğraf cihazınızdan hiç çıkmaz. Paylaşmak veya yüklemek için HEIC'ten JPG'ye aracı çok daha küçük dosyalar verir.",
+    seoTitle: "HEIC PNG Dönüştürme – Ücretsiz ve Kayıpsız",
+    seoDescription:
+      "HEIC PNG dönüştürme tarayıcınızda: iPhone fotoğraflarını düzenleme ve tasarım için kayıpsız PNG'ye çevirin. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "heic png dönüştürme",
+      "heic'i png'ye çevirme",
+      "iphone fotoğrafını png yapma",
+      "heic png dönüştürücü",
+      "heif png çevirme",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC fotoğrafınızı ekleyin",
+        description: "Bir .heic veya .heif dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi bekleyin",
+        description: "Tarayıcınız fotoğrafı cihazınızda çözer.",
+      },
+      {
+        title: "PNG'yi indirin",
+        description: "Kayıpsız PNG'yi kaydedin ve herhangi bir düzenleyicide veya tasarım aracında açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Kayıpsız çıktı",
+        description:
+          "PNG, çözülen fotoğrafın her pikselini korur; bu yüzden tekrar tekrar düzenlemek sıkıştırma bozulmaları eklemez.",
+      },
+      {
+        title: "Her düzenleyicide açılır",
+        description: "PNG; Photoshop, GIMP, Figma, Canva, Office ve tüm tarayıcılarda çalışır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Fotoğraf cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+      {
+        title: "Konum bilgisi yok",
+        description: "Orijinaldeki GPS konumu ve kamera bilgileri PNG'ye kopyalanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG mi JPG mi: hangisini seçmeliyim?",
+        answer:
+          "Fotoğrafı daha sonra düzenleyecekseniz veya piksellerin birebir korunması gerekiyorsa PNG'yi seçin. Paylaşmak, e-postayla göndermek ve yükleme formları için JPG'yi seçin, çünkü fotoğrafların PNG dosyaları birkaç kat daha büyüktür.",
+      },
+      {
+        question: "PNG neden HEIC'ten çok daha büyük?",
+        answer:
+          "HEIC çok verimli, kayıplı bir sıkıştırma kullanır. PNG kayıpsızdır, bu yüzden çok daha fazla veri saklar. 2 MB'lık bir iPhone fotoğrafı 10 MB veya daha büyük bir PNG'ye dönüşebilir.",
+      },
+      {
+        question: "PNG'nin arka planı saydam mı?",
+        answer:
+          "Hayır. Fotoğraflarda saydamlık yoktur, bu yüzden PNG tamamen opaktır. Arka planı kaldırmak için sonucu Arka Plan Kaldırma aracında açın.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. HEIC çözücü tarayıcınızda çalışır, bu yüzden fotoğraf cihazınızda kalır.",
+      },
+    ],
+  },
+  "jpg-to-pdf": {
+    name: "JPG'den PDF'e",
+    shortName: "JPG → PDF",
+    tagline: "Bir veya daha fazla fotoğrafı seçtiğiniz sırayla, A4 veya Letter (ABD) sayfalarla tek bir PDF'e dönüştürün. Hiçbir şey yüklenmez.",
+    intro:
+      "JPG'den PDF'e aracı, fotoğraflarınızı her sayfada bir fotoğraf olacak şekilde tek bir PDF dosyasında toplar. Taranmış sayfaları, fişleri, notları veya kimlik fotoğraflarını tek bir belge olarak göndermenin hızlı yoludur. JPG, PNG, WebP veya iPhone HEIC resimlerini ekleyin, sıralayın ve sayfa boyutunu, yönünü ve kenar boşluklarını seçin. JPG fotoğraflar PDF'e yeniden sıkıştırılmadan yerleştirilir, bu yüzden orijinal kalitelerini korur. PDF tarayıcınız tarafından oluşturulur, bu yüzden belgeleriniz asla bir sunucuya yüklenmez.",
+    seoTitle: "JPG PDF Çevirme – Fotoğrafları Birleştirin, Ücretsiz",
+    seoDescription:
+      "JPG PDF çevirme tarayıcıda: JPG, PNG ve iPhone fotoğraflarını tek PDF yapın. Sayfaları sıralayın, A4 veya Letter (ABD) seçin. Ücretsiz, yükleme ve filigran yok.",
+    keywords: [
+      "jpg pdf çevirme",
+      "resmi pdf yapma",
+      "fotoğrafı pdf'e dönüştürme",
+      "png pdf çevirme",
+      "resimleri pdf'te birleştirme",
+      "jpg pdf dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "Resimlerinizi ekleyin",
+        description:
+          "Bir veya daha fazla JPG, PNG, WebP ya da HEIC resmi bırakın veya seçin. İstediğiniz zaman daha fazlasını ekleyebilirsiniz.",
+      },
+      {
+        title: "Sıralayın",
+        description: "Sayfaları düzenlemek için yukarı ve aşağı düğmelerini kullanın, ihtiyacınız olmayanları kaldırın.",
+      },
+      {
+        title: "Sayfa düzenini seçin",
+        description: "A4, Letter (ABD) veya her resme uyan bir sayfa seçin; ardından yönü ve kenar boşluğunu belirleyin.",
+      },
+      {
+        title: "PDF'i oluşturun",
+        description: "Her resmin kendi sayfasında olduğu tek bir PDF indirin.",
+      },
+    ],
+    features: [
+      {
+        title: "Çok sayıda resim, tek PDF",
+        description: "Cihazınızın kaldırabildiği kadar fotoğrafı tek bir belgede birleştirin.",
+      },
+      {
+        title: "Orijinal JPG kalitesi",
+        description: "JPG fotoğraflar bir kez daha sıkıştırılmadan, olduğu gibi gömülür.",
+      },
+      {
+        title: "A4, Letter (ABD) veya resme göre",
+        description: "Otomatik yönlü standart kâğıt boyutları ya da her resmin tam boyutunda sayfalar.",
+      },
+      {
+        title: "Gizli ve filigransız",
+        description: "PDF cihazınızda oluşturulur, filigran içermez ve hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kaç resim ekleyebilirim?",
+        answer:
+          "Sabit bir sınır yoktur. Çoğu cihazda onlarca telefon fotoğrafı sorunsuz çalışır; çok büyük gruplar eski telefonlarda belleği aşabilir.",
+      },
+      {
+        question: "Fotoğraflar kalite kaybeder mi?",
+        answer:
+          "JPG fotoğraflar PDF'e yeniden sıkıştırılmadan yerleştirilir, bu yüzden orijinal kalitelerini korur. PNG resimler kayıpsız kalır. WebP ve HEIC resimler önce yüksek kaliteli JPG'ye dönüştürülür, çünkü PDF bunları doğrudan saklayamaz.",
+      },
+      {
+        question: "PDF'im neden bu kadar büyük?",
+        answer:
+          "PDF, fotoğraflarınızı tam çözünürlükte içerir. Daha küçük hale getirmek için önce fotoğrafları Resim Sıkıştırma veya Resim Boyutlandırma ile küçültün, sonra buraya ekleyin.",
+      },
+      {
+        question: "Yan çekilmiş telefon fotoğrafları doğru döndürülür mü?",
+        answer:
+          "Evet. Fotoğraflar, dosyada saklanan yön bilgisi kullanılarak telefonunuzda göründükleri gibi yerleştirilir.",
+      },
+      {
+        question: "Belgem yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından oluşturulur, bu yüzden fişler, kimlikler ve özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "pdf-to-jpg": {
+    name: "PDF'ten JPG'ye",
+    shortName: "PDF → JPG",
+    tagline: "Bir PDF'in her sayfasını JPG veya PNG resim olarak kaydedin; tek tek ya da hepsini birlikte bir ZIP içinde. Hiçbir şey yüklenmez.",
+    intro:
+      "PDF'ten JPG'ye aracı, bir PDF'in sayfalarını paylaşabileceğiniz, sohbette gönderebileceğiniz, bir slayta ekleyebileceğiniz veya yalnızca resim kabul eden bir forma yükleyebileceğiniz resimlere dönüştürür. Küçük dosyalar için JPG'yi, keskin metin için PNG'yi seçin ve çözünürlüğü belirleyin: ekranlar için 72 dpi, çoğu kullanım için 150 dpi, baskı için 300 dpi. Tek bir sayfayı veya tüm sayfaları tek seferde bir ZIP dosyası olarak indirin. PDF cihazınızda tarayıcınız tarafından açılır, bu yüzden özel belgeler asla yüklenmez.",
+    seoTitle: "PDF JPG Çevirme – Tüm Sayfalar, Ücretsiz",
+    seoDescription:
+      "PDF JPG çevirme tarayıcıda: sayfaları JPG veya PNG yapın. 72, 150 ya da 300 dpi seçin, bir sayfayı veya hepsini ZIP olarak indirin. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf jpg çevirme",
+      "pdf'i resme dönüştürme",
+      "pdf jpg dönüştürme",
+      "pdf png çevirme",
+      "pdf sayfasını resim yapma",
+      "pdf'i jpg olarak kaydetme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Bir PDF dosyası bırakın veya seçin. Sayfaları önizleme olarak görünür.",
+      },
+      {
+        title: "Format ve çözünürlük seçin",
+        description: "JPG veya PNG ile 72, 150 ya da 300 dpi seçin.",
+      },
+      {
+        title: "İndirin",
+        description: "Tek bir sayfayı kaydedin veya tüm sayfaları birlikte bir ZIP dosyası olarak indirin.",
+      },
+    ],
+    features: [
+      {
+        title: "Tüm sayfalar ya da yalnızca biri",
+        description: "İhtiyacınız olan sayfayı ya da tüm sayfaları tek seferde ZIP olarak indirin.",
+      },
+      {
+        title: "Baskı kalitesinde çözünürlük",
+        description: "Keskin metin ve baskı için en fazla 300 dpi ile işleyin.",
+      },
+      {
+        title: "JPG veya PNG",
+        description: "Küçük dosyalar için JPG, net metin ve diyagramlar için PNG.",
+      },
+      {
+        title: "Özel belgeler özel kalır",
+        description: "PDF cihazınızda açılır ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hangi çözünürlüğü seçmeliyim?",
+        answer:
+          "150 dpi, paylaşımdan slaytlara kadar çoğu kullanıma uygundur. Yazdırmak veya küçük metinleri yakınlaştırmak için 300 dpi'yı, en küçük dosyalar için 72 dpi'yı seçin. Daha yüksek çözünürlükler daha uzun sürer ve daha büyük dosyalar oluşturur.",
+      },
+      {
+        question: "JPG mi PNG mi?",
+        answer:
+          "JPG çok daha küçük dosyalar verir ve fotoğraflı sayfalar için en iyisidir. PNG metni ve çizimleri kusursuz keskinlikte korur, ancak dosyalar daha büyüktür.",
+      },
+      {
+        question: "Parola korumalı bir PDF'i dönüştürebilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, korumasız bir kopyasını kaydedin ve o kopyayı deneyin.",
+      },
+      {
+        question: "Metin hâlâ seçilebilir olacak mı?",
+        answer:
+          "Hayır. Her sayfa bir resme dönüşür, bu yüzden metin seçilemez ve aranamaz. Metne ihtiyacınız varsa orijinal PDF'i saklayın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınız tarafından okunur ve işlenir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "merge-images": {
+    name: "Resim Birleştirme",
+    shortName: "Birleştir",
+    tagline: "Fotoğrafları yan yana, alt alta veya ızgara halinde, aralık ve arka plan rengiyle birleştirip tek bir resim olarak kaydedin.",
+    intro:
+      "Resim Birleştirme, birkaç resmi tek bir resimde toplar: öncesi-sonrası karşılaştırmaları için yan yana, uzun ekran görüntüleri ve adım adım kılavuzlar için alt alta, basit bir kolaj için ızgara halinde. Resimleri sıralayın, aralarındaki boşluğu ve arka plan rengini seçin; kenarların hizalanması için yüksekliklerini veya genişliklerini araç eşitlesin. Sonucu JPG, PNG veya WebP olarak kaydedin. Hepsi tarayıcınızda gerçekleşir, bu yüzden fotoğraflarınız asla yüklenmez.",
+    seoTitle: "Resim Birleştirme – Fotoğrafları Online Birleştirin",
+    seoDescription:
+      "Resim birleştirme tarayıcıda: fotoğrafları yan yana, alt alta veya ızgara halinde birleştirin. Aralık ve arka plan rengi ekleyin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "resim birleştirme",
+      "fotoğraf birleştirme",
+      "iki fotoğrafı yan yana koyma",
+      "resimleri alt alta birleştirme",
+      "kolaj yapma",
+      "fotoğrafları online birleştirme",
+    ],
+    howToSteps: [
+      {
+        title: "Resimlerinizi ekleyin",
+        description: "İki veya daha fazla JPG, PNG, WebP ya da HEIC resmi bırakın veya seçin.",
+      },
+      {
+        title: "Sıralayın",
+        description: "Sırayı belirlemek için yukarı ve aşağı düğmelerini kullanın, ihtiyacınız olmayanları kaldırın.",
+      },
+      {
+        title: "Düzeni seçin",
+        description:
+          "Yan yana, alt alta veya istediğiniz sütun sayısıyla ızgara düzenini seçin; ayrıca aralığı ve arka planı belirleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "Birleştirilmiş resmi JPG, PNG veya WebP olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Üç düzen",
+        description: "Karşılaştırmalar için yatay, ekran görüntüleri ve kılavuzlar için dikey, kolajlar için ızgara.",
+      },
+      {
+        title: "Hizalı kenarlar",
+        description: "Yükseklikleri veya genişlikleri otomatik olarak eşitleyin ya da her resmi orijinal boyutunda tutun.",
+      },
+      {
+        title: "Aralık ve arka plan",
+        description:
+          "Resimler arasındaki boşluğu ayarlayın ve istediğiniz renkle doldurun ya da PNG ve WebP'de saydam bırakın.",
+      },
+      {
+        title: "Gizli",
+        description: "Resimler cihazınızda birleştirilir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kaç resim birleştirebilirim?",
+        answer:
+          "Cihazınızın belleği yettiği sürece istediğiniz kadar. Çok büyük sonuçlar, tarayıcıların kaydedebileceği boyutun içinde kalmak için otomatik olarak küçültülür.",
+      },
+      {
+        question: "Boyutları eşitle ne işe yarar?",
+        answer:
+          "Satırda her resim aynı yüksekliğe, sütunda aynı genişliğe ölçeklenir; ızgarada ise her resim aynı boyuttaki bir hücreyi doldurur. Her resmi orijinal boyutunda tutmak için bu seçeneği kapatın.",
+      },
+      {
+        question: "Arka plan saydam olabilir mi?",
+        answer:
+          "Evet. Saydam'ı seçin ve PNG veya WebP olarak kaydedin. JPG saydamlık saklayamaz, bu yüzden onun yerine arka plan rengini kullanır.",
+      },
+      {
+        question: "Öncesi-sonrası resmi nasıl yaparım?",
+        answer:
+          "İki fotoğrafı ekleyin, Yan yana'yı seçin, Boyutları eşitle'yi açık bırakın ve küçük bir aralık ekleyin. İki resim aynı yükseklikte olur.",
+      },
+      {
+        question: "Resimlerim yükleniyor mu?",
+        answer: "Hayır. Resimler cihazınızda tarayıcınız tarafından birleştirilir.",
+      },
+    ],
+  },
 };

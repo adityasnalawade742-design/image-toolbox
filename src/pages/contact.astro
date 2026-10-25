@@ -1,0 +1,39 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+import { SITE_CONFIG } from '../config/site';
+
+const name = SITE_CONFIG.name;
+---
+
+<InfoLayout
+  title="Contact"
+  description={`Contact ${name}: report a bug, suggest a new image tool, or ask a question about privacy.`}
+  path="contact"
+>
+  <p>Questions, bug reports and ideas for new tools are all welcome.</p>
+
+  <h2>Email</h2>
+  <p>
+    <a href={`mailto:${SITE_CONFIG.contactEmail}`} class="text-[20px] font-semibold">{SITE_CONFIG.contactEmail}</a>
+  </p>
+  <p>Every message is read, but replies can take a few days.</p>
+
+  <h2>Bugs and feature requests</h2>
+  <p>
+    You can also open an issue on <a href={SITE_CONFIG.issuesUrl} rel="noopener">GitHub</a>, where you can follow progress and see
+    what others have asked for.
+  </p>
+  <p>To help fix a problem quickly, please include:</p>
+  <ul>
+    <li>the tool's name or its page address;</li>
+    <li>your device, browser and its version (for example "Android, Chrome 141");</li>
+    <li>what you did, what you expected, and what happened instead.</li>
+  </ul>
+  <p>
+    Please don't send photos that contain personal information. The tools never need your files to be fixed, and the steps are usually
+    enough.
+  </p>
+
+  <h2>Privacy questions</h2>
+  <p>See the <a href="/privacy">privacy policy</a>, or email the address above.</p>
+</InfoLayout>

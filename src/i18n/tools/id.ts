@@ -2607,4 +2607,479 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "compress-image-to-kb": {
+    name: "Kompres Gambar ke KB",
+    shortName: "Kompres ke KB",
+    tagline: "Buat foto lebih kecil dari ukuran pasti, seperti 20 KB, 50 KB, atau 100 KB, untuk formulir online. Prosesnya berjalan di perangkat Anda.",
+    intro:
+      "Banyak formulir pendaftaran dan unggahan hanya menerima foto di bawah ukuran tertentu, seperti 20 KB atau 50 KB, padahal foto HP biasa berukuran berkali-kali lipat lebih besar. Kompres Gambar ke KB membuat file lebih kecil dari batas yang Anda pilih. Alat ini mencoba beberapa tingkat kualitas sampai menemukan yang terbaik yang muat, dan baru memperkecil dimensi foto jika kualitas terendah pun masih terlalu besar. Anda juga bisa mengatur dimensi pasti, seperti pasfoto 35 × 45 mm, dan foto akan dipotong dari tengah untuk mengisinya. Semua proses berlangsung di browser Anda, jadi foto diri dan dokumen Anda tidak pernah diunggah.",
+    seoTitle: "Kompres Foto ke 20 KB, 50 KB, atau 100 KB – Gratis",
+    seoDescription:
+      "Kompres foto 20 KB, 50 KB, 100 KB, atau ukuran berapa pun untuk formulir online. Kualitas terbaik yang muat tetap terjaga. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "kompres foto 20 kb",
+      "kompres foto 50 kb",
+      "kompres foto 100 kb",
+      "mengecilkan ukuran foto kb",
+      "kompres foto 200 kb",
+      "cara mengecilkan ukuran foto",
+      "kompres pas foto",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Letakkan, pilih, atau tempel foto JPG, PNG, WebP, atau HEIC dari iPhone.",
+      },
+      {
+        title: "Pilih batas ukuran",
+        description: "Pilih 10 KB hingga 1 MB, atau ketik batas pasti yang diminta formulir Anda.",
+      },
+      {
+        title: "Atur dimensi jika perlu",
+        description:
+          "Biarkan Ukuran asli, atau pilih Pasfoto, persegi 2 × 2 inci, atau Ukuran kustom dengan lebar dan tinggi sendiri.",
+      },
+      {
+        title: "Unduh",
+        description: "Pastikan hasilnya menyatakan file sudah di bawah batas, lalu unduh JPG atau WebP.",
+      },
+    ],
+    features: [
+      {
+        title: "Selalu di bawah batas",
+        description: "Alat ini mengukur file sungguhan yang dibuatnya, jadi file yang Anda unduh lebih kecil dari ukuran pilihan Anda, bukan sekadar mendekati.",
+      },
+      {
+        title: "Kualitas terbaik yang muat",
+        description: "Kualitas tertinggi yang muat tetap dipertahankan, dan dimensi hanya diperkecil jika memang perlu.",
+      },
+      {
+        title: "Pasfoto dan ukuran kustom",
+        description: "Preset untuk pasfoto 35 × 45 mm dan foto 2 × 2 inci, atau lebar dan tinggi berapa pun yang Anda butuhkan.",
+      },
+      {
+        title: "Privat sejak awal",
+        description: "Foto Anda diproses di browser dan tidak pernah diunggah, hal penting untuk foto identitas dan foto pendaftaran.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah file benar-benar di bawah batas?",
+        answer:
+          "Ya. Alat ini memeriksa ukuran file sungguhan yang dibuatnya, dan hanya menampilkan pesan berhasil jika ukurannya di bawah batas Anda. 1 KB dihitung sebagai 1.024 byte, seperti cara Windows dan sebagian besar formulir menghitung, jadi file juga di bawah batas jika formulir menghitung 1 KB sebagai 1.000 byte.",
+      },
+      {
+        question: "Kenapa dimensi foto saya berubah?",
+        answer:
+          "Saat Ukuran asli dipilih, alat ini menurunkan kualitas terlebih dahulu. Jika file masih terlalu besar pada kualitas terendah, lebar dan tingginya diperkecil bertahap sampai muat. Pesan hasil akan memberi tahu Anda jika ini terjadi dan menampilkan ukuran barunya.",
+      },
+      {
+        question: "Kenapa batas saya tidak bisa tercapai?",
+        answer:
+          "Jika Anda mengatur dimensi pasti, alat ini tidak bisa memperkecil fotonya, jadi batas yang sangat rendah dengan dimensi besar mungkin tidak tercapai. Naikkan batasnya, pilih dimensi yang lebih kecil, atau pilih Ukuran asli.",
+      },
+      {
+        question: "Ukuran dan format apa yang dibutuhkan formulir saya?",
+        answer:
+          "Setiap formulir punya aturan sendiri. Baca petunjuknya untuk ukuran file maksimum, lebar dan tinggi dalam piksel atau milimeter, serta formatnya, lalu atur nilai yang sama di sini. JPG diterima hampir di mana saja.",
+      },
+      {
+        question: "Apakah kompresi menurunkan kualitas?",
+        answer:
+          "Sebagian kualitas selalu hilang saat foto diperkecil jauh, tetapi alat ini mempertahankan sebanyak yang diizinkan batasnya. Untuk wajah, batas 30 KB atau lebih biasanya terlihat bersih pada dimensi pasfoto.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Foto dikompres oleh browser di perangkat Anda. Tidak ada yang dikirim ke server, jadi aman dipakai untuk foto identitas dan dokumen.",
+      },
+    ],
+  },
+  "heic-to-jpg": {
+    name: "HEIC ke JPG",
+    shortName: "HEIC → JPG",
+    tagline: "Ubah foto HEIC dari iPhone ke JPG agar bisa dibuka di komputer, HP, atau situs web mana pun. Konversi berjalan di perangkat Anda.",
+    intro:
+      "iPhone dan banyak HP keluaran baru menyimpan foto sebagai HEIC, format yang menjaga kualitas tetap bagus dengan file lebih kecil. Namun, banyak komputer Windows, aplikasi lama, dan formulir unggahan tidak bisa membukanya. HEIC ke JPG mengubah foto menjadi JPG standar yang bisa dipakai hampir di mana saja. Foto didekode dan dikonversi di dalam browser Anda, jadi tidak pernah meninggalkan perangkat, dan JPG hasil konversi tidak menyertakan detail lokasi, kamera, dan tanggal yang tersimpan di file aslinya.",
+    seoTitle: "Ubah HEIC ke JPG – Gratis, Tanpa Unggah",
+    seoDescription:
+      "Ubah HEIC ke JPG langsung di browser Anda. Foto iPhone jadi JPG yang bisa dibuka di Windows, Mac, Android, dan iPhone. Gratis, privat, tidak ada yang diunggah.",
+    keywords: [
+      "heic ke jpg",
+      "ubah heic ke jpg",
+      "convert heic to jpg",
+      "foto iphone ke jpg",
+      "heic converter",
+      "cara membuka file heic di windows",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto HEIC",
+        description: "Letakkan, pilih, atau tempel file .heic atau .heif dari iPhone atau komputer Anda.",
+      },
+      {
+        title: "Tunggu pratinjau",
+        description: "Browser Anda mendekode foto. Foto besar bisa memakan waktu beberapa detik.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan foto hasil konversi. File ini bisa dibuka di penampil foto, browser, atau formulir unggahan mana pun.",
+      },
+    ],
+    features: [
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dibuka di Windows, Mac, Android, di semua browser, dan di hampir semua situs web.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Foto dikonversi di perangkat Anda dan tidak pernah diunggah.",
+      },
+      {
+        title: "Tanpa data lokasi",
+        description: "Lokasi GPS, detail kamera, dan tanggal dari file asli tidak disalin ke JPG.",
+      },
+      {
+        title: "Lanjutkan mengedit",
+        description: "Kirim foto hasil konversi langsung untuk dipotong, diubah ukurannya, atau dikompres.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apa itu file HEIC?",
+        answer:
+          "HEIC (High Efficiency Image Container) adalah format foto bawaan iPhone sejak iOS 11. Format ini menyimpan foto dengan ruang sekitar setengah dari JPG pada kualitas serupa, tetapi masih banyak komputer dan situs web yang tidak bisa membukanya.",
+      },
+      {
+        question: "Apakah JPG-nya akan terlihat sama?",
+        answer:
+          "Ya, untuk tampilan biasa. JPG disimpan dengan kualitas tinggi. File JPG biasanya lebih besar dari HEIC aslinya, karena kompresi JPG kurang efisien.",
+      },
+      {
+        question: "Bisakah saya mengonversi beberapa foto HEIC sekaligus?",
+        answer:
+          "Alat ini mengonversi satu foto sekali jalan. Jika satu file HEIC berisi beberapa gambar, seperti foto burst, gambar pertama yang dikonversi.",
+      },
+      {
+        question: "Bagaimana agar iPhone saya memotret dalam format JPG?",
+        answer:
+          "Di iPhone, buka Pengaturan, lalu Kamera, lalu Format, dan pilih Paling Kompatibel. Foto baru akan disimpan sebagai JPG. Foto yang sudah Anda ambil tetap dalam format HEIC.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Dekoder HEIC berjalan di browser Anda, jadi foto tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "heic-to-png": {
+    name: "HEIC ke PNG",
+    shortName: "HEIC → PNG",
+    tagline: "Ubah foto HEIC dari iPhone ke PNG lossless untuk keperluan edit dan desain. Konversi berjalan di perangkat Anda.",
+    intro:
+      "HEIC adalah format foto bawaan iPhone, dan banyak alat desain, aplikasi lama, dan situs web tidak bisa membukanya. HEIC ke PNG mengubah foto menjadi PNG, format lossless, jadi tidak ada detail yang hilang lagi saat Anda mengedit dan menyimpannya ulang. Karena itu, PNG cocok untuk foto yang akan Anda retus, masukkan ke desain, atau potong subjeknya. Konversi berlangsung di dalam browser Anda, jadi foto tidak pernah meninggalkan perangkat. Untuk berbagi atau mengunggah, HEIC ke JPG menghasilkan file yang jauh lebih kecil.",
+    seoTitle: "Ubah HEIC ke PNG – Gratis, Lossless",
+    seoDescription:
+      "Ubah HEIC ke PNG lossless langsung di browser Anda. Foto iPhone jadi PNG yang siap diedit dan dipakai untuk desain. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "heic ke png",
+      "ubah heic ke png",
+      "convert heic to png",
+      "foto iphone ke png",
+      "heif ke png",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto HEIC",
+        description: "Letakkan, pilih, atau tempel file .heic atau .heif.",
+      },
+      {
+        title: "Tunggu pratinjau",
+        description: "Browser Anda mendekode foto di perangkat Anda.",
+      },
+      {
+        title: "Unduh PNG",
+        description: "Simpan PNG lossless dan buka di editor atau alat desain apa pun.",
+      },
+    ],
+    features: [
+      {
+        title: "Hasil lossless",
+        description: "PNG menyimpan setiap piksel foto yang didekode, jadi mengedit berulang kali tidak menambah artefak kompresi.",
+      },
+      {
+        title: "Bisa dibuka di editor apa pun",
+        description: "PNG bisa dipakai di Photoshop, GIMP, Figma, Canva, Office, dan semua browser.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Foto dikonversi di perangkat Anda dan tidak pernah diunggah.",
+      },
+      {
+        title: "Tanpa data lokasi",
+        description: "Lokasi GPS dan detail kamera dari file asli tidak disalin ke PNG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG atau JPG: mana yang sebaiknya saya pilih?",
+        answer:
+          "Pilih PNG jika Anda akan mengedit foto lebih lanjut atau membutuhkan piksel yang persis. Pilih JPG untuk berbagi, email, dan formulir unggahan, karena file PNG untuk foto berukuran beberapa kali lebih besar.",
+      },
+      {
+        question: "Kenapa PNG jauh lebih besar dari HEIC?",
+        answer:
+          "HEIC memakai kompresi lossy yang sangat efisien. PNG bersifat lossless, jadi menyimpan jauh lebih banyak data. Foto iPhone 2 MB bisa menjadi PNG berukuran 10 MB atau lebih.",
+      },
+      {
+        question: "Apakah PNG-nya punya background transparan?",
+        answer:
+          "Tidak. Foto tidak memiliki transparansi, jadi PNG-nya sepenuhnya buram. Untuk menghapus background, buka hasilnya di Hapus Background.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Dekoder HEIC berjalan di browser Anda, jadi foto tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "jpg-to-pdf": {
+    name: "JPG ke PDF",
+    shortName: "JPG → PDF",
+    tagline: "Jadikan satu foto atau lebih sebagai satu PDF, dengan urutan pilihan Anda dan halaman A4 atau Letter. Tidak ada yang diunggah.",
+    intro:
+      "JPG ke PDF memasukkan foto-foto Anda ke dalam satu file PDF, satu foto per halaman. Inilah cara cepat mengirim halaman hasil scan, struk, catatan, atau foto identitas sebagai satu dokumen. Tambahkan gambar JPG, PNG, WebP, atau HEIC dari iPhone, urutkan, lalu pilih ukuran halaman, orientasi, dan margin. Foto JPG dimasukkan ke PDF tanpa dikompres ulang, jadi kualitas aslinya tetap terjaga. PDF dibuat oleh browser Anda, jadi dokumen Anda tidak pernah diunggah ke server.",
+    seoTitle: "JPG ke PDF – Gabungkan Foto Jadi Satu PDF, Gratis",
+    seoDescription:
+      "JPG ke PDF langsung di browser: ubah foto JPG, PNG, dan iPhone jadi satu PDF. Atur urutan halaman, pilih A4 atau Letter. Gratis, tanpa unggah, tanpa watermark.",
+    keywords: [
+      "jpg ke pdf",
+      "gambar ke pdf",
+      "ubah foto ke pdf",
+      "png ke pdf",
+      "gabungkan foto jadi pdf",
+      "convert jpg to pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih satu atau beberapa gambar JPG, PNG, WebP, atau HEIC. Anda bisa menambahkan lagi kapan saja.",
+      },
+      {
+        title: "Urutkan",
+        description: "Gunakan tombol naik dan turun untuk mengatur halaman, dan hapus yang tidak Anda perlukan.",
+      },
+      {
+        title: "Pilih tata letak halaman",
+        description: "Pilih A4, Letter, atau halaman yang Sesuai gambar, lalu orientasi dan margin.",
+      },
+      {
+        title: "Buat PDF",
+        description: "Unduh satu PDF dengan setiap gambar di halamannya sendiri.",
+      },
+    ],
+    features: [
+      {
+        title: "Banyak gambar, satu PDF",
+        description: "Gabungkan foto sebanyak yang sanggup ditangani perangkat Anda ke dalam satu dokumen.",
+      },
+      {
+        title: "Kualitas JPG asli",
+        description: "Foto JPG disematkan apa adanya, tanpa dikompres sekali lagi.",
+      },
+      {
+        title: "A4, Letter, atau sesuai gambar",
+        description: "Ukuran kertas standar dengan orientasi otomatis, atau halaman seukuran persis setiap gambar.",
+      },
+      {
+        title: "Privat dan tanpa watermark",
+        description: "PDF dibuat di perangkat Anda, tanpa watermark, dan tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Berapa banyak gambar yang bisa saya tambahkan?",
+        answer:
+          "Tidak ada batas tetap. Puluhan foto HP bisa diproses di sebagian besar perangkat; jumlah yang sangat banyak bisa kehabisan memori di HP lama.",
+      },
+      {
+        question: "Apakah kualitas foto akan turun?",
+        answer:
+          "Foto JPG dimasukkan ke PDF tanpa dikompres ulang, jadi kualitas aslinya tetap terjaga. Gambar PNG tetap lossless. Gambar WebP dan HEIC dikonversi dulu ke JPG berkualitas tinggi, karena PDF tidak bisa menyimpannya secara langsung.",
+      },
+      {
+        question: "Kenapa PDF saya besar sekali?",
+        answer:
+          "PDF berisi foto Anda dalam resolusi penuh. Untuk memperkecilnya, kecilkan dulu fotonya dengan Kompres Gambar atau Ubah Ukuran Gambar, lalu tambahkan di sini.",
+      },
+      {
+        question: "Apakah foto HP yang miring akan diputar dengan benar?",
+        answer:
+          "Ya. Foto ditempatkan sesuai tampilannya di HP Anda, menggunakan orientasi yang tersimpan di file.",
+      },
+      {
+        question: "Apakah dokumen saya diunggah?",
+        answer:
+          "Tidak. PDF dibuat oleh browser di perangkat Anda, jadi struk, kartu identitas, dan dokumen pribadi tidak pernah meninggalkan perangkat.",
+      },
+    ],
+  },
+  "pdf-to-jpg": {
+    name: "PDF ke JPG",
+    shortName: "PDF → JPG",
+    tagline: "Simpan setiap halaman PDF sebagai gambar JPG atau PNG, satu per satu atau sekaligus dalam ZIP. Tidak ada yang diunggah.",
+    intro:
+      "PDF ke JPG mengubah halaman PDF menjadi gambar yang bisa Anda posting, bagikan di chat, masukkan ke slide, atau unggah ke formulir yang hanya menerima gambar. Pilih JPG untuk file kecil atau PNG untuk teks yang tajam, lalu pilih resolusinya: 72 dpi untuk layar, 150 dpi untuk sebagian besar keperluan, atau 300 dpi untuk mencetak. Unduh satu halaman atau semua halaman sekaligus dalam file ZIP. PDF dibuka oleh browser di perangkat Anda, jadi dokumen pribadi tidak pernah diunggah.",
+    seoTitle: "PDF ke JPG – Ubah Setiap Halaman Jadi Gambar, Gratis",
+    seoDescription:
+      "Ubah PDF ke JPG atau PNG langsung di browser Anda. Pilih 72, 150, atau 300 dpi, lalu unduh satu halaman atau semuanya dalam ZIP. Gratis dan tanpa unggah file.",
+    keywords: [
+      "pdf ke jpg",
+      "pdf ke gambar",
+      "ubah pdf ke jpg",
+      "pdf ke png",
+      "convert pdf to jpg",
+      "simpan pdf sebagai jpg",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih file PDF. Halaman-halamannya muncul sebagai pratinjau.",
+      },
+      {
+        title: "Pilih format dan resolusi",
+        description: "Pilih JPG atau PNG, dan 72, 150, atau 300 dpi.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan satu halaman, atau unduh semua halaman sekaligus dalam file ZIP.",
+      },
+    ],
+    features: [
+      {
+        title: "Semua halaman atau satu saja",
+        description: "Unduh halaman yang Anda perlukan, atau semua halaman sekaligus sebagai ZIP.",
+      },
+      {
+        title: "Resolusi kualitas cetak",
+        description: "Render hingga 300 dpi untuk teks yang tajam dan siap cetak.",
+      },
+      {
+        title: "JPG atau PNG",
+        description: "JPG untuk file kecil, PNG untuk teks dan diagram yang tajam.",
+      },
+      {
+        title: "Dokumen pribadi tetap pribadi",
+        description: "PDF dibuka di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Resolusi mana yang sebaiknya saya pilih?",
+        answer:
+          "150 dpi cocok untuk sebagian besar keperluan, dari berbagi hingga slide. Pilih 300 dpi untuk mencetak atau memperbesar teks kecil, dan 72 dpi untuk file paling kecil. Resolusi yang lebih tinggi butuh waktu lebih lama dan menghasilkan file lebih besar.",
+      },
+      {
+        question: "JPG atau PNG?",
+        answer:
+          "JPG menghasilkan file yang jauh lebih kecil dan paling cocok untuk halaman berisi foto. PNG menjaga teks dan gambar garis tetap tajam sempurna, tetapi filenya lebih besar.",
+      },
+      {
+        question: "Bisakah saya mengonversi PDF yang dilindungi kata sandi?",
+        answer:
+          "Belum bisa. Jika PDF memerlukan kata sandi untuk dibuka, alat ini akan memberi tahu Anda. Buka PDF di pembaca PDF dengan kata sandinya, simpan salinan tanpa perlindungan, lalu coba salinan itu.",
+      },
+      {
+        question: "Apakah teksnya masih bisa dipilih?",
+        answer:
+          "Tidak. Setiap halaman menjadi gambar, jadi teksnya tidak bisa dipilih atau dicari. Simpan PDF aslinya jika Anda membutuhkan teksnya.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer:
+          "Tidak. PDF dibaca dan dirender oleh browser Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "merge-images": {
+    name: "Gabungkan Gambar",
+    shortName: "Gabung",
+    tagline: "Gabungkan foto berdampingan, bertumpuk, atau dalam grid, dengan jarak dan warna background, lalu simpan sebagai satu gambar.",
+    intro:
+      "Gabungkan Gambar menyatukan beberapa gambar menjadi satu: berdampingan untuk perbandingan sebelum dan sesudah, bertumpuk untuk screenshot panjang dan panduan langkah demi langkah, atau dalam grid untuk kolase sederhana. Urutkan gambar, pilih jarak di antaranya dan warna background, lalu biarkan alat ini menyamakan tinggi atau lebarnya agar tepiannya sejajar. Simpan hasilnya sebagai JPG, PNG, atau WebP. Semuanya berlangsung di browser Anda, jadi foto Anda tidak pernah diunggah.",
+    seoTitle: "Gabungkan Foto Online – Jadi Satu Gambar, Gratis",
+    seoDescription:
+      "Gabungkan foto berdampingan, bertumpuk, atau dalam grid langsung di browser Anda. Tambahkan jarak dan warna background. Gratis, privat, dan tanpa unggah file.",
+    keywords: [
+      "gabungkan foto",
+      "menggabungkan gambar",
+      "gabung foto jadi satu",
+      "menyatukan dua foto",
+      "membuat kolase foto",
+      "gabungkan gambar vertikal",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih dua atau lebih gambar JPG, PNG, WebP, atau HEIC.",
+      },
+      {
+        title: "Atur urutannya",
+        description: "Gunakan tombol naik dan turun untuk mengatur urutan, dan hapus yang tidak Anda perlukan.",
+      },
+      {
+        title: "Pilih tata letak",
+        description: "Berdampingan, Bertumpuk, atau Grid dengan jumlah kolom yang Anda mau, ditambah jarak dan background.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan gambar gabungan sebagai JPG, PNG, atau WebP.",
+      },
+    ],
+    features: [
+      {
+        title: "Tiga tata letak",
+        description: "Horizontal untuk perbandingan, vertikal untuk screenshot dan panduan, dan grid untuk kolase.",
+      },
+      {
+        title: "Tepian yang sejajar",
+        description: "Samakan tinggi atau lebar secara otomatis, atau biarkan setiap gambar dalam ukuran aslinya.",
+      },
+      {
+        title: "Jarak dan background",
+        description: "Atur jarak antargambar dan isi dengan warna apa pun, atau biarkan transparan di PNG dan WebP.",
+      },
+      {
+        title: "Privat",
+        description: "Gambar digabungkan di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Berapa banyak gambar yang bisa saya gabungkan?",
+        answer:
+          "Sebanyak yang Anda mau, selama memori perangkat Anda cukup. Hasil yang sangat besar otomatis diperkecil agar tetap dalam ukuran yang bisa disimpan browser.",
+      },
+      {
+        question: "Apa fungsi Samakan ukuran?",
+        answer:
+          "Dalam satu baris, setiap gambar diskalakan ke tinggi yang sama; dalam satu kolom, ke lebar yang sama; dalam grid, setiap gambar mengisi sel berukuran sama. Matikan untuk membiarkan setiap gambar dalam ukuran aslinya.",
+      },
+      {
+        question: "Bisakah background-nya transparan?",
+        answer:
+          "Bisa. Pilih Transparan dan simpan sebagai PNG atau WebP. JPG tidak bisa menyimpan transparansi, jadi warna background yang dipakai.",
+      },
+      {
+        question: "Bagaimana cara membuat gambar sebelum dan sesudah?",
+        answer:
+          "Tambahkan dua foto, pilih Berdampingan, biarkan Samakan ukuran tetap aktif, lalu tambahkan jarak kecil. Kedua gambar akan memiliki tinggi yang sama.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer:
+          "Tidak. Gambar digabungkan oleh browser di perangkat Anda.",
+      },
+    ],
+  },
 };

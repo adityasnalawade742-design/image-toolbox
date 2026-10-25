@@ -29,6 +29,11 @@ export const GET: APIRoute = async () => {
     });
   }
 
+  // Information pages (English only)
+  for (const page of ['about', 'contact', 'privacy', 'terms', 'accessibility']) {
+    urls.push({ loc: `${baseUrl}/${page}`, lastmod: now, changefreq: 'monthly', priority: '0.3' });
+  }
+
   // 3. Localized Homepages (8 locales)
   for (const locale of nonDefaultLocales) {
     urls.push({

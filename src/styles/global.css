@@ -102,6 +102,36 @@
 }
 
 @layer components {
+  /* Long-form prose on the information pages */
+  .prose-sheet {
+    @apply text-[17px] leading-relaxed text-body;
+  }
+  .prose-sheet > * + * {
+    margin-top: 1rem;
+  }
+  .prose-sheet h2 {
+    @apply font-condensed font-bold text-[26px] leading-tight text-ink border-b-2 border-ink pb-2;
+    margin-top: 2.5rem;
+  }
+  .prose-sheet h3 {
+    @apply text-[18px] font-semibold text-ink;
+    margin-top: 1.5rem;
+  }
+  .prose-sheet ul {
+    @apply list-disc pl-6 space-y-2;
+  }
+  .prose-sheet strong {
+    @apply font-semibold text-ink;
+  }
+  .prose-sheet a {
+    @apply text-ink underline;
+  }
+  .prose-sheet a:hover {
+    text-decoration: none;
+  }
+  .prose-sheet code {
+    @apply font-code text-[15px] text-ink bg-paper-stock px-1;
+  }
   /* Proof sheet: bright stock with a non-repro blue layout grid */
   .proof-grid {
     background-color: #ffffff;

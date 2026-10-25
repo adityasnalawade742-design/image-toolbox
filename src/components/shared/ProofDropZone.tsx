@@ -8,10 +8,12 @@ interface Props {
   /** Overrides for the default "Drop an image here" copy */
   title?: string;
   hint?: string;
+  /** Overrides the "Choose image" button text (e.g. for PDFs) */
+  buttonLabel?: string;
 }
 
 /** The empty proof sheet every tool starts from: a crop-marked, gridded drop target that is a real button */
-export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, title, hint }: Props) {
+export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, title, hint, buttonLabel }: Props) {
   const t = useT();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -53,7 +55,7 @@ export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, t
           )}
         </svg>
         <span className="text-[20px] sm:text-[22px] font-semibold text-ink">{title || t('ws.dropTitle')}</span>
-        <span className="btn-ink pointer-events-none">{multiple ? t('ws.chooseImages') : t('ws.chooseImage')}</span>
+        <span className="btn-ink pointer-events-none">{buttonLabel || (multiple ? t('ws.chooseImages') : t('ws.chooseImage'))}</span>
         <span id="proof-drop-hint" className="text-[14px] text-graphite max-w-md">{hint || t('ws.dropHint')}</span>
       </button>
       <input

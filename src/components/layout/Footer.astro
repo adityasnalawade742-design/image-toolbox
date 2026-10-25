@@ -17,6 +17,14 @@ const translatePath = useTranslatedPath(locale);
 const categoryNames = getLocalizedHomeData(locale).categoryNames;
 const locTools = getAllLocalizedTools(locale);
 const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
+// Information pages exist in English only; other languages link to them
+const infoLinks = [
+  { href: '/about', key: 'footer.about' },
+  { href: '/contact', key: 'footer.contact' },
+  { href: '/privacy', key: 'footer.privacyPolicy' },
+  { href: '/terms', key: 'footer.terms' },
+  { href: '/accessibility', key: 'footer.accessibility' },
+] as const;
 ---
 
 <footer class="mt-24 border-t border-ink bg-paper">
@@ -59,9 +67,15 @@ const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
   <div class="border-t border-pencil">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[13px] text-graphite">
       <p>© {new Date().getFullYear()} {SITE_CONFIG.name}</p>
-      <div class="flex items-center gap-5">
-        <a href={SITE_CONFIG.sourceUrl} rel="noopener" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.source')}</a>
-        <a href="/sitemap.xml" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.sitemap')}</a>
+      <div class="space-y-1 sm:text-right">
+        <ul class="flex flex-wrap items-center gap-x-5 sm:justify-end">
+          {infoLinks.map((l) => (
+            <li><a href={l.href} hreflang={locale === 'en' ? undefined : 'en'} class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t(l.key)}</a></li>
+          ))}
+          <li><a href={SITE_CONFIG.sourceUrl} rel="noopener" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.source')}</a></li>
+          <li><a href="/sitemap.xml" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.sitemap')}</a></li>
+        </ul>
+        {locale !== 'en' && <p class="text-[13px] text-graphite">{t('footer.infoInEnglish')}</p>}
       </div>
     </div>
   </div>

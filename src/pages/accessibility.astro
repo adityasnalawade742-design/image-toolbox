@@ -1,0 +1,51 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+import { SITE_CONFIG } from '../config/site';
+import { TOOLS } from '../config/tools';
+
+const name = SITE_CONFIG.name;
+---
+
+<InfoLayout
+  title="Accessibility Statement"
+  description={`${name} aims to meet WCAG 2.2 level AA. Every tool works with a keyboard, a screen reader, zoom and high-contrast mode.`}
+  path="accessibility"
+  updated="Last reviewed 25 October 2026"
+>
+  <p>
+    {name} should be usable by everyone. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA on every page
+    and in every tool.
+  </p>
+
+  <h2>What you can expect</h2>
+  <ul>
+    <li><strong>Keyboard:</strong> every tool can be used without a mouse, including picking a color from an image (arrow keys and Enter), placing censor boxes, positioning text and reordering images.</li>
+    <li><strong>Screen readers:</strong> controls have names, progress and results are announced, and image previews are labeled.</li>
+    <li><strong>Skip link:</strong> the first key press on any page offers to skip straight to the tool.</li>
+    <li><strong>Zoom and small screens:</strong> pages work at 400% zoom and on screens 320 pixels wide without sideways scrolling.</li>
+    <li><strong>Touch:</strong> buttons, sliders and links are at least 24 by 24 pixels.</li>
+    <li><strong>High contrast and motion:</strong> selected options stay visible in Windows high-contrast mode, and animations are reduced when your device asks for less motion.</li>
+    <li><strong>Languages:</strong> every tool is available in 10 languages, and each page declares its language for screen readers.</li>
+  </ul>
+
+  <h2>How we test</h2>
+  <p>
+    All {TOOLS.length} tools are checked automatically with axe-core against WCAG 2.2 A and AA, both empty and with an image loaded.
+    The same checks walk every page with the Tab key to confirm focus is always visible and never trapped, measure touch targets, and
+    test the layout at 320 pixels wide. Keyboard-only walkthroughs cover the skip link, search, language menu, color picker, censor
+    boxes and text positioning. We also check pages in high-contrast mode and with increased text spacing.
+  </p>
+
+  <h2>Known limitations</h2>
+  <ul>
+    <li>We have not yet completed a full manual review with every major screen reader. If something is hard to use with yours, please tell us.</li>
+    <li>Image previews are described by what the tool does ("Preview of your image with the current settings"), not by what the photo shows.</li>
+    <li>The page text on privacy, terms and this statement is in English only for now.</li>
+  </ul>
+
+  <h2>Feedback</h2>
+  <p>
+    If you hit a barrier, email <a href={`mailto:${SITE_CONFIG.contactEmail}`}>{SITE_CONFIG.contactEmail}</a> with the page and what
+    happened. Accessibility problems are treated as bugs and fixed first.
+  </p>
+</InfoLayout>

@@ -10,6 +10,8 @@ describe('Output Format Policy', () => {
     ['webp-to-jpg', 'image/webp', 'image/jpeg'],
     ['jpg-to-webp', 'image/jpeg', 'image/webp'],
     ['png-to-webp', 'image/png', 'image/webp'],
+    ['heic-to-jpg', 'image/heic', 'image/jpeg'],
+    ['heic-to-png', 'image/heic', 'image/png'],
   ])('%s always exports its target format, with no picker', (slug, input, expected) => {
     expect(getOutputFormatPolicy(slug, input)).toEqual({ format: expected, selectable: false });
   });

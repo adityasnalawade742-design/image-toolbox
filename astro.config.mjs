@@ -54,6 +54,12 @@ export default defineConfig({
             options: { cacheName: 'wasm-codecs', expiration: { maxEntries: 8 } },
           },
           {
+            // pdf.js fonts, character maps and decoders (PDF to JPG), cached on first use
+            urlPattern: ({ url }) => url.pathname.startsWith('/pdfjs/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'pdfjs-assets', expiration: { maxEntries: 400 } },
+          },
+          {
             // "Best quality" background removal model and runtime (IMG.LY), so it also works offline after one use
             urlPattern: ({ url }) => url.hostname === 'staticimgly.com' && url.pathname.startsWith('/@imgly/background-removal-data/'),
             handler: 'CacheFirst',

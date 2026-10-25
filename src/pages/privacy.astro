@@ -1,0 +1,120 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+import { SITE_CONFIG } from '../config/site';
+
+// The advertising section describes AdSense only once ads are actually switched on
+const adsEnabled = Boolean(import.meta.env.PUBLIC_ADSENSE_CLIENT);
+const name = SITE_CONFIG.name;
+---
+
+<InfoLayout
+  title="Privacy Policy"
+  description={`How ${name} handles your images and data: tools run in your browser, images are never uploaded, and no accounts or tracking are needed.`}
+  path="privacy"
+  updated="Last updated 25 October 2026"
+>
+  <p>
+    <strong>The short version:</strong> {name} works inside your browser. The images you open are processed on your own device and
+    are never uploaded to us. There are no accounts{adsEnabled ? '' : ', no analytics and no tracking cookies'}.
+  </p>
+
+  <h2>Who runs this site</h2>
+  <p>
+    {name} is run by {SITE_CONFIG.operator} in {SITE_CONFIG.operatorCountry}. For any privacy question, email
+    <a href={`mailto:${SITE_CONFIG.contactEmail}`}>{SITE_CONFIG.contactEmail}</a>.
+  </p>
+
+  <h2>Your images</h2>
+  <p>
+    When you open, drop or paste an image, your browser reads it into memory and every tool works on it there, using your device's
+    processor and the browser's built-in image features. The result is created on your device and saved through your browser's normal
+    download. Your images, and anything you type into a tool, are not sent to us or to anyone else, and we have no way to see them.
+    Closing the tab clears them from memory.
+  </p>
+  <p>
+    This also applies to the AI tools: the background remover downloads an AI model to your browser and runs it on your device. The
+    model comes to you; your photo does not go anywhere.
+  </p>
+
+  <h2>Information your browser sends when you visit</h2>
+  <p>
+    The site is hosted on Cloudflare. As with any website, your browser sends standard request information (your IP address, browser
+    type and the page you asked for) to deliver the pages. Cloudflare may keep this briefly for security and to keep the service
+    running; see the <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare privacy policy</a>. We do not use it
+    to identify or track you.
+  </p>
+  <p>Some features fetch files from other providers the first time you use them. These requests carry the same standard information:</p>
+  <ul>
+    <li>
+      <strong>Background remover, Fast model:</strong> the model is downloaded from Hugging Face (<code>huggingface.co</code>) and its
+      AI runtime from jsDelivr (<code>cdn.jsdelivr.net</code>).
+    </li>
+    <li>
+      <strong>Background remover, Best quality model:</strong> the model and runtime are downloaded from IMG.LY
+      (<code>staticimgly.com</code>), only after you choose to download it.
+    </li>
+  </ul>
+  <p>Fonts and every other part of the site are served from our own domain.</p>
+
+  <h2>What is stored on your device</h2>
+  <p>
+    To remember your choices, the site saves a few small values in your browser's local storage. They stay on your device and are
+    never sent to us:
+  </p>
+  <ul>
+    <li>your preferred language, and whether you dismissed the language suggestion;</li>
+    <li>which background-removal model you chose, and which models this browser has already downloaded.</li>
+  </ul>
+  <p>
+    Your browser also caches the site's files and any AI models you downloaded, so pages load faster and the tools keep working
+    offline. You can remove all of this at any time by clearing this site's data in your browser settings.
+  </p>
+
+  <h2>Advertising and cookies</h2>
+  {adsEnabled ? (
+    <>
+      <p>
+        To keep the tools free, the site shows ads from Google AdSense. Google and other third-party vendors use cookies to show ads
+        based on your previous visits to this site and other websites. Google's use of advertising cookies lets it and its partners
+        show you ads based on those visits.
+      </p>
+      <ul>
+        <li>
+          You can turn off personalized advertising in <a href="https://adssettings.google.com/" rel="noopener">Google Ads Settings</a>,
+          and opt out of other vendors' personalized ads at <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.
+        </li>
+        <li>
+          Visitors in the European Economic Area, the United Kingdom and Switzerland are asked for consent through a Google-certified
+          consent message before personalized ads are shown.
+        </li>
+        <li>
+          Learn more in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>.
+        </li>
+      </ul>
+      <p>Ads are placed between sections of the page and never receive your images.</p>
+    </>
+  ) : (
+    <p>
+      The site does not show ads and does not set cookies. If ads are added in future, this section will be updated before they appear,
+      including how to opt out.
+    </p>
+  )}
+
+  <h2>Children</h2>
+  <p>The site is not directed at children under 13, and we do not knowingly collect information from anyone.</p>
+
+  <h2>Your rights</h2>
+  <p>
+    Because we do not collect or store personal information about you, there is nothing for us to access, correct or delete. If you
+    have a question about your data under India's Digital Personal Data Protection Act, the GDPR or similar laws, email us and we will
+    answer.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new date at the top.</p>
+
+  <h2>Contact</h2>
+  <p>
+    Email <a href={`mailto:${SITE_CONFIG.contactEmail}`}>{SITE_CONFIG.contactEmail}</a>, or see the <a href="/contact">contact page</a>.
+  </p>
+</InfoLayout>

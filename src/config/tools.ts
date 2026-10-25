@@ -41,7 +41,7 @@ export const CATEGORIES: Record<ToolCategory, { name: string; description: strin
 };
 
 export const TOOLS: ToolDefinition[] = [
-  // Edit & Transform (8)
+  // Edit & Transform (9)
   {
     slug: 'crop-image',
     name: 'Crop Image',
@@ -166,8 +166,18 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp',
     popular: true,
   },
+  {
+    slug: 'merge-images',
+    name: 'Merge Images',
+    shortName: 'Merge',
+    description: 'Join photos side by side, stacked, or in a grid, with spacing and a background color, and save one image.',
+    category: 'edit-transform',
+    iconName: 'LayoutGrid',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    badge: 'Multi',
+  },
 
-  // Optimize & Compress (3)
+  // Optimize & Compress (4)
   {
     slug: 'compress-image',
     name: 'Compress Image',
@@ -175,6 +185,16 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Shrink JPG, PNG, and WebP files with a quality slider or a target file size, and see the saving before you download.',
     category: 'optimize-compress',
     iconName: 'Minimize2',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    popular: true,
+  },
+  {
+    slug: 'compress-image-to-kb',
+    name: 'Compress Image to KB',
+    shortName: 'Compress to KB',
+    description: 'Make a photo smaller than an exact size like 20 KB, 50 KB or 100 KB, for online forms and applications.',
+    category: 'optimize-compress',
+    iconName: 'Target',
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
@@ -198,7 +218,7 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
 
-  // Convert Formats (8)
+  // Convert Formats (12)
   {
     slug: 'convert-image',
     name: 'Universal Image Converter',
@@ -272,6 +292,43 @@ export const TOOLS: ToolDefinition[] = [
     category: 'convert-formats',
     iconName: 'ArrowRightLeft',
     accept: 'image/webp',
+  },
+  {
+    slug: 'heic-to-jpg',
+    name: 'HEIC to JPG',
+    shortName: 'HEIC → JPG',
+    description: 'Convert iPhone HEIC photos to JPG so they open on any computer, phone or website.',
+    category: 'convert-formats',
+    iconName: 'ArrowRightLeft',
+    accept: 'image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'heic-to-png',
+    name: 'HEIC to PNG',
+    shortName: 'HEIC → PNG',
+    description: 'Convert iPhone HEIC photos to lossless PNG for editing and design work.',
+    category: 'convert-formats',
+    iconName: 'ArrowRightLeft',
+    accept: 'image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'jpg-to-pdf',
+    name: 'JPG to PDF',
+    shortName: 'JPG → PDF',
+    description: 'Turn one or more photos into a single PDF, in the order you choose, with A4 or Letter pages.',
+    category: 'convert-formats',
+    iconName: 'FileText',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    badge: 'Multi',
+  },
+  {
+    slug: 'pdf-to-jpg',
+    name: 'PDF to JPG',
+    shortName: 'PDF → JPG',
+    description: 'Save every page of a PDF as a JPG or PNG image, one page at a time or all together in a ZIP.',
+    category: 'convert-formats',
+    iconName: 'FileImage',
+    accept: 'application/pdf,.pdf',
   },
 
   // Inspect & Utilities (3)
