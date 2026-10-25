@@ -313,7 +313,7 @@ export function CensorImageWorkspace() {
 
   const segmentClass = (selected: boolean) =>
     `min-h-[40px] px-2 text-[14px] font-semibold flex items-center justify-center gap-1.5 transition-colors ${
-      selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+      selected ? 'seg-on' : 'seg-off'
     }`;
 
   return (
@@ -335,7 +335,8 @@ export function CensorImageWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet: drawing happens on the canvas only, so the page still scrolls around it on phones */}
           <div className="min-w-0 space-y-3">
-            <div className="canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] sm:min-h-[420px] p-4 sm:p-8 select-none">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 select-none">
+              <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               <canvas
                 ref={canvasRef}
                 onMouseDown={handleMouseDown}
@@ -349,6 +350,7 @@ export function CensorImageWorkspace() {
                 aria-label={t('ctl.censor.canvasLabel')}
                 className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-none"
               />
+              </div>
             </div>
 
             {/* Job ticket */}

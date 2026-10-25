@@ -45,6 +45,20 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,webp,woff2}'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: '/',
+        // Large runtimes are cached on first use instead of precached, so every tool works offline afterwards:
+        // the AVIF encoder's WASM and the ONNX runtime used by the background remover (models are cached by transformers.js)
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/_astro/') && url.pathname.endsWith('.wasm'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'wasm-codecs', expiration: { maxEntries: 8 } },
+          },
+          {
+            urlPattern: ({ url }) => url.hostname === 'cdn.jsdelivr.net' && url.pathname.startsWith('/npm/onnxruntime-web@'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'onnx-runtime', expiration: { maxEntries: 8 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+        ],
       },
     }),
   ],

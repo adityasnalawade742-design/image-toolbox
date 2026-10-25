@@ -139,7 +139,7 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
       >
         <div
           className={`min-h-[40px] px-2.5 py-1.5 border border-ink flex items-center gap-2 transition-colors ${
-            isDragging ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+            isDragging ? 'seg-on' : 'seg-off'
           }`}
         >
           <Move className="w-4 h-4 shrink-0" aria-hidden="true" />

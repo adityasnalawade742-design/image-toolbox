@@ -256,9 +256,9 @@ export function PhotoFiltersWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet */}
           <div className="min-w-0 space-y-3">
-            <div className="canvas-checkerboard border border-ink p-4 sm:p-8 min-h-[300px] sm:min-h-[420px] flex items-center justify-center">
+            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
               {!showComparison ? (
-                <div className="relative inline-flex max-w-full max-h-[65vh]">
+                <div className="relative inline-flex max-w-full max-h-[65vh] canvas-checkerboard crop-marks">
                   <img
                     src={imgElement.src}
                     alt={t('ctl.filters.previewAlt')}
@@ -317,7 +317,7 @@ export function PhotoFiltersWorkspace() {
                     style={{ left: `${sliderPos}%` }}
                     aria-hidden="true"
                   >
-                    <span className="w-8 h-8 shrink-0 rounded-full bg-process-key text-paper border border-paper flex items-center justify-center">
+                    <span className="w-8 h-8 shrink-0 bg-paper-bright text-ink border border-ink flex items-center justify-center">
                       <ChevronsLeftRight className="w-4 h-4" />
                     </span>
                   </div>
@@ -396,7 +396,7 @@ export function PhotoFiltersWorkspace() {
                         onClick={() => applyPreset(p)}
                         className={`min-h-[40px] px-2.5 py-1.5 border text-left text-[14px] font-medium leading-tight transition-colors ${
                           activePreset === p.id
-                            ? 'bg-process-key text-paper border-process-key'
+                            ? 'seg-on border-ink'
                             : 'bg-paper-bright text-ink border-pencil hover:border-ink hover:bg-paper-stock'
                         }`}
                       >
@@ -431,7 +431,7 @@ export function PhotoFiltersWorkspace() {
                         aria-pressed={saveFormat === fmt}
                         onClick={() => setSaveFormat(fmt)}
                         className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                          saveFormat === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                          saveFormat === fmt ? 'seg-on' : 'seg-off'
                         }`}
                       >
                         {formatLabel(fmt)}

@@ -196,6 +196,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [formatSelectable, setFormatSelectable] = useState<boolean>(false);
   const [quality, setQuality] = useState<number>(85);
   const [isExporting, setIsExporting] = useState<boolean>(false);
+  // Size of the file actually produced by the last download, for the job ticket
+  const [lastExportBytes, setLastExportBytes] = useState<number | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -389,6 +391,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     bgFillColor,
   ]);
 
+  // Any change to the settings makes the last download's size stale
+  useEffect(() => {
+    setLastExportBytes(null);
+  }, [getProcessingOptions, format, quality]);
+
   // Main Debounced Canvas Rendering Pipeline
   useEffect(() => {
     const activeImg = previewImageElement || imageElement;
@@ -565,6 +572,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         setExportError(t('ws.errFormatFallback', { wanted: formatExtension(format).toUpperCase(), actual: formatExtension(actualFormat).toUpperCase() }));
       }
       downloadBlob(blob, `${filename}-processed.${formatExtension(actualFormat)}`);
+      setLastExportBytes(blob.size);
     } catch (err) {
       console.error('Export failed:', err);
       setExportError(t('ws.errExport'));
@@ -699,21 +707,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
             {/* Proof sheet */}
             <div className="min-w-0 space-y-3">
-              <div className="relative canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] sm:min-h-[420px] max-h-[640px] px-10 pt-12 pb-8 sm:px-14 overflow-hidden">
-                <div className="relative inline-flex max-w-full max-h-[540px] registration-snap is-registering">
+              <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 pt-14 pb-7 sm:px-20 sm:pt-16 sm:pb-10 overflow-hidden">
+                <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks registration-snap is-registering">
                   <canvas
                     ref={canvasRef}
                     onClick={slug.includes('color') ? handleCanvasClick : undefined}
                     onMouseMove={slug.includes('color') ? handleCanvasMouseMove : undefined}
                     onMouseLeave={slug.includes('color') ? handleCanvasMouseLeave : undefined}
-                    className={`block max-w-full max-h-[540px] object-contain ${slug.includes('color') ? 'cursor-crosshair' : ''}`}
+                    className={`block max-w-full max-h-[55vh] sm:max-h-[540px] object-contain ${slug.includes('color') ? 'cursor-crosshair' : ''}`}
                   />
                   <span key={`c${registerTick}`} className="plate plate-c" aria-hidden="true" />
                   <span key={`m${registerTick}`} className="plate plate-m" aria-hidden="true" />
                   <span key={`y${registerTick}`} className="plate plate-y" aria-hidden="true" />
 
                   {/* Live dimension lines: width above, height to the left */}
-                  <span className="absolute left-0 right-0 -top-7 h-4 pointer-events-none" aria-hidden="true">
+                  <span className="absolute left-0 right-0 -top-12 sm:-top-14 h-4 pointer-events-none" aria-hidden="true">
                     <span className="absolute inset-x-0 top-1/2 border-t border-ink" />
                     <span className="absolute left-0 top-0 bottom-0 border-l border-ink" />
                     <span className="absolute right-0 top-0 bottom-0 border-r border-ink" />
@@ -721,7 +729,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                       {canvasRef.current?.width ?? origW} px
                     </span>
                   </span>
-                  <span className="absolute top-0 bottom-0 -left-7 w-4 pointer-events-none" aria-hidden="true">
+                  <span className="hidden sm:block absolute top-0 bottom-0 -left-14 w-4 pointer-events-none" aria-hidden="true">
                     <span className="absolute inset-y-0 left-1/2 border-l border-ink" />
                     <span className="absolute top-0 left-0 right-0 border-t border-ink" />
                     <span className="absolute bottom-0 left-0 right-0 border-b border-ink" />
@@ -790,7 +798,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                     <span className="text-ink font-semibold">{outW} × {outH} px</span>
                     <span className="text-graphite">
                       {formatExtension(format).toUpperCase()}
-                      {(slug === 'compress-image' || slug === 'remove-image-metadata') && outputBytes > 0 && ` · ≈ ${formatBytes(outputBytes)}`}
+                      {lastExportBytes !== null
+                        ? ` · ${formatBytes(lastExportBytes)} · ${lastExportBytes <= fileSize ? '−' : '+'}${Math.abs(Math.round((1 - lastExportBytes / fileSize) * 100))}%`
+                        : (slug === 'compress-image' || slug === 'remove-image-metadata') && outputBytes > 0
+                          ? ` · ≈ ${formatBytes(outputBytes)}`
+                          : ''}
                     </span>
                   </span>
                 )}
@@ -997,7 +1009,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                             aria-pressed={format === fmt}
                             onClick={() => setFormat(fmt)}
                             className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                              format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                              format === fmt ? 'seg-on' : 'seg-off'
                             }`}
                           >
                             {formatExtension(fmt).toUpperCase()}

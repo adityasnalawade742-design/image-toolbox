@@ -407,7 +407,7 @@ export function BulkResizerWorkspace() {
                     disabled={isProcessing}
                     onClick={() => setMode(m.id)}
                     className={`min-h-[40px] px-1 text-[14px] font-semibold leading-tight transition-colors disabled:cursor-not-allowed ${
-                      mode === m.id ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                      mode === m.id ? 'seg-on' : 'seg-off'
                     }`}
                   >
                     {t(m.label)}
@@ -494,7 +494,7 @@ export function BulkResizerWorkspace() {
                     disabled={isProcessing}
                     onClick={() => setFormat(fmt)}
                     className={`min-h-[40px] px-1 text-[14px] font-semibold transition-colors disabled:cursor-not-allowed ${
-                      format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                      format === fmt ? 'seg-on' : 'seg-off'
                     }`}
                   >
                     {fmt === 'original' ? t('ctl.bulkResize.formatOriginal') : formatExtension(fmt).toUpperCase()}

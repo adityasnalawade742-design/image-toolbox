@@ -25,7 +25,7 @@ export function SvgToPngControls({ originalWidth, originalHeight, scale, onScale
               aria-pressed={scale === s}
               onClick={() => onScaleChange(s)}
               className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                scale === s ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                scale === s ? 'seg-on' : 'seg-off'
               }`}
               data-measure
             >

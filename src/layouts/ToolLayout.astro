@@ -78,7 +78,7 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
           </a>
         </nav>
         <h1 class="font-condensed font-bold text-[34px] sm:text-[48px] leading-[1.02] tracking-[-0.01em] text-ink">{toolName}</h1>
-        <p class="text-[17px] sm:text-[18px] text-body max-w-3xl leading-relaxed">{locContent.tagline || tool.description}</p>
+        <p class="text-[17px] sm:text-[18px] text-body max-w-[75ch] leading-relaxed text-pretty">{locContent.tagline || tool.description}</p>
       </div>
 
       <ToolWorkspace client:load slug={slug} toolName={toolName} accept={tool.accept} locale={locale} strings={workspaceStrings} nextTools={nextTools} />

@@ -7,7 +7,7 @@ interface Props {
 
 const segment = (active: boolean) =>
   `min-h-[40px] px-2 inline-flex items-center justify-center gap-2 text-[14px] font-semibold transition-colors ${
-    active ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    active ? 'seg-on' : 'seg-off'
   }`;
 
 export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: Props) {

@@ -221,8 +221,8 @@ export function ImageSplitterWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet with the cut grid */}
           <div className="min-w-0 space-y-3">
-            <div className="canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] sm:min-h-[420px] p-4 sm:p-8">
-              <div className="relative inline-flex max-w-full">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+              <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
                 <img
                   src={imgElement.src}
                   alt={t('ctl.split.previewAlt')}
@@ -306,7 +306,7 @@ export function ImageSplitterWorkspace() {
                           aria-pressed={selected}
                           onClick={() => handlePresetSelect(p)}
                           className={`min-h-[40px] px-3 flex items-center justify-between gap-3 text-left text-[14px] font-semibold transition-colors ${
-                            selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                            selected ? 'seg-on' : 'seg-off'
                           }`}
                         >
                           <span>{t(p.nameKey)}</span>
@@ -366,7 +366,7 @@ export function ImageSplitterWorkspace() {
                         aria-pressed={format === fmt}
                         onClick={() => setFormat(fmt)}
                         className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                          format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                          format === fmt ? 'seg-on' : 'seg-off'
                         }`}
                       >
                         {fmt === 'jpeg' ? 'JPG' : 'PNG'}

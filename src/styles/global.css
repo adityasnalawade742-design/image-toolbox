@@ -139,9 +139,23 @@
   .btn-rule {
     @apply inline-flex items-center justify-center gap-2 bg-paper-bright text-ink font-medium border border-ink px-3 min-h-[40px] transition-colors;
   }
-  .btn-rule:hover,
+  .btn-rule:hover {
+    @apply bg-paper-stock;
+  }
+
+  /* Selected options are marked with a heavier ink rule, never a solid fill:
+     the Download button is the only solid key-ink block on a page */
+  .seg-on,
   .btn-rule[aria-pressed='true'] {
-    @apply bg-process-key text-paper;
+    @apply bg-paper-stock text-ink font-bold;
+    outline: 2px solid #141414;
+    outline-offset: -2px;
+  }
+  .seg-off {
+    @apply bg-paper-bright text-ink;
+  }
+  .seg-off:hover {
+    @apply bg-paper-stock;
   }
 
   /* Small-caps labels for slug lines, tickets and section rules */

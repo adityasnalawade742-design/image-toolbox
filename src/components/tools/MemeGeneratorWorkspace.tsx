@@ -324,8 +324,10 @@ export function MemeGeneratorWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet */}
           <div className="min-w-0 space-y-3">
-            <div className="canvas-checkerboard border border-ink p-4 sm:p-8 min-h-[300px] sm:min-h-[420px] flex items-center justify-center">
-              <canvas ref={canvasRef} className="block max-h-[70vh] w-auto max-w-full object-contain" />
+            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
+              <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
+                <canvas ref={canvasRef} className="block max-h-[70vh] w-auto max-w-full object-contain" />
+              </div>
             </div>
 
             {/* Job ticket */}
@@ -448,7 +450,7 @@ export function MemeGeneratorWorkspace() {
                           title={t(labelKey)}
                           onClick={() => setTextAlign(value)}
                           className={`min-h-[40px] flex items-center justify-center transition-colors ${
-                            textAlign === value ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                            textAlign === value ? 'seg-on' : 'seg-off'
                           }`}
                         >
                           <Icon className="w-4 h-4" aria-hidden="true" />
@@ -540,7 +542,7 @@ export function MemeGeneratorWorkspace() {
                         aria-pressed={saveFormat === fmt}
                         onClick={() => setSaveFormat(fmt)}
                         className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                          saveFormat === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                          saveFormat === fmt ? 'seg-on' : 'seg-off'
                         }`}
                       >
                         {formatLabel(fmt)}

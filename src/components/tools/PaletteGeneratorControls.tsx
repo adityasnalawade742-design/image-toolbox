@@ -80,7 +80,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
               aria-pressed={colorCount === num}
               onClick={() => onCountChange(num)}
               className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                colorCount === num ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                colorCount === num ? 'seg-on' : 'seg-off'
               }`}
               data-measure
             >

@@ -9,7 +9,7 @@ interface Props {
 
 const segButton = (selected: boolean) =>
   `min-h-[52px] px-2.5 py-1.5 flex flex-col items-start justify-center text-left transition-colors ${
-    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    selected ? 'seg-on' : 'seg-off'
   }`;
 
 export function BorderControls({ options, onChange }: Props) {

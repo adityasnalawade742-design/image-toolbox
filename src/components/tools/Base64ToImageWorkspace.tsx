@@ -257,7 +257,7 @@ export function Base64ToImageWorkspace() {
                       aria-pressed={format === fmt}
                       onClick={() => setFormat(fmt)}
                       className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                        format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                        format === fmt ? 'seg-on' : 'seg-off'
                       }`}
                     >
                       {FORMAT_LABEL[fmt]}

@@ -13,7 +13,7 @@ interface Props {
 
 const segment = (active: boolean) =>
   `min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${
-    active ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    active ? 'seg-on' : 'seg-off'
   }`;
 
 export function CompressControls({

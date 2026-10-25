@@ -11,7 +11,7 @@ interface Props {
 
 const segButton = (selected: boolean) =>
   `min-h-[44px] px-2 flex items-center justify-center gap-2 text-[14px] font-semibold transition-colors ${
-    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    selected ? 'seg-on' : 'seg-off'
   }`;
 
 export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Props) {

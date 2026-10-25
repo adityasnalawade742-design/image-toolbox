@@ -127,11 +127,13 @@ export function RemoveBackgroundWorkspace() {
     <div className={cutout ? 'pb-20 lg:pb-0' : ''}>
       <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
         <div className="min-w-0 space-y-3">
-          <div className="relative canvas-checkerboard border border-ink flex items-center justify-center min-h-[300px] sm:min-h-[420px] p-6">
-            {sourceUrl && (showOriginal || !cutout) && (
-              <img src={sourceUrl} alt="" className={`max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
-            )}
-            <canvas ref={canvasRef} className={`max-h-[540px] max-w-full object-contain ${cutout && !showOriginal ? 'block' : 'hidden'}`} />
+          <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+            <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
+              {sourceUrl && (showOriginal || !cutout) && (
+                <img src={sourceUrl} alt="" className={`block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
+              )}
+              <canvas ref={canvasRef} className={`max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${cutout && !showOriginal ? 'block' : 'hidden'}`} />
+            </div>
 
             {isRunning && (
               <div className="absolute inset-x-0 bottom-0 bg-paper border-t border-ink px-4 py-3" role="status" aria-live="polite">
@@ -200,7 +202,7 @@ export function RemoveBackgroundWorkspace() {
                       disabled={m === 'hq' && gpu === false}
                       onClick={() => setMode(m)}
                       className={`min-h-[40px] px-2 text-[14px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
-                        mode === m ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                        mode === m ? 'seg-on' : 'seg-off'
                       }`}
                     >
                       {m === 'portrait' ? t('ctl.bg.modePortrait') : t('ctl.bg.modeHq')}
@@ -228,7 +230,7 @@ export function RemoveBackgroundWorkspace() {
                       aria-pressed={background === b}
                       onClick={() => setBackground(b)}
                       className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                        background === b ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                        background === b ? 'seg-on' : 'seg-off'
                       }`}
                     >
                       {b === 'transparent' ? t('ctl.bg.transparent') : t('ctl.bg.color')}
@@ -253,7 +255,7 @@ export function RemoveBackgroundWorkspace() {
                       aria-pressed={format === fmt}
                       onClick={() => setFormat(fmt)}
                       className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
-                        format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                        format === fmt ? 'seg-on' : 'seg-off'
                       }`}
                     >
                       {formatExtension(fmt).toUpperCase()}

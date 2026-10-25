@@ -72,7 +72,7 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
         <Search className="w-4 h-4" aria-hidden="true" />
         <span className="hidden sm:inline">{t('search.trigger')}</span>
         <span className="sr-only sm:hidden">{t('search.trigger')}</span>
-        <kbd className="hidden md:inline text-[11px] text-graphite border border-pencil px-1 leading-5">
+        <kbd className="hidden md:inline text-[12px] text-graphite border border-pencil px-1 leading-5">
           {isMac ? '⌘K' : 'Ctrl K'}
         </kbd>
       </button>

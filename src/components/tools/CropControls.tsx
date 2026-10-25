@@ -21,7 +21,7 @@ type Field = 'x' | 'y' | 'w' | 'h';
 
 const segButton = (selected: boolean) =>
   `min-h-[40px] px-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold transition-colors ${
-    selected ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+    selected ? 'seg-on' : 'seg-off'
   }`;
 
 const inputClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';

@@ -358,7 +358,7 @@ export function BulkCompressorWorkspace() {
                     disabled={isProcessing}
                     onClick={() => setFormat(fmt)}
                     className={`min-h-[40px] text-[14px] font-semibold transition-colors disabled:cursor-not-allowed ${
-                      format === fmt ? 'bg-process-key text-paper' : 'bg-paper-bright text-ink hover:bg-paper-stock'
+                      format === fmt ? 'seg-on' : 'seg-off'
                     }`}
                   >
                     {formatExtension(fmt).toUpperCase()}
