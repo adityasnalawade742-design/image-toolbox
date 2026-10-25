@@ -2604,4 +2604,485 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "compress-image-to-kb": {
+    name: "Comprimi immagine in KB",
+    shortName: "Comprimi in KB",
+    tagline: "Rendi una foto più leggera di un peso esatto, come 20 KB, 50 KB o 100 KB, per i moduli online. Funziona sul tuo dispositivo.",
+    intro:
+      "Molti moduli di domanda e di caricamento accettano solo foto sotto un peso fisso, come 20 KB o 50 KB, e una normale foto scattata col telefono pesa molte volte di più. Comprimi immagine in KB rende il file più leggero del limite che scegli. Prova diversi livelli di qualità finché trova il migliore che rientra nel limite, e riduce le dimensioni della foto solo quando anche la qualità più bassa la lascerebbe troppo pesante. Puoi anche impostare dimensioni esatte, come una foto per passaporto da 35 × 45 mm, e la foto viene ritagliata dal centro per riempirle. Tutto avviene nel tuo browser, quindi le foto di te e dei tuoi documenti non vengono mai caricate.",
+    seoTitle: "Comprimere immagine a 20 KB, 50 KB o 100 KB – Gratis",
+    seoDescription:
+      "Comprimere immagine a 20 KB, 50 KB, 100 KB o qualsiasi peso per i moduli online, con la migliore qualità possibile. Gratis, privato, nessun upload.",
+    keywords: [
+      "comprimere immagine a 20 kb",
+      "comprimere immagine a 50 kb",
+      "comprimere foto a 100 kb",
+      "ridurre peso foto in kb",
+      "ridurre kb foto",
+      "comprimere jpg a 200 kb",
+      "peso foto tessera in kb",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto",
+        description: "Trascina, scegli o incolla una foto JPG, PNG, WebP o HEIC di iPhone.",
+      },
+      {
+        title: "Scegli il limite di peso",
+        description: "Seleziona da 10 KB a 1 MB, oppure scrivi il limite esatto richiesto dal modulo.",
+      },
+      {
+        title: "Imposta le dimensioni se serve",
+        description:
+          "Mantieni le dimensioni originali, oppure scegli una foto passaporto, un quadrato di 2 × 2 pollici o larghezza e altezza personalizzate.",
+      },
+      {
+        title: "Scarica",
+        description: "Controlla che il risultato indichi che è sotto il limite, poi scarica il JPG o il WebP.",
+      },
+    ],
+    features: [
+      {
+        title: "Sempre sotto il limite",
+        description:
+          "Lo strumento misura il file reale che crea, quindi il download pesa meno del limite scelto, non solo all’incirca quanto.",
+      },
+      {
+        title: "La migliore qualità possibile",
+        description: "Mantiene la qualità più alta che rientra nel limite e riduce le dimensioni solo quando è necessario.",
+      },
+      {
+        title: "Passaporto e dimensioni personalizzate",
+        description:
+          "Preimpostazioni per foto per passaporto da 35 × 45 mm e foto da 2 × 2 pollici, oppure qualsiasi larghezza e altezza ti serva.",
+      },
+      {
+        title: "Privacy fin dalla progettazione",
+        description:
+          "La foto viene elaborata nel tuo browser e non viene mai caricata, un aspetto importante per le foto di documenti e domande.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il file sarà davvero sotto il limite?",
+        answer:
+          "Sì. Lo strumento controlla il peso del file reale che crea e mostra un messaggio di successo solo quando è sotto il tuo limite. Conta 1 KB come 1.024 byte, come fanno Windows e la maggior parte dei moduli, quindi il file è sotto il limite anche se un modulo conta 1 KB come 1.000 byte.",
+      },
+      {
+        question: "Perché sono cambiate le dimensioni della foto?",
+        answer:
+          "Con Mantieni dimensioni selezionato, lo strumento abbassa prima la qualità. Se il file è ancora troppo pesante alla qualità più bassa, riduce larghezza e altezza un passo alla volta finché rientra nel limite. Il messaggio del risultato ti avvisa quando succede e mostra le nuove dimensioni.",
+      },
+      {
+        question: "Perché non riesce a raggiungere il mio limite?",
+        answer:
+          "Quando imposti dimensioni esatte, lo strumento non può rimpicciolire la foto, quindi un limite molto basso con dimensioni grandi potrebbe essere irraggiungibile. Alza il limite, scegli dimensioni più piccole o seleziona Mantieni dimensioni.",
+      },
+      {
+        question: "Quale peso e formato richiede il mio modulo?",
+        answer:
+          "Ogni modulo ha le sue regole. Leggi le istruzioni per il peso massimo del file, la larghezza e l’altezza in pixel o millimetri e il formato, poi imposta gli stessi valori qui. Il JPG è accettato quasi ovunque.",
+      },
+      {
+        question: "La compressione riduce la qualità?",
+        answer:
+          "Quando una foto diventa molto più leggera si perde sempre un po’ di qualità, ma lo strumento ne conserva quanta il limite consente. Per i volti, un limite di 30 KB o più di solito dà un risultato pulito alle dimensioni di una foto per passaporto.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer:
+          "No. La foto viene compressa dal browser sul tuo dispositivo. Niente viene inviato a un server, quindi puoi usarlo in sicurezza con foto di documenti d’identità e altri documenti.",
+      },
+    ],
+  },
+  "heic-to-jpg": {
+    name: "Da HEIC a JPG",
+    shortName: "HEIC → JPG",
+    tagline: "Converti le foto HEIC di iPhone in JPG, così si aprono su qualsiasi computer, telefono o sito. La conversione avviene sul tuo dispositivo.",
+    intro:
+      "Gli iPhone e molti telefoni recenti salvano le foto in HEIC, un formato che mantiene una buona qualità in file più leggeri. Molti computer Windows, app meno recenti e moduli di caricamento però non riescono ad aprirlo. Da HEIC a JPG converte la foto in un JPG standard che funziona quasi ovunque. La foto viene decodificata e convertita nel tuo browser, quindi non lascia mai il tuo dispositivo, e il JPG convertito non include i dati di posizione, fotocamera e data salvati nell’originale.",
+    seoTitle: "Convertire HEIC in JPG – Gratis, senza upload",
+    seoDescription:
+      "Convertire HEIC in JPG nel browser: trasforma le foto di iPhone in JPG su Windows, Mac, Android e iPhone. Gratis, privato, niente viene caricato.",
+    keywords: [
+      "heic in jpg",
+      "convertire heic in jpg",
+      "foto iphone in jpg",
+      "convertitore heic",
+      "heic in jpeg",
+      "aprire heic su windows",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto HEIC",
+        description: "Trascina, scegli o incolla un file .heic o .heif dal tuo iPhone o computer.",
+      },
+      {
+        title: "Attendi l’anteprima",
+        description: "Il browser decodifica la foto. Le foto grandi possono richiedere qualche secondo.",
+      },
+      {
+        title: "Scarica il JPG",
+        description: "Salva la foto convertita. Si apre in qualsiasi visualizzatore di foto, browser o modulo di caricamento.",
+      },
+    ],
+    features: [
+      {
+        title: "Funziona ovunque",
+        description: "Il JPG si apre su Windows, Mac, Android, in ogni browser e su quasi tutti i siti.",
+      },
+      {
+        title: "Conversione privata",
+        description: "La foto viene convertita sul tuo dispositivo e non viene mai caricata.",
+      },
+      {
+        title: "Nessun dato di posizione",
+        description: "Posizione GPS, dati della fotocamera e date dell’originale non vengono copiati nel JPG.",
+      },
+      {
+        title: "Continua a modificare",
+        description: "Passa subito la foto convertita agli strumenti per ritagliarla, ridimensionarla o comprimerla.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Che cos’è un file HEIC?",
+        answer:
+          "HEIC (High Efficiency Image Container) è il formato che gli iPhone usano per le foto per impostazione predefinita da iOS 11. Salva le foto in circa metà dello spazio di un JPG con qualità simile, ma molti computer e siti non riescono ancora ad aprirlo.",
+      },
+      {
+        question: "Il JPG avrà lo stesso aspetto?",
+        answer:
+          "Sì, per una visione normale. Il JPG viene salvato ad alta qualità. I file JPG di solito pesano più dell’originale HEIC, perché la compressione JPG è meno efficiente.",
+      },
+      {
+        question: "Posso convertire più foto HEIC insieme?",
+        answer:
+          "Questo strumento converte una foto alla volta. Se un singolo file HEIC contiene più immagini, come una raffica, viene convertita la prima immagine.",
+      },
+      {
+        question: "Come faccio a far scattare all’iPhone foto in JPG?",
+        answer:
+          "Sull’iPhone apri Impostazioni, poi Fotocamera, poi Formati, e scegli Più compatibile. Le nuove foto vengono salvate in JPG. Le foto che hai già scattato restano in HEIC.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Il decodificatore HEIC funziona nel tuo browser, quindi la foto resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "heic-to-png": {
+    name: "Da HEIC a PNG",
+    shortName: "HEIC → PNG",
+    tagline: "Converti le foto HEIC di iPhone in PNG senza perdita, per modifiche e grafica. La conversione avviene sul tuo dispositivo.",
+    intro:
+      "HEIC è il formato che gli iPhone usano per le foto per impostazione predefinita, e molti programmi di grafica, app meno recenti e siti non riescono ad aprirlo. Da HEIC a PNG converte la foto in PNG, un formato senza perdita, così non perdi altri dettagli quando la modifichi e la salvi di nuovo. È quindi una buona scelta per le foto che ritoccherai, inserirai in un progetto grafico o scontornerai. La conversione avviene nel tuo browser, quindi la foto non lascia mai il tuo dispositivo. Per condividere o caricare, lo strumento Da HEIC a JPG produce file molto più leggeri.",
+    seoTitle: "Convertire HEIC in PNG – Gratis, senza perdita",
+    seoDescription:
+      "Convertire HEIC in PNG senza perdita nel browser, per modificare le foto di iPhone e usarle nei progetti grafici. Gratis, privato, niente viene caricato.",
+    keywords: [
+      "heic in png",
+      "convertire heic in png",
+      "foto iphone in png",
+      "convertitore heic png",
+      "heif in png",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto HEIC",
+        description: "Trascina, scegli o incolla un file .heic o .heif.",
+      },
+      {
+        title: "Attendi l’anteprima",
+        description: "Il browser decodifica la foto sul tuo dispositivo.",
+      },
+      {
+        title: "Scarica il PNG",
+        description: "Salva il PNG senza perdita e aprilo in qualsiasi editor o programma di grafica.",
+      },
+    ],
+    features: [
+      {
+        title: "Output senza perdita",
+        description:
+          "Il PNG conserva ogni pixel della foto decodificata, quindi le modifiche ripetute non aggiungono artefatti di compressione.",
+      },
+      {
+        title: "Si apre in qualsiasi editor",
+        description: "Il PNG funziona in Photoshop, GIMP, Figma, Canva, Office e in ogni browser.",
+      },
+      {
+        title: "Conversione privata",
+        description: "La foto viene convertita sul tuo dispositivo e non viene mai caricata.",
+      },
+      {
+        title: "Nessun dato di posizione",
+        description: "Posizione GPS e dati della fotocamera dell’originale non vengono copiati nel PNG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG o JPG: quale scegliere?",
+        answer:
+          "Scegli PNG se modificherai ancora la foto o ti servono i pixel esatti. Scegli JPG per condividere, inviare per email e usare nei moduli di caricamento, perché i PNG di foto pesano diverse volte di più.",
+      },
+      {
+        question: "Perché il PNG pesa molto più dell’HEIC?",
+        answer:
+          "HEIC usa una compressione con perdita molto efficiente. PNG è senza perdita, quindi memorizza molti più dati. Una foto di iPhone da 2 MB può diventare un PNG da 10 MB o più.",
+      },
+      {
+        question: "Il PNG ha lo sfondo trasparente?",
+        answer:
+          "No. Le foto non hanno trasparenza, quindi il PNG è completamente opaco. Per rimuovere lo sfondo, apri il risultato in Rimuovi sfondo.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Il decodificatore HEIC funziona nel tuo browser, quindi la foto resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "jpg-to-pdf": {
+    name: "Da JPG a PDF",
+    shortName: "JPG → PDF",
+    tagline: "Trasforma una o più foto in un unico PDF, nell’ordine che scegli, con pagine A4 o Lettera (US). Niente viene caricato.",
+    intro:
+      "Da JPG a PDF mette le tue foto in un unico file PDF, una foto per pagina. È il modo rapido per inviare pagine scansionate, ricevute, appunti o foto di documenti come un solo documento. Aggiungi immagini JPG, PNG, WebP o HEIC di iPhone, mettile in ordine e scegli formato della pagina, orientamento e margini. Le foto JPG vengono inserite nel PDF senza essere ricompresse, quindi mantengono la qualità originale. Il PDF viene creato dal tuo browser, quindi i tuoi documenti non vengono mai caricati su un server.",
+    seoTitle: "JPG in PDF – Unire foto in un PDF gratis",
+    seoDescription:
+      "JPG in PDF nel browser: converti foto JPG, PNG e di iPhone in un unico PDF. Riordina le pagine, scegli A4 o Lettera (US). Gratis, senza upload né filigrana.",
+    keywords: [
+      "jpg in pdf",
+      "immagine in pdf",
+      "convertire foto in pdf",
+      "png in pdf",
+      "unire immagini in pdf",
+      "convertitore jpg pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le immagini",
+        description:
+          "Trascina o scegli una o più immagini JPG, PNG, WebP o HEIC. Puoi aggiungerne altre in qualsiasi momento.",
+      },
+      {
+        title: "Mettile in ordine",
+        description: "Usa i pulsanti su e giù per disporre le pagine, e rimuovi quelle che non ti servono.",
+      },
+      {
+        title: "Scegli il layout della pagina",
+        description: "Scegli A4, Lettera (US) o una pagina adatta a ogni immagine, l’orientamento e il margine.",
+      },
+      {
+        title: "Crea il PDF",
+        description: "Scarica un unico PDF con ogni immagine su una pagina a sé.",
+      },
+    ],
+    features: [
+      {
+        title: "Tante immagini, un PDF",
+        description: "Unisci in un unico documento tutte le foto che il tuo dispositivo riesce a gestire.",
+      },
+      {
+        title: "Qualità JPG originale",
+        description: "Le foto JPG vengono incorporate così come sono, senza un’altra compressione.",
+      },
+      {
+        title: "A4, Lettera (US) o adatta all’immagine",
+        description:
+          "Formati carta standard con orientamento automatico, oppure pagine delle dimensioni esatte di ogni immagine.",
+      },
+      {
+        title: "Privato e senza filigrana",
+        description: "Il PDF viene creato sul tuo dispositivo, non ha filigrane e niente viene caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quante immagini posso aggiungere?",
+        answer:
+          "Non c’è un limite fisso. Decine di foto del telefono funzionano sulla maggior parte dei dispositivi; gruppi molto grandi possono esaurire la memoria sui telefoni più vecchi.",
+      },
+      {
+        question: "Le foto perderanno qualità?",
+        answer:
+          "Le foto JPG vengono inserite nel PDF senza ricompressione, quindi mantengono la qualità originale. Le immagini PNG restano senza perdita. Le immagini WebP e HEIC vengono prima convertite in JPG ad alta qualità, perché il PDF non può contenerle direttamente.",
+      },
+      {
+        question: "Perché il mio PDF è così pesante?",
+        answer:
+          "Il PDF contiene le tue foto alla massima risoluzione. Per renderlo più leggero, riduci prima le foto con Comprimi immagine o Ridimensiona immagine, poi aggiungile qui.",
+      },
+      {
+        question: "Le foto del telefono scattate di lato verranno ruotate correttamente?",
+        answer:
+          "Sì. Le foto vengono inserite come appaiono sul telefono, usando l’orientamento salvato nel file.",
+      },
+      {
+        question: "Il mio documento viene caricato?",
+        answer:
+          "No. Il PDF viene creato dal browser sul tuo dispositivo, quindi ricevute, documenti d’identità e documenti privati non lo lasciano mai.",
+      },
+    ],
+  },
+  "pdf-to-jpg": {
+    name: "Da PDF a JPG",
+    shortName: "PDF → JPG",
+    tagline: "Salva ogni pagina di un PDF come immagine JPG o PNG, una pagina alla volta o tutte insieme in uno ZIP. Niente viene caricato.",
+    intro:
+      "Da PDF a JPG trasforma le pagine di un PDF in immagini che puoi pubblicare, condividere in chat, inserire in una slide o caricare in un modulo che accetta solo immagini. Scegli JPG per file leggeri o PNG per un testo nitido, e scegli la risoluzione: 72 dpi per gli schermi, 150 dpi per la maggior parte degli usi o 300 dpi per la stampa. Scarica una singola pagina o tutte le pagine insieme in un file ZIP. Il PDF viene aperto dal browser sul tuo dispositivo, quindi i documenti privati non vengono mai caricati.",
+    seoTitle: "Convertire PDF in JPG – Tutte le pagine, gratis",
+    seoDescription:
+      "Convertire PDF in JPG o PNG nel browser. Scegli 72, 150 o 300 dpi e scarica una pagina o tutte in uno ZIP. Gratis, nessun upload.",
+    keywords: [
+      "pdf in jpg",
+      "pdf in immagine",
+      "convertire pdf in jpg",
+      "pdf in png",
+      "pagina pdf in immagine",
+      "salvare pdf come jpg",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un file PDF. Le sue pagine compaiono come anteprime.",
+      },
+      {
+        title: "Scegli formato e risoluzione",
+        description: "Scegli JPG o PNG, e 72, 150 o 300 dpi.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva una singola pagina, o scarica tutte le pagine insieme in un file ZIP.",
+      },
+    ],
+    features: [
+      {
+        title: "Tutte le pagine o una sola",
+        description: "Scarica la pagina che ti serve, o tutte le pagine insieme in uno ZIP.",
+      },
+      {
+        title: "Risoluzione da stampa",
+        description: "Rendering fino a 300 dpi per un testo nitido e per la stampa.",
+      },
+      {
+        title: "JPG o PNG",
+        description: "JPG per file leggeri, PNG per testo e diagrammi nitidi.",
+      },
+      {
+        title: "I documenti privati restano privati",
+        description: "Il PDF viene aperto sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quale risoluzione scegliere?",
+        answer:
+          "150 dpi va bene per la maggior parte degli usi, dalla condivisione alle slide. Scegli 300 dpi per stampare o per ingrandire testo piccolo, e 72 dpi per i file più leggeri. Le risoluzioni più alte richiedono più tempo e producono file più pesanti.",
+      },
+      {
+        question: "JPG o PNG?",
+        answer:
+          "Il JPG produce file molto più leggeri ed è ideale per pagine con foto. Il PNG mantiene testo e disegni al tratto perfettamente nitidi, ma i file sono più pesanti.",
+      },
+      {
+        question: "Posso convertire un PDF protetto da password?",
+        answer:
+          "Non ancora. Se un PDF richiede una password per essere aperto, lo strumento te lo dirà. Aprilo in un lettore PDF con la password, salva una copia non protetta e prova con quella copia.",
+      },
+      {
+        question: "Il testo resterà selezionabile?",
+        answer:
+          "No. Ogni pagina diventa un’immagine, quindi il testo non può essere selezionato né cercato. Conserva il PDF originale se ti serve il testo.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer:
+          "No. Il PDF viene letto e visualizzato dal tuo browser, quindi contratti, estratti conto e altri documenti privati non lasciano mai il tuo dispositivo.",
+      },
+    ],
+  },
+  "merge-images": {
+    name: "Unisci immagini",
+    shortName: "Unisci",
+    tagline: "Unisci foto affiancate, impilate o in griglia, con spaziatura e colore di sfondo, e salva un’unica immagine.",
+    intro:
+      "Unisci immagini combina più immagini in una sola: affiancate per confronti prima e dopo, impilate per screenshot lunghi e guide passo passo, oppure in griglia per un collage semplice. Metti le immagini in ordine, scegli lo spazio tra loro e il colore di sfondo, e lascia che lo strumento uniformi altezze o larghezze perché i bordi siano allineati. Salva il risultato in JPG, PNG o WebP. Tutto avviene nel tuo browser, quindi le tue foto non vengono mai caricate.",
+    seoTitle: "Unire immagini online – Combina foto gratis",
+    seoDescription:
+      "Unire foto affiancate, in verticale o in griglia nel browser. Aggiungi spaziatura e un colore di sfondo. Gratis, privato, nessun upload.",
+    keywords: [
+      "unire immagini",
+      "unire foto",
+      "combinare immagini",
+      "mettere due foto affiancate",
+      "creare collage foto",
+      "unire immagini in verticale",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le immagini",
+        description: "Trascina o scegli due o più immagini JPG, PNG, WebP o HEIC.",
+      },
+      {
+        title: "Ordinale",
+        description: "Usa i pulsanti su e giù per impostare l’ordine, e rimuovi quelle che non ti servono.",
+      },
+      {
+        title: "Scegli il layout",
+        description:
+          "Affiancate, impilate o in griglia con il numero di colonne che vuoi, più spaziatura e sfondo.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva l’immagine unita in JPG, PNG o WebP.",
+      },
+    ],
+    features: [
+      {
+        title: "Tre layout",
+        description: "Orizzontale per i confronti, verticale per screenshot e guide, e griglia per i collage.",
+      },
+      {
+        title: "Bordi allineati",
+        description:
+          "Uniforma altezze o larghezze automaticamente, oppure mantieni ogni immagine alle sue dimensioni originali.",
+      },
+      {
+        title: "Spaziatura e sfondo",
+        description:
+          "Imposta lo spazio tra le immagini e riempilo con qualsiasi colore, o lascialo trasparente in PNG e WebP.",
+      },
+      {
+        title: "Privato",
+        description: "Le immagini vengono unite sul tuo dispositivo e non vengono mai caricate.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quante immagini posso unire?",
+        answer:
+          "Quante ne vuoi, nei limiti della memoria del tuo dispositivo. I risultati molto grandi vengono ridotti automaticamente per restare entro le dimensioni che i browser possono salvare.",
+      },
+      {
+        question: "Cosa fa Uniforma dimensioni?",
+        answer:
+          "In una riga, ogni immagine viene scalata alla stessa altezza; in una colonna, alla stessa larghezza; in una griglia, ogni immagine riempie una cella delle stesse dimensioni. Disattivalo per mantenere ogni immagine alle sue dimensioni originali.",
+      },
+      {
+        question: "Lo sfondo può essere trasparente?",
+        answer:
+          "Sì. Scegli Trasparente e salva in PNG o WebP. Il JPG non supporta la trasparenza, quindi usa al suo posto il colore di sfondo.",
+      },
+      {
+        question: "Come creo un’immagine prima e dopo?",
+        answer:
+          "Aggiungi le due foto, scegli Affiancate, lascia attivo Uniforma dimensioni e aggiungi un piccolo spazio. Le due immagini avranno la stessa altezza.",
+      },
+      {
+        question: "Le mie immagini vengono caricate?",
+        answer: "No. Le immagini vengono combinate dal browser sul tuo dispositivo.",
+      },
+    ],
+  },
 };

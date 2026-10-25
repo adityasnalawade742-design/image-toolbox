@@ -16,6 +16,8 @@ const FIXED_TARGETS: Record<string, OutputFormat> = {
   'webp-to-jpg': 'image/jpeg',
   'jpg-to-webp': 'image/webp',
   'png-to-webp': 'image/webp',
+  'heic-to-jpg': 'image/jpeg',
+  'heic-to-png': 'image/png',
 };
 
 // Editors that should hand back the same kind of file they were given

@@ -1,0 +1,42 @@
+---
+// English-only information pages (privacy, terms, about, contact, accessibility): one readable column of prose.
+import BaseLayout from './BaseLayout.astro';
+import { SITE_CONFIG } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path without slashes, e.g. "privacy" */
+  path: string;
+  /** Shown under the heading, e.g. "Last updated 25 October 2026" */
+  updated?: string;
+}
+
+const { title, description, path, updated } = Astro.props;
+const canonicalUrl = `${SITE_CONFIG.url}/${path}`;
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_CONFIG.url}/` },
+    { '@type': 'ListItem', position: 2, name: title, item: canonicalUrl },
+  ],
+};
+---
+
+<BaseLayout title={`${title} | ${SITE_CONFIG.name}`} description={description} canonicalUrl={canonicalUrl} alternates={false} jsonLd={breadcrumbJsonLd}>
+  <article class="max-w-[46rem] space-y-8">
+    <header class="space-y-3">
+      <nav aria-label="Breadcrumb" class="-my-1.5 flex items-center gap-2 text-[14px] text-graphite">
+        <a href="/" class="inline-flex items-center min-h-[36px] text-ink hover:underline">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{title}</span>
+      </nav>
+      <h1 class="font-condensed font-bold text-[34px] sm:text-[48px] leading-[1.02] tracking-[-0.01em] text-ink">{title}</h1>
+      {updated && <p class="text-[14px] text-graphite" data-measure>{updated}</p>}
+    </header>
+    <div class="prose-sheet">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

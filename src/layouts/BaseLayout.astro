@@ -13,6 +13,8 @@ interface Props {
   currentSlug?: string;
   canonicalUrl?: string;
   jsonLd?: object | object[];
+  /** False for pages that exist only in English, so no hreflang alternates point at missing pages */
+  alternates?: boolean;
 }
 
 const {
@@ -21,11 +23,12 @@ const {
   currentSlug = '',
   canonicalUrl,
   jsonLd,
+  alternates = true,
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const hreflangLinks = getHreflangLinks(currentSlug, SITE_CONFIG.url);
+const hreflangLinks = alternates ? getHreflangLinks(currentSlug, SITE_CONFIG.url) : [];
 const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname}`;
 ---
 

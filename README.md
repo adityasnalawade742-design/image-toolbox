@@ -23,12 +23,15 @@
 - **Watermark Image** — Text and custom image watermarks with opacity and grid-repeat tiling.
 - **Add Border & Frames** — Solid, inset, double borders, and custom frame padding.
 - **Round Image Corners** — Precise corner radius rounding and 1-click circular avatar generator.
-- **Blur / Censor** — Interactive drag-to-censor boxes with Pixelate, Gaussian Blur, and Blackout redaction modes.
+- **Blur / Censor** — Drag or add censor boxes (with exact position and size fields) using Pixelate, Gaussian Blur, and Blackout redaction modes.
+- **Merge Images** — Join photos side by side, stacked, or in a grid, with spacing, background color, and matched sizes.
+- **Remove Background** — On-device AI: Fast (MODNet) or Best quality (IMG.LY), transparent or colored background.
 - **Meme Generator** — Impact typography and 8 viral illustrated vector templates with instant captioning.
 - **Split Image Grid** — Split images into Instagram 3×3 grids, multi-post carousels, and download as clean ZIP archives.
 
 ### 🗜️ 2. Compress & Optimize
 - **Compress Image** — Smart client-side lossy/lossless compression with target size estimator and before/after slider.
+- **Compress Image to KB** — Guaranteed under an exact limit (10 KB to 1 MB or custom), with passport and custom dimension presets.
 - **Bulk Image Compressor** — Batch-compress up to 50 images in parallel with instant ZIP packaging.
 - **Bulk Image Resizer** — Batch-scale images by dimension or percentage.
 - **Remove EXIF Metadata** — Strip GPS location, camera model, and timestamp data for privacy protection.
@@ -39,7 +42,9 @@
 - **PNG to WebP** & **JPG to WebP** (modern next-gen compression)
 - **WebP to PNG** & **WebP to JPG**
 - **SVG to PNG** (high-DPI rasterization up to 4×)
-- **Universal Convert** (convert to PNG, JPEG, or WebP)
+- **HEIC to JPG** & **HEIC to PNG** (iPhone photos)
+- **JPG to PDF** (several images, reorderable, A4 / Letter / fit) & **PDF to JPG** (72–300 dpi, single page or ZIP)
+- **Universal Convert** (convert to PNG, JPEG, WebP, or AVIF)
 
 ### 🎨 4. Color & Analysis
 - **Image Color Picker** — Live 7×7 pixel magnifying loupe, reticle crosshair, and multi-format color copying (HEX, RGB, HSL, HSV, CMYK).
@@ -57,7 +62,7 @@
 
 1. **Zero-Server Processing**: Images are processed directly within the user's browser using HTML5 Canvas 2D and WebAssembly. No files are uploaded to third-party servers.
 2. **IndexedDB Cross-Tool Cache**: High-resolution and 4K images are handed off between tools via client-side IndexedDB (`handoffStorage.ts`), bypassing browser `sessionStorage` limitations.
-3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 330 statically-generated routes.
+3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 395 statically-generated routes (38 tools in every language, plus English information pages).
 4. **Pro Desktop UX**:
    - `Ctrl+V` / `Cmd+V`: Instant paste image from clipboard.
    - `Ctrl+S` / `Cmd+S`: 1-click save/download processed image.
@@ -96,10 +101,10 @@ Visit `http://localhost:4321` in your browser.
 | :--- | :--- |
 | `npm run dev` | Starts local Astro dev server with hot-module reload |
 | `npm run check` | Runs full TypeScript and Astro template type verification |
-| `npm run build` | Builds all 330 localized static routes and prunes redundant WASM files |
+| `npm run build` | Builds every localized static route (38 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
 | `npm run preview` | Previews the production build locally |
 | `npm run deploy` | Deploys static assets and edge worker to Cloudflare Workers |
-| `npm run a11y` | Audits all 32 tools, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |
+| `npm run a11y` | Audits every tool, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |
 | `npm run a11y:keys` | Walks the keyboard-only flows: skip link, search dialog, language list, color picker, censor boxes, text position |
 
 Both a11y scripts need `npm run build && npm run preview` running (pass another address as `npm run a11y -- http://host:port`). Set `CHROME_PATH` if Chrome is not in the default Windows location. Reports go to `.a11y-report/`.

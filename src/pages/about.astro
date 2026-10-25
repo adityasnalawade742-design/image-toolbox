@@ -1,0 +1,57 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+import { SITE_CONFIG } from '../config/site';
+import { TOOLS } from '../config/tools';
+
+const name = SITE_CONFIG.name;
+const adsEnabled = Boolean(import.meta.env.PUBLIC_ADSENSE_CLIENT);
+---
+
+<InfoLayout
+  title="About"
+  description={`${name} is a free set of ${TOOLS.length} image tools that run in your browser, in 10 languages, with no uploads and no sign-up.`}
+  path="about"
+>
+  <p>
+    {name} is a free set of {TOOLS.length} image tools (crop, resize, compress, convert, remove backgrounds, make PDFs and more) that
+    work entirely in your web browser. It is available in 10 languages and needs no account.
+  </p>
+
+  <h2>Why it exists</h2>
+  <p>
+    Most online image tools upload your photo to a server to edit it. That is slow on a weak connection, and it means handing your
+    personal photos, documents and ID pictures to someone else. Modern browsers are powerful enough to do this work themselves, so
+    here every tool runs on your own device. Your images never leave it.
+  </p>
+
+  <h2>How it works</h2>
+  <ul>
+    <li><strong>In your browser:</strong> image editing uses the browser's canvas and WebAssembly, the same technology that runs games and video editors on the web.</li>
+    <li><strong>AI on your device:</strong> the background remover downloads a model once and runs it locally. Your photo is never sent anywhere.</li>
+    <li><strong>Works offline:</strong> after your first visit, the tools keep working without an internet connection.</li>
+  </ul>
+
+  <h2>Built for everyone</h2>
+  <p>
+    Every tool works on a phone and can be used with a keyboard alone, with a screen reader, at large zoom levels and in high-contrast
+    mode. Read the <a href="/accessibility">accessibility statement</a> for details.
+  </p>
+
+  <h2>Who makes it</h2>
+  <p>
+    {name} is built and maintained by {SITE_CONFIG.operator} in {SITE_CONFIG.operatorCountry}. The code is open source under the
+    AGPL-3.0 license: you can <a href={SITE_CONFIG.sourceUrl} rel="noopener">read it, check what it does, and suggest changes</a>.
+  </p>
+
+  <h2>Keeping it free</h2>
+  <p>
+    {adsEnabled
+      ? 'The tools are free. Ads between page sections help pay for hosting; they never receive your images. See the privacy policy for details.'
+      : 'The tools are free to use, with no sign-up and no watermarks.'}
+  </p>
+
+  <h2>Get in touch</h2>
+  <p>
+    Found a bug or want a tool that isn't here? <a href="/contact">Contact us</a>.
+  </p>
+</InfoLayout>
