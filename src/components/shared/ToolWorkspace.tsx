@@ -55,6 +55,15 @@ import { CompressToKbWorkspace } from '../tools/CompressToKbWorkspace';
 import { JpgToPdfWorkspace } from '../tools/JpgToPdfWorkspace';
 import { PdfToJpgWorkspace } from '../tools/PdfToJpgWorkspace';
 import { MergeImagesWorkspace } from '../tools/MergeImagesWorkspace';
+import { MergePdfWorkspace } from '../tools/pdf/MergePdfWorkspace';
+import { SplitPdfWorkspace } from '../tools/pdf/SplitPdfWorkspace';
+import { PdfPagesWorkspace } from '../tools/pdf/PdfPagesWorkspace';
+import { PageNumbersWorkspace } from '../tools/pdf/PageNumbersWorkspace';
+import { WatermarkPdfWorkspace } from '../tools/pdf/WatermarkPdfWorkspace';
+import { SignPdfWorkspace } from '../tools/pdf/SignPdfWorkspace';
+import { FillFormWorkspace } from '../tools/pdf/FillFormWorkspace';
+import { PdfMetadataWorkspace } from '../tools/pdf/PdfMetadataWorkspace';
+import { CropPdfWorkspace } from '../tools/pdf/CropPdfWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export interface NextTool {
@@ -100,6 +109,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'jpg-to-pdf': <JpgToPdfWorkspace />,
     'pdf-to-jpg': <PdfToJpgWorkspace />,
     'merge-images': <MergeImagesWorkspace />,
+    'merge-pdf': <MergePdfWorkspace />,
+    'split-pdf': <SplitPdfWorkspace />,
+    'extract-pdf-pages': <PdfPagesWorkspace mode="extract" />,
+    'organize-pdf': <PdfPagesWorkspace mode="organize" />,
+    'rotate-pdf': <PdfPagesWorkspace mode="rotate" />,
+    'add-page-numbers-pdf': <PageNumbersWorkspace />,
+    'watermark-pdf': <WatermarkPdfWorkspace />,
+    'sign-pdf': <SignPdfWorkspace />,
+    'fill-pdf-form': <FillFormWorkspace />,
+    'remove-pdf-metadata': <PdfMetadataWorkspace />,
+    'crop-pdf': <CropPdfWorkspace />,
   };
   if (standalone[slug]) {
     return (

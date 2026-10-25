@@ -3075,4 +3075,844 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "Unir PDF",
+    shortName: "Unir PDF",
+    tagline: "Combina varios archivos PDF en uno, en el orden que elijas. Los archivos se unen en tu dispositivo.",
+    intro:
+      "Unir PDF junta dos o más archivos PDF en un solo documento. Añade los archivos, ordénalos con los botones de mover, revisa la primera página de cada uno y descarga un PDF con todas las páginas seguidas. Es la forma rápida de enviar un informe con sus anexos, varias páginas escaneadas o un conjunto de facturas en un solo archivo. La unión se hace en tu navegador, así que tus documentos nunca se suben a un servidor.",
+    seoTitle: "Unir PDF online – gratis y sin subir archivos",
+    seoDescription:
+      "Unir PDF gratis: combina varios archivos PDF en uno desde tu navegador, en el orden que quieras. Privado, sin subir archivos y sin marca de agua.",
+    keywords: [
+      "unir pdf",
+      "juntar pdf",
+      "combinar pdf",
+      "unir pdf gratis",
+      "unir archivos pdf en uno",
+      "unir pdf online",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tus PDF",
+        description: "Suelta o elige dos o más archivos PDF. Puedes añadir más en cualquier momento.",
+      },
+      {
+        title: "Ordénalos",
+        description: "Usa los botones de subir y bajar para ordenar los archivos y quita los que no necesites.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda un PDF que contiene todas las páginas, archivo tras archivo.",
+      },
+    ],
+    features: [
+      {
+        title: "Tantos archivos como quieras",
+        description: "Combina tantos PDF como aguante tu dispositivo, con el total de páginas a la vista.",
+      },
+      {
+        title: "Tu orden",
+        description: "Ordena los archivos con botones que también funcionan con el teclado y con lectores de pantalla.",
+      },
+      {
+        title: "Páginas intactas",
+        description:
+          "Las páginas se copian tal cual, sin volver a comprimirlas, así que el texto sigue nítido y se puede buscar.",
+      },
+      {
+        title: "Privado y gratis",
+        description: "Los archivos se unen en tu dispositivo, sin subidas, sin registro y sin marca de agua.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Hay un límite de archivos que puedo unir?",
+        answer:
+          "No hay un límite fijo. Decenas de PDF normales funcionan en la mayoría de los dispositivos; los archivos muy grandes pueden ir lentos en móviles antiguos.",
+      },
+      {
+        question: "¿Siguen funcionando los enlaces y los marcadores?",
+        answer:
+          "Los enlaces de las páginas se conservan. La lista de marcadores (el índice del panel lateral de un lector de PDF) no se copia al archivo unido.",
+      },
+      {
+        question: "¿Unir reduce la calidad?",
+        answer:
+          "No. Las páginas se copian tal cual, así que el texto, las imágenes y los gráficos vectoriales se ven exactamente igual.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "Dividir PDF",
+    shortName: "Dividir PDF",
+    tagline: "Divide un PDF por rangos de páginas, cada pocas páginas o en páginas sueltas. Funciona en tu dispositivo.",
+    intro:
+      "Dividir PDF separa un PDF en varios más pequeños. Escribe rangos de páginas como 1-3, 5, 8- para obtener un archivo por rango, divide cada pocas páginas para cortar un escaneo largo en partes iguales o guarda cada página como un PDF propio. La herramienta muestra los archivos que obtendrás antes de descargarlos, y si son varios llegan juntos en un ZIP. La división se hace en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Dividir PDF online – por páginas o rangos, gratis",
+    seoDescription:
+      "Dividir PDF gratis: separa un PDF en varios archivos por rangos de páginas, cada N páginas o página a página, en tu navegador. Privado y sin subir nada.",
+    keywords: [
+      "dividir pdf",
+      "separar pdf",
+      "separar páginas pdf",
+      "dividir pdf gratis",
+      "dividir pdf en varios archivos",
+      "cortar pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige un PDF. Sus páginas aparecen como vistas previas.",
+      },
+      {
+        title: "Elige cómo dividir",
+        description: "Escribe rangos de páginas, elige un número de páginas por archivo o separa todas las páginas.",
+      },
+      {
+        title: "Revisa la lista",
+        description: "El panel muestra cada archivo que obtendrás y sus páginas.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda un PDF, o un ZIP si hay varios archivos.",
+      },
+    ],
+    features: [
+      {
+        title: "Tres formas de dividir",
+        description: "Rangos a medida, grupos iguales de páginas o una página por archivo.",
+      },
+      {
+        title: "Revisa antes de guardar",
+        description: "Primero se listan todos los archivos resultantes con sus números de página.",
+      },
+      {
+        title: "Una sola descarga ZIP",
+        description: "Varios archivos llegan juntos, con el nombre de sus páginas.",
+      },
+      {
+        title: "Privado",
+        description: "El PDF se divide en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cómo escribo los rangos de páginas?",
+        answer:
+          "Separa los rangos con comas. 1-3 significa las páginas 1 a 3, 5 solo la página 5 y 8- desde la página 8 hasta el final. Cada rango se convierte en un PDF propio.",
+      },
+      {
+        question: "¿Puedo obtener un PDF con solo algunas páginas?",
+        answer:
+          "Sí. Escribe un solo rango, como 2-4, para descargar solo esas páginas. Extraer páginas de PDF también te permite elegir páginas haciendo clic en ellas.",
+      },
+      {
+        question: "¿Dividir cambia las páginas?",
+        answer: "No. Las páginas se copian tal cual, así que el texto sigue nítido y se puede buscar.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "Extraer páginas de PDF",
+    shortName: "Extraer páginas",
+    tagline: "Elige las páginas que necesitas de un PDF y guárdalas como un PDF nuevo. Funciona en tu dispositivo.",
+    intro:
+      "Extraer páginas de PDF te permite elegir páginas de un PDF por sus vistas previas y guardar solo esas páginas como un documento nuevo. Es útil para enviar un capítulo de un informe largo, la página firmada de un contrato o un solo extracto de un lote. Marca las páginas que quieras, o usa Seleccionar todo y desmarca las pocas que no, y descarga. El archivo original no cambia, y todo ocurre en tu navegador.",
+    seoTitle: "Extraer páginas de un PDF – gratis, sin subirlo",
+    seoDescription:
+      "Extraer páginas de PDF gratis: elige páginas por su vista previa y guárdalas como un PDF nuevo desde tu navegador. Privado y sin subir nada.",
+    keywords: [
+      "extraer páginas pdf",
+      "extraer páginas de un pdf",
+      "sacar páginas de un pdf",
+      "separar hojas de un pdf",
+      "guardar páginas de un pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige un PDF para ver todas sus páginas.",
+      },
+      {
+        title: "Marca las páginas que quieras",
+        description: "Usa la casilla bajo cada página, o Seleccionar todo y desmarca las que no necesites.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda un PDF nuevo solo con esas páginas, en su orden original.",
+      },
+    ],
+    features: [
+      {
+        title: "Elige por vista previa",
+        description: "Ve cada página antes de elegir.",
+      },
+      {
+        title: "Apto para teclado",
+        description: "Cada página tiene una casilla con etiqueta, así que no hace falta ratón.",
+      },
+      {
+        title: "Páginas intactas",
+        description: "Las páginas elegidas se copian tal cual, con texto nítido y que se puede buscar.",
+      },
+      {
+        title: "Privado",
+        description: "Las páginas se extraen en tu dispositivo y nunca se suben.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cambia mi PDF original?",
+        answer: "No. Se crea un PDF nuevo con las páginas que elegiste; el archivo original se queda como estaba.",
+      },
+      {
+        question: "¿Puedo cambiar el orden de las páginas?",
+        answer:
+          "Las páginas extraídas mantienen su orden original. Para reordenar, girar o eliminar páginas, usa Organizar PDF.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "Organizar PDF",
+    shortName: "Organizar PDF",
+    tagline: "Reordena, gira y elimina páginas de un PDF y guarda el PDF nuevo. Funciona en tu dispositivo.",
+    intro:
+      "Organizar PDF muestra todas las páginas de un PDF para que lo pongas en orden: mueve páginas antes o después, endereza escaneos que están de lado y elimina páginas en blanco o que no quieras. Cada página tiene sus propios botones, que también funcionan con el teclado, y con el ratón puedes arrastrar las páginas a su sitio. Deshacer todos los cambios lo devuelve todo a como estaba. Cuando esté bien, descarga el PDF nuevo. Todo esto ocurre en tu navegador, así que el documento nunca se sube.",
+    seoTitle: "Organizar PDF – reordenar, girar y eliminar páginas",
+    seoDescription:
+      "Organizar PDF gratis: reordena, gira y elimina páginas de un PDF en tu navegador con vistas previas y descarga el PDF nuevo. Privado y sin subir nada.",
+    keywords: [
+      "organizar pdf",
+      "ordenar páginas pdf",
+      "reordenar páginas pdf",
+      "eliminar páginas pdf",
+      "borrar páginas de un pdf",
+      "mover páginas pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige un PDF para ver todas sus páginas.",
+      },
+      {
+        title: "Ordena las páginas",
+        description:
+          "Usa los botones bajo cada página para moverla, girarla o eliminarla, o arrastra las páginas a su sitio.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PDF reorganizado. Deshacer todos los cambios vuelve a empezar desde el original.",
+      },
+    ],
+    features: [
+      {
+        title: "Mover, girar, eliminar",
+        description:
+          "Todas las operaciones de página en una sola vista, con vistas previas que se actualizan al momento.",
+      },
+      {
+        title: "Arrastrar o botones",
+        description:
+          "Arrastra con el ratón o usa los botones, que también funcionan con el teclado y con lectores de pantalla.",
+      },
+      {
+        title: "Sin pérdida",
+        description:
+          "Las páginas se reordenan, no se vuelven a renderizar, así que el texto sigue nítido y se puede buscar.",
+      },
+      {
+        title: "Privado",
+        description: "El PDF se reorganiza en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Girar una página reduce la calidad?",
+        answer: "No. El giro se guarda como un ajuste de la página, así que no se redibuja ni se comprime nada.",
+      },
+      {
+        question: "¿Puedo deshacer un cambio?",
+        answer:
+          "Sí. Deshacer todos los cambios devuelve cada página a su posición y giro originales. Tu archivo original nunca cambia.",
+      },
+      {
+        question: "¿Puedo añadir páginas de otro PDF?",
+        answer: "Combina primero los archivos con Unir PDF y luego organiza aquí el archivo unido.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "Girar PDF",
+    shortName: "Girar PDF",
+    tagline: "Gira todas las páginas, o solo las que elijas, 90 o 180 grados. Funciona en tu dispositivo.",
+    intro:
+      "Girar PDF corrige páginas que se abren de lado o del revés, un problema habitual en documentos escaneados y fotos guardadas como PDF. Elige 90 grados a la derecha, 180 grados o 90 grados a la izquierda, y aplícalo a todas las páginas o solo a las que marques. Las vistas previas muestran el resultado antes de descargar. El giro se guarda como un ajuste de la página, así que el texto y las imágenes conservan toda su calidad, y nada sale de tu navegador.",
+    seoTitle: "Girar PDF online – rotar páginas para siempre, gratis",
+    seoDescription:
+      "Girar PDF gratis: rota todas las páginas o solo algunas 90 o 180 grados en tu navegador y guarda el cambio de forma permanente. Privado, sin subir nada.",
+    keywords: [
+      "girar pdf",
+      "rotar pdf",
+      "girar páginas pdf",
+      "rotar pdf y guardar",
+      "girar pdf permanentemente",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige un PDF para ver sus páginas.",
+      },
+      {
+        title: "Elige el giro",
+        description: "Elige 90° a la derecha, 180° o 90° a la izquierda, para todas las páginas o las que marques.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PDF con las páginas giradas de forma permanente.",
+      },
+    ],
+    features: [
+      {
+        title: "Todas o solo algunas páginas",
+        description: "Corrige un escaneo de lado sin tocar el resto.",
+      },
+      {
+        title: "Vista previa en directo",
+        description: "Las vistas previas giran a medida que eliges, antes de guardar nada.",
+      },
+      {
+        title: "Sin pérdida de calidad",
+        description: "El giro es un ajuste de la página, así que no se redibuja nada.",
+      },
+      {
+        title: "Privado",
+        description: "El PDF se gira en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿El giro se guarda de forma permanente?",
+        answer: "Sí. El PDF descargado se abre con las páginas giradas en cualquier lector de PDF.",
+      },
+      {
+        question: "¿Puedo girar páginas en ángulos distintos?",
+        answer: "Usa Organizar PDF, donde cada página tiene su propio botón de girar.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "Añadir números de página a PDF",
+    shortName: "Números de página",
+    tagline: "Numera las páginas de un PDF con la posición, el formato y el número inicial que elijas. Funciona en tu dispositivo.",
+    intro:
+      "Añadir números de página pone un número en cada página de un PDF, algo que suelen necesitar los informes, las tesis y los apuntes impresos. Elige una de seis posiciones arriba o abajo, un formato (1, 1 / N o – 1 –), el número inicial, el tamaño del texto y la distancia al borde. También puedes dejar sin número la primera página, como una portada. Una vista previa muestra cómo quedará el número. Los números se añaden en tu navegador, así que el documento nunca se sube.",
+    seoTitle: "Numerar páginas de un PDF – gratis, sin subirlo",
+    seoDescription:
+      "Numerar páginas PDF gratis: elige la posición, el formato y el número inicial en tu navegador y deja la portada sin número. Privado y sin subir nada.",
+    keywords: [
+      "numerar páginas pdf",
+      "añadir números de página pdf",
+      "poner número de página en pdf",
+      "paginar pdf",
+      "insertar números de página pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el PDF que quieres numerar.",
+      },
+      {
+        title: "Elige el estilo",
+        description: "Elige la posición, el formato, el número inicial, el tamaño y la distancia al borde.",
+      },
+      {
+        title: "Salta la portada si hace falta",
+        description: "Marca la opción para dejar la primera página sin número.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PDF numerado.",
+      },
+    ],
+    features: [
+      {
+        title: "Seis posiciones",
+        description: "Arriba o abajo, a la izquierda, al centro o a la derecha.",
+      },
+      {
+        title: "Tres formatos",
+        description: "Números simples, el estilo 1 / 12 o – 1 –.",
+      },
+      {
+        title: "Cualquier número inicial",
+        description: "Continúa la numeración de otro documento y salta una portada.",
+      },
+      {
+        title: "Privado",
+        description: "Los números se añaden en tu dispositivo; no se sube nada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo empezar por un número distinto de 1?",
+        answer: "Sí. Pon cualquier número en Empezar en, por ejemplo para continuar desde un capítulo anterior.",
+      },
+      {
+        question: "¿Los números taparán mi contenido?",
+        answer:
+          "Se colocan en el margen de la página. Si tus páginas tienen márgenes muy pequeños, elige una distancia al borde menor o un tamaño de texto más pequeño.",
+      },
+      {
+        question: "¿Por qué los números salen de lado en algunas páginas?",
+        answer:
+          "Algunos PDF guardan las páginas giradas. El número sigue la orientación guardada de la página, así que en esas páginas puede aparecer girado. Corrige antes el giro con Girar PDF u Organizar PDF.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "Marca de agua en PDF",
+    shortName: "Marca de agua PDF",
+    tagline: "Estampa un texto o un logotipo en las páginas de un PDF y arrástralo a su sitio. Funciona en tu dispositivo.",
+    intro:
+      "Marca de agua en PDF añade un sello como CONFIDENCIAL, BORRADOR, tu nombre o tu logotipo a las páginas de un PDF. Escribe el texto en cualquier idioma o elige una imagen de logotipo, ajusta su tamaño, opacidad y ángulo, y arrástralo donde quieras en la vista previa de la página, o usa los controles deslizantes de posición. Aplícalo a todas las páginas o a un rango de páginas. La marca de agua se añade en tu navegador, así que el documento nunca se sube.",
+    seoTitle: "Poner marca de agua a un PDF – texto o logotipo",
+    seoDescription:
+      "Marca de agua PDF gratis: añade un texto o un logotipo a las páginas en tu navegador, ajusta tamaño, opacidad y ángulo y arrástralo. Sin subir nada.",
+    keywords: [
+      "marca de agua pdf",
+      "poner marca de agua a un pdf",
+      "añadir marca de agua pdf",
+      "sello en pdf",
+      "poner logo en pdf",
+      "marca de agua confidencial pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el PDF que quieres marcar.",
+      },
+      {
+        title: "Crea la marca de agua",
+        description: "Escribe el texto y elige su color, o elige una imagen de logotipo.",
+      },
+      {
+        title: "Colócala",
+        description:
+          "Ajusta el tamaño, la opacidad y el ángulo, y arrástrala en la vista previa o usa los controles deslizantes.",
+      },
+      {
+        title: "Descarga",
+        description: "Elige todas las páginas o un rango y guarda el PDF con marca de agua.",
+      },
+    ],
+    features: [
+      {
+        title: "Texto en cualquier idioma",
+        description: "El texto se dibuja como imagen, así que todos los alfabetos y acentos se ven bien.",
+      },
+      {
+        title: "Marcas de agua con logotipo",
+        description: "Usa un logotipo en PNG, JPG, WebP o SVG.",
+      },
+      {
+        title: "Arrastra a su sitio",
+        description:
+          "Mueve la marca de agua en la vista previa de la página o usa controles deslizantes que también funcionan con el teclado.",
+      },
+      {
+        title: "Privado",
+        description: "La marca de agua se añade en tu dispositivo; no se sube nada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Se puede quitar la marca de agua más tarde?",
+        answer:
+          "Se añade como una imagen encima de la página. Alguien con un editor de PDF podría quitarla, así que una marca de agua disuade de copiar más que impedirlo.",
+      },
+      {
+        question: "¿Puedo poner marca de agua solo en algunas páginas?",
+        answer: "Sí. Elige Páginas y escribe un rango como 1-3, 5.",
+      },
+      {
+        question: "¿La marca de agua tapa el texto?",
+        answer:
+          "Baja la opacidad para que la página siga siendo legible. Lo habitual en marcas de agua diagonales es un 15–30%.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "Firmar PDF",
+    shortName: "Firmar PDF",
+    tagline: "Dibuja, escribe o sube tu firma y colócala en cualquier página de un PDF. Funciona en tu dispositivo.",
+    intro:
+      "Firmar PDF pone tu firma manuscrita en un documento sin imprimirlo ni escanearlo. Dibuja la firma con el ratón, el dedo o un lápiz óptico, escribe tu nombre o usa una foto de tu firma, cuyo fondo blanco se puede volver transparente. Después elige la página, ajusta el tamaño y arrastra la firma a su sitio o usa los controles deslizantes de posición. La firma se añade en tu navegador, así que ni el documento ni tu firma se suben nunca.",
+    seoTitle: "Firmar PDF online – gratis y sin subir archivos",
+    seoDescription:
+      "Firmar PDF gratis: dibuja, escribe o usa una imagen de tu firma y colócala en cualquier página desde tu navegador. Privado y sin subir nada.",
+    keywords: [
+      "firmar pdf",
+      "firmar pdf gratis",
+      "firmar pdf online",
+      "añadir firma a pdf",
+      "poner firma en pdf",
+      "firma electrónica pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el documento que quieres firmar.",
+      },
+      {
+        title: "Crea tu firma",
+        description: "Dibújala, escribe tu nombre o elige una foto de tu firma.",
+      },
+      {
+        title: "Colócala",
+        description:
+          "Elige la página, ajusta el tamaño y arrastra la firma a su sitio, o usa los controles deslizantes.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PDF firmado.",
+      },
+    ],
+    features: [
+      {
+        title: "Tres formas de firmar",
+        description: "Dibuja, escribe o sube una imagen, en tinta azul o negra.",
+      },
+      {
+        title: "Firmas limpias a partir de fotos",
+        description: "El fondo de papel de una foto de tu firma se puede volver transparente.",
+      },
+      {
+        title: "Colocación precisa",
+        description: "Arrastra en la vista previa o usa controles deslizantes que también funcionan con el teclado.",
+      },
+      {
+        title: "Privado",
+        description: "Tu documento y tu firma se quedan en tu dispositivo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Es una firma digital con validez legal?",
+        answer:
+          "Añade una imagen de tu firma, como firmar en papel. No es una firma digital certificada basada en un certificado. Muchos formularios cotidianos la aceptan, pero los contratos que exigen una firma electrónica certificada necesitan un servicio de firma específico.",
+      },
+      {
+        question: "¿Puedo firmar en más de una página?",
+        answer:
+          "Firma una página, descarga el PDF, vuelve a abrir el PDF firmado y coloca la firma en la siguiente página.",
+      },
+      {
+        question: "¿Se guarda mi firma en algún sitio?",
+        answer: "No. Solo existe en tu navegador mientras la página está abierta y dentro del PDF que descargas.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "Rellenar formulario PDF",
+    shortName: "Rellenar formulario",
+    tagline: "Rellena los campos de un formulario PDF y guárdalo, bloqueado si quieres. Funciona en tu dispositivo.",
+    intro:
+      "Rellenar formulario PDF encuentra los campos rellenables de un formulario PDF, como cuadros de texto, casillas y listas desplegables, y muestra cada uno con su nombre para que los completes rápido. Descarga el PDF rellenado o aplánalo para que las respuestas pasen a formar parte de la página y ya no se puedan cambiar. Es práctico para solicitudes, formularios de impuestos y documentos de inscripción. El formulario se rellena en tu navegador, así que tus datos personales nunca se suben.",
+    seoTitle: "Rellenar formulario PDF online – gratis y privado",
+    seoDescription:
+      "Rellenar PDF gratis: completa formularios PDF rellenables en tu navegador, con campos de texto, casillas y listas. Aplana para bloquear. Sin subir nada.",
+    keywords: [
+      "rellenar pdf",
+      "rellenar formulario pdf",
+      "rellenar pdf online",
+      "pdf rellenable",
+      "completar formulario pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu formulario PDF",
+        description: "Suelta o elige un PDF con campos rellenables.",
+      },
+      {
+        title: "Rellena los campos",
+        description: "Escribe en los campos de texto, marca casillas y elige en las listas.",
+      },
+      {
+        title: "Bloquéalo si hace falta",
+        description: "Marca Aplanar para que las respuestas formen parte de la página.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el formulario completado.",
+      },
+    ],
+    features: [
+      {
+        title: "Todos los campos habituales",
+        description: "Cuadros de texto, texto de varias líneas, casillas, botones de opción y listas desplegables.",
+      },
+      {
+        title: "Opción de aplanar",
+        description: "Bloquea las respuestas para que el formulario no se pueda editar después.",
+      },
+      {
+        title: "Campos accesibles",
+        description:
+          "Cada campo es un campo normal con etiqueta que funciona con el teclado y con lectores de pantalla.",
+      },
+      {
+        title: "Privado",
+        description: "Tus respuestas se quedan en tu dispositivo; no se sube nada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Por qué dice que mi PDF no tiene campos rellenables?",
+        answer:
+          "Algunos formularios son solo páginas impresas sin campos de formulario reales, y otros usan un formato antiguo (XFA) que esta herramienta no puede leer. Para formularios sin campos, añade una firma con Firmar PDF o imprímelos y rellénalos a mano.",
+      },
+      {
+        question: "¿Qué hace Aplanar?",
+        answer:
+          "Convierte las respuestas en contenido normal de la página. El formulario se ve igual, pero nadie puede cambiar las respuestas ni los campos.",
+      },
+      {
+        question: "¿Se admiten los campos de firma?",
+        answer: "Los campos de firma y de botón se omiten. Usa Firmar PDF para colocar tu firma en la página.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "Eliminar metadatos de PDF",
+    shortName: "Metadatos PDF",
+    tagline: "Consulta y elimina el autor, el título, el software y las fechas ocultos en un PDF. Funciona en tu dispositivo.",
+    intro:
+      "Los archivos PDF suelen llevar datos ocultos: el nombre del autor, el título del documento, el software con el que se creó y cuándo se creó y se modificó. Eliminar metadatos de PDF muestra lo que hay guardado en tu archivo y descarga una copia sin esos datos, algo útil antes de compartir un documento públicamente o enviar un CV. Las páginas en sí no cambian. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Eliminar metadatos de PDF – verlos y borrarlos gratis",
+    seoDescription:
+      "Eliminar metadatos PDF gratis: consulta el autor, el título, el software y las fechas ocultos en un PDF y bórralos en tu navegador. Sin subir nada.",
+    keywords: [
+      "eliminar metadatos pdf",
+      "borrar metadatos pdf",
+      "quitar autor pdf",
+      "ver metadatos pdf",
+      "limpiar metadatos pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige un PDF para ver la información guardada en él.",
+      },
+      {
+        title: "Revisa lo encontrado",
+        description: "La lista muestra el título, el autor, el software, las fechas y los metadatos XMP.",
+      },
+      {
+        title: "Descarga la copia limpia",
+        description: "Guarda una copia sin esa información.",
+      },
+    ],
+    features: [
+      {
+        title: "Revisa antes de eliminar",
+        description: "Cada dato guardado aparece con su valor.",
+      },
+      {
+        title: "Información del documento y XMP",
+        description: "Se vacían los dos lugares donde los PDF guardan metadatos.",
+      },
+      {
+        title: "Páginas intactas",
+        description: "El texto, las imágenes y el diseño quedan exactamente igual.",
+      },
+      {
+        title: "Privado",
+        description: "El PDF se limpia en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Qué se elimina exactamente?",
+        answer:
+          "La información del documento (título, autor, asunto, palabras clave, software de creación, productor y fechas) y el flujo de metadatos XMP.",
+      },
+      {
+        question: "¿Elimina todo lo personal del PDF?",
+        answer:
+          "No. El texto de las páginas, los comentarios y los datos dentro de las imágenes incrustadas (como los datos EXIF de las fotos) no cambian. Revisa el contenido en sí antes de compartirlo.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "Recortar PDF",
+    shortName: "Recortar PDF",
+    tagline: "Recorta los márgenes de todas las páginas de un PDF. Funciona en tu dispositivo.",
+    intro:
+      "Recortar PDF recorta los bordes de todas las páginas y quita márgenes blancos anchos, bordes del escáner o marcas de impresión para que el contenido llene la pantalla al leer en el móvil. Indica cuánto recortar por arriba, la derecha, abajo y la izquierda, y la vista previa muestra qué parte de la página se queda. El recorte se guarda como un ajuste de la página, así que el texto conserva toda su calidad. Todo ocurre en tu navegador, así que el documento nunca se sube.",
+    seoTitle: "Recortar PDF online – quitar márgenes, gratis",
+    seoDescription:
+      "Recortar PDF gratis: recorta los márgenes de las páginas en tu navegador con vista previa en directo. Quita bordes blancos y del escáner. Sin subir nada.",
+    keywords: [
+      "recortar pdf",
+      "recortar páginas pdf",
+      "quitar márgenes pdf",
+      "recortar márgenes pdf",
+      "cortar página pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el PDF que quieres recortar.",
+      },
+      {
+        title: "Ajusta los márgenes",
+        description: "Usa los controles deslizantes de cada lado; la vista previa muestra lo que se queda.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PDF con todas las páginas recortadas.",
+      },
+    ],
+    features: [
+      {
+        title: "Control de los cuatro lados",
+        description: "Recorta arriba, a la derecha, abajo y a la izquierda por separado.",
+      },
+      {
+        title: "Vista previa en directo",
+        description: "La zona recortada aparece sombreada en la primera página.",
+      },
+      {
+        title: "Sin pérdida de calidad",
+        description: "Las páginas no se redibujan, así que el texto sigue nítido y se puede buscar.",
+      },
+      {
+        title: "Privado",
+        description: "El PDF se recorta en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Recortar reduce el tamaño del archivo?",
+        answer:
+          "No. La zona recortada se oculta, no se borra, así que el tamaño del archivo es más o menos el mismo. Un editor de PDF todavía puede mostrar la zona oculta.",
+      },
+      {
+        question: "¿Puedo recortar páginas de forma distinta?",
+        answer:
+          "Se aplican los mismos márgenes a todas las páginas. Para recortar páginas de forma distinta, divide el PDF, recorta cada parte y vuelve a unirlas.",
+      },
+      {
+        question: "¿Puedo usar un PDF protegido con contraseña?",
+        answer:
+          "Todavía no. Si un PDF necesita contraseña para abrirse, la herramienta te lo dirá. Ábrelo en un lector de PDF con la contraseña, guarda una copia sin ella y usa esa copia.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer:
+          "No. Tu navegador abre y modifica el PDF en tu dispositivo, así que los contratos, extractos y otros documentos privados nunca salen de él.",
+      },
+    ],
+  },
 };

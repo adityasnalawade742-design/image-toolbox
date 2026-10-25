@@ -6,6 +6,7 @@ export const ptUi: Record<string, string> = {
   'nav.compress': 'Comprimir',
   'nav.convert': 'Converter',
   'nav.utilities': 'Utilitários',
+  'nav.pdf': 'PDF',
   'search.placeholder': 'Buscar entre 27 ferramentas de imagem... (Ctrl+K)',
   'search.noResults': 'Nenhuma ferramenta encontrada.',
   'dropzone.title': 'Arraste suas imagens aqui ou clique para escolher',

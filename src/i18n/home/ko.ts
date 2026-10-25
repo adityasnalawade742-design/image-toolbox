@@ -38,6 +38,7 @@ export const koHome: LocalizedHomeData = {
     'edit-transform': '편집 및 변형',
     'optimize-compress': '최적화 및 압축',
     'convert-formats': '형식 변환',
+    'pdf-documents': 'PDF·문서',
     utilities: '검사 및 유틸리티',
     developer: '개발자 도구',
   },

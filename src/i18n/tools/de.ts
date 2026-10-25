@@ -3075,4 +3075,851 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "PDF zusammenfügen",
+    shortName: "PDF zusammenfügen",
+    tagline: "Füge mehrere PDF-Dateien in der gewünschten Reihenfolge zu einer zusammen. Die Dateien werden auf deinem Gerät zusammengefügt.",
+    intro:
+      "PDF zusammenfügen verbindet zwei oder mehr PDF-Dateien zu einem einzigen Dokument. Füge die Dateien hinzu, bring sie mit den Schaltflächen zum Verschieben in die richtige Reihenfolge, prüf jeweils die erste Seite und lade ein PDF mit allen Seiten nacheinander herunter. So verschickst du einen Bericht samt Anhängen, mehrere gescannte Seiten oder eine Reihe von Rechnungen schnell als eine Datei. Das Zusammenfügen passiert in deinem Browser, deine Dokumente werden also nie auf einen Server hochgeladen.",
+    seoTitle: "PDF zusammenfügen online – kostenlos, ohne Upload",
+    seoDescription:
+      "PDF zusammenfügen, kostenlos: mehrere PDF-Dateien im Browser in beliebiger Reihenfolge zu einem PDF verbinden. Privat, ohne Upload, ohne Wasserzeichen.",
+    keywords: [
+      "pdf zusammenfügen",
+      "pdf dateien zusammenfügen",
+      "pdf zusammenführen",
+      "pdf zusammenfügen kostenlos",
+      "mehrere pdf zu einer datei",
+      "pdf verbinden",
+    ],
+    howToSteps: [
+      {
+        title: "PDFs hinzufügen",
+        description:
+          "Zieh zwei oder mehr PDF-Dateien hierher oder wähle sie aus. Du kannst jederzeit weitere hinzufügen.",
+      },
+      {
+        title: "Reihenfolge festlegen",
+        description:
+          "Ordne die Dateien mit den Schaltflächen nach oben und nach unten an und entferne alle, die du nicht brauchst.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ein PDF, das alle Seiten enthält, Datei für Datei.",
+      },
+    ],
+    features: [
+      {
+        title: "Beliebig viele Dateien",
+        description: "Füge so viele PDFs zusammen, wie dein Gerät schafft; die Gesamtzahl der Seiten wird angezeigt.",
+      },
+      {
+        title: "Deine Reihenfolge",
+        description:
+          "Ordne die Dateien mit Schaltflächen an, die auch mit der Tastatur und mit Screenreadern funktionieren.",
+      },
+      {
+        title: "Seiten unverändert",
+        description:
+          "Die Seiten werden ohne erneute Komprimierung übernommen, Text bleibt also scharf und durchsuchbar.",
+      },
+      {
+        title: "Privat und kostenlos",
+        description:
+          "Die Dateien werden auf deinem Gerät zusammengefügt, ohne Upload, ohne Anmeldung und ohne Wasserzeichen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie viele Dateien kann ich höchstens zusammenfügen?",
+        answer:
+          "Es gibt keine feste Grenze. Dutzende normale PDFs funktionieren auf den meisten Geräten; sehr große Dateien können auf älteren Smartphones langsam sein.",
+      },
+      {
+        question: "Funktionieren Links und Lesezeichen noch?",
+        answer:
+          "Links auf den Seiten bleiben erhalten. Die Lesezeichenliste (die Gliederung in der Seitenleiste eines PDF-Readers) wird nicht in die zusammengefügte Datei übernommen.",
+      },
+      {
+        question: "Verschlechtert das Zusammenfügen die Qualität?",
+        answer:
+          "Nein. Die Seiten werden unverändert übernommen, Text, Bilder und Vektorgrafiken sehen also genau gleich aus.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "PDF teilen",
+    shortName: "PDF teilen",
+    tagline: "Teile ein PDF nach Seitenbereichen, alle paar Seiten oder in einzelne Seiten. Läuft auf deinem Gerät.",
+    intro:
+      "PDF teilen zerlegt ein PDF in mehrere kleinere. Gib Seitenbereiche wie 1-3, 5, 8- ein, um für jeden Bereich eine Datei zu erhalten, teile alle paar Seiten, um einen langen Scan in gleich große Teile zu schneiden, oder speichere jede Seite als eigenes PDF. Das Tool listet die Dateien auf, die du erhältst, bevor du sie herunterlädst, und mehrere Dateien kommen gemeinsam in einer ZIP-Datei. Das Teilen passiert in deinem Browser, das Dokument verlässt dein Gerät also nie.",
+    seoTitle: "PDF teilen – nach Seiten oder Bereichen, kostenlos",
+    seoDescription:
+      "PDF teilen, kostenlos: ein PDF im Browser nach Seitenbereichen, alle N Seiten oder in einzelne Seiten aufteilen. Privat, und nichts wird hochgeladen.",
+    keywords: [
+      "pdf teilen",
+      "pdf aufteilen",
+      "pdf seiten trennen",
+      "pdf teilen kostenlos",
+      "pdf in einzelne seiten aufteilen",
+      "pdf splitten",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF hierher oder wähle es aus. Seine Seiten erscheinen als Vorschau.",
+      },
+      {
+        title: "Aufteilung wählen",
+        description: "Gib Seitenbereiche ein, wähle eine Seitenzahl pro Datei oder teile nach jeder Seite.",
+      },
+      {
+        title: "Liste prüfen",
+        description: "Das Bedienfeld zeigt jede Datei, die du erhältst, mit ihren Seiten.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ein PDF oder eine ZIP-Datei, wenn es mehrere Dateien sind.",
+      },
+    ],
+    features: [
+      {
+        title: "Drei Arten zu teilen",
+        description: "Eigene Bereiche, gleich große Seitengruppen oder eine Seite pro Datei.",
+      },
+      {
+        title: "Erst sehen, dann speichern",
+        description: "Jede entstehende Datei wird vorher mit ihren Seitenzahlen aufgelistet.",
+      },
+      {
+        title: "Ein ZIP-Download",
+        description: "Mehrere Dateien kommen zusammen an, benannt nach ihren Seiten.",
+      },
+      {
+        title: "Privat",
+        description: "Das PDF wird auf deinem Gerät geteilt und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie gebe ich Seitenbereiche ein?",
+        answer:
+          "Trenne Bereiche mit Kommas. 1-3 bedeutet Seite 1 bis 3, 5 nur Seite 5 und 8- Seite 8 bis zum Ende. Jeder Bereich wird ein eigenes PDF.",
+      },
+      {
+        question: "Kann ich ein PDF mit nur einigen Seiten erhalten?",
+        answer:
+          "Ja. Gib einen einzelnen Bereich ein, etwa 2-4, um nur diese Seiten herunterzuladen. Mit PDF-Seiten extrahieren kannst du Seiten auch per Klick auswählen.",
+      },
+      {
+        question: "Verändert das Teilen die Seiten?",
+        answer: "Nein. Die Seiten werden unverändert übernommen, Text bleibt also scharf und durchsuchbar.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "PDF-Seiten extrahieren",
+    shortName: "Seiten extrahieren",
+    tagline: "Wähle die Seiten aus, die du aus einem PDF brauchst, und speichere sie als neues PDF. Läuft auf deinem Gerät.",
+    intro:
+      "PDF-Seiten extrahieren lässt dich Seiten eines PDFs anhand ihrer Vorschau auswählen und nur diese Seiten als neues Dokument speichern. Das ist praktisch, um ein Kapitel eines langen Berichts, die unterschriebene Seite eines Vertrags oder einen einzelnen Auszug aus einem Stapel zu verschicken. Hake die gewünschten Seiten an oder nutze „Alle auswählen“ und entferne die wenigen, die du nicht brauchst, und lade dann herunter. Die Originaldatei wird nicht verändert, und alles passiert in deinem Browser.",
+    seoTitle: "PDF-Seiten extrahieren – kostenlos, ohne Upload",
+    seoDescription:
+      "PDF Seiten extrahieren, kostenlos: Seiten eines PDFs per Vorschau auswählen und im Browser als neues PDF speichern. Privat, und nichts wird hochgeladen.",
+    keywords: [
+      "pdf seiten extrahieren",
+      "seiten aus pdf extrahieren",
+      "pdf seiten speichern",
+      "einzelne seiten aus pdf speichern",
+      "pdf seiten herauslösen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF hierher oder wähle es aus, um alle Seiten zu sehen.",
+      },
+      {
+        title: "Gewünschte Seiten anhaken",
+        description:
+          "Nutze das Kästchen unter jeder Seite oder „Alle auswählen“ und entferne die Haken bei denen, die du nicht brauchst.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ein neues PDF nur mit diesen Seiten, in ihrer ursprünglichen Reihenfolge.",
+      },
+    ],
+    features: [
+      {
+        title: "Auswahl per Vorschau",
+        description: "Sieh dir jede Seite an, bevor du wählst.",
+      },
+      {
+        title: "Tastaturfreundlich",
+        description: "Jede Seite hat ein beschriftetes Kontrollkästchen, eine Maus ist also nicht nötig.",
+      },
+      {
+        title: "Seiten unverändert",
+        description: "Die gewählten Seiten werden unverändert übernommen, mit scharfem, durchsuchbarem Text.",
+      },
+      {
+        title: "Privat",
+        description: "Die Seiten werden auf deinem Gerät extrahiert und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Verändert das mein Original-PDF?",
+        answer: "Nein. Es wird ein neues PDF mit den gewählten Seiten erstellt; die Originaldatei bleibt, wie sie war.",
+      },
+      {
+        question: "Kann ich die Reihenfolge der Seiten ändern?",
+        answer:
+          "Extrahierte Seiten behalten ihre ursprüngliche Reihenfolge. Zum Umsortieren, Drehen oder Löschen von Seiten nutze PDF organisieren.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "PDF organisieren",
+    shortName: "PDF organisieren",
+    tagline: "Sortiere, drehe und lösche PDF-Seiten und speichere dann das neue PDF. Läuft auf deinem Gerät.",
+    intro:
+      "PDF organisieren zeigt alle Seiten eines PDFs, damit du es in Form bringen kannst: Seiten nach vorne oder hinten verschieben, quer liegende Scans aufrichten und leere oder unerwünschte Seiten löschen. Jede Seite hat eigene Schaltflächen, die auch mit der Tastatur funktionieren, und mit der Maus kannst du Seiten an ihren Platz ziehen. „Alle Änderungen zurücksetzen“ stellt den Ausgangszustand wieder her. Wenn alles passt, lade das neue PDF herunter. All das passiert in deinem Browser, das Dokument wird also nie hochgeladen.",
+    seoTitle: "PDF-Seiten sortieren, drehen und löschen",
+    seoDescription:
+      "PDF Seiten sortieren, drehen und löschen, kostenlos: Seiten im Browser mit Vorschau neu anordnen und das neue PDF herunterladen. Privat, ohne Upload.",
+    keywords: [
+      "pdf seiten sortieren",
+      "pdf seiten neu anordnen",
+      "pdf seiten verschieben",
+      "pdf seiten löschen",
+      "seiten aus pdf entfernen",
+      "pdf organisieren",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF hierher oder wähle es aus, um alle Seiten zu sehen.",
+      },
+      {
+        title: "Seiten anordnen",
+        description:
+          "Verschiebe, drehe oder lösche jede Seite mit den Schaltflächen darunter, oder zieh Seiten an ihren Platz.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das neu geordnete PDF. „Alle Änderungen zurücksetzen“ beginnt wieder beim Original.",
+      },
+    ],
+    features: [
+      {
+        title: "Verschieben, drehen, löschen",
+        description: "Alle Seitenaktionen in einer Ansicht, mit Vorschauen, die sich laufend aktualisieren.",
+      },
+      {
+        title: "Ziehen oder Schaltflächen",
+        description:
+          "Zieh mit der Maus oder nutze die Schaltflächen, die auch mit der Tastatur und mit Screenreadern funktionieren.",
+      },
+      {
+        title: "Verlustfrei",
+        description: "Die Seiten werden umsortiert, nicht neu gerendert, Text bleibt also scharf und durchsuchbar.",
+      },
+      {
+        title: "Privat",
+        description: "Das PDF wird auf deinem Gerät neu geordnet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Verschlechtert das Drehen einer Seite die Qualität?",
+        answer:
+          "Nein. Die Drehung wird als Seiteneinstellung gespeichert, es wird also nichts neu gezeichnet oder komprimiert.",
+      },
+      {
+        question: "Kann ich eine Änderung rückgängig machen?",
+        answer:
+          "Ja. „Alle Änderungen zurücksetzen“ bringt jede Seite an ihre ursprüngliche Position und Drehung zurück. Deine Originaldatei wird nie verändert.",
+      },
+      {
+        question: "Kann ich Seiten aus einem anderen PDF hinzufügen?",
+        answer:
+          "Füge die Dateien zuerst mit PDF zusammenfügen zusammen und organisiere dann die zusammengefügte Datei hier.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "PDF drehen",
+    shortName: "PDF drehen",
+    tagline: "Drehe alle Seiten oder nur die ausgewählten um 90 oder 180 Grad. Läuft auf deinem Gerät.",
+    intro:
+      "PDF drehen korrigiert Seiten, die sich quer oder auf dem Kopf stehend öffnen, ein häufiges Problem bei gescannten Dokumenten und als PDF gespeicherten Fotos. Wähle 90 Grad nach rechts, 180 Grad oder 90 Grad nach links und wende das auf alle Seiten oder nur auf die angehakten Seiten an. Die Vorschauen zeigen das Ergebnis vor dem Herunterladen. Die Drehung wird als Seiteneinstellung gespeichert, Text und Bilder behalten also ihre volle Qualität, und nichts verlässt deinen Browser.",
+    seoTitle: "PDF drehen online – dauerhaft speichern, kostenlos",
+    seoDescription:
+      "PDF drehen, kostenlos: alle oder ausgewählte Seiten eines PDFs im Browser um 90 oder 180 Grad drehen und dauerhaft speichern. Privat, ohne Upload.",
+    keywords: [
+      "pdf drehen",
+      "pdf seiten drehen",
+      "pdf drehen und speichern",
+      "pdf dauerhaft drehen",
+      "pdf um 90 grad drehen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF hierher oder wähle es aus, um seine Seiten zu sehen.",
+      },
+      {
+        title: "Drehung wählen",
+        description: "Wähle 90° rechts, 180° oder 90° links, für alle Seiten oder die angehakten Seiten.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF mit dauerhaft gedrehten Seiten.",
+      },
+    ],
+    features: [
+      {
+        title: "Alle oder ausgewählte Seiten",
+        description: "Korrigiere einen einzelnen quer liegenden Scan, ohne den Rest anzurühren.",
+      },
+      {
+        title: "Live-Vorschau",
+        description: "Die Seitenvorschauen drehen sich bei deiner Auswahl mit, bevor etwas gespeichert wird.",
+      },
+      {
+        title: "Kein Qualitätsverlust",
+        description: "Die Drehung ist eine Seiteneinstellung, es wird also nichts neu gezeichnet.",
+      },
+      {
+        title: "Privat",
+        description: "Das PDF wird auf deinem Gerät gedreht und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wird die Drehung dauerhaft gespeichert?",
+        answer: "Ja. Das heruntergeladene PDF öffnet sich in jedem PDF-Reader mit gedrehten Seiten.",
+      },
+      {
+        question: "Kann ich Seiten unterschiedlich weit drehen?",
+        answer: "Nutze PDF organisieren, dort hat jede Seite eine eigene Schaltfläche zum Drehen.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "Seitenzahlen in PDF einfügen",
+    shortName: "Seitenzahlen",
+    tagline: "Nummeriere die Seiten eines PDFs mit Position, Format und Startnummer deiner Wahl. Läuft auf deinem Gerät.",
+    intro:
+      "Seitenzahlen einfügen setzt auf jede Seite eines PDFs eine Nummer, wie sie Berichte, Abschlussarbeiten und ausgedruckte Handouts oft brauchen. Wähle eine von sechs Positionen oben oder unten, ein Format (1, 1 / N oder – 1 –), die Startnummer, die Textgröße und den Abstand vom Rand. Die erste Seite, etwa ein Deckblatt, kannst du auch ohne Nummer lassen. Eine Vorschau zeigt, wie die Nummer aussehen wird. Die Nummern werden in deinem Browser eingefügt, das Dokument wird also nie hochgeladen.",
+    seoTitle: "Seitenzahlen in PDF einfügen – kostenlos, ohne Upload",
+    seoDescription:
+      "PDF Seitenzahlen einfügen, kostenlos: Position, Format und Startnummer im Browser wählen und das Deckblatt auslassen. Privat, und nichts wird hochgeladen.",
+    keywords: [
+      "pdf seitenzahlen einfügen",
+      "seitenzahlen in pdf einfügen",
+      "pdf nummerieren",
+      "pdf seiten nummerieren",
+      "pdf paginieren",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF, das nummeriert werden soll, hierher oder wähle es aus.",
+      },
+      {
+        title: "Stil wählen",
+        description: "Wähle Position, Format, Startnummer, Größe und Abstand vom Rand.",
+      },
+      {
+        title: "Deckblatt bei Bedarf auslassen",
+        description: "Hake die Option an, um die erste Seite ohne Nummer zu lassen.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das nummerierte PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Sechs Positionen",
+        description: "Oben oder unten, jeweils links, mittig oder rechts.",
+      },
+      {
+        title: "Drei Formate",
+        description: "Einfache Zahlen, im Stil „1 / 12“ oder „– 1 –“.",
+      },
+      {
+        title: "Beliebige Startnummer",
+        description: "Setze die Nummerierung eines anderen Dokuments fort und lass ein Deckblatt aus.",
+      },
+      {
+        title: "Privat",
+        description: "Die Nummern werden auf deinem Gerät eingefügt; nichts wird hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich mit einer anderen Zahl als 1 beginnen?",
+        answer: "Ja. Stell „Beginnen bei“ auf eine beliebige Zahl, etwa um an ein vorheriges Kapitel anzuschließen.",
+      },
+      {
+        question: "Verdecken die Nummern meinen Inhalt?",
+        answer:
+          "Sie werden in den Seitenrand gesetzt. Wenn deine Seiten sehr schmale Ränder haben, wähle einen kleineren Abstand vom Rand oder eine kleinere Textgröße.",
+      },
+      {
+        question: "Warum stehen die Nummern auf manchen Seiten quer?",
+        answer:
+          "Manche PDFs speichern Seiten gedreht. Die Nummer folgt der gespeicherten Ausrichtung der Seite und kann auf diesen Seiten daher gedreht erscheinen. Korrigiere die Drehung zuerst mit PDF drehen oder PDF organisieren.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "Wasserzeichen in PDF einfügen",
+    shortName: "PDF-Wasserzeichen",
+    tagline: "Setze Text oder ein Logo als Stempel auf PDF-Seiten und zieh ihn an die richtige Stelle. Läuft auf deinem Gerät.",
+    intro:
+      "Wasserzeichen in PDF einfügen setzt einen Stempel wie VERTRAULICH, ENTWURF, deinen Namen oder dein Logo auf die Seiten eines PDFs. Gib den Text in einer beliebigen Sprache ein oder wähle ein Logo-Bild, stell dann Größe, Deckkraft und Winkel ein und zieh das Wasserzeichen in der Seitenvorschau an die gewünschte Stelle, oder nutze die Positionsregler. Wende es auf alle Seiten oder auf einen Seitenbereich an. Das Wasserzeichen wird in deinem Browser eingefügt, das Dokument wird also nie hochgeladen.",
+    seoTitle: "Wasserzeichen in PDF einfügen – Text oder Logo",
+    seoDescription:
+      "PDF Wasserzeichen einfügen, kostenlos: Text oder Logo im Browser auf PDF-Seiten setzen, Größe, Deckkraft und Winkel wählen, an die Stelle ziehen. Ohne Upload.",
+    keywords: [
+      "pdf wasserzeichen einfügen",
+      "wasserzeichen in pdf einfügen",
+      "pdf wasserzeichen",
+      "pdf stempel einfügen",
+      "logo in pdf einfügen",
+      "pdf vertraulich stempel",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF, das gestempelt werden soll, hierher oder wähle es aus.",
+      },
+      {
+        title: "Wasserzeichen erstellen",
+        description: "Gib den Text ein und wähle seine Farbe, oder wähle ein Logo-Bild.",
+      },
+      {
+        title: "Platzieren",
+        description:
+          "Stell Größe, Deckkraft und Winkel ein und zieh es dann in der Vorschau an seinen Platz, oder nutze die Regler.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Wähle alle Seiten oder einen Bereich und speichere das PDF mit Wasserzeichen.",
+      },
+    ],
+    features: [
+      {
+        title: "Text in jeder Sprache",
+        description: "Der Text wird als Bild gezeichnet, daher erscheinen alle Schriften und Akzente korrekt.",
+      },
+      {
+        title: "Logo-Wasserzeichen",
+        description: "Verwende ein Logo als PNG, JPG, WebP oder SVG.",
+      },
+      {
+        title: "Per Ziehen platzieren",
+        description:
+          "Verschiebe das Wasserzeichen in der Seitenvorschau oder nutze Regler, die auch mit der Tastatur funktionieren.",
+      },
+      {
+        title: "Privat",
+        description: "Das Wasserzeichen wird auf deinem Gerät eingefügt; nichts wird hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann das Wasserzeichen später entfernt werden?",
+        answer:
+          "Es wird als Bild über der Seite eingefügt. Wer einen PDF-Editor hat, könnte es trotzdem entfernen; ein Wasserzeichen erschwert das Kopieren also eher, als dass es das Kopieren verhindert.",
+      },
+      {
+        question: "Kann ich nur einige Seiten mit einem Wasserzeichen versehen?",
+        answer: "Ja. Wähle „Seiten“ und gib einen Bereich wie 1-3, 5 ein.",
+      },
+      {
+        question: "Verdeckt das Wasserzeichen den Text?",
+        answer:
+          "Verringere die Deckkraft, damit die Seite lesbar bleibt. 15–30 % sind für diagonale Wasserzeichen üblich.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "PDF unterschreiben",
+    shortName: "PDF unterschreiben",
+    tagline: "Zeichne oder tippe deine Unterschrift oder lade sie als Bild hoch und platziere sie auf einer beliebigen Seite eines PDFs. Läuft auf deinem Gerät.",
+    intro:
+      "PDF unterschreiben setzt deine handschriftliche Unterschrift auf ein Dokument, ohne dass du es ausdrucken und einscannen musst. Zeichne die Unterschrift mit Maus, Finger oder Stift, tippe deinen Namen oder nutze ein Foto deiner Unterschrift, dessen weißer Hintergrund transparent gemacht werden kann. Wähle dann die Seite, stell die Größe ein und zieh die Unterschrift an ihren Platz, oder nutze die Positionsregler. Die Unterschrift wird in deinem Browser eingefügt, das Dokument und deine Unterschrift werden also nie hochgeladen.",
+    seoTitle: "PDF unterschreiben online – kostenlos, ohne Upload",
+    seoDescription:
+      "PDF unterschreiben, kostenlos: Unterschrift im Browser zeichnen, tippen oder als Bild einfügen und auf jeder Seite platzieren. Privat, nichts wird hochgeladen.",
+    keywords: [
+      "pdf unterschreiben",
+      "pdf unterschreiben kostenlos",
+      "unterschrift in pdf einfügen",
+      "pdf online unterschreiben",
+      "pdf digital unterschreiben",
+      "pdf elektronisch unterschreiben",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das Dokument, das du unterschreiben willst, hierher oder wähle es aus.",
+      },
+      {
+        title: "Unterschrift erstellen",
+        description: "Zeichne sie, tippe deinen Namen oder wähle ein Foto deiner Unterschrift.",
+      },
+      {
+        title: "Platzieren",
+        description:
+          "Wähle die Seite, stell die Größe ein und zieh die Unterschrift an die richtige Stelle, oder nutze die Regler.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das unterschriebene PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Drei Arten zu unterschreiben",
+        description: "Zeichnen, tippen oder hochladen, in blauer oder schwarzer Tinte.",
+      },
+      {
+        title: "Saubere Unterschriften aus Fotos",
+        description: "Der Papierhintergrund eines Unterschriftsfotos kann transparent gemacht werden.",
+      },
+      {
+        title: "Genaue Platzierung",
+        description: "Zieh in der Vorschau oder nutze Regler, die auch mit der Tastatur funktionieren.",
+      },
+      {
+        title: "Privat",
+        description: "Dein Dokument und deine Unterschrift bleiben auf deinem Gerät.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ist das eine rechtsverbindliche digitale Signatur?",
+        answer:
+          "Es wird ein Bild deiner Unterschrift eingefügt, wie beim Unterschreiben auf Papier. Es ist keine zertifizierte digitale Signatur mit Zertifikat. Viele alltägliche Formulare akzeptieren das, aber Verträge, die eine zertifizierte elektronische Signatur verlangen, brauchen einen eigenen Signaturdienst.",
+      },
+      {
+        question: "Kann ich auf mehr als einer Seite unterschreiben?",
+        answer:
+          "Unterschreibe eine Seite und lade das PDF herunter, öffne dann das unterschriebene PDF erneut und platziere die Unterschrift auf der nächsten Seite.",
+      },
+      {
+        question: "Wird meine Unterschrift irgendwo gespeichert?",
+        answer:
+          "Nein. Sie existiert nur in deinem Browser, solange die Seite geöffnet ist, und in dem PDF, das du herunterlädst.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "PDF-Formular ausfüllen",
+    shortName: "Formular ausfüllen",
+    tagline: "Füll die Felder eines PDF-Formulars aus und speichere es, auf Wunsch fixiert. Läuft auf deinem Gerät.",
+    intro:
+      "PDF-Formular ausfüllen findet die ausfüllbaren Felder in einem PDF-Formular, etwa Textfelder, Kontrollkästchen und Dropdown-Listen, und zeigt jedes mit seinem Namen an, damit du sie schnell ausfüllen kannst. Lade das ausgefüllte PDF herunter oder fixiere es, damit die Antworten Teil der Seite werden und sich nicht mehr ändern lassen. Das ist praktisch für Anträge, Steuerformulare und Anmeldeunterlagen. Das Formular wird in deinem Browser ausgefüllt, deine persönlichen Daten werden also nie hochgeladen.",
+    seoTitle: "PDF-Formular online ausfüllen – kostenlos, privat",
+    seoDescription:
+      "PDF ausfüllen, kostenlos: ausfüllbare PDF-Formulare im Browser bearbeiten, mit Textfeldern, Kontrollkästchen und Listen. Antworten fixieren. Ohne Upload.",
+    keywords: [
+      "pdf ausfüllen",
+      "pdf formular ausfüllen",
+      "pdf online ausfüllen",
+      "ausfüllbares pdf",
+      "pdf formular ausfüllen kostenlos",
+    ],
+    howToSteps: [
+      {
+        title: "PDF-Formular hinzufügen",
+        description: "Zieh ein PDF mit ausfüllbaren Feldern hierher oder wähle es aus.",
+      },
+      {
+        title: "Felder ausfüllen",
+        description: "Tippe in Textfelder, hake Kontrollkästchen an und wähle aus Listen.",
+      },
+      {
+        title: "Bei Bedarf fixieren",
+        description: "Hake „Formular fixieren“ an, damit die Antworten Teil der Seite werden.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das ausgefüllte Formular.",
+      },
+    ],
+    features: [
+      {
+        title: "Alle gängigen Felder",
+        description: "Textfelder, mehrzeiliger Text, Kontrollkästchen, Optionsfelder und Dropdown-Listen.",
+      },
+      {
+        title: "Option zum Fixieren",
+        description: "Fixiere die Antworten, damit das Formular danach nicht mehr bearbeitet werden kann.",
+      },
+      {
+        title: "Barrierefreie Felder",
+        description:
+          "Jedes Feld ist ein normales beschriftetes Eingabefeld, das mit der Tastatur und mit Screenreadern funktioniert.",
+      },
+      {
+        title: "Privat",
+        description: "Deine Antworten bleiben auf deinem Gerät; nichts wird hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Warum heißt es, mein PDF habe keine ausfüllbaren Felder?",
+        answer:
+          "Manche Formulare sind nur gedruckte Seiten ohne echte Formularfelder, und manche nutzen ein älteres Format (XFA), das dieses Tool nicht lesen kann. Bei Formularen ohne Felder füge mit PDF unterschreiben eine Unterschrift hinzu oder drucke das Formular aus und füll es von Hand aus.",
+      },
+      {
+        question: "Was bewirkt „Formular fixieren“?",
+        answer:
+          "Es verwandelt die Antworten in normalen Seiteninhalt. Das Formular sieht gleich aus, aber niemand kann die Antworten oder die Felder ändern.",
+      },
+      {
+        question: "Werden Unterschriftsfelder unterstützt?",
+        answer:
+          "Unterschrifts- und Schaltflächenfelder werden übersprungen. Nutze PDF unterschreiben, um deine Unterschrift auf der Seite zu platzieren.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "PDF-Metadaten entfernen",
+    shortName: "PDF-Metadaten",
+    tagline: "Sieh dir Autor, Titel, Software und Datumsangaben an, die in einem PDF versteckt sind, und entferne sie. Läuft auf deinem Gerät.",
+    intro:
+      "PDF-Dateien enthalten oft versteckte Angaben: den Namen des Autors, den Dokumenttitel, die Software, mit der sie erstellt wurden, und wann sie erstellt und geändert wurden. PDF-Metadaten entfernen zeigt, was in deiner Datei gespeichert ist, und lädt eine Kopie ohne diese Angaben herunter. Das ist nützlich, bevor du ein Dokument öffentlich teilst oder einen Lebenslauf verschickst. Die Seiten selbst werden nicht verändert. Alles passiert in deinem Browser, das Dokument verlässt dein Gerät also nie.",
+    seoTitle: "PDF-Metadaten entfernen – ansehen und löschen",
+    seoDescription:
+      "PDF Metadaten entfernen, kostenlos: Autor, Titel, Software und Datumsangaben eines PDFs im Browser ansehen und löschen. Privat, nichts wird hochgeladen.",
+    keywords: [
+      "pdf metadaten entfernen",
+      "pdf metadaten löschen",
+      "pdf autor entfernen",
+      "pdf metadaten anzeigen",
+      "pdf eigenschaften löschen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF hierher oder wähle es aus, um die darin gespeicherten Angaben zu sehen.",
+      },
+      {
+        title: "Gefundenes prüfen",
+        description: "Die Liste zeigt Titel, Autor, Software, Datumsangaben und XMP-Metadaten.",
+      },
+      {
+        title: "Bereinigte Kopie herunterladen",
+        description: "Speichere eine Kopie, aus der diese Angaben entfernt wurden.",
+      },
+    ],
+    features: [
+      {
+        title: "Erst sehen, dann entfernen",
+        description: "Jede gespeicherte Angabe wird mit ihrem Wert aufgelistet.",
+      },
+      {
+        title: "Dokumentinfo und XMP",
+        description: "Beide Stellen, an denen PDFs Metadaten speichern, werden geleert.",
+      },
+      {
+        title: "Seiten unangetastet",
+        description: "Text, Bilder und Layout bleiben genau gleich.",
+      },
+      {
+        title: "Privat",
+        description: "Das PDF wird auf deinem Gerät bereinigt und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Was genau wird entfernt?",
+        answer:
+          "Die Dokumentinformationen (Titel, Autor, Thema, Stichwörter, Erstellungssoftware, Produzent und Datumsangaben) und der XMP-Metadatenstrom.",
+      },
+      {
+        question: "Entfernt das alles Persönliche aus dem PDF?",
+        answer:
+          "Nein. Text auf den Seiten, Kommentare und Angaben in eingebetteten Bildern (etwa EXIF-Daten von Fotos) werden nicht verändert. Prüf den Inhalt selbst, bevor du das Dokument teilst.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "PDF zuschneiden",
+    shortName: "PDF zuschneiden",
+    tagline: "Schneide die Ränder jeder Seite eines PDFs ab. Läuft auf deinem Gerät.",
+    intro:
+      "PDF zuschneiden kürzt die Kanten jeder Seite und entfernt breite weiße Ränder, Scannerkanten oder Druckermarken, damit der Inhalt beim Lesen auf dem Smartphone den Bildschirm füllt. Leg fest, wie viel oben, rechts, unten und links abgeschnitten wird, und die Vorschau zeigt, welcher Teil der Seite bleibt. Der Zuschnitt wird als Seiteneinstellung gespeichert, Text behält also seine volle Qualität. Alles passiert in deinem Browser, das Dokument wird also nie hochgeladen.",
+    seoTitle: "PDF zuschneiden online – Seitenränder entfernen",
+    seoDescription:
+      "PDF zuschneiden, kostenlos: Seitenränder im Browser mit Live-Vorschau abschneiden und weiße Ränder oder Scannerkanten entfernen. Privat, ohne Upload.",
+    keywords: [
+      "pdf zuschneiden",
+      "pdf seiten zuschneiden",
+      "pdf ränder entfernen",
+      "pdf rand abschneiden",
+      "pdf beschneiden",
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF, das zugeschnitten werden soll, hierher oder wähle es aus.",
+      },
+      {
+        title: "Ränder einstellen",
+        description: "Nutze die Regler für jede Kante; die Vorschau zeigt, was bleibt.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF mit allen Seiten zugeschnitten.",
+      },
+    ],
+    features: [
+      {
+        title: "Alle vier Kanten",
+        description: "Schneide oben, rechts, unten und links getrennt ab.",
+      },
+      {
+        title: "Live-Vorschau",
+        description: "Der abgeschnittene Bereich wird auf der ersten Seite schattiert angezeigt.",
+      },
+      {
+        title: "Kein Qualitätsverlust",
+        description: "Die Seiten werden nicht neu gezeichnet, Text bleibt also scharf und durchsuchbar.",
+      },
+      {
+        title: "Privat",
+        description: "Das PDF wird auf deinem Gerät zugeschnitten und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wird die Datei durch das Zuschneiden kleiner?",
+        answer:
+          "Nein. Der abgeschnittene Bereich wird ausgeblendet, nicht gelöscht, die Dateigröße bleibt also etwa gleich. Ein PDF-Editor kann den ausgeblendeten Bereich weiterhin anzeigen.",
+      },
+      {
+        question: "Kann ich Seiten unterschiedlich zuschneiden?",
+        answer:
+          "Für alle Seiten gelten dieselben Ränder. Um Seiten unterschiedlich zuzuschneiden, teile das PDF, schneide jeden Teil zu und füge die Teile wieder zusammen.",
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF verwenden?",
+        answer:
+          "Noch nicht. Wenn ein PDF zum Öffnen ein Passwort braucht, sagt dir das Tool Bescheid. Öffne es mit dem Passwort in einem PDF-Reader, speichere eine Kopie ohne Passwort und verwende diese Kopie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird von deinem Browser auf deinem Gerät geöffnet und bearbeitet, Verträge, Kontoauszüge und andere private Dokumente verlassen es also nie.",
+      },
+    ],
+  },
 };

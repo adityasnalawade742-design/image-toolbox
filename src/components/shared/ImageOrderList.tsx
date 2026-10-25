@@ -9,18 +9,22 @@ export interface OrderItem {
   url: string;
   width: number;
   height: number;
+  /** Replaces the "W × H px" line (e.g. "12 pages" for PDFs) */
+  detail?: string;
 }
 
 interface Props<T extends OrderItem> {
   items: T[];
   onChange: (items: T[]) => void;
   onAdd: () => void;
+  /** Overrides "Add more images" (e.g. for PDFs) */
+  addLabel?: string;
   /** Optional per-item preview (e.g. a page mock-up) in place of the plain thumbnail */
   renderPreview?: (item: T, index: number) => React.ReactNode;
 }
 
 /** Ordered list of images with move up / move down / remove buttons: reordering without dragging */
-export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, renderPreview }: Props<T>) {
+export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, addLabel, renderPreview }: Props<T>) {
   const t = useT();
   const [announcement, setAnnouncement] = useState('');
 
@@ -58,7 +62,7 @@ export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, re
             <span className="min-w-0 flex-1">
               <span className="block truncate text-[14px] font-semibold text-ink">{item.name}</span>
               <span className="block text-[13px] text-graphite" data-measure>
-                {item.width} × {item.height} px
+                {item.detail ?? `${item.width} × ${item.height} px`}
               </span>
             </span>
             <span className="flex gap-1 shrink-0">
@@ -77,7 +81,7 @@ export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, re
       </ol>
       <button type="button" onClick={onAdd} className="btn-rule w-full">
         <Plus className="w-4 h-4" aria-hidden="true" />
-        <span>{t('ctl.list.add')}</span>
+        <span>{addLabel || t('ctl.list.add')}</span>
       </button>
       <span className="sr-only" aria-live="polite">
         {announcement}

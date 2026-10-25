@@ -3084,4 +3084,845 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "Juntar PDF",
+    shortName: "Juntar PDF",
+    tagline: "Combine vários arquivos PDF em um só, na ordem que você escolher. Os arquivos são juntados no seu dispositivo.",
+    intro:
+      "O Juntar PDF une dois ou mais arquivos PDF em um único documento. Adicione os arquivos, coloque-os em ordem com os botões de mover, confira a primeira página de cada um e baixe um único PDF com todas as páginas em sequência. É o jeito rápido de enviar um relatório com os anexos, várias páginas digitalizadas ou um conjunto de notas fiscais como um só arquivo. A junção acontece no seu navegador, então seus documentos nunca são enviados a um servidor.",
+    seoTitle: "Juntar PDF online – Grátis e sem upload",
+    seoDescription:
+      "Juntar PDF no navegador: combine vários arquivos em um só, na ordem que quiser, e baixe um único PDF. Grátis, privado, sem upload e sem marca d’água.",
+    keywords: [
+      "juntar pdf",
+      "juntar arquivos pdf",
+      "unir pdf",
+      "juntar pdf online grátis",
+      "combinar pdf",
+      "juntar vários pdf em um",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seus PDFs",
+        description: "Arraste ou escolha dois ou mais arquivos PDF. Você pode adicionar mais a qualquer momento.",
+      },
+      {
+        title: "Coloque-os em ordem",
+        description: "Use os botões para cima e para baixo para organizar os arquivos e remova os que não precisar.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve um único PDF com todas as páginas, um arquivo depois do outro.",
+      },
+    ],
+    features: [
+      {
+        title: "Quantos arquivos quiser",
+        description: "Junte quantos PDFs o seu dispositivo aguentar, com o total de páginas exibido.",
+      },
+      {
+        title: "Na sua ordem",
+        description: "Organize os arquivos com botões que também funcionam pelo teclado e com leitores de tela.",
+      },
+      {
+        title: "Páginas inalteradas",
+        description:
+          "As páginas são copiadas como estão, sem recompressão, então o texto continua nítido e pesquisável.",
+      },
+      {
+        title: "Privado e grátis",
+        description: "Os arquivos são juntados no seu dispositivo, sem upload, sem cadastro e sem marca d’água.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Há um limite de arquivos que posso juntar?",
+        answer:
+          "Não há um limite fixo. Dezenas de PDFs comuns funcionam na maioria dos dispositivos; arquivos muito grandes podem ficar lentos em celulares mais antigos.",
+      },
+      {
+        question: "Os links e os marcadores continuam funcionando?",
+        answer:
+          "Os links nas páginas são mantidos. A lista de marcadores (o sumário no painel lateral do leitor de PDF) não é copiada para o arquivo combinado.",
+      },
+      {
+        question: "Juntar reduz a qualidade?",
+        answer:
+          "Não. As páginas são copiadas como estão, então textos, imagens e gráficos vetoriais ficam exatamente iguais.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "Dividir PDF",
+    shortName: "Dividir PDF",
+    tagline: "Divida um PDF por intervalos de páginas, a cada tantas páginas ou em páginas avulsas. Funciona no seu dispositivo.",
+    intro:
+      "O Dividir PDF separa um PDF em vários arquivos menores. Digite intervalos de páginas como 1-3, 5, 8- para obter um arquivo para cada intervalo, divida a cada tantas páginas para cortar uma digitalização longa em partes iguais, ou salve cada página como um PDF separado. A ferramenta lista os arquivos que você vai receber antes do download, e vários arquivos chegam juntos em um único ZIP. A divisão acontece no seu navegador, então o documento nunca sai do seu dispositivo.",
+    seoTitle: "Dividir PDF online – Por páginas ou intervalos, grátis",
+    seoDescription:
+      "Dividir PDF no navegador: separe em arquivos por intervalos de páginas, a cada N páginas ou página por página. Grátis, privado e nada é enviado.",
+    keywords: [
+      "dividir pdf",
+      "separar páginas de pdf",
+      "dividir pdf online grátis",
+      "separar pdf",
+      "dividir pdf em partes",
+      "dividir páginas pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um PDF. As páginas aparecem como prévias.",
+      },
+      {
+        title: "Escolha como dividir",
+        description: "Digite intervalos de páginas, escolha um número de páginas por arquivo ou divida página por página.",
+      },
+      {
+        title: "Confira a lista",
+        description: "O painel mostra cada arquivo que você vai receber e as páginas dele.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve um PDF, ou um ZIP quando houver vários arquivos.",
+      },
+    ],
+    features: [
+      {
+        title: "Três formas de dividir",
+        description: "Intervalos personalizados, grupos iguais de páginas ou uma página por arquivo.",
+      },
+      {
+        title: "Veja antes de salvar",
+        description: "Cada arquivo resultante e os números das páginas dele são listados antes.",
+      },
+      {
+        title: "Um único download em ZIP",
+        description: "Vários arquivos chegam juntos, nomeados pelas suas páginas.",
+      },
+      {
+        title: "Privado",
+        description: "O PDF é dividido no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Como escrevo os intervalos de páginas?",
+        answer:
+          "Separe os intervalos com vírgulas. 1-3 significa as páginas 1 a 3, 5 significa só a página 5 e 8- significa da página 8 até o final. Cada intervalo vira um PDF separado.",
+      },
+      {
+        question: "Posso obter um PDF com só algumas páginas?",
+        answer:
+          "Sim. Digite um único intervalo, como 2-4, para baixar só essas páginas. O Extrair páginas de PDF também permite escolher as páginas clicando nelas.",
+      },
+      {
+        question: "Dividir altera as páginas?",
+        answer: "Não. As páginas são copiadas como estão, então o texto continua nítido e pesquisável.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "Extrair páginas de PDF",
+    shortName: "Extrair páginas",
+    tagline: "Escolha as páginas de que precisa em um PDF e salve-as como um novo PDF. Funciona no seu dispositivo.",
+    intro:
+      "O Extrair páginas de PDF permite escolher páginas de um PDF pelas prévias e salvar só essas páginas como um novo documento. É útil para enviar um capítulo de um relatório longo, a página assinada de um contrato ou um único extrato de um conjunto. Marque as páginas que quiser, ou use Selecionar tudo e desmarque as poucas que não quiser, e depois baixe. O arquivo original não é alterado, e tudo acontece no seu navegador.",
+    seoTitle: "Extrair páginas de PDF – Grátis e sem upload",
+    seoDescription:
+      "Extrair páginas de PDF no navegador: escolha as páginas pelas prévias e salve-as como um novo PDF. Grátis, privado e nada é enviado.",
+    keywords: [
+      "extrair páginas de pdf",
+      "extrair página pdf",
+      "separar páginas de pdf",
+      "salvar páginas de um pdf",
+      "selecionar páginas de pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um PDF para ver todas as páginas.",
+      },
+      {
+        title: "Marque as páginas que quiser",
+        description:
+          "Use a caixa de seleção abaixo de cada página, ou Selecionar tudo e desmarque as que não precisar.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve um novo PDF só com essas páginas, na ordem original.",
+      },
+    ],
+    features: [
+      {
+        title: "Escolha pela prévia",
+        description: "Veja cada página antes de escolher.",
+      },
+      {
+        title: "Acessível pelo teclado",
+        description: "Cada página tem uma caixa de seleção com rótulo, então não é preciso usar o mouse.",
+      },
+      {
+        title: "Páginas inalteradas",
+        description: "As páginas escolhidas são copiadas como estão, com texto nítido e pesquisável.",
+      },
+      {
+        title: "Privado",
+        description: "As páginas são extraídas no seu dispositivo e nunca são enviadas.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Meu PDF original é alterado?",
+        answer:
+          "Não. Um novo PDF é criado com as páginas que você escolheu; o arquivo original continua como estava.",
+      },
+      {
+        question: "Posso mudar a ordem das páginas?",
+        answer:
+          "As páginas extraídas mantêm a ordem original. Para reordenar, girar ou excluir páginas, use o Organizar PDF.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "Organizar PDF",
+    shortName: "Organizar PDF",
+    tagline: "Reordene, gire e exclua páginas de PDF e salve o novo PDF. Funciona no seu dispositivo.",
+    intro:
+      "O Organizar PDF mostra todas as páginas de um PDF para você colocar tudo em ordem: mova páginas para antes ou para depois, endireite digitalizações que ficaram de lado e exclua páginas em branco ou indesejadas. Cada página tem seus próprios botões, que também funcionam pelo teclado, e com o mouse você pode arrastar as páginas para o lugar. Desfazer todas as alterações deixa tudo como era. Quando estiver certo, baixe o novo PDF. Tudo isso acontece no seu navegador, então o documento nunca é enviado.",
+    seoTitle: "Organizar páginas de PDF – Reordenar, girar, excluir",
+    seoDescription:
+      "Organizar PDF no navegador: reordene, gire e exclua páginas com prévias e baixe o novo PDF. Grátis, privado e nada é enviado.",
+    keywords: [
+      "organizar pdf",
+      "reordenar páginas pdf",
+      "mudar ordem das páginas pdf",
+      "excluir páginas de pdf",
+      "remover páginas de pdf",
+      "organizar páginas de pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um PDF para ver todas as páginas.",
+      },
+      {
+        title: "Organize as páginas",
+        description:
+          "Use os botões abaixo de cada página para movê-la, girá-la ou excluí-la, ou arraste as páginas para o lugar.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o PDF reorganizado. Desfazer todas as alterações recomeça a partir do original.",
+      },
+    ],
+    features: [
+      {
+        title: "Mover, girar, excluir",
+        description: "Todas as operações de página em uma só tela, com prévias que se atualizam enquanto você trabalha.",
+      },
+      {
+        title: "Arraste ou use os botões",
+        description: "Arraste com o mouse ou use os botões, que também funcionam com teclado e leitores de tela.",
+      },
+      {
+        title: "Sem perdas",
+        description:
+          "As páginas são reorganizadas, não renderizadas de novo, então o texto continua nítido e pesquisável.",
+      },
+      {
+        title: "Privado",
+        description: "O PDF é reorganizado no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Girar uma página reduz a qualidade?",
+        answer:
+          "Não. A rotação é guardada como uma configuração da página, então nada é redesenhado nem comprimido.",
+      },
+      {
+        question: "Posso desfazer uma alteração?",
+        answer:
+          "Sim. Desfazer todas as alterações devolve cada página à posição e à rotação originais. Seu arquivo original nunca é alterado.",
+      },
+      {
+        question: "Posso adicionar páginas de outro PDF?",
+        answer: "Junte os arquivos primeiro com o Juntar PDF e depois organize o arquivo combinado aqui.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "Girar PDF",
+    shortName: "Girar PDF",
+    tagline: "Gire todas as páginas, ou só as que você escolher, em 90 ou 180 graus. Funciona no seu dispositivo.",
+    intro:
+      "O Girar PDF corrige páginas que abrem de lado ou de cabeça para baixo, um problema comum em documentos digitalizados e fotos salvas como PDF. Escolha 90 graus à direita, 180 graus ou 90 graus à esquerda e aplique a todas as páginas ou só às páginas que você marcar. As prévias mostram o resultado antes do download. A rotação é guardada como uma configuração da página, então textos e imagens mantêm a qualidade total, e nada sai do seu navegador.",
+    seoTitle: "Girar PDF online – Grátis e permanente",
+    seoDescription:
+      "Girar PDF no navegador: gire todas as páginas ou só as selecionadas em 90 ou 180 graus e salve de forma permanente. Grátis, privado e sem upload.",
+    keywords: [
+      "girar pdf",
+      "girar páginas pdf",
+      "rotacionar pdf",
+      "girar pdf e salvar",
+      "girar pdf online grátis",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um PDF para ver as páginas.",
+      },
+      {
+        title: "Escolha a rotação",
+        description: "Selecione 90° à direita, 180° ou 90° à esquerda, para todas as páginas ou para as que você marcar.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o PDF com as páginas giradas de vez.",
+      },
+    ],
+    features: [
+      {
+        title: "Todas ou só as selecionadas",
+        description: "Corrija uma digitalização de lado sem mexer no resto.",
+      },
+      {
+        title: "Prévia ao vivo",
+        description: "As prévias das páginas giram conforme você escolhe, antes de qualquer coisa ser salva.",
+      },
+      {
+        title: "Sem perda de qualidade",
+        description: "A rotação é uma configuração da página, então nada é redesenhado.",
+      },
+      {
+        title: "Privado",
+        description: "O PDF é girado no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "A rotação é salva de forma permanente?",
+        answer: "Sim. O PDF baixado abre com as páginas giradas em qualquer leitor de PDF.",
+      },
+      {
+        question: "Posso girar páginas em ângulos diferentes?",
+        answer: "Use o Organizar PDF, em que cada página tem seu próprio botão de girar.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "Adicionar números de página ao PDF",
+    shortName: "Numerar páginas",
+    tagline: "Numere as páginas de um PDF com a posição, o formato e o número inicial que você escolher. Funciona no seu dispositivo.",
+    intro:
+      "O Adicionar números de página coloca um número em cada página de um PDF, algo de que relatórios, teses e apostilas impressas muitas vezes precisam. Escolha uma de seis posições, no topo ou no rodapé, um formato (1, 1 / N ou – 1 –), o número inicial, o tamanho do texto e a distância da borda. Você também pode deixar a primeira página, como uma capa, sem número. Uma prévia mostra como o número vai ficar. Os números são adicionados no seu navegador, então o documento nunca é enviado.",
+    seoTitle: "Numerar páginas de PDF – Grátis e sem upload",
+    seoDescription:
+      "Numerar páginas de PDF no navegador: escolha a posição, o formato e o número inicial, e pule a capa. Grátis, privado e sem upload.",
+    keywords: [
+      "numerar páginas pdf",
+      "adicionar número de página pdf",
+      "colocar número de página em pdf",
+      "paginar pdf",
+      "inserir numeração de páginas pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha o PDF a numerar.",
+      },
+      {
+        title: "Escolha o estilo",
+        description: "Defina a posição, o formato, o número inicial, o tamanho e a distância da borda.",
+      },
+      {
+        title: "Pule a capa se precisar",
+        description: "Marque a opção para deixar a primeira página sem número.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o PDF numerado.",
+      },
+    ],
+    features: [
+      {
+        title: "Seis posições",
+        description: "No topo ou no rodapé, à esquerda, no centro ou à direita.",
+      },
+      {
+        title: "Três formatos",
+        description: "Números simples, no estilo “1 / 12” ou “– 1 –”.",
+      },
+      {
+        title: "Qualquer número inicial",
+        description: "Continue a numeração de outro documento e pule a capa.",
+      },
+      {
+        title: "Privado",
+        description: "Os números são adicionados no seu dispositivo; nada é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso começar de um número diferente de 1?",
+        answer: "Sim. Defina Começar em com qualquer número, por exemplo para continuar de um capítulo anterior.",
+      },
+      {
+        question: "Os números vão cobrir meu conteúdo?",
+        answer:
+          "Eles são colocados na margem da página. Se as suas páginas têm margens muito pequenas, escolha uma distância da borda menor ou um tamanho de texto menor.",
+      },
+      {
+        question: "Por que os números aparecem de lado em algumas páginas?",
+        answer:
+          "Alguns PDFs guardam as páginas giradas. O número segue a orientação guardada da página, então nessas páginas ele pode aparecer virado. Corrija a rotação antes com o Girar PDF ou o Organizar PDF.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "Marca d'água em PDF",
+    shortName: "Marca d'água PDF",
+    tagline: "Aplique um texto ou um logo nas páginas de um PDF e arraste para o lugar. Funciona no seu dispositivo.",
+    intro:
+      "O Marca d'água em PDF adiciona um carimbo como CONFIDENCIAL, RASCUNHO, seu nome ou seu logo às páginas de um PDF. Digite o texto em qualquer idioma ou escolha uma imagem de logo, depois defina o tamanho, a opacidade e o ângulo e arraste a marca para onde quiser na prévia da página, ou use os controles deslizantes de posição. Aplique a todas as páginas ou a um intervalo de páginas. A marca d’água é adicionada no seu navegador, então o documento nunca é enviado.",
+    seoTitle: "Marca d'água em PDF online – Texto ou logo, grátis",
+    seoDescription:
+      "Colocar marca d’água em PDF no navegador: texto ou logo, com tamanho, opacidade e ângulo, arrastando para o lugar. Grátis, privado e sem upload.",
+    keywords: [
+      "marca d'água pdf",
+      "colocar marca d'água em pdf",
+      "adicionar marca d'água pdf",
+      "carimbo em pdf",
+      "colocar logo em pdf",
+      "marca d'água confidencial pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha o PDF a marcar.",
+      },
+      {
+        title: "Crie a marca d’água",
+        description: "Digite o texto e escolha a cor, ou escolha uma imagem de logo.",
+      },
+      {
+        title: "Posicione",
+        description:
+          "Defina o tamanho, a opacidade e o ângulo, depois arraste na prévia ou use os controles deslizantes.",
+      },
+      {
+        title: "Baixe",
+        description: "Escolha todas as páginas ou um intervalo e salve o PDF com marca d’água.",
+      },
+    ],
+    features: [
+      {
+        title: "Texto em qualquer idioma",
+        description: "O texto é desenhado como imagem, então qualquer alfabeto e acento aparece corretamente.",
+      },
+      {
+        title: "Marcas d’água com logo",
+        description: "Use um logo PNG, JPG, WebP ou SVG.",
+      },
+      {
+        title: "Arraste para o lugar",
+        description:
+          "Mova a marca d’água na prévia da página ou use controles deslizantes que também funcionam pelo teclado.",
+      },
+      {
+        title: "Privado",
+        description: "A marca d’água é adicionada no seu dispositivo; nada é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "A marca d’água pode ser removida depois?",
+        answer:
+          "Ela é adicionada como uma imagem sobre a página. Alguém com um editor de PDF ainda poderia removê-la, então a marca d’água desencoraja cópias em vez de impedi-las.",
+      },
+      {
+        question: "Posso aplicar a marca d’água só em algumas páginas?",
+        answer: "Sim. Escolha Páginas e digite um intervalo como 1-3, 5.",
+      },
+      {
+        question: "A marca d’água cobre o texto?",
+        answer:
+          "Diminua a opacidade para manter a página legível. 15–30% é o comum para marcas d’água diagonais.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "Assinar PDF",
+    shortName: "Assinar PDF",
+    tagline: "Desenhe ou digite sua assinatura, ou use uma imagem dela, e coloque-a em qualquer página de um PDF. Funciona no seu dispositivo.",
+    intro:
+      "O Assinar PDF coloca sua assinatura manuscrita em um documento sem precisar imprimir e digitalizar. Desenhe a assinatura com o mouse, o dedo ou uma caneta stylus, digite seu nome ou use uma foto da sua assinatura, cujo fundo branco pode ficar transparente. Depois escolha a página, defina o tamanho e arraste a assinatura para o lugar ou use os controles deslizantes de posição. A assinatura é adicionada no seu navegador, então o documento e a sua assinatura nunca são enviados.",
+    seoTitle: "Assinar PDF online – Grátis e sem upload",
+    seoDescription:
+      "Assinar PDF no navegador: desenhe ou digite sua assinatura, ou use uma imagem dela, e coloque-a em qualquer página. Grátis, privado e nada é enviado.",
+    keywords: [
+      "assinar pdf",
+      "assinar pdf online grátis",
+      "colocar assinatura em pdf",
+      "assinatura eletrônica pdf",
+      "inserir assinatura no pdf",
+      "assinar documento pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha o documento a assinar.",
+      },
+      {
+        title: "Crie sua assinatura",
+        description: "Desenhe, digite seu nome ou escolha uma foto da sua assinatura.",
+      },
+      {
+        title: "Posicione",
+        description:
+          "Escolha a página, defina o tamanho e arraste a assinatura para o lugar certo, ou use os controles deslizantes.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o PDF assinado.",
+      },
+    ],
+    features: [
+      {
+        title: "Três formas de assinar",
+        description: "Desenhe, digite ou use uma imagem, com tinta azul ou preta.",
+      },
+      {
+        title: "Assinaturas limpas a partir de fotos",
+        description: "O fundo de papel de uma foto da assinatura pode ficar transparente.",
+      },
+      {
+        title: "Posicionamento preciso",
+        description: "Arraste na prévia ou use controles deslizantes que também funcionam pelo teclado.",
+      },
+      {
+        title: "Privado",
+        description: "Seu documento e sua assinatura ficam no seu dispositivo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "É uma assinatura digital com validade jurídica?",
+        answer:
+          "Ela adiciona uma imagem da sua assinatura, como assinar no papel. Não é uma assinatura digital certificada, com certificado. Muitos formulários do dia a dia a aceitam, mas contratos que exigem uma assinatura eletrônica certificada precisam de um serviço de assinatura específico.",
+      },
+      {
+        question: "Posso assinar mais de uma página?",
+        answer:
+          "Assine uma página, baixe, depois abra o PDF assinado de novo e coloque a assinatura na próxima página.",
+      },
+      {
+        question: "Minha assinatura fica salva em algum lugar?",
+        answer:
+          "Não. Ela existe só no seu navegador enquanto a página está aberta e dentro do PDF que você baixa.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "Preencher formulário PDF",
+    shortName: "Preencher formulário",
+    tagline: "Preencha os campos de um formulário PDF e salve, com a opção de bloqueá-lo. Funciona no seu dispositivo.",
+    intro:
+      "O Preencher formulário PDF encontra os campos preenchíveis de um formulário PDF, como caixas de texto, caixas de seleção e listas suspensas, e mostra cada um com o seu nome para você completá-los rapidamente. Baixe o PDF preenchido, ou nivele-o para que as respostas passem a fazer parte da página e não possam mais ser alteradas. É prático para fichas de inscrição, formulários de impostos e documentos de cadastro. O formulário é preenchido no seu navegador, então seus dados pessoais nunca são enviados.",
+    seoTitle: "Preencher formulário PDF online – Grátis e privado",
+    seoDescription:
+      "Preencher PDF no navegador: campos de texto, caixas de seleção e listas de formulários preenchíveis. Nivele para bloquear as respostas. Grátis e sem upload.",
+    keywords: [
+      "preencher pdf",
+      "preencher formulário pdf",
+      "preencher pdf online",
+      "pdf preenchível",
+      "completar formulário pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu formulário PDF",
+        description: "Arraste ou escolha um PDF que tenha campos preenchíveis.",
+      },
+      {
+        title: "Preencha os campos",
+        description: "Digite nos campos de texto, marque as caixas de seleção e escolha nas listas.",
+      },
+      {
+        title: "Bloqueie se precisar",
+        description: "Marque Nivelar para tornar as respostas parte da página.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o formulário preenchido.",
+      },
+    ],
+    features: [
+      {
+        title: "Todos os campos comuns",
+        description: "Caixas de texto, texto de várias linhas, caixas de seleção, botões de opção e listas suspensas.",
+      },
+      {
+        title: "Opção de nivelar",
+        description: "Bloqueie as respostas para que o formulário não possa ser editado depois.",
+      },
+      {
+        title: "Campos acessíveis",
+        description: "Cada campo é um campo de entrada comum, com rótulo, que funciona com teclado e leitores de tela.",
+      },
+      {
+        title: "Privado",
+        description: "Suas respostas ficam no seu dispositivo; nada é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que aparece que meu PDF não tem campos preenchíveis?",
+        answer:
+          "Alguns formulários são só páginas impressas sem campos de formulário de verdade, e alguns usam um formato mais antigo (XFA) que esta ferramenta não consegue ler. Para formulários sem campos, adicione uma assinatura com o Assinar PDF ou imprima e preencha à mão.",
+      },
+      {
+        question: "O que o Nivelar faz?",
+        answer:
+          "Ele transforma as respostas em conteúdo comum da página. O formulário fica com a mesma aparência, mas ninguém pode alterar as respostas nem os campos.",
+      },
+      {
+        question: "Campos de assinatura são suportados?",
+        answer: "Campos de assinatura e de botão são ignorados. Use o Assinar PDF para colocar sua assinatura na página.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "Remover metadados do PDF",
+    shortName: "Metadados do PDF",
+    tagline: "Veja e remova o autor, o título, o software e as datas escondidos em um PDF. Funciona no seu dispositivo.",
+    intro:
+      "Arquivos PDF costumam carregar detalhes ocultos: o nome do autor, o título do documento, o software que o criou e quando ele foi criado e modificado. O Remover metadados do PDF mostra o que está guardado no seu arquivo e baixa uma cópia sem essas informações, o que é útil antes de compartilhar um documento publicamente ou enviar um currículo. As páginas em si não são alteradas. Tudo acontece no seu navegador, então o documento nunca sai do seu dispositivo.",
+    seoTitle: "Remover metadados de PDF – Ver e apagar, grátis",
+    seoDescription:
+      "Remover metadados de PDF no navegador: veja o autor, o título, o software e as datas escondidos no arquivo e apague-os. Grátis, privado e nada é enviado.",
+    keywords: [
+      "remover metadados pdf",
+      "apagar metadados pdf",
+      "remover autor do pdf",
+      "limpar metadados pdf",
+      "ver metadados pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um PDF para ver as informações guardadas nele.",
+      },
+      {
+        title: "Confira o que foi encontrado",
+        description: "A lista mostra o título, o autor, o software, as datas e os metadados XMP.",
+      },
+      {
+        title: "Baixe a cópia limpa",
+        description: "Salve uma cópia sem essas informações.",
+      },
+    ],
+    features: [
+      {
+        title: "Veja antes de remover",
+        description: "Cada detalhe guardado é listado com o seu valor.",
+      },
+      {
+        title: "Informações do documento e XMP",
+        description: "Os dois lugares em que os PDFs guardam metadados são limpos.",
+      },
+      {
+        title: "Páginas intactas",
+        description: "Textos, imagens e layout ficam exatamente iguais.",
+      },
+      {
+        title: "Privado",
+        description: "O PDF é limpo no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "O que exatamente é removido?",
+        answer:
+          "As informações do documento (título, autor, assunto, palavras-chave, software de criação, produtor e datas) e o fluxo de metadados XMP.",
+      },
+      {
+        question: "Ele remove tudo o que é pessoal do PDF?",
+        answer:
+          "Não. O texto nas páginas, os comentários e os detalhes dentro de imagens incorporadas (como os dados EXIF de fotos) não são alterados. Confira o próprio conteúdo antes de compartilhar.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "Cortar PDF",
+    shortName: "Cortar PDF",
+    tagline: "Apare as margens de todas as páginas de um PDF. Funciona no seu dispositivo.",
+    intro:
+      "O Cortar PDF apara as bordas de todas as páginas, removendo margens brancas largas, bordas do scanner ou marcas de impressão para que o conteúdo ocupe a tela ao ler no celular. Defina quanto aparar no topo, à direita, embaixo e à esquerda, e a prévia mostra qual parte da página fica. O corte é guardado como uma configuração da página, então o texto mantém a qualidade total. Tudo acontece no seu navegador, então o documento nunca é enviado.",
+    seoTitle: "Cortar PDF online – Aparar margens, grátis",
+    seoDescription:
+      "Cortar PDF no navegador: apare as margens das páginas com prévia ao vivo e remova bordas brancas e do scanner. Grátis, privado e nada é enviado.",
+    keywords: [
+      "cortar pdf",
+      "cortar páginas pdf",
+      "recortar pdf",
+      "remover margens pdf",
+      "aparar margens pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha o PDF a cortar.",
+      },
+      {
+        title: "Defina as margens",
+        description: "Use os controles deslizantes de cada lado; a prévia mostra o que fica.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve o PDF com todas as páginas cortadas.",
+      },
+    ],
+    features: [
+      {
+        title: "Controle dos quatro lados",
+        description: "Apare o topo, a direita, a parte de baixo e a esquerda separadamente.",
+      },
+      {
+        title: "Prévia ao vivo",
+        description: "A área aparada aparece sombreada na primeira página.",
+      },
+      {
+        title: "Sem perda de qualidade",
+        description: "As páginas não são redesenhadas, então o texto continua nítido e pesquisável.",
+      },
+      {
+        title: "Privado",
+        description: "O PDF é cortado no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Cortar deixa o arquivo menor?",
+        answer:
+          "Não. A área aparada fica oculta, não é apagada, então o tamanho do arquivo continua praticamente o mesmo. Um editor de PDF ainda consegue mostrar a área oculta.",
+      },
+      {
+        question: "Posso cortar as páginas de formas diferentes?",
+        answer:
+          "As mesmas margens valem para todas as páginas. Para cortar páginas de formas diferentes, divida o PDF, corte cada parte e junte tudo de novo.",
+      },
+      {
+        question: "Posso usar um PDF protegido por senha?",
+        answer:
+          "Ainda não. Se um PDF precisar de senha para abrir, a ferramenta vai avisar. Abra-o em um leitor de PDF com a senha, salve uma cópia sem ela e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer:
+          "Não. O PDF é aberto e modificado pelo seu navegador no seu dispositivo, então contratos, extratos e outros documentos privados nunca saem dele.",
+      },
+    ],
+  },
 };

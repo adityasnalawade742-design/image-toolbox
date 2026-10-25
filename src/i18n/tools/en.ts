@@ -3026,4 +3026,772 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "merge-pdf": {
+    "name": "Merge PDF",
+    "shortName": "Merge PDF",
+    "tagline": "Combine several PDF files into one, in the order you choose. The files are merged on your device.",
+    "intro": "Merge PDF joins two or more PDF files into a single document. Add the files, put them in order with the move buttons, check the first page of each, and download one PDF with every page in sequence. It is the quick way to send a report with its appendices, several scanned pages, or a set of invoices as one file. The merging happens in your browser, so your documents are never uploaded to a server.",
+    "seoTitle": "Merge PDF Files Online – Free, No Upload",
+    "seoDescription": "Combine PDF files into one in your browser. Put them in any order and download a single PDF. Free, private, no upload, no watermark.",
+    "keywords": [
+      "merge pdf",
+      "combine pdf",
+      "join pdf files",
+      "merge pdf online free",
+      "combine pdf files into one",
+      "pdf merger"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDFs",
+        "description": "Drop or choose two or more PDF files. You can add more at any time."
+      },
+      {
+        "title": "Put them in order",
+        "description": "Use the up and down buttons to arrange the files, and remove any you don't need."
+      },
+      {
+        "title": "Download",
+        "description": "Save one PDF that contains every page, file after file."
+      }
+    ],
+    "features": [
+      {
+        "title": "Any number of files",
+        "description": "Combine as many PDFs as your device can handle, with the total page count shown."
+      },
+      {
+        "title": "Your order",
+        "description": "Arrange files with buttons that also work from the keyboard and screen readers."
+      },
+      {
+        "title": "Pages unchanged",
+        "description": "Pages are copied as they are, without re-compression, so text stays sharp and searchable."
+      },
+      {
+        "title": "Private and free",
+        "description": "Files are merged on your device, with no upload, no sign-up and no watermark."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is there a limit on how many files I can merge?",
+        "answer": "There is no fixed limit. Dozens of normal PDFs work on most devices; very large files may be slow on older phones."
+      },
+      {
+        "question": "Will links and bookmarks still work?",
+        "answer": "Links on the pages are kept. The bookmark list (the outline in a PDF reader's side panel) is not copied into the merged file."
+      },
+      {
+        "question": "Does merging reduce quality?",
+        "answer": "No. The pages are copied as they are, so text, images and vector graphics look exactly the same."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "split-pdf": {
+    "name": "Split PDF",
+    "shortName": "Split PDF",
+    "tagline": "Split a PDF by page ranges, every few pages, or into single pages. It runs on your device.",
+    "intro": "Split PDF breaks one PDF into several smaller ones. Type page ranges such as 1-3, 5, 8- to get a file for each range, split every few pages to cut a long scan into equal parts, or save every page as its own PDF. The tool lists the files you will get before you download them, and several files come together in one ZIP. Splitting happens in your browser, so the document never leaves your device.",
+    "seoTitle": "Split PDF Online – By Pages or Ranges, Free",
+    "seoDescription": "Split a PDF into separate files by page ranges, every N pages, or single pages, in your browser. Free, private and nothing is uploaded.",
+    "keywords": [
+      "split pdf",
+      "split pdf pages",
+      "separate pdf pages",
+      "split pdf online free",
+      "divide pdf",
+      "pdf splitter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF. Its pages appear as previews."
+      },
+      {
+        "title": "Choose how to split",
+        "description": "Enter page ranges, choose a number of pages per file, or split every page."
+      },
+      {
+        "title": "Check the list",
+        "description": "The panel shows each file you will get and its pages."
+      },
+      {
+        "title": "Download",
+        "description": "Save one PDF, or a ZIP when there are several files."
+      }
+    ],
+    "features": [
+      {
+        "title": "Three ways to split",
+        "description": "Custom ranges, equal groups of pages, or one page per file."
+      },
+      {
+        "title": "See before you save",
+        "description": "Every resulting file and its page numbers are listed first."
+      },
+      {
+        "title": "One ZIP download",
+        "description": "Several files arrive together, named by their pages."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is split on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I write page ranges?",
+        "answer": "Separate ranges with commas. 1-3 means pages 1 to 3, 5 means page 5 only, and 8- means page 8 to the end. Each range becomes its own PDF."
+      },
+      {
+        "question": "Can I get one PDF with only some pages?",
+        "answer": "Yes. Enter a single range, such as 2-4, to download just those pages. Extract PDF Pages also lets you pick pages by clicking them."
+      },
+      {
+        "question": "Does splitting change the pages?",
+        "answer": "No. Pages are copied as they are, so text stays sharp and searchable."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "extract-pdf-pages": {
+    "name": "Extract PDF Pages",
+    "shortName": "Extract Pages",
+    "tagline": "Pick the pages you need from a PDF and save them as a new PDF. It runs on your device.",
+    "intro": "Extract PDF Pages lets you choose pages from a PDF by their previews and save only those pages as a new document. It is useful for sending one chapter of a long report, the signed page of a contract, or a single statement from a bundle. Tick the pages you want, or use Select all and clear the few you don't, then download. The original file isn't changed, and everything happens in your browser.",
+    "seoTitle": "Extract Pages from PDF – Free, No Upload",
+    "seoDescription": "Choose pages from a PDF by their previews and save them as a new PDF, in your browser. Free, private, and nothing is uploaded.",
+    "keywords": [
+      "extract pages from pdf",
+      "extract pdf pages",
+      "save pdf pages",
+      "select pages from pdf",
+      "pdf page extractor"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF to see all of its pages."
+      },
+      {
+        "title": "Tick the pages you want",
+        "description": "Use the checkbox under each page, or Select all and clear the ones you don't need."
+      },
+      {
+        "title": "Download",
+        "description": "Save a new PDF with just those pages, in their original order."
+      }
+    ],
+    "features": [
+      {
+        "title": "Pick by preview",
+        "description": "See every page before you choose."
+      },
+      {
+        "title": "Keyboard friendly",
+        "description": "Every page has a labelled checkbox, so no mouse is needed."
+      },
+      {
+        "title": "Pages unchanged",
+        "description": "Chosen pages are copied as they are, with sharp, searchable text."
+      },
+      {
+        "title": "Private",
+        "description": "Pages are extracted on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it change my original PDF?",
+        "answer": "No. A new PDF is created with the pages you picked; the original file stays as it was."
+      },
+      {
+        "question": "Can I change the order of the pages?",
+        "answer": "Extracted pages keep their original order. To reorder, rotate or delete pages, use Organize PDF."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "organize-pdf": {
+    "name": "Organize PDF",
+    "shortName": "Organize PDF",
+    "tagline": "Reorder, rotate and delete PDF pages, then save the new PDF. It runs on your device.",
+    "intro": "Organize PDF shows every page of a PDF so you can put it in shape: move pages earlier or later, turn sideways scans upright, and delete blank or unwanted pages. Each page has its own buttons, which also work from the keyboard, and with a mouse you can drag pages into place. Undo all changes puts everything back. When it looks right, download the new PDF. All of this happens in your browser, so the document is never uploaded.",
+    "seoTitle": "Organize PDF Pages – Reorder, Rotate, Delete",
+    "seoDescription": "Reorder, rotate and delete PDF pages in your browser, with page previews. Download the new PDF. Free, private, nothing is uploaded.",
+    "keywords": [
+      "organize pdf",
+      "reorder pdf pages",
+      "rearrange pdf pages",
+      "delete pdf pages",
+      "remove pages from pdf",
+      "sort pdf pages"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF to see all of its pages."
+      },
+      {
+        "title": "Arrange the pages",
+        "description": "Use the buttons under each page to move it, rotate it or delete it, or drag pages into place."
+      },
+      {
+        "title": "Download",
+        "description": "Save the reorganized PDF. Undo all changes starts again from the original."
+      }
+    ],
+    "features": [
+      {
+        "title": "Move, rotate, delete",
+        "description": "Every page operation in one view, with previews that update as you go."
+      },
+      {
+        "title": "Drag or buttons",
+        "description": "Drag with a mouse, or use the buttons, which also work with a keyboard and screen readers."
+      },
+      {
+        "title": "Lossless",
+        "description": "Pages are rearranged, not re-rendered, so text stays sharp and searchable."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is reorganized on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does rotating a page reduce quality?",
+        "answer": "No. Rotation is stored as a page setting, so nothing is redrawn or compressed."
+      },
+      {
+        "question": "Can I undo a change?",
+        "answer": "Yes. Undo all changes returns every page to its original position and rotation. Your original file is never changed."
+      },
+      {
+        "question": "Can I add pages from another PDF?",
+        "answer": "Combine the files with Merge PDF first, then organize the merged file here."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "rotate-pdf": {
+    "name": "Rotate PDF",
+    "shortName": "Rotate PDF",
+    "tagline": "Turn every page, or only the pages you choose, by 90 or 180 degrees. It runs on your device.",
+    "intro": "Rotate PDF fixes pages that open sideways or upside down, a common problem with scanned documents and photos saved as PDF. Choose 90 degrees right, 180 degrees or 90 degrees left, and apply it to all pages or only to the pages you tick. The previews show the result before you download. The rotation is stored as a page setting, so text and images keep their full quality, and nothing leaves your browser.",
+    "seoTitle": "Rotate PDF Pages Online – Free, Permanent",
+    "seoDescription": "Rotate all pages or selected pages of a PDF by 90 or 180 degrees in your browser, and save it permanently. Free, private, no upload.",
+    "keywords": [
+      "rotate pdf",
+      "rotate pdf pages",
+      "turn pdf sideways",
+      "rotate pdf and save",
+      "fix upside down pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF to see its pages."
+      },
+      {
+        "title": "Choose the rotation",
+        "description": "Pick 90° right, 180° or 90° left, for all pages or the pages you tick."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF with the pages turned for good."
+      }
+    ],
+    "features": [
+      {
+        "title": "All or selected pages",
+        "description": "Fix one sideways scan without touching the rest."
+      },
+      {
+        "title": "Live preview",
+        "description": "Page previews turn as you choose, before anything is saved."
+      },
+      {
+        "title": "No quality loss",
+        "description": "Rotation is a page setting, so nothing is redrawn."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is rotated on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the rotation saved permanently?",
+        "answer": "Yes. The downloaded PDF opens with the pages turned in every PDF reader."
+      },
+      {
+        "question": "Can I rotate pages by different amounts?",
+        "answer": "Use Organize PDF, where each page has its own rotate button."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "add-page-numbers-pdf": {
+    "name": "Add Page Numbers to PDF",
+    "shortName": "Page Numbers",
+    "tagline": "Number the pages of a PDF, with the position, format and starting number you choose. It runs on your device.",
+    "intro": "Add Page Numbers puts a number on every page of a PDF, which reports, theses and printed handouts often need. Choose one of six positions at the top or bottom, a format (1, 1 / N or – 1 –), the starting number, the text size and the distance from the edge. You can also leave the first page, such as a cover, unnumbered. A preview shows how the number will look. The numbers are added in your browser, so the document is never uploaded.",
+    "seoTitle": "Add Page Numbers to PDF – Free, No Upload",
+    "seoDescription": "Number PDF pages in your browser: choose the position, format and start number, and skip the cover page. Free, private, no upload.",
+    "keywords": [
+      "add page numbers to pdf",
+      "number pdf pages",
+      "pdf page numbering",
+      "insert page numbers pdf",
+      "paginate pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF to number."
+      },
+      {
+        "title": "Choose the style",
+        "description": "Pick the position, format, starting number, size and distance from the edge."
+      },
+      {
+        "title": "Skip the cover if needed",
+        "description": "Tick the option to leave the first page without a number."
+      },
+      {
+        "title": "Download",
+        "description": "Save the numbered PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Six positions",
+        "description": "Top or bottom, on the left, centre or right."
+      },
+      {
+        "title": "Three formats",
+        "description": "Plain numbers, “1 / 12” style, or “– 1 –”."
+      },
+      {
+        "title": "Any starting number",
+        "description": "Continue numbering from another document, and skip a cover page."
+      },
+      {
+        "title": "Private",
+        "description": "Numbers are added on your device; nothing is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I start from a number other than 1?",
+        "answer": "Yes. Set Start at to any number, for example to continue from a previous chapter."
+      },
+      {
+        "question": "Will the numbers cover my content?",
+        "answer": "They are placed in the page margin. If your pages have very small margins, choose a smaller distance from the edge or a smaller text size."
+      },
+      {
+        "question": "Why are the numbers sideways on some pages?",
+        "answer": "Some PDFs store pages rotated. The number follows the page's stored orientation, so on those pages it may appear turned. Fix the rotation with Rotate PDF or Organize PDF first."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "watermark-pdf": {
+    "name": "Watermark PDF",
+    "shortName": "Watermark PDF",
+    "tagline": "Stamp text or a logo on PDF pages, then drag it into place. It runs on your device.",
+    "intro": "Watermark PDF adds a stamp such as CONFIDENTIAL, DRAFT, your name or your logo to the pages of a PDF. Type the text in any language or choose a logo image, then set its size, opacity and angle and drag it to where you want it on the page preview, or use the position sliders. Apply it to every page or to a range of pages. The watermark is added in your browser, so the document is never uploaded.",
+    "seoTitle": "Watermark PDF Online – Text or Logo, Free",
+    "seoDescription": "Add a text or logo watermark to PDF pages in your browser. Set size, opacity and angle, and drag it into place. Free, private, no upload.",
+    "keywords": [
+      "watermark pdf",
+      "add watermark to pdf",
+      "pdf watermark",
+      "stamp pdf",
+      "add logo to pdf",
+      "confidential watermark pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF to stamp."
+      },
+      {
+        "title": "Create the watermark",
+        "description": "Type the text and pick its color, or choose a logo image."
+      },
+      {
+        "title": "Place it",
+        "description": "Set the size, opacity and angle, then drag it on the preview or use the sliders."
+      },
+      {
+        "title": "Download",
+        "description": "Choose all pages or a range, and save the watermarked PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Text in any language",
+        "description": "The text is drawn as an image, so every script and accent appears correctly."
+      },
+      {
+        "title": "Logo watermarks",
+        "description": "Use a PNG, JPG, WebP or SVG logo."
+      },
+      {
+        "title": "Drag into place",
+        "description": "Move the watermark on the page preview, or use sliders that also work with a keyboard."
+      },
+      {
+        "title": "Private",
+        "description": "The watermark is added on your device; nothing is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can the watermark be removed later?",
+        "answer": "It is added as an image on top of the page. Someone with a PDF editor could still remove it, so a watermark discourages copying rather than preventing it."
+      },
+      {
+        "question": "Can I watermark only some pages?",
+        "answer": "Yes. Choose Pages and enter a range such as 1-3, 5."
+      },
+      {
+        "question": "Does the watermark cover the text?",
+        "answer": "Lower the opacity to keep the page readable. 15–30% is typical for diagonal watermarks."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "sign-pdf": {
+    "name": "Sign PDF",
+    "shortName": "Sign PDF",
+    "tagline": "Draw, type or upload your signature and place it on any page of a PDF. It runs on your device.",
+    "intro": "Sign PDF puts your handwritten signature on a document without printing and scanning it. Draw the signature with a mouse, finger or stylus, type your name, or use a photo of your signature, whose white background can be made transparent. Then choose the page, set the size, and drag the signature into place or use the position sliders. The signature is added in your browser, so the document and your signature are never uploaded.",
+    "seoTitle": "Sign PDF Online – Free, No Upload",
+    "seoDescription": "Sign a PDF in your browser: draw, type or upload your signature and place it on any page. Free, private, and nothing is uploaded.",
+    "keywords": [
+      "sign pdf",
+      "sign pdf online free",
+      "add signature to pdf",
+      "esign pdf",
+      "draw signature on pdf",
+      "electronic signature pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the document to sign."
+      },
+      {
+        "title": "Create your signature",
+        "description": "Draw it, type your name, or choose a photo of your signature."
+      },
+      {
+        "title": "Place it",
+        "description": "Pick the page, set the size, and drag the signature where it belongs, or use the sliders."
+      },
+      {
+        "title": "Download",
+        "description": "Save the signed PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Three ways to sign",
+        "description": "Draw, type or upload, in blue or black ink."
+      },
+      {
+        "title": "Clean signatures from photos",
+        "description": "The paper background of a signature photo can be made transparent."
+      },
+      {
+        "title": "Precise placement",
+        "description": "Drag on the preview, or use sliders that also work with a keyboard."
+      },
+      {
+        "title": "Private",
+        "description": "Your document and signature stay on your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this a legally binding digital signature?",
+        "answer": "It adds an image of your signature, like signing on paper. It is not a certified digital signature with a certificate. Many everyday forms accept it, but contracts that require a certified electronic signature need a dedicated signing service."
+      },
+      {
+        "question": "Can I sign on more than one page?",
+        "answer": "Sign one page, download, then open the signed PDF again and place the signature on the next page."
+      },
+      {
+        "question": "Is my signature saved anywhere?",
+        "answer": "No. It exists only in your browser while the page is open and inside the PDF you download."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "fill-pdf-form": {
+    "name": "Fill PDF Form",
+    "shortName": "Fill Form",
+    "tagline": "Fill in the fields of a PDF form and save it, optionally locked. It runs on your device.",
+    "intro": "Fill PDF Form finds the fillable fields in a PDF form, such as text boxes, checkboxes and drop-down lists, and shows each one with its name so you can complete them quickly. Download the filled PDF, or flatten it so the answers become part of the page and can no longer be changed. It is handy for application forms, tax forms and registration documents. The form is filled in your browser, so your personal details are never uploaded.",
+    "seoTitle": "Fill PDF Form Online – Free, Private",
+    "seoDescription": "Fill in fillable PDF forms in your browser: text fields, checkboxes and lists. Flatten to lock answers. Free, private, no upload.",
+    "keywords": [
+      "fill pdf form",
+      "fill out pdf online",
+      "fillable pdf",
+      "complete pdf form",
+      "pdf form filler"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF form",
+        "description": "Drop or choose a PDF that has fillable fields."
+      },
+      {
+        "title": "Fill in the fields",
+        "description": "Type in text fields, tick checkboxes and choose from lists."
+      },
+      {
+        "title": "Lock it if needed",
+        "description": "Tick Flatten to make the answers part of the page."
+      },
+      {
+        "title": "Download",
+        "description": "Save the completed form."
+      }
+    ],
+    "features": [
+      {
+        "title": "Every common field",
+        "description": "Text boxes, multi-line text, checkboxes, radio buttons and drop-down lists."
+      },
+      {
+        "title": "Flatten option",
+        "description": "Lock the answers so the form can't be edited afterwards."
+      },
+      {
+        "title": "Accessible fields",
+        "description": "Each field is a normal labelled input that works with keyboards and screen readers."
+      },
+      {
+        "title": "Private",
+        "description": "Your answers stay on your device; nothing is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does it say my PDF has no fillable fields?",
+        "answer": "Some forms are just printed pages without real form fields, and some use an older format (XFA) that this tool can't read. For forms without fields, add a signature with Sign PDF or print and fill by hand."
+      },
+      {
+        "question": "What does Flatten do?",
+        "answer": "It turns the answers into ordinary page content. The form looks the same, but nobody can change the answers or the fields."
+      },
+      {
+        "question": "Are signature fields supported?",
+        "answer": "Signature and button fields are skipped. Use Sign PDF to place your signature on the page."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "remove-pdf-metadata": {
+    "name": "Remove PDF Metadata",
+    "shortName": "PDF Metadata",
+    "tagline": "See and remove the author, title, software and dates hidden in a PDF. It runs on your device.",
+    "intro": "PDF files often carry hidden details: the author's name, the document title, the software that made it, and when it was created and changed. Remove PDF Metadata shows what is stored in your file and downloads a copy without it, which is useful before sharing a document publicly or sending a CV. The pages themselves are not changed. Everything happens in your browser, so the document never leaves your device.",
+    "seoTitle": "Remove PDF Metadata – See and Delete, Free",
+    "seoDescription": "See the author, title, software and dates hidden in a PDF, and remove them in your browser. Free, private, and nothing is uploaded.",
+    "keywords": [
+      "remove pdf metadata",
+      "pdf metadata remover",
+      "delete pdf author",
+      "clean pdf metadata",
+      "view pdf metadata"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF to see the information stored in it."
+      },
+      {
+        "title": "Review what was found",
+        "description": "The list shows the title, author, software, dates and XMP metadata."
+      },
+      {
+        "title": "Download the clean copy",
+        "description": "Save a copy with that information removed."
+      }
+    ],
+    "features": [
+      {
+        "title": "See before you remove",
+        "description": "Every stored detail is listed with its value."
+      },
+      {
+        "title": "Document info and XMP",
+        "description": "Both places PDFs keep metadata are cleared."
+      },
+      {
+        "title": "Pages untouched",
+        "description": "Text, images and layout stay exactly the same."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is cleaned on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What exactly is removed?",
+        "answer": "The document information (title, author, subject, keywords, creating software, producer and dates) and the XMP metadata stream."
+      },
+      {
+        "question": "Does it remove everything personal from the PDF?",
+        "answer": "No. Text on the pages, comments, and details inside embedded images (such as photo EXIF data) are not changed. Check the content itself before sharing."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
+  "crop-pdf": {
+    "name": "Crop PDF",
+    "shortName": "Crop PDF",
+    "tagline": "Trim the margins of every page in a PDF. It runs on your device.",
+    "intro": "Crop PDF trims the edges of every page, removing wide white margins, scanner borders or printer marks so the content fills the screen when reading on a phone. Set how much to trim from the top, right, bottom and left, and the preview shows which part of the page stays. The crop is stored as a page setting, so text keeps its full quality. Everything happens in your browser, so the document is never uploaded.",
+    "seoTitle": "Crop PDF Online – Trim Page Margins, Free",
+    "seoDescription": "Trim PDF page margins in your browser with a live preview. Remove white borders and scanner edges. Free, private, nothing is uploaded.",
+    "keywords": [
+      "crop pdf",
+      "crop pdf pages",
+      "trim pdf margins",
+      "remove pdf margins",
+      "cut pdf page"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF to crop."
+      },
+      {
+        "title": "Set the margins",
+        "description": "Use the sliders for each side; the preview shows what stays."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF with every page cropped."
+      }
+    ],
+    "features": [
+      {
+        "title": "Four-side control",
+        "description": "Trim the top, right, bottom and left separately."
+      },
+      {
+        "title": "Live preview",
+        "description": "The trimmed area is shaded on the first page."
+      },
+      {
+        "title": "No quality loss",
+        "description": "Pages are not redrawn, so text stays sharp and searchable."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is cropped on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does cropping make the file smaller?",
+        "answer": "No. The trimmed area is hidden, not deleted, so the file size stays about the same. A PDF editor can still show the hidden area."
+      },
+      {
+        "question": "Can I crop pages differently?",
+        "answer": "The same margins apply to every page. To crop pages differently, split the PDF, crop each part, and merge them again."
+      },
+      {
+        "question": "Can I use a password-protected PDF?",
+        "answer": "Not yet. If a PDF needs a password to open, the tool tells you. Open it in a PDF reader with the password, save a copy without it, and use that copy."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and changed by your browser on your device, so contracts, statements and other private documents never leave it."
+      }
+    ]
+  },
 };

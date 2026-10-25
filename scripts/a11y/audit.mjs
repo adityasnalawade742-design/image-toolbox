@@ -25,6 +25,9 @@ const INPUT = {
   'bulk-image-compressor': [S('photo.jpg'), S('photo2.png')], 'bulk-image-resizer': [S('photo.jpg'), S('photo2.png')],
   'heic-to-jpg': [S('photo.heic')], 'heic-to-png': [S('photo.heic')], 'pdf-to-jpg': [S('doc.pdf')],
   'jpg-to-pdf': [S('photo.jpg'), S('photo2.png')], 'merge-images': [S('photo.jpg'), S('photo2.png')],
+  'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
+  'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
+  'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

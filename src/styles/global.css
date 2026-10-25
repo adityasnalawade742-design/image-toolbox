@@ -228,6 +228,8 @@
   .ink-optimize { background-color: #00a0df; }
   .ink-convert { background-color: #ffe100; }
   .ink-inspect { background-color: #141414; }
+  /* PDF & Documents: magenta and yellow printed over each other (process red) */
+  .ink-pdf { background: linear-gradient(135deg, #e4007c 50%, #ffe100 50%); }
   .ink-developer {
     background:
       linear-gradient(#141414, #141414) center / 100% 1px no-repeat,

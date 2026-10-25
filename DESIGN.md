@@ -172,6 +172,7 @@ Ink on coated paper, with four flat process inks held in reserve for category ma
 - **Process Cyan** (`process-cyan`): category mark for Optimize & Compress; first chip of the color bar. The global focus ring uses Focus Cyan (`#0072b0`), a darker shade of it: process cyan on paper is only 2.85:1, below the 3:1 a focus indicator needs (WCAG 1.4.11).
 - **Process Yellow** (`process-yellow`): category mark for Convert Formats; third chip of the color bar; text selection highlight; the drop sheet while a file is dragged over it.
 - **Registration** (key-ink crosshair on paper-bright, inside a 1px key-ink square): category mark for Developer tools. Inspect & Utilities uses a solid key-ink square.
+- **Overprint** (magenta and yellow split on the diagonal, the two inks printed over each other make process red): category mark for PDF & Documents. Still only process inks, so the quarantine rule holds.
 
 ### Tertiary (status, text-safe)
 - **Status Red / Red Soft** (`status-red`, `status-red-soft`): errors and crash panels; soft tint as the alert ground with a red 1px rule.
@@ -283,7 +284,7 @@ Ink on paper: one solid action, everything else ruled.
 ### Navigation (masthead)
 - **Style:** sticky paper bar with a 1px key-ink bottom rule, topped by the 6px CMYK color bar (cyan, magenta, yellow, key in four equal blocks).
 - **Wordmark:** registration-target line glyph plus the site name as live text (Semi Condensed 700, 17px, uppercase, 0.04em). The name is swappable text, never artwork.
-- **Links:** four everyday categories with their ink marks, Barlow 500 15px, underline on hover; shown from xl up. Tool search trigger and language selector are ruled buttons on the right.
+- **Links:** five categories (all but Developer) with their ink marks, Barlow 500 15px, underline on hover; shown from xl up. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger and language selector are ruled buttons on the right.
 
 ### Lists and index
 - **Style:** rows divided by pencil-soft hairlines under a 1px key-ink header rule. Each row: category mark, item-weight name, graphite one-line description. Hover underlines the name or grounds the row in paper stock. Next-step handoff rows end with a line arrow.

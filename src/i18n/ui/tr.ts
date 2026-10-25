@@ -6,6 +6,7 @@ export const trUi: Record<string, string> = {
   'nav.compress': 'Sıkıştır',
   'nav.convert': 'Dönüştür',
   'nav.utilities': 'Yardımcı araçlar',
+  'nav.pdf': 'PDF',
   'search.placeholder': '27 resim aracında arayın... (Ctrl+K)',
   'search.noResults': 'Eşleşen araç bulunamadı.',
   'dropzone.title': 'Resimlerinizi buraya bırakın veya seçmek için tıklayın',

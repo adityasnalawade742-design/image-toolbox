@@ -39,6 +39,7 @@ export const deHome: LocalizedHomeData = {
     'edit-transform': 'Bearbeiten & Umformen',
     'optimize-compress': 'Optimieren & Komprimieren',
     'convert-formats': 'Formate umwandeln',
+    'pdf-documents': 'PDF & Dokumente',
     utilities: 'Prüfen & Hilfsmittel',
     developer: 'Entwickler-Tools',
   },

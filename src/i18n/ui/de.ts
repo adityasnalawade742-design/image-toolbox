@@ -6,6 +6,7 @@ export const deUi: Record<string, string> = {
   'nav.compress': 'Komprimieren',
   'nav.convert': 'Konvertieren',
   'nav.utilities': 'Hilfsmittel',
+  'nav.pdf': 'PDF',
   'search.placeholder': '27 präzise Bildtools durchsuchen … (Ctrl+K)',
   'search.noResults': 'Keine passenden Tools gefunden.',
   'dropzone.title': 'Bilder hier ablegen oder zum Auswählen klicken',

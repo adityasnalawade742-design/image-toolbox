@@ -21,12 +21,15 @@ const searchStrings = pickStrings(locale, 'search.');
 const langStrings = pickStrings(locale, 'lang.');
 // The developer section is small; the masthead lists the four everyday categories
 const navCategories = CATEGORY_ORDER.filter((c) => c !== 'developer');
-// Measured: these languages' full category names overflow the 1280px masthead next to search and language
-const SHORT_NAV_LOCALES = new Set(['fr', 'pt', 'tr']);
-const SHORT_NAV_KEY = { 'edit-transform': 'nav.edit', 'optimize-compress': 'nav.compress', 'convert-formats': 'nav.convert', utilities: 'nav.utilities' } as const;
-const useShortNav = SHORT_NAV_LOCALES.has(locale);
-const navLabel = (cat: (typeof navCategories)[number]) =>
-  useShortNav && cat in SHORT_NAV_KEY ? t(SHORT_NAV_KEY[cat as keyof typeof SHORT_NAV_KEY]) : categoryNames[cat];
+// Five categories only fit the 1280px masthead (next to search and language) with their short names
+const SHORT_NAV_KEY = {
+  'edit-transform': 'nav.edit',
+  'optimize-compress': 'nav.compress',
+  'convert-formats': 'nav.convert',
+  'pdf-documents': 'nav.pdf',
+  utilities: 'nav.utilities',
+} as const;
+const navLabel = (cat: (typeof navCategories)[number]) => (cat in SHORT_NAV_KEY ? t(SHORT_NAV_KEY[cat as keyof typeof SHORT_NAV_KEY]) : categoryNames[cat]);
 ---
 
 <header class="sticky top-0 z-40 w-full bg-paper border-b border-ink">

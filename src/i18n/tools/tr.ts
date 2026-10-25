@@ -3083,4 +3083,844 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "merge-pdf": {
+    name: "PDF Birleştirme",
+    shortName: "PDF Birleştir",
+    tagline: "Birkaç PDF dosyasını seçtiğiniz sırayla tek bir dosyada birleştirin. Dosyalar cihazınızda birleştirilir.",
+    intro:
+      "PDF Birleştirme, iki veya daha fazla PDF dosyasını tek bir belgede toplar. Dosyaları ekleyin, taşıma düğmeleriyle sıralayın, her birinin ilk sayfasını kontrol edin ve tüm sayfaları sırayla içeren tek bir PDF indirin. Bir raporu ekleriyle, birkaç taranmış sayfayı veya bir grup faturayı tek dosya olarak göndermenin hızlı yoludur. Birleştirme tarayıcınızda gerçekleşir, bu yüzden belgeleriniz asla bir sunucuya yüklenmez.",
+    seoTitle: "PDF Birleştirme Online – Ücretsiz, Yükleme Yok",
+    seoDescription:
+      "PDF birleştirme tarayıcıda: birden fazla PDF dosyasını istediğiniz sırayla tek bir PDF'te toplayın. Ücretsiz, gizli, yükleme ve filigran yok.",
+    keywords: [
+      "pdf birleştirme",
+      "pdf birleştir",
+      "pdf dosyalarını birleştirme",
+      "online pdf birleştirme ücretsiz",
+      "pdf'leri tek dosyada birleştirme",
+      "pdf birleştirici",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'lerinizi ekleyin",
+        description: "İki veya daha fazla PDF dosyası bırakın veya seçin. İstediğiniz zaman daha fazlasını ekleyebilirsiniz.",
+      },
+      {
+        title: "Sıraya koyun",
+        description: "Dosyaları yukarı ve aşağı düğmeleriyle düzenleyin, ihtiyacınız olmayanları kaldırın.",
+      },
+      {
+        title: "İndirin",
+        description: "Tüm sayfaları dosya dosya sırayla içeren tek bir PDF kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "İstediğiniz kadar dosya",
+        description: "Cihazınızın kaldırabileceği kadar PDF'i birleştirin; toplam sayfa sayısı gösterilir.",
+      },
+      {
+        title: "Sizin sıranız",
+        description: "Dosyaları klavyeyle ve ekran okuyucularla da çalışan düğmelerle sıralayın.",
+      },
+      {
+        title: "Sayfalar değişmez",
+        description:
+          "Sayfalar yeniden sıkıştırılmadan olduğu gibi kopyalanır, bu yüzden metin keskin ve aranabilir kalır.",
+      },
+      {
+        title: "Gizli ve ücretsiz",
+        description: "Dosyalar cihazınızda birleştirilir; yükleme, kayıt ve filigran yoktur.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Birleştirebileceğim dosya sayısında bir sınır var mı?",
+        answer:
+          "Sabit bir sınır yoktur. Normal boyutlu düzinelerce PDF çoğu cihazda sorunsuz çalışır; çok büyük dosyalar eski telefonlarda yavaş olabilir.",
+      },
+      {
+        question: "Bağlantılar ve yer işaretleri çalışmaya devam eder mi?",
+        answer:
+          "Sayfalardaki bağlantılar korunur. Yer işareti listesi (PDF okuyucunun yan panelindeki ana hat) birleştirilmiş dosyaya kopyalanmaz.",
+      },
+      {
+        question: "Birleştirme kaliteyi düşürür mü?",
+        answer:
+          "Hayır. Sayfalar olduğu gibi kopyalanır, bu yüzden metin, resimler ve vektör grafikler tamamen aynı görünür.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "split-pdf": {
+    name: "PDF Bölme",
+    shortName: "PDF Böl",
+    tagline: "Bir PDF'i sayfa aralıklarına, birkaç sayfada bir veya tek tek sayfalara bölün. Cihazınızda çalışır.",
+    intro:
+      "PDF Bölme, bir PDF'i birkaç küçük PDF'e ayırır. Her aralık için ayrı bir dosya almak üzere 1-3, 5, 8- gibi sayfa aralıkları yazın, uzun bir taramayı eşit parçalara ayırmak için belirli sayıda sayfada bir bölün ya da her sayfayı ayrı bir PDF olarak kaydedin. Araç, indirmeden önce alacağınız dosyaları listeler; birden fazla dosya tek bir ZIP içinde birlikte gelir. Bölme işlemi tarayıcınızda gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Bölme Online – Sayfa veya Aralığa Göre, Ücretsiz",
+    seoDescription:
+      "PDF bölme tarayıcıda: bir PDF'i sayfa aralıklarına, her N sayfada bir veya tek sayfalara ayırın. Ücretsiz, gizli ve hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf bölme",
+      "pdf ayırma",
+      "pdf sayfalarını ayırma",
+      "online pdf bölme ücretsiz",
+      "pdf'i parçalara ayırma",
+      "pdf bölücü",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Bir PDF bırakın veya seçin. Sayfaları önizleme olarak görünür.",
+      },
+      {
+        title: "Nasıl böleceğinizi seçin",
+        description: "Sayfa aralıkları girin, dosya başına sayfa sayısını seçin veya her sayfayı ayırın.",
+      },
+      {
+        title: "Listeyi kontrol edin",
+        description: "Panel, alacağınız her dosyayı ve sayfalarını gösterir.",
+      },
+      {
+        title: "İndirin",
+        description: "Tek bir PDF'i ya da birden fazla dosya varsa bir ZIP'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Üç bölme yöntemi",
+        description: "Özel aralıklar, eşit sayfa grupları veya dosya başına bir sayfa.",
+      },
+      {
+        title: "Kaydetmeden önce görün",
+        description: "Oluşacak her dosya ve sayfa numaraları önceden listelenir.",
+      },
+      {
+        title: "Tek ZIP indirmesi",
+        description: "Birden fazla dosya, sayfalarına göre adlandırılmış olarak birlikte gelir.",
+      },
+      {
+        title: "Gizli",
+        description: "PDF cihazınızda bölünür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Sayfa aralıklarını nasıl yazarım?",
+        answer:
+          "Aralıkları virgülle ayırın. 1-3, 1 ile 3 arasındaki sayfaları; 5 yalnızca 5. sayfayı; 8- ise 8. sayfadan sona kadar olan sayfaları ifade eder. Her aralık ayrı bir PDF olur.",
+      },
+      {
+        question: "Yalnızca bazı sayfaları içeren tek bir PDF alabilir miyim?",
+        answer:
+          "Evet. Yalnızca o sayfaları indirmek için 2-4 gibi tek bir aralık girin. PDF Sayfa Çıkarma aracı da sayfalara tıklayarak seçmenizi sağlar.",
+      },
+      {
+        question: "Bölme sayfaları değiştirir mi?",
+        answer: "Hayır. Sayfalar olduğu gibi kopyalanır, bu yüzden metin keskin ve aranabilir kalır.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "extract-pdf-pages": {
+    name: "PDF Sayfa Çıkarma",
+    shortName: "Sayfa Çıkar",
+    tagline: "Bir PDF'ten ihtiyacınız olan sayfaları seçip yeni bir PDF olarak kaydedin. Cihazınızda çalışır.",
+    intro:
+      "PDF Sayfa Çıkarma, bir PDF'in sayfalarını önizlemelerine bakarak seçmenizi ve yalnızca bu sayfaları yeni bir belge olarak kaydetmenizi sağlar. Uzun bir raporun tek bir bölümünü, bir sözleşmenin imzalı sayfasını veya bir dosya yığınındaki tek bir hesap özetini göndermek için kullanışlıdır. İstediğiniz sayfaları işaretleyin ya da Tümünü seç düğmesine basıp istemediğiniz birkaç sayfanın işaretini kaldırın, ardından indirin. Orijinal dosya değişmez ve her şey tarayıcınızda gerçekleşir.",
+    seoTitle: "PDF Sayfa Çıkarma – Ücretsiz, Yükleme Yok",
+    seoDescription:
+      "PDF sayfa çıkarma tarayıcıda: bir PDF'in sayfalarını önizlemelerden seçin ve yeni bir PDF olarak kaydedin. Ücretsiz, gizli ve hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf sayfa çıkarma",
+      "pdf'ten sayfa çıkarma",
+      "pdf sayfalarını ayıklama",
+      "pdf'ten sayfa kaydetme",
+      "pdf sayfa seçme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Tüm sayfalarını görmek için bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "İstediğiniz sayfaları işaretleyin",
+        description:
+          "Her sayfanın altındaki onay kutusunu kullanın ya da Tümünü seç düğmesine basıp ihtiyacınız olmayanların işaretini kaldırın.",
+      },
+      {
+        title: "İndirin",
+        description: "Yalnızca bu sayfaları orijinal sıralarıyla içeren yeni bir PDF kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Önizlemeden seçin",
+        description: "Seçmeden önce her sayfayı görün.",
+      },
+      {
+        title: "Klavye dostu",
+        description: "Her sayfanın etiketli bir onay kutusu vardır, bu yüzden fare gerekmez.",
+      },
+      {
+        title: "Sayfalar değişmez",
+        description: "Seçilen sayfalar keskin ve aranabilir metinle olduğu gibi kopyalanır.",
+      },
+      {
+        title: "Gizli",
+        description: "Sayfalar cihazınızda çıkarılır ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Orijinal PDF'im değişir mi?",
+        answer: "Hayır. Seçtiğiniz sayfalarla yeni bir PDF oluşturulur; orijinal dosya olduğu gibi kalır.",
+      },
+      {
+        question: "Sayfaların sırasını değiştirebilir miyim?",
+        answer:
+          "Çıkarılan sayfalar orijinal sıralarını korur. Sayfaları yeniden sıralamak, döndürmek veya silmek için PDF Sayfa Düzenleme aracını kullanın.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "organize-pdf": {
+    name: "PDF Sayfa Düzenleme",
+    shortName: "PDF Düzenle",
+    tagline: "PDF sayfalarını yeniden sıralayın, döndürün ve silin, ardından yeni PDF'i kaydedin. Cihazınızda çalışır.",
+    intro:
+      "PDF Sayfa Düzenleme, bir PDF'in tüm sayfalarını göstererek belgeyi toparlamanızı sağlar: sayfaları öne veya geriye taşıyın, yan duran taramaları düzeltin, boş veya istenmeyen sayfaları silin. Her sayfanın klavyeyle de çalışan kendi düğmeleri vardır; fareyle sayfaları sürükleyerek de yerine koyabilirsiniz. Tüm değişiklikleri geri al düğmesi her şeyi eski haline getirir. Her şey doğru göründüğünde yeni PDF'i indirin. Bunların hepsi tarayıcınızda gerçekleşir, bu yüzden belge asla yüklenmez.",
+    seoTitle: "PDF Sayfa Düzenleme – Sırala, Döndür, Sil",
+    seoDescription:
+      "PDF sayfa düzenleme tarayıcıda: sayfaları önizlemelerle yeniden sıralayın, döndürün ve silin, yeni PDF'i indirin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf sayfa düzenleme",
+      "pdf sayfa sıralama",
+      "pdf sayfalarının yerini değiştirme",
+      "pdf sayfa silme",
+      "pdf'ten sayfa kaldırma",
+      "pdf düzenleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Tüm sayfalarını görmek için bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Sayfaları düzenleyin",
+        description:
+          "Her sayfanın altındaki düğmelerle sayfayı taşıyın, döndürün veya silin ya da sayfaları sürükleyerek yerine koyun.",
+      },
+      {
+        title: "İndirin",
+        description: "Yeniden düzenlenmiş PDF'i kaydedin. Tüm değişiklikleri geri al düğmesi orijinalden yeniden başlatır.",
+      },
+    ],
+    features: [
+      {
+        title: "Taşıma, döndürme, silme",
+        description: "Tüm sayfa işlemleri tek ekranda; önizlemeler siz çalışırken güncellenir.",
+      },
+      {
+        title: "Sürükleyin veya düğmeleri kullanın",
+        description: "Fareyle sürükleyin ya da klavye ve ekran okuyucularla da çalışan düğmeleri kullanın.",
+      },
+      {
+        title: "Kayıpsız",
+        description:
+          "Sayfalar yeniden işlenmez, yalnızca yeniden düzenlenir; bu yüzden metin keskin ve aranabilir kalır.",
+      },
+      {
+        title: "Gizli",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bir sayfayı döndürmek kaliteyi düşürür mü?",
+        answer:
+          "Hayır. Döndürme bir sayfa ayarı olarak saklanır, bu yüzden hiçbir şey yeniden çizilmez veya sıkıştırılmaz.",
+      },
+      {
+        question: "Bir değişikliği geri alabilir miyim?",
+        answer:
+          "Evet. Tüm değişiklikleri geri al düğmesi her sayfayı orijinal konumuna ve yönüne döndürür. Orijinal dosyanız asla değişmez.",
+      },
+      {
+        question: "Başka bir PDF'ten sayfa ekleyebilir miyim?",
+        answer: "Önce dosyaları PDF Birleştirme ile birleştirin, sonra birleştirilmiş dosyayı burada düzenleyin.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "rotate-pdf": {
+    name: "PDF Döndürme",
+    shortName: "PDF Döndür",
+    tagline: "Tüm sayfaları ya da yalnızca seçtiğiniz sayfaları 90 veya 180 derece döndürün. Cihazınızda çalışır.",
+    intro:
+      "PDF Döndürme, yan veya ters açılan sayfaları düzeltir; bu, taranmış belgelerde ve PDF olarak kaydedilmiş fotoğraflarda sık görülen bir sorundur. Sağa 90 derece, 180 derece veya sola 90 derece seçin ve bunu tüm sayfalara ya da yalnızca işaretlediğiniz sayfalara uygulayın. Önizlemeler, indirmeden önce sonucu gösterir. Döndürme bir sayfa ayarı olarak saklanır, bu yüzden metin ve resimler tam kalitesini korur ve hiçbir şey tarayıcınızdan çıkmaz.",
+    seoTitle: "PDF Döndürme Online – Ücretsiz, Kalıcı",
+    seoDescription:
+      "PDF döndürme tarayıcıda: tüm sayfaları veya seçili sayfaları 90 ya da 180 derece döndürün ve kalıcı olarak kaydedin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf döndürme",
+      "pdf sayfa döndürme",
+      "pdf çevirme",
+      "pdf döndürüp kaydetme",
+      "ters pdf düzeltme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Sayfalarını görmek için bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Döndürme açısını seçin",
+        description: "Tüm sayfalar veya işaretlediğiniz sayfalar için sağa 90°, 180° ya da sola 90° seçin.",
+      },
+      {
+        title: "İndirin",
+        description: "Sayfaları kalıcı olarak döndürülmüş PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Tüm veya seçili sayfalar",
+        description: "Geri kalanına dokunmadan yan duran tek bir taramayı düzeltin.",
+      },
+      {
+        title: "Canlı önizleme",
+        description: "Sayfa önizlemeleri, hiçbir şey kaydedilmeden önce siz seçtikçe döner.",
+      },
+      {
+        title: "Kalite kaybı yok",
+        description: "Döndürme bir sayfa ayarıdır, bu yüzden hiçbir şey yeniden çizilmez.",
+      },
+      {
+        title: "Gizli",
+        description: "PDF cihazınızda döndürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Döndürme kalıcı olarak kaydedilir mi?",
+        answer: "Evet. İndirilen PDF her PDF okuyucuda sayfalar döndürülmüş olarak açılır.",
+      },
+      {
+        question: "Sayfaları farklı açılarla döndürebilir miyim?",
+        answer: "Her sayfanın kendi döndürme düğmesi olan PDF Sayfa Düzenleme aracını kullanın.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "add-page-numbers-pdf": {
+    name: "PDF'e Sayfa Numarası Ekleme",
+    shortName: "Sayfa Numarası",
+    tagline: "Bir PDF'in sayfalarını seçtiğiniz konum, biçim ve başlangıç numarasıyla numaralandırın. Cihazınızda çalışır.",
+    intro:
+      "PDF'e Sayfa Numarası Ekleme, bir PDF'in her sayfasına numara koyar; raporlar, tezler ve basılı ders notları buna sık sık ihtiyaç duyar. Üstte veya altta altı konumdan birini, bir biçimi (1, 1 / N veya – 1 –), başlangıç numarasını, yazı boyutunu ve kenardan uzaklığı seçin. Kapak gibi ilk sayfayı numarasız da bırakabilirsiniz. Bir önizleme, numaranın nasıl görüneceğini gösterir. Numaralar tarayıcınızda eklenir, bu yüzden belge asla yüklenmez.",
+    seoTitle: "PDF'e Sayfa Numarası Ekleme – Ücretsiz",
+    seoDescription:
+      "PDF sayfa numaralandırma tarayıcıda: konumu, biçimi ve başlangıç numarasını seçin, kapak sayfasını atlayın. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf sayfa numarası ekleme",
+      "pdf sayfa numaralandırma",
+      "pdf'e sayfa numarası koyma",
+      "pdf numara ekleme",
+      "pdf sayfalarını numaralandırma",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Numaralandırılacak PDF'i bırakın veya seçin.",
+      },
+      {
+        title: "Stili seçin",
+        description: "Konumu, biçimi, başlangıç numarasını, boyutu ve kenardan uzaklığı belirleyin.",
+      },
+      {
+        title: "Gerekirse kapağı atlayın",
+        description: "İlk sayfayı numarasız bırakmak için seçeneği işaretleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "Numaralandırılmış PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Altı konum",
+        description: "Üstte veya altta; solda, ortada veya sağda.",
+      },
+      {
+        title: "Üç biçim",
+        description: "Düz numaralar, “1 / 12” stili veya “– 1 –”.",
+      },
+      {
+        title: "İstediğiniz başlangıç numarası",
+        description: "Numaralandırmaya başka bir belgeden devam edin ve kapak sayfasını atlayın.",
+      },
+      {
+        title: "Gizli",
+        description: "Numaralar cihazınızda eklenir; hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "1 dışında bir numaradan başlayabilir miyim?",
+        answer:
+          "Evet. Başlangıç numarası alanına istediğiniz sayıyı girin; örneğin önceki bir bölümden devam etmek için.",
+      },
+      {
+        question: "Numaralar içeriğimin üstünü kapatır mı?",
+        answer:
+          "Numaralar sayfa kenar boşluğuna yerleştirilir. Sayfalarınızın kenar boşlukları çok darsa kenardan daha kısa bir uzaklık veya daha küçük bir yazı boyutu seçin.",
+      },
+      {
+        question: "Bazı sayfalarda numaralar neden yan duruyor?",
+        answer:
+          "Bazı PDF'ler sayfaları döndürülmüş olarak saklar. Numara, sayfanın saklanan yönünü izler, bu yüzden bu sayfalarda dönük görünebilir. Önce PDF Döndürme veya PDF Sayfa Düzenleme ile döndürmeyi düzeltin.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "watermark-pdf": {
+    name: "PDF'e Filigran Ekleme",
+    shortName: "PDF Filigran",
+    tagline: "PDF sayfalarına metin veya logo damgası ekleyin, ardından sürükleyerek yerleştirin. Cihazınızda çalışır.",
+    intro:
+      "PDF'e Filigran Ekleme, bir PDF'in sayfalarına GİZLİ, TASLAK, adınız veya logonuz gibi bir damga ekler. Metni herhangi bir dilde yazın veya bir logo resmi seçin; ardından boyutunu, opaklığını ve açısını ayarlayıp sayfa önizlemesinde istediğiniz yere sürükleyin ya da konum kaydırıcılarını kullanın. Filigranı tüm sayfalara veya bir sayfa aralığına uygulayın. Filigran tarayıcınızda eklenir, bu yüzden belge asla yüklenmez.",
+    seoTitle: "PDF'e Filigran Ekleme – Metin veya Logo, Ücretsiz",
+    seoDescription:
+      "PDF filigran ekleme tarayıcıda: metin veya logo filigranı ekleyin; boyutu, opaklığı ve açıyı ayarlayıp sürükleyerek yerleştirin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf filigran ekleme",
+      "pdf'e filigran ekleme",
+      "pdf filigran",
+      "pdf damga ekleme",
+      "pdf'e logo ekleme",
+      "online pdf filigran ekleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Damgalanacak PDF'i bırakın veya seçin.",
+      },
+      {
+        title: "Filigranı oluşturun",
+        description: "Metni yazıp rengini seçin ya da bir logo resmi seçin.",
+      },
+      {
+        title: "Yerleştirin",
+        description:
+          "Boyutu, opaklığı ve açıyı ayarlayın, ardından önizlemede sürükleyin veya kaydırıcıları kullanın.",
+      },
+      {
+        title: "İndirin",
+        description: "Tüm sayfaları veya bir aralığı seçin ve filigranlı PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Her dilde metin",
+        description: "Metin resim olarak çizilir, bu yüzden her alfabe ve aksan doğru görünür.",
+      },
+      {
+        title: "Logo filigranları",
+        description: "PNG, JPG, WebP veya SVG logo kullanın.",
+      },
+      {
+        title: "Sürükleyerek yerleştirin",
+        description: "Filigranı sayfa önizlemesinde taşıyın veya klavyeyle de çalışan kaydırıcıları kullanın.",
+      },
+      {
+        title: "Gizli",
+        description: "Filigran cihazınızda eklenir; hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Filigran daha sonra kaldırılabilir mi?",
+        answer:
+          "Filigran, sayfanın üzerine bir resim olarak eklenir. PDF düzenleyicisi olan biri yine de kaldırabilir; yani filigran kopyalamayı engellemekten çok caydırır.",
+      },
+      {
+        question: "Yalnızca bazı sayfalara filigran ekleyebilir miyim?",
+        answer: "Evet. Sayfalar seçeneğini seçin ve 1-3, 5 gibi bir aralık girin.",
+      },
+      {
+        question: "Filigran metni kapatır mı?",
+        answer:
+          "Sayfanın okunabilir kalması için opaklığı düşürün. Çapraz filigranlar için genellikle %15–30 kullanılır.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "sign-pdf": {
+    name: "PDF İmzalama",
+    shortName: "PDF İmzala",
+    tagline: "İmzanızı çizin, yazın veya bir resmini kullanın ve bir PDF'in herhangi bir sayfasına yerleştirin. Cihazınızda çalışır.",
+    intro:
+      "PDF İmzalama, el yazısı imzanızı yazdırıp taramaya gerek kalmadan bir belgeye ekler. İmzayı fare, parmak veya kalemle çizin, adınızı yazın ya da imzanızın bir fotoğrafını kullanın; fotoğrafın beyaz arka planı saydam yapılabilir. Ardından sayfayı seçin, boyutu ayarlayın ve imzayı sürükleyerek yerleştirin ya da konum kaydırıcılarını kullanın. İmza tarayıcınızda eklenir, bu yüzden belge de imzanız da asla yüklenmez.",
+    seoTitle: "PDF İmzalama Online – Ücretsiz, Yükleme Yok",
+    seoDescription:
+      "PDF imzalama tarayıcıda: imzanızı çizin, yazın veya bir resmini kullanın ve herhangi bir sayfaya yerleştirin. Ücretsiz, gizli ve hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf imzalama",
+      "online pdf imzalama ücretsiz",
+      "pdf'e imza ekleme",
+      "pdf e-imza",
+      "pdf'e imza çizme",
+      "elektronik imza pdf",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "İmzalanacak belgeyi bırakın veya seçin.",
+      },
+      {
+        title: "İmzanızı oluşturun",
+        description: "Çizin, adınızı yazın veya imzanızın bir fotoğrafını seçin.",
+      },
+      {
+        title: "Yerleştirin",
+        description:
+          "Sayfayı seçin, boyutu ayarlayın ve imzayı olması gereken yere sürükleyin ya da kaydırıcıları kullanın.",
+      },
+      {
+        title: "İndirin",
+        description: "İmzalı PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Üç imzalama yolu",
+        description: "Mavi veya siyah mürekkeple çizin, yazın ya da resim kullanın.",
+      },
+      {
+        title: "Fotoğraflardan temiz imzalar",
+        description: "İmza fotoğrafındaki kâğıt arka planı saydam yapılabilir.",
+      },
+      {
+        title: "Hassas yerleştirme",
+        description: "Önizlemede sürükleyin veya klavyeyle de çalışan kaydırıcıları kullanın.",
+      },
+      {
+        title: "Gizli",
+        description: "Belgeniz ve imzanız cihazınızda kalır.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bu yasal olarak bağlayıcı bir dijital imza mı?",
+        answer:
+          "Araç, kâğıda imza atar gibi imzanızın bir resmini ekler. Sertifikaya dayalı, onaylı bir dijital imza değildir. Birçok günlük form bunu kabul eder, ancak onaylı elektronik imza gerektiren sözleşmeler için özel bir imza hizmeti gerekir.",
+      },
+      {
+        question: "Birden fazla sayfayı imzalayabilir miyim?",
+        answer:
+          "Bir sayfayı imzalayıp indirin, sonra imzalı PDF'i yeniden açın ve imzayı sonraki sayfaya yerleştirin.",
+      },
+      {
+        question: "İmzam bir yere kaydediliyor mu?",
+        answer:
+          "Hayır. İmzanız yalnızca sayfa açıkken tarayıcınızda ve indirdiğiniz PDF'in içinde bulunur.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "fill-pdf-form": {
+    name: "PDF Form Doldurma",
+    shortName: "Form Doldur",
+    tagline: "Bir PDF formunun alanlarını doldurun ve isterseniz kilitleyerek kaydedin. Cihazınızda çalışır.",
+    intro:
+      "PDF Form Doldurma, bir PDF formundaki metin kutuları, onay kutuları ve açılır listeler gibi doldurulabilir alanları bulur ve her birini adıyla göstererek hızlıca doldurmanızı sağlar. Doldurulmuş PDF'i indirin ya da yanıtların sayfanın bir parçası olması ve artık değiştirilememesi için formu düzleştirin. Başvuru formları, vergi formları ve kayıt belgeleri için kullanışlıdır. Form tarayıcınızda doldurulur, bu yüzden kişisel bilgileriniz asla yüklenmez.",
+    seoTitle: "PDF Form Doldurma Online – Ücretsiz ve Gizli",
+    seoDescription:
+      "PDF form doldurma tarayıcıda: doldurulabilir formlardaki metin alanları, onay kutuları ve listeler. Yanıtları kilitlemek için düzleştirin. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf form doldurma",
+      "pdf doldurma",
+      "online pdf doldurma",
+      "doldurulabilir pdf",
+      "pdf form doldurucu",
+    ],
+    howToSteps: [
+      {
+        title: "PDF formunuzu ekleyin",
+        description: "Doldurulabilir alanları olan bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Alanları doldurun",
+        description: "Metin alanlarına yazın, onay kutularını işaretleyin ve listelerden seçim yapın.",
+      },
+      {
+        title: "Gerekirse kilitleyin",
+        description: "Yanıtları sayfanın bir parçası yapmak için Formu düzleştir seçeneğini işaretleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "Doldurulmuş formu kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Tüm yaygın alanlar",
+        description: "Metin kutuları, çok satırlı metin, onay kutuları, radyo düğmeleri ve açılır listeler.",
+      },
+      {
+        title: "Düzleştirme seçeneği",
+        description: "Formun sonradan düzenlenememesi için yanıtları kilitleyin.",
+      },
+      {
+        title: "Erişilebilir alanlar",
+        description: "Her alan, klavye ve ekran okuyucularla çalışan normal, etiketli bir giriş alanıdır.",
+      },
+      {
+        title: "Gizli",
+        description: "Yanıtlarınız cihazınızda kalır; hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'imde neden doldurulabilir alan olmadığı yazıyor?",
+        answer:
+          "Bazı formlar gerçek form alanları olmayan basılı sayfalardır, bazıları da bu aracın okuyamadığı eski bir biçimi (XFA) kullanır. Alanı olmayan formlar için PDF İmzalama ile bir imza ekleyin veya yazdırıp elle doldurun.",
+      },
+      {
+        question: "Formu düzleştirmek ne işe yarar?",
+        answer:
+          "Yanıtları sıradan sayfa içeriğine dönüştürür. Form aynı görünür, ancak artık kimse yanıtları veya alanları değiştiremez.",
+      },
+      {
+        question: "İmza alanları destekleniyor mu?",
+        answer: "İmza ve düğme alanları atlanır. İmzanızı sayfaya yerleştirmek için PDF İmzalama aracını kullanın.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "remove-pdf-metadata": {
+    name: "PDF Meta Verisi Silme",
+    shortName: "PDF Meta Verisi",
+    tagline: "Bir PDF'te gizli duran yazar, başlık, yazılım ve tarih bilgilerini görün ve kaldırın. Cihazınızda çalışır.",
+    intro:
+      "PDF dosyaları çoğu zaman gizli ayrıntılar taşır: yazarın adı, belgenin başlığı, onu oluşturan yazılım ve ne zaman oluşturulup değiştirildiği. PDF Meta Verisi Silme, dosyanızda nelerin saklandığını gösterir ve bu bilgiler olmadan bir kopya indirir; bu, bir belgeyi herkese açık paylaşmadan veya bir özgeçmiş göndermeden önce işe yarar. Sayfaların kendisi değişmez. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Meta Verisi Silme – Görün ve Silin, Ücretsiz",
+    seoDescription:
+      "PDF meta verisi silme tarayıcıda: bir PDF'te gizli duran yazar, başlık, yazılım ve tarih bilgilerini görün ve kaldırın. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf meta verisi silme",
+      "pdf metadata silme",
+      "pdf yazar bilgisi silme",
+      "pdf meta veri temizleme",
+      "pdf meta verisini görme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "İçinde saklanan bilgileri görmek için bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Bulunanları inceleyin",
+        description: "Liste başlığı, yazarı, yazılımı, tarihleri ve XMP meta verilerini gösterir.",
+      },
+      {
+        title: "Temiz kopyayı indirin",
+        description: "Bu bilgilerin kaldırıldığı bir kopya kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kaldırmadan önce görün",
+        description: "Saklanan her ayrıntı değeriyle birlikte listelenir.",
+      },
+      {
+        title: "Belge bilgileri ve XMP",
+        description: "PDF'lerin meta veri sakladığı her iki yer de temizlenir.",
+      },
+      {
+        title: "Sayfalara dokunulmaz",
+        description: "Metin, resimler ve düzen tamamen aynı kalır.",
+      },
+      {
+        title: "Gizli",
+        description: "PDF cihazınızda temizlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Tam olarak ne kaldırılıyor?",
+        answer:
+          "Belge bilgileri (başlık, yazar, konu, anahtar kelimeler, oluşturan yazılım, üretici ve tarihler) ve XMP meta veri akışı.",
+      },
+      {
+        question: "PDF'teki tüm kişisel bilgileri kaldırır mı?",
+        answer:
+          "Hayır. Sayfalardaki metin, yorumlar ve gömülü resimlerin içindeki ayrıntılar (fotoğraf EXIF verileri gibi) değişmez. Paylaşmadan önce içeriğin kendisini kontrol edin.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "crop-pdf": {
+    name: "PDF Kırpma",
+    shortName: "PDF Kırp",
+    tagline: "Bir PDF'teki her sayfanın kenar boşluklarını kırpın. Cihazınızda çalışır.",
+    intro:
+      "PDF Kırpma, her sayfanın kenarlarını kırparak geniş beyaz kenar boşluklarını, tarama kenarlıklarını veya baskı işaretlerini kaldırır; böylece telefonda okurken içerik ekranı doldurur. Üstten, sağdan, alttan ve soldan ne kadar kırpılacağını ayarlayın; önizleme sayfanın hangi kısmının kalacağını gösterir. Kırpma bir sayfa ayarı olarak saklanır, bu yüzden metin tam kalitesini korur. Her şey tarayıcınızda gerçekleşir, bu yüzden belge asla yüklenmez.",
+    seoTitle: "PDF Kırpma Online – Kenar Boşluklarını Kırpın, Ücretsiz",
+    seoDescription:
+      "PDF kırpma tarayıcıda: sayfa kenar boşluklarını canlı önizlemeyle kırpın, beyaz kenarları ve tarama kenarlıklarını kaldırın. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf kırpma",
+      "pdf sayfa kırpma",
+      "pdf kenar boşluğu kırpma",
+      "pdf kenar boşluklarını kaldırma",
+      "pdf sayfası kesme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Kırpılacak PDF'i bırakın veya seçin.",
+      },
+      {
+        title: "Kenar boşluklarını ayarlayın",
+        description: "Her kenar için kaydırıcıları kullanın; önizleme neyin kalacağını gösterir.",
+      },
+      {
+        title: "İndirin",
+        description: "Tüm sayfaları kırpılmış PDF'i kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Dört kenar kontrolü",
+        description: "Üstü, sağı, altı ve solu ayrı ayrı kırpın.",
+      },
+      {
+        title: "Canlı önizleme",
+        description: "Kırpılan alan ilk sayfada gölgeli gösterilir.",
+      },
+      {
+        title: "Kalite kaybı yok",
+        description: "Sayfalar yeniden çizilmez, bu yüzden metin keskin ve aranabilir kalır.",
+      },
+      {
+        title: "Gizli",
+        description: "PDF cihazınızda kırpılır ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kırpma dosyayı küçültür mü?",
+        answer:
+          "Hayır. Kırpılan alan silinmez, gizlenir; bu yüzden dosya boyutu hemen hemen aynı kalır. Bir PDF düzenleyici gizli alanı yine de gösterebilir.",
+      },
+      {
+        question: "Sayfaları farklı şekilde kırpabilir miyim?",
+        answer:
+          "Aynı kenar boşlukları her sayfaya uygulanır. Sayfaları farklı kırpmak için PDF'i bölün, her parçayı kırpın ve sonra yeniden birleştirin.",
+      },
+      {
+        question: "Parola korumalı bir PDF kullanabilir miyim?",
+        answer:
+          "Henüz değil. Bir PDF'i açmak için parola gerekiyorsa araç bunu size bildirir. PDF'i parolayla bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF cihazınızda tarayıcınız tarafından açılır ve değiştirilir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
 };
