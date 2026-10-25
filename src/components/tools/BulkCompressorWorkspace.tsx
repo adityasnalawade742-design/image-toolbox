@@ -207,10 +207,10 @@ export function BulkCompressorWorkspace() {
           <UploadCloud className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-xs font-semibold text-ink">
+          <h3 className="text-[14px] font-semibold text-ink">
             Drag & Drop Multiple Images (Up to 50 photos)
           </h3>
-          <p className="text-[11px] text-mute mt-0.5">
+          <p className="text-[13px] text-mute mt-0.5">
             JPG, PNG, WebP — Processed sequentially 100% in your browser
           </p>
         </div>
@@ -221,7 +221,7 @@ export function BulkCompressorWorkspace() {
           {/* Header Controls: Settings & Action Buttons */}
           <div className="p-4 bg-surface-elevated border border-hairline rounded-lg flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Format & Quality */}
-            <div className="flex flex-wrap items-center gap-4 w-full md:w-auto text-xs">
+            <div className="flex flex-wrap items-center gap-4 w-full md:w-auto text-[14px]">
               <div className="flex items-center gap-2">
                 <span className="text-body">Format:</span>
                 <select
@@ -246,7 +246,7 @@ export function BulkCompressorWorkspace() {
                   disabled={isProcessing}
                   value={quality}
                   onChange={(e) => setQuality(parseInt(e.target.value) || 80)}
-                  className="w-24 h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+                  className="w-24 h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
                 />
                 <span className="font-mono text-ink font-semibold">{quality}%</span>
               </div>
@@ -258,7 +258,7 @@ export function BulkCompressorWorkspace() {
                 <button
                   type="button"
                   onClick={cancelProcessing}
-                  className="px-3 py-1.5 bg-accent-red/20 text-accent-red border border-accent-red/30 rounded-md text-xs font-semibold hover:bg-accent-red/30 transition-colors"
+                  className="px-3 py-1.5 bg-accent-red/20 text-accent-red border border-accent-red/30 rounded-md text-[14px] font-semibold hover:bg-accent-red/30 transition-colors"
                 >
                   Cancel
                 </button>
@@ -266,7 +266,7 @@ export function BulkCompressorWorkspace() {
                 <button
                   type="button"
                   onClick={processQueue}
-                  className="px-4 py-1.5 bg-white hover:bg-neutral-200 text-black rounded-md text-xs font-semibold transition-colors flex items-center gap-1.5"
+                  className="px-4 py-1.5 bg-process-key text-paper border border-ink hover:bg-paper hover:text-ink rounded-md text-[14px] font-semibold transition-colors flex items-center gap-1.5"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                   <span>Compress All ({queue.length})</span>
@@ -278,7 +278,7 @@ export function BulkCompressorWorkspace() {
                   type="button"
                   disabled={isZipping}
                   onClick={downloadAllAsZip}
-                  className="px-4 py-1.5 bg-surface-card hover:bg-surface border border-hairline-strong text-ink rounded-md text-xs font-semibold transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-4 py-1.5 bg-surface-card hover:bg-surface border border-hairline-strong text-ink rounded-md text-[14px] font-semibold transition-colors flex items-center gap-1.5 disabled:opacity-50"
                 >
                   <Archive className="w-3.5 h-3.5 text-accent-blue" />
                   <span>{isZipping ? 'Zipping...' : `Download ZIP (${completedCount})`}</span>
@@ -299,7 +299,7 @@ export function BulkCompressorWorkspace() {
 
           {/* Queue List Table */}
           <div className="border border-hairline rounded-lg overflow-hidden divide-y divide-hairline-soft bg-surface">
-            <div className="px-4 py-2 bg-surface-card flex items-center justify-between text-[11px] font-semibold text-mute uppercase tracking-wider">
+            <div className="px-4 py-2 bg-surface-card flex items-center justify-between text-[13px] font-semibold text-mute uppercase tracking-wider">
               <span>File Queue ({queue.length} items • {formatBytes(totalOrigSize)} {completedCount > 0 ? `→ ${formatBytes(totalOutSize)}` : ''})</span>
               <span>{completedCount}/{queue.length} Completed</span>
             </div>
@@ -311,7 +311,7 @@ export function BulkCompressorWorkspace() {
                   : 0;
 
                 return (
-                  <div key={item.id} className="px-4 py-2.5 flex items-center justify-between gap-3 text-xs">
+                  <div key={item.id} className="px-4 py-2.5 flex items-center justify-between gap-3 text-[14px]">
                     <div className="flex items-center gap-2.5 truncate max-w-[200px] sm:max-w-xs">
                       {item.status === 'done' && <CheckCircle2 className="w-4 h-4 text-accent-green shrink-0" />}
                       {item.status === 'processing' && <RefreshCw className="w-4 h-4 text-accent-blue animate-spin shrink-0" />}
@@ -319,11 +319,11 @@ export function BulkCompressorWorkspace() {
                       {item.status === 'error' && <AlertCircle className="w-4 h-4 text-accent-red shrink-0" />}
                       <span className="truncate text-ink font-medium">{item.name}</span>
                       {item.status === 'error' && item.errorMsg && (
-                        <span className="text-accent-red text-[11px] shrink-0">{item.errorMsg}</span>
+                        <span className="text-accent-red text-[13px] shrink-0">{item.errorMsg}</span>
                       )}
                     </div>
 
-                    <div className="flex items-center gap-4 text-mute font-mono text-[11px]">
+                    <div className="flex items-center gap-4 text-mute font-mono text-[13px]">
                       <span>{formatBytes(item.originalSize)}</span>
                       {item.outputSize && (
                         <>

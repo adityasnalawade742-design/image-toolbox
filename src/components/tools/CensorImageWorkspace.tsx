@@ -15,6 +15,7 @@ import {
   Check,
 } from 'lucide-react';
 import { useImageIntake } from '../shared/useImageIntake';
+import { ProofDropZone } from '../shared/ProofDropZone';
 
 interface CensorBox {
   id: string;
@@ -278,44 +279,15 @@ export function CensorImageWorkspace() {
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
-      {!selectedFile && (
-        <div
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files?.[0]) handleFileSelect(e.dataTransfer.files[0]);
-          }}
-          onClick={() => fileInputRef.current?.click()}
-          className="border-2 border-dashed border-gray-700 hover:border-primary-500 rounded-2xl p-12 text-center cursor-pointer transition-all duration-200 bg-gray-900/50 hover:bg-gray-800/50 group"
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && handleFileSelect(e.target.files[0])}
-          />
-          <div className="w-16 h-16 rounded-full bg-primary-950/60 text-primary-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            <EyeOff className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-2">Upload Photo to Blur or Censor</h3>
-          <p className="text-gray-400 text-sm max-w-md mx-auto mb-4">
-            Drag & drop your photo or paste from clipboard (Ctrl+V) to redact faces, license plates, credit card numbers, and sensitive documents.
-          </p>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-300 border border-gray-700">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>100% Client-Side Privacy — EXIF Metadata Auto-Stripped</span>
-          </div>
-        </div>
-      )}
+      {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
       {selectedFile && imgElement && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Interactive Drawing Canvas Area (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="lg:col-span-2 space-y-4 order-1 lg:order-2">
+          <div className="min-w-0 order-1 space-y-4">
             <div
               ref={containerRef}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-4 min-h-[360px] sm:min-h-[480px] flex items-center justify-center relative select-none touch-none"
+              className="canvas-checkerboard border border-ink p-4 min-h-[360px] sm:min-h-[480px] flex items-center justify-center relative select-none touch-none"
             >
               <canvas
                 ref={canvasRef}
@@ -327,36 +299,36 @@ export function CensorImageWorkspace() {
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleEndDrawing}
                 onTouchCancel={handleEndDrawing}
-                className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-gray-800 cursor-crosshair touch-none"
+                className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-pencil cursor-crosshair touch-none"
               />
             </div>
           </div>
 
           {/* Controls Sidebar (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5 order-2 lg:order-1">
+          <div className="order-2 space-y-5 bg-paper-bright border border-ink p-5">
             <div>
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <EyeOff className="w-4 h-4 text-primary-400" />
+              <h3 className="text-base font-bold text-ink flex items-center gap-2">
+                <EyeOff className="w-4 h-4 text-ink" />
                 <span>Censor Tool Settings</span>
               </h3>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-[14px] text-graphite mt-1">
                 Drag on the photo to draw a censor region. Touch supported on phones.
               </p>
             </div>
 
             {/* Shape Switch: Rectangle vs Circle */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">
+              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
                 Redaction Shape
               </label>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
                   onClick={() => setShape('rect')}
-                  className={`py-2 px-3 rounded-xl border text-xs font-medium flex items-center justify-center gap-2 transition-all ${
+                  className={`py-2 px-3 rounded-xl border text-[14px] font-medium flex items-center justify-center gap-2 transition-all ${
                     shape === 'rect'
-                      ? 'border-primary-500 bg-primary-950/60 text-white font-bold'
-                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                      ? 'border-ink bg-paper-stock text-ink font-bold'
+                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
                   }`}
                 >
                   <Square className="w-3.5 h-3.5" />
@@ -365,10 +337,10 @@ export function CensorImageWorkspace() {
                 <button
                   type="button"
                   onClick={() => setShape('circle')}
-                  className={`py-2 px-3 rounded-xl border text-xs font-medium flex items-center justify-center gap-2 transition-all ${
+                  className={`py-2 px-3 rounded-xl border text-[14px] font-medium flex items-center justify-center gap-2 transition-all ${
                     shape === 'circle'
-                      ? 'border-primary-500 bg-primary-950/60 text-white font-bold'
-                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                      ? 'border-ink bg-paper-stock text-ink font-bold'
+                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
                   }`}
                 >
                   <Circle className="w-3.5 h-3.5" />
@@ -379,7 +351,7 @@ export function CensorImageWorkspace() {
 
             {/* Censor Modes */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">
+              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
                 Redaction Style
               </label>
               <div className="space-y-2">
@@ -388,15 +360,15 @@ export function CensorImageWorkspace() {
                   onClick={() => setCensorMode('pixelate')}
                   className={`w-full p-3 rounded-xl border text-left transition-all ${
                     censorMode === 'pixelate'
-                      ? 'border-primary-500 bg-primary-950/60 text-white shadow-md'
-                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                      ? 'border-ink bg-paper-stock text-ink shadow-md'
+                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-gray-200">Mosaic Pixelation</span>
-                    <Grid className="w-4 h-4 text-primary-400" />
+                    <span className="font-bold text-sm text-ink">Mosaic Pixelation</span>
+                    <Grid className="w-4 h-4 text-ink" />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">Retro block mosaic pixelation</p>
+                  <p className="text-[14px] text-graphite mt-1">Retro block mosaic pixelation</p>
                 </button>
 
                 <button
@@ -404,15 +376,15 @@ export function CensorImageWorkspace() {
                   onClick={() => setCensorMode('blur')}
                   className={`w-full p-3 rounded-xl border text-left transition-all ${
                     censorMode === 'blur'
-                      ? 'border-primary-500 bg-primary-950/60 text-white shadow-md'
-                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                      ? 'border-ink bg-paper-stock text-ink shadow-md'
+                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-gray-200">Gaussian Blur</span>
-                    <Sparkles className="w-4 h-4 text-primary-400" />
+                    <span className="font-bold text-sm text-ink">Gaussian Blur</span>
+                    <Sparkles className="w-4 h-4 text-ink" />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">Smooth heavy Gaussian defocus blur</p>
+                  <p className="text-[14px] text-graphite mt-1">Smooth heavy Gaussian defocus blur</p>
                 </button>
 
                 <button
@@ -420,25 +392,25 @@ export function CensorImageWorkspace() {
                   onClick={() => setCensorMode('blackout')}
                   className={`w-full p-3 rounded-xl border text-left transition-all ${
                     censorMode === 'blackout'
-                      ? 'border-primary-500 bg-primary-950/60 text-white shadow-md'
-                      : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
+                      ? 'border-ink bg-paper-stock text-ink shadow-md'
+                      : 'border-pencil bg-paper-stock text-graphite hover:text-ink'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm text-gray-200">Solid Blackout Bar</span>
-                    <Square className="w-4 h-4 text-gray-400" />
+                    <span className="font-bold text-sm text-ink">Solid Blackout Bar</span>
+                    <Square className="w-4 h-4 text-graphite" />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">100% opaque black redaction box</p>
+                  <p className="text-[14px] text-graphite mt-1">100% opaque black redaction box</p>
                 </button>
               </div>
             </div>
 
             {/* Intensity Slider */}
             {censorMode !== 'blackout' && (
-              <div className="space-y-1.5 pt-2 border-t border-gray-800">
-                <div className="flex justify-between text-xs text-gray-300">
+              <div className="space-y-1.5 pt-2 border-t border-pencil">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>{censorMode === 'pixelate' ? 'Block Size' : 'Blur Radius'}</span>
-                  <span className="font-mono text-gray-400">{intensity}px</span>
+                  <span className="font-mono text-graphite">{intensity}px</span>
                 </div>
                 <input
                   type="range"
@@ -446,23 +418,23 @@ export function CensorImageWorkspace() {
                   max="45"
                   value={intensity}
                   onChange={(e) => setIntensity(Number(e.target.value))}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
             )}
 
             {/* Box List & History Actions */}
-            <div className="pt-3 border-t border-gray-800 space-y-2">
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-gray-400">
-                  Active Redactions: <strong className="text-white">{boxes.length}</strong>
+            <div className="pt-3 border-t border-pencil space-y-2">
+              <div className="flex items-center justify-between text-[14px]">
+                <span className="text-graphite">
+                  Active Redactions: <strong className="text-ink">{boxes.length}</strong>
                 </span>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
                     disabled={boxes.length === 0}
                     onClick={handleUndo}
-                    className="text-xs text-gray-400 hover:text-white flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-gray-800"
+                    className="text-[14px] text-graphite hover:text-ink flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-paper-stock"
                   >
                     <Undo className="w-3.5 h-3.5" />
                     <span>Undo</span>
@@ -471,7 +443,7 @@ export function CensorImageWorkspace() {
                     type="button"
                     disabled={boxes.length === 0}
                     onClick={handleClearAll}
-                    className="text-xs text-rose-400 hover:text-rose-300 flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-gray-800"
+                    className="text-[14px] text-accent-red hover:text-accent-red flex items-center gap-1 disabled:opacity-40 transition-colors py-1 px-2 rounded-md hover:bg-paper-stock"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                     <span>Clear</span>
@@ -481,11 +453,11 @@ export function CensorImageWorkspace() {
             </div>
 
             {/* Download and Copy Buttons */}
-            <div className="pt-3 border-t border-gray-800 space-y-2">
+            <div className="pt-3 border-t border-pencil space-y-2">
               <button
                 type="button"
                 onClick={() => handleDownload('png')}
-                className="w-full py-3 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
+                className="w-full py-3 px-4 rounded-xl bg-process-key hover:bg-process-key text-ink font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Redacted Image (PNG)</span>
@@ -494,12 +466,12 @@ export function CensorImageWorkspace() {
               <button
                 type="button"
                 onClick={handleCopyClipboard}
-                className="w-full py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
                 {copiedToast ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span className="text-emerald-400">Copied to Clipboard!</span>
+                    <Check className="w-4 h-4 text-accent-green" />
+                    <span className="text-accent-green">Copied to Clipboard!</span>
                   </>
                 ) : (
                   <>
@@ -513,14 +485,14 @@ export function CensorImageWorkspace() {
                 <button
                   type="button"
                   onClick={() => handleDownload('webp')}
-                  className="py-2 px-3 rounded-xl bg-gray-800/80 hover:bg-gray-700 text-gray-300 text-xs font-medium transition-all cursor-pointer text-center"
+                  className="py-2 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-body text-[14px] font-medium transition-all cursor-pointer text-center"
                 >
                   Download WebP
                 </button>
                 <button
                   type="button"
                   onClick={() => handleDownload('jpeg')}
-                  className="py-2 px-3 rounded-xl bg-gray-800/80 hover:bg-gray-700 text-gray-300 text-xs font-medium transition-all cursor-pointer text-center"
+                  className="py-2 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-body text-[14px] font-medium transition-all cursor-pointer text-center"
                 >
                   Download JPG
                 </button>
@@ -533,7 +505,7 @@ export function CensorImageWorkspace() {
                   setImgElement(null);
                   setBoxes([]);
                 }}
-                className="w-full py-2 px-4 rounded-xl bg-transparent hover:bg-gray-800 text-gray-400 hover:text-gray-200 text-xs font-medium transition-all cursor-pointer"
+                className="w-full py-2 px-4 rounded-xl bg-transparent hover:bg-paper-stock text-graphite hover:text-ink text-[14px] font-medium transition-all cursor-pointer"
               >
                 Choose Different Photo
               </button>

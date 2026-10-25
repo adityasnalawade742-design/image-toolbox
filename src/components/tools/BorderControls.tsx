@@ -11,8 +11,8 @@ export function BorderControls({ options, onChange }: Props) {
     <div className="space-y-4">
       {/* Border Mode */}
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Border Mode</label>
-        <div className="grid grid-cols-2 gap-2 text-xs">
+        <label className="text-[14px] font-medium text-body">Border Mode</label>
+        <div className="grid grid-cols-2 gap-2 text-[14px]">
           <button
             type="button"
             onClick={() => onChange({ ...options, mode: 'outside' })}
@@ -40,7 +40,7 @@ export function BorderControls({ options, onChange }: Props) {
 
       {/* Border Width Slider */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <span className="text-body">Border Width</span>
           <span className="font-mono text-ink font-semibold">{options.width}px</span>
         </div>
@@ -50,12 +50,12 @@ export function BorderControls({ options, onChange }: Props) {
           max="100"
           value={options.width}
           onChange={(e) => onChange({ ...options, width: parseInt(e.target.value) || 0 })}
-          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
         />
       </div>
 
       {/* Border Color & Opacity */}
-      <div className="grid grid-cols-2 gap-3 pt-2 border-t border-hairline items-center text-xs">
+      <div className="grid grid-cols-2 gap-3 pt-2 border-t border-hairline items-center text-[14px]">
         <div className="flex items-center gap-2">
           <span className="text-body">Color</span>
           <input
@@ -68,7 +68,7 @@ export function BorderControls({ options, onChange }: Props) {
         </div>
 
         <div className="space-y-1">
-          <div className="flex justify-between text-[11px]">
+          <div className="flex justify-between text-[13px]">
             <span className="text-mute">Opacity</span>
             <span className="font-mono text-ink">{Math.round((options.opacity !== undefined ? options.opacity : 1) * 100)}%</span>
           </div>
@@ -78,7 +78,7 @@ export function BorderControls({ options, onChange }: Props) {
             max="100"
             value={Math.round((options.opacity !== undefined ? options.opacity : 1) * 100)}
             onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 100) / 100 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
         </div>
       </div>

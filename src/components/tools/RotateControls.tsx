@@ -11,8 +11,8 @@ export function RotateControls({ rotation, onChange }: Props) {
     <div className="space-y-4">
       {/* Quick Buttons */}
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Quick Rotation</label>
-        <div className="grid grid-cols-4 gap-1.5 text-xs">
+        <label className="text-[14px] font-medium text-body">Quick Rotation</label>
+        <div className="grid grid-cols-4 gap-1.5 text-[14px]">
           <button
             type="button"
             onClick={() => onChange((((rotation + 90) % 360) + 360) % 360)}
@@ -49,7 +49,7 @@ export function RotateControls({ rotation, onChange }: Props) {
 
       {/* Arbitrary Slider */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <span className="text-body">Custom Angle</span>
           <span className="font-mono text-ink font-semibold">{rotation}°</span>
         </div>
@@ -62,9 +62,9 @@ export function RotateControls({ rotation, onChange }: Props) {
             const val = parseInt(e.target.value) || 0;
             onChange((val + 360) % 360);
           }}
-          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
         />
-        <div className="flex justify-between text-[10px] text-mute font-mono">
+        <div className="flex justify-between text-[12px] text-mute font-mono">
           <span>-180°</span>
           <span>0°</span>
           <span>+180°</span>

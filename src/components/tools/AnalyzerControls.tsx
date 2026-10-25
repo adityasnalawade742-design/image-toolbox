@@ -106,21 +106,21 @@ export function AnalyzerControls({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs font-semibold text-ink">
+        <div className="flex items-center gap-2 text-[14px] font-semibold text-ink">
           <BarChart2 className="w-4 h-4 text-accent-blue" />
           <span>Technical Specifications</span>
         </div>
         <button
           type="button"
           onClick={handleCopyReport}
-          className="flex items-center gap-1 text-xs text-mute hover:text-ink transition-colors px-2 py-1 bg-surface-card border border-hairline rounded"
+          className="flex items-center gap-1 text-[14px] text-mute hover:text-ink transition-colors px-2 py-1 bg-surface-card border border-hairline rounded"
         >
           {copied ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
           <span>{copied ? 'Copied' : 'Copy Report'}</span>
         </button>
       </div>
 
-      <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs">
+      <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-[14px]">
         {metrics.map((m) => (
           <div key={m.label} className="py-2 flex items-center justify-between gap-4">
             <span className="text-mute">{m.label}</span>
@@ -131,13 +131,13 @@ export function AnalyzerControls({
 
       {/* Camera EXIF Metadata (read in-browser) */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center gap-2 text-xs font-semibold text-ink">
+        <div className="flex items-center gap-2 text-[14px] font-semibold text-ink">
           <Camera className="w-4 h-4 text-accent-blue" />
           <span>Camera & EXIF Metadata</span>
         </div>
 
         {exif?.hasGps && (
-          <div className="p-3 bg-accent-yellow-soft border border-accent-yellow/30 rounded-lg text-xs text-body space-y-2">
+          <div className="p-3 bg-accent-yellow-soft border border-accent-yellow/30 rounded-lg text-[14px] text-body space-y-2">
             <p className="flex items-start gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-accent-yellow shrink-0 mt-0.5" />
               <span>This photo contains its GPS location. Anyone you share the original file with can see where it was taken.</span>
@@ -155,7 +155,7 @@ export function AnalyzerControls({
         )}
 
         {exif && exif.tags.length > 0 ? (
-          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs">
+          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-[14px]">
             {exif.tags.map((t) => (
               <div key={t.label} className="py-2 flex items-center justify-between gap-4">
                 <span className="text-mute">{t.label}</span>
@@ -164,7 +164,7 @@ export function AnalyzerControls({
             ))}
           </div>
         ) : (
-          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-xs text-mute">
+          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-[14px] text-mute">
             {exif ? 'No camera EXIF metadata in this file.' : 'Reading metadata…'}
           </div>
         )}

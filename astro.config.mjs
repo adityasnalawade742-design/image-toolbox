@@ -25,9 +25,9 @@ export default defineConfig({
       manifest: {
         name: 'Image Toolbox — Privacy-First Image Suite',
         short_name: 'ImageToolbox',
-        description: '24 professional client-side image editing, conversion, and compression tools.',
-        theme_color: '#07080a',
-        background_color: '#07080a',
+        description: 'Free image tools that run in your browser: crop, resize, compress, convert and more.',
+        theme_color: '#fbfbf9',
+        background_color: '#fbfbf9',
         display: 'standalone',
         orientation: 'any',
         scope: '/',

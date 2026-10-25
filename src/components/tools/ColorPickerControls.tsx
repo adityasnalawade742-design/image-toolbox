@@ -30,7 +30,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
   return (
     <div className="space-y-4">
       {/* Click image hint */}
-      <div className="flex items-center gap-2 p-2.5 bg-surface-card border border-hairline rounded-md text-xs text-body">
+      <div className="flex items-center gap-2 p-2.5 bg-surface-card border border-hairline rounded-md text-[14px] text-body">
         <Pipette className="w-4 h-4 text-accent-blue shrink-0" />
         <span>Click or tap anywhere on the image preview to sample exact pixel colors.</span>
       </div>
@@ -39,23 +39,23 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
       <div className="p-4 bg-surface-card border border-hairline rounded-lg space-y-3">
         <div className="flex items-center gap-3">
           <div
-            className="w-12 h-12 rounded-lg border border-white/20 shadow-inner shrink-0"
+            className="w-12 h-12 rounded-lg border border-ink shadow-inner shrink-0"
             style={{ backgroundColor: selectedHex }}
           />
           <div className="space-y-0.5">
-            <div className="text-xs text-mute">Selected Color</div>
+            <div className="text-[14px] text-mute">Selected Color</div>
             <div className="text-sm font-bold text-ink font-mono">{selectedHex}</div>
           </div>
         </div>
 
         {/* Readouts & Copy buttons */}
-        <div className="space-y-2 pt-2 border-t border-hairline text-xs font-mono">
+        <div className="space-y-2 pt-2 border-t border-hairline text-[14px] font-mono">
           <div className="flex items-center justify-between p-2 bg-surface rounded border border-hairline">
             <span className="text-body">HEX: <strong className="text-ink">{selectedHex}</strong></span>
             <button
               type="button"
               onClick={() => copyText(selectedHex, 'HEX')}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
             >
               {copiedType === 'HEX' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'HEX' ? 'Copied' : 'Copy'}</span>
@@ -67,7 +67,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
             <button
               type="button"
               onClick={() => copyText(rgbString, 'RGB')}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
             >
               {copiedType === 'RGB' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'RGB' ? 'Copied' : 'Copy'}</span>
@@ -79,7 +79,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
             <button
               type="button"
               onClick={() => copyText(hslString, 'HSL')}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
             >
               {copiedType === 'HSL' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'HSL' ? 'Copied' : 'Copy'}</span>
@@ -91,7 +91,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
             <button
               type="button"
               onClick={() => copyText(hsvString, 'HSV')}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
             >
               {copiedType === 'HSV' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'HSV' ? 'Copied' : 'Copy'}</span>
@@ -103,7 +103,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
             <button
               type="button"
               onClick={() => copyText(cmykString, 'CMYK')}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors font-sans"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors font-sans"
             >
               {copiedType === 'CMYK' ? <Check className="w-3 h-3 text-accent-green" /> : <Copy className="w-3 h-3" />}
               <span>{copiedType === 'CMYK' ? 'Copied' : 'Copy'}</span>
@@ -115,7 +115,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
       {/* Recent Color History (up to 12) */}
       {history.length > 0 && (
         <div className="space-y-1.5 pt-2 border-t border-hairline">
-          <label className="text-xs font-medium text-body">Recent Color History</label>
+          <label className="text-[14px] font-medium text-body">Recent Color History</label>
           <div className="flex flex-wrap gap-1.5">
             {history.slice(-12).reverse().map((hex, idx) => (
               <button

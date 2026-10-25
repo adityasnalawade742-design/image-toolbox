@@ -95,7 +95,7 @@ export function ResizeControls({
         <button
           type="button"
           onClick={() => setMode('pixels')}
-          className={`flex-1 py-1 text-xs font-medium rounded transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded transition-colors ${
             mode === 'pixels' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -104,7 +104,7 @@ export function ResizeControls({
         <button
           type="button"
           onClick={() => setMode('percentage')}
-          className={`flex-1 py-1 text-xs font-medium rounded transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded transition-colors ${
             mode === 'percentage' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -115,7 +115,7 @@ export function ResizeControls({
       {/* Percentage Controls */}
       {mode === 'percentage' ? (
         <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-[14px]">
             <span className="text-body">Scale</span>
             <span className="font-mono text-ink font-semibold">{percent}%</span>
           </div>
@@ -125,9 +125,9 @@ export function ResizeControls({
             max={preventUpscale ? 100 : 300}
             value={percent}
             onChange={(e) => handlePercentChange(parseInt(e.target.value) || 100)}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
-          <div className="grid grid-cols-6 gap-1 text-[11px] font-mono">
+          <div className="grid grid-cols-6 gap-1 text-[13px] font-mono">
             {percentagePresets.map((pct) => (
               <button
                 key={pct}
@@ -150,25 +150,25 @@ export function ResizeControls({
         <div className="space-y-3">
           <div className="grid grid-cols-2 gap-3 items-center">
             <div className="space-y-1">
-              <span className="text-[11px] text-mute">Width (px)</span>
+              <span className="text-[13px] text-mute">Width (px)</span>
               <input
                 type="number"
                 min="1"
                 max={preventUpscale ? originalWidth : 10000}
                 value={localW}
                 onChange={(e) => handleWidthInput(e.target.value)}
-                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
               />
             </div>
             <div className="space-y-1">
-              <span className="text-[11px] text-mute">Height (px)</span>
+              <span className="text-[13px] text-mute">Height (px)</span>
               <input
                 type="number"
                 min="1"
                 max={preventUpscale ? originalHeight : 10000}
                 value={localH}
                 onChange={(e) => handleHeightInput(e.target.value)}
-                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+                className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
               />
             </div>
           </div>
@@ -176,7 +176,7 @@ export function ResizeControls({
       )}
 
       {/* Toggles */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-xs text-body">
+      <div className="space-y-2 pt-2 border-t border-hairline text-[14px] text-body">
         <label className="flex items-center justify-between cursor-pointer p-1.5 hover:bg-surface-card rounded transition-colors">
           <span className="flex items-center gap-2">
             {lockAspect ? <Lock className="w-3.5 h-3.5 text-accent-blue" /> : <Unlock className="w-3.5 h-3.5 text-mute" />}

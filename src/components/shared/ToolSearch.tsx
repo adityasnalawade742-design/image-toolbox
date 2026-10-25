@@ -1,27 +1,32 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Search, Command, ArrowRight, X } from 'lucide-react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { Search, ArrowRight, X } from 'lucide-react';
 import { TOOLS } from '../../config/tools';
+import { CATEGORY_INK } from '../../config/inks';
 import { getAllLocalizedTools } from '../../i18n/tools';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
+import { createT, type Strings } from '../../i18n/strings';
 
 interface Props {
   locale?: string;
+  strings?: Strings;
 }
 
-export function ToolSearch({ locale = 'en' }: Props) {
+export function ToolSearch({ locale = 'en', strings = {} }: Props) {
+  const t = useMemo(() => createT(strings), [strings]);
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isMac, setIsMac] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const localizedTools = getAllLocalizedTools(locale);
 
   useEffect(() => {
+    setIsMac(/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent));
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         setIsOpen((prev) => !prev);
-      } else if (e.key === 'Escape') {
-        setIsOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -30,57 +35,77 @@ export function ToolSearch({ locale = 'en' }: Props) {
 
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 50);
       setSelectedIndex(0);
+      requestAnimationFrame(() => inputRef.current?.focus());
     }
   }, [isOpen]);
 
-  const filteredTools = TOOLS.filter((tool) => {
-    const locTool = localizedTools[tool.slug];
-    const q = query.toLowerCase();
-    const matchSlug = tool.slug.toLowerCase().includes(q);
-    const matchName = (locTool?.name || tool.name).toLowerCase().includes(q);
-    const matchDesc = (locTool?.tagline || tool.description).toLowerCase().includes(q);
-    const matchKeywords = (locTool?.keywords || []).some((k) => k.toLowerCase().includes(q));
-    return matchSlug || matchName || matchDesc || matchKeywords;
-  });
-
-  const getToolUrl = (slug: string) => {
-    if (!showDefaultLang && locale === defaultLang) {
-      return `/${slug}`;
-    }
-    return `/${locale}/${slug}`;
+  const close = () => {
+    setIsOpen(false);
+    triggerRef.current?.focus();
   };
 
-  const handleSelect = (slug: string) => {
+  const q = query.trim().toLowerCase();
+  const filteredTools = TOOLS.filter((tool) => {
+    if (!q) return true;
+    const loc = localizedTools[tool.slug];
+    return [tool.slug, loc?.name || tool.name, loc?.tagline || tool.description, ...(loc?.keywords || [])].some((s) =>
+      s.toLowerCase().includes(q)
+    );
+  });
+
+  const getToolUrl = (slug: string) => (!showDefaultLang && locale === defaultLang ? `/${slug}` : `/${locale}/${slug}`);
+
+  const go = (slug: string) => {
     window.location.href = getToolUrl(slug);
-    setIsOpen(false);
   };
 
   return (
     <>
       <button
+        ref={triggerRef}
+        type="button"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-mute hover:text-ink bg-surface-elevated hover:bg-surface-card border border-hairline rounded-md transition-all h-[36px]"
-        aria-label="Search tools"
+        className="flex items-center gap-2 h-10 px-3 text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
+        aria-haspopup="dialog"
       >
-        <Search className="w-3.5 h-3.5 text-mute" />
-        <span className="hidden sm:inline">Search tools...</span>
-        <div className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono font-medium text-body raycast-keycap rounded-xs">
-          <span>⌘</span>
-          <span>K</span>
-        </div>
+        <Search className="w-4 h-4" aria-hidden="true" />
+        <span className="hidden sm:inline">{t('search.trigger')}</span>
+        <span className="sr-only sm:hidden">{t('search.trigger')}</span>
+        <kbd className="hidden md:inline text-[11px] text-graphite border border-pencil px-1 leading-5">
+          {isMac ? '⌘K' : 'Ctrl K'}
+        </kbd>
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-canvas/80 backdrop-blur-md">
-          <div className="w-full max-w-xl bg-surface border border-hairline-strong rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            {/* Top Command Search Bar */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-hairline">
-              <Search className="w-4 h-4 text-accent-red shrink-0" />
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center pt-[12vh] px-4 bg-process-key/40"
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) close();
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('search.dialogLabel')}
+            className="w-full max-w-xl bg-paper border border-ink"
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') {
+                e.preventDefault();
+                close();
+              }
+            }}
+          >
+            <div className="color-bar" aria-hidden="true"><span /><span /><span /><span /></div>
+            <div className="flex items-center gap-3 px-4 h-14 border-b border-ink">
+              <Search className="w-5 h-5 text-ink shrink-0" aria-hidden="true" />
               <input
                 ref={inputRef}
-                type="text"
+                type="search"
+                role="combobox"
+                aria-expanded="true"
+                aria-controls="tool-search-results"
+                aria-activedescendant={filteredTools[selectedIndex] ? `tool-opt-${filteredTools[selectedIndex].slug}` : undefined}
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
@@ -94,64 +119,51 @@ export function ToolSearch({ locale = 'en' }: Props) {
                     e.preventDefault();
                     setSelectedIndex((prev) => (prev - 1 + filteredTools.length) % Math.max(1, filteredTools.length));
                   } else if (e.key === 'Enter' && filteredTools[selectedIndex]) {
-                    handleSelect(filteredTools[selectedIndex].slug);
+                    go(filteredTools[selectedIndex].slug);
                   }
                 }}
-                placeholder={`Search ${TOOLS.length} tools or actions...`}
-                className="w-full bg-transparent text-sm text-ink placeholder-ash focus:outline-none"
+                placeholder={t('search.placeholder', { count: TOOLS.length })}
+                className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none"
               />
-              <button onClick={() => setIsOpen(false)} className="text-ash hover:text-ink">
-                <X className="w-4 h-4" />
+              <button type="button" onClick={close} className="p-1 text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* List */}
-            <div className="max-h-80 overflow-y-auto p-1.5 divide-y divide-hairline-soft">
+            <ul id="tool-search-results" role="listbox" aria-label={t('search.results')} className="max-h-[55vh] overflow-y-auto divide-y divide-pencil-soft">
               {filteredTools.length > 0 ? (
                 filteredTools.map((tool, idx) => {
-                  const locTool = localizedTools[tool.slug];
+                  const loc = localizedTools[tool.slug];
                   const isSelected = idx === selectedIndex;
                   return (
-                    <div
+                    <li
                       key={tool.slug}
-                      onClick={() => handleSelect(tool.slug)}
+                      id={`tool-opt-${tool.slug}`}
+                      role="option"
+                      aria-selected={isSelected}
+                      onClick={() => go(tool.slug)}
                       onMouseEnter={() => setSelectedIndex(idx)}
-                      className={`flex items-center justify-between p-2.5 rounded-md cursor-pointer transition-all ${
-                        isSelected ? 'bg-surface-card border border-hairline' : 'hover:bg-surface-elevated'
-                      }`}
+                      className={`flex items-center gap-3 px-4 py-3 cursor-pointer ${isSelected ? 'bg-process-key text-paper' : 'text-ink'}`}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className={`p-1.5 rounded-md ${isSelected ? 'bg-white text-black' : 'bg-surface-elevated text-accent-red'}`}>
-                          <Command className="w-3.5 h-3.5" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-medium text-ink">
-                            {locTool?.name || tool.name}
-                          </div>
-                          <div className="text-[11px] text-mute line-clamp-1">
-                            {locTool?.tagline || tool.description}
-                          </div>
-                        </div>
-                      </div>
-                      <ArrowRight className={`w-3.5 h-3.5 ${isSelected ? 'text-white' : 'text-stone'}`} />
-                    </div>
+                      <span className={`w-3 h-3 shrink-0 ${CATEGORY_INK[tool.category].className}`} aria-hidden="true" />
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-[15px] font-semibold">{loc?.name || tool.name}</span>
+                        <span className={`block text-[13px] truncate ${isSelected ? 'text-paper/80' : 'text-graphite'}`}>
+                          {loc?.tagline || tool.description}
+                        </span>
+                      </span>
+                      <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+                    </li>
                   );
                 })
               ) : (
-                <div className="py-8 text-center text-xs text-mute">
-                  No image tools matching "{query}"
-                </div>
+                <li className="px-4 py-10 text-center text-[15px] text-graphite">{t('search.noResults', { query })}</li>
               )}
-            </div>
+            </ul>
 
-            {/* Footer hints */}
-            <div className="px-4 py-2.5 bg-surface-elevated border-t border-hairline flex items-center justify-between text-[11px] text-mute">
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1"><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">↑</kbd><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">↓</kbd> Navigate</span>
-                <span className="flex items-center gap-1"><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">↵</kbd> Open</span>
-                <span className="flex items-center gap-1"><kbd className="raycast-keycap px-1 py-0.5 rounded-xs">Esc</kbd> Close</span>
-              </div>
-              <span className="font-mono">{TOOLS.length} Tools</span>
+            <div className="flex items-center justify-between px-4 py-2 border-t border-ink text-[12px] text-graphite">
+              <span>{t('search.hint')}</span>
+              <span data-measure>{t('search.count', { count: filteredTools.length })}</span>
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { useImageIntake } from '../shared/useImageIntake';
+import { ProofDropZone } from '../shared/ProofDropZone';
 
 interface FilterPreset {
   id: string;
@@ -171,50 +172,21 @@ export function PhotoFiltersWorkspace() {
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
-      {!selectedFile && (
-        <div
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files?.[0]) handleFileSelect(e.dataTransfer.files[0]);
-          }}
-          onClick={() => fileInputRef.current?.click()}
-          className="border-2 border-dashed border-gray-700 hover:border-primary-500 rounded-2xl p-12 text-center cursor-pointer transition-all duration-200 bg-gray-900/50 hover:bg-gray-800/50 group"
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && handleFileSelect(e.target.files[0])}
-          />
-          <div className="w-16 h-16 rounded-full bg-primary-950/60 text-primary-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            <Sliders className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-2">Upload Image for Filters & Adjustments</h3>
-          <p className="text-gray-400 text-sm max-w-md mx-auto mb-4">
-            Drag & drop your photo or paste from clipboard (Ctrl+V) to apply cinematic color presets, vignette, and lighting controls.
-          </p>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-300 border border-gray-700">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Instant GPU-Accelerated Canvas Rendering (100% Private)</span>
-          </div>
-        </div>
-      )}
+      {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
       {selectedFile && imgElement && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem]">
           {/* Controls Sidebar */}
-          <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5 max-h-[85vh] overflow-y-auto custom-scrollbar">
+          <div className="order-2 space-y-5 bg-paper-bright border border-ink p-5">
             <div className="flex items-center justify-between">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Sliders className="w-4 h-4 text-primary-400" />
+              <h3 className="text-base font-bold text-ink flex items-center gap-2">
+                <Sliders className="w-4 h-4 text-ink" />
                 <span>Presets & Adjustments</span>
               </h3>
               <button
                 type="button"
                 onClick={handleReset}
-                className="text-xs text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
+                className="text-[14px] text-graphite hover:text-ink flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Reset</span>
@@ -223,7 +195,7 @@ export function PhotoFiltersWorkspace() {
 
             {/* Presets Carousel / Grid */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider">
                 Aesthetic Presets
               </label>
               <div className="grid grid-cols-3 gap-2">
@@ -232,10 +204,10 @@ export function PhotoFiltersWorkspace() {
                     key={p.id}
                     type="button"
                     onClick={() => applyPreset(p)}
-                    className={`py-2 px-2.5 rounded-xl border text-xs font-medium transition-all ${
+                    className={`py-2 px-2.5 rounded-xl border text-[14px] font-medium transition-all ${
                       activePreset === p.id
-                        ? 'border-primary-500 bg-primary-950/60 text-primary-300 shadow-md'
-                        : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200 hover:bg-gray-800'
+                        ? 'border-ink bg-paper-stock text-ink shadow-md'
+                        : 'border-pencil bg-paper-stock text-graphite hover:text-ink hover:bg-paper-stock'
                     }`}
                   >
                     {p.name}
@@ -245,16 +217,16 @@ export function PhotoFiltersWorkspace() {
             </div>
 
             {/* Fine-Tuning Sliders */}
-            <div className="space-y-4 pt-2 border-t border-gray-800">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">
+            <div className="space-y-4 pt-2 border-t border-pencil">
+              <label className="text-[14px] font-semibold text-graphite uppercase tracking-wider block">
                 Fine Adjustments
               </label>
 
               {/* Brightness */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
-                  <span className="flex items-center gap-1.5"><Sun className="w-3.5 h-3.5 text-amber-400" /> Brightness</span>
-                  <span className="font-mono text-gray-400">{brightness}%</span>
+                <div className="flex justify-between text-[14px] text-body">
+                  <span className="flex items-center gap-1.5"><Sun className="w-3.5 h-3.5 text-accent-yellow" /> Brightness</span>
+                  <span className="font-mono text-graphite">{brightness}%</span>
                 </div>
                 <input
                   type="range"
@@ -265,15 +237,15 @@ export function PhotoFiltersWorkspace() {
                     setBrightness(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Contrast */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span className="flex items-center gap-1.5"><Contrast className="w-3.5 h-3.5 text-blue-400" /> Contrast</span>
-                  <span className="font-mono text-gray-400">{contrast}%</span>
+                  <span className="font-mono text-graphite">{contrast}%</span>
                 </div>
                 <input
                   type="range"
@@ -284,15 +256,15 @@ export function PhotoFiltersWorkspace() {
                     setContrast(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Saturation */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
-                  <span className="flex items-center gap-1.5"><Palette className="w-3.5 h-3.5 text-rose-400" /> Saturation</span>
-                  <span className="font-mono text-gray-400">{saturate}%</span>
+                <div className="flex justify-between text-[14px] text-body">
+                  <span className="flex items-center gap-1.5"><Palette className="w-3.5 h-3.5 text-accent-red" /> Saturation</span>
+                  <span className="font-mono text-graphite">{saturate}%</span>
                 </div>
                 <input
                   type="range"
@@ -303,15 +275,15 @@ export function PhotoFiltersWorkspace() {
                     setSaturate(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Sepia */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>Sepia Warmth</span>
-                  <span className="font-mono text-gray-400">{sepia}%</span>
+                  <span className="font-mono text-graphite">{sepia}%</span>
                 </div>
                 <input
                   type="range"
@@ -322,15 +294,15 @@ export function PhotoFiltersWorkspace() {
                     setSepia(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Grayscale */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>Monochrome (B&W)</span>
-                  <span className="font-mono text-gray-400">{grayscale}%</span>
+                  <span className="font-mono text-graphite">{grayscale}%</span>
                 </div>
                 <input
                   type="range"
@@ -341,15 +313,15 @@ export function PhotoFiltersWorkspace() {
                     setGrayscale(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Hue Rotate */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>Hue Shift</span>
-                  <span className="font-mono text-gray-400">{hueRotate}°</span>
+                  <span className="font-mono text-graphite">{hueRotate}°</span>
                 </div>
                 <input
                   type="range"
@@ -360,15 +332,15 @@ export function PhotoFiltersWorkspace() {
                     setHueRotate(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Sharpness / Clarity */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
-                  <span className="flex items-center gap-1.5"><Zap className="w-3.5 h-3.5 text-amber-400" /> Sharpness & Clarity</span>
-                  <span className="font-mono text-gray-400">{sharpness}%</span>
+                <div className="flex justify-between text-[14px] text-body">
+                  <span className="flex items-center gap-1.5"><Zap className="w-3.5 h-3.5 text-accent-yellow" /> Sharpness & Clarity</span>
+                  <span className="font-mono text-graphite">{sharpness}%</span>
                 </div>
                 <input
                   type="range"
@@ -379,15 +351,15 @@ export function PhotoFiltersWorkspace() {
                     setSharpness(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Vignette */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>Vignette Edge</span>
-                  <span className="font-mono text-gray-400">{vignette}%</span>
+                  <span className="font-mono text-graphite">{vignette}%</span>
                 </div>
                 <input
                   type="range"
@@ -398,15 +370,15 @@ export function PhotoFiltersWorkspace() {
                     setVignette(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
 
               {/* Soft Blur */}
               <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-gray-300">
+                <div className="flex justify-between text-[14px] text-body">
                   <span>Soft Focus / Blur</span>
-                  <span className="font-mono text-gray-400">{blur}px</span>
+                  <span className="font-mono text-graphite">{blur}px</span>
                 </div>
                 <input
                   type="range"
@@ -417,17 +389,17 @@ export function PhotoFiltersWorkspace() {
                     setBlur(Number(e.target.value));
                     setActivePreset('custom');
                   }}
-                  className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  className="w-full h-1.5 bg-paper-stock rounded-lg appearance-none cursor-pointer accent-ink"
                 />
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-4 border-t border-gray-800 space-y-2">
+            <div className="pt-4 border-t border-pencil space-y-2">
               <button
                 type="button"
                 onClick={() => handleDownload('png')}
-                className="w-full py-3 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
+                className="w-full py-3 px-4 rounded-xl bg-process-key hover:bg-process-key text-ink font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
               >
                 <Download className="w-4 h-4" />
                 <span>Download PNG (Lossless)</span>
@@ -436,12 +408,12 @@ export function PhotoFiltersWorkspace() {
               <button
                 type="button"
                 onClick={handleCopyClipboard}
-                className="w-full py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
                 {copiedToast ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span className="text-emerald-400">Copied to Clipboard!</span>
+                    <Check className="w-4 h-4 text-accent-green" />
+                    <span className="text-accent-green">Copied to Clipboard!</span>
                   </>
                 ) : (
                   <>
@@ -455,14 +427,14 @@ export function PhotoFiltersWorkspace() {
                 <button
                   type="button"
                   onClick={() => handleDownload('webp')}
-                  className="py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold transition-all cursor-pointer text-center"
+                  className="py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold transition-all cursor-pointer text-center"
                 >
                   Download WebP
                 </button>
                 <button
                   type="button"
                   onClick={() => handleDownload('jpeg')}
-                  className="py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold transition-all cursor-pointer text-center"
+                  className="py-2.5 px-3 rounded-xl bg-paper-stock hover:bg-pencil-soft text-ink text-[14px] font-semibold transition-all cursor-pointer text-center"
                 >
                   Download JPG
                 </button>
@@ -475,7 +447,7 @@ export function PhotoFiltersWorkspace() {
                   setImgElement(null);
                   handleReset();
                 }}
-                className="w-full py-2.5 px-4 rounded-xl bg-transparent hover:bg-gray-800 text-gray-400 hover:text-gray-200 text-xs font-medium transition-all cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl bg-transparent hover:bg-paper-stock text-graphite hover:text-ink text-[14px] font-medium transition-all cursor-pointer"
               >
                 Choose Different Photo
               </button>
@@ -483,20 +455,20 @@ export function PhotoFiltersWorkspace() {
           </div>
 
           {/* Preview Area (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="lg:col-span-2 space-y-4 order-1 lg:order-2">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4 min-h-[360px] sm:min-h-[480px] flex flex-col items-center justify-center relative">
+          <div className="min-w-0 order-1 space-y-4">
+            <div className="canvas-checkerboard border border-ink p-4 min-h-[360px] sm:min-h-[480px] flex flex-col items-center justify-center relative">
               {/* Top View Toggle */}
-              <div className="w-full flex items-center justify-between mb-3 text-xs">
-                <span className="text-gray-400">
+              <div className="w-full flex items-center justify-between mb-3 text-[14px]">
+                <span className="text-graphite">
                   {imgElement.naturalWidth} × {imgElement.naturalHeight} px
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowComparison(!showComparison)}
-                  className={`px-3 py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                  className={`px-3 py-1.5 rounded-lg border text-[14px] font-semibold flex items-center gap-1.5 transition-all ${
                     showComparison
-                      ? 'border-primary-500 bg-primary-950 text-primary-300'
-                      : 'border-gray-700 bg-gray-800 text-gray-300 hover:text-white'
+                      ? 'border-ink bg-paper-stock text-ink'
+                      : 'border-pencil bg-paper-stock text-body hover:text-ink'
                   }`}
                 >
                   <Eye className="w-3.5 h-3.5" />
@@ -506,7 +478,7 @@ export function PhotoFiltersWorkspace() {
 
               {/* Main Image View */}
               {!showComparison ? (
-                <div className="relative max-h-[65vh] rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+                <div className="relative max-h-[65vh] rounded-xl overflow-hidden shadow-2xl border border-pencil">
                   <img
                     src={imgElement.src}
                     alt="Filtered Preview"
@@ -528,7 +500,7 @@ export function PhotoFiltersWorkspace() {
                   ref={splitContainerRef}
                   onMouseMove={(e) => e.buttons === 1 && handleSplitPointerMove(e.clientX)}
                   onTouchMove={(e) => e.touches[0] && handleSplitPointerMove(e.touches[0].clientX)}
-                  className="relative w-full max-w-2xl bg-gray-950 rounded-xl overflow-hidden border border-gray-800 select-none shadow-2xl touch-none cursor-ew-resize"
+                  className="relative w-full max-w-2xl bg-paper-bright rounded-xl overflow-hidden border border-pencil select-none shadow-2xl touch-none cursor-ew-resize"
                   style={{
                     aspectRatio: `${imgElement.naturalWidth} / ${imgElement.naturalHeight}`,
                     maxHeight: '65vh',
@@ -564,18 +536,18 @@ export function PhotoFiltersWorkspace() {
 
                   {/* Divider Handle */}
                   <div
-                    className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-2xl flex items-center justify-center pointer-events-none"
+                    className="absolute top-0 bottom-0 w-1 bg-process-key cursor-ew-resize shadow-2xl flex items-center justify-center pointer-events-none"
                     style={{ left: `${sliderPos}%` }}
                   >
-                    <div className="w-7 h-7 rounded-full bg-white text-gray-900 shadow-xl flex items-center justify-center text-xs font-bold border border-gray-300">
+                    <div className="w-7 h-7 rounded-full bg-process-key text-paper shadow-xl flex items-center justify-center text-[14px] font-bold border border-pencil">
                       ↔
                     </div>
                   </div>
 
-                  <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/75 backdrop-blur-md text-[10px] text-gray-300 font-semibold uppercase pointer-events-none border border-white/10">
+                  <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/75 backdrop-blur-md text-[12px] text-body font-semibold uppercase pointer-events-none border border-pencil">
                     Original
                   </div>
-                  <div className="absolute top-3 right-3 px-2 py-1 rounded bg-primary-950/85 border border-primary-500/50 backdrop-blur-md text-[10px] text-primary-300 font-semibold uppercase pointer-events-none">
+                  <div className="absolute top-3 right-3 px-2 py-1 rounded bg-paper-stock border border-ink backdrop-blur-md text-[12px] text-ink font-semibold uppercase pointer-events-none">
                     Filtered ({activePreset})
                   </div>
                 </div>

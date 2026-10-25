@@ -57,7 +57,7 @@ export function CompressControls({
         <button
           type="button"
           onClick={() => setCompressMode('quality')}
-          className={`flex-1 py-1 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
             compressMode === 'quality' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -70,7 +70,7 @@ export function CompressControls({
             setCompressMode('target');
             handleTargetKbChange(targetKb);
           }}
-          className={`flex-1 py-1 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
             compressMode === 'target' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -81,16 +81,16 @@ export function CompressControls({
 
       {/* Live Savings Metric Banner */}
       <div className="p-3.5 bg-surface-card border border-hairline rounded-lg space-y-2">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <span className="text-mute">Original Size: <strong className="text-ink font-mono">{formatSize(originalBytes)}</strong></span>
           <span className="text-mute">Output Size: <strong className="text-ink font-mono">{formatSize(outputBytes)}</strong></span>
         </div>
 
         {outputBytes > 0 && (
-          <div className="pt-1.5 border-t border-hairline flex items-center justify-between text-xs">
+          <div className="pt-1.5 border-t border-hairline flex items-center justify-between text-[14px]">
             <span className="text-body font-medium">Compression Result</span>
             {isLarger ? (
-              <span className="flex items-center gap-1 text-[11px] text-amber-400 font-medium">
+              <span className="flex items-center gap-1 text-[13px] text-accent-yellow font-medium">
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>Output is larger than original</span>
               </span>
@@ -108,7 +108,7 @@ export function CompressControls({
         /* Target KB Controls */
         <div className="space-y-3 pt-2 border-t border-hairline">
           <div className="space-y-1.5">
-            <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center justify-between text-[14px]">
               <label className="text-body font-medium">Desired Max File Size</label>
               <span className="font-mono text-ink font-semibold">{targetKb} KB</span>
             </div>
@@ -119,21 +119,21 @@ export function CompressControls({
                 max={Math.max(1000, Math.round(originalBytes / 1024))}
                 value={targetKb}
                 onChange={(e) => handleTargetKbChange(parseInt(e.target.value) || 50)}
-                className="w-28 bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+                className="w-28 bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
               />
-              <span className="text-xs text-mute font-mono">KB</span>
+              <span className="text-[14px] text-mute font-mono">KB</span>
             </div>
           </div>
 
           <div className="space-y-1">
-            <span className="text-[11px] text-mute">Quick Presets:</span>
-            <div className="grid grid-cols-4 gap-1.5 text-xs">
+            <span className="text-[13px] text-mute">Quick Presets:</span>
+            <div className="grid grid-cols-4 gap-1.5 text-[14px]">
               {kbPresets.map((kb) => (
                 <button
                   key={kb}
                   type="button"
                   onClick={() => handleTargetKbChange(kb)}
-                  className={`py-1.5 rounded-md border text-center font-mono text-xs transition-colors ${
+                  className={`py-1.5 rounded-md border text-center font-mono text-[14px] transition-colors ${
                     targetKb === kb
                       ? 'bg-surface-card border-hairline-strong text-ink font-bold'
                       : 'bg-surface border-hairline text-mute hover:text-ink'
@@ -148,7 +148,7 @@ export function CompressControls({
       ) : (
         /* Quality Slider */
         <div className="space-y-2 pt-2 border-t border-hairline">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-[14px]">
             <span className="text-body">Compression Level</span>
             <span className="font-mono text-ink font-semibold">{quality}% Quality</span>
           </div>
@@ -158,10 +158,10 @@ export function CompressControls({
             max="100"
             value={quality}
             onChange={(e) => onQualityChange(parseInt(e.target.value) || 80)}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
           {format === 'image/png' && (
-            <p className="text-[11px] text-mute leading-relaxed">
+            <p className="text-[13px] text-mute leading-relaxed">
               Note: PNG is a lossless format. Converting to WebP or JPEG provides significantly higher file size reduction.
             </p>
           )}
@@ -170,14 +170,14 @@ export function CompressControls({
 
       {/* Format Selector */}
       <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-xs font-medium text-body">Target Output Format</label>
-        <div className="grid grid-cols-4 gap-1.5 text-xs">
+        <label className="text-[14px] font-medium text-body">Target Output Format</label>
+        <div className="grid grid-cols-4 gap-1.5 text-[14px]">
           {(['image/avif', 'image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
             <button
               key={fmt}
               type="button"
               onClick={() => onFormatChange(fmt)}
-              className={`py-1.5 rounded-md border text-center font-medium transition-colors text-xs ${
+              className={`py-1.5 rounded-md border text-center font-medium transition-colors text-[14px] ${
                 format === fmt
                   ? 'bg-surface-card border-hairline-strong text-ink font-bold shadow-sm'
                   : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
@@ -194,7 +194,7 @@ export function CompressControls({
           ))}
         </div>
         {format === 'image/avif' && (
-          <p className="text-[11px] text-accent-blue/90 leading-relaxed pt-1 flex items-center gap-1">
+          <p className="text-[13px] text-accent-blue/90 leading-relaxed pt-1 flex items-center gap-1">
             <Zap className="w-3 h-3 shrink-0" />
             <span>AVIF is usually smaller than WebP at similar quality. Encoding runs in your browser and can take a few seconds on large photos.</span>
           </p>

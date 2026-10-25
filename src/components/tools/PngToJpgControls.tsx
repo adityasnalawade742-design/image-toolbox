@@ -9,12 +9,12 @@ export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: P
   return (
     <div className="space-y-4">
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Background Fill Color</label>
-        <p className="text-[11px] text-mute">
+        <label className="text-[14px] font-medium text-body">Background Fill Color</label>
+        <p className="text-[13px] text-mute">
           JPEG does not support alpha transparency. Select the color to composite transparent areas against:
         </p>
 
-        <div className="grid grid-cols-3 gap-2 pt-2 text-xs">
+        <div className="grid grid-cols-3 gap-2 pt-2 text-[14px]">
           <button
             type="button"
             onClick={() => onBackgroundColorChange('#ffffff')}
@@ -44,7 +44,7 @@ export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: P
               onChange={(e) => onBackgroundColorChange(e.target.value)}
               className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
             />
-            <span className="font-mono text-[11px] text-mute truncate">{backgroundColor}</span>
+            <span className="font-mono text-[13px] text-mute truncate">{backgroundColor}</span>
           </div>
         </div>
       </div>

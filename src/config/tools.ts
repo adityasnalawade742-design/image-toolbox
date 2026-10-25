@@ -25,7 +25,7 @@ export const CATEGORIES: Record<ToolCategory, { name: string; description: strin
   },
   'convert-formats': {
     name: 'Convert Formats',
-    description: 'Fast format conversion between JPG, PNG, WebP, SVG, and more.',
+    description: 'Convert images to JPG, PNG, WebP, or AVIF, including from SVG, GIF, and iPhone HEIC.',
     icon: 'RefreshCw',
   },
   'utilities': {
@@ -162,7 +162,7 @@ export const TOOLS: ToolDefinition[] = [
     slug: 'compress-image',
     name: 'Compress Image',
     shortName: 'Compress',
-    description: 'Smart lossy/lossless image compression reducing size by up to 90% without quality loss.',
+    description: 'Shrink JPG, PNG, and WebP files with a quality slider or a target file size, and see the saving before you download.',
     category: 'optimize-compress',
     iconName: 'Minimize2',
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
@@ -288,7 +288,7 @@ export const TOOLS: ToolDefinition[] = [
     slug: 'image-palette-generator',
     name: 'Image Palette Generator',
     shortName: 'Palette',
-    description: 'Extract the dominant color palette and complementary swatches from any photo with Hex/RGB codes.',
+    description: 'Extract the dominant colors from any photo as HEX and RGB codes, ready to copy as CSS or JSON.',
     category: 'utilities',
     iconName: 'Palette',
     accept: 'image/*,image/heic,image/heif,.heic,.heif',

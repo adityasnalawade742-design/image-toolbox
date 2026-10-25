@@ -127,7 +127,7 @@ export function Base64ToImageWorkspace() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Input Area (6 Cols) */}
         <div className="lg:col-span-6 space-y-3">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-[14px]">
             <label className="font-semibold text-ink flex items-center gap-1.5">
               <FileCode className="w-4 h-4 text-accent-blue" />
               <span>Paste Base64 or Data URI</span>
@@ -136,7 +136,7 @@ export function Base64ToImageWorkspace() {
               <button
                 type="button"
                 onClick={handlePasteClipboard}
-                className="flex items-center gap-1 text-[11px] text-body hover:text-ink transition-colors px-2 py-0.5 bg-surface-card border border-hairline rounded"
+                className="flex items-center gap-1 text-[13px] text-body hover:text-ink transition-colors px-2 py-0.5 bg-surface-card border border-hairline rounded"
               >
                 <Clipboard className="w-3 h-3" />
                 <span>Paste</span>
@@ -144,7 +144,7 @@ export function Base64ToImageWorkspace() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="text-[11px] text-mute hover:text-ink transition-colors"
+                className="text-[13px] text-mute hover:text-ink transition-colors"
               >
                 Upload .txt
               </button>
@@ -166,10 +166,10 @@ export function Base64ToImageWorkspace() {
               value={inputText}
               onChange={(e) => handleTextChange(e.target.value)}
               placeholder="Paste your base64 string or data:image/png;base64,... here"
-              className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-xs font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
+              className="w-full bg-surface-card border border-hairline rounded-lg p-3 text-[14px] font-mono text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
             />
             {isDecoding && (
-              <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-surface-elevated/90 border border-hairline rounded text-[11px] text-accent-blue font-medium shadow">
+              <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-surface-elevated/90 border border-hairline rounded text-[13px] text-accent-blue font-medium shadow">
                 <Loader2 className="w-3 h-3 animate-spin" />
                 <span>Decoding...</span>
               </div>
@@ -177,14 +177,14 @@ export function Base64ToImageWorkspace() {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-[11px] text-mute font-mono">
+            <span className="text-[13px] text-mute font-mono">
               {inputText.length > 0 ? `${inputText.length.toLocaleString()} characters` : 'Ready for input'}
             </span>
             <button
               type="button"
               onClick={() => performDecode(inputText)}
               disabled={!inputText.trim() || isDecoding}
-              className="flex items-center gap-1.5 px-3 py-1 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded text-xs font-medium text-ink transition-colors disabled:opacity-40"
+              className="flex items-center gap-1.5 px-3 py-1 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded text-[14px] font-medium text-ink transition-colors disabled:opacity-40"
             >
               <Play className="w-3 h-3 text-accent-green" />
               <span>Decode Immediately</span>
@@ -192,12 +192,12 @@ export function Base64ToImageWorkspace() {
           </div>
 
           {errorMsg ? (
-            <div className="flex items-center gap-2 p-2.5 bg-accent-red/10 border border-accent-red/20 rounded-md text-xs text-accent-red">
+            <div className="flex items-center gap-2 p-2.5 bg-accent-red/10 border border-accent-red/20 rounded-md text-[14px] text-accent-red">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
           ) : imageElement ? (
-            <div className="flex items-center gap-2 p-2.5 bg-accent-green/10 border border-accent-green/20 rounded-md text-xs text-accent-green font-medium">
+            <div className="flex items-center gap-2 p-2.5 bg-accent-green/10 border border-accent-green/20 rounded-md text-[14px] text-accent-green font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0" />
               <span>Valid Image Decoded: {imageElement.naturalWidth} × {imageElement.naturalHeight} px</span>
             </div>
@@ -213,7 +213,7 @@ export function Base64ToImageWorkspace() {
                 className="max-w-full max-h-[300px] object-contain rounded shadow-xl"
               />
             ) : (
-              <div className="text-center text-xs text-mute space-y-1">
+              <div className="text-center text-[14px] text-mute space-y-1">
                 <UploadCloud className="w-6 h-6 mx-auto text-ash" />
                 <p>Decoded image preview will appear here</p>
               </div>
@@ -223,8 +223,8 @@ export function Base64ToImageWorkspace() {
           {imageElement && (
             <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-body">Export Format</label>
-                <div className="grid grid-cols-3 gap-2 text-xs">
+                <label className="text-[14px] font-medium text-body">Export Format</label>
+                <div className="grid grid-cols-3 gap-2 text-[14px]">
                   {(['image/png', 'image/jpeg', 'image/webp'] as const).map((fmt) => (
                     <button
                       key={fmt}
@@ -245,7 +245,7 @@ export function Base64ToImageWorkspace() {
               <button
                 type="button"
                 onClick={handleDownload}
-                className="w-full py-2.5 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all"
+                className="w-full py-2.5 px-4 bg-process-key text-paper border border-ink hover:bg-paper hover:text-ink font-semibold text-[14px] rounded-md shadow-lg flex items-center justify-center gap-2 transition-all"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Decoded Image</span>

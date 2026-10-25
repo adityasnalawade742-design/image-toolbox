@@ -120,21 +120,21 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
         <div
           className={`p-2.5 rounded-lg border-2 border-dashed transition-all flex items-center gap-2 ${
             isDragging
-              ? 'border-primary-400 bg-primary-500/20'
-              : 'border-white/60 hover:border-primary-400 bg-black/40 hover:bg-black/60 backdrop-blur-sm'
+              ? 'border-ink bg-paper-stock'
+              : 'border-ink hover:border-ink bg-black/40 hover:bg-black/60 backdrop-blur-sm'
           }`}
         >
-          <Move className="w-3.5 h-3.5 text-primary-400 shrink-0 animate-pulse" />
-          <span className="text-[11px] font-semibold text-white tracking-wide whitespace-nowrap drop-shadow-md select-none">
+          <Move className="w-3.5 h-3.5 text-ink shrink-0 animate-pulse" />
+          <span className="text-[13px] font-semibold text-ink tracking-wide whitespace-nowrap drop-shadow-md select-none">
             {options.text.length > 28 ? `${options.text.slice(0, 28)}...` : options.text}
           </span>
-          <span className="text-[9px] font-mono text-white/70 bg-black/60 px-1.5 py-0.5 rounded ml-1">
+          <span className="text-[9px] font-mono text-graphite bg-black/60 px-1.5 py-0.5 rounded ml-1">
             {xPct}%, {yPct}%
           </span>
         </div>
 
         {/* Floating Hint */}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-black/90 text-white text-[10px] font-medium px-2 py-0.5 rounded shadow-lg">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-black/90 text-ink text-[12px] font-medium px-2 py-0.5 rounded shadow-lg">
           Click & Drag to reposition text
         </div>
       </div>

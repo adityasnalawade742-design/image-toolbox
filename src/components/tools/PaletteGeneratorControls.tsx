@@ -68,7 +68,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
   return (
     <div className="space-y-4">
       {/* Number of colors selector */}
-      <div className="flex items-center justify-between text-xs">
+      <div className="flex items-center justify-between text-[14px]">
         <label className="font-medium text-body flex items-center gap-1.5">
           <Palette className="w-3.5 h-3.5 text-accent-blue" />
           <span>Dominant Swatches</span>
@@ -79,7 +79,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
               key={num}
               type="button"
               onClick={() => onCountChange(num)}
-              className={`w-7 py-1 rounded border text-xs font-mono transition-colors ${
+              className={`w-7 py-1 rounded border text-[14px] font-mono transition-colors ${
                 colorCount === num
                   ? 'bg-surface-card border-hairline-strong text-ink font-bold'
                   : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
@@ -99,11 +99,11 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
             className="p-2.5 bg-surface-card border border-hairline rounded-lg space-y-2 group hover:border-hairline-strong transition-all"
           >
             <div
-              className="w-full h-12 rounded-md border border-white/10 shadow-inner"
+              className="w-full h-12 rounded-md border border-pencil shadow-inner"
               style={{ backgroundColor: hex }}
             />
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-ink font-semibold">{hex}</span>
+              <span className="font-mono text-[14px] text-ink font-semibold">{hex}</span>
               <button
                 type="button"
                 onClick={() => copyHex(hex)}
@@ -123,7 +123,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
           <button
             type="button"
             onClick={copyCssVars}
-            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
+            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
           >
             <FileCode className="w-3.5 h-3.5 text-accent-blue" />
             <span>Copy CSS</span>
@@ -131,7 +131,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
           <button
             type="button"
             onClick={copyJson}
-            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
+            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
           >
             <Copy className="w-3.5 h-3.5 text-accent-green" />
             <span>Copy JSON</span>
@@ -141,14 +141,14 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
         <button
           type="button"
           onClick={downloadSwatchPng}
-          className="w-full py-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
+          className="w-full py-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
         >
           <Download className="w-3.5 h-3.5 text-accent-amber" />
           <span>Download Palette Swatch Sheet (.PNG)</span>
         </button>
 
         {copiedMsg && (
-          <div className="p-2 bg-surface-card border border-hairline-strong rounded text-center text-xs font-semibold text-accent-green">
+          <div className="p-2 bg-surface-card border border-hairline-strong rounded text-center text-[14px] font-semibold text-accent-green">
             {copiedMsg}
           </div>
         )}

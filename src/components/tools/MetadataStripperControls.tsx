@@ -24,20 +24,20 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
     <div className="space-y-4">
       {/* Privacy Guarantee Card */}
       <div className="p-4 bg-surface-card border border-hairline rounded-lg space-y-3">
-        <div className="flex items-center gap-2 text-xs font-semibold text-accent-green">
+        <div className="flex items-center gap-2 text-[14px] font-semibold text-accent-green">
           <ShieldCheck className="w-4 h-4" />
           <span>100% Verified Client-Side Privacy Strip</span>
         </div>
 
         <div className="space-y-2.5">
           {guarantees.map((g) => (
-            <div key={g.title} className="flex items-start gap-2.5 text-xs">
+            <div key={g.title} className="flex items-start gap-2.5 text-[14px]">
               <div className="p-1 rounded bg-surface border border-hairline shrink-0 mt-0.5">
                 {g.icon}
               </div>
               <div>
                 <div className="font-medium text-ink">{g.title}</div>
-                <div className="text-[11px] text-mute">{g.desc}</div>
+                <div className="text-[13px] text-mute">{g.desc}</div>
               </div>
             </div>
           ))}
@@ -46,7 +46,7 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
 
       {/* File Size Metric */}
       {outputBytes > 0 && (
-        <div className="p-3 bg-surface-card border border-hairline rounded-md flex items-center justify-between text-xs">
+        <div className="p-3 bg-surface-card border border-hairline rounded-md flex items-center justify-between text-[14px]">
           <span className="text-mute">Original: <strong className="text-ink font-mono">{formatSize(originalBytes)}</strong></span>
           <span className="text-accent-green font-mono font-medium">Cleaned Output: {formatSize(outputBytes)}</span>
         </div>

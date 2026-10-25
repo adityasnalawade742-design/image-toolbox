@@ -31,7 +31,7 @@ export function RoundControls({
           onIsCircleChange(true);
           onRadiusChange(maxRadius);
         }}
-        className={`w-full py-2.5 px-3 rounded-md border flex items-center justify-center gap-2 text-xs font-semibold transition-all ${
+        className={`w-full py-2.5 px-3 rounded-md border flex items-center justify-center gap-2 text-[14px] font-semibold transition-all ${
           isCircle
             ? 'bg-surface-card border-hairline-strong text-ink shadow'
             : 'bg-surface-elevated hover:bg-surface-card border-hairline text-body hover:text-ink'
@@ -43,8 +43,8 @@ export function RoundControls({
 
       {/* Presets */}
       <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-xs font-medium text-body">Corner Radius Presets</label>
-        <div className="grid grid-cols-4 gap-1.5 text-xs">
+        <label className="text-[14px] font-medium text-body">Corner Radius Presets</label>
+        <div className="grid grid-cols-4 gap-1.5 text-[14px]">
           <button
             type="button"
             onClick={() => {
@@ -90,7 +90,7 @@ export function RoundControls({
 
       {/* Radius Slider */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <span className="text-body">Custom Radius</span>
           <span className="font-mono text-ink font-semibold">{isCircle ? 'Circular Mask' : `${radius}px`}</span>
         </div>
@@ -104,19 +104,19 @@ export function RoundControls({
             onIsCircleChange(false);
             onRadiusChange(parseInt(e.target.value) || 0);
           }}
-          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white disabled:opacity-40"
+          className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink disabled:opacity-40"
         />
       </div>
 
       {/* JPG Background Fill (Transparent PNGs saved to JPG need a background) */}
       {format === 'image/jpeg' && (
-        <div className="p-3 bg-surface-card border border-hairline rounded-md space-y-2 text-xs">
+        <div className="p-3 bg-surface-card border border-hairline rounded-md space-y-2 text-[14px]">
           <span className="text-mute block">JPG does not support transparency. Select corner fill:</span>
           <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={() => onBackgroundColorChange('#ffffff')}
-              className={`px-2.5 py-1 rounded border text-xs ${
+              className={`px-2.5 py-1 rounded border text-[14px] ${
                 backgroundColor === '#ffffff' ? 'border-hairline-strong text-ink font-bold' : 'border-hairline text-mute'
               }`}
             >
@@ -125,7 +125,7 @@ export function RoundControls({
             <button
               type="button"
               onClick={() => onBackgroundColorChange('#000000')}
-              className={`px-2.5 py-1 rounded border text-xs ${
+              className={`px-2.5 py-1 rounded border text-[14px] ${
                 backgroundColor === '#000000' ? 'border-hairline-strong text-ink font-bold' : 'border-hairline text-mute'
               }`}
             >

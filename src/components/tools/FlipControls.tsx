@@ -11,8 +11,8 @@ interface Props {
 export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Props) {
   return (
     <div className="space-y-3">
-      <label className="text-xs font-medium text-body">Flip Orientation</label>
-      <div className="grid grid-cols-2 gap-2 text-xs">
+      <label className="text-[14px] font-medium text-body">Flip Orientation</label>
+      <div className="grid grid-cols-2 gap-2 text-[14px]">
         <button
           type="button"
           onClick={() => onFlipHChange(!flipH)}
@@ -47,7 +47,7 @@ export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Pro
             onFlipHChange(!flipH);
             onFlipVChange(!flipV);
           }}
-          className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink transition-colors"
+          className="py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-body hover:text-ink transition-colors"
         >
           Flip Both
         </button>
@@ -57,7 +57,7 @@ export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Pro
             onFlipHChange(false);
             onFlipVChange(false);
           }}
-          className="flex items-center justify-center gap-1 py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-mute hover:text-ink transition-colors"
+          className="flex items-center justify-center gap-1 py-1.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-[14px] text-mute hover:text-ink transition-colors"
         >
           <RefreshCw className="w-3 h-3" />
           <span>Reset</span>

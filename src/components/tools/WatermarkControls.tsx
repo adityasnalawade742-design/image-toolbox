@@ -53,7 +53,7 @@ export function WatermarkControls({ options, onChange }: Props) {
             setMode('text');
             onChange({ ...options, imageElement: undefined });
           }}
-          className={`flex-1 py-1 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
             mode === 'text' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -63,7 +63,7 @@ export function WatermarkControls({ options, onChange }: Props) {
         <button
           type="button"
           onClick={() => setMode('image')}
-          className={`flex-1 py-1 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 py-1 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
             mode === 'image' ? 'bg-surface-elevated text-ink font-semibold' : 'text-mute hover:text-body'
           }`}
         >
@@ -76,18 +76,18 @@ export function WatermarkControls({ options, onChange }: Props) {
         /* Watermark Text */
         <div className="space-y-3">
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-body">Watermark Text</label>
+            <label className="text-[14px] font-medium text-body">Watermark Text</label>
             <input
               type="text"
               value={options.text || ''}
               onChange={(e) => onChange({ ...options, text: e.target.value })}
               placeholder="© Your Brand / Copyright"
-              className="w-full bg-surface-card border border-hairline rounded-md px-3 py-1.5 text-xs text-ink placeholder-ash focus:outline-none focus:border-hairline-strong"
+              className="w-full bg-surface-card border border-hairline rounded-md px-3 py-1.5 text-[14px] text-ink placeholder-ash focus:outline-none focus:border-hairline-strong"
             />
           </div>
 
           <div className="space-y-1">
-            <div className="flex justify-between text-xs">
+            <div className="flex justify-between text-[14px]">
               <span className="text-body">Font Size</span>
               <span className="font-mono text-ink font-semibold">{options.fontSize ? `${options.fontSize}px` : 'Auto-scale'}</span>
             </div>
@@ -97,14 +97,14 @@ export function WatermarkControls({ options, onChange }: Props) {
               max="140"
               value={options.fontSize || 32}
               onChange={(e) => onChange({ ...options, fontSize: parseInt(e.target.value) || 32 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
             />
           </div>
         </div>
       ) : (
         /* Image Logo Upload */
         <div className="space-y-2">
-          <label className="text-xs font-medium text-body">Logo / PNG Image</label>
+          <label className="text-[14px] font-medium text-body">Logo / PNG Image</label>
           <input
             ref={fileInputRef}
             type="file"
@@ -115,7 +115,7 @@ export function WatermarkControls({ options, onChange }: Props) {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="w-full py-2.5 px-3 border border-dashed border-hairline hover:border-hairline-strong rounded-md bg-surface-card hover:bg-surface-elevated flex items-center justify-center gap-2 text-xs text-body hover:text-ink transition-colors"
+            className="w-full py-2.5 px-3 border border-dashed border-hairline hover:border-hairline-strong rounded-md bg-surface-card hover:bg-surface-elevated flex items-center justify-center gap-2 text-[14px] text-body hover:text-ink transition-colors"
           >
             <Upload className="w-3.5 h-3.5 text-accent-blue" />
             <span>{options.imageElement ? 'Replace Logo Image' : 'Choose Logo (PNG/SVG)'}</span>
@@ -123,7 +123,7 @@ export function WatermarkControls({ options, onChange }: Props) {
 
           {options.imageElement && (
             <div className="space-y-1 pt-1">
-              <div className="flex justify-between text-xs">
+              <div className="flex justify-between text-[14px]">
                 <span className="text-body">Logo Scale</span>
                 <span className="font-mono text-ink font-semibold">{options.imageScale || 20}%</span>
               </div>
@@ -133,7 +133,7 @@ export function WatermarkControls({ options, onChange }: Props) {
                 max="60"
                 value={options.imageScale || 20}
                 onChange={(e) => onChange({ ...options, imageScale: parseInt(e.target.value) || 20 })}
-                className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+                className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
               />
             </div>
           )}
@@ -142,8 +142,8 @@ export function WatermarkControls({ options, onChange }: Props) {
 
       {/* Position 3x3 Grid */}
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Position</label>
-        <div className="grid grid-cols-3 gap-1 text-xs">
+        <label className="text-[14px] font-medium text-body">Position</label>
+        <div className="grid grid-cols-3 gap-1 text-[14px]">
           {positions.map((p) => (
             <button
               key={p.id}
@@ -165,7 +165,7 @@ export function WatermarkControls({ options, onChange }: Props) {
       {/* Opacity & Rotation */}
       <div className="space-y-3 pt-2 border-t border-hairline">
         <div className="space-y-1">
-          <div className="flex justify-between text-xs">
+          <div className="flex justify-between text-[14px]">
             <span className="text-body">Opacity</span>
             <span className="font-mono text-ink font-semibold">{Math.round((options.opacity ?? 0.4) * 100)}%</span>
           </div>
@@ -175,13 +175,13 @@ export function WatermarkControls({ options, onChange }: Props) {
             max="100"
             value={Math.round((options.opacity ?? 0.4) * 100)}
             onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 40) / 100 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
         </div>
 
         {mode === 'text' && (
           <div className="space-y-1">
-            <div className="flex justify-between text-xs">
+            <div className="flex justify-between text-[14px]">
               <span className="text-body">Rotation Angle</span>
               <span className="font-mono text-ink font-semibold">{options.rotation || 0}°</span>
             </div>
@@ -191,7 +191,7 @@ export function WatermarkControls({ options, onChange }: Props) {
               max="90"
               value={options.rotation || 0}
               onChange={(e) => onChange({ ...options, rotation: parseInt(e.target.value) || 0 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
             />
           </div>
         )}
@@ -199,7 +199,7 @@ export function WatermarkControls({ options, onChange }: Props) {
 
       {/* Tiled Pattern Checkbox & Color for text */}
       {mode === 'text' && (
-        <div className="flex items-center justify-between pt-2 border-t border-hairline text-xs">
+        <div className="flex items-center justify-between pt-2 border-t border-hairline text-[14px]">
           <div className="flex items-center gap-2">
             <span className="text-body">Color</span>
             <input

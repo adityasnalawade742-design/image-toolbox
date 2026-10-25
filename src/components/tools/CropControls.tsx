@@ -128,7 +128,7 @@ export function CropControls({
               onIsCircleChange(false);
               onLockAspectChange?.(false);
             }}
-            className={`flex-1 py-1.5 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+            className={`flex-1 py-1.5 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
               !isCircle ? 'bg-surface-elevated text-ink font-semibold shadow-sm' : 'text-mute hover:text-body'
             }`}
           >
@@ -141,7 +141,7 @@ export function CropControls({
               onIsCircleChange(true);
               applyPresetWithLock(1, 1);
             }}
-            className={`flex-1 py-1.5 text-xs font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
+            className={`flex-1 py-1.5 text-[14px] font-medium rounded flex items-center justify-center gap-1.5 transition-colors ${
               isCircle ? 'bg-surface-elevated text-ink font-semibold shadow-sm' : 'text-mute hover:text-body'
             }`}
           >
@@ -153,24 +153,24 @@ export function CropControls({
 
       {/* Standard Aspect Ratios */}
       <div className="space-y-1.5">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <label className="font-medium text-body">Crop Mode & Aspect Ratios</label>
           <button
             type="button"
             onClick={handleReset}
-            className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors"
+            className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Fit All (100%)</span>
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-1.5 text-xs">
+        <div className="grid grid-cols-3 gap-1.5 text-[14px]">
           {standardRatios.map((p) => (
             <button
               key={p.label}
               type="button"
               onClick={p.action}
-              className={`py-2 px-2 rounded-md border text-[11px] transition-all text-center truncate ${
+              className={`py-2 px-2 rounded-md border text-[13px] transition-all text-center truncate ${
                 p.isSelected
                   ? 'bg-accent-blue/15 border-accent-blue/60 text-accent-blue font-bold shadow-sm'
                   : 'bg-surface-card hover:bg-surface-elevated border-hairline hover:border-hairline-strong text-body hover:text-ink'
@@ -184,14 +184,14 @@ export function CropControls({
 
       {/* Social Media Presets */}
       <div className="space-y-1.5 pt-2 border-t border-hairline">
-        <label className="text-xs font-medium text-body">Social Media Presets</label>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-xs">
+        <label className="text-[14px] font-medium text-body">Social Media Presets</label>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-[14px]">
           {socialPresets.map((p) => (
             <button
               key={p.label}
               type="button"
               onClick={p.action}
-              className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded-md text-[11px] text-body hover:text-ink transition-colors text-center truncate"
+              className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong rounded-md text-[13px] text-body hover:text-ink transition-colors text-center truncate"
             >
               {p.label}
             </button>
@@ -201,13 +201,13 @@ export function CropControls({
 
       {/* Manual Pixel Coordinates & Proportional Lock */}
       <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center justify-between text-[14px]">
           <label className="font-medium text-body">Crop Dimensions (Exact Pixels)</label>
           {onLockAspectChange && (
             <button
               type="button"
               onClick={() => onLockAspectChange(!lockAspect)}
-              className="flex items-center gap-1 text-[11px] text-mute hover:text-ink transition-colors"
+              className="flex items-center gap-1 text-[13px] text-mute hover:text-ink transition-colors"
             >
               {lockAspect ? <Lock className="w-3.5 h-3.5 text-accent-blue" /> : <Unlock className="w-3.5 h-3.5" />}
               <span>{lockAspect ? 'Ratio Locked' : 'Freeform'}</span>
@@ -217,7 +217,7 @@ export function CropControls({
 
         <div className="grid grid-cols-2 gap-2">
           <div className="space-y-1">
-            <span className="text-[11px] text-mute">X Offset (px)</span>
+            <span className="text-[13px] text-mute">X Offset (px)</span>
             <input
               type="number"
               min="0"
@@ -227,11 +227,11 @@ export function CropControls({
                 const val = Math.max(0, Math.min(imgWidth - 1, parseInt(e.target.value) || 0));
                 onChange({ x: val, y: cropY, width: Math.min(cropW, imgWidth - val), height: cropH });
               }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
             />
           </div>
           <div className="space-y-1">
-            <span className="text-[11px] text-mute">Y Offset (px)</span>
+            <span className="text-[13px] text-mute">Y Offset (px)</span>
             <input
               type="number"
               min="0"
@@ -241,11 +241,11 @@ export function CropControls({
                 const val = Math.max(0, Math.min(imgHeight - 1, parseInt(e.target.value) || 0));
                 onChange({ x: cropX, y: val, width: cropW, height: Math.min(cropH, imgHeight - val) });
               }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
             />
           </div>
           <div className="space-y-1">
-            <span className="text-[11px] text-mute">Width (px)</span>
+            <span className="text-[13px] text-mute">Width (px)</span>
             <input
               type="number"
               min="1"
@@ -260,11 +260,11 @@ export function CropControls({
                   onChange({ x: cropX, y: cropY, width: val, height: cropH });
                 }
               }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
             />
           </div>
           <div className="space-y-1">
-            <span className="text-[11px] text-mute">Height (px)</span>
+            <span className="text-[13px] text-mute">Height (px)</span>
             <input
               type="number"
               min="1"
@@ -279,19 +279,19 @@ export function CropControls({
                   onChange({ x: cropX, y: cropY, width: cropW, height: val });
                 }
               }}
-              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-xs text-ink font-mono focus:outline-none focus:border-hairline-strong"
+              className="w-full bg-surface-card border border-hairline rounded-md px-2.5 py-1.5 text-[14px] text-ink font-mono focus:outline-none focus:border-hairline-strong"
             />
           </div>
         </div>
       </div>
 
       {/* Live Output Preview Info */}
-      <div className="p-3 bg-surface-card border border-hairline rounded-lg space-y-1 text-xs">
-        <div className="flex items-center justify-between text-[11px]">
+      <div className="p-3 bg-surface-card border border-hairline rounded-lg space-y-1 text-[14px]">
+        <div className="flex items-center justify-between text-[13px]">
           <span className="text-body font-medium">Output Crop Size</span>
           <span className="font-mono text-ink font-bold">{cropW} × {cropH} px</span>
         </div>
-        <div className="flex items-center justify-between text-[11px] text-mute">
+        <div className="flex items-center justify-between text-[13px] text-mute">
           <span>Aspect Ratio</span>
           <span className="font-mono text-ink">{(cropW / Math.max(1, cropH)).toFixed(2)}:1</span>
         </div>

@@ -42,11 +42,11 @@ export class ErrorBoundary extends Component<Props, State> {
             <h3 className="text-lg font-bold text-ink">
               {this.props.fallbackTitle || 'Workspace Encountered an Error'}
             </h3>
-            <p className="text-xs text-mute max-w-md mx-auto">
+            <p className="text-[14px] text-mute max-w-md mx-auto">
               An unexpected error occurred during image processing. Your original file was not harmed.
             </p>
             {this.state.error?.message && (
-              <pre className="p-3 bg-surface rounded border border-hairline text-[11px] font-mono text-accent-red/90 max-w-lg mx-auto overflow-x-auto text-left">
+              <pre className="p-3 bg-surface rounded border border-hairline text-[13px] font-mono text-accent-red/90 max-w-lg mx-auto overflow-x-auto text-left">
                 {this.state.error.message}
               </pre>
             )}
@@ -56,14 +56,14 @@ export class ErrorBoundary extends Component<Props, State> {
             <button
               type="button"
               onClick={this.handleReset}
-              className="px-4 py-2.5 rounded-lg bg-white hover:bg-neutral-200 text-black font-semibold text-xs transition-colors flex items-center gap-2"
+              className="px-4 py-2.5 rounded-lg bg-process-key text-paper border border-ink hover:bg-paper hover:text-ink font-semibold text-[14px] transition-colors flex items-center gap-2"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>Reload Workspace</span>
             </button>
             <a
               href="/"
-              className="px-4 py-2.5 rounded-lg bg-surface-elevated hover:bg-surface border border-hairline text-body hover:text-ink font-medium text-xs transition-colors flex items-center gap-2"
+              className="px-4 py-2.5 rounded-lg bg-surface-elevated hover:bg-surface border border-hairline text-body hover:text-ink font-medium text-[14px] transition-colors flex items-center gap-2"
             >
               <Home className="w-3.5 h-3.5" />
               <span>Return Home</span>

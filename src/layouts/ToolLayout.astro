@@ -1,11 +1,15 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AdSlot from '../components/layout/AdSlot.astro';
 import { ToolWorkspace } from '../components/shared/ToolWorkspace';
 import { getToolBySlug, TOOLS } from '../config/tools';
+import { CATEGORY_INK } from '../config/inks';
 import { getLocalizedToolContent, getAllLocalizedTools } from '../i18n/tools';
+import { getLocalizedHomeData } from '../i18n/home';
 import { getWebApplicationSchema, getBreadcrumbSchema, getFAQSchema } from '../lib/seo/schema';
 import { SITE_CONFIG } from '../config/site';
-import { useTranslatedPath } from '../i18n/utils';
+import { useTranslatedPath, useTranslations } from '../i18n/utils';
+import { pickStrings } from '../i18n/strings';
 import type { ui } from '../i18n/ui';
 
 interface Props {
@@ -23,177 +27,152 @@ if (!tool) {
 const locContent = getLocalizedToolContent(slug, locale);
 const allLocTools = getAllLocalizedTools(locale);
 const translatePath = useTranslatedPath(locale);
+const t = useTranslations(locale);
+const categoryName = getLocalizedHomeData(locale).categoryNames[tool.category];
+const toolName = locContent.name || tool.name;
 
-const title = locContent.seoTitle || `${tool.name} — Free Online Tool — Image Toolbox`;
+// seoTitle carries no site name (older translations may still end with one)
+const baseTitle = (locContent.seoTitle || toolName).replace(/\s+[—|-]\s+Image Toolbox$/, '');
+const title = `${baseTitle} | ${SITE_CONFIG.name}`;
 const description = locContent.seoDescription || tool.description;
 const canonicalUrl = `${SITE_CONFIG.url}${locale === 'en' ? `/${slug}` : `/${locale}/${slug}`}`;
 
-const appSchema = getWebApplicationSchema(locContent.name || tool.name, description, canonicalUrl, locale);
+const appSchema = getWebApplicationSchema(toolName, description, canonicalUrl, locale);
 const homeUrl = `${SITE_CONFIG.url}${translatePath('/')}`;
 const breadcrumbSchema = getBreadcrumbSchema([
-  { name: 'Home', url: homeUrl },
-  { name: locContent.name || tool.name, url: canonicalUrl },
+  { name: t('tool.home'), url: homeUrl },
+  { name: toolName, url: canonicalUrl },
 ]);
 const faqSchema = getFAQSchema(locContent.faqs || []);
-
 const jsonLd = [appSchema, breadcrumbSchema, faqSchema].filter(Boolean);
 
-// Related Tools: tools in same category or popular tools
-const relatedTools = TOOLS.filter((t) => t.slug !== slug && (t.category === tool.category || t.popular)).slice(0, 4);
+// Next tools: same category first, then popular ones
+const relatedTools = [
+  ...TOOLS.filter((x) => x.slug !== slug && x.category === tool.category),
+  ...TOOLS.filter((x) => x.slug !== slug && x.category !== tool.category && x.popular),
+].slice(0, 6);
+
+// Next-step handoffs offered after editing (everyday follow-ups first)
+const NEXT_SLUGS = ['compress-image', 'resize-image', 'crop-image', 'convert-image', 'add-text-to-image', 'watermark-image', 'photo-filters', 'remove-image-metadata'];
+const nextTools = NEXT_SLUGS.filter((s) => s !== slug)
+  .slice(0, 6)
+  .map((s) => {
+    const next = getToolBySlug(s)!;
+    return { slug: s, name: allLocTools[s]?.name || next.name, inkClass: CATEGORY_INK[next.category].className };
+  });
+
+// Interface strings the workspace island needs, in this page's language only
+const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  currentSlug={slug}
-  canonicalUrl={canonicalUrl}
-  jsonLd={jsonLd}
->
-  <div class="space-y-12">
-    <!-- Breadcrumbs & Header (Above the Fold) -->
-    <div class="space-y-4">
-      <nav class="flex items-center gap-2 text-xs text-mute font-medium">
-        <a href={translatePath('/')} class="hover:text-ink transition-colors">Home</a>
-        <span>/</span>
-        <span class="text-body">{locContent.name || tool.name}</span>
-      </nav>
-
-      <div class="space-y-2">
-        <div class="flex items-center gap-2.5">
-          <h1 class="text-2xl sm:text-4xl font-semibold text-ink tracking-tight">
-            {locContent.name || tool.name}
-          </h1>
-          {tool.badge && (
-            <span class="px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-accent-blue bg-accent-blue-soft rounded-xs">
-              {tool.badge}
-            </span>
-          )}
-        </div>
-        <p class="text-sm text-mute max-w-3xl leading-relaxed">
-          {locContent.tagline || tool.description}
-        </p>
+<BaseLayout title={title} description={description} currentSlug={slug} canonicalUrl={canonicalUrl} jsonLd={jsonLd}>
+  <div class="space-y-16 sm:space-y-20">
+    <section class="space-y-6">
+      <div class="space-y-3">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-[14px] text-graphite">
+          <a href={translatePath('/')} class="text-ink hover:underline">{t('tool.home')}</a>
+          <span aria-hidden="true">/</span>
+          <a href={translatePath(`/#${tool.category}`)} class="flex items-center gap-1.5 text-ink hover:underline">
+            <span class:list={['w-2.5 h-2.5', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
+            {categoryName}
+          </a>
+        </nav>
+        <h1 class="font-condensed font-bold text-[34px] sm:text-[48px] leading-[1.02] tracking-[-0.01em] text-ink">{toolName}</h1>
+        <p class="text-[17px] sm:text-[18px] text-body max-w-3xl leading-relaxed">{locContent.tagline || tool.description}</p>
       </div>
-    </div>
 
-    <!-- Core Interactive Canvas Island -->
-    <ToolWorkspace
-      client:load
-      slug={slug}
-      toolName={locContent.name || tool.name}
-      accept={tool.accept}
-    />
+      <ToolWorkspace client:load slug={slug} toolName={toolName} accept={tool.accept} locale={locale} strings={workspaceStrings} nextTools={nextTools} />
+    </section>
 
-    <!-- Favicon Installation Guide (Only on Favicon Generator) -->
-    {slug === 'favicon-generator' && (
-      <section class="space-y-4 pt-8 border-t border-hairline">
-        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
-          <span>How to Install Your Generated Favicons</span>
-        </h2>
-        <div class="p-4 bg-surface border border-hairline rounded-lg space-y-3 text-xs">
-          <p class="text-mute">
-            Extract the downloaded ZIP package into your website's root folder and place these HTML tags inside your <code class="text-ink font-mono bg-surface-card px-1.5 py-0.5 rounded">&lt;head&gt;</code>:
-          </p>
-          <pre class="p-3 bg-surface-card border border-hairline rounded-md text-[11px] font-mono text-ink overflow-x-auto"><code>&lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;
+    <div class="grid gap-14 lg:grid-cols-[minmax(0,1fr)_18rem]">
+      <div class="space-y-14 min-w-0">
+        {locContent.intro && <p class="text-[19px] leading-relaxed text-ink max-w-prose">{locContent.intro}</p>}
+
+        {slug === 'favicon-generator' && (
+          <section class="space-y-3">
+            <h2 class="font-condensed font-bold text-[26px] leading-tight border-b-2 border-ink pb-2">{t('tool.faviconGuideTitle')}</h2>
+            <p class="text-[16px] text-body">{t('tool.faviconGuideText')}</p>
+            <pre class="p-4 bg-paper-bright border border-ink text-[13px] font-code text-ink overflow-x-auto"><code>&lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;
 &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
 &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
 &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
 &lt;link rel="manifest" href="/site.webmanifest"&gt;</code></pre>
-        </div>
-      </section>
-    )}
+          </section>
+        )}
 
-    <!-- How-to Steps -->
-    {locContent.howToSteps && locContent.howToSteps.length > 0 && (
-      <section class="space-y-6 pt-8 border-t border-hairline">
-        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent-red"></span>
-          <span>How to use {locContent.name || tool.name}</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {locContent.howToSteps.map((step, idx) => (
-            <div class="p-5 rounded-lg bg-surface border border-hairline space-y-2">
-              <div class="w-6 h-6 rounded-md bg-surface-card border border-hairline flex items-center justify-center text-xs font-mono text-ink">
-                {idx + 1}
-              </div>
-              <h3 class="text-xs font-semibold text-ink">{step.title}</h3>
-              <p class="text-xs text-mute leading-relaxed">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
+        {locContent.howToSteps?.length > 0 && (
+          <section class="space-y-4">
+            <h2 class="font-condensed font-bold text-[26px] leading-tight border-b-2 border-ink pb-2">
+              {t('tool.howTo').replace('{tool}', toolName)}
+            </h2>
+            <ol class="divide-y divide-pencil">
+              {locContent.howToSteps.map((step, idx) => (
+                <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 py-4">
+                  <span class="font-condensed font-bold text-[28px] leading-none text-ink" data-measure>{idx + 1}</span>
+                  <div class="space-y-1">
+                    <h3 class="text-[17px] font-semibold text-ink">{step.title}</h3>
+                    <p class="text-[16px] leading-relaxed text-body">{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
-    <!-- Features & Benefits -->
-    {locContent.features && locContent.features.length > 0 && (
-      <section class="space-y-6 pt-8 border-t border-hairline">
-        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent-green"></span>
-          <span>Why use Image Toolbox?</span>
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {locContent.features.map((feature) => (
-            <div class="p-5 rounded-lg bg-surface border border-hairline space-y-1.5">
-              <h3 class="text-xs font-semibold text-body">{feature.title}</h3>
-              <p class="text-xs text-mute leading-relaxed">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
+        <AdSlot locale={locale} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_TOOL} />
 
-    <!-- FAQ Accordion -->
-    {locContent.faqs && locContent.faqs.length > 0 && (
-      <section class="space-y-6 pt-8 border-t border-hairline">
-        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent-yellow"></span>
-          <span>Frequently Asked Questions</span>
-        </h2>
-        <div class="space-y-2.5">
-          {locContent.faqs.map((faq) => (
-            <details class="group p-4 rounded-lg bg-surface border border-hairline open:border-hairline-strong transition-colors">
-              <summary class="flex items-center justify-between cursor-pointer list-none text-xs font-medium text-body group-hover:text-ink">
-                <span>{faq.question}</span>
-                <span class="text-ash group-open:rotate-180 transition-transform font-mono text-[10px]">▼</span>
-              </summary>
-              <p class="text-xs text-mute mt-3 leading-relaxed pt-2 border-t border-hairline-soft">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <!-- Related Tools Section -->
-    {relatedTools.length > 0 && (
-      <section class="space-y-6 pt-8 border-t border-hairline">
-        <h2 class="text-lg font-semibold text-ink tracking-tight flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
-          <span>Related Image Tools</span>
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {relatedTools.map((relTool) => {
-            const relLoc = allLocTools[relTool.slug];
-            return (
-              <a
-                href={translatePath(`/${relTool.slug}`)}
-                class="group p-4 rounded-lg bg-surface hover:bg-surface-elevated border border-hairline hover:border-hairline-strong transition-all space-y-1.5"
-              >
-                <div class="flex items-center justify-between">
-                  <h3 class="text-xs font-semibold text-ink group-hover:text-white transition-colors">
-                    {relLoc?.name || relTool.name}
-                  </h3>
-                  <span class="text-ash group-hover:text-ink text-xs font-mono">→</span>
+        {locContent.features?.length > 0 && (
+          <section class="space-y-4">
+            <h2 class="font-condensed font-bold text-[26px] leading-tight border-b-2 border-ink pb-2">{t('tool.features')}</h2>
+            <dl class="grid sm:grid-cols-2 gap-x-8">
+              {locContent.features.map((feature) => (
+                <div class="py-3 border-b border-pencil">
+                  <dt class="text-[17px] font-semibold text-ink">{feature.title}</dt>
+                  <dd class="text-[16px] leading-relaxed text-body mt-1">{feature.description}</dd>
                 </div>
-                <p class="text-[11px] text-mute line-clamp-2 leading-relaxed">
-                  {relLoc?.tagline || relTool.description}
-                </p>
-              </a>
-            );
-          })}
-        </div>
-      </section>
-    )}
+              ))}
+            </dl>
+          </section>
+        )}
+
+        {locContent.faqs?.length > 0 && (
+          <section class="space-y-2">
+            <h2 class="font-condensed font-bold text-[26px] leading-tight border-b-2 border-ink pb-2">{t('tool.faq')}</h2>
+            <div class="divide-y divide-pencil border-b border-pencil">
+              {locContent.faqs.map((faq) => (
+                <details class="group">
+                  <summary class="flex items-center justify-between gap-4 py-3.5 cursor-pointer list-none text-[17px] font-semibold text-ink">
+                    <span>{faq.question}</span>
+                    <svg class="w-4 h-4 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 2v12M2 8h12" />
+                    </svg>
+                  </summary>
+                  <p class="pb-4 text-[16px] leading-relaxed text-body max-w-prose">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+
+      {relatedTools.length > 0 && (
+        <aside aria-labelledby="related-title" class="lg:sticky lg:top-24 self-start">
+          <h2 id="related-title" class="slug pb-2 border-b border-ink">{t('tool.related')}</h2>
+          <ul class="divide-y divide-pencil-soft">
+            {relatedTools.map((rel) => (
+              <li>
+                <a href={translatePath(`/${rel.slug}`)} class="group flex items-start gap-2.5 py-2.5">
+                  <span class:list={['w-2.5 h-2.5 mt-1.5 shrink-0', CATEGORY_INK[rel.category].className]} aria-hidden="true"></span>
+                  <span>
+                    <span class="block text-[15px] font-semibold text-ink group-hover:underline">{allLocTools[rel.slug]?.name || rel.name}</span>
+                    <span class="block text-[13px] leading-snug text-graphite">{allLocTools[rel.slug]?.tagline || rel.description}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+    </div>
   </div>
 </BaseLayout>

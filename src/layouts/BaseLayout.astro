@@ -4,7 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { LanguageBanner } from '../components/layout/LanguageBanner';
 import { getLangFromUrl } from '../i18n/utils';
-import { getHreflangLinks } from '../i18n/locales';
+import { getHreflangLinks, SUPPORTED_LOCALES } from '../i18n/locales';
 import '../styles/global.css';
 
 interface Props {
@@ -29,7 +29,7 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="dark scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,10 +47,10 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
 
     <!-- Favicon & PWA -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#07080a" />
+    <meta name="theme-color" content="#fbfbf9" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="ImageToolbox" />
 
     <!-- Open Graph / Social -->
@@ -59,6 +59,7 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentCanonical} />
     <meta property="og:site_name" content={SITE_CONFIG.name} />
+    <meta property="og:locale" content={SUPPORTED_LOCALES[lang]?.hrefLang || 'en'} />
 
     <!-- Structured Data JSON-LD -->
     {jsonLd && (
@@ -66,11 +67,11 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
     )}
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-canvas text-ink flex flex-col font-sans">
+  <body class="min-h-screen bg-paper text-ink flex flex-col font-sans">
     <LanguageBanner client:idle currentLocale={lang} currentSlug={currentSlug} />
     <Header locale={lang} currentSlug={currentSlug} />
     
-    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <main id="main" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       <slot />
     </main>
 

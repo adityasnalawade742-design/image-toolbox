@@ -25,24 +25,24 @@ export function TextControls({ options, onChange }: Props) {
     <div className="space-y-4">
       {/* Text Input */}
       <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Text Caption (Multiline supported)</label>
+        <label className="text-[14px] font-medium text-body">Text Caption (Multiline supported)</label>
         <textarea
           rows={2}
           value={options.text}
           onChange={(e) => onChange({ ...options, text: e.target.value })}
           placeholder="Enter your text here..."
-          className="w-full bg-surface-card border border-hairline rounded-md p-2.5 text-xs text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
+          className="w-full bg-surface-card border border-hairline rounded-md p-2.5 text-[14px] text-ink placeholder-ash focus:outline-none focus:border-hairline-strong resize-none"
         />
       </div>
 
       {/* Typography & Position Controls */}
       <div className="grid grid-cols-2 gap-2">
         <div className="space-y-1">
-          <span className="text-[11px] text-mute">Font Family</span>
+          <span className="text-[13px] text-mute">Font Family</span>
           <select
             value={options.fontFamily || 'Inter, sans-serif'}
             onChange={(e) => onChange({ ...options, fontFamily: e.target.value })}
-            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-xs text-ink focus:outline-none focus:border-hairline-strong"
+            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-[14px] text-ink focus:outline-none focus:border-hairline-strong"
           >
             {fontFamilies.map((f) => (
               <option key={f} value={f}>
@@ -53,11 +53,11 @@ export function TextControls({ options, onChange }: Props) {
         </div>
 
         <div className="space-y-1">
-          <span className="text-[11px] text-mute">Position</span>
+          <span className="text-[13px] text-mute">Position</span>
           <select
             value={options.position}
             onChange={(e) => onChange({ ...options, position: e.target.value as 'top' | 'center' | 'bottom' | 'custom' })}
-            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-xs text-ink focus:outline-none focus:border-hairline-strong"
+            className="w-full bg-surface-card border border-hairline rounded-md px-2 py-1.5 text-[14px] text-ink focus:outline-none focus:border-hairline-strong"
           >
             <option value="top">Top</option>
             <option value="center">Center</option>
@@ -70,7 +70,7 @@ export function TextControls({ options, onChange }: Props) {
       {/* Custom Y Slider if position === 'custom' */}
       {options.position === 'custom' && (
         <div className="space-y-1 p-2 bg-surface-card border border-hairline rounded-md">
-          <div className="flex justify-between text-xs">
+          <div className="flex justify-between text-[14px]">
             <span className="text-body">Vertical Offset</span>
             <span className="font-mono text-ink font-semibold">{options.customYPercent ?? 50}%</span>
           </div>
@@ -80,7 +80,7 @@ export function TextControls({ options, onChange }: Props) {
             max="95"
             value={options.customYPercent ?? 50}
             onChange={(e) => onChange({ ...options, customYPercent: parseInt(e.target.value) || 50 })}
-            className="w-full h-1 bg-surface-elevated rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-elevated rounded appearance-none cursor-pointer accent-ink"
           />
         </div>
       )}
@@ -128,7 +128,7 @@ export function TextControls({ options, onChange }: Props) {
       {/* Font Size & Opacity Sliders */}
       <div className="space-y-3 pt-2 border-t border-hairline">
         <div className="space-y-1">
-          <div className="flex justify-between text-xs">
+          <div className="flex justify-between text-[14px]">
             <span className="text-body">Font Size</span>
             <span className="font-mono text-ink font-semibold">{options.fontSize}px</span>
           </div>
@@ -138,12 +138,12 @@ export function TextControls({ options, onChange }: Props) {
             max="240"
             value={options.fontSize}
             onChange={(e) => onChange({ ...options, fontSize: parseInt(e.target.value) || 36 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
         </div>
 
         <div className="space-y-1">
-          <div className="flex justify-between text-xs">
+          <div className="flex justify-between text-[14px]">
             <span className="text-body">Text Opacity</span>
             <span className="font-mono text-ink font-semibold">{Math.round(options.opacity * 100)}%</span>
           </div>
@@ -153,13 +153,13 @@ export function TextControls({ options, onChange }: Props) {
             max="100"
             value={Math.round(options.opacity * 100)}
             onChange={(e) => onChange({ ...options, opacity: (parseInt(e.target.value) || 100) / 100 })}
-            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+            className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
           />
         </div>
       </div>
 
       {/* Text Color & Drop Shadow */}
-      <div className="flex items-center justify-between pt-2 border-t border-hairline text-xs">
+      <div className="flex items-center justify-between pt-2 border-t border-hairline text-[14px]">
         <div className="flex items-center gap-2">
           <span className="text-body">Text Color</span>
           <input
@@ -183,7 +183,7 @@ export function TextControls({ options, onChange }: Props) {
       </div>
 
       {/* Stroke / Outline Controls */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-xs">
+      <div className="space-y-2 pt-2 border-t border-hairline text-[14px]">
         <div className="flex items-center justify-between">
           <label className="flex items-center gap-2 cursor-pointer text-body hover:text-ink">
             <input
@@ -210,14 +210,14 @@ export function TextControls({ options, onChange }: Props) {
                 onChange={(e) => onChange({ ...options, strokeColor: e.target.value })}
                 className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
               />
-              <span className="font-mono text-[11px] text-mute">{options.strokeColor || '#000000'}</span>
+              <span className="font-mono text-[13px] text-mute">{options.strokeColor || '#000000'}</span>
             </div>
           )}
         </div>
 
         {hasStroke && (
           <div className="space-y-1">
-            <div className="flex justify-between text-[11px]">
+            <div className="flex justify-between text-[13px]">
               <span className="text-mute">Stroke Thickness</span>
               <span className="font-mono text-ink">{options.strokeWidth || 4}px</span>
             </div>
@@ -227,14 +227,14 @@ export function TextControls({ options, onChange }: Props) {
               max="20"
               value={options.strokeWidth || 4}
               onChange={(e) => onChange({ ...options, strokeWidth: parseInt(e.target.value) || 4 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
             />
           </div>
         )}
       </div>
 
       {/* Background Badge Controls */}
-      <div className="space-y-2 pt-2 border-t border-hairline text-xs">
+      <div className="space-y-2 pt-2 border-t border-hairline text-[14px]">
         <div className="flex items-center justify-between">
           <label className="flex items-center gap-2 cursor-pointer text-body hover:text-ink">
             <input
@@ -261,14 +261,14 @@ export function TextControls({ options, onChange }: Props) {
                 onChange={(e) => onChange({ ...options, backgroundColor: e.target.value })}
                 className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
               />
-              <span className="font-mono text-[11px] text-mute">{options.backgroundColor || '#000000'}</span>
+              <span className="font-mono text-[13px] text-mute">{options.backgroundColor || '#000000'}</span>
             </div>
           )}
         </div>
 
         {hasBg && (
           <div className="space-y-1">
-            <div className="flex justify-between text-[11px]">
+            <div className="flex justify-between text-[13px]">
               <span className="text-mute">Badge Opacity</span>
               <span className="font-mono text-ink">{Math.round((options.backgroundOpacity ?? 0.8) * 100)}%</span>
             </div>
@@ -278,7 +278,7 @@ export function TextControls({ options, onChange }: Props) {
               max="100"
               value={Math.round((options.backgroundOpacity ?? 0.8) * 100)}
               onChange={(e) => onChange({ ...options, backgroundOpacity: (parseInt(e.target.value) || 80) / 100 })}
-              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+              className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-ink"
             />
           </div>
         )}
