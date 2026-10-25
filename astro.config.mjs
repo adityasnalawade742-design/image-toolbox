@@ -7,6 +7,12 @@ import pwa from '@vite-pwa/astro';
 export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://image-toolbox.aditya-s-nalawade742.workers.dev',
   output: 'static',
+  vite: {
+    // The AVIF encoder worker code-splits its WASM codec, which requires ES module workers
+    worker: { format: 'es' },
+    // Pre-bundling breaks @jsquash's relative .wasm URLs in dev
+    optimizeDeps: { exclude: ['@jsquash/avif'] },
+  },
   integrations: [
     react(),
     tailwind({
@@ -19,9 +25,9 @@ export default defineConfig({
       manifest: {
         name: 'Image Toolbox — Privacy-First Image Suite',
         short_name: 'ImageToolbox',
-        description: '24 professional client-side image editing, conversion, and compression tools.',
-        theme_color: '#07080a',
-        background_color: '#07080a',
+        description: 'Free image tools that run in your browser: crop, resize, compress, convert and more.',
+        theme_color: '#fbfbf9',
+        background_color: '#fbfbf9',
         display: 'standalone',
         orientation: 'any',
         scope: '/',
@@ -39,6 +45,26 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,webp,woff2}'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: '/',
+        // Large runtimes are cached on first use instead of precached, so every tool works offline afterwards:
+        // the AVIF encoder's WASM and the ONNX runtime used by the background remover (models are cached by transformers.js)
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/_astro/') && url.pathname.endsWith('.wasm'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'wasm-codecs', expiration: { maxEntries: 8 } },
+          },
+          {
+            // "Best quality" background removal model and runtime (IMG.LY), so it also works offline after one use
+            urlPattern: ({ url }) => url.hostname === 'staticimgly.com' && url.pathname.startsWith('/@imgly/background-removal-data/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'imgly-models', expiration: { maxEntries: 200 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+          {
+            urlPattern: ({ url }) => url.hostname === 'cdn.jsdelivr.net' && url.pathname.startsWith('/npm/onnxruntime-web@'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'onnx-runtime', expiration: { maxEntries: 8 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+        ],
       },
     }),
   ],

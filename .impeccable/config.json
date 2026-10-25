@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "barlow",
+        "createdAt": "2026-10-25T09:54:53.260Z",
+        "reason": "redesign: Press Proof Sheet direction contract (.impeccable/surfaces) replaces the stale Raycast DESIGN.md, which the documenter rewrites at finish"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "sfmono-regular",
+        "createdAt": "2026-10-25T09:54:53.736Z",
+        "reason": "code/base64 output needs a real monospace; redesign replaces stale DESIGN.md at finish"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "barlow semi condensed",
+        "createdAt": "2026-10-25T09:54:54.248Z",
+        "reason": "redesign label face per direction contract; stale DESIGN.md rewritten at finish"
+      }
+    ]
+  }
+}

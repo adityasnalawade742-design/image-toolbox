@@ -1,0 +1,23 @@
+---
+// Renders an AdSense unit only when PUBLIC_ADSENSE_CLIENT and a slot id are configured.
+// Placed between content sections, never beside upload, download or handoff controls.
+import { useTranslations } from '../../i18n/utils';
+import type { ui } from '../../i18n/ui';
+
+interface Props {
+  slot?: string;
+  locale?: keyof typeof ui;
+}
+
+const { slot, locale = 'en' } = Astro.props;
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const t = useTranslations(locale);
+---
+
+{client && slot && (
+  <aside class="border-y border-pencil py-3" aria-label={t('ad.label')}>
+    <p class="slug mb-2">{t('ad.label')}</p>
+    <ins class="adsbygoogle block min-h-[100px]" data-ad-client={client} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+)}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart2, CheckCircle2, XCircle, Copy, Check, Printer, Layers, Camera, MapPin, Sparkles, Loader2 } from 'lucide-react';
-import { vpsAnalyzeMetadata, type ExifAnalysisResult } from '../../lib/vps/vpsClient';
+import { CheckCircle2, XCircle, Copy, Check, MapPin } from 'lucide-react';
+import { readExifSummary, type ExifSummary } from '../../lib/canvas/exifReader';
+import type { StringKey } from '../../i18n/strings';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   filename: string;
@@ -10,8 +12,24 @@ interface Props {
   width: number;
   height: number;
   hasTransparency: boolean;
-  activeFile?: File | Blob | null;
+  sourceFile?: File | null;
+  onRemoveMetadata?: () => void;
 }
+
+// exifReader returns English labels; translate them at render time
+const EXIF_LABEL_KEYS: Record<string, StringKey> = {
+  Camera: 'ctl.exif.camera',
+  Lens: 'ctl.exif.lens',
+  Taken: 'ctl.exif.taken',
+  Exposure: 'ctl.exif.exposure',
+  Aperture: 'ctl.exif.aperture',
+  ISO: 'ctl.exif.iso',
+  'Focal Length': 'ctl.exif.focalLength',
+  Flash: 'ctl.exif.flash',
+  Orientation: 'ctl.exif.orientation',
+  Software: 'ctl.exif.software',
+  'GPS Location': 'ctl.exif.gpsLocation',
+};
 
 export function AnalyzerControls({
   filename,
@@ -21,20 +39,30 @@ export function AnalyzerControls({
   width,
   height,
   hasTransparency,
-  activeFile,
+  sourceFile,
+  onRemoveMetadata,
 }: Props) {
+  const t = useT();
   const [copied, setCopied] = useState(false);
-  const [exifData, setExifData] = useState<ExifAnalysisResult | null>(null);
-  const [isAnalyzingExif, setIsAnalyzingExif] = useState(false);
+  const [exif, setExif] = useState<ExifSummary | null>(null);
 
+  // Parsed locally from the original upload (before HEIC conversion, which drops EXIF)
   useEffect(() => {
-    if (!activeFile) return;
-    setIsAnalyzingExif(true);
-    vpsAnalyzeMetadata(activeFile)
-      .then((res) => setExifData(res))
-      .catch(() => setExifData(null))
-      .finally(() => setIsAnalyzingExif(false));
-  }, [activeFile]);
+    if (!sourceFile) return;
+    let cancelled = false;
+    setExif(null);
+    readExifSummary(sourceFile).then((summary) => {
+      if (!cancelled) setExif(summary);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [sourceFile]);
+
+  const exifLabel = (label: string) => {
+    const key = EXIF_LABEL_KEYS[label];
+    return key ? t(key) : label;
+  };
 
   const formatSize = (bytes: number) => {
     if (!bytes || bytes <= 0) return '0 KB';
@@ -49,107 +77,115 @@ export function AnalyzerControls({
   const megapixels = ((width * height) / 1000000).toFixed(2);
   const uncompressedMem = ((width * height * 4) / (1024 * 1024)).toFixed(1);
 
-  // Dynamic Color Depth calculation
+  // Color depth from format and alpha
   const cleanFmt = (format || '').toLowerCase();
   const isJpg = cleanFmt.includes('jpg') || cleanFmt.includes('jpeg');
-  let colorDepth = '24-bit TrueColor (8-bit/channel RGB)';
-  if (isJpg) {
-    colorDepth = '24-bit TrueColor (RGB, No Alpha)';
-  } else if (hasTransparency) {
-    colorDepth = '32-bit RGBA (24-bit RGB + 8-bit Alpha)';
-  } else {
-    colorDepth = '24-bit TrueColor (RGB, Opaque)';
-  }
+  const colorDepth = isJpg
+    ? t('ctl.analyzer.depthJpg')
+    : hasTransparency
+    ? t('ctl.analyzer.depthAlpha')
+    : t('ctl.analyzer.depthOpaque');
 
-  // Print Size Calculations
+  // Print size calculations
   const printW300 = (width / 300).toFixed(1);
   const printH300 = (height / 300).toFixed(1);
   const printWcm = ((width / 300) * 2.54).toFixed(1);
   const printHcm = ((height / 300) * 2.54).toFixed(1);
 
-  const metrics = [
-    { label: 'Filename', value: filename },
-    { label: 'File Size', value: formatSize(fileSize) },
-    { label: 'Format', value: format.toUpperCase() },
-    { label: 'MIME Type', value: mimeType || `image/${format.toLowerCase()}` },
-    { label: 'Dimensions', value: `${width} × ${height} px` },
-    { label: 'Aspect Ratio', value: `${aspectFraction} (${(width / (height || 1)).toFixed(2)}:1)` },
-    { label: 'Resolution', value: `${megapixels} Megapixels` },
-    { label: 'Color Depth', value: colorDepth },
+  const hasAlpha = hasTransparency && !isJpg;
+
+  const metrics: { key: string; label: string; value: React.ReactNode; wrapAnywhere?: boolean }[] = [
+    { key: 'filename', label: t('ctl.analyzer.filename'), value: filename, wrapAnywhere: true },
+    { key: 'fileSize', label: t('ctl.analyzer.fileSize'), value: formatSize(fileSize) },
+    { key: 'format', label: t('ctl.analyzer.format'), value: format.toUpperCase() },
+    { key: 'mimeType', label: t('ctl.analyzer.mimeType'), value: mimeType || `image/${format.toLowerCase()}`, wrapAnywhere: true },
+    { key: 'dimensions', label: t('ctl.analyzer.dimensions'), value: `${width} × ${height} px` },
+    { key: 'aspect', label: t('ctl.analyzer.aspectRatio'), value: `${aspectFraction} (${(width / (height || 1)).toFixed(2)}:1)` },
+    { key: 'resolution', label: t('ctl.analyzer.resolution'), value: t('ctl.analyzer.megapixels', { value: megapixels }) },
+    { key: 'colorDepth', label: t('ctl.analyzer.colorDepth'), value: colorDepth },
     {
-      label: 'Transparency (Alpha)',
-      value: hasTransparency && !isJpg ? (
-        <span className="flex items-center gap-1 text-accent-green font-medium"><CheckCircle2 className="w-3.5 h-3.5" /> Present (Alpha Channel)</span>
+      key: 'transparency',
+      label: t('ctl.analyzer.transparency'),
+      value: hasAlpha ? (
+        <span className="inline-flex items-center gap-1.5 text-accent-green">
+          <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" /> {t('ctl.analyzer.alphaPresent')}
+        </span>
       ) : (
-        <span className="flex items-center gap-1 text-mute"><XCircle className="w-3.5 h-3.5" /> None (100% Opaque)</span>
+        <span className="inline-flex items-center gap-1.5">
+          <XCircle className="w-4 h-4 shrink-0 text-graphite" aria-hidden="true" /> {t('ctl.analyzer.alphaNone')}
+        </span>
       ),
     },
-    { label: 'Print Size (@300 DPI)', value: `${printW300}" × ${printH300}" (${printWcm} × ${printHcm} cm)` },
-    { label: 'Web Display (@72 DPI)', value: `${(width / 72).toFixed(1)}" × ${(height / 72).toFixed(1)}"` },
-    { label: 'Uncompressed RAM', value: `~${uncompressedMem} MB (Raw RGBA buffer)` },
+    { key: 'print', label: t('ctl.analyzer.printSize'), value: `${printW300} × ${printH300} in (${printWcm} × ${printHcm} cm)` },
+    { key: 'screen', label: t('ctl.analyzer.screenSize'), value: `${(width / 72).toFixed(1)} × ${(height / 72).toFixed(1)} in` },
+    { key: 'memory', label: t('ctl.analyzer.memory'), value: t('ctl.analyzer.memoryValue', { size: uncompressedMem }) },
   ];
 
   const handleCopyReport = () => {
-    const text = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasTransparency && !isJpg ? 'Present' : 'None'}`).join('\n');
+    const lines = metrics.map((m) => `${m.label}: ${typeof m.value === 'string' ? m.value : hasAlpha ? t('ctl.analyzer.present') : t('ctl.analyzer.none')}`);
+    const exifLines = (exif?.tags || []).map((tag) => `${exifLabel(tag.label)}: ${tag.value}`);
+    const text = [...lines, ...exifLines].join('\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const row = 'flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 px-3 py-2';
+
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs font-semibold text-ink">
-          <BarChart2 className="w-4 h-4 text-accent-blue" />
-          <span>Technical Specifications</span>
-        </div>
-        <button
-          type="button"
-          onClick={handleCopyReport}
-          className="flex items-center gap-1 text-xs text-mute hover:text-ink transition-colors px-2 py-1 bg-surface-card border border-hairline rounded"
-        >
-          {copied ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
-          <span>{copied ? 'Copied' : 'Copy Report'}</span>
-        </button>
-      </div>
-
-      <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs">
-        {metrics.map((m) => (
-          <div key={m.label} className="py-2 flex items-center justify-between gap-4">
-            <span className="text-mute">{m.label}</span>
-            <span className="text-ink font-mono font-medium truncate text-right">{m.value}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Deep EXIF & Hardware Metadata Section */}
-      <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs font-semibold text-ink">
-            <Camera className="w-4 h-4 text-emerald-400" />
-            <span>Camera & Hardware EXIF</span>
-          </div>
-          {isAnalyzingExif && (
-            <span className="flex items-center gap-1 text-[11px] text-mute font-mono">
-              <Loader2 className="w-3 h-3 animate-spin text-accent-blue" />
-              <span>Scanning tags...</span>
-            </span>
-          )}
+    <div className="space-y-5">
+      <div className="space-y-1.5">
+        <div className="flex items-end justify-between gap-3">
+          <h3 className="slug">{t('ctl.analyzer.specs')}</h3>
+          <button type="button" onClick={handleCopyReport} className="btn-rule text-[14px]">
+            {copied ? <Check className="w-4 h-4 text-accent-green" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+            <span aria-live="polite">{copied ? t('ctl.analyzer.copied') : t('ctl.analyzer.copyReport')}</span>
+          </button>
         </div>
 
-        {exifData && Object.keys(exifData.exif || {}).length > 0 ? (
-          <div className="p-3 bg-surface-card border border-hairline rounded-lg divide-y divide-hairline-soft text-xs max-h-60 overflow-y-auto">
-            {Object.entries(exifData.exif).map(([tag, val]) => (
-              <div key={tag} className="py-1.5 flex items-center justify-between gap-4 text-[11px]">
-                <span className="text-mute font-medium truncate max-w-[140px]">{tag}</span>
-                <span className="text-ink font-mono truncate max-w-[180px] text-right">{val}</span>
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          {metrics.map((m) => (
+            <div key={m.key} className={row}>
+              <dt className="text-graphite">{m.label}</dt>
+              <dd className={`text-ink font-semibold text-right min-w-0 ${m.wrapAnywhere ? 'break-all' : ''}`} data-measure>
+                {m.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      {/* Camera EXIF metadata (read in the browser) */}
+      <div className="space-y-1.5 pt-4 border-t border-pencil">
+        <h3 className="slug">{t('ctl.analyzer.exifHeading')}</h3>
+
+        {exif?.hasGps && (
+          <div className="border border-ink bg-accent-yellow-soft p-3 text-[14px] text-ink space-y-2.5">
+            <p className="flex items-start gap-2 leading-relaxed">
+              <MapPin className="w-4 h-4 text-accent-yellow shrink-0 mt-0.5" aria-hidden="true" />
+              <span>{t('ctl.analyzer.gpsWarning')}</span>
+            </p>
+            {onRemoveMetadata && (
+              <button type="button" onClick={onRemoveMetadata} className="btn-rule text-[14px]">
+                {t('ctl.analyzer.removeMetadata')}
+              </button>
+            )}
+          </div>
+        )}
+
+        {exif && exif.tags.length > 0 ? (
+          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+            {exif.tags.map((tag) => (
+              <div key={tag.label} className={row}>
+                <dt className="text-graphite">{exifLabel(tag.label)}</dt>
+                <dd className="text-ink font-semibold text-right min-w-0 break-words" data-measure>{tag.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         ) : (
-          <div className="p-3 bg-surface-card/60 border border-hairline rounded-lg text-xs text-mute flex items-center justify-between">
-            <span>{isAnalyzingExif ? 'Extracting deep camera markers...' : 'No camera EXIF metadata embedded in this image file.'}</span>
-          </div>
+          <p className="border border-pencil bg-paper-stock px-3 py-2.5 text-[14px] text-graphite">
+            {exif ? t('ctl.analyzer.noExif') : t('ctl.analyzer.readingExif')}
+          </p>
         )}
       </div>
     </div>

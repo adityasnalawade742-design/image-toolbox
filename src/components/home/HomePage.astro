@@ -1,0 +1,124 @@
+---
+import { HomeDropZone, type QuickTool } from '../shared/HomeDropZone';
+import { TOOLS } from '../../config/tools';
+import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
+import { getLocalizedHomeData } from '../../i18n/home';
+import { enHome } from '../../i18n/home/en';
+import { getAllLocalizedTools } from '../../i18n/tools';
+import { useTranslatedPath, useTranslations } from '../../i18n/utils';
+import { pickStrings } from '../../i18n/strings';
+import type { ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const home = getLocalizedHomeData(locale);
+const sections = home.sections || enHome.sections!;
+const locTools = getAllLocalizedTools(locale);
+const translatePath = useTranslatedPath(locale);
+const t = useTranslations(locale);
+const nameOf = (slug: string) => locTools[slug]?.name || TOOLS.find((t) => t.slug === slug)?.name || slug;
+
+// Offered right after an image is dropped: the everyday jobs first
+const QUICK = ['crop-image', 'remove-background', 'compress-image', 'resize-image', 'convert-image', 'remove-image-metadata', 'photo-filters', 'censor-image', 'round-image', 'image-analyzer'];
+const quickTools: QuickTool[] = QUICK.flatMap((slug) => {
+  const tool = TOOLS.find((t) => t.slug === slug);
+  return tool ? [{ slug, name: nameOf(slug), inkClass: CATEGORY_INK[tool.category].className }] : [];
+});
+
+const byCategory = CATEGORY_ORDER.map((cat) => ({ cat, tools: TOOLS.filter((t) => t.category === cat) }));
+const formats = 'JPG · PNG · WebP · AVIF · GIF · SVG · HEIC';
+---
+
+<div class="space-y-20 sm:space-y-28">
+  <section class="grid gap-10 lg:gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-center pt-2 sm:pt-6">
+    <div class="space-y-6">
+      <h1 class="font-condensed font-bold text-[40px] leading-[1.02] sm:text-[56px] lg:text-[64px] tracking-[-0.01em] text-ink">
+        {home.hero.title}
+      </h1>
+      <p class="text-[18px] sm:text-[19px] leading-relaxed text-body max-w-[34rem]">{home.hero.subtitle}</p>
+      <dl class="border-y border-ink divide-y divide-pencil text-[14px]" data-measure>
+        <div class="flex justify-between gap-4 py-2">
+          <dt class="slug">{t('home.specTools')}</dt>
+          <dd class="font-semibold text-ink">{TOOLS.length}</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-2">
+          <dt class="slug">{t('home.specFormats')}</dt>
+          <dd class="font-semibold text-ink text-right">{formats}</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-2">
+          <dt class="slug">{t('home.specUploads')}</dt>
+          <dd class="font-semibold text-ink">0</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="px-5 py-5 sm:px-6 sm:py-6">
+      <HomeDropZone client:load locale={locale} strings={pickStrings(locale, 'home.')} quickTools={quickTools} />
+    </div>
+  </section>
+
+  <section aria-labelledby="index-title" class="space-y-6">
+    <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 border-b-2 border-ink pb-3">
+      <h2 id="index-title" class="font-condensed font-bold text-[32px] sm:text-[40px] leading-none text-ink">{sections.indexTitle}</h2>
+      <p class="text-[15px] text-graphite max-w-md">{sections.indexSubtitle}</p>
+    </div>
+
+    <div class="sm:columns-2 lg:columns-3 gap-x-8">
+      {byCategory.map(({ cat, tools }) => (
+        <div id={cat} class="scroll-mt-24 break-inside-avoid mb-10">
+          <h3 class="flex items-center gap-2.5 pb-2 border-b border-ink">
+            <span class:list={['w-4 h-4 shrink-0', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
+            <span class="text-[17px] font-semibold text-ink">{home.categoryNames[cat]}</span>
+            <span class="ml-auto text-[13px] text-graphite" data-measure>{tools.length}</span>
+          </h3>
+          <ul class="divide-y divide-pencil-soft">
+            {tools.map((tool) => (
+              <li>
+                <a href={translatePath(`/${tool.slug}`)} class="group block py-2.5">
+                  <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(tool.slug)}</span>
+                  <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="pillars-title" class="space-y-6">
+    <h2 id="pillars-title" class="font-condensed font-bold text-[28px] sm:text-[32px] leading-none text-ink border-b-2 border-ink pb-3">
+      {sections.pillarsTitle}
+    </h2>
+    <div class="grid md:grid-cols-3 md:divide-x divide-ink">
+      {home.trustPillars.map((pillar) => (
+        <div class="py-4 md:py-2 md:px-6 first:md:pl-0 last:md:pr-0 space-y-2 border-b border-pencil md:border-b-0">
+          <h3 class="text-[18px] font-semibold text-ink">{pillar.title}</h3>
+          <p class="text-[15px] leading-relaxed text-body">{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-title" class="max-w-3xl space-y-4">
+    <h2 id="faq-title" class="font-condensed font-bold text-[28px] sm:text-[32px] leading-none text-ink border-b-2 border-ink pb-3">
+      {sections.faqTitle}
+    </h2>
+    <div class="divide-y divide-pencil border-b border-pencil">
+      {home.faqs.map((faq) => (
+        <details class="group py-1">
+          <summary class="flex items-center justify-between gap-4 py-3 cursor-pointer list-none text-[17px] font-semibold text-ink">
+            <span>{faq.question}</span>
+            <svg class="w-4 h-4 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M8 2v12M2 8h12" />
+            </svg>
+          </summary>
+          <p class="pb-4 text-[16px] leading-relaxed text-body max-w-prose">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</div>

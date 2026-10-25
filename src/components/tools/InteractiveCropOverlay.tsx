@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { resizeCrop, drawCrop } from '../../lib/canvas/cropGeometry';
 
 interface CropRect {
   x: number;
@@ -36,6 +37,8 @@ export function InteractiveCropOverlay({
     startXImg: number;
     startYImg: number;
     initialCrop: CropRect;
+    /** Locked width/height ratio captured at drag start (null when freeform) */
+    aspect: number | null;
   } | null>(null);
 
   const [dims, setDims] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
@@ -81,6 +84,7 @@ export function InteractiveCropOverlay({
       startXImg: Math.max(0, Math.min(origWidth, clickX)),
       startYImg: Math.max(0, Math.min(origHeight, clickY)),
       initialCrop: { ...crop },
+      aspect: lockAspect && crop.height > 0 ? crop.width / crop.height : null,
     };
   };
 
@@ -95,128 +99,51 @@ export function InteractiveCropOverlay({
     const clickX = Math.max(0, Math.min(origWidth, (e.clientX - rect.left) / scaleX));
     const clickY = Math.max(0, Math.min(origHeight, (e.clientY - rect.top) / scaleY));
 
+    // The new box keeps the current (preset) ratio; nothing changes until the pointer actually moves,
+    // so a stray tap on the backdrop doesn't wipe the selection
     dragStartRef.current = {
       clientX: e.clientX,
       clientY: e.clientY,
       startXImg: clickX,
       startYImg: clickY,
-      initialCrop: { x: clickX, y: clickY, width: 1, height: 1 },
+      initialCrop: { ...crop },
+      aspect: lockAspect && crop.height > 0 ? crop.width / crop.height : null,
     };
-
-    onCropChange({
-      x: Math.round(clickX),
-      y: Math.round(clickY),
-      width: 1,
-      height: 1,
-    });
   };
 
   const handlePointerMove = useCallback(
     (e: PointerEvent) => {
       if (!activeHandle || !dragStartRef.current || scaleX <= 0 || scaleY <= 0) return;
 
-      const deltaScreenX = e.clientX - dragStartRef.current.clientX;
-      const deltaScreenY = e.clientY - dragStartRef.current.clientY;
-
+      const drag = dragStartRef.current;
+      const deltaScreenX = e.clientX - drag.clientX;
+      const deltaScreenY = e.clientY - drag.clientY;
       const deltaImgX = deltaScreenX / scaleX;
       const deltaImgY = deltaScreenY / scaleY;
-
-      const init = dragStartRef.current.initialCrop;
-      let newX = init.x;
-      let newY = init.y;
-      let newW = init.width;
-      let newH = init.height;
-
-      const targetAspect = init.width > 0 && init.height > 0 ? init.width / init.height : 1;
+      const bounds = { width: origWidth, height: origHeight };
 
       if (activeHandle === 'draw') {
-        // Draw new rectangle from scratch starting at startXImg, startYImg
-        const currentImgX = Math.max(0, Math.min(origWidth, dragStartRef.current.startXImg + deltaImgX));
-        const currentImgY = Math.max(0, Math.min(origHeight, dragStartRef.current.startYImg + deltaImgY));
-
-        const left = Math.min(dragStartRef.current.startXImg, currentImgX);
-        const top = Math.min(dragStartRef.current.startYImg, currentImgY);
-        let width = Math.abs(currentImgX - dragStartRef.current.startXImg);
-        let height = Math.abs(currentImgY - dragStartRef.current.startYImg);
-
-        if (lockAspect && width > 0) {
-          height = width / targetAspect;
-          if (top + height > origHeight) {
-            height = origHeight - top;
-            width = height * targetAspect;
-          }
-        }
-
-        newX = left;
-        newY = top;
-        newW = Math.max(10, width);
-        newH = Math.max(10, height);
+        if (Math.hypot(deltaScreenX, deltaScreenY) < 4) return; // tap, not a drag
+        onCropChange(
+          drawCrop(
+            { x: drag.startXImg, y: drag.startYImg },
+            { x: drag.startXImg + deltaImgX, y: drag.startYImg + deltaImgY },
+            bounds,
+            drag.aspect
+          )
+        );
       } else if (activeHandle === 'move') {
-        newX = Math.max(0, Math.min(origWidth - init.width, init.x + deltaImgX));
-        newY = Math.max(0, Math.min(origHeight - init.height, init.y + deltaImgY));
+        const init = drag.initialCrop;
+        onCropChange({
+          ...init,
+          x: Math.round(Math.max(0, Math.min(origWidth - init.width, init.x + deltaImgX))),
+          y: Math.round(Math.max(0, Math.min(origHeight - init.height, init.y + deltaImgY))),
+        });
       } else {
-        if (lockAspect) {
-          if (activeHandle === 'se' || activeHandle === 'e' || activeHandle === 's') {
-            newW = Math.max(20, Math.min(origWidth - init.x, init.width + deltaImgX));
-            newH = Math.round(newW / targetAspect);
-            if (init.y + newH > origHeight) {
-              newH = origHeight - init.y;
-              newW = Math.round(newH * targetAspect);
-            }
-          } else if (activeHandle === 'nw') {
-            const maxDelta = Math.min(init.width - 20, init.height - 20);
-            const delta = Math.max(-Math.min(init.x, init.y), Math.min(maxDelta, deltaImgX));
-            newX = init.x + delta;
-            newW = init.width - delta;
-            newH = Math.round(newW / targetAspect);
-            newY = init.y + (init.height - newH);
-          } else if (activeHandle === 'ne') {
-            newW = Math.max(20, Math.min(origWidth - init.x, init.width + deltaImgX));
-            newH = Math.round(newW / targetAspect);
-            newY = Math.max(0, init.y + (init.height - newH));
-          } else if (activeHandle === 'sw') {
-            const maxDelta = init.width - 20;
-            const delta = Math.max(-init.x, Math.min(maxDelta, deltaImgX));
-            newX = init.x + delta;
-            newW = init.width - delta;
-            newH = Math.round(newW / targetAspect);
-            if (init.y + newH > origHeight) {
-              newH = origHeight - init.y;
-              newW = Math.round(newH * targetAspect);
-              newX = init.x + (init.width - newW);
-            }
-          }
-        } else {
-          // Freeform Resizing
-          if (activeHandle.includes('e')) {
-            newW = Math.max(10, Math.min(origWidth - init.x, init.width + deltaImgX));
-          }
-          if (activeHandle.includes('s')) {
-            newH = Math.max(10, Math.min(origHeight - init.y, init.height + deltaImgY));
-          }
-          if (activeHandle.includes('w')) {
-            const maxDeltaLeft = init.width - 10;
-            const adjustedDelta = Math.max(-init.x, Math.min(maxDeltaLeft, deltaImgX));
-            newX = init.x + adjustedDelta;
-            newW = init.width - adjustedDelta;
-          }
-          if (activeHandle.includes('n')) {
-            const maxDeltaTop = init.height - 10;
-            const adjustedDelta = Math.max(-init.y, Math.min(maxDeltaTop, deltaImgY));
-            newY = init.y + adjustedDelta;
-            newH = init.height - adjustedDelta;
-          }
-        }
+        onCropChange(resizeCrop(activeHandle, drag.initialCrop, deltaImgX, deltaImgY, bounds, drag.aspect));
       }
-
-      onCropChange({
-        x: Math.max(0, Math.min(origWidth - 10, Math.round(newX))),
-        y: Math.max(0, Math.min(origHeight - 10, Math.round(newY))),
-        width: Math.max(10, Math.min(origWidth - Math.round(newX), Math.round(newW))),
-        height: Math.max(10, Math.min(origHeight - Math.round(newY), Math.round(newH))),
-      });
     },
-    [activeHandle, scaleX, scaleY, origWidth, origHeight, lockAspect, onCropChange]
+    [activeHandle, scaleX, scaleY, origWidth, origHeight, onCropChange]
   );
 
   const handlePointerUp = useCallback(() => {
@@ -228,9 +155,11 @@ export function InteractiveCropOverlay({
     if (activeHandle) {
       window.addEventListener('pointermove', handlePointerMove);
       window.addEventListener('pointerup', handlePointerUp);
+      window.addEventListener('pointercancel', handlePointerUp);
       return () => {
         window.removeEventListener('pointermove', handlePointerMove);
         window.removeEventListener('pointerup', handlePointerUp);
+        window.removeEventListener('pointercancel', handlePointerUp);
       };
     }
   }, [activeHandle, handlePointerMove, handlePointerUp]);
@@ -240,7 +169,7 @@ export function InteractiveCropOverlay({
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-auto select-none overflow-hidden"
+      className="absolute inset-0 pointer-events-auto select-none overflow-hidden touch-none"
       style={{ width: dims.width, height: dims.height }}
       onPointerDown={handleBackdropPointerDown}
     >
@@ -258,16 +187,16 @@ export function InteractiveCropOverlay({
                 fill="black"
               />
             ) : (
-              <rect x={boxX} y={boxY} width={boxW} height={boxH} fill="black" rx="2" />
+              <rect x={boxX} y={boxY} width={boxW} height={boxH} fill="black" />
             )}
           </mask>
         </defs>
-        <rect width="100%" height="100%" fill="rgba(0, 0, 0, 0.55)" mask="url(#crop-mask)" />
+        <rect width="100%" height="100%" fill="rgba(20, 20, 20, 0.55)" mask="url(#crop-mask)" />
       </svg>
 
       {/* Interactive Selection Box */}
       <div
-        className={`absolute border-2 border-white/90 shadow-2xl pointer-events-auto cursor-move touch-none ${
+        className={`absolute border-2 border-paper-bright outline outline-1 outline-ink pointer-events-auto cursor-move touch-none ${
           isCircle ? 'rounded-full' : ''
         }`}
         style={{
@@ -275,26 +204,25 @@ export function InteractiveCropOverlay({
           top: boxY,
           width: boxW,
           height: boxH,
-          boxShadow: '0 0 0 1px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,0,0,0.3)',
         }}
         onPointerDown={(e) => handlePointerDown('move', e)}
       >
         {/* Rule of Thirds Grid Lines */}
-        <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-40">
-          <div className="border-r border-b border-white/60" />
-          <div className="border-r border-b border-white/60" />
-          <div className="border-b border-white/60" />
-          <div className="border-r border-b border-white/60" />
-          <div className="border-r border-b border-white/60" />
-          <div className="border-b border-white/60" />
-          <div className="border-r border-b border-white/60" />
-          <div className="border-r border-b border-white/60" />
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-60">
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
+          <div className="border-r border-b border-paper-bright" />
           <div />
         </div>
 
         {/* Live Pixel Dimension Label */}
         <div
-          className={`absolute left-1/2 -translate-x-1/2 bg-black/90 text-white border border-white/20 font-mono text-[10px] px-2 py-0.5 rounded shadow whitespace-nowrap pointer-events-none transition-all ${
+          className={`absolute left-1/2 -translate-x-1/2 bg-process-key text-paper text-[12px] font-semibold px-2 py-0.5 whitespace-nowrap pointer-events-none transition-all ${
             boxY < 28 ? 'top-2' : '-top-6'
           }`}
         >
@@ -303,54 +231,54 @@ export function InteractiveCropOverlay({
 
         {/* Corner Handles (Generous touch padding) */}
         <div
-          className="absolute -top-3 -left-3 w-6 h-6 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('nw', e)}
         >
-          <div className="w-3.5 h-3.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-3 -right-3 w-6 h-6 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('ne', e)}
         >
-          <div className="w-3.5 h-3.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 -left-3 w-6 h-6 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('sw', e)}
         >
-          <div className="w-3.5 h-3.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 -right-3 w-6 h-6 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('se', e)}
         >
-          <div className="w-3.5 h-3.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
 
         {/* Midpoint Edge Handles */}
         <div
-          className="absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-8 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('w', e)}
         >
-          <div className="w-2.5 h-5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-8 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('e', e)}
         >
-          <div className="w-2.5 h-5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-6 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('n', e)}
         >
-          <div className="w-5 h-2.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-5 h-2.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-6 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
           onPointerDown={(e) => handlePointerDown('s', e)}
         >
-          <div className="w-5 h-2.5 bg-white border border-black/50 rounded-sm shadow-md" />
+          <div className="w-5 h-2.5 bg-paper-bright border border-ink" />
         </div>
       </div>
     </div>

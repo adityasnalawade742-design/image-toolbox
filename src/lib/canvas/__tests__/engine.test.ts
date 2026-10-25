@@ -6,6 +6,8 @@ import {
   rgbToHsv,
   rgbToCmyk,
   formatBytes,
+  paletteFromPixels,
+  wrapTextLines,
 } from '../engine';
 
 describe('Canvas Engine — Color Conversion Math', () => {
@@ -65,5 +67,53 @@ describe('Canvas Engine — Utility Formatters', () => {
     expect(formatBytes(1024)).toBe('1 KB');
     expect(formatBytes(1024 * 1024 * 2.5)).toBe('2.5 MB');
     expect(formatBytes(1024 * 1024 * 1024 * 1.2)).toBe('1.2 GB');
+  });
+});
+
+describe('Canvas Engine — Palette Extraction', () => {
+  // Build an RGBA buffer from [r, g, b, a, pixelCount] runs
+  const pixels = (runs: [number, number, number, number, number][]) => {
+    const out: number[] = [];
+    for (const [r, g, b, a, n] of runs) for (let i = 0; i < n; i++) out.push(r, g, b, a);
+    return new Uint8ClampedArray(out);
+  };
+
+  it('never pads with fake colors when the image has fewer colors than requested', () => {
+    const palette = paletteFromPixels(pixels([[255, 0, 0, 255, 60], [0, 0, 255, 255, 40]]), 6);
+    expect(palette).toEqual(['#FF0000', '#0000FF']);
+  });
+
+  it('orders colors by how much of the image they cover', () => {
+    const palette = paletteFromPixels(pixels([[0, 128, 0, 255, 10], [200, 200, 0, 255, 90]]), 2);
+    expect(palette).toEqual(['#C8C800', '#008000']);
+  });
+
+  it('merges near-duplicate shades into one swatch', () => {
+    const palette = paletteFromPixels(
+      pixels([[250, 250, 250, 255, 50], [244, 246, 248, 255, 50], [10, 10, 10, 255, 20]]),
+      3
+    );
+    expect(palette).toHaveLength(2);
+    expect(palette[1]).toBe('#0A0A0A');
+  });
+
+  it('ignores transparent pixels', () => {
+    expect(paletteFromPixels(pixels([[255, 0, 0, 0, 100], [0, 255, 0, 255, 5]]), 4)).toEqual(['#00FF00']);
+  });
+});
+
+describe('Canvas Engine — Text Wrapping', () => {
+  const measure = (s: string) => s.length * 10; // 10px per character
+
+  it('wraps words onto new lines to fit the width', () => {
+    expect(wrapTextLines('one does not simply walk', 100, measure)).toEqual(['one does', 'not simply', 'walk']);
+  });
+
+  it('keeps explicit line breaks', () => {
+    expect(wrapTextLines('top\nbottom line here', 120, measure)).toEqual(['top', 'bottom line', 'here']);
+  });
+
+  it('leaves a single over-long word on its own line instead of dropping it', () => {
+    expect(wrapTextLines('a supercalifragilistic b', 100, measure)).toEqual(['a', 'supercalifragilistic', 'b']);
   });
 });

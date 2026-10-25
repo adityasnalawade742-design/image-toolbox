@@ -1,97 +1,147 @@
-import React, { useState, useRef } from 'react';
-import {
-  UploadCloud,
-  Sparkles,
-  Crop,
-  FileDown,
-  Maximize2,
-  Sliders,
-  EyeOff,
-  Grid,
-  Smile,
-  CircleDot,
-  X,
-} from 'lucide-react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { ArrowRight, Loader2, X } from 'lucide-react';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
-
 import { saveHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
+import { createT, type Strings } from '../../i18n/strings';
+
+export interface QuickTool {
+  slug: string;
+  name: string;
+  inkClass: string;
+}
 
 interface Props {
   locale?: string;
-  title?: string;
-  subtitle?: string;
+  strings?: Strings;
+  /** Tools offered once an image is dropped, already localized */
+  quickTools: QuickTool[];
 }
 
-const TOOLS = [
-  { slug: 'crop-image', name: 'Crop Image', desc: 'Custom & Social Aspect Ratios', icon: Crop },
-  { slug: 'compress-image', name: 'Compress Image', desc: 'Shrink file size up to 90%', icon: FileDown },
-  { slug: 'resize-image', name: 'Resize Image', desc: 'Exact pixel dimensions or scale %', icon: Maximize2 },
-  { slug: 'photo-filters', name: 'Photo Filters', desc: 'Cinematic, Vintage, Cyberpunk', icon: Sliders },
-  { slug: 'censor-image', name: 'Blur / Censor', desc: 'Redact faces & private data', icon: EyeOff },
-  { slug: 'round-image', name: 'Round Corners', desc: 'Circular avatars & curved borders', icon: CircleDot },
-  { slug: 'split-image', name: 'Split Image Grid', desc: 'Instagram 3×3 & Carousels', icon: Grid },
-  { slug: 'meme-generator', name: 'Meme Generator', desc: 'Impact captions & viral templates', icon: Smile },
-];
+const MAX_BYTES = 50 * 1024 * 1024;
 
-export function HomeDropZone({
-  locale = 'en',
-  title = 'Drop your images here or click to browse',
-  subtitle = 'Supports PNG, JPG, WebP, SVG, AVIF, HEIC, GIF — 100% in-browser processing',
-}: Props) {
+const readAsDataUrl = (blob: Blob) =>
+  new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+
+export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props) {
+  const t = useMemo(() => createT(strings), [strings]);
   const [isDragging, setIsDragging] = useState(false);
-  const [stagedFile, setStagedFile] = useState<{ dataUrl: string; name: string } | null>(null);
-  const [isConvertingHeic, setIsConvertingHeic] = useState(false);
+  const [staged, setStaged] = useState<{ dataUrl: string; name: string; width: number; height: number } | null>(null);
+  const [isBusy, setIsBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [launching, setLaunching] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const getTargetUrl = (slug: string) => {
-    if (!showDefaultLang && locale === defaultLang) {
-      return `/${slug}`;
+  const toolUrl = (slug: string) => (!showDefaultLang && locale === defaultLang ? `/${slug}` : `/${locale}/${slug}`);
+
+  const stageFile = async (file: File) => {
+    setError(null);
+    const heic = isHeicFile(file);
+    if (!heic && !file.type.startsWith('image/')) {
+      setError(t('home.errorNotImage'));
+      return;
     }
-    return `/${locale}/${slug}`;
-  };
-
-  const handleFileSelect = async (file: File) => {
-    if (!file) return;
-
-    if (isHeicFile(file)) {
-      try {
-        setIsConvertingHeic(true);
-        const convertedBlob = await convertHeicToBlob(file);
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const dataUrl = e.target?.result as string;
-          const pngName = file.name.replace(/\.(heic|heif)$/i, '.png');
-          setStagedFile({ dataUrl, name: pngName });
-          setIsConvertingHeic(false);
-        };
-        reader.readAsDataURL(convertedBlob);
-        return;
-      } catch (err) {
-        console.error('Failed to convert HEIC image:', err);
-        setIsConvertingHeic(false);
-      }
+    if (file.size > MAX_BYTES) {
+      setError(t('home.errorTooLarge'));
+      return;
     }
-
-    if (file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const dataUrl = e.target?.result as string;
-        setStagedFile({ dataUrl, name: file.name });
-      };
-      reader.readAsDataURL(file);
+    setIsBusy(true);
+    try {
+      const blob = heic ? await convertHeicToBlob(file) : file;
+      const dataUrl = await readAsDataUrl(blob);
+      const img = new Image();
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error('decode'));
+        img.src = dataUrl;
+      });
+      setStaged({
+        dataUrl,
+        name: heic ? file.name.replace(/\.(heic|heif)$/i, '.png') : file.name,
+        width: img.naturalWidth,
+        height: img.naturalHeight,
+      });
+    } catch {
+      setError(heic ? t('home.errorHeic') : t('home.errorDecode'));
+    } finally {
+      setIsBusy(false);
     }
   };
 
-  const handleLaunchTool = async (slug: string) => {
-    if (!stagedFile) return;
-    await saveHandoffImage(stagedFile.dataUrl, stagedFile.name);
-    window.location.href = getTargetUrl(slug);
+  // Ctrl+V anywhere on the home page stages the pasted image
+  useEffect(() => {
+    const onPaste = (e: ClipboardEvent) => {
+      const file = Array.from(e.clipboardData?.items || []).find((i) => i.type.startsWith('image/'))?.getAsFile();
+      if (file) stageFile(file);
+    };
+    window.addEventListener('paste', onPaste);
+    return () => window.removeEventListener('paste', onPaste);
+  }, []);
+
+  const launch = async (slug: string) => {
+    if (!staged) return;
+    setLaunching(slug);
+    await saveHandoffImage(staged.dataUrl, staged.name);
+    window.location.href = toolUrl(slug);
   };
+
+  if (staged) {
+    return (
+      <div className="crop-marks bg-paper-bright border border-ink">
+        <div className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
+          <div className="relative canvas-checkerboard border-b sm:border-b-0 sm:border-r border-ink flex items-center justify-center p-4 min-h-[200px]">
+            <img src={staged.dataUrl} alt="" className="max-h-64 w-auto object-contain" />
+            <span className="absolute left-2 bottom-2 bg-paper px-1.5 text-[12px] text-ink border border-ink" data-measure>
+              {staged.width} × {staged.height} px
+            </span>
+          </div>
+          <div className="p-4 sm:p-5">
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <div className="min-w-0">
+                <p className="text-[17px] font-semibold text-ink">{t('home.chooseTool')}</p>
+                <p className="text-[13px] text-graphite truncate">{staged.name}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setStaged(null)}
+                className="p-2 -m-1 text-ink hover:bg-paper-stock"
+                aria-label={t('home.clear')}
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <ul className="divide-y divide-pencil-soft border-y border-pencil">
+              {quickTools.map((tool) => (
+                <li key={tool.slug}>
+                  <button
+                    type="button"
+                    onClick={() => launch(tool.slug)}
+                    disabled={launching !== null}
+                    className="w-full flex items-center gap-3 py-2.5 text-left text-[15px] text-ink hover:bg-paper-stock disabled:opacity-60"
+                  >
+                    <span className={`w-2.5 h-2.5 shrink-0 ${tool.inkClass}`} aria-hidden="true" />
+                    <span className="flex-1">{tool.name}</span>
+                    {launching === tool.slug ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-4 h-4" aria-hidden="true" />}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <>
-      <div
+    <div>
+      <button
+        type="button"
+        onClick={() => fileInputRef.current?.click()}
         onDragOver={(e) => {
           e.preventDefault();
           setIsDragging(true);
@@ -100,102 +150,47 @@ export function HomeDropZone({
         onDrop={(e) => {
           e.preventDefault();
           setIsDragging(false);
-          if (e.dataTransfer.files?.[0]) {
-            handleFileSelect(e.dataTransfer.files[0]);
-          }
+          const file = e.dataTransfer.files?.[0];
+          if (file) stageFile(file);
         }}
-        onClick={() => fileInputRef.current?.click()}
-        className={`relative group cursor-pointer border border-dashed rounded-xl p-8 sm:p-12 text-center transition-all ${
-          isDragging
-            ? 'border-accent-red bg-surface-elevated shadow-2xl scale-[1.01]'
-            : 'border-hairline hover:border-hairline-strong bg-surface hover:bg-surface-elevated'
+        className={`crop-marks w-full proof-grid border border-ink flex flex-col items-center justify-center gap-3 px-6 py-14 sm:py-20 text-center transition-colors ${
+          isDragging ? 'bg-process-yellow' : ''
         }`}
+        aria-describedby="home-drop-hint"
       >
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={(e) => {
-            if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
-          }}
-        />
-
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="w-12 h-12 rounded-lg bg-surface-card border border-hairline flex items-center justify-center text-accent-red group-hover:scale-105 transition-transform">
-            <UploadCloud className="w-6 h-6" />
-          </div>
-
-          <div className="space-y-1.5 max-w-md">
-            <h3 className="text-base font-semibold text-ink tracking-tight">
-              {title}
-            </h3>
-            <p className="text-xs text-mute leading-relaxed">
-              {subtitle}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 pt-2">
-            <span className="px-4 py-2 rounded-md bg-white text-black text-xs font-medium hover:bg-neutral-200 transition-colors">
-              {isConvertingHeic ? 'Decoding iPhone HEIC...' : 'Choose Image'}
-            </span>
-            <span className="text-[11px] text-mute flex items-center gap-1">
-              or <kbd className="raycast-keycap px-1.5 py-0.5 rounded-xs text-[10px]">Ctrl+V</kbd>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tool Selector Modal on Drop */}
-      {stagedFile && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-          <div className="bg-surface border border-hairline rounded-2xl p-6 max-w-xl w-full shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-base font-bold text-ink tracking-tight">
-                  Choose a Tool for Your Image
-                </h3>
-                <p className="text-xs text-mute mt-0.5">
-                  Selected: <span className="font-mono text-ink">{stagedFile.name}</span>
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setStagedFile(null)}
-                className="p-1.5 rounded-lg text-mute hover:text-ink hover:bg-surface-elevated transition-colors"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[60vh] overflow-y-auto">
-              {TOOLS.map((t) => {
-                const Icon = t.icon;
-                return (
-                  <button
-                    key={t.slug}
-                    type="button"
-                    onClick={() => handleLaunchTool(t.slug)}
-                    className="flex items-start gap-3 p-3 rounded-xl border border-hairline hover:border-hairline-strong bg-surface-card hover:bg-surface-elevated transition-all text-left group"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-surface border border-hairline flex items-center justify-center text-accent-blue group-hover:scale-105 transition-transform shrink-0 mt-0.5">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-ink group-hover:text-white">
-                        {t.name}
-                      </div>
-                      <div className="text-[11px] text-mute line-clamp-1 mt-0.5">
-                        {t.desc}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        {isBusy ? (
+          <Loader2 className="w-8 h-8 text-ink animate-spin" aria-hidden="true" />
+        ) : (
+          <svg className="w-10 h-10 text-ink" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <rect x="6" y="9" width="28" height="22" />
+            <path d="M6 26l8-8 6 6 4-4 10 10" />
+            <circle cx="27" cy="15" r="2.5" />
+          </svg>
+        )}
+        <span className="text-[20px] sm:text-[22px] font-semibold text-ink">
+          {isBusy ? t('home.preparing') : t('home.dropTitle')}
+        </span>
+        <span className="btn-ink pointer-events-none">{t('home.chooseImage')}</span>
+        <span id="home-drop-hint" className="text-[14px] text-graphite max-w-md">
+          {t('home.dropHint')}
+        </span>
+      </button>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*,.heic,.heif"
+        className="hidden"
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) stageFile(file);
+          e.target.value = '';
+        }}
+      />
+      {error && (
+        <p role="alert" className="mt-3 text-[14px] text-accent-red">
+          {error}
+        </p>
       )}
-    </>
+    </div>
   );
 }

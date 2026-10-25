@@ -1,53 +1,53 @@
-import React from 'react';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   backgroundColor: string;
   onBackgroundColorChange: (color: string) => void;
 }
 
-export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: Props) {
-  return (
-    <div className="space-y-4">
-      <div className="space-y-1.5">
-        <label className="text-xs font-medium text-body">Background Fill Color</label>
-        <p className="text-[11px] text-mute">
-          JPEG does not support alpha transparency. Select the color to composite transparent areas against:
-        </p>
+const segment = (active: boolean) =>
+  `min-h-[40px] px-2 inline-flex items-center justify-center gap-2 text-[14px] font-semibold transition-colors ${
+    active ? 'seg-on' : 'seg-off'
+  }`;
 
-        <div className="grid grid-cols-3 gap-2 pt-2 text-xs">
-          <button
-            type="button"
-            onClick={() => onBackgroundColorChange('#ffffff')}
-            className={`py-1.5 rounded-md border text-center font-medium transition-colors ${
-              backgroundColor === '#ffffff'
-                ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
-            }`}
-          >
-            White (#FFF)
-          </button>
-          <button
-            type="button"
-            onClick={() => onBackgroundColorChange('#000000')}
-            className={`py-1.5 rounded-md border text-center font-medium transition-colors ${
-              backgroundColor === '#000000'
-                ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
-            }`}
-          >
-            Black (#000)
-          </button>
-          <div className="flex items-center gap-2 p-1 bg-surface-card border border-hairline rounded-md">
-            <input
-              type="color"
-              value={backgroundColor}
-              onChange={(e) => onBackgroundColorChange(e.target.value)}
-              className="w-5 h-5 rounded border border-hairline bg-transparent cursor-pointer"
-            />
-            <span className="font-mono text-[11px] text-mute truncate">{backgroundColor}</span>
-          </div>
-        </div>
+export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: Props) {
+  const t = useT();
+  const isCustom = backgroundColor !== '#ffffff' && backgroundColor !== '#000000';
+
+  return (
+    <div className="space-y-1.5">
+      <span className="slug block">{t('ctl.pngToJpg.background')}</span>
+      <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.pngToJpg.background')}>
+        <button
+          type="button"
+          aria-pressed={backgroundColor === '#ffffff'}
+          onClick={() => onBackgroundColorChange('#ffffff')}
+          className={segment(backgroundColor === '#ffffff')}
+        >
+          <span className="w-3.5 h-3.5 shrink-0 border border-pencil" style={{ backgroundColor: '#ffffff' }} aria-hidden="true" />
+          <span>{t('ctl.pngToJpg.white')}</span>
+        </button>
+        <button
+          type="button"
+          aria-pressed={backgroundColor === '#000000'}
+          onClick={() => onBackgroundColorChange('#000000')}
+          className={segment(backgroundColor === '#000000')}
+        >
+          <span className="w-3.5 h-3.5 shrink-0 border border-pencil" style={{ backgroundColor: '#000000' }} aria-hidden="true" />
+          <span>{t('ctl.pngToJpg.black')}</span>
+        </button>
+        <label className={`${segment(isCustom)} cursor-pointer`}>
+          <input
+            type="color"
+            value={backgroundColor}
+            onChange={(e) => onBackgroundColorChange(e.target.value)}
+            aria-label={t('ctl.pngToJpg.custom')}
+            className="w-6 h-6 shrink-0 border border-ink bg-transparent p-0 cursor-pointer"
+          />
+          <span className="text-[13px]" data-measure>{backgroundColor.toUpperCase()}</span>
+        </label>
       </div>
+      <p className="text-[13px] text-graphite leading-relaxed pt-1">{t('ctl.pngToJpg.help')}</p>
     </div>
   );
 }

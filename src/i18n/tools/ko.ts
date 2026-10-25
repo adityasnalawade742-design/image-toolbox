@@ -2,1575 +2,2607 @@ import type { LocalizedToolItem } from '../types';
 
 export const koTools: Record<string, LocalizedToolItem> = {
   "crop-image": {
-    "name": "이미지 자르기 및 트리밍",
-    "shortName": "이미지",
-    "tagline": "이미지 자르기 및 트리밍 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 자르기 및 트리밍 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 자르기 및 트리밍 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "crop-image",
-      "이미지 자르기 및 트리밍",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 자르기",
+    shortName: "자르기",
+    tagline: "드래그 핸들, 정확한 픽셀 값, 미리 정해진 비율로 사진에서 원하는 부분만 잘라내세요.",
+    intro:
+      "이미지 자르기는 선택한 영역만 남기고 원본 해상도 그대로 저장해요. 빈 가장자리를 없애거나, 피사체를 돋보이게 하거나, SNS 게시물에 맞는 모양으로 만들 때 사용하세요. 자유 비율 자르기 외에도 1:1, 4:5, 9:16, 16:9 같은 비율 프리셋, 정확한 픽셀 입력, 프로필 사진용 원형 모드를 제공해요.",
+    seoTitle: "이미지 자르기 – 무료 온라인 사진 자르기, 업로드 없음",
+    seoDescription:
+      "무료로 이미지 자르기. 프레임을 드래그하거나 정확한 픽셀을 입력하고, 1:1, 4:5, 16:9, 9:16 프리셋을 쓴 뒤 JPG, PNG, WebP, AVIF로 저장하세요. 업로드 없음.",
+    keywords: [
+      "이미지 자르기",
+      "사진 자르기",
+      "온라인 사진 자르기",
+      "정사각형 사진 자르기",
+      "인스타그램 사진 비율",
+      "16:9 이미지 자르기",
+      "원형 이미지 자르기",
+      "화질 저하 없이 사진 자르기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "사진 추가",
+        description:
+          "업로드 상자에 이미지를 끌어다 놓거나, 클릭해서 파일을 선택하거나, Ctrl+V로 붙여넣으세요. JPG, PNG, WebP, AVIF, GIF, iPhone HEIC 파일을 지원해요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "자를 영역 선택",
+        description:
+          "미리보기에서 프레임과 핸들을 드래그하거나, 1:1 정사각형, 9:16 스토리, SNS 프리셋 같은 비율을 클릭하세요. 정확하게 자르려면 X 오프셋, Y 오프셋, 너비, 높이를 픽셀 단위로 입력하세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "모양과 형식 선택",
+        description:
+          "둥글게 자르려면 원형 / 아바타(1:1)로 바꾸세요. 기본적으로 원본 파일 형식을 유지하며, 저장 형식에서 JPG, PNG, WebP, AVIF를 고를 수도 있어요.",
+      },
+      {
+        title: "잘라낸 이미지 다운로드",
+        description:
+          "다운로드를 클릭하면 선택한 영역만 원본 해상도로 저장돼요. 클립보드에 복사할 수도 있어요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "비율 및 SNS 프리셋",
+        description:
+          "원본, 1:1, 4:3, 16:9, 9:16, 2:3, 3:2, 21:9 비율과 함께 Instagram 세로형(4:5), 릴스와 TikTok, YouTube 썸네일, Pinterest 핀 모양을 제공해요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "픽셀 단위 정확한 입력",
+        description:
+          "오프셋, 너비, 높이를 픽셀로 입력하고, 필요하면 비율을 고정한 뒤 저장하기 전에 최종 출력 크기를 확인하세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "아바타용 원형 자르기",
+        description:
+          "원형 모드는 프레임을 정사각형으로 고정하고 이미지를 둥글게 잘라요. 모서리를 투명하게 유지하려면 PNG나 WebP로 저장하세요.",
+      },
+      {
+        title: "원본 픽셀에서 잘라내기",
+        description:
+          "미리보기는 속도를 위해 축소될 수 있지만, 다운로드 파일은 내 기기에 있는 원본 해상도 사진에서 잘라내요. 아무것도 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 자르기 및 트리밍 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "이미지를 자르면 화질이 떨어지나요?",
+        answer:
+          "자르기는 프레임 밖의 픽셀만 없애고 나머지는 선명하게 유지해요. 다만 JPG, WebP, AVIF로 저장하면 이미지가 다시 압축되므로, 원본에 가깝게 유지하려면 품질을 90% 이상으로 하거나 PNG로 저장하세요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Instagram용으로 사진을 정사각형으로 자르려면 어떻게 하나요?",
+        answer:
+          "1:1 정사각형이나 Instagram(1:1)을 클릭하고, 남기고 싶은 부분 위로 프레임을 드래그하세요. 더 긴 세로형 게시물이라면 Insta 세로형(4:5)을 사용하세요.",
+      },
+      {
+        question: "원형 프로필 사진은 어떻게 만드나요?",
+        answer:
+          "원형 / 아바타(1:1)를 선택하고 원을 얼굴 위로 옮긴 뒤 PNG나 WebP로 저장하세요. JPG는 투명도를 저장할 수 없어서 원 바깥 영역이 흰색으로 채워져요.",
+      },
+      {
+        question: "iPhone HEIC 사진도 자를 수 있나요?",
+        answer:
+          "네. HEIC 파일은 열 때 브라우저에서 변환돼요. 잘라낸 결과는 기본적으로 JPG로 저장되며, PNG, WebP, AVIF로 바꿀 수 있어요.",
+      },
+      {
+        question: "자른 후에도 사진의 EXIF 정보가 유지되나요?",
+        answer:
+          "아니요. 새 파일은 이미지 픽셀만으로 만들어지기 때문에 원본의 카메라 정보와 GPS 위치는 복사되지 않아요.",
+      },
+      {
+        question: "움직이는 GIF도 자를 수 있나요?",
+        answer:
+          "GIF를 열 수는 있지만, 여기서는 JPG, PNG, WebP, AVIF를 애니메이션 없이 저장하기 때문에 결과는 정지 이미지 한 장이 돼요.",
+      },
+    ],
   },
   "resize-image": {
-    "name": "이미지 크기 조절",
-    "shortName": "이미지",
-    "tagline": "이미지 크기 조절 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 크기 조절 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 크기 조절 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "resize-image",
+    name: "이미지 크기 조절",
+    shortName: "크기 조절",
+    tagline: "가로세로 비율을 고정하거나 자유롭게 두고, 픽셀이나 퍼센트로 이미지의 너비와 높이를 바꾸세요.",
+    intro:
+      "이미지 크기 조절은 사진이나 그래픽의 픽셀 크기를 바꿔요. 카메라로 찍은 큰 사진을 이메일이나 웹사이트에 맞게 줄이거나, 1080 × 1080 같은 정확한 크기를 맞출 때 사용하세요. 너비와 높이를 직접 입력하거나 10%에서 300%까지 퍼센트로 조절할 수 있고, 확대하지 않기 옵션을 켜면 실수로 이미지를 키우는 일을 막을 수 있어요.",
+    seoTitle: "이미지 크기 조절 – 픽셀 또는 퍼센트로 사진 크기 변경",
+    seoDescription:
+      "무료 온라인 이미지 크기 조절. 너비와 높이를 픽셀로 정확히 입력하거나 퍼센트로 조절하고, 비율을 유지한 채 JPG, PNG, WebP, AVIF로 저장하세요.",
+    keywords: [
       "이미지 크기 조절",
-      "image tool",
-      "online free",
-      "ko"
+      "사진 크기 줄이기",
+      "이미지 픽셀 변경",
+      "사진 사이즈 변경",
+      "화질 저하 없이 사진 크기 조절",
+      "1080x1080 사진 만들기",
+      "이미지 해상도 줄이기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, AVIF, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "새 크기 설정",
+        description:
+          "픽셀 모드에서 너비나 높이를 입력하세요. 가로세로 비율 유지가 켜져 있으면 다른 쪽이 자동으로 바뀌어요. 퍼센트 모드에서는 슬라이더나 25%~200% 버튼을 사용하세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "파일 형식 선택",
+        description:
+          "기본적으로 원본 형식을 유지해요. JPG, PNG, WebP, AVIF로 바꿀 수 있고, JPG, WebP, AVIF는 품질도 설정할 수 있어요.",
+      },
+      {
+        title: "결과 다운로드",
+        description:
+          "다운로드를 클릭해 크기를 바꾼 이미지를 저장하세요. 파일 용량도 줄이고 싶다면 압축 도구로 보내세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "픽셀 또는 퍼센트",
+        description: "최대 10,000픽셀까지 정확한 크기를 입력하거나, 이미지 전체를 10%에서 300%까지 조절하세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "가로세로 비율 고정",
+        description:
+          "원래 비율을 유지해 이미지가 늘어나지 않게 하거나, 고정을 풀어 너비와 높이를 따로 설정하세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "확대 방지",
+        description:
+          "크기를 원본 크기 이하로 제한해, 작은 이미지가 실수로 커지면서 흐려지는 일을 막아요.",
+      },
+      {
+        title: "파일 형식 유지",
+        description: "다른 형식을 고르지 않는 한 JPG는 JPG로, PNG는 PNG로 저장돼요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 크기 조절 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "화질 저하 없이 이미지 크기를 바꾸려면 어떻게 하나요?",
+        answer:
+          "이미지를 작게 만들면 선명함이 유지돼요. 원본보다 크게 만들면 세부 묘사가 늘어나지 않아 흐릿해 보이니, 확대하지 않기를 켜 두세요. PNG로 저장하거나 JPG와 WebP는 품질을 90% 이상으로 설정하세요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "크기를 줄이면 파일 용량도 줄어드나요?",
+        answer:
+          "보통은 그래요. 너비와 높이를 절반으로 줄이면 픽셀이 약 4분의 1만 남아서 파일이 훨씬 작아져요. 더 작게 만들려면 결과를 이어서 압축하세요.",
+      },
+      {
+        question: "1080 × 1080처럼 정확한 크기로 바꿀 수 있나요?",
+        answer:
+          "네. 가로세로 비율 유지를 끄고 두 숫자를 모두 입력하세요. 원본이 정사각형이 아니면 늘어나 보이므로, 먼저 1:1로 자른 다음 크기를 조절하세요.",
+      },
+      {
+        question: "여러 이미지를 한 번에 크기 조절할 수 있나요?",
+        answer:
+          "이 페이지는 이미지를 한 장씩 조절해요. 최대 50장을 한 번에 조절하고 ZIP으로 받으려면 이미지 일괄 크기 조절을 사용하세요.",
+      },
+      {
+        question: "iPhone 사진도 크기를 조절할 수 있나요?",
+        answer:
+          "네. HEIC 사진은 브라우저에서 변환되며, 크기를 바꾼 이미지는 기본적으로 JPG로 저장돼요.",
+      },
+    ],
   },
   "compress-image": {
-    "name": "이미지 압축",
-    "shortName": "이미지",
-    "tagline": "이미지 압축 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 압축 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 압축 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "compress-image",
+    name: "이미지 압축",
+    shortName: "압축",
+    tagline: "형식과 품질을 골라 이미지 파일을 더 작게 만들고, 다운로드 전에 새 용량을 확인하세요.",
+    intro:
+      "이미지 압축은 사진의 파일 용량을 줄여 웹사이트에서 더 빨리 열리게 하거나 이메일·업로드 용량 제한에 맞춰 줘요. 선택한 품질로 이미지를 WebP(기본값), AVIF, JPG, PNG로 다시 저장하며, 슬라이더를 움직이면 예상 용량과 절감 비율이 바로 표시돼요. 100 KB 같은 제한을 넘지 않아야 할 때는 목표 파일 크기 모드가 품질을 대신 정해 줘요.",
+    seoTitle: "이미지 용량 줄이기 – 무료 온라인 이미지 압축",
+    seoDescription:
+      "무료로 이미지 용량 줄이기. WebP, AVIF, JPG, PNG를 고르고 품질이나 목표 용량(KB)을 정한 뒤, 다운로드 전에 줄어든 용량을 확인하세요. 업로드 필요 없음.",
+    keywords: [
+      "이미지 용량 줄이기",
       "이미지 압축",
-      "image tool",
-      "online free",
-      "ko"
+      "사진 용량 줄이기",
+      "JPG 용량 줄이기",
+      "이미지 100KB 이하로 줄이기",
+      "PNG 압축",
+      "온라인 이미지 압축기",
+      "WebP 변환 압축",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 추가",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "출력 형식 선택",
+        description:
+          "기본값은 WebP예요. AVIF는 보통 가장 작은 파일을 만들지만 인코딩이 더 오래 걸리고, JPG는 어디서나 열리며, PNG는 무손실이라 용량이 가장 적게 줄어요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "품질 또는 목표 크기 설정",
+        description:
+          "품질 슬라이더를 움직이며 예상 용량을 확인하거나, 파일 크기 모드로 바꿔 KB 단위로 입력하거나 50, 100, 200, 500 KB를 클릭하세요.",
+      },
+      {
+        title: "확인 후 다운로드",
+        description: "미리보기와 절감 비율을 확인한 뒤 다운로드를 클릭하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "실시간 용량 예측",
+        description:
+          "설정을 바꾸면 새 파일 용량과 절감 비율이 바로 업데이트되고, 결과가 원본보다 커질 때는 알려 줘요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "AVIF, WebP, JPG, PNG",
+        description:
+          "출력 형식은 네 가지이며, AVIF는 WebAssembly 인코더로 브라우저에서 직접 인코딩해요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "목표 파일 크기 모드",
+        description:
+          "KB 단위로 크기를 입력하면 도구가 그에 맞는 품질을 골라요. 추정값이므로 다운로드 전에 실시간 용량을 확인하세요.",
+      },
+      {
+        title: "크기는 그대로",
+        description:
+          "압축해도 너비와 높이는 바뀌지 않아요. 파일을 훨씬 작게 만들려면 먼저 크기를 조절한 다음 압축하세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 압축 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "이미지가 얼마나 작아지나요?",
+        answer:
+          "이미지에 따라 달라요. 카메라로 찍은 큰 사진은 70%~85% 품질의 WebP나 AVIF로 크게 줄어드는 경우가 많지만, 작은 그래픽이나 이미 압축된 파일은 거의 줄지 않을 수 있어요. 실시간 예측으로 다운로드 전에 결과를 확인할 수 있어요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "AVIF, WebP, JPG 중 어떤 형식이 가장 작나요?",
+        answer:
+          "비슷한 화질이라면 보통 AVIF가 가장 작고, 그다음이 WebP, JPG 순이에요. AVIF는 브라우저에서 인코딩하는 데 더 오래 걸리고, 특히 큰 사진에서 그래요. 일부 오래된 프로그램은 AVIF를 열지 못해요.",
+      },
+      {
+        question: "이미지를 100 KB로 압축하려면 어떻게 하나요?",
+        answer:
+          "파일 크기 모드를 선택하고 100 KB를 클릭하세요. 실시간 용량이 여전히 100 KB보다 크면 품질을 조금 더 낮추거나, 먼저 이미지 크기 조절로 크기를 줄이세요.",
+      },
+      {
+        question: "압축하면 사진이 나빠 보이나요?",
+        answer:
+          "WebP, AVIF, JPG는 눈에 잘 띄지 않는 세부 정보를 없애요. 75%~90% 품질이면 대부분의 사진이 일반적인 크기로 볼 때 똑같아 보이지만, 품질을 아주 낮추면 흐릿해지고 블록이 생겨요.",
+      },
+      {
+        question: "압축한 파일이 원본보다 큰 이유는 뭔가요?",
+        answer:
+          "원본이 이미 잘 최적화되어 있거나, 사진을 PNG로 저장할 때 이런 일이 생겨요. WebP나 AVIF를 쓰거나 품질을 낮춰 보세요.",
+      },
+      {
+        question: "사진을 압축하면 EXIF 정보가 지워지나요?",
+        answer:
+          "네. 새 파일은 이미지 픽셀만으로 만들어지기 때문에 카메라 정보와 GPS 위치가 포함되지 않아요.",
+      },
+    ],
   },
   "rotate-image": {
-    "name": "이미지 회전",
-    "shortName": "이미지",
-    "tagline": "이미지 회전 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 회전 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 회전 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "rotate-image",
+    name: "이미지 회전",
+    shortName: "회전",
+    tagline: "이미지를 90°, 180° 또는 -180°~180° 사이의 원하는 각도로 돌리고, 필요한 형식으로 저장하세요.",
+    intro:
+      "이미지 회전은 옆으로 눕거나 뒤집혀 보이는 사진을 바로잡고, 살짝 기울어진 사진을 똑바로 펴 줘요. 빠르게 돌릴 때는 90° 버튼을, 미세하게 보정할 때는 사용자 지정 각도 슬라이더를 사용하세요. 각도가 90°의 배수가 아니면 회전한 그림 전체가 들어가도록 캔버스가 넓어져서 모서리가 잘리지 않아요.",
+    seoTitle: "이미지 회전 – 사진 90도, 180도, 원하는 각도로 돌리기",
+    seoDescription:
+      "무료 온라인 이미지 회전. 사진을 왼쪽·오른쪽 90°, 180° 또는 원하는 각도로 돌려 수평을 맞추고 JPG, PNG, WebP, AVIF로 저장하세요. 업로드 없음.",
+    keywords: [
       "이미지 회전",
-      "image tool",
-      "online free",
-      "ko"
+      "사진 회전",
+      "사진 90도 회전",
+      "온라인 사진 돌리기",
+      "사진 수평 맞추기",
+      "JPG 회전",
+      "이미지 각도 조절",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "회전하기",
+        description:
+          "+90°를 클릭하면 시계 방향으로, -90°를 클릭하면 시계 반대 방향으로, 180°를 클릭하면 위아래가 뒤집혀요. 미세하게 보정하려면 사용자 지정 각도 슬라이더를 드래그하세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "형식 선택",
+        description:
+          "기본적으로 원본 형식을 유지해요. 사용자 지정 각도로 돌린 경우 PNG, WebP, AVIF는 새로 생긴 모서리를 투명하게 두고, JPG는 흰색으로 채워요.",
+      },
+      {
+        title: "다운로드",
+        description: "다운로드를 클릭해 회전한 이미지를 저장하거나, 클립보드에 복사하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "빠른 90°·180° 회전",
+        description: "옆으로 눕거나 뒤집힌 사진을 클릭 한 번으로 바로잡고, 초기화로 처음 상태로 돌아갈 수 있어요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "원하는 각도로",
+        description: "슬라이더로 -180°부터 180°까지 1도 단위로 조절해 기울어진 수평선이나 문서를 바로잡으세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "잘리는 부분 없음",
+        description: "사용자 지정 각도에서는 회전한 이미지 전체가 들어가도록 출력 캔버스가 넓어져요.",
+      },
+      {
+        title: "iPhone 사진 지원",
+        description: "HEIC 사진은 브라우저에서 변환되므로 미리 변환할 필요가 없어요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 회전 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "일부 앱에서 사진이 옆으로 누워 보이는 이유는 뭔가요?",
+        answer:
+          "휴대폰은 사진을 한 방향으로 저장하고 EXIF 정보에 회전 태그를 붙이는 경우가 많은데, 일부 앱은 이 태그를 무시해요. 여기서 다운로드한 파일은 픽셀 자체가 회전되어 있고 회전 태그가 없어서 어디서나 똑같이 보여요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "이미지를 회전하면 화질이 떨어지나요?",
+        answer:
+          "90°나 180° 회전은 픽셀 값을 바꾸지 않고 위치만 옮겨요. 다른 각도는 픽셀을 다시 계산해야 해서 아주 약간 부드러워져요. JPG, WebP, AVIF로 저장하면 다시 압축되지만, PNG는 그렇지 않아요.",
+      },
+      {
+        question: "사용자 지정 각도로 회전하면 모서리는 무엇으로 채워지나요?",
+        answer:
+          "회전한 이미지가 들어가도록 캔버스가 넓어져요. PNG, WebP, AVIF에서는 새로 생긴 모서리가 투명하고, JPG에서는 흰색이에요.",
+      },
+      {
+        question: "iPhone HEIC 사진도 회전할 수 있나요?",
+        answer:
+          "네. 사진은 브라우저에서 변환되며, 다른 형식을 고르지 않으면 회전한 결과는 JPG로 저장돼요.",
+      },
+    ],
   },
   "flip-image": {
-    "name": "이미지 뒤집기",
-    "shortName": "이미지",
-    "tagline": "이미지 뒤집기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 뒤집기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 뒤집기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "flip-image",
+    name: "이미지 뒤집기",
+    shortName: "뒤집기",
+    tagline: "그림을 좌우나 상하로 반전해, 거울처럼 뒤집힌 셀카나 거꾸로 보이는 글자를 바로잡으세요.",
+    intro:
+      "이미지 뒤집기는 그림의 거울상 사본을 만들어요. 좌우 뒤집기는 왼쪽과 오른쪽을 바꿔서, 전면 카메라로 찍어 글자가 거꾸로 보이는 셀카를 바로잡아 줘요. 상하 뒤집기는 물에 비친 모습처럼 위아래를 뒤집고, 두 가지를 함께 쓰면 180° 회전과 같은 결과가 나와요.",
+    seoTitle: "이미지 뒤집기 – 사진 좌우 반전, 상하 반전",
+    seoDescription:
+      "무료 온라인 이미지 뒤집기. 사진을 좌우나 상하로 반전해 거울처럼 뒤집힌 셀카와 거꾸로 된 글자를 바로잡고, JPG, PNG, WebP, AVIF로 저장하세요. 업로드 없음.",
+    keywords: [
       "이미지 뒤집기",
-      "image tool",
-      "online free",
-      "ko"
+      "사진 좌우 반전",
+      "이미지 좌우반전",
+      "사진 상하 반전",
+      "셀카 좌우 반전",
+      "거울 모드 사진",
+      "온라인 사진 뒤집기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "뒤집을 방향 선택",
+        description:
+          "좌우를 클릭하면 왼쪽과 오른쪽이 바뀌고, 상하를 클릭하면 위아래가 뒤집혀요. 버튼을 한 번 더 누르면 취소되며, 양방향 뒤집기나 초기화도 사용할 수 있어요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "형식 선택",
+        description: "기본적으로 원본 형식을 유지하며, JPG, PNG, WebP, AVIF로 저장할 수도 있어요.",
+      },
+      {
+        title: "다운로드",
+        description: "다운로드를 클릭해 반전된 이미지를 저장하거나, 클립보드에 복사하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "좌우·상하 반전",
+        description: "한 방향 또는 양방향으로 뒤집고, 미리보기에서 결과를 바로 확인하세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "픽셀은 그대로",
+        description: "뒤집기는 픽셀의 위치만 옮겨요. 모든 픽셀을 그대로 유지하려면 PNG로 저장하세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "형식 유지",
+        description: "기본적으로 JPG는 JPG로, PNG는 PNG로 저장되므로 같은 종류의 파일을 돌려받아요.",
+      },
+      {
+        title: "브라우저에서 처리",
+        description: "이미지는 내 기기에서 뒤집히며 서버로 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 뒤집기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "뒤집기와 회전의 차이는 뭔가요?",
+        answer:
+          "뒤집기는 거울상을 만들기 때문에 글자가 거꾸로 읽혀요. 회전은 그림 전체를 중심을 기준으로 돌리므로 글자를 그대로 읽을 수 있어요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "좌우가 반전된 셀카는 어떻게 고치나요?",
+        answer:
+          "많은 전면 카메라가 셀카를 거울상으로 저장해요. 사진을 열고 좌우를 클릭한 뒤 다운로드하면 배경의 글자가 다시 제대로 읽혀요.",
+      },
+      {
+        question: "이미지를 뒤집으면 화질이 떨어지나요?",
+        answer:
+          "뒤집기 자체는 픽셀 값을 바꾸지 않아요. JPG, WebP, AVIF로 저장하면 다시 압축되니 높은 품질로 설정하거나 PNG를 사용하세요.",
+      },
+      {
+        question: "양방향으로 한 번에 뒤집을 수 있나요?",
+        answer:
+          "네. 양방향 뒤집기는 이미지를 좌우와 상하로 모두 반전하며, 180° 회전한 것과 똑같아 보여요.",
+      },
+    ],
   },
   "convert-image": {
-    "name": "만능 이미지 포맷 변환기",
-    "shortName": "만능",
-    "tagline": "만능 이미지 포맷 변환기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "만능 이미지 포맷 변환기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "만능 이미지 포맷 변환기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "convert-image",
-      "만능 이미지 포맷 변환기",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 형식 변환기",
+    shortName: "변환기",
+    tagline: "JPG, PNG, WebP, AVIF, GIF, BMP, SVG, iPhone HEIC 이미지를 JPG, PNG, WebP, AVIF로 변환하세요.",
+    intro:
+      "이미지 형식 변환기는 이미지를 한 파일 형식에서 다른 형식으로 바꿔요. JPG, PNG, WebP, AVIF, GIF, BMP, SVG처럼 브라우저가 표시할 수 있는 모든 이미지와 iPhone HEIC 사진을 열어 JPG, PNG, WebP, AVIF로 저장해요. 기본적으로 JPG와 HEIC 사진은 WebP로, 그 밖의 이미지는 PNG로 설정되지만 네 가지 출력 형식 중 무엇이든 고를 수 있어요.",
+    seoTitle: "이미지 형식 변환 – JPG, PNG, WebP, AVIF, HEIC 변환기",
+    seoDescription:
+      "브라우저에서 작동하는 무료 이미지 형식 변환기. HEIC, PNG, JPG, WebP, GIF, BMP, SVG를 JPG, PNG, WebP, AVIF로 변환하고 품질도 조절하세요. 업로드 없음.",
+    keywords: [
+      "이미지 형식 변환",
+      "이미지 확장자 변환",
+      "JPG 변환",
+      "HEIC JPG 변환",
+      "WebP 변환",
+      "AVIF 변환",
+      "GIF PNG 변환",
+      "BMP JPG 변환",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "브라우저가 열 수 있는 형식의 이미지나 iPhone HEIC 사진을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "출력 형식 선택",
+        description: "저장 형식에서 JPG, PNG, WebP, AVIF 중 하나를 선택하세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "품질과 배경 조정",
+        description:
+          "JPG, WebP, AVIF는 품질을 설정하세요. 이미지에 투명한 영역이 있는데 JPG를 골랐다면 그 영역을 채울 색을 고르세요.",
+      },
+      {
+        title: "변환된 파일 다운로드",
+        description: "다운로드를 클릭하세요. AVIF는 브라우저에서 인코딩하므로 큰 사진은 몇 초 걸릴 수 있어요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "다양한 입력 형식",
+        description: "JPG, PNG, WebP, AVIF, GIF, BMP, SVG 등 브라우저가 지원하는 형식과 HEIC, HEIF를 열 수 있어요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "네 가지 최신 출력 형식",
+        description: "JPG, PNG, WebP, AVIF로 저장하세요. AVIF는 WebAssembly 인코더로 내 기기에서 인코딩해요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "투명도를 올바르게 처리",
+        description: "PNG, WebP, AVIF는 투명한 영역을 유지해요. JPG는 그 영역을 대신할 색을 직접 골라요.",
+      },
+      {
+        title: "품질 조절",
+        description: "손실 형식은 품질을 10%에서 100%까지 설정해 파일 크기와 디테일 사이의 균형을 맞추세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 만능 이미지 포맷 변환기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "HEIC를 JPG로 변환하려면 어떻게 하나요?",
+        answer:
+          "HEIC 사진을 열고 저장 형식에서 JPG를 선택한 뒤 다운로드를 클릭하세요. 변환은 브라우저에서 이루어지므로 사진이 어디로도 전송되지 않아요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "어떤 형식을 골라야 하나요?",
+        answer:
+          "어디서나 열려야 하는 사진은 JPG, 스크린샷·로고·선명한 가장자리나 투명도가 있는 그래픽은 PNG, 더 작은 웹 이미지는 WebP, 최신 브라우저에서 가장 작은 파일이 필요하면 AVIF를 고르세요.",
+      },
+      {
+        question: "GIF, BMP, SVG로도 변환할 수 있나요?",
+        answer:
+          "아니요. 이 형식들은 열 수만 있고, 출력은 항상 JPG, PNG, WebP, AVIF예요. 움직이는 GIF는 정지 이미지 한 장이 돼요.",
+      },
+      {
+        question: "투명한 배경이 유지되나요?",
+        answer:
+          "PNG, WebP, AVIF로 저장하면 유지돼요. JPG는 투명도를 저장할 수 없어서 투명한 영역이 선택한 색으로 채워져요.",
+      },
+      {
+        question: "변환하면 화질 손실이 없나요?",
+        answer:
+          "PNG로 저장하면 무손실이에요. JPG, WebP, AVIF는 손실 형식이라 품질을 높일수록 디테일이 더 남지만 파일이 커져요.",
+      },
+    ],
   },
   "jpg-to-png": {
-    "name": "JPG를 PNG로 변환",
-    "shortName": "JPG를",
-    "tagline": "JPG를 PNG로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPG를 PNG로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPG를 PNG로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-png",
-      "jpg를 png로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "JPG PNG 변환",
+    shortName: "JPG → PNG",
+    tagline: "JPG 사진을 편집하고 다시 저장해도 더 이상 화질이 떨어지지 않는 PNG 파일로 바꾸세요.",
+    intro:
+      "JPG PNG 변환은 JPEG 이미지를 PNG 형식으로 바꿔요. PNG는 무손실 압축을 쓰기 때문에 편집하고 저장할 때마다 화질이 더 떨어지지 않아서, 스크린샷이나 그래픽, 나중에 다시 작업할 파일에 유용해요. PNG는 JPG와 픽셀과 크기가 완전히 같지만, 파일 용량은 보통 더 커요.",
+    seoTitle: "JPG PNG 변환 – 무료, 브라우저에서 바로 변환",
+    seoDescription:
+      "무료 온라인 JPG PNG 변환. JPEG와 픽셀·크기가 똑같은 무손실 PNG를 파일 업로드 없이 브라우저에서 바로 만들어 보세요.",
+    keywords: [
+      "JPG PNG 변환",
+      "JPG를 PNG로 변환",
+      "JPEG PNG 변환",
+      "JPG PNG 변환기",
+      "JPG 확장자 PNG로 바꾸기",
+      "JPG PNG로 저장",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPG 열기",
+        description: "JPG나 JPEG 파일을 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "미리보기 확인",
+        description: "출력은 항상 PNG라서 바꿀 설정이 없어요. 크기도 그대로 유지돼요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG 다운로드",
+        description: "PNG 다운로드를 클릭하거나, 다음 단계 버튼으로 크기 조절 같은 다른 도구에 이미지를 보내세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "픽셀을 그대로 복사",
+        description: "JPG의 모든 픽셀이 추가 압축 손실 없이 PNG에 저장돼요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "반복 편집에 안전",
+        description: "PNG는 여러 번 편집하고 저장해도 새로운 압축 노이즈가 생기지 않아요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "같은 크기",
+        description: "PNG는 원본 JPG와 너비, 높이가 같아요.",
+      },
+      {
+        title: "업로드 없음",
+        description: "파일은 브라우저 탭 안에서 변환되며 내 기기에 그대로 남아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPG를 PNG로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "JPG를 PNG로 바꾸면 화질이 좋아지나요?",
+        answer:
+          "아니요. PNG는 지금 상태의 이미지를 그대로 보존하지만, JPEG 압축으로 이미 사라진 디테일을 되살리지는 못해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "PNG로 바꾸면 배경이 투명해지나요?",
+        answer:
+          "아니요. JPG에는 투명도가 없어서 PNG도 같은 단색 배경을 유지해요. 배경을 없애려면 배경 제거 도구를 사용하세요.",
+      },
+      {
+        question: "PNG 파일이 JPG보다 큰 이유는 뭔가요?",
+        answer:
+          "PNG는 모든 픽셀을 손실 압축 없이 저장하지만, JPG는 공간을 아끼려고 미세한 디테일을 버려요. PNG로 저장한 사진은 몇 배 더 커지는 경우가 많아요.",
+      },
+      {
+        question: "여러 JPG를 한 번에 PNG로 바꿀 수 있나요?",
+        answer:
+          "이 페이지는 한 번에 파일 하나를 변환해요. 이미지 일괄 크기 조절에서 배율을 100%로 설정하면 최대 50장을 PNG로 저장해 ZIP 하나로 받을 수 있어요.",
+      },
+      {
+        question: "JPG의 EXIF 정보가 유지되나요?",
+        answer:
+          "아니요. PNG는 픽셀만으로 만들어지기 때문에 카메라 정보와 GPS 위치는 복사되지 않아요.",
+      },
+    ],
   },
   "png-to-jpg": {
-    "name": "PNG를 JPG로 변환",
-    "shortName": "PNG를",
-    "tagline": "PNG를 JPG로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNG를 JPG로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNG를 JPG로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-jpg",
-      "png를 jpg로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "PNG JPG 변환",
+    shortName: "PNG → JPG",
+    tagline: "PNG를 더 작은 JPG 파일로 바꾸고, 투명한 영역을 대신할 색을 고르세요.",
+    intro:
+      "PNG JPG 변환은 PNG 이미지를 JPEG로 바꿔요. JPEG는 사진의 경우 보통 훨씬 작고, 거의 모든 웹사이트와 앱에서 받아 줘요. JPEG는 투명도를 저장할 수 없으므로 투명한 영역을 흰색, 검은색 또는 원하는 색으로 채우게 돼요. JPG 품질도 10%에서 100%까지 설정할 수 있어요.",
+    seoTitle: "PNG JPG 변환 – 배경색 선택 가능",
+    seoDescription:
+      "무료 온라인 PNG JPG 변환. 투명한 영역을 흰색, 검은색 또는 원하는 배경색으로 채우고 JPG 품질을 설정하세요. 브라우저에서 처리되며 업로드 없음.",
+    keywords: [
+      "PNG JPG 변환",
+      "PNG를 JPG로 변환",
+      "PNG JPEG 변환",
+      "PNG JPG 흰 배경",
+      "PNG JPG 변환기",
+      "PNG 용량 줄이기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNG 열기",
+        description: "PNG 파일을 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "배경색 고르기",
+        description: "흰색, 검은색을 고르거나 색상 선택기로 원하는 색을 고르세요. 모든 투명한 영역이 이 색으로 채워져요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "품질 설정",
+        description: "기본값으로는 85%가 적당해요. 글자나 가는 선이 있는 이미지는 더 높게 설정하세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "JPG 다운로드를 클릭해 변환된 파일을 저장하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "원하는 배경색",
+        description: "투명하거나 반투명한 픽셀이 흰색, 검은색 또는 직접 고른 색과 합쳐져요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "품질 조절",
+        description: "10%에서 100%까지 골라 파일 크기와 디테일 사이의 균형을 맞추세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "사진은 더 작은 파일로",
+        description: "사진과 디테일이 많은 스크린샷은 보통 PNG보다 JPG일 때 훨씬 작아요.",
+      },
+      {
+        title: "같은 크기",
+        description: "JPG는 PNG의 너비와 높이를 정확히 유지해요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNG를 JPG로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "투명한 배경은 어떻게 되나요?",
+        answer:
+          "JPG에는 투명도가 없어서 투명하거나 반투명한 픽셀이 선택한 배경색과 합쳐져요. 기본값은 흰색이에요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "JPG가 PNG보다 작아지나요?",
+        answer:
+          "사진이나 색이 많은 이미지는 보통 그렇고, 훨씬 작아지는 경우도 많아요. 색이 적은 단순한 그래픽은 PNG가 이미 작을 수 있어서 JPG가 오히려 더 커질 수도 있어요.",
+      },
+      {
+        question: "품질은 얼마로 설정해야 하나요?",
+        answer:
+          "기본값인 85%는 대부분의 사진에 잘 맞아요. 글자나 세밀한 디테일이 있는 이미지는 90%~100%를, 디테일보다 파일 크기가 중요할 때는 더 낮은 값을 쓰세요.",
+      },
+      {
+        question: "JPG에서 글자가 흐릿해 보이는 이유는 뭔가요?",
+        answer:
+          "JPEG 압축은 선명한 글자와 선 주변에 부드러운 가장자리와 작은 얼룩을 만들 수 있어요. 품질을 높이거나, 로고와 스크린샷은 PNG나 WebP로 유지하세요.",
+      },
+    ],
   },
   "jpg-to-webp": {
-    "name": "JPG를 WebP로 변환",
-    "shortName": "JPG를",
-    "tagline": "JPG를 WebP로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPG를 WebP로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPG를 WebP로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-webp",
-      "jpg를 webp로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "JPG WebP 변환",
+    shortName: "JPG → WebP",
+    tagline: "JPG 사진을 WebP로 바꿔 이미지 파일을 줄이고 웹페이지를 더 빠르게 만드세요.",
+    intro:
+      "JPG WebP 변환은 JPEG 사진을 현재 모든 주요 브라우저가 표시할 수 있는 WebP 형식으로 바꿔요. 비슷한 화질이라면 WebP 파일은 보통 같은 이미지의 JPG보다 작아서, 이를 쓰는 페이지가 더 빨리 열려요. 품질은 10%에서 100%까지 슬라이더로 설정하며, 이미지 크기는 원본 그대로 유지돼요.",
+    seoTitle: "JPG WebP 변환 – 웹용 이미지 용량 줄이기",
+    seoDescription:
+      "무료 온라인 JPG WebP 변환. 더 빠른 웹사이트를 위해 이미지 파일을 줄이고, 품질을 10%~100%로 조절하며 원본 크기를 유지하세요. 업로드 없음.",
+    keywords: [
+      "JPG WebP 변환",
+      "JPG를 WebP로 변환",
+      "JPEG WebP 변환",
+      "JPG WebP 변환기",
+      "웹사이트용 WebP 변환",
+      "WebP 이미지 변환",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPG 열기",
+        description: "JPG나 JPEG 사진을 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "품질 설정",
+        description: "80% 정도로 시작하세요. 값을 높이면 디테일이 더 남고, 낮추면 파일이 더 작아져요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebP 다운로드",
+        description: "WebP 다운로드를 클릭하고 새 파일 크기를 원본과 비교해 보세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "비슷한 화질에 더 작은 파일",
+        description: "똑같아 보이는 사진이라도 WebP는 보통 JPG보다 적은 용량이 필요해요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "품질 슬라이더",
+        description: "페이지 속도와 이미지 디테일에 맞게 10%에서 100%까지 원하는 품질을 고르세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "원본 크기 유지",
+        description: "사진의 너비와 높이를 바꾸지 않고 변환해요.",
+      },
+      {
+        title: "내 기기에서 변환",
+        description: "사진은 브라우저에서 처리되며 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPG를 WebP로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "WebP가 JPG보다 좋은가요?",
+        answer:
+          "웹사이트용으로는 WebP가 같은 화질에서 보통 더 작은 파일을 만들고 투명도도 저장할 수 있어요. 다만 오래된 프로그램, 프린터, 업로드 양식에서는 여전히 JPG를 더 많이 지원해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "모든 브라우저가 WebP를 지원하나요?",
+        answer:
+          "최신 버전의 Chrome, Edge, Firefox, Safari는 WebP 이미지를 표시해요. 일부 오래된 앱과 운영체제는 열지 못해요.",
+      },
+      {
+        question: "WebP 대신 PNG가 저장된 이유는 뭔가요?",
+        answer:
+          "일부 Safari 버전을 포함한 몇몇 브라우저는 WebP를 표시할 수는 있지만 만들지는 못해요. 이 경우 도구가 알려 주고 PNG로 저장해요. WebP 파일이 필요하면 Chrome, Edge, Firefox를 사용하세요.",
+      },
+      {
+        question: "다운로드하기 전에 파일 크기를 볼 수 있나요?",
+        answer:
+          "이 변환기는 예상 크기를 보여 주지 않아요. 이미지 압축에서 WebP를 선택하면 품질을 조절하는 동안 예상 크기와 절감 비율을 볼 수 있어요.",
+      },
+    ],
   },
   "png-to-webp": {
-    "name": "PNG를 WebP로 변환",
-    "shortName": "PNG를",
-    "tagline": "PNG를 WebP로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNG를 WebP로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNG를 WebP로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-webp",
-      "png를 webp로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "PNG WebP 변환",
+    shortName: "PNG → WebP",
+    tagline: "PNG 이미지를 WebP로 바꾸고 투명한 배경을 유지하세요. 파일은 보통 훨씬 작아져요.",
+    intro:
+      "PNG WebP 변환은 스크린샷, 로고, 그래픽 같은 PNG 파일을 WebP 형식으로 바꿔요. WebP는 투명도를 지원하므로 변환 후에도 투명한 영역이 그대로 투명해요. 결과는 보통 PNG보다 훨씬 작고, 품질 슬라이더로 글자와 가는 선을 선명하게 유지할 수 있어요.",
+    seoTitle: "PNG WebP 변환 – 투명 배경 유지",
+    seoDescription:
+      "무료 온라인 PNG WebP 변환. 투명한 배경이 유지되고 파일은 보통 훨씬 작아지며 품질도 설정할 수 있어요. 모든 처리는 브라우저에서 이루어져요.",
+    keywords: [
+      "PNG WebP 변환",
+      "PNG를 WebP로 변환",
+      "PNG WebP 투명 배경",
+      "PNG WebP 변환기",
+      "웹사이트용 PNG 용량 줄이기",
+      "투명 WebP",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNG 열기",
+        description: "PNG 파일을 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 스크린샷을 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "품질 설정",
+        description: "로고, 글자, 스크린샷은 90% 이상을 쓰세요. 사진은 보통 75%~85%면 충분해요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebP 다운로드",
+        description: "WebP 다운로드를 클릭하세요. 새 파일에서도 투명한 영역은 투명하게 남아요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "투명도 유지",
+        description: "PNG의 알파 채널이 WebP에 저장되어 로고와 아이콘의 투명한 배경이 그대로 남아요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "훨씬 작은 파일",
+        description: "WebP 압축은 보통 PNG 스크린샷과 그래픽을 원래 크기의 일부로 줄여 줘요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "품질 조절",
+        description: "이미지에 필요한 디테일에 맞춰 품질을 10%에서 100%까지 설정하세요.",
+      },
+      {
+        title: "같은 크기",
+        description: "WebP는 PNG의 너비와 높이를 정확히 유지해요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNG를 WebP로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "PNG를 WebP로 바꾸면 투명한 배경이 유지되나요?",
+        answer: "네. WebP는 투명도를 지원하므로 투명하거나 반투명한 픽셀이 그대로 유지돼요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "WebP가 PNG보다 훨씬 작은 이유는 뭔가요?",
+        answer:
+          "PNG는 무손실이라 모든 픽셀을 정확히 저장해요. 여기서 WebP는 손실 압축을 써서 눈에 잘 띄지 않는 디테일을 없애고 공간을 크게 줄여요.",
+      },
+      {
+        question: "로고와 스크린샷은 품질을 얼마로 해야 하나요?",
+        answer:
+          "글자, 아이콘, 가는 선이 선명하게 남도록 90%~100%를 쓰세요. 사진은 보통 75%~85%면 충분해요.",
+      },
+      {
+        question: "웹사이트에 WebP 이미지를 써도 되나요?",
+        answer:
+          "네. 현재 모든 주요 브라우저가 WebP를 표시해요. 아주 오래된 브라우저나 앱도 지원해야 한다면 원본 PNG를 대체 이미지로 남겨 두세요.",
+      },
+    ],
   },
   "webp-to-jpg": {
-    "name": "WebP를 JPG로 변환",
-    "shortName": "WebP를",
-    "tagline": "WebP를 JPG로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebP를 JPG로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebP를 JPG로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-jpg",
-      "webp를 jpg로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "WebP JPG 변환",
+    shortName: "WebP → JPG",
+    tagline: "WebP 이미지를 JPG로 바꿔 어떤 앱, 사진 뷰어, 업로드 양식에서도 열리게 하세요.",
+    intro:
+      "WebP JPG 변환은 웹사이트에서 흔히 쓰는 WebP 파일을 표준 JPEG 이미지로 바꿔요. 오래된 프로그램, 업로드 양식, 인쇄 서비스가 WebP를 받지 않을 때 JPG가 가장 안전한 선택이에요. WebP에 투명한 영역이 있으면 JPG는 투명도를 저장할 수 없으므로 그 영역을 채울 색을 고르게 돼요.",
+    seoTitle: "WebP JPG 변환 – 무료, 업로드 없음",
+    seoDescription:
+      "무료 온라인 WebP JPG 변환. WebP 이미지를 어떤 앱이나 업로드 양식에서도 열리게 바꾸고, 투명한 영역을 채울 색과 품질을 설정하세요. 업로드 없음.",
+    keywords: [
+      "WebP JPG 변환",
+      "WebP를 JPG로 변환",
+      "WebP JPEG 변환",
+      "WebP JPG로 저장",
+      "WebP JPG 변환기",
+      "WebP 파일 열기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebP 파일 열기",
+        description: "WebP 이미지를 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "품질과 채울 색 설정",
+        description:
+          "품질을 10%에서 100% 사이로 고르세요. 이미지에 투명한 부분이 있으면 그 부분을 대신할 색을 고르세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "JPG 다운로드",
+        description: "JPG 다운로드를 클릭해 거의 어디서나 열리는 파일을 저장하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "최고의 호환성",
+        description: "JPG는 거의 모든 프로그램, 기기, 프린터, 웹사이트 업로드 양식에서 열려요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "투명 영역 채우기 색",
+        description: "WebP의 투명한 영역이 흰색이나 원하는 색으로 채워져요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "품질 조절",
+        description: "품질 슬라이더로 파일 크기와 디테일 사이의 균형을 맞추세요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 브라우저에서 디코딩되어 JPG로 저장되며, 아무것도 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebP를 JPG로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "웹사이트 이미지가 WebP로 저장되는 이유는 뭔가요?",
+        answer:
+          "많은 웹사이트가 파일이 더 작다는 이유로 이미지를 WebP로 제공해요. 그런 이미지를 저장하면 WebP 파일이 받아지는데, 일부 오래된 프로그램은 이를 열지 못해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "WebP의 투명한 부분은 어떻게 되나요?",
+        answer:
+          "JPG는 투명도를 저장할 수 없어서 그 영역이 단색으로 채워져요. 기본값은 흰색이며 다른 색을 고를 수 있어요.",
+      },
+      {
+        question: "움직이는 WebP도 변환할 수 있나요?",
+        answer: "JPG는 애니메이션을 저장할 수 없어서 정지 프레임 하나만 변환돼요.",
+      },
+      {
+        question: "JPG로 바꾸면 화질이 떨어지나요?",
+        answer:
+          "WebP를 디코딩한 뒤 손실 형식인 JPG로 다시 저장해요. 결과를 원본에 아주 가깝게 유지하려면 90% 이상으로 설정하세요.",
+      },
+    ],
   },
   "webp-to-png": {
-    "name": "WebP를 PNG로 변환",
-    "shortName": "WebP를",
-    "tagline": "WebP를 PNG로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebP를 PNG로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebP를 PNG로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-png",
-      "webp를 png로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "WebP PNG 변환",
+    shortName: "WebP → PNG",
+    tagline: "WebP 이미지를 투명도와 모든 픽셀을 그대로 지키는 무손실 PNG 파일로 바꾸세요.",
+    intro:
+      "WebP PNG 변환은 WebP 이미지를 거의 모든 편집기와 뷰어가 지원하는 무손실 형식인 PNG로 바꿔요. 투명한 영역은 그대로 투명하고 디코딩된 픽셀이 정확히 저장되므로, 편집하고 다시 저장해도 화질이 떨어지지 않아요. 앱이 WebP를 열지 못하거나 추가로 편집할 파일이 필요할 때 사용하세요.",
+    seoTitle: "WebP PNG 변환 – 무손실, 투명 배경 유지",
+    seoDescription:
+      "무료 온라인 WebP PNG 변환. 투명한 배경을 유지하고, 어떤 이미지 편집기에서도 열리는 무손실 PNG를 받으세요. 파일은 브라우저에서 변환돼요.",
+    keywords: [
+      "WebP PNG 변환",
+      "WebP를 PNG로 변환",
+      "WebP PNG 투명 배경",
+      "WebP PNG 변환기",
+      "화질 저하 없이 WebP PNG 변환",
+      "WebP PNG로 저장",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebP 파일 열기",
+        description: "WebP 이미지를 업로드 상자에 끌어다 놓거나, 클릭해서 선택하거나, Ctrl+V로 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "미리보기 확인",
+        description: "출력은 항상 같은 크기의 무손실 PNG라서 품질 설정이 없어요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG 다운로드",
+        description: "PNG 다운로드를 클릭해 변환된 파일을 저장하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "투명도 보존",
+        description: "WebP의 투명하거나 반투명한 영역이 PNG에서도 투명하게 남아요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "무손실 출력",
+        description: "디코딩된 픽셀을 새로운 압축 손실 없이 정확히 저장해요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "어디서나 열림",
+        description: "PNG는 사실상 모든 이미지 편집기, 뷰어, 오피스 프로그램에서 지원돼요.",
+      },
+      {
+        title: "업로드 없음",
+        description: "변환은 브라우저에서 이루어지므로 파일이 내 기기에 남아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebP를 PNG로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "WebP를 PNG로 바꾸면 투명한 배경이 유지되나요?",
+        answer: "네. PNG는 투명도를 완벽히 지원하므로 배경이 투명하게 남아요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "PNG가 WebP보다 큰 이유는 뭔가요?",
+        answer:
+          "대부분의 WebP 이미지는 손실 압축을 쓰지만, PNG는 모든 픽셀을 손실 없이 저장해요. 그래서 같은 이미지라도 PNG는 보통 용량이 더 커요.",
+      },
+      {
+        question: "PNG로 바꾸면 화질이 좋아지나요?",
+        answer:
+          "아니요. PNG는 지금 보이는 그대로 이미지를 보존하지만, WebP 압축으로 이미 사라진 디테일을 되살리지는 못해요.",
+      },
+      {
+        question: "움직이는 WebP를 PNG로 바꿀 수 있나요?",
+        answer:
+          "도구는 정지 이미지 한 장을 저장해요. 여기서 출력되는 PNG에는 애니메이션 프레임이 포함되지 않아요.",
+      },
+    ],
   },
   "bulk-image-resizer": {
-    "name": "일괄 이미지 크기 조절",
-    "shortName": "일괄",
-    "tagline": "일괄 이미지 크기 조절 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "일괄 이미지 크기 조절 — Free Online Tool — Image Toolbox",
-    "seoDescription": "일괄 이미지 크기 조절 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-resizer",
-      "일괄 이미지 크기 조절",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 일괄 크기 조절",
+    shortName: "일괄 크기 조절",
+    tagline: "최대 50장의 이미지를 퍼센트, 정확한 너비, 최대 상자 크기로 한 번에 조절하고 ZIP 하나로 받으세요.",
+    intro:
+      "이미지 일괄 크기 조절은 여러 이미지에 같은 크기 규칙을 한 번에 적용해요. 모든 파일을 퍼센트로 조절하거나, 정확한 너비를 정하거나, 1200 × 800 같은 상자 안에 들어가도록 맞춰 어느 변도 상자보다 커지지 않게 할 수 있어요. 각 파일은 원래 형식을 유지할 수 있고, 모든 결과를 ZIP 하나로 한꺼번에 받아요.",
+    seoTitle: "이미지 일괄 크기 조절 – 여러 사진 크기 한 번에 변경",
+    seoDescription:
+      "여러 이미지 크기를 한 번에 무료로 조절하세요. JPG, PNG, WebP 파일 최대 50개를 퍼센트, 정확한 너비, 최대 상자로 조절하고 형식을 유지한 채 ZIP으로 받으세요.",
+    keywords: [
+      "이미지 일괄 크기 조절",
+      "여러 이미지 크기 한번에 변경",
+      "사진 일괄 리사이즈",
+      "온라인 이미지 일괄 리사이즈",
+      "사진 크기 한꺼번에 줄이기",
+      "이미지 크기 조절 ZIP 다운로드",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 추가",
+        description: "JPG, PNG, WebP 파일을 최대 50개(파일당 최대 50 MB)까지 업로드 영역에 끌어다 놓거나, 클릭해서 선택하세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "조절 방식 선택",
+        description:
+          "퍼센트는 각 이미지를 10%에서 200%까지 조절해요. 정확한 픽셀은 너비를 정하고, 가로세로 비율 고정을 풀면 높이도 정해요. 상자에 맞추기는 입력한 너비와 높이 안에 들어가도록 각 이미지를 줄여요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "출력 형식 선택",
+        description:
+          "원본 형식을 그대로 두거나 모두 PNG, JPG, WebP로 변환하세요. 작은 이미지는 확대하지 않기가 기본으로 켜져 있어 작은 이미지가 커지지 않아요.",
+      },
+      {
+        title: "크기 조절 후 다운로드",
+        description: "모두 크기 조절을 클릭한 다음 ZIP 다운로드를 누르거나, 목록에서 파일을 하나씩 저장하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "세 가지 조절 방식",
+        description: "퍼센트로 조절하거나, 정확한 너비를 정하거나, 최대 너비와 높이 안에 맞추세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "파일마다 형식 유지",
+        description: "원본을 선택하면 JPG는 JPG로, PNG는 PNG로, WebP는 WebP로 남아요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "확대 방지",
+        description:
+          "정확한 픽셀과 상자에 맞추기 모드에서는 이미 목표보다 작은 이미지는 크기가 그대로 유지돼요.",
+      },
+      {
+        title: "ZIP 하나로 다운로드",
+        description: "크기를 바꾼 파일은 원래 이름 뒤에 -resized가 붙고, 압축 파일 하나로 함께 다운로드돼요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 일괄 이미지 크기 조절 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "한 번에 몇 장까지 크기를 조절할 수 있나요?",
+        answer:
+          "한 번에 최대 50장, 각각 최대 50 MB까지 가능해요. 아주 큰 사진은 메모리를 많이 쓰니 휴대폰에서는 더 적은 수로 나눠 작업하면 도움이 돼요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "이미지가 늘어나 보이지 않나요?",
+        answer:
+          "퍼센트나 상자에 맞추기 모드는 항상 비율을 유지하므로 늘어나지 않아요. 정확한 픽셀 모드에서 가로세로 비율 고정을 풀고 두 변을 모두 정하면, 모양이 다른 이미지는 늘어나 보여요.",
+      },
+      {
+        question: "어떤 파일 형식을 지원하나요?",
+        answer:
+          "JPG, PNG, WebP를 지원해요. iPhone HEIC 파일은 여기서 받지 않으니, 먼저 이미지 형식 변환기로 변환하세요.",
+      },
+      {
+        question: "JPG와 WebP 파일은 어떤 품질로 저장되나요?",
+        answer:
+          "크기를 바꾼 JPG와 WebP 파일은 90% 품질로 저장돼요. 투명한 이미지를 JPG로 변환하면 투명한 영역은 흰색이 돼요.",
+      },
+      {
+        question: "파일이 어딘가에 업로드되나요?",
+        answer: "아니요. 모든 이미지는 이 브라우저 탭에서 크기가 조절되며, ZIP 파일도 내 기기에서 만들어져요.",
+      },
+    ],
   },
   "bulk-image-compressor": {
-    "name": "일괄 이미지 압축",
-    "shortName": "일괄",
-    "tagline": "일괄 이미지 압축 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "일괄 이미지 압축 — Free Online Tool — Image Toolbox",
-    "seoDescription": "일괄 이미지 압축 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-compressor",
-      "일괄 이미지 압축",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 일괄 압축",
+    shortName: "일괄 압축",
+    tagline: "최대 50장의 이미지를 한 번에 WebP, AVIF, JPG, PNG로 압축하고 ZIP 하나로 받으세요.",
+    intro:
+      "이미지 일괄 압축은 여러 이미지의 파일 용량을 한 번에 줄여요. 모든 파일에 적용할 출력 형식과 품질을 하나 고르고 압축을 시작하면, 이미지마다 원본 크기, 새 크기, 절감 비율을 확인할 수 있어요. 웹사이트, 온라인 쇼핑몰, 이메일에 쓸 사진 폴더를 준비할 때 유용해요.",
+    seoTitle: "이미지 일괄 압축 – 여러 사진 용량 한 번에 줄이기",
+    seoDescription:
+      "최대 50장의 이미지를 한 번에 무료로 압축하세요. JPG, PNG, WebP를 WebP, AVIF, JPG, PNG로 변환하고 파일별 절감량을 확인한 뒤 ZIP 하나로 받으세요.",
+    keywords: [
+      "이미지 일괄 압축",
+      "여러 이미지 용량 줄이기",
+      "사진 용량 한번에 줄이기",
+      "온라인 이미지 일괄 압축",
+      "이미지 일괄 WebP 변환",
+      "사진 압축 ZIP 다운로드",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 추가",
+        description: "JPG, PNG, WebP 파일을 최대 50개(파일당 최대 50 MB)까지 끌어다 놓거나, 클릭해서 선택하세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "형식과 품질 선택",
+        description:
+          "기본값은 80% 품질의 WebP예요. 가장 작은 파일은 AVIF, 호환성은 JPG, 무손실 출력은 PNG를 고르세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "모든 파일 압축",
+        description: "모두 압축을 클릭하면 목록에 파일마다 새 크기와 절감 비율이 표시돼요.",
+      },
+      {
+        title: "결과 다운로드",
+        description: "ZIP 다운로드를 클릭해 압축된 파일을 한 번에 저장하거나, 목록에서 파일을 하나씩 받으세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "파일별 결과",
+        description:
+          "이미지마다 압축 전후 크기와 절감 비율을 보여 주고, 파일이 더 커진 경우에는 분명하게 표시해요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "네 가지 출력 형식",
+        description: "AVIF, WebP, JPG, PNG 중에서 고르고, 전체 파일에 10%~100% 품질 설정 하나를 적용해요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "원래 이름 그대로 ZIP으로",
+        description: "각 파일은 이름 뒤에 -compressed가 붙고, 중복된 이름에는 자동으로 번호가 매겨져요.",
+      },
+      {
+        title: "내 기기에서 실행",
+        description: "모든 파일이 브라우저에서 압축되며 컴퓨터나 휴대폰 밖으로 나가지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 일괄 이미지 압축 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "한 번에 몇 장까지 압축할 수 있나요?",
+        answer: "최대 50장까지 추가할 수 있고, 각 파일은 최대 50 MB까지 가능해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "어떤 출력 형식을 골라야 하나요?",
+        answer:
+          "WebP는 용량, 화질, 호환성의 균형이 좋아요. AVIF는 보통 더 작지만 인코딩이 느려서 큰 사진이 많으면 체감돼요. JPG는 어디서나 열리고, PNG는 무손실이지만 용량이 가장 적게 줄어요.",
+      },
+      {
+        question: "파일 하나가 더 커진 이유는 뭔가요?",
+        answer:
+          "어떤 이미지는 이미 잘 압축되어 있어서 다시 저장해도 줄지 않아요. 목록에 이런 파일이 표시되니, 그 파일은 원본을 그대로 쓰면 돼요.",
+      },
+      {
+        question: "일괄 압축하면 이미지 크기가 바뀌나요?",
+        answer:
+          "아니요, 너비와 높이는 그대로예요. 크기도 줄이려면 먼저 이미지 일괄 크기 조절로 파일을 처리하세요.",
+      },
+      {
+        question: "JPG를 고르면 투명한 PNG는 어떻게 되나요?",
+        answer: "JPG는 투명도를 저장할 수 없어서 투명한 영역이 흰색으로 채워져요.",
+      },
+    ],
   },
   "remove-image-metadata": {
-    "name": "이미지 EXIF 메타데이터 삭제",
-    "shortName": "이미지",
-    "tagline": "이미지 EXIF 메타데이터 삭제 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 EXIF 메타데이터 삭제 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 EXIF 메타데이터 삭제 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "remove-image-metadata",
-      "이미지 exif 메타데이터 삭제",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 메타데이터 제거",
+    shortName: "EXIF 제거",
+    tagline: "사진을 공유하기 전에 GPS 위치, 카메라 모델, 날짜 같은 EXIF 정보를 지우세요.",
+    intro:
+      "이미지 메타데이터 제거는 숨겨진 EXIF 정보가 없는 깨끗한 사진 사본을 만들어요. 휴대폰과 카메라로 찍은 사진에는 촬영한 곳의 GPS 위치, 기기 모델, 날짜와 시간이 기록되는 경우가 많아요. 이 도구는 이미지를 픽셀만으로 다시 그려 새 파일로 저장하기 때문에 그런 정보가 따라오지 않으며, 다운로드 전에 새 파일 크기를 보여 줘요.",
+    seoTitle: "사진 EXIF 제거 – GPS 위치·메타데이터 삭제",
+    seoDescription:
+      "사진 EXIF 메타데이터를 무료로 제거하세요. 사진을 공유하기 전에 GPS 위치, 카메라 모델, 날짜를 지울 수 있어요. 브라우저에서 처리되며 업로드되지 않아요.",
+    keywords: [
+      "사진 EXIF 제거",
+      "사진 메타데이터 삭제",
+      "사진 위치 정보 삭제",
+      "EXIF 삭제",
+      "이미지 메타데이터 제거",
+      "사진 GPS 정보 지우기",
+      "아이폰 사진 메타데이터 삭제",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "사진 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 사진을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "깨끗한 사본 확인",
+        description: "미리보기에 저장될 이미지와 새 파일 크기가 함께 표시돼요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "형식과 품질 선택",
+        description:
+          "기본적으로 원본 형식을 유지해요. JPG와 WebP는 원본에 가깝게 유지하려면 90%~100% 품질을 쓰고, 무손실 출력이 필요하면 PNG를 고르세요.",
+      },
+      {
+        title: "새 파일 다운로드 후 공유",
+        description: "다운로드를 클릭하고, 원본 사진 대신 이 사본을 공유하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "위치 및 카메라 정보 제거",
+        description:
+          "GPS 좌표, 카메라 제조사와 모델, 렌즈, 촬영 날짜 등 EXIF와 IPTC 항목이 새 파일에 기록되지 않아요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "픽셀로 만든 깨끗한 사본",
+        description: "이미지를 픽셀만으로 다시 그리기 때문에 숨겨진 정보가 실수로 복사될 일이 없어요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "파일 크기 표시",
+        description: "다운로드하기 전에 깨끗한 파일의 크기를 확인하세요.",
+      },
+      {
+        title: "내 기기에서 처리",
+        description: "사진이 업로드되지 않으므로 처리 과정에서 위치 정보가 누구와도 공유되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 EXIF 메타데이터 삭제 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "어떤 메타데이터가 제거되나요?",
+        answer:
+          "전부 제거돼요. EXIF 정보(카메라, 설정, 날짜, GPS), 작성자나 저작권 같은 IPTC·XMP 항목, 그리고 내장된 색상 프로필까지요. 눈에 보이는 이미지만 남아요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "메타데이터를 지우면 화질이 바뀌나요?",
+        answer:
+          "이미지를 다시 저장해요. PNG는 모든 픽셀을 유지하지만 JPG, WebP, AVIF는 다시 압축되니 높은 품질을 고르세요. 많은 iPhone 사진처럼 넓은 색상 프로필을 쓰는 사진은 프로필이 유지되지 않아 색이 조금 덜 선명해 보일 수 있어요.",
+      },
+      {
+        question: "위치 정보가 지워졌는지 어떻게 확인하나요?",
+        answer:
+          "다운로드한 파일을 이미지 분석기로 여세요. 분석기는 내 기기에서 EXIF 정보를 읽고, GPS 위치가 있으면 경고를 보여 줘요.",
+      },
+      {
+        question: "앱이나 웹사이트가 EXIF 정보를 대신 지워 주지 않나요?",
+        answer:
+          "일부 대형 플랫폼은 업로드할 때 메타데이터 일부를 지우지만, 이메일, 메신저 앱, 파일 공유는 원본 파일을 그대로 보내는 경우가 많아요. 직접 지우는 것이 안전해요.",
+      },
+      {
+        question: "iPhone HEIC 사진의 메타데이터도 지울 수 있나요?",
+        answer:
+          "네. HEIC 사진은 브라우저에서 변환되며, 깨끗한 사본은 기본적으로 JPG로 저장돼요.",
+      },
+    ],
   },
   "image-analyzer": {
-    "name": "이미지 분석기 및 속성 확인",
-    "shortName": "이미지",
-    "tagline": "이미지 분석기 및 속성 확인 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 분석기 및 속성 확인 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 분석기 및 속성 확인 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-analyzer",
-      "이미지 분석기 및 속성 확인",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 분석기",
+    shortName: "분석기",
+    tagline: "이미지의 크기, 파일 용량, 가로세로 비율, 인쇄 크기, 카메라 EXIF 정보를 확인하고 GPS 위치가 있으면 경고를 받으세요.",
+    intro:
+      "이미지 분석기는 이미지 파일을 바꾸지 않고 기술적인 세부 정보를 보여 줘요. 파일 크기, 형식, 픽셀 크기, 가로세로 비율, 메가픽셀, 투명도 여부를 알려 줘요. 사진이라면 카메라 모델, 렌즈, 노출, ISO, 촬영 일시, GPS 위치 같은 카메라 EXIF 정보도 읽고, 사진에 촬영 장소가 드러나면 경고해 줘요.",
+    seoTitle: "이미지 정보 확인 – EXIF, 용량, 해상도 분석기",
+    seoDescription:
+      "무료 온라인 이미지 정보 확인. 크기, 파일 용량, 가로세로 비율, 인쇄 크기, 카메라 EXIF 정보를 보고, 사진에 GPS 위치가 있으면 경고를 받으세요.",
+    keywords: [
+      "이미지 정보 확인",
+      "EXIF 보기",
+      "사진 EXIF 확인",
+      "이미지 메타데이터 보기",
+      "이미지 해상도 확인",
+      "사진 위치 정보 확인",
+      "이미지 크기 확인",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "iPhone HEIC 사진을 포함해 브라우저가 열 수 있는 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "사양 읽기",
+        description:
+          "파일 크기, 형식, 크기, 가로세로 비율, 메가픽셀, 투명도, 300 DPI 인쇄 크기를 확인하세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "카메라 정보 확인",
+        description:
+          "EXIF 항목에 카메라, 렌즈, 노출, 날짜가 표시돼요. 사진에 GPS 위치가 있으면 메타데이터 제거 버튼과 함께 경고가 나타나요.",
+      },
+      {
+        title: "보고서 복사",
+        description: "보고서 복사를 클릭하면 모든 값을 일반 텍스트로 복사해요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "기술 사양",
+        description:
+          "파일 크기, 형식, MIME 유형, 크기, 가로세로 비율, 메가픽셀, 색 심도, 투명도, 예상 메모리 사용량.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "카메라 EXIF 리더",
+        description:
+          "정보가 있으면 카메라, 렌즈, 촬영 일시, 노출 시간, 조리개, ISO, 초점 거리, 플래시, 방향, 편집 소프트웨어를 보여 줘요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "GPS 위치 경고",
+        description:
+          "사진에 좌표가 있으면 표시하고, 클릭 한 번으로 메타데이터 없는 사본을 만들 수 있게 해 줘요.",
+      },
+      {
+        title: "인쇄 크기 추정",
+        description: "300 DPI로 인쇄했을 때의 크기를 인치와 센티미터로 보여 줘요.",
+      },
+      {
+        title: "읽기 전용, 로컬 처리",
+        description: "파일은 바뀌지 않고, 모든 정보는 내 기기에서 읽어요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 분석기 및 속성 확인 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "사진의 EXIF 정보는 어떻게 보나요?",
+        answer:
+          "여기서 사진을 열고 카메라 및 EXIF 정보 항목을 보세요. EXIF 정보가 없다고 나오면 파일이 EXIF 없이 저장된 것으로, 스크린샷이나 SNS에서 받은 이미지에서 흔해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "사진에 촬영 장소가 드러나는지 어떻게 알 수 있나요?",
+        answer:
+          "사진에 GPS 좌표가 있으면 분석기가 좌표를 보여 주고 경고를 표시해요. 메타데이터 제거를 클릭하면 위치 정보가 없는 사본을 만들 수 있어요.",
+      },
+      {
+        question: "어떤 파일에 EXIF 정보가 들어 있나요?",
+        answer:
+          "휴대폰과 카메라로 찍은 JPG, HEIC 사진에는 보통 들어 있어요. WebP와 AVIF 파일에도 있을 수 있지만, 스크린샷과 내보내거나 편집한 이미지에는 거의 없거나 전혀 없어요.",
+      },
+      {
+        question: "300 DPI 인쇄 크기는 무슨 뜻인가요?",
+        answer:
+          "사진 인화에서 흔히 쓰는 품질인 인치당 300도트로 인쇄했을 때의 크기예요. 예를 들어 3000 × 2000픽셀 이미지는 약 10 × 6.7인치로 인쇄돼요.",
+      },
+      {
+        question: "색 심도 값은 정확한가요?",
+        answer:
+          "형식과 투명도 여부(24비트 RGB 또는 32비트 RGBA)를 바탕으로 해요. 16비트나 HDR 이미지는 감지하지 못해요.",
+      },
+    ],
   },
   "image-color-picker": {
-    "name": "이미지 스포이드 색상 추출기",
-    "shortName": "이미지",
-    "tagline": "이미지 스포이드 색상 추출기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 스포이드 색상 추출기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 스포이드 색상 추출기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-color-picker",
-      "이미지 스포이드 색상 추출기",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 색상 추출기",
+    shortName: "색상 추출",
+    tagline: "이미지의 아무 지점이나 클릭해 정확한 색을 HEX, RGB, HSL, HSV, CMYK로 얻으세요.",
+    intro:
+      "이미지 색상 추출기는 그림 속 어떤 픽셀이든 정확한 색을 찾아 줘요. 포인터를 이미지 위로 움직이면 아래 픽셀이 확대되어 보이고, 클릭하면 색을 선택해 HEX, RGB, HSL, HSV, CMYK 코드로 복사할 수 있어요. 색은 축소된 미리보기가 아니라 원본 해상도 이미지에서 읽어요.",
+    seoTitle: "이미지 색상 추출 – 사진에서 HEX·RGB 코드 찾기",
+    seoDescription:
+      "무료 온라인 이미지 색상 추출. 픽셀을 클릭해 HEX, RGB, HSL, HSV, CMYK 코드를 얻고, 확대경으로 정밀하게 고른 뒤 클릭 한 번으로 복사하세요.",
+    keywords: [
+      "이미지 색상 추출",
+      "사진에서 색상 코드 찾기",
+      "이미지 HEX 코드 추출",
+      "온라인 스포이드",
+      "이미지 색상 찾기",
+      "사진 RGB 값 확인",
+      "HEX 색상 찾기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요. Ctrl+V로 붙여넣은 스크린샷도 잘 돼요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "확대경으로 조준",
+        description: "마우스를 미리보기 위로 움직이면 둥근 확대경이 포인터 아래 픽셀을 크게 보여 줘요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "클릭해서 색 선택",
+        description: "원하는 지점을 클릭하거나 탭하세요. HEX, RGB, HSL, HSV, CMYK 값과 함께 색이 표시돼요.",
+      },
+      {
+        title: "코드 복사",
+        description: "필요한 형식 옆의 복사를 클릭하세요. 최근 색상은 아래에 저장되어 빠르게 다시 쓸 수 있어요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "확대경",
+        description: "7 × 7픽셀 확대 화면으로 가는 선이나 글자 하나 같은 작은 부분도 정확히 고를 수 있어요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "다섯 가지 색상 형식",
+        description: "HEX, RGB, HSL, HSV, CMYK 값을 각각 클릭 한 번으로 복사하세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "색상 기록",
+        description: "최근에 고른 색 12개가 견본으로 남고, 클릭하면 다시 선택돼요.",
+      },
+      {
+        title: "원본 해상도에서 추출",
+        description: "각 색은 원본 이미지 픽셀에서 읽기 때문에 미리보기 크기의 영향을 받지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 스포이드 색상 추출기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "이미지 속 색의 HEX 코드는 어떻게 얻나요?",
+        answer:
+          "이미지를 열고 원하는 색을 클릭한 뒤 HEX 값 옆의 복사를 누르세요. 어떤 디자인 프로그램이나 CSS 파일에도 붙여넣을 수 있어요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "스크린샷에서도 색을 고를 수 있나요?",
+        answer:
+          "네. 스크린샷을 찍고 이 페이지에서 Ctrl+V로 붙여넣은 다음 필요한 색을 클릭하세요.",
+      },
+      {
+        question: "휴대폰에서도 색상 추출기가 작동하나요?",
+        answer:
+          "네. 이미지를 탭해서 색을 고르세요. 확대경은 마우스 포인터로만 나타나니, 아주 작은 부분을 고르려면 페이지를 확대하세요.",
+      },
+      {
+        question: "사진에서 바로 옆 픽셀끼리 색이 조금씩 다른 이유는 뭔가요?",
+        answer:
+          "사진에는 노이즈, 그라데이션, 압축 흔적이 있어서 이웃한 픽셀이 정확히 같은 경우가 드물어요. 몇 군데를 골라 보고 가장 알맞아 보이는 것을 선택하세요.",
+      },
+      {
+        question: "CMYK 값이 인쇄 프로그램과 다른 이유는 뭔가요?",
+        answer:
+          "여기서 보여 주는 CMYK 값은 RGB를 단순하게 수학적으로 변환한 값이에요. 인쇄 프로그램은 특정 잉크와 용지에 맞는 색상 프로필을 쓰기 때문에 숫자가 다를 수 있어요.",
+      },
+    ],
   },
   "image-palette-generator": {
-    "name": "이미지 컬러 팔레트 생성기",
-    "shortName": "이미지",
-    "tagline": "이미지 컬러 팔레트 생성기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 컬러 팔레트 생성기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 컬러 팔레트 생성기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-palette-generator",
-      "이미지 컬러 팔레트 생성기",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 팔레트 생성기",
+    shortName: "팔레트",
+    tagline: "이미지의 주요 색상을 팔레트로 추출하고 HEX 코드, CSS 변수, JSON으로 복사하세요.",
+    intro:
+      "이미지 팔레트 생성기는 사진이나 디자인에서 주된 색상을 찾아 견본으로 보여 줘요. 3, 4, 5, 6, 8가지 색 중에서 고를 수 있으며, 가장 넓은 면적을 차지하는 색부터 순서대로 나오고 아주 비슷한 색조는 합쳐져서 견본마다 뚜렷이 달라요. 팔레트를 CSS 변수나 JSON 배열로 복사하거나 PNG 색상표로 다운로드하세요.",
+    seoTitle: "이미지 색상 팔레트 추출 – HEX 코드 생성기",
+    seoDescription:
+      "어떤 이미지에서든 무료로 색상 팔레트를 만드세요. 주요 색상 3~8개를 추출해 HEX 코드, CSS 변수, JSON으로 복사하고 PNG 색상표를 다운로드하세요.",
+    keywords: [
+      "이미지 색상 팔레트 추출",
+      "사진에서 색상 추출",
+      "컬러 팔레트 생성기",
+      "사진 색 조합 추출",
+      "이미지 주요 색상",
+      "HEX 코드 팔레트 추출",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "사진, 일러스트, 로고, 스크린샷을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "색상 개수 선택",
+        description: "3, 4, 5, 6, 8 중 하나를 클릭하세요. 견본이 바로 업데이트돼요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "색 하나씩 복사",
+        description: "견본의 복사 아이콘을 클릭하면 HEX 코드가 복사돼요.",
+      },
+      {
+        title: "팔레트 내보내기",
+        description: "CSS 변수 복사나 JSON 복사를 쓰거나, 팔레트를 PNG 색상표로 다운로드하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "면적 순으로 정렬",
+        description: "첫 번째 견본은 이미지에서 가장 넓은 부분을 차지하는 색이에요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "뚜렷이 다른 색조",
+        description: "거의 같은 색은 합쳐지므로 팔레트에 같은 톤이 반복되지 않아요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "개발자용으로 바로 사용",
+        description: "CSS 사용자 정의 속성(--color-1, --color-2 등)이나 HEX 코드 JSON 배열로 내보내세요.",
+      },
+      {
+        title: "PNG 색상표",
+        description: "견본마다 아래에 HEX 코드가 적힌 팔레트 이미지를 다운로드하세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 컬러 팔레트 생성기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "팔레트 색은 어떻게 정해지나요?",
+        answer:
+          "이미지를 작은 크기로 샘플링하고 비슷한 색끼리 묶은 다음, 가장 넓은 면적을 차지하는 묶음부터 보여 줘요. 투명한 픽셀은 무시해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "선택한 것보다 색이 적게 나오는 이유는 뭔가요?",
+        answer:
+          "서로 아주 가까운 색조는 견본마다 확실히 다르도록 합쳐져요. 뚜렷한 색이 몇 개 없는 이미지는 견본이 더 적게 나올 수 있어요.",
+      },
+      {
+        question: "팔레트를 CSS에서 어떻게 쓰나요?",
+        answer:
+          "CSS 변수 복사를 클릭하면 --color-1, --color-2 등의 변수가 담긴 :root 블록을 얻을 수 있어요. 스타일시트에 붙여넣으세요.",
+      },
+      {
+        question: "작은 포인트 색상이 빠진 이유는 뭔가요?",
+        answer:
+          "팔레트는 넓은 면적을 차지하는 색을 우선하기 때문에 작은 로고 같은 세부 요소는 나타나지 않을 수 있어요. 특정 지점의 정확한 값은 이미지 색상 추출기로 얻으세요.",
+      },
+    ],
   },
   "add-text-to-image": {
-    "name": "이미지에 글자 및 텍스트 추가",
-    "shortName": "이미지에",
-    "tagline": "이미지에 글자 및 텍스트 추가 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지에 글자 및 텍스트 추가 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지에 글자 및 텍스트 추가 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-text-to-image",
-      "이미지에 글자 및 텍스트 추가",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지에 텍스트 넣기",
+    shortName: "텍스트 넣기",
+    tagline: "원하는 글꼴, 크기, 색상, 외곽선, 배경 상자로 사진에 문구나 제목을 넣으세요.",
+    intro:
+      "이미지에 텍스트 넣기는 그림 위에 한 줄 이상의 텍스트를 올려요. 미리보기에서 텍스트를 원하는 곳으로 끌거나 위, 가운데, 아래에 배치하고, 7가지 글꼴, 굵게·기울임, 정렬, 불투명도, 그림자, 외곽선, 색이 있는 배경 상자로 꾸밀 수 있어요. 다운로드할 때 텍스트는 원본 해상도 이미지 위에 그려져요.",
+    seoTitle: "사진에 글자 넣기 – 무료 온라인 이미지 텍스트 추가",
+    seoDescription:
+      "무료로 사진에 글자 넣기. 문구를 원하는 곳으로 끌고 글꼴, 크기, 색상, 외곽선, 그림자, 배경 상자를 고른 뒤 JPG, PNG, WebP, AVIF로 저장하세요.",
+    keywords: [
+      "사진에 글자 넣기",
+      "이미지에 텍스트 넣기",
+      "온라인 사진 글씨 넣기",
+      "사진 문구 넣기",
+      "이미지 텍스트 편집기",
+      "사진에 자막 넣기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "텍스트 입력",
+        description: "입력란에 텍스트를 쓰세요. Enter를 누르면 줄이 바뀌어요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "스타일과 위치 지정",
+        description:
+          "글꼴, 크기(12~240 px), 색상, 불투명도, 정렬을 고르세요. 미리보기에서 텍스트를 끌거나 위, 가운데, 아래, 직접 지정(Y%)을 선택하세요.",
+      },
+      {
+        title: "다운로드",
+        description: "원본 형식을 유지하거나 JPG, PNG, WebP, AVIF를 고른 뒤 다운로드를 클릭하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "끌어서 배치",
+        description: "미리보기에서 텍스트를 직접 움직여 원하는 곳에 정확히 놓으세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "7가지 글꼴",
+        description: "Inter, Arial, Helvetica, Georgia, Times New Roman, Courier New, Impact를 굵게·기울임 옵션과 함께 쓸 수 있어요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "어떤 사진에서도 잘 읽히게",
+        description: "그림자, 1~20 px 외곽선, 또는 색과 불투명도를 따로 정할 수 있는 배경 상자를 더하세요.",
+      },
+      {
+        title: "여러 줄 텍스트",
+        description: "여러 줄을 쓰고 왼쪽, 가운데, 오른쪽으로 정렬하세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지에 글자 및 텍스트 추가 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "복잡한 사진에서 글자가 잘 읽히게 하려면 어떻게 하나요?",
+        answer:
+          "외곽선을 켜고 글자와 대비되는 색을 고르거나, 배경 상자를 켜서 글자 뒤에 불투명하거나 반투명한 상자를 두세요. 밝은 부분에서는 그림자도 도움이 돼요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "텍스트 블록을 여러 개 넣을 수 있나요?",
+        answer:
+          "이 도구는 텍스트 블록 하나를 넣고, 그 안에 여러 줄을 쓸 수 있어요. 다른 위치에도 텍스트를 넣으려면 결과를 다운로드한 뒤 다시 열어 다음 텍스트를 추가하세요.",
+      },
+      {
+        question: "어떤 글꼴을 쓸 수 있나요?",
+        answer:
+          "7가지 글꼴 중에서 고를 수 있어요. 대부분 시스템 글꼴이라 기기에 설치되어 있지 않으면 브라우저가 비슷한 글꼴로 대신 표시해요.",
+      },
+      {
+        question: "다운로드한 이미지에서 글자가 선명하게 보이나요?",
+        answer:
+          "네. 텍스트는 이미지의 원본 해상도로 그려져요. JPG로 저장한다면 글자 가장자리가 깔끔하도록 품질을 높게 설정하세요.",
+      },
+    ],
   },
   "watermark-image": {
-    "name": "이미지 워터마크 추가",
-    "shortName": "이미지",
-    "tagline": "이미지 워터마크 추가 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 워터마크 추가 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 워터마크 추가 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "watermark-image",
-      "이미지 워터마크 추가",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 워터마크",
+    shortName: "워터마크",
+    tagline: "텍스트나 로고 워터마크를 한 곳에 두거나 이미지 전체에 반복해 사진을 보호하세요.",
+    intro:
+      "이미지 워터마크는 사진 위에 저작권 표시, 웹사이트 이름, 로고를 넣어요. 텍스트나 로고 워터마크를 9가지 위치 중 하나에 두고 크기와 불투명도를 정하거나, 텍스트를 이미지 전체에 반복해 잘라내기 훨씬 어렵게 만들 수 있어요. 로고는 PNG, WebP, JPG, SVG 파일을 쓸 수 있으며, 배경이 투명한 로고가 가장 보기 좋아요.",
+    seoTitle: "사진 워터마크 넣기 – 텍스트·로고 워터마크",
+    seoDescription:
+      "무료로 사진에 워터마크 넣기. 텍스트나 로고를 쓰고 9가지 위치 중에서 골라 불투명도와 회전을 설정하거나, 텍스트를 이미지 전체에 반복하세요.",
+    keywords: [
+      "사진 워터마크 넣기",
+      "이미지 워터마크",
+      "사진에 로고 넣기",
+      "무료 온라인 워터마크",
+      "저작권 워터마크",
+      "반복 워터마크",
+      "투명 워터마크",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "사진 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "텍스트 또는 로고 선택",
+        description:
+          "텍스트를 선택하고 문구를 입력하거나, 로고 이미지를 선택하고 PNG, WebP, JPG, SVG 파일을 고르세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "배치와 스타일 지정",
+        description:
+          "3 × 3 그리드에서 위치를 클릭한 다음 불투명도와 크기를 정하세요. 텍스트는 색상과 회전도 정하거나 이미지 전체에 반복을 켤 수 있어요.",
+      },
+      {
+        title: "다운로드",
+        description: "원본 형식을 유지하거나 다른 형식을 고른 뒤 다운로드를 클릭하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "텍스트 또는 로고",
+        description: "저작권 문구나 웹사이트 주소를 쓰거나, 내 로고 이미지를 올리세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "9가지 위치",
+        description: "모서리, 가장자리, 가운데 중에서 고르며, 여백은 이미지 크기에 맞게 조절돼요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "반복 텍스트 패턴",
+        description: "원하는 각도로 사진 전체에 텍스트를 반복하세요.",
+      },
+      {
+        title: "불투명도, 크기, 회전",
+        description: "불투명도 10%~100%, 글자 크기 14~140 px, 로고 너비는 이미지의 5%~60%, 텍스트 회전은 -90°~90°까지 설정할 수 있어요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 워터마크 추가 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "내 로고를 워터마크로 넣으려면 어떻게 하나요?",
+        answer:
+          "로고 이미지를 고르고 로고 이미지 선택을 클릭해 파일을 고르세요. 로고 크기를 이미지 너비의 퍼센트로 정하고 위치를 고른 다음, 사진이 잘 보이도록 불투명도를 낮추세요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "워터마크 불투명도는 얼마가 좋나요?",
+        answer:
+          "30%~50% 정도면 사진을 가리지 않으면서도 잘 보여요. 워터마크를 쉽게 읽을 수 있어야 한다면 더 높게 설정하세요.",
+      },
+      {
+        question: "반복 워터마크란 무엇인가요?",
+        answer:
+          "이미지 전체에 반복은 사진 전체에 텍스트를 여러 번 찍어요. 모서리에 하나만 넣은 표시보다 잘라내서 없애기가 훨씬 어려워요. 텍스트 워터마크에서 쓸 수 있어요.",
+      },
+      {
+        question: "로고 주변에 흰 상자가 생기는 이유는 뭔가요?",
+        answer:
+          "로고 파일에 단색 배경이 있기 때문이에요. 배경이 투명한 PNG, WebP, SVG를 쓰거나, 먼저 배경 제거로 배경을 없애세요.",
+      },
+      {
+        question: "워터마크로 사진 무단 복사를 막을 수 있나요?",
+        answer:
+          "워터마크는 복사할 마음을 줄이고 이미지 소유자를 보여 주지만, 복사를 완전히 막지는 못해요. 크거나 가운데에 있거나 반복된 표시는 작은 모서리 표시보다 없애기 어려워요.",
+      },
+    ],
   },
   "add-border-to-image": {
-    "name": "이미지에 테두리 추가",
-    "shortName": "이미지에",
-    "tagline": "이미지에 테두리 추가 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지에 테두리 추가 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지에 테두리 추가 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-border-to-image",
-      "이미지에 테두리 추가",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 테두리 추가",
+    shortName: "테두리",
+    tagline: "사진 바깥이나 가장자리 위에 단색 테두리나 프레임을 더하세요.",
+    intro:
+      "이미지 테두리 추가는 그림 둘레에 색이 있는 프레임을 그려요. 바깥쪽 모드에서는 캔버스가 커져서 사진 전체가 테두리 안에 그대로 보이고, 안쪽 모드에서는 테두리가 가장자리 위에 그려져 이미지가 원래 크기를 유지해요. 두께는 1~100픽셀, 색상은 무엇이든, 불투명도도 정할 수 있어요.",
+    seoTitle: "사진 테두리 넣기 – 무료 온라인 이미지 프레임",
+    seoDescription:
+      "무료로 사진 테두리 넣기. 색상, 1~100 px 두께, 불투명도를 고르고 테두리를 사진 바깥이나 가장자리 위에 놓으세요. 업로드 없음.",
+    keywords: [
+      "사진 테두리 넣기",
+      "이미지 테두리 추가",
+      "사진 프레임 만들기",
+      "온라인 사진 테두리",
+      "인스타 흰색 테두리",
+      "사진 외곽선",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "테두리 위치 선택",
+        description: "바깥쪽(캔버스 확장)은 사진 둘레에 테두리를 더해요. 안쪽(크기 유지)은 가장자리 위에 그려요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "두께, 색상, 불투명도 설정",
+        description: "두께 슬라이더를 1~100 px 사이로 끌고, 원하는 색을 고른 뒤, 더 은은한 프레임을 원하면 불투명도를 낮추세요.",
+      },
+      {
+        title: "다운로드",
+        description: "원본 형식을 유지하거나 JPG, PNG, WebP, AVIF를 고른 뒤 다운로드를 클릭하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "바깥쪽 또는 안쪽",
+        description: "사진 둘레에 공간을 더하거나, 원래 크기를 정확히 유지하세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "원하는 두께와 색상",
+        description: "얇은 1 px 선부터 넓은 100 px 프레임까지, 어떤 색으로든 만들 수 있어요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "불투명도 조절",
+        description: "테두리를 반투명하게 만들어 더 가벼운 느낌을 주세요.",
+      },
+      {
+        title: "형식 유지",
+        description: "다른 형식을 고르지 않으면 테두리를 넣은 이미지는 원본과 같은 형식으로 저장돼요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지에 테두리 추가 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "테두리를 넣으면 이미지 크기가 바뀌나요?",
+        answer:
+          "바깥쪽 모드에서는 테두리 두께가 모든 변에 더해지므로, 1000 × 800 이미지에 20 px 테두리를 넣으면 1040 × 840이 돼요. 안쪽 모드는 크기를 유지하고 사진의 바깥 가장자리를 덮어요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Instagram용 흰색 테두리는 어떻게 넣나요?",
+        answer:
+          "먼저 사진을 1:1로 자른 다음 바깥쪽 모드로 흰색 테두리를 넣으세요. 모든 변에 같은 두께가 더해지므로 결과도 정사각형이에요.",
+      },
+      {
+        question: "모서리가 둥근 테두리를 만들 수 있나요?",
+        answer:
+          "테두리 자체는 사각형이에요. 둥근 느낌을 원하면 먼저 테두리를 넣은 다음 결과를 이미지 모서리 둥글게에서 여세요.",
+      },
+      {
+        question: "테두리 불투명도는 어떤 역할을 하나요?",
+        answer:
+          "불투명도를 낮추면 테두리가 비쳐 보여요. 안쪽 모드에서는 테두리 너머로 사진이 보이고, 바깥쪽 모드에서는 테두리 영역이 PNG, WebP, AVIF에서 부분적으로 투명해지며 JPG에서는 흰색과 섞여요.",
+      },
+    ],
   },
   "round-image": {
-    "name": "이미지 둥글게 자르기 및 원형 아바타",
-    "shortName": "이미지",
-    "tagline": "이미지 둥글게 자르기 및 원형 아바타 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 둥글게 자르기 및 원형 아바타 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 둥글게 자르기 및 원형 아바타 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "round-image",
-      "이미지 둥글게 자르기 및 원형 아바타",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 모서리 둥글게",
+    shortName: "둥근 모서리",
+    tagline: "이미지 모서리를 둥글게 하거나 원형으로 잘라내고, PNG로 투명한 배경을 유지하세요.",
+    intro:
+      "이미지 모서리 둥글게는 그림에 부드러운 둥근 모서리를 주거나, 프로필 사진이나 앱 아이콘용으로 원형으로 만들어 줘요. 작게, 보통, 크게 프리셋을 고르거나, 슬라이더로 정확한 반경을 정하거나, 원형으로 만들기를 클릭하세요. 결과는 기본적으로 PNG로 저장되어 잘려 나간 모서리가 투명하게 남아요.",
+    seoTitle: "이미지 모서리 둥글게 – 원형 사진 만들기",
+    seoDescription:
+      "무료로 이미지 모서리를 둥글게 하거나 사진을 원형으로 자르세요. 모서리 반경을 정하고 PNG로 투명한 배경을 유지하거나 JPG용 채울 색을 고르세요.",
+    keywords: [
+      "이미지 모서리 둥글게",
+      "사진 둥근 모서리",
+      "원형 이미지 만들기",
+      "동그란 프로필 사진 만들기",
+      "원형 프로필 사진",
+      "둥근 모서리 PNG",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "JPG, PNG, WebP, iPhone HEIC 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "모양 선택",
+        description: "원형으로 만들기를 클릭하거나, 작게·보통·크게 모서리를 고르거나, 반경 슬라이더를 끄세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "형식 선택",
+        description:
+          "기본값은 PNG예요. JPG를 고르면 모서리를 채울 흰색, 검은색 또는 원하는 색을 고르세요.",
+      },
+      {
+        title: "다운로드",
+        description: "다운로드를 클릭해 둥글게 만든 이미지를 저장하거나, 클립보드에 복사하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "프리셋과 정확한 반경",
+        description: "작게, 보통, 크게 프리셋을 쓰거나, 0부터 짧은 변의 절반까지 원하는 반경을 정하세요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "원형 아바타",
+        description: "클릭 한 번으로 이미지를 원형으로 바꿔 프로필 사진으로 바로 쓸 수 있어요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "투명한 모서리",
+        description: "PNG, WebP, AVIF는 곡선 바깥 영역을 투명하게 유지해요.",
+      },
+      {
+        title: "JPG용 채울 색",
+        description: "JPG로 저장하면 모서리가 흰색, 검은색 또는 직접 고른 색으로 채워져요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 둥글게 자르기 및 원형 아바타 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "동그란 프로필 사진은 어떻게 만드나요?",
+        answer:
+          "원형으로 만들기를 클릭하세요. 원은 이미지의 짧은 변을 기준으로 가운데에 놓이므로, 정사각형이 아닌 사진은 먼저 1:1로 잘라 얼굴을 가운데에 두고 양옆에 빈 공간이 생기지 않게 하세요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "모서리가 투명하지 않고 흰색이나 검은색인 이유는 뭔가요?",
+        answer: "JPG는 투명도를 저장할 수 없어요. 모서리를 투명하게 유지하려면 PNG, WebP, AVIF를 고르세요.",
+      },
+      {
+        question: "작게, 보통, 크게 프리셋은 무슨 뜻인가요?",
+        answer:
+          "가능한 최대 반경은 이미지 짧은 변의 절반이에요. 작게, 보통, 크게는 그 최댓값의 10%, 25%, 50%를 써요.",
+      },
+      {
+        question: "둥글게 만든 이미지 파일이 왜 이렇게 큰가요?",
+        answer:
+          "PNG는 무손실이라 원본 크기의 카메라 사진은 파일이 커질 수 있어요. 먼저 사진 크기를 줄이거나, 투명도를 유지하면서 훨씬 작은 WebP로 저장하세요.",
+      },
+    ],
   },
   "favicon-generator": {
-    "name": "파비콘 및 아이콘 패키지 생성기",
-    "shortName": "파비콘",
-    "tagline": "파비콘 및 아이콘 패키지 생성기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "파비콘 및 아이콘 패키지 생성기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "파비콘 및 아이콘 패키지 생성기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "favicon-generator",
-      "파비콘 및 아이콘 패키지 생성기",
-      "image tool",
-      "online free",
-      "ko"
+    name: "파비콘 생성기",
+    shortName: "파비콘",
+    tagline: "이미지 하나로 favicon.ico, Apple 터치 아이콘, Android 아이콘, 웹 매니페스트를 ZIP 하나에 만드세요.",
+    intro:
+      "파비콘 생성기는 로고나 이미지를 웹사이트에 필요한 아이콘 파일 세트로 바꿔요. 이미지를 가운데 정사각형으로 잘라 favicon.ico(16, 32, 48픽셀 크기 포함), 16~512픽셀 PNG 아이콘, 180 × 180 apple-touch-icon.png, site.webmanifest 파일을 모두 ZIP 하나로 만들어요. 사이트의 head 영역에 붙여넣을 HTML link 태그도 페이지에 표시돼요.",
+    seoTitle: "파비콘 생성기 – ICO, PNG, Apple 터치 아이콘 만들기",
+    seoDescription:
+      "무료 파비콘 생성기. PNG, JPG, SVG 로고를 올리면 favicon.ico, 16~512 px PNG 아이콘, Apple 터치 아이콘, 웹 매니페스트를 ZIP 파일 하나로 받을 수 있어요.",
+    keywords: [
+      "파비콘 생성기",
+      "파비콘 만들기",
+      "favicon.ico 만들기",
+      "PNG ICO 변환",
+      "애플 터치 아이콘 생성",
+      "이미지로 파비콘 만들기",
+      "웹사이트 아이콘 만들기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "로고 업로드",
+        description:
+          "PNG, JPG, SVG, HEIC 이미지를 끌어다 놓거나 선택하세요. 512 × 512픽셀 이상의 정사각형 이미지가 가장 좋은 결과를 내요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "가운데에 있는지 확인",
+        description:
+          "아이콘은 이미지 가운데에서 잘라내요. 로고가 가운데에 있지 않거나 이미지가 정사각형이 아니면 먼저 이미지 자르기로 1:1로 자르세요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "파비콘 패키지 다운로드",
+        description: "파비콘 패키지 다운로드 (ZIP)를 클릭해 모든 아이콘 파일과 매니페스트를 받으세요.",
+      },
+      {
+        title: "웹사이트에 추가",
+        description:
+          "파일을 사이트의 루트 폴더에 올린 다음, 코드 복사를 클릭해 HTML 태그를 페이지의 head 영역에 붙여넣으세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "여러 크기가 담긴 favicon.ico",
+        description: "브라우저 탭과 북마크용 16 × 16, 32 × 32, 48 × 48 아이콘이 담긴 ICO 파일 하나.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "모든 기기용 PNG 아이콘",
+        description: "16, 32, 48, 64, 128, 192, 512픽셀 PNG 파일과 180 × 180 apple-touch-icon.png.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "웹 앱 매니페스트",
+        description: "Android와 설치형 웹 앱을 위해 192, 512픽셀 아이콘을 가리키는 site.webmanifest 파일.",
+      },
+      {
+        title: "작은 크기도 깔끔하게",
+        description: "원본 이미지에서 여러 단계에 걸쳐 줄이기 때문에 16, 32픽셀 버전이 더 깔끔해요.",
+      },
+      {
+        title: "바로 붙여넣는 HTML",
+        description: "아이콘과 매니페스트용 link 태그를 클릭 한 번으로 복사하세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 파비콘 및 아이콘 패키지 생성기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "파비콘 이미지는 어떤 크기여야 하나요?",
+        answer:
+          "가장 큰 아이콘도 선명하도록 512 × 512픽셀 이상의 정사각형 이미지를 쓰세요. 단순한 모양과 강한 색은 16 × 16에서도 알아보기 쉬워요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "ZIP에는 어떤 파일이 들어 있나요?",
+        answer:
+          "favicon.ico, favicon-16x16.png부터 favicon-512x512.png까지(16, 32, 48, 64, 128, 192, 512), 180 × 180 apple-touch-icon.png, site.webmanifest가 들어 있어요.",
+      },
+      {
+        question: "파비콘 파일은 어디에 두나요?",
+        answer:
+          "웹사이트의 루트 폴더, 즉 홈페이지와 같은 위치에 올리세요. 그런 다음 이 페이지에 표시된 HTML 태그를 모든 페이지의 head 영역에 붙여넣으세요.",
+      },
+      {
+        question: "로고 일부가 잘리는 이유는 뭔가요?",
+        answer:
+          "도구는 이미지에서 가운데에 놓인 가장 큰 정사각형을 가져와요. 로고가 가로로 길거나 가운데에 있지 않다면, 아이콘을 만들기 전에 둘레에 여백을 두고 정사각형으로 자르세요.",
+      },
+      {
+        question: "SVG 로고를 써도 되나요?",
+        answer:
+          "네. SVG는 이미지로 그려져 PNG와 ICO 파일로 저장돼요. ZIP에 SVG 파비콘은 포함되지 않아요.",
+      },
+      {
+        question: "매니페스트 파일을 수정해야 하나요?",
+        answer:
+          "네. site.webmanifest에는 임시 이름 App과 어두운 테마 색상이 들어 있어요. 텍스트 편집기로 열어 name, short_name, 색상을 사이트에 맞게 바꾸세요.",
+      },
+    ],
   },
   "image-to-base64": {
-    "name": "이미지를 Base64 문자열로 변환",
-    "shortName": "이미지를",
-    "tagline": "이미지를 Base64 문자열로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지를 Base64 문자열로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지를 Base64 문자열로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-base64",
-      "이미지를 base64 문자열로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 Base64 변환",
+    shortName: "이미지 → Base64",
+    tagline: "이미지 파일을 복사할 수 있는 Base64 문자열로 바꾸고, 바로 쓸 수 있는 HTML·CSS 코드도 받으세요.",
+    intro:
+      "이미지 Base64 변환은 이미지 파일을 Base64 텍스트로 인코딩해서 JSON, HTML 페이지, CSS 파일 안처럼 일반 텍스트로 저장하거나 보낼 수 있게 해 줘요. 문자열은 파일의 원래 바이트로 만들어지므로 이미지가 다시 압축되거나 바뀌지 않아요. 글자 수를 보여 주고, 이미지 전체가 담긴 HTML img 태그와 CSS background-image 규칙도 제공해요.",
+    seoTitle: "이미지 Base64 변환 – Base64 문자열 복사",
+    seoDescription:
+      "무료 온라인 이미지 Base64 변환. 원본 JPG, PNG, WebP, GIF, SVG 바이트를 인코딩하고 문자열, HTML img 태그, CSS 규칙을 클릭 한 번으로 복사하세요.",
+    keywords: [
+      "이미지 Base64 변환",
+      "이미지 Base64 인코딩",
+      "Base64 이미지 변환",
+      "PNG Base64 변환",
+      "JPG Base64 변환",
+      "SVG Base64 변환",
+      "Base64 이미지 문자열",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "이미지 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요. 아이콘 같은 작은 이미지가 가장 좋아요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Base64 문자열 받기",
+        description: "문자열이 글자 수와 대략적인 크기와 함께 바로 나타나요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "필요한 것 복사",
+        description: "문자열만 필요하면 Base64 복사를, 바로 쓸 수 있는 코드가 필요하면 HTML 복사나 CSS 복사를 클릭하세요.",
+      },
+      {
+        title: "코드에 붙여넣기",
+        description: "문자열을 JSON, HTML, CSS, 스크립트에 붙여넣으세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "바이트 그대로 인코딩",
+        description: "원본 파일을 다시 압축하거나 화질을 바꾸지 않고 그대로 인코딩해요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "크기 정보",
+        description: "사용하기 전에 문자열의 글자 수와 대략적인 크기를 확인하세요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "HTML·CSS 코드",
+        description: "전체 Data URI가 포함된 img 태그나 background-image 규칙을 복사하세요.",
+      },
+      {
+        title: "로컬에서 인코딩",
+        description: "파일은 브라우저에서 읽고 인코딩되며 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지를 Base64 문자열로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "이미지에서 Base64는 어디에 쓰나요?",
+        answer:
+          "Base64는 바이너리 이미지 데이터를 일반 텍스트 문자로 바꿔요. 개발자는 작은 이미지를 HTML, CSS, JSON, 이메일 템플릿에 직접 넣어 별도의 이미지 파일을 불러오지 않아도 되게 할 때 써요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Base64 문자열이 이미지 파일보다 큰 이유는 뭔가요?",
+        answer:
+          "Base64는 3바이트마다 텍스트 문자 4개를 쓰기 때문에 결과가 약 33% 커져요. 30 KB 이미지는 약 40 KB의 텍스트가 돼요.",
+      },
+      {
+        question: "Base64와 Data URI는 무엇이 다른가요?",
+        answer:
+          "Base64는 인코딩된 텍스트일 뿐이에요. Data URI는 data:image/png;base64, 같은 접두사를 붙여 브라우저가 파일 형식을 알 수 있게 해요. 이 도구는 문자열만 주고, 이미지 Data URI 변환은 전체 버전을 줘요.",
+      },
+      {
+        question: "큰 이미지도 Base64로 바꿔야 하나요?",
+        answer:
+          "보통은 아니에요. Base64는 아이콘 같은 작은 이미지에 가장 잘 맞아요. 큰 사진은 HTML이나 CSS를 훨씬 무겁게 만들고, 브라우저가 이미지를 별도 파일로 캐시할 수도 없어요.",
+      },
+      {
+        question: "인코딩하는 동안 이미지가 바뀌나요?",
+        answer:
+          "아니요, 원래 바이트를 인코딩해요. 유일한 예외는 iPhone HEIC 사진인데, 대부분의 브라우저가 HEIC를 표시하지 못해서 먼저 PNG로 변환해요.",
+      },
+    ],
   },
   "image-to-data-uri": {
-    "name": "이미지 Data URI 생성기",
-    "shortName": "이미지",
-    "tagline": "이미지 Data URI 생성기 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "이미지 Data URI 생성기 — Free Online Tool — Image Toolbox",
-    "seoDescription": "이미지 Data URI 생성기 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-data-uri",
-      "이미지 data uri 생성기",
-      "image tool",
-      "online free",
-      "ko"
+    name: "이미지 Data URI 변환",
+    shortName: "Data URI",
+    tagline: "이미지를 HTML src 속성이나 CSS url() 값에 바로 붙여넣을 수 있는 완전한 Data URI로 바꾸세요.",
+    intro:
+      "이미지 Data URI 변환은 이미지 파일을 Data URI로 바꿔요. Data URI는 파일 형식과 Base64로 인코딩한 이미지를 모두 담은 한 줄의 텍스트예요. img src 속성이나 CSS url() 값에 바로 붙여넣으면 별도 파일 없이 이미지가 표시돼요. 접두사의 MIME 유형은 파일에서 가져오며, 이미지 바이트는 바뀌지 않아요.",
+    seoTitle: "이미지 Data URI 변환 – HTML·CSS에 바로 사용",
+    seoDescription:
+      "무료 온라인 이미지 Data URI 변환. 올바른 MIME 유형의 data:image Base64 문자열을 받고, HTML img 태그나 CSS 배경 규칙으로 복사하세요.",
+    keywords: [
+      "이미지 Data URI 변환",
+      "Data URI 생성기",
+      "이미지 Data URL 변환",
+      "Base64 Data URI",
+      "CSS 인라인 이미지",
+      "HTML 이미지 삽입",
+      "Data URL 이미지",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "이미지 열기",
+        description: "아이콘, 로고, 작은 그래픽 같은 이미지 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Data URI 받기",
+        description: "data:image/로 시작하는 완전한 Data URI가 길이와 대략적인 크기와 함께 나타나요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "복사하기",
+        description: "Data URI 복사를 클릭하거나, 바로 쓸 수 있는 코드가 필요하면 HTML 복사나 CSS 복사를 쓰세요.",
+      },
+      {
+        title: "페이지에 붙여넣기",
+        description: "img 태그나 CSS 배경처럼 일반 이미지 URL을 쓰는 곳이라면 어디든 쓸 수 있어요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "올바른 MIME 유형",
+        description: "접두사가 image/png, image/jpeg, image/svg+xml처럼 파일에 맞게 붙어요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "원래 바이트 그대로",
+        description: "파일을 그대로 인코딩하므로 재압축으로 화질이나 크기가 바뀌지 않아요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "바로 복사하는 코드",
+        description: "Data URI가 이미 들어 있는 완전한 img 태그나 background-image 규칙을 받으세요.",
+      },
+      {
+        title: "안전한 처리",
+        description: "Data URI는 브라우저에서 만들어지므로 이미지가 업로드되지 않아요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 이미지 Data URI 생성기 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Data URI란 무엇인가요?",
+        answer:
+          "Data URI는 파일을 가리키는 대신 파일 자체를 담고 있는 링크예요. 이미지의 경우 data:image/png;base64, 같은 접두사로 시작하며, 브라우저는 이를 일반 이미지 URL처럼 표시해요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "CSS에서 Data URI를 어떻게 쓰나요?",
+        answer:
+          "CSS 복사를 클릭하면 url() 안에 전체 URI가 담긴 background-image 규칙을 얻을 수 있어요. 스타일시트에 붙여넣으세요.",
+      },
+      {
+        question: "Data URI를 피해야 할 때는 언제인가요?",
+        answer:
+          "큰 이미지나 여러 페이지에서 쓰는 이미지에는 피하세요. 인코딩된 텍스트는 파일보다 약 3분의 1 더 크고, 브라우저가 따로 캐시할 수 없어요.",
+      },
+      {
+        question: "이메일에서도 Data URI 이미지가 보이나요?",
+        answer:
+          "지원 여부가 달라요. 일부 웹메일 서비스를 포함한 많은 이메일 프로그램이 Data URI 이미지를 표시하지 않으니, 이메일을 테스트해 보거나 온라인에 호스팅한 이미지를 쓰세요.",
+      },
+      {
+        question: "어떤 이미지 형식을 지원하나요?",
+        answer:
+          "JPG, PNG, GIF, WebP, AVIF, SVG처럼 브라우저가 열 수 있는 모든 이미지를 지원해요. iPhone HEIC 사진은 먼저 PNG로 변환되므로 Data URI에 image/png가 쓰여요.",
+      },
+    ],
   },
   "base64-to-image": {
-    "name": "Base64 문자열을 이미지로 복원",
-    "shortName": "Base64",
-    "tagline": "Base64 문자열을 이미지로 복원 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Base64 문자열을 이미지로 복원 — Free Online Tool — Image Toolbox",
-    "seoDescription": "Base64 문자열을 이미지로 복원 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "base64-to-image",
-      "base64 문자열을 이미지로 복원",
-      "image tool",
-      "online free",
-      "ko"
+    name: "Base64 이미지 변환",
+    shortName: "Base64 → 이미지",
+    tagline: "Base64 문자열이나 Data URI를 붙여넣어 이미지를 미리 보고 PNG, JPG, WebP로 다운로드하세요.",
+    intro:
+      "Base64 이미지 변환은 Base64 텍스트를 다시 눈으로 보고 저장할 수 있는 그림으로 디코딩해요. Base64 문자열만, 완전한 Data URI, 또는 이를 포함한 CSS url()이나 HTML src 코드를 붙여넣을 수 있으며, URL-safe Base64와 줄바꿈도 자동으로 처리해요. 데이터가 PNG, JPEG, GIF, WebP, SVG, BMP, AVIF 중 무엇인지 감지하고, 디코딩한 이미지를 크기와 함께 보여 줘요.",
+    seoTitle: "Base64 이미지 변환 – 디코딩 후 미리보기·다운로드",
+    seoDescription:
+      "무료 온라인 Base64 이미지 디코딩. Base64 문자열, Data URI, CSS·HTML 코드를 붙여넣어 그림을 미리 보고 PNG, JPG, WebP로 다운로드하세요.",
+    keywords: [
+      "Base64 이미지 변환",
+      "Base64 이미지 디코딩",
+      "Base64 PNG 변환",
+      "Base64 JPG 변환",
+      "Data URI 이미지 변환",
+      "Base64 문자열 이미지로 변환",
+      "Base64 이미지 뷰어",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Base64 데이터 붙여넣기",
+        description: "입력란에 붙여넣거나, 붙여넣기를 클릭하거나, 문자열이 담긴 .txt 파일을 불러오세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "미리보기 확인",
+        description: "이미지가 자동으로 디코딩되어 너비, 높이와 함께 표시돼요. 텍스트가 올바르지 않으면 오류 메시지가 나타나요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "내보낼 형식 선택",
+        description: "PNG, JPG, WebP 중에서 고르세요.",
+      },
+      {
+        title: "이미지 다운로드",
+        description: "다운로드를 클릭해 디코딩한 이미지를 기기에 저장하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "다양한 입력 형태 지원",
+        description:
+          "Base64 문자열, Data URI, CSS url()과 HTML src 코드, URL-safe Base64, 여러 줄로 나뉜 텍스트를 받아요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "형식 자동 감지",
+        description: "접두사가 없거나 틀려도 데이터 자체에서 PNG, JPEG, GIF, WebP, SVG, BMP, AVIF를 알아내요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "즉시 미리보기",
+        description: "붙여넣는 즉시 디코딩한 이미지와 크기를 확인하세요.",
+      },
+      {
+        title: "세 가지 내보내기 형식",
+        description: "결과를 PNG, JPG, WebP로 저장하세요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Base64 문자열을 이미지로 복원 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "어떤 Base64 텍스트를 붙여넣을 수 있나요?",
+        answer:
+          "Base64 문자열, data:image/png;base64,... 같은 Data URI, 또는 이를 포함한 CSS나 HTML 코드를 붙여넣을 수 있어요. 공백, 줄바꿈, URL-safe 문자는 자동으로 정리돼요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "오류가 나는 이유는 뭔가요?",
+        answer:
+          "복사할 때 텍스트가 잘리는 경우가 많아요. = 기호가 있을 수 있는 끝부분까지 문자열 전체를 복사했는지 확인하세요.",
+      },
+      {
+        question: "다운로드한 파일이 원본과 똑같나요?",
+        answer:
+          "이미지를 디코딩한 뒤 선택한 형식으로 다시 저장해요. PNG는 모든 픽셀을 유지하지만 JPG와 WebP는 다시 압축돼요. 움직이는 GIF는 정지 이미지 한 장이 되고, SVG 그래픽은 픽셀 이미지로 저장돼요.",
+      },
+      {
+        question: "도구는 이미지 형식을 어떻게 아나요?",
+        answer:
+          "각 형식은 PNG의 iVBORw0KGgo, JPEG의 /9j/처럼 정해진 시그니처로 시작해요. 도구는 이 첫 글자들을 읽어 이미지를 올바르게 디코딩해요.",
+      },
+      {
+        question: "Base64 데이터가 서버로 전송되나요?",
+        answer: "아니요. 텍스트는 브라우저에서 디코딩되고 이미지는 내 기기에서 만들어져요.",
+      },
+    ],
   },
   "svg-to-png": {
-    "name": "SVG 벡터를 PNG 이미지로 변환",
-    "shortName": "SVG",
-    "tagline": "SVG 벡터를 PNG 이미지로 변환 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "SVG 벡터를 PNG 이미지로 변환 — Free Online Tool — Image Toolbox",
-    "seoDescription": "SVG 벡터를 PNG 이미지로 변환 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "svg-to-png",
-      "svg 벡터를 png 이미지로 변환",
-      "image tool",
-      "online free",
-      "ko"
+    name: "SVG PNG 변환",
+    shortName: "SVG → PNG",
+    tagline: "SVG 벡터 파일을 1x, 2x, 4x, 8x 크기의 선명한 PNG 이미지로 바꾸고 투명도를 유지하세요.",
+    intro:
+      "SVG PNG 변환은 로고나 아이콘 같은 벡터 그래픽을 SVG 파일을 받지 않는 곳에서 쓸 수 있도록 PNG 이미지로 바꿔요. SVG 원래 크기의 1x, 2x, 4x, 8x 중에서 고르세요. 벡터를 그 크기로 다시 그리기 때문에 배율이 클수록 흐려지지 않고 더 선명해져요. 투명한 배경은 PNG에서도 투명하게 남아요.",
+    seoTitle: "SVG PNG 변환 – 고해상도, 투명 배경 유지",
+    seoDescription:
+      "무료 온라인 SVG PNG 변환. 1x, 2x, 4x, 8x로 내보내 투명한 배경을 가진 선명한 고해상도 이미지를 얻으세요. 브라우저에서 변환돼요.",
+    keywords: [
+      "SVG PNG 변환",
+      "SVG를 PNG로 변환",
+      "SVG PNG 고해상도",
+      "SVG PNG 투명 배경",
+      "SVG PNG로 내보내기",
+      "SVG 변환기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "SVG 파일 열기",
+        description: ".svg 파일을 업로드 상자에 끌어다 놓거나 클릭해서 선택하세요.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "배율 선택",
+        description: "1x, 2x, 4x, 8x 중에서 고르세요. 버튼 아래에 출력 너비와 높이가 픽셀로 표시돼요.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG 다운로드",
+        description: "PNG 다운로드를 클릭해 이미지를 저장하거나, 클립보드에 복사하세요.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "어떤 배율에서도 선명",
+        description: "선택한 크기로 벡터를 다시 렌더링하므로 선과 글자가 또렷하게 유지돼요.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "투명한 배경",
+        description: "SVG에서 채우기가 없는 영역은 PNG에서도 투명하게 남아요.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "출력 크기 미리보기",
+        description: "다운로드하기 전에 배율마다 정확한 픽셀 크기를 확인하세요.",
+      },
+      {
+        title: "무손실 PNG",
+        description: "렌더링한 이미지를 압축 손실 없이 PNG로 저장해요.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this SVG 벡터를 PNG 이미지로 변환 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "SVG에서 고해상도 PNG를 얻으려면 어떻게 하나요?",
+        answer:
+          "4x나 8x를 고르세요. 256 × 256 SVG는 4x에서 1024 × 1024, 8x에서 2048 × 2048이 되며, 그 크기로 다시 그리기 때문에 선명하게 유지돼요.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "출력 크기가 예상과 다른 이유는 뭔가요?",
+        answer:
+          "1x 크기는 SVG 파일에 설정된 너비와 높이에서 나와요. SVG에 viewBox만 있고 너비나 높이가 없으면 브라우저가 기본 크기를 쓸 수 있으니, width와 height 속성을 추가해 조절하세요.",
+      },
+      {
+        question: "PNG에서 글꼴이나 그림이 빠지는 이유는 뭔가요?",
+        answer:
+          "SVG를 이미지로 그릴 때 브라우저는 웹 글꼴이나 연결된 그림처럼 SVG가 링크한 외부 파일을 불러오지 않아요. 변환하기 전에 글자를 윤곽선으로 바꾸고 이미지를 SVG 안에 포함하세요.",
+      },
+      {
+        question: "PNG에서 투명한 배경이 유지되나요?",
+        answer: "네. SVG에서 채우기나 배경이 없는 영역은 모두 투명하게 남아요.",
+      },
+      {
+        question: "SVG를 JPG로 변환할 수 있나요?",
+        answer:
+          "이 도구는 PNG로만 저장해요. JPG가 필요하면 먼저 PNG로 변환한 다음 PNG JPG 변환에서 PNG를 여세요. 거기서 배경색도 고를 수 있어요.",
+      },
+    ],
   },
   "photo-filters": {
-    "name": "사진 필터 및 효과",
-    "shortName": "필터",
-    "tagline": "시네마틱 프리셋, 빈티지 효과, 비네팅을 브라우저에서 바로 적용하세요.",
-    "seoTitle": "무료 사진 필터 및 효과 온라인 — 감성 색감 보정",
-    "seoDescription": "사진에 시네마틱 감성 필터, 대비, 채도, 레트로 효과를 무료로 적용하세요. 100% 안전한 브라우저 처리.",
-    "keywords": [
-      "사진 필터 온라인",
-      "이미지 보정 무료",
-      "색감 보정"
+    name: "사진 필터 및 효과",
+    shortName: "필터",
+    tagline: "빈티지, 누아르, 시네마틱 같은 프리셋을 적용한 뒤 밝기, 대비, 색감, 비네팅을 조절하세요.",
+    intro:
+      "사진 필터 및 효과는 사진의 분위기와 느낌을 바꿔요. 시네마틱, 70년대 빈티지, 무디 누아르, 따뜻한 노을 같은 8가지 프리셋 중 하나로 시작한 다음, 슬라이더로 밝기, 대비, 채도, 세피아, 흑백, 색조, 선명도, 비네팅, 소프트 블러를 조절하세요. 분할 보기로 편집한 사진을 원본과 비교한 뒤 PNG, JPG, WebP로 다운로드할 수 있어요.",
+    seoTitle: "사진 필터 – 무료 온라인 사진 효과·프리셋",
+    seoDescription:
+      "무료 온라인 사진 필터. 빈티지, 누아르, 시네마틱 등을 적용하고 밝기, 대비, 채도, 비네팅을 조절한 뒤 적용 전후를 비교하세요.",
+    keywords: [
+      "사진 필터",
+      "온라인 사진 필터",
+      "사진 흑백 변환",
+      "빈티지 사진 필터",
+      "세피아 필터",
+      "사진 밝기 대비 조절",
+      "비네팅 효과",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "사진 업로드",
-        "description": "이미지를 드래그하거나 Ctrl+V로 붙여넣기."
+        title: "사진 업로드",
+        description: "JPG, PNG, WebP 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "필터 선택",
-        "description": "프리셋 또는 세부 슬라이더로 조절."
+        title: "프리셋 선택",
+        description:
+          "시네마틱, 70년대 빈티지, 사이버펑크, 무디 누아르, 따뜻한 노을, 쿨 페이드, 드라마틱 HDR, 네거티브를 써 보세요. 원본을 누르면 모든 효과가 사라져요.",
       },
       {
-        "title": "결과 다운로드",
-        "description": "고화질로 바로 저장."
-      }
-    ],
-    "features": [
-      {
-        "title": "GPU 가속",
-        "description": "지연 없는 실시간 렌더링."
+        title: "슬라이더로 미세 조정",
+        description:
+          "사진이 마음에 들 때까지 밝기, 대비, 채도, 세피아, 흑백, 색조 이동, 선명도, 비네팅, 소프트 포커스를 조절하세요.",
       },
       {
-        "title": "100% 개인정보 보호",
-        "description": "사진이 기기를 벗어나지 않습니다."
-      }
+        title: "비교 후 다운로드",
+        description: "원본과 비교로 적용 전후를 확인한 다음 PNG, WebP, JPG로 다운로드하거나 이미지를 복사하세요.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "무료인가요?",
-        "answer": "네, 100% 완전 무료입니다."
-      }
-    ]
+        title: "클릭 한 번으로 8가지 프리셋",
+        description: "따뜻한 빈티지 톤부터 대비가 강한 흑백까지 바로 쓸 수 있는 효과가 있어요.",
+      },
+      {
+        title: "9가지 보정 슬라이더",
+        description: "밝기, 대비, 채도는 최대 200%까지, 그리고 세피아, 흑백, 색조, 선명도, 비네팅, 블러를 조절해요.",
+      },
+      {
+        title: "적용 전후 보기",
+        description: "데스크톱이나 터치스크린에서 사진 위의 분할선을 끌어 원본과 편집본을 비교하세요.",
+      },
+      {
+        title: "원본 해상도로 내보내기",
+        description: "다운로드할 때 효과가 원본 크기의 사진에 적용돼요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "사진을 흑백으로 만들려면 어떻게 하나요?",
+        answer:
+          "대비가 강한 느낌을 원하면 무디 누아르 프리셋을 클릭하거나, 흑백 슬라이더를 100%로 놓고 밝기와 대비를 직접 조절하세요.",
+      },
+      {
+        question: "필터를 되돌릴 수 있나요?",
+        answer:
+          "네. 언제든 초기화를 클릭하면 원래 모습으로 돌아가요. 원본 파일은 절대 바뀌지 않아요.",
+      },
+      {
+        question: "필터를 적용하면 해상도가 낮아지나요?",
+        answer:
+          "아니요. 다운로드한 파일은 원본 사진과 너비, 높이가 같아요.",
+      },
+      {
+        question: "어떤 다운로드 형식을 골라야 하나요?",
+        answer:
+          "JPG와 WebP는 95% 품질로 저장되며 사진의 경우 훨씬 작아요. PNG는 모든 픽셀을 유지하지만 사진이면 파일이 커져요.",
+      },
+      {
+        question: "iPhone HEIC 사진에도 필터를 쓸 수 있나요?",
+        answer:
+          "이 도구는 HEIC 파일을 열지 못해요. 먼저 이미지 형식 변환기로 사진을 JPG로 변환한 다음 여기서 JPG를 여세요.",
+      },
+    ],
   },
   "meme-generator": {
-    "name": "밈 생성기 (짤 만들기)",
-    "shortName": "밈 생성기",
-    "tagline": "워터마크 없이 원하는 문구를 넣어 나만의 재미있는 짤을 만드세요.",
-    "seoTitle": "무료 밈 생성기 — 워터마크 없는 짤방 만들기",
-    "seoDescription": "사진에 텍스트를 넣어 개성 있는 밈을 만드세요. 워터마크 없이 고화질로 무료 다운로드 가능.",
-    "keywords": [
+    name: "밈 생성기",
+    shortName: "밈 만들기",
+    tagline: "내 사진이나 기본 템플릿으로 위, 가운데, 아래에 굵은 문구가 들어간 밈을 만드세요.",
+    intro:
+      "밈 생성기는 그림에 클래식한 밈 문구를 넣어요. 내 이미지를 올리거나 간단한 기본 템플릿 8개 중 하나로 시작한 다음 위, 가운데, 아래 문구를 입력하세요. 긴 줄은 너비에 맞게 자동으로 줄바꿈돼요. 글꼴(기본값 Impact), 크기, 글자·외곽선 색, 정렬, 대문자 여부를 고르고, 워터마크 없이 PNG, JPG, WebP로 다운로드하세요.",
+    seoTitle: "밈 생성기 – 무료 짤 만들기, 이미지에 문구 넣기",
+    seoDescription:
+      "무료 온라인 밈 만들기. 내 사진이나 템플릿에 위, 가운데, 아래 문구를 넣고 글꼴, 크기, 외곽선을 고른 뒤 워터마크 없이 다운로드하세요.",
+    keywords: [
       "밈 생성기",
+      "밈 만들기",
       "짤 만들기",
-      "짤방 만들기 무료"
+      "짤 생성기",
+      "이미지에 밈 문구 넣기",
+      "워터마크 없는 밈 생성기",
+      "내 사진으로 밈 만들기",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "이미지 선택",
-        "description": "사진을 올리거나 템플릿 선택."
+        title: "그림 선택",
+        description: "JPG, PNG, WebP 이미지를 올리거나 붙여넣거나, 빠른 템플릿 중 하나를 클릭하세요.",
       },
       {
-        "title": "문구 입력",
-        "description": "상단 및 하단 자막 입력."
+        title: "문구 쓰기",
+        description: "위쪽과 아래쪽 문구를 입력하고, 필요하면 가운데 문구도 추가하세요.",
       },
       {
-        "title": "밈 저장",
-        "description": "고화질로 다운로드."
-      }
-    ],
-    "features": [
-      {
-        "title": "워터마크 없음",
-        "description": "깔끔한 이미지 생성."
+        title: "글자 꾸미기",
+        description: "글꼴, 크기, 글자 색, 외곽선 색과 두께, 정렬, 대문자 사용 여부를 고르세요.",
       },
       {
-        "title": "개인정보 보호",
-        "description": "서버 전송 없음."
-      }
+        title: "다운로드 또는 복사",
+        description: "밈을 PNG, WebP, JPG로 다운로드하거나, 클립보드에 복사해 채팅에 붙여넣으세요.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "워터마크가 생기나요?",
-        "answer": "아니요, 전혀 생기지 않습니다."
-      }
-    ]
+        title: "세 개의 문구 영역",
+        description: "위, 가운데, 아래 문구를 넣을 수 있고, 긴 텍스트는 자동으로 줄바꿈돼요.",
+      },
+      {
+        title: "클래식 밈 스타일",
+        description: "기본값은 검은 외곽선이 있는 흰색 Impact 글자이며, Arial, Comic Sans, Montserrat, Times 글꼴도 있어요.",
+      },
+      {
+        title: "이미지에 맞춰 글자 크기 조절",
+        description: "글자 크기가 이미지 높이에 비례하므로 작은 그림이든 큰 그림이든 문구가 똑같이 보여요.",
+      },
+      {
+        title: "워터마크 없음",
+        description: "밈은 로고 없이 보이는 그대로 저장돼요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "밈에 워터마크가 붙나요?",
+        answer: "아니요. 다운로드한 이미지에는 내 그림과 문구만 들어 있어요.",
+      },
+      {
+        question: "밈에는 보통 어떤 글꼴을 쓰나요?",
+        answer:
+          "클래식 밈 스타일은 검은 외곽선이 있는 흰색 Impact이며, 여기서도 기본값이에요. 기기에 글꼴이 설치되어 있지 않으면 브라우저가 비슷한 글꼴을 써요.",
+      },
+      {
+        question: "내 사진을 써도 되나요?",
+        answer: "네. JPG, PNG, WebP 이미지를 올리거나, Ctrl+V로 클립보드에서 붙여넣으세요.",
+      },
+      {
+        question: "문구가 그림을 너무 많이 가려요. 어떻게 하나요?",
+        answer:
+          "글자 크기를 줄이거나, 텍스트 일부를 가운데나 아래쪽 문구로 옮기세요. 긴 문구는 자동으로 여러 줄로 나뉘어요.",
+      },
+      {
+        question: "휴대폰에서도 밈을 만들 수 있나요?",
+        answer:
+          "네. 밈 생성기는 모바일 브라우저에서 작동해요. 문구를 입력하고 다운로드 버튼으로 이미지를 저장하세요.",
+      },
+    ],
   },
   "split-image": {
-    "name": "이미지 분할 및 그리드 자르기",
-    "shortName": "이미지 분할",
-    "tagline": "인스타그램 3×3 그리드 및 파노라마 슬라이스 분할 후 ZIP 압축 다운로드.",
-    "seoTitle": "이미지 분할 온라인 — 인스타 3x3 그리드 분할 ZIP 다운로드",
-    "seoDescription": "사진을 인스타그램 3x3 피드 그리드나 파노라마 슬라이드로 깔끔하게 분할하세요. 일괄 ZIP 다운로드 지원.",
-    "keywords": [
+    name: "이미지 분할 및 그리드 자르기",
+    shortName: "그리드 분할",
+    tagline: "이미지 하나를 Instagram 3×3 그리드나 파노라마 캐러셀 같은 조각으로 나누고 ZIP으로 받으세요.",
+    intro:
+      "이미지 분할 및 그리드 자르기는 그림을 행과 열로 나눠 각각 별도의 이미지 파일로 만들어요. 프로필 그리드에는 Instagram 3×3 프리셋을, 넘겨 보는 게시물에는 파노라마 3×1이나 캐러셀 2×1을, 똑같은 네 조각에는 2×2를 쓰거나, 최대 12행 12열까지 그리드를 직접 정하세요. 모든 조각은 번호가 붙은 PNG 파일로 ZIP에 담겨 한꺼번에 다운로드되며, 조각 하나를 클릭해 그것만 저장할 수도 있어요.",
+    seoTitle: "사진 분할 – 인스타 3×3 그리드·파노라마 자르기",
+    seoDescription:
+      "무료 온라인 사진 분할. Instagram 3x3 그리드, 파노라마 캐러셀 조각, 최대 12x12 그리드를 만들고 모든 조각을 ZIP으로 다운로드하세요.",
+    keywords: [
+      "사진 분할",
       "이미지 분할",
-      "인스타 3x3 자르기",
-      "사진 분할"
+      "인스타 그리드 만들기",
+      "인스타 9분할",
+      "파노라마 사진 분할",
+      "사진 여러 조각으로 자르기",
+      "3x3 사진 분할",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "사진 업로드",
-        "description": "분할할 사진을 드롭."
+        title: "이미지 업로드",
+        description: "JPG, PNG, WebP 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "그리드 선택",
-        "description": "인스타 3×3 또는 원하는 행/열 설정."
+        title: "그리드 선택",
+        description:
+          "Instagram 3×3 그리드, 파노라마 3×1, 캐러셀 2×1, 정사각형 4개(2×2) 중에서 고르거나, 행과 열의 수를 직접 입력하세요.",
       },
       {
-        "title": "ZIP 다운로드",
-        "description": "번호 매겨진 조각들을 한 번에 저장."
-      }
-    ],
-    "features": [
-      {
-        "title": "1클릭 ZIP 저장",
-        "description": "모든 조각을 압축파일로 다운로드."
+        title: "미리보기 확인",
+        description: "미리보기에 이미지가 잘릴 위치와 각 조각의 번호가 표시돼요.",
       },
       {
-        "title": "화질 손실 없음",
-        "description": "원본 해상도 완벽 유지."
-      }
+        title: "조각 다운로드",
+        description: "모든 조각 다운로드 (ZIP)를 클릭하거나, 미리보기에서 조각 하나를 클릭해 그것만 다운로드하세요.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "인스타에 어떻게 올리나요?",
-        "answer": "마지막 번호부터 역순(#9→#1)으로 업로드하세요."
-      }
-    ]
+        title: "SNS 프리셋",
+        description: "클릭 한 번으로 3×3 프로필 그리드, 3장 또는 2장짜리 파노라마 캐러셀, 2×2 분할을 만들어요.",
+      },
+      {
+        title: "사용자 지정 그리드",
+        description: "1~12행, 1~12열의 어떤 조합이든 가능하며 최대 144조각까지 만들 수 있어요.",
+      },
+      {
+        title: "번호가 붙은 조각",
+        description: "파일 이름은 왼쪽에서 오른쪽, 위에서 아래 순서로 tile_01, tile_02 등으로 붙어요.",
+      },
+      {
+        title: "화질 손실 없음",
+        description: "조각은 원본 해상도 이미지에서 잘라 무손실 PNG 파일로 저장돼요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Instagram에는 조각을 어떤 순서로 올려야 하나요?",
+        answer:
+          "조각은 tile_01부터 왼쪽에서 오른쪽, 위에서 아래 순서로 번호가 매겨져요. Instagram은 최신 게시물을 먼저 보여 주므로 마지막 조각(3×3 그리드라면 tile_09)부터 올리고 tile_01로 끝내세요.",
+      },
+      {
+        question: "3×3 그리드에는 어떤 이미지를 써야 하나요?",
+        answer:
+          "정사각형 조각을 원하면 정사각형 이미지로 시작하고, 필요하면 먼저 1:1로 자르세요. Instagram은 프로필 썸네일을 다르게 잘라 보여 줄 수 있으니 게시한 뒤 결과를 확인하세요.",
+      },
+      {
+        question: "캐러셀 게시물용으로 파노라마를 나누려면 어떻게 하나요?",
+        answer:
+          "3장이면 파노라마 3×1을, 2장이면 캐러셀 2×1을 고르세요. 정사각형 슬라이드를 원하면 이미지 너비가 높이의 세 배(또는 두 배)여야 해요.",
+      },
+      {
+        question: "모든 조각의 크기가 정확히 같나요?",
+        answer:
+          "너비나 높이가 고르게 나누어지지 않으면 마지막 열이나 행이 남는 픽셀을 받아서 한두 픽셀 더 클 수 있어요.",
+      },
+      {
+        question: "분할하면 화질이 떨어지나요?",
+        answer: "아니요. 각 조각은 원본 픽셀에서 잘라 무손실인 PNG로 저장돼요.",
+      },
+    ],
   },
   "censor-image": {
-    "name": "사진 모자이크 및 블러 처리",
-    "shortName": "모자이크",
-    "tagline": "얼굴, 차량 번호판, 개인정보를 모자이크, 흐림 효과 또는 블랙바로 가리세요.",
-    "seoTitle": "사진 모자이크 및 블러 처리 온라인 — 개인정보 보호 및 EXIF 삭제",
-    "seoDescription": "사진 속 얼굴이나 민감한 서류, 번호판을 모자이크로 가리세요. EXIF 위치 정보도 자동 삭제.",
-    "keywords": [
+    name: "블러 및 모자이크 처리",
+    shortName: "사진 가리기",
+    tagline: "사진 속 얼굴, 번호판, 이름, 숫자를 검은 막대, 모자이크, 블러로 가리세요.",
+    intro:
+      "블러 및 모자이크 처리는 사진을 공유하기 전에 개인 정보를 가려 줘요. 얼굴, 번호판, 주소, 계좌번호 위에 사각형이나 타원을 그리고, 영역마다 검은 막대, 모자이크, 블러 중 하나를 고르세요. 블러 영역은 거친 모자이크 층 위에 놓이기 때문에 가장자리로 원래 세부 내용이 비치지 않아요.",
+    seoTitle: "사진 모자이크·블러 처리 – 얼굴·글자 가리기",
+    seoDescription:
+      "무료 온라인 사진 모자이크 처리. 사각형이나 타원으로 얼굴, 번호판, 개인 정보 텍스트를 블러, 모자이크, 검은 막대로 가리세요. 아무것도 업로드되지 않아요.",
+    keywords: [
       "사진 모자이크",
-      "얼굴 가리기",
-      "이미지 블러"
+      "사진 블러 처리",
+      "이미지 모자이크 처리",
+      "얼굴 모자이크",
+      "사진 가리기",
+      "스크린샷 개인정보 가리기",
+      "번호판 모자이크",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "사진 업로드",
-        "description": "가릴 사진 선택."
+        title: "이미지 업로드",
+        description: "사진이나 스크린샷 같은 JPG, PNG, WebP 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
       },
       {
-        "title": "영역 지정",
-        "description": "가릴 부분을 드래그하여 지정."
+        title: "모양과 방식 선택",
+        description:
+          "사각형이나 타원을 고른 다음 모자이크, 블러, 검은 막대 중 하나를 고르세요. 모자이크와 블러는 강도를 4~45로 설정하세요.",
       },
       {
-        "title": "저장",
-        "description": "개인정보가 제거된 이미지 다운로드."
-      }
-    ],
-    "features": [
-      {
-        "title": "다양한 모드",
-        "description": "모자이크, 가우시안 블러, 블랙바."
+        title: "개인 정보 위에 그리기",
+        description: "가리고 싶은 영역마다 드래그하세요. 마지막 영역 취소로 마지막 영역을 지우거나, 모든 영역 지우기로 처음부터 다시 시작하세요.",
       },
       {
-        "title": "EXIF 삭제",
-        "description": "위치 정보 자동 제거."
-      }
+        title: "가린 이미지 다운로드",
+        description: "PNG, WebP, JPG로 다운로드하거나, 클립보드에 복사하세요.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "모자이크를 복원할 수 있나요?",
-        "answer": "아니요, 픽셀이 완전히 덮어씌워지므로 복원 불가능합니다."
-      }
-    ]
-  }
+        title: "세 가지 가리기 방식",
+        description: "검은색 상자, 모자이크, 또는 모자이크 바탕 위의 블러.",
+      },
+      {
+        title: "사각형과 타원",
+        description: "얼굴에는 타원을, 텍스트·번호판·숫자에는 사각형을 쓰세요.",
+      },
+      {
+        title: "한 이미지에 여러 방식",
+        description: "각 영역은 그릴 때의 방식과 강도를 유지하므로, 이름은 검은 막대로, 얼굴은 블러로 가릴 수 있어요.",
+      },
+      {
+        title: "큰 사진에서도 일정하게",
+        description: "강도가 이미지 해상도에 맞춰 조절되므로 고해상도 사진도 똑같이 잘 가려져요.",
+      },
+      {
+        title: "취소와 지우기",
+        description: "사진을 다시 불러오지 않고 마지막 영역이나 모든 영역을 지우세요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "텍스트를 가리기에 가장 안전한 방식은 무엇인가요?",
+        answer:
+          "검은 막대는 픽셀을 완전히 바꿔서 비밀번호, 계좌번호, 문서에 가장 안전해요. 강한 모자이크나 블러도 효과가 있지만, 약한 설정의 작은 글자는 가끔 짐작될 수 있어요.",
+      },
+      {
+        question: "다운로드한 파일에서 블러를 되돌릴 수 있나요?",
+        answer:
+          "다운로드한 이미지에서는 각 영역 안의 픽셀이 별도 레이어에 숨겨지는 게 아니라 아예 바뀌어요. 기기에 있는 원본 사진은 바뀌지 않으니, 가린 사본만 공유하세요.",
+      },
+      {
+        question: "EXIF 정보도 지워지나요?",
+        answer:
+          "네. 다운로드 파일은 캔버스의 픽셀로 만들어지기 때문에 원본의 카메라 정보와 GPS 위치가 포함되지 않아요.",
+      },
+      {
+        question: "한 이미지에 다른 효과를 함께 쓸 수 있나요?",
+        answer:
+          "네. 다음 영역을 그리기 전에 방식이나 강도를 바꾸세요. 이미 그린 영역은 자기 설정을 유지해요.",
+      },
+      {
+        question: "휴대폰에서도 되나요?",
+        answer: "네. 가리고 싶은 영역 위를 손가락으로 드래그하면 상자나 타원이 그려져요.",
+      },
+    ],
+  },
+  "remove-background": {
+    name: "배경 제거",
+    shortName: "배경 제거",
+    tagline: "내 기기에서 실행되는 AI로 사진 배경을 없애고 투명 PNG로 저장하세요.",
+    intro:
+      "배경 제거는 사진의 주요 피사체만 오려 내고 뒤에 있는 모든 것을 없애요. 브라우저에서 실행되는 AI 모델을 쓰기 때문에 이미지가 기기 밖으로 나가지 않아요. 작고 빨라서 인물 사진에 가장 좋은 ‘빠름’과, 더 큰 모델로 제품, 반려동물, 사물을 포함해 어떤 피사체든 더 좋은 결과를 내는 ‘최고 품질’ 중에서 고르세요. 결과는 투명 PNG로 저장하거나 단색 배경 위에 놓을 수 있어요.",
+    seoTitle: "배경 제거 – 무료 AI 이미지 배경 지우기, 기기에서 처리",
+    seoDescription:
+      "배경 제거를 무료로. 브라우저에서 실행되는 AI로 ‘빠름’ 또는 ‘최고 품질’ 모델을 골라 투명 PNG로 저장하세요. 사진은 내 기기 밖으로 나가지 않아요.",
+    keywords: [
+      "배경 제거",
+      "사진 배경 지우기",
+      "이미지 배경 제거",
+      "무료 배경 제거",
+      "누끼 따기",
+      "배경 투명하게 만들기",
+      "투명 배경 PNG 만들기",
+    ],
+    howToSteps: [
+      {
+        title: "사진 업로드",
+        description: "JPG, PNG, WebP 이미지를 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "모델 선택",
+        description:
+          "기본값은 ‘빠름’이며 인물 사진에 잘 맞아요. 제품, 반려동물, 사물이거나 가장자리를 가장 깔끔하게 하고 싶을 때는 ‘최고 품질’을 고르세요.",
+      },
+      {
+        title: "모델은 한 번만 다운로드",
+        description:
+          "모델을 처음 쓸 때 브라우저가 모델을 다운로드해요. ‘빠름’은 약 33 MB, ‘최고 품질’은 약 100 MB이며, ‘최고 품질’은 다운로드를 시작하기 전에 먼저 물어봐요. 그다음부터는 브라우저에 저장돼요.",
+      },
+      {
+        title: "배경 선택 후 다운로드",
+        description: "투명하게 두고 PNG로 저장하거나, 단색을 골라 PNG나 JPG로 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "내 기기에서 실행되는 AI",
+        description: "모델이 브라우저 안에서 실행되므로 사진이 서버에 업로드되지 않아요.",
+      },
+      {
+        title: "고를 수 있는 두 가지 모델",
+        description: "‘빠름’은 빠르고 사람에게 가장 좋아요. ‘최고 품질’은 더 크고 느리지만 어떤 피사체든 더 좋은 결과를 내요.",
+      },
+      {
+        title: "한 번만 다운로드",
+        description: "각 모델은 처음 사용한 뒤 브라우저에 저장되며, 어떤 모델이 이미 다운로드됐는지 도구에 표시돼요.",
+      },
+      {
+        title: "투명 또는 색상 배경",
+        description: "투명 PNG로 저장하거나, 원하는 단색 위에 피사체를 놓으세요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "사진이 서버에 업로드되나요?",
+        answer:
+          "아니요. 브라우저로 다운로드되는 것은 AI 모델뿐이에요. 사진은 내 기기에서 처리되며 어디로도 전송되지 않아요.",
+      },
+      {
+        question: "‘빠름’과 ‘최고 품질’은 뭐가 다른가요?",
+        answer:
+          "‘빠름’은 더 작은 모델(약 33 MB)을 쓰고 사진 한 장에 약 5초 걸려요. 사람에게는 잘 맞지만 사물의 일부를 놓칠 수 있어요. ‘최고 품질’은 더 큰 모델(약 100 MB)을 쓰고 약 15~30초 걸리며, 제품, 반려동물, 사물, 사람에서 더 좋은 결과를 내요.",
+      },
+      {
+        question: "처음 사용할 때 더 오래 걸리는 이유는 뭔가요?",
+        answer:
+          "먼저 모델을 다운로드해야 해요. ‘최고 품질’은 100 MB 모델을 다운로드하기 전에 먼저 물어봐요. 처음 사용한 뒤에는 브라우저가 모델을 저장하므로 다음 사진부터는 훨씬 빨리 시작돼요.",
+      },
+      {
+        question: "iPhone과 Android 휴대폰에서도 되나요?",
+        answer:
+          "네. 휴대폰에서는 ‘빠름’이 가장 좋아요. ‘최고 품질’도 휴대폰에서 실행되지만, 큰 다운로드 용량과 긴 처리 시간이 더 크게 느껴지며 모바일 데이터에서는 특히 그래요.",
+      },
+      {
+        question: "피사체 뒤에 새 배경색을 넣을 수 있나요?",
+        answer:
+          "네. 단색을 고른 다음 PNG나 JPG로 저장하세요. 투명한 배경을 원하면 PNG로 저장하세요.",
+      },
+      {
+        question: "일부 가장자리가 완벽하지 않은 이유는 뭔가요?",
+        answer:
+          "가는 머리카락, 털, 유리, 배경과 색이 비슷한 피사체는 어떤 모델에게든 어려워요. ‘최고 품질’을 써 보거나, 피사체와 배경의 대비가 뚜렷한 사진을 쓰세요.",
+      },
+    ],
+  },
 };

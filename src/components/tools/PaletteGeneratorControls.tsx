@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Copy, Check, Palette, FileCode, Download } from 'lucide-react';
+import { useState } from 'react';
+import { Copy, Check, FileCode, Braces, Download } from 'lucide-react';
 import { downloadBlob, canvasToBlob } from '../../lib/canvas/engine';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   palette: string[];
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function PaletteGeneratorControls({ palette, colorCount, onCountChange }: Props) {
+  const t = useT();
   const [copiedHex, setCopiedHex] = useState<string | null>(null);
   const [copiedMsg, setCopiedMsg] = useState<string | null>(null);
 
@@ -21,13 +23,13 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
   const copyCssVars = () => {
     const css = `:root {\n` + palette.map((c, i) => `  --color-${i + 1}: ${c};`).join('\n') + `\n}`;
     navigator.clipboard.writeText(css);
-    setCopiedMsg('CSS Variables Copied!');
+    setCopiedMsg(t('ctl.palette.cssCopied'));
     setTimeout(() => setCopiedMsg(null), 1800);
   };
 
   const copyJson = () => {
     navigator.clipboard.writeText(JSON.stringify(palette, null, 2));
-    setCopiedMsg('JSON Array Copied!');
+    setCopiedMsg(t('ctl.palette.jsonCopied'));
     setTimeout(() => setCopiedMsg(null), 1800);
   };
 
@@ -66,24 +68,21 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
   };
 
   return (
-    <div className="space-y-4">
-      {/* Number of colors selector */}
-      <div className="flex items-center justify-between text-xs">
-        <label className="font-medium text-body flex items-center gap-1.5">
-          <Palette className="w-3.5 h-3.5 text-accent-blue" />
-          <span>Dominant Swatches</span>
-        </label>
-        <div className="flex items-center gap-1">
+    <div className="space-y-5">
+      {/* Number of colors */}
+      <div className="space-y-1.5">
+        <span className="slug block">{t('ctl.palette.count')}</span>
+        <div className="grid grid-cols-5 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.palette.count')}>
           {[3, 4, 5, 6, 8].map((num) => (
             <button
               key={num}
               type="button"
+              aria-pressed={colorCount === num}
               onClick={() => onCountChange(num)}
-              className={`w-7 py-1 rounded border text-xs font-mono transition-colors ${
-                colorCount === num
-                  ? 'bg-surface-card border-hairline-strong text-ink font-bold'
-                  : 'bg-surface-elevated border-hairline text-mute hover:text-ink'
+              className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                colorCount === num ? 'seg-on' : 'seg-off'
               }`}
+              data-measure
             >
               {num}
             </button>
@@ -91,67 +90,61 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
         </div>
       </div>
 
-      {/* Swatches Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        {palette.map((hex, idx) => (
-          <div
-            key={`${hex}-${idx}`}
-            className="p-2.5 bg-surface-card border border-hairline rounded-lg space-y-2 group hover:border-hairline-strong transition-all"
-          >
-            <div
-              className="w-full h-12 rounded-md border border-white/10 shadow-inner"
-              style={{ backgroundColor: hex }}
-            />
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-ink font-semibold">{hex}</span>
-              <button
-                type="button"
-                onClick={() => copyHex(hex)}
-                className="p-1 text-mute hover:text-ink rounded transition-colors"
-                title={`Copy ${hex}`}
-              >
-                {copiedHex === hex ? <Check className="w-3.5 h-3.5 text-accent-green" /> : <Copy className="w-3.5 h-3.5" />}
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Swatches */}
+      {palette.length > 0 && (
+        <div className="space-y-1.5 pt-4 border-t border-pencil">
+          <span className="slug block">{t('ctl.palette.swatches')}</span>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
+            {palette.map((hex, idx) => (
+              <li key={`${hex}-${idx}`} className="border border-ink bg-paper-bright">
+                <div className="h-12 border-b border-ink" style={{ backgroundColor: hex }} aria-hidden="true" />
+                <div className="flex items-center justify-between gap-1 pl-2.5">
+                  <span className="text-[14px] text-ink font-semibold" data-measure>{hex}</span>
+                  <button
+                    type="button"
+                    onClick={() => copyHex(hex)}
+                    aria-label={t('ctl.palette.copyHex', { hex })}
+                    title={t('ctl.palette.copyHex', { hex })}
+                    className="w-10 h-10 shrink-0 inline-flex items-center justify-center text-ink hover:bg-paper-stock transition-colors"
+                  >
+                    {copiedHex === hex ? <Check className="w-4 h-4 text-accent-green" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <span className="sr-only" aria-live="polite">
+            {copiedHex ? t('ctl.palette.copiedHex', { hex: copiedHex }) : ''}
+          </span>
+        </div>
+      )}
 
-      {/* Export Actions */}
-      <div className="space-y-2 pt-2 border-t border-hairline">
-        <div className="grid grid-cols-2 gap-2">
-          <button
-            type="button"
-            onClick={copyCssVars}
-            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
-          >
-            <FileCode className="w-3.5 h-3.5 text-accent-blue" />
-            <span>Copy CSS</span>
+      {/* Export */}
+      <div className="space-y-2 pt-4 border-t border-pencil">
+        <span className="slug block">{t('ctl.palette.export')}</span>
+        <div className="grid grid-cols-1 gap-2">
+          <button type="button" onClick={copyCssVars} className="btn-rule w-full text-[14px]">
+            <FileCode className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.palette.copyCss')}</span>
           </button>
-          <button
-            type="button"
-            onClick={copyJson}
-            className="py-2 px-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs text-body hover:text-ink flex items-center justify-center gap-1.5 transition-colors"
-          >
-            <Copy className="w-3.5 h-3.5 text-accent-green" />
-            <span>Copy JSON</span>
+          <button type="button" onClick={copyJson} className="btn-rule w-full text-[14px]">
+            <Braces className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.palette.copyJson')}</span>
+          </button>
+          <button type="button" onClick={downloadSwatchPng} className="btn-rule w-full text-[14px]">
+            <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span>{t('ctl.palette.downloadSheet')}</span>
           </button>
         </div>
 
-        <button
-          type="button"
-          onClick={downloadSwatchPng}
-          className="w-full py-2.5 bg-surface-card hover:bg-surface-elevated border border-hairline rounded-md text-xs font-medium text-ink flex items-center justify-center gap-1.5 transition-colors"
-        >
-          <Download className="w-3.5 h-3.5 text-accent-amber" />
-          <span>Download Palette Swatch Sheet (.PNG)</span>
-        </button>
-
-        {copiedMsg && (
-          <div className="p-2 bg-surface-card border border-hairline-strong rounded text-center text-xs font-semibold text-accent-green">
-            {copiedMsg}
-          </div>
-        )}
+        <p className="min-h-[20px] text-[14px] font-semibold text-accent-green flex items-center gap-1.5" aria-live="polite">
+          {copiedMsg && (
+            <>
+              <Check className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span>{copiedMsg}</span>
+            </>
+          )}
+        </p>
       </div>
     </div>
   );

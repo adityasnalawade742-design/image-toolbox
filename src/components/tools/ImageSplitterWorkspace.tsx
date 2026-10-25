@@ -1,55 +1,100 @@
-import React, { useState, useRef, useEffect } from 'react';
-import {
-  UploadCloud,
-  Grid,
-  Download,
-  Archive,
-  Sparkles,
-  Layers,
-  CheckCircle,
-} from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Grid3x3, Archive, Loader2, AlertCircle } from 'lucide-react';
 import JSZip from 'jszip';
+import { useImageIntake } from '../shared/useImageIntake';
+import { ProofDropZone } from '../shared/ProofDropZone';
+import { useT } from '../shared/I18nContext';
+import type { StringKey } from '../../i18n/strings';
 
 interface SplitPreset {
   id: string;
-  name: string;
+  nameKey: StringKey;
   rows: number;
   cols: number;
-  description: string;
 }
 
 const PRESETS: SplitPreset[] = [
-  { id: 'insta-3x3', name: 'Instagram 3×3 Grid', rows: 3, cols: 3, description: '9 Tiles for Instagram Profile Grid' },
-  { id: 'insta-3x1', name: 'Panorama 3×1', rows: 1, cols: 3, description: '3 Swipeable Carousel Slices' },
-  { id: 'insta-2x1', name: 'Carousel 2×1', rows: 1, cols: 2, description: '2 Swipeable Carousel Slices' },
-  { id: 'grid-2x2', name: '4-Square (2×2)', rows: 2, cols: 2, description: '4 Equal Quadrants' },
-  { id: 'custom', name: 'Custom Grid', rows: 2, cols: 3, description: 'Custom Row × Col Split' },
+  { id: 'insta-3x3', nameKey: 'ctl.split.presetInsta3x3', rows: 3, cols: 3 },
+  { id: 'insta-3x1', nameKey: 'ctl.split.presetPanorama', rows: 1, cols: 3 },
+  { id: 'insta-2x1', nameKey: 'ctl.split.presetCarousel', rows: 1, cols: 2 },
+  { id: 'grid-2x2', nameKey: 'ctl.split.presetQuad', rows: 2, cols: 2 },
+  { id: 'custom', nameKey: 'ctl.split.presetCustom', rows: 2, cols: 3 },
 ];
 
+const MAX_SPLIT = 12;
+
+type TileFormat = 'png' | 'jpeg';
+
+/** Parses a typed grid count; null while the field is empty or not a whole number in range */
+function parseCount(value: string): number | null {
+  if (!/^\d+$/.test(value.trim())) return null;
+  const n = parseInt(value, 10);
+  return n >= 1 && n <= MAX_SPLIT ? n : null;
+}
+
 export function ImageSplitterWorkspace() {
+  const t = useT();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgElement, setImgElement] = useState<HTMLImageElement | null>(null);
   const [activePreset, setActivePreset] = useState<string>('insta-3x3');
   const [rows, setRows] = useState<number>(3);
   const [cols, setCols] = useState<number>(3);
+  // What is in the number fields while typing; committed to rows/cols on a valid parse or blur
+  const [rowsInput, setRowsInput] = useState<string>('3');
+  const [colsInput, setColsInput] = useState<string>('3');
+  const [format, setFormat] = useState<TileFormat>('png');
   const [isZipping, setIsZipping] = useState<boolean>(false);
   const [zipProgress, setZipProgress] = useState<number>(0);
+  const [zipError, setZipError] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = (file: File) => {
     if (!file.type.startsWith('image/')) return;
     setSelectedFile(file);
+    setZipError(null);
 
     const img = new Image();
     img.onload = () => setImgElement(img);
     img.src = URL.createObjectURL(file);
   };
 
+  // Images handed off from other tools / the homepage, and Ctrl+V paste
+  useImageIntake(handleFileSelect);
+
   const handlePresetSelect = (preset: SplitPreset) => {
     setActivePreset(preset.id);
     setRows(preset.rows);
     setCols(preset.cols);
+    setRowsInput(String(preset.rows));
+    setColsInput(String(preset.cols));
+  };
+
+  const handleCountChange = (axis: 'rows' | 'cols', value: string) => {
+    const setInput = axis === 'rows' ? setRowsInput : setColsInput;
+    const setCount = axis === 'rows' ? setRows : setCols;
+    setInput(value);
+    const parsed = parseCount(value);
+    if (parsed !== null) {
+      setActivePreset('custom');
+      setCount(parsed);
+    }
+  };
+
+  const handleCountBlur = (axis: 'rows' | 'cols') => {
+    const input = axis === 'rows' ? rowsInput : colsInput;
+    const current = axis === 'rows' ? rows : cols;
+    const setInput = axis === 'rows' ? setRowsInput : setColsInput;
+    const setCount = axis === 'rows' ? setRows : setCols;
+    const n = parseInt(input, 10);
+    if (Number.isFinite(n)) {
+      const clamped = Math.max(1, Math.min(MAX_SPLIT, n));
+      if (clamped !== current) setActivePreset('custom');
+      setCount(clamped);
+      setInput(String(clamped));
+    } else {
+      setInput(String(current));
+    }
   };
 
   // Extract individual slice as a canvas with exact pixel boundary coverage
@@ -89,7 +134,7 @@ export function ImageSplitterWorkspace() {
   };
 
   // Download a single slice
-  const downloadSingleSlice = (r: number, c: number, index: number, format: 'png' | 'jpeg' = 'png') => {
+  const downloadSingleSlice = (r: number, c: number, index: number, format: TileFormat = 'png') => {
     const canvas = getSliceCanvas(r, c);
     const link = document.createElement('a');
     link.download = `tile-${index + 1}-${r + 1}x${c + 1}.${format === 'jpeg' ? 'jpg' : format}`;
@@ -98,43 +143,47 @@ export function ImageSplitterWorkspace() {
   };
 
   // Download all slices as ZIP
-  const downloadAllZip = async (format: 'png' | 'jpeg' = 'png') => {
+  const downloadAllZip = async (format: TileFormat = 'png') => {
     if (!imgElement) return;
     setIsZipping(true);
+    setZipError(null);
     setZipProgress(10);
 
-    const zip = new JSZip();
-    const totalTiles = rows * cols;
-    let completed = 0;
+    try {
+      const zip = new JSZip();
+      const totalTiles = rows * cols;
+      let completed = 0;
 
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        const tileIndex = r * cols + c + 1;
-        const canvas = getSliceCanvas(r, c);
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const tileIndex = r * cols + c + 1;
+          const canvas = getSliceCanvas(r, c);
 
-        const dataUrl = canvas.toDataURL(`image/${format}`, 0.95);
-        const base64Data = dataUrl.split(',')[1];
-        zip.file(`tile_${String(tileIndex).padStart(2, '0')}.${format === 'jpeg' ? 'jpg' : format}`, base64Data, {
-          base64: true,
-        });
+          const dataUrl = canvas.toDataURL(`image/${format}`, 0.95);
+          const base64Data = dataUrl.split(',')[1];
+          zip.file(`tile_${String(tileIndex).padStart(2, '0')}.${format === 'jpeg' ? 'jpg' : format}`, base64Data, {
+            base64: true,
+          });
 
-        completed++;
-        setZipProgress(Math.round((completed / totalTiles) * 80));
+          completed++;
+          setZipProgress(Math.round((completed / totalTiles) * 80));
+        }
       }
-    }
 
-    setZipProgress(90);
-    const content = await zip.generateAsync({ type: 'blob' });
-    const link = document.createElement('a');
-    link.download = `split-grid-${rows}x${cols}-${Date.now()}.zip`;
-    link.href = URL.createObjectURL(content);
-    link.click();
-
-    setZipProgress(100);
-    setTimeout(() => {
+      setZipProgress(90);
+      const content = await zip.generateAsync({ type: 'blob' });
+      const link = document.createElement('a');
+      link.download = `split-grid-${rows}x${cols}-${Date.now()}.zip`;
+      link.href = URL.createObjectURL(content);
+      link.click();
+      setZipProgress(100);
+    } catch (err) {
+      console.error('ZIP export failed:', err);
+      setZipError(t('ctl.split.errZip'));
+    } finally {
       setIsZipping(false);
       setZipProgress(0);
-    }, 1000);
+    }
   };
 
   const totalTiles = rows * cols;
@@ -142,64 +191,44 @@ export function ImageSplitterWorkspace() {
   const imgH = imgElement?.naturalHeight || imgElement?.height || 1;
   const tileW = Math.floor(imgW / cols);
   const tileH = Math.floor(imgH / rows);
+  const loaded = Boolean(selectedFile && imgElement);
+
+  const primaryContent = (
+    <>
+      {isZipping ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Archive className="w-5 h-5" aria-hidden="true" />}
+      <span>{isZipping ? t('ctl.split.zipping', { percent: zipProgress }) : t('ctl.split.downloadAll', { count: totalTiles })}</span>
+    </>
+  );
+
+  const numberInputClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6">
-      {!selectedFile && (
-        <div
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files?.[0]) handleFileSelect(e.dataTransfer.files[0]);
-          }}
-          onClick={() => fileInputRef.current?.click()}
-          className="border-2 border-dashed border-gray-700 hover:border-primary-500 rounded-2xl p-12 text-center cursor-pointer transition-all duration-200 bg-gray-900/50 hover:bg-gray-800/50 group"
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && handleFileSelect(e.target.files[0])}
-          />
-          <div className="w-16 h-16 rounded-full bg-primary-950/60 text-primary-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            <Grid className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-2">Upload Photo to Split & Cut Grid</h3>
-          <p className="text-gray-400 text-sm max-w-md mx-auto mb-4">
-            Drag & drop your photo or paste from clipboard (Ctrl+V) to slice into Instagram 3×3 profile grids, swipeable panorama carousels, or custom rows & columns.
-          </p>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800 text-xs text-gray-300 border border-gray-700">
-            <Archive className="w-4 h-4 text-emerald-400" />
-            <span>1-Click Batch ZIP Download with Zero Quality Loss</span>
-          </div>
-        </div>
-      )}
+    <div className={`w-full max-w-6xl mx-auto space-y-6 ${loaded ? 'pb-20 lg:pb-0' : ''}`}>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
+          e.target.value = '';
+        }}
+      />
+
+      {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
       {selectedFile && imgElement && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-          {/* Interactive Grid Overlay Preview (Order 1 on mobile, Order 2 on desktop) */}
-          <div className="lg:col-span-2 space-y-4 order-1 lg:order-2">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4 min-h-[360px] sm:min-h-[480px] flex flex-col items-center justify-center">
-              <div className="w-full flex justify-between items-center text-xs text-gray-400 mb-3">
-                <span>Interactive Grid Preview (Tap/Click any tile to download)</span>
-                <span className="font-mono text-primary-300 font-semibold">{totalTiles} Total Tiles</span>
-              </div>
-
-              <div
-                className="relative max-h-[65vh] w-auto max-w-full rounded-xl overflow-hidden shadow-2xl border border-gray-800 group"
-                style={{
-                  aspectRatio: `${imgW} / ${imgH}`,
-                }}
-              >
-                {/* Background Image */}
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
+          {/* Proof sheet with the cut grid */}
+          <div className="min-w-0 space-y-3">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+              <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
                 <img
                   src={imgElement.src}
-                  alt="Original Grid Preview"
-                  className="w-full h-full object-cover pointer-events-none"
+                  alt={t('ctl.split.previewAlt')}
+                  className="block max-w-full max-h-[65vh] w-auto h-auto pointer-events-none select-none"
                 />
 
-                {/* Grid Overlay Matrix */}
                 <div
                   className="absolute inset-0 grid"
                   style={{
@@ -211,138 +240,190 @@ export function ImageSplitterWorkspace() {
                     Array.from({ length: cols }).map((_, c) => {
                       const tileNum = r * cols + c + 1;
                       return (
-                        <div
+                        <button
                           key={`${r}-${c}`}
-                          onClick={() => downloadSingleSlice(r, c, tileNum - 1, 'png')}
-                          title={`Click to download Tile #${tileNum}`}
-                          className="border border-white/40 hover:border-primary-400 hover:bg-primary-500/20 transition-all cursor-pointer relative flex items-center justify-center group/tile"
+                          type="button"
+                          onClick={() => downloadSingleSlice(r, c, tileNum - 1, format)}
+                          aria-label={t('ctl.split.downloadTile', { row: r + 1, col: c + 1 })}
+                          title={t('ctl.split.downloadTile', { row: r + 1, col: c + 1 })}
+                          className="relative flex items-center justify-center border border-process-magenta/80 hover:bg-process-key/20 focus-visible:bg-process-key/20 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-process-magenta transition-colors"
                         >
-                          <span className="w-7 h-7 rounded-full bg-black/75 backdrop-blur-md text-white text-xs font-bold flex items-center justify-center shadow-lg border border-white/20 group-hover/tile:scale-110 group-hover/tile:bg-primary-600 transition-all">
+                          <span
+                            className="inline-flex items-center justify-center min-w-[24px] h-6 px-1 bg-process-key text-paper text-[12px] font-semibold"
+                            data-measure
+                            aria-hidden="true"
+                          >
                             {tileNum}
                           </span>
-                        </div>
+                        </button>
                       );
                     })
                   )}
                 </div>
               </div>
             </div>
+
+            {/* Job ticket */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ws.source')}</span>
+                <span className="text-ink font-semibold">{imgW} × {imgH} px</span>
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="slug">{t('ctl.split.tile')}</span>
+                <span className="text-ink font-semibold">≈ {tileW} × {tileH} px</span>
+                <span className="text-graphite">{t('ctl.split.tileCount', { count: totalTiles })}</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+              >
+                {t('ws.replace')}
+              </button>
+            </div>
+            <p className="text-[14px] text-graphite">{t('ctl.split.tapHint')}</p>
           </div>
 
-          {/* Controls Sidebar (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="lg:col-span-1 space-y-5 bg-gray-900 border border-gray-800 rounded-2xl p-5 order-2 lg:order-1">
-            <div>
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Grid className="w-4 h-4 text-primary-400" />
-                <span>Split Configuration</span>
-              </h3>
-              <p className="text-xs text-gray-400 mt-1">
-                Original: {imgW}×{imgH}px • Each Tile: ~{tileW}×{tileH}px
-              </p>
+          {/* Ruled control panel */}
+          <div className="space-y-5 lg:sticky lg:top-24">
+            <div className="border border-ink bg-paper-bright">
+              <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
+                <Grid3x3 className="w-4 h-4 text-ink" aria-hidden="true" />
+                {t('ctl.split.settings')}
+              </h2>
+              <div className="p-4 space-y-4 text-[15px]">
+                {/* Presets */}
+                <div className="space-y-1.5">
+                  <span className="slug">{t('ctl.split.presets')}</span>
+                  <div className="grid border border-ink divide-y divide-ink" role="group" aria-label={t('ctl.split.presets')}>
+                    {PRESETS.map((p) => {
+                      const selected = activePreset === p.id;
+                      return (
+                        <button
+                          key={p.id}
+                          type="button"
+                          aria-pressed={selected}
+                          onClick={() => handlePresetSelect(p)}
+                          className={`min-h-[40px] px-3 flex items-center justify-between gap-3 text-left text-[14px] font-semibold transition-colors ${
+                            selected ? 'seg-on' : 'seg-off'
+                          }`}
+                        >
+                          <span>{t(p.nameKey)}</span>
+                          <span className={selected ? 'text-paper' : 'text-graphite'} data-measure>
+                            {p.rows} × {p.cols}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Custom rows & columns */}
+                <div className="space-y-1.5 pt-4 border-t border-ink">
+                  <span className="slug">{t('ctl.split.grid')}</span>
+                  <div className="grid grid-cols-2 gap-3">
+                    <label className="block space-y-1">
+                      <span className="text-[14px] text-ink">{t('ctl.split.rows')}</span>
+                      <input
+                        type="number"
+                        inputMode="numeric"
+                        min="1"
+                        max={MAX_SPLIT}
+                        value={rowsInput}
+                        onChange={(e) => handleCountChange('rows', e.target.value)}
+                        onBlur={() => handleCountBlur('rows')}
+                        className={numberInputClass}
+                        data-measure
+                      />
+                    </label>
+                    <label className="block space-y-1">
+                      <span className="text-[14px] text-ink">{t('ctl.split.cols')}</span>
+                      <input
+                        type="number"
+                        inputMode="numeric"
+                        min="1"
+                        max={MAX_SPLIT}
+                        value={colsInput}
+                        onChange={(e) => handleCountChange('cols', e.target.value)}
+                        onBlur={() => handleCountBlur('cols')}
+                        className={numberInputClass}
+                        data-measure
+                      />
+                    </label>
+                  </div>
+                  <p className="text-[13px] text-graphite">{t('ctl.split.gridLimit')}</p>
+                </div>
+
+                {/* Tile format */}
+                <div className="space-y-1.5 pt-4 border-t border-ink">
+                  <span className="slug">{t('ctl.split.saveAs')}</span>
+                  <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.split.tileFormat')}>
+                    {(['png', 'jpeg'] as const).map((fmt) => (
+                      <button
+                        key={fmt}
+                        type="button"
+                        aria-pressed={format === fmt}
+                        onClick={() => setFormat(fmt)}
+                        className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                          format === fmt ? 'seg-on' : 'seg-off'
+                        }`}
+                      >
+                        {fmt === 'jpeg' ? 'JPG' : 'PNG'}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Presets Grid */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">
-                Social Presets
-              </label>
-              <div className="grid grid-cols-1 gap-2">
-                {PRESETS.map((p) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    onClick={() => handlePresetSelect(p)}
-                    className={`p-3 rounded-xl border text-left transition-all ${
-                      activePreset === p.id
-                        ? 'border-primary-500 bg-primary-950/60 text-white shadow-md'
-                        : 'border-gray-800 bg-gray-800/40 text-gray-400 hover:text-gray-200'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-sm text-gray-200">{p.name}</span>
-                      <span className="text-xs font-mono text-primary-400 font-semibold bg-primary-950 px-2 py-0.5 rounded border border-primary-800/50">
-                        {p.rows}×{p.cols}
-                      </span>
-                    </div>
-                    <p className="text-xs text-gray-400 mt-1">{p.description}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Custom Rows & Cols */}
-            <div className="grid grid-cols-2 gap-3 pt-2 border-t border-gray-800">
-              <div>
-                <label className="text-xs font-semibold text-gray-400 block mb-1">Rows (Horizontal)</label>
-                <input
-                  type="number"
-                  min="1"
-                  max="12"
-                  value={rows}
-                  onChange={(e) => {
-                    setActivePreset('custom');
-                    setRows(Math.max(1, Math.min(12, Number(e.target.value) || 1)));
-                  }}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-primary-500"
-                />
+              <div className="hidden lg:block">
+                <button
+                  type="button"
+                  disabled={isZipping}
+                  onClick={() => downloadAllZip(format)}
+                  className="btn-ink w-full min-h-[52px] text-[16px]"
+                >
+                  {primaryContent}
+                </button>
               </div>
 
-              <div>
-                <label className="text-xs font-semibold text-gray-400 block mb-1">Columns (Vertical)</label>
-                <input
-                  type="number"
-                  min="1"
-                  max="12"
-                  value={cols}
-                  onChange={(e) => {
-                    setActivePreset('custom');
-                    setCols(Math.max(1, Math.min(12, Number(e.target.value) || 1)));
-                  }}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-primary-500"
-                />
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="pt-4 border-t border-gray-800 space-y-2">
-              <button
-                type="button"
-                disabled={isZipping}
-                onClick={() => downloadAllZip('png')}
-                className="w-full py-3.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-950/50 transition-all cursor-pointer text-sm"
-              >
-                <Archive className="w-4 h-4" />
-                <span>Download All {totalTiles} Tiles (ZIP)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedFile(null);
-                  setImgElement(null);
-                }}
-                className="w-full py-2.5 px-4 rounded-xl bg-transparent hover:bg-gray-800 text-gray-400 hover:text-gray-200 text-xs font-medium transition-all cursor-pointer"
-              >
-                Choose Different Photo
-              </button>
-            </div>
-
-            {/* Progress Bar */}
-            {isZipping && (
-              <div className="p-4 rounded-xl bg-gray-950 border border-gray-800 space-y-2">
-                <div className="flex justify-between text-xs text-gray-300">
-                  <span>Compressing {totalTiles} tiles into ZIP archive...</span>
-                  <span className="font-mono text-primary-400 font-bold">{zipProgress}%</span>
+              {isZipping && (
+                <div
+                  className="h-1.5 w-full border border-ink bg-paper-stock"
+                  role="progressbar"
+                  aria-label={t('ctl.split.zipProgress')}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={zipProgress}
+                >
+                  <div className="h-full bg-process-key transition-[width] duration-150" style={{ width: `${zipProgress}%` }} />
                 </div>
-                <div className="w-full h-2 rounded-full bg-gray-800 overflow-hidden">
-                  <div
-                    className="h-full bg-primary-500 transition-all duration-150"
-                    style={{ width: `${zipProgress}%` }}
-                  />
-                </div>
-              </div>
-            )}
+              )}
+
+              {zipError && (
+                <p role="alert" className="flex items-start gap-1.5 text-[14px] text-accent-red leading-relaxed">
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{zipError}</span>
+                </p>
+              )}
+            </div>
           </div>
+        </div>
+      )}
+
+      {/* Phones: the primary action stays under the thumb */}
+      {loaded && (
+        <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 bg-paper border-t border-ink px-4 py-3">
+          <button
+            type="button"
+            disabled={isZipping}
+            onClick={() => downloadAllZip(format)}
+            className="btn-ink w-full min-h-[48px] text-[16px]"
+          >
+            {primaryContent}
+          </button>
         </div>
       )}
     </div>

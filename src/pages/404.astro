@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { TOOLS } from '../config/tools';
+
+const popular = TOOLS.filter((t) => t.popular).slice(0, 6);
+---
+
+<BaseLayout title="Page not found — Image Toolbox" description="This page doesn't exist. Browse all free in-browser image tools.">
+  <meta slot="head" name="robots" content="noindex" />
+  <section class="max-w-xl mx-auto text-center space-y-6 py-16">
+    <p class="font-mono text-sm text-mute">404</p>
+    <h1 class="text-3xl sm:text-4xl font-semibold text-ink tracking-tight">This page doesn't exist</h1>
+    <p class="text-sm text-mute leading-relaxed">
+      The link may be old or mistyped. Every tool still runs in your browser — pick one below or go back home.
+    </p>
+    <div class="flex flex-wrap justify-center gap-2">
+      {popular.map((t) => (
+        <a
+          href={`/${t.slug}`}
+          class="px-3 py-1.5 rounded-md border border-hairline bg-surface-card text-sm text-body hover:text-ink hover:border-hairline-strong transition-colors"
+        >
+          {t.name}
+        </a>
+      ))}
+    </div>
+    <a href="/" class="inline-block text-sm text-accent-blue hover:underline">← All tools</a>
+  </section>
+</BaseLayout>

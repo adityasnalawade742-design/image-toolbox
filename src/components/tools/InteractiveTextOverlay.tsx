@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Move } from 'lucide-react';
 import type { TextOverlayOptions } from '../../lib/canvas/engine';
+import { useT } from '../shared/I18nContext';
 
 interface Props {
   canvasElement: HTMLCanvasElement | null;
@@ -9,7 +10,10 @@ interface Props {
 }
 
 export function InteractiveTextOverlay({ canvasElement, options, onChange }: Props) {
+  const t = useT();
   const containerRef = useRef<HTMLDivElement>(null);
+  // Pointer position relative to the text anchor when the drag started, so the text doesn't jump
+  const grabOffsetRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dims, setDims] = useState<{ width: number; height: number; left: number; top: number } | null>(null);
 
@@ -44,30 +48,49 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
     return null;
   }
 
-  // Calculate percentage positions
-  let xPct = options.customXPercent ?? 50;
-  let yPct = 50;
-  if (options.position === 'top') yPct = 15;
-  else if (options.position === 'bottom') yPct = 85;
-  else if (options.position === 'custom' && options.customYPercent !== undefined) yPct = options.customYPercent;
+  // Mirror the engine's text placement (src/lib/canvas/engine.ts, text overlay) in canvas pixels:
+  // fixed positions sit 30px from the edges and the anchor is the first line's centre.
+  const canvasW = canvasElement?.width || dims.width;
+  const canvasH = canvasElement?.height || dims.height;
+  const lineHeight = options.fontSize * 1.25;
+  const totalTextHeight = options.text.split('\n').length * lineHeight;
+  const isCustom = options.position === 'custom';
 
-  if (options.position !== 'custom' && options.customXPercent === undefined) {
-    if (options.textAlign === 'left') xPct = 15;
-    else if (options.textAlign === 'right') xPct = 85;
-  }
+  let anchorY: number;
+  if (options.position === 'top') anchorY = 30 + lineHeight / 2;
+  else if (options.position === 'bottom') anchorY = canvasH - 30 - totalTextHeight + lineHeight / 2;
+  else if (isCustom && options.customYPercent !== undefined) anchorY = (canvasH * options.customYPercent) / 100;
+  else anchorY = (canvasH - totalTextHeight) / 2 + lineHeight / 2;
+
+  let anchorX = canvasW / 2;
+  if (isCustom && options.customXPercent !== undefined) anchorX = (canvasW * options.customXPercent) / 100;
+  else if (options.textAlign === 'left') anchorX = 30;
+  else if (options.textAlign === 'right') anchorX = canvasW - 30;
+
+  const xPct = Math.round((anchorX / canvasW) * 100);
+  const yPct = Math.round((anchorY / canvasH) * 100);
+  // The engine aligns text to the anchor, so the handle does too
+  const alignShift = options.textAlign === 'left' ? 'translate-x-0' : options.textAlign === 'right' ? '-translate-x-full' : '-translate-x-1/2';
+
+  const leftPx = (anchorX / canvasW) * dims.width;
+  const topPx = (anchorY / canvasH) * dims.height;
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     e.stopPropagation();
     e.preventDefault();
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    e.currentTarget.setPointerCapture(e.pointerId);
+    if (canvasElement) {
+      const rect = canvasElement.getBoundingClientRect();
+      grabOffsetRef.current = { x: e.clientX - rect.left - leftPx, y: e.clientY - rect.top - topPx };
+    }
     setIsDragging(true);
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isDragging || !canvasElement) return;
     const rect = canvasElement.getBoundingClientRect();
-    const clampedX = Math.max(5, Math.min(rect.width - 5, e.clientX - rect.left));
-    const clampedY = Math.max(5, Math.min(rect.height - 5, e.clientY - rect.top));
+    const clampedX = Math.max(5, Math.min(rect.width - 5, e.clientX - rect.left - grabOffsetRef.current.x));
+    const clampedY = Math.max(5, Math.min(rect.height - 5, e.clientY - rect.top - grabOffsetRef.current.y));
 
     const newXPct = Math.round((clampedX / rect.width) * 100);
     const newYPct = Math.round((clampedY / rect.height) * 100);
@@ -82,15 +105,12 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     try {
-      (e.target as HTMLElement).releasePointerCapture(e.pointerId);
+      e.currentTarget.releasePointerCapture(e.pointerId);
     } catch {
       // Ignored
     }
     setIsDragging(false);
   };
-
-  const leftPx = (dims.width * xPct) / 100;
-  const topPx = (dims.height * yPct) / 100;
 
   return (
     <div
@@ -103,39 +123,37 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
         height: `${dims.height}px`,
       }}
     >
-      {/* Draggable Text Bounding Box */}
+      {/* Draggable handle, anchored where the engine draws the first line */}
       <div
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
-        className={`absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-move group transition-shadow ${
-          isDragging ? 'scale-[1.02] shadow-2xl' : ''
-        }`}
+        aria-label={t('ctl.textOverlay.handle')}
+        title={t('ctl.textOverlay.hint')}
+        className={`absolute ${alignShift} -translate-y-1/2 pointer-events-auto cursor-move touch-none group`}
         style={{
           left: `${leftPx}px`,
           top: `${topPx}px`,
         }}
       >
         <div
-          className={`p-2.5 rounded-lg border-2 border-dashed transition-all flex items-center gap-2 ${
-            isDragging
-              ? 'border-primary-400 bg-primary-500/20'
-              : 'border-white/60 hover:border-primary-400 bg-black/40 hover:bg-black/60 backdrop-blur-sm'
+          className={`min-h-[40px] px-2.5 py-1.5 border border-ink flex items-center gap-2 transition-colors ${
+            isDragging ? 'seg-on' : 'seg-off'
           }`}
         >
-          <Move className="w-3.5 h-3.5 text-primary-400 shrink-0 animate-pulse" />
-          <span className="text-[11px] font-semibold text-white tracking-wide whitespace-nowrap drop-shadow-md select-none">
-            {options.text.length > 28 ? `${options.text.slice(0, 28)}...` : options.text}
+          <Move className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <span className="text-[13px] font-semibold whitespace-nowrap select-none">
+            {options.text.length > 28 ? `${options.text.slice(0, 28)}…` : options.text}
           </span>
-          <span className="text-[9px] font-mono text-white/70 bg-black/60 px-1.5 py-0.5 rounded ml-1">
+          <span className={`text-[12px] whitespace-nowrap ${isDragging ? 'text-paper' : 'text-graphite'}`} data-measure>
             {xPct}%, {yPct}%
           </span>
         </div>
 
-        {/* Floating Hint */}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-black/90 text-white text-[10px] font-medium px-2 py-0.5 rounded shadow-lg">
-          Click & Drag to reposition text
+        {/* Hover hint */}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-process-key text-paper text-[12px] font-medium px-2 py-0.5">
+          {t('ctl.textOverlay.hint')}
         </div>
       </div>
     </div>

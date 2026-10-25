@@ -2,1575 +2,2606 @@ import type { LocalizedToolItem } from '../types';
 
 export const jaTools: Record<string, LocalizedToolItem> = {
   "crop-image": {
-    "name": "画像を切り抜き・トリミング",
-    "shortName": "画像を切り抜き・トリミング",
-    "tagline": "画像を切り抜き・トリミング — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像を切り抜き・トリミング — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像を切り抜き・トリミング online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "crop-image",
-      "画像を切り抜き・トリミング",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の切り抜き",
+    shortName: "切り抜き",
+    tagline: "ドラッグ操作、正確なピクセル指定、定番の縦横比で、写真の必要な部分だけを切り抜けます。",
+    intro:
+      "画像の切り抜きは、選んだ範囲だけを元の解像度のまま保存するツールです。余白を取り除いたり、被写体をきれいに収めたり、SNS投稿に必要な形に合わせたりするのに使えます。自由な切り抜きに加えて、1:1、4:5、9:16、16:9などの比率プリセット、ピクセル単位の入力、プロフィール写真向けの円形モードも用意しています。",
+    seoTitle: "画像 切り抜き・トリミング – 無料、アップロード不要",
+    seoDescription:
+      "画像の切り抜き・トリミングを無料でオンライン実行。枠をドラッグするかピクセルで指定し、1:1・4:5・16:9・9:16のプリセットも使えます。JPG、PNG、WebP、AVIFで保存。アップロード不要。",
+    keywords: [
+      "画像 切り抜き",
+      "画像 トリミング",
+      "写真 トリミング オンライン",
+      "画像 正方形 切り抜き",
+      "インスタ 画像 トリミング",
+      "画像 16:9 トリミング",
+      "画像 丸く 切り抜き",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "写真を追加する",
+        description:
+          "アップロード欄に画像をドロップするか、クリックしてファイルを選ぶか、Ctrl+Vで貼り付けます。JPG、PNG、WebP、AVIF、GIF、iPhoneのHEICファイルに対応しています。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "切り抜く範囲を選ぶ",
+        description:
+          "プレビュー上で枠とハンドルをドラッグするか、「1:1 正方形」「9:16 ストーリー」などの比率やSNS向けプリセットをクリックします。正確に指定したい場合は、X位置、Y位置、幅、高さをピクセルで入力します。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "形と形式を選ぶ",
+        description:
+          "丸く切り抜く場合は「円形／アバター（1:1）」に切り替えます。初期設定では元のファイル形式のまま保存されますが、「保存形式」でJPG、PNG、WebP、AVIFを選ぶこともできます。",
+      },
+      {
+        title: "切り抜いた画像をダウンロードする",
+        description:
+          "「ダウンロード」をクリックすると、選んだ範囲だけが元の解像度で保存されます。クリップボードにコピーすることもできます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "比率とSNS向けプリセット",
+        description:
+          "元の比率、1:1、4:3、16:9、9:16、2:3、3:2、21:9に加え、Instagramの縦長投稿（4:5）、リールやTikTok、YouTubeのサムネイル、Pinterestのピンに合う形も選べます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "ピクセル単位の入力",
+        description:
+          "位置、幅、高さをピクセルで入力でき、必要なら比率を固定できます。保存前に最終的な出力サイズも確認できます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "アイコン向けの円形切り抜き",
+        description:
+          "円形モードでは枠が正方形に固定され、丸い画像を切り抜けます。四隅を透明にしたい場合はPNGかWebPで保存してください。",
+      },
+      {
+        title: "元のピクセルから切り抜き",
+        description:
+          "プレビューは表示を速くするため縮小されることがありますが、ダウンロードするファイルは端末上の元の解像度の写真から切り抜かれます。何もアップロードされません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像を切り抜き・トリミング tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "切り抜くと画質は落ちますか？",
+        answer:
+          "切り抜きは枠の外のピクセルを取り除くだけなので、残った部分の鮮明さは変わりません。ただしJPG、WebP、AVIFで保存すると再圧縮されるため、元に近い画質を保つには画質を90%以上にするか、PNGで保存してください。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Instagram用に写真を正方形に切り抜くには？",
+        answer:
+          "「1:1 正方形」または「Instagram（1:1）」をクリックし、残したい部分に枠をドラッグします。縦長の投稿にしたい場合は「インスタ縦長（4:5）」を使ってください。",
+      },
+      {
+        question: "丸いプロフィール写真を作るには？",
+        answer:
+          "「円形／アバター（1:1）」を選び、円を顔の位置に合わせて、PNGかWebPで保存します。JPGは透明部分を保存できないため、円の外側は白で塗りつぶされます。",
+      },
+      {
+        question: "iPhoneのHEIC写真も切り抜けますか？",
+        answer:
+          "はい。HEICファイルは開いた時点でブラウザ内で変換されます。切り抜いた結果は初期設定ではJPGで保存され、PNG、WebP、AVIFに切り替えることもできます。",
+      },
+      {
+        question: "切り抜いた後もEXIFデータは残りますか？",
+        answer:
+          "いいえ。新しいファイルは画像のピクセルだけから作られるため、元の写真のカメラ情報やGPS位置情報はコピーされません。",
+      },
+      {
+        question: "アニメーションGIFは切り抜けますか？",
+        answer:
+          "GIFを開くことはできますが、このツールではJPG、PNG、WebP、AVIFをアニメーションなしで保存するため、結果は1枚の静止画になります。",
+      },
+    ],
   },
   "resize-image": {
-    "name": "画像サイズ変更・リサイズ",
-    "shortName": "画像サイズ変更・リサイズ",
-    "tagline": "画像サイズ変更・リサイズ — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像サイズ変更・リサイズ — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像サイズ変更・リサイズ online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "resize-image",
-      "画像サイズ変更・リサイズ",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像のリサイズ",
+    shortName: "リサイズ",
+    tagline: "画像の幅と高さをピクセルまたはパーセントで変更できます。縦横比は固定も自由も選べます。",
+    intro:
+      "画像のリサイズは、写真やイラストのピクセルサイズを変更するツールです。カメラで撮った大きな写真をメールやWebサイト向けに小さくしたり、1080 × 1080のような決まったサイズに合わせたりできます。幅と高さを入力するか、10%から300%の範囲で倍率を指定でき、「拡大しない」オプションを使えば誤って画像を拡大してしまうのを防げます。",
+    seoTitle: "画像 リサイズ – ピクセル・パーセントでサイズ変更",
+    seoDescription:
+      "画像のサイズ変更を無料でオンライン実行。幅と高さをピクセルで正確に入力するか、パーセントで拡大・縮小できます。縦横比を保ったまま、JPG、PNG、WebP、AVIFで保存できます。",
+    keywords: [
+      "画像 リサイズ",
+      "画像 サイズ変更",
+      "画像 サイズ変更 ピクセル",
+      "画像 縮小 オンライン",
+      "画像 1080x1080 リサイズ",
+      "写真 サイズ 小さくする",
+      "画像 拡大 縮小 パーセント",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、AVIF、iPhoneのHEIC画像をドロップ、選択、または貼り付け（Ctrl+V）します。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "新しいサイズを設定する",
+        description:
+          "ピクセルモードでは幅か高さを入力します。「縦横比を維持」がオンなら、もう一方の値は自動で更新されます。パーセントモードでは、スライダーか25%〜200%のボタンを使います。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "ファイル形式を選ぶ",
+        description:
+          "初期設定では元の形式のまま保存されます。JPG、PNG、WebP、AVIFに切り替えることができ、JPG、WebP、AVIFでは画質も設定できます。",
+      },
+      {
+        title: "結果をダウンロードする",
+        description:
+          "「ダウンロード」をクリックしてリサイズした画像を保存します。ファイルサイズも小さくしたい場合は、そのまま「圧縮」に送れます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "ピクセルまたはパーセント",
+        description: "最大10,000ピクセルまで正確なサイズを入力するか、画像全体を10%〜300%の倍率で拡大・縮小できます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "縦横比の固定",
+        description:
+          "元の比率を保って画像が引き伸ばされないようにするか、固定を外して幅と高さを別々に設定できます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "拡大を防止",
+        description:
+          "サイズを元の大きさまでに制限するので、小さな画像をうっかり拡大してぼやけさせることがありません。",
+      },
+      {
+        title: "ファイル形式はそのまま",
+        description: "別の形式を選ばない限り、JPGはJPG、PNGはPNGのまま保存されます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像サイズ変更・リサイズ tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "画質を落とさずにリサイズするには？",
+        answer:
+          "画像を小さくする場合は鮮明さが保たれます。元より大きくすると細部は増やせないため、ぼやけて見えます。これを避けるには「拡大しない」をオンにしてください。PNGで保存するか、JPGやWebPなら画質を90%以上にしてください。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "リサイズするとファイルサイズは小さくなりますか？",
+        answer:
+          "通常は小さくなります。幅と高さを半分にするとピクセル数は約4分の1になるため、ファイルはかなり小さくなります。さらに小さくしたい場合は、リサイズ後に圧縮してください。",
+      },
+      {
+        question: "1080 × 1080のような決まったサイズにできますか？",
+        answer:
+          "はい。「縦横比を維持」をオフにして、両方の数値を入力します。元の画像が正方形でない場合は引き伸ばされるので、先に1:1で切り抜いてからリサイズしてください。",
+      },
+      {
+        question: "複数の画像をまとめてリサイズできますか？",
+        answer:
+          "このページでは1枚ずつリサイズします。最大50枚を一度にリサイズしてZIPでダウンロードするには、「画像の一括リサイズ」をご利用ください。",
+      },
+      {
+        question: "iPhoneの写真もリサイズできますか？",
+        answer:
+          "はい。HEIC写真はブラウザ内で変換され、リサイズした画像は初期設定ではJPGで保存されます。",
+      },
+    ],
   },
   "compress-image": {
-    "name": "画像圧縮・軽量化",
-    "shortName": "画像圧縮・軽量化",
-    "tagline": "画像圧縮・軽量化 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像圧縮・軽量化 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像圧縮・軽量化 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "compress-image",
-      "画像圧縮・軽量化",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の圧縮",
+    shortName: "圧縮",
+    tagline: "形式と画質を選んで画像ファイルを小さくし、ダウンロード前に新しいサイズを確認できます。",
+    intro:
+      "画像の圧縮は、写真のファイルサイズを小さくして、Webサイトでの読み込みを速くしたり、メールやアップロードの容量制限に収めたりするツールです。選んだ画質でWebP（初期設定）、AVIF、JPG、PNGとして保存し直し、スライダーを動かすと推定サイズと削減率が表示されます。「目標ファイルサイズ」モードでは、100 KB以下などの制限に収まるよう画質を自動で設定します。",
+    seoTitle: "画像 圧縮 – ファイルサイズを無料で小さく",
+    seoDescription:
+      "画像の圧縮を無料でオンライン実行。WebP、AVIF、JPG、PNGを選び、画質またはKB単位の目標サイズを設定して、ダウンロード前に削減量を確認できます。アップロード不要。",
+    keywords: [
+      "画像 圧縮",
+      "画像 容量 小さくする",
+      "JPG 圧縮",
+      "画像 100KB 以下",
+      "画像圧縮 オンライン",
+      "写真 圧縮 メール",
+      "PNG 圧縮",
+      "WebP 変換 圧縮",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を追加する",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "出力形式を選ぶ",
+        description:
+          "初期設定ではWebPが選ばれています。AVIFは通常いちばん小さくなりますがエンコードに時間がかかり、JPGはどこでも開けます。PNGは可逆圧縮のため、削減できる容量は最も少なくなります。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "画質または目標サイズを設定する",
+        description:
+          "画質スライダーを動かして推定サイズを確認するか、「目標ファイルサイズ」に切り替えてKB単位でサイズを入力するか、50、100、200、500 KBのいずれかをクリックします。",
+      },
+      {
+        title: "確認してダウンロードする",
+        description: "プレビューと削減率を確認してから、「ダウンロード」をクリックします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "リアルタイムのサイズ推定",
+        description:
+          "設定を変えると新しいファイルサイズと削減率がすぐに更新され、結果が元のファイルより大きくなる場合は警告が表示されます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "AVIF、WebP、JPG、PNG",
+        description:
+          "4つの出力形式に対応。AVIFはWebAssemblyのエンコーダーを使ってブラウザ内で直接エンコードされます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "目標ファイルサイズモード",
+        description:
+          "KB単位でサイズを入力すると、それに合った画質をツールが選びます。あくまで推定なので、ダウンロード前にリアルタイムのサイズを確認してください。",
+      },
+      {
+        title: "画像サイズは変わらない",
+        description:
+          "圧縮しても幅と高さは変わりません。ファイルを大幅に小さくしたい場合は、先にリサイズしてから圧縮してください。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像圧縮・軽量化 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "画像はどのくらい小さくなりますか？",
+        answer:
+          "画像によって異なります。カメラで撮った大きな写真は、WebPやAVIFの画質70%〜85%で大幅に小さくなることが多い一方、小さなイラストや圧縮済みのファイルはほとんど小さくならない場合があります。結果はダウンロード前にリアルタイムの推定で確認できます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "AVIF、WebP、JPGのうち最も小さくなるのは？",
+        answer:
+          "同程度の見た目の画質なら、通常はAVIFが最も小さく、次にWebP、JPGの順です。AVIFはブラウザでのエンコードに時間がかかり、特に大きな写真ではその傾向が強く、古いソフトでは開けないこともあります。",
+      },
+      {
+        question: "画像を100 KBに圧縮するには？",
+        answer:
+          "「目標ファイルサイズ」を選び、100 KBをクリックします。リアルタイムのサイズがまだ100 KBを超えている場合は、画質をもう少し下げるか、先に「画像のリサイズ」で画像サイズを小さくしてください。",
+      },
+      {
+        question: "圧縮すると写真の見た目は悪くなりますか？",
+        answer:
+          "WebP、AVIF、JPGは目立ちにくい細部を取り除きます。画質75%〜90%なら、ほとんどの写真は通常の表示サイズで見分けがつきませんが、極端に低い設定ではぼやけやブロック状のノイズが出ます。",
+      },
+      {
+        question: "圧縮したファイルが元より大きくなるのはなぜですか？",
+        answer:
+          "元のファイルがすでに十分に最適化されている場合や、写真をPNGで保存した場合に起こります。WebPやAVIFを試すか、画質の設定を下げてください。",
+      },
+      {
+        question: "写真を圧縮するとEXIFデータは削除されますか？",
+        answer:
+          "はい。新しいファイルは画像のピクセルから作られるため、カメラ情報やGPS位置情報は含まれません。",
+      },
+    ],
   },
   "rotate-image": {
-    "name": "画像を回転・傾き補正",
-    "shortName": "画像を回転・傾き補正",
-    "tagline": "画像を回転・傾き補正 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像を回転・傾き補正 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像を回転・傾き補正 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "rotate-image",
-      "画像を回転・傾き補正",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の回転",
+    shortName: "回転",
+    tagline: "画像を90°、180°、または-180°〜180°の任意の角度で回転させ、必要な形式で保存できます。",
+    intro:
+      "画像の回転は、横向きや逆さまに表示される写真を直したり、少し傾いた写真をまっすぐにしたりするツールです。素早く回すなら90°ボタン、細かく補正するなら「角度を指定」スライダーを使います。角度が90°の倍数でない場合は、回転した画像全体が収まるようにキャンバスが広がるので、四隅が切れることはありません。",
+    seoTitle: "画像 回転 – 90°・180°・任意の角度で回転",
+    seoDescription:
+      "画像の回転を無料でオンライン実行。写真を左右に90°、180°、または任意の角度で回転して傾きを補正し、JPG、PNG、WebP、AVIFで保存できます。アップロード不要。",
+    keywords: [
+      "画像 回転",
+      "写真 回転 オンライン",
+      "画像 90度 回転",
+      "画像 向き 変更",
+      "写真 傾き 補正",
+      "JPG 回転",
+      "画像 角度 回転",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "回転させる",
+        description:
+          "+90°で時計回り、-90°で反時計回りに回転し、180°で上下を逆にします。少しだけ補正したい場合は「角度を指定」スライダーをドラッグします。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "形式を選ぶ",
+        description:
+          "初期設定では元の形式のまま保存されます。任意の角度で回転した場合、PNG、WebP、AVIFでは新しくできた四隅が透明になり、JPGでは白で塗りつぶされます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "「ダウンロード」をクリックして回転した画像を保存するか、クリップボードにコピーします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "90°・180°のクイック回転",
+        description: "横向きや逆さまの写真をワンクリックで直せます。「リセット」で最初の状態に戻せます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "任意の角度",
+        description: "傾いた水平線や書類を、スライダーで-180°〜180°の範囲で1度ずつまっすぐにできます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "どこも切れない",
+        description: "任意の角度で回転すると出力キャンバスが広がり、回転した画像全体がその中に収まります。",
+      },
+      {
+        title: "iPhoneの写真にも対応",
+        description: "HEIC写真はブラウザ内で変換されるので、事前に変換する必要はありません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像を回転・傾き補正 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "アプリによって写真が横向きに表示されるのはなぜですか？",
+        answer:
+          "スマートフォンは画像を一方向で保存し、EXIFデータに回転タグを付けることが多いのですが、このタグを無視するアプリがあります。ここでダウンロードしたファイルはピクセル自体が回転していて回転タグがないため、どこで見ても同じ向きで表示されます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "回転すると画質は落ちますか？",
+        answer:
+          "90°や180°の回転はピクセルの位置を動かすだけで、値は変わりません。それ以外の角度ではピクセルを計算し直すため、ごくわずかにやわらかくなります。また、JPG、WebP、AVIFで保存すると再圧縮されますが、PNGならそれを避けられます。",
+      },
+      {
+        question: "任意の角度で回転した後、四隅はどうなりますか？",
+        answer:
+          "回転した画像が収まるようにキャンバスが広がります。新しくできた四隅は、PNG、WebP、AVIFでは透明に、JPGでは白になります。",
+      },
+      {
+        question: "iPhoneのHEIC写真も回転できますか？",
+        answer:
+          "はい。写真はブラウザ内で変換され、別の形式を選ばない限り、回転した画像はJPGで保存されます。",
+      },
+    ],
   },
   "flip-image": {
-    "name": "画像を反転・ミラー",
-    "shortName": "画像を反転・ミラー",
-    "tagline": "画像を反転・ミラー — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像を反転・ミラー — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像を反転・ミラー online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "flip-image",
-      "画像を反転・ミラー",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の反転",
+    shortName: "反転",
+    tagline: "画像を左右または上下に反転できます。反転した自撮りや裏返しの文字を直すのに便利です。",
+    intro:
+      "画像の反転は、写真を鏡に映したようなコピーを作るツールです。左右反転では左右が入れ替わるので、フロントカメラで撮って文字が裏返しになった自撮りを直せます。上下反転では水面に映ったように画像が逆さまになり、両方を組み合わせると180°回転と同じ結果になります。",
+    seoTitle: "画像 反転 – 左右反転・上下反転を無料で",
+    seoDescription:
+      "画像の反転を無料でオンライン実行。写真を左右または上下に反転して、反転した自撮りや裏返しの文字を直し、JPG、PNG、WebP、AVIFで保存できます。アップロード不要。",
+    keywords: [
+      "画像 反転",
+      "画像 左右反転",
+      "写真 左右反転 オンライン",
+      "画像 上下反転",
+      "自撮り 反転 直す",
+      "画像 ミラー",
+      "写真 反転",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "反転の方向を選ぶ",
+        description:
+          "左右を入れ替えるには「左右反転」、逆さまにするには「上下反転」をクリックします。もう一度クリックすると元に戻ります。「上下左右」や「リセット」も使えます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "形式を選ぶ",
+        description: "初期設定では元の形式のまま保存されますが、JPG、PNG、WebP、AVIFで保存することもできます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "「ダウンロード」をクリックして反転した画像を保存するか、クリップボードにコピーします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "左右反転と上下反転",
+        description: "一方向でも両方向でも反転でき、結果はすぐにプレビューで確認できます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "ピクセルは変化しない",
+        description: "反転はピクセルを新しい位置に移すだけです。すべてのピクセルをそのまま残したい場合はPNGで保存してください。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "形式はそのまま",
+        description: "初期設定ではJPGはJPG、PNGはPNGで保存されるので、同じ種類のファイルが返ってきます。",
+      },
+      {
+        title: "ブラウザ内で処理",
+        description: "画像は端末上で反転され、サーバーにアップロードされることはありません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像を反転・ミラー tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "反転と回転の違いは何ですか？",
+        answer:
+          "反転は鏡像を作るので、文字は裏返しになります。回転は画像全体を中心のまわりに回すので、文字はそのまま読めます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "反転した自撮りを直すには？",
+        answer:
+          "多くのフロントカメラは自撮りを鏡像で保存します。写真を開いて「左右反転」をクリックし、ダウンロードすれば、背景の文字が正しく読めるようになります。",
+      },
+      {
+        question: "反転すると画質は落ちますか？",
+        answer:
+          "反転そのものはピクセルの値を変えません。JPG、WebP、AVIFで保存すると再圧縮されるので、高い画質設定にするかPNGを使ってください。",
+      },
+      {
+        question: "上下と左右を同時に反転できますか？",
+        answer:
+          "はい。「上下左右」で画像を左右と上下の両方に反転できます。見た目は180°回転と同じになります。",
+      },
+    ],
   },
   "convert-image": {
-    "name": "画像フォーマット一括変換",
-    "shortName": "画像フォーマット一括変換",
-    "tagline": "画像フォーマット一括変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像フォーマット一括変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像フォーマット一括変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "convert-image",
-      "画像フォーマット一括変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像形式の変換",
+    shortName: "形式変換",
+    tagline: "JPG、PNG、WebP、AVIF、GIF、BMP、SVG、iPhoneのHEIC画像を、JPG、PNG、WebP、AVIFに変換できます。",
+    intro:
+      "画像形式の変換は、画像をあるファイル形式から別の形式に変えるツールです。JPG、PNG、WebP、AVIF、GIF、BMP、SVGなどブラウザで表示できる画像に加え、iPhoneのHEIC写真も開けて、JPG、PNG、WebP、AVIFとして保存できます。初期設定ではJPGとHEICの写真はWebPに、その他の画像はPNGになりますが、4つの出力形式から自由に選べます。",
+    seoTitle: "画像 形式 変換 – JPG・PNG・WebP・AVIF・HEIC",
+    seoDescription:
+      "ブラウザで動く無料の画像変換ツール。HEIC、PNG、JPG、WebP、GIF、BMP、SVGを、画質を調整しながらJPG、PNG、WebP、AVIFに変換できます。アップロード不要。",
+    keywords: [
+      "画像 形式 変換",
+      "画像 拡張子 変換",
+      "画像 JPG 変換",
+      "HEIC JPG 変換",
+      "画像 WebP 変換",
+      "画像 AVIF 変換",
+      "GIF PNG 変換",
+      "BMP JPG 変換",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "ブラウザで開ける形式の画像、またはiPhoneのHEIC写真をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "出力形式を選ぶ",
+        description: "「保存形式」でJPG、PNG、WebP、AVIFのいずれかを選びます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "画質と背景を調整する",
+        description:
+          "JPG、WebP、AVIFでは画質を設定します。透明部分のある画像をJPGにする場合は、その部分を塗りつぶす色を選びます。",
+      },
+      {
+        title: "変換したファイルをダウンロードする",
+        description: "「ダウンロード」をクリックします。AVIFはブラウザ内でエンコードするため、大きな写真では数秒かかることがあります。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "多くの入力形式",
+        description: "JPG、PNG、WebP、AVIF、GIF、BMP、SVGなどブラウザが対応する形式に加え、HEICとHEIFも開けます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "4つのモダンな出力形式",
+        description: "JPG、PNG、WebP、AVIFで保存できます。AVIFはWebAssemblyのエンコーダーで端末上でエンコードされます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "透明部分も正しく処理",
+        description: "PNG、WebP、AVIFは透明部分を保持します。JPGの場合は、透明部分を置き換える色を選べます。",
+      },
+      {
+        title: "画質の調整",
+        description: "非可逆形式では10%〜100%の範囲で画質を設定し、ファイルサイズと細部のバランスを取れます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像フォーマット一括変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "HEICをJPGに変換するには？",
+        answer:
+          "HEIC写真を開き、「保存形式」でJPGを選んで「ダウンロード」をクリックします。変換はブラウザ内で行われるので、写真がどこかに送られることはありません。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "どの形式を選べばよいですか？",
+        answer:
+          "どこでも開ける必要がある写真ならJPG、スクリーンショットやロゴ、輪郭がくっきりした画像や透明部分のある画像ならPNG、Web用に小さくしたいならWebP、最新のブラウザ向けに最も小さくしたいならAVIFがおすすめです。",
+      },
+      {
+        question: "GIF、BMP、SVGに変換できますか？",
+        answer:
+          "いいえ。これらの形式は開くことはできますが、出力は常にJPG、PNG、WebP、AVIFのいずれかです。アニメーションGIFは1枚の静止画になります。",
+      },
+      {
+        question: "透明な背景は保持されますか？",
+        answer:
+          "PNG、WebP、AVIFで保存すれば保持されます。JPGは透明部分を保存できないため、透明な部分は選んだ色で塗りつぶされます。",
+      },
+      {
+        question: "変換で画質は劣化しませんか？",
+        answer:
+          "PNGで保存する場合は可逆なので劣化しません。JPG、WebP、AVIFは非可逆形式で、画質を高くすると細部が多く残りますが、ファイルは大きくなります。",
+      },
+    ],
   },
   "jpg-to-png": {
-    "name": "JPGをPNGに変換",
-    "shortName": "JPGをPNGに変換",
-    "tagline": "JPGをPNGに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPGをPNGに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPGをPNGに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-png",
-      "jpgをpngに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "JPGをPNGに変換",
+    shortName: "JPG → PNG",
+    tagline: "JPGの写真を、編集して保存し直しても画質がそれ以上落ちないPNGファイルに変換します。",
+    intro:
+      "JPGをPNGに変換するツールです。PNGは可逆圧縮なので、編集して保存するたびに画質が落ちることがなく、スクリーンショットやイラスト、あとで手を加える予定のファイルに便利です。PNGのピクセルとサイズはJPGとまったく同じですが、ファイルは通常大きくなります。",
+    seoTitle: "JPG PNG 変換 – 無料、ブラウザで完結",
+    seoDescription:
+      "JPGをPNGに無料でオンライン変換。JPEGと同じピクセル・同じサイズの可逆PNGを、ファイルをアップロードせずにブラウザ内で作成できます。",
+    keywords: [
+      "JPG PNG 変換",
+      "JPEG PNG 変換",
+      "JPG PNG 変換 無料",
+      "JPG から PNG",
+      "JPG PNG 変換 オンライン",
+      "JPG PNG 保存",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPGを開く",
+        description: "JPGまたはJPEGファイルをアップロード欄にドロップするか、クリックして選ぶか、Ctrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "プレビューを確認する",
+        description: "出力は常にPNGなので、変更する設定はありません。画像サイズもそのままです。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNGをダウンロードする",
+        description: "「PNGでダウンロード」をクリックするか、「次のステップ」のボタンから「リサイズ」などの別のツールに画像を送ります。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "ピクセルを正確にコピー",
+        description: "JPGのすべてのピクセルが、それ以上の圧縮劣化なしにPNGに保存されます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "繰り返し編集しても安心",
+        description: "PNGは何度編集・保存しても、新たな圧縮ノイズが生じません。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "同じ画像サイズ",
+        description: "PNGの幅と高さは元のJPGと同じです。",
+      },
+      {
+        title: "アップロード不要",
+        description: "ファイルはブラウザのタブ内で変換され、端末から外に出ません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPGをPNGに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "JPGをPNGに変換すると画質は良くなりますか？",
+        answer:
+          "いいえ。PNGは今の画像をそのまま保持しますが、JPEG圧縮ですでに失われた細部を取り戻すことはできません。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "PNGに変換すると背景は透明になりますか？",
+        answer:
+          "いいえ。JPGには透明部分がないため、PNGでも同じ塗りつぶしの背景のままです。背景を消すには「背景削除」ツールをご利用ください。",
+      },
+      {
+        question: "PNGのファイルがJPGより大きくなるのはなぜですか？",
+        answer:
+          "PNGはすべてのピクセルを非可逆圧縮なしで保存しますが、JPGは容量を減らすために細かな部分を捨てています。写真をPNGで保存すると、数倍の大きさになることもよくあります。",
+      },
+      {
+        question: "複数のJPGをまとめてPNGに変換できますか？",
+        answer:
+          "このページでは1ファイルずつ変換します。「画像の一括リサイズ」で倍率を100%に設定すれば、最大50枚の画像をPNGとして1つのZIPにまとめて保存できます。",
+      },
+      {
+        question: "JPGのEXIFデータは残りますか？",
+        answer:
+          "いいえ。PNGはピクセルだけから作られるため、カメラ情報やGPS位置情報はコピーされません。",
+      },
+    ],
   },
   "png-to-jpg": {
-    "name": "PNGをJPGに変換",
-    "shortName": "PNGをJPGに変換",
-    "tagline": "PNGをJPGに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNGをJPGに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNGをJPGに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-jpg",
-      "pngをjpgに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "PNGをJPGに変換",
+    shortName: "PNG → JPG",
+    tagline: "PNGをより小さなJPGファイルに変換し、透明部分を置き換える色を選べます。",
+    intro:
+      "PNGをJPGに変換するツールです。写真ならJPEGのほうが通常ずっと小さくなり、ほぼすべてのWebサイトやアプリで使えます。JPEGは透明部分を保存できないため、透明な部分を白、黒、または任意の色で塗りつぶします。JPGの画質も10%〜100%で設定できます。",
+    seoTitle: "PNG JPG 変換 – 背景色を選んで変換",
+    seoDescription:
+      "PNGをJPGに無料でオンライン変換。透明部分の背景を白、黒、または好きな色から選び、JPGの画質も設定できます。ブラウザ内で動作し、アップロード不要です。",
+    keywords: [
+      "PNG JPG 変換",
+      "PNG JPEG 変換",
+      "PNG JPG 変換 白背景",
+      "PNG から JPG",
+      "PNG JPG 変換 無料",
+      "PNG 容量 小さくする",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNGを開く",
+        description: "PNGファイルをアップロード欄にドロップするか、クリックして選ぶか、Ctrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "背景色を選ぶ",
+        description: "白、黒、またはカラーピッカーで好きな色を選びます。この色で透明な部分がすべて塗りつぶされます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "画質を設定する",
+        description: "初期値は85%がおすすめです。文字や細い線を含む画像では、より高い値にしてください。",
+      },
+      {
+        title: "JPGをダウンロードする",
+        description: "「JPGでダウンロード」をクリックして、変換したファイルを保存します。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "好きな背景色",
+        description: "透明・半透明のピクセルは、白、黒、または指定した色と合成されます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "画質を調整可能",
+        description: "10%〜100%の範囲で選んで、ファイルサイズと細部のバランスを取れます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "写真は小さなファイルに",
+        description: "写真や細かいスクリーンショットは、通常PNGよりJPGのほうがずっと小さくなります。",
+      },
+      {
+        title: "同じ画像サイズ",
+        description: "JPGはPNGとまったく同じ幅と高さを保ちます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNGをJPGに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "透明な背景はどうなりますか？",
+        answer:
+          "JPGには透明部分がないため、透明・半透明のピクセルは選んだ背景色と合成されます。初期設定では白が選ばれています。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "JPGはPNGより小さくなりますか？",
+        answer:
+          "写真や色数の多い画像なら、通常は小さくなり、かなり小さくなることもよくあります。色数の少ないシンプルな画像では、PNGがすでに小さく、JPGのほうが大きくなる場合もあります。",
+      },
+      {
+        question: "画質はどのくらいに設定すればよいですか？",
+        answer:
+          "初期値の85%なら、ほとんどの写真で十分です。文字や細かい部分を含む画像では90%〜100%に、細部よりファイルサイズを優先したい場合は低めにしてください。",
+      },
+      {
+        question: "JPGにすると文字がぼやけるのはなぜですか？",
+        answer:
+          "JPEG圧縮では、くっきりした文字や線のまわりに、にじみや小さな斑点が出ることがあります。画質を上げるか、ロゴやスクリーンショットはPNGやWebPのままにしてください。",
+      },
+    ],
   },
   "jpg-to-webp": {
-    "name": "JPGをWebPに変換",
-    "shortName": "JPGをWebPに変換",
-    "tagline": "JPGをWebPに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPGをWebPに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPGをWebPに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-webp",
-      "jpgをwebpに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "JPGをWebPに変換",
+    shortName: "JPG → WebP",
+    tagline: "JPGの写真をWebPに変換して画像ファイルを小さくし、Webページの表示を速くします。",
+    intro:
+      "JPGをWebPに変換するツールです。WebPは現在の主要なブラウザすべてで表示できる形式です。同程度の見た目の画質なら、WebPは通常JPGより小さくなるため、使っているページの読み込みが速くなります。画質は10%〜100%のスライダーで設定でき、画像サイズは元のまま保たれます。",
+    seoTitle: "JPG WebP 変換 – Web用画像を軽く",
+    seoDescription:
+      "JPGをWebPに無料でオンライン変換。Webサイトを速くする小さな画像ファイルを作れます。画質は10%〜100%で調整でき、元のサイズのまま保存。アップロード不要。",
+    keywords: [
+      "JPG WebP 変換",
+      "JPEG WebP 変換",
+      "WebP 変換",
+      "JPG WebP 変換 無料",
+      "WebP 変換 サイト 画像",
+      "WebP 画像 変換 オンライン",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPGを開く",
+        description: "JPGまたはJPEGの写真をアップロード欄にドロップするか、クリックして選ぶか、Ctrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "画質を設定する",
+        description: "まずは80%前後から始めましょう。値を高くすると細部が多く残り、低くするとファイルが小さくなります。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebPをダウンロードする",
+        description: "「WebPでダウンロード」をクリックし、新しいファイルサイズを元のファイルと比べてみてください。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "同程度の画質でより小さく",
+        description: "同じように見える写真でも、WebPは通常JPGより少ないバイト数で済みます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "画質スライダー",
+        description: "ページの表示速度や必要な細部に合わせて、10%〜100%の範囲で画質を選べます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "元の画像サイズのまま",
+        description: "写真の幅と高さを変えずに変換します。",
+      },
+      {
+        title: "端末上で変換",
+        description: "写真はブラウザ内で処理され、アップロードされません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPGをWebPに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "WebPはJPGより優れていますか？",
+        answer:
+          "Webサイト用なら、WebPは同じ見た目の画質で通常より小さなファイルになり、透明部分も保存できます。ただし、古いソフトやプリンター、アップロードフォームでは今でもJPGのほうが幅広く使えます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "すべてのブラウザがWebPに対応していますか？",
+        answer:
+          "現在のChrome、Edge、Firefox、SafariはWebP画像を表示できます。古いアプリやOSの中には開けないものもあります。",
+      },
+      {
+        question: "WebPではなくPNGで保存されたのはなぜですか？",
+        answer:
+          "Safariの一部のバージョンなど、WebPを表示できても作成できないブラウザがあります。その場合はツールがお知らせしたうえでPNGで保存します。WebPファイルが必要な場合は、Chrome、Edge、Firefoxをご利用ください。",
+      },
+      {
+        question: "ダウンロード前にファイルサイズを確認するには？",
+        answer:
+          "この変換ツールではサイズの推定は表示されません。「画像の圧縮」でWebPを選ぶと、画質を調整しながら予想サイズと削減率を確認できます。",
+      },
+    ],
   },
   "png-to-webp": {
-    "name": "PNGをWebPに変換",
-    "shortName": "PNGをWebPに変換",
-    "tagline": "PNGをWebPに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNGをWebPに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNGをWebPに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-webp",
-      "pngをwebpに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "PNGをWebPに変換",
+    shortName: "PNG → WebP",
+    tagline: "PNG画像を透明な背景を保ったままWebPに変換し、通常はファイルを大幅に小さくできます。",
+    intro:
+      "PNGをWebPに変換するツールです。スクリーンショット、ロゴ、イラストなどのPNGファイルをWebP形式にします。WebPは透明部分に対応しているので、変換後も透明な部分は透明のままです。結果は通常PNGよりずっと小さくなり、画質スライダーで文字や細い線をくっきり保てます。",
+    seoTitle: "PNG WebP 変換 – 透過を保ったまま変換",
+    seoDescription:
+      "PNGをWebPに無料でオンライン変換。透明な背景はそのまま、ファイルは通常ずっと小さくなり、画質も設定できます。すべてブラウザ内で動作します。",
+    keywords: [
+      "PNG WebP 変換",
+      "PNG WebP 変換 透過",
+      "PNG WebP 変換 無料",
+      "PNG から WebP",
+      "PNG 軽量化 サイト",
+      "WebP 透過",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNGを開く",
+        description: "PNGファイルをアップロード欄にドロップするか、クリックして選ぶか、スクリーンショットをCtrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "画質を設定する",
+        description: "ロゴ、文字、スクリーンショットには90%以上、写真には通常75%〜85%で十分です。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebPをダウンロードする",
+        description: "「WebPでダウンロード」をクリックします。透明な部分は新しいファイルでも透明のままです。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "透明部分を保持",
+        description: "PNGのアルファチャンネルがWebPに保存されるので、ロゴやアイコンの透けた背景がそのまま残ります。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "ファイルが大幅に小さく",
+        description: "WebPの圧縮で、PNGのスクリーンショットやイラストは通常、元のサイズのほんの一部まで小さくなります。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "画質の調整",
+        description: "画像に必要な細部に応じて、10%〜100%の範囲で画質を設定できます。",
+      },
+      {
+        title: "同じ画像サイズ",
+        description: "WebPはPNGとまったく同じ幅と高さを保ちます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNGをWebPに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "PNGをWebPにしても透明な背景は残りますか？",
+        answer: "はい。WebPは透明部分に対応しているので、透明・半透明のピクセルはそのまま残ります。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "WebPがPNGよりずっと小さくなるのはなぜですか？",
+        answer:
+          "PNGは可逆圧縮で、すべてのピクセルを正確に保存します。このツールのWebPは非可逆圧縮を使い、目立ちにくい細部を取り除くことで容量を大きく減らします。",
+      },
+      {
+        question: "ロゴやスクリーンショットの画質はどのくらいがよいですか？",
+        answer:
+          "文字、アイコン、細い線をくっきり保つには90%〜100%にしてください。写真なら通常75%〜85%で十分です。",
+      },
+      {
+        question: "WebP画像を自分のWebサイトで使えますか？",
+        answer:
+          "はい。現在の主要なブラウザはすべてWebPを表示できます。非常に古いブラウザやアプリにも対応する場合は、元のPNGを代替として残しておいてください。",
+      },
+    ],
   },
   "webp-to-jpg": {
-    "name": "WebPをJPGに変換",
-    "shortName": "WebPをJPGに変換",
-    "tagline": "WebPをJPGに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebPをJPGに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebPをJPGに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-jpg",
-      "webpをjpgに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "WebPをJPGに変換",
+    shortName: "WebP → JPG",
+    tagline: "WebP画像をJPGに変換して、どのアプリや写真ビューア、アップロードフォームでも開けるようにします。",
+    intro:
+      "WebPをJPGに変換するツールです。Webサイトでよく使われるWebPファイルを、標準的なJPEG画像にします。古いソフトやアップロードフォーム、印刷サービスがWebPに対応していないときは、JPGがいちばん確実です。JPGは透明部分を保存できないため、WebPに透明な部分がある場合は、塗りつぶす色を選べます。",
+    seoTitle: "WebP JPG 変換 – 無料、アップロード不要",
+    seoDescription:
+      "WebPをJPGに無料でオンライン変換。WebP画像をどのアプリやアップロードフォームでも開けるようにし、透明部分の塗りつぶし色と画質も設定できます。アップロード不要。",
+    keywords: [
+      "WebP JPG 変換",
+      "WebP JPEG 変換",
+      "WebP JPG 保存",
+      "WebP から JPG",
+      "WebP JPG 変換 無料",
+      "WebP 開けない",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebPファイルを開く",
+        description: "WebP画像をアップロード欄にドロップするか、クリックして選ぶか、Ctrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "画質と塗りつぶし色を設定する",
+        description:
+          "画質を10%〜100%の範囲で選びます。画像に透明な部分がある場合は、その部分を置き換える色を選んでください。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "JPGをダウンロードする",
+        description: "「JPGでダウンロード」をクリックすると、ほぼどこでも開けるファイルが保存されます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "抜群の互換性",
+        description: "JPGはほぼすべてのソフト、端末、プリンター、Webサイトのアップロードフォームで開けます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "透明部分の塗りつぶし色",
+        description: "WebPの透明な部分は、白または好きな色で塗りつぶされます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "画質を調整可能",
+        description: "画質スライダーで、ファイルサイズと細部のバランスを取れます。",
+      },
+      {
+        title: "プライベートな変換",
+        description: "画像はブラウザ内でデコードされてJPGとして保存されます。何もアップロードされません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebPをJPGに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Webサイトの画像を保存するとWebPになるのはなぜですか？",
+        answer:
+          "多くのWebサイトは、ファイルが小さいという理由で画像をWebPで配信しています。そのため保存するとWebPファイルになり、古いソフトの中には開けないものがあります。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "WebPの透明な部分はどうなりますか？",
+        answer:
+          "JPGは透明部分を保存できないため、その部分は単色で塗りつぶされます。初期設定では白が使われ、別の色を選ぶこともできます。",
+      },
+      {
+        question: "アニメーションWebPは変換できますか？",
+        answer: "JPGはアニメーションを保存できないため、変換されるのは1枚の静止画のみです。",
+      },
+      {
+        question: "JPGにすると画質は落ちますか？",
+        answer:
+          "WebPをデコードして、非可逆形式であるJPGとして保存し直します。元に非常に近い仕上がりにするには、画質を90%以上にしてください。",
+      },
+    ],
   },
   "webp-to-png": {
-    "name": "WebPをPNGに変換",
-    "shortName": "WebPをPNGに変換",
-    "tagline": "WebPをPNGに変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebPをPNGに変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebPをPNGに変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-png",
-      "webpをpngに変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "WebPをPNGに変換",
+    shortName: "WebP → PNG",
+    tagline: "WebP画像を、透明部分もすべてのピクセルも保つ可逆圧縮のPNGファイルに変換します。",
+    intro:
+      "WebPをPNGに変換するツールです。PNGはほぼすべての編集ソフトやビューアが対応する可逆圧縮の形式です。透明な部分は透明のまま、デコードしたピクセルを正確に保存するので、編集して保存し直しても画質は落ちません。アプリでWebPが開けないときや、さらに編集するためのファイルが必要なときに使えます。",
+    seoTitle: "WebP PNG 変換 – 劣化なし・透過対応",
+    seoDescription:
+      "WebPをPNGに無料でオンライン変換。透明な背景を保ったまま、どの画像編集ソフトでも開ける可逆圧縮のPNGを作れます。ファイルはブラウザ内で変換されます。",
+    keywords: [
+      "WebP PNG 変換",
+      "WebP PNG 変換 透過",
+      "WebP PNG 変換 無料",
+      "WebP から PNG",
+      "WebP PNG 劣化なし",
+      "WebP PNG 保存",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebPファイルを開く",
+        description: "WebP画像をアップロード欄にドロップするか、クリックして選ぶか、Ctrl+Vで貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "プレビューを確認する",
+        description: "出力は常に同じサイズの可逆圧縮PNGなので、画質の設定はありません。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNGをダウンロードする",
+        description: "「PNGでダウンロード」をクリックして、変換したファイルを保存します。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "透明部分を保持",
+        description: "WebPの透明・半透明の部分は、PNGでも透明のままです。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "劣化のない出力",
+        description: "デコードしたピクセルを正確に保存し、新たな圧縮劣化は生じません。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "どこでも開ける",
+        description: "PNGは実質的にすべての画像編集ソフト、ビューア、オフィスソフトで使えます。",
+      },
+      {
+        title: "アップロード不要",
+        description: "変換はブラウザ内で行われるため、ファイルは端末から外に出ません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebPをPNGに変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "WebPをPNGにしても透明な背景は残りますか？",
+        answer: "はい。PNGは透明部分に完全に対応しているので、背景は透けたままです。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "PNGがWebPより大きくなるのはなぜですか？",
+        answer:
+          "多くのWebP画像は非可逆圧縮を使っていますが、PNGはすべてのピクセルを劣化なしで保存します。そのため、同じ画像でもPNGのほうが通常は多くのバイト数を必要とします。",
+      },
+      {
+        question: "PNGに変換すると画質は良くなりますか？",
+        answer:
+          "いいえ。PNGは今の見た目をそのまま保持しますが、WebP圧縮ですでに失われた細部を取り戻すことはできません。",
+      },
+      {
+        question: "アニメーションWebPをPNGに変換できますか？",
+        answer:
+          "このツールでは1枚の静止画として保存します。ここでのPNG出力にはアニメーションのフレームは含まれません。",
+      },
+    ],
   },
   "bulk-image-resizer": {
-    "name": "画像一括リサイズ（バッチ処理）",
-    "shortName": "画像一括リサイズ（バッチ処理）",
-    "tagline": "画像一括リサイズ（バッチ処理） — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像一括リサイズ（バッチ処理） — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像一括リサイズ（バッチ処理） online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-resizer",
-      "画像一括リサイズ（バッチ処理）",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の一括リサイズ",
+    shortName: "一括リサイズ",
+    tagline: "最大50枚の画像を、パーセント、指定した幅、最大サイズの枠で一度にリサイズし、1つのZIPでダウンロードできます。",
+    intro:
+      "画像の一括リサイズは、たくさんの画像に同じサイズのルールを一度に適用するツールです。すべてのファイルをパーセントで拡大・縮小したり、幅を正確に指定したり、1200 × 800のような枠に収めてどの辺も枠を超えないようにしたりできます。各ファイルは元の形式のまま保存でき、結果はまとめて1つのZIPでダウンロードできます。",
+    seoTitle: "画像 一括 リサイズ – 複数画像をまとめてサイズ変更",
+    seoDescription:
+      "複数の画像を無料で一括リサイズ。JPG、PNG、WebPを最大50枚まで、パーセント、指定の幅、最大サイズの枠で縮小し、形式はそのままで1つのZIPにまとめて保存できます。",
+    keywords: [
+      "画像 一括 リサイズ",
+      "画像 まとめて リサイズ",
+      "複数 画像 サイズ変更",
+      "画像 一括 縮小 オンライン",
+      "写真 一括 リサイズ",
+      "画像 リサイズ ZIP",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を追加する",
+        description: "JPG、PNG、WebPファイルを最大50枚（1枚あたり最大50 MB）アップロード欄にドロップするか、クリックして選びます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "リサイズ方法を選ぶ",
+        description:
+          "「パーセント」では各画像を10%〜200%で拡大・縮小します。「ピクセル指定」では幅を設定し、縦横比の固定を外せば高さも設定できます。「枠に収める」では、入力した幅と高さの中に収まるよう各画像を縮小します。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "出力形式を選ぶ",
+        description:
+          "「元の形式」のままにするか、すべてをPNG、JPG、WebPに変換します。初期設定では「小さい画像は拡大しない」がオンになっているので、小さな画像が拡大されることはありません。",
+      },
+      {
+        title: "リサイズしてダウンロードする",
+        description: "「すべてリサイズ」をクリックしてから「ZIPでダウンロード」をクリックするか、リストから1枚ずつ保存します。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "3つのリサイズ方法",
+        description: "パーセントでの拡大・縮小、幅の正確な指定、最大の幅と高さに収める方法から選べます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "各ファイルの形式を維持",
+        description: "「元の形式」を選ぶと、JPGはJPG、PNGはPNG、WebPはWebPのまま保存されます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "拡大を防止",
+        description:
+          "「ピクセル指定」と「枠に収める」では、すでに目標より小さい画像はそのままのサイズに保たれます。",
+      },
+      {
+        title: "ZIPでまとめてダウンロード",
+        description: "リサイズしたファイルは元の名前に「-resized」が付き、1つのアーカイブにまとめてダウンロードされます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像一括リサイズ（バッチ処理） tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "一度に何枚までリサイズできますか？",
+        answer:
+          "1回につき最大50枚、1枚あたり最大50 MBまでです。非常に大きな写真は多くのメモリを使うため、スマートフォンでは少ない枚数に分けて処理すると安定します。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "画像が引き伸ばされることはありますか？",
+        answer:
+          "「パーセント」と「枠に収める」では常に縦横比が保たれるので、引き伸ばされません。「ピクセル指定」で縦横比の固定を外して両方の辺を設定すると、形の異なる画像は引き伸ばされます。",
+      },
+      {
+        question: "どのファイル形式に対応していますか？",
+        answer:
+          "JPG、PNG、WebPです。iPhoneのHEICファイルはここでは扱えないため、先に「画像形式の変換」で変換してください。",
+      },
+      {
+        question: "JPGとWebPはどの画質で保存されますか？",
+        answer:
+          "リサイズしたJPGとWebPのファイルは画質90%で保存されます。透明部分のある画像をJPGに変換すると、透明な部分は白になります。",
+      },
+      {
+        question: "ファイルはどこかにアップロードされますか？",
+        answer: "いいえ。すべての画像はこのブラウザのタブ内でリサイズされ、ZIPファイルも端末上で作成されます。",
+      },
+    ],
   },
   "bulk-image-compressor": {
-    "name": "画像一括圧縮（バッチ処理）",
-    "shortName": "画像一括圧縮（バッチ処理）",
-    "tagline": "画像一括圧縮（バッチ処理） — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像一括圧縮（バッチ処理） — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像一括圧縮（バッチ処理） online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-compressor",
-      "画像一括圧縮（バッチ処理）",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の一括圧縮",
+    shortName: "一括圧縮",
+    tagline: "最大50枚の画像を一度にWebP、AVIF、JPG、PNGに圧縮し、1つのZIPでダウンロードできます。",
+    intro:
+      "画像の一括圧縮は、たくさんの画像のファイルサイズを一度に小さくするツールです。すべてのファイルに共通の出力形式と画質を選んで圧縮を始めると、画像ごとに元のサイズ、新しいサイズ、削減率が表示されます。Webサイトやネットショップ、メール用に写真のフォルダをまとめて準備するのに便利です。",
+    seoTitle: "画像 一括 圧縮 – 複数の画像をまとめて圧縮",
+    seoDescription:
+      "最大50枚の画像を無料で一括圧縮。JPG、PNG、WebPをWebP、AVIF、JPG、PNGに変換し、ファイルごとの削減量を確認して、すべてを1つのZIPで受け取れます。",
+    keywords: [
+      "画像 一括 圧縮",
+      "画像 まとめて 圧縮",
+      "複数 画像 圧縮",
+      "画像 一括 圧縮 オンライン",
+      "画像 一括 WebP 変換",
+      "写真 圧縮 ZIP",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を追加する",
+        description: "JPG、PNG、WebPファイルを最大50枚（1枚あたり最大50 MB）ドロップするか、クリックして選びます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "形式と画質を選ぶ",
+        description:
+          "初期設定ではWebPの画質80%が選ばれています。最も小さくしたいならAVIF、互換性を重視するならJPG、劣化なしで保存したいならPNGを選びます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "すべてのファイルを圧縮する",
+        description: "「すべて圧縮」をクリックすると、各ファイルの新しいサイズと削減率がリストに表示されていきます。",
+      },
+      {
+        title: "結果をダウンロードする",
+        description: "「ZIPでダウンロード」をクリックして圧縮したファイルをまとめて保存するか、リストから1枚ずつダウンロードします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "ファイルごとの結果",
+        description:
+          "画像ごとに圧縮前後のサイズと削減率を確認でき、ファイルが大きくなった場合はわかりやすく表示されます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "4つの出力形式",
+        description: "AVIF、WebP、JPG、PNGから選べ、画質は10%〜100%の範囲でまとめて1つ設定します。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "元の名前でZIPに",
+        description: "各ファイルは元の名前に「-compressed」が付き、同じ名前のファイルには自動で番号が振られます。",
+      },
+      {
+        title: "端末上で動作",
+        description: "すべてのファイルはブラウザ内で圧縮され、パソコンやスマートフォンから外に出ることはありません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像一括圧縮（バッチ処理） tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "1回に何枚まで圧縮できますか？",
+        answer: "最大50枚の画像を追加でき、1枚あたり最大50 MBまでです。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "どの出力形式を選べばよいですか？",
+        answer:
+          "WebPはサイズ、画質、対応環境のバランスが良い形式です。AVIFは通常さらに小さくなりますがエンコードに時間がかかり、大きな写真が多いと差が目立ちます。JPGはどこでも開け、PNGは劣化しませんが、サイズの削減は最も少なくなります。",
+      },
+      {
+        question: "ファイルが大きくなってしまったのはなぜですか？",
+        answer:
+          "すでに十分に圧縮されている画像は、保存し直しても小さくなりません。リストでこうしたファイルには印が付くので、そのファイルは元のものを使ってください。",
+      },
+      {
+        question: "一括圧縮で画像サイズは変わりますか？",
+        answer:
+          "いいえ、幅と高さは変わりません。画像サイズも小さくしたい場合は、先に「画像の一括リサイズ」で処理してください。",
+      },
+      {
+        question: "透明部分のあるPNGをJPGにするとどうなりますか？",
+        answer: "JPGは透明部分を保存できないため、透明な部分は白で塗りつぶされます。",
+      },
+    ],
   },
   "remove-image-metadata": {
-    "name": "EXIFメタデータ削除・プライバシー保護",
-    "shortName": "EXIFメタデータ削除・プライバシー保護",
-    "tagline": "EXIFメタデータ削除・プライバシー保護 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "EXIFメタデータ削除・プライバシー保護 — Free Online Tool — Image Toolbox",
-    "seoDescription": "EXIFメタデータ削除・プライバシー保護 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "remove-image-metadata",
-      "exifメタデータ削除・プライバシー保護",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像のメタデータ削除",
+    shortName: "EXIF削除",
+    tagline: "写真を共有する前に、GPS位置情報、カメラの機種、撮影日などのEXIFデータを削除できます。",
+    intro:
+      "画像のメタデータ削除は、写真に隠れているEXIF情報を取り除いたきれいなコピーを作るツールです。スマートフォンやカメラで撮った写真には、撮影場所のGPS位置情報、端末の機種、撮影日時が記録されていることがよくあります。このツールは画像をピクセルから描き直して新しいファイルとして保存するので、そうした情報は引き継がれません。ダウンロード前に新しいファイルサイズも確認できます。",
+    seoTitle: "画像 EXIF 削除 – 写真の位置情報・メタデータを消す",
+    seoDescription:
+      "写真のEXIFメタデータを無料で削除。画像を共有する前に、GPS位置情報、カメラの機種、撮影日を取り除けます。ブラウザ内で処理され、アップロードされません。",
+    keywords: [
+      "EXIF 削除",
+      "写真 位置情報 削除",
+      "画像 メタデータ 削除",
+      "写真 GPS 削除",
+      "EXIF 消す オンライン",
+      "画像 位置情報 消す",
+      "iPhone 写真 位置情報 削除",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "写真を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC写真をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "きれいなコピーを確認する",
+        description: "プレビューには保存される画像が、新しいファイルサイズとともに表示されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "形式と画質を選ぶ",
+        description:
+          "初期設定では元の形式のまま保存されます。JPGやWebPでは画質を90%〜100%にすると元に近い仕上がりになり、劣化させたくない場合はPNGを選びます。",
+      },
+      {
+        title: "新しいファイルをダウンロードして共有する",
+        description: "「ダウンロード」をクリックし、元の写真の代わりにこのコピーを共有してください。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "位置情報とカメラ情報を削除",
+        description:
+          "GPS座標、カメラのメーカーと機種、レンズ、撮影日などのEXIFやIPTCの項目は、新しいファイルに書き込まれません。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "ピクセルからきれいにコピー",
+        description: "画像はピクセルから描き直されるので、隠れたデータが誤ってコピーされることはありません。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "ファイルサイズを表示",
+        description: "ダウンロード前に、きれいにしたファイルのサイズを確認できます。",
+      },
+      {
+        title: "端末上で処理",
+        description: "写真はアップロードされないので、処理の途中で位置情報が誰かに共有されることはありません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this EXIFメタデータ削除・プライバシー保護 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "どのメタデータが削除されますか？",
+        answer:
+          "すべてです。EXIFデータ（カメラ、設定、日付、GPS）、作成者や著作権などのIPTCやXMPの項目、埋め込まれたカラープロファイルが削除され、見えている画像だけが残ります。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "メタデータを削除すると画質は変わりますか？",
+        answer:
+          "画像は保存し直されます。PNGはすべてのピクセルを保持しますが、JPG、WebP、AVIFは再圧縮されるので、高い画質を選んでください。多くのiPhone写真のように広色域のカラープロファイルを持つ写真は、プロファイルが残らないため、少し鮮やかさが落ちて見えることがあります。",
+      },
+      {
+        question: "位置情報が消えたことを確認するには？",
+        answer:
+          "ダウンロードしたファイルを「画像情報チェッカー」で開いてください。端末上でEXIFデータを読み取り、GPS位置情報が含まれている場合は警告を表示します。",
+      },
+      {
+        question: "アプリやWebサイトがEXIFデータを削除してくれるのでは？",
+        answer:
+          "大手のサービスの中にはアップロード時にメタデータの一部を削除するものもありますが、メール、メッセージアプリ、ファイル共有では元のファイルがそのまま送られることがよくあります。自分で削除しておくのが安心です。",
+      },
+      {
+        question: "iPhoneのHEIC写真からメタデータを削除できますか？",
+        answer:
+          "はい。HEIC写真はブラウザ内で変換され、きれいにしたコピーは初期設定ではJPGで保存されます。",
+      },
+    ],
   },
   "image-analyzer": {
-    "name": "画像解析・プロパティ確認",
-    "shortName": "画像解析・プロパティ確認",
-    "tagline": "画像解析・プロパティ確認 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像解析・プロパティ確認 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像解析・プロパティ確認 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-analyzer",
-      "画像解析・プロパティ確認",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像情報チェッカー",
+    shortName: "画像情報",
+    tagline: "画像のサイズ、ファイル容量、縦横比、印刷サイズ、カメラのEXIFデータを確認でき、GPS位置情報があれば警告します。",
+    intro:
+      "画像情報チェッカーは、画像ファイルを変更せずに技術的な詳細を表示するツールです。ファイルサイズ、形式、ピクセルサイズ、縦横比、メガピクセル数、透明部分の有無を表示します。写真の場合は、カメラの機種、レンズ、露出、ISO感度、撮影日時、GPS位置情報などのEXIFデータも読み取り、撮影場所がわかってしまう写真には警告を表示します。",
+    seoTitle: "画像 EXIF 確認 – サイズ・解像度・位置情報をチェック",
+    seoDescription:
+      "画像の詳細を無料でオンライン確認。画像サイズ、ファイル容量、縦横比、印刷サイズ、カメラのEXIFデータを表示し、写真にGPS位置情報が含まれている場合は警告します。",
+    keywords: [
+      "EXIF 確認 オンライン",
+      "画像 メタデータ 確認",
+      "画像 サイズ 確認",
+      "写真 EXIF 見る",
+      "写真 位置情報 確認",
+      "画像 解像度 確認",
+      "画像 情報 確認",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "iPhoneのHEIC写真を含め、ブラウザで開ける画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "仕様を確認する",
+        description:
+          "ファイルサイズ、形式、画像サイズ、縦横比、メガピクセル数、透明部分、300 DPIでの印刷サイズを確認できます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "カメラのデータを確認する",
+        description:
+          "EXIFの欄には、カメラ、レンズ、露出、日付が表示されます。写真にGPS位置情報が含まれている場合は、メタデータを削除するボタン付きの警告が表示されます。",
+      },
+      {
+        title: "レポートをコピーする",
+        description: "「レポートをコピー」をクリックすると、すべての値をプレーンテキストでコピーできます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "技術的な仕様",
+        description:
+          "ファイルサイズ、形式、MIMEタイプ、画像サイズ、縦横比、メガピクセル数、色深度、透明部分、推定メモリ使用量。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "カメラのEXIFを読み取り",
+        description:
+          "カメラ、レンズ、撮影日時、露出時間、絞り、ISO感度、焦点距離、フラッシュ、向き、編集ソフトを、記録されていれば表示します。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "GPS位置情報の警告",
+        description:
+          "写真に座標が含まれている場合はそれを表示し、ワンクリックでメタデータのないコピーを作れるようにします。",
+      },
+      {
+        title: "印刷サイズの目安",
+        description: "300 DPIで印刷したときの大きさを、インチとセンチメートルで表示します。",
+      },
+      {
+        title: "読み取り専用でローカル処理",
+        description: "ファイルは変更されず、すべてのデータは端末上で読み取られます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像解析・プロパティ確認 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "写真のEXIFデータを見るには？",
+        answer:
+          "ここで写真を開き、「カメラとEXIFデータ」の欄を見てください。EXIFデータがないと表示される場合は、EXIFなしで保存されたファイルです。スクリーンショットやSNSからダウンロードした画像ではよくあることです。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "写真から撮影場所がわかるかどうか確かめるには？",
+        answer:
+          "写真にGPS座標が含まれている場合、このツールは座標を表示して警告します。「メタデータを削除」をクリックすると、位置情報のないコピーを作れます。",
+      },
+      {
+        question: "どのファイルにEXIFデータが含まれていますか？",
+        answer:
+          "スマートフォンやカメラで撮ったJPGやHEICの写真には、通常含まれています。WebPやAVIFのファイルにも含まれることがありますが、スクリーンショットや、書き出し・編集した画像の多くにはほとんど、あるいはまったく含まれていません。",
+      },
+      {
+        question: "300 DPIでの印刷サイズとは何ですか？",
+        answer:
+          "1インチあたり300ドットで印刷したときの大きさで、写真プリントの一般的な品質です。たとえば3000 × 2000ピクセルの画像は、約10 × 6.7インチで印刷されます。",
+      },
+      {
+        question: "色深度の値は正確ですか？",
+        answer:
+          "形式と透明部分の有無（24ビットRGBか32ビットRGBAか）をもとに判断しています。16ビットやHDRの画像は検出できません。",
+      },
+    ],
   },
   "image-color-picker": {
-    "name": "スポイト・カラーピッカーツール",
-    "shortName": "スポイト・カラーピッカーツール",
-    "tagline": "スポイト・カラーピッカーツール — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "スポイト・カラーピッカーツール — Free Online Tool — Image Toolbox",
-    "seoDescription": "スポイト・カラーピッカーツール online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-color-picker",
-      "スポイト・カラーピッカーツール",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像カラーピッカー",
+    shortName: "カラーピッカー",
+    tagline: "画像の好きな場所をクリックするだけで、その正確な色をHEX、RGB、HSL、HSV、CMYKで取得できます。",
+    intro:
+      "画像カラーピッカーは、画像内の任意のピクセルの正確な色を調べるツールです。画像の上でポインタを動かすと下のピクセルが拡大表示され、クリックすると色を選んで、HEX、RGB、HSL、HSV、CMYKのコードをコピーできます。色は縮小されたプレビューではなく、元の解像度の画像から読み取られます。",
+    seoTitle: "画像 カラーコード 取得 – HEX・RGBを抽出",
+    seoDescription:
+      "画像から色を無料でオンライン抽出。ピクセルをクリックしてHEX、RGB、HSL、HSV、CMYKのコードを取得でき、拡大ルーペで正確に選んでワンクリックでコピーできます。",
+    keywords: [
+      "画像 カラーコード 取得",
+      "画像 色 抽出",
+      "カラーピッカー 画像",
+      "スポイト ツール オンライン",
+      "画像 色 調べる",
+      "画像 RGB 取得",
+      "HEX カラーコード 調べる",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "画像をドロップ、選択、または貼り付けます。Ctrl+Vで貼り付けたスクリーンショットも使えます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "ルーペで狙う",
+        description: "プレビューの上でマウスを動かすと、丸いルーペにポインタの下のピクセルが拡大表示されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "クリックして色を取得する",
+        description: "目的の場所をクリックまたはタップします。色がHEX、RGB、HSL、HSV、CMYKの値とともに表示されます。",
+      },
+      {
+        title: "コードをコピーする",
+        description: "必要な形式の横にあるコピーボタンをクリックします。最近の色は下に保存され、すぐに再利用できます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "拡大ルーペ",
+        description: "7 × 7ピクセルの拡大表示で、細い線や1文字のような小さな部分も正確に選べます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "5つのカラー形式",
+        description: "HEX、RGB、HSL、HSV、CMYKの値を、それぞれワンクリックでコピーできます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "カラー履歴",
+        description: "最後に選んだ12色がスウォッチとして残り、クリックするとその色をもう一度選べます。",
+      },
+      {
+        title: "元の解像度から取得",
+        description: "色は元の画像のピクセルから読み取られるので、プレビューの大きさに値が左右されません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this スポイト・カラーピッカーツール tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "画像の色のHEXコードを調べるには？",
+        answer:
+          "画像を開いて目的の色をクリックし、HEX値の横にあるコピーボタンを押します。デザインソフトやCSSファイルにそのまま貼り付けられます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "スクリーンショットから色を取得できますか？",
+        answer:
+          "はい。スクリーンショットを撮り、このページでCtrl+Vを押して貼り付けてから、必要な色をクリックします。",
+      },
+      {
+        question: "スマートフォンでも使えますか？",
+        answer:
+          "はい。画像をタップして色を選びます。ルーペはマウスポインタを使う場合のみ表示されるので、ごく小さな部分を選ぶときはページを拡大してください。",
+      },
+      {
+        question: "写真の隣り合うピクセルで色が少し違うのはなぜですか？",
+        answer:
+          "写真にはノイズ、グラデーション、圧縮の影響があるため、隣り合うピクセルがぴったり同じ色になることはほとんどありません。何か所か選んで、合っていると思うものを使ってください。",
+      },
+      {
+        question: "CMYKの値が印刷ソフトと違うのはなぜですか？",
+        answer:
+          "ここでのCMYK値は、RGBから単純な計算で変換したものです。印刷ソフトは特定のインクや用紙向けのカラープロファイルを使うため、数値が異なることがあります。",
+      },
+    ],
   },
   "image-palette-generator": {
-    "name": "カラーパレット自動抽出ツール",
-    "shortName": "カラーパレット自動抽出ツール",
-    "tagline": "カラーパレット自動抽出ツール — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "カラーパレット自動抽出ツール — Free Online Tool — Image Toolbox",
-    "seoDescription": "カラーパレット自動抽出ツール online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-palette-generator",
-      "カラーパレット自動抽出ツール",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像カラーパレット抽出",
+    shortName: "パレット",
+    tagline: "画像の主な色をパレットとして抽出し、HEXコード、CSS変数、JSONでコピーできます。",
+    intro:
+      "画像カラーパレット抽出は、写真やデザインの主要な色を見つけてスウォッチとして表示するツールです。色の数は3、4、5、6、8から選べ、画像の中で最も広い面積を占める色から順に並びます。よく似た色はまとめられるので、スウォッチはそれぞれはっきり異なる色になります。パレットはCSS変数やJSON配列としてコピーするか、PNGのカラー見本としてダウンロードできます。",
+    seoTitle: "画像 カラーパレット 抽出 – HEXコードを取得",
+    seoDescription:
+      "画像からカラーパレットを無料で作成。主要な色を3〜8色抽出し、HEXコード、CSS変数、JSONをコピーしたり、PNGのカラー見本をダウンロードしたりできます。",
+    keywords: [
+      "画像 カラーパレット 抽出",
+      "画像 色 抽出",
+      "カラーパレット 作成 画像",
+      "写真 配色 抽出",
+      "画像 メインカラー",
+      "画像 HEX 抽出",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "写真、イラスト、ロゴ、スクリーンショットをドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "色の数を選ぶ",
+        description: "3、4、5、6、8のいずれかをクリックします。スウォッチはすぐに更新されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "1色ずつコピーする",
+        description: "スウォッチのコピーアイコンをクリックすると、そのHEXコードをコピーできます。",
+      },
+      {
+        title: "パレットをエクスポートする",
+        description: "「CSS変数をコピー」や「JSONをコピー」を使うか、パレットをPNGのカラー見本としてダウンロードします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "面積の大きい順",
+        description: "最初のスウォッチは、画像の中で最も広い部分を占める色です。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "はっきり異なる色",
+        description: "ほぼ同じ色はまとめられるので、パレットに同じ色合いが重複しません。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "開発者向けの出力",
+        description: "CSSカスタムプロパティ（--color-1、--color-2など）、またはHEXコードのJSON配列として書き出せます。",
+      },
+      {
+        title: "PNGのカラー見本",
+        description: "各スウォッチの下にHEXコードを記したパレット画像をダウンロードできます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this カラーパレット自動抽出ツール tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "パレットの色はどのように選ばれますか？",
+        answer:
+          "画像を小さなサイズでサンプリングし、似た色をグループにまとめ、面積の大きいグループから順に表示します。透明なピクセルは無視されます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "選んだ数より少ない色しか出ないのはなぜですか？",
+        answer:
+          "すべてのスウォッチがはっきり異なる色になるよう、非常に近い色合いはまとめられます。異なる色が少ない画像では、スウォッチの数が少なくなることがあります。",
+      },
+      {
+        question: "パレットをCSSで使うには？",
+        answer:
+          "「CSS変数をコピー」をクリックすると、--color-1、--color-2などの変数を含む:rootブロックが取得できるので、スタイルシートに貼り付けてください。",
+      },
+      {
+        question: "小さなアクセントカラーが含まれないのはなぜですか？",
+        answer:
+          "パレットは広い面積を占める色を優先するため、小さなロゴのような細部の色は表示されないことがあります。特定の場所の正確な値を知りたい場合は「画像カラーピッカー」をご利用ください。",
+      },
+    ],
   },
   "add-text-to-image": {
-    "name": "画像にテキスト・文字入れ",
-    "shortName": "画像にテキスト・文字入れ",
-    "tagline": "画像にテキスト・文字入れ — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像にテキスト・文字入れ — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像にテキスト・文字入れ online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-text-to-image",
-      "画像にテキスト・文字入れ",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像に文字入れ",
+    shortName: "文字入れ",
+    tagline: "フォント、サイズ、色、縁取り、背景ボックスを選んで、写真にキャプションやタイトルを書き込めます。",
+    intro:
+      "画像に文字入れは、画像に1行または複数行のテキストを配置するツールです。プレビュー上でテキストを好きな位置にドラッグするか、上・中央・下に配置し、7種類のフォント、太字や斜体、配置、不透明度、ドロップシャドウ、縁取り、色付きの背景ボックスでスタイルを整えられます。ダウンロード時には、テキストは元の解像度の画像に描き込まれます。",
+    seoTitle: "画像 文字入れ – 写真に文字を無料で追加",
+    seoDescription:
+      "画像への文字入れを無料でオンライン実行。キャプションを好きな位置にドラッグし、フォント、サイズ、色、縁取り、影、背景ボックスを選んで、JPG、PNG、WebP、AVIFで保存できます。",
+    keywords: [
+      "画像 文字入れ",
+      "写真 文字入れ オンライン",
+      "画像 文字 追加",
+      "写真 キャプション 入れる",
+      "画像 テキスト 編集",
+      "写真に文字を入れる 無料",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "テキストを入力する",
+        description: "入力欄にテキストを入力します。Enterキーで改行できます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "スタイルと位置を整える",
+        description:
+          "フォント、サイズ（12〜240 px）、色、不透明度、配置を選びます。プレビュー上でテキストをドラッグするか、上、中央、下、またはカスタム（Y%）を選びます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "元の形式のままにするか、JPG、PNG、WebP、AVIFを選んで「ダウンロード」をクリックします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "ドラッグで配置",
+        description: "プレビュー上でテキストを直接動かして、思いどおりの位置に置けます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "7種類のフォント",
+        description: "Inter、Arial、Helvetica、Georgia、Times New Roman、Courier New、Impactから選べ、太字や斜体も使えます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "どんな写真でも読みやすく",
+        description: "ドロップシャドウ、1〜20 pxの縁取り、色と不透明度を設定できる背景ボックスを追加できます。",
+      },
+      {
+        title: "複数行のテキスト",
+        description: "複数行を書いて、左揃え、中央揃え、右揃えにできます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像にテキスト・文字入れ tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "ごちゃごちゃした写真で文字を読みやすくするには？",
+        answer:
+          "「縁取り」をオンにして文字と対照的な色を選ぶか、「背景ボックス」をオンにして文字の後ろに不透明または半透明のボックスを置いてください。明るい部分ではドロップシャドウも効果的です。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "テキストを複数配置できますか？",
+        answer:
+          "このツールで追加できるテキストは1つで、複数行にできます。別の場所にもテキストを入れたい場合は、結果をダウンロードしてもう一度開き、次のテキストを追加してください。",
+      },
+      {
+        question: "どのフォントが使えますか？",
+        answer:
+          "7種類のフォントから選べます。ほとんどはシステムフォントなので、端末にインストールされていない場合は、ブラウザが似たフォントで代用します。",
+      },
+      {
+        question: "ダウンロードした画像でも文字はくっきりしていますか？",
+        answer:
+          "はい。テキストは画像の元の解像度で描かれます。JPGで保存する場合は、文字の輪郭をきれいに保つため、高い画質設定にしてください。",
+      },
+    ],
   },
   "watermark-image": {
-    "name": "画像に透かし・ウォーターマーク追加",
-    "shortName": "画像に透かし・ウォーターマーク追加",
-    "tagline": "画像に透かし・ウォーターマーク追加 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像に透かし・ウォーターマーク追加 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像に透かし・ウォーターマーク追加 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "watermark-image",
-      "画像に透かし・ウォーターマーク追加",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像に透かしを入れる",
+    shortName: "透かし",
+    tagline: "テキストやロゴの透かしで写真を守れます。1か所に置くことも、画像全体に繰り返すこともできます。",
+    intro:
+      "画像に透かしを入れるツールは、写真の上に著作権表示、サイト名、ロゴを重ねます。テキストやロゴの透かしを9つの位置のいずれかに置いてサイズと不透明度を設定するか、テキストを画像全体に繰り返して、切り取りで消されにくくできます。ロゴにはPNG、WebP、JPG、SVGのファイルを使え、背景が透明なロゴがいちばんきれいに仕上がります。",
+    seoTitle: "画像 透かし 入れる – テキスト・ロゴを無料で追加",
+    seoDescription:
+      "写真への透かし入れを無料でオンライン実行。テキストやロゴを9つの位置から選んで配置し、不透明度や回転を設定したり、テキストを画像全体に並べたりできます。",
+    keywords: [
+      "画像 透かし 入れる",
+      "写真 透かし 無料",
+      "写真 ロゴ 入れる",
+      "ウォーターマーク 作成 オンライン",
+      "著作権 透かし",
+      "透かし 敷き詰め",
+      "透かし 半透明",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "写真を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "テキストかロゴを選ぶ",
+        description:
+          "「テキスト」を選んで文字を入力するか、「ロゴ画像」を選んでPNG、WebP、JPG、SVGファイルを選びます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "配置してスタイルを整える",
+        description:
+          "3 × 3のグリッドで位置をクリックし、不透明度とサイズを設定します。テキストの場合は色と回転も設定でき、「画像全体に繰り返す」をオンにすることもできます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "元の形式のままにするか別の形式を選んで、「ダウンロード」をクリックします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "テキストまたはロゴ",
+        description: "著作権表示やWebサイトのアドレスを使うか、自分のロゴ画像をアップロードできます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "9つの位置",
+        description: "四隅、各辺、中央から選べ、余白は画像の大きさに合わせて調整されます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "テキストの敷き詰め",
+        description: "選んだ角度で、テキストを写真全体に繰り返し配置できます。",
+      },
+      {
+        title: "不透明度、サイズ、回転",
+        description: "不透明度は10%〜100%、文字サイズは14〜140 px、ロゴの幅は画像の5%〜60%、テキストの回転は-90°〜90°で設定できます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像に透かし・ウォーターマーク追加 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "ロゴを透かしとして入れるには？",
+        answer:
+          "「ロゴ画像」を選び、「ロゴ画像を選択」をクリックしてファイルを選びます。ロゴのサイズを画像の幅に対するパーセントで設定し、位置を選んで、写真が見えるよう不透明度を下げてください。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "透かしの不透明度はどのくらいがよいですか？",
+        answer:
+          "30%〜50%程度なら、写真を隠さずに透かしが見えます。透かしをはっきり読めるようにしたい場合は、もっと高い値にしてください。",
+      },
+      {
+        question: "敷き詰め型の透かしとは何ですか？",
+        answer:
+          "「画像全体に繰り返す」では、テキストを写真全体に何度も配置します。隅に1つだけ入れる透かしに比べて、切り取りで消されにくくなります。テキストの透かしで使えます。",
+      },
+      {
+        question: "ロゴのまわりに白い四角が出るのはなぜですか？",
+        answer:
+          "ロゴのファイルに塗りつぶしの背景があるためです。背景が透明なPNG、WebP、SVGを使うか、先に「背景削除」で背景を取り除いてください。",
+      },
+      {
+        question: "透かしで写真のコピーを防げますか？",
+        answer:
+          "透かしはコピーする気をそぎ、画像の所有者を示すことはできますが、コピーを完全に防ぐことはできません。大きな透かし、中央の透かし、敷き詰めた透かしは、隅の小さな透かしより消すのが難しくなります。",
+      },
+    ],
   },
   "add-border-to-image": {
-    "name": "画像に枠線・フレーム追加",
-    "shortName": "画像に枠線・フレーム追加",
-    "tagline": "画像に枠線・フレーム追加 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像に枠線・フレーム追加 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像に枠線・フレーム追加 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-border-to-image",
-      "画像に枠線・フレーム追加",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像に枠を付ける",
+    shortName: "枠付け",
+    tagline: "写真のまわりに単色の枠やフレームを付けられます。画像の外側にも、縁の上にも配置できます。",
+    intro:
+      "画像に枠を付けるツールは、画像のまわりに色付きのフレームを描きます。「外側」モードではキャンバスが広がるので、写真全体が枠の内側にそのまま見えます。「内側」モードでは縁の上に枠を描き、画像は元のサイズのままです。太さは1〜100ピクセル、色は自由に、不透明度も設定できます。",
+    seoTitle: "画像 枠 付ける – 写真にフレームを無料で追加",
+    seoDescription:
+      "画像への枠付けを無料でオンライン実行。色、1〜100 pxの太さ、不透明度を選び、写真の外側か縁の上に枠を配置できます。アップロード不要。",
+    keywords: [
+      "画像 枠 付ける",
+      "写真 フレーム 追加",
+      "画像 枠線 オンライン",
+      "写真 縁取り",
+      "インスタ 白枠",
+      "写真 枠 無料",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "枠の位置を選ぶ",
+        description: "「外側」（キャンバスを広げる）は写真のまわりに枠を追加し、「内側」（サイズを維持）は縁の上に枠を描きます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "太さ、色、不透明度を設定する",
+        description: "太さのスライダーを1〜100 pxの範囲でドラッグし、好きな色を選び、やわらかい印象にしたい場合は不透明度を下げます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "元の形式のままにするか、JPG、PNG、WebP、AVIFを選んで「ダウンロード」をクリックします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "外側または内側",
+        description: "写真のまわりに余白を足すか、元の画像サイズをそのまま保つかを選べます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "太さも色も自由",
+        description: "1 pxの細い線から100 pxの太いフレームまで、どんな色でも付けられます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "不透明度を調整可能",
+        description: "枠を半透明にして、軽やかな印象にできます。",
+      },
+      {
+        title: "形式はそのまま",
+        description: "別の形式を選ばない限り、枠を付けた画像は元と同じ形式で保存されます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像に枠線・フレーム追加 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "枠を付けると画像サイズは変わりますか？",
+        answer:
+          "「外側」モードでは枠の太さが各辺に足されるので、1000 × 800の画像に20 pxの枠を付けると1040 × 840になります。「内側」モードではサイズは変わらず、写真の外周部分が枠で覆われます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Instagram用に白い枠を付けるには？",
+        answer:
+          "先に写真を1:1で切り抜き、「外側」モードで白い枠を付けます。各辺に同じ太さが足されるので、結果は正方形のままです。",
+      },
+      {
+        question: "角の丸い枠は作れますか？",
+        answer:
+          "枠自体は四角形です。丸い印象にしたい場合は、先に枠を付けてから、その結果を「画像の角丸」で開いてください。",
+      },
+      {
+        question: "枠の不透明度を変えるとどうなりますか？",
+        answer:
+          "不透明度を下げると枠が透けます。「内側」モードでは枠の下の写真が透けて見え、「外側」モードでは枠の部分がPNG、WebP、AVIFでは半透明に、JPGでは白と混ざった色になります。",
+      },
+    ],
   },
   "round-image": {
-    "name": "画像を丸く切り抜き・角丸作成",
-    "shortName": "画像を丸く切り抜き・角丸作成",
-    "tagline": "画像を丸く切り抜き・角丸作成 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像を丸く切り抜き・角丸作成 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像を丸く切り抜き・角丸作成 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "round-image",
-      "画像を丸く切り抜き・角丸作成",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像の角丸",
+    shortName: "角丸",
+    tagline: "画像の角を丸くしたり円形に切り抜いたりでき、PNGなら背景は透明になります。",
+    intro:
+      "画像の角丸は、画像の角をやわらかく丸めたり、プロフィール写真やアプリアイコン用に円形にしたりするツールです。小・中・大のプリセットを選ぶか、スライダーで半径を正確に設定するか、「円形にする」をクリックします。初期設定ではPNGで保存されるので、切り取られた角は透明のままです。",
+    seoTitle: "画像 角丸 – 角を丸く・円形に切り抜き",
+    seoDescription:
+      "画像の角を無料でオンラインで丸くしたり、写真を円形に切り抜いたりできます。角の半径を設定し、PNGで透明な背景を保つか、JPG用に塗りつぶしの色を選べます。",
+    keywords: [
+      "画像 角丸",
+      "画像 角を丸く",
+      "画像 丸く 切り抜き",
+      "アイコン 丸く 作成",
+      "プロフィール画像 丸く",
+      "角丸 PNG",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "JPG、PNG、WebP、iPhoneのHEIC画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "形を選ぶ",
+        description: "「円形にする」をクリックするか、角の大きさを小・中・大から選ぶか、半径のスライダーをドラッグします。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "形式を選ぶ",
+        description:
+          "初期設定ではPNGが選ばれています。JPGを選んだ場合は、角の色を白、黒、または好きな色から選びます。",
+      },
+      {
+        title: "ダウンロードする",
+        description: "「ダウンロード」をクリックして角を丸めた画像を保存するか、クリップボードにコピーします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "プリセットと正確な半径",
+        description: "小・中・大のプリセットか、0から短い辺の半分までの任意の半径を選べます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "円形アイコン",
+        description: "ワンクリックで画像を円形にでき、そのままプロフィール写真に使えます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "透明な角",
+        description: "PNG、WebP、AVIFでは、カーブの外側の部分が透明のまま保たれます。",
+      },
+      {
+        title: "JPG用の塗りつぶし色",
+        description: "JPGで保存する場合、角は白、黒、または選んだ色で塗りつぶされます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像を丸く切り抜き・角丸作成 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "丸いプロフィール写真を作るには？",
+        answer:
+          "「円形にする」をクリックします。円は画像の短い辺に合わせて中央に配置されるので、正方形でない写真は先に1:1で切り抜いて顔を中央に合わせると、左右に余白ができません。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "角が透明ではなく白や黒になるのはなぜですか？",
+        answer: "JPGは透明部分を保存できません。角を透明にしたい場合は、PNG、WebP、AVIFを選んでください。",
+      },
+      {
+        question: "小・中・大のプリセットはどういう意味ですか？",
+        answer:
+          "半径の最大値は画像の短い辺の半分です。小・中・大は、その最大値の10%、25%、50%を使います。",
+      },
+      {
+        question: "角を丸めた画像のファイルが大きいのはなぜですか？",
+        answer:
+          "PNGは可逆圧縮なので、カメラで撮ったフルサイズの写真では大きなファイルになることがあります。先に写真をリサイズするか、透明部分も保ててずっと小さくなるWebPで保存してください。",
+      },
+    ],
   },
   "favicon-generator": {
-    "name": "ファビコン作成・ICO生成ツール",
-    "shortName": "ファビコン作成・ICO生成ツール",
-    "tagline": "ファビコン作成・ICO生成ツール — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "ファビコン作成・ICO生成ツール — Free Online Tool — Image Toolbox",
-    "seoDescription": "ファビコン作成・ICO生成ツール online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "favicon-generator",
-      "ファビコン作成・ico生成ツール",
-      "image tool",
-      "online free",
-      "ja"
+    name: "ファビコン作成",
+    shortName: "ファビコン",
+    tagline: "1枚の画像から、favicon.ico、Appleタッチアイコン、Android用アイコン、Webマニフェストを1つのZIPで作成します。",
+    intro:
+      "ファビコン作成は、ロゴや画像をWebサイトに必要なアイコンファイル一式に変換するツールです。画像を中央で正方形に切り抜き、favicon.ico（16、32、48ピクセル）、16〜512ピクセルのPNGアイコン、180 × 180のapple-touch-icon.png、site.webmanifestファイルを作成して、すべて1つのZIPにまとめます。サイトのheadセクションに貼り付けるHTMLのlinkタグもページ上に表示されます。",
+    seoTitle: "ファビコン 作成 – ICO・PNG・Appleタッチアイコン",
+    seoDescription:
+      "無料のファビコン作成ツール。PNG、JPG、SVGのロゴをアップロードするだけで、favicon.ico、16〜512 pxのPNGアイコン、Appleタッチアイコン、Webマニフェストを1つのZIPで受け取れます。",
+    keywords: [
+      "ファビコン 作成",
+      "ファビコン 作り方",
+      "favicon.ico 作成",
+      "PNG ICO 変換",
+      "apple-touch-icon 作成",
+      "ファビコン 画像から",
+      "サイト アイコン 作成",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "ロゴをアップロードする",
+        description:
+          "PNG、JPG、SVG、HEIC画像をドロップするか選びます。512 × 512ピクセル以上の正方形の画像がいちばんきれいに仕上がります。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "中央にあるか確認する",
+        description:
+          "アイコンは画像の中央から切り抜かれます。ロゴが中央からずれている場合や画像が正方形でない場合は、先に「画像の切り抜き」で1:1に切り抜いてください。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "ファビコン一式をダウンロードする",
+        description: "「ファビコン一式をダウンロード（ZIP）」をクリックすると、すべてのアイコンファイルとマニフェストが手に入ります。",
+      },
+      {
+        title: "Webサイトに追加する",
+        description:
+          "ファイルをサイトのルートフォルダにアップロードし、「コードをコピー」をクリックして、HTMLタグを各ページのheadセクションに貼り付けます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "複数サイズのfavicon.ico",
+        description: "ブラウザのタブやブックマーク用に、16 × 16、32 × 32、48 × 48のアイコンを1つのICOファイルにまとめます。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "あらゆる端末向けのPNGアイコン",
+        description: "16、32、48、64、128、192、512ピクセルのPNGファイルに加え、180 × 180のapple-touch-icon.pngも作成します。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Webアプリマニフェスト",
+        description: "Androidやインストール可能なWebアプリ向けに、192と512ピクセルのアイコンを指定したsite.webmanifestファイルを作成します。",
+      },
+      {
+        title: "小さなサイズもくっきり",
+        description: "アイコンは元の画像から段階的に縮小されるため、16や32ピクセルのアイコンもすっきり仕上がります。",
+      },
+      {
+        title: "すぐに貼れるHTML",
+        description: "アイコンとマニフェストのlinkタグを、ワンクリックでコピーできます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this ファビコン作成・ICO生成ツール tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "ファビコン用の画像はどのくらいのサイズが必要ですか？",
+        answer:
+          "最大のアイコンもくっきり保てるよう、512 × 512ピクセル以上の正方形の画像を使ってください。シンプルな形とはっきりした色なら、16 × 16でも見分けがつきます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "ZIPにはどんなファイルが入っていますか？",
+        answer:
+          "favicon.ico、favicon-16x16.png〜favicon-512x512.png（16、32、48、64、128、192、512）、180 × 180のapple-touch-icon.png、site.webmanifestです。",
+      },
+      {
+        question: "ファビコンのファイルはどこに置けばよいですか？",
+        answer:
+          "トップページと同じ場所である、Webサイトのルートフォルダにアップロードしてください。そのうえで、このページに表示されるHTMLタグをすべてのページのheadセクションに貼り付けます。",
+      },
+      {
+        question: "ロゴの一部が切れてしまうのはなぜですか？",
+        answer:
+          "このツールは画像の中央から最大の正方形を切り出します。ロゴが横長だったり中央にない場合は、アイコンを作成する前に、まわりに余白を残して正方形に切り抜いてください。",
+      },
+      {
+        question: "SVGのロゴも使えますか？",
+        answer:
+          "はい。SVGは画像として描画され、PNGとICOファイルとして保存されます。ZIPにはSVGのファビコンは含まれません。",
+      },
+      {
+        question: "マニフェストファイルを編集する必要はありますか？",
+        answer:
+          "はい。site.webmanifestには仮の名前「App」とダークなテーマカラーが設定されています。テキストエディタで開き、name、short_name、色をサイトに合わせて変更してください。",
+      },
+    ],
   },
   "image-to-base64": {
-    "name": "画像をBase64文字列に変換",
-    "shortName": "画像をBase64文字列に変換",
-    "tagline": "画像をBase64文字列に変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像をBase64文字列に変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像をBase64文字列に変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-base64",
-      "画像をbase64文字列に変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像をBase64に変換",
+    shortName: "画像 → Base64",
+    tagline: "画像ファイルをコピーできるBase64文字列に変換し、すぐに使えるHTMLとCSSのコードも用意します。",
+    intro:
+      "画像をBase64に変換するツールは、画像ファイルをBase64のテキストにエンコードします。これにより、JSON、HTMLページ、CSSファイルの中などに、画像をプレーンテキストとして保存したり送ったりできます。文字列はファイルの元のバイトから作られるため、画像が再圧縮されたり変更されたりすることはありません。文字数を表示し、画像をまるごと含んだHTMLのimgタグとCSSのbackground-imageルールも提供します。",
+    seoTitle: "画像 Base64 変換 – Base64文字列をコピー",
+    seoDescription:
+      "画像をBase64に無料でオンライン変換。JPG、PNG、WebP、GIF、SVGの元のバイトをエンコードし、文字列、HTMLのimgタグ、CSSルールをワンクリックでコピーできます。",
+    keywords: [
+      "画像 Base64 変換",
+      "画像 Base64 エンコード",
+      "Base64 エンコード 画像",
+      "PNG Base64 変換",
+      "JPG Base64 変換",
+      "SVG Base64 変換",
+      "Base64 画像 文字列",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "画像ファイルをドロップ、選択、または貼り付けます。アイコンのような小さな画像に最適です。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Base64文字列を取得する",
+        description: "文字列がすぐに表示され、文字数とおおよそのサイズもわかります。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "必要なものをコピーする",
+        description: "文字列だけなら「Base64をコピー」、すぐに使えるコードなら「HTMLをコピー」か「CSSをコピー」をクリックします。",
+      },
+      {
+        title: "コードに貼り付ける",
+        description: "文字列をJSON、HTML、CSS、スクリプトに貼り付けます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "バイト単位で正確にエンコード",
+        description: "元のファイルをそのままエンコードするので、再圧縮も画質の変化もありません。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "サイズ情報",
+        description: "使う前に、文字列の文字数とおおよそのサイズを確認できます。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "HTMLとCSSのコード",
+        description: "データURIをまるごと含んだimgタグやbackground-imageルールをコピーできます。",
+      },
+      {
+        title: "ローカルでエンコード",
+        description: "ファイルはブラウザ内で読み込まれてエンコードされ、アップロードされることはありません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像をBase64文字列に変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "画像のBase64は何に使うのですか？",
+        answer:
+          "Base64は、バイナリの画像データをプレーンテキストの文字に変換します。開発者は小さな画像をHTML、CSS、JSON、メールのテンプレートに直接埋め込み、別の画像ファイルを読み込まなくて済むようにするために使います。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Base64文字列が画像ファイルより大きいのはなぜですか？",
+        answer:
+          "Base64は3バイトごとに4文字を使うため、結果は約33%大きくなります。30 KBの画像なら、およそ40 KBのテキストになります。",
+      },
+      {
+        question: "Base64とデータURIの違いは何ですか？",
+        answer:
+          "Base64はエンコードされたテキストだけです。データURIにはdata:image/png;base64,のような接頭辞が付き、ブラウザがファイルの種類を判断できます。このツールは文字列だけを出力し、「画像をデータURIに変換」では完全な形を出力します。",
+      },
+      {
+        question: "大きな画像をBase64に変換してもよいですか？",
+        answer:
+          "通常はおすすめしません。Base64はアイコンのような小さな画像に向いています。大きな写真はHTMLやCSSを大幅に重くし、ブラウザも画像を別ファイルとしてキャッシュできなくなります。",
+      },
+      {
+        question: "エンコード中に画像は変更されますか？",
+        answer:
+          "いいえ、元のバイトがそのままエンコードされます。唯一の例外はiPhoneのHEIC写真で、ほとんどのブラウザはHEICを表示できないため、先にPNGに変換されます。",
+      },
+    ],
   },
   "image-to-data-uri": {
-    "name": "画像をData URI形式に変換",
-    "shortName": "画像をData",
-    "tagline": "画像をData URI形式に変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "画像をData URI形式に変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "画像をData URI形式に変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-data-uri",
-      "画像をdata uri形式に変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "画像をデータURIに変換",
+    shortName: "データURI",
+    tagline: "画像を完全なデータURIに変換し、HTMLのsrc属性やCSSのurl()にそのまま貼り付けられます。",
+    intro:
+      "画像をデータURIに変換するツールは、画像ファイルをデータURIにします。データURIは、ファイルの種類とBase64でエンコードした画像の両方を含む1行のテキストです。imgのsrc属性やCSSのurl()に直接貼り付ければ、別のファイルなしで画像が表示されます。接頭辞のMIMEタイプはファイルから取得され、画像のバイトは変更されません。",
+    seoTitle: "画像 データURI 変換 – HTML・CSSにそのまま使える",
+    seoDescription:
+      "画像をデータURIに無料でオンライン変換。正しいMIMEタイプ付きのdata:image形式のBase64文字列を取得し、HTMLのimgタグやCSSの背景ルールとしてコピーできます。",
+    keywords: [
+      "画像 データURI 変換",
+      "データURI 生成",
+      "画像 data URL 変換",
+      "Base64 データURI",
+      "CSS 画像 埋め込み",
+      "HTML 画像 埋め込み",
+      "data URL 画像",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "画像を開く",
+        description: "アイコン、ロゴ、小さなイラストなどの画像ファイルをドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "データURIを取得する",
+        description: "data:image/で始まる完全なデータURIが、長さとおおよそのサイズとともに表示されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "コピーする",
+        description: "「データURIをコピー」をクリックするか、すぐに使えるコードなら「HTMLをコピー」か「CSSをコピー」を使います。",
+      },
+      {
+        title: "ページに貼り付ける",
+        description: "imgタグやCSSの背景など、通常の画像URLが使える場所ならどこでも使えます。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "正しいMIMEタイプ",
+        description: "接頭辞はimage/png、image/jpeg、image/svg+xmlなど、ファイルに合ったものになります。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "元のバイトのまま",
+        description: "ファイルをそのままエンコードするので、再圧縮で画質やサイズが変わることはありません。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "すぐにコピーできるコード",
+        description: "データURIが入った状態のimgタグやbackground-imageルールを取得できます。",
+      },
+      {
+        title: "プライベート",
+        description: "データURIはブラウザ内で作成されるため、画像はアップロードされません。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this 画像をData URI形式に変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "データURIとは何ですか？",
+        answer:
+          "データURIは、ファイルの場所を指すのではなく、ファイルそのものを含んだリンクです。画像の場合はdata:image/png;base64,などの接頭辞で始まり、ブラウザは通常の画像URLと同じように表示します。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "CSSでデータURIを使うには？",
+        answer:
+          "「CSSをコピー」をクリックすると、url()の中にURIが丸ごと入ったbackground-imageルールが取得できるので、スタイルシートに貼り付けてください。",
+      },
+      {
+        question: "データURIを避けたほうがよいのはどんなときですか？",
+        answer:
+          "大きな画像や、多くのページで使う画像には向いていません。エンコードしたテキストはファイルより約3分の1大きくなり、ブラウザも別にキャッシュできません。",
+      },
+      {
+        question: "データURIの画像はメールで使えますか？",
+        answer:
+          "対応状況はまちまちです。一部のWebメールを含め、多くのメールソフトはデータURIの画像を表示しないため、メールをテストするか、オンラインでホストした画像を使ってください。",
+      },
+      {
+        question: "どの画像形式に対応していますか？",
+        answer:
+          "JPG、PNG、GIF、WebP、AVIF、SVGなど、ブラウザで開ける画像ならどれでも使えます。iPhoneのHEIC写真は先にPNGに変換されるため、データURIはimage/pngになります。",
+      },
+    ],
   },
   "base64-to-image": {
-    "name": "Base64コードを画像に変換",
-    "shortName": "Base64コードを画像に変換",
-    "tagline": "Base64コードを画像に変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Base64コードを画像に変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "Base64コードを画像に変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "base64-to-image",
-      "base64コードを画像に変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "Base64を画像に変換",
+    shortName: "Base64 → 画像",
+    tagline: "Base64文字列やデータURIを貼り付けて画像をプレビューし、PNG、JPG、WebPでダウンロードできます。",
+    intro:
+      "Base64を画像に変換するツールは、Base64のテキストを、見て保存できる画像にデコードします。Base64文字列だけ、完全なデータURI、またはそれを含むCSSのurl()やHTMLのsrcのコードを貼り付けられ、URLセーフなBase64や改行も自動で処理されます。データがPNG、JPEG、GIF、WebP、SVG、BMP、AVIFのどれかを判別し、デコードした画像をサイズとともに表示します。",
+    seoTitle: "Base64 画像 変換 – デコードしてプレビュー・保存",
+    seoDescription:
+      "Base64を画像に無料でオンラインデコード。Base64文字列、データURI、CSSやHTMLのコードを貼り付けて画像をプレビューし、PNG、JPG、WebPでダウンロードできます。",
+    keywords: [
+      "Base64 画像 変換",
+      "Base64 デコード 画像",
+      "Base64 PNG 変換",
+      "Base64 JPG 変換",
+      "データURI 画像 変換",
+      "Base64 文字列 画像",
+      "Base64 画像 表示",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Base64データを貼り付ける",
+        description: "テキスト欄に貼り付けるか、「貼り付け」をクリックするか、文字列を含む.txtファイルを読み込みます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "プレビューを確認する",
+        description: "画像は自動でデコードされ、幅と高さとともに表示されます。テキストが無効な場合はエラーメッセージが表示されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "書き出し形式を選ぶ",
+        description: "PNG、JPG、WebPから選びます。",
+      },
+      {
+        title: "画像をダウンロードする",
+        description: "ダウンロードボタンをクリックして、デコードした画像を端末に保存します。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "さまざまな入力に対応",
+        description:
+          "Base64文字列だけ、データURI、CSSのurl()やHTMLのsrcのコード、URLセーフなBase64、複数行に分かれたテキストに対応します。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "形式を自動判別",
+        description: "接頭辞がない場合や間違っている場合でも、データそのものからPNG、JPEG、GIF、WebP、SVG、BMP、AVIFを判別します。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "すぐにプレビュー",
+        description: "貼り付けた瞬間に、デコードした画像とそのサイズを確認できます。",
+      },
+      {
+        title: "3つの書き出し形式",
+        description: "結果をPNG、JPG、WebPで保存できます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Base64コードを画像に変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "どんなBase64テキストを貼り付けられますか？",
+        answer:
+          "Base64文字列だけ、data:image/png;base64,...のようなデータURI、またはそれを含むCSSやHTMLのコードです。スペース、改行、URLセーフな文字は自動で整えられます。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "エラーになるのはなぜですか？",
+        answer:
+          "コピーするときにテキストが途中で切れていることがよくあります。末尾の=記号を含め、文字列全体をコピーしたか確認してください。",
+      },
+      {
+        question: "ダウンロードしたファイルは元のファイルと同じですか？",
+        answer:
+          "画像はデコードされ、選んだ形式で保存し直されます。PNGはすべてのピクセルを保持しますが、JPGとWebPは再圧縮されます。アニメーションGIFは1枚の静止画に、SVGはピクセル画像として保存されます。",
+      },
+      {
+        question: "ツールはどうやって画像の種類を判断するのですか？",
+        answer:
+          "各形式は決まったシグネチャで始まります。たとえばPNGはiVBORw0KGgo、JPEGは/9j/です。ツールはこの先頭の文字を読み取って、画像を正しくデコードします。",
+      },
+      {
+        question: "Base64データはサーバーに送信されますか？",
+        answer: "いいえ。テキストはブラウザ内でデコードされ、画像は端末上で作成されます。",
+      },
+    ],
   },
   "svg-to-png": {
-    "name": "SVGを透過PNGに高画質変換",
-    "shortName": "SVGを透過PNGに高画質変換",
-    "tagline": "SVGを透過PNGに高画質変換 — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "SVGを透過PNGに高画質変換 — Free Online Tool — Image Toolbox",
-    "seoDescription": "SVGを透過PNGに高画質変換 online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "svg-to-png",
-      "svgを透過pngに高画質変換",
-      "image tool",
-      "online free",
-      "ja"
+    name: "SVGをPNGに変換",
+    shortName: "SVG → PNG",
+    tagline: "SVGのベクターファイルを、透明部分を保ったまま1倍、2倍、4倍、8倍のくっきりしたPNG画像に変換します。",
+    intro:
+      "SVGをPNGに変換するツールは、ロゴやアイコンなどのベクター画像を、SVGファイルが使えない場所向けにPNG画像にします。SVG本来のサイズの1倍、2倍、4倍、8倍から選べます。ベクターをそのサイズで描き直すため、倍率を大きくしてもぼやけず、よりくっきりした画像になります。透明な背景はPNGでも透明のままです。",
+    seoTitle: "SVG PNG 変換 – 高解像度・透過対応",
+    seoDescription:
+      "SVGをPNGに無料でオンライン変換。1倍、2倍、4倍、8倍で書き出して、透明な背景のまま、くっきりした高解像度の画像を作れます。変換はブラウザ内で行われます。",
+    keywords: [
+      "SVG PNG 変換",
+      "SVG PNG 変換 高画質",
+      "SVG PNG 透過",
+      "SVG PNG 書き出し",
+      "SVG 変換 オンライン",
+      "SVG から PNG",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "SVGファイルを開く",
+        description: ".svgファイルをアップロード欄にドロップするか、クリックして選びます。",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "倍率を選ぶ",
+        description: "1倍、2倍、4倍、8倍から選びます。出力の幅と高さ（ピクセル）がボタンの下に表示されます。",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNGをダウンロードする",
+        description: "「PNGでダウンロード」をクリックして画像を保存するか、クリップボードにコピーします。",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "どの倍率でもくっきり",
+        description: "選んだサイズでベクターを描き直すので、線や文字はシャープなままです。",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "透明な背景",
+        description: "SVGで塗りのない部分は、PNGでも透明のままです。",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "出力サイズのプレビュー",
+        description: "ダウンロード前に、各倍率での正確なピクセルサイズを確認できます。",
+      },
+      {
+        title: "劣化のないPNG",
+        description: "描画した画像は、圧縮による劣化のないPNGとして保存されます。",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this SVGを透過PNGに高画質変換 tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "SVGから高解像度のPNGを作るには？",
+        answer:
+          "4倍か8倍を選びます。256 × 256のSVGは4倍で1024 × 1024、8倍で2048 × 2048になり、そのサイズで描き直されるのでくっきりしたままです。",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "出力サイズが思ったとおりにならないのはなぜですか？",
+        answer:
+          "1倍のサイズは、SVGファイルに設定された幅と高さから決まります。SVGにviewBoxしかなく幅や高さがない場合、ブラウザは既定のサイズを使うことがあります。サイズを指定するには、width属性とheight属性を追加してください。",
+      },
+      {
+        question: "PNGでフォントや画像が抜けてしまうのはなぜですか？",
+        answer:
+          "SVGを画像として描画するとき、ブラウザはWebフォントやリンクされた画像など、SVGが参照する外部ファイルを読み込みません。変換する前に、テキストをアウトライン化し、画像をSVGに埋め込んでください。",
+      },
+      {
+        question: "PNGでも背景は透明のままですか？",
+        answer: "はい。SVGで塗りや背景のない部分は透明のままです。",
+      },
+      {
+        question: "SVGをJPGに変換できますか？",
+        answer:
+          "このツールはPNGでのみ保存します。JPGが必要な場合は、先にPNGに変換し、そのPNGを「PNGをJPGに変換」で開いてください。背景色も選べます。",
+      },
+    ],
   },
   "photo-filters": {
-    "name": "写真フィルター＆色調補正",
-    "shortName": "フィルター",
-    "tagline": "映画風のカラープリセット、レトロ調、ビネット効果をブラウザ上で瞬時に適用。",
-    "seoTitle": "無料写真フィルター＆色調補正オンライン — エフェクト加工",
-    "seoDescription": "写真にシネマティックフィルター、コントラスト、彩度、レトロ調エフェクトを無料で適用。100%安全なブラウザ処理。",
-    "keywords": [
-      "写真フィルター",
-      "画像エフェクト",
-      "色調補正 オンライン"
+    name: "写真フィルター・エフェクト",
+    shortName: "フィルター",
+    tagline: "ビンテージ、ノワール、シネマティックなどの効果を適用し、明るさ、コントラスト、色、周辺減光を調整できます。",
+    intro:
+      "写真フィルター・エフェクトは、写真の雰囲気やムードを変えるツールです。シネマティック、70年代ビンテージ、ムーディーノワール、サンセットウォームなど8つのプリセットから始めて、明るさ、コントラスト、彩度、セピア、モノクロ、色相、明瞭度、周辺減光、ソフトフォーカスをスライダーで調整します。分割表示で編集後の写真と元の写真を比べてから、PNG、JPG、WebPでダウンロードできます。",
+    seoTitle: "写真 フィルター 加工 – 無料のエフェクト・プリセット",
+    seoDescription:
+      "写真にフィルターを無料でオンライン適用。ビンテージ、ノワール、シネマティックなどを試し、明るさ、コントラスト、彩度、周辺減光を調整して、加工前後を比較できます。",
+    keywords: [
+      "写真 フィルター オンライン",
+      "写真 加工 フィルター",
+      "写真 モノクロ 変換",
+      "写真 レトロ 加工",
+      "セピア 加工 オンライン",
+      "写真 明るさ コントラスト 調整",
+      "周辺減光 加工",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "写真をアップロード",
-        "description": "画像をドラッグ＆ドロップまたはCtrl+Vで貼り付け。"
+        title: "写真をアップロードする",
+        description: "JPG、PNG、WebP画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "フィルターを選択",
-        "description": "プリセットまたはスライダーで調整。"
+        title: "プリセットを選ぶ",
+        description:
+          "シネマティック、70年代ビンテージ、サイバーパンク、ムーディーノワール、サンセットウォーム、クールフェード、ドラマチックHDR、ネガを試してみてください。「オリジナル」を選ぶとすべての効果が外れます。",
       },
       {
-        "title": "画像を保存",
-        "description": "高画質PNGまたはWebPでダウンロード。"
-      }
-    ],
-    "features": [
-      {
-        "title": "GPU高速処理",
-        "description": "リアルタイムで高速レンダリング。"
+        title: "スライダーで微調整する",
+        description:
+          "明るさ、コントラスト、彩度、セピア、モノクロ、色相、明瞭度、周辺減光、ソフトフォーカスを、写真が思いどおりになるまで調整します。",
       },
       {
-        "title": "プライバシー保護",
-        "description": "画像は端末内でのみ処理されます。"
-      }
+        title: "比較してダウンロードする",
+        description: "「元画像と比較」で加工前後を確認し、PNG、WebP、JPGでダウンロードするか、画像をコピーします。",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "無料で使えますか？",
-        "answer": "はい、完全無料で無制限にご利用いただけます。"
-      }
-    ]
+        title: "ワンクリックの8つのプリセット",
+        description: "温かみのあるビンテージ調から、コントラストの強いモノクロまで、すぐに使える効果をそろえています。",
+      },
+      {
+        title: "9つの調整スライダー",
+        description: "明るさ、コントラスト、彩度は最大200%まで調整でき、セピア、モノクロ、色相、明瞭度、周辺減光、ぼかしも使えます。",
+      },
+      {
+        title: "加工前後の比較表示",
+        description: "パソコンでもタッチ画面でも、境界線を写真の上でドラッグして、元の写真と編集後を比べられます。",
+      },
+      {
+        title: "元の解像度で書き出し",
+        description: "ダウンロード時には、フルサイズの写真に効果が適用されます。",
+      },
+    ],
+    faqs: [
+      {
+        question: "写真をモノクロにするには？",
+        answer:
+          "コントラストの強い仕上がりにするならプリセットの「ムーディーノワール」をクリックするか、「モノクロ」スライダーを100%にして、明るさとコントラストを自分で調整してください。",
+      },
+      {
+        question: "フィルターを元に戻せますか？",
+        answer:
+          "はい。「リセット」をクリックすれば、いつでも元の見た目に戻せます。元のファイルが変更されることはありません。",
+      },
+      {
+        question: "フィルターを適用すると解像度は下がりますか？",
+        answer:
+          "いいえ。ダウンロードした画像は元の写真と同じ幅と高さです。",
+      },
+      {
+        question: "どのダウンロード形式を選べばよいですか？",
+        answer:
+          "JPGとWebPは画質95%で保存され、写真ならずっと小さくなります。PNGはすべてのピクセルを保持しますが、写真では大きなファイルになります。",
+      },
+      {
+        question: "iPhoneのHEIC写真にもフィルターを使えますか？",
+        answer:
+          "このツールではHEICファイルを開けません。先に「画像形式の変換」で写真をJPGに変換してから、そのJPGをここで開いてください。",
+      },
+    ],
   },
   "meme-generator": {
-    "name": "ミームジェネレーター",
-    "shortName": "ミーム作成",
-    "tagline": "インパクトのある文字を入れて透かしなしのオリジナルミームを作成。",
-    "seoTitle": "無料ミームジェネレーター — 透かしなしで簡単に画像作成",
-    "seoDescription": "好きな画像やテンプレートに文字を入れて高品質ミームを作成。透かしなしで無料ダウンロード可能。",
-    "keywords": [
-      "ミームジェネレーター",
-      "ミーム作成",
-      "画像 文字入れ"
+    name: "ミームジェネレーター",
+    shortName: "ミーム作成",
+    tagline: "自分の写真やテンプレートから、上・中央・下に太字のキャプションを入れたミームを作れます。",
+    intro:
+      "ミームジェネレーターは、画像に定番のミーム風キャプションを入れるツールです。自分の画像をアップロードするか、8種類のシンプルな内蔵テンプレートから始めて、上・中央・下のキャプションを入力します。長い行は幅に合わせて自動で折り返されます。フォント（初期設定はImpact）、サイズ、文字と縁取りの色、配置、大文字化を選び、透かしなしでPNG、JPG、WebPとしてダウンロードできます。",
+    seoTitle: "ミーム 作成 – 画像にキャプションを入れる",
+    seoDescription:
+      "ミームを無料でオンライン作成。写真やテンプレートに上・中央・下のキャプションを入れ、フォント、サイズ、縁取りを選んで、透かしなしでダウンロードできます。",
+    keywords: [
+      "ミーム 作成",
+      "ミーム ジェネレーター",
+      "ミーム 画像 作る",
+      "画像 ミーム 文字入れ",
+      "Impact フォント ミーム",
+      "ミーム 作成 透かしなし",
+      "コラ画像 作成",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "画像を選択",
-        "description": "手持ちの画像またはテンプレートを選択。"
+        title: "画像を選ぶ",
+        description: "JPG、PNG、WebP画像をアップロードまたは貼り付けるか、クイックテンプレートのいずれかをクリックします。",
       },
       {
-        "title": "文字を入力",
-        "description": "上下のキャプションやフォント色を設定。"
+        title: "キャプションを書く",
+        description: "上と下のキャプションを入力し、必要なら中央のキャプションも追加します。",
       },
       {
-        "title": "保存",
-        "description": "高解像度でダウンロード。"
-      }
-    ],
-    "features": [
-      {
-        "title": "透かしなし",
-        "description": "ウォーターマークのないきれいな画像。"
+        title: "文字のスタイルを整える",
+        description: "フォント、サイズ、文字色、縁取りの色と太さ、配置、大文字にするかどうかを選びます。",
       },
       {
-        "title": "安全な処理",
-        "description": "サーバーへのアップロードはありません。"
-      }
+        title: "ダウンロードまたはコピーする",
+        description: "ミームをPNG、WebP、JPGでダウンロードするか、クリップボードにコピーしてチャットに貼り付けます。",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "ウォーターマークは入りますか？",
-        "answer": "いいえ、一切入りません。"
-      }
-    ]
+        title: "3つのキャプション欄",
+        description: "上・中央・下のキャプションを入れられ、長いテキストは自動で折り返されます。",
+      },
+      {
+        title: "定番のミームスタイル",
+        description: "初期設定は黒い縁取りの白いImpact文字で、Arial、Comic Sans、Montserrat、Timesのフォントも使えます。",
+      },
+      {
+        title: "画像に合わせて文字も拡大縮小",
+        description: "文字サイズは画像の高さに対する割合で決まるので、小さな画像でも大きな画像でもキャプションの見た目は同じです。",
+      },
+      {
+        title: "透かしなし",
+        description: "ミームは見たままの状態で保存され、ロゴが追加されることはありません。",
+      },
+    ],
+    faqs: [
+      {
+        question: "ミームに透かしは入りますか？",
+        answer: "いいえ。ダウンロードした画像には、あなたの画像とキャプションだけが含まれます。",
+      },
+      {
+        question: "ミームにはふつうどのフォントが使われますか？",
+        answer:
+          "定番のミームスタイルは、黒い縁取りの白いImpactで、ここでも初期設定になっています。端末にフォントがインストールされていない場合は、ブラウザが似たフォントで代用します。",
+      },
+      {
+        question: "自分の画像を使えますか？",
+        answer: "はい。JPG、PNG、WebP画像をアップロードするか、クリップボードからCtrl+Vで貼り付けてください。",
+      },
+      {
+        question: "キャプションが画像を覆いすぎてしまいます。どうすればよいですか？",
+        answer:
+          "文字サイズを小さくするか、テキストの一部を中央や下のキャプションに移してください。長いキャプションは自動で複数行に折り返されます。",
+      },
+      {
+        question: "スマートフォンでもミームを作れますか？",
+        answer:
+          "はい。ミームジェネレーターはモバイルブラウザでも動作します。キャプションを入力し、ダウンロードボタンで画像を保存してください。",
+      },
+    ],
   },
   "split-image": {
-    "name": "画像分割・グリッドカッター",
-    "shortName": "画像分割",
-    "tagline": "Instagram用の3×3グリッドやパノラマカルーセル用に画像を分割してZIP保存。",
-    "seoTitle": "画像分割オンライン — インスタ3x3グリッド・パノラマ切り出し",
-    "seoDescription": "写真をInstagramの3x3プロフィールグリッドやパノラマ用に分割。一括ZIPダウンロード可能。",
-    "keywords": [
-      "画像分割",
-      "インスタ グリッド分割",
-      "写真 3分割"
+    name: "画像分割・グリッド切り抜き",
+    shortName: "画像分割",
+    tagline: "1枚の画像をInstagramの3×3グリッドやパノラマのカルーセルなどのタイルに分割し、ZIPでダウンロードできます。",
+    intro:
+      "画像分割・グリッド切り抜きは、画像を行と列に分けて別々の画像ファイルにするツールです。プロフィールのグリッドにはInstagram 3×3、スワイプで見せる投稿にはパノラマ3×1やカルーセル2×1、4等分には2×2のプリセットを使うか、最大12行×12列まで自分でグリッドを設定できます。すべてのタイルは番号付きのPNGファイルとしてZIPでまとめてダウンロードでき、1枚だけ保存したい場合はそのタイルをクリックします。",
+    seoTitle: "画像 分割 – インスタ3×3グリッド・パノラマ",
+    seoDescription:
+      "画像のグリッド分割を無料でオンライン実行。Instagramの3x3グリッド、パノラマのカルーセル用分割、最大12x12のカスタムグリッドを作り、すべてのタイルをZIPでダウンロードできます。",
+    keywords: [
+      "画像 分割",
+      "画像 分割 オンライン",
+      "インスタ グリッド 分割",
+      "パノラマ 分割 インスタ",
+      "画像 切り分け",
+      "画像 3x3 分割",
+      "画像 タイル 分割",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "写真をアップロード",
-        "description": "分割したい画像をドロップ。"
+        title: "画像をアップロードする",
+        description: "JPG、PNG、WebP画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "グリッドを選択",
-        "description": "3×3やカスタムの行・列数を指定。"
+        title: "グリッドを選ぶ",
+        description:
+          "「Instagram 3×3グリッド」「パノラマ3×1」「カルーセル2×1」「4分割（2×2）」から選ぶか、行と列の数を入力します。",
       },
       {
-        "title": "ZIPでダウンロード",
-        "description": "番号順のタイルを一括保存。"
-      }
-    ],
-    "features": [
-      {
-        "title": "1クリックZIP保存",
-        "description": "連番付きでまとめてダウンロード。"
+        title: "プレビューを確認する",
+        description: "プレビューには、画像を切る位置と各タイルの番号が表示されます。",
       },
       {
-        "title": "画質劣化ゼロ",
-        "description": "元の解像度を100%保持。"
-      }
+        title: "タイルをダウンロードする",
+        description: "「全タイルをダウンロード（ZIP）」をクリックするか、プレビューでタイルを1枚クリックしてそのタイルだけをダウンロードします。",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "インスタへの投稿順は？",
-        "answer": "最後の番号から逆順（#9→#1）に投稿してください。"
-      }
-    ]
+        title: "SNS向けプリセット",
+        description: "3×3のプロフィールグリッド、3枚または2枚のパノラマカルーセル、2×2分割をワンクリックで設定できます。",
+      },
+      {
+        title: "カスタムグリッド",
+        description: "1〜12行と1〜12列を自由に組み合わせて、最大144枚のタイルに分割できます。",
+      },
+      {
+        title: "番号付きのタイル",
+        description: "ファイルは左から右、上から下の順に、tile_01、tile_02…と名前が付きます。",
+      },
+      {
+        title: "画質の劣化なし",
+        description: "タイルは元の解像度の画像から切り出され、可逆圧縮のPNGファイルとして保存されます。",
+      },
+    ],
+    faqs: [
+      {
+        question: "Instagramにはどの順番でタイルを投稿すればよいですか？",
+        answer:
+          "タイルはtile_01から始まり、左から右、上から下の順に番号が付いています。Instagramは新しい投稿から先に表示するので、最後のタイル（3×3グリッドならtile_09）から投稿を始め、tile_01で終えてください。",
+      },
+      {
+        question: "3×3グリッドにはどんな画像を使えばよいですか？",
+        answer:
+          "正方形のタイルにするには、正方形の画像から始めてください。必要なら先に1:1で切り抜きます。Instagramではプロフィールのサムネイルが別の切り抜き方で表示されることがあるので、投稿後に確認してください。",
+      },
+      {
+        question: "カルーセル投稿用にパノラマを分割するには？",
+        answer:
+          "3枚にするなら「パノラマ3×1」、2枚にするなら「カルーセル2×1」を選びます。正方形のスライドにするには、画像の幅が高さの3倍（または2倍）である必要があります。",
+      },
+      {
+        question: "すべてのタイルはまったく同じサイズですか？",
+        answer:
+          "幅や高さが割り切れない場合は、余ったピクセルが最後の列や行に加えられるため、その部分が1〜2ピクセル大きくなることがあります。",
+      },
+      {
+        question: "分割すると画質は落ちますか？",
+        answer: "いいえ。各タイルは元のピクセルから切り出され、可逆圧縮のPNGとして保存されます。",
+      },
+    ],
   },
   "censor-image": {
-    "name": "写真モザイク・ぼかし加工",
-    "shortName": "モザイク",
-    "tagline": "顔やナンバープレート、個人情報をぼかしやモザイク、黒塗りで隠すプライシーツール。",
-    "seoTitle": "写真モザイク・ぼかし加工オンライン — 個人情報保護・EXIF削除",
-    "seoDescription": "写真の顔や車のナンバー、機密書類をモザイクやぼかしで隠す無料ツール。EXIF位置情報も自動削除。",
-    "keywords": [
-      "写真 モザイク",
-      "顔 ぼかし",
-      "画像 黒塗り"
+    name: "画像のぼかし・モザイク",
+    shortName: "モザイク",
+    tagline: "写真の顔、ナンバープレート、名前、番号を、黒塗り、モザイク、ぼかしで隠せます。",
+    intro:
+      "画像のぼかし・モザイクは、画像を共有する前に個人情報を隠すツールです。顔、ナンバープレート、住所、口座番号の上に四角形や楕円を描き、範囲ごとに黒塗り、モザイク、ぼかしを選べます。ぼかした範囲は粗いモザイクの層の上に重ねられるので、端から元の細部が透けて見えることはありません。",
+    seoTitle: "画像 モザイク・ぼかし – 顔や文字を隠す",
+    seoDescription:
+      "画像のモザイク・ぼかし加工を無料でオンライン実行。四角形や楕円で、顔、ナンバープレート、個人情報の文字をぼかし、モザイク、黒塗りで隠せます。何もアップロードされません。",
+    keywords: [
+      "画像 モザイク",
+      "画像 ぼかし オンライン",
+      "写真 モザイク 加工",
+      "顔 ぼかし 写真",
+      "画像 黒塗り",
+      "スクショ 黒塗り",
+      "ナンバープレート ぼかし",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "写真をアップロード",
-        "description": "加工したい画像を選択。"
+        title: "画像をアップロードする",
+        description: "写真やスクリーンショットなど、JPG、PNG、WebP画像をドロップ、選択、または貼り付けます。",
       },
       {
-        "title": "範囲を選択",
-        "description": "隠したい部分をマウスでドラッグ。"
+        title: "形と方法を選ぶ",
+        description:
+          "「四角形」か「楕円」を選び、次に「モザイク」「ぼかし」「黒塗り」から選びます。モザイクとぼかしでは、強さを4〜45の範囲で設定します。",
       },
       {
-        "title": "保存",
-        "description": "個人情報が除去された画像をダウンロード。"
-      }
-    ],
-    "features": [
-      {
-        "title": "複数の加工方式",
-        "description": "モザイク、ガウスぼかし、黒塗りバー。"
+        title: "個人情報の上に描く",
+        description: "隠したい範囲をそれぞれドラッグします。最後の範囲を消すには取り消しを、やり直すにはすべての範囲の削除を使います。",
       },
       {
-        "title": "EXIFメタデータ削除",
-        "description": "位置情報やカメラ情報を自動消去。"
-      }
+        title: "加工した画像をダウンロードする",
+        description: "PNG、WebP、JPGでダウンロードするか、クリップボードにコピーします。",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "モザイクは復元できますか？",
-        "answer": "いいえ、ピクセルが上書きされるため復元不可能です。"
-      }
-    ]
-  }
+        title: "3つの隠し方",
+        description: "黒い四角での塗りつぶし、モザイク、モザイクの上に重ねるぼかしから選べます。",
+      },
+      {
+        title: "四角形と楕円",
+        description: "顔には楕円、文字やナンバープレート、番号には四角形を使えます。",
+      },
+      {
+        title: "1枚の画像で方法を混在",
+        description: "各範囲は描いたときの方法と強さを保つので、名前は黒塗り、顔はぼかしといった使い分けができます。",
+      },
+      {
+        title: "大きな写真でも同じ効果",
+        description: "強さは画像の解像度に合わせて調整されるので、高解像度の写真でも同じようにしっかり隠せます。",
+      },
+      {
+        title: "取り消しとクリア",
+        description: "写真を読み込み直さずに、最後の範囲やすべての範囲を削除できます。",
+      },
+    ],
+    faqs: [
+      {
+        question: "文字を隠すのに最も安全な方法はどれですか？",
+        answer:
+          "黒塗りはピクセルを完全に置き換えるため、パスワード、口座番号、書類には最も安全です。強いモザイクやぼかしでも隠せますが、小さな文字を弱い設定で加工すると、読み取られてしまうことがあります。",
+      },
+      {
+        question: "ダウンロードしたファイルのぼかしを元に戻されることはありますか？",
+        answer:
+          "ダウンロードした画像では、各範囲内のピクセルそのものが置き換えられており、別のレイヤーで隠しているわけではありません。端末上の元の写真は変更されないので、加工したコピーだけを共有してください。",
+      },
+      {
+        question: "EXIFデータも削除されますか？",
+        answer:
+          "はい。ダウンロードするファイルはキャンバス上のピクセルから作られるため、元の写真のカメラ情報やGPS位置情報は含まれません。",
+      },
+      {
+        question: "同じ画像で別々の効果を使えますか？",
+        answer:
+          "はい。次の範囲を描く前に、方法や強さを変更してください。すでに描いた範囲は、それぞれの設定を保ちます。",
+      },
+      {
+        question: "スマートフォンでも使えますか？",
+        answer: "はい。隠したい範囲の上を指でドラッグすると、四角形や楕円を描けます。",
+      },
+    ],
+  },
+  "remove-background": {
+    name: "背景削除",
+    shortName: "背景削除",
+    tagline: "端末上で動くAIで写真の背景を削除し、背景が透明なPNGとして保存できます。",
+    intro:
+      "背景削除は、写真の主な被写体を切り抜き、その後ろにあるものをすべて取り除くツールです。ブラウザ内で動くAIモデルを使うため、画像が端末から外に出ることはありません。小さめで処理が速く、人物の写真に最適な「高速」と、大きめで商品、ペット、物を含むどんな被写体でもより良い結果が得られる「高画質」から選べます。結果は背景が透明なPNGとして保存するか、単色の背景に置けます。",
+    seoTitle: "背景 削除 – 無料、端末上のAIで背景透過",
+    seoDescription:
+      "画像の背景削除・背景透過が無料でできます。ブラウザで動くAIで「高速」か「高画質」のモデルを選び、背景が透明なPNGを保存。写真は端末から外に出ません。",
+    keywords: [
+      "背景 削除",
+      "背景 透過",
+      "画像 背景 削除 無料",
+      "写真 背景 消す",
+      "背景透過 PNG 作成",
+      "画像 切り抜き 背景",
+      "背景 削除 オンライン",
+    ],
+    howToSteps: [
+      {
+        title: "写真をアップロードする",
+        description: "JPG、PNG、WebP画像をドロップ、選択、または貼り付けます。",
+      },
+      {
+        title: "モデルを選ぶ",
+        description:
+          "初期設定では「高速」が選ばれており、人物の写真によく合います。商品、ペット、物の場合や、輪郭をできるだけきれいにしたい場合は「高画質」を選んでください。",
+      },
+      {
+        title: "モデルを一度だけダウンロードする",
+        description:
+          "モデルを初めて使うときは、ブラウザがモデルをダウンロードします。「高速」は約33 MB、「高画質」は約100 MBで、「高画質」はダウンロードを始める前に確認します。その後はブラウザに保存されます。",
+      },
+      {
+        title: "背景を選んでダウンロードする",
+        description: "透明のままPNGで保存するか、単色を選んでPNGまたはJPGで保存します。",
+      },
+    ],
+    features: [
+      {
+        title: "端末上で動くAI",
+        description: "モデルはブラウザ内で動くため、写真がサーバーにアップロードされることはありません。",
+      },
+      {
+        title: "選べる2つのモデル",
+        description: "「高速」は処理が速く、人物に最適です。「高画質」はサイズが大きく処理も遅めですが、どんな被写体でもより良い結果が得られます。",
+      },
+      {
+        title: "ダウンロードは1回だけ",
+        description: "各モデルは初回の使用後にブラウザに保存され、どのモデルがダウンロード済みかがツール上に表示されます。",
+      },
+      {
+        title: "透明または色付きの背景",
+        description: "背景が透明なPNGで保存するか、好きな単色の背景に被写体を置けます。",
+      },
+    ],
+    faqs: [
+      {
+        question: "写真はサーバーにアップロードされますか？",
+        answer:
+          "いいえ。ブラウザにダウンロードされるのはAIモデルだけです。写真は端末上で処理され、どこにも送信されません。",
+      },
+      {
+        question: "「高速」と「高画質」の違いは何ですか？",
+        answer:
+          "「高速」は小さめのモデル（約33 MB）を使い、1枚あたり約5秒で処理します。人物にはよく合いますが、物の一部を取りこぼすことがあります。「高画質」は大きめのモデル（約100 MB）を使い、約15〜30秒かかりますが、商品、ペット、物、人物でより良い結果が得られます。",
+      },
+      {
+        question: "初回の使用に時間がかかるのはなぜですか？",
+        answer:
+          "最初にモデルをダウンロードする必要があるためです。「高画質」は100 MBのモデルをダウンロードする前に確認します。初回の使用後はブラウザがモデルを保存するので、次の写真からはずっと速く始まります。",
+      },
+      {
+        question: "iPhoneやAndroidのスマートフォンでも使えますか？",
+        answer:
+          "はい。スマートフォンでは「高速」がおすすめです。「高画質」もスマートフォンで動作しますが、ダウンロードサイズの大きさと処理時間の長さが目立ちやすく、特にモバイルデータ通信では気になりやすくなります。",
+      },
+      {
+        question: "被写体の後ろに新しい背景色を入れられますか？",
+        answer:
+          "はい。単色を選んで、PNGまたはJPGで保存してください。背景を透明にしたい場合はPNGで保存します。",
+      },
+      {
+        question: "輪郭がきれいに切り抜けない部分があるのはなぜですか？",
+        answer:
+          "細い髪の毛、動物の毛、ガラス、背景と色が似ている被写体は、どのモデルにとっても難しいものです。「高画質」を試すか、被写体と背景のコントラストがはっきりした写真を使ってください。",
+      },
+    ],
+  },
 };

@@ -28,6 +28,9 @@ export interface LocalizedToolItem {
   name: string;
   shortName: string;
   tagline: string;
+  /** 2–4 sentence plain-language overview shown below the tool; unique per tool */
+  intro?: string;
+  /** Without the site name; the layout appends it */
   seoTitle: string;
   seoDescription: string;
   keywords: string[];
@@ -43,6 +46,13 @@ export interface LocalizedHomeData {
     subtitle: string;
     dropzoneTitle: string;
     dropzoneSubtitle: string;
+  };
+  /** Section headings; optional so untranslated locales fall back to English */
+  sections?: {
+    indexTitle: string;
+    indexSubtitle: string;
+    pillarsTitle: string;
+    faqTitle: string;
   };
   trustPillars: {
     title: string;

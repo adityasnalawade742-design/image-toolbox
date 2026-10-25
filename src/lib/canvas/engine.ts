@@ -1,3 +1,5 @@
+import { encodeAvif } from './avifEncoder';
+
 export interface TextOverlayOptions {
   text: string;
   fontFamily?: string;
@@ -111,7 +113,8 @@ export function createImageProxy(
     const proxyImg = new Image();
     proxyImg.onload = () => resolve(proxyImg);
     proxyImg.onerror = () => resolve(img);
-    proxyImg.src = canvas.toDataURL('image/jpeg', 0.88);
+    // JPEG keeps the proxy small, but would turn transparent areas black in the preview
+    proxyImg.src = checkImageTransparency(img) ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', 0.88);
   });
 }
 
@@ -282,8 +285,10 @@ export function processCanvas(
   // 9. Draw Watermark (Text or Image/Logo)
   if (options.watermark) {
     const wOpt = options.watermark;
-    const margin = 24;
+    const margin = Math.max(24, Math.round(Math.min(canvas.width, canvas.height) * 0.03));
     const pos = wOpt.position || 'bottom-right';
+    // 'center' is both axes; otherwise the position is '<vertical>-<horizontal>'
+    const [vPos, hPos] = pos === 'center' ? ['center', 'center'] : pos.split('-');
 
     if (wOpt.imageElement) {
       // Image Logo Watermark
@@ -295,11 +300,11 @@ export function processCanvas(
       let wx = canvas.width - wmTargetW - margin;
       let wy = canvas.height - wmTargetH - margin;
 
-      if (pos.includes('left')) wx = margin;
-      else if (pos.includes('center')) wx = (canvas.width - wmTargetW) / 2;
+      if (hPos === 'left') wx = margin;
+      else if (hPos === 'center') wx = (canvas.width - wmTargetW) / 2;
 
-      if (pos.startsWith('top')) wy = margin;
-      else if (pos.startsWith('center') || pos === 'center') wy = (canvas.height - wmTargetH) / 2;
+      if (vPos === 'top') wy = margin;
+      else if (vPos === 'center') wy = (canvas.height - wmTargetH) / 2;
 
       ctx.save();
       ctx.globalAlpha = wOpt.opacity !== undefined ? wOpt.opacity : 0.6;
@@ -316,7 +321,7 @@ export function processCanvas(
       if (wOpt.repeat) {
         const stepX = wmFontSize * 10;
         const stepY = wmFontSize * 6;
-        ctx.rotate(((wOpt.rotation || -30) * Math.PI) / 180);
+        ctx.rotate(((wOpt.rotation ?? -30) * Math.PI) / 180);
         for (let x = -canvas.width; x < canvas.width * 2; x += stepX) {
           for (let y = -canvas.height; y < canvas.height * 2; y += stepY) {
             ctx.fillText(wOpt.text, x, y);
@@ -328,23 +333,26 @@ export function processCanvas(
         ctx.textAlign = 'right';
         ctx.textBaseline = 'bottom';
 
-        if (pos.includes('left')) {
+        if (hPos === 'left') {
           x = margin;
           ctx.textAlign = 'left';
-        } else if (pos.includes('center')) {
+        } else if (hPos === 'center') {
           x = canvas.width / 2;
           ctx.textAlign = 'center';
         }
 
-        if (pos.startsWith('top')) {
+        if (vPos === 'top') {
           y = margin;
           ctx.textBaseline = 'top';
-        } else if (pos.startsWith('center') || pos === 'center') {
+        } else if (vPos === 'center') {
           y = canvas.height / 2;
           ctx.textBaseline = 'middle';
         }
 
-        ctx.fillText(wOpt.text, x, y);
+        // Rotate around the text's own anchor so it stays in the chosen spot
+        ctx.translate(x, y);
+        ctx.rotate(((wOpt.rotation || 0) * Math.PI) / 180);
+        ctx.fillText(wOpt.text, 0, 0);
       }
       ctx.restore();
     }
@@ -356,16 +364,24 @@ export function processCanvas(
 export function canvasToBlob(
   canvas: HTMLCanvasElement,
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' = 'image/png',
-  quality: number = 0.92
+  quality: number = 0.92,
+  avifCoalesceKey?: string
 ): Promise<Blob> {
-  const mime = format === 'image/avif' ? 'image/webp' : format;
+  // Browsers can't encode AVIF via toBlob, so route it through the WASM encoder
+  if (format === 'image/avif') {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return Promise.reject(new Error('Canvas 2D unavailable'));
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    return encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
+  }
+
   return new Promise((resolve, reject) => {
     canvas.toBlob(
       (blob) => {
         if (blob) resolve(blob);
         else reject(new Error('Failed to create blob from canvas'));
       },
-      mime,
+      format,
       quality
     );
   });
@@ -430,6 +446,62 @@ async function createIcoFile(pngItems: Array<{ size: number; blob: Blob }>): Pro
 }
 
 // Lazy loaded JSZip for Favicons and Bulk tools
+/** Greedy word wrap that respects explicit newlines; `measure` is usually `ctx.measureText(s).width` */
+export function wrapTextLines(text: string, maxWidth: number, measure: (s: string) => number): string[] {
+  const lines: string[] = [];
+  for (const paragraph of text.split('\n')) {
+    let line = '';
+    for (const word of paragraph.split(/\s+/).filter(Boolean)) {
+      const candidate = line ? `${line} ${word}` : word;
+      if (line && measure(candidate) > maxWidth) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = candidate;
+      }
+    }
+    lines.push(line);
+  }
+  return lines;
+}
+
+/**
+ * Center-crop to a square (no stretching) and downscale in halving steps,
+ * which keeps 16/32px icons crisp instead of aliased.
+ */
+export function renderSquareIcon(img: HTMLImageElement, size: number): HTMLCanvasElement | null {
+  const w = img.naturalWidth || img.width;
+  const h = img.naturalHeight || img.height;
+  const side = Math.min(w, h);
+
+  let current = document.createElement('canvas');
+  current.width = side;
+  current.height = side;
+  let ctx = current.getContext('2d');
+  if (!ctx) return null;
+  ctx.drawImage(img, (w - side) / 2, (h - side) / 2, side, side, 0, 0, side, side);
+
+  while (current.width / 2 >= size) {
+    const next = document.createElement('canvas');
+    next.width = Math.round(current.width / 2);
+    next.height = next.width;
+    const nctx = next.getContext('2d');
+    if (!nctx) return null;
+    nctx.imageSmoothingQuality = 'high';
+    nctx.drawImage(current, 0, 0, next.width, next.height);
+    current = next;
+  }
+
+  const out = document.createElement('canvas');
+  out.width = size;
+  out.height = size;
+  ctx = out.getContext('2d');
+  if (!ctx) return null;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(current, 0, 0, size, size);
+  return out;
+}
+
 export async function generateFaviconBundle(img: HTMLImageElement, zipName: string = 'favicon-package.zip') {
   const JSZipModule = await import('jszip');
   const JSZip = JSZipModule.default;
@@ -438,12 +510,8 @@ export async function generateFaviconBundle(img: HTMLImageElement, zipName: stri
   const icoPngItems: Array<{ size: number; blob: Blob }> = [];
 
   for (const size of sizes) {
-    const canvas = document.createElement('canvas');
-    canvas.width = size;
-    canvas.height = size;
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      ctx.drawImage(img, 0, 0, size, size);
+    const canvas = renderSquareIcon(img, size);
+    if (canvas) {
       const blob = await canvasToBlob(canvas, 'image/png');
       const filename = size === 180 ? 'apple-touch-icon.png' : `favicon-${size}x${size}.png`;
       zip.file(filename, blob);
@@ -594,33 +662,40 @@ export function extractDominantPalette(img: HTMLImageElement, colorCount: number
   canvas.height = sampleH;
   ctx.drawImage(img, 0, 0, sampleW, sampleH);
 
-  const data = ctx.getImageData(0, 0, sampleW, sampleH).data;
-  const colorBuckets: Record<string, { r: number; g: number; b: number; count: number }> = {};
+  return paletteFromPixels(ctx.getImageData(0, 0, sampleW, sampleH).data, colorCount);
+}
 
-  for (let i = 0; i < data.length; i += 16) {
-    const a = data[i + 3];
-    if (a < 128) continue; // Ignore transparent pixels
+/**
+ * Dominant colors from raw RGBA pixels, most-covered first. Buckets are averaged (not first-pixel),
+ * near-duplicate shades are merged, and the result may be shorter than `colorCount`.
+ */
+export function paletteFromPixels(data: Uint8ClampedArray, colorCount: number): string[] {
+  const buckets: Record<string, { r: number; g: number; b: number; count: number }> = {};
+
+  for (let i = 0; i < data.length; i += 4) {
+    if (data[i + 3] < 128) continue; // Ignore transparent pixels
 
     // Quantize into 32-value intervals
-    const r = Math.round(data[i] / 32) * 32;
-    const g = Math.round(data[i + 1] / 32) * 32;
-    const b = Math.round(data[i + 2] / 32) * 32;
-    const key = `${r}-${g}-${b}`;
-
-    if (!colorBuckets[key]) {
-      colorBuckets[key] = { r: data[i], g: data[i + 1], b: data[i + 2], count: 0 };
-    }
-    colorBuckets[key].count++;
+    const key = `${Math.round(data[i] / 32)}-${Math.round(data[i + 1] / 32)}-${Math.round(data[i + 2] / 32)}`;
+    const bucket = (buckets[key] ||= { r: 0, g: 0, b: 0, count: 0 });
+    bucket.r += data[i];
+    bucket.g += data[i + 1];
+    bucket.b += data[i + 2];
+    bucket.count++;
   }
 
-  const sorted = Object.values(colorBuckets).sort((a, b) => b.count - a.count);
-  const palette = sorted.slice(0, colorCount).map((c) => rgbToHex(c.r, c.g, c.b));
+  const MIN_DISTANCE = 40; // RGB distance below which two swatches look like the same color
+  const chosen: { r: number; g: number; b: number }[] = [];
+  const sorted = Object.values(buckets).sort((a, b) => b.count - a.count);
 
-  while (palette.length < colorCount) {
-    palette.push('#FFFFFF');
+  for (const bucket of sorted) {
+    if (chosen.length >= colorCount) break;
+    const color = { r: bucket.r / bucket.count, g: bucket.g / bucket.count, b: bucket.b / bucket.count };
+    const isDistinct = chosen.every((c) => Math.hypot(c.r - color.r, c.g - color.g, c.b - color.b) >= MIN_DISTANCE);
+    if (isDistinct) chosen.push(color);
   }
 
-  return palette;
+  return chosen.map((c) => rgbToHex(Math.round(c.r), Math.round(c.g), Math.round(c.b)));
 }
 
 // Check real alpha channel transparency by sampling pixels

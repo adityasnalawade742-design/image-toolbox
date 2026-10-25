@@ -2,1575 +2,2606 @@ import type { LocalizedToolItem } from '../types';
 
 export const deTools: Record<string, LocalizedToolItem> = {
   "crop-image": {
-    "name": "Bild Zuschneiden",
-    "shortName": "Bild",
-    "tagline": "Bild Zuschneiden — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Zuschneiden — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Zuschneiden online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "crop-image",
+    name: "Bild zuschneiden",
+    shortName: "Zuschneiden",
+    tagline: "Schneide genau den Teil eines Fotos aus, den du brauchst: mit Ziehpunkten, exakten Pixelwerten oder fertigen Seitenverhältnissen.",
+    intro:
+      "Bild zuschneiden kürzt ein Foto auf den gewählten Bereich und speichert nur diesen Bereich in voller Auflösung. So entfernst du leere Ränder, rückst ein Motiv in den Mittelpunkt oder bringst ein Bild in die Form, die ein Social-Media-Beitrag braucht. Neben dem freien Zuschnitt gibt es Vorgaben wie 1:1, 4:5, 9:16 und 16:9, exakte Pixelangaben und einen Kreismodus für Profilbilder.",
+    seoTitle: "Bild zuschneiden online – kostenlos, ohne Upload",
+    seoDescription:
+      "Bild zuschneiden, kostenlos: Rahmen ziehen oder Pixel eingeben, Vorgaben wie 1:1, 4:5, 16:9 und 9:16 nutzen und als JPG, PNG, WebP oder AVIF speichern.",
+    keywords: [
       "bild zuschneiden",
-      "image tool",
-      "online free",
-      "de"
+      "foto zuschneiden online",
+      "bild quadratisch zuschneiden",
+      "bild für instagram zuschneiden",
+      "bild auf 16:9 zuschneiden",
+      "bild rund zuschneiden",
+      "bild zuschneiden ohne qualitätsverlust",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Foto hinzufügen",
+        description:
+          "Zieh ein Bild in das Upload-Feld, klicke, um eine Datei auszuwählen, oder füge es mit Ctrl+V ein. JPG, PNG, WebP, AVIF, GIF und iPhone-HEIC werden unterstützt.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Ausschnitt wählen",
+        description:
+          "Zieh den Rahmen und seine Ziehpunkte in der Vorschau oder klicke auf ein Verhältnis wie „Quadrat“ (1:1), „Story“ (9:16) oder ein Social-Media-Format. Für ein exaktes Ergebnis gibst du linken Rand, oberen Rand, Breite und Höhe in Pixeln ein.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Form und Format wählen",
+        description:
+          "Wechsle zu „Kreis“ (1:1) für einen runden Zuschnitt. Standardmäßig bleibt das Originalformat erhalten, unter „Speichern als“ kannst du aber auch JPG, PNG, WebP oder AVIF wählen.",
+      },
+      {
+        title: "Zugeschnittenes Bild herunterladen",
+        description:
+          "Klicke auf „Herunterladen“, um nur den gewählten Bereich in voller Auflösung zu speichern, oder kopiere ihn in die Zwischenablage.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Seitenverhältnisse und Social-Media-Formate",
+        description:
+          "Original, 1:1, 4:3, 16:9, 9:16, 2:3, 3:2 und 21:9, dazu Formate für Instagram-Hochformat (4:5), Reels und TikTok, YouTube-Thumbnails und Pinterest-Pins.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Pixelgenaue Eingabe",
+        description:
+          "Gib Position, Breite und Höhe in Pixeln ein, sperre bei Bedarf das Verhältnis und sieh die endgültige Größe, bevor du speicherst.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Runder Zuschnitt für Profilbilder",
+        description:
+          "Im Kreismodus wird der Rahmen auf ein Quadrat festgelegt und ein rundes Bild ausgeschnitten. Speichere als PNG oder WebP, damit die Ecken transparent bleiben.",
+      },
+      {
+        title: "Aus den Originalpixeln geschnitten",
+        description:
+          "Die Vorschau ist für mehr Tempo eventuell verkleinert, der Download wird aber aus dem Foto in voller Auflösung auf deinem Gerät geschnitten. Nichts wird hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Zuschneiden tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Verschlechtert Zuschneiden die Bildqualität?",
+        answer:
+          "Beim Zuschneiden werden nur die Pixel außerhalb des Rahmens entfernt, der Rest bleibt scharf. Speicherst du als JPG, WebP oder AVIF, wird das Bild erneut komprimiert. Nutze dann 90 % Qualität oder mehr oder speichere als PNG, um nah am Original zu bleiben.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wie schneide ich ein Foto für Instagram quadratisch zu?",
+        answer:
+          "Klicke auf „Quadrat“ (1:1) oder unter „Social-Media-Formate“ auf „Beitrag“ und zieh den Rahmen über den Teil, den du behalten willst. Für einen höheren Hochformat-Beitrag nimmst du stattdessen „Hochformat“ (4:5).",
+      },
+      {
+        question: "Wie erstelle ich ein rundes Profilbild?",
+        answer:
+          "Wähle „Kreis“ (1:1), schieb den Kreis über das Gesicht und speichere als PNG oder WebP. JPG kann keine Transparenz speichern, deshalb würde der Bereich außerhalb des Kreises weiß gefüllt.",
+      },
+      {
+        question: "Kann ich ein iPhone-Foto im HEIC-Format zuschneiden?",
+        answer:
+          "Ja. Die HEIC-Datei wird beim Öffnen in deinem Browser umgewandelt. Das Ergebnis wird standardmäßig als JPG gespeichert, du kannst aber auch PNG, WebP oder AVIF wählen.",
+      },
+      {
+        question: "Bleiben die EXIF-Daten nach dem Zuschneiden erhalten?",
+        answer:
+          "Nein. Die neue Datei wird nur aus den Bildpixeln erstellt. Kameradaten und GPS-Standort des Originals werden also nicht übernommen.",
+      },
+      {
+        question: "Kann ich ein animiertes GIF zuschneiden?",
+        answer:
+          "Du kannst ein GIF öffnen, das Ergebnis ist aber ein einzelnes Standbild, weil JPG, PNG, WebP und AVIF hier ohne Animation gespeichert werden.",
+      },
+    ],
   },
   "resize-image": {
-    "name": "Bild Skalieren & Größe Ändern",
-    "shortName": "Bild",
-    "tagline": "Bild Skalieren & Größe Ändern — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Skalieren & Größe Ändern — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Skalieren & Größe Ändern online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "resize-image",
-      "bild skalieren & größe ändern",
-      "image tool",
-      "online free",
-      "de"
+    name: "Bildgröße ändern",
+    shortName: "Größe ändern",
+    tagline: "Ändere Breite und Höhe eines Bildes in Pixeln oder Prozent, mit festem oder freiem Seitenverhältnis.",
+    intro:
+      "Bildgröße ändern passt die Pixelmaße eines Fotos oder einer Grafik an. So machst du ein großes Kamerafoto klein genug für eine E-Mail oder eine Website oder bringst es auf eine exakte Größe wie 1080 × 1080. Du gibst Breite und Höhe ein oder skalierst um 10 % bis 300 %. Die Option „Nicht vergrößern“ verhindert, dass du ein Bild aus Versehen vergrößerst.",
+    seoTitle: "Bild verkleinern online – exakte Pixel oder Prozent",
+    seoDescription:
+      "Bild verkleinern oder Bildgröße ändern, kostenlos: Breite und Höhe in Pixeln eingeben oder in Prozent skalieren und als JPG, PNG, WebP oder AVIF speichern.",
+    keywords: [
+      "bild verkleinern",
+      "bildgröße ändern",
+      "bildgröße ändern online",
+      "bild auf pixel verkleinern",
+      "foto verkleinern ohne qualitätsverlust",
+      "bild auf 1080x1080 ändern",
+      "bild skalieren",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP-, AVIF- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Neue Größe festlegen",
+        description:
+          "Im Modus „Pixel“ gibst du eine Breite oder Höhe ein. Ist „Seitenverhältnis beibehalten“ aktiv, passt sich die andere Seite automatisch an. Im Modus „Prozent“ nutzt du den Schieberegler oder die Schaltflächen von 25 % bis 200 %.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Dateiformat wählen",
+        description:
+          "Standardmäßig bleibt das Originalformat erhalten. Du kannst zu JPG, PNG, WebP oder AVIF wechseln und für JPG, WebP und AVIF die Qualität einstellen.",
+      },
+      {
+        title: "Ergebnis herunterladen",
+        description:
+          "Klicke auf „Herunterladen“, um das skalierte Bild zu speichern, oder schick es an „Komprimieren“, wenn die Datei auch kleiner werden soll.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Pixel oder Prozent",
+        description: "Gib exakte Maße bis 10.000 Pixel ein oder skaliere das ganze Bild von 10 % bis 300 %.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Festes Seitenverhältnis",
+        description:
+          "Behalte die ursprünglichen Proportionen bei, damit nichts verzerrt wird, oder löse die Sperre, um Breite und Höhe getrennt festzulegen.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Kein versehentliches Vergrößern",
+        description:
+          "Begrenzt die Größe auf die Originalmaße, damit ein kleines Bild nie aus Versehen vergrößert und unscharf wird.",
+      },
+      {
+        title: "Dein Dateityp bleibt",
+        description: "Ein JPG bleibt ein JPG und ein PNG bleibt ein PNG, außer du wählst ein anderes Format.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Skalieren & Größe Ändern tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie verkleinere ich ein Bild ohne Qualitätsverlust?",
+        answer:
+          "Beim Verkleinern bleibt ein Bild scharf. Beim Vergrößern über das Original hinaus kommen keine Details dazu, es wirkt also weicher. Aktiviere „Nicht vergrößern“, um das zu vermeiden. Speichere als PNG oder nutze für JPG und WebP 90 % Qualität oder mehr.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wird die Datei durch das Verkleinern kleiner?",
+        answer:
+          "Meistens ja. Halbierst du Breite und Höhe, bleibt etwa ein Viertel der Pixel übrig, und die Datei wird deutlich kleiner. Für noch kleinere Dateien komprimierst du das Ergebnis danach.",
+      },
+      {
+        question: "Kann ich auf eine exakte Größe wie 1080 × 1080 ändern?",
+        answer:
+          "Ja. Schalte „Seitenverhältnis beibehalten“ aus und gib beide Werte ein. Ist das Original nicht quadratisch, wird es verzerrt. Schneide es deshalb zuerst auf 1:1 zu und ändere dann die Größe.",
+      },
+      {
+        question: "Kann ich viele Bilder auf einmal verkleinern?",
+        answer:
+          "Diese Seite bearbeitet ein Bild nach dem anderen. Um bis zu 50 Bilder in einem Schritt zu skalieren und als ZIP herunterzuladen, nutze „Mehrere Bilder skalieren“.",
+      },
+      {
+        question: "Kann ich Fotos vom iPhone verkleinern?",
+        answer:
+          "Ja. HEIC-Fotos werden in deinem Browser umgewandelt, und das skalierte Bild wird standardmäßig als JPG gespeichert.",
+      },
+    ],
   },
   "compress-image": {
-    "name": "Bild Komprimieren",
-    "shortName": "Bild",
-    "tagline": "Bild Komprimieren — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Komprimieren — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Komprimieren online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "compress-image",
+    name: "Bild komprimieren",
+    shortName: "Komprimieren",
+    tagline: "Mach eine Bilddatei kleiner, indem du Format und Qualität wählst, und sieh die neue Größe vor dem Download.",
+    intro:
+      "Bild komprimieren verringert die Dateigröße eines Fotos, damit es auf einer Website schneller lädt oder in eine E-Mail oder unter ein Upload-Limit passt. Das Bild wird neu als WebP (Standard), AVIF, JPG oder PNG in der gewählten Qualität gespeichert. Während du den Regler bewegst, siehst du die geschätzte neue Größe und die Ersparnis in Prozent. Im Modus „Dateigröße“ wird die Qualität für dich gewählt, wenn du unter einem Limit wie 100 KB bleiben musst.",
+    seoTitle: "Bild komprimieren online – Dateigröße verkleinern",
+    seoDescription:
+      "Bild komprimieren, kostenlos und ohne Upload: WebP, AVIF, JPG oder PNG wählen, Qualität oder Zielgröße in KB festlegen und die Ersparnis vor dem Download sehen.",
+    keywords: [
       "bild komprimieren",
-      "image tool",
-      "online free",
-      "de"
+      "dateigröße bild verkleinern",
+      "jpg komprimieren",
+      "bild auf 100 kb verkleinern",
+      "bild komprimieren online",
+      "foto für e-mail verkleinern",
+      "png komprimieren",
+      "bilder in webp umwandeln",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild hinzufügen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Ausgabeformat wählen",
+        description:
+          "WebP ist voreingestellt. AVIF ergibt meist die kleinsten Dateien, braucht aber länger zum Kodieren. JPG öffnet sich überall, und PNG ist verlustfrei und spart daher am wenigsten Platz.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Qualität oder Zielgröße festlegen",
+        description:
+          "Bewege den Qualitätsregler und beobachte die geschätzte Größe, oder wechsle zu „Dateigröße“ und gib eine Größe in KB ein oder klicke auf 50, 100, 200 oder 500 KB.",
+      },
+      {
+        title: "Prüfen und herunterladen",
+        description: "Sieh dir die Vorschau und die Ersparnis in Prozent an und klicke dann auf „Herunterladen“.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Live-Schätzung der Größe",
+        description:
+          "Neue Dateigröße und Ersparnis aktualisieren sich bei jeder Änderung, und du wirst gewarnt, wenn das Ergebnis größer als das Original wäre.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "AVIF, WebP, JPG und PNG",
+        description:
+          "Vier Ausgabeformate, darunter AVIF, das mit einem WebAssembly-Encoder direkt in deinem Browser kodiert wird.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Modus für die Zielgröße",
+        description:
+          "Gib eine Größe in KB ein, und das Tool wählt dafür eine Qualitätsstufe. Das ist eine Schätzung, prüfe also die Live-Größe vor dem Download.",
+      },
+      {
+        title: "Maße bleiben gleich",
+        description:
+          "Beim Komprimieren bleiben Breite und Höhe erhalten. Soll eine Datei viel kleiner werden, verkleinere sie zuerst und komprimiere sie dann.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Komprimieren tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie viel kleiner wird mein Bild?",
+        answer:
+          "Das hängt vom Bild ab. Große Kamerafotos schrumpfen als WebP oder AVIF bei 70 % bis 85 % Qualität oft stark, kleine Grafiken oder bereits komprimierte Dateien dagegen kaum. Die Live-Schätzung zeigt dir das Ergebnis vor dem Download.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Welches Format ergibt die kleinste Datei: AVIF, WebP oder JPG?",
+        answer:
+          "Bei ähnlicher Bildqualität ist AVIF meist am kleinsten, danach folgen WebP und JPG. AVIF braucht im Browser länger zum Kodieren, vor allem bei großen Fotos, und manche älteren Programme können es nicht öffnen.",
+      },
+      {
+        question: "Wie komprimiere ich ein Bild auf 100 KB?",
+        answer:
+          "Wähle „Dateigröße“ und klicke auf 100 KB. Liegt die Live-Größe noch über 100 KB, senke die Qualität etwas weiter oder verkleinere das Bild zuerst mit „Bildgröße ändern“.",
+      },
+      {
+        question: "Sieht mein Foto nach dem Komprimieren schlechter aus?",
+        answer:
+          "WebP, AVIF und JPG entfernen Details, die schwer zu erkennen sind. Bei 75 % bis 90 % Qualität sehen die meisten Fotos in normaler Größe gleich aus, sehr niedrige Werte führen dagegen zu Unschärfe und Blockbildung.",
+      },
+      {
+        question: "Warum ist die komprimierte Datei größer als das Original?",
+        answer:
+          "Das passiert, wenn das Original bereits gut optimiert war oder ein Foto als PNG gespeichert wird. Versuch es mit WebP oder AVIF oder einer niedrigeren Qualität.",
+      },
+      {
+        question: "Werden beim Komprimieren die EXIF-Daten entfernt?",
+        answer:
+          "Ja. Die neue Datei wird aus den Bildpixeln erstellt, Kamerainformationen und GPS-Standort sind also nicht enthalten.",
+      },
+    ],
   },
   "rotate-image": {
-    "name": "Bild Drehen",
-    "shortName": "Bild",
-    "tagline": "Bild Drehen — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Drehen — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Drehen online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "rotate-image",
+    name: "Bild drehen",
+    shortName: "Drehen",
+    tagline: "Dreh ein Bild um 90°, 180° oder einen beliebigen Winkel von -180° bis 180° und speichere es im gewünschten Format.",
+    intro:
+      "Bild drehen korrigiert Fotos, die seitlich oder auf dem Kopf stehen, und richtet leicht schiefe Bilder gerade aus. Nutze die 90°-Schaltflächen für schnelle Drehungen oder den Regler „Eigener Winkel“ für kleine Korrekturen. Ist der Winkel kein Vielfaches von 90°, wächst die Arbeitsfläche mit, damit das ganze gedrehte Bild hineinpasst und keine Ecken abgeschnitten werden.",
+    seoTitle: "Bild drehen online – 90°, 180° oder beliebiger Winkel",
+    seoDescription:
+      "Bild drehen, kostenlos: Foto um 90° nach links oder rechts, um 180° oder einen eigenen Winkel drehen und als JPG, PNG, WebP oder AVIF speichern. Ohne Upload.",
+    keywords: [
       "bild drehen",
-      "image tool",
-      "online free",
-      "de"
+      "foto drehen online",
+      "bild um 90 grad drehen",
+      "jpg drehen",
+      "foto gerade ausrichten",
+      "bild drehen und speichern",
+      "bild um winkel drehen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Bild drehen",
+        description:
+          "Klicke auf „Rechts 90°“, um im Uhrzeigersinn zu drehen, auf „Links 90°“ für gegen den Uhrzeigersinn oder auf 180°, um das Bild auf den Kopf zu stellen. Für kleine Korrekturen ziehst du den Regler „Eigener Winkel“.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Format wählen",
+        description:
+          "Standardmäßig bleibt das Originalformat erhalten. Nach einem eigenen Winkel bleiben die neuen Ecken in PNG, WebP und AVIF transparent, JPG füllt sie weiß.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Klicke auf „Herunterladen“, um das gedrehte Bild zu speichern, oder kopiere es in die Zwischenablage.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Schnell um 90° und 180° drehen",
+        description: "Korrigiere seitliche oder auf dem Kopf stehende Fotos mit einem Klick. Mit „Zurücksetzen“ gehst du zurück zum Anfang.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Jeder Winkel",
+        description: "Richte einen schiefen Horizont oder ein Dokument mit dem Regler gerade aus, in Schritten von einem Grad von -180° bis 180°.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Nichts wird abgeschnitten",
+        description: "Bei eigenen Winkeln wird die Arbeitsfläche vergrößert, damit das ganze gedrehte Bild hineinpasst.",
+      },
+      {
+        title: "Funktioniert mit iPhone-Fotos",
+        description: "HEIC-Fotos werden in deinem Browser umgewandelt, du musst sie also nicht vorher konvertieren.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Drehen tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Warum steht mein Foto in manchen Apps seitlich?",
+        answer:
+          "Handys speichern das Bild oft in einer Richtung und hängen ein Drehungs-Tag an die EXIF-Daten an, das manche Apps ignorieren. In der Datei, die du hier herunterlädst, sind die Pixel selbst gedreht und es gibt kein Drehungs-Tag. Sie sieht daher überall gleich aus.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Verschlechtert das Drehen die Bildqualität?",
+        answer:
+          "Bei 90° oder 180° werden Pixel nur verschoben, nicht verändert. Bei anderen Winkeln müssen die Pixel neu berechnet werden, was das Bild ganz leicht weicher macht. Beim Speichern als JPG, WebP oder AVIF wird es außerdem erneut komprimiert, was du mit PNG vermeidest.",
+      },
+      {
+        question: "Was füllt die Ecken nach einer freien Drehung?",
+        answer:
+          "Die Arbeitsfläche wächst mit dem gedrehten Bild. In PNG, WebP und AVIF sind die neuen Eckbereiche transparent, in JPG sind sie weiß.",
+      },
+      {
+        question: "Kann ich ein iPhone-Foto im HEIC-Format drehen?",
+        answer:
+          "Ja. Das Foto wird in deinem Browser umgewandelt, und die gedrehte Version wird als JPG gespeichert, außer du wählst ein anderes Format.",
+      },
+    ],
   },
   "flip-image": {
-    "name": "Bild Spiegeln",
-    "shortName": "Bild",
-    "tagline": "Bild Spiegeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Spiegeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Spiegeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "flip-image",
+    name: "Bild spiegeln",
+    shortName: "Spiegeln",
+    tagline: "Spiegle ein Bild horizontal oder vertikal, zum Beispiel um ein seitenverkehrtes Selfie oder spiegelverkehrte Schrift zu korrigieren.",
+    intro:
+      "Bild spiegeln erstellt eine gespiegelte Kopie eines Bildes. Beim horizontalen Spiegeln werden links und rechts vertauscht. Das korrigiert Selfies von der Frontkamera, auf denen Schrift spiegelverkehrt erscheint. Beim vertikalen Spiegeln steht das Bild auf dem Kopf wie eine Spiegelung im Wasser, und beide Richtungen zusammen ergeben dasselbe wie eine Drehung um 180°.",
+    seoTitle: "Bild spiegeln online – horizontal oder vertikal",
+    seoDescription:
+      "Bild spiegeln, kostenlos: Foto horizontal oder vertikal spiegeln, verkehrte Selfies und Schrift korrigieren und als JPG, PNG, WebP oder AVIF speichern.",
+    keywords: [
       "bild spiegeln",
-      "image tool",
-      "online free",
-      "de"
+      "foto spiegeln online",
+      "bild horizontal spiegeln",
+      "bild vertikal spiegeln",
+      "selfie spiegeln",
+      "bild seitenverkehrt machen",
+      "spiegelbild erstellen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Richtung wählen",
+        description:
+          "Klicke auf „Horizontal“, um links und rechts zu tauschen, oder auf „Vertikal“, um das Bild auf den Kopf zu stellen. Ein zweiter Klick macht die Spiegelung rückgängig. Alternativ nutzt du „Beides spiegeln“ oder „Zurücksetzen“.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Format wählen",
+        description: "Standardmäßig bleibt das Originalformat erhalten, du kannst aber auch als JPG, PNG, WebP oder AVIF speichern.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Klicke auf „Herunterladen“, um das gespiegelte Bild zu speichern, oder kopiere es in die Zwischenablage.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Horizontal und vertikal spiegeln",
+        description: "Spiegle in eine oder beide Richtungen und sieh das Ergebnis sofort in der Vorschau.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Pixel bleiben unverändert",
+        description: "Beim Spiegeln werden Pixel nur an neue Positionen verschoben. Speichere als PNG, damit jedes Pixel exakt erhalten bleibt.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Dein Format bleibt",
+        description: "Ein JPG wird standardmäßig als JPG gespeichert und ein PNG als PNG. Du bekommst also dieselbe Dateiart zurück.",
+      },
+      {
+        title: "Im Browser verarbeitet",
+        description: "Das Bild wird auf deinem Gerät gespiegelt und nie auf einen Server hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Spiegeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Was ist der Unterschied zwischen Spiegeln und Drehen?",
+        answer:
+          "Beim Spiegeln entsteht ein Spiegelbild, Text ist also spiegelverkehrt. Beim Drehen wird das ganze Bild um seine Mitte gedreht, und Text bleibt lesbar.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wie korrigiere ich ein gespiegeltes Selfie?",
+        answer:
+          "Viele Frontkameras speichern Selfies als Spiegelbild. Öffne das Foto, klicke auf „Horizontal“ und lade es herunter. Schrift im Hintergrund ist dann wieder richtig lesbar.",
+      },
+      {
+        question: "Verschlechtert das Spiegeln die Bildqualität?",
+        answer:
+          "Das Spiegeln selbst verändert keine Pixelwerte. Speicherst du als JPG, WebP oder AVIF, wird das Bild erneut komprimiert. Nutze also eine hohe Qualität oder PNG.",
+      },
+      {
+        question: "Kann ich ein Bild in beide Richtungen gleichzeitig spiegeln?",
+        answer:
+          "Ja. „Beides spiegeln“ spiegelt das Bild horizontal und vertikal. Das sieht genauso aus wie eine Drehung um 180°.",
+      },
+    ],
   },
   "convert-image": {
-    "name": "Universeller Bildkonverter",
-    "shortName": "Universeller",
-    "tagline": "Universeller Bildkonverter — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Universeller Bildkonverter — Free Online Tool — Image Toolbox",
-    "seoDescription": "Universeller Bildkonverter online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "convert-image",
-      "universeller bildkonverter",
-      "image tool",
-      "online free",
-      "de"
+    name: "Universeller Bildkonverter",
+    shortName: "Konverter",
+    tagline: "Wandle JPG, PNG, WebP, AVIF, GIF, BMP, SVG oder iPhone-HEIC in JPG, PNG, WebP oder AVIF um.",
+    intro:
+      "Der Universelle Bildkonverter wandelt ein Bild von einem Dateiformat in ein anderes um. Er öffnet jedes Bild, das dein Browser anzeigen kann, etwa JPG, PNG, WebP, AVIF, GIF, BMP und SVG, dazu HEIC-Fotos vom iPhone, und speichert es als JPG, PNG, WebP oder AVIF. JPG- und HEIC-Fotos stehen standardmäßig auf WebP, andere Bilder auf PNG, du kannst aber jedes der vier Formate wählen.",
+    seoTitle: "Bildformat umwandeln – JPG, PNG, WebP, AVIF, HEIC",
+    seoDescription:
+      "Bildformat umwandeln, kostenlos im Browser: HEIC, PNG, JPG, WebP, GIF, BMP oder SVG in JPG, PNG, WebP oder AVIF konvertieren, mit wählbarer Qualität.",
+    keywords: [
+      "bild umwandeln",
+      "bildformat ändern",
+      "bild konvertieren online",
+      "heic in jpg umwandeln",
+      "bild in webp umwandeln",
+      "bild in avif umwandeln",
+      "gif in png umwandeln",
+      "bmp in jpg umwandeln",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein Bild in einem beliebigen Format, das dein Browser öffnen kann, oder ein iPhone-HEIC-Foto hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Ausgabeformat wählen",
+        description: "Wähle unter „Speichern als“ JPG, PNG, WebP oder AVIF.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Qualität und Hintergrund anpassen",
+        description:
+          "Für JPG, WebP und AVIF stellst du die Qualität ein. Hat das Bild transparente Bereiche und du hast JPG gewählt, bestimmst du die Farbe, mit der sie gefüllt werden.",
+      },
+      {
+        title: "Umgewandelte Datei herunterladen",
+        description: "Klicke auf „Herunterladen“. AVIF kann bei großen Fotos ein paar Sekunden dauern, weil es in deinem Browser kodiert wird.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Viele Eingabeformate",
+        description: "Öffnet JPG, PNG, WebP, AVIF, GIF, BMP, SVG und weitere Formate, die dein Browser unterstützt, dazu HEIC und HEIF.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Vier moderne Ausgabeformate",
+        description: "Speichere als JPG, PNG, WebP oder AVIF. AVIF wird mit einem WebAssembly-Encoder auf deinem Gerät kodiert.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Transparenz richtig behandelt",
+        description: "PNG, WebP und AVIF behalten transparente Bereiche. Bei JPG wählst du die Farbe, die sie ersetzt.",
+      },
+      {
+        title: "Qualität im Griff",
+        description: "Stell die Qualität für verlustbehaftete Formate von 10 % bis 100 % ein, um Dateigröße und Details abzuwägen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Universeller Bildkonverter tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie wandle ich HEIC in JPG um?",
+        answer:
+          "Öffne das HEIC-Foto, wähle unter „Speichern als“ JPG und klicke auf „Herunterladen“. Die Umwandlung passiert in deinem Browser, das Foto wird also nirgendwohin gesendet.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Welches Format soll ich wählen?",
+        answer:
+          "JPG für Fotos, die sich überall öffnen lassen müssen, PNG für Screenshots, Logos und Grafiken mit scharfen Kanten oder Transparenz, WebP für kleinere Bilder im Web und AVIF für die kleinsten Dateien in modernen Browsern.",
+      },
+      {
+        question: "Kann ich in GIF, BMP oder SVG umwandeln?",
+        answer:
+          "Nein. Diese Formate lassen sich öffnen, gespeichert wird aber immer als JPG, PNG, WebP oder AVIF. Ein animiertes GIF wird zu einem einzelnen Standbild.",
+      },
+      {
+        question: "Bleibt mein transparenter Hintergrund erhalten?",
+        answer:
+          "Ja, wenn du als PNG, WebP oder AVIF speicherst. JPG kann keine Transparenz speichern, daher werden transparente Bereiche mit der gewählten Farbe gefüllt.",
+      },
+      {
+        question: "Ist die Umwandlung verlustfrei?",
+        answer:
+          "Speichern als PNG ist verlustfrei. JPG, WebP und AVIF sind verlustbehaftete Formate: Eine höhere Qualität erhält mehr Details, erzeugt aber eine größere Datei.",
+      },
+    ],
   },
   "jpg-to-png": {
-    "name": "JPG in PNG Umwandeln",
-    "shortName": "JPG",
-    "tagline": "JPG in PNG Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPG in PNG Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPG in PNG Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-png",
+    name: "JPG in PNG",
+    shortName: "JPG → PNG",
+    tagline: "Mach aus einem JPG-Foto eine PNG-Datei, die beim erneuten Bearbeiten und Speichern nicht weiter an Qualität verliert.",
+    intro:
+      "JPG in PNG wandelt ein JPEG-Bild in das PNG-Format um. PNG komprimiert verlustfrei, das Bild verliert also nicht bei jedem Bearbeiten und Speichern weiter an Qualität. Das ist praktisch für Screenshots, Grafiken und Dateien, an denen du später weiterarbeiten willst. Das PNG hat exakt dieselben Pixel und Maße wie dein JPG, die Datei ist aber meist größer.",
+    seoTitle: "JPG in PNG umwandeln – kostenlos im Browser",
+    seoDescription:
+      "JPG in PNG umwandeln, kostenlos: Du bekommst ein verlustfreies PNG mit denselben Pixeln und Maßen wie dein JPEG, erstellt im Browser ohne Upload.",
+    keywords: [
       "jpg in png umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "jpg in png",
+      "jpeg in png umwandeln",
+      "jpg to png",
+      "jpg in png konvertieren",
+      "jpg als png speichern",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPG öffnen",
+        description: "Zieh eine JPG- oder JPEG-Datei in das Upload-Feld, klicke, um eine auszuwählen, oder füge sie mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Vorschau prüfen",
+        description: "Das Ergebnis ist immer ein PNG, es gibt also nichts einzustellen. Die Maße bleiben gleich.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG herunterladen",
+        description: "Klicke auf „PNG herunterladen“ oder schick das Bild über „Nächster Schritt“ an ein anderes Tool wie „Größe ändern“.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Exakte Pixelkopie",
+        description: "Jedes Pixel des JPG wird ohne weiteren Kompressionsverlust im PNG gespeichert.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Sicher für wiederholtes Bearbeiten",
+        description: "Ein PNG kannst du beliebig oft bearbeiten und speichern, ohne dass neue Kompressionsartefakte entstehen.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Gleiche Maße",
+        description: "Das PNG hat dieselbe Breite und Höhe wie das ursprüngliche JPG.",
+      },
+      {
+        title: "Kein Upload",
+        description: "Die Datei wird in deinem Browser-Tab umgewandelt und bleibt auf deinem Gerät.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPG in PNG Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Verbessert die Umwandlung von JPG in PNG die Qualität?",
+        answer:
+          "Nein. PNG hält das Bild genau so fest, wie es jetzt ist, kann aber keine Details zurückholen, die die JPEG-Kompression bereits entfernt hat.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wird der Hintergrund durch die Umwandlung in PNG transparent?",
+        answer:
+          "Nein. Ein JPG hat keine Transparenz, das PNG behält also denselben einfarbigen Hintergrund. Um den Hintergrund zu entfernen, nutze das Tool „Hintergrund entfernen“.",
+      },
+      {
+        question: "Warum ist die PNG-Datei größer als das JPG?",
+        answer:
+          "PNG speichert jedes Pixel ohne verlustbehaftete Kompression, während JPG feine Details verwirft, um Platz zu sparen. Als PNG gespeicherte Fotos sind oft um ein Mehrfaches größer.",
+      },
+      {
+        question: "Kann ich mehrere JPGs auf einmal in PNG umwandeln?",
+        answer:
+          "Diese Seite wandelt eine Datei nach der anderen um. Mit „Mehrere Bilder skalieren“ kannst du bis zu 50 Bilder als PNG in einer ZIP-Datei speichern, wenn du die Skalierung auf 100 % stellst.",
+      },
+      {
+        question: "Bleiben die EXIF-Daten des JPG erhalten?",
+        answer:
+          "Nein. Das PNG wird nur aus den Pixeln erstellt, Kamerainformationen und GPS-Standort werden also nicht übernommen.",
+      },
+    ],
   },
   "png-to-jpg": {
-    "name": "PNG in JPG Umwandeln",
-    "shortName": "PNG",
-    "tagline": "PNG in JPG Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNG in JPG Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNG in JPG Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-jpg",
+    name: "PNG in JPG",
+    shortName: "PNG → JPG",
+    tagline: "Wandle ein PNG in eine kleinere JPG-Datei um und wähle die Farbe, die transparente Bereiche ersetzt.",
+    intro:
+      "PNG in JPG macht aus einem PNG-Bild ein JPEG. Bei Fotos ist das meist deutlich kleiner, und fast jede Website und App akzeptiert es. JPEG kann keine Transparenz speichern, deshalb füllst du transparente Bereiche mit Weiß, Schwarz oder einer eigenen Farbe. Außerdem kannst du die JPG-Qualität von 10 % bis 100 % einstellen.",
+    seoTitle: "PNG in JPG umwandeln – mit wählbarer Hintergrundfarbe",
+    seoDescription:
+      "PNG in JPG umwandeln, kostenlos: weißen, schwarzen oder eigenen Hintergrund für Transparenz wählen und die JPG-Qualität einstellen. Ohne Upload.",
+    keywords: [
       "png in jpg umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "png in jpg",
+      "png in jpeg umwandeln",
+      "png in jpg mit weißem hintergrund",
+      "png in jpg konvertieren",
+      "png dateigröße verkleinern",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNG öffnen",
+        description: "Zieh eine PNG-Datei in das Upload-Feld, klicke, um eine auszuwählen, oder füge sie mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Hintergrundfarbe wählen",
+        description: "Wähle „Weiß“, „Schwarz“ oder eine beliebige Farbe mit dem Farbwähler. Sie füllt alle transparenten Bereiche.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Qualität einstellen",
+        description: "85 % ist ein guter Standardwert. Für Bilder mit Text oder feinen Linien nimmst du einen höheren Wert.",
+      },
+      {
+        title: "JPG herunterladen",
+        description: "Klicke auf „JPG herunterladen“, um die umgewandelte Datei zu speichern.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Hintergrundfarbe nach Wahl",
+        description: "Transparente und halbtransparente Pixel werden mit Weiß, Schwarz oder einer eigenen Farbe verrechnet.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Einstellbare Qualität",
+        description: "Wähle 10 % bis 100 %, um Dateigröße und Details abzuwägen.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Kleinere Dateien bei Fotos",
+        description: "Fotos und detailreiche Screenshots sind als JPG meist viel kleiner als als PNG.",
+      },
+      {
+        title: "Gleiche Maße",
+        description: "Das JPG behält exakt die Breite und Höhe des PNG.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNG in JPG Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Was passiert mit dem transparenten Hintergrund?",
+        answer:
+          "JPG hat keine Transparenz. Transparente und halbtransparente Pixel werden daher mit der gewählten Hintergrundfarbe verrechnet. Voreingestellt ist Weiß.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wird das JPG kleiner als das PNG?",
+        answer:
+          "Bei Fotos und Bildern mit vielen Farben meistens ja, oft sogar deutlich. Bei einfachen Grafiken mit wenigen Farben ist das PNG vielleicht schon klein, und das JPG kann sogar größer werden.",
+      },
+      {
+        question: "Welche Qualität soll ich verwenden?",
+        answer:
+          "Der Standardwert von 85 % passt für die meisten Fotos. Nimm 90 % bis 100 % für Bilder mit Text oder feinen Details und niedrigere Werte, wenn dir die Dateigröße wichtiger ist als Details.",
+      },
+      {
+        question: "Warum sieht Text in meinem JPG unscharf aus?",
+        answer:
+          "Die JPEG-Kompression kann weiche Kanten und kleine Flecken um scharfen Text und Linien erzeugen. Nutze eine höhere Qualität oder behalte Logos und Screenshots als PNG oder WebP.",
+      },
+    ],
   },
   "jpg-to-webp": {
-    "name": "JPG in WebP Umwandeln",
-    "shortName": "JPG",
-    "tagline": "JPG in WebP Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "JPG in WebP Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "JPG in WebP Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "jpg-to-webp",
+    name: "JPG in WebP",
+    shortName: "JPG → WebP",
+    tagline: "Wandle JPG-Fotos in WebP um, damit Bilddateien kleiner werden und Webseiten schneller laden.",
+    intro:
+      "JPG in WebP wandelt JPEG-Fotos in das WebP-Format um, das alle aktuellen großen Browser anzeigen können. Bei ähnlicher Bildqualität ist eine WebP-Datei meist kleiner als dasselbe Bild als JPG, Seiten damit laden also schneller. Die Qualität stellst du mit einem Regler von 10 % bis 100 % ein, und das Bild behält seine ursprünglichen Maße.",
+    seoTitle: "JPG in WebP umwandeln – kleinere Bilder fürs Web",
+    seoDescription:
+      "JPG in WebP umwandeln, kostenlos: kleinere Bilder für schnellere Websites, Qualität von 10 % bis 100 % einstellbar, Originalgröße bleibt. Ohne Upload.",
+    keywords: [
       "jpg in webp umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "jpg in webp",
+      "jpeg in webp umwandeln",
+      "jpg in webp konvertieren",
+      "bilder für website in webp umwandeln",
+      "webp konverter",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "JPG öffnen",
+        description: "Zieh ein JPG- oder JPEG-Foto in das Upload-Feld, klicke, um eines auszuwählen, oder füge es mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Qualität einstellen",
+        description: "Starte bei etwa 80 %. Höhere Werte erhalten mehr Details, niedrigere ergeben kleinere Dateien.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebP herunterladen",
+        description: "Klicke auf „WebP herunterladen“ und vergleiche die neue Dateigröße mit dem Original.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Kleinere Dateien bei ähnlicher Qualität",
+        description: "WebP braucht für ein gleich aussehendes Foto meist weniger Bytes als JPG.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Qualitätsregler",
+        description: "Wähle eine beliebige Qualität von 10 % bis 100 %, passend zur Ladezeit deiner Seite und zu den nötigen Bilddetails.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Originalmaße",
+        description: "Das Foto wird umgewandelt, ohne Breite oder Höhe zu ändern.",
+      },
+      {
+        title: "Auf deinem Gerät umgewandelt",
+        description: "Dein Foto wird im Browser verarbeitet und nicht hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this JPG in WebP Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Ist WebP besser als JPG?",
+        answer:
+          "Für Websites liefert WebP meist kleinere Dateien bei gleicher Bildqualität und kann auch Transparenz speichern. JPG wird aber noch von mehr älteren Programmen, Druckern und Upload-Formularen akzeptiert.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Unterstützen alle Browser WebP?",
+        answer:
+          "Aktuelle Versionen von Chrome, Edge, Firefox und Safari zeigen WebP-Bilder an. Manche älteren Apps und Betriebssysteme können sie nicht öffnen.",
+      },
+      {
+        question: "Warum habe ich ein PNG statt eines WebP bekommen?",
+        answer:
+          "Manche Browser, darunter einige Safari-Versionen, können WebP anzeigen, aber nicht erstellen. Dann weist dich das Tool darauf hin und speichert ein PNG. Nutze Chrome, Edge oder Firefox, um eine WebP-Datei zu erhalten.",
+      },
+      {
+        question: "Wie sehe ich die Dateigröße vor dem Download?",
+        answer:
+          "Dieser Konverter zeigt keine Größenschätzung an. „Bild komprimieren“ mit WebP als Format zeigt dir die erwartete Größe und die Ersparnis in Prozent, während du die Qualität anpasst.",
+      },
+    ],
   },
   "png-to-webp": {
-    "name": "PNG in WebP Umwandeln",
-    "shortName": "PNG",
-    "tagline": "PNG in WebP Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "PNG in WebP Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "PNG in WebP Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "png-to-webp",
+    name: "PNG in WebP",
+    shortName: "PNG → WebP",
+    tagline: "Wandle PNG-Bilder in WebP um, behalte transparente Hintergründe und erhalte meist eine viel kleinere Datei.",
+    intro:
+      "PNG in WebP wandelt PNG-Dateien wie Screenshots, Logos und Grafiken in das WebP-Format um. WebP unterstützt Transparenz, transparente Bereiche bleiben also auch nach der Umwandlung transparent. Das Ergebnis ist meist viel kleiner als das PNG, und mit einem Qualitätsregler hältst du Text und dünne Linien scharf.",
+    seoTitle: "PNG in WebP umwandeln – Transparenz bleibt erhalten",
+    seoDescription:
+      "PNG in WebP umwandeln, kostenlos: Transparente Hintergründe bleiben erhalten, Dateien werden meist viel kleiner, die Qualität ist einstellbar.",
+    keywords: [
       "png in webp umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "png in webp",
+      "png in webp transparent",
+      "png in webp konvertieren",
+      "png verkleinern für website",
+      "transparentes webp",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "PNG öffnen",
+        description: "Zieh eine PNG-Datei in das Upload-Feld, klicke, um eine auszuwählen, oder füge einen Screenshot mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Qualität einstellen",
+        description: "Nimm 90 % oder mehr für Logos, Text und Screenshots. Für Fotos reichen meist 75 % bis 85 %.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "WebP herunterladen",
+        description: "Klicke auf „WebP herunterladen“. Transparente Bereiche bleiben in der neuen Datei transparent.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Transparenz bleibt",
+        description: "Der Alphakanal deines PNG wird im WebP gespeichert, Logos und Icons behalten also ihren durchsichtigen Hintergrund.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Viel kleinere Dateien",
+        description: "Die WebP-Kompression verkleinert PNG-Screenshots und -Grafiken meist auf einen Bruchteil ihrer Größe.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Qualität im Griff",
+        description: "Stell die Qualität von 10 % bis 100 % ein, je nachdem, wie viele Details das Bild braucht.",
+      },
+      {
+        title: "Gleiche Maße",
+        description: "Das WebP behält exakt die Breite und Höhe des PNG.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this PNG in WebP Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Bleibt bei PNG in WebP der transparente Hintergrund erhalten?",
+        answer: "Ja. WebP unterstützt Transparenz, transparente und halbtransparente Pixel bleiben also erhalten.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum ist das WebP so viel kleiner als das PNG?",
+        answer:
+          "PNG ist verlustfrei und speichert jedes Pixel exakt. WebP nutzt hier eine verlustbehaftete Kompression, die schwer erkennbare Details entfernt und so viel Platz spart.",
+      },
+      {
+        question: "Welche Qualität eignet sich für Logos und Screenshots?",
+        answer:
+          "Nimm 90 % bis 100 %, damit Text, Icons und dünne Linien scharf bleiben. Für Fotos reichen meist 75 % bis 85 %.",
+      },
+      {
+        question: "Kann ich WebP-Bilder auf meiner Website verwenden?",
+        answer:
+          "Ja. Alle aktuellen großen Browser zeigen WebP an. Wenn du auch sehr alte Browser oder Apps unterstützt, behalte das ursprüngliche PNG als Ausweichlösung.",
+      },
+    ],
   },
   "webp-to-jpg": {
-    "name": "WebP in JPG Umwandeln",
-    "shortName": "WebP",
-    "tagline": "WebP in JPG Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebP in JPG Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebP in JPG Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-jpg",
+    name: "WebP in JPG",
+    shortName: "WebP → JPG",
+    tagline: "Wandle WebP-Bilder in JPG um, damit sie sich in jeder App, jedem Bildbetrachter und jedem Upload-Formular öffnen.",
+    intro:
+      "WebP in JPG wandelt WebP-Dateien, die auf Websites häufig vorkommen, in normale JPEG-Bilder um. JPG ist die sicherste Wahl, wenn ein älteres Programm, ein Upload-Formular oder ein Druckdienst kein WebP annimmt. Hat das WebP transparente Bereiche, wählst du die Füllfarbe, denn JPG kann keine Transparenz speichern.",
+    seoTitle: "WebP in JPG umwandeln – kostenlos, ohne Upload",
+    seoDescription:
+      "WebP in JPG umwandeln, kostenlos: WebP-Bilder in jeder App und jedem Upload-Formular öffnen, Füllfarbe für Transparenz wählen, Qualität einstellen. Ohne Upload.",
+    keywords: [
       "webp in jpg umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "webp in jpg",
+      "webp in jpeg umwandeln",
+      "webp als jpg speichern",
+      "webp in jpg konvertieren",
+      "webp datei öffnen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebP-Datei öffnen",
+        description: "Zieh ein WebP-Bild in das Upload-Feld, klicke, um eines auszuwählen, oder füge es mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Qualität und Füllfarbe festlegen",
+        description:
+          "Wähle eine Qualität zwischen 10 % und 100 %. Hat das Bild transparente Stellen, bestimmst du die Farbe, die sie ersetzt.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "JPG herunterladen",
+        description: "Klicke auf „JPG herunterladen“, um eine Datei zu speichern, die sich fast überall öffnen lässt.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Maximale Kompatibilität",
+        description: "JPG öffnet sich in fast jedem Programm, auf jedem Gerät, jedem Drucker und in jedem Upload-Formular.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Füllfarbe für Transparenz",
+        description: "Transparente Bereiche des WebP werden mit Weiß oder einer Farbe deiner Wahl gefüllt.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Einstellbare Qualität",
+        description: "Mit dem Qualitätsregler wägst du Dateigröße und Details ab.",
+      },
+      {
+        title: "Private Umwandlung",
+        description: "Das Bild wird in deinem Browser dekodiert und als JPG gespeichert. Nichts wird hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebP in JPG Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Warum werden Bilder von Websites als WebP gespeichert?",
+        answer:
+          "Viele Websites liefern Bilder als WebP aus, weil die Dateien kleiner sind. Speicherst du eines, bekommst du die WebP-Datei, die manche älteren Programme nicht öffnen können.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Was passiert mit transparenten Stellen eines WebP?",
+        answer:
+          "JPG kann keine Transparenz speichern, diese Bereiche werden daher mit einer Volltonfarbe gefüllt. Standardmäßig ist das Weiß, du kannst aber eine andere Farbe wählen.",
+      },
+      {
+        question: "Kann ich ein animiertes WebP umwandeln?",
+        answer: "Es wird nur ein einzelnes Standbild umgewandelt, weil JPG keine Animation speichern kann.",
+      },
+      {
+        question: "Verliert das JPG an Qualität?",
+        answer:
+          "Das WebP wird dekodiert und erneut als JPG gespeichert, und JPG ist verlustbehaftet. Nutze 90 % oder mehr, damit das Ergebnis sehr nah am Original bleibt.",
+      },
+    ],
   },
   "webp-to-png": {
-    "name": "WebP in PNG Umwandeln",
-    "shortName": "WebP",
-    "tagline": "WebP in PNG Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "WebP in PNG Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "WebP in PNG Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "webp-to-png",
+    name: "WebP in PNG",
+    shortName: "WebP → PNG",
+    tagline: "Wandle WebP-Bilder in verlustfreie PNG-Dateien um, die Transparenz und jedes Pixel behalten.",
+    intro:
+      "WebP in PNG wandelt WebP-Bilder in PNG um, ein verlustfreies Format, das fast jedes Bildprogramm und jeder Bildbetrachter unterstützt. Transparente Bereiche bleiben transparent, und die dekodierten Pixel werden exakt gespeichert. Das Bild verliert also keine Qualität, wenn du es bearbeitest und erneut speicherst. Nutze es, wenn eine App kein WebP öffnen kann oder du eine Datei zum Weiterbearbeiten brauchst.",
+    seoTitle: "WebP in PNG umwandeln – verlustfrei, transparent",
+    seoDescription:
+      "WebP in PNG umwandeln, kostenlos: transparente Hintergründe behalten und ein verlustfreies PNG erhalten, das jedes Bildprogramm öffnet.",
+    keywords: [
       "webp in png umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "webp in png",
+      "webp in png transparent",
+      "webp in png konvertieren",
+      "webp in png ohne qualitätsverlust",
+      "webp als png speichern",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "WebP-Datei öffnen",
+        description: "Zieh ein WebP-Bild in das Upload-Feld, klicke, um eines auszuwählen, oder füge es mit Ctrl+V ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Vorschau prüfen",
+        description: "Das Ergebnis ist immer ein verlustfreies PNG in derselben Größe, es gibt also keine Qualitätseinstellung.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG herunterladen",
+        description: "Klicke auf „PNG herunterladen“, um die umgewandelte Datei zu speichern.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Transparenz bleibt erhalten",
+        description: "Transparente und halbtransparente Bereiche des WebP bleiben im PNG transparent.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Verlustfreie Ausgabe",
+        description: "Die dekodierten Pixel werden exakt gespeichert, ohne neuen Kompressionsverlust.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Öffnet sich überall",
+        description: "PNG wird von praktisch allen Bildprogrammen, Bildbetrachtern und Office-Programmen unterstützt.",
+      },
+      {
+        title: "Kein Upload",
+        description: "Die Umwandlung läuft in deinem Browser, die Datei bleibt also auf deinem Gerät.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this WebP in PNG Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Bleibt bei WebP in PNG der transparente Hintergrund erhalten?",
+        answer: "Ja. PNG unterstützt Transparenz vollständig, der Hintergrund bleibt also durchsichtig.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum ist das PNG größer als das WebP?",
+        answer:
+          "Die meisten WebP-Bilder nutzen eine verlustbehaftete Kompression, während PNG jedes Pixel verlustfrei speichert. Dasselbe Bild braucht als PNG daher meist mehr Bytes.",
+      },
+      {
+        question: "Verbessert die Umwandlung in PNG die Bildqualität?",
+        answer:
+          "Nein. Das PNG hält das Bild genau so fest, wie es jetzt aussieht, kann aber keine Details zurückholen, die die WebP-Kompression bereits entfernt hat.",
+      },
+      {
+        question: "Kann ich ein animiertes WebP in PNG umwandeln?",
+        answer:
+          "Das Tool speichert ein einzelnes Standbild. Die PNG-Ausgabe enthält hier keine Animationsbilder.",
+      },
+    ],
   },
   "bulk-image-resizer": {
-    "name": "Massen-Bildskalierer (Batch)",
-    "shortName": "Massen-Bildskalierer",
-    "tagline": "Massen-Bildskalierer (Batch) — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Massen-Bildskalierer (Batch) — Free Online Tool — Image Toolbox",
-    "seoDescription": "Massen-Bildskalierer (Batch) online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-resizer",
-      "massen-bildskalierer (batch)",
-      "image tool",
-      "online free",
-      "de"
+    name: "Mehrere Bilder skalieren",
+    shortName: "Stapel skalieren",
+    tagline: "Ändere die Größe von bis zu 50 Bildern auf einmal, in Prozent, auf eine exakte Breite oder in einen Rahmen, und lade sie als ZIP herunter.",
+    intro:
+      "Mehrere Bilder skalieren wendet dieselbe Größenregel in einem Schritt auf viele Bilder an. Du kannst jede Datei um einen Prozentwert skalieren, eine exakte Breite festlegen oder jedes Bild in einen Rahmen wie 1200 × 800 einpassen, sodass keine Seite größer als der Rahmen ist. Jede Datei kann ihr Originalformat behalten, und alle Ergebnisse lädst du zusammen als ZIP herunter.",
+    seoTitle: "Mehrere Bilder verkleinern – Größe stapelweise ändern",
+    seoDescription:
+      "Mehrere Bilder auf einmal verkleinern, kostenlos: bis zu 50 JPG-, PNG- oder WebP-Dateien in Prozent, auf eine Breite oder in einen Rahmen skalieren, als ZIP.",
+    keywords: [
+      "mehrere bilder verkleinern",
+      "mehrere bilder gleichzeitig verkleinern",
+      "bildgröße mehrerer bilder ändern",
+      "bilder stapelweise verkleinern",
+      "batch bilder verkleinern",
+      "fotos verkleinern und als zip herunterladen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bilder hinzufügen",
+        description: "Zieh bis zu 50 JPG-, PNG- oder WebP-Dateien (je bis 50 MB) in den Upload-Bereich oder klicke, um sie auszuwählen.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Modus wählen",
+        description:
+          "„Prozent“ skaliert jedes Bild auf 10 % bis 200 %. „Exakte Pixel“ legt die Breite fest und, wenn du das Seitenverhältnis löst, auch die Höhe. „Einpassen“ verkleinert jedes Bild so, dass es in die eingegebene Breite und Höhe passt.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Ausgabeformat wählen",
+        description:
+          "Behalte „Original“ bei oder wandle alles in PNG, JPG oder WebP um. „Kleinere Bilder nicht vergrößern“ ist standardmäßig aktiv, damit kleinere Bilder nicht vergrößert werden.",
+      },
+      {
+        title: "Skalieren und herunterladen",
+        description: "Klicke auf „Alle skalieren“ und dann auf „ZIP herunterladen“ oder speichere einzelne Dateien aus der Liste.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Drei Modi",
+        description: "Skaliere in Prozent, lege eine exakte Breite fest oder passe in eine maximale Breite und Höhe ein.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Jede Datei behält ihr Format",
+        description: "Mit „Original“ bleiben JPGs JPG, PNGs PNG und WebP-Dateien WebP.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Kein Vergrößern",
+        description:
+          "In den Modi „Exakte Pixel“ und „Einpassen“ behalten Bilder, die schon kleiner als das Ziel sind, ihre Größe.",
+      },
+      {
+        title: "Ein ZIP-Download",
+        description: "Skalierte Dateien behalten ihren Originalnamen mit dem Zusatz -resized und werden zusammen in einem Archiv heruntergeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Massen-Bildskalierer (Batch) tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie viele Bilder kann ich auf einmal skalieren?",
+        answer:
+          "Bis zu 50 Bilder pro Durchgang, jedes bis 50 MB. Sehr große Fotos brauchen viel Arbeitsspeicher. Auf dem Handy kann es daher helfen, in kleineren Gruppen zu arbeiten.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Werden meine Bilder verzerrt?",
+        answer:
+          "Nicht in den Modi „Prozent“ oder „Einpassen“, die immer die Proportionen beibehalten. Löst du im Modus „Exakte Pixel“ das Seitenverhältnis und legst beide Seiten fest, werden Bilder mit anderer Form verzerrt.",
+      },
+      {
+        question: "Welche Dateiformate werden unterstützt?",
+        answer:
+          "JPG, PNG und WebP. HEIC-Dateien vom iPhone werden hier nicht angenommen. Wandle sie zuerst mit dem Universellen Bildkonverter um.",
+      },
+      {
+        question: "Mit welcher Qualität werden JPG- und WebP-Dateien gespeichert?",
+        answer:
+          "Skalierte JPG- und WebP-Dateien werden mit 90 % Qualität gespeichert. Wandelst du transparente Bilder in JPG um, werden transparente Bereiche weiß.",
+      },
+      {
+        question: "Werden meine Dateien irgendwo hochgeladen?",
+        answer: "Nein. Alle Bilder werden in diesem Browser-Tab skaliert, und die ZIP-Datei wird auf deinem Gerät erstellt.",
+      },
+    ],
   },
   "bulk-image-compressor": {
-    "name": "Massen-Bildkomprimierer (Batch)",
-    "shortName": "Massen-Bildkomprimierer",
-    "tagline": "Massen-Bildkomprimierer (Batch) — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Massen-Bildkomprimierer (Batch) — Free Online Tool — Image Toolbox",
-    "seoDescription": "Massen-Bildkomprimierer (Batch) online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "bulk-image-compressor",
-      "massen-bildkomprimierer (batch)",
-      "image tool",
-      "online free",
-      "de"
+    name: "Mehrere Bilder komprimieren",
+    shortName: "Stapel komprimieren",
+    tagline: "Komprimiere bis zu 50 Bilder auf einmal zu WebP, AVIF, JPG oder PNG und lade sie in einer ZIP-Datei herunter.",
+    intro:
+      "Mehrere Bilder komprimieren verringert die Dateigröße vieler Bilder in einem Durchgang. Du wählst ein Ausgabeformat und eine Qualität für alle Dateien, startest die Komprimierung und siehst für jedes Bild die ursprüngliche Größe, die neue Größe und die Ersparnis in Prozent. Das ist praktisch, um einen Ordner mit Fotos für eine Website, einen Onlineshop oder eine E-Mail vorzubereiten.",
+    seoTitle: "Mehrere Bilder komprimieren – bis zu 50 auf einmal",
+    seoDescription:
+      "Bis zu 50 Bilder auf einmal komprimieren, kostenlos: JPG, PNG und WebP in WebP, AVIF, JPG oder PNG umwandeln, Ersparnis pro Datei sehen, alles als ZIP.",
+    keywords: [
+      "mehrere bilder komprimieren",
+      "bilder stapelweise komprimieren",
+      "mehrere bilder gleichzeitig komprimieren",
+      "batch bilder komprimieren",
+      "mehrere bilder in webp umwandeln",
+      "fotos komprimieren und als zip herunterladen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bilder hinzufügen",
+        description: "Zieh bis zu 50 JPG-, PNG- oder WebP-Dateien (je bis 50 MB) hierher oder klicke, um sie auszuwählen.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Format und Qualität wählen",
+        description:
+          "Voreingestellt ist WebP mit 80 %. Wähle AVIF für die kleinsten Dateien, JPG für maximale Kompatibilität oder PNG für verlustfreie Ausgabe.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Alle Dateien komprimieren",
+        description: "Klicke auf „Alle komprimieren“ und sieh zu, wie für jede Datei die neue Größe und die Ersparnis in der Liste erscheinen.",
+      },
+      {
+        title: "Ergebnisse herunterladen",
+        description: "Klicke auf „ZIP herunterladen“, um alle komprimierten Dateien auf einmal zu speichern, oder lade einzelne Dateien aus der Liste herunter.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Ergebnis für jede Datei",
+        description:
+          "Sieh für jedes Bild die Größe vorher und nachher und die Ersparnis in Prozent. Ist eine Datei größer geworden, wird das klar gekennzeichnet.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Vier Ausgabeformate",
+        description: "AVIF, WebP, JPG oder PNG, mit einer Qualitätseinstellung von 10 % bis 100 % für alle Dateien.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "ZIP mit Originalnamen",
+        description: "Jede Datei behält ihren Namen mit dem Zusatz -compressed, doppelte Namen werden automatisch nummeriert.",
+      },
+      {
+        title: "Läuft auf deinem Gerät",
+        description: "Alle Dateien werden in deinem Browser komprimiert und verlassen nie deinen Computer oder dein Handy.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Massen-Bildkomprimierer (Batch) tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie viele Bilder kann ich in einem Durchgang komprimieren?",
+        answer: "Du kannst bis zu 50 Bilder hinzufügen, und jedes darf bis zu 50 MB groß sein.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Welches Ausgabeformat soll ich wählen?",
+        answer:
+          "WebP ist ein guter Kompromiss aus Größe, Qualität und Unterstützung. AVIF ist meist kleiner, kodiert aber langsamer, was bei vielen großen Fotos spürbar ist. JPG öffnet sich überall, und PNG ist verlustfrei, verkleinert die Dateien aber am wenigsten.",
+      },
+      {
+        question: "Warum ist eine meiner Dateien größer geworden?",
+        answer:
+          "Manche Bilder sind bereits gut komprimiert, und erneutes Speichern bringt nichts. Die Liste markiert diese Dateien, sodass du für sie das Original behalten kannst.",
+      },
+      {
+        question: "Ändert die Stapel-Komprimierung die Bildmaße?",
+        answer:
+          "Nein, Breite und Höhe bleiben gleich. Willst du auch die Maße verringern, schick die Dateien zuerst durch „Mehrere Bilder skalieren“.",
+      },
+      {
+        question: "Was passiert mit transparenten PNGs, wenn ich JPG wähle?",
+        answer: "JPG kann keine Transparenz speichern, transparente Bereiche werden daher weiß gefüllt.",
+      },
+    ],
   },
   "remove-image-metadata": {
-    "name": "Bild-Metadaten & EXIF Löschen",
-    "shortName": "Bild-Metadaten",
-    "tagline": "Bild-Metadaten & EXIF Löschen — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild-Metadaten & EXIF Löschen — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild-Metadaten & EXIF Löschen online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "remove-image-metadata",
-      "bild-metadaten & exif löschen",
-      "image tool",
-      "online free",
-      "de"
+    name: "Bild-Metadaten entfernen",
+    shortName: "EXIF entfernen",
+    tagline: "Entferne EXIF-Daten wie GPS-Standort, Kameramodell und Datum aus einem Foto, bevor du es teilst.",
+    intro:
+      "Bild-Metadaten entfernen erstellt eine saubere Kopie deines Fotos ohne die versteckten EXIF-Informationen. Fotos von Handys und Kameras speichern oft den GPS-Standort der Aufnahme, das Gerätemodell sowie Datum und Uhrzeit. Dieses Tool zeichnet das Bild aus seinen Pixeln neu und speichert eine neue Datei, sodass diese Informationen nicht übernommen werden. Vor dem Download siehst du die neue Dateigröße.",
+    seoTitle: "EXIF-Daten entfernen – GPS und Metadaten löschen",
+    seoDescription:
+      "EXIF-Daten aus Fotos entfernen, kostenlos: GPS-Standort, Kameramodell und Datum löschen, bevor du ein Bild teilst. Im Browser verarbeitet, nie hochgeladen.",
+    keywords: [
+      "exif daten entfernen",
+      "metadaten aus foto entfernen",
+      "gps daten aus foto entfernen",
+      "standort aus foto entfernen",
+      "bild metadaten löschen",
+      "exif daten löschen online",
+      "metadaten iphone foto entfernen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Foto öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Foto hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Saubere Kopie prüfen",
+        description: "Die Vorschau zeigt das Bild, das gespeichert wird, zusammen mit seiner neuen Dateigröße.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Format und Qualität wählen",
+        description:
+          "Standardmäßig bleibt das Originalformat erhalten. Für JPG und WebP nimmst du 90 % bis 100 % Qualität, um nah am Original zu bleiben, oder du wählst PNG für eine verlustfreie Ausgabe.",
+      },
+      {
+        title: "Neue Datei herunterladen und teilen",
+        description: "Klicke auf „Herunterladen“ und teile diese Kopie statt des Originalfotos.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Entfernt Standort- und Kameradaten",
+        description:
+          "GPS-Koordinaten, Kamerahersteller und -modell, Objektiv, Aufnahmedatum und weitere EXIF- und IPTC-Felder werden nicht in die neue Datei geschrieben.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Saubere Kopie aus Pixeln",
+        description: "Das Bild wird aus seinen Pixeln neu gezeichnet, so können keine versteckten Daten aus Versehen mitkopiert werden.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Anzeige der Dateigröße",
+        description: "Sieh die Größe der bereinigten Datei, bevor du sie herunterlädst.",
+      },
+      {
+        title: "Auf deinem Gerät erledigt",
+        description: "Dein Foto wird nie hochgeladen, seine Standortdaten werden dabei also mit niemandem geteilt.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild-Metadaten & EXIF Löschen tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Welche Metadaten werden entfernt?",
+        answer:
+          "Alle: EXIF-Daten (Kamera, Einstellungen, Datum und GPS), IPTC- und XMP-Felder wie Urheber oder Copyright und das eingebettete Farbprofil. Nur das sichtbare Bild bleibt erhalten.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Ändert das Entfernen der Metadaten die Bildqualität?",
+        answer:
+          "Das Bild wird neu gespeichert. PNG erhält jedes Pixel, JPG, WebP und AVIF werden dagegen erneut komprimiert. Wähle also eine hohe Qualität. Fotos mit erweitertem Farbprofil, etwa viele iPhone-Fotos, wirken eventuell etwas weniger kräftig, weil das Profil nicht erhalten bleibt.",
+      },
+      {
+        question: "Wie prüfe ich, ob der Standort entfernt wurde?",
+        answer:
+          "Öffne die heruntergeladene Datei in der Bildanalyse. Sie liest EXIF-Daten auf deinem Gerät und zeigt eine Warnung, wenn ein GPS-Standort enthalten ist.",
+      },
+      {
+        question: "Entfernen Apps und Websites die EXIF-Daten für mich?",
+        answer:
+          "Manche großen Plattformen entfernen beim Hochladen einen Teil der Metadaten. E-Mail, Messenger und Dateifreigaben senden die Originaldatei aber oft unverändert. Die Daten selbst zu entfernen ist die sichere Wahl.",
+      },
+      {
+        question: "Kann ich Metadaten aus HEIC-Fotos vom iPhone entfernen?",
+        answer:
+          "Ja. Das HEIC-Foto wird in deinem Browser umgewandelt, und die saubere Kopie wird standardmäßig als JPG gespeichert.",
+      },
+    ],
   },
   "image-analyzer": {
-    "name": "Bildanalyse-Tool & Inspektor",
-    "shortName": "Bildanalyse-Tool",
-    "tagline": "Bildanalyse-Tool & Inspektor — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bildanalyse-Tool & Inspektor — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bildanalyse-Tool & Inspektor online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-analyzer",
-      "bildanalyse-tool & inspektor",
-      "image tool",
-      "online free",
-      "de"
+    name: "Bildanalyse",
+    shortName: "Analyse",
+    tagline: "Sieh Maße, Dateigröße, Seitenverhältnis, Druckgröße und EXIF-Kameradaten eines Bildes, mit Warnung bei GPS-Standort.",
+    intro:
+      "Die Bildanalyse zeigt die technischen Details einer Bilddatei, ohne sie zu verändern. Sie nennt Dateigröße, Format, Pixelmaße, Seitenverhältnis, Megapixel und ob das Bild Transparenz hat. Bei Fotos liest sie außerdem EXIF-Kameradaten wie Kameramodell, Objektiv, Belichtung, ISO, Aufnahmedatum und GPS-Standort und warnt dich, wenn ein Foto verrät, wo es aufgenommen wurde.",
+    seoTitle: "EXIF-Daten anzeigen – Bildgröße und Maße prüfen",
+    seoDescription:
+      "EXIF-Daten anzeigen und Bilddetails prüfen, kostenlos: Maße, Dateigröße, Seitenverhältnis, Druckgröße und Kameradaten, mit Warnung bei GPS-Daten.",
+    keywords: [
+      "exif daten anzeigen",
+      "exif viewer online",
+      "bild metadaten anzeigen",
+      "bildgröße prüfen",
+      "foto exif daten auslesen",
+      "gps daten im foto prüfen",
+      "bildauflösung prüfen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein beliebiges Bild, das dein Browser öffnen kann, hierher, wähle es aus oder füge es ein. Auch HEIC-Fotos vom iPhone funktionieren.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Technische Daten lesen",
+        description:
+          "Sieh Dateigröße, Format, Maße, Seitenverhältnis, Megapixel, Transparenz und Druckgröße bei 300 DPI.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Kameradaten prüfen",
+        description:
+          "Der EXIF-Bereich listet Kamera, Objektiv, Belichtung und Datum auf. Enthält das Foto einen GPS-Standort, erscheint eine Warnung mit einer Schaltfläche zum Entfernen der Metadaten.",
+      },
+      {
+        title: "Bericht kopieren",
+        description: "Klicke auf „Bericht kopieren“, um alle Werte als reinen Text zu kopieren.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Technische Daten",
+        description:
+          "Dateigröße, Format, MIME-Typ, Maße, Seitenverhältnis, Megapixel, Farbtiefe, Transparenz und geschätzter Speicherbedarf.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "EXIF-Kameradaten lesen",
+        description:
+          "Zeigt Kamera, Objektiv, Aufnahmedatum, Belichtungszeit, Blende, ISO, Brennweite, Blitz, Ausrichtung und Bearbeitungssoftware, sofern vorhanden.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Warnung bei GPS-Standort",
+        description:
+          "Zeigt die Koordinaten an, wenn ein Foto sie enthält, und bietet dir mit einem Klick eine Kopie ohne Metadaten an.",
+      },
+      {
+        title: "Geschätzte Druckgröße",
+        description: "Zeigt, wie groß das Bild bei 300 DPI gedruckt wird, in Zoll und Zentimetern.",
+      },
+      {
+        title: "Nur lesen, nur lokal",
+        description: "Die Datei wird nicht verändert, und alle Daten werden auf deinem Gerät gelesen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bildanalyse-Tool & Inspektor tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie sehe ich die EXIF-Daten eines Fotos?",
+        answer:
+          "Öffne das Foto hier und sieh dir den Bereich „Kamera- und EXIF-Daten“ an. Steht dort, dass keine EXIF-Daten vorhanden sind, wurde die Datei ohne sie gespeichert. Das ist bei Screenshots und Bildern aus sozialen Netzwerken üblich.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wie erkenne ich, ob ein Foto verrät, wo es aufgenommen wurde?",
+        answer:
+          "Enthält das Foto GPS-Koordinaten, zeigt die Analyse sie an und blendet eine Warnung ein. Klicke auf „Metadaten entfernen“, um eine Kopie ohne Standort zu erstellen.",
+      },
+      {
+        question: "Welche Dateien enthalten EXIF-Daten?",
+        answer:
+          "Fotos von Handys und Kameras im JPG- und HEIC-Format meistens schon. Auch WebP- und AVIF-Dateien können sie enthalten, Screenshots und viele exportierte oder bearbeitete Bilder dagegen kaum oder gar keine.",
+      },
+      {
+        question: "Was bedeutet die Druckgröße bei 300 DPI?",
+        answer:
+          "Das ist die Größe eines Ausdrucks mit 300 Punkten pro Zoll, einer üblichen Qualität für Fotoabzüge. Ein Bild mit 3000 × 2000 Pixeln wird zum Beispiel etwa 10 × 6,7 Zoll groß gedruckt.",
+      },
+      {
+        question: "Ist der Wert für die Farbtiefe exakt?",
+        answer:
+          "Er basiert auf dem Format und darauf, ob das Bild Transparenz hat (24-Bit-RGB oder 32-Bit-RGBA). 16-Bit- oder HDR-Bilder werden nicht erkannt.",
+      },
+    ],
   },
   "image-color-picker": {
-    "name": "Bild-Farbpipette (Color Picker)",
-    "shortName": "Bild-Farbpipette",
-    "tagline": "Bild-Farbpipette (Color Picker) — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild-Farbpipette (Color Picker) — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild-Farbpipette (Color Picker) online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-color-picker",
-      "bild-farbpipette (color picker)",
-      "image tool",
-      "online free",
-      "de"
+    name: "Farbwähler für Bilder",
+    shortName: "Farbwähler",
+    tagline: "Klicke auf eine beliebige Stelle im Bild und erhalte die exakte Farbe als HEX, RGB, HSL, HSV und CMYK.",
+    intro:
+      "Der Farbwähler für Bilder findet die exakte Farbe jedes Pixels in einem Bild. Bewege den Zeiger über das Bild, um eine vergrößerte Ansicht der Pixel darunter zu sehen, und klicke dann, um eine Farbe auszuwählen und ihren Code als HEX, RGB, HSL, HSV oder CMYK zu kopieren. Die Farben werden aus dem Bild in voller Auflösung gelesen, nicht aus der verkleinerten Vorschau.",
+    seoTitle: "Farbe aus Bild bestimmen – HEX- und RGB-Code",
+    seoDescription:
+      "Farbe aus Bild bestimmen, kostenlos: Klicke auf ein Pixel und erhalte HEX-, RGB-, HSL-, HSV- und CMYK-Code, mit Lupe und Kopieren per Klick.",
+    keywords: [
+      "farbe aus bild bestimmen",
+      "farbe aus bild auslesen",
+      "hex code aus bild",
+      "farbpipette online",
+      "farbwähler bild",
+      "rgb farbe aus bild",
+      "farbcode herausfinden",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein Bild hierher, wähle es aus oder füge es ein. Ein mit Ctrl+V eingefügter Screenshot funktioniert gut.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Mit der Lupe zielen",
+        description: "Bewege die Maus über die Vorschau. Eine runde Lupe zeigt die Pixel unter dem Zeiger vergrößert an.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Farbe per Klick aufnehmen",
+        description: "Klicke oder tippe auf die gewünschte Stelle. Die Farbe erscheint mit ihren Werten als HEX, RGB, HSL, HSV und CMYK.",
+      },
+      {
+        title: "Code kopieren",
+        description: "Klicke neben dem gewünschten Format auf „Kopieren“. Zuletzt gewählte Farben werden darunter gespeichert, damit du sie schnell wiederverwenden kannst.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Lupe",
+        description: "Eine vergrößerte Ansicht von 7 × 7 Pixeln hilft dir, kleine Details wie eine dünne Linie oder einen einzelnen Buchstaben zu treffen.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Fünf Farbformate",
+        description: "Kopiere HEX-, RGB-, HSL-, HSV- oder CMYK-Werte mit jeweils einem Klick.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Farbverlauf",
+        description: "Die letzten 12 gewählten Farben bleiben als Farbfelder erhalten. Ein Klick darauf wählt sie erneut aus.",
+      },
+      {
+        title: "Abtastung in voller Auflösung",
+        description: "Jede Farbe wird aus den Originalpixeln des Bildes gelesen, der Wert hängt also nicht von der Vorschaugröße ab.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild-Farbpipette (Color Picker) tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie bekomme ich den HEX-Code einer Farbe in einem Bild?",
+        answer:
+          "Öffne das Bild, klicke auf die gewünschte Farbe und tippe neben dem HEX-Wert auf „Kopieren“. Du kannst ihn in jedes Designprogramm oder jede CSS-Datei einfügen.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Kann ich eine Farbe aus einem Screenshot aufnehmen?",
+        answer:
+          "Ja. Mach einen Screenshot, drücke auf dieser Seite Ctrl+V, um ihn einzufügen, und klicke auf die Farbe, die du brauchst.",
+      },
+      {
+        question: "Funktioniert der Farbwähler auf dem Handy?",
+        answer:
+          "Ja. Tippe auf das Bild, um eine Farbe auszuwählen. Die Lupe erscheint nur mit Mauszeiger. Zoome also in die Seite hinein, wenn du eine sehr kleine Stelle treffen musst.",
+      },
+      {
+        question: "Warum haben benachbarte Pixel in einem Foto leicht unterschiedliche Farben?",
+        answer:
+          "Fotos enthalten Rauschen, Verläufe und Kompressionseffekte, daher stimmen benachbarte Pixel selten exakt überein. Nimm ein paar Punkte auf und wähle den, der richtig aussieht.",
+      },
+      {
+        question: "Warum weicht der CMYK-Wert von meiner Drucksoftware ab?",
+        answer:
+          "Die CMYK-Werte hier sind eine einfache mathematische Umrechnung aus RGB. Drucksoftware nutzt Farbprofile für bestimmte Druckfarben und Papiere, ihre Werte können daher abweichen.",
+      },
+    ],
   },
   "image-palette-generator": {
-    "name": "Farbpaletten-Generator",
-    "shortName": "Farbpaletten-Generator",
-    "tagline": "Farbpaletten-Generator — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Farbpaletten-Generator — Free Online Tool — Image Toolbox",
-    "seoDescription": "Farbpaletten-Generator online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-palette-generator",
-      "farbpaletten-generator",
-      "image tool",
-      "online free",
-      "de"
+    name: "Farbpaletten-Generator",
+    shortName: "Palette",
+    tagline: "Extrahiere die Hauptfarben eines Bildes als Palette und kopiere sie als HEX-Codes, CSS-Variablen oder JSON.",
+    intro:
+      "Der Farbpaletten-Generator findet die dominanten Farben in einem Foto oder Design und zeigt sie als Farbfelder an. Du kannst 3, 4, 5, 6 oder 8 Farben wählen. Sie sind nach der Fläche sortiert, die sie abdecken, und sehr ähnliche Töne werden zusammengefasst, damit jedes Farbfeld eigenständig ist. Kopiere die Palette als CSS-Variablen oder JSON-Array oder lade sie als PNG-Farbtafel herunter.",
+    seoTitle: "Farbpalette aus Bild erstellen – HEX-Codes auslesen",
+    seoDescription:
+      "Farbpalette aus Bild erstellen, kostenlos: 3 bis 8 dominante Farben auslesen, HEX-Codes, CSS-Variablen oder JSON kopieren und eine PNG-Farbtafel herunterladen.",
+    keywords: [
+      "farbpalette aus bild",
+      "farbpalette aus bild erstellen",
+      "farben aus bild extrahieren",
+      "farbschema aus foto",
+      "dominante farben im bild",
+      "farbpalette generator",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein Foto, eine Illustration, ein Logo oder einen Screenshot hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Anzahl der Farben wählen",
+        description: "Klicke auf 3, 4, 5, 6 oder 8. Die Farbfelder aktualisieren sich sofort.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Einzelne Farben kopieren",
+        description: "Klicke auf das Kopiersymbol eines Farbfelds, um seinen HEX-Code zu kopieren.",
+      },
+      {
+        title: "Palette exportieren",
+        description: "Nutze „CSS-Variablen kopieren“ oder „JSON kopieren“ oder lade die Palette als PNG-Farbtafel herunter.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Nach Fläche sortiert",
+        description: "Das erste Farbfeld ist die Farbe, die den größten Teil des Bildes abdeckt.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Klar unterscheidbare Töne",
+        description: "Fast identische Farben werden zusammengefasst, damit die Palette denselben Ton nicht wiederholt.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Bereit für Entwickler",
+        description: "Exportiere als CSS Custom Properties (--color-1, --color-2 und so weiter) oder als JSON-Array mit HEX-Codes.",
+      },
+      {
+        title: "PNG-Farbtafel",
+        description: "Lade ein Bild der Palette herunter, bei dem unter jedem Farbfeld der HEX-Code steht.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Farbpaletten-Generator tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie werden die Farben der Palette ausgewählt?",
+        answer:
+          "Das Bild wird in kleiner Größe abgetastet, ähnliche Farben werden gruppiert, und die Gruppen mit der größten Fläche werden zuerst angezeigt. Transparente Pixel werden ignoriert.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum bekomme ich weniger Farben, als ich gewählt habe?",
+        answer:
+          "Sehr ähnliche Töne werden zusammengefasst, damit sich jedes Farbfeld klar unterscheidet. Ein Bild mit nur wenigen verschiedenen Farben liefert daher eventuell weniger Farbfelder.",
+      },
+      {
+        question: "Wie nutze ich die Palette in CSS?",
+        answer:
+          "Klicke auf „CSS-Variablen kopieren“, um einen :root-Block mit den Variablen --color-1, --color-2 und so weiter zu erhalten, und füge ihn in dein Stylesheet ein.",
+      },
+      {
+        question: "Warum fehlt eine kleine Akzentfarbe?",
+        answer:
+          "Die Palette bevorzugt Farben, die eine größere Fläche abdecken. Ein winziges Detail wie ein kleines Logo taucht daher eventuell nicht auf. Nutze den Farbwähler für Bilder, um den exakten Wert einer bestimmten Stelle zu erhalten.",
+      },
+    ],
   },
   "add-text-to-image": {
-    "name": "Text zu Bild Hinzufügen",
-    "shortName": "Text",
-    "tagline": "Text zu Bild Hinzufügen — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Text zu Bild Hinzufügen — Free Online Tool — Image Toolbox",
-    "seoDescription": "Text zu Bild Hinzufügen online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-text-to-image",
-      "text zu bild hinzufügen",
-      "image tool",
-      "online free",
-      "de"
+    name: "Text in Bild einfügen",
+    shortName: "Text einfügen",
+    tagline: "Schreib Bildunterschriften oder Titel auf ein Foto, mit Schriftart, Größe, Farbe, Kontur und Hintergrundbox nach Wahl.",
+    intro:
+      "Text in Bild einfügen setzt eine oder mehrere Textzeilen auf ein Bild. Zieh den Text an eine beliebige Stelle der Vorschau oder platziere ihn oben, in der Mitte oder unten. Gestalte ihn mit sieben Schriftarten, fett oder kursiv, Ausrichtung, Deckkraft, Schlagschatten, Kontur und einer farbigen Hintergrundbox. Beim Download wird der Text auf das Bild in voller Auflösung gezeichnet.",
+    seoTitle: "Text in Bild einfügen – online und kostenlos",
+    seoDescription:
+      "Text in Bild einfügen, kostenlos: Text frei verschieben, Schrift, Größe, Farbe, Kontur, Schatten und Hintergrundbox wählen, als JPG, PNG, WebP oder AVIF.",
+    keywords: [
+      "text in bild einfügen",
+      "text auf foto schreiben",
+      "bild beschriften",
+      "foto beschriften online",
+      "text auf bild schreiben",
+      "bildunterschrift hinzufügen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Text eingeben",
+        description: "Gib den Text in das Feld ein. Mit Enter beginnst du eine neue Zeile.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Gestalten und platzieren",
+        description:
+          "Wähle Schriftart, Größe (12 bis 240 px), Farbe, Deckkraft und Ausrichtung. Zieh den Text in der Vorschau oder wähle „Oben“, „Mitte“, „Unten“ oder „Eigene“ für eine eigene vertikale Position.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Behalte das Originalformat oder wähle JPG, PNG, WebP oder AVIF und klicke dann auf „Herunterladen“.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Platzieren per Ziehen",
+        description: "Verschiebe den Text direkt in der Vorschau genau dorthin, wo du ihn haben willst.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Sieben Schriftarten",
+        description: "Inter, Arial, Helvetica, Georgia, Times New Roman, Courier New und Impact, jeweils auch fett und kursiv.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Lesbar auf jedem Foto",
+        description: "Füge einen Schlagschatten, eine Kontur von 1 bis 20 px oder eine Hintergrundbox mit eigener Farbe und Deckkraft hinzu.",
+      },
+      {
+        title: "Mehrzeiliger Text",
+        description: "Schreib mehrere Zeilen und richte sie linksbündig, zentriert oder rechtsbündig aus.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Text zu Bild Hinzufügen tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie mache ich Text auf einem unruhigen Foto lesbar?",
+        answer:
+          "Schalte „Kontur“ ein und wähle eine Farbe, die sich vom Text abhebt, oder aktiviere „Hintergrundbox“, um eine deckende oder halbtransparente Box hinter den Text zu legen. Auch ein Schlagschatten hilft auf hellen Flächen.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Kann ich mehr als einen Textblock einfügen?",
+        answer:
+          "Das Tool fügt einen Textblock ein, der mehrere Zeilen haben kann. Für Text an einer zweiten Stelle lädst du das Ergebnis herunter, öffnest es erneut und fügst den nächsten Text hinzu.",
+      },
+      {
+        question: "Welche Schriftarten kann ich nutzen?",
+        answer:
+          "Du hast sieben Schriftarten zur Auswahl. Die meisten sind Systemschriften. Ist eine davon auf deinem Gerät nicht installiert, nutzt der Browser stattdessen eine ähnliche Schrift.",
+      },
+      {
+        question: "Ist der Text im heruntergeladenen Bild scharf?",
+        answer:
+          "Ja. Der Text wird in der vollen Auflösung deines Bildes gezeichnet. Speicherst du als JPG, nutze eine hohe Qualität, damit die Buchstabenkanten sauber bleiben.",
+      },
+    ],
   },
   "watermark-image": {
-    "name": "Wasserzeichen auf Bild Setzen",
-    "shortName": "Wasserzeichen",
-    "tagline": "Wasserzeichen auf Bild Setzen — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Wasserzeichen auf Bild Setzen — Free Online Tool — Image Toolbox",
-    "seoDescription": "Wasserzeichen auf Bild Setzen online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "watermark-image",
-      "wasserzeichen auf bild setzen",
-      "image tool",
-      "online free",
-      "de"
+    name: "Wasserzeichen einfügen",
+    shortName: "Wasserzeichen",
+    tagline: "Schütze deine Fotos mit einem Wasserzeichen aus Text oder Logo, an einer Stelle oder über das ganze Bild wiederholt.",
+    intro:
+      "Wasserzeichen einfügen legt einen Copyright-Hinweis, einen Website-Namen oder ein Logo über ein Foto. Platziere ein Text- oder Logo-Wasserzeichen an einer von neun Positionen und stelle Größe und Deckkraft ein, oder wiederhole den Text über das ganze Bild, was sich viel schwerer wegschneiden lässt. Logos können PNG-, WebP-, JPG- oder SVG-Dateien sein. Ein Logo mit transparentem Hintergrund sieht am besten aus.",
+    seoTitle: "Wasserzeichen einfügen online – Text oder Logo",
+    seoDescription:
+      "Wasserzeichen auf Fotos einfügen, kostenlos: Text oder Logo nutzen, aus neun Positionen wählen, Deckkraft und Drehung einstellen oder Text wiederholen.",
+    keywords: [
+      "wasserzeichen einfügen",
+      "wasserzeichen auf foto",
+      "wasserzeichen erstellen online",
+      "logo auf foto einfügen",
+      "copyright wasserzeichen",
+      "wasserzeichen kostenlos",
+      "transparentes wasserzeichen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Foto öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Text oder Logo wählen",
+        description:
+          "Wähle „Text“ und gib deinen Text ein, oder wähle „Logo-Bild“ und eine PNG-, WebP-, JPG- oder SVG-Datei.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Platzieren und gestalten",
+        description:
+          "Klicke auf eine Position im 3 × 3-Raster und stelle dann Deckkraft und Größe ein. Bei Text kannst du auch Farbe und Drehung festlegen oder „Über das ganze Bild wiederholen“ einschalten.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Behalte das Originalformat oder wähle ein anderes und klicke dann auf „Herunterladen“.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Text oder Logo",
+        description: "Nutze eine Copyright-Zeile oder Website-Adresse oder lade dein eigenes Logo hoch.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Neun Positionen",
+        description: "Ecken, Ränder oder Mitte, mit einem Abstand, der sich an die Bildgröße anpasst.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Wiederholtes Textmuster",
+        description: "Wiederhole deinen Text im gewählten Winkel über das ganze Foto.",
+      },
+      {
+        title: "Deckkraft, Größe und Drehung",
+        description: "Deckkraft von 10 % bis 100 %, Textgröße von 14 bis 140 px, Logobreite von 5 % bis 60 % des Bildes und Textdrehung von -90° bis 90°.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Wasserzeichen auf Bild Setzen tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie füge ich mein Logo als Wasserzeichen ein?",
+        answer:
+          "Wähle „Logo-Bild“, klicke auf „Logo auswählen“ und wähle deine Datei. Lege die Logogröße als Prozentwert der Bildbreite fest, wähle eine Position und senke die Deckkraft, damit das Foto sichtbar bleibt.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Welche Deckkraft sollte ein Wasserzeichen haben?",
+        answer:
+          "Etwa 30 % bis 50 % sind sichtbar, ohne das Foto zu verdecken. Nimm einen höheren Wert, wenn das Wasserzeichen gut lesbar sein muss.",
+      },
+      {
+        question: "Was ist ein wiederholtes Wasserzeichen?",
+        answer:
+          "„Über das ganze Bild wiederholen“ setzt deinen Text viele Male über das ganze Foto. Das lässt sich durch Zuschneiden viel schwerer entfernen als ein einzelnes Zeichen in einer Ecke. Die Option gibt es für Text-Wasserzeichen.",
+      },
+      {
+        question: "Warum hat mein Logo einen weißen Kasten drumherum?",
+        answer:
+          "Die Logodatei hat einen einfarbigen Hintergrund. Nutze ein PNG, WebP oder SVG mit transparentem Hintergrund oder entferne den Hintergrund zuerst mit „Hintergrund entfernen“.",
+      },
+      {
+        question: "Kann ein Wasserzeichen verhindern, dass mein Foto kopiert wird?",
+        answer:
+          "Ein Wasserzeichen macht das Kopieren weniger attraktiv und zeigt, wem das Bild gehört, kann das Kopieren aber nicht ganz verhindern. Große, mittige oder wiederholte Zeichen sind schwerer zu entfernen als ein kleines Zeichen in der Ecke.",
+      },
+    ],
   },
   "add-border-to-image": {
-    "name": "Rahmen zu Bild Hinzufügen",
-    "shortName": "Rahmen",
-    "tagline": "Rahmen zu Bild Hinzufügen — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Rahmen zu Bild Hinzufügen — Free Online Tool — Image Toolbox",
-    "seoDescription": "Rahmen zu Bild Hinzufügen online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "add-border-to-image",
-      "rahmen zu bild hinzufügen",
-      "image tool",
-      "online free",
-      "de"
+    name: "Rahmen um Bild hinzufügen",
+    shortName: "Rahmen",
+    tagline: "Füge einem Foto einen einfarbigen Rahmen hinzu, außerhalb des Bildes oder über seinen Rändern.",
+    intro:
+      "Rahmen um Bild hinzufügen zeichnet einen farbigen Rahmen um ein Bild. Im Modus „Außen“ wächst die Arbeitsfläche, sodass das ganze Foto innerhalb des Rahmens sichtbar bleibt. Im Modus „Innen“ wird der Rahmen über die Ränder gezeichnet, und das Bild behält seine Originalgröße. Du stellst eine Breite von 1 bis 100 Pixeln, eine beliebige Farbe und die Deckkraft ein.",
+    seoTitle: "Rahmen um Bild erstellen – online und kostenlos",
+    seoDescription:
+      "Rahmen um ein Bild erstellen, kostenlos: Farbe, Breite von 1 bis 100 px und Deckkraft wählen, Rahmen außen ums Foto oder über die Ränder legen.",
+    keywords: [
+      "rahmen um bild",
+      "bilderrahmen online erstellen",
+      "rahmen um foto hinzufügen",
+      "bild mit rahmen versehen",
+      "weißer rand für instagram",
+      "rand um bild hinzufügen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Position des Rahmens wählen",
+        description: "„Außen“ legt den Rahmen um das Foto und vergrößert das Bild. „Innen“ zeichnet ihn über die Ränder, und die Größe bleibt gleich.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Breite, Farbe und Deckkraft festlegen",
+        description: "Zieh den Breitenregler von 1 bis 100 px, wähle eine beliebige Farbe und senke die Deckkraft für einen weicheren Rahmen.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Behalte das Originalformat oder wähle JPG, PNG, WebP oder AVIF und klicke dann auf „Herunterladen“.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Außen oder innen",
+        description: "Füge Platz um das Foto hinzu oder behalte exakt die ursprünglichen Maße.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Jede Breite und Farbe",
+        description: "Von einer dünnen 1-px-Linie bis zu einem breiten 100-px-Rahmen, in jeder Farbe.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Einstellbare Deckkraft",
+        description: "Mach den Rahmen halbtransparent für einen leichteren Effekt.",
+      },
+      {
+        title: "Dein Format bleibt",
+        description: "Das Bild mit Rahmen wird im selben Format wie das Original gespeichert, außer du wählst ein anderes.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Rahmen zu Bild Hinzufügen tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Ändert ein Rahmen die Bildgröße?",
+        answer:
+          "Im Modus „Außen“ kommt die Rahmenbreite an jeder Seite hinzu. Ein Bild mit 1000 × 800 Pixeln und einem 20-px-Rahmen wird also 1040 × 840 groß. Der Modus „Innen“ behält die Größe und verdeckt den äußeren Rand des Fotos.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wie füge ich einen weißen Rand für Instagram hinzu?",
+        answer:
+          "Schneide das Foto zuerst auf 1:1 zu und füge dann im Modus „Außen“ einen weißen Rahmen hinzu. Das Ergebnis bleibt quadratisch, weil an jeder Seite dieselbe Breite hinzukommt.",
+      },
+      {
+        question: "Kann ich einen Rahmen mit abgerundeten Ecken erstellen?",
+        answer:
+          "Der Rahmen selbst ist rechteckig. Für einen runden Look fügst du zuerst den Rahmen hinzu und öffnest das Ergebnis dann in „Bildecken abrunden“.",
+      },
+      {
+        question: "Was bewirkt die Deckkraft des Rahmens?",
+        answer:
+          "Eine geringere Deckkraft macht den Rahmen durchscheinend. Im Modus „Innen“ scheint das Foto hindurch. Im Modus „Außen“ wird der Rahmenbereich in PNG, WebP und AVIF teilweise transparent und in JPG mit Weiß gemischt.",
+      },
+    ],
   },
   "round-image": {
-    "name": "Bild Ecken Abrunden & Kreisavatar",
-    "shortName": "Bild",
-    "tagline": "Bild Ecken Abrunden & Kreisavatar — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild Ecken Abrunden & Kreisavatar — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild Ecken Abrunden & Kreisavatar online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "round-image",
-      "bild ecken abrunden & kreisavatar",
-      "image tool",
-      "online free",
-      "de"
+    name: "Bildecken abrunden",
+    shortName: "Ecken runden",
+    tagline: "Runde die Ecken eines Bildes ab oder schneide es kreisrund aus, mit transparentem Hintergrund als PNG.",
+    intro:
+      "Bildecken abrunden gibt einem Bild weich abgerundete Ecken oder macht daraus einen Kreis für ein Profilbild oder App-Icon. Wähle die Vorgabe „Klein“, „Mittel“ oder „Groß“, stelle mit dem Regler einen exakten Radius ein oder klicke auf „Kreis erstellen“. Das Ergebnis wird standardmäßig als PNG gespeichert, damit die weggeschnittenen Ecken transparent bleiben.",
+    seoTitle: "Bildecken abrunden online – auch Bild rund machen",
+    seoDescription:
+      "Bildecken abrunden oder Foto rund ausschneiden, kostenlos: Eckenradius einstellen, transparenten Hintergrund als PNG behalten oder Füllfarbe für JPG wählen.",
+    keywords: [
+      "bild ecken abrunden",
+      "abgerundete ecken bild online",
+      "bild rund machen",
+      "profilbild rund machen",
+      "rundes profilbild erstellen",
+      "png abgerundete ecken",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh ein JPG-, PNG-, WebP- oder iPhone-HEIC-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Form wählen",
+        description: "Klicke auf „Kreis erstellen“, wähle kleine, mittlere oder große Ecken oder zieh den Radius-Regler.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Format wählen",
+        description:
+          "PNG ist voreingestellt. Wählst du JPG, bestimmst du Weiß, Schwarz oder eine eigene Farbe für die Ecken.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Klicke auf „Herunterladen“, um das abgerundete Bild zu speichern, oder kopiere es in die Zwischenablage.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Vorgaben und exakter Radius",
+        description: "Vorgaben „Klein“, „Mittel“ und „Groß“ oder ein beliebiger Radius von 0 bis zur Hälfte der kürzeren Seite.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Runder Avatar",
+        description: "Macht aus dem Bild mit einem Klick einen Kreis, fertig für Profilbilder.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Transparente Ecken",
+        description: "PNG, WebP und AVIF lassen den Bereich außerhalb der Rundung transparent.",
+      },
+      {
+        title: "Füllfarbe für JPG",
+        description: "Speicherst du als JPG, werden die Ecken mit Weiß, Schwarz oder einer Farbe deiner Wahl gefüllt.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild Ecken Abrunden & Kreisavatar tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie erstelle ich ein rundes Profilbild?",
+        answer:
+          "Klicke auf „Kreis erstellen“. Der Kreis richtet sich nach der kürzeren Bildseite und wird zentriert. Schneide ein nicht quadratisches Foto deshalb zuerst auf 1:1 zu, um das Gesicht mittig zu platzieren und leere Flächen an den Seiten zu vermeiden.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum sind meine Ecken weiß oder schwarz statt transparent?",
+        answer: "JPG kann keine Transparenz speichern. Wähle PNG, WebP oder AVIF, damit die Ecken transparent bleiben.",
+      },
+      {
+        question: "Was bedeuten die Vorgaben „Klein“, „Mittel“ und „Groß“?",
+        answer:
+          "Der größtmögliche Radius ist die Hälfte der kürzeren Bildseite. „Klein“, „Mittel“ und „Groß“ nutzen 10 %, 25 % und 50 % dieses Maximums.",
+      },
+      {
+        question: "Warum ist mein abgerundetes Bild so groß?",
+        answer:
+          "PNG ist verlustfrei, ein Kamerafoto in voller Größe kann daher eine große Datei ergeben. Verkleinere das Foto zuerst oder speichere es als WebP, das ebenfalls Transparenz behält und viel kleiner ist.",
+      },
+    ],
   },
   "favicon-generator": {
-    "name": "Favicon-Generator (ICO & PNG)",
-    "shortName": "Favicon-Generator",
-    "tagline": "Favicon-Generator (ICO & PNG) — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Favicon-Generator (ICO & PNG) — Free Online Tool — Image Toolbox",
-    "seoDescription": "Favicon-Generator (ICO & PNG) online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "favicon-generator",
-      "favicon-generator (ico & png)",
-      "image tool",
-      "online free",
-      "de"
+    name: "Favicon-Generator",
+    shortName: "Favicon",
+    tagline: "Erstelle aus einem Bild favicon.ico, ein Apple Touch Icon, Android-Icons und ein Web-Manifest, alles in einer ZIP-Datei.",
+    intro:
+      "Der Favicon-Generator macht aus einem Logo oder Bild alle Icon-Dateien, die eine Website braucht. Er schneidet das Bild auf ein mittiges Quadrat zu und erstellt favicon.ico (mit 16, 32 und 48 Pixeln), PNG-Icons von 16 bis 512 Pixeln, eine apple-touch-icon.png mit 180 × 180 Pixeln und eine site.webmanifest-Datei, alles in einer ZIP-Datei. Die Seite zeigt dir außerdem die HTML-Link-Tags, die du in den Head-Bereich deiner Website einfügst.",
+    seoTitle: "Favicon erstellen – ICO, PNG und Apple Touch Icon",
+    seoDescription:
+      "Favicon erstellen, kostenlos: PNG-, JPG- oder SVG-Logo hochladen und favicon.ico, PNG-Icons von 16 bis 512 px, Apple Touch Icon und Manifest als ZIP erhalten.",
+    keywords: [
+      "favicon erstellen",
+      "favicon generator",
+      "favicon ico erstellen",
+      "png in ico umwandeln",
+      "apple touch icon erstellen",
+      "favicon aus bild erstellen",
+      "website icon erstellen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Logo hochladen",
+        description:
+          "Zieh ein PNG-, JPG-, SVG- oder HEIC-Bild hierher oder wähle es aus. Ein quadratisches Bild mit mindestens 512 × 512 Pixeln liefert das beste Ergebnis.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Auf Zentrierung achten",
+        description:
+          "Die Icons werden aus der Bildmitte geschnitten. Sitzt dein Logo nicht mittig oder ist das Bild nicht quadratisch, schneide es zuerst mit „Bild zuschneiden“ auf 1:1 zu.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Favicon-Paket herunterladen",
+        description: "Klicke auf „Favicon-Paket herunterladen (ZIP)“, um alle Icon-Dateien und das Manifest zu erhalten.",
+      },
+      {
+        title: "Zur Website hinzufügen",
+        description:
+          "Lade die Dateien in den Hauptordner deiner Website hoch, klicke dann auf „Code kopieren“ und füge die HTML-Tags in den Head-Bereich deiner Seiten ein.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "favicon.ico in mehreren Größen",
+        description: "Eine ICO-Datei mit Icons in 16 × 16, 32 × 32 und 48 × 48 für Browser-Tabs und Lesezeichen.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "PNG-Icons für jedes Gerät",
+        description: "PNG-Dateien mit 16, 32, 48, 64, 128, 192 und 512 Pixeln, dazu eine apple-touch-icon.png mit 180 × 180.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Web-App-Manifest",
+        description: "Eine site.webmanifest-Datei, die für Android und installierbare Web-Apps auf die Icons mit 192 und 512 Pixeln verweist.",
+      },
+      {
+        title: "Klare kleine Größen",
+        description: "Die Icons werden in mehreren Schritten aus dem vollen Bild verkleinert, so bleiben die Versionen mit 16 und 32 Pixeln sauberer.",
+      },
+      {
+        title: "HTML zum Einfügen",
+        description: "Kopiere die Link-Tags für die Icons und das Manifest mit einem Klick.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Favicon-Generator (ICO & PNG) tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie groß sollte mein Favicon-Bild sein?",
+        answer:
+          "Nutze ein quadratisches Bild mit mindestens 512 × 512 Pixeln, damit das größte Icon scharf bleibt. Einfache Formen und kräftige Farben bleiben auch bei 16 × 16 erkennbar.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Welche Dateien enthält die ZIP-Datei?",
+        answer:
+          "favicon.ico, favicon-16x16.png bis favicon-512x512.png (16, 32, 48, 64, 128, 192 und 512), apple-touch-icon.png mit 180 × 180 und site.webmanifest.",
+      },
+      {
+        question: "Wohin kommen die Favicon-Dateien?",
+        answer:
+          "Lade sie in den Hauptordner deiner Website hoch, also dorthin, wo auch deine Startseite liegt. Füge dann die HTML-Tags von dieser Seite in den Head-Bereich jeder Seite ein.",
+      },
+      {
+        question: "Warum wird ein Teil meines Logos abgeschnitten?",
+        answer:
+          "Das Tool nimmt das größte mittige Quadrat aus deinem Bild. Ist das Logo breit oder nicht zentriert, schneide es vor dem Erstellen der Icons auf ein Quadrat mit etwas Platz drumherum zu.",
+      },
+      {
+        question: "Kann ich ein SVG-Logo verwenden?",
+        answer:
+          "Ja. Das SVG wird als Bild gezeichnet und als PNG- und ICO-Dateien gespeichert. Die ZIP-Datei enthält kein SVG-Favicon.",
+      },
+      {
+        question: "Muss ich die Manifest-Datei bearbeiten?",
+        answer:
+          "Ja. site.webmanifest nutzt den Platzhalternamen App und dunkle Theme-Farben. Öffne die Datei in einem Texteditor und passe name, short_name und die Farben an deine Website an.",
+      },
+    ],
   },
   "image-to-base64": {
-    "name": "Bild in Base64 Umwandeln",
-    "shortName": "Bild",
-    "tagline": "Bild in Base64 Umwandeln — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild in Base64 Umwandeln — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild in Base64 Umwandeln online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-base64",
+    name: "Bild in Base64",
+    shortName: "Bild → Base64",
+    tagline: "Wandle eine Bilddatei in einen Base64-String zum Kopieren um, mit fertigen HTML- und CSS-Snippets.",
+    intro:
+      "Bild in Base64 kodiert eine Bilddatei als Base64-Text, damit sie als reiner Text gespeichert oder versendet werden kann, zum Beispiel in JSON, einer HTML-Seite oder einer CSS-Datei. Der String wird aus den Original-Bytes der Datei erstellt, das Bild wird also weder neu komprimiert noch verändert. Das Tool zeigt die Zeichenzahl an und liefert dir außerdem ein HTML-img-Tag und eine CSS-background-image-Regel, die das komplette Bild enthalten.",
+    seoTitle: "Bild in Base64 umwandeln – Base64-String kopieren",
+    seoDescription:
+      "Bild in Base64 umwandeln, kostenlos: Original-Bytes von JPG, PNG, WebP, GIF oder SVG kodieren, String, HTML-img-Tag oder CSS-Regel per Klick kopieren.",
+    keywords: [
       "bild in base64 umwandeln",
-      "image tool",
-      "online free",
-      "de"
+      "bild zu base64",
+      "base64 bild kodieren",
+      "png in base64",
+      "jpg in base64",
+      "svg in base64",
+      "base64 string aus bild",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh eine beliebige Bilddatei hierher, wähle sie aus oder füge sie ein. Kleine Bilder wie Icons eignen sich am besten.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Base64-String erhalten",
+        description: "Der String erscheint sofort, zusammen mit seiner Länge in Zeichen und seiner ungefähren Größe.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Kopieren, was du brauchst",
+        description: "Klicke auf „Base64 kopieren“ für den reinen String oder nutze „HTML kopieren“ oder „CSS kopieren“ für ein fertiges Snippet.",
+      },
+      {
+        title: "In deinen Code einfügen",
+        description: "Füge den String in dein JSON, HTML, CSS oder Skript ein.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Byte-genaue Kodierung",
+        description: "Die Originaldatei wird so kodiert, wie sie ist, ohne neue Kompression oder Qualitätsänderung.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Angaben zur Größe",
+        description: "Sieh die Zeichenzahl und die ungefähre Größe des Strings, bevor du ihn verwendest.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "HTML- und CSS-Snippets",
+        description: "Kopiere ein img-Tag oder eine background-image-Regel, in der die komplette Data-URI bereits enthalten ist.",
+      },
+      {
+        title: "Lokal kodiert",
+        description: "Die Datei wird in deinem Browser gelesen und kodiert und nie hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild in Base64 Umwandeln tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wofür wird Base64 bei Bildern verwendet?",
+        answer:
+          "Base64 wandelt binäre Bilddaten in reine Textzeichen um. Entwickler nutzen das, um kleine Bilder direkt in HTML, CSS, JSON oder E-Mail-Vorlagen einzubetten, sodass keine separate Bilddatei geladen werden muss.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum ist der Base64-String größer als die Bilddatei?",
+        answer:
+          "Base64 braucht für je 3 Bytes 4 Textzeichen, das Ergebnis ist also etwa 33 % größer. Aus einem Bild mit 30 KB werden rund 40 KB Text.",
+      },
+      {
+        question: "Was ist der Unterschied zwischen Base64 und einer Data-URI?",
+        answer:
+          "Base64 ist nur der kodierte Text. Eine Data-URI fügt ein Präfix wie data:image/png;base64, hinzu, damit Browser den Dateityp kennen. Dieses Tool liefert den reinen String, „Bild in Data-URI“ die vollständige Version.",
+      },
+      {
+        question: "Sollte ich große Bilder in Base64 umwandeln?",
+        answer:
+          "Meistens nicht. Base64 eignet sich am besten für kleine Bilder wie Icons. Große Fotos machen dein HTML oder CSS deutlich schwerer, und der Browser kann das Bild nicht als eigene Datei zwischenspeichern.",
+      },
+      {
+        question: "Wird mein Bild beim Kodieren verändert?",
+        answer:
+          "Nein, die Original-Bytes werden kodiert. Einzige Ausnahme sind HEIC-Fotos vom iPhone: Sie werden zuerst in PNG umgewandelt, weil die meisten Browser HEIC nicht anzeigen können.",
+      },
+    ],
   },
   "image-to-data-uri": {
-    "name": "Bild in Data URI Konvertieren",
-    "shortName": "Bild",
-    "tagline": "Bild in Data URI Konvertieren — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Bild in Data URI Konvertieren — Free Online Tool — Image Toolbox",
-    "seoDescription": "Bild in Data URI Konvertieren online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "image-to-data-uri",
-      "bild in data uri konvertieren",
-      "image tool",
-      "online free",
-      "de"
+    name: "Bild in Data-URI",
+    shortName: "Data-URI",
+    tagline: "Mach aus einem Bild eine vollständige Data-URI, die du direkt in ein HTML-src-Attribut oder einen CSS-url()-Wert einfügen kannst.",
+    intro:
+      "Bild in Data-URI wandelt eine Bilddatei in eine Data-URI um: eine Textzeile, die sowohl den Dateityp als auch das Base64-kodierte Bild enthält. Du kannst sie direkt in ein img-src-Attribut oder einen CSS-url()-Wert einfügen, und das Bild wird ohne separate Datei angezeigt. Der MIME-Typ im Präfix stammt aus deiner Datei, und die Bild-Bytes werden nicht verändert.",
+    seoTitle: "Bild in Data-URI umwandeln – für HTML und CSS",
+    seoDescription:
+      "Bild in Data-URI umwandeln, kostenlos: einen data:image-Base64-String mit korrektem MIME-Typ erhalten und als HTML-img-Tag oder CSS-background-Regel kopieren.",
+    keywords: [
+      "bild in data uri umwandeln",
+      "data uri generator",
+      "bild in data url umwandeln",
+      "base64 data uri",
+      "bild in css einbetten",
+      "bild in html einbetten",
+      "data url bild",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Bild öffnen",
+        description: "Zieh eine beliebige Bilddatei hierher, wähle sie aus oder füge sie ein, zum Beispiel ein Icon, Logo oder eine kleine Grafik.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Data-URI erhalten",
+        description: "Die vollständige Data-URI, beginnend mit data:image/, erscheint mit ihrer Länge und ungefähren Größe.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Kopieren",
+        description: "Klicke auf „Data-URI kopieren“ oder nutze „HTML kopieren“ oder „CSS kopieren“ für ein fertiges Snippet.",
+      },
+      {
+        title: "In deine Seite einfügen",
+        description: "Nutze sie überall dort, wo eine normale Bild-URL funktioniert, etwa in einem img-Tag oder einem CSS-Hintergrund.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Korrekter MIME-Typ",
+        description: "Das Präfix passt zu deiner Datei, zum Beispiel image/png, image/jpeg oder image/svg+xml.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Original-Bytes",
+        description: "Die Datei wird so kodiert, wie sie ist. Qualität und Größe ändern sich also nicht durch erneute Kompression.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Snippets zum Kopieren",
+        description: "Erhalte ein komplettes img-Tag oder eine background-image-Regel, in der die Data-URI bereits steckt.",
+      },
+      {
+        title: "Privat",
+        description: "Die Data-URI wird in deinem Browser erstellt, das Bild wird also nicht hochgeladen.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Bild in Data URI Konvertieren tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Was ist eine Data-URI?",
+        answer:
+          "Eine Data-URI ist ein Link, der die Datei selbst enthält, statt auf sie zu verweisen. Bei Bildern beginnt sie mit data:image/png;base64, oder einem ähnlichen Präfix, und Browser zeigen sie wie eine normale Bild-URL an.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Wie nutze ich eine Data-URI in CSS?",
+        answer:
+          "Klicke auf „CSS kopieren“, um eine background-image-Regel mit der vollständigen URI in url() zu erhalten, und füge sie in dein Stylesheet ein.",
+      },
+      {
+        question: "Wann sollte ich auf Data-URIs verzichten?",
+        answer:
+          "Bei großen Bildern und bei Bildern, die auf vielen Seiten vorkommen. Der kodierte Text ist etwa ein Drittel größer als die Datei, und der Browser kann ihn nicht separat zwischenspeichern.",
+      },
+      {
+        question: "Funktionieren Bilder als Data-URI in E-Mails?",
+        answer:
+          "Das ist unterschiedlich. Viele E-Mail-Programme, darunter einige Webmail-Dienste, zeigen Data-URI-Bilder nicht an. Teste deine E-Mail also oder nutze ein online gehostetes Bild.",
+      },
+      {
+        question: "Welche Bildtypen werden unterstützt?",
+        answer:
+          "Jedes Bild, das dein Browser öffnen kann, etwa JPG, PNG, GIF, WebP, AVIF und SVG. HEIC-Fotos vom iPhone werden zuerst in PNG umgewandelt, ihre Data-URI nutzt daher image/png.",
+      },
+    ],
   },
   "base64-to-image": {
-    "name": "Base64 in Bild Dekodieren",
-    "shortName": "Base64",
-    "tagline": "Base64 in Bild Dekodieren — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "Base64 in Bild Dekodieren — Free Online Tool — Image Toolbox",
-    "seoDescription": "Base64 in Bild Dekodieren online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "base64-to-image",
-      "base64 in bild dekodieren",
-      "image tool",
-      "online free",
-      "de"
+    name: "Base64 in Bild",
+    shortName: "Base64 → Bild",
+    tagline: "Füge einen Base64-String oder eine Data-URI ein, sieh dir das Bild an und lade es als PNG, JPG oder WebP herunter.",
+    intro:
+      "Base64 in Bild dekodiert Base64-Text zurück in ein Bild, das du ansehen und speichern kannst. Du kannst einen reinen Base64-String, eine vollständige Data-URI oder ein CSS-url()- oder HTML-src-Snippet einfügen, das eine solche URI enthält. URL-sicheres Base64 und Zeilenumbrüche werden automatisch verarbeitet. Das Tool erkennt, ob es sich um PNG, JPEG, GIF, WebP, SVG, BMP oder AVIF handelt, und zeigt das dekodierte Bild mit seinen Maßen an.",
+    seoTitle: "Base64 in Bild umwandeln – Vorschau und Download",
+    seoDescription:
+      "Base64 in Bild umwandeln, kostenlos: Base64-String, Data-URI oder CSS- bzw. HTML-Snippet einfügen, das Bild ansehen und als PNG, JPG oder WebP herunterladen.",
+    keywords: [
+      "base64 in bild umwandeln",
+      "base64 bild dekodieren",
+      "base64 in png",
+      "base64 in jpg",
+      "data uri in bild",
+      "base64 string in bild umwandeln",
+      "base64 bild anzeigen",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "Base64-Daten einfügen",
+        description: "Füge den Text in das Textfeld ein, klicke auf „Einfügen“ oder lade eine .txt-Datei, die den String enthält.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Vorschau prüfen",
+        description: "Das Bild wird automatisch dekodiert und mit Breite und Höhe angezeigt. Ist der Text ungültig, erscheint eine Fehlermeldung.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "Exportformat wählen",
+        description: "Wähle PNG, JPG oder WebP.",
+      },
+      {
+        title: "Bild herunterladen",
+        description: "Klicke auf „Herunterladen“, um das dekodierte Bild auf deinem Gerät zu speichern.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Nimmt viele Eingabeformen an",
+        description:
+          "Reines Base64, Data-URIs, CSS-url()- und HTML-src-Snippets, URL-sicheres Base64 und Text, der über mehrere Zeilen umbrochen ist.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Automatische Formaterkennung",
+        description: "Erkennt PNG, JPEG, GIF, WebP, SVG, BMP und AVIF an den Daten selbst, auch wenn das Präfix fehlt oder falsch ist.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Sofortige Vorschau",
+        description: "Sieh das dekodierte Bild und seine Maße, sobald du den Text einfügst.",
+      },
+      {
+        title: "Drei Exportformate",
+        description: "Speichere das Ergebnis als PNG, JPG oder WebP.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this Base64 in Bild Dekodieren tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Welchen Base64-Text kann ich einfügen?",
+        answer:
+          "Einen reinen Base64-String, eine Data-URI wie data:image/png;base64,... oder ein CSS- oder HTML-Snippet, das eine solche URI enthält. Leerzeichen, Zeilenumbrüche und URL-sichere Zeichen werden automatisch bereinigt.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum bekomme ich eine Fehlermeldung?",
+        answer:
+          "Oft wird der Text beim Kopieren abgeschnitten. Achte darauf, dass du den ganzen String kopiert hast, einschließlich des Endes, das =-Zeichen enthalten kann.",
+      },
+      {
+        question: "Ist die heruntergeladene Datei identisch mit dem Original?",
+        answer:
+          "Das Bild wird dekodiert und im gewählten Format neu gespeichert. PNG erhält jedes Pixel, JPG und WebP werden dagegen erneut komprimiert. Animierte GIFs werden zu einem einzelnen Standbild, und SVG-Grafiken werden als Pixelbilder gespeichert.",
+      },
+      {
+        question: "Woher weiß das Tool, um welchen Bildtyp es sich handelt?",
+        answer:
+          "Jedes Format beginnt mit einer bekannten Signatur, zum Beispiel iVBORw0KGgo bei PNG oder /9j/ bei JPEG. Das Tool liest diese ersten Zeichen, um das Bild richtig zu dekodieren.",
+      },
+      {
+        question: "Werden meine Base64-Daten an einen Server gesendet?",
+        answer: "Nein. Der Text wird in deinem Browser dekodiert, und das Bild entsteht auf deinem Gerät.",
+      },
+    ],
   },
   "svg-to-png": {
-    "name": "SVG in PNG Konvertieren",
-    "shortName": "SVG",
-    "tagline": "SVG in PNG Konvertieren — Fast, private, and 100% in-browser processing.",
-    "seoTitle": "SVG in PNG Konvertieren — Free Online Tool — Image Toolbox",
-    "seoDescription": "SVG in PNG Konvertieren online for free. Fast, private client-side processing with zero server uploads.",
-    "keywords": [
-      "svg-to-png",
-      "svg in png konvertieren",
-      "image tool",
-      "online free",
-      "de"
+    name: "SVG in PNG",
+    shortName: "SVG → PNG",
+    tagline: "Wandle SVG-Vektordateien in scharfe PNG-Bilder in 1-, 2-, 4- oder 8-facher Größe um, mit erhaltener Transparenz.",
+    intro:
+      "SVG in PNG macht aus einer Vektorgrafik, etwa einem Logo oder Icon, ein PNG-Bild für Stellen, die keine SVG-Dateien annehmen. Wähle 1x, 2x, 4x oder 8x die eigene Größe des SVG. Weil die Vektorgrafik in dieser Größe neu gezeichnet wird, ergibt eine höhere Skalierung ein schärferes statt eines unscharfen Bildes. Transparente Hintergründe bleiben im PNG transparent.",
+    seoTitle: "SVG in PNG umwandeln – hochauflösend, transparent",
+    seoDescription:
+      "SVG in PNG umwandeln, kostenlos: in 1x, 2x, 4x oder 8x exportieren und scharfe, hochauflösende Bilder mit transparentem Hintergrund erhalten.",
+    keywords: [
+      "svg in png umwandeln",
+      "svg in png",
+      "svg in png hohe auflösung",
+      "svg in png transparent",
+      "svg als png exportieren",
+      "svg konverter",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Upload Image",
-        "description": "Drag and drop your image or click to select from your device."
+        title: "SVG-Datei öffnen",
+        description: "Zieh eine .svg-Datei in das Upload-Feld oder klicke, um eine auszuwählen.",
       },
       {
-        "title": "Adjust Settings",
-        "description": "Fine-tune options using precision sliders and instant preview."
+        title: "Skalierung wählen",
+        description: "Wähle 1x, 2x, 4x oder 8x. Breite und Höhe der Ausgabe in Pixeln stehen unter den Schaltflächen.",
       },
       {
-        "title": "Download Result",
-        "description": "Save the optimized output instantly to your computer."
-      }
+        title: "PNG herunterladen",
+        description: "Klicke auf „PNG herunterladen“, um das Bild zu speichern, oder kopiere es in die Zwischenablage.",
+      },
     ],
-    "features": [
+    features: [
       {
-        "title": "100% Client-Side Privacy",
-        "description": "Your photos never leave your device."
+        title: "Scharf in jeder Größe",
+        description: "Die Vektorgrafik wird in der gewählten Größe neu gerendert, Linien und Text bleiben also gestochen scharf.",
       },
       {
-        "title": "Instant Processing",
-        "description": "No upload queues or network latency."
+        title: "Transparenter Hintergrund",
+        description: "Bereiche ohne Füllung im SVG bleiben im PNG transparent.",
       },
       {
-        "title": "Lossless Output Quality",
-        "description": "High-precision Canvas 2D rendering."
-      }
+        title: "Vorschau der Ausgabegröße",
+        description: "Sieh die exakten Pixelmaße für jede Skalierung, bevor du herunterlädst.",
+      },
+      {
+        title: "Verlustfreies PNG",
+        description: "Das gerenderte Bild wird ohne Kompressionsverlust als PNG gespeichert.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "question": "Is this SVG in PNG Konvertieren tool free?",
-        "answer": "Yes, it is 100% free with unlimited usage."
+        question: "Wie bekomme ich ein hochauflösendes PNG aus einem SVG?",
+        answer:
+          "Wähle 4x oder 8x. Ein SVG mit 256 × 256 wird bei 4x zu 1024 × 1024 oder bei 8x zu 2048 × 2048 und bleibt scharf, weil es in dieser Größe neu gezeichnet wird.",
       },
       {
-        "question": "Are my images stored anywhere?",
-        "answer": "No. All processing happens in your browser memory."
-      }
-    ]
+        question: "Warum hat die Ausgabe nicht die erwartete Größe?",
+        answer:
+          "Die Größe bei 1x stammt aus Breite und Höhe in der SVG-Datei. Hat das SVG nur eine viewBox und keine Breite oder Höhe, nutzt der Browser eventuell eine Standardgröße. Füge width- und height-Attribute hinzu, um das zu steuern.",
+      },
+      {
+        question: "Warum fehlen Schriften oder Bilder in meinem PNG?",
+        answer:
+          "Wird ein SVG als Bild gezeichnet, laden Browser keine externen Dateien, auf die es verweist, etwa Webfonts oder verlinkte Bilder. Wandle Text in Pfade um und bette Bilder vor dem Umwandeln in das SVG ein.",
+      },
+      {
+        question: "Behält das PNG den transparenten Hintergrund?",
+        answer: "Ja. Jeder Bereich des SVG ohne Füllung oder Hintergrund bleibt transparent.",
+      },
+      {
+        question: "Kann ich SVG in JPG umwandeln?",
+        answer:
+          "Dieses Tool speichert nur PNG. Für ein JPG wandelst du zuerst in PNG um und öffnest das PNG dann in „PNG in JPG“, wo du auch eine Hintergrundfarbe wählen kannst.",
+      },
+    ],
   },
   "photo-filters": {
-    "name": "Fotofilter und Farbeffekte",
-    "shortName": "Filter",
-    "tagline": "Wende ästhetische Farbfilter, Vintage-Effekte und Beleuchtungsregler im Browser an.",
-    "seoTitle": "Fotofilter Online Kostenlos — Farbeffekte und Bildoptimierung",
-    "seoDescription": "Wende cineastische Fotofilter, Helligkeit, Kontrast und Vintage-Presets kostenlos online an. 100% privat im Browser.",
-    "keywords": [
+    name: "Fotofilter & Effekte",
+    shortName: "Filter",
+    tagline: "Nutze fertige Looks wie Vintage, Noir oder Kino-Look und passe dann Helligkeit, Kontrast, Farbe und Vignette an.",
+    intro:
+      "Fotofilter & Effekte verändert Look und Stimmung eines Fotos. Starte mit einem von acht Presets wie „Kino-Look“, „Vintage 70er“, „Düsteres Noir“ oder „Warmer Abend“ und passe dann Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner mit Reglern an. In einer geteilten Ansicht vergleichst du das bearbeitete Foto mit dem Original, bevor du es als PNG, JPG oder WebP herunterlädst.",
+    seoTitle: "Fotofilter online – kostenlose Effekte und Presets",
+    seoDescription:
+      "Fotofilter online, kostenlos: Vintage, Noir, Kino-Look und mehr testen, Helligkeit, Kontrast, Sättigung und Vignette anpassen, vorher und nachher vergleichen.",
+    keywords: [
       "fotofilter online",
-      "bildeffekte kostenlos",
-      "farbfilter foto"
+      "filter auf foto legen",
+      "foto schwarz weiß machen",
+      "vintage filter foto",
+      "sepia filter online",
+      "helligkeit und kontrast online anpassen",
+      "vignette effekt",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Foto Hochladen",
-        "description": "Bild hineinziehen oder mit Strg+V einfügen."
+        title: "Foto hochladen",
+        description: "Zieh ein JPG-, PNG- oder WebP-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Filter Auswählen",
-        "description": "Wähle Presets wie Cinematic, Vintage oder Noir."
+        title: "Preset wählen",
+        description:
+          "Probier „Kino-Look“, „Vintage 70er“, „Cyberpunk“, „Düsteres Noir“, „Warmer Abend“, „Kühl & blass“, „Dramatisches HDR“ oder „Negativ“. „Original“ entfernt alle Effekte.",
       },
       {
-        "title": "Ergebnis Herunterladen",
-        "description": "Speichere das bearbeitete Bild in voller Qualität."
-      }
-    ],
-    "features": [
-      {
-        "title": "GPU-Beschleunigung",
-        "description": "Sofortiges Rendern im Browser."
+        title: "Mit Reglern verfeinern",
+        description:
+          "Passe Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner an, bis das Foto passt.",
       },
       {
-        "title": "100% Datenschutz",
-        "description": "Fotos verlassen dein Gerät nicht."
-      }
+        title: "Vergleichen und herunterladen",
+        description: "Prüfe mit „Mit Original vergleichen“ vorher und nachher und lade dann als PNG, WebP oder JPG herunter oder kopiere das Bild.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "Ist dieses Tool kostenlos?",
-        "answer": "Ja, 100% kostenlos und unbegrenzt nutzbar."
-      }
-    ]
+        title: "Acht Presets per Klick",
+        description: "Fertige Looks von warmen Vintage-Tönen bis zu kontrastreichem Schwarzweiß.",
+      },
+      {
+        title: "Neun Regler",
+        description: "Helligkeit, Kontrast und Sättigung bis 200 %, dazu Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner.",
+      },
+      {
+        title: "Vorher-nachher-Ansicht",
+        description: "Zieh die Trennlinie über das Foto, um Original und bearbeitete Version zu vergleichen, am Computer oder auf dem Touchscreen.",
+      },
+      {
+        title: "Export in voller Auflösung",
+        description: "Beim Download werden die Effekte auf das Foto in voller Größe angewendet.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie mache ich ein Foto schwarz-weiß?",
+        answer:
+          "Klicke auf das Preset „Düsteres Noir“ für einen kontrastreichen Look oder stelle den Regler „Schwarzweiß“ auf 100 % und passe Helligkeit und Kontrast selbst an.",
+      },
+      {
+        question: "Kann ich einen Filter rückgängig machen?",
+        answer:
+          "Ja. Mit „Zurücksetzen“ kehrst du jederzeit zum ursprünglichen Look zurück. Deine Originaldatei wird nie verändert.",
+      },
+      {
+        question: "Senkt ein Filter die Auflösung?",
+        answer:
+          "Nein. Der Download hat dieselbe Breite und Höhe wie dein Originalfoto.",
+      },
+      {
+        question: "Welches Download-Format soll ich wählen?",
+        answer:
+          "JPG und WebP werden mit 95 % Qualität gespeichert und sind bei Fotos viel kleiner. PNG erhält jedes Pixel, erzeugt bei Fotos aber große Dateien.",
+      },
+      {
+        question: "Kann ich Filter auf HEIC-Fotos vom iPhone anwenden?",
+        answer:
+          "Dieses Tool öffnet keine HEIC-Dateien. Wandle das Foto zuerst mit dem Universellen Bildkonverter in JPG um und öffne dann das JPG hier.",
+      },
+    ],
   },
   "meme-generator": {
-    "name": "Meme Generator",
-    "shortName": "Meme Maker",
-    "tagline": "Erstelle virale Memes mit individuellen Texten und ohne Wasserzeichen.",
-    "seoTitle": "Meme Generator Online Kostenlos — Ohne Wasserzeichen",
-    "seoDescription": "Erstelle Memes mit klassischer Impact-Schrift, Farben und Export in hoher Auflösung ohne Wasserzeichen.",
-    "keywords": [
+    name: "Meme-Generator",
+    shortName: "Meme-Maker",
+    tagline: "Erstelle ein Meme aus deinem eigenen Foto oder einer Vorlage, mit fetten Texten oben, in der Mitte und unten.",
+    intro:
+      "Der Meme-Generator setzt klassische Meme-Texte auf ein Bild. Lade dein eigenes Bild hoch oder starte mit einer von acht einfachen Vorlagen und gib dann die Texte für oben, Mitte und unten ein. Lange Zeilen werden automatisch umbrochen, damit sie in die Breite passen. Wähle Schriftart (standardmäßig Impact), Größe, Text- und Konturfarbe, Ausrichtung und Großbuchstaben und lade das Meme ohne Wasserzeichen als PNG, JPG oder WebP herunter.",
+    seoTitle: "Meme-Generator – Text auf jedes Bild setzen",
+    seoDescription:
+      "Memes online erstellen, kostenlos: Text oben, in der Mitte und unten auf dein Foto oder eine Vorlage setzen, Schrift und Kontur wählen, ohne Wasserzeichen.",
+    keywords: [
       "meme generator",
-      "memes erstellen online",
-      "meme maker kostenlos"
+      "meme erstellen",
+      "meme maker",
+      "meme selber machen",
+      "text auf meme schreiben",
+      "meme generator ohne wasserzeichen",
+      "meme aus eigenem foto",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Bild Auswählen",
-        "description": "Foto hochladen oder Vorlage wählen."
+        title: "Bild wählen",
+        description: "Lade ein JPG-, PNG- oder WebP-Bild hoch oder füge es ein, oder klicke auf eine der Vorlagen.",
       },
       {
-        "title": "Text Anpassen",
-        "description": "Oben und unten Text eingeben."
+        title: "Texte schreiben",
+        description: "Gib den Text für oben und unten ein und füge bei Bedarf einen Text für die Mitte hinzu.",
       },
       {
-        "title": "Meme Herunterladen",
-        "description": "Als PNG oder JPG speichern."
-      }
-    ],
-    "features": [
-      {
-        "title": "Keine Wasserzeichen",
-        "description": "Saubere Memes zum direkten Teilen."
+        title: "Text gestalten",
+        description: "Wähle Schriftart, Größe, Textfarbe, Konturfarbe und -stärke, Ausrichtung und ob nur Großbuchstaben genutzt werden.",
       },
       {
-        "title": "100% Privat",
-        "description": "Keine Server-Uploads."
-      }
+        title: "Herunterladen oder kopieren",
+        description: "Lade das Meme als PNG, WebP oder JPG herunter oder kopiere es in die Zwischenablage, um es in einen Chat einzufügen.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "Gibt es Wasserzeichen?",
-        "answer": "Nein, alle Memes sind 100% wasserzeichenfrei."
-      }
-    ]
+        title: "Drei Textbereiche",
+        description: "Texte oben, in der Mitte und unten, mit automatischem Zeilenumbruch bei langem Text.",
+      },
+      {
+        title: "Klassischer Meme-Stil",
+        description: "Standardmäßig weißer Impact-Text mit schwarzer Kontur, dazu die Schriften Arial, Comic Sans, Montserrat und Times.",
+      },
+      {
+        title: "Text wächst mit dem Bild",
+        description: "Die Schriftgröße richtet sich nach der Bildhöhe, Texte sehen also auf kleinen und großen Bildern gleich aus.",
+      },
+      {
+        title: "Kein Wasserzeichen",
+        description: "Dein Meme wird genau so gespeichert, wie du es siehst, ohne zusätzliches Logo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hat das Meme ein Wasserzeichen?",
+        answer: "Nein. Das heruntergeladene Bild enthält nur dein Bild und deine Texte.",
+      },
+      {
+        question: "Welche Schrift nutzen Memes normalerweise?",
+        answer:
+          "Der klassische Meme-Stil ist Impact in Weiß mit schwarzer Kontur, und genau das ist hier voreingestellt. Ist eine Schrift auf deinem Gerät nicht installiert, nutzt der Browser eine ähnliche.",
+      },
+      {
+        question: "Kann ich mein eigenes Bild verwenden?",
+        answer: "Ja. Lade ein JPG-, PNG- oder WebP-Bild hoch oder füge eines mit Ctrl+V aus der Zwischenablage ein.",
+      },
+      {
+        question: "Mein Text verdeckt zu viel vom Bild. Was kann ich tun?",
+        answer:
+          "Verringere die Schriftgröße oder verschiebe einen Teil des Textes in den Text für die Mitte oder unten. Lange Texte werden automatisch auf mehrere Zeilen umbrochen.",
+      },
+      {
+        question: "Kann ich Memes auf dem Handy erstellen?",
+        answer:
+          "Ja. Der Meme-Generator funktioniert in mobilen Browsern. Gib deine Texte ein und speichere das Bild mit der Download-Schaltfläche.",
+      },
+    ],
   },
   "split-image": {
-    "name": "Bildteiler & Grid Cutter",
-    "shortName": "Teilen",
-    "tagline": "Teile Fotos in Instagram 3×3 Raster und Karussells mit ZIP-Download.",
-    "seoTitle": "Bildteiler Online — Instagram 3x3 Raster & Panorama ZIP",
-    "seoDescription": "Schneide Bilder in Instagram 3x3 Raster oder Panorama-Karussells. Lade alle Kacheln in einer ZIP-Datei herunter.",
-    "keywords": [
-      "bild in 3x3 teilen",
-      "instagram grid cutter",
-      "bild teilen online"
+    name: "Bild in Raster teilen",
+    shortName: "Raster teilen",
+    tagline: "Teile ein Bild in ein Raster aus Kacheln, etwa ein 3×3-Instagram-Raster oder ein Panorama-Karussell, und lade eine ZIP-Datei herunter.",
+    intro:
+      "Bild in Raster teilen zerlegt ein Bild in Zeilen und Spalten aus einzelnen Bilddateien. Nutze die Vorlage „Instagram-Raster 3×3“ für ein Profilraster, Panorama 3×1 oder Karussell 2×1 für Beiträge zum Wischen, 2×2 für vier gleiche Teile, oder lege ein eigenes Raster mit bis zu 12 Zeilen und 12 Spalten fest. Alle Kacheln werden zusammen als nummerierte PNG-Dateien in einer ZIP-Datei heruntergeladen, oder du klickst auf eine einzelne Kachel, um nur diese zu speichern.",
+    seoTitle: "Bild teilen – Instagram-Raster 3×3 und Panorama",
+    seoDescription:
+      "Bild online in ein Raster teilen, kostenlos: 3x3-Instagram-Raster, Panorama-Karussell oder eigenes Raster bis 12x12 erstellen, alle Kacheln als ZIP laden.",
+    keywords: [
+      "bild teilen",
+      "bild in mehrere teile teilen",
+      "bild in raster teilen",
+      "instagram raster erstellen",
+      "panorama für instagram teilen",
+      "bild in 9 teile teilen",
+      "bild zerschneiden online",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Foto Hochladen",
-        "description": "Bild oder Panorama hineinziehen."
+        title: "Bild hochladen",
+        description: "Zieh ein JPG-, PNG- oder WebP-Bild hierher, wähle es aus oder füge es ein.",
       },
       {
-        "title": "Raster Wählen",
-        "description": "Instagram 3×3 oder eigenes Raster wählen."
+        title: "Raster wählen",
+        description:
+          "Wähle „Instagram-Raster 3×3“, Panorama 3×1, Karussell 2×1 oder „Vier Quadrate“ (2×2) oder gib deine eigene Anzahl an Zeilen und Spalten ein.",
       },
       {
-        "title": "ZIP Herunterladen",
-        "description": "Alle Kacheln auf einmal herunterladen."
-      }
-    ],
-    "features": [
-      {
-        "title": "1-Klick ZIP-Download",
-        "description": "Automatisch nummerierte Kacheln."
+        title: "Vorschau prüfen",
+        description: "Die Vorschau zeigt, wo das Bild geschnitten wird, und die Nummer jeder Kachel.",
       },
       {
-        "title": "Verlustfreie Qualität",
-        "description": "Volle Pixel-Schärfe."
-      }
+        title: "Kacheln herunterladen",
+        description: "Klicke auf „Alle Kacheln herunterladen (ZIP)“ oder auf eine einzelne Kachel in der Vorschau, um nur diese herunterzuladen.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "Wie auf Instagram posten?",
-        "answer": "Kacheln in umgekehrter Reihenfolge (#9 bis #1) hochladen."
-      }
-    ]
+        title: "Vorlagen für Social Media",
+        description: "Ein Klick für ein 3×3-Profilraster, ein Panorama-Karussell mit 3 oder 2 Folien oder eine Aufteilung in 2×2.",
+      },
+      {
+        title: "Eigene Raster",
+        description: "Jede Kombination aus 1 bis 12 Zeilen und 1 bis 12 Spalten, bis zu 144 Kacheln.",
+      },
+      {
+        title: "Nummerierte Kacheln",
+        description: "Die Dateien heißen tile_01, tile_02 und so weiter, von links nach rechts und von oben nach unten.",
+      },
+      {
+        title: "Kein Qualitätsverlust",
+        description: "Die Kacheln werden aus dem Bild in voller Auflösung geschnitten und als verlustfreie PNG-Dateien gespeichert.",
+      },
+    ],
+    faqs: [
+      {
+        question: "In welcher Reihenfolge poste ich die Kacheln auf Instagram?",
+        answer:
+          "Die Kacheln sind von links nach rechts und von oben nach unten nummeriert, beginnend mit tile_01. Instagram zeigt den neuesten Beitrag zuerst. Lade also die letzte Kachel zuerst hoch (bei einem 3×3-Raster tile_09) und ende mit tile_01.",
+      },
+      {
+        question: "Welches Bild eignet sich für ein 3×3-Raster?",
+        answer:
+          "Für quadratische Kacheln startest du mit einem quadratischen Bild. Schneide es bei Bedarf zuerst auf 1:1 zu. Instagram zeigt Profil-Vorschaubilder eventuell mit anderem Ausschnitt, prüfe das Ergebnis also nach dem Posten.",
+      },
+      {
+        question: "Wie teile ich ein Panorama für einen Karussell-Beitrag?",
+        answer:
+          "Wähle Panorama 3×1 für drei Folien oder Karussell 2×1 für zwei. Für quadratische Folien sollte das Bild dreimal (bzw. zweimal) so breit wie hoch sein.",
+      },
+      {
+        question: "Sind alle Kacheln exakt gleich groß?",
+        answer:
+          "Lässt sich die Breite oder Höhe nicht gleichmäßig teilen, bekommt die letzte Spalte oder Zeile die übrigen Pixel und ist daher eventuell ein oder zwei Pixel größer.",
+      },
+      {
+        question: "Verschlechtert das Teilen die Bildqualität?",
+        answer: "Nein. Jede Kachel wird aus den Originalpixeln geschnitten und als PNG gespeichert, und PNG ist verlustfrei.",
+      },
+    ],
   },
   "censor-image": {
-    "name": "Bild Verpixeln & Zensieren",
-    "shortName": "Zensieren",
-    "tagline": "Mache Gesichter, Kennzeichen und vertrauliche Daten durch Unschärfe oder Mosaik unkenntlich.",
-    "seoTitle": "Bild Zensieren & Verpixeln Online — Datenschutz & Weichzeichner",
-    "seoDescription": "Verpixele Gesichter, Kennzeichen und Dokumente kostenlos online. 100% privat mit automatischer EXIF-Entfernung.",
-    "keywords": [
-      "gesicht verpixeln online",
-      "bild zensieren",
-      "dokument schwärzen"
+    name: "Bild verpixeln & zensieren",
+    shortName: "Zensieren",
+    tagline: "Verberge Gesichter, Kennzeichen, Namen oder Nummern in einem Foto mit schwarzem Balken, Verpixelung oder Unschärfe.",
+    intro:
+      "Bild verpixeln & zensieren verbirgt private Details in einem Bild, bevor du es teilst. Zeichne Rechtecke oder Ovale über Gesichter, Kennzeichen, Adressen oder Kontonummern und wähle für jeden Bereich einen schwarzen Balken, eine Verpixelung oder Unschärfe. Unscharfe Bereiche liegen über einer groben verpixelten Ebene, damit die ursprünglichen Details an den Rändern nicht durchscheinen.",
+    seoTitle: "Bild verpixeln oder unkenntlich machen – online",
+    seoDescription:
+      "Bild verpixeln oder unscharf machen, kostenlos: Gesichter, Kennzeichen und private Texte mit Rechtecken oder Ovalen verpixeln oder schwärzen. Ohne Upload.",
+    keywords: [
+      "bild verpixeln",
+      "bild unkenntlich machen",
+      "gesicht verpixeln",
+      "foto zensieren",
+      "bild unscharf machen online",
+      "text im screenshot schwärzen",
+      "kennzeichen verpixeln",
     ],
-    "howToSteps": [
+    howToSteps: [
       {
-        "title": "Bild Hochladen",
-        "description": "Foto zum Zensieren auswählen."
+        title: "Bild hochladen",
+        description: "Zieh ein JPG-, PNG- oder WebP-Bild hierher, wähle es aus oder füge es ein, etwa ein Foto oder einen Screenshot.",
       },
       {
-        "title": "Bereiche Markieren",
-        "description": "Bereiche mit Weichzeichner oder Mosaik abdecken."
+        title: "Form und Methode wählen",
+        description:
+          "Wähle „Rechteck“ oder „Oval“ und dann „Verpixeln“, „Weichzeichnen“ oder „Schwarzer Balken“. Beim Verpixeln und Weichzeichnen stellst du die Stärke von 4 bis 45 ein.",
       },
       {
-        "title": "Geschützt Herunterladen",
-        "description": "Bereinigtes Bild ohne Metadaten speichern."
-      }
-    ],
-    "features": [
-      {
-        "title": "Mehrere Modi",
-        "description": "Gaußscher Weichzeichner, Mosaik und schwarze Balken."
+        title: "Private Details übermalen",
+        description: "Zieh über jeden Bereich, den du verbergen willst. Mit „Letzten Bereich entfernen“ nimmst du den letzten Bereich zurück, mit „Alle Bereiche entfernen“ fängst du neu an.",
       },
       {
-        "title": "EXIF-Entfernung",
-        "description": "Löscht GPS- und Kameradaten automatisch."
-      }
+        title: "Zensiertes Bild herunterladen",
+        description: "Lade es als PNG, WebP oder JPG herunter oder kopiere es in die Zwischenablage.",
+      },
     ],
-    "faqs": [
+    features: [
       {
-        "question": "Kann die Zensur rückgängig gemacht werden?",
-        "answer": "Nein, die Pixeldaten werden dauerhaft überschrieben."
-      }
-    ]
-  }
+        title: "Drei Methoden zum Verbergen",
+        description: "Schwarze Balken, Mosaik-Verpixelung oder Unschärfe über einer verpixelten Grundlage.",
+      },
+      {
+        title: "Rechtecke und Ovale",
+        description: "Nutze Ovale für Gesichter und Rechtecke für Text, Kennzeichen und Nummern.",
+      },
+      {
+        title: "Methoden in einem Bild mischen",
+        description: "Jeder Bereich behält die Methode und Stärke, mit der er gezeichnet wurde. So kannst du einen Namen schwärzen und ein Gesicht weichzeichnen.",
+      },
+      {
+        title: "Gleichmäßig auch bei großen Fotos",
+        description: "Die Stärke wird an die Bildauflösung angepasst, hochauflösende Fotos werden also genauso gut unkenntlich gemacht.",
+      },
+      {
+        title: "Rückgängig und entfernen",
+        description: "Entferne den letzten oder alle Bereiche, ohne das Foto neu zu laden.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Welche Methode verbirgt Text am sichersten?",
+        answer:
+          "Ein schwarzer Balken ersetzt die Pixel vollständig und ist die sicherste Wahl für Passwörter, Kontonummern und Dokumente. Starke Verpixelung oder Unschärfe funktioniert auch, kleiner Text lässt sich bei schwachen Einstellungen aber manchmal erraten.",
+      },
+      {
+        question: "Kann jemand die Unschärfe in der heruntergeladenen Datei rückgängig machen?",
+        answer:
+          "Die Pixel in jedem Bereich werden im heruntergeladenen Bild ersetzt, nicht auf einer separaten Ebene versteckt. Dein Originalfoto auf deinem Gerät bleibt unverändert, teile also nur die zensierte Kopie.",
+      },
+      {
+        question: "Werden auch die EXIF-Daten entfernt?",
+        answer:
+          "Ja. Der Download wird aus den Pixeln der Arbeitsfläche erstellt, Kameradaten und GPS-Standort des Originals sind also nicht enthalten.",
+      },
+      {
+        question: "Kann ich verschiedene Effekte im selben Bild nutzen?",
+        answer:
+          "Ja. Ändere Methode oder Stärke, bevor du den nächsten Bereich zeichnest. Bereits gezeichnete Bereiche behalten ihre eigenen Einstellungen.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Zieh mit dem Finger über den Bereich, den du verbergen willst, um ein Rechteck oder Oval zu zeichnen.",
+      },
+    ],
+  },
+  "remove-background": {
+    name: "Hintergrund entfernen",
+    shortName: "Freistellen",
+    tagline: "Entferne den Hintergrund eines Fotos mit KI, die auf deinem Gerät läuft, und speichere ein transparentes PNG.",
+    intro:
+      "Hintergrund entfernen stellt das Hauptmotiv eines Fotos frei und entfernt alles dahinter. Dafür nutzt es ein KI-Modell, das in deinem Browser läuft, deine Bilder verlassen also nie dein Gerät. Wähle „Schnell“, ein kleineres Modell, das flott arbeitet und sich am besten für Fotos von Menschen eignet, oder „Beste Qualität“, ein größeres Modell mit besseren Ergebnissen bei jedem Motiv, auch bei Produkten, Haustieren und Objekten. Speichere das Ergebnis als transparentes PNG oder setze es auf eine Volltonfarbe.",
+    seoTitle: "Hintergrund entfernen – kostenlos, auf deinem Gerät",
+    seoDescription:
+      "Hintergrund entfernen, kostenlos mit KI im Browser: schnelles Modell oder beste Qualität wählen, transparentes PNG speichern. Fotos bleiben auf deinem Gerät.",
+    keywords: [
+      "hintergrund entfernen",
+      "bild hintergrund entfernen",
+      "hintergrund entfernen kostenlos",
+      "foto freistellen",
+      "bild freistellen online",
+      "hintergrund transparent machen",
+      "hintergrund entfernen online",
+    ],
+    howToSteps: [
+      {
+        title: "Foto hochladen",
+        description: "Zieh ein JPG-, PNG- oder WebP-Bild hierher, wähle es aus oder füge es ein.",
+      },
+      {
+        title: "Modell wählen",
+        description:
+          "„Schnell“ ist voreingestellt und eignet sich gut für Fotos von Menschen. Wähle „Beste Qualität“ für Produkte, Haustiere, Objekte oder immer dann, wenn du möglichst saubere Kanten willst.",
+      },
+      {
+        title: "Modell einmalig herunterladen",
+        description:
+          "Wenn du ein Modell zum ersten Mal nutzt, lädt dein Browser es herunter: etwa 33 MB für „Schnell“ und etwa 100 MB für „Beste Qualität“, das vorher nachfragt. Danach ist es in deinem Browser gespeichert.",
+      },
+      {
+        title: "Hintergrund wählen und herunterladen",
+        description: "Lass ihn transparent und speichere als PNG oder wähle eine Volltonfarbe und speichere als PNG oder JPG.",
+      },
+    ],
+    features: [
+      {
+        title: "KI, die auf deinem Gerät läuft",
+        description: "Das Modell läuft in deinem Browser, deine Fotos werden also nie auf einen Server hochgeladen.",
+      },
+      {
+        title: "Zwei Modelle zur Auswahl",
+        description: "„Schnell“ arbeitet flott und eignet sich am besten für Menschen. „Beste Qualität“ ist größer und langsamer, liefert aber bei jedem Motiv bessere Ergebnisse.",
+      },
+      {
+        title: "Einmal heruntergeladen",
+        description: "Jedes Modell wird nach der ersten Nutzung in deinem Browser gespeichert, und das Tool zeigt, welche bereits heruntergeladen sind.",
+      },
+      {
+        title: "Transparenter oder farbiger Hintergrund",
+        description: "Speichere ein transparentes PNG oder setze das Motiv auf eine Volltonfarbe deiner Wahl.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Werden meine Fotos auf einen Server hochgeladen?",
+        answer:
+          "Nein. Nur das KI-Modell wird in deinen Browser geladen. Deine Fotos werden auf deinem Gerät verarbeitet und nirgendwohin gesendet.",
+      },
+      {
+        question: "Was ist der Unterschied zwischen „Schnell“ und „Beste Qualität“?",
+        answer:
+          "„Schnell“ nutzt ein kleineres Modell (etwa 33 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht etwa 15–30 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
+      },
+      {
+        question: "Warum dauert die erste Nutzung länger?",
+        answer:
+          "Das Modell muss zuerst heruntergeladen werden. „Beste Qualität“ fragt nach, bevor es sein 100-MB-Modell herunterlädt. Nach der ersten Nutzung speichert dein Browser das Modell, spätere Fotos starten also viel schneller.",
+      },
+      {
+        question: "Funktioniert das auf iPhone und Android?",
+        answer:
+          "Ja. „Schnell“ ist auf Handys die beste Wahl. „Beste Qualität“ läuft auch auf Handys, aber der größere Download und die längere Verarbeitung fallen dort stärker auf, besonders mit mobilen Daten.",
+      },
+      {
+        question: "Kann ich eine neue Hintergrundfarbe hinter das Motiv setzen?",
+        answer:
+          "Ja. Wähle eine Volltonfarbe und speichere als PNG oder JPG. Für einen transparenten Hintergrund speicherst du als PNG.",
+      },
+      {
+        question: "Warum sind manche Kanten nicht perfekt?",
+        answer:
+          "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch „Beste Qualität“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund.",
+      },
+    ],
+  },
 };

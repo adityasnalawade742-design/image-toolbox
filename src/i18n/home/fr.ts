@@ -2,27 +2,74 @@ import type { LocalizedHomeData } from '../types';
 
 export const frHome: LocalizedHomeData = {
   hero: {
-    badge: '🔒 Traitement d’Image 100% Privé dans le Navigateur',
-    title: 'Outils d’Image de Haute Précision, Directement dans Votre Navigateur',
-    subtitle: 'Rognez, redimensionnez, compressez, convertissez et analysez vos images à vitesse maximale sans aucun envoi vers un serveur.',
-    dropzoneTitle: 'Glissez et Déposez vos Images Ici',
-    dropzoneSubtitle: 'ou cliquez pour parcourir • PNG, JPG, WebP, SVG, AVIF, GIF',
+    badge: '',
+    title: 'Tous les outils d’image dont vous avez besoin, au même endroit',
+    subtitle:
+      'Rognez, redimensionnez, compressez, convertissez, supprimez l’arrière-plan et nettoyez vos photos gratuitement. Sans inscription, sans filigrane, et vos fichiers restent sur votre appareil.',
+    dropzoneTitle: 'Déposez une image pour commencer',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG ou HEIC d’iPhone, jusqu’à 50 MB',
+  },
+  sections: {
+    indexTitle: 'Tous les outils',
+    indexSubtitle: 'Chaque outil utilise le même espace de travail : ouvrez une image, ajustez, téléchargez.',
+    pillarsTitle: 'Comment ça marche',
+    faqTitle: 'Questions',
   },
   trustPillars: [
-    { title: 'Zéro Transfert Serveur', description: 'Le traitement complet s’exécute dans votre navigateur via HTML5 Canvas.', icon: 'ShieldCheck' },
-    { title: 'Précision Maximale', description: 'Algorithmes de redimensionnement de haute qualité sans dégradation visuelle.', icon: 'Sparkles' },
-    { title: 'Vitesse Instantanée', description: 'Aucune latence réseau ni temps d’attente de téléchargement.', icon: 'Zap' },
+    {
+      title: 'Un seul espace de travail pour tout',
+      description:
+        'Chaque outil s’ouvre de la même façon, et vous pouvez passer directement votre image à l’outil suivant, par exemple rogner, puis compresser.',
+      icon: 'Layers',
+    },
+    {
+      title: 'Rien n’est envoyé',
+      description:
+        'Les images sont traitées par votre navigateur, sur votre propre appareil : pas d’attente d’envoi, et aucune copie sur un serveur.',
+      icon: 'ShieldCheck',
+    },
+    {
+      title: 'Gratuit, sans compte',
+      description: 'Sans inscription, sans filigrane et sans limite quotidienne. Chaque fichier peut peser jusqu’à 50 MB ; les outils par lot acceptent jusqu’à 50 fichiers.',
+      icon: 'Check',
+    },
   ],
   categoryNames: {
-    'edit-transform': 'Édition & Transformation',
-    'optimize-compress': 'Optimisation & Compression',
-    'convert-formats': 'Conversion de Formats',
-    'utilities': 'Inspection & Utilitaires',
-    'developer': 'Outils Développeur',
+    'edit-transform': 'Retouche et transformation',
+    'optimize-compress': 'Optimisation et compression',
+    'convert-formats': 'Conversion de formats',
+    utilities: 'Analyse et utilitaires',
+    developer: 'Outils pour développeurs',
   },
   faqs: [
-    { question: 'Mes images sont-elles envoyées sur un serveur ?', answer: 'Non. Image Toolbox fonctionne 100% côté client. Vos fichiers ne quittent jamais votre ordinateur.' },
-    { question: 'Y a-t-il une limite de taille ?', answer: 'Aucune limite artificielle. Vous pouvez traiter autant d’images que votre appareil peut en gérer.' },
-    { question: 'Quels formats sont pris en charge ?', answer: 'PNG, JPEG, WebP, SVG, AVIF, GIF et ICO sont tous compatibles.' },
+    {
+      question: 'Mes images sont-elles envoyées quelque part ?',
+      answer:
+        'Non. Chaque outil fonctionne dans votre navigateur : vos images sont traitées sur votre propre appareil et ne sont jamais envoyées sur un serveur. L’outil de suppression d’arrière-plan télécharge son modèle d’IA une seule fois, puis fonctionne lui aussi sur votre appareil.',
+    },
+    {
+      question: 'Est-ce vraiment gratuit ?',
+      answer: 'Oui. Tous les outils sont gratuits et utilisables sans compte, et aucun filigrane n’est ajouté.',
+    },
+    {
+      question: 'Quelle taille peuvent faire mes images ?',
+      answer:
+        'Chaque image peut peser jusqu’à 50 MB. Le compresseur et le redimensionneur par lot acceptent jusqu’à 50 images à la fois, de 50 MB maximum chacune. Les très grandes photos peuvent être lentes à traiter sur les anciens téléphones.',
+    },
+    {
+      question: 'Quels formats puis-je ouvrir et enregistrer ?',
+      answer:
+        'Vous pouvez ouvrir des photos JPG, PNG, WebP, AVIF, GIF, BMP, SVG et HEIC d’iPhone. Vous pouvez enregistrer en JPG, PNG, WebP ou AVIF, selon l’outil.',
+    },
+    {
+      question: 'Est-ce que ça fonctionne sur mon téléphone ?',
+      answer:
+        'Oui. Les outils fonctionnent dans les navigateurs mobiles actuels sur iPhone et Android, y compris avec les photos HEIC d’iPhone. Vous pouvez aussi installer le site comme une application. Après votre première visite, la plupart des outils fonctionnent hors ligne ; l’export AVIF et la suppression d’arrière-plan doivent être utilisés une fois en ligne.',
+    },
+    {
+      question: 'Puis-je utiliser plusieurs outils à la suite ?',
+      answer:
+        'Oui. Après une modification, choisissez une étape suivante, comme Compresser ou Redimensionner, et votre image s’ouvre dans cet outil sans avoir à l’enregistrer puis à la réimporter.',
+    },
   ],
 };

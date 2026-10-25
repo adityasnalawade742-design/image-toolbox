@@ -2,7 +2,13 @@ import type { LocalizedHomeData, SupportedLocale } from '../types.ts';
 import { enHome } from './en.ts';
 import { esHome } from './es.ts';
 import { frHome } from './fr.ts';
-import { deHome, ptHome, itHome, jaHome, koHome, idHome, trHome } from './others.ts';
+import { deHome } from './de.ts';
+import { ptHome } from './pt.ts';
+import { itHome } from './it.ts';
+import { jaHome } from './ja.ts';
+import { koHome } from './ko.ts';
+import { idHome } from './id.ts';
+import { trHome } from './tr.ts';
 
 const HOME_DICTIONARIES: Record<SupportedLocale, LocalizedHomeData> = {
   en: enHome,

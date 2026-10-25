@@ -1,19 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import {
-  UploadCloud,
-  Download,
-  Archive,
-  Sliders,
-  AlertCircle,
-  Copy,
-  Check,
-  Code,
-  Loader2,
-  ArrowRight,
-  Sparkles,
-  ChevronDown,
-  ChevronUp,
-} from 'lucide-react';
+import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight } from 'lucide-react';
 import {
   loadImage,
   createImageProxy,
@@ -23,6 +9,7 @@ import {
   generateFaviconBundle,
   extractDominantPalette,
   checkImageTransparency,
+  formatBytes,
 } from '../../lib/canvas/engine';
 import type {
   TextOverlayOptions,
@@ -32,7 +19,11 @@ import type {
 } from '../../lib/canvas/engine';
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
-import { vpsCompress } from '../../lib/vps/vpsClient';
+import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
+import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { installWindowDropGuard } from './useImageIntake';
+import { I18nProvider } from './I18nContext';
+import { createT, type Strings } from '../../i18n/strings';
 
 import { CropControls } from '../tools/CropControls';
 import { InteractiveCropOverlay } from '../tools/InteractiveCropOverlay';
@@ -59,30 +50,69 @@ import { PhotoFiltersWorkspace } from '../tools/PhotoFiltersWorkspace';
 import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
 import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
 import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
+import { RemoveBackgroundWorkspace } from '../tools/RemoveBackgroundWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
+
+export interface NextTool {
+  slug: string;
+  name: string;
+  inkClass: string;
+}
 
 interface Props {
   slug: string;
   toolName: string;
   accept?: string;
+  locale?: string;
+  strings?: Strings;
+  /** Localized next-step handoff targets */
+  nextTools?: NextTool[];
 }
 
-export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
-  // Delegate dedicated batch/decoder/creative tools directly with ErrorBoundary protection
-  if (slug === 'bulk-image-compressor') return <ErrorBoundary><BulkCompressorWorkspace /></ErrorBoundary>;
-  if (slug === 'bulk-image-resizer') return <ErrorBoundary><BulkResizerWorkspace /></ErrorBoundary>;
-  if (slug === 'base64-to-image') return <ErrorBoundary><Base64ToImageWorkspace /></ErrorBoundary>;
-  if (slug === 'photo-filters') return <ErrorBoundary><PhotoFiltersWorkspace /></ErrorBoundary>;
-  if (slug === 'meme-generator') return <ErrorBoundary><MemeGeneratorWorkspace /></ErrorBoundary>;
-  if (slug === 'split-image') return <ErrorBoundary><ImageSplitterWorkspace /></ErrorBoundary>;
-  if (slug === 'censor-image') return <ErrorBoundary><CensorImageWorkspace /></ErrorBoundary>;
+// Shown and copied verbatim; matches the files generateFaviconBundle() writes
+const FAVICON_SNIPPET = `<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">`;
+
+// Tools whose result is information (text, colors, metrics), not an edited image
+const NO_EXPORT_TOOLS = ['image-to-base64', 'image-to-data-uri', 'image-analyzer', 'image-color-picker', 'image-palette-generator'];
+
+export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en', strings = {}, nextTools = [] }: Props) {
+  const t = createT(strings);
+
+  // Dedicated batch/decoder/creative tools render their own workspace
+  const standalone: Record<string, React.ReactNode> = {
+    'bulk-image-compressor': <BulkCompressorWorkspace />,
+    'bulk-image-resizer': <BulkResizerWorkspace />,
+    'base64-to-image': <Base64ToImageWorkspace />,
+    'photo-filters': <PhotoFiltersWorkspace />,
+    'meme-generator': <MemeGeneratorWorkspace />,
+    'split-image': <ImageSplitterWorkspace />,
+    'censor-image': <CensorImageWorkspace />,
+    'remove-background': <RemoveBackgroundWorkspace />,
+  };
+  if (standalone[slug]) {
+    return (
+      <I18nProvider strings={strings} locale={locale}>
+        <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>{standalone[slug]}</ErrorBoundary>
+      </I18nProvider>
+    );
+  }
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
-  const [rawFile, setRawFile] = useState<File | null>(null);
   const [filename, setFilename] = useState<string>('image');
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
+  const [sourceFile, setSourceFile] = useState<File | null>(null);
+  // Size of the rendered result, for the dimension lines and job ticket
+  const [outDims, setOutDims] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
+  // Bumped per loaded image to replay the registration snap
+  const [registerTick, setRegisterTick] = useState<number>(0);
+  // Browser-displayable version of the upload (HEIC converted), used for byte-exact Base64 output
+  const [displayableFile, setDisplayableFile] = useState<Blob | null>(null);
   const [outputBytes, setOutputBytes] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
@@ -162,22 +192,27 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   const [base64Output, setBase64Output] = useState<string>('');
 
   // Format & Quality
-  const [format, setFormat] = useState<'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif'>('image/png');
+  const [format, setFormat] = useState<OutputFormat>('image/png');
+  const [formatSelectable, setFormatSelectable] = useState<boolean>(false);
   const [quality, setQuality] = useState<number>(85);
-  const [useVpsEngine, setUseVpsEngine] = useState<boolean>(true);
-  const [showMoreTools, setShowMoreTools] = useState<boolean>(false);
+  const [isExporting, setIsExporting] = useState<boolean>(false);
+  // Size of the file actually produced by the last download, for the job ticket
+  const [lastExportBytes, setLastExportBytes] = useState<number | null>(null);
+  const [exportError, setExportError] = useState<string | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const renderTimeoutRef = useRef<number | null>(null);
   const rafRef = useRef<number | null>(null);
+  // Drops size estimates that resolve after a newer one started (AVIF encodes are slow)
+  const estimateSeqRef = useRef<number>(0);
 
   const handleFile = async (file: File) => {
     try {
       setErrorMessage(null);
       const maxSizeBytes = 50 * 1024 * 1024; // 50MB
       if (file.size > maxSizeBytes) {
-        setErrorMessage('File size exceeds the 50 MB limit. Please select a smaller image.');
+        setErrorMessage(t('ws.errTooLarge'));
         return;
       }
 
@@ -188,18 +223,22 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
           activeFile = new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.png'), { type: 'image/png' });
         } catch (heicErr) {
           console.error('HEIC decoding failed:', heicErr);
-          setErrorMessage('Failed to decode iPhone HEIC image. Please ensure the file is not corrupted.');
+          setErrorMessage(t('ws.errHeic'));
           return;
         }
       }
 
+      const sourceMime = isHeicFile(file) ? 'image/heic' : file.type || activeFile.type || 'image/png';
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
       setFileSize(file.size);
-      setMimeType(activeFile.type || 'image/png');
-      setRawFile(file);
+      setMimeType(sourceMime);
+      setSourceFile(file);
+      setDisplayableFile(activeFile);
+      setExportError(null);
 
       const img = await loadImage(activeFile);
       setImageElement(img);
+      setRegisterTick((n) => n + 1);
 
       // Generate downscaled proxy for silky-smooth preview interactions
       const proxy = await createImageProxy(img, 1200);
@@ -224,20 +263,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       const isTransparent = checkImageTransparency(img);
       setHasRealTransparency(isTransparent);
 
-      // Set tool-specific default formats
-      if (slug.includes('webp') || slug === 'compress-image') {
-        setFormat('image/webp');
-      } else if (slug.includes('jpg') || slug.includes('jpeg')) {
-        setFormat('image/jpeg');
-      } else {
-        setFormat('image/png');
-      }
+      // Converters export their target format; editors keep the input format by default
+      const formatPolicy = getOutputFormatPolicy(slug, sourceMime);
+      setFormat(formatPolicy.format);
+      setFormatSelectable(formatPolicy.selectable);
 
       // Extract initial palette
       const initialPalette = extractDominantPalette(img, paletteCount);
       setPaletteColors(initialPalette);
     } catch {
-      setErrorMessage('Failed to decode image. The file format may be unsupported or corrupted.');
+      setErrorMessage(t('ws.errDecode'));
     }
   };
 
@@ -257,7 +292,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       }
     };
     window.addEventListener('paste', handlePaste);
-    return () => window.removeEventListener('paste', handlePaste);
+    const removeDropGuard = installWindowDropGuard((file) => handleFile(file));
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+      removeDropGuard();
+    };
   }, []);
 
   // Check cached handoff image from homepage dropzone or cross-tool handoff
@@ -274,6 +313,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       }
     });
   }, []);
+
+  // Base64 / Data URI encode the original file bytes, not a re-rendered canvas
+  useEffect(() => {
+    if (!displayableFile || (slug !== 'image-to-base64' && slug !== 'image-to-data-uri')) return;
+    let cancelled = false;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (cancelled || typeof reader.result !== 'string') return;
+      setBase64Output(slug === 'image-to-base64' ? reader.result.split(',')[1] : reader.result);
+    };
+    reader.readAsDataURL(displayableFile);
+    return () => {
+      cancelled = true;
+    };
+  }, [displayableFile, slug]);
 
   // Re-extract palette when palette count changes
   useEffect(() => {
@@ -295,19 +349,27 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
       targetH = origH * svgScale;
     }
 
+    const isCropped = crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0;
+    // Crop preview shows the whole image under the overlay; the export is exactly the selected region
+    if (slug === 'crop-image' && forExport && isCropped) {
+      targetW = Math.round(crop.width);
+      targetH = Math.round(crop.height);
+    }
+
     return {
       width: targetW,
       height: targetH,
       rotation,
       flipH,
       flipV,
-      crop: (forExport || slug !== 'crop-image') && (crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0) ? crop : undefined,
+      crop: (forExport || slug !== 'crop-image') && isCropped ? crop : undefined,
       textOverlay: slug === 'add-text-to-image' ? textOptions : undefined,
       watermark: slug === 'watermark-image' ? watermarkOptions : undefined,
       border: slug === 'add-border-to-image' ? borderOptions : undefined,
       cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
-      isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle : false),
-      backgroundColor: slug === 'png-to-jpg' || ((slug === 'round-image' || slug === 'crop-image') && format === 'image/jpeg') ? bgFillColor : undefined,
+      isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle && forExport : false),
+      // JPEG has no alpha channel, so transparent areas get the chosen fill instead of black
+      backgroundColor: format === 'image/jpeg' ? bgFillColor : undefined,
     };
   }, [
     width,
@@ -328,6 +390,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     format,
     bgFillColor,
   ]);
+
+  // Any change to the settings makes the last download's size stale
+  useEffect(() => {
+    setLastExportBytes(null);
+  }, [getProcessingOptions, format, quality]);
 
   // Main Debounced Canvas Rendering Pipeline
   useEffect(() => {
@@ -350,22 +417,24 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
 
           displayCanvas.width = processed.width;
           displayCanvas.height = processed.height;
+          setOutDims({ w: processed.width, h: processed.height });
           const ctx = displayCanvas.getContext('2d');
           if (ctx) {
             ctx.clearRect(0, 0, displayCanvas.width, displayCanvas.height);
             ctx.drawImage(processed, 0, 0);
           }
 
-          // Generate Base64 / Data URI outputs
-          if (slug === 'image-to-base64' || slug === 'image-to-data-uri') {
-            const dataUrl = displayCanvas.toDataURL(format, quality / 100);
-            setBase64Output(slug === 'image-to-base64' ? dataUrl.split(',')[1] : dataUrl);
+          // Calculate output size metrics (only the tools that display them pay for the encode)
+          if (slug === 'compress-image' || slug === 'remove-image-metadata') {
+            const estimateSeq = ++estimateSeqRef.current;
+            canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate')
+              .then((b) => {
+                if (estimateSeq === estimateSeqRef.current) setOutputBytes(b.size);
+              })
+              .catch((err) => {
+                if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
+              });
           }
-
-          // Calculate output size metrics
-          canvasToBlob(displayCanvas, format, quality / 100).then((b) => {
-            setOutputBytes(b.size);
-          });
         } catch (err) {
           console.error('Canvas processing error:', err);
         } finally {
@@ -482,56 +551,49 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
   };
 
   const handleDownload = async () => {
-    if (!imageElement) return;
+    if (!imageElement || isExporting) return;
+    setIsExporting(true);
+    setExportError(null);
 
-    if (slug === 'favicon-generator') {
-      await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
-      return;
-    }
-
-    // Always process from full-resolution original source image for pristine output quality
-    const options = getProcessingOptions(true);
-    const fullResCanvas = processCanvas(imageElement, options);
-
-    // If AVIF is selected or VPS compression is preferred for compress-image
-    if (format === 'image/avif' || (slug === 'compress-image' && useVpsEngine)) {
-      try {
-        // Convert full resolution canvas to intermediate PNG blob for lossless transmission
-        const intermediatePngBlob = await canvasToBlob(fullResCanvas, 'image/png', 1.0);
-        const vpsBlob = await vpsCompress(intermediatePngBlob, {
-          quality,
-          format,
-          subsampling: '4:2:0',
-          stripExif: true,
-        });
-        const ext = format === 'image/avif' ? 'avif' : format === 'image/webp' ? 'webp' : format === 'image/jpeg' ? 'jpg' : 'png';
-        downloadBlob(vpsBlob, `${filename}-processed.${ext}`);
+    try {
+      if (slug === 'favicon-generator') {
+        await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
         return;
-      } catch (vpsErr) {
-        console.warn('VPS compression failed, falling back to local canvas engine:', vpsErr);
       }
-    }
 
-    // Standard client-side fallback
-    const fallbackFmt = format === 'image/avif' ? 'image/webp' : format;
-    const blob = await canvasToBlob(fullResCanvas, fallbackFmt, quality / 100);
-    const ext = fallbackFmt === 'image/webp' ? 'webp' : fallbackFmt === 'image/jpeg' ? 'jpg' : 'png';
-    downloadBlob(blob, `${filename}-processed.${ext}`);
+      // Always process from full-resolution original source image for pristine output quality
+      const options = getProcessingOptions(true);
+      const fullResCanvas = processCanvas(imageElement, options);
+
+      const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
+      // Some browsers silently fall back to PNG for formats they can't encode (e.g. older Safari and WebP)
+      const actualFormat = (blob.type || format) as OutputFormat;
+      if (actualFormat !== format) {
+        setExportError(t('ws.errFormatFallback', { wanted: formatExtension(format).toUpperCase(), actual: formatExtension(actualFormat).toUpperCase() }));
+      }
+      downloadBlob(blob, `${filename}-processed.${formatExtension(actualFormat)}`);
+      setLastExportBytes(blob.size);
+    } catch (err) {
+      console.error('Export failed:', err);
+      setExportError(t('ws.errExport'));
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   const handleCopyImage = async () => {
     if (!imageElement) return;
     try {
-      const options = getProcessingOptions(true);
-      const fullResCanvas = processCanvas(imageElement, options);
-      const blob = await canvasToBlob(fullResCanvas, 'image/png', 1.0);
-      await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob }),
-      ]);
+      // Hand ClipboardItem a promise synchronously; Safari rejects writes that happen after an await
+      const pngPromise = Promise.resolve().then(() =>
+        canvasToBlob(processCanvas(imageElement, getProcessingOptions(true)), 'image/png', 1.0)
+      );
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': pngPromise })]);
       setCopiedToast(true);
       setTimeout(() => setCopiedToast(false), 2200);
     } catch (err) {
       console.error('Failed to copy to clipboard:', err);
+      setExportError(t('ws.errCopy'));
     }
   };
 
@@ -589,158 +651,179 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [imageElement, filename, format, quality, handleDownload, handleCopyImage]);
 
+  const outW = slug === 'crop-image' ? Math.round(crop.width) : outDims.w;
+  const outH = slug === 'crop-image' ? Math.round(crop.height) : outDims.h;
+  const sourceExt = mimeType.replace('image/', '').replace('svg+xml', 'svg').replace('jpeg', 'jpg').toUpperCase();
+  const canExport = !NO_EXPORT_TOOLS.includes(slug);
+  const downloadLabel = slug === 'favicon-generator' ? t('ws.downloadZip') : t('ws.download', { format: formatExtension(format).toUpperCase() });
+
   return (
-    <ErrorBoundary fallbackTitle={`Error in ${toolName} Workspace`}>
-      <div className="w-full bg-surface border border-hairline rounded-xl p-4 sm:p-6 shadow-2xl space-y-4">
+    <I18nProvider strings={strings} locale={locale}>
+    <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>
+      <div className={imageElement && canExport ? 'pb-20 lg:pb-0' : ''}>
         {errorMessage && (
-          <div className="flex items-center gap-2 p-3 bg-accent-red/10 border border-accent-red/20 rounded-lg text-xs text-accent-red">
-            <AlertCircle className="w-4 h-4 shrink-0" />
+          <div role="alert" className="flex items-start gap-2 mb-4 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span>{errorMessage}</span>
           </div>
         )}
 
-      {!imageElement ? (
-        /* Empty Upload State */
-        <div
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={accept}
+          className="hidden"
+          onChange={(e) => {
+            if (e.target.files?.[0]) handleFile(e.target.files[0]);
+            e.target.value = '';
           }}
-          onClick={() => fileInputRef.current?.click()}
-          className="border border-dashed border-hairline hover:border-hairline-strong rounded-lg p-12 sm:p-16 text-center cursor-pointer bg-surface-elevated/40 hover:bg-surface-elevated transition-all flex flex-col items-center justify-center space-y-4"
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept={accept}
-            className="hidden"
-            onChange={(e) => {
-              if (e.target.files?.[0]) handleFile(e.target.files[0]);
-            }}
-          />
-          <div className="w-12 h-12 rounded-lg bg-surface-card border border-hairline flex items-center justify-center text-accent-red">
-            <UploadCloud className="w-6 h-6" />
+        />
+
+        {!imageElement ? (
+          /* Empty state: the sheet is the drop target */
+          <div className="px-5 py-5 sm:px-6 sm:py-6">
+            <button
+              type="button"
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
+              }}
+              onClick={() => fileInputRef.current?.click()}
+              className="crop-marks w-full proof-grid border border-ink flex flex-col items-center justify-center gap-3 px-6 py-16 sm:py-24 text-center hover:bg-paper-stock transition-colors"
+              aria-describedby="ws-drop-hint"
+            >
+              <svg className="w-10 h-10 text-ink" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <rect x="6" y="9" width="28" height="22" />
+                <path d="M6 26l8-8 6 6 4-4 10 10" />
+                <circle cx="27" cy="15" r="2.5" />
+              </svg>
+              <span className="text-[20px] sm:text-[22px] font-semibold text-ink">{t('ws.dropTitle')}</span>
+              <span className="btn-ink pointer-events-none">{t('ws.chooseImage')}</span>
+              <span id="ws-drop-hint" className="text-[14px] text-graphite max-w-md">{t('ws.dropHint')}</span>
+            </button>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-ink tracking-tight">
-              Select or Drop an Image for {toolName}
-            </h3>
-            <p className="text-xs text-mute mt-1">
-              Supports PNG, JPG, WebP, SVG, AVIF (Max 50 MB) • Paste image with <kbd className="font-mono bg-surface px-1.5 py-0.5 rounded border border-hairline text-ink">Ctrl+V</kbd>
-            </p>
-          </div>
-          <button
-            type="button"
-            className="px-4 py-2 rounded-md bg-white text-black font-medium text-xs hover:bg-neutral-200 transition-colors"
-          >
-            Choose Image
-          </button>
-        </div>
-      ) : (
-        /* Active Workbench */
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Canvas Viewport (Order 1 on Desktop, Order 2 on Mobile) */}
-          <div className="lg:col-span-7 space-y-3 order-2 lg:order-1">
-            <div className="relative rounded-lg border border-hairline overflow-hidden canvas-checkerboard flex items-center justify-center min-h-[340px] sm:min-h-[380px] max-h-[550px] p-4">
-              <div className="relative inline-flex items-center justify-center max-w-full max-h-[500px]">
-                <canvas
-                  ref={canvasRef}
-                  onClick={slug.includes('color') ? handleCanvasClick : undefined}
-                  onMouseMove={slug.includes('color') ? handleCanvasMouseMove : undefined}
-                  onMouseLeave={slug.includes('color') ? handleCanvasMouseLeave : undefined}
-                  className={`max-w-full max-h-[500px] object-contain rounded shadow-2xl block ${
-                    slug.includes('color') ? 'cursor-crosshair' : ''
-                  }`}
-                />
-                {slug === 'crop-image' && canvasRef.current && (
-                  <InteractiveCropOverlay
-                    origWidth={origW}
-                    origHeight={origH}
-                    crop={crop}
-                    lockAspect={cropLockAspect}
-                    isCircle={isCropCircle}
-                    canvasElement={canvasRef.current}
-                    onCropChange={setCrop}
+        ) : (
+          <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
+            {/* Proof sheet */}
+            <div className="min-w-0 space-y-3">
+              <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 pt-14 pb-7 sm:px-20 sm:pt-16 sm:pb-10 overflow-hidden">
+                <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks registration-snap is-registering">
+                  <canvas
+                    ref={canvasRef}
+                    onClick={slug.includes('color') ? handleCanvasClick : undefined}
+                    onMouseMove={slug.includes('color') ? handleCanvasMouseMove : undefined}
+                    onMouseLeave={slug.includes('color') ? handleCanvasMouseLeave : undefined}
+                    className={`block max-w-full max-h-[55vh] sm:max-h-[540px] object-contain ${slug.includes('color') ? 'cursor-crosshair' : ''}`}
                   />
-                )}
-                {slug === 'add-text-to-image' && canvasRef.current && (
-                  <InteractiveTextOverlay
-                    canvasElement={canvasRef.current}
-                    options={textOptions}
-                    onChange={setTextOptions}
-                  />
-                )}
-                {/* Floating Eyedropper Magnifier Loupe */}
-                {slug.includes('color') && loupe.visible && (
-                  <div
-                    className="absolute pointer-events-none z-30 -translate-x-1/2 -translate-y-full pb-3 transition-opacity"
-                    style={{
-                      left: `${loupe.x}px`,
-                      top: `${loupe.y}px`,
-                    }}
-                  >
-                    <div className="flex flex-col items-center">
-                      <div className="w-20 h-20 rounded-full border-2 border-white shadow-2xl overflow-hidden relative bg-black/80 flex items-center justify-center">
-                        {/* 7x7 Zoom Matrix */}
-                        <div className="grid grid-cols-7 grid-rows-7 w-full h-full">
-                          {loupe.matrix.map((col, idx) => (
-                            <div key={idx} style={{ backgroundColor: col }} className="w-full h-full" />
-                          ))}
+                  <span key={`c${registerTick}`} className="plate plate-c" aria-hidden="true" />
+                  <span key={`m${registerTick}`} className="plate plate-m" aria-hidden="true" />
+                  <span key={`y${registerTick}`} className="plate plate-y" aria-hidden="true" />
+
+                  {/* Live dimension lines: width above, height to the left */}
+                  <span className="absolute left-0 right-0 -top-12 sm:-top-14 h-4 pointer-events-none" aria-hidden="true">
+                    <span className="absolute inset-x-0 top-1/2 border-t border-ink" />
+                    <span className="absolute left-0 top-0 bottom-0 border-l border-ink" />
+                    <span className="absolute right-0 top-0 bottom-0 border-r border-ink" />
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-paper-bright px-1.5 text-[12px] font-semibold text-ink whitespace-nowrap" data-measure>
+                      {canvasRef.current?.width ?? origW} px
+                    </span>
+                  </span>
+                  <span className="hidden sm:block absolute top-0 bottom-0 -left-14 w-4 pointer-events-none" aria-hidden="true">
+                    <span className="absolute inset-y-0 left-1/2 border-l border-ink" />
+                    <span className="absolute top-0 left-0 right-0 border-t border-ink" />
+                    <span className="absolute bottom-0 left-0 right-0 border-b border-ink" />
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 bg-paper-bright px-1.5 text-[12px] font-semibold text-ink whitespace-nowrap" data-measure>
+                      {canvasRef.current?.height ?? origH} px
+                    </span>
+                  </span>
+
+                  {slug === 'crop-image' && canvasRef.current && (
+                    <InteractiveCropOverlay
+                      origWidth={origW}
+                      origHeight={origH}
+                      crop={crop}
+                      lockAspect={cropLockAspect}
+                      isCircle={isCropCircle}
+                      canvasElement={canvasRef.current}
+                      onCropChange={setCrop}
+                    />
+                  )}
+                  {slug === 'add-text-to-image' && canvasRef.current && (
+                    <InteractiveTextOverlay canvasElement={canvasRef.current} options={textOptions} onChange={setTextOptions} />
+                  )}
+                  {slug.includes('color') && loupe.visible && (
+                    <div
+                      className="absolute pointer-events-none z-30 -translate-x-1/2 -translate-y-full pb-3"
+                      style={{ left: `${loupe.x}px`, top: `${loupe.y}px` }}
+                    >
+                      <div className="flex flex-col items-center">
+                        <div className="w-20 h-20 border-2 border-ink overflow-hidden relative bg-paper-bright">
+                          <div className="grid grid-cols-7 grid-rows-7 w-full h-full">
+                            {loupe.matrix.map((col, idx) => (
+                              <div key={idx} style={{ backgroundColor: col }} className="w-full h-full" />
+                            ))}
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-3 h-3 border border-paper-bright outline outline-1 outline-ink" />
+                          </div>
                         </div>
-                        {/* Reticle / Center Target */}
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="w-3 h-3 border border-white/90 shadow-sm rounded-xs" />
+                        <div className="mt-1 px-2 bg-process-key text-paper text-[12px] font-semibold flex items-center gap-1.5" data-measure>
+                          <span className="w-2.5 h-2.5 border border-paper" style={{ backgroundColor: loupe.hex }} />
+                          <span>{loupe.hex}</span>
                         </div>
-                      </div>
-                      {/* Color Tag Badge */}
-                      <div className="mt-1 px-2 py-0.5 bg-black/90 text-white rounded text-[10px] font-mono font-semibold shadow-lg border border-white/20 flex items-center gap-1">
-                        <span
-                          className="w-2 h-2 rounded-full border border-white/30"
-                          style={{ backgroundColor: loupe.hex }}
-                        />
-                        <span>{loupe.hex}</span>
                       </div>
                     </div>
+                  )}
+                </div>
+
+                {isRendering && (
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-paper border border-ink text-[12px] text-ink" role="status">
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+                    <span>{t('ws.rendering')}</span>
                   </div>
                 )}
               </div>
 
-              {isRendering && (
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-surface/85 backdrop-blur border border-hairline rounded text-[10px] text-mute font-mono">
-                  <Loader2 className="w-3 h-3 animate-spin text-accent-blue" />
-                  <span>Processing...</span>
-                </div>
-              )}
-            </div>
-
-            <div className="flex flex-wrap items-center justify-between gap-3 px-3 py-2 bg-surface-elevated border border-hairline rounded-md text-xs font-mono text-mute">
-              <div className="flex items-center gap-3">
-                <span>{origW} × {origH} px</span>
-                <span>•</span>
-                <span>Format: {format.replace('image/', '').toUpperCase()}</span>
+              {/* Job ticket: what goes in, what comes out */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
+                <span className="flex items-baseline gap-2">
+                  <span className="slug">{t('ws.source')}</span>
+                  <span className="text-ink font-semibold">{origW} × {origH} px</span>
+                  <span className="text-graphite">{sourceExt} · {formatBytes(fileSize)}</span>
+                </span>
+                {canExport && (
+                  <span className="flex items-baseline gap-2">
+                    <span className="slug">{t('ws.output')}</span>
+                    <span className="text-ink font-semibold">{outW} × {outH} px</span>
+                    <span className="text-graphite">
+                      {formatExtension(format).toUpperCase()}
+                      {lastExportBytes !== null
+                        ? ` · ${formatBytes(lastExportBytes)} · ${lastExportBytes <= fileSize ? '−' : '+'}${Math.abs(Math.round((1 - lastExportBytes / fileSize) * 100))}%`
+                        : (slug === 'compress-image' || slug === 'remove-image-metadata') && outputBytes > 0
+                          ? ` · ≈ ${formatBytes(outputBytes)}`
+                          : ''}
+                    </span>
+                  </span>
+                )}
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="ml-auto text-[14px] font-medium text-ink underline hover:no-underline"
+                >
+                  {t('ws.replace')}
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setImageElement(null);
-                  setPreviewImageElement(null);
-                }}
-                className="text-[11px] text-mute hover:text-ink transition-colors"
-              >
-                Upload Different Image
-              </button>
             </div>
-          </div>
 
-          {/* Precision Control Panel (Order 2 on Desktop, Order 1 on Mobile) */}
-          <div className="lg:col-span-5 space-y-4 order-1 lg:order-2">
-            <div className="p-4 bg-surface-elevated border border-hairline rounded-lg space-y-4">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-ink flex items-center gap-2">
-                <Sliders className="w-3.5 h-3.5 text-accent-blue" />
-                <span>Tool Settings</span>
-              </h4>
-
+            {/* Ruled control panel */}
+            <div className="space-y-5 lg:sticky lg:top-24">
+              <div className="border border-ink bg-paper-bright">
+                <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
+                  <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
+                  {t('ws.settings')}
+                </h2>
+                <div className="p-4 space-y-4 text-[15px]">
               {/* Tool-specific Controls */}
               {slug === 'crop-image' && (
                 <CropControls
@@ -819,8 +902,6 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                   format={format}
                   onQualityChange={setQuality}
                   onFormatChange={setFormat}
-                  useVps={useVpsEngine}
-                  onToggleVps={setUseVpsEngine}
                 />
               )}
 
@@ -839,12 +920,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 <AnalyzerControls
                   filename={filename}
                   fileSize={fileSize}
-                  format={format.replace('image/', '')}
+                  format={mimeType.replace('image/', '').replace('svg+xml', 'svg')}
                   mimeType={mimeType}
                   width={origW}
                   height={origH}
                   hasTransparency={hasRealTransparency}
-                  activeFile={rawFile}
+                  sourceFile={sourceFile}
+                  onRemoveMetadata={() => handleSendToTool('remove-image-metadata')}
                 />
               )}
 
@@ -868,6 +950,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 <Base64GeneratorControls
                   outputString={base64Output}
                   isDataUri={slug === 'image-to-data-uri'}
+                  mimeType={displayableFile?.type || 'image/png'}
                 />
               )}
 
@@ -881,32 +964,26 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
               )}
 
               {slug === 'favicon-generator' && (
-                <div className="p-3.5 bg-surface-card border border-hairline rounded-lg space-y-2 text-xs">
-                  <div className="flex items-center justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between gap-2">
                     <span className="font-semibold text-ink flex items-center gap-1.5">
-                      <Code className="w-3.5 h-3.5 text-accent-blue" />
-                      <span>HTML &lt;head&gt; Snippet</span>
+                      <Code className="w-4 h-4" aria-hidden="true" />
+                      {t('ws.faviconSnippet')}
                     </span>
                     <button
                       type="button"
                       onClick={() => {
-                        const htmlSnippet = `<link rel="icon" type="image/x-icon" href="/favicon.ico">\n<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n<link rel="manifest" href="/site.webmanifest">`;
-                        navigator.clipboard.writeText(htmlSnippet);
+                        navigator.clipboard.writeText(FAVICON_SNIPPET);
                         setCopiedToast(true);
                         setTimeout(() => setCopiedToast(false), 2200);
                       }}
-                      className="text-[11px] text-mute hover:text-ink transition-colors flex items-center gap-1"
+                      className="btn-rule min-h-[34px] px-2.5 text-[13px]"
                     >
-                      <Copy className="w-3 h-3" />
-                      <span>Copy Code</span>
+                      {copiedToast ? <Check className="w-3.5 h-3.5" aria-hidden="true" /> : <Copy className="w-3.5 h-3.5" aria-hidden="true" />}
+                      <span aria-live="polite">{copiedToast ? t('ws.copiedShort') : t('ws.copyCode')}</span>
                     </button>
                   </div>
-                  <pre className="p-2.5 bg-surface rounded border border-hairline text-[10px] font-mono text-mute overflow-x-auto select-all leading-relaxed">
-{`<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">`}
-                  </pre>
+                  <pre className="p-2.5 bg-paper border border-pencil text-[12px] font-code text-ink overflow-x-auto select-all leading-relaxed">{FAVICON_SNIPPET}</pre>
                 </div>
               )}
 
@@ -918,187 +995,124 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*' }: Props) {
                 'image-analyzer',
                 'image-color-picker',
                 'image-palette-generator',
+                'favicon-generator',
               ].includes(slug) && (
-                <div className="space-y-2 pt-2 border-t border-hairline text-xs">
-                  {format === 'image/png' ? (
-                    <div className="flex items-center justify-between py-1 text-mute text-[11px]">
-                      <span>PNG Quality</span>
-                      <span className="font-mono text-ink">Lossless (100%)</span>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="flex items-center justify-between">
-                        <span className="text-body">Output Quality</span>
-                        <span className="font-mono text-ink font-medium">{quality}%</span>
+                <div className="space-y-3 pt-4 border-t border-ink">
+                  {formatSelectable && (
+                    <div className="space-y-1.5">
+                      <span className="slug">{t('ws.saveAs')}</span>
+                      <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                        {(['image/jpeg', 'image/png', 'image/webp', 'image/avif'] as const).map((fmt) => (
+                          <button
+                            key={fmt}
+                            type="button"
+                            aria-pressed={format === fmt}
+                            onClick={() => setFormat(fmt)}
+                            className={`min-h-[40px] text-[14px] font-semibold transition-colors ${
+                              format === fmt ? 'seg-on' : 'seg-off'
+                            }`}
+                          >
+                            {formatExtension(fmt).toUpperCase()}
+                          </button>
+                        ))}
                       </div>
+                    </div>
+                  )}
+                  {format === 'image/jpeg' && hasRealTransparency && slug !== 'png-to-jpg' && (
+                    <label className="flex items-center justify-between gap-3">
+                      <span>{t('ws.fillTransparent')}</span>
+                      <input
+                        type="color"
+                        value={bgFillColor}
+                        onChange={(e) => setBgFillColor(e.target.value)}
+                        className="w-9 h-9 border border-ink bg-transparent cursor-pointer"
+                      />
+                    </label>
+                  )}
+                  {format === 'image/png' ? (
+                    <p className="text-[14px] text-graphite">{t('ws.pngLossless')}</p>
+                  ) : (
+                    <label className="block space-y-1.5">
+                      <span className="flex items-center justify-between">
+                        <span className="slug">{t('ws.quality')}</span>
+                        <span className="font-semibold text-ink" data-measure>{quality}%</span>
+                      </span>
                       <input
                         type="range"
                         min="10"
                         max="100"
                         value={quality}
+                        aria-label={t('ws.qualityLabel')}
                         onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
-                        className="w-full h-1 bg-surface-card rounded appearance-none cursor-pointer accent-white"
+                        className="w-full"
                       />
-                    </>
+                    </label>
+                  )}
+                </div>
+              )}
+                </div>
+              </div>
+
+              {canExport && (
+                <div className="space-y-2">
+                  <div className="hidden lg:block">
+                    <button type="button" onClick={handleDownload} disabled={isExporting} className="btn-ink w-full min-h-[52px] text-[16px]">
+                      {isExporting ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : slug === 'favicon-generator' ? <Archive className="w-5 h-5" aria-hidden="true" /> : <Download className="w-5 h-5" aria-hidden="true" />}
+                      <span>{isExporting ? t('ws.preparing') : downloadLabel}</span>
+                    </button>
+                  </div>
+
+                  {exportError && (
+                    <p role="alert" className="flex items-start gap-1.5 text-[14px] text-accent-yellow leading-relaxed">
+                      <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{exportError}</span>
+                    </p>
+                  )}
+
+                  {slug !== 'favicon-generator' && (
+                    <button type="button" onClick={handleCopyImage} className="btn-rule w-full">
+                      {copiedToast ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                      <span aria-live="polite">{copiedToast ? t('ws.copied') : t('ws.copy')}</span>
+                    </button>
+                  )}
+
+                  {slug !== 'favicon-generator' && nextTools.length > 0 && (
+                    <div className="pt-4">
+                      <h3 className="slug pb-1.5 border-b border-ink">{t('ws.next')}</h3>
+                      <ul className="divide-y divide-pencil-soft">
+                        {nextTools.map((next) => (
+                          <li key={next.slug}>
+                            <button
+                              type="button"
+                              onClick={() => handleSendToTool(next.slug)}
+                              className="w-full flex items-center gap-2.5 py-2 text-left text-[15px] text-ink hover:bg-paper-stock"
+                            >
+                              <span className={`w-2.5 h-2.5 shrink-0 ${next.inkClass}`} aria-hidden="true" />
+                              <span className="flex-1">{next.name}</span>
+                              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </div>
               )}
             </div>
-
-            {/* Action CTA Buttons (Download & Copy to Clipboard) */}
-            {slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
-              <div className="space-y-2">
-                <button
-                  type="button"
-                  onClick={handleDownload}
-                  className="w-full py-3 px-4 bg-white hover:bg-neutral-200 text-black font-semibold text-xs rounded-md shadow-lg flex items-center justify-center gap-2 transition-all h-[42px]"
-                >
-                  {slug === 'favicon-generator' ? (
-                    <>
-                      <Archive className="w-4 h-4" />
-                      <span>Download Favicon Package (.ZIP)</span>
-                    </>
-                  ) : (
-                    <>
-                      <Download className="w-4 h-4" />
-                      <span>Download {toolName.replace(' Image', '')}</span>
-                    </>
-                  )}
-                </button>
-
-                {slug !== 'favicon-generator' && (
-                  <button
-                    type="button"
-                    onClick={handleCopyImage}
-                    className="w-full py-2.5 px-4 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-body hover:text-ink font-medium text-xs rounded-md flex items-center justify-center gap-2 transition-all h-[38px]"
-                  >
-                    {copiedToast ? (
-                      <>
-                        <Check className="w-4 h-4 text-emerald-400" />
-                        <span className="text-emerald-400 font-semibold">Image Copied to Clipboard!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        <span>Copy Image to Clipboard</span>
-                      </>
-                    )}
-                  </button>
-                )}
-
-                {/* Cross-Tool Workflow Handoff Bar */}
-                {slug !== 'favicon-generator' && slug !== 'image-to-base64' && slug !== 'image-to-data-uri' && slug !== 'image-analyzer' && (
-                  <div className="pt-2.5 border-t border-hairline/80 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[11px] font-medium text-mute">
-                        Next action:
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setShowMoreTools(!showMoreTools)}
-                        className="text-[10px] text-mute hover:text-ink transition-colors flex items-center gap-1 py-0.5 px-1.5 rounded hover:bg-surface-elevated"
-                      >
-                        <span>{showMoreTools ? 'Less tools' : 'More tools'}</span>
-                        {showMoreTools ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-                      </button>
-                    </div>
-
-                    {/* Primary top 2 complementary actions */}
-                    <div className="grid grid-cols-2 gap-1.5 text-xs">
-                      {slug !== 'compress-image' ? (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('compress-image')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Compress</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('crop-image')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Crop</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      )}
-
-                      {slug !== 'resize-image' ? (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('resize-image')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Resize</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => handleSendToTool('photo-filters')}
-                          className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                        >
-                          <span>Filters</span>
-                          <ArrowRight className="w-3 h-3 text-mute" />
-                        </button>
-                      )}
-                    </div>
-
-                    {/* Secondary tools revealed only on demand */}
-                    {showMoreTools && (
-                      <div className="grid grid-cols-2 gap-1.5 text-xs pt-1 animate-in fade-in duration-200">
-                        {slug !== 'crop-image' && slug !== 'compress-image' && (
-                          <button
-                            type="button"
-                            onClick={() => handleSendToTool('crop-image')}
-                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                          >
-                            <span>Crop</span>
-                            <ArrowRight className="w-3 h-3 text-mute" />
-                          </button>
-                        )}
-                        {slug !== 'add-text-to-image' && (
-                          <button
-                            type="button"
-                            onClick={() => handleSendToTool('add-text-to-image')}
-                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                          >
-                            <span>Add Text</span>
-                            <ArrowRight className="w-3 h-3 text-mute" />
-                          </button>
-                        )}
-                        {slug !== 'watermark-image' && (
-                          <button
-                            type="button"
-                            onClick={() => handleSendToTool('watermark-image')}
-                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                          >
-                            <span>Watermark</span>
-                            <ArrowRight className="w-3 h-3 text-mute" />
-                          </button>
-                        )}
-                        {slug !== 'photo-filters' && slug !== 'resize-image' && (
-                          <button
-                            type="button"
-                            onClick={() => handleSendToTool('photo-filters')}
-                            className="py-1.5 px-2 bg-surface-card hover:bg-surface-elevated border border-hairline hover:border-hairline-strong text-mute hover:text-ink rounded text-[11px] flex items-center justify-between transition-colors"
-                          >
-                            <span>Filters</span>
-                            <ArrowRight className="w-3 h-3 text-mute" />
-                          </button>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
           </div>
-        </div>
-      )}
-    </div>
+        )}
+
+        {/* Phones: the primary action stays under the thumb */}
+        {imageElement && canExport && (
+          <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 bg-paper border-t border-ink px-4 py-3">
+            <button type="button" onClick={handleDownload} disabled={isExporting} className="btn-ink w-full min-h-[48px] text-[16px]">
+              {isExporting ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Download className="w-5 h-5" aria-hidden="true" />}
+              <span>{isExporting ? t('ws.preparing') : downloadLabel}</span>
+            </button>
+          </div>
+        )}
+      </div>
     </ErrorBoundary>
+    </I18nProvider>
   );
 }
