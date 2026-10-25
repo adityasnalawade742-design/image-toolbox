@@ -478,11 +478,11 @@
         "value": "23rem"
       }
     ],
-    "openDecisions": [
+    "decidedAgainst": [
       {
         "name": "Grid snap for crop/resize",
-        "status": "open, pending owner decision",
-        "body": "The direction contract raised crop and resize snapping to a visible hairline grid. Not implemented; the non-repro grid appears only on the empty drop sheet. Not a rule of the system."
+        "status": "dropped by the owner, 2026-10-25",
+        "body": "Crop and resize move freely to the pixel; snapping fights precise handle placement on phones. The non-repro grid stays decorative, on the empty drop sheet only; live dimension lines carry the measuring role."
       }
     ]
   },

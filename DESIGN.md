@@ -319,6 +319,6 @@ A flat square of process ink: magenta Edit & Transform, cyan Optimize & Compress
 - **Don't** set measurements in a monospace face; monospace is for literal code only.
 - **Don't** place ad slots beside upload, download or handoff controls.
 
-## Open Decision
+## Decided Against
 
-The direction contract raised "crop and resize snap to a visible hairline grid". It is not implemented: the non-repro grid appears only on the empty drop sheet, and crop/resize do not snap. This awaits the owner's decision and is not a rule of the system.
+**Grid snap for crop and resize** (dropped by the owner, 2026-10-25). The direction contract raised "crop and resize snap to a visible hairline grid". It is not part of the system: crop and resize move freely to the pixel, because snapping fights precise handle placement on phones. The non-repro grid stays decorative and appears only on the empty drop sheet; live dimension lines carry the measuring role instead.
