@@ -1,17 +1,7 @@
+// Static files are served directly by Cloudflare (security headers come from public/_headers), so this Worker
+// only runs for requests that match no file. It stays as the place for future /api routes.
 export default {
   async fetch(request, env) {
-    // All image processing runs in the browser; the worker only serves static assets with production security headers
-    const assetResponse = await env.ASSETS.fetch(request);
-    const secHeaders = new Headers(assetResponse.headers);
-    secHeaders.set('X-Frame-Options', 'DENY');
-    secHeaders.set('X-Content-Type-Options', 'nosniff');
-    secHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-    secHeaders.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-
-    return new Response(assetResponse.body, {
-      status: assetResponse.status,
-      statusText: assetResponse.statusText,
-      headers: secHeaders,
-    });
+    return env.ASSETS.fetch(request);
   },
 };
