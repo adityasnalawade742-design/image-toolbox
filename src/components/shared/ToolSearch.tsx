@@ -66,7 +66,7 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 h-10 px-3 text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
+        className="flex items-center gap-2 h-10 px-3 whitespace-nowrap text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
         aria-haspopup="dialog"
       >
         <Search className="w-4 h-4" aria-hidden="true" />

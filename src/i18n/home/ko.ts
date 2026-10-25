@@ -64,7 +64,7 @@ export const koHome: LocalizedHomeData = {
     {
       question: '휴대폰에서도 되나요?',
       answer:
-        '네. iPhone과 Android의 최신 모바일 브라우저에서 작동하며, iPhone HEIC 사진도 열 수 있어요. 사이트를 앱으로 설치해 오프라인에서 사용할 수도 있어요.',
+        '네. iPhone과 Android의 최신 모바일 브라우저에서 작동하며, iPhone HEIC 사진도 열 수 있어요. 사이트를 앱으로 설치할 수도 있어요. 처음 방문한 뒤에는 대부분의 도구를 오프라인에서 쓸 수 있지만, AVIF 저장과 배경 제거는 온라인 상태에서 한 번 사용해야 해요.',
     },
     {
       question: '여러 도구를 연달아 쓸 수 있나요?',

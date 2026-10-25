@@ -96,7 +96,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   if (standalone[slug]) {
     return (
       <I18nProvider strings={strings} locale={locale}>
-        <ErrorBoundary fallbackTitle={t('ws.crashed')}>{standalone[slug]}</ErrorBoundary>
+        <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>{standalone[slug]}</ErrorBoundary>
       </I18nProvider>
     );
   }
@@ -659,7 +659,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
   return (
     <I18nProvider strings={strings} locale={locale}>
-    <ErrorBoundary fallbackTitle={t('ws.crashed')}>
+    <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>
       <div className={imageElement && canExport ? 'pb-20 lg:pb-0' : ''}>
         {errorMessage && (
           <div role="alert" className="flex items-start gap-2 mb-4 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">

@@ -31,7 +31,7 @@ export const itUi: Record<string, string> = {
   'footer.popular': 'Strumenti più usati',
   'footer.categories': 'Categorie',
   'footer.sitemap': 'Mappa del sito',
-  'footer.toolCount': '{count} strumenti · 10 lingue · funziona offline',
+  'footer.toolCount': '{count} strumenti · 10 lingue · senza registrazione',
   'workspace.uploadNew': 'Carica un’altra immagine',
   'workspace.download': 'Scarica l’immagine elaborata',
   'workspace.processing': 'Elaborazione...',

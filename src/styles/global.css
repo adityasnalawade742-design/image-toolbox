@@ -61,6 +61,14 @@
     text-wrap: balance;
   }
 
+  /* CJK: break headings at phrase boundaries, never mid-word */
+  :lang(ja) :is(h1, h2, h3) {
+    word-break: auto-phrase;
+  }
+  :lang(ko) {
+    word-break: keep-all;
+  }
+
   input[type='range'] {
     accent-color: #141414;
   }

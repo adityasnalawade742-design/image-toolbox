@@ -36,11 +36,11 @@ const navCategories = CATEGORY_ORDER.filter((c) => c !== 'developer');
       </span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-6" aria-label={t('nav.allTools')}>
+    <nav class="hidden xl:flex items-center gap-5" aria-label={t('nav.allTools')}>
       {navCategories.map((cat) => (
         <a
           href={translatePath(`/#${cat}`)}
-          class="flex items-center gap-2 text-[15px] font-medium text-ink hover:underline"
+          class="flex items-center gap-2 whitespace-nowrap text-[15px] font-medium text-ink hover:underline"
         >
           <span class:list={['w-2.5 h-2.5 shrink-0', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
           {categoryNames[cat]}

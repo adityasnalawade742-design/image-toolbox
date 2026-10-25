@@ -65,7 +65,7 @@ export const itHome: LocalizedHomeData = {
     {
       question: 'Funziona sul telefono?',
       answer:
-        'Sì. Gli strumenti funzionano nei browser mobili attuali su iPhone e Android, anche con le foto HEIC di iPhone. Puoi anche installare il sito come app e usarlo offline.',
+        'Sì. Gli strumenti funzionano nei browser mobili attuali su iPhone e Android, anche con le foto HEIC di iPhone. Puoi anche installare il sito come app. Dopo la prima visita la maggior parte degli strumenti funziona offline; l’esportazione AVIF e la rimozione dello sfondo vanno usate una volta online.',
     },
     {
       question: 'Posso usare uno strumento dopo l’altro?',

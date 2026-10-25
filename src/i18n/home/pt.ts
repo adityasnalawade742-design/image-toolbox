@@ -64,7 +64,7 @@ export const ptHome: LocalizedHomeData = {
     {
       question: 'Funciona no meu celular?',
       answer:
-        'Sim. As ferramentas funcionam nos navegadores atuais de iPhone e Android, incluindo fotos HEIC do iPhone. Você também pode instalar o site como app e usar offline.',
+        'Sim. As ferramentas funcionam nos navegadores atuais de iPhone e Android, incluindo fotos HEIC do iPhone. Você também pode instalar o site como app. Depois da primeira visita, a maioria das ferramentas funciona offline; a exportação em AVIF e a remoção de fundo precisam ser usadas uma vez com internet.',
     },
     {
       question: 'Posso usar uma ferramenta depois da outra?',

@@ -31,7 +31,7 @@ export const esUi: Record<string, string> = {
   'footer.popular': 'Herramientas populares',
   'footer.categories': 'Categorías',
   'footer.sitemap': 'Mapa del sitio',
-  'footer.toolCount': '{count} herramientas · 10 idiomas · funciona sin conexión',
+  'footer.toolCount': '{count} herramientas · 10 idiomas · sin registro',
   'workspace.uploadNew': 'Subir otra imagen',
   'workspace.download': 'Descargar imagen procesada',
   'workspace.processing': 'Procesando…',

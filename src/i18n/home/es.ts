@@ -64,7 +64,7 @@ export const esHome: LocalizedHomeData = {
     {
       question: '¿Funciona en mi teléfono?',
       answer:
-        'Sí. Las herramientas funcionan en los navegadores móviles actuales de iPhone y Android, también con fotos HEIC de iPhone. Además, puedes instalar el sitio como una app y usarlo sin conexión.',
+        'Sí. Las herramientas funcionan en los navegadores móviles actuales de iPhone y Android, también con fotos HEIC de iPhone. Además, puedes instalar el sitio como una app. Después de tu primera visita, la mayoría de las herramientas funcionan sin conexión; la exportación a AVIF y la eliminación de fondo deben usarse una vez con conexión.',
     },
     {
       question: '¿Puedo usar una herramienta tras otra?',

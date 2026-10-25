@@ -64,7 +64,7 @@ export const trHome: LocalizedHomeData = {
     {
       question: 'Telefonumda çalışır mı?',
       answer:
-        'Evet. Araçlar, iPhone HEIC fotoğrafları dahil olmak üzere iPhone ve Android’deki güncel mobil tarayıcılarda çalışır. Siteyi uygulama olarak yükleyip çevrimdışı da kullanabilirsiniz.',
+        'Evet. Araçlar, iPhone HEIC fotoğrafları dahil olmak üzere iPhone ve Android’deki güncel mobil tarayıcılarda çalışır. Siteyi uygulama olarak da yükleyebilirsiniz. İlk ziyaretten sonra çoğu araç çevrimdışı çalışır; AVIF dışa aktarma ve arka plan kaldırma özelliklerini bir kez çevrimiçiyken kullanmanız gerekir.',
     },
     {
       question: 'Araçları art arda kullanabilir miyim?',

@@ -31,7 +31,7 @@ export const deUi: Record<string, string> = {
   'footer.popular': 'Beliebte Tools',
   'footer.categories': 'Kategorien',
   'footer.sitemap': 'Sitemap',
-  'footer.toolCount': '{count} Tools · 10 Sprachen · funktioniert offline',
+  'footer.toolCount': '{count} Tools · 10 Sprachen · ohne Anmeldung',
   'workspace.uploadNew': 'Anderes Bild wählen',
   'workspace.download': 'Bearbeitetes Bild herunterladen',
   'workspace.processing': 'Wird verarbeitet …',

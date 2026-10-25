@@ -57,7 +57,7 @@ export const ui = {
     'footer.popular': 'Popular tools',
     'footer.categories': 'Categories',
     'footer.sitemap': 'Sitemap',
-    'footer.toolCount': '{count} tools · 10 languages · works offline',
+    'footer.toolCount': '{count} tools · 10 languages · no sign-up',
     'workspace.uploadNew': 'Upload Different Image',
     'workspace.download': 'Download Processed Image',
     'workspace.processing': 'Processing...',

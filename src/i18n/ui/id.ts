@@ -31,7 +31,7 @@ export const idUi: Record<string, string> = {
   'footer.popular': 'Alat populer',
   'footer.categories': 'Kategori',
   'footer.sitemap': 'Peta situs',
-  'footer.toolCount': '{count} alat · 10 bahasa · bisa offline',
+  'footer.toolCount': '{count} alat · 10 bahasa · tanpa daftar',
   'workspace.uploadNew': 'Unggah Gambar Lain',
   'workspace.download': 'Unduh Gambar Hasil',
   'workspace.processing': 'Memproses...',
