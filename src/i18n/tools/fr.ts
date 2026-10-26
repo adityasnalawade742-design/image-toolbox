@@ -3920,4 +3920,240 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "passport-photo-maker": {
+    name: "Créer une photo d’identité",
+    shortName: "Photo d’identité",
+    tagline: "Créez une photo de passeport ou de visa au bon format, avec un fond uni en option, et imprimez-en plusieurs sur une seule planche.",
+    intro:
+      "Créer une photo d’identité transforme une photo ordinaire en photo de passeport, de visa ou de pièce d’identité au format exact dont vous avez besoin : 35 × 45 mm, 2 × 2 pouces, 33 × 48 mm ou une taille personnalisée. Déplacez et zoomez la photo jusqu’à ce que le haut du crâne et le menton se trouvent sur les lignes repères, remplacez si besoin le fond par du blanc, du gris clair ou du bleu clair, puis téléchargez une photo en 300 DPI ou une planche à imprimer pour du papier photo 4 × 6 pouces ou A4, avec des lignes de découpe. Tout se passe dans votre navigateur, votre photo n’est donc jamais envoyée.",
+    seoTitle: "Photo d’identité en ligne – 35×45 mm, gratuite",
+    seoDescription:
+      "Photo d’identité en ligne : photos de passeport et de visa en 35×45 mm, 2×2 in ou sur mesure, fond blanc, planche 4×6 ou A4 à imprimer. Gratuit et privé.",
+    keywords: [
+      "photo d’identité",
+      "photo d’identité en ligne",
+      "photo identité 35x45",
+      "photo passeport en ligne",
+      "planche photo d’identité",
+      "photo visa en ligne",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une photo",
+        description: "Choisissez une photo nette, de face, avec un éclairage uniforme et une expression neutre.",
+      },
+      {
+        title: "Choisissez le format",
+        description: "Choisissez 35 × 45 mm, 2 × 2 in, 33 × 48 mm, ou saisissez une taille personnalisée.",
+      },
+      {
+        title: "Cadrez",
+        description: "Faites glisser la photo ou utilisez les curseurs pour placer le haut du crâne et le menton sur les lignes pointillées.",
+      },
+      {
+        title: "Réglez le fond",
+        description: "Conservez-le, ou remplacez-le par du blanc, du gris clair ou du bleu clair.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez une photo, ou une planche à imprimer pour du papier 4 × 6 in ou A4, en JPG ou en PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Formats courants intégrés",
+        description: "35 × 45 mm, 2 × 2 in et 33 × 48 mm, plus n’importe quelle taille personnalisée en millimètres.",
+      },
+      {
+        title: "Repères pour la tête",
+        description: "Des lignes pointillées et un ovale indiquent où placer la tête.",
+      },
+      {
+        title: "Fonds unis",
+        description: "Un modèle d’IA sur votre appareil remplace le fond par du blanc, du gris clair ou du bleu clair.",
+      },
+      {
+        title: "Planches à imprimer",
+        description: "Remplissez du papier photo 4 × 6 in ou A4 de copies avec des lignes de découpe, en 300 DPI.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ma photo sera-t-elle acceptée ?",
+        answer:
+          "Cela dépend de l’administration à laquelle vous la remettez. Chaque pays fixe ses règles sur la taille, la position de la tête, le fond, l’expression et les lunettes. Cet outil assure la bonne taille et la bonne mise en page ; vérifiez les règles officielles avant d’imprimer.",
+      },
+      {
+        question: "Comment imprimer la planche à la bonne taille ?",
+        answer:
+          "Imprimez à 100 % (taille réelle), et non avec « Ajuster à la page ». L’option PDF utilise le format exact du papier, donc les photos s’impriment à leur taille réelle sur n’importe quelle imprimante.",
+      },
+      {
+        question: "Quelle est la résolution des photos ?",
+        answer:
+          "300 DPI, la norme pour l’impression photo. Une photo de 35 × 45 mm fait 413 × 531 pixels.",
+      },
+      {
+        question: "Comment fonctionne le remplacement du fond ?",
+        answer:
+          "Un modèle d’IA est téléchargé une seule fois (environ 33 MB) et s’exécute dans votre navigateur pour vous séparer du fond. Vérifiez les contours autour des cheveux avant d’imprimer.",
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer:
+          "Non. La photo est traitée dans votre navigateur, sur votre appareil, et rien n’est envoyé à un serveur.",
+      },
+    ],
+  },
+  "signature-extractor": {
+    name: "Extraire une signature",
+    shortName: "Signature PNG",
+    tagline: "Transformez la photo de votre signature en PNG net sur fond transparent.",
+    intro:
+      "Extraire une signature prend une photo ou un scan de votre signature sur papier et en fait une image nette qui ne garde que l’encre, sur fond transparent. L’outil ignore les ombres et l’éclairage inégal des photos prises au téléphone, supprime l’espace vide autour de la signature et peut recolorer l’encre en noir ou en bleu. Utilisez le PNG avec Signer un PDF, dans Word ou dans tout formulaire qui demande une image de signature. La photo est traitée dans votre navigateur, votre signature n’est donc jamais envoyée.",
+    seoTitle: "Signature sur fond transparent – PNG gratuit",
+    seoDescription:
+      "Extraire une signature d’une photo et la convertir en PNG transparent dans votre navigateur. Supprime papier et ombres, recadre et recolore. Gratuit et privé.",
+    keywords: [
+      "signature fond transparent",
+      "signature png",
+      "détourer une signature",
+      "extraire une signature d’une image",
+      "numériser sa signature",
+    ],
+    howToSteps: [
+      {
+        title: "Signez sur du papier blanc",
+        description: "Utilisez un stylo foncé et prenez une photo sous une bonne lumière, ou scannez la page.",
+      },
+      {
+        title: "Ajoutez la photo",
+        description: "Déposez ou choisissez la photo. La signature est extraite aussitôt.",
+      },
+      {
+        title: "Affinez",
+        description: "Réglez la sensibilité et choisissez l’encre d’origine, noire ou bleue.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PNG transparent.",
+      },
+    ],
+    features: [
+      {
+        title: "Gère les ombres",
+        description: "Chaque zone est comparée au papier qui l’entoure, donc un éclairage inégal ne laisse pas de taches grises.",
+      },
+      {
+        title: "Bords lisses",
+        description: "Les bords des traits s’estompent en douceur au lieu de paraître crénelés.",
+      },
+      {
+        title: "Recadrage automatique",
+        description: "Le papier vide autour de la signature est supprimé.",
+      },
+      {
+        title: "Privé",
+        description: "Votre signature reste sur votre appareil.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Comment obtenir le meilleur résultat ?",
+        answer:
+          "Signez avec un stylo foncé sur du papier blanc uni, et prenez la photo bien de face, à la lumière du jour, sans que votre ombre tombe sur la page.",
+      },
+      {
+        question: "Pourquoi manque-t-il des parties de ma signature ?",
+        answer:
+          "Les traits pâles ou fins peuvent disparaître. Augmentez la sensibilité ; si la texture du papier commence à apparaître, baissez-la légèrement.",
+      },
+      {
+        question: "Puis-je l’utiliser pour signer un PDF ?",
+        answer:
+          "Oui. Dans Signer un PDF, choisissez Image, puis sélectionnez le PNG téléchargé.",
+      },
+      {
+        question: "Ma signature est-elle envoyée ?",
+        answer:
+          "Non. Elle est traitée dans votre navigateur et n’est jamais envoyée nulle part.",
+      },
+    ],
+  },
+  "change-image-dpi": {
+    name: "Changer le DPI d’une image",
+    shortName: "Changer le DPI",
+    tagline: "Réglez le DPI d’un JPG ou d’un PNG, par exemple 300 DPI pour l’impression ou un formulaire, sans modifier ses pixels.",
+    intro:
+      "Changer le DPI d’une image modifie la valeur de résolution enregistrée dans un fichier JPG ou PNG, par exemple 300 DPI pour l’impression ou la valeur demandée par un formulaire. Les pixels ne sont pas touchés, donc la qualité et la taille du fichier restent les mêmes : seule la taille d’impression change, et l’outil l’affiche en centimètres et en pouces. Il met à jour les deux emplacements où un JPG peut stocker le DPI, pour que Windows, Mac et les applications photo lisent tous la nouvelle valeur. Tout se passe dans votre navigateur, l’image n’est donc jamais envoyée.",
+    seoTitle: "Changer le DPI d’une image en 300 en ligne – gratuit",
+    seoDescription:
+      "Changer le DPI d’un JPG ou PNG en 300, 200, 72 ou toute autre valeur dans votre navigateur. Pixels inchangés, taille d’impression affichée. Gratuit et privé.",
+    keywords: [
+      "changer le dpi d’une image",
+      "changer dpi",
+      "convertir une image en 300 dpi",
+      "modifier dpi photo",
+      "augmenter dpi image",
+      "convertisseur dpi",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez un JPG ou un PNG. Les WebP et HEIC sont d’abord convertis en JPG.",
+      },
+      {
+        title: "Choisissez le DPI",
+        description: "Choisissez 72, 96, 150, 200, 300 ou 600, ou saisissez n’importe quelle valeur.",
+      },
+      {
+        title: "Vérifiez la taille d’impression",
+        description: "Voyez à quelle taille l’image sera imprimée avec ce DPI.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez l’image avec le nouveau DPI.",
+      },
+    ],
+    features: [
+      {
+        title: "Aucune perte de qualité",
+        description: "Seule la valeur DPI change ; les données de l’image ne sont pas touchées.",
+      },
+      {
+        title: "Lu partout",
+        description: "Les résolutions JFIF et EXIF d’un JPG sont toutes deux mises à jour, donc toutes les applications affichent le même DPI.",
+      },
+      {
+        title: "Taille d’impression affichée",
+        description: "Voyez la taille d’impression en centimètres et en pouces avant de télécharger.",
+      },
+      {
+        title: "Privé",
+        description: "L’image est modifiée dans votre navigateur et n’est jamais envoyée.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Changer le DPI améliore-t-il la qualité ?",
+        answer:
+          "Non. Le DPI n’est qu’une indication qui dit aux imprimantes à quelle taille imprimer. Pour avoir plus de détails, il faut plus de pixels, et aucun outil ne peut vraiment en créer.",
+      },
+      {
+        question: "Un formulaire demande 200 DPI et une taille en centimètres. Que faire ?",
+        answer:
+          "Réglez le DPI ici, puis vérifiez la taille d’impression. Si elle ne correspond pas, redimensionnez l’image à la taille en pixels demandée par le formulaire : centimètres ÷ 2,54 × DPI. Par exemple, 3,5 cm à 200 DPI font 276 pixels.",
+      },
+      {
+        question: "Pourquoi mon image indique-t-elle « Non défini » ?",
+        answer:
+          "Beaucoup de photos de téléphone et de captures d’écran n’enregistrent pas de DPI. La plupart des applications supposent alors 72 ou 96. Définir une valeur ici règle le problème.",
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer:
+          "Non. La modification se fait dans votre navigateur, sur votre appareil.",
+      },
+    ],
+  },
 };

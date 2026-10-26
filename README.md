@@ -24,6 +24,8 @@
 - **Add Border & Frames** — Solid, inset, double borders, and custom frame padding.
 - **Round Image Corners** — Precise corner radius rounding and 1-click circular avatar generator.
 - **Blur / Censor** — Drag or add censor boxes (with exact position and size fields) using Pixelate, Gaussian Blur, and Blackout redaction modes.
+- **Passport Photo Maker** — 35×45 mm, 2×2 in, 33×48 mm or custom; head guides; white / grey / blue background (on-device AI); 4×6 in or A4 print sheets as JPG or exact-size PDF, 300 DPI.
+- **Signature Extractor** — Photo of a signature to a transparent PNG (adaptive threshold handles shadows), ink recolor, auto crop.
 - **Merge Images** — Join photos side by side, stacked, or in a grid, with spacing, background color, and matched sizes.
 - **Remove Background** — On-device AI: Fast (MODNet) or Best quality (IMG.LY), transparent or colored background.
 - **Meme Generator** — Impact typography and 8 viral illustrated vector templates with instant captioning.
@@ -56,6 +58,7 @@
 - **Image Color Picker** — Live 7×7 pixel magnifying loupe, reticle crosshair, and multi-format color copying (HEX, RGB, HSL, HSV, CMYK).
 - **Palette Generator** — Dominant color palette extraction with 1-click CSS/HEX copy.
 - **Photo Filters** — 14 real-time visual presets (Cyberpunk, Cinematic, Vintage, Noir, Sunset, Emerald, etc.) + custom adjustment sliders.
+- **Change Image DPI** — Sets JFIF + EXIF density (JPG) or pHYs (PNG) without re-encoding; shows print size.
 - **Image Analyzer** — Detailed image inspection (dimensions, megapixels, aspect ratio, color depth, transparency).
 
 ### 🛠️ 6. Developer Utilities
@@ -68,7 +71,7 @@
 
 1. **Zero-Server Processing**: Images are processed directly within the user's browser using HTML5 Canvas 2D and WebAssembly. No files are uploaded to third-party servers.
 2. **IndexedDB Cross-Tool Cache**: High-resolution and 4K images are handed off between tools via client-side IndexedDB (`handoffStorage.ts`), bypassing browser `sessionStorage` limitations.
-3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 505 statically-generated routes (49 tools in every language, plus English information pages).
+3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 535 statically-generated routes (52 tools in every language, plus English information pages).
 4. **Pro Desktop UX**:
    - `Ctrl+V` / `Cmd+V`: Instant paste image from clipboard.
    - `Ctrl+S` / `Cmd+S`: 1-click save/download processed image.
@@ -107,7 +110,7 @@ Visit `http://localhost:4321` in your browser.
 | :--- | :--- |
 | `npm run dev` | Starts local Astro dev server with hot-module reload |
 | `npm run check` | Runs full TypeScript and Astro template type verification |
-| `npm run build` | Builds every localized static route (49 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
+| `npm run build` | Builds every localized static route (52 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
 | `npm run preview` | Previews the production build locally |
 | `npm run deploy` | Deploys static assets and edge worker to Cloudflare Workers |
 | `npm run a11y` | Audits every tool, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |

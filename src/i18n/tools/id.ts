@@ -3923,4 +3923,240 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "passport-photo-maker": {
+    name: "Pembuat Pas Foto",
+    shortName: "Pas Foto",
+    tagline: "Buat foto paspor atau visa dengan ukuran yang tepat, dengan background polos jika perlu, dan cetak beberapa foto dalam satu lembar.",
+    intro:
+      "Pembuat Pas Foto mengubah foto biasa menjadi foto paspor, visa, atau kartu identitas dengan ukuran persis yang Anda butuhkan: 35 × 45 mm, 2 × 2 in, 33 × 48 mm, atau ukuran kustom. Geser dan zoom foto sampai puncak kepala dan dagu berada di garis panduan, ganti background dengan putih, abu-abu muda, atau biru muda polos jika perlu, lalu unduh satu foto beresolusi 300 DPI atau lembar cetak untuk kertas foto 4 × 6 in atau A4, lengkap dengan garis potong. Semuanya terjadi di browser Anda, jadi foto Anda tidak pernah diunggah.",
+    seoTitle: "Pas Foto Online – Ukuran 35×45 mm & 2×2 in, Gratis",
+    seoDescription:
+      "Pas foto online untuk paspor dan visa: 35×45 mm, 2×2 in, atau ukuran kustom, background putih, dan lembar cetak 4×6 atau A4. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "pas foto online",
+      "pembuat pas foto",
+      "foto paspor online",
+      "ukuran pas foto 35x45",
+      "ganti background pas foto",
+      "foto visa online",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto",
+        description: "Pilih foto yang jelas, menghadap ke depan, dengan cahaya merata dan ekspresi netral.",
+      },
+      {
+        title: "Pilih ukurannya",
+        description: "Pilih 35 × 45 mm, 2 × 2 in, 33 × 48 mm, atau masukkan ukuran kustom.",
+      },
+      {
+        title: "Sejajarkan",
+        description: "Seret atau gunakan slider agar puncak kepala dan dagu berada di garis putus-putus.",
+      },
+      {
+        title: "Atur background",
+        description: "Biarkan apa adanya, atau ganti dengan putih, abu-abu muda, atau biru muda.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan satu foto, atau lembar cetak untuk kertas 4 × 6 in atau A4, sebagai JPG atau PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Ukuran umum tersedia",
+        description: "35 × 45 mm, 2 × 2 in, dan 33 × 48 mm, ditambah ukuran kustom apa pun dalam milimeter.",
+      },
+      {
+        title: "Panduan kepala",
+        description: "Garis putus-putus dan oval menunjukkan di mana kepala harus berada.",
+      },
+      {
+        title: "Background polos",
+        description: "Model AI di perangkat Anda mengganti background dengan putih, abu-abu muda, atau biru muda.",
+      },
+      {
+        title: "Lembar cetak",
+        description: "Isi kertas foto 4 × 6 in atau A4 dengan beberapa salinan dan garis potong, pada 300 DPI.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah foto saya akan diterima?",
+        answer:
+          "Itu tergantung pada instansi tempat Anda mengajukan permohonan. Setiap negara menetapkan aturan untuk ukuran, posisi kepala, background, ekspresi, dan kacamata. Alat ini membuat ukuran dan tata letaknya tepat; periksa aturan resminya sebelum mencetak.",
+      },
+      {
+        question: "Bagaimana cara mencetak lembar dengan ukuran yang tepat?",
+        answer:
+          "Cetak pada 100% (ukuran sebenarnya), bukan “sesuaikan dengan halaman”. Opsi PDF memakai ukuran kertas yang persis, jadi foto tercetak dengan ukuran sebenarnya di printer apa pun.",
+      },
+      {
+        question: "Berapa resolusi fotonya?",
+        answer:
+          "300 DPI, standar untuk cetak foto. Foto 35 × 45 mm berukuran 413 × 531 piksel.",
+      },
+      {
+        question: "Bagaimana cara kerja penggantian background?",
+        answer:
+          "Model AI diunduh sekali (sekitar 33 MB) dan berjalan di browser Anda untuk memisahkan Anda dari background. Periksa tepi di sekitar rambut sebelum mencetak.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Foto diproses di browser pada perangkat Anda, dan tidak ada yang dikirim ke server.",
+      },
+    ],
+  },
+  "signature-extractor": {
+    name: "Ekstrak Tanda Tangan",
+    shortName: "TTD PNG",
+    tagline: "Ubah foto tanda tangan Anda menjadi PNG bersih dengan background transparan.",
+    intro:
+      "Ekstrak Tanda Tangan mengambil foto atau hasil scan tanda tangan Anda di atas kertas dan mengubahnya menjadi gambar bersih yang hanya berisi tinta di atas background transparan. Alat ini mengabaikan bayangan dan cahaya tidak merata dari foto ponsel, memangkas ruang kosong di sekitar tanda tangan, dan bisa mengubah warna tinta menjadi hitam atau biru. Gunakan PNG-nya di Tanda Tangani PDF, di Word, atau di formulir apa pun yang meminta gambar tanda tangan. Foto diproses di browser Anda, jadi tanda tangan Anda tidak pernah diunggah.",
+    seoTitle: "Tanda Tangan Transparan – Ubah Foto TTD ke PNG",
+    seoDescription:
+      "Ubah foto tanda tangan menjadi PNG transparan di browser Anda. Hapus kertas dan bayangan, pangkas, dan ganti warna tinta. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "tanda tangan transparan",
+      "hapus background tanda tangan",
+      "ttd png",
+      "membuat tanda tangan png",
+      "tanda tangan digital dari foto",
+    ],
+    howToSteps: [
+      {
+        title: "Tanda tangani kertas putih",
+        description: "Gunakan pena gelap dan ambil foto di tempat yang terang, atau scan halamannya.",
+      },
+      {
+        title: "Tambahkan foto",
+        description: "Letakkan atau pilih fotonya. Tanda tangan langsung diekstrak.",
+      },
+      {
+        title: "Sesuaikan",
+        description: "Atur sensitivitas dan pilih tinta asli, hitam, atau biru.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PNG transparannya.",
+      },
+    ],
+    features: [
+      {
+        title: "Mengatasi bayangan",
+        description: "Setiap titik dibandingkan dengan kertas di sekitarnya, jadi cahaya tidak merata tidak meninggalkan bercak abu-abu.",
+      },
+      {
+        title: "Tepi halus",
+        description: "Tepi goresan memudar dengan lembut, tidak terlihat bergerigi.",
+      },
+      {
+        title: "Pangkas otomatis",
+        description: "Kertas kosong di sekitar tanda tangan dipangkas.",
+      },
+      {
+        title: "Privat",
+        description: "Tanda tangan Anda tetap di perangkat Anda.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara mendapatkan hasil terbaik?",
+        answer:
+          "Tanda tangani kertas putih polos dengan pena gelap, lalu foto lurus dari depan di siang hari tanpa bayangan Anda menutupi halaman.",
+      },
+      {
+        question: "Mengapa sebagian tanda tangan saya hilang?",
+        answer:
+          "Goresan yang samar atau tipis bisa hilang. Naikkan sensitivitas; jika tekstur kertas mulai muncul, turunkan sedikit.",
+      },
+      {
+        question: "Bisakah saya memakainya untuk menandatangani PDF?",
+        answer:
+          "Bisa. Di Tanda Tangani PDF, pilih Foto lalu pilih PNG yang Anda unduh.",
+      },
+      {
+        question: "Apakah tanda tangan saya diunggah?",
+        answer:
+          "Tidak. Tanda tangan diproses di browser Anda dan tidak pernah dikirim ke mana pun.",
+      },
+    ],
+  },
+  "change-image-dpi": {
+    name: "Ubah DPI Gambar",
+    shortName: "Ubah DPI",
+    tagline: "Atur DPI JPG atau PNG, misalnya 300 DPI untuk cetak atau formulir, tanpa mengubah pikselnya.",
+    intro:
+      "Ubah DPI Gambar mengatur nilai resolusi yang tersimpan di file JPG atau PNG, misalnya 300 DPI untuk cetak atau nilai yang diminta formulir pendaftaran. Pikselnya tidak disentuh, jadi kualitas dan ukuran file tetap sama: hanya ukuran cetak yang berubah, dan alat ini menampilkannya dalam sentimeter dan inci. Alat ini memperbarui kedua tempat penyimpanan DPI di JPG, jadi Windows, Mac, dan aplikasi foto semuanya membaca nilai baru. Semuanya berjalan di browser Anda, jadi gambar tidak pernah diunggah.",
+    seoTitle: "Ubah DPI Gambar ke 300 Online – Gratis",
+    seoDescription:
+      "Ubah DPI JPG atau PNG ke 300, 200, 72, atau nilai apa pun di browser Anda. Piksel tetap sama; lihat ukuran cetaknya. Gratis, privat, tanpa unggah file.",
+    keywords: [
+      "ubah dpi gambar",
+      "ubah dpi foto",
+      "convert foto ke 300 dpi",
+      "cara mengubah dpi gambar",
+      "ubah dpi jpg",
+      "dpi converter online",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar",
+        description: "Letakkan atau pilih JPG atau PNG. WebP dan HEIC dikonversi ke JPG terlebih dahulu.",
+      },
+      {
+        title: "Pilih DPI",
+        description: "Pilih 72, 96, 150, 200, 300, atau 600, atau ketik nilai apa pun.",
+      },
+      {
+        title: "Periksa ukuran cetak",
+        description: "Lihat seberapa besar gambar akan tercetak pada DPI tersebut.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan gambar dengan DPI baru.",
+      },
+    ],
+    features: [
+      {
+        title: "Tanpa penurunan kualitas",
+        description: "Hanya nilai DPI yang diubah; data gambar tidak disentuh.",
+      },
+      {
+        title: "Terbaca di mana saja",
+        description: "Resolusi JFIF dan EXIF pada JPG sama-sama diperbarui, jadi setiap aplikasi menampilkan DPI yang sama.",
+      },
+      {
+        title: "Ukuran cetak ditampilkan",
+        description: "Lihat ukuran cetak dalam sentimeter dan inci sebelum Anda mengunduh.",
+      },
+      {
+        title: "Privat",
+        description: "Gambar diubah di browser Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah mengubah DPI meningkatkan kualitas?",
+        answer:
+          "Tidak. DPI hanyalah label yang memberi tahu printer seberapa besar gambar dicetak. Untuk mendapatkan detail lebih banyak, Anda butuh piksel lebih banyak, dan tidak ada alat yang benar-benar bisa menciptakannya.",
+      },
+      {
+        question: "Formulir meminta 200 DPI dan ukuran dalam sentimeter. Apa yang harus saya lakukan?",
+        answer:
+          "Atur DPI di sini, lalu periksa ukuran cetaknya. Jika belum sesuai, ubah ukuran gambar ke ukuran piksel yang diminta formulir: sentimeter ÷ 2,54 × DPI. Misalnya 3,5 cm pada 200 DPI adalah 276 piksel.",
+      },
+      {
+        question: "Mengapa gambar saya tertulis “Belum diatur”?",
+        answer:
+          "Banyak foto ponsel dan screenshot tidak menyimpan DPI. Kebanyakan aplikasi lalu menganggapnya 72 atau 96. Mengatur nilainya di sini akan memperbaikinya.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer:
+          "Tidak. Perubahan terjadi di browser pada perangkat Anda.",
+      },
+    ],
+  },
 };

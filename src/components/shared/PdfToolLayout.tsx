@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Loader2, AlertCircle, FileText } from 'lucide-react';
+import { Download, Loader2, AlertCircle, FileText, type LucideIcon } from 'lucide-react';
 import { useT } from './I18nContext';
 
 interface Props {
@@ -18,10 +18,12 @@ interface Props {
   /** Progress or result, announced politely */
   status?: string;
   error?: string | null;
+  /** Panel heading icon (defaults to a document) */
+  icon?: LucideIcon;
 }
 
 /** Shared frame for the PDF tools: proof column, ruled settings panel, download button and phone rail */
-export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error }: Props) {
+export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText }: Props) {
   const t = useT();
   const button = (big: boolean) => (
     <button
@@ -67,7 +69,7 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
           <div className="border border-ink bg-paper-bright">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
-              <FileText className="w-4 h-4 text-ink" aria-hidden="true" />
+              <Icon className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
             </h2>
             <div className="p-4 space-y-5 text-[15px]">{panel}</div>

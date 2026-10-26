@@ -3923,4 +3923,240 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "passport-photo-maker": {
+    name: "Vesikalık Fotoğraf Oluşturucu",
+    shortName: "Vesikalık Fotoğraf",
+    tagline: "Doğru boyutta, isteğe bağlı düz arka planlı bir pasaport veya vize fotoğrafı oluşturun ve tek sayfaya birkaç tane basın.",
+    intro:
+      "Vesikalık Fotoğraf Oluşturucu, sıradan bir fotoğrafı tam ihtiyacınız olan boyutta pasaport, vize veya kimlik fotoğrafına dönüştürür: 35 × 45 mm, 2 × 2 inç, 33 × 48 mm ya da özel bir boyut. Başın üstü ve çene kılavuz çizgilerine oturana kadar fotoğrafı taşıyıp yakınlaştırın, gerekirse arka planı düz beyaz, açık gri veya açık mavi ile değiştirin; ardından 300 DPI'da tek bir fotoğraf ya da 4 × 6 inç fotoğraf kâğıdı veya A4 için kesim çizgili bir baskı sayfası indirin. Her şey tarayıcınızda gerçekleşir, bu yüzden fotoğrafınız asla yüklenmez.",
+    seoTitle: "Vesikalık Fotoğraf Yapma – 35×45 mm, 2×2 in, Ücretsiz",
+    seoDescription:
+      "Vesikalık fotoğraf ve pasaport fotoğrafı yapın: 35×45 mm, 2×2 in veya özel boyut, beyaz arka plan, 4×6 ya da A4 baskı sayfası. Ücretsiz ve gizli.",
+    keywords: [
+      "vesikalık fotoğraf",
+      "vesikalık fotoğraf yapma",
+      "pasaport fotoğrafı",
+      "biyometrik fotoğraf",
+      "35x45 fotoğraf",
+      "vize fotoğrafı",
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraf ekleyin",
+        description: "Eşit ışıklı, önden çekilmiş, nötr ifadeli net bir fotoğraf seçin.",
+      },
+      {
+        title: "Boyutu seçin",
+        description: "35 × 45 mm, 2 × 2 in veya 33 × 48 mm seçin ya da özel bir boyut girin.",
+      },
+      {
+        title: "Hizalayın",
+        description: "Başın üstü ve çene kesikli çizgilere oturacak şekilde sürükleyin veya kaydırıcıları kullanın.",
+      },
+      {
+        title: "Arka planı ayarlayın",
+        description: "Koru seçeneğiyle olduğu gibi bırakın ya da Beyaz, Açık gri veya Açık mavi ile değiştirin.",
+      },
+      {
+        title: "İndirin",
+        description: "Tek fotoğraf ya da 4 × 6 in kâğıt veya A4 için bir Baskı sayfası seçip JPG veya PDF olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Yaygın boyutlar hazır",
+        description: "35 × 45 mm, 2 × 2 in ve 33 × 48 mm; ayrıca milimetre cinsinden istediğiniz özel boyut.",
+      },
+      {
+        title: "Baş kılavuzları",
+        description: "Kesikli çizgiler ve bir oval, başın nerede durması gerektiğini gösterir.",
+      },
+      {
+        title: "Düz arka planlar",
+        description: "Cihazınızdaki bir yapay zekâ modeli arka planı beyaz, açık gri veya açık mavi ile değiştirir.",
+      },
+      {
+        title: "Baskı sayfaları",
+        description: "4 × 6 in fotoğraf kâğıdını veya A4 sayfayı 300 DPI'da kopyalar ve kesim çizgileriyle doldurun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Fotoğrafım kabul edilir mi?",
+        answer:
+          "Bu, başvurduğunuz kuruma bağlıdır. Her ülke boyut, baş konumu, arka plan, yüz ifadesi ve gözlük için kendi kurallarını belirler. Bu araç boyutu ve yerleşimi doğru ayarlar; yazdırmadan önce resmî kuralları kontrol edin.",
+      },
+      {
+        question: "Sayfayı doğru boyutta nasıl yazdırırım?",
+        answer:
+          "“Sayfaya sığdır” ile değil, %100 (gerçek boyut) ile yazdırın. PDF seçeneği tam kâğıt boyutunu kullanır, bu yüzden fotoğraflar her yazıcıda gerçek boyutlarında basılır.",
+      },
+      {
+        question: "Fotoğrafların çözünürlüğü nedir?",
+        answer:
+          "Fotoğraf baskısı için standart olan 300 DPI. 35 × 45 mm boyutundaki bir fotoğraf 413 × 531 pikseldir.",
+      },
+      {
+        question: "Arka plan değiştirme nasıl çalışır?",
+        answer:
+          "Bir yapay zekâ modeli bir kez indirilir (yaklaşık 33 MB) ve sizi arka plandan ayırmak için tarayıcınızda çalışır. Yazdırmadan önce saçların çevresindeki kenarları kontrol edin.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer:
+          "Hayır. Fotoğraf cihazınızda, tarayıcınızda işlenir ve hiçbir şey bir sunucuya gönderilmez.",
+      },
+    ],
+  },
+  "signature-extractor": {
+    name: "İmza Çıkarıcı",
+    shortName: "İmza PNG",
+    tagline: "İmzanızın fotoğrafını saydam arka planlı, temiz bir PNG'ye dönüştürün.",
+    intro:
+      "İmza Çıkarıcı, kâğıt üzerindeki imzanızın fotoğrafını veya taramasını alır ve saydam arka plan üzerinde yalnızca mürekkepten oluşan temiz bir görüntüye dönüştürür. Telefon fotoğraflarındaki gölgeleri ve düzensiz ışığı yok sayar, imzanın etrafındaki boş alanı kırpar ve mürekkebi siyah veya mavi olarak yeniden renklendirebilir. PNG'yi PDF İmzalama aracında, Word'de veya imza resmi isteyen herhangi bir formda kullanın. Fotoğraf tarayıcınızda işlenir, bu yüzden imzanız asla yüklenmez.",
+    seoTitle: "İmza Çıkarma – Saydam Arka Planlı İmza PNG",
+    seoDescription:
+      "İmza arka planı kaldırma: imza fotoğrafınızı tarayıcınızda saydam bir PNG'ye dönüştürün. Kâğıdı ve gölgeleri kaldırır, kırpar, renklendirir. Ücretsiz ve gizli.",
+    keywords: [
+      "imza arka planı kaldırma",
+      "saydam imza",
+      "imza png",
+      "resimden imza çıkarma",
+      "fotoğraftan dijital imza",
+    ],
+    howToSteps: [
+      {
+        title: "Beyaz kâğıda imza atın",
+        description: "Koyu renkli bir kalem kullanın ve iyi ışıkta fotoğraf çekin ya da sayfayı tarayın.",
+      },
+      {
+        title: "Fotoğrafı ekleyin",
+        description: "Fotoğrafı bırakın veya seçin. İmza hemen çıkarılır.",
+      },
+      {
+        title: "İnce ayar yapın",
+        description: "Hassasiyeti ayarlayın ve orijinal, siyah veya mavi mürekkebi seçin.",
+      },
+      {
+        title: "İndirin",
+        description: "Saydam PNG'yi kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Gölgelerle başa çıkar",
+        description: "Her nokta çevresindeki kâğıtla karşılaştırılır, böylece düzensiz ışık gri lekeler bırakmaz.",
+      },
+      {
+        title: "Yumuşak kenarlar",
+        description: "Çizgi kenarları tırtıklı görünmek yerine yumuşakça solar.",
+      },
+      {
+        title: "Otomatik kırpma",
+        description: "İmzanın etrafındaki boş kâğıt kırpılır.",
+      },
+      {
+        title: "Gizli",
+        description: "İmzanız cihazınızda kalır.",
+      },
+    ],
+    faqs: [
+      {
+        question: "En iyi sonucu nasıl alırım?",
+        answer:
+          "Düz beyaz kâğıda koyu renkli bir kalemle imza atın ve fotoğrafı gün ışığında, tam karşıdan, gölgeniz sayfaya düşmeden çekin.",
+      },
+      {
+        question: "İmzamın bazı kısımları neden eksik?",
+        answer:
+          "Soluk veya ince çizgiler kaybolabilir. Hassasiyeti artırın; kâğıt dokusu görünmeye başlarsa biraz azaltın.",
+      },
+      {
+        question: "PDF imzalamak için kullanabilir miyim?",
+        answer:
+          "Evet. PDF İmzalama aracında Resim seçeneğini belirleyin ve indirdiğiniz PNG'yi seçin.",
+      },
+      {
+        question: "İmzam yükleniyor mu?",
+        answer:
+          "Hayır. Tarayıcınızda işlenir ve hiçbir yere gönderilmez.",
+      },
+    ],
+  },
+  "change-image-dpi": {
+    name: "Resim DPI Değiştirme",
+    shortName: "DPI Değiştir",
+    tagline: "Bir JPG veya PNG'nin DPI değerini, örneğin baskı ya da formlar için 300 DPI olarak, piksellerini değiştirmeden ayarlayın.",
+    intro:
+      "Resim DPI Değiştirme, bir JPG veya PNG dosyasında saklanan çözünürlük değerini ayarlar; örneğin baskı için 300 DPI ya da bir başvuru formunun istediği değer. Piksellere dokunulmaz, bu yüzden kalite ve dosya boyutu aynı kalır: yalnızca baskı boyutu değişir ve araç bunu santimetre ve inç olarak gösterir. Bir JPG'nin DPI saklayabildiği iki yeri de güncelleyerek Windows, Mac ve fotoğraf uygulamalarının yeni değeri okumasını sağlar. Her şey tarayıcınızda çalışır, bu yüzden resim asla yüklenmez.",
+    seoTitle: "DPI Değiştirme – Resmi 300 DPI Yapın, Ücretsiz",
+    seoDescription:
+      "DPI değiştirme: JPG veya PNG'yi tarayıcınızda 300, 200, 72 ya da başka bir DPI değerine ayarlayın. Pikseller değişmez; baskı boyutunu görün. Ücretsiz ve gizli.",
+    keywords: [
+      "dpi değiştirme",
+      "resim dpi değiştirme",
+      "fotoğraf dpi değiştirme",
+      "300 dpi yapma",
+      "dpi artırma",
+      "dpi ayarlama",
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir JPG veya PNG bırakın ya da seçin. WebP ve HEIC önce JPG'ye dönüştürülür.",
+      },
+      {
+        title: "DPI değerini seçin",
+        description: "72, 96, 150, 200, 300 veya 600 seçin ya da herhangi bir değer yazın.",
+      },
+      {
+        title: "Baskı boyutunu kontrol edin",
+        description: "Resmin bu DPI değerinde ne kadar büyük basılacağını görün.",
+      },
+      {
+        title: "İndirin",
+        description: "Resmi yeni DPI değeriyle kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kalite kaybı yok",
+        description: "Yalnızca DPI değeri değişir; görüntü verilerine dokunulmaz.",
+      },
+      {
+        title: "Her yerde okunur",
+        description: "Bir JPG'nin hem JFIF hem de EXIF çözünürlüğü güncellenir, böylece her uygulama aynı DPI değerini gösterir.",
+      },
+      {
+        title: "Baskı boyutu gösterilir",
+        description: "İndirmeden önce baskı boyutunu santimetre ve inç olarak görün.",
+      },
+      {
+        title: "Gizli",
+        description: "Resim tarayıcınızda değiştirilir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "DPI değiştirmek kaliteyi artırır mı?",
+        answer:
+          "Hayır. DPI yalnızca yazıcılara resmin ne kadar büyük basılacağını söyleyen bir etikettir. Daha fazla ayrıntı için daha fazla piksel gerekir ve hiçbir araç bunları gerçekten oluşturamaz.",
+      },
+      {
+        question: "Bir form 200 DPI ve santimetre cinsinden bir boyut istiyor. Ne yapmalıyım?",
+        answer:
+          "DPI değerini burada ayarlayın, ardından baskı boyutunu kontrol edin. Uymuyorsa resmi, formun istediği piksel boyutuna getirin: santimetre ÷ 2,54 × DPI. Örneğin 200 DPI'da 3,5 cm, 276 piksel eder.",
+      },
+      {
+        question: "Resmim neden “Ayarlanmamış” diyor?",
+        answer:
+          "Birçok telefon fotoğrafı ve ekran görüntüsü DPI değeri saklamaz. Çoğu uygulama bu durumda 72 veya 96 varsayar. Burada bir değer ayarlamak bunu düzeltir.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer:
+          "Hayır. Değişiklik cihazınızda, tarayıcınızda gerçekleşir.",
+      },
+    ],
+  },
 };
