@@ -3922,4 +3922,240 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "passport-photo-maker": {
+    name: "Passfoto erstellen",
+    shortName: "Passfoto",
+    tagline: "Erstelle ein Pass- oder Visumfoto in der richtigen Größe, auf Wunsch mit einfarbigem Hintergrund, und drucke mehrere auf einem Bogen.",
+    intro:
+      "Passfoto erstellen macht aus einem normalen Foto ein Pass-, Visum- oder Ausweisfoto in genau der Größe, die du brauchst: 35 × 45 mm, 2 × 2 Zoll, 33 × 48 mm oder eine eigene Größe. Verschieb und zoom das Foto, bis Scheitel und Kinn auf den Hilfslinien liegen, ersetz den Hintergrund bei Bedarf durch schlichtes Weiß, Hellgrau oder Hellblau und lade ein Foto mit 300 DPI herunter oder einen Druckbogen für 4 × 6 Zoll großes Fotopapier oder A4, mit Schnittlinien. Alles passiert in deinem Browser, dein Foto wird also nie hochgeladen.",
+    seoTitle: "Passfoto selbst erstellen – 35×45 mm, kostenlos",
+    seoDescription:
+      "Passfoto selbst erstellen: Pass- und Visumfotos in 35×45 mm, 2×2 in oder eigener Größe, weißer Hintergrund, Druckbogen für 4×6 oder A4. Kostenlos, privat.",
+    keywords: [
+      "passfoto selbst erstellen",
+      "passbild erstellen",
+      "passfoto 35x45",
+      "passbild online erstellen",
+      "visumfoto erstellen",
+      "passfotos drucken",
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Wähle ein klares Foto von vorn, mit gleichmäßigem Licht und neutralem Gesichtsausdruck.",
+      },
+      {
+        title: "Größe wählen",
+        description: "Wähle 35 × 45 mm, 2 × 2 in, 33 × 48 mm oder gib eine eigene Größe ein.",
+      },
+      {
+        title: "Ausrichten",
+        description: "Zieh das Foto oder nutze die Regler, bis Scheitel und Kinn auf den gestrichelten Linien liegen.",
+      },
+      {
+        title: "Hintergrund festlegen",
+        description: "Behalte ihn oder ersetze ihn durch Weiß, Hellgrau oder Hellblau.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ein Foto oder einen Druckbogen für 4 × 6 in oder A4, als JPG oder PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Gängige Größen eingebaut",
+        description: "35 × 45 mm, 2 × 2 in und 33 × 48 mm, dazu jede eigene Größe in Millimetern.",
+      },
+      {
+        title: "Hilfslinien für den Kopf",
+        description: "Gestrichelte Linien und ein Oval zeigen, wo der Kopf sitzen soll.",
+      },
+      {
+        title: "Einfarbige Hintergründe",
+        description: "Ein KI-Modell auf deinem Gerät ersetzt den Hintergrund durch Weiß, Hellgrau oder Hellblau.",
+      },
+      {
+        title: "Druckbögen",
+        description: "Füll 4 × 6 in großes Fotopapier oder A4 mit Kopien und Schnittlinien, mit 300 DPI.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wird mein Foto akzeptiert?",
+        answer:
+          "Das hängt von der Behörde ab, bei der du es einreichst. Jedes Land legt Regeln für Größe, Kopfposition, Hintergrund, Gesichtsausdruck und Brille fest. Dieses Tool sorgt für die richtige Größe und Anordnung; prüf vor dem Drucken die offiziellen Vorgaben.",
+      },
+      {
+        question: "Wie drucke ich den Bogen in der richtigen Größe?",
+        answer:
+          "Drucke mit 100 % (tatsächliche Größe), nicht mit „An Seite anpassen“. Die PDF-Option nutzt genau das Papierformat, die Fotos werden also auf jedem Drucker in ihrer echten Größe gedruckt.",
+      },
+      {
+        question: "Welche Auflösung haben die Fotos?",
+        answer:
+          "300 DPI, der Standard für den Fotodruck. Ein Foto mit 35 × 45 mm hat 413 × 531 Pixel.",
+      },
+      {
+        question: "Wie funktioniert das Ersetzen des Hintergrunds?",
+        answer:
+          "Ein KI-Modell wird einmal heruntergeladen (etwa 33 MB) und läuft in deinem Browser, um dich vom Hintergrund zu trennen. Prüf vor dem Drucken die Kanten um die Haare.",
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer:
+          "Nein. Das Foto wird in deinem Browser auf deinem Gerät verarbeitet, und nichts wird an einen Server gesendet.",
+      },
+    ],
+  },
+  "signature-extractor": {
+    name: "Unterschrift extrahieren",
+    shortName: "Unterschrift als PNG",
+    tagline: "Mach aus einem Foto deiner Unterschrift ein sauberes PNG mit transparentem Hintergrund.",
+    intro:
+      "Unterschrift extrahieren nimmt ein Foto oder einen Scan deiner Unterschrift auf Papier und macht daraus ein sauberes Bild, das nur die Tinte auf transparentem Hintergrund zeigt. Schatten und ungleichmäßiges Licht von Handyfotos werden ignoriert, der leere Platz um die Unterschrift wird abgeschnitten, und die Tinte kann schwarz oder blau eingefärbt werden. Nutze das PNG mit PDF unterschreiben, in Word oder in jedem Formular, das ein Bild deiner Unterschrift verlangt. Das Foto wird in deinem Browser verarbeitet, deine Unterschrift wird also nie hochgeladen.",
+    seoTitle: "Unterschrift freistellen – transparentes PNG",
+    seoDescription:
+      "Unterschrift freistellen: Foto deiner Unterschrift im Browser zum transparenten PNG machen. Entfernt Papier und Schatten, schneidet zu. Gratis, privat.",
+    keywords: [
+      "unterschrift freistellen",
+      "unterschrift transparent",
+      "unterschrift als png",
+      "unterschrift hintergrund entfernen",
+      "unterschrift digitalisieren",
+    ],
+    howToSteps: [
+      {
+        title: "Auf weißem Papier unterschreiben",
+        description: "Nimm einen dunklen Stift und fotografiere bei gutem Licht, oder scanne die Seite.",
+      },
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh das Foto hierher oder wähle es aus. Die Unterschrift wird sofort extrahiert.",
+      },
+      {
+        title: "Feinabstimmen",
+        description: "Stell die Empfindlichkeit ein und wähle als Tinte Original, Schwarz oder Blau.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das transparente PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Kommt mit Schatten klar",
+        description: "Jede Stelle wird mit dem Papier um sie herum verglichen, ungleichmäßiges Licht hinterlässt also keine grauen Flecken.",
+      },
+      {
+        title: "Weiche Kanten",
+        description: "Strichkanten laufen sanft aus, statt gezackt auszusehen.",
+      },
+      {
+        title: "Automatischer Zuschnitt",
+        description: "Leeres Papier um die Unterschrift wird abgeschnitten.",
+      },
+      {
+        title: "Privat",
+        description: "Deine Unterschrift bleibt auf deinem Gerät.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie bekomme ich das beste Ergebnis?",
+        answer:
+          "Unterschreib mit einem dunklen Stift auf einfachem weißem Papier und fotografiere die Seite gerade von oben bei Tageslicht, ohne dass dein Schatten darauf fällt.",
+      },
+      {
+        question: "Warum fehlen Teile meiner Unterschrift?",
+        answer:
+          "Blasse oder dünne Striche können verloren gehen. Erhöhe die Empfindlichkeit; wenn dann die Papierstruktur sichtbar wird, senk sie wieder etwas.",
+      },
+      {
+        question: "Kann ich damit ein PDF unterschreiben?",
+        answer:
+          "Ja. Wähle in PDF unterschreiben „Bild“ und dann das heruntergeladene PNG.",
+      },
+      {
+        question: "Wird meine Unterschrift hochgeladen?",
+        answer:
+          "Nein. Sie wird in deinem Browser verarbeitet und nirgendwohin gesendet.",
+      },
+    ],
+  },
+  "change-image-dpi": {
+    name: "DPI ändern",
+    shortName: "DPI ändern",
+    tagline: "Stell die DPI eines JPG oder PNG ein, etwa 300 DPI für den Druck oder für Formulare, ohne die Pixel zu verändern.",
+    intro:
+      "DPI ändern setzt den Auflösungswert, der in einer JPG- oder PNG-Datei gespeichert ist, zum Beispiel 300 DPI für den Druck oder den Wert, den ein Antragsformular verlangt. Die Pixel werden nicht angetastet, Qualität und Dateigröße bleiben also gleich: Nur die Druckgröße ändert sich, und das Tool zeigt sie in Zentimetern und Zoll an. Es aktualisiert beide Stellen, an denen ein JPG die DPI speichern kann, damit Windows, Mac und Foto-Apps alle den neuen Wert lesen. Alles läuft in deinem Browser, das Bild wird also nie hochgeladen.",
+    seoTitle: "DPI ändern – Bild online auf 300 DPI setzen",
+    seoDescription:
+      "DPI ändern: Stell die DPI eines JPG oder PNG im Browser auf 300, 200, 72 oder jeden anderen Wert. Pixel bleiben gleich, Druckgröße sichtbar. Kostenlos, privat.",
+    keywords: [
+      "dpi ändern",
+      "bild auf 300 dpi ändern",
+      "dpi von bild ändern",
+      "foto dpi ändern",
+      "dpi erhöhen",
+      "dpi konverter",
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein JPG oder PNG hierher oder wähle es aus. WebP und HEIC werden zuerst in JPG umgewandelt.",
+      },
+      {
+        title: "DPI wählen",
+        description: "Wähle 72, 96, 150, 200, 300 oder 600, oder gib einen beliebigen Wert ein.",
+      },
+      {
+        title: "Druckgröße prüfen",
+        description: "Sieh, wie groß das Bild mit dieser DPI gedruckt wird.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das Bild mit der neuen DPI.",
+      },
+    ],
+    features: [
+      {
+        title: "Kein Qualitätsverlust",
+        description: "Nur der DPI-Wert wird geändert; die Bilddaten bleiben unangetastet.",
+      },
+      {
+        title: "Überall lesbar",
+        description: "Sowohl die JFIF- als auch die EXIF-Auflösung eines JPG werden aktualisiert, damit jede App dieselbe DPI anzeigt.",
+      },
+      {
+        title: "Druckgröße sichtbar",
+        description: "Sieh die Druckgröße in Zentimetern und Zoll, bevor du herunterlädst.",
+      },
+      {
+        title: "Privat",
+        description: "Das Bild wird in deinem Browser geändert und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Verbessert das Ändern der DPI die Qualität?",
+        answer:
+          "Nein. DPI ist nur eine Angabe, die Druckern sagt, wie groß gedruckt werden soll. Für mehr Details brauchst du mehr Pixel, und die kann kein Tool wirklich erzeugen.",
+      },
+      {
+        question: "Ein Formular verlangt 200 DPI und eine Größe in Zentimetern. Was tun?",
+        answer:
+          "Stell hier die DPI ein und prüf dann die Druckgröße. Wenn sie nicht passt, skaliere das Bild auf die Pixelgröße, die das Formular braucht: Zentimeter ÷ 2,54 × DPI. Zum Beispiel sind 3,5 cm bei 200 DPI 276 Pixel.",
+      },
+      {
+        question: "Warum steht bei meinem Bild „Nicht festgelegt“?",
+        answer:
+          "Viele Handyfotos und Screenshots speichern keine DPI. Die meisten Apps gehen dann von 72 oder 96 aus. Wenn du hier einen Wert festlegst, ist das behoben.",
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer:
+          "Nein. Die Änderung passiert in deinem Browser auf deinem Gerät.",
+      },
+    ],
+  },
 };

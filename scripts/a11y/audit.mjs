@@ -28,6 +28,7 @@ const INPUT = {
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
   'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
   'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],
+  'change-image-dpi': [S('photo.jpg')], 'signature-extractor': [S('signature-photo.jpg')], 'passport-photo-maker': [S('portrait.jpg')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -66,6 +66,9 @@ import { SignPdfWorkspace } from '../tools/pdf/SignPdfWorkspace';
 import { FillFormWorkspace } from '../tools/pdf/FillFormWorkspace';
 import { PdfMetadataWorkspace } from '../tools/pdf/PdfMetadataWorkspace';
 import { CropPdfWorkspace } from '../tools/pdf/CropPdfWorkspace';
+import { ChangeDpiWorkspace } from '../tools/forms/ChangeDpiWorkspace';
+import { SignatureExtractorWorkspace } from '../tools/forms/SignatureExtractorWorkspace';
+import { PassportPhotoWorkspace } from '../tools/forms/PassportPhotoWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export interface NextTool {
@@ -131,6 +134,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'fill-pdf-form': <FillFormWorkspace />,
     'remove-pdf-metadata': <PdfMetadataWorkspace />,
     'crop-pdf': <CropPdfWorkspace />,
+    'change-image-dpi': <ChangeDpiWorkspace />,
+    'signature-extractor': <SignatureExtractorWorkspace />,
+    'passport-photo-maker': <PassportPhotoWorkspace />,
   };
   if (standalone[slug]) {
     return (

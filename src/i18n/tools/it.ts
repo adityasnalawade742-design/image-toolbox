@@ -3921,4 +3921,240 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "passport-photo-maker": {
+    name: "Generatore di fototessere",
+    shortName: "Fototessera",
+    tagline: "Crea una foto per passaporto o visto nella misura giusta, con uno sfondo uniforme opzionale, e stampane diverse su un unico foglio.",
+    intro:
+      "Il Generatore di fototessere trasforma una foto qualsiasi in una foto per passaporto, visto o documento d’identità nella misura esatta che ti serve: 35 × 45 mm, 2 × 2 pollici, 33 × 48 mm o una misura personalizzata. Sposta e ingrandisci la foto finché la sommità della testa e il mento non si trovano sulle linee guida, sostituisci lo sfondo con un bianco, un grigio chiaro o un azzurro uniforme se serve, e scarica una foto a 300 DPI o un foglio di stampa per carta fotografica 4 × 6 pollici o A4, con le linee per ritagliare. Tutto avviene nel tuo browser, quindi la tua foto non viene mai caricata.",
+    seoTitle: "Fototessera online – 35×45 mm, 2×2 in, gratis",
+    seoDescription:
+      "Fototessera online per passaporto e visto: 35×45 mm, 2×2 in o misura personalizzata, sfondo bianco e foglio di stampa 4×6 o A4. Gratis e privato.",
+    keywords: [
+      "fototessera online",
+      "fototessera passaporto",
+      "foto 35x45",
+      "foto 2x2 per visto",
+      "foto per visto online",
+      "fototessere da stampare",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi una foto",
+        description: "Scegli una foto nitida, frontale, con luce uniforme ed espressione neutra.",
+      },
+      {
+        title: "Scegli la misura",
+        description: "Scegli 35 × 45 mm, 2 × 2 in, 33 × 48 mm o inserisci una misura personalizzata.",
+      },
+      {
+        title: "Allinea la foto",
+        description: "Trascina o usa i cursori in modo che la sommità della testa e il mento siano sulle linee tratteggiate.",
+      },
+      {
+        title: "Imposta lo sfondo",
+        description: "Scegli Mantieni o sostituisci lo sfondo con Bianco, Grigio chiaro o Azzurro.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva Una foto o un Foglio di stampa per carta 4 × 6 in o A4, in JPG o PDF.",
+      },
+    ],
+    features: [
+      {
+        title: "Misure comuni già pronte",
+        description: "35 × 45 mm, 2 × 2 in e 33 × 48 mm, più qualsiasi misura personalizzata in millimetri.",
+      },
+      {
+        title: "Guide per la testa",
+        description: "Linee tratteggiate e un ovale mostrano dove deve stare la testa.",
+      },
+      {
+        title: "Sfondi uniformi",
+        description: "Un modello di IA sul tuo dispositivo sostituisce lo sfondo con bianco, grigio chiaro o azzurro.",
+      },
+      {
+        title: "Fogli di stampa",
+        description: "Riempi la carta fotografica 4 × 6 in o A4 di copie con le linee di taglio, a 300 DPI.",
+      },
+    ],
+    faqs: [
+      {
+        question: "La mia foto sarà accettata?",
+        answer:
+          "Dipende dall’ufficio a cui presenti la domanda. Ogni paese stabilisce regole su misura, posizione della testa, sfondo, espressione e occhiali. Questo strumento imposta correttamente misura e impaginazione; controlla le regole ufficiali prima di stampare.",
+      },
+      {
+        question: "Come stampo il foglio nella misura giusta?",
+        answer:
+          "Stampa al 100% (dimensioni effettive), non con “adatta alla pagina”. L’opzione PDF usa il formato esatto della carta, quindi le foto escono nella misura reale con qualsiasi stampante.",
+      },
+      {
+        question: "Che risoluzione hanno le foto?",
+        answer:
+          "300 DPI, lo standard per la stampa fotografica. Una foto 35 × 45 mm è di 413 × 531 pixel.",
+      },
+      {
+        question: "Come funziona la sostituzione dello sfondo?",
+        answer:
+          "Un modello di IA viene scaricato una volta (circa 33 MB) e funziona nel tuo browser per separarti dallo sfondo. Controlla i bordi intorno ai capelli prima di stampare.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer:
+          "No. La foto viene elaborata nel tuo browser sul tuo dispositivo e nulla viene inviato a un server.",
+      },
+    ],
+  },
+  "signature-extractor": {
+    name: "Estrattore di firma",
+    shortName: "Firma PNG",
+    tagline: "Trasforma la foto della tua firma in un PNG pulito con sfondo trasparente.",
+    intro:
+      "L’Estrattore di firma prende una foto o una scansione della tua firma su carta e la trasforma in un’immagine pulita del solo inchiostro su sfondo trasparente. Ignora le ombre e la luce irregolare delle foto fatte col telefono, rifila lo spazio vuoto intorno alla firma e può ricolorare l’inchiostro di nero o di blu. Usa il PNG con Firma PDF, in Word o in qualsiasi modulo che chieda un’immagine della firma. La foto viene elaborata nel tuo browser, quindi la tua firma non viene mai caricata.",
+    seoTitle: "Estrarre la firma da una foto – PNG trasparente",
+    seoDescription:
+      "Firma trasparente in PNG: trasforma la foto della tua firma in un PNG senza sfondo nel browser. Rimuove carta e ombre, ritaglia e ricolora. Gratis e privato.",
+    keywords: [
+      "firma trasparente",
+      "firma png",
+      "estrarre firma da foto",
+      "rimuovere sfondo firma",
+      "firma digitale da foto",
+    ],
+    howToSteps: [
+      {
+        title: "Firma su carta bianca",
+        description: "Usa una penna scura e scatta una foto con una buona luce, o scansiona la pagina.",
+      },
+      {
+        title: "Aggiungi la foto",
+        description: "Trascina o scegli la foto. La firma viene estratta subito.",
+      },
+      {
+        title: "Rifinisci",
+        description: "Regola la sensibilità e scegli inchiostro originale, nero o blu.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PNG trasparente.",
+      },
+    ],
+    features: [
+      {
+        title: "Gestisce le ombre",
+        description: "Ogni punto viene confrontato con la carta intorno, quindi la luce irregolare non lascia macchie grigie.",
+      },
+      {
+        title: "Bordi morbidi",
+        description: "I bordi dei tratti sfumano dolcemente invece di apparire seghettati.",
+      },
+      {
+        title: "Ritaglio automatico",
+        description: "La carta vuota intorno alla firma viene rifilata.",
+      },
+      {
+        title: "Privato",
+        description: "La tua firma resta sul tuo dispositivo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Come ottengo il risultato migliore?",
+        answer:
+          "Firma con una penna scura su carta bianca liscia e scatta la foto dritta, alla luce del giorno, senza che la tua ombra cada sulla pagina.",
+      },
+      {
+        question: "Perché mancano parti della mia firma?",
+        answer:
+          "I tratti deboli o sottili possono sparire. Aumenta la sensibilità; se inizia a comparire la trama della carta, abbassala leggermente.",
+      },
+      {
+        question: "Posso usarla per firmare un PDF?",
+        answer:
+          "Sì. In Firma PDF, scegli Immagine e seleziona il PNG che hai scaricato.",
+      },
+      {
+        question: "La mia firma viene caricata?",
+        answer:
+          "No. Viene elaborata nel tuo browser e non viene mai inviata da nessuna parte.",
+      },
+    ],
+  },
+  "change-image-dpi": {
+    name: "Cambia DPI immagine",
+    shortName: "Cambia DPI",
+    tagline: "Imposta i DPI di un JPG o PNG, ad esempio 300 DPI per la stampa o per i moduli, senza modificarne i pixel.",
+    intro:
+      "Cambia DPI immagine imposta il valore di risoluzione salvato in un file JPG o PNG, ad esempio 300 DPI per la stampa o il valore richiesto da un modulo di domanda. I pixel non vengono toccati, quindi qualità e peso del file restano gli stessi: cambia solo il formato di stampa, che lo strumento mostra in centimetri e pollici. Aggiorna entrambi i punti in cui un JPG può salvare i DPI, così Windows, Mac e le app di foto leggono il nuovo valore. Tutto funziona nel tuo browser, quindi l’immagine non viene mai caricata.",
+    seoTitle: "Cambiare DPI immagine a 300 online – Gratis",
+    seoDescription:
+      "Cambiare DPI di un JPG o PNG a 300, 200, 72 o qualsiasi valore nel browser. I pixel non cambiano; vedi il formato di stampa. Gratis e privato.",
+    keywords: [
+      "cambiare dpi immagine",
+      "convertire immagine a 300 dpi",
+      "cambiare dpi foto",
+      "aumentare dpi immagine",
+      "impostare dpi",
+      "convertitore dpi",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la tua immagine",
+        description: "Trascina o scegli un JPG o PNG. WebP e HEIC vengono prima convertiti in JPG.",
+      },
+      {
+        title: "Scegli i DPI",
+        description: "Scegli 72, 96, 150, 200, 300 o 600, o digita un valore qualsiasi.",
+      },
+      {
+        title: "Controlla il formato di stampa",
+        description: "Vedi quanto verrà grande l’immagine stampata con quei DPI.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva l’immagine con i nuovi DPI.",
+      },
+    ],
+    features: [
+      {
+        title: "Nessuna perdita di qualità",
+        description: "Cambia solo il valore dei DPI; i dati dell’immagine restano intatti.",
+      },
+      {
+        title: "Letto ovunque",
+        description: "Vengono aggiornate sia la risoluzione JFIF sia quella EXIF di un JPG, così ogni app mostra gli stessi DPI.",
+      },
+      {
+        title: "Formato di stampa visibile",
+        description: "Vedi il formato di stampa in centimetri e pollici prima di scaricare.",
+      },
+      {
+        title: "Privato",
+        description: "L’immagine viene modificata nel tuo browser e non viene mai caricata.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Cambiare i DPI migliora la qualità?",
+        answer:
+          "No. I DPI sono solo un’etichetta che dice alle stampanti quanto stampare grande l’immagine. Per avere più dettagli servono più pixel, e nessuno strumento può davvero crearli.",
+      },
+      {
+        question: "Un modulo richiede 200 DPI e una misura in centimetri. Cosa faccio?",
+        answer:
+          "Imposta qui i DPI, poi controlla il formato di stampa. Se non corrisponde, ridimensiona l’immagine alla misura in pixel richiesta dal modulo: centimetri ÷ 2,54 × DPI. Ad esempio 3,5 cm a 200 DPI sono 276 pixel.",
+      },
+      {
+        question: "Perché la mia immagine dice “Non impostato”?",
+        answer:
+          "Molte foto del telefono e molti screenshot non salvano i DPI. La maggior parte delle app allora presume 72 o 96. Impostare un valore qui risolve il problema.",
+      },
+      {
+        question: "La mia immagine viene caricata?",
+        answer:
+          "No. La modifica avviene nel tuo browser sul tuo dispositivo.",
+      },
+    ],
+  },
 };

@@ -181,6 +181,25 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
     badge: 'Multi',
   },
+  {
+    slug: 'passport-photo-maker',
+    name: 'Passport Photo Maker',
+    shortName: 'Passport Photo',
+    description: 'Make a passport or visa photo at the right size, with an optional plain background, and print several on one sheet.',
+    category: 'edit-transform',
+    iconName: 'UserSquare2',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    popular: true,
+  },
+  {
+    slug: 'signature-extractor',
+    name: 'Signature Extractor',
+    shortName: 'Signature PNG',
+    description: 'Turn a photo of your signature into a clean PNG with a transparent background.',
+    category: 'edit-transform',
+    iconName: 'PenLine',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+  },
 
   // Optimize & Compress (4)
   {
@@ -468,6 +487,15 @@ export const TOOLS: ToolDefinition[] = [
     category: 'utilities',
     iconName: 'Palette',
     accept: 'image/*,image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'change-image-dpi',
+    name: 'Change Image DPI',
+    shortName: 'Change DPI',
+    description: 'Set the DPI of a JPG or PNG, such as 300 DPI for printing or forms, without changing its pixels.',
+    category: 'utilities',
+    iconName: 'Printer',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
   },
 
   // Developer Tools (5)

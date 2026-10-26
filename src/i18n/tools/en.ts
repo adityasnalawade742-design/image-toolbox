@@ -3794,4 +3794,221 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "passport-photo-maker": {
+    "name": "Passport Photo Maker",
+    "shortName": "Passport Photo",
+    "tagline": "Make a passport or visa photo at the right size, with an optional plain background, and print several on one sheet.",
+    "intro": "Passport Photo Maker turns an ordinary photo into a passport, visa or ID photo at the exact size you need: 35 × 45 mm, 2 × 2 inches, 33 × 48 mm, or a custom size. Move and zoom the photo until the top of the head and the chin sit on the guide lines, replace the background with plain white, light grey or light blue if you need to, and download one photo at 300 DPI or a print sheet for 4 × 6 inch photo paper or A4, with lines to cut along. Everything happens in your browser, so your photo is never uploaded.",
+    "seoTitle": "Passport Photo Maker – 35×45 mm, 2×2 in, Free",
+    "seoDescription": "Make passport and visa photos online: 35×45 mm, 2×2 in or custom, white background, and a 4×6 or A4 print sheet. Free and private.",
+    "keywords": [
+      "passport photo maker",
+      "passport size photo",
+      "35x45 photo",
+      "2x2 photo maker",
+      "visa photo online",
+      "passport photo print sheet"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add a photo",
+        "description": "Choose a clear, front-facing photo with even light and a neutral expression."
+      },
+      {
+        "title": "Pick the size",
+        "description": "Choose 35 × 45 mm, 2 × 2 in, 33 × 48 mm, or enter a custom size."
+      },
+      {
+        "title": "Line it up",
+        "description": "Drag or use the sliders so the top of the head and the chin sit on the dashed lines."
+      },
+      {
+        "title": "Set the background",
+        "description": "Keep it, or replace it with white, light grey or light blue."
+      },
+      {
+        "title": "Download",
+        "description": "Save one photo, or a print sheet for 4 × 6 in paper or A4 as JPG or PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Common sizes built in",
+        "description": "35 × 45 mm, 2 × 2 in and 33 × 48 mm, plus any custom size in millimetres."
+      },
+      {
+        "title": "Head guides",
+        "description": "Dashed lines and an oval show where the head should sit."
+      },
+      {
+        "title": "Plain backgrounds",
+        "description": "An AI model on your device replaces the background with white, light grey or light blue."
+      },
+      {
+        "title": "Print sheets",
+        "description": "Fill 4 × 6 in photo paper or A4 with copies and cut lines, at 300 DPI."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will my photo be accepted?",
+        "answer": "That depends on the office you apply to. Each country sets rules for size, head position, background, expression and glasses. This tool gets the size and layout right; check the official rules before printing."
+      },
+      {
+        "question": "How do I print the sheet at the right size?",
+        "answer": "Print at 100% (actual size), not “fit to page”. The PDF option uses the exact paper size, so the photos print at their real size on any printer."
+      },
+      {
+        "question": "What resolution are the photos?",
+        "answer": "300 DPI, the standard for photo printing. A 35 × 45 mm photo is 413 × 531 pixels."
+      },
+      {
+        "question": "How does the background replacement work?",
+        "answer": "An AI model downloads once (about 33 MB) and runs in your browser to separate you from the background. Check the edges around the hair before printing."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. The photo is processed in your browser on your device, and nothing is sent to a server."
+      }
+    ]
+  },
+  "signature-extractor": {
+    "name": "Signature Extractor",
+    "shortName": "Signature PNG",
+    "tagline": "Turn a photo of your signature into a clean PNG with a transparent background.",
+    "intro": "Signature Extractor takes a photo or scan of your signature on paper and turns it into a clean image of just the ink on a transparent background. It ignores shadows and uneven light from phone photos, trims the empty space around the signature, and can recolor the ink black or blue. Use the PNG with Sign PDF, in Word, or on any form that asks for a signature image. The photo is processed in your browser, so your signature is never uploaded.",
+    "seoTitle": "Signature Extractor – Transparent Signature PNG",
+    "seoDescription": "Turn a photo of your signature into a transparent PNG in your browser. Removes paper and shadows, crops and recolors. Free and private.",
+    "keywords": [
+      "signature background remover",
+      "transparent signature",
+      "signature png",
+      "extract signature from image",
+      "digital signature from photo"
+    ],
+    "howToSteps": [
+      {
+        "title": "Sign on white paper",
+        "description": "Use a dark pen and take a photo in good light, or scan the page."
+      },
+      {
+        "title": "Add the photo",
+        "description": "Drop or choose the photo. The signature is extracted straight away."
+      },
+      {
+        "title": "Fine-tune",
+        "description": "Adjust the sensitivity and choose original, black or blue ink."
+      },
+      {
+        "title": "Download",
+        "description": "Save the transparent PNG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Handles shadows",
+        "description": "Each spot is compared with the paper around it, so uneven light doesn't leave grey patches."
+      },
+      {
+        "title": "Smooth edges",
+        "description": "Stroke edges fade softly instead of looking jagged."
+      },
+      {
+        "title": "Auto crop",
+        "description": "Empty paper around the signature is trimmed away."
+      },
+      {
+        "title": "Private",
+        "description": "Your signature stays on your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I get the best result?",
+        "answer": "Sign with a dark pen on plain white paper, and take the photo straight on in daylight without your shadow over the page."
+      },
+      {
+        "question": "Why are parts of my signature missing?",
+        "answer": "Faint or thin strokes can drop out. Raise the sensitivity; if paper texture starts to appear, lower it slightly."
+      },
+      {
+        "question": "Can I use it to sign a PDF?",
+        "answer": "Yes. In Sign PDF, choose Image and pick the PNG you downloaded."
+      },
+      {
+        "question": "Is my signature uploaded?",
+        "answer": "No. It is processed in your browser and never sent anywhere."
+      }
+    ]
+  },
+  "change-image-dpi": {
+    "name": "Change Image DPI",
+    "shortName": "Change DPI",
+    "tagline": "Set the DPI of a JPG or PNG, such as 300 DPI for printing or forms, without changing its pixels.",
+    "intro": "Change Image DPI sets the resolution value stored in a JPG or PNG file, such as 300 DPI for printing or the value an application form asks for. The pixels are not touched, so quality and file size stay the same: only the print size changes, and the tool shows it in centimetres and inches. It updates both places a JPG can store DPI, so Windows, Mac and photo apps all read the new value. Everything runs in your browser, so the image is never uploaded.",
+    "seoTitle": "Change Image DPI to 300 Online – Free",
+    "seoDescription": "Change the DPI of a JPG or PNG to 300, 200, 72 or any value in your browser. Pixels unchanged; see the print size. Free and private.",
+    "keywords": [
+      "change dpi of image",
+      "convert image to 300 dpi",
+      "change photo dpi",
+      "set dpi",
+      "increase dpi of image",
+      "dpi converter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your image",
+        "description": "Drop or choose a JPG or PNG. WebP and HEIC are converted to JPG first."
+      },
+      {
+        "title": "Choose the DPI",
+        "description": "Pick 72, 96, 150, 200, 300 or 600, or type any value."
+      },
+      {
+        "title": "Check the print size",
+        "description": "See how large the image will print at that DPI."
+      },
+      {
+        "title": "Download",
+        "description": "Save the image with the new DPI."
+      }
+    ],
+    "features": [
+      {
+        "title": "No quality loss",
+        "description": "Only the DPI value is changed; the image data is untouched."
+      },
+      {
+        "title": "Read everywhere",
+        "description": "Both the JFIF and EXIF resolution of a JPG are updated, so every app shows the same DPI."
+      },
+      {
+        "title": "Print size shown",
+        "description": "See the print size in centimetres and inches before you download."
+      },
+      {
+        "title": "Private",
+        "description": "The image is changed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does changing the DPI improve quality?",
+        "answer": "No. DPI is only a label telling printers how large to print. To get more detail you need more pixels, which no tool can truly create."
+      },
+      {
+        "question": "A form needs 200 DPI and a size in centimetres. What do I do?",
+        "answer": "Set the DPI here, then check the print size. If it doesn't match, resize the image to the pixel size the form needs: centimetres ÷ 2.54 × DPI. For example 3.5 cm at 200 DPI is 276 pixels."
+      },
+      {
+        "question": "Why does my image say “Not set”?",
+        "answer": "Many phone photos and screenshots don't store a DPI. Most apps then assume 72 or 96. Setting a value here fixes that."
+      },
+      {
+        "question": "Is my image uploaded?",
+        "answer": "No. The change happens in your browser on your device."
+      }
+    ]
+  },
 };
