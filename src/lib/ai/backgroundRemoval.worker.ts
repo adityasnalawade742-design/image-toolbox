@@ -3,6 +3,9 @@ import { pipeline, env } from '@huggingface/transformers';
 
 // Models come from the Hugging Face hub and are cached by the browser after the first download
 env.allowLocalModels = false;
+// Hugging Face answers requests whose Referer is a *.workers.dev site with a 404 and no CORS headers, so the
+// browser reports "Failed to fetch". Sending no Referer avoids that (and tells Hugging Face less about our visitors).
+env.fetch = (input: RequestInfo | URL, init?: RequestInit) => fetch(input, { ...init, referrerPolicy: 'no-referrer' });
 
 export type RemovalMode = 'portrait' | 'hq';
 export type RemovalDevice = 'webgpu' | 'wasm';
