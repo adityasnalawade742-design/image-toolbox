@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useT } from '../../shared/I18nContext';
 import { downloadBlob } from '../../../lib/canvas/engine';
-import { PdfEncryptedError } from '../../../lib/pdf/pageOps';
+import { PdfEncryptedError } from '../../../lib/pdf/errors';
 import type { PdfLoadError } from '../../shared/usePdfDocument';
 
 export const PDF_ACCEPT = 'application/pdf,.pdf';

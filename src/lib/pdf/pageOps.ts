@@ -18,7 +18,9 @@ import {
   type PDFPage,
 } from 'pdf-lib';
 
-export class PdfEncryptedError extends Error {}
+import { PdfEncryptedError } from './errors';
+
+export { PdfEncryptedError };
 
 /** Open a PDF for editing; password-protected files raise PdfEncryptedError */
 export async function loadPdf(bytes: Uint8Array | ArrayBuffer): Promise<PDFDocument> {
