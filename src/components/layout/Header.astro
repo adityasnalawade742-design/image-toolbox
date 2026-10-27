@@ -1,6 +1,8 @@
 ---
 import { LanguageSelector } from './LanguageSelector';
-import { ToolSearch } from '../shared/ToolSearch';
+import { ToolSearch, type SearchItem } from '../shared/ToolSearch';
+import { TOOLS } from '../../config/tools';
+import { getAllLocalizedTools } from '../../i18n/tools';
 import { useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { getLocalizedHomeData } from '../../i18n/home';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
@@ -18,6 +20,12 @@ const t = useTranslations(locale);
 const translatePath = useTranslatedPath(locale);
 const categoryNames = getLocalizedHomeData(locale).categoryNames;
 const searchStrings = pickStrings(locale, 'search.');
+// Only what the search box shows and matches, in this page's language
+const localizedTools = getAllLocalizedTools(locale);
+const searchItems: SearchItem[] = TOOLS.map((tool) => {
+  const loc = localizedTools[tool.slug];
+  return { slug: tool.slug, category: tool.category, name: loc?.name || tool.name, tagline: loc?.tagline || tool.description, keywords: loc?.keywords || [] };
+});
 const langStrings = pickStrings(locale, 'lang.');
 // The developer section is small; the masthead lists the four everyday categories
 const navCategories = CATEGORY_ORDER.filter((c) => c !== 'developer');
@@ -58,7 +66,7 @@ const navLabel = (cat: (typeof navCategories)[number]) => (cat in SHORT_NAV_KEY 
     </nav>
 
     <div class="flex items-center gap-2">
-      <ToolSearch client:idle locale={locale} strings={searchStrings} />
+      <ToolSearch client:idle locale={locale} strings={searchStrings} items={searchItems} />
       <LanguageSelector client:idle currentLocale={locale} currentSlug={currentSlug} languageLabel={langStrings['lang.label']} />
     </div>
   </div>
