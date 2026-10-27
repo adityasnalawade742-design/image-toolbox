@@ -1,11 +1,12 @@
 # Security headers for every page and file, applied by Cloudflare's static asset serving.
 # Keeping them here (instead of in the Worker) means plain page traffic never invokes the Worker,
 # so it doesn't count toward the Workers request limit.
+# The camera is allowed for this site only: QR Code Reader scans with it, on the device.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(self), microphone=(), geolocation=()
 
 # Model files live under versioned paths, so they never change once published
 /models/*

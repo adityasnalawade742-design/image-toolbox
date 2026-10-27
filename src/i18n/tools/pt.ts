@@ -4161,4 +4161,389 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Desfocar fundo",
+    shortName: "Desfocar fundo",
+    tagline: "Desfoque o fundo de uma foto como no modo retrato da câmera, mantendo a pessoa nítida. Roda no seu dispositivo.",
+    intro:
+      "O Desfocar fundo dá a qualquer foto o fundo suave e fora de foco do modo retrato de uma câmera. Um modelo de IA encontra a pessoa no seu dispositivo e, então, o fundo é desfocado enquanto o assunto continua nítido, sem halo borrado em volta das bordas. Um controle deslizante define a intensidade do desfoque, e você salva o resultado como JPG ou PNG. Nada é enviado: a foto e o modelo ficam no seu navegador.",
+    seoTitle: "Desfocar fundo de foto online – efeito retrato grátis",
+    seoDescription:
+      "Desfocar fundo de foto online e manter a pessoa nítida, como no modo retrato. Intensidade ajustável, roda no seu navegador, grátis e privado.",
+    keywords: [
+      "desfocar fundo",
+      "desfocar fundo de foto",
+      "modo retrato online",
+      "desfocar fundo de imagem",
+      "efeito bokeh online",
+      "fundo desfocado",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione uma foto",
+        description: "Arraste, escolha ou cole a foto de uma pessoa. Fotos HEIC do iPhone também funcionam.",
+      },
+      {
+        title: "Aguarde a detecção",
+        description: "O modelo de IA encontra a pessoa no seu dispositivo. Na primeira vez, ele baixa cerca de 16 MB.",
+      },
+      {
+        title: "Ajuste o desfoque",
+        description: "Mova o controle deslizante até o fundo ficar do jeito certo.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve a foto como JPG, ou PNG para a melhor qualidade.",
+      },
+    ],
+    features: [
+      {
+        title: "Visual de modo retrato",
+        description: "O fundo fica suave enquanto a pessoa continua nítida.",
+      },
+      {
+        title: "Sem halo",
+        description: "O desfoque preenche a área atrás do assunto com o fundo ao redor, então as bordas ficam limpas.",
+      },
+      {
+        title: "Ajustável",
+        description: "Escolha de uma leve suavização até um desfoque forte.",
+      },
+      {
+        title: "Privado",
+        description: "A foto é processada no seu navegador e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Funciona em fotos sem pessoas?",
+        answer:
+          "Ele é feito para fotos de pessoas. Animais de estimação e objetos muitas vezes funcionam, mas o modelo pode deixar passar partes deles; nesses casos, confira as bordas antes de salvar.",
+      },
+      {
+        question: "Por que a primeira foto é mais lenta?",
+        answer:
+          "O modelo de IA é baixado uma vez (cerca de 16 MB) e fica no seu navegador. Depois disso, as fotos são processadas em poucos segundos.",
+      },
+      {
+        question: "Minha foto vai perder qualidade?",
+        answer:
+          "A pessoa mantém a resolução total. Fotos muito grandes (acima de cerca de 16 megapixels) são reduzidas antes, para funcionar em celulares; a página avisa quando isso acontece.",
+      },
+      {
+        question: "Minha foto é enviada?",
+        answer:
+          "Não. A detecção do assunto e o desfoque acontecem no seu dispositivo.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Trocar fundo",
+    shortName: "Trocar fundo",
+    tagline: "Substitua o fundo de uma foto por uma cor ou outra imagem. O assunto é recortado no seu dispositivo.",
+    intro:
+      "O Trocar fundo substitui o fundo de uma foto por uma cor sólida ou uma imagem à sua escolha. Um modelo de IA recorta a pessoa no seu dispositivo e a coloca sobre o novo fundo, ajustado para preencher o quadro. Escolha branco para um visual limpo de produto ou de perfil, qualquer cor do seletor, ou use sua própria imagem de fundo, e baixe como JPG ou PNG. A foto nunca é enviada.",
+    seoTitle: "Trocar fundo de foto online – cor ou imagem, grátis",
+    seoDescription:
+      "Trocar fundo de foto para branco, qualquer cor ou uma imagem sua. O assunto é recortado no seu navegador. Grátis, privado e sem cadastro.",
+    keywords: [
+      "trocar fundo de foto",
+      "mudar fundo da foto",
+      "substituir fundo de imagem",
+      "foto com fundo branco",
+      "colocar fundo na foto",
+      "trocar fundo de imagem",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione uma foto",
+        description: "Arraste, escolha ou cole uma foto. Fotos HEIC do iPhone também funcionam.",
+      },
+      {
+        title: "Aguarde o recorte",
+        description: "O modelo de IA separa o assunto no seu dispositivo. Na primeira vez, ele baixa cerca de 16 MB.",
+      },
+      {
+        title: "Escolha o fundo",
+        description: "Escolha uma cor ou use uma imagem como novo fundo.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve a foto como JPG ou PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Cor ou imagem",
+        description: "Cores prontas, um seletor de cores ou qualquer imagem sua.",
+      },
+      {
+        title: "Preenche o quadro",
+        description: "Uma imagem de fundo é redimensionada e centralizada para cobrir a foto inteira.",
+      },
+      {
+        title: "Resolução total",
+        description: "O resultado mantém o tamanho da sua foto.",
+      },
+      {
+        title: "Privado",
+        description: "Tudo acontece no seu navegador; nada é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso ter um fundo transparente em vez disso?",
+        answer:
+          "Sim: use o Remover fundo, que salva um PNG sem nenhum fundo.",
+      },
+      {
+        question: "Funciona com produtos e animais de estimação?",
+        answer:
+          "Funciona melhor com pessoas. Para produtos, animais de estimação e objetos, o modelo Melhor qualidade do Remover fundo dá bordas mais limpas; depois, você pode adicionar um fundo em qualquer editor.",
+      },
+      {
+        question: "Por que a primeira foto é mais lenta?",
+        answer:
+          "O modelo de IA é baixado uma vez (cerca de 16 MB) e fica no seu navegador, então as próximas fotos levam só alguns segundos.",
+      },
+      {
+        question: "Minha foto é enviada?",
+        answer:
+          "Não. O recorte e o novo fundo são feitos no seu dispositivo.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Imagem para texto",
+    shortName: "Imagem para texto",
+    tagline: "Copie o texto de uma foto, captura de tela ou digitalização (OCR) em 10 idiomas. A imagem é lida no seu dispositivo.",
+    intro:
+      "O Imagem para texto lê as palavras de uma foto, captura de tela ou página digitalizada e as entrega como texto que você pode copiar, editar ou salvar como arquivo TXT. Ele usa o Tesseract OCR rodando no seu navegador, com inglês, espanhol, francês, alemão, português, italiano, japonês, coreano, indonésio e turco. Uma barra de progresso mostra quanto já foi feito e, se a imagem estiver borrada demais para um resultado confiável, a página avisa. A imagem nunca é enviada.",
+    seoTitle: "Imagem para texto – OCR online grátis",
+    seoDescription:
+      "Imagem para texto: extraia o texto de imagens, capturas de tela e digitalizações com OCR grátis em 10 idiomas. Copie ou baixe. Nada é enviado.",
+    keywords: [
+      "imagem para texto",
+      "extrair texto de imagem",
+      "ocr online",
+      "converter foto em texto",
+      "copiar texto de imagem",
+      "print para texto",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione uma imagem",
+        description: "Arraste, escolha ou cole uma foto, captura de tela ou digitalização com texto.",
+      },
+      {
+        title: "Confira o idioma",
+        description: "O idioma da página já vem escolhido; troque-o se o texto estiver em outro.",
+      },
+      {
+        title: "Aguarde o texto",
+        description: "O texto aparece assim que é lido. Você pode corrigi-lo direto na caixa.",
+      },
+      {
+        title: "Copie ou baixe",
+        description: "Copie o texto ou salve-o como arquivo TXT.",
+      },
+    ],
+    features: [
+      {
+        title: "10 idiomas",
+        description: "Incluindo japonês e coreano. Cada idioma baixa de 1 a 4 MB uma única vez.",
+      },
+      {
+        title: "Resultado editável",
+        description: "Corrija qualquer palavra na caixa antes de copiar ou salvar.",
+      },
+      {
+        title: "Honesto sobre a qualidade",
+        description: "Um aviso aparece quando a imagem está borrada ou pequena demais para uma leitura confiável.",
+      },
+      {
+        title: "Privado",
+        description: "A imagem é lida no seu navegador e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ele lê letra de mão?",
+        answer:
+          "Não com confiabilidade. Ele é feito para texto impresso, como documentos, capturas de tela, placas e etiquetas. Letra de mão caprichada às vezes funciona, mas espere erros.",
+      },
+      {
+        question: "Como consigo o melhor resultado?",
+        answer:
+          "Use uma foto nítida e bem iluminada, tirada de frente, com o texto grande no quadro. Capturas de tela são lidas quase perfeitamente.",
+      },
+      {
+        question: "Ele lê PDF?",
+        answer:
+          "Converta a página em imagem primeiro com o PDF para JPG e depois adicione essa imagem aqui.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer:
+          "Não. O texto é lido no seu dispositivo; a imagem e o texto nunca saem do seu navegador.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "Gerador de QR Code",
+    shortName: "Gerador de QR",
+    tagline: "Crie um QR Code para link, texto, rede Wi-Fi, e-mail, telefone ou contato, com suas cores e seu logo, em PNG ou SVG.",
+    intro:
+      "O Gerador de QR Code cria um QR Code para um link, texto simples, login de Wi-Fi, e-mail, número de telefone ou cartão de contato. Escolha as cores, o tamanho e a correção de erros, adicione seu logo no meio e baixe como imagem PNG ou arquivo SVG, que fica nítido em qualquer tamanho. Cada código é conferido com uma leitura de volta, então você sabe que ele funciona antes de imprimir. Os códigos são criados no seu navegador, grátis, sem cadastro e sem prazo de validade.",
+    seoTitle: "Gerador de QR Code grátis – logo, cores, PNG e SVG",
+    seoDescription:
+      "Gerador de QR Code grátis para links, Wi-Fi, e-mail, telefone ou contatos, com suas cores e logo. Baixe em PNG ou SVG. Sem cadastro; nunca expira.",
+    keywords: [
+      "gerador de qr code",
+      "criar qr code",
+      "gerador de qr code grátis",
+      "qr code com logo",
+      "qr code wifi",
+      "qr code svg",
+    ],
+    howToSteps: [
+      {
+        title: "Escolha o conteúdo",
+        description: "Escolha link, texto, Wi-Fi, e-mail, telefone ou contato.",
+      },
+      {
+        title: "Preencha os dados",
+        description: "O QR Code é atualizado enquanto você digita.",
+      },
+      {
+        title: "Personalize",
+        description: "Defina as cores e o tamanho e, se quiser, adicione um logo.",
+      },
+      {
+        title: "Baixe",
+        description: "Salve em PNG, ou em SVG para impressão e tamanhos grandes.",
+      },
+    ],
+    features: [
+      {
+        title: "Conferido antes de salvar",
+        description: "O código é lido de volta automaticamente, e você é avisado se ele puder não ser lido.",
+      },
+      {
+        title: "Logo e cores",
+        description: "Adicione seu logo; a correção de erros mais forte é usada para manter o código legível.",
+      },
+      {
+        title: "PNG e SVG",
+        description: "O SVG fica nítido em qualquer tamanho, ideal para impressão.",
+      },
+      {
+        title: "Nunca expira",
+        description: "As informações ficam guardadas no próprio código, não em um servidor, então ele funciona para sempre.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Esses QR Codes expiram?",
+        answer:
+          "Não. São códigos estáticos: tudo fica guardado no próprio padrão, sem redirecionamento pelo nosso servidor, então eles continuam funcionando para sempre.",
+      },
+      {
+        question: "Posso rastrear as leituras ou mudar o link depois?",
+        answer:
+          "Não. Isso exige um código dinâmico, que passa cada leitura por um servidor, e esta ferramenta não faz isso. A vantagem é que ninguém vê quem lê o seu código.",
+      },
+      {
+        question: "Como funciona o código de Wi-Fi?",
+        answer:
+          "Os celulares que o leem oferecem entrar na rede com o nome e a senha que você digitou. A senha fica guardada no código, então compartilhe-o só com quem você daria a senha.",
+      },
+      {
+        question: "Qual correção de erros devo escolher?",
+        answer:
+          "M serve para a maioria dos usos. H resiste a mais danos e é usada automaticamente com um logo; L gera o menor código para textos longos.",
+      },
+      {
+        question: "O que eu digito é enviado para algum lugar?",
+        answer:
+          "Não. O código é criado no seu navegador.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "Leitor de QR Code",
+    shortName: "Leitor de QR",
+    tagline: "Leia um QR Code de uma imagem ou da câmera e veja o link, a senha do Wi-Fi ou o contato que ele contém antes de abrir.",
+    intro:
+      "O Leitor de QR Code decodifica QR Codes de uma foto, de uma captura de tela ou da sua câmera. Ele mostra o que o código contém antes que qualquer coisa aconteça: o endereço completo do site, uma rede Wi-Fi e a senha, um e-mail, um número de telefone ou um cartão de contato que você pode salvar. Os links nunca abrem sozinhos, então você pode conferi-los antes, um hábito útil porque QR Codes são muito usados para levar pessoas a sites falsos. Imagens e quadros da câmera são lidos no seu dispositivo.",
+    seoTitle: "Leitor de QR Code online – leia por imagem ou câmera",
+    seoDescription:
+      "Leitor de QR Code online: leia um código de imagem, captura de tela ou câmera no navegador. Veja o link, a senha do Wi-Fi ou o contato antes de abrir.",
+    keywords: [
+      "leitor de qr code",
+      "ler qr code de imagem",
+      "leitor de qr code online",
+      "ler qr code pela foto",
+      "scanner de qr code",
+      "decodificar qr code",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione o código",
+        description: "Arraste ou escolha uma imagem com um QR Code, ou leia-o com a câmera.",
+      },
+      {
+        title: "Veja o que ele contém",
+        description: "Links, dados de Wi-Fi, e-mails, telefones e contatos aparecem com clareza.",
+      },
+      {
+        title: "Confira antes de abrir",
+        description: "Leia o endereço completo antes de abrir um link.",
+      },
+      {
+        title: "Use",
+        description: "Copie o texto, abra o link, ligue, escreva um e-mail ou salve o contato.",
+      },
+    ],
+    features: [
+      {
+        title: "Imagem ou câmera",
+        description: "Leia códigos em capturas de tela e fotos, ou aponte a câmera para um.",
+      },
+      {
+        title: "Seguro por padrão",
+        description: "Os links nunca abrem automaticamente; você vê o endereço completo antes.",
+      },
+      {
+        title: "Wi-Fi e contatos",
+        description: "Mostra senhas de rede e permite salvar cartões de contato.",
+      },
+      {
+        title: "Privado",
+        description: "Imagens e quadros da câmera são processados no seu navegador e nunca são enviados.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Como leio um QR Code que está na minha própria tela?",
+        answer:
+          "Faça uma captura de tela e adicione-a aqui; você não precisa de um segundo aparelho.",
+      },
+      {
+        question: "Por que devo conferir os links antes?",
+        answer:
+          "QR Codes em cartazes, parquímetros e e-mails às vezes são trocados por outros que levam a sites falsos. Confirme que o endereço é o que você espera antes de abri-lo ou de digitar qualquer dado.",
+      },
+      {
+        question: "A câmera não liga. O que posso fazer?",
+        answer:
+          "Permita o acesso à câmera para este site nas configurações do navegador, ou tire uma foto do código e adicione a imagem.",
+      },
+      {
+        question: "Minhas imagens ou a câmera são enviadas para algum lugar?",
+        answer:
+          "Não. Tudo é lido no seu dispositivo.",
+      },
+    ],
+  },
 };

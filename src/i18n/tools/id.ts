@@ -4159,4 +4159,389 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Blur Background",
+    shortName: "Blur Background",
+    tagline: "Blur background foto seperti kamera mode potret, dengan orangnya tetap tajam. Berjalan di perangkat Anda.",
+    intro:
+      "Blur Background memberi foto apa pun background lembut yang tidak fokus, seperti hasil kamera mode potret. Model AI menemukan orang di foto langsung di perangkat Anda, lalu background di-blur sementara subjeknya tetap tajam, tanpa lingkaran kabur (halo) di sekitar tepinya. Slider mengatur seberapa kuat blur-nya, dan Anda menyimpan hasilnya sebagai JPG atau PNG. Tidak ada yang diunggah: foto dan modelnya tetap berada di browser Anda.",
+    seoTitle: "Blur Background Foto Online – Efek Potret Gratis",
+    seoDescription:
+      "Blur background foto online dan biarkan orangnya tetap tajam, seperti mode potret. Kekuatan blur bisa diatur, berjalan di browser Anda, gratis dan privat.",
+    keywords: [
+      "blur background foto",
+      "blur background online",
+      "cara blur background foto",
+      "efek bokeh online",
+      "mode potret online",
+      "bikin background blur",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto",
+        description: "Letakkan, pilih, atau tempel foto seseorang. Foto HEIC iPhone juga bisa.",
+      },
+      {
+        title: "Tunggu subjek ditemukan",
+        description: "Model AI menemukan orang di foto langsung di perangkat Anda. Saat pertama kali, sekitar 16 MB akan diunduh.",
+      },
+      {
+        title: "Atur blur",
+        description: "Geser slider sampai background terlihat pas.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan foto sebagai JPG, atau PNG untuk kualitas terbaik.",
+      },
+    ],
+    features: [
+      {
+        title: "Tampilan mode potret",
+        description: "Background menjadi lembut sementara orangnya tetap tajam.",
+      },
+      {
+        title: "Tanpa halo",
+        description: "Area di belakang subjek diisi dari background di sekitarnya sebelum di-blur, jadi tepinya tetap bersih.",
+      },
+      {
+        title: "Bisa diatur",
+        description: "Pilih mulai dari sedikit lebih lembut hingga blur yang kuat.",
+      },
+      {
+        title: "Privat",
+        description: "Foto diproses di browser Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah bisa untuk foto tanpa orang?",
+        answer:
+          "Alat ini dibuat untuk foto orang. Hewan peliharaan dan benda sering kali berhasil, tetapi modelnya bisa melewatkan sebagian bagiannya; untuk foto seperti itu, periksa tepinya sebelum Anda menyimpan.",
+      },
+      {
+        question: "Mengapa foto pertama lebih lambat?",
+        answer:
+          "Model AI diunduh sekali (sekitar 16 MB) dan tetap tersimpan di browser Anda. Setelah itu, foto diproses dalam beberapa detik.",
+      },
+      {
+        question: "Apakah kualitas foto saya akan turun?",
+        answer:
+          "Orangnya tetap dalam resolusi penuh. Foto yang sangat besar (lebih dari sekitar 16 megapiksel) diperkecil terlebih dahulu agar bisa diproses di ponsel; halaman akan memberi tahu Anda jika itu terjadi.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Pencarian subjek dan proses blur sama-sama terjadi di perangkat Anda.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Ganti Background",
+    shortName: "Ganti Background",
+    tagline: "Ganti background foto dengan warna atau gambar lain. Subjeknya dipotong di perangkat Anda.",
+    intro:
+      "Ganti Background menukar background foto dengan warna polos atau gambar pilihan Anda. Model AI memotong orang di foto langsung di perangkat Anda, lalu menempatkannya di atas background baru yang diskalakan untuk memenuhi bingkai. Pilih putih untuk tampilan produk atau foto profil yang bersih, warna apa pun dari pemilih warna, atau gambar background Anda sendiri, lalu unduh sebagai JPG atau PNG. Foto tidak pernah diunggah.",
+    seoTitle: "Ganti Background Foto Online – Warna atau Gambar, Gratis",
+    seoDescription:
+      "Ganti background foto jadi putih, warna apa pun, atau gambar Anda sendiri. Subjek dipotong di browser Anda. Gratis, privat, tanpa perlu daftar akun.",
+    keywords: [
+      "ganti background foto",
+      "ganti background foto online",
+      "ubah background foto",
+      "background putih foto",
+      "edit background foto",
+      "ganti latar belakang foto",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto",
+        description: "Letakkan, pilih, atau tempel foto. Foto HEIC iPhone juga bisa.",
+      },
+      {
+        title: "Tunggu hasil potongan",
+        description: "Model AI memisahkan subjek di perangkat Anda. Saat pertama kali, sekitar 16 MB akan diunduh.",
+      },
+      {
+        title: "Pilih background",
+        description: "Pilih warna, atau gunakan gambar sebagai background baru.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan foto sebagai JPG atau PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Warna atau gambar",
+        description: "Warna siap pakai, pemilih warna, atau gambar apa pun milik Anda.",
+      },
+      {
+        title: "Memenuhi bingkai",
+        description: "Gambar background diskalakan dan diletakkan di tengah agar menutupi seluruh foto.",
+      },
+      {
+        title: "Resolusi penuh",
+        description: "Hasilnya tetap seukuran foto Anda.",
+      },
+      {
+        title: "Privat",
+        description: "Semuanya terjadi di browser Anda; tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mendapatkan background transparan saja?",
+        answer:
+          "Bisa: gunakan Hapus Background, yang menyimpan PNG tanpa background sama sekali.",
+      },
+      {
+        question: "Apakah bisa untuk produk dan hewan peliharaan?",
+        answer:
+          "Hasil terbaiknya pada foto orang. Untuk produk, hewan peliharaan, dan benda, model “Kualitas terbaik” di Hapus Background memberi tepi yang lebih bersih; setelah itu Anda bisa menambahkan background di editor mana pun.",
+      },
+      {
+        question: "Mengapa foto pertama lebih lambat?",
+        answer:
+          "Model AI diunduh sekali (sekitar 16 MB) dan tetap tersimpan di browser Anda, jadi foto berikutnya hanya butuh beberapa detik.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer:
+          "Tidak. Potongan subjek dan background baru dibuat di perangkat Anda.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Gambar ke Teks",
+    shortName: "Gambar ke Teks",
+    tagline: "Salin teks dari foto, screenshot, atau hasil scan (OCR) dalam 10 bahasa. Gambar dibaca di perangkat Anda.",
+    intro:
+      "Gambar ke Teks membaca kata-kata di foto, screenshot, atau halaman hasil scan dan memberikannya sebagai teks yang bisa Anda salin, edit, atau simpan sebagai file TXT. Alat ini memakai Tesseract OCR yang berjalan di browser Anda, dengan bahasa Inggris, Spanyol, Prancis, Jerman, Portugis, Italia, Jepang, Korea, Indonesia, dan Turki. Bilah progres menunjukkan sejauh mana prosesnya, dan jika gambar terlalu buram untuk hasil yang andal, halaman akan memberi tahu Anda. Gambar tidak pernah diunggah.",
+    seoTitle: "Gambar ke Teks – OCR Online Gratis",
+    seoDescription:
+      "Gambar ke teks dengan OCR gratis: ambil teks dari gambar, screenshot, dan hasil scan dalam 10 bahasa. Salin atau unduh teksnya. Tidak ada yang diunggah.",
+    keywords: [
+      "gambar ke teks",
+      "ocr online",
+      "foto jadi teks",
+      "ambil teks dari gambar",
+      "convert gambar ke teks",
+      "screenshot ke teks",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar",
+        description: "Letakkan, pilih, atau tempel foto, screenshot, atau hasil scan yang berisi teks.",
+      },
+      {
+        title: "Periksa bahasanya",
+        description: "Bahasa halaman dipilih otomatis; ubah jika teksnya dalam bahasa lain.",
+      },
+      {
+        title: "Tunggu teksnya",
+        description: "Teks muncul setelah selesai dibaca. Anda bisa memperbaikinya langsung di kotak.",
+      },
+      {
+        title: "Salin atau unduh",
+        description: "Salin teksnya, atau simpan sebagai file TXT.",
+      },
+    ],
+    features: [
+      {
+        title: "10 bahasa",
+        description: "Termasuk Jepang dan Korea. Setiap bahasa mengunduh 1 hingga 4 MB sekali saja.",
+      },
+      {
+        title: "Hasil bisa diedit",
+        description: "Perbaiki kata apa pun di kotak sebelum Anda menyalin atau menyimpannya.",
+      },
+      {
+        title: "Jujur soal kualitas",
+        description: "Peringatan muncul jika gambar terlalu buram atau kecil untuk dibaca dengan andal.",
+      },
+      {
+        title: "Privat",
+        description: "Gambar dibaca di browser Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah bisa membaca tulisan tangan?",
+        answer:
+          "Tidak dengan andal. Alat ini dibuat untuk teks cetak seperti dokumen, screenshot, papan tanda, dan label. Tulisan tangan yang rapi kadang berhasil, tetapi bersiaplah menemukan kesalahan.",
+      },
+      {
+        question: "Bagaimana cara mendapatkan hasil terbaik?",
+        answer:
+          "Gunakan foto yang tajam dan terang, diambil lurus dari depan, dengan teks tampak besar di bingkai. Screenshot terbaca hampir sempurna.",
+      },
+      {
+        question: "Apakah bisa membaca PDF?",
+        answer:
+          "Ubah halamannya menjadi gambar dulu dengan PDF ke JPG, lalu tambahkan gambar itu di sini.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer:
+          "Tidak. Teks dibaca di perangkat Anda; gambar dan teksnya tidak pernah keluar dari browser Anda.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "Buat QR Code",
+    shortName: "Buat QR Code",
+    tagline: "Buat QR code untuk link, teks, jaringan Wi-Fi, email, nomor telepon, atau kontak, dengan warna dan logo Anda, sebagai PNG atau SVG.",
+    intro:
+      "Buat QR Code membuat QR code untuk link web, teks biasa, login Wi-Fi, email, nomor telepon, atau kartu kontak. Pilih warna, ukuran, dan koreksi kesalahan, tambahkan logo Anda di tengah, lalu unduh sebagai gambar PNG atau file SVG yang tetap tajam di ukuran berapa pun. Setiap kode diperiksa dengan membacanya kembali, jadi Anda tahu kode itu bisa dipindai sebelum dicetak. Kode dibuat di browser Anda, gratis, tanpa daftar akun, dan tidak pernah kedaluwarsa.",
+    seoTitle: "Buat QR Code Gratis – Logo, Warna, PNG & SVG",
+    seoDescription:
+      "Buat QR code untuk link, Wi-Fi, email, telepon, atau kontak, dengan warna dan logo Anda. Unduh PNG atau SVG. Gratis, tanpa daftar, tidak pernah kedaluwarsa.",
+    keywords: [
+      "buat qr code",
+      "buat qr code gratis",
+      "qr code generator",
+      "qr code dengan logo",
+      "qr code wifi",
+      "cara membuat qr code",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih isinya",
+        description: "Pilih link, teks, Wi-Fi, email, telepon, atau kontak.",
+      },
+      {
+        title: "Isi detailnya",
+        description: "QR code diperbarui saat Anda mengetik.",
+      },
+      {
+        title: "Atur tampilannya",
+        description: "Atur warna dan ukuran, dan tambahkan logo jika mau.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG, atau SVG untuk cetak dan ukuran besar.",
+      },
+    ],
+    features: [
+      {
+        title: "Diperiksa sebelum disimpan",
+        description: "Kode dibaca kembali secara otomatis, dan Anda diperingatkan jika kode mungkin tidak bisa dipindai.",
+      },
+      {
+        title: "Logo dan warna",
+        description: "Tambahkan logo Anda; koreksi kesalahan terkuat dipakai agar kode tetap terbaca.",
+      },
+      {
+        title: "PNG dan SVG",
+        description: "SVG tetap tajam di ukuran berapa pun, ideal untuk cetak.",
+      },
+      {
+        title: "Tidak pernah kedaluwarsa",
+        description: "Informasinya disimpan di dalam kode itu sendiri, bukan di server, jadi kode berfungsi selamanya.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah QR code ini bisa kedaluwarsa?",
+        answer:
+          "Tidak. Ini kode statis: semuanya disimpan di dalam polanya sendiri, tanpa pengalihan lewat server kami, jadi kode terus berfungsi selamanya.",
+      },
+      {
+        question: "Bisakah saya melacak pemindaian atau mengubah link nanti?",
+        answer:
+          "Tidak. Itu butuh kode dinamis yang mengirim setiap pemindaian lewat server, dan alat ini tidak melakukannya. Sisi baiknya, tidak ada yang bisa melihat siapa yang memindai kode Anda.",
+      },
+      {
+        question: "Bagaimana cara kerja kode Wi-Fi?",
+        answer:
+          "Ponsel yang memindainya akan menawarkan untuk bergabung ke jaringan dengan nama dan kata sandi yang Anda masukkan. Kata sandi disimpan di dalam kode, jadi bagikan hanya kepada orang yang memang boleh mengetahuinya.",
+      },
+      {
+        question: "Koreksi kesalahan mana yang sebaiknya saya pilih?",
+        answer:
+          "M cocok untuk sebagian besar keperluan. H lebih tahan kerusakan dan otomatis dipakai jika ada logo; L menghasilkan kode terkecil untuk teks panjang.",
+      },
+      {
+        question: "Apakah yang saya ketik dikirim ke suatu tempat?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "Scan QR Code",
+    shortName: "Scan QR",
+    tagline: "Baca QR code dari gambar atau kamera, dan lihat link, kata sandi Wi-Fi, atau kontak di dalamnya sebelum Anda membukanya.",
+    intro:
+      "Scan QR Code membaca QR code dari foto, screenshot, atau kamera Anda. Alat ini menampilkan isi kode sebelum terjadi apa pun: alamat web lengkap, jaringan Wi-Fi dan kata sandinya, email, nomor telepon, atau kartu kontak yang bisa Anda simpan. Link tidak pernah terbuka dengan sendirinya, jadi Anda bisa memeriksanya terlebih dahulu. Ini kebiasaan yang berguna, karena QR code sering dipakai untuk mengarahkan orang ke situs palsu. Gambar dan frame kamera dibaca di perangkat Anda.",
+    seoTitle: "Scan QR Code Online – dari Gambar atau Kamera",
+    seoDescription:
+      "Scan QR code dari gambar, screenshot, atau kamera di browser Anda. Lihat link, kata sandi Wi-Fi, atau kontak sebelum membukanya. Gratis dan privat.",
+    keywords: [
+      "scan qr code dari gambar",
+      "scan qr code online",
+      "qr code reader",
+      "baca qr code",
+      "cara scan qr code di laptop",
+      "scan qr code dari screenshot",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan kodenya",
+        description: "Letakkan atau pilih gambar berisi QR code, atau pindai dengan kamera Anda.",
+      },
+      {
+        title: "Lihat isinya",
+        description: "Link, detail Wi-Fi, email, nomor telepon, dan kontak ditampilkan dengan jelas.",
+      },
+      {
+        title: "Periksa sebelum membuka",
+        description: "Baca alamat lengkapnya sebelum Anda membuka link.",
+      },
+      {
+        title: "Gunakan",
+        description: "Salin teksnya, buka link, telepon, kirim email, atau simpan kontak.",
+      },
+    ],
+    features: [
+      {
+        title: "Gambar atau kamera",
+        description: "Baca kode di screenshot dan foto, atau arahkan kamera Anda ke kode.",
+      },
+      {
+        title: "Aman secara bawaan",
+        description: "Link tidak pernah terbuka otomatis; Anda melihat alamat lengkapnya terlebih dahulu.",
+      },
+      {
+        title: "Wi-Fi dan kontak",
+        description: "Menampilkan kata sandi jaringan dan memungkinkan Anda menyimpan kartu kontak.",
+      },
+      {
+        title: "Privat",
+        description: "Gambar dan frame kamera diproses di browser Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara memindai QR code yang ada di layar saya sendiri?",
+        answer:
+          "Ambil screenshot dan tambahkan di sini; Anda tidak perlu perangkat kedua.",
+      },
+      {
+        question: "Mengapa saya harus memeriksa link terlebih dahulu?",
+        answer:
+          "QR code di poster, mesin parkir, dan email kadang ditukar dengan kode yang mengarah ke situs palsu. Pastikan alamatnya sesuai dengan yang Anda harapkan sebelum membukanya atau memasukkan data apa pun.",
+      },
+      {
+        question: "Kamera tidak menyala. Apa yang bisa saya lakukan?",
+        answer:
+          "Izinkan akses kamera untuk situs ini di pengaturan browser Anda, atau foto kodenya lalu tambahkan gambarnya.",
+      },
+      {
+        question: "Apakah gambar atau kamera saya dikirim ke suatu tempat?",
+        answer:
+          "Tidak. Semuanya dibaca di perangkat Anda.",
+      },
+    ],
+  },
 };

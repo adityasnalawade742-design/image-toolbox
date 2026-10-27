@@ -4156,4 +4156,389 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Flouter l’arrière-plan",
+    shortName: "Flouter le fond",
+    tagline: "Floutez l’arrière-plan d’une photo comme le mode portrait d’un appareil photo, en gardant la personne nette. Fonctionne sur votre appareil.",
+    intro:
+      "Flouter l’arrière-plan donne à n’importe quelle photo l’arrière-plan doux et flou du mode portrait d’un appareil photo. Un modèle d’IA repère la personne sur votre appareil, puis l’arrière-plan est flouté tandis que le sujet reste net, sans halo flou autour des contours. Un curseur règle l’intensité du flou, et vous enregistrez le résultat en JPG ou en PNG. Rien n’est envoyé : la photo et le modèle restent tous deux dans votre navigateur.",
+    seoTitle: "Flouter l’arrière-plan d’une photo – Effet portrait gratuit",
+    seoDescription:
+      "Flouter l’arrière-plan d’une photo en ligne en gardant la personne nette, comme en mode portrait. Intensité réglable, dans le navigateur, gratuit et privé.",
+    keywords: [
+      "flouter l’arrière-plan",
+      "flouter le fond d’une photo",
+      "mode portrait en ligne",
+      "flouter l’arrière-plan d’une photo en ligne",
+      "effet bokeh en ligne",
+      "rendre le fond flou",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une photo",
+        description: "Déposez, choisissez ou collez la photo d’une personne. Les photos HEIC d’iPhone fonctionnent aussi.",
+      },
+      {
+        title: "Patientez pendant la détection",
+        description: "Le modèle d’IA repère la personne sur votre appareil. La première fois, il télécharge environ 16 MB.",
+      },
+      {
+        title: "Réglez le flou",
+        description: "Déplacez le curseur « Intensité du flou » jusqu’à obtenir l’arrière-plan voulu.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez la photo en JPG, ou en PNG pour la meilleure qualité.",
+      },
+    ],
+    features: [
+      {
+        title: "Effet mode portrait",
+        description: "L’arrière-plan devient doux tandis que la personne reste nette.",
+      },
+      {
+        title: "Sans halo",
+        description: "Le flou derrière le sujet est complété à partir de l’arrière-plan environnant, pour des contours propres.",
+      },
+      {
+        title: "Réglable",
+        description: "Choisissez d’un léger adoucissement à un flou prononcé.",
+      },
+      {
+        title: "Privé",
+        description: "La photo est traitée dans votre navigateur et n’est jamais envoyée.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Est-ce que ça marche sur des photos sans personne ?",
+        answer:
+          "L’outil est conçu pour les photos de personnes. Les animaux et les objets fonctionnent souvent, mais le modèle peut en oublier des parties ; dans ce cas, vérifiez les contours avant d’enregistrer.",
+      },
+      {
+        question: "Pourquoi la première photo est-elle plus lente ?",
+        answer:
+          "Le modèle d’IA se télécharge une fois (environ 16 MB) et reste dans votre navigateur. Ensuite, les photos sont traitées en quelques secondes.",
+      },
+      {
+        question: "Ma photo va-t-elle perdre en qualité ?",
+        answer:
+          "La personne garde sa pleine résolution. Les très grandes photos (au-delà d’environ 16 mégapixels) sont d’abord réduites pour fonctionner sur les téléphones ; la page vous prévient quand c’est le cas.",
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer:
+          "Non. La détection du sujet et le flou se font tous deux sur votre appareil.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Changer l’arrière-plan",
+    shortName: "Changer le fond",
+    tagline: "Remplacez l’arrière-plan d’une photo par une couleur ou une autre image. Le sujet est détouré sur votre appareil.",
+    intro:
+      "Changer l’arrière-plan remplace le fond d’une photo par une couleur unie ou une image de votre choix. Un modèle d’IA détoure la personne sur votre appareil, puis la place sur le nouveau fond, mis à l’échelle pour remplir tout le cadre. Choisissez le blanc pour un rendu net de produit ou de profil, n’importe quelle couleur du sélecteur ou votre propre image de fond, puis téléchargez le résultat en JPG ou en PNG. La photo n’est jamais envoyée.",
+    seoTitle: "Changer l’arrière-plan d’une photo – Couleur ou image",
+    seoDescription:
+      "Changer l’arrière-plan d’une photo : fond blanc, n’importe quelle couleur ou votre propre image. Le sujet est détouré dans le navigateur. Gratuit et privé.",
+    keywords: [
+      "changer l’arrière-plan d’une photo",
+      "changer le fond d’une photo",
+      "remplacer l’arrière-plan",
+      "mettre un fond blanc sur une photo",
+      "changer fond photo en ligne",
+      "modifier l’arrière-plan d’une image",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une photo",
+        description: "Déposez, choisissez ou collez une photo. Les photos HEIC d’iPhone fonctionnent aussi.",
+      },
+      {
+        title: "Patientez pendant le détourage",
+        description: "Le modèle d’IA sépare le sujet sur votre appareil. La première fois, il télécharge environ 16 MB.",
+      },
+      {
+        title: "Choisissez le fond",
+        description: "Choisissez une couleur, ou utilisez une image comme nouveau fond.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez la photo en JPG ou en PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Couleur ou image",
+        description: "Des couleurs prêtes à l’emploi, un sélecteur de couleur ou n’importe quelle image à vous.",
+      },
+      {
+        title: "Remplit le cadre",
+        description: "L’image de fond est mise à l’échelle et centrée pour couvrir toute la photo.",
+      },
+      {
+        title: "Pleine résolution",
+        description: "Le résultat garde la taille de votre photo.",
+      },
+      {
+        title: "Privé",
+        description: "Tout se passe dans votre navigateur ; rien n’est envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Puis-je plutôt obtenir un fond transparent ?",
+        answer:
+          "Oui : utilisez Supprimer l’arrière-plan, qui enregistre un PNG sans aucun fond.",
+      },
+      {
+        question: "Est-ce que ça marche pour les produits et les animaux ?",
+        answer:
+          "L’outil fonctionne mieux sur les personnes. Pour les produits, les animaux et les objets, le modèle « Qualité maximale » de Supprimer l’arrière-plan donne des contours plus propres ; vous pouvez ensuite ajouter un fond dans n’importe quel éditeur.",
+      },
+      {
+        question: "Pourquoi la première photo est-elle plus lente ?",
+        answer:
+          "Le modèle d’IA se télécharge une fois (environ 16 MB) et reste dans votre navigateur : les photos suivantes ne prennent que quelques secondes.",
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer:
+          "Non. Le détourage et le nouveau fond sont réalisés sur votre appareil.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Image en texte",
+    shortName: "Image en texte",
+    tagline: "Copiez le texte d’une photo, d’une capture d’écran ou d’un scan (OCR) en 10 langues. L’image est lue sur votre appareil.",
+    intro:
+      "Image en texte lit les mots d’une photo, d’une capture d’écran ou d’une page scannée et vous les donne sous forme de texte à copier, modifier ou enregistrer en fichier TXT. L’outil utilise Tesseract OCR dans votre navigateur, avec l’anglais, l’espagnol, le français, l’allemand, le portugais, l’italien, le japonais, le coréen, l’indonésien et le turc. Une barre de progression indique où en est la lecture, et si l’image est trop floue pour un résultat fiable, la page vous le signale. L’image n’est jamais envoyée.",
+    seoTitle: "Image en texte – OCR en ligne gratuit",
+    seoDescription:
+      "Image en texte : extrayez le texte d’images, de captures d’écran et de scans avec un OCR gratuit en 10 langues. Copiez ou téléchargez le texte, sans envoi.",
+    keywords: [
+      "image en texte",
+      "extraire le texte d’une image",
+      "ocr en ligne",
+      "convertir une image en texte",
+      "photo en texte",
+      "copier le texte d’une image",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une image",
+        description: "Déposez, choisissez ou collez une photo, une capture d’écran ou un scan contenant du texte.",
+      },
+      {
+        title: "Vérifiez la langue",
+        description: "La langue de la page est choisie pour vous ; changez-la si le texte est dans une autre langue.",
+      },
+      {
+        title: "Patientez pendant la lecture",
+        description: "Le texte apparaît une fois lu. Vous pouvez le corriger directement dans la zone.",
+      },
+      {
+        title: "Copiez ou téléchargez",
+        description: "Cliquez sur « Copier le texte », ou sur « Télécharger le texte (TXT) » pour l’enregistrer en fichier TXT.",
+      },
+    ],
+    features: [
+      {
+        title: "10 langues",
+        description: "Dont le japonais et le coréen. Chaque langue télécharge 1 à 4 MB une seule fois.",
+      },
+      {
+        title: "Résultat modifiable",
+        description: "Corrigez n’importe quel mot dans la zone avant de le copier ou de l’enregistrer.",
+      },
+      {
+        title: "Franc sur la qualité",
+        description: "Un avertissement s’affiche quand l’image est trop floue ou trop petite pour être lue de façon fiable.",
+      },
+      {
+        title: "Privé",
+        description: "L’image est lue dans votre navigateur et n’est jamais envoyée.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Peut-il lire l’écriture manuscrite ?",
+        answer:
+          "Pas de façon fiable. Il est conçu pour le texte imprimé : documents, captures d’écran, panneaux, étiquettes. Une écriture soignée fonctionne parfois, mais attendez-vous à des erreurs.",
+      },
+      {
+        question: "Comment obtenir le meilleur résultat ?",
+        answer:
+          "Utilisez une photo nette, bien éclairée et prise bien de face, avec le texte en grand dans le cadre. Les captures d’écran sont lues presque parfaitement.",
+      },
+      {
+        question: "Peut-il lire un PDF ?",
+        answer:
+          "Convertissez d’abord la page en image avec PDF en JPG, puis ajoutez cette image ici.",
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer:
+          "Non. Le texte est lu sur votre appareil ; l’image et le texte ne quittent jamais votre navigateur.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "Générateur de QR code",
+    shortName: "Générateur QR",
+    tagline: "Créez un QR code pour un lien, un texte, un réseau Wi-Fi, un e-mail, un numéro de téléphone ou un contact, avec vos couleurs et votre logo, en PNG ou SVG.",
+    intro:
+      "Générateur de QR code crée un QR code pour un lien web, du texte brut, des identifiants Wi-Fi, un e-mail, un numéro de téléphone ou une fiche de contact. Choisissez les couleurs, la taille et la correction d’erreurs, ajoutez votre logo au centre, puis téléchargez le code en image PNG ou en fichier SVG qui reste net à toutes les tailles. Chaque code est vérifié en le relisant, pour que vous sachiez qu’il se scanne avant de l’imprimer. Les codes sont créés dans votre navigateur, gratuitement, sans inscription et sans date d’expiration.",
+    seoTitle: "Générateur de QR code gratuit – Logo, couleurs, PNG, SVG",
+    seoDescription:
+      "Générateur de QR code pour liens, Wi-Fi, e-mail, téléphone ou contacts, avec vos couleurs et votre logo. PNG ou SVG. Gratuit, sans inscription, sans expiration.",
+    keywords: [
+      "générateur de qr code",
+      "créer un qr code",
+      "qr code gratuit",
+      "qr code avec logo",
+      "qr code wifi",
+      "qr code svg",
+    ],
+    howToSteps: [
+      {
+        title: "Choisissez le contenu",
+        description: "Choisissez lien, texte, Wi-Fi, e-mail, téléphone ou contact.",
+      },
+      {
+        title: "Remplissez les champs",
+        description: "Le QR code se met à jour pendant que vous tapez.",
+      },
+      {
+        title: "Personnalisez-le",
+        description: "Réglez les couleurs et la taille, et ajoutez un logo si vous le souhaitez.",
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez-le en PNG, ou en SVG pour l’impression et les grands formats.",
+      },
+    ],
+    features: [
+      {
+        title: "Vérifié avant l’enregistrement",
+        description: "Le code est relu automatiquement, et vous êtes averti s’il risque de ne pas se scanner.",
+      },
+      {
+        title: "Logo et couleurs",
+        description: "Ajoutez votre logo ; la correction d’erreurs la plus forte est utilisée pour qu’il reste lisible.",
+      },
+      {
+        title: "PNG et SVG",
+        description: "Le SVG reste net à toutes les tailles, idéal pour l’impression.",
+      },
+      {
+        title: "N’expire jamais",
+        description: "Les informations sont stockées dans le code lui-même, pas sur un serveur : il fonctionne pour toujours.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ces QR codes expirent-ils ?",
+        answer:
+          "Non. Ce sont des codes statiques : tout est stocké dans le motif lui-même, sans redirection par notre serveur, ils fonctionnent donc pour toujours.",
+      },
+      {
+        question: "Puis-je suivre les scans ou changer le lien plus tard ?",
+        answer:
+          "Non. Il faudrait pour cela un code dynamique qui fait passer chaque scan par un serveur, ce que cet outil ne fait pas. L’avantage : personne ne voit qui scanne votre code.",
+      },
+      {
+        question: "Comment fonctionne le code Wi-Fi ?",
+        answer:
+          "Les téléphones qui le scannent proposent de rejoindre le réseau avec le nom et le mot de passe saisis. Le mot de passe est stocké dans le code : ne le partagez qu’avec les personnes à qui vous le donneriez.",
+      },
+      {
+        question: "Quelle correction d’erreurs choisir ?",
+        answer:
+          "M convient à la plupart des usages. H résiste mieux aux dégâts et est utilisé automatiquement avec un logo ; L donne le plus petit code pour un texte long.",
+      },
+      {
+        question: "Ce que je tape est-il envoyé quelque part ?",
+        answer:
+          "Non. Le code est créé dans votre navigateur.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "Lecteur de QR code",
+    shortName: "Lecteur QR",
+    tagline: "Lisez un QR code depuis une image ou votre caméra, et voyez le lien, le mot de passe Wi-Fi ou le contact qu’il contient avant de l’ouvrir.",
+    intro:
+      "Lecteur de QR code décode les QR codes d’une photo, d’une capture d’écran ou de votre caméra. Il montre ce que contient le code avant que quoi que ce soit ne se passe : l’adresse web complète, un réseau Wi-Fi et son mot de passe, un e-mail, un numéro de téléphone ou une fiche de contact à enregistrer. Les liens ne s’ouvrent jamais d’eux-mêmes, vous pouvez donc les vérifier d’abord : une bonne habitude, car les QR codes servent souvent à envoyer les gens vers de faux sites. Les images et le flux de la caméra sont lus sur votre appareil.",
+    seoTitle: "Lecteur de QR code en ligne – Depuis image ou caméra",
+    seoDescription:
+      "Scanner un QR code depuis une image, une capture ou la caméra. Voyez le lien, le mot de passe Wi-Fi ou le contact avant de l’ouvrir. Gratuit et privé.",
+    keywords: [
+      "lecteur de qr code",
+      "scanner un qr code depuis une image",
+      "lire un qr code",
+      "scanner qr code en ligne",
+      "lecteur qr code en ligne",
+      "décoder un qr code",
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez le code",
+        description: "Déposez ou choisissez une image contenant un QR code, ou utilisez « Scanner avec la caméra ».",
+      },
+      {
+        title: "Voyez son contenu",
+        description: "Les liens, les identifiants Wi-Fi, les e-mails, les numéros de téléphone et les contacts sont affichés clairement.",
+      },
+      {
+        title: "Vérifiez avant d’ouvrir",
+        description: "Lisez l’adresse complète avant de cliquer sur « Ouvrir le lien ».",
+      },
+      {
+        title: "Utilisez-le",
+        description: "Copiez le texte, ouvrez le lien, appelez, écrivez un e-mail ou enregistrez le contact.",
+      },
+    ],
+    features: [
+      {
+        title: "Image ou caméra",
+        description: "Lisez les codes dans les captures d’écran et les photos, ou pointez votre caméra vers un code.",
+      },
+      {
+        title: "Sûr par défaut",
+        description: "Les liens ne s’ouvrent jamais automatiquement ; vous voyez d’abord l’adresse complète.",
+      },
+      {
+        title: "Wi-Fi et contacts",
+        description: "Affiche les mots de passe réseau et vous permet d’enregistrer les fiches de contact.",
+      },
+      {
+        title: "Privé",
+        description: "Les images et le flux de la caméra sont traités dans votre navigateur et ne sont jamais envoyés.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Comment scanner un QR code affiché sur mon propre écran ?",
+        answer:
+          "Faites une capture d’écran et ajoutez-la ici ; pas besoin d’un second appareil.",
+      },
+      {
+        question: "Pourquoi vérifier les liens d’abord ?",
+        answer:
+          "Les QR codes sur les affiches, les horodateurs et dans les e-mails sont parfois remplacés par d’autres qui mènent à de faux sites. Assurez-vous que l’adresse est bien celle que vous attendez avant de l’ouvrir ou de saisir la moindre information.",
+      },
+      {
+        question: "La caméra ne démarre pas. Que faire ?",
+        answer:
+          "Autorisez l’accès à la caméra pour ce site dans les paramètres de votre navigateur, ou prenez le code en photo et ajoutez plutôt l’image.",
+      },
+      {
+        question: "Mes images ou ma caméra sont-elles envoyées quelque part ?",
+        answer:
+          "Non. Tout est lu sur votre appareil.",
+      },
+    ],
+  },
 };
