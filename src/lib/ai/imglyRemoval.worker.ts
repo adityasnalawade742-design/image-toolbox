@@ -11,7 +11,7 @@ type Model = 'isnet' | 'isnet_fp16' | 'isnet_quint8';
 
 // The library caches its loaded model by this config's JSON (functions drop out of it), so a preload and a
 // later removal with the same settings share one session
-const config = (model: Model, onCompute?: () => void) => {
+const config = (model: Model, onCompute?: (step: number, steps: number) => void) => {
   const files = new Map<string, { loaded: number; total: number }>();
   return {
     device: 'cpu' as const,
@@ -26,7 +26,8 @@ const config = (model: Model, onCompute?: () => void) => {
         // Not tied to one request, so a removal that starts during a preload shows this progress too
         scope.postMessage({ type: 'progress', file: 'imgly', loaded, total: sum });
       } else if (key.startsWith('compute:')) {
-        onCompute?.();
+        // decode, inference, mask, encode: four real steps the progress bar can follow
+        onCompute?.(current, total);
       }
     },
   };
@@ -39,7 +40,7 @@ scope.onmessage = async (e: MessageEvent<{ type?: 'preload'; id: number; image: 
     return;
   }
   try {
-    const blob = await removeBackground(image, config(model, () => scope.postMessage({ id, type: 'processing' })));
+    const blob = await removeBackground(image, config(model, (step, steps) => scope.postMessage({ id, type: 'processing', step, steps })));
     const bitmap = await createImageBitmap(blob);
     const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
     const ctx = canvas.getContext('2d')!;

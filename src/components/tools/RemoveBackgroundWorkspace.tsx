@@ -3,6 +3,7 @@ import { Download, Loader2, AlertCircle, Eye, EyeOff, Eraser, RotateCcw, Check, 
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useImageIntake } from '../shared/useImageIntake';
 import { useT } from '../shared/I18nContext';
+import { RemovalProgressBar } from '../shared/RemovalProgressBar';
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
 import { fitWithinPixels } from '../../lib/canvas/limits';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
@@ -234,7 +235,7 @@ export function RemoveBackgroundWorkspace() {
     <div className={cutout ? 'pb-20 lg:pb-0' : ''}>
       <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
         <div className="min-w-0 space-y-3">
-          <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
+          <div className="relative overflow-hidden bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
             <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               {sourceUrl && (showOriginal || !cutout) && (
                 <img src={sourceUrl} alt="" className={`block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
@@ -243,16 +244,8 @@ export function RemoveBackgroundWorkspace() {
             </div>
 
             {isRunning && (
-              <div className="absolute inset-x-0 bottom-0 bg-paper border-t border-ink px-4 py-3" role="status" aria-live="polite">
-                <div className="flex items-center gap-2 text-[15px] text-ink">
-                  <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
-                  <span data-measure>{progressLabel}</span>
-                </div>
-                {progress?.stage === 'downloading' && progress.fraction !== undefined && (
-                  <div className="mt-2 h-1.5 bg-pencil-soft" aria-hidden="true">
-                    <div className="h-full bg-process-key" style={{ width: `${Math.round(progress.fraction * 100)}%` }} />
-                  </div>
-                )}
+              <div className="absolute inset-x-0 bottom-0 bg-paper border-t border-ink px-4 py-3">
+                <RemovalProgressBar progress={progress} mode={mode} label={progressLabel} />
               </div>
             )}
           </div>
