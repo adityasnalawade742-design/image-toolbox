@@ -587,6 +587,8 @@ export const strings = {
   // ===== Background remover =====
   'ctl.bg.dropHint': 'JPG、PNG、WebPに対応。AIモデルは端末上で動作し、画像がアップロードされることはありません。',
   'ctl.bg.scaledDown': 'スマートフォンでも動作し、処理が速くなるよう、この写真は {w} × {h} px に縮小されました。',
+  'ctl.bg.stepModel': 'AIモデル',
+  'ctl.bg.stepWork': '処理',
   'ctl.bg.mode': 'モデル',
   'ctl.bg.modePortrait': '高速',
   'ctl.bg.modeHq': '高画質',

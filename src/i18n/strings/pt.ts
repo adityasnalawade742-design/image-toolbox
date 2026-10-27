@@ -582,6 +582,8 @@ export const strings = {
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG ou WebP. O modelo de IA roda no seu dispositivo; a imagem nunca é enviada.',
   'ctl.bg.scaledDown': 'Esta foto foi reduzida para {w} × {h} px para funcionar em celulares e ser processada mais rápido.',
+  'ctl.bg.stepModel': 'Modelo de IA',
+  'ctl.bg.stepWork': 'Processamento',
   'ctl.bg.mode': 'Modelo',
   'ctl.bg.modePortrait': 'Rápido',
   'ctl.bg.modeHq': 'Melhor qualidade',

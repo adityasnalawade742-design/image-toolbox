@@ -582,6 +582,8 @@ export const strings = {
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG, WebP. AI 모델이 기기에서 실행되며 이미지는 업로드되지 않아요.',
   'ctl.bg.scaledDown': '휴대폰에서도 작동하고 더 빨리 처리되도록 이 사진을 {w} × {h} px로 줄였어요.',
+  'ctl.bg.stepModel': 'AI 모델',
+  'ctl.bg.stepWork': '처리',
   'ctl.bg.mode': '모델',
   'ctl.bg.modePortrait': '빠름',
   'ctl.bg.modeHq': '최고 품질',

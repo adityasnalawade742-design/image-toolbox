@@ -307,6 +307,19 @@
 .registration-snap.is-registering > .plate-m { outline: 2px solid #e4007c; animation: register-magenta 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 .registration-snap.is-registering > .plate-y { outline: 2px solid #ffe100; animation: register-yellow 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
+/* Progress: a soft shine sweeps across the half that is working, so the bar visibly moves even between updates */
+@keyframes progress-shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(250%); }
+}
+.progress-shine {
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: progress-shine 1.3s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

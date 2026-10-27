@@ -582,6 +582,8 @@ export const strings = {
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG, atau WebP. Model AI berjalan di perangkat Anda; gambar tidak pernah diunggah.',
   'ctl.bg.scaledDown': 'Foto ini diperkecil menjadi {w} × {h} px agar berfungsi di ponsel dan diproses lebih cepat.',
+  'ctl.bg.stepModel': 'Model AI',
+  'ctl.bg.stepWork': 'Pemrosesan',
   'ctl.bg.mode': 'Model',
   'ctl.bg.modePortrait': 'Cepat',
   'ctl.bg.modeHq': 'Kualitas terbaik',

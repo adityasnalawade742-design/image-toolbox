@@ -582,6 +582,8 @@ export const strings = {
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG veya WebP. Yapay zekâ modeli cihazınızda çalışır; resim asla yüklenmez.',
   'ctl.bg.scaledDown': 'Bu fotoğraf, telefonlarda çalışması ve daha hızlı işlenmesi için {w} × {h} px boyutuna küçültüldü.',
+  'ctl.bg.stepModel': 'Yapay zekâ modeli',
+  'ctl.bg.stepWork': 'İşleme',
   'ctl.bg.mode': 'Model',
   'ctl.bg.modePortrait': 'Hızlı',
   'ctl.bg.modeHq': 'En iyi kalite',

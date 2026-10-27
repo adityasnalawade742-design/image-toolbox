@@ -582,6 +582,8 @@ export const strings = {
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG oder WebP. Das KI-Modell läuft auf deinem Gerät, das Bild wird nie hochgeladen.',
   'ctl.bg.scaledDown': 'Dieses Foto wurde auf {w} × {h} px verkleinert, damit es auf Handys funktioniert und schneller verarbeitet wird.',
+  'ctl.bg.stepModel': 'KI-Modell',
+  'ctl.bg.stepWork': 'Verarbeitung',
   'ctl.bg.mode': 'Modell',
   'ctl.bg.modePortrait': 'Schnell',
   'ctl.bg.modeHq': 'Beste Qualität',
