@@ -29,6 +29,7 @@ const INPUT = {
   'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
   'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],
   'change-image-dpi': [S('photo.jpg')], 'signature-extractor': [S('signature-photo.jpg')], 'passport-photo-maker': [S('portrait.jpg')],
+  'blur-background': [S('portrait.jpg')], 'change-background': [S('portrait.jpg')], 'image-to-text': [S('text.png')], 'qr-code-reader': [S('qr.png')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -103,6 +104,11 @@ const extras = () => ev(`(() => {
 })()`);
 
 const loadInput = async (slug) => {
+  if (slug === 'qr-code-generator') {
+    return ev(`(() => { const i = document.querySelector('#qr-link'); if (!i) return false;
+      const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; set.call(i, 'example.com/hello');
+      i.dispatchEvent(new Event('input', { bubbles: true })); return true; })()`);
+  }
   if (slug === 'base64-to-image') {
     const txt = readFileSync(S('b64.txt'), 'utf8');
     return ev(`(() => { const t = document.querySelector('main textarea'); if (!t) return false;

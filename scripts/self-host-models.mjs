@@ -20,9 +20,19 @@ async function pinned(url, hash) {
     const buf = fs.readFileSync(file);
     if (sha256(buf) === hash) return buf;
   }
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`[models] ${res.status} downloading ${url}`);
-  const buf = Buffer.from(await res.arrayBuffer());
+  // A few tries: one network hiccup shouldn't fail a build (files are cached after the first success)
+  let buf;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`[models] ${res.status} downloading ${url}`);
+      buf = Buffer.from(await res.arrayBuffer());
+      break;
+    } catch (err) {
+      if (attempt >= 3) throw err;
+      await new Promise((r) => setTimeout(r, 2000 * attempt));
+    }
+  }
   if (sha256(buf) !== hash) throw new Error(`[models] Checksum mismatch for ${url}`);
   fs.mkdirSync(CACHE, { recursive: true });
   fs.writeFileSync(file, buf);
@@ -78,12 +88,30 @@ export async function selfHostModels() {
   if (!ortDir) throw new Error(`[models] onnxruntime-web ${wanted} (needed by transformers.js) is not installed`);
   for (const file of assets.ort.files) put(`ort/${wanted}/${file}`, count(fs.readFileSync(path.join(ortDir, 'dist', file))));
 
+  // Tesseract OCR (Image to Text): the worker, the LSTM engine builds (the worker picks one for the browser) and the
+  // fast language data for the site's languages
+  const { ocr } = assets;
+  const tjsVersion = JSON.parse(fs.readFileSync(path.resolve('node_modules/tesseract.js/package.json'), 'utf8')).version;
+  const coreVersion = JSON.parse(fs.readFileSync(path.resolve('node_modules/tesseract.js-core/package.json'), 'utf8')).version;
+  // The page loads these from versioned paths named in modelAssets.json, so they must match what is installed
+  if (tjsVersion !== ocr.version || coreVersion !== ocr.coreVersion) {
+    throw new Error(`[models] modelAssets.json names tesseract.js ${ocr.version} / core ${ocr.coreVersion}, but ${tjsVersion} / ${coreVersion} are installed`);
+  }
+  put(`ocr/${tjsVersion}/worker.min.js`, count(fs.readFileSync(path.resolve('node_modules/tesseract.js/dist/worker.min.js'))));
+  for (const file of ocr.coreFiles) put(`ocr/core-${coreVersion}/${file}`, count(fs.readFileSync(path.resolve('node_modules/tesseract.js-core', file))));
+  const td = ocr.tessdata;
+  await pool(Object.entries(td.langs).map(([lang, hash]) => async () => {
+    put(`ocr/tessdata/${td.commit.slice(0, 12)}/${lang}.traineddata`, count(await pinned(`https://raw.githubusercontent.com/${td.repo}/${td.commit}/${lang}.traineddata`, hash)));
+  }));
+
   put('THIRD-PARTY.txt', Buffer.from(
     [
       'AI models and runtimes served with this site:',
       `- MODNet, ${modnet.repo} on Hugging Face at revision ${modnet.revision}: ${modnet.license} (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- IMG.LY background removal data ${imgly.version} (${imgly.package}): ${imgly.license} (https://www.gnu.org/licenses/agpl-3.0.html)`,
       `- ONNX Runtime Web ${wanted}: MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
+      `- Tesseract.js ${tjsVersion} and tesseract.js-core ${coreVersion}: Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0)`,
+      `- Tesseract fast language data (${td.repo} at ${td.commit}): ${td.license}`,
       '',
     ].join('\n')
   ));

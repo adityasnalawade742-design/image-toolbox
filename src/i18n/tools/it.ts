@@ -4157,4 +4157,389 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Sfoca sfondo",
+    shortName: "Sfoca sfondo",
+    tagline: "Sfoca lo sfondo di una foto come la modalità ritratto della fotocamera, mantenendo nitida la persona. Funziona sul tuo dispositivo.",
+    intro:
+      "Sfoca sfondo dà a qualsiasi foto lo sfondo morbido e fuori fuoco della modalità ritratto di una fotocamera. Un modello di IA trova la persona sul tuo dispositivo, poi lo sfondo viene sfocato mentre il soggetto resta nitido, senza aloni sfocati attorno ai bordi. Un cursore regola l’intensità della sfocatura e salvi il risultato in JPG o PNG. Non viene caricato nulla: la foto e il modello restano nel tuo browser.",
+    seoTitle: "Sfocare lo sfondo di una foto online – Effetto ritratto",
+    seoDescription:
+      "Sfocare lo sfondo di una foto online mantenendo nitida la persona, come in modalità ritratto. Intensità regolabile, nel browser, gratis e privato.",
+    keywords: [
+      "sfocare lo sfondo",
+      "sfocare sfondo foto",
+      "modalità ritratto online",
+      "sfocare sfondo immagine",
+      "effetto bokeh online",
+      "sfondo sfocato",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi una foto",
+        description: "Trascina, scegli o incolla la foto di una persona. Funzionano anche le foto HEIC di iPhone.",
+      },
+      {
+        title: "Attendi il rilevamento",
+        description: "Il modello di IA trova la persona sul tuo dispositivo. La prima volta scarica circa 16 MB.",
+      },
+      {
+        title: "Regola la sfocatura",
+        description: "Sposta il cursore finché lo sfondo non ti sembra giusto.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva la foto in JPG, oppure in PNG per la massima qualità.",
+      },
+    ],
+    features: [
+      {
+        title: "Effetto ritratto",
+        description: "Lo sfondo diventa morbido mentre la persona resta nitida.",
+      },
+      {
+        title: "Nessun alone",
+        description: "La sfocatura riempie l’area dietro al soggetto con lo sfondo circostante, così i bordi restano puliti.",
+      },
+      {
+        title: "Regolabile",
+        description: "Scegli qualsiasi livello, da un leggero ammorbidimento a una sfocatura forte.",
+      },
+      {
+        title: "Privato",
+        description: "La foto viene elaborata nel tuo browser e non viene mai caricata.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Funziona con foto senza persone?",
+        answer:
+          "È pensato per le foto di persone. Animali e oggetti spesso funzionano, ma il modello può perderne alcune parti; in quei casi controlla i bordi prima di salvare.",
+      },
+      {
+        question: "Perché la prima foto è più lenta?",
+        answer:
+          "Il modello di IA viene scaricato una volta (circa 16 MB) e resta nel tuo browser. Dopo, le foto vengono elaborate in pochi secondi.",
+      },
+      {
+        question: "La mia foto perderà qualità?",
+        answer:
+          "La persona mantiene la risoluzione piena. Le foto molto grandi (oltre circa 16 megapixel) vengono prima ridotte per funzionare sui telefoni; la pagina ti avvisa quando succede.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer:
+          "No. Il rilevamento del soggetto e la sfocatura avvengono sul tuo dispositivo.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Cambia sfondo",
+    shortName: "Cambia sfondo",
+    tagline: "Sostituisci lo sfondo di una foto con un colore o un’altra immagine. Il soggetto viene ritagliato sul tuo dispositivo.",
+    intro:
+      "Cambia sfondo sostituisce lo sfondo di una foto con un colore pieno o un’immagine a tua scelta. Un modello di IA ritaglia la persona sul tuo dispositivo, poi la posiziona sul nuovo sfondo, adattato per riempire l’inquadratura. Scegli il bianco per un aspetto pulito da prodotto o da profilo, qualsiasi colore dal selettore, oppure usa una tua immagine come sfondo, e scarica in JPG o PNG. La foto non viene mai caricata.",
+    seoTitle: "Cambiare sfondo foto online – Colore o immagine, gratis",
+    seoDescription:
+      "Cambiare lo sfondo di una foto con il bianco, un colore o una tua immagine. Il soggetto viene ritagliato nel browser. Gratis, privato, senza registrazione.",
+    keywords: [
+      "cambiare sfondo foto",
+      "cambiare sfondo immagine",
+      "sostituire sfondo foto",
+      "foto sfondo bianco",
+      "mettere sfondo a una foto",
+      "cambia sfondo online",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi una foto",
+        description: "Trascina, scegli o incolla una foto. Funzionano anche le foto HEIC di iPhone.",
+      },
+      {
+        title: "Attendi il ritaglio",
+        description: "Il modello di IA separa il soggetto sul tuo dispositivo. La prima volta scarica circa 16 MB.",
+      },
+      {
+        title: "Scegli lo sfondo",
+        description: "Scegli un colore oppure usa un’immagine come nuovo sfondo.",
+      },
+      {
+        title: "Scarica",
+        description: "Salva la foto in JPG o PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Colore o immagine",
+        description: "Colori pronti, un selettore di colore o qualsiasi tua immagine.",
+      },
+      {
+        title: "Riempie l’inquadratura",
+        description: "Un’immagine di sfondo viene ridimensionata e centrata per coprire tutta la foto.",
+      },
+      {
+        title: "Risoluzione piena",
+        description: "Il risultato mantiene le dimensioni della tua foto.",
+      },
+      {
+        title: "Privato",
+        description: "Tutto avviene nel tuo browser; non viene caricato nulla.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso avere invece uno sfondo trasparente?",
+        answer:
+          "Sì: usa Rimuovi sfondo, che salva un PNG senza alcuno sfondo.",
+      },
+      {
+        question: "Funziona con prodotti e animali?",
+        answer:
+          "Funziona meglio con le persone. Per prodotti, animali e oggetti, il modello Massima qualità di Rimuovi sfondo dà bordi più puliti; poi puoi aggiungere uno sfondo in qualsiasi editor.",
+      },
+      {
+        question: "Perché la prima foto è più lenta?",
+        answer:
+          "Il modello di IA viene scaricato una volta (circa 16 MB) e resta nel tuo browser, quindi le foto successive richiedono solo pochi secondi.",
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer:
+          "No. Il ritaglio e il nuovo sfondo vengono creati sul tuo dispositivo.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Da immagine a testo",
+    shortName: "Immagine in testo",
+    tagline: "Copia il testo da una foto, uno screenshot o una scansione (OCR) in 10 lingue. L’immagine viene letta sul tuo dispositivo.",
+    intro:
+      "Da immagine a testo legge le parole in una foto, uno screenshot o una pagina scansionata e te le restituisce come testo da copiare, modificare o salvare in un file TXT. Usa Tesseract OCR nel tuo browser, con inglese, spagnolo, francese, tedesco, portoghese, italiano, giapponese, coreano, indonesiano e turco. Una barra di avanzamento mostra a che punto è arrivato e, se l’immagine è troppo sfocata per un risultato affidabile, la pagina te lo dice. L’immagine non viene mai caricata.",
+    seoTitle: "Immagine in testo – OCR online gratis",
+    seoDescription:
+      "Immagine in testo: estrai il testo da immagini, screenshot e scansioni con OCR gratis in 10 lingue. Copia o scarica il testo. Nel browser, nulla viene caricato.",
+    keywords: [
+      "immagine in testo",
+      "estrarre testo da immagine",
+      "ocr online",
+      "da foto a testo",
+      "convertire immagine in testo",
+      "copiare testo da immagine",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi un’immagine",
+        description: "Trascina, scegli o incolla una foto, uno screenshot o una scansione con del testo.",
+      },
+      {
+        title: "Controlla la lingua",
+        description: "La lingua della pagina viene scelta per te; cambiala se il testo è in un’altra.",
+      },
+      {
+        title: "Attendi il testo",
+        description: "Il testo compare appena è stato letto. Puoi correggerlo direttamente nel riquadro.",
+      },
+      {
+        title: "Copia o scarica",
+        description: "Copia il testo oppure salvalo come file TXT.",
+      },
+    ],
+    features: [
+      {
+        title: "10 lingue",
+        description: "Inclusi giapponese e coreano. Ogni lingua scarica da 1 a 4 MB una sola volta.",
+      },
+      {
+        title: "Risultato modificabile",
+        description: "Correggi qualsiasi parola nel riquadro prima di copiare o salvare.",
+      },
+      {
+        title: "Onesto sulla qualità",
+        description: "Compare un avviso quando l’immagine è troppo sfocata o piccola per essere letta in modo affidabile.",
+      },
+      {
+        title: "Privato",
+        description: "L’immagine viene letta nel tuo browser e non viene mai caricata.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Legge la scrittura a mano?",
+        answer:
+          "Non in modo affidabile. È pensato per il testo stampato, come documenti, screenshot, cartelli ed etichette. Una calligrafia ordinata a volte funziona, ma aspettati degli errori.",
+      },
+      {
+        question: "Come ottengo il risultato migliore?",
+        answer:
+          "Usa una foto nitida e ben illuminata, scattata frontalmente, con il testo grande nell’inquadratura. Gli screenshot vengono letti quasi alla perfezione.",
+      },
+      {
+        question: "Può leggere un PDF?",
+        answer:
+          "Prima converti la pagina in immagine con Da PDF a JPG, poi aggiungi qui quell’immagine.",
+      },
+      {
+        question: "La mia immagine viene caricata?",
+        answer:
+          "No. Il testo viene letto sul tuo dispositivo; l’immagine e il testo non lasciano mai il tuo browser.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "Generatore di codici QR",
+    shortName: "Generatore QR",
+    tagline: "Crea un codice QR per link, testo, rete Wi-Fi, email, numero di telefono o contatto, con i tuoi colori e il tuo logo, in PNG o SVG.",
+    intro:
+      "Generatore di codici QR crea un codice QR per un link web, un testo semplice, l’accesso a una rete Wi-Fi, un’email, un numero di telefono o un biglietto da visita. Scegli i colori, le dimensioni e la correzione degli errori, aggiungi il tuo logo al centro e scaricalo come immagine PNG o file SVG, che resta nitido a qualsiasi dimensione. Ogni codice viene verificato rileggendolo, così sai che funziona prima di stamparlo. I codici vengono creati nel tuo browser, gratis, senza registrazione e senza scadenza.",
+    seoTitle: "Generatore di codici QR gratis – Logo, colori, PNG e SVG",
+    seoDescription:
+      "Generatore di codici QR gratis per link, Wi-Fi, email, telefono o contatti, con colori e logo. Scarica PNG o SVG. Senza registrazione, non scadono mai.",
+    keywords: [
+      "generatore di codici qr",
+      "generatore qr code",
+      "creare qr code",
+      "qr code gratis",
+      "qr code con logo",
+      "qr code wifi",
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il contenuto",
+        description: "Scegli link, testo, Wi-Fi, email, telefono o contatto.",
+      },
+      {
+        title: "Inserisci i dati",
+        description: "Il codice QR si aggiorna mentre scrivi.",
+      },
+      {
+        title: "Personalizzalo",
+        description: "Imposta colori e dimensioni e, se vuoi, aggiungi un logo.",
+      },
+      {
+        title: "Scarica",
+        description: "Salvalo in PNG, oppure in SVG per la stampa e i formati grandi.",
+      },
+    ],
+    features: [
+      {
+        title: "Verificato prima di salvare",
+        description: "Il codice viene riletto automaticamente e vieni avvisato se potrebbe non essere letto.",
+      },
+      {
+        title: "Logo e colori",
+        description: "Aggiungi il tuo logo; viene usata la correzione degli errori più forte per mantenere il codice leggibile.",
+      },
+      {
+        title: "PNG e SVG",
+        description: "L’SVG resta nitido a qualsiasi dimensione, ideale per la stampa.",
+      },
+      {
+        title: "Non scade mai",
+        description: "Le informazioni sono salvate nel codice stesso, non su un server, quindi funziona per sempre.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Questi codici QR scadono?",
+        answer:
+          "No. Sono codici statici: tutto è salvato nel disegno stesso del codice, senza reindirizzamenti attraverso il nostro server, quindi continuano a funzionare per sempre.",
+      },
+      {
+        question: "Posso tracciare le scansioni o cambiare il link in seguito?",
+        answer:
+          "No. Servirebbe un codice dinamico che fa passare ogni scansione da un server, e questo strumento non lo fa. Il lato positivo è che nessuno vede chi scansiona il tuo codice.",
+      },
+      {
+        question: "Come funziona il codice Wi-Fi?",
+        answer:
+          "I telefoni che lo scansionano propongono di connettersi alla rete con il nome e la password che hai inserito. La password è salvata nel codice, quindi condividilo solo con le persone a cui la daresti.",
+      },
+      {
+        question: "Quale correzione degli errori devo scegliere?",
+        answer:
+          "M va bene per la maggior parte degli usi. H resiste a più danni e viene usata automaticamente con un logo; L crea il codice più piccolo per i testi lunghi.",
+      },
+      {
+        question: "Ciò che scrivo viene inviato da qualche parte?",
+        answer:
+          "No. Il codice viene creato nel tuo browser.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "Lettore di codici QR",
+    shortName: "Lettore QR",
+    tagline: "Leggi un codice QR da un’immagine o dalla fotocamera e vedi il link, la password Wi-Fi o il contatto che contiene prima di aprirlo.",
+    intro:
+      "Lettore di codici QR decodifica i codici QR da una foto, da uno screenshot o dalla tua fotocamera. Ti mostra cosa contiene il codice prima che succeda qualsiasi cosa: l’indirizzo web completo, una rete Wi-Fi e la sua password, un’email, un numero di telefono o un biglietto da visita che puoi salvare. I link non si aprono mai da soli, così puoi controllarli prima: un’abitudine utile, perché i codici QR vengono spesso usati per mandare le persone su siti falsi. Le immagini e i fotogrammi della fotocamera vengono letti sul tuo dispositivo.",
+    seoTitle: "Lettore di codici QR online – Da immagine o fotocamera",
+    seoDescription:
+      "Lettore di codici QR online: scansiona un codice da immagine, screenshot o fotocamera nel browser. Vedi link, password Wi-Fi o contatto prima di aprirlo.",
+    keywords: [
+      "lettore codici qr",
+      "leggere qr code da immagine",
+      "scanner qr code online",
+      "leggere codice qr",
+      "scanner qr",
+      "decodificare qr code",
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il codice",
+        description: "Trascina o scegli un’immagine con un codice QR, oppure scansionalo con la fotocamera.",
+      },
+      {
+        title: "Vedi cosa contiene",
+        description: "Link, dati Wi-Fi, email, numeri di telefono e contatti vengono mostrati in modo chiaro.",
+      },
+      {
+        title: "Controlla prima di aprire",
+        description: "Leggi l’indirizzo completo prima di aprire un link.",
+      },
+      {
+        title: "Usalo",
+        description: "Copia il testo, apri il link, chiama, scrivi un’email o salva il contatto.",
+      },
+    ],
+    features: [
+      {
+        title: "Immagine o fotocamera",
+        description: "Leggi i codici in screenshot e foto, oppure inquadrane uno con la fotocamera.",
+      },
+      {
+        title: "Sicuro di default",
+        description: "I link non si aprono mai automaticamente; prima vedi l’indirizzo completo.",
+      },
+      {
+        title: "Wi-Fi e contatti",
+        description: "Mostra le password delle reti e ti permette di salvare i biglietti da visita.",
+      },
+      {
+        title: "Privato",
+        description: "Le immagini e i fotogrammi della fotocamera vengono elaborati nel tuo browser e non vengono mai caricati.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Come scansiono un codice QR che si trova sul mio schermo?",
+        answer:
+          "Fai uno screenshot e aggiungilo qui; non ti serve un secondo dispositivo.",
+      },
+      {
+        question: "Perché dovrei controllare prima i link?",
+        answer:
+          "I codici QR su manifesti, parchimetri ed email a volte vengono sostituiti con altri che portano a siti falsi. Assicurati che l’indirizzo sia quello che ti aspetti prima di aprirlo o di inserire qualsiasi dato.",
+      },
+      {
+        question: "La fotocamera non si avvia. Cosa posso fare?",
+        answer:
+          "Consenti l’accesso alla fotocamera per questo sito nelle impostazioni del browser, oppure scatta una foto del codice e aggiungi l’immagine.",
+      },
+      {
+        question: "Le mie immagini o la fotocamera vengono inviate da qualche parte?",
+        answer:
+          "No. Tutto viene letto sul tuo dispositivo.",
+      },
+    ],
+  },
 };

@@ -3,7 +3,7 @@ import { Download, Loader2, AlertCircle, Eye, EyeOff, Eraser, RotateCcw, Check, 
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useImageIntake } from '../shared/useImageIntake';
 import { useT } from '../shared/I18nContext';
-import { RemovalProgressBar } from '../shared/RemovalProgressBar';
+import { RemovalProgressBar, activeDownload } from '../shared/RemovalProgressBar';
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
 import { fitWithinPixels } from '../../lib/canvas/limits';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
@@ -223,12 +223,13 @@ export function RemoveBackgroundWorkspace() {
     return <ProofDropZone onFiles={(files) => handleFile(files[0])} onPick={() => warmUp()} accept={ACCEPT} hint={t('ctl.bg.dropHint')} />;
   }
 
-  const progressLabel =
-    progress?.stage === 'processing' || !progress
-      ? t('ctl.bg.processing')
-      : progress.fraction !== undefined && progress.totalBytes
-        ? t('ctl.bg.downloadingModelSize', { loaded: formatBytes(progress.loadedBytes || 0), total: formatBytes(progress.totalBytes) })
-        : t('ctl.bg.downloadingModel');
+  // "x MB of y MB" only while the model itself downloads; once it is here (or was already), the work is under way
+  const download = activeDownload(progress);
+  const progressLabel = download
+    ? t('ctl.bg.downloadingModelSize', { loaded: formatBytes(download.loaded), total: formatBytes(download.total) })
+    : progress?.stage === 'downloading' && !ready[mode] && !progress.totalBytes
+      ? t('ctl.bg.downloadingModel')
+      : t('ctl.bg.processing');
   const downloadLabel = t('ws.download', { format: formatExtension(format).toUpperCase() });
 
   return (
@@ -245,7 +246,7 @@ export function RemoveBackgroundWorkspace() {
 
             {isRunning && (
               <div className="absolute inset-x-0 bottom-0 bg-paper border-t border-ink px-4 py-3">
-                <RemovalProgressBar progress={progress} mode={mode} label={progressLabel} />
+                <RemovalProgressBar key={runSeq.current} progress={progress} mode={mode} label={progressLabel} />
               </div>
             )}
           </div>

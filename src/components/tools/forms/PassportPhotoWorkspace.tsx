@@ -9,7 +9,7 @@ import { computeCrop, cropCentre, mmToPx, sheetLayout } from '../../../lib/canva
 import { setDpi } from '../../../lib/canvas/dpi';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { removeBackground, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
-import { RemovalProgressBar } from '../../shared/RemovalProgressBar';
+import { RemovalProgressBar, activeDownload } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
@@ -358,11 +358,12 @@ export function PassportPhotoWorkspace() {
                   progress={bgProgress}
                   mode="portrait"
                   live={false}
-                  label={
-                    bgProgress?.stage === 'downloading' && bgProgress.totalBytes
-                      ? t('ctl.bg.downloadingModelSize', { loaded: formatBytes(bgProgress.loadedBytes || 0), total: formatBytes(bgProgress.totalBytes) })
-                      : t('ctl.passport.bgWorking')
-                  }
+                  label={(() => {
+                    const download = activeDownload(bgProgress);
+                    return download
+                      ? t('ctl.bg.downloadingModelSize', { loaded: formatBytes(download.loaded), total: formatBytes(download.total) })
+                      : t('ctl.passport.bgWorking');
+                  })()}
                 />
               </div>
             )}

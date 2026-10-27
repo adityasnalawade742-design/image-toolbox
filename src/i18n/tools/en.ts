@@ -4011,4 +4011,358 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "blur-background": {
+    "name": "Blur Background",
+    "shortName": "Blur Background",
+    "tagline": "Blur the background of a photo like a portrait-mode camera, keeping the person sharp. Runs on your device.",
+    "intro": "Blur Background gives any photo the soft, out-of-focus background of a portrait-mode camera. An AI model finds the person on your device, then the background is blurred while the subject stays sharp, with no blurry halo around the edges. A slider sets how strong the blur is, and you save the result as JPG or PNG. Nothing is uploaded: the photo and the model both stay in your browser.",
+    "seoTitle": "Blur Background of Photo Online – Free Portrait Effect",
+    "seoDescription": "Blur the background of a photo online and keep the person sharp, like portrait mode. Adjustable strength, runs in your browser, free and private.",
+    "keywords": [
+      "blur background",
+      "blur photo background",
+      "portrait mode online",
+      "blur background of image",
+      "bokeh effect online",
+      "background blur editor"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add a photo",
+        "description": "Drop, choose or paste a photo of a person. iPhone HEIC photos work too."
+      },
+      {
+        "title": "Wait for the subject",
+        "description": "The AI model finds the person on your device. The first time, it downloads about 16 MB."
+      },
+      {
+        "title": "Set the blur",
+        "description": "Move the slider until the background looks right."
+      },
+      {
+        "title": "Download",
+        "description": "Save the photo as JPG, or PNG for the best quality."
+      }
+    ],
+    "features": [
+      {
+        "title": "Portrait-mode look",
+        "description": "The background goes soft while the person stays crisp."
+      },
+      {
+        "title": "No halo",
+        "description": "The blur fills in behind the subject from the surrounding background, so edges stay clean."
+      },
+      {
+        "title": "Adjustable",
+        "description": "Choose anything from a light softening to a strong blur."
+      },
+      {
+        "title": "Private",
+        "description": "The photo is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it work on photos without people?",
+        "answer": "It is made for photos of people. Pets and objects often work, but the model may miss parts of them; for those, check the edges before you save."
+      },
+      {
+        "question": "Why is the first photo slower?",
+        "answer": "The AI model downloads once (about 16 MB) and stays in your browser. After that, photos are processed in a few seconds."
+      },
+      {
+        "question": "Will my photo lose quality?",
+        "answer": "The person keeps full resolution. Very large photos (over about 16 megapixels) are reduced first so they work on phones; the page tells you when that happens."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. Finding the subject and blurring both happen on your device."
+      }
+    ]
+  },
+  "change-background": {
+    "name": "Change Background",
+    "shortName": "Change Background",
+    "tagline": "Replace the background of a photo with a color or another picture. The subject is cut out on your device.",
+    "intro": "Change Background swaps the background of a photo for a plain color or a picture of your choice. An AI model cuts out the person on your device, then places them on the new background, scaled to fill the frame. Pick white for a clean product or profile look, any color from the picker, or upload your own background image, and download as JPG or PNG. The photo is never uploaded.",
+    "seoTitle": "Change Photo Background Online – Color or Image, Free",
+    "seoDescription": "Change the background of a photo to white, any color or your own picture. The subject is cut out in your browser. Free, private, no sign-up.",
+    "keywords": [
+      "change background",
+      "change photo background",
+      "replace background",
+      "white background photo",
+      "add background to photo",
+      "background changer"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add a photo",
+        "description": "Drop, choose or paste a photo. iPhone HEIC photos work too."
+      },
+      {
+        "title": "Wait for the cut-out",
+        "description": "The AI model separates the subject on your device. The first time, it downloads about 16 MB."
+      },
+      {
+        "title": "Pick the background",
+        "description": "Choose a color, or use a picture as the new background."
+      },
+      {
+        "title": "Download",
+        "description": "Save the photo as JPG or PNG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Color or picture",
+        "description": "Ready-made colors, a color picker, or any image of your own."
+      },
+      {
+        "title": "Fills the frame",
+        "description": "A background picture is scaled and centered to cover the whole photo."
+      },
+      {
+        "title": "Full resolution",
+        "description": "The result keeps the size of your photo."
+      },
+      {
+        "title": "Private",
+        "description": "Everything happens in your browser; nothing is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I get a transparent background instead?",
+        "answer": "Yes: use Remove Background, which saves a PNG with no background at all."
+      },
+      {
+        "question": "Does it work for products and pets?",
+        "answer": "It works best on people. For products, pets and objects, Remove Background's Best quality model gives cleaner edges; you can then add a background in any editor."
+      },
+      {
+        "question": "Why is the first photo slower?",
+        "answer": "The AI model downloads once (about 16 MB) and stays in your browser, so later photos take only seconds."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. The cut-out and the new background are made on your device."
+      }
+    ]
+  },
+  "image-to-text": {
+    "name": "Image to Text",
+    "shortName": "Image to Text",
+    "tagline": "Copy the text out of a photo, screenshot or scan (OCR) in 10 languages. The image is read on your device.",
+    "intro": "Image to Text reads the words in a photo, screenshot or scanned page and gives them to you as text you can copy, edit or save as a TXT file. It uses Tesseract OCR running in your browser, with English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian and Turkish. A progress bar shows how far it has got, and if the image is too blurry for a reliable result, the page says so. The image is never uploaded.",
+    "seoTitle": "Image to Text Converter – Free OCR Online",
+    "seoDescription": "Extract text from images, screenshots and scans with free OCR in 10 languages. Copy or download the text. Runs in your browser; nothing is uploaded.",
+    "keywords": [
+      "image to text",
+      "extract text from image",
+      "ocr online",
+      "photo to text",
+      "picture to text",
+      "screenshot to text"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add an image",
+        "description": "Drop, choose or paste a photo, screenshot or scan with text."
+      },
+      {
+        "title": "Check the language",
+        "description": "The page's language is picked for you; change it if the text is in another one."
+      },
+      {
+        "title": "Wait for the text",
+        "description": "The text appears once it is read. You can correct it right in the box."
+      },
+      {
+        "title": "Copy or download",
+        "description": "Copy the text, or save it as a TXT file."
+      }
+    ],
+    "features": [
+      {
+        "title": "10 languages",
+        "description": "Including Japanese and Korean. Each language downloads 1 to 4 MB once."
+      },
+      {
+        "title": "Editable result",
+        "description": "Fix any word in the box before you copy or save it."
+      },
+      {
+        "title": "Honest about quality",
+        "description": "A warning appears when the image is too blurry or small to read reliably."
+      },
+      {
+        "title": "Private",
+        "description": "The image is read in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can it read handwriting?",
+        "answer": "Not reliably. It is made for printed text such as documents, screenshots, signs and labels. Neat handwriting sometimes works, but expect mistakes."
+      },
+      {
+        "question": "How do I get the best result?",
+        "answer": "Use a sharp, well-lit photo taken straight on, with the text large in the frame. Screenshots read almost perfectly."
+      },
+      {
+        "question": "Can it read a PDF?",
+        "answer": "Convert the page to an image first with PDF to JPG, then add that image here."
+      },
+      {
+        "question": "Is my image uploaded?",
+        "answer": "No. The text is read on your device; the image and the text never leave your browser."
+      }
+    ]
+  },
+  "qr-code-generator": {
+    "name": "QR Code Generator",
+    "shortName": "QR Generator",
+    "tagline": "Make a QR code for a link, text, Wi-Fi network, email, phone number or contact, with your colors and logo, as PNG or SVG.",
+    "intro": "QR Code Generator makes a QR code for a web link, plain text, Wi-Fi login, email, phone number or contact card. Choose the colors, the size and the error correction, add your logo in the middle, and download it as a PNG image or an SVG file that stays sharp at any size. Every code is checked by reading it back, so you know it scans before you print it. Codes are made in your browser, free, with no sign-up and no expiry.",
+    "seoTitle": "Free QR Code Generator – Logo, Colors, PNG & SVG",
+    "seoDescription": "Create QR codes for links, Wi-Fi, email, phone or contacts, with your colors and logo. Download PNG or SVG. Free, no sign-up, codes never expire.",
+    "keywords": [
+      "qr code generator",
+      "create qr code",
+      "free qr code generator",
+      "qr code with logo",
+      "wifi qr code",
+      "qr code svg"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose what it holds",
+        "description": "Pick link, text, Wi-Fi, email, phone or contact."
+      },
+      {
+        "title": "Fill in the details",
+        "description": "The QR code updates as you type."
+      },
+      {
+        "title": "Style it",
+        "description": "Set the colors and size, and add a logo if you like."
+      },
+      {
+        "title": "Download",
+        "description": "Save it as PNG, or SVG for print and large sizes."
+      }
+    ],
+    "features": [
+      {
+        "title": "Checked before you save",
+        "description": "The code is read back automatically, and you are warned if it may not scan."
+      },
+      {
+        "title": "Logo and colors",
+        "description": "Add your logo; the strongest error correction is used to keep it readable."
+      },
+      {
+        "title": "PNG and SVG",
+        "description": "SVG stays sharp at any size, ideal for print."
+      },
+      {
+        "title": "Never expires",
+        "description": "The information is stored in the code itself, not on a server, so it works forever."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do these QR codes expire?",
+        "answer": "No. They are static codes: everything is stored in the pattern itself, with no redirect through our server, so they keep working forever."
+      },
+      {
+        "question": "Can I track scans or change the link later?",
+        "answer": "No. That needs a dynamic code that sends every scan through a server, which this tool doesn't do. The upside is that no one sees who scans your code."
+      },
+      {
+        "question": "How does the Wi-Fi code work?",
+        "answer": "Phones that scan it offer to join the network with the name and password you entered. The password is stored in the code, so share it only with people you'd give it to."
+      },
+      {
+        "question": "Which error correction should I choose?",
+        "answer": "M suits most uses. H survives more damage and is used automatically with a logo; L makes the smallest code for long text."
+      },
+      {
+        "question": "Is what I type sent anywhere?",
+        "answer": "No. The code is made in your browser."
+      }
+    ]
+  },
+  "qr-code-reader": {
+    "name": "QR Code Reader",
+    "shortName": "QR Reader",
+    "tagline": "Read a QR code from an image or your camera and see the link, Wi-Fi password or contact it holds before you open it.",
+    "intro": "QR Code Reader decodes QR codes from a photo, a screenshot or your camera. It shows what the code holds before anything happens: the full web address, a Wi-Fi network and password, an email, a phone number or a contact card you can save. Links never open on their own, so you can check them first, a useful habit because QR codes are often used to send people to fake sites. Images and camera frames are read on your device.",
+    "seoTitle": "QR Code Reader Online – Scan from Image or Camera",
+    "seoDescription": "Scan a QR code from an image, screenshot or camera in your browser. See the link, Wi-Fi password or contact before opening it. Free and private.",
+    "keywords": [
+      "qr code reader",
+      "scan qr code from image",
+      "qr code scanner online",
+      "read qr code",
+      "qr scanner",
+      "decode qr code"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add the code",
+        "description": "Drop or choose an image with a QR code, or scan it with your camera."
+      },
+      {
+        "title": "See what it holds",
+        "description": "Links, Wi-Fi details, emails, phone numbers and contacts are shown clearly."
+      },
+      {
+        "title": "Check before opening",
+        "description": "Read the full address before you open a link."
+      },
+      {
+        "title": "Use it",
+        "description": "Copy the text, open the link, call, email or save the contact."
+      }
+    ],
+    "features": [
+      {
+        "title": "Image or camera",
+        "description": "Read codes in screenshots and photos, or point your camera at one."
+      },
+      {
+        "title": "Safe by default",
+        "description": "Links never open automatically; you see the full address first."
+      },
+      {
+        "title": "Wi-Fi and contacts",
+        "description": "Shows network passwords and lets you save contact cards."
+      },
+      {
+        "title": "Private",
+        "description": "Images and camera frames are processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I scan a QR code that is on my own screen?",
+        "answer": "Take a screenshot and add it here; you don't need a second device."
+      },
+      {
+        "question": "Why should I check links first?",
+        "answer": "QR codes on posters, parking meters and emails are sometimes swapped for ones that lead to fake sites. Make sure the address is the one you expect before you open it or enter any details."
+      },
+      {
+        "question": "The camera doesn't start. What can I do?",
+        "answer": "Allow camera access for this site in your browser's settings, or take a photo of the code and add the image instead."
+      },
+      {
+        "question": "Are my images or camera sent anywhere?",
+        "answer": "No. Everything is read on your device."
+      }
+    ]
+  },
 };

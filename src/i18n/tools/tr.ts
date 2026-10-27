@@ -4159,4 +4159,389 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Arka Plan Bulanıklaştırma",
+    shortName: "Arka Planı Bulanıklaştır",
+    tagline: "Bir fotoğrafın arka planını portre modundaki bir kamera gibi bulanıklaştırın, kişiyi net tutun. Cihazınızda çalışır.",
+    intro:
+      "Arka Plan Bulanıklaştırma, her fotoğrafa portre modundaki bir kameranın yumuşak, odak dışı arka planını verir. Bir yapay zekâ modeli kişiyi cihazınızda bulur, ardından özne net kalırken arka plan bulanıklaştırılır ve kenarlarda bulanık bir hale oluşmaz. Bir kaydırıcı bulanıklığın gücünü ayarlar; sonucu JPG veya PNG olarak kaydedersiniz. Hiçbir şey yüklenmez: fotoğraf da model de tarayıcınızda kalır.",
+    seoTitle: "Arka Planı Bulanıklaştırma – Ücretsiz Portre Efekti",
+    seoDescription:
+      "Arka planı bulanıklaştırma: fotoğrafın arka planını online bulanıklaştırın, kişiyi portre modundaki gibi net tutun. Güç ayarlanabilir, ücretsiz ve gizli.",
+    keywords: [
+      "arka planı bulanıklaştırma",
+      "fotoğraf arka planı bulanıklaştırma",
+      "arka plan bulanıklaştırma",
+      "portre modu online",
+      "bokeh efekti",
+      "fotoğrafın arkasını bulanık yapma",
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraf ekleyin",
+        description: "Bir kişinin fotoğrafını sürükleyin, seçin veya yapıştırın. iPhone HEIC fotoğrafları da çalışır.",
+      },
+      {
+        title: "Öznenin bulunmasını bekleyin",
+        description: "Yapay zekâ modeli kişiyi cihazınızda bulur. İlk seferde yaklaşık 16 MB indirir.",
+      },
+      {
+        title: "Bulanıklığı ayarlayın",
+        description: "Arka plan istediğiniz gibi görünene kadar kaydırıcıyı hareket ettirin.",
+      },
+      {
+        title: "İndirin",
+        description: "Fotoğrafı JPG olarak ya da en iyi kalite için PNG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Portre modu görünümü",
+        description: "Kişi keskin kalırken arka plan yumuşar.",
+      },
+      {
+        title: "Hale yok",
+        description: "Bulanıklık, öznenin arkasını çevredeki arka planla doldurur; böylece kenarlar temiz kalır.",
+      },
+      {
+        title: "Ayarlanabilir",
+        description: "Hafif bir yumuşatmadan güçlü bir bulanıklığa kadar istediğinizi seçin.",
+      },
+      {
+        title: "Gizli",
+        description: "Fotoğraf tarayıcınızda işlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "İnsan olmayan fotoğraflarda çalışır mı?",
+        answer:
+          "İnsan fotoğrafları için tasarlanmıştır. Evcil hayvanlar ve nesneler çoğu zaman çalışır, ancak model bazı kısımlarını kaçırabilir; bu durumda kaydetmeden önce kenarları kontrol edin.",
+      },
+      {
+        question: "İlk fotoğraf neden daha yavaş?",
+        answer:
+          "Yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır. Sonrasında fotoğraflar birkaç saniyede işlenir.",
+      },
+      {
+        question: "Fotoğrafım kalite kaybeder mi?",
+        answer:
+          "Kişi tam çözünürlüğünü korur. Çok büyük fotoğraflar (yaklaşık 16 megapikselin üzeri) telefonlarda çalışması için önce küçültülür; bu olduğunda sayfa size bildirir.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer:
+          "Hayır. Öznenin bulunması da bulanıklaştırma da cihazınızda gerçekleşir.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Arka Plan Değiştirme",
+    shortName: "Arka Planı Değiştir",
+    tagline: "Bir fotoğrafın arka planını bir renkle veya başka bir resimle değiştirin. Özne cihazınızda kesilip çıkarılır.",
+    intro:
+      "Arka Plan Değiştirme, bir fotoğrafın arka planını düz bir renkle veya seçtiğiniz bir resimle değiştirir. Bir yapay zekâ modeli kişiyi cihazınızda kesip çıkarır, ardından onu çerçeveyi dolduracak şekilde ölçeklenen yeni arka planın üzerine yerleştirir. Temiz bir ürün veya profil görünümü için beyazı, renk seçiciden herhangi bir rengi ya da kendi arka plan resminizi seçin ve JPG veya PNG olarak indirin. Fotoğraf asla yüklenmez.",
+    seoTitle: "Fotoğraf Arka Planı Değiştirme – Renk veya Resim",
+    seoDescription:
+      "Arka plan değiştirme: fotoğrafın arka planını beyaz, istediğiniz bir renk veya kendi resminiz yapın. Özne tarayıcıda kesilir. Ücretsiz, gizli, kayıt yok.",
+    keywords: [
+      "arka plan değiştirme",
+      "fotoğraf arka planı değiştirme",
+      "arka planı beyaz yapma",
+      "fotoğrafa arka plan ekleme",
+      "resim arka planı değiştirme",
+      "arka plan değiştirici",
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraf ekleyin",
+        description: "Bir fotoğrafı sürükleyin, seçin veya yapıştırın. iPhone HEIC fotoğrafları da çalışır.",
+      },
+      {
+        title: "Kesimi bekleyin",
+        description: "Yapay zekâ modeli özneyi cihazınızda ayırır. İlk seferde yaklaşık 16 MB indirir.",
+      },
+      {
+        title: "Arka planı seçin",
+        description: "Bir renk seçin veya yeni arka plan olarak bir resim kullanın.",
+      },
+      {
+        title: "İndirin",
+        description: "Fotoğrafı JPG veya PNG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Renk veya resim",
+        description: "Hazır renkler, bir renk seçici veya kendi resimlerinizden herhangi biri.",
+      },
+      {
+        title: "Çerçeveyi doldurur",
+        description: "Arka plan resmi, fotoğrafın tamamını kaplayacak şekilde ölçeklenir ve ortalanır.",
+      },
+      {
+        title: "Tam çözünürlük",
+        description: "Sonuç, fotoğrafınızın boyutunu korur.",
+      },
+      {
+        title: "Gizli",
+        description: "Her şey tarayıcınızda gerçekleşir; hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bunun yerine saydam bir arka plan alabilir miyim?",
+        answer:
+          "Evet: hiç arka planı olmayan bir PNG kaydeden Arka Plan Kaldırma aracını kullanın.",
+      },
+      {
+        question: "Ürünlerde ve evcil hayvanlarda çalışır mı?",
+        answer:
+          "En iyi sonucu insanlarda verir. Ürünler, evcil hayvanlar ve nesneler için Arka Plan Kaldırma aracının En iyi kalite modeli daha temiz kenarlar verir; ardından herhangi bir düzenleyicide arka plan ekleyebilirsiniz.",
+      },
+      {
+        question: "İlk fotoğraf neden daha yavaş?",
+        answer:
+          "Yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır; bu yüzden sonraki fotoğraflar yalnızca birkaç saniye sürer.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer:
+          "Hayır. Kesim ve yeni arka plan cihazınızda yapılır.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Resimden Metne",
+    shortName: "Resimden Metne",
+    tagline: "Bir fotoğraf, ekran görüntüsü veya taramadaki metni 10 dilde OCR ile kopyalayın. Resim cihazınızda okunur.",
+    intro:
+      "Resimden Metne, bir fotoğraftaki, ekran görüntüsündeki veya taranmış bir sayfadaki kelimeleri okur ve size kopyalayabileceğiniz, düzenleyebileceğiniz ya da TXT dosyası olarak kaydedebileceğiniz metin olarak verir. Tarayıcınızda çalışan Tesseract OCR'ı kullanır; İngilizce, İspanyolca, Fransızca, Almanca, Portekizce, İtalyanca, Japonca, Korece, Endonezce ve Türkçe desteklenir. Bir ilerleme çubuğu işin ne kadar ilerlediğini gösterir ve resim güvenilir bir sonuç için fazla bulanıksa sayfa bunu söyler. Resim asla yüklenmez.",
+    seoTitle: "Resimden Metne Çevirme – Ücretsiz Online OCR",
+    seoDescription:
+      "Resimden metne: resim, ekran görüntüsü ve taramalardaki metni 10 dilde ücretsiz OCR ile çıkarın. Metni kopyalayın veya indirin. Hiçbir şey yüklenmez.",
+    keywords: [
+      "resimden metne",
+      "resimden yazı çıkarma",
+      "fotoğraftan metne çevirme",
+      "online ocr",
+      "görselden metin çıkarma",
+      "ekran görüntüsünden yazı kopyalama",
+    ],
+    howToSteps: [
+      {
+        title: "Resim ekleyin",
+        description: "Metin içeren bir fotoğrafı, ekran görüntüsünü veya taramayı sürükleyin, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Dili kontrol edin",
+        description: "Sayfanın dili sizin için seçilir; metin başka bir dildeyse değiştirin.",
+      },
+      {
+        title: "Metni bekleyin",
+        description: "Metin okunur okunmaz görünür. Doğrudan kutunun içinde düzeltebilirsiniz.",
+      },
+      {
+        title: "Kopyalayın veya indirin",
+        description: "Metni kopyalayın ya da TXT dosyası olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "10 dil",
+        description: "Japonca ve Korece dahil. Her dil bir kez 1 ila 4 MB indirir.",
+      },
+      {
+        title: "Düzenlenebilir sonuç",
+        description: "Kopyalamadan veya kaydetmeden önce kutudaki herhangi bir kelimeyi düzeltin.",
+      },
+      {
+        title: "Kalite konusunda dürüst",
+        description: "Resim güvenilir şekilde okunamayacak kadar bulanık veya küçükse bir uyarı görünür.",
+      },
+      {
+        title: "Gizli",
+        description: "Resim tarayıcınızda okunur ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "El yazısını okuyabilir mi?",
+        answer:
+          "Güvenilir şekilde okuyamaz. Belgeler, ekran görüntüleri, tabelalar ve etiketler gibi basılı metinler için tasarlanmıştır. Düzgün el yazısı bazen işe yarar, ancak hatalar bekleyin.",
+      },
+      {
+        question: "En iyi sonucu nasıl alırım?",
+        answer:
+          "Metnin karede büyük göründüğü, karşıdan çekilmiş, net ve iyi aydınlatılmış bir fotoğraf kullanın. Ekran görüntüleri neredeyse kusursuz okunur.",
+      },
+      {
+        question: "PDF okuyabilir mi?",
+        answer:
+          "Önce PDF'ten JPG'ye aracıyla sayfayı resme dönüştürün, ardından o resmi buraya ekleyin.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer:
+          "Hayır. Metin cihazınızda okunur; resim de metin de tarayıcınızdan asla çıkmaz.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "QR Kod Oluşturucu",
+    shortName: "QR Oluşturucu",
+    tagline: "Bağlantı, metin, Wi-Fi ağı, e-posta, telefon numarası veya kişi için kendi renkleriniz ve logonuzla PNG ya da SVG QR kod oluşturun.",
+    intro:
+      "QR Kod Oluşturucu; bir web bağlantısı, düz metin, Wi-Fi girişi, e-posta, telefon numarası veya kişi kartı için QR kod oluşturur. Renkleri, boyutu ve hata düzeltmeyi seçin, ortaya logonuzu ekleyin ve kodu PNG resmi ya da her boyutta keskin kalan bir SVG dosyası olarak indirin. Her kod geri okunarak kontrol edilir; böylece yazdırmadan önce okunduğunu bilirsiniz. Kodlar tarayıcınızda, ücretsiz, kayıt olmadan ve süre sınırı olmadan oluşturulur.",
+    seoTitle: "Ücretsiz QR Kod Oluşturucu – Logo, Renk, PNG ve SVG",
+    seoDescription:
+      "QR kod oluşturucu: bağlantı, Wi-Fi, e-posta, telefon veya kişiler için renkli ve logolu QR kodlar yapın. PNG veya SVG indirin. Ücretsiz, kayıtsız, süresiz.",
+    keywords: [
+      "qr kod oluşturucu",
+      "qr kod oluşturma",
+      "ücretsiz qr kod oluşturma",
+      "logolu qr kod",
+      "wifi qr kod",
+      "qr kod svg",
+    ],
+    howToSteps: [
+      {
+        title: "İçeriği seçin",
+        description: "Bağlantı, metin, Wi-Fi, e-posta, telefon veya kişi seçin.",
+      },
+      {
+        title: "Bilgileri doldurun",
+        description: "QR kod siz yazarken güncellenir.",
+      },
+      {
+        title: "Görünümü ayarlayın",
+        description: "Renkleri ve boyutu ayarlayın, isterseniz bir logo ekleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG olarak ya da baskı ve büyük boyutlar için SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kaydetmeden önce kontrol",
+        description: "Kod otomatik olarak geri okunur ve okunmayabilecekse uyarılırsınız.",
+      },
+      {
+        title: "Logo ve renkler",
+        description: "Logonuzu ekleyin; kodun okunabilir kalması için en güçlü hata düzeltme kullanılır.",
+      },
+      {
+        title: "PNG ve SVG",
+        description: "SVG her boyutta keskin kalır, baskı için idealdir.",
+      },
+      {
+        title: "Süresi dolmaz",
+        description: "Bilgiler bir sunucuda değil, kodun kendisinde saklanır; bu yüzden sonsuza kadar çalışır.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bu QR kodların süresi dolar mı?",
+        answer:
+          "Hayır. Bunlar statik kodlardır: her şey desenin kendisinde saklanır, sunucumuz üzerinden yönlendirme yoktur; bu yüzden sonsuza kadar çalışmaya devam ederler.",
+      },
+      {
+        question: "Taramaları takip edebilir veya bağlantıyı sonradan değiştirebilir miyim?",
+        answer:
+          "Hayır. Bunun için her taramayı bir sunucudan geçiren dinamik bir kod gerekir ve bu araç bunu yapmaz. İyi tarafı, kodunuzu kimin taradığını kimsenin görmemesidir.",
+      },
+      {
+        question: "Wi-Fi kodu nasıl çalışır?",
+        answer:
+          "Kodu tarayan telefonlar, girdiğiniz ad ve şifreyle ağa katılmayı önerir. Şifre kodun içinde saklanır; bu yüzden kodu yalnızca şifreyi vereceğiniz kişilerle paylaşın.",
+      },
+      {
+        question: "Hangi hata düzeltmeyi seçmeliyim?",
+        answer:
+          "Çoğu kullanım için M uygundur. H daha fazla hasara dayanır ve logo eklendiğinde otomatik olarak kullanılır; L uzun metinler için en küçük kodu üretir.",
+      },
+      {
+        question: "Yazdıklarım bir yere gönderiliyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "QR Kod Okuyucu",
+    shortName: "QR Okuyucu",
+    tagline: "Bir resimden veya kameranızdan QR kod okuyun; açmadan önce içindeki bağlantıyı, Wi-Fi şifresini veya kişiyi görün.",
+    intro:
+      "QR Kod Okuyucu, QR kodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan çözer. Herhangi bir şey olmadan önce kodun içeriğini gösterir: tam web adresi, bir Wi-Fi ağı ve şifresi, bir e-posta, bir telefon numarası veya kaydedebileceğiniz bir kişi kartı. Bağlantılar asla kendiliğinden açılmaz, böylece önce kontrol edebilirsiniz. Bu yararlı bir alışkanlıktır, çünkü QR kodlar insanları sahte sitelere yönlendirmek için sıkça kullanılır. Resimler ve kamera kareleri cihazınızda okunur.",
+    seoTitle: "Online QR Kod Okuyucu – Resimden veya Kameradan Okuyun",
+    seoDescription:
+      "QR kod okuyucu: tarayıcınızda resimden, ekran görüntüsünden veya kameradan QR kod okuyun. Açmadan önce bağlantıyı, Wi-Fi şifresini veya kişiyi görün.",
+    keywords: [
+      "qr kod okuyucu",
+      "resimden qr kod okuma",
+      "online qr kod okuyucu",
+      "qr kod okuma",
+      "qr kod tarayıcı",
+      "fotoğraftan qr kod okuma",
+    ],
+    howToSteps: [
+      {
+        title: "Kodu ekleyin",
+        description: "QR kod içeren bir resmi sürükleyin veya seçin ya da kodu kamerayla tarayın.",
+      },
+      {
+        title: "İçeriğini görün",
+        description: "Bağlantılar, Wi-Fi bilgileri, e-postalar, telefon numaraları ve kişiler açıkça gösterilir.",
+      },
+      {
+        title: "Açmadan önce kontrol edin",
+        description: "Bir bağlantıyı açmadan önce tam adresi okuyun.",
+      },
+      {
+        title: "Kullanın",
+        description: "Metni kopyalayın, bağlantıyı açın, arayın, e-posta yazın veya kişiyi kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Resim veya kamera",
+        description: "Ekran görüntülerindeki ve fotoğraflardaki kodları okuyun ya da kameranızı bir koda doğrultun.",
+      },
+      {
+        title: "Varsayılan olarak güvenli",
+        description: "Bağlantılar asla otomatik olarak açılmaz; önce tam adresi görürsünüz.",
+      },
+      {
+        title: "Wi-Fi ve kişiler",
+        description: "Ağ şifrelerini gösterir ve kişi kartlarını kaydetmenizi sağlar.",
+      },
+      {
+        title: "Gizli",
+        description: "Resimler ve kamera kareleri tarayıcınızda işlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kendi ekranımdaki bir QR kodu nasıl tararım?",
+        answer:
+          "Ekran görüntüsü alın ve buraya ekleyin; ikinci bir cihaza ihtiyacınız yok.",
+      },
+      {
+        question: "Bağlantıları neden önce kontrol etmeliyim?",
+        answer:
+          "Afişlerdeki, otopark ödeme makinelerindeki ve e-postalardaki QR kodlar bazen sahte sitelere götüren kodlarla değiştirilir. Açmadan veya herhangi bir bilgi girmeden önce adresin beklediğiniz adres olduğundan emin olun.",
+      },
+      {
+        question: "Kamera açılmıyor. Ne yapabilirim?",
+        answer:
+          "Tarayıcınızın ayarlarından bu site için kamera erişimine izin verin ya da kodun fotoğrafını çekip resmi ekleyin.",
+      },
+      {
+        question: "Resimlerim veya kamera görüntüm bir yere gönderiliyor mu?",
+        answer:
+          "Hayır. Her şey cihazınızda okunur.",
+      },
+    ],
+  },
 };

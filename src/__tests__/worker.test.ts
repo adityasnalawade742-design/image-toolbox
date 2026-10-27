@@ -50,6 +50,6 @@ describe('Edge Worker', () => {
     expect(block).toMatch(/^\s+X-Frame-Options: DENY$/m);
     expect(block).toMatch(/^\s+X-Content-Type-Options: nosniff$/m);
     expect(block).toMatch(/^\s+Referrer-Policy: strict-origin-when-cross-origin$/m);
-    expect(block).toMatch(/^\s+Permissions-Policy: camera=\(\), microphone=\(\), geolocation=\(\)$/m);
+    expect(block).toMatch(/^\s+Permissions-Policy: camera=\(self\), microphone=\(\), geolocation=\(\)$/m);
   });
 });

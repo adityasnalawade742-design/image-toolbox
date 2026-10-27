@@ -4151,4 +4151,389 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Desenfocar fondo",
+    shortName: "Desenfocar fondo",
+    tagline: "Desenfoca el fondo de una foto como el modo retrato de una cámara y mantén a la persona nítida. Funciona en tu dispositivo.",
+    intro:
+      "Desenfocar fondo da a cualquier foto el fondo suave y desenfocado del modo retrato de una cámara. Un modelo de IA encuentra a la persona en tu dispositivo y luego desenfoca el fondo mientras el sujeto se mantiene nítido, sin halo borroso alrededor de los bordes. Un control deslizante ajusta la intensidad del desenfoque, y guardas el resultado como JPG o PNG. No se sube nada: la foto y el modelo se quedan en tu navegador.",
+    seoTitle: "Desenfocar fondo de foto online – Efecto retrato gratis",
+    seoDescription:
+      "Desenfocar fondo de una foto online y mantener a la persona nítida, como en modo retrato. Intensidad ajustable, funciona en tu navegador, gratis y privado.",
+    keywords: [
+      "desenfocar fondo",
+      "desenfocar fondo de foto",
+      "modo retrato online",
+      "difuminar fondo de foto",
+      "efecto bokeh online",
+      "desenfocar fondo de imagen online",
+    ],
+    howToSteps: [
+      {
+        title: "Añade una foto",
+        description: "Suelta, elige o pega una foto de una persona. También funcionan las fotos HEIC de iPhone.",
+      },
+      {
+        title: "Espera a que se detecte el sujeto",
+        description: "El modelo de IA encuentra a la persona en tu dispositivo. La primera vez descarga unos 16 MB.",
+      },
+      {
+        title: "Ajusta el desenfoque",
+        description: "Mueve el control Intensidad del desenfoque hasta que el fondo quede como quieres.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda la foto como JPG, o como PNG para obtener la mejor calidad.",
+      },
+    ],
+    features: [
+      {
+        title: "Efecto modo retrato",
+        description: "El fondo se suaviza mientras la persona queda nítida.",
+      },
+      {
+        title: "Sin halo",
+        description: "El desenfoque rellena la zona detrás del sujeto con el fondo que la rodea, así que los bordes quedan limpios.",
+      },
+      {
+        title: "Ajustable",
+        description: "Elige desde un suavizado ligero hasta un desenfoque intenso.",
+      },
+      {
+        title: "Privado",
+        description: "La foto se procesa en tu navegador y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Funciona con fotos sin personas?",
+        answer:
+          "Está pensado para fotos de personas. Con mascotas y objetos suele funcionar, pero el modelo puede pasar por alto partes de ellos; en esos casos, revisa los bordes antes de guardar.",
+      },
+      {
+        question: "¿Por qué la primera foto tarda más?",
+        answer:
+          "El modelo de IA se descarga una vez (unos 16 MB) y se queda en tu navegador. Después, las fotos se procesan en pocos segundos.",
+      },
+      {
+        question: "¿Perderá calidad mi foto?",
+        answer:
+          "La persona mantiene la resolución completa. Las fotos muy grandes (de más de unos 16 megapíxeles) se reducen primero para que funcionen en móviles; la página te avisa cuando ocurre.",
+      },
+      {
+        question: "¿Se sube mi foto?",
+        answer:
+          "No. La detección del sujeto y el desenfoque se hacen en tu dispositivo.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Cambiar fondo",
+    shortName: "Cambiar fondo",
+    tagline: "Sustituye el fondo de una foto por un color u otra imagen. El sujeto se recorta en tu dispositivo.",
+    intro:
+      "Cambiar fondo sustituye el fondo de una foto por un color sólido o una imagen que elijas. Un modelo de IA recorta a la persona en tu dispositivo y luego la coloca sobre el nuevo fondo, escalado para llenar todo el encuadre. Elige blanco para un aspecto limpio de producto o de perfil, cualquier color del selector o tu propia imagen de fondo, y descarga el resultado como JPG o PNG. La foto nunca se sube.",
+    seoTitle: "Cambiar fondo de foto online – Color o imagen, gratis",
+    seoDescription:
+      "Cambiar fondo de una foto a blanco, a cualquier color o a tu propia imagen. El sujeto se recorta en tu navegador. Gratis, privado y sin registro.",
+    keywords: [
+      "cambiar fondo de foto",
+      "cambiar fondo",
+      "poner fondo blanco a una foto",
+      "reemplazar fondo de imagen",
+      "cambiar fondo de imagen online",
+      "editor de fondo de fotos",
+    ],
+    howToSteps: [
+      {
+        title: "Añade una foto",
+        description: "Suelta, elige o pega una foto. También funcionan las fotos HEIC de iPhone.",
+      },
+      {
+        title: "Espera al recorte",
+        description: "El modelo de IA separa al sujeto en tu dispositivo. La primera vez descarga unos 16 MB.",
+      },
+      {
+        title: "Elige el fondo",
+        description: "Elige un color o usa una imagen como nuevo fondo.",
+      },
+      {
+        title: "Descarga",
+        description: "Guarda la foto como JPG o PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Color o imagen",
+        description: "Colores listos para usar, un selector de color o cualquier imagen tuya.",
+      },
+      {
+        title: "Llena el encuadre",
+        description: "La imagen de fondo se escala y se centra para cubrir toda la foto.",
+      },
+      {
+        title: "Resolución completa",
+        description: "El resultado mantiene el tamaño de tu foto.",
+      },
+      {
+        title: "Privado",
+        description: "Todo ocurre en tu navegador; no se sube nada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo conseguir un fondo transparente?",
+        answer:
+          "Sí: usa Quitar fondo, que guarda un PNG sin ningún fondo.",
+      },
+      {
+        question: "¿Funciona con productos y mascotas?",
+        answer:
+          "Funciona mejor con personas. Para productos, mascotas y objetos, el modelo Máxima calidad de Quitar fondo da bordes más limpios; después puedes añadir un fondo en cualquier editor.",
+      },
+      {
+        question: "¿Por qué la primera foto tarda más?",
+        answer:
+          "El modelo de IA se descarga una vez (unos 16 MB) y se queda en tu navegador, así que las siguientes fotos tardan solo unos segundos.",
+      },
+      {
+        question: "¿Se sube mi foto?",
+        answer:
+          "No. El recorte y el nuevo fondo se hacen en tu dispositivo.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Imagen a texto",
+    shortName: "Imagen a texto",
+    tagline: "Copia el texto de una foto, captura de pantalla o escaneo (OCR) en 10 idiomas. La imagen se lee en tu dispositivo.",
+    intro:
+      "Imagen a texto lee las palabras de una foto, una captura de pantalla o una página escaneada y te las da como texto que puedes copiar, editar o guardar como archivo TXT. Usa Tesseract OCR en tu navegador, con inglés, español, francés, alemán, portugués, italiano, japonés, coreano, indonesio y turco. Una barra de progreso muestra cuánto lleva, y si la imagen está demasiado borrosa para un resultado fiable, la página te lo dice. La imagen nunca se sube.",
+    seoTitle: "Imagen a texto – OCR online gratis",
+    seoDescription:
+      "Imagen a texto: extrae el texto de imágenes, capturas y escaneos con OCR gratis en 10 idiomas. Copia o descarga el texto. En tu navegador, sin subir nada.",
+    keywords: [
+      "imagen a texto",
+      "extraer texto de imagen",
+      "ocr online",
+      "convertir imagen a texto",
+      "foto a texto",
+      "pasar imagen a texto",
+    ],
+    howToSteps: [
+      {
+        title: "Añade una imagen",
+        description: "Suelta, elige o pega una foto, captura de pantalla o escaneo con texto.",
+      },
+      {
+        title: "Comprueba el idioma",
+        description: "El idioma de la página ya viene elegido; cámbialo si el texto está en otro.",
+      },
+      {
+        title: "Espera al texto",
+        description: "El texto aparece en cuanto se lee. Puedes corregirlo directamente en el cuadro.",
+      },
+      {
+        title: "Copia o descarga",
+        description: "Usa Copiar texto, o Descargar texto (TXT) para guardarlo como archivo TXT.",
+      },
+    ],
+    features: [
+      {
+        title: "10 idiomas",
+        description: "Incluidos japonés y coreano. Cada idioma descarga de 1 a 4 MB una sola vez.",
+      },
+      {
+        title: "Resultado editable",
+        description: "Corrige cualquier palabra en el cuadro antes de copiarla o guardarla.",
+      },
+      {
+        title: "Sincero sobre la calidad",
+        description: "Aparece un aviso cuando la imagen es demasiado borrosa o pequeña para leerla con fiabilidad.",
+      },
+      {
+        title: "Privado",
+        description: "La imagen se lee en tu navegador y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puede leer escritura a mano?",
+        answer:
+          "No de forma fiable. Está pensado para texto impreso, como documentos, capturas de pantalla, carteles y etiquetas. La letra a mano clara a veces funciona, pero cuenta con errores.",
+      },
+      {
+        question: "¿Cómo consigo el mejor resultado?",
+        answer:
+          "Usa una foto nítida, bien iluminada y tomada de frente, con el texto grande en el encuadre. Las capturas de pantalla se leen casi a la perfección.",
+      },
+      {
+        question: "¿Puede leer un PDF?",
+        answer:
+          "Convierte primero la página en imagen con PDF a JPG y luego añade esa imagen aquí.",
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer:
+          "No. El texto se lee en tu dispositivo; ni la imagen ni el texto salen de tu navegador.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "Generador de códigos QR",
+    shortName: "Generador QR",
+    tagline: "Crea un código QR para un enlace, texto, red Wi-Fi, correo, teléfono o contacto, con tus colores y tu logotipo, en PNG o SVG.",
+    intro:
+      "Generador de códigos QR crea un código QR para un enlace web, texto sin formato, el acceso a una red Wi-Fi, un correo, un número de teléfono o una tarjeta de contacto. Elige los colores, el tamaño y la corrección de errores, añade tu logotipo en el centro y descárgalo como imagen PNG o como archivo SVG, que se ve nítido a cualquier tamaño. Cada código se comprueba leyéndolo de nuevo, así sabes que se escanea antes de imprimirlo. Los códigos se crean en tu navegador, gratis, sin registro y sin caducidad.",
+    seoTitle: "Generador de códigos QR gratis – Logo, colores, PNG y SVG",
+    seoDescription:
+      "Generador de códigos QR para enlaces, Wi-Fi, correo, teléfono o contactos, con tus colores y logotipo. En PNG o SVG. Gratis, sin registro, sin caducidad.",
+    keywords: [
+      "generador de códigos qr",
+      "crear código qr",
+      "generador de qr gratis",
+      "código qr con logo",
+      "código qr wifi",
+      "código qr svg",
+    ],
+    howToSteps: [
+      {
+        title: "Elige el contenido",
+        description: "Elige enlace, texto, Wi-Fi, correo, teléfono o contacto.",
+      },
+      {
+        title: "Rellena los datos",
+        description: "El código QR se actualiza mientras escribes.",
+      },
+      {
+        title: "Dale estilo",
+        description: "Ajusta los colores y el tamaño, y añade un logotipo si quieres.",
+      },
+      {
+        title: "Descarga",
+        description: "Guárdalo como PNG, o como SVG para imprimir y para tamaños grandes.",
+      },
+    ],
+    features: [
+      {
+        title: "Comprobado antes de guardar",
+        description: "El código se vuelve a leer automáticamente, y te avisamos si puede que no se escanee.",
+      },
+      {
+        title: "Logotipo y colores",
+        description: "Añade tu logotipo; se usa la corrección de errores más alta para que siga siendo legible.",
+      },
+      {
+        title: "PNG y SVG",
+        description: "El SVG se ve nítido a cualquier tamaño, ideal para imprimir.",
+      },
+      {
+        title: "No caduca",
+        description: "La información se guarda en el propio código, no en un servidor, así que funciona para siempre.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Caducan estos códigos QR?",
+        answer:
+          "No. Son códigos estáticos: todo se guarda en el propio patrón, sin redirección a través de nuestro servidor, así que funcionan para siempre.",
+      },
+      {
+        question: "¿Puedo hacer seguimiento de los escaneos o cambiar el enlace después?",
+        answer:
+          "No. Para eso hace falta un código dinámico que pase cada escaneo por un servidor, y esta herramienta no lo hace. La ventaja es que nadie ve quién escanea tu código.",
+      },
+      {
+        question: "¿Cómo funciona el código Wi-Fi?",
+        answer:
+          "Los móviles que lo escanean ofrecen conectarse a la red con el nombre y la contraseña que has introducido. La contraseña se guarda en el código, así que compártelo solo con quien le darías la contraseña.",
+      },
+      {
+        question: "¿Qué corrección de errores elijo?",
+        answer:
+          "M sirve para la mayoría de los usos. H resiste más daños y se usa automáticamente con un logotipo; L crea el código más pequeño para textos largos.",
+      },
+      {
+        question: "¿Se envía a algún sitio lo que escribo?",
+        answer:
+          "No. El código se crea en tu navegador.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "Lector de códigos QR",
+    shortName: "Lector QR",
+    tagline: "Lee un código QR desde una imagen o con tu cámara y mira el enlace, la contraseña Wi-Fi o el contacto que contiene antes de abrirlo.",
+    intro:
+      "Lector de códigos QR descifra códigos QR de una foto, una captura de pantalla o tu cámara. Muestra lo que contiene el código antes de que pase nada: la dirección web completa, una red Wi-Fi y su contraseña, un correo, un número de teléfono o una tarjeta de contacto que puedes guardar. Los enlaces nunca se abren solos, así que puedes revisarlos antes, una buena costumbre porque los códigos QR se usan a menudo para llevar a la gente a sitios falsos. Las imágenes y los fotogramas de la cámara se leen en tu dispositivo.",
+    seoTitle: "Lector de códigos QR online – Desde imagen o cámara",
+    seoDescription:
+      "Escanear código QR desde una imagen, una captura o la cámara en tu navegador. Mira el enlace, la contraseña Wi-Fi o el contacto antes de abrirlo. Gratis.",
+    keywords: [
+      "lector de códigos qr",
+      "escanear código qr desde imagen",
+      "leer código qr",
+      "escáner qr online",
+      "lector qr online",
+      "escanear qr desde captura de pantalla",
+    ],
+    howToSteps: [
+      {
+        title: "Añade el código",
+        description: "Suelta o elige una imagen con un código QR, o usa Escanear con la cámara.",
+      },
+      {
+        title: "Mira lo que contiene",
+        description: "Los enlaces, los datos Wi-Fi, los correos, los teléfonos y los contactos se muestran con claridad.",
+      },
+      {
+        title: "Comprueba antes de abrir",
+        description: "Lee la dirección completa antes de pulsar Abrir enlace.",
+      },
+      {
+        title: "Úsalo",
+        description: "Copia el texto, abre el enlace, llama, escribe un correo o guarda el contacto.",
+      },
+    ],
+    features: [
+      {
+        title: "Imagen o cámara",
+        description: "Lee códigos en capturas de pantalla y fotos, o apunta la cámara a uno.",
+      },
+      {
+        title: "Seguro por defecto",
+        description: "Los enlaces nunca se abren automáticamente; primero ves la dirección completa.",
+      },
+      {
+        title: "Wi-Fi y contactos",
+        description: "Muestra las contraseñas de red y te deja guardar tarjetas de contacto.",
+      },
+      {
+        title: "Privado",
+        description: "Las imágenes y los fotogramas de la cámara se procesan en tu navegador y nunca se suben.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cómo escaneo un código QR que está en mi propia pantalla?",
+        answer:
+          "Haz una captura de pantalla y añádela aquí; no necesitas un segundo dispositivo.",
+      },
+      {
+        question: "¿Por qué debo revisar los enlaces antes?",
+        answer:
+          "A veces los códigos QR de carteles, parquímetros y correos se sustituyen por otros que llevan a sitios falsos. Asegúrate de que la dirección es la que esperas antes de abrirla o de introducir ningún dato.",
+      },
+      {
+        question: "La cámara no se inicia. ¿Qué puedo hacer?",
+        answer:
+          "Permite el acceso a la cámara para este sitio en los ajustes del navegador, o haz una foto del código y añade la imagen.",
+      },
+      {
+        question: "¿Se envían mis imágenes o la cámara a algún sitio?",
+        answer:
+          "No. Todo se lee en tu dispositivo.",
+      },
+    ],
+  },
 };

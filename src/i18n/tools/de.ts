@@ -4158,4 +4158,389 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "blur-background": {
+    name: "Hintergrund unscharf machen",
+    shortName: "Hintergrund unscharf",
+    tagline: "Mach den Hintergrund eines Fotos unscharf wie mit dem Porträtmodus einer Kamera, die Person bleibt scharf. Läuft auf deinem Gerät.",
+    intro:
+      "Hintergrund unscharf machen gibt jedem Foto den weichen, unscharfen Hintergrund des Porträtmodus einer Kamera. Ein KI-Modell findet die Person auf deinem Gerät, dann wird der Hintergrund weichgezeichnet, während das Motiv scharf bleibt, ohne verschwommenen Lichthof an den Kanten. Mit einem Regler stellst du ein, wie stark die Unschärfe ist, und speicherst das Ergebnis als JPG oder PNG. Nichts wird hochgeladen: Das Foto und das Modell bleiben beide in deinem Browser.",
+    seoTitle: "Hintergrund unscharf machen – Porträt-Effekt online",
+    seoDescription:
+      "Hintergrund unscharf machen: Verwisch den Hintergrund eines Fotos online, die Person bleibt scharf wie im Porträtmodus. Stärke einstellbar, kostenlos, privat.",
+    keywords: [
+      "hintergrund unscharf machen",
+      "foto hintergrund unscharf machen",
+      "porträtmodus online",
+      "hintergrund weichzeichnen",
+      "bokeh effekt online",
+      "bild hintergrund verschwommen machen",
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh ein Foto einer Person hierher, wähle es aus oder füge es ein. iPhone-HEIC-Fotos funktionieren auch.",
+      },
+      {
+        title: "Auf das Motiv warten",
+        description: "Das KI-Modell findet die Person auf deinem Gerät. Beim ersten Mal lädt es etwa 16 MB herunter.",
+      },
+      {
+        title: "Unschärfe einstellen",
+        description: "Beweg den Regler „Stärke der Unschärfe“, bis der Hintergrund passt.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das Foto als JPG oder für die beste Qualität als PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Porträtmodus-Look",
+        description: "Der Hintergrund wird weich, die Person bleibt gestochen scharf.",
+      },
+      {
+        title: "Kein Lichthof",
+        description: "Die Unschärfe hinter dem Motiv wird aus dem umgebenden Hintergrund aufgefüllt, die Kanten bleiben also sauber.",
+      },
+      {
+        title: "Einstellbar",
+        description: "Wähle alles von einer leichten Weichzeichnung bis zu starker Unschärfe.",
+      },
+      {
+        title: "Privat",
+        description: "Das Foto wird in deinem Browser bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Funktioniert es auch bei Fotos ohne Menschen?",
+        answer:
+          "Es ist für Fotos von Menschen gemacht. Haustiere und Objekte klappen oft, aber das Modell kann Teile davon übersehen; prüf in diesem Fall die Kanten, bevor du speicherst.",
+      },
+      {
+        question: "Warum dauert das erste Foto länger?",
+        answer:
+          "Das KI-Modell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser. Danach werden Fotos in wenigen Sekunden bearbeitet.",
+      },
+      {
+        question: "Verliert mein Foto an Qualität?",
+        answer:
+          "Die Person behält die volle Auflösung. Sehr große Fotos (über etwa 16 Megapixel) werden zuerst verkleinert, damit sie auf Handys funktionieren; die Seite sagt dir, wenn das passiert.",
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer:
+          "Nein. Das Finden des Motivs und das Weichzeichnen passieren beide auf deinem Gerät.",
+      },
+    ],
+  },
+  "change-background": {
+    name: "Hintergrund ändern",
+    shortName: "Hintergrund ändern",
+    tagline: "Ersetz den Hintergrund eines Fotos durch eine Farbe oder ein anderes Bild. Das Motiv wird auf deinem Gerät freigestellt.",
+    intro:
+      "Hintergrund ändern tauscht den Hintergrund eines Fotos gegen eine Volltonfarbe oder ein Bild deiner Wahl. Ein KI-Modell stellt die Person auf deinem Gerät frei und setzt sie dann auf den neuen Hintergrund, so skaliert, dass er das ganze Bild füllt. Wähl Weiß für einen sauberen Produkt- oder Profil-Look, eine beliebige Farbe aus der Farbauswahl oder ein eigenes Hintergrundbild, und lade das Ergebnis als JPG oder PNG herunter. Das Foto wird nie hochgeladen.",
+    seoTitle: "Foto-Hintergrund ändern – Farbe oder Bild, kostenlos",
+    seoDescription:
+      "Hintergrund ändern: Setz dein Foto online auf Weiß, eine beliebige Farbe oder ein eigenes Bild. Das Motiv wird im Browser freigestellt. Kostenlos und privat.",
+    keywords: [
+      "hintergrund ändern",
+      "foto hintergrund ändern",
+      "hintergrund ersetzen",
+      "weißer hintergrund foto",
+      "bild hintergrund austauschen",
+      "hintergrund einfügen",
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh ein Foto hierher, wähle es aus oder füge es ein. iPhone-HEIC-Fotos funktionieren auch.",
+      },
+      {
+        title: "Auf das Freistellen warten",
+        description: "Das KI-Modell trennt das Motiv auf deinem Gerät ab. Beim ersten Mal lädt es etwa 16 MB herunter.",
+      },
+      {
+        title: "Hintergrund wählen",
+        description: "Wähle eine Farbe oder nimm ein Bild als neuen Hintergrund.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das Foto als JPG oder PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "Farbe oder Bild",
+        description: "Fertige Farben, eine Farbauswahl oder ein beliebiges eigenes Bild.",
+      },
+      {
+        title: "Füllt das Bild",
+        description: "Ein Hintergrundbild wird skaliert und zentriert, sodass es das ganze Foto bedeckt.",
+      },
+      {
+        title: "Volle Auflösung",
+        description: "Das Ergebnis behält die Größe deines Fotos.",
+      },
+      {
+        title: "Privat",
+        description: "Alles passiert in deinem Browser; nichts wird hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich stattdessen einen transparenten Hintergrund bekommen?",
+        answer:
+          "Ja: Nutze „Hintergrund entfernen“, das ein PNG ganz ohne Hintergrund speichert.",
+      },
+      {
+        question: "Funktioniert es bei Produkten und Haustieren?",
+        answer:
+          "Am besten funktioniert es bei Menschen. Für Produkte, Haustiere und Objekte liefert das Modell „Beste Qualität“ in „Hintergrund entfernen“ sauberere Kanten; danach kannst du in jedem Bildeditor einen Hintergrund hinzufügen.",
+      },
+      {
+        question: "Warum dauert das erste Foto länger?",
+        answer:
+          "Das KI-Modell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser, spätere Fotos dauern also nur Sekunden.",
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer:
+          "Nein. Das Freistellen und der neue Hintergrund entstehen auf deinem Gerät.",
+      },
+    ],
+  },
+  "image-to-text": {
+    name: "Bild in Text",
+    shortName: "Bild in Text",
+    tagline: "Kopier den Text aus einem Foto, Screenshot oder Scan (OCR) in 10 Sprachen. Das Bild wird auf deinem Gerät gelesen.",
+    intro:
+      "Bild in Text liest die Wörter in einem Foto, Screenshot oder gescannten Dokument und gibt sie dir als Text, den du kopieren, bearbeiten oder als TXT-Datei speichern kannst. Dafür läuft Tesseract OCR in deinem Browser, mit Englisch, Spanisch, Französisch, Deutsch, Portugiesisch, Italienisch, Japanisch, Koreanisch, Indonesisch und Türkisch. Ein Fortschrittsbalken zeigt, wie weit es ist, und wenn das Bild für ein verlässliches Ergebnis zu unscharf ist, sagt die Seite es dir. Das Bild wird nie hochgeladen.",
+    seoTitle: "Bild in Text umwandeln – kostenlose OCR online",
+    seoDescription:
+      "Bild in Text umwandeln: Lies Text aus Bildern, Screenshots und Scans mit kostenloser OCR in 10 Sprachen aus, kopier oder speichere ihn. Im Browser, ohne Upload.",
+    keywords: [
+      "bild in text umwandeln",
+      "text aus bild extrahieren",
+      "ocr online",
+      "foto in text umwandeln",
+      "text aus bild kopieren",
+      "screenshot in text umwandeln",
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein Foto, einen Screenshot oder einen Scan mit Text hierher, wähle ihn aus oder füge ihn ein.",
+      },
+      {
+        title: "Sprache prüfen",
+        description: "Die Sprache der Seite ist schon gewählt; ändere sie, wenn der Text in einer anderen Sprache ist.",
+      },
+      {
+        title: "Auf den Text warten",
+        description: "Der Text erscheint, sobald er gelesen ist. Du kannst ihn direkt im Feld korrigieren.",
+      },
+      {
+        title: "Kopieren oder herunterladen",
+        description: "Kopier den Text mit „Text kopieren“ oder speichere ihn mit „Text herunterladen (TXT)“ als TXT-Datei.",
+      },
+    ],
+    features: [
+      {
+        title: "10 Sprachen",
+        description: "Darunter Japanisch und Koreanisch. Jede Sprache lädt einmalig 1 bis 4 MB herunter.",
+      },
+      {
+        title: "Bearbeitbares Ergebnis",
+        description: "Korrigier jedes Wort im Feld, bevor du es kopierst oder speicherst.",
+      },
+      {
+        title: "Ehrlich bei der Qualität",
+        description: "Eine Warnung erscheint, wenn das Bild zu unscharf oder zu klein ist, um es verlässlich zu lesen.",
+      },
+      {
+        title: "Privat",
+        description: "Das Bild wird in deinem Browser gelesen und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann es Handschrift lesen?",
+        answer:
+          "Nicht zuverlässig. Es ist für gedruckten Text gemacht, etwa Dokumente, Screenshots, Schilder und Etiketten. Ordentliche Handschrift klappt manchmal, aber rechne mit Fehlern.",
+      },
+      {
+        question: "Wie bekomme ich das beste Ergebnis?",
+        answer:
+          "Nimm ein scharfes, gut beleuchtetes Foto, gerade von vorn aufgenommen, mit großem Text im Bild. Screenshots werden fast perfekt gelesen.",
+      },
+      {
+        question: "Kann es ein PDF lesen?",
+        answer:
+          "Wandle die Seite zuerst mit „PDF in JPG“ in ein Bild um und füge dann dieses Bild hier hinzu.",
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer:
+          "Nein. Der Text wird auf deinem Gerät gelesen; Bild und Text verlassen nie deinen Browser.",
+      },
+    ],
+  },
+  "qr-code-generator": {
+    name: "QR-Code-Generator",
+    shortName: "QR-Generator",
+    tagline: "Erstell einen QR-Code für einen Link, Text, ein Wi-Fi-Netzwerk, eine E-Mail, Telefonnummer oder einen Kontakt, mit deinen Farben und Logo, als PNG oder SVG.",
+    intro:
+      "QR-Code-Generator erstellt einen QR-Code für einen Weblink, einfachen Text, Wi-Fi-Zugangsdaten (WLAN), eine E-Mail, eine Telefonnummer oder eine Visitenkarte. Wähle die Farben, die Größe und die Fehlerkorrektur, setz dein Logo in die Mitte und lade den Code als PNG-Bild oder als SVG-Datei herunter, die in jeder Größe scharf bleibt. Jeder Code wird geprüft, indem er wieder ausgelesen wird, so weißt du vor dem Drucken, dass er sich scannen lässt. Die Codes entstehen in deinem Browser, kostenlos, ohne Anmeldung und ohne Ablaufdatum.",
+    seoTitle: "QR-Code erstellen – kostenlos, mit Logo, PNG & SVG",
+    seoDescription:
+      "QR-Code erstellen für Links, Wi-Fi, E-Mail, Telefon oder Kontakte, mit deinen Farben und Logo. Als PNG oder SVG. Kostenlos, ohne Anmeldung, ohne Ablauf.",
+    keywords: [
+      "qr code erstellen",
+      "qr code generator",
+      "qr code generator kostenlos",
+      "qr code mit logo",
+      "wlan qr code erstellen",
+      "qr code svg",
+    ],
+    howToSteps: [
+      {
+        title: "Inhalt wählen",
+        description: "Wähle Link, Text, Wi-Fi, E-Mail, Telefon oder Kontakt.",
+      },
+      {
+        title: "Angaben ausfüllen",
+        description: "Der QR-Code aktualisiert sich, während du tippst.",
+      },
+      {
+        title: "Gestalten",
+        description: "Leg Farben und Größe fest und füge bei Bedarf ein Logo hinzu.",
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ihn als PNG oder für Druck und große Formate als SVG.",
+      },
+    ],
+    features: [
+      {
+        title: "Vor dem Speichern geprüft",
+        description: "Der Code wird automatisch wieder ausgelesen, und du wirst gewarnt, wenn er sich vielleicht nicht scannen lässt.",
+      },
+      {
+        title: "Logo und Farben",
+        description: "Füge dein Logo hinzu; die stärkste Fehlerkorrektur wird genutzt, damit der Code lesbar bleibt.",
+      },
+      {
+        title: "PNG und SVG",
+        description: "SVG bleibt in jeder Größe scharf, ideal für den Druck.",
+      },
+      {
+        title: "Läuft nie ab",
+        description: "Die Daten stecken im Code selbst, nicht auf einem Server, deshalb funktioniert er für immer.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Laufen diese QR-Codes ab?",
+        answer:
+          "Nein. Es sind statische Codes: Alles steckt im Muster selbst, ohne Weiterleitung über unseren Server, deshalb funktionieren sie für immer.",
+      },
+      {
+        question: "Kann ich Scans nachverfolgen oder den Link später ändern?",
+        answer:
+          "Nein. Dafür braucht es einen dynamischen Code, der jeden Scan über einen Server leitet, und das macht dieses Tool nicht. Der Vorteil: Niemand sieht, wer deinen Code scannt.",
+      },
+      {
+        question: "Wie funktioniert der Wi-Fi-Code?",
+        answer:
+          "Handys, die ihn scannen, bieten an, sich mit dem eingegebenen Netzwerknamen und Passwort zu verbinden. Das Passwort steckt im Code, teil ihn also nur mit Leuten, denen du es auch geben würdest.",
+      },
+      {
+        question: "Welche Fehlerkorrektur soll ich wählen?",
+        answer:
+          "M passt für die meisten Zwecke. H übersteht mehr Beschädigung und wird mit Logo automatisch genutzt; L ergibt den kleinsten Code für langen Text.",
+      },
+      {
+        question: "Wird das, was ich eingebe, irgendwohin gesendet?",
+        answer:
+          "Nein. Der Code entsteht in deinem Browser.",
+      },
+    ],
+  },
+  "qr-code-reader": {
+    name: "QR-Code-Leser",
+    shortName: "QR-Leser",
+    tagline: "Lies einen QR-Code aus einem Bild oder mit deiner Kamera und sieh den Link, das Wi-Fi-Passwort oder den Kontakt darin, bevor du ihn öffnest.",
+    intro:
+      "QR-Code-Leser entschlüsselt QR-Codes aus einem Foto, einem Screenshot oder mit deiner Kamera. Es zeigt, was der Code enthält, bevor irgendetwas passiert: die vollständige Webadresse, ein Wi-Fi-Netzwerk mit Passwort, eine E-Mail, eine Telefonnummer oder eine Visitenkarte, die du speichern kannst. Links öffnen sich nie von selbst, du kannst sie also zuerst prüfen. Das ist eine gute Gewohnheit, denn QR-Codes werden oft genutzt, um Leute auf gefälschte Seiten zu schicken. Bilder und Kamerabilder werden auf deinem Gerät gelesen.",
+    seoTitle: "QR-Code scannen online – aus Bild oder mit Kamera",
+    seoDescription:
+      "QR-Code scannen aus einem Bild, Screenshot oder mit der Kamera, direkt im Browser. Sieh Link, Wi-Fi-Passwort oder Kontakt vor dem Öffnen. Kostenlos und privat.",
+    keywords: [
+      "qr code scannen",
+      "qr code aus bild scannen",
+      "qr code scanner online",
+      "qr code lesen",
+      "qr code scanner",
+      "qr code auslesen",
+    ],
+    howToSteps: [
+      {
+        title: "Code hinzufügen",
+        description: "Zieh ein Bild mit einem QR-Code hierher oder wähle es aus, oder tipp auf „Mit Kamera scannen“.",
+      },
+      {
+        title: "Inhalt ansehen",
+        description: "Links, Wi-Fi-Daten, E-Mails, Telefonnummern und Kontakte werden klar angezeigt.",
+      },
+      {
+        title: "Vor dem Öffnen prüfen",
+        description: "Lies die vollständige Adresse, bevor du auf „Link öffnen“ tippst.",
+      },
+      {
+        title: "Nutzen",
+        description: "Kopier den Text, öffne den Link, ruf an, schreib eine E-Mail oder speichere den Kontakt.",
+      },
+    ],
+    features: [
+      {
+        title: "Bild oder Kamera",
+        description: "Lies Codes in Screenshots und Fotos oder halte deine Kamera auf einen Code.",
+      },
+      {
+        title: "Standardmäßig sicher",
+        description: "Links öffnen sich nie automatisch; du siehst zuerst die vollständige Adresse.",
+      },
+      {
+        title: "Wi-Fi und Kontakte",
+        description: "Zeigt Netzwerkpasswörter an und lässt dich Visitenkarten speichern.",
+      },
+      {
+        title: "Privat",
+        description: "Bilder und Kamerabilder werden in deinem Browser verarbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie scanne ich einen QR-Code auf meinem eigenen Bildschirm?",
+        answer:
+          "Mach einen Screenshot und füge ihn hier hinzu; du brauchst kein zweites Gerät.",
+      },
+      {
+        question: "Warum sollte ich Links zuerst prüfen?",
+        answer:
+          "QR-Codes auf Plakaten, Parkautomaten und in E-Mails werden manchmal gegen solche ausgetauscht, die auf gefälschte Seiten führen. Prüf, ob die Adresse die erwartete ist, bevor du sie öffnest oder irgendwelche Daten eingibst.",
+      },
+      {
+        question: "Die Kamera startet nicht. Was kann ich tun?",
+        answer:
+          "Erlaube den Kamerazugriff für diese Seite in den Einstellungen deines Browsers, oder mach ein Foto vom Code und füge stattdessen das Bild hinzu.",
+      },
+      {
+        question: "Werden meine Bilder oder meine Kamera irgendwohin gesendet?",
+        answer:
+          "Nein. Alles wird auf deinem Gerät gelesen.",
+      },
+    ],
+  },
 };

@@ -75,6 +75,10 @@ const CropPdfWorkspace = standaloneTool(() => import('../tools/pdf/CropPdfWorksp
 const ChangeDpiWorkspace = standaloneTool(() => import('../tools/forms/ChangeDpiWorkspace'), 'ChangeDpiWorkspace');
 const SignatureExtractorWorkspace = standaloneTool(() => import('../tools/forms/SignatureExtractorWorkspace'), 'SignatureExtractorWorkspace');
 const PassportPhotoWorkspace = standaloneTool(() => import('../tools/forms/PassportPhotoWorkspace'), 'PassportPhotoWorkspace');
+const BackgroundEffectsWorkspace = standaloneTool(() => import('../tools/extras/BackgroundEffectsWorkspace'), 'BackgroundEffectsWorkspace');
+const ImageToTextWorkspace = standaloneTool(() => import('../tools/extras/ImageToTextWorkspace'), 'ImageToTextWorkspace');
+const QrGeneratorWorkspace = standaloneTool(() => import('../tools/extras/QrGeneratorWorkspace'), 'QrGeneratorWorkspace');
+const QrReaderWorkspace = standaloneTool(() => import('../tools/extras/QrReaderWorkspace'), 'QrReaderWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -142,6 +146,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'change-image-dpi': <ChangeDpiWorkspace />,
     'signature-extractor': <SignatureExtractorWorkspace />,
     'passport-photo-maker': <PassportPhotoWorkspace />,
+    'blur-background': <BackgroundEffectsWorkspace mode="blur" />,
+    'change-background': <BackgroundEffectsWorkspace mode="replace" />,
+    'image-to-text': <ImageToTextWorkspace />,
+    'qr-code-generator': <QrGeneratorWorkspace />,
+    'qr-code-reader': <QrReaderWorkspace />,
   };
   if (standalone[slug]) {
     return (
