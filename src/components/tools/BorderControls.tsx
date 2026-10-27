@@ -27,7 +27,7 @@ export function BorderControls({ options, onChange }: Props) {
       {/* Placement */}
       <div className="space-y-1.5">
         <span className="slug block" id={`${idBase}-mode`}>{t('ctl.border.placement')}</span>
-        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
+        <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
           {modes.map((m) => {
             const selected = options.mode === m.id;
             return (

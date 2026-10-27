@@ -347,7 +347,7 @@ export function PassportPhotoWorkspace() {
         error={error}
       >
         <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
-          <div className="bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px]">
+          <div className="bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px] rounded-xl">
             <div
               className="relative block w-[min(100%,18rem)] crop-marks touch-none cursor-grab active:cursor-grabbing select-none"
               onPointerDown={(e) => {
@@ -383,7 +383,7 @@ export function PassportPhotoWorkspace() {
             </div>
           </div>
           {output === 'sheet' && (
-            <div className="bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px]">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px] rounded-xl">
               <canvas ref={sheetRef} role="img" aria-label={t('ctl.passport.sheetLabel')} className="block max-h-[60vh] w-auto max-w-full border border-pencil" />
             </div>
           )}

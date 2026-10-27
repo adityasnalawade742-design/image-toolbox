@@ -17,7 +17,7 @@ export function PngToJpgControls({ backgroundColor, onBackgroundColorChange }: P
   return (
     <div className="space-y-1.5">
       <span className="slug block">{t('ctl.pngToJpg.background')}</span>
-      <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.pngToJpg.background')}>
+      <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.pngToJpg.background')}>
         <button
           type="button"
           aria-pressed={backgroundColor === '#ffffff'}

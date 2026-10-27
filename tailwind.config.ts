@@ -1,29 +1,30 @@
 import type { Config } from 'tailwindcss';
 
-// Press proof sheet: coated paper, key-black ink, flat process inks as category marks.
+// Press proof sheet, friendly edition: coated paper, key-black ink, process inks as category marks and soft tints.
 // Legacy token names (surface, hairline, mute, accent-*) are kept and remapped so every
 // component inherits the world; accent-* text colors are text-safe (≥4.5:1 on paper).
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    // Friendly proof sheet: soft corners on surfaces and controls, one soft lift for floating pieces
     borderRadius: {
       none: '0',
-      xs: '0',
-      sm: '0',
-      DEFAULT: '0',
-      md: '0',
-      lg: '0',
-      xl: '0',
-      '2xl': '0',
-      '3xl': '0',
+      xs: '4px',
+      sm: '6px',
+      DEFAULT: '8px',
+      md: '10px',
+      lg: '12px',
+      xl: '16px',
+      '2xl': '20px',
+      '3xl': '24px',
       full: '9999px',
     },
     boxShadow: {
       none: 'none',
-      sm: 'none',
-      DEFAULT: 'none',
-      md: 'none',
-      lg: 'none',
+      sm: '0 1px 2px rgba(20, 20, 20, 0.08)',
+      DEFAULT: '0 1px 3px rgba(20, 20, 20, 0.08), 0 1px 2px rgba(20, 20, 20, 0.04)',
+      md: '0 4px 12px rgba(20, 20, 20, 0.08)',
+      lg: '0 8px 24px rgba(20, 20, 20, 0.10)',
       xl: 'none',
       '2xl': 'none',
       inner: 'none',

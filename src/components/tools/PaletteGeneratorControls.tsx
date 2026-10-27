@@ -72,7 +72,7 @@ export function PaletteGeneratorControls({ palette, colorCount, onCountChange }:
       {/* Number of colors */}
       <div className="space-y-1.5">
         <span className="slug block">{t('ctl.palette.count')}</span>
-        <div className="grid grid-cols-5 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.palette.count')}>
+        <div className="grid grid-cols-5 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.palette.count')}>
           {[3, 4, 5, 6, 8].map((num) => (
             <button
               key={num}

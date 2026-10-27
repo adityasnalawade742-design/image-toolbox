@@ -26,7 +26,7 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
     <div className="space-y-5">
       <div className="space-y-1.5">
         <span className="slug block">{t('ctl.metadata.removed')}</span>
-        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft">
+        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft rounded-lg">
           {guarantees.map(({ key, Icon, title, desc }) => (
             <li key={key} className="flex items-start gap-3 px-3 py-2.5">
               <Icon className="w-4 h-4 shrink-0 mt-0.5 text-ink" aria-hidden="true" />
@@ -47,7 +47,7 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
       {outputBytes > 0 && (
         <div className="space-y-1.5 pt-4 border-t border-pencil">
           <span className="slug block">{t('ctl.metadata.size')}</span>
-          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
             <div className="flex items-baseline justify-between gap-4 px-3 py-2">
               <dt className="text-graphite">{t('ctl.metadata.original')}</dt>
               <dd className="text-ink font-semibold" data-measure>{formatSize(originalBytes)}</dd>

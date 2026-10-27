@@ -1,0 +1,16 @@
+---
+// A tool's icon, rendered to plain SVG at build time (no JavaScript is sent for it)
+import * as Lucide from 'lucide-react';
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const lib = Lucide as unknown as Record<string, any>;
+// Some tools use older icon names that only exist as aliases
+const Icon = lib.icons?.[name] || lib[name] || Lucide.Image;
+---
+
+<Icon className={className} strokeWidth={1.75} aria-hidden="true" />

@@ -96,7 +96,7 @@ export function JpgToPdfWorkspace() {
             {progress ? busyLabel : status}
           </div>
           {error && (
-            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
@@ -104,7 +104,7 @@ export function JpgToPdfWorkspace() {
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-          <div className="border border-ink bg-paper-bright">
+          <div className="border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <FileText className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
@@ -112,7 +112,7 @@ export function JpgToPdfWorkspace() {
             <div className="p-4 space-y-5 text-[15px]">
               <div className="space-y-2">
                 <span className="slug block" id="pdf-size">{t('ctl.topdf.pageSize')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-size">
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-size">
                   {(
                     [
                       ['a4', 'A4'],
@@ -130,7 +130,7 @@ export function JpgToPdfWorkspace() {
               {pageSize !== 'fit' && (
                 <div className="space-y-2 pt-4 border-t border-ink">
                   <span className="slug block" id="pdf-orient">{t('ctl.topdf.orientation')}</span>
-                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-orient">
+                  <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-orient">
                     {(
                       [
                         ['auto', t('ctl.topdf.auto')],
@@ -149,7 +149,7 @@ export function JpgToPdfWorkspace() {
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block" id="pdf-margin">{t('ctl.topdf.margin')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-margin">
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-margin">
                   {(
                     [
                       ['none', t('ctl.topdf.marginNone')],

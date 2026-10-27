@@ -17,7 +17,7 @@ export function SvgToPngControls({ originalWidth, originalHeight, scale, onScale
     <div className="space-y-5">
       <div className="space-y-1.5">
         <span className="slug block">{t('ctl.svg.scale')}</span>
-        <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.svg.scale')}>
+        <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.svg.scale')}>
           {scales.map((s) => (
             <button
               key={s}
@@ -39,7 +39,7 @@ export function SvgToPngControls({ originalWidth, originalHeight, scale, onScale
       {/* Calculated output dimensions */}
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block">{t('ctl.svg.size')}</span>
-        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
           <div className="flex items-baseline justify-between gap-4 px-3 py-2">
             <dt className="text-graphite">{t('ctl.svg.original')}</dt>
             <dd className="text-ink font-semibold text-right" data-measure>{originalWidth} × {originalHeight} px</dd>

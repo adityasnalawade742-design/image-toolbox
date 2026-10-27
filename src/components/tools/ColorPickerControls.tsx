@@ -74,7 +74,7 @@ export function ColorPickerControls({ selectedHex, history, onSelectColor }: Pro
       {/* Readouts with copy buttons */}
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block">{t('ctl.color.values')}</span>
-        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
           {readouts.map(({ type, value }) => (
             <div key={type} className="flex items-center gap-3 pl-3">
               <dt className="w-11 shrink-0 text-graphite">{type}</dt>

@@ -221,7 +221,7 @@ export function ImageSplitterWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet with the cut grid */}
           <div className="min-w-0 space-y-3">
-            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
                 <img
                   src={imgElement.src}
@@ -287,7 +287,7 @@ export function ImageSplitterWorkspace() {
 
           {/* Ruled control panel */}
           <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-            <div className="border border-ink bg-paper-bright">
+            <div className="border border-ink bg-paper-bright rounded-xl">
               <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                 <Grid3x3 className="w-4 h-4 text-ink" aria-hidden="true" />
                 {t('ctl.split.settings')}
@@ -358,7 +358,7 @@ export function ImageSplitterWorkspace() {
                 {/* Tile format */}
                 <div className="space-y-1.5 pt-4 border-t border-ink">
                   <span className="slug">{t('ctl.split.saveAs')}</span>
-                  <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.split.tileFormat')}>
+                  <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.split.tileFormat')}>
                     {(['png', 'jpeg'] as const).map((fmt) => (
                       <button
                         key={fmt}

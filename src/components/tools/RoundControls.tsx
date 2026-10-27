@@ -105,10 +105,10 @@ export function RoundControls({
 
       {/* JPG has no transparency, so the cut-away corners need a fill */}
       {format === 'image/jpeg' && (
-        <div className="p-3 bg-accent-yellow-soft border border-pencil space-y-2.5">
+        <div className="p-3 bg-accent-yellow-soft rounded-md border border-pencil space-y-2.5">
           <p className="text-[14px] text-ink">{t('ctl.round.jpgFill')}</p>
           <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 flex-1 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.round.cornerFill')}>
+            <div className="grid grid-cols-2 flex-1 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.round.cornerFill')}>
               <button
                 type="button"
                 aria-pressed={backgroundColor === '#ffffff'}

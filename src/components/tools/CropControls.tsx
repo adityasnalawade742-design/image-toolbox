@@ -192,7 +192,7 @@ export function CropControls({
       {onIsCircleChange && (
         <div className="space-y-1.5">
           <span className="slug block" id={`${idBase}-shape`}>{t('ctl.crop.shape')}</span>
-          <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-shape`}>
+          <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-shape`}>
             <button
               type="button"
               aria-pressed={!isCircle}

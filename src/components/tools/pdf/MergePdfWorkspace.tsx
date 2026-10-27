@@ -117,7 +117,7 @@ export function MergePdfWorkspace() {
       >
         <ol className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
           {items.map((item, i) => (
-            <li key={item.id} className="border border-ink bg-paper-bright flex flex-col">
+            <li key={item.id} className="border border-ink bg-paper-bright flex flex-col rounded-lg overflow-hidden">
               <div className="flex-1 flex items-center justify-center p-3 bg-paper-stock min-h-[9rem]">
                 <img src={item.url} alt="" className="max-h-40 w-auto border border-pencil bg-white" />
               </div>

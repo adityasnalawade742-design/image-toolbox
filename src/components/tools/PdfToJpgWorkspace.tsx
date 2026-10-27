@@ -137,7 +137,7 @@ export function PdfToJpgWorkspace() {
         {fileInput}
         <ProofDropZone onFiles={(files) => handleFile(files[0])} accept={ACCEPT} title={t('ctl.frompdf.dropTitle')} buttonLabel={t('ctl.frompdf.choose')} hint={t('ctl.frompdf.dropHint')} />
         {error && (
-          <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+          <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
             <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span>{error}</span>
           </p>
@@ -173,7 +173,7 @@ export function PdfToJpgWorkspace() {
 
           <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
             {thumbs.map((url, i) => (
-              <li key={i} className="border border-ink bg-paper-bright flex flex-col">
+              <li key={i} className="border border-ink bg-paper-bright flex flex-col rounded-lg overflow-hidden">
                 <div className="flex-1 flex items-center justify-center p-3 bg-paper-stock">
                   {url ? (
                     <img src={url} alt={t('ctl.frompdf.pageAlt', { n: i + 1 })} className="max-h-48 w-auto border border-pencil bg-white" />
@@ -195,7 +195,7 @@ export function PdfToJpgWorkspace() {
           </ul>
 
           {error && (
-            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
@@ -203,7 +203,7 @@ export function PdfToJpgWorkspace() {
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-          <div className="border border-ink bg-paper-bright">
+          <div className="border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <FileImage className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
@@ -211,7 +211,7 @@ export function PdfToJpgWorkspace() {
             <div className="p-4 space-y-5 text-[15px]">
               <div className="space-y-2">
                 <span className="slug block">{t('ws.saveAs')}</span>
-                <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                   {(['image/jpeg', 'image/png'] as const).map((f) => (
                     <button key={f} type="button" aria-pressed={format === f} onClick={() => setFormat(f)} className={seg(format === f)}>
                       {f === 'image/jpeg' ? 'JPG' : 'PNG'}
@@ -221,7 +221,7 @@ export function PdfToJpgWorkspace() {
               </div>
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block" id="pdf-dpi">{t('ctl.frompdf.resolution')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-dpi">
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-dpi">
                   {DPIS.map((d) => (
                     <button key={d} type="button" aria-pressed={dpi === d} onClick={() => setDpi(d)} className={seg(dpi === d)} data-measure>
                       {d} dpi

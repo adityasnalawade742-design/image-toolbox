@@ -140,13 +140,13 @@ export function SignatureExtractorWorkspace() {
         <div className="grid sm:grid-cols-2 gap-4">
           <figure className="space-y-2">
             <figcaption className="slug">{t('ws.source')}</figcaption>
-            <div className="bg-paper-bright border border-ink flex items-center justify-center p-4 min-h-[180px]">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center p-4 min-h-[180px] rounded-xl">
               <img src={image.url} alt="" className="block max-h-[40vh] max-w-full object-contain" />
             </div>
           </figure>
           <figure className="space-y-2">
             <figcaption className="slug">{t('ws.output')}</figcaption>
-            <div className="bg-paper-bright border border-ink flex items-center justify-center p-4 min-h-[180px]">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center p-4 min-h-[180px] rounded-xl">
               <div className="canvas-checkerboard inline-flex max-w-full">
                 <canvas ref={canvasRef} role="img" aria-label={t('ctl.sig.resultLabel')} className="block max-h-[40vh] max-w-full object-contain" />
               </div>

@@ -71,7 +71,7 @@ export function LanguageSelector({ currentLocale = 'en', currentSlug = '', langu
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={listId}
-        className="flex items-center gap-2 h-10 px-3 text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
+        className="flex items-center gap-2 h-10 px-3 rounded-md text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
       >
         <Globe className="w-4 h-4" aria-hidden="true" />
         <span className="sr-only">{languageLabel}: </span>
@@ -83,7 +83,7 @@ export function LanguageSelector({ currentLocale = 'en', currentSlug = '', langu
       {isOpen && (
         <ul
           id={listId}
-          className="absolute right-0 mt-2 w-60 bg-paper border border-ink z-50 max-h-96 overflow-y-auto divide-y divide-pencil-soft"
+          className="absolute right-0 mt-2 w-60 bg-paper border border-ink rounded-xl shadow-lg z-50 max-h-96 overflow-y-auto divide-y divide-pencil-soft"
         >
           {(Object.entries(SUPPORTED_LOCALES) as [SupportedLocale, typeof currentInfo][]).map(([code, info]) => {
             const isSelected = code === currentLocale;

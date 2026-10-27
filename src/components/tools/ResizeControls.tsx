@@ -102,7 +102,7 @@ export function ResizeControls({
       {/* Mode switch */}
       <div className="space-y-1.5">
         <span className="slug block" id={`${idBase}-mode`}>{t('ctl.resize.mode')}</span>
-        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
+        <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-mode`}>
           <button type="button" aria-pressed={mode === 'pixels'} onClick={() => setMode('pixels')} className={segButton(mode === 'pixels')}>
             {t('ctl.resize.byPixels')}
           </button>
@@ -138,7 +138,7 @@ export function ResizeControls({
               className="w-full"
             />
           </div>
-          <div className="grid grid-cols-6 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.resize.presets')}>
+          <div className="grid grid-cols-6 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.resize.presets')}>
             {percentagePresets.map((pct) => (
               <button
                 key={pct}

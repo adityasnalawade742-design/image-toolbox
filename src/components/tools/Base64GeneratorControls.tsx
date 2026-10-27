@@ -80,7 +80,7 @@ export function Base64GeneratorControls({ outputString, isDataUri = false, mimeT
       {/* Embed snippets */}
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block">{t('ctl.base64.snippets')}</span>
-        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft">
+        <ul className="border border-ink bg-paper-bright divide-y divide-pencil-soft rounded-lg">
           {snippets.map((s) => (
             <li key={s.id} className="space-y-2 p-2.5">
               <code className="block truncate text-[13px] font-code text-ink">{s.code}</code>
