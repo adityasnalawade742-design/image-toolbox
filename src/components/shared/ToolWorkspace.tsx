@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
 import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload } from 'lucide-react';
 import {
   loadImage,
@@ -45,31 +45,36 @@ import { ColorPickerControls } from '../tools/ColorPickerControls';
 import { PaletteGeneratorControls } from '../tools/PaletteGeneratorControls';
 import { Base64GeneratorControls } from '../tools/Base64GeneratorControls';
 import { SvgToPngControls } from '../tools/SvgToPngControls';
-import { BulkCompressorWorkspace } from '../tools/BulkCompressorWorkspace';
-import { BulkResizerWorkspace } from '../tools/BulkResizerWorkspace';
-import { Base64ToImageWorkspace } from '../tools/Base64ToImageWorkspace';
-import { PhotoFiltersWorkspace } from '../tools/PhotoFiltersWorkspace';
-import { MemeGeneratorWorkspace } from '../tools/MemeGeneratorWorkspace';
-import { ImageSplitterWorkspace } from '../tools/ImageSplitterWorkspace';
-import { CensorImageWorkspace } from '../tools/CensorImageWorkspace';
-import { RemoveBackgroundWorkspace } from '../tools/RemoveBackgroundWorkspace';
-import { CompressToKbWorkspace } from '../tools/CompressToKbWorkspace';
-import { JpgToPdfWorkspace } from '../tools/JpgToPdfWorkspace';
-import { PdfToJpgWorkspace } from '../tools/PdfToJpgWorkspace';
-import { MergeImagesWorkspace } from '../tools/MergeImagesWorkspace';
-import { MergePdfWorkspace } from '../tools/pdf/MergePdfWorkspace';
-import { SplitPdfWorkspace } from '../tools/pdf/SplitPdfWorkspace';
-import { PdfPagesWorkspace } from '../tools/pdf/PdfPagesWorkspace';
-import { PageNumbersWorkspace } from '../tools/pdf/PageNumbersWorkspace';
-import { WatermarkPdfWorkspace } from '../tools/pdf/WatermarkPdfWorkspace';
-import { SignPdfWorkspace } from '../tools/pdf/SignPdfWorkspace';
-import { FillFormWorkspace } from '../tools/pdf/FillFormWorkspace';
-import { PdfMetadataWorkspace } from '../tools/pdf/PdfMetadataWorkspace';
-import { CropPdfWorkspace } from '../tools/pdf/CropPdfWorkspace';
-import { ChangeDpiWorkspace } from '../tools/forms/ChangeDpiWorkspace';
-import { SignatureExtractorWorkspace } from '../tools/forms/SignatureExtractorWorkspace';
-import { PassportPhotoWorkspace } from '../tools/forms/PassportPhotoWorkspace';
 import { ErrorBoundary } from './ErrorBoundary';
+
+// Standalone tools (PDF, batch, creative and form tools) bring their own libraries, such as pdf-lib and pdf.js.
+// Each one loads only on its own page instead of being bundled into every tool page.
+const standaloneTool = (load: () => Promise<Record<string, unknown>>, name: string) =>
+  lazy(() => load().then((m) => ({ default: m[name] as React.ComponentType<any> })));
+const BulkCompressorWorkspace = standaloneTool(() => import('../tools/BulkCompressorWorkspace'), 'BulkCompressorWorkspace');
+const BulkResizerWorkspace = standaloneTool(() => import('../tools/BulkResizerWorkspace'), 'BulkResizerWorkspace');
+const Base64ToImageWorkspace = standaloneTool(() => import('../tools/Base64ToImageWorkspace'), 'Base64ToImageWorkspace');
+const PhotoFiltersWorkspace = standaloneTool(() => import('../tools/PhotoFiltersWorkspace'), 'PhotoFiltersWorkspace');
+const MemeGeneratorWorkspace = standaloneTool(() => import('../tools/MemeGeneratorWorkspace'), 'MemeGeneratorWorkspace');
+const ImageSplitterWorkspace = standaloneTool(() => import('../tools/ImageSplitterWorkspace'), 'ImageSplitterWorkspace');
+const CensorImageWorkspace = standaloneTool(() => import('../tools/CensorImageWorkspace'), 'CensorImageWorkspace');
+const RemoveBackgroundWorkspace = standaloneTool(() => import('../tools/RemoveBackgroundWorkspace'), 'RemoveBackgroundWorkspace');
+const CompressToKbWorkspace = standaloneTool(() => import('../tools/CompressToKbWorkspace'), 'CompressToKbWorkspace');
+const JpgToPdfWorkspace = standaloneTool(() => import('../tools/JpgToPdfWorkspace'), 'JpgToPdfWorkspace');
+const PdfToJpgWorkspace = standaloneTool(() => import('../tools/PdfToJpgWorkspace'), 'PdfToJpgWorkspace');
+const MergeImagesWorkspace = standaloneTool(() => import('../tools/MergeImagesWorkspace'), 'MergeImagesWorkspace');
+const MergePdfWorkspace = standaloneTool(() => import('../tools/pdf/MergePdfWorkspace'), 'MergePdfWorkspace');
+const SplitPdfWorkspace = standaloneTool(() => import('../tools/pdf/SplitPdfWorkspace'), 'SplitPdfWorkspace');
+const PdfPagesWorkspace = standaloneTool(() => import('../tools/pdf/PdfPagesWorkspace'), 'PdfPagesWorkspace');
+const PageNumbersWorkspace = standaloneTool(() => import('../tools/pdf/PageNumbersWorkspace'), 'PageNumbersWorkspace');
+const WatermarkPdfWorkspace = standaloneTool(() => import('../tools/pdf/WatermarkPdfWorkspace'), 'WatermarkPdfWorkspace');
+const SignPdfWorkspace = standaloneTool(() => import('../tools/pdf/SignPdfWorkspace'), 'SignPdfWorkspace');
+const FillFormWorkspace = standaloneTool(() => import('../tools/pdf/FillFormWorkspace'), 'FillFormWorkspace');
+const PdfMetadataWorkspace = standaloneTool(() => import('../tools/pdf/PdfMetadataWorkspace'), 'PdfMetadataWorkspace');
+const CropPdfWorkspace = standaloneTool(() => import('../tools/pdf/CropPdfWorkspace'), 'CropPdfWorkspace');
+const ChangeDpiWorkspace = standaloneTool(() => import('../tools/forms/ChangeDpiWorkspace'), 'ChangeDpiWorkspace');
+const SignatureExtractorWorkspace = standaloneTool(() => import('../tools/forms/SignatureExtractorWorkspace'), 'SignatureExtractorWorkspace');
+const PassportPhotoWorkspace = standaloneTool(() => import('../tools/forms/PassportPhotoWorkspace'), 'PassportPhotoWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -141,7 +146,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   if (standalone[slug]) {
     return (
       <I18nProvider strings={strings} locale={locale}>
-        <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>{standalone[slug]}</ErrorBoundary>
+        <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>
+          <Suspense fallback={null}>{standalone[slug]}</Suspense>
+        </ErrorBoundary>
       </I18nProvider>
     );
   }
