@@ -7,8 +7,9 @@ import { useT } from '../../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { computeCrop, cropCentre, mmToPx, sheetLayout } from '../../../lib/canvas/passport';
 import { setDpi } from '../../../lib/canvas/dpi';
-import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
-import { removeBackground } from '../../../lib/ai/backgroundRemover';
+import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
+import { removeBackground, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
+import { RemovalProgressBar } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
@@ -34,6 +35,7 @@ export function PassportPhotoWorkspace() {
   const [pos, setPos] = useState({ cx: 0.5, cy: 0.4 });
   const [bg, setBg] = useState<Bg>('keep');
   const [bgBusy, setBgBusy] = useState(false);
+  const [bgProgress, setBgProgress] = useState<RemovalProgress | null>(null);
   const [output, setOutput] = useState<'single' | 'sheet'>('single');
   const [paper, setPaper] = useState<keyof typeof PAPER>('4x6');
   const [format, setFormat] = useState<'jpg' | 'pdf'>('jpg');
@@ -100,7 +102,7 @@ export function PassportPhotoWorkspace() {
         c.width = image.width;
         c.height = image.height;
         c.getContext('2d')!.drawImage(image.img, 0, 0);
-        const cut = await removeBackground(await canvasToBlob(c, 'image/png'), 'portrait');
+        const cut = await removeBackground(await canvasToBlob(c, 'image/png'), 'portrait', setBgProgress);
         const layer = document.createElement('canvas');
         layer.width = cut.width;
         layer.height = cut.height;
@@ -110,10 +112,12 @@ export function PassportPhotoWorkspace() {
         setError(t('ctl.passport.bgFailed', { message: err?.message || '' }));
         setBg('keep');
         setBgBusy(false);
+        setBgProgress(null);
         buildSource(image, null);
         return;
       }
       setBgBusy(false);
+      setBgProgress(null);
     }
     buildSource(image, fill);
   };
@@ -347,7 +351,21 @@ export function PassportPhotoWorkspace() {
         error={error}
       >
         <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
-          <div className="bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px] rounded-xl">
+          <div className="relative overflow-hidden bg-paper-bright border border-ink flex items-center justify-center p-6 min-h-[300px] rounded-xl">
+            {bgBusy && (
+              <div className="absolute inset-x-0 bottom-0 z-10 bg-paper border-t border-ink px-4 py-3">
+                <RemovalProgressBar
+                  progress={bgProgress}
+                  mode="portrait"
+                  live={false}
+                  label={
+                    bgProgress?.stage === 'downloading' && bgProgress.totalBytes
+                      ? t('ctl.bg.downloadingModelSize', { loaded: formatBytes(bgProgress.loadedBytes || 0), total: formatBytes(bgProgress.totalBytes) })
+                      : t('ctl.passport.bgWorking')
+                  }
+                />
+              </div>
+            )}
             <div
               className="relative block w-[min(100%,18rem)] crop-marks touch-none cursor-grab active:cursor-grabbing select-none"
               onPointerDown={(e) => {

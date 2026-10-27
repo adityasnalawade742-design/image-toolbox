@@ -13,6 +13,32 @@ export interface RemovalProgress {
   fraction?: number;
   loadedBytes?: number;
   totalBytes?: number;
+  /** While processing: steps completed so far, when the model reports them (the large model does) */
+  step?: number;
+  steps?: number;
+}
+
+// How long processing took last time on this device, so the progress bar can pace itself. The small model runs
+// as one step with nothing to report, so this estimate is all a bar can go on.
+const DEFAULT_PROCESSING_MS: Record<RemovalMode, number> = { portrait: 3000, hq: 12000 };
+const timeKey = (mode: RemovalMode) => `bg-time:${mode}`;
+
+export function expectedProcessingMs(mode: RemovalMode): number {
+  try {
+    const ms = Number(localStorage.getItem(timeKey(mode)));
+    if (ms > 0) return ms;
+  } catch {
+    // storage unavailable
+  }
+  return DEFAULT_PROCESSING_MS[mode];
+}
+
+function recordProcessingMs(mode: RemovalMode, ms: number) {
+  try {
+    localStorage.setItem(timeKey(mode), String(Math.round(ms)));
+  } catch {
+    // storage unavailable: the default estimate is used next time
+  }
 }
 
 let worker: Worker | null = null;
@@ -55,6 +81,7 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
   const id = nextId++;
   // Several files download in parallel (model, config); report their combined progress
   const files = new Map<string, { loaded: number; total: number }>();
+  let processingStarted = 0;
 
   return new Promise<ImageData>((resolve, reject) => {
     const onMessage = (e: MessageEvent) => {
@@ -67,8 +94,10 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
         const total = [...files.values()].reduce((a, f) => a + f.total, 0);
         onProgress?.({ stage: 'downloading', fraction: total ? loaded / total : undefined, loadedBytes: loaded, totalBytes: total });
       } else if (msg.type === 'processing') {
-        onProgress?.({ stage: 'processing' });
+        if (!processingStarted) processingStarted = performance.now();
+        onProgress?.({ stage: 'processing', step: msg.step, steps: msg.steps });
       } else if (msg.type === 'done') {
+        if (processingStarted) recordProcessingMs(mode, performance.now() - processingStarted);
         cleanup();
         resolve(new ImageData(msg.data, msg.width, msg.height));
       } else if (msg.type === 'error') {
