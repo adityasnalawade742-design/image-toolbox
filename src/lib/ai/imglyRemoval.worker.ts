@@ -1,8 +1,10 @@
 /// <reference lib="webworker" />
 // "Best quality" background removal with IMG.LY's ISNet model (@imgly/background-removal, AGPL-3.0).
-// Runs on the CPU (WebAssembly); the fp16 model (~100 MB with its runtime) is fetched from IMG.LY's CDN and cached.
+// Runs on the CPU (WebAssembly); the fp16 model (~100 MB with its runtime) is served from this site
+// (copied in at build time by scripts/self-host-models.mjs) and cached by the browser.
 // The smaller isnet_quint8 model was rejected: it leaves background speckles on photos.
 import { removeBackground } from '@imgly/background-removal';
+import assets from './modelAssets.json';
 
 const scope = self as unknown as DedicatedWorkerGlobalScope;
 
@@ -12,6 +14,7 @@ scope.onmessage = async (e: MessageEvent<{ id: number; image: Blob; model?: 'isn
   try {
     const blob = await removeBackground(image, {
       device: 'cpu',
+      publicPath: `${self.location.origin}/models/imgly/${assets.imgly.version}/`,
       model,
       output: { format: 'image/png' },
       progress: (key: string, current: number, total: number) => {

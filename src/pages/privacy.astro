@@ -11,7 +11,7 @@ const name = SITE_CONFIG.name;
   title="Privacy Policy"
   description={`How ${name} handles your images and data: tools run in your browser, images are never uploaded, and no accounts or tracking are needed.`}
   path="privacy"
-  updated="Last updated 25 October 2026"
+  updated="Last updated 27 October 2026"
 >
   <p>
     <strong>The short version:</strong> {name} works inside your browser. The images you open are processed on your own device and
@@ -43,18 +43,10 @@ const name = SITE_CONFIG.name;
     running; see the <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare privacy policy</a>. We do not use it
     to identify or track you.
   </p>
-  <p>Some features fetch files from other providers the first time you use them. These requests carry the same standard information:</p>
-  <ul>
-    <li>
-      <strong>Background remover, Fast model:</strong> the model is downloaded from Hugging Face (<code>huggingface.co</code>) and its
-      AI runtime from jsDelivr (<code>cdn.jsdelivr.net</code>).
-    </li>
-    <li>
-      <strong>Background remover, Best quality model:</strong> the model and runtime are downloaded from IMG.LY
-      (<code>staticimgly.com</code>), only after you choose to download it.
-    </li>
-  </ul>
-  <p>Fonts and every other part of the site are served from our own domain.</p>
+  <p>
+    Everything the site uses is served from our own domain, including fonts and the background remover's AI models and the software
+    that runs them. Your browser does not fetch files from any other provider while you use the tools.
+  </p>
 
   <h2>What is stored on your device</h2>
   <p>

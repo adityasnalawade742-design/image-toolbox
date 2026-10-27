@@ -1,18 +1,26 @@
 /// <reference lib="webworker" />
 import { pipeline, env } from '@huggingface/transformers';
+import assets from './modelAssets.json';
 
-// Models come from the Hugging Face hub and are cached by the browser after the first download
+// The model and ONNX Runtime are served from this site (copied in at build time by scripts/self-host-models.mjs),
+// so nothing is fetched from Hugging Face or a CDN. The browser caches them after the first download.
+// "Remote" mode pointed at our own /models/ folder: transformers.js 4.3 can't check whether an optional file
+// exists when "local" models are served over HTTP, so it skips the image preprocessor config.
+const origin = self.location.origin;
 env.allowLocalModels = false;
-// Hugging Face answers requests whose Referer is a *.workers.dev site with a 404 and no CORS headers, so the
-// browser reports "Failed to fetch". Sending no Referer avoids that (and tells Hugging Face less about our visitors).
-env.fetch = (input: RequestInfo | URL, init?: RequestInit) => fetch(input, { ...init, referrerPolicy: 'no-referrer' });
+env.remoteHost = `${origin}/models/`;
+env.remotePathTemplate = '{model}/';
+// The plain WebAssembly build: MODNet only runs on the CPU (see backgroundRemover.ts), and the WebGPU-capable
+// build is over Cloudflare's 25 MiB file limit
+const ortBase = `${origin}/models/ort/${env.backends.onnx.versions?.web}/`;
+env.backends.onnx.wasm!.wasmPaths = { mjs: `${ortBase}ort-wasm-simd-threaded.mjs`, wasm: `${ortBase}ort-wasm-simd-threaded.wasm` };
 
 export type RemovalMode = 'portrait' | 'hq';
 export type RemovalDevice = 'webgpu' | 'wasm';
 
 // "Fast" model: MODNet (Apache-2.0). "Best quality" runs IMG.LY's model in imglyRemoval.worker.ts instead.
 const MODELS: Partial<Record<RemovalMode, { id: string; dtype: Record<RemovalDevice, string> }>> = {
-  portrait: { id: 'Xenova/modnet', dtype: { webgpu: 'fp16', wasm: 'fp32' } },
+  portrait: { id: `modnet/${assets.modnet.revision.slice(0, 12)}`, dtype: { webgpu: 'fp16', wasm: 'fp32' } },
 };
 
 const scope = self as unknown as DedicatedWorkerGlobalScope;

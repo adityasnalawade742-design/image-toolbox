@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { selfHostModels } from './self-host-models.mjs';
 
 const distAstroDir = path.resolve('dist/_astro');
 
@@ -31,3 +32,5 @@ if (fs.existsSync(path.resolve('dist'))) {
   }
   console.log('[post-build] Copied pdf.js assets to dist/pdfjs');
 }
+
+if (fs.existsSync(path.resolve('dist'))) await selfHostModels();
