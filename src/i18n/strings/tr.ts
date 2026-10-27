@@ -581,6 +581,7 @@ export const strings = {
 
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG veya WebP. Yapay zekâ modeli cihazınızda çalışır; resim asla yüklenmez.',
+  'ctl.bg.scaledDown': 'Bu fotoğraf, telefonlarda çalışması ve daha hızlı işlenmesi için {w} × {h} px boyutuna küçültüldü.',
   'ctl.bg.mode': 'Model',
   'ctl.bg.modePortrait': 'Hızlı',
   'ctl.bg.modeHq': 'En iyi kalite',
@@ -853,7 +854,7 @@ export const strings = {
   'ctl.passport.bgWhite': 'Beyaz',
   'ctl.passport.bgGrey': 'Açık gri',
   'ctl.passport.bgBlue': 'Açık mavi',
-  'ctl.passport.bgNote': 'Arka planı değiştirmek cihazınızda bir yapay zekâ modeli çalıştırır. İlk seferde yaklaşık 33 MB indirilir.',
+  'ctl.passport.bgNote': 'Arka planı değiştirmek cihazınızda bir yapay zekâ modeli çalıştırır. İlk seferde yaklaşık 16 MB indirilir.',
   'ctl.passport.bgWorking': 'Arka plan değiştiriliyor…',
   'ctl.passport.bgFailed': 'Arka plan değiştirilemedi: {message}',
   'ctl.passport.output': 'İndirme biçimi',

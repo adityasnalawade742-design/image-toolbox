@@ -2549,7 +2549,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         title: "Unduh model sekali",
         description:
-          "Saat pertama kali Anda memakai sebuah model, browser Anda mengunduhnya: sekitar 33 MB untuk Cepat dan sekitar 100 MB untuk Kualitas terbaik, yang meminta konfirmasi sebelum mulai. Setelah itu model tersimpan di browser Anda.",
+          "Saat pertama kali Anda memakai sebuah model, browser Anda mengunduhnya: sekitar 16 MB untuk Cepat dan sekitar 100 MB untuk Kualitas terbaik, yang meminta konfirmasi sebelum mulai. Setelah itu model tersimpan di browser Anda.",
       },
       {
         title: "Pilih background dan unduh",
@@ -2583,7 +2583,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apa bedanya Cepat dan Kualitas terbaik?",
         answer:
-          "Cepat memakai model lebih kecil (sekitar 33 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 15–30 detik, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
+          "Cepat memakai model lebih kecil (sekitar 16 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 15–30 detik, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
       },
       {
         question: "Kenapa pemakaian pertama lebih lama?",
@@ -3999,7 +3999,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bagaimana cara kerja penggantian background?",
         answer:
-          "Model AI diunduh sekali (sekitar 33 MB) dan berjalan di browser Anda untuk memisahkan Anda dari background. Periksa tepi di sekitar rambut sebelum mencetak.",
+          "Model AI diunduh sekali (sekitar 16 MB) dan berjalan di browser Anda untuk memisahkan Anda dari background. Periksa tepi di sekitar rambut sebelum mencetak.",
       },
       {
         question: "Apakah foto saya diunggah?",

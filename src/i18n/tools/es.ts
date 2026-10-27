@@ -2546,7 +2546,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         title: "Descarga el modelo una vez",
         description:
-          "La primera vez que usas un modelo, tu navegador lo descarga: unos 33 MB para Rápido y unos 100 MB para Máxima calidad, que pregunta antes de empezar. Después queda guardado en tu navegador.",
+          "La primera vez que usas un modelo, tu navegador lo descarga: unos 16 MB para Rápido y unos 100 MB para Máxima calidad, que pregunta antes de empezar. Después queda guardado en tu navegador.",
       },
       {
         title: "Elige el fondo y descarga",
@@ -2580,7 +2580,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué diferencia hay entre Rápido y Máxima calidad?",
         answer:
-          "Rápido usa un modelo más pequeño (unos 33 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 15–30 segundos, con mejores resultados en productos, mascotas, objetos y personas.",
+          "Rápido usa un modelo más pequeño (unos 16 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 15–30 segundos, con mejores resultados en productos, mascotas, objetos y personas.",
       },
       {
         question: "¿Por qué el primer uso tarda más?",
@@ -3991,7 +3991,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Cómo funciona el cambio de fondo?",
         answer:
-          "Un modelo de IA se descarga una vez (unos 33 MB) y se ejecuta en tu navegador para separarte del fondo. Revisa los bordes alrededor del pelo antes de imprimir.",
+          "Un modelo de IA se descarga una vez (unos 16 MB) y se ejecuta en tu navegador para separarte del fondo. Revisa los bordes alrededor del pelo antes de imprimir.",
       },
       {
         question: "¿Se sube mi foto?",

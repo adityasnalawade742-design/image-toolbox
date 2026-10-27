@@ -581,6 +581,7 @@ export const strings = {
 
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG oder WebP. Das KI-Modell läuft auf deinem Gerät, das Bild wird nie hochgeladen.',
+  'ctl.bg.scaledDown': 'Dieses Foto wurde auf {w} × {h} px verkleinert, damit es auf Handys funktioniert und schneller verarbeitet wird.',
   'ctl.bg.mode': 'Modell',
   'ctl.bg.modePortrait': 'Schnell',
   'ctl.bg.modeHq': 'Beste Qualität',
@@ -828,7 +829,7 @@ export const strings = {
   'ctl.passport.bgWhite': 'Weiß',
   'ctl.passport.bgGrey': 'Hellgrau',
   'ctl.passport.bgBlue': 'Hellblau',
-  'ctl.passport.bgNote': 'Zum Ersetzen des Hintergrunds läuft ein KI-Modell auf deinem Gerät. Beim ersten Mal lädt es etwa 33 MB herunter.',
+  'ctl.passport.bgNote': 'Zum Ersetzen des Hintergrunds läuft ein KI-Modell auf deinem Gerät. Beim ersten Mal lädt es etwa 16 MB herunter.',
   'ctl.passport.bgWorking': 'Hintergrund wird ersetzt …',
   'ctl.passport.bgFailed': 'Der Hintergrund konnte nicht ersetzt werden: {message}',
   'ctl.passport.output': 'Herunterladen als',

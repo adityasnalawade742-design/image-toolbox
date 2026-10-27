@@ -2542,7 +2542,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Download the model once",
-        "description": "The first time you use a model, your browser downloads it: about 33 MB for Fast and about 100 MB for Best quality, which asks before it starts. After that it is stored in your browser."
+        "description": "The first time you use a model, your browser downloads it: about 16 MB for Fast and about 100 MB for Best quality, which asks before it starts. After that it is stored in your browser."
       },
       {
         "title": "Choose the background and download",
@@ -2574,7 +2574,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "What is the difference between Fast and Best quality?",
-        "answer": "Fast uses a smaller model (about 33 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 15–30 seconds, with better results on products, pets, objects and people."
+        "answer": "Fast uses a smaller model (about 16 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 15–30 seconds, with better results on products, pets, objects and people."
       },
       {
         "question": "Why does the first use take longer?",
@@ -3864,7 +3864,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "How does the background replacement work?",
-        "answer": "An AI model downloads once (about 33 MB) and runs in your browser to separate you from the background. Check the edges around the hair before printing."
+        "answer": "An AI model downloads once (about 16 MB) and runs in your browser to separate you from the background. Check the edges around the hair before printing."
       },
       {
         "question": "Is my photo uploaded?",

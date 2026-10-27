@@ -2546,7 +2546,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         title: "Baixe o modelo uma vez",
         description:
-          "Na primeira vez que você usa um modelo, seu navegador o baixa: cerca de 33 MB para o Rápido e cerca de 100 MB para o Melhor qualidade, que pergunta antes de começar. Depois disso, ele fica guardado no seu navegador.",
+          "Na primeira vez que você usa um modelo, seu navegador o baixa: cerca de 16 MB para o Rápido e cerca de 100 MB para o Melhor qualidade, que pergunta antes de começar. Depois disso, ele fica guardado no seu navegador.",
       },
       {
         title: "Escolha o fundo e baixe",
@@ -2580,7 +2580,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual é a diferença entre Rápido e Melhor qualidade?",
         answer:
-          "O Rápido usa um modelo menor (cerca de 33 MB) e leva cerca de 5 segundos por foto; funciona bem para pessoas, mas pode deixar passar partes de objetos. O Melhor qualidade usa um modelo maior (cerca de 100 MB) e leva cerca de 15–30 segundos, com resultados melhores em produtos, animais de estimação, objetos e pessoas.",
+          "O Rápido usa um modelo menor (cerca de 16 MB) e leva cerca de 5 segundos por foto; funciona bem para pessoas, mas pode deixar passar partes de objetos. O Melhor qualidade usa um modelo maior (cerca de 100 MB) e leva cerca de 15–30 segundos, com resultados melhores em produtos, animais de estimação, objetos e pessoas.",
       },
       {
         question: "Por que o primeiro uso demora mais?",
@@ -4001,7 +4001,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Como funciona a troca de fundo?",
         answer:
-          "Um modelo de IA é baixado uma vez (cerca de 33 MB) e roda no seu navegador para separar você do fundo. Confira as bordas ao redor do cabelo antes de imprimir.",
+          "Um modelo de IA é baixado uma vez (cerca de 16 MB) e roda no seu navegador para separar você do fundo. Confira as bordas ao redor do cabelo antes de imprimir.",
       },
       {
         question: "Minha foto é enviada?",

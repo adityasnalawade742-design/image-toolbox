@@ -37,7 +37,7 @@ export const formStrings = {
   'ctl.passport.bgWhite': 'White',
   'ctl.passport.bgGrey': 'Light grey',
   'ctl.passport.bgBlue': 'Light blue',
-  'ctl.passport.bgNote': 'Replacing the background runs an AI model on your device. The first time, it downloads about 33 MB.',
+  'ctl.passport.bgNote': 'Replacing the background runs an AI model on your device. The first time, it downloads about 16 MB.',
   'ctl.passport.bgWorking': 'Replacing the background…',
   'ctl.passport.bgFailed': 'The background couldn’t be replaced: {message}',
   'ctl.passport.output': 'Download as',

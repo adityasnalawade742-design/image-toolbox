@@ -581,6 +581,7 @@ export const strings = {
 
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG, WebP. AI 모델이 기기에서 실행되며 이미지는 업로드되지 않아요.',
+  'ctl.bg.scaledDown': '휴대폰에서도 작동하고 더 빨리 처리되도록 이 사진을 {w} × {h} px로 줄였어요.',
   'ctl.bg.mode': '모델',
   'ctl.bg.modePortrait': '빠름',
   'ctl.bg.modeHq': '최고 품질',
@@ -853,7 +854,7 @@ export const strings = {
   'ctl.passport.bgWhite': '흰색',
   'ctl.passport.bgGrey': '연회색',
   'ctl.passport.bgBlue': '하늘색',
-  'ctl.passport.bgNote': '배경을 바꿀 때는 AI 모델이 내 기기에서 실행돼요. 처음에는 약 33 MB를 다운로드해요.',
+  'ctl.passport.bgNote': '배경을 바꿀 때는 AI 모델이 내 기기에서 실행돼요. 처음에는 약 16 MB를 다운로드해요.',
   'ctl.passport.bgWorking': '배경 바꾸는 중…',
   'ctl.passport.bgFailed': '배경을 바꾸지 못했어요: {message}',
   'ctl.passport.output': '다운로드 형식',
