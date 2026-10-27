@@ -1,6 +1,7 @@
 // Interface strings for the background remover. Keys start with 'ctl.'; other locales translate them.
 export const bgStrings = {
   'ctl.bg.dropHint': 'JPG, PNG or WebP. The AI model runs on your device; the image is never uploaded.',
+  'ctl.bg.scaledDown': 'This photo was reduced to {w} × {h} px so it works on phones and processes faster.',
   'ctl.bg.mode': 'Model',
   'ctl.bg.modePortrait': 'Fast',
   'ctl.bg.modeHq': 'Best quality',

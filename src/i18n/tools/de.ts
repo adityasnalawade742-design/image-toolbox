@@ -2546,7 +2546,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         title: "Modell einmalig herunterladen",
         description:
-          "Wenn du ein Modell zum ersten Mal nutzt, lädt dein Browser es herunter: etwa 33 MB für „Schnell“ und etwa 100 MB für „Beste Qualität“, das vorher nachfragt. Danach ist es in deinem Browser gespeichert.",
+          "Wenn du ein Modell zum ersten Mal nutzt, lädt dein Browser es herunter: etwa 16 MB für „Schnell“ und etwa 100 MB für „Beste Qualität“, das vorher nachfragt. Danach ist es in deinem Browser gespeichert.",
       },
       {
         title: "Hintergrund wählen und herunterladen",
@@ -2580,7 +2580,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Was ist der Unterschied zwischen „Schnell“ und „Beste Qualität“?",
         answer:
-          "„Schnell“ nutzt ein kleineres Modell (etwa 33 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht etwa 15–30 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
+          "„Schnell“ nutzt ein kleineres Modell (etwa 16 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht etwa 15–30 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
       },
       {
         question: "Warum dauert die erste Nutzung länger?",
@@ -3998,7 +3998,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Wie funktioniert das Ersetzen des Hintergrunds?",
         answer:
-          "Ein KI-Modell wird einmal heruntergeladen (etwa 33 MB) und läuft in deinem Browser, um dich vom Hintergrund zu trennen. Prüf vor dem Drucken die Kanten um die Haare.",
+          "Ein KI-Modell wird einmal heruntergeladen (etwa 16 MB) und läuft in deinem Browser, um dich vom Hintergrund zu trennen. Prüf vor dem Drucken die Kanten um die Haare.",
       },
       {
         question: "Wird mein Foto hochgeladen?",

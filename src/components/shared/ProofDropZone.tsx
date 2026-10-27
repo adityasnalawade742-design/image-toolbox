@@ -11,10 +11,12 @@ interface Props {
   hint?: string;
   /** Overrides the "Choose image" button text (e.g. for PDFs) */
   buttonLabel?: string;
+  /** Called when the visitor starts choosing a file (picker opened or a file dragged over), before it arrives */
+  onPick?: () => void;
 }
 
 /** The drop target every tool starts from: a tinted tray that is a real button */
-export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, title, hint, buttonLabel }: Props) {
+export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, title, hint, buttonLabel, onPick }: Props) {
   const t = useT();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -23,7 +25,11 @@ export function ProofDropZone({ onFiles, accept = 'image/*', multiple = false, t
     <div>
       <button
         type="button"
-        onClick={() => inputRef.current?.click()}
+        onClick={() => {
+          onPick?.();
+          inputRef.current?.click();
+        }}
+        onDragEnter={() => onPick?.()}
         onDragOver={(e) => {
           e.preventDefault();
           setIsDragging(true);

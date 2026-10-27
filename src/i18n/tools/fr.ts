@@ -2546,7 +2546,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         title: "Téléchargez le modèle une seule fois",
         description:
-          "La première fois que vous utilisez un modèle, votre navigateur le télécharge : environ 33 MB pour « Rapide » et environ 100 MB pour « Qualité maximale », qui vous demande votre accord avant de commencer. Ensuite, il reste stocké dans votre navigateur.",
+          "La première fois que vous utilisez un modèle, votre navigateur le télécharge : environ 16 MB pour « Rapide » et environ 100 MB pour « Qualité maximale », qui vous demande votre accord avant de commencer. Ensuite, il reste stocké dans votre navigateur.",
       },
       {
         title: "Choisissez le fond et téléchargez",
@@ -2580,7 +2580,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle est la différence entre « Rapide » et « Qualité maximale » ?",
         answer:
-          "« Rapide » utilise un modèle plus petit (environ 33 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 15 à 30 secondes, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
+          "« Rapide » utilise un modèle plus petit (environ 16 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 15 à 30 secondes, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
       },
       {
         question: "Pourquoi la première utilisation prend-elle plus de temps ?",
@@ -3996,7 +3996,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Comment fonctionne le remplacement du fond ?",
         answer:
-          "Un modèle d’IA est téléchargé une seule fois (environ 33 MB) et s’exécute dans votre navigateur pour vous séparer du fond. Vérifiez les contours autour des cheveux avant d’imprimer.",
+          "Un modèle d’IA est téléchargé une seule fois (environ 16 MB) et s’exécute dans votre navigateur pour vous séparer du fond. Vérifiez les contours autour des cheveux avant d’imprimer.",
       },
       {
         question: "Ma photo est-elle envoyée ?",

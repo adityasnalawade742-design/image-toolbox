@@ -41,6 +41,15 @@ export async function removeBackground(
   return run(image, mode, 'wasm', onProgress);
 }
 
+/**
+ * Start downloading and loading a model before the photo arrives (for example while the file picker is open).
+ * A removal that follows reuses it, and shows the download's progress if it is still running.
+ */
+export function preloadBackgroundRemoval(mode: RemovalMode) {
+  if (mode === 'hq') getImglyWorker().postMessage({ type: 'preload' });
+  else getWorker().postMessage({ type: 'preload', mode, device: 'wasm' });
+}
+
 function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?: (p: RemovalProgress) => void, target?: Worker) {
   const w = target || getWorker();
   const id = nextId++;
@@ -50,7 +59,8 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
   return new Promise<ImageData>((resolve, reject) => {
     const onMessage = (e: MessageEvent) => {
       const msg = e.data;
-      if (msg.id !== id) return;
+      // Download progress is shared: it may come from a preload that this removal is now waiting on
+      if (msg.type !== 'progress' && msg.id !== id) return;
       if (msg.type === 'progress') {
         files.set(msg.file, { loaded: msg.loaded, total: msg.total });
         const loaded = [...files.values()].reduce((a, f) => a + f.loaded, 0);

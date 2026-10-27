@@ -152,6 +152,7 @@ export const strings = {
 
   // Background remover
   'ctl.bg.dropHint': "JPG, PNG ou WebP. Le modèle d’IA fonctionne sur votre appareil ; l’image n’est jamais envoyée.",
+  'ctl.bg.scaledDown': 'Cette photo a été réduite à {w} × {h} px pour fonctionner sur mobile et être traitée plus vite.',
   'ctl.bg.mode': "Modèle",
   'ctl.bg.modePortrait': "Rapide",
   'ctl.bg.modeHq': "Qualité maximale",
@@ -825,7 +826,7 @@ export const strings = {
   'ctl.passport.bgWhite': "Blanc",
   'ctl.passport.bgGrey': "Gris clair",
   'ctl.passport.bgBlue': "Bleu clair",
-  'ctl.passport.bgNote': "Le remplacement du fond utilise un modèle d’IA sur votre appareil. La première fois, il télécharge environ 33 MB.",
+  'ctl.passport.bgNote': "Le remplacement du fond utilise un modèle d’IA sur votre appareil. La première fois, il télécharge environ 16 MB.",
   'ctl.passport.bgWorking': "Remplacement du fond…",
   'ctl.passport.bgFailed': "Impossible de remplacer le fond : {message}",
   'ctl.passport.output': "Télécharger en",

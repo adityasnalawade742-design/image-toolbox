@@ -19,14 +19,16 @@ export type RemovalMode = 'portrait' | 'hq';
 export type RemovalDevice = 'webgpu' | 'wasm';
 
 // "Fast" model: MODNet (Apache-2.0). "Best quality" runs IMG.LY's model in imglyRemoval.worker.ts instead.
+// The 16-bit weights are half the download of the 32-bit ones with identical mattes (measured: mean alpha
+// difference 0.01/255) and the same speed on WebAssembly; the 8-bit ones were rejected for visibly worse edges.
 const MODELS: Partial<Record<RemovalMode, { id: string; dtype: Record<RemovalDevice, string> }>> = {
-  portrait: { id: `modnet/${assets.modnet.revision.slice(0, 12)}`, dtype: { webgpu: 'fp16', wasm: 'fp32' } },
+  portrait: { id: `modnet/${assets.modnet.revision.slice(0, 12)}`, dtype: { webgpu: 'fp16', wasm: 'fp16' } },
 };
 
 const scope = self as unknown as DedicatedWorkerGlobalScope;
 const loaded = new Map<string, Promise<any>>();
 
-function getPipeline(mode: RemovalMode, device: RemovalDevice, id: number, dtypeOverride?: string) {
+function getPipeline(mode: RemovalMode, device: RemovalDevice, dtypeOverride?: string) {
   const key = `${mode}:${device}:${dtypeOverride || ''}`;
   if (!loaded.has(key)) {
     const { id: model, dtype } = MODELS[mode]!;
@@ -34,8 +36,9 @@ function getPipeline(mode: RemovalMode, device: RemovalDevice, id: number, dtype
       device,
       dtype: (dtypeOverride || dtype[device]) as any,
       progress_callback: (p: any) => {
+        // Not tied to one request: a removal that starts while a preload is downloading shows this progress too
         if (p.status === 'progress' && p.total) {
-          scope.postMessage({ id, type: 'progress', file: p.file, loaded: p.loaded, total: p.total });
+          scope.postMessage({ type: 'progress', file: p.file, loaded: p.loaded, total: p.total });
         }
       },
     });
@@ -46,10 +49,17 @@ function getPipeline(mode: RemovalMode, device: RemovalDevice, id: number, dtype
   return loaded.get(key)!;
 }
 
-scope.onmessage = async (e: MessageEvent<{ id: number; mode: RemovalMode; device: RemovalDevice; image: Blob; dtype?: string }>) => {
+scope.onmessage = async (
+  e: MessageEvent<{ type?: 'preload'; id: number; mode: RemovalMode; device: RemovalDevice; image: Blob; dtype?: string }>
+) => {
   const { id, mode, device, image, dtype } = e.data;
+  // Start downloading and loading the model before the photo arrives; a later removal reuses it
+  if (e.data.type === 'preload') {
+    getPipeline(mode, device, dtype).catch(() => {});
+    return;
+  }
   try {
-    const segmenter = await getPipeline(mode, device, id, dtype);
+    const segmenter = await getPipeline(mode, device, dtype);
     scope.postMessage({ id, type: 'processing' });
     const result = await segmenter(image);
     const output = Array.isArray(result) ? result[0] : result;

@@ -2546,7 +2546,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         title: "Modeli bir kez indirin",
         description:
-          "Bir modeli ilk kullandığınızda tarayıcınız onu indirir: Hızlı için yaklaşık 33 MB, En iyi kalite için yaklaşık 100 MB. En iyi kalite, indirme başlamadan önce size sorar. Sonrasında model tarayıcınızda saklanır.",
+          "Bir modeli ilk kullandığınızda tarayıcınız onu indirir: Hızlı için yaklaşık 16 MB, En iyi kalite için yaklaşık 100 MB. En iyi kalite, indirme başlamadan önce size sorar. Sonrasında model tarayıcınızda saklanır.",
       },
       {
         title: "Arka planı seçin ve indirin",
@@ -2580,7 +2580,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hızlı ile En iyi kalite arasındaki fark nedir?",
         answer:
-          "Hızlı daha küçük bir model (yaklaşık 33 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yaklaşık 15–30 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
+          "Hızlı daha küçük bir model (yaklaşık 16 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yaklaşık 15–30 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
       },
       {
         question: "İlk kullanım neden daha uzun sürüyor?",
@@ -3999,7 +3999,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Arka plan değiştirme nasıl çalışır?",
         answer:
-          "Bir yapay zekâ modeli bir kez indirilir (yaklaşık 33 MB) ve sizi arka plandan ayırmak için tarayıcınızda çalışır. Yazdırmadan önce saçların çevresindeki kenarları kontrol edin.",
+          "Bir yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve sizi arka plandan ayırmak için tarayıcınızda çalışır. Yazdırmadan önce saçların çevresindeki kenarları kontrol edin.",
       },
       {
         question: "Fotoğrafım yükleniyor mu?",

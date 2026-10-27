@@ -3,14 +3,15 @@ import { Download, Loader2, AlertCircle, Eye, EyeOff, Eraser, RotateCcw, Check, 
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useImageIntake } from '../shared/useImageIntake';
 import { useT } from '../shared/I18nContext';
-import { removeBackground, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
+import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
+import { fitWithinPixels } from '../../lib/canvas/limits';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
 import { formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName } from '../../lib/storage/fileNames';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp';
 // First-time download per model, AI runtime included (measured in Chrome); cached by the browser afterwards
-const MODEL_SIZE: Record<RemovalMode, string> = { portrait: '≈ 33 MB', hq: '≈ 100 MB' };
+const MODEL_SIZE: Record<RemovalMode, string> = { portrait: '≈ 16 MB', hq: '≈ 100 MB' };
 const MODES: RemovalMode[] = ['portrait', 'hq'];
 
 // Best-effort memory of which models this browser has already downloaded (the browser cache holds the files)
@@ -29,6 +30,17 @@ const markReady = (m: RemovalMode) => {
     // storage unavailable: the user just sees the download note again next time
   }
 };
+// The visitor asked their browser to save data: don't download anything before a photo is actually chosen
+const saveData = () => (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
+
+const loadImage = (url: string) =>
+  new Promise<HTMLImageElement>((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  });
+
 const savedMode = (): RemovalMode => {
   try {
     return localStorage.getItem('bg-model') === 'hq' ? 'hq' : 'portrait';
@@ -55,8 +67,11 @@ export function RemoveBackgroundWorkspace() {
   const [format, setFormat] = useState<OutputFormat>('image/png');
   const [showOriginal, setShowOriginal] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  // Set when a very large photo was reduced before processing
+  const [scaledTo, setScaledTo] = useState<{ w: number; h: number } | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const runSeq = useRef(0);
+  const fileSeq = useRef(0);
 
   useEffect(() => {
     setMode(savedMode());
@@ -89,16 +104,50 @@ export function RemoveBackgroundWorkspace() {
     [t]
   );
 
-  const handleFile = (f: File) => {
-    if (!ACCEPT.split(',').includes(f.type)) {
+  // Download and load the model while the visitor is still choosing a photo. The large model only warms up once
+  // it has been downloaded with consent; the small one is fetched unless the browser asks to save data.
+  const warmUp = (m: RemovalMode = mode) => {
+    if (m === 'hq' ? !isReady('hq') : !isReady('portrait') && saveData()) return;
+    preloadBackgroundRemoval(m);
+  };
+
+  const handleFile = async (input: File) => {
+    if (!ACCEPT.split(',').includes(input.type)) {
       setError(t('ws.errDecode'));
       return;
     }
+    const seq = ++fileSeq.current;
+    let f = input;
+    let url = URL.createObjectURL(input);
+    let dims: { w: number; h: number } | null = null;
+    let reduced: { w: number; h: number } | null = null;
+    try {
+      const img = await loadImage(url);
+      dims = { w: img.naturalWidth, h: img.naturalHeight };
+      // Phones shoot 24-48 MP; iOS Safari can't draw canvases that large, and they take far longer to process
+      const fit = fitWithinPixels(dims.w, dims.h);
+      if (fit.scaled) {
+        const canvas = document.createElement('canvas');
+        canvas.width = fit.width;
+        canvas.height = fit.height;
+        canvas.getContext('2d')?.drawImage(img, 0, 0, fit.width, fit.height);
+        const type = input.type === 'image/jpeg' ? 'image/jpeg' : 'image/png';
+        f = new File([await canvasToBlob(canvas, type, 0.95)], input.name, { type });
+        URL.revokeObjectURL(url);
+        url = URL.createObjectURL(f);
+        dims = reduced = { w: fit.width, h: fit.height };
+      }
+    } catch {
+      // Not decodable here: the removal step reports it
+    }
+    // A newer photo arrived while this one was being prepared
+    if (seq !== fileSeq.current) {
+      URL.revokeObjectURL(url);
+      return;
+    }
     if (sourceUrl) URL.revokeObjectURL(sourceUrl);
-    const url = URL.createObjectURL(f);
-    const img = new Image();
-    img.onload = () => setSourceDims({ w: img.naturalWidth, h: img.naturalHeight });
-    img.src = url;
+    if (dims) setSourceDims(dims);
+    setScaledTo(reduced);
     setFile(f);
     setSourceUrl(url);
     setCutout(null);
@@ -129,6 +178,8 @@ export function RemoveBackgroundWorkspace() {
       setCutout(null);
       setShowOriginal(false);
       start(file, m);
+    } else if (isReady(m)) {
+      warmUp(m);
     }
   };
 
@@ -168,7 +219,7 @@ export function RemoveBackgroundWorkspace() {
   };
 
   if (!file) {
-    return <ProofDropZone onFiles={(files) => handleFile(files[0])} accept={ACCEPT} hint={t('ctl.bg.dropHint')} />;
+    return <ProofDropZone onFiles={(files) => handleFile(files[0])} onPick={() => warmUp()} accept={ACCEPT} hint={t('ctl.bg.dropHint')} />;
   }
 
   const progressLabel =
@@ -218,7 +269,7 @@ export function RemoveBackgroundWorkspace() {
                 {showOriginal ? t('ctl.bg.showResult') : t('ctl.bg.showOriginal')}
               </button>
             )}
-            <label className="ml-auto inline-flex items-center min-h-[40px] text-ink underline hover:no-underline cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink">
+            <label onClick={() => warmUp()} className="ml-auto inline-flex items-center min-h-[40px] text-ink underline hover:no-underline cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink">
               {t('ws.replace')}
               <input
                 type="file"
@@ -231,6 +282,8 @@ export function RemoveBackgroundWorkspace() {
               />
             </label>
           </div>
+
+          {scaledTo && <p className="text-[14px] text-graphite" data-measure>{t('ctl.bg.scaledDown', { w: scaledTo.w, h: scaledTo.h })}</p>}
 
           {error && (
             <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">

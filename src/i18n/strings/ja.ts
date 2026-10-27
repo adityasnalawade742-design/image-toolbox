@@ -586,6 +586,7 @@ export const strings = {
 
   // ===== Background remover =====
   'ctl.bg.dropHint': 'JPG、PNG、WebPに対応。AIモデルは端末上で動作し、画像がアップロードされることはありません。',
+  'ctl.bg.scaledDown': 'スマートフォンでも動作し、処理が速くなるよう、この写真は {w} × {h} px に縮小されました。',
   'ctl.bg.mode': 'モデル',
   'ctl.bg.modePortrait': '高速',
   'ctl.bg.modeHq': '高画質',
@@ -858,7 +859,7 @@ export const strings = {
   'ctl.passport.bgWhite': '白',
   'ctl.passport.bgGrey': 'ライトグレー',
   'ctl.passport.bgBlue': 'ライトブルー',
-  'ctl.passport.bgNote': '背景の置き換えでは、AIモデルを端末上で実行します。初回は約33 MBをダウンロードします。',
+  'ctl.passport.bgNote': '背景の置き換えでは、AIモデルを端末上で実行します。初回は約16 MBをダウンロードします。',
   'ctl.passport.bgWorking': '背景を置き換え中…',
   'ctl.passport.bgFailed': '背景を置き換えられませんでした：{message}',
   'ctl.passport.output': 'ダウンロード形式',

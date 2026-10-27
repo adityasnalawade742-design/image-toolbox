@@ -2546,7 +2546,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         title: "Scarica il modello una volta",
         description:
-          "La prima volta che usi un modello, il browser lo scarica: circa 33 MB per Veloce e circa 100 MB per Massima qualità, che chiede conferma prima di iniziare. Dopo resta salvato nel browser.",
+          "La prima volta che usi un modello, il browser lo scarica: circa 16 MB per Veloce e circa 100 MB per Massima qualità, che chiede conferma prima di iniziare. Dopo resta salvato nel browser.",
       },
       {
         title: "Scegli lo sfondo e scarica",
@@ -2580,7 +2580,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual è la differenza tra Veloce e Massima qualità?",
         answer:
-          "Veloce usa un modello più piccolo (circa 33 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 15–30 secondi, con risultati migliori su prodotti, animali, oggetti e persone.",
+          "Veloce usa un modello più piccolo (circa 16 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 15–30 secondi, con risultati migliori su prodotti, animali, oggetti e persone.",
       },
       {
         question: "Perché il primo utilizzo richiede più tempo?",
@@ -3997,7 +3997,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Come funziona la sostituzione dello sfondo?",
         answer:
-          "Un modello di IA viene scaricato una volta (circa 33 MB) e funziona nel tuo browser per separarti dallo sfondo. Controlla i bordi intorno ai capelli prima di stampare.",
+          "Un modello di IA viene scaricato una volta (circa 16 MB) e funziona nel tuo browser per separarti dallo sfondo. Controlla i bordi intorno ai capelli prima di stampare.",
       },
       {
         question: "La mia foto viene caricata?",

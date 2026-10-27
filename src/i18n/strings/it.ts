@@ -581,6 +581,7 @@ export const strings = {
 
   // Background remover
   'ctl.bg.dropHint': 'JPG, PNG o WebP. Il modello di IA funziona sul tuo dispositivo: l’immagine non viene mai caricata.',
+  'ctl.bg.scaledDown': 'Questa foto è stata ridotta a {w} × {h} px per funzionare sui telefoni ed essere elaborata più in fretta.',
   'ctl.bg.mode': 'Modello',
   'ctl.bg.modePortrait': 'Veloce',
   'ctl.bg.modeHq': 'Massima qualità',
@@ -853,7 +854,7 @@ export const strings = {
   'ctl.passport.bgWhite': 'Bianco',
   'ctl.passport.bgGrey': 'Grigio chiaro',
   'ctl.passport.bgBlue': 'Azzurro',
-  'ctl.passport.bgNote': 'La sostituzione dello sfondo usa un modello di IA sul tuo dispositivo. La prima volta scarica circa 33 MB.',
+  'ctl.passport.bgNote': 'La sostituzione dello sfondo usa un modello di IA sul tuo dispositivo. La prima volta scarica circa 16 MB.',
   'ctl.passport.bgWorking': 'Sostituzione dello sfondo…',
   'ctl.passport.bgFailed': 'Impossibile sostituire lo sfondo: {message}',
   'ctl.passport.output': 'Scarica come',
