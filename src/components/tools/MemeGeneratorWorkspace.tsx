@@ -308,7 +308,7 @@ export function MemeGeneratorWorkspace() {
           <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />
 
           {/* Starter templates (inline SVG, so the canvas is never CORS-tainted) */}
-          <div className="mx-5 sm:mx-6 border border-ink bg-paper-bright">
+          <div className="mx-5 sm:mx-6 border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink">{t('ctl.meme.templates')}</h2>
             <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {MEME_TEMPLATES.map((tpl) => (
@@ -333,7 +333,7 @@ export function MemeGeneratorWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet */}
           <div className="min-w-0 space-y-3">
-            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
+            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center rounded-xl">
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
                 <canvas ref={canvasRef} role="img" aria-label={t('ws.previewLabel')} className="block max-h-[70vh] w-auto max-w-full object-contain" />
                 <DragFrameOverlay
@@ -390,7 +390,7 @@ export function MemeGeneratorWorkspace() {
 
           {/* Ruled control panel */}
           <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-            <div className="border border-ink bg-paper-bright">
+            <div className="border border-ink bg-paper-bright rounded-xl">
               <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-ink">
                 <h2 className="slug flex items-center gap-2">
                   <Type className="w-4 h-4 text-ink" aria-hidden="true" />
@@ -443,7 +443,7 @@ export function MemeGeneratorWorkspace() {
                 {captionBoxes.length > 0 && imgElement && (
                   <div className="space-y-2 pt-4 border-t border-ink">
                     <span className="slug block" id="meme-pos">{t('ctl.meme.position')}</span>
-                    <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="meme-pos">
+                    <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="meme-pos">
                       {(['top', 'middle', 'bottom'] as const).map((id) => {
                         const present = captionBoxes.some((b) => b.id === id);
                         return (
@@ -516,7 +516,7 @@ export function MemeGeneratorWorkspace() {
 
                   <div className="space-y-1.5">
                     <span className="slug block">{t('ctl.meme.align')}</span>
-                    <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.meme.align')}>
+                    <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.meme.align')}>
                       {alignOptions.map(({ value, Icon, labelKey }) => (
                         <button
                           key={value}
@@ -610,7 +610,7 @@ export function MemeGeneratorWorkspace() {
                 {/* Save as */}
                 <div className="space-y-1.5 pt-4 border-t border-ink">
                   <span className="slug">{t('ws.saveAs')}</span>
-                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                  <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                     {SAVE_FORMATS.map((fmt) => (
                       <button
                         key={fmt}

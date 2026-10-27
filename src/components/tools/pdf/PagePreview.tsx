@@ -28,7 +28,7 @@ export function PagePreview({ doc, page, children }: Props) {
   }, [doc, page]);
 
   return (
-    <div className="bg-paper-bright border border-ink flex items-center justify-center px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] overflow-hidden">
+    <div className="bg-paper-bright border border-ink flex items-center justify-center px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] overflow-hidden rounded-xl">
       <div className="relative inline-flex max-w-full crop-marks">
         <canvas
           ref={canvasRef}

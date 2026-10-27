@@ -171,7 +171,7 @@ export function ChangeDpiWorkspace() {
         status={status}
         error={error}
       >
-        <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+        <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
           <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
             <img src={src.image.url} alt="" className="block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain" />
           </div>

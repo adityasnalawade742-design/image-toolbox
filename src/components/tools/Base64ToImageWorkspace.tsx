@@ -204,7 +204,7 @@ export function Base64ToImageWorkspace() {
         </div>
 
         {errorMsg ? (
-          <div role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[14px] text-accent-red">
+          <div role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[14px] text-accent-red">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{errorMsg}</span>
           </div>
@@ -246,10 +246,10 @@ export function Base64ToImageWorkspace() {
               </span>
             </div>
 
-            <div className="border border-ink bg-paper-bright p-4 space-y-4">
+            <div className="border border-ink bg-paper-bright p-4 space-y-4 rounded-xl">
               <div className="space-y-1.5">
                 <span className="slug">{t('ctl.decode.saveAs')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.decode.formatGroup')}>
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.decode.formatGroup')}>
                   {FORMATS.map((fmt) => (
                     <button
                       key={fmt}

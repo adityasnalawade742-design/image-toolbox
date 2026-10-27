@@ -76,7 +76,7 @@ export function FillFormWorkspace() {
         status={busy ? t('ctl.pdf.working') : status}
         error={error}
       >
-        <section className="border border-ink bg-paper-bright">
+        <section className="border border-ink bg-paper-bright rounded-xl">
           <h2 className="slug px-4 py-2.5 border-b border-ink">{t('ctl.form.fields')}</h2>
           <div className="p-4 space-y-4">
             {fields && !editable.length && <p className="text-[15px] text-ink">{t('ctl.form.none')}</p>}

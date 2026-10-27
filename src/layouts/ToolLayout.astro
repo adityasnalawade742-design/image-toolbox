@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import AdSlot from '../components/layout/AdSlot.astro';
+import ToolIcon from '../components/shared/ToolIcon.astro';
 import { ToolWorkspace } from '../components/shared/ToolWorkspace';
 import { getToolBySlug, TOOLS } from '../config/tools';
 import { CATEGORY_INK } from '../config/inks';
@@ -67,13 +68,13 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
 
 <BaseLayout title={title} description={description} currentSlug={slug} canonicalUrl={canonicalUrl} jsonLd={jsonLd}>
   <div class="space-y-16 sm:space-y-20">
-    <section class="space-y-6">
+    <section class="space-y-8 sm:space-y-10">
       <div class="space-y-3">
         <nav aria-label="Breadcrumb" class="-my-1.5 flex items-center gap-2 text-[14px] text-graphite">
           <a href={translatePath('/')} class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('tool.home')}</a>
           <span aria-hidden="true">/</span>
           <a href={translatePath(`/#${tool.category}`)} class="flex items-center gap-1.5 min-h-[36px] text-ink hover:underline">
-            <span class:list={['w-2.5 h-2.5', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
+            <span class:list={['w-2.5 h-2.5 rounded-full', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
             {categoryName}
           </a>
         </nav>
@@ -81,7 +82,10 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
         <p class="text-[17px] sm:text-[18px] text-body max-w-[75ch] leading-relaxed text-pretty">{locContent.tagline || tool.description}</p>
       </div>
 
-      <ToolWorkspace client:load slug={slug} toolName={toolName} accept={tool.accept} locale={locale} strings={workspaceStrings} nextTools={nextTools} />
+      <!-- A block wrapper: the island element is inline, so section spacing would not reach it -->
+      <div>
+        <ToolWorkspace client:load slug={slug} toolName={toolName} accept={tool.accept} locale={locale} strings={workspaceStrings} nextTools={nextTools} />
+      </div>
     </section>
 
     <div class="grid gap-14 lg:grid-cols-[minmax(0,1fr)_18rem]">
@@ -158,12 +162,14 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
       {relatedTools.length > 0 && (
         <aside aria-labelledby="related-title" class="lg:sticky lg:top-24 self-start">
           <h2 id="related-title" class="slug pb-2 border-b border-ink">{t('tool.related')}</h2>
-          <ul class="divide-y divide-pencil-soft">
+          <ul class="mt-2 -mx-2">
             {relatedTools.map((rel) => (
               <li>
-                <a href={translatePath(`/${rel.slug}`)} class="group flex items-start gap-2.5 py-2.5">
-                  <span class:list={['w-2.5 h-2.5 mt-1.5 shrink-0', CATEGORY_INK[rel.category].className]} aria-hidden="true"></span>
-                  <span>
+                <a href={translatePath(`/${rel.slug}`)} class="group flex items-start gap-3 rounded-md p-2 hover:bg-paper-stock transition-colors">
+                  <span class:list={['w-9 h-9 shrink-0 rounded-md flex items-center justify-center', CATEGORY_INK[rel.category].tint]} aria-hidden="true">
+                    <ToolIcon name={rel.iconName} class="w-[18px] h-[18px]" />
+                  </span>
+                  <span class="min-w-0">
                     <span class="block text-[15px] font-semibold text-ink group-hover:underline">{allLocTools[rel.slug]?.name || rel.name}</span>
                     <span class="block text-[13px] leading-snug text-graphite">{allLocTools[rel.slug]?.tagline || rel.description}</span>
                   </span>

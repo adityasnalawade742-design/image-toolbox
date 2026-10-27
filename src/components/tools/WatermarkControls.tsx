@@ -74,7 +74,7 @@ export function WatermarkControls({ options, onChange }: Props) {
       {/* Watermark type */}
       <div className="space-y-1.5">
         <span className="slug block" id={id('type')}>{t('ctl.watermark.type')}</span>
-        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={id('type')}>
+        <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={id('type')}>
           <button
             type="button"
             aria-pressed={mode === 'text'}

@@ -110,7 +110,7 @@ export function MergeImagesWorkspace() {
       {fileInput}
       <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
         <div className="min-w-0 space-y-3">
-          <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+          <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
             <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               <canvas ref={canvasRef} role="img" aria-label={t('ctl.merge.previewLabel')} className="block max-w-full max-h-[60vh] w-auto h-auto object-contain" />
             </div>
@@ -126,7 +126,7 @@ export function MergeImagesWorkspace() {
           {fitted && fitted.scale < 1 && <p className="text-[14px] text-graphite">{t('ctl.merge.scaledDown', { percent: Math.round(fitted.scale * 100) })}</p>}
           {skipped.length > 0 && <p role="alert" className="text-[15px] text-accent-red">{t('ctl.list.skipped', { names: skipped.join(', ') })}</p>}
           {error && (
-            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
@@ -134,7 +134,7 @@ export function MergeImagesWorkspace() {
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-          <div className="border border-ink bg-paper-bright">
+          <div className="border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <LayoutGrid className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
@@ -147,7 +147,7 @@ export function MergeImagesWorkspace() {
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block" id="merge-layout">{t('ctl.merge.layout')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-labelledby="merge-layout">
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="merge-layout">
                   {(
                     [
                       ['horizontal', t('ctl.merge.horizontal')],
@@ -189,7 +189,7 @@ export function MergeImagesWorkspace() {
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block" id="merge-bg">{t('ctl.merge.background')}</span>
                 <div className="flex items-center gap-2">
-                  <div className="grid grid-cols-2 flex-1 border border-ink divide-x divide-ink" role="group" aria-labelledby="merge-bg">
+                  <div className="grid grid-cols-2 flex-1 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="merge-bg">
                     <button type="button" aria-pressed={!transparent} onClick={() => setTransparent(false)} className={seg(!transparent)}>
                       {t('ctl.merge.color')}
                     </button>
@@ -211,7 +211,7 @@ export function MergeImagesWorkspace() {
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block">{t('ws.saveAs')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                   {(['image/jpeg', 'image/png', 'image/webp'] as const).map((f) => (
                     <button key={f} type="button" aria-pressed={format === f} onClick={() => setFormat(f)} className={seg(format === f)}>
                       {FORMAT_LABEL[f]}

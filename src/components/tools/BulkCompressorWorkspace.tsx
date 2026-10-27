@@ -249,7 +249,7 @@ export function BulkCompressorWorkspace() {
 
       {/* Queue sheet */}
       <div className="min-w-0 space-y-3">
-        <div className="border border-ink bg-paper-bright">
+        <div className="border border-ink bg-paper-bright rounded-xl">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-2.5 border-b border-ink">
             <h2 className="slug">{t('ctl.bulk.queue')}</h2>
             <span className="text-[14px] text-graphite" data-measure>
@@ -341,7 +341,7 @@ export function BulkCompressorWorkspace() {
 
       {/* Ruled control panel */}
       <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-        <div className="border border-ink bg-paper-bright">
+        <div className="border border-ink bg-paper-bright rounded-xl">
           <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
             <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
             {t('ctl.bulk.settings')}
@@ -349,7 +349,7 @@ export function BulkCompressorWorkspace() {
           <div className="p-4 space-y-4 text-[15px]">
             <div className="space-y-1.5">
               <span className="slug">{t('ctl.bulk.format')}</span>
-              <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.bulk.formatGroup')}>
+              <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.bulk.formatGroup')}>
                 {FORMATS.map((fmt) => (
                   <button
                     key={fmt}

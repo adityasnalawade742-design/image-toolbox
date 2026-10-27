@@ -1,5 +1,6 @@
 ---
 import { HomeDropZone, type QuickTool } from '../shared/HomeDropZone';
+import ToolIcon from '../shared/ToolIcon.astro';
 import { TOOLS } from '../../config/tools';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
 import { getLocalizedHomeData } from '../../i18n/home';
@@ -39,23 +40,24 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · SVG · HEIC';
         {home.hero.title}
       </h1>
       <p class="text-[18px] sm:text-[19px] leading-relaxed text-body max-w-[34rem]">{home.hero.subtitle}</p>
-      <dl class="border-y border-ink divide-y divide-pencil text-[14px]" data-measure>
-        <div class="flex justify-between gap-4 py-2">
-          <dt class="slug">{t('home.specTools')}</dt>
+      <!-- Facts as chips: the value reads first, the label after it (row-reverse keeps "label, value" for screen readers) -->
+      <dl class="flex flex-wrap gap-2 text-[14px]" data-measure>
+        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-pencil-soft bg-paper-bright px-3.5 py-1.5">
+          <dt class="text-graphite">{t('home.specTools')}</dt>
           <dd class="font-semibold text-ink">{TOOLS.length}</dd>
         </div>
-        <div class="flex justify-between gap-4 py-2">
-          <dt class="slug">{t('home.specFormats')}</dt>
-          <dd class="font-semibold text-ink text-right">{formats}</dd>
+        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-pencil-soft bg-paper-bright px-3.5 py-1.5">
+          <dt class="text-graphite">{t('home.specFormats')}</dt>
+          <dd class="font-semibold text-ink">{formats}</dd>
         </div>
-        <div class="flex justify-between gap-4 py-2">
-          <dt class="slug">{t('home.specUploads')}</dt>
-          <dd class="font-semibold text-ink">0</dd>
+        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-[#c6e3cf] bg-accent-green-soft px-3.5 py-1.5">
+          <dt class="text-accent-green">{t('home.specUploads')}</dt>
+          <dd class="font-semibold text-accent-green">0</dd>
         </div>
       </dl>
     </div>
 
-    <div class="px-5 py-5 sm:px-6 sm:py-6">
+    <div>
       <HomeDropZone client:load locale={locale} strings={pickStrings(locale, 'home.')} quickTools={quickTools} />
     </div>
   </section>
@@ -66,20 +68,25 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · SVG · HEIC';
       <p class="text-[15px] text-graphite max-w-md">{sections.indexSubtitle}</p>
     </div>
 
-    <div class="sm:columns-2 lg:columns-3 gap-x-8">
+    <div class="sm:columns-2 lg:columns-3 gap-x-5">
       {byCategory.map(({ cat, tools }) => (
-        <div id={cat} class="scroll-mt-24 break-inside-avoid mb-10">
-          <h3 class="flex items-center gap-2.5 pb-2 border-b border-ink">
-            <span class:list={['w-4 h-4 shrink-0', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
-            <span class="text-[17px] font-semibold text-ink">{home.categoryNames[cat]}</span>
+        <div id={cat} class="scroll-mt-24 break-inside-avoid mb-5 rounded-xl border border-pencil-soft bg-paper-bright p-2 sm:p-3">
+          <h3 class="flex items-center gap-2.5 px-3 pt-2 pb-2.5">
+            <span class:list={['w-3 h-3 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
+            <span class="text-[17px] font-bold text-ink">{home.categoryNames[cat]}</span>
             <span class="ml-auto text-[13px] text-graphite" data-measure>{tools.length}</span>
           </h3>
-          <ul class="divide-y divide-pencil-soft">
+          <ul>
             {tools.map((tool) => (
               <li>
-                <a href={translatePath(`/${tool.slug}`)} class="group block py-2.5">
-                  <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(tool.slug)}</span>
-                  <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
+                <a href={translatePath(`/${tool.slug}`)} class="group flex items-start gap-3.5 rounded-md p-3 hover:bg-paper-stock transition-colors">
+                  <span class:list={['w-10 h-10 shrink-0 rounded-md flex items-center justify-center', CATEGORY_INK[cat].tint]} aria-hidden="true">
+                    <ToolIcon name={tool.iconName} class="w-5 h-5" />
+                  </span>
+                  <span class="min-w-0">
+                    <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(tool.slug)}</span>
+                    <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
+                  </span>
                 </a>
               </li>
             ))}

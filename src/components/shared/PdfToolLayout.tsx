@@ -59,7 +59,7 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
             {status}
           </div>
           {error && (
-            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
@@ -67,7 +67,7 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-          <div className="border border-ink bg-paper-bright">
+          <div className="border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <Icon className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
@@ -91,7 +91,7 @@ export function Segmented<T extends string | number>({ label, value, options, on
       <span className="slug block" id={id}>
         {label}
       </span>
-      <div className="grid border border-ink gap-px bg-ink" style={{ gridTemplateColumns: `repeat(${cols ?? options.length}, minmax(0, 1fr))` }} role="group" aria-labelledby={id}>
+      <div className="grid seg-group border border-ink gap-px bg-ink" style={{ gridTemplateColumns: `repeat(${cols ?? options.length}, minmax(0, 1fr))` }} role="group" aria-labelledby={id}>
         {options.map((o) => (
           <button
             key={String(o.value)}

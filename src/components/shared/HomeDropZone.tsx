@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { ArrowRight, Loader2, X } from 'lucide-react';
+import { ArrowRight, Loader2, Upload, X } from 'lucide-react';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import { saveHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
@@ -92,11 +92,11 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
 
   if (staged) {
     return (
-      <div className="crop-marks bg-paper-bright border border-ink">
+      <div className="rounded-xl overflow-hidden bg-paper-bright border border-ink">
         <div className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
           <div className="relative canvas-checkerboard border-b sm:border-b-0 sm:border-r border-ink flex items-center justify-center p-4 min-h-[200px]">
             <img src={staged.dataUrl} alt="" className="max-h-64 w-auto object-contain" />
-            <span className="absolute left-2 bottom-2 bg-paper px-1.5 text-[12px] text-ink border border-ink" data-measure>
+            <span className="absolute left-2 bottom-2 rounded-xs bg-paper px-1.5 text-[12px] text-ink border border-ink" data-measure>
               {staged.width} × {staged.height} px
             </span>
           </div>
@@ -124,7 +124,7 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
                     disabled={launching !== null}
                     className="w-full flex items-center gap-3 py-2.5 text-left text-[15px] text-ink hover:bg-paper-stock disabled:opacity-60"
                   >
-                    <span className={`w-2.5 h-2.5 shrink-0 ${tool.inkClass}`} aria-hidden="true" />
+                    <span className={`w-2.5 h-2.5 shrink-0 rounded-full ${tool.inkClass}`} aria-hidden="true" />
                     <span className="flex-1">{tool.name}</span>
                     {launching === tool.slug ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-4 h-4" aria-hidden="true" />}
                   </button>
@@ -153,21 +153,15 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
           const file = e.dataTransfer.files?.[0];
           if (file) stageFile(file);
         }}
-        className={`crop-marks w-full proof-grid border border-ink flex flex-col items-center justify-center gap-3 px-6 py-14 sm:py-20 text-center transition-colors ${
-          isDragging ? 'bg-process-yellow' : ''
-        }`}
+        className={`drop-target px-6 py-12 sm:py-16 ${isDragging ? 'is-dragging' : ''}`}
         aria-describedby="home-drop-hint"
       >
         {isBusy ? (
-          <Loader2 className="w-8 h-8 text-ink animate-spin" aria-hidden="true" />
+          <span className="drop-icon" aria-hidden="true"><Loader2 className="w-7 h-7 animate-spin" /></span>
         ) : (
-          <svg className="w-10 h-10 text-ink" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-            <rect x="6" y="9" width="28" height="22" />
-            <path d="M6 26l8-8 6 6 4-4 10 10" />
-            <circle cx="27" cy="15" r="2.5" />
-          </svg>
+          <span className="drop-icon" aria-hidden="true"><Upload className="w-7 h-7" strokeWidth={1.75} /></span>
         )}
-        <span className="text-[20px] sm:text-[22px] font-semibold text-ink">
+        <span className="font-condensed text-[24px] sm:text-[26px] font-bold text-ink">
           {isBusy ? t('home.preparing') : t('home.dropTitle')}
         </span>
         <span className="btn-ink pointer-events-none">{t('home.chooseImage')}</span>

@@ -143,7 +143,7 @@ export function AnalyzerControls({
           </button>
         </div>
 
-        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
           {metrics.map((m) => (
             <div key={m.key} className={row}>
               <dt className="text-graphite">{m.label}</dt>
@@ -174,7 +174,7 @@ export function AnalyzerControls({
         )}
 
         {exif && exif.tags.length > 0 ? (
-          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+          <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
             {exif.tags.map((tag) => (
               <div key={tag.label} className={row}>
                 <dt className="text-graphite">{exifLabel(tag.label)}</dt>

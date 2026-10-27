@@ -409,7 +409,7 @@ export function CensorImageWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet: drawing happens on the canvas only, so the page still scrolls around it on phones */}
           <div className="min-w-0 space-y-3">
-            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 select-none">
+            <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 select-none rounded-xl">
               <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               <canvas
                 ref={canvasRef}
@@ -447,7 +447,7 @@ export function CensorImageWorkspace() {
 
           {/* Ruled control panel */}
           <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-            <div className="border border-ink bg-paper-bright">
+            <div className="border border-ink bg-paper-bright rounded-xl">
               <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                 <EyeOff className="w-4 h-4 text-ink" aria-hidden="true" />
                 {t('ctl.censor.settings')}
@@ -456,7 +456,7 @@ export function CensorImageWorkspace() {
                 {/* Shape */}
                 <div className="space-y-1.5">
                   <span className="slug">{t('ctl.censor.shape')}</span>
-                  <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.shape')}>
+                  <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.shape')}>
                     <button type="button" aria-pressed={shape === 'rect'} onClick={() => setShape('rect')} className={segmentClass(shape === 'rect')}>
                       <Square className="w-4 h-4" aria-hidden="true" />
                       <span>{t('ctl.censor.shapeRect')}</span>
@@ -471,7 +471,7 @@ export function CensorImageWorkspace() {
                 {/* Style */}
                 <div className="space-y-1.5 pt-4 border-t border-ink">
                   <span className="slug">{t('ctl.censor.style')}</span>
-                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.style')}>
+                  <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.style')}>
                     {MODES.map((m) => (
                       <button
                         key={m.id}
@@ -594,7 +594,7 @@ export function CensorImageWorkspace() {
                 {/* Output format */}
                 <div className="space-y-1.5 pt-4 border-t border-ink">
                   <span className="slug">{t('ctl.censor.saveAs')}</span>
-                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.outputFormat')}>
+                  <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.outputFormat')}>
                     {(['png', 'jpeg', 'webp'] as const).map((fmt) => (
                       <button key={fmt} type="button" aria-pressed={format === fmt} onClick={() => setFormat(fmt)} className={segmentClass(format === fmt)}>
                         {FORMAT_LABEL[fmt]}

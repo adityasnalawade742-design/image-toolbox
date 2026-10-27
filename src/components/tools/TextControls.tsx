@@ -147,7 +147,7 @@ export function TextControls({ options, onChange }: Props) {
       <div className="space-y-1.5">
         <span className="slug block" id={id('style')}>{t('ctl.text.style')}</span>
         <div className="flex flex-wrap gap-2">
-          <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={id('style')}>
+          <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={id('style')}>
             <button
               type="button"
               aria-pressed={!!options.bold}
@@ -170,7 +170,7 @@ export function TextControls({ options, onChange }: Props) {
             </button>
           </div>
 
-          <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.text.alignment')}>
+          <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.text.alignment')}>
             {alignments.map(({ id: align, label, Icon }) => {
               const selected = (options.textAlign || 'center') === align;
               return (

@@ -22,7 +22,7 @@ export function FlipControls({ flipH, flipV, onFlipHChange, onFlipVChange }: Pro
     <div className="space-y-5">
       <div className="space-y-1.5">
         <span className="slug block" id={`${idBase}-flip`}>{t('ctl.flip.direction')}</span>
-        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-flip`}>
+        <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby={`${idBase}-flip`}>
           <button type="button" aria-pressed={flipH} onClick={() => onFlipHChange(!flipH)} className={segButton(flipH)}>
             <FlipHorizontal className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>{t('ctl.flip.horizontal')}</span>

@@ -65,7 +65,7 @@ export function CompressControls({
       {/* Mode: quality slider or approximate file size */}
       <div className="space-y-1.5">
         <span className="slug block">{t('ctl.compress.mode')}</span>
-        <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.mode')}>
+        <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.mode')}>
           <button
             type="button"
             aria-pressed={compressMode === 'quality'}
@@ -93,7 +93,7 @@ export function CompressControls({
       {/* Live size readout */}
       <div className="space-y-1.5">
         <span className="slug block">{t('ctl.compress.result')}</span>
-        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px]">
+        <dl className="border border-ink bg-paper-bright divide-y divide-pencil-soft text-[14px] rounded-lg">
           <div className="flex items-baseline justify-between gap-4 px-3 py-2">
             <dt className="text-graphite">{t('ctl.compress.original')}</dt>
             <dd className="text-ink font-semibold" data-measure>{formatSize(originalBytes)}</dd>
@@ -139,7 +139,7 @@ export function CompressControls({
             <span className="text-graphite">KB</span>
           </div>
 
-          <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.presets')}>
+          <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.presets')}>
             {kbPresets.map((kb) => (
               <button
                 key={kb}
@@ -190,7 +190,7 @@ export function CompressControls({
       {/* Output format */}
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block">{t('ctl.compress.format')}</span>
-        <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.format')}>
+        <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.format')}>
           {(['image/avif', 'image/webp', 'image/jpeg', 'image/png'] as const).map((fmt) => (
             <button
               key={fmt}

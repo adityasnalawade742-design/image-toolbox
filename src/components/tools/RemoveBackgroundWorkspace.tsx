@@ -183,7 +183,7 @@ export function RemoveBackgroundWorkspace() {
     <div className={cutout ? 'pb-20 lg:pb-0' : ''}>
       <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
         <div className="min-w-0 space-y-3">
-          <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10">
+          <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
             <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
               {sourceUrl && (showOriginal || !cutout) && (
                 <img src={sourceUrl} alt="" className={`block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
@@ -213,7 +213,7 @@ export function RemoveBackgroundWorkspace() {
               <span className="text-graphite">{formatBytes(file.size)}</span>
             </span>
             {cutout && (
-              <button type="button" onClick={() => setShowOriginal((v) => !v)} className="flex items-center gap-1.5 text-ink underline hover:no-underline" aria-pressed={showOriginal}>
+              <button type="button" onClick={() => setShowOriginal((v) => !v)} className="flex items-center gap-1.5 min-h-[40px] text-ink underline hover:no-underline" aria-pressed={showOriginal}>
                 {showOriginal ? <EyeOff className="w-4 h-4" aria-hidden="true" /> : <Eye className="w-4 h-4" aria-hidden="true" />}
                 {showOriginal ? t('ctl.bg.showResult') : t('ctl.bg.showOriginal')}
               </button>
@@ -233,14 +233,14 @@ export function RemoveBackgroundWorkspace() {
           </div>
 
           {error && (
-            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+            <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
           )}
 
           {awaitingHqConsent && (
-            <div className="border border-ink bg-paper-bright p-4 space-y-3">
+            <div className="border border-ink bg-paper-bright p-4 space-y-3 rounded-xl">
               <p className="text-[17px] font-semibold text-ink">{t('ctl.bg.hqPromptTitle')}</p>
               <p className="text-[15px] text-body leading-relaxed">{t('ctl.bg.hqPromptBody', { size: MODEL_SIZE.hq })}</p>
               <div className="flex flex-wrap gap-2">
@@ -258,7 +258,7 @@ export function RemoveBackgroundWorkspace() {
           {cutout && mode === 'portrait' && !isRunning && (
             <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-body">
               <span>{t('ctl.bg.tryHq')}</span>
-              <button type="button" onClick={() => chooseMode('hq')} className="font-semibold text-ink underline hover:no-underline">
+              <button type="button" onClick={() => chooseMode('hq')} className="inline-flex items-center min-h-[40px] font-semibold text-ink underline hover:no-underline">
                 {t('ctl.bg.tryHqButton')}
               </button>
             </p>
@@ -266,7 +266,7 @@ export function RemoveBackgroundWorkspace() {
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-          <div className="border border-ink bg-paper-bright">
+          <div className="border border-ink bg-paper-bright rounded-xl">
             <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
               <Eraser className="w-4 h-4 text-ink" aria-hidden="true" />
               {t('ws.settings')}
@@ -283,7 +283,7 @@ export function RemoveBackgroundWorkspace() {
                       aria-checked={mode === m}
                       onClick={() => chooseMode(m)}
                       disabled={isRunning}
-                      className={`w-full text-left border border-ink p-3 transition-colors disabled:cursor-wait ${mode === m ? 'seg-on' : 'seg-off'}`}
+                      className={`w-full text-left rounded-lg border border-ink p-3 transition-colors disabled:cursor-wait ${mode === m ? 'seg-on' : 'seg-off'}`}
                     >
                       <span className="flex items-baseline justify-between gap-3">
                         <span className="text-[16px] font-semibold">{m === 'portrait' ? t('ctl.bg.modePortrait') : t('ctl.bg.modeHq')}</span>
@@ -309,7 +309,7 @@ export function RemoveBackgroundWorkspace() {
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug">{t('ctl.bg.background')}</span>
-                <div className="grid grid-cols-2 border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.bg.background')}>
+                <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.bg.background')}>
                   {(['transparent', 'color'] as const).map((b) => (
                     <button
                       key={b}
@@ -334,7 +334,7 @@ export function RemoveBackgroundWorkspace() {
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug">{t('ws.saveAs')}</span>
-                <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                   {(['image/png', 'image/webp', 'image/jpeg'] as const).map((fmt) => (
                     <button
                       key={fmt}

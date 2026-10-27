@@ -256,7 +256,7 @@ export function PhotoFiltersWorkspace() {
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
           {/* Proof sheet */}
           <div className="min-w-0 space-y-3">
-            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center">
+            <div className="bg-paper-bright border border-ink px-6 py-8 sm:px-12 sm:py-10 min-h-[260px] sm:min-h-[420px] flex items-center justify-center rounded-xl">
               {!showComparison ? (
                 <div className="relative inline-flex max-w-full max-h-[65vh] canvas-checkerboard crop-marks">
                   <img
@@ -367,7 +367,7 @@ export function PhotoFiltersWorkspace() {
 
           {/* Ruled control panel */}
           <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-            <div className="border border-ink bg-paper-bright">
+            <div className="border border-ink bg-paper-bright rounded-xl">
               <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-ink">
                 <h2 className="slug flex items-center gap-2">
                   <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
@@ -423,7 +423,7 @@ export function PhotoFiltersWorkspace() {
                 {/* Save as */}
                 <div className="space-y-1.5 pt-4 border-t border-ink">
                   <span className="slug">{t('ws.saveAs')}</span>
-                  <div className="grid grid-cols-3 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                  <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                     {SAVE_FORMATS.map((fmt) => (
                       <button
                         key={fmt}

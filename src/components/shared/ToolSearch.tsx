@@ -1,17 +1,26 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, ArrowRight, X } from 'lucide-react';
-import { TOOLS } from '../../config/tools';
+import type { ToolCategory } from '../../config/tools';
 import { CATEGORY_INK } from '../../config/inks';
-import { getAllLocalizedTools } from '../../i18n/tools';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import { createT, type Strings } from '../../i18n/strings';
+
+/** One tool, in the page's language. Built by Header.astro so the full tool content of every language stays out of the bundle. */
+export interface SearchItem {
+  slug: string;
+  category: ToolCategory;
+  name: string;
+  tagline: string;
+  keywords: string[];
+}
 
 interface Props {
   locale?: string;
   strings?: Strings;
+  items: SearchItem[];
 }
 
-export function ToolSearch({ locale = 'en', strings = {} }: Props) {
+export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
   const t = useMemo(() => createT(strings), [strings]);
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -19,7 +28,6 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
   const [isMac, setIsMac] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const localizedTools = getAllLocalizedTools(locale);
 
   useEffect(() => {
     setIsMac(/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent));
@@ -46,13 +54,7 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
   };
 
   const q = query.trim().toLowerCase();
-  const filteredTools = TOOLS.filter((tool) => {
-    if (!q) return true;
-    const loc = localizedTools[tool.slug];
-    return [tool.slug, loc?.name || tool.name, loc?.tagline || tool.description, ...(loc?.keywords || [])].some((s) =>
-      s.toLowerCase().includes(q)
-    );
-  });
+  const filteredTools = items.filter((tool) => !q || [tool.slug, tool.name, tool.tagline, ...tool.keywords].some((s) => s.toLowerCase().includes(q)));
 
   const getToolUrl = (slug: string) => (!showDefaultLang && locale === defaultLang ? `/${slug}` : `/${locale}/${slug}`);
 
@@ -66,13 +68,13 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 h-10 px-3 whitespace-nowrap text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
+        className="flex items-center gap-2 h-10 px-3 rounded-md whitespace-nowrap text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
         aria-haspopup="dialog"
       >
         <Search className="w-4 h-4" aria-hidden="true" />
         <span className="hidden sm:inline">{t('search.trigger')}</span>
         <span className="sr-only sm:hidden">{t('search.trigger')}</span>
-        <kbd className="hidden md:inline text-[12px] text-graphite border border-pencil px-1 leading-5">
+        <kbd className="hidden md:inline rounded-xs text-[12px] text-graphite border border-pencil px-1 leading-5">
           {isMac ? '⌘K' : 'Ctrl K'}
         </kbd>
       </button>
@@ -88,7 +90,7 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
             role="dialog"
             aria-modal="true"
             aria-label={t('search.dialogLabel')}
-            className="w-full max-w-xl bg-paper border border-ink"
+            className="w-full max-w-xl bg-paper border border-ink rounded-xl overflow-hidden shadow-lg"
             onKeyDown={(e) => {
               if (e.key === 'Escape') {
                 e.preventDefault();
@@ -139,7 +141,7 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
                     go(filteredTools[selectedIndex].slug);
                   }
                 }}
-                placeholder={t('search.placeholder', { count: TOOLS.length })}
+                placeholder={t('search.placeholder', { count: items.length })}
                 className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none"
               />
               <button type="button" onClick={close} className="w-10 h-10 -mr-2 flex items-center justify-center text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
@@ -150,7 +152,6 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
             <ul id="tool-search-results" role="listbox" aria-label={t('search.results')} className="max-h-[55vh] overflow-y-auto divide-y divide-pencil-soft">
               {filteredTools.length > 0 ? (
                 filteredTools.map((tool, idx) => {
-                  const loc = localizedTools[tool.slug];
                   const isSelected = idx === selectedIndex;
                   return (
                     <li
@@ -162,11 +163,11 @@ export function ToolSearch({ locale = 'en', strings = {} }: Props) {
                       onMouseEnter={() => setSelectedIndex(idx)}
                       className={`flex items-center gap-3 px-4 py-3 cursor-pointer ${isSelected ? 'seg-on' : 'text-ink'}`}
                     >
-                      <span className={`w-3 h-3 shrink-0 ${CATEGORY_INK[tool.category].className}`} aria-hidden="true" />
+                      <span className={`w-3 h-3 shrink-0 rounded-full ${CATEGORY_INK[tool.category].className}`} aria-hidden="true" />
                       <span className="min-w-0 flex-1">
-                        <span className="block text-[15px] font-semibold">{loc?.name || tool.name}</span>
+                        <span className="block text-[15px] font-semibold">{tool.name}</span>
                         <span className="block text-[13px] truncate text-graphite">
-                          {loc?.tagline || tool.description}
+                          {tool.tagline}
                         </span>
                       </span>
                       <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight } from 'lucide-react';
+import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload } from 'lucide-react';
 import {
   loadImage,
   createImageProxy,
@@ -147,6 +147,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   }
 
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
+  const [isDraggingFile, setIsDraggingFile] = useState(false);
   const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
   const [filename, setFilename] = useState<string>('image');
   const [fileSize, setFileSize] = useState<number>(0);
@@ -740,7 +741,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     <ErrorBoundary fallbackTitle={t('ws.crashed')} fallbackBody={t('ws.crashBody')} reloadLabel={t('ws.reload')} homeLabel={t('ws.allTools')}>
       <div className={imageElement && canExport ? 'pb-20 lg:pb-0' : ''}>
         {errorMessage && (
-          <div role="alert" className="flex items-start gap-2 mb-4 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+          <div role="alert" className="flex items-start gap-2 mb-4 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
             <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span>{errorMessage}</span>
           </div>
@@ -759,24 +760,25 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
         {!imageElement ? (
           /* Empty state: the sheet is the drop target */
-          <div className="px-5 py-5 sm:px-6 sm:py-6">
+          <div>
             <button
               type="button"
-              onDragOver={(e) => e.preventDefault()}
+              onDragOver={(e) => {
+                e.preventDefault();
+                setIsDraggingFile(true);
+              }}
+              onDragLeave={() => setIsDraggingFile(false)}
               onDrop={(e) => {
                 e.preventDefault();
+                setIsDraggingFile(false);
                 if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
               }}
               onClick={() => fileInputRef.current?.click()}
-              className="crop-marks w-full proof-grid border border-ink flex flex-col items-center justify-center gap-3 px-6 py-16 sm:py-24 text-center hover:bg-paper-stock transition-colors"
+              className={`drop-target px-6 py-14 sm:py-20 ${isDraggingFile ? 'is-dragging' : ''}`}
               aria-describedby="ws-drop-hint"
             >
-              <svg className="w-10 h-10 text-ink" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <rect x="6" y="9" width="28" height="22" />
-                <path d="M6 26l8-8 6 6 4-4 10 10" />
-                <circle cx="27" cy="15" r="2.5" />
-              </svg>
-              <span className="text-[20px] sm:text-[22px] font-semibold text-ink">{t('ws.dropTitle')}</span>
+              <span className="drop-icon" aria-hidden="true"><Upload className="w-7 h-7" strokeWidth={1.75} /></span>
+              <span className="font-condensed text-[24px] sm:text-[26px] font-bold text-ink">{t('ws.dropTitle')}</span>
               <span className="btn-ink pointer-events-none">{t('ws.chooseImage')}</span>
               <span id="ws-drop-hint" className="text-[14px] text-graphite max-w-md">{t('ws.dropHint')}</span>
             </button>
@@ -785,7 +787,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           <div className="grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_23rem] items-start">
             {/* Proof sheet */}
             <div className="min-w-0 space-y-3">
-              <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 pt-14 pb-7 sm:px-20 sm:pt-16 sm:pb-10 overflow-hidden">
+              <div className="relative bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 pt-14 pb-7 sm:px-20 sm:pt-16 sm:pb-10 overflow-hidden rounded-xl">
                 <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks registration-snap is-registering">
                   {slug.includes('color') ? (
                     <canvas
@@ -896,7 +898,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                 )}
 
                 {isRendering && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-paper border border-ink text-[12px] text-ink" role="status">
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full px-2.5 py-1 bg-paper border border-ink text-[12px] text-ink" role="status">
                     <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
                     <span>{t('ws.rendering')}</span>
                   </div>
@@ -942,7 +944,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
             {/* Ruled control panel */}
             <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
-              <div className="border border-ink bg-paper-bright">
+              <div className="border border-ink bg-paper-bright rounded-xl">
                 <h2 className="slug px-4 py-2.5 border-b border-ink flex items-center gap-2">
                   <Sliders className="w-4 h-4 text-ink" aria-hidden="true" />
                   {t('ws.settings')}
@@ -1125,7 +1127,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   {formatSelectable && (
                     <div className="space-y-1.5">
                       <span className="slug">{t('ws.saveAs')}</span>
-                      <div className="grid grid-cols-4 border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
+                      <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ws.outputFormat')}>
                         {(['image/jpeg', 'image/png', 'image/webp', 'image/avif'] as const).map((fmt) => (
                           <button
                             key={fmt}
@@ -1211,7 +1213,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                               onClick={() => handleSendToTool(next.slug)}
                               className="w-full flex items-center gap-2.5 py-2 text-left text-[15px] text-ink hover:bg-paper-stock"
                             >
-                              <span className={`w-2.5 h-2.5 shrink-0 ${next.inkClass}`} aria-hidden="true" />
+                              <span className={`w-2.5 h-2.5 shrink-0 rounded-full ${next.inkClass}`} aria-hidden="true" />
                               <span className="flex-1">{next.name}</span>
                               <ArrowRight className="w-4 h-4" aria-hidden="true" />
                             </button>

@@ -39,7 +39,7 @@ export function PdfDropScreen({ onFile, error, loading }: { onFile: (f: File) =>
         </p>
       )}
       {error && (
-        <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft border border-accent-red text-[15px] text-accent-red">
+        <p role="alert" className="flex items-start gap-2 p-3 bg-accent-red-soft rounded-md border border-accent-red text-[15px] text-accent-red">
           <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
           <span>{error === 'password' ? t('ctl.frompdf.errPassword') : t('ctl.frompdf.errInvalid')}</span>
         </p>

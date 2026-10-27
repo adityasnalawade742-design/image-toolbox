@@ -132,15 +132,6 @@
   .prose-sheet code {
     @apply font-code text-[15px] text-ink bg-paper-stock px-1;
   }
-  /* Proof sheet: bright stock with a non-repro blue layout grid */
-  .proof-grid {
-    background-color: #ffffff;
-    background-image:
-      linear-gradient(to right, rgba(159, 211, 230, 0.55) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(159, 211, 230, 0.55) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
   /* Crop marks drawn just outside the element's corners (needs a little padding around it) */
   .crop-marks {
     --mark: 14px;
@@ -188,7 +179,7 @@
 
   /* Buttons: one solid ink action, ruled secondary actions */
   .btn-ink {
-    @apply inline-flex items-center justify-center gap-2 bg-process-key text-paper font-semibold border border-process-key px-4 min-h-[44px] transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-process-key text-paper font-semibold border border-process-key px-4 min-h-[44px] transition-colors;
   }
   .btn-ink:hover {
     @apply bg-paper text-ink;
@@ -197,7 +188,7 @@
     @apply cursor-wait opacity-60;
   }
   .btn-rule {
-    @apply inline-flex items-center justify-center gap-2 bg-paper-bright text-ink font-medium border border-ink px-3 min-h-[40px] transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-paper-bright text-ink font-medium border border-ink px-3 min-h-[40px] transition-colors;
   }
   .btn-rule:hover {
     @apply bg-paper-stock;
@@ -217,11 +208,59 @@
   .seg-off:hover {
     @apply bg-paper-stock;
   }
+  /* Option groups are rounded and clip their corners, so their focus ring is drawn inside */
+  .seg-group {
+    @apply rounded-md overflow-hidden;
+  }
+  .seg-on:focus-visible,
+  .seg-off:focus-visible,
+  .seg-group > :focus-visible {
+    outline-offset: -4px;
+  }
+
+  /* Text fields and menus get the same soft corner as buttons */
+  input[type='text'],
+  input[type='number'],
+  input[type='search'],
+  input[type='email'],
+  input[type='url'],
+  select,
+  textarea {
+    border-radius: 8px;
+  }
+
+  /* Drop target: a tinted, dashed tray that is a real button */
+  .drop-target {
+    @apply w-full flex flex-col items-center justify-center gap-3 text-center rounded-2xl border-2 border-dashed transition-colors;
+    background-color: #eef8fc;
+    border-color: #2f8cb5;
+  }
+  .drop-target:hover {
+    background-color: #e3f3fa;
+    border-color: #00a0df;
+  }
+  .drop-target.is-dragging {
+    background-color: #d4edf8;
+    border-style: solid;
+    border-color: #00729e;
+  }
+  .drop-icon {
+    @apply w-16 h-16 rounded-full bg-paper-bright shadow-sm flex items-center justify-center;
+    color: #00729e;
+  }
 
   /* Small-caps labels for slug lines, tickets and section rules */
   .slug {
     @apply font-condensed font-semibold uppercase text-[12px] tracking-[0.08em] text-graphite;
   }
+
+  /* Category tints: soft backgrounds with a text-safe ink (≥4.5:1) for icons and pills */
+  .tint-edit { background-color: #fde6f2; color: #a3005a; }
+  .tint-optimize { background-color: #e0f3fb; color: #00658c; }
+  .tint-convert { background-color: #fff5b8; color: #665200; }
+  .tint-pdf { background-color: #f6e8dc; color: #8a2d00; }
+  .tint-inspect { background-color: #ecece6; color: #141414; }
+  .tint-developer { background-color: #ecece6; color: #141414; }
 
   /* Category ink marks */
   .ink-edit { background-color: #e4007c; }

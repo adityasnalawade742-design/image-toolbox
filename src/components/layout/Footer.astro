@@ -41,7 +41,7 @@ const infoLinks = [
         {popularTools.map((tool) => (
           <li>
             <a href={translatePath(`/${tool.slug}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
-              <span class:list={['w-2 h-2 shrink-0', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
+              <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
               {locTools[tool.slug]?.name || tool.name}
             </a>
           </li>
@@ -55,7 +55,7 @@ const infoLinks = [
         {CATEGORY_ORDER.map((cat) => (
           <li>
             <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
-              <span class:list={['w-2 h-2 shrink-0', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
+              <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
               {categoryNames[cat]}
             </a>
           </li>

@@ -55,7 +55,7 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
                 if (from >= 0) move(from, i);
                 setDragKey(null);
               }}
-              className={`border bg-paper-bright flex flex-col ${p.selected && mode === 'select' ? 'border-ink outline outline-2 -outline-offset-2 outline-ink' : 'border-ink'} ${
+              className={`rounded-lg overflow-hidden border bg-paper-bright flex flex-col ${p.selected && mode === 'select' ? 'border-ink outline outline-2 -outline-offset-2 outline-ink' : 'border-ink'} ${
                 dragKey === p.key ? 'opacity-50' : ''
               } ${mode === 'organize' ? 'cursor-grab' : ''}`}
             >
@@ -88,7 +88,7 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
                   <p className="px-3 pt-2 text-[13px] font-semibold text-ink" data-measure>
                     {label}
                   </p>
-                  <div className="flex m-2 border border-ink">
+                  <div className="flex m-2 seg-group border border-ink">
                     <button type="button" className={iconBtn} disabled={i === 0} onClick={() => move(i, i - 1)} aria-label={t('ctl.pdf.moveEarlier', { n: p.index + 1 })} title={t('ctl.pdf.moveEarlier', { n: p.index + 1 })}>
                       <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                     </button>
