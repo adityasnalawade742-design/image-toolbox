@@ -12,6 +12,17 @@ describe('Output Format Policy', () => {
     ['png-to-webp', 'image/png', 'image/webp'],
     ['heic-to-jpg', 'image/heic', 'image/jpeg'],
     ['heic-to-png', 'image/heic', 'image/png'],
+    ['heic-to-webp', 'image/heic', 'image/webp'],
+    ['avif-to-jpg', 'image/avif', 'image/jpeg'],
+    ['avif-to-png', 'image/avif', 'image/png'],
+    ['jpg-to-avif', 'image/jpeg', 'image/avif'],
+    ['png-to-avif', 'image/png', 'image/avif'],
+    ['gif-to-png', 'image/gif', 'image/png'],
+    ['gif-to-jpg', 'image/gif', 'image/jpeg'],
+    ['bmp-to-jpg', 'image/bmp', 'image/jpeg'],
+    ['bmp-to-png', 'image/bmp', 'image/png'],
+    ['svg-to-jpg', 'image/svg+xml', 'image/jpeg'],
+    ['svg-to-webp', 'image/svg+xml', 'image/webp'],
   ])('%s always exports its target format, with no picker', (slug, input, expected) => {
     expect(getOutputFormatPolicy(slug, input)).toEqual({ format: expected, selectable: false });
   });

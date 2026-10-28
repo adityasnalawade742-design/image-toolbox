@@ -2186,6 +2186,136 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "svg-to-jpg": {
+    name: "SVG ke JPG",
+    shortName: "SVG → JPG",
+    tagline: "Ubah grafis SVG menjadi gambar JPG dengan skala berapa pun, dengan warna background pilihan Anda. Konversi berjalan di perangkat Anda.",
+    intro: "Grafis SVG tetap tajam di ukuran berapa pun, tetapi banyak aplikasi, media sosial, dan formulir unggah hanya menerima gambar biasa. SVG ke JPG menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai JPG. JPG tidak mendukung transparansi, jadi area transparan diisi dengan putih atau warna pilihan Anda. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah SVG ke JPG – Ukuran Berapa Pun, Gratis",
+    seoDescription: "Ubah grafis SVG ke JPG di browser dengan skala 1x hingga 8x dan warna background pilihan Anda. Gratis dan tidak ada yang diunggah.",
+    keywords: [
+      "svg ke jpg",
+      "ubah svg ke jpg",
+      "convert svg to jpg",
+      "svg ke jpeg",
+      "svg ke gambar",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan SVG",
+        description: "Seret, pilih, atau tempel file .svg.",
+      },
+      {
+        title: "Pilih skala dan background",
+        description: "Pilih 1x, 2x, 4x, atau 8x, serta warna untuk mengisi area transparan.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan JPG lalu pakai di mana saja.",
+      },
+    ],
+    features: [
+      {
+        title: "Tajam di ukuran berapa pun",
+        description: "SVG digambar ulang pada skala yang dipilih, jadi tepinya tetap tajam.",
+      },
+      {
+        title: "Warna background pilihan Anda",
+        description: "Area transparan diisi dengan putih atau warna apa pun.",
+      },
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dipakai di semua aplikasi, media sosial, dan formulir unggah.",
+      },
+      {
+        title: "Konversi privat",
+        description: "File diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "SVG ke JPG atau SVG ke PNG?",
+        answer: "Pilih PNG untuk logo dan ikon, agar transparansi dan warna rata tetap sempurna. Pilih JPG saat situs atau formulir meminta JPG, atau untuk ilustrasi dengan gradasi.",
+      },
+      {
+        question: "Skala mana yang sebaiknya saya pakai?",
+        answer: "2x cocok untuk sebagian besar layar. Pakai 4x atau 8x untuk cetak atau layar besar.",
+      },
+      {
+        question: "Kenapa SVG saya terlihat berbeda?",
+        answer: "SVG yang memuat font atau gambar dari web mungkin tidak menggambar bagian tersebut. Ubah dulu teks menjadi outline di alat desain Anda.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. Browser Anda menggambar SVG di perangkat Anda.",
+      },
+    ],
+  },
+  "svg-to-webp": {
+    name: "SVG ke WebP",
+    shortName: "SVG → WebP",
+    tagline: "Ubah grafis SVG menjadi gambar WebP yang kecil dengan skala berapa pun, termasuk transparansinya. Konversi berjalan di perangkat Anda.",
+    intro: "Kadang situs web, aplikasi, atau pembuat email membutuhkan gambar biasa, bukan SVG. SVG ke WebP menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai WebP, format kecil yang ditampilkan semua browser saat ini dan tetap mempertahankan transparansi. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah SVG ke WebP – File Kecil, Transparansi Terjaga",
+    seoDescription: "Ubah grafis SVG ke WebP di browser dengan skala 1x hingga 8x, dengan transparansi tetap terjaga. Gratis dan tidak ada yang diunggah.",
+    keywords: [
+      "svg ke webp",
+      "ubah svg ke webp",
+      "convert svg to webp",
+      "svg ke gambar",
+      "webp transparan",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan SVG",
+        description: "Seret, pilih, atau tempel file .svg.",
+      },
+      {
+        title: "Pilih skala dan kualitas",
+        description: "Pilih 1x, 2x, 4x, atau 8x, serta kualitas WebP.",
+      },
+      {
+        title: "Unduh WebP",
+        description: "Simpan WebP lalu pakai di situs atau aplikasi Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Tajam di ukuran berapa pun",
+        description: "SVG digambar ulang pada skala yang dipilih, jadi tepinya tetap tajam.",
+      },
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Area transparan tetap transparan di WebP.",
+      },
+      {
+        title: "File kecil",
+        description: "WebP biasanya jauh lebih kecil daripada PNG untuk gambar yang sama.",
+      },
+      {
+        title: "Konversi privat",
+        description: "File diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kenapa tidak pakai SVG-nya saja?",
+        answer: "Tetap pakai SVG di tempat yang mendukungnya. Pakai WebP di tempat yang hanya menerima gambar biasa, seperti beberapa aplikasi, pembuat email, dan unggahan gambar.",
+      },
+      {
+        question: "Skala mana yang sebaiknya saya pakai?",
+        answer: "2x cocok untuk sebagian besar layar. Pakai 4x atau 8x untuk layar besar.",
+      },
+      {
+        question: "Kenapa SVG saya terlihat berbeda?",
+        answer: "SVG yang memuat font atau gambar dari web mungkin tidak menggambar bagian tersebut. Ubah dulu teks menjadi outline di alat desain Anda.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. Browser Anda menggambar SVG di perangkat Anda.",
+      },
+    ],
+  },
   "photo-filters": {
     name: "Filter dan Efek Foto",
     shortName: "Filter",
@@ -2843,6 +2973,591 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "heic-to-webp": {
+    name: "HEIC ke WebP",
+    shortName: "HEIC → WebP",
+    tagline: "Ubah foto HEIC dan HEIF dari iPhone menjadi WebP, format web ringan yang bisa dibuka di semua browser. Konversi berjalan di perangkat Anda.",
+    intro: "HEIC (juga disebut HEIF) adalah format foto bawaan iPhone dan banyak ponsel Android, tetapi sebagian besar situs web, sistem manajemen konten, dan aplikasi Windows tidak bisa menampilkannya. HEIC ke WebP mengubah foto menjadi WebP, format modern yang didukung semua browser saat ini dan menjaga ukuran file tetap kecil, sering kali lebih kecil daripada JPG dengan kualitas yang sama. Karena itu, format ini cocok untuk foto yang akan Anda pasang di situs web, blog, atau toko online. Konversi berlangsung di browser Anda, jadi foto tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah HEIC ke WebP – Gratis, Privat, HEIF Juga Bisa",
+    seoDescription: "Ubah foto HEIC dan HEIF iPhone ke WebP di browser. File ringan untuk situs web, kualitas bisa diatur, dan tidak ada yang diunggah.",
+    keywords: [
+      "heic ke webp",
+      "heif ke webp",
+      "ubah heic ke webp",
+      "foto iphone ke webp",
+      "konverter heic ke webp",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto HEIC",
+        description: "Seret, pilih, atau tempel file .heic atau .heif.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "85% cocok untuk sebagian besar foto. Turunkan untuk file yang lebih kecil, naikkan untuk detail yang lebih banyak.",
+      },
+      {
+        title: "Unduh WebP",
+        description: "Simpan file WebP lalu unggah ke situs Anda atau bagikan.",
+      },
+    ],
+    features: [
+      {
+        title: "File kecil",
+        description: "Dengan kualitas visual yang sama, file WebP biasanya lebih kecil daripada JPG, jadi halaman lebih cepat dimuat.",
+      },
+      {
+        title: "Bisa di semua browser",
+        description: "Chrome, Safari, Firefox, dan Edge menampilkan WebP, begitu juga WordPress, Shopify, dan sebagian besar pembuat situs.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Foto diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+      {
+        title: "Tanpa data lokasi",
+        description: "Lokasi GPS dan detail kamera dari foto asli tidak disalin ke file WebP.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah HEIF sama dengan HEIC?",
+        answer: "Untuk foto, ya. HEIF adalah format filenya, sedangkan HEIC adalah nama dan ekstensi yang dipakai Apple untuk foto yang disimpan dalam format itu. File .heic maupun .heif bisa dipakai di sini.",
+      },
+      {
+        question: "WebP atau JPG: mana yang sebaiknya dipilih?",
+        answer: "Pilih WebP untuk situs web dan toko online, karena file kecil lebih cepat dimuat. Pilih JPG jika foto akan dikirim lewat email, ke percetakan, atau ke aplikasi dan formulir unggahan lama yang tidak menerima WebP.",
+      },
+      {
+        question: "Kualitas berapa yang sebaiknya dipakai?",
+        answer: "Pada 85%, sebagian besar foto terlihat sama dengan aslinya. Pakai 90% atau lebih untuk foto dengan detail halus, atau 70% hingga 80% jika ukuran file paling penting.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Dekoder HEIC berjalan di browser Anda, jadi foto tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "avif-to-jpg": {
+    name: "AVIF ke JPG",
+    shortName: "AVIF → JPG",
+    tagline: "Ubah gambar AVIF ke JPG agar bisa dibuka di semua aplikasi, editor, dan formulir unggah. Konversi berjalan di perangkat Anda.",
+    intro: "AVIF adalah format gambar modern yang kini dipakai banyak situs web karena ukuran filenya sangat kecil. Namun, saat Anda menyimpan gambar seperti itu, penampil foto lama, Office, banyak editor, dan berbagai formulir unggah tidak bisa membukanya. AVIF ke JPG mengubah gambar menjadi JPG, format yang bisa dipakai di mana saja. Pilih kualitasnya, lihat pratinjaunya, lalu unduh. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah AVIF ke JPG – Gratis, Cepat, Privat",
+    seoDescription: "Ubah gambar AVIF ke JPG di browser. Bisa dipakai di semua aplikasi dan formulir unggah, kualitas bisa diatur, dan tidak ada yang diunggah.",
+    keywords: [
+      "avif ke jpg",
+      "ubah avif ke jpg",
+      "convert avif to jpg",
+      "avif ke jpeg",
+      "cara membuka file avif",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar AVIF",
+        description: "Seret, pilih, atau tempel file .avif.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "85% cocok untuk sebagian besar gambar. Naikkan untuk detail yang lebih banyak, turunkan untuk file yang lebih kecil.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan JPG lalu buka, edit, atau unggah di mana saja.",
+      },
+    ],
+    features: [
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dipakai di semua penampil foto, editor, ponsel, aplikasi email, dan formulir unggah.",
+      },
+      {
+        title: "Kualitas bisa diatur",
+        description: "Pilih keseimbangan antara ukuran file dan detail sebelum mengunduh.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+      {
+        title: "Transparansi ditangani",
+        description: "JPG tidak mendukung transparansi, jadi area transparan diisi dengan warna pilihan Anda.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apa itu file AVIF?",
+        answer: "AVIF adalah format gambar yang berbasis codec video AV1. Format ini menghasilkan file yang jauh lebih kecil daripada JPG dengan kualitas yang sama, sehingga banyak situs web memakainya, tetapi software lama tidak bisa membukanya.",
+      },
+      {
+        question: "Apakah JPG akan lebih besar daripada AVIF?",
+        answer: "Biasanya, ya. AVIF mengompres gambar dengan sangat efisien, jadi gambar yang sama dalam JPG sering dua atau tiga kali lebih besar. Itulah harga untuk file yang bisa dibuka semua program.",
+      },
+      {
+        question: "Kenapa browser saya tidak bisa membuka AVIF?",
+        answer: "Browser yang sangat lama tidak bisa mendekode AVIF. Versi terbaru Chrome, Edge, Firefox, dan Safari (versi 16 atau lebih baru) semuanya bisa. Jika file tetap tidak terbuka, file itu mungkin rusak.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Browser Anda mendekode dan mengubah gambar di perangkat Anda.",
+      },
+    ],
+  },
+  "avif-to-png": {
+    name: "AVIF ke PNG",
+    shortName: "AVIF → PNG",
+    tagline: "Ubah gambar AVIF ke PNG lossless dengan transparansi tetap terjaga, untuk diedit dan didesain. Konversi berjalan di perangkat Anda.",
+    intro: "Gambar AVIF kecil dan tajam, tetapi banyak editor, alat desain, dan aplikasi lama tidak bisa membukanya. AVIF ke PNG mengubah gambar menjadi PNG, format lossless yang mempertahankan area transparan, jadi cocok untuk logo, grafis, dan apa pun yang masih akan Anda edit. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda. Untuk foto yang ingin Anda bagikan, AVIF ke JPG menghasilkan file yang lebih kecil.",
+    seoTitle: "Ubah AVIF ke PNG – Gratis, Lossless",
+    seoDescription: "Ubah gambar AVIF ke PNG lossless di browser, dengan transparansi tetap terjaga. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "avif ke png",
+      "ubah avif ke png",
+      "convert avif to png",
+      "avif ke png transparan",
+      "cara membuka file avif",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar AVIF",
+        description: "Seret, pilih, atau tempel file .avif.",
+      },
+      {
+        title: "Periksa pratinjau",
+        description: "Browser Anda mendekode gambar di perangkat Anda.",
+      },
+      {
+        title: "Unduh PNG",
+        description: "Simpan PNG lossless lalu buka di editor atau alat desain apa pun.",
+      },
+    ],
+    features: [
+      {
+        title: "Hasil lossless",
+        description: "PNG menyimpan setiap piksel gambar hasil dekode, jadi mengedit dan menyimpan ulang tidak menambah artefak.",
+      },
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Area transparan pada AVIF tetap transparan di PNG.",
+      },
+      {
+        title: "Bisa dibuka di editor apa pun",
+        description: "PNG bisa dipakai di Photoshop, GIMP, Figma, Canva, Office, dan semua browser.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kenapa PNG jauh lebih besar daripada AVIF?",
+        answer: "AVIF memakai kompresi lossy yang sangat efisien, sedangkan PNG bersifat lossless dan menyimpan jauh lebih banyak data. Sebuah PNG bisa dengan mudah berukuran sepuluh kali lipat AVIF-nya.",
+      },
+      {
+        question: "Apakah PNG mempertahankan transparansi?",
+        answer: "Ya. Jika AVIF punya area transparan, area itu tetap transparan di PNG.",
+      },
+      {
+        question: "PNG atau JPG: mana yang sebaiknya dipilih?",
+        answer: "Pilih PNG untuk grafis, transparansi, atau jika gambar masih akan diedit. Pilih JPG untuk foto yang akan dibagikan atau diunggah, karena ukuran filenya jauh lebih kecil.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Konversi berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "jpg-to-avif": {
+    name: "JPG ke AVIF",
+    shortName: "JPG → AVIF",
+    tagline: "Ubah foto JPG ke AVIF, format web modern dengan ukuran file paling kecil. Konversi berjalan di perangkat Anda.",
+    intro: "AVIF menghasilkan file yang jauh lebih kecil daripada JPG dengan kualitas visual yang sama, sering kali hanya separuhnya, jadi halaman lebih cepat dimuat dan lebih hemat kuota. Semua browser saat ini bisa menampilkannya. JPG ke AVIF mengubah foto Anda ke AVIF dengan kualitas pilihan Anda, sehingga berguna untuk situs web, toko online, dan blog yang memperhitungkan setiap kilobyte. Proses encoding berlangsung di browser Anda, jadi foto tidak pernah meninggalkan perangkat Anda. Untuk foto besar, prosesnya bisa memakan beberapa detik.",
+    seoTitle: "Ubah JPG ke AVIF – Gambar Lebih Kecil, Gratis",
+    seoDescription: "Ubah foto JPG ke AVIF di browser untuk gambar web yang jauh lebih kecil. Kualitas bisa diatur, gratis, dan tidak ada yang diunggah.",
+    keywords: [
+      "jpg ke avif",
+      "ubah jpg ke avif",
+      "convert jpg to avif",
+      "jpeg ke avif",
+      "konverter avif",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto JPG",
+        description: "Seret, pilih, atau tempel file .jpg atau .jpeg.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "Mulai dari 85%. AVIF tetap tajam pada pengaturan yang lebih rendah daripada JPG, jadi coba nilai yang lebih rendah untuk file yang lebih kecil.",
+      },
+      {
+        title: "Unduh AVIF",
+        description: "Simpan file AVIF lalu unggah ke situs web Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "File jauh lebih kecil",
+        description: "AVIF sering kali hanya sekitar separuh ukuran JPG yang tampak sama.",
+      },
+      {
+        title: "Tampil di semua browser saat ini",
+        description: "Chrome, Edge, Firefox, dan Safari 16 atau lebih baru menampilkan AVIF.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+      {
+        title: "Tanpa data lokasi",
+        description: "Lokasi GPS dan detail kamera dari JPG tidak disalin ke AVIF.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF atau WebP: mana yang lebih baik?",
+        answer: "AVIF biasanya menghasilkan file lebih kecil dengan kualitas yang sama, sedangkan WebP lebih cepat di-encode dan bisa dipakai di beberapa aplikasi lama. Keduanya ditampilkan oleh semua browser saat ini.",
+      },
+      {
+        question: "Apakah semua aplikasi bisa membuka AVIF?",
+        answer: "Tidak. Browser bisa, tetapi beberapa penampil foto, editor, dan formulir unggah lama tidak bisa. Simpan JPG aslinya untuk keperluan itu, dan pakai AVIF di web.",
+      },
+      {
+        question: "Kenapa konversinya butuh beberapa detik?",
+        answer: "Encoding AVIF bekerja keras untuk menemukan file yang paling kecil. Prosesnya berjalan di perangkat Anda, jadi foto besar butuh waktu lebih lama di HP yang lebih lambat.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Encoder AVIF berjalan di browser Anda, jadi foto tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "png-to-avif": {
+    name: "PNG ke AVIF",
+    shortName: "PNG → AVIF",
+    tagline: "Ubah gambar PNG ke AVIF untuk file web yang jauh lebih kecil, termasuk transparansinya. Konversi berjalan di perangkat Anda.",
+    intro: "File PNG sering kali besar, terutama screenshot, foto, dan grafis yang detail. AVIF menyimpan gambar yang sama hanya dengan sebagian kecil ruangnya dan tetap mempertahankan transparansi, jadi cocok untuk logo, gambar produk, dan ilustrasi di web. PNG ke AVIF mengubah gambar Anda dengan kualitas pilihan Anda, dan semua browser saat ini bisa menampilkan hasilnya. Proses encoding berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah PNG ke AVIF – File Kecil, Transparansi Terjaga",
+    seoDescription: "Ubah gambar PNG ke AVIF di browser. Gambar web jauh lebih kecil dengan transparansi tetap terjaga, kualitas bisa diatur, tanpa unggah.",
+    keywords: [
+      "png ke avif",
+      "ubah png ke avif",
+      "convert png to avif",
+      "avif transparan",
+      "gambar ke avif",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar PNG",
+        description: "Seret, pilih, atau tempel file .png.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "85% cocok untuk sebagian besar gambar. Pakai nilai yang lebih tinggi untuk teks tajam dan garis halus.",
+      },
+      {
+        title: "Unduh AVIF",
+        description: "Simpan file AVIF lalu unggah ke situs web Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Hanya sebagian kecil ukurannya",
+        description: "File AVIF sering kali berkali-kali lebih kecil daripada PNG asalnya.",
+      },
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Background transparan tetap transparan di AVIF.",
+      },
+      {
+        title: "Tampil di semua browser saat ini",
+        description: "Chrome, Edge, Firefox, dan Safari 16 atau lebih baru menampilkan AVIF.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah AVIF lossless seperti PNG?",
+        answer: "Tidak di sini. AVIF dikompres dengan kualitas pilihan Anda, jadi detail yang sangat kecil bisa berubah. Pada 85% atau lebih, sebagian besar gambar terlihat sama dengan PNG-nya.",
+      },
+      {
+        question: "Apakah AVIF mempertahankan transparansi?",
+        answer: "Ya. Area transparan pada PNG tetap transparan di AVIF.",
+      },
+      {
+        question: "Kapan sebaiknya saya tetap memakai PNG?",
+        answer: "Simpan PNG untuk diedit, dicetak, dan untuk aplikasi yang tidak bisa membuka AVIF. Pakai AVIF di situs web.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Encoder AVIF berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "gif-to-png": {
+    name: "GIF ke PNG",
+    shortName: "GIF → PNG",
+    tagline: "Simpan GIF sebagai gambar diam PNG yang lossless, dengan transparansi tetap terjaga. Konversi berjalan di perangkat Anda.",
+    intro: "GIF adalah format lama yang hanya bisa menyimpan maksimal 256 warna, dan banyak editor serta formulir unggah kurang baik menanganinya. GIF ke PNG menyimpan gambar sebagai PNG, format lossless yang bisa dibuka semua editor dan alat desain, sekaligus mempertahankan area transparan. Jika GIF-nya animasi, PNG yang dihasilkan adalah gambar diam dari frame pertamanya. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah GIF ke PNG – Gratis, Transparansi Terjaga",
+    seoDescription: "Ubah GIF menjadi gambar diam PNG lossless di browser, dengan transparansi tetap terjaga. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "gif ke png",
+      "ubah gif ke png",
+      "convert gif to png",
+      "gif ke png transparan",
+      "frame pertama gif ke png",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan GIF",
+        description: "Seret, pilih, atau tempel file .gif.",
+      },
+      {
+        title: "Periksa pratinjau",
+        description: "GIF animasi menampilkan frame pertamanya.",
+      },
+      {
+        title: "Unduh PNG",
+        description: "Simpan PNG lalu buka di editor apa pun.",
+      },
+    ],
+    features: [
+      {
+        title: "Lossless",
+        description: "Setiap piksel frame GIF disimpan persis sama.",
+      },
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Area transparan pada GIF tetap transparan di PNG.",
+      },
+      {
+        title: "Bisa dibuka di editor apa pun",
+        description: "PNG bisa dipakai di Photoshop, GIMP, Figma, Canva, Office, dan semua browser.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana dengan GIF animasi?",
+        answer: "PNG-nya berupa gambar diam dari frame pertama. File PNG yang dibuat di sini tidak bergerak.",
+      },
+      {
+        question: "Apakah warnanya akan berubah?",
+        answer: "Tidak. GIF punya maksimal 256 warna, dan PNG menyimpan semuanya persis sama.",
+      },
+      {
+        question: "Bisakah saya mengubah ukuran gambar sambil mengonversi?",
+        answer: "Bisa. Isi lebar atau tinggi baru di kolom ukuran sebelum mengunduh.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Konversi berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "gif-to-jpg": {
+    name: "GIF ke JPG",
+    shortName: "GIF → JPG",
+    tagline: "Simpan GIF sebagai gambar diam JPG yang bisa dibuka di mana saja. Konversi berjalan di perangkat Anda.",
+    intro: "Sebagian formulir unggah, layanan cetak, dan aplikasi hanya menerima JPG. GIF ke JPG menyimpan GIF sebagai gambar diam JPG dengan kualitas pilihan Anda. Karena JPG tidak mendukung transparansi, area transparan diisi dengan warna background yang Anda pilih. Jika GIF-nya animasi, JPG menampilkan frame pertamanya. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah GIF ke JPG – Gratis dan Privat",
+    seoDescription: "Ubah GIF menjadi gambar diam JPG di browser. Pilih kualitas dan warna background. Gratis, dan tidak ada yang diunggah.",
+    keywords: [
+      "gif ke jpg",
+      "ubah gif ke jpg",
+      "convert gif to jpg",
+      "gif ke jpeg",
+      "frame pertama gif ke jpg",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan GIF",
+        description: "Seret, pilih, atau tempel file .gif.",
+      },
+      {
+        title: "Pilih kualitas dan background",
+        description: "Pilih kualitas JPG dan, jika GIF punya area transparan, warna untuk mengisinya.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan JPG lalu pakai di mana saja.",
+      },
+    ],
+    features: [
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dipakai di semua penampil, editor, ponsel, layanan cetak, dan formulir unggah.",
+      },
+      {
+        title: "Warna background pilihan Anda",
+        description: "Area transparan diisi dengan putih atau warna apa pun yang Anda pilih.",
+      },
+      {
+        title: "Kualitas bisa diatur",
+        description: "Atur keseimbangan antara ukuran file dan detail.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana dengan GIF animasi?",
+        answer: "JPG-nya berupa gambar diam dari frame pertama. JPG tidak bisa bergerak.",
+      },
+      {
+        question: "Kenapa ada warna background?",
+        answer: "JPG tidak mendukung transparansi, jadi area transparan pada GIF perlu warna solid. Putih dipakai kecuali Anda memilih warna lain.",
+      },
+      {
+        question: "Apakah sebaiknya saya memilih PNG?",
+        answer: "Pilih PNG untuk logo, teks, dan grafis dengan warna rata, atau untuk mempertahankan transparansi. Pilih JPG saat formulir atau layanan memintanya.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Konversi berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "bmp-to-jpg": {
+    name: "BMP ke JPG",
+    shortName: "BMP → JPG",
+    tagline: "Ubah gambar BMP Windows yang besar menjadi file JPG yang kecil. Konversi berjalan di perangkat Anda.",
+    intro: "BMP adalah format Windows lama yang menyimpan gambar tanpa kompresi, sehingga filenya sangat besar dan banyak situs web serta aplikasi tidak menerimanya. BMP ke JPG mengubah gambar menjadi JPG, yang biasanya hanya sebagian kecil dari ukuran aslinya, dengan kualitas pilihan Anda. Ini solusi cepat untuk hasil scan, screenshot dari software lama, dan gambar yang diekspor dari program lawas. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah BMP ke JPG – Gratis, File Lebih Kecil",
+    seoDescription: "Ubah gambar BMP ke JPG di browser. File jauh lebih kecil yang bisa dibuka di mana saja, kualitas bisa diatur, dan tidak ada yang diunggah.",
+    keywords: [
+      "bmp ke jpg",
+      "ubah bmp ke jpg",
+      "convert bmp to jpg",
+      "bmp ke jpeg",
+      "konverter bmp",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar BMP",
+        description: "Seret, pilih, atau tempel file .bmp.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "85% cocok untuk sebagian besar gambar. Naikkan untuk screenshot dengan teks kecil.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan JPG yang jauh lebih kecil.",
+      },
+    ],
+    features: [
+      {
+        title: "File jauh lebih kecil",
+        description: "JPG sering kali hanya sepersepuluh ukuran BMP, atau bahkan lebih kecil.",
+      },
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dipakai di semua penampil, editor, ponsel, dan formulir unggah.",
+      },
+      {
+        title: "Kualitas bisa diatur",
+        description: "Atur keseimbangan antara ukuran file dan detail.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kenapa file BMP besar sekali?",
+        answer: "Sebagian besar file BMP menyimpan setiap piksel tanpa kompresi. JPG mengompres gambar, itulah sebabnya file hasil konversi jauh lebih kecil.",
+      },
+      {
+        question: "Apakah JPG pilihan yang tepat untuk screenshot?",
+        answer: "Untuk screenshot dengan teks kecil atau garis tajam, BMP ke PNG menjaganya tetap jelas. JPG paling cocok untuk foto dan hasil scan.",
+      },
+      {
+        question: "File BMP apa saja yang bisa dibuka?",
+        answer: "Jenis bitmap Windows umum yang didukung browser. Beberapa varian yang tidak lazim, seperti sebagian file BMP terkompresi atau yang sangat lama, mungkin tidak bisa dibuka.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Konversi berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "bmp-to-png": {
+    name: "BMP ke PNG",
+    shortName: "BMP → PNG",
+    tagline: "Ubah gambar BMP Windows ke PNG lossless dengan ukuran jauh lebih kecil. Konversi berjalan di perangkat Anda.",
+    intro: "File BMP tidak terkompresi dan berukuran besar, tetapi mengubahnya ke JPG bisa membuat teks dan garis tajam jadi kabur. BMP ke PNG mengubah gambar menjadi PNG, yang mengompresnya tanpa kehilangan satu piksel pun, jadi screenshot, diagram, dan grafis tetap persis seperti aslinya dalam file yang jauh lebih kecil. Konversi berlangsung di browser Anda, jadi gambar tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah BMP ke PNG – Gratis, Lossless",
+    seoDescription: "Ubah gambar BMP ke PNG lossless di browser. File lebih kecil dengan setiap piksel tetap utuh. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "bmp ke png",
+      "ubah bmp ke png",
+      "convert bmp to png",
+      "bitmap ke png",
+      "konverter bmp",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar BMP",
+        description: "Seret, pilih, atau tempel file .bmp.",
+      },
+      {
+        title: "Periksa pratinjau",
+        description: "Browser Anda membuka gambar di perangkat Anda.",
+      },
+      {
+        title: "Unduh PNG",
+        description: "Simpan PNG lossless.",
+      },
+    ],
+    features: [
+      {
+        title: "Lossless",
+        description: "Setiap piksel BMP disimpan persis sama.",
+      },
+      {
+        title: "File lebih kecil",
+        description: "PNG mengompres gambar tanpa kehilangan kualitas, sering kali hingga sebagian kecil ukuran BMP.",
+      },
+      {
+        title: "Ideal untuk screenshot",
+        description: "Teks, garis, dan warna rata tetap tajam.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Gambar diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Seberapa kecil PNG-nya?",
+        answer: "Tergantung gambarnya. Screenshot dan grafis sering menyusut hingga sepersepuluh ukuran BMP, sedangkan foto yang detail menyusut lebih sedikit.",
+      },
+      {
+        question: "BMP ke PNG atau BMP ke JPG?",
+        answer: "Pilih PNG untuk screenshot, diagram, dan grafis, atau saat Anda butuh piksel yang persis. Pilih JPG untuk foto, karena hasilnya jauh lebih kecil.",
+      },
+      {
+        question: "File BMP apa saja yang bisa dibuka?",
+        answer: "Jenis bitmap Windows umum yang didukung browser. Beberapa varian yang tidak lazim mungkin tidak bisa dibuka.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Konversi berjalan di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG ke PDF",
     shortName: "JPG → PDF",
@@ -2924,6 +3639,136 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "png-to-pdf": {
+    name: "PNG ke PDF",
+    shortName: "PNG → PDF",
+    tagline: "Jadikan gambar PNG dan screenshot sebagai satu PDF, dengan urutan pilihan Anda. Konversi berjalan di perangkat Anda.",
+    intro: "PNG ke PDF menggabungkan satu atau beberapa gambar PNG, seperti screenshot, hasil scan, atau diagram, menjadi satu PDF yang mudah dikirim lewat email, dicetak, atau diunggah. Atur urutan halaman sesuka Anda, pilih A4, Letter, atau halaman yang Sesuai gambar, lalu atur orientasi dan margin. Gambar tetap dalam resolusi penuh. Semuanya berlangsung di browser Anda, jadi gambar Anda tidak pernah diunggah. Foto JPG, WebP, dan HEIC dari iPhone juga bisa dimasukkan ke PDF yang sama.",
+    seoTitle: "Ubah PNG ke PDF – Gabungkan Gambar, Gratis",
+    seoDescription: "Ubah gambar PNG dan screenshot jadi satu PDF di browser. Atur urutan halaman, pilih A4 atau Letter. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "png ke pdf",
+      "ubah png ke pdf",
+      "convert png to pdf",
+      "screenshot ke pdf",
+      "gabungkan png jadi pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar PNG",
+        description: "Letakkan atau pilih satu atau beberapa gambar. Anda bisa menambahkan lagi nanti.",
+      },
+      {
+        title: "Atur halaman",
+        description: "Seret atau gunakan tombol panah untuk mengatur urutan, lalu pilih ukuran halaman, orientasi, dan margin.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan satu PDF dengan satu halaman untuk setiap gambar.",
+      },
+    ],
+    features: [
+      {
+        title: "Banyak gambar, satu PDF",
+        description: "Gabungkan screenshot atau hasil scan menjadi satu dokumen.",
+      },
+      {
+        title: "Urutan halaman sesuai keinginan",
+        description: "Atur ulang urutan halaman sebelum membuat PDF.",
+      },
+      {
+        title: "Pilihan ukuran halaman",
+        description: "A4, Letter, atau setiap halaman seukuran gambarnya.",
+      },
+      {
+        title: "Konversi privat",
+        description: "PDF dibuat di perangkat Anda dan tidak ada yang diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah kualitas gambar akan turun?",
+        answer: "Tidak. Setiap gambar dimasukkan ke PDF dalam resolusi penuh.",
+      },
+      {
+        question: "Bisakah saya mencampur PNG dengan format lain?",
+        answer: "Bisa. Gambar JPG, WebP, dan HEIC dari iPhone bisa dimasukkan ke PDF yang sama.",
+      },
+      {
+        question: "Apa fungsi opsi Sesuai gambar?",
+        answer: "Setiap halaman mengikuti ukuran dan bentuk gambarnya, tanpa tepi putih, sehingga cocok untuk screenshot dan slide.",
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. PDF dibuat di browser Anda, jadi gambar tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "heic-to-pdf": {
+    name: "HEIC ke PDF",
+    shortName: "HEIC → PDF",
+    tagline: "Jadikan foto HEIC dari iPhone, seperti struk dan dokumen, sebagai satu PDF. Konversi berjalan di perangkat Anda.",
+    intro: "iPhone menyimpan foto dalam format HEIC, tetapi formulir klaim biaya, sekolah, bank, dan kantor biasanya meminta PDF. HEIC ke PDF mengubah satu atau beberapa foto HEIC, seperti struk, kartu identitas, formulir, atau halaman tulisan tangan, menjadi satu PDF yang bisa Anda unggah atau kirim lewat email. Urutkan halamannya, lalu pilih A4, Letter, atau halaman seukuran setiap foto. Semuanya berlangsung di browser Anda, jadi foto Anda tidak pernah diunggah.",
+    seoTitle: "Ubah HEIC ke PDF – Foto iPhone Jadi PDF, Gratis",
+    seoDescription: "Ubah foto HEIC iPhone menjadi satu PDF di browser. Atur urutan halaman, pilih A4 atau Letter. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "heic ke pdf",
+      "ubah heic ke pdf",
+      "foto iphone ke pdf",
+      "heif ke pdf",
+      "convert heic to pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto HEIC",
+        description: "Letakkan atau pilih satu atau beberapa file .heic atau .heif.",
+      },
+      {
+        title: "Atur halaman",
+        description: "Tentukan urutannya, lalu pilih ukuran halaman, orientasi, dan margin.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan satu PDF dengan satu halaman untuk setiap foto.",
+      },
+    ],
+    features: [
+      {
+        title: "Beberapa foto, satu PDF",
+        description: "Gabungkan struk atau halaman dokumen menjadi satu file.",
+      },
+      {
+        title: "Urutan halaman sesuai keinginan",
+        description: "Atur ulang urutan halaman sebelum membuat PDF.",
+      },
+      {
+        title: "Pilihan ukuran halaman",
+        description: "A4, Letter, atau setiap halaman seukuran fotonya.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Foto Anda diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah HEIF sama dengan HEIC?",
+        answer: "Untuk foto, ya. File .heic maupun .heif bisa dipakai di sini.",
+      },
+      {
+        question: "Bisakah saya menambahkan gambar JPG atau PNG juga?",
+        answer: "Bisa. Gambar JPG, PNG, dan WebP bisa dimasukkan ke PDF yang sama.",
+      },
+      {
+        question: "Apakah PDF-nya akan terbaca jelas untuk dokumen?",
+        answer: "Ya. Foto dimasukkan dalam resolusi penuh. Agar hasilnya paling jelas, foto dokumen dalam posisi datar dan dengan cahaya yang cukup.",
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Dekoder HEIC dan pembuat PDF berjalan di browser Anda, jadi foto Anda tetap ada di perangkat Anda.",
+      },
+    ],
+  },
   "pdf-to-jpg": {
     name: "PDF ke JPG",
     shortName: "PDF → JPG",
@@ -2998,6 +3843,71 @@ export const idTools: Record<string, LocalizedToolItem> = {
         question: "Apakah PDF saya diunggah?",
         answer:
           "Tidak. PDF dibaca dan dirender oleh browser Anda, jadi kontrak, rekening koran, dan dokumen pribadi lainnya tidak pernah meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "pdf-to-png": {
+    name: "PDF ke PNG",
+    shortName: "PDF → PNG",
+    tagline: "Simpan setiap halaman PDF sebagai gambar PNG yang tajam dan lossless, satu per satu atau semuanya dalam ZIP. Konversi berjalan di perangkat Anda.",
+    intro: "PDF ke PNG mengubah setiap halaman PDF menjadi gambar PNG. PNG bersifat lossless, jadi teks, garis, dan diagram tetap tajam sempurna, sehingga cocok untuk slide, dokumen, dan grafik yang ingin Anda masukkan ke presentasi, desain, atau halaman web. Pilih resolusinya, lalu unduh halaman satu per satu atau semua halaman sekaligus dalam ZIP. PDF dibuka di browser Anda dan tidak pernah diunggah.",
+    seoTitle: "Ubah PDF ke PNG – Halaman Tajam, Gratis",
+    seoDescription: "Ubah halaman PDF menjadi gambar PNG yang tajam di browser. Pilih 72, 150, atau 300 dpi, lalu unduh satu halaman atau semuanya. Gratis dan privat.",
+    keywords: [
+      "pdf ke png",
+      "ubah pdf ke png",
+      "convert pdf to png",
+      "halaman pdf ke gambar",
+      "pdf ke png resolusi tinggi",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih file PDF. Halaman-halamannya muncul sebagai thumbnail.",
+      },
+      {
+        title: "Pilih resolusi",
+        description: "150 dpi cocok untuk layar. Pakai 300 dpi untuk mencetak atau memperbesar tampilan.",
+      },
+      {
+        title: "Unduh halaman",
+        description: "Simpan satu halaman sebagai PNG, atau semua halaman sekaligus dalam ZIP.",
+      },
+    ],
+    features: [
+      {
+        title: "Teks dan garis tajam",
+        description: "PNG bersifat lossless, jadi teks kecil dan garis halus tetap jelas.",
+      },
+      {
+        title: "Pilihan resolusi",
+        description: "72, 150, atau 300 dpi, untuk apa saja mulai dari pratinjau web hingga cetak.",
+      },
+      {
+        title: "Semua halaman sekaligus",
+        description: "Unduh semua halaman dalam satu ZIP, dengan nama file sesuai urutan halaman.",
+      },
+      {
+        title: "Konversi privat",
+        description: "PDF dibuka di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG atau JPG untuk halaman PDF?",
+        answer: "PNG menjaga teks dan diagram tetap tajam sempurna. JPG menghasilkan file lebih kecil dan cocok untuk halaman yang sebagian besar berisi foto. Anda bisa beralih ke JPG di alat yang sama.",
+      },
+      {
+        question: "Resolusi mana yang sebaiknya saya pilih?",
+        answer: "150 dpi terlihat bagus di layar. 300 dpi untuk mencetak atau saat Anda perlu memperbesar tampilan, dan menghasilkan file yang lebih besar.",
+      },
+      {
+        question: "Bisakah saya mengonversi PDF yang dilindungi kata sandi?",
+        answer: "Tidak, jika PDF memerlukan kata sandi untuk dibuka. Buka di pembaca PDF, simpan salinan tanpa kata sandi, lalu pakai salinan itu.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibaca dan digambar oleh browser Anda, jadi tetap ada di perangkat Anda.",
       },
     ],
   },

@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'SVG bu boyutta yeniden çizilir, bu yüzden kenarlar her ölçekte keskin kalır.',
   'ctl.svg.size': 'Boyut',
   'ctl.svg.original': 'Orijinal',
-  'ctl.svg.output': 'PNG çıktısı',
+  'ctl.svg.output': '{format} çıktısı',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Resim ayrıntıları',

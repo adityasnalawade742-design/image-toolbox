@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'SVG를 이 크기로 다시 그리기 때문에 어떤 배율에서도 가장자리가 선명해요.',
   'ctl.svg.size': '크기',
   'ctl.svg.original': '원본',
-  'ctl.svg.output': 'PNG 출력',
+  'ctl.svg.output': '{format} 출력',
 
   // Image analyzer
   'ctl.analyzer.specs': '이미지 정보',

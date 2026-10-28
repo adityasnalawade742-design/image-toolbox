@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'El SVG se vuelve a dibujar a este tamaño, así que los bordes quedan nítidos a cualquier escala.',
   'ctl.svg.size': 'Tamaño',
   'ctl.svg.original': 'Original',
-  'ctl.svg.output': 'Resultado PNG',
+  'ctl.svg.output': 'Resultado {format}',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Detalles de la imagen',

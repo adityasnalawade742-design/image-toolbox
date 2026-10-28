@@ -131,7 +131,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'remove-background': <RemoveBackgroundWorkspace />,
     'compress-image-to-kb': <CompressToKbWorkspace />,
     'jpg-to-pdf': <JpgToPdfWorkspace />,
+    'png-to-pdf': <JpgToPdfWorkspace />,
+    'heic-to-pdf': <JpgToPdfWorkspace />,
     'pdf-to-jpg': <PdfToJpgWorkspace />,
+    'pdf-to-png': <PdfToJpgWorkspace defaultFormat="image/png" />,
     'merge-images': <MergeImagesWorkspace />,
     'merge-pdf': <MergePdfWorkspace />,
     'split-pdf': <SplitPdfWorkspace />,
@@ -412,7 +415,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     let targetW = width;
     let targetH = height;
 
-    if (slug === 'svg-to-png') {
+    if (slug.startsWith('svg-to-')) {
       targetW = origW * svgScale;
       targetH = origH * svgScale;
     }
@@ -1146,8 +1149,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                 />
               )}
 
-              {slug === 'svg-to-png' && (
+              {slug.startsWith('svg-to-') && (
                 <SvgToPngControls
+                  format={formatExtension(format).toUpperCase()}
                   originalWidth={origW}
                   originalHeight={origH}
                   scale={svgScale}

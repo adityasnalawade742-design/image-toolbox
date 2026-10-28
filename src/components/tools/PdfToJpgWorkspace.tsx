@@ -11,12 +11,12 @@ const DPIS = [72, 150, 300] as const;
 // Thumbnails render at a fixed low resolution, independent of the export setting
 const THUMB_DPI = 36;
 
-export function PdfToJpgWorkspace() {
+export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFormat?: PageImageFormat } = {}) {
   const t = useT();
   const [file, setFile] = useState<File | null>(null);
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [thumbs, setThumbs] = useState<string[]>([]);
-  const [format, setFormat] = useState<PageImageFormat>('image/jpeg');
+  const [format, setFormat] = useState<PageImageFormat>(defaultFormat);
   const [dpi, setDpi] = useState<(typeof DPIS)[number]>(150);
   const [busy, setBusy] = useState<string | null>(null);
   // Exporting blocks other downloads; preview loading doesn't

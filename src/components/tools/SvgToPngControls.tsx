@@ -1,13 +1,15 @@
 import { useT } from '../shared/I18nContext';
 
 interface Props {
+  /** Output format name, e.g. PNG */
+  format: string;
   originalWidth: number;
   originalHeight: number;
   scale: number;
   onScaleChange: (scale: number) => void;
 }
 
-export function SvgToPngControls({ originalWidth, originalHeight, scale, onScaleChange }: Props) {
+export function SvgToPngControls({ format, originalWidth, originalHeight, scale, onScaleChange }: Props) {
   const t = useT();
   const scales = [1, 2, 4, 8];
   const outputW = originalWidth * scale;
@@ -45,7 +47,7 @@ export function SvgToPngControls({ originalWidth, originalHeight, scale, onScale
             <dd className="text-ink font-semibold text-right" data-measure>{originalWidth} × {originalHeight} px</dd>
           </div>
           <div className="flex items-baseline justify-between gap-4 px-3 py-2">
-            <dt className="text-graphite">{t('ctl.svg.output')}</dt>
+            <dt className="text-graphite">{t('ctl.svg.output', { format })}</dt>
             <dd className="text-ink font-semibold text-right" data-measure>{outputW} × {outputH} px</dd>
           </div>
         </dl>

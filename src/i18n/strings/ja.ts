@@ -268,7 +268,7 @@ export const strings = {
   'ctl.svg.help': 'SVGはこのサイズで描き直されるため、どの倍率でも輪郭はくっきりしたままです。',
   'ctl.svg.size': 'サイズ',
   'ctl.svg.original': '元のサイズ',
-  'ctl.svg.output': 'PNG出力',
+  'ctl.svg.output': '{format}出力',
 
   // Image analyzer
   'ctl.analyzer.specs': '画像の詳細',

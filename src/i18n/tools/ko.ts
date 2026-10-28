@@ -2184,6 +2184,136 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "svg-to-jpg": {
+    name: "SVG JPG 변환",
+    shortName: "SVG → JPG",
+    tagline: "SVG 그래픽을 원하는 배율과 배경색으로 JPG 이미지로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "SVG 그래픽은 어떤 크기에서도 선명하지만, 많은 앱, SNS, 업로드 양식은 일반 이미지만 받아요. SVG JPG 변환은 SVG를 1x부터 8x까지 원하는 배율로 다시 그려서 JPG로 저장해요. JPG는 투명도를 지원하지 않아서, 투명한 부분은 흰색이나 직접 고른 색으로 채워져요. 변환은 브라우저 안에서 이루어지므로 파일이 기기 밖으로 나가지 않아요.",
+    seoTitle: "SVG JPG 변환 – 원하는 크기로, 무료",
+    seoDescription: "브라우저에서 SVG 그래픽을 1x~8x 배율의 JPG로 바꾸고 배경색도 고르세요. 무료이고 아무것도 업로드되지 않아요.",
+    keywords: [
+      "svg jpg 변환",
+      "svg를 jpg로",
+      "svg jpeg 변환",
+      "svg jpg 변환기",
+      "svg 이미지 변환",
+    ],
+    howToSteps: [
+      {
+        title: "SVG 추가",
+        description: ".svg 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "배율과 배경 선택",
+        description: "1x, 2x, 4x, 8x 중에서 고르고, 투명한 부분을 채울 색도 고르세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "JPG를 저장해서 어디서나 쓰세요.",
+      },
+    ],
+    features: [
+      {
+        title: "어떤 크기에서도 선명",
+        description: "SVG를 고른 배율로 다시 그리므로 가장자리가 또렷하게 유지돼요.",
+      },
+      {
+        title: "배경색 선택",
+        description: "투명한 부분은 흰색이나 원하는 색으로 채워져요.",
+      },
+      {
+        title: "어디서나 열려요",
+        description: "JPG는 모든 앱, SNS, 업로드 양식에서 쓸 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "파일은 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "SVG를 JPG로 바꿀까요, PNG로 바꿀까요?",
+        answer: "로고와 아이콘은 투명도와 완전히 균일한 색을 유지하는 PNG를 고르세요. 사이트나 양식에서 JPG를 요구하거나 그라데이션이 있는 일러스트라면 JPG를 고르세요.",
+      },
+      {
+        question: "배율은 무엇을 써야 하나요?",
+        answer: "대부분의 화면에는 2x가 알맞아요. 인쇄나 큰 디스플레이에는 4x나 8x를 쓰세요.",
+      },
+      {
+        question: "SVG가 다르게 보이는 이유는 뭔가요?",
+        answer: "웹에서 글꼴이나 이미지를 불러오는 SVG는 그 부분이 그려지지 않을 수 있어요. 먼저 디자인 도구에서 글자를 윤곽선으로 바꾸세요.",
+      },
+      {
+        question: "파일이 업로드되나요?",
+        answer: "아니요. 브라우저가 내 기기에서 SVG를 그려요.",
+      },
+    ],
+  },
+  "svg-to-webp": {
+    name: "SVG WebP 변환",
+    shortName: "SVG → WebP",
+    tagline: "SVG 그래픽을 투명도를 유지한 채 원하는 배율의 작은 WebP 이미지로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "웹사이트, 앱, 이메일 편집기에서 SVG 대신 일반 이미지가 필요할 때가 있어요. SVG WebP 변환은 SVG를 1x부터 8x까지 원하는 배율로 다시 그려 WebP로 저장해요. WebP는 모든 최신 브라우저에서 보이고 투명도도 유지하는 작은 형식이에요. 변환은 브라우저 안에서 이루어지므로 파일이 기기 밖으로 나가지 않아요.",
+    seoTitle: "SVG WebP 변환 – 작은 파일, 투명도 유지",
+    seoDescription: "브라우저에서 SVG 그래픽을 1x~8x 배율의 WebP로 바꿔요. 투명도는 그대로 유지돼요. 무료이고 아무것도 업로드되지 않아요.",
+    keywords: [
+      "svg webp 변환",
+      "svg를 webp로",
+      "svg webp 변환기",
+      "svg 이미지 변환",
+      "투명 webp",
+    ],
+    howToSteps: [
+      {
+        title: "SVG 추가",
+        description: ".svg 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "배율과 품질 선택",
+        description: "1x, 2x, 4x, 8x 중에서 고르고 WebP 품질을 정하세요.",
+      },
+      {
+        title: "WebP 다운로드",
+        description: "WebP를 저장해서 사이트나 앱에서 쓰세요.",
+      },
+    ],
+    features: [
+      {
+        title: "어떤 크기에서도 선명",
+        description: "SVG를 고른 배율로 다시 그리므로 가장자리가 또렷하게 유지돼요.",
+      },
+      {
+        title: "투명도 유지",
+        description: "투명한 부분은 WebP에서도 투명하게 남아요.",
+      },
+      {
+        title: "작은 파일",
+        description: "같은 이미지라면 WebP는 보통 PNG보다 훨씬 작아요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "파일은 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "그냥 SVG를 쓰면 안 되나요?",
+        answer: "SVG를 지원하는 곳에서는 SVG를 그대로 쓰세요. 일부 앱, 이메일 편집기, 이미지 업로드처럼 일반 이미지만 허용되는 곳에서는 WebP를 쓰세요.",
+      },
+      {
+        question: "배율은 무엇을 써야 하나요?",
+        answer: "대부분의 화면에는 2x가 알맞아요. 큰 디스플레이에는 4x나 8x를 쓰세요.",
+      },
+      {
+        question: "SVG가 다르게 보이는 이유는 뭔가요?",
+        answer: "웹에서 글꼴이나 이미지를 불러오는 SVG는 그 부분이 그려지지 않을 수 있어요. 먼저 디자인 도구에서 글자를 윤곽선으로 바꾸세요.",
+      },
+      {
+        question: "파일이 업로드되나요?",
+        answer: "아니요. 브라우저가 내 기기에서 SVG를 그려요.",
+      },
+    ],
+  },
   "photo-filters": {
     name: "사진 필터 및 효과",
     shortName: "필터",
@@ -2841,6 +2971,591 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "heic-to-webp": {
+    name: "HEIC WebP 변환",
+    shortName: "HEIC → WebP",
+    tagline: "iPhone의 HEIC·HEIF 사진을 어느 브라우저에서나 열리는 가벼운 웹 형식인 WebP로 바꿔요. 변환은 기기 안에서 이뤄져요.",
+    intro: "HEIC(HEIF라고도 해요)는 iPhone과 많은 Android 휴대폰이 기본으로 쓰는 사진 형식이지만, 대부분의 웹사이트와 CMS, Windows 앱에서는 보이지 않아요. HEIC WebP 변환은 사진을 모든 최신 브라우저가 지원하는 최신 형식인 WebP로 바꿔요. WebP는 파일이 작아서, 같은 화질이면 JPG보다 작은 경우가 많아요. 그래서 웹사이트나 블로그, 온라인 쇼핑몰에 올릴 사진에 잘 맞아요. 변환은 브라우저 안에서 이뤄지므로 사진이 기기 밖으로 나가지 않아요.",
+    seoTitle: "HEIC WebP 변환 – 무료, 안전, HEIF도 지원",
+    seoDescription: "iPhone의 HEIC·HEIF 사진을 브라우저에서 WebP로 변환하세요. 웹사이트용 가벼운 파일, 품질 조절 가능, 업로드는 전혀 없어요.",
+    keywords: [
+      "heic webp 변환",
+      "heif webp 변환",
+      "heic를 webp로",
+      "아이폰 사진 webp",
+      "heic webp 변환기",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC 사진 추가",
+        description: ".heic 또는 .heif 파일을 끌어다 놓거나, 고르거나, 붙여 넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "대부분의 사진은 85%면 충분해요. 파일을 더 작게 하려면 낮추고, 디테일을 살리려면 높이세요.",
+      },
+      {
+        title: "WebP 다운로드",
+        description: "WebP 파일을 저장해 사이트에 올리거나 공유하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "작은 파일",
+        description: "눈으로 보는 화질이 같다면 WebP는 보통 JPG보다 작아서 페이지가 더 빨리 열려요.",
+      },
+      {
+        title: "모든 브라우저에서 표시",
+        description: "Chrome, Safari, Firefox, Edge 모두 WebP를 보여 주고, WordPress와 Shopify, 대부분의 사이트 제작 도구도 지원해요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "사진은 기기에서 변환되며 업로드되지 않아요.",
+      },
+      {
+        title: "위치 정보 없음",
+        description: "원본의 GPS 위치와 카메라 정보는 WebP에 복사되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF와 HEIC는 같은 건가요?",
+        answer: "사진에서는 같아요. HEIF는 파일 형식이고, HEIC는 Apple이 그 형식으로 저장한 사진에 쓰는 이름과 확장자예요. 여기서는 .heic와 .heif 파일 모두 쓸 수 있어요.",
+      },
+      {
+        question: "WebP와 JPG 중 무엇을 골라야 하나요?",
+        answer: "웹사이트와 온라인 쇼핑몰에는 가볍고 빨리 열리는 WebP를 고르세요. 사진을 이메일이나 인쇄소, WebP를 받지 않는 오래된 앱과 업로드 양식에 보낼 때는 JPG를 고르세요.",
+      },
+      {
+        question: "품질은 몇 %로 해야 하나요?",
+        answer: "대부분의 사진은 85%면 원본과 똑같아 보여요. 디테일이 많은 사진은 90% 이상, 파일 크기가 가장 중요하면 70~80%를 쓰세요.",
+      },
+      {
+        question: "사진이 업로드되나요?",
+        answer: "아니요. HEIC 디코더가 브라우저 안에서 동작하므로 사진은 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "avif-to-jpg": {
+    name: "AVIF JPG 변환",
+    shortName: "AVIF → JPG",
+    tagline: "AVIF 이미지를 어떤 앱, 편집기, 업로드 양식에서도 열리는 JPG로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "AVIF는 파일이 아주 작아서 요즘 많은 웹사이트가 쓰는 최신 이미지 형식이에요. 하지만 이런 이미지를 저장하면 오래된 사진 뷰어, Office, 많은 편집기와 여러 업로드 양식에서 열리지 않아요. AVIF JPG 변환은 이미지를 어디서나 쓸 수 있는 JPG로 바꿔요. 품질을 고르고 결과를 미리 본 다음 다운로드하세요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "AVIF JPG 변환 – 무료, 빠르고 안전하게",
+    seoDescription: "브라우저에서 AVIF 이미지를 JPG로 변환하세요. 모든 앱과 업로드 양식에서 열리고, 품질 조절 가능, 업로드는 전혀 없어요.",
+    keywords: [
+      "avif jpg 변환",
+      "avif jpeg 변환",
+      "avif 변환",
+      "avif 파일 열기",
+      "avif jpg 변환 사이트",
+    ],
+    howToSteps: [
+      {
+        title: "AVIF 이미지 추가",
+        description: ".avif 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "대부분의 이미지는 85%면 충분해요. 디테일을 살리려면 높이고, 파일을 작게 하려면 낮추세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "JPG를 저장해서 어디서나 열고, 편집하고, 업로드하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "어디서나 열려요",
+        description: "JPG는 모든 사진 뷰어, 편집기, 휴대폰, 이메일 앱, 업로드 양식에서 쓸 수 있어요.",
+      },
+      {
+        title: "품질 조절",
+        description: "다운로드하기 전에 파일 크기와 디테일 사이의 균형을 고르세요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+      {
+        title: "투명 영역 처리",
+        description: "JPG는 투명도를 지원하지 않아서, 투명한 부분은 직접 고른 색으로 채워져요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF 파일이 뭔가요?",
+        answer: "AVIF는 AV1 동영상 코덱을 바탕으로 한 이미지 형식이에요. 같은 화질에서 JPG보다 훨씬 작은 파일을 만들어서 많은 웹사이트가 쓰지만, 오래된 소프트웨어에서는 열리지 않아요.",
+      },
+      {
+        question: "JPG가 AVIF보다 커지나요?",
+        answer: "대개 그래요. AVIF는 압축 효율이 아주 높아서, 같은 이미지를 JPG로 저장하면 두세 배 커지는 경우가 많아요. 어떤 프로그램에서나 열리는 파일을 얻는 대가예요.",
+      },
+      {
+        question: "브라우저에서 AVIF가 열리지 않는 이유는 뭔가요?",
+        answer: "아주 오래된 브라우저는 AVIF를 디코딩하지 못해요. 최신 Chrome, Edge, Firefox, Safari(16 버전 이상)는 모두 지원해요. 그래도 파일이 열리지 않으면 파일이 손상되었을 수 있어요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 브라우저가 내 기기에서 이미지를 디코딩하고 변환해요.",
+      },
+    ],
+  },
+  "avif-to-png": {
+    name: "AVIF PNG 변환",
+    shortName: "AVIF → PNG",
+    tagline: "AVIF 이미지를 투명도를 유지한 채 편집과 디자인에 좋은 무손실 PNG로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "AVIF 이미지는 작고 선명하지만, 많은 편집기와 디자인 도구, 오래된 앱에서는 열리지 않아요. AVIF PNG 변환은 이미지를 투명한 부분을 그대로 유지하는 무손실 형식인 PNG로 바꿔요. 그래서 로고, 그래픽, 앞으로 더 편집할 이미지에 잘 맞아요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요. 공유할 사진이라면 AVIF JPG 변환이 더 작은 파일을 만들어요.",
+    seoTitle: "AVIF PNG 변환 – 무료, 무손실",
+    seoDescription: "브라우저에서 AVIF 이미지를 무손실 PNG로 바꿔요. 투명도는 그대로 유지돼요. 무료이고 안전하며 아무것도 업로드되지 않아요.",
+    keywords: [
+      "avif png 변환",
+      "avif를 png로",
+      "avif png 변환기",
+      "avif 투명 png",
+      "avif 파일 열기",
+    ],
+    howToSteps: [
+      {
+        title: "AVIF 이미지 추가",
+        description: ".avif 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "미리보기 확인",
+        description: "브라우저가 내 기기에서 이미지를 디코딩해요.",
+      },
+      {
+        title: "PNG 다운로드",
+        description: "무손실 PNG를 저장하고 원하는 편집기나 디자인 도구에서 여세요.",
+      },
+    ],
+    features: [
+      {
+        title: "무손실 출력",
+        description: "PNG는 디코딩된 이미지의 모든 픽셀을 그대로 유지하므로, 편집하고 다시 저장해도 압축 노이즈가 생기지 않아요.",
+      },
+      {
+        title: "투명도 유지",
+        description: "AVIF의 투명한 부분은 PNG에서도 투명하게 남아요.",
+      },
+      {
+        title: "어떤 편집기에서도 열려요",
+        description: "PNG는 Photoshop, GIMP, Figma, Canva, Office와 모든 브라우저에서 쓸 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG가 AVIF보다 훨씬 큰 이유는 뭔가요?",
+        answer: "AVIF는 매우 효율적인 손실 압축을 쓰고, PNG는 무손실이라 훨씬 많은 데이터를 저장해요. PNG가 AVIF의 열 배 크기가 되는 일도 흔해요.",
+      },
+      {
+        question: "PNG에서도 투명도가 유지되나요?",
+        answer: "네. AVIF에 투명한 부분이 있으면 PNG에서도 투명하게 남아요.",
+      },
+      {
+        question: "PNG와 JPG 중 무엇을 골라야 하나요?",
+        answer: "그래픽, 투명도가 필요한 이미지, 더 편집할 이미지에는 PNG를 고르세요. 공유하거나 업로드할 사진에는 파일이 훨씬 작은 JPG를 고르세요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 변환은 브라우저에서 이루어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "jpg-to-avif": {
+    name: "JPG AVIF 변환",
+    shortName: "JPG → AVIF",
+    tagline: "JPG 사진을 가장 작은 파일을 만드는 최신 웹 형식인 AVIF로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "AVIF는 눈으로 보는 화질이 같을 때 JPG보다 훨씬 작은 파일을 만들어요. 절반 크기인 경우도 많아서 페이지가 더 빨리 열리고 데이터도 덜 써요. 모든 최신 브라우저에서 볼 수 있어요. JPG AVIF 변환은 원하는 품질로 사진을 AVIF로 바꿔 주므로, 1KB라도 아껴야 하는 웹사이트, 온라인 쇼핑몰, 블로그에 유용해요. 인코딩은 브라우저 안에서 이루어지므로 사진이 기기 밖으로 나가지 않아요. 큰 사진은 몇 초 걸릴 수 있어요.",
+    seoTitle: "JPG AVIF 변환 – 더 작은 이미지, 무료",
+    seoDescription: "브라우저에서 JPG 사진을 AVIF로 바꿔 웹 이미지를 훨씬 작게 만드세요. 품질 조절 가능, 무료, 아무것도 업로드되지 않아요.",
+    keywords: [
+      "jpg avif 변환",
+      "jpeg avif 변환",
+      "이미지 avif 변환",
+      "avif 변환기",
+      "사진 avif로 변환",
+    ],
+    howToSteps: [
+      {
+        title: "JPG 사진 추가",
+        description: ".jpg 또는 .jpeg 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "85%에서 시작하세요. AVIF는 JPG보다 낮은 설정에서도 선명하니, 파일을 더 작게 하려면 낮은 값도 시도해 보세요.",
+      },
+      {
+        title: "AVIF 다운로드",
+        description: "AVIF 파일을 저장해서 웹사이트에 올리세요.",
+      },
+    ],
+    features: [
+      {
+        title: "훨씬 작은 파일",
+        description: "AVIF는 똑같아 보이는 JPG의 절반 정도 크기인 경우가 많아요.",
+      },
+      {
+        title: "모든 최신 브라우저에서 표시",
+        description: "Chrome, Edge, Firefox, Safari 16 이상 모두 AVIF를 보여 줘요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+      {
+        title: "위치 정보 없음",
+        description: "JPG의 GPS 위치와 카메라 정보는 AVIF로 복사되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF와 WebP 중 무엇이 더 좋나요?",
+        answer: "같은 품질이면 보통 AVIF가 더 작은 파일을 만들고, WebP는 인코딩이 더 빠르고 일부 오래된 앱에서도 열려요. 둘 다 모든 최신 브라우저에서 볼 수 있어요.",
+      },
+      {
+        question: "모든 앱에서 AVIF를 열 수 있나요?",
+        answer: "아니요. 브라우저는 열 수 있지만, 일부 오래된 사진 뷰어, 편집기, 업로드 양식은 열지 못해요. 그런 곳에는 원본 JPG를 보관해 두고, 웹에서는 AVIF를 쓰세요.",
+      },
+      {
+        question: "변환에 몇 초 걸리는 이유는 뭔가요?",
+        answer: "AVIF 인코딩은 가장 작은 파일을 찾으려고 많은 작업을 해요. 내 기기에서 실행되기 때문에, 느린 휴대폰에서는 큰 사진일수록 더 오래 걸려요.",
+      },
+      {
+        question: "사진이 업로드되나요?",
+        answer: "아니요. AVIF 인코더가 브라우저에서 실행되므로 사진은 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "png-to-avif": {
+    name: "PNG AVIF 변환",
+    shortName: "PNG → AVIF",
+    tagline: "PNG 이미지를 투명도는 그대로 두고 훨씬 작은 웹용 AVIF 파일로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "PNG 파일은 특히 스크린샷, 사진, 디테일이 많은 그래픽일 때 커지기 쉬워요. AVIF는 같은 이미지를 훨씬 적은 용량에 저장하면서 투명도도 유지해서, 웹에 올리는 로고, 상품 이미지, 일러스트에 잘 맞아요. PNG AVIF 변환은 원하는 품질로 이미지를 바꿔 주고, 결과는 모든 최신 브라우저에서 볼 수 있어요. 인코딩은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "PNG AVIF 변환 – 작은 파일, 투명도 유지",
+    seoDescription: "브라우저에서 PNG 이미지를 AVIF로 바꾸세요. 투명도를 유지한 훨씬 작은 웹 이미지, 품질 조절 가능, 업로드 없음.",
+    keywords: [
+      "png avif 변환",
+      "png를 avif로",
+      "png avif 변환기",
+      "투명 avif",
+      "이미지 avif 변환",
+    ],
+    howToSteps: [
+      {
+        title: "PNG 이미지 추가",
+        description: ".png 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "대부분의 이미지는 85%면 충분해요. 선명한 글자나 가는 선이 있으면 더 높은 값을 쓰세요.",
+      },
+      {
+        title: "AVIF 다운로드",
+        description: "AVIF 파일을 저장해서 웹사이트에 올리세요.",
+      },
+    ],
+    features: [
+      {
+        title: "훨씬 작은 용량",
+        description: "AVIF는 원래 PNG보다 몇 배나 작은 경우가 많아요.",
+      },
+      {
+        title: "투명도 유지",
+        description: "투명한 배경은 AVIF에서도 투명하게 남아요.",
+      },
+      {
+        title: "모든 최신 브라우저에서 표시",
+        description: "Chrome, Edge, Firefox, Safari 16 이상 모두 AVIF를 보여 줘요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF도 PNG처럼 무손실인가요?",
+        answer: "여기서는 아니에요. AVIF는 고른 품질로 압축되므로 아주 작은 디테일이 달라질 수 있어요. 85% 이상이면 대부분의 이미지가 PNG와 똑같아 보여요.",
+      },
+      {
+        question: "AVIF도 투명도를 유지하나요?",
+        answer: "네. PNG의 투명한 부분은 AVIF에서도 투명하게 남아요.",
+      },
+      {
+        question: "언제 PNG를 보관해야 하나요?",
+        answer: "편집, 인쇄, AVIF를 열지 못하는 앱에는 PNG를 보관해 두세요. 웹사이트에는 AVIF를 쓰세요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. AVIF 인코더가 브라우저에서 실행되므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "gif-to-png": {
+    name: "GIF PNG 변환",
+    shortName: "GIF → PNG",
+    tagline: "GIF를 투명도를 유지한 무손실 PNG 정지 이미지로 저장하세요. 변환은 내 기기에서 이루어져요.",
+    intro: "GIF는 최대 256색만 담을 수 있는 오래된 형식이라, 많은 편집기와 업로드 양식에서 제대로 다루지 못해요. GIF PNG 변환은 이미지를 모든 편집기와 디자인 도구에서 열리는 무손실 형식인 PNG로 저장하고, 투명한 부분도 그대로 유지해요. 움직이는 GIF라면 PNG는 첫 번째 프레임의 정지 이미지가 돼요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "GIF PNG 변환 – 무료, 투명도 유지",
+    seoDescription: "브라우저에서 GIF를 무손실 PNG 정지 이미지로 바꿔요. 투명도는 그대로 유지돼요. 무료이고 안전하며 아무것도 업로드되지 않아요.",
+    keywords: [
+      "gif png 변환",
+      "gif를 png로",
+      "gif png 변환기",
+      "gif 투명 png",
+      "gif 첫 프레임 png",
+    ],
+    howToSteps: [
+      {
+        title: "GIF 추가",
+        description: ".gif 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "미리보기 확인",
+        description: "움직이는 GIF는 첫 번째 프레임이 표시돼요.",
+      },
+      {
+        title: "PNG 다운로드",
+        description: "PNG를 저장하고 원하는 편집기에서 여세요.",
+      },
+    ],
+    features: [
+      {
+        title: "무손실",
+        description: "GIF 프레임의 모든 픽셀을 그대로 유지해요.",
+      },
+      {
+        title: "투명도 유지",
+        description: "GIF의 투명한 부분은 PNG에서도 투명하게 남아요.",
+      },
+      {
+        title: "어떤 편집기에서도 열려요",
+        description: "PNG는 Photoshop, GIMP, Figma, Canva, Office와 모든 브라우저에서 쓸 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "움직이는 GIF는 어떻게 되나요?",
+        answer: "PNG는 첫 번째 프레임의 정지 이미지가 돼요. 여기서 만든 PNG 파일은 움직이지 않아요.",
+      },
+      {
+        question: "색이 바뀌나요?",
+        answer: "아니요. GIF는 최대 256색이고, PNG는 그 색을 모두 정확하게 저장해요.",
+      },
+      {
+        question: "변환하면서 크기를 바꿀 수 있나요?",
+        answer: "네. 다운로드하기 전에 크기 입력란에서 새 너비나 높이를 정하세요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 변환은 브라우저에서 이루어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "gif-to-jpg": {
+    name: "GIF JPG 변환",
+    shortName: "GIF → JPG",
+    tagline: "GIF를 어디서나 열리는 JPG 정지 이미지로 저장하세요. 변환은 내 기기에서 이루어져요.",
+    intro: "일부 업로드 양식, 인쇄 서비스, 앱은 JPG만 받아요. GIF JPG 변환은 GIF를 원하는 품질의 JPG 정지 이미지로 저장해요. JPG는 투명도를 지원하지 않아서, 투명한 부분은 직접 고른 배경색으로 채워져요. 움직이는 GIF라면 JPG에는 첫 번째 프레임이 담겨요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "GIF JPG 변환 – 무료, 안전하게",
+    seoDescription: "브라우저에서 GIF를 JPG 정지 이미지로 바꾸세요. 품질과 배경색을 고를 수 있어요. 무료이고 아무것도 업로드되지 않아요.",
+    keywords: [
+      "gif jpg 변환",
+      "gif jpeg 변환",
+      "gif를 jpg로",
+      "gif jpg 변환기",
+      "gif 첫 프레임 jpg",
+    ],
+    howToSteps: [
+      {
+        title: "GIF 추가",
+        description: ".gif 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질과 배경 선택",
+        description: "JPG 품질을 고르고, GIF에 투명한 부분이 있으면 그 부분을 채울 색도 고르세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "JPG를 저장해서 어디서나 쓰세요.",
+      },
+    ],
+    features: [
+      {
+        title: "어디서나 열려요",
+        description: "JPG는 모든 뷰어, 편집기, 휴대폰, 인쇄 서비스, 업로드 양식에서 쓸 수 있어요.",
+      },
+      {
+        title: "배경색 선택",
+        description: "투명한 부분은 흰색이나 원하는 색으로 채워져요.",
+      },
+      {
+        title: "품질 조절",
+        description: "파일 크기와 디테일 사이의 균형을 정하세요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "움직이는 GIF는 어떻게 되나요?",
+        answer: "JPG는 첫 번째 프레임의 정지 이미지가 돼요. JPG는 움직일 수 없어요.",
+      },
+      {
+        question: "배경색이 있는 이유는 뭔가요?",
+        answer: "JPG는 투명도를 지원하지 않아서, GIF의 투명한 부분을 단색으로 채워야 해요. 다른 색을 고르지 않으면 흰색이 쓰여요.",
+      },
+      {
+        question: "PNG를 고르는 게 나을까요?",
+        answer: "로고, 글자, 단색 그래픽이거나 투명도를 유지하고 싶다면 PNG를 고르세요. 양식이나 서비스에서 JPG를 요구할 때는 JPG를 고르세요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 변환은 브라우저에서 이루어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "bmp-to-jpg": {
+    name: "BMP JPG 변환",
+    shortName: "BMP → JPG",
+    tagline: "용량이 큰 Windows BMP 이미지를 작은 JPG 파일로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "BMP는 이미지를 압축하지 않고 저장하는 오래된 Windows 형식이라, 파일이 아주 크고 많은 웹사이트와 앱에서 받지 않아요. BMP JPG 변환은 원하는 품질로 이미지를 JPG로 바꾸고, 결과는 보통 원래 크기의 일부분밖에 되지 않아요. 스캔한 이미지, 오래된 소프트웨어의 스크린샷, 옛날 프로그램에서 내보낸 이미지를 빠르게 해결하는 방법이에요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "BMP JPG 변환 – 무료, 더 작은 파일",
+    seoDescription: "브라우저에서 BMP 이미지를 JPG로 변환하세요. 어디서나 열리는 훨씬 작은 파일, 품질 조절 가능, 업로드는 전혀 없어요.",
+    keywords: [
+      "bmp jpg 변환",
+      "bmp jpeg 변환",
+      "bmp 변환",
+      "비트맵 jpg 변환",
+      "bmp jpg 변환기",
+    ],
+    howToSteps: [
+      {
+        title: "BMP 이미지 추가",
+        description: ".bmp 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "대부분의 이미지는 85%면 충분해요. 작은 글자가 있는 스크린샷은 높이세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "훨씬 작아진 JPG를 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "훨씬 작은 파일",
+        description: "JPG는 BMP 크기의 10분의 1 이하가 되는 경우가 많아요.",
+      },
+      {
+        title: "어디서나 열려요",
+        description: "JPG는 모든 뷰어, 편집기, 휴대폰, 업로드 양식에서 쓸 수 있어요.",
+      },
+      {
+        title: "품질 조절",
+        description: "파일 크기와 디테일 사이의 균형을 정하세요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "BMP 파일은 왜 이렇게 큰가요?",
+        answer: "대부분의 BMP 파일은 모든 픽셀을 압축 없이 저장해요. JPG는 이미지를 압축하기 때문에 변환한 파일이 훨씬 작아져요.",
+      },
+      {
+        question: "스크린샷에도 JPG가 알맞나요?",
+        answer: "작은 글자나 선명한 선이 있는 스크린샷이라면 BMP PNG 변환이 선명하게 유지해 줘요. JPG는 사진과 스캔 이미지에 가장 잘 맞아요.",
+      },
+      {
+        question: "어떤 BMP 파일을 열 수 있나요?",
+        answer: "브라우저가 지원하는 일반적인 Windows 비트맵 형식이에요. 일부 압축된 BMP나 아주 오래된 BMP 같은 특이한 변형은 열리지 않을 수 있어요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 변환은 브라우저에서 이루어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "bmp-to-png": {
+    name: "BMP PNG 변환",
+    shortName: "BMP → PNG",
+    tagline: "Windows BMP 이미지를 훨씬 작은 무손실 PNG로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "BMP 파일은 압축되지 않아 크지만, JPG로 바꾸면 선명한 글자와 선이 흐려질 수 있어요. BMP PNG 변환은 이미지를 대신 PNG로 바꿔요. PNG는 픽셀 하나 잃지 않고 압축하므로 스크린샷, 도표, 그래픽이 원래 모습 그대로 훨씬 작은 파일에 담겨요. 변환은 브라우저 안에서 이루어지므로 이미지가 기기 밖으로 나가지 않아요.",
+    seoTitle: "BMP PNG 변환 – 무료, 무손실",
+    seoDescription: "브라우저에서 BMP 이미지를 무손실 PNG로 바꿔요. 모든 픽셀을 유지하면서 파일은 더 작게. 무료, 안전, 업로드 없음.",
+    keywords: [
+      "bmp png 변환",
+      "bmp를 png로",
+      "bmp png 변환기",
+      "비트맵 png 변환",
+      "bmp 변환",
+    ],
+    howToSteps: [
+      {
+        title: "BMP 이미지 추가",
+        description: ".bmp 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "미리보기 확인",
+        description: "브라우저가 내 기기에서 이미지를 열어요.",
+      },
+      {
+        title: "PNG 다운로드",
+        description: "무손실 PNG를 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "무손실",
+        description: "BMP의 모든 픽셀을 그대로 유지해요.",
+      },
+      {
+        title: "더 작은 파일",
+        description: "PNG는 손실 없이 이미지를 압축해서, BMP 크기의 일부분으로 줄어드는 경우가 많아요.",
+      },
+      {
+        title: "스크린샷에 딱 맞아요",
+        description: "글자, 선, 단색 영역이 선명하게 유지돼요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "이미지는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG는 얼마나 작아지나요?",
+        answer: "이미지에 따라 달라요. 스크린샷과 그래픽은 BMP 크기의 10분의 1로 줄어드는 경우가 많지만, 디테일이 많은 사진은 덜 줄어요.",
+      },
+      {
+        question: "BMP를 PNG로 바꿀까요, JPG로 바꿀까요?",
+        answer: "스크린샷, 도표, 그래픽이거나 정확한 픽셀이 필요하면 PNG를 고르세요. 사진은 훨씬 작은 파일이 되는 JPG를 고르세요.",
+      },
+      {
+        question: "어떤 BMP 파일을 열 수 있나요?",
+        answer: "브라우저가 지원하는 일반적인 Windows 비트맵 형식이에요. 일부 특이한 변형은 열리지 않을 수 있어요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. 변환은 브라우저에서 이루어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG PDF 변환",
     shortName: "JPG → PDF",
@@ -2922,6 +3637,136 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "png-to-pdf": {
+    name: "PNG PDF 변환",
+    shortName: "PNG → PDF",
+    tagline: "PNG 이미지와 스크린샷을 원하는 순서대로 PDF 하나로 만드세요. 변환은 내 기기에서 이루어져요.",
+    intro: "PNG PDF 변환은 스크린샷, 스캔 이미지, 도표 같은 PNG 이미지 한 장 이상을 이메일로 보내거나 인쇄하거나 업로드하기 쉬운 PDF 하나로 합쳐요. 페이지 순서를 마음대로 정하고, A4, 레터 또는 각 이미지에 맞춘 페이지를 고른 다음 방향과 여백을 정하세요. 이미지는 원래 해상도 그대로 들어가요. 모든 작업이 브라우저 안에서 이루어지므로 이미지가 업로드되지 않아요. JPG, WebP, iPhone HEIC 사진도 같은 PDF에 넣을 수 있어요.",
+    seoTitle: "PNG PDF 변환 – 이미지를 하나로, 무료",
+    seoDescription: "브라우저에서 PNG 이미지와 스크린샷을 PDF 하나로 바꾸세요. 페이지 순서 변경, A4나 레터 선택. 무료, 안전, 업로드 없음.",
+    keywords: [
+      "png pdf 변환",
+      "png를 pdf로",
+      "png pdf 변환기",
+      "스크린샷 pdf 변환",
+      "png pdf 합치기",
+    ],
+    howToSteps: [
+      {
+        title: "PNG 이미지 추가",
+        description: "이미지를 한 장 이상 끌어다 놓거나 선택하세요. 나중에 더 추가할 수도 있어요.",
+      },
+      {
+        title: "페이지 정렬",
+        description: "끌어서 옮기거나 화살표 버튼으로 순서를 정한 다음, 페이지 크기, 방향, 여백을 고르세요.",
+      },
+      {
+        title: "PDF 다운로드",
+        description: "이미지마다 한 페이지씩 들어간 PDF 하나를 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "여러 이미지를 PDF 하나로",
+        description: "스크린샷이나 스캔 이미지를 문서 하나로 합쳐요.",
+      },
+      {
+        title: "원하는 페이지 순서",
+        description: "PDF를 만들기 전에 페이지 순서를 바꿀 수 있어요.",
+      },
+      {
+        title: "페이지 크기 선택",
+        description: "A4, 레터 또는 이미지마다 맞춘 크기의 페이지를 고를 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "PDF는 내 기기에서 만들어지고 아무것도 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "이미지 화질이 떨어지나요?",
+        answer: "아니요. 각 이미지는 원래 해상도 그대로 PDF에 들어가요.",
+      },
+      {
+        question: "PNG와 다른 형식을 섞을 수 있나요?",
+        answer: "네. JPG, WebP, iPhone HEIC 이미지도 같은 PDF에 넣을 수 있어요.",
+      },
+      {
+        question: "‘이미지에 맞춤’은 무엇인가요?",
+        answer: "각 페이지가 이미지와 같은 크기와 모양이 되고 흰 테두리가 없어서, 스크린샷이나 슬라이드에 잘 맞아요.",
+      },
+      {
+        question: "이미지가 업로드되나요?",
+        answer: "아니요. PDF는 브라우저에서 만들어지므로 이미지는 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "heic-to-pdf": {
+    name: "HEIC PDF 변환",
+    shortName: "HEIC → PDF",
+    tagline: "영수증이나 문서 같은 iPhone HEIC 사진을 PDF 하나로 만드세요. 변환은 내 기기에서 이루어져요.",
+    intro: "iPhone은 사진을 HEIC로 저장하지만, 경비 청구 양식, 학교, 은행, 회사에서는 보통 PDF를 요구해요. HEIC PDF 변환은 영수증, 신분증, 서류, 손글씨 페이지 같은 HEIC 사진 한 장 이상을 업로드하거나 이메일로 보낼 수 있는 PDF 하나로 만들어요. 페이지 순서를 정하고 A4, 레터 또는 사진마다 맞춘 페이지를 고르세요. 모든 작업이 브라우저 안에서 이루어지므로 사진이 업로드되지 않아요.",
+    seoTitle: "HEIC PDF 변환 – iPhone 사진을 PDF로, 무료",
+    seoDescription: "브라우저에서 iPhone HEIC 사진을 PDF 하나로 바꾸세요. 페이지 순서 변경, A4나 레터 선택. 무료이고 안전하며 아무것도 업로드되지 않아요.",
+    keywords: [
+      "heic pdf 변환",
+      "heic를 pdf로",
+      "아이폰 사진 pdf 변환",
+      "heif pdf 변환",
+      "heic pdf 변환기",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC 사진 추가",
+        description: ".heic 또는 .heif 파일을 하나 이상 끌어다 놓거나 선택하세요.",
+      },
+      {
+        title: "페이지 정렬",
+        description: "순서를 정한 다음, 페이지 크기, 방향, 여백을 고르세요.",
+      },
+      {
+        title: "PDF 다운로드",
+        description: "사진마다 한 페이지씩 들어간 PDF 하나를 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "여러 사진을 PDF 하나로",
+        description: "영수증이나 문서 페이지를 파일 하나로 합쳐요.",
+      },
+      {
+        title: "원하는 페이지 순서",
+        description: "PDF를 만들기 전에 페이지 순서를 바꿀 수 있어요.",
+      },
+      {
+        title: "페이지 크기 선택",
+        description: "A4, 레터 또는 사진마다 맞춘 크기의 페이지를 고를 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "사진은 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF와 HEIC는 같은 건가요?",
+        answer: "사진에서는 같아요. 여기서는 .heic와 .heif 파일 모두 쓸 수 있어요.",
+      },
+      {
+        question: "JPG나 PNG 이미지도 추가할 수 있나요?",
+        answer: "네. JPG, PNG, WebP 이미지도 같은 PDF에 넣을 수 있어요.",
+      },
+      {
+        question: "문서를 찍은 PDF도 잘 읽히나요?",
+        answer: "네. 사진은 원래 해상도 그대로 들어가요. 가장 선명한 결과를 얻으려면 문서를 평평하게 놓고 밝은 곳에서 찍으세요.",
+      },
+      {
+        question: "사진이 업로드되나요?",
+        answer: "아니요. HEIC 디코더와 PDF 생성 기능이 브라우저에서 실행되므로 사진은 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
   "pdf-to-jpg": {
     name: "PDF JPG 변환",
     shortName: "PDF → JPG",
@@ -2996,6 +3841,71 @@ export const koTools: Record<string, LocalizedToolItem> = {
         question: "PDF가 업로드되나요?",
         answer:
           "아니요. PDF는 브라우저가 읽고 이미지로 변환하므로 계약서, 명세서 같은 개인 문서가 기기 밖으로 나가지 않아요.",
+      },
+    ],
+  },
+  "pdf-to-png": {
+    name: "PDF PNG 변환",
+    shortName: "PDF → PNG",
+    tagline: "PDF의 모든 페이지를 선명한 무손실 PNG 이미지로 저장하세요. 한 페이지씩 받거나 ZIP으로 한 번에 받을 수 있어요. 변환은 내 기기에서 이루어져요.",
+    intro: "PDF PNG 변환은 PDF의 각 페이지를 PNG 이미지로 바꿔요. PNG는 무손실이라 글자, 선, 도표가 완벽하게 선명하게 유지되므로, 프레젠테이션이나 디자인, 웹페이지에 넣을 슬라이드, 문서, 차트에 알맞아요. 해상도를 고른 다음, 페이지를 하나씩 받거나 모든 페이지를 ZIP으로 한 번에 다운로드하세요. PDF는 브라우저 안에서 열리고 업로드되지 않아요.",
+    seoTitle: "PDF PNG 변환 – 선명한 페이지 이미지, 무료",
+    seoDescription: "브라우저에서 PDF 페이지를 선명한 PNG 이미지로 바꾸세요. 72, 150, 300 DPI 중에서 고르고 한 페이지 또는 전체를 받으세요. 무료, 안전.",
+    keywords: [
+      "pdf png 변환",
+      "pdf를 png로",
+      "pdf png 변환기",
+      "pdf 이미지 변환",
+      "pdf 고해상도 png",
+    ],
+    howToSteps: [
+      {
+        title: "PDF 추가",
+        description: "PDF 파일을 끌어다 놓거나 선택하세요. 페이지가 썸네일로 표시돼요.",
+      },
+      {
+        title: "해상도 선택",
+        description: "화면용은 150 DPI면 충분해요. 인쇄하거나 확대해서 보려면 300 DPI를 쓰세요.",
+      },
+      {
+        title: "페이지 다운로드",
+        description: "한 페이지를 PNG로 저장하거나, 모든 페이지를 ZIP으로 한 번에 받으세요.",
+      },
+    ],
+    features: [
+      {
+        title: "선명한 글자와 선",
+        description: "PNG는 무손실이라 작은 글자와 가는 선도 또렷하게 유지돼요.",
+      },
+      {
+        title: "해상도 선택",
+        description: "웹 미리보기부터 인쇄까지, 72, 150, 300 DPI 중에서 고를 수 있어요.",
+      },
+      {
+        title: "모든 페이지를 한 번에",
+        description: "모든 페이지를 페이지 순서대로 이름 붙여 ZIP 하나로 받을 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "PDF는 내 기기에서 열리고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF 페이지에는 PNG와 JPG 중 무엇이 좋나요?",
+        answer: "PNG는 글자와 도표를 완벽하게 선명하게 유지해요. JPG는 파일이 더 작고 사진이 대부분인 페이지에 알맞아요. 같은 도구에서 JPG로 바꿀 수도 있어요.",
+      },
+      {
+        question: "해상도는 무엇을 골라야 하나요?",
+        answer: "화면에서 볼 때는 150 DPI면 보기 좋아요. 300 DPI는 인쇄하거나 확대해야 할 때 쓰고, 파일이 더 커져요.",
+      },
+      {
+        question: "비밀번호로 보호된 PDF도 변환할 수 있나요?",
+        answer: "여는 데 비밀번호가 필요한 PDF는 안 돼요. PDF 리더에서 열어 비밀번호 없는 사본을 저장하고, 그 사본을 쓰세요.",
+      },
+      {
+        question: "PDF가 업로드되나요?",
+        answer: "아니요. PDF는 브라우저가 읽고 그리므로 내 기기에 그대로 있어요.",
       },
     ],
   },

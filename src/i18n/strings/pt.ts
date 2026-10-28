@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'O SVG é redesenhado neste tamanho, então as bordas continuam nítidas em qualquer escala.',
   'ctl.svg.size': 'Tamanho',
   'ctl.svg.original': 'Original',
-  'ctl.svg.output': 'Saída em PNG',
+  'ctl.svg.output': 'Saída em {format}',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Detalhes da imagem',
