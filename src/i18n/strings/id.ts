@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'SVG digambar ulang pada ukuran ini, jadi tepinya tetap tajam di skala berapa pun.',
   'ctl.svg.size': 'Ukuran',
   'ctl.svg.original': 'Asli',
-  'ctl.svg.output': 'Hasil PNG',
+  'ctl.svg.output': 'Hasil {format}',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Detail gambar',

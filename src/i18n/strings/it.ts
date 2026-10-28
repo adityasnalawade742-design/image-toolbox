@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'L’SVG viene ridisegnato a questa dimensione, quindi i bordi restano nitidi a ogni scala.',
   'ctl.svg.size': 'Dimensioni',
   'ctl.svg.original': 'Originale',
-  'ctl.svg.output': 'PNG in uscita',
+  'ctl.svg.output': '{format} in uscita',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Dettagli immagine',

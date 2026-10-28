@@ -532,7 +532,7 @@ export const strings = {
   'ctl.svg.help': "Le SVG est redessiné à cette taille : les bords restent nets à toutes les échelles.",
   'ctl.svg.size': "Taille",
   'ctl.svg.original': "Original",
-  'ctl.svg.output': "PNG obtenu",
+  'ctl.svg.output': "{format} obtenu",
 
   // Image analyzer
   'ctl.analyzer.specs': "Détails de l’image",

@@ -2183,6 +2183,136 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "svg-to-jpg": {
+    name: "SVG para JPG",
+    shortName: "SVG → JPG",
+    tagline: "Transforme gráficos SVG em imagens JPG em qualquer escala, com a cor de fundo que você escolher. A conversão acontece no seu dispositivo.",
+    intro: "Gráficos SVG ficam nítidos em qualquer tamanho, mas muitos apps, redes sociais e formulários de upload só aceitam imagens comuns. SVG para JPG redesenha o SVG na escala que você escolher, de 1x a 8x, e salva como JPG. O JPG não tem transparência, então as áreas transparentes são preenchidas com branco ou com uma cor que você escolher. A conversão acontece no seu navegador, então o arquivo nunca sai do seu dispositivo.",
+    seoTitle: "Converter SVG para JPG – Qualquer tamanho, grátis",
+    seoDescription: "Converta gráficos SVG em JPG no navegador, em escala de 1x a 8x, com a cor de fundo que você quiser. Grátis e nada é enviado.",
+    keywords: [
+      "svg para jpg",
+      "converter svg para jpg",
+      "svg para jpeg",
+      "conversor svg para jpg",
+      "svg para imagem",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu SVG",
+        description: "Arraste, escolha ou cole um arquivo .svg.",
+      },
+      {
+        title: "Escolha escala e fundo",
+        description: "Escolha 1x, 2x, 4x ou 8x e a cor que preenche as áreas transparentes.",
+      },
+      {
+        title: "Baixe o JPG",
+        description: "Salve o JPG e use onde quiser.",
+      },
+    ],
+    features: [
+      {
+        title: "Nítido em qualquer tamanho",
+        description: "O SVG é redesenhado na escala escolhida, então as bordas continuam definidas.",
+      },
+      {
+        title: "Cor de fundo à sua escolha",
+        description: "As áreas transparentes são preenchidas com branco ou qualquer cor.",
+      },
+      {
+        title: "Abre em qualquer lugar",
+        description: "JPG funciona em qualquer app, rede social e formulário de upload.",
+      },
+      {
+        title: "Conversão privada",
+        description: "O arquivo é convertido no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "SVG para JPG ou SVG para PNG?",
+        answer: "Escolha PNG para logos e ícones, para manter a transparência e cores perfeitamente chapadas. Escolha JPG quando um site ou formulário pedir JPG, ou para ilustrações com degradês.",
+      },
+      {
+        question: "Qual escala devo usar?",
+        answer: "2x serve para a maioria das telas. Use 4x ou 8x para impressão ou telas grandes.",
+      },
+      {
+        question: "Por que meu SVG ficou diferente?",
+        answer: "SVGs que carregam fontes ou imagens da web podem não desenhar essas partes. Antes, converta os textos em contornos na sua ferramenta de design.",
+      },
+      {
+        question: "Meu arquivo é enviado?",
+        answer: "Não. Seu navegador desenha o SVG no seu dispositivo.",
+      },
+    ],
+  },
+  "svg-to-webp": {
+    name: "SVG para WebP",
+    shortName: "SVG → WebP",
+    tagline: "Transforme gráficos SVG em imagens WebP leves em qualquer escala, com transparência. A conversão acontece no seu dispositivo.",
+    intro: "Às vezes um site, app ou editor de e-mail precisa de uma imagem comum em vez de um SVG. SVG para WebP redesenha o SVG na escala que você escolher, de 1x a 8x, e salva como WebP, um formato leve que todos os navegadores atuais exibem e que mantém a transparência. A conversão acontece no seu navegador, então o arquivo nunca sai do seu dispositivo.",
+    seoTitle: "Converter SVG para WebP – Arquivos leves e transparência",
+    seoDescription: "Converta gráficos SVG em WebP no navegador, em escala de 1x a 8x, mantendo a transparência. Grátis e nada é enviado.",
+    keywords: [
+      "svg para webp",
+      "converter svg para webp",
+      "conversor svg para webp",
+      "svg para imagem",
+      "webp transparente",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu SVG",
+        description: "Arraste, escolha ou cole um arquivo .svg.",
+      },
+      {
+        title: "Escolha escala e qualidade",
+        description: "Escolha 1x, 2x, 4x ou 8x e a qualidade do WebP.",
+      },
+      {
+        title: "Baixe o WebP",
+        description: "Salve o WebP e use no seu site ou app.",
+      },
+    ],
+    features: [
+      {
+        title: "Nítido em qualquer tamanho",
+        description: "O SVG é redesenhado na escala escolhida, então as bordas continuam definidas.",
+      },
+      {
+        title: "Transparência mantida",
+        description: "As áreas transparentes continuam transparentes no WebP.",
+      },
+      {
+        title: "Arquivos leves",
+        description: "O WebP costuma ser bem menor que o PNG para a mesma imagem.",
+      },
+      {
+        title: "Conversão privada",
+        description: "O arquivo é convertido no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que não usar o próprio SVG?",
+        answer: "Use o SVG onde ele for aceito. Use WebP onde só imagens comuns são permitidas, como alguns apps, editores de e-mail e uploads de imagem.",
+      },
+      {
+        question: "Qual escala devo usar?",
+        answer: "2x serve para a maioria das telas. Use 4x ou 8x para telas grandes.",
+      },
+      {
+        question: "Por que meu SVG ficou diferente?",
+        answer: "SVGs que carregam fontes ou imagens da web podem não desenhar essas partes. Antes, converta os textos em contornos na sua ferramenta de design.",
+      },
+      {
+        question: "Meu arquivo é enviado?",
+        answer: "Não. Seu navegador desenha o SVG no seu dispositivo.",
+      },
+    ],
+  },
   "photo-filters": {
     name: "Filtros e efeitos para fotos",
     shortName: "Filtros",
@@ -2842,6 +2972,591 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "heic-to-webp": {
+    name: "HEIC para WebP",
+    shortName: "HEIC → WebP",
+    tagline: "Converta fotos HEIC e HEIF do iPhone em WebP, um formato leve para a web que abre em qualquer navegador. A conversão acontece no seu dispositivo.",
+    intro: "HEIC (também chamado HEIF) é o formato de foto que o iPhone e muitos celulares Android usam por padrão, mas a maioria dos sites, sistemas de gerenciamento de conteúdo e apps do Windows não consegue exibi-lo. HEIC para WebP converte a foto em WebP, um formato moderno compatível com todos os navegadores atuais e que mantém os arquivos pequenos, muitas vezes menores que um JPG com a mesma qualidade. Por isso é uma boa escolha para fotos que você vai publicar em um site, blog ou loja virtual. A conversão acontece no seu navegador, então a foto nunca sai do seu dispositivo.",
+    seoTitle: "Converter HEIC para WebP – Grátis, privado, HEIF também",
+    seoDescription: "Converta fotos HEIC e HEIF do iPhone em WebP no navegador. Arquivos leves para sites, qualidade ajustável e nada é enviado.",
+    keywords: [
+      "heic para webp",
+      "heif para webp",
+      "converter heic para webp",
+      "foto do iphone para webp",
+      "conversor heic para webp",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua foto HEIC",
+        description: "Arraste, escolha ou cole um arquivo .heic ou .heif.",
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "85% serve para a maioria das fotos. Diminua para arquivos menores ou aumente para mais detalhes.",
+      },
+      {
+        title: "Baixe o WebP",
+        description: "Salve o arquivo WebP e envie para o seu site ou compartilhe.",
+      },
+    ],
+    features: [
+      {
+        title: "Arquivos leves",
+        description: "Com a mesma qualidade visual, um WebP costuma ser menor que um JPG, então as páginas carregam mais rápido.",
+      },
+      {
+        title: "Funciona em qualquer navegador",
+        description: "Chrome, Safari, Firefox e Edge exibem WebP, assim como WordPress, Shopify e a maioria dos criadores de sites.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A foto é convertida no seu dispositivo e nunca é enviada.",
+      },
+      {
+        title: "Sem dados de localização",
+        description: "A localização GPS e os dados da câmera do original não são copiados para o WebP.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF é o mesmo que HEIC?",
+        answer: "Para fotos, sim. HEIF é o formato de arquivo, e HEIC é o nome e a extensão que a Apple usa para as fotos salvas nele. Arquivos .heic e .heif funcionam aqui.",
+      },
+      {
+        question: "WebP ou JPG: qual escolher?",
+        answer: "Escolha WebP para sites e lojas virtuais, onde arquivos leves carregam mais rápido. Escolha JPG quando a foto for por e-mail, para uma gráfica, ou para apps e formulários antigos que não aceitam WebP.",
+      },
+      {
+        question: "Qual qualidade devo usar?",
+        answer: "Com 85%, a maioria das fotos fica igual ao original. Use 90% ou mais para fotos com muitos detalhes, ou de 70% a 80% quando o tamanho do arquivo for o mais importante.",
+      },
+      {
+        question: "Minha foto é enviada?",
+        answer: "Não. O decodificador HEIC roda no seu navegador, então a foto fica no seu dispositivo.",
+      },
+    ],
+  },
+  "avif-to-jpg": {
+    name: "AVIF para JPG",
+    shortName: "AVIF → JPG",
+    tagline: "Converta imagens AVIF em JPG para abrir em qualquer app, editor ou formulário de upload. A conversão acontece no seu dispositivo.",
+    intro: "AVIF é um formato de imagem moderno que muitos sites usam hoje porque os arquivos são bem pequenos. Mas quando você salva uma dessas imagens, visualizadores de fotos antigos, o Office, muitos editores e vários formulários de upload não conseguem abri-la. AVIF para JPG converte a imagem em JPG, o formato que funciona em qualquer lugar. Escolha a qualidade, confira a prévia e baixe. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter AVIF para JPG – Grátis, rápido e privado",
+    seoDescription: "Converta imagens AVIF em JPG no navegador. Funciona em qualquer app e formulário de upload, qualidade ajustável e nada é enviado.",
+    keywords: [
+      "avif para jpg",
+      "converter avif para jpg",
+      "avif para jpeg",
+      "conversor avif",
+      "abrir arquivo avif",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua imagem AVIF",
+        description: "Arraste, escolha ou cole um arquivo .avif.",
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "85% serve para a maioria das imagens. Aumente para mais detalhes ou diminua para um arquivo menor.",
+      },
+      {
+        title: "Baixe o JPG",
+        description: "Salve o JPG e abra, edite ou envie onde quiser.",
+      },
+    ],
+    features: [
+      {
+        title: "Abre em qualquer lugar",
+        description: "JPG funciona em qualquer visualizador de fotos, editor, celular, app de e-mail e formulário de upload.",
+      },
+      {
+        title: "Qualidade ajustável",
+        description: "Escolha o equilíbrio entre tamanho do arquivo e detalhes antes de baixar.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+      {
+        title: "Transparência resolvida",
+        description: "JPG não tem transparência, então as áreas transparentes são preenchidas com uma cor que você escolhe.",
+      },
+    ],
+    faqs: [
+      {
+        question: "O que é um arquivo AVIF?",
+        answer: "AVIF é um formato de imagem baseado no codec de vídeo AV1. Ele gera arquivos bem menores que o JPG com a mesma qualidade, por isso muitos sites o usam, mas programas antigos não conseguem abri-lo.",
+      },
+      {
+        question: "O JPG vai ficar maior que o AVIF?",
+        answer: "Normalmente, sim. O AVIF comprime de forma muito eficiente, então a mesma imagem em JPG costuma ficar duas ou três vezes maior. É o preço de ter um arquivo que qualquer programa abre.",
+      },
+      {
+        question: "Por que meu navegador não abre o AVIF?",
+        answer: "Navegadores muito antigos não conseguem decodificar AVIF. As versões atuais do Chrome, Edge, Firefox e Safari (versão 16 ou mais recente) conseguem. Se o arquivo ainda assim não abrir, ele pode estar corrompido.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. Seu navegador decodifica e converte a imagem no seu dispositivo.",
+      },
+    ],
+  },
+  "avif-to-png": {
+    name: "AVIF para PNG",
+    shortName: "AVIF → PNG",
+    tagline: "Converta imagens AVIF em PNG sem perdas, mantendo a transparência, para edição e design. A conversão acontece no seu dispositivo.",
+    intro: "Imagens AVIF são leves e nítidas, mas muitos editores, ferramentas de design e apps antigos não conseguem abri-las. AVIF para PNG converte a imagem em PNG, um formato sem perdas que mantém as áreas transparentes, por isso é uma boa escolha para logos, gráficos e tudo o que você ainda vai editar. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo. Para fotos que você quer compartilhar, AVIF para JPG gera arquivos menores.",
+    seoTitle: "Converter AVIF para PNG – Grátis e sem perdas",
+    seoDescription: "Converta imagens AVIF em PNG sem perdas no navegador, mantendo a transparência. Grátis, privado e nada é enviado.",
+    keywords: [
+      "avif para png",
+      "converter avif para png",
+      "conversor avif para png",
+      "avif para png transparente",
+      "abrir arquivo avif",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua imagem AVIF",
+        description: "Arraste, escolha ou cole um arquivo .avif.",
+      },
+      {
+        title: "Confira a prévia",
+        description: "Seu navegador decodifica a imagem no seu dispositivo.",
+      },
+      {
+        title: "Baixe o PNG",
+        description: "Salve o PNG sem perdas e abra em qualquer editor ou ferramenta de design.",
+      },
+    ],
+    features: [
+      {
+        title: "Resultado sem perdas",
+        description: "O PNG guarda cada pixel da imagem decodificada, então editar e salvar de novo não adiciona artefatos.",
+      },
+      {
+        title: "Transparência mantida",
+        description: "As áreas transparentes do AVIF continuam transparentes no PNG.",
+      },
+      {
+        title: "Abre em qualquer editor",
+        description: "PNG funciona no Photoshop, GIMP, Figma, Canva, Office e em qualquer navegador.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que o PNG é tão maior que o AVIF?",
+        answer: "O AVIF usa uma compressão com perdas muito eficiente, enquanto o PNG é sem perdas e guarda muito mais dados. Um PNG pode facilmente ter dez vezes o tamanho do AVIF.",
+      },
+      {
+        question: "O PNG mantém a transparência?",
+        answer: "Sim. Se o AVIF tiver áreas transparentes, elas continuam transparentes no PNG.",
+      },
+      {
+        question: "PNG ou JPG: qual escolher?",
+        answer: "Escolha PNG para gráficos, transparência ou para continuar editando. Escolha JPG para fotos que você vai compartilhar ou enviar, porque os arquivos são bem menores.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. A conversão roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
+  "jpg-to-avif": {
+    name: "JPG para AVIF",
+    shortName: "JPG → AVIF",
+    tagline: "Converta fotos JPG em AVIF, o formato moderno para a web com os menores arquivos. A conversão acontece no seu dispositivo.",
+    intro: "O AVIF gera arquivos bem menores que o JPG com a mesma qualidade visual, muitas vezes com metade do tamanho, então as páginas carregam mais rápido e gastam menos dados. Todos os navegadores atuais conseguem exibi-lo. JPG para AVIF converte sua foto em AVIF com a qualidade que você escolher, o que é útil para sites, lojas virtuais e blogs em que cada kilobyte conta. A codificação acontece no seu navegador, então a foto nunca sai do seu dispositivo. Fotos grandes podem levar alguns segundos.",
+    seoTitle: "Converter JPG para AVIF – Imagens menores, grátis",
+    seoDescription: "Converta fotos JPG em AVIF no navegador e tenha imagens bem menores para a web. Qualidade ajustável, grátis e nada é enviado.",
+    keywords: [
+      "jpg para avif",
+      "converter jpg para avif",
+      "jpeg para avif",
+      "conversor avif",
+      "imagem para avif",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua foto JPG",
+        description: "Arraste, escolha ou cole um arquivo .jpg ou .jpeg.",
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "Comece com 85%. O AVIF continua nítido em configurações mais baixas que o JPG, então teste valores menores para ter arquivos menores.",
+      },
+      {
+        title: "Baixe o AVIF",
+        description: "Salve o arquivo AVIF e envie para o seu site.",
+      },
+    ],
+    features: [
+      {
+        title: "Arquivos bem menores",
+        description: "Um AVIF costuma ter cerca de metade do tamanho de um JPG com a mesma aparência.",
+      },
+      {
+        title: "Exibido por todos os navegadores atuais",
+        description: "Chrome, Edge, Firefox e Safari 16 ou mais recente exibem AVIF.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+      {
+        title: "Sem dados de localização",
+        description: "A localização GPS e os dados da câmera do JPG não são copiados para o AVIF.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF ou WebP: qual é melhor?",
+        answer: "O AVIF costuma gerar arquivos menores com a mesma qualidade, enquanto o WebP codifica mais rápido e funciona em alguns apps antigos. Os dois são exibidos por todos os navegadores atuais.",
+      },
+      {
+        question: "Qualquer app abre AVIF?",
+        answer: "Não. Os navegadores abrem, mas alguns visualizadores de fotos, editores e formulários de upload antigos não. Guarde o JPG original para esses casos e use AVIF na web.",
+      },
+      {
+        question: "Por que a conversão leva alguns segundos?",
+        answer: "A codificação AVIF faz muito trabalho para encontrar o menor arquivo possível. Ela roda no seu dispositivo, então fotos grandes demoram mais em celulares mais lentos.",
+      },
+      {
+        question: "Minha foto é enviada?",
+        answer: "Não. O codificador AVIF roda no seu navegador, então a foto fica no seu dispositivo.",
+      },
+    ],
+  },
+  "png-to-avif": {
+    name: "PNG para AVIF",
+    shortName: "PNG → AVIF",
+    tagline: "Converta imagens PNG em AVIF para ter arquivos bem menores na web, com transparência. A conversão acontece no seu dispositivo.",
+    intro: "Arquivos PNG costumam ser grandes, principalmente capturas de tela, fotos e gráficos detalhados. O AVIF guarda a mesma imagem em uma fração do espaço e mantém a transparência, então serve bem para logos, imagens de produtos e ilustrações na web. PNG para AVIF converte sua imagem com a qualidade que você escolher, e todos os navegadores atuais conseguem exibir o resultado. A codificação acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter PNG para AVIF – Arquivos leves e transparência",
+    seoDescription: "Converta imagens PNG em AVIF no navegador. Imagens bem menores para a web, com transparência mantida, qualidade ajustável e nada é enviado.",
+    keywords: [
+      "png para avif",
+      "converter png para avif",
+      "conversor png para avif",
+      "avif transparente",
+      "imagem para avif",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua imagem PNG",
+        description: "Arraste, escolha ou cole um arquivo .png.",
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "85% serve para a maioria das imagens. Use um valor maior para textos nítidos e linhas finas.",
+      },
+      {
+        title: "Baixe o AVIF",
+        description: "Salve o arquivo AVIF e envie para o seu site.",
+      },
+    ],
+    features: [
+      {
+        title: "Uma fração do tamanho",
+        description: "Um AVIF costuma ser muitas vezes menor que o PNG de origem.",
+      },
+      {
+        title: "Transparência mantida",
+        description: "Fundos transparentes continuam transparentes no AVIF.",
+      },
+      {
+        title: "Exibido por todos os navegadores atuais",
+        description: "Chrome, Edge, Firefox e Safari 16 ou mais recente exibem AVIF.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "O AVIF é sem perdas como o PNG?",
+        answer: "Aqui, não. O AVIF é comprimido com a qualidade que você escolher, então detalhes muito pequenos podem mudar. Com 85% ou mais, a maioria das imagens fica igual ao PNG.",
+      },
+      {
+        question: "O AVIF mantém a transparência?",
+        answer: "Sim. As áreas transparentes do PNG continuam transparentes no AVIF.",
+      },
+      {
+        question: "Quando devo manter o PNG?",
+        answer: "Mantenha o PNG para editar, imprimir e usar em apps que não abrem AVIF. Use o AVIF em sites.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. O codificador AVIF roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
+  "gif-to-png": {
+    name: "GIF para PNG",
+    shortName: "GIF → PNG",
+    tagline: "Salve um GIF como imagem estática PNG sem perdas, mantendo a transparência. A conversão acontece no seu dispositivo.",
+    intro: "GIF é um formato antigo que tem no máximo 256 cores, e muitos editores e formulários de upload lidam mal com ele. GIF para PNG salva a imagem como PNG, um formato sem perdas que qualquer editor e ferramenta de design abre, e mantém as áreas transparentes. Se o GIF for animado, o PNG é uma imagem estática do primeiro quadro. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter GIF para PNG – Grátis, com transparência",
+    seoDescription: "Converta um GIF em imagem estática PNG sem perdas no navegador, mantendo a transparência. Grátis, privado e nada é enviado.",
+    keywords: [
+      "gif para png",
+      "converter gif para png",
+      "conversor gif para png",
+      "gif para png transparente",
+      "primeiro quadro do gif em png",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu GIF",
+        description: "Arraste, escolha ou cole um arquivo .gif.",
+      },
+      {
+        title: "Confira a prévia",
+        description: "GIFs animados mostram o primeiro quadro.",
+      },
+      {
+        title: "Baixe o PNG",
+        description: "Salve o PNG e abra em qualquer editor.",
+      },
+    ],
+    features: [
+      {
+        title: "Sem perdas",
+        description: "Cada pixel do quadro do GIF é mantido exatamente.",
+      },
+      {
+        title: "Transparência mantida",
+        description: "As áreas transparentes do GIF continuam transparentes no PNG.",
+      },
+      {
+        title: "Abre em qualquer editor",
+        description: "PNG funciona no Photoshop, GIMP, Figma, Canva, Office e em qualquer navegador.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "O que acontece com um GIF animado?",
+        answer: "O PNG é uma imagem estática do primeiro quadro. Os PNGs gerados aqui não são animados.",
+      },
+      {
+        question: "As cores vão mudar?",
+        answer: "Não. Um GIF tem no máximo 256 cores, e o PNG guarda todas exatamente.",
+      },
+      {
+        question: "Posso redimensionar a imagem ao converter?",
+        answer: "Sim. Defina uma nova largura ou altura nos campos de tamanho antes de baixar.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. A conversão roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
+  "gif-to-jpg": {
+    name: "GIF para JPG",
+    shortName: "GIF → JPG",
+    tagline: "Salve um GIF como imagem estática JPG que abre em qualquer lugar. A conversão acontece no seu dispositivo.",
+    intro: "Alguns formulários de upload, serviços de impressão e apps só aceitam JPG. GIF para JPG salva um GIF como imagem estática JPG com a qualidade que você escolher. Como o JPG não tem transparência, as áreas transparentes são preenchidas com uma cor de fundo que você escolhe. Se o GIF for animado, o JPG mostra o primeiro quadro. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter GIF para JPG – Grátis e privado",
+    seoDescription: "Converta um GIF em imagem estática JPG no navegador. Escolha a qualidade e a cor de fundo. Grátis e nada é enviado.",
+    keywords: [
+      "gif para jpg",
+      "converter gif para jpg",
+      "gif para jpeg",
+      "conversor gif para jpg",
+      "primeiro quadro do gif em jpg",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu GIF",
+        description: "Arraste, escolha ou cole um arquivo .gif.",
+      },
+      {
+        title: "Escolha qualidade e fundo",
+        description: "Escolha a qualidade do JPG e, se o GIF tiver transparência, a cor que vai preenchê-la.",
+      },
+      {
+        title: "Baixe o JPG",
+        description: "Salve o JPG e use onde quiser.",
+      },
+    ],
+    features: [
+      {
+        title: "Abre em qualquer lugar",
+        description: "JPG funciona em qualquer visualizador, editor, celular, serviço de impressão e formulário de upload.",
+      },
+      {
+        title: "Cor de fundo à sua escolha",
+        description: "As áreas transparentes são preenchidas com branco ou qualquer cor que você escolher.",
+      },
+      {
+        title: "Qualidade ajustável",
+        description: "Defina o equilíbrio entre tamanho do arquivo e detalhes.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "O que acontece com um GIF animado?",
+        answer: "O JPG é uma imagem estática do primeiro quadro. JPG não tem animação.",
+      },
+      {
+        question: "Por que existe uma cor de fundo?",
+        answer: "JPG não tem transparência, então as áreas transparentes do GIF precisam de uma cor sólida. É usado branco, a menos que você escolha outra.",
+      },
+      {
+        question: "Devo escolher PNG?",
+        answer: "Escolha PNG para logos, textos e gráficos com cores chapadas, ou para manter a transparência. Escolha JPG quando um formulário ou serviço pedir.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. A conversão roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
+  "bmp-to-jpg": {
+    name: "BMP para JPG",
+    shortName: "BMP → JPG",
+    tagline: "Converta imagens BMP do Windows, que são pesadas, em arquivos JPG leves. A conversão acontece no seu dispositivo.",
+    intro: "BMP é um formato antigo do Windows que guarda as imagens sem compressão, então os arquivos são enormes e muitos sites e apps não os aceitam. BMP para JPG converte a imagem em JPG, que normalmente tem uma fração do tamanho original, com a qualidade que você escolher. É a solução rápida para digitalizações, capturas de tela de programas antigos e imagens exportadas de softwares legados. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter BMP para JPG – Grátis, arquivos menores",
+    seoDescription: "Converta imagens BMP em JPG no navegador. Arquivos bem menores que abrem em qualquer lugar, qualidade ajustável e nada é enviado.",
+    keywords: [
+      "bmp para jpg",
+      "converter bmp para jpg",
+      "bmp para jpeg",
+      "conversor bmp",
+      "bitmap para jpg",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua imagem BMP",
+        description: "Arraste, escolha ou cole um arquivo .bmp.",
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "85% serve para a maioria das imagens. Aumente para capturas de tela com texto pequeno.",
+      },
+      {
+        title: "Baixe o JPG",
+        description: "Salve o JPG, bem menor que o original.",
+      },
+    ],
+    features: [
+      {
+        title: "Arquivos bem menores",
+        description: "Um JPG costuma ter um décimo do tamanho do BMP, ou menos.",
+      },
+      {
+        title: "Abre em qualquer lugar",
+        description: "JPG funciona em qualquer visualizador, editor, celular e formulário de upload.",
+      },
+      {
+        title: "Qualidade ajustável",
+        description: "Defina o equilíbrio entre tamanho do arquivo e detalhes.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que arquivos BMP são tão grandes?",
+        answer: "A maioria dos arquivos BMP guarda cada pixel sem compressão. O JPG comprime a imagem, por isso o arquivo convertido fica tão menor.",
+      },
+      {
+        question: "JPG é a escolha certa para capturas de tela?",
+        answer: "Para capturas com texto pequeno ou linhas nítidas, o BMP para PNG mantém tudo bem definido. JPG é melhor para fotos e digitalizações.",
+      },
+      {
+        question: "Quais arquivos BMP podem ser abertos?",
+        answer: "Os tipos comuns de bitmap do Windows que os navegadores suportam. Algumas variantes incomuns, como certos BMPs comprimidos ou muito antigos, podem não abrir.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. A conversão roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
+  "bmp-to-png": {
+    name: "BMP para PNG",
+    shortName: "BMP → PNG",
+    tagline: "Converta imagens BMP do Windows em PNG sem perdas, com uma fração do tamanho. A conversão acontece no seu dispositivo.",
+    intro: "Arquivos BMP não têm compressão e são grandes, mas convertê-los em JPG pode borrar textos e linhas nítidas. BMP para PNG converte a imagem em PNG, que a comprime sem perder um único pixel, então capturas de tela, diagramas e gráficos ficam exatamente como eram, em um arquivo bem menor. A conversão acontece no seu navegador, então a imagem nunca sai do seu dispositivo.",
+    seoTitle: "Converter BMP para PNG – Grátis e sem perdas",
+    seoDescription: "Converta imagens BMP em PNG sem perdas no navegador. Arquivos menores com cada pixel mantido. Grátis, privado e nada é enviado.",
+    keywords: [
+      "bmp para png",
+      "converter bmp para png",
+      "conversor bmp para png",
+      "bitmap para png",
+      "conversor bmp",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua imagem BMP",
+        description: "Arraste, escolha ou cole um arquivo .bmp.",
+      },
+      {
+        title: "Confira a prévia",
+        description: "Seu navegador abre a imagem no seu dispositivo.",
+      },
+      {
+        title: "Baixe o PNG",
+        description: "Salve o PNG sem perdas.",
+      },
+    ],
+    features: [
+      {
+        title: "Sem perdas",
+        description: "Cada pixel do BMP é mantido exatamente.",
+      },
+      {
+        title: "Arquivos menores",
+        description: "O PNG comprime a imagem sem perdas, muitas vezes para uma fração do tamanho do BMP.",
+      },
+      {
+        title: "Ideal para capturas de tela",
+        description: "Textos, linhas e cores chapadas continuam nítidos.",
+      },
+      {
+        title: "Conversão privada",
+        description: "A imagem é convertida no seu dispositivo e nunca é enviada.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Quanto menor fica o PNG?",
+        answer: "Depende da imagem. Capturas de tela e gráficos costumam cair para um décimo do tamanho do BMP, enquanto fotos detalhadas diminuem menos.",
+      },
+      {
+        question: "BMP para PNG ou BMP para JPG?",
+        answer: "Escolha PNG para capturas de tela, diagramas e gráficos, ou quando precisar de pixels exatos. Escolha JPG para fotos, em que ele gera um arquivo bem menor.",
+      },
+      {
+        question: "Quais arquivos BMP podem ser abertos?",
+        answer: "Os tipos comuns de bitmap do Windows que os navegadores suportam. Algumas variantes incomuns podem não abrir.",
+      },
+      {
+        question: "Minha imagem é enviada?",
+        answer: "Não. A conversão roda no seu navegador, então a imagem fica no seu dispositivo.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG para PDF",
     shortName: "JPG → PDF",
@@ -2925,6 +3640,136 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "png-to-pdf": {
+    name: "PNG para PDF",
+    shortName: "PNG → PDF",
+    tagline: "Transforme imagens PNG e capturas de tela em um único PDF, na ordem que você escolher. A conversão acontece no seu dispositivo.",
+    intro: "PNG para PDF junta uma ou mais imagens PNG, como capturas de tela, digitalizações ou diagramas, em um único PDF fácil de mandar por e-mail, imprimir ou enviar. Coloque as páginas na ordem que quiser, escolha A4, Carta ou uma página do tamanho de cada imagem, e defina a orientação e as margens. As imagens mantêm a resolução total. Tudo acontece no seu navegador, então suas imagens nunca são enviadas. Fotos JPG, WebP e HEIC do iPhone podem entrar no mesmo PDF.",
+    seoTitle: "Converter PNG para PDF – Juntar imagens, grátis",
+    seoDescription: "Converta imagens PNG e capturas de tela em um único PDF no navegador. Reordene as páginas, escolha A4 ou Carta. Grátis, privado e sem upload.",
+    keywords: [
+      "png para pdf",
+      "converter png para pdf",
+      "conversor png para pdf",
+      "print para pdf",
+      "juntar png em pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione suas imagens PNG",
+        description: "Arraste ou escolha uma ou mais imagens. Você pode adicionar mais depois.",
+      },
+      {
+        title: "Organize as páginas",
+        description: "Arraste ou use os botões de seta para definir a ordem e depois escolha o tamanho da página, a orientação e a margem.",
+      },
+      {
+        title: "Baixe o PDF",
+        description: "Salve um único PDF com uma página para cada imagem.",
+      },
+    ],
+    features: [
+      {
+        title: "Várias imagens, um PDF",
+        description: "Junte capturas de tela ou digitalizações em um único documento.",
+      },
+      {
+        title: "Sua ordem de páginas",
+        description: "Reordene as páginas antes de criar o PDF.",
+      },
+      {
+        title: "Opções de tamanho de página",
+        description: "A4, Carta ou cada página do tamanho da sua imagem.",
+      },
+      {
+        title: "Conversão privada",
+        description: "O PDF é criado no seu dispositivo e nada é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "As imagens perdem qualidade?",
+        answer: "Não. Cada imagem entra no PDF em resolução total.",
+      },
+      {
+        question: "Posso misturar PNG com outros formatos?",
+        answer: "Sim. Imagens JPG, WebP e HEIC do iPhone podem entrar no mesmo PDF.",
+      },
+      {
+        question: "O que faz a opção Ajustar à imagem?",
+        answer: "Cada página fica com o tamanho e o formato da sua imagem, sem borda branca, o que funciona bem para capturas de tela e slides.",
+      },
+      {
+        question: "Minhas imagens são enviadas?",
+        answer: "Não. O PDF é montado no seu navegador, então as imagens ficam no seu dispositivo.",
+      },
+    ],
+  },
+  "heic-to-pdf": {
+    name: "HEIC para PDF",
+    shortName: "HEIC → PDF",
+    tagline: "Transforme fotos HEIC do iPhone, como recibos e documentos, em um único PDF. A conversão acontece no seu dispositivo.",
+    intro: "O iPhone salva as fotos em HEIC, mas formulários de reembolso, escolas, bancos e escritórios costumam pedir um PDF. HEIC para PDF transforma uma ou mais fotos HEIC, como recibos, documentos de identidade, formulários ou páginas escritas à mão, em um único PDF para fazer upload ou mandar por e-mail. Coloque as páginas em ordem e escolha A4, Carta ou páginas do tamanho de cada foto. Tudo acontece no seu navegador, então suas fotos nunca são enviadas.",
+    seoTitle: "Converter HEIC para PDF – Fotos do iPhone em PDF, grátis",
+    seoDescription: "Converta fotos HEIC do iPhone em um único PDF no navegador. Reordene as páginas, escolha A4 ou Carta. Grátis, privado e nada é enviado.",
+    keywords: [
+      "heic para pdf",
+      "converter heic para pdf",
+      "foto do iphone para pdf",
+      "heif para pdf",
+      "conversor heic para pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione suas fotos HEIC",
+        description: "Arraste ou escolha um ou mais arquivos .heic ou .heif.",
+      },
+      {
+        title: "Organize as páginas",
+        description: "Defina a ordem e depois escolha o tamanho da página, a orientação e a margem.",
+      },
+      {
+        title: "Baixe o PDF",
+        description: "Salve um único PDF com uma página para cada foto.",
+      },
+    ],
+    features: [
+      {
+        title: "Várias fotos, um PDF",
+        description: "Junte recibos ou páginas de documentos em um único arquivo.",
+      },
+      {
+        title: "Sua ordem de páginas",
+        description: "Reordene as páginas antes de criar o PDF.",
+      },
+      {
+        title: "Opções de tamanho de página",
+        description: "A4, Carta ou cada página do tamanho da sua foto.",
+      },
+      {
+        title: "Conversão privada",
+        description: "Suas fotos são convertidas no seu dispositivo e nunca são enviadas.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF é o mesmo que HEIC?",
+        answer: "Para fotos, sim. Arquivos .heic e .heif funcionam aqui.",
+      },
+      {
+        question: "Posso adicionar imagens JPG ou PNG também?",
+        answer: "Sim. Imagens JPG, PNG e WebP podem entrar no mesmo PDF.",
+      },
+      {
+        question: "O PDF vai ficar legível para documentos?",
+        answer: "Sim. As fotos entram em resolução total. Para o resultado mais nítido, fotografe os documentos bem planos e com boa luz.",
+      },
+      {
+        question: "Minhas fotos são enviadas?",
+        answer: "Não. O decodificador HEIC e o gerador de PDF rodam no seu navegador, então suas fotos ficam no seu dispositivo.",
+      },
+    ],
+  },
   "pdf-to-jpg": {
     name: "PDF para JPG",
     shortName: "PDF → JPG",
@@ -2999,6 +3844,71 @@ export const ptTools: Record<string, LocalizedToolItem> = {
         question: "Meu PDF é enviado?",
         answer:
           "Não. O PDF é lido e renderizado pelo seu navegador, então contratos, extratos e outros documentos privados nunca saem do seu dispositivo.",
+      },
+    ],
+  },
+  "pdf-to-png": {
+    name: "PDF para PNG",
+    shortName: "PDF → PNG",
+    tagline: "Salve cada página de um PDF como imagem PNG nítida e sem perdas, uma por vez ou todas em um ZIP. A conversão acontece no seu dispositivo.",
+    intro: "PDF para PNG transforma cada página de um PDF em uma imagem PNG. O PNG é sem perdas, então textos, linhas e diagramas ficam perfeitamente nítidos, o que faz dele a escolha certa para slides, documentos e gráficos que você quer colocar em uma apresentação, um design ou uma página web. Escolha a resolução e baixe páginas avulsas ou todas juntas em um ZIP. O PDF é aberto no seu navegador e nunca é enviado.",
+    seoTitle: "Converter PDF para PNG – Páginas nítidas, grátis",
+    seoDescription: "Converta páginas de PDF em imagens PNG nítidas no navegador. Escolha 72, 150 ou 300 dpi e baixe uma página ou todas. Grátis e privado.",
+    keywords: [
+      "pdf para png",
+      "converter pdf para png",
+      "conversor pdf para png",
+      "página de pdf para imagem",
+      "pdf para png alta resolução",
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seu PDF",
+        description: "Arraste ou escolha um arquivo PDF. As páginas aparecem como miniaturas.",
+      },
+      {
+        title: "Escolha a resolução",
+        description: "150 dpi serve para telas. Use 300 dpi para imprimir ou dar zoom.",
+      },
+      {
+        title: "Baixe as páginas",
+        description: "Salve uma página como PNG ou todas juntas em um ZIP.",
+      },
+    ],
+    features: [
+      {
+        title: "Textos e linhas nítidos",
+        description: "O PNG é sem perdas, então textos pequenos e linhas finas continuam definidos.",
+      },
+      {
+        title: "Resolução à escolha",
+        description: "72, 150 ou 300 dpi, de prévias para a web até impressão.",
+      },
+      {
+        title: "Todas as páginas de uma vez",
+        description: "Baixe todas as páginas em um único ZIP, com nomes na ordem das páginas.",
+      },
+      {
+        title: "Conversão privada",
+        description: "O PDF é aberto no seu dispositivo e nunca é enviado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG ou JPG para páginas de PDF?",
+        answer: "O PNG mantém textos e diagramas perfeitamente nítidos. O JPG gera arquivos menores e serve para páginas que são quase só fotos. Você pode mudar para JPG na mesma ferramenta.",
+      },
+      {
+        question: "Qual resolução devo escolher?",
+        answer: "150 dpi fica bom na tela. 300 dpi é para imprimir ou quando você precisa dar zoom, e gera arquivos maiores.",
+      },
+      {
+        question: "Posso converter um PDF protegido por senha?",
+        answer: "Não, se ele pedir senha para abrir. Abra-o em um leitor de PDF, salve uma cópia sem a senha e use essa cópia.",
+      },
+      {
+        question: "Meu PDF é enviado?",
+        answer: "Não. O PDF é lido e desenhado pelo seu navegador, então fica no seu dispositivo.",
       },
     ],
   },

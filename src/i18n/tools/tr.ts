@@ -2183,6 +2183,136 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "svg-to-jpg": {
+    name: "SVG'den JPG'ye",
+    shortName: "SVG → JPG",
+    tagline: "SVG grafiklerini istediğiniz ölçekte ve seçtiğiniz arka plan rengiyle JPG resimlerine dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "SVG grafikleri her boyutta keskin kalır, ancak birçok uygulama, sosyal ağ ve yükleme formu yalnızca normal resimleri kabul eder. SVG'den JPG'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve JPG olarak kaydeder. JPG saydamlığı desteklemediği için saydam alanlar beyazla veya seçtiğiniz bir renkle doldurulur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    seoTitle: "SVG JPG Dönüştürme – Her Boyutta, Ücretsiz",
+    seoDescription: "SVG grafiklerini tarayıcınızda 1x ile 8x arası ölçekte, istediğiniz arka plan rengiyle JPG'ye dönüştürün. Ücretsiz ve hiçbir şey yüklenmez.",
+    keywords: [
+      "svg jpg dönüştürme",
+      "svg'yi jpg'ye çevirme",
+      "svg jpeg çevirme",
+      "svg jpg dönüştürücü",
+      "svg'yi resme dönüştürme",
+    ],
+    howToSteps: [
+      {
+        title: "SVG'nizi ekleyin",
+        description: "Bir .svg dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Ölçeği ve arka planı seçin",
+        description: "1x, 2x, 4x veya 8x ölçeklerinden birini ve saydam alanları dolduracak rengi seçin.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "JPG'yi kaydedin ve her yerde kullanın.",
+      },
+    ],
+    features: [
+      {
+        title: "Her boyutta keskin",
+        description: "SVG seçilen ölçekte yeniden çizilir, bu yüzden kenarlar net kalır.",
+      },
+      {
+        title: "İstediğiniz arka plan rengi",
+        description: "Saydam alanlar beyazla veya herhangi bir renkle doldurulur.",
+      },
+      {
+        title: "Her yerde açılır",
+        description: "JPG her uygulamada, sosyal ağda ve yükleme formunda çalışır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Dosya cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "SVG'den JPG'ye mi, SVG'den PNG'ye mi?",
+        answer: "Logolar ve simgeler için, saydamlığı ve kusursuz düz renkleri korumak üzere PNG'yi seçin. Bir site veya form JPG istediğinde ya da renk geçişli çizimler için JPG'yi seçin.",
+      },
+      {
+        question: "Hangi ölçeği kullanmalıyım?",
+        answer: "Çoğu ekran için 2x uygundur. Baskı veya büyük ekranlar için 4x ya da 8x kullanın.",
+      },
+      {
+        question: "SVG'm neden farklı görünüyor?",
+        answer: "Yazı tiplerini veya resimleri web'den yükleyen SVG'lerde bu kısımlar çizilmeyebilir. Önce tasarım aracınızda yazıları dış hatlara çevirin.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. Tarayıcınız SVG'yi cihazınızda çizer.",
+      },
+    ],
+  },
+  "svg-to-webp": {
+    name: "SVG'den WebP'ye",
+    shortName: "SVG → WebP",
+    tagline: "SVG grafiklerini saydamlık dahil, istediğiniz ölçekte küçük WebP resimlerine dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "Bazen bir web sitesi, uygulama veya e-posta oluşturucu SVG yerine normal bir resim ister. SVG'den WebP'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve WebP olarak kaydeder. WebP, tüm güncel tarayıcıların gösterdiği ve saydamlığı koruyan küçük bir biçimdir. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    seoTitle: "SVG WebP Dönüştürme – Küçük Dosya, Saydamlık Korunur",
+    seoDescription: "SVG grafiklerini tarayıcınızda 1x ile 8x arası ölçekte, saydamlığı koruyarak WebP'ye dönüştürün. Ücretsiz ve hiçbir şey yüklenmez.",
+    keywords: [
+      "svg webp dönüştürme",
+      "svg'yi webp'ye çevirme",
+      "svg webp dönüştürücü",
+      "svg'yi resme dönüştürme",
+      "saydam webp",
+    ],
+    howToSteps: [
+      {
+        title: "SVG'nizi ekleyin",
+        description: "Bir .svg dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Ölçeği ve kaliteyi seçin",
+        description: "1x, 2x, 4x veya 8x ölçeklerinden birini seçin ve WebP kalitesini belirleyin.",
+      },
+      {
+        title: "WebP'yi indirin",
+        description: "WebP'yi kaydedin ve sitenizde ya da uygulamanızda kullanın.",
+      },
+    ],
+    features: [
+      {
+        title: "Her boyutta keskin",
+        description: "SVG seçilen ölçekte yeniden çizilir, bu yüzden kenarlar net kalır.",
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "Saydam alanlar WebP'de de saydam kalır.",
+      },
+      {
+        title: "Küçük dosyalar",
+        description: "Aynı resim için WebP genellikle PNG'den çok daha küçüktür.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Dosya cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Neden doğrudan SVG'yi kullanmıyorum?",
+        answer: "Desteklendiği yerlerde SVG'yi kullanmaya devam edin. Bazı uygulamalar, e-posta oluşturucular ve resim yüklemeleri gibi yalnızca normal resimlere izin verilen yerlerde WebP kullanın.",
+      },
+      {
+        question: "Hangi ölçeği kullanmalıyım?",
+        answer: "Çoğu ekran için 2x uygundur. Büyük ekranlar için 4x ya da 8x kullanın.",
+      },
+      {
+        question: "SVG'm neden farklı görünüyor?",
+        answer: "Yazı tiplerini veya resimleri web'den yükleyen SVG'lerde bu kısımlar çizilmeyebilir. Önce tasarım aracınızda yazıları dış hatlara çevirin.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. Tarayıcınız SVG'yi cihazınızda çizer.",
+      },
+    ],
+  },
   "photo-filters": {
     name: "Fotoğraf Filtreleri ve Efektleri",
     shortName: "Filtreler",
@@ -2842,6 +2972,591 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "heic-to-webp": {
+    name: "HEIC'ten WebP'ye",
+    shortName: "HEIC → WebP",
+    tagline: "iPhone'daki HEIC ve HEIF fotoğraflarını her tarayıcıda açılan hafif bir web biçimi olan WebP'ye dönüştürün. Dönüştürme cihazınızda yapılır.",
+    intro: "HEIC (HEIF olarak da bilinir), iPhone'ların ve birçok Android telefonun varsayılan fotoğraf biçimidir; ancak çoğu web sitesi, içerik yönetim sistemi ve Windows uygulaması bu biçimi gösteremez. HEIC'ten WebP'ye aracı, fotoğrafı tüm güncel tarayıcıların desteklediği modern WebP biçimine dönüştürür. WebP dosyaları küçük tutar ve aynı kalitede çoğu zaman JPG'den bile küçüktür. Bu yüzden web sitesine, bloga veya çevrimiçi mağazaya koyacağınız fotoğraflar için iyi bir seçimdir. Dönüştürme tarayıcınızın içinde yapılır, yani fotoğraf cihazınızdan hiç çıkmaz.",
+    seoTitle: "HEIC WebP Dönüştürme – Ücretsiz, Gizli, HEIF Dahil",
+    seoDescription: "iPhone'daki HEIC ve HEIF fotoğraflarını tarayıcınızda WebP'ye dönüştürün. Web siteleri için küçük dosyalar, ayarlanabilir kalite ve hiçbir şey yüklenmez.",
+    keywords: [
+      "heic webp dönüştürme",
+      "heif webp dönüştürme",
+      "heic'i webp'ye çevir",
+      "iphone fotoğrafı webp",
+      "heic webp dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC fotoğrafınızı ekleyin",
+        description: "Bir .heic veya .heif dosyasını sürükleyin, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Çoğu fotoğraf için %85 uygundur. Daha küçük dosyalar için düşürün, daha fazla ayrıntı için yükseltin.",
+      },
+      {
+        title: "WebP'yi indirin",
+        description: "WebP dosyasını kaydedin ve sitenize yükleyin ya da paylaşın.",
+      },
+    ],
+    features: [
+      {
+        title: "Küçük dosyalar",
+        description: "Aynı görsel kalitede WebP dosyaları genellikle JPG'den küçüktür, bu yüzden sayfalar daha hızlı yüklenir.",
+      },
+      {
+        title: "Her tarayıcıda çalışır",
+        description: "Chrome, Safari, Firefox ve Edge WebP'yi gösterir; WordPress, Shopify ve çoğu site oluşturucu da destekler.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Fotoğraf cihazınızda dönüştürülür ve hiçbir zaman yüklenmez.",
+      },
+      {
+        title: "Konum verisi yok",
+        description: "Orijinal fotoğraftaki GPS konumu ve kamera bilgileri WebP dosyasına kopyalanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF ile HEIC aynı şey mi?",
+        answer: "Fotoğraflar için evet. HEIF dosya biçiminin adıdır; HEIC ise Apple'ın bu biçimde kaydedilen fotoğraflar için kullandığı ad ve uzantıdır. Burada hem .heic hem de .heif dosyaları çalışır.",
+      },
+      {
+        question: "WebP mi JPG mi seçmeliyim?",
+        answer: "Küçük dosyaların daha hızlı yüklendiği web siteleri ve çevrimiçi mağazalar için WebP'yi seçin. Fotoğraf e-postayla, matbaaya ya da WebP kabul etmeyen eski uygulamalara ve yükleme formlarına gidecekse JPG'yi seçin.",
+      },
+      {
+        question: "Hangi kaliteyi kullanmalıyım?",
+        answer: "Çoğu fotoğraf %85'te orijinalinden ayırt edilemez. İnce ayrıntılı fotoğraflar için %90 veya üstünü, dosya boyutu en önemliyse %70 ile %80 arasını kullanın.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. HEIC kod çözücüsü tarayıcınızda çalışır, yani fotoğraf cihazınızda kalır.",
+      },
+    ],
+  },
+  "avif-to-jpg": {
+    name: "AVIF'ten JPG'ye",
+    shortName: "AVIF → JPG",
+    tagline: "AVIF resimlerini her uygulamada, düzenleyicide ve yükleme formunda açılan JPG'ye dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "AVIF, dosyaları çok küçük olduğu için artık birçok web sitesinin kullandığı modern bir resim biçimidir. Ancak bu resimlerden birini kaydettiğinizde eski fotoğraf görüntüleyicileri, Office, birçok düzenleyici ve pek çok yükleme formu onu açamaz. AVIF'ten JPG'ye aracı, resmi her yerde çalışan biçim olan JPG'ye dönüştürür. Kaliteyi seçin, sonucu önizleyin ve indirin. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "AVIF JPG Dönüştürme – Ücretsiz, Hızlı, Gizli",
+    seoDescription: "AVIF resimlerini tarayıcınızda JPG'ye dönüştürün. Her uygulama ve yükleme formuyla uyumlu, ayarlanabilir kalite ve hiçbir şey yüklenmez.",
+    keywords: [
+      "avif jpg dönüştürme",
+      "avif'i jpg'ye çevirme",
+      "avif jpeg çevirme",
+      "avif dönüştürücü",
+      "avif dosyası açma",
+    ],
+    howToSteps: [
+      {
+        title: "AVIF resminizi ekleyin",
+        description: "Bir .avif dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Çoğu resim için %85 uygundur. Daha fazla ayrıntı için yükseltin, daha küçük bir dosya için düşürün.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "JPG'yi kaydedin; her yerde açın, düzenleyin veya yükleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Her yerde açılır",
+        description: "JPG her fotoğraf görüntüleyicide, düzenleyicide, telefonda, e-posta uygulamasında ve yükleme formunda çalışır.",
+      },
+      {
+        title: "Ayarlanabilir kalite",
+        description: "İndirmeden önce dosya boyutu ile ayrıntı arasındaki dengeyi seçin.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+      {
+        title: "Saydamlık sorun olmaz",
+        description: "JPG saydamlığı desteklemez, bu yüzden saydam alanlar seçtiğiniz bir renkle doldurulur.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF dosyası nedir?",
+        answer: "AVIF, AV1 video kodeğine dayanan bir resim biçimidir. Aynı kalitede JPG'den çok daha küçük dosyalar oluşturur; birçok web sitesinin onu kullanmasının nedeni budur, ancak eski yazılımlar onu açamaz.",
+      },
+      {
+        question: "JPG, AVIF'ten büyük olur mu?",
+        answer: "Genellikle evet. AVIF çok verimli sıkıştırır, bu yüzden aynı resim JPG olarak çoğu zaman iki üç kat daha büyüktür. Bu, her programın açabildiği bir dosyanın bedelidir.",
+      },
+      {
+        question: "Tarayıcım AVIF'i neden açamıyor?",
+        answer: "Çok eski tarayıcılar AVIF'i çözemez. Güncel Chrome, Edge, Firefox ve Safari (16 veya üstü) sürümlerinin hepsi çözebilir. Dosya yine de açılmıyorsa hasarlı olabilir.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Tarayıcınız resmi cihazınızda çözer ve dönüştürür.",
+      },
+    ],
+  },
+  "avif-to-png": {
+    name: "AVIF'ten PNG'ye",
+    shortName: "AVIF → PNG",
+    tagline: "AVIF resimlerini saydamlığı koruyarak düzenleme ve tasarım için kayıpsız PNG'ye dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "AVIF resimleri küçük ve keskindir, ancak birçok düzenleyici, tasarım aracı ve eski uygulama onları açamaz. AVIF'ten PNG'ye aracı, resmi saydam alanları koruyan kayıpsız bir biçim olan PNG'ye dönüştürür; bu yüzden logolar, grafikler ve üzerinde daha sonra çalışacağınız her şey için iyi bir seçimdir. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz. Paylaşacağınız fotoğraflar için AVIF'ten JPG'ye aracı daha küçük dosyalar verir.",
+    seoTitle: "AVIF PNG Dönüştürme – Ücretsiz ve Kayıpsız",
+    seoDescription: "AVIF resimlerini tarayıcınızda saydamlığı koruyarak kayıpsız PNG'ye dönüştürün. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "avif png dönüştürme",
+      "avif'i png'ye çevirme",
+      "avif png dönüştürücü",
+      "avif saydam png",
+      "avif dosyası açma",
+    ],
+    howToSteps: [
+      {
+        title: "AVIF resminizi ekleyin",
+        description: "Bir .avif dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi kontrol edin",
+        description: "Tarayıcınız resmi cihazınızda çözer.",
+      },
+      {
+        title: "PNG'yi indirin",
+        description: "Kayıpsız PNG'yi kaydedin ve herhangi bir düzenleyicide veya tasarım aracında açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Kayıpsız çıktı",
+        description: "PNG, çözülen resmin her pikselini korur; bu yüzden düzenleyip yeniden kaydetmek sıkıştırma bozulmaları eklemez.",
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "AVIF'teki saydam alanlar PNG'de de saydam kalır.",
+      },
+      {
+        title: "Her düzenleyicide açılır",
+        description: "PNG; Photoshop, GIMP, Figma, Canva, Office ve tüm tarayıcılarda çalışır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG neden AVIF'ten çok daha büyük?",
+        answer: "AVIF çok verimli, kayıplı bir sıkıştırma kullanır; PNG ise kayıpsızdır ve çok daha fazla veri saklar. Bir PNG kolayca AVIF'in on katı büyüklüğünde olabilir.",
+      },
+      {
+        question: "PNG saydamlığı korur mu?",
+        answer: "Evet. AVIF'te saydam alanlar varsa PNG'de de saydam kalır.",
+      },
+      {
+        question: "PNG mi JPG mi: hangisini seçmeliyim?",
+        answer: "Grafikler, saydamlık veya ileride düzenleme için PNG'yi seçin. Paylaşacağınız veya yükleyeceğiniz fotoğraflar için JPG'yi seçin, çünkü dosyaları çok daha küçüktür.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Dönüştürme tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
+  "jpg-to-avif": {
+    name: "JPG'den AVIF'e",
+    shortName: "JPG → AVIF",
+    tagline: "JPG fotoğraflarını en küçük dosyaları veren modern web biçimi AVIF'e dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "AVIF, aynı görsel kalitede JPG'den çok daha küçük dosyalar oluşturur; çoğu zaman yarı boyutta. Böylece sayfalar daha hızlı yüklenir ve daha az veri harcanır. Tüm güncel tarayıcılar AVIF'i gösterebilir. JPG'den AVIF'e aracı, fotoğrafınızı seçtiğiniz kalitede AVIF'e dönüştürür; bu da onu her kilobaytın önemli olduğu web siteleri, çevrimiçi mağazalar ve bloglar için kullanışlı kılar. Kodlama tarayıcınızın içinde yapılır, bu yüzden fotoğraf cihazınızdan hiç çıkmaz. Büyük fotoğraflarda birkaç saniye sürebilir.",
+    seoTitle: "JPG AVIF Dönüştürme – Daha Küçük Resimler, Ücretsiz",
+    seoDescription: "JPG fotoğraflarını tarayıcınızda AVIF'e dönüştürerek çok daha küçük web resimleri elde edin. Ayarlanabilir kalite, ücretsiz, hiçbir şey yüklenmez.",
+    keywords: [
+      "jpg avif dönüştürme",
+      "jpg'yi avif'e çevirme",
+      "jpeg avif çevirme",
+      "avif dönüştürücü",
+      "resmi avif yapma",
+    ],
+    howToSteps: [
+      {
+        title: "JPG fotoğrafınızı ekleyin",
+        description: "Bir .jpg veya .jpeg dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "%85 ile başlayın. AVIF, JPG'ye göre daha düşük ayarlarda da keskin kalır; daha küçük dosyalar için daha düşük değerleri deneyin.",
+      },
+      {
+        title: "AVIF'i indirin",
+        description: "AVIF dosyasını kaydedin ve web sitenize yükleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Çok daha küçük dosyalar",
+        description: "AVIF, aynı görünen bir JPG'nin çoğu zaman yaklaşık yarısı boyutundadır.",
+      },
+      {
+        title: "Tüm güncel tarayıcılarda görünür",
+        description: "Chrome, Edge, Firefox ve Safari 16 veya üstü AVIF'i gösterir.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+      {
+        title: "Konum bilgisi yok",
+        description: "JPG'deki GPS konumu ve kamera bilgileri AVIF'e kopyalanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF mi WebP mi: hangisi daha iyi?",
+        answer: "AVIF aynı kalitede genellikle daha küçük dosyalar oluşturur; WebP ise daha hızlı kodlanır ve bazı eski uygulamalarda da çalışır. İkisi de tüm güncel tarayıcılarda görünür.",
+      },
+      {
+        question: "Her uygulama AVIF açabilir mi?",
+        answer: "Hayır. Tarayıcılar açabilir, ancak bazı eski fotoğraf görüntüleyicileri, düzenleyiciler ve yükleme formları açamaz. Bunlar için orijinal JPG'yi saklayın, web'de AVIF kullanın.",
+      },
+      {
+        question: "Dönüştürme neden birkaç saniye sürüyor?",
+        answer: "AVIF kodlaması en küçük dosyayı bulmak için çok iş yapar. Cihazınızda çalıştığı için büyük fotoğraflar yavaş telefonlarda daha uzun sürer.",
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. AVIF kodlayıcısı tarayıcınızda çalışır, bu yüzden fotoğraf cihazınızda kalır.",
+      },
+    ],
+  },
+  "png-to-avif": {
+    name: "PNG'den AVIF'e",
+    shortName: "PNG → AVIF",
+    tagline: "PNG resimlerini saydamlık dahil, çok daha küçük web dosyaları için AVIF'e dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "PNG dosyaları, özellikle ekran görüntüleri, fotoğraflar ve ayrıntılı grafiklerde, çoğu zaman büyüktür. AVIF aynı resmi çok daha az yerde saklar ve saydamlığı korur; bu yüzden web'deki logolar, ürün resimleri ve çizimler için uygundur. PNG'den AVIF'e aracı, resminizi seçtiğiniz kalitede dönüştürür ve sonucu tüm güncel tarayıcılar gösterebilir. Kodlama tarayıcınızın içinde yapılır, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "PNG AVIF Dönüştürme – Küçük Dosya, Saydamlık Korunur",
+    seoDescription: "PNG resimlerini tarayıcınızda AVIF'e dönüştürün. Saydamlığı korunan çok daha küçük web resimleri, ayarlanabilir kalite, yükleme yok.",
+    keywords: [
+      "png avif dönüştürme",
+      "png'yi avif'e çevirme",
+      "png avif dönüştürücü",
+      "saydam avif",
+      "resmi avif yapma",
+    ],
+    howToSteps: [
+      {
+        title: "PNG resminizi ekleyin",
+        description: "Bir .png dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Çoğu resim için %85 uygundur. Keskin yazılar ve ince çizgiler için daha yüksek bir değer kullanın.",
+      },
+      {
+        title: "AVIF'i indirin",
+        description: "AVIF dosyasını kaydedin ve web sitenize yükleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Boyutun küçük bir kısmı",
+        description: "Bir AVIF, çoğu zaman kaynağı olan PNG'den kat kat küçüktür.",
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "Saydam arka planlar AVIF'te de saydam kalır.",
+      },
+      {
+        title: "Tüm güncel tarayıcılarda görünür",
+        description: "Chrome, Edge, Firefox ve Safari 16 veya üstü AVIF'i gösterir.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "AVIF de PNG gibi kayıpsız mı?",
+        answer: "Burada değil. AVIF seçtiğiniz kalitede sıkıştırılır, bu yüzden çok küçük ayrıntılar değişebilir. %85 veya üstünde çoğu resim PNG ile aynı görünür.",
+      },
+      {
+        question: "AVIF saydamlığı korur mu?",
+        answer: "Evet. PNG'deki saydam alanlar AVIF'te de saydam kalır.",
+      },
+      {
+        question: "PNG'yi ne zaman saklamalıyım?",
+        answer: "Düzenleme, baskı ve AVIF açamayan uygulamalar için PNG'yi saklayın. Web sitelerinde AVIF'i kullanın.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. AVIF kodlayıcısı tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
+  "gif-to-png": {
+    name: "GIF'ten PNG'ye",
+    shortName: "GIF → PNG",
+    tagline: "Bir GIF'i saydamlığını koruyarak kayıpsız, hareketsiz bir PNG resim olarak kaydedin. Dönüştürme cihazınızda çalışır.",
+    intro: "GIF, en fazla 256 renk tutabilen eski bir biçimdir ve birçok düzenleyici ile yükleme formu onu iyi işleyemez. GIF'ten PNG'ye aracı, resmi her düzenleyicinin ve tasarım aracının açtığı kayıpsız bir biçim olan PNG olarak kaydeder ve saydam alanları korur. GIF hareketliyse PNG, ilk karesinin hareketsiz bir resmi olur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "GIF PNG Dönüştürme – Ücretsiz, Saydamlık Korunur",
+    seoDescription: "Bir GIF'i tarayıcınızda saydamlığı koruyarak kayıpsız, hareketsiz bir PNG'ye dönüştürün. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "gif png dönüştürme",
+      "gif'i png'ye çevirme",
+      "gif png dönüştürücü",
+      "gif saydam png",
+      "gif ilk kare png",
+    ],
+    howToSteps: [
+      {
+        title: "GIF'inizi ekleyin",
+        description: "Bir .gif dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi kontrol edin",
+        description: "Hareketli GIF'lerde ilk kare gösterilir.",
+      },
+      {
+        title: "PNG'yi indirin",
+        description: "PNG'yi kaydedin ve herhangi bir düzenleyicide açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Kayıpsız",
+        description: "GIF karesinin her pikseli birebir korunur.",
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "GIF'teki saydam alanlar PNG'de de saydam kalır.",
+      },
+      {
+        title: "Her düzenleyicide açılır",
+        description: "PNG; Photoshop, GIMP, Figma, Canva, Office ve tüm tarayıcılarda çalışır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hareketli bir GIF'e ne olur?",
+        answer: "PNG, ilk karenin hareketsiz bir resmidir. Burada oluşturulan PNG dosyaları hareket etmez.",
+      },
+      {
+        question: "Renkler değişir mi?",
+        answer: "Hayır. Bir GIF'te en fazla 256 renk vardır ve PNG bunların hepsini birebir saklar.",
+      },
+      {
+        question: "Dönüştürürken resmi yeniden boyutlandırabilir miyim?",
+        answer: "Evet. İndirmeden önce boyut alanlarına yeni bir genişlik veya yükseklik girin.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Dönüştürme tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
+  "gif-to-jpg": {
+    name: "GIF'ten JPG'ye",
+    shortName: "GIF → JPG",
+    tagline: "Bir GIF'i her yerde açılan, hareketsiz bir JPG resim olarak kaydedin. Dönüştürme cihazınızda çalışır.",
+    intro: "Bazı yükleme formları, baskı hizmetleri ve uygulamalar yalnızca JPG kabul eder. GIF'ten JPG'ye aracı, bir GIF'i seçtiğiniz kalitede hareketsiz bir JPG resim olarak kaydeder. JPG saydamlığı desteklemediği için saydam alanlar seçtiğiniz bir arka plan rengiyle doldurulur. GIF hareketliyse JPG onun ilk karesini gösterir. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "GIF JPG Dönüştürme – Ücretsiz ve Gizli",
+    seoDescription: "Bir GIF'i tarayıcınızda hareketsiz bir JPG resme dönüştürün. Kaliteyi ve arka plan rengini seçin. Ücretsiz ve hiçbir şey yüklenmez.",
+    keywords: [
+      "gif jpg dönüştürme",
+      "gif'i jpg'ye çevirme",
+      "gif jpeg çevirme",
+      "gif jpg dönüştürücü",
+      "gif ilk kare jpg",
+    ],
+    howToSteps: [
+      {
+        title: "GIF'inizi ekleyin",
+        description: "Bir .gif dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi ve arka planı seçin",
+        description: "JPG kalitesini ve GIF'te saydamlık varsa onu dolduracak rengi seçin.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "JPG'yi kaydedin ve her yerde kullanın.",
+      },
+    ],
+    features: [
+      {
+        title: "Her yerde açılır",
+        description: "JPG her görüntüleyicide, düzenleyicide, telefonda, baskı hizmetinde ve yükleme formunda çalışır.",
+      },
+      {
+        title: "İstediğiniz arka plan rengi",
+        description: "Saydam alanlar beyazla veya seçtiğiniz herhangi bir renkle doldurulur.",
+      },
+      {
+        title: "Ayarlanabilir kalite",
+        description: "Dosya boyutu ile ayrıntı arasındaki dengeyi ayarlayın.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hareketli bir GIF'e ne olur?",
+        answer: "JPG, ilk karenin hareketsiz bir resmidir. JPG hareketli olamaz.",
+      },
+      {
+        question: "Neden bir arka plan rengi var?",
+        answer: "JPG saydamlığı desteklemez, bu yüzden GIF'teki saydam alanların düz bir renkle doldurulması gerekir. Başka bir renk seçmezseniz beyaz kullanılır.",
+      },
+      {
+        question: "Bunun yerine PNG mi seçmeliyim?",
+        answer: "Logolar, yazılar ve düz renkli grafikler için ya da saydamlığı korumak için PNG'yi seçin. Bir form veya hizmet JPG istediğinde JPG'yi seçin.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Dönüştürme tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
+  "bmp-to-jpg": {
+    name: "BMP'den JPG'ye",
+    shortName: "BMP → JPG",
+    tagline: "Büyük Windows BMP resimlerini küçük JPG dosyalarına dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "BMP, resimleri sıkıştırmadan saklayan eski bir Windows biçimidir; bu yüzden dosyalar çok büyüktür ve birçok web sitesi ile uygulama onları kabul etmez. BMP'den JPG'ye aracı, resmi seçtiğiniz kalitede JPG'ye dönüştürür; sonuç genellikle orijinal boyutun küçük bir kısmıdır. Taramalar, eski yazılımlardan alınmış ekran görüntüleri ve eski programlardan dışa aktarılmış resimler için hızlı bir çözümdür. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "BMP JPG Dönüştürme – Ücretsiz, Daha Küçük Dosyalar",
+    seoDescription: "BMP resimlerini tarayıcınızda JPG'ye dönüştürün. Her yerde açılan çok daha küçük dosyalar, ayarlanabilir kalite ve hiçbir şey yüklenmez.",
+    keywords: [
+      "bmp jpg dönüştürme",
+      "bmp'yi jpg'ye çevirme",
+      "bmp jpeg çevirme",
+      "bmp dönüştürücü",
+      "bitmap jpg çevirme",
+    ],
+    howToSteps: [
+      {
+        title: "BMP resminizi ekleyin",
+        description: "Bir .bmp dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Çoğu resim için %85 uygundur. Küçük yazılı ekran görüntüleri için yükseltin.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "Çok daha küçük olan JPG'yi kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Çok daha küçük dosyalar",
+        description: "Bir JPG çoğu zaman BMP'nin onda biri veya daha küçük boyuttadır.",
+      },
+      {
+        title: "Her yerde açılır",
+        description: "JPG her görüntüleyicide, düzenleyicide, telefonda ve yükleme formunda çalışır.",
+      },
+      {
+        title: "Ayarlanabilir kalite",
+        description: "Dosya boyutu ile ayrıntı arasındaki dengeyi ayarlayın.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "BMP dosyaları neden bu kadar büyük?",
+        answer: "Çoğu BMP dosyası her pikseli sıkıştırmadan saklar. JPG resmi sıkıştırır; dönüştürülen dosyanın çok daha küçük olmasının nedeni budur.",
+      },
+      {
+        question: "Ekran görüntüleri için JPG doğru seçim mi?",
+        answer: "Küçük yazılı veya keskin çizgili ekran görüntüleri için BMP'den PNG'ye aracı onları net tutar. JPG en çok fotoğraflar ve taramalar için uygundur.",
+      },
+      {
+        question: "Hangi BMP dosyaları açılabilir?",
+        answer: "Tarayıcıların desteklediği yaygın Windows bitmap türleri. Bazı sıkıştırılmış veya çok eski BMP dosyaları gibi birkaç alışılmadık türev açılmayabilir.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Dönüştürme tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
+  "bmp-to-png": {
+    name: "BMP'den PNG'ye",
+    shortName: "BMP → PNG",
+    tagline: "Windows BMP resimlerini boyutun küçük bir kısmında kayıpsız PNG'ye dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "BMP dosyaları sıkıştırılmamıştır ve büyüktür, ancak onları JPG'ye dönüştürmek keskin yazıları ve çizgileri bulanıklaştırabilir. BMP'den PNG'ye aracı ise resmi PNG'ye dönüştürür. PNG tek bir piksel kaybetmeden sıkıştırır; böylece ekran görüntüleri, diyagramlar ve grafikler çok daha küçük bir dosyada tam olarak eskisi gibi kalır. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden resim cihazınızdan hiç çıkmaz.",
+    seoTitle: "BMP PNG Dönüştürme – Ücretsiz ve Kayıpsız",
+    seoDescription: "BMP resimlerini tarayıcınızda kayıpsız PNG'ye dönüştürün. Her pikseli korunan daha küçük dosyalar. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "bmp png dönüştürme",
+      "bmp'yi png'ye çevirme",
+      "bmp png dönüştürücü",
+      "bitmap png çevirme",
+      "bmp dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "BMP resminizi ekleyin",
+        description: "Bir .bmp dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi kontrol edin",
+        description: "Tarayıcınız resmi cihazınızda açar.",
+      },
+      {
+        title: "PNG'yi indirin",
+        description: "Kayıpsız PNG'yi kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kayıpsız",
+        description: "BMP'nin her pikseli birebir korunur.",
+      },
+      {
+        title: "Daha küçük dosyalar",
+        description: "PNG resmi kayıpsız sıkıştırır ve çoğu zaman BMP boyutunun küçük bir kısmına indirir.",
+      },
+      {
+        title: "Ekran görüntüleri için ideal",
+        description: "Yazılar, çizgiler ve düz renkler net kalır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Resim cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG ne kadar küçük olur?",
+        answer: "Resme bağlıdır. Ekran görüntüleri ve grafikler çoğu zaman BMP boyutunun onda birine iner, ayrıntılı fotoğraflar ise daha az küçülür.",
+      },
+      {
+        question: "BMP'den PNG'ye mi, BMP'den JPG'ye mi?",
+        answer: "Ekran görüntüleri, diyagramlar ve grafikler için ya da piksellerin birebir korunması gerekiyorsa PNG'yi seçin. Fotoğraflar için çok daha küçük bir dosya veren JPG'yi seçin.",
+      },
+      {
+        question: "Hangi BMP dosyaları açılabilir?",
+        answer: "Tarayıcıların desteklediği yaygın Windows bitmap türleri. Birkaç alışılmadık türev açılmayabilir.",
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Dönüştürme tarayıcınızda çalışır, bu yüzden resim cihazınızda kalır.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG'den PDF'e",
     shortName: "JPG → PDF",
@@ -2924,6 +3639,136 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "png-to-pdf": {
+    name: "PNG'den PDF'e",
+    shortName: "PNG → PDF",
+    tagline: "PNG resimlerini ve ekran görüntülerini seçtiğiniz sırayla tek bir PDF'e dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "PNG'den PDF'e aracı, ekran görüntüleri, taramalar veya diyagramlar gibi bir veya daha fazla PNG resmini e-postayla göndermesi, yazdırması ya da yüklemesi kolay tek bir PDF'te birleştirir. Sayfaları istediğiniz sıraya koyun; A4, Letter (ABD) veya her resme uyan bir sayfa seçin ve yönü ile kenar boşluklarını ayarlayın. Resimler tam çözünürlüklerini korur. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden resimleriniz asla yüklenmez. JPG, WebP ve iPhone HEIC fotoğrafları da aynı PDF'e eklenebilir.",
+    seoTitle: "PNG PDF Çevirme – Resimleri Birleştirin, Ücretsiz",
+    seoDescription: "PNG resimlerini ve ekran görüntülerini tarayıcınızda tek PDF yapın. Sayfaları sıralayın, A4 veya Letter (ABD) seçin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "png pdf çevirme",
+      "png'yi pdf'e dönüştürme",
+      "png pdf dönüştürücü",
+      "ekran görüntüsünü pdf yapma",
+      "png'leri pdf'te birleştirme",
+    ],
+    howToSteps: [
+      {
+        title: "PNG resimlerinizi ekleyin",
+        description: "Bir veya daha fazla resim bırakın veya seçin. Daha sonra başka resimler de ekleyebilirsiniz.",
+      },
+      {
+        title: "Sayfaları sıralayın",
+        description: "Sırayı belirlemek için sürükleyin veya ok düğmelerini kullanın; ardından sayfa boyutunu, yönü ve kenar boşluğunu seçin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Her resim için bir sayfa içeren tek bir PDF kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Çok sayıda resim, tek PDF",
+        description: "Ekran görüntülerini veya taramaları tek bir belgede birleştirin.",
+      },
+      {
+        title: "Sayfa sırası sizde",
+        description: "PDF'i oluşturmadan önce sayfaları yeniden sıralayın.",
+      },
+      {
+        title: "Sayfa boyutu seçenekleri",
+        description: "A4, Letter (ABD) veya her sayfa kendi resminin boyutunda.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "PDF cihazınızda oluşturulur ve hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Resimler kalite kaybeder mi?",
+        answer: "Hayır. Her resim PDF'e tam çözünürlükte yerleştirilir.",
+      },
+      {
+        question: "PNG'yi başka biçimlerle karıştırabilir miyim?",
+        answer: "Evet. JPG, WebP ve iPhone HEIC resimleri de aynı PDF'e eklenebilir.",
+      },
+      {
+        question: "“Resme göre” seçeneği ne işe yarar?",
+        answer: "Her sayfa, beyaz kenarlık olmadan resminin boyutunu ve şeklini alır; bu, ekran görüntüleri ve slaytlar için uygundur.",
+      },
+      {
+        question: "Resimlerim yükleniyor mu?",
+        answer: "Hayır. PDF tarayıcınızda oluşturulur, bu yüzden resimler cihazınızda kalır.",
+      },
+    ],
+  },
+  "heic-to-pdf": {
+    name: "HEIC'ten PDF'e",
+    shortName: "HEIC → PDF",
+    tagline: "Fiş ve belge gibi iPhone HEIC fotoğraflarını tek bir PDF'e dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "iPhone'lar fotoğrafları HEIC olarak kaydeder, ancak masraf formları, okullar, bankalar ve iş yerleri genellikle PDF ister. HEIC'ten PDF'e aracı, fiş, kimlik, form veya el yazısı sayfa gibi bir ya da daha fazla HEIC fotoğrafını yükleyebileceğiniz veya e-postayla gönderebileceğiniz tek bir PDF'e dönüştürür. Sayfaları sıralayın ve A4, Letter (ABD) ya da her fotoğrafa göre boyutlanan sayfalar seçin. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden fotoğraflarınız asla yüklenmez.",
+    seoTitle: "HEIC PDF Dönüştürme – iPhone Fotoğrafları PDF'e, Ücretsiz",
+    seoDescription: "iPhone HEIC fotoğraflarını tarayıcınızda tek bir PDF'e dönüştürün. Sayfaları sıralayın, A4 veya Letter (ABD) seçin. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "heic pdf dönüştürme",
+      "heic'i pdf'e çevirme",
+      "iphone fotoğrafını pdf yapma",
+      "heif pdf çevirme",
+      "heic pdf dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "HEIC fotoğraflarınızı ekleyin",
+        description: "Bir veya daha fazla .heic ya da .heif dosyası bırakın veya seçin.",
+      },
+      {
+        title: "Sayfaları sıralayın",
+        description: "Sırayı belirleyin, ardından sayfa boyutunu, yönü ve kenar boşluğunu seçin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Her fotoğraf için bir sayfa içeren tek bir PDF kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Birden çok fotoğraf, tek PDF",
+        description: "Fişleri veya belge sayfalarını tek bir dosyada birleştirin.",
+      },
+      {
+        title: "Sayfa sırası sizde",
+        description: "PDF'i oluşturmadan önce sayfaları yeniden sıralayın.",
+      },
+      {
+        title: "Sayfa boyutu seçenekleri",
+        description: "A4, Letter (ABD) veya her sayfa kendi fotoğrafının boyutunda.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Fotoğraflarınız cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "HEIF ile HEIC aynı şey mi?",
+        answer: "Fotoğraflar için evet. Burada hem .heic hem de .heif dosyaları çalışır.",
+      },
+      {
+        question: "JPG veya PNG resimleri de ekleyebilir miyim?",
+        answer: "Evet. JPG, PNG ve WebP resimleri de aynı PDF'e eklenebilir.",
+      },
+      {
+        question: "Belgeler için PDF okunaklı olur mu?",
+        answer: "Evet. Fotoğraflar tam çözünürlükte yerleştirilir. En net sonuç için belgeleri düz bir yüzeyde ve iyi ışıkta fotoğraflayın.",
+      },
+      {
+        question: "Fotoğraflarım yükleniyor mu?",
+        answer: "Hayır. HEIC kod çözücüsü ve PDF oluşturucu tarayıcınızda çalışır, bu yüzden fotoğraflarınız cihazınızda kalır.",
+      },
+    ],
+  },
   "pdf-to-jpg": {
     name: "PDF'ten JPG'ye",
     shortName: "PDF → JPG",
@@ -2998,6 +3843,71 @@ export const trTools: Record<string, LocalizedToolItem> = {
         question: "PDF'im yükleniyor mu?",
         answer:
           "Hayır. PDF tarayıcınız tarafından okunur ve işlenir, bu yüzden sözleşmeler, hesap özetleri ve diğer özel belgeler cihazınızdan hiç çıkmaz.",
+      },
+    ],
+  },
+  "pdf-to-png": {
+    name: "PDF'ten PNG'ye",
+    shortName: "PDF → PNG",
+    tagline: "Bir PDF'in her sayfasını keskin, kayıpsız bir PNG resim olarak kaydedin; tek tek ya da hepsini bir ZIP içinde. Dönüştürme cihazınızda çalışır.",
+    intro: "PDF'ten PNG'ye aracı, bir PDF'in her sayfasını PNG resmine dönüştürür. PNG kayıpsızdır, bu yüzden yazılar, çizgiler ve diyagramlar kusursuz keskinlikte kalır; bu da onu bir sunuma, tasarıma veya web sayfasına koymak istediğiniz slaytlar, belgeler ve grafikler için doğru seçim yapar. Çözünürlüğü seçin, ardından sayfaları tek tek ya da tüm sayfaları birlikte bir ZIP içinde indirin. PDF tarayıcınızın içinde açılır ve asla yüklenmez.",
+    seoTitle: "PDF PNG Dönüştürme – Keskin Sayfalar, Ücretsiz",
+    seoDescription: "PDF sayfalarını tarayıcınızda keskin PNG resimlerine dönüştürün. 72, 150 veya 300 DPI seçin, bir sayfayı ya da hepsini indirin. Ücretsiz ve gizli.",
+    keywords: [
+      "pdf png dönüştürme",
+      "pdf'i png'ye çevirme",
+      "pdf png dönüştürücü",
+      "pdf sayfasını resim yapma",
+      "yüksek çözünürlüklü pdf png",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi ekleyin",
+        description: "Bir PDF dosyası bırakın veya seçin. Sayfaları küçük resimler olarak görünür.",
+      },
+      {
+        title: "Çözünürlüğü seçin",
+        description: "Ekranlar için 150 DPI uygundur. Baskı veya yakınlaştırma için 300 DPI kullanın.",
+      },
+      {
+        title: "Sayfaları indirin",
+        description: "Bir sayfayı PNG olarak kaydedin ya da tüm sayfaları birlikte bir ZIP içinde indirin.",
+      },
+    ],
+    features: [
+      {
+        title: "Keskin yazılar ve çizgiler",
+        description: "PNG kayıpsızdır, bu yüzden küçük yazılar ve ince çizgiler net kalır.",
+      },
+      {
+        title: "Çözünürlük seçimi",
+        description: "Web önizlemelerinden baskıya kadar her şey için 72, 150 veya 300 DPI.",
+      },
+      {
+        title: "Tüm sayfalar tek seferde",
+        description: "Tüm sayfaları, sayfa sırasına göre adlandırılmış tek bir ZIP içinde indirin.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "PDF cihazınızda açılır ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF sayfaları için PNG mi JPG mi?",
+        answer: "PNG yazıları ve diyagramları kusursuz keskinlikte tutar. JPG daha küçük dosyalar verir ve çoğunlukla fotoğraftan oluşan sayfalara uygundur. Aynı araçta JPG'ye geçebilirsiniz.",
+      },
+      {
+        question: "Hangi çözünürlüğü seçmeliyim?",
+        answer: "150 DPI ekranda iyi görünür. 300 DPI baskı içindir ya da yakınlaştırmanız gerektiğinde kullanılır ve daha büyük dosyalar oluşturur.",
+      },
+      {
+        question: "Parola korumalı bir PDF'i dönüştürebilir miyim?",
+        answer: "Açmak için parola gerekiyorsa hayır. PDF'i bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı kullanın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer: "Hayır. PDF tarayıcınız tarafından okunur ve çizilir, bu yüzden cihazınızda kalır.",
       },
     ],
   },

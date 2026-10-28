@@ -50,7 +50,7 @@ export const utilityStrings = {
   'ctl.svg.help': 'The SVG is redrawn at this size, so edges stay sharp at any scale.',
   'ctl.svg.size': 'Size',
   'ctl.svg.original': 'Original',
-  'ctl.svg.output': 'PNG output',
+  'ctl.svg.output': '{format} output',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Image details',

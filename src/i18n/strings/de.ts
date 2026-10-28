@@ -266,7 +266,7 @@ export const strings = {
   'ctl.svg.help': 'Das SVG wird in dieser Größe neu gezeichnet, daher bleiben die Kanten in jeder Größe scharf.',
   'ctl.svg.size': 'Größe',
   'ctl.svg.original': 'Original',
-  'ctl.svg.output': 'PNG-Ausgabe',
+  'ctl.svg.output': '{format}-Ausgabe',
 
   // Image analyzer
   'ctl.analyzer.specs': 'Bilddetails',
