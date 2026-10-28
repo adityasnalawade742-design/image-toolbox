@@ -4,9 +4,11 @@ import { useT } from '../shared/I18nContext';
 interface Props {
   originalBytes: number;
   outputBytes: number;
+  /** Only the metadata is cut out of the file (no re-encoding) */
+  lossless?: boolean;
 }
 
-export function MetadataStripperControls({ originalBytes, outputBytes }: Props) {
+export function MetadataStripperControls({ originalBytes, outputBytes, lossless }: Props) {
   const t = useT();
 
   const formatSize = (bytes: number) => {
@@ -19,7 +21,7 @@ export function MetadataStripperControls({ originalBytes, outputBytes }: Props) 
     { key: 'gps', Icon: MapPin, title: t('ctl.metadata.gpsTitle'), desc: t('ctl.metadata.gpsDesc') },
     { key: 'camera', Icon: Camera, title: t('ctl.metadata.cameraTitle'), desc: t('ctl.metadata.cameraDesc') },
     { key: 'author', Icon: User, title: t('ctl.metadata.authorTitle'), desc: t('ctl.metadata.authorDesc') },
-    { key: 'blocks', Icon: FileText, title: t('ctl.metadata.blocksTitle'), desc: t('ctl.metadata.blocksDesc') },
+    { key: 'blocks', Icon: FileText, title: t('ctl.metadata.blocksTitle'), desc: lossless ? t('ctl.metadata.losslessDesc') : t('ctl.metadata.blocksDesc') },
   ];
 
   return (

@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Daire yap',
+  'ctl.round.position': 'Daire içindeki konum',
   'ctl.round.presets': 'Köşe yarıçapı',
   'ctl.round.small': 'Küçük',
   'ctl.round.medium': 'Orta',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Sonuç',
   'ctl.compress.original': 'Orijinal',
   'ctl.compress.output': 'Sıkıştırılmış',
+  'ctl.compress.measuring': 'Ölçülüyor…',
   'ctl.compress.change': 'Değişim',
   'ctl.compress.saved': '%{percent} daha küçük',
   'ctl.compress.larger': 'Orijinalden büyük',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Oluşturan ve telif hakkı etiketleri ile düzenleme yazılımının adı.',
   'ctl.metadata.blocksTitle': 'EXIF ve IPTC blokları',
   'ctl.metadata.blocksDesc': 'Resim piksellerinden yeniden çizilir, bu yüzden hiçbir meta veri bloğu aktarılmaz.',
+  'ctl.metadata.losslessDesc': 'Dosyadan yalnızca meta veriler çıkarılır. Görüntü yeniden kaydedilmez; bu yüzden tam kalitesini ve renklerini korur.',
   'ctl.metadata.local': 'Tarayıcınızda yapılır. Fotoğrafınız asla yüklenmez.',
   'ctl.metadata.size': 'Dosya boyutu',
   'ctl.metadata.original': 'Orijinal',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Satır',
   'ctl.split.cols': 'Sütun',
   'ctl.split.gridLimit': 'En fazla 12 satır ve 12 sütun.',
+  'ctl.split.square': 'Kare parçalar',
+  'ctl.split.squareNote': 'Her parçanın kare olması için kenarları eşit şekilde kırpar; Instagram da onları böyle gösterir.',
   'ctl.split.saveAs': 'Parça formatı',
   'ctl.split.tileFormat': 'Parça formatı',
   'ctl.split.tile': 'Parça',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Sayfa işleniyor: {n} / {total}…',
   'ctl.frompdf.replace': 'Başka bir PDF seç',
   'ctl.frompdf.errPassword': 'Bu PDF parolayla korunuyor. Bir PDF okuyucuda açın, parolasız bir kopyasını kaydedin ve o kopyayı deneyin.',
+  'ctl.pdf.errLocked': 'Bu PDF yazarı tarafından kilitlenmiş (parola veya düzenleme kısıtlamaları), bu yüzden burada değiştirilemez. Düzenleme izniniz varsa PDF okuyucuda açın, yeni bir PDF olarak yazdırın veya kaydedin ve o kopyayı kullanın.',
+  'ctl.pdf.errScript': "Metnin bir kısmı henüz bu PDF'e yazılamıyor: {fields}. Latin, Yunan, Kiril, Japon ve Kore yazısı çalışır; Arapça, İbranice, Tayca veya Devanagari gibi yazılar desteklenmez.",
   'ctl.frompdf.errInvalid': 'Bu dosya PDF olarak açılamadı. Hasarlı olabilir veya bir PDF olmayabilir.',
 
   // Merge Images

@@ -22,6 +22,7 @@ import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoff
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
 import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
 import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
 import { installWindowDropGuard } from './useImageIntake';
 import { I18nProvider } from './I18nContext';
 import { DragFrameOverlay } from './DragFrameOverlay';
@@ -239,6 +240,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   // Round corners
   const [roundRadius, setRoundRadius] = useState<number>(30);
   const [isCircleAvatar, setIsCircleAvatar] = useState<boolean>(slug === 'round-image');
+  const [circleFocus, setCircleFocus] = useState<number>(50);
   const [bgFillColor, setBgFillColor] = useState<string>('#ffffff');
 
   // SVG Scale
@@ -268,6 +270,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const rafRef = useRef<number | null>(null);
   // Drops size estimates that resolve after a newer one started (AVIF encodes are slow)
   const estimateSeqRef = useRef<number>(0);
+  // Remove Image Metadata: the original file with only its metadata cut out, when the output keeps its format
+  const [cleanFile, setCleanFile] = useState<Uint8Array | null>(null);
+  const cleanFileRef = useRef<Uint8Array | null>(null);
+  const sizeTimerRef = useRef<number | null>(null);
 
   const handleFile = async (file: File) => {
     try {
@@ -430,6 +436,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       border: slug === 'add-border-to-image' ? borderOptions : undefined,
       cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
       isCircle: slug === 'round-image' ? isCircleAvatar : (slug === 'crop-image' ? isCropCircle && forExport : false),
+      circleFocus: slug === 'round-image' ? circleFocus / 100 : undefined,
       // JPEG has no alpha channel, so transparent areas get the chosen fill instead of black
       backgroundColor: format === 'image/jpeg' ? bgFillColor : undefined,
     };
@@ -449,9 +456,34 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     borderOptions,
     roundRadius,
     isCircleAvatar,
+    circleFocus,
     format,
     bgFillColor,
   ]);
+
+  // JPG, PNG and WebP kept in their own format lose only their metadata: no re-encoding, so no quality change
+  useEffect(() => {
+    let cancelled = false;
+    const done = (bytes: Uint8Array | null) => {
+      if (cancelled) return;
+      cleanFileRef.current = bytes;
+      setCleanFile(bytes);
+      if (bytes) setOutputBytes(bytes.length);
+    };
+    if (slug !== 'remove-image-metadata' || !sourceFile) {
+      done(null);
+      return;
+    }
+    const MIME = { jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp' } as const;
+    sourceFile.arrayBuffer().then((buf) => {
+      const bytes = new Uint8Array(buf);
+      const kind = stripFormat(bytes);
+      done(kind && MIME[kind] === format ? stripMetadata(bytes) : null);
+    }).catch(() => done(null));
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, sourceFile, format]);
 
   // Any change to the settings makes the last download's size stale
   useEffect(() => {
@@ -487,15 +519,29 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           }
 
           // Calculate output size metrics (only the tools that display them pay for the encode)
-          if (slug === 'compress-image' || slug === 'remove-image-metadata') {
+          if (slug === 'compress-image' || (slug === 'remove-image-metadata' && !cleanFileRef.current)) {
             const estimateSeq = ++estimateSeqRef.current;
-            canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate')
-              .then((b) => {
-                if (estimateSeq === estimateSeqRef.current) setOutputBytes(b.size);
-              })
-              .catch((err) => {
-                if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
-              });
+            const report = (b: Blob) => {
+              // A lossless metadata copy that arrived meanwhile has the real size
+              if (estimateSeq === estimateSeqRef.current && !(slug === 'remove-image-metadata' && cleanFileRef.current)) setOutputBytes(b.size);
+            };
+            const failed = (err: unknown) => {
+              if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
+            };
+            if (activeImg === imageElement) {
+              // The preview is the photo itself, so its encoded size is the real one
+              canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate').then(report).catch(failed);
+            } else {
+              // Large photos are previewed from a reduced copy, whose size says little about the real file:
+              // measure the full-size output once the settings stop changing
+              setOutputBytes(0);
+              if (sizeTimerRef.current) clearTimeout(sizeTimerRef.current);
+              const fullImg = imageElement;
+              sizeTimerRef.current = window.setTimeout(() => {
+                if (estimateSeq !== estimateSeqRef.current || !fullImg) return;
+                canvasToBlob(processCanvas(fullImg, getProcessingOptions(true)), format, quality / 100, 'preview-estimate').then(report).catch(failed);
+              }, 450);
+            }
           }
         } catch (err) {
           console.error('Canvas processing error:', err);
@@ -651,6 +697,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     setExportError(null);
 
     try {
+      if (slug === 'remove-image-metadata' && cleanFile) {
+        const blob = new Blob([new Uint8Array(cleanFile)], { type: format });
+        downloadBlob(blob, `${filename}-no-metadata.${formatExtension(format)}`);
+        setLastExportBytes(blob.size);
+        return;
+      }
+
       if (slug === 'favicon-generator') {
         await generateFaviconBundle(imageElement, `${filename}-favicon-package.zip`);
         return;
@@ -734,12 +787,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         }
       }
 
-      // Escape -> Clear current image
-      if (e.key === 'Escape' && imageElement && !isInput) {
-        setImageElement(null);
-        setPreviewImageElement(null);
-        setErrorMessage(null);
-      }
+      // Escape no longer clears the image: people press it to close menus, and losing the edit had no undo
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -1033,6 +1081,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   onRadiusChange={setRoundRadius}
                   onIsCircleChange={setIsCircleAvatar}
                   onBackgroundColorChange={setBgFillColor}
+                  focus={origW !== origH ? circleFocus : undefined}
+                  onFocusChange={setCircleFocus}
                 />
               )}
 
@@ -1048,7 +1098,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'remove-image-metadata' && (
-                <MetadataStripperControls originalBytes={fileSize} outputBytes={outputBytes} />
+                <MetadataStripperControls originalBytes={fileSize} outputBytes={outputBytes} lossless={!!cleanFile} />
               )}
 
               {slug === 'png-to-jpg' && (

@@ -4,6 +4,7 @@ import { PdfToolLayout } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { fillForm, listFormFields, type FormField } from '../../../lib/pdf/pageOps';
 import { PdfDropScreen, pdfName, savePdf, useEditError, usePdfReplace } from './common';
+import { loadSiteFont } from '../../../lib/pdf/unicodeFont';
 
 const fieldClass = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink disabled:bg-paper-stock disabled:text-graphite';
 
@@ -45,7 +46,7 @@ export function FillFormWorkspace() {
     setBusy(true);
     setError(null);
     try {
-      const out = await fillForm(pdf.bytes, values, flatten);
+      const out = await fillForm(pdf.bytes, values, flatten, loadSiteFont);
       const name = pdfName(pdf.file?.name, 'filled');
       savePdf(out, name);
       setStatus(t('ctl.pdf.done', { name }));

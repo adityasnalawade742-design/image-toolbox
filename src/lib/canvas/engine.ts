@@ -89,6 +89,8 @@ export interface ImageProcessingOptions {
   border?: BorderOptions;
   cornerRadius?: number;
   isCircle?: boolean;
+  /** For a circle from a non-square photo without a crop: where along the long side the circle sits (0–1, centre 0.5) */
+  circleFocus?: number;
   backgroundColor?: string; // For JPG conversion / background fill
 }
 
@@ -178,6 +180,18 @@ export function processCanvas(
   // 2. Base Target Dimensions
   let targetW = options.width || srcW;
   let targetH = options.height || srcH;
+
+  // A circle from a non-square photo: take a square around the chosen point, so the circle fills the frame
+  // instead of leaving empty margins on the long sides
+  if (options.isCircle && !options.crop && srcW !== srcH) {
+    const side = Math.min(srcW, srcH);
+    const focus = Math.max(0, Math.min(1, options.circleFocus ?? 0.5));
+    const scale = Math.min(targetW / srcW, targetH / srcH);
+    if (srcW > srcH) srcX += (srcW - side) * focus;
+    else srcY += (srcH - side) * focus;
+    srcW = srcH = side;
+    targetW = targetH = Math.max(1, Math.round(side * scale));
+  }
 
   // 3. Rotation Bounding Box Mathematics
   const angleDeg = options.rotation || 0;

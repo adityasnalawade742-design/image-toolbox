@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Kreis erstellen',
+  'ctl.round.position': 'Position im Kreis',
   'ctl.round.presets': 'Eckenradius',
   'ctl.round.small': 'Klein',
   'ctl.round.medium': 'Mittel',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Ergebnis',
   'ctl.compress.original': 'Original',
   'ctl.compress.output': 'Komprimiert',
+  'ctl.compress.measuring': 'Wird gemessen …',
   'ctl.compress.change': 'Änderung',
   'ctl.compress.saved': '{percent} % kleiner',
   'ctl.compress.larger': 'Größer als das Original',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Angaben zu Urheber und Copyright sowie der Name der Bearbeitungssoftware.',
   'ctl.metadata.blocksTitle': 'EXIF- und IPTC-Blöcke',
   'ctl.metadata.blocksDesc': 'Das Bild wird aus seinen Pixeln neu gezeichnet, daher wird kein Metadatenblock übernommen.',
+  'ctl.metadata.losslessDesc': 'Nur die Metadaten werden aus der Datei entfernt. Das Bild wird nicht neu gespeichert und behält seine volle Qualität und Farben.',
   'ctl.metadata.local': 'Läuft in deinem Browser. Dein Foto wird nie hochgeladen.',
   'ctl.metadata.size': 'Dateigröße',
   'ctl.metadata.original': 'Original',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Zeilen',
   'ctl.split.cols': 'Spalten',
   'ctl.split.gridLimit': 'Bis zu 12 Zeilen und 12 Spalten.',
+  'ctl.split.square': 'Quadratische Kacheln',
+  'ctl.split.squareNote': 'Schneidet die Ränder gleichmäßig ab, damit jede Kachel quadratisch ist – so, wie Instagram sie zeigt.',
   'ctl.split.saveAs': 'Kacheln speichern als',
   'ctl.split.tileFormat': 'Kachelformat',
   'ctl.split.tile': 'Kachel',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Seite {n} von {total} wird gerendert …',
   'ctl.frompdf.replace': 'Anderes PDF wählen',
   'ctl.frompdf.errPassword': 'Dieses PDF ist mit einem Passwort geschützt. Öffne es in einem PDF-Reader, speichere eine Kopie ohne Passwort und versuch es mit dieser Kopie.',
+  'ctl.pdf.errLocked': 'Dieses PDF ist vom Ersteller gesperrt (Passwort oder Bearbeitungsbeschränkungen) und kann hier nicht geändert werden. Wenn du es bearbeiten darfst, öffne es in einem PDF-Reader, drucke oder speichere es als neues PDF und nutze diese Kopie.',
+  'ctl.pdf.errScript': 'Ein Teil des Textes kann noch nicht in dieses PDF geschrieben werden: {fields}. Lateinische, griechische, kyrillische, japanische und koreanische Schrift funktioniert; Schriften wie Arabisch, Hebräisch, Thai oder Devanagari werden nicht unterstützt.',
   'ctl.frompdf.errInvalid': 'Diese Datei konnte nicht als PDF geöffnet werden. Sie ist vielleicht beschädigt oder kein PDF.',
 
   // Merge Images

@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': '원형으로 만들기',
+  'ctl.round.position': '원 안의 위치',
   'ctl.round.presets': '모서리 반경',
   'ctl.round.small': '작게',
   'ctl.round.medium': '보통',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': '결과',
   'ctl.compress.original': '원본',
   'ctl.compress.output': '압축본',
+  'ctl.compress.measuring': '측정 중…',
   'ctl.compress.change': '변화',
   'ctl.compress.saved': '{percent}% 감소',
   'ctl.compress.larger': '원본보다 커요',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': '제작자·저작권 태그와 편집 소프트웨어 이름.',
   'ctl.metadata.blocksTitle': 'EXIF 및 IPTC 블록',
   'ctl.metadata.blocksDesc': '이미지를 픽셀만으로 다시 그리기 때문에 메타데이터 블록이 따라오지 않아요.',
+  'ctl.metadata.losslessDesc': '파일에서 메타데이터만 잘라 내요. 이미지는 다시 저장하지 않으므로 화질과 색상이 그대로 유지돼요.',
   'ctl.metadata.local': '브라우저에서 처리돼요. 사진은 업로드되지 않아요.',
   'ctl.metadata.size': '파일 크기',
   'ctl.metadata.original': '원본',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': '행',
   'ctl.split.cols': '열',
   'ctl.split.gridLimit': '최대 12행 12열까지 가능해요.',
+  'ctl.split.square': '정사각형 타일',
+  'ctl.split.squareNote': '모든 타일이 정사각형이 되도록 가장자리를 고르게 잘라요. Instagram에 보이는 모양과 같아요.',
   'ctl.split.saveAs': '조각 저장 형식',
   'ctl.split.tileFormat': '조각 형식',
   'ctl.split.tile': '조각',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': '{total}페이지 중 {n}페이지 변환 중…',
   'ctl.frompdf.replace': '다른 PDF 선택',
   'ctl.frompdf.errPassword': '이 PDF는 비밀번호로 보호되어 있어요. PDF 리더에서 열어 비밀번호 없는 사본을 저장한 다음, 그 사본으로 다시 시도하세요.',
+  'ctl.pdf.errLocked': '이 PDF는 작성자가 잠가 두어(비밀번호 또는 편집 제한) 여기서 바꿀 수 없어요. 편집 권한이 있다면 PDF 리더에서 열어 새 PDF로 인쇄하거나 저장한 뒤 그 사본을 사용하세요.',
+  'ctl.pdf.errScript': '일부 텍스트는 아직 이 PDF에 쓸 수 없어요: {fields}. 라틴·그리스·키릴 문자와 일본어, 한국어는 쓸 수 있지만, 아랍어, 히브리어, 태국어, 데바나가리 같은 문자는 지원하지 않아요.',
   'ctl.frompdf.errInvalid': '이 파일을 PDF로 열 수 없어요. 손상되었거나 PDF가 아닐 수 있어요.',
 
   // ===== Merge Images =====

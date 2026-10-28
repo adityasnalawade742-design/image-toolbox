@@ -1126,7 +1126,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Rimuovi EXIF",
     tagline: "Rimuovi da una foto i dati EXIF come posizione GPS, modello della fotocamera e data, prima di condividerla.",
     intro:
-      "Rimuovi metadati immagine crea una copia pulita della foto senza le informazioni EXIF nascoste. Le foto di telefoni e fotocamere spesso registrano la posizione GPS in cui sono state scattate, il modello del dispositivo, la data e l’ora. Questo strumento ridisegna l’immagine dai suoi pixel e salva un nuovo file, così quelle informazioni non vengono copiate, e mostra il nuovo peso prima del download.",
+      "Rimuovi metadati immagine crea una copia pulita della tua foto senza le informazioni EXIF nascoste. Le foto di smartphone e fotocamere spesso registrano la posizione GPS dello scatto, il modello del dispositivo e la data e l’ora. Per JPG, PNG e WebP vengono tolte dal file solo queste informazioni: l’immagine non viene salvata di nuovo, quindi qualità e colori restano esattamente uguali. La nuova dimensione del file viene mostrata prima del download.",
     seoTitle: "Rimuovere dati EXIF dalle foto – GPS e metadati",
     seoDescription:
       "Rimuovi gratis i metadati EXIF dalle foto. Elimina posizione GPS, modello della fotocamera e data prima di condividerle. Tutto nel browser, nessun upload.",
@@ -1149,9 +1149,9 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "L’anteprima mostra l’immagine che verrà salvata, insieme al suo nuovo peso.",
       },
       {
-        title: "Scegli formato e qualità",
+        title: "Mantieni il formato",
         description:
-          "Di norma viene mantenuto il formato originale. Per JPG e WebP, usa una qualità dal 90% al 100% per restare vicino all’originale, o scegli PNG per un’uscita senza perdita.",
+          "Mantenendo il formato originale vengono tolti solo i metadati, senza alcuna perdita di qualità. Se cambi formato, l’immagine viene salvata di nuovo: per JPG e WebP usa una qualità dal 90% al 100%, o scegli PNG.",
       },
       {
         title: "Scarica e condividi il nuovo file",
@@ -1165,8 +1165,8 @@ export const itTools: Record<string, LocalizedToolItem> = {
           "Coordinate GPS, marca e modello della fotocamera, obiettivo, data di scatto e altri campi EXIF e IPTC non vengono scritti nel nuovo file.",
       },
       {
-        title: "Copia pulita dai pixel",
-        description: "L’immagine viene ridisegnata dai suoi pixel, quindi nessun dato nascosto può essere copiato per sbaglio.",
+        title: "Nessuna perdita di qualità",
+        description: "JPG, PNG e WebP mantengono i pixel esatti e il profilo colore; vengono tolti solo i dati nascosti.",
       },
       {
         title: "Indicazione del peso",
@@ -1181,12 +1181,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quali metadati vengono rimossi?",
         answer:
-          "Tutti: i dati EXIF (fotocamera, impostazioni, data e GPS), i campi IPTC e XMP come autore o copyright, e il profilo colore incorporato. Resta solo l’immagine visibile.",
+          "I dati EXIF (fotocamera, impostazioni, data e GPS), i campi IPTC e XMP come autore o copyright, i commenti e il testo dei PNG. Il profilo colore viene mantenuto perché i colori non cambino, e un JPG conserva l’orientamento per non apparire di lato.",
       },
       {
         question: "Rimuovere i metadati cambia la qualità dell’immagine?",
         answer:
-          "L’immagine viene salvata di nuovo. PNG mantiene ogni pixel, mentre JPG, WebP e AVIF vengono compressi di nuovo, quindi scegli una qualità alta. Le foto con un profilo colore ampio, come molte foto di iPhone, possono apparire un po’ meno vivaci perché il profilo non viene mantenuto.",
+          "No, se mantieni il formato: i file JPG, PNG e WebP non vengono salvati di nuovo, quindi ogni pixel resta uguale. Se converti in un altro formato, o parti da una foto HEIC di iPhone, l’immagine viene salvata di nuovo, quindi scegli una qualità alta.",
       },
       {
         question: "Come verifico che la posizione sia sparita?",

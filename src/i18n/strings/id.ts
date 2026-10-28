@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Jadikan lingkaran',
+  'ctl.round.position': 'Posisi dalam lingkaran',
   'ctl.round.presets': 'Radius sudut',
   'ctl.round.small': 'Kecil',
   'ctl.round.medium': 'Sedang',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Hasil',
   'ctl.compress.original': 'Asli',
   'ctl.compress.output': 'Terkompres',
+  'ctl.compress.measuring': 'Mengukur…',
   'ctl.compress.change': 'Perubahan',
   'ctl.compress.saved': '{percent}% lebih kecil',
   'ctl.compress.larger': 'Lebih besar dari aslinya',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Tag pembuat dan hak cipta, serta nama software pengeditnya.',
   'ctl.metadata.blocksTitle': 'Blok EXIF dan IPTC',
   'ctl.metadata.blocksDesc': 'Gambar digambar ulang dari pikselnya, jadi tidak ada blok metadata yang ikut terbawa.',
+  'ctl.metadata.losslessDesc': 'Hanya metadata yang dihapus dari file. Gambar tidak disimpan ulang, jadi kualitas dan warnanya tetap utuh.',
   'ctl.metadata.local': 'Diproses di browser Anda. Foto Anda tidak pernah diunggah.',
   'ctl.metadata.size': 'Ukuran file',
   'ctl.metadata.original': 'Asli',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Baris',
   'ctl.split.cols': 'Kolom',
   'ctl.split.gridLimit': 'Hingga 12 baris dan 12 kolom.',
+  'ctl.split.square': 'Ubin persegi',
+  'ctl.split.squareNote': 'Memangkas tepi secara merata agar setiap ubin persegi, seperti yang ditampilkan Instagram.',
   'ctl.split.saveAs': 'Simpan potongan sebagai',
   'ctl.split.tileFormat': 'Format potongan',
   'ctl.split.tile': 'Potongan',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Merender halaman {n} dari {total}…',
   'ctl.frompdf.replace': 'Pilih PDF lain',
   'ctl.frompdf.errPassword': 'PDF ini dilindungi kata sandi. Buka di pembaca PDF, simpan salinan tanpa kata sandi, lalu coba salinan itu.',
+  'ctl.pdf.errLocked': 'PDF ini dikunci oleh pembuatnya (kata sandi atau batasan pengeditan), jadi tidak bisa diubah di sini. Jika Anda diizinkan mengeditnya, buka di pembaca PDF, cetak atau simpan sebagai PDF baru, lalu gunakan salinan itu.',
+  'ctl.pdf.errScript': 'Sebagian teks belum bisa ditulis ke PDF ini: {fields}. Huruf Latin, Yunani, Sirilik, Jepang, dan Korea bisa dipakai; aksara seperti Arab, Ibrani, Thai, atau Dewanagari belum didukung.',
   'ctl.frompdf.errInvalid': 'File ini tidak bisa dibuka sebagai PDF. Mungkin file rusak, atau bukan PDF.',
 
   // ===== Merge Images =====

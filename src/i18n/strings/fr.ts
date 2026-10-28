@@ -287,6 +287,8 @@ export const strings = {
   'ctl.split.rows': "Lignes",
   'ctl.split.cols': "Colonnes",
   'ctl.split.gridLimit': "Jusqu’à 12 lignes et 12 colonnes.",
+  'ctl.split.square': 'Tuiles carrées',
+  'ctl.split.squareNote': 'Rogne les bords de façon égale pour que chaque tuile soit carrée, comme Instagram les affiche.',
   'ctl.split.saveAs': "Enregistrer les tuiles en",
   'ctl.split.tileFormat': "Format des tuiles",
   'ctl.split.tile': "Tuile",
@@ -466,6 +468,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': "Faire un cercle",
+  'ctl.round.position': 'Position dans le cercle',
   'ctl.round.presets': "Rayon des coins",
   'ctl.round.small': "Petit",
   'ctl.round.medium': "Moyen",
@@ -486,6 +489,7 @@ export const strings = {
   'ctl.compress.result': "Résultat",
   'ctl.compress.original': "Original",
   'ctl.compress.output': "Compressé",
+  'ctl.compress.measuring': 'Mesure en cours…',
   'ctl.compress.change': "Variation",
   'ctl.compress.saved': "{percent} % plus léger",
   'ctl.compress.larger': "Plus lourd que l’original",
@@ -510,6 +514,7 @@ export const strings = {
   'ctl.metadata.authorDesc': "Mentions d’auteur et de copyright, et nom du logiciel de retouche.",
   'ctl.metadata.blocksTitle': "Blocs EXIF et IPTC",
   'ctl.metadata.blocksDesc': "L’image est redessinée à partir de ses pixels : aucun bloc de métadonnées n’est repris.",
+  'ctl.metadata.losslessDesc': 'Seules les métadonnées sont retirées du fichier. L’image n’est pas réenregistrée et garde toute sa qualité et ses couleurs.',
   'ctl.metadata.local': "Traité dans votre navigateur. Votre photo n’est jamais envoyée.",
   'ctl.metadata.size': "Poids du fichier",
   'ctl.metadata.original': "Original",
@@ -674,6 +679,8 @@ export const strings = {
   'ctl.frompdf.rendering': "Rendu de la page {n} sur {total}…",
   'ctl.frompdf.replace': "Choisir un autre PDF",
   'ctl.frompdf.errPassword': "Ce PDF est protégé par un mot de passe. Ouvrez-le dans un lecteur PDF, enregistrez une copie sans mot de passe et essayez avec cette copie.",
+  'ctl.pdf.errLocked': 'Ce PDF est verrouillé par son auteur (mot de passe ou restrictions de modification) et ne peut pas être modifié ici. Si vous avez le droit de le modifier, ouvrez-le dans un lecteur PDF, imprimez-le ou enregistrez-le comme nouveau PDF, puis utilisez cette copie.',
+  'ctl.pdf.errScript': 'Une partie du texte ne peut pas encore être écrite dans ce PDF : {fields}. Les alphabets latin, grec et cyrillique, le japonais et le coréen fonctionnent ; les écritures comme l’arabe, l’hébreu, le thaï ou le devanagari ne sont pas prises en charge.',
   'ctl.frompdf.errInvalid': "Ce fichier n’a pas pu être ouvert comme PDF. Il est peut-être endommagé, ou ce n’est pas un PDF.",
 
   // Merge Images

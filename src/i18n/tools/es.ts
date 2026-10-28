@@ -1126,7 +1126,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Quitar EXIF",
     tagline: "Elimina los datos EXIF, como la ubicación GPS, el modelo de cámara y la fecha, de una foto antes de compartirla.",
     intro:
-      "Eliminar metadatos de imagen crea una copia limpia de tu foto sin su información EXIF oculta. Las fotos de teléfonos y cámaras suelen registrar la ubicación GPS donde se tomaron, el modelo del dispositivo y la fecha y hora. Esta herramienta vuelve a dibujar la imagen a partir de sus píxeles y guarda un archivo nuevo, así que esa información no se conserva, y te muestra el nuevo tamaño del archivo antes de descargarlo.",
+      "Eliminar metadatos de imagen crea una copia limpia de tu foto sin su información EXIF oculta. Las fotos de móviles y cámaras suelen registrar la ubicación GPS donde se tomaron, el modelo del dispositivo y la fecha y hora. En JPG, PNG y WebP solo se elimina esa información del archivo: la imagen no se vuelve a guardar, así que su calidad y sus colores quedan exactamente iguales. El nuevo tamaño del archivo se muestra antes de descargar.",
     seoTitle: "Eliminar datos EXIF de fotos: GPS y metadatos",
     seoDescription:
       "Eliminar metadatos EXIF de fotos gratis. Quita la ubicación GPS, el modelo de cámara y la fecha antes de compartir una imagen. Todo en tu navegador.",
@@ -1149,9 +1149,9 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "La vista previa muestra la imagen que se va a guardar, junto con su nuevo tamaño de archivo.",
       },
       {
-        title: "Elige formato y calidad",
+        title: "Mantén el formato",
         description:
-          "Por defecto se mantiene el formato original. Para JPG y WebP, usa una calidad del 90% al 100% para quedarte cerca del original, o elige PNG para un resultado sin pérdida.",
+          "Si mantienes el formato original, solo se eliminan los metadatos, sin cambio de calidad. Si cambias de formato, la imagen se vuelve a guardar: para JPG y WebP usa una calidad del 90% al 100%, o elige PNG.",
       },
       {
         title: "Descarga y comparte el nuevo archivo",
@@ -1165,8 +1165,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
           "Las coordenadas GPS, la marca y el modelo de la cámara, el objetivo, la fecha de captura y otros campos EXIF e IPTC no se escriben en el nuevo archivo.",
       },
       {
-        title: "Copia limpia a partir de los píxeles",
-        description: "La imagen se vuelve a dibujar a partir de sus píxeles, así que no se puede copiar ningún dato oculto por accidente.",
+        title: "Sin pérdida de calidad",
+        description: "JPG, PNG y WebP conservan sus píxeles exactos y su perfil de color; solo se elimina la información oculta.",
       },
       {
         title: "Tamaño del archivo a la vista",
@@ -1181,12 +1181,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué metadatos se eliminan?",
         answer:
-          "Todos: los datos EXIF (cámara, ajustes, fecha y GPS), los campos IPTC y XMP, como el autor o el copyright, y el perfil de color incrustado. Solo se conserva la imagen visible.",
+          "Los datos EXIF (cámara, ajustes, fecha y GPS), los campos IPTC y XMP como autor o copyright, los comentarios y el texto de PNG. El perfil de color se conserva para que los colores no cambien, y un JPG mantiene su orientación para que no se vea de lado.",
       },
       {
         question: "¿Eliminar los metadatos cambia la calidad de la imagen?",
         answer:
-          "La imagen se vuelve a guardar. PNG conserva cada píxel, mientras que JPG, WebP y AVIF se vuelven a comprimir, así que elige una calidad alta. Las fotos con un perfil de color amplio, como muchas fotos de iPhone, pueden verse un poco menos vivas porque el perfil no se conserva.",
+          "No si mantienes el formato: los archivos JPG, PNG y WebP no se vuelven a guardar, así que cada píxel queda igual. Si conviertes a otro formato, o partes de una foto HEIC de iPhone, la imagen se vuelve a guardar, así que elige una calidad alta.",
       },
       {
         question: "¿Cómo puedo comprobar que la ubicación ya no está?",

@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Hacer un círculo',
+  'ctl.round.position': 'Posición en el círculo',
   'ctl.round.presets': 'Radio de las esquinas',
   'ctl.round.small': 'Pequeño',
   'ctl.round.medium': 'Mediano',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Resultado',
   'ctl.compress.original': 'Original',
   'ctl.compress.output': 'Comprimida',
+  'ctl.compress.measuring': 'Midiendo…',
   'ctl.compress.change': 'Cambio',
   'ctl.compress.saved': '{percent}% más pequeña',
   'ctl.compress.larger': 'Más grande que la original',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Etiquetas de creador y copyright, y el nombre del programa de edición.',
   'ctl.metadata.blocksTitle': 'Bloques EXIF e IPTC',
   'ctl.metadata.blocksDesc': 'La imagen se vuelve a dibujar a partir de sus píxeles, así que no se conserva ningún bloque de metadatos.',
+  'ctl.metadata.losslessDesc': 'Solo se eliminan los metadatos del archivo. La imagen no se vuelve a guardar, así que conserva toda su calidad y sus colores.',
   'ctl.metadata.local': 'Se hace en tu navegador. Tu foto nunca se sube.',
   'ctl.metadata.size': 'Tamaño de archivo',
   'ctl.metadata.original': 'Original',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Filas',
   'ctl.split.cols': 'Columnas',
   'ctl.split.gridLimit': 'Hasta 12 filas y 12 columnas.',
+  'ctl.split.square': 'Mosaicos cuadrados',
+  'ctl.split.squareNote': 'Recorta los bordes por igual para que cada mosaico sea cuadrado, como los muestra Instagram.',
   'ctl.split.saveAs': 'Guardar partes como',
   'ctl.split.tileFormat': 'Formato de las partes',
   'ctl.split.tile': 'Parte',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Renderizando página {n} de {total}…',
   'ctl.frompdf.replace': 'Elegir otro PDF',
   'ctl.frompdf.errPassword': 'Este PDF está protegido con contraseña. Ábrelo en un lector de PDF, guarda una copia sin contraseña y prueba con esa copia.',
+  'ctl.pdf.errLocked': 'El autor bloqueó este PDF (con contraseña o restricciones de edición), así que no se puede cambiar aquí. Si tienes permiso para editarlo, ábrelo en un lector de PDF, imprímelo o guárdalo como un PDF nuevo y usa esa copia.',
+  'ctl.pdf.errScript': 'Parte del texto aún no se puede escribir en este PDF: {fields}. Funcionan el alfabeto latino, griego y cirílico, y el japonés y el coreano; escrituras como el árabe, el hebreo, el tailandés o el devanagari no son compatibles.',
   'ctl.frompdf.errInvalid': 'Este archivo no se pudo abrir como PDF. Puede estar dañado o no ser un PDF.',
 
   // Merge Images

@@ -1126,7 +1126,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "EXIF Temizleyici",
     tagline: "Paylaşmadan önce bir fotoğraftan GPS konumu, kamera modeli ve tarih gibi EXIF verilerini kaldırın.",
     intro:
-      "Resim Meta Verisi Silme, fotoğrafınızın gizli EXIF bilgileri olmadan temiz bir kopyasını oluşturur. Telefon ve kamera fotoğrafları çoğu zaman çekildikleri yerin GPS konumunu, cihaz modelini ve tarih ile saati kaydeder. Bu araç resmi piksellerinden yeniden çizip yeni bir dosya kaydeder; böylece bu bilgiler aktarılmaz. İndirmeden önce yeni dosya boyutunu da gösterir.",
+      "Resim Meta Verisi Silme, fotoğrafınızın gizli EXIF bilgileri olmadan temiz bir kopyasını oluşturur. Telefon ve kamera fotoğrafları çoğu zaman çekildikleri yerin GPS konumunu, cihaz modelini ve tarih ile saati kaydeder. JPG, PNG ve WebP'de dosyadan yalnızca bu bilgiler çıkarılır: görüntü yeniden kaydedilmez, bu yüzden kalitesi ve renkleri tamamen aynı kalır. Yeni dosya boyutu indirmeden önce gösterilir.",
     seoTitle: "Fotoğraftan EXIF Silme – GPS ve Meta Veri",
     seoDescription:
       "Fotoğraftan EXIF ve meta veri silme, ücretsiz. Bir resmi paylaşmadan önce GPS konumunu, kamera modelini ve tarihi kaldırın. Tarayıcınızda işlenir, asla yüklenmez.",
@@ -1149,9 +1149,9 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Önizleme, kaydedilecek resmi yeni dosya boyutuyla birlikte gösterir.",
       },
       {
-        title: "Format ve kaliteyi seçin",
+        title: "Formatı koruyun",
         description:
-          "Varsayılan olarak orijinal format korunur. JPG ve WebP için orijinale yakın kalmak üzere %90 ile %100 kalite kullanın veya kayıpsız çıktı için PNG'yi seçin.",
+          "Orijinal formatı korursanız yalnızca meta veriler çıkarılır, kalite değişmez. Formatı değiştirirseniz görüntü yeniden kaydedilir: JPG ve WebP için %90 ile %100 kalite kullanın veya PNG'yi seçin.",
       },
       {
         title: "Yeni dosyayı indirip paylaşın",
@@ -1165,8 +1165,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
           "GPS koordinatları, kamera markası ve modeli, lens, çekim tarihi ve diğer EXIF ile IPTC alanları yeni dosyaya yazılmaz.",
       },
       {
-        title: "Piksellerden temiz kopya",
-        description: "Resim piksellerinden yeniden çizilir, bu yüzden hiçbir gizli veri yanlışlıkla kopyalanamaz.",
+        title: "Kalite kaybı yok",
+        description: "JPG, PNG ve WebP tam piksellerini ve renk profillerini korur; yalnızca gizli veriler çıkarılır.",
       },
       {
         title: "Dosya boyutu göstergesi",
@@ -1181,12 +1181,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hangi meta veriler kaldırılır?",
         answer:
-          "Hepsi: EXIF verileri (kamera, ayarlar, tarih ve GPS), yazar veya telif hakkı gibi IPTC ve XMP alanları ve gömülü renk profili. Yalnızca görünen resim korunur.",
+          "EXIF verileri (kamera, ayarlar, tarih ve GPS), yazar veya telif hakkı gibi IPTC ve XMP alanları, yorumlar ve PNG metinleri. Renkler değişmesin diye renk profili korunur; JPG de yan görünmesin diye yönünü korur.",
       },
       {
         question: "Meta verileri kaldırmak resim kalitesini değiştirir mi?",
         answer:
-          "Resim yeniden kaydedilir. PNG her pikseli korur; JPG, WebP ve AVIF ise yeniden sıkıştırılır, bu yüzden yüksek bir kalite seçin. Birçok iPhone fotoğrafı gibi geniş renk profilli fotoğraflar, profil korunmadığı için biraz daha az canlı görünebilir.",
+          "Formatı korursanız değiştirmez: JPG, PNG ve WebP dosyaları yeniden kaydedilmez, her piksel aynı kalır. Başka bir formata dönüştürürseniz veya bir iPhone HEIC fotoğrafıyla başlarsanız görüntü yeniden kaydedilir, bu yüzden yüksek bir kalite seçin.",
       },
       {
         question: "Konumun silindiğini nasıl kontrol edebilirim?",

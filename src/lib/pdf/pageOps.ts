@@ -16,11 +16,13 @@ import {
   StandardFonts,
   rgb,
   type PDFPage,
+  type PDFFont,
 } from 'pdf-lib';
 
-import { PdfEncryptedError } from './errors';
+import { PdfEncryptedError, PdfUnsupportedTextError } from './errors';
+import { fontScriptFor, type FontScript } from './unicodeFont';
 
-export { PdfEncryptedError };
+export { PdfEncryptedError, PdfUnsupportedTextError };
 
 /** Open a PDF for editing; password-protected files raise PdfEncryptedError */
 export async function loadPdf(bytes: Uint8Array | ArrayBuffer): Promise<PDFDocument> {
@@ -124,13 +126,45 @@ export function pageLabel(n: number, total: number, format: NumberFormat): strin
   return String(n);
 }
 
-/** Where a box of w × h sits on a page of the visible size, in the page's unrotated coordinates */
-function placeOnPage(page: PDFPage, pos: NumberPosition, w: number, h: number, margin: number) {
-  const { width, height } = page.getSize();
+/**
+ * A page as it is seen on screen: its visible size (the crop box, turned by the page's rotation) and a mapping from
+ * a point measured from the visible top-left corner to the page's own coordinates.
+ */
+export function visualPage(page: PDFPage) {
+  const box = page.getCropBox();
+  const r = ((Math.round(page.getRotation().angle / 90) * 90) % 360 + 360) % 360;
+  const sideways = r === 90 || r === 270;
+  const width = sideways ? box.height : box.width;
+  const height = sideways ? box.width : box.height;
+  const toPage = (u: number, v: number) => {
+    if (r === 90) return { x: box.x + v, y: box.y + u };
+    if (r === 180) return { x: box.x + box.width - u, y: box.y + v };
+    if (r === 270) return { x: box.x + box.width - v, y: box.y + box.height - u };
+    return { x: box.x + u, y: box.y + box.height - v };
+  };
+  return { width, height, rotation: r, toPage };
+}
+
+/**
+ * Where to draw a w × h box so it appears centred on (u, v) of the visible page and turned by `angle` degrees
+ * anticlockwise on screen. pdf-lib rotates around the box's bottom-left corner, so that corner is offset.
+ */
+export function placeCentred(page: PDFPage, u: number, v: number, w: number, h: number, angle = 0) {
+  const view = visualPage(page);
+  const c = view.toPage(u, v);
+  // The page's own rotation turns everything clockwise on screen, so draw that much further anticlockwise
+  const deg = angle + view.rotation;
+  const a = (deg * Math.PI) / 180;
+  return { x: c.x - (w / 2) * Math.cos(a) + (h / 2) * Math.sin(a), y: c.y - (w / 2) * Math.sin(a) - (h / 2) * Math.cos(a), rotate: degrees(deg) };
+}
+
+/** The centre of a w × h box at a corner or edge of the visible page */
+function numberCentre(page: PDFPage, pos: NumberPosition, w: number, h: number, margin: number) {
+  const { width, height } = visualPage(page);
   const [v, hz] = pos.split('-');
-  const x = hz === 'left' ? margin : hz === 'right' ? width - margin - w : (width - w) / 2;
-  const y = v === 'bottom' ? margin : height - margin - h;
-  return { x, y };
+  const u = hz === 'left' ? margin + w / 2 : hz === 'right' ? width - margin - w / 2 : width / 2;
+  const y = v === 'bottom' ? height - margin - h / 2 : margin + h / 2;
+  return { u, v: y };
 }
 
 export async function addPageNumbers(bytes: Uint8Array | ArrayBuffer, opts: PageNumberOptions): Promise<Uint8Array> {
@@ -143,8 +177,9 @@ export async function addPageNumbers(bytes: Uint8Array | ArrayBuffer, opts: Page
     const n = opts.start + (opts.skipFirst ? i - 1 : i);
     const label = pageLabel(n, opts.start + numbered - 1, opts.format);
     const w = font.widthOfTextAtSize(label, opts.fontSize);
-    const { x, y } = placeOnPage(page, opts.position, w, opts.fontSize, opts.margin);
-    page.drawText(label, { x, y, size: opts.fontSize, font, color: rgb(0.08, 0.08, 0.08) });
+    const c = numberCentre(page, opts.position, w, opts.fontSize, opts.margin);
+    const { x, y, rotate } = placeCentred(page, c.u, c.v, w, opts.fontSize);
+    page.drawText(label, { x, y, rotate, size: opts.fontSize, font, color: rgb(0.08, 0.08, 0.08) });
   });
   return save(doc);
 }
@@ -171,16 +206,11 @@ export async function stampImage(bytes: Uint8Array | ArrayBuffer, opts: StampOpt
   (opts.pages === 'all' ? pages.map((_, i) => i) : opts.pages).forEach((i) => {
     const page = pages[i];
     if (!page) return;
-    const { width, height } = page.getSize();
+    const { width, height } = visualPage(page);
     const w = width * opts.widthFraction;
     const h = (w / img.width) * img.height;
-    // pdf-lib rotates around the image's bottom-left corner; offset so the centre stays put
-    const angle = ((opts.rotate || 0) * Math.PI) / 180;
-    const cx = width * opts.cx;
-    const cy = height * (1 - opts.cy);
-    const x = cx - (w / 2) * Math.cos(angle) + (h / 2) * Math.sin(angle);
-    const y = cy - (w / 2) * Math.sin(angle) - (h / 2) * Math.cos(angle);
-    page.drawImage(img, { x, y, width: w, height: h, opacity: opts.opacity ?? 1, rotate: degrees(opts.rotate || 0) });
+    const { x, y, rotate } = placeCentred(page, width * opts.cx, height * opts.cy, w, h, opts.rotate || 0);
+    page.drawImage(img, { x, y, width: w, height: h, opacity: opts.opacity ?? 1, rotate });
   });
   return save(doc);
 }
@@ -277,16 +307,85 @@ export async function listFormFields(bytes: Uint8Array | ArrayBuffer): Promise<F
   });
 }
 
-export async function fillForm(bytes: Uint8Array | ArrayBuffer, values: Record<string, string | boolean>, flatten: boolean): Promise<Uint8Array> {
+/** Font bytes for text the standard PDF fonts can't write; see unicodeFont.ts */
+export type FontLoader = (script: FontScript) => Promise<Uint8Array>;
+
+/**
+ * pdf-lib centres a single line by its height above the baseline, so letters that reach below it (ş, ç, р, у, and the
+ * deep descenders of these fonts) hang past the centre and get cut off by the field's edge. Keep the size small enough
+ * for them to fit: no larger than the field's own size, and for auto-size fields, no wider than the field.
+ */
+function fitFontSize(field: PDFTextField, font: PDFFont, text: string) {
+  if (field.isMultiline() || field.isCombed()) return;
+  const rect = field.acroField.getWidgets()[0]?.getRectangle();
+  if (!rect) return;
+  const da = field.acroField.getDefaultAppearance() || '';
+  const set = parseFloat(da.match(/([\d.]+)\s+Tf/)?.[1] || '0');
+  const ascent = font.heightAtSize(1, { descender: false });
+  const descent = font.heightAtSize(1) - ascent;
+  // The text area is the field less its border and padding
+  const fits = (rect.height - 4) / (ascent + 2 * descent);
+  const size = set > 0 ? Math.min(set, fits) : Math.min(fits, (rect.width - 6) / Math.max(1e-6, font.widthOfTextAtSize(text, 1)));
+  if (set === 0 || size < set) field.setFontSize(Math.max(4, size));
+}
+
+export async function fillForm(
+  bytes: Uint8Array | ArrayBuffer,
+  values: Record<string, string | boolean>,
+  flatten: boolean,
+  loadFont?: FontLoader
+): Promise<Uint8Array> {
   const doc = await loadPdf(bytes);
   const form = doc.getForm();
+  const helvetica = await doc.embedFont(StandardFonts.Helvetica);
+  const fonts = new Map<FontScript, PDFFont>();
+  const unsupported: string[] = [];
+  // Helvetica writes Latin-1 only; other text is drawn with a site font that covers it
+  const fontFor = async (text: string): Promise<PDFFont | null> => {
+    try {
+      helvetica.encodeText(text);
+      return null;
+    } catch {
+      if (!loadFont) throw new PdfUnsupportedTextError([]);
+    }
+    const script = fontScriptFor(text);
+    let font = fonts.get(script);
+    if (!font) {
+      if (!fonts.size) doc.registerFontkit((await import('@pdf-lib/fontkit')).default);
+      // Embedded whole: fontkit's subsetting drops glyphs from these fonts, so viewers draw blanks
+      font = await doc.embedFont(await loadFont!(script), { subset: false });
+      fonts.set(script, font);
+    }
+    const covered = new Set(font.getCharacterSet());
+    if (![...text].every((ch) => /\s/.test(ch) || covered.has(ch.codePointAt(0)!))) throw new PdfUnsupportedTextError([]);
+    return font;
+  };
   for (const [name, value] of Object.entries(values)) {
     const f = form.getFieldMaybe(name);
     if (!f || f.isReadOnly()) continue;
-    if (f instanceof PDFTextField) f.setText(String(value));
-    else if (f instanceof PDFCheckBox) (value ? f.check() : f.uncheck());
-    else if ((f instanceof PDFRadioGroup || f instanceof PDFDropdown || f instanceof PDFOptionList) && value) f.select(String(value));
+    try {
+      if (f instanceof PDFTextField) {
+        const text = String(value);
+        f.setText(text);
+        const font = await fontFor(text);
+        if (font) {
+          fitFontSize(f, font, text);
+          f.updateAppearances(font);
+        }
+      } else if (f instanceof PDFCheckBox) (value ? f.check() : f.uncheck());
+      else if ((f instanceof PDFRadioGroup || f instanceof PDFDropdown || f instanceof PDFOptionList) && value) {
+        f.select(String(value));
+        if (!(f instanceof PDFRadioGroup)) {
+          const font = await fontFor(String(value));
+          if (font) f.updateAppearances(font);
+        }
+      }
+    } catch (err) {
+      if (!(err instanceof PdfUnsupportedTextError)) throw err;
+      unsupported.push(name);
+    }
   }
+  if (unsupported.length) throw new PdfUnsupportedTextError(unsupported);
   if (flatten) form.flatten();
   return save(doc);
 }

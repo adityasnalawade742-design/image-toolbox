@@ -203,6 +203,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': '円形にする',
+  'ctl.round.position': '円の中の位置',
   'ctl.round.presets': '角の半径',
   'ctl.round.small': '小',
   'ctl.round.medium': '中',
@@ -224,6 +225,7 @@ export const strings = {
   'ctl.compress.result': '結果',
   'ctl.compress.original': '元のサイズ',
   'ctl.compress.output': '圧縮後',
+  'ctl.compress.measuring': '計測中…',
   'ctl.compress.change': '変化',
   'ctl.compress.saved': '{percent}%削減',
   'ctl.compress.larger': '元のファイルより大きくなります',
@@ -248,6 +250,7 @@ export const strings = {
   'ctl.metadata.authorDesc': '作成者や著作権のタグ、編集ソフトの名前。',
   'ctl.metadata.blocksTitle': 'EXIFとIPTCのブロック',
   'ctl.metadata.blocksDesc': '画像はピクセルから描き直されるため、メタデータのブロックは一切引き継がれません。',
+  'ctl.metadata.losslessDesc': 'ファイルからメタデータだけを取り除きます。画像は保存し直さないため、画質と色はそのままです。',
   'ctl.metadata.local': 'ブラウザ内で処理されます。写真がアップロードされることはありません。',
   'ctl.metadata.size': 'ファイルサイズ',
   'ctl.metadata.original': '元のファイル',
@@ -453,6 +456,8 @@ export const strings = {
   'ctl.split.rows': '行',
   'ctl.split.cols': '列',
   'ctl.split.gridLimit': '最大12行×12列まで。',
+  'ctl.split.square': '正方形のタイル',
+  'ctl.split.squareNote': 'すべてのタイルが正方形になるよう端を均等に切り取ります。Instagramの表示と同じ形です。',
   'ctl.split.saveAs': 'タイルの保存形式',
   'ctl.split.tileFormat': 'タイルの形式',
   'ctl.split.tile': 'タイル',
@@ -682,6 +687,8 @@ export const strings = {
   'ctl.frompdf.rendering': '{total}ページ中{n}ページ目を変換中…',
   'ctl.frompdf.replace': '別のPDFを選択',
   'ctl.frompdf.errPassword': 'このPDFはパスワードで保護されています。PDFリーダーで開き、パスワードなしのコピーを保存して、そのコピーでお試しください。',
+  'ctl.pdf.errLocked': 'このPDFは作成者によってロックされている（パスワードまたは編集制限）ため、ここでは変更できません。編集が許可されている場合は、PDFリーダーで開いて新しいPDFとして印刷または保存し、そのコピーを使ってください。',
+  'ctl.pdf.errScript': '一部のテキストはまだこのPDFに書き込めません：{fields}。ラテン文字、ギリシャ文字、キリル文字、日本語、韓国語は使えます。アラビア文字、ヘブライ文字、タイ文字、デーヴァナーガリーなどには対応していません。',
   'ctl.frompdf.errInvalid': 'このファイルをPDFとして開けませんでした。破損しているか、PDFではない可能性があります。',
 
   // ===== Merge Images =====

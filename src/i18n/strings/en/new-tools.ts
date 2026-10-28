@@ -65,6 +65,8 @@ export const newToolStrings = {
   'ctl.frompdf.rendering': 'Rendering page {n} of {total}…',
   'ctl.frompdf.replace': 'Choose another PDF',
   'ctl.frompdf.errPassword': 'This PDF is protected with a password. Open it in a PDF reader, save a copy without the password, and try that copy.',
+  'ctl.pdf.errLocked': 'This PDF is locked by its author (a password or editing restrictions), so it can’t be changed here. If you’re allowed to edit it, open it in a PDF reader, print or save it as a new PDF, and use that copy.',
+  'ctl.pdf.errScript': 'Some text can’t be written into this PDF yet: {fields}. Latin, Greek, Cyrillic, Japanese and Korean text works; scripts such as Arabic, Hebrew, Thai or Devanagari aren’t supported.',
   'ctl.frompdf.errInvalid': 'This file couldn’t be opened as a PDF. It may be damaged, or not a PDF.',
 
   // Merge Images

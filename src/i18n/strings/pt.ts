@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Fazer círculo',
+  'ctl.round.position': 'Posição no círculo',
   'ctl.round.presets': 'Raio dos cantos',
   'ctl.round.small': 'Pequeno',
   'ctl.round.medium': 'Médio',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Resultado',
   'ctl.compress.original': 'Original',
   'ctl.compress.output': 'Comprimida',
+  'ctl.compress.measuring': 'Medindo…',
   'ctl.compress.change': 'Diferença',
   'ctl.compress.saved': '{percent}% menor',
   'ctl.compress.larger': 'Maior que o original',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Campos de autor e direitos autorais, e o nome do programa de edição.',
   'ctl.metadata.blocksTitle': 'Blocos EXIF e IPTC',
   'ctl.metadata.blocksDesc': 'A imagem é redesenhada a partir dos pixels, então nenhum bloco de metadados é levado junto.',
+  'ctl.metadata.losslessDesc': 'Só os metadados são retirados do arquivo. A imagem não é salva de novo, então mantém toda a qualidade e as cores.',
   'ctl.metadata.local': 'Feito no seu navegador. Sua foto nunca é enviada.',
   'ctl.metadata.size': 'Tamanho do arquivo',
   'ctl.metadata.original': 'Original',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Linhas',
   'ctl.split.cols': 'Colunas',
   'ctl.split.gridLimit': 'Até 12 linhas e 12 colunas.',
+  'ctl.split.square': 'Blocos quadrados',
+  'ctl.split.squareNote': 'Corta as bordas por igual para que cada bloco fique quadrado, como o Instagram os mostra.',
   'ctl.split.saveAs': 'Salvar partes como',
   'ctl.split.tileFormat': 'Formato das partes',
   'ctl.split.tile': 'Parte',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Renderizando página {n} de {total}…',
   'ctl.frompdf.replace': 'Escolher outro PDF',
   'ctl.frompdf.errPassword': 'Este PDF é protegido por senha. Abra-o em um leitor de PDF, salve uma cópia sem a senha e tente com essa cópia.',
+  'ctl.pdf.errLocked': 'Este PDF foi bloqueado pelo autor (com senha ou restrições de edição), então não pode ser alterado aqui. Se você tem permissão para editá-lo, abra-o em um leitor de PDF, imprima ou salve como um novo PDF e use essa cópia.',
+  'ctl.pdf.errScript': 'Parte do texto ainda não pode ser escrita neste PDF: {fields}. Funcionam os alfabetos latino, grego e cirílico, além de japonês e coreano; escritas como árabe, hebraico, tailandês ou devanágari não são compatíveis.',
   'ctl.frompdf.errInvalid': 'Não foi possível abrir este arquivo como PDF. Ele pode estar corrompido ou não ser um PDF.',
 
   // Merge Images

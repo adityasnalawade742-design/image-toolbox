@@ -1126,7 +1126,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "EXIF entfernen",
     tagline: "Entferne EXIF-Daten wie GPS-Standort, Kameramodell und Datum aus einem Foto, bevor du es teilst.",
     intro:
-      "Bild-Metadaten entfernen erstellt eine saubere Kopie deines Fotos ohne die versteckten EXIF-Informationen. Fotos von Handys und Kameras speichern oft den GPS-Standort der Aufnahme, das Gerätemodell sowie Datum und Uhrzeit. Dieses Tool zeichnet das Bild aus seinen Pixeln neu und speichert eine neue Datei, sodass diese Informationen nicht übernommen werden. Vor dem Download siehst du die neue Dateigröße.",
+      "Bild-Metadaten entfernen erstellt eine saubere Kopie deines Fotos ohne die versteckten EXIF-Informationen. Fotos von Handys und Kameras speichern oft den GPS-Standort der Aufnahme, das Gerätemodell sowie Datum und Uhrzeit. Bei JPG, PNG und WebP werden nur diese Angaben aus der Datei entfernt: Das Bild selbst wird nicht neu gespeichert, Qualität und Farben bleiben also exakt gleich. Die neue Dateigröße siehst du vor dem Herunterladen.",
     seoTitle: "EXIF-Daten entfernen – GPS und Metadaten löschen",
     seoDescription:
       "EXIF-Daten aus Fotos entfernen, kostenlos: GPS-Standort, Kameramodell und Datum löschen, bevor du ein Bild teilst. Im Browser verarbeitet, nie hochgeladen.",
@@ -1149,9 +1149,9 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Die Vorschau zeigt das Bild, das gespeichert wird, zusammen mit seiner neuen Dateigröße.",
       },
       {
-        title: "Format und Qualität wählen",
+        title: "Format beibehalten",
         description:
-          "Standardmäßig bleibt das Originalformat erhalten. Für JPG und WebP nimmst du 90 % bis 100 % Qualität, um nah am Original zu bleiben, oder du wählst PNG für eine verlustfreie Ausgabe.",
+          "Behältst du das Originalformat, werden nur die Metadaten entfernt, ohne Qualitätsverlust. Wechselst du das Format, wird das Bild neu gespeichert: Wähle bei JPG und WebP 90 % bis 100 % Qualität oder nimm PNG.",
       },
       {
         title: "Neue Datei herunterladen und teilen",
@@ -1165,8 +1165,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
           "GPS-Koordinaten, Kamerahersteller und -modell, Objektiv, Aufnahmedatum und weitere EXIF- und IPTC-Felder werden nicht in die neue Datei geschrieben.",
       },
       {
-        title: "Saubere Kopie aus Pixeln",
-        description: "Das Bild wird aus seinen Pixeln neu gezeichnet, so können keine versteckten Daten aus Versehen mitkopiert werden.",
+        title: "Kein Qualitätsverlust",
+        description: "JPG, PNG und WebP behalten ihre exakten Pixel und ihr Farbprofil; nur die versteckten Daten werden entfernt.",
       },
       {
         title: "Anzeige der Dateigröße",
@@ -1181,12 +1181,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Welche Metadaten werden entfernt?",
         answer:
-          "Alle: EXIF-Daten (Kamera, Einstellungen, Datum und GPS), IPTC- und XMP-Felder wie Urheber oder Copyright und das eingebettete Farbprofil. Nur das sichtbare Bild bleibt erhalten.",
+          "EXIF-Daten (Kamera, Einstellungen, Datum und GPS), IPTC- und XMP-Felder wie Autor oder Copyright, Kommentare und PNG-Text. Das Farbprofil bleibt erhalten, damit sich die Farben nicht ändern, und ein JPG behält seine Ausrichtung, damit es nicht seitlich angezeigt wird.",
       },
       {
         question: "Ändert das Entfernen der Metadaten die Bildqualität?",
         answer:
-          "Das Bild wird neu gespeichert. PNG erhält jedes Pixel, JPG, WebP und AVIF werden dagegen erneut komprimiert. Wähle also eine hohe Qualität. Fotos mit erweitertem Farbprofil, etwa viele iPhone-Fotos, wirken eventuell etwas weniger kräftig, weil das Profil nicht erhalten bleibt.",
+          "Nicht, wenn du das Format beibehältst: JPG-, PNG- und WebP-Dateien werden nicht neu gespeichert, jedes Pixel bleibt gleich. Konvertierst du in ein anderes Format oder startest du mit einem HEIC-Foto vom iPhone, wird das Bild neu gespeichert. Wähle dann eine hohe Qualität.",
       },
       {
         question: "Wie prüfe ich, ob der Standort entfernt wurde?",

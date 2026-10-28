@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useT } from '../../shared/I18nContext';
 import { downloadBlob } from '../../../lib/canvas/engine';
-import { PdfEncryptedError } from '../../../lib/pdf/errors';
+import { PdfEncryptedError, PdfUnsupportedTextError } from '../../../lib/pdf/errors';
 import type { PdfLoadError } from '../../shared/usePdfDocument';
 
 export const PDF_ACCEPT = 'application/pdf,.pdf';
@@ -18,7 +18,13 @@ export function savePdf(bytes: Uint8Array, name: string) {
 /** User-facing message for a failed edit */
 export function useEditError() {
   const t = useT();
-  return (err: unknown) => (err instanceof PdfEncryptedError ? t('ctl.frompdf.errPassword') : t('ws.errExport'));
+  // pdf.js opens files that only restrict editing, so this usually means restrictions rather than a password
+  return (err: unknown) =>
+    err instanceof PdfEncryptedError
+      ? t('ctl.pdf.errLocked')
+      : err instanceof PdfUnsupportedTextError
+        ? t('ctl.pdf.errScript', { fields: err.fields.join(', ') })
+        : t('ws.errExport');
 }
 
 /** Empty state for single-PDF tools: drop zone plus the reason the last file couldn't be opened */
