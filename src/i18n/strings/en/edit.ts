@@ -135,6 +135,7 @@ export const editStrings = {
 
   // Round corners
   'ctl.round.circle': 'Make a circle',
+  'ctl.round.position': 'Position in circle',
   'ctl.round.presets': 'Corner radius',
   'ctl.round.small': 'Small',
   'ctl.round.medium': 'Medium',

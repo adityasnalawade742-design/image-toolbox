@@ -1126,7 +1126,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "EXIF Stripper",
     tagline: "Remove EXIF data such as GPS location, camera model and date from a photo before you share it.",
     intro:
-      "Remove Image Metadata creates a clean copy of your photo without its hidden EXIF information. Photos from phones and cameras often record the GPS location where they were taken, the device model, and the date and time. This tool redraws the image from its pixels and saves a new file, so that information is not carried over, and it shows the new file size before you download.",
+      "Remove Image Metadata creates a clean copy of your photo without its hidden EXIF information. Photos from phones and cameras often record the GPS location where they were taken, the device model, and the date and time. For JPG, PNG and WebP, only that information is cut out of the file: the picture itself isn't saved again, so its quality and colors stay exactly the same. The new file size is shown before you download.",
     seoTitle: "Remove EXIF Data from Photos – GPS & Metadata",
     seoDescription:
       "Remove EXIF metadata from photos for free. Strip the GPS location, camera model and date before you share a picture. Processed in your browser, never uploaded.",
@@ -1149,9 +1149,9 @@ export const enTools: Record<string, LocalizedToolItem> = {
         description: "The preview shows the image that will be saved, together with its new file size.",
       },
       {
-        title: "Choose format and quality",
+        title: "Keep the format",
         description:
-          "The original format is kept by default. For JPG and WebP, use 90% to 100% quality to stay close to the original, or choose PNG for lossless output.",
+          "Keeping the original format removes only the metadata, with no change in quality. If you switch format, the image is saved again: for JPG and WebP use 90% to 100% quality, or choose PNG.",
       },
       {
         title: "Download and share the new file",
@@ -1165,8 +1165,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
           "GPS coordinates, camera make and model, lens, capture date and other EXIF and IPTC fields are not written to the new file.",
       },
       {
-        title: "Clean copy from pixels",
-        description: "The image is redrawn from its pixels, so no hidden data can be copied over by accident.",
+        title: "No quality loss",
+        description: "JPG, PNG and WebP keep their exact pixels and color profile; only the hidden data is cut out.",
       },
       {
         title: "File size readout",
@@ -1181,12 +1181,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "What metadata is removed?",
         answer:
-          "All of it: EXIF data (camera, settings, date and GPS), IPTC and XMP fields such as author or copyright, and the embedded color profile. Only the visible image is kept.",
+          "EXIF data (camera, settings, date and GPS), IPTC and XMP fields such as author or copyright, comments and PNG text. The color profile is kept so colors don't change, and a JPG keeps its orientation so it isn't shown sideways.",
       },
       {
         question: "Does removing metadata change the image quality?",
         answer:
-          "The image is saved again. PNG keeps every pixel, while JPG, WebP and AVIF are compressed again, so choose a high quality. Photos with a wide color profile, such as many iPhone photos, may look slightly less vivid because the profile is not kept.",
+          "Not when you keep the format: JPG, PNG and WebP files aren't saved again, so every pixel stays the same. If you convert to another format, or start from an iPhone HEIC photo, the image is saved again, so choose a high quality.",
       },
       {
         question: "How can I check that the location is gone?",

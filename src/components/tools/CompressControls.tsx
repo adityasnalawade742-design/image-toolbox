@@ -100,7 +100,7 @@ export function CompressControls({
           </div>
           <div className="flex items-baseline justify-between gap-4 px-3 py-2">
             <dt className="text-graphite">{t('ctl.compress.output')}</dt>
-            <dd className="text-ink font-semibold" data-measure>{formatSize(outputBytes)}</dd>
+            <dd className="text-ink font-semibold" data-measure>{outputBytes > 0 ? formatSize(outputBytes) : t('ctl.compress.measuring')}</dd>
           </div>
           {outputBytes > 0 && (
             <div className="flex items-baseline justify-between gap-4 px-3 py-2">

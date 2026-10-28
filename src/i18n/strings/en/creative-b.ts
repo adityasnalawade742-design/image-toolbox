@@ -12,6 +12,8 @@ export const creativeBStrings = {
   'ctl.split.rows': 'Rows',
   'ctl.split.cols': 'Columns',
   'ctl.split.gridLimit': 'Up to 12 rows and 12 columns.',
+  'ctl.split.square': 'Square tiles',
+  'ctl.split.squareNote': 'Trims the edges evenly so every tile is square, the way Instagram shows them.',
   'ctl.split.saveAs': 'Save tiles as',
   'ctl.split.tileFormat': 'Tile format',
   'ctl.split.tile': 'Tile',

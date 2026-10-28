@@ -72,7 +72,7 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
       const smallCanvas = document.createElement('canvas');
       smallCanvas.width = sw;
       smallCanvas.height = sh;
-      const sctx = smallCanvas.getContext('2d')!;
+      const sctx = smallCanvas.getContext('2d', { willReadFrequently: true })!;
       sctx.drawImage(photo, 0, 0, sw, sh);
       const base: Source = { name: file.name, previewUrl: image.url, photo, subject: null, smallAlpha: null, small: { w: sw, h: sh, rgba: sctx.getImageData(0, 0, sw, sh).data } };
       if (mySeq !== seq.current) {
@@ -110,11 +110,11 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   };
   useImageIntake(load);
 
-  // Redraw the result whenever a setting changes (lightly debounced so the blur slider stays smooth)
-  useEffect(() => {
+  // Draw the result for the current settings
+  const paint = () => {
     if (!src?.subject || !canvasRef.current) return;
-    const id = window.setTimeout(() => {
-      const canvas = canvasRef.current!;
+    {
+      const canvas = canvasRef.current;
       const { photo, subject, small, smallAlpha } = src;
       canvas.width = photo.width;
       canvas.height = photo.height;
@@ -140,7 +140,13 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
         ctx.drawImage(fill.img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
       }
       ctx.drawImage(subject!, 0, 0);
-    }, 60);
+    }
+  };
+
+  // Redraw whenever a setting changes (lightly debounced so the blur slider stays smooth)
+  useEffect(() => {
+    if (!src?.subject) return;
+    const id = window.setTimeout(paint, 60);
     return () => window.clearTimeout(id);
   }, [src, mode, strength, fill]);
 
@@ -174,6 +180,8 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   const ready = !!src.subject && !working;
   const run = async () => {
     if (!canvasRef.current || !ready) return;
+    // Draw now: a quick tap could otherwise beat the debounced redraw and save an empty or outdated canvas
+    paint();
     const type = format === 'png' ? 'image/png' : 'image/jpeg';
     const blob = await canvasToBlob(canvasRef.current, type, 0.92);
     const name = `${src.name.replace(/\.[^.]+$/, '')}-${mode === 'blur' ? 'blurred-background' : 'new-background'}.${format}`;

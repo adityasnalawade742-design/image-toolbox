@@ -336,6 +336,33 @@ export function CensorImageWorkspace() {
     );
   };
 
+  // With a box selected, the style, strength and shape controls show and change that box; new boxes use them too
+  const applyToSelected = (patch: Partial<Pick<CensorBox, 'mode' | 'intensity' | 'shape'>>) => {
+    if (!selectedId) return;
+    setBoxes((prev) => prev.map((b) => (b.id === selectedId ? { ...b, ...patch } : b)));
+  };
+  const chooseMode = (m: CensorMode) => {
+    setCensorMode(m);
+    applyToSelected({ mode: m });
+  };
+  const chooseIntensity = (v: number) => {
+    setIntensity(v);
+    applyToSelected({ intensity: v });
+  };
+  const chooseShape = (v: 'rect' | 'circle') => {
+    setShape(v);
+    applyToSelected({ shape: v });
+  };
+  useEffect(() => {
+    const b = boxes.find((x) => x.id === selectedId);
+    if (!b) return;
+    setCensorMode(b.mode);
+    setIntensity(b.intensity);
+    setShape(b.shape || 'rect');
+    // Only when the selection changes: editing a box shouldn't reset the controls
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId]);
+
   // Ctrl+Z / Cmd+Z removes the last box, unless the user is typing in a field
   const hasBoxes = boxes.length > 0;
   useEffect(() => {
@@ -457,11 +484,11 @@ export function CensorImageWorkspace() {
                 <div className="space-y-1.5">
                   <span className="slug">{t('ctl.censor.shape')}</span>
                   <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.censor.shape')}>
-                    <button type="button" aria-pressed={shape === 'rect'} onClick={() => setShape('rect')} className={segmentClass(shape === 'rect')}>
+                    <button type="button" aria-pressed={shape === 'rect'} onClick={() => chooseShape('rect')} className={segmentClass(shape === 'rect')}>
                       <Square className="w-4 h-4" aria-hidden="true" />
                       <span>{t('ctl.censor.shapeRect')}</span>
                     </button>
-                    <button type="button" aria-pressed={shape === 'circle'} onClick={() => setShape('circle')} className={segmentClass(shape === 'circle')}>
+                    <button type="button" aria-pressed={shape === 'circle'} onClick={() => chooseShape('circle')} className={segmentClass(shape === 'circle')}>
                       <Circle className="w-4 h-4" aria-hidden="true" />
                       <span>{t('ctl.censor.shapeOval')}</span>
                     </button>
@@ -477,7 +504,7 @@ export function CensorImageWorkspace() {
                         key={m.id}
                         type="button"
                         aria-pressed={censorMode === m.id}
-                        onClick={() => setCensorMode(m.id)}
+                        onClick={() => chooseMode(m.id)}
                         className={segmentClass(censorMode === m.id)}
                       >
                         {t(m.labelKey)}
@@ -499,7 +526,7 @@ export function CensorImageWorkspace() {
                       min="4"
                       max="45"
                       value={intensity}
-                      onChange={(e) => setIntensity(Number(e.target.value))}
+                      onChange={(e) => chooseIntensity(Number(e.target.value))}
                       className="w-full"
                     />
                   </label>

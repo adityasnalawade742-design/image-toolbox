@@ -43,6 +43,8 @@ export function ImageSplitterWorkspace() {
   const [rowsInput, setRowsInput] = useState<string>('3');
   const [colsInput, setColsInput] = useState<string>('3');
   const [format, setFormat] = useState<TileFormat>('png');
+  // Square tiles trim the edges evenly, so a profile grid or carousel lines up the way Instagram shows it
+  const [squareTiles, setSquareTiles] = useState(true);
   const [isZipping, setIsZipping] = useState<boolean>(false);
   const [zipProgress, setZipProgress] = useState<number>(0);
   const [zipError, setZipError] = useState<string | null>(null);
@@ -97,20 +99,30 @@ export function ImageSplitterWorkspace() {
     }
   };
 
+  /** The part of the photo that is cut: all of it, or the centred area that makes every tile square */
+  const cutRegion = (fullW: number, fullH: number) => {
+    if (!squareTiles) return { x: 0, y: 0, w: fullW, h: fullH };
+    const side = Math.max(1, Math.floor(Math.min(fullW / cols, fullH / rows)));
+    const w = side * cols;
+    const h = side * rows;
+    return { x: Math.floor((fullW - w) / 2), y: Math.floor((fullH - h) / 2), w, h };
+  };
+
   // Extract individual slice as a canvas with exact pixel boundary coverage
   const getSliceCanvas = (r: number, c: number): HTMLCanvasElement => {
     if (!imgElement) throw new Error('No image loaded');
     const fullW = imgElement.naturalWidth || imgElement.width;
     const fullH = imgElement.naturalHeight || imgElement.height;
 
-    const baseSliceW = Math.floor(fullW / cols);
-    const baseSliceH = Math.floor(fullH / rows);
+    const region = cutRegion(fullW, fullH);
+    const baseSliceW = Math.floor(region.w / cols);
+    const baseSliceH = Math.floor(region.h / rows);
 
-    const startX = c * baseSliceW;
-    const startY = r * baseSliceH;
+    const startX = region.x + c * baseSliceW;
+    const startY = region.y + r * baseSliceH;
     // Last column and last row absorb remainder pixels so nothing is lost
-    const sliceW = c === cols - 1 ? fullW - startX : baseSliceW;
-    const sliceH = r === rows - 1 ? fullH - startY : baseSliceH;
+    const sliceW = c === cols - 1 ? region.x + region.w - startX : baseSliceW;
+    const sliceH = r === rows - 1 ? region.y + region.h - startY : baseSliceH;
 
     const canvas = document.createElement('canvas');
     canvas.width = sliceW;
@@ -189,8 +201,10 @@ export function ImageSplitterWorkspace() {
   const totalTiles = rows * cols;
   const imgW = imgElement?.naturalWidth || imgElement?.width || 1;
   const imgH = imgElement?.naturalHeight || imgElement?.height || 1;
-  const tileW = Math.floor(imgW / cols);
-  const tileH = Math.floor(imgH / rows);
+  const region = cutRegion(imgW, imgH);
+  const tileW = Math.floor(region.w / cols);
+  const tileH = Math.floor(region.h / rows);
+  const pct = (v: number, of: number) => `${(v / of) * 100}%`;
   const loaded = Boolean(selectedFile && imgElement);
 
   const primaryContent = (
@@ -229,9 +243,22 @@ export function ImageSplitterWorkspace() {
                   className="block max-w-full max-h-[65vh] w-auto h-auto pointer-events-none select-none"
                 />
 
+                {/* The trimmed edges, dimmed */}
+                {squareTiles && (region.w < imgW || region.h < imgH) && (
+                  <>
+                    <div className="absolute inset-x-0 top-0 bg-process-key/55 pointer-events-none" style={{ height: pct(region.y, imgH) }} aria-hidden="true" />
+                    <div className="absolute inset-x-0 bottom-0 bg-process-key/55 pointer-events-none" style={{ height: pct(imgH - region.y - region.h, imgH) }} aria-hidden="true" />
+                    <div className="absolute left-0 bg-process-key/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(region.x, imgW) }} aria-hidden="true" />
+                    <div className="absolute right-0 bg-process-key/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(imgW - region.x - region.w, imgW) }} aria-hidden="true" />
+                  </>
+                )}
                 <div
-                  className="absolute inset-0 grid"
+                  className="absolute grid"
                   style={{
+                    left: pct(region.x, imgW),
+                    top: pct(region.y, imgH),
+                    width: pct(region.w, imgW),
+                    height: pct(region.h, imgH),
                     gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
                     gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
                   }}
@@ -353,6 +380,13 @@ export function ImageSplitterWorkspace() {
                     </label>
                   </div>
                   <p className="text-[13px] text-graphite">{t('ctl.split.gridLimit')}</p>
+                  <label className="flex items-start gap-2.5 pt-2 cursor-pointer">
+                    <input type="checkbox" checked={squareTiles} onChange={(e) => setSquareTiles(e.target.checked)} className="w-5 h-5 mt-0.5 shrink-0" />
+                    <span>
+                      <span className="block text-[15px] text-ink">{t('ctl.split.square')}</span>
+                      <span className="block text-[13px] text-graphite">{t('ctl.split.squareNote')}</span>
+                    </span>
+                  </label>
                 </div>
 
                 {/* Tile format */}

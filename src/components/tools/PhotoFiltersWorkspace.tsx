@@ -93,6 +93,7 @@ export function PhotoFiltersWorkspace() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const splitContainerRef = useRef<HTMLDivElement>(null);
+  const previewImgRef = useRef<HTMLImageElement>(null);
 
   const handleFileSelect = (file: File) => {
     if (!file.type.startsWith('image/')) return;
@@ -135,21 +136,25 @@ export function PhotoFiltersWorkspace() {
 
     // Clarity is applied as extra contrast
     const effectiveContrast = contrast + Math.round(clarity * 0.35);
+    // The preview blurs the image as shown on screen; scale the radius to full size so the download looks the same
+    const shownWidth = previewImgRef.current?.clientWidth || splitContainerRef.current?.clientWidth || canvas.width;
+    const blurPx = blur * (canvas.width / shownWidth);
 
     // Apply CSS Filters
-    ctx.filter = `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blur}px)`;
+    ctx.filter = `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blurPx}px)`;
     ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
 
-    // Apply Vignette overlay matching visual preview
+    // Vignette: the same geometry as the preview's CSS radial-gradient(circle, transparent X%, black 100%), whose
+    // radius reaches the farthest corner
     if (vignette > 0) {
-      const maxDim = Math.max(canvas.width, canvas.height);
+      const radius = Math.hypot(canvas.width / 2, canvas.height / 2);
       const gradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
-        (maxDim / 2) * (1 - vignette / 100),
+        radius * (1 - vignette / 100),
         canvas.width / 2,
         canvas.height / 2,
-        maxDim * 0.7
+        radius
       );
       gradient.addColorStop(0, 'rgba(0,0,0,0)');
       gradient.addColorStop(1, `rgba(0,0,0,${vignette / 100})`);
@@ -260,6 +265,7 @@ export function PhotoFiltersWorkspace() {
               {!showComparison ? (
                 <div className="relative inline-flex max-w-full max-h-[65vh] canvas-checkerboard crop-marks">
                   <img
+                    ref={previewImgRef}
                     src={imgElement.src}
                     alt={t('ctl.filters.previewAlt')}
                     style={filterStyle}

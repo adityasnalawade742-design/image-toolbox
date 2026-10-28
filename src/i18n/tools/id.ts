@@ -1129,7 +1129,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Hapus EXIF",
     tagline: "Hapus data EXIF seperti lokasi GPS, model kamera, dan tanggal dari foto sebelum Anda membagikannya.",
     intro:
-      "Hapus Metadata Gambar membuat salinan bersih dari foto Anda tanpa informasi EXIF tersembunyinya. Foto dari HP dan kamera sering merekam lokasi GPS tempat foto diambil, model perangkat, serta tanggal dan waktunya. Alat ini menggambar ulang gambar dari pikselnya dan menyimpan file baru, jadi informasi itu tidak ikut terbawa, dan ukuran file baru ditampilkan sebelum Anda mengunduh.",
+      "Hapus Metadata Gambar membuat salinan bersih foto Anda tanpa informasi EXIF yang tersembunyi. Foto dari ponsel dan kamera sering menyimpan lokasi GPS tempat foto diambil, model perangkat, serta tanggal dan waktunya. Untuk JPG, PNG, dan WebP, hanya informasi itu yang dihapus dari file: gambarnya tidak disimpan ulang, jadi kualitas dan warnanya tetap sama persis. Ukuran file baru ditampilkan sebelum Anda mengunduh.",
     seoTitle: "Hapus Data EXIF Foto – GPS dan Metadata",
     seoDescription:
       "Hapus metadata EXIF dari foto, gratis. Buang lokasi GPS, model kamera, dan tanggal sebelum Anda membagikan foto. Diproses di browser Anda, tidak pernah diunggah.",
@@ -1152,9 +1152,9 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Pratinjau menampilkan gambar yang akan disimpan, beserta ukuran file barunya.",
       },
       {
-        title: "Pilih format dan kualitas",
+        title: "Pertahankan format",
         description:
-          "Format asli dipertahankan secara default. Untuk JPG dan WebP, pakai kualitas 90% hingga 100% agar tetap mendekati aslinya, atau pilih PNG untuk hasil lossless.",
+          "Jika format asli dipertahankan, hanya metadata yang dihapus, tanpa perubahan kualitas. Jika Anda mengganti format, gambar disimpan ulang: untuk JPG dan WebP pakai kualitas 90% hingga 100%, atau pilih PNG.",
       },
       {
         title: "Unduh dan bagikan file baru",
@@ -1168,8 +1168,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
           "Koordinat GPS, merek dan model kamera, lensa, tanggal pengambilan, serta kolom EXIF dan IPTC lainnya tidak ditulis ke file baru.",
       },
       {
-        title: "Salinan bersih dari piksel",
-        description: "Gambar digambar ulang dari pikselnya, jadi tidak ada data tersembunyi yang bisa ikut tersalin tanpa sengaja.",
+        title: "Tanpa penurunan kualitas",
+        description: "JPG, PNG, dan WebP mempertahankan piksel dan profil warnanya persis; hanya data tersembunyi yang dihapus.",
       },
       {
         title: "Tampilan ukuran file",
@@ -1184,12 +1184,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Metadata apa saja yang dihapus?",
         answer:
-          "Semuanya: data EXIF (kamera, pengaturan, tanggal, dan GPS), kolom IPTC dan XMP seperti pembuat atau hak cipta, serta profil warna yang tertanam. Hanya gambar yang terlihat yang dipertahankan.",
+          "Data EXIF (kamera, pengaturan, tanggal, dan GPS), kolom IPTC dan XMP seperti pembuat atau hak cipta, komentar, dan teks PNG. Profil warna dipertahankan agar warna tidak berubah, dan JPG tetap menyimpan orientasinya agar tidak tampil miring.",
       },
       {
         question: "Apakah menghapus metadata mengubah kualitas gambar?",
         answer:
-          "Gambar disimpan ulang. PNG mempertahankan setiap piksel, sedangkan JPG, WebP, dan AVIF dikompres lagi, jadi pilih kualitas tinggi. Foto dengan profil warna lebar, seperti banyak foto iPhone, mungkin terlihat sedikit kurang cerah karena profilnya tidak dipertahankan.",
+          "Tidak, jika format dipertahankan: file JPG, PNG, dan WebP tidak disimpan ulang, jadi setiap piksel tetap sama. Jika Anda mengonversi ke format lain, atau memulai dari foto HEIC iPhone, gambar disimpan ulang, jadi pilih kualitas tinggi.",
       },
       {
         question: "Bagaimana cara memastikan lokasinya sudah hilang?",

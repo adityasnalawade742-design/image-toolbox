@@ -202,6 +202,7 @@ export const strings = {
 
   // Round corners
   'ctl.round.circle': 'Crea un cerchio',
+  'ctl.round.position': 'Posizione nel cerchio',
   'ctl.round.presets': 'Raggio degli angoli',
   'ctl.round.small': 'Piccolo',
   'ctl.round.medium': 'Medio',
@@ -222,6 +223,7 @@ export const strings = {
   'ctl.compress.result': 'Risultato',
   'ctl.compress.original': 'Originale',
   'ctl.compress.output': 'Compressa',
+  'ctl.compress.measuring': 'Misurazione…',
   'ctl.compress.change': 'Variazione',
   'ctl.compress.saved': '{percent}% più leggera',
   'ctl.compress.larger': 'Più pesante dell’originale',
@@ -246,6 +248,7 @@ export const strings = {
   'ctl.metadata.authorDesc': 'Tag di autore e copyright e nome del software di modifica.',
   'ctl.metadata.blocksTitle': 'Blocchi EXIF e IPTC',
   'ctl.metadata.blocksDesc': 'L’immagine viene ridisegnata dai suoi pixel, quindi nessun blocco di metadati viene copiato.',
+  'ctl.metadata.losslessDesc': 'Vengono tolti solo i metadati dal file. L’immagine non viene salvata di nuovo, quindi mantiene tutta la qualità e i colori.',
   'ctl.metadata.local': 'Tutto avviene nel browser. La tua foto non viene mai caricata.',
   'ctl.metadata.size': 'Peso file',
   'ctl.metadata.original': 'Originale',
@@ -449,6 +452,8 @@ export const strings = {
   'ctl.split.rows': 'Righe',
   'ctl.split.cols': 'Colonne',
   'ctl.split.gridLimit': 'Fino a 12 righe e 12 colonne.',
+  'ctl.split.square': 'Riquadri quadrati',
+  'ctl.split.squareNote': 'Ritaglia i bordi in modo uniforme perché ogni riquadro sia quadrato, come li mostra Instagram.',
   'ctl.split.saveAs': 'Salva i riquadri come',
   'ctl.split.tileFormat': 'Formato dei riquadri',
   'ctl.split.tile': 'Riquadro',
@@ -677,6 +682,8 @@ export const strings = {
   'ctl.frompdf.rendering': 'Rendering della pagina {n} di {total}…',
   'ctl.frompdf.replace': 'Scegli un altro PDF',
   'ctl.frompdf.errPassword': 'Questo PDF è protetto da password. Aprilo in un lettore PDF, salva una copia senza password e prova con quella copia.',
+  'ctl.pdf.errLocked': 'Questo PDF è bloccato dall’autore (password o limitazioni di modifica), quindi non può essere modificato qui. Se hai il permesso di modificarlo, aprilo in un lettore PDF, stampalo o salvalo come nuovo PDF e usa quella copia.',
+  'ctl.pdf.errScript': 'Parte del testo non può ancora essere scritta in questo PDF: {fields}. Funzionano l’alfabeto latino, greco e cirillico, il giapponese e il coreano; scritture come l’arabo, l’ebraico, il thai o il devanagari non sono supportate.',
   'ctl.frompdf.errInvalid': 'Impossibile aprire questo file come PDF. Potrebbe essere danneggiato o non essere un PDF.',
 
   // Merge Images

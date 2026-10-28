@@ -1126,7 +1126,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Supprimer EXIF",
     tagline: "Supprimez les données EXIF, comme la position GPS, le modèle d’appareil et la date, avant de partager une photo.",
     intro:
-      "Supprimer les métadonnées d’une image crée une copie propre de votre photo, sans ses informations EXIF cachées. Les photos prises avec un téléphone ou un appareil photo enregistrent souvent la position GPS du lieu de prise de vue, le modèle de l’appareil, ainsi que la date et l’heure. Cet outil redessine l’image à partir de ses pixels et enregistre un nouveau fichier : ces informations ne sont donc pas reprises. La nouvelle taille du fichier s’affiche avant le téléchargement.",
+      "Supprimer les métadonnées d’une image crée une copie propre de votre photo sans ses informations EXIF cachées. Les photos prises avec un téléphone ou un appareil photo enregistrent souvent la position GPS de la prise de vue, le modèle de l’appareil, ainsi que la date et l’heure. Pour JPG, PNG et WebP, seules ces informations sont retirées du fichier : l’image n’est pas réenregistrée, sa qualité et ses couleurs restent donc exactement les mêmes. La nouvelle taille du fichier s’affiche avant le téléchargement.",
     seoTitle: "Supprimer les données EXIF d’une photo – GPS",
     seoDescription:
       "Supprimez gratuitement les données EXIF de vos photos : position GPS, modèle d’appareil et date, avant de partager. Traité dans votre navigateur, sans envoi.",
@@ -1149,9 +1149,9 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "L’aperçu montre l’image qui sera enregistrée, avec la taille de son nouveau fichier.",
       },
       {
-        title: "Choisissez le format et la qualité",
+        title: "Conservez le format",
         description:
-          "Le format d’origine est conservé par défaut. Pour JPG et WebP, utilisez une qualité de 90 % à 100 % pour rester proche de l’original, ou choisissez PNG pour une sortie sans perte.",
+          "En gardant le format d’origine, seules les métadonnées sont retirées, sans aucune perte de qualité. Si vous changez de format, l’image est réenregistrée : pour JPG et WebP, utilisez une qualité de 90 % à 100 %, ou choisissez PNG.",
       },
       {
         title: "Téléchargez et partagez le nouveau fichier",
@@ -1165,8 +1165,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
           "Les coordonnées GPS, la marque et le modèle de l’appareil, l’objectif, la date de prise de vue et les autres champs EXIF et IPTC ne sont pas écrits dans le nouveau fichier.",
       },
       {
-        title: "Copie propre créée à partir des pixels",
-        description: "L’image est redessinée à partir de ses pixels : aucune donnée cachée ne peut être recopiée par accident.",
+        title: "Aucune perte de qualité",
+        description: "JPG, PNG et WebP gardent leurs pixels exacts et leur profil de couleur ; seules les données cachées sont retirées.",
       },
       {
         title: "Taille du fichier affichée",
@@ -1181,12 +1181,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelles métadonnées sont supprimées ?",
         answer:
-          "Toutes : les données EXIF (appareil, réglages, date et GPS), les champs IPTC et XMP comme l’auteur ou le copyright, et le profil de couleur intégré. Seule l’image visible est conservée.",
+          "Les données EXIF (appareil, réglages, date et GPS), les champs IPTC et XMP comme l’auteur ou le copyright, les commentaires et le texte des PNG. Le profil de couleur est conservé pour que les couleurs ne changent pas, et un JPG garde son orientation pour ne pas s’afficher de travers.",
       },
       {
         question: "Supprimer les métadonnées modifie-t-il la qualité de l’image ?",
         answer:
-          "L’image est enregistrée de nouveau. Le PNG garde chaque pixel, tandis que JPG, WebP et AVIF sont de nouveau compressés : choisissez une qualité élevée. Les photos avec un profil de couleur étendu, comme beaucoup de photos d’iPhone, peuvent paraître un peu moins éclatantes, car le profil n’est pas conservé.",
+          "Pas si vous gardez le format : les fichiers JPG, PNG et WebP ne sont pas réenregistrés, chaque pixel reste identique. Si vous convertissez vers un autre format, ou partez d’une photo HEIC d’iPhone, l’image est réenregistrée : choisissez alors une qualité élevée.",
       },
       {
         question: "Comment vérifier que la position a bien disparu ?",

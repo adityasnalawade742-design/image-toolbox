@@ -11,6 +11,9 @@ interface Props {
   onRadiusChange: (r: number) => void;
   onIsCircleChange: (circle: boolean) => void;
   onBackgroundColorChange: (color: string) => void;
+  /** Where the circle sits along the long side of a non-square photo (0–100); hidden for square photos */
+  focus?: number;
+  onFocusChange?: (v: number) => void;
 }
 
 const segButton = (selected: boolean) =>
@@ -27,6 +30,8 @@ export function RoundControls({
   onRadiusChange,
   onIsCircleChange,
   onBackgroundColorChange,
+  focus,
+  onFocusChange,
 }: Props) {
   const t = useT();
   const idBase = useId();
@@ -54,10 +59,25 @@ export function RoundControls({
         <span>{t('ctl.round.circle')}</span>
       </button>
 
+      {/* On a non-square photo the circle takes a square from it: choose which part */}
+      {isCircle && focus !== undefined && onFocusChange && (
+        <div className="space-y-1.5">
+          <div className="flex items-baseline justify-between gap-2 text-[15px]">
+            <label htmlFor={`${idBase}-focus`} className="text-ink">
+              {t('ctl.round.position')}
+            </label>
+            <span className="font-semibold text-ink" data-measure>
+              {focus}%
+            </span>
+          </div>
+          <input id={`${idBase}-focus`} type="range" min="0" max="100" value={focus} onChange={(e) => onFocusChange(parseInt(e.target.value) || 0)} className="w-full" />
+        </div>
+      )}
+
       {/* Presets */}
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block" id={`${idBase}-presets`}>{t('ctl.round.presets')}</span>
-        <div className="grid grid-cols-2 gap-px bg-ink border border-ink" role="group" aria-labelledby={`${idBase}-presets`}>
+        <div className="grid grid-cols-2 gap-px bg-ink seg-group border border-ink" role="group" aria-labelledby={`${idBase}-presets`}>
           {presets.map((p) => {
             const selected = !isCircle && radius === p.value;
             return (

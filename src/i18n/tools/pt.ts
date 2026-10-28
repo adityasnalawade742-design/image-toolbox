@@ -1126,7 +1126,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Remover EXIF",
     tagline: "Remova dados EXIF, como localização GPS, modelo da câmera e data, de uma foto antes de compartilhá-la.",
     intro:
-      "Remover metadados da imagem cria uma cópia limpa da sua foto sem as informações EXIF ocultas. Fotos de celulares e câmeras costumam registrar a localização GPS onde foram tiradas, o modelo do aparelho e a data e hora. Esta ferramenta redesenha a imagem a partir dos pixels e salva um novo arquivo, então essas informações não são levadas junto, e mostra o novo tamanho do arquivo antes do download.",
+      "Remover metadados da imagem cria uma cópia limpa da sua foto sem as informações EXIF ocultas. Fotos de celulares e câmeras costumam registrar a localização GPS onde foram tiradas, o modelo do aparelho e a data e hora. Em JPG, PNG e WebP, só essas informações são retiradas do arquivo: a imagem não é salva de novo, então a qualidade e as cores ficam exatamente iguais. O novo tamanho do arquivo aparece antes do download.",
     seoTitle: "Remover dados EXIF de fotos: GPS e metadados",
     seoDescription:
       "Remover metadados EXIF de fotos grátis. Apague a localização GPS, o modelo da câmera e a data antes de compartilhar uma foto. Processado no navegador, sem envio.",
@@ -1149,9 +1149,9 @@ export const ptTools: Record<string, LocalizedToolItem> = {
         description: "A prévia mostra a imagem que vai ser salva, junto com o novo tamanho do arquivo.",
       },
       {
-        title: "Escolha o formato e a qualidade",
+        title: "Mantenha o formato",
         description:
-          "O formato original é mantido por padrão. Para JPG e WebP, use qualidade de 90% a 100% para ficar perto do original, ou escolha PNG para uma saída sem perdas.",
+          "Mantendo o formato original, só os metadados são removidos, sem mudança de qualidade. Se você trocar de formato, a imagem é salva de novo: para JPG e WebP use qualidade de 90% a 100%, ou escolha PNG.",
       },
       {
         title: "Baixe e compartilhe o novo arquivo",
@@ -1165,8 +1165,8 @@ export const ptTools: Record<string, LocalizedToolItem> = {
           "Coordenadas GPS, marca e modelo da câmera, lente, data da captura e outros campos EXIF e IPTC não são gravados no novo arquivo.",
       },
       {
-        title: "Cópia limpa a partir dos pixels",
-        description: "A imagem é redesenhada a partir dos pixels, então nenhum dado oculto pode ser copiado por engano.",
+        title: "Sem perda de qualidade",
+        description: "JPG, PNG e WebP mantêm seus pixels exatos e o perfil de cor; só os dados ocultos são retirados.",
       },
       {
         title: "Tamanho do arquivo",
@@ -1181,12 +1181,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quais metadados são removidos?",
         answer:
-          "Todos: dados EXIF (câmera, configurações, data e GPS), campos IPTC e XMP como autor ou direitos autorais, e o perfil de cor incorporado. Só a imagem visível é mantida.",
+          "Dados EXIF (câmera, configurações, data e GPS), campos IPTC e XMP como autor ou direitos autorais, comentários e texto de PNG. O perfil de cor é mantido para que as cores não mudem, e um JPG mantém a orientação para não aparecer de lado.",
       },
       {
         question: "Remover metadados muda a qualidade da imagem?",
         answer:
-          "A imagem é salva de novo. O PNG mantém cada pixel, enquanto JPG, WebP e AVIF são comprimidos de novo, então escolha uma qualidade alta. Fotos com perfil de cor amplo, como muitas fotos do iPhone, podem ficar um pouco menos vivas, porque o perfil não é mantido.",
+          "Não, se você mantiver o formato: arquivos JPG, PNG e WebP não são salvos de novo, então cada pixel continua igual. Se você converter para outro formato, ou começar com uma foto HEIC do iPhone, a imagem é salva de novo, então escolha uma qualidade alta.",
       },
       {
         question: "Como confirmar que a localização foi removida?",

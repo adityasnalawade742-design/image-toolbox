@@ -104,6 +104,13 @@ export async function selfHostModels() {
     put(`ocr/tessdata/${td.commit.slice(0, 12)}/${lang}.traineddata`, count(await pinned(`https://raw.githubusercontent.com/${td.repo}/${td.commit}/${lang}.traineddata`, hash)));
   }));
 
+  // Fonts for PDF form text outside Latin-1 (fetched by the page only when a field needs one). The hash in the
+  // path changes with the file, so the immutable cache header for /models/* stays safe.
+  const fonts = assets.fonts;
+  await pool(Object.values(fonts.files).map((f) => async () => {
+    put(`fonts/${f.sha256.slice(0, 12)}/${f.file}`, count(await pinned(f.url, f.sha256)));
+  }));
+
   put('THIRD-PARTY.txt', Buffer.from(
     [
       'AI models and runtimes served with this site:',
@@ -112,6 +119,7 @@ export async function selfHostModels() {
       `- ONNX Runtime Web ${wanted}: MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
       `- Tesseract.js ${tjsVersion} and tesseract.js-core ${coreVersion}: Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- Tesseract fast language data (${td.repo} at ${td.commit}): ${td.license}`,
+      `- Fonts ${Object.values(fonts.files).map((f) => f.file).join(', ')}: ${fonts.license} (https://openfontlicense.org)`,
       '',
     ].join('\n')
   ));
