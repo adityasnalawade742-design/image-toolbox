@@ -127,7 +127,7 @@ export function BulkCompressorWorkspace() {
         }
         ctx.drawImage(img, 0, 0);
 
-        const encoded = await canvasToBlob(canvas, format, quality / 100);
+        const encoded = await canvasToBlob(canvas, format, quality / 100, undefined, { best: true, lossyPng: quality < 100 });
         // Never hand back a bigger file: when re-saving in the same format doesn't help, keep the original,
         // minus camera details and location (removed losslessly)
         let outputBlob: Blob = encoded;
@@ -394,26 +394,23 @@ export function BulkCompressorWorkspace() {
               <p className="text-[14px] text-graphite">{t(FORMAT_HINT[format])}</p>
             </div>
 
-            {format === 'image/png' ? (
-              <p className="text-[14px] text-graphite pt-4 border-t border-ink">{t('ctl.bulkCompress.pngLossless')}</p>
-            ) : (
-              <label className="block space-y-1.5 pt-4 border-t border-ink">
-                <span className="flex items-center justify-between">
-                  <span className="slug">{t('ctl.bulkCompress.quality')}</span>
-                  <span className="font-semibold text-ink" data-measure>{quality}%</span>
-                </span>
-                <input
-                  type="range"
-                  min="10"
-                  max="100"
-                  disabled={isProcessing}
-                  value={quality}
-                  aria-label={t('ctl.bulkCompress.qualityLabel')}
-                  onChange={(e) => setQuality(parseInt(e.target.value) || 80)}
-                  className="w-full"
-                />
-              </label>
-            )}
+            {format === 'image/png' && <p className="text-[14px] text-graphite pt-4 border-t border-ink">{t('ws.pngQuantHint')}</p>}
+            <label className={`block space-y-1.5 ${format === 'image/png' ? '' : 'pt-4 border-t border-ink'}`}>
+              <span className="flex items-center justify-between">
+                <span className="slug">{t('ctl.bulkCompress.quality')}</span>
+                <span className="font-semibold text-ink" data-measure>{quality}%</span>
+              </span>
+              <input
+                type="range"
+                min="10"
+                max="100"
+                disabled={isProcessing}
+                value={quality}
+                aria-label={t('ctl.bulkCompress.qualityLabel')}
+                onChange={(e) => setQuality(parseInt(e.target.value) || 80)}
+                className="w-full"
+              />
+            </label>
           </div>
         </div>
 

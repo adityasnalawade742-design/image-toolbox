@@ -139,3 +139,7 @@ The background remover's "Best quality" mode uses [@imgly/background-removal](ht
 Third-party models, downloaded by the browser at runtime and not redistributed here:
 - MODNet ("Fast" background removal), Apache-2.0, via [Xenova/modnet](https://huggingface.co/Xenova/modnet)
 - IMG.LY ISNet ("Best quality" background removal), AGPL-3.0, served from IMG.LY's CDN
+
+Image encoders (WebAssembly, bundled and loaded only when an image is saved):
+- [libimagequant](https://github.com/ImageOptim/libimagequant) via [imagequant](https://github.com/valterkraemer/imagequant-wasm) (PNG colour reduction), GPL-3.0, which can be combined with AGPL-3.0 code
+- MozJPEG, libwebp, libavif and OxiPNG via [jSquash](https://github.com/jamsinclair/jSquash), Apache-2.0

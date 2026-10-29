@@ -156,14 +156,6 @@ export function CompressControls({
 
           <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.compress.targetHelp')}</p>
         </div>
-      ) : isPng ? (
-        /* PNG ignores quality, so there is no slider to show */
-        <div className="pt-4 border-t border-pencil">
-          <p className="flex items-start gap-2 text-[14px] text-ink leading-relaxed">
-            <Info className="w-4 h-4 shrink-0 mt-0.5 text-graphite" aria-hidden="true" />
-            <span>{t('ctl.compress.pngLossless')}</span>
-          </p>
-        </div>
       ) : (
         /* Quality slider */
         <div className="space-y-2 pt-4 border-t border-pencil">
@@ -184,6 +176,12 @@ export function CompressControls({
             <span>{t('ctl.compress.smaller')}</span>
             <span className="text-right">{t('ctl.compress.sharper')}</span>
           </div>
+          {isPng && (
+            <p className="flex items-start gap-2 text-[13px] text-graphite leading-relaxed pt-1">
+              <Info className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+              <span>{t('ws.pngQuantHint')}</span>
+            </p>
+          )}
         </div>
       )}
 

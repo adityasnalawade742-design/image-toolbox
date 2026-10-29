@@ -43,6 +43,7 @@ export const strings = {
   'ws.quality': 'Kualitas',
   'ws.qualityLabel': 'Kualitas hasil',
   'ws.pngLossless': 'PNG bersifat lossless',
+  'ws.pngQuantHint': 'Pada 100%, PNG mempertahankan semua warna. Nilai lebih rendah mengurangi gambar menjadi paling banyak 256 warna, sehingga sebagian besar PNG jadi beberapa kali lebih kecil dengan sedikit perubahan yang terlihat.',
   'ws.download': 'Unduh {format}',
   'ws.downloadZip': 'Unduh paket favicon (ZIP)',
   'ws.preparing': 'Menyiapkan unduhan…',

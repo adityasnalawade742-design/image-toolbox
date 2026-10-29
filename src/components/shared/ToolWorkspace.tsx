@@ -24,6 +24,7 @@ import { isTiffFile, convertTiff } from '../../lib/canvas/tiffLoader';
 import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
 import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
+import { canvasSupportsP3, isDisplayP3, readJpegIcc } from '../../lib/canvas/iccProfile';
 import { installWindowDropGuard } from './useImageIntake';
 import { I18nProvider } from './I18nContext';
 import { DragFrameOverlay } from './DragFrameOverlay';
@@ -201,6 +202,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
   const [sourceFile, setSourceFile] = useState<File | null>(null);
+  /** The uploaded JPG's Display P3 colour profile, when it has one and this browser can draw in P3 */
+  const [sourceP3Icc, setSourceP3Icc] = useState<Uint8Array | null>(null);
   // Size of the rendered result, for the dimension lines and job ticket
   const [outDims, setOutDims] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
   // Bumped per loaded image to replay the registration snap
@@ -484,6 +487,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       circleFocus: slug === 'round-image' ? circleFocus / 100 : undefined,
       // JPEG has no alpha channel, so transparent areas get the chosen fill instead of black
       backgroundColor: format === 'image/jpeg' ? bgFillColor : undefined,
+      // A phone photo in Display P3 keeps its colours when saved as JPG with its profile
+      colorSpace: forExport && format === 'image/jpeg' && sourceP3Icc ? 'display-p3' : undefined,
     };
   }, [
     width,
@@ -504,7 +509,26 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     circleFocus,
     format,
     bgFillColor,
+    sourceP3Icc,
   ]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setSourceP3Icc(null);
+    if (!sourceFile || sourceFile.type !== 'image/jpeg' || !canvasSupportsP3()) return;
+    // The profile sits in the first segments of the file
+    sourceFile
+      .slice(0, 512 * 1024)
+      .arrayBuffer()
+      .then((buf) => {
+        const icc = readJpegIcc(new Uint8Array(buf));
+        if (!cancelled && icc && isDisplayP3(icc)) setSourceP3Icc(icc);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [sourceFile]);
 
   // JPG, PNG and WebP kept in their own format lose only their metadata: no re-encoding, so no quality change
   useEffect(() => {
@@ -576,7 +600,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
             };
             if (activeImg === imageElement) {
               // The preview is the photo itself, so its encoded size is the real one
-              canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate').then((b) => report(b, displayCanvas.width, displayCanvas.height)).catch(failed);
+              canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate', encodeOptions).then((b) => report(b, displayCanvas.width, displayCanvas.height)).catch(failed);
             } else {
               // Large photos are previewed from a reduced copy, whose size says little about the real file:
               // measure the full-size output once the settings stop changing
@@ -586,7 +610,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               sizeTimerRef.current = window.setTimeout(() => {
                 if (estimateSeq !== estimateSeqRef.current || !fullImg) return;
                 const full = processCanvas(fullImg, getProcessingOptions(true));
-                canvasToBlob(full, format, quality / 100, 'preview-estimate').then((b) => report(b, full.width, full.height)).catch(failed);
+                canvasToBlob(full, format, quality / 100, 'preview-estimate', encodeOptions).then((b) => report(b, full.width, full.height)).catch(failed);
               }, 450);
             }
           }
@@ -751,12 +775,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     w === imageElement.naturalWidth &&
     h === imageElement.naturalHeight;
 
+  /** Encoder settings for downloads (and Compress Image's size estimate): the WebAssembly encoders, and for
+   * Compress Image a PNG palette below 100% quality */
+  const encodeOptions = { best: true, lossyPng: slug === 'compress-image' && quality < 100, icc: format === 'image/jpeg' ? sourceP3Icc : null };
+
   /** The file a download gives: full resolution, encoded in the chosen format and quality */
   const buildOutput = async (): Promise<Blob> => {
     if (slug === 'remove-image-metadata' && cleanFile) return new Blob([new Uint8Array(cleanFile)], { type: format });
     // Always process from full-resolution original source image for pristine output quality
     const canvas = processCanvas(imageElement!, getProcessingOptions(true));
-    const blob = await canvasToBlob(canvas, format, quality / 100);
+    const blob = await canvasToBlob(canvas, format, quality / 100, undefined, encodeOptions);
     const kept = keepsOriginal(blob, canvas.width, canvas.height);
     setKeptOriginal(kept);
     if (!kept) return blob;

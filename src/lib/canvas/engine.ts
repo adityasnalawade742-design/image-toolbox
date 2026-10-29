@@ -1,4 +1,5 @@
-import { encodeAvif } from './avifEncoder';
+import { withJpegIcc } from './iccProfile';
+import { canEncodeWasm, encodeAvif, encodeWith, isAvifSuperseded } from './avifEncoder';
 
 export interface TextOverlayOptions {
   text: string;
@@ -92,6 +93,8 @@ export interface ImageProcessingOptions {
   /** For a circle from a non-square photo without a crop: where along the long side the circle sits (0–1, centre 0.5) */
   circleFocus?: number;
   backgroundColor?: string; // For JPG conversion / background fill
+  /** Work in Display P3 to keep a phone photo's wider colours (only when saving to JPG with its profile) */
+  colorSpace?: PredefinedColorSpace;
 }
 
 export function loadImage(src: string | File | Blob): Promise<HTMLImageElement> {
@@ -156,12 +159,50 @@ export function createImageProxy(
   });
 }
 
+/**
+ * The source region, shrunk in halving steps with high-quality smoothing until it is within 2× of the target size.
+ * One big downscale samples only a few source pixels per output pixel, which leaves jagged edges and moiré;
+ * halving steps average all of them. Returns the source unchanged when there's little to shrink.
+ */
+export function stepDown(
+  src: CanvasImageSource,
+  sx: number,
+  sy: number,
+  sw: number,
+  sh: number,
+  targetW: number,
+  targetH: number,
+  colorSpace: PredefinedColorSpace = 'srgb'
+): { source: CanvasImageSource; sx: number; sy: number; sw: number; sh: number } {
+  let source: CanvasImageSource = src;
+  let w = sw;
+  let h = sh;
+  let x = sx;
+  let y = sy;
+  while (w / 2 >= targetW && h / 2 >= targetH && w >= 4 && h >= 4) {
+    const next = document.createElement('canvas');
+    next.width = Math.max(1, Math.round(w / 2));
+    next.height = Math.max(1, Math.round(h / 2));
+    const nctx = next.getContext('2d', { colorSpace });
+    if (!nctx) break;
+    nctx.imageSmoothingEnabled = true;
+    nctx.imageSmoothingQuality = 'high';
+    nctx.drawImage(source, x, y, w, h, 0, 0, next.width, next.height);
+    source = next;
+    x = 0;
+    y = 0;
+    w = next.width;
+    h = next.height;
+  }
+  return { source, sx: x, sy: y, sw: w, sh: h };
+}
+
 export function processCanvas(
   img: HTMLImageElement,
   options: ImageProcessingOptions = {}
 ): HTMLCanvasElement {
   const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const ctx = canvas.getContext('2d', { willReadFrequently: true, colorSpace: options.colorSpace ?? 'srgb' });
   if (!ctx) throw new Error('Canvas 2D context not available');
 
   // 1. Source Crop Dimensions
@@ -237,7 +278,11 @@ export function processCanvas(
     ctx.clip();
   }
 
-  ctx.drawImage(img, srcX, srcY, srcW, srcH, -targetW / 2, -targetH / 2, targetW, targetH);
+  // Sharp downscales: shrink in steps, then the last step with the best smoothing the browser has
+  const down = stepDown(img, srcX, srcY, srcW, srcH, targetW, targetH, options.colorSpace);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, -targetW / 2, -targetH / 2, targetW, targetH);
   ctx.restore();
 
   // 7. Draw Border
@@ -385,22 +430,57 @@ export function processCanvas(
   return canvas;
 }
 
-export function canvasToBlob(
+export interface EncodeOptions {
+  /**
+   * Use the WebAssembly encoders (MozJPEG, libwebp, OxiPNG): smaller files, but slower than the browser's own,
+   * so meant for downloads rather than previews or clipboard copies. Falls back to the browser if they fail.
+   */
+  best?: boolean;
+  /** With `best`, PNG only: reduce to a palette of up to 256 colours at `quality` (like TinyPNG) */
+  lossyPng?: boolean;
+  /** With `best`, JPEG from a Display P3 canvas: the original photo's colour profile, written into the file */
+  icc?: Uint8Array | null;
+}
+
+const KIND = { 'image/jpeg': 'jpeg', 'image/webp': 'webp', 'image/png': 'png' } as const;
+
+export async function canvasToBlob(
   canvas: HTMLCanvasElement,
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' = 'image/png',
   quality: number = 0.92,
-  avifCoalesceKey?: string
+  avifCoalesceKey?: string,
+  opts: EncodeOptions = {}
 ): Promise<Blob> {
   // Browsers can't encode AVIF via toBlob, so route it through the WASM encoder
   if (format === 'image/avif') {
     const ctx = canvas.getContext('2d');
-    if (!ctx) return Promise.reject(new Error('Canvas 2D unavailable'));
+    if (!ctx) throw new Error('Canvas 2D unavailable');
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     return encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
   }
 
   // JPG has no transparency and browsers encode transparent pixels as black: put white behind them instead
   const source = format === 'image/jpeg' ? onWhite(canvas) : canvas;
+
+  if (opts.best && canEncodeWasm()) {
+    const ctx = source.getContext('2d');
+    if (ctx) {
+      try {
+        // A Display P3 canvas keeps its colours only in a JPG that carries the profile; anything else is
+        // converted to sRGB, which every viewer assumes when a file has no profile
+        const wide = format === 'image/jpeg' && !!opts.icc && ctx.getContextAttributes?.().colorSpace === 'display-p3';
+        const imageData = ctx.getImageData(0, 0, source.width, source.height, { colorSpace: wide ? 'display-p3' : 'srgb' });
+        const blob = await encodeWith(KIND[format], imageData, Math.round(quality * 100), avifCoalesceKey, !!opts.lossyPng);
+        if (!wide) return blob;
+        return new Blob([new Uint8Array(withJpegIcc(new Uint8Array(await blob.arrayBuffer()), opts.icc!))], { type: 'image/jpeg' });
+      } catch (err) {
+        // A newer request replaced this one: pass that on rather than encoding anyway
+        if (isAvifSuperseded(err)) throw err;
+        console.warn('WebAssembly encoder failed, using the browser encoder:', err);
+      }
+    }
+  }
+
   return new Promise((resolve, reject) => {
     source.toBlob(
       (blob) => {
@@ -418,7 +498,8 @@ export function onWhite(canvas: HTMLCanvasElement): HTMLCanvasElement {
   const c = document.createElement('canvas');
   c.width = canvas.width;
   c.height = canvas.height;
-  const ctx = c.getContext('2d')!;
+  const colorSpace = canvas.getContext('2d')?.getContextAttributes?.().colorSpace ?? 'srgb';
+  const ctx = c.getContext('2d', { colorSpace })!;
   ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, c.width, c.height);
   ctx.drawImage(canvas, 0, 0);
