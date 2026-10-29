@@ -4,7 +4,7 @@ import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
-import { formatBytes } from '../../lib/canvas/engine';
+import { formatBytes, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 
 interface FilterPreset {
@@ -166,12 +166,9 @@ export function PhotoFiltersWorkspace() {
     return canvas;
   };
 
-  const handleDownload = (format: SaveFormat = 'png') => {
-    const canvas = renderCanvas();
-    const link = document.createElement('a');
-    link.download = `filtered-${activePreset}-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
-    link.href = canvas.toDataURL(`image/${format}`, 0.95);
-    link.click();
+  const handleDownload = async (format: SaveFormat = 'png') => {
+    const blob = await canvasToBlob(renderCanvas(), `image/${format}`, 0.95);
+    downloadBlob(blob, `filtered-${activePreset}-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const handleCopyClipboard = async () => {
@@ -367,7 +364,7 @@ export function PhotoFiltersWorkspace() {
                 <FullSizeView
                   label={`filtered-${activePreset}.${saveFormat === 'jpeg' ? 'jpg' : saveFormat}`}
                   load={async () => {
-                    const blob = await new Promise<Blob | null>((res) => renderCanvas().toBlob(res, `image/${saveFormat}`, 0.95));
+                    const blob = await canvasToBlob(renderCanvas(), `image/${saveFormat}`, 0.95);
                     if (!blob) throw new Error('encode failed');
                     return blobImage(blob);
                   }}

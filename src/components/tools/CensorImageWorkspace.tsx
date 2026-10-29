@@ -3,6 +3,7 @@ import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCirc
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
+import { downloadBlob } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
 
@@ -77,10 +78,12 @@ export function CensorImageWorkspace() {
   // Shape selection
   const [shape, setShape] = useState<'rect' | 'circle'>('rect');
 
-  // Re-draw Canvas with all censor boxes
-  useEffect(() => {
-    if (!imgElement || !canvasRef.current) return;
-    const canvas = canvasRef.current;
+  /**
+   * Draw the photo with every censor box. The on-screen canvas also shows the editing outline and resize handle;
+   * downloads are drawn again without them (and on white when saved as JPG, which has no transparency).
+   */
+  const paint = (canvas: HTMLCanvasElement, guides: boolean, background?: string) => {
+    if (!imgElement) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -91,6 +94,10 @@ export function CensorImageWorkspace() {
     canvas.height = naturalH;
 
     // 1. Draw base image
+    if (background) {
+      ctx.fillStyle = background;
+      ctx.fillRect(0, 0, naturalW, naturalH);
+    }
     ctx.drawImage(imgElement, 0, 0, naturalW, naturalH);
 
     // 2. Render each censor box
@@ -170,7 +177,7 @@ export function CensorImageWorkspace() {
       ctx.restore();
 
       // Dashed border on the box being drawn and on the selected box
-      if (b.id === 'temp' || b.id === selectedId) {
+      if (guides && (b.id === 'temp' || b.id === selectedId)) {
         ctx.save();
         ctx.strokeStyle = '#e4007c';
         ctx.lineWidth = Math.max(2, Math.round(naturalW / 600));
@@ -193,7 +200,20 @@ export function CensorImageWorkspace() {
         ctx.restore();
       }
     });
+  };
+  useEffect(() => {
+    if (canvasRef.current) paint(canvasRef.current, true);
+    // paint reads the same state
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imgElement, boxes, currentBox, isDrawing, censorMode, intensity, shape, selectedId]);
+
+  /** The censored image as it should be saved: no editing outline, white behind transparency for JPG */
+  const exportBlob = (format: OutputFormat, quality = 0.95) =>
+    new Promise<Blob | null>((res) => {
+      const c = document.createElement('canvas');
+      paint(c, false, format === 'jpeg' ? '#ffffff' : undefined);
+      c.toBlob(res, `image/${format}`, quality);
+    });
 
   // Coordinate mapping from mouse/touch to image natural pixels
   const getCoordsFromPoint = (clientX: number, clientY: number) => {
@@ -380,12 +400,10 @@ export function CensorImageWorkspace() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [imgElement, hasBoxes]);
 
-  const handleDownload = (format: OutputFormat = 'png') => {
-    if (!canvasRef.current) return;
-    const link = document.createElement('a');
-    link.download = `redacted-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
-    link.href = canvasRef.current.toDataURL(`image/${format}`, 0.95);
-    link.click();
+  const handleDownload = async (format: OutputFormat = 'png') => {
+    if (!imgElement) return;
+    const blob = await exportBlob(format);
+    if (blob) downloadBlob(blob, `redacted-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const [copiedToast, setCopiedToast] = useState(false);
@@ -395,7 +413,7 @@ export function CensorImageWorkspace() {
     if (!canvasRef.current) return;
     setCopyError(null);
     try {
-      const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, 'image/png', 1.0));
+      const blob = await exportBlob('png', 1.0);
       if (blob) {
         await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
         setCopiedToast(true);
@@ -468,7 +486,7 @@ export function CensorImageWorkspace() {
                 className="ml-auto"
                 label={`redacted.${format === 'jpeg' ? 'jpg' : format}`}
                 load={async () => {
-                  const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, `image/${format}`, 0.95));
+                  const blob = await exportBlob(format);
                   if (!blob) throw new Error('encode failed');
                   return blobImage(blob);
                 }}

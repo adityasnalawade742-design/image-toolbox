@@ -48,7 +48,7 @@ export interface TargetOptions {
   format: TargetFormat;
   /** Exact output size, filled by cropping from the centre (passport-style presets) */
   exactSize?: { width: number; height: number };
-  /** Fill for transparent areas (JPG has no transparency) */
+  /** Fill for transparent areas; JPG (which has no transparency) defaults to white, WebP keeps transparency */
   background?: string;
 }
 
@@ -61,13 +61,15 @@ export interface TargetResult {
   fits: boolean;
 }
 
-function render(source: CanvasImageSource, srcW: number, srcH: number, w: number, h: number, background: string, crop: boolean) {
+function render(source: CanvasImageSource, srcW: number, srcH: number, w: number, h: number, background: string | undefined, crop: boolean) {
   const canvas = document.createElement('canvas');
   canvas.width = w;
   canvas.height = h;
   const ctx = canvas.getContext('2d')!;
-  ctx.fillStyle = background;
-  ctx.fillRect(0, 0, w, h);
+  if (background) {
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, w, h);
+  }
   ctx.imageSmoothingQuality = 'high';
   if (crop) {
     // Cover the frame and trim the overflow evenly from both sides
@@ -85,7 +87,7 @@ const toBlob = (canvas: HTMLCanvasElement, format: TargetFormat, quality: number
   new Promise<Blob>((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('encode failed'))), format, quality));
 
 export async function compressToTarget(source: CanvasImageSource, srcW: number, srcH: number, opts: TargetOptions): Promise<TargetResult> {
-  const background = opts.background || '#ffffff';
+  const background = opts.background || (opts.format === 'image/jpeg' ? '#ffffff' : undefined);
   const crop = Boolean(opts.exactSize);
   let w = opts.exactSize?.width ?? srcW;
   let h = opts.exactSize?.height ?? srcH;

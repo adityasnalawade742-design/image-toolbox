@@ -399,8 +399,10 @@ export function canvasToBlob(
     return encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
   }
 
+  // JPG has no transparency and browsers encode transparent pixels as black: put white behind them instead
+  const source = format === 'image/jpeg' ? onWhite(canvas) : canvas;
   return new Promise((resolve, reject) => {
-    canvas.toBlob(
+    source.toBlob(
       (blob) => {
         if (blob) resolve(blob);
         else reject(new Error('Failed to create blob from canvas'));
@@ -409,6 +411,18 @@ export function canvasToBlob(
       quality
     );
   });
+}
+
+/** A copy of the canvas drawn over white */
+export function onWhite(canvas: HTMLCanvasElement): HTMLCanvasElement {
+  const c = document.createElement('canvas');
+  c.width = canvas.width;
+  c.height = canvas.height;
+  const ctx = c.getContext('2d')!;
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.drawImage(canvas, 0, 0);
+  return c;
 }
 
 export function downloadBlob(blob: Blob, filename: string) {
