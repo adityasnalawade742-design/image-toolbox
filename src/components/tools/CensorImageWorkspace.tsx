@@ -3,6 +3,7 @@ import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCirc
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
+import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
 
 type CensorMode = 'pixelate' | 'blur' | 'blackout';
@@ -228,6 +229,8 @@ export function CensorImageWorkspace() {
   };
 
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    // A second finger is a pinch-zoom of the page, not a drag
+    if (!e.isPrimary) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     e.currentTarget.setPointerCapture(e.pointerId);
     const coords = getCoordsFromPoint(e.clientX, e.clientY);
@@ -446,7 +449,7 @@ export function CensorImageWorkspace() {
                 onPointerCancel={handleEndDrawing}
                 role="img"
                 aria-label={t('ctl.censor.canvasLabel')}
-                className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-none"
+                className="block max-h-[70vh] w-auto max-w-full object-contain cursor-crosshair touch-pinch-zoom"
               />
               </div>
             </div>
@@ -461,10 +464,20 @@ export function CensorImageWorkspace() {
                 <span className="slug">{t('ctl.censor.boxes')}</span>
                 <span className="text-ink font-semibold" aria-live="polite">{boxes.length}</span>
               </span>
+              <FullSizeView
+                className="ml-auto"
+                label={`redacted.${format === 'jpeg' ? 'jpg' : format}`}
+                load={async () => {
+                  const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, `image/${format}`, 0.95));
+                  if (!blob) throw new Error('encode failed');
+                  return blobImage(blob);
+                }}
+                original={imgElement ? () => urlImage(imgElement.src) : undefined}
+              />
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
+                className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
               >
                 {t('ws.replace')}
               </button>

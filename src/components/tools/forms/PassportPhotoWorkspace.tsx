@@ -8,6 +8,7 @@ import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { computeCrop, cropCentre, mmToPx, sheetLayout } from '../../../lib/canvas/passport';
 import { setDpi } from '../../../lib/canvas/dpi';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { removeBackground, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
 import { RemovalProgressBar, activeDownload } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
@@ -343,6 +344,22 @@ export function PassportPhotoWorkspace() {
         fileLabel={`${size.w === 50.8 ? '2 × 2 in' : `${size.w} × ${size.h} mm`} · ${photoPx.w} × ${photoPx.h} px · 300 dpi`}
         onReplace={() => inputRef.current?.click()}
         replaceLabel={t('ws.replace')}
+        ticketAction={
+          <FullSizeView
+            label={output === 'single' ? `passport-photo-${sizeName}.jpg` : `passport-sheet-${paper}-${sizeName}.jpg`}
+            disabled={bgBusy || (output === 'sheet' && sheetCount === 0)}
+            load={async () => {
+              // The photo or the printable sheet as it will be saved (a PDF sheet holds this same image)
+              const c = document.createElement('canvas');
+              if (output === 'single') drawPhoto(c);
+              else drawSheet(c, 300);
+              const blob = await canvasToBlob(c, 'image/jpeg', 0.95);
+              c.width = c.height = 0;
+              return blobImage(blob);
+            }}
+            original={() => urlImage(image.url, image.file.size)}
+          />
+        }
         panel={panel}
         actionLabel={t('ws.download', { format: output === 'sheet' ? format.toUpperCase() : 'JPG' })}
         onAction={run}
@@ -368,8 +385,10 @@ export function PassportPhotoWorkspace() {
               </div>
             )}
             <div
-              className="relative block w-[min(100%,18rem)] crop-marks touch-none cursor-grab active:cursor-grabbing select-none"
+              className="relative block w-[min(100%,18rem)] crop-marks touch-pinch-zoom cursor-grab active:cursor-grabbing select-none"
               onPointerDown={(e) => {
+                // A second finger is a pinch-zoom of the page, not a drag
+                if (!e.isPrimary) return;
                 if (!crop) return;
                 e.currentTarget.setPointerCapture(e.pointerId);
                 drag.current = { x: e.clientX, y: e.clientY, cx: centre.cx, cy: centre.cy };

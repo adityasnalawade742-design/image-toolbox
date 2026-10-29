@@ -7,6 +7,7 @@ import { RemovalProgressBar, activeDownload } from '../shared/RemovalProgressBar
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
 import { fitWithinPixels } from '../../lib/canvas/limits';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import { formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName } from '../../lib/storage/fileNames';
 
@@ -263,7 +264,15 @@ export function RemoveBackgroundWorkspace() {
                 {showOriginal ? t('ctl.bg.showResult') : t('ctl.bg.showOriginal')}
               </button>
             )}
-            <label onClick={() => warmUp()} className="ml-auto inline-flex items-center min-h-[40px] text-ink underline hover:no-underline cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink">
+            {cutout && (
+              <FullSizeView
+                className="ml-auto"
+                label={outputFileName(file.name, 'no-background', formatExtension(format))}
+                load={async () => blobImage(await canvasToBlob(canvasRef.current!, format, 0.92))}
+                original={sourceUrl ? () => urlImage(sourceUrl, file.size) : undefined}
+              />
+            )}
+            <label onClick={() => warmUp()} className={`${cutout ? '' : 'ml-auto '}inline-flex items-center min-h-[40px] text-ink underline hover:no-underline cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink`}>
               {t('ws.replace')}
               <input
                 type="file"

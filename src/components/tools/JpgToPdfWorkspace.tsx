@@ -90,7 +90,7 @@ export function JpgToPdfWorkspace() {
             <h2 className="slug">{t('ctl.list.images')}</h2>
             <span className="text-[14px] text-graphite" data-measure>{t('ctl.topdf.pages', { n: items.length })}</span>
           </div>
-          <ImageOrderList items={items} onChange={setOrdered} onAdd={() => fileInputRef.current?.click()} renderPreview={pagePreview} />
+          <ImageOrderList items={items} onChange={setOrdered} onAdd={() => fileInputRef.current?.click()} renderPreview={pagePreview} view />
           {skipped.length > 0 && <p role="alert" className="text-[15px] text-accent-red">{t('ctl.list.skipped', { names: skipped.join(', ') })}</p>}
           <div role="status" aria-live="polite" className="text-[15px] text-ink min-h-[1.5em]">
             {progress ? busyLabel : status}

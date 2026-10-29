@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, RotateCw, Trash2 } from 'lucide-react';
+import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { useT } from './I18nContext';
+import { MediaViewer } from './MediaViewer';
+import { pdfPageItems } from './pdfViewerItems';
+import { ViewableThumb } from './ViewableThumb';
 
 export interface GridPage {
   /** Stable key (survives reordering) */
@@ -18,12 +22,15 @@ interface Props {
   /** 'select': checkbox per page; 'organize': move, rotate and delete per page, plus drag to reorder */
   mode: 'select' | 'organize' | 'view';
   onChange?: (pages: GridPage[]) => void;
+  /** When given, each page opens large in a viewer (in this order and turn) */
+  doc?: PDFDocumentProxy | null;
 }
 
 /** Page thumbnails with keyboard-operable controls; dragging is only a shortcut for the move buttons */
-export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
+export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
   const t = useT();
   const [dragKey, setDragKey] = useState<string | null>(null);
+  const [viewAt, setViewAt] = useState<number | null>(null);
   const [announcement, setAnnouncement] = useState('');
   const update = (next: GridPage[], message?: string) => {
     onChange?.(next);
@@ -59,8 +66,8 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
                 dragKey === p.key ? 'opacity-50' : ''
               } ${mode === 'organize' ? 'cursor-grab' : ''}`}
             >
-              <div className="flex-1 flex items-center justify-center p-3 bg-paper-stock min-h-[9rem]">
-                {thumbs[p.index] ? (
+              {(() => {
+                const thumb = thumbs[p.index] ? (
                   <img
                     src={thumbs[p.index]}
                     // The visible page label below names it already
@@ -71,8 +78,15 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
                   />
                 ) : (
                   <span className="text-[13px] text-graphite">{label}</span>
-                )}
-              </div>
+                );
+                const box = 'flex-1 flex items-center justify-center p-3 bg-paper-stock min-h-[9rem]';
+                if (!doc) return <div className={box}>{thumb}</div>;
+                return (
+                  <ViewableThumb onView={() => setViewAt(i)} label={t('ctl.view.viewPage', { n: p.index + 1 })} className={box}>
+                    {thumb}
+                  </ViewableThumb>
+                );
+              })()}
               {mode === 'select' && (
                 <label className="flex items-center gap-2 border-t border-ink min-h-[44px] px-3 cursor-pointer text-[14px] font-semibold text-ink">
                   <input
@@ -125,6 +139,9 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange }: Props) {
       <span className="sr-only" aria-live="polite">
         {announcement}
       </span>
+      {doc && viewAt !== null && (
+        <MediaViewer items={pdfPageItems(doc, pages, (index) => t('ctl.pdf.pageN', { n: index + 1 }))} index={Math.min(viewAt, pages.length - 1)} onIndex={setViewAt} onClose={() => setViewAt(null)} />
+      )}
     </>
   );
 }

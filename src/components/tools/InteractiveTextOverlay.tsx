@@ -76,6 +76,8 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
   const topPx = (anchorY / canvasH) * dims.height;
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // A second finger is a pinch-zoom of the page, not a drag
+    if (!e.isPrimary) return;
     e.stopPropagation();
     e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -132,7 +134,7 @@ export function InteractiveTextOverlay({ canvasElement, options, onChange }: Pro
         // Pointer shortcut only: the position menu and sliders in the panel are the accessible route
         aria-hidden="true"
         title={t('ctl.textOverlay.hint')}
-        className={`absolute ${alignShift} -translate-y-1/2 pointer-events-auto cursor-move touch-none group`}
+        className={`absolute ${alignShift} -translate-y-1/2 pointer-events-auto cursor-move touch-pinch-zoom group`}
         style={{
           left: `${leftPx}px`,
           top: `${topPx}px`,

@@ -6,6 +6,7 @@ import { useT } from '../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../lib/canvas/loadImage';
 import { compressToTarget, type TargetFormat, type TargetResult } from '../../lib/canvas/targetSize';
 import { downloadBlob } from '../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import { outputFileName } from '../../lib/storage/fileNames';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
@@ -141,7 +142,15 @@ export function CompressToKbWorkspace() {
                 <span className="text-graphite">{kb(result.blob.size)} · {t('ws.quality')} {Math.round(result.quality * 100)}%</span>
               </span>
             )}
-            <button type="button" onClick={() => fileInputRef.current?.click()} className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline">
+            {result && (
+              <FullSizeView
+                className="ml-auto"
+                label={outputFileName(source.file.name, `${targetKb}kb`, format === 'image/jpeg' ? 'jpg' : 'webp')}
+                load={() => blobImage(result.blob)}
+                original={() => urlImage(source.url, source.file.size)}
+              />
+            )}
+            <button type="button" onClick={() => fileInputRef.current?.click()} className={`${result ? '' : 'ml-auto '}inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline`}>
               {t('ws.replace')}
             </button>
           </div>

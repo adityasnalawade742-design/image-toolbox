@@ -1043,4 +1043,21 @@ export const strings = {
   'ctl.edit.kind.line': 'Çizgi',
   'ctl.edit.kind.arrow': 'Ok',
   'ctl.edit.kind.link': 'Bağlantı',
+
+  // Viewer
+  'ctl.view.view': 'Görüntüle: {name}',
+  'ctl.view.viewPage': '{n}. sayfayı görüntüle',
+  'ctl.view.fullSize': 'Tam boyutta görüntüle',
+  'ctl.view.close': 'Önizlemeyi kapat',
+  'ctl.view.prev': 'Önceki',
+  'ctl.view.next': 'Sonraki',
+  'ctl.view.position': '{n} / {total}',
+  'ctl.view.zoom': 'Yakınlaştırma',
+  'ctl.view.fit': 'Sığdır',
+  'ctl.view.compare': 'Göster',
+  'ctl.view.original': 'Orijinal',
+  'ctl.view.result': 'Sonuç',
+  'ctl.view.loading': 'Yükleniyor…',
+  'ctl.view.failed': 'Bu gösterilemedi.',
+  'ctl.view.previewPage': 'Önizlenecek sayfa',
 };

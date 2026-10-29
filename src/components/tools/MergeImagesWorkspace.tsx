@@ -6,6 +6,7 @@ import { useImageList } from '../shared/useImageList';
 import { useT } from '../shared/I18nContext';
 import { layoutMerge, fitToCanvasLimits, type MergeDirection } from '../../lib/canvas/mergeLayout';
 import { canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { FullSizeView, blobImage } from '../shared/MediaViewer';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 type MergeFormat = 'image/png' | 'image/jpeg' | 'image/webp';
@@ -121,6 +122,19 @@ export function MergeImagesWorkspace() {
               <span className="slug">{t('ws.output')}</span>
               {fitted && <span className="text-ink font-semibold">{fitted.layout.width} × {fitted.layout.height} px</span>}
             </span>
+            {fitted && items.length >= 2 && (
+              <FullSizeView
+                className="ml-auto"
+                label={`merged.${format === 'image/jpeg' ? 'jpg' : format === 'image/png' ? 'png' : 'webp'}`}
+                load={async () => {
+                  const canvas = document.createElement('canvas');
+                  draw(canvas, 1);
+                  const blob = await canvasToBlob(canvas, format, 0.92);
+                  canvas.width = canvas.height = 0;
+                  return blobImage(blob);
+                }}
+              />
+            )}
           </div>
           {!canDownload && <p className="text-[15px] text-ink">{t('ctl.merge.needTwo')}</p>}
           {fitted && fitted.scale < 1 && <p className="text-[14px] text-graphite">{t('ctl.merge.scaledDown', { percent: Math.round(fitted.scale * 100) })}</p>}
@@ -142,7 +156,7 @@ export function MergeImagesWorkspace() {
             <div className="p-4 space-y-5 text-[15px]">
               <div className="space-y-2">
                 <span className="slug block">{t('ctl.list.images')}</span>
-                <ImageOrderList items={items} onChange={setOrdered} onAdd={() => fileInputRef.current?.click()} />
+                <ImageOrderList items={items} onChange={setOrdered} onAdd={() => fileInputRef.current?.click()} view />
               </div>
 
               <div className="space-y-2 pt-4 border-t border-ink">

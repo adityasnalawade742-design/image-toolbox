@@ -1043,4 +1043,21 @@ export const strings = {
   'ctl.edit.kind.line': '선',
   'ctl.edit.kind.arrow': '화살표',
   'ctl.edit.kind.link': '링크',
+
+  // Viewer
+  'ctl.view.view': '{name} 보기',
+  'ctl.view.viewPage': '{n}페이지 보기',
+  'ctl.view.fullSize': '원본 크기로 보기',
+  'ctl.view.close': '미리보기 닫기',
+  'ctl.view.prev': '이전',
+  'ctl.view.next': '다음',
+  'ctl.view.position': '{n} / {total}',
+  'ctl.view.zoom': '확대/축소',
+  'ctl.view.fit': '화면에 맞춤',
+  'ctl.view.compare': '보기',
+  'ctl.view.original': '원본',
+  'ctl.view.result': '결과',
+  'ctl.view.loading': '불러오는 중…',
+  'ctl.view.failed': '표시할 수 없어요.',
+  'ctl.view.previewPage': '미리 볼 페이지',
 };

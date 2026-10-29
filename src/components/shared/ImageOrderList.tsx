@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowUp, ArrowDown, X, Plus } from 'lucide-react';
+import { ArrowUp, ArrowDown, X, Plus, Eye } from 'lucide-react';
 import { useT } from './I18nContext';
+import { MediaViewer, urlImage } from './MediaViewer';
 
 export interface OrderItem {
   id: string;
@@ -21,12 +22,15 @@ interface Props<T extends OrderItem> {
   addLabel?: string;
   /** Optional per-item preview (e.g. a page mock-up) in place of the plain thumbnail */
   renderPreview?: (item: T, index: number) => React.ReactNode;
+  /** The thumbnail opens the item large: `true` shows `url` in the viewer, a function handles it (e.g. a PDF's pages) */
+  view?: true | ((index: number) => void);
 }
 
 /** Ordered list of images with move up / move down / remove buttons: reordering without dragging */
-export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, addLabel, renderPreview }: Props<T>) {
+export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, addLabel, renderPreview, view }: Props<T>) {
   const t = useT();
   const [announcement, setAnnouncement] = useState('');
+  const [viewAt, setViewAt] = useState<number | null>(null);
 
   const move = (index: number, delta: number) => {
     const to = index + delta;
@@ -54,11 +58,24 @@ export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, ad
             <span className="w-6 text-center font-condensed font-bold text-[18px] text-ink shrink-0" data-measure aria-hidden="true">
               {i + 1}
             </span>
-            {renderPreview ? (
-              renderPreview(item, i)
-            ) : (
-              <img src={item.url} alt="" className="w-14 h-14 object-cover border border-pencil shrink-0 canvas-checkerboard" />
-            )}
+            {(() => {
+              const preview = renderPreview ? renderPreview(item, i) : <img src={item.url} alt="" className="w-14 h-14 object-cover border border-pencil shrink-0 canvas-checkerboard" />;
+              if (!view) return preview;
+              return (
+                <button
+                  type="button"
+                  onClick={() => (view === true ? setViewAt(i) : view(i))}
+                  aria-label={t('ctl.view.view', { name: item.name })}
+                  title={t('ctl.view.view', { name: item.name })}
+                  className="group relative shrink-0 cursor-zoom-in"
+                >
+                  {preview}
+                  <span className="absolute -bottom-1 -right-1 w-6 h-6 flex items-center justify-center rounded-full bg-paper-bright border border-ink text-ink group-hover:bg-ink group-hover:text-paper transition-colors" aria-hidden="true">
+                    <Eye className="w-3.5 h-3.5" />
+                  </span>
+                </button>
+              );
+            })()}
             <span className="min-w-0 flex-1">
               <span className="block truncate text-[14px] font-semibold text-ink">{item.name}</span>
               <span className="block text-[13px] text-graphite" data-measure>
@@ -86,6 +103,14 @@ export function ImageOrderList<T extends OrderItem>({ items, onChange, onAdd, ad
       <span className="sr-only" aria-live="polite">
         {announcement}
       </span>
+      {view === true && viewAt !== null && items.length > 0 && (
+        <MediaViewer
+          items={items.map((it) => ({ key: it.id, label: it.name, load: () => urlImage(it.url), transparent: true }))}
+          index={Math.min(viewAt, items.length - 1)}
+          onIndex={setViewAt}
+          onClose={() => setViewAt(null)}
+        />
+      )}
     </div>
   );
 }

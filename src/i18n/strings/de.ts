@@ -1012,4 +1012,21 @@ export const strings = {
   'ctl.edit.kind.line': 'Linie',
   'ctl.edit.kind.arrow': 'Pfeil',
   'ctl.edit.kind.link': 'Link',
+
+  // Viewer
+  'ctl.view.view': '{name} ansehen',
+  'ctl.view.viewPage': 'Seite {n} ansehen',
+  'ctl.view.fullSize': 'In voller Größe ansehen',
+  'ctl.view.close': 'Vorschau schließen',
+  'ctl.view.prev': 'Zurück',
+  'ctl.view.next': 'Weiter',
+  'ctl.view.position': '{n} von {total}',
+  'ctl.view.zoom': 'Zoom',
+  'ctl.view.fit': 'Einpassen',
+  'ctl.view.compare': 'Anzeigen',
+  'ctl.view.original': 'Original',
+  'ctl.view.result': 'Ergebnis',
+  'ctl.view.loading': 'Wird geladen…',
+  'ctl.view.failed': 'Das konnte nicht angezeigt werden.',
+  'ctl.view.previewPage': 'Seite für die Vorschau',
 };

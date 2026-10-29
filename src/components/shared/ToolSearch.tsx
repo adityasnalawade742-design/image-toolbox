@@ -4,6 +4,7 @@ import type { ToolCategory } from '../../config/tools';
 import { CATEGORY_INK } from '../../config/inks';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import { createT, type Strings } from '../../i18n/strings';
+import { trapTab } from './dialogFocus';
 
 /** One tool, in the page's language. Built by Header.astro so the full tool content of every language stays out of the bundle. */
 export interface SearchItem {
@@ -97,22 +98,7 @@ export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
                 close();
                 return;
               }
-              // Modal: Tab cycles inside the dialog instead of reaching the page behind it
-              if (e.key === 'Tab') {
-                const focusable = [...e.currentTarget.querySelectorAll<HTMLElement>('input, button, a[href], [tabindex]:not([tabindex="-1"])')].filter(
-                  (el) => !el.hasAttribute('disabled') && el.getClientRects().length > 0
-                );
-                if (!focusable.length) return;
-                const first = focusable[0];
-                const last = focusable[focusable.length - 1];
-                if (e.shiftKey && document.activeElement === first) {
-                  e.preventDefault();
-                  last.focus();
-                } else if (!e.shiftKey && document.activeElement === last) {
-                  e.preventDefault();
-                  first.focus();
-                }
-              }
+              trapTab(e);
             }}
           >
             <div className="color-bar" aria-hidden="true"><span /><span /><span /><span /></div>

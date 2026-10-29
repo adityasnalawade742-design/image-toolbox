@@ -20,10 +20,12 @@ interface Props {
   error?: string | null;
   /** Panel heading icon (defaults to a document) */
   icon?: LucideIcon;
+  /** Extra control in the job ticket, before "Choose another" (e.g. View full size) */
+  ticketAction?: React.ReactNode;
 }
 
 /** Shared frame for the PDF tools: proof column, ruled settings panel, download button and phone rail */
-export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText }: Props) {
+export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText, ticketAction }: Props) {
   const t = useT();
   const button = (big: boolean) => (
     <button
@@ -47,11 +49,14 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
                 <span className="slug">{t('ws.source')}</span>
                 <span className="text-ink font-semibold truncate">{fileLabel}</span>
               </span>
-              {onReplace && (
-                <button type="button" onClick={onReplace} className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline">
-                  {replaceLabel}
-                </button>
-              )}
+              <span className="ml-auto flex items-center gap-4">
+                {ticketAction}
+                {onReplace && (
+                  <button type="button" onClick={onReplace} className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline">
+                    {replaceLabel}
+                  </button>
+                )}
+              </span>
             </div>
           )}
           {children}

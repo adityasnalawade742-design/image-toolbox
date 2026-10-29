@@ -10,6 +10,7 @@ import { loadImageFile } from '../../../lib/canvas/loadImage';
 import { fitWithinPixels } from '../../../lib/canvas/limits';
 import { blurBackground } from '../../../lib/canvas/backgroundBlur';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { removeBackground, preloadBackgroundRemoval, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
@@ -271,6 +272,18 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
         fileLabel={`${src.photo.width} × ${src.photo.height} px · ${src.name}`}
         onReplace={() => inputRef.current?.click()}
         replaceLabel={t('ws.replace')}
+        ticketAction={
+          ready && (
+            <FullSizeView
+              label={`${src.name.replace(/\.[^.]+$/, '')}-${mode === 'blur' ? 'blurred-background' : 'new-background'}.${format}`}
+              load={async () => {
+                paint();
+                return blobImage(await canvasToBlob(canvasRef.current!, format === 'png' ? 'image/png' : 'image/jpeg', 0.92));
+              }}
+              original={() => urlImage(src.previewUrl)}
+            />
+          )
+        }
         panel={panel}
         actionLabel={t('ws.download', { format: format.toUpperCase() })}
         onAction={run}

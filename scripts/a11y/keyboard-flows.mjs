@@ -1,5 +1,5 @@
 // Keyboard walkthroughs of what automated checks can't judge: skip link, search dialog, language list,
-// colour picker, censor boxes, text position, focus ring. usage: npm run a11y:keys [-- baseUrl]
+// colour picker, censor boxes, text position, focus ring, page viewer. usage: npm run a11y:keys [-- baseUrl]
 import { spawn } from 'node:child_process';
 import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -131,6 +131,20 @@ check('Drag handle is hidden from screen readers', await ev(`[...document.queryS
 await go('/compress-image/'); await press('Tab'); await press('Tab');
 const ring = await ev(`getComputedStyle(document.activeElement).outlineColor`);
 check('Focus ring uses the darker cyan', /rgb\(0, 114, 176\)/.test(ring), ring);
+
+// 8. Page viewer: open from a page card, stay inside, step with arrows, Escape returns to the card
+await go('/organize-pdf/');
+await upload('samples/doc.pdf');
+await focusSel('button[aria-label="View page 2"]');
+await press('Enter'); await sleep(1500);
+check('Enter on a page opens the viewer with focus inside', await ev(`!!document.activeElement.closest('[role=dialog][aria-modal=true]')`), await active());
+let left = false;
+for (let i = 0; i < 15; i++) { await press('Tab'); if (!(await ev(`!!document.activeElement.closest('[role=dialog]')`))) { left = true; break; } }
+check('Tab stays inside the viewer', !left, left ? 'focus left to ' + (await active()) : '');
+await press('ArrowRight'); await sleep(800);
+check('Arrow right shows the next page', /Page 3/.test(await ev(`document.querySelector('[role=dialog] p')?.textContent || ''`)));
+await press('Escape'); await sleep(300);
+check('Escape closes the viewer and returns to the page card', !(await ev(`!!document.querySelector('[role=dialog]')`)) && /View page 2/.test(await active()), await active());
 
 const failed = results.filter((r) => !r.ok).length;
 console.log(`\n${results.length - failed}/${results.length} passed`);

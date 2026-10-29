@@ -5,6 +5,7 @@ import { useImageIntake } from '../../shared/useImageIntake';
 import { PdfToolLayout } from '../../shared/PdfToolLayout';
 import { useLocale, useT } from '../../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
+import { FullSizeView, urlImage } from '../../shared/MediaViewer';
 import { fitWithinPixels } from '../../../lib/canvas/limits';
 import { downloadBlob } from '../../../lib/canvas/engine';
 import { OCR_LANGS, OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang, type OcrProgress } from '../../../lib/ocr/ocr';
@@ -157,6 +158,8 @@ export function ImageToTextWorkspace() {
         fileLabel={`${image.width} × ${image.height} px · ${image.file.name}`}
         onReplace={() => inputRef.current?.click()}
         replaceLabel={t('ws.replace')}
+        // Zoom in to check the recognised text against the picture
+        ticketAction={<FullSizeView label={image.file.name} load={() => urlImage(image.url, image.file.size)} transparent={false} />}
         panel={panel}
         actionLabel={t('ctl.ocr.download')}
         onAction={run}
