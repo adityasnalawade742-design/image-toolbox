@@ -4899,6 +4899,591 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "edit-pdf": {
+    "name": "Edit PDF",
+    "shortName": "Edit PDF",
+    "tagline": "Add text, images, highlights, drawings, shapes and links to a PDF, or white out and redact parts of it. Free, and it runs on your device.",
+    "intro": "Edit PDF opens your document page by page and lets you add to it: type text in any size and color, place a logo or stamp, highlight or underline lines, draw freehand, add boxes, circles and arrows, and make areas open a website. Whiteout covers what you don't want to show, and Redact removes private details from the file for good. Move, resize and delete what you added, undo any step, then download the edited PDF. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Edit PDF Online – Free PDF Editor, No Upload",
+    "seoDescription": "Edit PDFs in your browser: add text, images, highlights, drawings, shapes and links, white out or redact. Free, no sign-up, nothing uploaded.",
+    "keywords": [
+      "edit pdf",
+      "pdf editor",
+      "edit pdf online free",
+      "add text to pdf",
+      "annotate pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF. Its pages open in the editor."
+      },
+      {
+        "title": "Add what you need",
+        "description": "Pick a tool, then tap or drag on the page. Move, resize or delete anything you added."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the edited copy. Your original file is not changed."
+      }
+    ],
+    "features": [
+      {
+        "title": "Everything in one editor",
+        "description": "Text, images, highlights, drawings, shapes, links, whiteout and redaction are all in the same editor, so you can combine them."
+      },
+      {
+        "title": "Undo and redo",
+        "description": "Move, resize or delete anything you added, and undo a step if you change your mind."
+      },
+      {
+        "title": "Real redaction",
+        "description": "Redacted areas are removed from the file, not just covered."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I change the text that is already in the PDF?",
+        "answer": "Not directly. Cover it with Whiteout and type the new text on top. The old text stays in the file underneath, so use Redact for anything private."
+      },
+      {
+        "question": "Is the text I add searchable?",
+        "answer": "Yes. Text you type is real PDF text, so it can be selected, searched and copied, except on pages you redact."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "add-text-to-pdf": {
+    "name": "Add Text to PDF",
+    "shortName": "Add Text",
+    "tagline": "Type text anywhere on a PDF page, in the font, size and color you choose. Free, and it runs on your device.",
+    "intro": "Add Text to PDF lets you write on a document without printing it: fill in a form that has no fields, add a note, a date or an address, or label a drawing. Tap where the text should start, type it, then choose the font, size, color and bold. Drag the text to fine-tune its position, and add as many pieces of text on as many pages as you need. The text you add is real PDF text, so it stays sharp and can be searched. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Add Text to PDF – Free, Type on Any PDF",
+    "seoDescription": "Type text anywhere on a PDF in your browser. Choose font, size and color, place it exactly, and download. Free and private, nothing uploaded.",
+    "keywords": [
+      "add text to pdf",
+      "type on pdf",
+      "write on pdf",
+      "insert text in pdf",
+      "pdf text editor"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Tap where the text goes",
+        "description": "Type it in the box, then choose the font, size and color. Drag it into place."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the copy with your text added."
+      }
+    ],
+    "features": [
+      {
+        "title": "Your font, size and color",
+        "description": "Sans, serif or typewriter-style mono, from 6 to 72 points, bold or regular, in any color."
+      },
+      {
+        "title": "Many languages",
+        "description": "Latin, Greek, Cyrillic, Japanese and Korean text can all be written."
+      },
+      {
+        "title": "Sharp, searchable text",
+        "description": "The text is real PDF text, not a picture of it."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I fill in a form that has no fields?",
+        "answer": "Yes. Tap on each blank line and type. For PDFs with real form fields, Fill PDF Form is quicker."
+      },
+      {
+        "question": "Can I change the text that is already in the PDF?",
+        "answer": "Not directly. Cover it with Whiteout and type the new text on top. The old text stays in the file underneath, so use Redact for anything private."
+      },
+      {
+        "question": "Can I write on several pages?",
+        "answer": "Yes. Switch pages with the arrows above the page; your additions on each page are kept."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "add-image-to-pdf": {
+    "name": "Add Image to PDF",
+    "shortName": "Add Image",
+    "tagline": "Place a logo, photo or stamp image on any page of a PDF and size it. Free, and it runs on your device.",
+    "intro": "Add Image to PDF puts a picture onto a page of your document: a company logo on a letter, a stamp or seal on a certificate, a photo on a form, or a scanned signature. Tap where the image should go and choose it from your device. Drag it into place and pull the corner to resize it; the proportions are kept. JPG, PNG with transparency, WebP, GIF, TIFF and iPhone HEIC images all work. Everything happens inside your browser, so neither the PDF nor the image is uploaded.",
+    "seoTitle": "Add Image to PDF – Insert Logo or Photo, Free",
+    "seoDescription": "Insert a logo, photo or stamp into a PDF in your browser. Drag to place, resize, and download. JPG, PNG, HEIC. Free, nothing uploaded.",
+    "keywords": [
+      "add image to pdf",
+      "insert image into pdf",
+      "add logo to pdf",
+      "add picture to pdf",
+      "put image on pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF and go to the page you want."
+      },
+      {
+        "title": "Add the image",
+        "description": "Tap the page where it should go and choose an image. Drag it and resize it from the corner."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the copy with the image added."
+      }
+    ],
+    "features": [
+      {
+        "title": "Transparency kept",
+        "description": "A PNG logo with a transparent background stays transparent on the page."
+      },
+      {
+        "title": "Any image format",
+        "description": "JPG, PNG, WebP, GIF, TIFF and iPhone HEIC images can be placed."
+      },
+      {
+        "title": "Proportions kept",
+        "description": "Resizing keeps the image's shape, so it never looks stretched."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the image look sharp?",
+        "answer": "Images are placed at up to 2,000 pixels across, which stays sharp when printed at normal sizes."
+      },
+      {
+        "question": "Can I put the same logo on every page?",
+        "answer": "To repeat a logo on every page, Watermark PDF does it in one step. Here you place images one by one."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "highlight-pdf": {
+    "name": "Highlight PDF",
+    "shortName": "Highlight",
+    "tagline": "Highlight, underline or strike through text in a PDF. Free, and it runs on your device.",
+    "intro": "Highlight PDF lets you mark up a document the way you would with a pen: drag across a line to highlight it in yellow, green, pink or blue, underline it, or strike it through. It is handy for studying, reviewing a contract, or showing someone exactly which part matters. Marks can be moved, resized and deleted, and you can undo any step. The highlight is see-through, so the text underneath stays readable. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Highlight PDF Online – Free PDF Highlighter",
+    "seoDescription": "Highlight, underline or strike through text in a PDF in your browser. Four highlighter colors, undo, no sign-up. Nothing is uploaded.",
+    "keywords": [
+      "highlight pdf",
+      "pdf highlighter",
+      "highlight text in pdf",
+      "underline pdf",
+      "strikethrough pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Drag across the text",
+        "description": "Choose highlight, underline or strike-through and a color, then drag over the line."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the marked-up copy."
+      }
+    ],
+    "features": [
+      {
+        "title": "Highlighter colors",
+        "description": "Yellow, green, pink and blue, or any color you pick."
+      },
+      {
+        "title": "Underline and strike-through",
+        "description": "Mark changes or corrections as well as key points."
+      },
+      {
+        "title": "Text stays readable",
+        "description": "Highlights are see-through, like a real highlighter pen."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does the highlight snap to the text?",
+        "answer": "No. It covers the area you drag over, so drag along the line you want to mark. You can resize it afterwards from the corner."
+      },
+      {
+        "question": "Can I remove a highlight?",
+        "answer": "Yes. Select it and press Delete, or use Undo."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "draw-on-pdf": {
+    "name": "Draw on PDF",
+    "shortName": "Draw on PDF",
+    "tagline": "Draw freehand on PDF pages with your finger, mouse or pen. Free, and it runs on your device.",
+    "intro": "Draw on PDF turns the page into a sheet you can write on. Circle a detail on a plan, sketch an idea, tick boxes, add handwritten notes or initials. Pick a color and a thickness and draw with your finger on a phone or tablet, with a stylus, or with a mouse. Every stroke can be moved or deleted, and you can undo as many steps as you need. The drawing is saved as sharp lines, not a blurry picture. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Draw on PDF – Free Freehand PDF Annotation",
+    "seoDescription": "Draw on PDF pages in your browser with your finger, mouse or stylus. Pick color and thickness, undo, download. Free, nothing uploaded.",
+    "keywords": [
+      "draw on pdf",
+      "write on pdf",
+      "pdf drawing tool",
+      "annotate pdf freehand",
+      "handwrite on pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Draw on the page",
+        "description": "Choose a color and thickness, then draw with your finger, pen or mouse."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the copy with your drawing."
+      }
+    ],
+    "features": [
+      {
+        "title": "Finger, stylus or mouse",
+        "description": "Drawing follows touch, pen and mouse input."
+      },
+      {
+        "title": "Sharp lines",
+        "description": "Strokes are saved as vector lines that stay crisp when you zoom in."
+      },
+      {
+        "title": "Undo and redo",
+        "description": "Move, resize or delete anything you added, and undo a step if you change your mind."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I sign with this?",
+        "answer": "You can, but Sign PDF makes a neater signature you can type, draw or upload and place exactly."
+      },
+      {
+        "question": "Can I erase part of a stroke?",
+        "answer": "Each stroke is one piece: select it and delete it, or undo it, then draw it again."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "add-shapes-to-pdf": {
+    "name": "Add Shapes to PDF",
+    "shortName": "Add Shapes",
+    "tagline": "Add rectangles, circles, lines and arrows to a PDF to point things out. Free, and it runs on your device.",
+    "intro": "Add Shapes to PDF helps you mark up plans, screenshots, forms and reports: draw a box around a total, circle a mistake, or add an arrow that points at the part that needs attention. Choose rectangle, ellipse, line or arrow, a color and a line thickness, then drag on the page. Rectangles and ellipses can be outlined or filled. Shapes can be moved, resized and deleted at any time. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Add Shapes to PDF – Boxes, Circles, Arrows, Free",
+    "seoDescription": "Add rectangles, circles, lines and arrows to a PDF in your browser. Pick color and thickness, move and resize. Free, nothing uploaded.",
+    "keywords": [
+      "add shapes to pdf",
+      "draw arrow on pdf",
+      "draw box on pdf",
+      "circle on pdf",
+      "pdf markup"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Draw the shape",
+        "description": "Choose rectangle, ellipse, line or arrow and drag on the page."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the marked-up copy."
+      }
+    ],
+    "features": [
+      {
+        "title": "Four shapes",
+        "description": "Rectangles, ellipses, lines and arrows."
+      },
+      {
+        "title": "Outline or fill",
+        "description": "Outline a box or fill it with a solid color."
+      },
+      {
+        "title": "Sharp at any size",
+        "description": "Shapes are saved as vector graphics."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I change a shape after drawing it?",
+        "answer": "Yes. Select it to move it, resize it from the corner, or change its color and thickness."
+      },
+      {
+        "question": "Can I cover text with a shape?",
+        "answer": "A filled rectangle covers what is under it, but the content stays in the file. Use Redact to remove private information."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "add-links-to-pdf": {
+    "name": "Add Links to PDF",
+    "shortName": "Add Links",
+    "tagline": "Make any area of a PDF page open a website or an email. Free, and it runs on your device.",
+    "intro": "Add Links to PDF makes your document clickable: turn a web address printed in a brochure into a real link, link a logo to your website, or make an email address open a new message. Drag over the text or area that should be clickable and type the address. Links work in every PDF reader, on computers and phones. The page itself looks the same; the dashed outline you see while editing is not saved. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Add Links to PDF – Make PDF Text Clickable, Free",
+    "seoDescription": "Add clickable web and email links to any area of a PDF in your browser. Works in every PDF reader. Free, private, nothing uploaded.",
+    "keywords": [
+      "add link to pdf",
+      "add hyperlink to pdf",
+      "insert link in pdf",
+      "clickable pdf link",
+      "pdf hyperlink"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Drag over the clickable area",
+        "description": "Then type the web address, such as example.com, or an email address."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the copy with working links."
+      }
+    ],
+    "features": [
+      {
+        "title": "Web and email links",
+        "description": "Links open a website, or a new email to the address you enter."
+      },
+      {
+        "title": "Invisible on the page",
+        "description": "The page looks unchanged; only the area becomes clickable."
+      },
+      {
+        "title": "Works in every reader",
+        "description": "Standard PDF links open in Acrobat, browsers, Preview and phone apps."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need to type https://?",
+        "answer": "No. Type example.com and https:// is added. An email address becomes a mailto link."
+      },
+      {
+        "question": "Can a link go to another page of the PDF?",
+        "answer": "Not yet. Links here open websites and email addresses."
+      },
+      {
+        "question": "Why doesn't the link work in my viewer?",
+        "answer": "Some image viewers and messaging app previews don't open PDF links. Open the file in a PDF reader or a browser."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "whiteout-pdf": {
+    "name": "Whiteout PDF",
+    "shortName": "Whiteout",
+    "tagline": "Cover parts of a PDF page with white boxes, then type over them if you like. Free, and it runs on your device.",
+    "intro": "Whiteout PDF works like correction tape: drag over a wrong date, an old price or a line you don't want to show, and a white box covers it. Add new text on top with the Text tool to make a correction. If the page is not white, pick a color that matches it. Whiteout only covers content; the original text stays in the file and can still be copied or found by a search. To remove private information for good, use Redact PDF. Everything happens inside your browser, so the document never leaves your device.",
+    "seoTitle": "Whiteout PDF – Free PDF Correction Tape",
+    "seoDescription": "Cover parts of a PDF with white boxes and type corrections on top, in your browser. Free, no sign-up, nothing uploaded.",
+    "keywords": [
+      "whiteout pdf",
+      "white out pdf",
+      "pdf correction tape",
+      "cover text in pdf",
+      "erase text from pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Drag over what to cover",
+        "description": "A white box covers it. Add new text on top with the Text tool if you need to."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Save the corrected copy."
+      }
+    ],
+    "features": [
+      {
+        "title": "Type over it",
+        "description": "Combine whiteout with text to correct a date, a name or a number."
+      },
+      {
+        "title": "Match the background",
+        "description": "Choose any color for pages that aren't white."
+      },
+      {
+        "title": "Move and resize",
+        "description": "Adjust each box until it covers exactly what you want."
+      },
+      {
+        "title": "Private editing",
+        "description": "The PDF is edited on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the covered text really gone?",
+        "answer": "No. Whiteout hides it, but it stays in the file, where it can be copied or found by a search. Use Redact PDF to remove it."
+      },
+      {
+        "question": "Can I change a word in the PDF?",
+        "answer": "Cover the word with whiteout, then type the new word on top with the Text tool."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Tap and drag with your finger; drawing works with a finger or a stylus."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
+  "redact-pdf": {
+    "name": "Redact PDF",
+    "shortName": "Redact PDF",
+    "tagline": "Black out private information in a PDF and remove it from the file for good. Free, and it runs on your device.",
+    "intro": "Redact PDF hides names, account numbers, addresses and other private details before you share a document, and actually removes them. Drag black boxes over what should go. When you download, each page with a redaction is turned into an image with the boxes burnt in, so the text underneath is gone from the file: it can't be copied, searched or recovered by removing the box. Form values and comments on those pages are removed too. Pages without redactions stay as they were. Everything happens inside your browser, so the document is never uploaded.",
+    "seoTitle": "Redact PDF – Remove Private Text for Good, Free",
+    "seoDescription": "Black out and permanently remove private information from a PDF, in your browser. Real redaction, not just covering. Free, nothing uploaded.",
+    "keywords": [
+      "redact pdf",
+      "redact pdf free",
+      "black out text in pdf",
+      "remove sensitive information from pdf",
+      "pdf redaction tool"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF."
+      },
+      {
+        "title": "Drag over private information",
+        "description": "Cover every name, number or line that must go with a black box."
+      },
+      {
+        "title": "Download the redacted PDF",
+        "description": "Check the result, then share the redacted copy, not the original."
+      }
+    ],
+    "features": [
+      {
+        "title": "Really removed",
+        "description": "The covered text is deleted from the file, not hidden under a box."
+      },
+      {
+        "title": "Form values and comments too",
+        "description": "Filled-in fields and comments on redacted pages are removed as well."
+      },
+      {
+        "title": "Other pages untouched",
+        "description": "Only pages with redactions are turned into images."
+      },
+      {
+        "title": "Nothing uploaded",
+        "description": "Private documents are redacted on your device; nobody else sees them."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why can't I select text on the redacted page any more?",
+        "answer": "To remove the hidden text for good, the whole page is saved as an image. Text on other pages stays selectable."
+      },
+      {
+        "question": "Is a black rectangle in a normal PDF editor the same?",
+        "answer": "No. A plain box only covers the text, which can still be copied or found by a search. This tool removes it."
+      },
+      {
+        "question": "Is anything else removed?",
+        "answer": "On redacted pages, form fields, comments and links are removed too, and the document's accessibility tags are dropped because they can repeat page text. The title and author details are kept; Remove PDF Metadata clears those."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The PDF is opened and saved in your browser, so it stays on your device."
+      }
+    ]
+  },
   "passport-photo-maker": {
     "name": "Passport Photo Maker",
     "shortName": "Passport Photo",

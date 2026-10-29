@@ -71,6 +71,7 @@ const PdfPagesWorkspace = standaloneTool(() => import('../tools/pdf/PdfPagesWork
 const PageNumbersWorkspace = standaloneTool(() => import('../tools/pdf/PageNumbersWorkspace'), 'PageNumbersWorkspace');
 const WatermarkPdfWorkspace = standaloneTool(() => import('../tools/pdf/WatermarkPdfWorkspace'), 'WatermarkPdfWorkspace');
 const SignPdfWorkspace = standaloneTool(() => import('../tools/pdf/SignPdfWorkspace'), 'SignPdfWorkspace');
+const PdfEditorWorkspace = standaloneTool(() => import('../tools/pdf/PdfEditorWorkspace'), 'PdfEditorWorkspace');
 const FillFormWorkspace = standaloneTool(() => import('../tools/pdf/FillFormWorkspace'), 'FillFormWorkspace');
 const PdfMetadataWorkspace = standaloneTool(() => import('../tools/pdf/PdfMetadataWorkspace'), 'PdfMetadataWorkspace');
 const CropPdfWorkspace = standaloneTool(() => import('../tools/pdf/CropPdfWorkspace'), 'CropPdfWorkspace');
@@ -149,6 +150,15 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'fill-pdf-form': <FillFormWorkspace />,
     'remove-pdf-metadata': <PdfMetadataWorkspace />,
     'crop-pdf': <CropPdfWorkspace />,
+    'edit-pdf': <PdfEditorWorkspace startTool="text" />,
+    'add-text-to-pdf': <PdfEditorWorkspace startTool="text" />,
+    'add-image-to-pdf': <PdfEditorWorkspace startTool="image" />,
+    'highlight-pdf': <PdfEditorWorkspace startTool="highlight" />,
+    'draw-on-pdf': <PdfEditorWorkspace startTool="draw" />,
+    'add-shapes-to-pdf': <PdfEditorWorkspace startTool="shape" />,
+    'add-links-to-pdf': <PdfEditorWorkspace startTool="link" />,
+    'whiteout-pdf': <PdfEditorWorkspace startTool="whiteout" />,
+    'redact-pdf': <PdfEditorWorkspace startTool="redact" />,
     'change-image-dpi': <ChangeDpiWorkspace />,
     'signature-extractor': <SignatureExtractorWorkspace />,
     'passport-photo-maker': <PassportPhotoWorkspace />,

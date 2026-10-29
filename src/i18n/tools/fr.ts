@@ -5025,6 +5025,665 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "Modifier un PDF",
+    shortName: "Modifier PDF",
+    tagline:
+      "Ajoutez du texte, des images, du surlignage, des dessins, des formes et des liens à un PDF, ou masquez et caviardez certaines parties. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Modifier un PDF ouvre votre document page par page et vous permet d’y ajouter des éléments : saisissez du texte dans la taille et la couleur de votre choix, placez un logo ou un tampon, surlignez ou soulignez des lignes, dessinez à main levée, ajoutez des rectangles, des cercles et des flèches, et faites en sorte que certaines zones ouvrent un site web. « Masquer » recouvre ce que vous ne voulez pas montrer, et « Caviarder » supprime définitivement les informations privées du fichier. Déplacez, redimensionnez et supprimez ce que vous avez ajouté, annulez n’importe quelle étape, puis téléchargez le PDF modifié. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Modifier un PDF en ligne – éditeur PDF gratuit, sans envoi",
+    seoDescription:
+      "Modifiez vos PDF dans le navigateur : texte, images, surlignage, dessins, formes et liens, masquage ou caviardage. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "modifier pdf",
+      "éditer pdf",
+      "modifier un pdf gratuitement",
+      "ajouter du texte sur un pdf",
+      "annoter pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF. Ses pages s’ouvrent dans l’éditeur.",
+      },
+      {
+        title: "Ajoutez ce dont vous avez besoin",
+        description:
+          "Choisissez un outil, puis touchez la page ou faites glisser dessus. Déplacez, redimensionnez ou supprimez tout ce que vous avez ajouté.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie modifiée. Votre fichier d’origine n’est pas modifié.",
+      },
+    ],
+    features: [
+      {
+        title: "Tout dans un seul éditeur",
+        description:
+          "Texte, images, surlignage, dessins, formes, liens, masquage et caviardage sont réunis dans le même éditeur, vous pouvez donc les combiner.",
+      },
+      {
+        title: "Annuler et rétablir",
+        description:
+          "Déplacez, redimensionnez ou supprimez tout ce que vous avez ajouté, et annulez une étape si vous changez d’avis.",
+      },
+      {
+        title: "Un vrai caviardage",
+        description: "Les zones caviardées sont supprimées du fichier, pas seulement recouvertes.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Puis-je modifier le texte déjà présent dans le PDF ?",
+        answer:
+          "Pas directement. Recouvrez-le avec « Masquer » et saisissez le nouveau texte par-dessus. L’ancien texte reste dans le fichier en dessous : pour tout ce qui est privé, utilisez donc « Caviarder ».",
+      },
+      {
+        question: "Le texte que j’ajoute peut-il être recherché ?",
+        answer:
+          "Oui. Le texte saisi est du vrai texte PDF : il peut être sélectionné, recherché et copié, sauf sur les pages que vous caviardez.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "Ajouter du texte à un PDF",
+    shortName: "Ajouter du texte",
+    tagline:
+      "Saisissez du texte n’importe où sur une page PDF, avec la police, la taille et la couleur de votre choix. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Ajouter du texte à un PDF vous permet d’écrire sur un document sans l’imprimer : remplissez un formulaire sans champs, ajoutez une note, une date ou une adresse, ou légendez un schéma. Touchez l’endroit où le texte doit commencer, saisissez-le, puis choisissez la police, la taille, la couleur et le gras. Faites glisser le texte pour ajuster sa position, et ajoutez autant de textes que nécessaire, sur autant de pages que vous voulez. Le texte ajouté est du vrai texte PDF : il reste net et peut être recherché. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Ajouter du texte à un PDF – écrire sur un PDF, gratuit",
+    seoDescription:
+      "Saisissez du texte n’importe où sur un PDF dans votre navigateur. Choisissez police, taille et couleur, placez-le précisément, téléchargez. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter du texte pdf",
+      "écrire sur un pdf",
+      "insérer du texte dans un pdf",
+      "taper sur un pdf",
+      "remplir un pdf non modifiable",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Touchez l’endroit du texte",
+        description:
+          "Saisissez-le dans le champ, puis choisissez la police, la taille et la couleur. Faites-le glisser à sa place.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie avec votre texte.",
+      },
+    ],
+    features: [
+      {
+        title: "Votre police, taille et couleur",
+        description:
+          "Sans empattement, avec empattement ou à chasse fixe façon machine à écrire, de 6 à 72 pt, en gras ou normal, dans n’importe quelle couleur.",
+      },
+      {
+        title: "De nombreuses langues",
+        description:
+          "Vous pouvez écrire en alphabet latin, grec ou cyrillique, ainsi qu’en japonais et en coréen.",
+      },
+      {
+        title: "Texte net et recherchable",
+        description: "Le texte est du vrai texte PDF, pas une image de texte.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Puis-je remplir un formulaire sans champs ?",
+        answer:
+          "Oui. Touchez chaque ligne vide et tapez. Pour les PDF qui ont de vrais champs de formulaire, Remplir un formulaire PDF est plus rapide.",
+      },
+      {
+        question: "Puis-je modifier le texte déjà présent dans le PDF ?",
+        answer:
+          "Pas directement. Recouvrez-le avec « Masquer » et saisissez le nouveau texte par-dessus. L’ancien texte reste dans le fichier en dessous : pour tout ce qui est privé, utilisez donc « Caviarder ».",
+      },
+      {
+        question: "Puis-je écrire sur plusieurs pages ?",
+        answer:
+          "Oui. Changez de page avec les flèches au-dessus de la page ; vos ajouts sont conservés sur chaque page.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "Ajouter une image à un PDF",
+    shortName: "Ajouter une image",
+    tagline:
+      "Placez un logo, une photo ou une image de tampon sur n’importe quelle page d’un PDF et ajustez sa taille. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Ajouter une image à un PDF place une image sur une page de votre document : le logo de votre entreprise sur un courrier, un tampon ou un sceau sur un certificat, une photo sur un formulaire, ou une signature scannée. Touchez l’endroit où l’image doit aller et choisissez-la sur votre appareil. Faites-la glisser à sa place et tirez sur l’angle pour la redimensionner ; les proportions sont conservées. Les images JPG, PNG avec transparence, WebP, GIF, TIFF et HEIC d’iPhone fonctionnent toutes. Tout se passe dans votre navigateur, donc ni le PDF ni l’image ne sont envoyés.",
+    seoTitle: "Ajouter une image à un PDF – logo ou photo, gratuit",
+    seoDescription:
+      "Insérez un logo, une photo ou un tampon dans un PDF depuis votre navigateur. Placez, redimensionnez, téléchargez. JPG, PNG, HEIC. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter une image à un pdf",
+      "insérer une image dans un pdf",
+      "ajouter un logo sur un pdf",
+      "mettre une photo dans un pdf",
+      "insérer un tampon sur un pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF et allez à la page voulue.",
+      },
+      {
+        title: "Ajoutez l’image",
+        description:
+          "Touchez la page à l’endroit voulu et choisissez une image. Faites-la glisser et redimensionnez-la par l’angle.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie avec l’image ajoutée.",
+      },
+    ],
+    features: [
+      {
+        title: "Transparence conservée",
+        description: "Un logo PNG à fond transparent reste transparent sur la page.",
+      },
+      {
+        title: "Tous les formats d’image",
+        description: "Vous pouvez placer des images JPG, PNG, WebP, GIF, TIFF et HEIC d’iPhone.",
+      },
+      {
+        title: "Proportions conservées",
+        description: "Le redimensionnement garde la forme de l’image, qui n’a jamais l’air étirée.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "L’image sera-t-elle nette ?",
+        answer:
+          "Les images sont placées avec une largeur maximale de 2 000 pixels, ce qui reste net à l’impression aux formats courants.",
+      },
+      {
+        question: "Puis-je mettre le même logo sur chaque page ?",
+        answer:
+          "Pour répéter un logo sur chaque page, Filigrane PDF le fait en une seule étape. Ici, vous placez les images une par une.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "Surligner un PDF",
+    shortName: "Surligner",
+    tagline:
+      "Surlignez, soulignez ou barrez du texte dans un PDF. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Surligner un PDF vous permet d’annoter un document comme avec un stylo : faites glisser sur une ligne pour la surligner en jaune, vert, rose ou bleu, la souligner ou la barrer. C’est pratique pour réviser, relire un contrat ou montrer précisément à quelqu’un le passage important. Les marques peuvent être déplacées, redimensionnées et supprimées, et vous pouvez annuler chaque étape. Le surlignage est transparent, donc le texte en dessous reste lisible. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Surligner un PDF en ligne – surligneur PDF gratuit",
+    seoDescription:
+      "Surlignez, soulignez ou barrez du texte dans un PDF depuis votre navigateur. Quatre couleurs de surligneur, annulation, sans inscription. Rien n’est envoyé.",
+    keywords: [
+      "surligner pdf",
+      "surligner un texte pdf",
+      "surligneur pdf",
+      "souligner pdf",
+      "barrer texte pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Faites glisser sur le texte",
+        description:
+          "Choisissez Surlignage, Soulignement ou Barré et une couleur, puis faites glisser sur la ligne.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie annotée.",
+      },
+    ],
+    features: [
+      {
+        title: "Couleurs de surligneur",
+        description: "Jaune, vert, rose et bleu, ou la couleur de votre choix.",
+      },
+      {
+        title: "Soulignement et texte barré",
+        description: "Signalez des modifications ou des corrections, pas seulement les points clés.",
+      },
+      {
+        title: "Le texte reste lisible",
+        description: "Le surlignage est transparent, comme avec un vrai surligneur.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Le surlignage s’aligne-t-il automatiquement sur le texte ?",
+        answer:
+          "Non. Il couvre la zone sur laquelle vous faites glisser : suivez donc la ligne que vous voulez marquer. Vous pouvez ensuite le redimensionner par l’angle.",
+      },
+      {
+        question: "Puis-je supprimer un surlignage ?",
+        answer: "Oui. Sélectionnez-le et appuyez sur Supprimer, ou utilisez Annuler.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "Dessiner sur un PDF",
+    shortName: "Dessiner sur PDF",
+    tagline:
+      "Dessinez à main levée sur les pages d’un PDF avec le doigt, la souris ou un stylet. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Dessiner sur un PDF transforme la page en feuille sur laquelle vous pouvez écrire. Entourez un détail sur un plan, esquissez une idée, cochez des cases, ajoutez des notes manuscrites ou vos initiales. Choisissez une couleur et une épaisseur, puis dessinez avec le doigt sur un téléphone ou une tablette, avec un stylet ou avec la souris. Chaque trait peut être déplacé ou supprimé, et vous pouvez annuler autant d’étapes que nécessaire. Le dessin est enregistré sous forme de lignes nettes, pas d’une image floue. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Dessiner sur un PDF – annotation à main levée gratuite",
+    seoDescription:
+      "Dessinez sur les pages d’un PDF dans votre navigateur, au doigt, à la souris ou au stylet. Couleur, épaisseur, annulation. Gratuit, sans envoi.",
+    keywords: [
+      "dessiner sur un pdf",
+      "écrire à la main sur un pdf",
+      "annoter un pdf à main levée",
+      "outil de dessin pdf",
+      "dessiner sur pdf en ligne",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Dessinez sur la page",
+        description:
+          "Choisissez une couleur et une épaisseur, puis dessinez avec le doigt, un stylet ou la souris.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie avec votre dessin.",
+      },
+    ],
+    features: [
+      {
+        title: "Doigt, stylet ou souris",
+        description: "Le dessin fonctionne au toucher, au stylet et à la souris.",
+      },
+      {
+        title: "Des lignes nettes",
+        description:
+          "Les traits sont enregistrés sous forme de lignes vectorielles qui restent nettes quand vous zoomez.",
+      },
+      {
+        title: "Annuler et rétablir",
+        description:
+          "Déplacez, redimensionnez ou supprimez tout ce que vous avez ajouté, et annulez une étape si vous changez d’avis.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Puis-je signer avec cet outil ?",
+        answer:
+          "Oui, mais Signer un PDF donne une signature plus soignée, que vous pouvez saisir, dessiner ou importer sous forme d’image, puis placer précisément.",
+      },
+      {
+        question: "Puis-je effacer une partie d’un trait ?",
+        answer:
+          "Chaque trait forme un tout : sélectionnez-le et supprimez-le, ou annulez-le, puis redessinez-le.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "Ajouter des formes à un PDF",
+    shortName: "Ajouter des formes",
+    tagline:
+      "Ajoutez des rectangles, des cercles, des lignes et des flèches à un PDF pour attirer l’attention. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Ajouter des formes à un PDF vous aide à annoter des plans, des captures d’écran, des formulaires et des rapports : encadrez un total, entourez une erreur ou ajoutez une flèche qui pointe vers la partie à surveiller. Choisissez rectangle, ellipse, ligne ou flèche, une couleur et une épaisseur de trait, puis faites glisser sur la page. Les rectangles et les ellipses peuvent être vides ou remplis. Les formes peuvent être déplacées, redimensionnées et supprimées à tout moment. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Ajouter des formes à un PDF – cadres, cercles, flèches",
+    seoDescription:
+      "Ajoutez rectangles, cercles, lignes et flèches à un PDF dans votre navigateur. Couleur et épaisseur au choix, déplacez et redimensionnez. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter des formes pdf",
+      "dessiner une flèche sur un pdf",
+      "encadrer du texte pdf",
+      "entourer sur un pdf",
+      "annoter pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Dessinez la forme",
+        description: "Choisissez rectangle, ellipse, ligne ou flèche et faites glisser sur la page.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie annotée.",
+      },
+    ],
+    features: [
+      {
+        title: "Quatre formes",
+        description: "Rectangles, ellipses, lignes et flèches.",
+      },
+      {
+        title: "Contour ou remplissage",
+        description: "Tracez le contour d’un cadre ou remplissez-le d’une couleur unie.",
+      },
+      {
+        title: "Nettes à toutes les tailles",
+        description: "Les formes sont enregistrées sous forme de graphiques vectoriels.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Puis-je modifier une forme après l’avoir dessinée ?",
+        answer:
+          "Oui. Sélectionnez-la pour la déplacer, la redimensionner par l’angle, ou changer sa couleur et son épaisseur.",
+      },
+      {
+        question: "Puis-je recouvrir du texte avec une forme ?",
+        answer:
+          "Un rectangle rempli recouvre ce qui se trouve dessous, mais le contenu reste dans le fichier. Utilisez « Caviarder » pour supprimer les informations privées.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "Ajouter des liens à un PDF",
+    shortName: "Ajouter des liens",
+    tagline:
+      "Faites en sorte qu’une zone d’une page PDF ouvre un site web ou un e-mail. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Ajouter des liens à un PDF rend votre document cliquable : transformez une adresse web imprimée dans une brochure en vrai lien, liez un logo à votre site, ou faites qu’une adresse e-mail ouvre un nouveau message. Faites glisser sur le texte ou la zone qui doit être cliquable et saisissez l’adresse. Les liens fonctionnent dans tous les lecteurs PDF, sur ordinateur comme sur téléphone. La page elle-même ne change pas d’apparence ; le contour en pointillés visible pendant la modification n’est pas enregistré. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Ajouter des liens à un PDF – texte cliquable, gratuit",
+    seoDescription:
+      "Ajoutez des liens web et e-mail cliquables sur n’importe quelle zone d’un PDF, dans votre navigateur. Compatible avec tout lecteur PDF. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter un lien pdf",
+      "insérer un lien hypertexte dans un pdf",
+      "lien cliquable pdf",
+      "créer un lien dans un pdf",
+      "lien hypertexte pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Faites glisser sur la zone cliquable",
+        description: "Saisissez ensuite l’adresse web, comme example.com, ou une adresse e-mail.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie avec des liens qui fonctionnent.",
+      },
+    ],
+    features: [
+      {
+        title: "Liens web et e-mail",
+        description: "Les liens ouvrent un site web, ou un nouvel e-mail vers l’adresse saisie.",
+      },
+      {
+        title: "Invisibles sur la page",
+        description: "La page ne change pas d’apparence ; seule la zone devient cliquable.",
+      },
+      {
+        title: "Compatible avec tous les lecteurs",
+        description:
+          "Les liens PDF standard s’ouvrent dans Acrobat, les navigateurs, Aperçu et les applis mobiles.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Dois-je saisir https:// ?",
+        answer:
+          "Non. Saisissez example.com et https:// est ajouté. Une adresse e-mail devient un lien mailto.",
+      },
+      {
+        question: "Un lien peut-il renvoyer vers une autre page du PDF ?",
+        answer: "Pas encore. Ici, les liens ouvrent des sites web et des adresses e-mail.",
+      },
+      {
+        question: "Pourquoi le lien ne fonctionne-t-il pas dans ma visionneuse ?",
+        answer:
+          "Certaines visionneuses d’images et les aperçus des applis de messagerie n’ouvrent pas les liens PDF. Ouvrez le fichier dans un lecteur PDF ou un navigateur.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "Masquer du contenu PDF",
+    shortName: "Masquer",
+    tagline:
+      "Recouvrez des parties d’une page PDF avec des rectangles blancs, puis écrivez par-dessus si vous le souhaitez. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Masquer du contenu PDF fonctionne comme un ruban correcteur : faites glisser sur une date erronée, un ancien prix ou une ligne que vous ne voulez pas montrer, et un rectangle blanc la recouvre. Ajoutez un nouveau texte par-dessus avec l’outil Texte pour faire une correction. Si la page n’est pas blanche, choisissez une couleur assortie. « Masquer » ne fait que recouvrir le contenu ; le texte d’origine reste dans le fichier et peut toujours être copié ou trouvé par une recherche. Pour supprimer définitivement des informations privées, utilisez Caviarder un PDF. Tout se passe dans votre navigateur, donc le document ne quitte jamais votre appareil.",
+    seoTitle: "Masquer du contenu PDF – ruban correcteur gratuit",
+    seoDescription:
+      "Recouvrez des parties d’un PDF avec des rectangles blancs et saisissez vos corrections par-dessus, dans votre navigateur. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "masquer texte pdf",
+      "effacer texte pdf",
+      "blanco pdf",
+      "cacher une partie d’un pdf",
+      "correcteur pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Faites glisser sur ce qu’il faut recouvrir",
+        description:
+          "Un rectangle blanc le recouvre. Ajoutez un nouveau texte par-dessus avec l’outil Texte si besoin.",
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Enregistrez la copie corrigée.",
+      },
+    ],
+    features: [
+      {
+        title: "Écrire par-dessus",
+        description: "Combinez « Masquer » et du texte pour corriger une date, un nom ou un nombre.",
+      },
+      {
+        title: "Assorti au fond",
+        description: "Choisissez n’importe quelle couleur pour les pages qui ne sont pas blanches.",
+      },
+      {
+        title: "Déplacer et redimensionner",
+        description: "Ajustez chaque rectangle jusqu’à ce qu’il recouvre exactement ce que vous voulez.",
+      },
+      {
+        title: "Modification privée",
+        description: "Le PDF est modifié sur votre appareil et n’est jamais envoyé.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Le texte recouvert a-t-il vraiment disparu ?",
+        answer:
+          "Non. « Masquer » le cache, mais il reste dans le fichier, où il peut être copié ou trouvé par une recherche. Utilisez Caviarder un PDF pour le supprimer.",
+      },
+      {
+        question: "Puis-je changer un mot dans le PDF ?",
+        answer:
+          "Recouvrez le mot avec « Masquer », puis saisissez le nouveau mot par-dessus avec l’outil Texte.",
+      },
+      {
+        question: "Est-ce que ça marche sur un téléphone ?",
+        answer:
+          "Oui. Touchez et faites glisser avec le doigt ; pour dessiner, utilisez le doigt ou un stylet.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "Caviarder un PDF",
+    shortName: "Caviarder PDF",
+    tagline:
+      "Noircissez les informations privées d’un PDF et supprimez-les définitivement du fichier. Gratuit, et tout se fait sur votre appareil.",
+    intro:
+      "Caviarder un PDF cache les noms, numéros de compte, adresses et autres informations privées avant que vous ne partagiez un document, et les supprime réellement. Faites glisser des rectangles noirs sur ce qui doit disparaître. Au téléchargement, chaque page caviardée est convertie en image où les rectangles sont incrustés définitivement : le texte en dessous disparaît du fichier. Il ne peut plus être copié, recherché ni récupéré en retirant le rectangle. Les valeurs de formulaire et les commentaires de ces pages sont également supprimés. Les pages sans caviardage restent telles quelles. Tout se passe dans votre navigateur, donc le document n’est jamais envoyé.",
+    seoTitle: "Caviarder un PDF – supprimer le texte privé, gratuit",
+    seoDescription:
+      "Noircissez et supprimez définitivement les informations privées d’un PDF, dans votre navigateur. Un vrai caviardage, pas un simple masque. Gratuit, sans envoi.",
+    keywords: [
+      "caviarder pdf",
+      "caviarder un pdf gratuit",
+      "noircir texte pdf",
+      "anonymiser un pdf",
+      "supprimer des informations sensibles d’un pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Ouvrez votre PDF",
+        description: "Déposez ou choisissez un PDF.",
+      },
+      {
+        title: "Faites glisser sur les informations privées",
+        description: "Recouvrez d’un rectangle noir chaque nom, numéro ou ligne qui doit disparaître.",
+      },
+      {
+        title: "Téléchargez le PDF caviardé",
+        description: "Vérifiez le résultat, puis partagez la copie caviardée, pas l’original.",
+      },
+    ],
+    features: [
+      {
+        title: "Vraiment supprimé",
+        description: "Le texte recouvert est effacé du fichier, pas caché sous un rectangle.",
+      },
+      {
+        title: "Valeurs de formulaire et commentaires aussi",
+        description: "Les champs remplis et les commentaires des pages caviardées sont également supprimés.",
+      },
+      {
+        title: "Autres pages intactes",
+        description: "Seules les pages caviardées sont converties en images.",
+      },
+      {
+        title: "Rien n’est envoyé",
+        description: "Les documents privés sont caviardés sur votre appareil ; personne d’autre ne les voit.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Pourquoi ne puis-je plus sélectionner de texte sur la page caviardée ?",
+        answer:
+          "Pour supprimer définitivement le texte caché, la page entière est enregistrée sous forme d’image. Le texte des autres pages reste sélectionnable.",
+      },
+      {
+        question: "Un rectangle noir dans un éditeur PDF classique, est-ce la même chose ?",
+        answer:
+          "Non. Un simple rectangle ne fait que recouvrir le texte, qui peut encore être copié ou trouvé par une recherche. Cet outil le supprime.",
+      },
+      {
+        question: "Autre chose est-il supprimé ?",
+        answer:
+          "Sur les pages caviardées, les champs de formulaire, les commentaires et les liens sont aussi supprimés, et les balises d’accessibilité du document sont retirées, car elles peuvent reprendre le texte des pages. Le titre et l’auteur sont conservés ; Supprimer les métadonnées PDF les efface.",
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer:
+          "Non. Le PDF est ouvert et enregistré dans votre navigateur, il reste donc sur votre appareil.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Créer une photo d’identité",
     shortName: "Photo d’identité",

@@ -5020,6 +5020,642 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "Editar PDF",
+    shortName: "Editar PDF",
+    tagline:
+      "Añade texto, imágenes, resaltados, dibujos, formas y enlaces a un PDF, o blanquea y censura partes de él. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Editar PDF abre tu documento página a página y te permite añadirle cosas: escribe texto del tamaño y color que quieras, coloca un logotipo o un sello, resalta o subraya líneas, dibuja a mano alzada, añade recuadros, círculos y flechas, y haz que ciertas zonas abran una web. Blanquear tapa lo que no quieres mostrar, y Censurar elimina del archivo los datos privados para siempre. Mueve, cambia de tamaño y elimina lo que hayas añadido, deshaz cualquier paso y luego descarga el PDF editado. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Editar PDF online – editor de PDF gratis, sin subir nada",
+    seoDescription:
+      "Edita PDF en tu navegador: añade texto, imágenes, resaltados, dibujos, formas y enlaces, blanquea o censura. Gratis, sin registro y sin subir nada.",
+    keywords: [
+      "editar pdf",
+      "editor de pdf",
+      "editar pdf online gratis",
+      "añadir texto a pdf",
+      "anotar pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF. Sus páginas se abren en el editor.",
+      },
+      {
+        title: "Añade lo que necesites",
+        description:
+          "Elige una herramienta y toca o arrastra sobre la página. Mueve, cambia de tamaño o elimina cualquier cosa que hayas añadido.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia editada. Tu archivo original no cambia.",
+      },
+    ],
+    features: [
+      {
+        title: "Todo en un mismo editor",
+        description:
+          "Texto, imágenes, resaltados, dibujos, formas, enlaces, blanqueo y censura están en el mismo editor, así que puedes combinarlos.",
+      },
+      {
+        title: "Deshacer y rehacer",
+        description:
+          "Mueve, cambia de tamaño o elimina cualquier cosa que hayas añadido, y deshaz un paso si cambias de opinión.",
+      },
+      {
+        title: "Censura de verdad",
+        description: "Las zonas censuradas se eliminan del archivo, no solo se tapan.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo cambiar el texto que ya tiene el PDF?",
+        answer:
+          "No directamente. Tápalo con Blanquear y escribe el texto nuevo encima. El texto antiguo sigue en el archivo, debajo, así que usa Censurar para cualquier cosa privada.",
+      },
+      {
+        question: "¿Se puede buscar el texto que añado?",
+        answer:
+          "Sí. El texto que escribes es texto PDF real, así que se puede seleccionar, buscar y copiar, salvo en las páginas que censures.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "Añadir texto a PDF",
+    shortName: "Añadir texto",
+    tagline:
+      "Escribe texto en cualquier parte de una página PDF, con la fuente, el tamaño y el color que elijas. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Añadir texto a PDF te permite escribir en un documento sin imprimirlo: rellena un formulario que no tiene campos, añade una nota, una fecha o una dirección, o rotula un plano. Toca donde debe empezar el texto, escríbelo y elige la fuente, el tamaño, el color y la negrita. Arrastra el texto para ajustar su posición y añade tantos textos como necesites, en tantas páginas como quieras. El texto que añades es texto PDF real, así que se mantiene nítido y se puede buscar. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Añadir texto a PDF – gratis, escribe en cualquier PDF",
+    seoDescription:
+      "Escribe texto en cualquier parte de un PDF desde tu navegador. Elige fuente, tamaño y color, colócalo con precisión y descárgalo. Gratis, sin subir nada.",
+    keywords: [
+      "añadir texto a pdf",
+      "escribir en un pdf",
+      "insertar texto en pdf",
+      "escribir sobre un pdf",
+      "agregar texto a pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Toca donde va el texto",
+        description: "Escríbelo en el cuadro y elige la fuente, el tamaño y el color. Arrástralo a su sitio.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia con tu texto añadido.",
+      },
+    ],
+    features: [
+      {
+        title: "Tu fuente, tamaño y color",
+        description:
+          "Sin serifa, con serifa o monoespaciada estilo máquina de escribir, de 6 a 72 pt, en negrita o normal y en cualquier color.",
+      },
+      {
+        title: "Muchos idiomas",
+        description: "Puedes escribir en alfabeto latino, griego y cirílico, y también en japonés y coreano.",
+      },
+      {
+        title: "Texto nítido y que se puede buscar",
+        description: "El texto es texto PDF real, no una imagen de él.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo rellenar un formulario que no tiene campos?",
+        answer:
+          "Sí. Toca cada línea en blanco y escribe. Para PDF con campos de formulario reales, Rellenar formulario PDF es más rápido.",
+      },
+      {
+        question: "¿Puedo cambiar el texto que ya tiene el PDF?",
+        answer:
+          "No directamente. Tápalo con Blanquear y escribe el texto nuevo encima. El texto antiguo sigue en el archivo, debajo, así que usa Censurar para cualquier cosa privada.",
+      },
+      {
+        question: "¿Puedo escribir en varias páginas?",
+        answer:
+          "Sí. Cambia de página con las flechas que hay sobre la página; lo que añadas en cada una se conserva.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "Añadir imagen a PDF",
+    shortName: "Añadir imagen",
+    tagline:
+      "Coloca un logotipo, una foto o la imagen de un sello en cualquier página de un PDF y ajusta su tamaño. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Añadir imagen a PDF pone una imagen en una página de tu documento: el logotipo de tu empresa en una carta, un sello en un certificado, una foto en un formulario o una firma escaneada. Toca donde debe ir la imagen y elígela en tu dispositivo. Arrástrala a su sitio y tira de la esquina para cambiar su tamaño; las proporciones se mantienen. Funcionan imágenes JPG, PNG con transparencia, WebP, GIF, TIFF y HEIC del iPhone. Todo ocurre en tu navegador, así que no se sube ni el PDF ni la imagen.",
+    seoTitle: "Añadir imagen a PDF – inserta un logo o una foto, gratis",
+    seoDescription:
+      "Inserta un logotipo, una foto o un sello en un PDF desde tu navegador. Colócalo, cambia el tamaño y descarga. JPG, PNG, HEIC. Gratis, sin subir nada.",
+    keywords: [
+      "añadir imagen a pdf",
+      "insertar imagen en pdf",
+      "poner logo en pdf",
+      "agregar foto a pdf",
+      "insertar sello en pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF y ve a la página que quieras.",
+      },
+      {
+        title: "Añade la imagen",
+        description:
+          "Toca la página donde debe ir y elige una imagen. Arrástrala y cambia su tamaño desde la esquina.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia con la imagen añadida.",
+      },
+    ],
+    features: [
+      {
+        title: "Se mantiene la transparencia",
+        description: "Un logotipo PNG con fondo transparente sigue siendo transparente en la página.",
+      },
+      {
+        title: "Cualquier formato de imagen",
+        description: "Puedes colocar imágenes JPG, PNG, WebP, GIF, TIFF y HEIC del iPhone.",
+      },
+      {
+        title: "Se mantienen las proporciones",
+        description: "Al cambiar el tamaño se conserva la forma de la imagen, así que nunca se ve estirada.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Se verá nítida la imagen?",
+        answer:
+          "Las imágenes se colocan con hasta 2000 píxeles de ancho, lo que se ve nítido al imprimir en tamaños normales.",
+      },
+      {
+        question: "¿Puedo poner el mismo logotipo en todas las páginas?",
+        answer:
+          "Para repetir un logotipo en todas las páginas, Marca de agua en PDF lo hace en un solo paso. Aquí colocas las imágenes una a una.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "Resaltar PDF",
+    shortName: "Resaltar",
+    tagline: "Resalta, subraya o tacha texto en un PDF. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Resaltar PDF te permite marcar un documento como lo harías con un rotulador: arrastra sobre una línea para resaltarla en amarillo, verde, rosa o azul, subrayarla o tacharla. Es útil para estudiar, revisar un contrato o enseñar a alguien exactamente qué parte importa. Las marcas se pueden mover, cambiar de tamaño y eliminar, y puedes deshacer cualquier paso. El resaltado es translúcido, así que el texto de debajo se sigue leyendo. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Resaltar PDF online – subrayador de PDF gratis",
+    seoDescription:
+      "Resalta, subraya o tacha texto en un PDF desde tu navegador. Cuatro colores de subrayador, deshacer y sin registro. No se sube nada.",
+    keywords: [
+      "resaltar pdf",
+      "subrayar pdf",
+      "resaltar texto en pdf",
+      "subrayador pdf",
+      "tachar texto en pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Arrastra sobre el texto",
+        description: "Elige Resaltado, Subrayado o Tachado y un color, y arrastra sobre la línea.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia marcada.",
+      },
+    ],
+    features: [
+      {
+        title: "Colores de subrayador",
+        description: "Amarillo, verde, rosa y azul, o el color que elijas.",
+      },
+      {
+        title: "Subrayado y tachado",
+        description: "Marca cambios o correcciones además de los puntos clave.",
+      },
+      {
+        title: "El texto se sigue leyendo",
+        description: "Los resaltados son translúcidos, como un subrayador de verdad.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿El resaltado se ajusta solo al texto?",
+        answer:
+          "No. Cubre la zona sobre la que arrastras, así que arrastra a lo largo de la línea que quieras marcar. Después puedes cambiar su tamaño desde la esquina.",
+      },
+      {
+        question: "¿Puedo quitar un resaltado?",
+        answer: "Sí. Selecciónalo y pulsa Eliminar, o usa Deshacer.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "Dibujar en PDF",
+    shortName: "Dibujar en PDF",
+    tagline:
+      "Dibuja a mano alzada en las páginas de un PDF con el dedo, el ratón o un lápiz óptico. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Dibujar en PDF convierte la página en una hoja en la que puedes escribir. Rodea un detalle en un plano, esboza una idea, marca casillas, añade notas a mano o tus iniciales. Elige un color y un grosor y dibuja con el dedo en el móvil o la tableta, con un lápiz óptico o con el ratón. Cada trazo se puede mover o eliminar, y puedes deshacer tantos pasos como necesites. El dibujo se guarda como líneas nítidas, no como una imagen borrosa. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Dibujar en PDF – anotaciones a mano alzada gratis",
+    seoDescription:
+      "Dibuja en las páginas de un PDF desde tu navegador con el dedo, el ratón o un lápiz óptico. Elige color y grosor, deshaz y descarga. Gratis, sin subir nada.",
+    keywords: [
+      "dibujar en pdf",
+      "escribir a mano en pdf",
+      "dibujar sobre un pdf",
+      "anotar pdf a mano",
+      "herramienta de dibujo pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Dibuja en la página",
+        description: "Elige un color y un grosor y dibuja con el dedo, el lápiz o el ratón.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia con tu dibujo.",
+      },
+    ],
+    features: [
+      {
+        title: "Dedo, lápiz óptico o ratón",
+        description: "El dibujo responde al tacto, al lápiz y al ratón.",
+      },
+      {
+        title: "Líneas nítidas",
+        description: "Los trazos se guardan como líneas vectoriales que siguen nítidas al ampliar.",
+      },
+      {
+        title: "Deshacer y rehacer",
+        description:
+          "Mueve, cambia de tamaño o elimina cualquier cosa que hayas añadido, y deshaz un paso si cambias de opinión.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo firmar con esto?",
+        answer:
+          "Puedes, pero Firmar PDF crea una firma más limpia que puedes escribir, dibujar o elegir como imagen y colocar con precisión.",
+      },
+      {
+        question: "¿Puedo borrar parte de un trazo?",
+        answer: "Cada trazo es una sola pieza: selecciónalo y elimínalo, o deshazlo, y vuelve a dibujarlo.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "Añadir formas a PDF",
+    shortName: "Añadir formas",
+    tagline:
+      "Añade rectángulos, círculos, líneas y flechas a un PDF para señalar cosas. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Añadir formas a PDF te ayuda a marcar planos, capturas de pantalla, formularios e informes: dibuja un recuadro alrededor de un total, rodea un error o añade una flecha que apunte a la parte que necesita atención. Elige rectángulo, elipse, línea o flecha, un color y un grosor de línea, y arrastra sobre la página. Los rectángulos y las elipses pueden tener solo contorno o ir rellenos. Las formas se pueden mover, cambiar de tamaño y eliminar en cualquier momento. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Añadir formas a PDF – recuadros, círculos y flechas",
+    seoDescription:
+      "Añade rectángulos, círculos, líneas y flechas a un PDF desde tu navegador. Elige color y grosor, mueve y cambia el tamaño. Gratis, sin subir nada.",
+    keywords: [
+      "añadir formas a pdf",
+      "dibujar flecha en pdf",
+      "dibujar recuadro en pdf",
+      "marcar con un círculo en pdf",
+      "anotar pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Dibuja la forma",
+        description: "Elige rectángulo, elipse, línea o flecha y arrastra sobre la página.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia marcada.",
+      },
+    ],
+    features: [
+      {
+        title: "Cuatro formas",
+        description: "Rectángulos, elipses, líneas y flechas.",
+      },
+      {
+        title: "Contorno o relleno",
+        description: "Dibuja solo el contorno de un recuadro o rellénalo de un color sólido.",
+      },
+      {
+        title: "Nítidas a cualquier tamaño",
+        description: "Las formas se guardan como gráficos vectoriales.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo cambiar una forma después de dibujarla?",
+        answer:
+          "Sí. Selecciónala para moverla, cambiar su tamaño desde la esquina o cambiar su color y grosor.",
+      },
+      {
+        question: "¿Puedo tapar texto con una forma?",
+        answer:
+          "Un rectángulo relleno tapa lo que hay debajo, pero el contenido sigue en el archivo. Usa Censurar para eliminar información privada.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "Añadir enlaces a PDF",
+    shortName: "Añadir enlaces",
+    tagline:
+      "Haz que cualquier zona de una página PDF abra una web o un correo. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Añadir enlaces a PDF hace que tu documento sea clicable: convierte una dirección web impresa en un folleto en un enlace real, enlaza un logotipo a tu web o haz que una dirección de correo abra un mensaje nuevo. Arrastra sobre el texto o la zona que debe ser clicable y escribe la dirección. Los enlaces funcionan en cualquier lector de PDF, en ordenadores y móviles. La página se ve igual; el contorno discontinuo que ves mientras editas no se guarda. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Añadir enlaces a PDF – haz clicable el texto, gratis",
+    seoDescription:
+      "Añade enlaces web y de correo clicables a cualquier zona de un PDF desde tu navegador. Funcionan en cualquier lector de PDF. Gratis, sin subir nada.",
+    keywords: [
+      "añadir enlace a pdf",
+      "insertar hipervínculo en pdf",
+      "poner enlace en pdf",
+      "enlace clicable pdf",
+      "hipervínculo pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Arrastra sobre la zona clicable",
+        description: "Luego escribe la dirección web, como example.com, o una dirección de correo.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia con enlaces que funcionan.",
+      },
+    ],
+    features: [
+      {
+        title: "Enlaces web y de correo",
+        description: "Los enlaces abren una web o un correo nuevo a la dirección que escribas.",
+      },
+      {
+        title: "Invisibles en la página",
+        description: "La página no cambia; solo la zona se vuelve clicable.",
+      },
+      {
+        title: "Funciona en cualquier lector",
+        description:
+          "Los enlaces PDF estándar se abren en Acrobat, en los navegadores, en Vista Previa y en las apps del móvil.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Tengo que escribir https://?",
+        answer:
+          "No. Escribe example.com y se añade https://. Una dirección de correo se convierte en un enlace mailto.",
+      },
+      {
+        question: "¿Puede un enlace llevar a otra página del PDF?",
+        answer: "Todavía no. Aquí los enlaces abren webs y direcciones de correo.",
+      },
+      {
+        question: "¿Por qué no funciona el enlace en mi visor?",
+        answer:
+          "Algunos visores de imágenes y las vistas previas de las apps de mensajería no abren enlaces de PDF. Abre el archivo en un lector de PDF o en un navegador.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "Blanquear PDF",
+    shortName: "Blanquear",
+    tagline:
+      "Tapa partes de una página PDF con recuadros blancos y escribe encima si quieres. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Blanquear PDF funciona como la cinta correctora: arrastra sobre una fecha equivocada, un precio antiguo o una línea que no quieras mostrar, y un recuadro blanco la tapa. Añade texto nuevo encima con la herramienta Texto para hacer una corrección. Si la página no es blanca, elige un color que coincida. Blanquear solo tapa el contenido; el texto original sigue en el archivo y aún se puede copiar o encontrar con una búsqueda. Para eliminar información privada para siempre, usa Censurar PDF. Todo ocurre en tu navegador, así que el documento nunca sale de tu dispositivo.",
+    seoTitle: "Blanquear PDF – cinta correctora para PDF, gratis",
+    seoDescription:
+      "Tapa partes de un PDF con recuadros blancos y escribe correcciones encima, desde tu navegador. Gratis, sin registro y sin subir nada.",
+    keywords: [
+      "tapar texto en pdf",
+      "borrar texto de pdf",
+      "corrector pdf",
+      "tipex pdf",
+      "ocultar texto en pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Arrastra sobre lo que quieras tapar",
+        description:
+          "Un recuadro blanco lo tapa. Si lo necesitas, añade texto nuevo encima con la herramienta Texto.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda la copia corregida.",
+      },
+    ],
+    features: [
+      {
+        title: "Escribe encima",
+        description: "Combina Blanquear con texto para corregir una fecha, un nombre o un número.",
+      },
+      {
+        title: "Igual que el fondo",
+        description: "Elige cualquier color para las páginas que no sean blancas.",
+      },
+      {
+        title: "Mueve y cambia el tamaño",
+        description: "Ajusta cada recuadro hasta que tape exactamente lo que quieres.",
+      },
+      {
+        title: "Edición privada",
+        description: "El PDF se edita en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿El texto tapado desaparece de verdad?",
+        answer:
+          "No. Blanquear lo oculta, pero sigue en el archivo, donde se puede copiar o encontrar con una búsqueda. Usa Censurar PDF para eliminarlo.",
+      },
+      {
+        question: "¿Puedo cambiar una palabra del PDF?",
+        answer: "Tapa la palabra con Blanquear y escribe la palabra nueva encima con la herramienta Texto.",
+      },
+      {
+        question: "¿Funciona en el móvil?",
+        answer: "Sí. Toca y arrastra con el dedo; para dibujar puedes usar el dedo o un lápiz óptico.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "Censurar PDF",
+    shortName: "Censurar PDF",
+    tagline:
+      "Tapa con negro la información privada de un PDF y elimínala del archivo para siempre. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Censurar PDF oculta nombres, números de cuenta, direcciones y otros datos privados antes de compartir un documento, y los elimina de verdad. Arrastra recuadros negros sobre lo que debe desaparecer. Al descargar, cada página censurada se convierte en una imagen con los recuadros incrustados, así que el texto de debajo desaparece del archivo: no se puede copiar, buscar ni recuperar quitando el recuadro. Los valores de los formularios y los comentarios de esas páginas también se eliminan. Las páginas sin censurar se quedan como estaban. Todo ocurre en tu navegador, así que el documento nunca se sube.",
+    seoTitle: "Censurar PDF – elimina texto privado para siempre, gratis",
+    seoDescription:
+      "Tapa con negro y elimina para siempre la información privada de un PDF, desde tu navegador. Censura real, no solo tapar. Gratis, sin subir nada.",
+    keywords: [
+      "censurar pdf",
+      "censurar pdf gratis",
+      "ocultar información en pdf",
+      "anonimizar pdf",
+      "eliminar datos confidenciales de pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Abre tu PDF",
+        description: "Arrastra o elige un PDF.",
+      },
+      {
+        title: "Arrastra sobre la información privada",
+        description: "Tapa con un recuadro negro cada nombre, número o línea que deba desaparecer.",
+      },
+      {
+        title: "Descarga el PDF censurado",
+        description: "Comprueba el resultado y comparte la copia censurada, no el original.",
+      },
+    ],
+    features: [
+      {
+        title: "Eliminado de verdad",
+        description: "El texto tapado se borra del archivo, no se esconde bajo un recuadro.",
+      },
+      {
+        title: "También valores de formularios y comentarios",
+        description: "Los campos rellenados y los comentarios de las páginas censuradas también se eliminan.",
+      },
+      {
+        title: "El resto de páginas, intactas",
+        description: "Solo las páginas con zonas censuradas se convierten en imágenes.",
+      },
+      {
+        title: "Sin subir nada",
+        description: "Los documentos privados se censuran en tu dispositivo; nadie más los ve.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Por qué ya no puedo seleccionar texto en la página censurada?",
+        answer:
+          "Para eliminar el texto oculto para siempre, la página entera se guarda como imagen. El texto de las demás páginas se puede seguir seleccionando.",
+      },
+      {
+        question: "¿Es lo mismo un rectángulo negro en un editor de PDF normal?",
+        answer:
+          "No. Un recuadro normal solo tapa el texto, que todavía se puede copiar o encontrar con una búsqueda. Esta herramienta lo elimina.",
+      },
+      {
+        question: "¿Se elimina algo más?",
+        answer:
+          "En las páginas censuradas también se eliminan los campos de formulario, los comentarios y los enlaces, y se descartan las etiquetas de accesibilidad del documento, porque pueden repetir el texto de la página. El título y los datos del autor se mantienen; Eliminar metadatos de PDF los borra.",
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El PDF se abre y se guarda en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Crear foto de pasaporte",
     shortName: "Foto de pasaporte",

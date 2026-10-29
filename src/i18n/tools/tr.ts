@@ -5028,6 +5028,645 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "PDF Düzenleme",
+    shortName: "PDF Düzenle",
+    tagline: "Bir PDF'e metin, resim, vurgu, çizim, şekil ve bağlantı ekleyin ya da bazı kısımlarını beyazlatın ve karartın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF Düzenleme, belgenizi sayfa sayfa açar ve üzerine eklemeler yapmanızı sağlar: istediğiniz boyutta ve renkte metin yazın, bir logo veya damga yerleştirin, satırları vurgulayın veya altını çizin, serbest çizim yapın, kutu, daire ve ok ekleyin, bir alanın tıklanınca bir web sitesi açmasını sağlayın. Beyazlatma göstermek istemediğiniz şeyi örter; Karartma ise özel bilgileri dosyadan kalıcı olarak kaldırır. Eklediklerinizi taşıyın, yeniden boyutlandırın ve silin, her adımı geri alın, ardından düzenlenmiş PDF'i indirin. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Düzenleme – Ücretsiz PDF Düzenleyici, Yükleme Yok",
+    seoDescription:
+      "PDF düzenleme tarayıcıda: metin, resim, vurgu, çizim, şekil ve bağlantı ekleyin, beyazlatın veya karartın. Ücretsiz, kayıt yok, hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf düzenleme",
+      "pdf düzenleyici",
+      "online pdf düzenleme ücretsiz",
+      "pdf'e yazı ekleme",
+      "pdf üzerine yazma",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin. Sayfaları düzenleyicide açılır.",
+      },
+      {
+        title: "İhtiyacınız olanı ekleyin",
+        description: "Bir araç seçin, ardından sayfaya dokunun veya sürükleyin. Eklediğiniz her şeyi taşıyabilir, yeniden boyutlandırabilir veya silebilirsiniz.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Düzenlenmiş kopyayı kaydedin. Orijinal dosyanız değişmez.",
+      },
+    ],
+    features: [
+      {
+        title: "Her şey tek düzenleyicide",
+        description: "Metin, resim, vurgu, çizim, şekil, bağlantı, beyazlatma ve karartma aynı düzenleyicide; bu yüzden hepsini birlikte kullanabilirsiniz.",
+      },
+      {
+        title: "Geri al ve yinele",
+        description: "Eklediğiniz her şeyi taşıyın, yeniden boyutlandırın veya silin; fikrinizi değiştirirseniz bir adımı geri alın.",
+      },
+      {
+        title: "Gerçek karartma",
+        description: "Karartılan alanlar yalnızca örtülmez, dosyadan kaldırılır.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PDF'te zaten bulunan metni değiştirebilir miyim?",
+        answer:
+          "Doğrudan değil. Metni Beyazlat aracıyla örtün ve yeni metni üzerine yazın. Eski metin altta, dosyada kalır; bu yüzden özel bilgiler için Karart aracını kullanın.",
+      },
+      {
+        question: "Eklediğim metin aranabilir mi?",
+        answer:
+          "Evet. Yazdığınız metin gerçek PDF metnidir; karartılan sayfalar dışında seçilebilir, aranabilir ve kopyalanabilir.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "PDF'e Metin Ekleme",
+    shortName: "Metin Ekle",
+    tagline: "Bir PDF sayfasının herhangi bir yerine, seçtiğiniz yazı tipi, boyut ve renkte metin yazın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF'e Metin Ekleme, bir belgeye yazdırmadan yazı yazmanızı sağlar: alanı olmayan bir formu doldurun, bir not, tarih veya adres ekleyin ya da bir çizimi etiketleyin. Metnin başlayacağı yere dokunun, yazın, ardından yazı tipini, boyutu, rengi ve kalınlığı seçin. Konumunu ince ayarlamak için metni sürükleyin; istediğiniz kadar sayfaya istediğiniz kadar metin ekleyin. Eklediğiniz metin gerçek PDF metnidir, bu yüzden keskin kalır ve aranabilir. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF'e Metin Ekleme – Ücretsiz, Her PDF'e Yazın",
+    seoDescription:
+      "Tarayıcınızda bir PDF'in herhangi bir yerine metin yazın. Yazı tipini, boyutu ve rengi seçin, tam yerine koyun ve indirin. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf'e yazı ekleme",
+      "pdf üzerine yazı yazma",
+      "pdf'e metin ekleme",
+      "pdf yazı yazma",
+      "pdf metin düzenleyici",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Metnin gideceği yere dokunun",
+        description: "Kutuya yazın, ardından yazı tipini, boyutu ve rengi seçin. Sürükleyerek yerine koyun.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Metninizin eklendiği kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Yazı tipi, boyut ve renk sizin",
+        description: "Tırnaksız, tırnaklı veya daktilo tarzı eş aralıklı; 6 ile 72 punto arası; kalın veya normal; istediğiniz renkte.",
+      },
+      {
+        title: "Birçok dil",
+        description: "Latin, Yunan, Kiril, Japon ve Kore yazısıyla metin yazılabilir.",
+      },
+      {
+        title: "Keskin, aranabilir metin",
+        description: "Metin, metnin bir resmi değil, gerçek PDF metnidir.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Alanları olmayan bir formu doldurabilir miyim?",
+        answer:
+          "Evet. Her boş satıra dokunup yazın. Gerçek form alanları olan PDF'lerde PDF Form Doldurma daha hızlıdır.",
+      },
+      {
+        question: "PDF'te zaten bulunan metni değiştirebilir miyim?",
+        answer:
+          "Doğrudan değil. Metni Beyazlat aracıyla örtün ve yeni metni üzerine yazın. Eski metin altta, dosyada kalır; bu yüzden özel bilgiler için Karart aracını kullanın.",
+      },
+      {
+        question: "Birden fazla sayfaya yazabilir miyim?",
+        answer:
+          "Evet. Sayfanın üstündeki oklarla sayfa değiştirin; her sayfadaki eklemeleriniz korunur.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "PDF'e Resim Ekleme",
+    shortName: "Resim Ekle",
+    tagline: "Bir PDF'in herhangi bir sayfasına logo, fotoğraf veya damga resmi yerleştirin ve boyutunu ayarlayın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF'e Resim Ekleme, belgenizin bir sayfasına resim koyar: bir mektuba şirket logosu, bir sertifikaya damga veya mühür, bir forma fotoğraf ya da taranmış bir imza. Resmin gideceği yere dokunun ve cihazınızdan resmi seçin. Sürükleyerek yerine koyun ve boyutlandırmak için köşesini çekin; oranlar korunur. JPG, saydam PNG, WebP, GIF, TIFF ve iPhone HEIC resimlerinin hepsi çalışır. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden ne PDF ne de resim yüklenir.",
+    seoTitle: "PDF'e Resim Ekleme – Logo veya Fotoğraf, Ücretsiz",
+    seoDescription:
+      "Tarayıcınızda bir PDF'e logo, fotoğraf veya damga ekleyin. Sürükleyip yerleştirin, boyutlandırın ve indirin. JPG, PNG, HEIC. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf'e resim ekleme",
+      "pdf'e fotoğraf ekleme",
+      "pdf'e logo ekleme",
+      "pdf resim ekleme",
+      "pdf'e görsel ekleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin ve istediğiniz sayfaya gidin.",
+      },
+      {
+        title: "Resmi ekleyin",
+        description: "Sayfada gideceği yere dokunun ve bir resim seçin. Sürükleyin ve köşesinden boyutlandırın.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Resmin eklendiği kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Saydamlık korunur",
+        description: "Arka planı saydam bir PNG logo sayfada da saydam kalır.",
+      },
+      {
+        title: "Her resim biçimi",
+        description: "JPG, PNG, WebP, GIF, TIFF ve iPhone HEIC resimleri yerleştirilebilir.",
+      },
+      {
+        title: "Oranlar korunur",
+        description: "Boyutlandırma resmin şeklini korur, bu yüzden asla gerilmiş görünmez.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Resim keskin görünecek mi?",
+        answer:
+          "Resimler en fazla 2.000 piksel genişlikte yerleştirilir; bu, normal boyutlarda basıldığında keskin kalır.",
+      },
+      {
+        question: "Aynı logoyu her sayfaya koyabilir miyim?",
+        answer:
+          "Bir logoyu her sayfada tekrarlamak için PDF'e Filigran Ekleme bunu tek adımda yapar. Burada resimleri tek tek yerleştirirsiniz.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "PDF Vurgulama",
+    shortName: "Vurgula",
+    tagline: "Bir PDF'teki metni vurgulayın, altını veya üstünü çizin. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF Vurgulama, bir belgeyi kalemle yapar gibi işaretlemenizi sağlar: bir satırı sarı, yeşil, pembe veya mavi renkte vurgulamak için üzerinde sürükleyin, altını çizin veya üstünü çizin. Ders çalışırken, bir sözleşmeyi incelerken ya da birine tam olarak hangi kısmın önemli olduğunu gösterirken işe yarar. İşaretler taşınabilir, yeniden boyutlandırılabilir ve silinebilir; her adımı geri alabilirsiniz. Vurgu yarı saydamdır, bu yüzden alttaki metin okunabilir kalır. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Vurgulama Online – Ücretsiz PDF Fosforlu Kalemi",
+    seoDescription:
+      "Tarayıcınızda bir PDF'teki metni vurgulayın, altını veya üstünü çizin. Dört fosforlu kalem rengi, geri alma, kayıt yok. Hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf vurgulama",
+      "pdf fosforlu kalem",
+      "pdf metin vurgulama",
+      "pdf altını çizme",
+      "pdf üstünü çizme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Metnin üzerinde sürükleyin",
+        description: "Vurgu, altı çizili veya üstü çizili ile bir renk seçin, ardından satırın üzerinde sürükleyin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "İşaretlenmiş kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Fosforlu kalem renkleri",
+        description: "Sarı, yeşil, pembe ve mavi ya da seçtiğiniz herhangi bir renk.",
+      },
+      {
+        title: "Altı ve üstü çizili",
+        description: "Önemli noktaların yanı sıra değişiklikleri veya düzeltmeleri de işaretleyin.",
+      },
+      {
+        title: "Metin okunabilir kalır",
+        description: "Vurgular, gerçek bir fosforlu kalem gibi yarı saydamdır.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Vurgu metne otomatik oturur mu?",
+        answer:
+          "Hayır. Sürüklediğiniz alanı kaplar, bu yüzden işaretlemek istediğiniz satır boyunca sürükleyin. Daha sonra köşesinden yeniden boyutlandırabilirsiniz.",
+      },
+      {
+        question: "Bir vurguyu kaldırabilir miyim?",
+        answer:
+          "Evet. Seçip Sil'e basın veya Geri al'ı kullanın.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "PDF Üzerine Çizim",
+    shortName: "PDF'e Çiz",
+    tagline: "PDF sayfalarına parmağınız, fareniz veya kaleminizle serbest çizim yapın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF Üzerine Çizim, sayfayı üzerine yazabileceğiniz bir kâğıda dönüştürür. Bir plandaki ayrıntıyı daire içine alın, bir fikrin taslağını çizin, kutuları işaretleyin, el yazısıyla notlar veya paraf ekleyin. Bir renk ve kalınlık seçin; telefonda veya tablette parmağınızla, ya da kalem veya fareyle çizin. Her çizgi taşınabilir veya silinebilir; ihtiyacınız kadar adımı geri alabilirsiniz. Çizim bulanık bir resim olarak değil, keskin çizgiler olarak kaydedilir. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Üzerine Çizim – Ücretsiz Serbest Elle PDF Notu",
+    seoDescription:
+      "Tarayıcınızda PDF sayfalarına parmak, fare veya kalemle çizin. Renk ve kalınlık seçin, geri alın, indirin. Ücretsiz, hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf üzerine çizim",
+      "pdf üzerine yazma",
+      "pdf çizim aracı",
+      "pdf'e el yazısı ekleme",
+      "pdf kalemle not alma",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Sayfaya çizin",
+        description: "Bir renk ve kalınlık seçin, ardından parmağınız, kaleminiz veya farenizle çizin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Çiziminizin olduğu kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Parmak, kalem veya fare",
+        description: "Çizim dokunmatik, kalem ve fare girişini takip eder.",
+      },
+      {
+        title: "Keskin çizgiler",
+        description: "Çizgiler, yakınlaştırınca da net kalan vektör çizgiler olarak kaydedilir.",
+      },
+      {
+        title: "Geri al ve yinele",
+        description: "Eklediğiniz her şeyi taşıyın, yeniden boyutlandırın veya silin; fikrinizi değiştirirseniz bir adımı geri alın.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bununla imza atabilir miyim?",
+        answer:
+          "Atabilirsiniz, ama PDF İmzalama yazabileceğiniz, çizebileceğiniz veya yükleyebileceğiniz ve tam yerine koyabileceğiniz daha düzgün bir imza oluşturur.",
+      },
+      {
+        question: "Bir çizginin bir kısmını silebilir miyim?",
+        answer:
+          "Her çizgi tek parçadır: seçip silin veya geri alın, sonra yeniden çizin.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "PDF'e Şekil Ekleme",
+    shortName: "Şekil Ekle",
+    tagline: "Bir şeyi göstermek için bir PDF'e dikdörtgen, daire, çizgi ve ok ekleyin. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF'e Şekil Ekleme, planları, ekran görüntülerini, formları ve raporları işaretlemenize yardımcı olur: bir toplamın etrafına kutu çizin, bir hatayı daire içine alın ya da dikkat gerektiren kısmı gösteren bir ok ekleyin. Dikdörtgen, elips, çizgi veya ok ile bir renk ve çizgi kalınlığı seçin, ardından sayfada sürükleyin. Dikdörtgenler ve elipsler yalnızca kenarlıklı ya da dolgulu olabilir. Şekiller her zaman taşınabilir, yeniden boyutlandırılabilir ve silinebilir. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF'e Şekil Ekleme – Kutu, Daire, Ok, Ücretsiz",
+    seoDescription:
+      "Tarayıcınızda bir PDF'e dikdörtgen, daire, çizgi ve ok ekleyin. Renk ve kalınlık seçin, taşıyın ve boyutlandırın. Ücretsiz, hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf'e şekil ekleme",
+      "pdf'e ok ekleme",
+      "pdf'e kutu çizme",
+      "pdf daire içine alma",
+      "pdf işaretleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Şekli çizin",
+        description: "Dikdörtgen, elips, çizgi veya ok seçin ve sayfada sürükleyin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "İşaretlenmiş kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Dört şekil",
+        description: "Dikdörtgen, elips, çizgi ve ok.",
+      },
+      {
+        title: "Kenarlık veya dolgu",
+        description: "Bir kutuyu yalnızca kenarlıkla çizin veya düz bir renkle doldurun.",
+      },
+      {
+        title: "Her boyutta keskin",
+        description: "Şekiller vektör grafik olarak kaydedilir.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bir şekli çizdikten sonra değiştirebilir miyim?",
+        answer:
+          "Evet. Taşımak için seçin, köşesinden yeniden boyutlandırın veya rengini ve kalınlığını değiştirin.",
+      },
+      {
+        question: "Metni bir şekille örtebilir miyim?",
+        answer:
+          "Dolgulu bir dikdörtgen altındakini örter, ama içerik dosyada kalır. Özel bilgileri kaldırmak için Karart aracını kullanın.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "PDF'e Bağlantı Ekleme",
+    shortName: "Bağlantı Ekle",
+    tagline: "Bir PDF sayfasının herhangi bir alanının bir web sitesi veya e-posta açmasını sağlayın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF'e Bağlantı Ekleme, belgenizi tıklanabilir yapar: bir broşürde basılı duran web adresini gerçek bir bağlantıya dönüştürün, logonuzu web sitenize bağlayın veya bir e-posta adresinin yeni bir ileti açmasını sağlayın. Tıklanabilir olması gereken metin veya alanın üzerinde sürükleyin ve adresi yazın. Bağlantılar bilgisayarlarda ve telefonlarda her PDF okuyucuda çalışır. Sayfanın kendisi aynı görünür; düzenlerken gördüğünüz kesikli çerçeve kaydedilmez. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF'e Bağlantı Ekleme – Metni Tıklanabilir Yapın, Ücretsiz",
+    seoDescription:
+      "Tarayıcınızda bir PDF'in herhangi bir alanına tıklanabilir web ve e-posta bağlantıları ekleyin. Her PDF okuyucuda çalışır. Ücretsiz, gizli, yükleme yok.",
+    keywords: [
+      "pdf'e link ekleme",
+      "pdf'e bağlantı ekleme",
+      "pdf köprü ekleme",
+      "pdf tıklanabilir link",
+      "pdf'e url ekleme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Tıklanabilir alanın üzerinde sürükleyin",
+        description: "Ardından example.com gibi bir web adresi veya bir e-posta adresi yazın.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Çalışan bağlantıların olduğu kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Web ve e-posta bağlantıları",
+        description: "Bağlantılar bir web sitesi ya da girdiğiniz adrese yeni bir e-posta açar.",
+      },
+      {
+        title: "Sayfada görünmez",
+        description: "Sayfa değişmemiş görünür; yalnızca alan tıklanabilir hâle gelir.",
+      },
+      {
+        title: "Her okuyucuda çalışır",
+        description: "Standart PDF bağlantıları Acrobat'ta, tarayıcılarda, Önizleme'de ve telefon uygulamalarında açılır.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "https:// yazmam gerekiyor mu?",
+        answer:
+          "Hayır. example.com yazın, https:// eklenir. Bir e-posta adresi mailto bağlantısına dönüşür.",
+      },
+      {
+        question: "Bir bağlantı PDF'in başka bir sayfasına gidebilir mi?",
+        answer:
+          "Henüz değil. Buradaki bağlantılar web sitelerini ve e-posta adreslerini açar.",
+      },
+      {
+        question: "Bağlantı görüntüleyicimde neden çalışmıyor?",
+        answer:
+          "Bazı resim görüntüleyiciler ve mesajlaşma uygulaması önizlemeleri PDF bağlantılarını açmaz. Dosyayı bir PDF okuyucuda veya tarayıcıda açın.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "PDF Beyazlatma",
+    shortName: "Beyazlat",
+    tagline: "Bir PDF sayfasının bazı kısımlarını beyaz kutularla örtün, isterseniz üzerine yazın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF Beyazlatma, düzeltme bandı gibi çalışır: yanlış bir tarihin, eski bir fiyatın veya göstermek istemediğiniz bir satırın üzerinde sürükleyin, beyaz bir kutu onu örter. Düzeltme yapmak için Metin aracıyla üzerine yeni metin ekleyin. Sayfa beyaz değilse, sayfaya uyan bir renk seçin. Beyazlatma yalnızca içeriği örter; asıl metin dosyada kalır ve hâlâ kopyalanabilir veya aramayla bulunabilir. Özel bilgileri kalıcı olarak kaldırmak için PDF Karartma aracını kullanın. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF Beyazlatma – Ücretsiz PDF Düzeltme Bandı",
+    seoDescription:
+      "Tarayıcınızda bir PDF'in bazı kısımlarını beyaz kutularla örtün ve düzeltmeleri üzerine yazın. Ücretsiz, kayıt yok, hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf beyazlatma",
+      "pdf daksil",
+      "pdf yazı kapatma",
+      "pdf metin örtme",
+      "pdf'ten yazı silme",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Örtülecek yerin üzerinde sürükleyin",
+        description: "Beyaz bir kutu onu örter. Gerekirse Metin aracıyla üzerine yeni metin ekleyin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Düzeltilmiş kopyayı kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Üzerine yazın",
+        description: "Bir tarihi, adı veya sayıyı düzeltmek için beyazlatmayı metinle birlikte kullanın.",
+      },
+      {
+        title: "Arka plana uydurun",
+        description: "Beyaz olmayan sayfalar için herhangi bir renk seçin.",
+      },
+      {
+        title: "Taşıyın ve boyutlandırın",
+        description: "Her kutuyu tam olarak istediğiniz yeri örtene kadar ayarlayın.",
+      },
+      {
+        title: "Gizli düzenleme",
+        description: "PDF cihazınızda düzenlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Örtülen metin gerçekten gidiyor mu?",
+        answer:
+          "Hayır. Beyazlatma metni gizler ama metin dosyada kalır; orada kopyalanabilir veya aramayla bulunabilir. Kaldırmak için PDF Karartma aracını kullanın.",
+      },
+      {
+        question: "PDF'teki bir kelimeyi değiştirebilir miyim?",
+        answer:
+          "Kelimeyi beyazlatmayla örtün, ardından Metin aracıyla yeni kelimeyi üzerine yazın.",
+      },
+      {
+        question: "Telefonda çalışır mı?",
+        answer:
+          "Evet. Parmağınızla dokunup sürükleyin; çizim parmakla veya kalemle yapılabilir.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "PDF Karartma",
+    shortName: "PDF Karart",
+    tagline: "Bir PDF'teki özel bilgileri karartın ve dosyadan kalıcı olarak kaldırın. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF Karartma, bir belgeyi paylaşmadan önce adları, hesap numaralarını, adresleri ve diğer özel bilgileri gizler ve gerçekten kaldırır. Gitmesi gereken yerlerin üzerinde sürükleyerek siyah kutular ekleyin. İndirdiğinizde, karartma içeren her sayfa, kutuların kalıcı olarak işlendiği bir resme dönüştürülür; böylece alttaki metin dosyadan silinir: kopyalanamaz, aranamaz ve kutu kaldırılarak geri getirilemez. Bu sayfalardaki form değerleri ve yorumlar da kaldırılır. Karartma içermeyen sayfalar olduğu gibi kalır. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belge asla yüklenmez.",
+    seoTitle: "PDF Karartma – Özel Metni Kalıcı Olarak Silin, Ücretsiz",
+    seoDescription:
+      "Bir PDF'teki özel bilgileri tarayıcınızda karartın ve kalıcı olarak kaldırın. Yalnızca örtme değil, gerçek karartma. Ücretsiz, hiçbir şey yüklenmez.",
+    keywords: [
+      "pdf karartma",
+      "pdf sansürleme",
+      "pdf metin karartma",
+      "pdf'ten kişisel bilgi silme",
+      "pdf gizli bilgi kaldırma",
+    ],
+    howToSteps: [
+      {
+        title: "PDF'inizi açın",
+        description: "Bir PDF bırakın veya seçin.",
+      },
+      {
+        title: "Özel bilgilerin üzerinde sürükleyin",
+        description: "Gitmesi gereken her adı, numarayı veya satırı siyah bir kutuyla örtün.",
+      },
+      {
+        title: "Karartılmış PDF'i indirin",
+        description: "Sonucu kontrol edin, ardından orijinali değil, karartılmış kopyayı paylaşın.",
+      },
+    ],
+    features: [
+      {
+        title: "Gerçekten kaldırılır",
+        description: "Örtülen metin bir kutunun altına gizlenmez, dosyadan silinir.",
+      },
+      {
+        title: "Form değerleri ve yorumlar da",
+        description: "Karartılan sayfalardaki doldurulmuş alanlar ve yorumlar da kaldırılır.",
+      },
+      {
+        title: "Diğer sayfalara dokunulmaz",
+        description: "Yalnızca karartma içeren sayfalar resme dönüştürülür.",
+      },
+      {
+        title: "Hiçbir şey yüklenmez",
+        description: "Özel belgeler cihazınızda karartılır; onları başka kimse görmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Karartılan sayfada neden artık metin seçemiyorum?",
+        answer:
+          "Gizlenen metni kalıcı olarak kaldırmak için sayfanın tamamı resim olarak kaydedilir. Diğer sayfalardaki metin seçilebilir kalır.",
+      },
+      {
+        question: "Normal bir PDF düzenleyicideki siyah dikdörtgen aynı şey mi?",
+        answer:
+          "Hayır. Düz bir kutu metni yalnızca örter; metin hâlâ kopyalanabilir veya aramayla bulunabilir. Bu araç metni kaldırır.",
+      },
+      {
+        question: "Başka bir şey de kaldırılıyor mu?",
+        answer:
+          "Karartılan sayfalarda form alanları, yorumlar ve bağlantılar da kaldırılır; belgenin erişilebilirlik etiketleri de sayfa metnini tekrarlayabildiği için çıkarılır. Başlık ve yazar bilgileri korunur; bunları PDF Meta Verisi Silme temizler.",
+      },
+      {
+        question: "PDF'im yükleniyor mu?",
+        answer:
+          "Hayır. PDF tarayıcınızda açılır ve kaydedilir, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Vesikalık Fotoğraf Oluşturucu",
     shortName: "Vesikalık Fotoğraf",
