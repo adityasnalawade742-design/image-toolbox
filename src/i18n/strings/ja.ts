@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': '画像が50 MBを超えています。もっと小さいファイルをお試しください。',
   'ws.errHeic': 'このiPhoneの写真を開けませんでした。先にJPGで書き出してからお試しください。',
   'ws.errDecode': 'この画像を開けませんでした。ファイルが破損しているか、未対応の形式の可能性があります。',
+  'ws.tiffFirstPage': 'このTIFFは{n}ページあります。ここでは1ページ目だけを変換します。すべてのページを残すには「TIFFをPDFに変換」を使ってください。',
   'ws.errExport': 'ダウンロード用のファイルを作成できませんでした。このブラウザでは画像が大きすぎる可能性があります。サイズを小さくするか、別の形式をお試しください。',
   'ws.errCopy': 'ブラウザが画像のコピーをブロックしました。代わりにダウンロードをご利用ください。',
   'ws.errFormatFallback': 'このブラウザは{wanted}で保存できないため、{actual}で保存しました。',
@@ -623,7 +624,7 @@ export const strings = {
   'ctl.bg.result': '結果',
 
   // ===== Compress Image to KB =====
-  'ctl.kb.dropHint': 'JPG、PNG、WebP、iPhoneのHEICに対応。結果は必ず選んだサイズより小さくなります。',
+  'ctl.kb.dropHint': 'JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。結果は必ず選んだサイズより小さくなります。',
   'ctl.kb.targetSize': '上限サイズ',
   'ctl.kb.custom': 'またはKB単位で上限を入力',
   'ctl.kb.unitKb': 'KB',
@@ -656,7 +657,7 @@ export const strings = {
   'ctl.list.skipped': '開けなかったため、次のファイルはスキップしました：{names}',
 
   // ===== JPG to PDF =====
-  'ctl.topdf.dropHint': 'JPG、PNG、WebP、iPhoneのHEICに対応。複数枚をまとめて選べ、あとから追加もできます。',
+  'ctl.topdf.dropHint': 'JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。複数枚をまとめて選べ、あとから追加もできます。',
   'ctl.topdf.pages': 'ページ数：{n}',
   'ctl.topdf.pageSize': 'ページサイズ',
   'ctl.topdf.letter': 'レター',
@@ -692,7 +693,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': 'このファイルをPDFとして開けませんでした。破損しているか、PDFではない可能性があります。',
 
   // ===== Merge Images =====
-  'ctl.merge.dropHint': 'JPG、PNG、WebP、iPhoneのHEICに対応。2枚以上をまとめて選んでください。',
+  'ctl.merge.dropHint': 'JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。2枚以上をまとめて選んでください。',
   'ctl.merge.layout': 'レイアウト',
   'ctl.merge.horizontal': '横並び',
   'ctl.merge.vertical': '縦並び',
@@ -832,7 +833,7 @@ export const strings = {
   'ctl.croppdf.note': '切り取った部分は削除されず非表示になるだけなので、PDF編集ソフトで元に戻せます。',
 
   // ===== Change DPI =====
-  'ctl.dpi.dropHint': 'JPGまたはPNG（WebPとiPhoneのHEICはJPGに変換されます）。ピクセルは変更されません。',
+  'ctl.dpi.dropHint': 'JPGまたはPNG（WebP、TIFFとiPhoneのHEICはJPGに変換されます）。ピクセルは変更されません。',
   'ctl.dpi.newDpi': '新しいDPI',
   'ctl.dpi.custom': 'またはDPIを入力',
   'ctl.dpi.current': '現在のDPI',
@@ -843,7 +844,7 @@ export const strings = {
   'ctl.dpi.summary': '{dpi} DPIでは、この画像は{cm}で印刷されます。',
 
   // ===== Signature extractor =====
-  'ctl.sig.dropHint': '白い紙に書いた署名の写真またはスキャン画像。JPG、PNG、WebP、iPhoneのHEICに対応。',
+  'ctl.sig.dropHint': '白い紙に書いた署名の写真またはスキャン画像。JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。',
   'ctl.sig.sensitivity': '感度',
   'ctl.sig.sensitivityHint': '細い線が消える場合は上げ、紙の質感が出る場合は下げてください。',
   'ctl.sig.original': '元の色',
@@ -852,7 +853,7 @@ export const strings = {
   'ctl.sig.resultLabel': '透明な背景に抽出した署名',
 
   // ===== Passport photo maker =====
-  'ctl.passport.dropHint': '正面を向き、光が均一に当たったはっきりした写真。JPG、PNG、WebP、iPhoneのHEICに対応。',
+  'ctl.passport.dropHint': '正面を向き、光が均一に当たったはっきりした写真。JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。',
   'ctl.passport.size': '写真のサイズ',
   'ctl.passport.custom': 'カスタム',
   'ctl.passport.widthMm': '幅（mm）',
@@ -882,7 +883,7 @@ export const strings = {
   'ctl.passport.check': 'ルールは国や申請先によって異なります。印刷する前に、必要なサイズ、頭の位置、背景、表情を確認してください。',
 
   // ===== Blur Background / Change Background =====
-  'ctl.bgfx.dropHint': 'JPG、PNG、WebP、iPhoneのHEICに対応。人物や物は端末上で検出され、何もアップロードされません。',
+  'ctl.bgfx.dropHint': 'JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。人物や物は端末上で検出され、何もアップロードされません。',
   'ctl.bgfx.working': '被写体を検出中…',
   'ctl.bgfx.failed': '被写体が見つかりませんでした：{message}',
   'ctl.bgfx.strength': 'ぼかしの強さ',
@@ -894,7 +895,7 @@ export const strings = {
   'ctl.bgfx.result': '新しい背景にした写真',
 
   // ===== Image to Text =====
-  'ctl.ocr.dropHint': '印刷された文字が写った写真、スクリーンショット、スキャン画像。JPG、PNG、WebP、iPhoneのHEICに対応。端末上で読み取られます。',
+  'ctl.ocr.dropHint': '印刷された文字が写った写真、スクリーンショット、スキャン画像。JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。端末上で読み取られます。',
   'ctl.ocr.loading': '文字読み取り機能を読み込み中…',
   'ctl.ocr.reading': '文字を読み取り中…',
   'ctl.ocr.failed': '文字を読み取れませんでした：{message}',
@@ -952,7 +953,7 @@ export const strings = {
 
   // ===== QR Code Reader =====
   'ctl.qrread.dropTitle': 'QRコードが写った画像をドロップ',
-  'ctl.qrread.dropHint': '写真またはスクリーンショット。JPG、PNG、WebP、iPhoneのHEICに対応。端末上で読み取られます。',
+  'ctl.qrread.dropHint': '写真またはスクリーンショット。JPG、PNG、WebP、TIFF、iPhoneのHEICに対応。端末上で読み取られます。',
   'ctl.qrread.useCamera': 'カメラでスキャン',
   'ctl.qrread.stopCamera': 'カメラを停止',
   'ctl.qrread.cameraView': 'カメラの映像',

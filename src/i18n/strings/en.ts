@@ -71,6 +71,7 @@ export const en = {
   'ws.errTooLarge': 'That image is larger than 50 MB. Try a smaller file.',
   'ws.errHeic': 'This iPhone photo couldn’t be opened. Try exporting it as JPG first.',
   'ws.errDecode': 'This image couldn’t be opened. The file may be damaged or in an unsupported format.',
+  'ws.tiffFirstPage': 'This TIFF has {n} pages. Only the first page is converted here; TIFF to PDF keeps every page.',
   'ws.errExport': 'The download couldn’t be created. The image may be too large for this browser; try a smaller size or another format.',
   'ws.errCopy': 'Your browser blocked copying the image. Use Download instead.',
   'ws.errFormatFallback': 'Your browser can’t save {wanted}, so this was saved as {actual}.',

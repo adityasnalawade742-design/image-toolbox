@@ -20,6 +20,7 @@ import type {
 } from '../../lib/canvas/engine';
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
+import { isTiffFile, convertTiff } from '../../lib/canvas/tiffLoader';
 import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
 import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
@@ -133,6 +134,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'jpg-to-pdf': <JpgToPdfWorkspace />,
     'png-to-pdf': <JpgToPdfWorkspace />,
     'heic-to-pdf': <JpgToPdfWorkspace />,
+    'tiff-to-pdf': <JpgToPdfWorkspace />,
     'pdf-to-jpg': <PdfToJpgWorkspace />,
     'pdf-to-png': <PdfToJpgWorkspace defaultFormat="image/png" />,
     'merge-images': <MergeImagesWorkspace />,
@@ -181,6 +183,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [displayableFile, setDisplayableFile] = useState<Blob | null>(null);
   const [outputBytes, setOutputBytes] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  // Pages in the loaded TIFF; only the first is edited here
+  const [tiffPages, setTiffPages] = useState(0);
   const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
 
@@ -288,7 +292,18 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       }
 
       let activeFile: File | Blob = file;
-      if (isHeicFile(file)) {
+      setTiffPages(0);
+      if (isTiffFile(file)) {
+        try {
+          const { blobs, pages } = await convertTiff(file, true);
+          activeFile = new File([blobs[0]], file.name.replace(/\.tiff?$/i, '.png'), { type: 'image/png' });
+          setTiffPages(pages);
+        } catch (tiffErr) {
+          console.error('TIFF decoding failed:', tiffErr);
+          setErrorMessage(t('ws.errDecode'));
+          return;
+        }
+      } else if (isHeicFile(file)) {
         try {
           const convertedBlob = await convertHeicToBlob(file);
           activeFile = new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.png'), { type: 'image/png' });
@@ -299,7 +314,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         }
       }
 
-      const sourceMime = isHeicFile(file) ? 'image/heic' : file.type || activeFile.type || 'image/png';
+      const sourceMime = isHeicFile(file) ? 'image/heic' : isTiffFile(file) ? 'image/tiff' : file.type || activeFile.type || 'image/png';
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
       setFileSize(file.size);
       setMimeType(sourceMime);
@@ -812,6 +827,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
             <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span>{errorMessage}</span>
           </div>
+        )}
+        {imageElement && tiffPages > 1 && (
+          <p role="status" className="mb-4 p-3 bg-paper-bright rounded-md border border-pencil text-[15px] text-ink">
+            {t('ws.tiffFirstPage', { n: tiffPages })}
+          </p>
         )}
 
         <input

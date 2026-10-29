@@ -12,7 +12,7 @@ import { blurBackground } from '../../../lib/canvas/backgroundBlur';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { removeBackground, preloadBackgroundRemoval, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
 
-const ACCEPT = 'image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 // The blurred background is computed at this size and scaled up: blurred detail doesn't need full resolution
 const BLUR_WORK_SIDE = 1024;
 const SWATCHES = ['#ffffff', '#f1f1ec', '#141414', '#dff2f9', '#2f6fb5', '#e1f1e6', '#fbe3ef'];

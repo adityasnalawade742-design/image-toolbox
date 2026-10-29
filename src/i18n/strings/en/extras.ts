@@ -1,7 +1,7 @@
 // Interface strings for Blur Background, Change Background, Image to Text and the QR code tools. Other locales translate them.
 export const extraStrings = {
   // Blur Background and Change Background
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP or iPhone HEIC. The person or object is found on your device; nothing is uploaded.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF or iPhone HEIC. The person or object is found on your device; nothing is uploaded.',
   'ctl.bgfx.working': 'Finding the subject…',
   'ctl.bgfx.failed': 'The subject couldn’t be found: {message}',
   'ctl.bgfx.strength': 'Blur strength',
@@ -13,7 +13,7 @@ export const extraStrings = {
   'ctl.bgfx.result': 'Photo with the new background',
 
   // Image to Text
-  'ctl.ocr.dropHint': 'A photo, screenshot or scan with printed text: JPG, PNG, WebP or iPhone HEIC. It is read on your device.',
+  'ctl.ocr.dropHint': 'A photo, screenshot or scan with printed text: JPG, PNG, WebP, TIFF or iPhone HEIC. It is read on your device.',
   'ctl.ocr.loading': 'Loading the text reader…',
   'ctl.ocr.reading': 'Reading the text…',
   'ctl.ocr.failed': 'The text couldn’t be read: {message}',
@@ -71,7 +71,7 @@ export const extraStrings = {
 
   // QR Code Reader
   'ctl.qrread.dropTitle': 'Drop an image with a QR code',
-  'ctl.qrread.dropHint': 'A photo or screenshot: JPG, PNG, WebP or iPhone HEIC. It is read on your device.',
+  'ctl.qrread.dropHint': 'A photo or screenshot: JPG, PNG, WebP, TIFF or iPhone HEIC. It is read on your device.',
   'ctl.qrread.useCamera': 'Scan with camera',
   'ctl.qrread.stopCamera': 'Stop camera',
   'ctl.qrread.cameraView': 'Camera view',

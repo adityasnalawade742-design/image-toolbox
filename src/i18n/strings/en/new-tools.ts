@@ -1,7 +1,7 @@
 // Interface strings for Compress to KB, JPG to PDF, PDF to JPG and Merge Images. Other locales translate them.
 export const newToolStrings = {
   // Compress Image to KB
-  'ctl.kb.dropHint': 'JPG, PNG, WebP or iPhone HEIC. The result is always smaller than the size you choose.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF or iPhone HEIC. The result is always smaller than the size you choose.',
   'ctl.kb.targetSize': 'Size limit',
   'ctl.kb.custom': 'Or type a limit in KB',
   'ctl.kb.unitKb': 'KB',
@@ -34,7 +34,7 @@ export const newToolStrings = {
   'ctl.list.skipped': 'Some files couldn’t be opened and were skipped: {names}',
 
   // JPG to PDF
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP or iPhone HEIC. Choose several at once; you can add more later.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF or iPhone HEIC. Choose several at once; you can add more later.',
   'ctl.topdf.pages': 'Pages: {n}',
   'ctl.topdf.pageSize': 'Page size',
   'ctl.topdf.letter': 'Letter',
@@ -70,7 +70,7 @@ export const newToolStrings = {
   'ctl.frompdf.errInvalid': 'This file couldn’t be opened as a PDF. It may be damaged, or not a PDF.',
 
   // Merge Images
-  'ctl.merge.dropHint': 'JPG, PNG, WebP or iPhone HEIC. Choose two or more at once.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF or iPhone HEIC. Choose two or more at once.',
   'ctl.merge.layout': 'Layout',
   'ctl.merge.horizontal': 'Side by side',
   'ctl.merge.vertical': 'Stacked',

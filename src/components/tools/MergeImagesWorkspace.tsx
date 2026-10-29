@@ -7,7 +7,7 @@ import { useT } from '../shared/I18nContext';
 import { layoutMerge, fitToCanvasLimits, type MergeDirection } from '../../lib/canvas/mergeLayout';
 import { canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 type MergeFormat = 'image/png' | 'image/jpeg' | 'image/webp';
 const FORMAT_LABEL: Record<MergeFormat, string> = { 'image/png': 'PNG', 'image/jpeg': 'JPG', 'image/webp': 'WebP' };
 // The on-page preview is drawn small; the download is drawn again at full size

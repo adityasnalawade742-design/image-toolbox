@@ -8,7 +8,7 @@ import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { detectFormat, printSize, readDpi, setDpi } from '../../../lib/canvas/dpi';
 import { downloadBlob } from '../../../lib/canvas/engine';
 
-const ACCEPT = 'image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 const PRESETS = [72, 96, 150, 200, 300, 600];
 
 interface Source {
