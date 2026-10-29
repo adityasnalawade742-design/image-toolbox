@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
-import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload } from 'lucide-react';
+import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload, Maximize2 } from 'lucide-react';
 import {
   loadImage,
   createImageProxy,
@@ -27,6 +27,7 @@ import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
 import { installWindowDropGuard } from './useImageIntake';
 import { I18nProvider } from './I18nContext';
 import { DragFrameOverlay } from './DragFrameOverlay';
+import { FullSizeView, blobImage } from './MediaViewer';
 import { createT, type Strings } from '../../i18n/strings';
 
 import { CropControls } from '../tools/CropControls';
@@ -719,6 +720,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     setPickAnnouncement(t('ws.pickerPicked', { hex }));
   };
 
+  /** The file a download gives: full resolution, encoded in the chosen format and quality */
+  const buildOutput = async (): Promise<Blob> => {
+    if (slug === 'remove-image-metadata' && cleanFile) return new Blob([new Uint8Array(cleanFile)], { type: format });
+    // Always process from full-resolution original source image for pristine output quality
+    return canvasToBlob(processCanvas(imageElement!, getProcessingOptions(true)), format, quality / 100);
+  };
+
   const handleDownload = async () => {
     if (!imageElement || isExporting) return;
     setIsExporting(true);
@@ -726,7 +734,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
     try {
       if (slug === 'remove-image-metadata' && cleanFile) {
-        const blob = new Blob([new Uint8Array(cleanFile)], { type: format });
+        const blob = await buildOutput();
         downloadBlob(blob, `${filename}-no-metadata.${formatExtension(format)}`);
         setLastExportBytes(blob.size);
         return;
@@ -737,11 +745,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         return;
       }
 
-      // Always process from full-resolution original source image for pristine output quality
-      const options = getProcessingOptions(true);
-      const fullResCanvas = processCanvas(imageElement, options);
-
-      const blob = await canvasToBlob(fullResCanvas, format, quality / 100);
+      const blob = await buildOutput();
       // Some browsers silently fall back to PNG for formats they can't encode (e.g. older Safari and WebP)
       const actualFormat = (blob.type || format) as OutputFormat;
       if (actualFormat !== format) {
@@ -1029,13 +1033,27 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                     </span>
                   </span>
                 )}
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
-                >
-                  {t('ws.replace')}
-                </button>
+                <span className="ml-auto flex items-center gap-4">
+                  {canExport && slug !== 'favicon-generator' && (
+                    <FullSizeView
+                      label={`${filename}.${formatExtension(format)}`}
+                      // Exactly the file the download gives, so compression and edges can be checked at 100%
+                      load={async () => {
+                        const blob = await buildOutput();
+                        setLastExportBytes(blob.size);
+                        return blobImage(blob);
+                      }}
+                      original={displayableFile ? () => blobImage(displayableFile) : undefined}
+                    />
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
+                  >
+                    {t('ws.replace')}
+                  </button>
+                </span>
               </div>
             </div>
 

@@ -1012,4 +1012,21 @@ export const strings = {
   'ctl.edit.kind.line': 'Línea',
   'ctl.edit.kind.arrow': 'Flecha',
   'ctl.edit.kind.link': 'Enlace',
+
+  // Viewer
+  'ctl.view.view': 'Ver {name}',
+  'ctl.view.viewPage': 'Ver la página {n}',
+  'ctl.view.fullSize': 'Ver a tamaño completo',
+  'ctl.view.close': 'Cerrar vista previa',
+  'ctl.view.prev': 'Anterior',
+  'ctl.view.next': 'Siguiente',
+  'ctl.view.position': '{n} de {total}',
+  'ctl.view.zoom': 'Zoom',
+  'ctl.view.fit': 'Ajustar',
+  'ctl.view.compare': 'Mostrar',
+  'ctl.view.original': 'Original',
+  'ctl.view.result': 'Resultado',
+  'ctl.view.loading': 'Cargando…',
+  'ctl.view.failed': 'No se pudo mostrar.',
+  'ctl.view.previewPage': 'Página que se previsualiza',
 };

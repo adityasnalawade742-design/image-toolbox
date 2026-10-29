@@ -1048,4 +1048,21 @@ export const strings = {
   'ctl.edit.kind.line': '直線',
   'ctl.edit.kind.arrow': '矢印',
   'ctl.edit.kind.link': 'リンク',
+
+  // Viewer
+  'ctl.view.view': '{name}を表示',
+  'ctl.view.viewPage': '{n}ページ目を表示',
+  'ctl.view.fullSize': '原寸で表示',
+  'ctl.view.close': 'プレビューを閉じる',
+  'ctl.view.prev': '前へ',
+  'ctl.view.next': '次へ',
+  'ctl.view.position': '{n} / {total}',
+  'ctl.view.zoom': 'ズーム',
+  'ctl.view.fit': '全体表示',
+  'ctl.view.compare': '表示',
+  'ctl.view.original': '元の画像',
+  'ctl.view.result': '結果',
+  'ctl.view.loading': '読み込み中…',
+  'ctl.view.failed': '表示できませんでした。',
+  'ctl.view.previewPage': 'プレビューするページ',
 };

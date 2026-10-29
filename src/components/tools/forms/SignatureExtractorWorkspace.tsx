@@ -7,6 +7,7 @@ import { useT } from '../../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { extractSignature, type InkColor } from '../../../lib/canvas/signature';
 import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { RangeField } from '../pdf/common';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
@@ -112,6 +113,15 @@ export function SignatureExtractorWorkspace() {
         fileLabel={image.file.name}
         onReplace={() => inputRef.current?.click()}
         replaceLabel={t('ws.replace')}
+        ticketAction={
+          found && (
+            <FullSizeView
+              label={`${image.file.name.replace(/\.[^.]+$/, '')}-signature.png`}
+              load={async () => blobImage(await canvasToBlob(canvasRef.current!, 'image/png'))}
+              original={() => urlImage(image.url, image.file.size)}
+            />
+          )
+        }
         panel={
           <>
             <div className="space-y-1">

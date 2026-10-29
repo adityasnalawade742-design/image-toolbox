@@ -7,6 +7,10 @@ import { useT } from '../../shared/I18nContext';
 import { openPdf, renderPage } from '../../../lib/pdf/pdfToImages';
 import { mergePdfs } from '../../../lib/pdf/pageOps';
 import { PDF_ACCEPT, pdfName, savePdf, useEditError } from './common';
+import type { PDFDocumentProxy } from 'pdfjs-dist';
+import { MediaViewer } from '../../shared/MediaViewer';
+import { ViewableThumb } from '../../shared/ViewableThumb';
+import { pdfPageItems } from '../../shared/pdfViewerItems';
 
 type PdfItem = OrderItem & { file: File; pages: number };
 
@@ -19,6 +23,19 @@ export function MergePdfWorkspace() {
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const editError = useEditError();
+  // One file's pages open in the viewer; its document is opened for that and closed again afterwards
+  const [view, setView] = useState<{ doc: PDFDocumentProxy; name: string; at: number } | null>(null);
+  const openView = async (item: PdfItem) => {
+    try {
+      setView({ doc: await openPdf(item.file), name: item.name, at: 0 });
+    } catch {
+      setError(t('ctl.frompdf.errInvalid'));
+    }
+  };
+  const closeView = () => {
+    view?.doc.destroy();
+    setView(null);
+  };
   const itemsRef = useRef(items);
   itemsRef.current = items;
   useEffect(() => () => itemsRef.current.forEach((i) => i.url && URL.revokeObjectURL(i.url)), []);
@@ -102,6 +119,7 @@ export function MergePdfWorkspace() {
               }}
               onAdd={() => inputRef.current?.click()}
               addLabel={t('ctl.mergepdf.add')}
+              view={(i) => openView(items[i])}
             />
             <p className="text-[14px] text-graphite" data-measure>
               {t('ctl.mergepdf.total', { n: total })}
@@ -118,9 +136,9 @@ export function MergePdfWorkspace() {
         <ol className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
           {items.map((item, i) => (
             <li key={item.id} className="border border-ink bg-paper-bright flex flex-col rounded-lg overflow-hidden">
-              <div className="flex-1 flex items-center justify-center p-3 bg-paper-stock min-h-[9rem]">
+              <ViewableThumb onView={() => openView(item)} label={t('ctl.view.view', { name: item.name })} className="flex-1 flex items-center justify-center p-3 bg-paper-stock min-h-[9rem]">
                 <img src={item.url} alt="" className="max-h-40 w-auto border border-pencil bg-white" />
-              </div>
+              </ViewableThumb>
               <p className="border-t border-ink px-3 py-2 text-[13px] text-ink">
                 <span className="font-semibold" data-measure>
                   {i + 1}.
@@ -131,6 +149,14 @@ export function MergePdfWorkspace() {
           ))}
         </ol>
         {skippedNote}
+        {view && (
+          <MediaViewer
+            items={pdfPageItems(view.doc, Array.from({ length: view.doc.numPages }, (_, i) => ({ key: String(i), index: i })), (i) => `${view.name} · ${t('ctl.pdf.pageN', { n: i + 1 })}`)}
+            index={view.at}
+            onIndex={(at) => setView((v) => v && { ...v, at })}
+            onClose={closeView}
+          />
+        )}
       </PdfToolLayout>
     </>
   );

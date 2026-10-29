@@ -1045,4 +1045,21 @@ export const strings = {
   'ctl.edit.kind.line': 'Linha',
   'ctl.edit.kind.arrow': 'Seta',
   'ctl.edit.kind.link': 'Link',
+
+  // Viewer
+  'ctl.view.view': 'Ver {name}',
+  'ctl.view.viewPage': 'Ver a página {n}',
+  'ctl.view.fullSize': 'Ver em tamanho real',
+  'ctl.view.close': 'Fechar visualização',
+  'ctl.view.prev': 'Anterior',
+  'ctl.view.next': 'Próxima',
+  'ctl.view.position': '{n} de {total}',
+  'ctl.view.zoom': 'Zoom',
+  'ctl.view.fit': 'Ajustar',
+  'ctl.view.compare': 'Mostrar',
+  'ctl.view.original': 'Original',
+  'ctl.view.result': 'Resultado',
+  'ctl.view.loading': 'Carregando…',
+  'ctl.view.failed': 'Não foi possível mostrar.',
+  'ctl.view.previewPage': 'Página para visualizar',
 };

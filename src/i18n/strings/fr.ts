@@ -1009,4 +1009,21 @@ export const strings = {
   'ctl.edit.kind.line': "Ligne",
   'ctl.edit.kind.arrow': "Flèche",
   'ctl.edit.kind.link': "Lien",
+
+  // Viewer
+  'ctl.view.view': "Voir {name}",
+  'ctl.view.viewPage': "Voir la page {n}",
+  'ctl.view.fullSize': "Voir en taille réelle",
+  'ctl.view.close': "Fermer l’aperçu",
+  'ctl.view.prev': "Précédent",
+  'ctl.view.next': "Suivant",
+  'ctl.view.position': "{n} sur {total}",
+  'ctl.view.zoom': "Zoom",
+  'ctl.view.fit': "Ajuster",
+  'ctl.view.compare': "Afficher",
+  'ctl.view.original': "Original",
+  'ctl.view.result': "Résultat",
+  'ctl.view.loading': "Chargement…",
+  'ctl.view.failed': "Impossible d’afficher cet élément.",
+  'ctl.view.previewPage': "Page à prévisualiser",
 };

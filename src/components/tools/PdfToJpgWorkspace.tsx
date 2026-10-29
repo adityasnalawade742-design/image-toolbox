@@ -5,6 +5,9 @@ import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import { openPdf, renderPage, PdfPasswordError, PdfInvalidError, type PageImageFormat } from '../../lib/pdf/pdfToImages';
 import { downloadBlob } from '../../lib/canvas/engine';
+import { MediaViewer } from '../shared/MediaViewer';
+import { ViewableThumb } from '../shared/ViewableThumb';
+import { pdfPageItems } from '../shared/pdfViewerItems';
 
 const ACCEPT = 'application/pdf,.pdf';
 const DPIS = [72, 150, 300] as const;
@@ -22,6 +25,7 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
   // Exporting blocks other downloads; preview loading doesn't
   const [exporting, setExporting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [viewAt, setViewAt] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const loadId = useRef(0);
 
@@ -174,13 +178,13 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
           <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
             {thumbs.map((url, i) => (
               <li key={i} className="border border-ink bg-paper-bright flex flex-col rounded-lg overflow-hidden">
-                <div className="flex-1 flex items-center justify-center p-3 bg-paper-stock">
+                <ViewableThumb onView={() => setViewAt(i)} label={t('ctl.view.viewPage', { n: i + 1 })} className="flex-1 flex items-center justify-center p-3 bg-paper-stock">
                   {url ? (
-                    <img src={url} alt={t('ctl.frompdf.pageAlt', { n: i + 1 })} className="max-h-48 w-auto border border-pencil bg-white" />
+                    <img src={url} alt="" className="max-h-48 w-auto border border-pencil bg-white" />
                   ) : (
                     <span className="text-[13px] text-graphite">{t('ctl.frompdf.pageAlt', { n: i + 1 })}</span>
                   )}
-                </div>
+                </ViewableThumb>
                 <button
                   type="button"
                   onClick={() => downloadPage(i + 1)}
@@ -199,6 +203,14 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
               <AlertCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>{error}</span>
             </p>
+          )}
+          {doc && viewAt !== null && (
+            <MediaViewer
+              items={pdfPageItems(doc, Array.from({ length: doc.numPages }, (_, i) => ({ key: String(i), index: i })), (i) => t('ctl.pdf.pageN', { n: i + 1 }))}
+              index={viewAt}
+              onIndex={setViewAt}
+              onClose={() => setViewAt(null)}
+            />
           )}
         </div>
 

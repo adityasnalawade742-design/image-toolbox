@@ -1045,4 +1045,21 @@ export const strings = {
   'ctl.edit.kind.line': 'Garis',
   'ctl.edit.kind.arrow': 'Panah',
   'ctl.edit.kind.link': 'Link',
+
+  // Viewer
+  'ctl.view.view': 'Lihat {name}',
+  'ctl.view.viewPage': 'Lihat halaman {n}',
+  'ctl.view.fullSize': 'Lihat ukuran penuh',
+  'ctl.view.close': 'Tutup pratinjau',
+  'ctl.view.prev': 'Sebelumnya',
+  'ctl.view.next': 'Berikutnya',
+  'ctl.view.position': '{n} dari {total}',
+  'ctl.view.zoom': 'Zoom',
+  'ctl.view.fit': 'Paskan',
+  'ctl.view.compare': 'Tampilkan',
+  'ctl.view.original': 'Asli',
+  'ctl.view.result': 'Hasil',
+  'ctl.view.loading': 'Memuat…',
+  'ctl.view.failed': 'Tidak dapat ditampilkan.',
+  'ctl.view.previewPage': 'Halaman untuk pratinjau',
 };

@@ -69,6 +69,8 @@ export function InteractiveCropOverlay({
   const boxH = Math.max(10, crop.height * scaleY);
 
   const handlePointerDown = (handle: DragHandle, e: React.PointerEvent) => {
+    // A second finger is a pinch-zoom of the page, not a drag
+    if (!e.isPrimary) return;
     e.preventDefault();
     e.stopPropagation();
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -89,6 +91,8 @@ export function InteractiveCropOverlay({
   };
 
   const handleBackdropPointerDown = (e: React.PointerEvent) => {
+    // A second finger is a pinch-zoom of the page, not a drag
+    if (!e.isPrimary) return;
     e.preventDefault();
     const rect = containerRef.current?.getBoundingClientRect() || canvasElement?.getBoundingClientRect();
     if (!rect || scaleX <= 0 || scaleY <= 0) return;
@@ -169,7 +173,7 @@ export function InteractiveCropOverlay({
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-auto select-none overflow-hidden touch-none"
+      className="absolute inset-0 pointer-events-auto select-none overflow-hidden touch-pinch-zoom"
       style={{ width: dims.width, height: dims.height }}
       onPointerDown={handleBackdropPointerDown}
     >
@@ -196,7 +200,7 @@ export function InteractiveCropOverlay({
 
       {/* Interactive Selection Box */}
       <div
-        className={`absolute border-2 border-paper-bright outline outline-1 outline-ink pointer-events-auto cursor-move touch-none ${
+        className={`absolute border-2 border-paper-bright outline outline-1 outline-ink pointer-events-auto cursor-move touch-pinch-zoom ${
           isCircle ? 'rounded-full' : ''
         }`}
         style={{
@@ -231,25 +235,25 @@ export function InteractiveCropOverlay({
 
         {/* Corner Handles (Generous touch padding) */}
         <div
-          className="absolute -top-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('nw', e)}
         >
           <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -top-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('ne', e)}
         >
           <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -left-5 w-10 h-10 flex items-center justify-center cursor-nesw-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('sw', e)}
         >
           <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 -right-5 w-10 h-10 flex items-center justify-center cursor-nwse-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('se', e)}
         >
           <div className="w-3.5 h-3.5 bg-paper-bright border border-ink" />
@@ -257,25 +261,25 @@ export function InteractiveCropOverlay({
 
         {/* Midpoint Edge Handles */}
         <div
-          className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('w', e)}
         >
           <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-none"
+          className="absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-12 flex items-center justify-center cursor-ew-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('e', e)}
         >
           <div className="w-2.5 h-5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('n', e)}
         >
           <div className="w-5 h-2.5 bg-paper-bright border border-ink" />
         </div>
         <div
-          className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-none"
+          className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-10 flex items-center justify-center cursor-ns-resize pointer-events-auto touch-pinch-zoom"
           onPointerDown={(e) => handlePointerDown('s', e)}
         >
           <div className="w-5 h-2.5 bg-paper-bright border border-ink" />

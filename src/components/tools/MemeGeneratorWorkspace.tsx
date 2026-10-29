@@ -4,6 +4,7 @@ import { Type, Download, RotateCcw, AlignLeft, AlignCenter, AlignRight, Copy, Ch
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT, useLocale } from '../shared/I18nContext';
+import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
 import { wrapTextLines, formatBytes } from '../../lib/canvas/engine';
 import { DragFrameOverlay, type FrameBox } from '../shared/DragFrameOverlay';
@@ -360,10 +361,20 @@ export function MemeGeneratorWorkspace() {
                   {!activeTemplate && selectedFile && selectedFile.size > 0 && ` · ${formatBytes(selectedFile.size)}`}
                 </span>
               </span>
+              <FullSizeView
+                className="ml-auto"
+                label={`meme.${saveFormat === 'jpeg' ? 'jpg' : saveFormat}`}
+                load={async () => {
+                  const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, `image/${saveFormat}`, 0.95));
+                  if (!blob) throw new Error('encode failed');
+                  return blobImage(blob);
+                }}
+                original={() => urlImage(imgElement.src)}
+              />
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="ml-auto inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
+                className="inline-flex items-center min-h-[40px] text-[14px] font-medium text-ink underline hover:no-underline"
               >
                 {t('ws.replace')}
               </button>

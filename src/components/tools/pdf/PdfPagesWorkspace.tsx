@@ -134,7 +134,7 @@ export function PdfPagesWorkspace({ mode }: { mode: Mode }) {
         status={busy ? t('ctl.pdf.working') : status}
         error={error}
       >
-        <PdfPageGrid pages={shown} thumbs={pdf.thumbs} mode={gridMode} onChange={mode === 'rotate' ? (next) => setPages(next.map((p) => ({ ...p, rotate: 0 }))) : setPages} />
+        <PdfPageGrid pages={shown} thumbs={pdf.thumbs} doc={pdf.doc} mode={gridMode} onChange={mode === 'rotate' ? (next) => setPages(next.map((p) => ({ ...p, rotate: 0 }))) : setPages} />
       </PdfToolLayout>
     </>
   );

@@ -141,7 +141,7 @@ export function SplitPdfWorkspace() {
         status={busy ? t('ctl.pdf.working') : status}
         error={error}
       >
-        <PdfPageGrid pages={pages} thumbs={pdf.thumbs} mode="view" />
+        <PdfPageGrid pages={pages} thumbs={pdf.thumbs} doc={pdf.doc} mode="view" />
       </PdfToolLayout>
     </>
   );

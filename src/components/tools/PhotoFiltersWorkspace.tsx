@@ -5,6 +5,7 @@ import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
 import { formatBytes } from '../../lib/canvas/engine';
+import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 
 interface FilterPreset {
   id: string;
@@ -290,10 +291,13 @@ export function PhotoFiltersWorkspace() {
                   onMouseMove={(e) => e.buttons === 1 && handleSplitPointerMove(e.clientX)}
                   onTouchStart={(e) => e.touches[0] && handleSplitPointerMove(e.touches[0].clientX)}
                   onTouchMove={(e) => e.touches[0] && handleSplitPointerMove(e.touches[0].clientX)}
-                  className="relative w-full max-w-2xl overflow-hidden border border-ink select-none touch-none cursor-ew-resize focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                  className="relative overflow-hidden border border-ink select-none cursor-ew-resize focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
                   style={{
                     aspectRatio: `${imgElement.naturalWidth} / ${imgElement.naturalHeight}`,
-                    maxHeight: '65vh',
+                    // As wide as fits, but never taller than 65% of the screen: the box keeps the photo's shape, so nothing is cut off
+                    width: `min(100%, 42rem, calc(65vh * ${imgElement.naturalWidth} / ${imgElement.naturalHeight}))`,
+                    // One finger moves the divider; two fingers can still zoom the page
+                    touchAction: 'pinch-zoom',
                   }}
                 >
                   {/* Before (Original) */}
@@ -360,6 +364,15 @@ export function PhotoFiltersWorkspace() {
                   <ChevronsLeftRight className="w-4 h-4" aria-hidden="true" />
                   <span>{t('ctl.filters.compare')}</span>
                 </button>
+                <FullSizeView
+                  label={`filtered-${activePreset}.${saveFormat === 'jpeg' ? 'jpg' : saveFormat}`}
+                  load={async () => {
+                    const blob = await new Promise<Blob | null>((res) => renderCanvas().toBlob(res, `image/${saveFormat}`, 0.95));
+                    if (!blob) throw new Error('encode failed');
+                    return blobImage(blob);
+                  }}
+                  original={() => urlImage(imgElement.src, selectedFile.size || undefined)}
+                />
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}

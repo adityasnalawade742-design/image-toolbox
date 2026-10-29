@@ -5,6 +5,8 @@ import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
+import { MediaViewer, blobImage, formatKB, type ViewerItem } from '../shared/MediaViewer';
+import { FileThumb } from '../shared/ViewableThumb';
 
 interface QueueItem {
   id: string;
@@ -51,6 +53,7 @@ export function BulkResizerWorkspace() {
   const [isZipping, setIsZipping] = useState(false);
   const [zipError, setZipError] = useState(false);
   const [overflowCount, setOverflowCount] = useState(0);
+  const [viewId, setViewId] = useState<string | null>(null);
   const isCancelledRef = useRef(false);
   const addMoreInputRef = useRef<HTMLInputElement>(null);
 
@@ -319,6 +322,7 @@ export function BulkResizerWorkspace() {
             {queue.map((item) => (
               <li key={item.id} className="flex items-start gap-3 px-4 py-2.5 text-[14px]">
                 <StatusIcon item={item} />
+                {!item.rejected && <FileThumb file={item.file} onView={() => setViewId(item.id)} label={t('ctl.view.view', { name: item.name })} />}
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-ink font-medium" title={item.name}>{item.name}</p>
                   <p className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 text-[13px] text-graphite">
@@ -367,6 +371,20 @@ export function BulkResizerWorkspace() {
               </li>
             ))}
           </ul>
+          {viewId !== null && (() => {
+            // Processed files show the result, with the original one switch away
+            const list = queue.filter((q) => !q.rejected);
+            const items: ViewerItem[] = list.map((item) => ({
+              key: `${item.id}:${item.outputBlob ? 'out' : 'in'}`,
+              label: item.name,
+              detail: item.targetWidth ? `${item.originalWidth} × ${item.originalHeight} → ${item.targetWidth} × ${item.targetHeight} px` : `${item.originalWidth} × ${item.originalHeight} px`,
+              load: () => blobImage(item.outputBlob ?? item.file),
+              original: item.outputBlob ? () => blobImage(item.file) : undefined,
+              transparent: true,
+            }));
+            const at = list.findIndex((q) => q.id === viewId);
+            return at < 0 ? null : <MediaViewer items={items} index={at} onIndex={(i) => setViewId(list[i].id)} onClose={() => setViewId(null)} />;
+          })()}
         </div>
 
         {/* Job ticket: progress through the queue */}

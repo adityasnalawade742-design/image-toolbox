@@ -74,6 +74,8 @@ export function DragFrameOverlay({ canvasElement, boxes, onMove, hint }: Props) 
             key={id}
             title={hint}
             onPointerDown={(e) => {
+              // A second finger is a pinch-zoom of the page, not a drag
+              if (!e.isPrimary) return;
               e.preventDefault();
               e.stopPropagation();
               e.currentTarget.setPointerCapture(e.pointerId);
@@ -95,7 +97,7 @@ export function DragFrameOverlay({ canvasElement, boxes, onMove, hint }: Props) 
               setDragging(null);
             }}
             onPointerCancel={() => setDragging(null)}
-            className={`group absolute pointer-events-auto cursor-move touch-none border-2 border-dashed transition-colors ${
+            className={`group absolute pointer-events-auto cursor-move touch-pinch-zoom border-2 border-dashed transition-colors ${
               active ? 'border-process-magenta bg-process-magenta/10' : 'border-process-magenta/70 hover:border-process-magenta hover:bg-process-magenta/5'
             }`}
             style={{ left, top, width: w, height: h }}

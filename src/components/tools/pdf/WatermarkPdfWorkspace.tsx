@@ -1,9 +1,9 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { usePdfDocument } from '../../shared/usePdfDocument';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { parseRanges, stampImage } from '../../../lib/pdf/pageOps';
-import { PagePreview } from './PagePreview';
+import { PagePicker, PagePreview } from './PagePreview';
 import { PositionSliders, StampOverlay, dataUrlBytes, textToPng, type Placement, type Stamp } from './StampPlacer';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
 
@@ -12,6 +12,9 @@ const inputClass = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright
 export function WatermarkPdfWorkspace() {
   const t = useT();
   const pdf = usePdfDocument();
+  // The page the preview shows (the edit applies to the pages chosen in the panel)
+  const [previewPage, setPreviewPage] = useState(1);
+  useEffect(() => setPreviewPage(1), [pdf.doc]);
   const [kind, setKind] = useState<'text' | 'image'>('text');
   const [text, setText] = useState('CONFIDENTIAL');
   const [color, setColor] = useState('#e4007c');
@@ -140,7 +143,8 @@ export function WatermarkPdfWorkspace() {
         status={busy ? t('ctl.pdf.working') : status}
         error={error}
       >
-        <PagePreview doc={pdf.doc} page={1}>
+        <PagePicker page={previewPage} count={pdf.pageCount} onChange={setPreviewPage} />
+        <PagePreview doc={pdf.doc} page={Math.min(previewPage, pdf.pageCount || 1)}>
           {(canvas) => stamp && <StampOverlay canvas={canvas} stamp={stamp} place={place} onMove={(cx, cy) => setPlace((p) => ({ ...p, cx, cy }))} hint={t('ctl.pdfwm.dragHint')} />}
         </PagePreview>
       </PdfToolLayout>

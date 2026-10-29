@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePdfDocument } from '../../shared/usePdfDocument';
 import { PdfToolLayout } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { cropPages, type CropMargins } from '../../../lib/pdf/pageOps';
-import { PagePreview } from './PagePreview';
+import { PagePicker, PagePreview } from './PagePreview';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
 
 export function CropPdfWorkspace() {
   const t = useT();
   const pdf = usePdfDocument();
+  // The page the preview shows (the edit applies to the pages chosen in the panel)
+  const [previewPage, setPreviewPage] = useState(1);
+  useEffect(() => setPreviewPage(1), [pdf.doc]);
   // Percent of the page trimmed from each side
   const [m, setM] = useState({ top: 5, right: 5, bottom: 5, left: 5 });
   const [busy, setBusy] = useState(false);
@@ -71,7 +74,8 @@ export function CropPdfWorkspace() {
         status={busy ? t('ctl.pdf.working') : status}
         error={error}
       >
-        <PagePreview doc={pdf.doc} page={1}>
+        <PagePicker page={previewPage} count={pdf.pageCount} onChange={setPreviewPage} />
+        <PagePreview doc={pdf.doc} page={Math.min(previewPage, pdf.pageCount || 1)}>
           {() => (
             <span aria-hidden="true" className="absolute inset-0 pointer-events-none">
               {/* Dim what will be trimmed; outline what stays */}
