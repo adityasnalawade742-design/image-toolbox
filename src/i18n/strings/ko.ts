@@ -63,7 +63,7 @@ export const strings = {
   'ws.errExport': '다운로드 파일을 만들 수 없어요. 이 브라우저에서 처리하기엔 이미지가 너무 클 수 있어요. 크기를 줄이거나 다른 형식을 선택해 보세요.',
   'ws.errCopy': '브라우저가 이미지 복사를 막았어요. 대신 다운로드를 이용해 주세요.',
   'ws.errFormatFallback': '이 브라우저는 {wanted} 형식으로 저장할 수 없어서 {actual} 형식으로 저장했어요.',
-  'ws.keptOriginal': '이 사진은 이미 잘 압축되어 있어서 원본 파일을 그대로 드려요. 다시 저장하면 더 커져요.',
+  'ws.keptOriginal': '이 사진은 이미 잘 압축되어 있어서 원본 이미지를 그대로 드려요. 카메라 정보와 위치 정보는 지웠어요. 다시 저장하면 더 커져요.',
 
   // Language selector
   'lang.label': '언어',

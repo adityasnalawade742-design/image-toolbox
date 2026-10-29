@@ -63,7 +63,7 @@ export const strings = {
   'ws.errExport': "Impossible de créer le fichier. L’image est peut-être trop grande pour ce navigateur ; essayez une taille plus petite ou un autre format.",
   'ws.errCopy': "Votre navigateur a bloqué la copie de l’image. Utilisez plutôt Télécharger.",
   'ws.errFormatFallback': "Votre navigateur ne peut pas enregistrer en {wanted} : le fichier a été enregistré en {actual}.",
-  'ws.keptOriginal': 'Cette photo est déjà bien compressée : vous récupérez votre fichier d’origine, car la réenregistrer l’alourdirait.',
+  'ws.keptOriginal': 'Cette photo est déjà bien compressée : vous récupérez l’image d’origine intacte, sans les données de l’appareil ni la localisation, car la réenregistrer l’alourdirait.',
 
   // Language selector
   'lang.label': "Langue",

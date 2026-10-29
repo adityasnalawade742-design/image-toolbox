@@ -63,7 +63,7 @@ export const strings = {
   'ws.errExport': 'File unduhan tidak bisa dibuat. Gambar mungkin terlalu besar untuk browser ini; coba ukuran yang lebih kecil atau format lain.',
   'ws.errCopy': 'Browser Anda memblokir penyalinan gambar. Gunakan Unduh sebagai gantinya.',
   'ws.errFormatFallback': 'Browser Anda tidak bisa menyimpan {wanted}, jadi file disimpan sebagai {actual}.',
-  'ws.keptOriginal': 'Foto ini sudah terkompresi dengan baik, jadi Anda mendapatkan file aslinya: menyimpannya ulang akan membuatnya lebih besar.',
+  'ws.keptOriginal': 'Foto ini sudah terkompresi dengan baik, jadi Anda mendapatkan gambar aslinya tanpa perubahan, tanpa data kamera dan lokasi: menyimpannya ulang akan membuatnya lebih besar.',
 
   // Language selector
   'lang.label': 'Bahasa',
