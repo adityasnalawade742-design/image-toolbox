@@ -142,7 +142,7 @@ export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
                   }
                 }}
                 placeholder={t('search.placeholder', { count: items.length })}
-                className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none"
+                className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none [&::-webkit-search-cancel-button]:hidden"
               />
               <button type="button" onClick={close} className="w-10 h-10 -mr-2 flex items-center justify-center text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
                 <X className="w-5 h-5" aria-hidden="true" />

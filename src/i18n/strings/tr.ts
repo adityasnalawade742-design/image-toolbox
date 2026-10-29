@@ -13,7 +13,7 @@ export const strings = {
   // Home drop zone
   'home.dropTitle': 'Başlamak için bir resim bırakın',
   'home.chooseImage': 'Resim seçin',
-  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, SVG veya iPhone HEIC, en fazla 50 MB. Ctrl+V ile de yapıştırabilirsiniz.',
+  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG veya iPhone HEIC, en fazla 50 MB. Ctrl+V ile de yapıştırabilirsiniz.',
   'home.preparing': 'Resminiz açılıyor…',
   'home.chooseTool': 'Ne yapmak istiyorsunuz?',
   'home.clear': 'Başka bir resim seçin',

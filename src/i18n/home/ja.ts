@@ -7,7 +7,7 @@ export const jaHome: LocalizedHomeData = {
     subtitle:
       '切り抜き、リサイズ、圧縮、形式変換、背景削除、写真の整理がすべて無料。登録不要、透かしなしで、ファイルはお使いの端末から外に出ません。',
     dropzoneTitle: '画像をドロップして開始',
-    dropzoneSubtitle: 'JPG、PNG、WebP、AVIF、GIF、SVG、iPhoneのHEICに対応（最大50 MB）',
+    dropzoneSubtitle: 'JPG、PNG、WebP、AVIF、GIF、TIFF、SVG、iPhoneのHEICに対応（最大50 MB）',
   },
   sections: {
     indexTitle: 'すべてのツール',
@@ -60,7 +60,7 @@ export const jaHome: LocalizedHomeData = {
     {
       question: 'どの形式を開いたり保存したりできますか？',
       answer:
-        'JPG、PNG、WebP、AVIF、GIF、BMP、SVG、iPhoneのHEIC写真を開けます。保存形式はツールによって異なり、JPG、PNG、WebP、AVIFから選べます。',
+        'JPG、PNG、WebP、AVIF、GIF、BMP、TIFF、SVG、iPhoneのHEIC写真を開けます。保存形式はツールによって異なり、JPG、PNG、WebP、AVIFから選べます。',
     },
     {
       question: 'スマートフォンでも使えますか？',

@@ -7,7 +7,7 @@ export const itHome: LocalizedHomeData = {
     subtitle:
       'Ritaglia, ridimensiona, comprimi, converti, rimuovi lo sfondo e ritocca le tue foto gratis. Nessuna registrazione, nessuna filigrana, e i file restano sul tuo dispositivo.',
     dropzoneTitle: 'Trascina qui un’immagine per iniziare',
-    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG o HEIC di iPhone, fino a 50 MB',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG o HEIC di iPhone, fino a 50 MB',
   },
   sections: {
     indexTitle: 'Tutti gli strumenti',
@@ -61,7 +61,7 @@ export const itHome: LocalizedHomeData = {
     {
       question: 'Quali formati posso aprire e salvare?',
       answer:
-        'Puoi aprire foto JPG, PNG, WebP, AVIF, GIF, BMP, SVG e HEIC di iPhone. Puoi salvare in JPG, PNG, WebP o AVIF, a seconda dello strumento.',
+        'Puoi aprire foto JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG e HEIC di iPhone. Puoi salvare in JPG, PNG, WebP o AVIF, a seconda dello strumento.',
     },
     {
       question: 'Funziona sul telefono?',

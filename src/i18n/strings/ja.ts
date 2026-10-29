@@ -13,7 +13,7 @@ export const strings = {
   // Home drop zone
   'home.dropTitle': '画像をドロップして開始',
   'home.chooseImage': '画像を選択',
-  'home.dropHint': 'JPG、PNG、WebP、AVIF、GIF、SVG、iPhoneのHEICに対応（最大50 MB）。Ctrl+Vで貼り付けることもできます。',
+  'home.dropHint': 'JPG、PNG、WebP、AVIF、GIF、TIFF、SVG、iPhoneのHEICに対応（最大50 MB）。Ctrl+Vで貼り付けることもできます。',
   'home.preparing': '画像を開いています…',
   'home.chooseTool': '何をしますか？',
   'home.clear': '別の画像を選ぶ',
