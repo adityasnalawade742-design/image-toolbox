@@ -4,6 +4,8 @@
  * even the lowest quality is still too big.
  */
 
+import { canvasToBlob, stepDown } from './engine';
+
 export type TargetFormat = 'image/jpeg' | 'image/webp';
 
 export interface Encoded {
@@ -76,15 +78,17 @@ function render(source: CanvasImageSource, srcW: number, srcH: number, w: number
     const scale = Math.max(w / srcW, h / srcH);
     const dw = srcW * scale;
     const dh = srcH * scale;
-    ctx.drawImage(source, (w - dw) / 2, (h - dh) / 2, dw, dh);
+    const down = stepDown(source, 0, 0, srcW, srcH, dw, dh);
+    ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, (w - dw) / 2, (h - dh) / 2, dw, dh);
   } else {
-    ctx.drawImage(source, 0, 0, w, h);
+    const down = stepDown(source, 0, 0, srcW, srcH, w, h);
+    ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, 0, 0, w, h);
   }
   return canvas;
 }
 
-const toBlob = (canvas: HTMLCanvasElement, format: TargetFormat, quality: number) =>
-  new Promise<Blob>((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('encode failed'))), format, quality));
+// MozJPEG / libwebp: more picture fits in the same number of kilobytes
+const toBlob = (canvas: HTMLCanvasElement, format: TargetFormat, quality: number) => canvasToBlob(canvas, format, quality, undefined, { best: true });
 
 export async function compressToTarget(source: CanvasImageSource, srcW: number, srcH: number, opts: TargetOptions): Promise<TargetResult> {
   const background = opts.background || (opts.format === 'image/jpeg' ? '#ffffff' : undefined);

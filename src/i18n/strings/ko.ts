@@ -43,6 +43,7 @@ export const strings = {
   'ws.quality': '품질',
   'ws.qualityLabel': '출력 품질',
   'ws.pngLossless': 'PNG는 무손실이에요',
+  'ws.pngQuantHint': '100%에서는 PNG의 모든 색을 유지해요. 값을 낮추면 최대 256색으로 줄여서, 눈에 띄는 차이 없이 대부분의 PNG가 몇 배 작아져요.',
   'ws.download': '{format} 다운로드',
   'ws.downloadZip': '파비콘 패키지 다운로드 (ZIP)',
   'ws.preparing': '다운로드 준비 중…',

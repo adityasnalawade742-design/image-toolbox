@@ -43,6 +43,7 @@ export const strings = {
   'ws.quality': '画質',
   'ws.qualityLabel': '出力画質',
   'ws.pngLossless': 'PNGは可逆圧縮です',
+  'ws.pngQuantHint': '100%ではPNGのすべての色を保持します。値を下げると最大256色に減らし、見た目をほとんど変えずにほとんどのPNGを数分の一のサイズにできます。',
   'ws.download': '{format}でダウンロード',
   'ws.downloadZip': 'ファビコン一式をダウンロード（ZIP）',
   'ws.preparing': 'ダウンロードを準備中…',

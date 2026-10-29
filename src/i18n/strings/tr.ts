@@ -43,6 +43,7 @@ export const strings = {
   'ws.quality': 'Kalite',
   'ws.qualityLabel': 'Çıktı kalitesi',
   'ws.pngLossless': 'PNG kayıpsızdır',
+  'ws.pngQuantHint': '%100\'de PNG tüm renkleri korur. Daha düşük değerler görüntüyü en fazla 256 renge indirir; bu, çoğu PNG\'yi gözle görülür fark olmadan birkaç kat küçültür.',
   'ws.download': '{format} indir',
   'ws.downloadZip': 'Favicon paketini indir (ZIP)',
   'ws.preparing': 'İndirme hazırlanıyor…',

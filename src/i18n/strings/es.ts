@@ -43,6 +43,7 @@ export const strings = {
   'ws.quality': 'Calidad',
   'ws.qualityLabel': 'Calidad de salida',
   'ws.pngLossless': 'PNG no pierde calidad',
+  'ws.pngQuantHint': 'Al 100 %, el PNG conserva todos los colores. Los valores más bajos reducen la imagen a 256 colores como máximo, lo que hace la mayoría de los PNG varias veces más pequeños con poco cambio visible.',
   'ws.download': 'Descargar {format}',
   'ws.downloadZip': 'Descargar paquete de favicons (ZIP)',
   'ws.preparing': 'Preparando descarga…',
