@@ -13,7 +13,7 @@ export const strings = {
   // Home drop zone
   'home.dropTitle': 'Letakkan gambar untuk memulai',
   'home.chooseImage': 'Pilih gambar',
-  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, SVG, atau HEIC dari iPhone, hingga 50 MB. Anda juga bisa menempel dengan Ctrl+V.',
+  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG, atau HEIC dari iPhone, hingga 50 MB. Anda juga bisa menempel dengan Ctrl+V.',
   'home.preparing': 'Membuka gambar Anda…',
   'home.chooseTool': 'Apa yang ingin Anda lakukan?',
   'home.clear': 'Pilih gambar lain',

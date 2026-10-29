@@ -25,7 +25,7 @@ export const en = {
   // Home drop zone
   'home.dropTitle': 'Drop an image to start',
   'home.chooseImage': 'Choose image',
-  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, SVG or iPhone HEIC, up to 50 MB. You can also paste with Ctrl+V.',
+  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG or iPhone HEIC, up to 50 MB. You can also paste with Ctrl+V.',
   'home.preparing': 'Opening your image…',
   'home.chooseTool': 'What do you want to do?',
   'home.clear': 'Choose a different image',

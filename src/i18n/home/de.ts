@@ -7,7 +7,7 @@ export const deHome: LocalizedHomeData = {
     subtitle:
       'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln, Hintergründe entfernen und Fotos bereinigen. Ohne Anmeldung, ohne Wasserzeichen, und deine Dateien bleiben auf deinem Gerät.',
     dropzoneTitle: 'Bild ablegen und loslegen',
-    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG oder iPhone-HEIC, bis 50 MB',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG oder iPhone-HEIC, bis 50 MB',
   },
   sections: {
     indexTitle: 'Alle Tools',
@@ -61,7 +61,7 @@ export const deHome: LocalizedHomeData = {
     {
       question: 'Welche Formate kann ich öffnen und speichern?',
       answer:
-        'Du kannst JPG, PNG, WebP, AVIF, GIF, BMP, SVG und iPhone-HEIC-Fotos öffnen. Je nach Tool speicherst du als JPG, PNG, WebP oder AVIF.',
+        'Du kannst JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG und iPhone-HEIC-Fotos öffnen. Je nach Tool speicherst du als JPG, PNG, WebP oder AVIF.',
     },
     {
       question: 'Funktioniert das auf meinem Handy?',

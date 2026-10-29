@@ -13,7 +13,7 @@ export const strings = {
   // Home drop zone
   'home.dropTitle': '이미지를 끌어다 놓아 시작하세요',
   'home.chooseImage': '이미지 선택',
-  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, SVG, iPhone HEIC 파일을 최대 50 MB까지 열 수 있어요. Ctrl+V로 붙여넣어도 돼요.',
+  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG, iPhone HEIC 파일을 최대 50 MB까지 열 수 있어요. Ctrl+V로 붙여넣어도 돼요.',
   'home.preparing': '이미지를 여는 중…',
   'home.chooseTool': '무엇을 할까요?',
   'home.clear': '다른 이미지 선택',

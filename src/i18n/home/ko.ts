@@ -7,7 +7,7 @@ export const koHome: LocalizedHomeData = {
     subtitle:
       '사진 자르기, 크기 조절, 압축, 형식 변환, 배경 제거, 정리까지 무료로 할 수 있어요. 가입도 워터마크도 없고, 파일은 내 기기에만 머물러요.',
     dropzoneTitle: '이미지를 끌어다 놓아 시작하세요',
-    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG, iPhone HEIC, 최대 50 MB',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG, iPhone HEIC, 최대 50 MB',
   },
   sections: {
     indexTitle: '전체 도구',
@@ -60,7 +60,7 @@ export const koHome: LocalizedHomeData = {
     {
       question: '어떤 형식을 열고 저장할 수 있나요?',
       answer:
-        'JPG, PNG, WebP, AVIF, GIF, BMP, SVG, iPhone HEIC 사진을 열 수 있어요. 도구에 따라 JPG, PNG, WebP, AVIF로 저장할 수 있어요.',
+        'JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, iPhone HEIC 사진을 열 수 있어요. 도구에 따라 JPG, PNG, WebP, AVIF로 저장할 수 있어요.',
     },
     {
       question: '휴대폰에서도 되나요?',

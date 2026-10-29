@@ -7,7 +7,7 @@ export const trHome: LocalizedHomeData = {
     subtitle:
       'Fotoğrafları ücretsiz olarak kırpın, boyutlandırın, sıkıştırın, dönüştürün, arka planlarını kaldırın ve temizleyin. Kayıt yok, filigran yok ve dosyalarınız cihazınızda kalır.',
     dropzoneTitle: 'Başlamak için bir resim bırakın',
-    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG veya iPhone HEIC, en fazla 50 MB',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG veya iPhone HEIC, en fazla 50 MB',
   },
   sections: {
     indexTitle: 'Tüm araçlar',
@@ -60,7 +60,7 @@ export const trHome: LocalizedHomeData = {
     {
       question: 'Hangi formatları açıp kaydedebilirim?',
       answer:
-        'JPG, PNG, WebP, AVIF, GIF, BMP, SVG ve iPhone HEIC fotoğraflarını açabilirsiniz. Araca bağlı olarak JPG, PNG, WebP veya AVIF olarak kaydedebilirsiniz.',
+        'JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG ve iPhone HEIC fotoğraflarını açabilirsiniz. Araca bağlı olarak JPG, PNG, WebP veya AVIF olarak kaydedebilirsiniz.',
     },
     {
       question: 'Telefonumda çalışır mı?',

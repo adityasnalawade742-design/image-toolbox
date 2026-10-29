@@ -7,7 +7,7 @@ export const enHome: LocalizedHomeData = {
     subtitle:
       'Crop, resize, compress, convert, remove backgrounds and clean up photos for free. No sign-up, no watermarks, and your files stay on your device.',
     dropzoneTitle: 'Drop an image to start',
-    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, SVG or iPhone HEIC, up to 50 MB',
+    dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG or iPhone HEIC, up to 50 MB',
   },
   sections: {
     indexTitle: 'All tools',
@@ -60,7 +60,7 @@ export const enHome: LocalizedHomeData = {
     {
       question: 'Which formats can I open and save?',
       answer:
-        'You can open JPG, PNG, WebP, AVIF, GIF, BMP, SVG and iPhone HEIC photos. You can save as JPG, PNG, WebP or AVIF, depending on the tool.',
+        'You can open JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG and iPhone HEIC photos. You can save as JPG, PNG, WebP or AVIF, depending on the tool.',
     },
     {
       question: 'Does it work on my phone?',

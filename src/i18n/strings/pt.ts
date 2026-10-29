@@ -13,7 +13,7 @@ export const strings = {
   // Home drop zone
   'home.dropTitle': 'Arraste uma imagem para começar',
   'home.chooseImage': 'Escolher imagem',
-  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, SVG ou HEIC do iPhone, até 50 MB. Você também pode colar com Ctrl+V.',
+  'home.dropHint': 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG ou HEIC do iPhone, até 50 MB. Você também pode colar com Ctrl+V.',
   'home.preparing': 'Abrindo sua imagem…',
   'home.chooseTool': 'O que você quer fazer?',
   'home.clear': 'Escolher outra imagem',
