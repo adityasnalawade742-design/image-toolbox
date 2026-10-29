@@ -83,6 +83,8 @@ const BackgroundEffectsWorkspace = standaloneTool(() => import('../tools/extras/
 const ImageToTextWorkspace = standaloneTool(() => import('../tools/extras/ImageToTextWorkspace'), 'ImageToTextWorkspace');
 const QrGeneratorWorkspace = standaloneTool(() => import('../tools/extras/QrGeneratorWorkspace'), 'QrGeneratorWorkspace');
 const QrReaderWorkspace = standaloneTool(() => import('../tools/extras/QrReaderWorkspace'), 'QrReaderWorkspace');
+const BarcodeGeneratorWorkspace = standaloneTool(() => import('../tools/extras/BarcodeGeneratorWorkspace'), 'BarcodeGeneratorWorkspace');
+const BulkCodesWorkspace = standaloneTool(() => import('../tools/extras/BulkCodesWorkspace'), 'BulkCodesWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -168,6 +170,19 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'image-to-text': <ImageToTextWorkspace />,
     'qr-code-generator': <QrGeneratorWorkspace />,
     'qr-code-reader': <QrReaderWorkspace />,
+    'barcode-generator': <BarcodeGeneratorWorkspace defaultType="code128" />,
+    'ean-barcode-generator': <BarcodeGeneratorWorkspace defaultType="ean13" />,
+    'upc-barcode-generator': <BarcodeGeneratorWorkspace defaultType="upca" />,
+    'isbn-barcode-generator': <BarcodeGeneratorWorkspace defaultType="isbn" />,
+    'data-matrix-generator': <BarcodeGeneratorWorkspace defaultType="datamatrix" />,
+    'pdf417-generator': <BarcodeGeneratorWorkspace defaultType="pdf417" />,
+    'barcode-scanner': <QrReaderWorkspace mode="barcode" />,
+    'wifi-qr-code-generator': <QrGeneratorWorkspace defaultKind="wifi" />,
+    'whatsapp-qr-code-generator': <QrGeneratorWorkspace defaultKind="whatsapp" />,
+    'vcard-qr-code-generator': <QrGeneratorWorkspace defaultKind="contact" />,
+    'payment-qr-code-generator': <QrGeneratorWorkspace defaultKind="payment" />,
+    'bulk-qr-code-generator': <BulkCodesWorkspace defaultType="qr" />,
+    'bulk-barcode-generator': <BulkCodesWorkspace defaultType="code128" />,
   };
   if (standalone[slug]) {
     return (

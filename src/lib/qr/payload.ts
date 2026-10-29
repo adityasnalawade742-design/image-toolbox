@@ -3,7 +3,7 @@
  * Wi-Fi format), mailto:, tel: and vCard 3.0. Decoding recognises the same formats so the reader can show them nicely.
  */
 
-export type QrKind = 'link' | 'text' | 'wifi' | 'email' | 'phone' | 'contact';
+export type QrKind = 'link' | 'text' | 'wifi' | 'email' | 'phone' | 'contact' | 'whatsapp' | 'location' | 'payment';
 
 export interface WifiFields {
   ssid: string;
@@ -62,6 +62,69 @@ export function contactPayload(f: ContactFields): string {
   return lines.join('\r\n');
 }
 
+/** wa.me link that opens a WhatsApp chat with this number, with an optional message typed in */
+export function whatsappPayload(phone: string, message: string): string {
+  const digits = phone.replace(/\D/g, '');
+  return `https://wa.me/${digits}${message.trim() ? `?text=${encodeURIComponent(message.trim())}` : ''}`;
+}
+
+/** geo: URI (RFC 5870) that phones open in their maps app; null for impossible coordinates */
+export function locationPayload(lat: number, lng: number): string | null {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) return null;
+  const f = (n: number) => String(Math.round(n * 1e6) / 1e6);
+  return `geo:${f(lat)},${f(lng)}`;
+}
+
+export interface UpiFields {
+  /** UPI ID, such as name@bank */
+  vpa: string;
+  name: string;
+  /** Rupees; empty lets the payer type the amount */
+  amount: string;
+  note: string;
+}
+
+export const validUpiId = (s: string) => /^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z][a-zA-Z0-9]{1,63}$/.test(s.trim());
+
+/** upi://pay link that UPI apps (Google Pay, PhonePe, Paytm, BHIM…) open on the payment screen */
+export function upiPayload(f: UpiFields): string {
+  const q = new URLSearchParams({ pa: f.vpa.trim(), pn: f.name.trim() });
+  if (f.amount.trim()) q.set('am', Number(f.amount).toFixed(2));
+  q.set('cu', 'INR');
+  if (f.note.trim()) q.set('tn', f.note.trim());
+  return `upi://pay?${q.toString().replace(/\+/g, '%20')}`;
+}
+
+export interface SepaFields {
+  name: string;
+  iban: string;
+  bic: string;
+  /** Euros; empty lets the payer type the amount */
+  amount: string;
+  reference: string;
+}
+
+/** IBAN with spaces removed, if its check digits are right (ISO 13616 mod-97) */
+export function cleanIban(input: string): string | null {
+  const s = input.replace(/\s+/g, '').toUpperCase();
+  if (!/^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$/.test(s)) return null;
+  const moved = s.slice(4) + s.slice(0, 4);
+  let rem = 0;
+  for (const ch of moved) {
+    const v = /\d/.test(ch) ? ch : String(ch.charCodeAt(0) - 55);
+    for (const d of v) rem = (rem * 10 + Number(d)) % 97;
+  }
+  return rem === 1 ? s : null;
+}
+
+/** EPC QR ("GiroCode"): the European Payments Council format banking apps in the SEPA area read as a transfer */
+export function sepaPayload(f: SepaFields): string | null {
+  const iban = cleanIban(f.iban);
+  if (!iban || !f.name.trim()) return null;
+  const amount = f.amount.trim() ? `EUR${Number(f.amount).toFixed(2)}` : '';
+  return ['BCD', '002', '1', 'SCT', f.bic.trim().toUpperCase(), f.name.trim().slice(0, 70), iban, amount, '', '', f.reference.trim().slice(0, 140)].join('\n');
+}
+
 /** A decoded QR code, recognised as one of the kinds above when it matches its format */
 export type Decoded =
   | { kind: 'link'; url: string }
@@ -69,6 +132,8 @@ export type Decoded =
   | { kind: 'email'; to: string; subject: string; body: string }
   | { kind: 'phone'; phone: string }
   | { kind: 'contact'; name: string; phone: string; email: string; org: string; url: string }
+  | { kind: 'location'; lat: number; lng: number }
+  | { kind: 'payment'; scheme: 'upi' | 'sepa'; name: string; account: string; amount: string; note: string }
   | { kind: 'text'; text: string };
 
 /** Split WIFI: fields on unescaped semicolons and undo the escaping */
@@ -119,6 +184,25 @@ export function decodePayload(raw: string): Decoded {
     return { kind: 'email', to: decodeURIComponent(addr), subject: params.get('subject') || '', body: params.get('body') || '' };
   }
   if (/^tel:/i.test(s)) return { kind: 'phone', phone: s.slice(4) };
+  const geo = s.match(/^geo:(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/i);
+  if (geo) return { kind: 'location', lat: Number(geo[1]), lng: Number(geo[2]) };
+  if (/^upi:\/\/pay\?/i.test(s)) {
+    const q = new URLSearchParams(s.slice(s.indexOf('?') + 1));
+    return { kind: 'payment', scheme: 'upi', name: q.get('pn') || '', account: q.get('pa') || '', amount: q.get('am') ? `₹${q.get('am')}` : '', note: q.get('tn') || '' };
+  }
+  if (/^BCD\r?\n00[12]\r?\n/.test(s)) {
+    const l = s.split(/\r?\n/);
+    return { kind: 'payment', scheme: 'sepa', name: l[5] || '', account: l[6] || '', amount: (l[7] || '').replace(/^EUR/, '€'), note: l[10] || l[9] || '' };
+  }
   if (/^https?:\/\/\S+$/i.test(s)) return { kind: 'link', url: s };
   return { kind: 'text', text: raw };
+}
+
+/** Latitude and longitude from typed coordinates ("48.8584, 2.2945") or a map link that contains them (…/@48.85,2.29,17z, ?q=48.85,2.29) */
+export function parseCoordinates(input: string): { lat: number; lng: number } | null {
+  const m = input.match(/(-?\d{1,2}(?:\.\d+)?)\s*,\s*(-?\d{1,3}(?:\.\d+)?)/);
+  if (!m) return null;
+  const lat = Number(m[1]);
+  const lng = Number(m[2]);
+  return Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? { lat, lng } : null;
 }

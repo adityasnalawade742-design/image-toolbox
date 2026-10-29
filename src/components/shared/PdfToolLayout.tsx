@@ -20,12 +20,14 @@ interface Props {
   error?: string | null;
   /** Panel heading icon (defaults to a document) */
   icon?: LucideIcon;
+  /** Ticket label before the file line (defaults to Source; generators show their Output) */
+  fileSlug?: string;
   /** Extra control in the job ticket, before "Choose another" (e.g. View full size) */
   ticketAction?: React.ReactNode;
 }
 
 /** Shared frame for the PDF tools: proof column, ruled settings panel, download button and phone rail */
-export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText, ticketAction }: Props) {
+export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText, ticketAction, fileSlug }: Props) {
   const t = useT();
   const button = (big: boolean) => (
     <button
@@ -46,7 +48,7 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
           {(fileLabel || onReplace) && (
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
               <span className="flex items-baseline gap-2 min-w-0">
-                <span className="slug">{t('ws.source')}</span>
+                <span className="slug">{fileSlug ?? t('ws.source')}</span>
                 <span className="text-ink font-semibold truncate">{fileLabel}</span>
               </span>
               <span className="ml-auto flex items-center gap-4">

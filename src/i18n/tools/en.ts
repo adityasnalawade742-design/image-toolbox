@@ -6055,4 +6055,849 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "barcode-generator": {
+    "name": "Barcode Generator",
+    "shortName": "Barcode Generator",
+    "tagline": "Make Code 128, EAN, UPC, ISBN, Code 39, ITF-14, GS1-128, Data Matrix, PDF417 and Aztec barcodes as PNG or SVG. Free, and it runs on your device.",
+    "intro": "Barcode Generator makes the barcodes people actually print: Code 128 for shipping and inventory labels, EAN and UPC for products, ISBN for books, Code 39 for parts and badges, ITF-14 for cartons, GS1-128 for logistics, and the 2D codes Data Matrix, PDF417 and Aztec. Type the number or text and the barcode appears straight away. Check digits are added for you and mistakes are pointed out as you type. Every barcode is read back with a scanner engine before you download it as PNG or SVG. Everything happens in your browser.",
+    "seoTitle": "Barcode Generator – Free, PNG and SVG, No Sign-up",
+    "seoDescription": "Make Code 128, EAN-13, UPC, ISBN, Code 39, Data Matrix, PDF417 barcodes in your browser. Check digits added, scan-tested, PNG or SVG.",
+    "keywords": [
+      "barcode generator",
+      "free barcode generator",
+      "code 128 generator",
+      "barcode maker",
+      "create barcode online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose the barcode type",
+        "description": "Code 128 suits most labels; pick EAN or UPC for products and ISBN for books."
+      },
+      {
+        "title": "Type the number or text",
+        "description": "The barcode appears as you type. Problems, such as a wrong check digit, are explained."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or as SVG for print."
+      }
+    ],
+    "features": [
+      {
+        "title": "Checked as you type",
+        "description": "Wrong lengths, letters in number-only codes and wrong check digits are pointed out before you download."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      },
+      {
+        "title": "Made on your device",
+        "description": "Codes are drawn in your browser; nothing you type is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which barcode type should I use?",
+        "answer": "For your own labels, inventory or shipping, Code 128: it holds letters and digits and every scanner reads it. For products sold in shops, EAN-13 (or UPC-A in North America). For books, ISBN."
+      },
+      {
+        "question": "Do I need to register the number?",
+        "answer": "To sell a product in shops, yes: EAN and UPC numbers come from GS1, the organisation that runs the system. For your own stock, shelves or internal use, any number works."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "ean-barcode-generator": {
+    "name": "EAN Barcode Generator",
+    "shortName": "EAN Barcode",
+    "tagline": "Make EAN-13 and EAN-8 product barcodes with the check digit added for you. Free, and it runs on your device.",
+    "intro": "EAN-13 is the barcode on products in shops across the world, and EAN-8 is its short version for small packages. Type the first 12 digits (or 7 for EAN-8) and the check digit is worked out and added; if you type all 13, the tool confirms the last digit is right. The barcode is drawn to the standard, with the digits underneath, and read back with a scanner engine before you save it as PNG or SVG. Nothing is uploaded.",
+    "seoTitle": "EAN-13 Barcode Generator – Free, Check Digit Added",
+    "seoDescription": "Make EAN-13 and EAN-8 barcodes in your browser. Check digit calculated for you, scan-tested, PNG or SVG for print. Free, nothing uploaded.",
+    "keywords": [
+      "ean barcode generator",
+      "ean-13 barcode generator",
+      "ean 13 generator",
+      "ean-8 barcode",
+      "product barcode generator"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type the EAN number",
+        "description": "12 digits for EAN-13 or 7 for EAN-8; the check digit is added. Switch type in the list."
+      },
+      {
+        "title": "Adjust the size",
+        "description": "Set the bar width and height for your label."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG, or as SVG for packaging artwork."
+      }
+    ],
+    "features": [
+      {
+        "title": "Check digit worked out",
+        "description": "Leave the last digit off and it is calculated; type it and it is checked."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      },
+      {
+        "title": "Made on your device",
+        "description": "Codes are drawn in your browser; nothing you type is uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need to register the number?",
+        "answer": "To sell a product in shops, yes: EAN and UPC numbers come from GS1, the organisation that runs the system. For your own stock, shelves or internal use, any number works."
+      },
+      {
+        "question": "What is the difference between EAN-13 and UPC-A?",
+        "answer": "They are the same system: a UPC-A number is an EAN-13 with a leading 0. Shops worldwide read both. Use UPC-A if your retailer asks for it, otherwise EAN-13."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "upc-barcode-generator": {
+    "name": "UPC Barcode Generator",
+    "shortName": "UPC Barcode",
+    "tagline": "Make UPC-A and UPC-E product barcodes for the USA and Canada, with the check digit added. Free, and it runs on your device.",
+    "intro": "UPC-A is the 12-digit barcode on products sold in the USA and Canada, and UPC-E is its compressed form for small items like cans and cosmetics. Type the first 11 digits of a UPC-A and the check digit is added; type all 12 and it is checked. UPC-E takes 6 digits, or 7 to 8 starting with 0 or 1. Each barcode is drawn to the standard, read back with a scanner engine and saved as PNG or SVG. Everything happens in your browser.",
+    "seoTitle": "UPC Barcode Generator – UPC-A and UPC-E, Free",
+    "seoDescription": "Make UPC-A and UPC-E barcodes in your browser with the check digit added. Scan-tested, PNG or SVG for packaging. Free, nothing uploaded.",
+    "keywords": [
+      "upc barcode generator",
+      "upc-a generator",
+      "upc code generator",
+      "upc-e barcode",
+      "free upc barcode"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type the UPC number",
+        "description": "11 digits for UPC-A, or a UPC-E number; choose the type in the list."
+      },
+      {
+        "title": "Adjust the size",
+        "description": "Set the bar width and height to fit your packaging."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG, or as SVG for print."
+      }
+    ],
+    "features": [
+      {
+        "title": "Check digit worked out",
+        "description": "The last digit is calculated or confirmed for you."
+      },
+      {
+        "title": "UPC-E for small items",
+        "description": "Make the short UPC-E version for cans, tubes and small boxes."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need to register the number?",
+        "answer": "To sell a product in shops, yes: EAN and UPC numbers come from GS1, the organisation that runs the system. For your own stock, shelves or internal use, any number works."
+      },
+      {
+        "question": "When should I use UPC-E?",
+        "answer": "Only when the package is too small for UPC-A and your number can be compressed; UPC-E numbers start with 0 or 1."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "isbn-barcode-generator": {
+    "name": "ISBN Barcode Generator",
+    "shortName": "ISBN Barcode",
+    "tagline": "Make the barcode for the back cover of a book from its ISBN-13 or ISBN-10. Free, and it runs on your device.",
+    "intro": "The barcode on the back of a book is the book's ISBN written as an EAN-13. Type your ISBN-13, or an older ISBN-10 that is converted for you, and the barcode appears with the check digit verified. Type the ISBN with its hyphens, as printed on the copyright page, and the ISBN line is printed above the bars the way publishers and bookshops expect. Download it as SVG for your cover designer, or PNG. Everything happens in your browser.",
+    "seoTitle": "ISBN Barcode Generator – Free Book Barcode, SVG",
+    "seoDescription": "Make the ISBN barcode for your book cover in your browser. ISBN-13 or ISBN-10, check digit verified, SVG for print. Free, nothing uploaded.",
+    "keywords": [
+      "isbn barcode generator",
+      "book barcode generator",
+      "isbn barcode",
+      "isbn to barcode",
+      "free isbn barcode"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type the ISBN",
+        "description": "Use the hyphens from your copyright page to print the ISBN line above the bars."
+      },
+      {
+        "title": "Check the preview",
+        "description": "The check digit is verified and the barcode is scan-tested."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as SVG for your cover designer, or PNG."
+      }
+    ],
+    "features": [
+      {
+        "title": "ISBN-10 converted",
+        "description": "An older ISBN-10 is turned into the ISBN-13 that the barcode needs."
+      },
+      {
+        "title": "ISBN line above the bars",
+        "description": "With hyphens, the human-readable ISBN is printed above the barcode."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where do I get an ISBN?",
+        "answer": "From your country's ISBN agency, or through your publisher or self-publishing platform. This tool draws the barcode for an ISBN you already have."
+      },
+      {
+        "question": "Can I add the price (the small barcode to the right)?",
+        "answer": "Not yet. The 5-digit price add-on used in the USA is not included."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "data-matrix-generator": {
+    "name": "Data Matrix Generator",
+    "shortName": "Data Matrix",
+    "tagline": "Make Data Matrix codes for parts, labels and packaging from text or a link. Free, and it runs on your device.",
+    "intro": "Data Matrix is a small square 2D code that fits a lot of information into very little space, which is why it is used on electronic parts, medicine packs, lab samples and shipping labels. Type the text, a serial number or a link and the code appears straight away, sized by the module width you choose. Phone cameras and industrial scanners read it, and every code is read back before you download it as PNG or SVG. Everything happens in your browser.",
+    "seoTitle": "Data Matrix Generator – Free 2D Code, PNG and SVG",
+    "seoDescription": "Make Data Matrix codes from text, serial numbers or links in your browser. Scan-tested, PNG or SVG, any size. Free, nothing uploaded.",
+    "keywords": [
+      "data matrix generator",
+      "datamatrix code generator",
+      "data matrix barcode",
+      "2d barcode generator",
+      "datamatrix online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type the content",
+        "description": "Text, a serial number or a link."
+      },
+      {
+        "title": "Choose the size",
+        "description": "Set the module width; Data Matrix stays readable when printed very small."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fits small spaces",
+        "description": "Holds far more than a 1D barcode in a tiny square."
+      },
+      {
+        "title": "Any language",
+        "description": "Text in any language is stored so that scanners read it back correctly."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Data Matrix or QR code?",
+        "answer": "Both are square codes. Data Matrix stays readable at smaller sizes and is the standard on parts and medicines; QR codes are what most people's phones expect for links."
+      },
+      {
+        "question": "Can phones read Data Matrix?",
+        "answer": "Many phone scanner apps can, and Google Lens can. The built-in camera app on some phones reads only QR codes."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "pdf417-generator": {
+    "name": "PDF417 Barcode Generator",
+    "shortName": "PDF417",
+    "tagline": "Make PDF417 barcodes, the stacked code used on tickets, ID cards and shipping documents. Free, and it runs on your device.",
+    "intro": "PDF417 is the wide, stacked barcode you see on boarding passes, driving licences and shipping paperwork. It holds hundreds of characters, and scanners can still read it when part of it is damaged. Type or paste the text and the barcode appears; choose the module width to fit your layout, then download it as PNG or SVG after it has been read back with a scanner engine. Everything happens in your browser, so the data never leaves your device.",
+    "seoTitle": "PDF417 Barcode Generator – Free, PNG and SVG",
+    "seoDescription": "Make PDF417 barcodes in your browser for tickets, IDs and documents. Holds long text, scan-tested, PNG or SVG. Free, nothing uploaded.",
+    "keywords": [
+      "pdf417 generator",
+      "pdf417 barcode generator",
+      "pdf 417 barcode",
+      "stacked barcode generator",
+      "boarding pass barcode"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type or paste the text",
+        "description": "PDF417 holds long text, such as several fields from a form."
+      },
+      {
+        "title": "Choose the size",
+        "description": "Set the module width for your ticket or document."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Holds long text",
+        "description": "Hundreds of characters in one barcode."
+      },
+      {
+        "title": "Damage-tolerant",
+        "description": "Built-in error correction keeps it readable when scuffed."
+      },
+      {
+        "title": "Scan-tested",
+        "description": "Each barcode is read back with a scanner engine, so you know it works before you print it."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I make a driving licence barcode?",
+        "answer": "PDF417 is the barcode type used, but official ID documents follow strict formats and are issued by authorities. Use this for your own tickets, labels and documents."
+      },
+      {
+        "question": "Which scanners read PDF417?",
+        "answer": "Most 2D scanners and many phone scanner apps do."
+      },
+      {
+        "question": "How big should I print it?",
+        "answer": "Keep the bars crisp and give them space: print at 100% (don't stretch it), leave a white margin around the code, and use dark bars on a light background."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
+  "barcode-scanner": {
+    "name": "Barcode Scanner",
+    "shortName": "Barcode Scanner",
+    "tagline": "Read EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR and more from a photo or your camera. Free, and it runs on your device.",
+    "intro": "Barcode Scanner reads barcodes from a photo, a screenshot or your camera: product codes (EAN and UPC), ISBNs on books, Code 128 and Code 39 labels, ITF cartons, GS1 DataBar, and 2D codes like Data Matrix, PDF417, Aztec and QR codes. It finds several codes in one picture and shows each one with its type, ready to copy. The camera picture and photos are processed in your browser and never uploaded.",
+    "seoTitle": "Barcode Scanner Online – Read From Photo or Camera",
+    "seoDescription": "Scan EAN, UPC, Code 128, Data Matrix, PDF417 and QR codes from a photo or your camera, in your browser. Free, private, nothing uploaded.",
+    "keywords": [
+      "barcode scanner online",
+      "scan barcode from image",
+      "barcode reader",
+      "read barcode from photo",
+      "upc scanner"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add a photo or use the camera",
+        "description": "Drop a picture, paste a screenshot, or point your camera at the barcode."
+      },
+      {
+        "title": "Read the result",
+        "description": "Each barcode found is shown with its type, such as EAN-13 or Data Matrix."
+      },
+      {
+        "title": "Copy it",
+        "description": "Copy the number or text, or open a link it contains."
+      }
+    ],
+    "features": [
+      {
+        "title": "Dozens of types",
+        "description": "1D barcodes, 2D codes and QR codes in one scanner."
+      },
+      {
+        "title": "Several at once",
+        "description": "Finds more than one barcode in a picture."
+      },
+      {
+        "title": "Camera or photo",
+        "description": "Scan live with your camera or from any saved image."
+      },
+      {
+        "title": "Private",
+        "description": "Pictures and camera frames are read on your device and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why isn't my barcode found?",
+        "answer": "Make sure it is in focus, well lit and fills a good part of the picture, with no strong reflections. Very small or blurred barcodes can't be read."
+      },
+      {
+        "question": "Can it look up the product?",
+        "answer": "No. It reads the number in the barcode; it doesn't search product databases, so nothing you scan is sent anywhere."
+      },
+      {
+        "question": "Does the camera need permission?",
+        "answer": "Yes, your browser asks once. The video stays on your device and stops as soon as a code is found."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. Photos and camera frames are read in your browser and stay on your device."
+      }
+    ]
+  },
+  "wifi-qr-code-generator": {
+    "name": "Wi-Fi QR Code Generator",
+    "shortName": "Wi-Fi QR Code",
+    "tagline": "Make a QR code guests scan to join your Wi-Fi without typing the password. Free, and it runs on your device.",
+    "intro": "A Wi-Fi QR code lets guests, customers and family join your network by pointing their phone camera at it: no spelling out a long password. Enter the network name and password, pick the security type, and the code appears straight away. iPhones and Android phones understand it with the built-in camera. Print it for the fridge, a café table or a meeting room. Your password is put into the code in your browser and never uploaded.",
+    "seoTitle": "Wi-Fi QR Code Generator – Share Wi-Fi Without Password",
+    "seoDescription": "Make a Wi-Fi QR code in your browser so guests join your network by scanning. Works with iPhone and Android cameras. Free, nothing uploaded.",
+    "keywords": [
+      "wifi qr code generator",
+      "wifi qr code",
+      "qr code for wifi password",
+      "share wifi qr code",
+      "wi-fi qr code"
+    ],
+    "howToSteps": [
+      {
+        "title": "Enter the network details",
+        "description": "Network name (SSID), password and security type."
+      },
+      {
+        "title": "Style it",
+        "description": "Choose colors or add a logo if you like."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG and print it or add it to your design."
+      }
+    ],
+    "features": [
+      {
+        "title": "Works with phone cameras",
+        "description": "iPhone and Android cameras offer to join the network when they see it."
+      },
+      {
+        "title": "Tested before you save",
+        "description": "The QR code is read back as soon as it is made, so you know it scans."
+      },
+      {
+        "title": "Your colors and logo",
+        "description": "Pick colors and add a logo in the middle; error correction is raised so it still scans."
+      },
+      {
+        "title": "Private",
+        "description": "The code is made in your browser. Your details are not uploaded or stored."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is it safe to print my Wi-Fi password?",
+        "answer": "Anyone who scans the code can join the network, just as if you told them the password. Use a guest network for public places."
+      },
+      {
+        "question": "Which security type do I choose?",
+        "answer": "WPA/WPA2/WPA3 for almost every modern router. WEP only for very old ones; Open for networks without a password."
+      },
+      {
+        "question": "Does the QR code expire?",
+        "answer": "No. The information is inside the code itself, not on a server, so it works as long as the details stay correct."
+      },
+      {
+        "question": "Is my information stored?",
+        "answer": "No. The QR code is made in your browser and nothing you type leaves your device."
+      }
+    ]
+  },
+  "whatsapp-qr-code-generator": {
+    "name": "WhatsApp QR Code Generator",
+    "shortName": "WhatsApp QR",
+    "tagline": "Make a QR code that opens a WhatsApp chat with your number, with a message ready to send. Free, and it runs on your device.",
+    "intro": "A WhatsApp QR code lets customers start a chat with you without saving your number first. Enter your phone number with its country code and, if you like, a message that will be typed in for them, such as 'Hi, I'd like to book a table'. Scanning the code opens WhatsApp on that chat. Put it on your shop window, menu, flyer or business card. The code is made in your browser and nothing is uploaded.",
+    "seoTitle": "WhatsApp QR Code Generator – Free Chat Link QR",
+    "seoDescription": "Make a QR code that opens a WhatsApp chat with your number and a ready message. For shops, menus and cards. Free, nothing uploaded.",
+    "keywords": [
+      "whatsapp qr code generator",
+      "whatsapp qr code",
+      "qr code for whatsapp",
+      "whatsapp chat link qr",
+      "wa.me qr code"
+    ],
+    "howToSteps": [
+      {
+        "title": "Enter your number",
+        "description": "With the country code, such as +44 7700 900123."
+      },
+      {
+        "title": "Add a message",
+        "description": "Optional: text that is typed in for the person who scans it."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG and print it or add it to your design."
+      }
+    ],
+    "features": [
+      {
+        "title": "No number saving",
+        "description": "People chat with you without adding you to their contacts first."
+      },
+      {
+        "title": "Ready-made message",
+        "description": "Start the conversation with your own words."
+      },
+      {
+        "title": "Tested before you save",
+        "description": "The QR code is read back as soon as it is made, so you know it scans."
+      },
+      {
+        "title": "Your colors and logo",
+        "description": "Pick colors and add a logo in the middle; error correction is raised so it still scans."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it work with WhatsApp Business?",
+        "answer": "Yes. It opens a chat with whichever WhatsApp account uses that number."
+      },
+      {
+        "question": "Why do I need the country code?",
+        "answer": "WhatsApp links use the full international number, so the code works from any country."
+      },
+      {
+        "question": "Does the QR code expire?",
+        "answer": "No. The information is inside the code itself, not on a server, so it works as long as the details stay correct."
+      },
+      {
+        "question": "Is my information stored?",
+        "answer": "No. The QR code is made in your browser and nothing you type leaves your device."
+      }
+    ]
+  },
+  "vcard-qr-code-generator": {
+    "name": "vCard QR Code Generator",
+    "shortName": "vCard QR Code",
+    "tagline": "Make a QR code that saves your name, phone, email and website to a phone's contacts. Free, and it runs on your device.",
+    "intro": "A vCard QR code turns a business card into one scan: people point their camera at it and their phone offers to save you as a contact, with your name, phone number, email, company and website filled in. Enter your details, style the code with your colors or logo, and download it for your business card, email signature, badge or booth. The details go into the code in your browser and are not stored anywhere.",
+    "seoTitle": "vCard QR Code Generator – Business Card QR, Free",
+    "seoDescription": "Make a vCard QR code that saves your contact details in one scan. For business cards and badges. Colors and logo, free, nothing uploaded.",
+    "keywords": [
+      "vcard qr code generator",
+      "business card qr code",
+      "contact qr code",
+      "vcard qr code",
+      "qr code for contact details"
+    ],
+    "howToSteps": [
+      {
+        "title": "Enter your details",
+        "description": "Name, phone, email, company and website."
+      },
+      {
+        "title": "Style it",
+        "description": "Choose colors or add your logo."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG and print it or add it to your design."
+      }
+    ],
+    "features": [
+      {
+        "title": "Saves in one scan",
+        "description": "Phones offer to add the contact with every field filled in."
+      },
+      {
+        "title": "Tested before you save",
+        "description": "The QR code is read back as soon as it is made, so you know it scans."
+      },
+      {
+        "title": "Your colors and logo",
+        "description": "Pick colors and add a logo in the middle; error correction is raised so it still scans."
+      },
+      {
+        "title": "Private",
+        "description": "The code is made in your browser. Your details are not uploaded or stored."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do people need an app?",
+        "answer": "No. The built-in camera on iPhones and most Android phones recognises contact QR codes."
+      },
+      {
+        "question": "Can I change my details later?",
+        "answer": "The details are inside the code, so make a new code when they change."
+      },
+      {
+        "question": "Does the QR code expire?",
+        "answer": "No. The information is inside the code itself, not on a server, so it works as long as the details stay correct."
+      },
+      {
+        "question": "Is my information stored?",
+        "answer": "No. The QR code is made in your browser and nothing you type leaves your device."
+      }
+    ]
+  },
+  "payment-qr-code-generator": {
+    "name": "Payment QR Code Generator",
+    "shortName": "Payment QR",
+    "tagline": "Make a QR code for UPI payments in India or SEPA bank transfers in Europe. Free, and it runs on your device.",
+    "intro": "A payment QR code lets people pay you by scanning instead of typing account details. Choose UPI, the system behind Google Pay, PhonePe, Paytm and BHIM in India, or a SEPA transfer, the EPC QR code that many banking apps in Europe read. Enter your account and, if you like, a fixed amount and a note; the details are checked (UPI ID format, IBAN check digits) before the code is made. Nothing is uploaded, and no money passes through this site.",
+    "seoTitle": "Payment QR Code Generator – UPI and SEPA, Free",
+    "seoDescription": "Make a UPI payment QR code or a SEPA (EPC) bank transfer QR code in your browser. Account details checked. Free, nothing uploaded.",
+    "keywords": [
+      "payment qr code generator",
+      "upi qr code generator",
+      "sepa qr code generator",
+      "epc qr code",
+      "bank transfer qr code"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose UPI or SEPA",
+        "description": "UPI for India; SEPA transfer for euro bank accounts in Europe."
+      },
+      {
+        "title": "Enter the account",
+        "description": "Your UPI ID or IBAN and name, plus an optional amount and note."
+      },
+      {
+        "title": "Download it",
+        "description": "Save it as PNG or SVG and print it or add it to your design."
+      }
+    ],
+    "features": [
+      {
+        "title": "Account details checked",
+        "description": "UPI IDs are checked for their format and IBANs for their check digits."
+      },
+      {
+        "title": "Optional fixed amount",
+        "description": "Leave it empty to let the payer type the amount."
+      },
+      {
+        "title": "Tested before you save",
+        "description": "The QR code is read back as soon as it is made, so you know it scans."
+      },
+      {
+        "title": "Private",
+        "description": "The code is made in your browser. Your details are not uploaded or stored."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which apps read it?",
+        "answer": "UPI codes open in UPI apps such as Google Pay, PhonePe, Paytm and BHIM. SEPA (EPC) codes are read by many banking apps in Germany, Austria, the Netherlands, Belgium, Finland and other SEPA countries; not every bank supports them."
+      },
+      {
+        "question": "Is it safe?",
+        "answer": "The code only fills in the payment details; the payer still confirms the payment in their own app. Check the details carefully before you print the code."
+      },
+      {
+        "question": "Does the QR code expire?",
+        "answer": "No. The information is inside the code itself, not on a server, so it works as long as the details stay correct."
+      },
+      {
+        "question": "Is my information stored?",
+        "answer": "No. The QR code is made in your browser and nothing you type leaves your device."
+      }
+    ]
+  },
+  "bulk-qr-code-generator": {
+    "name": "Bulk QR Code Generator",
+    "shortName": "Bulk QR Codes",
+    "tagline": "Make hundreds of QR codes at once from a list or CSV and download them in one ZIP. Free, and it runs on your device.",
+    "intro": "Bulk QR Code Generator turns a list into QR codes: links for every product page, codes for every table, asset tags for a whole stock room. Paste one link or text per line, or load a CSV file, and optionally put a file name before each one so the files are easy to match. Choose PNG or SVG and a size, then download them all in one ZIP. Up to 1,000 codes are made in your browser; your list is never uploaded.",
+    "seoTitle": "Bulk QR Code Generator – Free, CSV to ZIP",
+    "seoDescription": "Make up to 1,000 QR codes at once from a list or CSV in your browser. Your own file names, PNG or SVG, one ZIP. Free, nothing uploaded.",
+    "keywords": [
+      "bulk qr code generator",
+      "batch qr code generator",
+      "qr code generator from csv",
+      "multiple qr codes",
+      "mass qr code generator"
+    ],
+    "howToSteps": [
+      {
+        "title": "Paste your list",
+        "description": "One link or text per line, or load a CSV or text file."
+      },
+      {
+        "title": "Name the files",
+        "description": "Optionally start each line with a file name and a comma."
+      },
+      {
+        "title": "Download the ZIP",
+        "description": "Choose PNG or SVG and a size, then save all the codes at once."
+      }
+    ],
+    "features": [
+      {
+        "title": "Up to 1,000 codes",
+        "description": "Make a whole batch in one go."
+      },
+      {
+        "title": "Your file names",
+        "description": "Name each file so it matches your product, table or asset."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "Images for documents, or vectors for print."
+      },
+      {
+        "title": "Private",
+        "description": "Your list is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I add file names?",
+        "answer": "Tick the option and write each line as name, content (for example: table-4, https://example.com/menu). Without names, files are numbered."
+      },
+      {
+        "question": "Can I make Wi-Fi or contact codes in bulk?",
+        "answer": "Yes, if each line holds the full code content, such as WIFI:T:WPA;S:Name;P:password;;. For one-off codes, the single QR generators fill this in for you."
+      },
+      {
+        "question": "Is there a limit?",
+        "answer": "1,000 codes per batch. Make several batches for more."
+      },
+      {
+        "question": "Is my information stored?",
+        "answer": "No. The QR code is made in your browser and nothing you type leaves your device."
+      }
+    ]
+  },
+  "bulk-barcode-generator": {
+    "name": "Bulk Barcode Generator",
+    "shortName": "Bulk Barcodes",
+    "tagline": "Make hundreds of barcodes at once from a list or CSV, checked and saved in one ZIP. Free, and it runs on your device.",
+    "intro": "Bulk Barcode Generator makes a barcode for every line of a list: product codes for a catalogue, Code 128 labels for a warehouse, ISBNs for a book series. Choose the barcode type, paste the numbers or load a CSV, and each line is checked as you type: wrong lengths, letters in number-only codes and wrong check digits are listed by line, and missing check digits are added. Download the valid ones as PNG or SVG in one ZIP. Up to 1,000 barcodes are made in your browser and nothing is uploaded.",
+    "seoTitle": "Bulk Barcode Generator – CSV to ZIP, Free",
+    "seoDescription": "Make up to 1,000 barcodes at once from a list or CSV: Code 128, EAN, UPC, ISBN, Data Matrix and more. Checked, PNG or SVG ZIP. Free.",
+    "keywords": [
+      "bulk barcode generator",
+      "batch barcode generator",
+      "barcode generator from csv",
+      "multiple barcodes",
+      "mass barcode generator"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose the barcode type",
+        "description": "Code 128, EAN-13, UPC-A, ISBN, Data Matrix and more."
+      },
+      {
+        "title": "Paste your list",
+        "description": "One number or text per line, optionally with a file name first; problems are listed by line."
+      },
+      {
+        "title": "Download the ZIP",
+        "description": "Choose PNG or SVG, then save every valid barcode at once."
+      }
+    ],
+    "features": [
+      {
+        "title": "Checked as you type",
+        "description": "Wrong lengths, letters in number-only codes and wrong check digits are pointed out before you download."
+      },
+      {
+        "title": "Check digits added",
+        "description": "EAN, UPC, ITF-14 and ISBN numbers get their check digit when it is left off."
+      },
+      {
+        "title": "Your file names",
+        "description": "Name each file after its product or item."
+      },
+      {
+        "title": "PNG or SVG",
+        "description": "PNG for documents and labels, SVG for print and design software at any size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What happens to lines with problems?",
+        "answer": "They are listed with the reason and left out of the ZIP; the rest are made."
+      },
+      {
+        "question": "Do I need to register the number?",
+        "answer": "To sell a product in shops, yes: EAN and UPC numbers come from GS1, the organisation that runs the system. For your own stock, shelves or internal use, any number works."
+      },
+      {
+        "question": "Is there a limit?",
+        "answer": "1,000 barcodes per batch. Make several batches for more."
+      },
+      {
+        "question": "Is anything uploaded?",
+        "answer": "No. The code is made in your browser, and what you type stays on your device."
+      }
+    ]
+  },
 };

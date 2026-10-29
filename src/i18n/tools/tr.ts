@@ -6288,4 +6288,927 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "barcode-generator": {
+    name: "Barkod Oluşturucu",
+    shortName: "Barkod Oluşturucu",
+    tagline: "Code 128, EAN, UPC, ISBN, Code 39, ITF-14, GS1-128, Data Matrix, PDF417 ve Aztec barkodlarını PNG veya SVG olarak oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Barkod Oluşturucu, insanların gerçekten yazdırdığı barkodları oluşturur: kargo ve stok etiketleri için Code 128, ürünler için EAN ve UPC, kitaplar için ISBN, parçalar ve kimlik kartları için Code 39, koliler için ITF-14, lojistik için GS1-128 ve 2D kodlar Data Matrix, PDF417 ile Aztec. Sayıyı veya metni yazın, barkod hemen görünsün. Kontrol basamakları sizin için eklenir ve hatalar siz yazarken gösterilir. Her barkod, PNG veya SVG olarak indirmenizden önce bir tarayıcı motoruyla geri okunur. Her şey tarayıcınızda gerçekleşir.",
+    seoTitle: "Barkod Oluşturucu – Ücretsiz, PNG ve SVG, Kayıt Gerekmez",
+    seoDescription:
+      "Tarayıcınızda Code 128, EAN-13, UPC, ISBN, Code 39, Data Matrix ve PDF417 barkodları oluşturun. Kontrol basamağı eklenir, okuma testi yapılır, PNG veya SVG.",
+    keywords: [
+      "barkod oluşturucu",
+      "ücretsiz barkod oluşturma",
+      "barkod oluşturma",
+      "code 128 barkod oluşturma",
+      "online barkod oluşturucu",
+    ],
+    howToSteps: [
+      {
+        title: "Barkod türünü seçin",
+        description: "Çoğu etiket için Code 128 uygundur; ürünler için EAN veya UPC, kitaplar için ISBN seçin.",
+      },
+      {
+        title: "Sayıyı veya metni yazın",
+        description: "Barkod siz yazarken görünür. Yanlış kontrol basamağı gibi sorunlar açıklanır.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG olarak ya da baskı için SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Yazarken kontrol",
+        description: "Yanlış uzunluklar, yalnızca rakam alan kodlardaki harfler ve yanlış kontrol basamakları indirmeden önce gösterilir.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+      {
+        title: "Cihazınızda oluşturulur",
+        description: "Kodlar tarayıcınızda çizilir; yazdığınız hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hangi barkod türünü kullanmalıyım?",
+        answer:
+          "Kendi etiketleriniz, stok veya kargo için Code 128: harf ve rakam içerebilir ve her tarayıcı okur. Mağazalarda satılan ürünler için EAN-13 (Kuzey Amerika'da UPC-A). Kitaplar için ISBN.",
+      },
+      {
+        question: "Numarayı kaydettirmem gerekiyor mu?",
+        answer:
+          "Ürünü mağazalarda satmak için evet: EAN ve UPC numaraları, sistemi yöneten kuruluş olan GS1'den alınır. Kendi stokunuz, raflarınız veya şirket içi kullanım için herhangi bir numara olur.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "ean-barcode-generator": {
+    name: "EAN Barkod Oluşturucu",
+    shortName: "EAN Barkod",
+    tagline: "Kontrol basamağı sizin için eklenen EAN-13 ve EAN-8 ürün barkodları oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "EAN-13, dünyanın her yerinde mağazalardaki ürünlerin üzerinde bulunan barkoddur; EAN-8 ise küçük ambalajlar için kısa sürümüdür. İlk 12 haneyi (EAN-8 için 7) yazın; kontrol basamağı hesaplanıp eklenir. 13 hanenin tamamını yazarsanız araç son basamağın doğru olduğunu doğrular. Barkod, rakamlar altında olacak şekilde standarda uygun çizilir ve PNG veya SVG olarak kaydetmeden önce bir tarayıcı motoruyla geri okunur. Hiçbir şey yüklenmez.",
+    seoTitle: "EAN-13 Barkod Oluşturucu – Ücretsiz, Kontrol Basamaklı",
+    seoDescription:
+      "Tarayıcınızda EAN-13 ve EAN-8 barkodları oluşturun. Kontrol basamağı sizin için hesaplanır, okuma testi yapılır, baskı için PNG veya SVG. Ücretsiz, yükleme yok.",
+    keywords: [
+      "ean barkod oluşturma",
+      "ean-13 barkod oluşturucu",
+      "ean 13 barkod",
+      "ürün barkodu oluşturma",
+      "barkod kontrol basamağı hesaplama",
+    ],
+    howToSteps: [
+      {
+        title: "EAN numarasını yazın",
+        description: "EAN-13 için 12, EAN-8 için 7 hane; kontrol basamağı eklenir. Türü listeden değiştirin.",
+      },
+      {
+        title: "Boyutu ayarlayın",
+        description: "Çubuk genişliğini ve yüksekliğini etiketinize göre ayarlayın.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG olarak ya da ambalaj tasarımı için SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kontrol basamağı hesaplanır",
+        description: "Son basamağı yazmazsanız hesaplanır; yazarsanız kontrol edilir.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+      {
+        title: "Cihazınızda oluşturulur",
+        description: "Kodlar tarayıcınızda çizilir; yazdığınız hiçbir şey yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Numarayı kaydettirmem gerekiyor mu?",
+        answer:
+          "Ürünü mağazalarda satmak için evet: EAN ve UPC numaraları, sistemi yöneten kuruluş olan GS1'den alınır. Kendi stokunuz, raflarınız veya şirket içi kullanım için herhangi bir numara olur.",
+      },
+      {
+        question: "EAN-13 ile UPC-A arasındaki fark nedir?",
+        answer:
+          "İkisi aynı sistemdir: bir UPC-A numarası, başına 0 eklenmiş bir EAN-13'tür. Dünya genelindeki mağazalar ikisini de okur. Satıcınız UPC-A istiyorsa onu, aksi hâlde EAN-13'ü kullanın.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "upc-barcode-generator": {
+    name: "UPC Barkod Oluşturucu",
+    shortName: "UPC Barkod",
+    tagline: "ABD ve Kanada için UPC-A ve UPC-E ürün barkodlarını kontrol basamağı eklenmiş olarak oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "UPC-A, ABD ve Kanada'da satılan ürünlerdeki 12 haneli barkoddur; UPC-E ise kutu içecekler ve kozmetikler gibi küçük ürünler için sıkıştırılmış biçimidir. Bir UPC-A'nın ilk 11 hanesini yazın, kontrol basamağı eklenir; 12 hanenin tamamını yazarsanız kontrol edilir. UPC-E için 6 hane ya da 0 veya 1 ile başlayan 7–8 hane girin. Her barkod standarda uygun çizilir, bir tarayıcı motoruyla geri okunur ve PNG veya SVG olarak kaydedilir. Her şey tarayıcınızda gerçekleşir.",
+    seoTitle: "UPC Barkod Oluşturucu – UPC-A ve UPC-E, Ücretsiz",
+    seoDescription:
+      "Tarayıcınızda kontrol basamağı eklenmiş UPC-A ve UPC-E barkodları oluşturun. Okuma testi yapılır, ambalaj için PNG veya SVG. Ücretsiz, yükleme yok.",
+    keywords: [
+      "upc barkod oluşturma",
+      "upc-a barkod oluşturucu",
+      "upc kodu oluşturma",
+      "upc-e barkod",
+      "ücretsiz upc barkod",
+    ],
+    howToSteps: [
+      {
+        title: "UPC numarasını yazın",
+        description: "UPC-A için 11 hane veya bir UPC-E numarası; türü listeden seçin.",
+      },
+      {
+        title: "Boyutu ayarlayın",
+        description: "Çubuk genişliğini ve yüksekliğini ambalajınıza göre ayarlayın.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG olarak ya da baskı için SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Kontrol basamağı hesaplanır",
+        description: "Son basamak sizin için hesaplanır veya doğrulanır.",
+      },
+      {
+        title: "Küçük ürünler için UPC-E",
+        description: "Kutular, tüpler ve küçük paketler için kısa UPC-E sürümünü oluşturun.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Numarayı kaydettirmem gerekiyor mu?",
+        answer:
+          "Ürünü mağazalarda satmak için evet: EAN ve UPC numaraları, sistemi yöneten kuruluş olan GS1'den alınır. Kendi stokunuz, raflarınız veya şirket içi kullanım için herhangi bir numara olur.",
+      },
+      {
+        question: "UPC-E'yi ne zaman kullanmalıyım?",
+        answer:
+          "Yalnızca ambalaj UPC-A için fazla küçükse ve numaranız sıkıştırılabiliyorsa; UPC-E numaraları 0 veya 1 ile başlar.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "isbn-barcode-generator": {
+    name: "ISBN Barkod Oluşturucu",
+    shortName: "ISBN Barkod",
+    tagline: "Kitabın arka kapağı için barkodu ISBN-13 veya ISBN-10 numarasından oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Bir kitabın arka kapağındaki barkod, kitabın EAN-13 olarak yazılmış ISBN'idir. ISBN-13'ünüzü ya da sizin için dönüştürülen eski bir ISBN-10'u yazın; barkod, kontrol basamağı doğrulanmış olarak görünür. ISBN'i künye sayfasında basıldığı gibi tireleriyle yazarsanız, yayıncıların ve kitapçıların beklediği şekilde çubukların üstüne ISBN satırı basılır. Kapak tasarımcınız için SVG ya da PNG olarak indirin. Her şey tarayıcınızda gerçekleşir.",
+    seoTitle: "ISBN Barkod Oluşturucu – Ücretsiz Kitap Barkodu, SVG",
+    seoDescription:
+      "Kitap kapağınız için ISBN barkodunu tarayıcınızda oluşturun. ISBN-13 veya ISBN-10, kontrol basamağı doğrulanır, baskı için SVG. Ücretsiz, yükleme yok.",
+    keywords: [
+      "isbn barkod oluşturma",
+      "kitap barkodu oluşturma",
+      "isbn barkod",
+      "isbn barkod oluşturucu",
+      "ücretsiz isbn barkodu",
+    ],
+    howToSteps: [
+      {
+        title: "ISBN'i yazın",
+        description: "Çubukların üstüne ISBN satırının basılması için künye sayfanızdaki tireleri kullanın.",
+      },
+      {
+        title: "Önizlemeyi kontrol edin",
+        description: "Kontrol basamağı doğrulanır ve barkodun okuma testi yapılır.",
+      },
+      {
+        title: "İndirin",
+        description: "Kapak tasarımcınız için SVG ya da PNG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "ISBN-10 dönüştürülür",
+        description: "Eski bir ISBN-10, barkodun ihtiyaç duyduğu ISBN-13'e çevrilir.",
+      },
+      {
+        title: "Çubukların üstünde ISBN satırı",
+        description: "Tirelerle yazıldığında okunabilir ISBN barkodun üstüne basılır.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "ISBN'i nereden alırım?",
+        answer:
+          "Ülkenizin ISBN ajansından ya da yayıncınız veya kendi kendine yayıncılık platformunuz aracılığıyla. Bu araç, zaten sahip olduğunuz bir ISBN için barkodu çizer.",
+      },
+      {
+        question: "Fiyatı (sağdaki küçük barkodu) ekleyebilir miyim?",
+        answer:
+          "Henüz değil. ABD'de kullanılan 5 haneli fiyat eki dahil değildir.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "data-matrix-generator": {
+    name: "Data Matrix Oluşturucu",
+    shortName: "Data Matrix",
+    tagline: "Parçalar, etiketler ve ambalajlar için metinden veya bağlantıdan Data Matrix kodları oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Data Matrix, çok küçük bir alana çok fazla bilgi sığdıran küçük, kare bir 2D koddur; bu yüzden elektronik parçalarda, ilaç kutularında, laboratuvar numunelerinde ve kargo etiketlerinde kullanılır. Metni, bir seri numarasını veya bir bağlantıyı yazın; kod hemen görünür ve seçtiğiniz modül genişliğine göre boyutlanır. Telefon kameraları ve endüstriyel tarayıcılar okuyabilir; her kod, PNG veya SVG olarak indirmenizden önce geri okunur. Her şey tarayıcınızda gerçekleşir.",
+    seoTitle: "Data Matrix Oluşturucu – Ücretsiz 2D Kod, PNG ve SVG",
+    seoDescription:
+      "Tarayıcınızda metinden, seri numaralarından veya bağlantılardan Data Matrix kodları oluşturun. Okuma testi, her boyutta PNG veya SVG. Ücretsiz, yükleme yok.",
+    keywords: [
+      "data matrix oluşturucu",
+      "data matrix kod oluşturma",
+      "datamatrix barkod",
+      "2d barkod oluşturma",
+      "karekod data matrix",
+    ],
+    howToSteps: [
+      {
+        title: "İçeriği yazın",
+        description: "Metin, seri numarası veya bağlantı.",
+      },
+      {
+        title: "Boyutu seçin",
+        description: "Modül genişliğini ayarlayın; Data Matrix çok küçük basıldığında da okunabilir kalır.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Küçük alanlara sığar",
+        description: "Minik bir karede 1D barkoddan çok daha fazlasını tutar.",
+      },
+      {
+        title: "Her dilde",
+        description: "Her dildeki metin, tarayıcıların doğru geri okuyacağı şekilde saklanır.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Data Matrix mi, QR kod mu?",
+        answer:
+          "İkisi de kare kodlardır. Data Matrix daha küçük boyutlarda okunabilir kalır ve parçalarda ve ilaçlarda standarttır; bağlantılar için çoğu kişinin telefonu QR kod bekler.",
+      },
+      {
+        question: "Telefonlar Data Matrix okuyabilir mi?",
+        answer:
+          "Birçok telefon tarayıcı uygulaması ve Google Lens okuyabilir. Bazı telefonların yerleşik kamera uygulaması yalnızca QR kodları okur.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "pdf417-generator": {
+    name: "PDF417 Barkod Oluşturucu",
+    shortName: "PDF417",
+    tagline: "Biletlerde, kimlik kartlarında ve sevkiyat belgelerinde kullanılan katmanlı kod PDF417 barkodlarını oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "PDF417, biniş kartlarında, ehliyetlerde ve sevkiyat evraklarında gördüğünüz geniş, katmanlı barkoddur. Yüzlerce karakter tutar ve bir kısmı hasar görse bile tarayıcılar okuyabilir. Metni yazın veya yapıştırın, barkod görünsün; düzeninize uyması için modül genişliğini seçin, ardından bir tarayıcı motoruyla geri okunduktan sonra PNG veya SVG olarak indirin. Her şey tarayıcınızda gerçekleşir, bu yüzden veriler cihazınızdan hiç çıkmaz.",
+    seoTitle: "PDF417 Barkod Oluşturucu – Ücretsiz, PNG ve SVG",
+    seoDescription:
+      "Biletler, kimlikler ve belgeler için tarayıcınızda PDF417 barkodları oluşturun. Uzun metin tutar, okuma testi yapılır, PNG veya SVG. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf417 oluşturucu",
+      "pdf417 barkod oluşturma",
+      "pdf 417 barkod",
+      "katmanlı barkod oluşturma",
+      "biniş kartı barkodu",
+    ],
+    howToSteps: [
+      {
+        title: "Metni yazın veya yapıştırın",
+        description: "PDF417, bir formdaki birkaç alan gibi uzun metinleri tutar.",
+      },
+      {
+        title: "Boyutu seçin",
+        description: "Modül genişliğini biletinize veya belgenize göre ayarlayın.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Uzun metin tutar",
+        description: "Tek barkodda yüzlerce karakter.",
+      },
+      {
+        title: "Hasara dayanıklı",
+        description: "Yerleşik hata düzeltme, çizildiğinde bile okunabilir tutar.",
+      },
+      {
+        title: "Okuma testi yapılır",
+        description: "Her barkod bir tarayıcı motoruyla geri okunur; böylece yazdırmadan önce çalıştığını bilirsiniz.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ehliyet barkodu oluşturabilir miyim?",
+        answer:
+          "Kullanılan barkod türü PDF417'dir, ancak resmî kimlik belgeleri katı biçimlere uyar ve yetkili kurumlarca verilir. Bunu kendi biletleriniz, etiketleriniz ve belgeleriniz için kullanın.",
+      },
+      {
+        question: "Hangi tarayıcılar PDF417 okur?",
+        answer:
+          "Çoğu 2D tarayıcı ve birçok telefon tarayıcı uygulaması okur.",
+      },
+      {
+        question: "Ne büyüklükte yazdırmalıyım?",
+        answer:
+          "Çubukları net tutun ve etrafında boşluk bırakın: %100 ölçekte yazdırın (esnetmeyin), kodun çevresinde beyaz bir kenar bırakın ve açık renkli bir arka planda koyu çubuklar kullanın.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "barcode-scanner": {
+    name: "Barkod Okuyucu",
+    shortName: "Barkod Okuyucu",
+    tagline: "EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR ve daha fazlasını bir fotoğraftan veya kameranızdan okuyun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Barkod Okuyucu, barkodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan okur: ürün kodları (EAN ve UPC), kitaplardaki ISBN'ler, Code 128 ve Code 39 etiketleri, ITF koli kodları, GS1 DataBar ve Data Matrix, PDF417, Aztec ile QR kodlar gibi 2D kodlar. Tek bir resimde birden çok kod bulur ve her birini türüyle birlikte, kopyalanmaya hazır olarak gösterir. Kamera görüntüsü ve fotoğraflar tarayıcınızda işlenir ve asla yüklenmez.",
+    seoTitle: "Online Barkod Okuyucu – Fotoğraftan veya Kameradan Okuyun",
+    seoDescription:
+      "EAN, UPC, Code 128, Data Matrix, PDF417 ve QR kodları tarayıcınızda bir fotoğraftan veya kameranızdan okuyun. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "online barkod okuyucu",
+      "resimden barkod okuma",
+      "barkod okuma",
+      "fotoğraftan barkod okuma",
+      "barkod tarayıcı",
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraf ekleyin veya kamerayı kullanın",
+        description: "Bir resim bırakın, ekran görüntüsü yapıştırın ya da kameranızı barkoda doğrultun.",
+      },
+      {
+        title: "Sonucu okuyun",
+        description: "Bulunan her barkod, EAN-13 veya Data Matrix gibi türüyle birlikte gösterilir.",
+      },
+      {
+        title: "Kopyalayın",
+        description: "Sayıyı veya metni kopyalayın ya da içerdiği bağlantıyı açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Onlarca tür",
+        description: "1D barkodlar, 2D kodlar ve QR kodlar tek bir okuyucuda.",
+      },
+      {
+        title: "Aynı anda birkaç tane",
+        description: "Bir resimde birden fazla barkod bulur.",
+      },
+      {
+        title: "Kamera veya fotoğraf",
+        description: "Kameranızla canlı tarayın ya da kayıtlı herhangi bir resimden okuyun.",
+      },
+      {
+        title: "Gizli",
+        description: "Resimler ve kamera kareleri cihazınızda okunur ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Barkodum neden bulunamıyor?",
+        answer:
+          "Barkodun net, iyi aydınlatılmış olduğundan, resmin büyük bir kısmını kapladığından ve güçlü yansımalar olmadığından emin olun. Çok küçük veya bulanık barkodlar okunamaz.",
+      },
+      {
+        question: "Ürünü arayabilir mi?",
+        answer:
+          "Hayır. Barkoddaki numarayı okur; ürün veritabanlarında arama yapmaz, bu yüzden taradığınız hiçbir şey bir yere gönderilmez.",
+      },
+      {
+        question: "Kamera izin gerektiriyor mu?",
+        answer:
+          "Evet, tarayıcınız bir kez sorar. Görüntü cihazınızda kalır ve bir kod bulunur bulunmaz durur.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Resimler ve kamera görüntüsü tarayıcınızda okunur ve cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "wifi-qr-code-generator": {
+    name: "Wi-Fi QR Kod Oluşturucu",
+    shortName: "Wi-Fi QR Kod",
+    tagline: "Misafirlerin şifre yazmadan Wi-Fi ağınıza katılmak için taradığı bir QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Wi-Fi QR kodu, misafirlerin, müşterilerin ve ailenin telefon kamerasını koda doğrultarak ağınıza katılmasını sağlar: uzun bir şifreyi harf harf söylemeye gerek kalmaz. Ağ adını ve şifreyi girin, güvenlik türünü seçin; kod hemen görünür. iPhone'lar ve Android telefonlar yerleşik kamerayla bunu anlar. Buzdolabı, kafe masası veya toplantı odası için yazdırın. Şifreniz koda tarayıcınızda eklenir ve asla yüklenmez.",
+    seoTitle: "Wi-Fi QR Kod Oluşturucu – Wi-Fi Ağınızı Şifresiz Paylaşın",
+    seoDescription:
+      "Misafirlerin tarayarak ağınıza katılması için tarayıcınızda bir Wi-Fi QR kodu oluşturun. iPhone ve Android kameralarıyla çalışır. Ücretsiz, yükleme yok.",
+    keywords: [
+      "wifi qr kod oluşturma",
+      "wifi qr kod",
+      "wifi şifresi qr kod",
+      "wifi paylaşma qr kod",
+      "wi-fi karekod",
+    ],
+    howToSteps: [
+      {
+        title: "Ağ bilgilerini girin",
+        description: "Ağ adı (SSID), şifre ve güvenlik türü.",
+      },
+      {
+        title: "Görünümü ayarlayın",
+        description: "İsterseniz renk seçin veya logo ekleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin; yazdırın ya da tasarımınıza ekleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Telefon kameralarıyla çalışır",
+        description: "iPhone ve Android kameraları kodu gördüğünde ağa katılmayı önerir.",
+      },
+      {
+        title: "Kaydetmeden önce test edilir",
+        description: "QR kod oluşturulur oluşturulmaz geri okunur; böylece tarandığını bilirsiniz.",
+      },
+      {
+        title: "Kendi renkleriniz ve logonuz",
+        description: "Renkleri seçin ve ortaya bir logo ekleyin; kodun yine taranabilmesi için hata düzeltme artırılır.",
+      },
+      {
+        title: "Gizli",
+        description: "Kod tarayıcınızda oluşturulur. Bilgileriniz yüklenmez veya saklanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wi-Fi şifremi yazdırmak güvenli mi?",
+        answer:
+          "Kodu tarayan herkes, şifreyi ona söylemişsiniz gibi ağa katılabilir. Herkese açık yerlerde misafir ağı kullanın.",
+      },
+      {
+        question: "Hangi güvenlik türünü seçmeliyim?",
+        answer:
+          "Neredeyse tüm modern modemler için WPA/WPA2/WPA3. WEP yalnızca çok eski modemler için; şifresiz ağlar için Yok.",
+      },
+      {
+        question: "QR kodun süresi doluyor mu?",
+        answer:
+          "Hayır. Bilgiler bir sunucuda değil, kodun kendisinde bulunur; bu yüzden bilgiler doğru kaldığı sürece çalışır.",
+      },
+      {
+        question: "Bilgilerim saklanıyor mu?",
+        answer:
+          "Hayır. QR kod tarayıcınızda oluşturulur ve yazdığınız hiçbir şey cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "whatsapp-qr-code-generator": {
+    name: "WhatsApp QR Kod Oluşturucu",
+    shortName: "WhatsApp QR",
+    tagline: "Numaranızla bir WhatsApp sohbeti açan ve gönderilmeye hazır bir mesaj içeren QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "WhatsApp QR kodu, müşterilerin numaranızı önce kaydetmeden sizinle sohbet başlatmasını sağlar. Telefon numaranızı ülke koduyla girin ve isterseniz onlar için yazılmış olacak bir mesaj ekleyin, örneğin 'Merhaba, masa ayırtmak istiyorum'. Kodu taramak WhatsApp'ı bu sohbette açar. Dükkân vitrininize, menünüze, el ilanınıza veya kartvizitinize koyun. Kod tarayıcınızda oluşturulur ve hiçbir şey yüklenmez.",
+    seoTitle: "WhatsApp QR Kod Oluşturucu – Ücretsiz Sohbet Bağlantısı QR",
+    seoDescription:
+      "Numaranızla ve hazır bir mesajla WhatsApp sohbeti açan bir QR kod oluşturun. Dükkânlar, menüler ve kartvizitler için. Ücretsiz, yükleme yok.",
+    keywords: [
+      "whatsapp qr kod oluşturma",
+      "whatsapp qr kod",
+      "whatsapp için qr kod",
+      "whatsapp sohbet bağlantısı qr",
+      "wa.me qr kod",
+    ],
+    howToSteps: [
+      {
+        title: "Numaranızı girin",
+        description: "Ülke koduyla birlikte, örneğin +44 7700 900123.",
+      },
+      {
+        title: "Mesaj ekleyin",
+        description: "İsteğe bağlı: kodu tarayan kişi için hazır yazılmış metin.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin; yazdırın ya da tasarımınıza ekleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Numara kaydetmeye gerek yok",
+        description: "İnsanlar sizi önce kişilerine eklemeden sizinle sohbet eder.",
+      },
+      {
+        title: "Hazır mesaj",
+        description: "Konuşmayı kendi sözlerinizle başlatın.",
+      },
+      {
+        title: "Kaydetmeden önce test edilir",
+        description: "QR kod oluşturulur oluşturulmaz geri okunur; böylece tarandığını bilirsiniz.",
+      },
+      {
+        title: "Kendi renkleriniz ve logonuz",
+        description: "Renkleri seçin ve ortaya bir logo ekleyin; kodun yine taranabilmesi için hata düzeltme artırılır.",
+      },
+    ],
+    faqs: [
+      {
+        question: "WhatsApp Business ile çalışır mı?",
+        answer:
+          "Evet. Bu numarayı kullanan WhatsApp hesabı hangisiyse onunla bir sohbet açar.",
+      },
+      {
+        question: "Ülke kodu neden gerekli?",
+        answer:
+          "WhatsApp bağlantıları tam uluslararası numarayı kullanır; böylece kod her ülkeden çalışır.",
+      },
+      {
+        question: "QR kodun süresi doluyor mu?",
+        answer:
+          "Hayır. Bilgiler bir sunucuda değil, kodun kendisinde bulunur; bu yüzden bilgiler doğru kaldığı sürece çalışır.",
+      },
+      {
+        question: "Bilgilerim saklanıyor mu?",
+        answer:
+          "Hayır. QR kod tarayıcınızda oluşturulur ve yazdığınız hiçbir şey cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "vcard-qr-code-generator": {
+    name: "vCard QR Kod Oluşturucu",
+    shortName: "vCard QR Kod",
+    tagline: "Adınızı, telefonunuzu, e-postanızı ve web sitenizi telefonun kişilerine kaydeden bir QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "vCard QR kodu, kartvizitinizi tek bir taramaya dönüştürür: insanlar kameralarını koda doğrultur ve telefonları sizi adınız, telefon numaranız, e-postanız, şirketiniz ve web siteniz doldurulmuş olarak kişi olarak kaydetmeyi önerir. Bilgilerinizi girin, kodu kendi renkleriniz veya logonuzla biçimlendirin ve kartvizitiniz, e-posta imzanız, yaka kartınız veya stand için indirin. Bilgiler koda tarayıcınızda eklenir ve hiçbir yerde saklanmaz.",
+    seoTitle: "vCard QR Kod Oluşturucu – Kartvizit QR Kodu, Ücretsiz",
+    seoDescription:
+      "İletişim bilgilerinizi tek taramada kaydeden bir vCard QR kodu oluşturun. Kartvizitler ve yaka kartları için. Renk ve logo, ücretsiz, yükleme yok.",
+    keywords: [
+      "vcard qr kod oluşturma",
+      "kartvizit qr kod",
+      "kişi qr kodu",
+      "vcard qr kod",
+      "iletişim bilgileri qr kod",
+    ],
+    howToSteps: [
+      {
+        title: "Bilgilerinizi girin",
+        description: "Ad, telefon, e-posta, şirket ve web sitesi.",
+      },
+      {
+        title: "Görünümü ayarlayın",
+        description: "Renk seçin veya logonuzu ekleyin.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin; yazdırın ya da tasarımınıza ekleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Tek taramada kaydedilir",
+        description: "Telefonlar, tüm alanları doldurulmuş olarak kişiyi eklemeyi önerir.",
+      },
+      {
+        title: "Kaydetmeden önce test edilir",
+        description: "QR kod oluşturulur oluşturulmaz geri okunur; böylece tarandığını bilirsiniz.",
+      },
+      {
+        title: "Kendi renkleriniz ve logonuz",
+        description: "Renkleri seçin ve ortaya bir logo ekleyin; kodun yine taranabilmesi için hata düzeltme artırılır.",
+      },
+      {
+        title: "Gizli",
+        description: "Kod tarayıcınızda oluşturulur. Bilgileriniz yüklenmez veya saklanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "İnsanların bir uygulamaya ihtiyacı var mı?",
+        answer:
+          "Hayır. iPhone'ların ve çoğu Android telefonun yerleşik kamerası kişi QR kodlarını tanır.",
+      },
+      {
+        question: "Bilgilerimi sonra değiştirebilir miyim?",
+        answer:
+          "Bilgiler kodun içindedir; değiştiklerinde yeni bir kod oluşturun.",
+      },
+      {
+        question: "QR kodun süresi doluyor mu?",
+        answer:
+          "Hayır. Bilgiler bir sunucuda değil, kodun kendisinde bulunur; bu yüzden bilgiler doğru kaldığı sürece çalışır.",
+      },
+      {
+        question: "Bilgilerim saklanıyor mu?",
+        answer:
+          "Hayır. QR kod tarayıcınızda oluşturulur ve yazdığınız hiçbir şey cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "payment-qr-code-generator": {
+    name: "Ödeme QR Kod Oluşturucu",
+    shortName: "Ödeme QR",
+    tagline: "Hindistan'da UPI ödemeleri veya Avrupa'da SEPA banka havaleleri için QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Ödeme QR kodu, insanların hesap bilgilerini yazmak yerine tarayarak size ödeme yapmasını sağlar. Hindistan'da Google Pay, PhonePe, Paytm ve BHIM'in arkasındaki sistem olan UPI'yi ya da Avrupa'da birçok bankacılık uygulamasının okuduğu EPC QR koduyla SEPA havalesini seçin. Hesabınızı ve isterseniz sabit bir tutar ile bir not girin; kod oluşturulmadan önce bilgiler (UPI kimliği biçimi, IBAN kontrol basamakları) kontrol edilir. Hiçbir şey yüklenmez ve bu siteden hiç para geçmez.",
+    seoTitle: "Ödeme QR Kod Oluşturucu – UPI ve SEPA, Ücretsiz",
+    seoDescription:
+      "Tarayıcınızda bir UPI ödeme QR kodu veya SEPA (EPC) banka havalesi QR kodu oluşturun. Hesap bilgileri kontrol edilir. Ücretsiz, yükleme yok.",
+    keywords: [
+      "ödeme qr kod oluşturma",
+      "upi qr kod oluşturucu",
+      "sepa qr kod",
+      "epc qr kod",
+      "havale qr kodu",
+    ],
+    howToSteps: [
+      {
+        title: "UPI veya SEPA seçin",
+        description: "Hindistan için UPI; Avrupa'daki euro banka hesapları için SEPA havalesi.",
+      },
+      {
+        title: "Hesabı girin",
+        description: "UPI kimliğiniz veya IBAN ve adınız, ayrıca isteğe bağlı tutar ve not.",
+      },
+      {
+        title: "İndirin",
+        description: "PNG veya SVG olarak kaydedin; yazdırın ya da tasarımınıza ekleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Hesap bilgileri kontrol edilir",
+        description: "UPI kimliklerinin biçimi, IBAN'ların kontrol basamakları kontrol edilir.",
+      },
+      {
+        title: "İsteğe bağlı sabit tutar",
+        description: "Ödeme yapanın tutarı kendisinin yazması için boş bırakın.",
+      },
+      {
+        title: "Kaydetmeden önce test edilir",
+        description: "QR kod oluşturulur oluşturulmaz geri okunur; böylece tarandığını bilirsiniz.",
+      },
+      {
+        title: "Gizli",
+        description: "Kod tarayıcınızda oluşturulur. Bilgileriniz yüklenmez veya saklanmaz.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Hangi uygulamalar okur?",
+        answer:
+          "UPI kodları Google Pay, PhonePe, Paytm ve BHIM gibi UPI uygulamalarında açılır. SEPA (EPC) kodlarını Almanya, Avusturya, Hollanda, Belçika, Finlandiya ve diğer SEPA ülkelerindeki birçok bankacılık uygulaması okur; her banka desteklemez.",
+      },
+      {
+        question: "Güvenli mi?",
+        answer:
+          "Kod yalnızca ödeme bilgilerini doldurur; ödemeyi yine ödeme yapan kişi kendi uygulamasında onaylar. Kodu yazdırmadan önce bilgileri dikkatle kontrol edin.",
+      },
+      {
+        question: "QR kodun süresi doluyor mu?",
+        answer:
+          "Hayır. Bilgiler bir sunucuda değil, kodun kendisinde bulunur; bu yüzden bilgiler doğru kaldığı sürece çalışır.",
+      },
+      {
+        question: "Bilgilerim saklanıyor mu?",
+        answer:
+          "Hayır. QR kod tarayıcınızda oluşturulur ve yazdığınız hiçbir şey cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "bulk-qr-code-generator": {
+    name: "Toplu QR Kod Oluşturucu",
+    shortName: "Toplu QR Kod",
+    tagline: "Bir listeden veya CSV'den yüzlerce QR kodu tek seferde oluşturun ve tek bir ZIP olarak indirin. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Toplu QR Kod Oluşturucu bir listeyi QR kodlara dönüştürür: her ürün sayfası için bağlantılar, her masa için kodlar, koca bir depo için demirbaş etiketleri. Her satıra bir bağlantı veya metin yapıştırın ya da bir CSV dosyası yükleyin; dosyaları kolayca eşleştirmek için isterseniz her birinin önüne bir dosya adı yazın. PNG veya SVG ile bir boyut seçin, ardından hepsini tek bir ZIP olarak indirin. 1.000'e kadar kod tarayıcınızda oluşturulur; listeniz asla yüklenmez.",
+    seoTitle: "Toplu QR Kod Oluşturucu – Ücretsiz, CSV'den ZIP'e",
+    seoDescription:
+      "Tarayıcınızda bir listeden veya CSV'den tek seferde 1.000'e kadar QR kod oluşturun. Kendi dosya adlarınız, PNG veya SVG, tek ZIP. Ücretsiz, yükleme yok.",
+    keywords: [
+      "toplu qr kod oluşturma",
+      "toplu qr kod oluşturucu",
+      "csv'den qr kod oluşturma",
+      "çoklu qr kod oluşturma",
+      "listeden qr kod oluşturma",
+    ],
+    howToSteps: [
+      {
+        title: "Listenizi yapıştırın",
+        description: "Her satıra bir bağlantı veya metin; ya da bir CSV veya metin dosyası yükleyin.",
+      },
+      {
+        title: "Dosyaları adlandırın",
+        description: "İsteğe bağlı olarak her satırı bir dosya adı ve virgülle başlatın.",
+      },
+      {
+        title: "ZIP'i indirin",
+        description: "PNG veya SVG ile bir boyut seçin, ardından tüm kodları tek seferde kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "1.000 koda kadar",
+        description: "Bütün bir partiyi tek seferde oluşturun.",
+      },
+      {
+        title: "Kendi dosya adlarınız",
+        description: "Her dosyayı ürününüz, masanız veya demirbaşınızla eşleşecek şekilde adlandırın.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler için resimler, baskı için vektörler.",
+      },
+      {
+        title: "Gizli",
+        description: "Listeniz tarayıcınızda işlenir ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Dosya adlarını nasıl eklerim?",
+        answer:
+          "Seçeneği işaretleyin ve her satırı ad, içerik şeklinde yazın (örneğin: table-4, https://example.com/menu). Ad yoksa dosyalar numaralandırılır.",
+      },
+      {
+        question: "Wi-Fi veya kişi kodlarını toplu oluşturabilir miyim?",
+        answer:
+          "Evet, her satır WIFI:T:WPA;S:Name;P:password;; gibi kodun tam içeriğini taşıyorsa. Tek tek kodlar için ayrı QR oluşturucular bunu sizin için doldurur.",
+      },
+      {
+        question: "Bir sınır var mı?",
+        answer:
+          "Parti başına 1.000 kod. Daha fazlası için birkaç parti oluşturun.",
+      },
+      {
+        question: "Bilgilerim saklanıyor mu?",
+        answer:
+          "Hayır. QR kod tarayıcınızda oluşturulur ve yazdığınız hiçbir şey cihazınızdan çıkmaz.",
+      },
+    ],
+  },
+  "bulk-barcode-generator": {
+    name: "Toplu Barkod Oluşturucu",
+    shortName: "Toplu Barkod",
+    tagline: "Bir listeden veya CSV'den yüzlerce barkodu tek seferde oluşturun, kontrol edin ve tek bir ZIP olarak kaydedin. Ücretsiz ve cihazınızda çalışır.",
+    intro:
+      "Toplu Barkod Oluşturucu bir listenin her satırı için bir barkod oluşturur: bir katalog için ürün kodları, bir depo için Code 128 etiketleri, bir kitap dizisi için ISBN'ler. Barkod türünü seçin, numaraları yapıştırın veya bir CSV yükleyin; her satır siz yazarken kontrol edilir: yanlış uzunluklar, yalnızca rakam alan kodlardaki harfler ve yanlış kontrol basamakları satır satır listelenir, eksik kontrol basamakları eklenir. Geçerli olanları PNG veya SVG olarak tek bir ZIP'te indirin. 1.000'e kadar barkod tarayıcınızda oluşturulur ve hiçbir şey yüklenmez.",
+    seoTitle: "Toplu Barkod Oluşturucu – CSV'den ZIP'e, Ücretsiz",
+    seoDescription:
+      "Bir listeden veya CSV'den tek seferde 1.000'e kadar barkod: Code 128, EAN, UPC, ISBN, Data Matrix ve daha fazlası. Kontrol edilir, PNG veya SVG ZIP. Ücretsiz.",
+    keywords: [
+      "toplu barkod oluşturma",
+      "toplu barkod oluşturucu",
+      "csv'den barkod oluşturma",
+      "çoklu barkod oluşturma",
+      "listeden barkod oluşturma",
+    ],
+    howToSteps: [
+      {
+        title: "Barkod türünü seçin",
+        description: "Code 128, EAN-13, UPC-A, ISBN, Data Matrix ve daha fazlası.",
+      },
+      {
+        title: "Listenizi yapıştırın",
+        description: "Her satıra bir sayı veya metin, isterseniz önce bir dosya adı; sorunlar satır satır listelenir.",
+      },
+      {
+        title: "ZIP'i indirin",
+        description: "PNG veya SVG seçin, ardından geçerli tüm barkodları tek seferde kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Yazarken kontrol",
+        description: "Yanlış uzunluklar, yalnızca rakam alan kodlardaki harfler ve yanlış kontrol basamakları indirmeden önce gösterilir.",
+      },
+      {
+        title: "Kontrol basamakları eklenir",
+        description: "EAN, UPC, ITF-14 ve ISBN numaralarında yazılmayan kontrol basamağı eklenir.",
+      },
+      {
+        title: "Kendi dosya adlarınız",
+        description: "Her dosyayı ürününe veya kalemine göre adlandırın.",
+      },
+      {
+        title: "PNG veya SVG",
+        description: "Belgeler ve etiketler için PNG, baskı ve tasarım yazılımları için her boyutta SVG.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Sorunlu satırlara ne olur?",
+        answer:
+          "Nedeniyle birlikte listelenir ve ZIP'e eklenmez; geri kalanlar oluşturulur.",
+      },
+      {
+        question: "Numarayı kaydettirmem gerekiyor mu?",
+        answer:
+          "Ürünü mağazalarda satmak için evet: EAN ve UPC numaraları, sistemi yöneten kuruluş olan GS1'den alınır. Kendi stokunuz, raflarınız veya şirket içi kullanım için herhangi bir numara olur.",
+      },
+      {
+        question: "Bir sınır var mı?",
+        answer:
+          "Parti başına 1.000 barkod. Daha fazlası için birkaç parti oluşturun.",
+      },
+      {
+        question: "Herhangi bir şey yükleniyor mu?",
+        answer:
+          "Hayır. Kod tarayıcınızda oluşturulur ve yazdıklarınız cihazınızda kalır.",
+      },
+    ],
+  },
 };

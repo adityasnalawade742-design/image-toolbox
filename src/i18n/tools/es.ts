@@ -6277,4 +6277,927 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "barcode-generator": {
+    name: "Generador de códigos de barras",
+    shortName: "Códigos de barras",
+    tagline: "Crea códigos de barras Code 128, EAN, UPC, ISBN, Code 39, ITF-14, GS1-128, Data Matrix, PDF417 y Aztec en PNG o SVG. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Generador de códigos de barras crea los códigos que de verdad se imprimen: Code 128 para etiquetas de envío e inventario, EAN y UPC para productos, ISBN para libros, Code 39 para piezas y credenciales, ITF-14 para cajas, GS1-128 para logística, y los códigos 2D Data Matrix, PDF417 y Aztec. Escribe el número o el texto y el código de barras aparece al instante. Los dígitos de control se añaden por ti y los errores se señalan mientras escribes. Cada código de barras se vuelve a leer con un motor de escaneo antes de que lo descargues en PNG o SVG. Todo ocurre en tu navegador.",
+    seoTitle: "Generador de códigos de barras – Gratis, PNG y SVG",
+    seoDescription:
+      "Crea códigos de barras Code 128, EAN-13, UPC, ISBN, Code 39, Data Matrix y PDF417 en tu navegador. Dígito de control incluido, probados, PNG o SVG.",
+    keywords: [
+      "generador de códigos de barras",
+      "crear código de barras",
+      "generador de código de barras gratis",
+      "código de barras online",
+      "generador code 128",
+    ],
+    howToSteps: [
+      {
+        title: "Elige el tipo de código",
+        description: "Code 128 sirve para la mayoría de las etiquetas; elige EAN o UPC para productos e ISBN para libros.",
+      },
+      {
+        title: "Escribe el número o el texto",
+        description: "El código de barras aparece mientras escribes. Los problemas, como un dígito de control incorrecto, se explican.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o como SVG para imprimir.",
+      },
+    ],
+    features: [
+      {
+        title: "Comprobado mientras escribes",
+        description: "Las longitudes incorrectas, las letras en códigos solo numéricos y los dígitos de control erróneos se señalan antes de descargar.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+      {
+        title: "Creado en tu dispositivo",
+        description: "Los códigos se dibujan en tu navegador; nada de lo que escribes se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Qué tipo de código de barras debo usar?",
+        answer:
+          "Para tus propias etiquetas, inventario o envíos, Code 128: admite letras y dígitos y lo lee cualquier escáner. Para productos que se venden en tiendas, EAN-13 (o UPC-A en Norteamérica). Para libros, ISBN.",
+      },
+      {
+        question: "¿Tengo que registrar el número?",
+        answer:
+          "Para vender un producto en tiendas, sí: los números EAN y UPC los asigna GS1, la organización que gestiona el sistema. Para tu propio stock, estanterías o uso interno, sirve cualquier número.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "ean-barcode-generator": {
+    name: "Generador de códigos de barras EAN",
+    shortName: "Código EAN",
+    tagline: "Crea códigos de barras de producto EAN-13 y EAN-8 con el dígito de control añadido. Gratis y funciona en tu dispositivo.",
+    intro:
+      "EAN-13 es el código de barras de los productos en tiendas de todo el mundo, y EAN-8 su versión corta para envases pequeños. Escribe los 12 primeros dígitos (o 7 para EAN-8) y el dígito de control se calcula y se añade; si escribes los 13, la herramienta comprueba que el último es correcto. El código se dibuja según el estándar, con los dígitos debajo, y se vuelve a leer con un motor de escaneo antes de guardarlo como PNG o SVG. No se sube nada.",
+    seoTitle: "Generador de código de barras EAN-13 – Gratis",
+    seoDescription:
+      "Crea códigos de barras EAN-13 y EAN-8 en tu navegador. El dígito de control se calcula solo, probado al escanear, PNG o SVG para imprimir. Gratis.",
+    keywords: [
+      "generador de código de barras ean",
+      "generador ean 13",
+      "crear código ean 13",
+      "código de barras ean-8",
+      "código ean gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe el número EAN",
+        description: "12 dígitos para EAN-13 o 7 para EAN-8; el dígito de control se añade. Cambia el tipo en la lista.",
+      },
+      {
+        title: "Ajusta el tamaño",
+        description: "Define el ancho y la altura de las barras para tu etiqueta.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG, o como SVG para el diseño del envase.",
+      },
+    ],
+    features: [
+      {
+        title: "Dígito de control calculado",
+        description: "Si omites el último dígito, se calcula; si lo escribes, se comprueba.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+      {
+        title: "Creado en tu dispositivo",
+        description: "Los códigos se dibujan en tu navegador; nada de lo que escribes se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Tengo que registrar el número?",
+        answer:
+          "Para vender un producto en tiendas, sí: los números EAN y UPC los asigna GS1, la organización que gestiona el sistema. Para tu propio stock, estanterías o uso interno, sirve cualquier número.",
+      },
+      {
+        question: "¿Qué diferencia hay entre EAN-13 y UPC-A?",
+        answer:
+          "Son el mismo sistema: un número UPC-A es un EAN-13 con un 0 delante. Las tiendas de todo el mundo leen los dos. Usa UPC-A si tu distribuidor te lo pide; si no, EAN-13.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "upc-barcode-generator": {
+    name: "Generador de códigos de barras UPC",
+    shortName: "Código UPC",
+    tagline: "Crea códigos de barras de producto UPC-A y UPC-E para EE. UU. y Canadá, con el dígito de control añadido. Gratis y funciona en tu dispositivo.",
+    intro:
+      "UPC-A es el código de barras de 12 dígitos de los productos que se venden en EE. UU. y Canadá, y UPC-E su forma comprimida para artículos pequeños como latas y cosméticos. Escribe los 11 primeros dígitos de un UPC-A y el dígito de control se añade; escribe los 12 y se comprueba. UPC-E admite 6 dígitos, o de 7 a 8 que empiecen por 0 o 1. Cada código se dibuja según el estándar, se vuelve a leer con un motor de escaneo y se guarda como PNG o SVG. Todo ocurre en tu navegador.",
+    seoTitle: "Generador de códigos UPC – UPC-A y UPC-E, gratis",
+    seoDescription:
+      "Crea códigos de barras UPC-A y UPC-E en tu navegador con el dígito de control añadido. Probados al escanear, PNG o SVG para envases. Gratis, sin subir nada.",
+    keywords: [
+      "generador de código de barras upc",
+      "generador upc-a",
+      "crear código upc",
+      "código de barras upc-e",
+      "código upc gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe el número UPC",
+        description: "11 dígitos para UPC-A, o un número UPC-E; elige el tipo en la lista.",
+      },
+      {
+        title: "Ajusta el tamaño",
+        description: "Define el ancho y la altura de las barras para tu envase.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o como SVG para imprimir.",
+      },
+    ],
+    features: [
+      {
+        title: "Dígito de control calculado",
+        description: "El último dígito se calcula o se comprueba por ti.",
+      },
+      {
+        title: "UPC-E para artículos pequeños",
+        description: "Crea la versión corta UPC-E para latas, tubos y cajas pequeñas.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Tengo que registrar el número?",
+        answer:
+          "Para vender un producto en tiendas, sí: los números EAN y UPC los asigna GS1, la organización que gestiona el sistema. Para tu propio stock, estanterías o uso interno, sirve cualquier número.",
+      },
+      {
+        question: "¿Cuándo debo usar UPC-E?",
+        answer:
+          "Solo cuando el envase es demasiado pequeño para UPC-A y tu número se puede comprimir; los números UPC-E empiezan por 0 o 1.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "isbn-barcode-generator": {
+    name: "Generador de códigos de barras ISBN",
+    shortName: "Código ISBN",
+    tagline: "Crea el código de barras de la contracubierta de un libro a partir de su ISBN-13 o ISBN-10. Gratis y funciona en tu dispositivo.",
+    intro:
+      "El código de barras de la contracubierta de un libro es su ISBN escrito como EAN-13. Escribe tu ISBN-13, o un ISBN-10 antiguo que se convierte por ti, y el código aparece con el dígito de control verificado. Si escribes el ISBN con sus guiones, tal como figura en la página de créditos, la línea del ISBN se imprime encima de las barras, como esperan las editoriales y las librerías. Descárgalo en SVG para quien diseñe tu cubierta, o en PNG. Todo ocurre en tu navegador.",
+    seoTitle: "Generador de códigos de barras ISBN – Gratis, SVG",
+    seoDescription:
+      "Crea el código de barras ISBN para la cubierta de tu libro en el navegador. ISBN-13 o ISBN-10, dígito de control verificado, SVG para imprimir. Gratis.",
+    keywords: [
+      "generador de código de barras isbn",
+      "código de barras isbn",
+      "crear código de barras para libro",
+      "isbn a código de barras",
+      "código isbn gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe el ISBN",
+        description: "Usa los guiones de tu página de créditos para imprimir la línea del ISBN encima de las barras.",
+      },
+      {
+        title: "Revisa la vista previa",
+        description: "El dígito de control se verifica y el código se prueba al escanear.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como SVG para quien diseñe tu cubierta, o como PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "ISBN-10 convertido",
+        description: "Un ISBN-10 antiguo se convierte en el ISBN-13 que necesita el código de barras.",
+      },
+      {
+        title: "Línea del ISBN sobre las barras",
+        description: "Con guiones, el ISBN legible se imprime encima del código de barras.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Dónde consigo un ISBN?",
+        answer:
+          "En la agencia del ISBN de tu país, o a través de tu editorial o de tu plataforma de autoedición. Esta herramienta dibuja el código de barras de un ISBN que ya tienes.",
+      },
+      {
+        question: "¿Puedo añadir el precio (el código pequeño de la derecha)?",
+        answer:
+          "Todavía no. El complemento de precio de 5 dígitos que se usa en EE. UU. no está incluido.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "data-matrix-generator": {
+    name: "Generador de Data Matrix",
+    shortName: "Data Matrix",
+    tagline: "Crea códigos Data Matrix para piezas, etiquetas y envases a partir de un texto o un enlace. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Data Matrix es un pequeño código 2D cuadrado que guarda mucha información en muy poco espacio, por eso se usa en componentes electrónicos, envases de medicamentos, muestras de laboratorio y etiquetas de envío. Escribe el texto, un número de serie o un enlace y el código aparece al instante, con el tamaño que da el ancho de módulo elegido. Lo leen las cámaras de los móviles y los escáneres industriales, y cada código se vuelve a leer antes de que lo descargues en PNG o SVG. Todo ocurre en tu navegador.",
+    seoTitle: "Generador de Data Matrix – Código 2D gratis, PNG y SVG",
+    seoDescription:
+      "Crea códigos Data Matrix a partir de texto, números de serie o enlaces en tu navegador. Probados al escanear, PNG o SVG a cualquier tamaño. Gratis.",
+    keywords: [
+      "generador data matrix",
+      "crear código data matrix",
+      "código data matrix gratis",
+      "generador de códigos 2d",
+      "data matrix online",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe el contenido",
+        description: "Texto, un número de serie o un enlace.",
+      },
+      {
+        title: "Elige el tamaño",
+        description: "Define el ancho de módulo; Data Matrix sigue siendo legible impreso muy pequeño.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG.",
+      },
+    ],
+    features: [
+      {
+        title: "Cabe en poco espacio",
+        description: "Guarda mucho más que un código de barras 1D en un cuadrado diminuto.",
+      },
+      {
+        title: "Cualquier idioma",
+        description: "El texto en cualquier idioma se guarda de forma que los escáneres lo lean correctamente.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Data Matrix o código QR?",
+        answer:
+          "Los dos son códigos cuadrados. Data Matrix sigue siendo legible a tamaños más pequeños y es el estándar en piezas y medicamentos; el código QR es lo que esperan la mayoría de los móviles para los enlaces.",
+      },
+      {
+        question: "¿Los móviles pueden leer Data Matrix?",
+        answer:
+          "Muchas apps de escaneo pueden, y también Google Lens. La app de cámara integrada de algunos móviles solo lee códigos QR.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "pdf417-generator": {
+    name: "Generador de códigos PDF417",
+    shortName: "PDF417",
+    tagline: "Crea códigos de barras PDF417, el código apilado de billetes, documentos de identidad y documentos de envío. Gratis y funciona en tu dispositivo.",
+    intro:
+      "PDF417 es el código de barras ancho y apilado que ves en tarjetas de embarque, permisos de conducir y documentos de envío. Guarda cientos de caracteres, y los escáneres pueden leerlo aunque una parte esté dañada. Escribe o pega el texto y el código aparece; elige el ancho de módulo que encaje en tu diseño y descárgalo como PNG o SVG después de que un motor de escaneo lo haya vuelto a leer. Todo ocurre en tu navegador, así que los datos nunca salen de tu dispositivo.",
+    seoTitle: "Generador de códigos PDF417 – Gratis, PNG y SVG",
+    seoDescription:
+      "Crea códigos de barras PDF417 para billetes, credenciales y documentos en tu navegador. Admite texto largo, probado al escanear, PNG o SVG. Gratis.",
+    keywords: [
+      "generador pdf417",
+      "generador de código de barras pdf417",
+      "código pdf 417",
+      "código de barras apilado",
+      "pdf417 online",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe o pega el texto",
+        description: "PDF417 admite texto largo, como varios campos de un formulario.",
+      },
+      {
+        title: "Elige el tamaño",
+        description: "Define el ancho de módulo para tu billete o documento.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG.",
+      },
+    ],
+    features: [
+      {
+        title: "Admite texto largo",
+        description: "Cientos de caracteres en un solo código de barras.",
+      },
+      {
+        title: "Resistente a daños",
+        description: "La corrección de errores integrada lo mantiene legible aunque esté rayado.",
+      },
+      {
+        title: "Probado al escanear",
+        description: "Cada código de barras se vuelve a leer con un motor de escaneo, así sabes que funciona antes de imprimirlo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Puedo crear el código de barras de un permiso de conducir?",
+        answer:
+          "PDF417 es el tipo de código que se usa, pero los documentos de identidad oficiales siguen formatos estrictos y los emiten las autoridades. Usa esta herramienta para tus propios billetes, etiquetas y documentos.",
+      },
+      {
+        question: "¿Qué escáneres leen PDF417?",
+        answer:
+          "La mayoría de los escáneres 2D y muchas apps de escaneo para móvil.",
+      },
+      {
+        question: "¿A qué tamaño debo imprimirlo?",
+        answer:
+          "Mantén las barras nítidas y dales espacio: imprime al 100% (sin estirarlo), deja un margen blanco alrededor del código y usa barras oscuras sobre un fondo claro.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "barcode-scanner": {
+    name: "Lector de códigos de barras",
+    shortName: "Lector de códigos",
+    tagline: "Lee EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR y más desde una foto o con tu cámara. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Lector de códigos de barras lee códigos de barras de una foto, una captura de pantalla o tu cámara: códigos de producto (EAN y UPC), ISBN de libros, etiquetas Code 128 y Code 39, cajas ITF, GS1 DataBar y códigos 2D como Data Matrix, PDF417, Aztec y códigos QR. Encuentra varios códigos en una misma imagen y muestra cada uno con su tipo, listo para copiar. La imagen de la cámara y las fotos se procesan en tu navegador y nunca se suben.",
+    seoTitle: "Lector de códigos de barras online – Foto o cámara",
+    seoDescription:
+      "Escanea códigos EAN, UPC, Code 128, Data Matrix, PDF417 y QR desde una foto o con tu cámara, en tu navegador. Gratis, privado, sin subir nada.",
+    keywords: [
+      "lector de código de barras online",
+      "escanear código de barras",
+      "leer código de barras",
+      "escanear código de barras desde imagen",
+      "escáner de código de barras",
+    ],
+    howToSteps: [
+      {
+        title: "Añade una foto o usa la cámara",
+        description: "Suelta una imagen, pega una captura de pantalla o apunta la cámara al código de barras.",
+      },
+      {
+        title: "Lee el resultado",
+        description: "Cada código encontrado se muestra con su tipo, como EAN-13 o Data Matrix.",
+      },
+      {
+        title: "Cópialo",
+        description: "Copia el número o el texto, o abre el enlace que contenga.",
+      },
+    ],
+    features: [
+      {
+        title: "Decenas de tipos",
+        description: "Códigos de barras 1D, códigos 2D y códigos QR en un solo lector.",
+      },
+      {
+        title: "Varios a la vez",
+        description: "Encuentra más de un código de barras en una imagen.",
+      },
+      {
+        title: "Cámara o foto",
+        description: "Escanea en directo con la cámara o desde cualquier imagen guardada.",
+      },
+      {
+        title: "Privado",
+        description: "Las imágenes y los fotogramas de la cámara se leen en tu dispositivo y nunca se suben.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Por qué no encuentra mi código de barras?",
+        answer:
+          "Asegúrate de que está enfocado, bien iluminado y ocupa buena parte de la imagen, sin reflejos fuertes. Los códigos muy pequeños o borrosos no se pueden leer.",
+      },
+      {
+        question: "¿Puede buscar el producto?",
+        answer:
+          "No. Lee el número del código de barras; no consulta bases de datos de productos, así que nada de lo que escaneas se envía a ningún sitio.",
+      },
+      {
+        question: "¿La cámara necesita permiso?",
+        answer:
+          "Sí, tu navegador lo pide una vez. El vídeo se queda en tu dispositivo y se detiene en cuanto encuentra un código.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. Las fotos y los fotogramas de la cámara se leen en tu navegador y se quedan en tu dispositivo.",
+      },
+    ],
+  },
+  "wifi-qr-code-generator": {
+    name: "Generador de códigos QR de Wi-Fi",
+    shortName: "QR de Wi-Fi",
+    tagline: "Crea un código QR que tus invitados escanean para conectarse a tu Wi-Fi sin escribir la contraseña. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Un código QR de Wi-Fi permite que invitados, clientes y familia se conecten a tu red apuntando la cámara del móvil: sin deletrear una contraseña larga. Escribe el nombre de la red y la contraseña, elige el tipo de seguridad y el código aparece al instante. Los iPhone y los móviles Android lo entienden con la cámara integrada. Imprímelo para la nevera, una mesa de cafetería o una sala de reuniones. Tu contraseña se mete en el código dentro de tu navegador y nunca se sube.",
+    seoTitle: "Código QR de Wi-Fi – Comparte el Wi-Fi sin contraseña",
+    seoDescription:
+      "Crea un código QR de Wi-Fi en tu navegador para que tus invitados se conecten escaneándolo. Funciona con la cámara de iPhone y Android. Gratis, sin subir nada.",
+    keywords: [
+      "generador qr wifi",
+      "código qr wifi",
+      "crear qr para wifi",
+      "compartir wifi con qr",
+      "qr contraseña wifi",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe los datos de la red",
+        description: "Nombre de la red (SSID), contraseña y tipo de seguridad.",
+      },
+      {
+        title: "Dale estilo",
+        description: "Elige colores o añade un logotipo si quieres.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG e imprímelo o añádelo a tu diseño.",
+      },
+    ],
+    features: [
+      {
+        title: "Funciona con la cámara del móvil",
+        description: "Las cámaras de iPhone y Android ofrecen unirse a la red en cuanto lo ven.",
+      },
+      {
+        title: "Comprobado antes de guardar",
+        description: "El código QR se vuelve a leer en cuanto se crea, así sabes que se escanea.",
+      },
+      {
+        title: "Tus colores y tu logotipo",
+        description: "Elige los colores y añade un logotipo en el centro; la corrección de errores se sube para que se siga pudiendo escanear.",
+      },
+      {
+        title: "Privado",
+        description: "El código se crea en tu navegador. Tus datos no se suben ni se guardan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Es seguro imprimir mi contraseña de Wi-Fi?",
+        answer:
+          "Cualquiera que escanee el código puede unirse a la red, igual que si le dijeras la contraseña. Usa una red de invitados en lugares públicos.",
+      },
+      {
+        question: "¿Qué tipo de seguridad elijo?",
+        answer:
+          "WPA/WPA2/WPA3 para casi cualquier router moderno. WEP solo para los muy antiguos; «Ninguna» para redes sin contraseña.",
+      },
+      {
+        question: "¿Caduca el código QR?",
+        answer:
+          "No. La información está dentro del propio código, no en un servidor, así que funciona mientras los datos sigan siendo correctos.",
+      },
+      {
+        question: "¿Se guardan mis datos?",
+        answer:
+          "No. El código QR se crea en tu navegador y nada de lo que escribes sale de tu dispositivo.",
+      },
+    ],
+  },
+  "whatsapp-qr-code-generator": {
+    name: "Generador de códigos QR de WhatsApp",
+    shortName: "QR de WhatsApp",
+    tagline: "Crea un código QR que abre un chat de WhatsApp con tu número y un mensaje listo para enviar. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Un código QR de WhatsApp permite que tus clientes empiecen un chat contigo sin guardar antes tu número. Escribe tu número de teléfono con el prefijo internacional y, si quieres, un mensaje que ya aparecerá escrito, como «Hola, quiero reservar una mesa». Al escanear el código se abre WhatsApp en ese chat. Ponlo en tu escaparate, en la carta, en un folleto o en tu tarjeta de visita. El código se crea en tu navegador y no se sube nada.",
+    seoTitle: "Generador de QR de WhatsApp – Enlace a chat, gratis",
+    seoDescription:
+      "Crea un código QR que abre un chat de WhatsApp con tu número y un mensaje listo. Para tiendas, cartas y tarjetas de visita. Gratis, sin subir nada.",
+    keywords: [
+      "código qr whatsapp",
+      "generador qr whatsapp",
+      "crear qr de whatsapp",
+      "qr enlace whatsapp",
+      "qr wa.me",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe tu número",
+        description: "Con el prefijo internacional, por ejemplo +44 7700 900123.",
+      },
+      {
+        title: "Añade un mensaje",
+        description: "Opcional: un texto que ya aparece escrito para quien lo escanea.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG e imprímelo o añádelo a tu diseño.",
+      },
+    ],
+    features: [
+      {
+        title: "Sin guardar el número",
+        description: "La gente chatea contigo sin añadirte antes a sus contactos.",
+      },
+      {
+        title: "Mensaje preparado",
+        description: "Empieza la conversación con tus propias palabras.",
+      },
+      {
+        title: "Comprobado antes de guardar",
+        description: "El código QR se vuelve a leer en cuanto se crea, así sabes que se escanea.",
+      },
+      {
+        title: "Tus colores y tu logotipo",
+        description: "Elige los colores y añade un logotipo en el centro; la corrección de errores se sube para que se siga pudiendo escanear.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Funciona con WhatsApp Business?",
+        answer:
+          "Sí. Abre un chat con la cuenta de WhatsApp que use ese número, sea cual sea.",
+      },
+      {
+        question: "¿Por qué necesito el prefijo internacional?",
+        answer:
+          "Los enlaces de WhatsApp usan el número internacional completo, así el código funciona desde cualquier país.",
+      },
+      {
+        question: "¿Caduca el código QR?",
+        answer:
+          "No. La información está dentro del propio código, no en un servidor, así que funciona mientras los datos sigan siendo correctos.",
+      },
+      {
+        question: "¿Se guardan mis datos?",
+        answer:
+          "No. El código QR se crea en tu navegador y nada de lo que escribes sale de tu dispositivo.",
+      },
+    ],
+  },
+  "vcard-qr-code-generator": {
+    name: "Generador de códigos QR vCard",
+    shortName: "QR vCard",
+    tagline: "Crea un código QR que guarda tu nombre, teléfono, correo y sitio web en los contactos de un móvil. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Un código QR vCard convierte una tarjeta de visita en un solo escaneo: la gente apunta la cámara y su móvil le ofrece guardarte como contacto, con tu nombre, teléfono, correo, empresa y sitio web ya rellenados. Escribe tus datos, dale estilo al código con tus colores o tu logotipo y descárgalo para tu tarjeta de visita, tu firma de correo, tu acreditación o tu stand. Los datos se meten en el código dentro de tu navegador y no se guardan en ningún sitio.",
+    seoTitle: "Generador de QR vCard – QR para tarjeta de visita, gratis",
+    seoDescription:
+      "Crea un código QR vCard que guarda tus datos de contacto con un solo escaneo. Para tarjetas de visita y acreditaciones. Colores y logotipo, gratis.",
+    keywords: [
+      "código qr vcard",
+      "qr tarjeta de visita",
+      "qr de contacto",
+      "generador qr vcard",
+      "código qr con datos de contacto",
+    ],
+    howToSteps: [
+      {
+        title: "Escribe tus datos",
+        description: "Nombre, teléfono, correo, empresa y sitio web.",
+      },
+      {
+        title: "Dale estilo",
+        description: "Elige colores o añade tu logotipo.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG e imprímelo o añádelo a tu diseño.",
+      },
+    ],
+    features: [
+      {
+        title: "Se guarda con un escaneo",
+        description: "Los móviles ofrecen añadir el contacto con todos los campos rellenados.",
+      },
+      {
+        title: "Comprobado antes de guardar",
+        description: "El código QR se vuelve a leer en cuanto se crea, así sabes que se escanea.",
+      },
+      {
+        title: "Tus colores y tu logotipo",
+        description: "Elige los colores y añade un logotipo en el centro; la corrección de errores se sube para que se siga pudiendo escanear.",
+      },
+      {
+        title: "Privado",
+        description: "El código se crea en tu navegador. Tus datos no se suben ni se guardan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Hace falta una app?",
+        answer:
+          "No. La cámara integrada de los iPhone y de la mayoría de los móviles Android reconoce los códigos QR de contacto.",
+      },
+      {
+        question: "¿Puedo cambiar mis datos más adelante?",
+        answer:
+          "Los datos están dentro del código, así que crea un código nuevo cuando cambien.",
+      },
+      {
+        question: "¿Caduca el código QR?",
+        answer:
+          "No. La información está dentro del propio código, no en un servidor, así que funciona mientras los datos sigan siendo correctos.",
+      },
+      {
+        question: "¿Se guardan mis datos?",
+        answer:
+          "No. El código QR se crea en tu navegador y nada de lo que escribes sale de tu dispositivo.",
+      },
+    ],
+  },
+  "payment-qr-code-generator": {
+    name: "Generador de códigos QR de pago",
+    shortName: "QR de pago",
+    tagline: "Crea un código QR para pagos UPI en la India o transferencias SEPA en Europa. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Un código QR de pago permite que te paguen escaneando en lugar de escribir los datos de la cuenta. Elige UPI, el sistema que hay detrás de Google Pay, PhonePe, Paytm y BHIM en la India, o una transferencia SEPA, el código QR EPC que leen muchas apps bancarias en Europa. Escribe tu cuenta y, si quieres, un importe fijo y una nota; los datos se comprueban (formato del ID de UPI, dígitos de control del IBAN) antes de crear el código. No se sube nada, y ningún dinero pasa por este sitio.",
+    seoTitle: "Generador de QR de pago – UPI y SEPA, gratis",
+    seoDescription:
+      "Crea un código QR de pago UPI o un código QR de transferencia SEPA (EPC) en tu navegador. Datos de la cuenta comprobados. Gratis, sin subir nada.",
+    keywords: [
+      "generador de qr de pago",
+      "código qr para transferencia",
+      "qr sepa",
+      "código qr epc",
+      "generador qr upi",
+    ],
+    howToSteps: [
+      {
+        title: "Elige UPI o SEPA",
+        description: "UPI para la India; transferencia SEPA para cuentas bancarias en euros en Europa.",
+      },
+      {
+        title: "Escribe la cuenta",
+        description: "Tu ID de UPI o tu IBAN y tu nombre, más un importe y una nota opcionales.",
+      },
+      {
+        title: "Descárgalo",
+        description: "Guárdalo como PNG o SVG e imprímelo o añádelo a tu diseño.",
+      },
+    ],
+    features: [
+      {
+        title: "Datos de la cuenta comprobados",
+        description: "Se comprueba el formato de los ID de UPI y los dígitos de control de los IBAN.",
+      },
+      {
+        title: "Importe fijo opcional",
+        description: "Déjalo vacío para que quien paga escriba el importe.",
+      },
+      {
+        title: "Comprobado antes de guardar",
+        description: "El código QR se vuelve a leer en cuanto se crea, así sabes que se escanea.",
+      },
+      {
+        title: "Privado",
+        description: "El código se crea en tu navegador. Tus datos no se suben ni se guardan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Qué apps lo leen?",
+        answer:
+          "Los códigos UPI se abren en apps UPI como Google Pay, PhonePe, Paytm y BHIM. Los códigos SEPA (EPC) los leen muchas apps bancarias de Alemania, Austria, los Países Bajos, Bélgica, Finlandia y otros países SEPA; no todos los bancos los admiten.",
+      },
+      {
+        question: "¿Es seguro?",
+        answer:
+          "El código solo rellena los datos del pago; quien paga sigue confirmando el pago en su propia app. Revisa bien los datos antes de imprimir el código.",
+      },
+      {
+        question: "¿Caduca el código QR?",
+        answer:
+          "No. La información está dentro del propio código, no en un servidor, así que funciona mientras los datos sigan siendo correctos.",
+      },
+      {
+        question: "¿Se guardan mis datos?",
+        answer:
+          "No. El código QR se crea en tu navegador y nada de lo que escribes sale de tu dispositivo.",
+      },
+    ],
+  },
+  "bulk-qr-code-generator": {
+    name: "Generador masivo de códigos QR",
+    shortName: "QR masivos",
+    tagline: "Crea cientos de códigos QR a la vez desde una lista o un CSV y descárgalos en un solo ZIP. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Generador masivo de códigos QR convierte una lista en códigos QR: enlaces para cada página de producto, códigos para cada mesa, etiquetas de activos para todo un almacén. Pega un enlace o un texto por línea, o carga un archivo CSV, y si quieres pon un nombre de archivo delante de cada uno para identificar los archivos fácilmente. Elige PNG o SVG y un tamaño, y descárgalos todos en un solo ZIP. Se crean hasta 1.000 códigos en tu navegador; tu lista nunca se sube.",
+    seoTitle: "Generador masivo de códigos QR – Gratis, de CSV a ZIP",
+    seoDescription:
+      "Crea hasta 1.000 códigos QR a la vez desde una lista o un CSV en tu navegador. Tus propios nombres de archivo, PNG o SVG, un solo ZIP. Gratis, sin subir nada.",
+    keywords: [
+      "generador de códigos qr masivo",
+      "crear varios códigos qr",
+      "generar códigos qr desde csv",
+      "códigos qr en lote",
+      "generar qr masivos",
+    ],
+    howToSteps: [
+      {
+        title: "Pega tu lista",
+        description: "Un enlace o un texto por línea, o carga un archivo CSV o de texto.",
+      },
+      {
+        title: "Pon nombre a los archivos",
+        description: "Si quieres, empieza cada línea con un nombre de archivo y una coma.",
+      },
+      {
+        title: "Descarga el ZIP",
+        description: "Elige PNG o SVG y un tamaño, y guarda todos los códigos a la vez.",
+      },
+    ],
+    features: [
+      {
+        title: "Hasta 1.000 códigos",
+        description: "Crea un lote entero de una sola vez.",
+      },
+      {
+        title: "Tus nombres de archivo",
+        description: "Pon a cada archivo el nombre de tu producto, mesa o activo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "Imágenes para documentos, o vectores para imprimir.",
+      },
+      {
+        title: "Privado",
+        description: "Tu lista se procesa en tu navegador y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cómo añado nombres de archivo?",
+        answer:
+          "Marca la opción y escribe cada línea como nombre, contenido (por ejemplo: mesa-4, https://example.com/menu). Sin nombres, los archivos se numeran.",
+      },
+      {
+        question: "¿Puedo crear códigos de Wi-Fi o de contacto en lote?",
+        answer:
+          "Sí, si cada línea contiene el contenido completo del código, como WIFI:T:WPA;S:Name;P:password;;. Para códigos sueltos, el Generador de códigos QR lo rellena por ti.",
+      },
+      {
+        question: "¿Hay un límite?",
+        answer:
+          "1.000 códigos por lote. Haz varios lotes si necesitas más.",
+      },
+      {
+        question: "¿Se guardan mis datos?",
+        answer:
+          "No. El código QR se crea en tu navegador y nada de lo que escribes sale de tu dispositivo.",
+      },
+    ],
+  },
+  "bulk-barcode-generator": {
+    name: "Generador masivo de códigos de barras",
+    shortName: "Códigos de barras en lote",
+    tagline: "Crea cientos de códigos de barras a la vez desde una lista o un CSV, comprobados y guardados en un solo ZIP. Gratis y funciona en tu dispositivo.",
+    intro:
+      "Generador masivo de códigos de barras crea un código de barras para cada línea de una lista: códigos de producto para un catálogo, etiquetas Code 128 para un almacén, ISBN para una colección de libros. Elige el tipo de código, pega los números o carga un CSV, y cada línea se comprueba mientras escribes: las longitudes incorrectas, las letras en códigos solo numéricos y los dígitos de control erróneos se listan por línea, y los dígitos de control que faltan se añaden. Descarga los válidos como PNG o SVG en un solo ZIP. Se crean hasta 1.000 códigos de barras en tu navegador y no se sube nada.",
+    seoTitle: "Generador masivo de códigos de barras – CSV a ZIP",
+    seoDescription:
+      "Crea hasta 1.000 códigos de barras a la vez desde una lista o un CSV: Code 128, EAN, UPC, ISBN, Data Matrix y más. Comprobados, ZIP en PNG o SVG. Gratis.",
+    keywords: [
+      "generador de códigos de barras masivo",
+      "crear varios códigos de barras",
+      "generar códigos de barras desde csv",
+      "códigos de barras en lote",
+      "generar códigos de barras desde excel",
+    ],
+    howToSteps: [
+      {
+        title: "Elige el tipo de código",
+        description: "Code 128, EAN-13, UPC-A, ISBN, Data Matrix y más.",
+      },
+      {
+        title: "Pega tu lista",
+        description: "Un número o texto por línea, con un nombre de archivo delante si quieres; los problemas se listan por línea.",
+      },
+      {
+        title: "Descarga el ZIP",
+        description: "Elige PNG o SVG y guarda todos los códigos válidos a la vez.",
+      },
+    ],
+    features: [
+      {
+        title: "Comprobado mientras escribes",
+        description: "Las longitudes incorrectas, las letras en códigos solo numéricos y los dígitos de control erróneos se señalan antes de descargar.",
+      },
+      {
+        title: "Dígitos de control añadidos",
+        description: "Los números EAN, UPC, ITF-14 e ISBN reciben su dígito de control cuando falta.",
+      },
+      {
+        title: "Tus nombres de archivo",
+        description: "Pon a cada archivo el nombre de su producto o artículo.",
+      },
+      {
+        title: "PNG o SVG",
+        description: "PNG para documentos y etiquetas, SVG para imprenta y programas de diseño a cualquier tamaño.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Qué pasa con las líneas que tienen problemas?",
+        answer:
+          "Se listan con el motivo y se dejan fuera del ZIP; el resto se crea.",
+      },
+      {
+        question: "¿Tengo que registrar el número?",
+        answer:
+          "Para vender un producto en tiendas, sí: los números EAN y UPC los asigna GS1, la organización que gestiona el sistema. Para tu propio stock, estanterías o uso interno, sirve cualquier número.",
+      },
+      {
+        question: "¿Hay un límite?",
+        answer:
+          "1.000 códigos de barras por lote. Haz varios lotes si necesitas más.",
+      },
+      {
+        question: "¿Se sube algo?",
+        answer:
+          "No. El código se crea en tu navegador, y lo que escribes se queda en tu dispositivo.",
+      },
+    ],
+  },
 };
