@@ -63,6 +63,7 @@ export const strings = {
   'ws.errExport': 'Der Download konnte nicht erstellt werden. Das Bild ist vielleicht zu groß für diesen Browser. Versuch eine kleinere Größe oder ein anderes Format.',
   'ws.errCopy': 'Dein Browser hat das Kopieren des Bildes blockiert. Nutze stattdessen „Herunterladen“.',
   'ws.errFormatFallback': 'Dein Browser kann kein {wanted} speichern, deshalb wurde die Datei als {actual} gespeichert.',
+  'ws.keptOriginal': 'Dieses Foto ist bereits gut komprimiert, deshalb bekommst du deine Originaldatei: Neu gespeichert wäre sie größer.',
 
   // Language selector
   'lang.label': 'Sprache',

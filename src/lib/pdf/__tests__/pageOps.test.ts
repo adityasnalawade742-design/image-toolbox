@@ -155,10 +155,15 @@ describe('page operations', () => {
   it('reads and strips metadata', async () => {
     const src = await makePdf(1, true);
     expect((await readMetadata(src)).title).toBe('Secret plan');
-    const clean = await readMetadata(await stripMetadata(src));
+    const out = await stripMetadata(src);
+    const clean = await readMetadata(out);
     expect(clean.title).toBeUndefined();
     expect(clean.author).toBeUndefined();
     expect(clean.hasXmp).toBe(false);
+    // The old values must be gone from the file, not just unlinked
+    const doc = await PDFDocument.load(out);
+    const leftovers = doc.context.enumerateIndirectObjects().filter(([, o]) => /\/(Title|Author) /.test(o.toString()));
+    expect(leftovers).toHaveLength(0);
   });
 
   it('crops pages to a smaller visible area', async () => {

@@ -295,6 +295,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [isExporting, setIsExporting] = useState<boolean>(false);
   // Size of the file actually produced by the last download, for the job ticket
   const [lastExportBytes, setLastExportBytes] = useState<number | null>(null);
+  const [keptOriginal, setKeptOriginal] = useState(false);
   const [exportError, setExportError] = useState<string | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -532,6 +533,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   // Any change to the settings makes the last download's size stale
   useEffect(() => {
     setLastExportBytes(null);
+    setKeptOriginal(false);
   }, [getProcessingOptions, format, quality]);
 
   // Main Debounced Canvas Rendering Pipeline
@@ -565,16 +567,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           // Calculate output size metrics (only the tools that display them pay for the encode)
           if (slug === 'compress-image' || (slug === 'remove-image-metadata' && !cleanFileRef.current)) {
             const estimateSeq = ++estimateSeqRef.current;
-            const report = (b: Blob) => {
+            const report = (b: Blob, w: number, h: number) => {
               // A lossless metadata copy that arrived meanwhile has the real size
-              if (estimateSeq === estimateSeqRef.current && !(slug === 'remove-image-metadata' && cleanFileRef.current)) setOutputBytes(b.size);
+              if (estimateSeq === estimateSeqRef.current && !(slug === 'remove-image-metadata' && cleanFileRef.current)) setOutputBytes(keepsOriginal(b, w, h) ? sourceFile!.size : b.size);
             };
             const failed = (err: unknown) => {
               if (!isAvifSuperseded(err)) console.error('Output size estimate failed:', err);
             };
             if (activeImg === imageElement) {
               // The preview is the photo itself, so its encoded size is the real one
-              canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate').then(report).catch(failed);
+              canvasToBlob(displayCanvas, format, quality / 100, 'preview-estimate').then((b) => report(b, displayCanvas.width, displayCanvas.height)).catch(failed);
             } else {
               // Large photos are previewed from a reduced copy, whose size says little about the real file:
               // measure the full-size output once the settings stop changing
@@ -583,7 +585,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               const fullImg = imageElement;
               sizeTimerRef.current = window.setTimeout(() => {
                 if (estimateSeq !== estimateSeqRef.current || !fullImg) return;
-                canvasToBlob(processCanvas(fullImg, getProcessingOptions(true)), format, quality / 100, 'preview-estimate').then(report).catch(failed);
+                const full = processCanvas(fullImg, getProcessingOptions(true));
+                canvasToBlob(full, format, quality / 100, 'preview-estimate').then((b) => report(b, full.width, full.height)).catch(failed);
               }, 450);
             }
           }
@@ -735,11 +738,28 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     setPickAnnouncement(t('ws.pickerPicked', { hex }));
   };
 
+  /**
+   * Compression never hands back a bigger file: when re-encoding at the same size and in the same format doesn't
+   * shrink the photo, the original is the better result
+   */
+  const keepsOriginal = (b: Blob, w: number, h: number) =>
+    slug === 'compress-image' &&
+    !!sourceFile &&
+    !!imageElement &&
+    sourceFile.type === format &&
+    b.size >= sourceFile.size &&
+    w === imageElement.naturalWidth &&
+    h === imageElement.naturalHeight;
+
   /** The file a download gives: full resolution, encoded in the chosen format and quality */
   const buildOutput = async (): Promise<Blob> => {
     if (slug === 'remove-image-metadata' && cleanFile) return new Blob([new Uint8Array(cleanFile)], { type: format });
     // Always process from full-resolution original source image for pristine output quality
-    return canvasToBlob(processCanvas(imageElement!, getProcessingOptions(true)), format, quality / 100);
+    const canvas = processCanvas(imageElement!, getProcessingOptions(true));
+    const blob = await canvasToBlob(canvas, format, quality / 100);
+    const kept = keepsOriginal(blob, canvas.width, canvas.height);
+    setKeptOriginal(kept);
+    return kept ? sourceFile! : blob;
   };
 
   const handleDownload = async () => {
@@ -1320,6 +1340,13 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                       <span>{isExporting ? t('ws.preparing') : downloadLabel}</span>
                     </button>
                   </div>
+
+                  {keptOriginal && !exportError && (
+                    <p role="status" className="flex items-start gap-1.5 text-[14px] text-graphite leading-relaxed">
+                      <Check className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{t('ws.keptOriginal')}</span>
+                    </p>
+                  )}
 
                   {exportError && (
                     <p role="alert" className="flex items-start gap-1.5 text-[14px] text-accent-yellow leading-relaxed">

@@ -126,7 +126,9 @@ export function BulkCompressorWorkspace() {
         }
         ctx.drawImage(img, 0, 0);
 
-        const outputBlob = await canvasToBlob(canvas, format, quality / 100);
+        const encoded = await canvasToBlob(canvas, format, quality / 100);
+        // Never hand back a bigger file: when re-saving in the same format doesn't help, keep the original
+        const outputBlob = item.file.type === format && encoded.size >= item.file.size ? item.file : encoded;
         const outputExt = formatExtension((outputBlob.type || format) as typeof format);
 
         setQueue((prev) =>

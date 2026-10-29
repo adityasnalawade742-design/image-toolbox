@@ -6,7 +6,7 @@ import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT, useLocale } from '../shared/I18nContext';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
-import { wrapTextLines, formatBytes } from '../../lib/canvas/engine';
+import { wrapTextLines, formatBytes, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
 import { DragFrameOverlay, type FrameBox } from '../shared/DragFrameOverlay';
 
 type CaptionId = 'top' | 'middle' | 'bottom';
@@ -241,12 +241,10 @@ export function MemeGeneratorWorkspace() {
     setCaptionBoxes(boxes);
   }, [imgElement, topText, middleText, bottomText, fontSize, font, textColor, strokeColor, strokeWidth, isUppercase, textAlign, fontTick, captionPos]);
 
-  const handleDownload = (format: SaveFormat = 'png') => {
+  const handleDownload = async (format: SaveFormat = 'png') => {
     if (!canvasRef.current) return;
-    const link = document.createElement('a');
-    link.download = `meme-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`;
-    link.href = canvasRef.current.toDataURL(`image/${format}`, 0.95);
-    link.click();
+    const blob = await canvasToBlob(canvasRef.current, `image/${format}`, 0.95);
+    downloadBlob(blob, `meme-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const handleCopyClipboard = async () => {
@@ -365,7 +363,7 @@ export function MemeGeneratorWorkspace() {
                 className="ml-auto"
                 label={`meme.${saveFormat === 'jpeg' ? 'jpg' : saveFormat}`}
                 load={async () => {
-                  const blob = await new Promise<Blob | null>((res) => canvasRef.current?.toBlob(res, `image/${saveFormat}`, 0.95));
+                  const blob = canvasRef.current ? await canvasToBlob(canvasRef.current, `image/${saveFormat}`, 0.95) : null;
                   if (!blob) throw new Error('encode failed');
                   return blobImage(blob);
                 }}

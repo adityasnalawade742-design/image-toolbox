@@ -20,7 +20,9 @@ import {
   type PDFObject,
   type PDFPage,
 } from 'pdf-lib';
-import { loadPdf, placeCentred, visualPage, type FontLoader } from './pageOps';
+import { dropUnreachable, loadPdf, placeCentred, visualPage, type FontLoader } from './pageOps';
+
+export { dropUnreachable };
 import { PdfUnsupportedTextError } from './errors';
 import { fontScriptFor, type FontScript } from './unicodeFont';
 
@@ -308,33 +310,6 @@ async function flattenToImage(doc: PDFDocument, index: number, image: { bytes: U
   const { width, height } = visualPage(page);
   const { x, y, rotate } = placeCentred(page, width / 2, height / 2, width, height);
   page.drawImage(img, { x, y, width, height, rotate });
-}
-
-/** Delete every object nothing points to, so content taken off a page doesn't stay in the file */
-export function dropUnreachable(doc: PDFDocument) {
-  const ctx = doc.context;
-  const seen = new Set<string>();
-  const stack: PDFObject[] = [];
-  const { Root, Info } = ctx.trailerInfo;
-  if (Root) stack.push(Root);
-  if (Info) stack.push(Info);
-  while (stack.length) {
-    const o = stack.pop()!;
-    if (o instanceof PDFRef) {
-      const key = o.toString();
-      if (seen.has(key)) continue;
-      seen.add(key);
-      const v = ctx.lookup(o);
-      if (v) stack.push(v);
-    } else if (o instanceof PDFDict) {
-      for (const [, v] of o.entries()) stack.push(v);
-    } else if (o instanceof PDFArray) {
-      for (let i = 0; i < o.size(); i++) stack.push(o.get(i));
-    } else if (o instanceof PDFStream) {
-      stack.push(o.dict);
-    }
-  }
-  for (const [ref] of ctx.enumerateIndirectObjects()) if (!seen.has(ref.toString())) ctx.delete(ref);
 }
 
 export interface ApplyOptions {

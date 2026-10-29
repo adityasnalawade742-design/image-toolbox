@@ -3,8 +3,12 @@
  * so the tools stay simple and every operation can be unit-tested in Node.
  */
 import {
+  PDFArray,
+  PDFDict,
   PDFDocument,
   PDFName,
+  PDFRef,
+  PDFStream,
   PDFTextField,
   PDFCheckBox,
   PDFRadioGroup,
@@ -17,9 +21,11 @@ import {
   rgb,
   type PDFPage,
   type PDFFont,
+  type PDFObject,
 } from 'pdf-lib';
 
 import { PdfEncryptedError, PdfUnsupportedTextError } from './errors';
+import { assemblePages } from './structure';
 import { fontScriptFor, type FontScript } from './unicodeFont';
 
 export { PdfEncryptedError, PdfUnsupportedTextError };
@@ -65,25 +71,20 @@ export function chunkRanges(pageCount: number, size: number): number[][] {
 }
 
 export async function mergePdfs(files: (Uint8Array | ArrayBuffer)[]): Promise<Uint8Array> {
-  const out = await PDFDocument.create();
+  const sources = [];
   for (const bytes of files) {
-    const src = await loadPdf(bytes);
-    const pages = await out.copyPages(src, src.getPageIndices());
-    pages.forEach((p) => out.addPage(p));
+    const doc = await loadPdf(bytes);
+    sources.push({ doc, pages: doc.getPageIndices().map((index) => ({ index })) });
   }
+  const out = await assemblePages(sources);
+  dropUnreachable(out);
   return save(out);
 }
 
 /** A new PDF with the given pages (0-based) in the given order, each optionally turned by extra degrees */
 export async function buildFromPages(bytes: Uint8Array | ArrayBuffer, pages: { index: number; rotate?: number }[]): Promise<Uint8Array> {
-  const src = await loadPdf(bytes);
-  const out = await PDFDocument.create();
-  const copied = await out.copyPages(src, pages.map((p) => p.index));
-  copied.forEach((page, i) => {
-    const extra = pages[i].rotate || 0;
-    if (extra) page.setRotation(degrees((((page.getRotation().angle + extra) % 360) + 360) % 360));
-    out.addPage(page);
-  });
+  const out = await assemblePages([{ doc: await loadPdf(bytes), pages }]);
+  dropUnreachable(out);
   return save(out);
 }
 
@@ -249,8 +250,38 @@ export async function stripMetadata(bytes: Uint8Array | ArrayBuffer): Promise<Ui
   const info = doc.context.trailerInfo.Info;
   if (info) doc.context.trailerInfo.Info = undefined;
   doc.catalog.delete(PDFName.of('Metadata'));
+  // Unlinking isn't enough: pdf-lib writes every object it loaded, so the old title, author and XMP would stay in the file
+  dropUnreachable(doc);
   return doc.save({ updateFieldAppearances: false });
 }
+
+/** Delete every object nothing points to, so content taken off a page doesn't stay in the file */
+export function dropUnreachable(doc: PDFDocument) {
+  const ctx = doc.context;
+  const seen = new Set<string>();
+  const stack: PDFObject[] = [];
+  const { Root, Info } = ctx.trailerInfo;
+  if (Root) stack.push(Root);
+  if (Info) stack.push(Info);
+  while (stack.length) {
+    const o = stack.pop()!;
+    if (o instanceof PDFRef) {
+      const key = o.toString();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const v = ctx.lookup(o);
+      if (v) stack.push(v);
+    } else if (o instanceof PDFDict) {
+      for (const [, v] of o.entries()) stack.push(v);
+    } else if (o instanceof PDFArray) {
+      for (let i = 0; i < o.size(); i++) stack.push(o.get(i));
+    } else if (o instanceof PDFStream) {
+      stack.push(o.dict);
+    }
+  }
+  for (const [ref] of ctx.enumerateIndirectObjects()) if (!seen.has(ref.toString())) ctx.delete(ref);
+}
+
 
 export interface CropMargins {
   /** Fractions of the page width / height to trim from each side, as seen on screen */
