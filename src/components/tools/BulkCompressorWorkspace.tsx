@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
 import { formatExtension } from '../../lib/canvas/outputFormat';
+import { stripMetadata } from '../../lib/canvas/stripMetadata';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
@@ -127,8 +128,13 @@ export function BulkCompressorWorkspace() {
         ctx.drawImage(img, 0, 0);
 
         const encoded = await canvasToBlob(canvas, format, quality / 100);
-        // Never hand back a bigger file: when re-saving in the same format doesn't help, keep the original
-        const outputBlob = item.file.type === format && encoded.size >= item.file.size ? item.file : encoded;
+        // Never hand back a bigger file: when re-saving in the same format doesn't help, keep the original,
+        // minus camera details and location (removed losslessly)
+        let outputBlob: Blob = encoded;
+        if (item.file.type === format && encoded.size >= item.file.size) {
+          const clean = stripMetadata(new Uint8Array(await item.file.arrayBuffer()));
+          outputBlob = clean ? new Blob([new Uint8Array(clean)], { type: format }) : item.file;
+        }
         const outputExt = formatExtension((outputBlob.type || format) as typeof format);
 
         setQueue((prev) =>

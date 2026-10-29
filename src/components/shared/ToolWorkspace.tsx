@@ -759,7 +759,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     const blob = await canvasToBlob(canvas, format, quality / 100);
     const kept = keepsOriginal(blob, canvas.width, canvas.height);
     setKeptOriginal(kept);
-    return kept ? sourceFile! : blob;
+    if (!kept) return blob;
+    // The original, minus camera details and location (lossless; a compressed photo wouldn't carry them either)
+    const clean = stripMetadata(new Uint8Array(await sourceFile!.arrayBuffer()));
+    return clean ? new Blob([new Uint8Array(clean)], { type: format }) : sourceFile!;
   };
 
   const handleDownload = async () => {

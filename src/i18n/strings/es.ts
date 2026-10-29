@@ -63,7 +63,7 @@ export const strings = {
   'ws.errExport': 'No se pudo crear la descarga. Puede que la imagen sea demasiado grande para este navegador; prueba con un tamaño menor u otro formato.',
   'ws.errCopy': 'Tu navegador bloqueó la copia de la imagen. Usa Descargar.',
   'ws.errFormatFallback': 'Tu navegador no puede guardar en {wanted}, así que se guardó como {actual}.',
-  'ws.keptOriginal': 'Esta foto ya está bien comprimida, así que recibes tu archivo original: volver a guardarla la haría más grande.',
+  'ws.keptOriginal': 'Esta foto ya está bien comprimida, así que recibes la imagen original sin cambios, sin los datos de la cámara ni la ubicación: volver a guardarla la haría más grande.',
 
   // Language selector
   'lang.label': 'Idioma',

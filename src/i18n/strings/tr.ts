@@ -63,7 +63,7 @@ export const strings = {
   'ws.errExport': 'İndirilecek dosya oluşturulamadı. Resim bu tarayıcı için çok büyük olabilir; daha küçük bir boyut veya başka bir format deneyin.',
   'ws.errCopy': 'Tarayıcınız resmin kopyalanmasını engelledi. Bunun yerine İndir’i kullanın.',
   'ws.errFormatFallback': 'Tarayıcınız şu formatta kaydedemiyor: {wanted}. Dosya bunun yerine şu formatta kaydedildi: {actual}.',
-  'ws.keptOriginal': 'Bu fotoğraf zaten iyi sıkıştırılmış, bu yüzden orijinal dosyanızı alıyorsunuz: yeniden kaydetmek onu büyütürdü.',
+  'ws.keptOriginal': 'Bu fotoğraf zaten iyi sıkıştırılmış, bu yüzden orijinal görüntüyü değiştirmeden, kamera bilgileri ve konum kaldırılmış olarak alıyorsunuz: yeniden kaydetmek onu büyütürdü.',
 
   // Language selector
   'lang.label': 'Dil',
