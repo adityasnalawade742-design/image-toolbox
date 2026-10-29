@@ -6274,4 +6274,927 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "barcode-generator": {
+    name: "Buat Barcode",
+    shortName: "Buat Barcode",
+    tagline: "Buat barcode Code 128, EAN, UPC, ISBN, Code 39, ITF-14, GS1-128, Data Matrix, PDF417, dan Aztec dalam PNG atau SVG. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Buat Barcode membuat barcode yang benar-benar dicetak orang: Code 128 untuk label pengiriman dan inventaris, EAN dan UPC untuk produk, ISBN untuk buku, Code 39 untuk suku cadang dan tanda pengenal, ITF-14 untuk karton, GS1-128 untuk logistik, serta kode 2D Data Matrix, PDF417, dan Aztec. Ketik angka atau teks, dan barcode langsung muncul. Digit periksa ditambahkan otomatis dan kesalahan ditunjukkan saat Anda mengetik. Setiap barcode dibaca ulang dengan mesin pemindai sebelum Anda mengunduhnya sebagai PNG atau SVG. Semuanya berlangsung di browser Anda.",
+    seoTitle: "Buat Barcode Online Gratis – PNG dan SVG, Tanpa Daftar",
+    seoDescription:
+      "Buat barcode Code 128, EAN-13, UPC, ISBN, Code 39, Data Matrix, PDF417 di browser. Digit periksa ditambahkan, sudah diuji pindai, PNG atau SVG.",
+    keywords: [
+      "buat barcode",
+      "buat barcode online gratis",
+      "barcode generator",
+      "cara membuat barcode",
+      "generator barcode code 128",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih jenis barcode",
+        description: "Code 128 cocok untuk sebagian besar label; pilih EAN atau UPC untuk produk dan ISBN untuk buku.",
+      },
+      {
+        title: "Ketik angka atau teks",
+        description: "Barcode muncul saat Anda mengetik. Masalah, seperti digit periksa yang salah, dijelaskan.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG, atau SVG untuk dicetak.",
+      },
+    ],
+    features: [
+      {
+        title: "Diperiksa saat mengetik",
+        description: "Panjang yang salah, huruf di kode khusus angka, dan digit periksa yang salah ditunjukkan sebelum Anda mengunduh.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+      {
+        title: "Dibuat di perangkat Anda",
+        description: "Kode digambar di browser Anda; apa pun yang Anda ketik tidak diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Jenis barcode mana yang sebaiknya saya pakai?",
+        answer:
+          "Untuk label, inventaris, atau pengiriman Anda sendiri, Code 128: bisa memuat huruf dan angka, dan semua pemindai bisa membacanya. Untuk produk yang dijual di toko, EAN-13 (atau UPC-A di Amerika Utara). Untuk buku, ISBN.",
+      },
+      {
+        question: "Apakah saya perlu mendaftarkan nomornya?",
+        answer:
+          "Untuk menjual produk di toko, ya: nomor EAN dan UPC berasal dari GS1, organisasi yang mengelola sistem ini. Untuk stok, rak, atau keperluan internal Anda sendiri, nomor apa pun bisa dipakai.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "ean-barcode-generator": {
+    name: "Buat Barcode EAN",
+    shortName: "Barcode EAN",
+    tagline: "Buat barcode produk EAN-13 dan EAN-8 dengan digit periksa yang ditambahkan otomatis. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "EAN-13 adalah barcode pada produk di toko di seluruh dunia, dan EAN-8 adalah versi pendeknya untuk kemasan kecil. Ketik 12 digit pertama (atau 7 untuk EAN-8), lalu digit periksa dihitung dan ditambahkan; jika Anda mengetik ke-13 digitnya, alat ini memastikan digit terakhir sudah benar. Barcode digambar sesuai standar, dengan angka di bawahnya, lalu dibaca ulang dengan mesin pemindai sebelum Anda menyimpannya sebagai PNG atau SVG. Tidak ada yang diunggah.",
+    seoTitle: "Buat Barcode EAN-13 Gratis – Digit Periksa Otomatis",
+    seoDescription:
+      "Buat barcode EAN-13 dan EAN-8 di browser. Digit periksa dihitung otomatis, sudah diuji pindai, PNG atau SVG untuk dicetak. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "buat barcode ean 13",
+      "barcode ean-13",
+      "generator barcode ean",
+      "barcode ean-8",
+      "buat barcode produk",
+    ],
+    howToSteps: [
+      {
+        title: "Ketik nomor EAN",
+        description: "12 digit untuk EAN-13 atau 7 untuk EAN-8; digit periksa ditambahkan. Ganti jenisnya di daftar.",
+      },
+      {
+        title: "Atur ukuran",
+        description: "Atur lebar dan tinggi batang sesuai label Anda.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG, atau SVG untuk desain kemasan.",
+      },
+    ],
+    features: [
+      {
+        title: "Digit periksa dihitung",
+        description: "Kosongkan digit terakhir dan digit itu dihitung; ketik digit itu dan digit itu diperiksa.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+      {
+        title: "Dibuat di perangkat Anda",
+        description: "Kode digambar di browser Anda; apa pun yang Anda ketik tidak diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah saya perlu mendaftarkan nomornya?",
+        answer:
+          "Untuk menjual produk di toko, ya: nomor EAN dan UPC berasal dari GS1, organisasi yang mengelola sistem ini. Untuk stok, rak, atau keperluan internal Anda sendiri, nomor apa pun bisa dipakai.",
+      },
+      {
+        question: "Apa bedanya EAN-13 dan UPC-A?",
+        answer:
+          "Keduanya satu sistem: nomor UPC-A adalah EAN-13 dengan angka 0 di depan. Toko di seluruh dunia bisa membaca keduanya. Gunakan UPC-A jika peritel Anda memintanya; jika tidak, EAN-13.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "upc-barcode-generator": {
+    name: "Buat Barcode UPC",
+    shortName: "Barcode UPC",
+    tagline: "Buat barcode produk UPC-A dan UPC-E untuk Amerika Serikat dan Kanada, dengan digit periksa ditambahkan. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "UPC-A adalah barcode 12 digit pada produk yang dijual di Amerika Serikat dan Kanada, dan UPC-E adalah bentuk ringkasnya untuk barang kecil seperti kaleng dan kosmetik. Ketik 11 digit pertama UPC-A dan digit periksa ditambahkan; ketik ke-12 digitnya dan digit itu diperiksa. UPC-E memakai 6 digit, atau 7 sampai 8 digit yang diawali 0 atau 1. Setiap barcode digambar sesuai standar, dibaca ulang dengan mesin pemindai, dan disimpan sebagai PNG atau SVG. Semuanya berlangsung di browser Anda.",
+    seoTitle: "Buat Barcode UPC – UPC-A dan UPC-E, Gratis",
+    seoDescription:
+      "Buat barcode UPC-A dan UPC-E di browser dengan digit periksa ditambahkan. Sudah diuji pindai, PNG atau SVG untuk kemasan. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "buat barcode upc",
+      "generator upc-a",
+      "barcode upc",
+      "barcode upc-e",
+      "buat kode upc gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Ketik nomor UPC",
+        description: "11 digit untuk UPC-A, atau nomor UPC-E; pilih jenisnya di daftar.",
+      },
+      {
+        title: "Atur ukuran",
+        description: "Atur lebar dan tinggi batang agar pas dengan kemasan Anda.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG, atau SVG untuk dicetak.",
+      },
+    ],
+    features: [
+      {
+        title: "Digit periksa dihitung",
+        description: "Digit terakhir dihitung atau dikonfirmasi untuk Anda.",
+      },
+      {
+        title: "UPC-E untuk barang kecil",
+        description: "Buat versi pendek UPC-E untuk kaleng, tube, dan kotak kecil.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah saya perlu mendaftarkan nomornya?",
+        answer:
+          "Untuk menjual produk di toko, ya: nomor EAN dan UPC berasal dari GS1, organisasi yang mengelola sistem ini. Untuk stok, rak, atau keperluan internal Anda sendiri, nomor apa pun bisa dipakai.",
+      },
+      {
+        question: "Kapan sebaiknya memakai UPC-E?",
+        answer:
+          "Hanya jika kemasan terlalu kecil untuk UPC-A dan nomor Anda bisa diringkas; nomor UPC-E diawali 0 atau 1.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "isbn-barcode-generator": {
+    name: "Buat Barcode ISBN",
+    shortName: "Barcode ISBN",
+    tagline: "Buat barcode untuk sampul belakang buku dari ISBN-13 atau ISBN-10. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Barcode di sampul belakang buku adalah ISBN buku tersebut yang ditulis sebagai EAN-13. Ketik ISBN-13 Anda, atau ISBN-10 lama yang akan dikonversi otomatis, dan barcode muncul dengan digit periksa yang sudah diverifikasi. Ketik ISBN beserta tanda hubungnya, seperti yang tercetak di halaman hak cipta, maka baris ISBN dicetak di atas batang sesuai yang diharapkan penerbit dan toko buku. Unduh sebagai SVG untuk desainer sampul Anda, atau PNG. Semuanya berlangsung di browser Anda.",
+    seoTitle: "Buat Barcode ISBN Gratis – Barcode Buku, SVG",
+    seoDescription:
+      "Buat barcode ISBN untuk sampul buku Anda di browser. ISBN-13 atau ISBN-10, digit periksa diverifikasi, SVG untuk dicetak. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "buat barcode isbn",
+      "barcode buku",
+      "barcode isbn",
+      "isbn ke barcode",
+      "barcode isbn gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Ketik ISBN",
+        description: "Gunakan tanda hubung dari halaman hak cipta untuk mencetak baris ISBN di atas batang.",
+      },
+      {
+        title: "Periksa pratinjau",
+        description: "Digit periksa diverifikasi dan barcode diuji pindai.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai SVG untuk desainer sampul Anda, atau PNG.",
+      },
+    ],
+    features: [
+      {
+        title: "ISBN-10 dikonversi",
+        description: "ISBN-10 lama diubah menjadi ISBN-13 yang dibutuhkan barcode.",
+      },
+      {
+        title: "Baris ISBN di atas batang",
+        description: "Dengan tanda hubung, ISBN yang mudah dibaca dicetak di atas barcode.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Di mana saya bisa mendapatkan ISBN?",
+        answer:
+          "Dari lembaga ISBN di negara Anda, atau melalui penerbit atau platform self-publishing Anda. Alat ini menggambar barcode untuk ISBN yang sudah Anda miliki.",
+      },
+      {
+        question: "Bisakah saya menambahkan harga (barcode kecil di sebelah kanan)?",
+        answer:
+          "Belum. Add-on harga 5 digit yang dipakai di Amerika Serikat belum tersedia.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "data-matrix-generator": {
+    name: "Buat Data Matrix",
+    shortName: "Data Matrix",
+    tagline: "Buat kode Data Matrix untuk suku cadang, label, dan kemasan dari teks atau link. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Data Matrix adalah kode 2D persegi kecil yang memuat banyak informasi dalam ruang yang sangat sempit, itulah sebabnya kode ini dipakai pada komponen elektronik, kemasan obat, sampel laboratorium, dan label pengiriman. Ketik teks, nomor seri, atau link, dan kode langsung muncul, dengan ukuran sesuai lebar modul yang Anda pilih. Kamera ponsel dan pemindai industri bisa membacanya, dan setiap kode dibaca ulang sebelum Anda mengunduhnya sebagai PNG atau SVG. Semuanya berlangsung di browser Anda.",
+    seoTitle: "Buat Data Matrix Gratis – Kode 2D, PNG dan SVG",
+    seoDescription:
+      "Buat kode Data Matrix dari teks, nomor seri, atau link di browser. Sudah diuji pindai, PNG atau SVG, ukuran berapa pun. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "data matrix generator",
+      "buat data matrix",
+      "kode data matrix",
+      "barcode 2d generator",
+      "datamatrix online",
+    ],
+    howToSteps: [
+      {
+        title: "Ketik isinya",
+        description: "Teks, nomor seri, atau link.",
+      },
+      {
+        title: "Pilih ukuran",
+        description: "Atur lebar modul; Data Matrix tetap terbaca meski dicetak sangat kecil.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG.",
+      },
+    ],
+    features: [
+      {
+        title: "Muat di ruang sempit",
+        description: "Memuat jauh lebih banyak daripada barcode 1D dalam persegi kecil.",
+      },
+      {
+        title: "Bahasa apa pun",
+        description: "Teks dalam bahasa apa pun disimpan agar pemindai membacanya kembali dengan benar.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Data Matrix atau QR code?",
+        answer:
+          "Keduanya kode persegi. Data Matrix tetap terbaca di ukuran lebih kecil dan menjadi standar pada suku cadang dan obat; QR code adalah yang diharapkan kebanyakan ponsel untuk link.",
+      },
+      {
+        question: "Apakah ponsel bisa membaca Data Matrix?",
+        answer:
+          "Banyak aplikasi pemindai di ponsel bisa, begitu juga Google Lens. Aplikasi kamera bawaan di sebagian ponsel hanya membaca QR code.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "pdf417-generator": {
+    name: "Buat Barcode PDF417",
+    shortName: "PDF417",
+    tagline: "Buat barcode PDF417, kode bertumpuk yang dipakai di tiket, kartu identitas, dan dokumen pengiriman. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "PDF417 adalah barcode lebar dan bertumpuk yang Anda lihat di boarding pass, SIM, dan dokumen pengiriman. Barcode ini memuat ratusan karakter, dan pemindai tetap bisa membacanya meski sebagian rusak. Ketik atau tempel teks dan barcode akan muncul; pilih lebar modul agar sesuai tata letak Anda, lalu unduh sebagai PNG atau SVG setelah dibaca ulang dengan mesin pemindai. Semuanya berlangsung di browser Anda, jadi data tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Buat Barcode PDF417 Gratis – PNG dan SVG",
+    seoDescription:
+      "Buat barcode PDF417 di browser untuk tiket, kartu identitas, dan dokumen. Memuat teks panjang, sudah diuji pindai, PNG atau SVG. Gratis, tanpa unggah.",
+    keywords: [
+      "pdf417 generator",
+      "buat barcode pdf417",
+      "barcode pdf 417",
+      "barcode bertumpuk",
+      "barcode boarding pass",
+    ],
+    howToSteps: [
+      {
+        title: "Ketik atau tempel teks",
+        description: "PDF417 memuat teks panjang, seperti beberapa isian dari formulir.",
+      },
+      {
+        title: "Pilih ukuran",
+        description: "Atur lebar modul untuk tiket atau dokumen Anda.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG.",
+      },
+    ],
+    features: [
+      {
+        title: "Memuat teks panjang",
+        description: "Ratusan karakter dalam satu barcode.",
+      },
+      {
+        title: "Tahan kerusakan",
+        description: "Koreksi kesalahan bawaan menjaganya tetap terbaca saat tergores.",
+      },
+      {
+        title: "Sudah diuji pindai",
+        description: "Setiap barcode dibaca ulang dengan mesin pemindai, jadi Anda tahu barcode itu berfungsi sebelum dicetak.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya membuat barcode SIM?",
+        answer:
+          "PDF417 memang jenis barcode yang dipakai, tetapi dokumen identitas resmi mengikuti format yang ketat dan diterbitkan oleh pihak berwenang. Gunakan alat ini untuk tiket, label, dan dokumen Anda sendiri.",
+      },
+      {
+        question: "Pemindai apa yang bisa membaca PDF417?",
+        answer:
+          "Sebagian besar pemindai 2D dan banyak aplikasi pemindai di ponsel.",
+      },
+      {
+        question: "Seberapa besar sebaiknya dicetak?",
+        answer:
+          "Jaga agar batangnya tajam dan beri ruang: cetak pada 100% (jangan diregangkan), sisakan margin putih di sekeliling kode, dan gunakan batang gelap di atas background terang.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "barcode-scanner": {
+    name: "Scan Barcode",
+    shortName: "Scan Barcode",
+    tagline: "Baca EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR code, dan lainnya dari foto atau kamera. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Scan Barcode membaca barcode dari foto, screenshot, atau kamera Anda: kode produk (EAN dan UPC), ISBN pada buku, label Code 128 dan Code 39, karton ITF, GS1 DataBar, serta kode 2D seperti Data Matrix, PDF417, Aztec, dan QR code. Alat ini menemukan beberapa kode dalam satu gambar dan menampilkan masing-masing beserta jenisnya, siap disalin. Gambar kamera dan foto diproses di browser Anda dan tidak pernah diunggah.",
+    seoTitle: "Scan Barcode Online – dari Foto atau Kamera",
+    seoDescription:
+      "Scan barcode EAN, UPC, Code 128, Data Matrix, PDF417, dan QR code dari foto atau kamera di browser Anda. Gratis, privat, tidak ada yang diunggah.",
+    keywords: [
+      "scan barcode online",
+      "scan barcode dari gambar",
+      "barcode scanner",
+      "baca barcode dari foto",
+      "pembaca barcode",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto atau gunakan kamera",
+        description: "Letakkan gambar, tempel screenshot, atau arahkan kamera ke barcode.",
+      },
+      {
+        title: "Baca hasilnya",
+        description: "Setiap barcode yang ditemukan ditampilkan beserta jenisnya, seperti EAN-13 atau Data Matrix.",
+      },
+      {
+        title: "Salin",
+        description: "Salin angka atau teksnya, atau buka link di dalamnya.",
+      },
+    ],
+    features: [
+      {
+        title: "Puluhan jenis",
+        description: "Barcode 1D, kode 2D, dan QR code dalam satu pemindai.",
+      },
+      {
+        title: "Beberapa sekaligus",
+        description: "Menemukan lebih dari satu barcode dalam satu gambar.",
+      },
+      {
+        title: "Kamera atau foto",
+        description: "Pindai langsung dengan kamera atau dari gambar yang tersimpan.",
+      },
+      {
+        title: "Privat",
+        description: "Gambar dan frame kamera dibaca di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kenapa barcode saya tidak ditemukan?",
+        answer:
+          "Pastikan barcode fokus, cukup cahaya, dan mengisi sebagian besar gambar, tanpa pantulan cahaya yang kuat. Barcode yang sangat kecil atau buram tidak bisa dibaca.",
+      },
+      {
+        question: "Bisakah alat ini mencari info produknya?",
+        answer:
+          "Tidak. Alat ini membaca angka di dalam barcode; alat ini tidak mencari di database produk, jadi apa pun yang Anda pindai tidak dikirim ke mana pun.",
+      },
+      {
+        question: "Apakah kamera perlu izin?",
+        answer:
+          "Ya, browser Anda akan meminta izin sekali. Video tetap di perangkat Anda dan berhenti begitu kode ditemukan.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Gambar dibaca di browser Anda dan tetap di perangkat Anda.",
+      },
+    ],
+  },
+  "wifi-qr-code-generator": {
+    name: "Buat QR Code Wi-Fi",
+    shortName: "QR Code Wi-Fi",
+    tagline: "Buat QR code yang dipindai tamu untuk terhubung ke Wi-Fi Anda tanpa mengetik kata sandi. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "QR code Wi-Fi memungkinkan tamu, pelanggan, dan keluarga terhubung ke jaringan Anda cukup dengan mengarahkan kamera ponsel ke kode itu, tanpa perlu mengeja kata sandi yang panjang. Masukkan nama jaringan dan kata sandi, pilih jenis keamanan, dan kode langsung muncul. iPhone dan ponsel Android memahaminya lewat kamera bawaan. Cetak untuk ditempel di kulkas, meja kafe, atau ruang rapat. Kata sandi Anda dimasukkan ke dalam kode di browser Anda dan tidak pernah diunggah.",
+    seoTitle: "Buat QR Code Wi-Fi – Bagikan Wi-Fi Tanpa Kata Sandi",
+    seoDescription:
+      "Buat QR code Wi-Fi di browser agar tamu terhubung ke jaringan Anda cukup dengan memindai. Bisa dengan kamera iPhone dan Android. Gratis, tanpa unggah.",
+    keywords: [
+      "qr code wifi",
+      "buat qr code wifi",
+      "barcode wifi",
+      "qr code password wifi",
+      "cara membuat qr code wifi",
+    ],
+    howToSteps: [
+      {
+        title: "Masukkan detail jaringan",
+        description: "Nama jaringan (SSID), kata sandi, dan jenis keamanan.",
+      },
+      {
+        title: "Atur tampilannya",
+        description: "Pilih warna atau tambahkan logo jika mau.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG, lalu cetak atau tambahkan ke desain Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Bisa dengan kamera ponsel",
+        description: "Kamera iPhone dan Android menawarkan untuk bergabung ke jaringan saat melihat kode ini.",
+      },
+      {
+        title: "Diuji sebelum disimpan",
+        description: "QR code dibaca ulang begitu dibuat, jadi Anda tahu kode itu bisa dipindai.",
+      },
+      {
+        title: "Warna dan logo Anda",
+        description: "Pilih warna dan tambahkan logo di tengah; koreksi kesalahan dinaikkan agar kode tetap bisa dipindai.",
+      },
+      {
+        title: "Privat",
+        description: "Kode dibuat di browser Anda. Detail Anda tidak diunggah atau disimpan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah aman mencetak kata sandi Wi-Fi saya?",
+        answer:
+          "Siapa pun yang memindai kode bisa bergabung ke jaringan, sama seperti jika Anda memberi tahu kata sandinya. Gunakan jaringan tamu untuk tempat umum.",
+      },
+      {
+        question: "Jenis keamanan mana yang harus saya pilih?",
+        answer:
+          "WPA/WPA2/WPA3 untuk hampir semua router modern. WEP hanya untuk router yang sangat lama; Tidak ada untuk jaringan tanpa kata sandi.",
+      },
+      {
+        question: "Apakah QR code-nya bisa kedaluwarsa?",
+        answer:
+          "Tidak. Informasinya ada di dalam kode itu sendiri, bukan di server, jadi kode tetap berfungsi selama detailnya masih benar.",
+      },
+      {
+        question: "Apakah informasi saya disimpan?",
+        answer:
+          "Tidak. QR code dibuat di browser Anda dan apa pun yang Anda ketik tidak meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "whatsapp-qr-code-generator": {
+    name: "Buat QR Code WhatsApp",
+    shortName: "QR WhatsApp",
+    tagline: "Buat QR code yang membuka chat WhatsApp dengan nomor Anda, lengkap dengan pesan yang siap dikirim. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "QR code WhatsApp memungkinkan pelanggan memulai chat dengan Anda tanpa harus menyimpan nomor Anda terlebih dahulu. Masukkan nomor telepon Anda dengan kode negara dan, jika mau, pesan yang sudah terketik untuk mereka, misalnya “Halo, saya mau pesan meja”. Memindai kode akan membuka WhatsApp di chat tersebut. Pasang di etalase toko, menu, brosur, atau kartu nama Anda. Kode dibuat di browser Anda dan tidak ada yang diunggah.",
+    seoTitle: "Buat QR Code WhatsApp Gratis – QR Link Chat WA",
+    seoDescription:
+      "Buat QR code yang membuka chat WhatsApp dengan nomor Anda dan pesan siap kirim. Untuk toko, menu, dan kartu nama. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "qr code whatsapp",
+      "buat qr code whatsapp",
+      "barcode whatsapp",
+      "qr code link wa",
+      "qr code wa.me",
+    ],
+    howToSteps: [
+      {
+        title: "Masukkan nomor Anda",
+        description: "Dengan kode negara, misalnya +44 7700 900123.",
+      },
+      {
+        title: "Tambahkan pesan",
+        description: "Opsional: teks yang sudah terketik untuk orang yang memindainya.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG, lalu cetak atau tambahkan ke desain Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Tanpa menyimpan nomor",
+        description: "Orang bisa chat dengan Anda tanpa menambahkan Anda ke kontak terlebih dahulu.",
+      },
+      {
+        title: "Pesan siap pakai",
+        description: "Mulai percakapan dengan kata-kata Anda sendiri.",
+      },
+      {
+        title: "Diuji sebelum disimpan",
+        description: "QR code dibaca ulang begitu dibuat, jadi Anda tahu kode itu bisa dipindai.",
+      },
+      {
+        title: "Warna dan logo Anda",
+        description: "Pilih warna dan tambahkan logo di tengah; koreksi kesalahan dinaikkan agar kode tetap bisa dipindai.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah bisa dipakai dengan WhatsApp Business?",
+        answer:
+          "Ya. Kode ini membuka chat dengan akun WhatsApp mana pun yang memakai nomor tersebut.",
+      },
+      {
+        question: "Kenapa saya perlu kode negara?",
+        answer:
+          "Link WhatsApp memakai nomor internasional lengkap, jadi kode ini berfungsi dari negara mana pun.",
+      },
+      {
+        question: "Apakah QR code-nya bisa kedaluwarsa?",
+        answer:
+          "Tidak. Informasinya ada di dalam kode itu sendiri, bukan di server, jadi kode tetap berfungsi selama detailnya masih benar.",
+      },
+      {
+        question: "Apakah informasi saya disimpan?",
+        answer:
+          "Tidak. QR code dibuat di browser Anda dan apa pun yang Anda ketik tidak meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "vcard-qr-code-generator": {
+    name: "Buat QR Code vCard",
+    shortName: "QR Code vCard",
+    tagline: "Buat QR code yang menyimpan nama, telepon, email, dan situs web Anda ke kontak ponsel. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "QR code vCard mengubah kartu nama menjadi satu kali pindai: orang mengarahkan kamera ke kode itu, lalu ponsel mereka menawarkan untuk menyimpan Anda sebagai kontak, dengan nama, nomor telepon, email, perusahaan, dan situs web sudah terisi. Masukkan detail Anda, atur tampilan kode dengan warna atau logo Anda, lalu unduh untuk kartu nama, tanda tangan email, ID card, atau booth Anda. Detail dimasukkan ke dalam kode di browser Anda dan tidak disimpan di mana pun.",
+    seoTitle: "Buat QR Code vCard Gratis – QR Kartu Nama",
+    seoDescription:
+      "Buat QR code vCard yang menyimpan detail kontak Anda dalam sekali pindai. Untuk kartu nama dan ID card. Warna dan logo, gratis, tidak ada yang diunggah.",
+    keywords: [
+      "qr code vcard",
+      "qr code kartu nama",
+      "qr code kontak",
+      "buat qr code vcard",
+      "qr code untuk kartu nama",
+    ],
+    howToSteps: [
+      {
+        title: "Masukkan detail Anda",
+        description: "Nama, telepon, email, perusahaan, dan situs web.",
+      },
+      {
+        title: "Atur tampilannya",
+        description: "Pilih warna atau tambahkan logo Anda.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG, lalu cetak atau tambahkan ke desain Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Tersimpan dalam sekali pindai",
+        description: "Ponsel menawarkan untuk menambahkan kontak dengan semua kolom sudah terisi.",
+      },
+      {
+        title: "Diuji sebelum disimpan",
+        description: "QR code dibaca ulang begitu dibuat, jadi Anda tahu kode itu bisa dipindai.",
+      },
+      {
+        title: "Warna dan logo Anda",
+        description: "Pilih warna dan tambahkan logo di tengah; koreksi kesalahan dinaikkan agar kode tetap bisa dipindai.",
+      },
+      {
+        title: "Privat",
+        description: "Kode dibuat di browser Anda. Detail Anda tidak diunggah atau disimpan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah orang perlu aplikasi?",
+        answer:
+          "Tidak. Kamera bawaan iPhone dan sebagian besar ponsel Android mengenali QR code kontak.",
+      },
+      {
+        question: "Bisakah saya mengubah detail saya nanti?",
+        answer:
+          "Detailnya ada di dalam kode, jadi buat kode baru saat detail berubah.",
+      },
+      {
+        question: "Apakah QR code-nya bisa kedaluwarsa?",
+        answer:
+          "Tidak. Informasinya ada di dalam kode itu sendiri, bukan di server, jadi kode tetap berfungsi selama detailnya masih benar.",
+      },
+      {
+        question: "Apakah informasi saya disimpan?",
+        answer:
+          "Tidak. QR code dibuat di browser Anda dan apa pun yang Anda ketik tidak meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "payment-qr-code-generator": {
+    name: "Buat QR Code Pembayaran",
+    shortName: "QR Pembayaran",
+    tagline: "Buat QR code untuk pembayaran UPI di India atau transfer bank SEPA di Eropa. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "QR code pembayaran memungkinkan orang membayar Anda dengan memindai, bukan mengetik detail rekening. Pilih UPI, sistem di balik Google Pay, PhonePe, Paytm, dan BHIM di India, atau transfer SEPA, yaitu QR code EPC yang bisa dibaca banyak aplikasi bank di Eropa. Masukkan rekening Anda dan, jika mau, jumlah tetap dan catatan; detailnya diperiksa (format ID UPI, digit periksa IBAN) sebelum kode dibuat. Tidak ada yang diunggah, dan tidak ada uang yang melewati situs ini.",
+    seoTitle: "Buat QR Code Pembayaran – UPI dan SEPA, Gratis",
+    seoDescription:
+      "Buat QR code pembayaran UPI atau QR code transfer bank SEPA (EPC) di browser. Detail rekening diperiksa. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "buat qr code pembayaran",
+      "qr code upi",
+      "qr code sepa",
+      "qr code epc",
+      "qr code transfer bank",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih UPI atau SEPA",
+        description: "UPI untuk India; transfer SEPA untuk rekening bank euro di Eropa.",
+      },
+      {
+        title: "Masukkan rekening",
+        description: "ID UPI atau IBAN dan nama Anda, ditambah jumlah dan catatan opsional.",
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG atau SVG, lalu cetak atau tambahkan ke desain Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Detail rekening diperiksa",
+        description: "Format ID UPI dan digit periksa IBAN diperiksa.",
+      },
+      {
+        title: "Jumlah tetap opsional",
+        description: "Kosongkan agar pembayar mengetik jumlahnya sendiri.",
+      },
+      {
+        title: "Diuji sebelum disimpan",
+        description: "QR code dibaca ulang begitu dibuat, jadi Anda tahu kode itu bisa dipindai.",
+      },
+      {
+        title: "Privat",
+        description: "Kode dibuat di browser Anda. Detail Anda tidak diunggah atau disimpan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Aplikasi apa yang bisa membacanya?",
+        answer:
+          "Kode UPI terbuka di aplikasi UPI seperti Google Pay, PhonePe, Paytm, dan BHIM. Kode SEPA (EPC) dibaca oleh banyak aplikasi bank di Jerman, Austria, Belanda, Belgia, Finlandia, dan negara SEPA lainnya; tidak semua bank mendukungnya.",
+      },
+      {
+        question: "Apakah aman?",
+        answer:
+          "Kode ini hanya mengisi detail pembayaran; pembayar tetap mengonfirmasi pembayaran di aplikasinya sendiri. Periksa detailnya dengan teliti sebelum Anda mencetak kode.",
+      },
+      {
+        question: "Apakah QR code-nya bisa kedaluwarsa?",
+        answer:
+          "Tidak. Informasinya ada di dalam kode itu sendiri, bukan di server, jadi kode tetap berfungsi selama detailnya masih benar.",
+      },
+      {
+        question: "Apakah informasi saya disimpan?",
+        answer:
+          "Tidak. QR code dibuat di browser Anda dan apa pun yang Anda ketik tidak meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "bulk-qr-code-generator": {
+    name: "Buat QR Code Massal",
+    shortName: "QR Code Massal",
+    tagline: "Buat ratusan QR code sekaligus dari daftar atau CSV dan unduh semuanya dalam satu ZIP. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Buat QR Code Massal mengubah daftar menjadi QR code: link untuk setiap halaman produk, kode untuk setiap meja, label aset untuk seluruh gudang. Tempel satu link atau teks per baris, atau muat file CSV, dan jika mau, tulis nama file sebelum masing-masing agar file mudah dicocokkan. Pilih PNG atau SVG dan ukurannya, lalu unduh semuanya dalam satu ZIP. Hingga 1.000 kode dibuat di browser Anda; daftar Anda tidak pernah diunggah.",
+    seoTitle: "Buat QR Code Massal Gratis – dari CSV ke ZIP",
+    seoDescription:
+      "Buat hingga 1.000 QR code sekaligus dari daftar atau CSV di browser. Nama file sendiri, PNG atau SVG, satu ZIP. Gratis, tidak ada yang diunggah.",
+    keywords: [
+      "buat qr code massal",
+      "bulk qr code generator",
+      "qr code dari csv",
+      "buat banyak qr code sekaligus",
+      "generate qr code massal",
+    ],
+    howToSteps: [
+      {
+        title: "Tempel daftar Anda",
+        description: "Satu link atau teks per baris, atau muat file CSV atau teks.",
+      },
+      {
+        title: "Beri nama file",
+        description: "Jika mau, awali setiap baris dengan nama file dan koma.",
+      },
+      {
+        title: "Unduh ZIP",
+        description: "Pilih PNG atau SVG dan ukurannya, lalu simpan semua kode sekaligus.",
+      },
+    ],
+    features: [
+      {
+        title: "Hingga 1.000 kode",
+        description: "Buat satu batch penuh sekaligus.",
+      },
+      {
+        title: "Nama file Anda",
+        description: "Beri nama setiap file agar cocok dengan produk, meja, atau aset Anda.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "Gambar untuk dokumen, atau vektor untuk dicetak.",
+      },
+      {
+        title: "Privat",
+        description: "Daftar Anda diproses di browser dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara menambahkan nama file?",
+        answer:
+          "Centang opsinya dan tulis setiap baris sebagai nama, isi (misalnya: meja-4, https://example.com/menu). Tanpa nama, file diberi nomor.",
+      },
+      {
+        question: "Bisakah saya membuat kode Wi-Fi atau kontak secara massal?",
+        answer:
+          "Bisa, jika setiap baris memuat isi kode lengkap, seperti WIFI:T:WPA;S:Nama;P:katasandi;;. Untuk kode satuan, Buat QR Code mengisinya otomatis untuk Anda.",
+      },
+      {
+        question: "Apakah ada batasnya?",
+        answer:
+          "1.000 kode per batch. Buat beberapa batch untuk jumlah yang lebih banyak.",
+      },
+      {
+        question: "Apakah informasi saya disimpan?",
+        answer:
+          "Tidak. QR code dibuat di browser Anda dan apa pun yang Anda ketik tidak meninggalkan perangkat Anda.",
+      },
+    ],
+  },
+  "bulk-barcode-generator": {
+    name: "Buat Barcode Massal",
+    shortName: "Barcode Massal",
+    tagline: "Buat ratusan barcode sekaligus dari daftar atau CSV, sudah diperiksa dan disimpan dalam satu ZIP. Gratis, dan berjalan di perangkat Anda.",
+    intro:
+      "Buat Barcode Massal membuat barcode untuk setiap baris dalam daftar: kode produk untuk katalog, label Code 128 untuk gudang, ISBN untuk serial buku. Pilih jenis barcode, tempel nomornya atau muat CSV, dan setiap baris diperiksa saat Anda mengetik: panjang yang salah, huruf di kode khusus angka, dan digit periksa yang salah dicantumkan per baris, dan digit periksa yang belum ada ditambahkan. Unduh yang valid sebagai PNG atau SVG dalam satu ZIP. Hingga 1.000 barcode dibuat di browser Anda dan tidak ada yang diunggah.",
+    seoTitle: "Buat Barcode Massal – dari CSV ke ZIP, Gratis",
+    seoDescription:
+      "Buat hingga 1.000 barcode sekaligus dari daftar atau CSV: Code 128, EAN, UPC, ISBN, Data Matrix, dan lainnya. Diperiksa, ZIP PNG atau SVG. Gratis.",
+    keywords: [
+      "buat barcode massal",
+      "bulk barcode generator",
+      "barcode dari csv",
+      "buat banyak barcode sekaligus",
+      "generate barcode massal",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih jenis barcode",
+        description: "Code 128, EAN-13, UPC-A, ISBN, Data Matrix, dan lainnya.",
+      },
+      {
+        title: "Tempel daftar Anda",
+        description: "Satu angka atau teks per baris, bisa diawali nama file; masalah dicantumkan per baris.",
+      },
+      {
+        title: "Unduh ZIP",
+        description: "Pilih PNG atau SVG, lalu simpan semua barcode yang valid sekaligus.",
+      },
+    ],
+    features: [
+      {
+        title: "Diperiksa saat mengetik",
+        description: "Panjang yang salah, huruf di kode khusus angka, dan digit periksa yang salah ditunjukkan sebelum Anda mengunduh.",
+      },
+      {
+        title: "Digit periksa ditambahkan",
+        description: "Nomor EAN, UPC, ITF-14, dan ISBN mendapat digit periksa jika belum ditulis.",
+      },
+      {
+        title: "Nama file Anda",
+        description: "Beri nama setiap file sesuai produk atau barangnya.",
+      },
+      {
+        title: "PNG atau SVG",
+        description: "PNG untuk dokumen dan label, SVG untuk cetak dan software desain dalam ukuran berapa pun.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apa yang terjadi pada baris yang bermasalah?",
+        answer:
+          "Baris tersebut dicantumkan beserta alasannya dan tidak dimasukkan ke ZIP; sisanya tetap dibuat.",
+      },
+      {
+        question: "Apakah saya perlu mendaftarkan nomornya?",
+        answer:
+          "Untuk menjual produk di toko, ya: nomor EAN dan UPC berasal dari GS1, organisasi yang mengelola sistem ini. Untuk stok, rak, atau keperluan internal Anda sendiri, nomor apa pun bisa dipakai.",
+      },
+      {
+        question: "Apakah ada batasnya?",
+        answer:
+          "1.000 barcode per batch. Buat beberapa batch untuk jumlah yang lebih banyak.",
+      },
+      {
+        question: "Apakah ada yang diunggah?",
+        answer:
+          "Tidak. Kode dibuat di browser Anda, dan apa yang Anda ketik tetap di perangkat Anda.",
+      },
+    ],
+  },
 };

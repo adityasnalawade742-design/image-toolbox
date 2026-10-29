@@ -7,10 +7,25 @@ import { RangeField } from '../pdf/common';
 import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
 import { loadImageFile } from '../../../lib/canvas/loadImage';
 import { decodeWithJsQr } from '../../../lib/qr/decode';
-import { contactPayload, emailPayload, normaliseLink, phonePayload, wifiPayload, type QrKind, type WifiFields } from '../../../lib/qr/payload';
+import {
+  cleanIban,
+  contactPayload,
+  emailPayload,
+  locationPayload,
+  normaliseLink,
+  parseCoordinates,
+  phonePayload,
+  sepaPayload,
+  upiPayload,
+  validUpiId,
+  whatsappPayload,
+  wifiPayload,
+  type QrKind,
+  type WifiFields,
+} from '../../../lib/qr/payload';
 
 type Level = 'L' | 'M' | 'Q' | 'H';
-const KINDS: QrKind[] = ['link', 'text', 'wifi', 'email', 'phone', 'contact'];
+const KINDS: QrKind[] = ['link', 'text', 'wifi', 'email', 'phone', 'contact', 'whatsapp', 'location', 'payment'];
 // The logo covers the middle of the code; at this size the highest error correction still recovers it
 const LOGO_SHARE = 0.22;
 
@@ -21,15 +36,20 @@ const lum = (hex: string) => {
 
 const field = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink';
 
-export function QrGeneratorWorkspace() {
+export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: QrKind } = {}) {
   const t = useT();
-  const [kind, setKind] = useState<QrKind>('link');
+  const [kind, setKind] = useState<QrKind>(defaultKind);
   const [link, setLink] = useState('');
   const [text, setText] = useState('');
   const [wifi, setWifi] = useState<WifiFields>({ ssid: '', password: '', security: 'WPA', hidden: false });
   const [email, setEmail] = useState({ to: '', subject: '', body: '' });
   const [phone, setPhone] = useState('');
   const [contact, setContact] = useState({ name: '', phone: '', email: '', org: '', url: '' });
+  const [wa, setWa] = useState({ phone: '', message: '' });
+  const [place, setPlace] = useState('');
+  const [scheme, setScheme] = useState<'upi' | 'sepa'>('upi');
+  const [upi, setUpi] = useState({ vpa: '', name: '', amount: '', note: '' });
+  const [sepa, setSepa] = useState({ name: '', iban: '', bic: '', amount: '', reference: '' });
   const [size, setSize] = useState(1024);
   const [margin, setMargin] = useState(4);
   const [level, setLevel] = useState<Level>('M');
@@ -56,8 +76,19 @@ export function QrGeneratorWorkspace() {
         return phone.replace(/[^\d+]/g, '') ? phonePayload(phone) : '';
       case 'contact':
         return contact.name.trim() ? contactPayload(contact) : '';
+      case 'whatsapp':
+        return wa.phone.replace(/\D/g, '').length >= 7 ? whatsappPayload(wa.phone, wa.message) : '';
+      case 'location': {
+        const c = parseCoordinates(place);
+        return c ? locationPayload(c.lat, c.lng) || '' : '';
+      }
+      case 'payment':
+        // Money goes exactly where the code says, so nothing is made until the account is valid
+        if (scheme === 'upi') return validUpiId(upi.vpa) && upi.name.trim() ? upiPayload(upi) : '';
+        return sepaPayload(sepa) || '';
     }
   })();
+  const coords = kind === 'location' ? parseCoordinates(place) : null;
   // A logo hides part of the code: only the highest error correction reliably survives that
   const effectiveLevel: Level = logo ? 'H' : level;
   const contrast = (Math.max(lum(dark), lum(light)) + 0.05) / (Math.min(lum(dark), lum(light)) + 0.05);
@@ -203,6 +234,58 @@ export function QrGeneratorWorkspace() {
           {input('qr-cemail', t('ctl.qr.email'), contact.email, (v) => setContact({ ...contact, email: v }), { type: 'email', inputMode: 'email' })}
           {input('qr-org', t('ctl.qr.org'), contact.org, (v) => setContact({ ...contact, org: v }))}
           {input('qr-url', t('ctl.qr.website'), contact.url, (v) => setContact({ ...contact, url: v }), { type: 'url', inputMode: 'url' })}
+        </>
+      )}
+      {kind === 'whatsapp' && (
+        <>
+          {input('qr-wa-phone', t('ctl.qr.waPhone'), wa.phone, (v) => setWa({ ...wa, phone: v }), { type: 'tel', inputMode: 'tel', autoComplete: 'tel', placeholder: '+44 7700 900123' })}
+          <div className="space-y-1">
+            <label htmlFor="qr-wa-msg" className="block text-[14px] text-ink">
+              {t('ctl.qr.waMessage')}
+            </label>
+            <textarea id="qr-wa-msg" value={wa.message} onChange={(e) => setWa({ ...wa, message: e.target.value })} rows={3} className={`${field} py-2 resize-y`} />
+          </div>
+          <p className="text-[13px] text-graphite">{t('ctl.qr.waHint')}</p>
+        </>
+      )}
+      {kind === 'location' && (
+        <>
+          {input('qr-place', t('ctl.qr.coords'), place, setPlace, { placeholder: '48.8584, 2.2945', autoComplete: 'off' })}
+          <p className={`text-[13px] ${place.trim() && !coords ? 'text-accent-red' : 'text-graphite'}`} aria-live="polite">
+            {coords ? t('ctl.qr.coordsFound', { lat: coords.lat, lng: coords.lng }) : place.trim() ? t('ctl.qr.coordsBad') : t('ctl.qr.coordsHint')}
+          </p>
+        </>
+      )}
+      {kind === 'payment' && (
+        <>
+          <Segmented
+            label={t('ctl.qr.payScheme')}
+            value={scheme}
+            options={[
+              { value: 'upi', label: t('ctl.qr.payUpi') },
+              { value: 'sepa', label: t('ctl.qr.paySepa') },
+            ]}
+            onChange={setScheme}
+          />
+          {scheme === 'upi' ? (
+            <>
+              {input('qr-upi', t('ctl.qr.upiId'), upi.vpa, (v) => setUpi({ ...upi, vpa: v }), { placeholder: 'name@bank', autoComplete: 'off', autoCapitalize: 'none' })}
+              {upi.vpa.trim() && !validUpiId(upi.vpa) && <p className="text-[13px] text-accent-red">{t('ctl.qr.upiIdBad')}</p>}
+              {input('qr-upi-name', t('ctl.qr.payName'), upi.name, (v) => setUpi({ ...upi, name: v }))}
+              {input('qr-upi-amount', t('ctl.qr.amount'), upi.amount, (v) => setUpi({ ...upi, amount: v.replace(/[^\d.]/g, '') }), { inputMode: 'decimal', placeholder: '₹' })}
+              {input('qr-upi-note', t('ctl.qr.note'), upi.note, (v) => setUpi({ ...upi, note: v }))}
+            </>
+          ) : (
+            <>
+              {input('qr-sepa-name', t('ctl.qr.payName'), sepa.name, (v) => setSepa({ ...sepa, name: v }))}
+              {input('qr-iban', 'IBAN', sepa.iban, (v) => setSepa({ ...sepa, iban: v }), { autoComplete: 'off', autoCapitalize: 'characters', placeholder: 'DE89 3704 0044 0532 0130 00' })}
+              {sepa.iban.replace(/\s/g, '').length >= 15 && !cleanIban(sepa.iban) && <p className="text-[13px] text-accent-red">{t('ctl.qr.ibanBad')}</p>}
+              {input('qr-bic', t('ctl.qr.bic'), sepa.bic, (v) => setSepa({ ...sepa, bic: v }), { autoComplete: 'off', autoCapitalize: 'characters' })}
+              {input('qr-sepa-amount', t('ctl.qr.amount'), sepa.amount, (v) => setSepa({ ...sepa, amount: v.replace(/[^\d.]/g, '') }), { inputMode: 'decimal', placeholder: '€' })}
+              {input('qr-sepa-ref', t('ctl.qr.reference'), sepa.reference, (v) => setSepa({ ...sepa, reference: v }))}
+            </>
+          )}
+          <p className="text-[13px] text-graphite">{t('ctl.qr.payHint')}</p>
         </>
       )}
     </div>

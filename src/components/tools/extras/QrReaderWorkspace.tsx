@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Camera, CameraOff, Copy, Check, ExternalLink, Download, ScanLine } from 'lucide-react';
+import { Camera, CameraOff, Copy, Check, ExternalLink, Download, ScanLine, MapPin, AlertTriangle } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useImageIntake } from '../../shared/useImageIntake';
 import { useT } from '../../shared/I18nContext';
@@ -7,13 +7,28 @@ import { loadImageFile } from '../../../lib/canvas/loadImage';
 import { downloadBlob } from '../../../lib/canvas/engine';
 import { decodeQr } from '../../../lib/qr/decode';
 import { decodePayload, type Decoded } from '../../../lib/qr/payload';
+import { readCodes, warmUpReader } from '../../../lib/barcode/read';
+
+/** A code found in a picture: its text and, from the barcode scanner, its type */
+interface Found {
+  raw: string;
+  format?: string;
+  product?: boolean;
+}
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/gif,image/bmp,image/heic,image/heif,.heic,.heif';
 
-export function QrReaderWorkspace() {
+/** 'qr' reads QR codes (small and quick); 'barcode' reads every common 1D and 2D type with a larger decoder */
+export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } = {}) {
   const t = useT();
   const [preview, setPreview] = useState<string | null>(null);
-  const [results, setResults] = useState<string[] | null>(null);
+  const [results, setResults] = useState<Found[] | null>(null);
+  const barcodes = mode === 'barcode';
+  const scan = async (src: CanvasImageSource & { width: number; height: number }, fast = false): Promise<Found[]> =>
+    barcodes ? (await readCodes(src, { fast })).map((f) => ({ raw: f.text, format: f.format, product: f.product })) : (await decodeQr(src)).map((raw) => ({ raw }));
+  useEffect(() => {
+    if (barcodes) warmUpReader();
+  }, [barcodes]);
   const [scanning, setScanning] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +53,7 @@ export function QrReaderWorkspace() {
         if (prev) URL.revokeObjectURL(prev);
         return image.url;
       });
-      setResults(await decodeQr(image.img));
+      setResults(await scan(image.img));
     } catch {
       setError(t('ws.errDecode'));
     } finally {
@@ -77,7 +92,7 @@ export function QrReaderWorkspace() {
         frame.width = video.videoWidth;
         frame.height = video.videoHeight;
         frame.getContext('2d')!.drawImage(video, 0, 0);
-        const found = await decodeQr(frame);
+        const found = await scan(frame, true);
         if (found.length && !stopped) {
           setPreview((prev) => {
             if (prev) URL.revokeObjectURL(prev);
@@ -117,7 +132,7 @@ export function QrReaderWorkspace() {
           <img src={preview} alt="" className="block max-h-[50vh] max-w-full object-contain" />
         </div>
       ) : (
-        !results && <ProofDropZone onFiles={(files) => readFile(files[0])} accept={ACCEPT} title={t('ctl.qrread.dropTitle')} hint={t('ctl.qrread.dropHint')} />
+        !results && <ProofDropZone onFiles={(files) => readFile(files[0])} accept={ACCEPT} title={barcodes ? t('ctl.scan.dropTitle') : t('ctl.qrread.dropTitle')} hint={barcodes ? t('ctl.scan.dropHint') : t('ctl.qrread.dropHint')} />
       )}
       <div className="flex flex-wrap gap-2">
         <button type="button" onClick={startCamera} className="btn-rule">
@@ -155,17 +170,19 @@ export function QrReaderWorkspace() {
             {error}
           </p>
         )}
-        {results && results.length === 0 && <p className="p-3 rounded-md border border-ink bg-paper-bright text-[15px] text-ink">{t('ctl.qrread.none')}</p>}
-        {results?.map((raw, i) => <ResultCard key={i} raw={raw} />)}
+        {results && results.length === 0 && <p className="p-3 rounded-md border border-ink bg-paper-bright text-[15px] text-ink">{barcodes ? t('ctl.scan.none') : t('ctl.qrread.none')}</p>}
+        {results?.map((r, i) => <ResultCard key={i} found={r} />)}
       </div>
     </div>
   );
 }
 
-function ResultCard({ raw }: { raw: string }) {
+function ResultCard({ found }: { found: Found }) {
   const t = useT();
   const [copied, setCopied] = useState(false);
-  const d: Decoded = decodePayload(raw);
+  const raw = found.raw;
+  // A product barcode holds a number; anything else may hold a link, Wi-Fi details and so on
+  const d: Decoded = found.product ? { kind: 'text', text: raw } : decodePayload(raw);
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(d.kind === 'wifi' ? d.password || d.ssid : raw);
@@ -185,7 +202,9 @@ function ResultCard({ raw }: { raw: string }) {
 
   return (
     <section className="border border-ink bg-paper-bright rounded-xl">
-      <h2 className="slug px-4 py-2.5 border-b border-ink">{t(`ctl.qr.kind.${d.kind}`)}</h2>
+      <h2 className="slug px-4 py-2.5 border-b border-ink">
+        {found.format ? `${found.format}${d.kind !== 'text' ? ` · ${t(`ctl.qr.kind.${d.kind}`)}` : ''}` : t(`ctl.qr.kind.${d.kind}`)}
+      </h2>
       <div className="p-4 space-y-3 text-[15px]">
         {d.kind === 'link' && (
           <>
@@ -239,7 +258,37 @@ function ResultCard({ raw }: { raw: string }) {
             </button>
           </>
         )}
-        {d.kind === 'text' && <p className="whitespace-pre-wrap break-words text-ink select-all">{d.text}</p>}
+        {d.kind === 'location' && (
+          <>
+            <p className="font-semibold text-ink" data-measure>
+              {d.lat}, {d.lng}
+            </p>
+            <a href={`https://www.openstreetmap.org/?mlat=${d.lat}&mlon=${d.lng}#map=17/${d.lat}/${d.lng}`} target="_blank" rel="noopener noreferrer nofollow" className="btn-rule w-full">
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              <span>{t('ctl.qrread.openMap')}</span>
+            </a>
+          </>
+        )}
+        {d.kind === 'payment' && (
+          <>
+            <dl className="divide-y divide-pencil-soft">
+              {row(t('ctl.qr.payScheme'), d.scheme === 'upi' ? t('ctl.qr.payUpi') : t('ctl.qr.paySepa'))}
+              {row(t('ctl.qr.payName'), d.name)}
+              {row(d.scheme === 'upi' ? t('ctl.qr.upiId') : 'IBAN', d.account)}
+              {row(t('ctl.qr.amount'), d.amount)}
+              {row(t('ctl.qr.note'), d.note)}
+            </dl>
+            <p className="flex items-start gap-2 text-[13px] text-graphite">
+              <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />
+              {t('ctl.qrread.payCheck')}
+            </p>
+          </>
+        )}
+        {d.kind === 'text' && (
+          <p className={`whitespace-pre-wrap break-words text-ink select-all ${found.product ? 'text-[22px] font-semibold tracking-wide' : ''}`} data-measure={found.product ? true : undefined}>
+            {d.text}
+          </p>
+        )}
         <button type="button" onClick={copy} className="btn-rule w-full">
           {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
           <span>{copied ? t('ws.copiedShort') : d.kind === 'wifi' && d.password ? t('ctl.qrread.copyPassword') : t('ctl.qrread.copy')}</span>
