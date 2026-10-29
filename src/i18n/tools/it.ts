@@ -5026,6 +5026,627 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "Modifica PDF",
+    shortName: "Modifica PDF",
+    tagline: "Aggiungi testo, immagini, evidenziazioni, disegni, forme e link a un PDF, oppure coprine o oscurane delle parti. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Modifica PDF apre il documento pagina per pagina e ti permette di aggiungere ciò che serve: scrivi testo di qualsiasi dimensione e colore, inserisci un logo o un timbro, evidenzia o sottolinea righe, disegna a mano libera, aggiungi riquadri, cerchi e frecce e fai in modo che alcune aree aprano un sito web. Il Bianchetto copre ciò che non vuoi mostrare, mentre Oscura elimina definitivamente i dati privati dal file. Sposta, ridimensiona ed elimina ciò che hai aggiunto, annulla qualsiasi passaggio, poi scarica il PDF modificato. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Modificare PDF online – Editor PDF gratis, nessun upload",
+    seoDescription:
+      "Modifica PDF nel browser: aggiungi testo, immagini, evidenziazioni, disegni, forme e link, usa il bianchetto o oscura. Gratis, senza iscrizione, nessun upload.",
+    keywords: [
+      "modificare pdf",
+      "editor pdf",
+      "modificare pdf online gratis",
+      "scrivere su pdf",
+      "aggiungere testo a pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF. Le pagine si aprono nell’editor.",
+      },
+      {
+        title: "Aggiungi ciò che ti serve",
+        description:
+          "Scegli uno strumento, poi tocca o trascina sulla pagina. Sposta, ridimensiona o elimina tutto ciò che hai aggiunto.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia modificata. Il file originale non viene cambiato.",
+      },
+    ],
+    features: [
+      {
+        title: "Tutto in un solo editor",
+        description:
+          "Testo, immagini, evidenziazioni, disegni, forme, link, bianchetto e oscuramento sono nello stesso editor, così puoi combinarli.",
+      },
+      {
+        title: "Annulla e ripeti",
+        description: "Sposta, ridimensiona o elimina tutto ciò che hai aggiunto, e annulla un passaggio se cambi idea.",
+      },
+      {
+        title: "Oscuramento vero",
+        description: "Le aree oscurate vengono eliminate dal file, non solo coperte.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso modificare il testo già presente nel PDF?",
+        answer:
+          "Non direttamente. Coprilo con il Bianchetto e scrivi sopra il nuovo testo. Il vecchio testo resta comunque nel file, sotto, quindi per tutto ciò che è privato usa Oscura.",
+      },
+      {
+        question: "Il testo che aggiungo è ricercabile?",
+        answer:
+          "Sì. Il testo che scrivi è vero testo PDF, quindi si può selezionare, cercare e copiare, tranne nelle pagine che oscuri.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "Aggiungi testo al PDF",
+    shortName: "Aggiungi testo",
+    tagline: "Scrivi testo in qualsiasi punto di una pagina PDF, con il carattere, la dimensione e il colore che preferisci. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Aggiungi testo al PDF ti permette di scrivere su un documento senza stamparlo: compila un modulo che non ha campi, aggiungi una nota, una data o un indirizzo, oppure inserisci le didascalie di un disegno. Tocca il punto in cui deve iniziare il testo, scrivilo, poi scegli carattere, dimensione, colore e grassetto. Trascina il testo per rifinirne la posizione e aggiungi tutti i testi che ti servono, su tutte le pagine che vuoi. Il testo aggiunto è vero testo PDF, quindi resta nitido e si può cercare. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Aggiungere testo a PDF – Scrivi su qualsiasi PDF, gratis",
+    seoDescription:
+      "Scrivi testo in qualsiasi punto di un PDF nel browser. Scegli carattere, dimensione e colore, posizionalo con precisione e scarica. Gratis, nessun upload.",
+    keywords: [
+      "aggiungere testo a pdf",
+      "scrivere su pdf",
+      "inserire testo in pdf",
+      "scrivere su pdf online",
+      "compilare pdf senza campi",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Tocca dove va il testo",
+        description:
+          "Scrivilo nella casella, poi scegli carattere, dimensione e colore. Trascinalo nella posizione giusta.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con il testo aggiunto.",
+      },
+    ],
+    features: [
+      {
+        title: "Carattere, dimensione e colore a scelta",
+        description:
+          "Senza grazie, con grazie o monospaziato stile macchina da scrivere, da 6 a 72 pt, in grassetto o normale, di qualsiasi colore.",
+      },
+      {
+        title: "Molte lingue",
+        description: "Puoi scrivere in alfabeto latino, greco e cirillico, oltre che in giapponese e coreano.",
+      },
+      {
+        title: "Testo nitido e ricercabile",
+        description: "Il testo è vero testo PDF, non un’immagine del testo.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso compilare un modulo che non ha campi?",
+        answer: "Sì. Tocca ogni riga vuota e scrivi. Per i PDF con veri campi modulo, Compila modulo PDF è più rapido.",
+      },
+      {
+        question: "Posso modificare il testo già presente nel PDF?",
+        answer:
+          "Non direttamente. Coprilo con il Bianchetto e scrivi sopra il nuovo testo. Il vecchio testo resta comunque nel file, sotto, quindi per tutto ciò che è privato usa Oscura.",
+      },
+      {
+        question: "Posso scrivere su più pagine?",
+        answer: "Sì. Cambia pagina con le frecce sopra la pagina; ciò che aggiungi su ogni pagina viene conservato.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "Aggiungi immagine al PDF",
+    shortName: "Aggiungi immagine",
+    tagline: "Inserisci un logo, una foto o l’immagine di un timbro in qualsiasi pagina di un PDF e regolane le dimensioni. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Aggiungi immagine al PDF inserisce un’immagine in una pagina del documento: il logo aziendale su una lettera, un timbro o un sigillo su un certificato, una foto su un modulo o una firma scansionata. Tocca il punto in cui va messa l’immagine e sceglila dal tuo dispositivo. Trascinala nella posizione giusta e tira l’angolo per ridimensionarla; le proporzioni vengono mantenute. Funzionano le immagini JPG, PNG con trasparenza, WebP, GIF, TIFF e HEIC dell’iPhone. Tutto avviene nel tuo browser, quindi né il PDF né l’immagine vengono caricati.",
+    seoTitle: "Aggiungere immagine a PDF – Inserisci logo o foto, gratis",
+    seoDescription:
+      "Inserisci un logo, una foto o un timbro in un PDF nel browser. Trascina per posizionare, ridimensiona e scarica. JPG, PNG, HEIC. Gratis, nessun upload.",
+    keywords: [
+      "inserire immagine in pdf",
+      "aggiungere immagine a pdf",
+      "inserire logo in pdf",
+      "aggiungere foto a pdf",
+      "inserire timbro su pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF e vai alla pagina che ti interessa.",
+      },
+      {
+        title: "Aggiungi l’immagine",
+        description:
+          "Tocca la pagina nel punto in cui deve andare e scegli un’immagine. Trascinala e ridimensionala dall’angolo.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con l’immagine aggiunta.",
+      },
+    ],
+    features: [
+      {
+        title: "Trasparenza mantenuta",
+        description: "Un logo PNG con sfondo trasparente resta trasparente sulla pagina.",
+      },
+      {
+        title: "Qualsiasi formato di immagine",
+        description: "Puoi inserire immagini JPG, PNG, WebP, GIF, TIFF e HEIC dell’iPhone.",
+      },
+      {
+        title: "Proporzioni mantenute",
+        description: "Il ridimensionamento mantiene la forma dell’immagine, che non appare mai deformata.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "L’immagine sarà nitida?",
+        answer:
+          "Le immagini vengono inserite con una larghezza massima di 2.000 pixel, che restano nitidi nella stampa a dimensioni normali.",
+      },
+      {
+        question: "Posso mettere lo stesso logo su tutte le pagine?",
+        answer:
+          "Per ripetere un logo su ogni pagina, Filigrana PDF lo fa in un solo passaggio. Qui inserisci le immagini una alla volta.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "Evidenzia PDF",
+    shortName: "Evidenzia",
+    tagline: "Evidenzia, sottolinea o barra il testo di un PDF. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Evidenzia PDF ti permette di segnare un documento come faresti con una penna: trascina su una riga per evidenziarla in giallo, verde, rosa o blu, sottolinearla o barrarla. È comodo per studiare, rivedere un contratto o mostrare a qualcuno esattamente quale parte conta. I segni si possono spostare, ridimensionare ed eliminare, e puoi annullare qualsiasi passaggio. L’evidenziazione è trasparente, quindi il testo sottostante resta leggibile. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Evidenziare PDF online – Evidenziatore PDF gratis",
+    seoDescription:
+      "Evidenzia, sottolinea o barra il testo di un PDF nel browser. Quattro colori da evidenziatore, annulla, senza registrazione. Nessun upload.",
+    keywords: [
+      "evidenziare pdf",
+      "evidenziatore pdf",
+      "evidenziare testo pdf",
+      "sottolineare pdf",
+      "barrare testo pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Trascina sul testo",
+        description: "Scegli evidenziazione, sottolineatura o barrato e un colore, poi trascina sulla riga.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con i segni.",
+      },
+    ],
+    features: [
+      {
+        title: "Colori da evidenziatore",
+        description: "Giallo, verde, rosa e blu, oppure qualsiasi colore tu scelga.",
+      },
+      {
+        title: "Sottolineatura e barrato",
+        description: "Segna modifiche o correzioni oltre ai punti chiave.",
+      },
+      {
+        title: "Il testo resta leggibile",
+        description: "Le evidenziazioni sono trasparenti, come un vero evidenziatore.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "L’evidenziazione si aggancia al testo?",
+        answer:
+          "No. Copre l’area su cui trascini, quindi trascina lungo la riga che vuoi segnare. Poi puoi ridimensionarla dall’angolo.",
+      },
+      {
+        question: "Posso togliere un’evidenziazione?",
+        answer: "Sì. Selezionala e premi Elimina, oppure usa Annulla.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "Disegna su PDF",
+    shortName: "Disegna su PDF",
+    tagline: "Disegna a mano libera sulle pagine di un PDF con il dito, il mouse o un pennino. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Disegna su PDF trasforma la pagina in un foglio su cui scrivere. Cerchia un dettaglio su una planimetria, abbozza un’idea, spunta caselle, aggiungi note scritte a mano o le tue iniziali. Scegli un colore e uno spessore e disegna con il dito su telefono o tablet, con un pennino o con il mouse. Ogni tratto si può spostare o eliminare, e puoi annullare tutti i passaggi che vuoi. Il disegno viene salvato come linee nitide, non come un’immagine sfocata. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Disegnare su PDF – Annotazioni a mano libera, gratis",
+    seoDescription:
+      "Disegna sulle pagine di un PDF nel browser con il dito, il mouse o un pennino. Scegli colore e spessore, annulla e scarica. Gratis, nessun upload.",
+    keywords: [
+      "disegnare su pdf",
+      "scrivere a mano su pdf",
+      "annotare pdf",
+      "disegnare su pdf online",
+      "penna su pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Disegna sulla pagina",
+        description: "Scegli un colore e uno spessore, poi disegna con il dito, il pennino o il mouse.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con il tuo disegno.",
+      },
+    ],
+    features: [
+      {
+        title: "Dito, pennino o mouse",
+        description: "Il disegno segue il tocco, il pennino e il mouse.",
+      },
+      {
+        title: "Linee nitide",
+        description: "I tratti vengono salvati come linee vettoriali che restano nitide quando ingrandisci.",
+      },
+      {
+        title: "Annulla e ripeti",
+        description: "Sposta, ridimensiona o elimina tutto ciò che hai aggiunto, e annulla un passaggio se cambi idea.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso usarlo per firmare?",
+        answer:
+          "Sì, ma Firma PDF crea una firma più pulita, che puoi scrivere, disegnare o caricare come immagine e posizionare con precisione.",
+      },
+      {
+        question: "Posso cancellare solo una parte di un tratto?",
+        answer: "Ogni tratto è un unico elemento: selezionalo ed eliminalo, oppure annullalo, poi disegnalo di nuovo.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "Aggiungi forme al PDF",
+    shortName: "Aggiungi forme",
+    tagline: "Aggiungi rettangoli, cerchi, linee e frecce a un PDF per mettere in evidenza qualcosa. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Aggiungi forme al PDF ti aiuta a segnare planimetrie, screenshot, moduli e report: disegna un riquadro intorno a un totale, cerchia un errore o aggiungi una freccia che indica la parte a cui fare attenzione. Scegli rettangolo, ellisse, linea o freccia, un colore e uno spessore della linea, poi trascina sulla pagina. Rettangoli ed ellissi possono avere solo il contorno o essere pieni. Le forme si possono spostare, ridimensionare ed eliminare in qualsiasi momento. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Aggiungere forme a PDF – Riquadri, cerchi e frecce, gratis",
+    seoDescription:
+      "Aggiungi rettangoli, cerchi, linee e frecce a un PDF nel browser. Scegli colore e spessore, sposta e ridimensiona. Gratis, nessun upload.",
+    keywords: [
+      "aggiungere forme a pdf",
+      "disegnare frecce su pdf",
+      "disegnare rettangolo su pdf",
+      "cerchiare su pdf",
+      "annotare pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Disegna la forma",
+        description: "Scegli rettangolo, ellisse, linea o freccia e trascina sulla pagina.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con i segni.",
+      },
+    ],
+    features: [
+      {
+        title: "Quattro forme",
+        description: "Rettangoli, ellissi, linee e frecce.",
+      },
+      {
+        title: "Contorno o riempimento",
+        description: "Disegna solo il contorno di un riquadro o riempilo con un colore pieno.",
+      },
+      {
+        title: "Nitide a qualsiasi dimensione",
+        description: "Le forme vengono salvate come grafica vettoriale.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso modificare una forma dopo averla disegnata?",
+        answer: "Sì. Selezionala per spostarla, ridimensionarla dall’angolo o cambiarne colore e spessore.",
+      },
+      {
+        question: "Posso coprire del testo con una forma?",
+        answer:
+          "Un rettangolo pieno copre ciò che c’è sotto, ma il contenuto resta nel file. Usa Oscura per eliminare le informazioni private.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "Aggiungi link al PDF",
+    shortName: "Aggiungi link",
+    tagline: "Fai in modo che qualsiasi area di una pagina PDF apra un sito web o un’email. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Aggiungi link al PDF rende cliccabile il tuo documento: trasforma un indirizzo web stampato in una brochure in un link vero, collega un logo al tuo sito o fai in modo che un indirizzo email apra un nuovo messaggio. Trascina sul testo o sull’area da rendere cliccabile e scrivi l’indirizzo. I link funzionano in qualsiasi lettore PDF, su computer e telefoni. La pagina resta identica; il contorno tratteggiato che vedi durante la modifica non viene salvato. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Aggiungere link a PDF – Rendi cliccabile il testo, gratis",
+    seoDescription:
+      "Aggiungi link cliccabili a siti web ed email in qualsiasi area di un PDF, nel browser. Funziona in ogni lettore PDF. Gratis, privato, nessun upload.",
+    keywords: [
+      "inserire link in pdf",
+      "aggiungere link a pdf",
+      "inserire collegamento ipertestuale pdf",
+      "link cliccabile pdf",
+      "hyperlink pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Trascina sull’area cliccabile",
+        description: "Poi scrivi l’indirizzo web, come example.com, oppure un indirizzo email.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia con i link funzionanti.",
+      },
+    ],
+    features: [
+      {
+        title: "Link web ed email",
+        description: "I link aprono un sito web o una nuova email all’indirizzo che inserisci.",
+      },
+      {
+        title: "Invisibili sulla pagina",
+        description: "La pagina resta identica; diventa solo cliccabile l’area.",
+      },
+      {
+        title: "Funziona in ogni lettore",
+        description: "I link PDF standard si aprono in Acrobat, nei browser, in Anteprima e nelle app per telefono.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Devo scrivere https://?",
+        answer: "No. Scrivi example.com e https:// viene aggiunto. Un indirizzo email diventa un link mailto.",
+      },
+      {
+        question: "Un link può portare a un’altra pagina del PDF?",
+        answer: "Non ancora. Qui i link aprono siti web e indirizzi email.",
+      },
+      {
+        question: "Perché il link non funziona nel mio visualizzatore?",
+        answer:
+          "Alcuni visualizzatori di immagini e le anteprime delle app di messaggistica non aprono i link dei PDF. Apri il file in un lettore PDF o in un browser.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "Bianchetto PDF",
+    shortName: "Bianchetto",
+    tagline: "Copri parti di una pagina PDF con riquadri bianchi e, se vuoi, scrivici sopra. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Bianchetto PDF funziona come un correttore a nastro: trascina su una data sbagliata, un prezzo vecchio o una riga che non vuoi mostrare, e un riquadro bianco la copre. Aggiungi sopra un nuovo testo con lo strumento Testo per fare una correzione. Se la pagina non è bianca, scegli un colore uguale al suo. Il bianchetto copre soltanto il contenuto; il testo originale resta nel file e si può ancora copiare o trovare con una ricerca. Per eliminare definitivamente le informazioni private, usa Oscura PDF. Tutto avviene nel tuo browser, quindi il documento non lascia mai il tuo dispositivo.",
+    seoTitle: "Bianchetto PDF – Correttore per PDF online, gratis",
+    seoDescription:
+      "Copri parti di un PDF con riquadri bianchi e scrivi sopra le correzioni, nel browser. Gratis, senza registrazione, nessun upload.",
+    keywords: [
+      "bianchetto pdf",
+      "cancellare testo pdf",
+      "coprire testo pdf",
+      "correttore pdf",
+      "sbianchettare pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Trascina su ciò che vuoi coprire",
+        description: "Un riquadro bianco lo copre. Se serve, aggiungi sopra un nuovo testo con lo strumento Testo.",
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Salva la copia corretta.",
+      },
+    ],
+    features: [
+      {
+        title: "Scrivici sopra",
+        description: "Usa il bianchetto insieme al testo per correggere una data, un nome o un numero.",
+      },
+      {
+        title: "Uguale allo sfondo",
+        description: "Scegli qualsiasi colore per le pagine che non sono bianche.",
+      },
+      {
+        title: "Sposta e ridimensiona",
+        description: "Regola ogni riquadro finché non copre esattamente ciò che vuoi.",
+      },
+      {
+        title: "Modifica privata",
+        description: "Il PDF viene modificato sul tuo dispositivo e non viene mai caricato.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Il testo coperto sparisce davvero?",
+        answer:
+          "No. Il bianchetto lo nasconde, ma resta nel file, dove si può copiare o trovare con una ricerca. Usa Oscura PDF per eliminarlo.",
+      },
+      {
+        question: "Posso cambiare una parola nel PDF?",
+        answer: "Copri la parola con il bianchetto, poi scrivi sopra la nuova parola con lo strumento Testo.",
+      },
+      {
+        question: "Funziona sui telefoni?",
+        answer: "Sì. Tocca e trascina con il dito; per disegnare puoi usare il dito o un pennino.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "Oscura PDF",
+    shortName: "Oscura PDF",
+    tagline: "Copri di nero le informazioni private di un PDF ed eliminale definitivamente dal file. Gratis e funziona sul tuo dispositivo.",
+    intro:
+      "Oscura PDF nasconde nomi, numeri di conto, indirizzi e altri dati privati prima che tu condivida un documento, e li elimina davvero. Trascina dei riquadri neri su ciò che deve sparire. Quando scarichi, ogni pagina con un oscuramento viene trasformata in un’immagine con i riquadri impressi, quindi il testo sottostante sparisce dal file: non si può copiare, cercare né recuperare togliendo il riquadro. Anche i valori dei moduli e i commenti di quelle pagine vengono eliminati. Le pagine senza oscuramenti restano come erano. Tutto avviene nel tuo browser, quindi il documento non viene mai caricato.",
+    seoTitle: "Oscura PDF – Elimina i dati privati per sempre, gratis",
+    seoDescription:
+      "Oscura ed elimina definitivamente le informazioni private da un PDF, nel browser. Un vero oscuramento, non una semplice copertura. Gratis, nessun upload.",
+    keywords: [
+      "oscurare pdf",
+      "oscurare testo pdf",
+      "anonimizzare pdf",
+      "censurare pdf",
+      "rimuovere dati sensibili da pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Apri il PDF",
+        description: "Trascina o scegli un PDF.",
+      },
+      {
+        title: "Trascina sulle informazioni private",
+        description: "Copri con un riquadro nero ogni nome, numero o riga da eliminare.",
+      },
+      {
+        title: "Scarica il PDF oscurato",
+        description: "Controlla il risultato, poi condividi la copia oscurata, non l’originale.",
+      },
+    ],
+    features: [
+      {
+        title: "Eliminato davvero",
+        description: "Il testo coperto viene cancellato dal file, non nascosto sotto un riquadro.",
+      },
+      {
+        title: "Anche moduli e commenti",
+        description: "Anche i campi compilati e i commenti delle pagine oscurate vengono eliminati.",
+      },
+      {
+        title: "Le altre pagine restano intatte",
+        description: "Solo le pagine con oscuramenti vengono trasformate in immagini.",
+      },
+      {
+        title: "Nessun upload",
+        description: "I documenti privati vengono oscurati sul tuo dispositivo; nessun altro li vede.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Perché non riesco più a selezionare il testo nella pagina oscurata?",
+        answer:
+          "Per eliminare definitivamente il testo nascosto, l’intera pagina viene salvata come immagine. Il testo delle altre pagine resta selezionabile.",
+      },
+      {
+        question: "Un rettangolo nero in un normale editor PDF è la stessa cosa?",
+        answer:
+          "No. Un semplice riquadro copre soltanto il testo, che si può ancora copiare o trovare con una ricerca. Questo strumento lo elimina.",
+      },
+      {
+        question: "Viene eliminato anche altro?",
+        answer:
+          "Nelle pagine oscurate vengono eliminati anche campi modulo, commenti e link, e i tag di accessibilità del documento vengono rimossi perché possono ripetere il testo della pagina. Titolo e autore vengono mantenuti; per cancellarli usa Rimuovi metadati PDF.",
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il PDF viene aperto e salvato nel tuo browser, quindi resta sul tuo dispositivo.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Generatore di fototessere",
     shortName: "Fototessera",

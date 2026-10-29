@@ -8,6 +8,7 @@ import { newToolStrings } from './en/new-tools';
 import { pdfStrings } from './en/pdf';
 import { formStrings } from './en/forms';
 import { extraStrings } from './en/extras';
+import { pdfEditStrings } from './en/pdf-edit';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -91,6 +92,7 @@ export const en = {
   ...pdfStrings,
   ...formStrings,
   ...extraStrings,
+  ...pdfEditStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

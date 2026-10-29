@@ -5028,6 +5028,631 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "Edit PDF",
+    shortName: "Edit PDF",
+    tagline: "Tambahkan teks, gambar, sorotan, gambar bebas, bentuk, dan link ke PDF, atau tutupi dan sensor sebagian isinya. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Edit PDF membuka dokumen Anda halaman demi halaman dan memungkinkan Anda menambahkan isinya: ketik teks dengan ukuran dan warna apa pun, letakkan logo atau stempel, sorot atau garis bawahi baris, buat gambar bebas, tambahkan kotak, lingkaran, dan panah, serta jadikan area tertentu membuka situs web. Kotak Putih menutupi bagian yang tidak ingin Anda tampilkan, dan Sensor menghapus data pribadi dari file secara permanen. Pindahkan, ubah ukuran, dan hapus apa yang Anda tambahkan, urungkan langkah mana pun, lalu unduh PDF yang sudah diedit. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Edit PDF Online – Editor PDF Gratis, Tanpa Unggah",
+    seoDescription:
+      "Edit PDF di browser: tambahkan teks, gambar, sorotan, gambar bebas, bentuk, dan link, tutupi atau sensor. Gratis, tanpa daftar, tidak ada yang diunggah.",
+    keywords: [
+      "edit pdf",
+      "edit pdf online gratis",
+      "cara edit pdf",
+      "editor pdf",
+      "menambahkan tulisan di pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF. Halamannya terbuka di editor.",
+      },
+      {
+        title: "Tambahkan yang Anda perlukan",
+        description:
+          "Pilih alat, lalu ketuk atau seret di halaman. Pindahkan, ubah ukuran, atau hapus apa pun yang Anda tambahkan.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan yang sudah diedit. File asli Anda tidak diubah.",
+      },
+    ],
+    features: [
+      {
+        title: "Semua dalam satu editor",
+        description:
+          "Teks, gambar, sorotan, gambar bebas, bentuk, link, Kotak Putih, dan Sensor ada di editor yang sama, jadi Anda bisa menggabungkannya.",
+      },
+      {
+        title: "Urungkan dan ulangi",
+        description:
+          "Pindahkan, ubah ukuran, atau hapus apa pun yang Anda tambahkan, dan urungkan langkah jika Anda berubah pikiran.",
+      },
+      {
+        title: "Sensor sungguhan",
+        description: "Area yang disensor dihapus dari file, bukan sekadar ditutupi.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mengubah teks yang sudah ada di PDF?",
+        answer:
+          "Tidak secara langsung. Tutupi teks itu dengan Kotak Putih, lalu ketik teks baru di atasnya. Teks lama tetap ada di dalam file di bawahnya, jadi gunakan Sensor untuk apa pun yang bersifat pribadi.",
+      },
+      {
+        question: "Apakah teks yang saya tambahkan bisa dicari?",
+        answer:
+          "Ya. Teks yang Anda ketik adalah teks PDF asli, jadi bisa dipilih, dicari, dan disalin, kecuali di halaman yang Anda sensor.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "Tambah Teks ke PDF",
+    shortName: "Tambah Teks",
+    tagline: "Ketik teks di mana saja pada halaman PDF, dengan font, ukuran, dan warna pilihan Anda. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Tambah Teks ke PDF memungkinkan Anda menulis di dokumen tanpa mencetaknya: isi formulir yang tidak punya kolom, tambahkan catatan, tanggal, atau alamat, atau beri label pada gambar. Ketuk tempat teks akan dimulai, ketik teksnya, lalu pilih font, ukuran, warna, dan huruf tebal. Seret teks untuk merapikan posisinya, dan tambahkan teks sebanyak yang Anda perlukan di halaman mana pun. Teks yang Anda tambahkan adalah teks PDF asli, jadi tetap tajam dan bisa dicari. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Tambah Teks ke PDF – Gratis, Ketik di PDF Mana Pun",
+    seoDescription:
+      "Ketik teks di mana saja pada PDF di browser Anda. Pilih font, ukuran, dan warna, letakkan dengan tepat, lalu unduh. Gratis dan privat, tanpa unggah file.",
+    keywords: [
+      "menulis di pdf",
+      "tambah teks di pdf",
+      "cara mengetik di pdf",
+      "menambahkan tulisan di pdf",
+      "isi pdf online",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Ketuk tempat teks akan diletakkan",
+        description: "Ketik di kotak, lalu pilih font, ukuran, dan warna. Seret teks ke posisinya.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan dengan teks yang sudah ditambahkan.",
+      },
+    ],
+    features: [
+      {
+        title: "Font, ukuran, dan warna pilihan Anda",
+        description:
+          "Sans-serif, serif, atau monospace bergaya mesin ketik, dari 6 sampai 72 pt, tebal atau biasa, dengan warna apa pun.",
+      },
+      {
+        title: "Banyak bahasa",
+        description: "Teks Latin, Yunani, Sirilik, Jepang, dan Korea semuanya bisa ditulis.",
+      },
+      {
+        title: "Teks tajam dan bisa dicari",
+        description: "Teksnya adalah teks PDF asli, bukan gambar teks.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mengisi formulir yang tidak punya kolom?",
+        answer:
+          "Bisa. Ketuk setiap baris kosong lalu ketik. Untuk PDF yang punya kolom formulir sungguhan, Isi Formulir PDF lebih cepat.",
+      },
+      {
+        question: "Bisakah saya mengubah teks yang sudah ada di PDF?",
+        answer:
+          "Tidak secara langsung. Tutupi teks itu dengan Kotak Putih, lalu ketik teks baru di atasnya. Teks lama tetap ada di dalam file di bawahnya, jadi gunakan Sensor untuk apa pun yang bersifat pribadi.",
+      },
+      {
+        question: "Bisakah saya menulis di beberapa halaman?",
+        answer:
+          "Bisa. Pindah halaman dengan tombol panah di atas halaman; tambahan Anda di setiap halaman tetap tersimpan.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "Tambah Gambar ke PDF",
+    shortName: "Tambah Gambar",
+    tagline: "Letakkan logo, foto, atau gambar stempel di halaman mana pun dalam PDF dan atur ukurannya. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Tambah Gambar ke PDF menempatkan gambar di halaman dokumen Anda: logo perusahaan di surat, stempel atau cap di sertifikat, foto di formulir, atau tanda tangan hasil scan. Ketuk tempat gambar akan diletakkan dan pilih gambar dari perangkat Anda. Seret gambar ke posisinya dan tarik sudutnya untuk mengubah ukuran; proporsinya tetap terjaga. Gambar JPG, PNG transparan, WebP, GIF, TIFF, dan HEIC dari iPhone semuanya bisa dipakai. Semuanya terjadi di browser Anda, jadi PDF maupun gambar tidak diunggah.",
+    seoTitle: "Tambah Gambar ke PDF – Sisipkan Logo atau Foto, Gratis",
+    seoDescription:
+      "Sisipkan logo, foto, atau stempel ke PDF di browser Anda. Seret untuk menempatkan, ubah ukuran, lalu unduh. JPG, PNG, HEIC. Gratis, tanpa unggah file.",
+    keywords: [
+      "tambah gambar ke pdf",
+      "menyisipkan gambar di pdf",
+      "tambah logo di pdf",
+      "cara memasukkan foto ke pdf",
+      "tempel stempel di pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF, lalu buka halaman yang Anda inginkan.",
+      },
+      {
+        title: "Tambahkan gambar",
+        description:
+          "Ketuk halaman di tempat gambar akan diletakkan, lalu pilih gambar. Seret dan ubah ukurannya dari sudut.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan dengan gambar yang sudah ditambahkan.",
+      },
+    ],
+    features: [
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Logo PNG dengan background transparan tetap transparan di halaman.",
+      },
+      {
+        title: "Format gambar apa pun",
+        description: "Gambar JPG, PNG, WebP, GIF, TIFF, dan HEIC dari iPhone bisa ditempatkan.",
+      },
+      {
+        title: "Proporsi tetap terjaga",
+        description: "Saat diubah ukurannya, bentuk gambar tetap sama, jadi tidak pernah terlihat melar.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah gambarnya akan terlihat tajam?",
+        answer:
+          "Gambar ditempatkan dengan lebar hingga 2.000 piksel, yang tetap tajam saat dicetak dengan ukuran normal.",
+      },
+      {
+        question: "Bisakah saya memasang logo yang sama di setiap halaman?",
+        answer:
+          "Untuk mengulang logo di setiap halaman, Watermark PDF bisa melakukannya dalam satu langkah. Di sini Anda menempatkan gambar satu per satu.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "Sorot PDF",
+    shortName: "Sorot",
+    tagline: "Sorot, garis bawahi, atau coret teks di PDF. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Sorot PDF memungkinkan Anda menandai dokumen seperti dengan pena: seret di atas baris untuk menyorotnya dengan warna kuning, hijau, merah muda, atau biru, menggarisbawahinya, atau mencoretnya. Alat ini berguna untuk belajar, memeriksa kontrak, atau menunjukkan kepada orang lain bagian mana yang penting. Tanda bisa dipindahkan, diubah ukurannya, dan dihapus, dan Anda bisa mengurungkan langkah mana pun. Sorotan bersifat tembus pandang, jadi teks di bawahnya tetap terbaca. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Sorot PDF Online – Stabilo PDF Gratis",
+    seoDescription:
+      "Sorot, garis bawahi, atau coret teks di PDF lewat browser Anda. Empat warna stabilo, bisa diurungkan, tanpa daftar. Tidak ada yang diunggah.",
+    keywords: [
+      "highlight pdf",
+      "stabilo pdf",
+      "cara highlight pdf",
+      "menandai teks di pdf",
+      "garis bawah pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Seret di atas teks",
+        description: "Pilih sorotan, garis bawah, atau coret beserta warnanya, lalu seret di atas baris.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan yang sudah ditandai.",
+      },
+    ],
+    features: [
+      {
+        title: "Warna stabilo",
+        description: "Kuning, hijau, merah muda, dan biru, atau warna apa pun pilihan Anda.",
+      },
+      {
+        title: "Garis bawah dan coret",
+        description: "Tandai perubahan atau koreksi, juga poin-poin penting.",
+      },
+      {
+        title: "Teks tetap terbaca",
+        description: "Sorotan tembus pandang, seperti stabilo sungguhan.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah sorotan otomatis menempel pada teks?",
+        answer:
+          "Tidak. Sorotan menutupi area yang Anda seret, jadi seret di sepanjang baris yang ingin ditandai. Setelah itu Anda bisa mengubah ukurannya dari sudut.",
+      },
+      {
+        question: "Bisakah saya menghapus sorotan?",
+        answer: "Bisa. Pilih sorotan lalu tekan Hapus, atau gunakan Urungkan.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "Menggambar di PDF",
+    shortName: "Menggambar di PDF",
+    tagline: "Gambar bebas di halaman PDF dengan jari, mouse, atau stylus. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Menggambar di PDF mengubah halaman menjadi lembaran yang bisa Anda tulisi. Lingkari detail pada denah, buat sketsa ide, centang kotak, tambahkan catatan tulisan tangan atau paraf. Pilih warna dan ketebalan, lalu menggambar dengan jari di ponsel atau tablet, dengan stylus, atau dengan mouse. Setiap goresan bisa dipindahkan atau dihapus, dan Anda bisa mengurungkan langkah sebanyak yang diperlukan. Gambar disimpan sebagai garis yang tajam, bukan gambar yang buram. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Menggambar di PDF – Coretan Tangan Bebas, Gratis",
+    seoDescription:
+      "Menggambar di halaman PDF lewat browser dengan jari, mouse, atau stylus. Pilih warna dan ketebalan, urungkan, lalu unduh. Gratis, tanpa unggah file.",
+    keywords: [
+      "menggambar di pdf",
+      "coret pdf",
+      "tulis tangan di pdf",
+      "corat-coret pdf online",
+      "anotasi pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Menggambar di halaman",
+        description: "Pilih warna dan ketebalan, lalu menggambar dengan jari, stylus, atau mouse.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan dengan gambar Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Jari, stylus, atau mouse",
+        description: "Menggambar bisa dengan sentuhan, stylus, maupun mouse.",
+      },
+      {
+        title: "Garis tajam",
+        description: "Goresan disimpan sebagai garis vektor yang tetap tajam saat diperbesar.",
+      },
+      {
+        title: "Urungkan dan ulangi",
+        description:
+          "Pindahkan, ubah ukuran, atau hapus apa pun yang Anda tambahkan, dan urungkan langkah jika Anda berubah pikiran.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya menandatangani dengan ini?",
+        answer:
+          "Bisa, tetapi Tanda Tangani PDF membuat tanda tangan yang lebih rapi, yang bisa Anda ketik, gambar, atau unggah lalu tempatkan dengan tepat.",
+      },
+      {
+        question: "Bisakah saya menghapus sebagian goresan?",
+        answer: "Setiap goresan adalah satu kesatuan: pilih lalu hapus, atau urungkan, kemudian gambar lagi.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "Tambah Bentuk ke PDF",
+    shortName: "Tambah Bentuk",
+    tagline: "Tambahkan persegi panjang, lingkaran, garis, dan panah ke PDF untuk menunjukkan sesuatu. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Tambah Bentuk ke PDF membantu Anda menandai denah, screenshot, formulir, dan laporan: buat kotak di sekitar angka total, lingkari kesalahan, atau tambahkan panah yang menunjuk bagian yang perlu diperhatikan. Pilih persegi panjang, elips, garis, atau panah, warna, dan ketebalan garis, lalu seret di halaman. Persegi panjang dan elips bisa berupa garis tepi saja atau diisi penuh. Bentuk bisa dipindahkan, diubah ukurannya, dan dihapus kapan saja. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Tambah Bentuk ke PDF – Kotak, Lingkaran, Panah, Gratis",
+    seoDescription:
+      "Tambahkan persegi panjang, lingkaran, garis, dan panah ke PDF di browser Anda. Pilih warna dan ketebalan, pindahkan dan ubah ukuran. Gratis, tanpa unggah.",
+    keywords: [
+      "tambah bentuk di pdf",
+      "membuat panah di pdf",
+      "membuat kotak di pdf",
+      "lingkari teks di pdf",
+      "markup pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Gambar bentuknya",
+        description: "Pilih persegi panjang, elips, garis, atau panah, lalu seret di halaman.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan yang sudah ditandai.",
+      },
+    ],
+    features: [
+      {
+        title: "Empat bentuk",
+        description: "Persegi panjang, elips, garis, dan panah.",
+      },
+      {
+        title: "Garis tepi atau isi penuh",
+        description: "Buat garis tepi kotak atau isi dengan warna solid.",
+      },
+      {
+        title: "Tajam di ukuran apa pun",
+        description: "Bentuk disimpan sebagai grafik vektor.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mengubah bentuk setelah menggambarnya?",
+        answer:
+          "Bisa. Pilih bentuk untuk memindahkannya, mengubah ukurannya dari sudut, atau mengganti warna dan ketebalannya.",
+      },
+      {
+        question: "Bisakah saya menutupi teks dengan bentuk?",
+        answer:
+          "Persegi panjang yang diisi penuh menutupi apa yang ada di bawahnya, tetapi kontennya tetap ada di dalam file. Gunakan Sensor untuk menghapus informasi pribadi.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "Tambah Link ke PDF",
+    shortName: "Tambah Link",
+    tagline: "Jadikan area mana pun di halaman PDF bisa membuka situs web atau email. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Tambah Link ke PDF membuat dokumen Anda bisa diklik: ubah alamat web yang tercetak di brosur menjadi link sungguhan, tautkan logo ke situs web Anda, atau buat alamat email membuka pesan baru. Seret di atas teks atau area yang harus bisa diklik, lalu ketik alamatnya. Link berfungsi di semua pembaca PDF, di komputer maupun HP. Tampilan halaman tetap sama; garis putus-putus yang Anda lihat saat mengedit tidak disimpan. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Tambah Link ke PDF – Buat Teks PDF Bisa Diklik, Gratis",
+    seoDescription:
+      "Tambahkan link web dan email yang bisa diklik ke area mana pun di PDF, langsung di browser. Berfungsi di semua pembaca PDF. Gratis, privat, tanpa unggah.",
+    keywords: [
+      "tambah link di pdf",
+      "cara membuat link di pdf",
+      "hyperlink pdf",
+      "menyisipkan link di pdf",
+      "link pdf bisa diklik",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Seret di atas area yang bisa diklik",
+        description: "Lalu ketik alamat web, misalnya example.com, atau alamat email.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan dengan link yang berfungsi.",
+      },
+    ],
+    features: [
+      {
+        title: "Link web dan email",
+        description: "Link membuka situs web, atau email baru ke alamat yang Anda masukkan.",
+      },
+      {
+        title: "Tidak terlihat di halaman",
+        description: "Halaman tampak tidak berubah; hanya areanya yang menjadi bisa diklik.",
+      },
+      {
+        title: "Berfungsi di semua pembaca",
+        description: "Link PDF standar terbuka di Acrobat, browser, Preview, dan aplikasi di HP.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah saya perlu mengetik https://?",
+        answer: "Tidak. Ketik example.com dan https:// akan ditambahkan. Alamat email menjadi link mailto.",
+      },
+      {
+        question: "Bisakah link mengarah ke halaman lain di PDF?",
+        answer: "Belum bisa. Link di sini membuka situs web dan alamat email.",
+      },
+      {
+        question: "Mengapa link tidak berfungsi di penampil saya?",
+        answer:
+          "Beberapa penampil gambar dan pratinjau di aplikasi chat tidak membuka link PDF. Buka file di pembaca PDF atau browser.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "Kotak Putih PDF",
+    shortName: "Kotak Putih",
+    tagline: "Tutupi bagian halaman PDF dengan kotak putih, lalu ketik di atasnya jika perlu. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Kotak Putih PDF bekerja seperti pita koreksi: seret di atas tanggal yang salah, harga lama, atau baris yang tidak ingin Anda tampilkan, dan kotak putih akan menutupinya. Tambahkan teks baru di atasnya dengan alat Teks untuk membuat koreksi. Jika halamannya tidak putih, pilih warna yang sesuai. Kotak Putih hanya menutupi konten; teks aslinya tetap ada di dalam file dan masih bisa disalin atau ditemukan lewat pencarian. Untuk menghapus informasi pribadi secara permanen, gunakan Sensor PDF. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Kotak Putih PDF – Pita Koreksi untuk PDF, Gratis",
+    seoDescription:
+      "Tutupi bagian PDF dengan kotak putih dan ketik koreksi di atasnya, langsung di browser Anda. Gratis, tanpa daftar, tidak ada yang diunggah.",
+    keywords: [
+      "whiteout pdf",
+      "tutupi tulisan di pdf",
+      "hapus tulisan di pdf",
+      "tipe-x pdf online",
+      "menutup teks pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Seret di atas bagian yang ingin ditutupi",
+        description: "Kotak putih akan menutupinya. Tambahkan teks baru di atasnya dengan alat Teks jika perlu.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan salinan yang sudah dikoreksi.",
+      },
+    ],
+    features: [
+      {
+        title: "Ketik di atasnya",
+        description: "Gabungkan Kotak Putih dengan teks untuk mengoreksi tanggal, nama, atau angka.",
+      },
+      {
+        title: "Sesuaikan dengan latar",
+        description: "Pilih warna apa pun untuk halaman yang tidak putih.",
+      },
+      {
+        title: "Pindahkan dan ubah ukuran",
+        description: "Atur setiap kotak sampai menutupi tepat bagian yang Anda inginkan.",
+      },
+      {
+        title: "Edit secara privat",
+        description: "PDF diedit di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah teks yang ditutupi benar-benar hilang?",
+        answer:
+          "Tidak. Kotak Putih menyembunyikannya, tetapi teks itu tetap ada di dalam file, dan bisa disalin atau ditemukan lewat pencarian. Gunakan Sensor PDF untuk menghapusnya.",
+      },
+      {
+        question: "Bisakah saya mengganti satu kata di PDF?",
+        answer: "Tutupi kata itu dengan Kotak Putih, lalu ketik kata baru di atasnya dengan alat Teks.",
+      },
+      {
+        question: "Apakah bisa dipakai di HP?",
+        answer: "Bisa. Ketuk dan seret dengan jari Anda; untuk menggambar, gunakan jari atau stylus.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "Sensor PDF",
+    shortName: "Sensor PDF",
+    tagline: "Hitamkan informasi pribadi di PDF dan hapus dari file secara permanen. Gratis dan berjalan di perangkat Anda.",
+    intro:
+      "Sensor PDF menyembunyikan nama, nomor rekening, alamat, dan data pribadi lainnya sebelum Anda membagikan dokumen, dan benar-benar menghapusnya. Seret kotak hitam di atas bagian yang harus dihilangkan. Saat Anda mengunduh, setiap halaman yang disensor diubah menjadi gambar dengan kotak hitam yang menyatu, jadi teks di bawahnya hilang dari file: teks itu tidak bisa disalin, dicari, atau dipulihkan dengan menghapus kotaknya. Isian formulir dan komentar di halaman tersebut juga dihapus. Halaman tanpa sensor tetap seperti semula. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah diunggah.",
+    seoTitle: "Sensor PDF – Hapus Teks Pribadi Secara Permanen, Gratis",
+    seoDescription:
+      "Hitamkan dan hapus permanen informasi pribadi dari PDF, langsung di browser Anda. Sensor sungguhan, bukan sekadar ditutupi. Gratis, tanpa unggah file.",
+    keywords: [
+      "sensor pdf",
+      "redact pdf",
+      "hitamkan teks di pdf",
+      "sembunyikan data pribadi di pdf",
+      "hapus informasi sensitif pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Buka PDF Anda",
+        description: "Letakkan atau pilih PDF.",
+      },
+      {
+        title: "Seret di atas informasi pribadi",
+        description: "Tutupi setiap nama, nomor, atau baris yang harus dihilangkan dengan kotak hitam.",
+      },
+      {
+        title: "Unduh PDF yang sudah disensor",
+        description: "Periksa hasilnya, lalu bagikan salinan yang sudah disensor, bukan file aslinya.",
+      },
+    ],
+    features: [
+      {
+        title: "Benar-benar dihapus",
+        description: "Teks yang ditutupi dihapus dari file, bukan disembunyikan di bawah kotak.",
+      },
+      {
+        title: "Isian formulir dan komentar juga",
+        description: "Kolom yang sudah diisi dan komentar di halaman yang disensor juga dihapus.",
+      },
+      {
+        title: "Halaman lain tidak tersentuh",
+        description: "Hanya halaman yang disensor yang diubah menjadi gambar.",
+      },
+      {
+        title: "Tidak ada yang diunggah",
+        description: "Dokumen pribadi disensor di perangkat Anda; tidak ada orang lain yang melihatnya.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mengapa saya tidak bisa lagi memilih teks di halaman yang disensor?",
+        answer:
+          "Agar teks yang tersembunyi benar-benar terhapus, seluruh halaman disimpan sebagai gambar. Teks di halaman lain tetap bisa dipilih.",
+      },
+      {
+        question: "Apakah kotak hitam di editor PDF biasa sama saja?",
+        answer:
+          "Tidak. Kotak biasa hanya menutupi teks, yang masih bisa disalin atau ditemukan lewat pencarian. Alat ini menghapusnya.",
+      },
+      {
+        question: "Apakah ada hal lain yang dihapus?",
+        answer:
+          "Di halaman yang disensor, kolom formulir, komentar, dan link juga dihapus, dan tag aksesibilitas dokumen dibuang karena bisa mengulang teks halaman. Judul dan nama penulis tetap ada; Hapus Metadata PDF bisa menghapusnya.",
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF dibuka dan disimpan di browser Anda, jadi tetap berada di perangkat Anda.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Pembuat Pas Foto",
     shortName: "Pas Foto",

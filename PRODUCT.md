@@ -27,7 +27,7 @@ Everything in one place: 30+ image tools behind one consistent workspace, free, 
 
 ## Capabilities and Constraints
 
-- 74 tools in `src/config/tools.ts` across Edit & Transform, Optimize & Compress, Convert Formats, PDF & Documents, Inspect & Utilities, Developer, including an on-device AI background remover, PDF conversion (pdf-lib, pdf.js) and compress-to-exact-KB.
+- 83 tools in `src/config/tools.ts` across Edit & Transform, Optimize & Compress, Convert Formats, PDF & Documents, Inspect & Utilities, Developer, including an on-device AI background remover, PDF conversion and a PDF editor with real redaction (pdf-lib, pdf.js) and compress-to-exact-KB.
 - All processing is client-side (Canvas 2D, WebAssembly AVIF encoder, exifr, heic2any, pdf-lib, pdf.js). No backend; static Astro site on Cloudflare Workers; installable PWA.
 - Inputs up to 50 MB; HEIC supported in the shared workspace; bulk tools take up to 50 files.
 - Site name and URL are environment-configurable (`PUBLIC_SITE_NAME`, `PUBLIC_SITE_URL`).

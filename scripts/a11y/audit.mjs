@@ -31,6 +31,8 @@ const INPUT = {
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
   'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
   'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],
+  'edit-pdf': [S('doc.pdf')], 'add-text-to-pdf': [S('doc.pdf')], 'add-image-to-pdf': [S('doc.pdf')], 'highlight-pdf': [S('doc.pdf')], 'draw-on-pdf': [S('doc.pdf')],
+  'add-shapes-to-pdf': [S('doc.pdf')], 'add-links-to-pdf': [S('doc.pdf')], 'whiteout-pdf': [S('doc.pdf')], 'redact-pdf': [S('doc.pdf')],
   'change-image-dpi': [S('photo.jpg')], 'signature-extractor': [S('signature-photo.jpg')], 'passport-photo-maker': [S('portrait.jpg')],
   'blur-background': [S('portrait.jpg')], 'change-background': [S('portrait.jpg')], 'image-to-text': [S('text.png')], 'qr-code-reader': [S('qr.png')],
 };

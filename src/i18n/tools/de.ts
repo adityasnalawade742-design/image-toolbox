@@ -5027,6 +5027,657 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "edit-pdf": {
+    name: "PDF bearbeiten",
+    shortName: "PDF bearbeiten",
+    tagline:
+      "Füge einem PDF Text, Bilder, Markierungen, Zeichnungen, Formen und Links hinzu oder deck Teile davon ab und schwärze sie. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "PDF bearbeiten öffnet dein Dokument Seite für Seite und lässt dich etwas hinzufügen: Text in jeder Größe und Farbe tippen, ein Logo oder einen Stempel platzieren, Zeilen markieren oder unterstreichen, freihändig zeichnen, Kästen, Kreise und Pfeile einfügen und Bereiche eine Website öffnen lassen. „Abdecken“ verdeckt, was nicht zu sehen sein soll, und „Schwärzen“ entfernt private Angaben endgültig aus der Datei. Verschiebe, skaliere und lösche, was du hinzugefügt hast, mach jeden Schritt rückgängig und lade dann das bearbeitete PDF herunter. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "PDF bearbeiten online – kostenloser PDF-Editor, ohne Upload",
+    seoDescription:
+      "PDFs im Browser bearbeiten: Text, Bilder, Markierungen, Zeichnungen, Formen und Links einfügen, abdecken oder schwärzen. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "pdf bearbeiten",
+      "pdf editor kostenlos",
+      "pdf online bearbeiten",
+      "text in pdf einfügen",
+      "pdf kommentieren",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus. Seine Seiten öffnen sich im Editor.",
+      },
+      {
+        title: "Hinzufügen, was du brauchst",
+        description:
+          "Wähle ein Werkzeug und tippe oder zieh auf der Seite. Alles, was du hinzugefügt hast, kannst du verschieben, skalieren oder löschen.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die bearbeitete Kopie. Deine Originaldatei bleibt unverändert.",
+      },
+    ],
+    features: [
+      {
+        title: "Alles in einem Editor",
+        description:
+          "Text, Bilder, Markierungen, Zeichnungen, Formen, Links, Abdeckungen und Schwärzungen findest du im selben Editor, du kannst sie also kombinieren.",
+      },
+      {
+        title: "Rückgängig und wiederholen",
+        description:
+          "Verschiebe, skaliere oder lösche alles, was du hinzugefügt hast, und mach einen Schritt rückgängig, wenn du es dir anders überlegst.",
+      },
+      {
+        title: "Echtes Schwärzen",
+        description: "Geschwärzte Bereiche werden aus der Datei entfernt, nicht nur verdeckt.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich den Text ändern, der schon im PDF steht?",
+        answer:
+          "Nicht direkt. Deck ihn mit „Abdecken“ ab und tippe den neuen Text darüber. Der alte Text bleibt darunter in der Datei, nutze für Privates also „Schwärzen“.",
+      },
+      {
+        question: "Ist der Text, den ich hinzufüge, durchsuchbar?",
+        answer:
+          "Ja. Getippter Text ist echter PDF-Text, er lässt sich also auswählen, durchsuchen und kopieren, außer auf Seiten, die du schwärzt.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "add-text-to-pdf": {
+    name: "Text in PDF einfügen",
+    shortName: "Text einfügen",
+    tagline:
+      "Tippe Text an eine beliebige Stelle einer PDF-Seite, in der Schriftart, Größe und Farbe deiner Wahl. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Mit Text in PDF einfügen schreibst du auf ein Dokument, ohne es auszudrucken: Fülle ein Formular ohne Felder aus, ergänze eine Notiz, ein Datum oder eine Adresse oder beschrifte eine Zeichnung. Tippe auf die Stelle, an der der Text beginnen soll, gib ihn ein und wähle dann Schriftart, Größe, Farbe und Fettdruck. Zieh den Text, um seine Position genau anzupassen, und füge so viele Texte auf so vielen Seiten ein, wie du brauchst. Der eingefügte Text ist echter PDF-Text, er bleibt also scharf und durchsuchbar. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "Text in PDF einfügen – kostenlos auf jedes PDF schreiben",
+    seoDescription:
+      "Text an beliebiger Stelle in ein PDF tippen, direkt im Browser. Schriftart, Größe und Farbe wählen, genau platzieren, herunterladen. Kostenlos, ohne Upload.",
+    keywords: [
+      "text in pdf einfügen",
+      "in pdf schreiben",
+      "pdf beschriften",
+      "text zu pdf hinzufügen",
+      "pdf ohne felder ausfüllen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Auf die Stelle für den Text tippen",
+        description:
+          "Gib ihn im Feld ein und wähle Schriftart, Größe und Farbe. Zieh ihn an die richtige Stelle.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die Kopie mit deinem Text.",
+      },
+    ],
+    features: [
+      {
+        title: "Deine Schrift, Größe und Farbe",
+        description:
+          "Serifenlos, mit Serifen oder Monospace im Schreibmaschinenstil, von 6 bis 72 pt, fett oder normal, in jeder Farbe.",
+      },
+      {
+        title: "Viele Sprachen",
+        description:
+          "Du kannst lateinische, griechische, kyrillische, japanische und koreanische Schrift schreiben.",
+      },
+      {
+        title: "Scharfer, durchsuchbarer Text",
+        description: "Der Text ist echter PDF-Text, kein Bild davon.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich ein Formular ohne Felder ausfüllen?",
+        answer:
+          "Ja. Tippe auf jede leere Zeile und schreib los. Bei PDFs mit echten Formularfeldern geht es mit „PDF-Formular ausfüllen“ schneller.",
+      },
+      {
+        question: "Kann ich den Text ändern, der schon im PDF steht?",
+        answer:
+          "Nicht direkt. Deck ihn mit „Abdecken“ ab und tippe den neuen Text darüber. Der alte Text bleibt darunter in der Datei, nutze für Privates also „Schwärzen“.",
+      },
+      {
+        question: "Kann ich auf mehreren Seiten schreiben?",
+        answer:
+          "Ja. Wechsle die Seite mit den Pfeilen über der Seite; was du auf jeder Seite hinzugefügt hast, bleibt erhalten.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "add-image-to-pdf": {
+    name: "Bild in PDF einfügen",
+    shortName: "Bild einfügen",
+    tagline:
+      "Platziere ein Logo, Foto oder Stempelbild auf einer beliebigen PDF-Seite und pass die Größe an. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Bild in PDF einfügen setzt ein Bild auf eine Seite deines Dokuments: ein Firmenlogo auf einen Brief, einen Stempel oder ein Siegel auf eine Urkunde, ein Foto auf ein Formular oder eine eingescannte Unterschrift. Tippe auf die Stelle, an die das Bild soll, und wähle es auf deinem Gerät aus. Zieh es an die richtige Stelle und zieh an der Ecke, um die Größe zu ändern; die Proportionen bleiben erhalten. JPG, PNG mit Transparenz, WebP, GIF, TIFF und HEIC-Bilder vom iPhone funktionieren alle. Alles passiert in deinem Browser, weder das PDF noch das Bild wird also hochgeladen.",
+    seoTitle: "Bild in PDF einfügen – Logo oder Foto, kostenlos",
+    seoDescription:
+      "Logo, Foto oder Stempel im Browser in ein PDF einfügen. Per Ziehen platzieren, Größe ändern, herunterladen. JPG, PNG, HEIC. Kostenlos, ohne Upload.",
+    keywords: [
+      "bild in pdf einfügen",
+      "logo in pdf einfügen",
+      "foto in pdf einfügen",
+      "pdf bild hinzufügen",
+      "stempel in pdf einfügen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus und geh zur gewünschten Seite.",
+      },
+      {
+        title: "Bild hinzufügen",
+        description:
+          "Tippe auf die Stelle der Seite, an die es soll, und wähle ein Bild. Zieh es an seinen Platz und ändere die Größe über die Ecke.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die Kopie mit dem eingefügten Bild.",
+      },
+    ],
+    features: [
+      {
+        title: "Transparenz bleibt erhalten",
+        description: "Ein PNG-Logo mit transparentem Hintergrund bleibt auch auf der Seite transparent.",
+      },
+      {
+        title: "Jedes Bildformat",
+        description: "JPG, PNG, WebP, GIF, TIFF und HEIC-Bilder vom iPhone lassen sich platzieren.",
+      },
+      {
+        title: "Proportionen bleiben erhalten",
+        description: "Beim Skalieren behält das Bild seine Form und wirkt nie verzerrt.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wird das Bild scharf aussehen?",
+        answer:
+          "Bilder werden mit bis zu 2.000 Pixeln Breite platziert, das bleibt beim Druck in üblichen Größen scharf.",
+      },
+      {
+        question: "Kann ich dasselbe Logo auf jede Seite setzen?",
+        answer:
+          "Um ein Logo auf jeder Seite zu wiederholen, nutze „Wasserzeichen in PDF einfügen“, das erledigt es in einem Schritt. Hier platzierst du Bilder einzeln.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "highlight-pdf": {
+    name: "PDF markieren",
+    shortName: "Markieren",
+    tagline:
+      "Markiere, unterstreiche oder streiche Text in einem PDF durch. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Mit PDF markieren bearbeitest du ein Dokument wie mit einem Stift: Zieh über eine Zeile, um sie gelb, grün, pink oder blau zu markieren, zu unterstreichen oder durchzustreichen. Das ist praktisch zum Lernen, beim Prüfen eines Vertrags oder um jemandem genau zu zeigen, worauf es ankommt. Markierungen lassen sich verschieben, skalieren und löschen, und du kannst jeden Schritt rückgängig machen. Die Markierung ist durchscheinend, der Text darunter bleibt also lesbar. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "PDF markieren online – kostenloser Textmarker für PDFs",
+    seoDescription:
+      "Text in einem PDF im Browser markieren, unterstreichen oder durchstreichen. Vier Textmarkerfarben, Rückgängig, ohne Anmeldung. Nichts wird hochgeladen.",
+    keywords: [
+      "pdf markieren",
+      "text in pdf markieren",
+      "pdf textmarker",
+      "pdf unterstreichen",
+      "pdf durchstreichen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Über den Text ziehen",
+        description:
+          "Wähle Markierung, Unterstreichung oder Durchstreichung und eine Farbe und zieh dann über die Zeile.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die markierte Kopie.",
+      },
+    ],
+    features: [
+      {
+        title: "Textmarkerfarben",
+        description: "Gelb, Grün, Pink und Blau oder jede Farbe, die du wählst.",
+      },
+      {
+        title: "Unterstreichen und Durchstreichen",
+        description: "Kennzeichne Änderungen oder Korrekturen ebenso wie wichtige Stellen.",
+      },
+      {
+        title: "Text bleibt lesbar",
+        description: "Markierungen sind durchscheinend, wie bei einem echten Textmarker.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Rastet die Markierung am Text ein?",
+        answer:
+          "Nein. Sie deckt den Bereich ab, über den du ziehst, zieh also entlang der Zeile, die du markieren willst. Danach kannst du die Größe über die Ecke ändern.",
+      },
+      {
+        question: "Kann ich eine Markierung entfernen?",
+        answer: "Ja. Wähle sie aus und tippe auf „Löschen“ oder nutze „Rückgängig“.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "draw-on-pdf": {
+    name: "Auf PDF zeichnen",
+    shortName: "Auf PDF zeichnen",
+    tagline:
+      "Zeichne freihändig mit Finger, Maus oder Stift auf PDF-Seiten. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Auf PDF zeichnen macht die Seite zu einem Blatt, auf das du schreiben kannst. Kreise ein Detail auf einem Plan ein, skizziere eine Idee, hake Kästchen ab, ergänze handschriftliche Notizen oder Initialen. Wähle eine Farbe und eine Strichstärke und zeichne mit dem Finger auf Handy oder Tablet, mit einem Stift oder mit der Maus. Jeder Strich lässt sich verschieben oder löschen, und du kannst so viele Schritte rückgängig machen, wie du brauchst. Die Zeichnung wird als scharfe Linien gespeichert, nicht als unscharfes Bild. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "Auf PDF zeichnen – kostenlos freihändig kommentieren",
+    seoDescription:
+      "Im Browser mit Finger, Maus oder Stift auf PDF-Seiten zeichnen. Farbe und Strichstärke wählen, rückgängig machen, herunterladen. Kostenlos, ohne Upload.",
+    keywords: [
+      "auf pdf zeichnen",
+      "in pdf zeichnen",
+      "auf pdf malen",
+      "pdf handschriftlich kommentieren",
+      "pdf freihand zeichnen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Auf der Seite zeichnen",
+        description: "Wähle Farbe und Strichstärke und zeichne mit Finger, Stift oder Maus.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die Kopie mit deiner Zeichnung.",
+      },
+    ],
+    features: [
+      {
+        title: "Finger, Stift oder Maus",
+        description: "Das Zeichnen funktioniert mit Touch-, Stift- und Mauseingabe.",
+      },
+      {
+        title: "Scharfe Linien",
+        description:
+          "Striche werden als Vektorlinien gespeichert, die auch beim Hineinzoomen scharf bleiben.",
+      },
+      {
+        title: "Rückgängig und wiederholen",
+        description:
+          "Verschiebe, skaliere oder lösche alles, was du hinzugefügt hast, und mach einen Schritt rückgängig, wenn du es dir anders überlegst.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich damit unterschreiben?",
+        answer:
+          "Das geht, aber mit „PDF unterschreiben“ wird die Unterschrift sauberer: Du kannst sie tippen, zeichnen oder als Bild wählen und genau platzieren.",
+      },
+      {
+        question: "Kann ich einen Teil eines Strichs radieren?",
+        answer:
+          "Jeder Strich ist ein einzelnes Stück: Wähle ihn aus und lösche ihn oder mach ihn rückgängig und zeichne ihn dann neu.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "add-shapes-to-pdf": {
+    name: "Formen in PDF einfügen",
+    shortName: "Formen einfügen",
+    tagline:
+      "Füge einem PDF Rechtecke, Kreise, Linien und Pfeile hinzu, um auf etwas hinzuweisen. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Formen in PDF einfügen hilft dir, Pläne, Screenshots, Formulare und Berichte zu kommentieren: Zieh einen Kasten um eine Summe, kreise einen Fehler ein oder füge einen Pfeil hinzu, der auf die Stelle zeigt, die Aufmerksamkeit braucht. Wähle Rechteck, Ellipse, Linie oder Pfeil, eine Farbe und eine Strichstärke und zieh dann auf der Seite. Rechtecke und Ellipsen können umrandet oder gefüllt sein. Formen lassen sich jederzeit verschieben, skalieren und löschen. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "Formen in PDF einfügen – Kästen, Kreise, Pfeile, kostenlos",
+    seoDescription:
+      "Rechtecke, Kreise, Linien und Pfeile im Browser in ein PDF einfügen. Farbe und Strichstärke wählen, verschieben und skalieren. Kostenlos, ohne Upload.",
+    keywords: [
+      "formen in pdf einfügen",
+      "pfeil in pdf einfügen",
+      "rechteck in pdf zeichnen",
+      "kreis in pdf zeichnen",
+      "pdf kommentieren",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Form zeichnen",
+        description: "Wähle Rechteck, Ellipse, Linie oder Pfeil und zieh auf der Seite.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die kommentierte Kopie.",
+      },
+    ],
+    features: [
+      {
+        title: "Vier Formen",
+        description: "Rechtecke, Ellipsen, Linien und Pfeile.",
+      },
+      {
+        title: "Umrandet oder gefüllt",
+        description: "Umrande einen Kasten oder füll ihn mit einer Farbe.",
+      },
+      {
+        title: "Scharf in jeder Größe",
+        description: "Formen werden als Vektorgrafiken gespeichert.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Kann ich eine Form nach dem Zeichnen ändern?",
+        answer:
+          "Ja. Wähle sie aus, um sie zu verschieben, ihre Größe über die Ecke zu ändern oder Farbe und Strichstärke anzupassen.",
+      },
+      {
+        question: "Kann ich Text mit einer Form verdecken?",
+        answer:
+          "Ein gefülltes Rechteck verdeckt, was darunter liegt, aber der Inhalt bleibt in der Datei. Nutze „Schwärzen“, um private Informationen zu entfernen.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "add-links-to-pdf": {
+    name: "Links in PDF einfügen",
+    shortName: "Links einfügen",
+    tagline:
+      "Lass einen beliebigen Bereich einer PDF-Seite eine Website oder eine E-Mail öffnen. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "Links in PDF einfügen macht dein Dokument anklickbar: Mach aus einer in einer Broschüre gedruckten Webadresse einen echten Link, verlinke ein Logo mit deiner Website oder lass eine E-Mail-Adresse eine neue Nachricht öffnen. Zieh über den Text oder Bereich, der anklickbar sein soll, und gib die Adresse ein. Links funktionieren in jedem PDF-Reader, auf Computern und Handys. Die Seite selbst sieht gleich aus; der gestrichelte Rahmen, den du beim Bearbeiten siehst, wird nicht gespeichert. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "Links in PDF einfügen – PDF-Text anklickbar machen",
+    seoDescription:
+      "Anklickbare Web- und E-Mail-Links in jeden Bereich eines PDFs einfügen, direkt im Browser. Funktioniert in jedem PDF-Reader. Kostenlos, ohne Upload.",
+    keywords: [
+      "link in pdf einfügen",
+      "hyperlink in pdf einfügen",
+      "pdf verlinken",
+      "pdf link erstellen",
+      "pdf anklickbar machen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Über den anklickbaren Bereich ziehen",
+        description: "Gib dann die Webadresse ein, etwa example.com, oder eine E-Mail-Adresse.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die Kopie mit funktionierenden Links.",
+      },
+    ],
+    features: [
+      {
+        title: "Web- und E-Mail-Links",
+        description: "Links öffnen eine Website oder eine neue E-Mail an die eingegebene Adresse.",
+      },
+      {
+        title: "Unsichtbar auf der Seite",
+        description: "Die Seite sieht unverändert aus; nur der Bereich wird anklickbar.",
+      },
+      {
+        title: "Funktioniert in jedem Reader",
+        description: "Standard-PDF-Links öffnen sich in Acrobat, Browsern, Vorschau und Handy-Apps.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Muss ich https:// eingeben?",
+        answer:
+          "Nein. Gib example.com ein, und https:// wird ergänzt. Eine E-Mail-Adresse wird zu einem mailto-Link.",
+      },
+      {
+        question: "Kann ein Link auf eine andere Seite des PDFs führen?",
+        answer: "Noch nicht. Links öffnen hier Websites und E-Mail-Adressen.",
+      },
+      {
+        question: "Warum funktioniert der Link in meinem Viewer nicht?",
+        answer:
+          "Manche Bildbetrachter und Vorschauen in Messenger-Apps öffnen keine PDF-Links. Öffne die Datei in einem PDF-Reader oder Browser.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "whiteout-pdf": {
+    name: "PDF abdecken",
+    shortName: "Abdecken",
+    tagline:
+      "Deck Teile einer PDF-Seite mit weißen Kästen ab und tippe bei Bedarf darüber. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "PDF abdecken funktioniert wie Korrekturband: Zieh über ein falsches Datum, einen alten Preis oder eine Zeile, die nicht zu sehen sein soll, und ein weißer Kasten deckt sie ab. Füge mit dem Text-Werkzeug neuen Text darüber ein, um etwas zu korrigieren. Ist die Seite nicht weiß, wähle eine passende Farbe. Abdecken verdeckt Inhalte nur; der ursprüngliche Text bleibt in der Datei und lässt sich weiterhin kopieren oder über die Suche finden. Um private Informationen endgültig zu entfernen, nutze „PDF schwärzen“. Alles passiert in deinem Browser, das Dokument verlässt also nie dein Gerät.",
+    seoTitle: "PDF abdecken – kostenloses Korrekturband für PDFs",
+    seoDescription:
+      "Teile eines PDFs im Browser mit weißen Kästen abdecken und Korrekturen darüber tippen. Kostenlos, ohne Anmeldung, nichts wird hochgeladen.",
+    keywords: [
+      "pdf text abdecken",
+      "pdf weiß abdecken",
+      "pdf korrekturband",
+      "text in pdf überdecken",
+      "pdf whiteout",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Über das Abzudeckende ziehen",
+        description:
+          "Ein weißer Kasten deckt es ab. Füge bei Bedarf mit dem Text-Werkzeug neuen Text darüber ein.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere die korrigierte Kopie.",
+      },
+    ],
+    features: [
+      {
+        title: "Darüber tippen",
+        description: "Kombiniere Abdecken mit Text, um ein Datum, einen Namen oder eine Zahl zu korrigieren.",
+      },
+      {
+        title: "Passend zum Hintergrund",
+        description: "Wähle für Seiten, die nicht weiß sind, eine beliebige Farbe.",
+      },
+      {
+        title: "Verschieben und skalieren",
+        description: "Pass jeden Kasten an, bis er genau das abdeckt, was du willst.",
+      },
+      {
+        title: "Privates Bearbeiten",
+        description: "Das PDF wird auf deinem Gerät bearbeitet und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ist der abgedeckte Text wirklich weg?",
+        answer:
+          "Nein. Abdecken verbirgt ihn, aber er bleibt in der Datei, wo er kopiert oder über die Suche gefunden werden kann. Nutze „PDF schwärzen“, um ihn zu entfernen.",
+      },
+      {
+        question: "Kann ich ein Wort im PDF ändern?",
+        answer: "Deck das Wort ab und tippe dann mit dem Text-Werkzeug das neue Wort darüber.",
+      },
+      {
+        question: "Funktioniert das auf dem Handy?",
+        answer: "Ja. Tippe und zieh mit dem Finger; zeichnen kannst du mit dem Finger oder einem Stift.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "redact-pdf": {
+    name: "PDF schwärzen",
+    shortName: "PDF schwärzen",
+    tagline:
+      "Schwärze private Informationen in einem PDF und entferne sie endgültig aus der Datei. Kostenlos, und es läuft auf deinem Gerät.",
+    intro:
+      "PDF schwärzen verbirgt Namen, Kontonummern, Adressen und andere private Angaben, bevor du ein Dokument teilst, und entfernt sie tatsächlich. Zieh schwarze Kästen über das, was wegsoll. Beim Herunterladen wird jede Seite mit einer Schwärzung in ein Bild umgewandelt, in das die Kästen fest eingebrannt sind. Der Text darunter ist dann aus der Datei verschwunden: Er lässt sich nicht kopieren, durchsuchen oder durch Entfernen des Kastens wiederherstellen. Formularwerte und Kommentare auf diesen Seiten werden ebenfalls entfernt. Seiten ohne Schwärzungen bleiben, wie sie waren. Alles passiert in deinem Browser, das Dokument wird also nie hochgeladen.",
+    seoTitle: "PDF schwärzen – private Texte endgültig entfernen, kostenlos",
+    seoDescription:
+      "Private Informationen in einem PDF im Browser schwärzen und dauerhaft entfernen. Echtes Schwärzen, nicht nur Verdecken. Kostenlos, ohne Upload.",
+    keywords: [
+      "pdf schwärzen",
+      "pdf schwärzen kostenlos",
+      "text in pdf schwärzen",
+      "pdf anonymisieren",
+      "sensible daten aus pdf entfernen",
+    ],
+    howToSteps: [
+      {
+        title: "PDF öffnen",
+        description: "Zieh ein PDF hierher oder wähle es aus.",
+      },
+      {
+        title: "Über private Informationen ziehen",
+        description:
+          "Deck jeden Namen, jede Zahl und jede Zeile, die wegmuss, mit einem schwarzen Kasten ab.",
+      },
+      {
+        title: "Geschwärztes PDF herunterladen",
+        description: "Prüfe das Ergebnis und teile dann die geschwärzte Kopie, nicht das Original.",
+      },
+    ],
+    features: [
+      {
+        title: "Wirklich entfernt",
+        description: "Der abgedeckte Text wird aus der Datei gelöscht, nicht unter einem Kasten versteckt.",
+      },
+      {
+        title: "Auch Formularwerte und Kommentare",
+        description: "Ausgefüllte Felder und Kommentare auf geschwärzten Seiten werden ebenfalls entfernt.",
+      },
+      {
+        title: "Andere Seiten unverändert",
+        description: "Nur Seiten mit Schwärzungen werden in Bilder umgewandelt.",
+      },
+      {
+        title: "Kein Upload",
+        description: "Private Dokumente werden auf deinem Gerät geschwärzt; niemand sonst sieht sie.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Warum kann ich auf der geschwärzten Seite keinen Text mehr auswählen?",
+        answer:
+          "Damit der verborgene Text endgültig verschwindet, wird die ganze Seite als Bild gespeichert. Text auf anderen Seiten bleibt auswählbar.",
+      },
+      {
+        question: "Ist ein schwarzes Rechteck in einem normalen PDF-Editor dasselbe?",
+        answer:
+          "Nein. Ein einfacher Kasten verdeckt den Text nur, er lässt sich weiterhin kopieren oder über die Suche finden. Dieses Tool entfernt ihn.",
+      },
+      {
+        question: "Wird noch etwas anderes entfernt?",
+        answer:
+          "Auf geschwärzten Seiten werden auch Formularfelder, Kommentare und Links entfernt, und die Barrierefreiheits-Tags des Dokuments werden verworfen, weil sie Seitentext wiederholen können. Titel und Autorenangaben bleiben erhalten; „PDF-Metadaten entfernen“ löscht sie.",
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer:
+          "Nein. Das PDF wird in deinem Browser geöffnet und gespeichert, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
   "passport-photo-maker": {
     name: "Passfoto erstellen",
     shortName: "Passfoto",
