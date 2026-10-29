@@ -3555,6 +3555,136 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFFをJPGに変換",
+    shortName: "TIFF → JPG",
+    tagline: "TIFFのスキャン画像や写真を、どこでも開ける小さなJPGファイルに変換します。変換は端末上で行われます。",
+    intro: "TIFFは、多くのスキャナー、FAXソフト、カメラ、印刷の現場で使われている形式です。ファイルが大きくなりがちなうえ、Chrome、Edge、FirefoxやほとんどのWebサイトでは表示できません。「TIFFをJPGに変換」は、画像を選んだ画質でJPGに変換します。たいていは元のサイズのほんの一部になります。白黒のFAXファイルを含め、圧縮されたTIFFにも対応しています。複数ページのファイルは1ページ目を変換します。すべてのページを残すには「TIFFをPDFに変換」を使ってください。変換はブラウザ内で行われるため、ファイルが端末から外に出ることはありません。",
+    seoTitle: "TIFF JPG 変換 – 無料、高速、安全",
+    seoDescription: "TIFFのスキャン画像や写真をブラウザでJPGに変換。どこでも開ける小さなファイルになり、画質も調整できます。何もアップロードされません。",
+    keywords: [
+      "tiff jpg 変換",
+      "tif jpg 変換",
+      "tiff を jpg に変換",
+      "tiff jpeg 変換",
+      "tiff 変換",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF画像を追加",
+        description: ".tifまたは.tiffファイルをドロップ、選択、または貼り付けます。",
+      },
+      {
+        title: "画質を選ぶ",
+        description: "写真なら85%で十分です。小さな文字のあるスキャン画像では高めにしてください。",
+      },
+      {
+        title: "JPGをダウンロード",
+        description: "JPGを保存して、共有やアップロードに使えます。",
+      },
+    ],
+    features: [
+      {
+        title: "ずっと小さなファイル",
+        description: "JPGはたいてい、TIFFのほんの一部のサイズになります。",
+      },
+      {
+        title: "どこでも開ける",
+        description: "JPGはどのビューアー、編集ソフト、スマートフォン、アップロードフォームでも使えます。",
+      },
+      {
+        title: "ほとんどのTIFFに対応",
+        description: "非圧縮、LZW、Deflate、PackBits、JPEG、白黒FAXのTIFFをすべて開けます。",
+      },
+      {
+        title: "安全な変換",
+        description: "ファイルは端末上で変換され、アップロードされることはありません。",
+      },
+    ],
+    faqs: [
+      {
+        question: "ブラウザでTIFFファイルを開けないのはなぜですか？",
+        answer: "主要なブラウザでTIFFを表示できるのはSafariだけです。Chrome、Edge、Firefoxでは表示できないため、このツールが端末上でファイルを直接デコードします。",
+      },
+      {
+        question: "複数ページのTIFFはどうなりますか？",
+        answer: "1ページ目が変換されます。すべてのページを残すには、TIFFの各ページをPDFの1ページにする「TIFFをPDFに変換」を使ってください。",
+      },
+      {
+        question: "非常に大きなスキャン画像は縮小されますか？",
+        answer: "約1600万画素（4000 × 4000ピクセルなど）を超えるページは、iPhoneを含むすべてのブラウザで処理できるよう、そのサイズまで縮小されます。通常のスキャン画像や写真は縮小されません。",
+      },
+      {
+        question: "ファイルはアップロードされますか？",
+        answer: "いいえ。TIFFのデコードも変換もブラウザ内で行われるため、ファイルは端末に残ります。",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFFをPNGに変換",
+    shortName: "TIFF → PNG",
+    tagline: "TIFF画像を、どのブラウザや編集ソフトでも開ける可逆圧縮のPNGに変換します。変換は端末上で行われます。",
+    intro: "スキャナー、カメラ、デザインソフトで作られたTIFFファイルは、Chrome、Edge、FirefoxやほとんどのWebサイトでは表示できません。「TIFFをPNGに変換」は、画像をPNGに変換します。PNGはTIFFと同じく可逆圧縮なので、ピクセルはすべてそのまま残り、透明部分も保たれます。そのため、スキャンした書類や線画、これから編集を続けるグラフィックに適しています。複数ページのファイルは1ページ目を変換します。すべてのページを残すには「TIFFをPDFに変換」を使ってください。変換はブラウザ内で行われるため、ファイルが端末から外に出ることはありません。",
+    seoTitle: "TIFF PNG 変換 – 無料、劣化なしの可逆変換",
+    seoDescription: "TIFF画像をブラウザで可逆圧縮のPNGに変換。ピクセルも透明部分もすべてそのまま残ります。無料で安全、何もアップロードされません。",
+    keywords: [
+      "tiff png 変換",
+      "tif png 変換",
+      "tiff を png に変換",
+      "tiff png 変換 無料",
+      "tiff png 劣化なし",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF画像を追加",
+        description: ".tifまたは.tiffファイルをドロップ、選択、または貼り付けます。",
+      },
+      {
+        title: "プレビューを確認",
+        description: "ブラウザが端末上で画像をデコードします。",
+      },
+      {
+        title: "PNGをダウンロード",
+        description: "可逆圧縮のPNGを保存すれば、どの編集ソフトでも開けます。",
+      },
+    ],
+    features: [
+      {
+        title: "可逆圧縮",
+        description: "TIFFページのピクセルをすべて、そのまま保持します。",
+      },
+      {
+        title: "透明部分もそのまま",
+        description: "TIFFの透明な部分は、PNGでも透明なままです。",
+      },
+      {
+        title: "ほとんどのTIFFに対応",
+        description: "非圧縮、LZW、Deflate、PackBits、JPEG、白黒FAXのTIFFをすべて開けます。",
+      },
+      {
+        title: "安全な変換",
+        description: "ファイルは端末上で変換され、アップロードされることはありません。",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNGはTIFFより小さくなりますか？",
+        answer: "多くの場合は小さくなります。特に非圧縮のTIFFや白黒のスキャン画像で効果があります。すでに圧縮されているTIFFでは、PNGも同じくらいのサイズになることがあります。",
+      },
+      {
+        question: "複数ページのTIFFはどうなりますか？",
+        answer: "1ページ目が変換されます。すべてのページを残すには、TIFFの各ページをPDFの1ページにする「TIFFをPDFに変換」を使ってください。",
+      },
+      {
+        question: "非常に大きなスキャン画像は縮小されますか？",
+        answer: "約1600万画素（4000 × 4000ピクセルなど）を超えるページは、iPhoneを含むすべてのブラウザで処理できるよう、そのサイズまで縮小されます。通常のスキャン画像や写真は縮小されません。",
+      },
+      {
+        question: "ファイルはアップロードされますか？",
+        answer: "いいえ。TIFFのデコードも変換もブラウザ内で行われるため、ファイルは端末に残ります。",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPGをPDFに変換",
     shortName: "JPG → PDF",
@@ -3763,6 +3893,71 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "写真はアップロードされますか？",
         answer: "いいえ。HEICのデコーダーもPDFの作成処理もブラウザ内で動くため、写真は端末に残ります。",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFFをPDFに変換",
+    shortName: "TIFF → PDF",
+    tagline: "TIFFのスキャン画像やFAXをPDFにします。複数ページのTIFFも、全ページを順番どおりに残せます。変換は端末上で行われます。",
+    intro: "スキャナーやFAXソフトは書類を複数ページのTIFFファイルで保存することがよくありますが、たいていはPDFが求められます。「TIFFをPDFに変換」は、各TIFFのすべてのページを順番どおりにPDFのページにします。スキャンした契約書やFAXが、どこでも開けてメール送信やアップロードもできる1つの書類になります。複数のファイルを追加してページを並べ替え、A4、レター、または各画像に合わせたページを選べます。すべてブラウザ内で行われるため、書類がアップロードされることはありません。",
+    seoTitle: "TIFF PDF 変換 – 複数ページのスキャンも無料でPDFに",
+    seoDescription: "TIFFのスキャン画像やFAXをブラウザでPDFに変換。複数ページのTIFFも全ページを順番どおりに残せます。無料で安全、何もアップロードされません。",
+    keywords: [
+      "tiff pdf 変換",
+      "tif pdf 変換",
+      "tiff を pdf に変換",
+      "マルチページ tiff pdf 変換",
+      "fax tiff pdf 変換",
+    ],
+    howToSteps: [
+      {
+        title: "TIFFファイルを追加",
+        description: ".tifまたは.tiffファイルを1つ以上ドロップまたは選択します。各ページがリストに表示されます。",
+      },
+      {
+        title: "ページを並べる",
+        description: "順番を決め、ページサイズ、向き、余白を選びます。",
+      },
+      {
+        title: "PDFをダウンロード",
+        description: "すべてのページが入った1つのPDFを保存します。",
+      },
+    ],
+    features: [
+      {
+        title: "全ページを保持",
+        description: "複数ページのTIFFの各ページが、順番どおりにPDFのページになります。",
+      },
+      {
+        title: "FAXやスキャンの形式に対応",
+        description: "白黒FAX、LZW、Deflate、PackBits、JPEG圧縮のTIFFをすべて開けます。",
+      },
+      {
+        title: "ページの順番を自由に",
+        description: "PDFを作成する前に、ページを並べ替えたり削除したりできます。",
+      },
+      {
+        title: "安全な変換",
+        description: "書類は端末上で変換され、アップロードされることはありません。",
+      },
+    ],
+    faqs: [
+      {
+        question: "TIFFは何ページまで扱えますか？",
+        answer: "1ファイルあたり200ページまでです。201ページ目以降は含まれないため、とても長い書類は先に小さなTIFFに分けてください。",
+      },
+      {
+        question: "TIFFとほかの画像を混ぜられますか？",
+        answer: "はい。JPG、PNG、WebP、iPhoneのHEIC画像も同じPDFに入れられます。",
+      },
+      {
+        question: "PDFの文字は検索できますか？",
+        answer: "いいえ。各ページはTIFFのときのまま画像として配置されます。文字をコピーするには、ページを「画像の文字起こし」で開いてください。",
+      },
+      {
+        question: "書類はアップロードされますか？",
+        answer: "いいえ。TIFFのデコードもPDFの作成もブラウザ内で行われるため、書類は端末に残ります。",
       },
     ],
   },

@@ -8,7 +8,7 @@ import { downloadBlob } from '../../../lib/canvas/engine';
 import { decodeQr } from '../../../lib/qr/decode';
 import { decodePayload, type Decoded } from '../../../lib/qr/payload';
 
-const ACCEPT = 'image/jpeg,image/png,image/webp,image/gif,image/bmp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/gif,image/bmp,image/heic,image/heif,.heic,.heif';
 
 export function QrReaderWorkspace() {
   const t = useT();

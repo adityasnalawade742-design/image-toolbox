@@ -1,7 +1,7 @@
 // Interface strings for the form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker.
 export const formStrings = {
   // Change DPI
-  'ctl.dpi.dropHint': 'JPG or PNG (WebP and iPhone HEIC are converted to JPG). The pixels are not changed.',
+  'ctl.dpi.dropHint': 'JPG or PNG (WebP, TIFF and iPhone HEIC are converted to JPG). The pixels are not changed.',
   'ctl.dpi.newDpi': 'New DPI',
   'ctl.dpi.custom': 'Or type a DPI',
   'ctl.dpi.current': 'Current DPI',
@@ -12,7 +12,7 @@ export const formStrings = {
   'ctl.dpi.summary': 'At {dpi} DPI this image prints at {cm}.',
 
   // Signature extractor
-  'ctl.sig.dropHint': 'A photo or scan of your signature on white paper. JPG, PNG, WebP or iPhone HEIC.',
+  'ctl.sig.dropHint': 'A photo or scan of your signature on white paper. JPG, PNG, WebP, TIFF or iPhone HEIC.',
   'ctl.sig.sensitivity': 'Sensitivity',
   'ctl.sig.sensitivityHint': 'Raise it if thin strokes disappear; lower it if paper texture shows up.',
   'ctl.sig.original': 'Original',
@@ -21,7 +21,7 @@ export const formStrings = {
   'ctl.sig.resultLabel': 'Extracted signature on a transparent background',
 
   // Passport photo maker
-  'ctl.passport.dropHint': 'A clear, front-facing photo with even light. JPG, PNG, WebP or iPhone HEIC.',
+  'ctl.passport.dropHint': 'A clear, front-facing photo with even light. JPG, PNG, WebP, TIFF or iPhone HEIC.',
   'ctl.passport.size': 'Photo size',
   'ctl.passport.custom': 'Custom',
   'ctl.passport.widthMm': 'Width (mm)',

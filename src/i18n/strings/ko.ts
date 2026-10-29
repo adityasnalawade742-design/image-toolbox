@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': '이미지가 50 MB를 넘어요. 더 작은 파일로 시도해 주세요.',
   'ws.errHeic': '이 iPhone 사진을 열 수 없어요. 먼저 JPG로 내보낸 뒤 시도해 주세요.',
   'ws.errDecode': '이미지를 열 수 없어요. 파일이 손상되었거나 지원하지 않는 형식일 수 있어요.',
+  'ws.tiffFirstPage': '이 TIFF는 {n}페이지예요. 여기서는 첫 페이지만 변환해요. 모든 페이지를 남기려면 TIFF PDF 변환을 사용하세요.',
   'ws.errExport': '다운로드 파일을 만들 수 없어요. 이 브라우저에서 처리하기엔 이미지가 너무 클 수 있어요. 크기를 줄이거나 다른 형식을 선택해 보세요.',
   'ws.errCopy': '브라우저가 이미지 복사를 막았어요. 대신 다운로드를 이용해 주세요.',
   'ws.errFormatFallback': '이 브라우저는 {wanted} 형식으로 저장할 수 없어서 {actual} 형식으로 저장했어요.',
@@ -618,7 +619,7 @@ export const strings = {
   'ctl.bg.result': '결과',
 
   // ===== Compress Image to KB =====
-  'ctl.kb.dropHint': 'JPG, PNG, WebP 또는 iPhone HEIC. 결과는 항상 고른 용량보다 작아요.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF 또는 iPhone HEIC. 결과는 항상 고른 용량보다 작아요.',
   'ctl.kb.targetSize': '용량 제한',
   'ctl.kb.custom': '또는 KB 단위로 직접 입력',
   'ctl.kb.unitKb': 'KB',
@@ -651,7 +652,7 @@ export const strings = {
   'ctl.list.skipped': '열 수 없는 파일이 있어 건너뛰었어요: {names}',
 
   // ===== JPG to PDF =====
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP 또는 iPhone HEIC. 여러 장을 한 번에 고를 수 있고, 나중에 더 추가할 수도 있어요.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF 또는 iPhone HEIC. 여러 장을 한 번에 고를 수 있고, 나중에 더 추가할 수도 있어요.',
   'ctl.topdf.pages': '페이지: {n}',
   'ctl.topdf.pageSize': '페이지 크기',
   'ctl.topdf.letter': '레터',
@@ -687,7 +688,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': '이 파일을 PDF로 열 수 없어요. 손상되었거나 PDF가 아닐 수 있어요.',
 
   // ===== Merge Images =====
-  'ctl.merge.dropHint': 'JPG, PNG, WebP 또는 iPhone HEIC. 두 장 이상을 한 번에 고르세요.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF 또는 iPhone HEIC. 두 장 이상을 한 번에 고르세요.',
   'ctl.merge.layout': '레이아웃',
   'ctl.merge.horizontal': '가로 배치',
   'ctl.merge.vertical': '세로 배치',
@@ -827,7 +828,7 @@ export const strings = {
   'ctl.croppdf.note': '잘라낸 부분은 삭제되지 않고 숨겨지기만 하므로 PDF 편집기에서 되살릴 수 있어요.',
 
   // ===== Change DPI =====
-  'ctl.dpi.dropHint': 'JPG 또는 PNG(WebP와 iPhone HEIC는 JPG로 변환돼요). 픽셀은 바뀌지 않아요.',
+  'ctl.dpi.dropHint': 'JPG 또는 PNG(WebP, TIFF와 iPhone HEIC는 JPG로 변환돼요). 픽셀은 바뀌지 않아요.',
   'ctl.dpi.newDpi': '새 DPI',
   'ctl.dpi.custom': '또는 DPI 직접 입력',
   'ctl.dpi.current': '현재 DPI',
@@ -838,7 +839,7 @@ export const strings = {
   'ctl.dpi.summary': '{dpi} DPI에서 이 이미지는 {cm} 크기로 인쇄돼요.',
 
   // ===== Signature extractor =====
-  'ctl.sig.dropHint': '흰 종이에 한 서명의 사진이나 스캔 이미지. JPG, PNG, WebP, iPhone HEIC.',
+  'ctl.sig.dropHint': '흰 종이에 한 서명의 사진이나 스캔 이미지. JPG, PNG, WebP, TIFF, iPhone HEIC.',
   'ctl.sig.sensitivity': '감도',
   'ctl.sig.sensitivityHint': '가는 획이 사라지면 높이고, 종이 질감이 보이면 낮추세요.',
   'ctl.sig.original': '원래 색',
@@ -847,7 +848,7 @@ export const strings = {
   'ctl.sig.resultLabel': '투명한 배경 위에 추출한 서명',
 
   // ===== Passport photo maker =====
-  'ctl.passport.dropHint': '정면을 보고 빛이 고르게 든 선명한 사진. JPG, PNG, WebP, iPhone HEIC.',
+  'ctl.passport.dropHint': '정면을 보고 빛이 고르게 든 선명한 사진. JPG, PNG, WebP, TIFF, iPhone HEIC.',
   'ctl.passport.size': '사진 크기',
   'ctl.passport.custom': '직접 지정',
   'ctl.passport.widthMm': '너비 (mm)',
@@ -877,7 +878,7 @@ export const strings = {
   'ctl.passport.check': '규정은 나라와 기관마다 달라요. 인쇄하기 전에 필요한 크기, 머리 위치, 배경, 표정을 확인하세요.',
 
   // ===== Blur Background / Change Background =====
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, iPhone HEIC. 사람이나 물체는 내 기기에서 찾으며, 아무것도 업로드되지 않아요.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF, iPhone HEIC. 사람이나 물체는 내 기기에서 찾으며, 아무것도 업로드되지 않아요.',
   'ctl.bgfx.working': '피사체 찾는 중…',
   'ctl.bgfx.failed': '피사체를 찾지 못했어요: {message}',
   'ctl.bgfx.strength': '흐림 강도',
@@ -889,7 +890,7 @@ export const strings = {
   'ctl.bgfx.result': '새 배경을 적용한 사진',
 
   // ===== Image to Text =====
-  'ctl.ocr.dropHint': '인쇄된 글자가 있는 사진, 스크린샷, 스캔 이미지: JPG, PNG, WebP, iPhone HEIC. 내 기기에서 읽어요.',
+  'ctl.ocr.dropHint': '인쇄된 글자가 있는 사진, 스크린샷, 스캔 이미지: JPG, PNG, WebP, TIFF, iPhone HEIC. 내 기기에서 읽어요.',
   'ctl.ocr.loading': '텍스트 인식기 불러오는 중…',
   'ctl.ocr.reading': '텍스트 읽는 중…',
   'ctl.ocr.failed': '텍스트를 읽지 못했어요: {message}',
@@ -947,7 +948,7 @@ export const strings = {
 
   // ===== QR Code Reader =====
   'ctl.qrread.dropTitle': 'QR코드가 있는 이미지를 놓으세요',
-  'ctl.qrread.dropHint': '사진이나 스크린샷: JPG, PNG, WebP, iPhone HEIC. 내 기기에서 읽어요.',
+  'ctl.qrread.dropHint': '사진이나 스크린샷: JPG, PNG, WebP, TIFF, iPhone HEIC. 내 기기에서 읽어요.',
   'ctl.qrread.useCamera': '카메라로 스캔',
   'ctl.qrread.stopCamera': '카메라 끄기',
   'ctl.qrread.cameraView': '카메라 화면',

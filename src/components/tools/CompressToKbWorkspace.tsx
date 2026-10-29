@@ -8,7 +8,7 @@ import { compressToTarget, type TargetFormat, type TargetResult } from '../../li
 import { downloadBlob } from '../../lib/canvas/engine';
 import { outputFileName } from '../../lib/storage/fileNames';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 // Sizes people are most often asked for by upload forms
 const KB_PRESETS = [10, 20, 30, 50, 100, 200, 500, 1024];
 type SizeMode = 'keep' | 'passport' | 'square' | 'custom';

@@ -3556,6 +3556,136 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFF JPG 변환",
+    shortName: "TIFF → JPG",
+    tagline: "TIFF 스캔 파일과 이미지를 어디서나 열리는 작은 JPG 파일로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "TIFF는 많은 스캐너, 팩스 프로그램, 카메라, 인쇄 작업에서 만들어지는 형식이에요. 파일이 큰 경우가 많고, Chrome, Edge, Firefox와 대부분의 웹사이트에서는 표시되지 않아요. TIFF JPG 변환은 원하는 품질로 이미지를 JPG로 바꾸고, 결과는 보통 원래 크기의 일부분밖에 되지 않아요. 흑백 팩스 파일을 포함해 압축된 TIFF도 변환할 수 있어요. 여러 페이지로 된 파일은 첫 페이지를 변환해요. 모든 페이지를 남기려면 TIFF PDF 변환을 사용하세요. 변환은 브라우저 안에서 이루어지므로 파일이 기기 밖으로 나가지 않아요.",
+    seoTitle: "TIFF JPG 변환 – 무료, 빠르고 안전하게",
+    seoDescription: "브라우저에서 TIFF 스캔 파일과 이미지를 JPG로 바꿔요. 어디서나 열리는 작은 파일에 품질 조절까지. 무료, 안전, 업로드 없음.",
+    keywords: [
+      "tiff jpg 변환",
+      "tif jpg 변환",
+      "tiff를 jpg로",
+      "tiff jpeg 변환",
+      "tiff 변환",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF 이미지 추가",
+        description: ".tif 또는 .tiff 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "품질 선택",
+        description: "사진은 85%면 적당해요. 작은 글자가 있는 스캔 파일은 더 높게 설정하세요.",
+      },
+      {
+        title: "JPG 다운로드",
+        description: "JPG를 저장해서 공유하거나 업로드하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "훨씬 작은 파일",
+        description: "JPG는 보통 TIFF 크기의 일부분밖에 되지 않아요.",
+      },
+      {
+        title: "어디서나 열려요",
+        description: "JPG는 모든 뷰어, 편집기, 휴대폰, 업로드 양식에서 쓸 수 있어요.",
+      },
+      {
+        title: "대부분의 TIFF 지원",
+        description: "무압축, LZW, Deflate, PackBits, JPEG, 흑백 팩스 TIFF를 모두 열 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "파일은 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "브라우저에서 TIFF 파일이 열리지 않는 이유는 뭔가요?",
+        answer: "주요 브라우저 중 TIFF를 표시하는 건 Safari뿐이에요. Chrome, Edge, Firefox는 표시하지 못해서, 이 도구가 내 기기에서 직접 파일을 디코딩해요.",
+      },
+      {
+        question: "여러 페이지로 된 TIFF는 어떻게 되나요?",
+        answer: "첫 페이지가 변환돼요. 모든 페이지를 남기려면 TIFF 페이지마다 PDF 페이지를 하나씩 만드는 TIFF PDF 변환을 사용하세요.",
+      },
+      {
+        question: "아주 큰 스캔 파일은 크기가 줄어드나요?",
+        answer: "약 1600만 화소(예: 4000 × 4000픽셀)를 넘는 페이지는 iPhone을 포함한 모든 브라우저에서 처리할 수 있도록 그 크기로 줄여요. 일반적인 스캔 파일과 사진은 크기가 바뀌지 않아요.",
+      },
+      {
+        question: "파일이 업로드되나요?",
+        answer: "아니요. TIFF는 브라우저에서 디코딩되고 변환되므로 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFF PNG 변환",
+    shortName: "TIFF → PNG",
+    tagline: "TIFF 이미지를 모든 브라우저와 편집기에서 열리는 무손실 PNG로 바꾸세요. 변환은 내 기기에서 이루어져요.",
+    intro: "스캐너, 카메라, 디자인 프로그램에서 나온 TIFF 파일은 Chrome, Edge, Firefox와 대부분의 웹사이트에서 표시되지 않아요. TIFF PNG 변환은 이미지를 PNG로 바꿔요. PNG는 TIFF처럼 무손실이라 모든 픽셀이 그대로 유지되고, 투명도도 유지돼요. 그래서 스캔한 문서, 선화, 앞으로 더 편집할 그래픽에 잘 맞아요. 여러 페이지로 된 파일은 첫 페이지를 변환해요. 모든 페이지를 남기려면 TIFF PDF 변환을 사용하세요. 변환은 브라우저 안에서 이루어지므로 파일이 기기 밖으로 나가지 않아요.",
+    seoTitle: "TIFF PNG 변환 – 무료, 무손실",
+    seoDescription: "브라우저에서 TIFF 이미지를 무손실 PNG로 바꿔요. 모든 픽셀과 투명도를 그대로 유지해요. 무료, 안전, 업로드 없음.",
+    keywords: [
+      "tiff png 변환",
+      "tif png 변환",
+      "tiff를 png로",
+      "tiff png 변환기",
+      "tiff png 무손실",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF 이미지 추가",
+        description: ".tif 또는 .tiff 파일을 끌어다 놓거나, 선택하거나, 붙여넣으세요.",
+      },
+      {
+        title: "미리보기 확인",
+        description: "브라우저가 내 기기에서 이미지를 디코딩해요.",
+      },
+      {
+        title: "PNG 다운로드",
+        description: "무손실 PNG를 저장하고 어떤 편집기에서든 여세요.",
+      },
+    ],
+    features: [
+      {
+        title: "무손실",
+        description: "TIFF 페이지의 모든 픽셀을 그대로 유지해요.",
+      },
+      {
+        title: "투명도 유지",
+        description: "TIFF의 투명한 부분은 PNG에서도 투명하게 유지돼요.",
+      },
+      {
+        title: "대부분의 TIFF 지원",
+        description: "무압축, LZW, Deflate, PackBits, JPEG, 흑백 팩스 TIFF를 모두 열 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "파일은 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG가 TIFF보다 작아지나요?",
+        answer: "작아지는 경우가 많아요. 특히 무압축 TIFF와 흑백 스캔 파일이 그래요. 이미 압축된 TIFF는 비슷한 크기의 PNG가 될 수 있어요.",
+      },
+      {
+        question: "여러 페이지로 된 TIFF는 어떻게 되나요?",
+        answer: "첫 페이지가 변환돼요. 모든 페이지를 남기려면 TIFF 페이지마다 PDF 페이지를 하나씩 만드는 TIFF PDF 변환을 사용하세요.",
+      },
+      {
+        question: "아주 큰 스캔 파일은 크기가 줄어드나요?",
+        answer: "약 1600만 화소(예: 4000 × 4000픽셀)를 넘는 페이지는 iPhone을 포함한 모든 브라우저에서 처리할 수 있도록 그 크기로 줄여요. 일반적인 스캔 파일과 사진은 크기가 바뀌지 않아요.",
+      },
+      {
+        question: "파일이 업로드되나요?",
+        answer: "아니요. TIFF는 브라우저에서 디코딩되고 변환되므로 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG PDF 변환",
     shortName: "JPG → PDF",
@@ -3764,6 +3894,71 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "사진이 업로드되나요?",
         answer: "아니요. HEIC 디코더와 PDF 생성 기능이 브라우저에서 실행되므로 사진은 내 기기에 그대로 있어요.",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFF PDF 변환",
+    shortName: "TIFF → PDF",
+    tagline: "TIFF 스캔 파일과 팩스를 PDF로 만드세요. 여러 페이지로 된 TIFF도 모든 페이지가 순서대로 유지돼요. 변환은 내 기기에서 이루어져요.",
+    intro: "스캐너와 팩스 프로그램은 문서를 여러 페이지짜리 TIFF 파일로 저장하는 경우가 많지만, 대부분은 PDF를 기대해요. TIFF PDF 변환은 각 TIFF의 모든 페이지를 순서대로 PDF 페이지로 만들어서, 스캔한 계약서나 팩스를 어디서나 열고 이메일로 보내고 업로드할 수 있는 문서 하나로 만들어요. 여러 파일을 추가하고 페이지 순서를 바꾼 다음, A4, 레터 또는 이미지마다 맞춘 페이지를 고르세요. 모든 작업이 브라우저 안에서 이루어지므로 문서가 업로드되지 않아요.",
+    seoTitle: "TIFF PDF 변환 – 여러 페이지 스캔도 무료로",
+    seoDescription: "브라우저에서 TIFF 스캔 파일과 팩스를 PDF로 바꾸세요. 여러 페이지 TIFF도 모든 페이지를 순서대로. 무료이고 안전하며 아무것도 업로드되지 않아요.",
+    keywords: [
+      "tiff pdf 변환",
+      "tif pdf 변환",
+      "tiff를 pdf로",
+      "멀티페이지 tiff pdf 변환",
+      "팩스 tiff pdf 변환",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF 파일 추가",
+        description: ".tif 또는 .tiff 파일을 하나 이상 끌어다 놓거나 선택하세요. 각 페이지가 목록에 나타나요.",
+      },
+      {
+        title: "페이지 정렬",
+        description: "순서를 정한 다음, 페이지 크기, 방향, 여백을 고르세요.",
+      },
+      {
+        title: "PDF 다운로드",
+        description: "모든 페이지가 들어간 PDF 하나를 저장하세요.",
+      },
+    ],
+    features: [
+      {
+        title: "모든 페이지 유지",
+        description: "여러 페이지로 된 TIFF의 각 페이지가 순서대로 PDF 페이지가 돼요.",
+      },
+      {
+        title: "팩스·스캔 형식 지원",
+        description: "흑백 팩스, LZW, Deflate, PackBits, JPEG 압축 TIFF를 모두 열 수 있어요.",
+      },
+      {
+        title: "원하는 페이지 순서",
+        description: "PDF를 만들기 전에 페이지 순서를 바꾸거나 페이지를 뺄 수 있어요.",
+      },
+      {
+        title: "안전한 변환",
+        description: "문서는 내 기기에서 변환되고 업로드되지 않아요.",
+      },
+    ],
+    faqs: [
+      {
+        question: "TIFF는 몇 페이지까지 되나요?",
+        answer: "파일당 최대 200페이지예요. 200번째 이후 페이지는 빠지므로, 아주 긴 문서는 먼저 작은 TIFF 여러 개로 나누세요.",
+      },
+      {
+        question: "TIFF와 다른 이미지를 섞을 수 있나요?",
+        answer: "네. JPG, PNG, WebP, iPhone HEIC 이미지도 같은 PDF에 넣을 수 있어요.",
+      },
+      {
+        question: "PDF의 텍스트를 검색할 수 있나요?",
+        answer: "아니요. 각 페이지는 TIFF에 있던 그대로 이미지로 들어가요. 텍스트를 복사하려면 페이지를 이미지 텍스트 추출에서 여세요.",
+      },
+      {
+        question: "문서가 업로드되나요?",
+        answer: "아니요. TIFF 디코딩과 PDF 생성이 브라우저에서 이루어지므로 문서는 내 기기에 그대로 있어요.",
       },
     ],
   },

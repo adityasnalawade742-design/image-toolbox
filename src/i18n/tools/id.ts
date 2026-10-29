@@ -3558,6 +3558,136 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFF ke JPG",
+    shortName: "TIFF → JPG",
+    tagline: "Ubah hasil scan dan gambar TIFF menjadi file JPG kecil yang bisa dibuka di mana saja. Konversi berjalan di perangkat Anda.",
+    intro: "TIFF adalah format yang dihasilkan banyak scanner, program faks, kamera, dan alur kerja cetak. Filenya sering berukuran besar, dan Chrome, Edge, Firefox, serta sebagian besar situs web tidak bisa menampilkannya. TIFF ke JPG mengubah gambar menjadi JPG, yang biasanya hanya sebagian kecil dari ukuran aslinya, dengan kualitas pilihan Anda. TIFF terkompresi juga bisa, termasuk file faks hitam putih. Jika file memiliki beberapa halaman, halaman pertama yang diubah; TIFF ke PDF menyimpan semua halaman. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah TIFF ke JPG – Gratis, Cepat, Privat",
+    seoDescription: "Ubah hasil scan dan gambar TIFF ke JPG di browser. File lebih kecil yang bisa dibuka di mana saja, kualitas bisa diatur, dan tidak ada yang diunggah.",
+    keywords: [
+      "tiff ke jpg",
+      "tif ke jpg",
+      "ubah tiff ke jpg",
+      "convert tiff to jpg",
+      "konverter tiff",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar TIFF",
+        description: "Seret, pilih, atau tempel file .tif atau .tiff.",
+      },
+      {
+        title: "Pilih kualitas",
+        description: "85% cocok untuk foto. Pakai nilai lebih tinggi untuk hasil scan dengan teks kecil.",
+      },
+      {
+        title: "Unduh JPG",
+        description: "Simpan JPG, lalu bagikan atau unggah.",
+      },
+    ],
+    features: [
+      {
+        title: "File jauh lebih kecil",
+        description: "JPG biasanya hanya sebagian kecil dari ukuran TIFF.",
+      },
+      {
+        title: "Bisa dibuka di mana saja",
+        description: "JPG bisa dipakai di semua penampil, editor, ponsel, dan formulir unggah.",
+      },
+      {
+        title: "Sebagian besar jenis TIFF",
+        description: "TIFF tanpa kompresi, LZW, Deflate, PackBits, JPEG, dan faks hitam putih semuanya bisa dibuka.",
+      },
+      {
+        title: "Konversi privat",
+        description: "File diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mengapa browser saya tidak bisa membuka file TIFF?",
+        answer: "Dari browser-browser utama, hanya Safari yang bisa menampilkan TIFF. Chrome, Edge, dan Firefox tidak bisa, jadi alat ini mendekode file itu sendiri, di perangkat Anda.",
+      },
+      {
+        question: "Bagaimana dengan TIFF yang memiliki beberapa halaman?",
+        answer: "Halaman pertama yang diubah. Untuk menyimpan semua halaman, gunakan TIFF ke PDF, yang membuat satu halaman PDF untuk setiap halaman TIFF.",
+      },
+      {
+        question: "Apakah hasil scan yang sangat besar diperkecil?",
+        answer: "Halaman yang lebih besar dari sekitar 16 megapiksel, misalnya 4.000 × 4.000 piksel, diperkecil ke ukuran itu agar semua browser, termasuk di iPhone, bisa memprosesnya. Hasil scan dan foto biasa tidak diubah ukurannya.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. TIFF didekode dan diubah di browser Anda, jadi file tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFF ke PNG",
+    shortName: "TIFF → PNG",
+    tagline: "Ubah gambar TIFF ke PNG lossless yang bisa dibuka di semua browser dan editor. Konversi berjalan di perangkat Anda.",
+    intro: "File TIFF dari scanner, kamera, dan software desain tidak bisa ditampilkan di Chrome, Edge, Firefox, atau di sebagian besar situs web. TIFF ke PNG mengubah gambar menjadi PNG, yang lossless seperti TIFF, jadi setiap piksel tetap utuh, begitu juga transparansinya. Karena itu, PNG adalah pilihan yang tepat untuk dokumen hasil scan, gambar garis, dan grafis yang masih akan Anda edit. Jika file memiliki beberapa halaman, halaman pertama yang diubah; TIFF ke PDF menyimpan semua halaman. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    seoTitle: "Ubah TIFF ke PNG – Gratis, Lossless",
+    seoDescription: "Ubah gambar TIFF ke PNG lossless di browser, dengan setiap piksel dan transparansi tetap utuh. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "tiff ke png",
+      "tif ke png",
+      "ubah tiff ke png",
+      "convert tiff to png",
+      "konverter tiff ke png",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar TIFF",
+        description: "Seret, pilih, atau tempel file .tif atau .tiff.",
+      },
+      {
+        title: "Periksa pratinjau",
+        description: "Browser Anda mendekode gambar di perangkat Anda.",
+      },
+      {
+        title: "Unduh PNG",
+        description: "Simpan PNG lossless dan buka di editor mana pun.",
+      },
+    ],
+    features: [
+      {
+        title: "Lossless",
+        description: "Setiap piksel halaman TIFF disimpan persis sama.",
+      },
+      {
+        title: "Transparansi tetap utuh",
+        description: "Area transparan pada TIFF tetap transparan di PNG.",
+      },
+      {
+        title: "Sebagian besar jenis TIFF",
+        description: "TIFF tanpa kompresi, LZW, Deflate, PackBits, JPEG, dan faks hitam putih semuanya bisa dibuka.",
+      },
+      {
+        title: "Konversi privat",
+        description: "File diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah PNG-nya lebih kecil dari TIFF?",
+        answer: "Sering kali ya, terutama untuk TIFF tanpa kompresi dan hasil scan hitam putih. TIFF yang sudah dikompres mungkin menghasilkan PNG dengan ukuran yang mirip.",
+      },
+      {
+        question: "Bagaimana dengan TIFF yang memiliki beberapa halaman?",
+        answer: "Halaman pertama yang diubah. Untuk menyimpan semua halaman, gunakan TIFF ke PDF, yang membuat satu halaman PDF untuk setiap halaman TIFF.",
+      },
+      {
+        question: "Apakah hasil scan yang sangat besar diperkecil?",
+        answer: "Halaman yang lebih besar dari sekitar 16 megapiksel, misalnya 4.000 × 4.000 piksel, diperkecil ke ukuran itu agar semua browser, termasuk di iPhone, bisa memprosesnya. Hasil scan dan foto biasa tidak diubah ukurannya.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. TIFF didekode dan diubah di browser Anda, jadi file tetap ada di perangkat Anda.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG ke PDF",
     shortName: "JPG → PDF",
@@ -3766,6 +3896,71 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah foto saya diunggah?",
         answer: "Tidak. Dekoder HEIC dan pembuat PDF berjalan di browser Anda, jadi foto Anda tetap ada di perangkat Anda.",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFF ke PDF",
+    shortName: "TIFF → PDF",
+    tagline: "Jadikan hasil scan dan faks TIFF sebagai PDF, dengan semua halaman TIFF multihalaman tetap berurutan. Konversi berjalan di perangkat Anda.",
+    intro: "Scanner dan program faks sering menyimpan dokumen sebagai file TIFF multihalaman, padahal kebanyakan orang mengharapkan PDF. TIFF ke PDF mengubah setiap halaman dari setiap TIFF menjadi halaman PDF secara berurutan, sehingga kontrak hasil scan atau faks menjadi satu dokumen yang bisa Anda buka, kirim lewat email, dan unggah di mana saja. Tambahkan beberapa file, atur ulang halaman, lalu pilih A4, Letter, atau halaman seukuran setiap gambar. Semuanya berlangsung di browser Anda, jadi dokumen Anda tidak pernah diunggah.",
+    seoTitle: "Ubah TIFF ke PDF – Scan Multihalaman, Gratis",
+    seoDescription: "Ubah hasil scan dan faks TIFF ke PDF di browser. Semua halaman TIFF multihalaman tetap berurutan. Gratis, privat, dan tidak ada yang diunggah.",
+    keywords: [
+      "tiff ke pdf",
+      "tif ke pdf",
+      "ubah tiff ke pdf",
+      "convert tiff to pdf",
+      "tiff multi halaman ke pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan file TIFF",
+        description: "Letakkan atau pilih satu atau beberapa file .tif atau .tiff. Setiap halaman muncul di daftar.",
+      },
+      {
+        title: "Atur halaman",
+        description: "Tentukan urutannya, lalu pilih ukuran halaman, orientasi, dan margin.",
+      },
+      {
+        title: "Unduh PDF",
+        description: "Simpan satu PDF berisi semua halaman.",
+      },
+    ],
+    features: [
+      {
+        title: "Semua halaman tetap ada",
+        description: "Setiap halaman TIFF multihalaman menjadi halaman PDF, sesuai urutan.",
+      },
+      {
+        title: "Format faks dan scan",
+        description: "TIFF faks hitam putih serta TIFF dengan kompresi LZW, Deflate, PackBits, dan JPEG semuanya bisa dibuka.",
+      },
+      {
+        title: "Urutan halaman sesuai keinginan",
+        description: "Atur ulang atau hapus halaman sebelum membuat PDF.",
+      },
+      {
+        title: "Konversi privat",
+        description: "Dokumen Anda diubah di perangkat Anda dan tidak pernah diunggah.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Berapa banyak halaman yang bisa dimiliki TIFF?",
+        answer: "Hingga 200 halaman per file. Halaman setelah halaman ke-200 tidak disertakan, jadi pisahkan dulu dokumen yang sangat panjang menjadi beberapa TIFF yang lebih kecil.",
+      },
+      {
+        question: "Bisakah saya mencampur TIFF dengan gambar lain?",
+        answer: "Bisa. Gambar JPG, PNG, WebP, dan HEIC dari iPhone bisa dimasukkan ke PDF yang sama.",
+      },
+      {
+        question: "Apakah teks di PDF bisa dicari?",
+        answer: "Tidak. Setiap halaman ditempatkan sebagai gambar, sama seperti di TIFF. Untuk menyalin teksnya, buka halaman tersebut di Gambar ke Teks.",
+      },
+      {
+        question: "Apakah dokumen saya diunggah?",
+        answer: "Tidak. TIFF didekode dan PDF dibuat di browser Anda, jadi dokumen Anda tetap ada di perangkat Anda.",
       },
     ],
   },

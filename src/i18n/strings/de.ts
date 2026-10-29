@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': 'Das Bild ist größer als 50 MB. Versuch es mit einer kleineren Datei.',
   'ws.errHeic': 'Dieses iPhone-Foto ließ sich nicht öffnen. Exportiere es zuerst als JPG.',
   'ws.errDecode': 'Dieses Bild ließ sich nicht öffnen. Die Datei ist vielleicht beschädigt oder hat ein nicht unterstütztes Format.',
+  'ws.tiffFirstPage': 'Diese TIFF-Datei hat {n} Seiten. Hier wird nur die erste Seite umgewandelt; „TIFF in PDF“ behält alle Seiten.',
   'ws.errExport': 'Der Download konnte nicht erstellt werden. Das Bild ist vielleicht zu groß für diesen Browser. Versuch eine kleinere Größe oder ein anderes Format.',
   'ws.errCopy': 'Dein Browser hat das Kopieren des Bildes blockiert. Nutze stattdessen „Herunterladen“.',
   'ws.errFormatFallback': 'Dein Browser kann kein {wanted} speichern, deshalb wurde die Datei als {actual} gespeichert.',
@@ -618,7 +619,7 @@ export const strings = {
   'ctl.bg.result': 'Ergebnis',
 
   // Compress Image to KB
-  'ctl.kb.dropHint': 'JPG, PNG, WebP oder iPhone-HEIC. Das Ergebnis ist immer kleiner als die gewählte Größe.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF oder iPhone-HEIC. Das Ergebnis ist immer kleiner als die gewählte Größe.',
   'ctl.kb.targetSize': 'Größenlimit',
   'ctl.kb.custom': 'Oder Limit in KB eingeben',
   'ctl.kb.unitKb': 'KB',
@@ -651,7 +652,7 @@ export const strings = {
   'ctl.list.skipped': 'Einige Dateien ließen sich nicht öffnen und wurden übersprungen: {names}',
 
   // JPG to PDF
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP oder iPhone-HEIC. Wähle mehrere auf einmal; du kannst später weitere hinzufügen.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF oder iPhone-HEIC. Wähle mehrere auf einmal; du kannst später weitere hinzufügen.',
   'ctl.topdf.pages': 'Seiten: {n}',
   'ctl.topdf.pageSize': 'Seitengröße',
   'ctl.topdf.letter': 'Letter',
@@ -687,7 +688,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': 'Diese Datei konnte nicht als PDF geöffnet werden. Sie ist vielleicht beschädigt oder kein PDF.',
 
   // Merge Images
-  'ctl.merge.dropHint': 'JPG, PNG, WebP oder iPhone-HEIC. Wähle zwei oder mehr auf einmal.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF oder iPhone-HEIC. Wähle zwei oder mehr auf einmal.',
   'ctl.merge.layout': 'Layout',
   'ctl.merge.horizontal': 'Neben­einander',
   'ctl.merge.vertical': 'Unter­einander',
@@ -806,7 +807,7 @@ export const strings = {
   'ctl.croppdf.left': 'Links',
   'ctl.croppdf.note': 'Der abgeschnittene Bereich wird ausgeblendet, nicht gelöscht, ein PDF-Editor kann ihn also weiterhin wiederherstellen.',
   // Form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker
-  'ctl.dpi.dropHint': 'JPG oder PNG (WebP und iPhone-HEIC werden in JPG umgewandelt). Die Pixel werden nicht verändert.',
+  'ctl.dpi.dropHint': 'JPG oder PNG (WebP, TIFF und iPhone-HEIC werden in JPG umgewandelt). Die Pixel werden nicht verändert.',
   'ctl.dpi.newDpi': 'Neue DPI',
   'ctl.dpi.custom': 'Oder DPI eingeben',
   'ctl.dpi.current': 'Aktuelle DPI',
@@ -815,14 +816,14 @@ export const strings = {
   'ctl.dpi.note': 'DPI sagt Druckern nur, wie groß das Bild gedruckt wird. Pixel, Qualität und Dateigröße bleiben gleich.',
   'ctl.dpi.converted': 'Dieses Bild wurde in JPG umgewandelt, weil nur JPG- und PNG-Dateien einen DPI-Wert speichern können.',
   'ctl.dpi.summary': 'Bei {dpi} DPI wird dieses Bild {cm} groß gedruckt.',
-  'ctl.sig.dropHint': 'Ein Foto oder Scan deiner Unterschrift auf weißem Papier. JPG, PNG, WebP oder iPhone-HEIC.',
+  'ctl.sig.dropHint': 'Ein Foto oder Scan deiner Unterschrift auf weißem Papier. JPG, PNG, WebP, TIFF oder iPhone-HEIC.',
   'ctl.sig.sensitivity': 'Empfindlichkeit',
   'ctl.sig.sensitivityHint': 'Erhöhe sie, wenn dünne Striche verschwinden; senk sie, wenn die Papierstruktur sichtbar wird.',
   'ctl.sig.original': 'Original',
   'ctl.sig.useHint': 'Nutze das PNG in PDF unterschreiben, in Word oder in jedem Formular, das ein Bild deiner Unterschrift verlangt.',
   'ctl.sig.noInk': 'Keine Unterschrift gefunden. Erhöhe die Empfindlichkeit oder nimm ein Foto mit dunklerer Tinte.',
   'ctl.sig.resultLabel': 'Extrahierte Unterschrift auf transparentem Hintergrund',
-  'ctl.passport.dropHint': 'Ein klares Foto von vorn mit gleichmäßigem Licht. JPG, PNG, WebP oder iPhone-HEIC.',
+  'ctl.passport.dropHint': 'Ein klares Foto von vorn mit gleichmäßigem Licht. JPG, PNG, WebP, TIFF oder iPhone-HEIC.',
   'ctl.passport.size': 'Fotogröße',
   'ctl.passport.custom': 'Eigene',
   'ctl.passport.widthMm': 'Breite (mm)',
@@ -852,7 +853,7 @@ export const strings = {
   'ctl.passport.check': 'Die Vorgaben unterscheiden sich je nach Land und Behörde: Prüf vor dem Drucken die vorgeschriebene Größe, Kopfposition, Hintergrund und Gesichtsausdruck.',
 
   // Blur Background, Change Background, Image to Text and the QR code tools
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP oder iPhone-HEIC. Die Person oder das Objekt wird auf deinem Gerät erkannt; nichts wird hochgeladen.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF oder iPhone-HEIC. Die Person oder das Objekt wird auf deinem Gerät erkannt; nichts wird hochgeladen.',
   'ctl.bgfx.working': 'Motiv wird gesucht …',
   'ctl.bgfx.failed': 'Das Motiv wurde nicht gefunden: {message}',
   'ctl.bgfx.strength': 'Stärke der Unschärfe',
@@ -862,7 +863,7 @@ export const strings = {
   'ctl.bgfx.imageChosen': 'Hintergrund: {name}',
   'ctl.bgfx.note': 'Funktioniert am besten bei Fotos von Menschen. Beim ersten Mal lädt das KI-Modell etwa 16 MB herunter und bleibt dann in deinem Browser.',
   'ctl.bgfx.result': 'Foto mit dem neuen Hintergrund',
-  'ctl.ocr.dropHint': 'Ein Foto, Screenshot oder Scan mit gedrucktem Text: JPG, PNG, WebP oder iPhone-HEIC. Es wird auf deinem Gerät gelesen.',
+  'ctl.ocr.dropHint': 'Ein Foto, Screenshot oder Scan mit gedrucktem Text: JPG, PNG, WebP, TIFF oder iPhone-HEIC. Es wird auf deinem Gerät gelesen.',
   'ctl.ocr.loading': 'Texterkennung wird geladen …',
   'ctl.ocr.reading': 'Text wird gelesen …',
   'ctl.ocr.failed': 'Der Text konnte nicht gelesen werden: {message}',
@@ -916,7 +917,7 @@ export const strings = {
   'ctl.qr.inverted': 'Der Code ist heller als sein Hintergrund; viele Scanner können helle Codes auf dunklem Grund nicht lesen.',
   'ctl.qr.smallMargin': 'Lass eine Ruhezone von mindestens 2, damit Scanner den Code finden.',
   'ctl.qrread.dropTitle': 'Bild mit QR-Code hier ablegen',
-  'ctl.qrread.dropHint': 'Ein Foto oder Screenshot: JPG, PNG, WebP oder iPhone-HEIC. Es wird auf deinem Gerät gelesen.',
+  'ctl.qrread.dropHint': 'Ein Foto oder Screenshot: JPG, PNG, WebP, TIFF oder iPhone-HEIC. Es wird auf deinem Gerät gelesen.',
   'ctl.qrread.useCamera': 'Mit Kamera scannen',
   'ctl.qrread.stopCamera': 'Kamera stoppen',
   'ctl.qrread.cameraView': 'Kameraansicht',

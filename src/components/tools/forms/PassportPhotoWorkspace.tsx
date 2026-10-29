@@ -12,7 +12,7 @@ import { removeBackground, type RemovalProgress } from '../../../lib/ai/backgrou
 import { RemovalProgressBar, activeDownload } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 
 // Sizes in mm, and where the guides sit (fraction of the photo height) for the top of the head and the chin
 const PRESETS = {

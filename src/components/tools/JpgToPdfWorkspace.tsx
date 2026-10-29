@@ -7,7 +7,7 @@ import { useT } from '../shared/I18nContext';
 import { imagesToPdf, pageLayout, type PageSize, type PageOrientation, type PageMargin } from '../../lib/pdf/imagesToPdf';
 import { downloadBlob } from '../../lib/canvas/engine';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 
 export function JpgToPdfWorkspace() {
   const t = useT();

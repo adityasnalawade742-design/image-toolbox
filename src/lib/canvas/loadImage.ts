@@ -1,4 +1,5 @@
 import { isHeicFile, convertHeicToBlob } from './heicLoader';
+import { isTiffFile, convertTiff } from './tiffLoader';
 
 export interface LoadedImage {
   file: File;
@@ -9,9 +10,20 @@ export interface LoadedImage {
   height: number;
 }
 
-/** Decode an image file (iPhone HEIC included) into an <img> that canvases can draw */
+/** Decode an image file (iPhone HEIC and TIFF included) into an <img> that canvases can draw; a TIFF gives its first page */
 export async function loadImageFile(file: File): Promise<LoadedImage> {
-  const blob = isHeicFile(file) ? await convertHeicToBlob(file) : file;
+  const blob = isHeicFile(file) ? await convertHeicToBlob(file) : isTiffFile(file) ? (await convertTiff(file, true)).blobs[0] : file;
+  return decodeBlob(file, blob);
+}
+
+/** Like loadImageFile, but a multi-page TIFF gives one image per page */
+export async function loadImageFiles(file: File): Promise<LoadedImage[]> {
+  if (!isTiffFile(file)) return [await loadImageFile(file)];
+  const { blobs } = await convertTiff(file);
+  return Promise.all(blobs.map((b) => decodeBlob(file, b)));
+}
+
+async function decodeBlob(file: File, blob: Blob): Promise<LoadedImage> {
   const url = URL.createObjectURL(blob);
   const img = new Image();
   img.decoding = 'async';

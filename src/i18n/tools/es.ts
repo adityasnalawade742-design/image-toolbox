@@ -3552,6 +3552,136 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFF a JPG",
+    shortName: "TIFF → JPG",
+    tagline: "Convierte escaneos e imágenes TIFF en archivos JPG ligeros que se abren en cualquier sitio. La conversión se hace en tu dispositivo.",
+    intro: "TIFF es el formato que generan muchos escáneres, programas de fax, cámaras y flujos de trabajo de impresión. Los archivos suelen pesar mucho, y ni Chrome, ni Edge, ni Firefox, ni la mayoría de las webs pueden mostrarlos. TIFF a JPG convierte la imagen a JPG, que suele pesar una fracción del original, con la calidad que elijas. También funcionan los TIFF comprimidos, incluidos los archivos de fax en blanco y negro. Si el archivo tiene varias páginas, se convierte la primera; TIFF a PDF conserva todas las páginas. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo.",
+    seoTitle: "Convertir TIFF a JPG gratis, rápido y privado",
+    seoDescription: "Convierte escaneos e imágenes TIFF a JPG en tu navegador. Archivos más ligeros que se abren en cualquier sitio, calidad ajustable y sin subir nada.",
+    keywords: [
+      "tiff a jpg",
+      "tif a jpg",
+      "convertir tiff a jpg",
+      "tiff a jpeg",
+      "convertidor tiff",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen TIFF",
+        description: "Arrastra, elige o pega un archivo .tif o .tiff.",
+      },
+      {
+        title: "Elige la calidad",
+        description: "Un 85% va bien para fotos. Usa un valor más alto para escaneos con texto pequeño.",
+      },
+      {
+        title: "Descarga el JPG",
+        description: "Guarda el JPG y compártelo o súbelo.",
+      },
+    ],
+    features: [
+      {
+        title: "Archivos mucho más ligeros",
+        description: "Un JPG suele pesar una fracción de lo que pesa el TIFF.",
+      },
+      {
+        title: "Se abre en todas partes",
+        description: "El JPG funciona en cualquier visor, editor, móvil y formulario de subida.",
+      },
+      {
+        title: "Casi todos los tipos de TIFF",
+        description: "Se abren los TIFF sin compresión, LZW, Deflate, PackBits, JPEG y de fax en blanco y negro.",
+      },
+      {
+        title: "Conversión privada",
+        description: "El archivo se convierte en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Por qué mi navegador no abre archivos TIFF?",
+        answer: "De los navegadores principales, solo Safari muestra TIFF. Chrome, Edge y Firefox no, así que esta herramienta decodifica el archivo por sí misma, en tu dispositivo.",
+      },
+      {
+        question: "¿Qué pasa con un TIFF de varias páginas?",
+        answer: "Se convierte la primera página. Para conservar todas, usa TIFF a PDF, que crea una página de PDF por cada página del TIFF.",
+      },
+      {
+        question: "¿Se reduce un escaneo muy grande?",
+        answer: "Las páginas de más de unos 16 megapíxeles, como 4000 × 4000 píxeles, se reducen a ese tamaño para que cualquier navegador, iPhone incluido, pueda procesarlas. Los escaneos y las fotos normales no se redimensionan.",
+      },
+      {
+        question: "¿Se sube mi archivo?",
+        answer: "No. El TIFF se decodifica y se convierte en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFF a PNG",
+    shortName: "TIFF → PNG",
+    tagline: "Convierte imágenes TIFF a PNG sin pérdida, que cualquier navegador y editor puede abrir. La conversión se hace en tu dispositivo.",
+    intro: "Los archivos TIFF de escáneres, cámaras y programas de diseño no se pueden mostrar en Chrome, Edge, Firefox ni en la mayoría de las webs. TIFF a PNG convierte la imagen a PNG, que no tiene pérdida, igual que el TIFF, así que se conserva cada píxel y también la transparencia. Por eso es una buena opción para documentos escaneados, dibujos de línea y gráficos que vayas a seguir editando. Si el archivo tiene varias páginas, se convierte la primera; TIFF a PDF conserva todas las páginas. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo.",
+    seoTitle: "Convertir TIFF a PNG gratis y sin pérdida",
+    seoDescription: "Convierte imágenes TIFF a PNG sin pérdida en tu navegador, conservando cada píxel y la transparencia. Gratis, privado y sin subir nada.",
+    keywords: [
+      "tiff a png",
+      "tif a png",
+      "convertir tiff a png",
+      "convertidor tiff a png",
+      "tiff a png sin pérdida",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen TIFF",
+        description: "Arrastra, elige o pega un archivo .tif o .tiff.",
+      },
+      {
+        title: "Revisa la vista previa",
+        description: "Tu navegador decodifica la imagen en tu dispositivo.",
+      },
+      {
+        title: "Descarga el PNG",
+        description: "Guarda el PNG sin pérdida y ábrelo en cualquier editor.",
+      },
+    ],
+    features: [
+      {
+        title: "Sin pérdida",
+        description: "Cada píxel de la página TIFF se conserva exactamente.",
+      },
+      {
+        title: "Conserva la transparencia",
+        description: "Las zonas transparentes del TIFF siguen siendo transparentes en el PNG.",
+      },
+      {
+        title: "Casi todos los tipos de TIFF",
+        description: "Se abren los TIFF sin compresión, LZW, Deflate, PackBits, JPEG y de fax en blanco y negro.",
+      },
+      {
+        title: "Conversión privada",
+        description: "El archivo se convierte en tu dispositivo y nunca se sube.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿El PNG pesará menos que el TIFF?",
+        answer: "A menudo sí, sobre todo con TIFF sin compresión y escaneos en blanco y negro. Un TIFF que ya estaba comprimido puede dar un PNG de un peso parecido.",
+      },
+      {
+        question: "¿Qué pasa con un TIFF de varias páginas?",
+        answer: "Se convierte la primera página. Para conservar todas, usa TIFF a PDF, que crea una página de PDF por cada página del TIFF.",
+      },
+      {
+        question: "¿Se reduce un escaneo muy grande?",
+        answer: "Las páginas de más de unos 16 megapíxeles, como 4000 × 4000 píxeles, se reducen a ese tamaño para que cualquier navegador, iPhone incluido, pueda procesarlas. Los escaneos y las fotos normales no se redimensionan.",
+      },
+      {
+        question: "¿Se sube mi archivo?",
+        answer: "No. El TIFF se decodifica y se convierte en tu navegador, así que se queda en tu dispositivo.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG a PDF",
     shortName: "JPG → PDF",
@@ -3760,6 +3890,71 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Se suben mis fotos?",
         answer: "No. El decodificador HEIC y el creador de PDF funcionan en tu navegador, así que tus fotos se quedan en tu dispositivo.",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFF a PDF",
+    shortName: "TIFF → PDF",
+    tagline: "Convierte escaneos y faxes TIFF en un PDF, con todas las páginas de un TIFF multipágina en orden. La conversión se hace en tu dispositivo.",
+    intro: "Los escáneres y los programas de fax suelen guardar los documentos como archivos TIFF de varias páginas, pero casi todo el mundo espera un PDF. TIFF a PDF convierte cada página de cada TIFF en una página de PDF, en orden, para que un contrato escaneado o un fax se convierta en un solo documento que puedes abrir, enviar por correo y subir en cualquier sitio. Añade varios archivos, reordena las páginas y elige A4, Carta o páginas del tamaño de cada imagen. Todo ocurre en tu navegador, así que tus documentos nunca se suben.",
+    seoTitle: "Convertir TIFF a PDF gratis: escaneos de varias páginas",
+    seoDescription: "Convierte escaneos y faxes TIFF a PDF en tu navegador. Todas las páginas de un TIFF multipágina, en orden. Gratis, privado y sin subir nada.",
+    keywords: [
+      "tiff a pdf",
+      "tif a pdf",
+      "convertir tiff a pdf",
+      "tiff multipágina a pdf",
+      "fax tiff a pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Añade tus archivos TIFF",
+        description: "Arrastra o elige uno o varios archivos .tif o .tiff. Cada página aparece en la lista.",
+      },
+      {
+        title: "Ordena las páginas",
+        description: "Fija el orden y luego elige el tamaño de página, la orientación y el margen.",
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Guarda un PDF con todas las páginas.",
+      },
+    ],
+    features: [
+      {
+        title: "Se conservan todas las páginas",
+        description: "Cada página de un TIFF multipágina se convierte en una página del PDF, en orden.",
+      },
+      {
+        title: "Formatos de fax y escaneo",
+        description: "Se abren los TIFF de fax en blanco y negro y los comprimidos con LZW, Deflate, PackBits y JPEG.",
+      },
+      {
+        title: "Tu orden de páginas",
+        description: "Reordena o quita páginas antes de crear el PDF.",
+      },
+      {
+        title: "Conversión privada",
+        description: "Tus documentos se convierten en tu dispositivo y nunca se suben.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cuántas páginas puede tener un TIFF?",
+        answer: "Hasta 200 páginas por archivo. Las páginas posteriores a la 200 se omiten, así que divide antes los documentos muy largos en TIFF más pequeños.",
+      },
+      {
+        question: "¿Puedo mezclar TIFF con otras imágenes?",
+        answer: "Sí. Las imágenes JPG, PNG, WebP y HEIC del iPhone pueden ir en el mismo PDF.",
+      },
+      {
+        question: "¿Se puede buscar en el texto del PDF?",
+        answer: "No. Cada página se coloca como imagen, tal como estaba en el TIFF. Para copiar el texto, abre una página en Imagen a texto.",
+      },
+      {
+        question: "¿Se suben mis documentos?",
+        answer: "No. El TIFF se decodifica y el PDF se crea en tu navegador, así que tus documentos se quedan en tu dispositivo.",
       },
     ],
   },

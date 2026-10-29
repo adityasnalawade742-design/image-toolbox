@@ -9,7 +9,7 @@ import { extractSignature, type InkColor } from '../../../lib/canvas/signature';
 import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
 import { RangeField } from '../pdf/common';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif';
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 // Phone photos are large; signatures don't need more than this to stay crisp
 const MAX_SIDE = 2000;
 

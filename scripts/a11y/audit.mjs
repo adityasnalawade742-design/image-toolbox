@@ -25,7 +25,7 @@ const INPUT = {
   'bulk-image-compressor': [S('photo.jpg'), S('photo2.png')], 'bulk-image-resizer': [S('photo.jpg'), S('photo2.png')],
   'heic-to-jpg': [S('photo.heic')], 'heic-to-png': [S('photo.heic')], 'heic-to-webp': [S('photo.heic')], 'heic-to-pdf': [S('photo.heic')],
   'avif-to-jpg': [S('photo.avif')], 'avif-to-png': [S('photo.avif')], 'jpg-to-avif': [S('photo.jpg')], 'png-to-avif': [S('photo.png')],
-  'gif-to-png': [S('photo.gif')], 'gif-to-jpg': [S('photo.gif')], 'bmp-to-jpg': [S('photo.bmp')], 'bmp-to-png': [S('photo.bmp')],
+  'gif-to-png': [S('photo.gif')], 'gif-to-jpg': [S('photo.gif')], 'bmp-to-jpg': [S('photo.bmp')], 'bmp-to-png': [S('photo.bmp')], 'tiff-to-jpg': [S('scan.tif')], 'tiff-to-png': [S('photo.tif')], 'tiff-to-pdf': [S('scan.tif'), S('photo.tif')],
   'svg-to-jpg': [S('shape.svg')], 'svg-to-webp': [S('shape.svg')], 'pdf-to-png': [S('doc.pdf')], 'png-to-pdf': [S('photo.png'), S('photo2.png')], 'pdf-to-jpg': [S('doc.pdf')],
   'jpg-to-pdf': [S('photo.jpg'), S('photo2.png')], 'merge-images': [S('photo.jpg'), S('photo2.png')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],

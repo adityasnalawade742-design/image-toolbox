@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': 'Esa imagen pesa más de 50 MB. Prueba con un archivo más pequeño.',
   'ws.errHeic': 'No se pudo abrir esta foto de iPhone. Prueba a exportarla primero como JPG.',
   'ws.errDecode': 'No se pudo abrir esta imagen. Puede que el archivo esté dañado o en un formato no compatible.',
+  'ws.tiffFirstPage': 'Este TIFF tiene {n} páginas. Aquí solo se convierte la primera; TIFF a PDF conserva todas las páginas.',
   'ws.errExport': 'No se pudo crear la descarga. Puede que la imagen sea demasiado grande para este navegador; prueba con un tamaño menor u otro formato.',
   'ws.errCopy': 'Tu navegador bloqueó la copia de la imagen. Usa Descargar.',
   'ws.errFormatFallback': 'Tu navegador no puede guardar en {wanted}, así que se guardó como {actual}.',
@@ -618,7 +619,7 @@ export const strings = {
   'ctl.bg.result': 'Resultado',
 
   // Compress Image to KB
-  'ctl.kb.dropHint': 'JPG, PNG, WebP o HEIC de iPhone. El resultado siempre pesa menos que el tamaño que elijas.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF o HEIC de iPhone. El resultado siempre pesa menos que el tamaño que elijas.',
   'ctl.kb.targetSize': 'Límite de tamaño',
   'ctl.kb.custom': 'O escribe un límite en KB',
   'ctl.kb.unitKb': 'KB',
@@ -651,7 +652,7 @@ export const strings = {
   'ctl.list.skipped': 'Algunos archivos no se pudieron abrir y se omitieron: {names}',
 
   // JPG to PDF
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP o HEIC de iPhone. Elige varias a la vez; puedes añadir más después.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF o HEIC de iPhone. Elige varias a la vez; puedes añadir más después.',
   'ctl.topdf.pages': 'Páginas: {n}',
   'ctl.topdf.pageSize': 'Tamaño de página',
   'ctl.topdf.letter': 'Carta',
@@ -687,7 +688,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': 'Este archivo no se pudo abrir como PDF. Puede estar dañado o no ser un PDF.',
 
   // Merge Images
-  'ctl.merge.dropHint': 'JPG, PNG, WebP o HEIC de iPhone. Elige dos o más a la vez.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF o HEIC de iPhone. Elige dos o más a la vez.',
   'ctl.merge.layout': 'Diseño',
   'ctl.merge.horizontal': 'Lado a lado',
   'ctl.merge.vertical': 'Apiladas',
@@ -806,7 +807,7 @@ export const strings = {
   'ctl.croppdf.left': 'Izquierda',
   'ctl.croppdf.note': 'La zona recortada se oculta, no se borra, así que un editor de PDF aún puede restaurarla.',
   // Form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker
-  'ctl.dpi.dropHint': 'JPG o PNG (WebP y HEIC de iPhone se convierten a JPG). Los píxeles no cambian.',
+  'ctl.dpi.dropHint': 'JPG o PNG (WebP, TIFF y HEIC de iPhone se convierten a JPG). Los píxeles no cambian.',
   'ctl.dpi.newDpi': 'Nuevos DPI',
   'ctl.dpi.custom': 'O escribe los DPI',
   'ctl.dpi.current': 'DPI actuales',
@@ -815,14 +816,14 @@ export const strings = {
   'ctl.dpi.note': 'Los DPI solo indican a las impresoras de qué tamaño imprimir la imagen. Los píxeles, la calidad y el tamaño del archivo no cambian.',
   'ctl.dpi.converted': 'Esta imagen se ha convertido a JPG, porque solo los archivos JPG y PNG pueden guardar un valor de DPI.',
   'ctl.dpi.summary': 'A {dpi} DPI, esta imagen se imprime a {cm}.',
-  'ctl.sig.dropHint': 'Una foto o un escaneo de tu firma en papel blanco. JPG, PNG, WebP o HEIC de iPhone.',
+  'ctl.sig.dropHint': 'Una foto o un escaneo de tu firma en papel blanco. JPG, PNG, WebP, TIFF o HEIC de iPhone.',
   'ctl.sig.sensitivity': 'Sensibilidad',
   'ctl.sig.sensitivityHint': 'Súbela si desaparecen los trazos finos; bájala si aparece la textura del papel.',
   'ctl.sig.original': 'Original',
   'ctl.sig.useHint': 'Usa el PNG en Firmar PDF, en Word o en cualquier formulario que pida una imagen de la firma.',
   'ctl.sig.noInk': 'No se ha encontrado ninguna firma. Sube la sensibilidad o usa una foto con tinta más oscura.',
   'ctl.sig.resultLabel': 'Firma extraída sobre fondo transparente',
-  'ctl.passport.dropHint': 'Una foto clara, de frente y con luz uniforme. JPG, PNG, WebP o HEIC de iPhone.',
+  'ctl.passport.dropHint': 'Una foto clara, de frente y con luz uniforme. JPG, PNG, WebP, TIFF o HEIC de iPhone.',
   'ctl.passport.size': 'Tamaño de la foto',
   'ctl.passport.custom': 'Personalizado',
   'ctl.passport.widthMm': 'Ancho (mm)',
@@ -852,7 +853,7 @@ export const strings = {
   'ctl.passport.check': 'Las normas cambian según el país y la oficina: comprueba el tamaño exigido, la posición de la cabeza, el fondo y la expresión antes de imprimir.',
 
   // Blur Background, Change Background, Image to Text and the QR code tools
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP o HEIC de iPhone. La persona o el objeto se detecta en tu dispositivo; no se sube nada.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF o HEIC de iPhone. La persona o el objeto se detecta en tu dispositivo; no se sube nada.',
   'ctl.bgfx.working': 'Buscando el sujeto…',
   'ctl.bgfx.failed': 'No se ha podido encontrar el sujeto: {message}',
   'ctl.bgfx.strength': 'Intensidad del desenfoque',
@@ -862,7 +863,7 @@ export const strings = {
   'ctl.bgfx.imageChosen': 'Fondo: {name}',
   'ctl.bgfx.note': 'Funciona mejor con fotos de personas. La primera vez, el modelo de IA descarga unos 16 MB y después se queda en tu navegador.',
   'ctl.bgfx.result': 'Foto con el nuevo fondo',
-  'ctl.ocr.dropHint': 'Una foto, captura de pantalla o escaneo con texto impreso: JPG, PNG, WebP o HEIC de iPhone. Se lee en tu dispositivo.',
+  'ctl.ocr.dropHint': 'Una foto, captura de pantalla o escaneo con texto impreso: JPG, PNG, WebP, TIFF o HEIC de iPhone. Se lee en tu dispositivo.',
   'ctl.ocr.loading': 'Cargando el lector de texto…',
   'ctl.ocr.reading': 'Leyendo el texto…',
   'ctl.ocr.failed': 'No se ha podido leer el texto: {message}',
@@ -916,7 +917,7 @@ export const strings = {
   'ctl.qr.inverted': 'El código es más claro que su fondo; muchos escáneres no leen códigos claros sobre fondo oscuro.',
   'ctl.qr.smallMargin': 'Deja una zona de silencio de al menos 2 para que los escáneres encuentren el código.',
   'ctl.qrread.dropTitle': 'Suelta una imagen con un código QR',
-  'ctl.qrread.dropHint': 'Una foto o captura de pantalla: JPG, PNG, WebP o HEIC de iPhone. Se lee en tu dispositivo.',
+  'ctl.qrread.dropHint': 'Una foto o captura de pantalla: JPG, PNG, WebP, TIFF o HEIC de iPhone. Se lee en tu dispositivo.',
   'ctl.qrread.useCamera': 'Escanear con la cámara',
   'ctl.qrread.stopCamera': 'Detener cámara',
   'ctl.qrread.cameraView': 'Vista de la cámara',

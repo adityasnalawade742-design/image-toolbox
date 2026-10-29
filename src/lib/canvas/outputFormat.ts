@@ -27,6 +27,8 @@ const FIXED_TARGETS: Record<string, OutputFormat> = {
   'gif-to-jpg': 'image/jpeg',
   'bmp-to-jpg': 'image/jpeg',
   'bmp-to-png': 'image/png',
+  'tiff-to-jpg': 'image/jpeg',
+  'tiff-to-png': 'image/png',
   'svg-to-jpg': 'image/jpeg',
   'svg-to-webp': 'image/webp',
 };

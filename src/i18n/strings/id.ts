@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': 'Gambar itu lebih dari 50 MB. Coba file yang lebih kecil.',
   'ws.errHeic': 'Foto iPhone ini tidak bisa dibuka. Coba ekspor sebagai JPG terlebih dahulu.',
   'ws.errDecode': 'Gambar ini tidak bisa dibuka. File mungkin rusak atau formatnya tidak didukung.',
+  'ws.tiffFirstPage': 'TIFF ini memiliki {n} halaman. Di sini hanya halaman pertama yang diubah; TIFF ke PDF menyimpan semua halaman.',
   'ws.errExport': 'File unduhan tidak bisa dibuat. Gambar mungkin terlalu besar untuk browser ini; coba ukuran yang lebih kecil atau format lain.',
   'ws.errCopy': 'Browser Anda memblokir penyalinan gambar. Gunakan Unduh sebagai gantinya.',
   'ws.errFormatFallback': 'Browser Anda tidak bisa menyimpan {wanted}, jadi file disimpan sebagai {actual}.',
@@ -618,7 +619,7 @@ export const strings = {
   'ctl.bg.result': 'Hasil',
 
   // ===== Compress Image to KB =====
-  'ctl.kb.dropHint': 'JPG, PNG, WebP, atau HEIC dari iPhone. Hasilnya selalu lebih kecil dari ukuran yang Anda pilih.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF, atau HEIC dari iPhone. Hasilnya selalu lebih kecil dari ukuran yang Anda pilih.',
   'ctl.kb.targetSize': 'Batas ukuran',
   'ctl.kb.custom': 'Atau ketik batas dalam KB',
   'ctl.kb.unitKb': 'KB',
@@ -651,7 +652,7 @@ export const strings = {
   'ctl.list.skipped': 'Beberapa file tidak bisa dibuka dan dilewati: {names}',
 
   // ===== JPG to PDF =====
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP, atau HEIC dari iPhone. Pilih beberapa sekaligus; Anda bisa menambahkan lagi nanti.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF, atau HEIC dari iPhone. Pilih beberapa sekaligus; Anda bisa menambahkan lagi nanti.',
   'ctl.topdf.pages': 'Halaman: {n}',
   'ctl.topdf.pageSize': 'Ukuran halaman',
   'ctl.topdf.letter': 'Letter',
@@ -687,7 +688,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': 'File ini tidak bisa dibuka sebagai PDF. Mungkin file rusak, atau bukan PDF.',
 
   // ===== Merge Images =====
-  'ctl.merge.dropHint': 'JPG, PNG, WebP, atau HEIC dari iPhone. Pilih dua atau lebih sekaligus.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF, atau HEIC dari iPhone. Pilih dua atau lebih sekaligus.',
   'ctl.merge.layout': 'Tata letak',
   'ctl.merge.horizontal': 'Berdampingan',
   'ctl.merge.vertical': 'Bertumpuk',
@@ -827,7 +828,7 @@ export const strings = {
   'ctl.croppdf.note': 'Area yang dipangkas disembunyikan, bukan dihapus, jadi editor PDF masih bisa memulihkannya.',
 
   // ===== Change DPI =====
-  'ctl.dpi.dropHint': 'JPG atau PNG (WebP dan HEIC iPhone dikonversi ke JPG). Pikselnya tidak diubah.',
+  'ctl.dpi.dropHint': 'JPG atau PNG (WebP, TIFF dan HEIC iPhone dikonversi ke JPG). Pikselnya tidak diubah.',
   'ctl.dpi.newDpi': 'DPI baru',
   'ctl.dpi.custom': 'Atau ketik DPI',
   'ctl.dpi.current': 'DPI saat ini',
@@ -838,7 +839,7 @@ export const strings = {
   'ctl.dpi.summary': 'Pada {dpi} DPI, gambar ini tercetak berukuran {cm}.',
 
   // ===== Signature extractor =====
-  'ctl.sig.dropHint': 'Foto atau hasil scan tanda tangan Anda di kertas putih. JPG, PNG, WebP, atau HEIC iPhone.',
+  'ctl.sig.dropHint': 'Foto atau hasil scan tanda tangan Anda di kertas putih. JPG, PNG, WebP, TIFF, atau HEIC iPhone.',
   'ctl.sig.sensitivity': 'Sensitivitas',
   'ctl.sig.sensitivityHint': 'Naikkan jika goresan tipis hilang; turunkan jika tekstur kertas muncul.',
   'ctl.sig.original': 'Asli',
@@ -847,7 +848,7 @@ export const strings = {
   'ctl.sig.resultLabel': 'Tanda tangan hasil ekstraksi di atas background transparan',
 
   // ===== Passport photo maker =====
-  'ctl.passport.dropHint': 'Foto yang jelas, menghadap ke depan, dengan cahaya merata. JPG, PNG, WebP, atau HEIC iPhone.',
+  'ctl.passport.dropHint': 'Foto yang jelas, menghadap ke depan, dengan cahaya merata. JPG, PNG, WebP, TIFF, atau HEIC iPhone.',
   'ctl.passport.size': 'Ukuran foto',
   'ctl.passport.custom': 'Kustom',
   'ctl.passport.widthMm': 'Lebar (mm)',
@@ -877,7 +878,7 @@ export const strings = {
   'ctl.passport.check': 'Aturan berbeda di setiap negara dan instansi: periksa ukuran, posisi kepala, background, dan ekspresi yang diwajibkan sebelum Anda mencetak.',
 
   // ===== Blur Background / Change Background =====
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, atau HEIC iPhone. Orang atau benda di foto ditemukan di perangkat Anda; tidak ada yang diunggah.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF, atau HEIC iPhone. Orang atau benda di foto ditemukan di perangkat Anda; tidak ada yang diunggah.',
   'ctl.bgfx.working': 'Mencari subjek…',
   'ctl.bgfx.failed': 'Subjek tidak ditemukan: {message}',
   'ctl.bgfx.strength': 'Kekuatan blur',
@@ -889,7 +890,7 @@ export const strings = {
   'ctl.bgfx.result': 'Foto dengan background baru',
 
   // ===== Image to Text =====
-  'ctl.ocr.dropHint': 'Foto, screenshot, atau hasil scan berisi teks cetak: JPG, PNG, WebP, atau HEIC iPhone. Dibaca di perangkat Anda.',
+  'ctl.ocr.dropHint': 'Foto, screenshot, atau hasil scan berisi teks cetak: JPG, PNG, WebP, TIFF, atau HEIC iPhone. Dibaca di perangkat Anda.',
   'ctl.ocr.loading': 'Memuat pembaca teks…',
   'ctl.ocr.reading': 'Membaca teks…',
   'ctl.ocr.failed': 'Teks tidak bisa dibaca: {message}',
@@ -947,7 +948,7 @@ export const strings = {
 
   // ===== QR Code Reader =====
   'ctl.qrread.dropTitle': 'Letakkan gambar berisi QR code',
-  'ctl.qrread.dropHint': 'Foto atau screenshot: JPG, PNG, WebP, atau HEIC iPhone. Dibaca di perangkat Anda.',
+  'ctl.qrread.dropHint': 'Foto atau screenshot: JPG, PNG, WebP, TIFF, atau HEIC iPhone. Dibaca di perangkat Anda.',
   'ctl.qrread.useCamera': 'Pindai dengan kamera',
   'ctl.qrread.stopCamera': 'Matikan kamera',
   'ctl.qrread.cameraView': 'Tampilan kamera',

@@ -59,6 +59,7 @@ export const strings = {
   'ws.errTooLarge': 'Bu resim 50 MB’tan büyük. Daha küçük bir dosya deneyin.',
   'ws.errHeic': 'Bu iPhone fotoğrafı açılamadı. Önce JPG olarak dışa aktarmayı deneyin.',
   'ws.errDecode': 'Bu resim açılamadı. Dosya bozuk veya desteklenmeyen bir formatta olabilir.',
+  'ws.tiffFirstPage': "Bu TIFF dosyasında {n} sayfa var. Burada yalnızca ilk sayfa dönüştürülür; TIFF'ten PDF'e tüm sayfaları korur.",
   'ws.errExport': 'İndirilecek dosya oluşturulamadı. Resim bu tarayıcı için çok büyük olabilir; daha küçük bir boyut veya başka bir format deneyin.',
   'ws.errCopy': 'Tarayıcınız resmin kopyalanmasını engelledi. Bunun yerine İndir’i kullanın.',
   'ws.errFormatFallback': 'Tarayıcınız şu formatta kaydedemiyor: {wanted}. Dosya bunun yerine şu formatta kaydedildi: {actual}.',
@@ -618,7 +619,7 @@ export const strings = {
   'ctl.bg.result': 'Sonuç',
 
   // Compress Image to KB
-  'ctl.kb.dropHint': 'JPG, PNG, WebP veya iPhone HEIC. Sonuç her zaman seçtiğiniz boyuttan küçüktür.',
+  'ctl.kb.dropHint': 'JPG, PNG, WebP, TIFF veya iPhone HEIC. Sonuç her zaman seçtiğiniz boyuttan küçüktür.',
   'ctl.kb.targetSize': 'Boyut sınırı',
   'ctl.kb.custom': 'Veya KB cinsinden bir sınır yazın',
   'ctl.kb.unitKb': 'KB',
@@ -651,7 +652,7 @@ export const strings = {
   'ctl.list.skipped': 'Bazı dosyalar açılamadı ve atlandı: {names}',
 
   // JPG to PDF
-  'ctl.topdf.dropHint': 'JPG, PNG, WebP veya iPhone HEIC. Birden fazlasını aynı anda seçin; sonradan daha fazlasını ekleyebilirsiniz.',
+  'ctl.topdf.dropHint': 'JPG, PNG, WebP, TIFF veya iPhone HEIC. Birden fazlasını aynı anda seçin; sonradan daha fazlasını ekleyebilirsiniz.',
   'ctl.topdf.pages': 'Sayfa: {n}',
   'ctl.topdf.pageSize': 'Sayfa boyutu',
   'ctl.topdf.letter': 'Letter (ABD)',
@@ -687,7 +688,7 @@ export const strings = {
   'ctl.frompdf.errInvalid': 'Bu dosya PDF olarak açılamadı. Hasarlı olabilir veya bir PDF olmayabilir.',
 
   // Merge Images
-  'ctl.merge.dropHint': 'JPG, PNG, WebP veya iPhone HEIC. Aynı anda iki veya daha fazlasını seçin.',
+  'ctl.merge.dropHint': 'JPG, PNG, WebP, TIFF veya iPhone HEIC. Aynı anda iki veya daha fazlasını seçin.',
   'ctl.merge.layout': 'Düzen',
   'ctl.merge.horizontal': 'Yan yana',
   'ctl.merge.vertical': 'Alt alta',
@@ -827,7 +828,7 @@ export const strings = {
   'ctl.croppdf.note': 'Kırpılan alan silinmez, gizlenir; bu yüzden bir PDF düzenleyici onu geri getirebilir.',
 
   // Change DPI
-  'ctl.dpi.dropHint': 'JPG veya PNG (WebP ve iPhone HEIC dosyaları JPG’ye dönüştürülür). Pikseller değişmez.',
+  'ctl.dpi.dropHint': 'JPG veya PNG (WebP, TIFF ve iPhone HEIC dosyaları JPG’ye dönüştürülür). Pikseller değişmez.',
   'ctl.dpi.newDpi': 'Yeni DPI',
   'ctl.dpi.custom': 'Veya bir DPI yazın',
   'ctl.dpi.current': 'Mevcut DPI',
@@ -838,7 +839,7 @@ export const strings = {
   'ctl.dpi.summary': 'Bu resim {dpi} DPI ile {cm} boyutunda basılır.',
 
   // Signature extractor
-  'ctl.sig.dropHint': 'Beyaz kâğıttaki imzanızın fotoğrafı veya taraması. JPG, PNG, WebP veya iPhone HEIC.',
+  'ctl.sig.dropHint': 'Beyaz kâğıttaki imzanızın fotoğrafı veya taraması. JPG, PNG, WebP, TIFF veya iPhone HEIC.',
   'ctl.sig.sensitivity': 'Hassasiyet',
   'ctl.sig.sensitivityHint': 'İnce çizgiler kaybolursa artırın; kâğıt dokusu görünürse azaltın.',
   'ctl.sig.original': 'Orijinal',
@@ -847,7 +848,7 @@ export const strings = {
   'ctl.sig.resultLabel': 'Saydam arka plan üzerinde çıkarılan imza',
 
   // Passport photo maker
-  'ctl.passport.dropHint': 'Eşit ışıklı, önden çekilmiş net bir fotoğraf. JPG, PNG, WebP veya iPhone HEIC.',
+  'ctl.passport.dropHint': 'Eşit ışıklı, önden çekilmiş net bir fotoğraf. JPG, PNG, WebP, TIFF veya iPhone HEIC.',
   'ctl.passport.size': 'Fotoğraf boyutu',
   'ctl.passport.custom': 'Özel',
   'ctl.passport.widthMm': 'Genişlik (mm)',
@@ -877,7 +878,7 @@ export const strings = {
   'ctl.passport.check': 'Kurallar ülkeye ve kuruma göre değişir: yazdırmadan önce istenen boyutu, baş konumunu, arka planı ve yüz ifadesini kontrol edin.',
 
   // Blur Background and Change Background
-  'ctl.bgfx.dropHint': 'JPG, PNG, WebP veya iPhone HEIC. Kişi veya nesne cihazınızda bulunur; hiçbir şey yüklenmez.',
+  'ctl.bgfx.dropHint': 'JPG, PNG, WebP, TIFF veya iPhone HEIC. Kişi veya nesne cihazınızda bulunur; hiçbir şey yüklenmez.',
   'ctl.bgfx.working': 'Özne bulunuyor…',
   'ctl.bgfx.failed': 'Özne bulunamadı: {message}',
   'ctl.bgfx.strength': 'Bulanıklık gücü',
@@ -889,7 +890,7 @@ export const strings = {
   'ctl.bgfx.result': 'Yeni arka planlı fotoğraf',
 
   // Image to Text
-  'ctl.ocr.dropHint': 'Basılı metin içeren bir fotoğraf, ekran görüntüsü veya tarama: JPG, PNG, WebP veya iPhone HEIC. Cihazınızda okunur.',
+  'ctl.ocr.dropHint': 'Basılı metin içeren bir fotoğraf, ekran görüntüsü veya tarama: JPG, PNG, WebP, TIFF veya iPhone HEIC. Cihazınızda okunur.',
   'ctl.ocr.loading': 'Metin okuyucu yükleniyor…',
   'ctl.ocr.reading': 'Metin okunuyor…',
   'ctl.ocr.failed': 'Metin okunamadı: {message}',
@@ -947,7 +948,7 @@ export const strings = {
 
   // QR Code Reader
   'ctl.qrread.dropTitle': 'QR kod içeren bir resmi buraya bırakın',
-  'ctl.qrread.dropHint': 'Bir fotoğraf veya ekran görüntüsü: JPG, PNG, WebP veya iPhone HEIC. Cihazınızda okunur.',
+  'ctl.qrread.dropHint': 'Bir fotoğraf veya ekran görüntüsü: JPG, PNG, WebP, TIFF veya iPhone HEIC. Cihazınızda okunur.',
   'ctl.qrread.useCamera': 'Kamerayla tara',
   'ctl.qrread.stopCamera': 'Kamerayı durdur',
   'ctl.qrread.cameraView': 'Kamera görüntüsü',

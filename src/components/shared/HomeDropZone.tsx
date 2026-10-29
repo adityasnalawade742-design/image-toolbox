@@ -3,6 +3,7 @@ import { ArrowRight, Loader2, Upload, X } from 'lucide-react';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import { saveHandoffImage } from '../../lib/storage/handoffStorage';
 import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
+import { isTiffFile, convertTiff } from '../../lib/canvas/tiffLoader';
 import { createT, type Strings } from '../../i18n/strings';
 
 export interface QuickTool {
@@ -42,7 +43,8 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
   const stageFile = async (file: File) => {
     setError(null);
     const heic = isHeicFile(file);
-    if (!heic && !file.type.startsWith('image/')) {
+    const tiff = isTiffFile(file);
+    if (!heic && !tiff && !file.type.startsWith('image/')) {
       setError(t('home.errorNotImage'));
       return;
     }
@@ -52,7 +54,7 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
     }
     setIsBusy(true);
     try {
-      const blob = heic ? await convertHeicToBlob(file) : file;
+      const blob = heic ? await convertHeicToBlob(file) : tiff ? (await convertTiff(file, true)).blobs[0] : file;
       const dataUrl = await readAsDataUrl(blob);
       const img = new Image();
       await new Promise<void>((resolve, reject) => {
@@ -62,7 +64,7 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
       });
       setStaged({
         dataUrl,
-        name: heic ? file.name.replace(/\.(heic|heif)$/i, '.png') : file.name,
+        name: heic ? file.name.replace(/\.(heic|heif)$/i, '.png') : tiff ? file.name.replace(/\.tiff?$/i, '.png') : file.name,
         width: img.naturalWidth,
         height: img.naturalHeight,
       });
@@ -172,7 +174,7 @@ export function HomeDropZone({ locale = 'en', strings = {}, quickTools }: Props)
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/*,.heic,.heif"
+        accept="image/*,.heic,.heif,.tif,.tiff"
         className="hidden"
         onChange={(e) => {
           const file = e.target.files?.[0];

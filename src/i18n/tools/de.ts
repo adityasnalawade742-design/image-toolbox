@@ -3552,6 +3552,136 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFF in JPG",
+    shortName: "TIFF → JPG",
+    tagline: "Wandle TIFF-Scans und -Bilder in kleine JPG-Dateien um, die sich überall öffnen lassen. Die Umwandlung läuft auf deinem Gerät.",
+    intro: "TIFF ist das Format, das viele Scanner, Faxprogramme, Kameras und Druck-Workflows erzeugen. Die Dateien sind oft groß, und Chrome, Edge, Firefox sowie die meisten Websites können sie nicht anzeigen. TIFF in JPG wandelt das Bild mit der Qualität deiner Wahl in JPG um, meist nur ein Bruchteil der Größe. Auch komprimierte TIFFs funktionieren, einschließlich Schwarz-Weiß-Faxdateien. Hat die Datei mehrere Seiten, wird die erste Seite umgewandelt; „TIFF in PDF“ behält alle Seiten. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät.",
+    seoTitle: "TIFF in JPG umwandeln – kostenlos, schnell, privat",
+    seoDescription: "TIFF-Scans und -Bilder im Browser in JPG umwandeln. Kleinere Dateien, die sich überall öffnen lassen, einstellbare Qualität. Nichts wird hochgeladen.",
+    keywords: [
+      "tiff in jpg umwandeln",
+      "tif in jpg",
+      "tiff in jpg",
+      "tiff in jpeg umwandeln",
+      "tiff konverter",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF-Bild hinzufügen",
+        description: "Zieh eine .tif- oder .tiff-Datei hierher, wähle sie aus oder füge sie ein.",
+      },
+      {
+        title: "Qualität wählen",
+        description: "85 % passt für Fotos. Nimm einen höheren Wert für Scans mit kleiner Schrift.",
+      },
+      {
+        title: "JPG herunterladen",
+        description: "Speichere das JPG und teile es oder lade es hoch.",
+      },
+    ],
+    features: [
+      {
+        title: "Deutlich kleinere Dateien",
+        description: "Ein JPG ist meist nur ein Bruchteil so groß wie das TIFF.",
+      },
+      {
+        title: "Öffnet sich überall",
+        description: "JPG funktioniert in jedem Bildbetrachter, jedem Bildbearbeitungsprogramm, auf jedem Handy und in jedem Upload-Formular.",
+      },
+      {
+        title: "Die meisten TIFF-Typen",
+        description: "Unkomprimierte, LZW-, Deflate-, PackBits-, JPEG- und Schwarz-Weiß-Fax-TIFFs lassen sich alle öffnen.",
+      },
+      {
+        title: "Private Umwandlung",
+        description: "Die Datei wird auf deinem Gerät umgewandelt und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Warum kann mein Browser keine TIFF-Dateien öffnen?",
+        answer: "Von den großen Browsern zeigt nur Safari TIFF an. Chrome, Edge und Firefox können das nicht, deshalb decodiert dieses Tool die Datei selbst, auf deinem Gerät.",
+      },
+      {
+        question: "Was passiert mit einem mehrseitigen TIFF?",
+        answer: "Die erste Seite wird umgewandelt. Wenn du alle Seiten behalten willst, nutze „TIFF in PDF“: Dort wird jede TIFF-Seite zu einer eigenen PDF-Seite.",
+      },
+      {
+        question: "Wird ein sehr großer Scan verkleinert?",
+        answer: "Seiten mit mehr als etwa 16 Megapixeln, zum Beispiel 4.000 × 4.000 Pixel, werden auf diese Größe verkleinert, damit jeder Browser sie verarbeiten kann, auch auf dem iPhone. Normale Scans und Fotos werden nicht verkleinert.",
+      },
+      {
+        question: "Wird meine Datei hochgeladen?",
+        answer: "Nein. Das TIFF wird in deinem Browser decodiert und umgewandelt, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFF in PNG",
+    shortName: "TIFF → PNG",
+    tagline: "Wandle TIFF-Bilder in verlustfreies PNG um, das jeder Browser und jedes Bildbearbeitungsprogramm öffnet. Die Umwandlung läuft auf deinem Gerät.",
+    intro: "TIFF-Dateien von Scannern, Kameras und Designprogrammen lassen sich in Chrome, Edge, Firefox und auf den meisten Websites nicht anzeigen. TIFF in PNG wandelt das Bild in PNG um. PNG ist wie TIFF verlustfrei, jedes Pixel bleibt also erhalten, ebenso die Transparenz. Damit eignet es sich gut für gescannte Dokumente, Strichzeichnungen und Grafiken, die du noch weiterbearbeiten willst. Hat die Datei mehrere Seiten, wird die erste Seite umgewandelt; „TIFF in PDF“ behält alle Seiten. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät.",
+    seoTitle: "TIFF in PNG umwandeln – kostenlos, verlustfrei",
+    seoDescription: "TIFF-Bilder im Browser in verlustfreies PNG umwandeln, jedes Pixel und die Transparenz bleiben erhalten. Kostenlos, privat, nichts wird hochgeladen.",
+    keywords: [
+      "tiff in png umwandeln",
+      "tif in png",
+      "tiff in png",
+      "tiff zu png",
+      "tiff in png verlustfrei",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF-Bild hinzufügen",
+        description: "Zieh eine .tif- oder .tiff-Datei hierher, wähle sie aus oder füge sie ein.",
+      },
+      {
+        title: "Vorschau prüfen",
+        description: "Dein Browser decodiert das Bild auf deinem Gerät.",
+      },
+      {
+        title: "PNG herunterladen",
+        description: "Speichere das verlustfreie PNG und öffne es in jedem Bildbearbeitungsprogramm.",
+      },
+    ],
+    features: [
+      {
+        title: "Verlustfrei",
+        description: "Jedes Pixel der TIFF-Seite bleibt exakt erhalten.",
+      },
+      {
+        title: "Transparenz bleibt erhalten",
+        description: "Transparente Bereiche des TIFF bleiben im PNG transparent.",
+      },
+      {
+        title: "Die meisten TIFF-Typen",
+        description: "Unkomprimierte, LZW-, Deflate-, PackBits-, JPEG- und Schwarz-Weiß-Fax-TIFFs lassen sich alle öffnen.",
+      },
+      {
+        title: "Private Umwandlung",
+        description: "Die Datei wird auf deinem Gerät umgewandelt und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wird das PNG kleiner als das TIFF?",
+        answer: "Oft ja, vor allem bei unkomprimierten TIFFs und Schwarz-Weiß-Scans. Ein bereits komprimiertes TIFF kann ein PNG von ähnlicher Größe ergeben.",
+      },
+      {
+        question: "Was passiert mit einem mehrseitigen TIFF?",
+        answer: "Die erste Seite wird umgewandelt. Wenn du alle Seiten behalten willst, nutze „TIFF in PDF“: Dort wird jede TIFF-Seite zu einer eigenen PDF-Seite.",
+      },
+      {
+        question: "Wird ein sehr großer Scan verkleinert?",
+        answer: "Seiten mit mehr als etwa 16 Megapixeln, zum Beispiel 4.000 × 4.000 Pixel, werden auf diese Größe verkleinert, damit jeder Browser sie verarbeiten kann, auch auf dem iPhone. Normale Scans und Fotos werden nicht verkleinert.",
+      },
+      {
+        question: "Wird meine Datei hochgeladen?",
+        answer: "Nein. Das TIFF wird in deinem Browser decodiert und umgewandelt, es bleibt also auf deinem Gerät.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG in PDF",
     shortName: "JPG → PDF",
@@ -3760,6 +3890,71 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Werden meine Fotos hochgeladen?",
         answer: "Nein. Der HEIC-Decoder und die PDF-Erstellung laufen in deinem Browser, deine Fotos bleiben also auf deinem Gerät.",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFF in PDF",
+    shortName: "TIFF → PDF",
+    tagline: "Mach aus TIFF-Scans und Faxen ein PDF, in dem alle Seiten eines mehrseitigen TIFF in der richtigen Reihenfolge erhalten bleiben. Die Umwandlung läuft auf deinem Gerät.",
+    intro: "Scanner und Faxprogramme speichern Dokumente oft als mehrseitige TIFF-Dateien, doch die meisten erwarten ein PDF. TIFF in PDF macht aus jeder Seite jedes TIFF eine PDF-Seite, in der richtigen Reihenfolge. So wird ein gescannter Vertrag oder ein Fax zu einem einzigen Dokument, das du überall öffnen, per E-Mail verschicken und hochladen kannst. Füge mehrere Dateien hinzu, ordne die Seiten neu und wähle A4, Letter oder Seiten in der Größe jedes Bildes. Alles passiert in deinem Browser, deine Dokumente werden also nie hochgeladen.",
+    seoTitle: "TIFF in PDF umwandeln – mehrseitige Scans, kostenlos",
+    seoDescription: "TIFF-Scans und Faxe im Browser in PDF umwandeln. Alle Seiten eines mehrseitigen TIFF bleiben in ihrer Reihenfolge. Kostenlos, privat, nichts wird hochgeladen.",
+    keywords: [
+      "tiff in pdf umwandeln",
+      "tif in pdf",
+      "tiff in pdf",
+      "mehrseitiges tiff in pdf",
+      "fax tiff in pdf",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF-Dateien hinzufügen",
+        description: "Zieh eine oder mehrere .tif- oder .tiff-Dateien hierher oder wähle sie aus. Jede Seite erscheint in der Liste.",
+      },
+      {
+        title: "Seiten anordnen",
+        description: "Leg die Reihenfolge fest und wähle dann Seitengröße, Ausrichtung und Rand.",
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Speichere ein PDF mit allen Seiten.",
+      },
+    ],
+    features: [
+      {
+        title: "Alle Seiten bleiben erhalten",
+        description: "Jede Seite eines mehrseitigen TIFF wird zu einer PDF-Seite, in der richtigen Reihenfolge.",
+      },
+      {
+        title: "Fax- und Scanformate",
+        description: "Schwarz-Weiß-Fax-TIFFs und TIFFs mit LZW-, Deflate-, PackBits- oder JPEG-Komprimierung lassen sich alle öffnen.",
+      },
+      {
+        title: "Deine Seitenreihenfolge",
+        description: "Ordne Seiten neu oder entferne sie, bevor du das PDF erstellst.",
+      },
+      {
+        title: "Private Umwandlung",
+        description: "Deine Dokumente werden auf deinem Gerät umgewandelt und nie hochgeladen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Wie viele Seiten darf ein TIFF haben?",
+        answer: "Bis zu 200 Seiten pro Datei. Seiten nach der 200. werden weggelassen, teile sehr lange Dokumente also vorher in kleinere TIFFs auf.",
+      },
+      {
+        question: "Kann ich TIFF mit anderen Bildern kombinieren?",
+        answer: "Ja. JPG-, PNG-, WebP- und iPhone-HEIC-Bilder können ins selbe PDF.",
+      },
+      {
+        question: "Ist der Text im PDF durchsuchbar?",
+        answer: "Nein. Jede Seite wird als Bild eingefügt, so wie sie im TIFF war. Um den Text zu kopieren, öffne eine Seite in „Bild in Text“.",
+      },
+      {
+        question: "Werden meine Dokumente hochgeladen?",
+        answer: "Nein. Das TIFF wird in deinem Browser decodiert und das PDF dort erstellt, deine Dokumente bleiben also auf deinem Gerät.",
       },
     ],
   },

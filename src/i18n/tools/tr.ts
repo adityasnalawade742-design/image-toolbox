@@ -3557,6 +3557,136 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "tiff-to-jpg": {
+    name: "TIFF'ten JPG'ye",
+    shortName: "TIFF → JPG",
+    tagline: "TIFF taramalarını ve resimlerini her yerde açılan küçük JPG dosyalarına dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "TIFF, birçok belge tarayıcısının, faks programının, kameranın ve baskı iş akışının ürettiği biçimdir. Dosyalar çoğu zaman büyüktür; Chrome, Edge, Firefox ve çoğu web sitesi bunları gösteremez. TIFF'ten JPG'ye aracı, resmi seçtiğiniz kalitede JPG'ye dönüştürür; sonuç genellikle orijinal boyutun küçük bir kısmıdır. Siyah beyaz faks dosyaları dahil sıkıştırılmış TIFF'ler de çalışır. Dosyada birden çok sayfa varsa ilk sayfa dönüştürülür; TIFF'ten PDF'e tüm sayfaları korur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    seoTitle: "TIFF JPG Dönüştürme – Ücretsiz, Hızlı ve Gizli",
+    seoDescription: "TIFF taramalarını ve resimlerini tarayıcınızda JPG'ye dönüştürün. Her yerde açılan daha küçük dosyalar, ayarlanabilir kalite. Hiçbir şey yüklenmez.",
+    keywords: [
+      "tiff jpg dönüştürme",
+      "tif jpg çevirme",
+      "tiff'i jpg'ye çevirme",
+      "tiff jpeg dönüştürme",
+      "tiff dönüştürücü",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF resminizi ekleyin",
+        description: "Bir .tif veya .tiff dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Fotoğraflar için %85 uygundur. Küçük yazılı taramalar için daha yüksek bir değer kullanın.",
+      },
+      {
+        title: "JPG'yi indirin",
+        description: "JPG'yi kaydedin, ardından paylaşın veya yükleyin.",
+      },
+    ],
+    features: [
+      {
+        title: "Çok daha küçük dosyalar",
+        description: "JPG genellikle TIFF boyutunun küçük bir kısmı kadardır.",
+      },
+      {
+        title: "Her yerde açılır",
+        description: "JPG her görüntüleyicide, düzenleyicide, telefonda ve yükleme formunda çalışır.",
+      },
+      {
+        title: "Çoğu TIFF türü",
+        description: "Sıkıştırılmamış, LZW, Deflate, PackBits, JPEG ve siyah beyaz faks TIFF'lerinin hepsi açılır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Dosya cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Tarayıcım neden TIFF dosyalarını açamıyor?",
+        answer: "Büyük tarayıcılar arasında TIFF'i yalnızca Safari gösterir. Chrome, Edge ve Firefox göstermez; bu yüzden bu araç dosyayı cihazınızda kendisi çözer.",
+      },
+      {
+        question: "Çok sayfalı bir TIFF'e ne olur?",
+        answer: "İlk sayfa dönüştürülür. Tüm sayfaları korumak için her TIFF sayfasından bir PDF sayfası oluşturan TIFF'ten PDF'e aracını kullanın.",
+      },
+      {
+        question: "Çok büyük bir tarama küçültülür mü?",
+        answer: "Yaklaşık 16 megapikselden büyük sayfalar, örneğin 4.000 × 4.000 piksel, iPhone'lar dahil her tarayıcının işleyebilmesi için bu boyuta küçültülür. Normal taramalar ve fotoğraflar yeniden boyutlandırılmaz.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. TIFF tarayıcınızda çözülür ve dönüştürülür, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
+  "tiff-to-png": {
+    name: "TIFF'ten PNG'ye",
+    shortName: "TIFF → PNG",
+    tagline: "TIFF resimlerini her tarayıcının ve düzenleyicinin açabildiği kayıpsız PNG'ye dönüştürün. Dönüştürme cihazınızda çalışır.",
+    intro: "Belge tarayıcılarından, kameralardan ve tasarım yazılımlarından gelen TIFF dosyaları Chrome, Edge ve Firefox'ta ya da çoğu web sitesinde gösterilemez. TIFF'ten PNG'ye aracı, resmi PNG'ye dönüştürür. PNG de TIFF gibi kayıpsızdır; böylece her piksel korunur, saydamlık da korunur. Bu da onu taranmış belgeler, çizgi çizimler ve üzerinde çalışmaya devam edeceğiniz grafikler için iyi bir seçim yapar. Dosyada birden çok sayfa varsa ilk sayfa dönüştürülür; TIFF'ten PDF'e tüm sayfaları korur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    seoTitle: "TIFF PNG Dönüştürme – Ücretsiz ve Kayıpsız",
+    seoDescription: "TIFF resimlerini tarayıcınızda kayıpsız PNG'ye dönüştürün; her piksel ve saydamlık korunur. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "tiff png dönüştürme",
+      "tif png çevirme",
+      "tiff'i png'ye çevirme",
+      "tiff png dönüştürücü",
+      "tiff png kayıpsız",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF resminizi ekleyin",
+        description: "Bir .tif veya .tiff dosyası bırakın, seçin ya da yapıştırın.",
+      },
+      {
+        title: "Önizlemeyi kontrol edin",
+        description: "Tarayıcınız resmi cihazınızda çözer.",
+      },
+      {
+        title: "PNG'yi indirin",
+        description: "Kayıpsız PNG'yi kaydedin ve istediğiniz düzenleyicide açın.",
+      },
+    ],
+    features: [
+      {
+        title: "Kayıpsız",
+        description: "TIFF sayfasının her pikseli birebir korunur.",
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "TIFF'teki saydam alanlar PNG'de de saydam kalır.",
+      },
+      {
+        title: "Çoğu TIFF türü",
+        description: "Sıkıştırılmamış, LZW, Deflate, PackBits, JPEG ve siyah beyaz faks TIFF'lerinin hepsi açılır.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Dosya cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "PNG, TIFF'ten daha küçük olur mu?",
+        answer: "Çoğu zaman olur, özellikle sıkıştırılmamış TIFF'lerde ve siyah beyaz taramalarda. Zaten sıkıştırılmış bir TIFF, benzer boyutta bir PNG verebilir.",
+      },
+      {
+        question: "Çok sayfalı bir TIFF'e ne olur?",
+        answer: "İlk sayfa dönüştürülür. Tüm sayfaları korumak için her TIFF sayfasından bir PDF sayfası oluşturan TIFF'ten PDF'e aracını kullanın.",
+      },
+      {
+        question: "Çok büyük bir tarama küçültülür mü?",
+        answer: "Yaklaşık 16 megapikselden büyük sayfalar, örneğin 4.000 × 4.000 piksel, iPhone'lar dahil her tarayıcının işleyebilmesi için bu boyuta küçültülür. Normal taramalar ve fotoğraflar yeniden boyutlandırılmaz.",
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. TIFF tarayıcınızda çözülür ve dönüştürülür, bu yüzden cihazınızda kalır.",
+      },
+    ],
+  },
   "jpg-to-pdf": {
     name: "JPG'den PDF'e",
     shortName: "JPG → PDF",
@@ -3766,6 +3896,71 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Fotoğraflarım yükleniyor mu?",
         answer: "Hayır. HEIC kod çözücüsü ve PDF oluşturucu tarayıcınızda çalışır, bu yüzden fotoğraflarınız cihazınızda kalır.",
+      },
+    ],
+  },
+  "tiff-to-pdf": {
+    name: "TIFF'ten PDF'e",
+    shortName: "TIFF → PDF",
+    tagline: "TIFF taramalarını ve fakslarını PDF'e dönüştürün; çok sayfalı bir TIFF'in tüm sayfaları sırasıyla korunur. Dönüştürme cihazınızda çalışır.",
+    intro: "Belge tarayıcıları ve faks programları belgeleri çoğu zaman çok sayfalı TIFF dosyaları olarak kaydeder, ancak çoğu kişi PDF bekler. TIFF'ten PDF'e aracı, her TIFF'in her sayfasını sırasıyla bir PDF sayfasına dönüştürür; böylece taranmış bir sözleşme veya faks, her yerde açabileceğiniz, e-postayla gönderebileceğiniz ve yükleyebileceğiniz tek bir belge olur. Birden çok dosya ekleyin, sayfaları yeniden sıralayın ve A4, Letter (ABD) ya da her resme göre boyutlanan sayfalar seçin. Her şey tarayıcınızın içinde gerçekleşir, bu yüzden belgeleriniz asla yüklenmez.",
+    seoTitle: "TIFF PDF Dönüştürme – Çok Sayfalı Taramalar, Ücretsiz",
+    seoDescription: "TIFF taramalarını ve fakslarını tarayıcınızda PDF'e dönüştürün. Çok sayfalı TIFF'in tüm sayfaları sırasıyla korunur. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    keywords: [
+      "tiff pdf dönüştürme",
+      "tif pdf çevirme",
+      "tiff'i pdf'e çevirme",
+      "çok sayfalı tiff pdf",
+      "faks tiff pdf",
+    ],
+    howToSteps: [
+      {
+        title: "TIFF dosyalarınızı ekleyin",
+        description: "Bir veya daha fazla .tif ya da .tiff dosyası bırakın veya seçin. Her sayfa listede görünür.",
+      },
+      {
+        title: "Sayfaları sıralayın",
+        description: "Sırayı belirleyin, ardından sayfa boyutunu, yönü ve kenar boşluğunu seçin.",
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Tüm sayfaları içeren tek bir PDF kaydedin.",
+      },
+    ],
+    features: [
+      {
+        title: "Tüm sayfalar korunur",
+        description: "Çok sayfalı bir TIFF'in her sayfası sırasıyla bir PDF sayfası olur.",
+      },
+      {
+        title: "Faks ve tarama biçimleri",
+        description: "Siyah beyaz faks TIFF'leri ile LZW, Deflate, PackBits ve JPEG ile sıkıştırılmış TIFF'lerin hepsi açılır.",
+      },
+      {
+        title: "Sayfa sırası sizde",
+        description: "PDF'i oluşturmadan önce sayfaları yeniden sıralayın veya kaldırın.",
+      },
+      {
+        title: "Gizli dönüştürme",
+        description: "Belgeleriniz cihazınızda dönüştürülür ve asla yüklenmez.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bir TIFF'te kaç sayfa olabilir?",
+        answer: "Dosya başına en fazla 200 sayfa. 200. sayfadan sonraki sayfalar dahil edilmez; bu yüzden çok uzun belgeleri önce daha küçük TIFF'lere bölün.",
+      },
+      {
+        question: "TIFF'i başka resimlerle karıştırabilir miyim?",
+        answer: "Evet. JPG, PNG, WebP ve iPhone HEIC resimleri de aynı PDF'e eklenebilir.",
+      },
+      {
+        question: "PDF'teki metin aranabilir mi?",
+        answer: "Hayır. Her sayfa, TIFF'te olduğu gibi resim olarak yerleştirilir. Metni kopyalamak için sayfayı Resimden Metne aracında açın.",
+      },
+      {
+        question: "Belgelerim yükleniyor mu?",
+        answer: "Hayır. TIFF tarayıcınızda çözülür ve PDF de orada oluşturulur, bu yüzden belgeleriniz cihazınızda kalır.",
       },
     ],
   },

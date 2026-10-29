@@ -21,6 +21,8 @@ describe('Output Format Policy', () => {
     ['gif-to-jpg', 'image/gif', 'image/jpeg'],
     ['bmp-to-jpg', 'image/bmp', 'image/jpeg'],
     ['bmp-to-png', 'image/bmp', 'image/png'],
+    ['tiff-to-jpg', 'image/tiff', 'image/jpeg'],
+    ['tiff-to-png', 'image/tiff', 'image/png'],
     ['svg-to-jpg', 'image/svg+xml', 'image/jpeg'],
     ['svg-to-webp', 'image/svg+xml', 'image/webp'],
   ])('%s always exports its target format, with no picker', (slug, input, expected) => {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { loadImageFile, type LoadedImage } from '../../lib/canvas/loadImage';
+import { loadImageFiles, type LoadedImage } from '../../lib/canvas/loadImage';
 import { useImageIntake } from './useImageIntake';
 
 export type ListImage = LoadedImage & { id: string; name: string };
@@ -14,12 +14,15 @@ export function useImageList() {
 
   const addFiles = async (files: File[]) => {
     setLoading(true);
-    const results = await Promise.allSettled(files.map((f) => loadImageFile(f)));
+    const results = await Promise.allSettled(files.map((f) => loadImageFiles(f)));
     const added: ListImage[] = [];
     const failed: string[] = [];
     results.forEach((r, i) => {
-      if (r.status === 'fulfilled') added.push({ ...r.value, id: `${Date.now()}-${i}-${Math.random().toString(36).slice(2, 7)}`, name: files[i].name });
-      else failed.push(files[i].name);
+      if (r.status === 'rejected') return void failed.push(files[i].name);
+      // A multi-page TIFF adds one entry per page, named with its page number
+      r.value.forEach((img, p) =>
+        added.push({ ...img, id: `${Date.now()}-${i}-${p}-${Math.random().toString(36).slice(2, 7)}`, name: r.value.length > 1 ? `${files[i].name} (${p + 1}/${r.value.length})` : files[i].name })
+      );
     });
     setItems((prev) => [...prev, ...added]);
     setSkipped(failed);
