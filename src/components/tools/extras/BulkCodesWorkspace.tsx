@@ -213,7 +213,7 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
                 ? `${t('ctl.bulkcode.exampleName')}, ${SYMBOLOGIES[type].example}`
                 : SYMBOLOGIES[type].example
           }
-          className={`${field} py-2 font-mono text-[14px] resize-y`}
+          className={`${field} py-2 font-code text-[14px] resize-y`}
           aria-describedby="bulk-summary"
         />
         <label className="flex items-center gap-2 min-h-[40px] text-[15px] text-ink cursor-pointer">

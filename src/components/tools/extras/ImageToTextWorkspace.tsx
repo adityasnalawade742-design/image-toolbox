@@ -8,7 +8,7 @@ import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { FullSizeView, urlImage } from '../../shared/MediaViewer';
 import { fitWithinPixels } from '../../../lib/canvas/limits';
 import { downloadBlob } from '../../../lib/canvas/engine';
-import { OCR_LANGS, OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang, type OcrProgress } from '../../../lib/ocr/ocr';
+import { OCR_LANGS, OCR_LANG_NAMES, OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang, type OcrProgress } from '../../../lib/ocr/ocr';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif,image/bmp,image/gif';
 // Each language in its own name, so people find theirs whatever the page language
@@ -127,7 +127,7 @@ export function ImageToTextWorkspace() {
         >
           {OCR_LANGS.map((l) => (
             <option key={l} value={l}>
-              {LANG_NAMES[l]}
+              {OCR_LANG_NAMES[l]}
             </option>
           ))}
         </select>

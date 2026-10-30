@@ -74,6 +74,12 @@ const PageNumbersWorkspace = standaloneTool(() => import('../tools/pdf/PageNumbe
 const WatermarkPdfWorkspace = standaloneTool(() => import('../tools/pdf/WatermarkPdfWorkspace'), 'WatermarkPdfWorkspace');
 const SignPdfWorkspace = standaloneTool(() => import('../tools/pdf/SignPdfWorkspace'), 'SignPdfWorkspace');
 const PdfEditorWorkspace = standaloneTool(() => import('../tools/pdf/PdfEditorWorkspace'), 'PdfEditorWorkspace');
+const PdfTextWorkspace = standaloneTool(() => import('../tools/pdf/PdfTextWorkspace'), 'PdfTextWorkspace');
+const ComposePdfWorkspace = standaloneTool(() => import('../tools/pdf/ComposePdfWorkspace'), 'ComposePdfWorkspace');
+const ExtractImagesWorkspace = standaloneTool(() => import('../tools/pdf/ExtractImagesWorkspace'), 'ExtractImagesWorkspace');
+const BlankPagesWorkspace = standaloneTool(() => import('../tools/pdf/BlankPagesWorkspace'), 'BlankPagesWorkspace');
+const ComparePdfWorkspace = standaloneTool(() => import('../tools/pdf/ComparePdfWorkspace'), 'ComparePdfWorkspace');
+const OverlayPdfWorkspace = standaloneTool(() => import('../tools/pdf/OverlayPdfWorkspace'), 'OverlayPdfWorkspace');
 const FillFormWorkspace = standaloneTool(() => import('../tools/pdf/FillFormWorkspace'), 'FillFormWorkspace');
 const PdfMetadataWorkspace = standaloneTool(() => import('../tools/pdf/PdfMetadataWorkspace'), 'PdfMetadataWorkspace');
 const CropPdfWorkspace = standaloneTool(() => import('../tools/pdf/CropPdfWorkspace'), 'CropPdfWorkspace');
@@ -164,6 +170,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'add-links-to-pdf': <PdfEditorWorkspace startTool="link" />,
     'whiteout-pdf': <PdfEditorWorkspace startTool="whiteout" />,
     'redact-pdf': <PdfEditorWorkspace startTool="redact" />,
+    'pdf-to-text': <PdfTextWorkspace defaultFormat="txt" />,
+    'pdf-to-markdown': <PdfTextWorkspace defaultFormat="md" />,
+    'text-to-pdf': <ComposePdfWorkspace mode="text" />,
+    'markdown-to-pdf': <ComposePdfWorkspace mode="markdown" />,
+    'extract-images-from-pdf': <ExtractImagesWorkspace />,
+    'delete-blank-pages-pdf': <BlankPagesWorkspace />,
+    'compare-pdf': <ComparePdfWorkspace />,
+    'overlay-pdf': <OverlayPdfWorkspace />,
     'change-image-dpi': <ChangeDpiWorkspace />,
     'signature-extractor': <SignatureExtractorWorkspace />,
     'passport-photo-maker': <PassportPhotoWorkspace />,

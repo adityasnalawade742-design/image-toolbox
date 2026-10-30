@@ -7916,4 +7916,525 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  // PDF utilities
+"pdf-to-text": {
+    "name": "PDF ke Teks",
+    "shortName": "PDF ke Teks",
+    "tagline": "Ambil teks dari PDF sebagai file .txt biasa, halaman demi halaman, siap disalin atau diedit. Gratis dan berjalan di perangkat Anda.",
+    "intro": "PDF ke Teks mengambil teks dari PDF agar Anda bisa menyalin, mencari, mengedit, atau menempelkannya di tempat lain, tanpa menyalin satu per satu halaman. Baris dan paragraf tetap terjaga, dan setiap halaman bisa diberi tanda agar Anda tahu asal teksnya. Pilih semua halaman atau sebagian saja, lalu salin teksnya atau unduh sebagai file .txt. Alat ini bekerja untuk PDF yang berisi teks sungguhan, seperti dokumen yang disimpan dari Word atau situs web; untuk halaman hasil scan, gunakan OCR PDF. Semuanya terjadi di browser Anda.",
+    "seoTitle": "PDF ke Teks – Gratis, Salin atau Simpan sebagai TXT",
+    "seoDescription": "Ambil teks dari PDF langsung di browser Anda, lalu simpan sebagai file .txt atau salin. Pilih halaman, paragraf tetap terjaga. Gratis, tanpa unggah file.",
+    "keywords": [
+      "pdf ke teks",
+      "pdf ke txt",
+      "ambil teks dari pdf",
+      "salin teks dari pdf",
+      "convert pdf to text"
+    ],
+    "howToSteps": [
+      {
+        "title": "Buka PDF Anda",
+        "description": "Letakkan atau pilih PDF; teksnya langsung dibaca."
+      },
+      {
+        "title": "Pilih halaman",
+        "description": "Semua halaman, atau rentang seperti 1-3, 5. Tandai awal halaman jika Anda mau."
+      },
+      {
+        "title": "Salin atau unduh",
+        "description": "Salin teksnya, atau simpan sebagai file .txt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Paragraf tetap terjaga",
+        "description": "Jeda baris dan jarak antarparagraf mengikuti halaman aslinya."
+      },
+      {
+        "title": "Halaman demi halaman",
+        "description": "Tandai awal setiap halaman, atau pilih sebagian halaman saja."
+      },
+      {
+        "title": "Bahasa apa pun",
+        "description": "Teks dalam aksara apa pun yang ada di PDF keluar apa adanya."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Mengapa tidak ada teks yang ditemukan?",
+        "answer": "PDF tersebut kemungkinan hasil scan: gambar halaman tanpa teks di dalamnya. OCR PDF bisa membaca teks dari gambar tersebut."
+      },
+      {
+        "question": "Apakah tata letaknya tetap terjaga?",
+        "answer": "Kata-kata dan urutannya tetap; desainnya tidak. PDF menyimpan teks berdasarkan posisinya, jadi kolom yang berdampingan bisa terbaca menyamping dan tabel keluar sebagai baris-baris teks."
+      },
+      {
+        "question": "Bisakah saya mendapatkan Markdown?",
+        "answer": "Bisa. Ganti formatnya ke Markdown, atau gunakan PDF ke Markdown, yang juga mengenali judul dan daftar."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "pdf-to-markdown": {
+    "name": "PDF ke Markdown",
+    "shortName": "PDF ke Markdown",
+    "tagline": "Ubah PDF menjadi Markdown lengkap dengan judul dan daftar, untuk catatan, wiki, dan alat AI. Gratis dan berjalan di perangkat Anda.",
+    "intro": "PDF ke Markdown mengubah teks PDF menjadi Markdown: teks yang lebih besar menjadi judul, baris berpoin dan bernomor menjadi daftar, dan baris yang terpotong digabung kembali menjadi paragraf, termasuk kata yang terpisah oleh tanda hubung. Hasilnya siap dipakai di aplikasi catatan seperti Obsidian dan Notion, untuk wiki dan dokumentasi, atau ditempel ke asisten AI. Pilih halamannya, salin Markdown-nya, atau unduh sebagai file .md. Semuanya terjadi di browser Anda.",
+    "seoTitle": "PDF ke Markdown – Gratis, Lengkap dengan Judul dan Daftar",
+    "seoDescription": "Ubah PDF ke Markdown di browser Anda: judul dari teks yang lebih besar, daftar, dan paragraf yang tersambung. Untuk catatan, wiki, dan AI. Gratis, tanpa unggah file.",
+    "keywords": [
+      "pdf ke markdown",
+      "ubah pdf ke markdown",
+      "pdf ke md",
+      "convert pdf to markdown",
+      "pdf ke obsidian"
+    ],
+    "howToSteps": [
+      {
+        "title": "Buka PDF Anda",
+        "description": "Letakkan atau pilih PDF yang berisi teks."
+      },
+      {
+        "title": "Periksa Markdown-nya",
+        "description": "Judul dan daftar dikenali; pilih halaman yang Anda perlukan."
+      },
+      {
+        "title": "Salin atau unduh",
+        "description": "Salin Markdown-nya, atau simpan sebagai file .md."
+      }
+    ],
+    "features": [
+      {
+        "title": "Judul dikenali",
+        "description": "Teks yang lebih besar dari isi menjadi judul # dengan tingkat yang tepat."
+      },
+      {
+        "title": "Daftar dan paragraf",
+        "description": "Poin menjadi daftar, dan baris yang terpotong menjadi paragraf utuh."
+      },
+      {
+        "title": "Cocok untuk alat AI",
+        "description": "Markdown yang rapi mudah dibaca oleh asisten AI dan aplikasi catatan."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah tabel ikut dikonversi?",
+        "answer": "Tidak. Sel tabel keluar sebagai baris-baris teks; rapikan secara manual jika Anda membutuhkan tabel Markdown."
+      },
+      {
+        "question": "Mengapa tidak ada teks yang ditemukan?",
+        "answer": "PDF tersebut kemungkinan hasil scan: gambar halaman tanpa teks di dalamnya. OCR PDF bisa membaca teks dari gambar tersebut."
+      },
+      {
+        "question": "Apakah tata letaknya tetap terjaga?",
+        "answer": "Kata-kata dan urutannya tetap; desainnya tidak. PDF menyimpan teks berdasarkan posisinya, jadi kolom yang berdampingan bisa terbaca menyamping dan tabel keluar sebagai baris-baris teks."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "text-to-pdf": {
+    "name": "Teks ke PDF",
+    "shortName": "Teks ke PDF",
+    "tagline": "Ubah teks biasa atau file .txt menjadi PDF yang rapi dengan font, ukuran, dan margin pilihan Anda. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Teks ke PDF mengubah catatan, log, daftar, atau teks biasa apa pun menjadi PDF rapi yang tampil sama di semua perangkat. Ketik atau tempel teksnya, atau buka file .txt, lalu pilih A4 atau Letter, font sans, serif, atau gaya mesin tik, ukuran teks, dan margin. Baris panjang terbungkus dengan rapi, jeda baris tetap terjaga, dan halaman bisa diberi nomor. Pratinjau menampilkan PDF persis seperti yang akan disimpan, dan teks di dalamnya tetap bisa dicari. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Teks ke PDF – Ubah TXT ke PDF, Gratis",
+    "seoDescription": "Ubah teks atau file .txt ke PDF langsung di browser Anda. Pilih font, ukuran, margin, dan nomor halaman; pratinjau langsung. Gratis, tanpa unggah file.",
+    "keywords": [
+      "teks ke pdf",
+      "txt ke pdf",
+      "ubah teks ke pdf",
+      "notepad ke pdf",
+      "convert txt to pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Tambahkan teks Anda",
+        "description": "Ketik, tempel, atau buka file .txt."
+      },
+      {
+        "title": "Pilih tampilannya",
+        "description": "Ukuran halaman, font, ukuran teks, margin, dan nomor halaman."
+      },
+      {
+        "title": "Unduh PDF",
+        "description": "Periksa pratinjaunya lalu simpan."
+      }
+    ],
+    "features": [
+      {
+        "title": "Pratinjau langsung",
+        "description": "Lihat setiap halaman seperti yang akan disimpan sebelum Anda mengunduh."
+      },
+      {
+        "title": "Teks bisa dicari",
+        "description": "PDF berisi teks sungguhan, bukan gambar teks."
+      },
+      {
+        "title": "Banyak bahasa",
+        "description": "Teks Latin, Yunani, Sirilik, Jepang, dan Korea ditulis dengan font yang mendukungnya."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah tab dan spasi tetap terjaga?",
+        "answer": "Jeda baris dan spasi di awal baris tetap terjaga; tab diubah menjadi empat spasi."
+      },
+      {
+        "question": "Bisakah saya memformat teksnya?",
+        "answer": "Untuk judul, teks tebal, dan daftar, gunakan Markdown ke PDF."
+      },
+      {
+        "question": "Apakah ada batas ukuran?",
+        "answer": "Tidak ada batas tetap; teks yang sangat panjang hanya butuh beberapa detik lebih lama."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "markdown-to-pdf": {
+    "name": "Markdown ke PDF",
+    "shortName": "Markdown ke PDF",
+    "tagline": "Ubah Markdown menjadi PDF berformat dengan judul, daftar, kode, dan link yang berfungsi. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Markdown ke PDF mengubah file README, catatan, dan dokumentasi yang ditulis dalam Markdown menjadi PDF berformat rapi untuk dibagikan atau dicetak. Judul, teks tebal dan miring, kode sebaris, daftar, kutipan, blok kode, garis horizontal, dan link ditata, dan link tetap bisa diklik di PDF. Tempel Markdown Anda atau buka file .md, pilih ukuran halaman, font, dan margin, lalu periksa pratinjau langsung sebelum mengunduh. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Markdown ke PDF – Gratis, dengan Pratinjau Langsung",
+    "seoDescription": "Ubah Markdown ke PDF langsung di browser Anda: judul, daftar, blok kode, dan link yang bisa diklik, dengan pratinjau langsung. Gratis, tanpa unggah file.",
+    "keywords": [
+      "markdown ke pdf",
+      "md ke pdf",
+      "ubah markdown ke pdf",
+      "readme ke pdf",
+      "convert markdown to pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Tambahkan Markdown Anda",
+        "description": "Tempel teksnya atau buka file .md."
+      },
+      {
+        "title": "Pilih tampilannya",
+        "description": "Ukuran halaman, font, ukuran teks, margin, dan nomor halaman."
+      },
+      {
+        "title": "Unduh PDF",
+        "description": "Periksa pratinjaunya lalu simpan."
+      }
+    ],
+    "features": [
+      {
+        "title": "Format tetap terjaga",
+        "description": "Judul, tebal, miring, kode, daftar, kutipan, dan garis."
+      },
+      {
+        "title": "Link bisa diklik",
+        "description": "Link di Markdown Anda berfungsi di PDF."
+      },
+      {
+        "title": "Pratinjau langsung",
+        "description": "Lihat halaman-halamannya sebelum Anda mengunduh."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah tabel dan gambar didukung?",
+        "answer": "Belum. Tabel dan gambar di Markdown muncul sebagai teksnya; judul, daftar, kode, dan link ditata."
+      },
+      {
+        "question": "Markdown versi mana yang diikuti?",
+        "answer": "Sintaks umum yang dipakai GitHub dan sebagian besar editor: # judul, **tebal**, *miring*, `kode`, daftar, > kutipan, ``` blok kode, dan [link](…)."
+      },
+      {
+        "question": "Apakah teksnya bisa dicari?",
+        "answer": "Ya. PDF berisi teks sungguhan, jadi teksnya bisa dipilih, dicari, dan disalin."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "extract-images-from-pdf": {
+    "name": "Ekstrak Gambar dari PDF",
+    "shortName": "Ekstrak Gambar",
+    "tagline": "Simpan setiap gambar di dalam PDF dengan resolusi aslinya, sebagai PNG atau JPG, dalam satu ZIP. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ekstrak Gambar dari PDF menemukan foto, logo, dan ilustrasi yang tertanam di PDF dan menyimpannya dengan resolusi saat disimpan di file, bukan sebagai screenshot halaman. Setiap gambar ditampilkan dengan ukurannya dan halaman tempat gambar itu muncul; gambar yang dipakai di banyak halaman, seperti logo, hanya dicantumkan sekali. Lihat dalam ukuran penuh, hapus centang pada gambar yang tidak Anda perlukan, lalu unduh sebagai PNG tanpa kehilangan kualitas atau JPG yang lebih kecil, sekaligus dalam satu ZIP. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Ekstrak Gambar dari PDF – Gratis, Resolusi Asli",
+    "seoDescription": "Simpan gambar di dalam PDF dengan resolusi aslinya, langsung di browser Anda. Lihat, pilih, lalu unduh PNG atau JPG dalam satu ZIP. Gratis, tanpa unggah file.",
+    "keywords": [
+      "ekstrak gambar dari pdf",
+      "ambil gambar dari pdf",
+      "simpan gambar dari pdf",
+      "cara mengambil foto dari pdf",
+      "extract images from pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Buka PDF Anda",
+        "description": "Halaman-halamannya dicari untuk menemukan gambar."
+      },
+      {
+        "title": "Pilih gambar",
+        "description": "Lihat dalam ukuran penuh dan hapus centang pada gambar yang tidak Anda inginkan."
+      },
+      {
+        "title": "Unduh gambarnya",
+        "description": "Simpan file PNG atau JPG, sekaligus dalam satu ZIP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Resolusi asli",
+        "description": "Gambar keluar dengan ukuran yang tersimpan di PDF, bukan sebagai screenshot."
+      },
+      {
+        "title": "Setiap gambar sekali",
+        "description": "Logo yang berulang di setiap halaman dicantumkan sekali, beserta halamannya."
+      },
+      {
+        "title": "Lewati yang tidak perlu",
+        "description": "Gambar kecil seperti ikon dan garis bisa dilewati."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Mengapa ada gambar yang tidak muncul?",
+        "answer": "Beberapa PDF menggambar grafik dengan garis dan bentuk, bukan gambar, dan grafik seperti itu tidak bisa diekstrak sebagai gambar. Untuk menyimpan tampilan halaman, gunakan PDF ke JPG."
+      },
+      {
+        "question": "PNG atau JPG?",
+        "answer": "PNG menjaga setiap piksel persis sama; JPG menghasilkan file yang jauh lebih kecil untuk foto."
+      },
+      {
+        "question": "Apakah saya mendapatkan file aslinya kembali?",
+        "answer": "Anda mendapatkan data gambar yang tersimpan di PDF, didekode pada resolusinya. Format dan nama file asli tidak disimpan di dalam PDF."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "delete-blank-pages-pdf": {
+    "name": "Hapus Halaman Kosong dari PDF",
+    "shortName": "Hapus Halaman Kosong",
+    "tagline": "Temukan halaman kosong di PDF hasil scan dan hapus setelah diperiksa sebentar. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Scan bolak-balik meninggalkan halaman belakang yang kosong di PDF Anda. Hapus Halaman Kosong memeriksa setiap halaman, mencentang yang kosong, dan membiarkan Anda memeriksanya sebelum ada yang dihapus: lihat halaman mana pun dalam ukuran penuh, hapus centang pada halaman yang ingin Anda simpan, atau centang sendiri. Halaman kosong hasil scan jarang benar-benar putih, jadi penggeser sensitivitas menentukan seberapa banyak tekstur kertas, bayangan tembus dari sisi belakang, atau nomor halaman yang berdiri sendiri masih dianggap kosong. Lalu unduh PDF tanpa halaman-halaman itu. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Hapus Halaman Kosong dari PDF – Gratis, Otomatis",
+    "seoDescription": "Temukan dan hapus halaman kosong dari PDF hasil scan langsung di browser Anda. Deteksi otomatis, sensitivitas bisa diatur, periksa sebelum menghapus. Gratis.",
+    "keywords": [
+      "hapus halaman kosong pdf",
+      "menghapus halaman kosong di pdf",
+      "cara hapus halaman kosong pdf",
+      "hapus halaman putih pdf",
+      "remove blank pages pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Buka PDF Anda",
+        "description": "Setiap halaman diperiksa apakah ada isinya."
+      },
+      {
+        "title": "Periksa halaman yang dicentang",
+        "description": "Halaman kosong sudah dicentang; atur sensitivitasnya atau centang dan hapus centang halaman."
+      },
+      {
+        "title": "Unduh",
+        "description": "Simpan PDF tanpa halaman yang dicentang."
+      }
+    ],
+    "features": [
+      {
+        "title": "Deteksi otomatis",
+        "description": "Halaman kosong ditemukan dan dicentang untuk Anda."
+      },
+      {
+        "title": "Sensitivitas bisa diatur",
+        "description": "Tentukan apakah halaman yang hampir kosong dianggap kosong."
+      },
+      {
+        "title": "Periksa sebelum menghapus",
+        "description": "Buka halaman mana pun dalam ukuran penuh sebelum dihapus."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah halaman dengan sedikit tulisan ikut terhapus?",
+        "answer": "Pada pengaturan bawaan, halaman dengan satu baris teks tetap disimpan. Naikkan sensitivitasnya untuk juga menghapus halaman yang hanya berisi nomor halaman atau tanda samar."
+      },
+      {
+        "question": "Mengapa halaman kosong tidak dicentang?",
+        "answer": "Noise dari scanner, tepi yang gelap, atau bayangan tembus dari sisi belakang bisa terlihat seperti isi. Naikkan sensitivitasnya atau centang sendiri."
+      },
+      {
+        "question": "Apakah bagian lain PDF ikut berubah?",
+        "answer": "Tidak. Halaman lainnya disalin apa adanya."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "compare-pdf": {
+    "name": "Bandingkan PDF",
+    "shortName": "Bandingkan PDF",
+    "tagline": "Lihat apa yang berubah di antara dua versi PDF: teks kata demi kata, dan setiap halaman piksel demi piksel. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Bandingkan PDF menunjukkan perbedaan antara dua versi dokumen, seperti kontrak sebelum dan sesudah diedit, atau dua draf laporan. Tampilan teks mencantumkan setiap kata yang dihapus dan ditambahkan, bisa hanya bagian yang berubah jika Anda mau, beserta jumlah perubahannya. Tampilan visual menjajarkan halaman-halaman dan menyorot setiap perbedaan dengan warna magenta, jadi Anda juga bisa melihat perubahan pada gambar, tata letak, dan tanda tangan. Unduh perubahannya sebagai laporan teks. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Bandingkan PDF Online – Temukan Perbedaannya, Gratis",
+    "seoDescription": "Bandingkan dua PDF di browser Anda: kata yang berubah disorot, dan halaman dibandingkan piksel demi piksel. Gratis, privat, tanpa unggah file.",
+    "keywords": [
+      "bandingkan pdf",
+      "membandingkan dua file pdf",
+      "cek perbedaan pdf",
+      "cari perbedaan dua pdf",
+      "compare pdf online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Tambahkan kedua PDF",
+        "description": "Yang asli dulu, lalu versi yang diubah."
+      },
+      {
+        "title": "Lihat perubahannya",
+        "description": "Baca perubahan teks, atau beralih ke perbandingan visual halaman demi halaman."
+      },
+      {
+        "title": "Simpan laporan",
+        "description": "Unduh perubahan teks sebagai laporan .txt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Kata demi kata",
+        "description": "Kata yang dihapus berwarna merah, kata yang ditambahkan berwarna hijau, beserta totalnya."
+      },
+      {
+        "title": "Piksel demi piksel",
+        "description": "Setiap perbedaan visual di halaman disorot dengan warna magenta."
+      },
+      {
+        "title": "Perubahannya saja",
+        "description": "Sembunyikan teks yang tidak berubah untuk fokus pada yang berbeda."
+      },
+      {
+        "title": "Rahasia tetap aman",
+        "description": "Kedua dokumen tetap berada di perangkat Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Apakah kedua PDF harus punya jumlah halaman yang sama?",
+        "answer": "Tidak. Teks dibandingkan secara keseluruhan, jadi halaman yang ditambahkan atau dihapus muncul sebagai teks yang ditambahkan atau dihapus. Tampilan visual membandingkan halaman dengan nomor yang sama."
+      },
+      {
+        "question": "Mengapa tampilan visual menunjukkan perubahan yang tidak ada di tampilan teks?",
+        "answer": "Gambar, tata letak, warna, dan tanda tangan bukan teks; tampilan visual menangkapnya."
+      },
+      {
+        "question": "Bisakah membandingkan PDF hasil scan?",
+        "answer": "Tampilan visual bisa. Untuk tampilan teks, proses kedua file dengan OCR PDF terlebih dahulu."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
+  "overlay-pdf": {
+    "name": "Overlay PDF",
+    "shortName": "Overlay PDF",
+    "tagline": "Tempatkan kop surat, latar belakang, atau stempel dari satu PDF di atas atau di bawah halaman PDF lain. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Overlay PDF menumpuk dua PDF halaman demi halaman: letakkan kop surat perusahaan Anda di belakang surat, desain latar belakang di bawah laporan, atau lembar “Draf” atau “Disetujui” di atas setiap halaman. Pilih apakah overlay diletakkan di atas atau di bawah, halaman overlay mana yang dipakai di mana (halaman pertama di setiap halaman, atau halaman per halaman), halaman mana yang ditutupi, dan seberapa kuat tampilannya. Pratinjau menampilkan setiap halaman seperti yang akan disimpan. Semuanya terjadi di browser Anda.",
+    "seoTitle": "Overlay PDF – Tambah Kop Surat atau Latar Belakang, Gratis",
+    "seoDescription": "Tempatkan kop surat, latar belakang, atau stempel PDF di atas atau di bawah halaman PDF lain, langsung di browser Anda. Pratinjau langsung. Gratis, tanpa unggah file.",
+    "keywords": [
+      "overlay pdf",
+      "tambah kop surat ke pdf",
+      "latar belakang pdf",
+      "tumpuk pdf di atas pdf lain",
+      "kop surat pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Buka PDF Anda",
+        "description": "Dokumen yang akan diberi overlay."
+      },
+      {
+        "title": "Pilih PDF overlay",
+        "description": "Kop surat, latar belakang, atau lembar stempel; atur di atas atau di bawah, halaman, dan opasitasnya."
+      },
+      {
+        "title": "Unduh PDF",
+        "description": "Periksa pratinjaunya lalu simpan."
+      }
+    ],
+    "features": [
+      {
+        "title": "Di atas atau di bawah",
+        "description": "Stempel di atas teks, atau kop surat di belakangnya."
+      },
+      {
+        "title": "Pencocokan halaman",
+        "description": "Pakai halaman overlay pertama di semua halaman, atau cocokkan halaman satu per satu."
+      },
+      {
+        "title": "Tetap tajam",
+        "description": "Overlay ditempatkan sebagai konten vektor, bukan gambar."
+      },
+      {
+        "title": "Privat",
+        "description": "PDF diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Mengapa overlay di bawah tidak terlihat?",
+        "answer": "Beberapa PDF memberi latar belakang putih di setiap halaman, yang menutupi apa pun di bawahnya. Sebagai gantinya, letakkan overlay di atas dengan opasitas lebih rendah."
+      },
+      {
+        "question": "Bagaimana jika ukuran halamannya berbeda?",
+        "answer": "Overlay diskalakan agar pas di setiap halaman, dengan proporsi tetap terjaga, lalu diletakkan di tengah."
+      },
+      {
+        "question": "Bisakah saya memakai gambar sebagai overlay?",
+        "answer": "Gunakan JPG ke PDF untuk mengubah gambar menjadi PDF terlebih dahulu, atau Watermark PDF untuk menempatkan gambar secara langsung."
+      },
+      {
+        "question": "Apakah PDF saya diunggah?",
+        "answer": "Tidak. Semuanya terjadi di browser Anda, jadi dokumen tetap berada di perangkat Anda."
+      }
+    ]
+  },
 };

@@ -7947,4 +7947,525 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  // PDF utilities
+"pdf-to-text": {
+    "name": "PDF en texte",
+    "shortName": "PDF en texte",
+    "tagline": "Récupérez le texte d’un PDF dans un simple fichier .txt, page par page, prêt à copier ou à modifier. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "PDF en texte extrait le texte d’un PDF pour que vous puissiez le copier, y faire des recherches, le modifier ou le coller ailleurs, sans copier page par page. Les lignes et les paragraphes sont conservés, et chaque page peut être signalée pour savoir d’où vient le texte. Choisissez toutes les pages ou seulement certaines, puis copiez le texte ou téléchargez-le en fichier .txt. Cela fonctionne avec les PDF qui contiennent du vrai texte, comme les documents enregistrés depuis Word ou un site web ; pour les pages scannées, utilisez OCR PDF. Tout se passe dans votre navigateur.",
+    "seoTitle": "PDF en texte – Copier ou enregistrer en TXT, gratuit",
+    "seoDescription": "Extrayez le texte d’un PDF dans votre navigateur et enregistrez-le en fichier .txt ou copiez-le. Choix des pages, paragraphes conservés. Gratuit, sans envoi.",
+    "keywords": [
+      "pdf en texte",
+      "pdf en txt",
+      "extraire texte pdf",
+      "copier texte pdf",
+      "extracteur de texte pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ouvrez votre PDF",
+        "description": "Déposez ou choisissez un PDF ; son texte est lu tout de suite."
+      },
+      {
+        "title": "Choisissez les pages",
+        "description": "Toutes les pages, ou une plage comme 1-3, 5. Indiquez le début des pages si vous le souhaitez."
+      },
+      {
+        "title": "Copiez ou téléchargez",
+        "description": "Copiez le texte, ou enregistrez-le en fichier .txt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Paragraphes conservés",
+        "description": "Les retours à la ligne et les espaces entre paragraphes suivent la page."
+      },
+      {
+        "title": "Page par page",
+        "description": "Indiquez le début de chaque page, ou ne prenez que certaines pages."
+      },
+      {
+        "title": "Toutes les langues",
+        "description": "Le texte, quelle que soit l’écriture utilisée dans le PDF, ressort tel quel."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Pourquoi aucun texte n’est-il trouvé ?",
+        "answer": "Le PDF est probablement un scan : des images de pages sans texte à l’intérieur. OCR PDF lit le texte à partir des images."
+      },
+      {
+        "question": "La mise en page est-elle conservée ?",
+        "answer": "Les mots et leur ordre, oui ; la mise en forme, non. Les PDF enregistrent le texte selon sa position, donc des colonnes côte à côte peuvent être lues en travers et les tableaux ressortent sous forme de lignes de texte."
+      },
+      {
+        "question": "Puis-je obtenir du Markdown à la place ?",
+        "answer": "Oui. Passez le format sur Markdown, ou utilisez PDF en Markdown, qui reconnaît aussi les titres et les listes."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "pdf-to-markdown": {
+    "name": "PDF en Markdown",
+    "shortName": "PDF en Markdown",
+    "tagline": "Transformez un PDF en Markdown avec titres et listes, pour vos notes, wikis et outils d’IA. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "PDF en Markdown convertit le texte d’un PDF en Markdown : le texte plus grand devient des titres, les lignes à puces et numérotées deviennent des listes, les lignes coupées sont réunies en paragraphes, et les mots coupés par un trait d’union sont recollés. Le résultat est prêt pour des applications de notes comme Obsidian et Notion, pour des wikis et de la documentation, ou à coller dans un assistant IA. Choisissez les pages, copiez le Markdown ou téléchargez-le en fichier .md. Tout se passe dans votre navigateur.",
+    "seoTitle": "Convertir PDF en Markdown – Titres et listes, gratuit",
+    "seoDescription": "Convertissez un PDF en Markdown dans votre navigateur : titres à partir du texte plus grand, listes, paragraphes réunis. Pour notes, wikis et outils d’IA. Gratuit, sans envoi.",
+    "keywords": [
+      "pdf en markdown",
+      "convertir pdf en markdown",
+      "pdf en md",
+      "convertisseur pdf markdown",
+      "pdf vers obsidian"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ouvrez votre PDF",
+        "description": "Déposez ou choisissez un PDF qui contient du texte."
+      },
+      {
+        "title": "Vérifiez le Markdown",
+        "description": "Les titres et les listes sont reconnus ; choisissez les pages dont vous avez besoin."
+      },
+      {
+        "title": "Copiez ou téléchargez",
+        "description": "Copiez le Markdown, ou enregistrez-le en fichier .md."
+      }
+    ],
+    "features": [
+      {
+        "title": "Titres reconnus",
+        "description": "Le texte plus grand que le corps devient des titres # du bon niveau."
+      },
+      {
+        "title": "Listes et paragraphes",
+        "description": "Les puces deviennent des listes, et les lignes coupées des paragraphes entiers."
+      },
+      {
+        "title": "Idéal pour les outils d’IA",
+        "description": "Un Markdown propre est facile à lire pour les assistants et les applications de notes."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les tableaux sont-ils convertis ?",
+        "answer": "Non. Les cellules des tableaux ressortent sous forme de lignes de texte ; remettez-les en forme à la main si vous avez besoin d’un tableau Markdown."
+      },
+      {
+        "question": "Pourquoi aucun texte n’est-il trouvé ?",
+        "answer": "Le PDF est probablement un scan : des images de pages sans texte à l’intérieur. OCR PDF lit le texte à partir des images."
+      },
+      {
+        "question": "La mise en page est-elle conservée ?",
+        "answer": "Les mots et leur ordre, oui ; la mise en forme, non. Les PDF enregistrent le texte selon sa position, donc des colonnes côte à côte peuvent être lues en travers et les tableaux ressortent sous forme de lignes de texte."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "text-to-pdf": {
+    "name": "Texte en PDF",
+    "shortName": "Texte en PDF",
+    "tagline": "Transformez du texte brut ou un fichier .txt en PDF propre, avec votre police, votre taille et vos marges. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Texte en PDF transforme des notes, des journaux, des listes ou n’importe quel texte brut en un PDF soigné qui s’affiche de la même façon sur tous les appareils. Saisissez ou collez le texte, ou ouvrez un fichier .txt, puis choisissez A4 ou Letter, une police sans empattement, à empattement ou de type machine à écrire, la taille du texte et les marges. Les longues lignes sont renvoyées proprement à la ligne, les retours à la ligne sont conservés et les pages peuvent être numérotées. L’aperçu montre le PDF exactement tel qu’il sera enregistré, et son texte reste recherchable. Tout se passe dans votre navigateur.",
+    "seoTitle": "Convertir texte en PDF – TXT en PDF, gratuit",
+    "seoDescription": "Convertissez du texte ou un fichier .txt en PDF dans votre navigateur. Police, taille, marges et numéros de page au choix ; aperçu en direct. Gratuit, sans envoi.",
+    "keywords": [
+      "texte en pdf",
+      "txt en pdf",
+      "convertir texte en pdf",
+      "bloc-notes en pdf",
+      "convertir fichier txt en pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ajoutez votre texte",
+        "description": "Saisissez-le, collez-le ou ouvrez un fichier .txt."
+      },
+      {
+        "title": "Choisissez l’apparence",
+        "description": "Format de page, police, taille du texte, marges et numéros de page."
+      },
+      {
+        "title": "Téléchargez le PDF",
+        "description": "Vérifiez l’aperçu et enregistrez-le."
+      }
+    ],
+    "features": [
+      {
+        "title": "Aperçu en direct",
+        "description": "Voyez chaque page telle qu’elle sera enregistrée avant de télécharger."
+      },
+      {
+        "title": "Texte recherchable",
+        "description": "Le PDF contient du vrai texte, pas une image de celui-ci."
+      },
+      {
+        "title": "De nombreuses langues",
+        "description": "Le texte latin, grec, cyrillique, japonais et coréen est écrit avec des polices qui le prennent en charge."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les tabulations et les espaces sont-ils conservés ?",
+        "answer": "Les retours à la ligne et les espaces en début de ligne sont conservés ; les tabulations deviennent quatre espaces."
+      },
+      {
+        "question": "Puis-je mettre le texte en forme ?",
+        "answer": "Pour des titres, du texte en gras et des listes, utilisez Markdown en PDF."
+      },
+      {
+        "question": "Y a-t-il une limite de taille ?",
+        "answer": "Pas de limite fixe ; les textes très longs prennent simplement quelques secondes de plus."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "markdown-to-pdf": {
+    "name": "Markdown en PDF",
+    "shortName": "Markdown en PDF",
+    "tagline": "Transformez du Markdown en PDF mis en forme, avec titres, listes, code et liens fonctionnels. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Markdown en PDF transforme les fichiers README, les notes et la documentation écrits en Markdown en un PDF bien mis en forme, à partager ou à imprimer. Les titres, le texte en gras et en italique, le code en ligne, les listes, les citations, les blocs de code, les séparateurs horizontaux et les liens sont mis en page, et les liens restent cliquables dans le PDF. Collez votre Markdown ou ouvrez un fichier .md, choisissez le format de page, la police et les marges, et vérifiez l’aperçu en direct avant de télécharger. Tout se passe dans votre navigateur.",
+    "seoTitle": "Convertir Markdown en PDF – Aperçu en direct, gratuit",
+    "seoDescription": "Convertissez du Markdown en PDF dans votre navigateur : titres, listes, blocs de code et liens cliquables, avec aperçu en direct. Gratuit, sans envoi.",
+    "keywords": [
+      "markdown en pdf",
+      "md en pdf",
+      "convertir markdown en pdf",
+      "readme en pdf",
+      "convertisseur markdown pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ajoutez votre Markdown",
+        "description": "Collez-le ou ouvrez un fichier .md."
+      },
+      {
+        "title": "Choisissez l’apparence",
+        "description": "Format de page, police, taille du texte, marges et numéros de page."
+      },
+      {
+        "title": "Téléchargez le PDF",
+        "description": "Vérifiez l’aperçu et enregistrez-le."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mise en forme conservée",
+        "description": "Titres, gras, italique, code, listes, citations et séparateurs."
+      },
+      {
+        "title": "Liens cliquables",
+        "description": "Les liens de votre Markdown fonctionnent dans le PDF."
+      },
+      {
+        "title": "Aperçu en direct",
+        "description": "Voyez les pages avant de télécharger."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les tableaux et les images sont-ils pris en charge ?",
+        "answer": "Pas encore. Les tableaux et les images du Markdown apparaissent sous forme de texte ; les titres, les listes, le code et les liens sont mis en page."
+      },
+      {
+        "question": "Quel Markdown est suivi ?",
+        "answer": "La syntaxe courante utilisée par GitHub et la plupart des éditeurs : # titres, **gras**, *italique*, `code`, listes, > citations, blocs de code ``` et [liens](…)."
+      },
+      {
+        "question": "Le texte est-il recherchable ?",
+        "answer": "Oui. Le PDF contient du vrai texte : il peut être sélectionné, recherché et copié."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "extract-images-from-pdf": {
+    "name": "Extraire les images d’un PDF",
+    "shortName": "Extraire images",
+    "tagline": "Enregistrez toutes les images d’un PDF dans leur propre résolution, en PNG ou JPG, dans un seul ZIP. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Extraire les images d’un PDF trouve les photos, logos et illustrations intégrés à un PDF et les enregistre dans la résolution où ils sont stockés, plutôt qu’en capture d’écran de la page. Chaque image est affichée avec sa taille et les pages où elle apparaît ; une image utilisée sur plusieurs pages, comme un logo, n’est listée qu’une fois. Regardez-les en grand, décochez celles dont vous n’avez pas besoin, et téléchargez-les en PNG sans perte ou en JPG plus légers, réunis dans un seul ZIP. Tout se passe dans votre navigateur.",
+    "seoTitle": "Extraire les images d’un PDF – Résolution d’origine, gratuit",
+    "seoDescription": "Enregistrez les images d’un PDF dans leur propre résolution, dans votre navigateur. Aperçu, sélection et téléchargement en PNG ou JPG dans un ZIP. Gratuit, sans envoi.",
+    "keywords": [
+      "extraire images pdf",
+      "extracteur d’images pdf",
+      "enregistrer images d’un pdf",
+      "récupérer les photos d’un pdf",
+      "exporter images pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ouvrez votre PDF",
+        "description": "Ses pages sont analysées à la recherche d’images."
+      },
+      {
+        "title": "Choisissez les images",
+        "description": "Regardez-les en grand et décochez celles que vous ne voulez pas."
+      },
+      {
+        "title": "Téléchargez-les",
+        "description": "Enregistrez des fichiers PNG ou JPG, réunis dans un seul ZIP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Résolution d’origine",
+        "description": "Les images ressortent à la taille stockée dans le PDF, pas en capture d’écran."
+      },
+      {
+        "title": "Chaque image une fois",
+        "description": "Un logo répété sur chaque page n’est listé qu’une fois, avec ses pages."
+      },
+      {
+        "title": "Sans le superflu",
+        "description": "Les toutes petites images comme les icônes et les lignes peuvent être écartées."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Pourquoi une image manque-t-elle ?",
+        "answer": "Certains PDF dessinent les graphiques avec des traits et des formes plutôt qu’avec des images, et ceux-ci ne peuvent pas être extraits comme images. Pour enregistrer l’aspect d’une page, utilisez PDF en JPG."
+      },
+      {
+        "question": "PNG ou JPG ?",
+        "answer": "Le PNG conserve chaque pixel à l’identique ; le JPG donne des fichiers bien plus légers pour les photos."
+      },
+      {
+        "question": "Est-ce que je récupère les fichiers d’origine ?",
+        "answer": "Vous obtenez les données d’image stockées dans le PDF, décodées dans leur résolution. Le format et le nom du fichier d’origine ne sont pas conservés dans un PDF."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "delete-blank-pages-pdf": {
+    "name": "Supprimer les pages blanches d’un PDF",
+    "shortName": "Supprimer pages blanches",
+    "tagline": "Trouvez les pages vides d’un PDF scanné et supprimez-les après une vérification rapide. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Le scan recto verso laisse des versos blancs dans vos PDF. Supprimer les pages blanches examine chaque page, coche celles qui sont vides et vous laisse vérifier avant que quoi que ce soit ne soit supprimé : affichez n’importe quelle page en grand, décochez une page que vous voulez garder ou cochez-en une vous-même. Les pages blanches scannées sont rarement d’un blanc pur : un curseur de sensibilité détermine donc combien de grain du papier, de transparence légère ou un numéro de page isolé comptent encore comme blanc. Téléchargez ensuite le PDF sans ces pages. Tout se passe dans votre navigateur.",
+    "seoTitle": "Supprimer les pages blanches d’un PDF – Automatique, gratuit",
+    "seoDescription": "Trouvez et supprimez les pages blanches de PDF scannés dans votre navigateur. Détection automatique, sensibilité réglable, vérification avant suppression. Gratuit.",
+    "keywords": [
+      "supprimer pages blanches pdf",
+      "enlever pages blanches pdf",
+      "supprimer pages vides pdf",
+      "retirer pages blanches pdf",
+      "pdf supprimer page vide"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ouvrez votre PDF",
+        "description": "Le contenu de chaque page est vérifié."
+      },
+      {
+        "title": "Vérifiez les pages cochées",
+        "description": "Les pages blanches sont cochées ; ajustez la sensibilité ou cochez et décochez des pages."
+      },
+      {
+        "title": "Téléchargez",
+        "description": "Enregistrez le PDF sans les pages cochées."
+      }
+    ],
+    "features": [
+      {
+        "title": "Détection automatique",
+        "description": "Les pages vides sont trouvées et cochées pour vous."
+      },
+      {
+        "title": "Sensibilité réglable",
+        "description": "Décidez si les pages presque vides comptent comme blanches."
+      },
+      {
+        "title": "Vérification avant suppression",
+        "description": "Ouvrez n’importe quelle page en grand avant qu’elle soit supprimée."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les pages avec un peu d’écriture seront-elles supprimées ?",
+        "answer": "Avec le réglage par défaut, les pages contenant une ligne de texte sont conservées. Augmentez la sensibilité pour supprimer aussi les pages avec seulement un numéro de page ou de légères marques."
+      },
+      {
+        "question": "Pourquoi une page blanche n’est-elle pas cochée ?",
+        "answer": "Le bruit du scanner, un bord sombre ou la transparence du verso peuvent ressembler à du contenu. Augmentez la sensibilité ou cochez-la vous-même."
+      },
+      {
+        "question": "Le reste du PDF est-il modifié ?",
+        "answer": "Non. Les autres pages sont copiées telles quelles."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "compare-pdf": {
+    "name": "Comparer des PDF",
+    "shortName": "Comparer PDF",
+    "tagline": "Voyez ce qui a changé entre deux versions d’un PDF : le texte mot à mot, et chaque page pixel par pixel. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Comparer des PDF montre les différences entre deux versions d’un document, comme un contrat avant et après modifications, ou deux brouillons d’un rapport. La vue texte liste chaque mot supprimé et ajouté, avec seulement les passages modifiés si vous le souhaitez, et le nombre de modifications. La vue visuelle place les pages côte à côte et surligne chaque différence en magenta, pour repérer aussi les changements dans les images, la mise en page et les signatures. Téléchargez les modifications sous forme de rapport texte. Tout se passe dans votre navigateur.",
+    "seoTitle": "Comparer des PDF en ligne – Trouver les différences, gratuit",
+    "seoDescription": "Comparez deux PDF dans votre navigateur : mots modifiés surlignés, et pages comparées pixel par pixel. Gratuit, privé, rien n’est envoyé.",
+    "keywords": [
+      "comparer pdf",
+      "comparer deux fichiers pdf",
+      "différence entre deux pdf",
+      "trouver les différences entre pdf",
+      "comparer pdf en ligne"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ajoutez les deux PDF",
+        "description": "D’abord l’original, puis la version modifiée."
+      },
+      {
+        "title": "Voyez les modifications",
+        "description": "Lisez les modifications du texte, ou passez à la comparaison visuelle page par page."
+      },
+      {
+        "title": "Enregistrez un rapport",
+        "description": "Téléchargez les modifications du texte sous forme de rapport .txt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mot à mot",
+        "description": "Mots supprimés en rouge, mots ajoutés en vert, avec un total."
+      },
+      {
+        "title": "Pixel par pixel",
+        "description": "Chaque différence visuelle sur une page est surlignée en magenta."
+      },
+      {
+        "title": "Uniquement les modifications",
+        "description": "Masquez le texte inchangé pour vous concentrer sur ce qui diffère."
+      },
+      {
+        "title": "Confidentiel",
+        "description": "Les deux documents restent sur votre appareil."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les PDF doivent-ils avoir le même nombre de pages ?",
+        "answer": "Non. Le texte est comparé dans son ensemble, donc les pages ajoutées ou supprimées apparaissent comme du texte ajouté ou supprimé. La vue visuelle compare les pages portant le même numéro."
+      },
+      {
+        "question": "Pourquoi la vue visuelle montre-t-elle des changements que la vue texte ne montre pas ?",
+        "answer": "Les images, la mise en page, les couleurs et les signatures ne sont pas du texte ; la vue visuelle les repère."
+      },
+      {
+        "question": "Peut-on comparer des PDF scannés ?",
+        "answer": "La vue visuelle, oui. Pour la vue texte, passez d’abord les deux PDF dans OCR PDF."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
+  "overlay-pdf": {
+    "name": "Superposer un PDF",
+    "shortName": "Superposer PDF",
+    "tagline": "Placez un papier à en-tête, un fond ou un tampon issu d’un PDF au-dessus ou en dessous des pages d’un autre. Gratuit, et tout se fait sur votre appareil.",
+    "intro": "Superposer un PDF combine deux PDF page sur page : placez le papier à en-tête de votre entreprise derrière une lettre, un fond décoratif sous un rapport, ou une feuille « Brouillon » ou « Approuvé » par-dessus chaque page. Choisissez si la superposition va au-dessus ou en dessous, quelle page de superposition va où (la première page sur chaque page, ou page par page), quelles pages couvrir et avec quelle intensité. L’aperçu montre chaque page telle qu’elle sera enregistrée. Tout se passe dans votre navigateur.",
+    "seoTitle": "Superposer un PDF – Ajouter un en-tête ou un fond, gratuit",
+    "seoDescription": "Placez un papier à en-tête, un fond ou un tampon PDF au-dessus ou en dessous des pages d’un autre PDF, dans votre navigateur. Aperçu en direct. Gratuit, sans envoi.",
+    "keywords": [
+      "superposer pdf",
+      "ajouter papier à en-tête pdf",
+      "fond pdf",
+      "superposer deux pdf",
+      "en-tête pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Ouvrez votre PDF",
+        "description": "Le document qui reçoit la superposition."
+      },
+      {
+        "title": "Choisissez le PDF à superposer",
+        "description": "Un papier à en-tête, un fond ou une feuille de tampon ; réglez au-dessus ou en dessous, les pages et l’opacité."
+      },
+      {
+        "title": "Téléchargez le PDF",
+        "description": "Vérifiez l’aperçu et enregistrez-le."
+      }
+    ],
+    "features": [
+      {
+        "title": "Au-dessus ou en dessous",
+        "description": "Un tampon par-dessus le texte, ou un en-tête derrière."
+      },
+      {
+        "title": "Correspondance des pages",
+        "description": "Utilisez la première page de superposition partout, ou associez les pages une à une."
+      },
+      {
+        "title": "Reste net",
+        "description": "La superposition est placée en contenu vectoriel, pas en image."
+      },
+      {
+        "title": "Privé",
+        "description": "Le PDF est traité dans votre navigateur et n’est jamais envoyé."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Pourquoi ne vois-je pas la superposition en dessous ?",
+        "answer": "Certains PDF peignent un fond blanc sur chaque page, ce qui masque tout ce qui se trouve en dessous. Placez plutôt la superposition au-dessus avec une opacité plus faible."
+      },
+      {
+        "question": "Et si les pages n’ont pas la même taille ?",
+        "answer": "La superposition est mise à l’échelle pour tenir dans chaque page, en gardant ses proportions, et centrée."
+      },
+      {
+        "question": "Puis-je utiliser une image comme superposition ?",
+        "answer": "Utilisez JPG en PDF pour transformer d’abord l’image en PDF, ou Filigrane PDF pour placer directement une image."
+      },
+      {
+        "question": "Mon PDF est-il envoyé ?",
+        "answer": "Non. Tout se passe dans votre navigateur, donc le document reste sur votre appareil."
+      }
+    ]
+  },
 };

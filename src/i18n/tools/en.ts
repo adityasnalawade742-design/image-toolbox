@@ -5484,6 +5484,526 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "pdf-to-text": {
+    "name": "PDF to Text",
+    "shortName": "PDF to Text",
+    "tagline": "Get the text out of a PDF as a plain .txt file, page by page, ready to copy or edit. Free, and it runs on your device.",
+    "intro": "PDF to Text pulls the text out of a PDF so you can copy it, search it, edit it or paste it somewhere else, without copying page by page. Lines and paragraphs are kept, and each page can be marked so you know where it came from. Choose all pages or just some, then copy the text or download it as a .txt file. It works on PDFs that contain real text, such as documents saved from Word or a website; for scanned pages, use OCR PDF. Everything happens in your browser.",
+    "seoTitle": "PDF to Text Converter – Free, Copy or Save TXT",
+    "seoDescription": "Extract the text from a PDF in your browser and save it as a .txt file or copy it. Choose pages, keep paragraphs. Free, nothing uploaded.",
+    "keywords": [
+      "pdf to text",
+      "pdf to txt",
+      "extract text from pdf",
+      "copy text from pdf",
+      "pdf text extractor"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF; its text is read straight away."
+      },
+      {
+        "title": "Choose the pages",
+        "description": "All pages, or a range such as 1-3, 5. Mark page starts if you like."
+      },
+      {
+        "title": "Copy or download",
+        "description": "Copy the text, or save it as a .txt file."
+      }
+    ],
+    "features": [
+      {
+        "title": "Paragraphs kept",
+        "description": "Line breaks and paragraph gaps follow the page."
+      },
+      {
+        "title": "Page by page",
+        "description": "Mark where each page starts, or pick only some pages."
+      },
+      {
+        "title": "Any language",
+        "description": "Text in any script the PDF contains comes out as it is."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is no text found?",
+        "answer": "The PDF is probably a scan: pictures of pages with no text inside. OCR PDF reads the text from the pictures."
+      },
+      {
+        "question": "Will the layout be kept?",
+        "answer": "The words and their order are; the design isn't. PDFs store text by position, so columns side by side can be read across and tables come out as lines of text."
+      },
+      {
+        "question": "Can I get Markdown instead?",
+        "answer": "Yes. Switch the format to Markdown, or use PDF to Markdown, which also recognises headings and lists."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "pdf-to-markdown": {
+    "name": "PDF to Markdown",
+    "shortName": "PDF to Markdown",
+    "tagline": "Turn a PDF into Markdown with headings and lists, for notes, wikis and AI tools. Free, and it runs on your device.",
+    "intro": "PDF to Markdown turns the text of a PDF into Markdown: larger text becomes headings, bullet and numbered lines become lists, and wrapped lines are joined back into paragraphs, with words split by a hyphen put back together. The result is ready for note apps such as Obsidian and Notion, for wikis and documentation, or for pasting into an AI assistant. Choose the pages, copy the Markdown or download it as an .md file. Everything happens in your browser.",
+    "seoTitle": "PDF to Markdown Converter – Free, Headings and Lists",
+    "seoDescription": "Convert PDF to Markdown in your browser: headings from larger text, lists, joined paragraphs. For notes, wikis and AI tools. Free, nothing uploaded.",
+    "keywords": [
+      "pdf to markdown",
+      "convert pdf to markdown",
+      "pdf to md",
+      "pdf to markdown converter",
+      "pdf to obsidian"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Drop or choose a PDF that contains text."
+      },
+      {
+        "title": "Check the Markdown",
+        "description": "Headings and lists are recognised; choose the pages you need."
+      },
+      {
+        "title": "Copy or download",
+        "description": "Copy the Markdown, or save it as an .md file."
+      }
+    ],
+    "features": [
+      {
+        "title": "Headings recognised",
+        "description": "Text larger than the body becomes # headings of the right level."
+      },
+      {
+        "title": "Lists and paragraphs",
+        "description": "Bullets become lists, and wrapped lines become whole paragraphs."
+      },
+      {
+        "title": "Good for AI tools",
+        "description": "Clean Markdown is easy for assistants and note apps to read."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are tables converted?",
+        "answer": "No. Table cells come out as lines of text; tidy them up by hand if you need a Markdown table."
+      },
+      {
+        "question": "Why is no text found?",
+        "answer": "The PDF is probably a scan: pictures of pages with no text inside. OCR PDF reads the text from the pictures."
+      },
+      {
+        "question": "Will the layout be kept?",
+        "answer": "The words and their order are; the design isn't. PDFs store text by position, so columns side by side can be read across and tables come out as lines of text."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "text-to-pdf": {
+    "name": "Text to PDF",
+    "shortName": "Text to PDF",
+    "tagline": "Turn plain text or a .txt file into a clean PDF with your font, size and margins. Free, and it runs on your device.",
+    "intro": "Text to PDF turns notes, logs, lists or any plain text into a tidy PDF that looks the same on every device. Type or paste the text, or open a .txt file, then choose A4 or Letter, a sans, serif or typewriter-style font, the text size and the margins. Long lines wrap neatly, line breaks are kept, and pages can be numbered. The preview shows the PDF exactly as it will be saved, and the text in it stays searchable. Everything happens in your browser.",
+    "seoTitle": "Text to PDF Converter – TXT to PDF, Free",
+    "seoDescription": "Convert text or a .txt file to PDF in your browser. Choose font, size, margins and page numbers; live preview. Free, nothing uploaded.",
+    "keywords": [
+      "text to pdf",
+      "txt to pdf",
+      "convert text to pdf",
+      "notepad to pdf",
+      "plain text to pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your text",
+        "description": "Type, paste or open a .txt file."
+      },
+      {
+        "title": "Choose the look",
+        "description": "Page size, font, text size, margins and page numbers."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Check the preview and save it."
+      }
+    ],
+    "features": [
+      {
+        "title": "Live preview",
+        "description": "See every page as it will be saved before you download."
+      },
+      {
+        "title": "Searchable text",
+        "description": "The PDF contains real text, not a picture of it."
+      },
+      {
+        "title": "Many languages",
+        "description": "Latin, Greek, Cyrillic, Japanese and Korean text is written with fonts that include it."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are tabs and spaces kept?",
+        "answer": "Line breaks and spaces at the start of lines are kept; tabs become four spaces."
+      },
+      {
+        "question": "Can I format the text?",
+        "answer": "For headings, bold text and lists, use Markdown to PDF."
+      },
+      {
+        "question": "Is there a size limit?",
+        "answer": "No fixed limit; very long texts simply take a few seconds longer."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "markdown-to-pdf": {
+    "name": "Markdown to PDF",
+    "shortName": "Markdown to PDF",
+    "tagline": "Turn Markdown into a formatted PDF with headings, lists, code and working links. Free, and it runs on your device.",
+    "intro": "Markdown to PDF turns README files, notes and documentation written in Markdown into a well-formatted PDF to share or print. Headings, bold and italic text, inline code, lists, quotes, code blocks, horizontal rules and links are laid out, and links stay clickable in the PDF. Paste your Markdown or open an .md file, choose the page size, font and margins, and check the live preview before you download. Everything happens in your browser.",
+    "seoTitle": "Markdown to PDF Converter – Free, Live Preview",
+    "seoDescription": "Convert Markdown to PDF in your browser: headings, lists, code blocks and clickable links, with a live preview. Free, nothing uploaded.",
+    "keywords": [
+      "markdown to pdf",
+      "md to pdf",
+      "convert markdown to pdf",
+      "readme to pdf",
+      "markdown pdf converter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your Markdown",
+        "description": "Paste it or open an .md file."
+      },
+      {
+        "title": "Choose the look",
+        "description": "Page size, font, text size, margins and page numbers."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Check the preview and save it."
+      }
+    ],
+    "features": [
+      {
+        "title": "Formatting kept",
+        "description": "Headings, bold, italic, code, lists, quotes and rules."
+      },
+      {
+        "title": "Clickable links",
+        "description": "Links in your Markdown work in the PDF."
+      },
+      {
+        "title": "Live preview",
+        "description": "See the pages before you download."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are tables and images supported?",
+        "answer": "Not yet. Tables and images in the Markdown appear as their text; headings, lists, code and links are laid out."
+      },
+      {
+        "question": "Which Markdown does it follow?",
+        "answer": "The common syntax used by GitHub and most editors: # headings, **bold**, *italic*, `code`, lists, > quotes, ``` code blocks and [links](…)."
+      },
+      {
+        "question": "Is the text searchable?",
+        "answer": "Yes. The PDF contains real text, so it can be selected, searched and copied."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "extract-images-from-pdf": {
+    "name": "Extract Images from PDF",
+    "shortName": "Extract Images",
+    "tagline": "Save every picture inside a PDF at its own resolution, as PNG or JPG, in one ZIP. Free, and it runs on your device.",
+    "intro": "Extract Images from PDF finds the photos, logos and illustrations embedded in a PDF and saves them at the resolution they are stored at, rather than as a screenshot of the page. Each image is shown with its size and the pages it appears on; an image used on many pages, such as a logo, is listed once. Look at them full size, untick the ones you don't need, and download them as lossless PNG or smaller JPG files, together in one ZIP. Everything happens in your browser.",
+    "seoTitle": "Extract Images from PDF – Free, Original Resolution",
+    "seoDescription": "Save the images inside a PDF at their own resolution, in your browser. Preview, choose, and download PNG or JPG in one ZIP. Free, nothing uploaded.",
+    "keywords": [
+      "extract images from pdf",
+      "pdf image extractor",
+      "save images from pdf",
+      "get pictures from pdf",
+      "pdf to images extract"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Its pages are searched for images."
+      },
+      {
+        "title": "Choose the images",
+        "description": "Look at them full size and untick the ones you don't want."
+      },
+      {
+        "title": "Download them",
+        "description": "Save PNG or JPG files, together in one ZIP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Original resolution",
+        "description": "Images come out at the size stored in the PDF, not as a screenshot."
+      },
+      {
+        "title": "Each image once",
+        "description": "A logo repeated on every page is listed once, with its pages."
+      },
+      {
+        "title": "Skip the clutter",
+        "description": "Tiny images such as icons and lines can be left out."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is a picture missing?",
+        "answer": "Some PDFs draw graphics with lines and shapes instead of images, and those can't be extracted as pictures. To save how a page looks, use PDF to JPG."
+      },
+      {
+        "question": "PNG or JPG?",
+        "answer": "PNG keeps every pixel exactly; JPG makes much smaller files for photos."
+      },
+      {
+        "question": "Do I get the original files back?",
+        "answer": "You get the image data stored in the PDF, decoded at its resolution. The original file format and name aren't kept in a PDF."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "delete-blank-pages-pdf": {
+    "name": "Delete Blank Pages from PDF",
+    "shortName": "Delete Blank Pages",
+    "tagline": "Find the empty pages in a scanned PDF and remove them after a quick check. Free, and it runs on your device.",
+    "intro": "Double-sided scanning leaves blank backs in your PDFs. Delete Blank Pages looks at every page, ticks the ones that are empty, and lets you check them before anything is removed: look at any page full size, untick a page you want to keep, or tick one yourself. Scanned blank pages are rarely pure white, so a sensitivity slider decides how much paper grain, faint show-through or a lonely page number still counts as blank. Then download the PDF without those pages. Everything happens in your browser.",
+    "seoTitle": "Delete Blank Pages from PDF – Free, Automatic",
+    "seoDescription": "Find and remove blank pages from scanned PDFs in your browser. Automatic detection, adjustable sensitivity, check before deleting. Free.",
+    "keywords": [
+      "remove blank pages from pdf",
+      "delete blank pages pdf",
+      "pdf blank page remover",
+      "remove empty pages pdf",
+      "delete white pages pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "Every page is checked for content."
+      },
+      {
+        "title": "Check the ticked pages",
+        "description": "Blank pages are ticked; adjust the sensitivity or tick and untick pages."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF without the ticked pages."
+      }
+    ],
+    "features": [
+      {
+        "title": "Automatic detection",
+        "description": "Empty pages are found and ticked for you."
+      },
+      {
+        "title": "Adjustable sensitivity",
+        "description": "Decide whether near-empty pages count as blank."
+      },
+      {
+        "title": "Check before deleting",
+        "description": "Open any page full size before it is removed."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will it delete pages with a little writing?",
+        "answer": "At the default setting, pages with a line of text are kept. Raise the sensitivity to also remove pages with only a page number or faint marks."
+      },
+      {
+        "question": "Why is a blank page not ticked?",
+        "answer": "Scanner noise, a dark edge or show-through from the other side can look like content. Raise the sensitivity or tick it yourself."
+      },
+      {
+        "question": "Is the rest of the PDF changed?",
+        "answer": "No. The other pages are copied as they are."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "compare-pdf": {
+    "name": "Compare PDFs",
+    "shortName": "Compare PDFs",
+    "tagline": "See what changed between two versions of a PDF: text word by word, and each page pixel by pixel. Free, and it runs on your device.",
+    "intro": "Compare PDFs shows the differences between two versions of a document, such as a contract before and after edits, or two drafts of a report. The text view lists every removed and added word, with only the changed passages if you like, and a count of the changes. The visual view puts the pages side by side and highlights every difference in magenta, so you also catch changes in pictures, layout and signatures. Download the changes as a text report. Everything happens in your browser.",
+    "seoTitle": "Compare PDFs Online – Find Differences, Free",
+    "seoDescription": "Compare two PDFs in your browser: changed words highlighted, and pages compared pixel by pixel. Free, private, nothing uploaded.",
+    "keywords": [
+      "compare pdf",
+      "compare two pdf files",
+      "pdf diff",
+      "find differences between pdfs",
+      "pdf compare online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add both PDFs",
+        "description": "The original first, then the changed version."
+      },
+      {
+        "title": "See the changes",
+        "description": "Read the text changes, or switch to the visual comparison page by page."
+      },
+      {
+        "title": "Save a report",
+        "description": "Download the text changes as a .txt report."
+      }
+    ],
+    "features": [
+      {
+        "title": "Word by word",
+        "description": "Removed words in red, added words in green, with a total."
+      },
+      {
+        "title": "Pixel by pixel",
+        "description": "Every visual difference on a page highlighted in magenta."
+      },
+      {
+        "title": "Just the changes",
+        "description": "Hide the unchanged text to focus on what's different."
+      },
+      {
+        "title": "Confidential",
+        "description": "Both documents stay on your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do the PDFs need the same number of pages?",
+        "answer": "No. The text is compared as a whole, so added or removed pages show up as added or removed text. The visual view compares pages with the same number."
+      },
+      {
+        "question": "Why does the visual view show changes the text view doesn't?",
+        "answer": "Pictures, layout, colors and signatures aren't text; the visual view catches them."
+      },
+      {
+        "question": "Can it compare scanned PDFs?",
+        "answer": "The visual view can. For the text view, run both through OCR PDF first."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
+  "overlay-pdf": {
+    "name": "Overlay PDF",
+    "shortName": "Overlay PDF",
+    "tagline": "Put a letterhead, background or stamp from one PDF on top of or under the pages of another. Free, and it runs on your device.",
+    "intro": "Overlay PDF combines two PDFs page on page: put your company letterhead behind a letter, a background design under a report, or a 'Draft' or 'Approved' sheet on top of every page. Choose whether the overlay goes on top or underneath, which overlay page goes where (the first page on every page, or page by page), which pages to cover, and how strong it should be. The preview shows each page as it will be saved. Everything happens in your browser.",
+    "seoTitle": "Overlay PDF – Add Letterhead or Background, Free",
+    "seoDescription": "Put a PDF letterhead, background or stamp on top of or under the pages of another PDF, in your browser. Live preview. Free, nothing uploaded.",
+    "keywords": [
+      "overlay pdf",
+      "add letterhead to pdf",
+      "pdf background",
+      "merge pdf on top of another",
+      "pdf letterhead"
+    ],
+    "howToSteps": [
+      {
+        "title": "Open your PDF",
+        "description": "The document that gets the overlay."
+      },
+      {
+        "title": "Choose the overlay PDF",
+        "description": "A letterhead, background or stamp sheet; set on top or underneath, pages and opacity."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Check the preview and save it."
+      }
+    ],
+    "features": [
+      {
+        "title": "On top or underneath",
+        "description": "A stamp over the text, or a letterhead behind it."
+      },
+      {
+        "title": "Page matching",
+        "description": "Use the first overlay page everywhere, or match pages one by one."
+      },
+      {
+        "title": "Stays sharp",
+        "description": "The overlay is placed as vector content, not a picture of it."
+      },
+      {
+        "title": "Private",
+        "description": "The PDF is processed in your browser and never uploaded."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why can't I see the overlay underneath?",
+        "answer": "Some PDFs paint a white background on every page, which hides anything underneath. Put the overlay on top with a lower opacity instead."
+      },
+      {
+        "question": "What if the pages are different sizes?",
+        "answer": "The overlay is scaled to fit each page, keeping its proportions, and centred."
+      },
+      {
+        "question": "Can I use an image as the overlay?",
+        "answer": "Use JPG to PDF to turn the image into a PDF first, or Watermark PDF to place an image directly."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Everything happens in your browser, so the document stays on your device."
+      }
+    ]
+  },
   "passport-photo-maker": {
     "name": "Passport Photo Maker",
     "shortName": "Passport Photo",
