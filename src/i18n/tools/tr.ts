@@ -7917,4 +7917,525 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  // PDF utilities
+"pdf-to-text": {
+    "name": "PDF'ten Metne Dönüştürme",
+    "shortName": "PDF → Metin",
+    "tagline": "Bir PDF'teki metni sayfa sayfa düz bir .txt dosyası olarak alın; kopyalamaya veya düzenlemeye hazır. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "PDF'ten Metne Dönüştürme, bir PDF'teki metni çıkarır; böylece sayfa sayfa kopyalamadan metni kopyalayabilir, arayabilir, düzenleyebilir veya başka bir yere yapıştırabilirsiniz. Satırlar ve paragraflar korunur, her sayfanın başı işaretlenebilir ve metnin hangi sayfadan geldiğini bilirsiniz. Tüm sayfaları veya yalnızca bazılarını seçin, ardından metni kopyalayın ya da .txt dosyası olarak indirin. Word'den veya bir web sitesinden kaydedilmiş belgeler gibi gerçek metin içeren PDF'lerde çalışır; taranmış sayfalar için PDF OCR'ı kullanın. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF'ten Metne Dönüştürücü – Ücretsiz, Kopyala veya TXT",
+    "seoDescription": "Bir PDF'teki metni tarayıcınızda çıkarın ve .txt dosyası olarak kaydedin ya da kopyalayın. Sayfa seçin, paragraflar korunsun. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "pdf metne çevirme",
+      "pdf txt çevirme",
+      "pdf'ten metin çıkarma",
+      "pdf metin kopyalama",
+      "pdf metin çıkarıcı"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF'inizi açın",
+        "description": "Bir PDF bırakın veya seçin; metni hemen okunur."
+      },
+      {
+        "title": "Sayfaları seçin",
+        "description": "Tüm sayfalar veya 1-3, 5 gibi bir aralık. İsterseniz sayfa başlarını işaretleyin."
+      },
+      {
+        "title": "Kopyalayın veya indirin",
+        "description": "Metni kopyalayın ya da .txt dosyası olarak kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Paragraflar korunur",
+        "description": "Satır sonları ve paragraf boşlukları sayfadaki gibi kalır."
+      },
+      {
+        "title": "Sayfa sayfa",
+        "description": "Her sayfanın başladığı yeri işaretleyin veya yalnızca bazı sayfaları seçin."
+      },
+      {
+        "title": "Her dil",
+        "description": "PDF'in içerdiği her yazı sistemindeki metin olduğu gibi çıkar."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Neden hiç metin bulunamıyor?",
+        "answer": "PDF büyük olasılıkla bir tarama: içinde metin olmayan sayfa resimleri. PDF OCR, resimlerdeki metni okur."
+      },
+      {
+        "question": "Düzen korunur mu?",
+        "answer": "Kelimeler ve sıraları korunur; tasarım korunmaz. PDF'ler metni konumuna göre saklar, bu yüzden yan yana sütunlar birlikte okunabilir ve tablolar satır satır metin olarak çıkar."
+      },
+      {
+        "question": "Bunun yerine Markdown alabilir miyim?",
+        "answer": "Evet. Formatı Markdown'a çevirin veya başlıkları ve listeleri de tanıyan PDF'ten Markdown'a Dönüştürme aracını kullanın."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "pdf-to-markdown": {
+    "name": "PDF'ten Markdown'a Dönüştürme",
+    "shortName": "PDF → Markdown",
+    "tagline": "Bir PDF'i başlıkları ve listeleriyle Markdown'a dönüştürün; notlar, wiki'ler ve yapay zekâ araçları için. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "PDF'ten Markdown'a Dönüştürme, bir PDF'in metnini Markdown'a çevirir: daha büyük metin başlık, madde işaretli ve numaralı satırlar liste olur, kaydırılmış satırlar yeniden paragraf olarak birleştirilir ve kısa çizgiyle bölünmüş kelimeler bir araya getirilir. Sonuç; Obsidian ve Notion gibi not uygulamaları, wiki'ler ve dokümantasyon ya da bir yapay zekâ asistanına yapıştırmak için hazırdır. Sayfaları seçin, Markdown'ı kopyalayın veya .md dosyası olarak indirin. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF'ten Markdown'a – Ücretsiz, Başlık ve Listeler",
+    "seoDescription": "PDF'i tarayıcınızda Markdown'a dönüştürün: büyük metinden başlıklar, listeler, birleştirilmiş paragraflar. Notlar, wiki'ler ve yapay zekâ için. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "pdf markdown çevirme",
+      "pdf'i markdown'a dönüştürme",
+      "pdf md çevirme",
+      "pdf markdown dönüştürücü",
+      "pdf obsidian"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF'inizi açın",
+        "description": "Metin içeren bir PDF bırakın veya seçin."
+      },
+      {
+        "title": "Markdown'ı kontrol edin",
+        "description": "Başlıklar ve listeler tanınır; ihtiyacınız olan sayfaları seçin."
+      },
+      {
+        "title": "Kopyalayın veya indirin",
+        "description": "Markdown'ı kopyalayın ya da .md dosyası olarak kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Başlıklar tanınır",
+        "description": "Gövde metninden büyük metin, doğru düzeyde # başlık olur."
+      },
+      {
+        "title": "Listeler ve paragraflar",
+        "description": "Madde işaretleri liste, kaydırılmış satırlar bütün paragraflar olur."
+      },
+      {
+        "title": "Yapay zekâ araçlarına uygun",
+        "description": "Temiz Markdown, asistanların ve not uygulamalarının kolayca okuyabileceği bir biçimdir."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Tablolar dönüştürülüyor mu?",
+        "answer": "Hayır. Tablo hücreleri satır satır metin olarak çıkar; Markdown tablosu gerekiyorsa elle düzenleyin."
+      },
+      {
+        "question": "Neden hiç metin bulunamıyor?",
+        "answer": "PDF büyük olasılıkla bir tarama: içinde metin olmayan sayfa resimleri. PDF OCR, resimlerdeki metni okur."
+      },
+      {
+        "question": "Düzen korunur mu?",
+        "answer": "Kelimeler ve sıraları korunur; tasarım korunmaz. PDF'ler metni konumuna göre saklar, bu yüzden yan yana sütunlar birlikte okunabilir ve tablolar satır satır metin olarak çıkar."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "text-to-pdf": {
+    "name": "Metinden PDF'e Dönüştürme",
+    "shortName": "Metin → PDF",
+    "tagline": "Düz metni veya bir .txt dosyasını seçtiğiniz yazı tipi, boyut ve kenar boşluklarıyla temiz bir PDF'e dönüştürün. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "Metinden PDF'e Dönüştürme; notları, günlükleri, listeleri veya herhangi bir düz metni her cihazda aynı görünen düzenli bir PDF'e çevirir. Metni yazın ya da yapıştırın veya bir .txt dosyası açın; ardından A4 veya Letter, tırnaksız, tırnaklı ya da daktilo tarzı bir yazı tipi, yazı boyutu ve kenar boşluklarını seçin. Uzun satırlar düzgünce kaydırılır, satır sonları korunur ve sayfalar numaralandırılabilir. Önizleme, PDF'i tam olarak kaydedileceği gibi gösterir ve içindeki metin aranabilir kalır. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "Metinden PDF'e Dönüştürücü – TXT'den PDF'e, Ücretsiz",
+    "seoDescription": "Metni veya bir .txt dosyasını tarayıcınızda PDF'e dönüştürün. Yazı tipi, boyut, kenar boşlukları ve sayfa numaraları seçin; canlı önizleme. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "metni pdf'e çevirme",
+      "txt pdf çevirme",
+      "metinden pdf oluşturma",
+      "not defteri pdf'e çevirme",
+      "düz metin pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Metninizi ekleyin",
+        "description": "Yazın, yapıştırın veya bir .txt dosyası açın."
+      },
+      {
+        "title": "Görünümü seçin",
+        "description": "Sayfa boyutu, yazı tipi, yazı boyutu, kenar boşlukları ve sayfa numaraları."
+      },
+      {
+        "title": "PDF'i indirin",
+        "description": "Önizlemeyi kontrol edin ve kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Canlı önizleme",
+        "description": "İndirmeden önce her sayfayı kaydedileceği gibi görün."
+      },
+      {
+        "title": "Aranabilir metin",
+        "description": "PDF, metnin resmini değil, gerçek metni içerir."
+      },
+      {
+        "title": "Birçok dil",
+        "description": "Latin, Yunan, Kiril, Japonca ve Korece metinler, bu karakterleri içeren yazı tipleriyle yazılır."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda oluşturulur ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Sekmeler ve boşluklar korunur mu?",
+        "answer": "Satır sonları ve satır başındaki boşluklar korunur; sekmeler dört boşluğa dönüşür."
+      },
+      {
+        "question": "Metni biçimlendirebilir miyim?",
+        "answer": "Başlıklar, kalın metin ve listeler için Markdown'dan PDF'e Dönüştürme aracını kullanın."
+      },
+      {
+        "question": "Bir boyut sınırı var mı?",
+        "answer": "Sabit bir sınır yoktur; çok uzun metinler yalnızca birkaç saniye daha uzun sürer."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "markdown-to-pdf": {
+    "name": "Markdown'dan PDF'e Dönüştürme",
+    "shortName": "Markdown → PDF",
+    "tagline": "Markdown'ı başlıklar, listeler, kod ve çalışan bağlantılarla biçimlendirilmiş bir PDF'e dönüştürün. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "Markdown'dan PDF'e Dönüştürme, Markdown ile yazılmış README dosyalarını, notları ve dokümantasyonu paylaşmak veya yazdırmak için düzgün biçimlendirilmiş bir PDF'e çevirir. Başlıklar, kalın ve italik metin, satır içi kod, listeler, alıntılar, kod blokları, yatay çizgiler ve bağlantılar yerleştirilir; bağlantılar PDF'te tıklanabilir kalır. Markdown'ınızı yapıştırın veya bir .md dosyası açın, sayfa boyutunu, yazı tipini ve kenar boşluklarını seçin, indirmeden önce canlı önizlemeyi kontrol edin. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "Markdown'dan PDF'e Dönüştürücü – Ücretsiz, Canlı Önizleme",
+    "seoDescription": "Markdown'ı tarayıcınızda PDF'e dönüştürün: başlıklar, listeler, kod blokları ve tıklanabilir bağlantılar, canlı önizlemeyle. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "markdown pdf çevirme",
+      "md pdf çevirme",
+      "markdown'ı pdf'e dönüştürme",
+      "readme pdf'e çevirme",
+      "markdown pdf dönüştürücü"
+    ],
+    "howToSteps": [
+      {
+        "title": "Markdown'ınızı ekleyin",
+        "description": "Yapıştırın veya bir .md dosyası açın."
+      },
+      {
+        "title": "Görünümü seçin",
+        "description": "Sayfa boyutu, yazı tipi, yazı boyutu, kenar boşlukları ve sayfa numaraları."
+      },
+      {
+        "title": "PDF'i indirin",
+        "description": "Önizlemeyi kontrol edin ve kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Biçimlendirme korunur",
+        "description": "Başlıklar, kalın, italik, kod, listeler, alıntılar ve çizgiler."
+      },
+      {
+        "title": "Tıklanabilir bağlantılar",
+        "description": "Markdown'ınızdaki bağlantılar PDF'te çalışır."
+      },
+      {
+        "title": "Canlı önizleme",
+        "description": "İndirmeden önce sayfaları görün."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda oluşturulur ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Tablolar ve resimler destekleniyor mu?",
+        "answer": "Henüz değil. Markdown'daki tablolar ve resimler metin hâlleriyle görünür; başlıklar, listeler, kod ve bağlantılar yerleştirilir."
+      },
+      {
+        "question": "Hangi Markdown'ı izliyor?",
+        "answer": "GitHub'ın ve çoğu düzenleyicinin kullandığı yaygın sözdizimi: # başlıklar, **kalın**, *italik*, `kod`, listeler, > alıntılar, ``` kod blokları ve [bağlantılar](…)."
+      },
+      {
+        "question": "Metin aranabilir mi?",
+        "answer": "Evet. PDF gerçek metin içerir, bu yüzden seçilebilir, aranabilir ve kopyalanabilir."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "extract-images-from-pdf": {
+    "name": "PDF'ten Resim Çıkarma",
+    "shortName": "Resim Çıkar",
+    "tagline": "Bir PDF'in içindeki her resmi kendi çözünürlüğünde, PNG veya JPG olarak tek bir ZIP'te kaydedin. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "PDF'ten Resim Çıkarma, bir PDF'e gömülü fotoğrafları, logoları ve çizimleri bulur ve sayfanın ekran görüntüsü olarak değil, saklandıkları çözünürlükte kaydeder. Her resim boyutu ve göründüğü sayfalarla birlikte gösterilir; logo gibi birçok sayfada kullanılan bir resim yalnızca bir kez listelenir. Resimleri tam boyutta inceleyin, ihtiyacınız olmayanların işaretini kaldırın ve kayıpsız PNG veya daha küçük JPG dosyaları olarak tek bir ZIP'te indirin. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF'ten Resim Çıkarma – Ücretsiz, Orijinal Çözünürlük",
+    "seoDescription": "Bir PDF'in içindeki resimleri tarayıcınızda kendi çözünürlüklerinde kaydedin. Önizleyin, seçin ve PNG ya da JPG'yi tek ZIP'te indirin. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "pdf'ten resim çıkarma",
+      "pdf resim ayıklama",
+      "pdf'teki resimleri kaydetme",
+      "pdf'ten fotoğraf alma",
+      "pdf görsel çıkarma"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF'inizi açın",
+        "description": "Sayfalarında resim aranır."
+      },
+      {
+        "title": "Resimleri seçin",
+        "description": "Tam boyutta inceleyin ve istemediklerinizin işaretini kaldırın."
+      },
+      {
+        "title": "İndirin",
+        "description": "PNG veya JPG dosyalarını tek bir ZIP'te kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Orijinal çözünürlük",
+        "description": "Resimler ekran görüntüsü olarak değil, PDF'te saklandıkları boyutta çıkar."
+      },
+      {
+        "title": "Her resim bir kez",
+        "description": "Her sayfada tekrarlanan bir logo, sayfalarıyla birlikte bir kez listelenir."
+      },
+      {
+        "title": "Kalabalığı atlayın",
+        "description": "Simgeler ve çizgiler gibi çok küçük resimler dışarıda bırakılabilir."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bir resim neden eksik?",
+        "answer": "Bazı PDF'ler grafikleri resim yerine çizgi ve şekillerle çizer; bunlar resim olarak çıkarılamaz. Bir sayfanın görünüşünü kaydetmek için PDF'ten JPG'ye aracını kullanın."
+      },
+      {
+        "question": "PNG mi, JPG mi?",
+        "answer": "PNG her pikseli tam olarak korur; JPG fotoğraflar için çok daha küçük dosyalar oluşturur."
+      },
+      {
+        "question": "Orijinal dosyaları geri alır mıyım?",
+        "answer": "PDF'te saklanan resim verisini, kendi çözünürlüğünde çözülmüş olarak alırsınız. Orijinal dosya formatı ve adı PDF'te saklanmaz."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "delete-blank-pages-pdf": {
+    "name": "PDF'ten Boş Sayfaları Silme",
+    "shortName": "Boş Sayfaları Sil",
+    "tagline": "Taranmış bir PDF'teki boş sayfaları bulun ve hızlı bir kontrolden sonra kaldırın. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "Çift taraflı tarama, PDF'lerinizde boş arka yüzler bırakır. Boş Sayfaları Silme aracı her sayfaya bakar, boş olanları işaretler ve hiçbir şey kaldırılmadan önce kontrol etmenizi sağlar: herhangi bir sayfayı tam boyutta görün, saklamak istediğiniz bir sayfanın işaretini kaldırın veya bir sayfayı kendiniz işaretleyin. Taranmış boş sayfalar nadiren tamamen beyazdır; bu yüzden bir hassasiyet kaydırıcısı, kâğıt dokusunun, arkadan hafifçe görünen yazının veya tek başına bir sayfa numarasının yine de boş sayılıp sayılmayacağına karar verir. Ardından PDF'i bu sayfalar olmadan indirin. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF'ten Boş Sayfaları Silme – Ücretsiz, Otomatik",
+    "seoDescription": "Taranmış PDF'lerdeki boş sayfaları tarayıcınızda bulun ve kaldırın. Otomatik algılama, ayarlanabilir hassasiyet, silmeden önce kontrol. Ücretsiz.",
+    "keywords": [
+      "pdf boş sayfa silme",
+      "pdf'ten boş sayfaları kaldırma",
+      "pdf boş sayfa temizleme",
+      "pdf beyaz sayfa silme",
+      "taranmış pdf boş sayfa"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF'inizi açın",
+        "description": "Her sayfanın içeriği kontrol edilir."
+      },
+      {
+        "title": "İşaretli sayfaları kontrol edin",
+        "description": "Boş sayfalar işaretlenir; hassasiyeti ayarlayın veya sayfaları işaretleyip işareti kaldırın."
+      },
+      {
+        "title": "İndirin",
+        "description": "PDF'i işaretli sayfalar olmadan kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Otomatik algılama",
+        "description": "Boş sayfalar sizin için bulunur ve işaretlenir."
+      },
+      {
+        "title": "Ayarlanabilir hassasiyet",
+        "description": "Neredeyse boş sayfaların boş sayılıp sayılmayacağına siz karar verin."
+      },
+      {
+        "title": "Silmeden önce kontrol",
+        "description": "Kaldırılmadan önce herhangi bir sayfayı tam boyutta açın."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Az yazı olan sayfalar da silinir mi?",
+        "answer": "Varsayılan ayarda tek satır metin içeren sayfalar bile korunur. Yalnızca sayfa numarası veya hafif lekeler olan sayfaları da kaldırmak için hassasiyeti artırın."
+      },
+      {
+        "question": "Boş bir sayfa neden işaretlenmedi?",
+        "answer": "Tarayıcı parazitleri, koyu bir kenar veya arka yüzden görünen yazı içerik gibi görünebilir. Hassasiyeti artırın veya sayfayı kendiniz işaretleyin."
+      },
+      {
+        "question": "PDF'in geri kalanı değişir mi?",
+        "answer": "Hayır. Diğer sayfalar olduğu gibi kopyalanır."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "compare-pdf": {
+    "name": "PDF Karşılaştırma",
+    "shortName": "PDF Karşılaştır",
+    "tagline": "Bir PDF'in iki sürümü arasında neyin değiştiğini görün: metni kelime kelime, her sayfayı piksel piksel. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "PDF Karşılaştırma, bir belgenin iki sürümü arasındaki farkları gösterir; örneğin düzenlemelerden önceki ve sonraki bir sözleşme ya da bir raporun iki taslağı. Metin görünümü silinen ve eklenen her kelimeyi listeler; isterseniz yalnızca değişen bölümleri gösterir ve değişikliklerin sayısını verir. Görsel görünüm sayfaları yan yana koyar ve her farkı macenta renkle vurgular; böylece resimlerdeki, düzendeki ve imzalardaki değişiklikleri de yakalarsınız. Değişiklikleri metin raporu olarak indirin. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF Karşılaştırma Online – Farkları Bulun, Ücretsiz",
+    "seoDescription": "İki PDF'i tarayıcınızda karşılaştırın: değişen kelimeler vurgulanır, sayfalar piksel piksel karşılaştırılır. Ücretsiz, gizli, hiçbir şey yüklenmez.",
+    "keywords": [
+      "pdf karşılaştırma",
+      "iki pdf dosyasını karşılaştırma",
+      "pdf fark bulma",
+      "pdf'ler arasındaki farkları bulma",
+      "online pdf karşılaştırma"
+    ],
+    "howToSteps": [
+      {
+        "title": "İki PDF'i de ekleyin",
+        "description": "Önce orijinali, sonra değiştirilmiş sürümü."
+      },
+      {
+        "title": "Değişiklikleri görün",
+        "description": "Metin değişikliklerini okuyun veya sayfa sayfa görsel karşılaştırmaya geçin."
+      },
+      {
+        "title": "Rapor kaydedin",
+        "description": "Metin değişikliklerini .txt raporu olarak indirin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Kelime kelime",
+        "description": "Silinen kelimeler kırmızı, eklenen kelimeler yeşil; toplamıyla birlikte."
+      },
+      {
+        "title": "Piksel piksel",
+        "description": "Bir sayfadaki her görsel fark macenta renkle vurgulanır."
+      },
+      {
+        "title": "Yalnızca değişiklikler",
+        "description": "Farklı olana odaklanmak için değişmeyen metni gizleyin."
+      },
+      {
+        "title": "Gizli kalır",
+        "description": "İki belge de cihazınızda kalır."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "PDF'lerin sayfa sayısı aynı olmalı mı?",
+        "answer": "Hayır. Metin bir bütün olarak karşılaştırılır, bu yüzden eklenen veya silinen sayfalar eklenen veya silinen metin olarak görünür. Görsel görünüm aynı numaralı sayfaları karşılaştırır."
+      },
+      {
+        "question": "Görsel görünüm neden metin görünümünde olmayan değişiklikleri gösteriyor?",
+        "answer": "Resimler, düzen, renkler ve imzalar metin değildir; bunları görsel görünüm yakalar."
+      },
+      {
+        "question": "Taranmış PDF'leri karşılaştırabilir mi?",
+        "answer": "Görsel görünüm karşılaştırabilir. Metin görünümü için önce ikisini de PDF OCR'dan geçirin."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
+  "overlay-pdf": {
+    "name": "PDF Bindirme",
+    "shortName": "PDF Bindir",
+    "tagline": "Bir PDF'teki antetli kâğıdı, arka planı veya damgayı başka bir PDF'in sayfalarının üstüne ya da altına yerleştirin. Ücretsiz ve cihazınızda çalışır.",
+    "intro": "PDF Bindirme, iki PDF'i sayfa sayfa üst üste birleştirir: şirketinizin antetli kâğıdını bir mektubun arkasına, bir arka plan tasarımını bir raporun altına ya da 'Taslak' veya 'Onaylandı' sayfasını her sayfanın üstüne koyun. Bindirmenin üstte mi altta mı olacağını, hangi bindirme sayfasının nereye gideceğini (ilk sayfa her sayfaya veya sayfa sayfa), hangi sayfaların kaplanacağını ve ne kadar belirgin olacağını seçin. Önizleme her sayfayı kaydedileceği gibi gösterir. Her şey tarayıcınızın içinde gerçekleşir.",
+    "seoTitle": "PDF Bindirme – Antetli Kâğıt veya Arka Plan, Ücretsiz",
+    "seoDescription": "Bir PDF antetli kâğıdını, arka planını veya damgasını başka bir PDF'in sayfalarının üstüne ya da altına tarayıcınızda yerleştirin. Canlı önizleme. Ücretsiz, hiçbir şey yüklenmez.",
+    "keywords": [
+      "pdf bindirme",
+      "pdf'e antetli kâğıt ekleme",
+      "pdf arka plan ekleme",
+      "pdf'i başka pdf'in üstüne koyma",
+      "pdf antetli kağıt"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF'inizi açın",
+        "description": "Bindirmenin ekleneceği belge."
+      },
+      {
+        "title": "Bindirme PDF'ini seçin",
+        "description": "Antetli kâğıt, arka plan veya damga sayfası; üstte ya da altta, sayfaları ve opaklığı ayarlayın."
+      },
+      {
+        "title": "PDF'i indirin",
+        "description": "Önizlemeyi kontrol edin ve kaydedin."
+      }
+    ],
+    "features": [
+      {
+        "title": "Üstte veya altta",
+        "description": "Metnin üstünde bir damga ya da arkasında bir antetli kâğıt."
+      },
+      {
+        "title": "Sayfa eşleştirme",
+        "description": "İlk bindirme sayfasını her yerde kullanın veya sayfaları tek tek eşleştirin."
+      },
+      {
+        "title": "Net kalır",
+        "description": "Bindirme, resmi olarak değil vektör içerik olarak yerleştirilir."
+      },
+      {
+        "title": "Gizli",
+        "description": "PDF tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Alttaki bindirmeyi neden göremiyorum?",
+        "answer": "Bazı PDF'ler her sayfaya beyaz bir arka plan boyar ve bu, altındaki her şeyi gizler. Bunun yerine bindirmeyi daha düşük opaklıkla üste koyun."
+      },
+      {
+        "question": "Sayfalar farklı boyutlardaysa ne olur?",
+        "answer": "Bindirme, oranları korunarak her sayfaya sığacak şekilde ölçeklenir ve ortalanır."
+      },
+      {
+        "question": "Bindirme olarak bir resim kullanabilir miyim?",
+        "answer": "Önce resmi JPG'den PDF'e aracıyla PDF'e dönüştürün veya resmi doğrudan yerleştirmek için PDF'e Filigran Ekleme aracını kullanın."
+      },
+      {
+        "question": "PDF'im yükleniyor mu?",
+        "answer": "Hayır. Her şey tarayıcınızda gerçekleşir, bu yüzden belge cihazınızda kalır."
+      }
+    ]
+  },
 };

@@ -9,6 +9,12 @@ import assets from '../ai/modelAssets.json';
 export const OCR_LANGS = ['eng', 'spa', 'fra', 'deu', 'por', 'ita', 'jpn', 'kor', 'ind', 'tur'] as const;
 export type OcrLang = (typeof OCR_LANGS)[number];
 
+/** Each language in its own name, for the language lists */
+export const OCR_LANG_NAMES: Record<OcrLang, string> = {
+  eng: 'English', spa: 'Español', fra: 'Français', deu: 'Deutsch', por: 'Português',
+  ita: 'Italiano', jpn: '日本語', kor: '한국어', ind: 'Bahasa Indonesia', tur: 'Türkçe',
+};
+
 /** The OCR language that matches a site locale */
 export const OCR_LANG_FOR_LOCALE: Record<string, OcrLang> = {
   en: 'eng', es: 'spa', fr: 'fra', de: 'deu', pt: 'por', it: 'ita', ja: 'jpn', ko: 'kor', id: 'ind', tr: 'tur',

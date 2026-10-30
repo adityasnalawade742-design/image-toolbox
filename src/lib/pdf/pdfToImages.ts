@@ -17,6 +17,9 @@ async function pdfjs() {
   return lib;
 }
 
+/** pdf.js itself, for tools that read more than pictures of pages (text, images) */
+export const getPdfjs = pdfjs;
+
 export class PdfPasswordError extends Error {}
 export class PdfInvalidError extends Error {}
 

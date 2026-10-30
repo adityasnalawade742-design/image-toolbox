@@ -28,6 +28,8 @@ const INPUT = {
   'gif-to-png': [S('photo.gif')], 'gif-to-jpg': [S('photo.gif')], 'bmp-to-jpg': [S('photo.bmp')], 'bmp-to-png': [S('photo.bmp')], 'tiff-to-jpg': [S('scan.tif')], 'tiff-to-png': [S('photo.tif')], 'tiff-to-pdf': [S('scan.tif'), S('photo.tif')],
   'svg-to-jpg': [S('shape.svg')], 'svg-to-webp': [S('shape.svg')], 'pdf-to-png': [S('doc.pdf')], 'png-to-pdf': [S('photo.png'), S('photo2.png')], 'pdf-to-jpg': [S('doc.pdf')],
   'jpg-to-pdf': [S('photo.jpg'), S('photo2.png')], 'merge-images': [S('photo.jpg'), S('photo2.png')],
+  'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
+  'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
   'rotate-pdf': [S('doc.pdf')], 'add-page-numbers-pdf': [S('doc.pdf')], 'watermark-pdf': [S('doc.pdf')], 'sign-pdf': [S('doc.pdf')],
   'fill-pdf-form': [S('form.pdf')], 'remove-pdf-metadata': [S('form.pdf')], 'crop-pdf': [S('doc.pdf')],

@@ -7941,4 +7941,525 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  // PDF utilities
+"pdf-to-text": {
+    "name": "PDF in Text",
+    "shortName": "PDF in Text",
+    "tagline": "Hol den Text aus einem PDF als reine .txt-Datei, Seite für Seite, bereit zum Kopieren oder Bearbeiten. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "PDF in Text holt den Text aus einem PDF, damit du ihn kopieren, durchsuchen, bearbeiten oder woanders einfügen kannst, ohne Seite für Seite zu kopieren. Zeilen und Absätze bleiben erhalten, und jede Seite kann markiert werden, damit du weißt, woher der Text stammt. Wähle alle oder nur einige Seiten, kopiere dann den Text oder lade ihn als .txt-Datei herunter. Das funktioniert bei PDFs mit echtem Text, etwa Dokumenten, die aus Word oder von einer Website gespeichert wurden; für gescannte Seiten nimm PDF-OCR. Alles passiert in deinem Browser.",
+    "seoTitle": "PDF in Text umwandeln – kopieren oder als TXT, kostenlos",
+    "seoDescription": "Text aus einem PDF im Browser extrahieren und als .txt-Datei speichern oder kopieren. Seiten wählen, Absätze behalten. Kostenlos, ohne Upload.",
+    "keywords": [
+      "pdf in text",
+      "pdf in txt",
+      "text aus pdf extrahieren",
+      "text aus pdf kopieren",
+      "pdf text auslesen"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF öffnen",
+        "description": "Zieh ein PDF hierher oder wähle es aus; sein Text wird sofort gelesen."
+      },
+      {
+        "title": "Seiten wählen",
+        "description": "Alle Seiten oder ein Bereich wie 1-3, 5. Markiere auf Wunsch, wo jede Seite beginnt."
+      },
+      {
+        "title": "Kopieren oder herunterladen",
+        "description": "Kopiere den Text oder speichere ihn als .txt-Datei."
+      }
+    ],
+    "features": [
+      {
+        "title": "Absätze bleiben erhalten",
+        "description": "Zeilenumbrüche und Absatzabstände folgen der Seite."
+      },
+      {
+        "title": "Seite für Seite",
+        "description": "Markiere, wo jede Seite beginnt, oder wähle nur einige Seiten."
+      },
+      {
+        "title": "Jede Sprache",
+        "description": "Text in jeder Schrift, die das PDF enthält, kommt unverändert heraus."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Warum wird kein Text gefunden?",
+        "answer": "Das PDF ist wahrscheinlich ein Scan: Bilder von Seiten ohne Text darin. PDF-OCR liest den Text aus den Bildern."
+      },
+      {
+        "question": "Bleibt das Layout erhalten?",
+        "answer": "Die Wörter und ihre Reihenfolge ja, die Gestaltung nicht. PDFs speichern Text nach seiner Position, daher werden nebeneinanderliegende Spalten eventuell quer gelesen, und Tabellen kommen als Textzeilen heraus."
+      },
+      {
+        "question": "Kann ich stattdessen Markdown bekommen?",
+        "answer": "Ja. Stell das Format auf Markdown um, oder nimm PDF in Markdown, das auch Überschriften und Listen erkennt."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "pdf-to-markdown": {
+    "name": "PDF in Markdown",
+    "shortName": "PDF in Markdown",
+    "tagline": "Mach aus einem PDF Markdown mit Überschriften und Listen, für Notizen, Wikis und KI-Tools. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "PDF in Markdown wandelt den Text eines PDFs in Markdown um: Größerer Text wird zu Überschriften, Zeilen mit Aufzählungszeichen und Nummern werden zu Listen, umbrochene Zeilen werden wieder zu Absätzen zusammengefügt, und per Bindestrich getrennte Wörter werden wieder vereint. Das Ergebnis passt für Notiz-Apps wie Obsidian und Notion, für Wikis und Dokumentationen oder zum Einfügen in einen KI-Assistenten. Wähle die Seiten, kopiere das Markdown oder lade es als .md-Datei herunter. Alles passiert in deinem Browser.",
+    "seoTitle": "PDF in Markdown – Überschriften und Listen, kostenlos",
+    "seoDescription": "PDF im Browser in Markdown umwandeln: Überschriften aus größerem Text, Listen, zusammengefügte Absätze. Für Notizen, Wikis und KI-Tools. Kostenlos, ohne Upload.",
+    "keywords": [
+      "pdf in markdown",
+      "pdf in markdown umwandeln",
+      "pdf in md",
+      "pdf markdown konverter",
+      "pdf in obsidian"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF öffnen",
+        "description": "Zieh ein PDF mit Text hierher oder wähle es aus."
+      },
+      {
+        "title": "Markdown prüfen",
+        "description": "Überschriften und Listen werden erkannt; wähle die Seiten, die du brauchst."
+      },
+      {
+        "title": "Kopieren oder herunterladen",
+        "description": "Kopiere das Markdown oder speichere es als .md-Datei."
+      }
+    ],
+    "features": [
+      {
+        "title": "Überschriften erkannt",
+        "description": "Text, der größer als der Fließtext ist, wird zu #-Überschriften der passenden Ebene."
+      },
+      {
+        "title": "Listen und Absätze",
+        "description": "Aufzählungen werden zu Listen, umbrochene Zeilen zu ganzen Absätzen."
+      },
+      {
+        "title": "Gut für KI-Tools",
+        "description": "Sauberes Markdown ist für Assistenten und Notiz-Apps leicht zu lesen."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Werden Tabellen umgewandelt?",
+        "answer": "Nein. Tabellenzellen kommen als Textzeilen heraus; bring sie von Hand in Form, wenn du eine Markdown-Tabelle brauchst."
+      },
+      {
+        "question": "Warum wird kein Text gefunden?",
+        "answer": "Das PDF ist wahrscheinlich ein Scan: Bilder von Seiten ohne Text darin. PDF-OCR liest den Text aus den Bildern."
+      },
+      {
+        "question": "Bleibt das Layout erhalten?",
+        "answer": "Die Wörter und ihre Reihenfolge ja, die Gestaltung nicht. PDFs speichern Text nach seiner Position, daher werden nebeneinanderliegende Spalten eventuell quer gelesen, und Tabellen kommen als Textzeilen heraus."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "text-to-pdf": {
+    "name": "Text in PDF",
+    "shortName": "Text in PDF",
+    "tagline": "Mach aus reinem Text oder einer .txt-Datei ein sauberes PDF mit deiner Schrift, Größe und deinen Rändern. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "Text in PDF macht aus Notizen, Logs, Listen oder beliebigem reinem Text ein ordentliches PDF, das auf jedem Gerät gleich aussieht. Tippe oder füge den Text ein oder öffne eine .txt-Datei, und wähle dann A4 oder Letter, eine serifenlose, eine Serifen- oder eine Schreibmaschinenschrift, die Textgröße und die Ränder. Lange Zeilen werden sauber umbrochen, Zeilenumbrüche bleiben erhalten, und die Seiten können nummeriert werden. Die Vorschau zeigt das PDF genau so, wie es gespeichert wird, und der Text darin bleibt durchsuchbar. Alles passiert in deinem Browser.",
+    "seoTitle": "Text in PDF umwandeln – TXT in PDF, kostenlos",
+    "seoDescription": "Text oder eine .txt-Datei im Browser in PDF umwandeln. Schrift, Größe, Ränder und Seitenzahlen wählen; Live-Vorschau. Kostenlos, ohne Upload.",
+    "keywords": [
+      "text in pdf",
+      "txt in pdf",
+      "text in pdf umwandeln",
+      "editor text in pdf",
+      "textdatei in pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Text hinzufügen",
+        "description": "Tippe, füge ein oder öffne eine .txt-Datei."
+      },
+      {
+        "title": "Aussehen wählen",
+        "description": "Seitengröße, Schrift, Textgröße, Ränder und Seitenzahlen."
+      },
+      {
+        "title": "PDF herunterladen",
+        "description": "Prüf die Vorschau und speichere es."
+      }
+    ],
+    "features": [
+      {
+        "title": "Live-Vorschau",
+        "description": "Sieh jede Seite so, wie sie gespeichert wird, bevor du herunterlädst."
+      },
+      {
+        "title": "Durchsuchbarer Text",
+        "description": "Das PDF enthält echten Text, kein Bild davon."
+      },
+      {
+        "title": "Viele Sprachen",
+        "description": "Lateinischer, griechischer, kyrillischer, japanischer und koreanischer Text wird mit Schriften geschrieben, die ihn enthalten."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bleiben Tabs und Leerzeichen erhalten?",
+        "answer": "Zeilenumbrüche und Leerzeichen am Zeilenanfang bleiben erhalten; Tabs werden zu vier Leerzeichen."
+      },
+      {
+        "question": "Kann ich den Text formatieren?",
+        "answer": "Für Überschriften, fetten Text und Listen nimm Markdown in PDF."
+      },
+      {
+        "question": "Gibt es eine Größenbeschränkung?",
+        "answer": "Keine feste Grenze; sehr lange Texte brauchen einfach ein paar Sekunden länger."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "markdown-to-pdf": {
+    "name": "Markdown in PDF",
+    "shortName": "Markdown in PDF",
+    "tagline": "Mach aus Markdown ein formatiertes PDF mit Überschriften, Listen, Code und funktionierenden Links. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "Markdown in PDF macht aus README-Dateien, Notizen und Dokumentationen in Markdown ein gut formatiertes PDF zum Teilen oder Drucken. Überschriften, fetter und kursiver Text, Inline-Code, Listen, Zitate, Codeblöcke, Trennlinien und Links werden gesetzt, und Links bleiben im PDF anklickbar. Füge dein Markdown ein oder öffne eine .md-Datei, wähle Seitengröße, Schrift und Ränder und prüf die Live-Vorschau, bevor du herunterlädst. Alles passiert in deinem Browser.",
+    "seoTitle": "Markdown in PDF umwandeln – mit Live-Vorschau, kostenlos",
+    "seoDescription": "Markdown im Browser in PDF umwandeln: Überschriften, Listen, Codeblöcke und anklickbare Links, mit Live-Vorschau. Kostenlos, ohne Upload.",
+    "keywords": [
+      "markdown in pdf",
+      "md in pdf",
+      "markdown in pdf umwandeln",
+      "readme in pdf",
+      "markdown pdf konverter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Markdown hinzufügen",
+        "description": "Füge es ein oder öffne eine .md-Datei."
+      },
+      {
+        "title": "Aussehen wählen",
+        "description": "Seitengröße, Schrift, Textgröße, Ränder und Seitenzahlen."
+      },
+      {
+        "title": "PDF herunterladen",
+        "description": "Prüf die Vorschau und speichere es."
+      }
+    ],
+    "features": [
+      {
+        "title": "Formatierung bleibt erhalten",
+        "description": "Überschriften, fett, kursiv, Code, Listen, Zitate und Trennlinien."
+      },
+      {
+        "title": "Anklickbare Links",
+        "description": "Links in deinem Markdown funktionieren im PDF."
+      },
+      {
+        "title": "Live-Vorschau",
+        "description": "Sieh die Seiten, bevor du herunterlädst."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Werden Tabellen und Bilder unterstützt?",
+        "answer": "Noch nicht. Tabellen und Bilder im Markdown erscheinen als ihr Text; Überschriften, Listen, Code und Links werden gesetzt."
+      },
+      {
+        "question": "Welchem Markdown folgt es?",
+        "answer": "Der üblichen Syntax, die GitHub und die meisten Editoren verwenden: # Überschriften, **fett**, *kursiv*, `Code`, Listen, > Zitate, ``` Codeblöcke und [Links](…)."
+      },
+      {
+        "question": "Ist der Text durchsuchbar?",
+        "answer": "Ja. Das PDF enthält echten Text, er lässt sich also auswählen, durchsuchen und kopieren."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "extract-images-from-pdf": {
+    "name": "Bilder aus PDF extrahieren",
+    "shortName": "Bilder extrahieren",
+    "tagline": "Speichere jedes Bild in einem PDF in seiner eigenen Auflösung, als PNG oder JPG, in einer ZIP-Datei. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "Bilder aus PDF extrahieren findet die Fotos, Logos und Illustrationen, die in einem PDF eingebettet sind, und speichert sie in der Auflösung, in der sie hinterlegt sind, statt als Screenshot der Seite. Jedes Bild wird mit seiner Größe und den Seiten angezeigt, auf denen es vorkommt; ein Bild, das auf vielen Seiten verwendet wird, etwa ein Logo, erscheint nur einmal. Sieh sie dir in voller Größe an, entferne den Haken bei denen, die du nicht brauchst, und lade sie als verlustfreie PNG- oder kleinere JPG-Dateien gemeinsam in einer ZIP-Datei herunter. Alles passiert in deinem Browser.",
+    "seoTitle": "Bilder aus PDF extrahieren – Originalauflösung, kostenlos",
+    "seoDescription": "Die Bilder in einem PDF im Browser in ihrer eigenen Auflösung speichern. Ansehen, auswählen und als PNG oder JPG in einer ZIP-Datei herunterladen. Kostenlos, ohne Upload.",
+    "keywords": [
+      "bilder aus pdf extrahieren",
+      "pdf bilder extrahieren",
+      "bilder aus pdf speichern",
+      "fotos aus pdf herausholen",
+      "pdf bilder exportieren"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF öffnen",
+        "description": "Seine Seiten werden nach Bildern durchsucht."
+      },
+      {
+        "title": "Bilder auswählen",
+        "description": "Sieh sie dir in voller Größe an und entferne den Haken bei denen, die du nicht willst."
+      },
+      {
+        "title": "Herunterladen",
+        "description": "Speichere PNG- oder JPG-Dateien, gemeinsam in einer ZIP-Datei."
+      }
+    ],
+    "features": [
+      {
+        "title": "Originalauflösung",
+        "description": "Bilder kommen in der Größe heraus, in der sie im PDF gespeichert sind, nicht als Screenshot."
+      },
+      {
+        "title": "Jedes Bild einmal",
+        "description": "Ein Logo, das sich auf jeder Seite wiederholt, erscheint einmal, mit seinen Seiten."
+      },
+      {
+        "title": "Kleinkram überspringen",
+        "description": "Winzige Bilder wie Symbole und Linien können weggelassen werden."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Warum fehlt ein Bild?",
+        "answer": "Manche PDFs zeichnen Grafiken mit Linien und Formen statt mit Bildern, und die lassen sich nicht als Bilder extrahieren. Um zu speichern, wie eine Seite aussieht, nimm PDF in JPG."
+      },
+      {
+        "question": "PNG oder JPG?",
+        "answer": "PNG behält jedes Pixel exakt; JPG ergibt bei Fotos viel kleinere Dateien."
+      },
+      {
+        "question": "Bekomme ich die Originaldateien zurück?",
+        "answer": "Du bekommst die im PDF gespeicherten Bilddaten, dekodiert in ihrer Auflösung. Das ursprüngliche Dateiformat und der Dateiname werden in einem PDF nicht aufbewahrt."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "delete-blank-pages-pdf": {
+    "name": "Leere Seiten aus PDF löschen",
+    "shortName": "Leere Seiten löschen",
+    "tagline": "Finde die leeren Seiten in einem gescannten PDF und entferne sie nach einer kurzen Prüfung. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "Beim beidseitigen Scannen landen leere Rückseiten in deinen PDFs. Leere Seiten löschen sieht sich jede Seite an, hakt die leeren an und lässt dich prüfen, bevor etwas entfernt wird: Sieh dir jede Seite in voller Größe an, entferne den Haken bei einer Seite, die du behalten willst, oder hake selbst eine an. Gescannte leere Seiten sind selten rein weiß, deshalb legt ein Regler für die Empfindlichkeit fest, wie viel Papierstruktur, leichtes Durchscheinen oder eine einsame Seitenzahl noch als leer gilt. Lade dann das PDF ohne diese Seiten herunter. Alles passiert in deinem Browser.",
+    "seoTitle": "Leere Seiten aus PDF löschen – automatisch, kostenlos",
+    "seoDescription": "Leere Seiten in gescannten PDFs im Browser finden und entfernen. Automatische Erkennung, einstellbare Empfindlichkeit, Prüfung vor dem Löschen. Kostenlos.",
+    "keywords": [
+      "leere seiten aus pdf entfernen",
+      "leere seiten pdf löschen",
+      "pdf leere seiten entfernen",
+      "leerseiten pdf entfernen",
+      "weiße seiten pdf löschen"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF öffnen",
+        "description": "Jede Seite wird auf Inhalt geprüft."
+      },
+      {
+        "title": "Angehakte Seiten prüfen",
+        "description": "Leere Seiten sind angehakt; pass die Empfindlichkeit an oder setz und entferne Haken selbst."
+      },
+      {
+        "title": "Herunterladen",
+        "description": "Speichere das PDF ohne die angehakten Seiten."
+      }
+    ],
+    "features": [
+      {
+        "title": "Automatische Erkennung",
+        "description": "Leere Seiten werden für dich gefunden und angehakt."
+      },
+      {
+        "title": "Einstellbare Empfindlichkeit",
+        "description": "Leg fest, ob fast leere Seiten als leer gelten."
+      },
+      {
+        "title": "Prüfen vor dem Löschen",
+        "description": "Öffne jede Seite in voller Größe, bevor sie entfernt wird."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Werden Seiten mit ein wenig Text gelöscht?",
+        "answer": "Bei der Standardeinstellung bleiben Seiten mit einer Textzeile erhalten. Erhöhe die Empfindlichkeit, um auch Seiten mit nur einer Seitenzahl oder schwachen Spuren zu entfernen."
+      },
+      {
+        "question": "Warum ist eine leere Seite nicht angehakt?",
+        "answer": "Scanner-Rauschen, ein dunkler Rand oder Durchscheinen von der Rückseite kann wie Inhalt aussehen. Erhöhe die Empfindlichkeit oder hake sie selbst an."
+      },
+      {
+        "question": "Wird der Rest des PDFs verändert?",
+        "answer": "Nein. Die anderen Seiten werden unverändert übernommen."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "compare-pdf": {
+    "name": "PDFs vergleichen",
+    "shortName": "PDFs vergleichen",
+    "tagline": "Sieh, was sich zwischen zwei Versionen eines PDFs geändert hat: Text Wort für Wort und jede Seite Pixel für Pixel. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "PDFs vergleichen zeigt die Unterschiede zwischen zwei Versionen eines Dokuments, etwa eines Vertrags vor und nach Änderungen oder zweier Entwürfe eines Berichts. Die Textansicht listet jedes entfernte und hinzugefügte Wort auf, auf Wunsch nur die geänderten Passagen, samt Anzahl der Änderungen. Die visuelle Ansicht stellt die Seiten nebeneinander und hebt jeden Unterschied in Magenta hervor, sodass du auch Änderungen an Bildern, Layout und Unterschriften bemerkst. Lade die Änderungen als Textbericht herunter. Alles passiert in deinem Browser.",
+    "seoTitle": "PDFs online vergleichen – Unterschiede finden, kostenlos",
+    "seoDescription": "Zwei PDFs im Browser vergleichen: geänderte Wörter hervorgehoben und Seiten Pixel für Pixel verglichen. Kostenlos, privat, nichts wird hochgeladen.",
+    "keywords": [
+      "pdf vergleichen",
+      "zwei pdf dateien vergleichen",
+      "pdf diff",
+      "unterschiede zwischen pdfs finden",
+      "pdf vergleichen online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Beide PDFs hinzufügen",
+        "description": "Zuerst das Original, dann die geänderte Version."
+      },
+      {
+        "title": "Änderungen ansehen",
+        "description": "Lies die Textänderungen oder wechsle zum visuellen Vergleich Seite für Seite."
+      },
+      {
+        "title": "Bericht speichern",
+        "description": "Lade die Textänderungen als .txt-Bericht herunter."
+      }
+    ],
+    "features": [
+      {
+        "title": "Wort für Wort",
+        "description": "Entfernte Wörter in Rot, hinzugefügte in Grün, mit einer Gesamtzahl."
+      },
+      {
+        "title": "Pixel für Pixel",
+        "description": "Jeder visuelle Unterschied auf einer Seite in Magenta hervorgehoben."
+      },
+      {
+        "title": "Nur die Änderungen",
+        "description": "Blende unveränderten Text aus, um dich auf das Neue zu konzentrieren."
+      },
+      {
+        "title": "Vertraulich",
+        "description": "Beide Dokumente bleiben auf deinem Gerät."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Müssen die PDFs gleich viele Seiten haben?",
+        "answer": "Nein. Der Text wird als Ganzes verglichen, hinzugefügte oder entfernte Seiten erscheinen also als hinzugefügter oder entfernter Text. Die visuelle Ansicht vergleicht Seiten mit derselben Nummer."
+      },
+      {
+        "question": "Warum zeigt die visuelle Ansicht Änderungen, die die Textansicht nicht zeigt?",
+        "answer": "Bilder, Layout, Farben und Unterschriften sind kein Text; die visuelle Ansicht erfasst sie."
+      },
+      {
+        "question": "Kann es gescannte PDFs vergleichen?",
+        "answer": "Die visuelle Ansicht kann das. Für die Textansicht lass beide vorher durch PDF-OCR laufen."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
+  "overlay-pdf": {
+    "name": "PDF überlagern",
+    "shortName": "PDF überlagern",
+    "tagline": "Leg einen Briefkopf, Hintergrund oder Stempel aus einem PDF über oder unter die Seiten eines anderen. Kostenlos, und es läuft auf deinem Gerät.",
+    "intro": "PDF überlagern legt zwei PDFs Seite auf Seite übereinander: Setz den Briefkopf deiner Firma hinter einen Brief, ein Hintergrunddesign unter einen Bericht oder einen Bogen mit „Entwurf“ oder „Genehmigt“ auf jede Seite. Wähle, ob das Overlay darüber oder darunter liegt, welche Overlay-Seite wohin kommt (die erste Seite auf jede Seite oder Seite für Seite), welche Seiten es abdecken soll und wie stark es sein soll. Die Vorschau zeigt jede Seite so, wie sie gespeichert wird. Alles passiert in deinem Browser.",
+    "seoTitle": "PDF überlagern – Briefkopf oder Hintergrund, kostenlos",
+    "seoDescription": "Einen PDF-Briefkopf, -Hintergrund oder -Stempel im Browser über oder unter die Seiten eines anderen PDFs legen. Live-Vorschau. Kostenlos, ohne Upload.",
+    "keywords": [
+      "pdf überlagern",
+      "briefkopf in pdf einfügen",
+      "pdf hintergrund einfügen",
+      "pdf über anderes pdf legen",
+      "pdf briefpapier"
+    ],
+    "howToSteps": [
+      {
+        "title": "PDF öffnen",
+        "description": "Das Dokument, das das Overlay bekommt."
+      },
+      {
+        "title": "Overlay-PDF wählen",
+        "description": "Ein Briefkopf, Hintergrund oder Stempelbogen; leg darüber oder darunter, Seiten und Deckkraft fest."
+      },
+      {
+        "title": "PDF herunterladen",
+        "description": "Prüf die Vorschau und speichere es."
+      }
+    ],
+    "features": [
+      {
+        "title": "Darüber oder darunter",
+        "description": "Ein Stempel über dem Text oder ein Briefkopf dahinter."
+      },
+      {
+        "title": "Seitenzuordnung",
+        "description": "Nutze die erste Overlay-Seite überall oder ordne die Seiten einzeln zu."
+      },
+      {
+        "title": "Bleibt scharf",
+        "description": "Das Overlay wird als Vektorinhalt eingefügt, nicht als Bild davon."
+      },
+      {
+        "title": "Privat",
+        "description": "Das PDF wird in deinem Browser verarbeitet und nie hochgeladen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Warum sehe ich das Overlay darunter nicht?",
+        "answer": "Manche PDFs malen auf jede Seite einen weißen Hintergrund, der alles darunter verdeckt. Leg das Overlay stattdessen mit geringerer Deckkraft darüber."
+      },
+      {
+        "question": "Was, wenn die Seiten unterschiedlich groß sind?",
+        "answer": "Das Overlay wird unter Beibehaltung seiner Proportionen auf jede Seite skaliert und zentriert."
+      },
+      {
+        "question": "Kann ich ein Bild als Overlay verwenden?",
+        "answer": "Wandle das Bild zuerst mit JPG in PDF in ein PDF um, oder nimm Wasserzeichen in PDF einfügen, um ein Bild direkt zu platzieren."
+      },
+      {
+        "question": "Wird mein PDF hochgeladen?",
+        "answer": "Nein. Alles passiert in deinem Browser, das Dokument bleibt also auf deinem Gerät."
+      }
+    ]
+  },
 };
