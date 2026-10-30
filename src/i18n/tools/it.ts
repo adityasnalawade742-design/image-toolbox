@@ -8434,7 +8434,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       { "title": "Scarica", "description": "Salvala in JPG, PNG o WebP esattamente a quella dimensione." }
     ],
     "features": [
-      { "title": "14 dimensioni pronte", "description": "Post, storie, miniature, banner e copertine per i principali social." },
+      { "title": "16 dimensioni pronte", "description": "Post, storie, miniature, banner e copertine per i principali social." },
       { "title": "Riempi o mostra tutto", "description": "Ritaglia per riempire il riquadro o mantieni l’immagine intera su uno sfondo sfocato o colorato." },
       { "title": "Privato", "description": "Tutto avviene nel tuo browser. L’immagine non viene mai caricata." }
     ],
@@ -8445,26 +8445,26 @@ export const itTools: Record<string, LocalizedToolItem> = {
       { "question": "La mia immagine viene caricata?", "answer": "No. Viene elaborata sul tuo dispositivo e resta lì." }
     ]
   },
-  "instagram-post-resizer": {
+"instagram-post-resizer": {
     "name": "Ridimensiona post Instagram",
     "shortName": "Post Instagram",
-    "tagline": "Adatta un’immagine alla dimensione dei post Instagram quadrati, verticali o orizzontali. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Ridimensiona post Instagram dà all’immagine la forma giusta prima di pubblicarla, così Instagram non la ritaglia al posto tuo. Scegli quadrato (1080 × 1080), verticale (1080 × 1350) od orizzontale (1080 × 566), poi trascina l’immagine finché la parte che ti interessa non è nel riquadro. Per pubblicare una foto larga senza ritagliarla, mostrala tutta su uno sfondo sfocato.",
-    "seoTitle": "Ridimensionare post Instagram – Quadrato, verticale",
-    "seoDescription": "Ridimensiona foto per i post Instagram: quadrato 1080×1080, verticale 1080×1350 od orizzontale. Trascina ed evita ritagli a sorpresa. Gratis, senza upload.",
-    "keywords": ["dimensioni post instagram", "ridimensionare immagine per instagram", "ridimensionare foto instagram", "instagram 1080x1350", "foto intera su instagram"],
+    "tagline": "Adatta un’immagine alla dimensione dei post Instagram quadrati, verticali, alti od orizzontali. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Ridimensiona post Instagram dà all’immagine la forma giusta prima di pubblicarla, così Instagram non la ritaglia al posto tuo. Scegli quadrato (1080 × 1080), verticale (1080 × 1350), alto (1080 × 1440) od orizzontale (1080 × 566), poi trascina l’immagine finché la parte che ti interessa non è nel riquadro. Per pubblicare una foto larga senza ritagliarla, mostrala tutta su uno sfondo sfocato.",
+    "seoTitle": "Ridimensionare post Instagram – Quadrato, verticale, 3:4",
+    "seoDescription": "Ridimensiona foto per i post Instagram: quadrato 1080×1080, verticale 1080×1350, alto 3:4 od orizzontale. Trascina ed evita sorprese. Gratis, senza upload.",
+    "keywords": ["dimensioni post instagram", "ridimensionare immagine per instagram", "ridimensionare foto instagram", "instagram 1080x1350", "dimensioni instagram 3:4"],
     "howToSteps": [
       { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli la foto che vuoi pubblicare." },
-      { "title": "Scegli la forma", "description": "Scegli quadrato, verticale od orizzontale, poi trascina la foto al suo posto." },
+      { "title": "Scegli la forma", "description": "Scegli quadrato, verticale, alto od orizzontale, poi trascina la foto al suo posto." },
       { "title": "Scarica e pubblica", "description": "Salvala e caricala su Instagram come al solito." }
     ],
     "features": [
-      { "title": "Le tre forme dei post", "description": "Quadrato, verticale 4:5 e orizzontale, con 1080 pixel di larghezza." },
+      { "title": "Tutte le forme dei post", "description": "Quadrato, verticale 4:5, alto 3:4 e orizzontale, con 1080 pixel di larghezza." },
       { "title": "Nessun ritaglio forzato", "description": "Mostra la foto intera su uno sfondo sfocato o colorato se non vuoi perderne nessuna parte." },
       { "title": "Privato", "description": "La foto viene elaborata sul tuo dispositivo e non viene mai caricata." }
     ],
     "faqs": [
-      { "question": "Che dimensioni deve avere un post Instagram?", "answer": "1080 pixel di larghezza. Il verticale 1080 × 1350 occupa più spazio nel feed, il quadrato è 1080 × 1080 e l’orizzontale è 1080 × 566." },
+      { "question": "Che dimensioni deve avere un post Instagram?", "answer": "1080 pixel di larghezza. Instagram non ritaglia le foto comprese tra una forma larga 1,91:1 (1080 × 566) e una alta 3:4 (1080 × 1440). Il quadrato è 1080 × 1080, e 1080 × 1350 è una dimensione verticale molto usata." },
       { "question": "Come pubblico una foto intera senza ritagliarla?", "answer": "Scegli «Mostra tutto». La foto intera sta nel riquadro, su una sua copia sfocata o su un colore a tua scelta." },
       { "question": "In quale formato devo salvare?", "answer": "JPG è adatto alle foto. PNG è adatto alle grafiche con testo, anche se il file pesa di più." }
     ]
@@ -8489,32 +8489,33 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       { "question": "Che dimensioni ha una Story di Instagram?", "answer": "1080 × 1920 pixel, in forma 9:16. Reels e TikTok usano la stessa forma." },
-      { "question": "Che cos’è l’area sicura?", "answer": "La parte centrale del riquadro. Circa 250 pixel in alto e in basso possono essere coperti dal nome del profilo, dai pulsanti e dalla didascalia, quindi evita di mettere testo lì." },
+      { "question": "Che cos’è l’area sicura?", "answer": "La parte centrale del riquadro. Circa 250 pixel in alto e circa 340 in basso possono essere coperti dal nome del profilo, dai pulsanti e dalla didascalia, quindi evita di mettere testo lì." },
       { "question": "Il riquadro tratteggiato comparirà nella mia immagine?", "answer": "No. Compare solo nell’anteprima e non viene mai salvato." }
     ]
   },
   "youtube-thumbnail-maker": {
     "name": "Crea miniature YouTube",
     "shortName": "Miniatura YouTube",
-    "tagline": "Trasforma un’immagine in una miniatura YouTube da 1280 × 720 sotto il limite di 2 MB. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Crea miniature YouTube porta un’immagine ai 1280 × 720 consigliati da YouTube e mantiene il file sotto il limite di caricamento di 2 MB, riducendo la qualità solo quanto serve. Trascina l’immagine per inquadrarla, ingrandisci ciò che conta e scaricala. Per aggiungere prima del testo, usa Aggiungi testo all’immagine.",
-    "seoTitle": "Creare miniatura YouTube – 1280×720, sotto 2 MB, gratis",
-    "seoDescription": "Crea una miniatura YouTube da 1280×720 da qualsiasi immagine, sotto il limite di 2 MB. Trascina, ingrandisci e scarica. Gratis, senza registrazione né upload.",
+    "tagline": "Trasforma un’immagine in una miniatura YouTube 16:9 che rispetta i limiti di caricamento di YouTube. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea miniature YouTube inquadra un’immagine nella forma 16:9 richiesta da YouTube. Scegli 1280 × 720, che resta sotto il limite di 2 MB per il caricamento da telefono, oppure 3840 × 2160, la dimensione grande consigliata da YouTube, per il caricamento da computer. Trascina l’immagine per inquadrarla, ingrandisci ciò che conta e scaricala. Per aggiungere testo, usa Aggiungi testo all’immagine.",
+    "seoTitle": "Creare miniatura YouTube – 16:9, fino a 4K, gratis",
+    "seoDescription": "Crea una miniatura YouTube 16:9 da qualsiasi immagine: 1280×720 sotto i 2 MB per telefono, oppure 4K. Trascina, ingrandisci e scarica. Gratis, senza upload.",
     "keywords": ["creare miniatura youtube", "dimensioni miniatura youtube", "miniatura 1280x720", "ridimensionare immagine per miniatura youtube", "miniatura youtube 2mb"],
     "howToSteps": [
       { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli uno screenshot o una foto." },
-      { "title": "Inquadrala", "description": "Trascina e ingrandisci finché il soggetto non riempie il riquadro." },
-      { "title": "Scarica", "description": "Salva il file da 1280 × 720 e caricalo in YouTube Studio." }
+      { "title": "Scegli una dimensione e inquadrala", "description": "Scegli 1280 × 720 o 4K, poi trascina e ingrandisci finché il soggetto non riempie il riquadro." },
+      { "title": "Scarica", "description": "Salva il file e caricalo in YouTube Studio." }
     ],
     "features": [
-      { "title": "La dimensione giusta", "description": "1280 × 720 pixel, la forma 16:9 consigliata da YouTube." },
-      { "title": "Sotto il limite di caricamento", "description": "I file JPG e WebP restano automaticamente sotto i 2 MB." },
+      { "title": "Due dimensioni", "description": "1280 × 720 per un file piccolo, oppure 3840 × 2160, la dimensione consigliata da YouTube." },
+      { "title": "Entro i limiti di caricamento", "description": "I file JPG e WebP restano sotto i 2 MB a 1280 × 720 e sotto i 50 MB in 4K." },
       { "title": "Privato", "description": "L’immagine viene elaborata sul tuo dispositivo e non viene mai caricata." }
     ],
     "faqs": [
-      { "question": "Che dimensioni ha una miniatura YouTube?", "answer": "YouTube consiglia 1280 × 720 pixel, in forma 16:9, con un file sotto i 2 MB." },
-      { "question": "Posso aggiungere testo alla miniatura?", "answer": "Non con questo strumento. Usa Aggiungi testo all’immagine sulla miniatura scaricata, poi carica il risultato." },
-      { "question": "Perché la qualità è stata ridotta?", "answer": "Se il file supera i 2 MB, la qualità viene ridotta solo quanto basta per rientrare nel limite. La maggior parte delle miniature resta ben sotto il limite anche ad alta qualità." }
+      { "question": "Che dimensioni ha una miniatura YouTube?", "answer": "YouTube chiede un’immagine 16:9 il più grande possibile: consiglia 3840 × 2160 pixel, con una larghezza minima di 640 pixel." },
+      { "question": "Qual è il limite di dimensione del file?", "answer": "2 MB se carichi da telefono e 50 MB da computer." },
+      { "question": "Quale dimensione devo scegliere?", "answer": "1280 × 720 funziona ovunque e basta per la maggior parte delle immagini. Scegli 4K se la tua immagine è almeno così grande; ingrandire un’immagine più piccola non aggiunge dettagli." },
+      { "question": "Posso aggiungere testo alla miniatura?", "answer": "Non con questo strumento. Usa Aggiungi testo all’immagine sulla miniatura scaricata, poi carica il risultato." }
     ]
   },
   "youtube-banner-maker": {
@@ -8544,10 +8545,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "facebook-cover-maker": {
     "name": "Crea copertine Facebook",
     "shortName": "Copertina Facebook",
-    "tagline": "Dai a un’immagine la forma giusta per una copertina o un post di Facebook. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Crea copertine Facebook adatta un’immagine alla forma larga 851 × 315 della copertina di Facebook. I telefoni tagliano i lati della copertina, quindi una guida tratteggiata mostra la parte che vedono tutti. C’è anche la dimensione 1200 × 630 per i post con link e immagini. Trascina l’immagine finché non è al posto giusto, poi scaricala.",
+    "tagline": "Dai a un’immagine la dimensione giusta per una copertina o un post di Facebook. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea copertine Facebook adatta un’immagine alla dimensione 851 × 315 consigliata da Facebook per le copertine. Facebook mostra le copertine con forme diverse su computer e telefoni, quindi tieni volti e testi vicino al centro. C’è anche la dimensione comune 1200 × 630 per i post con link e immagini. Trascina l’immagine finché non è al posto giusto, poi scaricala.",
     "seoTitle": "Creare copertina Facebook – 851×315, gratis",
-    "seoDescription": "Ridimensiona un’immagine per una copertina (851×315) o un post (1200×630) di Facebook, con una guida a ciò che tagliano i telefoni. Gratis, senza upload.",
+    "seoDescription": "Ridimensiona un’immagine per una copertina (851×315) o un post (1200×630) di Facebook. Trascina per posizionarla, poi scaricala. Gratis, senza upload.",
     "keywords": ["dimensioni copertina facebook", "creare copertina facebook", "ridimensionare immagine per copertina facebook", "851x315", "dimensioni immagine post facebook"],
     "howToSteps": [
       { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un’immagine larga." },
@@ -8555,14 +8556,14 @@ export const itTools: Record<string, LocalizedToolItem> = {
       { "title": "Scarica", "description": "Salvala e caricala sul tuo profilo o sulla tua pagina." }
     ],
     "features": [
-      { "title": "Guida per i telefoni", "description": "Un riquadro tratteggiato mostra la parte della copertina che i telefoni mantengono." },
+      { "title": "La dimensione consigliata da Facebook", "description": "851 × 315 pixel per le copertine." },
       { "title": "Dimensioni per copertina e post", "description": "851 × 315 per le copertine e 1200 × 630 per i post." },
       { "title": "Privato", "description": "L’immagine non viene mai caricata." }
     ],
     "faqs": [
-      { "question": "Che dimensioni ha una foto di copertina di Facebook?", "answer": "Facebook mostra le copertine delle pagine a 820 × 312 pixel sui computer; 851 × 315 è la dimensione comune da caricare. I telefoni mostrano un ritaglio più stretto della parte centrale." },
-      { "question": "Perché la mia copertina appare diversa sul telefono?", "answer": "I telefoni tagliano i lati sinistro e destro. Tieni volti e testi dentro la guida tratteggiata." },
-      { "question": "Qual è il formato migliore?", "answer": "JPG per le foto. PNG mantiene loghi e testi più nitidi." }
+      { "question": "Che dimensioni ha una foto di copertina di Facebook?", "answer": "Secondo Facebook, 851 × 315 pixel è la dimensione che si carica più velocemente, come JPG sRGB sotto i 100 KB. Il minimo è 400 × 150 pixel." },
+      { "question": "Perché la mia copertina appare diversa sul telefono?", "answer": "Facebook mostra le copertine con una forma diversa sui telefoni (2,4:1), e l’immagine del profilo si sovrappone leggermente alla copertina. Tieni volti e testi vicino al centro, e controlla entrambe le visualizzazioni dopo il caricamento." },
+      { "question": "Come scendo sotto i 100 KB?", "answer": "Salva in JPG e abbassa la qualità finché la dimensione indicata non scende sotto i 100 KB. Sotto i 100 KB è il consiglio di Facebook per un caricamento rapido, non un limite." }
     ]
   },
   "linkedin-banner-maker": {

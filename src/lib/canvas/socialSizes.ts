@@ -1,12 +1,14 @@
 /**
  * Image sizes the big social networks ask for, and how a photo is placed in them: filling the frame (cropped) or
- * shown whole on a background. Networks change their numbers now and then; these are their published sizes.
+ * shown whole on a background. Networks change their numbers now and then. Checked against their help pages in
+ * October 2026 where they state one (YouTube, Instagram, LinkedIn, Facebook, Pinterest); the X and post-link sizes
+ * are common practice.
  */
 import { stepDown } from './engine';
 
 export type SocialPresetId =
-  | 'ig-square' | 'ig-portrait' | 'ig-landscape' | 'story'
-  | 'yt-thumb' | 'yt-banner'
+  | 'ig-square' | 'ig-portrait' | 'ig-tall' | 'ig-landscape' | 'story'
+  | 'yt-thumb' | 'yt-thumb-4k' | 'yt-banner'
   | 'fb-cover' | 'fb-post'
   | 'li-banner' | 'li-post'
   | 'pin' | 'og'
@@ -27,16 +29,20 @@ const MB = 1024 * 1024;
 export const SOCIAL_PRESETS: Record<SocialPresetId, SocialPreset> = {
   'ig-square': { id: 'ig-square', width: 1080, height: 1080 },
   'ig-portrait': { id: 'ig-portrait', width: 1080, height: 1350 },
+  // Instagram keeps a 1080-wide photo uncropped from 1.91:1 (566 high) to 3:4 (1440 high)
+  'ig-tall': { id: 'ig-tall', width: 1080, height: 1440 },
   'ig-landscape': { id: 'ig-landscape', width: 1080, height: 566 },
-  // Top and bottom are covered by the app's own buttons and caption
-  story: { id: 'story', width: 1080, height: 1920, safe: { x: 0, y: 250, w: 1080, h: 1420 } },
+  // The app's own buttons and caption cover the top and bottom; Reels need more room at the bottom than Stories
+  story: { id: 'story', width: 1080, height: 1920, safe: { x: 0, y: 250, w: 1080, h: 1330 } },
+  // YouTube asks for as large as possible (3840 × 2160); uploads from a phone are limited to 2 MB, from a computer 50 MB
   'yt-thumb': { id: 'yt-thumb', width: 1280, height: 720, maxBytes: 2 * MB },
-  // Phones only show the middle strip; TVs show all of it
+  'yt-thumb-4k': { id: 'yt-thumb-4k', width: 3840, height: 2160, maxBytes: 50 * MB },
+  // Phones and computers only show the middle strip; TVs show all of it
   'yt-banner': { id: 'yt-banner', width: 2560, height: 1440, safe: { x: 507, y: 508, w: 1546, h: 423 }, maxBytes: 6 * MB },
-  // Phones crop the sides
-  'fb-cover': { id: 'fb-cover', width: 851, height: 315, safe: { x: 106, y: 0, w: 640, h: 315 } },
+  // Facebook crops covers differently per device (2.4:1 on phones) without saying exactly where, so no guide is drawn
+  'fb-cover': { id: 'fb-cover', width: 851, height: 315 },
   'fb-post': { id: 'fb-post', width: 1200, height: 630 },
-  'li-banner': { id: 'li-banner', width: 1584, height: 396 },
+  'li-banner': { id: 'li-banner', width: 1584, height: 396, maxBytes: 8 * MB },
   'li-post': { id: 'li-post', width: 1200, height: 627 },
   pin: { id: 'pin', width: 1000, height: 1500 },
   og: { id: 'og', width: 1200, height: 630 },

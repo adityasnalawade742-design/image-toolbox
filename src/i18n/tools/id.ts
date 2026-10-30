@@ -8452,7 +8452,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       { "title": "Unduh", "description": "Simpan sebagai JPG, PNG, atau WebP tepat pada ukuran itu." }
     ],
     "features": [
-      { "title": "14 ukuran siap pakai", "description": "Post, story, thumbnail, banner, dan sampul untuk jaringan utama." },
+      { "title": "16 ukuran siap pakai", "description": "Post, story, thumbnail, banner, dan sampul untuk jaringan utama." },
       { "title": "Isi atau tampilkan semua", "description": "Potong untuk mengisi bingkai, atau pertahankan seluruh gambar di atas latar buram atau berwarna." },
       { "title": "Privat", "description": "Semuanya berlangsung di browser Anda. Gambar tidak pernah diunggah." }
     ],
@@ -8463,26 +8463,26 @@ export const idTools: Record<string, LocalizedToolItem> = {
       { "question": "Apakah gambar saya diunggah?", "answer": "Tidak. Gambar diproses di perangkat Anda dan tetap di sana." }
     ]
   },
-  "instagram-post-resizer": {
+"instagram-post-resizer": {
     "name": "Ubah Ukuran Post Instagram",
     "shortName": "Post Instagram",
-    "tagline": "Sesuaikan gambar dengan ukuran post Instagram persegi, potret, atau lanskap. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Ubah Ukuran Post Instagram membuat gambar berbentuk tepat sebelum Anda mempostingnya, jadi Instagram tidak memotongnya untuk Anda. Pilih persegi (1080 × 1080), potret (1080 × 1350), atau lanskap (1080 × 566), lalu seret gambar sampai bagian yang penting masuk bingkai. Untuk memposting foto lebar tanpa dipotong, tampilkan semuanya di atas latar buram.",
-    "seoTitle": "Ubah Ukuran Post Instagram – Persegi, Potret, Gratis",
-    "seoDescription": "Ubah ukuran foto untuk post Instagram: persegi 1080×1080, potret 1080×1350, atau lanskap. Seret dan hindari potongan tak terduga. Gratis, tanpa unggah.",
-    "keywords": ["ukuran post instagram", "ubah ukuran gambar untuk instagram", "resize foto instagram", "instagram 1080x1350", "foto utuh di instagram"],
+    "tagline": "Sesuaikan gambar dengan ukuran post Instagram persegi, potret, tinggi, atau lanskap. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ubah Ukuran Post Instagram membuat gambar berbentuk tepat sebelum Anda mempostingnya, jadi Instagram tidak memotongnya untuk Anda. Pilih persegi (1080 × 1080), potret (1080 × 1350), tinggi (1080 × 1440), atau lanskap (1080 × 566), lalu seret gambar sampai bagian yang penting masuk bingkai. Untuk memposting foto lebar tanpa dipotong, tampilkan semuanya di atas latar buram.",
+    "seoTitle": "Ubah Ukuran Post Instagram – Persegi, Potret, 3:4, Gratis",
+    "seoDescription": "Ubah ukuran foto untuk post Instagram: persegi 1080×1080, potret 1080×1350, tinggi 3:4, atau lanskap. Seret dan hindari potongan tak terduga. Gratis, tanpa unggah.",
+    "keywords": ["ukuran post instagram", "ubah ukuran gambar untuk instagram", "resize foto instagram", "instagram 1080x1350", "ukuran instagram 3:4"],
     "howToSteps": [
       { "title": "Tambahkan gambar", "description": "Letakkan atau pilih foto yang ingin Anda posting." },
-      { "title": "Pilih bentuknya", "description": "Pilih persegi, potret, atau lanskap, lalu seret foto ke posisinya." },
+      { "title": "Pilih bentuknya", "description": "Pilih persegi, potret, tinggi, atau lanskap, lalu seret foto ke posisinya." },
       { "title": "Unduh dan posting", "description": "Simpan lalu unggah ke Instagram seperti biasa." }
     ],
     "features": [
-      { "title": "Tiga bentuk post", "description": "Persegi, potret 4:5, dan lanskap, dengan lebar 1080 piksel." },
+      { "title": "Semua bentuk post", "description": "Persegi, potret 4:5, tinggi 3:4, dan lanskap, dengan lebar 1080 piksel." },
       { "title": "Tanpa potongan paksa", "description": "Tampilkan seluruh foto di atas latar buram atau berwarna jika Anda tidak ingin kehilangan bagian mana pun." },
       { "title": "Privat", "description": "Foto diproses di perangkat Anda dan tidak pernah diunggah." }
     ],
     "faqs": [
-      { "question": "Berapa ukuran post Instagram yang tepat?", "answer": "Lebar 1080 piksel. Potret 1080 × 1350 memakan ruang terbanyak di feed, persegi 1080 × 1080, dan lanskap 1080 × 566." },
+      { "question": "Berapa ukuran post Instagram yang tepat?", "answer": "Lebar 1080 piksel. Instagram tidak memotong foto selama bentuknya di antara lebar 1,91:1 (1080 × 566) dan tinggi 3:4 (1080 × 1440). Persegi 1080 × 1080, dan 1080 × 1350 adalah ukuran potret yang populer." },
       { "question": "Bagaimana cara memposting foto utuh tanpa dipotong?", "answer": "Pilih “Tampilkan semua”. Seluruh foto berada di dalam bingkai, di atas salinan buram foto itu atau warna pilihan Anda." },
       { "question": "Format apa yang sebaiknya dipilih?", "answer": "JPG cocok untuk foto. PNG cocok untuk grafis dengan teks, meskipun ukuran filenya lebih besar." }
     ]
@@ -8507,32 +8507,33 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       { "question": "Berapa ukuran Story Instagram?", "answer": "1080 × 1920 piksel, berbentuk 9:16. Reels dan TikTok memakai bentuk yang sama." },
-      { "question": "Apa itu area aman?", "answer": "Bagian tengah bingkai. Sekitar 250 piksel di atas dan bawah bisa tertutup nama profil, tombol, dan keterangan, jadi hindari menaruh teks di sana." },
+      { "question": "Apa itu area aman?", "answer": "Bagian tengah bingkai. Sekitar 250 piksel di atas dan sekitar 340 di bawah bisa tertutup nama profil, tombol, dan keterangan, jadi hindari menaruh teks di sana." },
       { "question": "Apakah kotak putus-putus akan muncul di gambar saya?", "answer": "Tidak. Kotak itu hanya muncul di pratinjau dan tidak pernah disimpan." }
     ]
   },
   "youtube-thumbnail-maker": {
     "name": "Pembuat Thumbnail YouTube",
     "shortName": "Thumbnail YouTube",
-    "tagline": "Ubah gambar menjadi thumbnail YouTube 1280 × 720 di bawah batas 2 MB. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Thumbnail YouTube menyesuaikan gambar ke ukuran 1280 × 720 yang disarankan YouTube dan menjaga file di bawah batas unggah 2 MB, dengan menurunkan kualitas hanya seperlunya. Seret gambar untuk membingkainya, perbesar bagian yang penting, lalu unduh. Untuk menambahkan teks lebih dulu, gunakan Tambah Teks ke Gambar.",
-    "seoTitle": "Buat Thumbnail YouTube – 1280×720, di Bawah 2 MB, Gratis",
-    "seoDescription": "Buat thumbnail YouTube 1280×720 dari gambar apa pun, di bawah batas 2 MB. Seret untuk membingkai, zoom, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
+    "tagline": "Ubah gambar menjadi thumbnail YouTube 16:9 yang tetap dalam batas unggah YouTube. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Thumbnail YouTube membingkai gambar dalam bentuk 16:9 yang diminta YouTube. Pilih 1280 × 720, yang tetap di bawah batas 2 MB untuk mengunggah dari ponsel, atau 3840 × 2160, ukuran besar yang disarankan YouTube, untuk mengunggah dari komputer. Seret gambar untuk membingkainya, perbesar bagian yang penting, lalu unduh. Untuk menambahkan teks, gunakan Tambah Teks ke Gambar.",
+    "seoTitle": "Buat Thumbnail YouTube – 16:9, Hingga 4K, Gratis",
+    "seoDescription": "Buat thumbnail YouTube 16:9 dari gambar apa pun: 1280×720 di bawah 2 MB untuk ponsel, atau 4K. Seret, zoom, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
     "keywords": ["buat thumbnail youtube", "ukuran thumbnail youtube", "thumbnail 1280x720", "ubah ukuran gambar untuk thumbnail youtube", "thumbnail youtube 2mb"],
     "howToSteps": [
       { "title": "Tambahkan gambar", "description": "Letakkan atau pilih screenshot atau foto." },
-      { "title": "Bingkai gambarnya", "description": "Seret dan zoom sampai subjek mengisi bingkai." },
-      { "title": "Unduh", "description": "Simpan file 1280 × 720 dan unggah di YouTube Studio." }
+      { "title": "Pilih ukuran dan bingkai gambarnya", "description": "Pilih 1280 × 720 atau 4K, lalu seret dan zoom sampai subjek mengisi bingkai." },
+      { "title": "Unduh", "description": "Simpan file dan unggah di YouTube Studio." }
     ],
     "features": [
-      { "title": "Ukuran yang tepat", "description": "1280 × 720 piksel, bentuk 16:9 yang disarankan YouTube." },
-      { "title": "Di bawah batas unggah", "description": "File JPG dan WebP otomatis dijaga di bawah 2 MB." },
+      { "title": "Dua ukuran", "description": "1280 × 720 untuk file kecil, atau 3840 × 2160, ukuran yang disarankan YouTube." },
+      { "title": "Dalam batas unggah", "description": "File JPG dan WebP tetap di bawah 2 MB pada 1280 × 720 dan di bawah 50 MB pada 4K." },
       { "title": "Privat", "description": "Gambar diproses di perangkat Anda dan tidak pernah diunggah." }
     ],
     "faqs": [
-      { "question": "Berapa ukuran thumbnail YouTube?", "answer": "YouTube menyarankan 1280 × 720 piksel, berbentuk 16:9, dengan ukuran file di bawah 2 MB." },
-      { "question": "Bisakah saya menambahkan teks ke thumbnail?", "answer": "Tidak di alat ini. Gunakan Tambah Teks ke Gambar pada thumbnail yang sudah diunduh, lalu unggah hasilnya." },
-      { "question": "Mengapa kualitasnya diturunkan?", "answer": "Jika file akan melebihi 2 MB, kualitas diturunkan seperlunya agar muat. Sebagian besar thumbnail jauh di bawah batas itu pada kualitas tinggi." }
+      { "question": "Berapa ukuran thumbnail YouTube?", "answer": "YouTube meminta gambar 16:9 sebesar mungkin: YouTube menyarankan 3840 × 2160 piksel, dengan lebar minimum 640 piksel." },
+      { "question": "Berapa batas ukuran file?", "answer": "2 MB saat mengunggah dari ponsel dan 50 MB dari komputer." },
+      { "question": "Ukuran mana yang sebaiknya dipilih?", "answer": "1280 × 720 berfungsi di mana saja dan cukup untuk sebagian besar gambar. Pilih 4K jika gambar Anda setidaknya sebesar itu; memperbesar gambar yang lebih kecil tidak menambah detail." },
+      { "question": "Bisakah saya menambahkan teks ke thumbnail?", "answer": "Tidak di alat ini. Gunakan Tambah Teks ke Gambar pada thumbnail yang sudah diunduh, lalu unggah hasilnya." }
     ]
   },
   "youtube-banner-maker": {
@@ -8562,10 +8563,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "facebook-cover-maker": {
     "name": "Pembuat Sampul Facebook",
     "shortName": "Sampul Facebook",
-    "tagline": "Buat gambar berbentuk tepat untuk sampul atau post Facebook. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Sampul Facebook menyesuaikan gambar ke bentuk lebar 851 × 315 untuk sampul Facebook. Ponsel memotong sisi sampul, jadi panduan putus-putus menunjukkan bagian yang dilihat semua orang. Tersedia juga ukuran 1200 × 630 untuk post link dan gambar. Seret gambar sampai posisinya pas, lalu unduh.",
+    "tagline": "Buat gambar berukuran tepat untuk sampul atau post Facebook. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Sampul Facebook menyesuaikan gambar ke ukuran 851 × 315 yang disarankan Facebook untuk sampul. Facebook menampilkan sampul dalam bentuk berbeda di komputer dan ponsel, jadi letakkan wajah dan teks di dekat bagian tengah. Tersedia juga ukuran umum 1200 × 630 untuk post link dan gambar. Seret gambar sampai posisinya pas, lalu unduh.",
     "seoTitle": "Buat Sampul Facebook – 851×315, Gratis",
-    "seoDescription": "Ubah ukuran gambar untuk sampul (851×315) atau post (1200×630) Facebook, dengan panduan bagian yang dipotong ponsel. Gratis, tanpa daftar, tanpa unggah.",
+    "seoDescription": "Ubah ukuran gambar untuk sampul (851×315) atau post (1200×630) Facebook. Seret untuk mengatur posisi, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
     "keywords": ["ukuran foto sampul facebook", "buat sampul facebook", "ubah ukuran gambar untuk sampul facebook", "851x315", "ukuran gambar post facebook"],
     "howToSteps": [
       { "title": "Tambahkan gambar", "description": "Letakkan atau pilih gambar lebar." },
@@ -8573,14 +8574,14 @@ export const idTools: Record<string, LocalizedToolItem> = {
       { "title": "Unduh", "description": "Simpan lalu unggah ke profil atau halaman Anda." }
     ],
     "features": [
-      { "title": "Panduan ponsel", "description": "Kotak putus-putus menunjukkan bagian sampul yang dipertahankan ponsel." },
+      { "title": "Ukuran yang disarankan Facebook", "description": "851 × 315 piksel untuk sampul." },
       { "title": "Ukuran sampul dan post", "description": "851 × 315 untuk sampul dan 1200 × 630 untuk post." },
       { "title": "Privat", "description": "Gambar tidak pernah diunggah." }
     ],
     "faqs": [
-      { "question": "Berapa ukuran foto sampul Facebook?", "answer": "Facebook menampilkan sampul halaman pada 820 × 312 piksel di komputer; 851 × 315 adalah ukuran yang umum diunggah. Ponsel menampilkan potongan bagian tengah yang lebih sempit." },
-      { "question": "Mengapa sampul saya terlihat berbeda di ponsel?", "answer": "Ponsel memotong sisi kiri dan kanan. Letakkan wajah dan teks di dalam panduan putus-putus." },
-      { "question": "Format mana yang terbaik?", "answer": "JPG untuk foto. PNG membuat logo dan teks lebih tajam." }
+      { "question": "Berapa ukuran foto sampul Facebook?", "answer": "Menurut Facebook, 851 × 315 piksel paling cepat dimuat, sebagai JPG sRGB di bawah 100 KB. Ukuran minimumnya 400 × 150 piksel." },
+      { "question": "Mengapa sampul saya terlihat berbeda di ponsel?", "answer": "Facebook menampilkan sampul dalam bentuk berbeda di ponsel (2,4:1), dan foto profil Anda sedikit menimpa sampul. Letakkan wajah dan teks di dekat bagian tengah, dan periksa tampilan keduanya setelah mengunggah." },
+      { "question": "Bagaimana agar di bawah 100 KB?", "answer": "Simpan sebagai JPG dan turunkan kualitas sampai ukuran yang ditampilkan di bawah 100 KB. Di bawah 100 KB adalah saran Facebook agar cepat dimuat, bukan batas." }
     ]
   },
   "linkedin-banner-maker": {

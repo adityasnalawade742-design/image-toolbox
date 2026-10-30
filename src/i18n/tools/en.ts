@@ -8092,7 +8092,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       { "title": "Download", "description": "Save it as JPG, PNG or WebP at exactly that size." }
     ],
     "features": [
-      { "title": "14 ready-made sizes", "description": "Posts, stories, thumbnails, banners and covers for the major networks." },
+      { "title": "16 ready-made sizes", "description": "Posts, stories, thumbnails, banners and covers for the major networks." },
       { "title": "Fill or show it all", "description": "Crop to fill the frame, or keep the whole picture on a blurred or colored background." },
       { "title": "Private", "description": "Everything happens in your browser. Your picture is never uploaded." }
     ],
@@ -8106,23 +8106,23 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "instagram-post-resizer": {
     "name": "Instagram Post Resizer",
     "shortName": "Instagram Post",
-    "tagline": "Fit a picture to Instagram's square, portrait or landscape post size. Free, and it runs on your device.",
-    "intro": "Instagram Post Resizer makes a picture the right shape before you post it, so Instagram doesn't crop it for you. Choose square (1080 × 1080), portrait (1080 × 1350) or landscape (1080 × 566), then drag the picture until the part you care about is in frame. To post a wide photo without cropping, show all of it on a blurred background.",
-    "seoTitle": "Instagram Post Resizer – Square, Portrait, Free",
-    "seoDescription": "Resize photos for Instagram posts: square 1080×1080, portrait 1080×1350 or landscape. Drag to position, no cropping surprises. Free, no upload.",
-    "keywords": ["instagram post size", "resize image for instagram", "instagram photo resizer", "instagram 1080x1350", "fit whole photo on instagram"],
+    "tagline": "Fit a picture to Instagram's square, portrait, tall or landscape post size. Free, and it runs on your device.",
+    "intro": "Instagram Post Resizer makes a picture the right shape before you post it, so Instagram doesn't crop it for you. Choose square (1080 × 1080), portrait (1080 × 1350), tall (1080 × 1440) or landscape (1080 × 566), then drag the picture until the part you care about is in frame. To post a wide photo without cropping, show all of it on a blurred background.",
+    "seoTitle": "Instagram Post Resizer – Square, Portrait, 3:4, Free",
+    "seoDescription": "Resize photos for Instagram posts: square 1080×1080, portrait 1080×1350, tall 3:4 or landscape. Drag to position, no surprises. Free, no upload.",
+    "keywords": ["instagram post size", "resize image for instagram", "instagram photo resizer", "instagram 1080x1350", "instagram 3:4 size"],
     "howToSteps": [
       { "title": "Add your picture", "description": "Drop or choose the photo you want to post." },
-      { "title": "Choose the shape", "description": "Pick square, portrait or landscape, then drag the photo into place." },
+      { "title": "Choose the shape", "description": "Pick square, portrait, tall or landscape, then drag the photo into place." },
       { "title": "Download and post", "description": "Save it and upload it to Instagram as usual." }
     ],
     "features": [
-      { "title": "The three post shapes", "description": "Square, portrait 4:5 and landscape, at 1080 pixels wide." },
+      { "title": "All the post shapes", "description": "Square, portrait 4:5, tall 3:4 and landscape, at 1080 pixels wide." },
       { "title": "No forced cropping", "description": "Show the whole photo on a blurred or colored background if you don't want to lose any of it." },
       { "title": "Private", "description": "Your photo is processed on your device and never uploaded." }
     ],
     "faqs": [
-      { "question": "What size should an Instagram post be?", "answer": "1080 pixels wide. Portrait 1080 × 1350 takes up the most room in the feed, square is 1080 × 1080, and landscape is 1080 × 566." },
+      { "question": "What size should an Instagram post be?", "answer": "1080 pixels wide. Instagram keeps photos uncropped between a wide 1.91:1 (1080 × 566) and a tall 3:4 (1080 × 1440). Square is 1080 × 1080, and 1080 × 1350 is a popular portrait size." },
       { "question": "How do I post a whole photo without cropping?", "answer": "Choose \"Show it all\". The whole photo sits inside the frame on a blurred copy of itself or a color you pick." },
       { "question": "Which format should I save as?", "answer": "JPG suits photos. PNG suits graphics with text, though the file is larger." }
     ]
@@ -8147,32 +8147,33 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       { "question": "What size is an Instagram Story?", "answer": "1080 × 1920 pixels, a 9:16 shape. Reels and TikTok use the same shape." },
-      { "question": "What is the safe area?", "answer": "The middle of the frame. About 250 pixels at the top and bottom can be covered by your profile name, buttons and caption, so avoid putting text there." },
+      { "question": "What is the safe area?", "answer": "The middle of the frame. About 250 pixels at the top and about 340 at the bottom can be covered by your profile name, buttons and caption, so avoid putting text there." },
       { "question": "Will the dashed box show in my picture?", "answer": "No. It only appears in the preview and is never saved." }
     ]
   },
   "youtube-thumbnail-maker": {
     "name": "YouTube Thumbnail Maker",
     "shortName": "YouTube Thumbnail",
-    "tagline": "Turn a picture into a 1280 × 720 YouTube thumbnail under the 2 MB limit. Free, and it runs on your device.",
-    "intro": "YouTube Thumbnail Maker sizes a picture to the 1280 × 720 that YouTube recommends and keeps the file under YouTube's 2 MB upload limit, lowering the quality only as far as needed. Drag the picture to frame it, zoom in on what matters, and download it. To add text first, use Add Text to Image.",
-    "seoTitle": "YouTube Thumbnail Maker – 1280×720, Under 2 MB, Free",
-    "seoDescription": "Make a 1280×720 YouTube thumbnail from any picture, kept under the 2 MB limit. Drag to frame, zoom, download. Free, no sign-up, no upload.",
+    "tagline": "Turn a picture into a 16:9 YouTube thumbnail that stays within YouTube's upload limits. Free, and it runs on your device.",
+    "intro": "YouTube Thumbnail Maker frames a picture in the 16:9 shape YouTube asks for. Choose 1280 × 720, which stays under the 2 MB limit for uploading from a phone, or 3840 × 2160, the large size YouTube recommends, for uploading from a computer. Drag the picture to frame it, zoom in on what matters, and download it. To add text, use Add Text to Image.",
+    "seoTitle": "YouTube Thumbnail Maker – 16:9, Up to 4K, Free",
+    "seoDescription": "Make a 16:9 YouTube thumbnail from any picture: 1280×720 under 2 MB for phones, or 4K. Drag to frame, zoom, download. Free, no sign-up, no upload.",
     "keywords": ["youtube thumbnail maker", "youtube thumbnail size", "1280x720 thumbnail", "resize image for youtube thumbnail", "youtube thumbnail 2mb"],
     "howToSteps": [
       { "title": "Add your picture", "description": "Drop or choose a screenshot or photo." },
-      { "title": "Frame it", "description": "Drag and zoom until the subject fills the frame." },
-      { "title": "Download", "description": "Save the 1280 × 720 file and upload it in YouTube Studio." }
+      { "title": "Choose a size and frame it", "description": "Pick 1280 × 720 or 4K, then drag and zoom until the subject fills the frame." },
+      { "title": "Download", "description": "Save the file and upload it in YouTube Studio." }
     ],
     "features": [
-      { "title": "The right size", "description": "1280 × 720 pixels, the 16:9 shape YouTube recommends." },
-      { "title": "Under the upload limit", "description": "JPG and WebP files are kept under 2 MB automatically." },
+      { "title": "Two sizes", "description": "1280 × 720 for a small file, or 3840 × 2160, the size YouTube recommends." },
+      { "title": "Within the upload limits", "description": "JPG and WebP files stay under 2 MB at 1280 × 720 and under 50 MB at 4K." },
       { "title": "Private", "description": "Your picture is processed on your device and never uploaded." }
     ],
     "faqs": [
-      { "question": "What size is a YouTube thumbnail?", "answer": "YouTube recommends 1280 × 720 pixels, in a 16:9 shape, with a file size under 2 MB." },
-      { "question": "Can I add text to the thumbnail?", "answer": "Not in this tool. Use Add Text to Image on the downloaded thumbnail, then upload the result." },
-      { "question": "Why was the quality lowered?", "answer": "If the file would be over 2 MB, the quality is lowered just enough to fit. Most thumbnails are well under the limit at high quality." }
+      { "question": "What size is a YouTube thumbnail?", "answer": "YouTube asks for a 16:9 picture as large as possible: it recommends 3840 × 2160 pixels, with a minimum width of 640 pixels." },
+      { "question": "What is the file size limit?", "answer": "2 MB when you upload from a phone and 50 MB from a computer." },
+      { "question": "Which size should I choose?", "answer": "1280 × 720 works everywhere and is plenty for most pictures. Choose 4K if your picture is at least that large; enlarging a smaller picture adds no detail." },
+      { "question": "Can I add text to the thumbnail?", "answer": "Not in this tool. Use Add Text to Image on the downloaded thumbnail, then upload the result." }
     ]
   },
   "youtube-banner-maker": {
@@ -8202,10 +8203,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "facebook-cover-maker": {
     "name": "Facebook Cover Maker",
     "shortName": "Facebook Cover",
-    "tagline": "Make a picture the right shape for a Facebook cover or post. Free, and it runs on your device.",
-    "intro": "Facebook Cover Maker fits a picture to Facebook's wide 851 × 315 cover shape. Phones crop the sides of a cover, so a dashed guide shows the part everyone sees. It also has the 1200 × 630 size for link and image posts. Drag the picture until it sits right, then download it.",
+    "tagline": "Make a picture the right size for a Facebook cover or post. Free, and it runs on your device.",
+    "intro": "Facebook Cover Maker fits a picture to the 851 × 315 size Facebook recommends for covers. Facebook shows covers in different shapes on computers and phones, so keep faces and text near the middle. It also has the common 1200 × 630 size for link and image posts. Drag the picture until it sits right, then download it.",
     "seoTitle": "Facebook Cover Maker – 851×315 Photo Size, Free",
-    "seoDescription": "Resize a picture for a Facebook cover (851×315) or post (1200×630), with a guide for what phones crop. Free, no sign-up, no upload.",
+    "seoDescription": "Resize a picture for a Facebook cover (851×315) or post (1200×630). Drag to position, then download. Free, no sign-up, no upload.",
     "keywords": ["facebook cover photo size", "facebook cover maker", "resize image for facebook cover", "851x315", "facebook post image size"],
     "howToSteps": [
       { "title": "Add your picture", "description": "Drop or choose a wide picture." },
@@ -8213,14 +8214,14 @@ export const enTools: Record<string, LocalizedToolItem> = {
       { "title": "Download", "description": "Save it and upload it to your profile or page." }
     ],
     "features": [
-      { "title": "Phone guide", "description": "A dashed box shows the part of the cover phones keep." },
+      { "title": "Facebook's recommended size", "description": "851 × 315 pixels for covers." },
       { "title": "Cover and post sizes", "description": "851 × 315 for covers and 1200 × 630 for posts." },
       { "title": "Private", "description": "Your picture is never uploaded." }
     ],
     "faqs": [
-      { "question": "What size is a Facebook cover photo?", "answer": "Facebook displays page covers at 820 × 312 pixels on computers; 851 × 315 is the common size to upload. Phones show a narrower crop of the middle." },
-      { "question": "Why does my cover look different on my phone?", "answer": "Phones crop the left and right sides. Keep faces and text inside the dashed guide." },
-      { "question": "Which format is best?", "answer": "JPG for photos. PNG keeps logos and text crisper." }
+      { "question": "What size is a Facebook cover photo?", "answer": "Facebook says 851 × 315 pixels loads fastest, as an sRGB JPG under 100 KB. The minimum is 400 × 150 pixels." },
+      { "question": "Why does my cover look different on my phone?", "answer": "Facebook shows covers in a different shape on phones (2.4:1), and your profile picture overlaps the cover slightly. Keep faces and text near the middle, and check it on both after uploading." },
+      { "question": "How do I get under 100 KB?", "answer": "Save as JPG and lower the quality until the size shown is under 100 KB. Under 100 KB is Facebook's advice for quick loading, not a limit." }
     ]
   },
   "linkedin-banner-maker": {
