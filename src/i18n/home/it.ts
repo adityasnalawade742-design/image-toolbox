@@ -5,7 +5,7 @@ export const itHome: LocalizedHomeData = {
     badge: '',
     title: 'Tutti gli strumenti per le immagini, in un unico posto',
     subtitle:
-      'Ritaglia, ridimensiona, comprimi, converti, rimuovi lo sfondo e ritocca le tue foto gratis. Nessuna registrazione, nessuna filigrana, e i file restano sul tuo dispositivo.',
+      'Ritaglia, ridimensiona, comprimi, converti, rimuovi lo sfondo e ritocca le tue foto gratis. Nessuna registrazione, nessuna filigrana, e le immagini restano sul tuo dispositivo.',
     dropzoneTitle: 'Trascina qui un’immagine per iniziare',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG o HEIC di iPhone, fino a 50 MB',
   },
@@ -23,9 +23,9 @@ export const itHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Nessun file viene caricato',
+      title: 'Le immagini non vengono mai caricate',
       description:
-        'Le immagini vengono elaborate dal browser sul tuo dispositivo: nessuna attesa per l’upload e nessuna copia su un server.',
+        'Le immagini vengono elaborate dal browser sul tuo dispositivo: nessuna attesa per l’upload e nessuna copia su un server. Alcuni strumenti per i documenti, come Word in PDF, hanno bisogno del nostro server: sono contrassegnati e i file vengono eliminati subito dopo.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const itHome: LocalizedHomeData = {
     {
       question: 'Le mie immagini vengono caricate da qualche parte?',
       answer:
-        'No. Ogni strumento funziona nel browser, quindi le immagini vengono elaborate sul tuo dispositivo e non vengono mai inviate a un server. Lo strumento per rimuovere lo sfondo scarica il suo modello di IA una sola volta, poi funziona anche lui sul dispositivo.',
+        'No. Ogni strumento per le immagini funziona nel browser, quindi le immagini vengono elaborate sul tuo dispositivo e non vengono mai inviate a un server. Lo strumento per rimuovere lo sfondo scarica il suo modello di IA una sola volta, poi funziona anche lui sul dispositivo. Alcuni strumenti per i documenti (Word, Excel e PowerPoint in PDF, PDF in Word, Comprimi PDF, Proteggi PDF, Sblocca PDF, OCR PDF, PDF in PDF/A e Ripara PDF) hanno bisogno del nostro server: sono contrassegnati con «Usa il nostro server» e il file viene eliminato non appena il risultato viene restituito.',
     },
     {
       question: 'È davvero gratis?',

@@ -132,7 +132,13 @@ npm run deploy
 
 ## 📄 License
 
+Copyright © 2026 Aditya Nalawade.
+
 Licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0). See [`LICENSE`](LICENSE).
+
+**Additional terms (AGPL-3.0 section 7):**
+- **Name and identity (7(e)):** the licence does not grant rights to the name "Image Toolbox", its logo or the site's domain. Copies and modified versions must use their own name and must not present themselves as this site or as connected to it.
+- **Marking changes (7(c)):** modified versions must be clearly marked as changed from the original, and must keep the copyright and licence notices (7(b)).
 
 The background remover's "Best quality" mode uses [@imgly/background-removal](https://github.com/imgly/background-removal-js), which is AGPL-3.0; because of that, the whole site is distributed under AGPL-3.0, and anyone who uses the hosted site can get its source code from this repository (linked in the site footer). If you deploy a modified version, you must offer your modified source to its users in the same way.
 

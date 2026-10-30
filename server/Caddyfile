@@ -1,0 +1,15 @@
+# HTTPS with an automatic Let's Encrypt certificate for DOMAIN (e.g. 140-238-1-2.sslip.io until a real domain exists)
+{$DOMAIN} {
+	request_body {
+		max_size 55MB
+	}
+	reverse_proxy api:8000 {
+		transport http {
+			response_header_timeout 150s
+		}
+	}
+	# No request logs: nothing about who converted what is kept
+	log {
+		output discard
+	}
+}
