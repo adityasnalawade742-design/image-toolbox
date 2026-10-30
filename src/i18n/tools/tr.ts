@@ -8453,7 +8453,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       { "title": "İndirin", "description": "Tam o boyutta JPG, PNG veya WebP olarak kaydedin." }
     ],
     "features": [
-      { "title": "14 hazır boyut", "description": "Büyük ağlar için gönderiler, hikâyeler, küçük resimler, banner’lar ve kapaklar." },
+      { "title": "16 hazır boyut", "description": "Büyük ağlar için gönderiler, hikâyeler, küçük resimler, banner’lar ve kapaklar." },
       { "title": "Doldurun veya tümünü gösterin", "description": "Çerçeveyi doldurmak için kırpın ya da resmin tamamını bulanık veya renkli bir arka planda tutun." },
       { "title": "Gizli", "description": "Her şey tarayıcınızda gerçekleşir. Resminiz asla yüklenmez." }
     ],
@@ -8464,26 +8464,26 @@ export const trTools: Record<string, LocalizedToolItem> = {
       { "question": "Resmim yükleniyor mu?", "answer": "Hayır. Cihazınızda işlenir ve orada kalır." }
     ]
   },
-  "instagram-post-resizer": {
+"instagram-post-resizer": {
     "name": "Instagram Gönderi Boyutlandırma",
     "shortName": "Instagram Gönderi",
-    "tagline": "Bir resmi Instagram’ın kare, dikey veya yatay gönderi boyutuna sığdırın. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "Instagram Gönderi Boyutlandırma, paylaşmadan önce resme doğru şekli verir, böylece Instagram onu sizin yerinize kırpmaz. Kare (1080 × 1080), dikey (1080 × 1350) veya yatay (1080 × 566) seçin, sonra önemsediğiniz kısım çerçeveye girene kadar resmi sürükleyin. Geniş bir fotoğrafı kırpmadan paylaşmak için tamamını bulanık bir arka planda gösterin.",
-    "seoTitle": "Instagram Gönderi Boyutlandırma – Kare, Dikey, Ücretsiz",
-    "seoDescription": "Fotoğrafları Instagram gönderileri için boyutlandırın: kare 1080×1080, dikey 1080×1350 veya yatay. Sürükleyerek konumlandırın. Ücretsiz, yüklemesiz.",
-    "keywords": ["instagram gönderi boyutu", "instagram için resim boyutlandırma", "instagram fotoğraf boyutlandırma", "instagram 1080x1350", "instagram fotoğraf kırpılmadan paylaşma"],
+    "tagline": "Bir resmi Instagram’ın kare, dikey, uzun veya yatay gönderi boyutuna sığdırın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Instagram Gönderi Boyutlandırma, paylaşmadan önce resme doğru şekli verir, böylece Instagram onu sizin yerinize kırpmaz. Kare (1080 × 1080), dikey (1080 × 1350), uzun (1080 × 1440) veya yatay (1080 × 566) seçin, sonra önemsediğiniz kısım çerçeveye girene kadar resmi sürükleyin. Geniş bir fotoğrafı kırpmadan paylaşmak için tamamını bulanık bir arka planda gösterin.",
+    "seoTitle": "Instagram Gönderi Boyutlandırma – Kare, Dikey, 3:4, Ücretsiz",
+    "seoDescription": "Fotoğrafları Instagram gönderileri için boyutlandırın: kare 1080×1080, dikey 1080×1350, uzun 3:4 veya yatay. Sürükleyerek konumlandırın. Ücretsiz, yüklemesiz.",
+    "keywords": ["instagram gönderi boyutu", "instagram için resim boyutlandırma", "instagram fotoğraf boyutlandırma", "instagram 1080x1350", "instagram 3:4 boyutu"],
     "howToSteps": [
       { "title": "Resminizi ekleyin", "description": "Paylaşmak istediğiniz fotoğrafı bırakın ya da seçin." },
-      { "title": "Şekli seçin", "description": "Kare, dikey veya yatay seçin, sonra fotoğrafı sürükleyerek yerleştirin." },
+      { "title": "Şekli seçin", "description": "Kare, dikey, uzun veya yatay seçin, sonra fotoğrafı sürükleyerek yerleştirin." },
       { "title": "İndirip paylaşın", "description": "Kaydedin ve her zamanki gibi Instagram’a yükleyin." }
     ],
     "features": [
-      { "title": "Üç gönderi şekli", "description": "Kare, dikey 4:5 ve yatay; hepsi 1080 piksel genişliğinde." },
+      { "title": "Tüm gönderi şekilleri", "description": "Kare, dikey 4:5, uzun 3:4 ve yatay; hepsi 1080 piksel genişliğinde." },
       { "title": "Zorunlu kırpma yok", "description": "Hiçbir yerini kaybetmek istemiyorsanız fotoğrafın tamamını bulanık veya renkli bir arka planda gösterin." },
       { "title": "Gizli", "description": "Fotoğrafınız cihazınızda işlenir ve asla yüklenmez." }
     ],
     "faqs": [
-      { "question": "Instagram gönderisi kaç boyutta olmalı?", "answer": "1080 piksel genişliğinde. Akışta en çok yeri dikey 1080 × 1350 kaplar; kare 1080 × 1080, yatay ise 1080 × 566’dır." },
+      { "question": "Instagram gönderisi kaç boyutta olmalı?", "answer": "1080 piksel genişliğinde. Instagram, geniş 1,91:1 (1080 × 566) ile uzun 3:4 (1080 × 1440) arasındaki fotoğrafları kırpmaz. Kare 1080 × 1080’dir, 1080 × 1350 ise yaygın bir dikey boyuttur." },
       { "question": "Fotoğrafın tamamını kırpmadan nasıl paylaşırım?", "answer": "“Tümünü göster” seçeneğini seçin. Fotoğrafın tamamı, kendisinin bulanık bir kopyası ya da seçtiğiniz bir renk üzerinde çerçeveye oturur." },
       { "question": "Hangi formatta kaydetmeliyim?", "answer": "Fotoğraflar için JPG uygundur. Yazılı grafikler için PNG uygundur, ancak dosya daha büyük olur." }
     ]
@@ -8508,32 +8508,33 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       { "question": "Instagram Hikâyesi kaç boyutta?", "answer": "1080 × 1920 piksel, yani 9:16 şeklinde. Reels ve TikTok da aynı şekli kullanır." },
-      { "question": "Güvenli alan nedir?", "answer": "Çerçevenin ortasıdır. Üstte ve altta yaklaşık 250 piksel profil adınız, düğmeler ve açıklama tarafından kapatılabilir, bu yüzden oraya yazı koymaktan kaçının." },
+      { "question": "Güvenli alan nedir?", "answer": "Çerçevenin ortasıdır. Üstte yaklaşık 250, altta yaklaşık 340 piksel profil adınız, düğmeler ve açıklama tarafından kapatılabilir, bu yüzden oraya yazı koymaktan kaçının." },
       { "question": "Kesikli kutu resmimde görünür mü?", "answer": "Hayır. Yalnızca önizlemede görünür ve asla kaydedilmez." }
     ]
   },
   "youtube-thumbnail-maker": {
     "name": "YouTube Küçük Resim Oluşturucu",
     "shortName": "YouTube Küçük Resim",
-    "tagline": "Bir resmi 2 MB sınırının altında, 1280 × 720 YouTube küçük resmine dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "YouTube Küçük Resim Oluşturucu, bir resmi YouTube’un önerdiği 1280 × 720 boyutuna getirir ve dosyayı YouTube’un 2 MB yükleme sınırının altında tutar; kaliteyi yalnızca gerektiği kadar düşürür. Resmi sürükleyerek çerçeveleyin, önemli yere yakınlaştırın ve indirin. Önce yazı eklemek için Resme Yazı Ekleme aracını kullanın.",
-    "seoTitle": "YouTube Küçük Resim Oluşturucu – 1280×720, 2 MB, Ücretsiz",
-    "seoDescription": "Herhangi bir resimden 2 MB sınırının altında kalan 1280×720 YouTube küçük resmi yapın. Sürükleyin, yakınlaştırın, indirin. Ücretsiz, kayıtsız, yüklemesiz.",
+    "tagline": "Bir resmi YouTube’un yükleme sınırları içinde kalan 16:9 küçük resme dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "YouTube Küçük Resim Oluşturucu, bir resmi YouTube’un istediği 16:9 şekline oturtur. Telefondan yükleme için 2 MB sınırının altında kalan 1280 × 720’yi ya da bilgisayardan yükleme için YouTube’un önerdiği büyük boyut olan 3840 × 2160’ı seçin. Resmi sürükleyerek çerçeveleyin, önemli yere yakınlaştırın ve indirin. Yazı eklemek için Resme Yazı Ekleme aracını kullanın.",
+    "seoTitle": "YouTube Küçük Resim Oluşturucu – 16:9, 4K’ya Kadar, Ücretsiz",
+    "seoDescription": "Herhangi bir resimden 16:9 YouTube küçük resmi yapın: telefon için 2 MB altında 1280×720 veya 4K. Sürükleyin, yakınlaştırın, indirin. Ücretsiz, yüklemesiz.",
     "keywords": ["youtube küçük resim oluşturma", "youtube küçük resim boyutu", "1280x720 küçük resim", "youtube kapak fotoğrafı boyutu", "youtube küçük resim 2mb"],
     "howToSteps": [
       { "title": "Resminizi ekleyin", "description": "Bir ekran görüntüsü veya fotoğraf bırakın ya da seçin." },
-      { "title": "Çerçeveleyin", "description": "Konu çerçeveyi dolduruncaya kadar sürükleyin ve yakınlaştırın." },
-      { "title": "İndirin", "description": "1280 × 720 dosyayı kaydedin ve YouTube Studio’da yükleyin." }
+      { "title": "Boyut seçip çerçeveleyin", "description": "1280 × 720 veya 4K seçin, sonra konu çerçeveyi dolduruncaya kadar sürükleyin ve yakınlaştırın." },
+      { "title": "İndirin", "description": "Dosyayı kaydedin ve YouTube Studio’da yükleyin." }
     ],
     "features": [
-      { "title": "Doğru boyut", "description": "YouTube’un önerdiği 16:9 şeklinde 1280 × 720 piksel." },
-      { "title": "Yükleme sınırının altında", "description": "JPG ve WebP dosyaları otomatik olarak 2 MB’nin altında tutulur." },
+      { "title": "İki boyut", "description": "Küçük dosya için 1280 × 720 veya YouTube’un önerdiği boyut olan 3840 × 2160." },
+      { "title": "Yükleme sınırları içinde", "description": "JPG ve WebP dosyaları 1280 × 720’de 2 MB’nin, 4K’da 50 MB’nin altında kalır." },
       { "title": "Gizli", "description": "Resminiz cihazınızda işlenir ve asla yüklenmez." }
     ],
     "faqs": [
-      { "question": "YouTube küçük resmi kaç boyutta?", "answer": "YouTube, 16:9 şeklinde 1280 × 720 piksel ve 2 MB’nin altında dosya boyutu önerir." },
-      { "question": "Küçük resme yazı ekleyebilir miyim?", "answer": "Bu araçta hayır. İndirdiğiniz küçük resimde Resme Yazı Ekleme aracını kullanın, sonra sonucu yükleyin." },
-      { "question": "Kalite neden düşürüldü?", "answer": "Dosya 2 MB’yi aşacaksa kalite sığacak kadar düşürülür. Çoğu küçük resim yüksek kalitede bile sınırın epey altındadır." }
+      { "question": "YouTube küçük resmi kaç boyutta?", "answer": "YouTube mümkün olduğunca büyük bir 16:9 resim ister: 3840 × 2160 piksel önerir, en küçük genişlik ise 640 pikseldir." },
+      { "question": "Dosya boyutu sınırı nedir?", "answer": "Telefondan yüklerken 2 MB, bilgisayardan yüklerken 50 MB." },
+      { "question": "Hangi boyutu seçmeliyim?", "answer": "1280 × 720 her yerde çalışır ve çoğu resim için yeterlidir. Resminiz en az o kadar büyükse 4K seçin; daha küçük bir resmi büyütmek ayrıntı eklemez." },
+      { "question": "Küçük resme yazı ekleyebilir miyim?", "answer": "Bu araçta hayır. İndirdiğiniz küçük resimde Resme Yazı Ekleme aracını kullanın, sonra sonucu yükleyin." }
     ]
   },
   "youtube-banner-maker": {
@@ -8563,10 +8564,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "facebook-cover-maker": {
     "name": "Facebook Kapak Fotoğrafı Oluşturucu",
     "shortName": "Facebook Kapak",
-    "tagline": "Bir resme Facebook kapak fotoğrafı veya gönderisi için doğru şekli verin. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "Facebook Kapak Fotoğrafı Oluşturucu, bir resmi Facebook’un geniş 851 × 315 kapak şekline sığdırır. Telefonlar kapağın kenarlarını kırpar, bu yüzden kesikli bir kılavuz herkesin gördüğü kısmı gösterir. Bağlantı ve resim gönderileri için 1200 × 630 boyutu da vardır. Resmi yerine oturana kadar sürükleyin, sonra indirin.",
+    "tagline": "Bir resmi Facebook kapak fotoğrafı veya gönderisi için doğru boyuta getirin. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Facebook Kapak Fotoğrafı Oluşturucu, bir resmi Facebook’un kapaklar için önerdiği 851 × 315 boyutuna sığdırır. Facebook kapakları bilgisayarda ve telefonda farklı şekillerde gösterir, bu yüzden yüzleri ve yazıları ortaya yakın tutun. Bağlantı ve resim gönderileri için yaygın 1200 × 630 boyutu da vardır. Resmi yerine oturana kadar sürükleyin, sonra indirin.",
     "seoTitle": "Facebook Kapak Fotoğrafı Boyutu – 851×315, Ücretsiz",
-    "seoDescription": "Bir resmi Facebook kapağı (851×315) veya gönderisi (1200×630) için boyutlandırın; telefon kırpma kılavuzu dahil. Ücretsiz, kayıtsız, yüklemesiz.",
+    "seoDescription": "Bir resmi Facebook kapağı (851×315) veya gönderisi (1200×630) için boyutlandırın. Sürükleyerek konumlandırın, sonra indirin. Ücretsiz, kayıtsız, yüklemesiz.",
     "keywords": ["facebook kapak fotoğrafı boyutu", "facebook kapak fotoğrafı oluşturma", "facebook kapak için resim boyutlandırma", "851x315", "facebook gönderi resim boyutu"],
     "howToSteps": [
       { "title": "Resminizi ekleyin", "description": "Geniş bir resim bırakın ya da seçin." },
@@ -8574,14 +8575,14 @@ export const trTools: Record<string, LocalizedToolItem> = {
       { "title": "İndirin", "description": "Kaydedin ve profilinize veya sayfanıza yükleyin." }
     ],
     "features": [
-      { "title": "Telefon kılavuzu", "description": "Kesikli bir kutu, kapağın telefonlarda kalan kısmını gösterir." },
+      { "title": "Facebook’un önerdiği boyut", "description": "Kapaklar için 851 × 315 piksel." },
       { "title": "Kapak ve gönderi boyutları", "description": "Kapaklar için 851 × 315, gönderiler için 1200 × 630." },
       { "title": "Gizli", "description": "Resminiz asla yüklenmez." }
     ],
     "faqs": [
-      { "question": "Facebook kapak fotoğrafı kaç boyutta?", "answer": "Facebook, sayfa kapaklarını bilgisayarlarda 820 × 312 piksel gösterir; yükleme için yaygın boyut 851 × 315’tir. Telefonlar ortadan daha dar bir kırpma gösterir." },
-      { "question": "Kapağım telefonda neden farklı görünüyor?", "answer": "Telefonlar sol ve sağ kenarları kırpar. Yüzleri ve yazıları kesikli kılavuzun içinde tutun." },
-      { "question": "En iyi format hangisi?", "answer": "Fotoğraflar için JPG. Logoları ve yazıları PNG daha keskin tutar." }
+      { "question": "Facebook kapak fotoğrafı kaç boyutta?", "answer": "Facebook’a göre en hızlı yüklenen boyut, 100 KB’nin altında sRGB JPG olarak 851 × 315 pikseldir. En küçük boyut 400 × 150 pikseldir." },
+      { "question": "Kapağım telefonda neden farklı görünüyor?", "answer": "Facebook kapakları telefonda farklı bir şekilde (2,4:1) gösterir ve profil resminiz kapağın üzerine biraz biner. Yüzleri ve yazıları ortaya yakın tutun, yükledikten sonra ikisinde de kontrol edin." },
+      { "question": "100 KB’nin altına nasıl inerim?", "answer": "JPG olarak kaydedin ve gösterilen boyut 100 KB’nin altına inene kadar kaliteyi düşürün. 100 KB’nin altı, Facebook’un hızlı yükleme tavsiyesidir, bir sınır değildir." }
     ]
   },
   "linkedin-banner-maker": {

@@ -8477,7 +8477,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       { "title": "Herunterladen", "description": "Speichere es in genau dieser Größe als JPG, PNG oder WebP." }
     ],
     "features": [
-      { "title": "14 fertige Größen", "description": "Posts, Storys, Thumbnails, Banner und Titelbilder für die großen Netzwerke." },
+      { "title": "16 fertige Größen", "description": "Posts, Storys, Thumbnails, Banner und Titelbilder für die großen Netzwerke." },
       { "title": "Ausfüllen oder alles zeigen", "description": "Schneide das Bild passend zu oder zeig es komplett auf einem unscharfen oder farbigen Hintergrund." },
       { "title": "Privat", "description": "Alles passiert in deinem Browser. Dein Bild wird nie hochgeladen." }
     ],
@@ -8488,26 +8488,26 @@ export const deTools: Record<string, LocalizedToolItem> = {
       { "question": "Wird mein Bild hochgeladen?", "answer": "Nein. Es wird auf deinem Gerät verarbeitet und bleibt dort." }
     ]
   },
-  "instagram-post-resizer": {
+"instagram-post-resizer": {
     "name": "Bildgröße für Instagram-Posts ändern",
     "shortName": "Instagram-Post",
-    "tagline": "Bring ein Bild auf das quadratische, Hoch- oder Querformat für Instagram-Posts. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "Bildgröße für Instagram-Posts ändern bringt ein Bild vor dem Posten ins richtige Format, damit Instagram es nicht für dich zuschneidet. Wähle quadratisch (1080 × 1080), Hochformat (1080 × 1350) oder Querformat (1080 × 566) und zieh das Bild, bis der wichtige Teil im Rahmen liegt. Um ein breites Foto ohne Zuschnitt zu posten, zeigst du es komplett auf einem unscharfen Hintergrund.",
-    "seoTitle": "Instagram-Post-Größe ändern – Quadrat, Hochformat, gratis",
-    "seoDescription": "Fotos für Instagram-Posts anpassen: quadratisch 1080×1080, Hochformat 1080×1350 oder Querformat. Positionieren per Ziehen. Kostenlos, ohne Upload.",
-    "keywords": ["instagram post größe", "bild für instagram anpassen", "instagram bildgröße ändern", "instagram 1080x1350", "ganzes foto auf instagram posten"],
+    "tagline": "Bring ein Bild auf die Post-Größe für Instagram: quadratisch, Hochformat, extra hoch oder Querformat. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Bildgröße für Instagram-Posts ändern bringt ein Bild vor dem Posten ins richtige Format, damit Instagram es nicht für dich zuschneidet. Wähle quadratisch (1080 × 1080), Hochformat (1080 × 1350), extra hoch (1080 × 1440) oder Querformat (1080 × 566) und zieh das Bild, bis der wichtige Teil im Rahmen liegt. Um ein breites Foto ohne Zuschnitt zu posten, zeigst du es komplett auf einem unscharfen Hintergrund.",
+    "seoTitle": "Instagram-Post-Größe – Quadrat, Hochformat, 3:4, gratis",
+    "seoDescription": "Fotos für Instagram-Posts anpassen: quadratisch 1080×1080, Hochformat 1080×1350, extra hoch 3:4 oder Querformat. Per Ziehen positionieren. Gratis, ohne Upload.",
+    "keywords": ["instagram post größe", "bild für instagram anpassen", "instagram bildgröße ändern", "instagram 1080x1350", "instagram 3:4 größe"],
     "howToSteps": [
       { "title": "Bild hinzufügen", "description": "Zieh das Foto, das du posten willst, hierher oder wähle es aus." },
-      { "title": "Format wählen", "description": "Wähle quadratisch, Hochformat oder Querformat und zieh das Foto an die richtige Stelle." },
+      { "title": "Format wählen", "description": "Wähle quadratisch, Hochformat, extra hoch oder Querformat und zieh das Foto an die richtige Stelle." },
       { "title": "Herunterladen und posten", "description": "Speichere es und lade es wie gewohnt bei Instagram hoch." }
     ],
     "features": [
-      { "title": "Die drei Post-Formate", "description": "Quadratisch, Hochformat 4:5 und Querformat, jeweils 1080 Pixel breit." },
+      { "title": "Alle Post-Formate", "description": "Quadratisch, Hochformat 4:5, extra hoch 3:4 und Querformat, jeweils 1080 Pixel breit." },
       { "title": "Kein erzwungener Zuschnitt", "description": "Zeig das ganze Foto auf einem unscharfen oder farbigen Hintergrund, wenn nichts davon verloren gehen soll." },
       { "title": "Privat", "description": "Dein Foto wird auf deinem Gerät verarbeitet und nie hochgeladen." }
     ],
     "faqs": [
-      { "question": "Welche Größe sollte ein Instagram-Post haben?", "answer": "1080 Pixel Breite. Das Hochformat 1080 × 1350 nimmt im Feed den meisten Platz ein, quadratisch sind es 1080 × 1080 und im Querformat 1080 × 566." },
+      { "question": "Welche Größe sollte ein Instagram-Post haben?", "answer": "1080 Pixel Breite. Instagram lässt Fotos ungeschnitten zwischen breiten 1,91:1 (1080 × 566) und hohen 3:4 (1080 × 1440). Quadratisch sind es 1080 × 1080, und 1080 × 1350 ist ein beliebtes Hochformat." },
       { "question": "Wie poste ich ein ganzes Foto ohne Zuschnitt?", "answer": "Wähle „Alles zeigen“. Das ganze Foto liegt dann im Rahmen auf einer unscharfen Kopie von sich selbst oder auf einer Farbe deiner Wahl." },
       { "question": "In welchem Format sollte ich speichern?", "answer": "JPG eignet sich für Fotos. PNG eignet sich für Grafiken mit Text, die Datei wird aber größer." }
     ]
@@ -8532,32 +8532,33 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       { "question": "Wie groß ist eine Instagram-Story?", "answer": "1080 × 1920 Pixel, also das Format 9:16. Reels und TikTok nutzen dasselbe Format." },
-      { "question": "Was ist der sichere Bereich?", "answer": "Die Mitte des Rahmens. Oben und unten können etwa 250 Pixel von deinem Profilnamen, den Schaltflächen und der Bildunterschrift verdeckt werden. Setz dort also besser keinen Text hin." },
+      { "question": "Was ist der sichere Bereich?", "answer": "Die Mitte des Rahmens. Oben etwa 250 und unten etwa 340 Pixel können von deinem Profilnamen, den Schaltflächen und der Bildunterschrift verdeckt werden. Setz dort also besser keinen Text hin." },
       { "question": "Ist der gestrichelte Rahmen in meinem Bild zu sehen?", "answer": "Nein. Er erscheint nur in der Vorschau und wird nie gespeichert." }
     ]
   },
   "youtube-thumbnail-maker": {
     "name": "YouTube-Thumbnail erstellen",
     "shortName": "YouTube-Thumbnail",
-    "tagline": "Mach aus einem Bild ein YouTube-Thumbnail mit 1280 × 720 unter dem Limit von 2 MB. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "YouTube-Thumbnail erstellen bringt ein Bild auf die von YouTube empfohlenen 1280 × 720 und hält die Datei unter dem Upload-Limit von 2 MB. Die Qualität wird dabei nur so weit gesenkt wie nötig. Zieh das Bild in den Rahmen, zoome auf das Wichtige und lade es herunter. Um vorher Text hinzuzufügen, nutze Text in Bild einfügen.",
-    "seoTitle": "YouTube-Thumbnail erstellen – 1280×720, unter 2 MB, gratis",
-    "seoDescription": "Erstelle aus jedem Bild ein YouTube-Thumbnail mit 1280×720 unter dem Limit von 2 MB. Ziehen, zoomen, herunterladen. Kostenlos, ohne Anmeldung, ohne Upload.",
+    "tagline": "Mach aus einem Bild ein YouTube-Thumbnail im Format 16:9, das innerhalb der Upload-Limits von YouTube bleibt. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "YouTube-Thumbnail erstellen bringt ein Bild in das von YouTube verlangte Format 16:9. Wähle 1280 × 720, das unter dem Limit von 2 MB für den Upload vom Smartphone bleibt, oder 3840 × 2160, die große von YouTube empfohlene Größe, für den Upload vom Computer. Zieh das Bild in den Rahmen, zoome auf das Wichtige und lade es herunter. Um Text hinzuzufügen, nutze Text in Bild einfügen.",
+    "seoTitle": "YouTube-Thumbnail erstellen – 16:9, bis 4K, gratis",
+    "seoDescription": "Erstelle aus jedem Bild ein YouTube-Thumbnail in 16:9: 1280×720 unter 2 MB fürs Smartphone oder 4K. Ziehen, zoomen, herunterladen. Gratis, ohne Upload.",
     "keywords": ["youtube thumbnail erstellen", "youtube thumbnail größe", "thumbnail 1280x720", "bild für youtube thumbnail anpassen", "youtube thumbnail 2mb"],
     "howToSteps": [
       { "title": "Bild hinzufügen", "description": "Zieh einen Screenshot oder ein Foto hierher oder wähle es aus." },
-      { "title": "Ausschnitt wählen", "description": "Zieh und zoome, bis das Motiv den Rahmen ausfüllt." },
-      { "title": "Herunterladen", "description": "Speichere die Datei mit 1280 × 720 und lade sie in YouTube Studio hoch." }
+      { "title": "Größe wählen und Ausschnitt festlegen", "description": "Wähle 1280 × 720 oder 4K, dann zieh und zoome, bis das Motiv den Rahmen ausfüllt." },
+      { "title": "Herunterladen", "description": "Speichere die Datei und lade sie in YouTube Studio hoch." }
     ],
     "features": [
-      { "title": "Die richtige Größe", "description": "1280 × 720 Pixel, das von YouTube empfohlene Format 16:9." },
-      { "title": "Unter dem Upload-Limit", "description": "JPG- und WebP-Dateien bleiben automatisch unter 2 MB." },
+      { "title": "Zwei Größen", "description": "1280 × 720 für eine kleine Datei oder 3840 × 2160, die von YouTube empfohlene Größe." },
+      { "title": "Innerhalb der Upload-Limits", "description": "JPG- und WebP-Dateien bleiben bei 1280 × 720 unter 2 MB und bei 4K unter 50 MB." },
       { "title": "Privat", "description": "Dein Bild wird auf deinem Gerät verarbeitet und nie hochgeladen." }
     ],
     "faqs": [
-      { "question": "Wie groß ist ein YouTube-Thumbnail?", "answer": "YouTube empfiehlt 1280 × 720 Pixel im Format 16:9 und eine Dateigröße unter 2 MB." },
-      { "question": "Kann ich dem Thumbnail Text hinzufügen?", "answer": "In diesem Tool nicht. Nutze Text in Bild einfügen für das heruntergeladene Thumbnail und lade dann das Ergebnis hoch." },
-      { "question": "Warum wurde die Qualität gesenkt?", "answer": "Wäre die Datei größer als 2 MB, wird die Qualität gerade so weit gesenkt, dass sie passt. Die meisten Thumbnails liegen auch bei hoher Qualität deutlich unter dem Limit." }
+      { "question": "Wie groß ist ein YouTube-Thumbnail?", "answer": "YouTube verlangt ein Bild im Format 16:9, so groß wie möglich: Empfohlen sind 3840 × 2160 Pixel, die Mindestbreite beträgt 640 Pixel." },
+      { "question": "Wie hoch ist das Limit für die Dateigröße?", "answer": "2 MB beim Upload vom Smartphone und 50 MB vom Computer." },
+      { "question": "Welche Größe soll ich wählen?", "answer": "1280 × 720 funktioniert überall und reicht für die meisten Bilder. Wähle 4K, wenn dein Bild mindestens so groß ist; ein kleineres Bild zu vergrößern bringt keine zusätzlichen Details." },
+      { "question": "Kann ich dem Thumbnail Text hinzufügen?", "answer": "In diesem Tool nicht. Nutze Text in Bild einfügen für das heruntergeladene Thumbnail und lade dann das Ergebnis hoch." }
     ]
   },
   "youtube-banner-maker": {
@@ -8587,10 +8588,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "facebook-cover-maker": {
     "name": "Facebook-Titelbild erstellen",
     "shortName": "Facebook-Titelbild",
-    "tagline": "Bring ein Bild ins richtige Format für ein Facebook-Titelbild oder einen Post. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "Facebook-Titelbild erstellen passt ein Bild in das breite Titelbild-Format von 851 × 315 ein. Smartphones schneiden die Seiten eines Titelbilds ab, deshalb zeigt eine gestrichelte Hilfslinie den Teil, den alle sehen. Außerdem gibt es die Größe 1200 × 630 für Link- und Bild-Posts. Zieh das Bild, bis es richtig sitzt, und lade es herunter.",
+    "tagline": "Bring ein Bild auf die richtige Größe für ein Facebook-Titelbild oder einen Post. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Facebook-Titelbild erstellen passt ein Bild in die von Facebook für Titelbilder empfohlene Größe 851 × 315 ein. Facebook zeigt Titelbilder auf Computern und Smartphones in unterschiedlichen Formaten, halte Gesichter und Text also nahe der Mitte. Außerdem gibt es die gängige Größe 1200 × 630 für Link- und Bild-Posts. Zieh das Bild, bis es richtig sitzt, und lade es herunter.",
     "seoTitle": "Facebook-Titelbild erstellen – Größe 851×315, kostenlos",
-    "seoDescription": "Passe ein Bild für ein Facebook-Titelbild (851×315) oder einen Post (1200×630) an, mit Hilfslinie für das, was Smartphones abschneiden. Kostenlos, ohne Upload.",
+    "seoDescription": "Passe ein Bild für ein Facebook-Titelbild (851×315) oder einen Post (1200×630) an. Ziehen, positionieren, herunterladen. Gratis, ohne Anmeldung, ohne Upload.",
     "keywords": ["facebook titelbild größe", "facebook titelbild erstellen", "bild für facebook titelbild anpassen", "851x315", "facebook post bildgröße"],
     "howToSteps": [
       { "title": "Bild hinzufügen", "description": "Zieh ein breites Bild hierher oder wähle es aus." },
@@ -8598,14 +8599,14 @@ export const deTools: Record<string, LocalizedToolItem> = {
       { "title": "Herunterladen", "description": "Speichere es und lade es auf dein Profil oder deine Seite hoch." }
     ],
     "features": [
-      { "title": "Hilfslinie fürs Smartphone", "description": "Ein gestrichelter Rahmen zeigt den Teil des Titelbilds, den Smartphones behalten." },
+      { "title": "Von Facebook empfohlene Größe", "description": "851 × 315 Pixel für Titelbilder." },
       { "title": "Größen für Titelbild und Post", "description": "851 × 315 für Titelbilder und 1200 × 630 für Posts." },
       { "title": "Privat", "description": "Dein Bild wird nie hochgeladen." }
     ],
     "faqs": [
-      { "question": "Wie groß ist ein Facebook-Titelbild?", "answer": "Facebook zeigt Titelbilder von Seiten auf Computern mit 820 × 312 Pixeln an; üblich zum Hochladen sind 851 × 315. Smartphones zeigen einen schmaleren Ausschnitt der Mitte." },
-      { "question": "Warum sieht mein Titelbild auf dem Handy anders aus?", "answer": "Smartphones schneiden die linke und rechte Seite ab. Halte Gesichter und Text innerhalb der gestrichelten Hilfslinie." },
-      { "question": "Welches Format ist am besten?", "answer": "JPG für Fotos. PNG hält Logos und Text schärfer." }
+      { "question": "Wie groß ist ein Facebook-Titelbild?", "answer": "Laut Facebook lädt 851 × 315 Pixel am schnellsten, als sRGB-JPG unter 100 KB. Das Minimum liegt bei 400 × 150 Pixeln." },
+      { "question": "Warum sieht mein Titelbild auf dem Handy anders aus?", "answer": "Facebook zeigt Titelbilder auf Smartphones in einem anderen Format (2,4:1), und dein Profilbild überlappt das Titelbild leicht. Halte Gesichter und Text nahe der Mitte und prüfe nach dem Hochladen beide Ansichten." },
+      { "question": "Wie komme ich unter 100 KB?", "answer": "Speichere als JPG und senke die Qualität, bis die angezeigte Größe unter 100 KB liegt. Unter 100 KB ist Facebooks Empfehlung für schnelles Laden, kein Limit." }
     ]
   },
   "linkedin-banner-maker": {

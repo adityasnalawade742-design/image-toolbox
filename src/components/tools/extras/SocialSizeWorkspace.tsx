@@ -24,9 +24,11 @@ const FORMATS: { mime: SaveFormat; label: string; ext: string }[] = [
 const PRESET_LABEL: Record<SocialPresetId, StringKey> = {
   'ig-square': 'ctl.social.p.igSquare',
   'ig-portrait': 'ctl.social.p.igPortrait',
+  'ig-tall': 'ctl.social.p.igTall',
   'ig-landscape': 'ctl.social.p.igLandscape',
   story: 'ctl.social.p.story',
   'yt-thumb': 'ctl.social.p.ytThumb',
+  'yt-thumb-4k': 'ctl.social.p.ytThumb4k',
   'yt-banner': 'ctl.social.p.ytBanner',
   'fb-cover': 'ctl.social.p.fbCover',
   'fb-post': 'ctl.social.p.fbPost',

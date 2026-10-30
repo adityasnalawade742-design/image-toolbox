@@ -61,6 +61,6 @@
     "happy-dom": "^20.13.1",
     "postcss": "^8.5.2",
     "vitest": "^4.1.11",
-    "wrangler": "^3.109.2"
+    "wrangler": "^4.156.0"
   }
 }
