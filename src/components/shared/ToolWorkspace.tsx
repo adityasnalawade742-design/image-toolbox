@@ -93,6 +93,10 @@ const QrReaderWorkspace = standaloneTool(() => import('../tools/extras/QrReaderW
 const BarcodeGeneratorWorkspace = standaloneTool(() => import('../tools/extras/BarcodeGeneratorWorkspace'), 'BarcodeGeneratorWorkspace');
 const BulkCodesWorkspace = standaloneTool(() => import('../tools/extras/BulkCodesWorkspace'), 'BulkCodesWorkspace');
 const DocumentToolWorkspace = standaloneTool(() => import('../tools/pdf/DocumentToolWorkspace'), 'DocumentToolWorkspace');
+const SocialSizeWorkspace = standaloneTool(() => import('../tools/extras/SocialSizeWorkspace'), 'SocialSizeWorkspace');
+const UnitConverterWorkspace = standaloneTool(() => import('../tools/extras/PrintCalcWorkspace'), 'UnitConverterWorkspace');
+const ResolutionCalcWorkspace = standaloneTool(() => import('../tools/extras/PrintCalcWorkspace'), 'ResolutionCalcWorkspace');
+const ColorBlindWorkspace = standaloneTool(() => import('../tools/extras/ColorBlindWorkspace'), 'ColorBlindWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -199,6 +203,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'payment-qr-code-generator': <QrGeneratorWorkspace defaultKind="payment" />,
     'bulk-qr-code-generator': <BulkCodesWorkspace defaultType="qr" />,
     'bulk-barcode-generator': <BulkCodesWorkspace defaultType="code128" />,
+    'social-media-image-resizer': <SocialSizeWorkspace />,
+    'instagram-post-resizer': <SocialSizeWorkspace presets={['ig-square', 'ig-portrait', 'ig-landscape']} />,
+    'instagram-story-resizer': <SocialSizeWorkspace presets={['story']} />,
+    'youtube-thumbnail-maker': <SocialSizeWorkspace presets={['yt-thumb']} />,
+    'youtube-banner-maker': <SocialSizeWorkspace presets={['yt-banner']} />,
+    'facebook-cover-maker': <SocialSizeWorkspace presets={['fb-cover', 'fb-post']} />,
+    'linkedin-banner-maker': <SocialSizeWorkspace presets={['li-banner', 'li-post']} />,
+    'pinterest-pin-resizer': <SocialSizeWorkspace presets={['pin']} />,
+    'open-graph-image-maker': <SocialSizeWorkspace presets={['og']} />,
+    'pixels-to-inches': <UnitConverterWorkspace from="px" to="in" />,
+    'inches-to-pixels': <UnitConverterWorkspace from="in" to="px" />,
+    'pixels-to-cm': <UnitConverterWorkspace from="px" to="cm" />,
+    'cm-to-pixels': <UnitConverterWorkspace from="cm" to="px" />,
+    'resolution-calculator': <ResolutionCalcWorkspace />,
+    'color-blindness-simulator': <ColorBlindWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,

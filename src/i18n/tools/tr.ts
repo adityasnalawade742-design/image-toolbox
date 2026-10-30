@@ -8438,4 +8438,367 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  // Social media sizes, print calculators, color blindness simulator
+"social-media-image-resizer": {
+    "name": "Sosyal Medya Resim Boyutlandırma",
+    "shortName": "Sosyal Medya Boyutu",
+    "tagline": "Bir resmi Instagram, YouTube, Facebook, LinkedIn, Pinterest, X ve TikTok için boyutlandırın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Sosyal Medya Resim Boyutlandırma, bir resmi her ağın istediği tam boyuta getirir. Listeden bir boyut seçin, doğru kısım çerçeveye girene kadar resmi sürükleyin ve indirin. Resim şekle uymuyorsa tamamını kendisinin bulanık bir kopyası ya da seçtiğiniz bir renk üzerinde gösterebilirsiniz. Resminiz cihazınızdan çıkmaz.",
+    "seoTitle": "Sosyal Medya Resim Boyutlandırma – Ücretsiz, Yüklemesiz",
+    "seoDescription": "Instagram, YouTube, Facebook, LinkedIn, Pinterest, X ve TikTok için resim boyutlandırın. Sürükleyerek konumlandırın ve indirin. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["sosyal medya resim boyutlandırma", "sosyal medya için resim boyutlandırma", "sosyal medya görsel boyutları", "instagram facebook resim boyutu", "sosyal medya fotoğraf boyutları"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir JPG, PNG, WebP, HEIC veya TIFF bırakın ya da seçin." },
+      { "title": "Boyut seçip konumlandırın", "description": "Ağı ve formatı seçin, sonra resmi sürükleyin veya kaydırıcıları kullanın." },
+      { "title": "İndirin", "description": "Tam o boyutta JPG, PNG veya WebP olarak kaydedin." }
+    ],
+    "features": [
+      { "title": "14 hazır boyut", "description": "Büyük ağlar için gönderiler, hikâyeler, küçük resimler, banner’lar ve kapaklar." },
+      { "title": "Doldurun veya tümünü gösterin", "description": "Çerçeveyi doldurmak için kırpın ya da resmin tamamını bulanık veya renkli bir arka planda tutun." },
+      { "title": "Gizli", "description": "Her şey tarayıcınızda gerçekleşir. Resminiz asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "Bunlar güncel boyutlar mı?", "answer": "Bildiğimiz kadarıyla ağların yayımladığı boyutlardır. Ağlar bunları zaman zaman değiştirir, bu yüzden yükleme yanlış görünürse ağın yardım sayfalarına bakın." },
+      { "question": "Resmimin kalitesi düşer mi?", "answer": "Küçültmek netliği korur. Resminiz seçtiğiniz boyuttan küçükse büyütülmesi gerekir ve yumuşak görünebilir; böyle bir durumda araç sizi uyarır." },
+      { "question": "“Tümünü göster” ne yapar?", "answer": "Resmin tamamını çerçevenin içine sığdırır ve çevresindeki boşluğu resmin bulanık bir kopyası ya da seçtiğiniz bir renkle doldurur; böylece hiçbir yer kırpılmaz." },
+      { "question": "Resmim yükleniyor mu?", "answer": "Hayır. Cihazınızda işlenir ve orada kalır." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Instagram Gönderi Boyutlandırma",
+    "shortName": "Instagram Gönderi",
+    "tagline": "Bir resmi Instagram’ın kare, dikey veya yatay gönderi boyutuna sığdırın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Instagram Gönderi Boyutlandırma, paylaşmadan önce resme doğru şekli verir, böylece Instagram onu sizin yerinize kırpmaz. Kare (1080 × 1080), dikey (1080 × 1350) veya yatay (1080 × 566) seçin, sonra önemsediğiniz kısım çerçeveye girene kadar resmi sürükleyin. Geniş bir fotoğrafı kırpmadan paylaşmak için tamamını bulanık bir arka planda gösterin.",
+    "seoTitle": "Instagram Gönderi Boyutlandırma – Kare, Dikey, Ücretsiz",
+    "seoDescription": "Fotoğrafları Instagram gönderileri için boyutlandırın: kare 1080×1080, dikey 1080×1350 veya yatay. Sürükleyerek konumlandırın. Ücretsiz, yüklemesiz.",
+    "keywords": ["instagram gönderi boyutu", "instagram için resim boyutlandırma", "instagram fotoğraf boyutlandırma", "instagram 1080x1350", "instagram fotoğraf kırpılmadan paylaşma"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Paylaşmak istediğiniz fotoğrafı bırakın ya da seçin." },
+      { "title": "Şekli seçin", "description": "Kare, dikey veya yatay seçin, sonra fotoğrafı sürükleyerek yerleştirin." },
+      { "title": "İndirip paylaşın", "description": "Kaydedin ve her zamanki gibi Instagram’a yükleyin." }
+    ],
+    "features": [
+      { "title": "Üç gönderi şekli", "description": "Kare, dikey 4:5 ve yatay; hepsi 1080 piksel genişliğinde." },
+      { "title": "Zorunlu kırpma yok", "description": "Hiçbir yerini kaybetmek istemiyorsanız fotoğrafın tamamını bulanık veya renkli bir arka planda gösterin." },
+      { "title": "Gizli", "description": "Fotoğrafınız cihazınızda işlenir ve asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "Instagram gönderisi kaç boyutta olmalı?", "answer": "1080 piksel genişliğinde. Akışta en çok yeri dikey 1080 × 1350 kaplar; kare 1080 × 1080, yatay ise 1080 × 566’dır." },
+      { "question": "Fotoğrafın tamamını kırpmadan nasıl paylaşırım?", "answer": "“Tümünü göster” seçeneğini seçin. Fotoğrafın tamamı, kendisinin bulanık bir kopyası ya da seçtiğiniz bir renk üzerinde çerçeveye oturur." },
+      { "question": "Hangi formatta kaydetmeliyim?", "answer": "Fotoğraflar için JPG uygundur. Yazılı grafikler için PNG uygundur, ancak dosya daha büyük olur." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Instagram Hikâye Boyutlandırma",
+    "shortName": "Instagram Hikâye",
+    "tagline": "Bir resmi Hikâyeler, Reels ve TikTok için 1080 × 1920 yapın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Instagram Hikâye Boyutlandırma, herhangi bir resmi Hikâyeler, Reels ve TikTok’un kullandığı uzun 1080 × 1920 şekline getirir. Kesikli bir kılavuz, uygulamanın kendi düğmelerinin ve açıklamasının nerede durduğunu gösterir; böylece yüzleri ve yazıları onlardan uzak tutabilirsiniz. Geniş fotoğraflar kırpılmak yerine kendilerinin bulanık bir kopyası üzerinde bütün olarak durabilir.",
+    "seoTitle": "Instagram Hikâye Boyutu Ayarlama – 1080×1920, Ücretsiz",
+    "seoDescription": "Her resmi Instagram Hikâyeler, Reels ve TikTok için 1080×1920 boyutuna getirin; güvenli alan kılavuzu dahil. Ücretsiz, kayıtsız, resminiz yüklenmez.",
+    "keywords": ["instagram hikaye boyutu", "instagram hikaye için resim boyutlandırma", "1080x1920 resim", "reels kapak boyutu", "tiktok resim boyutu"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir fotoğraf veya grafik bırakın ya da seçin." },
+      { "title": "Konumlandırın", "description": "Sürükleyerek yerleştirin; önemli her şeyi kesikli güvenli alanın içinde tutun." },
+      { "title": "İndirin", "description": "1080 × 1920 olarak kaydedin, hikâyenize eklemeye hazır olsun." }
+    ],
+    "features": [
+      { "title": "Güvenli alan kılavuzu", "description": "Uygulamanın düğmelerinin ve açıklamasının neyi kapattığını gösterir. Kılavuz resme kaydedilmez." },
+      { "title": "Bulanık arka plan", "description": "Geniş bir fotoğraf bütün olarak sığar, kalan yeri kendisinin bulanık bir kopyası doldurur." },
+      { "title": "Gizli", "description": "Resminiz cihazınızdan çıkmaz." }
+    ],
+    "faqs": [
+      { "question": "Instagram Hikâyesi kaç boyutta?", "answer": "1080 × 1920 piksel, yani 9:16 şeklinde. Reels ve TikTok da aynı şekli kullanır." },
+      { "question": "Güvenli alan nedir?", "answer": "Çerçevenin ortasıdır. Üstte ve altta yaklaşık 250 piksel profil adınız, düğmeler ve açıklama tarafından kapatılabilir, bu yüzden oraya yazı koymaktan kaçının." },
+      { "question": "Kesikli kutu resmimde görünür mü?", "answer": "Hayır. Yalnızca önizlemede görünür ve asla kaydedilmez." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "YouTube Küçük Resim Oluşturucu",
+    "shortName": "YouTube Küçük Resim",
+    "tagline": "Bir resmi 2 MB sınırının altında, 1280 × 720 YouTube küçük resmine dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "YouTube Küçük Resim Oluşturucu, bir resmi YouTube’un önerdiği 1280 × 720 boyutuna getirir ve dosyayı YouTube’un 2 MB yükleme sınırının altında tutar; kaliteyi yalnızca gerektiği kadar düşürür. Resmi sürükleyerek çerçeveleyin, önemli yere yakınlaştırın ve indirin. Önce yazı eklemek için Resme Yazı Ekleme aracını kullanın.",
+    "seoTitle": "YouTube Küçük Resim Oluşturucu – 1280×720, 2 MB, Ücretsiz",
+    "seoDescription": "Herhangi bir resimden 2 MB sınırının altında kalan 1280×720 YouTube küçük resmi yapın. Sürükleyin, yakınlaştırın, indirin. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["youtube küçük resim oluşturma", "youtube küçük resim boyutu", "1280x720 küçük resim", "youtube kapak fotoğrafı boyutu", "youtube küçük resim 2mb"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir ekran görüntüsü veya fotoğraf bırakın ya da seçin." },
+      { "title": "Çerçeveleyin", "description": "Konu çerçeveyi dolduruncaya kadar sürükleyin ve yakınlaştırın." },
+      { "title": "İndirin", "description": "1280 × 720 dosyayı kaydedin ve YouTube Studio’da yükleyin." }
+    ],
+    "features": [
+      { "title": "Doğru boyut", "description": "YouTube’un önerdiği 16:9 şeklinde 1280 × 720 piksel." },
+      { "title": "Yükleme sınırının altında", "description": "JPG ve WebP dosyaları otomatik olarak 2 MB’nin altında tutulur." },
+      { "title": "Gizli", "description": "Resminiz cihazınızda işlenir ve asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "YouTube küçük resmi kaç boyutta?", "answer": "YouTube, 16:9 şeklinde 1280 × 720 piksel ve 2 MB’nin altında dosya boyutu önerir." },
+      { "question": "Küçük resme yazı ekleyebilir miyim?", "answer": "Bu araçta hayır. İndirdiğiniz küçük resimde Resme Yazı Ekleme aracını kullanın, sonra sonucu yükleyin." },
+      { "question": "Kalite neden düşürüldü?", "answer": "Dosya 2 MB’yi aşacaksa kalite sığacak kadar düşürülür. Çoğu küçük resim yüksek kalitede bile sınırın epey altındadır." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "YouTube Banner Oluşturucu",
+    "shortName": "YouTube Banner",
+    "tagline": "Her cihazın neyi gösterdiğini belirten bir kılavuzla 2560 × 1440 YouTube kanal banner’ı yapın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "YouTube Banner Oluşturucu, bir resmi YouTube’un kanal görseli için önerdiği 2560 × 1440 boyutuna getirir. Telefonlar ve bilgisayarlar yalnızca ortadaki bir şeridi, televizyonlar ise tamamını gösterir; bu yüzden kesikli bir kılavuz her zaman görünen şeridi işaretler. Adınızı ve logonuzu onun içinde tutun. Dosya, YouTube’un 6 MB sınırının altında tutulur.",
+    "seoTitle": "YouTube Banner Oluşturucu – 2560×1440, Ücretsiz",
+    "seoDescription": "Telefon ve bilgisayarların neyi gösterdiğini belirten güvenli alan kılavuzuyla 2560×1440 YouTube kanal banner’ı yapın. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["youtube banner oluşturma", "youtube banner boyutu", "youtube kanal görseli boyutu", "2560x1440 banner", "youtube banner güvenli alan"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Geniş ve yüksek çözünürlüklü bir resim seçin." },
+      { "title": "Konumlandırın", "description": "Önemli kısım kesikli şeridin içine girecek şekilde sürükleyin." },
+      { "title": "İndirin", "description": "Kaydedin ve YouTube Studio’da Özelleştirme bölümünden yükleyin." }
+    ],
+    "features": [
+      { "title": "Güvenli alan kılavuzu", "description": "Her cihazın gösterdiği 1546 × 423 şeridi işaretler. Resme kaydedilmez." },
+      { "title": "Yükleme sınırının altında", "description": "JPG ve WebP dosyaları otomatik olarak 6 MB’nin altında tutulur." },
+      { "title": "Gizli", "description": "Resminiz cihazınızdan çıkmaz." }
+    ],
+    "faqs": [
+      { "question": "YouTube banner’ı kaç boyutta?", "answer": "YouTube 2560 × 1440 piksel önerir. Tüm cihazlarda güvenli alan, ortadaki 1546 × 423 pikseldir." },
+      { "question": "Banner’ım telefonda neden kırpılıyor?", "answer": "Her cihaz farklı bir kısmını gösterir. Telefonlar ve bilgisayarlar yalnızca ortadaki şeridi gösterir, bu yüzden yazıları ve logoları orada tutun." },
+      { "question": "Resmim yumuşak görünüyor. Neden?", "answer": "2560 piksel genişlik büyüktür ve daha küçük resimlerin büyütülmesi gerekir. Elinizdeki en yüksek çözünürlüklü resimle başlayın." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Facebook Kapak Fotoğrafı Oluşturucu",
+    "shortName": "Facebook Kapak",
+    "tagline": "Bir resme Facebook kapak fotoğrafı veya gönderisi için doğru şekli verin. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Facebook Kapak Fotoğrafı Oluşturucu, bir resmi Facebook’un geniş 851 × 315 kapak şekline sığdırır. Telefonlar kapağın kenarlarını kırpar, bu yüzden kesikli bir kılavuz herkesin gördüğü kısmı gösterir. Bağlantı ve resim gönderileri için 1200 × 630 boyutu da vardır. Resmi yerine oturana kadar sürükleyin, sonra indirin.",
+    "seoTitle": "Facebook Kapak Fotoğrafı Boyutu – 851×315, Ücretsiz",
+    "seoDescription": "Bir resmi Facebook kapağı (851×315) veya gönderisi (1200×630) için boyutlandırın; telefon kırpma kılavuzu dahil. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["facebook kapak fotoğrafı boyutu", "facebook kapak fotoğrafı oluşturma", "facebook kapak için resim boyutlandırma", "851x315", "facebook gönderi resim boyutu"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Geniş bir resim bırakın ya da seçin." },
+      { "title": "Seçip konumlandırın", "description": "Kapak veya gönderi seçin, sonra resmi sürükleyerek yerleştirin." },
+      { "title": "İndirin", "description": "Kaydedin ve profilinize veya sayfanıza yükleyin." }
+    ],
+    "features": [
+      { "title": "Telefon kılavuzu", "description": "Kesikli bir kutu, kapağın telefonlarda kalan kısmını gösterir." },
+      { "title": "Kapak ve gönderi boyutları", "description": "Kapaklar için 851 × 315, gönderiler için 1200 × 630." },
+      { "title": "Gizli", "description": "Resminiz asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "Facebook kapak fotoğrafı kaç boyutta?", "answer": "Facebook, sayfa kapaklarını bilgisayarlarda 820 × 312 piksel gösterir; yükleme için yaygın boyut 851 × 315’tir. Telefonlar ortadan daha dar bir kırpma gösterir." },
+      { "question": "Kapağım telefonda neden farklı görünüyor?", "answer": "Telefonlar sol ve sağ kenarları kırpar. Yüzleri ve yazıları kesikli kılavuzun içinde tutun." },
+      { "question": "En iyi format hangisi?", "answer": "Fotoğraflar için JPG. Logoları ve yazıları PNG daha keskin tutar." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "LinkedIn Banner Oluşturucu",
+    "shortName": "LinkedIn Banner",
+    "tagline": "Herhangi bir resimden 1584 × 396 LinkedIn profil banner’ı yapın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "LinkedIn Banner Oluşturucu, bir resmi LinkedIn profil banner’ının çok geniş 1584 × 396 şekline keser. İstediğiniz şeridi seçmek için resmi yukarı aşağı sürükleyin, gerekirse yakınlaştırın. Bağlantı ve resim gönderileri için 1200 × 627 boyutu da vardır. Profil fotoğrafınız banner’ın sol altının bir kısmını kapatır, bu yüzden önemli ayrıntıları oradan uzak tutun.",
+    "seoTitle": "LinkedIn Banner Oluşturucu – 1584×396 Arka Plan, Ücretsiz",
+    "seoDescription": "Herhangi bir resimden 1584×396 LinkedIn profil banner’ı veya 1200×627 gönderi resmi yapın. Sürükleyerek konumlandırın. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["linkedin banner boyutu", "linkedin arka plan fotoğrafı boyutu", "linkedin banner oluşturma", "1584x396", "linkedin kapak fotoğrafı"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir resim bırakın ya da seçin." },
+      { "title": "Şeridi seçin", "description": "İstediğiniz kısım çerçeveye girene kadar yukarı aşağı sürükleyin." },
+      { "title": "İndirin", "description": "Kaydedin ve LinkedIn profilinize ekleyin." }
+    ],
+    "features": [
+      { "title": "Banner ve gönderi boyutları", "description": "Profil banner’ları için 1584 × 396, gönderiler için 1200 × 627." },
+      { "title": "Sürükleyin veya kaydırıcı kullanın", "description": "Resmi işaretçi, dokunma veya klavyeyle konumlandırın." },
+      { "title": "Gizli", "description": "Resminiz cihazınızdan çıkmaz." }
+    ],
+    "faqs": [
+      { "question": "LinkedIn banner’ı kaç boyutta?", "answer": "Kişisel profil için 1584 × 396 piksel, yani 4:1 şeklinde." },
+      { "question": "Profil fotoğrafım neyi kapatır?", "answer": "Banner’ın sol altıyla çakışır, bu yüzden oraya yazı veya yüz koymaktan kaçının." },
+      { "question": "Bu, şirket sayfalarında işe yarar mı?", "answer": "Şirket sayfaları farklı bir şekil kullanır, bu yüzden bu banner orada kırpılır." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Pinterest Pin Boyutlandırma",
+    "shortName": "Pinterest Pin",
+    "tagline": "Bir resmi Pinterest’in uzun 1000 × 1500 pin şekline getirin. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Pinterest Pin Boyutlandırma, bir resmi Pinterest’in pinler için önerdiği uzun 2:3 şeklinde 1000 × 1500 yapar. Çerçeveyi doldurmak için kırpıp sürükleyerek görünecek yeri seçin ya da geniş bir fotoğrafı bulanık veya renkli bir arka planda bütün olarak tutun.",
+    "seoTitle": "Pinterest Pin Boyutu Ayarlama – 1000×1500, Ücretsiz",
+    "seoDescription": "Resimleri Pinterest pinleri için 1000×1500 boyutuna getirin. Doldurmak için kırpın ya da resmin tamamını bir arka planda tutun. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["pinterest pin boyutu", "pinterest resim boyutu", "pinterest için resim boyutlandırma", "1000x1500", "pinterest pin oluşturma"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir fotoğraf veya grafik bırakın ya da seçin." },
+      { "title": "Sığdırın", "description": "Çerçeveyi doldurup sürükleyin ya da resmin tamamını bir arka planda gösterin." },
+      { "title": "İndirin", "description": "1000 × 1500 dosyayı kaydedin ve pinleyin." }
+    ],
+    "features": [
+      { "title": "Önerilen şekil", "description": "1000 × 1500 piksel, 2:3 şeklinde." },
+      { "title": "Geniş fotoğraflar bütün kalsın", "description": "Tamamını kendisinin bulanık bir kopyası ya da bir renk üzerinde gösterin." },
+      { "title": "Gizli", "description": "Resminiz cihazınızda işlenir." }
+    ],
+    "faqs": [
+      { "question": "Pinterest pini kaç boyutta olmalı?", "answer": "Pinterest, 1000 × 1500 piksel gibi 2:3 bir şekil önerir." },
+      { "question": "Yatay bir fotoğraf kullanabilir miyim?", "answer": "Evet. Fotoğrafın tamamını tutmak için “Tümünü göster” seçeneğini seçin ya da çerçeveyi doldurup tutulacak kısmı belirleyin." },
+      { "question": "Resmim yükleniyor mu?", "answer": "Hayır. Cihazınızda kalır." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Open Graph Resmi Oluşturucu",
+    "shortName": "Open Graph Resmi",
+    "tagline": "Bir bağlantı paylaşıldığında gösterilen 1200 × 630 resmi yapın. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Open Graph Resmi Oluşturucu, biri sayfanızı sosyal medyada veya bir sohbet uygulamasında paylaştığında görünen resmi hazırlar. Herhangi bir resmi yaygın olarak kullanılan 1200 × 630 boyutuna getirir. Resim sitenize yüklendikten sonra sayfanızın og:image etiketini ona yönlendirin.",
+    "seoTitle": "Open Graph Resmi Oluşturucu – 1200×630 og:image",
+    "seoDescription": "Sosyal medya ve sohbet uygulamalarındaki bağlantı önizlemeleri için 1200×630 Open Graph resmi yapın. Sürükleyin, indirin. Ücretsiz, kayıtsız, yüklemesiz.",
+    "keywords": ["open graph resim boyutu", "og resim oluşturucu", "og:image boyutu", "1200x630", "bağlantı önizleme resmi"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir resim veya grafik bırakın ya da seçin." },
+      { "title": "Konumlandırın", "description": "Doğru görünene kadar sürükleyin ve yakınlaştırın." },
+      { "title": "İndirip bağlayın", "description": "Dosyayı sitenize yükleyin ve sayfanızın og:image değeri olarak ayarlayın." }
+    ],
+    "features": [
+      { "title": "Yaygın önizleme boyutu", "description": "Büyük ağların ve sohbet uygulamalarının kullandığı 1200 × 630 piksel." },
+      { "title": "Küçük dosyalar", "description": "Verimli kodlayıcılarla kaydedilir, böylece önizlemeler hızlı yüklenir." },
+      { "title": "Gizli", "description": "Resminiz asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "Open Graph resmi nedir?", "answer": "Sayfanızın bağlantısı paylaşıldığında önizleme kartında gösterilen resimdir. Sayfanın HTML’indeki og:image etiketiyle ayarlanır." },
+      { "question": "Kaç boyutta olmalı?", "answer": "Yaygın tercih 1200 × 630 pikseldir, yaklaşık 1,91:1 bir şekildir." },
+      { "question": "Dosyayı nasıl kullanırım?", "answer": "Web sitenize yükleyin ve sayfanıza <meta property=\"og:image\" content=\"resmin tam URL'si\"> ekleyin." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Pikselden İnçe Çevirme",
+    "shortName": "Piksel → İnç",
+    "tagline": "Pikselleri istediğiniz DPI değerinde inçe çevirin. Ücretsiz, kurulum gerektirmez.",
+    "intro": "Pikselden İnçe Çevirme, belirli sayıda pikselin inç olarak ne kadar ettiğini söyler. Pikselin sabit bir boyutu yoktur, bu yüzden sonuç inç başına piksel sayısı olan DPI’ya bağlıdır: pikselleri DPI’ya bölün. Herhangi bir kutuya değer yazın, santimetre ve milimetre dahil diğerleri de güncellensin.",
+    "seoTitle": "Piksel İnç Çevirici – Her DPI, Ücretsiz",
+    "seoDescription": "Pikselleri 72, 96, 150, 300 veya istediğiniz DPI’da inçe çevirin; santimetre ve milimetre de dahil. Ücretsiz, anında, kayıtsız.",
+    "keywords": ["piksel inç çevirme", "px inç çevirme", "pikseli inçe çevirme", "1000 piksel kaç inç", "piksel inç 300 dpi"],
+    "howToSteps": [
+      { "title": "Pikselleri girin", "description": "Piksel sayısını yazın." },
+      { "title": "Bir DPI seçin", "description": "Yaygın bir değer seçin veya kendiniz yazın." },
+      { "title": "Sonucu okuyun", "description": "İnç, santimetre ve milimetreyi hemen görün." }
+    ],
+    "features": [
+      { "title": "Her yönde çalışır", "description": "Herhangi bir kutuya yazın, diğerleri güncellensin." },
+      { "title": "Her DPI", "description": "Yaygın değerler bir dokunuş uzağınızda ya da kendiniz yazın." },
+      { "title": "Kullanışlı tablo", "description": "Seçtiğiniz DPI’da yaygın değerler." }
+    ],
+    "faqs": [
+      { "question": "Pikseli inçe nasıl çeviririm?", "answer": "Pikselleri DPI’ya bölün. Örneğin 300 DPI’da 3000 piksel, 3000 ÷ 300 = 10 inçtir." },
+      { "question": "Bir inçte kaç piksel vardır?", "answer": "DPI kadar: 96 DPI’da 96, 300 DPI’da 300. Pikselin sabit bir fiziksel boyutu yoktur." },
+      { "question": "Hangi DPI’yı kullanmalıyım?", "answer": "Kaliteli baskılar için 300, günlük baskılar için 150 kullanın. Ekranlarda web için genellikle 96 varsayılır; 72 ise eski bir alışkanlıktır." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "İnçten Piksele Çevirme",
+    "shortName": "İnç → Piksel",
+    "tagline": "Bir baskı boyutunun istediğiniz DPI’da kaç piksel gerektirdiğini bulun. Ücretsiz, kurulum gerektirmez.",
+    "intro": "İnçten Piksele Çevirme, inç olarak bir boyutu doldurmak için kaç piksel gerektiğini söyler. İnçleri DPI ile çarpın: 300 DPI’da 6 inçlik bir baskı 1800 piksel gerektirir. Bir fotoğrafın baskı için yeterince büyük olup olmadığını kontrol etmek ve bir belgeyi doğru boyutta hazırlamak için kullanışlıdır.",
+    "seoTitle": "İnç Piksel Çevirici – Her DPI, Ücretsiz",
+    "seoDescription": "İnçleri 72, 96, 150, 300 veya istediğiniz DPI’da piksele çevirin ve bir baskının kaç piksel gerektirdiğini görün. Ücretsiz, anında, kayıtsız.",
+    "keywords": ["inç piksel çevirme", "inç px çevirme", "inçi piksele çevirme", "8 inç kaç piksel", "inç piksel 300 dpi"],
+    "howToSteps": [
+      { "title": "İnçleri girin", "description": "Boyutu inç olarak yazın." },
+      { "title": "Bir DPI seçin", "description": "Kaliteli baskılar için 300 ya da kendi değerinizi yazın." },
+      { "title": "Pikselleri okuyun", "description": "Gereken pikselleri, ayrıca santimetre ve milimetreyi görün." }
+    ],
+    "features": [
+      { "title": "Baskı planlama", "description": "Bir baskının kaç piksel gerektirdiğini hemen görün." },
+      { "title": "Her yönde çalışır", "description": "Herhangi bir kutuya yazın, diğerleri güncellensin." },
+      { "title": "Kullanışlı tablo", "description": "Seçtiğiniz DPI’da yaygın boyutlar." }
+    ],
+    "faqs": [
+      { "question": "İnci piksele nasıl çeviririm?", "answer": "İnçleri DPI ile çarpın. Örneğin 300 DPI’da 8 inç, 8 × 300 = 2400 pikseldir." },
+      { "question": "4 × 6 fotoğraf için kaç piksel gerekir?", "answer": "300 DPI’da 1200 × 1800 piksel." },
+      { "question": "Fotoğrafımda daha az piksel varsa ne olur?", "answer": "Yine de basılabilir, ancak daha düşük DPI’da olur ve daha az net görünebilir. Yaklaşık 150 DPI’nın altında yumuşaklık yakından genellikle fark edilir." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Pikselden CM’ye Çevirme",
+    "shortName": "Piksel → CM",
+    "tagline": "Pikselleri istediğiniz DPI’da santimetreye çevirin. Ücretsiz, kurulum gerektirmez.",
+    "intro": "Pikselden CM’ye Çevirme, belirli sayıda pikselin santimetre olarak ne kadar ettiğini söyler. Pikselleri DPI’ya bölün, sonra 2,54 ile çarpın; çünkü bir inç 2,54 cm’dir. Herhangi bir kutuya değer yazın, inç ve milimetre de güncellensin.",
+    "seoTitle": "Piksel CM Çevirici – Her DPI, Ücretsiz",
+    "seoDescription": "Pikselleri 72, 96, 150, 300 veya istediğiniz DPI’da santimetreye çevirin; inç ve milimetre de dahil. Ücretsiz, anında, kayıtsız.",
+    "keywords": ["piksel cm çevirme", "px cm çevirme", "pikseli santimetreye çevirme", "piksel cm 300 dpi", "1000 piksel kaç cm"],
+    "howToSteps": [
+      { "title": "Pikselleri girin", "description": "Piksel sayısını yazın." },
+      { "title": "Bir DPI seçin", "description": "Yaygın bir değer seçin veya kendiniz yazın." },
+      { "title": "Sonucu okuyun", "description": "Santimetre, inç ve milimetreyi hemen görün." }
+    ],
+    "features": [
+      { "title": "Her yönde çalışır", "description": "Herhangi bir kutuya yazın, diğerleri güncellensin." },
+      { "title": "Her DPI", "description": "Yaygın değerler bir dokunuş uzağınızda ya da kendiniz yazın." },
+      { "title": "Kullanışlı tablo", "description": "Seçtiğiniz DPI’da yaygın değerler." }
+    ],
+    "faqs": [
+      { "question": "Pikseli santimetreye nasıl çeviririm?", "answer": "Santimetre = piksel ÷ DPI × 2,54. Örneğin 300 DPI’da 1000 piksel yaklaşık 8,47 cm’dir." },
+      { "question": "Bir santimetrede kaç piksel vardır?", "answer": "DPI ÷ 2,54. Bu, 300 DPI’da cm başına yaklaşık 118 piksel, 96 DPI’da ise yaklaşık 38 piksel eder." },
+      { "question": "Neden DPI gerekiyor?", "answer": "Pikselin sabit bir boyutu yoktur. DPI, basıldığında veya görüntülendiğinde her inçe kaç piksel sığdığını belirtir." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "CM’den Piksele Çevirme",
+    "shortName": "CM → Piksel",
+    "tagline": "Santimetre cinsinden bir boyutun istediğiniz DPI’da kaç piksel gerektirdiğini bulun. Ücretsiz, kurulum gerektirmez.",
+    "intro": "CM’den Piksele Çevirme, santimetre olarak bir boyutu kaç pikselin doldurduğunu söyler. İnç için 2,54’e bölün, sonra DPI ile çarpın: 300 DPI’da 10 cm yaklaşık 1181 pikseldir. Bir form veya matbaa boyutları santimetre olarak verdiğinde işe yarar.",
+    "seoTitle": "CM Piksel Çevirici – Her DPI, Ücretsiz",
+    "seoDescription": "Santimetreyi 72, 96, 150, 300 veya istediğiniz DPI’da piksele çevirin ve bir baskının kaç piksel gerektirdiğini görün. Ücretsiz, anında, kayıtsız.",
+    "keywords": ["cm piksel çevirme", "cm px çevirme", "santimetreyi piksele çevirme", "cm piksel 300 dpi", "10 cm kaç piksel"],
+    "howToSteps": [
+      { "title": "Santimetreyi girin", "description": "Boyutu santimetre olarak yazın." },
+      { "title": "Bir DPI seçin", "description": "Kaliteli baskılar için 300 ya da kendi değerinizi yazın." },
+      { "title": "Pikselleri okuyun", "description": "Gereken pikselleri, ayrıca inç ve milimetreyi görün." }
+    ],
+    "features": [
+      { "title": "Baskı planlama", "description": "Bir boyutun kaç piksel gerektirdiğini hemen görün." },
+      { "title": "Her yönde çalışır", "description": "Herhangi bir kutuya yazın, diğerleri güncellensin." },
+      { "title": "Kullanışlı tablo", "description": "Seçtiğiniz DPI’da A4 genişlikleri dahil yaygın boyutlar." }
+    ],
+    "faqs": [
+      { "question": "Santimetreyi piksele nasıl çeviririm?", "answer": "Piksel = cm ÷ 2,54 × DPI. Örneğin 300 DPI’da 21 cm yaklaşık 2480 pikseldir." },
+      { "question": "300 DPI’da A4 kaç pikseldir?", "answer": "A4, 21 × 29,7 cm’dir; bu da 300 DPI’da yaklaşık 2480 × 3508 piksel eder." },
+      { "question": "Bir form 3,5 × 4,5 cm isterse ne yapmalıyım?", "answer": "300 DPI’da bu yaklaşık 413 × 531 pikseldir. Vesikalık Fotoğraf Oluşturucu bunu sizin için yapabilir." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Çözünürlük Hesaplayıcı",
+    "shortName": "Çözünürlük",
+    "tagline": "Bir resmin her DPI’da ne kadar büyük basılacağını, megapikselini ve en boy oranını görün. Ücretsiz, kurulum gerektirmez.",
+    "intro": "Çözünürlük Hesaplayıcı, “bunu ne kadar büyük basabilirim?” sorusunu yanıtlar. Bir resmin piksel olarak genişliğini ve yüksekliğini girin; her yaygın DPI’daki baskı boyutunu, megapikselini ve en boy oranını görün. Kabaca, 300 DPI elde tutulduğunda net görünür; uzaktan bakılan büyük posterlerde ise daha azı yeterli olabilir.",
+    "seoTitle": "Resim Çözünürlüğü Hesaplama – Baskı Boyutu, DPI, Ücretsiz",
+    "seoDescription": "Bir resmin piksel boyutunu girin; her DPI’daki baskı boyutunu, megapikselini ve en boy oranını görün. Ücretsiz, anında, kayıtsız.",
+    "keywords": ["resim çözünürlüğü hesaplama", "baskı boyutu hesaplama", "dpi hesaplama", "ne kadar büyük basabilirim", "megapikselden baskı boyutu"],
+    "howToSteps": [
+      { "title": "Piksel boyutunu girin", "description": "Resmin genişliğini ve yüksekliğini piksel olarak yazın." },
+      { "title": "Bir DPI seçin", "description": "Hedeflediğiniz baskı kalitesini seçin." },
+      { "title": "Sonuçları okuyun", "description": "İnç ve santimetre olarak baskı boyutunu, megapikseli ve en boy oranını görün." }
+    ],
+    "features": [
+      { "title": "Her DPI’da baskı boyutu", "description": "72’den 600 DPI’ya kadar inç ve santimetre olarak bir tablo." },
+      { "title": "Megapiksel ve şekil", "description": "Megapiksel sayısını ve 4:3 veya 16:9 gibi en boy oranını görün." },
+      { "title": "Yüklenecek bir şey yok", "description": "Yalnızca sayılar yeterli." }
+    ],
+    "faqs": [
+      { "question": "12 megapiksellik bir fotoğrafı ne kadar büyük basabilirim?", "answer": "4000 × 3000 bir fotoğraf 300 DPI’da yaklaşık 13,3 × 10 inç (34 × 25 cm) basılır." },
+      { "question": "Baskı için kaç DPI gerekir?", "answer": "Yakından bakılan fotoğraflar için genel hedef 300 DPI’dır. Birçok günlük baskı için 150 DPI yeterlidir, uzaktan bakılan büyük posterlerde daha da düşük olabilir." },
+      { "question": "Resmimin piksel boyutunu nerede bulurum?", "answer": "Bilgisayarınızın dosya özelliklerinde ya da bu sitedeki Resim Analiz Aracı ile." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Renk Körlüğü Simülatörü",
+    "shortName": "Renk Körlüğü",
+    "tagline": "Bir resmin, grafiğin veya tasarımın her renk körlüğü türünde nasıl göründüğünü görün. Ücretsizdir ve cihazınızda çalışır.",
+    "intro": "Renk Körlüğü Simülatörü, bir resmin renk görme eksikliği olan kişilere nasıl görünebileceğini gösterir; bu durum yaklaşık 12 erkekten 1’ini ve 200 kadından 1’ini etkiler. Kırmızı ile yeşil veya mavi ile sarı zor ayırt edildiğinde grafiklerin, haritaların, düğmelerin ve tasarımların hâlâ anlaşılır olup olmadığını kontrol etmek için kullanın. Yayımlanmış bilimsel bir modele dayanır ve yedi türü kapsar.",
+    "seoTitle": "Renk Körlüğü Simülatörü – Resimleri Test Edin, Ücretsiz",
+    "seoDescription": "Bir resmin döteranopi, protanopi, tritanopi ve diğer renk körlüğü türlerinde nasıl göründüğünü görün. Ücretsiz, kayıtsız, resminiz yüklenmez.",
+    "keywords": ["renk körlüğü simülatörü", "renk körü testi resim", "döteranopi simülatörü", "protanopi simülatörü", "tasarım renk körlüğü kontrolü"],
+    "howToSteps": [
+      { "title": "Resminizi ekleyin", "description": "Bir grafik, ekran görüntüsü, tasarım veya fotoğraf bırakın ya da seçin." },
+      { "title": "Bir tür seçin", "description": "Türler arasında geçiş yapın, karşılaştırmak için orijinale dönün." },
+      { "title": "İsterseniz indirin", "description": "Simüle edilen resmi ekibinizle paylaşmak için PNG olarak kaydedin." }
+    ],
+    "features": [
+      { "title": "Yedi tür", "description": "Kırmızı, yeşil ve mavide zayıflık ve yokluk, ayrıca hiç renk görmeme." },
+      { "title": "Araştırmaya dayalı", "description": "Machado, Oliveira ve Fernandes (2009) modelini kullanır." },
+      { "title": "Gizli", "description": "Resminiz cihazınızda işlenir ve asla yüklenmez." }
+    ],
+    "faqs": [
+      { "question": "En yaygın tür hangisi?", "answer": "Yeşile duyarlılığın azaldığı döteranomali, açık ara en yaygın olanıdır." },
+      { "question": "Renk körü bir kişinin gördüğü tam olarak bu mu?", "answer": "Yakın bir tahmindir. Renk görme kişiden kişiye değişir ve şiddeti farklıdır; bu yüzden bir rehber olarak görün ve önemli olduğunda gerçek kullanıcılarla test edin." },
+      { "question": "Bu bir renk körlüğü testi mi?", "answer": "Hayır. Resimlerin nasıl görünebileceğini gösterir; teşhis koyamaz. Renk görmenizi bir göz sağlığı uzmanı test edebilir." },
+      { "question": "Tasarımımı herkes için nasıl uygun hale getiririm?", "answer": "Yalnızca renge güvenmeyin. Etiketler, desenler veya simgeler ekleyin ve yalnızca tonu değil açıklığı da farklı renkler seçin." }
+    ]
+  },
 };

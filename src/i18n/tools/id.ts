@@ -8437,4 +8437,367 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  // Social media sizes, print calculators, color blindness simulator
+"social-media-image-resizer": {
+    "name": "Ubah Ukuran Gambar Media Sosial",
+    "shortName": "Media Sosial",
+    "tagline": "Ubah ukuran gambar untuk Instagram, YouTube, Facebook, LinkedIn, Pinterest, X, dan TikTok. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ubah Ukuran Gambar Media Sosial memberi satu gambar ukuran persis yang diminta tiap jaringan. Pilih ukuran dari daftar, seret gambar sampai bagian yang tepat masuk bingkai, lalu unduh. Jika gambar tidak cocok dengan bentuknya, tampilkan semuanya di atas salinan buram gambar itu atau warna pilihan Anda. Gambar tetap di perangkat Anda.",
+    "seoTitle": "Ubah Ukuran Gambar untuk Media Sosial – Gratis",
+    "seoDescription": "Ubah ukuran gambar untuk Instagram, YouTube, Facebook, LinkedIn, Pinterest, X, dan TikTok. Seret untuk mengatur posisi, lalu unduh. Gratis, tanpa unggah.",
+    "keywords": ["ubah ukuran gambar media sosial", "ukuran gambar untuk media sosial", "ukuran foto media sosial", "ukuran gambar instagram facebook", "resize foto untuk sosmed"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih JPG, PNG, WebP, HEIC, atau TIFF." },
+      { "title": "Pilih ukuran dan atur posisi", "description": "Pilih jaringan dan format, lalu seret gambar atau gunakan penggeser." },
+      { "title": "Unduh", "description": "Simpan sebagai JPG, PNG, atau WebP tepat pada ukuran itu." }
+    ],
+    "features": [
+      { "title": "14 ukuran siap pakai", "description": "Post, story, thumbnail, banner, dan sampul untuk jaringan utama." },
+      { "title": "Isi atau tampilkan semua", "description": "Potong untuk mengisi bingkai, atau pertahankan seluruh gambar di atas latar buram atau berwarna." },
+      { "title": "Privat", "description": "Semuanya berlangsung di browser Anda. Gambar tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Apakah ini ukuran terbaru?", "answer": "Ini ukuran yang dipublikasikan jaringan tersebut, sejauh yang kami tahu. Jaringan mengubahnya dari waktu ke waktu, jadi jika hasil unggahan terlihat salah, periksa halaman bantuan jaringan itu." },
+      { "question": "Apakah kualitas gambar saya akan turun?", "answer": "Memperkecil gambar menjaga ketajamannya. Jika gambar lebih kecil dari ukuran yang dipilih, gambar harus diperbesar dan mungkin terlihat kurang tajam; alat ini memberi tahu Anda saat itu terjadi." },
+      { "question": "Apa fungsi “Tampilkan semua”?", "answer": "Fitur ini memuat seluruh gambar di dalam bingkai dan mengisi ruang di sekitarnya dengan salinan buram gambar itu atau warna pilihan Anda, jadi tidak ada yang terpotong." },
+      { "question": "Apakah gambar saya diunggah?", "answer": "Tidak. Gambar diproses di perangkat Anda dan tetap di sana." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Ubah Ukuran Post Instagram",
+    "shortName": "Post Instagram",
+    "tagline": "Sesuaikan gambar dengan ukuran post Instagram persegi, potret, atau lanskap. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ubah Ukuran Post Instagram membuat gambar berbentuk tepat sebelum Anda mempostingnya, jadi Instagram tidak memotongnya untuk Anda. Pilih persegi (1080 × 1080), potret (1080 × 1350), atau lanskap (1080 × 566), lalu seret gambar sampai bagian yang penting masuk bingkai. Untuk memposting foto lebar tanpa dipotong, tampilkan semuanya di atas latar buram.",
+    "seoTitle": "Ubah Ukuran Post Instagram – Persegi, Potret, Gratis",
+    "seoDescription": "Ubah ukuran foto untuk post Instagram: persegi 1080×1080, potret 1080×1350, atau lanskap. Seret dan hindari potongan tak terduga. Gratis, tanpa unggah.",
+    "keywords": ["ukuran post instagram", "ubah ukuran gambar untuk instagram", "resize foto instagram", "instagram 1080x1350", "foto utuh di instagram"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih foto yang ingin Anda posting." },
+      { "title": "Pilih bentuknya", "description": "Pilih persegi, potret, atau lanskap, lalu seret foto ke posisinya." },
+      { "title": "Unduh dan posting", "description": "Simpan lalu unggah ke Instagram seperti biasa." }
+    ],
+    "features": [
+      { "title": "Tiga bentuk post", "description": "Persegi, potret 4:5, dan lanskap, dengan lebar 1080 piksel." },
+      { "title": "Tanpa potongan paksa", "description": "Tampilkan seluruh foto di atas latar buram atau berwarna jika Anda tidak ingin kehilangan bagian mana pun." },
+      { "title": "Privat", "description": "Foto diproses di perangkat Anda dan tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran post Instagram yang tepat?", "answer": "Lebar 1080 piksel. Potret 1080 × 1350 memakan ruang terbanyak di feed, persegi 1080 × 1080, dan lanskap 1080 × 566." },
+      { "question": "Bagaimana cara memposting foto utuh tanpa dipotong?", "answer": "Pilih “Tampilkan semua”. Seluruh foto berada di dalam bingkai, di atas salinan buram foto itu atau warna pilihan Anda." },
+      { "question": "Format apa yang sebaiknya dipilih?", "answer": "JPG cocok untuk foto. PNG cocok untuk grafis dengan teks, meskipun ukuran filenya lebih besar." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Ubah Ukuran Story Instagram",
+    "shortName": "Story Instagram",
+    "tagline": "Jadikan gambar berukuran 1080 × 1920 untuk Stories, Reels, dan TikTok. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ubah Ukuran Story Instagram mengubah gambar apa pun menjadi bentuk tinggi 1080 × 1920 yang dipakai Stories, Reels, dan TikTok. Panduan putus-putus menunjukkan letak tombol dan keterangan aplikasi, jadi Anda bisa menjauhkan wajah dan teks dari sana. Foto lebar bisa tetap utuh di atas salinan buramnya sendiri, bukan dipotong.",
+    "seoTitle": "Ukuran Story Instagram – 1080×1920, Gratis",
+    "seoDescription": "Ubah ukuran gambar apa pun ke 1080×1920 untuk Instagram Stories, Reels, dan TikTok, dengan panduan area aman. Gratis, tanpa daftar, gambar Anda tidak diunggah.",
+    "keywords": ["ukuran story instagram", "ubah ukuran gambar untuk story instagram", "gambar 1080x1920", "ukuran cover reels", "ukuran gambar tiktok"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih foto atau grafis." },
+      { "title": "Atur posisinya", "description": "Seret ke posisinya, dan jaga hal penting tetap di dalam area aman putus-putus." },
+      { "title": "Unduh", "description": "Simpan pada 1080 × 1920, siap ditambahkan ke story Anda." }
+    ],
+    "features": [
+      { "title": "Panduan area aman", "description": "Menunjukkan bagian yang tertutup tombol dan keterangan aplikasi. Panduan ini tidak ikut tersimpan di gambar." },
+      { "title": "Latar buram", "description": "Foto lebar muat utuh, dengan salinan buramnya mengisi sisanya." },
+      { "title": "Privat", "description": "Gambar tetap di perangkat Anda." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran Story Instagram?", "answer": "1080 × 1920 piksel, berbentuk 9:16. Reels dan TikTok memakai bentuk yang sama." },
+      { "question": "Apa itu area aman?", "answer": "Bagian tengah bingkai. Sekitar 250 piksel di atas dan bawah bisa tertutup nama profil, tombol, dan keterangan, jadi hindari menaruh teks di sana." },
+      { "question": "Apakah kotak putus-putus akan muncul di gambar saya?", "answer": "Tidak. Kotak itu hanya muncul di pratinjau dan tidak pernah disimpan." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "Pembuat Thumbnail YouTube",
+    "shortName": "Thumbnail YouTube",
+    "tagline": "Ubah gambar menjadi thumbnail YouTube 1280 × 720 di bawah batas 2 MB. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Thumbnail YouTube menyesuaikan gambar ke ukuran 1280 × 720 yang disarankan YouTube dan menjaga file di bawah batas unggah 2 MB, dengan menurunkan kualitas hanya seperlunya. Seret gambar untuk membingkainya, perbesar bagian yang penting, lalu unduh. Untuk menambahkan teks lebih dulu, gunakan Tambah Teks ke Gambar.",
+    "seoTitle": "Buat Thumbnail YouTube – 1280×720, di Bawah 2 MB, Gratis",
+    "seoDescription": "Buat thumbnail YouTube 1280×720 dari gambar apa pun, di bawah batas 2 MB. Seret untuk membingkai, zoom, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
+    "keywords": ["buat thumbnail youtube", "ukuran thumbnail youtube", "thumbnail 1280x720", "ubah ukuran gambar untuk thumbnail youtube", "thumbnail youtube 2mb"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih screenshot atau foto." },
+      { "title": "Bingkai gambarnya", "description": "Seret dan zoom sampai subjek mengisi bingkai." },
+      { "title": "Unduh", "description": "Simpan file 1280 × 720 dan unggah di YouTube Studio." }
+    ],
+    "features": [
+      { "title": "Ukuran yang tepat", "description": "1280 × 720 piksel, bentuk 16:9 yang disarankan YouTube." },
+      { "title": "Di bawah batas unggah", "description": "File JPG dan WebP otomatis dijaga di bawah 2 MB." },
+      { "title": "Privat", "description": "Gambar diproses di perangkat Anda dan tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran thumbnail YouTube?", "answer": "YouTube menyarankan 1280 × 720 piksel, berbentuk 16:9, dengan ukuran file di bawah 2 MB." },
+      { "question": "Bisakah saya menambahkan teks ke thumbnail?", "answer": "Tidak di alat ini. Gunakan Tambah Teks ke Gambar pada thumbnail yang sudah diunduh, lalu unggah hasilnya." },
+      { "question": "Mengapa kualitasnya diturunkan?", "answer": "Jika file akan melebihi 2 MB, kualitas diturunkan seperlunya agar muat. Sebagian besar thumbnail jauh di bawah batas itu pada kualitas tinggi." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "Pembuat Banner YouTube",
+    "shortName": "Banner YouTube",
+    "tagline": "Buat banner channel YouTube 2560 × 1440, dengan panduan bagian yang ditampilkan tiap perangkat. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Banner YouTube menyesuaikan gambar ke ukuran 2560 × 1440 yang disarankan YouTube untuk banner channel. Ponsel dan komputer hanya menampilkan satu jalur di tengah, sedangkan TV menampilkan semuanya, jadi panduan putus-putus menandai jalur yang selalu terlihat. Letakkan nama dan logo Anda di dalamnya. File dijaga di bawah batas 6 MB dari YouTube.",
+    "seoTitle": "Buat Banner YouTube – 2560×1440, Area Aman, Gratis",
+    "seoDescription": "Buat banner channel YouTube 2560×1440 dengan panduan area aman yang menunjukkan tampilan di ponsel dan komputer. Gratis, tanpa daftar, tanpa unggah.",
+    "keywords": ["buat banner youtube", "ukuran banner youtube", "ukuran gambar channel youtube", "banner 2560x1440", "area aman banner youtube"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Pilih gambar lebar beresolusi tinggi." },
+      { "title": "Atur posisinya", "description": "Seret agar bagian penting berada di dalam jalur putus-putus." },
+      { "title": "Unduh", "description": "Simpan lalu unggah di bagian Penyesuaian di YouTube Studio." }
+    ],
+    "features": [
+      { "title": "Panduan area aman", "description": "Menandai jalur 1546 × 423 yang ditampilkan semua perangkat. Panduan ini tidak ikut tersimpan di gambar." },
+      { "title": "Di bawah batas unggah", "description": "File JPG dan WebP otomatis dijaga di bawah 6 MB." },
+      { "title": "Privat", "description": "Gambar tetap di perangkat Anda." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran banner YouTube?", "answer": "YouTube menyarankan 2560 × 1440 piksel. Area yang aman di semua perangkat adalah 1546 × 423 piksel di bagian tengah." },
+      { "question": "Mengapa banner saya terpotong di ponsel?", "answer": "Tiap perangkat menampilkan bagian yang berbeda. Ponsel dan komputer hanya menampilkan jalur tengah, jadi letakkan teks dan logo di sana." },
+      { "question": "Gambar saya terlihat kurang tajam. Mengapa?", "answer": "Lebar 2560 piksel itu besar, dan gambar yang lebih kecil harus diperbesar. Mulailah dari gambar beresolusi tertinggi yang Anda miliki." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Pembuat Sampul Facebook",
+    "shortName": "Sampul Facebook",
+    "tagline": "Buat gambar berbentuk tepat untuk sampul atau post Facebook. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Sampul Facebook menyesuaikan gambar ke bentuk lebar 851 × 315 untuk sampul Facebook. Ponsel memotong sisi sampul, jadi panduan putus-putus menunjukkan bagian yang dilihat semua orang. Tersedia juga ukuran 1200 × 630 untuk post link dan gambar. Seret gambar sampai posisinya pas, lalu unduh.",
+    "seoTitle": "Buat Sampul Facebook – 851×315, Gratis",
+    "seoDescription": "Ubah ukuran gambar untuk sampul (851×315) atau post (1200×630) Facebook, dengan panduan bagian yang dipotong ponsel. Gratis, tanpa daftar, tanpa unggah.",
+    "keywords": ["ukuran foto sampul facebook", "buat sampul facebook", "ubah ukuran gambar untuk sampul facebook", "851x315", "ukuran gambar post facebook"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih gambar lebar." },
+      { "title": "Pilih dan atur posisi", "description": "Pilih sampul atau post, lalu seret gambar ke posisinya." },
+      { "title": "Unduh", "description": "Simpan lalu unggah ke profil atau halaman Anda." }
+    ],
+    "features": [
+      { "title": "Panduan ponsel", "description": "Kotak putus-putus menunjukkan bagian sampul yang dipertahankan ponsel." },
+      { "title": "Ukuran sampul dan post", "description": "851 × 315 untuk sampul dan 1200 × 630 untuk post." },
+      { "title": "Privat", "description": "Gambar tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran foto sampul Facebook?", "answer": "Facebook menampilkan sampul halaman pada 820 × 312 piksel di komputer; 851 × 315 adalah ukuran yang umum diunggah. Ponsel menampilkan potongan bagian tengah yang lebih sempit." },
+      { "question": "Mengapa sampul saya terlihat berbeda di ponsel?", "answer": "Ponsel memotong sisi kiri dan kanan. Letakkan wajah dan teks di dalam panduan putus-putus." },
+      { "question": "Format mana yang terbaik?", "answer": "JPG untuk foto. PNG membuat logo dan teks lebih tajam." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "Pembuat Banner LinkedIn",
+    "shortName": "Banner LinkedIn",
+    "tagline": "Buat banner profil LinkedIn 1584 × 396 dari gambar apa pun. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Banner LinkedIn memotong gambar ke bentuk sangat lebar 1584 × 396 untuk banner profil LinkedIn. Seret gambar ke atas dan ke bawah untuk memilih jalur yang Anda inginkan, dan zoom jika perlu. Tersedia juga ukuran 1200 × 627 untuk post link dan gambar. Foto profil menutupi sebagian kiri bawah banner, jadi jauhkan detail penting dari sana.",
+    "seoTitle": "Buat Banner LinkedIn – 1584×396, Gratis",
+    "seoDescription": "Buat banner profil LinkedIn 1584×396 atau gambar post 1200×627 dari gambar apa pun. Seret untuk mengatur posisi. Gratis, tanpa daftar, tanpa unggah.",
+    "keywords": ["ukuran banner linkedin", "ukuran foto latar linkedin", "buat banner linkedin", "1584x396", "gambar sampul linkedin"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih gambar." },
+      { "title": "Pilih jalurnya", "description": "Seret ke atas dan ke bawah sampai bagian yang Anda inginkan masuk bingkai." },
+      { "title": "Unduh", "description": "Simpan lalu tambahkan ke profil LinkedIn Anda." }
+    ],
+    "features": [
+      { "title": "Ukuran banner dan post", "description": "1584 × 396 untuk banner profil dan 1200 × 627 untuk post." },
+      { "title": "Seret atau gunakan penggeser", "description": "Atur posisi gambar dengan pointer, sentuhan, atau keyboard." },
+      { "title": "Privat", "description": "Gambar tetap di perangkat Anda." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran banner LinkedIn?", "answer": "1584 × 396 piksel untuk profil pribadi, berbentuk 4:1." },
+      { "question": "Bagian mana yang tertutup foto profil saya?", "answer": "Foto profil menimpa bagian kiri bawah banner, jadi hindari menaruh teks atau wajah di sana." },
+      { "question": "Apakah ini berlaku untuk halaman perusahaan?", "answer": "Halaman perusahaan memakai bentuk yang berbeda, jadi banner ini akan terpotong di sana." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Ubah Ukuran Pin Pinterest",
+    "shortName": "Pin Pinterest",
+    "tagline": "Ubah ukuran gambar ke bentuk tinggi 1000 × 1500 untuk pin Pinterest. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Ubah Ukuran Pin Pinterest membuat gambar berukuran 1000 × 1500, bentuk tinggi 2:3 yang disarankan Pinterest untuk pin. Potong untuk mengisi bingkai dan seret untuk memilih bagian yang tampil, atau pertahankan foto lebar tetap utuh di atas latar buram atau berwarna.",
+    "seoTitle": "Ukuran Pin Pinterest – 1000×1500, Gratis",
+    "seoDescription": "Ubah ukuran gambar ke 1000×1500 untuk pin Pinterest. Potong untuk mengisi atau pertahankan seluruh gambar di atas latar. Gratis, tanpa daftar, tanpa unggah.",
+    "keywords": ["ukuran pin pinterest", "ukuran gambar pinterest", "ubah ukuran gambar untuk pinterest", "1000x1500", "buat pin pinterest"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih foto atau grafis." },
+      { "title": "Sesuaikan", "description": "Isi bingkai lalu seret, atau tampilkan seluruh gambar di atas latar." },
+      { "title": "Unduh", "description": "Simpan file 1000 × 1500 dan pin." }
+    ],
+    "features": [
+      { "title": "Bentuk yang disarankan", "description": "1000 × 1500 piksel, berbentuk 2:3." },
+      { "title": "Foto lebar tetap utuh", "description": "Tampilkan semuanya di atas salinan buramnya atau warna." },
+      { "title": "Privat", "description": "Gambar diproses di perangkat Anda." }
+    ],
+    "faqs": [
+      { "question": "Berapa ukuran pin Pinterest yang tepat?", "answer": "Pinterest menyarankan bentuk 2:3, misalnya 1000 × 1500 piksel." },
+      { "question": "Bisakah saya memakai foto lanskap?", "answer": "Bisa. Pilih “Tampilkan semua” untuk mempertahankan seluruh foto, atau isi bingkai dan pilih bagian yang ingin disimpan." },
+      { "question": "Apakah gambar saya diunggah?", "answer": "Tidak. Gambar tetap di perangkat Anda." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Pembuat Gambar Open Graph",
+    "shortName": "Gambar Open Graph",
+    "tagline": "Buat gambar 1200 × 630 yang tampil saat link dibagikan. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Pembuat Gambar Open Graph menyiapkan gambar yang muncul saat seseorang membagikan halaman Anda di media sosial atau aplikasi chat. Alat ini menyesuaikan gambar apa pun ke ukuran 1200 × 630 yang banyak dipakai. Setelah gambar ada di situs Anda, arahkan tag og:image halaman Anda ke gambar itu.",
+    "seoTitle": "Buat Gambar Open Graph – 1200×630 og:image, Gratis",
+    "seoDescription": "Buat gambar Open Graph 1200×630 untuk pratinjau link di media sosial dan aplikasi chat. Seret untuk mengatur posisi, lalu unduh. Gratis, tanpa unggah.",
+    "keywords": ["ukuran gambar open graph", "generator gambar og", "ukuran og:image", "1200x630", "gambar pratinjau link"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih gambar atau grafis." },
+      { "title": "Atur posisinya", "description": "Seret dan zoom sampai terlihat pas." },
+      { "title": "Unduh dan tautkan", "description": "Unggah file ke situs Anda dan jadikan og:image halaman Anda." }
+    ],
+    "features": [
+      { "title": "Ukuran pratinjau yang umum", "description": "1200 × 630 piksel, dipakai jaringan utama dan aplikasi chat." },
+      { "title": "File kecil", "description": "Disimpan dengan encoder yang efisien, jadi pratinjau cepat dimuat." },
+      { "title": "Privat", "description": "Gambar tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Apa itu gambar Open Graph?", "answer": "Gambar yang tampil di kartu pratinjau saat link ke halaman Anda dibagikan. Anda mengaturnya dengan tag og:image di HTML halaman." },
+      { "question": "Berapa ukuran yang tepat?", "answer": "1200 × 630 piksel adalah pilihan umum, dengan bentuk sekitar 1,91:1." },
+      { "question": "Bagaimana cara memakai filenya?", "answer": "Unggah ke situs web Anda dan tambahkan <meta property=\"og:image\" content=\"the full URL of the image\"> ke halaman Anda." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Piksel ke Inci",
+    "shortName": "Piksel → Inci",
+    "tagline": "Konversi piksel ke inci pada DPI berapa pun. Gratis, tanpa perlu instal apa pun.",
+    "intro": "Piksel ke Inci memberi tahu berapa ukuran sejumlah piksel dalam inci. Piksel tidak punya ukuran tetap, jadi jawabannya bergantung pada DPI, yaitu jumlah piksel per inci: bagi piksel dengan DPI. Ketik nilai di kotak mana pun dan kotak lainnya ikut berubah, termasuk sentimeter dan milimeter.",
+    "seoTitle": "Konversi Piksel ke Inci – DPI Apa Pun, Gratis",
+    "seoDescription": "Konversi piksel ke inci pada 72, 96, 150, 300, atau DPI apa pun, juga ke sentimeter dan milimeter. Gratis, instan, tanpa daftar.",
+    "keywords": ["piksel ke inci", "px ke inci", "konversi piksel ke inci", "1000 piksel berapa inci", "piksel ke inci 300 dpi"],
+    "howToSteps": [
+      { "title": "Masukkan piksel", "description": "Ketik jumlah piksel." },
+      { "title": "Pilih DPI", "description": "Pilih nilai umum atau ketik nilai Anda sendiri." },
+      { "title": "Baca hasilnya", "description": "Lihat inci, sentimeter, dan milimeter secara langsung." }
+    ],
+    "features": [
+      { "title": "Berfungsi ke segala arah", "description": "Ketik di kotak mana pun dan kotak lainnya diperbarui." },
+      { "title": "DPI apa pun", "description": "Nilai umum tinggal diketuk, atau ketik nilai Anda sendiri." },
+      { "title": "Tabel praktis", "description": "Nilai umum pada DPI pilihan Anda." }
+    ],
+    "faqs": [
+      { "question": "Bagaimana cara mengonversi piksel ke inci?", "answer": "Bagi piksel dengan DPI. Misalnya, 3000 piksel pada 300 DPI adalah 3000 ÷ 300 = 10 inci." },
+      { "question": "Berapa piksel dalam satu inci?", "answer": "Sebanyak nilai DPI: 96 pada 96 DPI, 300 pada 300 DPI. Piksel tidak punya ukuran fisik yang tetap." },
+      { "question": "DPI berapa yang sebaiknya dipakai?", "answer": "Pakai 300 untuk cetakan berkualitas dan 150 untuk cetakan sehari-hari. Untuk layar, 96 adalah asumsi umum di web, dan 72 adalah kebiasaan lama." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "Inci ke Piksel",
+    "shortName": "Inci → Piksel",
+    "tagline": "Cari tahu berapa piksel yang dibutuhkan ukuran cetak pada DPI berapa pun. Gratis, tanpa perlu instal apa pun.",
+    "intro": "Inci ke Piksel memberi tahu berapa piksel yang Anda perlukan untuk mengisi ukuran dalam inci. Kalikan inci dengan DPI: cetakan 6 inci pada 300 DPI memerlukan 1800 piksel. Alat ini berguna untuk memeriksa apakah foto cukup besar untuk dicetak, dan untuk mengatur dokumen pada ukuran yang tepat.",
+    "seoTitle": "Konversi Inci ke Piksel – DPI Apa Pun, Gratis",
+    "seoDescription": "Konversi inci ke piksel pada 72, 96, 150, 300, atau DPI apa pun dan lihat berapa piksel yang dibutuhkan cetakan. Gratis, instan, tanpa daftar.",
+    "keywords": ["inci ke piksel", "inci ke px", "konversi inci ke piksel", "8 inci berapa piksel", "inci ke piksel 300 dpi"],
+    "howToSteps": [
+      { "title": "Masukkan inci", "description": "Ketik ukuran dalam inci." },
+      { "title": "Pilih DPI", "description": "300 untuk cetakan berkualitas, atau ketik nilai Anda sendiri." },
+      { "title": "Baca pikselnya", "description": "Lihat piksel yang dibutuhkan, serta sentimeter dan milimeter." }
+    ],
+    "features": [
+      { "title": "Perencanaan cetak", "description": "Langsung lihat berapa piksel yang dibutuhkan cetakan." },
+      { "title": "Berfungsi ke segala arah", "description": "Ketik di kotak mana pun dan kotak lainnya diperbarui." },
+      { "title": "Tabel praktis", "description": "Ukuran umum pada DPI pilihan Anda." }
+    ],
+    "faqs": [
+      { "question": "Bagaimana cara mengonversi inci ke piksel?", "answer": "Kalikan inci dengan DPI. Misalnya, 8 inci pada 300 DPI adalah 8 × 300 = 2400 piksel." },
+      { "question": "Berapa piksel yang dibutuhkan foto 4 × 6?", "answer": "Pada 300 DPI, 1200 × 1800 piksel." },
+      { "question": "Bagaimana jika foto saya punya lebih sedikit piksel?", "answer": "Foto tetap bisa dicetak, tetapi pada DPI lebih rendah, jadi mungkin terlihat kurang tajam. Di bawah sekitar 150 DPI, ketidaktajaman biasanya terlihat dari dekat." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Piksel ke CM",
+    "shortName": "Piksel → CM",
+    "tagline": "Konversi piksel ke sentimeter pada DPI berapa pun. Gratis, tanpa perlu instal apa pun.",
+    "intro": "Piksel ke CM memberi tahu berapa panjang sejumlah piksel dalam sentimeter. Bagi piksel dengan DPI, lalu kalikan dengan 2,54, karena satu inci sama dengan 2,54 cm. Ketik nilai di kotak mana pun dan inci serta milimeter ikut diperbarui.",
+    "seoTitle": "Konversi Piksel ke CM – DPI Apa Pun, Gratis",
+    "seoDescription": "Konversi piksel ke sentimeter pada 72, 96, 150, 300, atau DPI apa pun, juga ke inci dan milimeter. Gratis, instan, tanpa daftar.",
+    "keywords": ["piksel ke cm", "px ke cm", "konversi piksel ke sentimeter", "piksel ke cm 300 dpi", "1000 piksel berapa cm"],
+    "howToSteps": [
+      { "title": "Masukkan piksel", "description": "Ketik jumlah piksel." },
+      { "title": "Pilih DPI", "description": "Pilih nilai umum atau ketik nilai Anda sendiri." },
+      { "title": "Baca hasilnya", "description": "Lihat sentimeter, inci, dan milimeter secara langsung." }
+    ],
+    "features": [
+      { "title": "Berfungsi ke segala arah", "description": "Ketik di kotak mana pun dan kotak lainnya diperbarui." },
+      { "title": "DPI apa pun", "description": "Nilai umum tinggal diketuk, atau ketik nilai Anda sendiri." },
+      { "title": "Tabel praktis", "description": "Nilai umum pada DPI pilihan Anda." }
+    ],
+    "faqs": [
+      { "question": "Bagaimana cara mengonversi piksel ke sentimeter?", "answer": "Sentimeter = piksel ÷ DPI × 2,54. Misalnya, 1000 piksel pada 300 DPI adalah sekitar 8,47 cm." },
+      { "question": "Berapa piksel dalam satu sentimeter?", "answer": "DPI ÷ 2,54. Itu sekitar 118 piksel per cm pada 300 DPI, dan sekitar 38 pada 96 DPI." },
+      { "question": "Mengapa saya perlu DPI?", "answer": "Piksel tidak punya ukuran tetap. DPI menyatakan berapa banyak piksel dalam tiap inci saat dicetak atau ditampilkan." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "CM ke Piksel",
+    "shortName": "CM → Piksel",
+    "tagline": "Cari tahu berapa piksel yang dibutuhkan ukuran dalam sentimeter pada DPI berapa pun. Gratis, tanpa perlu instal apa pun.",
+    "intro": "CM ke Piksel memberi tahu berapa piksel yang mengisi ukuran dalam sentimeter. Bagi dengan 2,54 untuk mendapatkan inci, lalu kalikan dengan DPI: 10 cm pada 300 DPI adalah sekitar 1181 piksel. Alat ini berguna saat formulir atau percetakan memberikan ukuran dalam sentimeter.",
+    "seoTitle": "Konversi CM ke Piksel – DPI Apa Pun, Gratis",
+    "seoDescription": "Konversi sentimeter ke piksel pada 72, 96, 150, 300, atau DPI apa pun dan lihat berapa piksel yang dibutuhkan cetakan. Gratis, instan, tanpa daftar.",
+    "keywords": ["cm ke piksel", "cm ke px", "konversi sentimeter ke piksel", "cm ke piksel 300 dpi", "10 cm berapa piksel"],
+    "howToSteps": [
+      { "title": "Masukkan sentimeter", "description": "Ketik ukuran dalam sentimeter." },
+      { "title": "Pilih DPI", "description": "300 untuk cetakan berkualitas, atau ketik nilai Anda sendiri." },
+      { "title": "Baca pikselnya", "description": "Lihat piksel yang dibutuhkan, serta inci dan milimeter." }
+    ],
+    "features": [
+      { "title": "Perencanaan cetak", "description": "Langsung lihat berapa piksel yang dibutuhkan suatu ukuran." },
+      { "title": "Berfungsi ke segala arah", "description": "Ketik di kotak mana pun dan kotak lainnya diperbarui." },
+      { "title": "Tabel praktis", "description": "Ukuran umum pada DPI pilihan Anda, termasuk lebar A4." }
+    ],
+    "faqs": [
+      { "question": "Bagaimana cara mengonversi sentimeter ke piksel?", "answer": "Piksel = cm ÷ 2,54 × DPI. Misalnya, 21 cm pada 300 DPI adalah sekitar 2480 piksel." },
+      { "question": "Berapa piksel ukuran A4 pada 300 DPI?", "answer": "A4 berukuran 21 × 29,7 cm, yaitu sekitar 2480 × 3508 piksel pada 300 DPI." },
+      { "question": "Bagaimana dengan formulir yang meminta 3,5 × 4,5 cm?", "answer": "Pada 300 DPI, itu sekitar 413 × 531 piksel. Pembuat Pas Foto bisa membuatkannya untuk Anda." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Kalkulator Resolusi",
+    "shortName": "Resolusi",
+    "tagline": "Lihat seberapa besar gambar tercetak pada tiap DPI, serta megapiksel dan rasio aspeknya. Gratis, tanpa perlu instal apa pun.",
+    "intro": "Kalkulator Resolusi menjawab pertanyaan “seberapa besar ini bisa dicetak?”. Masukkan lebar dan tinggi gambar dalam piksel untuk melihat ukuran cetak pada tiap DPI umum, serta megapiksel dan rasio aspeknya. Sebagai panduan kasar, 300 DPI terlihat tajam saat dipegang, sedangkan poster besar yang dilihat dari jauh bisa memakai nilai lebih rendah.",
+    "seoTitle": "Kalkulator Resolusi Gambar – Ukuran Cetak, DPI, Gratis",
+    "seoDescription": "Masukkan ukuran piksel gambar untuk melihat ukuran cetak pada tiap DPI, megapiksel, dan rasio aspeknya. Gratis, instan, tanpa daftar.",
+    "keywords": ["kalkulator resolusi gambar", "kalkulator ukuran cetak", "kalkulator dpi", "seberapa besar foto bisa dicetak", "megapiksel ke ukuran cetak"],
+    "howToSteps": [
+      { "title": "Masukkan ukuran piksel", "description": "Ketik lebar dan tinggi gambar dalam piksel." },
+      { "title": "Pilih DPI", "description": "Pilih kualitas cetak yang Anda inginkan." },
+      { "title": "Baca hasilnya", "description": "Lihat ukuran cetak dalam inci dan sentimeter, megapiksel, dan rasio aspek." }
+    ],
+    "features": [
+      { "title": "Ukuran cetak di tiap DPI", "description": "Tabel dari 72 hingga 600 DPI, dalam inci dan sentimeter." },
+      { "title": "Megapiksel dan bentuk", "description": "Lihat jumlah megapiksel dan rasio aspek, seperti 4:3 atau 16:9." },
+      { "title": "Tidak ada yang diunggah", "description": "Alat ini hanya perlu angkanya." }
+    ],
+    "faqs": [
+      { "question": "Seberapa besar foto 12 megapiksel bisa dicetak?", "answer": "Foto 4000 × 3000 tercetak sekitar 13,3 × 10 inci (34 × 25 cm) pada 300 DPI." },
+      { "question": "DPI berapa yang dibutuhkan untuk mencetak?", "answer": "300 DPI adalah target umum untuk foto yang dilihat dari dekat. 150 DPI cukup untuk banyak cetakan sehari-hari, dan poster besar yang dilihat dari jauh bisa lebih rendah." },
+      { "question": "Di mana saya bisa menemukan ukuran piksel gambar saya?", "answer": "Di properti file pada komputer Anda, atau gunakan Analisis Gambar di situs ini." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Simulator Buta Warna",
+    "shortName": "Buta Warna",
+    "tagline": "Lihat tampilan gambar, grafik, atau desain pada tiap jenis buta warna. Gratis dan berjalan di perangkat Anda.",
+    "intro": "Simulator Buta Warna menunjukkan bagaimana gambar mungkin terlihat bagi orang dengan defisiensi penglihatan warna, yang dialami sekitar 1 dari 12 pria dan 1 dari 200 wanita. Gunakan untuk memeriksa apakah grafik, peta, tombol, dan desain tetap mudah dipahami saat merah dan hijau, atau biru dan kuning, sulit dibedakan. Alat ini mencakup tujuh jenis, berdasarkan model ilmiah yang telah dipublikasikan.",
+    "seoTitle": "Simulator Buta Warna – Uji Gambar, Gratis",
+    "seoDescription": "Lihat tampilan gambar dengan deuteranopia, protanopia, tritanopia, dan jenis buta warna lainnya. Gratis, tanpa daftar, gambar Anda tidak diunggah.",
+    "keywords": ["simulator buta warna", "gambar tes buta warna", "simulator deuteranopia", "simulator protanopia", "cek desain untuk buta warna"],
+    "howToSteps": [
+      { "title": "Tambahkan gambar", "description": "Letakkan atau pilih grafik, screenshot, desain, atau foto." },
+      { "title": "Pilih jenis", "description": "Beralih antarjenis, dan kembali ke aslinya untuk membandingkan." },
+      { "title": "Unduh jika mau", "description": "Simpan gambar simulasi sebagai PNG untuk dibagikan ke tim Anda." }
+    ],
+    "features": [
+      { "title": "Tujuh jenis", "description": "Kelemahan dan ketiadaan merah, hijau, dan biru, serta tanpa warna sama sekali." },
+      { "title": "Berdasarkan riset", "description": "Memakai model Machado, Oliveira, dan Fernandes (2009)." },
+      { "title": "Privat", "description": "Gambar diproses di perangkat Anda dan tidak pernah diunggah." }
+    ],
+    "faqs": [
+      { "question": "Jenis mana yang paling umum?", "answer": "Deuteranomali, yaitu berkurangnya kepekaan terhadap hijau, sejauh ini yang paling umum." },
+      { "question": "Apakah ini persis yang dilihat penderita buta warna?", "answer": "Ini perkiraan yang cukup dekat. Penglihatan warna dan tingkat keparahannya berbeda pada tiap orang, jadi jadikan ini panduan dan uji dengan pengguna sungguhan jika penting." },
+      { "question": "Apakah ini tes buta warna?", "answer": "Bukan. Alat ini menunjukkan bagaimana gambar mungkin terlihat; alat ini tidak bisa mendiagnosis apa pun. Dokter mata bisa memeriksa penglihatan warna Anda." },
+      { "question": "Bagaimana agar desain saya cocok untuk semua orang?", "answer": "Jangan hanya mengandalkan warna. Tambahkan label, pola, atau ikon, dan pilih warna yang berbeda dalam kecerahan sekaligus rona." }
+    ]
+  },
 };
