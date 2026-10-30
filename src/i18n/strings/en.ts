@@ -11,6 +11,7 @@ import { extraStrings } from './en/extras';
 import { pdfEditStrings } from './en/pdf-edit';
 import { viewStrings } from './en/view';
 import { barcodeStrings } from './en/barcode';
+import { documentStrings } from './en/documents';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -99,6 +100,7 @@ export const en = {
   ...pdfEditStrings,
   ...viewStrings,
   ...barcodeStrings,
+  ...documentStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

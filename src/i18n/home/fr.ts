@@ -5,7 +5,7 @@ export const frHome: LocalizedHomeData = {
     badge: '',
     title: 'Tous les outils d’image dont vous avez besoin, au même endroit',
     subtitle:
-      'Rognez, redimensionnez, compressez, convertissez, supprimez l’arrière-plan et nettoyez vos photos gratuitement. Sans inscription, sans filigrane, et vos fichiers restent sur votre appareil.',
+      'Rognez, redimensionnez, compressez, convertissez, supprimez l’arrière-plan et nettoyez vos photos gratuitement. Sans inscription, sans filigrane, et vos images restent sur votre appareil.',
     dropzoneTitle: 'Déposez une image pour commencer',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG ou HEIC d’iPhone, jusqu’à 50 MB',
   },
@@ -23,9 +23,9 @@ export const frHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Rien n’est envoyé',
+      title: 'Les images ne sont jamais envoyées',
       description:
-        'Les images sont traitées par votre navigateur, sur votre propre appareil : pas d’attente d’envoi, et aucune copie sur un serveur.',
+        'Les images sont traitées par votre navigateur, sur votre propre appareil : pas d’attente d’envoi, et aucune copie sur un serveur. Quelques outils de documents, comme Word en PDF, ont besoin de notre serveur : ils sont signalés, et les fichiers sont supprimés juste après.',
       icon: 'ShieldCheck',
     },
     {
@@ -46,7 +46,7 @@ export const frHome: LocalizedHomeData = {
     {
       question: 'Mes images sont-elles envoyées quelque part ?',
       answer:
-        'Non. Chaque outil fonctionne dans votre navigateur : vos images sont traitées sur votre propre appareil et ne sont jamais envoyées sur un serveur. L’outil de suppression d’arrière-plan télécharge son modèle d’IA une seule fois, puis fonctionne lui aussi sur votre appareil.',
+        'Non. Chaque outil d’image fonctionne dans votre navigateur : vos images sont traitées sur votre propre appareil et ne sont jamais envoyées sur un serveur. L’outil de suppression d’arrière-plan télécharge son modèle d’IA une seule fois, puis fonctionne lui aussi sur votre appareil. Quelques outils de documents (Word en PDF, Excel en PDF, PowerPoint en PDF, PDF en Word, Compresser PDF, Protéger PDF, Déverrouiller PDF, OCR PDF, PDF en PDF/A et Réparer PDF) ont besoin de notre serveur : ils portent la mention « Utilise notre serveur », et votre fichier est supprimé dès que le résultat est renvoyé.',
     },
     {
       question: 'Est-ce vraiment gratuit ?',

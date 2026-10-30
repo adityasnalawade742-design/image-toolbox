@@ -171,6 +171,7 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
                   </span>
                   <span class="min-w-0">
                     <span class="block text-[15px] font-semibold text-ink group-hover:underline">{allLocTools[rel.slug]?.name || rel.name}</span>
+                    {rel.badge === 'Server' && <span class="inline-block mt-0.5 slug border border-pencil px-1.5 py-0.5">{t('tool.serverBadge')}</span>}
                     <span class="block text-[13px] leading-snug text-graphite">{allLocTools[rel.slug]?.tagline || rel.description}</span>
                   </span>
                 </a>

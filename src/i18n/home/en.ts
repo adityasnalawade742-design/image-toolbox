@@ -5,7 +5,7 @@ export const enHome: LocalizedHomeData = {
     badge: '',
     title: 'Every image tool you need, in one place',
     subtitle:
-      'Crop, resize, compress, convert, remove backgrounds and clean up photos for free. No sign-up, no watermarks, and your files stay on your device.',
+      'Crop, resize, compress, convert, remove backgrounds and clean up photos for free. No sign-up, no watermarks, and your images stay on your device.',
     dropzoneTitle: 'Drop an image to start',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG or iPhone HEIC, up to 50 MB',
   },
@@ -23,9 +23,9 @@ export const enHome: LocalizedHomeData = {
       icon: 'Layers',
     },
     {
-      title: 'Nothing is uploaded',
+      title: 'Images are never uploaded',
       description:
-        'Images are processed by your browser on your own device, so there is no upload wait and no copy on a server.',
+        'Images are processed by your browser on your own device, so there is no upload wait and no copy on a server. A few document tools, such as Word to PDF, need our server: they are marked, and files are deleted right after.',
       icon: 'ShieldCheck',
     },
     {
@@ -46,7 +46,7 @@ export const enHome: LocalizedHomeData = {
     {
       question: 'Are my images uploaded anywhere?',
       answer:
-        'No. Every tool runs inside your browser, so your images are processed on your own device and never sent to a server. The background remover downloads its AI model once, then also works on-device.',
+        'No. Every image tool runs inside your browser, so your images are processed on your own device and never sent to a server. The background remover downloads its AI model once, then also works on-device. A few document tools (Word, Excel and PowerPoint to PDF, PDF to Word, Compress, Protect, Unlock, OCR, PDF/A and Repair PDF) need our server: they are marked “Uses our server”, and your file is deleted as soon as the result is sent back.',
     },
     {
       question: 'Is it really free?',

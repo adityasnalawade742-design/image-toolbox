@@ -1,0 +1,8 @@
+# Only the image's inputs go to Cloud Build
+.env
+__pycache__/
+*.pyc
+docker-compose.yml
+Caddyfile
+setup.sh
+README.md

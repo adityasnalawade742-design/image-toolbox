@@ -1,0 +1,44 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      JOBS_DIR: /tmp/jobs
+    # Only Caddy can reach it; no port is published to the host
+    expose:
+      - "8000"
+    read_only: true
+    tmpfs:
+      - /tmp:size=${API_TMP_SIZE:-1g},mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    # Sized for a 1 OCPU / 4 GB instance; raise both in .env on a bigger server
+    mem_limit: ${API_MEM_LIMIT:-3g}
+    cpus: ${API_CPUS:-1}
+    pids_limit: 512
+    healthcheck:
+      test: ["CMD", "/opt/venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -85,6 +85,7 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · TIFF · SVG · HEIC';
                   </span>
                   <span class="min-w-0">
                     <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(tool.slug)}</span>
+                    {tool.badge === 'Server' && <span class="inline-block mt-0.5 slug border border-pencil px-1.5 py-0.5">{t('tool.serverBadge')}</span>}
                     <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
                   </span>
                 </a>

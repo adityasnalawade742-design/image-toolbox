@@ -86,6 +86,7 @@ const QrGeneratorWorkspace = standaloneTool(() => import('../tools/extras/QrGene
 const QrReaderWorkspace = standaloneTool(() => import('../tools/extras/QrReaderWorkspace'), 'QrReaderWorkspace');
 const BarcodeGeneratorWorkspace = standaloneTool(() => import('../tools/extras/BarcodeGeneratorWorkspace'), 'BarcodeGeneratorWorkspace');
 const BulkCodesWorkspace = standaloneTool(() => import('../tools/extras/BulkCodesWorkspace'), 'BulkCodesWorkspace');
+const DocumentToolWorkspace = standaloneTool(() => import('../tools/pdf/DocumentToolWorkspace'), 'DocumentToolWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -184,6 +185,16 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'payment-qr-code-generator': <QrGeneratorWorkspace defaultKind="payment" />,
     'bulk-qr-code-generator': <BulkCodesWorkspace defaultType="qr" />,
     'bulk-barcode-generator': <BulkCodesWorkspace defaultType="code128" />,
+    'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
+    'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
+    'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,
+    'pdf-to-word': <DocumentToolWorkspace tool="pdf-to-word" />,
+    'compress-pdf': <DocumentToolWorkspace tool="compress-pdf" />,
+    'protect-pdf': <DocumentToolWorkspace tool="protect-pdf" />,
+    'unlock-pdf': <DocumentToolWorkspace tool="unlock-pdf" />,
+    'ocr-pdf': <DocumentToolWorkspace tool="ocr-pdf" />,
+    'pdf-to-pdfa': <DocumentToolWorkspace tool="pdf-to-pdfa" />,
+    'repair-pdf': <DocumentToolWorkspace tool="repair-pdf" />,
   };
   if (standalone[slug]) {
     return (

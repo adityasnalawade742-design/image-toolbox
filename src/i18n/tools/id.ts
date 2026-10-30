@@ -7197,4 +7197,723 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "word-to-pdf": {
+    name: "Word ke PDF",
+    shortName: "Word → PDF",
+    tagline: "Ubah dokumen Word ke PDF dengan tata letak, font, dan gambar tetap utuh. Gratis, tanpa daftar, dan tanpa watermark.",
+    intro:
+      "Word ke PDF mengubah dokumen Word menjadi PDF yang tampil sama di setiap perangkat dan siap dikirim lewat email, dicetak, atau diunggah ke portal. Alat ini menerima DOC, DOCX, ODT, RTF, atau TXT. Header, footer, nomor halaman, tabel, dan gambar tetap dipertahankan. Konversi memakai LibreOffice di server kami: file Anda dikirim melalui koneksi terenkripsi dan dihapus begitu PDF-nya kembali.",
+    seoTitle: "Ubah Word ke PDF Online – Gratis, Tanpa Daftar",
+    seoDescription:
+      "Ubah Word ke PDF online secara gratis. Tata letak, font, dan gambar tetap utuh. Tanpa daftar, tanpa watermark; file dihapus segera setelah konversi selesai.",
+    keywords: [
+      "ubah word ke pdf",
+      "word ke pdf",
+      "convert word ke pdf",
+      "docx ke pdf",
+      "doc ke pdf",
+      "word to pdf gratis",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih file Anda",
+        description: "Letakkan atau pilih file berformat DOC, DOCX, ODT, RTF, atau TXT, hingga 30 MB.",
+      },
+      {
+        title: "Ubah",
+        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+      },
+      {
+        title: "Unduh PDF-nya",
+        description: "PDF terunduh secara otomatis; Anda bisa mengunduhnya lagi lewat tombol.",
+      },
+    ],
+    features: [
+      {
+        title: "Tata letak terjaga",
+        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+      },
+      {
+        title: "Font umum tersedia",
+        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah konversi.",
+      },
+      {
+        title: "Gratis",
+        description: "Tanpa daftar, tanpa watermark, tanpa batas harian.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
+        answer:
+          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+      },
+      {
+        question: "Apakah lacak perubahan dan komentar muncul di PDF?",
+        answer:
+          "Dokumen diubah seperti tampilannya saat dibuka, jadi terima atau tolak lacak perubahan terlebih dahulu jika Anda tidak ingin perubahan itu terlihat.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "excel-to-pdf": {
+    name: "Excel ke PDF",
+    shortName: "Excel → PDF",
+    tagline: "Ubah spreadsheet Excel ke PDF dengan tata letak, font, dan gambar tetap utuh. Gratis, tanpa daftar, dan tanpa watermark.",
+    intro:
+      "Excel ke PDF mengubah spreadsheet Excel menjadi PDF yang tampil sama di setiap perangkat dan siap dikirim lewat email, dicetak, atau diunggah ke portal. Alat ini menerima XLS, XLSX, ODS, atau CSV. Setiap sheet yang berisi konten menjadi bagian dari PDF, mengikuti pengaturan halaman yang tersimpan di file. Konversi memakai LibreOffice di server kami: file Anda dikirim melalui koneksi terenkripsi dan dihapus begitu PDF-nya kembali.",
+    seoTitle: "Ubah Excel ke PDF Online – Gratis, Tanpa Daftar",
+    seoDescription:
+      "Ubah Excel ke PDF online secara gratis. Tata letak, font, dan gambar spreadsheet tetap utuh. Tanpa daftar, tanpa watermark; file dihapus segera setelahnya.",
+    keywords: [
+      "ubah excel ke pdf",
+      "excel ke pdf",
+      "convert excel ke pdf",
+      "xlsx ke pdf",
+      "xls ke pdf",
+      "csv ke pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih file Anda",
+        description: "Letakkan atau pilih file berformat XLS, XLSX, ODS, atau CSV, hingga 30 MB.",
+      },
+      {
+        title: "Ubah",
+        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+      },
+      {
+        title: "Unduh PDF-nya",
+        description: "PDF terunduh secara otomatis; Anda bisa mengunduhnya lagi lewat tombol.",
+      },
+    ],
+    features: [
+      {
+        title: "Tata letak terjaga",
+        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+      },
+      {
+        title: "Font umum tersedia",
+        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah konversi.",
+      },
+      {
+        title: "Gratis",
+        description: "Tanpa daftar, tanpa watermark, tanpa batas harian.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
+        answer:
+          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+      },
+      {
+        question: "Mengapa sheet saya terbagi ke beberapa halaman?",
+        answer:
+          "PDF mengikuti pengaturan cetak yang tersimpan di spreadsheet. Agar satu sheet muat di satu halaman, atur skala cetak ke “Fit to page” (Paskan ke halaman) di Excel sebelum mengubahnya.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "powerpoint-to-pdf": {
+    name: "PowerPoint ke PDF",
+    shortName: "PPT → PDF",
+    tagline: "Ubah presentasi PowerPoint ke PDF dengan tata letak, font, dan gambar tetap utuh. Gratis, tanpa daftar, dan tanpa watermark.",
+    intro:
+      "PowerPoint ke PDF mengubah presentasi PowerPoint menjadi PDF yang tampil sama di setiap perangkat dan siap dikirim lewat email, dicetak, atau diunggah ke portal. Alat ini menerima PPT, PPTX, atau ODP. Setiap slide menjadi satu halaman PDF. Konversi memakai LibreOffice di server kami: file Anda dikirim melalui koneksi terenkripsi dan dihapus begitu PDF-nya kembali.",
+    seoTitle: "Ubah PowerPoint ke PDF Online – Gratis",
+    seoDescription:
+      "Ubah PowerPoint ke PDF online secara gratis. Tata letak, font, dan gambar presentasi tetap utuh. Tanpa daftar, tanpa watermark; file dihapus segera setelahnya.",
+    keywords: [
+      "ubah ppt ke pdf",
+      "powerpoint ke pdf",
+      "ppt ke pdf",
+      "pptx ke pdf",
+      "convert ppt ke pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih file Anda",
+        description: "Letakkan atau pilih file berformat PPT, PPTX, atau ODP, hingga 30 MB.",
+      },
+      {
+        title: "Ubah",
+        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+      },
+      {
+        title: "Unduh PDF-nya",
+        description: "PDF terunduh secara otomatis; Anda bisa mengunduhnya lagi lewat tombol.",
+      },
+    ],
+    features: [
+      {
+        title: "Tata letak terjaga",
+        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+      },
+      {
+        title: "Font umum tersedia",
+        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah konversi.",
+      },
+      {
+        title: "Gratis",
+        description: "Tanpa daftar, tanpa watermark, tanpa batas harian.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
+        answer:
+          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+      },
+      {
+        question: "Apakah animasi dan video tetap ada?",
+        answer:
+          "Tidak. PDF menampilkan setiap slide sebagai halaman diam, jadi animasi, transisi, dan video yang disematkan tidak disertakan.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "pdf-to-word": {
+    name: "PDF ke Word",
+    shortName: "PDF → Word",
+    tagline: "Ubah PDF menjadi dokumen Word (DOCX) yang bisa diedit. Gratis, tanpa daftar.",
+    intro:
+      "PDF ke Word mengubah PDF menjadi file DOCX yang bisa Anda edit di Word, Google Dokumen, atau LibreOffice. Alat ini bekerja paling baik pada PDF yang dibuat dari dokumen teks, seperti laporan, surat, dan formulir hasil ekspor; teks, paragraf, dan gambar menjadi konten yang bisa diedit. Tata letak rumit seperti majalah, kolom, dan formulir mungkin perlu dirapikan setelahnya. PDF hasil scan hanyalah gambar teks, jadi proses dulu dengan OCR PDF. Konversi memakai LibreOffice di server kami, dan file dihapus segera setelahnya.",
+    seoTitle: "PDF ke Word Online – DOCX yang Bisa Diedit, Gratis",
+    seoDescription:
+      "PDF ke Word online secara gratis: ubah PDF menjadi file DOCX yang bisa diedit. Paling baik untuk PDF berisi teks; file dihapus segera setelahnya. Tanpa daftar.",
+    keywords: [
+      "pdf ke word",
+      "ubah pdf ke word",
+      "convert pdf ke word",
+      "pdf ke docx",
+      "pdf ke word bisa diedit",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF Anda",
+        description: "Letakkan atau pilih PDF hingga 30 MB.",
+      },
+      {
+        title: "Ubah",
+        description: "Klik Ubah ke Word. PDF diubah di server kami.",
+      },
+      {
+        title: "Edit dokumennya",
+        description: "Buka DOCX yang terunduh di Word, Google Dokumen, atau LibreOffice.",
+      },
+    ],
+    features: [
+      {
+        title: "Teks bisa diedit",
+        description: "Paragraf dan judul menjadi teks biasa yang bisa diedit.",
+      },
+      {
+        title: "Gambar tetap ada",
+        description: "Gambar di PDF ditempatkan di dalam dokumen.",
+      },
+      {
+        title: "Untuk Word dan Google Dokumen",
+        description: "DOCX bisa dibuka di Microsoft Word, Google Dokumen, dan LibreOffice.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah konversi.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Mengapa dokumen saya terlihat berbeda dari PDF-nya?",
+        answer:
+          "PDF menyimpan posisi yang persis, sedangkan dokumen Word mengalirkan teks. Dokumen sederhana terkonversi dengan baik; kolom, kotak teks, dan formulir yang rumit mungkin perlu disesuaikan setelah konversi.",
+      },
+      {
+        question: "Bisakah alat ini mengubah PDF hasil scan?",
+        answer:
+          "PDF hasil scan berisi gambar teks, bukan teks. Proses dulu dengan OCR PDF, lalu ubah PDF yang sudah bisa dicari itu ke Word.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "compress-pdf": {
+    name: "Kompres PDF",
+    shortName: "Kompres PDF",
+    tagline: "Perkecil PDF untuk email dan formulir unggah, dengan tiga tingkat kualitas. Gratis, tanpa daftar.",
+    intro:
+      "Kompres PDF memperkecil ukuran file PDF agar muat sebagai lampiran email dan memenuhi batas ukuran portal unggah. Alat ini paling efektif pada PDF berisi foto dan hasil scan, karena gambarnya dikompres ulang dan diperkecil; pilih Terkecil untuk layar dan email, Seimbang untuk sebagian besar kebutuhan, atau Kualitas tinggi untuk menjaga detail saat dicetak. Hasilnya menunjukkan seberapa kecil file menjadi, dan jika PDF sudah ringkas, Anda mendapatkan file aslinya kembali, bukan file yang lebih besar. Kompresi memakai Ghostscript di server kami, dan file dihapus segera setelahnya.",
+    seoTitle: "Kompres PDF Online – Perkecil Ukuran PDF, Gratis",
+    seoDescription:
+      "Kompres PDF online secara gratis dengan tiga tingkat kualitas. Lihat berapa banyak ukuran yang dihemat; file dihapus segera setelahnya. Tanpa daftar.",
+    keywords: [
+      "kompres pdf",
+      "perkecil ukuran pdf",
+      "kecilkan pdf",
+      "kompres pdf online",
+      "kompres pdf jadi 1mb",
+      "mengecilkan file pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF Anda",
+        description: "Letakkan atau pilih PDF hingga 30 MB.",
+      },
+      {
+        title: "Pilih tingkat",
+        description: "Terkecil, Seimbang, atau Kualitas tinggi.",
+      },
+      {
+        title: "Kompres dan unduh",
+        description: "Lihat ukuran sebelum dan sesudah, lalu simpan PDF yang lebih kecil.",
+      },
+    ],
+    features: [
+      {
+        title: "Tiga tingkat kualitas",
+        description: "Dari file seukuran email hingga dokumen berkualitas cetak.",
+      },
+      {
+        title: "Tidak pernah lebih besar",
+        description: "Jika PDF tidak bisa diperkecil, Anda mendapatkan file aslinya kembali.",
+      },
+      {
+        title: "Kompresi sungguhan",
+        description: "Gambar dikompres ulang dan konten duplikat digabungkan, sesuatu yang tidak bisa dilakukan alat berbasis browser.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah kompresi.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Seberapa kecil PDF saya nantinya?",
+        answer:
+          "Tergantung isinya. PDF hasil scan dan yang banyak berisi foto sering menyusut 50–90%. PDF yang hanya berisi teks sudah kecil dan mungkin hampir tidak berubah.",
+      },
+      {
+        question: "Apakah teks tetap tajam?",
+        answer:
+          "Ya. Teks dan grafik vektor dipertahankan apa adanya; hanya gambar yang dikompres ulang.",
+      },
+      {
+        question: "PDF saya harus di bawah ukuran tertentu. Apa yang harus saya lakukan?",
+        answer:
+          "Coba Terkecil terlebih dahulu. Jika masih terlalu besar, pisahkan PDF menjadi beberapa bagian dengan Pisahkan PDF, lalu kompres setiap bagian.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "protect-pdf": {
+    name: "Lindungi PDF",
+    shortName: "Lindungi PDF",
+    tagline: "Tambahkan kata sandi ke PDF dengan enkripsi AES-256. Gratis, tanpa daftar.",
+    intro:
+      "Lindungi PDF mengunci PDF dengan kata sandi, sehingga file tidak bisa dibuka tanpanya. Gunakan sebelum mengirim rekening koran, slip gaji, dokumen identitas, atau kontrak lewat email. PDF dienkripsi dengan AES-256, enkripsi terkuat yang didukung pembaca PDF, dan terbuka seperti biasa di Acrobat, browser, dan aplikasi ponsel setelah kata sandi dimasukkan. Pilih kata sandi minimal enam karakter dan simpan baik-baik: tidak ada yang bisa memulihkannya. Enkripsi dijalankan dengan qpdf di server kami; file dan kata sandi dihapus segera setelahnya.",
+    seoTitle: "Lindungi PDF dengan Kata Sandi – AES-256, Gratis",
+    seoDescription:
+      "Lindungi PDF dengan kata sandi dan enkripsi AES-256, online dan gratis. File dan kata sandi dihapus segera setelahnya. Tanpa daftar.",
+    keywords: [
+      "kunci pdf dengan password",
+      "lindungi pdf",
+      "password pdf",
+      "enkripsi pdf",
+      "cara memberi password pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF Anda",
+        description: "Letakkan atau pilih PDF hingga 30 MB.",
+      },
+      {
+        title: "Atur kata sandi",
+        description: "Ketik dua kali; gunakan minimal enam karakter.",
+      },
+      {
+        title: "Lindungi dan unduh",
+        description: "Simpan PDF yang terkunci dan simpan kata sandinya di tempat yang aman.",
+      },
+    ],
+    features: [
+      {
+        title: "Enkripsi AES-256",
+        description: "Enkripsi PDF terkuat, didukung semua pembaca modern.",
+      },
+      {
+        title: "Terbuka di mana saja",
+        description: "Acrobat, browser, dan aplikasi ponsel akan meminta kata sandinya.",
+      },
+      {
+        title: "Kata sandi tidak pernah disimpan",
+        description: "Hanya dipakai sekali untuk mengenkripsi file, lalu dibuang.",
+      },
+      {
+        title: "Gratis",
+        description: "Tanpa daftar dan tanpa watermark.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bagaimana jika saya lupa kata sandinya?",
+        answer:
+          "Kata sandi tidak bisa dipulihkan, baik oleh kami maupun orang lain. Simpan salinan file asli yang tidak dilindungi, atau simpan kata sandinya di tempat yang aman.",
+      },
+      {
+        question: "Bisakah saya menghapus kata sandinya nanti?",
+        answer:
+          "Bisa. Gunakan Buka Kunci PDF dengan kata sandi yang benar.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "unlock-pdf": {
+    name: "Buka Kunci PDF",
+    shortName: "Buka Kunci PDF",
+    tagline: "Hapus kata sandi dari PDF yang bisa Anda buka, agar tidak diminta lagi. Gratis, tanpa daftar.",
+    intro:
+      "Buka Kunci PDF menghapus kata sandi dari PDF jika Anda mengetahuinya, sehingga file terbuka tanpa meminta kata sandi setiap kali dan bisa diedit, digabungkan, atau ditandatangani dengan alat lain di situs ini. Alat ini juga menghapus batasan cetak dan salin yang dimiliki sebagian PDF. Anda harus memasukkan kata sandi yang benar: alat ini tidak menebak atau membobol kata sandi. Proses buka kunci dijalankan dengan qpdf di server kami; file dan kata sandi dihapus segera setelahnya.",
+    seoTitle: "Buka Kunci PDF – Hapus Password PDF, Gratis",
+    seoDescription:
+      "Buka kunci PDF dan hapus kata sandi dari PDF yang bisa Anda buka, online dan gratis. File dan kata sandi dihapus segera setelahnya. Tanpa daftar.",
+    keywords: [
+      "buka kunci pdf",
+      "hapus password pdf",
+      "cara membuka pdf yang dikunci",
+      "unlock pdf",
+      "menghilangkan password pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF Anda",
+        description: "Letakkan atau pilih PDF yang dilindungi.",
+      },
+      {
+        title: "Masukkan kata sandi",
+        description: "Ketik kata sandi yang membuka PDF tersebut.",
+      },
+      {
+        title: "Buka kunci dan unduh",
+        description: "Simpan salinan tanpa kata sandi.",
+      },
+    ],
+    features: [
+      {
+        title: "Tidak ada lagi permintaan kata sandi",
+        description: "Salinan yang sudah dibuka kuncinya langsung terbuka.",
+      },
+      {
+        title: "Edit di sini",
+        description: "Gabungkan, tanda tangani, atau atur PDF yang sudah dibuka kuncinya dengan alat lain.",
+      },
+      {
+        title: "Batasan dihapus",
+        description: "Batasan cetak dan salin juga dicabut.",
+      },
+      {
+        title: "Kata sandi tidak pernah disimpan",
+        description: "Hanya dipakai sekali, lalu dibuang bersama file.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Bisakah alat ini membuka kunci PDF jika saya tidak tahu kata sandinya?",
+        answer:
+          "Tidak. Anda memerlukan kata sandi yang membuka file. Alat ini tidak menebak atau membobol kata sandi.",
+      },
+      {
+        question: "Mengapa muncul pesan bahwa kata sandi salah?",
+        answer:
+          "Periksa huruf kapital dan spasi. Rekening koran sering memakai kombinasi seperti bagian dari nama dan tanggal lahir Anda; pengirim biasanya menjelaskan formatnya.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "ocr-pdf": {
+    name: "OCR PDF",
+    shortName: "OCR PDF",
+    tagline: "Buat PDF hasil scan bisa dicari dan dipilih dengan mengenali teksnya. Gratis, tanpa daftar.",
+    intro:
+      "OCR PDF mengenali teks dalam PDF hasil scan dan menambahkannya sebagai lapisan tak terlihat, sehingga Anda bisa mencari, memilih, dan menyalin teks sementara halamannya tetap terlihat sama persis. Alat ini berguna untuk kontrak, struk, buku, dan dokumen lama hasil scan. Pilih bahasa dokumen untuk hasil terbaik; halaman yang sudah berisi teks dibiarkan apa adanya. Pengenalan teks memakai Tesseract dan OCRmyPDF di server kami, dan file dihapus segera setelahnya.",
+    seoTitle: "OCR PDF Online – Buat PDF Scan Bisa Dicari, Gratis",
+    seoDescription:
+      "OCR PDF online dan gratis: buat PDF hasil scan bisa dicari dan disalin teksnya. Mendukung 10 bahasa; file dihapus segera setelah diproses. Tanpa daftar.",
+    keywords: [
+      "ocr pdf",
+      "ocr pdf online",
+      "pdf scan ke teks",
+      "membuat pdf bisa dicari",
+      "ubah pdf scan jadi teks",
+      "kenali teks di pdf",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF hasil scan",
+        description: "Letakkan atau pilih PDF hingga 30 MB.",
+      },
+      {
+        title: "Pilih bahasanya",
+        description: "Pilih bahasa yang dipakai dalam dokumen.",
+      },
+      {
+        title: "Buat bisa dicari",
+        description: "Unduh PDF dengan teks yang bisa dipilih dan dicari.",
+      },
+    ],
+    features: [
+      {
+        title: "Tampilan tetap sama",
+        description: "Lapisan teksnya tak terlihat; hasil scan tidak berubah.",
+      },
+      {
+        title: "Sepuluh bahasa",
+        description: "Inggris, Jerman, Spanyol, Prancis, Portugis, Italia, Jepang, Korea, Indonesia, dan Turki.",
+      },
+      {
+        title: "Lewati halaman berteks",
+        description: "Halaman yang sudah berisi teks tidak diproses ulang.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah pengenalan teks.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Seberapa akurat hasilnya?",
+        answer:
+          "Hasil scan yang bersih dan lurus pada 300 dpi memberikan hasil yang sangat baik. Tulisan tangan, foto beresolusi rendah, dan font yang tidak biasa dikenali dengan kurang andal.",
+      },
+      {
+        question: "Bisakah saya mengubah hasilnya ke Word?",
+        answer:
+          "Bisa. Setelah PDF bisa dicari, PDF ke Word dapat mengubah teksnya menjadi dokumen yang bisa diedit.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "pdf-to-pdfa": {
+    name: "PDF ke PDF/A",
+    shortName: "PDF → PDF/A",
+    tagline: "Ubah PDF ke PDF/A untuk arsip jangka panjang dan portal resmi. Gratis, tanpa daftar.",
+    intro:
+      "PDF ke PDF/A mengubah PDF menjadi PDF/A-2b, versi arsip dari PDF yang menyematkan font dan informasi warna sehingga dokumen tetap terlihat sama selama puluhan tahun. Sebagian pengadilan, portal pajak, universitas, dan situs pemerintah hanya menerima unggahan PDF/A. Konversi memakai OCRmyPDF dan Ghostscript di server kami, dan file dihapus segera setelahnya.",
+    seoTitle: "Ubah PDF ke PDF/A Online – PDF/A-2b, Gratis",
+    seoDescription:
+      "Ubah PDF ke PDF/A-2b untuk arsip dan portal resmi, online dan gratis. File dihapus segera setelah konversi selesai. Tanpa daftar, tanpa watermark.",
+    keywords: [
+      "pdf ke pdf/a",
+      "ubah pdf ke pdf/a",
+      "convert pdf ke pdfa",
+      "pdf/a-2b",
+      "pdf arsip",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF Anda",
+        description: "Letakkan atau pilih PDF hingga 30 MB.",
+      },
+      {
+        title: "Ubah",
+        description: "Klik Ubah ke PDF/A.",
+      },
+      {
+        title: "Unduh",
+        description: "Unggah file PDF/A ke mana pun file itu diperlukan.",
+      },
+    ],
+    features: [
+      {
+        title: "PDF/A-2b",
+        description: "Standar arsip yang diterima secara luas.",
+      },
+      {
+        title: "Font disematkan",
+        description: "Teks terlihat sama di komputer mana pun.",
+      },
+      {
+        title: "Tampilan tidak berubah",
+        description: "Halaman tetap dengan konten dan tata letaknya.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah konversi.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Versi PDF/A mana yang saya dapatkan?",
+        answer:
+          "PDF/A-2b, yang diterima sebagian besar portal. Jika portal secara khusus meminta PDF/A-1 atau PDF/A-3, periksa petunjuknya.",
+      },
+      {
+        question: "Mengapa file PDF/A lebih besar?",
+        answer:
+          "PDF/A harus menyematkan setiap font dan profil warna agar dokumen tetap bisa dibaca dengan sendirinya, dan itu menambah ukuran.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
+  "repair-pdf": {
+    name: "Perbaiki PDF",
+    shortName: "Perbaiki PDF",
+    tagline: "Perbaiki PDF rusak yang tidak mau terbuka atau menampilkan error. Gratis, tanpa daftar.",
+    intro:
+      "Perbaiki PDF membangun ulang struktur internal PDF yang rusak, yaitu PDF yang tidak mau terbuka, menampilkan error, atau terbuka dengan halaman yang hilang setelah unduhan terputus atau ekspor yang gagal. Alat ini menulis ulang file agar pembaca PDF bisa membacanya lagi, dan memulihkan apa yang masih bisa dipulihkan. File yang rusak parah tidak selalu bisa diselamatkan. Perbaikan dijalankan dengan qpdf di server kami, dan file dihapus segera setelahnya.",
+    seoTitle: "Perbaiki PDF Online – Atasi File PDF Rusak, Gratis",
+    seoDescription:
+      "Perbaiki file PDF yang rusak atau korup dan tidak mau terbuka, online dan gratis. File dihapus segera setelah diproses. Tanpa daftar, tanpa watermark.",
+    keywords: [
+      "perbaiki pdf",
+      "memperbaiki pdf rusak",
+      "pdf rusak",
+      "pdf tidak bisa dibuka",
+      "repair pdf online",
+    ],
+    howToSteps: [
+      {
+        title: "Pilih PDF yang rusak",
+        description: "Letakkan atau pilih PDF yang tidak mau terbuka dengan benar.",
+      },
+      {
+        title: "Perbaiki",
+        description: "Klik Perbaiki PDF untuk membangun ulang strukturnya.",
+      },
+      {
+        title: "Unduh",
+        description: "Buka salinan yang sudah diperbaiki di pembaca PDF Anda.",
+      },
+    ],
+    features: [
+      {
+        title: "Membangun ulang struktur",
+        description: "Memperbaiki tabel referensi silang dan struktur file yang rusak.",
+      },
+      {
+        title: "Menyimpan yang bisa diselamatkan",
+        description: "Halaman dan konten yang masih terbaca dipertahankan.",
+      },
+      {
+        title: "Cepat",
+        description: "Sebagian besar file diperbaiki dalam hitungan detik.",
+      },
+      {
+        title: "File langsung dihapus",
+        description: "Tidak ada yang disimpan setelah perbaikan.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Apakah semua PDF bisa diperbaiki?",
+        answer:
+          "Tidak. Jika ada bagian file yang hilang atau tertimpa, bagian itu tidak bisa dipulihkan. Coba unduh atau ekspor file aslinya lagi jika memungkinkan.",
+      },
+      {
+        question: "Mengapa muncul pesan bahwa file bukan PDF?",
+        answer:
+          "Awal file sama sekali tidak seperti PDF, jadi mungkin itu jenis file lain atau sudah rusak hingga tidak bisa diperbaiki.",
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer:
+          "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda.",
+      },
+      {
+        question: "Apakah ada batas ukuran?",
+        answer:
+          "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit.",
+      },
+    ],
+  },
 };
