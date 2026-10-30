@@ -8462,4 +8462,367 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  // Social media sizes, print calculators, color blindness simulator
+"social-media-image-resizer": {
+    "name": "Bilder für Social Media anpassen",
+    "shortName": "Social Media",
+    "tagline": "Passe ein Bild für Instagram, YouTube, Facebook, LinkedIn, Pinterest, X und TikTok an. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Bilder für Social Media anpassen bringt ein Bild auf genau die Größe, die das jeweilige Netzwerk verlangt. Wähle eine Größe aus der Liste, zieh das Bild, bis der richtige Ausschnitt im Rahmen liegt, und lade es herunter. Passt ein Bild nicht zum Format, zeigst du es komplett auf einer unscharfen Kopie von sich selbst oder auf einer Farbe deiner Wahl. Dein Bild bleibt auf deinem Gerät.",
+    "seoTitle": "Bildgrößen für Social Media ändern – kostenlos, ohne Upload",
+    "seoDescription": "Bilder für Instagram, YouTube, Facebook, LinkedIn, Pinterest, X und TikTok anpassen. Positionieren per Ziehen, dann herunterladen. Kostenlos, ohne Upload.",
+    "keywords": ["social media bildgrößen", "bild für social media anpassen", "bildgröße social media ändern", "bildgröße instagram facebook", "social media bilder zuschneiden"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein JPG, PNG, WebP, HEIC oder TIFF hierher oder wähle es aus." },
+      { "title": "Größe wählen und positionieren", "description": "Wähle Netzwerk und Format, dann zieh das Bild oder nutze die Schieberegler." },
+      { "title": "Herunterladen", "description": "Speichere es in genau dieser Größe als JPG, PNG oder WebP." }
+    ],
+    "features": [
+      { "title": "14 fertige Größen", "description": "Posts, Storys, Thumbnails, Banner und Titelbilder für die großen Netzwerke." },
+      { "title": "Ausfüllen oder alles zeigen", "description": "Schneide das Bild passend zu oder zeig es komplett auf einem unscharfen oder farbigen Hintergrund." },
+      { "title": "Privat", "description": "Alles passiert in deinem Browser. Dein Bild wird nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Sind das die aktuellen Größen?", "answer": "Es sind die Größen, die die Netzwerke angeben, soweit wir wissen. Netzwerke ändern sie von Zeit zu Zeit. Wenn ein Upload also falsch aussieht, schau in die Hilfeseiten des Netzwerks." },
+      { "question": "Verliert mein Bild an Qualität?", "answer": "Beim Verkleinern bleibt es scharf. Ist dein Bild kleiner als die gewählte Größe, muss es vergrößert werden und kann unscharf wirken. Das Tool weist dich dann darauf hin." },
+      { "question": "Was bewirkt „Alles zeigen“?", "answer": "Das ganze Bild wird in den Rahmen eingepasst, und der Platz drumherum wird mit einer unscharfen Kopie des Bildes oder einer Farbe deiner Wahl gefüllt. So wird nichts abgeschnitten." },
+      { "question": "Wird mein Bild hochgeladen?", "answer": "Nein. Es wird auf deinem Gerät verarbeitet und bleibt dort." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Bildgröße für Instagram-Posts ändern",
+    "shortName": "Instagram-Post",
+    "tagline": "Bring ein Bild auf das quadratische, Hoch- oder Querformat für Instagram-Posts. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Bildgröße für Instagram-Posts ändern bringt ein Bild vor dem Posten ins richtige Format, damit Instagram es nicht für dich zuschneidet. Wähle quadratisch (1080 × 1080), Hochformat (1080 × 1350) oder Querformat (1080 × 566) und zieh das Bild, bis der wichtige Teil im Rahmen liegt. Um ein breites Foto ohne Zuschnitt zu posten, zeigst du es komplett auf einem unscharfen Hintergrund.",
+    "seoTitle": "Instagram-Post-Größe ändern – Quadrat, Hochformat, gratis",
+    "seoDescription": "Fotos für Instagram-Posts anpassen: quadratisch 1080×1080, Hochformat 1080×1350 oder Querformat. Positionieren per Ziehen. Kostenlos, ohne Upload.",
+    "keywords": ["instagram post größe", "bild für instagram anpassen", "instagram bildgröße ändern", "instagram 1080x1350", "ganzes foto auf instagram posten"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh das Foto, das du posten willst, hierher oder wähle es aus." },
+      { "title": "Format wählen", "description": "Wähle quadratisch, Hochformat oder Querformat und zieh das Foto an die richtige Stelle." },
+      { "title": "Herunterladen und posten", "description": "Speichere es und lade es wie gewohnt bei Instagram hoch." }
+    ],
+    "features": [
+      { "title": "Die drei Post-Formate", "description": "Quadratisch, Hochformat 4:5 und Querformat, jeweils 1080 Pixel breit." },
+      { "title": "Kein erzwungener Zuschnitt", "description": "Zeig das ganze Foto auf einem unscharfen oder farbigen Hintergrund, wenn nichts davon verloren gehen soll." },
+      { "title": "Privat", "description": "Dein Foto wird auf deinem Gerät verarbeitet und nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Welche Größe sollte ein Instagram-Post haben?", "answer": "1080 Pixel Breite. Das Hochformat 1080 × 1350 nimmt im Feed den meisten Platz ein, quadratisch sind es 1080 × 1080 und im Querformat 1080 × 566." },
+      { "question": "Wie poste ich ein ganzes Foto ohne Zuschnitt?", "answer": "Wähle „Alles zeigen“. Das ganze Foto liegt dann im Rahmen auf einer unscharfen Kopie von sich selbst oder auf einer Farbe deiner Wahl." },
+      { "question": "In welchem Format sollte ich speichern?", "answer": "JPG eignet sich für Fotos. PNG eignet sich für Grafiken mit Text, die Datei wird aber größer." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Bildgröße für Instagram-Storys ändern",
+    "shortName": "Instagram-Story",
+    "tagline": "Bring ein Bild auf 1080 × 1920 für Storys, Reels und TikTok. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Bildgröße für Instagram-Storys ändern bringt jedes Bild in das hohe Format 1080 × 1920, das Storys, Reels und TikTok nutzen. Eine gestrichelte Hilfslinie zeigt, wo die Schaltflächen und die Bildunterschrift der App liegen, damit du Gesichter und Text davon freihalten kannst. Breite Fotos können komplett auf einer unscharfen Kopie von sich selbst liegen, statt zugeschnitten zu werden.",
+    "seoTitle": "Instagram-Story-Größe ändern – 1080×1920, kostenlos",
+    "seoDescription": "Bringe jedes Bild auf 1080×1920 für Instagram Storys, Reels und TikTok, mit Hilfslinie für den sicheren Bereich. Kostenlos, ohne Upload.",
+    "keywords": ["instagram story größe", "bild für instagram story anpassen", "bild 1080x1920", "reels titelbild größe", "tiktok bildgröße"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein Foto oder eine Grafik hierher oder wähle es aus." },
+      { "title": "Positionieren", "description": "Zieh es an die richtige Stelle und halte alles Wichtige im gestrichelten sicheren Bereich." },
+      { "title": "Herunterladen", "description": "Speichere es mit 1080 × 1920, bereit für deine Story." }
+    ],
+    "features": [
+      { "title": "Hilfslinie für den sicheren Bereich", "description": "Zeigt, was die Schaltflächen und die Bildunterschrift der App verdecken. Die Hilfslinie wird nicht im Bild gespeichert." },
+      { "title": "Unscharfer Hintergrund", "description": "Ein breites Foto passt komplett hinein, und eine unscharfe Kopie von ihm füllt den Rest." },
+      { "title": "Privat", "description": "Dein Bild bleibt auf deinem Gerät." }
+    ],
+    "faqs": [
+      { "question": "Wie groß ist eine Instagram-Story?", "answer": "1080 × 1920 Pixel, also das Format 9:16. Reels und TikTok nutzen dasselbe Format." },
+      { "question": "Was ist der sichere Bereich?", "answer": "Die Mitte des Rahmens. Oben und unten können etwa 250 Pixel von deinem Profilnamen, den Schaltflächen und der Bildunterschrift verdeckt werden. Setz dort also besser keinen Text hin." },
+      { "question": "Ist der gestrichelte Rahmen in meinem Bild zu sehen?", "answer": "Nein. Er erscheint nur in der Vorschau und wird nie gespeichert." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "YouTube-Thumbnail erstellen",
+    "shortName": "YouTube-Thumbnail",
+    "tagline": "Mach aus einem Bild ein YouTube-Thumbnail mit 1280 × 720 unter dem Limit von 2 MB. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "YouTube-Thumbnail erstellen bringt ein Bild auf die von YouTube empfohlenen 1280 × 720 und hält die Datei unter dem Upload-Limit von 2 MB. Die Qualität wird dabei nur so weit gesenkt wie nötig. Zieh das Bild in den Rahmen, zoome auf das Wichtige und lade es herunter. Um vorher Text hinzuzufügen, nutze Text in Bild einfügen.",
+    "seoTitle": "YouTube-Thumbnail erstellen – 1280×720, unter 2 MB, gratis",
+    "seoDescription": "Erstelle aus jedem Bild ein YouTube-Thumbnail mit 1280×720 unter dem Limit von 2 MB. Ziehen, zoomen, herunterladen. Kostenlos, ohne Anmeldung, ohne Upload.",
+    "keywords": ["youtube thumbnail erstellen", "youtube thumbnail größe", "thumbnail 1280x720", "bild für youtube thumbnail anpassen", "youtube thumbnail 2mb"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh einen Screenshot oder ein Foto hierher oder wähle es aus." },
+      { "title": "Ausschnitt wählen", "description": "Zieh und zoome, bis das Motiv den Rahmen ausfüllt." },
+      { "title": "Herunterladen", "description": "Speichere die Datei mit 1280 × 720 und lade sie in YouTube Studio hoch." }
+    ],
+    "features": [
+      { "title": "Die richtige Größe", "description": "1280 × 720 Pixel, das von YouTube empfohlene Format 16:9." },
+      { "title": "Unter dem Upload-Limit", "description": "JPG- und WebP-Dateien bleiben automatisch unter 2 MB." },
+      { "title": "Privat", "description": "Dein Bild wird auf deinem Gerät verarbeitet und nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Wie groß ist ein YouTube-Thumbnail?", "answer": "YouTube empfiehlt 1280 × 720 Pixel im Format 16:9 und eine Dateigröße unter 2 MB." },
+      { "question": "Kann ich dem Thumbnail Text hinzufügen?", "answer": "In diesem Tool nicht. Nutze Text in Bild einfügen für das heruntergeladene Thumbnail und lade dann das Ergebnis hoch." },
+      { "question": "Warum wurde die Qualität gesenkt?", "answer": "Wäre die Datei größer als 2 MB, wird die Qualität gerade so weit gesenkt, dass sie passt. Die meisten Thumbnails liegen auch bei hoher Qualität deutlich unter dem Limit." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "YouTube-Banner erstellen",
+    "shortName": "YouTube-Banner",
+    "tagline": "Erstelle ein YouTube-Kanalbanner mit 2560 × 1440 und einer Hilfslinie für das, was jedes Gerät zeigt. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "YouTube-Banner erstellen bringt ein Bild auf die 2560 × 1440, die YouTube für Kanalbilder empfiehlt. Smartphones und Computer zeigen nur einen Streifen in der Mitte, Fernseher dagegen alles. Eine gestrichelte Hilfslinie markiert deshalb den Streifen, der immer sichtbar ist. Halte deinen Namen und dein Logo darin. Die Datei bleibt unter dem Limit von 6 MB.",
+    "seoTitle": "YouTube-Banner erstellen – 2560×1440, sicherer Bereich",
+    "seoDescription": "Erstelle ein YouTube-Kanalbanner mit 2560×1440 und einer Hilfslinie, die zeigt, was Smartphones und Computer anzeigen. Kostenlos, ohne Anmeldung, ohne Upload.",
+    "keywords": ["youtube banner erstellen", "youtube banner größe", "youtube kanalbild größe", "banner 2560x1440", "youtube banner sicherer bereich"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Wähle ein breites Bild mit hoher Auflösung." },
+      { "title": "Positionieren", "description": "Zieh es so, dass der wichtige Teil im gestrichelten Streifen liegt." },
+      { "title": "Herunterladen", "description": "Speichere es und lade es in YouTube Studio unter „Anpassung“ hoch." }
+    ],
+    "features": [
+      { "title": "Hilfslinie für den sicheren Bereich", "description": "Markiert den Streifen von 1546 × 423, den jedes Gerät zeigt. Sie wird nicht im Bild gespeichert." },
+      { "title": "Unter dem Upload-Limit", "description": "JPG- und WebP-Dateien bleiben automatisch unter 6 MB." },
+      { "title": "Privat", "description": "Dein Bild bleibt auf deinem Gerät." }
+    ],
+    "faqs": [
+      { "question": "Wie groß ist ein YouTube-Banner?", "answer": "YouTube empfiehlt 2560 × 1440 Pixel. Auf allen Geräten sicher sind die mittleren 1546 × 423 Pixel." },
+      { "question": "Warum wird mein Banner auf dem Handy abgeschnitten?", "answer": "Jedes Gerät zeigt einen anderen Teil davon. Smartphones und Computer zeigen nur den mittleren Streifen, also halte Text und Logos dort." },
+      { "question": "Mein Bild wirkt unscharf. Warum?", "answer": "2560 Pixel Breite sind viel, und kleinere Bilder müssen vergrößert werden. Nimm das Bild mit der höchsten Auflösung, das du hast." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Facebook-Titelbild erstellen",
+    "shortName": "Facebook-Titelbild",
+    "tagline": "Bring ein Bild ins richtige Format für ein Facebook-Titelbild oder einen Post. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Facebook-Titelbild erstellen passt ein Bild in das breite Titelbild-Format von 851 × 315 ein. Smartphones schneiden die Seiten eines Titelbilds ab, deshalb zeigt eine gestrichelte Hilfslinie den Teil, den alle sehen. Außerdem gibt es die Größe 1200 × 630 für Link- und Bild-Posts. Zieh das Bild, bis es richtig sitzt, und lade es herunter.",
+    "seoTitle": "Facebook-Titelbild erstellen – Größe 851×315, kostenlos",
+    "seoDescription": "Passe ein Bild für ein Facebook-Titelbild (851×315) oder einen Post (1200×630) an, mit Hilfslinie für das, was Smartphones abschneiden. Kostenlos, ohne Upload.",
+    "keywords": ["facebook titelbild größe", "facebook titelbild erstellen", "bild für facebook titelbild anpassen", "851x315", "facebook post bildgröße"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein breites Bild hierher oder wähle es aus." },
+      { "title": "Wählen und positionieren", "description": "Wähle Titelbild oder Post und zieh das Bild an die richtige Stelle." },
+      { "title": "Herunterladen", "description": "Speichere es und lade es auf dein Profil oder deine Seite hoch." }
+    ],
+    "features": [
+      { "title": "Hilfslinie fürs Smartphone", "description": "Ein gestrichelter Rahmen zeigt den Teil des Titelbilds, den Smartphones behalten." },
+      { "title": "Größen für Titelbild und Post", "description": "851 × 315 für Titelbilder und 1200 × 630 für Posts." },
+      { "title": "Privat", "description": "Dein Bild wird nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Wie groß ist ein Facebook-Titelbild?", "answer": "Facebook zeigt Titelbilder von Seiten auf Computern mit 820 × 312 Pixeln an; üblich zum Hochladen sind 851 × 315. Smartphones zeigen einen schmaleren Ausschnitt der Mitte." },
+      { "question": "Warum sieht mein Titelbild auf dem Handy anders aus?", "answer": "Smartphones schneiden die linke und rechte Seite ab. Halte Gesichter und Text innerhalb der gestrichelten Hilfslinie." },
+      { "question": "Welches Format ist am besten?", "answer": "JPG für Fotos. PNG hält Logos und Text schärfer." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "LinkedIn-Banner erstellen",
+    "shortName": "LinkedIn-Banner",
+    "tagline": "Erstelle aus jedem Bild ein LinkedIn-Profilbanner mit 1584 × 396. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "LinkedIn-Banner erstellen schneidet ein Bild auf das sehr breite Format 1584 × 396 eines LinkedIn-Profilbanners zu. Zieh das Bild nach oben und unten, um den gewünschten Streifen zu wählen, und zoome bei Bedarf hinein. Außerdem gibt es die Größe 1200 × 627 für Link- und Bild-Posts. Dein Profilfoto verdeckt einen Teil des Banners unten links, halte wichtige Details also davon fern.",
+    "seoTitle": "LinkedIn-Banner erstellen – 1584×396, kostenlos",
+    "seoDescription": "Erstelle aus jedem Bild ein LinkedIn-Profilbanner mit 1584×396 oder ein Post-Bild mit 1200×627. Positionieren per Ziehen. Kostenlos, ohne Upload.",
+    "keywords": ["linkedin banner größe", "linkedin hintergrundbild größe", "linkedin banner erstellen", "1584x396", "linkedin titelbild"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein Bild hierher oder wähle es aus." },
+      { "title": "Streifen wählen", "description": "Zieh nach oben und unten, bis der gewünschte Teil im Rahmen liegt." },
+      { "title": "Herunterladen", "description": "Speichere es und füge es deinem LinkedIn-Profil hinzu." }
+    ],
+    "features": [
+      { "title": "Größen für Banner und Post", "description": "1584 × 396 für Profilbanner und 1200 × 627 für Posts." },
+      { "title": "Ziehen oder Schieberegler", "description": "Positioniere das Bild per Maus, Touch oder Tastatur." },
+      { "title": "Privat", "description": "Dein Bild bleibt auf deinem Gerät." }
+    ],
+    "faqs": [
+      { "question": "Wie groß ist ein LinkedIn-Banner?", "answer": "1584 × 396 Pixel für ein persönliches Profil, also das Format 4:1." },
+      { "question": "Was verdeckt mein Profilfoto?", "answer": "Es überlappt den Banner unten links. Setz dort also besser keinen Text und keine Gesichter hin." },
+      { "question": "Funktioniert das auch für Unternehmensseiten?", "answer": "Unternehmensseiten nutzen ein anderes Format, dort würde dieser Banner also abgeschnitten." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Bildgröße für Pinterest-Pins ändern",
+    "shortName": "Pinterest-Pin",
+    "tagline": "Bring ein Bild auf das hohe Pinterest-Pin-Format 1000 × 1500. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Bildgröße für Pinterest-Pins ändern bringt ein Bild auf 1000 × 1500, das hohe Format 2:3, das Pinterest für Pins empfiehlt. Füll den Rahmen aus und zieh das Bild, um den sichtbaren Teil zu wählen, oder zeig ein breites Foto komplett auf einem unscharfen oder farbigen Hintergrund.",
+    "seoTitle": "Pinterest-Pin-Größe ändern – 1000×1500, kostenlos",
+    "seoDescription": "Bringe Bilder für Pinterest-Pins auf 1000×1500. Rahmen ausfüllen oder das ganze Bild auf einem Hintergrund zeigen. Kostenlos, ohne Anmeldung, ohne Upload.",
+    "keywords": ["pinterest pin größe", "pinterest bildgröße", "bild für pinterest anpassen", "1000x1500", "pinterest pin erstellen"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein Foto oder eine Grafik hierher oder wähle es aus." },
+      { "title": "Einpassen", "description": "Füll den Rahmen aus und zieh das Bild, oder zeig das ganze Bild auf einem Hintergrund." },
+      { "title": "Herunterladen", "description": "Speichere die Datei mit 1000 × 1500 und pinne sie." }
+    ],
+    "features": [
+      { "title": "Das empfohlene Format", "description": "1000 × 1500 Pixel, also das Format 2:3." },
+      { "title": "Breite Fotos bleiben ganz", "description": "Zeig alles auf einer unscharfen Kopie des Fotos oder auf einer Farbe." },
+      { "title": "Privat", "description": "Dein Bild wird auf deinem Gerät verarbeitet." }
+    ],
+    "faqs": [
+      { "question": "Welche Größe sollte ein Pinterest-Pin haben?", "answer": "Pinterest empfiehlt das Format 2:3, zum Beispiel 1000 × 1500 Pixel." },
+      { "question": "Kann ich ein Foto im Querformat verwenden?", "answer": "Ja. Wähle „Alles zeigen“, um das ganze Foto zu behalten, oder füll den Rahmen aus und wähle den Teil, der bleiben soll." },
+      { "question": "Wird mein Bild hochgeladen?", "answer": "Nein. Es bleibt auf deinem Gerät." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Open-Graph-Bild erstellen",
+    "shortName": "Open-Graph-Bild",
+    "tagline": "Erstelle das Bild mit 1200 × 630, das beim Teilen eines Links erscheint. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Open-Graph-Bild erstellen bereitet das Bild vor, das erscheint, wenn jemand deine Seite in sozialen Netzwerken oder in einer Chat-App teilt. Es bringt jedes Bild auf die weit verbreitete Größe 1200 × 630. Sobald es auf deiner Website liegt, lass das og:image-Tag deiner Seite darauf verweisen.",
+    "seoTitle": "Open-Graph-Bild erstellen – 1200×630 og:image, kostenlos",
+    "seoDescription": "Erstelle ein Open-Graph-Bild mit 1200×630 für Linkvorschauen in sozialen Netzwerken und Chat-Apps. Positionieren, herunterladen. Kostenlos, ohne Upload.",
+    "keywords": ["open graph bild größe", "og image generator", "og:image größe", "1200x630", "bild für linkvorschau"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein Bild oder eine Grafik hierher oder wähle es aus." },
+      { "title": "Positionieren", "description": "Zieh und zoome, bis es gut aussieht." },
+      { "title": "Herunterladen und verlinken", "description": "Lade die Datei auf deine Website hoch und leg sie als og:image deiner Seite fest." }
+    ],
+    "features": [
+      { "title": "Die übliche Vorschaugröße", "description": "1200 × 630 Pixel, genutzt von den großen Netzwerken und Chat-Apps." },
+      { "title": "Kleine Dateien", "description": "Gespeichert mit effizienten Encodern, damit Vorschauen schnell laden." },
+      { "title": "Privat", "description": "Dein Bild wird nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Was ist ein Open-Graph-Bild?", "answer": "Das Bild in der Vorschaukarte, wenn ein Link zu deiner Seite geteilt wird. Du legst es mit einem og:image-Tag im HTML der Seite fest." },
+      { "question": "Welche Größe sollte es haben?", "answer": "1200 × 630 Pixel sind die übliche Wahl, ein Format von etwa 1,91:1." },
+      { "question": "Wie verwende ich die Datei?", "answer": "Lade sie auf deine Website hoch und füge deiner Seite <meta property=\"og:image\" content=\"the full URL of the image\"> hinzu." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Pixel in Zoll",
+    "shortName": "Pixel → Zoll",
+    "tagline": "Rechne Pixel bei jeder DPI in Zoll um. Kostenlos, ohne Installation.",
+    "intro": "Pixel in Zoll zeigt dir, wie groß eine Anzahl von Pixeln in Zoll ausfällt. Ein Pixel hat keine feste Größe, deshalb hängt das Ergebnis von der DPI ab, also der Anzahl der Pixel pro Zoll: Teile die Pixel durch die DPI. Gib einen Wert in ein beliebiges Feld ein, und die anderen folgen, auch Zentimeter und Millimeter.",
+    "seoTitle": "Pixel in Zoll umrechnen – jede DPI, kostenlos",
+    "seoDescription": "Rechne Pixel bei 72, 96, 150, 300 oder jeder anderen DPI in Zoll um, dazu auch in Zentimeter und Millimeter. Kostenlos, sofort, ohne Anmeldung.",
+    "keywords": ["pixel in zoll", "px in zoll", "pixel in zoll umrechnen", "wie viel zoll sind 1000 pixel", "pixel in zoll 300 dpi"],
+    "howToSteps": [
+      { "title": "Pixel eingeben", "description": "Gib die Anzahl der Pixel ein." },
+      { "title": "DPI wählen", "description": "Wähle einen gängigen Wert oder gib deinen eigenen ein." },
+      { "title": "Ergebnis ablesen", "description": "Sieh sofort Zoll, Zentimeter und Millimeter." }
+    ],
+    "features": [
+      { "title": "Funktioniert in jede Richtung", "description": "Gib etwas in ein beliebiges Feld ein, und die anderen werden aktualisiert." },
+      { "title": "Jede DPI", "description": "Gängige Werte mit einem Tipp oder dein eigener Wert." },
+      { "title": "Praktische Tabelle", "description": "Gängige Werte bei der gewählten DPI." }
+    ],
+    "faqs": [
+      { "question": "Wie rechne ich Pixel in Zoll um?", "answer": "Teile die Pixel durch die DPI. Zum Beispiel sind 3000 Pixel bei 300 DPI 3000 ÷ 300 = 10 Zoll." },
+      { "question": "Wie viele Pixel hat ein Zoll?", "answer": "So viele wie die DPI: 96 bei 96 DPI, 300 bei 300 DPI. Ein Pixel hat keine feste physische Größe." },
+      { "question": "Welche DPI sollte ich verwenden?", "answer": "Nimm 300 für hochwertige Drucke und 150 für Alltagsdrucke. Für Bildschirme ist 96 die übliche Annahme im Web, 72 ist eine ältere Konvention." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "Zoll in Pixel",
+    "shortName": "Zoll → Pixel",
+    "tagline": "Finde heraus, wie viele Pixel eine Druckgröße bei jeder DPI braucht. Kostenlos, ohne Installation.",
+    "intro": "Zoll in Pixel zeigt dir, wie viele Pixel du brauchst, um eine Größe in Zoll zu füllen. Multipliziere die Zoll mit der DPI: Ein 6 Zoll großer Druck braucht bei 300 DPI 1800 Pixel. Das hilft, wenn du prüfen willst, ob ein Foto groß genug zum Drucken ist, oder wenn du ein Dokument in der richtigen Größe anlegst.",
+    "seoTitle": "Zoll in Pixel umrechnen – jede DPI, kostenlos",
+    "seoDescription": "Rechne Zoll bei 72, 96, 150, 300 oder jeder anderen DPI in Pixel um und sieh, wie viele Pixel ein Druck braucht. Kostenlos, sofort, ohne Anmeldung.",
+    "keywords": ["zoll in pixel", "zoll in px", "zoll in pixel umrechnen", "wie viele pixel sind 8 zoll", "zoll in pixel 300 dpi"],
+    "howToSteps": [
+      { "title": "Zoll eingeben", "description": "Gib die Größe in Zoll ein." },
+      { "title": "DPI wählen", "description": "300 für hochwertige Drucke, oder gib deinen eigenen Wert ein." },
+      { "title": "Pixel ablesen", "description": "Sieh die benötigten Pixel, dazu Zentimeter und Millimeter." }
+    ],
+    "features": [
+      { "title": "Druck planen", "description": "Sieh sofort, wie viele Pixel ein Druck braucht." },
+      { "title": "Funktioniert in jede Richtung", "description": "Gib etwas in ein beliebiges Feld ein, und die anderen werden aktualisiert." },
+      { "title": "Praktische Tabelle", "description": "Gängige Größen bei der gewählten DPI." }
+    ],
+    "faqs": [
+      { "question": "Wie rechne ich Zoll in Pixel um?", "answer": "Multipliziere die Zoll mit der DPI. Zum Beispiel sind 8 Zoll bei 300 DPI 8 × 300 = 2400 Pixel." },
+      { "question": "Wie viele Pixel brauche ich für ein Foto mit 4 × 6 Zoll?", "answer": "Bei 300 DPI sind es 1200 × 1800 Pixel." },
+      { "question": "Was, wenn mein Foto weniger Pixel hat?", "answer": "Du kannst es trotzdem drucken, aber mit geringerer DPI, sodass es weniger scharf aussehen kann. Unter etwa 150 DPI fällt die Unschärfe aus der Nähe meist auf." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Pixel in cm",
+    "shortName": "Pixel → cm",
+    "tagline": "Rechne Pixel bei jeder DPI in Zentimeter um. Kostenlos, ohne Installation.",
+    "intro": "Pixel in cm zeigt dir, wie lang eine Anzahl von Pixeln in Zentimetern ausfällt. Teile die Pixel durch die DPI und multipliziere mit 2,54, denn ein Zoll sind 2,54 cm. Gib einen Wert in ein beliebiges Feld ein, und auch Zoll und Millimeter werden aktualisiert.",
+    "seoTitle": "Pixel in cm umrechnen – jede DPI, kostenlos",
+    "seoDescription": "Rechne Pixel bei 72, 96, 150, 300 oder jeder anderen DPI in Zentimeter um, dazu auch in Zoll und Millimeter. Kostenlos, sofort, ohne Anmeldung.",
+    "keywords": ["pixel in cm", "px in cm", "pixel in zentimeter umrechnen", "pixel in cm 300 dpi", "wie viel cm sind 1000 pixel"],
+    "howToSteps": [
+      { "title": "Pixel eingeben", "description": "Gib die Anzahl der Pixel ein." },
+      { "title": "DPI wählen", "description": "Wähle einen gängigen Wert oder gib deinen eigenen ein." },
+      { "title": "Ergebnis ablesen", "description": "Sieh sofort Zentimeter, Zoll und Millimeter." }
+    ],
+    "features": [
+      { "title": "Funktioniert in jede Richtung", "description": "Gib etwas in ein beliebiges Feld ein, und die anderen werden aktualisiert." },
+      { "title": "Jede DPI", "description": "Gängige Werte mit einem Tipp oder dein eigener Wert." },
+      { "title": "Praktische Tabelle", "description": "Gängige Werte bei der gewählten DPI." }
+    ],
+    "faqs": [
+      { "question": "Wie rechne ich Pixel in Zentimeter um?", "answer": "Zentimeter = Pixel ÷ DPI × 2,54. Zum Beispiel sind 1000 Pixel bei 300 DPI etwa 8,47 cm." },
+      { "question": "Wie viele Pixel hat ein Zentimeter?", "answer": "DPI ÷ 2,54. Das sind bei 300 DPI etwa 118 Pixel pro cm und bei 96 DPI etwa 38." },
+      { "question": "Warum brauche ich eine DPI?", "answer": "Ein Pixel hat keine feste Größe. Die DPI gibt an, wie viele davon beim Drucken oder Anzeigen auf jeden Zoll kommen." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "cm in Pixel",
+    "shortName": "cm → Pixel",
+    "tagline": "Finde heraus, wie viele Pixel eine Größe in Zentimetern bei jeder DPI braucht. Kostenlos, ohne Installation.",
+    "intro": "cm in Pixel zeigt dir, wie viele Pixel eine Größe in Zentimetern füllen. Teile durch 2,54, um Zoll zu erhalten, und multipliziere dann mit der DPI: 10 cm bei 300 DPI sind etwa 1181 Pixel. Das ist praktisch, wenn ein Formular oder eine Druckerei Größen in Zentimetern angibt.",
+    "seoTitle": "cm in Pixel umrechnen – jede DPI, kostenlos",
+    "seoDescription": "Rechne Zentimeter bei 72, 96, 150, 300 oder jeder anderen DPI in Pixel um und sieh, wie viele Pixel ein Druck braucht. Kostenlos, sofort, ohne Anmeldung.",
+    "keywords": ["cm in pixel", "cm in px", "zentimeter in pixel umrechnen", "cm in pixel 300 dpi", "wie viele pixel sind 10 cm"],
+    "howToSteps": [
+      { "title": "Zentimeter eingeben", "description": "Gib die Größe in Zentimetern ein." },
+      { "title": "DPI wählen", "description": "300 für hochwertige Drucke, oder gib deinen eigenen Wert ein." },
+      { "title": "Pixel ablesen", "description": "Sieh die benötigten Pixel, dazu Zoll und Millimeter." }
+    ],
+    "features": [
+      { "title": "Druck planen", "description": "Sieh sofort, wie viele Pixel eine Größe braucht." },
+      { "title": "Funktioniert in jede Richtung", "description": "Gib etwas in ein beliebiges Feld ein, und die anderen werden aktualisiert." },
+      { "title": "Praktische Tabelle", "description": "Gängige Größen bei der gewählten DPI, auch A4-Breiten." }
+    ],
+    "faqs": [
+      { "question": "Wie rechne ich Zentimeter in Pixel um?", "answer": "Pixel = cm ÷ 2,54 × DPI. Zum Beispiel sind 21 cm bei 300 DPI etwa 2480 Pixel." },
+      { "question": "Wie viele Pixel hat A4 bei 300 DPI?", "answer": "A4 misst 21 × 29,7 cm, das sind bei 300 DPI etwa 2480 × 3508 Pixel." },
+      { "question": "Und wenn ein Formular 3,5 × 4,5 cm verlangt?", "answer": "Bei 300 DPI sind das etwa 413 × 531 Pixel. Passfoto erstellen kann das für dich erledigen." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Auflösungsrechner",
+    "shortName": "Auflösung",
+    "tagline": "Sieh, wie groß ein Bild bei jeder DPI gedruckt wird, dazu seine Megapixel und sein Seitenverhältnis. Kostenlos, ohne Installation.",
+    "intro": "Auflösungsrechner beantwortet die Frage „Wie groß kann ich das drucken?“. Gib Breite und Höhe eines Bildes in Pixeln ein und sieh seine Druckgröße bei jeder gängigen DPI, dazu seine Megapixel und sein Seitenverhältnis. Als grobe Orientierung: 300 DPI wirken in der Hand scharf, große Poster, die man aus der Ferne sieht, kommen mit weniger aus.",
+    "seoTitle": "Bildauflösung berechnen – Druckgröße, DPI, kostenlos",
+    "seoDescription": "Gib die Pixelgröße eines Bildes ein und sieh seine Druckgröße bei jeder DPI, seine Megapixel und sein Seitenverhältnis. Kostenlos, sofort, ohne Anmeldung.",
+    "keywords": ["bildauflösung berechnen", "druckgröße berechnen", "dpi rechner", "wie groß kann ich drucken", "megapixel in druckgröße"],
+    "howToSteps": [
+      { "title": "Pixelgröße eingeben", "description": "Gib Breite und Höhe des Bildes in Pixeln ein." },
+      { "title": "DPI wählen", "description": "Wähle die Druckqualität, die du anstrebst." },
+      { "title": "Ergebnisse ablesen", "description": "Sieh die Druckgröße in Zoll und Zentimetern, die Megapixel und das Seitenverhältnis." }
+    ],
+    "features": [
+      { "title": "Druckgröße bei jeder DPI", "description": "Eine Tabelle von 72 bis 600 DPI, in Zoll und Zentimetern." },
+      { "title": "Megapixel und Format", "description": "Sieh die Megapixelzahl und das Seitenverhältnis, etwa 4:3 oder 16:9." },
+      { "title": "Nichts hochzuladen", "description": "Es braucht nur die Zahlen." }
+    ],
+    "faqs": [
+      { "question": "Wie groß kann ich ein Foto mit 12 Megapixeln drucken?", "answer": "Ein Foto mit 4000 × 3000 wird bei 300 DPI etwa 13,3 × 10 Zoll (34 × 25 cm) groß." },
+      { "question": "Welche DPI brauche ich zum Drucken?", "answer": "300 DPI sind das übliche Ziel für Fotos, die man aus der Nähe betrachtet. 150 DPI reichen für viele Alltagsdrucke, und große Poster, die man aus der Ferne sieht, kommen mit weniger aus." },
+      { "question": "Wo finde ich die Pixelgröße meines Bildes?", "answer": "In den Dateieigenschaften deines Computers, oder nutze Bildanalyse auf dieser Website." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Farbenblindheits-Simulator",
+    "shortName": "Farbenblindheit",
+    "tagline": "Sieh, wie ein Bild, ein Diagramm oder ein Design bei jeder Art von Farbenblindheit aussieht. Kostenlos und direkt auf deinem Gerät.",
+    "intro": "Farbenblindheits-Simulator zeigt, wie ein Bild für Menschen mit Farbsehschwäche aussehen kann. Sie betrifft etwa 1 von 12 Männern und 1 von 200 Frauen. Prüfe damit, ob Diagramme, Karten, Schaltflächen und Designs noch verständlich sind, wenn Rot und Grün oder Blau und Gelb schwer zu unterscheiden sind. Abgedeckt sind sieben Arten, auf Basis eines veröffentlichten wissenschaftlichen Modells.",
+    "seoTitle": "Farbenblindheits-Simulator – Bilder testen, kostenlos",
+    "seoDescription": "Sieh, wie ein Bild bei Deuteranopie, Protanopie, Tritanopie und anderen Arten von Farbenblindheit aussieht. Kostenlos, ohne Upload.",
+    "keywords": ["farbenblindheit simulator", "farbenblind bild testen", "deuteranopie simulator", "protanopie simulator", "design auf farbenblindheit prüfen"],
+    "howToSteps": [
+      { "title": "Bild hinzufügen", "description": "Zieh ein Diagramm, einen Screenshot, ein Design oder ein Foto hierher oder wähle es aus." },
+      { "title": "Art wählen", "description": "Wechsle zwischen den Arten und zurück zum Original, um zu vergleichen." },
+      { "title": "Bei Bedarf herunterladen", "description": "Speichere das simulierte Bild als PNG, um es mit deinem Team zu teilen." }
+    ],
+    "features": [
+      { "title": "Sieben Arten", "description": "Rot-, Grün- und Blauschwäche und -ausfall, dazu völlig ohne Farben." },
+      { "title": "Auf Forschung gestützt", "description": "Nutzt das Modell von Machado, Oliveira und Fernandes (2009)." },
+      { "title": "Privat", "description": "Dein Bild wird auf deinem Gerät verarbeitet und nie hochgeladen." }
+    ],
+    "faqs": [
+      { "question": "Welche Art ist am häufigsten?", "answer": "Deuteranomalie, eine verringerte Empfindlichkeit für Grün, ist mit Abstand am häufigsten." },
+      { "question": "Sieht eine farbenblinde Person genau das?", "answer": "Es ist eine gute Annäherung. Das Farbsehen ist von Mensch zu Mensch verschieden, und auch der Schweregrad unterscheidet sich. Nimm es also als Orientierung und teste mit echten Nutzern, wenn es darauf ankommt." },
+      { "question": "Ist das ein Test auf Farbenblindheit?", "answer": "Nein. Es zeigt, wie Bilder aussehen können; eine Diagnose ist damit nicht möglich. Dein Farbsehen kann eine Augenärztin oder ein Augenarzt testen." },
+      { "question": "Wie mache ich mein Design für alle nutzbar?", "answer": "Verlass dich nicht allein auf Farbe. Ergänze Beschriftungen, Muster oder Symbole und wähle Farben, die sich auch in der Helligkeit und nicht nur im Farbton unterscheiden." }
+    ]
+  },
 };

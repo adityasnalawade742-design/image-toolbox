@@ -8424,4 +8424,367 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  // Social media sizes, print calculators, color blindness simulator
+"social-media-image-resizer": {
+    "name": "Redimensionar imagem para redes sociais",
+    "shortName": "Redes sociais",
+    "tagline": "Redimensione uma imagem para Instagram, YouTube, Facebook, LinkedIn, Pinterest, X e TikTok. Grátis e roda no seu dispositivo.",
+    "intro": "O Redimensionar imagem para redes sociais deixa uma imagem no tamanho exato que cada rede pede. Escolha um tamanho na lista, arraste a imagem até a parte certa ficar no quadro e baixe. Se a imagem não combinar com o formato, mostre tudo sobre uma cópia desfocada dela mesma ou sobre uma cor à sua escolha. Sua imagem fica no seu dispositivo.",
+    "seoTitle": "Redimensionar imagem para redes sociais – Grátis",
+    "seoDescription": "Redimensione imagens para Instagram, YouTube, Facebook, LinkedIn, Pinterest, X e TikTok. Arraste para posicionar e baixe. Grátis, sem cadastro e sem upload.",
+    "keywords": ["redimensionar imagem para redes sociais", "tamanho de imagem para redes sociais", "tamanhos de imagens redes sociais", "tamanho de imagem instagram facebook", "ajustar foto para redes sociais"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha um JPG, PNG, WebP, HEIC ou TIFF." },
+      { "title": "Escolha o tamanho e posicione", "description": "Escolha a rede e o formato, depois arraste a imagem ou use os controles deslizantes." },
+      { "title": "Baixe", "description": "Salve em JPG, PNG ou WebP exatamente nesse tamanho." }
+    ],
+    "features": [
+      { "title": "14 tamanhos prontos", "description": "Posts, stories, miniaturas, banners e capas para as principais redes." },
+      { "title": "Preencher ou mostrar tudo", "description": "Corte para preencher o quadro ou mantenha a imagem inteira sobre um fundo desfocado ou colorido." },
+      { "title": "Privado", "description": "Tudo acontece no seu navegador. Sua imagem nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "Estes são os tamanhos atuais?", "answer": "São os tamanhos que as redes publicam, até onde sabemos. As redes os alteram de tempos em tempos, então, se um envio ficar estranho, confira as páginas de ajuda da rede." },
+      { "question": "Minha imagem vai perder qualidade?", "answer": "Reduzir mantém a nitidez. Se a imagem for menor que o tamanho escolhido, ela precisa ser ampliada e pode perder nitidez; a ferramenta avisa quando isso acontece." },
+      { "question": "O que faz a opção “Mostrar tudo”?", "answer": "Ela encaixa a imagem inteira no quadro e preenche o espaço em volta com uma cópia desfocada da imagem ou com uma cor à sua escolha, então nada é cortado." },
+      { "question": "Minha imagem é enviada?", "answer": "Não. Ela é processada no seu dispositivo e continua lá." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Redimensionar post do Instagram",
+    "shortName": "Post do Instagram",
+    "tagline": "Ajuste uma imagem ao tamanho de post quadrado, vertical ou horizontal do Instagram. Grátis e roda no seu dispositivo.",
+    "intro": "O Redimensionar post do Instagram deixa a imagem no formato certo antes de você postar, para que o Instagram não a corte por você. Escolha quadrado (1080 × 1080), vertical (1080 × 1350) ou horizontal (1080 × 566) e arraste a imagem até a parte que importa ficar no quadro. Para postar uma foto larga sem cortar, mostre tudo sobre um fundo desfocado.",
+    "seoTitle": "Redimensionar post do Instagram – Quadrado e vertical",
+    "seoDescription": "Redimensione fotos para posts do Instagram: quadrado 1080×1080, vertical 1080×1350 ou horizontal. Arraste e evite cortes surpresa. Grátis, sem upload.",
+    "keywords": ["tamanho de post do instagram", "redimensionar imagem para instagram", "ajustar foto para instagram", "instagram 1080x1350", "postar foto inteira no instagram"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha a foto que você quer postar." },
+      { "title": "Escolha o formato", "description": "Escolha quadrado, vertical ou horizontal e arraste a foto para o lugar." },
+      { "title": "Baixe e poste", "description": "Salve e envie para o Instagram como de costume." }
+    ],
+    "features": [
+      { "title": "Os três formatos de post", "description": "Quadrado, vertical 4:5 e horizontal, com 1080 pixels de largura." },
+      { "title": "Sem corte forçado", "description": "Mostre a foto inteira sobre um fundo desfocado ou colorido se não quiser perder nenhuma parte." },
+      { "title": "Privado", "description": "Sua foto é processada no seu dispositivo e nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "Qual deve ser o tamanho de um post do Instagram?", "answer": "1080 pixels de largura. O vertical 1080 × 1350 ocupa mais espaço no feed, o quadrado é 1080 × 1080 e o horizontal é 1080 × 566." },
+      { "question": "Como postar uma foto inteira sem cortar?", "answer": "Escolha “Mostrar tudo”. A foto inteira fica dentro do quadro, sobre uma cópia desfocada dela mesma ou sobre uma cor à sua escolha." },
+      { "question": "Em qual formato devo salvar?", "answer": "JPG é bom para fotos. PNG é bom para artes com texto, embora o arquivo fique maior." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Redimensionar Story do Instagram",
+    "shortName": "Story do Instagram",
+    "tagline": "Deixe uma imagem em 1080 × 1920 para Stories, Reels e TikTok. Grátis e roda no seu dispositivo.",
+    "intro": "O Redimensionar Story do Instagram transforma qualquer imagem no formato alto de 1080 × 1920 usado em Stories, Reels e TikTok. Uma guia tracejada mostra onde ficam os botões e a legenda do próprio app, para você manter rostos e textos longe deles. Fotos largas podem ficar inteiras sobre uma cópia desfocada delas mesmas, em vez de serem cortadas.",
+    "seoTitle": "Tamanho de Story do Instagram – 1080×1920, grátis",
+    "seoDescription": "Redimensione qualquer imagem para 1080×1920 para Stories, Reels e TikTok, com guia de área segura. Grátis, sem cadastro e sua imagem não é enviada.",
+    "keywords": ["tamanho de story do instagram", "redimensionar imagem para story", "imagem 1080x1920", "tamanho de capa de reels", "tamanho de imagem tiktok"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma foto ou arte." },
+      { "title": "Posicione", "description": "Arraste para o lugar, mantendo o que importa dentro da área segura tracejada." },
+      { "title": "Baixe", "description": "Salve em 1080 × 1920, pronto para adicionar ao seu story." }
+    ],
+    "features": [
+      { "title": "Guia de área segura", "description": "Mostra o que os botões e a legenda do app cobrem. A guia não é salva na imagem." },
+      { "title": "Fundo desfocado", "description": "Uma foto larga cabe inteira, com uma cópia desfocada dela mesma preenchendo o resto." },
+      { "title": "Privado", "description": "Sua imagem fica no seu dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tamanho de um Story do Instagram?", "answer": "1080 × 1920 pixels, no formato 9:16. Reels e TikTok usam o mesmo formato." },
+      { "question": "O que é a área segura?", "answer": "O meio do quadro. Cerca de 250 pixels em cima e embaixo podem ser cobertos pelo nome do perfil, pelos botões e pela legenda, então evite colocar texto ali." },
+      { "question": "A caixa tracejada aparece na minha imagem?", "answer": "Não. Ela só aparece na prévia e nunca é salva." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "Criador de miniatura do YouTube",
+    "shortName": "Miniatura do YouTube",
+    "tagline": "Transforme uma imagem em uma miniatura do YouTube de 1280 × 720, abaixo do limite de 2 MB. Grátis e roda no seu dispositivo.",
+    "intro": "O Criador de miniatura do YouTube ajusta a imagem aos 1280 × 720 que o YouTube recomenda e mantém o arquivo abaixo do limite de envio de 2 MB, reduzindo a qualidade só o necessário. Arraste a imagem para enquadrar, dê zoom no que importa e baixe. Para adicionar texto antes, use o Adicionar texto à imagem.",
+    "seoTitle": "Criar miniatura do YouTube – 1280×720, até 2 MB, grátis",
+    "seoDescription": "Crie uma miniatura do YouTube de 1280×720 com qualquer imagem, abaixo do limite de 2 MB. Arraste, dê zoom e baixe. Grátis, sem cadastro e sem upload.",
+    "keywords": ["criar miniatura do youtube", "tamanho de miniatura do youtube", "thumbnail 1280x720", "redimensionar imagem para thumbnail do youtube", "thumbnail do youtube 2mb"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma captura de tela ou foto." },
+      { "title": "Enquadre", "description": "Arraste e dê zoom até o assunto preencher o quadro." },
+      { "title": "Baixe", "description": "Salve o arquivo de 1280 × 720 e envie no YouTube Studio." }
+    ],
+    "features": [
+      { "title": "O tamanho certo", "description": "1280 × 720 pixels, o formato 16:9 que o YouTube recomenda." },
+      { "title": "Abaixo do limite de envio", "description": "Arquivos JPG e WebP ficam abaixo de 2 MB automaticamente." },
+      { "title": "Privado", "description": "Sua imagem é processada no seu dispositivo e nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tamanho de uma miniatura do YouTube?", "answer": "O YouTube recomenda 1280 × 720 pixels, no formato 16:9, com arquivo abaixo de 2 MB." },
+      { "question": "Posso adicionar texto à miniatura?", "answer": "Não nesta ferramenta. Use o Adicionar texto à imagem na miniatura baixada e depois envie o resultado." },
+      { "question": "Por que a qualidade foi reduzida?", "answer": "Se o arquivo passasse de 2 MB, a qualidade é reduzida só o suficiente para caber. A maioria das miniaturas fica bem abaixo do limite em alta qualidade." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "Criador de banner do YouTube",
+    "shortName": "Banner do YouTube",
+    "tagline": "Crie um banner de canal do YouTube de 2560 × 1440, com uma guia do que cada dispositivo mostra. Grátis e roda no seu dispositivo.",
+    "intro": "O Criador de banner do YouTube ajusta a imagem aos 2560 × 1440 que o YouTube recomenda para a arte do canal. Celulares e computadores mostram só uma faixa no meio, enquanto as TVs mostram tudo, então uma guia tracejada marca a faixa sempre visível. Mantenha seu nome e seu logo dentro dela. O arquivo fica abaixo do limite de 6 MB do YouTube.",
+    "seoTitle": "Criar banner do YouTube – 2560×1440, área segura, grátis",
+    "seoDescription": "Crie um banner de canal do YouTube de 2560×1440 com guia de área segura que mostra o que aparece em celulares e computadores. Grátis, sem cadastro e sem upload.",
+    "keywords": ["criar banner do youtube", "tamanho de banner do youtube", "tamanho da arte do canal do youtube", "banner 2560x1440", "área segura banner youtube"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Escolha uma imagem larga e de alta resolução." },
+      { "title": "Posicione", "description": "Arraste para que a parte importante fique dentro da faixa tracejada." },
+      { "title": "Baixe", "description": "Salve e envie em Personalização, no YouTube Studio." }
+    ],
+    "features": [
+      { "title": "Guia de área segura", "description": "Marca a faixa de 1546 × 423 que todos os dispositivos mostram. Ela não é salva na imagem." },
+      { "title": "Abaixo do limite de envio", "description": "Arquivos JPG e WebP ficam abaixo de 6 MB automaticamente." },
+      { "title": "Privado", "description": "Sua imagem fica no seu dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tamanho de um banner do YouTube?", "answer": "O YouTube recomenda 2560 × 1440 pixels. A área segura em todos os dispositivos são os 1546 × 423 pixels do meio." },
+      { "question": "Por que meu banner aparece cortado no celular?", "answer": "Cada dispositivo mostra uma parte diferente. Celulares e computadores mostram só a faixa do meio, então mantenha textos e logos ali." },
+      { "question": "Minha imagem parece sem nitidez. Por quê?", "answer": "2560 pixels de largura é bastante, e imagens menores precisam ser ampliadas. Comece com a imagem de maior resolução que você tiver." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Criador de capa do Facebook",
+    "shortName": "Capa do Facebook",
+    "tagline": "Deixe uma imagem no formato certo para capa ou post do Facebook. Grátis e roda no seu dispositivo.",
+    "intro": "O Criador de capa do Facebook ajusta a imagem ao formato largo de 851 × 315 da capa do Facebook. Os celulares cortam as laterais da capa, então uma guia tracejada mostra a parte que todo mundo vê. Também há o tamanho de 1200 × 630 para posts com link e imagem. Arraste a imagem até ela ficar boa e baixe.",
+    "seoTitle": "Criar capa do Facebook – 851×315, grátis",
+    "seoDescription": "Redimensione uma imagem para capa (851×315) ou post (1200×630) do Facebook, com guia do que os celulares cortam. Grátis, sem cadastro e sem upload.",
+    "keywords": ["tamanho de capa do facebook", "criar capa do facebook", "redimensionar imagem para capa do facebook", "851x315", "tamanho de imagem para post do facebook"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma imagem larga." },
+      { "title": "Escolha e posicione", "description": "Escolha capa ou post e arraste a imagem para o lugar." },
+      { "title": "Baixe", "description": "Salve e envie para o seu perfil ou página." }
+    ],
+    "features": [
+      { "title": "Guia para celular", "description": "Uma caixa tracejada mostra a parte da capa que os celulares mantêm." },
+      { "title": "Tamanhos de capa e post", "description": "851 × 315 para capas e 1200 × 630 para posts." },
+      { "title": "Privado", "description": "Sua imagem nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tamanho da foto de capa do Facebook?", "answer": "O Facebook exibe capas de página em 820 × 312 pixels nos computadores; 851 × 315 é o tamanho comum para enviar. Os celulares mostram um corte mais estreito do meio." },
+      { "question": "Por que minha capa fica diferente no celular?", "answer": "Os celulares cortam os lados esquerdo e direito. Mantenha rostos e textos dentro da guia tracejada." },
+      { "question": "Qual formato é melhor?", "answer": "JPG para fotos. PNG deixa logos e textos mais nítidos." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "Criador de banner do LinkedIn",
+    "shortName": "Banner do LinkedIn",
+    "tagline": "Crie um banner de perfil do LinkedIn de 1584 × 396 com qualquer imagem. Grátis e roda no seu dispositivo.",
+    "intro": "O Criador de banner do LinkedIn corta a imagem no formato bem largo de 1584 × 396 do banner de perfil do LinkedIn. Arraste a imagem para cima e para baixo para escolher a faixa que você quer e dê zoom se precisar. Também há o tamanho de 1200 × 627 para posts com link e imagem. Sua foto de perfil cobre parte do canto inferior esquerdo do banner, então deixe os detalhes importantes longe dali.",
+    "seoTitle": "Criar banner do LinkedIn – 1584×396, grátis",
+    "seoDescription": "Crie um banner de perfil do LinkedIn de 1584×396 ou uma imagem de post de 1200×627 com qualquer imagem. Arraste para posicionar. Grátis e sem upload.",
+    "keywords": ["tamanho de banner do linkedin", "tamanho da foto de fundo do linkedin", "criar banner do linkedin", "1584x396", "imagem de capa do linkedin"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma imagem." },
+      { "title": "Escolha a faixa", "description": "Arraste para cima e para baixo até a parte desejada ficar no quadro." },
+      { "title": "Baixe", "description": "Salve e adicione ao seu perfil do LinkedIn." }
+    ],
+    "features": [
+      { "title": "Tamanhos de banner e post", "description": "1584 × 396 para banners de perfil e 1200 × 627 para posts." },
+      { "title": "Arraste ou use os controles", "description": "Posicione a imagem com mouse, toque ou teclado." },
+      { "title": "Privado", "description": "Sua imagem fica no seu dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tamanho de um banner do LinkedIn?", "answer": "1584 × 396 pixels para um perfil pessoal, no formato 4:1." },
+      { "question": "O que minha foto de perfil cobre?", "answer": "Ela se sobrepõe ao canto inferior esquerdo do banner, então evite colocar textos ou rostos ali." },
+      { "question": "Isso funciona para páginas de empresa?", "answer": "As páginas de empresa usam outro formato, então este banner seria cortado nelas." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Redimensionar pin do Pinterest",
+    "shortName": "Pin do Pinterest",
+    "tagline": "Redimensione uma imagem para o formato alto de 1000 × 1500 dos pins do Pinterest. Grátis e roda no seu dispositivo.",
+    "intro": "O Redimensionar pin do Pinterest deixa a imagem em 1000 × 1500, o formato alto 2:3 que o Pinterest recomenda para pins. Corte para preencher o quadro e arraste para escolher o que aparece, ou mantenha uma foto larga inteira sobre um fundo desfocado ou colorido.",
+    "seoTitle": "Tamanho de pin do Pinterest – 1000×1500, grátis",
+    "seoDescription": "Redimensione imagens para 1000×1500 para pins do Pinterest. Corte para preencher ou mantenha a imagem inteira sobre um fundo. Grátis, sem cadastro e sem upload.",
+    "keywords": ["tamanho de pin do pinterest", "tamanho de imagem do pinterest", "redimensionar imagem para pinterest", "1000x1500", "criar pin do pinterest"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma foto ou arte." },
+      { "title": "Ajuste", "description": "Preencha o quadro e arraste, ou mostre a imagem inteira sobre um fundo." },
+      { "title": "Baixe", "description": "Salve o arquivo de 1000 × 1500 e crie o pin." }
+    ],
+    "features": [
+      { "title": "O formato recomendado", "description": "1000 × 1500 pixels, no formato 2:3." },
+      { "title": "Fotos largas inteiras", "description": "Mostre tudo sobre uma cópia desfocada da própria foto ou sobre uma cor." },
+      { "title": "Privado", "description": "Sua imagem é processada no seu dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Qual deve ser o tamanho de um pin do Pinterest?", "answer": "O Pinterest recomenda o formato 2:3, como 1000 × 1500 pixels." },
+      { "question": "Posso usar uma foto horizontal?", "answer": "Sim. Escolha “Mostrar tudo” para manter a foto inteira, ou preencha o quadro e escolha a parte que quer manter." },
+      { "question": "Minha imagem é enviada?", "answer": "Não. Ela fica no seu dispositivo." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Criador de imagem Open Graph",
+    "shortName": "Imagem Open Graph",
+    "tagline": "Crie a imagem de 1200 × 630 que aparece quando um link é compartilhado. Grátis e roda no seu dispositivo.",
+    "intro": "O Criador de imagem Open Graph prepara a imagem que aparece quando alguém compartilha sua página nas redes sociais ou em um app de mensagens. Ele ajusta qualquer imagem ao tamanho bastante usado de 1200 × 630. Depois de colocá-la no seu site, aponte a tag og:image da página para ela.",
+    "seoTitle": "Criar imagem Open Graph – 1200×630 og:image, grátis",
+    "seoDescription": "Crie uma imagem Open Graph de 1200×630 para prévias de link em redes sociais e apps de mensagens. Arraste para posicionar e baixe. Grátis e sem upload.",
+    "keywords": ["tamanho de imagem open graph", "gerador de imagem og", "tamanho og:image", "1200x630", "imagem de prévia de link"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha uma imagem ou arte." },
+      { "title": "Posicione", "description": "Arraste e dê zoom até ficar bom." },
+      { "title": "Baixe e vincule", "description": "Envie o arquivo para o seu site e defina-o como og:image da página." }
+    ],
+    "features": [
+      { "title": "O tamanho usual de prévia", "description": "1200 × 630 pixels, usado pelas principais redes e apps de mensagens." },
+      { "title": "Arquivos pequenos", "description": "Salvos com codificadores eficientes, para que as prévias carreguem rápido." },
+      { "title": "Privado", "description": "Sua imagem nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "O que é uma imagem Open Graph?", "answer": "A imagem mostrada no cartão de prévia quando um link da sua página é compartilhado. Você a define com uma tag og:image no HTML da página." },
+      { "question": "Qual deve ser o tamanho?", "answer": "1200 × 630 pixels é a escolha comum, um formato de cerca de 1,91:1." },
+      { "question": "Como uso o arquivo?", "answer": "Envie-o para o seu site e adicione <meta property=\"og:image\" content=\"the full URL of the image\"> à sua página." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Pixels para polegadas",
+    "shortName": "Pixels → polegadas",
+    "tagline": "Converta pixels em polegadas em qualquer DPI. Grátis e sem instalar nada.",
+    "intro": "O Pixels para polegadas mostra quanto uma quantidade de pixels mede em polegadas. Um pixel não tem tamanho fixo, então a resposta depende do DPI, o número de pixels por polegada: divida os pixels pelo DPI. Digite um valor em qualquer campo e os outros acompanham, incluindo centímetros e milímetros.",
+    "seoTitle": "Converter pixels para polegadas – Qualquer DPI, grátis",
+    "seoDescription": "Converta pixels para polegadas em 72, 96, 150, 300 ou qualquer DPI, também com centímetros e milímetros. Grátis, instantâneo e sem cadastro.",
+    "keywords": ["pixels para polegadas", "px para polegadas", "converter pixels em polegadas", "quantas polegadas são 1000 pixels", "pixels para polegadas 300 dpi"],
+    "howToSteps": [
+      { "title": "Digite os pixels", "description": "Digite o número de pixels." },
+      { "title": "Escolha um DPI", "description": "Escolha um valor comum ou digite o seu." },
+      { "title": "Veja o resultado", "description": "Veja polegadas, centímetros e milímetros na hora." }
+    ],
+    "features": [
+      { "title": "Funciona em todas as direções", "description": "Digite em qualquer campo e os outros são atualizados." },
+      { "title": "Qualquer DPI", "description": "Valores comuns a um toque, ou digite o seu." },
+      { "title": "Tabela prática", "description": "Valores comuns no DPI escolhido." }
+    ],
+    "faqs": [
+      { "question": "Como converter pixels em polegadas?", "answer": "Divida os pixels pelo DPI. Por exemplo, 3000 pixels a 300 DPI são 3000 ÷ 300 = 10 polegadas." },
+      { "question": "Quantos pixels há em uma polegada?", "answer": "Tantos quanto o DPI: 96 a 96 DPI, 300 a 300 DPI. Um pixel não tem tamanho físico fixo." },
+      { "question": "Qual DPI devo usar?", "answer": "Use 300 para impressões de qualidade e 150 para impressões do dia a dia. Para telas, 96 é o valor usual na web, e 72 é uma convenção mais antiga." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "Polegadas para pixels",
+    "shortName": "Polegadas → pixels",
+    "tagline": "Descubra quantos pixels um tamanho impresso precisa em qualquer DPI. Grátis e sem instalar nada.",
+    "intro": "O Polegadas para pixels mostra quantos pixels você precisa para preencher um tamanho em polegadas. Multiplique as polegadas pelo DPI: uma impressão de 6 polegadas a 300 DPI precisa de 1800 pixels. É útil para conferir se uma foto é grande o bastante para imprimir e para configurar um documento no tamanho certo.",
+    "seoTitle": "Converter polegadas para pixels – Qualquer DPI, grátis",
+    "seoDescription": "Converta polegadas para pixels em 72, 96, 150, 300 ou qualquer DPI e veja quantos pixels uma impressão precisa. Grátis, instantâneo e sem cadastro.",
+    "keywords": ["polegadas para pixels", "polegada para px", "converter polegadas em pixels", "quantos pixels são 8 polegadas", "polegadas para pixels 300 dpi"],
+    "howToSteps": [
+      { "title": "Digite as polegadas", "description": "Digite o tamanho em polegadas." },
+      { "title": "Escolha um DPI", "description": "300 para impressões de qualidade; ou digite o seu." },
+      { "title": "Veja os pixels", "description": "Veja os pixels necessários, além de centímetros e milímetros." }
+    ],
+    "features": [
+      { "title": "Planejamento de impressão", "description": "Veja na hora quantos pixels uma impressão precisa." },
+      { "title": "Funciona em todas as direções", "description": "Digite em qualquer campo e os outros são atualizados." },
+      { "title": "Tabela prática", "description": "Tamanhos comuns no DPI escolhido." }
+    ],
+    "faqs": [
+      { "question": "Como converter polegadas em pixels?", "answer": "Multiplique as polegadas pelo DPI. Por exemplo, 8 polegadas a 300 DPI são 8 × 300 = 2400 pixels." },
+      { "question": "Quantos pixels preciso para uma foto 4 × 6?", "answer": "A 300 DPI, 1200 × 1800 pixels." },
+      { "question": "E se minha foto tiver menos pixels?", "answer": "Ela ainda pode ser impressa, mas com DPI menor, então pode ficar menos nítida. Abaixo de cerca de 150 DPI, a falta de nitidez costuma ser visível de perto." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Pixels para cm",
+    "shortName": "Pixels → cm",
+    "tagline": "Converta pixels em centímetros em qualquer DPI. Grátis e sem instalar nada.",
+    "intro": "O Pixels para cm mostra quanto uma quantidade de pixels mede em centímetros. Divida os pixels pelo DPI e multiplique por 2,54, já que uma polegada tem 2,54 cm. Digite um valor em qualquer campo e as polegadas e os milímetros também são atualizados.",
+    "seoTitle": "Converter pixels para cm – Qualquer DPI, grátis",
+    "seoDescription": "Converta pixels para centímetros em 72, 96, 150, 300 ou qualquer DPI, também com polegadas e milímetros. Grátis, instantâneo e sem cadastro.",
+    "keywords": ["pixels para cm", "px para cm", "converter pixels em centímetros", "pixels para cm 300 dpi", "quantos cm são 1000 pixels"],
+    "howToSteps": [
+      { "title": "Digite os pixels", "description": "Digite o número de pixels." },
+      { "title": "Escolha um DPI", "description": "Escolha um valor comum ou digite o seu." },
+      { "title": "Veja o resultado", "description": "Veja centímetros, polegadas e milímetros na hora." }
+    ],
+    "features": [
+      { "title": "Funciona em todas as direções", "description": "Digite em qualquer campo e os outros são atualizados." },
+      { "title": "Qualquer DPI", "description": "Valores comuns a um toque, ou digite o seu." },
+      { "title": "Tabela prática", "description": "Valores comuns no DPI escolhido." }
+    ],
+    "faqs": [
+      { "question": "Como converter pixels em centímetros?", "answer": "Centímetros = pixels ÷ DPI × 2,54. Por exemplo, 1000 pixels a 300 DPI são cerca de 8,47 cm." },
+      { "question": "Quantos pixels há em um centímetro?", "answer": "DPI ÷ 2,54. São cerca de 118 pixels por cm a 300 DPI e cerca de 38 a 96 DPI." },
+      { "question": "Por que preciso de um DPI?", "answer": "Um pixel não tem tamanho fixo. O DPI diz quantos cabem em cada polegada ao imprimir ou exibir." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "Cm para pixels",
+    "shortName": "Cm → pixels",
+    "tagline": "Descubra quantos pixels um tamanho em centímetros precisa em qualquer DPI. Grátis e sem instalar nada.",
+    "intro": "O Cm para pixels mostra quantos pixels preenchem um tamanho em centímetros. Divida por 2,54 para obter polegadas e multiplique pelo DPI: 10 cm a 300 DPI são cerca de 1181 pixels. É útil quando um formulário ou uma gráfica informa os tamanhos em centímetros.",
+    "seoTitle": "Converter cm para pixels – Qualquer DPI, grátis",
+    "seoDescription": "Converta centímetros para pixels em 72, 96, 150, 300 ou qualquer DPI e veja quantos pixels uma impressão precisa. Grátis, instantâneo e sem cadastro.",
+    "keywords": ["cm para pixels", "cm para px", "converter centímetros em pixels", "cm para pixels 300 dpi", "quantos pixels são 10 cm"],
+    "howToSteps": [
+      { "title": "Digite os centímetros", "description": "Digite o tamanho em centímetros." },
+      { "title": "Escolha um DPI", "description": "300 para impressões de qualidade; ou digite o seu." },
+      { "title": "Veja os pixels", "description": "Veja os pixels necessários, além de polegadas e milímetros." }
+    ],
+    "features": [
+      { "title": "Planejamento de impressão", "description": "Veja na hora quantos pixels um tamanho precisa." },
+      { "title": "Funciona em todas as direções", "description": "Digite em qualquer campo e os outros são atualizados." },
+      { "title": "Tabela prática", "description": "Tamanhos comuns no DPI escolhido, incluindo larguras A4." }
+    ],
+    "faqs": [
+      { "question": "Como converter centímetros em pixels?", "answer": "Pixels = cm ÷ 2,54 × DPI. Por exemplo, 21 cm a 300 DPI são cerca de 2480 pixels." },
+      { "question": "Quantos pixels tem o A4 a 300 DPI?", "answer": "O A4 tem 21 × 29,7 cm, o que dá cerca de 2480 × 3508 pixels a 300 DPI." },
+      { "question": "E um formulário que pede 3,5 × 4,5 cm?", "answer": "A 300 DPI, são cerca de 413 × 531 pixels. O Foto para passaporte pode criá-la para você." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Calculadora de resolução",
+    "shortName": "Resolução",
+    "tagline": "Veja o tamanho de impressão de uma imagem em cada DPI, além dos megapixels e da proporção. Grátis e sem instalar nada.",
+    "intro": "A Calculadora de resolução responde à pergunta “em que tamanho posso imprimir isto?”. Digite a largura e a altura da imagem em pixels para ver o tamanho de impressão em cada DPI comum, além dos megapixels e da proporção. Como referência, 300 DPI fica nítido na mão, enquanto pôsteres grandes vistos de longe podem usar menos.",
+    "seoTitle": "Calculadora de resolução – Tamanho de impressão e DPI",
+    "seoDescription": "Digite o tamanho em pixels de uma imagem para ver o tamanho de impressão em cada DPI, os megapixels e a proporção. Grátis, instantâneo e sem cadastro.",
+    "keywords": ["calculadora de resolução de imagem", "calculadora de tamanho de impressão", "calculadora de dpi", "em que tamanho posso imprimir", "megapixels para tamanho de impressão"],
+    "howToSteps": [
+      { "title": "Digite o tamanho em pixels", "description": "Digite a largura e a altura da imagem em pixels." },
+      { "title": "Escolha um DPI", "description": "Escolha a qualidade de impressão que você busca." },
+      { "title": "Veja os resultados", "description": "Veja o tamanho de impressão em polegadas e centímetros, os megapixels e a proporção." }
+    ],
+    "features": [
+      { "title": "Tamanho de impressão em cada DPI", "description": "Uma tabela de 72 a 600 DPI, em polegadas e centímetros." },
+      { "title": "Megapixels e formato", "description": "Veja a contagem de megapixels e a proporção, como 4:3 ou 16:9." },
+      { "title": "Nada para enviar", "description": "A ferramenta só precisa dos números." }
+    ],
+    "faqs": [
+      { "question": "Em que tamanho posso imprimir uma foto de 12 megapixels?", "answer": "Uma foto de 4000 × 3000 é impressa em cerca de 13,3 × 10 polegadas (34 × 25 cm) a 300 DPI." },
+      { "question": "De quanto DPI preciso para imprimir?", "answer": "300 DPI é a meta usual para fotos vistas de perto. 150 DPI serve para muitas impressões do dia a dia, e pôsteres grandes vistos de longe podem usar menos." },
+      { "question": "Onde encontro o tamanho em pixels da minha imagem?", "answer": "Nas propriedades do arquivo no computador, ou use o Analisador de imagem neste site." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Simulador de daltonismo",
+    "shortName": "Daltonismo",
+    "tagline": "Veja como uma imagem, um gráfico ou um design aparece em cada tipo de daltonismo. Grátis e roda no seu dispositivo.",
+    "intro": "O Simulador de daltonismo mostra como uma imagem pode parecer para pessoas com deficiência na visão de cores, que afeta cerca de 1 em cada 12 homens e 1 em cada 200 mulheres. Use para conferir se gráficos, mapas, botões e designs continuam fazendo sentido quando é difícil distinguir vermelho e verde, ou azul e amarelo. Ele cobre sete tipos, com base em um modelo científico publicado.",
+    "seoTitle": "Simulador de daltonismo – Teste suas imagens, grátis",
+    "seoDescription": "Veja como uma imagem aparece com deuteranopia, protanopia, tritanopia e outros tipos de daltonismo. Grátis, sem cadastro e sua imagem não é enviada.",
+    "keywords": ["simulador de daltonismo", "imagem teste daltonismo", "simulador de deuteranopia", "simulador de protanopia", "verificar design para daltonismo"],
+    "howToSteps": [
+      { "title": "Adicione sua imagem", "description": "Arraste ou escolha um gráfico, captura de tela, design ou foto." },
+      { "title": "Escolha um tipo", "description": "Alterne entre os tipos e volte ao original para comparar." },
+      { "title": "Baixe, se quiser", "description": "Salve a imagem simulada em PNG para compartilhar com sua equipe." }
+    ],
+    "features": [
+      { "title": "Sete tipos", "description": "Fraqueza e ausência de vermelho, verde e azul, além da ausência total de cor." },
+      { "title": "Baseado em pesquisa", "description": "Usa o modelo de Machado, Oliveira e Fernandes (2009)." },
+      { "title": "Privado", "description": "Sua imagem é processada no seu dispositivo e nunca é enviada." }
+    ],
+    "faqs": [
+      { "question": "Qual é o tipo mais comum?", "answer": "A deuteranomalia, uma sensibilidade reduzida ao verde, é de longe a mais comum." },
+      { "question": "É exatamente isso que uma pessoa daltônica vê?", "answer": "É uma estimativa próxima. A visão de cores e a intensidade variam de pessoa para pessoa, então use como guia e teste com usuários reais quando for importante." },
+      { "question": "Isto é um teste de daltonismo?", "answer": "Não. Mostra como as imagens podem aparecer, mas não diagnostica nada. Um oftalmologista pode avaliar sua visão de cores." },
+      { "question": "Como faço meu design funcionar para todos?", "answer": "Não dependa só da cor. Adicione rótulos, padrões ou ícones e escolha cores que diferem em luminosidade e também em matiz." }
+    ]
+  },
 };

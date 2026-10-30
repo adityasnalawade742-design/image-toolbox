@@ -8078,4 +8078,366 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "social-media-image-resizer": {
+    "name": "Social Media Image Resizer",
+    "shortName": "Social Resizer",
+    "tagline": "Resize a picture for Instagram, YouTube, Facebook, LinkedIn, Pinterest, X and TikTok. Free, and it runs on your device.",
+    "intro": "Social Media Image Resizer gives one picture the exact size each network asks for. Pick a size from the list, drag the picture until the right part is in frame, and download it. If a picture doesn't suit the shape, show all of it on a blurred copy of itself or a color you choose. Your picture stays on your device.",
+    "seoTitle": "Social Media Image Resizer – All Sizes, Free, No Upload",
+    "seoDescription": "Resize images for Instagram, YouTube, Facebook, LinkedIn, Pinterest, X and TikTok. Drag to position, then download. Free, no sign-up, no upload.",
+    "keywords": ["social media image resizer", "resize image for social media", "social media image sizes", "instagram facebook image size", "image resizer for social media"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a JPG, PNG, WebP, HEIC or TIFF." },
+      { "title": "Pick a size and position it", "description": "Choose the network and format, then drag the picture or use the sliders." },
+      { "title": "Download", "description": "Save it as JPG, PNG or WebP at exactly that size." }
+    ],
+    "features": [
+      { "title": "14 ready-made sizes", "description": "Posts, stories, thumbnails, banners and covers for the major networks." },
+      { "title": "Fill or show it all", "description": "Crop to fill the frame, or keep the whole picture on a blurred or colored background." },
+      { "title": "Private", "description": "Everything happens in your browser. Your picture is never uploaded." }
+    ],
+    "faqs": [
+      { "question": "Are these the current sizes?", "answer": "They are the sizes the networks publish, as far as we know. Networks change them from time to time, so if an upload looks wrong, check the network's help pages." },
+      { "question": "Will my picture lose quality?", "answer": "Shrinking keeps it sharp. If your picture is smaller than the size you pick, it has to be enlarged and may look soft; the tool warns you when that happens." },
+      { "question": "What does \"Show it all\" do?", "answer": "It fits the whole picture inside the frame and fills the space around it with a blurred copy of the picture or a color you choose, so nothing is cropped." },
+      { "question": "Is my picture uploaded?", "answer": "No. It is processed on your device and stays there." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Instagram Post Resizer",
+    "shortName": "Instagram Post",
+    "tagline": "Fit a picture to Instagram's square, portrait or landscape post size. Free, and it runs on your device.",
+    "intro": "Instagram Post Resizer makes a picture the right shape before you post it, so Instagram doesn't crop it for you. Choose square (1080 × 1080), portrait (1080 × 1350) or landscape (1080 × 566), then drag the picture until the part you care about is in frame. To post a wide photo without cropping, show all of it on a blurred background.",
+    "seoTitle": "Instagram Post Resizer – Square, Portrait, Free",
+    "seoDescription": "Resize photos for Instagram posts: square 1080×1080, portrait 1080×1350 or landscape. Drag to position, no cropping surprises. Free, no upload.",
+    "keywords": ["instagram post size", "resize image for instagram", "instagram photo resizer", "instagram 1080x1350", "fit whole photo on instagram"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose the photo you want to post." },
+      { "title": "Choose the shape", "description": "Pick square, portrait or landscape, then drag the photo into place." },
+      { "title": "Download and post", "description": "Save it and upload it to Instagram as usual." }
+    ],
+    "features": [
+      { "title": "The three post shapes", "description": "Square, portrait 4:5 and landscape, at 1080 pixels wide." },
+      { "title": "No forced cropping", "description": "Show the whole photo on a blurred or colored background if you don't want to lose any of it." },
+      { "title": "Private", "description": "Your photo is processed on your device and never uploaded." }
+    ],
+    "faqs": [
+      { "question": "What size should an Instagram post be?", "answer": "1080 pixels wide. Portrait 1080 × 1350 takes up the most room in the feed, square is 1080 × 1080, and landscape is 1080 × 566." },
+      { "question": "How do I post a whole photo without cropping?", "answer": "Choose \"Show it all\". The whole photo sits inside the frame on a blurred copy of itself or a color you pick." },
+      { "question": "Which format should I save as?", "answer": "JPG suits photos. PNG suits graphics with text, though the file is larger." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Instagram Story Resizer",
+    "shortName": "Instagram Story",
+    "tagline": "Make a picture 1080 × 1920 for Stories, Reels and TikTok. Free, and it runs on your device.",
+    "intro": "Instagram Story Resizer turns any picture into the tall 1080 × 1920 shape used by Stories, Reels and TikTok. A dashed guide shows where the app's own buttons and caption sit, so you can keep faces and text clear of them. Wide photos can sit whole on a blurred copy of themselves instead of being cropped.",
+    "seoTitle": "Instagram Story Size Resizer – 1080×1920, Free",
+    "seoDescription": "Resize any picture to 1080×1920 for Instagram Stories, Reels and TikTok, with a safe-area guide. Free, no sign-up, your picture isn't uploaded.",
+    "keywords": ["instagram story size", "resize image for instagram story", "1080x1920 image", "reels cover size", "tiktok image size"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a photo or graphic." },
+      { "title": "Position it", "description": "Drag it into place, keeping anything important inside the dashed safe area." },
+      { "title": "Download", "description": "Save it at 1080 × 1920, ready to add to your story." }
+    ],
+    "features": [
+      { "title": "Safe-area guide", "description": "Shows what the app's buttons and caption cover. The guide isn't saved in the picture." },
+      { "title": "Blurred background", "description": "A wide photo fits whole, with a blurred copy of itself filling the rest." },
+      { "title": "Private", "description": "Your picture stays on your device." }
+    ],
+    "faqs": [
+      { "question": "What size is an Instagram Story?", "answer": "1080 × 1920 pixels, a 9:16 shape. Reels and TikTok use the same shape." },
+      { "question": "What is the safe area?", "answer": "The middle of the frame. About 250 pixels at the top and bottom can be covered by your profile name, buttons and caption, so avoid putting text there." },
+      { "question": "Will the dashed box show in my picture?", "answer": "No. It only appears in the preview and is never saved." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "YouTube Thumbnail Maker",
+    "shortName": "YouTube Thumbnail",
+    "tagline": "Turn a picture into a 1280 × 720 YouTube thumbnail under the 2 MB limit. Free, and it runs on your device.",
+    "intro": "YouTube Thumbnail Maker sizes a picture to the 1280 × 720 that YouTube recommends and keeps the file under YouTube's 2 MB upload limit, lowering the quality only as far as needed. Drag the picture to frame it, zoom in on what matters, and download it. To add text first, use Add Text to Image.",
+    "seoTitle": "YouTube Thumbnail Maker – 1280×720, Under 2 MB, Free",
+    "seoDescription": "Make a 1280×720 YouTube thumbnail from any picture, kept under the 2 MB limit. Drag to frame, zoom, download. Free, no sign-up, no upload.",
+    "keywords": ["youtube thumbnail maker", "youtube thumbnail size", "1280x720 thumbnail", "resize image for youtube thumbnail", "youtube thumbnail 2mb"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a screenshot or photo." },
+      { "title": "Frame it", "description": "Drag and zoom until the subject fills the frame." },
+      { "title": "Download", "description": "Save the 1280 × 720 file and upload it in YouTube Studio." }
+    ],
+    "features": [
+      { "title": "The right size", "description": "1280 × 720 pixels, the 16:9 shape YouTube recommends." },
+      { "title": "Under the upload limit", "description": "JPG and WebP files are kept under 2 MB automatically." },
+      { "title": "Private", "description": "Your picture is processed on your device and never uploaded." }
+    ],
+    "faqs": [
+      { "question": "What size is a YouTube thumbnail?", "answer": "YouTube recommends 1280 × 720 pixels, in a 16:9 shape, with a file size under 2 MB." },
+      { "question": "Can I add text to the thumbnail?", "answer": "Not in this tool. Use Add Text to Image on the downloaded thumbnail, then upload the result." },
+      { "question": "Why was the quality lowered?", "answer": "If the file would be over 2 MB, the quality is lowered just enough to fit. Most thumbnails are well under the limit at high quality." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "YouTube Banner Maker",
+    "shortName": "YouTube Banner",
+    "tagline": "Make a 2560 × 1440 YouTube channel banner, with a guide for what every device shows. Free, and it runs on your device.",
+    "intro": "YouTube Banner Maker sizes a picture to the 2560 × 1440 YouTube recommends for channel art. Phones and computers only show a strip through the middle, while TVs show all of it, so a dashed guide marks the strip that's always visible. Keep your name and logo inside it. The file is kept under YouTube's 6 MB limit.",
+    "seoTitle": "YouTube Banner Maker – 2560×1440 with Safe Area, Free",
+    "seoDescription": "Make a 2560×1440 YouTube channel banner with a safe-area guide showing what phones and computers display. Free, no sign-up, no upload.",
+    "keywords": ["youtube banner maker", "youtube banner size", "youtube channel art size", "2560x1440 banner", "youtube banner safe area"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Choose a wide, high-resolution picture." },
+      { "title": "Position it", "description": "Drag it so the important part sits inside the dashed strip." },
+      { "title": "Download", "description": "Save it and upload it under Customization in YouTube Studio." }
+    ],
+    "features": [
+      { "title": "Safe-area guide", "description": "Marks the 1546 × 423 strip every device shows. It isn't saved in the picture." },
+      { "title": "Under the upload limit", "description": "JPG and WebP files are kept under 6 MB automatically." },
+      { "title": "Private", "description": "Your picture stays on your device." }
+    ],
+    "faqs": [
+      { "question": "What size is a YouTube banner?", "answer": "YouTube recommends 2560 × 1440 pixels. The area safe on all devices is the middle 1546 × 423 pixels." },
+      { "question": "Why is my banner cropped on my phone?", "answer": "Each device shows a different part of it. Phones and computers show only the middle strip, so keep text and logos there." },
+      { "question": "My picture looks soft. Why?", "answer": "2560 pixels wide is large, and smaller pictures have to be enlarged. Start from the highest-resolution picture you have." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Facebook Cover Maker",
+    "shortName": "Facebook Cover",
+    "tagline": "Make a picture the right shape for a Facebook cover or post. Free, and it runs on your device.",
+    "intro": "Facebook Cover Maker fits a picture to Facebook's wide 851 × 315 cover shape. Phones crop the sides of a cover, so a dashed guide shows the part everyone sees. It also has the 1200 × 630 size for link and image posts. Drag the picture until it sits right, then download it.",
+    "seoTitle": "Facebook Cover Maker – 851×315 Photo Size, Free",
+    "seoDescription": "Resize a picture for a Facebook cover (851×315) or post (1200×630), with a guide for what phones crop. Free, no sign-up, no upload.",
+    "keywords": ["facebook cover photo size", "facebook cover maker", "resize image for facebook cover", "851x315", "facebook post image size"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a wide picture." },
+      { "title": "Choose and position", "description": "Pick cover or post, then drag the picture into place." },
+      { "title": "Download", "description": "Save it and upload it to your profile or page." }
+    ],
+    "features": [
+      { "title": "Phone guide", "description": "A dashed box shows the part of the cover phones keep." },
+      { "title": "Cover and post sizes", "description": "851 × 315 for covers and 1200 × 630 for posts." },
+      { "title": "Private", "description": "Your picture is never uploaded." }
+    ],
+    "faqs": [
+      { "question": "What size is a Facebook cover photo?", "answer": "Facebook displays page covers at 820 × 312 pixels on computers; 851 × 315 is the common size to upload. Phones show a narrower crop of the middle." },
+      { "question": "Why does my cover look different on my phone?", "answer": "Phones crop the left and right sides. Keep faces and text inside the dashed guide." },
+      { "question": "Which format is best?", "answer": "JPG for photos. PNG keeps logos and text crisper." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "LinkedIn Banner Maker",
+    "shortName": "LinkedIn Banner",
+    "tagline": "Make a 1584 × 396 LinkedIn profile banner from any picture. Free, and it runs on your device.",
+    "intro": "LinkedIn Banner Maker cuts a picture to the very wide 1584 × 396 shape of a LinkedIn profile banner. Drag the picture up and down to choose the strip you want, and zoom in if needed. It also has the 1200 × 627 size for link and image posts. Your profile photo covers part of the lower left of the banner, so keep important details away from there.",
+    "seoTitle": "LinkedIn Banner Maker – 1584×396 Background, Free",
+    "seoDescription": "Make a 1584×396 LinkedIn profile banner or a 1200×627 post image from any picture. Drag to position. Free, no sign-up, no upload.",
+    "keywords": ["linkedin banner size", "linkedin background photo size", "linkedin banner maker", "1584x396", "linkedin cover image"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a picture." },
+      { "title": "Choose the strip", "description": "Drag up and down until the part you want is in frame." },
+      { "title": "Download", "description": "Save it and add it to your LinkedIn profile." }
+    ],
+    "features": [
+      { "title": "Banner and post sizes", "description": "1584 × 396 for profile banners and 1200 × 627 for posts." },
+      { "title": "Drag or use sliders", "description": "Position the picture by pointer, touch or keyboard." },
+      { "title": "Private", "description": "Your picture stays on your device." }
+    ],
+    "faqs": [
+      { "question": "What size is a LinkedIn banner?", "answer": "1584 × 396 pixels for a personal profile, a 4:1 shape." },
+      { "question": "What does my profile photo cover?", "answer": "It overlaps the lower left of the banner, so avoid placing text or faces there." },
+      { "question": "Does this work for company pages?", "answer": "Company pages use a different shape, so this banner would be cropped there." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Pinterest Pin Resizer",
+    "shortName": "Pinterest Pin",
+    "tagline": "Resize a picture to Pinterest's tall 1000 × 1500 pin shape. Free, and it runs on your device.",
+    "intro": "Pinterest Pin Resizer makes a picture 1000 × 1500, the tall 2:3 shape Pinterest recommends for pins. Crop to fill the frame and drag to choose what shows, or keep a wide photo whole on a blurred or colored background.",
+    "seoTitle": "Pinterest Pin Size Resizer – 1000×1500, Free",
+    "seoDescription": "Resize images to 1000×1500 for Pinterest pins. Crop to fill or keep the whole picture on a background. Free, no sign-up, no upload.",
+    "keywords": ["pinterest pin size", "pinterest image size", "resize image for pinterest", "1000x1500", "pinterest pin maker"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a photo or graphic." },
+      { "title": "Fit it", "description": "Fill the frame and drag, or show the whole picture on a background." },
+      { "title": "Download", "description": "Save the 1000 × 1500 file and pin it." }
+    ],
+    "features": [
+      { "title": "The recommended shape", "description": "1000 × 1500 pixels, a 2:3 shape." },
+      { "title": "Keep wide photos whole", "description": "Show all of it on a blurred copy of itself or a color." },
+      { "title": "Private", "description": "Your picture is processed on your device." }
+    ],
+    "faqs": [
+      { "question": "What size should a Pinterest pin be?", "answer": "Pinterest recommends a 2:3 shape, such as 1000 × 1500 pixels." },
+      { "question": "Can I use a landscape photo?", "answer": "Yes. Choose \"Show it all\" to keep the whole photo, or fill the frame and pick the part to keep." },
+      { "question": "Is my picture uploaded?", "answer": "No. It stays on your device." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Open Graph Image Maker",
+    "shortName": "Open Graph Image",
+    "tagline": "Make the 1200 × 630 picture shown when a link is shared. Free, and it runs on your device.",
+    "intro": "Open Graph Image Maker prepares the picture that appears when someone shares your page on social media or in a chat app. It sizes any picture to the widely used 1200 × 630. Once it's on your site, point your page's og:image tag at it.",
+    "seoTitle": "Open Graph Image Maker – 1200×630 og:image, Free",
+    "seoDescription": "Make a 1200×630 Open Graph image for link previews on social media and chat apps. Drag to position, download. Free, no sign-up, no upload.",
+    "keywords": ["open graph image size", "og image generator", "og:image size", "1200x630", "link preview image"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a picture or graphic." },
+      { "title": "Position it", "description": "Drag and zoom until it looks right." },
+      { "title": "Download and link it", "description": "Upload the file to your site and set it as your page's og:image." }
+    ],
+    "features": [
+      { "title": "The usual preview size", "description": "1200 × 630 pixels, used by the major networks and chat apps." },
+      { "title": "Small files", "description": "Saved with efficient encoders, so previews load quickly." },
+      { "title": "Private", "description": "Your picture is never uploaded." }
+    ],
+    "faqs": [
+      { "question": "What is an Open Graph image?", "answer": "The picture shown in the preview card when a link to your page is shared. You set it with an og:image tag in the page's HTML." },
+      { "question": "What size should it be?", "answer": "1200 × 630 pixels is the common choice, a shape of about 1.91:1." },
+      { "question": "How do I use the file?", "answer": "Upload it to your website and add <meta property=\"og:image\" content=\"the full URL of the image\"> to your page." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Pixels to Inches",
+    "shortName": "Pixels → Inches",
+    "tagline": "Convert pixels to inches at any DPI. Free, and nothing to install.",
+    "intro": "Pixels to Inches tells you how large a number of pixels comes out in inches. A pixel has no fixed size, so the answer depends on DPI, the number of pixels per inch: divide the pixels by the DPI. Type a value in any box and the others follow, including centimeters and millimeters.",
+    "seoTitle": "Pixels to Inches Converter – Any DPI, Free",
+    "seoDescription": "Convert pixels to inches at 72, 96, 150, 300 or any DPI, with centimeters and millimeters too. Free, instant, no sign-up.",
+    "keywords": ["pixels to inches", "px to inches", "convert pixels to inches", "how many inches is 1000 pixels", "pixels to inches 300 dpi"],
+    "howToSteps": [
+      { "title": "Enter the pixels", "description": "Type the number of pixels." },
+      { "title": "Choose a DPI", "description": "Pick a common value or type your own." },
+      { "title": "Read the result", "description": "See inches, centimeters and millimeters straight away." }
+    ],
+    "features": [
+      { "title": "Works in every direction", "description": "Type in any box and the others update." },
+      { "title": "Any DPI", "description": "Common values one tap away, or type your own." },
+      { "title": "Handy table", "description": "Common values at your chosen DPI." }
+    ],
+    "faqs": [
+      { "question": "How do I convert pixels to inches?", "answer": "Divide the pixels by the DPI. For example, 3000 pixels at 300 DPI is 3000 ÷ 300 = 10 inches." },
+      { "question": "How many pixels are in an inch?", "answer": "As many as the DPI: 96 at 96 DPI, 300 at 300 DPI. A pixel has no fixed physical size." },
+      { "question": "Which DPI should I use?", "answer": "Use 300 for quality prints and 150 for everyday prints. For screens, 96 is the usual web assumption, and 72 is an older convention." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "Inches to Pixels",
+    "shortName": "Inches → Pixels",
+    "tagline": "Find how many pixels a printed size needs at any DPI. Free, and nothing to install.",
+    "intro": "Inches to Pixels tells you how many pixels you need to fill a size in inches. Multiply the inches by the DPI: a 6-inch print at 300 DPI needs 1800 pixels. It's handy for checking whether a photo is big enough to print, and for setting up a document at the right size.",
+    "seoTitle": "Inches to Pixels Converter – Any DPI, Free",
+    "seoDescription": "Convert inches to pixels at 72, 96, 150, 300 or any DPI and see how many pixels a print needs. Free, instant, no sign-up.",
+    "keywords": ["inches to pixels", "inch to px", "convert inches to pixels", "how many pixels is 8 inches", "inches to pixels 300 dpi"],
+    "howToSteps": [
+      { "title": "Enter the inches", "description": "Type the size in inches." },
+      { "title": "Choose a DPI", "description": "300 for quality prints; or type your own." },
+      { "title": "Read the pixels", "description": "See the pixels needed, plus centimeters and millimeters." }
+    ],
+    "features": [
+      { "title": "Print planning", "description": "See at once how many pixels a print needs." },
+      { "title": "Works in every direction", "description": "Type in any box and the others update." },
+      { "title": "Handy table", "description": "Common sizes at your chosen DPI." }
+    ],
+    "faqs": [
+      { "question": "How do I convert inches to pixels?", "answer": "Multiply the inches by the DPI. For example, 8 inches at 300 DPI is 8 × 300 = 2400 pixels." },
+      { "question": "How many pixels do I need for a 4 × 6 photo?", "answer": "At 300 DPI, 1200 × 1800 pixels." },
+      { "question": "What if my photo has fewer pixels?", "answer": "It can still print, but at a lower DPI, so it may look less sharp. Below about 150 DPI, softness is usually visible up close." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Pixels to CM",
+    "shortName": "Pixels → CM",
+    "tagline": "Convert pixels to centimeters at any DPI. Free, and nothing to install.",
+    "intro": "Pixels to CM tells you how long a number of pixels comes out in centimeters. Divide the pixels by the DPI, then multiply by 2.54, since an inch is 2.54 cm. Type a value in any box and inches and millimeters update too.",
+    "seoTitle": "Pixels to CM Converter – Any DPI, Free",
+    "seoDescription": "Convert pixels to centimeters at 72, 96, 150, 300 or any DPI, with inches and millimeters too. Free, instant, no sign-up.",
+    "keywords": ["pixels to cm", "px to cm", "convert pixels to centimeters", "pixels to cm 300 dpi", "how many cm is 1000 pixels"],
+    "howToSteps": [
+      { "title": "Enter the pixels", "description": "Type the number of pixels." },
+      { "title": "Choose a DPI", "description": "Pick a common value or type your own." },
+      { "title": "Read the result", "description": "See centimeters, inches and millimeters straight away." }
+    ],
+    "features": [
+      { "title": "Works in every direction", "description": "Type in any box and the others update." },
+      { "title": "Any DPI", "description": "Common values one tap away, or type your own." },
+      { "title": "Handy table", "description": "Common values at your chosen DPI." }
+    ],
+    "faqs": [
+      { "question": "How do I convert pixels to centimeters?", "answer": "Centimeters = pixels ÷ DPI × 2.54. For example, 1000 pixels at 300 DPI is about 8.47 cm." },
+      { "question": "How many pixels are in a centimeter?", "answer": "DPI ÷ 2.54. That is about 118 pixels per cm at 300 DPI, and about 38 at 96 DPI." },
+      { "question": "Why do I need a DPI?", "answer": "A pixel has no fixed size. DPI says how many are packed into each inch when printed or displayed." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "CM to Pixels",
+    "shortName": "CM → Pixels",
+    "tagline": "Find how many pixels a size in centimeters needs at any DPI. Free, and nothing to install.",
+    "intro": "CM to Pixels tells you how many pixels fill a size in centimeters. Divide by 2.54 to get inches, then multiply by the DPI: 10 cm at 300 DPI is about 1181 pixels. It's useful when a form or print shop gives sizes in centimeters.",
+    "seoTitle": "CM to Pixels Converter – Any DPI, Free",
+    "seoDescription": "Convert centimeters to pixels at 72, 96, 150, 300 or any DPI and see how many pixels a print needs. Free, instant, no sign-up.",
+    "keywords": ["cm to pixels", "cm to px", "convert centimeters to pixels", "cm to pixels 300 dpi", "how many pixels is 10 cm"],
+    "howToSteps": [
+      { "title": "Enter the centimeters", "description": "Type the size in centimeters." },
+      { "title": "Choose a DPI", "description": "300 for quality prints; or type your own." },
+      { "title": "Read the pixels", "description": "See the pixels needed, plus inches and millimeters." }
+    ],
+    "features": [
+      { "title": "Print planning", "description": "See at once how many pixels a size needs." },
+      { "title": "Works in every direction", "description": "Type in any box and the others update." },
+      { "title": "Handy table", "description": "Common sizes at your chosen DPI, including A4 widths." }
+    ],
+    "faqs": [
+      { "question": "How do I convert centimeters to pixels?", "answer": "Pixels = cm ÷ 2.54 × DPI. For example, 21 cm at 300 DPI is about 2480 pixels." },
+      { "question": "How many pixels is A4 at 300 DPI?", "answer": "A4 is 21 × 29.7 cm, which is about 2480 × 3508 pixels at 300 DPI." },
+      { "question": "What about a form that asks for 3.5 × 4.5 cm?", "answer": "At 300 DPI that is about 413 × 531 pixels. Passport Photo Maker can create it for you." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Resolution Calculator",
+    "shortName": "Resolution",
+    "tagline": "See how large a picture prints at each DPI, plus its megapixels and aspect ratio. Free, and nothing to install.",
+    "intro": "Resolution Calculator answers the question \"how big can I print this?\". Enter a picture's width and height in pixels to see its print size at each common DPI, along with its megapixels and aspect ratio. As a rough guide, 300 DPI looks sharp in your hand, while large posters seen from afar can use less.",
+    "seoTitle": "Image Resolution Calculator – Print Size, DPI, Free",
+    "seoDescription": "Enter an image's pixel size to see its print size at each DPI, its megapixels and aspect ratio. Free, instant, no sign-up.",
+    "keywords": ["image resolution calculator", "print size calculator", "dpi calculator", "how big can i print", "megapixel to print size"],
+    "howToSteps": [
+      { "title": "Enter the pixel size", "description": "Type the picture's width and height in pixels." },
+      { "title": "Choose a DPI", "description": "Pick the print quality you're aiming for." },
+      { "title": "Read the results", "description": "See the print size in inches and centimeters, megapixels and aspect ratio." }
+    ],
+    "features": [
+      { "title": "Print size at every DPI", "description": "A table from 72 to 600 DPI, in inches and centimeters." },
+      { "title": "Megapixels and shape", "description": "See the megapixel count and the aspect ratio, such as 4:3 or 16:9." },
+      { "title": "Nothing to upload", "description": "It only needs the numbers." }
+    ],
+    "faqs": [
+      { "question": "How big can I print a 12-megapixel photo?", "answer": "A 4000 × 3000 photo prints at about 13.3 × 10 inches (34 × 25 cm) at 300 DPI." },
+      { "question": "What DPI do I need for printing?", "answer": "300 DPI is the usual aim for photos seen up close. 150 DPI is fine for many everyday prints, and large posters seen from a distance can go lower." },
+      { "question": "Where do I find my picture's pixel size?", "answer": "In your computer's file properties, or use Image Analyzer on this site." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Color Blindness Simulator",
+    "shortName": "Color Blindness",
+    "tagline": "See how a picture, chart or design looks with each type of color blindness. Free, and it runs on your device.",
+    "intro": "Color Blindness Simulator shows how a picture may look to people with color vision deficiency, which affects roughly 1 in 12 men and 1 in 200 women. Use it to check that charts, maps, buttons and designs still make sense when red and green, or blue and yellow, are hard to tell apart. It covers seven types, based on a published scientific model.",
+    "seoTitle": "Color Blindness Simulator – Test Images, Free",
+    "seoDescription": "See how an image looks with deuteranopia, protanopia, tritanopia and other color blindness types. Free, no sign-up, your image isn't uploaded.",
+    "keywords": ["color blindness simulator", "colorblind test image", "deuteranopia simulator", "protanopia simulator", "check design for color blindness"],
+    "howToSteps": [
+      { "title": "Add your picture", "description": "Drop or choose a chart, screenshot, design or photo." },
+      { "title": "Choose a type", "description": "Switch between the types, and back to the original to compare." },
+      { "title": "Download if you like", "description": "Save the simulated picture as a PNG to share with your team." }
+    ],
+    "features": [
+      { "title": "Seven types", "description": "Red, green and blue weakness and absence, plus no color at all." },
+      { "title": "Based on research", "description": "Uses the model of Machado, Oliveira and Fernandes (2009)." },
+      { "title": "Private", "description": "Your picture is processed on your device and never uploaded." }
+    ],
+    "faqs": [
+      { "question": "Which type is most common?", "answer": "Deuteranomaly, a reduced sensitivity to green, is by far the most common." },
+      { "question": "Is this exactly what a color-blind person sees?", "answer": "It's a close estimate. Color vision varies from person to person, and severity differs, so treat it as a guide and test with real users when it matters." },
+      { "question": "Is this a test for color blindness?", "answer": "No. It shows how pictures may appear; it can't diagnose anything. An eye care professional can test your color vision." },
+      { "question": "How do I make my design work for everyone?", "answer": "Don't rely on color alone. Add labels, patterns or icons, and choose colors that differ in lightness as well as hue." }
+    ]
+  },
 };

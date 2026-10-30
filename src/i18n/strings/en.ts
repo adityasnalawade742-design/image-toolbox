@@ -12,6 +12,7 @@ import { pdfEditStrings } from './en/pdf-edit';
 import { viewStrings } from './en/view';
 import { barcodeStrings } from './en/barcode';
 import { documentStrings } from './en/documents';
+import { socialStrings } from './en/social';
 import { pdfUtilStrings } from './en/pdf-utils';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
@@ -102,6 +103,7 @@ export const en = {
   ...viewStrings,
   ...barcodeStrings,
   ...documentStrings,
+  ...socialStrings,
   ...pdfUtilStrings,
 } as const;
 

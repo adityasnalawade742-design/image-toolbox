@@ -71,7 +71,7 @@
 
 1. **Zero-Server Processing**: Images are processed directly within the user's browser using HTML5 Canvas 2D and WebAssembly. No files are uploaded to third-party servers.
 2. **IndexedDB Cross-Tool Cache**: High-resolution and 4K images are handed off between tools via client-side IndexedDB (`handoffStorage.ts`), bypassing browser `sessionStorage` limitations.
-3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 1155 statically-generated routes (114 tools in every language, plus English information pages).
+3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 1305 statically-generated routes (129 tools in every language, plus English information pages).
 4. **Pro Desktop UX**:
    - `Ctrl+V` / `Cmd+V`: Instant paste image from clipboard.
    - `Ctrl+S` / `Cmd+S`: 1-click save/download processed image.
@@ -110,7 +110,7 @@ Visit `http://localhost:4321` in your browser.
 | :--- | :--- |
 | `npm run dev` | Starts local Astro dev server with hot-module reload |
 | `npm run check` | Runs full TypeScript and Astro template type verification |
-| `npm run build` | Builds every localized static route (114 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
+| `npm run build` | Builds every localized static route (129 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
 | `npm run preview` | Previews the production build locally |
 | `npm run deploy` | Deploys static assets and edge worker to Cloudflare Workers |
 | `npm run a11y` | Audits every tool, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |

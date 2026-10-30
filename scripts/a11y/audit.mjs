@@ -28,6 +28,9 @@ const INPUT = {
   'gif-to-png': [S('photo.gif')], 'gif-to-jpg': [S('photo.gif')], 'bmp-to-jpg': [S('photo.bmp')], 'bmp-to-png': [S('photo.bmp')], 'tiff-to-jpg': [S('scan.tif')], 'tiff-to-png': [S('photo.tif')], 'tiff-to-pdf': [S('scan.tif'), S('photo.tif')],
   'svg-to-jpg': [S('shape.svg')], 'svg-to-webp': [S('shape.svg')], 'pdf-to-png': [S('doc.pdf')], 'png-to-pdf': [S('photo.png'), S('photo2.png')], 'pdf-to-jpg': [S('doc.pdf')],
   'jpg-to-pdf': [S('photo.jpg'), S('photo2.png')], 'merge-images': [S('photo.jpg'), S('photo2.png')],
+  'social-media-image-resizer': [S('photo.jpg')], 'instagram-post-resizer': [S('photo.jpg')], 'instagram-story-resizer': [S('photo.jpg')], 'youtube-thumbnail-maker': [S('photo.jpg')],
+  'youtube-banner-maker': [S('photo.jpg')], 'facebook-cover-maker': [S('photo.jpg')], 'linkedin-banner-maker': [S('photo.jpg')], 'pinterest-pin-resizer': [S('photo.jpg')], 'open-graph-image-maker': [S('photo.jpg')],
+  'pixels-to-inches': [], 'inches-to-pixels': [], 'pixels-to-cm': [], 'cm-to-pixels': [], 'resolution-calculator': [], 'color-blindness-simulator': [S('photo.jpg')],
   'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
   'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],
@@ -37,8 +40,8 @@ const INPUT = {
   'barcode-scanner': [S('qr.png')], 'add-shapes-to-pdf': [S('doc.pdf')], 'add-links-to-pdf': [S('doc.pdf')], 'whiteout-pdf': [S('doc.pdf')], 'redact-pdf': [S('doc.pdf')],
   'change-image-dpi': [S('photo.jpg')], 'signature-extractor': [S('signature-photo.jpg')], 'passport-photo-maker': [S('portrait.jpg')],
   'blur-background': [S('portrait.jpg')], 'change-background': [S('portrait.jpg')], 'image-to-text': [S('text.png')], 'qr-code-reader': [S('qr.png')],
-  'word-to-pdf': [S('sample.docx')], 'excel-to-pdf': [S('sample.xlsx')], 'powerpoint-to-pdf': [S('doc.pdf')], 'pdf-to-word': [S('doc.pdf')],
-  'compress-pdf': [S('doc.pdf')], 'protect-pdf': [S('doc.pdf')], 'unlock-pdf': [S('doc.pdf')], 'ocr-pdf': [S('scan.pdf')], 'pdf-to-pdfa': [S('doc.pdf')], 'repair-pdf': [S('doc.pdf')],
+  'word-to-pdf': [S('sample.docx')], 'excel-to-pdf': [S('sample.xlsx')], 'powerpoint-to-pdf': [S('sample.pptx')], 'pdf-to-word': [S('doc.pdf')],
+  'compress-pdf': [S('doc.pdf')], 'protect-pdf': [S('doc.pdf')], 'unlock-pdf': [S('protected.pdf')], 'ocr-pdf': [S('scan.pdf')], 'pdf-to-pdfa': [S('doc.pdf')], 'repair-pdf': [S('doc.pdf')],
 };
 const PORT = 9433;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

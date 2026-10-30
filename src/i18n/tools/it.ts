@@ -8419,4 +8419,367 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  // Social media sizes, print calculators, color blindness simulator
+"social-media-image-resizer": {
+    "name": "Ridimensiona immagini per i social",
+    "shortName": "Social",
+    "tagline": "Ridimensiona un’immagine per Instagram, YouTube, Facebook, LinkedIn, Pinterest, X e TikTok. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Ridimensiona immagini per i social dà a un’immagine la dimensione esatta richiesta da ogni social. Scegli una dimensione dall’elenco, trascina l’immagine finché la parte giusta non è nel riquadro e scaricala. Se un’immagine non si adatta alla forma, mostrala tutta su una sua copia sfocata o su un colore a tua scelta. L’immagine resta sul tuo dispositivo.",
+    "seoTitle": "Ridimensionare immagini per i social – Gratis",
+    "seoDescription": "Ridimensiona immagini per Instagram, YouTube, Facebook, LinkedIn, Pinterest, X e TikTok. Trascina per posizionare e scarica. Gratis, senza upload.",
+    "keywords": ["ridimensionare immagini per social", "dimensioni immagini social", "ridimensionare foto per social media", "dimensioni immagini instagram facebook", "adattare foto ai social"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un JPG, PNG, WebP, HEIC o TIFF." },
+      { "title": "Scegli la dimensione e posiziona", "description": "Scegli il social e il formato, poi trascina l’immagine o usa i cursori." },
+      { "title": "Scarica", "description": "Salvala in JPG, PNG o WebP esattamente a quella dimensione." }
+    ],
+    "features": [
+      { "title": "14 dimensioni pronte", "description": "Post, storie, miniature, banner e copertine per i principali social." },
+      { "title": "Riempi o mostra tutto", "description": "Ritaglia per riempire il riquadro o mantieni l’immagine intera su uno sfondo sfocato o colorato." },
+      { "title": "Privato", "description": "Tutto avviene nel tuo browser. L’immagine non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Queste dimensioni sono aggiornate?", "answer": "Sono le dimensioni pubblicate dai social, per quanto ne sappiamo. I social le cambiano di tanto in tanto, quindi se un caricamento non sembra corretto controlla le pagine di aiuto del social." },
+      { "question": "La mia immagine perderà qualità?", "answer": "Riducendola resta nitida. Se l’immagine è più piccola della dimensione scelta, deve essere ingrandita e può risultare poco nitida; lo strumento ti avvisa quando succede." },
+      { "question": "Che cosa fa «Mostra tutto»?", "answer": "Adatta l’intera immagine al riquadro e riempie lo spazio intorno con una sua copia sfocata o con un colore a tua scelta, così non viene ritagliato nulla." },
+      { "question": "La mia immagine viene caricata?", "answer": "No. Viene elaborata sul tuo dispositivo e resta lì." }
+    ]
+  },
+  "instagram-post-resizer": {
+    "name": "Ridimensiona post Instagram",
+    "shortName": "Post Instagram",
+    "tagline": "Adatta un’immagine alla dimensione dei post Instagram quadrati, verticali o orizzontali. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Ridimensiona post Instagram dà all’immagine la forma giusta prima di pubblicarla, così Instagram non la ritaglia al posto tuo. Scegli quadrato (1080 × 1080), verticale (1080 × 1350) od orizzontale (1080 × 566), poi trascina l’immagine finché la parte che ti interessa non è nel riquadro. Per pubblicare una foto larga senza ritagliarla, mostrala tutta su uno sfondo sfocato.",
+    "seoTitle": "Ridimensionare post Instagram – Quadrato, verticale",
+    "seoDescription": "Ridimensiona foto per i post Instagram: quadrato 1080×1080, verticale 1080×1350 od orizzontale. Trascina ed evita ritagli a sorpresa. Gratis, senza upload.",
+    "keywords": ["dimensioni post instagram", "ridimensionare immagine per instagram", "ridimensionare foto instagram", "instagram 1080x1350", "foto intera su instagram"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli la foto che vuoi pubblicare." },
+      { "title": "Scegli la forma", "description": "Scegli quadrato, verticale od orizzontale, poi trascina la foto al suo posto." },
+      { "title": "Scarica e pubblica", "description": "Salvala e caricala su Instagram come al solito." }
+    ],
+    "features": [
+      { "title": "Le tre forme dei post", "description": "Quadrato, verticale 4:5 e orizzontale, con 1080 pixel di larghezza." },
+      { "title": "Nessun ritaglio forzato", "description": "Mostra la foto intera su uno sfondo sfocato o colorato se non vuoi perderne nessuna parte." },
+      { "title": "Privato", "description": "La foto viene elaborata sul tuo dispositivo e non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni deve avere un post Instagram?", "answer": "1080 pixel di larghezza. Il verticale 1080 × 1350 occupa più spazio nel feed, il quadrato è 1080 × 1080 e l’orizzontale è 1080 × 566." },
+      { "question": "Come pubblico una foto intera senza ritagliarla?", "answer": "Scegli «Mostra tutto». La foto intera sta nel riquadro, su una sua copia sfocata o su un colore a tua scelta." },
+      { "question": "In quale formato devo salvare?", "answer": "JPG è adatto alle foto. PNG è adatto alle grafiche con testo, anche se il file pesa di più." }
+    ]
+  },
+  "instagram-story-resizer": {
+    "name": "Ridimensiona Story Instagram",
+    "shortName": "Story Instagram",
+    "tagline": "Porta un’immagine a 1080 × 1920 per Stories, Reels e TikTok. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Ridimensiona Story Instagram trasforma qualsiasi immagine nella forma alta 1080 × 1920 usata da Stories, Reels e TikTok. Una guida tratteggiata mostra dove si trovano i pulsanti e la didascalia dell’app, così puoi tenere volti e testi lontani da loro. Le foto larghe possono restare intere su una loro copia sfocata invece di essere ritagliate.",
+    "seoTitle": "Dimensioni Story Instagram – 1080×1920, gratis",
+    "seoDescription": "Ridimensiona qualsiasi immagine a 1080×1920 per Instagram Stories, Reels e TikTok, con una guida all’area sicura. Gratis, senza registrazione né upload.",
+    "keywords": ["dimensioni storie instagram", "ridimensionare immagine per storie instagram", "immagine 1080x1920", "dimensioni copertina reels", "dimensioni immagine tiktok"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli una foto o una grafica." },
+      { "title": "Posizionala", "description": "Trascinala al suo posto, tenendo ciò che conta dentro l’area sicura tratteggiata." },
+      { "title": "Scarica", "description": "Salvala a 1080 × 1920, pronta da aggiungere alla tua storia." }
+    ],
+    "features": [
+      { "title": "Guida all’area sicura", "description": "Mostra cosa coprono i pulsanti e la didascalia dell’app. La guida non viene salvata nell’immagine." },
+      { "title": "Sfondo sfocato", "description": "Una foto larga entra intera e una sua copia sfocata riempie il resto." },
+      { "title": "Privato", "description": "L’immagine resta sul tuo dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni ha una Story di Instagram?", "answer": "1080 × 1920 pixel, in forma 9:16. Reels e TikTok usano la stessa forma." },
+      { "question": "Che cos’è l’area sicura?", "answer": "La parte centrale del riquadro. Circa 250 pixel in alto e in basso possono essere coperti dal nome del profilo, dai pulsanti e dalla didascalia, quindi evita di mettere testo lì." },
+      { "question": "Il riquadro tratteggiato comparirà nella mia immagine?", "answer": "No. Compare solo nell’anteprima e non viene mai salvato." }
+    ]
+  },
+  "youtube-thumbnail-maker": {
+    "name": "Crea miniature YouTube",
+    "shortName": "Miniatura YouTube",
+    "tagline": "Trasforma un’immagine in una miniatura YouTube da 1280 × 720 sotto il limite di 2 MB. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea miniature YouTube porta un’immagine ai 1280 × 720 consigliati da YouTube e mantiene il file sotto il limite di caricamento di 2 MB, riducendo la qualità solo quanto serve. Trascina l’immagine per inquadrarla, ingrandisci ciò che conta e scaricala. Per aggiungere prima del testo, usa Aggiungi testo all’immagine.",
+    "seoTitle": "Creare miniatura YouTube – 1280×720, sotto 2 MB, gratis",
+    "seoDescription": "Crea una miniatura YouTube da 1280×720 da qualsiasi immagine, sotto il limite di 2 MB. Trascina, ingrandisci e scarica. Gratis, senza registrazione né upload.",
+    "keywords": ["creare miniatura youtube", "dimensioni miniatura youtube", "miniatura 1280x720", "ridimensionare immagine per miniatura youtube", "miniatura youtube 2mb"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli uno screenshot o una foto." },
+      { "title": "Inquadrala", "description": "Trascina e ingrandisci finché il soggetto non riempie il riquadro." },
+      { "title": "Scarica", "description": "Salva il file da 1280 × 720 e caricalo in YouTube Studio." }
+    ],
+    "features": [
+      { "title": "La dimensione giusta", "description": "1280 × 720 pixel, la forma 16:9 consigliata da YouTube." },
+      { "title": "Sotto il limite di caricamento", "description": "I file JPG e WebP restano automaticamente sotto i 2 MB." },
+      { "title": "Privato", "description": "L’immagine viene elaborata sul tuo dispositivo e non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni ha una miniatura YouTube?", "answer": "YouTube consiglia 1280 × 720 pixel, in forma 16:9, con un file sotto i 2 MB." },
+      { "question": "Posso aggiungere testo alla miniatura?", "answer": "Non con questo strumento. Usa Aggiungi testo all’immagine sulla miniatura scaricata, poi carica il risultato." },
+      { "question": "Perché la qualità è stata ridotta?", "answer": "Se il file supera i 2 MB, la qualità viene ridotta solo quanto basta per rientrare nel limite. La maggior parte delle miniature resta ben sotto il limite anche ad alta qualità." }
+    ]
+  },
+  "youtube-banner-maker": {
+    "name": "Crea banner YouTube",
+    "shortName": "Banner YouTube",
+    "tagline": "Crea un banner del canale YouTube da 2560 × 1440, con una guida a ciò che mostra ogni dispositivo. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea banner YouTube porta un’immagine ai 2560 × 1440 consigliati da YouTube per il banner del canale. Telefoni e computer mostrano solo una fascia centrale, mentre le TV mostrano tutto, quindi una guida tratteggiata segna la fascia sempre visibile. Tieni nome e logo al suo interno. Il file resta sotto il limite di 6 MB di YouTube.",
+    "seoTitle": "Creare banner YouTube – 2560×1440, area sicura, gratis",
+    "seoDescription": "Crea un banner del canale YouTube da 2560×1440 con una guida all’area sicura che mostra cosa vedono telefoni e computer. Gratis, senza registrazione né upload.",
+    "keywords": ["creare banner youtube", "dimensioni banner youtube", "dimensioni immagine canale youtube", "banner 2560x1440", "area sicura banner youtube"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Scegli un’immagine larga e ad alta risoluzione." },
+      { "title": "Posizionala", "description": "Trascinala in modo che la parte importante stia dentro la fascia tratteggiata." },
+      { "title": "Scarica", "description": "Salvala e caricala in Personalizzazione in YouTube Studio." }
+    ],
+    "features": [
+      { "title": "Guida all’area sicura", "description": "Segna la fascia da 1546 × 423 mostrata da ogni dispositivo. Non viene salvata nell’immagine." },
+      { "title": "Sotto il limite di caricamento", "description": "I file JPG e WebP restano automaticamente sotto i 6 MB." },
+      { "title": "Privato", "description": "L’immagine resta sul tuo dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni ha un banner YouTube?", "answer": "YouTube consiglia 2560 × 1440 pixel. L’area sicura su tutti i dispositivi sono i 1546 × 423 pixel centrali." },
+      { "question": "Perché il mio banner è ritagliato sul telefono?", "answer": "Ogni dispositivo ne mostra una parte diversa. Telefoni e computer mostrano solo la fascia centrale, quindi tieni lì testi e loghi." },
+      { "question": "La mia immagine sembra poco nitida. Perché?", "answer": "2560 pixel di larghezza sono tanti e le immagini più piccole devono essere ingrandite. Parti dall’immagine con la risoluzione più alta che hai." }
+    ]
+  },
+  "facebook-cover-maker": {
+    "name": "Crea copertine Facebook",
+    "shortName": "Copertina Facebook",
+    "tagline": "Dai a un’immagine la forma giusta per una copertina o un post di Facebook. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea copertine Facebook adatta un’immagine alla forma larga 851 × 315 della copertina di Facebook. I telefoni tagliano i lati della copertina, quindi una guida tratteggiata mostra la parte che vedono tutti. C’è anche la dimensione 1200 × 630 per i post con link e immagini. Trascina l’immagine finché non è al posto giusto, poi scaricala.",
+    "seoTitle": "Creare copertina Facebook – 851×315, gratis",
+    "seoDescription": "Ridimensiona un’immagine per una copertina (851×315) o un post (1200×630) di Facebook, con una guida a ciò che tagliano i telefoni. Gratis, senza upload.",
+    "keywords": ["dimensioni copertina facebook", "creare copertina facebook", "ridimensionare immagine per copertina facebook", "851x315", "dimensioni immagine post facebook"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un’immagine larga." },
+      { "title": "Scegli e posiziona", "description": "Scegli copertina o post, poi trascina l’immagine al suo posto." },
+      { "title": "Scarica", "description": "Salvala e caricala sul tuo profilo o sulla tua pagina." }
+    ],
+    "features": [
+      { "title": "Guida per i telefoni", "description": "Un riquadro tratteggiato mostra la parte della copertina che i telefoni mantengono." },
+      { "title": "Dimensioni per copertina e post", "description": "851 × 315 per le copertine e 1200 × 630 per i post." },
+      { "title": "Privato", "description": "L’immagine non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni ha una foto di copertina di Facebook?", "answer": "Facebook mostra le copertine delle pagine a 820 × 312 pixel sui computer; 851 × 315 è la dimensione comune da caricare. I telefoni mostrano un ritaglio più stretto della parte centrale." },
+      { "question": "Perché la mia copertina appare diversa sul telefono?", "answer": "I telefoni tagliano i lati sinistro e destro. Tieni volti e testi dentro la guida tratteggiata." },
+      { "question": "Qual è il formato migliore?", "answer": "JPG per le foto. PNG mantiene loghi e testi più nitidi." }
+    ]
+  },
+  "linkedin-banner-maker": {
+    "name": "Crea banner LinkedIn",
+    "shortName": "Banner LinkedIn",
+    "tagline": "Crea un banner del profilo LinkedIn da 1584 × 396 da qualsiasi immagine. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea banner LinkedIn taglia un’immagine nella forma molto larga 1584 × 396 del banner del profilo LinkedIn. Trascina l’immagine in alto e in basso per scegliere la fascia che vuoi e ingrandisci se serve. C’è anche la dimensione 1200 × 627 per i post con link e immagini. La foto del profilo copre parte dell’angolo in basso a sinistra del banner, quindi tieni i dettagli importanti lontani da lì.",
+    "seoTitle": "Creare banner LinkedIn – 1584×396, gratis",
+    "seoDescription": "Crea un banner del profilo LinkedIn da 1584×396 o un’immagine per i post da 1200×627 da qualsiasi immagine. Trascina per posizionare. Gratis, senza upload.",
+    "keywords": ["dimensioni banner linkedin", "dimensioni immagine di sfondo linkedin", "creare banner linkedin", "1584x396", "immagine di copertina linkedin"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un’immagine." },
+      { "title": "Scegli la fascia", "description": "Trascina in alto e in basso finché la parte che vuoi non è nel riquadro." },
+      { "title": "Scarica", "description": "Salvala e aggiungila al tuo profilo LinkedIn." }
+    ],
+    "features": [
+      { "title": "Dimensioni per banner e post", "description": "1584 × 396 per i banner del profilo e 1200 × 627 per i post." },
+      { "title": "Trascina o usa i cursori", "description": "Posiziona l’immagine con il puntatore, il tocco o la tastiera." },
+      { "title": "Privato", "description": "L’immagine resta sul tuo dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni ha un banner LinkedIn?", "answer": "1584 × 396 pixel per un profilo personale, in forma 4:1." },
+      { "question": "Che cosa copre la mia foto del profilo?", "answer": "Si sovrappone all’angolo in basso a sinistra del banner, quindi evita di mettere lì testi o volti." },
+      { "question": "Funziona per le pagine aziendali?", "answer": "Le pagine aziendali usano una forma diversa, quindi lì questo banner verrebbe ritagliato." }
+    ]
+  },
+  "pinterest-pin-resizer": {
+    "name": "Ridimensiona pin Pinterest",
+    "shortName": "Pin Pinterest",
+    "tagline": "Ridimensiona un’immagine alla forma alta 1000 × 1500 dei pin di Pinterest. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Ridimensiona pin Pinterest porta un’immagine a 1000 × 1500, la forma alta 2:3 consigliata da Pinterest per i pin. Ritaglia per riempire il riquadro e trascina per scegliere cosa mostrare, oppure mantieni intera una foto larga su uno sfondo sfocato o colorato.",
+    "seoTitle": "Dimensioni pin Pinterest – 1000×1500, gratis",
+    "seoDescription": "Ridimensiona immagini a 1000×1500 per i pin di Pinterest. Ritaglia per riempire o mantieni l’immagine intera su uno sfondo. Gratis, senza upload.",
+    "keywords": ["dimensioni pin pinterest", "dimensioni immagini pinterest", "ridimensionare immagine per pinterest", "1000x1500", "creare pin pinterest"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli una foto o una grafica." },
+      { "title": "Adattala", "description": "Riempi il riquadro e trascina, oppure mostra l’immagine intera su uno sfondo." },
+      { "title": "Scarica", "description": "Salva il file da 1000 × 1500 e crea il pin." }
+    ],
+    "features": [
+      { "title": "La forma consigliata", "description": "1000 × 1500 pixel, in forma 2:3." },
+      { "title": "Foto larghe intere", "description": "Mostrale tutte su una loro copia sfocata o su un colore." },
+      { "title": "Privato", "description": "L’immagine viene elaborata sul tuo dispositivo." }
+    ],
+    "faqs": [
+      { "question": "Che dimensioni deve avere un pin di Pinterest?", "answer": "Pinterest consiglia una forma 2:3, ad esempio 1000 × 1500 pixel." },
+      { "question": "Posso usare una foto orizzontale?", "answer": "Sì. Scegli «Mostra tutto» per mantenere la foto intera, oppure riempi il riquadro e scegli la parte da tenere." },
+      { "question": "La mia immagine viene caricata?", "answer": "No. Resta sul tuo dispositivo." }
+    ]
+  },
+  "open-graph-image-maker": {
+    "name": "Crea immagini Open Graph",
+    "shortName": "Immagine Open Graph",
+    "tagline": "Crea l’immagine da 1200 × 630 mostrata quando viene condiviso un link. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Crea immagini Open Graph prepara l’immagine che appare quando qualcuno condivide la tua pagina sui social o in un’app di messaggistica. Porta qualsiasi immagine alla dimensione molto diffusa 1200 × 630. Quando è sul tuo sito, fai puntare a essa il tag og:image della pagina.",
+    "seoTitle": "Creare immagine Open Graph – 1200×630 og:image, gratis",
+    "seoDescription": "Crea un’immagine Open Graph da 1200×630 per le anteprime dei link su social e app di messaggistica. Trascina e scarica. Gratis, senza registrazione né upload.",
+    "keywords": ["dimensioni immagine open graph", "generatore immagine og", "dimensioni og:image", "1200x630", "immagine anteprima link"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un’immagine o una grafica." },
+      { "title": "Posizionala", "description": "Trascina e ingrandisci finché il risultato non ti convince." },
+      { "title": "Scarica e collega", "description": "Carica il file sul tuo sito e impostalo come og:image della pagina." }
+    ],
+    "features": [
+      { "title": "La dimensione abituale delle anteprime", "description": "1200 × 630 pixel, usata dai principali social e dalle app di messaggistica." },
+      { "title": "File leggeri", "description": "Salvati con encoder efficienti, così le anteprime si caricano in fretta." },
+      { "title": "Privato", "description": "L’immagine non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Che cos’è un’immagine Open Graph?", "answer": "L’immagine mostrata nella scheda di anteprima quando viene condiviso un link alla tua pagina. Si imposta con un tag og:image nell’HTML della pagina." },
+      { "question": "Che dimensioni deve avere?", "answer": "1200 × 630 pixel è la scelta comune, una forma di circa 1,91:1." },
+      { "question": "Come uso il file?", "answer": "Caricalo sul tuo sito web e aggiungi <meta property=\"og:image\" content=\"the full URL of the image\"> alla tua pagina." }
+    ]
+  },
+  "pixels-to-inches": {
+    "name": "Da pixel a pollici",
+    "shortName": "Pixel → pollici",
+    "tagline": "Converti pixel in pollici a qualsiasi DPI. Gratis e senza installare nulla.",
+    "intro": "Da pixel a pollici ti dice quanto misura in pollici un certo numero di pixel. Un pixel non ha una dimensione fissa, quindi la risposta dipende dai DPI, il numero di pixel per pollice: dividi i pixel per i DPI. Digita un valore in una casella qualsiasi e le altre si aggiornano, compresi centimetri e millimetri.",
+    "seoTitle": "Convertire pixel in pollici – Qualsiasi DPI, gratis",
+    "seoDescription": "Converti pixel in pollici a 72, 96, 150, 300 o qualsiasi DPI, anche in centimetri e millimetri. Gratis, immediato, senza registrazione.",
+    "keywords": ["pixel in pollici", "px in pollici", "convertire pixel in pollici", "quanti pollici sono 1000 pixel", "pixel in pollici 300 dpi"],
+    "howToSteps": [
+      { "title": "Inserisci i pixel", "description": "Digita il numero di pixel." },
+      { "title": "Scegli i DPI", "description": "Scegli un valore comune o digita il tuo." },
+      { "title": "Leggi il risultato", "description": "Vedi subito pollici, centimetri e millimetri." }
+    ],
+    "features": [
+      { "title": "Funziona in ogni direzione", "description": "Digita in una casella qualsiasi e le altre si aggiornano." },
+      { "title": "Qualsiasi DPI", "description": "Valori comuni a portata di tocco, oppure digita il tuo." },
+      { "title": "Tabella pratica", "description": "Valori comuni ai DPI scelti." }
+    ],
+    "faqs": [
+      { "question": "Come si convertono i pixel in pollici?", "answer": "Dividi i pixel per i DPI. Ad esempio, 3000 pixel a 300 DPI sono 3000 ÷ 300 = 10 pollici." },
+      { "question": "Quanti pixel ci sono in un pollice?", "answer": "Tanti quanti i DPI: 96 a 96 DPI, 300 a 300 DPI. Un pixel non ha una dimensione fisica fissa." },
+      { "question": "Quali DPI devo usare?", "answer": "Usa 300 per le stampe di qualità e 150 per quelle di tutti i giorni. Per gli schermi, 96 è il valore abituale sul web, mentre 72 è una convenzione più vecchia." }
+    ]
+  },
+  "inches-to-pixels": {
+    "name": "Da pollici a pixel",
+    "shortName": "Pollici → pixel",
+    "tagline": "Scopri quanti pixel servono per un formato di stampa a qualsiasi DPI. Gratis e senza installare nulla.",
+    "intro": "Da pollici a pixel ti dice quanti pixel servono per riempire una misura in pollici. Moltiplica i pollici per i DPI: una stampa da 6 pollici a 300 DPI richiede 1800 pixel. È utile per controllare se una foto è abbastanza grande da stampare e per impostare un documento alla dimensione giusta.",
+    "seoTitle": "Convertire pollici in pixel – Qualsiasi DPI, gratis",
+    "seoDescription": "Converti pollici in pixel a 72, 96, 150, 300 o qualsiasi DPI e scopri quanti pixel servono per una stampa. Gratis, immediato, senza registrazione.",
+    "keywords": ["pollici in pixel", "pollici in px", "convertire pollici in pixel", "quanti pixel sono 8 pollici", "pollici in pixel 300 dpi"],
+    "howToSteps": [
+      { "title": "Inserisci i pollici", "description": "Digita la misura in pollici." },
+      { "title": "Scegli i DPI", "description": "300 per le stampe di qualità, oppure digita il tuo valore." },
+      { "title": "Leggi i pixel", "description": "Vedi i pixel necessari, oltre a centimetri e millimetri." }
+    ],
+    "features": [
+      { "title": "Pianificazione della stampa", "description": "Vedi subito quanti pixel servono per una stampa." },
+      { "title": "Funziona in ogni direzione", "description": "Digita in una casella qualsiasi e le altre si aggiornano." },
+      { "title": "Tabella pratica", "description": "Misure comuni ai DPI scelti." }
+    ],
+    "faqs": [
+      { "question": "Come si convertono i pollici in pixel?", "answer": "Moltiplica i pollici per i DPI. Ad esempio, 8 pollici a 300 DPI sono 8 × 300 = 2400 pixel." },
+      { "question": "Quanti pixel servono per una foto 4 × 6?", "answer": "A 300 DPI, 1200 × 1800 pixel." },
+      { "question": "E se la mia foto ha meno pixel?", "answer": "Si può comunque stampare, ma a DPI più bassi, quindi può risultare meno nitida. Sotto i 150 DPI circa, la perdita di nitidezza di solito si vede da vicino." }
+    ]
+  },
+  "pixels-to-cm": {
+    "name": "Da pixel a cm",
+    "shortName": "Pixel → cm",
+    "tagline": "Converti pixel in centimetri a qualsiasi DPI. Gratis e senza installare nulla.",
+    "intro": "Da pixel a cm ti dice quanto misura in centimetri un certo numero di pixel. Dividi i pixel per i DPI, poi moltiplica per 2,54, perché un pollice è 2,54 cm. Digita un valore in una casella qualsiasi e anche pollici e millimetri si aggiornano.",
+    "seoTitle": "Convertire pixel in cm – Qualsiasi DPI, gratis",
+    "seoDescription": "Converti pixel in centimetri a 72, 96, 150, 300 o qualsiasi DPI, anche in pollici e millimetri. Gratis, immediato, senza registrazione.",
+    "keywords": ["pixel in cm", "px in cm", "convertire pixel in centimetri", "pixel in cm 300 dpi", "quanti cm sono 1000 pixel"],
+    "howToSteps": [
+      { "title": "Inserisci i pixel", "description": "Digita il numero di pixel." },
+      { "title": "Scegli i DPI", "description": "Scegli un valore comune o digita il tuo." },
+      { "title": "Leggi il risultato", "description": "Vedi subito centimetri, pollici e millimetri." }
+    ],
+    "features": [
+      { "title": "Funziona in ogni direzione", "description": "Digita in una casella qualsiasi e le altre si aggiornano." },
+      { "title": "Qualsiasi DPI", "description": "Valori comuni a portata di tocco, oppure digita il tuo." },
+      { "title": "Tabella pratica", "description": "Valori comuni ai DPI scelti." }
+    ],
+    "faqs": [
+      { "question": "Come si convertono i pixel in centimetri?", "answer": "Centimetri = pixel ÷ DPI × 2,54. Ad esempio, 1000 pixel a 300 DPI sono circa 8,47 cm." },
+      { "question": "Quanti pixel ci sono in un centimetro?", "answer": "DPI ÷ 2,54. Sono circa 118 pixel per cm a 300 DPI e circa 38 a 96 DPI." },
+      { "question": "Perché servono i DPI?", "answer": "Un pixel non ha una dimensione fissa. I DPI indicano quanti ne entrano in ogni pollice quando l’immagine viene stampata o mostrata." }
+    ]
+  },
+  "cm-to-pixels": {
+    "name": "Da cm a pixel",
+    "shortName": "Cm → pixel",
+    "tagline": "Scopri quanti pixel servono per una misura in centimetri a qualsiasi DPI. Gratis e senza installare nulla.",
+    "intro": "Da cm a pixel ti dice quanti pixel riempiono una misura in centimetri. Dividi per 2,54 per ottenere i pollici, poi moltiplica per i DPI: 10 cm a 300 DPI sono circa 1181 pixel. È utile quando un modulo o una tipografia indica le misure in centimetri.",
+    "seoTitle": "Convertire cm in pixel – Qualsiasi DPI, gratis",
+    "seoDescription": "Converti centimetri in pixel a 72, 96, 150, 300 o qualsiasi DPI e scopri quanti pixel servono per una stampa. Gratis, immediato, senza registrazione.",
+    "keywords": ["cm in pixel", "cm in px", "convertire centimetri in pixel", "cm in pixel 300 dpi", "quanti pixel sono 10 cm"],
+    "howToSteps": [
+      { "title": "Inserisci i centimetri", "description": "Digita la misura in centimetri." },
+      { "title": "Scegli i DPI", "description": "300 per le stampe di qualità, oppure digita il tuo valore." },
+      { "title": "Leggi i pixel", "description": "Vedi i pixel necessari, oltre a pollici e millimetri." }
+    ],
+    "features": [
+      { "title": "Pianificazione della stampa", "description": "Vedi subito quanti pixel servono per una misura." },
+      { "title": "Funziona in ogni direzione", "description": "Digita in una casella qualsiasi e le altre si aggiornano." },
+      { "title": "Tabella pratica", "description": "Misure comuni ai DPI scelti, comprese le larghezze A4." }
+    ],
+    "faqs": [
+      { "question": "Come si convertono i centimetri in pixel?", "answer": "Pixel = cm ÷ 2,54 × DPI. Ad esempio, 21 cm a 300 DPI sono circa 2480 pixel." },
+      { "question": "Quanti pixel è un A4 a 300 DPI?", "answer": "L’A4 misura 21 × 29,7 cm, cioè circa 2480 × 3508 pixel a 300 DPI." },
+      { "question": "E un modulo che chiede 3,5 × 4,5 cm?", "answer": "A 300 DPI sono circa 413 × 531 pixel. Generatore di fototessere può crearla per te." }
+    ]
+  },
+  "resolution-calculator": {
+    "name": "Calcolatore di risoluzione",
+    "shortName": "Risoluzione",
+    "tagline": "Scopri quanto viene grande un’immagine stampata a ogni DPI, oltre a megapixel e proporzioni. Gratis e senza installare nulla.",
+    "intro": "Calcolatore di risoluzione risponde alla domanda «quanto grande posso stamparla?». Inserisci larghezza e altezza di un’immagine in pixel per vedere il formato di stampa a ogni DPI comune, insieme a megapixel e proporzioni. Indicativamente, 300 DPI appare nitido tenendo la stampa in mano, mentre i poster grandi visti da lontano possono usarne meno.",
+    "seoTitle": "Calcolatore di risoluzione – Formato di stampa e DPI",
+    "seoDescription": "Inserisci le dimensioni in pixel di un’immagine per vedere il formato di stampa a ogni DPI, i megapixel e le proporzioni. Gratis e immediato.",
+    "keywords": ["calcolatore risoluzione immagine", "calcolatore formato di stampa", "calcolatore dpi", "quanto grande posso stampare", "da megapixel a formato di stampa"],
+    "howToSteps": [
+      { "title": "Inserisci le dimensioni in pixel", "description": "Digita larghezza e altezza dell’immagine in pixel." },
+      { "title": "Scegli i DPI", "description": "Scegli la qualità di stampa che vuoi ottenere." },
+      { "title": "Leggi i risultati", "description": "Vedi il formato di stampa in pollici e centimetri, i megapixel e le proporzioni." }
+    ],
+    "features": [
+      { "title": "Formato di stampa a ogni DPI", "description": "Una tabella da 72 a 600 DPI, in pollici e centimetri." },
+      { "title": "Megapixel e forma", "description": "Vedi il numero di megapixel e le proporzioni, come 4:3 o 16:9." },
+      { "title": "Niente da caricare", "description": "Bastano i numeri." }
+    ],
+    "faqs": [
+      { "question": "Quanto grande posso stampare una foto da 12 megapixel?", "answer": "Una foto 4000 × 3000 si stampa a circa 13,3 × 10 pollici (34 × 25 cm) a 300 DPI." },
+      { "question": "Quanti DPI servono per stampare?", "answer": "300 DPI è l’obiettivo abituale per le foto viste da vicino. 150 DPI va bene per molte stampe di tutti i giorni e i poster grandi visti da lontano possono scendere ancora." },
+      { "question": "Dove trovo le dimensioni in pixel della mia immagine?", "answer": "Nelle proprietà del file sul computer, oppure usa Analizzatore di immagini su questo sito." }
+    ]
+  },
+  "color-blindness-simulator": {
+    "name": "Simulatore di daltonismo",
+    "shortName": "Daltonismo",
+    "tagline": "Scopri come appare un’immagine, un grafico o un design con ogni tipo di daltonismo. Gratis e funziona sul tuo dispositivo.",
+    "intro": "Simulatore di daltonismo mostra come può apparire un’immagine alle persone con un deficit della visione dei colori, che riguarda circa 1 uomo su 12 e 1 donna su 200. Usalo per controllare che grafici, mappe, pulsanti e design abbiano ancora senso quando rosso e verde, o blu e giallo, sono difficili da distinguere. Copre sette tipi, sulla base di un modello scientifico pubblicato.",
+    "seoTitle": "Simulatore di daltonismo – Prova le immagini, gratis",
+    "seoDescription": "Scopri come appare un’immagine con deuteranopia, protanopia, tritanopia e altri tipi di daltonismo. Gratis, senza registrazione, l’immagine non viene caricata.",
+    "keywords": ["simulatore daltonismo", "immagine test daltonismo", "simulatore deuteranopia", "simulatore protanopia", "controllare design per daltonici"],
+    "howToSteps": [
+      { "title": "Aggiungi la tua immagine", "description": "Trascina o scegli un grafico, uno screenshot, un design o una foto." },
+      { "title": "Scegli un tipo", "description": "Passa da un tipo all’altro e torna all’originale per confrontare." },
+      { "title": "Scarica se vuoi", "description": "Salva l’immagine simulata in PNG per condividerla con il tuo team." }
+    ],
+    "features": [
+      { "title": "Sette tipi", "description": "Debolezza e assenza di rosso, verde e blu, oltre alla totale assenza di colore." },
+      { "title": "Basato sulla ricerca", "description": "Usa il modello di Machado, Oliveira e Fernandes (2009)." },
+      { "title": "Privato", "description": "L’immagine viene elaborata sul tuo dispositivo e non viene mai caricata." }
+    ],
+    "faqs": [
+      { "question": "Qual è il tipo più comune?", "answer": "La deuteranomalia, una ridotta sensibilità al verde, è di gran lunga la più comune." },
+      { "question": "È esattamente ciò che vede una persona daltonica?", "answer": "È una stima attendibile. La visione dei colori e la gravità variano da persona a persona, quindi usalo come guida e fai delle prove con utenti reali quando è importante." },
+      { "question": "È un test per il daltonismo?", "answer": "No. Mostra come possono apparire le immagini, ma non può diagnosticare nulla. Un oculista può controllare la tua visione dei colori." },
+      { "question": "Come faccio a rendere il mio design adatto a tutti?", "answer": "Non affidarti solo al colore. Aggiungi etichette, motivi o icone e scegli colori che differiscano sia per luminosità sia per tonalità." }
+    ]
+  },
 };
