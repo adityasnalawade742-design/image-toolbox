@@ -41,13 +41,13 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
       return [];
     });
     setDoc((prev) => {
-      prev?.destroy();
+      prev?.loadingTask.destroy();
       return null;
     });
     setFile(f);
     try {
       const d = await openPdf(f);
-      if (id !== loadId.current) return d.destroy();
+      if (id !== loadId.current) return d.loadingTask.destroy();
       setDoc(d);
     } catch (err) {
       setFile(null);
@@ -83,7 +83,7 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
 
   useEffect(
     () => () => {
-      doc?.destroy();
+      doc?.loadingTask.destroy();
     },
     [doc]
   );

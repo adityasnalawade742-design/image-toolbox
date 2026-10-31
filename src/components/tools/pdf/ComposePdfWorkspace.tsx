@@ -39,7 +39,7 @@ export function ComposePdfWorkspace({ mode = 'text' }: { mode?: 'text' | 'markdo
         const out = await (md ? markdownToPdf : textToPdf)(text, opts, loadSiteFont);
         if (id !== run.current) return;
         const doc = await openPdf(new File([new Uint8Array(out)], 'preview.pdf', { type: 'application/pdf' }));
-        if (id !== run.current) return doc.destroy();
+        if (id !== run.current) return doc.loadingTask.destroy();
         setBytes(out);
         setPreview(doc);
         setPage((n) => Math.min(n, doc.numPages));
@@ -56,7 +56,7 @@ export function ComposePdfWorkspace({ mode = 'text' }: { mode?: 'text' | 'markdo
   // The previous preview document is closed when a new one replaces it
   useEffect(
     () => () => {
-      preview?.destroy();
+      preview?.loadingTask.destroy();
     },
     [preview]
   );

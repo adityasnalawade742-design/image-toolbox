@@ -33,7 +33,7 @@ export function MergePdfWorkspace() {
     }
   };
   const closeView = () => {
-    view?.doc.destroy();
+    view?.doc.loadingTask.destroy();
     setView(null);
   };
   const itemsRef = useRef(items);
@@ -48,7 +48,7 @@ export function MergePdfWorkspace() {
         const doc = await openPdf(file);
         const url = URL.createObjectURL(await renderPage(doc, 1, THUMB_DPI, 'image/jpeg'));
         added.push({ id: `${Date.now()}-${added.length}-${file.name}`, name: file.name, url, width: 0, height: 0, detail: t('ctl.pdf.pagesCount', { n: doc.numPages }), file, pages: doc.numPages });
-        doc.destroy();
+        doc.loadingTask.destroy();
       } catch {
         failed.push(file.name);
       }
