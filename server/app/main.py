@@ -290,9 +290,15 @@ async def ocr(file: UploadFile, lang: str = "eng"):
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
         out = job / "out.pdf"
-        # --skip-text leaves pages that already have text alone
-        code, err = await run("ocrmypdf", "--skip-text", "--optimize", "1", "--jobs", "1", "-l", parse_langs(lang),
-                              str(src), str(out), cwd=job)
+        langs = parse_langs(lang)
+        # A plain PDF, not the default PDF/A: that conversion drops fillable form fields
+        ocr_with = lambda mode: run("ocrmypdf", mode, "--output-type", "pdf", "--optimize", "1", "--jobs", "1", "-l", langs, str(src), str(out), cwd=job)
+        # --redo-ocr reads the pictures on every page and keeps real text. Not --skip-text: that skips a whole scanned
+        # page when anything on it, like a stamp or header, is already text
+        code, err = await ocr_with("--redo-ocr")
+        # It refuses some PDFs, such as fillable forms; --skip-text still reads their pages that have no text
+        if code != 0 and "encrypt" not in err.lower():
+            code, err = await ocr_with("--skip-text")
         if code != 0 or not out.exists():
             raise JobError(422, "encrypted" if "encrypt" in err.lower() else "ocr_failed")
         return respond(out, job, PDF, "searchable.pdf")
