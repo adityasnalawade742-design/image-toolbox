@@ -120,7 +120,7 @@ export async function extractImages(bytes: ArrayBuffer | Uint8Array, opts: { min
   try {
     return await scanImages(doc, OPS, opts);
   } finally {
-    doc.destroy();
+    doc.loadingTask.destroy();
   }
 }
 

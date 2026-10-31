@@ -41,7 +41,7 @@ export function OverlayPdfWorkspace() {
         const bytes = await overlayPdf(pdf.bytes!, overlay.bytes, { position, match, pages, opacity: opacity / 100 });
         if (id !== run.current) return;
         const doc = await openPdf(new File([new Uint8Array(bytes)], 'preview.pdf', { type: 'application/pdf' }));
-        if (id !== run.current) return doc.destroy();
+        if (id !== run.current) return doc.loadingTask.destroy();
         setResult({ bytes, doc });
         setError(null);
       } catch (err) {
@@ -54,7 +54,7 @@ export function OverlayPdfWorkspace() {
   }, [pdf.bytes, overlay, position, match, scope, range, opacity]);
   useEffect(
     () => () => {
-      result?.doc.destroy();
+      result?.doc.loadingTask.destroy();
     },
     [result]
   );
@@ -66,7 +66,7 @@ export function OverlayPdfWorkspace() {
     try {
       const doc = await openPdf(file);
       const pages = doc.numPages;
-      doc.destroy();
+      doc.loadingTask.destroy();
       setOverlay({ name: file.name, bytes: await file.arrayBuffer(), pages });
       setError(null);
     } catch (err) {

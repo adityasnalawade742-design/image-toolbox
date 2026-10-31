@@ -26,7 +26,7 @@ export function usePdfDocument() {
       return [];
     });
     setDoc((prev) => {
-      prev?.destroy();
+      prev?.loadingTask.destroy();
       return null;
     });
   };
@@ -40,7 +40,7 @@ export function usePdfDocument() {
     try {
       // pdf.js may take ownership of the buffer it is given, so it gets its own copy
       const [raw, d] = await Promise.all([f.arrayBuffer(), openPdf(f)]);
-      if (id !== loadId.current) return d.destroy();
+      if (id !== loadId.current) return d.loadingTask.destroy();
       setBytes(raw);
       setDoc(d);
     } catch (err) {
