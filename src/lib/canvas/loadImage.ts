@@ -1,4 +1,4 @@
-import { isHeicFile, convertHeicToBlob } from './heicLoader';
+import { isHeicFile, convertHeic, convertHeicToBlob } from './heicLoader';
 import { isTiffFile, convertTiff } from './tiffLoader';
 
 export interface LoadedImage {
@@ -16,10 +16,10 @@ export async function loadImageFile(file: File): Promise<LoadedImage> {
   return decodeBlob(file, blob);
 }
 
-/** Like loadImageFile, but a multi-page TIFF gives one image per page */
+/** Like loadImageFile, but a multi-page TIFF or a HEIC holding several images gives one image per page */
 export async function loadImageFiles(file: File): Promise<LoadedImage[]> {
-  if (!isTiffFile(file)) return [await loadImageFile(file)];
-  const { blobs } = await convertTiff(file);
+  if (!isTiffFile(file) && !isHeicFile(file)) return [await loadImageFile(file)];
+  const blobs = isHeicFile(file) ? await convertHeic(file) : (await convertTiff(file)).blobs;
   return Promise.all(blobs.map((b) => decodeBlob(file, b)));
 }
 

@@ -65,7 +65,7 @@ export const enHome: LocalizedHomeData = {
     {
       question: 'Does it work on my phone?',
       answer:
-        'Yes. The tools work in current mobile browsers on iPhone and Android, including iPhone HEIC photos. You can also install the site as an app. After your first visit most tools work offline; AVIF export and background removal need to be used once while online.',
+        'Yes. The tools work in current mobile browsers on iPhone and Android, including iPhone HEIC photos.',
     },
     {
       question: 'Can I use one tool after another?',

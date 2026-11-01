@@ -64,7 +64,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Scale dimensions by percentage or exact pixel values with aspect ratio locking.',
     category: 'edit-transform',
     iconName: 'Scaling',
-    accept: 'image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,.heic,.heif',
+    accept: 'image/png,image/jpeg,image/webp,image/gif,image/avif,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {
@@ -227,7 +227,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Shrink JPG, PNG, and WebP files with a quality slider or a target file size, and see the saving before you download.',
     category: 'optimize-compress',
     iconName: 'Minimize2',
-    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    accept: 'image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif,.heic,.heif',
     popular: true,
   },
   {

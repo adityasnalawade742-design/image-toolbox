@@ -188,7 +188,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Comprimir",
     tagline: "Deixe o arquivo de imagem menor escolhendo o formato e a qualidade, e veja o novo tamanho antes de baixar.",
     intro:
-      "Comprimir imagem reduz o tamanho do arquivo de uma foto para ela carregar mais rápido em um site ou caber no limite de um e-mail ou envio. A imagem é salva de novo em WebP (o padrão), AVIF, JPG ou PNG na qualidade que você escolher, e o novo tamanho estimado e a porcentagem economizada aparecem enquanto você move o controle. O modo Tamanho do arquivo define a qualidade para você quando é preciso ficar abaixo de um limite como 100 KB.",
+      "Comprimir imagem reduz o tamanho do arquivo de uma foto para ela carregar mais rápido em um site ou caber no limite de um e-mail ou envio. A imagem é salva de novo no próprio formato (o padrão) ou em WebP, AVIF, JPG ou PNG na qualidade que você escolher, e o novo tamanho estimado e a porcentagem economizada aparecem enquanto você move o controle. O modo Tamanho do arquivo define a qualidade para você quando é preciso ficar abaixo de um limite como 100 KB.",
     seoTitle: "Comprimir imagem online: reduza o tamanho",
     seoDescription:
       "Comprimir imagem online grátis. Escolha WebP, AVIF, JPG ou PNG, defina a qualidade ou um tamanho em KB e veja a economia antes de baixar. Sem upload.",
@@ -210,7 +210,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         title: "Escolha o formato de saída",
         description:
-          "O WebP vem selecionado por padrão. O AVIF costuma gerar os menores arquivos, mas demora mais para codificar; o JPG abre em qualquer lugar; e o PNG é sem perdas, então é o que menos economiza espaço.",
+          "O formato do seu arquivo vem selecionado por padrão. O WebP costuma ser menor. O AVIF costuma gerar os menores arquivos, mas demora mais para codificar; o JPG abre em qualquer lugar; e o PNG é sem perdas, então é o que menos economiza espaço.",
       },
       {
         title: "Defina a qualidade ou um tamanho alvo",
@@ -7413,7 +7413,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → Word",
     tagline: "Transforme um PDF em um documento do Word (DOCX) editável. Grátis e sem cadastro.",
     intro:
-      "O PDF para Word converte um PDF em um arquivo DOCX que você pode editar no Word, no Google Docs ou no LibreOffice. Funciona melhor com PDFs criados a partir de um documento de texto, como relatórios exportados, cartas e formulários; textos, parágrafos e imagens viram conteúdo editável. Layouts complexos, como revistas, colunas e formulários, podem precisar de alguns ajustes depois. PDFs digitalizados são apenas imagens de texto, então passe-os primeiro pelo OCR PDF. A conversão usa o LibreOffice no nosso servidor, e o arquivo é apagado logo depois.",
+      "O PDF para Word converte um PDF em um arquivo DOCX que você pode editar no Word, no Google Docs ou no LibreOffice. Funciona melhor com PDFs criados a partir de um documento de texto, como relatórios exportados, cartas e formulários; textos, parágrafos e imagens viram conteúdo editável. Layouts complexos, como revistas, colunas e formulários, podem precisar de alguns ajustes depois. PDFs digitalizados são apenas imagens de texto, então passe-os primeiro pelo OCR PDF. A conversão usa o pdf2docx e LibreOffice no nosso servidor, e o arquivo é apagado logo depois. Nas páginas digitalizadas que passaram por OCR, o arquivo do Word traz o texto; as imagens dessas páginas ficam de fora.",
     seoTitle: "PDF para Word – DOCX editável, grátis",
     seoDescription:
       "PDF para Word online e grátis: converta PDF em um arquivo DOCX editável. Funciona melhor com PDFs de texto; os arquivos são apagados logo depois. Sem cadastro.",
@@ -7484,7 +7484,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Comprimir PDF",
     tagline: "Deixe um PDF menor para e-mail e formulários de envio, com três níveis de qualidade. Grátis e sem cadastro.",
     intro:
-      "O Comprimir PDF reduz o tamanho de um PDF para que ele caiba em anexos de e-mail e nos limites de tamanho dos portais de envio. Funciona melhor com PDFs que têm fotos e digitalizações, cujas imagens são recomprimidas e reduzidas; escolha Menor para telas e e-mail, Equilibrado para a maioria dos usos ou Alta qualidade para manter os detalhes na impressão. O resultado mostra quanto o arquivo diminuiu e, se um PDF já for compacto, você recebe o original de volta em vez de um arquivo maior. A compressão usa o Ghostscript no nosso servidor, e o arquivo é apagado logo depois.",
+      "O Comprimir PDF reduz o tamanho de um PDF para que ele caiba em anexos de e-mail e nos limites de tamanho dos portais de envio. Funciona melhor com PDFs que têm fotos e digitalizações, cujas imagens são recomprimidas e reduzidas; escolha Menor para telas e e-mail, Equilibrado para a maioria dos usos ou Alta qualidade para manter os detalhes na impressão. O resultado mostra quanto o arquivo diminuiu e, se um PDF já for compacto, você recebe o original de volta em vez de um arquivo maior. A compressão usa o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. PDFs com formulários preenchíveis mantêm os campos, mas diminuem menos.",
     seoTitle: "Comprimir PDF – Reduza o tamanho do PDF, grátis",
     seoDescription:
       "Comprimir PDF online e grátis: reduza o tamanho do arquivo com três níveis de qualidade e veja a economia. Os arquivos são apagados logo depois. Sem cadastro.",
@@ -7768,7 +7768,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Converta um PDF para PDF/A para arquivamento de longo prazo e portais oficiais. Grátis e sem cadastro.",
     intro:
-      "O PDF para PDF/A converte um PDF em PDF/A-2b, a versão de arquivamento do PDF que incorpora as fontes e as informações de cor para que o documento continue com a mesma aparência daqui a décadas. Alguns tribunais, portais fiscais, universidades e sites do governo só aceitam envios em PDF/A. A conversão usa o OCRmyPDF e o Ghostscript no nosso servidor, e o arquivo é apagado logo depois.",
+      "O PDF para PDF/A converte um PDF em PDF/A-2b, a versão de arquivamento do PDF que incorpora as fontes e as informações de cor para que o documento continue com a mesma aparência daqui a décadas. Alguns tribunais, portais fiscais, universidades e sites do governo só aceitam envios em PDF/A. A conversão usa o OCRmyPDF e o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. Os links e a maioria dos campos preenchíveis são mantidos; os que não podem atender ao padrão, como campos ocultos ou assinaturas, viram conteúdo fixo da página.",
     seoTitle: "Converter PDF para PDF/A – PDF/A-2b, grátis",
     seoDescription:
       "Converter PDF para PDF/A-2b online e grátis, para arquivamento e portais oficiais. Os arquivos são apagados logo depois. Sem cadastro.",

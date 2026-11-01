@@ -17,6 +17,14 @@ interface Found {
 }
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/gif,image/bmp,image/heic,image/heif,.heic,.heif';
+const QR_FORMATS = ['QR code', 'Micro QR', 'rMQR'];
+
+/** The quick QR decoders first; the larger barcode decoder still reads the small, dark and low-contrast codes they miss */
+async function readQr(src: CanvasImageSource & { width: number; height: number }, fast: boolean): Promise<string[]> {
+  const quick = await decodeQr(src);
+  if (quick.length) return quick;
+  return (await readCodes(src, { fast })).filter((f) => QR_FORMATS.includes(f.format)).map((f) => f.text);
+}
 
 /** 'qr' reads QR codes (small and quick); 'barcode' reads every common 1D and 2D type with a larger decoder */
 export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } = {}) {
@@ -25,7 +33,7 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
   const [results, setResults] = useState<Found[] | null>(null);
   const barcodes = mode === 'barcode';
   const scan = async (src: CanvasImageSource & { width: number; height: number }, fast = false): Promise<Found[]> =>
-    barcodes ? (await readCodes(src, { fast })).map((f) => ({ raw: f.text, format: f.format, product: f.product })) : (await decodeQr(src)).map((raw) => ({ raw }));
+    barcodes ? (await readCodes(src, { fast })).map((f) => ({ raw: f.text, format: f.format, product: f.product })) : (await readQr(src, fast)).map((raw) => ({ raw }));
   useEffect(() => {
     if (barcodes) warmUpReader();
   }, [barcodes]);

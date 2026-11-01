@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getOutputFormatPolicy } from '../outputFormat';
+import { defaultQuality, getOutputFormatPolicy } from '../outputFormat';
 
 describe('Output Format Policy', () => {
   it.each([
@@ -50,7 +50,16 @@ describe('Output Format Policy', () => {
     expect(getOutputFormatPolicy('convert-image', 'image/png')).toEqual({ format: 'image/png', selectable: true });
   });
 
-  it('compress-image defaults to WebP and is selectable in its own panel', () => {
-    expect(getOutputFormatPolicy('compress-image', 'image/png')).toEqual({ format: 'image/webp', selectable: false });
+  it('compress-image keeps the file\'s own format and is selectable in its own panel', () => {
+    expect(getOutputFormatPolicy('compress-image', 'image/jpeg')).toEqual({ format: 'image/jpeg', selectable: false });
+    expect(getOutputFormatPolicy('compress-image', 'image/png')).toEqual({ format: 'image/png', selectable: false });
+    expect(getOutputFormatPolicy('compress-image', 'image/webp')).toEqual({ format: 'image/webp', selectable: false });
+    expect(getOutputFormatPolicy('compress-image', 'image/heic')).toEqual({ format: 'image/jpeg', selectable: false });
+  });
+
+  it('saves edits at a higher quality than compression', () => {
+    expect(defaultQuality('rotate-image')).toBe(92);
+    expect(defaultQuality('compress-image')).toBe(85);
+    expect(defaultQuality('jpg-to-webp')).toBe(85);
   });
 });

@@ -66,7 +66,7 @@ export const idHome: LocalizedHomeData = {
     {
       question: 'Apakah bisa dipakai di HP saya?',
       answer:
-        'Ya. Alat-alat ini bisa dipakai di browser HP terbaru di iPhone dan Android, termasuk untuk foto HEIC dari iPhone. Anda juga bisa memasang situs ini sebagai aplikasi. Setelah kunjungan pertama, sebagian besar alat bisa dipakai offline; ekspor AVIF dan penghapusan latar belakang perlu dipakai sekali saat online.',
+        'Ya. Alat-alat ini bisa dipakai di browser HP terbaru di iPhone dan Android, termasuk untuk foto HEIC dari iPhone.',
     },
     {
       question: 'Bisakah saya memakai satu alat setelah alat lain?',

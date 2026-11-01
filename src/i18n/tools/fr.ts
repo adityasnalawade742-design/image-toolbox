@@ -188,7 +188,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Compresser",
     tagline: "Allégez un fichier image en choisissant un format et une qualité, et voyez la nouvelle taille avant de télécharger.",
     intro:
-      "Compresser une image réduit le poids d’une photo pour qu’elle se charge plus vite sur un site ou respecte la limite d’un e-mail ou d’un formulaire d’envoi. L’image est enregistrée de nouveau en WebP (par défaut), AVIF, JPG ou PNG à la qualité choisie, et la taille estimée ainsi que le pourcentage gagné s’affichent pendant que vous déplacez le curseur. Le mode Taille du fichier règle la qualité pour vous quand vous devez rester sous une limite comme 100 KB.",
+      "Compresser une image réduit le poids d’une photo pour qu’elle se charge plus vite sur un site ou respecte la limite d’un e-mail ou d’un formulaire d’envoi. L’image est enregistrée de nouveau dans son format d’origine (par défaut) ou en WebP, AVIF, JPG ou PNG à la qualité choisie, et la taille estimée ainsi que le pourcentage gagné s’affichent pendant que vous déplacez le curseur. Le mode Taille du fichier règle la qualité pour vous quand vous devez rester sous une limite comme 100 KB.",
     seoTitle: "Compresser une image en ligne – Réduire le poids",
     seoDescription:
       "Compressez une image en ligne gratuitement : WebP, AVIF, JPG ou PNG, qualité ou taille cible en KB, gain affiché avant le téléchargement. Sans envoi.",
@@ -210,7 +210,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         title: "Choisissez le format de sortie",
         description:
-          "WebP est sélectionné par défaut. AVIF donne en général les fichiers les plus légers mais met plus de temps à encoder, JPG s’ouvre partout, et PNG est sans perte, donc c’est lui qui fait gagner le moins de place.",
+          "Le format de votre fichier est sélectionné par défaut. WebP est généralement plus léger. AVIF donne en général les fichiers les plus légers mais met plus de temps à encoder, JPG s’ouvre partout, et PNG est sans perte, donc c’est lui qui fait gagner le moins de place.",
       },
       {
         title: "Réglez la qualité ou une taille cible",
@@ -7448,7 +7448,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → Word",
     tagline: "Transformez un PDF en document Word modifiable (DOCX). Gratuit, sans inscription.",
     intro:
-      "PDF en Word convertit un PDF en fichier DOCX que vous pouvez modifier dans Word, Google Docs ou LibreOffice. Il fonctionne le mieux avec les PDF créés à partir d’un document texte, comme les rapports exportés, les lettres et les formulaires ; le texte, les paragraphes et les images deviennent du contenu modifiable. Les mises en page complexes, comme les magazines, les colonnes et les formulaires, peuvent demander quelques retouches ensuite. Les PDF scannés ne sont que des images de texte : passez-les d’abord dans OCR PDF. La conversion utilise LibreOffice sur notre serveur, et le fichier est supprimé juste après.",
+      "PDF en Word convertit un PDF en fichier DOCX que vous pouvez modifier dans Word, Google Docs ou LibreOffice. Il fonctionne le mieux avec les PDF créés à partir d’un document texte, comme les rapports exportés, les lettres et les formulaires ; le texte, les paragraphes et les images deviennent du contenu modifiable. Les mises en page complexes, comme les magazines, les colonnes et les formulaires, peuvent demander quelques retouches ensuite. Les PDF scannés ne sont que des images de texte : passez-les d’abord dans OCR PDF. La conversion utilise pdf2docx et LibreOffice sur notre serveur, et le fichier est supprimé juste après. Pour les pages numérisées passées par l’OCR, le fichier Word contient leur texte ; les images de ces pages ne sont pas reprises.",
     seoTitle: "PDF en Word – convertir en DOCX modifiable, gratuit",
     seoDescription:
       "PDF en Word en ligne et gratuit : convertissez un PDF en fichier DOCX modifiable. Idéal pour les PDF texte ; fichiers supprimés juste après. Sans inscription.",
@@ -7519,7 +7519,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Compresser PDF",
     tagline: "Réduisez la taille d’un PDF pour l’e-mail et les formulaires d’envoi, avec trois niveaux de qualité. Gratuit, sans inscription.",
     intro:
-      "Compresser PDF réduit la taille d’un fichier PDF pour qu’il passe en pièce jointe et respecte les limites de taille des portails de dépôt. Il fonctionne le mieux avec les PDF contenant des photos et des scans, dont les images sont recompressées et réduites ; choisissez « Plus léger » pour l’écran et l’e-mail, « Équilibré » pour la plupart des usages, ou « Haute qualité » pour garder les détails à l’impression. Le résultat indique de combien le fichier a diminué, et si un PDF est déjà compact, vous récupérez l’original plutôt qu’un fichier plus lourd. La compression utilise Ghostscript sur notre serveur, et le fichier est supprimé juste après.",
+      "Compresser PDF réduit la taille d’un fichier PDF pour qu’il passe en pièce jointe et respecte les limites de taille des portails de dépôt. Il fonctionne le mieux avec les PDF contenant des photos et des scans, dont les images sont recompressées et réduites ; choisissez « Plus léger » pour l’écran et l’e-mail, « Équilibré » pour la plupart des usages, ou « Haute qualité » pour garder les détails à l’impression. Le résultat indique de combien le fichier a diminué, et si un PDF est déjà compact, vous récupérez l’original plutôt qu’un fichier plus lourd. La compression utilise Ghostscript sur notre serveur, et le fichier est supprimé juste après. Les PDF avec formulaires à remplir conservent leurs champs, mais sont moins réduits.",
     seoTitle: "Compresser PDF – réduire la taille d’un PDF, gratuit",
     seoDescription:
       "Compresser PDF en ligne et gratuitement, avec trois niveaux de qualité. Affiche le gain obtenu ; fichiers supprimés juste après. Sans inscription.",
@@ -7810,7 +7810,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Convertissez un PDF en PDF/A pour l’archivage à long terme et les portails officiels. Gratuit, sans inscription.",
     intro:
-      "PDF en PDF/A convertit un PDF au format PDF/A-2b, la version d’archivage du PDF qui intègre les polices et les informations de couleur pour que le document reste identique dans des décennies. Certains tribunaux, portails fiscaux, universités et sites administratifs n’acceptent que des dépôts au format PDF/A. La conversion utilise OCRmyPDF et Ghostscript sur notre serveur, et le fichier est supprimé juste après.",
+      "PDF en PDF/A convertit un PDF au format PDF/A-2b, la version d’archivage du PDF qui intègre les polices et les informations de couleur pour que le document reste identique dans des décennies. Certains tribunaux, portails fiscaux, universités et sites administratifs n’acceptent que des dépôts au format PDF/A. La conversion utilise OCRmyPDF et Ghostscript sur notre serveur, et le fichier est supprimé juste après. Les liens et la plupart des champs à remplir sont conservés ; ceux qui ne peuvent pas respecter la norme, comme les champs masqués ou les signatures, deviennent du contenu fixe de la page.",
     seoTitle: "Convertir PDF en PDF/A – PDF/A-2b, gratuit",
     seoDescription:
       "Convertir un PDF en PDF/A-2b en ligne et gratuitement, pour l’archivage et les portails officiels. Fichiers supprimés juste après. Sans inscription.",

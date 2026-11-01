@@ -9,6 +9,8 @@ interface Props {
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif';
   onQualityChange: (q: number) => void;
   onFormatChange: (f: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif') => void;
+  /** An animation stays in its own format */
+  formatLocked?: boolean;
 }
 
 const segment = (active: boolean) =>
@@ -23,6 +25,7 @@ export function CompressControls({
   format,
   onQualityChange,
   onFormatChange,
+  formatLocked = false,
 }: Props) {
   const t = useT();
   const targetId = useId();
@@ -186,6 +189,7 @@ export function CompressControls({
       )}
 
       {/* Output format */}
+      {!formatLocked && (
       <div className="space-y-1.5 pt-4 border-t border-pencil">
         <span className="slug block">{t('ctl.compress.format')}</span>
         <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.compress.format')}>
@@ -214,6 +218,7 @@ export function CompressControls({
           <p className="text-[13px] text-graphite leading-relaxed pt-1">{t('ctl.compress.pngLossless')}</p>
         )}
       </div>
+      )}
     </div>
   );
 }

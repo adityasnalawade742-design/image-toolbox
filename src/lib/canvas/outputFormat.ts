@@ -45,6 +45,11 @@ const KEEP_INPUT_FORMAT = new Set([
   'remove-image-metadata',
 ]);
 
+/** The quality an image is saved at to begin with: editing shouldn't cost a photo as much as compressing it does */
+export function defaultQuality(slug: string): number {
+  return KEEP_INPUT_FORMAT.has(slug) ? 92 : 85;
+}
+
 /** Map an input MIME type to the closest format the browser can export */
 export function exportableFormat(inputMime: string): OutputFormat {
   const mime = inputMime.toLowerCase();
@@ -56,7 +61,8 @@ export function exportableFormat(inputMime: string): OutputFormat {
 
 export function getOutputFormatPolicy(slug: string, inputMime: string): OutputFormatPolicy {
   if (FIXED_TARGETS[slug]) return { format: FIXED_TARGETS[slug], selectable: false };
-  if (slug === 'compress-image') return { format: 'image/webp', selectable: false };
+  // Its own panel has the picker. The file's own format comes first: many upload forms don't take WebP
+  if (slug === 'compress-image') return { format: exportableFormat(inputMime), selectable: false };
   if (slug === 'round-image') return { format: 'image/png', selectable: true };
   if (slug === 'convert-image') {
     return { format: exportableFormat(inputMime) === 'image/jpeg' ? 'image/webp' : 'image/png', selectable: true };

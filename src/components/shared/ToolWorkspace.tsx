@@ -19,10 +19,12 @@ import type {
   ImageProcessingOptions,
 } from '../../lib/canvas/engine';
 import { saveHandoffImage, consumeHandoffImage } from '../../lib/storage/handoffStorage';
-import { isHeicFile, convertHeicToBlob } from '../../lib/canvas/heicLoader';
+import { isHeicFile, convertHeic } from '../../lib/canvas/heicLoader';
 import { isTiffFile, convertTiff } from '../../lib/canvas/tiffLoader';
 import { isAvifSuperseded } from '../../lib/canvas/avifEncoder';
-import { getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { defaultQuality, getOutputFormatPolicy, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
+import { isAnimatedImage } from '../../lib/canvas/animated';
+import { decodeAnimation, encodeAnimation, type Animation } from '../../lib/canvas/animation';
 import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
 import { canvasSupportsP3, isDisplayP3, readJpegIcc } from '../../lib/canvas/iccProfile';
 import { installWindowDropGuard } from './useImageIntake';
@@ -132,6 +134,12 @@ function measureText(text: string, font: string): number {
   measureCtx.font = font;
   return measureCtx.measureText(text).width;
 }
+
+// These rework every frame of an animated GIF or WebP
+const KEEPS_FRAMES = new Set(['compress-image', 'resize-image']);
+
+// These leave the file's frames alone or don't save an image at all
+const KEEPS_ANIMATION = new Set(['remove-image-metadata', 'change-image-dpi', 'image-analyzer', 'image-color-picker', 'image-palette-generator', 'image-to-base64', 'image-to-data-uri']);
 
 export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en', strings = {}, nextTools = [] }: Props) {
   const t = createT(strings);
@@ -258,6 +266,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   // Pages in the loaded TIFF; only the first is edited here
   const [tiffPages, setTiffPages] = useState(0);
+  const [animated, setAnimated] = useState(false);
+  const [animation, setAnimation] = useState<Animation | null>(null);
+  const [heicImages, setHeicImages] = useState(0);
   const [hasRealTransparency, setHasRealTransparency] = useState<boolean>(false);
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
 
@@ -338,7 +349,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   // Format & Quality
   const [format, setFormat] = useState<OutputFormat>('image/png');
   const [formatSelectable, setFormatSelectable] = useState<boolean>(false);
-  const [quality, setQuality] = useState<number>(85);
+  const [quality, setQuality] = useState<number>(defaultQuality(slug));
   const [isExporting, setIsExporting] = useState<boolean>(false);
   // Size of the file actually produced by the last download, for the job ticket
   const [lastExportBytes, setLastExportBytes] = useState<number | null>(null);
@@ -367,6 +378,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
       let activeFile: File | Blob = file;
       setTiffPages(0);
+      setHeicImages(0);
+      const moving = !KEEPS_ANIMATION.has(slug) && (await isAnimatedImage(file));
+      const frames = moving && KEEPS_FRAMES.has(slug) ? await decodeAnimation(file) : null;
+      setAnimated(moving && !frames);
+      setAnimation(frames);
       if (isTiffFile(file)) {
         try {
           const { blobs, pages } = await convertTiff(file, true);
@@ -379,8 +395,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         }
       } else if (isHeicFile(file)) {
         try {
-          const convertedBlob = await convertHeicToBlob(file);
-          activeFile = new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.png'), { type: 'image/png' });
+          const converted = await convertHeic(file);
+          activeFile = new File([converted[0]], file.name.replace(/\.(heic|heif)$/i, '.png'), { type: 'image/png' });
+          setHeicImages(converted.length);
         } catch (heicErr) {
           console.error('HEIC decoding failed:', heicErr);
           setErrorMessage(t('ws.errHeic'));
@@ -426,7 +443,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       // Converters export their target format; editors keep the input format by default
       const formatPolicy = getOutputFormatPolicy(slug, sourceMime);
       setFormat(formatPolicy.format);
-      setFormatSelectable(formatPolicy.selectable);
+      setFormatSelectable(formatPolicy.selectable && !frames);
 
       // Extract initial palette
       const initialPalette = extractDominantPalette(img, paletteCount);
@@ -633,7 +650,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           }
 
           // Calculate output size metrics (only the tools that display them pay for the encode)
-          if (slug === 'compress-image' || (slug === 'remove-image-metadata' && !cleanFileRef.current)) {
+          // An animation's size is only known once every frame has been encoded
+          if (animation) {
+            setOutputBytes(0);
+          } else if (slug === 'compress-image' || (slug === 'remove-image-metadata' && !cleanFileRef.current)) {
             const estimateSeq = ++estimateSeqRef.current;
             const report = (b: Blob, w: number, h: number) => {
               // A lossless metadata copy that arrived meanwhile has the real size
@@ -677,6 +697,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     format,
     quality,
     slug,
+    animation,
   ]);
 
   // Eyedropper pixel sampler directly from full original image for 100% lossless color precision
@@ -855,6 +876,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         return;
       }
 
+      if (animation) {
+        const options = getProcessingOptions(true);
+        const made = await encodeAnimation(animation, (frame) => processCanvas(frame as unknown as HTMLImageElement, options), quality / 100);
+        const sameSize = made.size >= sourceFile!.size && width === origW && height === origH;
+        const blob = sameSize ? sourceFile! : made;
+        setKeptOriginal(sameSize);
+        downloadBlob(blob, `${filename}-processed.${animation.type === 'image/gif' ? 'gif' : 'webp'}`);
+        setLastExportBytes(blob.size);
+        return;
+      }
+
       const blob = await buildOutput();
       // Some browsers silently fall back to PNG for formats they can't encode (e.g. older Safari and WebP)
       const actualFormat = (blob.type || format) as OutputFormat;
@@ -955,6 +987,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         {imageElement && tiffPages > 1 && (
           <p role="status" className="mb-4 p-3 bg-paper-bright rounded-md border border-pencil text-[15px] text-ink">
             {t('ws.tiffFirstPage', { n: tiffPages })}
+          </p>
+        )}
+        {imageElement && heicImages > 1 && (
+          <p role="status" className="mb-4 p-3 bg-paper-bright rounded-md border border-pencil text-[15px] text-ink">
+            {t('ws.heicFirstImage', { n: heicImages })}
+          </p>
+        )}
+        {imageElement && animation && (
+          <p role="status" className="mb-4 p-3 bg-paper-bright rounded-md border border-pencil text-[15px] text-ink">
+            {t('ws.animationKept', { n: animation.frames.length, format: animation.type === 'image/gif' ? 'GIF' : 'WebP' })}
+          </p>
+        )}
+        {imageElement && animated && (
+          <p role="status" className="mb-4 p-3 bg-paper-bright rounded-md border border-pencil text-[15px] text-ink">
+            {t('ws.animatedFirstFrame')}
           </p>
         )}
 
@@ -1255,6 +1302,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                   format={format}
                   onQualityChange={setQuality}
                   onFormatChange={setFormat}
+                  formatLocked={!!animation}
                 />
               )}
 
