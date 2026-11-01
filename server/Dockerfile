@@ -10,15 +10,22 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && apt-get install -y --no-install-recommends \
       python3 python3-venv \
       libreoffice-writer-nogui libreoffice-calc-nogui libreoffice-impress-nogui \
-      ghostscript qpdf ocrmypdf \
+      ghostscript qpdf ocrmypdf pngquant \
       tesseract-ocr tesseract-ocr-eng tesseract-ocr-deu tesseract-ocr-spa tesseract-ocr-fra tesseract-ocr-por \
       tesseract-ocr-ita tesseract-ocr-jpn tesseract-ocr-kor tesseract-ocr-ind tesseract-ocr-tur \
       fonts-liberation fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto-core fonts-noto-cjk \
+      fonts-dejavu-core fonts-dejavu-extra fonts-wine \
       ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /opt/venv && /opt/venv/bin/pip install --no-cache-dir \
-      "fastapi==0.115.*" "uvicorn==0.32.*" "python-multipart==0.0.*"
+      "fastapi==0.115.*" "uvicorn==0.32.*" "python-multipart==0.0.*" "pdf2docx==0.5.13" "pikepdf==9.*"
+
+# Free stand-ins for Microsoft fonts, so Word files keep their layout
+COPY fonts/*.ttf /usr/local/share/fonts/office/
+COPY fonts/60-office-fonts.conf /etc/fonts/conf.d/60-office-fonts.conf
+# fonts-wine keeps its files outside the folders fontconfig reads
+RUN cp $(find /usr/share -iname 'tahoma*.ttf') /usr/local/share/fonts/office/ && fc-cache -f
 
 # Unprivileged user; the app only writes to /tmp
 RUN useradd --system --uid 10001 --home /tmp app
