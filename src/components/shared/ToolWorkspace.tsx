@@ -136,7 +136,7 @@ function measureText(text: string, font: string): number {
 }
 
 // These rework every frame of an animated GIF or WebP
-const KEEPS_FRAMES = new Set(['compress-image', 'resize-image']);
+const KEEPS_FRAMES = new Set(['compress-image', 'resize-image', 'crop-image', 'rotate-image', 'flip-image']);
 
 // These leave the file's frames alone or don't save an image at all
 const KEEPS_ANIMATION = new Set(['remove-image-metadata', 'change-image-dpi', 'image-analyzer', 'image-color-picker', 'image-palette-generator', 'image-to-base64', 'image-to-data-uri']);
@@ -879,7 +879,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       if (animation) {
         const options = getProcessingOptions(true);
         const made = await encodeAnimation(animation, (frame) => processCanvas(frame as unknown as HTMLImageElement, options), quality / 100);
-        const sameSize = made.size >= sourceFile!.size && width === origW && height === origH;
+        const sameSize = made.size >= sourceFile!.size && (slug === 'compress-image' || (slug === 'resize-image' && width === origW && height === origH));
         const blob = sameSize ? sourceFile! : made;
         setKeptOriginal(sameSize);
         downloadBlob(blob, `${filename}-processed.${animation.type === 'image/gif' ? 'gif' : 'webp'}`);

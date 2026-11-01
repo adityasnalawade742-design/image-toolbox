@@ -74,7 +74,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Rotate images by 90°, 180°, 270°, or fine-tune angles with real-time preview.',
     category: 'edit-transform',
     iconName: 'RotateCw',
-    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    accept: 'image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'flip-image',
@@ -83,7 +83,7 @@ export const TOOLS: ToolDefinition[] = [
     description: 'Mirror photos horizontally or vertically with instant browser canvas rendering.',
     category: 'edit-transform',
     iconName: 'FlipHorizontal',
-    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif',
+    accept: 'image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif,.heic,.heif',
   },
   {
     slug: 'add-text-to-image',

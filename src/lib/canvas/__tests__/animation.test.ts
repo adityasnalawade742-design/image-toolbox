@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { muxAnimatedWebp } from '../animation';
+import { gifRepeat, muxAnimatedWebp, webpLoops } from '../animation';
 
 const name = (b: Uint8Array, at: number) => String.fromCharCode(...b.subarray(at, at + 4));
 
@@ -20,6 +20,17 @@ function chunks(b: Uint8Array) {
   }
   return out;
 }
+
+describe('loop counts', () => {
+  it('turns the count of repeats a browser reports into what each format stores', () => {
+    expect(webpLoops(Infinity)).toBe(0);
+    expect(webpLoops(0)).toBe(1);
+    expect(webpLoops(2)).toBe(3);
+    expect(gifRepeat(Infinity)).toBe(0);
+    expect(gifRepeat(0)).toBe(-1);
+    expect(gifRepeat(3)).toBe(3);
+  });
+});
 
 describe('muxAnimatedWebp', () => {
   const a = still(['VP8 ', [1, 2, 3]]);
