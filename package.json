@@ -54,7 +54,6 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "@vite-pwa/astro": "^1.2.0",
     "@vitest/coverage-v8": "^4.1.11",
     "autoprefixer": "^10.4.20",
     "axe-core": "^4.14.0",

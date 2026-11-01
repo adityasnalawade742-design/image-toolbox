@@ -12,8 +12,8 @@ export interface AnimationFrame {
 export interface Animation {
   type: 'image/gif' | 'image/webp';
   frames: AnimationFrame[];
-  /** Times to play; 0 is forever */
-  loops: number;
+  /** Plays after the first, as browsers report it; Infinity is forever */
+  repeats: number;
 }
 
 // Beyond this a tab could run out of memory, as decoded frames take 4 bytes per pixel
@@ -48,7 +48,7 @@ export async function decodeAnimation(file: Blob): Promise<Animation | null> {
       image.close();
     }
     if (frames.length < 2) return null;
-    return { type, frames, loops: Number.isFinite(track.repetitionCount) ? track.repetitionCount : 0 };
+    return { type, frames, repeats: track.repetitionCount };
   } catch (err) {
     console.warn('Could not read the animation:', err);
     return null;
@@ -97,7 +97,7 @@ export function muxAnimatedWebp(stills: Uint8Array[], durations: number[], width
   return joined([text('RIFF'), u32(body.length), body]);
 }
 
-async function encodeGif(frames: AnimationFrame[], quality: number, loops: number): Promise<Blob> {
+async function encodeGif(frames: AnimationFrame[], quality: number, repeats: number): Promise<Blob> {
   const { GIFEncoder, quantize, applyPalette } = await import('gifenc');
   const { width, height } = frames[0].canvas;
   const pixels = frames.map((f) => f.canvas.getContext('2d', { willReadFrequently: true })!.getImageData(0, 0, width, height).data);
@@ -125,7 +125,7 @@ async function encodeGif(frames: AnimationFrame[], quality: number, loops: numbe
       // A pixel that hasn't changed needn't be stored again, which is most of what makes a GIF small
       else if (previous && !seeThrough && previous[o] === p[o] && previous[o + 1] === p[o + 1] && previous[o + 2] === p[o + 2]) index[i] = clear;
     }
-    gif.writeFrame(index, width, height, { palette: f === 0 ? palette : undefined, delay: frames[f].ms, transparent: true, transparentIndex: clear, dispose: seeThrough ? 2 : 1, repeat: loops === 0 ? 0 : loops });
+    gif.writeFrame(index, width, height, { palette: f === 0 ? palette : undefined, delay: frames[f].ms, transparent: true, transparentIndex: clear, dispose: seeThrough ? 2 : 1, repeat: gifRepeat(repeats) });
     previous = p;
     await new Promise((r) => setTimeout(r));
   }
@@ -133,10 +133,16 @@ async function encodeGif(frames: AnimationFrame[], quality: number, loops: numbe
   return new Blob([new Uint8Array(gif.bytes())], { type: 'image/gif' });
 }
 
+/** A GIF stores 0 for forever and leaves the count out, which the encoder calls -1, to play once */
+export const gifRepeat = (repeats: number) => (repeats === Infinity ? 0 : repeats === 0 ? -1 : repeats);
+
+/** A WebP stores total plays, with 0 for forever */
+export const webpLoops = (repeats: number) => (repeats === Infinity ? 0 : repeats + 1);
+
 /** Write an animation back as its own format, each frame first passed through `change` (resizing, for example) */
 export async function encodeAnimation(animation: Animation, change: (frame: HTMLCanvasElement) => HTMLCanvasElement, quality: number): Promise<Blob> {
   const frames = animation.frames.map((f) => ({ canvas: change(f.canvas), ms: f.ms }));
-  if (animation.type === 'image/gif') return encodeGif(frames, quality, animation.loops);
+  if (animation.type === 'image/gif') return encodeGif(frames, quality, animation.repeats);
   const stills: Uint8Array[] = [];
   for (const f of frames) {
     const blob = await canvasToBlob(f.canvas, 'image/webp', quality, undefined, { best: true });
@@ -144,5 +150,5 @@ export async function encodeAnimation(animation: Animation, change: (frame: HTML
     stills.push(new Uint8Array(await blob.arrayBuffer()));
   }
   const { width, height } = frames[0].canvas;
-  return new Blob([new Uint8Array(muxAnimatedWebp(stills, frames.map((f) => f.ms), width, height, animation.loops))], { type: 'image/webp' });
+  return new Blob([new Uint8Array(muxAnimatedWebp(stills, frames.map((f) => f.ms), width, height, webpLoops(animation.repeats)))], { type: 'image/webp' });
 }
