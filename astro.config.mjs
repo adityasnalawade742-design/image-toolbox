@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import pwa from '@vite-pwa/astro';
 
 // https://astro.build/config
 export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://image-toolbox.aditya-s-nalawade742.workers.dev',
   output: 'static',
+  // Astro 7's default strips the spaces between inline elements, which runs words together
+  compressHTML: true,
   vite: {
     // The AVIF encoder worker code-splits its WASM codec, which requires ES module workers
     worker: { format: 'es' },
@@ -15,9 +16,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
     pwa({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
