@@ -188,7 +188,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Compress",
     tagline: "Make an image file smaller by choosing a format and quality, and see the new size before you download.",
     intro:
-      "Compress Image reduces the file size of a photo so it loads faster on a website or fits an email or upload limit. It saves the image again as WebP (the default), AVIF, JPG or PNG at the quality you choose, and shows the estimated new size and the percentage saved as you move the slider. A Target File Size mode sets the quality for you when you need to stay under a limit such as 100 KB.",
+      "Compress Image reduces the file size of a photo so it loads faster on a website or fits an email or upload limit. It saves the image again in its own format by default, or as WebP, AVIF, JPG or PNG, at the quality you choose, and shows the estimated new size and the percentage saved as you move the slider. A Target File Size mode sets the quality for you when you need to stay under a limit such as 100 KB.",
     seoTitle: "Compress Image Online – Reduce File Size",
     seoDescription:
       "Compress images online for free. Pick WebP, AVIF, JPG or PNG, set the quality or a target size in KB, and see the saving before you download. No upload needed.",
@@ -210,7 +210,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         title: "Choose the output format",
         description:
-          "WebP is selected by default. AVIF usually makes the smallest files but takes longer to encode, JPG opens everywhere, and PNG is lossless, so it saves the least space.",
+          "Your file's own format is selected by default. WebP is usually smaller. AVIF usually makes the smallest files but takes longer to encode, JPG opens everywhere, and PNG is lossless, so it saves the least space.",
       },
       {
         title: "Set the quality or a target size",
@@ -7621,7 +7621,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "PDF to Word",
     "shortName": "PDF → Word",
     "tagline": "Turn a PDF into an editable Word document (DOCX). Free, with no sign-up.",
-    "intro": "PDF to Word converts a PDF into a DOCX file you can edit in Word, Google Docs or LibreOffice. It works best on PDFs that were created from a text document, such as exported reports, letters and forms; text, paragraphs and images come across as editable content. Complex layouts such as magazines, columns and forms can need some tidying afterwards. Scanned PDFs are only pictures of text, so run them through OCR PDF first. The conversion uses LibreOffice on our server, and the file is deleted right after.",
+    "intro": "PDF to Word converts a PDF into a DOCX file you can edit in Word, Google Docs or LibreOffice. It works best on PDFs that were created from a text document, such as exported reports, letters and forms; text, paragraphs and images come across as editable content. Complex layouts such as magazines, columns and forms can need some tidying afterwards. Scanned PDFs are only pictures of text, so run them through OCR PDF first. The conversion uses pdf2docx and LibreOffice on our server, and the file is deleted right after. For scanned pages that have been through OCR, the Word file holds their text; pictures on those pages are left out.",
     "seoTitle": "PDF to Word Converter – Editable DOCX, Free",
     "seoDescription": "Convert PDF to an editable Word DOCX file online for free. Best for text PDFs; files are deleted right after. No sign-up.",
     "keywords": [
@@ -7686,7 +7686,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Compress PDF",
     "shortName": "Compress PDF",
     "tagline": "Make a PDF smaller for email and upload forms, with three quality levels. Free, with no sign-up.",
-    "intro": "Compress PDF reduces the file size of a PDF so it fits email attachments and the size limits of upload portals. It works best on PDFs with photos and scans, whose images are re-compressed and scaled down; choose Smallest for screens and email, Balanced for most uses, or High quality to keep detail for printing. The result shows how much smaller the file became, and if a PDF is already compact you get the original back rather than a bigger file. Compression uses Ghostscript on our server, and the file is deleted right after.",
+    "intro": "Compress PDF reduces the file size of a PDF so it fits email attachments and the size limits of upload portals. It works best on PDFs with photos and scans, whose images are re-compressed and scaled down; choose Smallest for screens and email, Balanced for most uses, or High quality to keep detail for printing. The result shows how much smaller the file became, and if a PDF is already compact you get the original back rather than a bigger file. Compression uses Ghostscript on our server, and the file is deleted right after. PDFs with fillable forms keep their fields but shrink less.",
     "seoTitle": "Compress PDF – Reduce PDF File Size, Free",
     "seoDescription": "Reduce PDF file size online for free with three quality levels. Shows the saving; files are deleted right after. No sign-up.",
     "keywords": [
@@ -7952,7 +7952,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "PDF to PDF/A",
     "shortName": "PDF → PDF/A",
     "tagline": "Convert a PDF to PDF/A for long-term archiving and official portals. Free, with no sign-up.",
-    "intro": "PDF to PDF/A converts a PDF into PDF/A-2b, the archival version of PDF that embeds fonts and color information so the document looks the same in decades. Some courts, tax portals, universities and government sites only accept PDF/A uploads. The conversion uses OCRmyPDF and Ghostscript on our server, and the file is deleted right after.",
+    "intro": "PDF to PDF/A converts a PDF into PDF/A-2b, the archival version of PDF that embeds fonts and color information so the document looks the same in decades. Some courts, tax portals, universities and government sites only accept PDF/A uploads. The conversion uses OCRmyPDF and Ghostscript on our server, and the file is deleted right after. Links and most fillable form fields are kept; fields that can’t meet the standard, such as hidden ones or signatures, become fixed content on the page.",
     "seoTitle": "PDF to PDF/A Converter – PDF/A-2b, Free",
     "seoDescription": "Convert PDF to PDF/A-2b for archiving and official portals, online and free. Files are deleted right after. No sign-up.",
     "keywords": [

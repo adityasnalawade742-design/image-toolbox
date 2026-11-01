@@ -188,7 +188,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Kompres",
     tagline: "Perkecil file gambar dengan memilih format dan kualitas, dan lihat ukuran barunya sebelum mengunduh.",
     intro:
-      "Kompres Gambar memperkecil ukuran file foto agar lebih cepat dimuat di situs web atau muat dalam batas email atau unggahan. Gambar disimpan ulang sebagai WebP (default), AVIF, JPG, atau PNG dengan kualitas yang Anda pilih, dan perkiraan ukuran baru serta persentase penghematannya terlihat saat Anda menggeser slider. Mode Ukuran file mengatur kualitas untuk Anda saat Anda harus tetap di bawah batas tertentu, misalnya 100 KB.",
+      "Kompres Gambar memperkecil ukuran file foto agar lebih cepat dimuat di situs web atau muat dalam batas email atau unggahan. Gambar disimpan ulang dalam formatnya sendiri (default) atau sebagai WebP, AVIF, JPG, atau PNG dengan kualitas yang Anda pilih, dan perkiraan ukuran baru serta persentase penghematannya terlihat saat Anda menggeser slider. Mode Ukuran file mengatur kualitas untuk Anda saat Anda harus tetap di bawah batas tertentu, misalnya 100 KB.",
     seoTitle: "Kompres Gambar Online – Perkecil Ukuran File",
     seoDescription:
       "Kompres foto online gratis. Pilih WebP, AVIF, JPG, atau PNG, atur kualitas atau target ukuran dalam KB, dan lihat penghematannya sebelum mengunduh. Tanpa unggah.",
@@ -210,7 +210,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         title: "Pilih format hasil",
         description:
-          "WebP dipilih secara default. AVIF biasanya menghasilkan file terkecil tetapi butuh waktu lebih lama untuk dienkode, JPG bisa dibuka di mana saja, dan PNG bersifat lossless, jadi penghematannya paling sedikit.",
+          "Format file Anda dipilih secara default. WebP biasanya lebih kecil. AVIF biasanya menghasilkan file terkecil tetapi butuh waktu lebih lama untuk dienkode, JPG bisa dibuka di mana saja, dan PNG bersifat lossless, jadi penghematannya paling sedikit.",
       },
       {
         title: "Atur kualitas atau target ukuran",
@@ -7417,7 +7417,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → Word",
     tagline: "Ubah PDF menjadi dokumen Word (DOCX) yang bisa diedit. Gratis, tanpa daftar.",
     intro:
-      "PDF ke Word mengubah PDF menjadi file DOCX yang bisa Anda edit di Word, Google Dokumen, atau LibreOffice. Alat ini bekerja paling baik pada PDF yang dibuat dari dokumen teks, seperti laporan, surat, dan formulir hasil ekspor; teks, paragraf, dan gambar menjadi konten yang bisa diedit. Tata letak rumit seperti majalah, kolom, dan formulir mungkin perlu dirapikan setelahnya. PDF hasil scan hanyalah gambar teks, jadi proses dulu dengan OCR PDF. Konversi memakai LibreOffice di server kami, dan file dihapus segera setelahnya.",
+      "PDF ke Word mengubah PDF menjadi file DOCX yang bisa Anda edit di Word, Google Dokumen, atau LibreOffice. Alat ini bekerja paling baik pada PDF yang dibuat dari dokumen teks, seperti laporan, surat, dan formulir hasil ekspor; teks, paragraf, dan gambar menjadi konten yang bisa diedit. Tata letak rumit seperti majalah, kolom, dan formulir mungkin perlu dirapikan setelahnya. PDF hasil scan hanyalah gambar teks, jadi proses dulu dengan OCR PDF. Konversi memakai pdf2docx dan LibreOffice di server kami, dan file dihapus segera setelahnya. Untuk halaman pindaian yang sudah melalui OCR, file Word berisi teksnya; gambar pada halaman tersebut tidak disertakan.",
     seoTitle: "PDF ke Word Online – DOCX yang Bisa Diedit, Gratis",
     seoDescription:
       "PDF ke Word online secara gratis: ubah PDF menjadi file DOCX yang bisa diedit. Paling baik untuk PDF berisi teks; file dihapus segera setelahnya. Tanpa daftar.",
@@ -7488,7 +7488,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Kompres PDF",
     tagline: "Perkecil PDF untuk email dan formulir unggah, dengan tiga tingkat kualitas. Gratis, tanpa daftar.",
     intro:
-      "Kompres PDF memperkecil ukuran file PDF agar muat sebagai lampiran email dan memenuhi batas ukuran portal unggah. Alat ini paling efektif pada PDF berisi foto dan hasil scan, karena gambarnya dikompres ulang dan diperkecil; pilih Terkecil untuk layar dan email, Seimbang untuk sebagian besar kebutuhan, atau Kualitas tinggi untuk menjaga detail saat dicetak. Hasilnya menunjukkan seberapa kecil file menjadi, dan jika PDF sudah ringkas, Anda mendapatkan file aslinya kembali, bukan file yang lebih besar. Kompresi memakai Ghostscript di server kami, dan file dihapus segera setelahnya.",
+      "Kompres PDF memperkecil ukuran file PDF agar muat sebagai lampiran email dan memenuhi batas ukuran portal unggah. Alat ini paling efektif pada PDF berisi foto dan hasil scan, karena gambarnya dikompres ulang dan diperkecil; pilih Terkecil untuk layar dan email, Seimbang untuk sebagian besar kebutuhan, atau Kualitas tinggi untuk menjaga detail saat dicetak. Hasilnya menunjukkan seberapa kecil file menjadi, dan jika PDF sudah ringkas, Anda mendapatkan file aslinya kembali, bukan file yang lebih besar. Kompresi memakai Ghostscript di server kami, dan file dihapus segera setelahnya. PDF dengan formulir isian tetap mempertahankan kolomnya, tetapi ukurannya berkurang lebih sedikit.",
     seoTitle: "Kompres PDF Online – Perkecil Ukuran PDF, Gratis",
     seoDescription:
       "Kompres PDF online secara gratis dengan tiga tingkat kualitas. Lihat berapa banyak ukuran yang dihemat; file dihapus segera setelahnya. Tanpa daftar.",
@@ -7779,7 +7779,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Ubah PDF ke PDF/A untuk arsip jangka panjang dan portal resmi. Gratis, tanpa daftar.",
     intro:
-      "PDF ke PDF/A mengubah PDF menjadi PDF/A-2b, versi arsip dari PDF yang menyematkan font dan informasi warna sehingga dokumen tetap terlihat sama selama puluhan tahun. Sebagian pengadilan, portal pajak, universitas, dan situs pemerintah hanya menerima unggahan PDF/A. Konversi memakai OCRmyPDF dan Ghostscript di server kami, dan file dihapus segera setelahnya.",
+      "PDF ke PDF/A mengubah PDF menjadi PDF/A-2b, versi arsip dari PDF yang menyematkan font dan informasi warna sehingga dokumen tetap terlihat sama selama puluhan tahun. Sebagian pengadilan, portal pajak, universitas, dan situs pemerintah hanya menerima unggahan PDF/A. Konversi memakai OCRmyPDF dan Ghostscript di server kami, dan file dihapus segera setelahnya. Tautan dan sebagian besar kolom formulir isian dipertahankan; kolom yang tidak dapat memenuhi standar, seperti kolom tersembunyi atau tanda tangan, menjadi konten tetap di halaman.",
     seoTitle: "Ubah PDF ke PDF/A Online – PDF/A-2b, Gratis",
     seoDescription:
       "Ubah PDF ke PDF/A-2b untuk arsip dan portal resmi, online dan gratis. File dihapus segera setelah konversi selesai. Tanpa daftar, tanpa watermark.",

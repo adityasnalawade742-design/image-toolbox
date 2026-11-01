@@ -188,7 +188,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Komprimieren",
     tagline: "Mach eine Bilddatei kleiner, indem du Format und Qualität wählst, und sieh die neue Größe vor dem Download.",
     intro:
-      "Bild komprimieren verringert die Dateigröße eines Fotos, damit es auf einer Website schneller lädt oder in eine E-Mail oder unter ein Upload-Limit passt. Das Bild wird neu als WebP (Standard), AVIF, JPG oder PNG in der gewählten Qualität gespeichert. Während du den Regler bewegst, siehst du die geschätzte neue Größe und die Ersparnis in Prozent. Im Modus „Dateigröße“ wird die Qualität für dich gewählt, wenn du unter einem Limit wie 100 KB bleiben musst.",
+      "Bild komprimieren verringert die Dateigröße eines Fotos, damit es auf einer Website schneller lädt oder in eine E-Mail oder unter ein Upload-Limit passt. Das Bild wird neu in seinem eigenen Format (Standard) oder als WebP, AVIF, JPG oder PNG in der gewählten Qualität gespeichert. Während du den Regler bewegst, siehst du die geschätzte neue Größe und die Ersparnis in Prozent. Im Modus „Dateigröße“ wird die Qualität für dich gewählt, wenn du unter einem Limit wie 100 KB bleiben musst.",
     seoTitle: "Bild komprimieren online – Dateigröße verkleinern",
     seoDescription:
       "Bild komprimieren, kostenlos und ohne Upload: WebP, AVIF, JPG oder PNG wählen, Qualität oder Zielgröße in KB festlegen und die Ersparnis vor dem Download sehen.",
@@ -210,7 +210,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         title: "Ausgabeformat wählen",
         description:
-          "WebP ist voreingestellt. AVIF ergibt meist die kleinsten Dateien, braucht aber länger zum Kodieren. JPG öffnet sich überall, und PNG ist verlustfrei und spart daher am wenigsten Platz.",
+          "Voreingestellt ist das Format deiner Datei. WebP ist meist kleiner. AVIF ergibt meist die kleinsten Dateien, braucht aber länger zum Kodieren. JPG öffnet sich überall, und PNG ist verlustfrei und spart daher am wenigsten Platz.",
       },
       {
         title: "Qualität oder Zielgröße festlegen",
@@ -7442,7 +7442,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → Word",
     tagline: "Mach aus einem PDF ein bearbeitbares Word-Dokument (DOCX). Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF in Word wandelt ein PDF in eine DOCX-Datei um, die du in Word, Google Docs oder LibreOffice bearbeiten kannst. Am besten funktioniert es mit PDFs, die aus einem Textdokument erstellt wurden, etwa exportierten Berichten, Briefen und Formularen; Text, Absätze und Bilder werden zu bearbeitbarem Inhalt. Komplexe Layouts wie Zeitschriften, Spalten und Formulare müssen danach eventuell etwas nachbearbeitet werden. Gescannte PDFs sind nur Bilder von Text, lass sie also zuerst durch PDF-OCR laufen. Die Umwandlung läuft mit LibreOffice auf unserem Server, und die Datei wird direkt danach gelöscht.",
+      "PDF in Word wandelt ein PDF in eine DOCX-Datei um, die du in Word, Google Docs oder LibreOffice bearbeiten kannst. Am besten funktioniert es mit PDFs, die aus einem Textdokument erstellt wurden, etwa exportierten Berichten, Briefen und Formularen; Text, Absätze und Bilder werden zu bearbeitbarem Inhalt. Komplexe Layouts wie Zeitschriften, Spalten und Formulare müssen danach eventuell etwas nachbearbeitet werden. Gescannte PDFs sind nur Bilder von Text, lass sie also zuerst durch PDF-OCR laufen. Die Umwandlung läuft mit pdf2docx und LibreOffice auf unserem Server, und die Datei wird direkt danach gelöscht. Bei gescannten Seiten, die eine Texterkennung durchlaufen haben, enthält die Word-Datei den Text; Bilder auf diesen Seiten werden nicht übernommen.",
     seoTitle: "PDF in Word umwandeln – bearbeitbares DOCX, kostenlos",
     seoDescription:
       "PDF in Word umwandeln, kostenlos online: als bearbeitbare DOCX-Datei. Am besten für Text-PDFs; Dateien werden direkt danach gelöscht. Ohne Anmeldung.",
@@ -7513,7 +7513,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF komprimieren",
     tagline: "Mach ein PDF kleiner für E-Mails und Upload-Formulare, mit drei Qualitätsstufen. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF komprimieren verringert die Dateigröße eines PDFs, damit es in E-Mail-Anhänge und unter die Größenlimits von Upload-Portalen passt. Am besten funktioniert es bei PDFs mit Fotos und Scans, deren Bilder neu komprimiert und verkleinert werden; wähle „Am kleinsten“ für Bildschirme und E-Mail, „Ausgewogen“ für die meisten Zwecke oder „Hohe Qualität“, um Details für den Druck zu erhalten. Das Ergebnis zeigt, wie viel kleiner die Datei geworden ist, und wenn ein PDF schon kompakt ist, bekommst du das Original zurück statt einer größeren Datei. Die Komprimierung läuft mit Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht.",
+      "PDF komprimieren verringert die Dateigröße eines PDFs, damit es in E-Mail-Anhänge und unter die Größenlimits von Upload-Portalen passt. Am besten funktioniert es bei PDFs mit Fotos und Scans, deren Bilder neu komprimiert und verkleinert werden; wähle „Am kleinsten“ für Bildschirme und E-Mail, „Ausgewogen“ für die meisten Zwecke oder „Hohe Qualität“, um Details für den Druck zu erhalten. Das Ergebnis zeigt, wie viel kleiner die Datei geworden ist, und wenn ein PDF schon kompakt ist, bekommst du das Original zurück statt einer größeren Datei. Die Komprimierung läuft mit Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. PDFs mit ausfüllbaren Formularen behalten ihre Felder, werden aber weniger stark verkleinert.",
     seoTitle: "PDF komprimieren – PDF-Dateigröße verringern, kostenlos",
     seoDescription:
       "PDF komprimieren, kostenlos online: Dateigröße mit drei Qualitätsstufen verringern. Zeigt die Ersparnis; Dateien werden direkt danach gelöscht. Ohne Anmeldung.",
@@ -7804,7 +7804,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Wandle ein PDF in PDF/A um, für die Langzeitarchivierung und offizielle Portale. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF in PDF/A wandelt ein PDF in PDF/A-2b um, die Archivversion von PDF, die Schriften und Farbinformationen einbettet, damit das Dokument auch in Jahrzehnten gleich aussieht. Manche Gerichte, Steuerportale, Hochschulen und Behördenseiten akzeptieren nur PDF/A-Uploads. Die Umwandlung läuft mit OCRmyPDF und Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht.",
+      "PDF in PDF/A wandelt ein PDF in PDF/A-2b um, die Archivversion von PDF, die Schriften und Farbinformationen einbettet, damit das Dokument auch in Jahrzehnten gleich aussieht. Manche Gerichte, Steuerportale, Hochschulen und Behördenseiten akzeptieren nur PDF/A-Uploads. Die Umwandlung läuft mit OCRmyPDF und Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. Links und die meisten ausfüllbaren Formularfelder bleiben erhalten; Felder, die den Standard nicht erfüllen können, etwa ausgeblendete Felder oder Signaturen, werden zu festem Seiteninhalt.",
     seoTitle: "PDF in PDF/A umwandeln – PDF/A-2b, kostenlos",
     seoDescription:
       "PDF in PDF/A umwandeln, kostenlos online: PDF/A-2b für die Archivierung und offizielle Portale. Dateien werden direkt danach gelöscht. Ohne Anmeldung.",

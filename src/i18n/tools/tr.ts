@@ -188,7 +188,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Sıkıştır",
     tagline: "Bir format ve kalite seçerek resim dosyasını küçültün, yeni boyutu indirmeden önce görün.",
     intro:
-      "Resim Sıkıştırma, bir fotoğrafın dosya boyutunu küçültür; böylece web sitesinde daha hızlı yüklenir veya e-posta ya da yükleme sınırına sığar. Resmi seçtiğiniz kalitede WebP (varsayılan), AVIF, JPG veya PNG olarak yeniden kaydeder ve kaydırıcıyı hareket ettirdikçe tahmini yeni boyutu ve kazanılan yüzdeyi gösterir. Hedef dosya boyutu modu, 100 KB gibi bir sınırın altında kalmanız gerektiğinde kaliteyi sizin için ayarlar.",
+      "Resim Sıkıştırma, bir fotoğrafın dosya boyutunu küçültür; böylece web sitesinde daha hızlı yüklenir veya e-posta ya da yükleme sınırına sığar. Resmi seçtiğiniz kalitede kendi biçiminde (varsayılan) ya da WebP, AVIF, JPG veya PNG olarak yeniden kaydeder ve kaydırıcıyı hareket ettirdikçe tahmini yeni boyutu ve kazanılan yüzdeyi gösterir. Hedef dosya boyutu modu, 100 KB gibi bir sınırın altında kalmanız gerektiğinde kaliteyi sizin için ayarlar.",
     seoTitle: "Resim Boyutu Küçültme – Online Resim Sıkıştırma",
     seoDescription:
       "Resim boyutu küçültme, ücretsiz. WebP, AVIF, JPG veya PNG seçin, kaliteyi ya da KB cinsinden hedef boyutu ayarlayın, kazancı indirmeden görün. Yükleme yok.",
@@ -210,7 +210,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         title: "Çıktı formatını seçin",
         description:
-          "Varsayılan olarak WebP seçilidir. AVIF genellikle en küçük dosyaları oluşturur ama kodlaması daha uzun sürer; JPG her yerde açılır; PNG ise kayıpsız olduğu için en az yer kazandırır.",
+          "Varsayılan olarak dosyanızın kendi biçimi seçilidir. WebP genellikle daha küçüktür. AVIF genellikle en küçük dosyaları oluşturur ama kodlaması daha uzun sürer; JPG her yerde açılır; PNG ise kayıpsız olduğu için en az yer kazandırır.",
       },
       {
         title: "Kaliteyi veya hedef boyutu ayarlayın",
@@ -7428,7 +7428,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → Word",
     tagline: "Bir PDF'i düzenlenebilir bir Word belgesine (DOCX) dönüştürün. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF'ten Word'e Dönüştürme, bir PDF'i Word, Google Docs veya LibreOffice'te düzenleyebileceğiniz bir DOCX dosyasına çevirir. En iyi sonucu, dışa aktarılmış raporlar, mektuplar ve formlar gibi bir metin belgesinden oluşturulmuş PDF'lerde verir; metin, paragraflar ve resimler düzenlenebilir içerik olarak aktarılır. Dergiler, sütunlar ve formlar gibi karmaşık düzenler sonradan biraz toparlama gerektirebilir. Taranmış PDF'ler yalnızca metnin resimlerinden oluşur; bu yüzden onları önce PDF OCR aracından geçirin. Dönüştürme sunucumuzdaki LibreOffice ile yapılır ve dosya hemen ardından silinir.",
+      "PDF'ten Word'e Dönüştürme, bir PDF'i Word, Google Docs veya LibreOffice'te düzenleyebileceğiniz bir DOCX dosyasına çevirir. En iyi sonucu, dışa aktarılmış raporlar, mektuplar ve formlar gibi bir metin belgesinden oluşturulmuş PDF'lerde verir; metin, paragraflar ve resimler düzenlenebilir içerik olarak aktarılır. Dergiler, sütunlar ve formlar gibi karmaşık düzenler sonradan biraz toparlama gerektirebilir. Taranmış PDF'ler yalnızca metnin resimlerinden oluşur; bu yüzden onları önce PDF OCR aracından geçirin. Dönüştürme sunucumuzdaki pdf2docx ve LibreOffice ile yapılır ve dosya hemen ardından silinir. OCR işleminden geçmiş taranmış sayfalarda Word dosyası metni içerir; bu sayfalardaki resimler dahil edilmez.",
     seoTitle: "PDF Word Çevirme – Düzenlenebilir DOCX, Ücretsiz",
     seoDescription:
       "PDF Word çevirme online ve ücretsiz: PDF'i düzenlenebilir bir Word DOCX dosyasına dönüştürün. En iyi sonuç metin PDF'lerinde; dosyalar hemen silinir. Kayıt yok.",
@@ -7498,7 +7498,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF Sıkıştır",
     tagline: "Bir PDF'i e-posta ve yükleme formları için üç kalite seviyesiyle küçültün. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF Sıkıştırma, bir PDF'in dosya boyutunu e-posta eklerine ve yükleme portallarının boyut sınırlarına sığacak şekilde küçültür. En iyi sonucu fotoğraf ve tarama içeren PDF'lerde verir; bu PDF'lerdeki resimler yeniden sıkıştırılır ve küçültülür. Ekranlar ve e-posta için En küçük, çoğu kullanım için Dengeli, baskıda ayrıntıyı korumak için Yüksek kalite seçeneğini seçin. Sonuç, dosyanın ne kadar küçüldüğünü gösterir; bir PDF zaten kompaktsa daha büyük bir dosya yerine orijinalini geri alırsınız. Sıkıştırma sunucumuzdaki Ghostscript ile yapılır ve dosya hemen ardından silinir.",
+      "PDF Sıkıştırma, bir PDF'in dosya boyutunu e-posta eklerine ve yükleme portallarının boyut sınırlarına sığacak şekilde küçültür. En iyi sonucu fotoğraf ve tarama içeren PDF'lerde verir; bu PDF'lerdeki resimler yeniden sıkıştırılır ve küçültülür. Ekranlar ve e-posta için En küçük, çoğu kullanım için Dengeli, baskıda ayrıntıyı korumak için Yüksek kalite seçeneğini seçin. Sonuç, dosyanın ne kadar küçüldüğünü gösterir; bir PDF zaten kompaktsa daha büyük bir dosya yerine orijinalini geri alırsınız. Sıkıştırma sunucumuzdaki Ghostscript ile yapılır ve dosya hemen ardından silinir. Doldurulabilir formlu PDF'ler alanlarını korur ama daha az küçülür.",
     seoTitle: "PDF Sıkıştırma – PDF Boyutunu Küçültün, Ücretsiz",
     seoDescription:
       "PDF sıkıştırma online ve ücretsiz: üç kalite seviyesiyle PDF dosya boyutunu küçültün ve kazancı görün. Dosyalar hemen ardından silinir. Kayıt gerekmez.",
@@ -7782,7 +7782,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Bir PDF'i uzun süreli arşivleme ve resmi portallar için PDF/A'ya dönüştürün. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF'ten PDF/A'ya Dönüştürme, bir PDF'i PDF/A-2b biçimine dönüştürür. PDF/A-2b, yazı tiplerini ve renk bilgilerini dosyaya gömen arşiv amaçlı PDF sürümüdür; böylece belge onlarca yıl sonra da aynı görünür. Bazı mahkemeler, vergi portalları, üniversiteler ve kamu siteleri yalnızca PDF/A yüklemelerini kabul eder. Dönüştürme sunucumuzdaki OCRmyPDF ve Ghostscript ile yapılır ve dosya hemen ardından silinir.",
+      "PDF'ten PDF/A'ya Dönüştürme, bir PDF'i PDF/A-2b biçimine dönüştürür. PDF/A-2b, yazı tiplerini ve renk bilgilerini dosyaya gömen arşiv amaçlı PDF sürümüdür; böylece belge onlarca yıl sonra da aynı görünür. Bazı mahkemeler, vergi portalları, üniversiteler ve kamu siteleri yalnızca PDF/A yüklemelerini kabul eder. Dönüştürme sunucumuzdaki OCRmyPDF ve Ghostscript ile yapılır ve dosya hemen ardından silinir. Bağlantılar ve doldurulabilir form alanlarının çoğu korunur; gizli alanlar veya imzalar gibi standarda uyamayanlar sayfanın sabit içeriğine dönüşür.",
     seoTitle: "PDF'i PDF/A'ya Dönüştürme – PDF/A-2b, Ücretsiz",
     seoDescription:
       "PDF'i PDF/A'ya dönüştürme online ve ücretsiz: arşivleme ve resmi portallar için PDF/A-2b oluşturun. Dosyalar hemen ardından silinir. Kayıt gerekmez.",

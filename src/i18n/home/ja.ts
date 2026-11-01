@@ -65,7 +65,7 @@ export const jaHome: LocalizedHomeData = {
     {
       question: 'スマートフォンでも使えますか？',
       answer:
-        'はい。iPhoneやAndroidの最新のモバイルブラウザで動作し、iPhoneのHEIC写真にも対応しています。サイトをアプリとしてインストールすることもできます。初回アクセス後はほとんどのツールがオフラインで使えますが、AVIF書き出しと背景削除は一度オンラインで使う必要があります。',
+        'はい。iPhoneやAndroidの最新のモバイルブラウザで動作し、iPhoneのHEIC写真にも対応しています。',
     },
     {
       question: 'ツールを続けて使えますか？',
