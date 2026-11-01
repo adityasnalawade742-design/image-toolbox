@@ -5,7 +5,7 @@ The server-side tools of Image Toolbox. Everything else on the site runs in the 
 | Endpoint | Tool | Engine |
 | :--- | :--- | :--- |
 | `POST /v1/convert?to=pdf` | Word / Excel / PowerPoint (and ODF, RTF, TXT, CSV) to PDF | LibreOffice |
-| `POST /v1/convert?to=docx` | PDF to Word | LibreOffice PDF import |
+| `POST /v1/convert?to=docx` | PDF to Word | pdf2docx; LibreOffice PDF import as a fallback |
 | `POST /v1/compress?preset=screen\|ebook\|printer` | Compress PDF | Ghostscript |
 | `POST /v1/protect` (`password`) | Protect PDF, AES-256 | qpdf |
 | `POST /v1/unlock` (`password`) | Unlock PDF | qpdf |
