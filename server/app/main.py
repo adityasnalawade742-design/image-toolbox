@@ -124,10 +124,10 @@ async def save_upload(upload: UploadFile, job: Path) -> Path:
     return dest
 
 
-async def run(*args: str, cwd: Path, ok_codes=(0,)) -> tuple[int, str]:
+async def run(*args: str, cwd: Path, ok_codes=(0,), env: dict | None = None) -> tuple[int, str]:
     proc = await asyncio.create_subprocess_exec(
         *args, cwd=str(cwd), stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
-        env={**os.environ, "HOME": str(cwd)},
+        env={**os.environ, "HOME": str(cwd), **(env or {})},
     )
     try:
         _, err = await asyncio.wait_for(proc.communicate(), timeout=JOB_TIMEOUT)
@@ -614,16 +614,52 @@ async def ocr(file: UploadFile, lang: str = "eng"):
         # A plain PDF, not the default PDF/A: that conversion drops fillable form fields
         # Tesseract's automatic page layout takes the gaps in Korean lines for columns and loses words
         layout = ["--tesseract-pagesegmode", "6"] if "kor" in langs else []
-        ocr_with = lambda mode: run("ocrmypdf", mode, *layout, "--output-type", "pdf", "--optimize", "1", "--jobs", "1", "-l", langs, str(src), str(out), cwd=job)
+        # Tesseract also writes a table of its word confidences, read below to judge each page
+        tsv = job / "tsv.cfg"
+        tsv.write_text("tessedit_create_tsv 1\n")
+        # --rotate-pages turns sideways and upside-down scans upright before reading them
+        def ocr_with(mode: str, target: Path, work: str, *extra: str):
+            temp = job / work
+            temp.mkdir(exist_ok=True)
+            return run("ocrmypdf", mode, "--rotate-pages", "--keep-temporary-files", "--tesseract-config", str(tsv), *layout, *extra,
+                       "--output-type", "pdf", "--optimize", "1", "--jobs", "1", "-l", langs, str(src), str(target),
+                       cwd=job, env={"TMPDIR": str(temp)})
         # --redo-ocr reads the pictures on every page and keeps real text. Not --skip-text: that skips a whole scanned
         # page when anything on it, like a stamp or header, is already text
-        code, err = await ocr_with("--redo-ocr")
+        mode = "--redo-ocr"
+        code, err = await ocr_with(mode, out, "first")
         # It refuses some PDFs, such as fillable forms; --skip-text still reads their pages that have no text
         if code != 0 and "encrypt" not in err.lower():
-            code, err = await ocr_with("--skip-text")
+            mode = "--skip-text"
+            shutil.rmtree(job / "first", ignore_errors=True)
+            code, err = await ocr_with(mode, out, "first")
         if code != 0 or not out.exists():
             raise JobError(422, "encrypted" if "encrypt" in err.lower() else "ocr_failed")
+        # Photos with uneven light come back empty or as garbage. If Tesseract is unsure of any page, read the file
+        # again with Sauvola thresholding, made for uneven light, and keep that only if it is sure of more text
+        first = ocr_confidence(job / "first")
+        if any(sure < 40 or sure < 0.6 * total for total, sure in first):
+            second = job / "second.pdf"
+            code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola")
+            if code == 0 and second.exists() and sum(s for _, s in ocr_confidence(job / "second")) > sum(s for _, s in first):
+                out = second
         return respond(out, job, PDF, "searchable.pdf")
+
+
+def ocr_confidence(temp: Path) -> list[tuple[int, int]]:
+    """Per page OCR'd: word characters read, and how many of those Tesseract is fairly sure of (confidence 60+)."""
+    pages = []
+    for table in sorted(temp.rglob("*_ocr_tess.tsv")):
+        total = sure = 0
+        for line in table.read_text(encoding="utf-8", errors="ignore").splitlines()[1:]:
+            cols = line.split("\t")
+            if len(cols) < 12 or float(cols[10]) < 0:
+                continue
+            chars = sum(ch.isalnum() for ch in cols[11])
+            total += chars
+            sure += chars if float(cols[10]) >= 60 else 0
+        pages.append((total, sure))
+    return pages
 
 
 @app.post("/v1/pdfa")
