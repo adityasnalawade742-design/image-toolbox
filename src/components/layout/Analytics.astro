@@ -1,0 +1,32 @@
+---
+/**
+ * Google Analytics 4 with Consent Mode v2. In the EEA, the UK and Switzerland nothing is stored until the visitor accepts in
+ * the consent banner; elsewhere analytics is on by default and the visitor can still decline from "Cookie settings" in the
+ * footer. Advertising signals stay denied everywhere: the site shows no ads. Images and files are never sent to Google.
+ */
+import { SITE_CONFIG } from '../../config/site';
+
+const gaId = SITE_CONFIG.gaId;
+// EEA countries, the UK and Switzerland (ISO 3166-1 alpha-2), where consent is needed before cookies are set
+const consentRegions = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'];
+---
+
+{gaId && (
+  <>
+    <script is:inline define:vars={{ gaId, consentRegions }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      const denied = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+      gtag('consent', 'default', { ...denied, analytics_storage: 'denied', region: consentRegions, wait_for_update: 500 });
+      gtag('consent', 'default', { ...denied, analytics_storage: 'granted' });
+      try {
+        const choice = localStorage.getItem('tf-consent');
+        if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', { analytics_storage: choice });
+      } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+  </>
+)}

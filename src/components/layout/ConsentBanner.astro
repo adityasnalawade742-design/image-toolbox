@@ -1,0 +1,86 @@
+---
+/**
+ * Cookie consent for Google Analytics. Shown on a first visit from a European time zone (the regions where consent mode
+ * keeps analytics off until the visitor agrees) and whenever "Cookie settings" in the footer is clicked. The choice is
+ * kept in this browser's local storage.
+ */
+import { SITE_CONFIG } from '../../config/site';
+import { useTranslations } from '../../i18n/utils';
+import { ui } from '../../i18n/ui';
+
+interface Props {
+  locale?: keyof typeof ui;
+}
+const { locale = 'en' } = Astro.props;
+const t = useTranslations(locale);
+---
+
+{SITE_CONFIG.gaId && (
+  <div
+    id="consent-banner"
+    role="region"
+    aria-label={t('footer.cookieSettings')}
+    hidden
+    class="fixed inset-x-0 bottom-0 z-50 border-t border-ink bg-paper-bright shadow-[0_-4px_16px_rgba(0,0,0,0.08)]"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+      <p class="text-[15px] text-ink leading-relaxed flex-1">
+        {t('consent.text')}
+        <a href="/privacy" class="underline whitespace-nowrap">{t('consent.privacy')}</a>
+      </p>
+      <div class="flex gap-2 shrink-0">
+        <button type="button" data-consent="denied" class="btn-rule">
+          {t('consent.decline')}
+        </button>
+        <button type="button" data-consent="granted" class="btn-ink">
+          {t('consent.accept')}
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+<script>
+  const banner = document.getElementById('consent-banner');
+  if (banner) {
+    const read = () => {
+      try {
+        return localStorage.getItem('tf-consent');
+      } catch {
+        return null;
+      }
+    };
+    const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    // European time zones stand in for the consent regions; Google applies the regions itself by IP
+    const european = zone.startsWith('Europe/') || ['Atlantic/Reykjavik', 'Atlantic/Canary', 'Atlantic/Madeira', 'Atlantic/Azores', 'Atlantic/Faroe'].includes(zone);
+    if (!read() && european) banner.hidden = false;
+    banner.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-consent]');
+      if (!button) return;
+      const choice = button.dataset.consent as 'granted' | 'denied';
+      try {
+        localStorage.setItem('tf-consent', choice);
+      } catch {
+        // private mode: the choice applies to this page only
+      }
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('consent', 'update', { analytics_storage: choice });
+      if (choice === 'denied') {
+        // Remove analytics cookies already set before the visitor declined (Google sets them on the site's top domain)
+        const host = location.hostname;
+        const domains = ['', host, `.${host}`, `.${host.split('.').slice(-2).join('.')}`];
+        for (const name of document.cookie.split(';').map((c) => c.split('=')[0].trim()).filter((n) => n.startsWith('_ga'))) {
+          for (const domain of domains) {
+            document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ''}`;
+          }
+        }
+      }
+      banner.hidden = true;
+    });
+    document.querySelectorAll('[data-open-consent]').forEach((el) =>
+      el.addEventListener('click', () => {
+        banner.hidden = false;
+        banner.querySelector<HTMLButtonElement>('[data-consent="granted"]')?.focus();
+      })
+    );
+  }
+</script>
