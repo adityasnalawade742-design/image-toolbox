@@ -43,7 +43,7 @@ export function LanguageSelector({ currentLocale = 'en', currentSlug = '', langu
     if (!showDefaultLang && targetLocale === defaultLang) {
       return cleanSlug ? `/${cleanSlug}` : '/';
     }
-    return cleanSlug ? `/${targetLocale}/${cleanSlug}` : `/${targetLocale}/`;
+    return cleanSlug ? `/${targetLocale}/${cleanSlug}` : `/${targetLocale}`;
   };
 
   const handleSelectLanguage = (code: string) => {

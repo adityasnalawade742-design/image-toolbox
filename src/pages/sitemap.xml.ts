@@ -37,7 +37,7 @@ export const GET: APIRoute = async () => {
   // 3. Localized Homepages (8 locales)
   for (const locale of nonDefaultLocales) {
     urls.push({
-      loc: `${baseUrl}/${locale}/`,
+      loc: `${baseUrl}/${locale}`,
       lastmod: now,
       changefreq: 'daily',
       priority: '0.9',

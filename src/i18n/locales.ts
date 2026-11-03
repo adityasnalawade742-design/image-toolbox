@@ -28,7 +28,8 @@ export function getHreflangLinks(currentSlug: string = '', baseUrl?: string) {
   // Localized routes
   for (const locale of Object.keys(SUPPORTED_LOCALES) as SupportedLocale[]) {
     if (locale === 'en') continue;
-    const locPath = cleanSlug ? `/${locale}/${cleanSlug}` : `/${locale}/`;
+    // No trailing slash: the site serves every page, language home pages included, without one
+    const locPath = cleanSlug ? `/${locale}/${cleanSlug}` : `/${locale}`;
     links.push({ lang: locale, href: `${cleanBase}${locPath}` });
   }
 

@@ -10,10 +10,10 @@ const faqSchema = getFAQSchema(homeData.faqs);
 ---
 
 <BaseLayout
-  title={`${homeData.hero.title} | ${SITE_CONFIG.name}`}
-  description={homeData.hero.subtitle}
+  title={`${homeData.hero.seoTitle} | ${SITE_CONFIG.name}`}
+  description={homeData.hero.seoDescription || homeData.hero.subtitle}
   currentSlug=""
-  canonicalUrl={SITE_CONFIG.url}
+  canonicalUrl={`${SITE_CONFIG.url}/`}
   jsonLd={faqSchema ? [faqSchema] : undefined}
 >
   <HomePage locale="en" />

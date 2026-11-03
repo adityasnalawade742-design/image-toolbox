@@ -2,6 +2,8 @@ import type { LocalizedHomeData } from '../types';
 
 export const idHome: LocalizedHomeData = {
   hero: {
+    seoDescription: 'Potong, ubah ukuran, kompres, konversi, hapus background, dan rapikan foto gratis. Tanpa daftar, tanpa watermark, gambar tetap di perangkat Anda.',
+    seoTitle: 'Alat gambar dan PDF gratis online',
     badge: '',
     title: 'Semua alat gambar yang Anda butuhkan, di satu tempat',
     subtitle:

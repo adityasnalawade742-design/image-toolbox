@@ -2,6 +2,8 @@ import type { LocalizedHomeData } from '../types';
 
 export const trHome: LocalizedHomeData = {
   hero: {
+    seoDescription: 'Fotoğrafları ücretsiz kırpın, boyutlandırın, sıkıştırın, dönüştürün ve arka planını kaldırın. Kayıt ve filigran yok, resimleriniz cihazınızda kalır.',
+    seoTitle: 'Ücretsiz çevrimiçi resim ve PDF araçları',
     badge: '',
     title: 'İhtiyacınız olan tüm resim araçları tek bir yerde',
     subtitle:

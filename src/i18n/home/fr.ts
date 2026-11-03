@@ -2,6 +2,8 @@ import type { LocalizedHomeData } from '../types';
 
 export const frHome: LocalizedHomeData = {
   hero: {
+    seoDescription: 'Rognez, redimensionnez, compressez, convertissez et détourez vos photos gratuitement. Sans inscription ni filigrane, vos images restent sur votre appareil.',
+    seoTitle: 'Outils d’image et PDF gratuits en ligne',
     badge: '',
     title: 'Tous les outils d’image dont vous avez besoin, au même endroit',
     subtitle:

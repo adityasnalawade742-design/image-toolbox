@@ -2,6 +2,7 @@ import type { LocalizedHomeData } from '../types';
 
 export const jaHome: LocalizedHomeData = {
   hero: {
+    seoTitle: '無料のオンライン画像・PDFツール',
     badge: '',
     title: '必要な画像ツールが、ここにすべて',
     subtitle:

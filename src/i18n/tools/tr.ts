@@ -9,7 +9,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resim Kırpma, fotoğrafı seçtiğiniz alana göre kırpar ve yalnızca o alanı tam çözünürlükte kaydeder. Boş kenarları atmak, bir konuyu çerçevelemek veya sosyal medya gönderisinin istediği şekle uydurmak için kullanın. Serbest kırpmanın yanı sıra 1:1, 4:5, 9:16 ve 16:9 gibi hazır oranlar, tam piksel girişleri ve profil fotoğrafları için daire modu sunar.",
     seoTitle: "Resim Kırpma – Ücretsiz, Yükleme Yok",
     seoDescription:
-      "Resim kırpma aracı, ücretsiz ve online. Çerçeveyi sürükleyin veya tam piksel girin, 1:1, 4:5, 16:9 ya da 9:16 oranlarını kullanın, JPG, PNG, WebP veya AVIF kaydedin.",
+      "Resim kırpma aracı, ücretsiz ve online. Çerçeveyi sürükleyin veya piksel girin, 1:1, 4:5, 16:9 ya da 9:16 oranlarını kullanın, JPG, PNG, WebP, AVIF kaydedin.",
     keywords: [
       "resim kırpma",
       "fotoğraf kırpma",
@@ -104,7 +104,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resim Boyutlandırma, bir fotoğrafın veya grafiğin piksel boyutlarını değiştirir. Büyük bir kamera fotoğrafını e-posta veya web sitesi için küçültmek ya da 1080 × 1080 gibi tam bir boyuta uymak için kullanın. Genişlik ve yükseklik yazabilir veya %10 ile %300 arasında bir yüzdeyle ölçekleyebilirsiniz. “Büyütme yapma” seçeneği, bir resmi yanlışlıkla büyütmenizi önler.",
     seoTitle: "Resim Boyutu Değiştirme – Piksel veya Yüzde",
     seoDescription:
-      "Resim boyutu değiştirme, ücretsiz ve online. Genişlik ve yüksekliği piksel olarak girin veya yüzdeyle ölçekleyin, oranı koruyun; JPG, PNG, WebP ya da AVIF kaydedin.",
+      "Resim boyutu değiştirme, ücretsiz ve online. Genişlik ve yüksekliği piksel olarak girin veya yüzdeyle ölçekleyin, oranı koruyun; JPG, PNG, WebP, AVIF kaydedin.",
     keywords: [
       "resim boyutu değiştirme",
       "resim boyutlandırma",
@@ -526,7 +526,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "JPG'den PNG'ye aracı, bir JPEG resmi PNG formatına dönüştürür. PNG kayıpsız sıkıştırma kullanır, bu yüzden resim her düzenleyip kaydettiğinizde daha fazla kalite kaybetmez; bu da ekran görüntüleri, grafikler ve daha sonra üzerinde çalışacağınız dosyalar için kullanışlıdır. PNG, JPG'nizle tamamen aynı piksellere ve boyutlara sahiptir, ancak dosya genellikle daha büyüktür.",
     seoTitle: "JPG'yi PNG'ye Dönüştürme – Ücretsiz, Tarayıcıda",
     seoDescription:
-      "JPG'yi PNG'ye dönüştürme, ücretsiz ve online. JPEG'inizle aynı piksellere ve boyutlara sahip kayıpsız bir PNG elde edin; dosya yüklenmeden tarayıcınızda oluşturulur.",
+      "JPG'yi PNG'ye dönüştürme, ücretsiz ve online. JPEG'inizle aynı piksel ve boyutlarda kayıpsız bir PNG elde edin; dosya yüklenmeden tarayıcıda oluşturulur.",
     keywords: [
       "jpg'yi png'ye dönüştürme",
       "jpg png çevirme",
@@ -603,7 +603,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "PNG'den JPG'ye aracı, bir PNG resmi JPEG'e dönüştürür; JPEG fotoğraflar için genellikle çok daha küçüktür ve neredeyse her web sitesi ile uygulama tarafından kabul edilir. JPEG saydamlık saklayamaz, bu yüzden saydam alanları doldurmak için beyaz, siyah veya herhangi bir özel renk seçersiniz. JPG kalitesini de %10 ile %100 arasında ayarlayabilirsiniz.",
     seoTitle: "PNG'yi JPG'ye Dönüştürme – Arka Plan Rengi Seçin",
     seoDescription:
-      "PNG'yi JPG'ye dönüştürme, ücretsiz. Saydam alanlar için beyaz, siyah veya özel bir arka plan seçin, JPG kalitesini ayarlayın. Tarayıcınızda çalışır, yükleme yok.",
+      "PNG'yi JPG'ye dönüştürme, ücretsiz. Saydam alanlar için beyaz, siyah veya özel bir arka plan seçin, JPG kalitesini ayarlayın. Tarayıcıda çalışır, yükleme yok.",
     keywords: [
       "png'yi jpg'ye dönüştürme",
       "png jpg çevirme",
@@ -822,7 +822,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "WebP'den JPG'ye aracı, web sitelerinde yaygın olan WebP dosyalarını standart JPEG resimlere dönüştürür. Eski bir program, bir yükleme formu veya bir baskı hizmeti WebP kabul etmediğinde en güvenli seçim JPG'dir. WebP'de saydam alanlar varsa, JPG saydamlık saklayamadığı için bu alanları dolduracak rengi siz seçersiniz.",
     seoTitle: "WebP'yi JPG'ye Dönüştürme – Ücretsiz, Yükleme Yok",
     seoDescription:
-      "WebP'yi JPG'ye dönüştürme, ücretsiz. WebP resimlerini her uygulamada açılır hâle getirin, saydam alanlar için dolgu rengi seçin, kaliteyi ayarlayın. Yükleme yok.",
+      "WebP'yi JPG'ye dönüştürme, ücretsiz. WebP resimlerini her uygulamada açılır hâle getirin, saydam alanlara dolgu rengi seçin, kaliteyi ayarlayın. Yükleme yok.",
     keywords: [
       "webp'yi jpg'ye dönüştürme",
       "webp jpg çevirme",
@@ -1129,7 +1129,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resim Meta Verisi Silme, fotoğrafınızın gizli EXIF bilgileri olmadan temiz bir kopyasını oluşturur. Telefon ve kamera fotoğrafları çoğu zaman çekildikleri yerin GPS konumunu, cihaz modelini ve tarih ile saati kaydeder. JPG, PNG ve WebP'de dosyadan yalnızca bu bilgiler çıkarılır: görüntü yeniden kaydedilmez, bu yüzden kalitesi ve renkleri tamamen aynı kalır. Yeni dosya boyutu indirmeden önce gösterilir.",
     seoTitle: "Fotoğraftan EXIF Silme – GPS ve Meta Veri",
     seoDescription:
-      "Fotoğraftan EXIF ve meta veri silme, ücretsiz. Bir resmi paylaşmadan önce GPS konumunu, kamera modelini ve tarihi kaldırın. Tarayıcınızda işlenir, asla yüklenmez.",
+      "Fotoğraftan EXIF ve meta veri silme, ücretsiz. Bir resmi paylaşmadan önce GPS konumunu, kamera modelini ve tarihi kaldırın. Tarayıcıda işlenir, yüklenmez.",
     keywords: [
       "exif silme",
       "fotoğraftan meta veri silme",
@@ -1213,7 +1213,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resim Analiz Aracı, bir resim dosyasının teknik ayrıntılarını dosyayı değiştirmeden gösterir. Dosya boyutunu, formatı, piksel boyutlarını, en boy oranını, megapikseli ve resimde saydamlık olup olmadığını bildirir. Fotoğraflar için kamera modeli, lens, pozlama, ISO, çekim tarihi ve GPS konumu gibi kamera EXIF verilerini de okur ve bir fotoğraf çekildiği yeri ortaya çıkarıyorsa sizi uyarır.",
     seoTitle: "EXIF Görüntüleme – Resim Boyutu ve Bilgileri",
     seoDescription:
-      "Resim bilgilerini ücretsiz kontrol edin: boyutlar, dosya boyutu, en boy oranı, baskı boyutu ve kamera EXIF verileri. Fotoğrafta GPS konumu varsa uyarı gösterilir.",
+      "Resim bilgilerini ücretsiz kontrol edin: boyutlar, dosya boyutu, en boy oranı, baskı boyutu ve kamera EXIF verileri. Fotoğrafta GPS varsa uyarı gösterilir.",
     keywords: [
       "exif görüntüleme",
       "resim meta verisi görüntüleme",
@@ -1386,7 +1386,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resimden Renk Paleti Oluşturucu, bir fotoğraftaki veya tasarımdaki baskın renkleri bulur ve renk örnekleri olarak gösterir. 3, 4, 5, 6 veya 8 renk seçebilirsiniz; renkler en geniş alanı kaplayandan başlayarak sıralanır ve birbirine çok benzeyen tonlar birleştirilir, böylece her renk örneği farklıdır. Paleti CSS değişkenleri veya JSON dizisi olarak kopyalayın ya da PNG renk kartelası olarak indirin.",
     seoTitle: "Resimden Renk Paleti Çıkarma – HEX Kodları",
     seoDescription:
-      "Resimden renk paleti çıkarma, ücretsiz. 3 ile 8 arası baskın rengi bulun, HEX kodlarını, CSS değişkenlerini veya JSON'u kopyalayın ve PNG renk kartelası indirin.",
+      "Resimden renk paleti çıkarma, ücretsiz. 3 ile 8 arası baskın rengi bulun, HEX kodlarını, CSS değişkenlerini veya JSON'u kopyalayın, PNG renk kartelası indirin.",
     keywords: [
       "resimden renk paleti çıkarma",
       "resimdeki renkleri bulma",
@@ -1539,7 +1539,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resme Filigran Ekleme, bir fotoğrafın üzerine telif hakkı notu, web sitesi adı veya logo ekler. Bir metin veya logo filigranını dokuz konumdan birine yerleştirip boyutunu ve opaklığını ayarlayın ya da metni resmin tamamında tekrarlayın; bu, kırparak çıkarmayı çok daha zorlaştırır. Logolar PNG, WebP, JPG veya SVG dosyası olabilir; saydam arka planlı bir logo en iyi görünür.",
     seoTitle: "Resme Filigran Ekleme – Yazı veya Logo",
     seoDescription:
-      "Fotoğrafa filigran ekleme, ücretsiz. Metin veya logonuzu kullanın, dokuz konumdan birini seçin, opaklığı ve açıyı ayarlayın ya da metni resim boyunca tekrarlayın.",
+      "Fotoğrafa filigran ekleme, ücretsiz. Metin veya logonuzu kullanın, dokuz konumdan birini seçin, opaklığı ve açıyı ayarlayın ya da metni resimde tekrarlayın.",
     keywords: [
       "resme filigran ekleme",
       "fotoğrafa filigran ekleme",
@@ -1869,7 +1869,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resmi Base64'e Dönüştürme aracı, bir resim dosyasını Base64 metni olarak kodlar; böylece örneğin JSON, bir HTML sayfası veya bir CSS dosyası içinde düz metin olarak saklanabilir ya da gönderilebilir. Dize dosyanın orijinal baytlarından oluşturulur, bu yüzden resim yeniden sıkıştırılmaz veya değiştirilmez. Araç karakter sayısını gösterir ve resmin tamamını içeren bir HTML img etiketi ile bir CSS background-image kuralı da verir.",
     seoTitle: "Resmi Base64'e Dönüştürme – Base64 Kodunu Kopyalayın",
     seoDescription:
-      "Resmi Base64'e dönüştürme, ücretsiz. Orijinal JPG, PNG, WebP, GIF veya SVG baytlarını kodlayın; dizeyi, HTML img etiketini veya CSS kuralını tek tıkla kopyalayın.",
+      "Resmi Base64'e dönüştürme, ücretsiz. Orijinal JPG, PNG, WebP, GIF veya SVG baytlarını kodlayın; dizeyi, HTML img etiketini veya CSS kuralını kopyalayın.",
     keywords: [
       "resmi base64'e dönüştürme",
       "resim base64 çevirme",
@@ -2033,7 +2033,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Base64'ten Resme aracı, Base64 metnini görüp kaydedebileceğiniz bir resme geri çözer. Yalın bir Base64 dizesi, eksiksiz bir data URI veya bunlardan birini içeren bir CSS url() ya da HTML src kodu yapıştırabilirsiniz; URL güvenli Base64 ve satır sonları otomatik olarak işlenir. Araç verinin PNG, JPEG, GIF, WebP, SVG, BMP veya AVIF olup olmadığını algılar ve çözülen resmi boyutlarıyla birlikte gösterir.",
     seoTitle: "Base64'ten Resme Dönüştürme – Önizleyin ve İndirin",
     seoDescription:
-      "Base64'ü resme dönüştürme, ücretsiz ve online. Bir Base64 dizesi, data URI veya CSS ya da HTML kodu yapıştırın, resmi önizleyin ve PNG, JPG veya WebP olarak indirin.",
+      "Base64'ü resme dönüştürme, ücretsiz ve online. Base64 dizesi, data URI veya CSS ya da HTML kodu yapıştırın, resmi önizleyin ve PNG, JPG veya WebP indirin.",
     keywords: [
       "base64'ten resme dönüştürme",
       "base64 resim çözme",
@@ -2321,7 +2321,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Fotoğraf Filtreleri ve Efektleri, bir fotoğrafın görünümünü ve havasını değiştirir. Sinematik, Vintage 70'ler, Karanlık Noir veya Sıcak Gün Batımı gibi sekiz hazır filtreden biriyle başlayın; ardından parlaklığı, kontrastı, doygunluğu, sepyayı, siyah beyazı, tonu, netliği, vinyeti ve yumuşak bulanıklığı kaydırıcılarla ayarlayın. Bölünmüş görünüm, düzenlenen fotoğrafı PNG, JPG veya WebP olarak indirmeden önce orijinalle karşılaştırmanızı sağlar.",
     seoTitle: "Fotoğraf Filtreleri – Ücretsiz Efektler ve Hazır Ayarlar",
     seoDescription:
-      "Fotoğrafa filtre ekleme, ücretsiz. Vintage, Noir, Sinematik ve fazlasını deneyin; parlaklık, kontrast, doygunluk ve vinyeti ayarlayın, önce ve sonrayı karşılaştırın.",
+      "Fotoğrafa filtre ekleme, ücretsiz. Vintage, Noir, Sinematik ve fazlasını deneyin; parlaklık, kontrast, doygunluk ve vinyeti ayarlayın, önce-sonrayı kıyaslayın.",
     keywords: [
       "fotoğrafa filtre ekleme",
       "online fotoğraf filtreleri",
@@ -2485,7 +2485,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "Resim Bölme ve Izgara Kesici, bir resmi satır ve sütunlar hâlinde ayrı resim dosyalarına böler. Profil ızgarası için Instagram 3×3 hazır ayarını, kaydırmalı gönderiler için Panorama 3×1 veya Kaydırmalı gönderi 2×1'i, dört eşit parça için 2×2'yi kullanın ya da en fazla 12 satır ve 12 sütunluk kendi ızgaranızı belirleyin. Tüm parçalar numaralı PNG dosyaları olarak bir ZIP içinde birlikte indirilir veya yalnızca birini kaydetmek için tek bir parçaya tıklayabilirsiniz.",
     seoTitle: "Resmi Parçalara Bölme – Instagram 3×3 ve Panorama",
     seoDescription:
-      "Resmi parçalara bölme, ücretsiz. 3x3 Instagram ızgarası, panorama kaydırmalı gönderi dilimleri veya 12x12'ye kadar özel ızgara yapın, parçaları ZIP olarak indirin.",
+      "Resmi parçalara bölme, ücretsiz. 3x3 Instagram ızgarası, panorama kaydırmalı gönderi dilimleri veya 12x12'ye kadar özel ızgara yapın, ZIP olarak indirin.",
     keywords: [
       "resmi parçalara bölme",
       "resim bölme",
@@ -4815,7 +4815,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "PDF Form Doldurma, bir PDF formundaki metin kutuları, onay kutuları ve açılır listeler gibi doldurulabilir alanları bulur ve her birini adıyla göstererek hızlıca doldurmanızı sağlar. Doldurulmuş PDF'i indirin ya da yanıtların sayfanın bir parçası olması ve artık değiştirilememesi için formu düzleştirin. Başvuru formları, vergi formları ve kayıt belgeleri için kullanışlıdır. Form tarayıcınızda doldurulur, bu yüzden kişisel bilgileriniz asla yüklenmez.",
     seoTitle: "PDF Form Doldurma Online – Ücretsiz ve Gizli",
     seoDescription:
-      "PDF form doldurma tarayıcıda: doldurulabilir formlardaki metin alanları, onay kutuları ve listeler. Yanıtları kilitlemek için düzleştirin. Ücretsiz, yükleme yok.",
+      "PDF form doldurma tarayıcıda: doldurulabilir formlardaki metin alanları, onay kutuları ve listeler. Yanıtları kilitlemek için düzleştirin. Ücretsiz.",
     keywords: [
       "pdf form doldurma",
       "pdf doldurma",
@@ -7989,7 +7989,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "tagline": "Bir PDF'i başlıkları ve listeleriyle Markdown'a dönüştürün; notlar, wiki'ler ve yapay zekâ araçları için. Ücretsiz ve cihazınızda çalışır.",
     "intro": "PDF'ten Markdown'a Dönüştürme, bir PDF'in metnini Markdown'a çevirir: daha büyük metin başlık, madde işaretli ve numaralı satırlar liste olur, kaydırılmış satırlar yeniden paragraf olarak birleştirilir ve kısa çizgiyle bölünmüş kelimeler bir araya getirilir. Sonuç; Obsidian ve Notion gibi not uygulamaları, wiki'ler ve dokümantasyon ya da bir yapay zekâ asistanına yapıştırmak için hazırdır. Sayfaları seçin, Markdown'ı kopyalayın veya .md dosyası olarak indirin. Her şey tarayıcınızın içinde gerçekleşir.",
     "seoTitle": "PDF'ten Markdown'a – Ücretsiz, Başlık ve Listeler",
-    "seoDescription": "PDF'i tarayıcınızda Markdown'a dönüştürün: büyük metinden başlıklar, listeler, birleştirilmiş paragraflar. Notlar, wiki'ler ve yapay zekâ için. Ücretsiz, hiçbir şey yüklenmez.",
+    "seoDescription": "PDF'i tarayıcınızda Markdown'a dönüştürün: büyük metinden başlıklar, listeler, birleştirilmiş paragraflar. Notlar, wiki'ler ve yapay zekâ için. Ücretsiz.",
     "keywords": [
       "pdf markdown çevirme",
       "pdf'i markdown'a dönüştürme",
@@ -8054,7 +8054,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "tagline": "Düz metni veya bir .txt dosyasını seçtiğiniz yazı tipi, boyut ve kenar boşluklarıyla temiz bir PDF'e dönüştürün. Ücretsiz ve cihazınızda çalışır.",
     "intro": "Metinden PDF'e Dönüştürme; notları, günlükleri, listeleri veya herhangi bir düz metni her cihazda aynı görünen düzenli bir PDF'e çevirir. Metni yazın ya da yapıştırın veya bir .txt dosyası açın; ardından A4 veya Letter, tırnaksız, tırnaklı ya da daktilo tarzı bir yazı tipi, yazı boyutu ve kenar boşluklarını seçin. Uzun satırlar düzgünce kaydırılır, satır sonları korunur ve sayfalar numaralandırılabilir. Önizleme, PDF'i tam olarak kaydedileceği gibi gösterir ve içindeki metin aranabilir kalır. Her şey tarayıcınızın içinde gerçekleşir.",
     "seoTitle": "Metinden PDF'e Dönüştürücü – TXT'den PDF'e, Ücretsiz",
-    "seoDescription": "Metni veya bir .txt dosyasını tarayıcınızda PDF'e dönüştürün. Yazı tipi, boyut, kenar boşlukları ve sayfa numaraları seçin; canlı önizleme. Ücretsiz, hiçbir şey yüklenmez.",
+    "seoDescription": "Metni veya bir .txt dosyasını tarayıcınızda PDF'e dönüştürün. Yazı tipi, boyut, kenar boşlukları ve sayfa numaraları seçin; canlı önizleme. Ücretsiz.",
     "keywords": [
       "metni pdf'e çevirme",
       "txt pdf çevirme",
@@ -8184,7 +8184,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "tagline": "Bir PDF'in içindeki her resmi kendi çözünürlüğünde, PNG veya JPG olarak tek bir ZIP'te kaydedin. Ücretsiz ve cihazınızda çalışır.",
     "intro": "PDF'ten Resim Çıkarma, bir PDF'e gömülü fotoğrafları, logoları ve çizimleri bulur ve sayfanın ekran görüntüsü olarak değil, saklandıkları çözünürlükte kaydeder. Her resim boyutu ve göründüğü sayfalarla birlikte gösterilir; logo gibi birçok sayfada kullanılan bir resim yalnızca bir kez listelenir. Resimleri tam boyutta inceleyin, ihtiyacınız olmayanların işaretini kaldırın ve kayıpsız PNG veya daha küçük JPG dosyaları olarak tek bir ZIP'te indirin. Her şey tarayıcınızın içinde gerçekleşir.",
     "seoTitle": "PDF'ten Resim Çıkarma – Ücretsiz, Orijinal Çözünürlük",
-    "seoDescription": "Bir PDF'in içindeki resimleri tarayıcınızda kendi çözünürlüklerinde kaydedin. Önizleyin, seçin ve PNG ya da JPG'yi tek ZIP'te indirin. Ücretsiz, hiçbir şey yüklenmez.",
+    "seoDescription": "Bir PDF'in içindeki resimleri tarayıcınızda kendi çözünürlüklerinde kaydedin. Önizleyin, seçin, PNG ya da JPG'yi tek ZIP'te indirin. Ücretsiz, yükleme yok.",
     "keywords": [
       "pdf'ten resim çıkarma",
       "pdf resim ayıklama",
@@ -8379,7 +8379,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "tagline": "Bir PDF'teki antetli kâğıdı, arka planı veya damgayı başka bir PDF'in sayfalarının üstüne ya da altına yerleştirin. Ücretsiz ve cihazınızda çalışır.",
     "intro": "PDF Bindirme, iki PDF'i sayfa sayfa üst üste birleştirir: şirketinizin antetli kâğıdını bir mektubun arkasına, bir arka plan tasarımını bir raporun altına ya da 'Taslak' veya 'Onaylandı' sayfasını her sayfanın üstüne koyun. Bindirmenin üstte mi altta mı olacağını, hangi bindirme sayfasının nereye gideceğini (ilk sayfa her sayfaya veya sayfa sayfa), hangi sayfaların kaplanacağını ve ne kadar belirgin olacağını seçin. Önizleme her sayfayı kaydedileceği gibi gösterir. Her şey tarayıcınızın içinde gerçekleşir.",
     "seoTitle": "PDF Bindirme – Antetli Kâğıt veya Arka Plan, Ücretsiz",
-    "seoDescription": "Bir PDF antetli kâğıdını, arka planını veya damgasını başka bir PDF'in sayfalarının üstüne ya da altına tarayıcınızda yerleştirin. Canlı önizleme. Ücretsiz, hiçbir şey yüklenmez.",
+    "seoDescription": "Bir PDF antetli kâğıdını, arka planını veya damgasını başka bir PDF'in sayfalarının üstüne ya da altına yerleştirin. Canlı önizleme. Ücretsiz, yükleme yok.",
     "keywords": [
       "pdf bindirme",
       "pdf'e antetli kâğıt ekleme",

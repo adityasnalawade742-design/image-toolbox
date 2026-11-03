@@ -9,7 +9,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Ritaglia immagine riduce una foto all’area che selezioni e salva solo quella, alla massima risoluzione. Usalo per eliminare bordi vuoti, inquadrare un soggetto o ottenere la forma richiesta da un post sui social. Oltre al ritaglio libero, offre proporzioni predefinite come 1:1, 4:5, 9:16 e 16:9, campi per i pixel esatti e una modalità cerchio per le immagini del profilo.",
     seoTitle: "Ritagliare immagine online – Gratis, senza upload",
     seoDescription:
-      "Ritaglia immagini online gratis. Trascina la cornice o inserisci i pixel esatti, usa i formati 1:1, 4:5, 16:9 o 9:16 e salva in JPG, PNG, WebP o AVIF. Senza upload.",
+      "Ritaglia immagini online gratis. Trascina la cornice o inserisci i pixel esatti, usa 1:1, 4:5, 16:9 o 9:16 e salva in JPG, PNG, WebP o AVIF. Senza upload.",
     keywords: [
       "ritagliare immagine",
       "ritagliare foto online",
@@ -104,7 +104,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Ridimensiona immagine cambia le dimensioni in pixel di una foto o di una grafica. Usalo per rendere una grande foto della fotocamera abbastanza piccola per un’email o un sito, o per ottenere una misura esatta come 1080 × 1080. Puoi inserire larghezza e altezza o scalare in percentuale dal 10% al 300%, e l’opzione Non ingrandire evita di ingrandire un’immagine per errore.",
     seoTitle: "Ridimensionare immagine online – Pixel o percentuale",
     seoDescription:
-      "Ridimensiona immagini online gratis. Inserisci larghezza e altezza esatte in pixel o scala in percentuale, mantieni le proporzioni e salva in JPG, PNG, WebP o AVIF.",
+      "Ridimensiona immagini online gratis. Inserisci larghezza e altezza in pixel o scala in percentuale, mantieni le proporzioni e salva in JPG, PNG, WebP o AVIF.",
     keywords: [
       "ridimensionare immagine",
       "ridimensionare foto online",
@@ -191,7 +191,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Comprimi immagine riduce il peso di una foto, così si carica più in fretta su un sito o rientra nei limiti di un’email o di un upload. Salva di nuovo l’immagine nel suo formato (predefinito) oppure in WebP, AVIF, JPG o PNG alla qualità che scegli, e mostra il peso stimato e la percentuale risparmiata mentre muovi il cursore. La modalità Peso file imposta la qualità per te quando devi restare sotto un limite, per esempio 100 KB.",
     seoTitle: "Comprimere immagine online – Riduci il peso del file",
     seoDescription:
-      "Comprimi immagini online gratis. Scegli WebP, AVIF, JPG o PNG, imposta la qualità o un peso in KB e vedi il risparmio prima di scaricare. Nessun upload necessario.",
+      "Comprimi immagini online gratis. Scegli WebP, AVIF, JPG o PNG, imposta la qualità o un peso in KB e vedi il risparmio prima di scaricare. Nessun upload.",
     keywords: [
       "comprimere immagine",
       "ridurre peso immagine",
@@ -526,7 +526,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Da JPG a PNG converte un’immagine JPEG nel formato PNG. PNG usa una compressione senza perdita, quindi l’immagine non perde altra qualità a ogni modifica e salvataggio: utile per screenshot, grafiche e file su cui lavorerai in seguito. Il PNG ha esattamente gli stessi pixel e le stesse dimensioni del JPG, ma di solito il file è più pesante.",
     seoTitle: "Convertire JPG in PNG – Gratis, nel tuo browser",
     seoDescription:
-      "Converti JPG in PNG online gratis. Ottieni un PNG senza perdita con gli stessi pixel e le stesse dimensioni del tuo JPEG, creato nel browser senza caricare il file.",
+      "Converti JPG in PNG online gratis. Ottieni un PNG senza perdita con gli stessi pixel e dimensioni del tuo JPEG, creato nel browser senza caricare il file.",
     keywords: [
       "convertire jpg in png",
       "da jpg a png",
@@ -822,7 +822,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Da WebP a JPG converte i file WebP, comuni sui siti web, in normali immagini JPEG. JPG è la scelta più sicura quando un programma meno recente, un modulo di caricamento o un servizio di stampa non accetta WebP. Se il WebP ha aree trasparenti, scegli il colore che le riempie, perché JPG non supporta la trasparenza.",
     seoTitle: "Convertire WebP in JPG – Gratis, senza upload",
     seoDescription:
-      "Converti WebP in JPG online gratis. Apri le immagini WebP in qualsiasi app o modulo, scegli un colore per le aree trasparenti e imposta la qualità. Senza upload.",
+      "Converti WebP in JPG online gratis. Apri le immagini WebP in qualsiasi app o modulo, scegli un colore per le aree trasparenti e la qualità. Senza upload.",
     keywords: [
       "convertire webp in jpg",
       "da webp a jpg",
@@ -1304,7 +1304,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Selettore colore da immagine trova il colore esatto di qualsiasi pixel di un’immagine. Muovi il puntatore sull’immagine per vedere ingranditi i pixel sottostanti, poi clicca per scegliere un colore e copiarne il codice in HEX, RGB, HSL, HSV o CMYK. I colori vengono letti dall’immagine a piena risoluzione, non dall’anteprima ridotta.",
     seoTitle: "Selettore colore da immagine – Codice HEX e RGB",
     seoDescription:
-      "Prendi colori da qualsiasi immagine, gratis. Clicca un pixel per ottenere il codice HEX, RGB, HSL, HSV e CMYK, usa la lente per la precisione e copia con un clic.",
+      "Prendi colori da qualsiasi immagine, gratis. Clicca un pixel per il codice HEX, RGB, HSL, HSV e CMYK, usa la lente per la precisione e copia con un clic.",
     keywords: [
       "selettore colore da immagine",
       "trovare codice hex da immagine",
@@ -1539,7 +1539,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Filigrana immagine aggiunge sopra una foto un avviso di copyright, il nome di un sito o un logo. Posiziona una filigrana di testo o un logo in uno dei nove punti e impostane dimensione e opacità, oppure ripeti il testo su tutta l’immagine, che così è molto più difficile da eliminare con un ritaglio. I loghi possono essere file PNG, WebP, JPG o SVG; un logo con sfondo trasparente dà il risultato migliore.",
     seoTitle: "Filigrana foto online – Aggiungi testo o logo",
     seoDescription:
-      "Aggiungi gratis una filigrana alle foto. Usa un testo o il tuo logo, scegli tra nove posizioni, imposta opacità e rotazione o ripeti il testo su tutta l’immagine.",
+      "Aggiungi gratis una filigrana alle foto. Usa un testo o il tuo logo, scegli tra nove posizioni, imposta opacità e rotazione o ripeti il testo sull’immagine.",
     keywords: [
       "filigrana foto",
       "aggiungere filigrana a foto",
@@ -1623,7 +1623,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Aggiungi bordo all’immagine disegna una cornice colorata attorno a un’immagine. In modalità Esterno la tela si allarga, così tutta la foto resta visibile dentro il bordo; in modalità Interno il bordo viene disegnato sopra i margini e l’immagine mantiene le dimensioni originali. Puoi impostare uno spessore da 1 a 100 pixel, un colore qualsiasi e un livello di opacità.",
     seoTitle: "Aggiungere bordo a foto online – Cornice gratis",
     seoDescription:
-      "Aggiungi gratis un bordo alle immagini online. Scegli colore, spessore da 1 a 100 px e opacità, e posizionalo attorno alla foto o sopra i suoi bordi. Senza upload.",
+      "Aggiungi gratis un bordo alle immagini online. Scegli colore, spessore da 1 a 100 px e opacità, e posizionalo attorno alla foto o sui suoi bordi. Senza upload.",
     keywords: [
       "aggiungere bordo a immagine",
       "aggiungere cornice a foto",
@@ -1699,7 +1699,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Arrotonda angoli immagine dà a un’immagine angoli morbidi o la trasforma in un cerchio per un’immagine del profilo o l’icona di un’app. Scegli il preset Piccolo, Medio o Grande, imposta un raggio esatto con il cursore o clicca Crea un cerchio. Il risultato viene salvato in PNG per impostazione predefinita, così gli angoli tagliati restano trasparenti.",
     seoTitle: "Arrotondare angoli immagine online – Anche a cerchio",
     seoDescription:
-      "Arrotonda gratis gli angoli di un’immagine o ritaglia una foto a cerchio. Imposta il raggio, mantieni lo sfondo trasparente in PNG o scegli un colore per il JPG.",
+      "Arrotonda gratis gli angoli di un’immagine o ritaglia una foto a cerchio. Imposta il raggio, tieni lo sfondo trasparente in PNG o scegli un colore per il JPG.",
     keywords: [
       "arrotondare angoli immagine",
       "angoli arrotondati immagine online",
@@ -1775,7 +1775,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Generatore di favicon trasforma un logo o un’immagine nella serie di icone che serve a un sito web. Ritaglia l’immagine in un quadrato centrato e crea favicon.ico (con le dimensioni 16, 32 e 48 pixel), icone PNG da 16 a 512 pixel, un apple-touch-icon.png di 180 × 180 e un file site.webmanifest, tutto in un unico ZIP. La pagina mostra anche i tag link HTML da incollare nella sezione head del tuo sito.",
     seoTitle: "Generatore favicon – ICO, PNG e icona Apple touch",
     seoDescription:
-      "Generatore di favicon gratuito. Carica un logo PNG, JPG o SVG e ottieni favicon.ico, icone PNG da 16 a 512 px, un’icona Apple touch e un web manifest in uno ZIP.",
+      "Generatore di favicon gratuito. Carica un logo PNG, JPG o SVG e ottieni favicon.ico, icone PNG da 16 a 512 px, icona Apple touch e web manifest in uno ZIP.",
     keywords: [
       "generatore favicon",
       "creare favicon",
@@ -1869,7 +1869,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Da immagine a Base64 codifica un file immagine come testo Base64, così può essere salvato o inviato come semplice testo, per esempio dentro un JSON, una pagina HTML o un file CSS. La stringa viene creata dai byte originali del file, quindi l’immagine non viene ricompressa né modificata. Lo strumento mostra il numero di caratteri e ti dà anche un tag img HTML e una regola CSS background-image che contengono l’intera immagine.",
     seoTitle: "Convertire immagine in Base64 – Copia la stringa",
     seoDescription:
-      "Converti immagini in Base64 online gratis. Codifica i byte originali di JPG, PNG, WebP, GIF o SVG e copia la stringa, un tag img HTML o una regola CSS con un clic.",
+      "Converti immagini in Base64 online gratis. Codifica i byte originali di JPG, PNG, WebP, GIF o SVG e copia la stringa, un tag img HTML o una regola CSS.",
     keywords: [
       "immagine in base64",
       "convertire immagine in base64",
@@ -2033,7 +2033,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "Da Base64 a immagine decodifica il testo Base64 e lo trasforma di nuovo in un’immagine da vedere e salvare. Puoi incollare una semplice stringa Base64, un data URI completo, o uno snippet CSS url() o HTML src che ne contenga uno; Base64 URL-safe e a capo vengono gestiti in automatico. Lo strumento rileva se i dati sono PNG, JPEG, GIF, WebP, SVG, BMP o AVIF, e mostra l’immagine decodificata con le sue dimensioni.",
     seoTitle: "Convertire Base64 in immagine – Anteprima e download",
     seoDescription:
-      "Decodifica Base64 in immagine online e gratis. Incolla una stringa Base64, un data URI o uno snippet CSS o HTML, vedi l’anteprima e scaricala in PNG, JPG o WebP.",
+      "Decodifica Base64 in immagine online e gratis. Incolla una stringa Base64, un data URI o uno snippet CSS o HTML, vedi l’anteprima e scarica in PNG, JPG o WebP.",
     keywords: [
       "base64 in immagine",
       "decodificare immagine base64",
