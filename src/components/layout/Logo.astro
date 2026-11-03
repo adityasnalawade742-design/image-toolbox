@@ -1,0 +1,21 @@
+---
+/**
+ * The TadaFile wordmark: "TADA", the sparkle-file mark, "FILE". The words stay real text in the site font, so screen
+ * readers and search engines read the name; the mark between them is decorative.
+ */
+import { SITE_CONFIG } from '../../config/site';
+import mark from './logo-mark.svg?raw';
+
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+// "TadaFile" -> "Tada" + "File": split before the second capital
+const [first, second] = SITE_CONFIG.name.split(/(?=[A-Z])/).length === 2 ? SITE_CONFIG.name.split(/(?=[A-Z])/) : [SITE_CONFIG.name, ''];
+---
+
+<span class={`inline-flex items-center font-condensed font-bold uppercase tracking-[0.04em] text-ink leading-none ${className}`}>
+  <span>{first}</span>
+  <span class="inline-block h-[1.3em] w-[1.46em] ml-[0.1em] mr-[0.02em] -translate-y-[0.08em] [&>svg]:h-full [&>svg]:w-full" set:html={mark} />
+  {second && <span>{second}</span>}
+</span>

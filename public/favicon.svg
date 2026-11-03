@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <clipPath id="c"><rect width="512" height="512" rx="112"/></clipPath>
-  <g clip-path="url(#c)">
-    <rect width="512" height="512" fill="#141414"/>
-    <rect x="0" width="171" height="92" fill="#00a0df"/>
-    <rect x="171" width="170" height="92" fill="#e4007c"/>
-    <rect x="341" width="171" height="92" fill="#ffe100"/>
-    <rect x="150" y="186" width="212" height="58" rx="6" fill="#fbfbf9"/>
-    <rect x="226" y="186" width="60" height="254" rx="6" fill="#fbfbf9"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polygon points="84,36 317.376,36 427.2,145.824 427.2,476 84,476" fill="#e4007c"/><polygon points="317.376,36 317.376,145.824 427.2,145.824" fill="#ff7ab8"/><polygon points="255.6,176.8 278.25,268.55 370.0,291.2 278.25,313.85 255.6,405.6 232.95,313.85 141.2,291.2 232.95,268.55" fill="#fbfbf9"/></svg>
