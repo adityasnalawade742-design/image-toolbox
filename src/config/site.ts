@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
-  name: (typeof process !== 'undefined' && process.env?.PUBLIC_SITE_NAME) || (import.meta.env?.PUBLIC_SITE_NAME) || 'Image Toolbox',
+  name: (typeof process !== 'undefined' && process.env?.PUBLIC_SITE_NAME) || (import.meta.env?.PUBLIC_SITE_NAME) || 'TadaFile',
   title: 'Precision Image Tools in Your Browser',
   description: 'Free image and PDF tools. Crop, resize, compress, convert and edit images in your browser without uploading them, and merge, sign or convert PDFs.',
-  url: ((typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || (import.meta.env?.PUBLIC_SITE_URL) || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/$/, ''),
+  url: ((typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || (import.meta.env?.PUBLIC_SITE_URL) || 'https://tadafile.com').replace(/\/$/, ''),
   author: 'Aditya Nalawade',
   // Named in the privacy policy, terms and about page
   operator: 'Aditya Nalawade',

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { TOOLS } from '../config/tools';
+import { SITE_CONFIG } from '../config/site';
 
 const popular = TOOLS.filter((t) => t.popular).slice(0, 6);
 ---
 
-<BaseLayout title="Page not found — Image Toolbox" description="This page doesn't exist. Browse all free in-browser image tools.">
+<BaseLayout title={`Page not found — ${SITE_CONFIG.name}`} description="This page doesn't exist. Browse all free in-browser image tools.">
   <meta slot="head" name="robots" content="noindex" />
   <section class="max-w-xl mx-auto text-center space-y-6 py-16">
     <p class="font-mono text-sm text-mute">404</p>

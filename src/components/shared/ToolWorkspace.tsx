@@ -311,7 +311,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
   // Watermark
   const [watermarkOptions, setWatermarkOptions] = useState<WatermarkOptions>({
-    text: '© IMAGE TOOLBOX',
+    text: '© TADAFILE',
     opacity: 0.4,
     color: '#ffffff',
     position: 'bottom-right',

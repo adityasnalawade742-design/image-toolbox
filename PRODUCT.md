@@ -34,7 +34,7 @@ Everything in one place: 30+ image tools behind one consistent workspace, free, 
 
 ## Brand Commitments
 
-- Name is not final: "Image Toolbox" is a placeholder. Any wordmark must be swappable text, not artwork built around these words.
+- Name: "TadaFile" (tadafile.com), chosen 2026-11-03; formerly "Image Toolbox". Any wordmark must be swappable text, not artwork built around these words.
 - No borrowed brand identities: the previous DESIGN.md was a copy of a third party's (Raycast) design system and must not be reused.
 
 ## Evidence on Hand

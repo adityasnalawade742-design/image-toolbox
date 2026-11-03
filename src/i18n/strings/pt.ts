@@ -437,7 +437,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': 'EU NO MEU PROJETO PRINCIPAL',
   'ctl.meme.tpl.distractedBottom': 'CRIANDO MAIS UM PROJETO PARALELO',
   'ctl.meme.tpl.changeMind': 'Mude minha opinião',
-  'ctl.meme.tpl.changeMindTop': 'O IMAGE TOOLBOX É O CONJUNTO MAIS RÁPIDO',
+  'ctl.meme.tpl.changeMindTop': 'O TADAFILE É O CONJUNTO MAIS RÁPIDO',
   'ctl.meme.tpl.changeMindBottom': 'MUDE MINHA OPINIÃO',
   'ctl.meme.tpl.neon': 'Neon cyberpunk',
   'ctl.meme.tpl.neonTop': 'QUANDO A INTERFACE TEM BRILHO NEON',

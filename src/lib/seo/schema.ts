@@ -2,7 +2,7 @@ export function getWebApplicationSchema(toolName: string, description: string, u
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: `${toolName} — Image Toolbox`,
+    name: `${toolName} — TadaFile`,
     description: description,
     url: url,
     applicationCategory: 'MultimediaApplication',

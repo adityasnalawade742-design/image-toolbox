@@ -272,7 +272,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': "MOI SUR MON PROJET PRINCIPAL",
   'ctl.meme.tpl.distractedBottom': "LANCER UN NOUVEAU PROJET PERSO AU HASARD",
   'ctl.meme.tpl.changeMind': "Change My Mind",
-  'ctl.meme.tpl.changeMindTop': "IMAGE TOOLBOX EST LA SUITE LA PLUS RAPIDE",
+  'ctl.meme.tpl.changeMindTop': "TADAFILE EST LA SUITE LA PLUS RAPIDE",
   'ctl.meme.tpl.changeMindBottom': "PROUVEZ-MOI LE CONTRAIRE",
   'ctl.meme.tpl.neon': "Néon cyberpunk",
   'ctl.meme.tpl.neonTop': "QUAND L’INTERFACE BRILLE AU NÉON",

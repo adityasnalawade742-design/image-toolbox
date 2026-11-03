@@ -437,7 +437,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': 'ANA PROJEM ÜZERİNDE ÇALIŞAN BEN',
   'ctl.meme.tpl.distractedBottom': 'RASTGELE YENİ BİR YAN PROJE YAPMAK',
   'ctl.meme.tpl.changeMind': 'Fikrimi Değiştir',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOX EN HIZLI ARAÇ SETİDİR',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILE EN HIZLI ARAÇ SETİDİR',
   'ctl.meme.tpl.changeMindBottom': 'FİKRİMİ DEĞİŞTİR',
   'ctl.meme.tpl.neon': 'Cyberpunk Neon',
   'ctl.meme.tpl.neonTop': 'ARAYÜZDE NEON IŞILTI VARSA',

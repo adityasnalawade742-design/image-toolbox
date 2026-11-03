@@ -1,6 +1,6 @@
 # Document service
 
-The server-side tools of Image Toolbox. Everything else on the site runs in the browser.
+The server-side tools of TadaFile. Everything else on the site runs in the browser.
 
 | Endpoint | Tool | Engine |
 | :--- | :--- | :--- |

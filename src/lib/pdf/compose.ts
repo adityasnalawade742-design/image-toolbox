@@ -421,8 +421,8 @@ async function finish(doc: PDFDocument, ts: Typesetter, title?: string) {
   ts.checkMissing();
   ts.numberPages(await ts.helvetica());
   if (title) doc.setTitle(title);
-  doc.setProducer('Image Toolbox');
-  doc.setCreator('Image Toolbox');
+  doc.setProducer('TadaFile');
+  doc.setCreator('TadaFile');
   return doc.save();
 }
 
