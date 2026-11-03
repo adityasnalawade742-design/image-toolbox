@@ -11,12 +11,12 @@ const name = SITE_CONFIG.name;
   title="Privacy Policy"
   description={`How ${name} handles your files: image tools run in your browser and never upload images, and the few server tools delete files right after.`}
   path="privacy"
-  updated="Last updated 28 October 2026"
+  updated="Last updated 3 November 2026"
 >
   <p>
     <strong>The short version:</strong> {name} works inside your browser. The images you open are processed on your own device and
     are never uploaded to us. A few document tools need our server: they are marked, and your file is deleted as soon as the result
-    is sent back. There are no accounts{adsEnabled ? '' : ', no analytics and no tracking cookies'}.
+    is sent back. There are no accounts. We use Google Analytics to count visits and see which tools are used; it never receives your images or files.
   </p>
 
   <h2>Who runs this site</h2>
@@ -63,8 +63,8 @@ const name = SITE_CONFIG.name;
     to identify or track you.
   </p>
   <p>
-    Everything the site uses is served from our own domain, including fonts and the background remover's AI models and the software
-    that runs them. Your browser does not fetch files from any other provider while you use the tools.
+    Everything the tools use is served from our own domain, including fonts and the background remover's AI models and the software
+    that runs them. The one outside file is the Google Analytics script, described below.
   </p>
 
   <h2>What is stored on your device</h2>
@@ -74,12 +74,38 @@ const name = SITE_CONFIG.name;
   </p>
   <ul>
     <li>your preferred language, and whether you dismissed the language suggestion;</li>
-    <li>which background-removal model you chose, and which models this browser has already downloaded.</li>
+    <li>which background-removal model you chose, and which models this browser has already downloaded;</li>
+    <li>whether you accepted or declined analytics cookies.</li>
   </ul>
   <p>
     Your browser also caches the site's files and any AI models you downloaded, so pages load faster and models aren't downloaded
     twice. You can remove all of this at any time by clearing this site's data in your browser settings.
   </p>
+
+  <h2>Analytics</h2>
+  <p>
+    We use Google Analytics to understand how the site is used: which pages and tools are visited, roughly where visitors are (country
+    and city, worked out from the IP address, which Google Analytics does not store), the device, browser and screen size, and how
+    visitors arrived, such as from a search. It sets cookies to recognize a returning browser. It never receives your images, your
+    files, their names or anything you type into the tools.
+  </p>
+  <ul>
+    <li>
+      <strong>Your choice:</strong> visitors in the European Economic Area, the United Kingdom and Switzerland are asked first, and no
+      analytics cookies are set unless they accept. Everyone can change their choice at any time with <strong>Cookie settings</strong>
+      at the bottom of every page, or block analytics everywhere with the
+      <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google Analytics opt-out add-on</a>.
+    </li>
+    <li>
+      <strong>Without consent:</strong> where analytics cookies are declined or not yet accepted, Google may still receive a basic
+      cookieless signal that a page was viewed, which it uses to estimate visitor numbers.
+    </li>
+    <li>
+      <strong>How long:</strong> detailed analytics data is kept for 2 months. We do not use it for advertising and do not combine it
+      with other data. See
+      <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>.
+    </li>
+  </ul>
 
   <h2>Advertising and cookies</h2>
   {adsEnabled ? (
@@ -106,8 +132,8 @@ const name = SITE_CONFIG.name;
     </>
   ) : (
     <p>
-      The site does not show ads and does not set cookies. If ads are added in future, this section will be updated before they appear,
-      including how to opt out.
+      The site does not show ads. Its only cookies are the Google Analytics cookies described above. If ads are added in future,
+      this section will be updated before they appear, including how to opt out.
     </p>
   )}
 

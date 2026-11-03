@@ -75,6 +75,7 @@ const infoLinks = [
           ))}
           <li><a href={SITE_CONFIG.sourceUrl} rel="noopener" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.source')}</a></li>
           <li><a href="/sitemap.xml" class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.sitemap')}</a></li>
+          {SITE_CONFIG.gaId && <li><button type="button" data-open-consent class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('footer.cookieSettings')}</button></li>}
         </ul>
         {locale !== 'en' && <p class="text-[13px] text-graphite">{t('footer.infoInEnglish')}</p>}
       </div>

@@ -9,6 +9,8 @@ export const SITE_CONFIG = {
   operatorCountry: 'India',
   contactEmail: (typeof process !== 'undefined' && process.env?.PUBLIC_CONTACT_EMAIL) || (import.meta.env?.PUBLIC_CONTACT_EMAIL) || 'itsdenshin@gmail.com',
   // AGPL-3.0 section 13: the site must offer its source code to everyone who uses it over the network
+  /** Google Analytics 4 measurement ID; empty turns analytics off */
+  gaId: (typeof process !== 'undefined' && process.env?.PUBLIC_GA_ID) ?? (import.meta.env?.PUBLIC_GA_ID) ?? 'G-90H8NVXNYX',
   sourceUrl: (typeof process !== 'undefined' && process.env?.PUBLIC_SOURCE_URL) || (import.meta.env?.PUBLIC_SOURCE_URL) || 'https://github.com/adityasnalawade742-design/image-toolbox',
   issuesUrl: `${(typeof process !== 'undefined' && process.env?.PUBLIC_SOURCE_URL) || (import.meta.env?.PUBLIC_SOURCE_URL) || 'https://github.com/adityasnalawade742-design/image-toolbox'}/issues`,
   locale: 'en',
