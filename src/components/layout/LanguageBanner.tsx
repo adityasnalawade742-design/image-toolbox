@@ -40,7 +40,7 @@ export function LanguageBanner({ currentLocale = 'en', currentSlug = '' }: Props
   const targetUrl =
     !showDefaultLang && suggestion === defaultLang
       ? cleanSlug ? `/${cleanSlug}` : '/'
-      : cleanSlug ? `/${suggestion}/${cleanSlug}` : `/${suggestion}/`;
+      : cleanSlug ? `/${suggestion}/${cleanSlug}` : `/${suggestion}`;
   const languageName = languages[suggestion];
 
   const handleDismiss = () => {

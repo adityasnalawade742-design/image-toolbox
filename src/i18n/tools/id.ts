@@ -191,7 +191,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Kompres Gambar memperkecil ukuran file foto agar lebih cepat dimuat di situs web atau muat dalam batas email atau unggahan. Gambar disimpan ulang dalam formatnya sendiri (default) atau sebagai WebP, AVIF, JPG, atau PNG dengan kualitas yang Anda pilih, dan perkiraan ukuran baru serta persentase penghematannya terlihat saat Anda menggeser slider. Mode Ukuran file mengatur kualitas untuk Anda saat Anda harus tetap di bawah batas tertentu, misalnya 100 KB.",
     seoTitle: "Kompres Gambar Online – Perkecil Ukuran File",
     seoDescription:
-      "Kompres foto online gratis. Pilih WebP, AVIF, JPG, atau PNG, atur kualitas atau target ukuran dalam KB, dan lihat penghematannya sebelum mengunduh. Tanpa unggah.",
+      "Kompres foto online gratis. Pilih WebP, AVIF, JPG, atau PNG, atur kualitas atau target ukuran dalam KB, dan lihat penghematannya sebelum unduh. Tanpa unggah.",
     keywords: [
       "kompres gambar",
       "kompres foto",
@@ -285,7 +285,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Putar Gambar memperbaiki foto yang tampil miring ke samping atau terbalik, dan meluruskan gambar yang sedikit miring. Gunakan tombol 90° untuk putaran cepat atau slider Sudut khusus untuk koreksi kecil. Jika sudutnya bukan kelipatan 90°, kanvas membesar agar seluruh gambar yang diputar muat, jadi tidak ada sudut yang terpotong.",
     seoTitle: "Putar Gambar Online – 90°, 180°, atau Sudut Bebas",
     seoDescription:
-      "Putar gambar online gratis. Putar foto 90° ke kiri atau kanan, 180°, atau sudut bebas untuk meluruskannya, lalu simpan ke JPG, PNG, WebP, atau AVIF. Tanpa unggah.",
+      "Putar gambar online gratis. Putar foto 90° ke kiri atau kanan, 180°, atau sudut bebas untuk meluruskannya, lalu simpan ke JPG, PNG, WebP, AVIF. Tanpa unggah.",
     keywords: [
       "putar gambar",
       "rotate foto online",
@@ -603,7 +603,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "PNG ke JPG mengubah gambar PNG menjadi JPEG, yang biasanya jauh lebih kecil untuk foto dan diterima oleh hampir semua situs web dan aplikasi. JPEG tidak bisa menyimpan transparansi, jadi Anda memilih putih, hitam, atau warna khusus apa pun untuk mengisi area transparan. Anda juga bisa mengatur kualitas JPG dari 10% hingga 100%.",
     seoTitle: "Ubah PNG ke JPG – Pilih Warna Background",
     seoDescription:
-      "Ubah PNG ke JPG online gratis. Pilih background putih, hitam, atau warna khusus untuk area transparan dan atur kualitas JPG. Berjalan di browser Anda, tanpa unggah.",
+      "Ubah PNG ke JPG online gratis. Pilih background putih, hitam, atau warna khusus untuk area transparan dan atur kualitas JPG. Di browser Anda, tanpa unggah.",
     keywords: [
       "png ke jpg",
       "ubah png ke jpg",
@@ -752,7 +752,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "PNG ke WebP mengonversi file PNG seperti screenshot, logo, dan grafik ke format WebP. WebP mendukung transparansi, jadi area transparan tetap transparan setelah konversi. Hasilnya biasanya jauh lebih kecil daripada PNG, dan slider kualitas membantu Anda menjaga teks dan garis tipis tetap tajam.",
     seoTitle: "Ubah PNG ke WebP – Transparansi Tetap Terjaga",
     seoDescription:
-      "Ubah PNG ke WebP online gratis. Background transparan tetap terjaga, file biasanya jauh lebih kecil, dan kualitasnya bisa diatur. Berjalan penuh di browser Anda.",
+      "Ubah PNG ke WebP online gratis. Background transparan tetap terjaga, file biasanya jauh lebih kecil, dan kualitasnya bisa diatur. Berjalan di browser Anda.",
     keywords: [
       "png ke webp",
       "ubah png ke webp",
@@ -823,7 +823,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "WebP ke JPG mengonversi file WebP, yang umum dipakai di situs web, menjadi gambar JPEG standar. JPG adalah pilihan paling aman saat program lama, formulir unggah, atau layanan cetak tidak menerima WebP. Jika WebP punya area transparan, Anda memilih warna untuk mengisinya, karena JPG tidak bisa menyimpan transparansi.",
     seoTitle: "Ubah WebP ke JPG – Gratis, Tanpa Unggah",
     seoDescription:
-      "Ubah WebP ke JPG online gratis. Buat gambar WebP bisa dibuka di aplikasi atau formulir unggah apa pun, pilih warna isi untuk area transparan, dan atur kualitasnya.",
+      "Ubah WebP ke JPG online gratis. Buat gambar WebP bisa dibuka di aplikasi atau formulir unggah apa pun, pilih warna area transparan, dan atur kualitasnya.",
     keywords: [
       "webp ke jpg",
       "ubah webp ke jpg",
@@ -1132,7 +1132,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Hapus Metadata Gambar membuat salinan bersih foto Anda tanpa informasi EXIF yang tersembunyi. Foto dari ponsel dan kamera sering menyimpan lokasi GPS tempat foto diambil, model perangkat, serta tanggal dan waktunya. Untuk JPG, PNG, dan WebP, hanya informasi itu yang dihapus dari file: gambarnya tidak disimpan ulang, jadi kualitas dan warnanya tetap sama persis. Ukuran file baru ditampilkan sebelum Anda mengunduh.",
     seoTitle: "Hapus Data EXIF Foto – GPS dan Metadata",
     seoDescription:
-      "Hapus metadata EXIF dari foto, gratis. Buang lokasi GPS, model kamera, dan tanggal sebelum Anda membagikan foto. Diproses di browser Anda, tidak pernah diunggah.",
+      "Hapus metadata EXIF dari foto, gratis. Buang lokasi GPS, model kamera, dan tanggal sebelum membagikan foto. Diproses di browser Anda, tidak pernah diunggah.",
     keywords: [
       "hapus data exif",
       "hapus metadata foto",
@@ -1465,7 +1465,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Tambah Teks ke Gambar menempatkan satu atau beberapa baris teks di atas gambar. Geser teks ke titik mana pun di pratinjau, atau letakkan di atas, tengah, atau bawah, lalu atur gayanya dengan tujuh font, tebal atau miring, perataan, opasitas, bayangan, garis tepi, dan kotak latar berwarna. Teks digambar ke gambar beresolusi penuh saat Anda mengunduhnya.",
     seoTitle: "Tambah Teks ke Foto Online – Gratis",
     seoDescription:
-      "Tambah tulisan di foto online gratis. Geser teks ke mana saja, atur font, ukuran, warna, garis tepi, bayangan, dan kotak latar. Simpan ke JPG, PNG, WebP, atau AVIF.",
+      "Tambah tulisan di foto online gratis. Geser teks ke mana saja, atur font, ukuran, warna, garis tepi, bayangan, dan kotak latar. Simpan ke JPG, PNG, WebP, AVIF.",
     keywords: [
       "tambah teks ke gambar",
       "menulis di foto online",
@@ -2036,7 +2036,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Base64 ke Gambar mendekode teks Base64 kembali menjadi gambar yang bisa Anda lihat dan simpan. Anda bisa menempel string Base64 saja, data URI lengkap, atau potongan url() CSS atau src HTML yang berisi salah satunya; Base64 yang aman untuk URL dan jeda baris ditangani otomatis. Alat ini mendeteksi apakah datanya PNG, JPEG, GIF, WebP, SVG, BMP, atau AVIF, lalu menampilkan gambar hasil dekode beserta dimensinya.",
     seoTitle: "Ubah Base64 ke Gambar – Pratinjau dan Unduh",
     seoDescription:
-      "Ubah Base64 ke gambar online gratis. Tempel string Base64, data URI, atau potongan CSS atau HTML, lihat pratinjau gambarnya, lalu unduh sebagai PNG, JPG, atau WebP.",
+      "Ubah Base64 ke gambar online gratis. Tempel string Base64, data URI, atau potongan CSS atau HTML, lihat pratinjaunya, lalu unduh sebagai PNG, JPG, atau WebP.",
     keywords: [
       "base64 ke gambar",
       "decode base64 gambar",
@@ -2324,7 +2324,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Filter dan Efek Foto mengubah tampilan dan suasana sebuah foto. Mulai dari salah satu dari delapan preset, seperti Sinematik, Vintage 70-an, Noir Muram, atau Senja Hangat, lalu atur kecerahan, kontras, saturasi, sepia, hitam putih, rona, kejernihan, vinyet, dan blur lembut dengan slider. Tampilan terbagi memungkinkan Anda membandingkan foto yang diedit dengan aslinya sebelum mengunduhnya sebagai PNG, JPG, atau WebP.",
     seoTitle: "Filter Foto Online – Efek dan Preset Gratis",
     seoDescription:
-      "Pasang filter foto online gratis. Coba Vintage, Noir, Sinematik, dan lainnya, atur kecerahan, kontras, saturasi, dan vinyet, lalu bandingkan sebelum dan sesudah.",
+      "Pasang filter foto online gratis. Coba Vintage, Noir, Sinematik, dan lainnya, atur kecerahan, kontras, saturasi, dan vinyet, lalu bandingkan sebelum-sesudah.",
     keywords: [
       "filter foto online",
       "edit foto online gratis",
@@ -2488,7 +2488,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "Pemotong Gambar Jadi Grid membagi gambar menjadi baris dan kolom berupa file gambar terpisah. Pakai preset Instagram 3×3 untuk grid profil, Panorama 3×1 atau Carousel 2×1 untuk postingan geser, 2×2 untuk empat bagian sama besar, atau atur grid sendiri hingga 12 baris dan 12 kolom. Semua potongan diunduh bersama sebagai file PNG bernomor dalam satu ZIP, atau Anda bisa mengklik satu potongan untuk menyimpan potongan itu saja.",
     seoTitle: "Potong Gambar Jadi Grid – Instagram 3×3 dan Panorama",
     seoDescription:
-      "Potong gambar jadi grid online gratis. Buat grid Instagram 3x3, potongan carousel panorama, atau grid khusus hingga 12x12, lalu unduh semua potongan sebagai ZIP.",
+      "Potong gambar jadi grid online gratis. Buat grid Instagram 3x3, potongan carousel panorama, atau grid khusus hingga 12x12, lalu unduh semua sebagai ZIP.",
     keywords: [
       "potong gambar jadi grid",
       "split foto instagram",
@@ -7988,7 +7988,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "tagline": "Ubah PDF menjadi Markdown lengkap dengan judul dan daftar, untuk catatan, wiki, dan alat AI. Gratis dan berjalan di perangkat Anda.",
     "intro": "PDF ke Markdown mengubah teks PDF menjadi Markdown: teks yang lebih besar menjadi judul, baris berpoin dan bernomor menjadi daftar, dan baris yang terpotong digabung kembali menjadi paragraf, termasuk kata yang terpisah oleh tanda hubung. Hasilnya siap dipakai di aplikasi catatan seperti Obsidian dan Notion, untuk wiki dan dokumentasi, atau ditempel ke asisten AI. Pilih halamannya, salin Markdown-nya, atau unduh sebagai file .md. Semuanya terjadi di browser Anda.",
     "seoTitle": "PDF ke Markdown – Gratis, Lengkap dengan Judul dan Daftar",
-    "seoDescription": "Ubah PDF ke Markdown di browser Anda: judul dari teks yang lebih besar, daftar, dan paragraf yang tersambung. Untuk catatan, wiki, dan AI. Gratis, tanpa unggah file.",
+    "seoDescription": "Ubah PDF ke Markdown di browser Anda: judul dari teks yang lebih besar, daftar, dan paragraf tersambung. Untuk catatan, wiki, dan AI. Gratis, tanpa unggah.",
     "keywords": [
       "pdf ke markdown",
       "ubah pdf ke markdown",
@@ -8378,7 +8378,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "tagline": "Tempatkan kop surat, latar belakang, atau stempel dari satu PDF di atas atau di bawah halaman PDF lain. Gratis dan berjalan di perangkat Anda.",
     "intro": "Overlay PDF menumpuk dua PDF halaman demi halaman: letakkan kop surat perusahaan Anda di belakang surat, desain latar belakang di bawah laporan, atau lembar “Draf” atau “Disetujui” di atas setiap halaman. Pilih apakah overlay diletakkan di atas atau di bawah, halaman overlay mana yang dipakai di mana (halaman pertama di setiap halaman, atau halaman per halaman), halaman mana yang ditutupi, dan seberapa kuat tampilannya. Pratinjau menampilkan setiap halaman seperti yang akan disimpan. Semuanya terjadi di browser Anda.",
     "seoTitle": "Overlay PDF – Tambah Kop Surat atau Latar Belakang, Gratis",
-    "seoDescription": "Tempatkan kop surat, latar belakang, atau stempel PDF di atas atau di bawah halaman PDF lain, langsung di browser Anda. Pratinjau langsung. Gratis, tanpa unggah file.",
+    "seoDescription": "Tempatkan kop surat, latar belakang, atau stempel PDF di atas atau di bawah halaman PDF lain, langsung di browser. Pratinjau langsung. Gratis, tanpa unggah.",
     "keywords": [
       "overlay pdf",
       "tambah kop surat ke pdf",
@@ -8469,7 +8469,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "tagline": "Sesuaikan gambar dengan ukuran post Instagram persegi, potret, tinggi, atau lanskap. Gratis dan berjalan di perangkat Anda.",
     "intro": "Ubah Ukuran Post Instagram membuat gambar berbentuk tepat sebelum Anda mempostingnya, jadi Instagram tidak memotongnya untuk Anda. Pilih persegi (1080 × 1080), potret (1080 × 1350), tinggi (1080 × 1440), atau lanskap (1080 × 566), lalu seret gambar sampai bagian yang penting masuk bingkai. Untuk memposting foto lebar tanpa dipotong, tampilkan semuanya di atas latar buram.",
     "seoTitle": "Ubah Ukuran Post Instagram – Persegi, Potret, 3:4, Gratis",
-    "seoDescription": "Ubah ukuran foto untuk post Instagram: persegi 1080×1080, potret 1080×1350, tinggi 3:4, atau lanskap. Seret dan hindari potongan tak terduga. Gratis, tanpa unggah.",
+    "seoDescription": "Ubah ukuran foto untuk post Instagram: persegi 1080×1080, potret 1080×1350, tinggi 3:4, atau lanskap. Seret agar tak terpotong. Gratis, tanpa unggah.",
     "keywords": ["ukuran post instagram", "ubah ukuran gambar untuk instagram", "resize foto instagram", "instagram 1080x1350", "ukuran instagram 3:4"],
     "howToSteps": [
       { "title": "Tambahkan gambar", "description": "Letakkan atau pilih foto yang ingin Anda posting." },

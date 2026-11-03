@@ -364,7 +364,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "Espelhar imagem cria uma cópia espelhada de uma foto. O espelhamento horizontal troca a esquerda pela direita, o que corrige selfies da câmera frontal em que a escrita aparece ao contrário. O espelhamento vertical vira a imagem de cabeça para baixo, como um reflexo na água, e usar os dois juntos dá o mesmo resultado que girar 180°.",
     seoTitle: "Espelhar imagem online: horizontal ou vertical",
     seoDescription:
-      "Espelhar imagem online grátis. Inverta uma foto na horizontal ou na vertical, corrija selfies e textos ao contrário e salve em JPG, PNG, WebP ou AVIF. Sem upload.",
+      "Espelhar imagem online grátis. Inverta uma foto na horizontal ou vertical, corrija selfies e textos ao contrário e salve em JPG, PNG, WebP ou AVIF. Sem upload.",
     keywords: [
       "espelhar imagem",
       "inverter imagem",
@@ -679,7 +679,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "JPG para WebP converte fotos JPEG para o formato WebP, que todos os principais navegadores atuais exibem. Com qualidade visual parecida, um arquivo WebP costuma ser menor que a mesma imagem em JPG, então as páginas que o usam carregam mais rápido. Você define a qualidade com um controle de 10% a 100%, e a imagem mantém as dimensões originais.",
     seoTitle: "Converter JPG para WebP: imagens menores",
     seoDescription:
-      "Converter JPG para WebP online grátis. Tenha imagens menores para sites mais rápidos, ajuste a qualidade de 10% a 100% e mantenha o tamanho original. Sem upload.",
+      "Converter JPG para WebP online grátis. Tenha imagens menores para sites mais rápidos, ajuste a qualidade de 10% a 100% e mantenha o tamanho. Sem upload.",
     keywords: [
       "jpg para webp",
       "converter jpg para webp",
@@ -822,7 +822,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "WebP para JPG converte arquivos WebP, comuns em sites, em imagens JPEG padrão. O JPG é a opção mais segura quando um programa antigo, um formulário de envio ou um serviço de impressão não aceita WebP. Se o WebP tiver áreas transparentes, você escolhe a cor que vai preenchê-las, porque o JPG não guarda transparência.",
     seoTitle: "Converter WebP para JPG grátis, sem upload",
     seoDescription:
-      "Converter WebP para JPG online grátis. Faça imagens WebP abrirem em qualquer app ou formulário, escolha uma cor para as áreas transparentes e defina a qualidade.",
+      "Converter WebP para JPG online grátis. Faça imagens WebP abrirem em qualquer app ou formulário, escolha a cor das áreas transparentes e defina a qualidade.",
     keywords: [
       "webp para jpg",
       "converter webp para jpg",
@@ -894,7 +894,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "WebP para PNG converte imagens WebP em PNG, um formato sem perdas que quase todo editor e visualizador aceita. As áreas transparentes continuam transparentes, e os pixels decodificados são salvos exatamente, então a imagem não perde qualidade quando você edita e salva de novo. Use quando um app não abre WebP ou quando você precisa de um arquivo para continuar editando.",
     seoTitle: "Converter WebP para PNG sem perdas",
     seoDescription:
-      "Converter WebP para PNG online grátis. Mantenha o fundo transparente e tenha um PNG sem perdas que abre em qualquer editor de imagem. Convertido no seu navegador.",
+      "Converter WebP para PNG online grátis. Mantenha o fundo transparente e tenha um PNG sem perdas que abre em qualquer editor. Convertido no seu navegador.",
     keywords: [
       "webp para png",
       "converter webp para png",
@@ -1129,7 +1129,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "Remover metadados da imagem cria uma cópia limpa da sua foto sem as informações EXIF ocultas. Fotos de celulares e câmeras costumam registrar a localização GPS onde foram tiradas, o modelo do aparelho e a data e hora. Em JPG, PNG e WebP, só essas informações são retiradas do arquivo: a imagem não é salva de novo, então a qualidade e as cores ficam exatamente iguais. O novo tamanho do arquivo aparece antes do download.",
     seoTitle: "Remover dados EXIF de fotos: GPS e metadados",
     seoDescription:
-      "Remover metadados EXIF de fotos grátis. Apague a localização GPS, o modelo da câmera e a data antes de compartilhar uma foto. Processado no navegador, sem envio.",
+      "Remover metadados EXIF de fotos grátis. Apague a localização GPS, o modelo da câmera e a data antes de compartilhar. Processado no navegador, sem envio.",
     keywords: [
       "remover dados exif",
       "remover metadados de foto",
@@ -1304,7 +1304,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "O Seletor de cores da imagem encontra a cor exata de qualquer pixel de uma foto. Passe o ponteiro sobre a imagem para ver uma lupa com os pixels embaixo dele, depois clique para escolher uma cor e copiar o código em HEX, RGB, HSL, HSV ou CMYK. As cores são lidas da imagem em resolução total, e não da prévia reduzida.",
     seoTitle: "Pegar cor de imagem: código HEX e RGB online",
     seoDescription:
-      "Pegue cores de qualquer imagem online grátis. Clique em um pixel para ver o código HEX, RGB, HSL, HSV e CMYK, use a lupa para mais precisão e copie com um clique.",
+      "Pegue cores de qualquer imagem online grátis. Clique em um pixel para ver o código HEX, RGB, HSL, HSV e CMYK, use a lupa para precisão e copie com um clique.",
     keywords: [
       "pegar cor de imagem",
       "descobrir cor de uma imagem",
@@ -1462,7 +1462,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "Adicionar texto à imagem coloca uma ou mais linhas de texto sobre uma foto. Arraste o texto para qualquer ponto da prévia, ou coloque-o em cima, no centro ou embaixo, e estilize com sete fontes, negrito ou itálico, alinhamento, opacidade, sombra, contorno e uma caixa de fundo colorida. O texto é desenhado na imagem em resolução total quando você baixa.",
     seoTitle: "Escrever em foto online: adicionar texto à imagem",
     seoDescription:
-      "Escrever em foto online grátis. Arraste o texto para onde quiser, escolha fonte, tamanho, cor, contorno, sombra e caixa de fundo e salve em JPG, PNG, WebP ou AVIF.",
+      "Escrever em foto online grátis. Arraste o texto para onde quiser, escolha fonte, tamanho, cor, contorno, sombra e fundo e salve em JPG, PNG, WebP ou AVIF.",
     keywords: [
       "escrever em foto",
       "adicionar texto em imagem",
@@ -1699,7 +1699,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "Arredondar cantos da imagem deixa os cantos de uma foto suaves e arredondados, ou a transforma em um círculo para foto de perfil ou ícone de app. Escolha a opção Pequeno, Médio ou Grande, defina um raio exato com o controle deslizante ou clique em Fazer círculo. O resultado é salvo em PNG por padrão, então os cantos recortados ficam transparentes.",
     seoTitle: "Arredondar cantos de imagem e foto redonda",
     seoDescription:
-      "Arredondar cantos de imagem online grátis ou cortar a foto em círculo. Defina o raio dos cantos, mantenha o fundo transparente em PNG ou escolha uma cor para JPG.",
+      "Arredondar cantos de imagem online grátis ou cortar a foto em círculo. Defina o raio, mantenha o fundo transparente em PNG ou escolha uma cor para JPG.",
     keywords: [
       "arredondar cantos de imagem",
       "imagem com cantos arredondados",
@@ -1775,7 +1775,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "O Gerador de favicon transforma um logo ou imagem no conjunto de arquivos de ícone que um site precisa. Ele corta a imagem em um quadrado centralizado e cria o favicon.ico (com tamanhos de 16, 32 e 48 pixels), ícones PNG de 16 a 512 pixels, um apple-touch-icon.png de 180 × 180 e um arquivo site.webmanifest, tudo em um ZIP. A página também mostra as tags HTML de link para colar na seção head do seu site.",
     seoTitle: "Gerador de favicon: ICO, PNG e Apple touch icon",
     seoDescription:
-      "Gerador de favicon grátis. Envie um logo PNG, JPG ou SVG e receba favicon.ico, ícones PNG de 16 a 512 px, um ícone Apple touch e um web manifest em um único ZIP.",
+      "Gerador de favicon grátis. Envie um logo PNG, JPG ou SVG e receba favicon.ico, ícones PNG de 16 a 512 px, ícone Apple touch e web manifest em um único ZIP.",
     keywords: [
       "gerador de favicon",
       "criar favicon",
@@ -1951,7 +1951,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "Imagem para Data URI converte um arquivo de imagem em um data URI: uma linha de texto que contém o tipo do arquivo e a imagem codificada em Base64. Você pode colar direto em um atributo src de uma tag img ou em um valor url() do CSS, e a imagem aparece sem um arquivo separado. O tipo MIME do prefixo vem do seu arquivo, e os bytes da imagem não são alterados.",
     seoTitle: "Converter imagem para Data URI: HTML e CSS",
     seoDescription:
-      "Converter imagem para data URI online grátis. Receba uma string data:image em Base64 com o tipo MIME correto e copie como tag img em HTML ou regra de fundo em CSS.",
+      "Converter imagem para data URI online grátis. Receba uma string data:image em Base64 com o tipo MIME correto e copie como tag img HTML ou fundo em CSS.",
     keywords: [
       "imagem para data uri",
       "gerador de data uri",

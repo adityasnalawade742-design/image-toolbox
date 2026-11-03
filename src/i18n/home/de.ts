@@ -2,6 +2,8 @@ import type { LocalizedHomeData } from '../types';
 
 export const deHome: LocalizedHomeData = {
   hero: {
+    seoDescription: 'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln und freistellen. Ohne Anmeldung, ohne Wasserzeichen, deine Bilder bleiben auf dem Gerät.',
+    seoTitle: 'Kostenlose Bild- und PDF-Tools online',
     badge: '',
     title: 'Alle Bildtools, die du brauchst, an einem Ort',
     subtitle:

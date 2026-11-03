@@ -7494,7 +7494,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       "Comprimir PDF reduce el tamaño de archivo de un PDF para que quepa en los adjuntos de correo y en los límites de tamaño de los portales de subida. Funciona mejor con PDF con fotos y escaneos, cuyas imágenes se vuelven a comprimir y se reducen; elige «Más pequeño» para pantallas y correo, «Equilibrado» para la mayoría de los usos o «Alta calidad» para conservar el detalle al imprimir. El resultado muestra cuánto se ha reducido el archivo, y si un PDF ya es compacto recibes el original en lugar de un archivo más grande. La compresión usa Ghostscript en nuestro servidor y el archivo se elimina justo después. Los PDF con formularios rellenables conservan sus campos, pero se reducen menos.",
     seoTitle: "Comprimir PDF – reducir el tamaño de un PDF gratis",
     seoDescription:
-      "Comprimir PDF online y gratis para reducir su tamaño, con tres niveles de calidad. Muestra cuánto se reduce; los archivos se eliminan justo después. Sin registro.",
+      "Comprimir PDF online y gratis con tres niveles de calidad. Muestra cuánto se reduce; los archivos se eliminan justo después. Sin registro.",
     keywords: [
       "comprimir pdf",
       "reducir tamaño pdf",
@@ -7991,7 +7991,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "tagline": "Convierte un PDF en Markdown con títulos y listas, para notas, wikis y herramientas de IA. Gratis y funciona en tu dispositivo.",
     "intro": "PDF a Markdown convierte el texto de un PDF en Markdown: el texto más grande se convierte en títulos, las líneas con viñetas y numeradas en listas, las líneas cortadas se vuelven a unir en párrafos y las palabras partidas con guion se recomponen. El resultado está listo para apps de notas como Obsidian y Notion, para wikis y documentación, o para pegarlo en un asistente de IA. Elige las páginas, copia el Markdown o descárgalo como archivo .md. Todo ocurre en tu navegador.",
     "seoTitle": "Convertir PDF a Markdown gratis: títulos y listas",
-    "seoDescription": "Convierte PDF a Markdown en tu navegador: títulos a partir del texto más grande, listas y párrafos unidos. Para notas, wikis y herramientas de IA. Gratis, sin subir nada.",
+    "seoDescription": "Convierte PDF a Markdown en tu navegador: títulos según el texto más grande, listas y párrafos unidos. Para notas, wikis e IA. Gratis, sin subir nada.",
     "keywords": [
       "pdf a markdown",
       "convertir pdf a markdown",
@@ -8472,7 +8472,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "tagline": "Ajusta una imagen al tamaño cuadrado, vertical, alto u horizontal de las publicaciones de Instagram. Gratis y funciona en tu dispositivo.",
     "intro": "Redimensionar publicaciones de Instagram da a una imagen la forma correcta antes de publicarla, para que Instagram no la recorte por ti. Elige cuadrada (1080 × 1080), vertical (1080 × 1350), alta (1080 × 1440) u horizontal (1080 × 566) y arrastra la imagen hasta que la parte que te importa quede en el marco. Para publicar una foto ancha sin recortarla, muéstrala entera sobre un fondo desenfocado.",
     "seoTitle": "Publicación de Instagram – cuadrada, vertical, 3:4, gratis",
-    "seoDescription": "Redimensiona fotos para publicaciones de Instagram: cuadrada 1080×1080, vertical 1080×1350, alta 3:4 u horizontal. Arrastra para colocarlas. Gratis, sin subir nada.",
+    "seoDescription": "Redimensiona fotos para Instagram: cuadrada 1080×1080, vertical 1080×1350, alta 3:4 u horizontal. Arrastra para colocarlas. Gratis, sin subir nada.",
     "keywords": ["tamaño de publicación de instagram", "redimensionar imagen para instagram", "cambiar tamaño de foto para instagram", "instagram 1080x1350", "instagram tamaño 3:4"],
     "howToSteps": [
       { "title": "Añade tu imagen", "description": "Suelta o elige la foto que quieres publicar." },

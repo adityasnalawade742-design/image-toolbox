@@ -822,7 +822,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       "WebP en JPG convertit les fichiers WebP, courants sur les sites web, en images JPEG standard. Le JPG est le choix le plus sûr quand un ancien logiciel, un formulaire d’envoi ou un service d’impression n’accepte pas le WebP. Si le WebP a des zones transparentes, vous choisissez la couleur qui les remplit, car le JPG ne gère pas la transparence.",
     seoTitle: "Convertir WebP en JPG – Gratuit, sans envoi",
     seoDescription:
-      "Convertissez un WebP en JPG gratuitement pour l’ouvrir dans n’importe quelle application. Choisissez la couleur des zones transparentes et la qualité. Sans envoi.",
+      "Convertissez un WebP en JPG gratuitement pour l’ouvrir dans toute application. Choisissez la couleur des zones transparentes et la qualité. Sans envoi.",
     keywords: [
       "convertir webp en jpg",
       "webp en jpg",
@@ -2405,7 +2405,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       "Le générateur de mèmes ajoute des légendes de mème classiques sur une image. Importez votre propre image ou partez de l’un des huit modèles simples intégrés, puis saisissez les légendes du haut, du milieu et du bas ; les lignes longues passent automatiquement à la ligne pour tenir dans la largeur. Choisissez la police (Impact par défaut), la taille, la couleur du texte et du contour, l’alignement et les majuscules, puis téléchargez le mème en PNG, JPG ou WebP, sans filigrane.",
     seoTitle: "Générateur de mèmes – Ajoutez du texte à une image",
     seoDescription:
-      "Créez un mème gratuitement : texte en haut, au milieu et en bas de votre photo ou d’un modèle, police, taille et contour au choix, téléchargement sans filigrane.",
+      "Créez un mème gratuitement : texte en haut, au milieu et en bas d’une photo ou d’un modèle, police, taille et contour au choix, téléchargement sans filigrane.",
     keywords: [
       "générateur de mème",
       "créer un mème",
@@ -2567,7 +2567,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       "Flouter ou pixeliser une image masque les informations privées d’une photo avant de la partager. Dessinez des rectangles ou des ovales sur les visages, les plaques d’immatriculation, les adresses ou les numéros de compte, et choisissez pour chaque zone une bande noire, une pixellisation ou un flou. Les zones floutées sont posées sur une couche fortement pixelisée : les détails d’origine ne peuvent pas réapparaître sur les bords.",
     seoTitle: "Flouter ou pixeliser une image – Visages et texte",
     seoDescription:
-      "Floutez, pixelisez ou masquez en noir des visages, des plaques d’immatriculation et du texte privé, avec des rectangles ou des ovales. Gratuit, rien n’est envoyé.",
+      "Floutez, pixelisez ou masquez en noir visages, plaques d’immatriculation et texte privé, avec des rectangles ou des ovales. Gratuit, rien n’est envoyé.",
     keywords: [
       "flouter une image en ligne",
       "pixeliser une image",
@@ -8019,7 +8019,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Transformez un PDF en Markdown avec titres et listes, pour vos notes, wikis et outils d’IA. Gratuit, et tout se fait sur votre appareil.",
     "intro": "PDF en Markdown convertit le texte d’un PDF en Markdown : le texte plus grand devient des titres, les lignes à puces et numérotées deviennent des listes, les lignes coupées sont réunies en paragraphes, et les mots coupés par un trait d’union sont recollés. Le résultat est prêt pour des applications de notes comme Obsidian et Notion, pour des wikis et de la documentation, ou à coller dans un assistant IA. Choisissez les pages, copiez le Markdown ou téléchargez-le en fichier .md. Tout se passe dans votre navigateur.",
     "seoTitle": "Convertir PDF en Markdown – Titres et listes, gratuit",
-    "seoDescription": "Convertissez un PDF en Markdown dans votre navigateur : titres à partir du texte plus grand, listes, paragraphes réunis. Pour notes, wikis et outils d’IA. Gratuit, sans envoi.",
+    "seoDescription": "Convertissez un PDF en Markdown dans votre navigateur : titres d’après le texte plus grand, listes, paragraphes réunis. Pour notes, wikis et IA. Gratuit.",
     "keywords": [
       "pdf en markdown",
       "convertir pdf en markdown",
@@ -8084,7 +8084,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Transformez du texte brut ou un fichier .txt en PDF propre, avec votre police, votre taille et vos marges. Gratuit, et tout se fait sur votre appareil.",
     "intro": "Texte en PDF transforme des notes, des journaux, des listes ou n’importe quel texte brut en un PDF soigné qui s’affiche de la même façon sur tous les appareils. Saisissez ou collez le texte, ou ouvrez un fichier .txt, puis choisissez A4 ou Letter, une police sans empattement, à empattement ou de type machine à écrire, la taille du texte et les marges. Les longues lignes sont renvoyées proprement à la ligne, les retours à la ligne sont conservés et les pages peuvent être numérotées. L’aperçu montre le PDF exactement tel qu’il sera enregistré, et son texte reste recherchable. Tout se passe dans votre navigateur.",
     "seoTitle": "Convertir texte en PDF – TXT en PDF, gratuit",
-    "seoDescription": "Convertissez du texte ou un fichier .txt en PDF dans votre navigateur. Police, taille, marges et numéros de page au choix ; aperçu en direct. Gratuit, sans envoi.",
+    "seoDescription": "Convertissez du texte ou un fichier .txt en PDF dans le navigateur. Police, taille, marges et numéros de page au choix ; aperçu en direct. Gratuit, sans envoi.",
     "keywords": [
       "texte en pdf",
       "txt en pdf",
@@ -8214,7 +8214,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Enregistrez toutes les images d’un PDF dans leur propre résolution, en PNG ou JPG, dans un seul ZIP. Gratuit, et tout se fait sur votre appareil.",
     "intro": "Extraire les images d’un PDF trouve les photos, logos et illustrations intégrés à un PDF et les enregistre dans la résolution où ils sont stockés, plutôt qu’en capture d’écran de la page. Chaque image est affichée avec sa taille et les pages où elle apparaît ; une image utilisée sur plusieurs pages, comme un logo, n’est listée qu’une fois. Regardez-les en grand, décochez celles dont vous n’avez pas besoin, et téléchargez-les en PNG sans perte ou en JPG plus légers, réunis dans un seul ZIP. Tout se passe dans votre navigateur.",
     "seoTitle": "Extraire les images d’un PDF – Résolution d’origine, gratuit",
-    "seoDescription": "Enregistrez les images d’un PDF dans leur propre résolution, dans votre navigateur. Aperçu, sélection et téléchargement en PNG ou JPG dans un ZIP. Gratuit, sans envoi.",
+    "seoDescription": "Enregistrez les images d’un PDF dans leur résolution d’origine, dans votre navigateur. Aperçu, sélection, PNG ou JPG dans un ZIP. Gratuit, sans envoi.",
     "keywords": [
       "extraire images pdf",
       "extracteur d’images pdf",
@@ -8279,7 +8279,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Trouvez les pages vides d’un PDF scanné et supprimez-les après une vérification rapide. Gratuit, et tout se fait sur votre appareil.",
     "intro": "Le scan recto verso laisse des versos blancs dans vos PDF. Supprimer les pages blanches examine chaque page, coche celles qui sont vides et vous laisse vérifier avant que quoi que ce soit ne soit supprimé : affichez n’importe quelle page en grand, décochez une page que vous voulez garder ou cochez-en une vous-même. Les pages blanches scannées sont rarement d’un blanc pur : un curseur de sensibilité détermine donc combien de grain du papier, de transparence légère ou un numéro de page isolé comptent encore comme blanc. Téléchargez ensuite le PDF sans ces pages. Tout se passe dans votre navigateur.",
     "seoTitle": "Supprimer les pages blanches d’un PDF – Automatique, gratuit",
-    "seoDescription": "Trouvez et supprimez les pages blanches de PDF scannés dans votre navigateur. Détection automatique, sensibilité réglable, vérification avant suppression. Gratuit.",
+    "seoDescription": "Trouvez et supprimez les pages blanches de PDF scannés dans votre navigateur. Détection automatique, sensibilité réglable, vérification avant. Gratuit.",
     "keywords": [
       "supprimer pages blanches pdf",
       "enlever pages blanches pdf",
@@ -8409,7 +8409,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Placez un papier à en-tête, un fond ou un tampon issu d’un PDF au-dessus ou en dessous des pages d’un autre. Gratuit, et tout se fait sur votre appareil.",
     "intro": "Superposer un PDF combine deux PDF page sur page : placez le papier à en-tête de votre entreprise derrière une lettre, un fond décoratif sous un rapport, ou une feuille « Brouillon » ou « Approuvé » par-dessus chaque page. Choisissez si la superposition va au-dessus ou en dessous, quelle page de superposition va où (la première page sur chaque page, ou page par page), quelles pages couvrir et avec quelle intensité. L’aperçu montre chaque page telle qu’elle sera enregistrée. Tout se passe dans votre navigateur.",
     "seoTitle": "Superposer un PDF – Ajouter un en-tête ou un fond, gratuit",
-    "seoDescription": "Placez un papier à en-tête, un fond ou un tampon PDF au-dessus ou en dessous des pages d’un autre PDF, dans votre navigateur. Aperçu en direct. Gratuit, sans envoi.",
+    "seoDescription": "Placez un papier à en-tête, un fond ou un tampon PDF au-dessus ou en dessous des pages d’un autre PDF, dans le navigateur. Aperçu en direct. Gratuit.",
     "keywords": [
       "superposer pdf",
       "ajouter papier à en-tête pdf",
@@ -8548,7 +8548,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "tagline": "Transformez une image en miniature YouTube 16:9 qui respecte les limites d’envoi de YouTube. Gratuit, et tout se fait sur votre appareil.",
     "intro": "Créer une miniature YouTube cadre une image au format 16:9 demandé par YouTube. Choisissez 1280 × 720, qui reste sous la limite de 2 MB pour un envoi depuis un téléphone, ou 3840 × 2160, la grande taille recommandée par YouTube, pour un envoi depuis un ordinateur. Faites glisser l’image pour la cadrer, zoomez sur l’essentiel et téléchargez-la. Pour ajouter du texte, utilisez Ajouter du texte sur une image.",
     "seoTitle": "Créer une miniature YouTube – 16:9, jusqu’à 4K, gratuit",
-    "seoDescription": "Créez une miniature YouTube 16:9 à partir de n’importe quelle image : 1280×720 sous 2 MB pour téléphone, ou 4K. Cadrez, zoomez, téléchargez. Gratuit, sans envoi.",
+    "seoDescription": "Créez une miniature YouTube 16:9 depuis toute image : 1280×720 sous 2 MB pour téléphone, ou 4K. Cadrez, zoomez, téléchargez. Gratuit, sans envoi.",
     "keywords": ["créer miniature youtube", "taille miniature youtube", "miniature 1280x720", "redimensionner image pour miniature youtube", "miniature youtube 2mb"],
     "howToSteps": [
       { "title": "Ajoutez votre image", "description": "Déposez ou choisissez une capture d’écran ou une photo." },

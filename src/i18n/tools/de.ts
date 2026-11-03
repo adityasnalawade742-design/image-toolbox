@@ -7374,7 +7374,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       "PowerPoint in PDF macht aus PowerPoint-Präsentationen ein PDF, das auf jedem Gerät gleich aussieht und bereit ist zum Mailen, Drucken oder Hochladen in ein Portal. Es nimmt PPT, PPTX oder ODP an. Jede Folie wird zu einer PDF-Seite. Die Umwandlung läuft mit LibreOffice auf unserem Server: Deine Datei wird über eine verschlüsselte Verbindung gesendet und gelöscht, sobald das PDF zurückkommt.",
     seoTitle: "PowerPoint in PDF umwandeln – kostenlos, ohne Anmeldung",
     seoDescription:
-      "PowerPoint in PDF umwandeln, kostenlos online: Layout, Schriften und Bilder bleiben erhalten. Ohne Anmeldung, ohne Wasserzeichen; Dateien werden sofort gelöscht.",
+      "PowerPoint in PDF umwandeln, kostenlos online: Layout, Schriften und Bilder bleiben erhalten. Ohne Anmeldung, ohne Wasserzeichen; Dateien sofort gelöscht.",
     keywords: [
       "powerpoint in pdf umwandeln",
       "powerpoint in pdf",
@@ -8208,7 +8208,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     "tagline": "Speichere jedes Bild in einem PDF in seiner eigenen Auflösung, als PNG oder JPG, in einer ZIP-Datei. Kostenlos, und es läuft auf deinem Gerät.",
     "intro": "Bilder aus PDF extrahieren findet die Fotos, Logos und Illustrationen, die in einem PDF eingebettet sind, und speichert sie in der Auflösung, in der sie hinterlegt sind, statt als Screenshot der Seite. Jedes Bild wird mit seiner Größe und den Seiten angezeigt, auf denen es vorkommt; ein Bild, das auf vielen Seiten verwendet wird, etwa ein Logo, erscheint nur einmal. Sieh sie dir in voller Größe an, entferne den Haken bei denen, die du nicht brauchst, und lade sie als verlustfreie PNG- oder kleinere JPG-Dateien gemeinsam in einer ZIP-Datei herunter. Alles passiert in deinem Browser.",
     "seoTitle": "Bilder aus PDF extrahieren – Originalauflösung, kostenlos",
-    "seoDescription": "Die Bilder in einem PDF im Browser in ihrer eigenen Auflösung speichern. Ansehen, auswählen und als PNG oder JPG in einer ZIP-Datei herunterladen. Kostenlos, ohne Upload.",
+    "seoDescription": "Die Bilder eines PDFs im Browser in Originalauflösung speichern. Ansehen, auswählen und als PNG oder JPG im ZIP herunterladen. Kostenlos, ohne Upload.",
     "keywords": [
       "bilder aus pdf extrahieren",
       "pdf bilder extrahieren",

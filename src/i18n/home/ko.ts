@@ -2,6 +2,7 @@ import type { LocalizedHomeData } from '../types';
 
 export const koHome: LocalizedHomeData = {
   hero: {
+    seoTitle: '무료 온라인 이미지·PDF 도구',
     badge: '',
     title: '필요한 이미지 도구를 한곳에서',
     subtitle:

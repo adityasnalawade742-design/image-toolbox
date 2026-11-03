@@ -2,6 +2,8 @@ import type { LocalizedHomeData } from '../types';
 
 export const itHome: LocalizedHomeData = {
   hero: {
+    seoDescription: 'Ritaglia, ridimensiona, comprimi, converti e rimuovi lo sfondo dalle foto gratis. Senza registrazione né filigrana: le immagini restano sul tuo dispositivo.',
+    seoTitle: 'Strumenti gratuiti per immagini e PDF',
     badge: '',
     title: 'Tutti gli strumenti per le immagini, in un unico posto',
     subtitle:

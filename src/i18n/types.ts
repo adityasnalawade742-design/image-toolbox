@@ -46,6 +46,10 @@ export interface LocalizedHomeData {
     subtitle: string;
     dropzoneTitle: string;
     dropzoneSubtitle: string;
+    /** Search result title for the home page, without the site name: short enough to fit with it in 60 characters */
+    seoTitle: string;
+    /** Search result description when the subtitle is longer than 160 characters */
+    seoDescription?: string;
   };
   /** Section headings; optional so untranslated locales fall back to English */
   sections?: {

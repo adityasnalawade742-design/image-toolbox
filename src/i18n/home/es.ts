@@ -2,6 +2,7 @@ import type { LocalizedHomeData } from '../types';
 
 export const esHome: LocalizedHomeData = {
   hero: {
+    seoTitle: 'Herramientas de imagen y PDF gratis',
     badge: '',
     title: 'Todas las herramientas de imagen que necesitas, en un solo lugar',
     subtitle:
