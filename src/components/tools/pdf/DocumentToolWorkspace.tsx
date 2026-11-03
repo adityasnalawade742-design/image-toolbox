@@ -47,6 +47,7 @@ const ERROR_TEXT: Record<DocErrorCode, StringKey> = {
   wrong_password: 'ctl.doc.errWrongPassword',
   already_encrypted: 'ctl.doc.errAlreadyEncrypted',
   encrypted: 'ctl.doc.errEncrypted',
+  incomplete: 'ctl.doc.errIncomplete',
   timeout: 'ctl.doc.errTimeout',
   failed: 'ctl.doc.errFailed',
 };
@@ -69,7 +70,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [progress, setProgress] = useState<DocProgress | null>(null);
   // The server sleeps when idle; a job still processing after a few seconds is often it waking up
   const [slow, setSlow] = useState(false);
-  const [result, setResult] = useState<{ blob: Blob; name: string; before?: number; after?: number } | null>(null);
+  const [result, setResult] = useState<{ blob: Blob; name: string; before?: number; after?: number; partial?: boolean } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -112,7 +113,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       const fields: Record<string, string> = needsPassword ? { password } : {};
       const r = await runDocJob(cfg.endpoint, file, params, fields, setProgress);
       const name = cfg.output(file.name.replace(/\.[^.]+$/, ''));
-      setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter });
+      setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial });
       downloadBlob(r.blob, name);
     } catch (err) {
       const code = err instanceof DocError ? err.code : 'failed';
@@ -285,6 +286,11 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
             {saved > 0
               ? t('ctl.doc.sizeResult', { before: formatBytes(result.before!), after: formatBytes(result.after!), percent: Math.round((saved / result.before!) * 100) })
               : t('ctl.doc.noGain')}
+          </p>
+        )}
+        {result?.partial && (
+          <p role="status" className="text-[16px] text-ink">
+            {t('ctl.doc.repairPartial')}
           </p>
         )}
       </PdfToolLayout>

@@ -7853,7 +7853,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Reparar PDF",
     tagline: "Arregla un PDF dañado que no se abre o muestra errores. Gratis y sin registro.",
     intro:
-      "Reparar PDF reconstruye la estructura interna de un PDF dañado, de los que no se abren, muestran un error o se abren con páginas que faltan tras una descarga interrumpida o una exportación defectuosa. Reescribe el archivo para que los lectores de PDF puedan volver a leerlo y recupera lo que se pueda recuperar. Los archivos muy dañados no siempre se pueden salvar. La reparación se hace con qpdf en nuestro servidor y el archivo se elimina justo después.",
+      "Reparar PDF reconstruye la estructura interna de un PDF dañado, de los que no se abren, muestran un error o se abren con páginas que faltan tras una descarga interrumpida o una exportación defectuosa. Reescribe el archivo para que los lectores de PDF puedan volver a leerlo y recupera lo que se pueda recuperar. Los archivos muy dañados no siempre se pueden salvar. La reparación se hace en nuestro servidor con qpdf, y con MuPDF para los archivos que qpdf no puede leer, y el archivo se elimina justo después.",
     seoTitle: "Reparar PDF – arreglar archivos PDF dañados gratis",
     seoDescription:
       "Reparar PDF online y gratis: arregla archivos PDF dañados o corruptos que no se abren. Los archivos se eliminan justo después. Sin registro.",

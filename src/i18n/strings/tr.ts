@@ -1194,6 +1194,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'Bu PDF’in zaten bir parolası var. Önce PDF Kilidi Açma aracıyla kaldırın.',
   'ctl.doc.errEncrypted': 'Bu PDF parola korumalı. Önce PDF Kilidi Açma aracıyla parolayı kaldırın.',
   'ctl.doc.errTimeout': 'Bu dosyanın işlenmesi çok uzun sürdü. Daha küçük bir dosya deneyin.',
+  'ctl.doc.errIncomplete': 'Bu PDF eksik: genellikle başarısız bir indirme veya kopyalama nedeniyle yarıda kesilmiş ve sayfalarından hiçbiri kurtarılamıyor. Dosyayı aldığınız yerden yeniden indirin.',
+  'ctl.doc.repairPartial': 'Bu PDF’nin yalnızca bir kısmı kurtarılabildi. Dosya sonuna gelmeden kesildiği için bazı sayfalar veya içerikler eksik. Mümkünse orijinal dosyayı yeniden indirin.',
   'ctl.doc.errFailed': 'Dosya işlenemedi. Hasarlı veya alışılmadık bir biçimde olabilir.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Sayfalar',

@@ -7850,7 +7850,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Perbaiki PDF",
     tagline: "Perbaiki PDF rusak yang tidak mau terbuka atau menampilkan error. Gratis, tanpa daftar.",
     intro:
-      "Perbaiki PDF membangun ulang struktur internal PDF yang rusak, yaitu PDF yang tidak mau terbuka, menampilkan error, atau terbuka dengan halaman yang hilang setelah unduhan terputus atau ekspor yang gagal. Alat ini menulis ulang file agar pembaca PDF bisa membacanya lagi, dan memulihkan apa yang masih bisa dipulihkan. File yang rusak parah tidak selalu bisa diselamatkan. Perbaikan dijalankan dengan qpdf di server kami, dan file dihapus segera setelahnya.",
+      "Perbaiki PDF membangun ulang struktur internal PDF yang rusak, yaitu PDF yang tidak mau terbuka, menampilkan error, atau terbuka dengan halaman yang hilang setelah unduhan terputus atau ekspor yang gagal. Alat ini menulis ulang file agar pembaca PDF bisa membacanya lagi, dan memulihkan apa yang masih bisa dipulihkan. File yang rusak parah tidak selalu bisa diselamatkan. Perbaikan dijalankan di server kami dengan qpdf, dan dengan MuPDF untuk file yang tidak bisa dibaca qpdf, dan file dihapus segera setelahnya.",
     seoTitle: "Perbaiki PDF Online – Atasi File PDF Rusak, Gratis",
     seoDescription:
       "Perbaiki file PDF yang rusak atau korup dan tidak mau terbuka, online dan gratis. File dihapus segera setelah diproses. Tanpa daftar, tanpa watermark.",

@@ -1198,6 +1198,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'このPDFにはすでにパスワードが設定されています。先に「PDFパスワード解除」でパスワードを解除してください。',
   'ctl.doc.errEncrypted': 'このPDFはパスワードで保護されています。先に「PDFパスワード解除」でパスワードを解除してください。',
   'ctl.doc.errTimeout': 'このファイルは処理に時間がかかりすぎました。小さいファイルでお試しください。',
+  'ctl.doc.errIncomplete': 'このPDFは不完全です。ダウンロードやコピーの失敗などで途中で切れており、ページを1つも復元できません。入手元からもう一度ダウンロードしてください。',
+  'ctl.doc.repairPartial': 'このPDFは一部しか復元できませんでした。途中で切れているため、一部のページや内容が欠けています。可能であれば、元のファイルをもう一度ダウンロードしてください。',
   'ctl.doc.errFailed': 'ファイルを処理できませんでした。破損しているか、一般的でない形式の可能性があります。',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'ページ',

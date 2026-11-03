@@ -8017,7 +8017,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Repair PDF",
     "shortName": "Repair PDF",
     "tagline": "Fix a damaged PDF that won't open or shows errors. Free, with no sign-up.",
-    "intro": "Repair PDF rebuilds the internal structure of a damaged PDF, the kind that won't open, shows an error, or opens with missing pages after an interrupted download or a faulty export. It rewrites the file so PDF readers can read it again, and recovers what can be recovered. Heavily corrupted files can't always be saved. Repair runs with qpdf on our server, and the file is deleted right after.",
+    "intro": "Repair PDF rebuilds the internal structure of a damaged PDF, the kind that won't open, shows an error, or opens with missing pages after an interrupted download or a faulty export. It rewrites the file so PDF readers can read it again, and recovers what can be recovered. Heavily corrupted files can't always be saved. Repair runs on our server with qpdf, and with MuPDF for files qpdf can't read, and the file is deleted right after.",
     "seoTitle": "Repair PDF – Fix Damaged PDF Files, Free",
     "seoDescription": "Fix damaged or corrupted PDF files that won't open, online and free. Files are deleted right after. No sign-up.",
     "keywords": [

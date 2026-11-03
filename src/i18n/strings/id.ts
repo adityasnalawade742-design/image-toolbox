@@ -1198,6 +1198,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'PDF ini sudah memiliki kata sandi. Hapus dulu dengan Buka Kunci PDF.',
   'ctl.doc.errEncrypted': 'PDF ini dilindungi kata sandi. Hapus kata sandinya dulu dengan Buka Kunci PDF.',
   'ctl.doc.errTimeout': 'File ini terlalu lama diproses. Coba file yang lebih kecil.',
+  'ctl.doc.errIncomplete': 'PDF ini tidak lengkap: file terpotong, biasanya karena unduhan atau penyalinan yang gagal, dan tidak ada halaman yang bisa dipulihkan. Unduh lagi dari sumber aslinya.',
+  'ctl.doc.repairPartial': 'Hanya sebagian PDF ini yang bisa dipulihkan. File terpotong sebelum akhir, jadi beberapa halaman atau isinya hilang. Jika bisa, unduh lagi file aslinya.',
   'ctl.doc.errFailed': 'File tidak bisa diproses. Mungkin file rusak atau formatnya tidak biasa.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Halaman',

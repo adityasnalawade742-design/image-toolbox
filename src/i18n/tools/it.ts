@@ -7833,7 +7833,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Ripara PDF",
     tagline: "Ripara un PDF danneggiato che non si apre o mostra errori. Gratis, senza registrazione.",
     intro:
-      "Ripara PDF ricostruisce la struttura interna di un PDF danneggiato, quello che non si apre, mostra un errore o si apre con pagine mancanti dopo un download interrotto o un’esportazione difettosa. Riscrive il file perché i lettori PDF possano leggerlo di nuovo e recupera ciò che è recuperabile. I file molto corrotti non sempre si possono salvare. La riparazione avviene con qpdf sul nostro server e il file viene eliminato subito dopo.",
+      "Ripara PDF ricostruisce la struttura interna di un PDF danneggiato, quello che non si apre, mostra un errore o si apre con pagine mancanti dopo un download interrotto o un’esportazione difettosa. Riscrive il file perché i lettori PDF possano leggerlo di nuovo e recupera ciò che è recuperabile. I file molto corrotti non sempre si possono salvare. La riparazione avviene sul nostro server con qpdf, e con MuPDF per i file che qpdf non riesce a leggere, e il file viene eliminato subito dopo.",
     seoTitle: "Riparare PDF – Sistema i file PDF danneggiati, gratis",
     seoDescription:
       "Riparare PDF online gratis: sistema i file PDF danneggiati o corrotti che non si aprono. I file vengono eliminati subito dopo. Senza registrazione.",
