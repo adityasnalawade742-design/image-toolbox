@@ -481,6 +481,15 @@ def require(kind: str, allowed: set[str]):
         raise JobError(415, "unsupported_type")
 
 
+# LibreOffice PDF export filter for each input type, and options that keep pictures exact at full resolution
+PDF_EXPORT_FILTER = {"docx": "writer_pdf_Export", "odt": "writer_pdf_Export", "doc": "writer_pdf_Export",
+                     "rtf": "writer_pdf_Export", "txt": "writer_pdf_Export", "xlsx": "calc_pdf_Export",
+                     "ods": "calc_pdf_Export", "csv": "calc_pdf_Export", "pptx": "impress_pdf_Export",
+                     "odp": "impress_pdf_Export"}
+LOSSLESS_PICTURES = json.dumps({"UseLosslessCompression": {"type": "boolean", "value": "true"},
+                                "ReduceImageResolution": {"type": "boolean", "value": "false"}}, separators=(",", ":"))
+
+
 # ---------- endpoints ----------
 
 @app.post("/v1/convert")
@@ -497,9 +506,20 @@ async def convert(file: UploadFile, to: str = "pdf"):
             if kind == "text" and (file.filename or "").lower().endswith(".csv"):
                 ext = "csv"
             named = src.rename(job / f"input.{ext}")
-            args = ["soffice", f"-env:UserInstallation=file://{job}/profile", "--headless", "--norestore",
-                    "--convert-to", "pdf", "--outdir", str(job / "out"), str(named)]
-            out_name, media = "input.pdf", PDF
+            # LibreOffice's default export recompresses pictures as JPEG and lowers them to 300 DPI. Lossless keeps
+            # every picture exact, and a camera JPEG is copied in as it is, at the cost of larger files
+            export = PDF_EXPORT_FILTER.get(ext)
+            target = f"pdf:{export}:{LOSSLESS_PICTURES}" if export else "pdf"
+            soffice = lambda to: run("soffice", f"-env:UserInstallation=file://{job}/profile", "--headless", "--norestore",
+                                     "--convert-to", to, "--outdir", str(job / "out"), str(named), cwd=job)
+            code, err = await soffice(target)
+            out = job / "out" / "input.pdf"
+            # An old .xls or .ppt arrives named .doc and opens in another app, which the Writer filter can't export
+            if (code != 0 or not out.exists()) and target != "pdf":
+                code, err = await soffice("pdf")
+            if code != 0 or not out.exists():
+                raise JobError(422, "convert_failed")
+            return respond(out, job, PDF, "converted.pdf")
         else:
             require(kind, {"pdf"})
             await refuse_if_password_needed(src, job)
