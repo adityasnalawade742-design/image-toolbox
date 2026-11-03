@@ -1198,6 +1198,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'Questo PDF ha già una password. Rimuovila prima con Sblocca PDF.',
   'ctl.doc.errEncrypted': 'Questo PDF è protetto da password. Rimuovi prima la password con Sblocca PDF.',
   'ctl.doc.errTimeout': 'L’elaborazione di questo file ha richiesto troppo tempo. Prova con un file più piccolo.',
+  'ctl.doc.errIncomplete': 'Questo PDF è incompleto: è stato troncato, di solito da un download o una copia non riusciti, e nessuna delle sue pagine può essere recuperata. Scaricalo di nuovo dalla fonte originale.',
+  'ctl.doc.repairPartial': 'È stato possibile recuperare solo una parte di questo PDF. È stato troncato prima della fine, quindi mancano alcune pagine o parte del contenuto. Se puoi, scarica di nuovo l’originale.',
   'ctl.doc.errFailed': 'Non è stato possibile elaborare il file. Potrebbe essere danneggiato o in un formato insolito.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Pagine',

@@ -45,5 +45,7 @@ export const documentStrings = {
   'ctl.doc.errAlreadyEncrypted': 'This PDF already has a password. Remove it first with Unlock PDF.',
   'ctl.doc.errEncrypted': 'This PDF is password-protected. Remove the password first with Unlock PDF.',
   'ctl.doc.errTimeout': 'This file took too long to process. Try a smaller file.',
+  'ctl.doc.errIncomplete': 'This PDF is incomplete: it was cut off, usually by a failed download or copy, and none of its pages can be recovered. Download it again from where you got it.',
+  'ctl.doc.repairPartial': 'Only part of this PDF could be recovered. It was cut off before the end, so some pages or content are missing. If you can, download the original again.',
   'ctl.doc.errFailed': 'The file couldn’t be processed. It may be damaged or in an unusual format.',
 } as const;

@@ -60,7 +60,7 @@ async function proxyDoc(request, env, url) {
     return json(503, { error: 'offline' });
   }
   const out = securityHeaders(new Headers({ 'Cache-Control': 'no-store' }));
-  for (const h of ['Content-Type', 'Content-Disposition', 'X-Size-Before', 'X-Size-After']) {
+  for (const h of ['Content-Type', 'Content-Disposition', 'X-Size-Before', 'X-Size-After', 'X-Repair']) {
     const v = res.headers.get(h);
     if (v) out.set(h, v);
   }

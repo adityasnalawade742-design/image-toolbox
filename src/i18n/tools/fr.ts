@@ -7881,7 +7881,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Réparer PDF",
     tagline: "Réparez un PDF endommagé qui ne s’ouvre pas ou affiche des erreurs. Gratuit, sans inscription.",
     intro:
-      "Réparer PDF reconstruit la structure interne d’un PDF endommagé, celui qui ne s’ouvre pas, affiche une erreur ou s’ouvre avec des pages manquantes après un téléchargement interrompu ou un export défectueux. Il réécrit le fichier pour que les lecteurs PDF puissent de nouveau le lire, et récupère ce qui peut l’être. Les fichiers très corrompus ne peuvent pas toujours être sauvés. La réparation est effectuée avec qpdf sur notre serveur, et le fichier est supprimé juste après.",
+      "Réparer PDF reconstruit la structure interne d’un PDF endommagé, celui qui ne s’ouvre pas, affiche une erreur ou s’ouvre avec des pages manquantes après un téléchargement interrompu ou un export défectueux. Il réécrit le fichier pour que les lecteurs PDF puissent de nouveau le lire, et récupère ce qui peut l’être. Les fichiers très corrompus ne peuvent pas toujours être sauvés. La réparation est effectuée sur notre serveur avec qpdf, et avec MuPDF pour les fichiers que qpdf ne peut pas lire, et le fichier est supprimé juste après.",
     seoTitle: "Réparer PDF – récupérer un fichier PDF endommagé, gratuit",
     seoDescription:
       "Réparer PDF en ligne et gratuitement : corrigez les fichiers PDF endommagés ou corrompus qui ne s’ouvrent pas. Fichiers supprimés juste après.",

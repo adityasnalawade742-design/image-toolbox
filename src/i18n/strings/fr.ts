@@ -1158,6 +1158,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': "Ce PDF a déjà un mot de passe. Retirez-le d’abord avec Déverrouiller PDF.",
   'ctl.doc.errEncrypted': "Ce PDF est protégé par un mot de passe. Retirez d’abord le mot de passe avec Déverrouiller PDF.",
   'ctl.doc.errTimeout': "Le traitement de ce fichier a pris trop de temps. Essayez avec un fichier plus petit.",
+  'ctl.doc.errIncomplete': 'Ce PDF est incomplet : il a été coupé, généralement par un téléchargement ou une copie qui a échoué, et aucune de ses pages ne peut être récupérée. Téléchargez-le à nouveau depuis sa source.',
+  'ctl.doc.repairPartial': 'Seule une partie de ce PDF a pu être récupérée. Il a été coupé avant la fin, donc des pages ou du contenu manquent. Si possible, téléchargez à nouveau l’original.',
   'ctl.doc.errFailed': "Le fichier n’a pas pu être traité. Il est peut-être endommagé ou dans un format inhabituel.",
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Pages',

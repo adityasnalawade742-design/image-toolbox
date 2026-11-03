@@ -7838,7 +7838,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Reparar PDF",
     tagline: "Conserte um PDF danificado que não abre ou mostra erros. Grátis e sem cadastro.",
     intro:
-      "O Reparar PDF reconstrói a estrutura interna de um PDF danificado, daqueles que não abrem, mostram um erro ou abrem com páginas faltando depois de um download interrompido ou de uma exportação com falha. Ele reescreve o arquivo para que os leitores de PDF consigam lê-lo de novo e recupera o que for possível recuperar. Arquivos muito corrompidos nem sempre podem ser salvos. O reparo é feito com o qpdf no nosso servidor, e o arquivo é apagado logo depois.",
+      "O Reparar PDF reconstrói a estrutura interna de um PDF danificado, daqueles que não abrem, mostram um erro ou abrem com páginas faltando depois de um download interrompido ou de uma exportação com falha. Ele reescreve o arquivo para que os leitores de PDF consigam lê-lo de novo e recupera o que for possível recuperar. Arquivos muito corrompidos nem sempre podem ser salvos. O reparo é feito no nosso servidor com o qpdf, e com o MuPDF para os arquivos que o qpdf não consegue ler, e o arquivo é apagado logo depois.",
     seoTitle: "Reparar PDF – Conserte arquivos PDF danificados, grátis",
     seoDescription:
       "Reparar PDF online e grátis: conserte arquivos PDF danificados ou corrompidos que não abrem. Os arquivos são apagados logo depois. Sem cadastro.",

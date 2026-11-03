@@ -7875,7 +7875,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF reparieren",
     tagline: "Repariere ein beschädigtes PDF, das sich nicht öffnen lässt oder Fehler anzeigt. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF reparieren baut die interne Struktur eines beschädigten PDFs neu auf, etwa wenn es sich nach einem abgebrochenen Download oder einem fehlerhaften Export nicht öffnen lässt, einen Fehler anzeigt oder mit fehlenden Seiten öffnet. Die Datei wird neu geschrieben, damit PDF-Reader sie wieder lesen können, und was sich retten lässt, wird wiederhergestellt. Stark beschädigte Dateien lassen sich nicht immer retten. Die Reparatur läuft mit qpdf auf unserem Server, und die Datei wird direkt danach gelöscht.",
+      "PDF reparieren baut die interne Struktur eines beschädigten PDFs neu auf, etwa wenn es sich nach einem abgebrochenen Download oder einem fehlerhaften Export nicht öffnen lässt, einen Fehler anzeigt oder mit fehlenden Seiten öffnet. Die Datei wird neu geschrieben, damit PDF-Reader sie wieder lesen können, und was sich retten lässt, wird wiederhergestellt. Stark beschädigte Dateien lassen sich nicht immer retten. Die Reparatur läuft auf unserem Server mit qpdf und, bei Dateien, die qpdf nicht lesen kann, mit MuPDF, und die Datei wird direkt danach gelöscht.",
     seoTitle: "PDF reparieren – beschädigte PDF-Dateien retten, kostenlos",
     seoDescription:
       "PDF reparieren, kostenlos online: beschädigte oder defekte PDF-Dateien, die sich nicht öffnen lassen, wiederherstellen. Dateien werden direkt danach gelöscht.",

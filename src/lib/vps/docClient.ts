@@ -14,6 +14,7 @@ export type DocErrorCode =
   | 'wrong_password'
   | 'already_encrypted'
   | 'encrypted'
+  | 'incomplete'
   | 'timeout'
   | 'failed';
 
@@ -27,6 +28,8 @@ export interface DocResult {
   blob: Blob;
   sizeBefore?: number;
   sizeAfter?: number;
+  /** Repair PDF: the file was cut off, so only part of it came back */
+  partial?: boolean;
 }
 
 export type DocProgress = { stage: 'uploading'; fraction: number } | { stage: 'processing' };
@@ -56,6 +59,7 @@ const KNOWN: Record<string, DocErrorCode> = {
   wrong_password: 'wrong_password',
   already_encrypted: 'already_encrypted',
   encrypted: 'encrypted',
+  incomplete: 'incomplete',
   timeout: 'timeout',
 };
 
@@ -85,7 +89,7 @@ export function runDocJob(
           const v = xhr.getResponseHeader(h);
           return v ? Number(v) : undefined;
         };
-        resolve({ blob: xhr.response, sizeBefore: num('X-Size-Before'), sizeAfter: num('X-Size-After') });
+        resolve({ blob: xhr.response, sizeBefore: num('X-Size-Before'), sizeAfter: num('X-Size-After'), partial: xhr.getResponseHeader('X-Repair') === 'partial' });
         return;
       }
       let code: DocErrorCode = xhr.status === 413 ? 'too_large' : xhr.status === 503 ? 'busy' : 'failed';

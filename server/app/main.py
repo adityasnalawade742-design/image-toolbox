@@ -481,6 +481,59 @@ def require(kind: str, allowed: set[str]):
         raise JobError(415, "unsupported_type")
 
 
+MUPDF_RESCUE = """
+import sys
+import pymupdf
+pymupdf.TOOLS.mupdf_display_errors(False)
+src, out = sys.argv[1], sys.argv[2]
+
+
+def readable(path):
+    try:
+        with pymupdf.open(path) as doc:
+            if doc.page_count == 0:
+                return False
+            for page in doc:
+                page.get_text()
+        return True
+    except Exception:
+        return False
+
+
+try:
+    doc = pymupdf.open(src, filetype="pdf")
+except Exception:
+    sys.exit(2)
+if doc.needs_pass or doc.page_count == 0:
+    sys.exit(3)
+try:
+    doc.save(out, garbage=3, deflate=True)
+except Exception:
+    pass
+if not readable(out):
+    # The rebuilt file can inherit a broken page tree; copy the pages that load into a fresh document instead.
+    # Reopen the original: saving can leave the open copy in a state where no page loads
+    doc = pymupdf.open(src, filetype="pdf")
+    fresh = pymupdf.open()
+    kept = {}
+    for number in range(doc.page_count):
+        try:
+            doc[number].get_text()
+            fresh.insert_pdf(doc, from_page=number, to_page=number)
+            kept[number + 1] = fresh.page_count
+        except Exception:
+            continue
+    if fresh.page_count == 0:
+        sys.exit(4)
+    try:
+        fresh.set_toc([[level, title, kept[page]] for level, title, page, *_ in doc.get_toc(simple=False) if page in kept])
+    except Exception:
+        pass
+    fresh.save(out, garbage=3, deflate=True)
+    if not readable(out):
+        sys.exit(5)
+"""
+
 # LibreOffice PDF export filter for each input type, and options that keep pictures exact at full resolution
 PDF_EXPORT_FILTER = {"docx": "writer_pdf_Export", "odt": "writer_pdf_Export", "doc": "writer_pdf_Export",
                      "rtf": "writer_pdf_Export", "txt": "writer_pdf_Export", "xlsx": "calc_pdf_Export",
@@ -609,14 +662,32 @@ async def unlock(file: UploadFile, password: str = Form("")):
 async def repair(file: UploadFile):
     async with Job() as job:
         src = await save_upload(file, job)
-        require(kind_of(src), {"pdf"})
-        await refuse_if_password_needed(src, job)
+        with open(src, "rb") as f:
+            head = f.read(65536)
+            f.seek(max(0, src.stat().st_size - 2048))
+            tail = f.read()
+        # A PDF that lost its first line still has its objects; anything else isn't a PDF
+        if kind_of(src) != "pdf" and not (b" obj" in head and b"endobj" in head):
+            raise JobError(415, "unsupported_type")
+        # A PDF ends with %%EOF; without it the file was cut off, usually by a failed download or copy
+        cut_off = b"%%EOF" not in tail
         out = job / "out.pdf"
-        # Rewriting rebuilds the cross-reference table; exit 3 means "repaired with warnings"
-        code, _ = await run("qpdf", "--object-streams=generate", str(src), str(out), cwd=job, ok_codes=(0, 3))
+        rescued = False
+        if kind_of(src) == "pdf":
+            await refuse_if_password_needed(src, job)
+            # Rewriting rebuilds the cross-reference table; exit 3 means "repaired with warnings"
+            code, _ = await run("qpdf", "--object-streams=generate", str(src), str(out), cwd=job, ok_codes=(0, 3))
+        else:
+            code = 1
         if code != 0 or not out.exists():
-            raise JobError(422, "repair_failed")
-        return respond(out, job, PDF, "repaired.pdf")
+            # MuPDF reads past more damage, such as a cut-off end or a missing header, and rebuilds what it finds
+            out.unlink(missing_ok=True)
+            code, _ = await run(sys.executable, "-c", MUPDF_RESCUE, str(src), str(out), cwd=job)
+            rescued = code == 0 and out.exists()
+            if not rescued:
+                raise JobError(422, "incomplete" if cut_off else "repair_failed")
+        # Pages from a cut-off file may be blank or missing content, so the page says the result is partial
+        return respond(out, job, PDF, "repaired.pdf", **({"X-Repair": "partial"} if rescued and cut_off else {}))
 
 
 def parse_langs(lang: str) -> str:

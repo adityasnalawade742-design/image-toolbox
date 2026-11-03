@@ -1193,6 +1193,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': '이 PDF에는 이미 비밀번호가 있어요. 먼저 PDF 비밀번호 해제로 비밀번호를 없애세요.',
   'ctl.doc.errEncrypted': '이 PDF는 비밀번호로 보호되어 있어요. 먼저 PDF 비밀번호 해제로 비밀번호를 없애세요.',
   'ctl.doc.errTimeout': '이 파일은 처리하는 데 너무 오래 걸렸어요. 더 작은 파일로 시도해 보세요.',
+  'ctl.doc.errIncomplete': '이 PDF는 불완전해요. 다운로드나 복사가 실패하는 등의 이유로 중간에 잘려서 어떤 페이지도 복구할 수 없어요. 받은 곳에서 다시 다운로드해 주세요.',
+  'ctl.doc.repairPartial': '이 PDF는 일부만 복구할 수 있었어요. 끝나기 전에 잘려서 일부 페이지나 내용이 빠져 있어요. 가능하면 원본을 다시 다운로드해 주세요.',
   'ctl.doc.errFailed': '파일을 처리할 수 없었어요. 손상되었거나 흔하지 않은 형식일 수 있어요.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': '페이지',

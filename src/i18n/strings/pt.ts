@@ -1198,6 +1198,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'Este PDF já tem senha. Remova-a primeiro com o Desbloquear PDF.',
   'ctl.doc.errEncrypted': 'Este PDF é protegido por senha. Remova a senha primeiro com o Desbloquear PDF.',
   'ctl.doc.errTimeout': 'Este arquivo demorou demais para ser processado. Tente um arquivo menor.',
+  'ctl.doc.errIncomplete': 'Este PDF está incompleto: ele foi cortado, geralmente por um download ou uma cópia que falhou, e nenhuma de suas páginas pode ser recuperada. Baixe-o novamente de onde você o obteve.',
+  'ctl.doc.repairPartial': 'Só foi possível recuperar parte deste PDF. Ele foi cortado antes do fim, então algumas páginas ou partes do conteúdo estão faltando. Se puder, baixe o original novamente.',
   'ctl.doc.errFailed': 'Não foi possível processar o arquivo. Ele pode estar danificado ou em um formato incomum.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Páginas',

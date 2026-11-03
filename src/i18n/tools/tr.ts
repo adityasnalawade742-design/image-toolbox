@@ -7852,7 +7852,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF Onar",
     tagline: "Açılmayan veya hata veren hasarlı bir PDF'i onarın. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF Onarma, hasarlı bir PDF'in iç yapısını yeniden oluşturur; yarıda kalan bir indirme veya hatalı bir dışa aktarma sonrasında açılmayan, hata gösteren ya da eksik sayfalarla açılan dosyalar için kullanılır. Dosyayı PDF okuyucuların yeniden okuyabileceği şekilde baştan yazar ve kurtarılabilecek olanı kurtarır. Ağır hasarlı dosyalar her zaman kurtarılamaz. Onarım sunucumuzda qpdf ile yapılır ve dosya hemen ardından silinir.",
+      "PDF Onarma, hasarlı bir PDF'in iç yapısını yeniden oluşturur; yarıda kalan bir indirme veya hatalı bir dışa aktarma sonrasında açılmayan, hata gösteren ya da eksik sayfalarla açılan dosyalar için kullanılır. Dosyayı PDF okuyucuların yeniden okuyabileceği şekilde baştan yazar ve kurtarılabilecek olanı kurtarır. Ağır hasarlı dosyalar her zaman kurtarılamaz. Onarım sunucumuzda qpdf ile, qpdf'nin okuyamadığı dosyalarda ise MuPDF ile yapılır ve dosya hemen ardından silinir.",
     seoTitle: "PDF Onarma – Bozuk PDF Dosyalarını Düzeltin, Ücretsiz",
     seoDescription:
       "PDF onarma online ve ücretsiz: açılmayan hasarlı veya bozuk PDF dosyalarını düzeltin. Dosyalar işlemden hemen sonra silinir. Kayıt gerekmez.",

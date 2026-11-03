@@ -1161,6 +1161,8 @@ export const strings = {
   'ctl.doc.errAlreadyEncrypted': 'Dieses PDF hat bereits ein Passwort. Entferne es zuerst mit „PDF entsperren“.',
   'ctl.doc.errEncrypted': 'Dieses PDF ist passwortgeschützt. Entferne das Passwort zuerst mit „PDF entsperren“.',
   'ctl.doc.errTimeout': 'Die Verarbeitung dieser Datei hat zu lange gedauert. Versuch es mit einer kleineren Datei.',
+  'ctl.doc.errIncomplete': 'Diese PDF ist unvollständig: Sie wurde abgeschnitten, meist durch einen fehlgeschlagenen Download oder Kopiervorgang, und keine ihrer Seiten lässt sich wiederherstellen. Laden Sie sie erneut von der Quelle herunter.',
+  'ctl.doc.repairPartial': 'Nur ein Teil dieser PDF konnte wiederhergestellt werden. Sie wurde vor dem Ende abgeschnitten, daher fehlen einige Seiten oder Inhalte. Laden Sie das Original nach Möglichkeit erneut herunter.',
   'ctl.doc.errFailed': 'Die Datei konnte nicht verarbeitet werden. Sie ist vielleicht beschädigt oder hat ein ungewöhnliches Format.',
   // PDF utilities: text, compose, images, blank pages, compare, overlay
 'ctl.pu.pages': 'Seiten',
