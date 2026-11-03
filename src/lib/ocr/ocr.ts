@@ -67,8 +67,9 @@ export function preloadOcr(lang: OcrLang) {
 const ENLARGE_BELOW = 1600;
 const ENLARGE_TO = 2400;
 const MAX_ENLARGE = 3;
-// A first reading below this mean confidence is retried enlarged (small images) and upside down; the most
-// confident reading wins. Good images keep their first reading, unchanged and without extra time.
+// A first reading below this mean confidence is retried: with Sauvola thresholding, which copes with the uneven light
+// of phone photos, then turned sideways both ways and upside down, and enlarged when small; the most confident reading
+// wins. Good images keep their first reading, unchanged and without extra time.
 const RETRY_BELOW = 60;
 // A retry replaces the first reading only when clearly more confident, not by noise
 const RETRY_MARGIN = 10;
@@ -105,8 +106,8 @@ const clean = (text: string) =>
 
 /**
  * Read the text in an image. One job at a time; the worker stays loaded for the next image.
- * If the first reading looks poor, the image is also read enlarged (when small) and upside down, and the most
- * confident reading wins. Good images need only the first pass.
+ * If the first reading looks poor, the image is also read with Sauvola thresholding, turned, and enlarged (when
+ * small), and the most confident reading wins. Good images need only the first pass.
  */
 export async function recognizeText(image: HTMLCanvasElement, lang: OcrLang, onProgress?: (p: OcrProgress) => void): Promise<OcrResult> {
   listener = onProgress || null;
@@ -117,20 +118,26 @@ export async function recognizeText(image: HTMLCanvasElement, lang: OcrLang, onP
       await w.reinitialize(lang, 1);
       workerLang = lang;
     }
-    const read = async (src: HTMLCanvasElement): Promise<OcrResult> => {
-      const { data } = await w.recognize(src);
-      return { text: clean(data.text), confidence: data.confidence };
+    const read = async (src: HTMLCanvasElement, sauvola = false): Promise<OcrResult> => {
+      // Tesseract's thresholding_method: 0 is its default Otsu, 2 is Sauvola
+      if (sauvola) await w.setParameters({ thresholding_method: '2' });
+      try {
+        const { data } = await w.recognize(src);
+        return { text: clean(data.text), confidence: data.confidence };
+      } finally {
+        if (sauvola) await w.setParameters({ thresholding_method: '0' });
+      }
     };
     let best = await read(image);
     if (best.confidence >= RETRY_BELOW) return best;
     // Further passes keep the bar full rather than restarting it
     listener = null;
     onProgress?.({ stage: 'recognizing', fraction: 1 });
-    const retries: HTMLCanvasElement[] = [];
-    if (Math.max(image.width, image.height) < ENLARGE_BELOW) retries.push(enlarged(image));
-    retries.push(rotated(image, 2));
-    for (const src of retries) {
-      const result = await read(src);
+    const retries: [HTMLCanvasElement, boolean][] = [[image, true]];
+    if (Math.max(image.width, image.height) < ENLARGE_BELOW) retries.push([enlarged(image), false]);
+    retries.push([rotated(image, 1), false], [rotated(image, 3), false], [rotated(image, 2), false]);
+    for (const [src, sauvola] of retries) {
+      const result = await read(src, sauvola);
       if (result.confidence >= best.confidence + RETRY_MARGIN) best = result;
       if (best.confidence >= RETRY_BELOW) break;
     }
