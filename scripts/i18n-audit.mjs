@@ -122,7 +122,7 @@ for (const loc of REQUIRED_LOCALES) {
 // 5. Hreflang Alternate Links & x-default Verification
 console.log('\n5. Testing Hreflang Alternate Links & x-default Mapping:');
 const testSlug = 'crop-image';
-const baseUrl = 'https://image-toolbox.aditya-s-nalawade742.workers.dev';
+const baseUrl = 'https://tadafile.com';
 const hreflangs = getHreflangLinks(testSlug, baseUrl);
 
 assert(

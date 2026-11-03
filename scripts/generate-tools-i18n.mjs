@@ -43,7 +43,7 @@ for (const loc of locales) {
       name: localizedName,
       shortName: localizedName.split(' ')[0] || localizedName,
       tagline: `${localizedName} — Fast, private, and 100% in-browser processing.`,
-      seoTitle: `${localizedName} — Free Online Tool — Image Toolbox`,
+      seoTitle: `${localizedName} — Free Online Tool — TadaFile`,
       seoDescription: `${localizedName} online for free. Fast, private client-side processing with zero server uploads.`,
       keywords: [t.slug, localizedName.toLowerCase(), 'image tool', 'online free', loc],
       howToSteps: [

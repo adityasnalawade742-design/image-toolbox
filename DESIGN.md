@@ -1,5 +1,5 @@
 ---
-name: Image Toolbox
+name: TadaFile
 description: Free in-browser image tools on a friendly press proof sheet. Measured, marked, easy to pick up.
 colors:
   paper: "#fbfbf9"
@@ -165,7 +165,7 @@ components:
     rounded: "{rounded.tray}"
 ---
 
-# Design System: Image Toolbox
+# Design System: TadaFile
 
 ## Overview
 

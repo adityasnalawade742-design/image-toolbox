@@ -437,7 +437,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': 'SAYA MENGERJAKAN PROYEK UTAMA',
   'ctl.meme.tpl.distractedBottom': 'MEMBUAT PROYEK SAMPINGAN BARU YANG RANDOM',
   'ctl.meme.tpl.changeMind': 'Change My Mind',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOX ADALAH KUMPULAN ALAT TERCEPAT',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILE ADALAH KUMPULAN ALAT TERCEPAT',
   'ctl.meme.tpl.changeMindBottom': 'UBAH PIKIRANKU',
   'ctl.meme.tpl.neon': 'Neon Cyberpunk',
   'ctl.meme.tpl.neonTop': 'SAAT UI-NYA PUNYA CAHAYA NEON',

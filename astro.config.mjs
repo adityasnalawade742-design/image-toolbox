@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL || 'https://image-toolbox.aditya-s-nalawade742.workers.dev',
+  site: process.env.PUBLIC_SITE_URL || 'https://tadafile.com',
   output: 'static',
   // Astro 7's default strips the spaces between inline elements, which runs words together
   compressHTML: true,

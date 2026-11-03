@@ -1,4 +1,4 @@
-# 🎨 Image Toolbox — Privacy-First High-Performance Browser Image Suite
+# TadaFile — Free Image and PDF Tools (formerly Image Toolbox)
 
 [![Astro](https://img.shields.io/badge/Astro-5.4-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
@@ -7,9 +7,9 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**Image Toolbox** is a lightning-fast, privacy-first web application featuring **23 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
+**TadaFile** (formerly Image Toolbox) is a lightning-fast, privacy-first web application featuring **23 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
 
-🌐 **Live Demo:** [https://image-toolbox.aditya-s-nalawade742.workers.dev/](https://image-toolbox.aditya-s-nalawade742.workers.dev/)
+🌐 **Live Demo:** [https://tadafile.com/](https://tadafile.com/)
 
 ---
 
@@ -137,7 +137,7 @@ Copyright © 2026 Aditya Nalawade.
 Licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0). See [`LICENSE`](LICENSE).
 
 **Additional terms (AGPL-3.0 section 7):**
-- **Name and identity (7(e)):** the licence does not grant rights to the name "Image Toolbox", its logo or the site's domain. Copies and modified versions must use their own name and must not present themselves as this site or as connected to it.
+- **Name and identity (7(e)):** the licence does not grant rights to the names "TadaFile" or "Image Toolbox" (its former name), its logo or the site's domain. Copies and modified versions must use their own name and must not present themselves as this site or as connected to it.
 - **Marking changes (7(c)):** modified versions must be clearly marked as changed from the original, and must keep the copyright and licence notices (7(b)).
 
 The background remover's "Best quality" mode uses [@imgly/background-removal](https://github.com/imgly/background-removal-js), which is AGPL-3.0; because of that, the whole site is distributed under AGPL-3.0, and anyone who uses the hosted site can get its source code from this repository (linked in the site footer). If you deploy a modified version, you must offer your modified source to its users in the same way.

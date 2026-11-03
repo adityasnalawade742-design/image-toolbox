@@ -440,7 +440,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': 'メインのプロジェクトを進める自分',
   'ctl.meme.tpl.distractedBottom': '思いつきで新しいサイドプロジェクトを作る',
   'ctl.meme.tpl.changeMind': 'Change My Mind',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOXが最速のツール集',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILEが最速のツール集',
   'ctl.meme.tpl.changeMindBottom': '反論があればどうぞ',
   'ctl.meme.tpl.neon': 'サイバーパンクネオン',
   'ctl.meme.tpl.neonTop': 'UIがネオンに光っているとき',

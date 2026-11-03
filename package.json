@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "deploy": "wrangler deploy",
+    "deploy:redirect": "wrangler deploy --config redirect/wrangler.json",
     "a11y": "node scripts/a11y/audit.mjs",
     "a11y:keys": "node scripts/a11y/keyboard-flows.mjs"
   },

@@ -437,7 +437,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': 'ICH AN MEINEM HAUPTPROJEKT',
   'ctl.meme.tpl.distractedBottom': 'EIN NEUES ZUFÄLLIGES NEBENPROJEKT STARTEN',
   'ctl.meme.tpl.changeMind': 'Überzeug mich vom Gegenteil',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOX IST DIE SCHNELLSTE SUITE',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILE IST DIE SCHNELLSTE SUITE',
   'ctl.meme.tpl.changeMindBottom': 'ÜBERZEUG MICH VOM GEGENTEIL',
   'ctl.meme.tpl.neon': 'Cyberpunk-Neon',
   'ctl.meme.tpl.neonTop': 'WENN DIE UI NEON LEUCHTET',

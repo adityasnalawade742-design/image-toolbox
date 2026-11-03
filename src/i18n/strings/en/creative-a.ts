@@ -83,7 +83,7 @@ export const creativeAStrings = {
   'ctl.meme.tpl.distractedTop': 'ME WORKING ON MY MAIN PROJECT',
   'ctl.meme.tpl.distractedBottom': 'BUILDING A NEW RANDOM SIDE PROJECT',
   'ctl.meme.tpl.changeMind': 'Change My Mind',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOX IS THE FASTEST SUITE',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILE IS THE FASTEST SUITE',
   'ctl.meme.tpl.changeMindBottom': 'CHANGE MY MIND',
   'ctl.meme.tpl.neon': 'Cyberpunk Neon',
   'ctl.meme.tpl.neonTop': 'WHEN THE UI HAS NEON GLOW',

@@ -16,7 +16,7 @@ export const SUPPORTED_LOCALES: Record<SupportedLocale, LocaleInfo> = {
 export const DEFAULT_LOCALE: SupportedLocale = 'en';
 
 export function getHreflangLinks(currentSlug: string = '', baseUrl?: string) {
-  const cleanBase = (baseUrl || (typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || 'https://image-toolbox.aditya-s-nalawade742.workers.dev').replace(/\/$/, '');
+  const cleanBase = (baseUrl || (typeof process !== 'undefined' && process.env?.PUBLIC_SITE_URL) || 'https://tadafile.com').replace(/\/$/, '');
   const cleanSlug = currentSlug.replace(/^\//, '');
 
   const links: { lang: string; href: string }[] = [];

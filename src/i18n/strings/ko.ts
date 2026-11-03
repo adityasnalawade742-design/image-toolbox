@@ -437,7 +437,7 @@ export const strings = {
   'ctl.meme.tpl.distractedTop': '메인 프로젝트 하는 나',
   'ctl.meme.tpl.distractedBottom': '갑자기 새 사이드 프로젝트 시작',
   'ctl.meme.tpl.changeMind': '반박해 봐',
-  'ctl.meme.tpl.changeMindTop': 'IMAGE TOOLBOX가 가장 빠른 도구 모음이다',
+  'ctl.meme.tpl.changeMindTop': 'TADAFILE이 가장 빠른 도구 모음이다',
   'ctl.meme.tpl.changeMindBottom': '반박 시 니 말이 맞음',
   'ctl.meme.tpl.neon': '사이버펑크 네온',
   'ctl.meme.tpl.neonTop': 'UI에 네온 효과가 들어가면',
