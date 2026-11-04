@@ -3,7 +3,7 @@ import { EyeOff, Download, Trash2, Undo2, Square, Circle, Copy, Check, AlertCirc
 import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
-import { downloadBlob } from '../../lib/canvas/engine';
+import { canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
 
@@ -208,12 +208,13 @@ export function CensorImageWorkspace() {
   }, [imgElement, boxes, currentBox, isDrawing, censorMode, intensity, shape, selectedId]);
 
   /** The censored image as it should be saved: no editing outline, white behind transparency for JPG */
-  const exportBlob = (format: OutputFormat, quality = 0.95) =>
-    new Promise<Blob | null>((res) => {
-      const c = document.createElement('canvas');
-      paint(c, false, format === 'jpeg' ? '#ffffff' : undefined);
-      c.toBlob(res, `image/${format}`, quality);
-    });
+  const exportBlob = (format: OutputFormat, quality = 0.95, download = false): Promise<Blob | null> => {
+    const c = document.createElement('canvas');
+    paint(c, false, format === 'jpeg' ? '#ffffff' : undefined);
+    // Downloads get the smaller lossless PNG encoder; previews and clipboard copies stay fast
+    if (download) return canvasToBlob(c, `image/${format}`, quality, undefined, forDownload(`image/${format}`));
+    return new Promise((res) => c.toBlob(res, `image/${format}`, quality));
+  };
 
   // Coordinate mapping from mouse/touch to image natural pixels
   const getCoordsFromPoint = (clientX: number, clientY: number) => {
@@ -402,7 +403,7 @@ export function CensorImageWorkspace() {
 
   const handleDownload = async (format: OutputFormat = 'png') => {
     if (!imgElement) return;
-    const blob = await exportBlob(format);
+    const blob = await exportBlob(format, 0.95, true);
     if (blob) downloadBlob(blob, `redacted-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 

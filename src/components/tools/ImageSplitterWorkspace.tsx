@@ -5,7 +5,7 @@ import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
-import { canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 
 interface SplitPreset {
   id: string;
@@ -148,7 +148,7 @@ export function ImageSplitterWorkspace() {
 
   // Download a single slice
   const downloadSingleSlice = async (r: number, c: number, index: number, format: TileFormat = 'png') => {
-    const blob = await canvasToBlob(getSliceCanvas(r, c), `image/${format}`, 0.95);
+    const blob = await canvasToBlob(getSliceCanvas(r, c), `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
     downloadBlob(blob, `tile-${index + 1}-${r + 1}x${c + 1}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
@@ -169,7 +169,7 @@ export function ImageSplitterWorkspace() {
           const tileIndex = r * cols + c + 1;
           const canvas = getSliceCanvas(r, c);
 
-          zip.file(`tile_${String(tileIndex).padStart(2, '0')}.${format === 'jpeg' ? 'jpg' : format}`, await canvasToBlob(canvas, `image/${format}`, 0.95));
+          zip.file(`tile_${String(tileIndex).padStart(2, '0')}.${format === 'jpeg' ? 'jpg' : format}`, await canvasToBlob(canvas, `image/${format}`, 0.95, undefined, forDownload(`image/${format}`)));
 
           completed++;
           setZipProgress(Math.round((completed / totalTiles) * 80));

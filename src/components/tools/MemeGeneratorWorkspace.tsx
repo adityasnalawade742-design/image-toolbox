@@ -6,7 +6,7 @@ import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT, useLocale } from '../shared/I18nContext';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import type { StringKey } from '../../i18n/strings';
-import { wrapTextLines, formatBytes, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { wrapTextLines, formatBytes, canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 import { DragFrameOverlay, type FrameBox } from '../shared/DragFrameOverlay';
 
 type CaptionId = 'top' | 'middle' | 'bottom';
@@ -243,7 +243,7 @@ export function MemeGeneratorWorkspace() {
 
   const handleDownload = async (format: SaveFormat = 'png') => {
     if (!canvasRef.current) return;
-    const blob = await canvasToBlob(canvasRef.current, `image/${format}`, 0.95);
+    const blob = await canvasToBlob(canvasRef.current, `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
     downloadBlob(blob, `meme-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 

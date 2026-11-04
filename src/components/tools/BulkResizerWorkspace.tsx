@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
-import { loadImage, canvasToBlob, downloadBlob, stepDown } from '../../lib/canvas/engine';
+import { loadImage, canvasToBlob, downloadBlob, stepDown, forDownload } from '../../lib/canvas/engine';
 import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { ProofDropZone } from '../shared/ProofDropZone';
@@ -186,7 +186,7 @@ export function BulkResizerWorkspace() {
         ctx.imageSmoothingQuality = 'high';
         ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, 0, 0, canvas.width, canvas.height);
 
-        const blob = await canvasToBlob(canvas, outFormat, 0.9, undefined, { best: true });
+        const blob = await canvasToBlob(canvas, outFormat, 0.95, undefined, forDownload(outFormat));
         const outputExt = formatExtension((blob.type || outFormat) as OutputFormat);
 
         setQueue((prev) =>
