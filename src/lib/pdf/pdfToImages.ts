@@ -2,6 +2,7 @@
  * Render PDF pages to images in the browser with pdf.js (Apache-2.0).
  * The worker is bundled with the site; fonts, character maps and decoders are copied to /pdfjs/ at build time.
  */
+import { canvasToBlob, forDownload } from '../canvas/engine';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 
 export type PageImageFormat = 'image/jpeg' | 'image/png';
@@ -60,9 +61,10 @@ export async function renderPage(doc: PDFDocumentProxy, pageNumber: number, dpi:
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   await page.render({ canvas, canvasContext: ctx, viewport }).promise;
   page.cleanup();
-  const blob = await new Promise<Blob>((resolve, reject) =>
-    canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('encode failed'))), format, 0.9)
-  );
+  const blob =
+    format === 'image/png'
+      ? await canvasToBlob(canvas, format, 1, undefined, forDownload(format))
+      : await new Promise<Blob>((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('encode failed'))), format, 0.95));
   canvas.width = canvas.height = 0;
   return blob;
 }

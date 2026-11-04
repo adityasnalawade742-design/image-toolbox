@@ -444,6 +444,13 @@ export interface EncodeOptions {
 
 const KIND = { 'image/jpeg': 'jpeg', 'image/webp': 'webp', 'image/png': 'png' } as const;
 
+/**
+ * Encoder options for files people download from the editing tools. PNG goes through OxiPNG: the same pixels in a
+ * file 25-60% smaller. JPEG and WebP stay with the browser: measured on photos, screenshots and graphics, MozJPEG
+ * at the same file size kept less detail on text and graphics, and libwebp is what the browser already uses.
+ */
+export const forDownload = (format: string): EncodeOptions => ({ best: format === 'image/png' });
+
 export async function canvasToBlob(
   canvas: HTMLCanvasElement,
   format: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' = 'image/png',

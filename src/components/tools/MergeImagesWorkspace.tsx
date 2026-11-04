@@ -5,7 +5,7 @@ import { ImageOrderList } from '../shared/ImageOrderList';
 import { useImageList } from '../shared/useImageList';
 import { useT } from '../shared/I18nContext';
 import { layoutMerge, fitToCanvasLimits, type MergeDirection } from '../../lib/canvas/mergeLayout';
-import { canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage } from '../shared/MediaViewer';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
@@ -67,7 +67,7 @@ export function MergeImagesWorkspace() {
     try {
       const canvas = document.createElement('canvas');
       draw(canvas, 1);
-      const blob = await canvasToBlob(canvas, format, 0.92);
+      const blob = await canvasToBlob(canvas, format, 0.92, undefined, forDownload(format));
       canvas.width = canvas.height = 0;
       downloadBlob(blob, `merged.${format === 'image/jpeg' ? 'jpg' : format === 'image/png' ? 'png' : 'webp'}`);
     } catch {

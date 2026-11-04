@@ -4,7 +4,7 @@ import { useImageIntake } from '../shared/useImageIntake';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
-import { formatBytes, canvasToBlob, downloadBlob } from '../../lib/canvas/engine';
+import { formatBytes, canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 
 interface FilterPreset {
@@ -167,7 +167,7 @@ export function PhotoFiltersWorkspace() {
   };
 
   const handleDownload = async (format: SaveFormat = 'png') => {
-    const blob = await canvasToBlob(renderCanvas(), `image/${format}`, 0.95);
+    const blob = await canvasToBlob(renderCanvas(), `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
     downloadBlob(blob, `filtered-${activePreset}-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
