@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { selfHostModels } from './self-host-models.mjs';
+import { setSitemapDates } from './sitemap-lastmod.mjs';
 
 const distAstroDir = path.resolve('dist/_astro');
 
@@ -34,3 +35,4 @@ if (fs.existsSync(path.resolve('dist'))) {
 }
 
 if (fs.existsSync(path.resolve('dist'))) await selfHostModels();
+if (fs.existsSync(path.resolve('dist'))) await setSitemapDates();
