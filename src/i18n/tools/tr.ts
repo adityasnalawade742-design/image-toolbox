@@ -5847,7 +5847,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "Resminizi ekleyin",
-        description: "Bir JPG veya PNG bırakın ya da seçin. WebP ve HEIC önce JPG'ye dönüştürülür.",
+        description: "Bir JPG veya PNG bırakın ya da seçin. WebP, TIFF ve HEIC önce dönüştürülür: TIFF ve saydam resimler PNG’ye, fotoğraflar JPG’ye.",
       },
       {
         title: "DPI değerini seçin",

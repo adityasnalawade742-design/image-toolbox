@@ -6169,7 +6169,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "howToSteps": [
       {
         "title": "Add your image",
-        "description": "Drop or choose a JPG or PNG. WebP and HEIC are converted to JPG first."
+        "description": "Drop or choose a JPG or PNG. WebP, TIFF and HEIC are converted first: TIFF and transparent images to PNG, photos to JPG."
       },
       {
         "title": "Choose the DPI",

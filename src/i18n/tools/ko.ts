@@ -5845,7 +5845,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "이미지 추가",
-        description: "JPG나 PNG를 끌어다 놓거나 선택하세요. WebP와 HEIC는 먼저 JPG로 변환돼요.",
+        description: "JPG나 PNG를 끌어다 놓거나 선택하세요. WebP, TIFF, HEIC는 먼저 변환돼요. TIFF와 투명 이미지는 PNG로, 사진은 JPG로 바뀌어요.",
       },
       {
         title: "DPI 고르기",

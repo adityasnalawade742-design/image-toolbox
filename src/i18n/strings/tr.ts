@@ -833,7 +833,7 @@ export const strings = {
   'ctl.croppdf.note': 'Kırpılan alan silinmez, gizlenir; bu yüzden bir PDF düzenleyici onu geri getirebilir.',
 
   // Change DPI
-  'ctl.dpi.dropHint': 'JPG veya PNG (WebP, TIFF ve iPhone HEIC dosyaları JPG’ye dönüştürülür). Pikseller değişmez.',
+  'ctl.dpi.dropHint': 'JPG veya PNG dosyalarının pikselleri aynen korunur. WebP, TIFF ve iPhone HEIC önce dönüştürülür: TIFF ve saydam resimler PNG’ye, fotoğraflar JPG’ye.',
   'ctl.dpi.newDpi': 'Yeni DPI',
   'ctl.dpi.custom': 'Veya bir DPI yazın',
   'ctl.dpi.current': 'Mevcut DPI',
@@ -841,6 +841,7 @@ export const strings = {
   'ctl.dpi.printSize': 'Baskı boyutu',
   'ctl.dpi.note': 'DPI yalnızca yazıcılara resmin ne kadar büyük basılacağını söyler. Pikseller, kalite ve dosya boyutu aynı kalır.',
   'ctl.dpi.converted': 'Bu resim JPG’ye dönüştürüldü, çünkü yalnızca JPG ve PNG dosyaları DPI değeri saklayabilir.',
+  'ctl.dpi.convertedPng': 'Bu resim PNG’ye dönüştürüldü, çünkü yalnızca JPG ve PNG dosyaları DPI değeri saklayabilir. PNG her pikseli ve saydamlığı aynen korur.',
   'ctl.dpi.summary': 'Bu resim {dpi} DPI ile {cm} boyutunda basılır.',
 
   // Signature extractor

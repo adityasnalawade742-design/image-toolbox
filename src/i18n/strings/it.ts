@@ -833,7 +833,7 @@ export const strings = {
   'ctl.croppdf.note': 'L’area rifilata viene nascosta, non eliminata, quindi un editor PDF può ancora ripristinarla.',
 
   // Change DPI
-  'ctl.dpi.dropHint': 'JPG o PNG (WebP, TIFF e HEIC di iPhone vengono convertiti in JPG). I pixel non vengono modificati.',
+  'ctl.dpi.dropHint': 'JPG o PNG mantengono i pixel esatti. WebP, TIFF e HEIC di iPhone vengono prima convertiti: TIFF e immagini trasparenti in PNG, foto in JPG.',
   'ctl.dpi.newDpi': 'Nuovi DPI',
   'ctl.dpi.custom': 'Oppure digita i DPI',
   'ctl.dpi.current': 'DPI attuali',
@@ -841,6 +841,7 @@ export const strings = {
   'ctl.dpi.printSize': 'Formato di stampa',
   'ctl.dpi.note': 'I DPI dicono solo alle stampanti quanto stampare grande l’immagine. Pixel, qualità e peso del file restano gli stessi.',
   'ctl.dpi.converted': 'Questa immagine è stata convertita in JPG, perché solo i file JPG e PNG possono salvare un valore DPI.',
+  'ctl.dpi.convertedPng': 'Questa immagine è stata convertita in PNG, perché solo i file JPG e PNG possono salvare un valore DPI. Il PNG mantiene ogni pixel e la trasparenza esattamente.',
   'ctl.dpi.summary': 'A {dpi} DPI questa immagine viene stampata a {cm}.',
 
   // Signature extractor

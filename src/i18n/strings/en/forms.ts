@@ -1,7 +1,7 @@
 // Interface strings for the form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker.
 export const formStrings = {
   // Change DPI
-  'ctl.dpi.dropHint': 'JPG or PNG (WebP, TIFF and iPhone HEIC are converted to JPG). The pixels are not changed.',
+  'ctl.dpi.dropHint': 'JPG or PNG keep their exact pixels. WebP, TIFF and iPhone HEIC are converted first: TIFF and transparent images to PNG, photos to JPG.',
   'ctl.dpi.newDpi': 'New DPI',
   'ctl.dpi.custom': 'Or type a DPI',
   'ctl.dpi.current': 'Current DPI',
@@ -9,6 +9,7 @@ export const formStrings = {
   'ctl.dpi.printSize': 'Print size',
   'ctl.dpi.note': 'DPI only tells printers how big to print the image. The pixels, quality and file size stay the same.',
   'ctl.dpi.converted': 'This image was converted to JPG, because only JPG and PNG files can store a DPI value.',
+  'ctl.dpi.convertedPng': 'This image was converted to PNG, because only JPG and PNG files can store a DPI value. PNG keeps every pixel and any transparency exactly.',
   'ctl.dpi.summary': 'At {dpi} DPI this image prints at {cm}.',
 
   // Signature extractor

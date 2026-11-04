@@ -55,7 +55,7 @@ export async function setSitemapDates() {
     const h = fingerprint(fs.readFileSync(file, 'utf8'));
     const before = previous && previous[loc];
     const date = before && before.h === h ? before.d : today;
-    if (date === today) changed++;
+    if (!before || before.h !== h) changed++;
     state[loc] = { h, d: date };
     const withoutDate = inner.replace(/\s*<lastmod>[^<]*<\/lastmod>/, '');
     return previous ? `<url>${withoutDate.replace(/(<\/loc>)/, `$1\n    <lastmod>${date}</lastmod>`)}</url>` : `<url>${withoutDate}</url>`;
@@ -64,7 +64,7 @@ export async function setSitemapDates() {
   fs.writeFileSync(path.join(DIST, STATE_FILE), JSON.stringify(state));
   console.log(
     previous
-      ? `[post-build] Sitemap dates: ${changed} of ${Object.keys(state).length} pages changed or new, the rest keep their dates`
+      ? `[post-build] Sitemap dates: ${changed} of ${Object.keys(state).length} pages changed or new since the live site, the rest keep their dates`
       : `[post-build] Sitemap dates: live state unavailable, lastmod left out this time`
   );
 }

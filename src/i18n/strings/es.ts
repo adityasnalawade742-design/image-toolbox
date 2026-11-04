@@ -812,7 +812,7 @@ export const strings = {
   'ctl.croppdf.left': 'Izquierda',
   'ctl.croppdf.note': 'La zona recortada se oculta, no se borra, así que un editor de PDF aún puede restaurarla.',
   // Form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker
-  'ctl.dpi.dropHint': 'JPG o PNG (WebP, TIFF y HEIC de iPhone se convierten a JPG). Los píxeles no cambian.',
+  'ctl.dpi.dropHint': 'JPG o PNG conservan sus píxeles exactos. WebP, TIFF y HEIC de iPhone se convierten primero: TIFF e imágenes transparentes a PNG, fotos a JPG.',
   'ctl.dpi.newDpi': 'Nuevos DPI',
   'ctl.dpi.custom': 'O escribe los DPI',
   'ctl.dpi.current': 'DPI actuales',
@@ -820,6 +820,7 @@ export const strings = {
   'ctl.dpi.printSize': 'Tamaño de impresión',
   'ctl.dpi.note': 'Los DPI solo indican a las impresoras de qué tamaño imprimir la imagen. Los píxeles, la calidad y el tamaño del archivo no cambian.',
   'ctl.dpi.converted': 'Esta imagen se ha convertido a JPG, porque solo los archivos JPG y PNG pueden guardar un valor de DPI.',
+  'ctl.dpi.convertedPng': 'Esta imagen se ha convertido a PNG, porque solo los archivos JPG y PNG pueden guardar un valor de DPI. PNG conserva cada píxel y la transparencia exactamente.',
   'ctl.dpi.summary': 'A {dpi} DPI, esta imagen se imprime a {cm}.',
   'ctl.sig.dropHint': 'Una foto o un escaneo de tu firma en papel blanco. JPG, PNG, WebP, TIFF o HEIC de iPhone.',
   'ctl.sig.sensitivity': 'Sensibilidad',

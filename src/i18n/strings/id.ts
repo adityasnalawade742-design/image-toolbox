@@ -833,7 +833,7 @@ export const strings = {
   'ctl.croppdf.note': 'Area yang dipangkas disembunyikan, bukan dihapus, jadi editor PDF masih bisa memulihkannya.',
 
   // ===== Change DPI =====
-  'ctl.dpi.dropHint': 'JPG atau PNG (WebP, TIFF dan HEIC iPhone dikonversi ke JPG). Pikselnya tidak diubah.',
+  'ctl.dpi.dropHint': 'JPG atau PNG tetap mempertahankan piksel yang persis sama. WebP, TIFF dan HEIC iPhone dikonversi dulu: TIFF dan gambar transparan ke PNG, foto ke JPG.',
   'ctl.dpi.newDpi': 'DPI baru',
   'ctl.dpi.custom': 'Atau ketik DPI',
   'ctl.dpi.current': 'DPI saat ini',
@@ -841,6 +841,7 @@ export const strings = {
   'ctl.dpi.printSize': 'Ukuran cetak',
   'ctl.dpi.note': 'DPI hanya memberi tahu printer seberapa besar gambar dicetak. Piksel, kualitas, dan ukuran file tetap sama.',
   'ctl.dpi.converted': 'Gambar ini dikonversi ke JPG, karena hanya file JPG dan PNG yang bisa menyimpan nilai DPI.',
+  'ctl.dpi.convertedPng': 'Gambar ini dikonversi ke PNG, karena hanya file JPG dan PNG yang bisa menyimpan nilai DPI. PNG mempertahankan setiap piksel dan transparansi persis sama.',
   'ctl.dpi.summary': 'Pada {dpi} DPI, gambar ini tercetak berukuran {cm}.',
 
   // ===== Signature extractor =====

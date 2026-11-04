@@ -5833,7 +5833,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "Tambahkan gambar",
-        description: "Letakkan atau pilih JPG atau PNG. WebP dan HEIC dikonversi ke JPG terlebih dahulu.",
+        description: "Letakkan atau pilih JPG atau PNG. WebP, TIFF dan HEIC dikonversi dulu: TIFF dan gambar transparan ke PNG, foto ke JPG.",
       },
       {
         title: "Pilih DPI",

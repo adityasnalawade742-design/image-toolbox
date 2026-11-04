@@ -5858,7 +5858,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "Bild hinzufügen",
-        description: "Zieh ein JPG oder PNG hierher oder wähle es aus. WebP und HEIC werden zuerst in JPG umgewandelt.",
+        description: "Lege ein JPG oder PNG ab oder wähle eines aus. WebP, TIFF und HEIC werden zuerst umgewandelt: TIFF und transparente Bilder in PNG, Fotos in JPG.",
       },
       {
         title: "DPI wählen",
