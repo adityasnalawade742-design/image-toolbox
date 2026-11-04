@@ -77,6 +77,8 @@ export interface BorderOptions {
 }
 
 export interface ImageProcessingOptions {
+  /** The (cropped) source already shrunk to the target size, e.g. by lanczosDownscale: drawn as it is */
+  downscaled?: HTMLCanvasElement;
   width?: number;
   height?: number;
   quality?: number;
@@ -197,31 +199,58 @@ export function stepDown(
   return { source, sx: x, sy: y, sw: w, sh: h };
 }
 
-export function processCanvas(
-  img: HTMLImageElement,
-  options: ImageProcessingOptions = {}
-): HTMLCanvasElement {
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d', { willReadFrequently: true, colorSpace: options.colorSpace ?? 'srgb' });
-  if (!ctx) throw new Error('Canvas 2D context not available');
+let picaInstance: Promise<import('pica').default> | null = null;
 
-  // 1. Source Crop Dimensions
+/**
+ * Shrink part of an image with a Lanczos3 filter (pica). Measured against the browser's stepped shrinking on photos,
+ * a 300 DPI page, hard edges, a zone plate and transparent shapes: less moiré, fewer halos, sharper detail and no
+ * fringes on transparent edges. Returns null when nothing shrinks, for wide-gamut canvases (pica works in sRGB) or if
+ * pica fails, so callers fall back to stepDown.
+ */
+export async function lanczosDownscale(
+  src: CanvasImageSource,
+  sx: number,
+  sy: number,
+  sw: number,
+  sh: number,
+  targetW: number,
+  targetH: number,
+  colorSpace: PredefinedColorSpace = 'srgb'
+): Promise<HTMLCanvasElement | null> {
+  if (colorSpace !== 'srgb' || (targetW >= sw && targetH >= sh)) return null;
+  try {
+    if (!picaInstance) picaInstance = import('pica').then(({ default: Pica }) => new Pica({ features: ['js', 'wasm'] }));
+    const pica = await picaInstance;
+    const from = document.createElement('canvas');
+    from.width = Math.round(sw);
+    from.height = Math.round(sh);
+    from.getContext('2d', { willReadFrequently: true })!.drawImage(src, sx, sy, sw, sh, 0, 0, from.width, from.height);
+    const to = document.createElement('canvas');
+    to.width = Math.max(1, Math.round(targetW));
+    to.height = Math.max(1, Math.round(targetH));
+    await pica.resize(from, to, { filter: 'lanczos3' });
+    from.width = from.height = 0;
+    return to;
+  } catch (err) {
+    console.warn('Lanczos downscale failed, using the browser:', err);
+    return null;
+  }
+}
+
+/** The part of the image processCanvas draws, and the size it draws it at */
+function sourceGeometry(img: HTMLImageElement, options: ImageProcessingOptions) {
   let srcX = 0;
   let srcY = 0;
   let srcW = img.naturalWidth || img.width;
   let srcH = img.naturalHeight || img.height;
-
   if (options.crop) {
     srcX = Math.max(0, Math.min(srcW - 1, options.crop.x));
     srcY = Math.max(0, Math.min(srcH - 1, options.crop.y));
     srcW = Math.max(1, Math.min(srcW - srcX, options.crop.width));
     srcH = Math.max(1, Math.min(srcH - srcY, options.crop.height));
   }
-
-  // 2. Base Target Dimensions
   let targetW = options.width || srcW;
   let targetH = options.height || srcH;
-
   // A circle from a non-square photo: take a square around the chosen point, so the circle fills the frame
   // instead of leaving empty margins on the long sides
   if (options.isCircle && !options.crop && srcW !== srcH) {
@@ -233,6 +262,28 @@ export function processCanvas(
     srcW = srcH = side;
     targetW = targetH = Math.max(1, Math.round(side * scale));
   }
+  return { srcX, srcY, srcW, srcH, targetW, targetH };
+}
+
+/** processCanvas for files people download: any shrinking is done with Lanczos first */
+export async function processCanvasBest(img: HTMLImageElement, options: ImageProcessingOptions = {}): Promise<HTMLCanvasElement> {
+  const g = sourceGeometry(img, options);
+  const downscaled = await lanczosDownscale(img, g.srcX, g.srcY, g.srcW, g.srcH, g.targetW, g.targetH, options.colorSpace);
+  const canvas = processCanvas(img, downscaled ? { ...options, downscaled } : options);
+  if (downscaled) downscaled.width = downscaled.height = 0;
+  return canvas;
+}
+
+export function processCanvas(
+  img: HTMLImageElement,
+  options: ImageProcessingOptions = {}
+): HTMLCanvasElement {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true, colorSpace: options.colorSpace ?? 'srgb' });
+  if (!ctx) throw new Error('Canvas 2D context not available');
+
+  // 1-2. Source crop and target size
+  const { srcX, srcY, srcW, srcH, targetW, targetH } = sourceGeometry(img, options);
 
   // 3. Rotation Bounding Box Mathematics
   const angleDeg = options.rotation || 0;
@@ -278,8 +329,10 @@ export function processCanvas(
     ctx.clip();
   }
 
-  // Sharp downscales: shrink in steps, then the last step with the best smoothing the browser has
-  const down = stepDown(img, srcX, srcY, srcW, srcH, targetW, targetH, options.colorSpace);
+  // Sharp downscales: shrink in steps, then the last step with the best smoothing the browser has. Downloads pass a
+  // source already shrunk with Lanczos instead (processCanvasBest)
+  const pre = options.downscaled && options.downscaled.width === targetW && options.downscaled.height === targetH ? options.downscaled : null;
+  const down = pre ? { source: pre, sx: 0, sy: 0, sw: targetW, sh: targetH } : stepDown(img, srcX, srcY, srcW, srcH, targetW, targetH, options.colorSpace);
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, -targetW / 2, -targetH / 2, targetW, targetH);

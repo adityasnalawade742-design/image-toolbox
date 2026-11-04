@@ -838,7 +838,7 @@ export const strings = {
   'ctl.croppdf.note': '切り取った部分は削除されず非表示になるだけなので、PDF編集ソフトで元に戻せます。',
 
   // ===== Change DPI =====
-  'ctl.dpi.dropHint': 'JPGまたはPNG（WebP、TIFFとiPhoneのHEICはJPGに変換されます）。ピクセルは変更されません。',
+  'ctl.dpi.dropHint': 'JPGとPNGはピクセルがそのまま保たれます。WebP、TIFF、iPhoneのHEICは先に変換されます。TIFFと透過画像はPNGに、写真はJPGになります。',
   'ctl.dpi.newDpi': '新しいDPI',
   'ctl.dpi.custom': 'またはDPIを入力',
   'ctl.dpi.current': '現在のDPI',
@@ -846,6 +846,7 @@ export const strings = {
   'ctl.dpi.printSize': '印刷サイズ',
   'ctl.dpi.note': 'DPIは、画像をどの大きさで印刷するかをプリンターに伝えるだけです。ピクセル、画質、ファイルサイズは変わりません。',
   'ctl.dpi.converted': 'DPIの値を保存できるのはJPGとPNGだけなので、この画像はJPGに変換されました。',
+  'ctl.dpi.convertedPng': 'DPIの値を保存できるのはJPGとPNGだけなので、この画像はPNGに変換されました。PNGはすべてのピクセルと透過をそのまま保ちます。',
   'ctl.dpi.summary': '{dpi} DPIでは、この画像は{cm}で印刷されます。',
 
   // ===== Signature extractor =====

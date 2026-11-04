@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
-import { loadImage, canvasToBlob, downloadBlob, stepDown, forDownload } from '../../lib/canvas/engine';
+import { loadImage, canvasToBlob, downloadBlob, stepDown, forDownload, lanczosDownscale } from '../../lib/canvas/engine';
 import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { ProofDropZone } from '../shared/ProofDropZone';
@@ -182,7 +182,9 @@ export function BulkResizerWorkspace() {
         }
         const iw = img.naturalWidth || img.width;
         const ih = img.naturalHeight || img.height;
-        const down = stepDown(img, 0, 0, iw, ih, canvas.width, canvas.height);
+        // Lanczos shrinking (sharper, no moiré or fringes); the browser's stepped shrinking if it isn't available
+        const pre = await lanczosDownscale(img, 0, 0, iw, ih, canvas.width, canvas.height);
+        const down = pre ? { source: pre, sx: 0, sy: 0, sw: pre.width, sh: pre.height } : stepDown(img, 0, 0, iw, ih, canvas.width, canvas.height);
         ctx.imageSmoothingQuality = 'high';
         ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, 0, 0, canvas.width, canvas.height);
 

@@ -809,7 +809,7 @@ export const strings = {
   'ctl.croppdf.left': "Gauche",
   'ctl.croppdf.note': "La zone rognée est masquée, pas supprimée : un éditeur PDF peut donc encore la restaurer.",
   // Form and ID helpers: Change DPI, Signature Extractor, Passport Photo Maker
-  'ctl.dpi.dropHint': "JPG ou PNG (les WebP, TIFF et HEIC d’iPhone sont convertis en JPG). Les pixels ne sont pas modifiés.",
+  'ctl.dpi.dropHint': 'Les JPG ou PNG gardent leurs pixels exacts. Les WebP, TIFF et HEIC d’iPhone sont d’abord convertis : TIFF et images transparentes en PNG, photos en JPG.',
   'ctl.dpi.newDpi': "Nouveau DPI",
   'ctl.dpi.custom': "Ou saisissez un DPI",
   'ctl.dpi.current': "DPI actuel",
@@ -817,6 +817,7 @@ export const strings = {
   'ctl.dpi.printSize': "Taille d’impression",
   'ctl.dpi.note': "Le DPI indique seulement aux imprimantes à quelle taille imprimer l’image. Les pixels, la qualité et la taille du fichier restent les mêmes.",
   'ctl.dpi.converted': "Cette image a été convertie en JPG, car seuls les fichiers JPG et PNG peuvent stocker une valeur DPI.",
+  'ctl.dpi.convertedPng': 'Cette image a été convertie en PNG, car seuls les fichiers JPG et PNG peuvent stocker une valeur DPI. Le PNG garde chaque pixel et la transparence à l’identique.',
   'ctl.dpi.summary': "À {dpi} DPI, cette image s’imprime en {cm}.",
   'ctl.sig.dropHint': "Une photo ou un scan de votre signature sur papier blanc. JPG, PNG, WebP, TIFF ou HEIC d’iPhone.",
   'ctl.sig.sensitivity': "Sensibilité",

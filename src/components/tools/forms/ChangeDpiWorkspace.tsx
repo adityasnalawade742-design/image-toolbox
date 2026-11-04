@@ -6,7 +6,7 @@ import { PdfToolLayout } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { detectFormat, printSize, readDpi, setDpi } from '../../../lib/canvas/dpi';
-import { downloadBlob } from '../../../lib/canvas/engine';
+import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 const PRESETS = [72, 96, 150, 200, 300, 600];
@@ -17,8 +17,8 @@ interface Source {
   bytes: Uint8Array;
   mime: 'image/jpeg' | 'image/png';
   current: number | null;
-  /** The upload wasn't JPEG or PNG, so it was converted to JPEG first */
-  converted: boolean;
+  /** The upload wasn't JPEG or PNG, so it was converted first: to PNG when lossless or transparent, else JPEG */
+  converted: false | 'png' | 'jpeg';
 }
 
 export function ChangeDpiWorkspace() {
@@ -37,20 +37,34 @@ export function ChangeDpiWorkspace() {
       const image = await loadImageFile(file);
       let bytes = new Uint8Array(await file.arrayBuffer());
       let format = detectFormat(bytes);
-      let converted = false;
+      let converted: Source['converted'] = false;
       if (!format) {
-        // Only JPEG and PNG store a DPI value: convert anything else to a high-quality JPEG
+        // Only JPEG and PNG store a DPI value, so anything else is converted. TIFFs (usually lossless print files),
+        // lossless WebP and anything with transparency become PNG with the exact same pixels; photos that were
+        // already compressed (HEIC, ordinary WebP) become a high-quality JPEG, which would be many times larger as PNG.
         const c = document.createElement('canvas');
         c.width = image.width;
         c.height = image.height;
-        const ctx = c.getContext('2d')!;
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, c.width, c.height);
+        const ctx = c.getContext('2d', { willReadFrequently: true })!;
         ctx.drawImage(image.img, 0, 0);
-        const blob = await new Promise<Blob>((res, rej) => c.toBlob((b) => (b ? res(b) : rej()), 'image/jpeg', 0.95));
+        const alpha = ctx.getImageData(0, 0, c.width, c.height).data;
+        let transparent = false;
+        for (let i = 3; i < alpha.length; i += 4) if (alpha[i] < 255) { transparent = true; break; }
+        const tiff = /\.tiff?$/i.test(file.name) || file.type === 'image/tiff';
+        const losslessWebp = String.fromCharCode(...bytes.subarray(12, 16)) === 'VP8L';
+        let blob: Blob;
+        if (tiff || losslessWebp || transparent) {
+          blob = await canvasToBlob(c, 'image/png', 1, undefined, { best: true });
+          format = 'png';
+        } else {
+          ctx.globalCompositeOperation = 'destination-over';
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, c.width, c.height);
+          blob = await new Promise<Blob>((res, rej) => c.toBlob((b) => (b ? res(b) : rej()), 'image/jpeg', 0.95));
+          format = 'jpeg';
+        }
         bytes = new Uint8Array(await blob.arrayBuffer());
-        format = 'jpeg';
-        converted = true;
+        converted = format;
       }
       setSrc((prev) => {
         if (prev) URL.revokeObjectURL(prev.image.url);
@@ -144,7 +158,7 @@ export function ChangeDpiWorkspace() {
         </div>
       </dl>
       <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.dpi.note')}</p>
-      {src.converted && <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.dpi.converted')}</p>}
+      {src.converted && <p className="text-[13px] text-graphite leading-relaxed">{t(src.converted === 'png' ? 'ctl.dpi.convertedPng' : 'ctl.dpi.converted')}</p>}
     </>
   );
 

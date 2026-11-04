@@ -5844,7 +5844,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "画像を追加する",
-        description: "JPGまたはPNGをドロップまたは選択します。WebPとHEICは先にJPGに変換されます。",
+        description: "JPGかPNGをドロップするか選択します。WebP、TIFF、HEICは先に変換されます。TIFFと透過画像はPNGに、写真はJPGになります。",
       },
       {
         title: "DPIを選ぶ",

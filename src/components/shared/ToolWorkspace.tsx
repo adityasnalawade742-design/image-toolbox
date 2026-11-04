@@ -3,7 +3,7 @@ import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, Ar
 import {
   loadImage,
   createImageProxy,
-  processCanvas,
+  processCanvas, processCanvasBest,
   canvasToBlob,
   downloadBlob,
   generateFaviconBundle,
@@ -673,8 +673,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               const fullImg = imageElement;
               sizeTimerRef.current = window.setTimeout(() => {
                 if (estimateSeq !== estimateSeqRef.current || !fullImg) return;
-                const full = processCanvas(fullImg, getProcessingOptions(true));
-                canvasToBlob(full, format, quality / 100, 'preview-estimate', encodeOptions).then((b) => report(b, full.width, full.height)).catch(failed);
+                // Built the way the download is, so the size shown is the size you get
+                processCanvasBest(fullImg, getProcessingOptions(true))
+                  .then((full) => canvasToBlob(full, format, quality / 100, 'preview-estimate', encodeOptions).then((b) => report(b, full.width, full.height)))
+                  .catch(failed);
               }, 450);
             }
           }
@@ -847,8 +849,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   /** The file a download gives: full resolution, encoded in the chosen format and quality */
   const buildOutput = async (): Promise<Blob> => {
     if (slug === 'remove-image-metadata' && cleanFile) return new Blob([new Uint8Array(cleanFile)], { type: format });
-    // Always process from full-resolution original source image for pristine output quality
-    const canvas = processCanvas(imageElement!, getProcessingOptions(true));
+    // Always process from full-resolution original source image for pristine output quality, shrinking with Lanczos
+    const canvas = await processCanvasBest(imageElement!, getProcessingOptions(true));
     const blob = await canvasToBlob(canvas, format, quality / 100, undefined, encodeOptions);
     const kept = keepsOriginal(blob, canvas.width, canvas.height);
     setKeptOriginal(kept);

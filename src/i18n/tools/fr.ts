@@ -5864,7 +5864,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     howToSteps: [
       {
         title: "Ajoutez votre image",
-        description: "Déposez ou choisissez un JPG ou un PNG. Les WebP et HEIC sont d’abord convertis en JPG.",
+        description: "Déposez ou choisissez un JPG ou un PNG. Les WebP, TIFF et HEIC sont d’abord convertis : TIFF et images transparentes en PNG, photos en JPG.",
       },
       {
         title: "Choisissez le DPI",
