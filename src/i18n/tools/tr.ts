@@ -9046,4 +9046,248 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Kitapçık Oluşturucu",
+    shortName: "Kitapçık",
+    tagline: "Bir PDF’i kitapçık sırasına dizin; çift taraflı yazdırın, katlayın ve zımbalayın. Ücretsiz, cihazınızda.",
+    intro: "Kitapçık Oluşturucu, PDF sayfalarını katlanmış bir kitapçık (tel dikiş) için gereken sıraya dizer. Kâğıdın her yüzüne iki sayfa gelir; çift taraflı yazdırıp desteyi ikiye katladığınızda ve katlama yeri boyunca zımbaladığınızda sayfalar doğru sırayla okunur. Sayfa sayısı 4’ün katı değilse sona boş sayfalar eklenir. A4, Letter, A3 veya Tabloid kâğıt seçin ya da sayfaları tam boyutta tutun; Japonca veya Arapça için sağdan ciltlemeyi seçebilirsiniz. Sayfalar keskin vektör içerik olarak kalır.",
+    seoTitle: "Kitapçık Oluşturucu – PDF’i Kitapçık Olarak Yazdır",
+    seoDescription: "PDF’i yazdırılabilir kitapçığa dönüştürün: sayfalar çift taraflı baskı, katlama ve zımbalama için dizilir. A4, Letter, A3. Ücretsiz, yükleme yok.",
+    keywords: [
+      "kitapçık oluşturma",
+      "pdf kitapçık yapma",
+      "pdf kitapçık olarak yazdırma",
+      "kitapçık baskı",
+      "tel dikiş sayfa düzeni"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "Kitapçık yapmak istediğiniz PDF’i bırakın veya seçin."
+      },
+      {
+        title: "Kâğıdı seçin",
+        description: "Yazdıracağınız kâğıdı ve cilt yönünü seçin, önizlemede yaprakları kontrol edin."
+      },
+      {
+        title: "Yazdırın ve katlayın",
+        description: "PDF’i indirin, kısa kenardan çevirerek çift taraflı yazdırın, sonra katlayıp zımbalayın."
+      }
+    ],
+    features: [
+      {
+        title: "Doğru sayfa sırası",
+        description: "Sayfalar, katlanmış kitapçık 1, 2, 3… diye okunacak şekilde dizilir; boş sayfalar sona eklenir."
+      },
+      {
+        title: "Keskin sayfalar",
+        description: "Sayfalar vektör içerik olarak yerleştirilir, metin resme dönüştürülmez."
+      },
+      {
+        title: "Soldan veya sağdan cilt",
+        description: "Sağdan sola okunan diller için sağdan ciltleme."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kitapçığı nasıl yazdırırım?",
+        answer: "İndirdiğiniz PDF’i gerçek boyutta, “Kısa kenardan çevir” ayarıyla çift taraflı yazdırın. Yaprakların sırasını bozmayın, desteyi ikiye katlayın ve katlama yeri boyunca zımbalayın."
+      },
+      {
+        question: "Neden boş sayfalar eklendi?",
+        answer: "Her yaprak 4 sayfa taşır (her yüzde 2), bu yüzden sayfa sayısı 4’ün katına yuvarlanır. Boş sayfalar sona gelir."
+      },
+      {
+        question: "Sayfalarım küçülür mü?",
+        answer: "Aynı kâğıt boyutunda evet: bir yüzü iki sayfa paylaşır, bu yüzden A4 sayfalar A5 boyutunda basılır. Tam boyutta kalmaları için “Sayfa boyutunu koru” seçeneğini veya A3 gibi daha büyük bir kâğıdı seçin."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Kitapçık cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "N-up PDF",
+    shortName: "N-up PDF",
+    tagline: "Kâğıt tasarrufu veya ders notu için her yaprağa 2, 4, 6, 8, 9 ya da 16 PDF sayfası yerleştirin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "N-up PDF, bir PDF’in birden çok sayfasını her yaprağa sığabildiği en büyük boyutta yerleştirir: yan yana 2 slayt, ızgarada 4 sayfa, yaprak başına 16 sayfaya kadar. Ders slaytlarını not olarak yazdırmak, bir belgeyi daha az yaprakta gözden geçirmek veya kâğıt tasarrufu yapmak için kullanın. Yaprak, sayfalara uyacak şekilde döner; sıra yatay veya dikey ilerleyebilir, sayfalar arasına boşluk ve ince çerçeve ekleyebilirsiniz. Sayfalar keskin vektör içerik olarak kalır.",
+    seoTitle: "N-up PDF – Bir Kâğıda Birden Çok Sayfa, Ücretsiz",
+    seoDescription: "Birden çok PDF sayfasını tek kâğıda yazdırın: sayfa başına 2, 4, 6, 8, 9 veya 16, A4, Letter ya da A3 üzerinde. Ücretsiz, kayıt yok, dosya yüklenmez.",
+    keywords: [
+      "n-up pdf",
+      "pdf bir sayfaya birden fazla sayfa",
+      "pdf 2 sayfayı bir sayfaya",
+      "kâğıt başına 4 sayfa",
+      "slaytları not olarak yazdırma"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin."
+      },
+      {
+        title: "Düzeni seçin",
+        description: "Kâğıt başına sayfa sayısını, kâğıdı, sırayı ve boşluğu seçin, önizlemeyi kontrol edin."
+      },
+      {
+        title: "İndirin",
+        description: "Yeni PDF’i kaydedin ve gerçek boyutta yazdırın."
+      }
+    ],
+    features: [
+      {
+        title: "Yaprak başına 2 ila 16",
+        description: "Yaprak, sayfaları en büyük gösteren yöne döner."
+      },
+      {
+        title: "Keskin sayfalar",
+        description: "Sayfalar resim olarak değil, vektör içerik olarak yerleştirilir."
+      },
+      {
+        title: "Size özel düzen",
+        description: "Yatay veya dikey sıra, boşluk ve isteğe bağlı çerçeveler."
+      }
+    ],
+    faqs: [
+      {
+        question: "Slaytlar için hangi düzeni kullanmalıyım?",
+        answer: "Yaprak başına 2 slaytları okunaklı tutar; 4 veya 6 ders notlarına uygundur. Araç, geniş slaytlara en iyi uyması için yaprağı döndürür."
+      },
+      {
+        question: "Orijinal sayfa boyutunu koruyabilir miyim?",
+        answer: "Evet. İlk sayfanın boyutunu yaprak boyutu olarak kullanmak için “Sayfalarla aynı” seçeneğini seçin."
+      },
+      {
+        question: "Farklı boyutlardaki sayfalarla çalışır mı?",
+        answer: "Evet. Her sayfa kırpılmadan veya esnetilmeden yerine sığdırılır."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Yeni PDF cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Poster Bölücü",
+    shortName: "Poster Bölücü",
+    tagline: "Bir resmi birkaç sayfaya bölün ve normal bir yazıcıyla basarak büyük bir poster yapın. Ücretsiz, cihazınızda.",
+    intro: "Poster Bölücü, bir resmi birkaç A4, Letter veya A3 sayfaya yayarak büyütür; böylece sıradan bir yazıcıyla büyük bir poster basıp birleştirebilirsiniz. Yatayda kaç sayfa olacağını seçin; satır sayısı resmin şekline göre belirlenir. Sayfalar, yapıştırabilmeniz için seçtiğiniz miktarda üst üste biner; her sayfada kesim işaretleri ve nereye gideceğini gösteren A1 veya B2 gibi bir etiket bulunur. Araç son poster boyutunu gösterir ve resim o boyutta bulanık görünecekse uyarır.",
+    seoTitle: "Poster Bölücü – A4 Sayfalarla Büyük Poster Yazdır",
+    seoDescription: "Bir resmi birden çok A4, Letter veya A3 sayfaya bölüp büyük poster yazdırın; yapıştırma payı, kesim işaretleri ve etiketlerle. Ücretsiz, yükleme yok.",
+    keywords: [
+      "poster bölme",
+      "resmi birden fazla sayfaya bölme",
+      "a4 ile büyük poster yazdırma",
+      "resmi parçalara bölerek yazdırma",
+      "büyük resim çıktısı alma"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir JPG, PNG, WebP, HEIC veya TIFF bırakın ya da seçin."
+      },
+      {
+        title: "Boyutu seçin",
+        description: "Yataydaki sayfa sayısını, kâğıdı ve yapıştırma payını ayarlayın; önizleme resmin nasıl bölündüğünü gösterir."
+      },
+      {
+        title: "Yazdırın ve birleştirin",
+        description: "PDF’i gerçek boyutta yazdırın, örtüşen kenarları kesin ve sayfaları sırayla yapıştırın."
+      }
+    ],
+    features: [
+      {
+        title: "Yatayda 10 sayfaya kadar",
+        description: "Poster boyutu santimetre ve inç olarak gösterilir."
+      },
+      {
+        title: "Pay, işaretler ve etiketler",
+        description: "Yapıştırma payı, kesim işaretleri ve A1, B2 gibi etiketler."
+      },
+      {
+        title: "Orijinal kalite",
+        description: "JPG ve PNG resimler PDF’e değiştirilmeden girer."
+      }
+    ],
+    faqs: [
+      {
+        question: "Posteri nasıl birleştiririm?",
+        answer: "Gerçek boyutta yazdırın. Komşu sayfayla örtüşen kenarlardaki beyaz payı kesin, örtüşen kısımları hizalayın ve sayfaları yapıştırın ya da bantlayın: üst sırada A1, A2…, altında B1, B2…"
+      },
+      {
+        question: "Poster ne kadar büyük olabilir?",
+        answer: "Yatayda 10 sayfaya kadar; yükseklik resme bağlıdır. Net bir sonuç için son boyutta inç başına en az 100 piksel hedefleyin. Daha düşükse araç uyarır."
+      },
+      {
+        question: "Neden beyaz bir kenar var?",
+        answer: "Çoğu yazıcı kâğıdın kenarına kadar basamaz. Kenar, resmi yazdırılabilir alanın içinde tutar ve kesim işaretleriyle etiketlere yer açar."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. PDF cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Yazdırılabilir Kareli Kâğıt Oluşturucu",
+    shortName: "Kareli Kâğıt",
+    tagline: "mm veya inç cinsinden yazdırılabilir kareli kâğıt yapın: kareler, noktalar, izometrik, altıgenler veya çizgiler. Ücretsiz, PDF veya PNG olarak.",
+    intro: "Yazdırılabilir Kareli Kâğıt Oluşturucu, yazdırmak için ızgaralı bir sayfa hazırlar: isteğe bağlı kalın çizgili kare ızgara (milimetrik kâğıt), bullet journal için noktalı ızgara, 3D çizim için izometrik ızgara, oyunlar ve kimya için altıgenler ya da çizgili kâğıt. Aralığı milimetre veya inç olarak, çizgi rengini ve kalınlığını, kâğıt boyutunu ve kenar boşluğunu ayarlayın. PDF vektör çizgilerle çizilir, bu yüzden gerçek boyutta yazdırıldığında ızgara tam ve keskin kalır.",
+    seoTitle: "Kareli Kâğıt Oluşturucu – Milimetrik, Noktalı, İzometrik",
+    seoDescription: "Yazdırılabilir kareli kâğıt yapın: kare, noktalı, izometrik, altıgen veya çizgili; mm ya da inç; A4, Letter, A3 veya A5. Ücretsiz PDF veya PNG.",
+    keywords: [
+      "kareli kâğıt pdf",
+      "milimetrik kağıt yazdır",
+      "noktalı defter sayfası",
+      "izometrik kağıt",
+      "altıgen kağıt pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Kâğıt türünü seçin",
+        description: "Kareler, noktalar, izometrik, altıgenler veya çizgiler."
+      },
+      {
+        title: "Ayarlayın",
+        description: "Aralığı, çizgi rengini ve kalınlığını, kâğıt boyutunu ve kenar boşluğunu seçin."
+      },
+      {
+        title: "İndirin ve yazdırın",
+        description: "PDF veya PNG’yi kaydedin ve gerçek boyutta (%100) yazdırın."
+      }
+    ],
+    features: [
+      {
+        title: "Beş tür kâğıt",
+        description: "Kareli, noktalı, izometrik, altıgen ve çizgili."
+      },
+      {
+        title: "Tam aralık",
+        description: "Milimetre veya yaygın inç ölçüleri, tam kareler sayfada ortalanır."
+      },
+      {
+        title: "Vektör PDF",
+        description: "Her yazıcı çözünürlüğünde keskin çizgiler ya da 300 dpi PNG."
+      }
+    ],
+    faqs: [
+      {
+        question: "Yazdırınca kareler neden yanlış boyutta çıkıyor?",
+        answer: "Yazıcı sayfayı ölçekliyor. “Sayfaya sığdır” ile değil, %100 veya “Gerçek boyut” ile yazdırın."
+      },
+      {
+        question: "Hangi aralığı kullanmalıyım?",
+        answer: "En yaygın kareli kâğıt 5 mm veya 1/4 inçtir; her 10 karede bir kalın çizgili 1 mm mühendislik için uygundur; 7 mm veya 9/32 inç standart çizgili kâğıttır."
+      },
+      {
+        question: "İzometrik kâğıt ne işe yarar?",
+        answer: "Çizgileri 60° açıyla kesişir; bu da binalar, mobilyalar veya piksel sanat blokları gibi nesneleri 3D çizmeyi kolaylaştırır."
+      },
+      {
+        question: "Kayıt olmam gerekiyor mu?",
+        answer: "Hayır. Kâğıt tarayıcınızda oluşturulur ve ücretsiz kullanılır."
+      }
+    ]
+  },
 };

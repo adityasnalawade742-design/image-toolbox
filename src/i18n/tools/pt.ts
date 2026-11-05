@@ -9032,4 +9032,248 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Criador de livretos",
+    shortName: "Livreto",
+    tagline: "Reorganize um PDF na ordem de livreto para imprimir em frente e verso, dobrar e grampear. Grátis e no seu dispositivo.",
+    intro: "O Criador de livretos coloca as páginas de um PDF na ordem necessária para um livreto dobrado (acabamento canoa, grampeado na dobra). Cada lado da folha recebe duas páginas, então, ao imprimir em frente e verso, dobrar a pilha ao meio e grampear ao longo da dobra, as páginas ficam na ordem certa. Páginas em branco são adicionadas no final quando o número de páginas não é múltiplo de 4. Escolha papel A4, Letter, A3 ou Tabloid, ou mantenha as páginas no tamanho original, e encadernação à direita para japonês ou árabe. As páginas continuam nítidas, como conteúdo vetorial.",
+    seoTitle: "Criar livreto em PDF – Imprimir como livreto, grátis",
+    seoDescription: "Transforme um PDF em livreto para imprimir: páginas organizadas para frente e verso, dobra e grampo. A4, Letter, A3. Grátis e sem upload.",
+    keywords: [
+      "criar livreto pdf",
+      "imprimir pdf como livreto",
+      "pdf para livreto",
+      "imprimir livreto frente e verso",
+      "livreto grampeado canoa"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione o PDF",
+        description: "Arraste ou escolha o PDF que você quer transformar em livreto."
+      },
+      {
+        title: "Escolha o papel",
+        description: "Selecione o papel em que vai imprimir e o lado da encadernação, e confira as folhas na prévia."
+      },
+      {
+        title: "Imprima e dobre",
+        description: "Baixe o PDF, imprima em frente e verso virando na borda curta, depois dobre e grampeie."
+      }
+    ],
+    features: [
+      {
+        title: "Ordem certa das páginas",
+        description: "As páginas são organizadas para que o livreto dobrado fique 1, 2, 3…, com páginas em branco no final."
+      },
+      {
+        title: "Páginas nítidas",
+        description: "As páginas entram como conteúdo vetorial, então o texto não vira imagem."
+      },
+      {
+        title: "Encadernação à esquerda ou à direita",
+        description: "Encadernação à direita para idiomas lidos da direita para a esquerda."
+      }
+    ],
+    faqs: [
+      {
+        question: "Como imprimo o livreto?",
+        answer: "Imprima o PDF baixado em frente e verso com “Virar na borda curta”, em tamanho real. Mantenha as folhas em ordem, dobre a pilha ao meio e grampeie ao longo da dobra."
+      },
+      {
+        question: "Por que foram adicionadas páginas em branco?",
+        answer: "Cada folha comporta 4 páginas (2 de cada lado), então o número de páginas é arredondado para um múltiplo de 4. As páginas em branco ficam no final."
+      },
+      {
+        question: "Minhas páginas vão ficar menores?",
+        answer: "No mesmo tamanho de papel, sim: duas páginas dividem um lado, então páginas A4 são impressas em tamanho A5. Escolha “Manter o tamanho da página” ou um papel maior, como A3, para mantê-las no tamanho original."
+      },
+      {
+        question: "Meu PDF é enviado para algum lugar?",
+        answer: "Não. O livreto é criado no seu dispositivo."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "Várias páginas por folha em PDF",
+    shortName: "N-up PDF",
+    tagline: "Coloque 2, 4, 6, 8, 9 ou 16 páginas de PDF em cada folha para economizar papel ou fazer apostilas. Grátis e roda no seu dispositivo.",
+    intro: "Esta ferramenta coloca várias páginas de um PDF em cada folha (impressão N-up), no maior tamanho possível: 2 slides lado a lado, 4 páginas em grade, até 16 por folha. Use para imprimir slides de aula como apostila, revisar um documento em menos folhas ou economizar papel. A folha gira conforme as páginas, a ordem pode seguir na horizontal ou para baixo, e você pode adicionar espaço e bordas finas entre as páginas. As páginas continuam nítidas, como conteúdo vetorial.",
+    seoTitle: "Várias páginas por folha em PDF (N-up) – Grátis",
+    seoDescription: "Imprima várias páginas de PDF em uma folha: 2, 4, 6, 8, 9 ou 16 por página, em A4, Letter ou A3. Grátis, sem cadastro e sem enviar o arquivo.",
+    keywords: [
+      "várias páginas por folha pdf",
+      "2 páginas por folha pdf",
+      "4 páginas por folha",
+      "imprimir slides em uma folha",
+      "n-up pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione o PDF",
+        description: "Arraste ou escolha o PDF."
+      },
+      {
+        title: "Escolha o layout",
+        description: "Selecione as páginas por folha, o papel, a ordem e o espaçamento, e confira a prévia."
+      },
+      {
+        title: "Baixe",
+        description: "Salve o novo PDF e imprima em tamanho real."
+      }
+    ],
+    features: [
+      {
+        title: "De 2 a 16 por folha",
+        description: "A folha gira para a posição que mostra as páginas no maior tamanho."
+      },
+      {
+        title: "Páginas nítidas",
+        description: "As páginas entram como conteúdo vetorial, não como imagens."
+      },
+      {
+        title: "Layout do seu jeito",
+        description: "Ordem na horizontal ou para baixo, espaçamento e bordas opcionais."
+      }
+    ],
+    faqs: [
+      {
+        question: "Qual layout devo usar para slides?",
+        answer: "2 por folha mantém os slides legíveis; 4 ou 6 por folha servem bem para apostilas. A ferramenta gira a folha para encaixar melhor os slides largos."
+      },
+      {
+        question: "Posso manter o tamanho original da página?",
+        answer: "Sim. Escolha “Igual às páginas” para usar o tamanho da primeira página como tamanho da folha."
+      },
+      {
+        question: "Funciona com páginas de tamanhos diferentes?",
+        answer: "Sim. Cada página é encaixada no seu espaço sem ser cortada nem esticada."
+      },
+      {
+        question: "Meu PDF é enviado para algum lugar?",
+        answer: "Não. O novo PDF é criado no seu dispositivo."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Divisor de pôster",
+    shortName: "Divisor de pôster",
+    tagline: "Divida uma imagem em várias páginas e imprima numa impressora comum para montar um pôster grande. Grátis e no seu dispositivo.",
+    intro: "O Divisor de pôster amplia uma imagem em várias páginas A4, Letter ou A3, para você imprimir um pôster grande numa impressora comum e montá-lo. Escolha quantas páginas na largura; o número de fileiras depende do formato da imagem. As páginas se sobrepõem na medida que você escolher para poder colá-las, e cada página tem marcas de corte e um rótulo, como A1 ou B2, que mostra onde ela vai. A ferramenta mostra o tamanho final do pôster e avisa quando a imagem vai ficar pouco nítida nesse tamanho.",
+    seoTitle: "Dividir imagem em folhas A4 – Imprimir pôster grande",
+    seoDescription: "Divida uma imagem em várias páginas A4, Letter ou A3 para imprimir um pôster grande, com sobreposição, marcas de corte e rótulos. Grátis, sem upload.",
+    keywords: [
+      "dividir imagem em várias folhas",
+      "imprimir pôster em várias folhas a4",
+      "imprimir imagem grande em várias folhas",
+      "pôster em folhas a4",
+      "dividir imagem para imprimir"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione a imagem",
+        description: "Arraste ou escolha um JPG, PNG, WebP, HEIC ou TIFF."
+      },
+      {
+        title: "Escolha o tamanho",
+        description: "Defina as páginas na largura, o papel e a sobreposição; a prévia mostra como a imagem é dividida."
+      },
+      {
+        title: "Imprima e monte",
+        description: "Imprima o PDF em tamanho real, apare as bordas que se sobrepõem e cole as páginas em ordem."
+      }
+    ],
+    features: [
+      {
+        title: "Até 10 páginas na largura",
+        description: "O tamanho do pôster aparece em centímetros e polegadas."
+      },
+      {
+        title: "Sobreposição, marcas e rótulos",
+        description: "Sobreposição para colar, marcas de corte e rótulos como A1, B2."
+      },
+      {
+        title: "Qualidade original",
+        description: "Imagens JPG e PNG entram no PDF sem alterações."
+      }
+    ],
+    faqs: [
+      {
+        question: "Como monto o pôster?",
+        answer: "Imprima em tamanho real. Apare a borda branca nos lados que se sobrepõem à página vizinha, alinhe a sobreposição e cole ou prenda as páginas com fita: A1, A2… na fileira de cima, B1, B2… logo abaixo."
+      },
+      {
+        question: "Qual é o tamanho máximo do pôster?",
+        answer: "Até 10 páginas na largura; a altura depende da imagem. Para um resultado nítido, procure ter pelo menos 100 pixels por polegada no tamanho final. A ferramenta avisa quando fica abaixo disso."
+      },
+      {
+        question: "Por que há uma borda branca?",
+        answer: "A maioria das impressoras não imprime até a beira do papel. A borda mantém a imagem dentro da área imprimível e abriga as marcas de corte e os rótulos."
+      },
+      {
+        question: "Minha imagem é enviada para algum lugar?",
+        answer: "Não. O PDF é criado no seu dispositivo."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Gerador de papel quadriculado para imprimir",
+    shortName: "Papel quadriculado",
+    tagline: "Crie papel quadriculado para imprimir em mm ou polegadas: quadrados, pontos, isométrico, hexágonos ou pautado. Grátis, em PDF ou PNG.",
+    intro: "O Gerador de papel quadriculado cria uma página de papel com grade para imprimir: quadriculado com linhas mais grossas opcionais, pontilhado para bullet journal, isométrico para desenho em 3D, hexagonal para jogos e química, ou pautado. Defina o espaçamento em milímetros ou polegadas, a cor e a espessura das linhas, o tamanho do papel e a margem. O PDF é desenhado com linhas vetoriais, então a grade fica exata e nítida quando impressa em tamanho real.",
+    seoTitle: "Papel quadriculado para imprimir – Pontilhado, isométrico",
+    seoDescription: "Crie papel para imprimir: quadriculado, pontilhado, isométrico, hexagonal ou pautado, em mm ou polegadas, em A4, Letter, A3 ou A5. PDF ou PNG grátis.",
+    keywords: [
+      "papel quadriculado para imprimir",
+      "papel milimetrado pdf",
+      "papel pontilhado para imprimir",
+      "papel isométrico para imprimir",
+      "papel hexagonal"
+    ],
+    howToSteps: [
+      {
+        title: "Escolha o tipo de papel",
+        description: "Quadrados, pontos, isométrico, hexágonos ou linhas."
+      },
+      {
+        title: "Configure",
+        description: "Selecione o espaçamento, a cor e a espessura das linhas, o tamanho do papel e a margem."
+      },
+      {
+        title: "Baixe e imprima",
+        description: "Salve o PDF ou PNG e imprima em tamanho real (100%)."
+      }
+    ],
+    features: [
+      {
+        title: "Cinco tipos de papel",
+        description: "Quadriculado, pontilhado, isométrico, hexagonal e pautado."
+      },
+      {
+        title: "Espaçamento exato",
+        description: "Milímetros ou medidas comuns em polegadas, com quadrados inteiros centralizados na página."
+      },
+      {
+        title: "PDF vetorial",
+        description: "Linhas nítidas em qualquer resolução de impressora, ou um PNG de 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Por que os quadrados saem com o tamanho errado na impressão?",
+        answer: "A impressora está redimensionando a página. Imprima em 100% ou “Tamanho real”, e não em “Ajustar à página”."
+      },
+      {
+        question: "Que espaçamento devo usar?",
+        answer: "5 mm ou 1/4 de polegada é o papel quadriculado mais comum; 1 mm com uma linha mais grossa a cada 10 serve para engenharia; 7 mm ou 9/32 de polegada é o padrão do papel pautado."
+      },
+      {
+        question: "Para que serve o papel isométrico?",
+        answer: "As linhas se cruzam a 60°, o que facilita desenhar objetos em 3D, como prédios, móveis ou blocos de pixel art."
+      },
+      {
+        question: "Preciso me cadastrar?",
+        answer: "Não. O papel é criado no seu navegador e o uso é gratuito."
+      }
+    ]
+  },
 };

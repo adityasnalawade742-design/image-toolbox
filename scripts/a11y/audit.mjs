@@ -32,6 +32,7 @@ const INPUT = {
   'youtube-banner-maker': [S('photo.jpg')], 'facebook-cover-maker': [S('photo.jpg')], 'linkedin-banner-maker': [S('photo.jpg')], 'pinterest-pin-resizer': [S('photo.jpg')], 'open-graph-image-maker': [S('photo.jpg')],
   'pixels-to-inches': [], 'inches-to-pixels': [], 'pixels-to-cm': [], 'cm-to-pixels': [], 'resolution-calculator': [], 'color-blindness-simulator': [S('photo.jpg')],
   'morse-code-translator': [], 'hide-text-in-image': [S('photo.jpg')], 'halftone-dither-effect': [S('photo.jpg')], 'contact-sheet-maker': [S('photo.jpg'), S('photo2.png')],
+  'booklet-maker': [S('doc.pdf')], 'n-up-pdf': [S('doc.pdf')], 'poster-splitter': [S('photo.jpg')], 'graph-paper-maker': [],
   'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
   'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],

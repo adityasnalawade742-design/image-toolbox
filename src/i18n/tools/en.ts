@@ -8685,4 +8685,248 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    "name": "Booklet Maker",
+    "shortName": "Booklet",
+    "tagline": "Rearrange a PDF into booklet order so you can print it double-sided, fold it and staple it. Free, on your device.",
+    "intro": "Booklet Maker puts the pages of a PDF in the order needed for a folded booklet (saddle stitch). Two pages go on each side of a sheet, so when you print double-sided, fold the stack in half and staple along the fold, the pages read in order. Blank pages are added at the end when the page count isn’t a multiple of 4. Choose A4, Letter, A3 or Tabloid paper, or keep the pages at full size, and right-hand binding for Japanese or Arabic. Pages stay as sharp vector content.",
+    "seoTitle": "Booklet Maker – Print a PDF as a Booklet, Free",
+    "seoDescription": "Turn a PDF into a printable booklet: pages arranged for double-sided printing, folding and stapling. A4, Letter, A3. Free, no upload.",
+    "keywords": [
+      "booklet maker",
+      "pdf to booklet",
+      "print pdf as booklet",
+      "booklet printing",
+      "saddle stitch imposition"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF you want to make into a booklet."
+      },
+      {
+        "title": "Choose the paper",
+        "description": "Pick the paper you’ll print on and the binding side, and check the sheets in the preview."
+      },
+      {
+        "title": "Print and fold",
+        "description": "Download the PDF, print it double-sided, flipping on the short edge, then fold and staple."
+      }
+    ],
+    "features": [
+      {
+        "title": "Correct page order",
+        "description": "Pages are arranged so the folded booklet reads 1, 2, 3… with blanks added at the end."
+      },
+      {
+        "title": "Sharp pages",
+        "description": "Pages are placed as vector content, so text isn’t turned into pictures."
+      },
+      {
+        "title": "Left or right binding",
+        "description": "Right-hand binding for languages read right to left."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I print the booklet?",
+        "answer": "Print the downloaded PDF double-sided with “Flip on short edge”, at actual size. Keep the sheets in order, fold the stack in half and staple along the fold."
+      },
+      {
+        "question": "Why were blank pages added?",
+        "answer": "Each sheet holds 4 pages (2 on each side), so the page count is rounded up to a multiple of 4. The blanks go at the end."
+      },
+      {
+        "question": "Will my pages be smaller?",
+        "answer": "On the same paper size, yes: two pages share one side, so A4 pages print at A5 size. Choose “Keep page size” or larger paper such as A3 to keep them at full size."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The booklet is made on your device."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    "name": "N-up PDF",
+    "shortName": "N-up PDF",
+    "tagline": "Put 2, 4, 6, 8, 9 or 16 PDF pages on each sheet to save paper or make handouts. Free, and it runs on your device.",
+    "intro": "N-up PDF places several pages of a PDF on each sheet, as large as they fit: 2 slides side by side, 4 pages in a grid, up to 16 per sheet. Use it to print lecture slides as handouts, proof a document on fewer sheets or save paper. The sheet turns to suit the pages, the order can run across or down, and you can add space and thin borders between pages. Pages stay as sharp vector content.",
+    "seoTitle": "N-up PDF – Multiple Pages per Sheet, Free Online",
+    "seoDescription": "Print several PDF pages on one sheet: 2, 4, 6, 8, 9 or 16 per page, on A4, Letter or A3. Free, no sign-up, your file isn’t uploaded.",
+    "keywords": [
+      "n-up pdf",
+      "multiple pages per sheet pdf",
+      "2 pages per sheet pdf",
+      "4 pages per sheet",
+      "print slides as handouts"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF."
+      },
+      {
+        "title": "Choose the layout",
+        "description": "Pick the pages per sheet, paper, order and spacing, and check the preview."
+      },
+      {
+        "title": "Download",
+        "description": "Save the new PDF and print it at actual size."
+      }
+    ],
+    "features": [
+      {
+        "title": "2 to 16 per sheet",
+        "description": "The sheet turns to whichever way shows the pages largest."
+      },
+      {
+        "title": "Sharp pages",
+        "description": "Pages are placed as vector content, not as pictures."
+      },
+      {
+        "title": "Your layout",
+        "description": "Order across or down, spacing and optional borders."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which layout should I use for slides?",
+        "answer": "2 per sheet keeps slides readable; 4 or 6 per sheet suits handouts. The tool turns the sheet to fit wide slides best."
+      },
+      {
+        "question": "Can I keep the original page size?",
+        "answer": "Yes. Choose “Same as pages” to use the size of the first page as the sheet size."
+      },
+      {
+        "question": "Does it work with pages of different sizes?",
+        "answer": "Yes. Each page is fitted into its place without being cropped or stretched."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. The new PDF is made on your device."
+      }
+    ]
+  },
+  "poster-splitter": {
+    "name": "Poster Splitter",
+    "shortName": "Poster Splitter",
+    "tagline": "Split a picture over several pages and print it on a normal printer to make a large poster. Free, on your device.",
+    "intro": "Poster Splitter enlarges a picture across several A4, Letter or A3 pages, so you can print a big poster on an ordinary printer and assemble it. Choose how many pages across; the number of rows follows from the picture’s shape. Pages overlap by the amount you choose so you can glue them, and each page has cut marks and a label such as A1 or B2 to show where it goes. The tool shows the final poster size and warns when the picture will look soft at that size.",
+    "seoTitle": "Poster Splitter – Print a Big Poster on A4 Pages",
+    "seoDescription": "Split an image over multiple A4, Letter or A3 pages to print a large poster, with overlap, cut marks and labels. Free, no upload.",
+    "keywords": [
+      "poster splitter",
+      "print poster on multiple pages",
+      "split image into pages",
+      "large poster from a4",
+      "tile image for printing"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a JPG, PNG, WebP, HEIC or TIFF."
+      },
+      {
+        "title": "Choose the size",
+        "description": "Set the pages across, paper and overlap; the preview shows how the picture is split."
+      },
+      {
+        "title": "Print and assemble",
+        "description": "Print the PDF at actual size, trim the overlapping edges and glue the pages in order."
+      }
+    ],
+    "features": [
+      {
+        "title": "Up to 10 pages across",
+        "description": "The poster size is shown in centimeters and inches."
+      },
+      {
+        "title": "Overlap, marks and labels",
+        "description": "Overlap for gluing, cut marks and labels like A1, B2."
+      },
+      {
+        "title": "Original quality",
+        "description": "JPG and PNG pictures go into the PDF unchanged."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I put the poster together?",
+        "answer": "Print at actual size. Trim the white border on the edges that overlap a neighbour, line up the overlap and glue or tape the pages: A1, A2… along the top row, B1, B2… below."
+      },
+      {
+        "question": "How big can the poster be?",
+        "answer": "Up to 10 pages across; the height depends on the picture. For a sharp result, aim for at least 100 pixels per inch at the final size. The tool warns when it’s lower."
+      },
+      {
+        "question": "Why is there a white border?",
+        "answer": "Most printers can’t print to the edge of the paper. The border keeps the picture inside the printable area and holds the cut marks and labels."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. The PDF is made on your device."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    "name": "Printable Graph Paper Maker",
+    "shortName": "Graph Paper",
+    "tagline": "Make printable graph paper in mm or inches: squares, dots, isometric, hexagons or lines. Free, as a PDF or PNG.",
+    "intro": "Printable Graph Paper Maker makes a page of grid paper to print: square grid with optional heavier lines, dot grid for bullet journals, isometric grid for 3D drawing, hexagons for games and chemistry, or ruled lines. Set the spacing in millimeters or inches, the line color and thickness, the paper size and the margin. The PDF is drawn with vector lines, so the grid stays exact and crisp when printed at actual size.",
+    "seoTitle": "Graph Paper Maker – Printable Grid, Dot, Isometric",
+    "seoDescription": "Make printable graph paper: square, dot, isometric, hexagon or lined, in mm or inches, on A4, Letter, A3 or A5. Free PDF or PNG.",
+    "keywords": [
+      "printable graph paper",
+      "graph paper pdf",
+      "dot grid paper",
+      "isometric graph paper",
+      "hexagon graph paper"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose the paper type",
+        "description": "Squares, dots, isometric, hexagons or lines."
+      },
+      {
+        "title": "Set it up",
+        "description": "Pick the spacing, line color and thickness, paper size and margin."
+      },
+      {
+        "title": "Download and print",
+        "description": "Save the PDF or PNG and print it at actual size (100%)."
+      }
+    ],
+    "features": [
+      {
+        "title": "Five kinds of paper",
+        "description": "Square, dot, isometric, hexagon and lined."
+      },
+      {
+        "title": "Exact spacing",
+        "description": "Millimeters or common inch sizes, with whole squares centred on the page."
+      },
+      {
+        "title": "Vector PDF",
+        "description": "Crisp lines at any printer resolution, or a 300 dpi PNG."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why are my squares the wrong size when printed?",
+        "answer": "The printer is scaling the page. Print at 100% or “Actual size”, not “Fit to page”."
+      },
+      {
+        "question": "What spacing should I use?",
+        "answer": "5 mm or 1/4 inch is the most common graph paper; 1 mm with a heavier line every 10 suits engineering; 7 mm or 9/32 inch is standard ruled paper."
+      },
+      {
+        "question": "What is isometric paper for?",
+        "answer": "Its lines meet at 60°, which makes it easy to draw objects in 3D, such as buildings, furniture or pixel-art blocks."
+      },
+      {
+        "question": "Do I need to sign up?",
+        "answer": "No. The paper is made in your browser and is free to use."
+      }
+    ]
+  },
 };

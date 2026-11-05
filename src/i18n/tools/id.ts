@@ -9045,4 +9045,248 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Pembuat Buklet",
+    shortName: "Buklet",
+    tagline: "Susun ulang PDF ke urutan buklet agar bisa dicetak bolak-balik, dilipat, dan distaples. Gratis, di perangkat Anda.",
+    intro: "Pembuat Buklet menyusun halaman PDF dalam urutan yang dibutuhkan buklet lipat (jilid steples tengah atau saddle stitch). Dua halaman masuk di setiap sisi lembar, jadi setelah dicetak bolak-balik, tumpukan dilipat dua dan distaples di sepanjang lipatan, halaman terbaca berurutan. Halaman kosong ditambahkan di akhir jika jumlah halaman bukan kelipatan 4. Pilih kertas A4, Letter, A3, atau Tabloid, atau pertahankan ukuran halaman penuh, dan penjilidan kanan untuk bahasa Jepang atau Arab. Halaman tetap berupa konten vektor yang tajam.",
+    seoTitle: "Pembuat Buklet – Cetak PDF Jadi Buklet, Gratis",
+    seoDescription: "Ubah PDF menjadi buklet siap cetak: halaman disusun untuk cetak bolak-balik, dilipat, dan distaples. A4, Letter, A3. Gratis, tanpa unggah.",
+    keywords: [
+      "buat buklet pdf",
+      "pdf ke buklet",
+      "cara cetak buklet",
+      "cetak pdf jadi buku",
+      "cetak booklet bolak balik"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF yang ingin dijadikan buklet."
+      },
+      {
+        title: "Pilih kertas",
+        description: "Pilih kertas yang akan dipakai dan sisi penjilidan, lalu periksa lembar-lembarnya di pratinjau."
+      },
+      {
+        title: "Cetak dan lipat",
+        description: "Unduh PDF, cetak bolak-balik dengan balik di tepi pendek, lalu lipat dan steples."
+      }
+    ],
+    features: [
+      {
+        title: "Urutan halaman benar",
+        description: "Halaman disusun agar buklet yang dilipat terbaca 1, 2, 3… dengan halaman kosong di akhir."
+      },
+      {
+        title: "Halaman tajam",
+        description: "Halaman ditempatkan sebagai konten vektor, jadi teks tidak diubah menjadi gambar."
+      },
+      {
+        title: "Jilid kiri atau kanan",
+        description: "Penjilidan kanan untuk bahasa yang dibaca dari kanan ke kiri."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara mencetak buklet?",
+        answer: "Cetak PDF yang diunduh secara bolak-balik dengan “Balik di tepi pendek”, pada ukuran sebenarnya. Jaga urutan lembar, lipat tumpukan menjadi dua, dan steples di sepanjang lipatan."
+      },
+      {
+        question: "Mengapa ada halaman kosong yang ditambahkan?",
+        answer: "Setiap lembar memuat 4 halaman (2 di setiap sisi), jadi jumlah halaman dibulatkan ke atas menjadi kelipatan 4. Halaman kosong diletakkan di akhir."
+      },
+      {
+        question: "Apakah halaman saya jadi lebih kecil?",
+        answer: "Pada ukuran kertas yang sama, ya: dua halaman berbagi satu sisi, jadi halaman A4 tercetak seukuran A5. Pilih “Pertahankan ukuran halaman” atau kertas lebih besar seperti A3 agar tetap berukuran penuh."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. Buklet dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "N-up PDF",
+    shortName: "N-up PDF",
+    tagline: "Taruh 2, 4, 6, 8, 9, atau 16 halaman PDF di setiap lembar untuk menghemat kertas atau membuat handout. Gratis, berjalan di perangkat Anda.",
+    intro: "N-up PDF menempatkan beberapa halaman PDF di setiap lembar, sebesar yang muat: 2 slide berdampingan, 4 halaman dalam kisi, hingga 16 per lembar. Gunakan untuk mencetak slide kuliah sebagai handout, memeriksa dokumen dengan lebih sedikit lembar, atau menghemat kertas. Orientasi lembar menyesuaikan halaman, urutannya bisa ke samping atau ke bawah, dan Anda bisa menambahkan jarak serta garis tepi tipis antarhalaman. Halaman tetap berupa konten vektor yang tajam.",
+    seoTitle: "N-up PDF – Beberapa Halaman per Lembar, Gratis",
+    seoDescription: "Cetak beberapa halaman PDF dalam satu lembar: 2, 4, 6, 8, 9, atau 16 per halaman, di A4, Letter, atau A3. Gratis, tanpa daftar, file tidak diunggah.",
+    keywords: [
+      "n-up pdf",
+      "beberapa halaman pdf dalam satu lembar",
+      "2 halaman dalam 1 lembar pdf",
+      "4 halaman per lembar",
+      "cetak slide jadi handout"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF."
+      },
+      {
+        title: "Pilih tata letak",
+        description: "Pilih jumlah halaman per lembar, kertas, urutan, dan jarak, lalu periksa pratinjau."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF baru dan cetak pada ukuran sebenarnya."
+      }
+    ],
+    features: [
+      {
+        title: "2 sampai 16 per lembar",
+        description: "Lembar diputar ke arah yang menampilkan halaman paling besar."
+      },
+      {
+        title: "Halaman tajam",
+        description: "Halaman ditempatkan sebagai konten vektor, bukan gambar."
+      },
+      {
+        title: "Tata letak Anda",
+        description: "Urutan ke samping atau ke bawah, jarak, dan garis tepi opsional."
+      }
+    ],
+    faqs: [
+      {
+        question: "Tata letak apa yang cocok untuk slide?",
+        answer: "2 per lembar membuat slide tetap mudah dibaca; 4 atau 6 per lembar cocok untuk handout. Alat ini memutar lembar agar slide lebar paling pas."
+      },
+      {
+        question: "Bisakah ukuran halaman asli dipertahankan?",
+        answer: "Bisa. Pilih “Sama dengan halaman” untuk memakai ukuran halaman pertama sebagai ukuran lembar."
+      },
+      {
+        question: "Apakah bisa untuk halaman dengan ukuran berbeda?",
+        answer: "Bisa. Setiap halaman dimuat ke tempatnya tanpa dipotong atau diregangkan."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF baru dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Pemisah Poster",
+    shortName: "Pemisah Poster",
+    tagline: "Bagi gambar ke beberapa halaman dan cetak dengan printer biasa untuk membuat poster besar. Gratis, di perangkat Anda.",
+    intro: "Pemisah Poster memperbesar gambar di beberapa halaman A4, Letter, atau A3, sehingga Anda bisa mencetak poster besar dengan printer biasa lalu merangkainya. Pilih berapa halaman ke samping; jumlah baris mengikuti bentuk gambar. Halaman saling bertumpuk sesuai ukuran yang Anda pilih agar bisa dilem, dan setiap halaman punya tanda potong serta label seperti A1 atau B2 yang menunjukkan letaknya. Alat ini menampilkan ukuran akhir poster dan memberi peringatan jika gambar akan tampak kurang tajam pada ukuran itu.",
+    seoTitle: "Pemisah Poster – Cetak Poster Besar di Kertas A4",
+    seoDescription: "Bagi gambar ke beberapa halaman A4, Letter, atau A3 untuk mencetak poster besar, dengan tumpang tindih, tanda potong, dan label. Gratis, tanpa unggah.",
+    keywords: [
+      "cetak poster di beberapa kertas",
+      "membagi gambar jadi beberapa halaman",
+      "cetak poster besar a4",
+      "split gambar untuk print",
+      "cara print poster besar"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar",
+        description: "Letakkan atau pilih JPG, PNG, WebP, HEIC, atau TIFF."
+      },
+      {
+        title: "Pilih ukuran",
+        description: "Atur halaman ke samping, kertas, dan tumpang tindih; pratinjau menunjukkan cara gambar dibagi."
+      },
+      {
+        title: "Cetak dan rangkai",
+        description: "Cetak PDF pada ukuran sebenarnya, potong tepi yang bertumpuk, dan lem halaman sesuai urutan."
+      }
+    ],
+    features: [
+      {
+        title: "Hingga 10 halaman ke samping",
+        description: "Ukuran poster ditampilkan dalam sentimeter dan inci."
+      },
+      {
+        title: "Tumpang tindih, tanda, dan label",
+        description: "Tumpang tindih untuk lem, tanda potong, dan label seperti A1, B2."
+      },
+      {
+        title: "Kualitas asli",
+        description: "Gambar JPG dan PNG masuk ke PDF tanpa diubah."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara merangkai poster?",
+        answer: "Cetak pada ukuran sebenarnya. Potong tepi putih di sisi yang bertumpuk dengan halaman sebelahnya, sejajarkan bagian yang bertumpuk, lalu lem atau rekatkan dengan selotip: A1, A2… di baris atas, B1, B2… di bawahnya."
+      },
+      {
+        question: "Seberapa besar posternya?",
+        answer: "Hingga 10 halaman ke samping; tingginya tergantung gambar. Agar tajam, usahakan minimal 100 piksel per inci pada ukuran akhir. Alat ini memberi peringatan jika lebih rendah."
+      },
+      {
+        question: "Mengapa ada tepi putih?",
+        answer: "Sebagian besar printer tidak bisa mencetak sampai ujung kertas. Tepi ini menjaga gambar tetap di area yang bisa dicetak dan menjadi tempat tanda potong serta label."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. PDF dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Pembuat Kertas Grafik Siap Cetak",
+    shortName: "Kertas Grafik",
+    tagline: "Buat kertas grafik siap cetak dalam mm atau inci: kotak, titik, isometrik, heksagon, atau garis. Gratis, sebagai PDF atau PNG.",
+    intro: "Pembuat Kertas Grafik Siap Cetak membuat selembar kertas berpola untuk dicetak: kisi kotak dengan garis tebal opsional (kertas milimeter), kisi titik untuk bullet journal, kisi isometrik untuk gambar 3D, heksagon untuk permainan dan kimia, atau garis bergaris. Atur jarak dalam milimeter atau inci, warna dan ketebalan garis, ukuran kertas, dan margin. PDF digambar dengan garis vektor, jadi kisi tetap tepat dan tajam saat dicetak pada ukuran sebenarnya.",
+    seoTitle: "Kertas Grafik Siap Cetak – Kotak, Titik, Isometrik",
+    seoDescription: "Buat kertas grafik siap cetak: kotak, titik, isometrik, heksagon, atau bergaris, dalam mm atau inci, di A4, Letter, A3, atau A5. PDF atau PNG gratis.",
+    keywords: [
+      "kertas grafik pdf",
+      "kertas milimeter print",
+      "kertas dot grid",
+      "kertas isometrik",
+      "kertas kotak kotak pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Pilih jenis kertas",
+        description: "Kotak, titik, isometrik, heksagon, atau garis."
+      },
+      {
+        title: "Atur",
+        description: "Pilih jarak, warna dan ketebalan garis, ukuran kertas, dan margin."
+      },
+      {
+        title: "Unduh dan cetak",
+        description: "Simpan PDF atau PNG dan cetak pada ukuran sebenarnya (100%)."
+      }
+    ],
+    features: [
+      {
+        title: "Lima jenis kertas",
+        description: "Kotak, titik, isometrik, heksagon, dan bergaris."
+      },
+      {
+        title: "Jarak tepat",
+        description: "Milimeter atau ukuran inci umum, dengan kotak utuh di tengah halaman."
+      },
+      {
+        title: "PDF vektor",
+        description: "Garis tajam di resolusi printer mana pun, atau PNG 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa ukuran kotak salah saat dicetak?",
+        answer: "Printer menskalakan halaman. Cetak pada 100% atau “Ukuran sebenarnya”, bukan “Sesuaikan dengan halaman”."
+      },
+      {
+        question: "Jarak berapa yang sebaiknya dipakai?",
+        answer: "5 mm atau 1/4 inci adalah kertas grafik paling umum; 1 mm dengan garis tebal setiap 10 cocok untuk teknik; 7 mm atau 9/32 inci adalah kertas bergaris standar."
+      },
+      {
+        question: "Untuk apa kertas isometrik?",
+        answer: "Garisnya bertemu pada sudut 60°, sehingga mudah menggambar benda dalam 3D, seperti bangunan, perabot, atau balok pixel art."
+      },
+      {
+        question: "Apakah saya perlu mendaftar?",
+        answer: "Tidak. Kertas dibuat di browser Anda dan gratis digunakan."
+      }
+    ]
+  },
 };
