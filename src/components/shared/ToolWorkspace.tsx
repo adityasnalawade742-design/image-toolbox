@@ -114,6 +114,14 @@ const EditMetadataWorkspace = standaloneTool(() => import('../tools/pdf/EditMeta
 const BookmarksWorkspace = standaloneTool(() => import('../tools/pdf/BookmarksWorkspace'), 'BookmarksWorkspace');
 const AttachmentsWorkspace = standaloneTool(() => import('../tools/pdf/AttachmentsWorkspace'), 'AttachmentsWorkspace');
 const SanitizeWorkspace = standaloneTool(() => import('../tools/pdf/SanitizeWorkspace'), 'SanitizeWorkspace');
+const CompareImagesWorkspace = standaloneTool(() => import('../tools/extras/CompareImagesWorkspace'), 'CompareImagesWorkspace');
+const DropShadowWorkspace = standaloneTool(() => import('../tools/extras/DropShadowWorkspace'), 'DropShadowWorkspace');
+const HistogramWorkspace = standaloneTool(() => import('../tools/extras/HistogramWorkspace'), 'HistogramWorkspace');
+const ExifViewerWorkspace = standaloneTool(() => import('../tools/extras/ExifViewerWorkspace'), 'ExifViewerWorkspace');
+const TransparentPngWorkspace = standaloneTool(() => import('../tools/extras/TransparentPngWorkspace'), 'TransparentPngWorkspace');
+const ColorReplaceWorkspace = standaloneTool(() => import('../tools/extras/ColorReplaceWorkspace'), 'ColorReplaceWorkspace');
+const AppIconWorkspace = standaloneTool(() => import('../tools/extras/AppIconWorkspace'), 'AppIconWorkspace');
+const AnnotateWorkspace = standaloneTool(() => import('../tools/extras/AnnotateWorkspace'), 'AnnotateWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -257,6 +265,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'add-bookmarks-to-pdf': <BookmarksWorkspace />,
     'pdf-attachments': <AttachmentsWorkspace />,
     'sanitize-pdf': <SanitizeWorkspace />,
+    'compare-images': <CompareImagesWorkspace />,
+    'add-drop-shadow': <DropShadowWorkspace />,
+    'image-histogram': <HistogramWorkspace />,
+    'exif-viewer': <ExifViewerWorkspace />,
+    'transparent-png-maker': <TransparentPngWorkspace />,
+    'image-color-replacer': <ColorReplaceWorkspace />,
+    'app-icon-generator': <AppIconWorkspace />,
+    'image-annotator': <AnnotateWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,

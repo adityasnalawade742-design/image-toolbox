@@ -9417,4 +9417,492 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    "name": "Image Comparison",
+    "shortName": "Compare Images",
+    "tagline": "Compare two images with a before-and-after slider, side by side, or a map that marks every difference. Free, on your device.",
+    "intro": "Image Comparison shows two versions of a picture together so you can see what changed: drag a slider across them, view them side by side, or switch to a difference map that marks every changed pixel in bright pink. It also measures how much changed, the largest difference and the PSNR, a standard quality score. Use it to check an edit, compare two exports or compression settings, or spot what’s different between two screenshots.",
+    "seoTitle": "Image Comparison – Before/After Slider and Diff, Free",
+    "seoDescription": "Compare two images online with a before/after slider, side by side, or a difference map, plus PSNR and changed pixels. Free, no upload.",
+    "keywords": [
+      "compare images",
+      "image comparison",
+      "before and after slider",
+      "image diff",
+      "find differences between two images"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add both images",
+        "description": "Drop or choose the first and the second image."
+      },
+      {
+        "title": "Choose a view",
+        "description": "Slider, side by side, or the difference map."
+      },
+      {
+        "title": "Read the result",
+        "description": "See how much changed and download the difference map."
+      }
+    ],
+    "features": [
+      {
+        "title": "Three views",
+        "description": "A before-and-after slider, side by side, and a difference map."
+      },
+      {
+        "title": "Measured",
+        "description": "Changed pixels, largest difference and PSNR."
+      },
+      {
+        "title": "Adjustable",
+        "description": "Ignore tiny differences such as compression noise."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does PSNR mean?",
+        "answer": "Peak signal-to-noise ratio: higher means more alike. Above about 40 dB differences are very hard to see; identical images have no PSNR."
+      },
+      {
+        "question": "Can I compare images of different sizes?",
+        "answer": "Yes. The second is scaled to the first’s size, which itself counts as a small difference."
+      },
+      {
+        "question": "Why are some pixels marked that look the same?",
+        "answer": "Lossy formats such as JPG change pixels slightly. Raise “Ignore differences up to” to hide those."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    "name": "Add Drop Shadow to Image",
+    "shortName": "Drop Shadow",
+    "tagline": "Add a soft drop shadow to a picture, logo or transparent PNG, with adjustable direction, softness and rounded corners. Free.",
+    "intro": "Add Drop Shadow to Image puts a soft shadow behind a picture so it lifts off the page. With a transparent PNG such as a logo or product cut-out, the shadow follows its shape; with a photo, it follows the rectangle, which you can round. Set the distance, direction, softness, strength and color, and keep the background transparent or fill it with a color. The canvas grows so the shadow is never cut off, and the download is full size.",
+    "seoTitle": "Add Drop Shadow to Image or PNG – Free Online",
+    "seoDescription": "Add a drop shadow to a photo, logo or transparent PNG: distance, angle, blur, color and rounded corners. Transparent PNG or JPG. Free.",
+    "keywords": [
+      "add drop shadow to image",
+      "drop shadow png",
+      "image shadow generator",
+      "add shadow to logo",
+      "photo shadow effect"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a photo or a transparent PNG."
+      },
+      {
+        "title": "Shape the shadow",
+        "description": "Set the distance, direction, softness, strength and color."
+      },
+      {
+        "title": "Download",
+        "description": "Save it as a transparent PNG or on a color as a JPG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Follows the shape",
+        "description": "Transparent PNGs cast a shadow in their own outline."
+      },
+      {
+        "title": "Never cut off",
+        "description": "The canvas grows to fit the shadow."
+      },
+      {
+        "title": "Rounded corners",
+        "description": "Turn a photo into a card with soft corners."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is the shadow square around my logo?",
+        "answer": "The logo has a solid background. Make it transparent first with Transparent PNG Maker or Remove Background."
+      },
+      {
+        "question": "Why is the picture bigger than the original?",
+        "answer": "The shadow needs room around the picture; the picture itself is the same size."
+      },
+      {
+        "question": "Which format should I download?",
+        "answer": "A transparent PNG to place on a website or document; a JPG on a color when you need a small file."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "image-histogram": {
+    "name": "Image Histogram",
+    "shortName": "Histogram",
+    "tagline": "See a picture’s RGB and brightness histogram, and whether shadows or highlights are clipped. Free, and it runs on your device.",
+    "intro": "Image Histogram shows how a picture’s tones are spread from black to white, for brightness and for the red, green and blue channels. A glance tells you whether a photo is under- or overexposed, and the tool says how much of it is pure black or pure white, where detail is lost. A table gives each channel’s average, median, spread and range, and you can download the chart or the counts as CSV.",
+    "seoTitle": "Image Histogram – RGB and Exposure Check, Free",
+    "seoDescription": "View an image’s RGB and brightness histogram online, with clipping, average and spread for each channel. Download PNG or CSV. Free.",
+    "keywords": [
+      "image histogram",
+      "rgb histogram online",
+      "photo histogram",
+      "check photo exposure",
+      "image color distribution"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a photo or image."
+      },
+      {
+        "title": "Read the chart",
+        "description": "Switch between RGB, brightness and each color."
+      },
+      {
+        "title": "Download",
+        "description": "Save the chart as PNG or the numbers as CSV."
+      }
+    ],
+    "features": [
+      {
+        "title": "Exposure at a glance",
+        "description": "Tones from shadows on the left to highlights on the right."
+      },
+      {
+        "title": "Clipping check",
+        "description": "How much is pure black or pure white."
+      },
+      {
+        "title": "Per channel",
+        "description": "Average, median, spread and range for each color."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I read a histogram?",
+        "answer": "Left is dark, right is bright, height is how many pixels have that tone. A pile-up at either end means lost detail."
+      },
+      {
+        "question": "What is clipping?",
+        "answer": "Pixels at pure black or pure white. Small amounts are normal; large areas mean shadows or highlights have no detail left."
+      },
+      {
+        "question": "Are transparent pixels counted?",
+        "answer": "No. Fully transparent pixels are left out."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "exif-viewer": {
+    "name": "EXIF Viewer",
+    "shortName": "EXIF Viewer",
+    "tagline": "See the hidden metadata in a photo: camera, lens, settings, date taken and GPS location. Free, and the file stays on your device.",
+    "intro": "EXIF Viewer shows the information cameras and phones store inside a photo. A summary gives the camera and lens, the exposure settings (aperture, shutter speed, ISO and focal length), when it was taken and with what software, and the GPS location if one was recorded, with a link to see it on a map. Every field is listed by section: EXIF, GPS, IPTC captions and rights, XMP and the color profile. Download it all as JSON, or remove it with Remove Image Metadata.",
+    "seoTitle": "EXIF Viewer – See Photo Metadata and GPS, Free",
+    "seoDescription": "View a photo’s EXIF metadata online: camera, lens, settings, date and GPS location, plus IPTC and XMP. Free, your photo isn’t uploaded.",
+    "keywords": [
+      "exif viewer",
+      "view photo metadata",
+      "exif data viewer online",
+      "check photo location",
+      "image metadata viewer"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "Drop or choose a JPG, HEIC, TIFF, PNG, WebP or AVIF."
+      },
+      {
+        "title": "Read the details",
+        "description": "See the summary and every metadata field."
+      },
+      {
+        "title": "Save or remove",
+        "description": "Download the metadata as JSON, or remove it before sharing."
+      }
+    ],
+    "features": [
+      {
+        "title": "Camera and settings",
+        "description": "Camera, lens, aperture, shutter speed, ISO and focal length."
+      },
+      {
+        "title": "Location check",
+        "description": "Shows the GPS position a photo gives away."
+      },
+      {
+        "title": "Every field",
+        "description": "EXIF, GPS, IPTC, XMP and the color profile."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is there no metadata?",
+        "answer": "Many apps and websites remove it when saving or sharing, and screenshots usually have none."
+      },
+      {
+        "question": "Can others see where my photo was taken?",
+        "answer": "If it has GPS data, yes, from the original file. Remove it with Remove Image Metadata before sharing."
+      },
+      {
+        "question": "Is my location sent anywhere?",
+        "answer": "No. The map link opens OpenStreetMap only if you click it."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    "name": "Transparent PNG Maker",
+    "shortName": "Transparent PNG",
+    "tagline": "Make a background color transparent, such as the white behind a logo, and save it as a PNG. Free, and it runs on your device.",
+    "intro": "Transparent PNG Maker removes a plain background color and saves the picture as a PNG with transparency, ready to place on any website, slide or design. The background color is detected for you, or pick any color from the picture. Tolerance sets how close a color must be, edge softness smooths the outline, and “Only the background” leaves the same color inside your logo untouched. Edge pixels lose the old background’s tint, so no white fringe is left.",
+    "seoTitle": "Transparent PNG Maker – Remove a Background Color",
+    "seoDescription": "Make a background color transparent online: remove the white behind a logo, smooth edges, no fringe. Save as PNG. Free, no upload.",
+    "keywords": [
+      "transparent png maker",
+      "make background transparent",
+      "remove white background",
+      "make logo transparent",
+      "png transparent background"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a logo, icon or graphic on a plain background."
+      },
+      {
+        "title": "Choose the color",
+        "description": "Keep the detected background or pick a color, and set the tolerance."
+      },
+      {
+        "title": "Download",
+        "description": "Save the transparent PNG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Detects the background",
+        "description": "The color around the edge is chosen for you."
+      },
+      {
+        "title": "Only the background",
+        "description": "The same color inside the subject is kept."
+      },
+      {
+        "title": "Clean edges",
+        "description": "Soft edges without a leftover fringe."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which pictures work best?",
+        "answer": "Logos, icons, signatures and graphics on a single flat color. For photos of people or things, use Remove Background."
+      },
+      {
+        "question": "Why are parts of my logo gone?",
+        "answer": "They match the background color. Tick “Only the background” or lower the tolerance."
+      },
+      {
+        "question": "Why save as PNG?",
+        "answer": "PNG keeps transparency; JPG can’t."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    "name": "Image Color Replacer",
+    "shortName": "Color Replacer",
+    "tagline": "Replace one color in a picture with another, keeping its shading and texture. Free, and it runs on your device.",
+    "intro": "Image Color Replacer changes every part of a picture that has a chosen color into a new one: recolor a product, a logo, a button in a screenshot or a wall in a photo. Click the color in the picture, choose the new one, and set how close colors must be. “Keep shading and texture” moves light and dark tones together so the result still looks natural; turn it off for flat, exact colors in graphics. The download keeps the original format and full size.",
+    "seoTitle": "Image Color Replacer – Change a Color in a Picture",
+    "seoDescription": "Replace a color in an image online: click a color, pick a new one, keep the shading. Works for photos, logos and graphics. Free, no upload.",
+    "keywords": [
+      "replace color in image",
+      "change color of image",
+      "image color changer",
+      "recolor image online",
+      "change logo color"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a photo, logo or graphic."
+      },
+      {
+        "title": "Pick the colors",
+        "description": "Click the color to replace and choose the new one."
+      },
+      {
+        "title": "Download",
+        "description": "Adjust the tolerance and save the picture."
+      }
+    ],
+    "features": [
+      {
+        "title": "Keeps it natural",
+        "description": "Shading and texture move with the color."
+      },
+      {
+        "title": "Exact for graphics",
+        "description": "Flat colors for logos and icons."
+      },
+      {
+        "title": "Full size",
+        "description": "The original format and resolution."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why didn’t all of the color change?",
+        "answer": "Shades too far from the one you clicked are left alone. Raise the tolerance."
+      },
+      {
+        "question": "Why did other parts change too?",
+        "answer": "They’re close to the chosen color. Lower the tolerance or the softness."
+      },
+      {
+        "question": "Can I make a color transparent instead?",
+        "answer": "Yes, with Transparent PNG Maker."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    "name": "App Icon Generator",
+    "shortName": "App Icons",
+    "tagline": "Make every app icon size for iOS, Android and web apps from one picture, ready to drop into your project. Free, as a ZIP.",
+    "intro": "App Icon Generator turns one picture into all the icon files an app needs. For iOS it makes the Xcode AppIcon.appiconset with every iPhone, iPad and App Store size and its Contents.json; for Android the launcher icons for every screen density, round icons, adaptive icon layers with their XML and the Play Store icon; for web apps the 192 and 512 px icons, a maskable icon and the manifest. Artwork is scaled with high-quality resampling and kept inside each platform’s safe zone.",
+    "seoTitle": "App Icon Generator – iOS, Android and PWA Icons",
+    "seoDescription": "Generate app icons for iOS (AppIcon.appiconset), Android (mipmap, adaptive) and PWA (maskable) from one image. Free ZIP, no upload.",
+    "keywords": [
+      "app icon generator",
+      "ios app icon generator",
+      "android icon generator",
+      "appiconset generator",
+      "pwa icon generator"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a square picture, 1024 × 1024 px or larger."
+      },
+      {
+        "title": "Choose platforms",
+        "description": "iOS, Android and web, the background and the padding."
+      },
+      {
+        "title": "Download the ZIP",
+        "description": "Copy each folder into your app project."
+      }
+    ],
+    "features": [
+      {
+        "title": "Every size",
+        "description": "iPhone, iPad, App Store, Android densities and PWA."
+      },
+      {
+        "title": "Ready to use",
+        "description": "Contents.json, adaptive XML and a web manifest included."
+      },
+      {
+        "title": "Safe zones",
+        "description": "Artwork kept clear of rounded and circular masks."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What size should my picture be?",
+        "answer": "At least 1024 × 1024 px, square, for a sharp App Store icon."
+      },
+      {
+        "question": "Why do iOS icons have a background?",
+        "answer": "Apple doesn’t accept transparent app icons, so transparency is filled with the background color."
+      },
+      {
+        "question": "What are adaptive and maskable icons?",
+        "answer": "Icons whose shape is set by the phone or browser (circle, squircle). The artwork stays in the centre so nothing is cut off."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "image-annotator": {
+    "name": "Image Annotator",
+    "shortName": "Annotate Image",
+    "tagline": "Add arrows, boxes, circles, text, highlights and numbered steps to a screenshot or photo. Free, and it runs on your device.",
+    "intro": "Image Annotator lets you mark up a screenshot or photo to explain something: point with arrows, frame areas with rectangles or ellipses, draw freehand, highlight text, add labels and numbered steps for instructions. Choose the color and thickness, move or delete any mark, and undo or redo. Marks are sized to the picture, and the download is full resolution as PNG or JPG.",
+    "seoTitle": "Image Annotator – Add Arrows and Text to Images",
+    "seoDescription": "Annotate images online: arrows, boxes, circles, text, highlights and numbered steps on screenshots or photos. Full-size PNG or JPG. Free.",
+    "keywords": [
+      "image annotator",
+      "annotate screenshot",
+      "add arrow to image",
+      "mark up image online",
+      "add text and arrows to photo"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "Drop or choose a screenshot or photo."
+      },
+      {
+        "title": "Mark it up",
+        "description": "Choose a tool and color, then draw on the picture."
+      },
+      {
+        "title": "Download",
+        "description": "Save the annotated picture as PNG or JPG."
+      }
+    ],
+    "features": [
+      {
+        "title": "All the usual marks",
+        "description": "Arrows, boxes, ellipses, lines, pen, highlighter, text and numbered steps."
+      },
+      {
+        "title": "Easy to fix",
+        "description": "Select, move, delete, undo and redo."
+      },
+      {
+        "title": "Full resolution",
+        "description": "Marks are drawn onto the full-size picture."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I add text?",
+        "answer": "Choose Text, type in the box, then click where it should go."
+      },
+      {
+        "question": "How do I move or delete a mark?",
+        "answer": "Choose Select, click the mark, then drag it or press Delete."
+      },
+      {
+        "question": "Can I hide private information?",
+        "answer": "Use Censor Image to blur or pixelate parts of a picture."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
 };
