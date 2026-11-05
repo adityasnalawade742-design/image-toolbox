@@ -9048,4 +9048,248 @@ export const esTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Crear folleto",
+    shortName: "Folleto",
+    tagline: "Reordena un PDF en orden de folleto para imprimirlo a doble cara, doblarlo y graparlo. Gratis y en tu dispositivo.",
+    intro: "Crear folleto pone las páginas de un PDF en el orden necesario para un folleto doblado (grapado a caballete). Van dos páginas en cada cara de la hoja, así que cuando imprimes a doble cara, doblas el montón por la mitad y lo grapas por el pliegue, las páginas se leen en orden. Si el número de páginas no es múltiplo de 4, se añaden páginas en blanco al final. Elige papel A4, Carta, A3 o Tabloid, o mantén las páginas a tamaño completo, y encuadernación a la derecha para japonés o árabe. Las páginas siguen siendo contenido vectorial nítido.",
+    seoTitle: "Crear folleto PDF – Imprime un PDF como librillo gratis",
+    seoDescription: "Convierte un PDF en un folleto para imprimir: páginas ordenadas para imprimir a doble cara, doblar y grapar. A4, Carta, A3. Gratis y sin subir nada.",
+    keywords: [
+      "crear folleto pdf",
+      "pdf a folleto",
+      "imprimir pdf como folleto",
+      "imprimir librillo",
+      "imposición grapado a caballete"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el PDF que quieres convertir en folleto."
+      },
+      {
+        title: "Elige el papel",
+        description: "Elige el papel en el que vas a imprimir y el lado de encuadernación, y revisa las hojas en la vista previa."
+      },
+      {
+        title: "Imprime y dobla",
+        description: "Descarga el PDF, imprímelo a doble cara volteando por el borde corto, y luego dóblalo y grápalo."
+      }
+    ],
+    features: [
+      {
+        title: "Orden de páginas correcto",
+        description: "Las páginas se colocan para que el folleto doblado se lea 1, 2, 3…, con páginas en blanco al final."
+      },
+      {
+        title: "Páginas nítidas",
+        description: "Las páginas se colocan como contenido vectorial, así que el texto no se convierte en imagen."
+      },
+      {
+        title: "Encuadernación a la izquierda o a la derecha",
+        description: "Encuadernación a la derecha para idiomas que se leen de derecha a izquierda."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cómo imprimo el folleto?",
+        answer: "Imprime el PDF descargado a doble cara con «Voltear por el borde corto», a tamaño real. Mantén las hojas en orden, dobla el montón por la mitad y grápalo por el pliegue."
+      },
+      {
+        question: "¿Por qué se añadieron páginas en blanco?",
+        answer: "Cada hoja lleva 4 páginas (2 por cara), así que el número de páginas se redondea hacia arriba a un múltiplo de 4. Las páginas en blanco van al final."
+      },
+      {
+        question: "¿Mis páginas saldrán más pequeñas?",
+        answer: "Con el mismo tamaño de papel, sí: dos páginas comparten una cara, así que las páginas A4 se imprimen a tamaño A5. Elige «Mantener el tamaño de página» o un papel más grande, como A3, para mantenerlas a tamaño completo."
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El folleto se crea en tu dispositivo."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "Varias páginas por hoja (N-up PDF)",
+    shortName: "N-up PDF",
+    tagline: "Pon 2, 4, 6, 8, 9 o 16 páginas de un PDF en cada hoja para ahorrar papel o hacer apuntes. Gratis y funciona en tu dispositivo.",
+    intro: "N-up PDF coloca varias páginas de un PDF en cada hoja, lo más grandes que quepan: 2 diapositivas una al lado de otra, 4 páginas en cuadrícula, hasta 16 por hoja. Úsalo para imprimir las diapositivas de una clase como apuntes, revisar un documento en menos hojas o ahorrar papel. La hoja se gira según las páginas, el orden puede ir en horizontal o en vertical, y puedes añadir espacio y bordes finos entre las páginas. Las páginas siguen siendo contenido vectorial nítido.",
+    seoTitle: "Varias páginas PDF por hoja – N-up gratis online",
+    seoDescription: "Imprime varias páginas de un PDF en una sola hoja: 2, 4, 6, 8, 9 o 16 por hoja, en A4, Carta o A3. Gratis, sin registro, y tu archivo no se sube.",
+    keywords: [
+      "varias páginas por hoja pdf",
+      "2 páginas por hoja pdf",
+      "4 páginas por hoja",
+      "imprimir diapositivas varias por hoja",
+      "n-up pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu PDF",
+        description: "Suelta o elige el PDF."
+      },
+      {
+        title: "Elige la distribución",
+        description: "Elige las páginas por hoja, el papel, el orden y el espacio, y revisa la vista previa."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el nuevo PDF e imprímelo a tamaño real."
+      }
+    ],
+    features: [
+      {
+        title: "De 2 a 16 por hoja",
+        description: "La hoja se gira hacia el lado en que las páginas se ven más grandes."
+      },
+      {
+        title: "Páginas nítidas",
+        description: "Las páginas se colocan como contenido vectorial, no como imágenes."
+      },
+      {
+        title: "Tu distribución",
+        description: "Orden en horizontal o en vertical, espacio y bordes opcionales."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué distribución uso para diapositivas?",
+        answer: "2 por hoja mantiene las diapositivas legibles; 4 o 6 por hoja va bien para apuntes. La herramienta gira la hoja para que las diapositivas anchas quepan mejor."
+      },
+      {
+        question: "¿Puedo mantener el tamaño de página original?",
+        answer: "Sí. Elige «Igual que las páginas» para usar el tamaño de la primera página como tamaño de hoja."
+      },
+      {
+        question: "¿Funciona con páginas de distintos tamaños?",
+        answer: "Sí. Cada página se ajusta a su sitio sin recortarse ni deformarse."
+      },
+      {
+        question: "¿Se sube mi PDF?",
+        answer: "No. El nuevo PDF se crea en tu dispositivo."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Dividir imagen para póster",
+    shortName: "Dividir póster",
+    tagline: "Divide una imagen en varias páginas e imprímela en una impresora normal para hacer un póster grande. Gratis y en tu dispositivo.",
+    intro: "Dividir imagen para póster amplía una imagen sobre varias páginas A4, Carta o A3, para que puedas imprimir un póster grande en una impresora corriente y montarlo. Elige cuántas páginas a lo ancho; el número de filas depende de la forma de la imagen. Las páginas se solapan lo que elijas para poder pegarlas, y cada página lleva marcas de corte y una etiqueta como A1 o B2 que indica dónde va. La herramienta muestra el tamaño final del póster y avisa cuando la imagen se verá poco nítida a ese tamaño.",
+    seoTitle: "Dividir imagen en páginas – Imprime un póster en A4",
+    seoDescription: "Divide una imagen en varias páginas A4, Carta o A3 para imprimir un póster grande, con solapamiento, marcas de corte y etiquetas. Gratis y sin subir nada.",
+    keywords: [
+      "imprimir póster en varias hojas",
+      "dividir imagen en hojas a4",
+      "imprimir imagen grande en varias hojas",
+      "hacer póster con hojas a4",
+      "dividir imagen para imprimir"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige un JPG, PNG, WebP, HEIC o TIFF."
+      },
+      {
+        title: "Elige el tamaño",
+        description: "Ajusta las páginas a lo ancho, el papel y el solapamiento; la vista previa muestra cómo se divide la imagen."
+      },
+      {
+        title: "Imprime y monta",
+        description: "Imprime el PDF a tamaño real, recorta los bordes que se solapan y pega las páginas en orden."
+      }
+    ],
+    features: [
+      {
+        title: "Hasta 10 páginas a lo ancho",
+        description: "El tamaño del póster se muestra en centímetros y en pulgadas."
+      },
+      {
+        title: "Solapamiento, marcas y etiquetas",
+        description: "Solapamiento para pegar, marcas de corte y etiquetas como A1, B2."
+      },
+      {
+        title: "Calidad original",
+        description: "Las imágenes JPG y PNG entran en el PDF sin cambios."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cómo monto el póster?",
+        answer: "Imprime a tamaño real. Recorta el borde blanco en los lados que se solapan con la página vecina, alinea el solapamiento y pega las páginas con pegamento o cinta: A1, A2… en la fila de arriba, B1, B2… debajo."
+      },
+      {
+        question: "¿Qué tamaño puede tener el póster?",
+        answer: "Hasta 10 páginas a lo ancho; el alto depende de la imagen. Para un resultado nítido, intenta tener al menos 100 píxeles por pulgada en el tamaño final. La herramienta avisa cuando hay menos."
+      },
+      {
+        question: "¿Por qué hay un borde blanco?",
+        answer: "La mayoría de las impresoras no pueden imprimir hasta el borde del papel. El borde mantiene la imagen dentro de la zona imprimible y lleva las marcas de corte y las etiquetas."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. El PDF se crea en tu dispositivo."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Crear papel cuadriculado para imprimir",
+    shortName: "Papel cuadriculado",
+    tagline: "Crea papel cuadriculado para imprimir en mm o pulgadas: cuadrícula, puntos, isométrico, hexágonos o rayas. Gratis, en PDF o PNG.",
+    intro: "Crear papel cuadriculado para imprimir genera una página de papel con retícula lista para imprimir: cuadrícula con líneas más gruesas opcionales, papel de puntos para bullet journal, retícula isométrica para dibujo en 3D, hexágonos para juegos y química, o papel de rayas. Ajusta la separación en milímetros o pulgadas, el color y el grosor de las líneas, el tamaño del papel y el margen. El PDF se dibuja con líneas vectoriales, así que la retícula queda exacta y nítida al imprimir a tamaño real.",
+    seoTitle: "Papel cuadriculado para imprimir – puntos e isométrico",
+    seoDescription: "Crea papel cuadriculado para imprimir: cuadrícula, puntos, isométrico, hexágonos o rayas, en mm o pulgadas, en A4, Carta, A3 o A5. PDF o PNG gratis.",
+    keywords: [
+      "papel cuadriculado para imprimir",
+      "papel cuadriculado pdf",
+      "papel de puntos",
+      "papel isométrico",
+      "papel hexagonal"
+    ],
+    howToSteps: [
+      {
+        title: "Elige el tipo de papel",
+        description: "Cuadrícula, puntos, isométrico, hexágonos o rayas."
+      },
+      {
+        title: "Configúralo",
+        description: "Elige la separación, el color y el grosor de las líneas, el tamaño del papel y el margen."
+      },
+      {
+        title: "Descarga e imprime",
+        description: "Guarda el PDF o PNG e imprímelo a tamaño real (100 %)."
+      }
+    ],
+    features: [
+      {
+        title: "Cinco tipos de papel",
+        description: "Cuadriculado, de puntos, isométrico, hexagonal y de rayas."
+      },
+      {
+        title: "Separación exacta",
+        description: "Milímetros o medidas habituales en pulgadas, con cuadros enteros centrados en la página."
+      },
+      {
+        title: "PDF vectorial",
+        description: "Líneas nítidas a cualquier resolución de impresora, o un PNG a 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Por qué mis cuadros salen con un tamaño incorrecto al imprimir?",
+        answer: "La impresora está escalando la página. Imprime al 100 % o a «Tamaño real», no con «Ajustar a la página»."
+      },
+      {
+        question: "¿Qué separación debo usar?",
+        answer: "5 mm o 1/4 de pulgada es el papel cuadriculado más común; 1 mm con una línea más gruesa cada 10 va bien para ingeniería; 7 mm o 9/32 de pulgada es el papel de rayas estándar."
+      },
+      {
+        question: "¿Para qué sirve el papel isométrico?",
+        answer: "Sus líneas se cruzan a 60°, lo que facilita dibujar objetos en 3D, como edificios, muebles o bloques de pixel art."
+      },
+      {
+        question: "¿Tengo que registrarme?",
+        answer: "No. El papel se crea en tu navegador y es gratis."
+      }
+    ]
+  },
 };

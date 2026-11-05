@@ -93,16 +93,20 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
 /** Ruled segmented control used across the PDF tools */
 export function Segmented<T extends string | number>({ label, value, options, onChange, cols }: { label: string; value: T; options: { value: T; label: string }[]; onChange: (v: T) => void; cols?: number }) {
   const id = React.useId();
+  const columns = cols ?? options.length;
+  // A last row that isn't full: its last option stretches over the gap instead of leaving a dark hole
+  const short = options.length % columns;
   return (
     <div className="space-y-2">
       <span className="slug block" id={id}>
         {label}
       </span>
-      <div className="grid seg-group border border-ink gap-px bg-ink" style={{ gridTemplateColumns: `repeat(${cols ?? options.length}, minmax(0, 1fr))` }} role="group" aria-labelledby={id}>
-        {options.map((o) => (
+      <div className="grid seg-group border border-ink gap-px bg-ink" style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }} role="group" aria-labelledby={id}>
+        {options.map((o, i) => (
           <button
             key={String(o.value)}
             type="button"
+            style={short && i === options.length - 1 ? { gridColumn: `span ${columns - short + 1}` } : undefined}
             aria-pressed={value === o.value}
             onClick={() => onChange(o.value)}
             className={`min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${value === o.value ? 'seg-on' : 'seg-off'}`}

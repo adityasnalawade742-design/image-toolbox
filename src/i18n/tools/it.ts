@@ -9027,4 +9027,248 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Crea opuscoli",
+    shortName: "Opuscolo",
+    tagline: "Riordina un PDF in ordine da opuscolo per stamparlo fronte/retro, piegarlo e pinzarlo. Gratis, sul tuo dispositivo.",
+    intro: "Crea opuscoli mette le pagine di un PDF nell’ordine necessario per un opuscolo piegato (rilegatura a punto metallico). Ogni lato del foglio contiene due pagine, così quando stampi fronte/retro, pieghi la pila a metà e la pinzi lungo la piega, le pagine si leggono in ordine. Se il numero di pagine non è un multiplo di 4, alla fine vengono aggiunte pagine bianche. Scegli carta A4, Letter, A3 o Tabloid, oppure mantieni le pagine a grandezza piena, e la rilegatura a destra per il giapponese o l’arabo. Le pagine restano nitide come contenuto vettoriale.",
+    seoTitle: "Crea opuscolo da PDF – Stampa a libretto, gratis",
+    seoDescription: "Trasforma un PDF in un opuscolo da stampare: pagine ordinate per stampa fronte/retro, piegatura e pinzatura. A4, Letter, A3. Gratis, senza upload.",
+    keywords: [
+      "creare opuscolo pdf",
+      "stampare pdf come libretto",
+      "pdf a libretto",
+      "stampa opuscolo fronte retro",
+      "opuscolo punto metallico"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF da trasformare in opuscolo."
+      },
+      {
+        title: "Scegli la carta",
+        description: "Seleziona la carta su cui stamperai e il lato della rilegatura, e controlla i fogli nell’anteprima."
+      },
+      {
+        title: "Stampa e piega",
+        description: "Scarica il PDF, stampalo fronte/retro capovolgendo sul lato corto, poi piegalo e pinzalo."
+      }
+    ],
+    features: [
+      {
+        title: "Ordine delle pagine corretto",
+        description: "Le pagine sono disposte in modo che l’opuscolo piegato si legga 1, 2, 3…, con le pagine bianche alla fine."
+      },
+      {
+        title: "Pagine nitide",
+        description: "Le pagine vengono inserite come contenuto vettoriale, quindi il testo non diventa un’immagine."
+      },
+      {
+        title: "Rilegatura a sinistra o a destra",
+        description: "Rilegatura a destra per le lingue che si leggono da destra a sinistra."
+      }
+    ],
+    faqs: [
+      {
+        question: "Come stampo l’opuscolo?",
+        answer: "Stampa il PDF scaricato fronte/retro con “Capovolgi sul lato corto”, a dimensioni effettive. Tieni i fogli in ordine, piega la pila a metà e pinzala lungo la piega."
+      },
+      {
+        question: "Perché sono state aggiunte pagine bianche?",
+        answer: "Ogni foglio contiene 4 pagine (2 per lato), quindi il numero di pagine viene arrotondato a un multiplo di 4. Le pagine bianche vanno alla fine."
+      },
+      {
+        question: "Le pagine diventeranno più piccole?",
+        answer: "Sullo stesso formato di carta, sì: due pagine condividono un lato, quindi le pagine A4 vengono stampate in formato A5. Scegli “Mantieni il formato delle pagine” o una carta più grande come l’A3 per mantenerle a grandezza piena."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. L’opuscolo viene creato sul tuo dispositivo."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "Più pagine per foglio PDF",
+    shortName: "N-up PDF",
+    tagline: "Metti 2, 4, 6, 8, 9 o 16 pagine PDF su ogni foglio per risparmiare carta o creare dispense. Gratis e funziona sul tuo dispositivo.",
+    intro: "Questo strumento dispone più pagine di un PDF su ogni foglio (stampa N-up), il più grandi possibile: 2 slide affiancate, 4 pagine in griglia, fino a 16 per foglio. Usalo per stampare le slide delle lezioni come dispense, rileggere un documento su meno fogli o risparmiare carta. Il foglio ruota in base alle pagine, l’ordine può andare in orizzontale o in verticale e puoi aggiungere spazio e bordi sottili tra le pagine. Le pagine restano nitide come contenuto vettoriale.",
+    seoTitle: "Più pagine per foglio PDF (N-up) – Gratis online",
+    seoDescription: "Stampa più pagine PDF su un solo foglio: 2, 4, 6, 8, 9 o 16 per pagina, su A4, Letter o A3. Gratis, senza registrazione, il file non viene caricato.",
+    keywords: [
+      "più pagine per foglio pdf",
+      "2 pagine per foglio pdf",
+      "4 pagine per foglio",
+      "stampare slide come dispense",
+      "n-up pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF."
+      },
+      {
+        title: "Scegli il layout",
+        description: "Seleziona le pagine per foglio, la carta, l’ordine e la spaziatura, e controlla l’anteprima."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il nuovo PDF e stampalo a dimensioni effettive."
+      }
+    ],
+    features: [
+      {
+        title: "Da 2 a 16 per foglio",
+        description: "Il foglio ruota nel verso che mostra le pagine più grandi."
+      },
+      {
+        title: "Pagine nitide",
+        description: "Le pagine vengono inserite come contenuto vettoriale, non come immagini."
+      },
+      {
+        title: "Il tuo layout",
+        description: "Ordine in orizzontale o in verticale, spaziatura e bordi facoltativi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quale layout conviene per le slide?",
+        answer: "2 per foglio mantiene le slide leggibili; 4 o 6 per foglio vanno bene per le dispense. Lo strumento ruota il foglio per adattare al meglio le slide larghe."
+      },
+      {
+        question: "Posso mantenere il formato originale delle pagine?",
+        answer: "Sì. Scegli “Come le pagine” per usare il formato della prima pagina come formato del foglio."
+      },
+      {
+        question: "Funziona con pagine di formati diversi?",
+        answer: "Sì. Ogni pagina viene adattata al suo spazio senza essere ritagliata né deformata."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Il nuovo PDF viene creato sul tuo dispositivo."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Dividi poster in pagine",
+    shortName: "Dividi poster",
+    tagline: "Dividi un’immagine su più pagine e stampala con una normale stampante per creare un poster grande. Gratis, sul tuo dispositivo.",
+    intro: "Dividi poster in pagine ingrandisce un’immagine su più pagine A4, Letter o A3, così puoi stampare un poster grande con una normale stampante e poi montarlo. Scegli quante pagine in larghezza; il numero di file dipende dalla forma dell’immagine. Le pagine si sovrappongono della misura che scegli per poterle incollare, e ogni pagina ha segni di taglio e un’etichetta come A1 o B2 che indica dove va. Lo strumento mostra la dimensione finale del poster e avvisa quando l’immagine risulterà poco nitida a quella dimensione.",
+    seoTitle: "Dividi immagine su più fogli A4 – Stampa un poster grande",
+    seoDescription: "Dividi un’immagine su più pagine A4, Letter o A3 per stampare un poster grande, con sovrapposizione, segni di taglio ed etichette. Gratis, senza upload.",
+    keywords: [
+      "stampare poster su più fogli",
+      "dividere immagine in più fogli",
+      "poster con fogli a4",
+      "stampare immagine grande su più pagine",
+      "dividere immagine per stampa"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi l’immagine",
+        description: "Trascina o scegli un file JPG, PNG, WebP, HEIC o TIFF."
+      },
+      {
+        title: "Scegli la dimensione",
+        description: "Imposta le pagine in larghezza, la carta e la sovrapposizione; l’anteprima mostra come viene divisa l’immagine."
+      },
+      {
+        title: "Stampa e monta",
+        description: "Stampa il PDF a dimensioni effettive, rifila i bordi che si sovrappongono e incolla le pagine in ordine."
+      }
+    ],
+    features: [
+      {
+        title: "Fino a 10 pagine in larghezza",
+        description: "La dimensione del poster è indicata in centimetri e pollici."
+      },
+      {
+        title: "Sovrapposizione, segni ed etichette",
+        description: "Sovrapposizione per incollare, segni di taglio ed etichette come A1, B2."
+      },
+      {
+        title: "Qualità originale",
+        description: "Le immagini JPG e PNG entrano nel PDF senza modifiche."
+      }
+    ],
+    faqs: [
+      {
+        question: "Come monto il poster?",
+        answer: "Stampa a dimensioni effettive. Rifila il bordo bianco sui lati che si sovrappongono alla pagina vicina, allinea la sovrapposizione e incolla o fissa con il nastro adesivo le pagine: A1, A2… nella fila in alto, B1, B2… sotto."
+      },
+      {
+        question: "Quanto può essere grande il poster?",
+        answer: "Fino a 10 pagine in larghezza; l’altezza dipende dall’immagine. Per un risultato nitido, punta ad almeno 100 pixel per pollice alla dimensione finale. Lo strumento ti avvisa quando sono meno."
+      },
+      {
+        question: "Perché c’è un bordo bianco?",
+        answer: "La maggior parte delle stampanti non riesce a stampare fino al bordo del foglio. Il bordo mantiene l’immagine dentro l’area stampabile e ospita i segni di taglio e le etichette."
+      },
+      {
+        question: "La mia immagine viene caricata?",
+        answer: "No. Il PDF viene creato sul tuo dispositivo."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Crea carta quadrettata da stampare",
+    shortName: "Carta quadrettata",
+    tagline: "Crea carta quadrettata da stampare in mm o pollici: quadretti, puntini, isometrica, esagoni o righe. Gratis, in PDF o PNG.",
+    intro: "Questo strumento crea una pagina di carta con griglia da stampare: quadrettata con linee più spesse facoltative, a puntini per il bullet journal, isometrica per il disegno in 3D, a esagoni per giochi e chimica, oppure a righe. Imposta la spaziatura in millimetri o pollici, il colore e lo spessore delle linee, il formato della carta e il margine. Il PDF è disegnato con linee vettoriali, quindi la griglia resta esatta e nitida quando la stampi a dimensioni effettive.",
+    seoTitle: "Carta quadrettata da stampare – A puntini, isometrica",
+    seoDescription: "Crea carta da stampare: quadrettata, a puntini, isometrica, esagonale o a righe, in mm o pollici, su A4, Letter, A3 o A5. PDF o PNG gratis.",
+    keywords: [
+      "carta millimetrata da stampare",
+      "carta quadrettata pdf",
+      "carta a puntini da stampare",
+      "carta isometrica da stampare",
+      "carta esagonale"
+    ],
+    howToSteps: [
+      {
+        title: "Scegli il tipo di carta",
+        description: "Quadretti, puntini, isometrica, esagoni o righe."
+      },
+      {
+        title: "Imposta la pagina",
+        description: "Scegli la spaziatura, il colore e lo spessore delle linee, il formato della carta e il margine."
+      },
+      {
+        title: "Scarica e stampa",
+        description: "Salva il PDF o il PNG e stampalo a dimensioni effettive (100%)."
+      }
+    ],
+    features: [
+      {
+        title: "Cinque tipi di carta",
+        description: "Quadrettata, a puntini, isometrica, esagonale e a righe."
+      },
+      {
+        title: "Spaziatura esatta",
+        description: "Millimetri o misure comuni in pollici, con quadretti interi centrati sulla pagina."
+      },
+      {
+        title: "PDF vettoriale",
+        description: "Linee nitide a qualsiasi risoluzione della stampante, oppure un PNG a 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché i quadretti stampati hanno la misura sbagliata?",
+        answer: "La stampante sta ridimensionando la pagina. Stampa al 100% o con “Dimensioni effettive”, non con “Adatta alla pagina”."
+      },
+      {
+        question: "Che spaziatura conviene usare?",
+        answer: "5 mm o 1/4 di pollice è la carta quadrettata più comune; 1 mm con una linea più spessa ogni 10 va bene per l’ingegneria; 7 mm o 9/32 di pollice è la rigatura standard."
+      },
+      {
+        question: "A cosa serve la carta isometrica?",
+        answer: "Le sue linee si incontrano a 60°, il che rende facile disegnare oggetti in 3D, come edifici, mobili o blocchi in pixel art."
+      },
+      {
+        question: "Devo registrarmi?",
+        answer: "No. La carta viene creata nel tuo browser ed è gratuita."
+      }
+    ]
+  },
 };

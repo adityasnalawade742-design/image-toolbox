@@ -9070,4 +9070,248 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Broschüre erstellen",
+    shortName: "Broschüre",
+    tagline: "Bring ein PDF in Broschürenreihenfolge, um es beidseitig zu drucken, zu falten und zu heften. Kostenlos, auf deinem Gerät.",
+    intro: "Broschüre erstellen bringt die Seiten eines PDFs in die Reihenfolge, die für eine gefaltete Broschüre (Rückstichheftung) nötig ist. Auf jede Seite eines Blatts kommen zwei Seiten: Wenn du beidseitig druckst, den Stapel in der Mitte faltest und entlang des Falzes heftest, liest man die Seiten in der richtigen Reihenfolge. Ist die Seitenzahl kein Vielfaches von 4, werden am Ende leere Seiten ergänzt. Wähle A4, Letter, A3 oder Tabloid als Papier oder behalte die Seiten in voller Größe, und Bindung rechts für Japanisch oder Arabisch. Die Seiten bleiben scharfer Vektorinhalt.",
+    seoTitle: "PDF als Broschüre drucken – Broschüre erstellen, gratis",
+    seoDescription: "Mach aus einem PDF eine druckfertige Broschüre: Seiten angeordnet für beidseitigen Druck, Falten und Heften. A4, Letter, A3. Kostenlos, ohne Upload.",
+    keywords: [
+      "broschüre erstellen pdf",
+      "pdf als broschüre drucken",
+      "pdf in broschüre umwandeln",
+      "heft drucken",
+      "ausschießen rückstichheftung"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF, das eine Broschüre werden soll, hierher oder wähle es aus."
+      },
+      {
+        title: "Papier wählen",
+        description: "Wähle das Papier, auf dem du druckst, und die Bindungsseite, und prüfe die Blätter in der Vorschau."
+      },
+      {
+        title: "Drucken und falten",
+        description: "Lade das PDF herunter, drucke es beidseitig mit Spiegeln an der kurzen Kante, dann falten und heften."
+      }
+    ],
+    features: [
+      {
+        title: "Richtige Seitenreihenfolge",
+        description: "Die Seiten werden so angeordnet, dass sich die gefaltete Broschüre als 1, 2, 3 … liest, mit leeren Seiten am Ende."
+      },
+      {
+        title: "Scharfe Seiten",
+        description: "Die Seiten werden als Vektorinhalt platziert, Text wird also nicht in Bilder umgewandelt."
+      },
+      {
+        title: "Bindung links oder rechts",
+        description: "Bindung rechts für Sprachen, die von rechts nach links gelesen werden."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie drucke ich die Broschüre?",
+        answer: "Drucke das heruntergeladene PDF beidseitig mit „An kurzer Kante spiegeln“ in tatsächlicher Größe. Lass die Blätter in ihrer Reihenfolge, falte den Stapel in der Mitte und hefte ihn entlang des Falzes."
+      },
+      {
+        question: "Warum wurden leere Seiten hinzugefügt?",
+        answer: "Jedes Blatt fasst 4 Seiten (2 pro Seite des Blatts), daher wird die Seitenzahl auf ein Vielfaches von 4 aufgerundet. Die leeren Seiten kommen ans Ende."
+      },
+      {
+        question: "Werden meine Seiten kleiner?",
+        answer: "Bei gleichem Papierformat ja: Zwei Seiten teilen sich eine Blattseite, A4-Seiten werden also in A5-Größe gedruckt. Wähle „Seitengröße beibehalten“ oder größeres Papier wie A3, um sie in voller Größe zu behalten."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Die Broschüre wird auf deinem Gerät erstellt."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "Mehrere Seiten pro Blatt (N-up PDF)",
+    shortName: "N-up PDF",
+    tagline: "Setze 2, 4, 6, 8, 9 oder 16 PDF-Seiten auf jedes Blatt, um Papier zu sparen oder Handouts zu machen. Kostenlos und direkt auf deinem Gerät.",
+    intro: "N-up PDF setzt mehrere Seiten eines PDFs auf jedes Blatt, so groß sie passen: 2 Folien nebeneinander, 4 Seiten im Raster, bis zu 16 pro Blatt. Damit druckst du Vorlesungsfolien als Handouts, prüfst ein Dokument auf weniger Blättern oder sparst Papier. Das Blatt dreht sich passend zu den Seiten, die Reihenfolge kann zeilen- oder spaltenweise laufen, und du kannst Abstand und dünne Rahmen zwischen den Seiten hinzufügen. Die Seiten bleiben scharfer Vektorinhalt.",
+    seoTitle: "Mehrere PDF-Seiten pro Blatt – N-up kostenlos online",
+    seoDescription: "Drucke mehrere PDF-Seiten auf ein Blatt: 2, 4, 6, 8, 9 oder 16 pro Seite, auf A4, Letter oder A3. Kostenlos, ohne Anmeldung, deine Datei wird nicht hochgeladen.",
+    keywords: [
+      "mehrere seiten pro blatt pdf",
+      "2 seiten auf ein blatt pdf",
+      "4 seiten pro blatt drucken",
+      "folien als handout drucken",
+      "n-up pdf"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus."
+      },
+      {
+        title: "Layout wählen",
+        description: "Wähle Seiten pro Blatt, Papier, Reihenfolge und Abstand, und prüfe die Vorschau."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das neue PDF und drucke es in tatsächlicher Größe."
+      }
+    ],
+    features: [
+      {
+        title: "2 bis 16 pro Blatt",
+        description: "Das Blatt dreht sich so, dass die Seiten am größten erscheinen."
+      },
+      {
+        title: "Scharfe Seiten",
+        description: "Die Seiten werden als Vektorinhalt platziert, nicht als Bilder."
+      },
+      {
+        title: "Dein Layout",
+        description: "Reihenfolge zeilen- oder spaltenweise, Abstand und optionale Rahmen."
+      }
+    ],
+    faqs: [
+      {
+        question: "Welches Layout eignet sich für Folien?",
+        answer: "Mit 2 pro Blatt bleiben Folien gut lesbar; 4 oder 6 pro Blatt passen für Handouts. Das Tool dreht das Blatt so, dass breite Folien am besten passen."
+      },
+      {
+        question: "Kann ich die ursprüngliche Seitengröße behalten?",
+        answer: "Ja. Wähle „Wie die Seiten“, um die Größe der ersten Seite als Blattgröße zu verwenden."
+      },
+      {
+        question: "Funktioniert es mit unterschiedlich großen Seiten?",
+        answer: "Ja. Jede Seite wird in ihren Platz eingepasst, ohne beschnitten oder verzerrt zu werden."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Das neue PDF wird auf deinem Gerät erstellt."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Poster aufteilen",
+    shortName: "Poster aufteilen",
+    tagline: "Verteile ein Bild auf mehrere Seiten und drucke es mit einem normalen Drucker als großes Poster. Kostenlos, auf deinem Gerät.",
+    intro: "Poster aufteilen vergrößert ein Bild über mehrere A4-, Letter- oder A3-Seiten, damit du ein großes Poster mit einem gewöhnlichen Drucker drucken und zusammensetzen kannst. Wähle, wie viele Seiten nebeneinander; die Zahl der Reihen ergibt sich aus der Form des Bildes. Die Seiten überlappen um den gewählten Wert, damit du sie kleben kannst, und jede Seite hat Schnittmarken und eine Beschriftung wie A1 oder B2, die zeigt, wo sie hingehört. Das Tool zeigt die endgültige Postergröße und warnt, wenn das Bild in dieser Größe unscharf wirkt.",
+    seoTitle: "Bild auf mehrere Seiten drucken – Poster aus A4",
+    seoDescription: "Verteile ein Bild auf mehrere A4-, Letter- oder A3-Seiten und drucke ein großes Poster, mit Überlappung, Schnittmarken und Beschriftung. Kostenlos, ohne Upload.",
+    keywords: [
+      "poster auf mehrere seiten drucken",
+      "bild auf mehrere seiten aufteilen",
+      "großes bild auf a4 drucken",
+      "poster aus a4 blättern",
+      "bild in kacheln drucken"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein JPG, PNG, WebP, HEIC oder TIFF hierher oder wähle es aus."
+      },
+      {
+        title: "Größe wählen",
+        description: "Stell Seiten nebeneinander, Papier und Überlappung ein; die Vorschau zeigt, wie das Bild aufgeteilt wird."
+      },
+      {
+        title: "Drucken und zusammensetzen",
+        description: "Drucke das PDF in tatsächlicher Größe, schneide die überlappenden Ränder ab und klebe die Seiten der Reihe nach zusammen."
+      }
+    ],
+    features: [
+      {
+        title: "Bis zu 10 Seiten nebeneinander",
+        description: "Die Postergröße wird in Zentimetern und Zoll angezeigt."
+      },
+      {
+        title: "Überlappung, Marken und Beschriftung",
+        description: "Überlappung zum Kleben, Schnittmarken und Beschriftungen wie A1, B2."
+      },
+      {
+        title: "Originalqualität",
+        description: "JPG- und PNG-Bilder kommen unverändert ins PDF."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie setze ich das Poster zusammen?",
+        answer: "Drucke in tatsächlicher Größe. Schneide den weißen Rand an den Kanten ab, die eine Nachbarseite überlappen, richte die Überlappung aus und klebe die Seiten mit Kleber oder Klebeband zusammen: A1, A2 … in der oberen Reihe, B1, B2 … darunter."
+      },
+      {
+        question: "Wie groß kann das Poster werden?",
+        answer: "Bis zu 10 Seiten nebeneinander; die Höhe hängt vom Bild ab. Für ein scharfes Ergebnis solltest du mindestens 100 Pixel pro Zoll in der Endgröße anstreben. Das Tool warnt, wenn es weniger sind."
+      },
+      {
+        question: "Warum gibt es einen weißen Rand?",
+        answer: "Die meisten Drucker können nicht bis an den Papierrand drucken. Der Rand hält das Bild im druckbaren Bereich und nimmt Schnittmarken und Beschriftungen auf."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Das PDF wird auf deinem Gerät erstellt."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Rasterpapier zum Ausdrucken",
+    shortName: "Rasterpapier",
+    tagline: "Erstelle Rasterpapier zum Ausdrucken in mm oder Zoll: Karos, Punkte, isometrisch, Sechsecke oder Linien. Kostenlos, als PDF oder PNG.",
+    intro: "Rasterpapier zum Ausdrucken erstellt eine druckfertige Seite mit Raster: Karopapier mit optionalen dickeren Linien, Punktraster für Bullet Journals, isometrisches Raster für 3D-Zeichnungen, Sechsecke für Spiele und Chemie oder liniertes Papier. Stell den Abstand in Millimetern oder Zoll, Linienfarbe und -stärke, Papierformat und Rand ein. Das PDF wird mit Vektorlinien gezeichnet, so bleibt das Raster beim Druck in tatsächlicher Größe exakt und scharf.",
+    seoTitle: "Karopapier zum Ausdrucken – Punktraster, isometrisch",
+    seoDescription: "Erstelle Rasterpapier zum Ausdrucken: kariert, Punkte, isometrisch, Sechsecke oder liniert, in mm oder Zoll, für A4, Letter, A3, A5. Gratis als PDF oder PNG.",
+    keywords: [
+      "karopapier zum ausdrucken",
+      "millimeterpapier pdf",
+      "punktraster papier",
+      "isometrisches papier",
+      "sechseckpapier"
+    ],
+    howToSteps: [
+      {
+        title: "Papierart wählen",
+        description: "Karos, Punkte, isometrisch, Sechsecke oder Linien."
+      },
+      {
+        title: "Einstellen",
+        description: "Wähle Abstand, Linienfarbe und -stärke, Papierformat und Rand."
+      },
+      {
+        title: "Herunterladen und drucken",
+        description: "Speichere das PDF oder PNG und drucke es in tatsächlicher Größe (100 %)."
+      }
+    ],
+    features: [
+      {
+        title: "Fünf Papierarten",
+        description: "Kariert, Punkte, isometrisch, Sechsecke und liniert."
+      },
+      {
+        title: "Exakter Abstand",
+        description: "Millimeter oder gängige Zollmaße, mit ganzen Kästchen mittig auf der Seite."
+      },
+      {
+        title: "Vektor-PDF",
+        description: "Scharfe Linien bei jeder Druckerauflösung, oder ein PNG mit 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum haben meine Kästchen beim Drucken die falsche Größe?",
+        answer: "Der Drucker skaliert die Seite. Drucke mit 100 % oder „Tatsächliche Größe“, nicht mit „An Seite anpassen“."
+      },
+      {
+        question: "Welchen Abstand soll ich nehmen?",
+        answer: "5 mm oder 1/4 Zoll ist das gängigste Karopapier; 1 mm mit einer dickeren Linie alle 10 eignet sich für Technik; 7 mm oder 9/32 Zoll ist Standard für liniertes Papier."
+      },
+      {
+        question: "Wofür ist isometrisches Papier?",
+        answer: "Seine Linien treffen sich im 60°-Winkel, so lassen sich Objekte leicht in 3D zeichnen, etwa Gebäude, Möbel oder Pixel-Art-Blöcke."
+      },
+      {
+        question: "Muss ich mich anmelden?",
+        answer: "Nein. Das Papier wird in deinem Browser erstellt und ist kostenlos."
+      }
+    ]
+  },
 };

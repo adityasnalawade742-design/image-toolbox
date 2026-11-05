@@ -9076,4 +9076,248 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "booklet-maker": {
+    name: "Créateur de livret",
+    shortName: "Livret",
+    tagline: "Remettez un PDF dans l’ordre d’un livret pour l’imprimer en recto verso, le plier et l’agrafer. Gratuit, sur votre appareil.",
+    intro: "Créateur de livret met les pages d’un PDF dans l’ordre nécessaire pour un livret plié (piqûre à cheval). Deux pages vont sur chaque face d’une feuille \u0001 quand vous imprimez en recto verso, pliez la pile en deux et agrafez le long du pli, les pages se lisent dans l’ordre. Des pages blanches sont ajoutées à la fin quand le nombre de pages n’est pas un multiple de 4. Choisissez du papier A4, Letter, A3 ou Tabloid, ou conservez les pages en taille réelle, et la reliure à droite pour le japonais ou l’arabe. Les pages restent en contenu vectoriel net.",
+    seoTitle: "Créer un livret PDF – imprimer en brochure, gratuit",
+    seoDescription: "Transformez un PDF en livret à imprimer \u0001 pages disposées pour l’impression recto verso, le pliage et l’agrafage. A4, Letter, A3. Gratuit, sans envoi.",
+    keywords: [
+      "créer un livret pdf",
+      "pdf en livret",
+      "imprimer un pdf en livret",
+      "impression brochure",
+      "imposition piqûre à cheval"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF à transformer en livret."
+      },
+      {
+        title: "Choisissez le papier",
+        description: "Choisissez le papier sur lequel vous imprimerez et le côté de la reliure, puis vérifiez les feuilles dans l’aperçu."
+      },
+      {
+        title: "Imprimez et pliez",
+        description: "Téléchargez le PDF, imprimez-le en recto verso en retournant sur les bords courts, puis pliez et agrafez."
+      }
+    ],
+    features: [
+      {
+        title: "Ordre des pages correct",
+        description: "Les pages sont disposées pour que le livret plié se lise 1, 2, 3…, avec des pages blanches ajoutées à la fin."
+      },
+      {
+        title: "Pages nettes",
+        description: "Les pages sont placées en contenu vectoriel \u0001 le texte n’est pas transformé en image."
+      },
+      {
+        title: "Reliure à gauche ou à droite",
+        description: "Reliure à droite pour les langues qui se lisent de droite à gauche."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment imprimer le livret \u0001",
+        answer: "Imprimez le PDF téléchargé en recto verso avec « Retourner sur les bords courts », en taille réelle. Gardez les feuilles dans l’ordre, pliez la pile en deux et agrafez le long du pli."
+      },
+      {
+        question: "Pourquoi des pages blanches ont-elles été ajoutées \u0001",
+        answer: "Chaque feuille contient 4 pages (2 par face) \u0001 le nombre de pages est donc arrondi au multiple de 4 supérieur. Les pages blanches vont à la fin."
+      },
+      {
+        question: "Mes pages seront-elles plus petites \u0001",
+        answer: "Sur le même format de papier, oui \u0001 deux pages partagent une face, donc des pages A4 s’impriment au format A5. Choisissez « Conserver la taille des pages » ou un papier plus grand comme l’A3 pour les garder en taille réelle."
+      },
+      {
+        question: "Mon PDF est-il envoyé \u0001",
+        answer: "Non. Le livret est créé sur votre appareil."
+      }
+    ]
+  },
+  "n-up-pdf": {
+    name: "Plusieurs pages par feuille (N-up PDF)",
+    shortName: "N-up PDF",
+    tagline: "Mettez 2, 4, 6, 8, 9 ou 16 pages d’un PDF sur chaque feuille pour économiser du papier ou faire des polycopiés. Gratuit, sur votre appareil.",
+    intro: "N-up PDF place plusieurs pages d’un PDF sur chaque feuille, aussi grandes que possible \u0001 2 diapositives côte à côte, 4 pages en grille, jusqu’à 16 par feuille. Utilisez-le pour imprimer les diapositives d’un cours en polycopié, relire un document sur moins de feuilles ou économiser du papier. La feuille pivote selon les pages, l’ordre peut aller en ligne ou en colonne, et vous pouvez ajouter de l’espace et de fines bordures entre les pages. Les pages restent en contenu vectoriel net.",
+    seoTitle: "Plusieurs pages PDF par feuille – N-up gratuit",
+    seoDescription: "Imprimez plusieurs pages d’un PDF sur une feuille \u0001 2, 4, 6, 8, 9 ou 16 par page, en A4, Letter ou A3. Gratuit, sans inscription, aucun envoi du fichier.",
+    keywords: [
+      "plusieurs pages par feuille pdf",
+      "2 pages par feuille pdf",
+      "4 pages par feuille",
+      "imprimer diapositives plusieurs par page",
+      "n-up pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF."
+      },
+      {
+        title: "Choisissez la disposition",
+        description: "Choisissez le nombre de pages par feuille, le papier, l’ordre et l’espacement, puis vérifiez l’aperçu."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le nouveau PDF et imprimez-le en taille réelle."
+      }
+    ],
+    features: [
+      {
+        title: "De 2 à 16 par feuille",
+        description: "La feuille pivote dans le sens qui affiche les pages le plus grand."
+      },
+      {
+        title: "Pages nettes",
+        description: "Les pages sont placées en contenu vectoriel, pas en images."
+      },
+      {
+        title: "Votre disposition",
+        description: "Ordre en ligne ou en colonne, espacement et bordures facultatives."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle disposition choisir pour des diapositives \u0001",
+        answer: "2 par feuille garde les diapositives lisibles \u0001 4 ou 6 par feuille conviennent aux polycopiés. L’outil fait pivoter la feuille pour que les diapositives larges tiennent au mieux."
+      },
+      {
+        question: "Puis-je conserver la taille d’origine des pages \u0001",
+        answer: "Oui. Choisissez « Comme les pages » pour utiliser la taille de la première page comme taille de feuille."
+      },
+      {
+        question: "Est-ce que ça marche avec des pages de tailles différentes \u0001",
+        answer: "Oui. Chaque page est ajustée à son emplacement sans être rognée ni déformée."
+      },
+      {
+        question: "Mon PDF est-il envoyé \u0001",
+        answer: "Non. Le nouveau PDF est créé sur votre appareil."
+      }
+    ]
+  },
+  "poster-splitter": {
+    name: "Découpeur de poster",
+    shortName: "Découpe poster",
+    tagline: "Découpez une image sur plusieurs pages et imprimez-la sur une imprimante classique pour faire un grand poster. Gratuit, sur votre appareil.",
+    intro: "Découpeur de poster agrandit une image sur plusieurs pages A4, Letter ou A3, pour imprimer un grand poster sur une imprimante ordinaire et l’assembler. Choisissez le nombre de pages en largeur \u0001 le nombre de rangées découle des proportions de l’image. Les pages se chevauchent de la valeur choisie pour pouvoir les coller, et chaque page porte des traits de coupe et un repère comme A1 ou B2 qui indique sa place. L’outil affiche la taille finale du poster et prévient quand l’image paraîtra floue à cette taille.",
+    seoTitle: "Découper une image en pages – grand poster en A4",
+    seoDescription: "Découpez une image sur plusieurs pages A4, Letter ou A3 pour imprimer un grand poster, avec chevauchement, traits de coupe et repères. Gratuit, sans envoi.",
+    keywords: [
+      "imprimer un poster sur plusieurs pages",
+      "découper une image en plusieurs pages",
+      "imprimer une image en grand format a4",
+      "poster en plusieurs feuilles a4",
+      "agrandir une image sur plusieurs pages"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez un JPG, PNG, WebP, HEIC ou TIFF."
+      },
+      {
+        title: "Choisissez la taille",
+        description: "Réglez les pages en largeur, le papier et le chevauchement \u0001 l’aperçu montre comment l’image est découpée."
+      },
+      {
+        title: "Imprimez et assemblez",
+        description: "Imprimez le PDF en taille réelle, coupez les bords qui se chevauchent et collez les pages dans l’ordre."
+      }
+    ],
+    features: [
+      {
+        title: "Jusqu’à 10 pages en largeur",
+        description: "La taille du poster s’affiche en centimètres et en pouces."
+      },
+      {
+        title: "Chevauchement, traits et repères",
+        description: "Chevauchement pour le collage, traits de coupe et repères comme A1, B2."
+      },
+      {
+        title: "Qualité d’origine",
+        description: "Les images JPG et PNG sont intégrées au PDF sans modification."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment assembler le poster \u0001",
+        answer: "Imprimez en taille réelle. Coupez la marge blanche sur les bords qui chevauchent une page voisine, alignez le chevauchement et collez les pages ou fixez-les avec du ruban adhésif \u0001 A1, A2… sur la rangée du haut, B1, B2… en dessous."
+      },
+      {
+        question: "Quelle taille peut faire le poster \u0001",
+        answer: "Jusqu’à 10 pages en largeur \u0001 la hauteur dépend de l’image. Pour un résultat net, visez au moins 100 pixels par pouce à la taille finale. L’outil prévient quand c’est moins."
+      },
+      {
+        question: "Pourquoi y a-t-il une marge blanche \u0001",
+        answer: "La plupart des imprimantes ne peuvent pas imprimer jusqu’au bord du papier. La marge garde l’image dans la zone imprimable et accueille les traits de coupe et les repères."
+      },
+      {
+        question: "Mon image est-elle envoyée \u0001",
+        answer: "Non. Le PDF est créé sur votre appareil."
+      }
+    ]
+  },
+  "graph-paper-maker": {
+    name: "Papier quadrillé à imprimer",
+    shortName: "Papier quadrillé",
+    tagline: "Créez du papier quadrillé à imprimer en mm ou en pouces \u0001 carreaux, points, isométrique, hexagones ou lignes. Gratuit, en PDF ou PNG.",
+    intro: "Papier quadrillé à imprimer crée une page de papier à grille prête à imprimer \u0001 quadrillage avec lignes plus épaisses en option, papier à points pour le bullet journal, grille isométrique pour le dessin en 3D, hexagones pour les jeux et la chimie, ou papier ligné. Réglez l’espacement en millimètres ou en pouces, la couleur et l’épaisseur des lignes, le format du papier et la marge. Le PDF est tracé avec des lignes vectorielles \u0001 la grille reste exacte et nette une fois imprimée en taille réelle.",
+    seoTitle: "Papier quadrillé à imprimer – points, isométrique",
+    seoDescription: "Créez du papier quadrillé à imprimer \u0001 carreaux, points, isométrique, hexagones ou lignes, en mm ou pouces, en A4, Letter, A3 ou A5. PDF ou PNG gratuit.",
+    keywords: [
+      "papier quadrillé à imprimer",
+      "papier millimétré pdf",
+      "papier pointillé",
+      "papier isométrique",
+      "papier hexagonal"
+    ],
+    howToSteps: [
+      {
+        title: "Choisissez le type de papier",
+        description: "Carreaux, points, isométrique, hexagones ou lignes."
+      },
+      {
+        title: "Réglez-le",
+        description: "Choisissez l’espacement, la couleur et l’épaisseur des lignes, le format du papier et la marge."
+      },
+      {
+        title: "Téléchargez et imprimez",
+        description: "Enregistrez le PDF ou le PNG et imprimez-le en taille réelle (100 %)."
+      }
+    ],
+    features: [
+      {
+        title: "Cinq types de papier",
+        description: "Quadrillé, à points, isométrique, hexagonal et ligné."
+      },
+      {
+        title: "Espacement exact",
+        description: "Millimètres ou tailles courantes en pouces, avec des carreaux entiers centrés sur la page."
+      },
+      {
+        title: "PDF vectoriel",
+        description: "Des lignes nettes à toute résolution d’imprimante, ou un PNG à 300 dpi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi mes carreaux n’ont-ils pas la bonne taille à l’impression \u0001",
+        answer: "L’imprimante met la page à l’échelle. Imprimez à 100 % ou en « Taille réelle », pas avec « Ajuster à la page »."
+      },
+      {
+        question: "Quel espacement choisir \u0001",
+        answer: "5 mm ou 1/4 de pouce est le papier quadrillé le plus courant \u0001 1 mm avec une ligne plus épaisse tous les 10 convient à l’ingénierie \u0001 7 mm ou 9/32 de pouce correspond au papier ligné standard."
+      },
+      {
+        question: "À quoi sert le papier isométrique \u0001",
+        answer: "Ses lignes se croisent à 60°, ce qui facilite le dessin d’objets en 3D, comme des bâtiments, des meubles ou des blocs en pixel art."
+      },
+      {
+        question: "Dois-je m’inscrire \u0001",
+        answer: "Non. Le papier est créé dans votre navigateur et son utilisation est gratuite."
+      }
+    ]
+  },
 };

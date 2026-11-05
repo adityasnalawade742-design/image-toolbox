@@ -1300,6 +1300,42 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'LayoutGrid',
     accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
   },
+  {
+    slug: 'booklet-maker',
+    name: 'Booklet Maker',
+    shortName: 'Booklet',
+    description: 'Rearrange a PDF into a printable booklet: print double-sided, fold and staple.',
+    category: 'pdf-documents',
+    iconName: 'BookOpen',
+    accept: 'application/pdf,.pdf',
+  },
+  {
+    slug: 'n-up-pdf',
+    name: 'N-up PDF',
+    shortName: 'N-up PDF',
+    description: 'Print several PDF pages on each sheet of paper: 2, 4, 6, 8, 9 or 16 per sheet.',
+    category: 'pdf-documents',
+    iconName: 'LayoutGrid',
+    accept: 'application/pdf,.pdf',
+  },
+  {
+    slug: 'poster-splitter',
+    name: 'Poster Splitter',
+    shortName: 'Poster Splitter',
+    description: 'Split a picture over several pages to print and assemble into a large poster.',
+    category: 'edit-transform',
+    iconName: 'Grid3x3',
+    accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'graph-paper-maker',
+    name: 'Printable Graph Paper Maker',
+    shortName: 'Graph Paper',
+    description: 'Make printable graph paper: squares, dots, isometric, hexagons or lines, in mm or inches.',
+    category: 'utilities',
+    iconName: 'Grid2x2',
+    accept: '',
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolDefinition | undefined {

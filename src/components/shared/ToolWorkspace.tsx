@@ -103,6 +103,9 @@ const MorseWorkspace = standaloneTool(() => import('../tools/extras/MorseWorkspa
 const HideTextWorkspace = standaloneTool(() => import('../tools/extras/HideTextWorkspace'), 'HideTextWorkspace');
 const HalftoneWorkspace = standaloneTool(() => import('../tools/extras/HalftoneWorkspace'), 'HalftoneWorkspace');
 const ContactSheetWorkspace = standaloneTool(() => import('../tools/extras/ContactSheetWorkspace'), 'ContactSheetWorkspace');
+const ImposeWorkspace = standaloneTool(() => import('../tools/pdf/ImposeWorkspace'), 'ImposeWorkspace');
+const PosterWorkspace = standaloneTool(() => import('../tools/extras/PosterWorkspace'), 'PosterWorkspace');
+const GraphPaperWorkspace = standaloneTool(() => import('../tools/extras/GraphPaperWorkspace'), 'GraphPaperWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -234,6 +237,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'hide-text-in-image': <HideTextWorkspace />,
     'halftone-dither-effect': <HalftoneWorkspace />,
     'contact-sheet-maker': <ContactSheetWorkspace />,
+    'booklet-maker': <ImposeWorkspace mode="booklet" />,
+    'n-up-pdf': <ImposeWorkspace mode="nup" />,
+    'poster-splitter': <PosterWorkspace />,
+    'graph-paper-maker': <GraphPaperWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,

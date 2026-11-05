@@ -167,7 +167,7 @@ export function ContactSheetWorkspace() {
             <canvas ref={canvasRef} role="img" aria-label={t('ctl.sheet.preview', { n: shown + 1, total: pageCount })} className="block max-w-full max-h-[70vh] w-auto h-auto object-contain shadow-[0_2px_10px_rgba(0,0,0,0.12)]" />
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-ink py-2 text-[14px]" data-measure>
-            <span className="text-ink">{t('ctl.sheet.summary', { photos: items.length, pages: pageCount })}</span>
+            <span className="text-ink">{t(pageCount === 1 ? 'ctl.sheet.summaryOne' : 'ctl.sheet.summary', { photos: items.length, pages: pageCount })}</span>
             {pageCount > 1 && (
               <span className="ml-auto flex items-center gap-1">
                 <button type="button" onClick={() => setView(Math.max(0, shown - 1))} disabled={shown === 0} aria-label={t('ctl.sheet.prev')} className="btn-rule min-h-[40px] px-2 disabled:opacity-40">
