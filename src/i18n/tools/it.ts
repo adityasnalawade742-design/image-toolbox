@@ -5940,12 +5940,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funziona con foto senza persone?",
         answer:
-          "È pensato per le foto di persone. Animali e oggetti spesso funzionano, ma il modello può perderne alcune parti; in quei casi controlla i bordi prima di salvare.",
+          "Veloce è pensato per le foto di persone. Per animali e oggetti, scegli Massima qualità nelle impostazioni, che funziona con qualsiasi soggetto; controlla i bordi prima di salvare.",
       },
       {
         question: "Perché la prima foto è più lenta?",
         answer:
-          "Il modello di IA viene scaricato una volta (circa 16 MB) e resta nel tuo browser. Dopo, le foto vengono elaborate in pochi secondi.",
+          "Il modello Veloce si scarica una volta (circa 16 MB) e resta nel browser; dopo, una foto richiede pochi secondi. Massima qualità è un download unico di circa 100 MB e richiede 15–30 secondi per foto.",
       },
       {
         question: "La mia foto perderà qualità?",
@@ -6021,12 +6021,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funziona con prodotti e animali?",
         answer:
-          "Funziona meglio con le persone. Per prodotti, animali e oggetti, il modello Massima qualità di Rimuovi sfondo dà bordi più puliti; poi puoi aggiungere uno sfondo in qualsiasi editor.",
+          "Veloce funziona meglio con le persone. Per prodotti, animali e oggetti, scegli Massima qualità nelle impostazioni per bordi più puliti.",
       },
       {
         question: "Perché la prima foto è più lenta?",
         answer:
-          "Il modello di IA viene scaricato una volta (circa 16 MB) e resta nel tuo browser, quindi le foto successive richiedono solo pochi secondi.",
+          "Il modello Veloce si scarica una volta (circa 16 MB) e resta nel browser, quindi le foto successive richiedono solo pochi secondi. Massima qualità è un download unico di circa 100 MB.",
       },
       {
         question: "La mia foto viene caricata?",

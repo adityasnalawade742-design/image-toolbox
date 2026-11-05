@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Download, Loader2, AlertCircle, Eye, EyeOff, Eraser, RotateCcw, Check, DownloadCloud } from 'lucide-react';
+import { Download, Loader2, AlertCircle, Eye, EyeOff, Eraser, RotateCcw } from 'lucide-react';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useImageIntake } from '../shared/useImageIntake';
 import { useT } from '../shared/I18nContext';
 import { RemovalProgressBar, activeDownload } from '../shared/RemovalProgressBar';
+import { HqConsent, ModelPicker, TryHqHint, isModelReady as isReady, markModelReady as markReady, saveData, saveRemovalMode, savedRemovalMode as savedMode } from '../shared/RemovalModel';
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
 import { fitWithinPixels } from '../../lib/canvas/limits';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
@@ -12,29 +13,6 @@ import { formatExtension, type OutputFormat } from '../../lib/canvas/outputForma
 import { outputFileName } from '../../lib/storage/fileNames';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp';
-// First-time download per model, AI runtime included (measured in Chrome); cached by the browser afterwards
-const MODEL_SIZE: Record<RemovalMode, string> = { portrait: '≈ 16 MB', hq: '≈ 100 MB' };
-const MODES: RemovalMode[] = ['portrait', 'hq'];
-
-// Best-effort memory of which models this browser has already downloaded (the browser cache holds the files)
-const readyKey = (m: RemovalMode) => `bg-model-ready:${m}`;
-const isReady = (m: RemovalMode) => {
-  try {
-    return localStorage.getItem(readyKey(m)) === '1';
-  } catch {
-    return false;
-  }
-};
-const markReady = (m: RemovalMode) => {
-  try {
-    localStorage.setItem(readyKey(m), '1');
-  } catch {
-    // storage unavailable: the user just sees the download note again next time
-  }
-};
-// The visitor asked their browser to save data: don't download anything before a photo is actually chosen
-const saveData = () => (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
-
 const loadImage = (url: string) =>
   new Promise<HTMLImageElement>((resolve, reject) => {
     const img = new Image();
@@ -42,14 +20,6 @@ const loadImage = (url: string) =>
     img.onerror = reject;
     img.src = url;
   });
-
-const savedMode = (): RemovalMode => {
-  try {
-    return localStorage.getItem('bg-model') === 'hq' ? 'hq' : 'portrait';
-  } catch {
-    return 'portrait';
-  }
-};
 
 export function RemoveBackgroundWorkspace() {
   const t = useT();
@@ -171,11 +141,7 @@ export function RemoveBackgroundWorkspace() {
   const chooseMode = (m: RemovalMode) => {
     if (m === mode) return;
     setMode(m);
-    try {
-      localStorage.setItem('bg-model', m);
-    } catch {
-      // not remembered across visits
-    }
+    saveRemovalMode(m);
     if (file) {
       setCutout(null);
       setShowOriginal(false);
@@ -295,30 +261,9 @@ export function RemoveBackgroundWorkspace() {
             </p>
           )}
 
-          {awaitingHqConsent && (
-            <div className="border border-ink bg-paper-bright p-4 space-y-3 rounded-xl">
-              <p className="text-[17px] font-semibold text-ink">{t('ctl.bg.hqPromptTitle')}</p>
-              <p className="text-[15px] text-body leading-relaxed">{t('ctl.bg.hqPromptBody', { size: MODEL_SIZE.hq })}</p>
-              <div className="flex flex-wrap gap-2">
-                <button type="button" onClick={() => file && run(file, 'hq')} className="btn-rule border-2">
-                  <DownloadCloud className="w-4 h-4" aria-hidden="true" />
-                  {t('ctl.bg.hqPromptButton', { size: MODEL_SIZE.hq })}
-                </button>
-                <button type="button" onClick={() => chooseMode('portrait')} className="btn-rule">
-                  {t('ctl.bg.useFast')}
-                </button>
-              </div>
-            </div>
-          )}
+          {awaitingHqConsent && <HqConsent onDownload={() => file && run(file, 'hq')} onUseFast={() => chooseMode('portrait')} />}
 
-          {cutout && mode === 'portrait' && !isRunning && (
-            <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-body">
-              <span>{t('ctl.bg.tryHq')}</span>
-              <button type="button" onClick={() => chooseMode('hq')} className="inline-flex items-center min-h-[40px] font-semibold text-ink underline hover:no-underline">
-                {t('ctl.bg.tryHqButton')}
-              </button>
-            </p>
-          )}
+          {cutout && mode === 'portrait' && !isRunning && <TryHqHint onTry={() => chooseMode('hq')} />}
         </div>
 
         <div className="min-w-0 space-y-5 lg:sticky lg:top-24">
@@ -328,40 +273,15 @@ export function RemoveBackgroundWorkspace() {
               {t('ws.settings')}
             </h2>
             <div className="p-4 space-y-5 text-[15px]">
-              <fieldset className="space-y-2">
-                <legend className="slug mb-2">{t('ctl.bg.mode')}</legend>
-                <div className="grid gap-2" role="radiogroup" aria-label={t('ctl.bg.mode')}>
-                  {MODES.map((m) => (
-                    <button
-                      key={m}
-                      type="button"
-                      role="radio"
-                      aria-checked={mode === m}
-                      onClick={() => chooseMode(m)}
-                      disabled={isRunning}
-                      className={`w-full text-left rounded-lg border border-ink p-3 transition-colors disabled:cursor-wait ${mode === m ? 'seg-on' : 'seg-off'}`}
-                    >
-                      <span className="flex items-baseline justify-between gap-3">
-                        <span className="text-[16px] font-semibold">{m === 'portrait' ? t('ctl.bg.modePortrait') : t('ctl.bg.modeHq')}</span>
-                        <span className="text-[13px] text-graphite" data-measure>{MODEL_SIZE[m]}</span>
-                      </span>
-                      <span className="block mt-1 text-[14px] font-normal text-body leading-snug">
-                        {m === 'portrait' ? t('ctl.bg.modePortraitNote') : t('ctl.bg.modeHqNote')}
-                      </span>
-                      <span className="flex items-center gap-1.5 mt-2 text-[13px] font-normal text-graphite">
-                        {ready[m] ? <Check className="w-3.5 h-3.5 text-accent-green" aria-hidden="true" /> : <DownloadCloud className="w-3.5 h-3.5" aria-hidden="true" />}
-                        {ready[m] ? t('ctl.bg.downloaded') : t('ctl.bg.sizeOnce', { size: MODEL_SIZE[m] })}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+              <div className="space-y-2">
+                <ModelPicker mode={mode} ready={ready} onChoose={chooseMode} disabled={isRunning} />
                 {error && (
                   <button type="button" onClick={() => file && run(file, mode)} disabled={isRunning} className="btn-rule w-full disabled:opacity-50">
                     <RotateCcw className="w-4 h-4" aria-hidden="true" />
                     {t('ctl.bg.rerun')}
                   </button>
                 )}
-              </fieldset>
+              </div>
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug">{t('ctl.bg.background')}</span>

@@ -5946,12 +5946,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah bisa untuk foto tanpa orang?",
         answer:
-          "Alat ini dibuat untuk foto orang. Hewan peliharaan dan benda sering kali berhasil, tetapi modelnya bisa melewatkan sebagian bagiannya; untuk foto seperti itu, periksa tepinya sebelum Anda menyimpan.",
+          "Cepat dibuat untuk foto orang. Untuk hewan peliharaan dan benda, pilih Kualitas terbaik di pengaturan, yang cocok untuk subjek apa pun; periksa tepinya sebelum menyimpan.",
       },
       {
         question: "Mengapa foto pertama lebih lambat?",
         answer:
-          "Model AI diunduh sekali (sekitar 16 MB) dan tetap tersimpan di browser Anda. Setelah itu, foto diproses dalam beberapa detik.",
+          "Model Cepat diunduh sekali (sekitar 16 MB) dan tetap ada di browser Anda; setelah itu, foto selesai dalam beberapa detik. Kualitas terbaik adalah unduhan sekali sekitar 100 MB dan butuh 15–30 detik per foto.",
       },
       {
         question: "Apakah kualitas foto saya akan turun?",
@@ -6027,12 +6027,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah bisa untuk produk dan hewan peliharaan?",
         answer:
-          "Hasil terbaiknya pada foto orang. Untuk produk, hewan peliharaan, dan benda, model “Kualitas terbaik” di Hapus Background memberi tepi yang lebih bersih; setelah itu Anda bisa menambahkan background di editor mana pun.",
+          "Cepat paling cocok untuk orang. Untuk produk, hewan peliharaan dan benda, pilih Kualitas terbaik di pengaturan agar tepinya lebih rapi.",
       },
       {
         question: "Mengapa foto pertama lebih lambat?",
         answer:
-          "Model AI diunduh sekali (sekitar 16 MB) dan tetap tersimpan di browser Anda, jadi foto berikutnya hanya butuh beberapa detik.",
+          "Model Cepat diunduh sekali (sekitar 16 MB) dan tetap ada di browser Anda, jadi foto berikutnya hanya butuh beberapa detik. Kualitas terbaik adalah unduhan sekali sekitar 100 MB.",
       },
       {
         question: "Apakah foto saya diunggah?",

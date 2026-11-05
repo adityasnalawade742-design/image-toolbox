@@ -5977,12 +5977,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Est-ce que ça marche sur des photos sans personne ?",
         answer:
-          "L’outil est conçu pour les photos de personnes. Les animaux et les objets fonctionnent souvent, mais le modèle peut en oublier des parties ; dans ce cas, vérifiez les contours avant d’enregistrer.",
+          "Rapide est conçu pour les photos de personnes. Pour les animaux et les objets, choisissez Qualité maximale dans les réglages, qui convient à tout sujet ; vérifiez les contours avant d’enregistrer.",
       },
       {
         question: "Pourquoi la première photo est-elle plus lente ?",
         answer:
-          "Le modèle d’IA se télécharge une fois (environ 16 MB) et reste dans votre navigateur. Ensuite, les photos sont traitées en quelques secondes.",
+          "Le modèle Rapide se télécharge une fois (environ 16 Mo) et reste dans votre navigateur ; ensuite, une photo prend quelques secondes. Qualité maximale est un téléchargement unique d’environ 100 Mo et prend 15 à 30 secondes par photo.",
       },
       {
         question: "Ma photo va-t-elle perdre en qualité ?",
@@ -6058,12 +6058,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Est-ce que ça marche pour les produits et les animaux ?",
         answer:
-          "L’outil fonctionne mieux sur les personnes. Pour les produits, les animaux et les objets, le modèle « Qualité maximale » de Supprimer l’arrière-plan donne des contours plus propres ; vous pouvez ensuite ajouter un fond dans n’importe quel éditeur.",
+          "Rapide fonctionne mieux avec les personnes. Pour les produits, les animaux et les objets, choisissez Qualité maximale dans les réglages pour des contours plus nets.",
       },
       {
         question: "Pourquoi la première photo est-elle plus lente ?",
         answer:
-          "Le modèle d’IA se télécharge une fois (environ 16 MB) et reste dans votre navigateur : les photos suivantes ne prennent que quelques secondes.",
+          "Le modèle Rapide se télécharge une fois (environ 16 Mo) et reste dans votre navigateur : les photos suivantes ne prennent que quelques secondes. Qualité maximale est un téléchargement unique d’environ 100 Mo.",
       },
       {
         question: "Ma photo est-elle envoyée ?",

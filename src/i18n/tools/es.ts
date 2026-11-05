@@ -5949,12 +5949,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Funciona con fotos sin personas?",
         answer:
-          "Está pensado para fotos de personas. Con mascotas y objetos suele funcionar, pero el modelo puede pasar por alto partes de ellos; en esos casos, revisa los bordes antes de guardar.",
+          "Rápido está pensado para fotos de personas. Para mascotas y objetos, elige Máxima calidad en los ajustes, que funciona con cualquier sujeto; revisa los bordes antes de guardar.",
       },
       {
         question: "¿Por qué la primera foto tarda más?",
         answer:
-          "El modelo de IA se descarga una vez (unos 16 MB) y se queda en tu navegador. Después, las fotos se procesan en pocos segundos.",
+          "El modelo Rápido se descarga una vez (unos 16 MB) y se queda en tu navegador; después, las fotos tardan unos segundos. Máxima calidad es una descarga única de unos 100 MB y tarda 15–30 segundos por foto.",
       },
       {
         question: "¿Perderá calidad mi foto?",
@@ -6030,12 +6030,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Funciona con productos y mascotas?",
         answer:
-          "Funciona mejor con personas. Para productos, mascotas y objetos, el modelo Máxima calidad de Quitar fondo da bordes más limpios; después puedes añadir un fondo en cualquier editor.",
+          "Rápido funciona mejor con personas. Para productos, mascotas y objetos, elige Máxima calidad en los ajustes para obtener bordes más limpios.",
       },
       {
         question: "¿Por qué la primera foto tarda más?",
         answer:
-          "El modelo de IA se descarga una vez (unos 16 MB) y se queda en tu navegador, así que las siguientes fotos tardan solo unos segundos.",
+          "El modelo Rápido se descarga una vez (unos 16 MB) y se queda en tu navegador, así que las siguientes fotos tardan solo unos segundos. Máxima calidad es una descarga única de unos 100 MB.",
       },
       {
         question: "¿Se sube mi foto?",

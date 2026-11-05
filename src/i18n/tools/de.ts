@@ -5971,12 +5971,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funktioniert es auch bei Fotos ohne Menschen?",
         answer:
-          "Es ist für Fotos von Menschen gemacht. Haustiere und Objekte klappen oft, aber das Modell kann Teile davon übersehen; prüf in diesem Fall die Kanten, bevor du speicherst.",
+          "Schnell ist für Fotos von Menschen gedacht. Für Haustiere und Gegenstände wähle in den Einstellungen Beste Qualität, das mit jedem Motiv zurechtkommt; prüfe die Kanten vor dem Speichern.",
       },
       {
         question: "Warum dauert das erste Foto länger?",
         answer:
-          "Das KI-Modell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser. Danach werden Fotos in wenigen Sekunden bearbeitet.",
+          "Das Modell Schnell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser; danach dauert ein Foto nur wenige Sekunden. Beste Qualität ist ein einmaliger Download von etwa 100 MB und braucht 15–30 Sekunden pro Foto.",
       },
       {
         question: "Verliert mein Foto an Qualität?",
@@ -6052,12 +6052,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funktioniert es bei Produkten und Haustieren?",
         answer:
-          "Am besten funktioniert es bei Menschen. Für Produkte, Haustiere und Objekte liefert das Modell „Beste Qualität“ in „Hintergrund entfernen“ sauberere Kanten; danach kannst du in jedem Bildeditor einen Hintergrund hinzufügen.",
+          "Schnell funktioniert am besten bei Menschen. Für Produkte, Haustiere und Gegenstände wähle in den Einstellungen Beste Qualität für sauberere Kanten.",
       },
       {
         question: "Warum dauert das erste Foto länger?",
         answer:
-          "Das KI-Modell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser, spätere Fotos dauern also nur Sekunden.",
+          "Das Modell Schnell wird einmal heruntergeladen (etwa 16 MB) und bleibt in deinem Browser, sodass weitere Fotos nur Sekunden dauern. Beste Qualität ist ein einmaliger Download von etwa 100 MB.",
       },
       {
         question: "Wird mein Foto hochgeladen?",

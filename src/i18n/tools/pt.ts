@@ -5945,12 +5945,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funciona em fotos sem pessoas?",
         answer:
-          "Ele é feito para fotos de pessoas. Animais de estimação e objetos muitas vezes funcionam, mas o modelo pode deixar passar partes deles; nesses casos, confira as bordas antes de salvar.",
+          "Rápido foi feito para fotos de pessoas. Para pets e objetos, escolha Melhor qualidade nas configurações, que funciona com qualquer assunto; confira as bordas antes de salvar.",
       },
       {
         question: "Por que a primeira foto é mais lenta?",
         answer:
-          "O modelo de IA é baixado uma vez (cerca de 16 MB) e fica no seu navegador. Depois disso, as fotos são processadas em poucos segundos.",
+          "O modelo Rápido é baixado uma vez (cerca de 16 MB) e fica no seu navegador; depois disso, as fotos levam alguns segundos. Melhor qualidade é um download único de cerca de 100 MB e leva 15 a 30 segundos por foto.",
       },
       {
         question: "Minha foto vai perder qualidade?",
@@ -6026,12 +6026,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funciona com produtos e animais de estimação?",
         answer:
-          "Funciona melhor com pessoas. Para produtos, animais de estimação e objetos, o modelo Melhor qualidade do Remover fundo dá bordas mais limpas; depois, você pode adicionar um fundo em qualquer editor.",
+          "Rápido funciona melhor com pessoas. Para produtos, pets e objetos, escolha Melhor qualidade nas configurações para bordas mais limpas.",
       },
       {
         question: "Por que a primeira foto é mais lenta?",
         answer:
-          "O modelo de IA é baixado uma vez (cerca de 16 MB) e fica no seu navegador, então as próximas fotos levam só alguns segundos.",
+          "O modelo Rápido é baixado uma vez (cerca de 16 MB) e fica no seu navegador, então as próximas fotos levam só alguns segundos. Melhor qualidade é um download único de cerca de 100 MB.",
       },
       {
         question: "Minha foto é enviada?",

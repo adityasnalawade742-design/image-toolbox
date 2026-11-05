@@ -6275,11 +6275,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Does it work on photos without people?",
-        "answer": "It is made for photos of people. Pets and objects often work, but the model may miss parts of them; for those, check the edges before you save."
+        "answer": "Fast is made for photos of people. For pets and objects, choose Best quality in the settings, which handles any subject; check the edges before you save."
       },
       {
         "question": "Why is the first photo slower?",
-        "answer": "The AI model downloads once (about 16 MB) and stays in your browser. After that, photos are processed in a few seconds."
+        "answer": "The Fast model downloads once (about 16 MB) and stays in your browser; after that, photos take a few seconds. Best quality is a one-time download of about 100 MB and takes 15–30 seconds per photo."
       },
       {
         "question": "Will my photo lose quality?",
@@ -6349,11 +6349,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Does it work for products and pets?",
-        "answer": "It works best on people. For products, pets and objects, Remove Background's Best quality model gives cleaner edges; you can then add a background in any editor."
+        "answer": "Fast works best on people. For products, pets and objects, choose Best quality in the settings for cleaner edges."
       },
       {
         "question": "Why is the first photo slower?",
-        "answer": "The AI model downloads once (about 16 MB) and stays in your browser, so later photos take only seconds."
+        "answer": "The Fast model downloads once (about 16 MB) and stays in your browser, so later photos take only seconds. Best quality is a one-time download of about 100 MB."
       },
       {
         "question": "Is my photo uploaded?",

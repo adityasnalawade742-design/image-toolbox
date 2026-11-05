@@ -5960,12 +5960,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "İnsan olmayan fotoğraflarda çalışır mı?",
         answer:
-          "İnsan fotoğrafları için tasarlanmıştır. Evcil hayvanlar ve nesneler çoğu zaman çalışır, ancak model bazı kısımlarını kaçırabilir; bu durumda kaydetmeden önce kenarları kontrol edin.",
+          "Hızlı, insan fotoğrafları için tasarlandı. Evcil hayvanlar ve nesneler için ayarlardan En iyi kalite’yi seçin; her konuyla çalışır. Kaydetmeden önce kenarları kontrol edin.",
       },
       {
         question: "İlk fotoğraf neden daha yavaş?",
         answer:
-          "Yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır. Sonrasında fotoğraflar birkaç saniyede işlenir.",
+          "Hızlı model bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır; sonrasında her fotoğraf birkaç saniye sürer. En iyi kalite yaklaşık 100 MB’lık tek seferlik bir indirmedir ve fotoğraf başına 15–30 saniye sürer.",
       },
       {
         question: "Fotoğrafım kalite kaybeder mi?",
@@ -6041,12 +6041,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Ürünlerde ve evcil hayvanlarda çalışır mı?",
         answer:
-          "En iyi sonucu insanlarda verir. Ürünler, evcil hayvanlar ve nesneler için Arka Plan Kaldırma aracının En iyi kalite modeli daha temiz kenarlar verir; ardından herhangi bir düzenleyicide arka plan ekleyebilirsiniz.",
+          "Hızlı en iyi insanlarda çalışır. Ürünler, evcil hayvanlar ve nesneler için daha temiz kenarlar elde etmek üzere ayarlardan En iyi kalite’yi seçin.",
       },
       {
         question: "İlk fotoğraf neden daha yavaş?",
         answer:
-          "Yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır; bu yüzden sonraki fotoğraflar yalnızca birkaç saniye sürer.",
+          "Hızlı model bir kez indirilir (yaklaşık 16 MB) ve tarayıcınızda kalır, böylece sonraki fotoğraflar yalnızca birkaç saniye sürer. En iyi kalite yaklaşık 100 MB’lık tek seferlik bir indirmedir.",
       },
       {
         question: "Fotoğrafım yükleniyor mu?",
