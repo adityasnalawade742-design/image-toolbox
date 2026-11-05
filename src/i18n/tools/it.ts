@@ -9271,4 +9271,492 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "flatten-pdf": {
+    name: "Appiattisci PDF",
+    shortName: "Appiattisci PDF",
+    tagline: "Rendi campi modulo e commenti parte della pagina, così il PDF non può essere modificato per errore. Gratis e funziona sul tuo dispositivo.",
+    intro: "Appiattisci PDF trasforma campi modulo compilati, commenti, evidenziazioni e timbri in normale contenuto della pagina, disegnato esattamente com’è ora. Dopo, nessuno può cambiare le risposte o eliminare i commenti, e il PDF si stampa e si vede allo stesso modo in ogni lettore. Scegli se appiattire i campi modulo, i commenti o entrambi. I link continuano a funzionare, e i campi senza un aspetto salvato restano come sono e vengono conteggiati.",
+    seoTitle: "Appiattire PDF – Blocca campi modulo e commenti, gratis",
+    seoDescription: "Appiattisci un PDF online: campi compilati, commenti e timbri diventano parte della pagina e non si possono modificare. Gratis, senza registrazione né upload.",
+    keywords: [
+      "appiattire pdf",
+      "appiattire modulo pdf",
+      "appiattire annotazioni pdf",
+      "rendere pdf non modificabile",
+      "bloccare campi pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF con campi modulo compilati o commenti."
+      },
+      {
+        title: "Scegli cosa appiattire",
+        description: "Campi modulo, commenti e timbri, o entrambi."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF appiattito."
+      }
+    ],
+    features: [
+      {
+        title: "Esattamente com’è",
+        description: "Ogni campo e commento viene disegnato dal suo aspetto salvato."
+      },
+      {
+        title: "I link funzionano ancora",
+        description: "Vengono appiattiti solo campi e commenti."
+      },
+      {
+        title: "Il testo resta testo",
+        description: "Le risposte digitate restano ricercabili e selezionabili."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché appiattire un PDF?",
+        answer: "Perché le risposte compilate e i commenti non possano essere cambiati o rimossi, e il file appaia uguale in ogni lettore PDF e in stampa."
+      },
+      {
+        question: "Posso annullare l’appiattimento?",
+        answer: "Non nel file appiattito. Conserva l’originale se potresti dover modificare di nuovo il modulo."
+      },
+      {
+        question: "E un PDF con firma digitale?",
+        answer: "Qualsiasi modifica a un file firmato fa sì che la firma non risulti più valida. Appiattisci prima di firmare, non dopo."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    name: "Aggiungi intestazione e piè di pagina al PDF",
+    shortName: "Intestazione e piè di pagina",
+    tagline: "Aggiungi testo, numeri di pagina, date e il nome del file in alto e in basso su ogni pagina del PDF. Gratis e funziona sul tuo dispositivo.",
+    intro: "Aggiungi intestazione e piè di pagina inserisce testo in sei punti di ogni pagina: a sinistra, al centro e a destra dell’intestazione e del piè di pagina. Usa {page} e {pages} per “Pagina 3 di 12”, {date} per la data di oggi e {file} per il nome del file, insieme alle tue parole, come un titolo, il nome dell’azienda o “Riservato”. Scegli dimensione e colore del testo e distanza dal bordo, salta la copertina e controlla ogni pagina nell’anteprima prima di scaricare. Sono supportati testi in giapponese, coreano, greco e cirillico.",
+    seoTitle: "Intestazione e piè di pagina PDF – Numeri di pagina, gratis",
+    seoDescription: "Aggiungi intestazione e piè di pagina a un PDF: numeri di pagina, date, nome del file e testo tuo, a sinistra, al centro o a destra. Gratis, senza upload.",
+    keywords: [
+      "aggiungere intestazione pdf",
+      "piè di pagina pdf",
+      "intestazione e piè di pagina pdf",
+      "pagina x di y pdf",
+      "aggiungere data a pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF."
+      },
+      {
+        title: "Scrivi intestazione e piè di pagina",
+        description: "Digita il testo in uno qualsiasi dei sei punti, usando {page}, {pages}, {date} e {file}."
+      },
+      {
+        title: "Scarica",
+        description: "Controlla le pagine nell’anteprima e salva il PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Sei posizioni",
+        description: "Sinistra, centro e destra, in alto e in basso."
+      },
+      {
+        title: "Pagina x di y",
+        description: "Numeri di pagina, data e nome del file si compilano da soli."
+      },
+      {
+        title: "Molti alfabeti",
+        description: "Latino, greco, cirillico, giapponese e coreano."
+      }
+    ],
+    faqs: [
+      {
+        question: "Come scrivo “Pagina 1 di 10”?",
+        answer: "Digita Pagina {page} di {pages}. {page} diventa il numero di ogni pagina e {pages} quello dell’ultima."
+      },
+      {
+        question: "Posso escludere la copertina?",
+        answer: "Sì. Spunta l’opzione per lasciare la prima pagina com’è; la numerazione inizia allora da pagina 2 con il numero che scegli."
+      },
+      {
+        question: "Coprirà il mio contenuto?",
+        answer: "Il testo sta nel margine, alla distanza che scegli. Scegli una distanza maggiore o un testo più piccolo se il contenuto di una pagina arriva al bordo."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    name: "Ridimensiona pagine PDF",
+    shortName: "Ridimensiona PDF",
+    tagline: "Cambia le pagine del PDF in A4, Letter, A3, A5, Legal o Tabloid, adattando il contenuto. Gratis e funziona sul tuo dispositivo.",
+    intro: "Ridimensiona pagine PDF cambia il formato carta di ogni pagina, per esempio da un documento in formato Letter americano ad A4 per stamparlo in Europa, oppure da A4 ad A5 per un volantino più piccolo. Il contenuto viene ridimensionato per adattarsi e centrato, oppure mantenuto al 100% aggiungendo margini. Link, campi modulo e commenti si spostano e si ridimensionano con il contenuto, e il testo resta nitido, perché le pagine vengono modificate direttamente invece di essere trasformate in immagini.",
+    seoTitle: "Cambiare formato pagine PDF – Da Letter ad A4, gratis",
+    seoDescription: "Cambia il formato delle pagine PDF in A4, Letter, A3, A5, Legal o Tabloid, adattando il contenuto. Link e moduli mantenuti. Gratis, senza upload.",
+    keywords: [
+      "ridimensionare pagine pdf",
+      "cambiare formato pdf",
+      "convertire pdf in a4",
+      "da letter ad a4 pdf",
+      "adattare pdf ad a4"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF."
+      },
+      {
+        title: "Scegli il formato",
+        description: "Scegli il formato carta, l’orientamento e se adattare il contenuto."
+      },
+      {
+        title: "Scarica",
+        description: "Controlla l’anteprima e salva il PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Formati carta comuni",
+        description: "A4, A3, A5, Letter, Legal e Tabloid."
+      },
+      {
+        title: "Non si perde nulla",
+        description: "Link, campi modulo e commenti si spostano con il contenuto."
+      },
+      {
+        title: "Nitido",
+        description: "Le pagine vengono modificate direttamente, non trasformate in immagini."
+      }
+    ],
+    faqs: [
+      {
+        question: "Il contenuto verrà deformato?",
+        answer: "No. Viene ridimensionato in modo uniforme per mantenere le proporzioni, poi centrato; qualsiasi differenza di forma diventa un margine bianco."
+      },
+      {
+        question: "Cosa fa “Mantieni al 100%”?",
+        answer: "Mantiene il contenuto alla sua dimensione e cambia solo la pagina: una pagina più grande riceve margini bianchi, una più piccola taglia i bordi."
+      },
+      {
+        question: "Posso convertire Letter in A4?",
+        answer: "Sì. Scegli A4: le pagine Letter vengono leggermente ridimensionate per entrare nell’A4 e centrate."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    name: "Aggiungi sfondo al PDF",
+    shortName: "Sfondo PDF",
+    tagline: "Dai alle pagine del PDF un colore di sfondo, dietro il contenuto come carta colorata o come tinta. Gratis e funziona sul tuo dispositivo.",
+    intro: "Aggiungi sfondo al PDF colora le pagine di un PDF. “Dietro il contenuto” funziona come carta colorata: testo e immagini restano sopra, invariati. Molti PDF, scansioni comprese, dipingono la propria pagina di bianco, che nasconde il colore dietro; per questi, “Tingi la pagina” colora tutte le aree bianche mentre il testo nero resta nero. Scegli un colore tenue o qualsiasi colore ti piaccia, per tutte le pagine o solo per alcune, e controlla il risultato nell’anteprima.",
+    seoTitle: "Colore di sfondo PDF – Aggiungi sfondo online, gratis",
+    seoDescription: "Aggiungi un colore di sfondo alle pagine PDF, dietro il contenuto o come tinta che funziona anche sulle scansioni. Tutte o alcune pagine. Gratis, senza upload.",
+    keywords: [
+      "aggiungere sfondo pdf",
+      "colore sfondo pdf",
+      "cambiare colore sfondo pdf",
+      "sfondo colorato pdf",
+      "colorare pagine pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF."
+      },
+      {
+        title: "Scegli il colore",
+        description: "Scegli un colore e se va dietro il contenuto o tinge la pagina."
+      },
+      {
+        title: "Scarica",
+        description: "Controlla l’anteprima e salva il PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Dietro o tinta",
+        description: "Dietro il contenuto come carta, o una tinta che funziona anche sulle scansioni."
+      },
+      {
+        title: "Qualsiasi colore",
+        description: "Toni carta tenui o un colore a tua scelta."
+      },
+      {
+        title: "Tutte o alcune pagine",
+        description: "Colora ogni pagina o un elenco come 1-3, 5."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché il colore non si vede?",
+        answer: "La pagina dipinge il proprio sfondo bianco sopra di esso. Scegli invece “Tingi la pagina”."
+      },
+      {
+        question: "Il colore viene stampato?",
+        answer: "Sì, fa parte della pagina. La maggior parte delle stampanti lascia un sottile bordo bianco ai margini."
+      },
+      {
+        question: "Posso rimuovere lo sfondo in seguito?",
+        answer: "Non dal nuovo file. Conserva l’originale se potresti volerlo senza colore."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    name: "Modifica metadati PDF",
+    shortName: "Modifica metadati",
+    tagline: "Cambia titolo, autore, oggetto e parole chiave di un PDF, come appaiono nei lettori e nei risultati di ricerca. Gratis, sul tuo dispositivo.",
+    intro: "Modifica metadati PDF cambia le proprietà del documento salvate dentro un PDF: il titolo mostrato nelle schede del browser e nei risultati di ricerca, l’autore, l’oggetto, le parole chiave e i nomi dei programmi che lo hanno creato. Entrambi i punti in cui guardano i lettori PDF (le informazioni del documento e i metadati XMP) vengono aggiornati insieme, e il resto dell’XMP, come l’identificazione PDF/A, viene mantenuto. Lascia un campo vuoto per rimuoverlo.",
+    seoTitle: "Modificare metadati PDF – Titolo, autore, parole chiave",
+    seoDescription: "Modifica titolo, autore, oggetto, parole chiave e produttore di un PDF online. Entrambi gli archivi di metadati aggiornati insieme. Gratis, senza upload.",
+    keywords: [
+      "modificare metadati pdf",
+      "cambiare titolo pdf",
+      "cambiare autore pdf",
+      "modificare proprietà pdf",
+      "parole chiave pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF; le proprietà attuali vengono compilate."
+      },
+      {
+        title: "Modifica le proprietà",
+        description: "Cambia titolo, autore, oggetto, parole chiave e nomi dei programmi."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF con le nuove proprietà."
+      }
+    ],
+    features: [
+      {
+        title: "Dove conta",
+        description: "Il titolo appare nelle schede del browser, nei lettori e nei risultati di ricerca."
+      },
+      {
+        title: "Sempre allineati",
+        description: "Informazioni del documento e metadati XMP aggiornati entrambi."
+      },
+      {
+        title: "PDF/A mantenuto",
+        description: "Gli altri dati XMP, inclusa l’identificazione PDF/A, restano."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché il mio PDF mostra il titolo sbagliato?",
+        answer: "I lettori mostrano il titolo salvato nel file, non il nome del file. Impostalo qui."
+      },
+      {
+        question: "Come rimuovo una proprietà?",
+        answer: "Svuota il campo. Per rimuovere tutte le proprietà e i metadati nascosti in una volta, usa Rimuovi metadati PDF."
+      },
+      {
+        question: "Il contenuto del PDF cambia?",
+        answer: "No. Cambiano solo le proprietà e la data di modifica."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    name: "Aggiungi segnalibri al PDF",
+    shortName: "Segnalibri PDF",
+    tagline: "Aggiungi, rinomina, annida e rimuovi i segnalibri di un PDF, così chi legge può saltare a ogni sezione. Gratis e funziona sul tuo dispositivo.",
+    intro: "Aggiungi segnalibri al PDF modifica la struttura che i lettori PDF mostrano nel pannello dei segnalibri. I segnalibri esistenti vengono elencati così puoi rinominarli, riordinarli, annidarli o eliminarli; aggiungine di nuovi per la pagina nell’anteprima, o uno per ogni pagina con un clic. Scegli la pagina che apre ogni segnalibro, crea sottosegnalibri per le sezioni dentro i capitoli e fai aprire il pannello automaticamente all’apertura del PDF.",
+    seoTitle: "Aggiungere segnalibri PDF – Modifica la struttura, gratis",
+    seoDescription: "Aggiungi, rinomina, annida e rimuovi segnalibri PDF online, e apri il pannello dei segnalibri automaticamente. Gratis, senza registrazione, nessun upload.",
+    keywords: [
+      "aggiungere segnalibri pdf",
+      "modificare segnalibri pdf",
+      "creare segnalibri pdf",
+      "creare indice pdf",
+      "segnalibri pdf online"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF; gli eventuali segnalibri vengono elencati."
+      },
+      {
+        title: "Modifica i segnalibri",
+        description: "Aggiungili, rinominali, scegli le pagine, annidali e riordinali."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF con i nuovi segnalibri."
+      }
+    ],
+    features: [
+      {
+        title: "Modifica quelli esistenti",
+        description: "I segnalibri presenti vengono letti, pronti da cambiare."
+      },
+      {
+        title: "Sezioni annidate",
+        description: "Sottosegnalibri per le sezioni dentro i capitoli."
+      },
+      {
+        title: "Pronto all’apertura",
+        description: "Se vuoi, mostra il pannello dei segnalibri all’apertura del PDF."
+      }
+    ],
+    faqs: [
+      {
+        question: "Cosa sono i segnalibri PDF?",
+        answer: "Una struttura cliccabile nel pannello laterale del lettore che porta alle sezioni, come un indice."
+      },
+      {
+        question: "Perché alcuni segnalibri sono stati rimossi?",
+        answer: "I segnalibri che portano a un sito web o eseguono uno script, invece che a una pagina di questo file, non possono essere mantenuti da questo editor. Assegna loro una pagina per mantenerli come segnalibri di pagina."
+      },
+      {
+        question: "I segnalibri modificano le pagine?",
+        answer: "No. Cambia solo la struttura dei segnalibri."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    name: "Allegati PDF",
+    shortName: "Allegati PDF",
+    tagline: "Vedi, salva, aggiungi e rimuovi i file allegati dentro un PDF. Gratis e funziona sul tuo dispositivo.",
+    intro: "Allegati PDF elenca i file contenuti in un PDF, sia quelli nell’elenco degli allegati del documento sia quelli fissati a una pagina come commento a graffetta. Salva uno qualsiasi di essi, allega nuovi file come fogli di calcolo, dati di origine o immagini, oppure rimuovi gli allegati prima di condividere il PDF. I file allegati viaggiano dentro il PDF e la maggior parte dei lettori li mostra in un pannello degli allegati.",
+    seoTitle: "Allegati PDF – Estrai, aggiungi o rimuovi file, gratis",
+    seoDescription: "Vedi, estrai, aggiungi e rimuovi i file allegati a un PDF, compresi gli allegati a graffetta sulle pagine. Gratis, senza registrazione, nessun upload.",
+    keywords: [
+      "allegati pdf",
+      "estrarre allegati da pdf",
+      "allegare file a pdf",
+      "rimuovere allegati pdf",
+      "file incorporati pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF; i file allegati vengono elencati."
+      },
+      {
+        title: "Salva, aggiungi o rimuovi",
+        description: "Salva un file allegato, allegane di nuovi o segna quelli da rimuovere."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF con le modifiche."
+      }
+    ],
+    features: [
+      {
+        title: "Trova i file nascosti",
+        description: "Sia gli allegati del documento sia i commenti a graffetta sulle pagine."
+      },
+      {
+        title: "Salvali uno per uno",
+        description: "Ogni file allegato si può salvare da solo."
+      },
+      {
+        title: "Pulisci prima di condividere",
+        description: "Rimuovi gli allegati che non vuoi inviare."
+      }
+    ],
+    faqs: [
+      {
+        question: "Dove sono gli allegati in un lettore PDF?",
+        answer: "Di solito in un pannello laterale degli allegati o con l’icona a graffetta. I visualizzatori integrati di alcuni browser non li mostrano."
+      },
+      {
+        question: "Si può allegare qualsiasi file?",
+        answer: "Sì, di qualsiasi tipo. Fai attenzione ad aprire file allegati da persone che non conosci."
+      },
+      {
+        question: "Rimuovere gli allegati riduce il file?",
+        answer: "Sì. I file rimossi vengono tolti dal PDF, non solo nascosti."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    name: "Sanifica PDF",
+    shortName: "Sanifica PDF",
+    tagline: "Rimuovi script, azioni rischiose, file allegati e metadati da un PDF prima di condividerlo o aprirlo. Gratis, sul tuo dispositivo.",
+    intro: "Sanifica PDF toglie le parti di un PDF che possono eseguire codice, aprire altri programmi, inviare dati o nascondere informazioni. Prima elenca cosa trova: script, azioni che avviano file o inviano dati, contenuti multimediali incorporati, dati modulo XFA, file allegati, link a siti web, commenti e proprietà del documento. Script, azioni rischiose e contenuti multimediali vengono sempre rimossi; scegli se rimuovere anche allegati, link, commenti e metadati. Il testo e le immagini delle pagine non vengono modificati.",
+    seoTitle: "Sanificare PDF – Rimuovi JavaScript e dati nascosti",
+    seoDescription: "Rimuovi JavaScript, azioni di avvio, allegati, link e metadati da un PDF, e vedi cosa conteneva. Gratis, senza registrazione, il file non viene caricato.",
+    keywords: [
+      "sanificare pdf",
+      "rimuovere javascript da pdf",
+      "pulire pdf",
+      "rimuovere dati nascosti pdf",
+      "pdf sicuro"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli il PDF; il suo contenuto viene elencato."
+      },
+      {
+        title: "Scegli cos’altro rimuovere",
+        description: "Allegati, link a siti web, commenti e proprietà del documento."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF sanificato."
+      }
+    ],
+    features: [
+      {
+        title: "Vedi cosa c’è dentro",
+        description: "Script, azioni, contenuti multimediali, allegati e altro vengono contati prima."
+      },
+      {
+        title: "Via sempre gli script",
+        description: "JavaScript e azioni che avviano o inviano vengono rimossi."
+      },
+      {
+        title: "Pagine invariate",
+        description: "Testo, immagini e impaginazione restano com’erano."
+      }
+    ],
+    faqs: [
+      {
+        question: "Un PDF sanificato è sicuro da aprire?",
+        answer: "Non ha più script, azioni di avvio o contenuti multimediali incorporati, il che elimina modi comuni in cui i PDF si comportano male. Non è un antivirus: tieni aggiornato anche il tuo lettore PDF."
+      },
+      {
+        question: "Un modulo compilabile funzionerà ancora?",
+        answer: "I normali campi modulo restano e si possono compilare, ma gli script che calcolavano o controllavano le risposte vengono rimossi. Un modulo creato solo in XFA potrebbe mostrare una pagina bianca."
+      },
+      {
+        question: "Perché rimuovere link e metadati?",
+        answer: "I link possono portare a siti indesiderati, e le proprietà del documento possono rivelare nomi, software e date che non volevi condividere."
+      },
+      {
+        question: "Il mio PDF viene caricato?",
+        answer: "No. Viene elaborato sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
 };

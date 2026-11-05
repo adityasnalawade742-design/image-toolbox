@@ -9080,9 +9080,9 @@ export const frTools: Record<string, LocalizedToolItem> = {
     name: "Créateur de livret",
     shortName: "Livret",
     tagline: "Remettez un PDF dans l’ordre d’un livret pour l’imprimer en recto verso, le plier et l’agrafer. Gratuit, sur votre appareil.",
-    intro: "Créateur de livret met les pages d’un PDF dans l’ordre nécessaire pour un livret plié (piqûre à cheval). Deux pages vont sur chaque face d’une feuille \u0001 quand vous imprimez en recto verso, pliez la pile en deux et agrafez le long du pli, les pages se lisent dans l’ordre. Des pages blanches sont ajoutées à la fin quand le nombre de pages n’est pas un multiple de 4. Choisissez du papier A4, Letter, A3 ou Tabloid, ou conservez les pages en taille réelle, et la reliure à droite pour le japonais ou l’arabe. Les pages restent en contenu vectoriel net.",
+    intro: "Créateur de livret met les pages d’un PDF dans l’ordre nécessaire pour un livret plié (piqûre à cheval). Deux pages vont sur chaque face d’une feuille : quand vous imprimez en recto verso, pliez la pile en deux et agrafez le long du pli, les pages se lisent dans l’ordre. Des pages blanches sont ajoutées à la fin quand le nombre de pages n’est pas un multiple de 4. Choisissez du papier A4, Letter, A3 ou Tabloid, ou conservez les pages en taille réelle, et la reliure à droite pour le japonais ou l’arabe. Les pages restent en contenu vectoriel net.",
     seoTitle: "Créer un livret PDF – imprimer en brochure, gratuit",
-    seoDescription: "Transformez un PDF en livret à imprimer \u0001 pages disposées pour l’impression recto verso, le pliage et l’agrafage. A4, Letter, A3. Gratuit, sans envoi.",
+    seoDescription: "Transformez un PDF en livret à imprimer : pages disposées pour l’impression recto verso, le pliage et l’agrafage. A4, Letter, A3. Gratuit, sans envoi.",
     keywords: [
       "créer un livret pdf",
       "pdf en livret",
@@ -9111,7 +9111,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pages nettes",
-        description: "Les pages sont placées en contenu vectoriel \u0001 le texte n’est pas transformé en image."
+        description: "Les pages sont placées en contenu vectoriel : le texte n’est pas transformé en image."
       },
       {
         title: "Reliure à gauche ou à droite",
@@ -9120,19 +9120,19 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
-        question: "Comment imprimer le livret \u0001",
+        question: "Comment imprimer le livret ?",
         answer: "Imprimez le PDF téléchargé en recto verso avec « Retourner sur les bords courts », en taille réelle. Gardez les feuilles dans l’ordre, pliez la pile en deux et agrafez le long du pli."
       },
       {
-        question: "Pourquoi des pages blanches ont-elles été ajoutées \u0001",
-        answer: "Chaque feuille contient 4 pages (2 par face) \u0001 le nombre de pages est donc arrondi au multiple de 4 supérieur. Les pages blanches vont à la fin."
+        question: "Pourquoi des pages blanches ont-elles été ajoutées ?",
+        answer: "Chaque feuille contient 4 pages (2 par face) : le nombre de pages est donc arrondi au multiple de 4 supérieur. Les pages blanches vont à la fin."
       },
       {
-        question: "Mes pages seront-elles plus petites \u0001",
-        answer: "Sur le même format de papier, oui \u0001 deux pages partagent une face, donc des pages A4 s’impriment au format A5. Choisissez « Conserver la taille des pages » ou un papier plus grand comme l’A3 pour les garder en taille réelle."
+        question: "Mes pages seront-elles plus petites ?",
+        answer: "Sur le même format de papier, oui : deux pages partagent une face, donc des pages A4 s’impriment au format A5. Choisissez « Conserver la taille des pages » ou un papier plus grand comme l’A3 pour les garder en taille réelle."
       },
       {
-        question: "Mon PDF est-il envoyé \u0001",
+        question: "Mon PDF est-il envoyé ?",
         answer: "Non. Le livret est créé sur votre appareil."
       }
     ]
@@ -9141,9 +9141,9 @@ export const frTools: Record<string, LocalizedToolItem> = {
     name: "Plusieurs pages par feuille (N-up PDF)",
     shortName: "N-up PDF",
     tagline: "Mettez 2, 4, 6, 8, 9 ou 16 pages d’un PDF sur chaque feuille pour économiser du papier ou faire des polycopiés. Gratuit, sur votre appareil.",
-    intro: "N-up PDF place plusieurs pages d’un PDF sur chaque feuille, aussi grandes que possible \u0001 2 diapositives côte à côte, 4 pages en grille, jusqu’à 16 par feuille. Utilisez-le pour imprimer les diapositives d’un cours en polycopié, relire un document sur moins de feuilles ou économiser du papier. La feuille pivote selon les pages, l’ordre peut aller en ligne ou en colonne, et vous pouvez ajouter de l’espace et de fines bordures entre les pages. Les pages restent en contenu vectoriel net.",
+    intro: "N-up PDF place plusieurs pages d’un PDF sur chaque feuille, aussi grandes que possible : 2 diapositives côte à côte, 4 pages en grille, jusqu’à 16 par feuille. Utilisez-le pour imprimer les diapositives d’un cours en polycopié, relire un document sur moins de feuilles ou économiser du papier. La feuille pivote selon les pages, l’ordre peut aller en ligne ou en colonne, et vous pouvez ajouter de l’espace et de fines bordures entre les pages. Les pages restent en contenu vectoriel net.",
     seoTitle: "Plusieurs pages PDF par feuille – N-up gratuit",
-    seoDescription: "Imprimez plusieurs pages d’un PDF sur une feuille \u0001 2, 4, 6, 8, 9 ou 16 par page, en A4, Letter ou A3. Gratuit, sans inscription, aucun envoi du fichier.",
+    seoDescription: "Imprimez plusieurs pages d’un PDF sur une feuille : 2, 4, 6, 8, 9 ou 16 par page, en A4, Letter ou A3. Gratuit, sans inscription, aucun envoi du fichier.",
     keywords: [
       "plusieurs pages par feuille pdf",
       "2 pages par feuille pdf",
@@ -9181,19 +9181,19 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
-        question: "Quelle disposition choisir pour des diapositives \u0001",
-        answer: "2 par feuille garde les diapositives lisibles \u0001 4 ou 6 par feuille conviennent aux polycopiés. L’outil fait pivoter la feuille pour que les diapositives larges tiennent au mieux."
+        question: "Quelle disposition choisir pour des diapositives ?",
+        answer: "2 par feuille garde les diapositives lisibles ; 4 ou 6 par feuille conviennent aux polycopiés. L’outil fait pivoter la feuille pour que les diapositives larges tiennent au mieux."
       },
       {
-        question: "Puis-je conserver la taille d’origine des pages \u0001",
+        question: "Puis-je conserver la taille d’origine des pages ?",
         answer: "Oui. Choisissez « Comme les pages » pour utiliser la taille de la première page comme taille de feuille."
       },
       {
-        question: "Est-ce que ça marche avec des pages de tailles différentes \u0001",
+        question: "Est-ce que ça marche avec des pages de tailles différentes ?",
         answer: "Oui. Chaque page est ajustée à son emplacement sans être rognée ni déformée."
       },
       {
-        question: "Mon PDF est-il envoyé \u0001",
+        question: "Mon PDF est-il envoyé ?",
         answer: "Non. Le nouveau PDF est créé sur votre appareil."
       }
     ]
@@ -9202,7 +9202,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     name: "Découpeur de poster",
     shortName: "Découpe poster",
     tagline: "Découpez une image sur plusieurs pages et imprimez-la sur une imprimante classique pour faire un grand poster. Gratuit, sur votre appareil.",
-    intro: "Découpeur de poster agrandit une image sur plusieurs pages A4, Letter ou A3, pour imprimer un grand poster sur une imprimante ordinaire et l’assembler. Choisissez le nombre de pages en largeur \u0001 le nombre de rangées découle des proportions de l’image. Les pages se chevauchent de la valeur choisie pour pouvoir les coller, et chaque page porte des traits de coupe et un repère comme A1 ou B2 qui indique sa place. L’outil affiche la taille finale du poster et prévient quand l’image paraîtra floue à cette taille.",
+    intro: "Découpeur de poster agrandit une image sur plusieurs pages A4, Letter ou A3, pour imprimer un grand poster sur une imprimante ordinaire et l’assembler. Choisissez le nombre de pages en largeur ; le nombre de rangées découle des proportions de l’image. Les pages se chevauchent de la valeur choisie pour pouvoir les coller, et chaque page porte des traits de coupe et un repère comme A1 ou B2 qui indique sa place. L’outil affiche la taille finale du poster et prévient quand l’image paraîtra floue à cette taille.",
     seoTitle: "Découper une image en pages – grand poster en A4",
     seoDescription: "Découpez une image sur plusieurs pages A4, Letter ou A3 pour imprimer un grand poster, avec chevauchement, traits de coupe et repères. Gratuit, sans envoi.",
     keywords: [
@@ -9219,7 +9219,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Choisissez la taille",
-        description: "Réglez les pages en largeur, le papier et le chevauchement \u0001 l’aperçu montre comment l’image est découpée."
+        description: "Réglez les pages en largeur, le papier et le chevauchement ; l’aperçu montre comment l’image est découpée."
       },
       {
         title: "Imprimez et assemblez",
@@ -9242,19 +9242,19 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
-        question: "Comment assembler le poster \u0001",
-        answer: "Imprimez en taille réelle. Coupez la marge blanche sur les bords qui chevauchent une page voisine, alignez le chevauchement et collez les pages ou fixez-les avec du ruban adhésif \u0001 A1, A2… sur la rangée du haut, B1, B2… en dessous."
+        question: "Comment assembler le poster ?",
+        answer: "Imprimez en taille réelle. Coupez la marge blanche sur les bords qui chevauchent une page voisine, alignez le chevauchement et collez les pages ou fixez-les avec du ruban adhésif : A1, A2… sur la rangée du haut, B1, B2… en dessous."
       },
       {
-        question: "Quelle taille peut faire le poster \u0001",
-        answer: "Jusqu’à 10 pages en largeur \u0001 la hauteur dépend de l’image. Pour un résultat net, visez au moins 100 pixels par pouce à la taille finale. L’outil prévient quand c’est moins."
+        question: "Quelle taille peut faire le poster ?",
+        answer: "Jusqu’à 10 pages en largeur ; la hauteur dépend de l’image. Pour un résultat net, visez au moins 100 pixels par pouce à la taille finale. L’outil prévient quand c’est moins."
       },
       {
-        question: "Pourquoi y a-t-il une marge blanche \u0001",
+        question: "Pourquoi y a-t-il une marge blanche ?",
         answer: "La plupart des imprimantes ne peuvent pas imprimer jusqu’au bord du papier. La marge garde l’image dans la zone imprimable et accueille les traits de coupe et les repères."
       },
       {
-        question: "Mon image est-elle envoyée \u0001",
+        question: "Mon image est-elle envoyée ?",
         answer: "Non. Le PDF est créé sur votre appareil."
       }
     ]
@@ -9262,10 +9262,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "graph-paper-maker": {
     name: "Papier quadrillé à imprimer",
     shortName: "Papier quadrillé",
-    tagline: "Créez du papier quadrillé à imprimer en mm ou en pouces \u0001 carreaux, points, isométrique, hexagones ou lignes. Gratuit, en PDF ou PNG.",
-    intro: "Papier quadrillé à imprimer crée une page de papier à grille prête à imprimer \u0001 quadrillage avec lignes plus épaisses en option, papier à points pour le bullet journal, grille isométrique pour le dessin en 3D, hexagones pour les jeux et la chimie, ou papier ligné. Réglez l’espacement en millimètres ou en pouces, la couleur et l’épaisseur des lignes, le format du papier et la marge. Le PDF est tracé avec des lignes vectorielles \u0001 la grille reste exacte et nette une fois imprimée en taille réelle.",
+    tagline: "Créez du papier quadrillé à imprimer en mm ou en pouces : carreaux, points, isométrique, hexagones ou lignes. Gratuit, en PDF ou PNG.",
+    intro: "Papier quadrillé à imprimer crée une page de papier à grille prête à imprimer : quadrillage avec lignes plus épaisses en option, papier à points pour le bullet journal, grille isométrique pour le dessin en 3D, hexagones pour les jeux et la chimie, ou papier ligné. Réglez l’espacement en millimètres ou en pouces, la couleur et l’épaisseur des lignes, le format du papier et la marge. Le PDF est tracé avec des lignes vectorielles : la grille reste exacte et nette une fois imprimée en taille réelle.",
     seoTitle: "Papier quadrillé à imprimer – points, isométrique",
-    seoDescription: "Créez du papier quadrillé à imprimer \u0001 carreaux, points, isométrique, hexagones ou lignes, en mm ou pouces, en A4, Letter, A3 ou A5. PDF ou PNG gratuit.",
+    seoDescription: "Créez du papier quadrillé à imprimer : carreaux, points, isométrique, hexagones ou lignes, en mm ou pouces, en A4, Letter, A3 ou A5. PDF ou PNG gratuit.",
     keywords: [
       "papier quadrillé à imprimer",
       "papier millimétré pdf",
@@ -9303,20 +9303,508 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
-        question: "Pourquoi mes carreaux n’ont-ils pas la bonne taille à l’impression \u0001",
+        question: "Pourquoi mes carreaux n’ont-ils pas la bonne taille à l’impression ?",
         answer: "L’imprimante met la page à l’échelle. Imprimez à 100 % ou en « Taille réelle », pas avec « Ajuster à la page »."
       },
       {
-        question: "Quel espacement choisir \u0001",
-        answer: "5 mm ou 1/4 de pouce est le papier quadrillé le plus courant \u0001 1 mm avec une ligne plus épaisse tous les 10 convient à l’ingénierie \u0001 7 mm ou 9/32 de pouce correspond au papier ligné standard."
+        question: "Quel espacement choisir ?",
+        answer: "5 mm ou 1/4 de pouce est le papier quadrillé le plus courant ; 1 mm avec une ligne plus épaisse tous les 10 convient à l’ingénierie ; 7 mm ou 9/32 de pouce correspond au papier ligné standard."
       },
       {
-        question: "À quoi sert le papier isométrique \u0001",
+        question: "À quoi sert le papier isométrique ?",
         answer: "Ses lignes se croisent à 60°, ce qui facilite le dessin d’objets en 3D, comme des bâtiments, des meubles ou des blocs en pixel art."
       },
       {
-        question: "Dois-je m’inscrire \u0001",
+        question: "Dois-je m’inscrire ?",
         answer: "Non. Le papier est créé dans votre navigateur et son utilisation est gratuite."
+      }
+    ]
+  },
+  "flatten-pdf": {
+    name: "Aplatir un PDF",
+    shortName: "Aplatir PDF",
+    tagline: "Intégrez les champs de formulaire et les commentaires à la page pour que le PDF ne soit pas modifié par erreur. Gratuit, sur votre appareil.",
+    intro: "Aplatir un PDF transforme les champs de formulaire remplis, les commentaires, les surlignages et les tampons en contenu ordinaire de la page, dessiné exactement tel qu’il apparaît maintenant. Personne ne peut ensuite modifier les réponses ni supprimer les commentaires, et le PDF s’imprime et s’affiche de la même façon dans tous les lecteurs. Choisissez d’aplatir les champs de formulaire, les commentaires, ou les deux. Les liens continuent de fonctionner, et les champs sans apparence enregistrée sont laissés tels quels et comptés.",
+    seoTitle: "Aplatir un PDF – Figer formulaires et commentaires",
+    seoDescription: "Aplatissez un PDF en ligne : champs remplis, commentaires et tampons font partie de la page et ne sont plus modifiables. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "aplatir pdf",
+      "aplatir formulaire pdf",
+      "aplatir annotations pdf",
+      "rendre un pdf non modifiable",
+      "verrouiller formulaire pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez un PDF avec des champs de formulaire remplis ou des commentaires."
+      },
+      {
+        title: "Choisissez quoi aplatir",
+        description: "Les champs de formulaire, les commentaires et tampons, ou les deux."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF aplati."
+      }
+    ],
+    features: [
+      {
+        title: "Exactement tel qu’il apparaît",
+        description: "Chaque champ et commentaire est dessiné à partir de son apparence enregistrée."
+      },
+      {
+        title: "Les liens fonctionnent toujours",
+        description: "Seuls les champs et les commentaires sont aplatis."
+      },
+      {
+        title: "Le texte reste du texte",
+        description: "Les réponses saisies restent consultables et sélectionnables."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi aplatir un PDF ?",
+        answer: "Pour que les réponses et les commentaires ne puissent plus être modifiés ni supprimés, et que le fichier s’affiche de la même façon dans tous les lecteurs PDF et à l’impression."
+      },
+      {
+        question: "Peut-on annuler l’aplatissement ?",
+        answer: "Pas dans le fichier aplati. Gardez l’original si vous risquez de devoir modifier à nouveau le formulaire."
+      },
+      {
+        question: "Et un PDF signé numériquement ?",
+        answer: "Toute modification d’un fichier signé rend la signature invalide. Aplatissez avant de signer, pas après."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    name: "Ajouter un en-tête et un pied de page à un PDF",
+    shortName: "En-tête et pied",
+    tagline: "Ajoutez du texte, des numéros de page, des dates et le nom du fichier en haut et en bas de chaque page d’un PDF. Gratuit, sur votre appareil.",
+    intro: "Ajouter un en-tête et un pied de page place du texte à six endroits de chaque page : à gauche, au centre et à droite de l’en-tête et du pied de page. Utilisez {page} et {pages} pour « Page 3 sur 12 », {date} pour la date du jour et {file} pour le nom du fichier, avec vos propres mots comme un titre, un nom de société ou « Confidentiel ». Choisissez la taille du texte, la couleur et la distance au bord, laissez la couverture de côté et vérifiez chaque page dans l’aperçu avant de télécharger. Le texte en japonais, coréen, grec et cyrillique est pris en charge.",
+    seoTitle: "En-tête et pied de page PDF – Numéros de page, gratuit",
+    seoDescription: "Ajoutez un en-tête et un pied de page à un PDF : numéros de page, dates, nom du fichier et votre texte, à gauche, au centre ou à droite. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter en-tête pdf",
+      "pied de page pdf",
+      "en-tête et pied de page pdf",
+      "page x sur y pdf",
+      "ajouter date pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF."
+      },
+      {
+        title: "Écrivez l’en-tête et le pied de page",
+        description: "Saisissez du texte à l’un des six endroits, avec {page}, {pages}, {date} et {file}."
+      },
+      {
+        title: "Téléchargez",
+        description: "Vérifiez les pages dans l’aperçu et enregistrez le PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Six positions",
+        description: "À gauche, au centre et à droite, en haut et en bas."
+      },
+      {
+        title: "Page x sur y",
+        description: "Les numéros de page, la date et le nom du fichier se remplissent tout seuls."
+      },
+      {
+        title: "Nombreuses écritures",
+        description: "Latin, grec, cyrillique, japonais et coréen."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment écrire « Page 1 sur 10 » ?",
+        answer: "Saisissez Page {page} sur {pages}. {page} devient le numéro de chaque page et {pages} celui de la dernière."
+      },
+      {
+        question: "Puis-je laisser la couverture de côté ?",
+        answer: "Oui. Cochez l’option pour laisser la première page telle quelle ; la numérotation commence alors à la page 2 avec le numéro de votre choix."
+      },
+      {
+        question: "Le texte va-t-il couvrir mon contenu ?",
+        answer: "Le texte se place dans la marge, à la distance choisie. Choisissez une distance plus grande ou un texte plus petit si le contenu d’une page touche le bord."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    name: "Redimensionner les pages PDF",
+    shortName: "Redimensionner PDF",
+    tagline: "Passez les pages d’un PDF en A4, Letter, A3, A5, Legal ou Tabloid, avec un contenu mis à l’échelle. Gratuit, sur votre appareil.",
+    intro: "Redimensionner les pages PDF change le format de papier de chaque page, par exemple d’un document US Letter vers l’A4 pour l’imprimer en Europe, ou de l’A4 vers l’A5 pour un document plus petit. Le contenu est mis à l’échelle pour tenir dans la page et centré, ou gardé à 100 % avec des marges ajoutées. Les liens, les champs de formulaire et les commentaires suivent le contenu et sa mise à l’échelle, et le texte reste net, car les pages sont modifiées directement au lieu d’être transformées en images.",
+    seoTitle: "Redimensionner un PDF – Letter vers A4 et plus, gratuit",
+    seoDescription: "Changez le format des pages d’un PDF : A4, Letter, A3, A5, Legal ou Tabloid, contenu mis à l’échelle. Liens et formulaires gardés. Gratuit, sans envoi.",
+    keywords: [
+      "redimensionner pdf",
+      "changer format page pdf",
+      "pdf letter en a4",
+      "pdf a4 en letter",
+      "mettre un pdf au format a4"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF."
+      },
+      {
+        title: "Choisissez le format",
+        description: "Choisissez le format de papier, l’orientation et la mise à l’échelle ou non du contenu."
+      },
+      {
+        title: "Téléchargez",
+        description: "Vérifiez l’aperçu et enregistrez le PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Formats courants",
+        description: "A4, A3, A5, Letter, Legal et Tabloid."
+      },
+      {
+        title: "Rien n’est perdu",
+        description: "Les liens, les champs de formulaire et les commentaires suivent le contenu."
+      },
+      {
+        title: "Net",
+        description: "Les pages sont modifiées directement, pas transformées en images."
+      }
+    ],
+    faqs: [
+      {
+        question: "Le contenu sera-t-il étiré ?",
+        answer: "Non. Il est mis à l’échelle de façon uniforme pour garder ses proportions, puis centré ; toute différence de proportions devient une marge blanche."
+      },
+      {
+        question: "Que fait « Garder à 100 % » ?",
+        answer: "Le contenu garde sa taille et seule la page change : une page plus grande reçoit des marges blanches, une page plus petite coupe les bords."
+      },
+      {
+        question: "Puis-je convertir du Letter en A4 ?",
+        answer: "Oui. Choisissez A4 : les pages Letter sont légèrement réduites pour tenir en A4, puis centrées."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    name: "Ajouter un arrière-plan à un PDF",
+    shortName: "Arrière-plan PDF",
+    tagline: "Donnez une couleur de fond aux pages d’un PDF, derrière le contenu comme du papier de couleur ou en teinte. Gratuit, sur votre appareil.",
+    intro: "Ajouter un arrière-plan à un PDF colore les pages d’un PDF. « Derrière le contenu » fonctionne comme du papier de couleur : le texte et les images restent au-dessus, inchangés. Beaucoup de PDF, dont les scans, peignent leur propre page blanche, qui cache la couleur placée derrière ; pour ceux-là, « Teinter la page » colore toutes les zones blanches et le texte noir reste noir. Choisissez une couleur douce ou celle que vous voulez, pour toutes les pages ou seulement certaines, et vérifiez le résultat dans l’aperçu.",
+    seoTitle: "Ajouter une couleur de fond à un PDF – Gratuit",
+    seoDescription: "Ajoutez une couleur de fond aux pages d’un PDF, derrière le contenu ou en teinte qui marche aussi sur les scans. Toutes ou certaines pages. Gratuit, sans envoi.",
+    keywords: [
+      "ajouter arrière-plan pdf",
+      "couleur de fond pdf",
+      "changer couleur de fond pdf",
+      "fond de couleur pdf",
+      "arrière-plan pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF."
+      },
+      {
+        title: "Choisissez la couleur",
+        description: "Choisissez une couleur et si elle se place derrière le contenu ou teinte la page."
+      },
+      {
+        title: "Téléchargez",
+        description: "Vérifiez l’aperçu et enregistrez le PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Derrière ou en teinte",
+        description: "Derrière le contenu comme du papier, ou une teinte qui marche aussi sur les scans."
+      },
+      {
+        title: "N’importe quelle couleur",
+        description: "Tons de papier doux ou votre propre couleur."
+      },
+      {
+        title: "Toutes ou certaines pages",
+        description: "Colorez toutes les pages ou une liste comme 1-3, 5."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi la couleur ne s’affiche-t-elle pas ?",
+        answer: "La page peint son propre fond blanc par-dessus. Choisissez plutôt « Teinter la page »."
+      },
+      {
+        question: "La couleur sera-t-elle imprimée ?",
+        answer: "Oui, elle fait partie de la page. La plupart des imprimantes laissent une fine bordure blanche sur les bords."
+      },
+      {
+        question: "Puis-je retirer l’arrière-plan plus tard ?",
+        answer: "Pas dans le nouveau fichier. Gardez l’original si vous risquez de le vouloir sans la couleur."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    name: "Modifier les métadonnées PDF",
+    shortName: "Modifier métadonnées",
+    tagline: "Modifiez le titre, l’auteur, le sujet et les mots-clés d’un PDF, tels qu’affichés dans les lecteurs et les recherches. Gratuit, sur votre appareil.",
+    intro: "Modifier les métadonnées PDF change les propriétés du document enregistrées dans un PDF : le titre affiché dans les onglets du navigateur et les résultats de recherche, l’auteur, le sujet, les mots-clés et les noms des logiciels qui l’ont créé. Les deux emplacements consultés par les lecteurs PDF (les informations du document et les métadonnées XMP) sont mis à jour ensemble, et le reste du XMP, comme l’identification PDF/A, est conservé. Laissez un champ vide pour le supprimer.",
+    seoTitle: "Modifier les métadonnées PDF – Titre, auteur, mots-clés",
+    seoDescription: "Modifiez en ligne le titre, l’auteur, le sujet, les mots-clés et le producteur d’un PDF. Les deux jeux de métadonnées sont mis à jour. Gratuit, sans envoi.",
+    keywords: [
+      "modifier métadonnées pdf",
+      "changer titre pdf",
+      "changer auteur pdf",
+      "modifier propriétés pdf",
+      "mots-clés pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF ; ses propriétés actuelles sont préremplies."
+      },
+      {
+        title: "Modifiez les propriétés",
+        description: "Changez le titre, l’auteur, le sujet, les mots-clés et les noms des logiciels."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF avec les nouvelles propriétés."
+      }
+    ],
+    features: [
+      {
+        title: "Visible là où ça compte",
+        description: "Le titre apparaît dans les onglets du navigateur, les lecteurs et les résultats de recherche."
+      },
+      {
+        title: "Toujours synchronisés",
+        description: "Les informations du document et les métadonnées XMP sont mises à jour toutes les deux."
+      },
+      {
+        title: "PDF/A conservé",
+        description: "Les autres données XMP, dont l’identification PDF/A, restent en place."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi mon PDF affiche-t-il le mauvais titre ?",
+        answer: "Les lecteurs affichent le titre enregistré dans le fichier, pas le nom du fichier. Définissez-le ici."
+      },
+      {
+        question: "Comment supprimer une propriété ?",
+        answer: "Videz le champ. Pour supprimer d’un coup toutes les propriétés et les métadonnées cachées, utilisez Supprimer les métadonnées PDF."
+      },
+      {
+        question: "Le contenu du PDF est-il modifié ?",
+        answer: "Non. Seules les propriétés et la date de modification changent."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    name: "Ajouter des signets à un PDF",
+    shortName: "Signets PDF",
+    tagline: "Ajoutez, renommez, imbriquez et supprimez les signets d’un PDF pour accéder à chaque section. Gratuit, sur votre appareil.",
+    intro: "Ajouter des signets à un PDF modifie le plan que les lecteurs PDF affichent dans leur panneau des signets. Les signets existants sont listés pour que vous puissiez les renommer, les réordonner, les imbriquer ou les supprimer ; ajoutez-en de nouveaux pour la page de l’aperçu, ou un pour chaque page en un clic. Choisissez la page qu’ouvre chaque signet, créez des sous-signets pour les sections des chapitres et faites s’ouvrir le panneau automatiquement à l’ouverture du PDF.",
+    seoTitle: "Ajouter des signets à un PDF – Modifier le plan, gratuit",
+    seoDescription: "Ajoutez, renommez, imbriquez et supprimez les signets d’un PDF en ligne, et ouvrez le panneau des signets automatiquement. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "ajouter signets pdf",
+      "modifier signets pdf",
+      "créer signets pdf",
+      "créer table des matières pdf",
+      "signets pdf en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF ; ses signets éventuels sont listés."
+      },
+      {
+        title: "Modifiez les signets",
+        description: "Ajoutez-les, renommez-les, choisissez les pages, imbriquez-les et réordonnez-les."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF avec les nouveaux signets."
+      }
+    ],
+    features: [
+      {
+        title: "Modifiez l’existant",
+        description: "Les signets existants sont chargés, prêts à être modifiés."
+      },
+      {
+        title: "Sections imbriquées",
+        description: "Des sous-signets pour les sections à l’intérieur des chapitres."
+      },
+      {
+        title: "Prêt à l’ouverture",
+        description: "Option pour afficher le panneau des signets à l’ouverture du PDF."
+      }
+    ],
+    faqs: [
+      {
+        question: "Que sont les signets d’un PDF ?",
+        answer: "Un plan cliquable dans le panneau latéral du lecteur, qui mène aux sections, comme une table des matières."
+      },
+      {
+        question: "Pourquoi certains signets ont-ils été supprimés ?",
+        answer: "Cet éditeur ne peut pas garder les signets qui mènent à un site web ou lancent un script au lieu d’aller à une page de ce fichier. Attribuez-leur une page pour les garder comme signets de page."
+      },
+      {
+        question: "Les signets modifient-ils les pages ?",
+        answer: "Non. Seul le plan est modifié."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    name: "Pièces jointes PDF",
+    shortName: "Pièces jointes PDF",
+    tagline: "Affichez, enregistrez, ajoutez et retirez les fichiers joints à l’intérieur d’un PDF. Gratuit, sur votre appareil.",
+    intro: "Pièces jointes PDF liste les fichiers contenus dans un PDF, ceux de la liste des pièces jointes du document comme ceux épinglés à une page sous forme de commentaire trombone. Enregistrez n’importe lequel, joignez de nouveaux fichiers comme des feuilles de calcul, des données sources ou des images, ou retirez des pièces jointes avant de partager le PDF. Les fichiers joints voyagent à l’intérieur du PDF et la plupart des lecteurs les affichent dans un panneau des pièces jointes.",
+    seoTitle: "Pièces jointes PDF – Extraire, ajouter ou retirer",
+    seoDescription: "Affichez, extrayez, ajoutez et retirez les fichiers joints à un PDF, y compris les pièces jointes trombone sur les pages. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "pièces jointes pdf",
+      "extraire pièces jointes pdf",
+      "joindre un fichier à un pdf",
+      "supprimer pièces jointes pdf",
+      "fichiers incorporés pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF ; ses fichiers joints sont listés."
+      },
+      {
+        title: "Enregistrez, ajoutez ou retirez",
+        description: "Enregistrez un fichier joint, joignez-en de nouveaux ou marquez ceux à retirer."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF avec vos modifications."
+      }
+    ],
+    features: [
+      {
+        title: "Trouvez les fichiers cachés",
+        description: "Les pièces jointes du document comme les commentaires trombone sur les pages."
+      },
+      {
+        title: "Enregistrez-les",
+        description: "Chaque fichier joint peut être enregistré séparément."
+      },
+      {
+        title: "Nettoyez avant de partager",
+        description: "Retirez les pièces jointes que vous ne voulez pas envoyer."
+      }
+    ],
+    faqs: [
+      {
+        question: "Où sont les pièces jointes dans un lecteur PDF ?",
+        answer: "En général dans un panneau latéral trombone ou pièces jointes. Certaines visionneuses intégrées aux navigateurs ne les affichent pas."
+      },
+      {
+        question: "Peut-on joindre n’importe quel fichier ?",
+        answer: "Oui, de n’importe quel type. Méfiez-vous des fichiers joints envoyés par des inconnus."
+      },
+      {
+        question: "Retirer les pièces jointes réduit-il le fichier ?",
+        answer: "Oui. Les fichiers retirés sont sortis du PDF, pas seulement masqués."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    name: "Nettoyer un PDF",
+    shortName: "Nettoyer PDF",
+    tagline: "Retirez scripts, actions à risque, fichiers joints et métadonnées d’un PDF avant de le partager ou de l’ouvrir. Gratuit, sur votre appareil.",
+    intro: "Nettoyer un PDF retire les parties d’un PDF qui peuvent exécuter du code, ouvrir d’autres programmes, envoyer des données ou cacher des informations. Il liste d’abord ce qu’il trouve : scripts, actions qui lancent des fichiers ou envoient des données, médias intégrés, données de formulaire XFA, fichiers joints, liens vers des sites web, commentaires et propriétés du document. Les scripts, les actions à risque et les médias sont toujours supprimés ; choisissez si vous voulez aussi supprimer les pièces jointes, les liens, les commentaires et les métadonnées. Le texte et les images des pages ne sont pas modifiés.",
+    seoTitle: "Nettoyer un PDF – Retirer JavaScript et données cachées",
+    seoDescription: "Retirez JavaScript, actions de lancement, pièces jointes, liens et métadonnées d’un PDF, et voyez ce qu’il contenait. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "nettoyer pdf",
+      "supprimer javascript pdf",
+      "assainir pdf",
+      "supprimer données cachées pdf",
+      "sécuriser pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF ; son contenu est listé."
+      },
+      {
+        title: "Choisissez quoi d’autre supprimer",
+        description: "Pièces jointes, liens vers des sites web, commentaires et propriétés du document."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF nettoyé."
+      }
+    ],
+    features: [
+      {
+        title: "Voyez ce qu’il contient",
+        description: "Scripts, actions, médias, pièces jointes et plus sont d’abord comptés."
+      },
+      {
+        title: "Les scripts partent toujours",
+        description: "Le JavaScript et les actions qui lancent ou envoient sont supprimés."
+      },
+      {
+        title: "Pages inchangées",
+        description: "Le texte, les images et la mise en page restent tels quels."
+      }
+    ],
+    faqs: [
+      {
+        question: "Un PDF nettoyé est-il sûr à ouvrir ?",
+        answer: "Il n’a plus de scripts, d’actions de lancement ni de médias intégrés, ce qui supprime des moyens courants par lesquels un PDF se comporte mal. Ce n’est pas une analyse antivirus : gardez aussi votre lecteur PDF à jour."
+      },
+      {
+        question: "Un formulaire à remplir fonctionnera-t-il encore ?",
+        answer: "Les champs de formulaire classiques restent et peuvent être remplis, mais les scripts qui calculaient ou vérifiaient les réponses sont supprimés. Un formulaire créé uniquement en XFA peut afficher une page blanche."
+      },
+      {
+        question: "Pourquoi retirer les liens et les métadonnées ?",
+        answer: "Les liens peuvent mener à des sites web indésirables, et les propriétés du document peuvent révéler des noms, des logiciels et des dates que vous ne vouliez pas partager."
+      },
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Il est traité sur votre appareil et ne le quitte jamais."
       }
     ]
   },

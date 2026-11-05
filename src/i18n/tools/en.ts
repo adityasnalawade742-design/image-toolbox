@@ -8929,4 +8929,492 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "flatten-pdf": {
+    "name": "Flatten PDF",
+    "shortName": "Flatten PDF",
+    "tagline": "Make form fields and comments part of the page so the PDF can’t be edited by mistake. Free, and it runs on your device.",
+    "intro": "Flatten PDF turns filled-in form fields, comments, highlights and stamps into ordinary page content, drawn exactly as they look now. Nobody can change the answers or delete the comments afterwards, and the PDF prints and displays the same in every reader. Choose to flatten form fields, comments, or both. Links keep working, and fields with no saved look are left as they are and counted.",
+    "seoTitle": "Flatten PDF – Lock Form Fields and Comments, Free",
+    "seoDescription": "Flatten a PDF online: filled form fields, comments and stamps become part of the page and can’t be edited. Free, no sign-up, your file isn’t uploaded.",
+    "keywords": [
+      "flatten pdf",
+      "flatten pdf form",
+      "flatten pdf annotations",
+      "make pdf form fields uneditable",
+      "lock pdf form"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF with filled form fields or comments."
+      },
+      {
+        "title": "Choose what to flatten",
+        "description": "Form fields, comments and stamps, or both."
+      },
+      {
+        "title": "Download",
+        "description": "Save the flattened PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Exactly as it looks",
+        "description": "Each field and comment is drawn from its saved appearance."
+      },
+      {
+        "title": "Links still work",
+        "description": "Only fields and comments are flattened."
+      },
+      {
+        "title": "Text stays text",
+        "description": "Typed answers remain searchable and selectable."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why flatten a PDF?",
+        "answer": "So the filled-in answers and comments can’t be changed or removed, and the file looks the same in every PDF reader and when printed."
+      },
+      {
+        "question": "Can I undo flattening?",
+        "answer": "Not in the flattened file. Keep the original if you may need to edit the form again."
+      },
+      {
+        "question": "What about a digitally signed PDF?",
+        "answer": "Any change to a signed file means the signature no longer validates. Flatten before signing, not after."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    "name": "Add Headers and Footers to PDF",
+    "shortName": "Header & Footer",
+    "tagline": "Add text, page numbers, dates and the file name to the top and bottom of every PDF page. Free, and it runs on your device.",
+    "intro": "Add Headers and Footers puts text in six places on each page: left, center and right of the header and the footer. Use {page} and {pages} for “Page 3 of 12”, {date} for today’s date and {file} for the file name, alongside your own words such as a title, company or “Confidential”. Choose the text size, color and distance from the edge, skip the cover page, and see every page in the preview before you download. Japanese, Korean, Greek and Cyrillic text are supported.",
+    "seoTitle": "Add Header and Footer to PDF – Page Numbers, Free",
+    "seoDescription": "Add headers and footers to a PDF: page numbers, dates, the file name and your own text, left, center or right. Free, no sign-up, no upload.",
+    "keywords": [
+      "add header and footer to pdf",
+      "pdf header footer",
+      "add text to top of pdf pages",
+      "page x of y pdf",
+      "add date to pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF."
+      },
+      {
+        "title": "Write the header and footer",
+        "description": "Type text in any of the six places, using {page}, {pages}, {date} and {file}."
+      },
+      {
+        "title": "Download",
+        "description": "Check the pages in the preview and save the PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Six positions",
+        "description": "Left, center and right at the top and bottom."
+      },
+      {
+        "title": "Page x of y",
+        "description": "Page numbers, the date and the file name fill themselves in."
+      },
+      {
+        "title": "Many scripts",
+        "description": "Latin, Greek, Cyrillic, Japanese and Korean."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I write “Page 1 of 10”?",
+        "answer": "Type Page {page} of {pages}. {page} becomes each page’s number and {pages} the last one."
+      },
+      {
+        "question": "Can I leave the cover page out?",
+        "answer": "Yes. Tick the option to leave the first page as it is; numbering then starts on page 2 with the number you choose."
+      },
+      {
+        "question": "Will it cover my content?",
+        "answer": "The text sits in the margin at the distance you choose. Pick a larger distance or smaller text if a page’s content reaches the edge."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    "name": "Resize PDF Pages",
+    "shortName": "Resize PDF",
+    "tagline": "Change PDF pages to A4, Letter, A3, A5, Legal or Tabloid, scaling the content to fit. Free, and it runs on your device.",
+    "intro": "Resize PDF Pages changes the paper size of every page, for example a US Letter document to A4 for printing in Europe, or A4 to A5 for a smaller handout. The content is scaled to fit and centred, or kept at 100% with margins added. Links, form fields and comments move and scale with the content, and the text stays sharp, because the pages are changed in place rather than turned into pictures.",
+    "seoTitle": "Resize PDF Pages – Letter to A4 and More, Free",
+    "seoDescription": "Change PDF page size to A4, Letter, A3, A5, Legal or Tabloid, scaling content to fit. Links and forms kept. Free, no sign-up, no upload.",
+    "keywords": [
+      "resize pdf pages",
+      "change pdf page size",
+      "letter to a4 pdf",
+      "a4 to letter pdf",
+      "scale pdf to a4"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF."
+      },
+      {
+        "title": "Choose the size",
+        "description": "Pick the paper size, orientation and whether to scale the content."
+      },
+      {
+        "title": "Download",
+        "description": "Check the preview and save the PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Common paper sizes",
+        "description": "A4, A3, A5, Letter, Legal and Tabloid."
+      },
+      {
+        "title": "Nothing lost",
+        "description": "Links, form fields and comments move with the content."
+      },
+      {
+        "title": "Sharp",
+        "description": "Pages are changed in place, not turned into pictures."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the content be stretched?",
+        "answer": "No. It’s scaled evenly so it keeps its shape, then centred; any difference in shape becomes a white margin."
+      },
+      {
+        "question": "What does “Keep at 100%” do?",
+        "answer": "It keeps the content at its size and only changes the page: a bigger page gets white margins, a smaller page cuts off the edges."
+      },
+      {
+        "question": "Can I convert Letter to A4?",
+        "answer": "Yes. Choose A4: the Letter pages are scaled slightly to fit A4 and centred."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    "name": "Add Background to PDF",
+    "shortName": "PDF Background",
+    "tagline": "Give PDF pages a background color, behind the content like colored paper or as a tint. Free, and it runs on your device.",
+    "intro": "Add Background to PDF colors the pages of a PDF. “Behind the content” works like colored paper: text and pictures sit on top unchanged. Many PDFs, including scans, paint their own white page, which hides a color behind it; for those, “Tint the page” colors every white area while black text stays black. Pick a soft color or any color you like, for all pages or just some, and check the result in the preview.",
+    "seoTitle": "Add Background Color to PDF – Free Online",
+    "seoDescription": "Add a background color to PDF pages, behind the content or as a tint that works on scans too. All or some pages. Free, no sign-up, no upload.",
+    "keywords": [
+      "add background to pdf",
+      "pdf background color",
+      "change pdf background color",
+      "colored background pdf",
+      "tint pdf pages"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF."
+      },
+      {
+        "title": "Pick the color",
+        "description": "Choose a color and whether it goes behind the content or tints the page."
+      },
+      {
+        "title": "Download",
+        "description": "Check the preview and save the PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Behind or tint",
+        "description": "Behind the content like paper, or a tint that also works on scans."
+      },
+      {
+        "title": "Any color",
+        "description": "Soft paper tones or your own color."
+      },
+      {
+        "title": "All or some pages",
+        "description": "Color every page or a list such as 1-3, 5."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why doesn’t the color show?",
+        "answer": "The page paints its own white background over it. Choose “Tint the page” instead."
+      },
+      {
+        "question": "Will the color print?",
+        "answer": "Yes, it’s part of the page. Most printers leave a thin white border at the edge."
+      },
+      {
+        "question": "Can I remove the background later?",
+        "answer": "Not from the new file. Keep the original if you may want it without the color."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    "name": "Edit PDF Metadata",
+    "shortName": "Edit Metadata",
+    "tagline": "Change a PDF’s title, author, subject and keywords, as shown in readers and search results. Free, on your device.",
+    "intro": "Edit PDF Metadata changes the document properties stored inside a PDF: the title shown in browser tabs and search results, the author, the subject, keywords, and the names of the programs that made it. Both places PDF readers look (the document information and the XMP metadata) are updated together, and the rest of the XMP, such as PDF/A identification, is kept. Leave a field empty to remove it.",
+    "seoTitle": "Edit PDF Metadata – Title, Author, Keywords, Free",
+    "seoDescription": "Edit a PDF’s title, author, subject, keywords and producer online. Both metadata stores updated together. Free, no sign-up, no upload.",
+    "keywords": [
+      "edit pdf metadata",
+      "change pdf title",
+      "change pdf author",
+      "pdf properties editor",
+      "pdf keywords"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF; its current properties are filled in."
+      },
+      {
+        "title": "Edit the properties",
+        "description": "Change the title, author, subject, keywords and program names."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF with the new properties."
+      }
+    ],
+    "features": [
+      {
+        "title": "Shown where it matters",
+        "description": "The title appears in browser tabs, readers and search results."
+      },
+      {
+        "title": "Kept in step",
+        "description": "Document information and XMP metadata both updated."
+      },
+      {
+        "title": "PDF/A kept",
+        "description": "Other XMP data, including PDF/A identification, stays."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does my PDF show the wrong title?",
+        "answer": "Readers show the title stored in the file, not the file name. Set it here."
+      },
+      {
+        "question": "How do I remove a property?",
+        "answer": "Clear the field. To remove all properties and hidden metadata at once, use Remove PDF Metadata."
+      },
+      {
+        "question": "Is the PDF’s content changed?",
+        "answer": "No. Only the properties and the modified date change."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    "name": "Add Bookmarks to PDF",
+    "shortName": "PDF Bookmarks",
+    "tagline": "Add, rename, nest and remove PDF bookmarks so readers can jump to each section. Free, and it runs on your device.",
+    "intro": "Add Bookmarks to PDF edits the outline that PDF readers show in their bookmarks panel. Existing bookmarks are listed so you can rename, reorder, nest or delete them; add new ones for the page in the preview, or one for every page in a click. Choose the page each bookmark opens, make sub-bookmarks for sections within chapters, and have the panel open automatically when the PDF is opened.",
+    "seoTitle": "Add Bookmarks to PDF – Edit the PDF Outline, Free",
+    "seoDescription": "Add, rename, nest and remove PDF bookmarks online, and open the bookmarks panel automatically. Free, no sign-up, your file isn’t uploaded.",
+    "keywords": [
+      "add bookmarks to pdf",
+      "edit pdf bookmarks",
+      "pdf outline editor",
+      "create pdf table of contents",
+      "pdf bookmark maker"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF; any bookmarks it has are listed."
+      },
+      {
+        "title": "Edit the bookmarks",
+        "description": "Add, rename, choose pages, nest and reorder them."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF with the new bookmarks."
+      }
+    ],
+    "features": [
+      {
+        "title": "Edit what’s there",
+        "description": "Existing bookmarks are read in, ready to change."
+      },
+      {
+        "title": "Nested sections",
+        "description": "Sub-bookmarks for sections inside chapters."
+      },
+      {
+        "title": "Opens ready",
+        "description": "Optionally show the bookmarks panel when the PDF opens."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are PDF bookmarks?",
+        "answer": "A clickable outline in the reader’s side panel that jumps to sections, like a table of contents."
+      },
+      {
+        "question": "Why were some bookmarks removed?",
+        "answer": "Bookmarks that go to a website or run a script, not to a page in this file, can’t be kept by this editor. Give them a page to keep them as page bookmarks."
+      },
+      {
+        "question": "Do bookmarks change the pages?",
+        "answer": "No. Only the outline is changed."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    "name": "PDF Attachments",
+    "shortName": "PDF Attachments",
+    "tagline": "See, save, add and remove files attached inside a PDF. Free, and it runs on your device.",
+    "intro": "PDF Attachments lists the files carried inside a PDF, both those in the document’s attachment list and those pinned to a page as a paper-clip comment. Save any of them, attach new files such as spreadsheets, source data or images, or remove attachments before you share the PDF. Attached files travel inside the PDF and most readers show them in an attachments panel.",
+    "seoTitle": "PDF Attachments – Extract, Add or Remove Files, Free",
+    "seoDescription": "See, extract, add and remove files attached to a PDF, including paper-clip attachments on pages. Free, no sign-up, your file isn’t uploaded.",
+    "keywords": [
+      "pdf attachments",
+      "extract attachments from pdf",
+      "attach file to pdf",
+      "remove attachments from pdf",
+      "embedded files pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF; its attached files are listed."
+      },
+      {
+        "title": "Save, add or remove",
+        "description": "Save any attached file, attach new ones or mark ones to remove."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF with your changes."
+      }
+    ],
+    "features": [
+      {
+        "title": "Find hidden files",
+        "description": "Both document attachments and paper-clip comments on pages."
+      },
+      {
+        "title": "Save any of them",
+        "description": "Each attached file can be saved on its own."
+      },
+      {
+        "title": "Clean before sharing",
+        "description": "Remove attachments you don’t want to send."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where are attachments in a PDF reader?",
+        "answer": "Usually in a paper-clip or attachments panel at the side. Some browsers’ built-in viewers don’t show them."
+      },
+      {
+        "question": "Can any file be attached?",
+        "answer": "Yes, any type. Be careful opening attached files from people you don’t know."
+      },
+      {
+        "question": "Does removing attachments shrink the file?",
+        "answer": "Yes. The removed files are taken out of the PDF, not just hidden."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    "name": "Sanitize PDF",
+    "shortName": "Sanitize PDF",
+    "tagline": "Remove scripts, risky actions, attached files and metadata from a PDF before you share or open it. Free, on your device.",
+    "intro": "Sanitize PDF takes out the parts of a PDF that can run code, open other programs, send data or hide information. It first lists what it finds: scripts, actions that launch files or submit data, embedded media, XFA form data, attached files, links to websites, comments and document properties. Scripts, risky actions and media are always removed; choose whether to also remove attachments, links, comments and metadata. The pages’ text and pictures aren’t changed.",
+    "seoTitle": "Sanitize PDF – Remove JavaScript and Hidden Data",
+    "seoDescription": "Remove JavaScript, launch actions, attachments, links and metadata from a PDF, and see what was in it. Free, no sign-up, your file isn’t uploaded.",
+    "keywords": [
+      "sanitize pdf",
+      "remove javascript from pdf",
+      "clean pdf",
+      "remove hidden data from pdf",
+      "safe pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF; what it contains is listed."
+      },
+      {
+        "title": "Choose what else to remove",
+        "description": "Attachments, links to websites, comments and document properties."
+      },
+      {
+        "title": "Download",
+        "description": "Save the sanitized PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "See what’s inside",
+        "description": "Scripts, actions, media, attachments and more are counted first."
+      },
+      {
+        "title": "Scripts always go",
+        "description": "JavaScript and actions that launch or send are removed."
+      },
+      {
+        "title": "Pages unchanged",
+        "description": "Text, pictures and layout stay as they were."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is a sanitized PDF safe to open?",
+        "answer": "It no longer has scripts, launch actions or embedded media, which removes common ways PDFs misbehave. It isn’t a virus scan: keep your PDF reader up to date too."
+      },
+      {
+        "question": "Will a fillable form still work?",
+        "answer": "Regular form fields stay and can be filled in, but scripts that calculated or checked answers are removed. A form made only in XFA may show a blank page."
+      },
+      {
+        "question": "Why remove links and metadata?",
+        "answer": "Links can lead to unwanted websites, and document properties can reveal names, software and dates you didn’t mean to share."
+      },
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. It’s processed on your device and never leaves it."
+      }
+    ]
+  },
 };

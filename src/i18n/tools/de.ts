@@ -9314,4 +9314,492 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "flatten-pdf": {
+    name: "PDF fixieren",
+    shortName: "PDF fixieren",
+    tagline: "Mach Formularfelder und Kommentare zum Teil der Seite, damit das PDF nicht versehentlich geändert wird. Kostenlos, auf deinem Gerät.",
+    intro: "PDF fixieren verwandelt ausgefüllte Formularfelder, Kommentare, Markierungen und Stempel in normalen Seiteninhalt, gezeichnet genau so, wie sie jetzt aussehen. Danach kann niemand mehr die Antworten ändern oder die Kommentare löschen, und das PDF wird in jedem Reader gleich angezeigt und gedruckt. Wähle, ob du Formularfelder, Kommentare oder beides fixieren willst. Links funktionieren weiter, und Felder ohne gespeichertes Aussehen bleiben unverändert und werden gezählt.",
+    seoTitle: "PDF fixieren – Formularfelder und Kommentare sperren",
+    seoDescription: "PDF online fixieren: Ausgefüllte Formularfelder, Kommentare und Stempel werden Teil der Seite und nicht mehr änderbar. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "pdf fixieren",
+      "pdf formular fixieren",
+      "pdf flatten",
+      "pdf nicht bearbeitbar machen",
+      "pdf formularfelder sperren"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF mit ausgefüllten Formularfeldern oder Kommentaren hierher oder wähle es aus."
+      },
+      {
+        title: "Auswählen, was fixiert wird",
+        description: "Formularfelder, Kommentare und Stempel oder beides."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das fixierte PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Genau wie es aussieht",
+        description: "Jedes Feld und jeder Kommentar wird aus seinem gespeicherten Aussehen gezeichnet."
+      },
+      {
+        title: "Links funktionieren weiter",
+        description: "Nur Felder und Kommentare werden fixiert."
+      },
+      {
+        title: "Text bleibt Text",
+        description: "Eingetippte Antworten bleiben durchsuchbar und markierbar."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum ein PDF fixieren?",
+        answer: "Damit die ausgefüllten Antworten und Kommentare nicht mehr geändert oder entfernt werden können und die Datei in jedem PDF-Reader und beim Drucken gleich aussieht."
+      },
+      {
+        question: "Kann ich das Fixieren rückgängig machen?",
+        answer: "Nicht in der fixierten Datei. Behalte das Original, falls du das Formular noch einmal bearbeiten musst."
+      },
+      {
+        question: "Was ist mit einem digital signierten PDF?",
+        answer: "Jede Änderung an einer signierten Datei führt dazu, dass die Signatur nicht mehr gültig ist. Fixiere vor dem Signieren, nicht danach."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    name: "Kopf- und Fußzeile zu PDF hinzufügen",
+    shortName: "Kopf- und Fußzeile",
+    tagline: "Füge oben und unten auf jeder PDF-Seite Text, Seitenzahlen, Datum und Dateinamen ein. Kostenlos, auf deinem Gerät.",
+    intro: "Kopf- und Fußzeile zu PDF hinzufügen setzt Text an sechs Stellen jeder Seite: links, mittig und rechts in der Kopf- und in der Fußzeile. Nutze {page} und {pages} für „Seite 3 von 12“, {date} für das heutige Datum und {file} für den Dateinamen, zusammen mit eigenem Text wie einem Titel, einem Firmennamen oder „Vertraulich“. Wähle Textgröße, Farbe und Abstand vom Rand, lass das Deckblatt aus und prüfe jede Seite in der Vorschau, bevor du herunterlädst. Japanischer, koreanischer, griechischer und kyrillischer Text wird unterstützt.",
+    seoTitle: "Kopf- und Fußzeile in PDF einfügen – mit Seitenzahlen",
+    seoDescription: "Füge einem PDF Kopf- und Fußzeilen hinzu: Seitenzahlen, Datum, Dateiname und eigener Text, links, mittig oder rechts. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "pdf kopfzeile einfügen",
+      "pdf fußzeile einfügen",
+      "kopf- und fußzeile pdf",
+      "seite x von y pdf",
+      "pdf datum einfügen"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus."
+      },
+      {
+        title: "Kopf- und Fußzeile schreiben",
+        description: "Gib an einer der sechs Stellen Text ein, mit {page}, {pages}, {date} und {file}."
+      },
+      {
+        title: "Herunterladen",
+        description: "Prüfe die Seiten in der Vorschau und speichere das PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Sechs Positionen",
+        description: "Links, mittig und rechts, oben und unten."
+      },
+      {
+        title: "Seite x von y",
+        description: "Seitenzahlen, Datum und Dateiname füllen sich von selbst aus."
+      },
+      {
+        title: "Viele Schriften",
+        description: "Lateinisch, Griechisch, Kyrillisch, Japanisch und Koreanisch."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie schreibe ich „Seite 1 von 10“?",
+        answer: "Gib Seite {page} von {pages} ein. {page} wird zur Nummer der jeweiligen Seite, {pages} zur letzten."
+      },
+      {
+        question: "Kann ich das Deckblatt auslassen?",
+        answer: "Ja. Aktiviere die Option, die erste Seite unverändert zu lassen; die Nummerierung beginnt dann auf Seite 2 mit der Zahl, die du wählst."
+      },
+      {
+        question: "Verdeckt der Text meinen Inhalt?",
+        answer: "Der Text steht im Rand, im gewählten Abstand. Wähle einen größeren Abstand oder kleineren Text, wenn der Inhalt einer Seite bis an den Rand reicht."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    name: "PDF-Seitengröße ändern",
+    shortName: "PDF-Seitengröße",
+    tagline: "Ändere PDF-Seiten auf A4, Letter, A3, A5, Legal oder Tabloid und skaliere den Inhalt passend. Kostenlos, auf deinem Gerät.",
+    intro: "PDF-Seitengröße ändern ändert das Papierformat jeder Seite, zum Beispiel von einem Dokument in US Letter auf A4 für den Druck in Europa oder von A4 auf A5 für ein kleineres Handout. Der Inhalt wird passend skaliert und zentriert oder bei 100 % gelassen und mit Rändern ergänzt. Links, Formularfelder und Kommentare wandern mit dem Inhalt mit und werden mitskaliert, und der Text bleibt scharf, weil die Seiten direkt geändert und nicht in Bilder umgewandelt werden.",
+    seoTitle: "PDF-Seitengröße ändern – Letter zu A4 und mehr, gratis",
+    seoDescription: "Ändere die Seitengröße eines PDFs auf A4, Letter, A3, A5, Legal oder Tabloid, Inhalt passend skaliert. Links und Formulare bleiben. Kostenlos, ohne Upload.",
+    keywords: [
+      "pdf seitengröße ändern",
+      "pdf auf a4 skalieren",
+      "pdf letter in a4",
+      "pdf a4 in letter",
+      "pdf format ändern"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus."
+      },
+      {
+        title: "Größe wählen",
+        description: "Wähle Papierformat, Ausrichtung und ob der Inhalt skaliert wird."
+      },
+      {
+        title: "Herunterladen",
+        description: "Prüfe die Vorschau und speichere das PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Gängige Papierformate",
+        description: "A4, A3, A5, Letter, Legal und Tabloid."
+      },
+      {
+        title: "Nichts geht verloren",
+        description: "Links, Formularfelder und Kommentare wandern mit dem Inhalt mit."
+      },
+      {
+        title: "Scharf",
+        description: "Die Seiten werden direkt geändert, nicht in Bilder umgewandelt."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wird der Inhalt verzerrt?",
+        answer: "Nein. Er wird gleichmäßig skaliert, damit er seine Proportionen behält, und dann zentriert; ein Unterschied in den Proportionen wird zu einem weißen Rand."
+      },
+      {
+        question: "Was macht „Bei 100 % lassen“?",
+        answer: "Der Inhalt behält seine Größe, nur die Seite ändert sich: Eine größere Seite bekommt weiße Ränder, bei einer kleineren werden die Kanten abgeschnitten."
+      },
+      {
+        question: "Kann ich Letter in A4 umwandeln?",
+        answer: "Ja. Wähle A4: Die Letter-Seiten werden leicht skaliert, damit sie auf A4 passen, und zentriert."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    name: "Hintergrund zu PDF hinzufügen",
+    shortName: "PDF-Hintergrund",
+    tagline: "Gib PDF-Seiten eine Hintergrundfarbe, hinter dem Inhalt wie farbiges Papier oder als Einfärbung. Kostenlos, auf deinem Gerät.",
+    intro: "Hintergrund zu PDF hinzufügen färbt die Seiten eines PDFs. „Hinter dem Inhalt“ wirkt wie farbiges Papier: Text und Bilder liegen unverändert darüber. Viele PDFs, auch Scans, malen ihre eigene weiße Seite, die eine Farbe dahinter verdeckt; für diese färbt „Seite einfärben“ alle weißen Flächen ein, während schwarzer Text schwarz bleibt. Wähle eine sanfte Farbe oder jede beliebige, für alle Seiten oder nur einige, und prüfe das Ergebnis in der Vorschau.",
+    seoTitle: "PDF-Hintergrundfarbe hinzufügen – kostenlos online",
+    seoDescription: "Füge PDF-Seiten eine Hintergrundfarbe hinzu, hinter dem Inhalt oder als Einfärbung, die auch bei Scans wirkt. Alle oder einige Seiten. Kostenlos, ohne Upload.",
+    keywords: [
+      "pdf hintergrund hinzufügen",
+      "pdf hintergrundfarbe",
+      "pdf hintergrundfarbe ändern",
+      "pdf farbiger hintergrund",
+      "pdf seiten einfärben"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus."
+      },
+      {
+        title: "Farbe wählen",
+        description: "Wähle eine Farbe und ob sie hinter den Inhalt kommt oder die Seite einfärbt."
+      },
+      {
+        title: "Herunterladen",
+        description: "Prüfe die Vorschau und speichere das PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Dahinter oder eingefärbt",
+        description: "Hinter dem Inhalt wie Papier oder eine Einfärbung, die auch bei Scans wirkt."
+      },
+      {
+        title: "Jede Farbe",
+        description: "Sanfte Papiertöne oder deine eigene Farbe."
+      },
+      {
+        title: "Alle oder einige Seiten",
+        description: "Färbe jede Seite oder eine Liste wie 1-3, 5."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum ist die Farbe nicht zu sehen?",
+        answer: "Die Seite malt ihren eigenen weißen Hintergrund darüber. Wähle stattdessen „Seite einfärben“."
+      },
+      {
+        question: "Wird die Farbe mitgedruckt?",
+        answer: "Ja, sie ist Teil der Seite. Die meisten Drucker lassen am Rand einen schmalen weißen Streifen."
+      },
+      {
+        question: "Kann ich den Hintergrund später entfernen?",
+        answer: "Nicht aus der neuen Datei. Behalte das Original, falls du es ohne Farbe brauchst."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    name: "PDF-Metadaten bearbeiten",
+    shortName: "Metadaten bearbeiten",
+    tagline: "Ändere Titel, Autor, Thema und Stichwörter eines PDFs, wie sie in Readern und Suchergebnissen erscheinen. Kostenlos, auf deinem Gerät.",
+    intro: "PDF-Metadaten bearbeiten ändert die Dokumenteigenschaften, die in einem PDF gespeichert sind: den Titel in Browser-Tabs und Suchergebnissen, den Autor, das Thema, die Stichwörter und die Namen der Programme, mit denen es erstellt wurde. Beide Stellen, an denen PDF-Reader nachsehen (die Dokumentinformationen und die XMP-Metadaten), werden gemeinsam aktualisiert, und der Rest der XMP-Daten, etwa die PDF/A-Kennung, bleibt erhalten. Lass ein Feld leer, um es zu entfernen.",
+    seoTitle: "PDF-Metadaten bearbeiten – Titel, Autor, Stichwörter",
+    seoDescription: "Bearbeite Titel, Autor, Thema, Stichwörter und Produzent eines PDFs online. Beide Metadatenspeicher werden gemeinsam aktualisiert. Kostenlos, ohne Upload.",
+    keywords: [
+      "pdf metadaten bearbeiten",
+      "pdf titel ändern",
+      "pdf autor ändern",
+      "pdf eigenschaften bearbeiten",
+      "pdf stichwörter"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus; seine aktuellen Eigenschaften werden eingetragen."
+      },
+      {
+        title: "Eigenschaften bearbeiten",
+        description: "Ändere Titel, Autor, Thema, Stichwörter und Programmnamen."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF mit den neuen Eigenschaften."
+      }
+    ],
+    features: [
+      {
+        title: "Sichtbar, wo es zählt",
+        description: "Der Titel erscheint in Browser-Tabs, Readern und Suchergebnissen."
+      },
+      {
+        title: "Immer abgestimmt",
+        description: "Dokumentinformationen und XMP-Metadaten werden beide aktualisiert."
+      },
+      {
+        title: "PDF/A bleibt",
+        description: "Andere XMP-Daten, auch die PDF/A-Kennung, bleiben erhalten."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum zeigt mein PDF den falschen Titel?",
+        answer: "Reader zeigen den in der Datei gespeicherten Titel, nicht den Dateinamen. Lege ihn hier fest."
+      },
+      {
+        question: "Wie entferne ich eine Eigenschaft?",
+        answer: "Leere das Feld. Um alle Eigenschaften und versteckten Metadaten auf einmal zu entfernen, nutze PDF-Metadaten entfernen."
+      },
+      {
+        question: "Wird der Inhalt des PDFs verändert?",
+        answer: "Nein. Nur die Eigenschaften und das Änderungsdatum ändern sich."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    name: "Lesezeichen zu PDF hinzufügen",
+    shortName: "PDF-Lesezeichen",
+    tagline: "Füge PDF-Lesezeichen hinzu, benenne sie um, verschachtle oder entferne sie, damit man zu jedem Abschnitt springen kann. Kostenlos, auf deinem Gerät.",
+    intro: "Lesezeichen zu PDF hinzufügen bearbeitet die Gliederung, die PDF-Reader in ihrer Lesezeichenleiste anzeigen. Vorhandene Lesezeichen werden aufgelistet, damit du sie umbenennen, neu ordnen, verschachteln oder löschen kannst; füge neue für die Seite in der Vorschau hinzu oder mit einem Klick eines für jede Seite. Wähle die Seite, die jedes Lesezeichen öffnet, lege Unterlesezeichen für Abschnitte in Kapiteln an und lass die Leiste automatisch erscheinen, wenn das PDF geöffnet wird.",
+    seoTitle: "Lesezeichen zu PDF hinzufügen – Gliederung bearbeiten",
+    seoDescription: "PDF-Lesezeichen online hinzufügen, umbenennen, verschachteln und entfernen, und die Lesezeichenleiste automatisch öffnen. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "pdf lesezeichen hinzufügen",
+      "pdf lesezeichen bearbeiten",
+      "pdf lesezeichen erstellen",
+      "pdf inhaltsverzeichnis erstellen",
+      "lesezeichen in pdf einfügen"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus; vorhandene Lesezeichen werden aufgelistet."
+      },
+      {
+        title: "Lesezeichen bearbeiten",
+        description: "Hinzufügen, umbenennen, Seiten wählen, verschachteln und neu ordnen."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF mit den neuen Lesezeichen."
+      }
+    ],
+    features: [
+      {
+        title: "Vorhandenes bearbeiten",
+        description: "Bestehende Lesezeichen werden eingelesen und sind sofort änderbar."
+      },
+      {
+        title: "Verschachtelte Abschnitte",
+        description: "Unterlesezeichen für Abschnitte innerhalb von Kapiteln."
+      },
+      {
+        title: "Bereit beim Öffnen",
+        description: "Auf Wunsch erscheint die Lesezeichenleiste, wenn das PDF geöffnet wird."
+      }
+    ],
+    faqs: [
+      {
+        question: "Was sind PDF-Lesezeichen?",
+        answer: "Eine anklickbare Gliederung in der Seitenleiste des Readers, die zu Abschnitten springt, wie ein Inhaltsverzeichnis."
+      },
+      {
+        question: "Warum wurden einige Lesezeichen entfernt?",
+        answer: "Lesezeichen, die zu einer Website führen oder ein Skript ausführen statt zu einer Seite in dieser Datei, kann dieser Editor nicht behalten. Gib ihnen eine Seite, um sie als Seitenlesezeichen zu behalten."
+      },
+      {
+        question: "Verändern Lesezeichen die Seiten?",
+        answer: "Nein. Nur die Gliederung wird geändert."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    name: "PDF-Anhänge",
+    shortName: "PDF-Anhänge",
+    tagline: "Sieh dir Dateien an, die in einem PDF angehängt sind, speichere sie, füge neue hinzu oder entferne sie. Kostenlos, auf deinem Gerät.",
+    intro: "PDF-Anhänge listet die Dateien auf, die ein PDF mit sich trägt, sowohl die in der Anhangsliste des Dokuments als auch die, die als Büroklammer-Kommentar an eine Seite geheftet sind. Speichere jede davon, hänge neue Dateien wie Tabellen, Quelldaten oder Bilder an oder entferne Anhänge, bevor du das PDF teilst. Angehängte Dateien reisen im PDF mit, und die meisten Reader zeigen sie in einer Leiste für Anhänge.",
+    seoTitle: "PDF-Anhänge – Dateien extrahieren, anhängen, entfernen",
+    seoDescription: "Sieh dir Dateianhänge eines PDFs an, extrahiere, füge hinzu oder entferne sie, auch Büroklammer-Anhänge auf Seiten. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "pdf anhänge",
+      "pdf anhang extrahieren",
+      "datei an pdf anhängen",
+      "pdf anhänge entfernen",
+      "eingebettete dateien pdf"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus; seine angehängten Dateien werden aufgelistet."
+      },
+      {
+        title: "Speichern, hinzufügen oder entfernen",
+        description: "Speichere eine angehängte Datei, hänge neue an oder markiere die, die weg sollen."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF mit deinen Änderungen."
+      }
+    ],
+    features: [
+      {
+        title: "Versteckte Dateien finden",
+        description: "Sowohl Dokumentanhänge als auch Büroklammer-Kommentare auf Seiten."
+      },
+      {
+        title: "Jede einzeln speichern",
+        description: "Jede angehängte Datei lässt sich für sich speichern."
+      },
+      {
+        title: "Vor dem Teilen aufräumen",
+        description: "Entferne Anhänge, die du nicht mitschicken willst."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wo finde ich Anhänge in einem PDF-Reader?",
+        answer: "Meist in einer Büroklammer- oder Anhangsleiste an der Seite. Manche im Browser eingebauten Viewer zeigen sie nicht an."
+      },
+      {
+        question: "Kann jede Datei angehängt werden?",
+        answer: "Ja, jeder Dateityp. Sei vorsichtig beim Öffnen angehängter Dateien von Leuten, die du nicht kennst."
+      },
+      {
+        question: "Wird die Datei kleiner, wenn ich Anhänge entferne?",
+        answer: "Ja. Die entfernten Dateien werden aus dem PDF herausgenommen, nicht nur ausgeblendet."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    name: "PDF bereinigen",
+    shortName: "PDF bereinigen",
+    tagline: "Entferne Skripte, riskante Aktionen, angehängte Dateien und Metadaten aus einem PDF, bevor du es teilst oder öffnest. Kostenlos, auf deinem Gerät.",
+    intro: "PDF bereinigen entfernt die Teile eines PDFs, die Code ausführen, andere Programme öffnen, Daten senden oder Informationen verstecken können. Zuerst listet es auf, was es findet: Skripte, Aktionen, die Dateien starten oder Daten übermitteln, eingebettete Medien, XFA-Formulardaten, angehängte Dateien, Links zu Websites, Kommentare und Dokumenteigenschaften. Skripte, riskante Aktionen und Medien werden immer entfernt; wähle, ob auch Anhänge, Links, Kommentare und Metadaten entfernt werden sollen. Text und Bilder der Seiten werden nicht verändert.",
+    seoTitle: "PDF bereinigen – JavaScript und versteckte Daten entfernen",
+    seoDescription: "Entferne JavaScript, Startaktionen, Anhänge, Links und Metadaten aus einem PDF und sieh, was darin war. Kostenlos, ohne Anmeldung, deine Datei bleibt lokal.",
+    keywords: [
+      "pdf bereinigen",
+      "javascript aus pdf entfernen",
+      "pdf säubern",
+      "versteckte daten aus pdf entfernen",
+      "pdf sicher machen"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh das PDF hierher oder wähle es aus; sein Inhalt wird aufgelistet."
+      },
+      {
+        title: "Wählen, was noch entfernt wird",
+        description: "Anhänge, Links zu Websites, Kommentare und Dokumenteigenschaften."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das bereinigte PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Sehen, was drin ist",
+        description: "Skripte, Aktionen, Medien, Anhänge und mehr werden zuerst gezählt."
+      },
+      {
+        title: "Skripte fliegen immer raus",
+        description: "JavaScript und Aktionen, die etwas starten oder senden, werden entfernt."
+      },
+      {
+        title: "Seiten unverändert",
+        description: "Text, Bilder und Layout bleiben, wie sie waren."
+      }
+    ],
+    faqs: [
+      {
+        question: "Ist ein bereinigtes PDF sicher zu öffnen?",
+        answer: "Es enthält keine Skripte, Startaktionen oder eingebetteten Medien mehr, was gängige Wege ausschließt, auf denen PDFs Ärger machen. Es ist kein Virenscan: Halte auch deinen PDF-Reader aktuell."
+      },
+      {
+        question: "Funktioniert ein ausfüllbares Formular noch?",
+        answer: "Normale Formularfelder bleiben und lassen sich ausfüllen, aber Skripte, die Antworten berechnet oder geprüft haben, werden entfernt. Ein reines XFA-Formular zeigt möglicherweise eine leere Seite."
+      },
+      {
+        question: "Warum Links und Metadaten entfernen?",
+        answer: "Links können zu unerwünschten Websites führen, und Dokumenteigenschaften können Namen, Software und Daten verraten, die du nicht teilen wolltest."
+      },
+      {
+        question: "Wird mein PDF hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
 };

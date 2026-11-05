@@ -106,6 +106,14 @@ const ContactSheetWorkspace = standaloneTool(() => import('../tools/extras/Conta
 const ImposeWorkspace = standaloneTool(() => import('../tools/pdf/ImposeWorkspace'), 'ImposeWorkspace');
 const PosterWorkspace = standaloneTool(() => import('../tools/extras/PosterWorkspace'), 'PosterWorkspace');
 const GraphPaperWorkspace = standaloneTool(() => import('../tools/extras/GraphPaperWorkspace'), 'GraphPaperWorkspace');
+const FlattenWorkspace = standaloneTool(() => import('../tools/pdf/FlattenWorkspace'), 'FlattenWorkspace');
+const HeaderFooterWorkspace = standaloneTool(() => import('../tools/pdf/HeaderFooterWorkspace'), 'HeaderFooterWorkspace');
+const ResizePagesWorkspace = standaloneTool(() => import('../tools/pdf/ResizePagesWorkspace'), 'ResizePagesWorkspace');
+const BackgroundWorkspace = standaloneTool(() => import('../tools/pdf/BackgroundWorkspace'), 'BackgroundWorkspace');
+const EditMetadataWorkspace = standaloneTool(() => import('../tools/pdf/EditMetadataWorkspace'), 'EditMetadataWorkspace');
+const BookmarksWorkspace = standaloneTool(() => import('../tools/pdf/BookmarksWorkspace'), 'BookmarksWorkspace');
+const AttachmentsWorkspace = standaloneTool(() => import('../tools/pdf/AttachmentsWorkspace'), 'AttachmentsWorkspace');
+const SanitizeWorkspace = standaloneTool(() => import('../tools/pdf/SanitizeWorkspace'), 'SanitizeWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -241,6 +249,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'n-up-pdf': <ImposeWorkspace mode="nup" />,
     'poster-splitter': <PosterWorkspace />,
     'graph-paper-maker': <GraphPaperWorkspace />,
+    'flatten-pdf': <FlattenWorkspace />,
+    'add-header-footer-pdf': <HeaderFooterWorkspace />,
+    'resize-pdf-pages': <ResizePagesWorkspace />,
+    'add-background-to-pdf': <BackgroundWorkspace />,
+    'edit-pdf-metadata': <EditMetadataWorkspace />,
+    'add-bookmarks-to-pdf': <BookmarksWorkspace />,
+    'pdf-attachments': <AttachmentsWorkspace />,
+    'sanitize-pdf': <SanitizeWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,
