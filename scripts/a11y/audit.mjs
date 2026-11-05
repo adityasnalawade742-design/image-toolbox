@@ -33,6 +33,7 @@ const INPUT = {
   'pixels-to-inches': [], 'inches-to-pixels': [], 'pixels-to-cm': [], 'cm-to-pixels': [], 'resolution-calculator': [], 'color-blindness-simulator': [S('photo.jpg')],
   'morse-code-translator': [], 'hide-text-in-image': [S('photo.jpg')], 'halftone-dither-effect': [S('photo.jpg')], 'contact-sheet-maker': [S('photo.jpg'), S('photo2.png')],
   'booklet-maker': [S('doc.pdf')], 'n-up-pdf': [S('doc.pdf')], 'poster-splitter': [S('photo.jpg')], 'graph-paper-maker': [],
+  'flatten-pdf': [S('form.pdf')], 'add-header-footer-pdf': [S('doc.pdf')], 'resize-pdf-pages': [S('doc.pdf')], 'add-background-to-pdf': [S('doc.pdf')], 'edit-pdf-metadata': [S('doc.pdf')], 'add-bookmarks-to-pdf': [S('doc.pdf')], 'pdf-attachments': [S('doc.pdf')], 'sanitize-pdf': [S('doc.pdf')],
   'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
   'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],

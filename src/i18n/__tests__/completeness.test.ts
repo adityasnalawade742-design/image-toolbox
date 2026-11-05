@@ -21,7 +21,17 @@ describe.each(targets)('Translation completeness: %s', (locale) => {
     expect(missing, `missing keys in strings/${locale}.ts`).toEqual([]);
     for (const [key, value] of Object.entries(en)) {
       expect(placeholders(strings[key]), `placeholders in ${key}`).toEqual(placeholders(value));
+      // A stray escape such as \u0001 shows as nothing (or a box) where punctuation should be
+      expect(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(strings[key]), `control character in ${key}`).toBe(false);
     }
+  });
+
+  it('has no control characters in tool page text', () => {
+    const tools = getAllLocalizedTools(locale);
+    const bad = Object.entries(tools)
+      .filter(([, item]) => /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(JSON.stringify(item).replace(/\\[nrt"\\/]/g, '').replace(/\\u00(0[0-8bcef]|1[0-9a-f])/gi, '\u0001')))
+      .map(([slug]) => slug);
+    expect(bad, `control characters in tools/${locale}.ts`).toEqual([]);
   });
 
   it('translates every page-chrome string', () => {

@@ -9290,4 +9290,492 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "flatten-pdf": {
+    name: "PDF Düzleştirme",
+    shortName: "PDF Düzleştir",
+    tagline: "PDF yanlışlıkla düzenlenmesin diye form alanlarını ve yorumları sayfanın parçası yapın. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "PDF Düzleştirme, doldurulmuş form alanlarını, yorumları, vurgulamaları ve damgaları şu anki görünümleriyle aynen çizerek sıradan sayfa içeriğine dönüştürür. Sonrasında kimse yanıtları değiştiremez veya yorumları silemez; PDF her okuyucuda aynı görünür ve aynı yazdırılır. Form alanlarını, yorumları ya da ikisini birden düzleştirmeyi seçin. Bağlantılar çalışmaya devam eder; kayıtlı görünümü olmayan alanlar olduğu gibi bırakılır ve sayıları gösterilir.",
+    seoTitle: "PDF Düzleştirme – Form Alanlarını ve Yorumları Kilitle",
+    seoDescription: "PDF’i online düzleştirin: doldurulmuş form alanları, yorumlar ve damgalar sayfanın parçası olur ve düzenlenemez. Ücretsiz, kayıt yok, dosyanız yüklenmez.",
+    keywords: [
+      "pdf düzleştirme",
+      "pdf formu düzleştir",
+      "flatten pdf",
+      "pdf form alanlarını kilitleme",
+      "düzenlenemez pdf yapma"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "Doldurulmuş form alanları veya yorumlar içeren bir PDF bırakın ya da seçin."
+      },
+      {
+        title: "Neyin düzleştirileceğini seçin",
+        description: "Form alanları, yorumlar ve damgalar ya da ikisi birden."
+      },
+      {
+        title: "İndirin",
+        description: "Düzleştirilmiş PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Göründüğü gibi",
+        description: "Her alan ve yorum kayıtlı görünümünden çizilir."
+      },
+      {
+        title: "Bağlantılar çalışır",
+        description: "Yalnızca alanlar ve yorumlar düzleştirilir."
+      },
+      {
+        title: "Metin metin olarak kalır",
+        description: "Yazılan yanıtlar aranabilir ve seçilebilir kalır."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF neden düzleştirilir?",
+        answer: "Doldurulan yanıtlar ve yorumlar değiştirilemesin veya silinemesin, dosya her PDF okuyucuda ve yazdırıldığında aynı görünsün diye."
+      },
+      {
+        question: "Düzleştirme geri alınabilir mi?",
+        answer: "Düzleştirilmiş dosyada hayır. Formu yeniden düzenlemeniz gerekebilirse orijinali saklayın."
+      },
+      {
+        question: "Dijital olarak imzalanmış bir PDF ne olur?",
+        answer: "İmzalı bir dosyada yapılan her değişiklik imzanın artık doğrulanmaması demektir. İmzaladıktan sonra değil, imzalamadan önce düzleştirin."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    name: "PDF’e Üst Bilgi ve Alt Bilgi Ekleme",
+    shortName: "Üst ve Alt Bilgi",
+    tagline: "Her PDF sayfasının üstüne ve altına metin, sayfa numarası, tarih ve dosya adı ekleyin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Üst Bilgi ve Alt Bilgi Ekleme, her sayfada altı yere metin koyar: üst bilginin ve alt bilginin solu, ortası ve sağı. “Sayfa 3 / 12” için {page} ve {pages}, bugünün tarihi için {date}, dosya adı için {file} kullanın; bunların yanına başlık, şirket adı veya “Gizli” gibi kendi sözcüklerinizi ekleyin. Yazı boyutunu, rengi ve kenardan uzaklığı seçin, kapak sayfasını atlayın ve indirmeden önce önizlemede her sayfayı görün. Japonca, Korece, Yunanca ve Kiril yazısı desteklenir.",
+    seoTitle: "PDF Üst Bilgi ve Alt Bilgi Ekle – Sayfa Numarası",
+    seoDescription: "PDF’e üst bilgi ve alt bilgi ekleyin: sayfa numaraları, tarih, dosya adı ve kendi metniniz; solda, ortada veya sağda. Ücretsiz, kayıt yok, yükleme yok.",
+    keywords: [
+      "pdf üst bilgi alt bilgi ekleme",
+      "pdf alt bilgi ekleme",
+      "pdf üst bilgi ekleme",
+      "pdf tarih ekleme",
+      "pdf sayfa numarası ekleme"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin."
+      },
+      {
+        title: "Üst ve alt bilgiyi yazın",
+        description: "Altı yerden herhangi birine metin yazın; {page}, {pages}, {date} ve {file} kullanabilirsiniz."
+      },
+      {
+        title: "İndirin",
+        description: "Önizlemede sayfaları kontrol edin ve PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Altı konum",
+        description: "Üstte ve altta sol, orta ve sağ."
+      },
+      {
+        title: "Sayfa x / y",
+        description: "Sayfa numaraları, tarih ve dosya adı kendiliğinden doldurulur."
+      },
+      {
+        title: "Birçok yazı sistemi",
+        description: "Latin, Yunan, Kiril, Japonca ve Korece."
+      }
+    ],
+    faqs: [
+      {
+        question: "“Sayfa 1 / 10” nasıl yazılır?",
+        answer: "Sayfa {page} / {pages} yazın. {page} yerine her sayfanın numarası, {pages} yerine son sayfanın numarası gelir."
+      },
+      {
+        question: "Kapak sayfası dışarıda bırakılabilir mi?",
+        answer: "Evet. İlk sayfayı olduğu gibi bırakma seçeneğini işaretleyin; numaralandırma bu durumda 2. sayfada, seçtiğiniz numarayla başlar."
+      },
+      {
+        question: "Metin içeriğimi kapatır mı?",
+        answer: "Metin, seçtiğiniz uzaklıkta kenar boşluğuna yerleşir. Bir sayfanın içeriği kenara kadar uzanıyorsa daha büyük bir uzaklık veya daha küçük bir yazı seçin."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    name: "PDF Sayfalarını Yeniden Boyutlandırma",
+    shortName: "PDF Boyutlandır",
+    tagline: "PDF sayfalarını A4, Letter, A3, A5, Legal veya Tabloid boyutuna getirin, içerik sığacak şekilde ölçeklensin. Ücretsiz, cihazınızda.",
+    intro: "PDF Sayfalarını Yeniden Boyutlandırma, her sayfanın kâğıt boyutunu değiştirir; örneğin Avrupa’da yazdırmak için bir US Letter belgeyi A4’e ya da daha küçük bir broşür için A4’ü A5’e. İçerik sığacak şekilde ölçeklenip ortalanır veya %100 boyutunda tutulup kenar boşlukları eklenir. Sayfalar resme dönüştürülmeden yerinde değiştirildiği için bağlantılar, form alanları ve yorumlar içerikle birlikte taşınıp ölçeklenir, metin de keskin kalır.",
+    seoTitle: "PDF Sayfa Boyutunu Değiştir – Letter’dan A4’e, Ücretsiz",
+    seoDescription: "PDF sayfa boyutunu A4, Letter, A3, A5, Legal veya Tabloid yapın; içerik sığacak şekilde ölçeklenir. Bağlantılar ve formlar korunur. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf sayfa boyutu değiştirme",
+      "pdf boyutlandırma",
+      "pdf a4 boyutuna getirme",
+      "letter a4 pdf",
+      "pdf kâğıt boyutu değiştirme"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin."
+      },
+      {
+        title: "Boyutu seçin",
+        description: "Kâğıt boyutunu, yönü ve içeriğin ölçeklenip ölçeklenmeyeceğini seçin."
+      },
+      {
+        title: "İndirin",
+        description: "Önizlemeyi kontrol edin ve PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Yaygın kâğıt boyutları",
+        description: "A4, A3, A5, Letter, Legal ve Tabloid."
+      },
+      {
+        title: "Hiçbir şey kaybolmaz",
+        description: "Bağlantılar, form alanları ve yorumlar içerikle birlikte taşınır."
+      },
+      {
+        title: "Keskin",
+        description: "Sayfalar resme dönüştürülmez, yerinde değiştirilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "İçerik esner mi?",
+        answer: "Hayır. Şeklini koruması için eşit oranda ölçeklenir, sonra ortalanır; şekil farkı beyaz kenar boşluğuna dönüşür."
+      },
+      {
+        question: "“%100 olarak koru” ne yapar?",
+        answer: "İçeriği kendi boyutunda tutar ve yalnızca sayfayı değiştirir: daha büyük bir sayfada beyaz kenar boşlukları oluşur, daha küçük bir sayfada kenarlar kesilir."
+      },
+      {
+        question: "Letter’ı A4’e dönüştürebilir miyim?",
+        answer: "Evet. A4’ü seçin: Letter sayfaları A4’e sığacak şekilde biraz ölçeklenir ve ortalanır."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    name: "PDF’e Arka Plan Ekleme",
+    shortName: "PDF Arka Planı",
+    tagline: "PDF sayfalarına renkli kâğıt gibi içeriğin arkasında ya da renk tonu olarak bir arka plan rengi verin. Ücretsiz, cihazınızda.",
+    intro: "PDF’e Arka Plan Ekleme, bir PDF’in sayfalarını renklendirir. “İçeriğin arkasında” renkli kâğıt gibi çalışır: metin ve resimler değişmeden üstünde durur. Taramalar dahil birçok PDF kendi beyaz sayfasını boyar ve arkadaki rengi gizler; bunlar için “Sayfayı renklendir” siyah metni siyah bırakırken tüm beyaz alanları renklendirir. Yumuşak bir renk ya da istediğiniz herhangi bir rengi seçin, tüm sayfalara veya yalnızca bazılarına uygulayın ve sonucu önizlemede kontrol edin.",
+    seoTitle: "PDF Arka Plan Rengi Ekle – Ücretsiz Online",
+    seoDescription: "PDF sayfalarına arka plan rengi ekleyin: içeriğin arkasında ya da taramalarda da işe yarayan renk tonu olarak. Tüm veya bazı sayfalar. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf arka plan rengi",
+      "pdf arka plan ekleme",
+      "pdf arka plan rengi değiştirme",
+      "renkli arka planlı pdf",
+      "pdf sayfa rengi değiştirme"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin."
+      },
+      {
+        title: "Rengi seçin",
+        description: "Bir renk seçin ve içeriğin arkasına mı gideceğine yoksa sayfayı mı renklendireceğine karar verin."
+      },
+      {
+        title: "İndirin",
+        description: "Önizlemeyi kontrol edin ve PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Arkada veya renk tonu",
+        description: "Kâğıt gibi içeriğin arkasında ya da taramalarda da işe yarayan bir renk tonu."
+      },
+      {
+        title: "Her renk",
+        description: "Yumuşak kâğıt tonları veya kendi renginiz."
+      },
+      {
+        title: "Tüm veya bazı sayfalar",
+        description: "Her sayfayı ya da 1-3, 5 gibi bir listeyi renklendirin."
+      }
+    ],
+    faqs: [
+      {
+        question: "Renk neden görünmüyor?",
+        answer: "Sayfa kendi beyaz arka planını rengin üzerine boyuyor. Bunun yerine “Sayfayı renklendir” seçeneğini seçin."
+      },
+      {
+        question: "Renk yazdırılır mı?",
+        answer: "Evet, sayfanın bir parçasıdır. Çoğu yazıcı kenarda ince beyaz bir şerit bırakır."
+      },
+      {
+        question: "Arka planı sonra kaldırabilir miyim?",
+        answer: "Yeni dosyadan hayır. Renksiz hâline ihtiyaç duyabilirseniz orijinali saklayın."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    name: "PDF Meta Verisi Düzenleme",
+    shortName: "Meta Veri Düzenle",
+    tagline: "Bir PDF’in okuyucularda ve arama sonuçlarında görünen başlığını, yazarını, konusunu ve anahtar kelimelerini değiştirin. Ücretsiz, cihazınızda.",
+    intro: "PDF Meta Verisi Düzenleme, bir PDF’in içinde saklanan belge özelliklerini değiştirir: tarayıcı sekmelerinde ve arama sonuçlarında görünen başlık, yazar, konu, anahtar kelimeler ve onu oluşturan programların adları. PDF okuyucuların baktığı iki yer (belge bilgileri ve XMP meta verileri) birlikte güncellenir; PDF/A kimliği gibi XMP’nin geri kalanı korunur. Bir alanı kaldırmak için boş bırakın.",
+    seoTitle: "PDF Özelliklerini Düzenle – Başlık, Yazar, Anahtar Kelime",
+    seoDescription: "Bir PDF’in başlığını, yazarını, konusunu, anahtar kelimelerini ve üreticisini online düzenleyin. İki meta veri alanı birlikte güncellenir. Ücretsiz.",
+    keywords: [
+      "pdf meta veri düzenleme",
+      "pdf başlığını değiştirme",
+      "pdf yazar adını değiştirme",
+      "pdf özelliklerini düzenleme",
+      "pdf anahtar kelimeler"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin; mevcut özellikleri doldurulmuş olarak gelir."
+      },
+      {
+        title: "Özellikleri düzenleyin",
+        description: "Başlığı, yazarı, konuyu, anahtar kelimeleri ve program adlarını değiştirin."
+      },
+      {
+        title: "İndirin",
+        description: "PDF’i yeni özellikleriyle kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Önemli yerlerde görünür",
+        description: "Başlık tarayıcı sekmelerinde, okuyucularda ve arama sonuçlarında çıkar."
+      },
+      {
+        title: "Uyumlu tutulur",
+        description: "Belge bilgileri ve XMP meta verileri birlikte güncellenir."
+      },
+      {
+        title: "PDF/A korunur",
+        description: "PDF/A kimliği dahil diğer XMP verileri yerinde kalır."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF’im neden yanlış başlık gösteriyor?",
+        answer: "Okuyucular dosya adını değil, dosyada saklanan başlığı gösterir. Başlığı buradan ayarlayın."
+      },
+      {
+        question: "Bir özelliği nasıl kaldırırım?",
+        answer: "Alanı temizleyin. Tüm özellikleri ve gizli meta verileri tek seferde kaldırmak için PDF Meta Verisi Silme aracını kullanın."
+      },
+      {
+        question: "PDF’in içeriği değişir mi?",
+        answer: "Hayır. Yalnızca özellikler ve değiştirilme tarihi değişir."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    name: "PDF’e Yer İmi Ekleme",
+    shortName: "PDF Yer İmleri",
+    tagline: "Okuyucular her bölüme atlayabilsin diye PDF yer imleri ekleyin, yeniden adlandırın, iç içe yerleştirin ve kaldırın. Ücretsiz, cihazınızda.",
+    intro: "PDF’e Yer İmi Ekleme, PDF okuyucuların yer imleri panelinde gösterdiği ana hattı düzenler. Mevcut yer imleri listelenir; böylece onları yeniden adlandırabilir, yeniden sıralayabilir, iç içe yerleştirebilir veya silebilirsiniz. Önizlemedeki sayfa için yeni yer imleri ekleyin ya da tek tıkla her sayfa için bir tane oluşturun. Her yer iminin açacağı sayfayı seçin, bölümlerin içindeki kısımlar için alt yer imleri yapın ve PDF açıldığında panelin kendiliğinden açılmasını sağlayın.",
+    seoTitle: "PDF Yer İmi Oluştur – PDF Ana Hattını Düzenle, Ücretsiz",
+    seoDescription: "PDF yer imlerini online ekleyin, yeniden adlandırın, iç içe yerleştirin ve kaldırın; yer imleri paneli kendiliğinden açılsın. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf yer imi ekleme",
+      "pdf yer imi düzenleme",
+      "pdf bookmark ekleme",
+      "pdf içindekiler oluşturma",
+      "pdf yer imi oluşturma"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin; içindeki yer imleri listelenir."
+      },
+      {
+        title: "Yer imlerini düzenleyin",
+        description: "Ekleyin, yeniden adlandırın, sayfa seçin, iç içe yerleştirin ve yeniden sıralayın."
+      },
+      {
+        title: "İndirin",
+        description: "PDF’i yeni yer imleriyle kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Var olanı düzenleyin",
+        description: "Mevcut yer imleri okunur ve değiştirilmeye hazırdır."
+      },
+      {
+        title: "İç içe bölümler",
+        description: "Bölümlerin içindeki kısımlar için alt yer imleri."
+      },
+      {
+        title: "Hazır açılır",
+        description: "İsterseniz PDF açıldığında yer imleri paneli gösterilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF yer imleri nedir?",
+        answer: "Okuyucunun yan panelinde bulunan, içindekiler tablosu gibi bölümlere atlayan tıklanabilir bir ana hat."
+      },
+      {
+        question: "Bazı yer imleri neden kaldırıldı?",
+        answer: "Bu dosyadaki bir sayfaya değil de bir web sitesine giden veya betik çalıştıran yer imleri bu düzenleyicide korunamaz. Sayfa yer imi olarak kalmaları için onlara bir sayfa atayın."
+      },
+      {
+        question: "Yer imleri sayfaları değiştirir mi?",
+        answer: "Hayır. Yalnızca ana hat değişir."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    name: "PDF Ekleri",
+    shortName: "PDF Ekleri",
+    tagline: "Bir PDF’in içine eklenmiş dosyaları görün, kaydedin, yenilerini ekleyin ve kaldırın. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "PDF Ekleri, bir PDF’in içinde taşınan dosyaları listeler: hem belgenin ek listesindekileri hem de bir sayfaya ataç simgeli yorum olarak iliştirilmiş olanları. Bunlardan herhangi birini kaydedin; elektronik tablo, kaynak veri veya resim gibi yeni dosyalar ekleyin ya da PDF’i paylaşmadan önce ekleri kaldırın. Ekli dosyalar PDF’in içinde taşınır ve çoğu okuyucu bunları bir ekler panelinde gösterir.",
+    seoTitle: "PDF Ekleri – Dosya Çıkar, Ekle veya Kaldır, Ücretsiz",
+    seoDescription: "Bir PDF’e eklenmiş dosyaları görün, çıkarın, ekleyin ve kaldırın; sayfalardaki ataç simgeli ekler dahil. Ücretsiz, kayıt yok, dosyanız yüklenmez.",
+    keywords: [
+      "pdf ekleri",
+      "pdf eklerini çıkarma",
+      "pdf’e dosya ekleme",
+      "pdf eklerini silme",
+      "pdf gömülü dosyalar"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin; ekli dosyaları listelenir."
+      },
+      {
+        title: "Kaydedin, ekleyin veya kaldırın",
+        description: "Ekli bir dosyayı kaydedin, yenilerini ekleyin veya kaldırılacakları işaretleyin."
+      },
+      {
+        title: "İndirin",
+        description: "PDF’i değişikliklerinizle kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Gizli dosyaları bulun",
+        description: "Hem belge ekleri hem de sayfalardaki ataç simgeli yorumlar."
+      },
+      {
+        title: "İstediğinizi kaydedin",
+        description: "Her ekli dosya ayrı ayrı kaydedilebilir."
+      },
+      {
+        title: "Paylaşmadan önce temizleyin",
+        description: "Göndermek istemediğiniz ekleri kaldırın."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF okuyucuda ekler nerede?",
+        answer: "Genellikle yanda bir ataç veya ekler panelinde. Bazı tarayıcıların yerleşik görüntüleyicileri bunları göstermez."
+      },
+      {
+        question: "Her dosya eklenebilir mi?",
+        answer: "Evet, her türden. Tanımadığınız kişilerden gelen ekli dosyaları açarken dikkatli olun."
+      },
+      {
+        question: "Ekleri kaldırmak dosyayı küçültür mü?",
+        answer: "Evet. Kaldırılan dosyalar yalnızca gizlenmez, PDF’ten çıkarılır."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    name: "PDF Temizleme",
+    shortName: "PDF Temizle",
+    tagline: "Paylaşmadan veya açmadan önce bir PDF’ten betikleri, riskli eylemleri, ekli dosyaları ve meta verileri kaldırın. Ücretsiz, cihazınızda.",
+    intro: "PDF Temizleme, bir PDF’in kod çalıştırabilen, başka programları açabilen, veri gönderebilen veya bilgi gizleyebilen kısımlarını çıkarır. Önce bulduklarını listeler: betikler, dosya başlatan veya veri gönderen eylemler, gömülü medya, XFA form verileri, ekli dosyalar, web sitesi bağlantıları, yorumlar ve belge özellikleri. Betikler, riskli eylemler ve medya her zaman kaldırılır; eklerin, bağlantıların, yorumların ve meta verilerin de kaldırılıp kaldırılmayacağını seçin. Sayfalardaki metin ve resimler değişmez.",
+    seoTitle: "PDF Temizleme – JavaScript ve Gizli Verileri Kaldır",
+    seoDescription: "Bir PDF’ten JavaScript’i, başlatma eylemlerini, ekleri, bağlantıları ve meta verileri kaldırın, içinde ne olduğunu görün. Ücretsiz, dosyanız yüklenmez.",
+    keywords: [
+      "pdf temizleme",
+      "pdf javascript kaldırma",
+      "pdf gizli verileri silme",
+      "güvenli pdf",
+      "sanitize pdf"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "PDF’i bırakın veya seçin; içerdikleri listelenir."
+      },
+      {
+        title: "Başka neyin kaldırılacağını seçin",
+        description: "Ekler, web sitesi bağlantıları, yorumlar ve belge özellikleri."
+      },
+      {
+        title: "İndirin",
+        description: "Temizlenmiş PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "İçinde ne olduğunu görün",
+        description: "Betikler, eylemler, medya, ekler ve daha fazlası önce sayılır."
+      },
+      {
+        title: "Betikler her zaman gider",
+        description: "JavaScript ve bir şey başlatan veya gönderen eylemler kaldırılır."
+      },
+      {
+        title: "Sayfalar değişmez",
+        description: "Metin, resimler ve düzen olduğu gibi kalır."
+      }
+    ],
+    faqs: [
+      {
+        question: "Temizlenmiş bir PDF’i açmak güvenli mi?",
+        answer: "Artık betik, başlatma eylemi veya gömülü medya içermez; bu da PDF’lerin sorun çıkarmasının yaygın yollarını ortadan kaldırır. Ancak bir virüs taraması değildir: PDF okuyucunuzu da güncel tutun."
+      },
+      {
+        question: "Doldurulabilir bir form çalışmaya devam eder mi?",
+        answer: "Normal form alanları kalır ve doldurulabilir, ancak yanıtları hesaplayan veya denetleyen betikler kaldırılır. Yalnızca XFA ile hazırlanmış bir form boş sayfa gösterebilir."
+      },
+      {
+        question: "Bağlantılar ve meta veriler neden kaldırılır?",
+        answer: "Bağlantılar istenmeyen web sitelerine götürebilir; belge özellikleri de paylaşmak istemediğiniz adları, yazılımları ve tarihleri ortaya çıkarabilir."
+      },
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
 };

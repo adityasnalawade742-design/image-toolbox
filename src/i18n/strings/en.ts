@@ -15,6 +15,7 @@ import { documentStrings } from './en/documents';
 import { socialStrings } from './en/social';
 import { pdfUtilStrings } from './en/pdf-utils';
 import { nicheStrings } from './en/niche';
+import { pdfPackStrings } from './en/pdfpack';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -110,6 +111,7 @@ export const en = {
   ...socialStrings,
   ...pdfUtilStrings,
   ...nicheStrings,
+  ...pdfPackStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

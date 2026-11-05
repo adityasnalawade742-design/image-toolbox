@@ -9289,4 +9289,492 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "flatten-pdf": {
+    name: "Ratakan PDF",
+    shortName: "Ratakan PDF",
+    tagline: "Jadikan kolom formulir dan komentar bagian dari halaman agar PDF tidak teredit tanpa sengaja. Gratis, berjalan di perangkat Anda.",
+    intro: "Ratakan PDF mengubah kolom formulir yang sudah diisi, komentar, sorotan, dan stempel menjadi konten halaman biasa, digambar persis seperti tampilannya sekarang. Setelah itu tidak ada yang bisa mengubah jawaban atau menghapus komentar, dan PDF tampil serta tercetak sama di semua pembaca. Pilih untuk meratakan kolom formulir, komentar, atau keduanya. Tautan tetap berfungsi, dan kolom tanpa tampilan tersimpan dibiarkan seperti semula lalu dihitung.",
+    seoTitle: "Ratakan PDF – Kunci Kolom Formulir dan Komentar",
+    seoDescription: "Ratakan PDF online: kolom formulir yang diisi, komentar, dan stempel menjadi bagian halaman dan tidak bisa diedit. Gratis, tanpa daftar, file tidak diunggah.",
+    keywords: [
+      "flatten pdf",
+      "ratakan pdf",
+      "flatten formulir pdf",
+      "kunci formulir pdf",
+      "pdf tidak bisa diedit"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF yang berisi kolom formulir terisi atau komentar."
+      },
+      {
+        title: "Pilih yang akan diratakan",
+        description: "Kolom formulir, komentar dan stempel, atau keduanya."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF yang sudah diratakan."
+      }
+    ],
+    features: [
+      {
+        title: "Persis seperti tampilannya",
+        description: "Setiap kolom dan komentar digambar dari tampilan tersimpannya."
+      },
+      {
+        title: "Tautan tetap berfungsi",
+        description: "Hanya kolom dan komentar yang diratakan."
+      },
+      {
+        title: "Teks tetap teks",
+        description: "Jawaban yang diketik tetap bisa dicari dan dipilih."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa perlu meratakan PDF?",
+        answer: "Agar jawaban dan komentar yang sudah diisi tidak bisa diubah atau dihapus, dan file tampak sama di setiap pembaca PDF maupun saat dicetak."
+      },
+      {
+        question: "Bisakah perataan dibatalkan?",
+        answer: "Tidak di file yang sudah diratakan. Simpan file aslinya jika Anda mungkin perlu mengedit formulir lagi."
+      },
+      {
+        question: "Bagaimana dengan PDF bertanda tangan digital?",
+        answer: "Perubahan apa pun pada file bertanda tangan membuat tanda tangannya tidak lagi valid. Ratakan sebelum menandatangani, bukan sesudahnya."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "add-header-footer-pdf": {
+    name: "Tambah Header dan Footer ke PDF",
+    shortName: "Header & Footer",
+    tagline: "Tambahkan teks, nomor halaman, tanggal, dan nama file di bagian atas dan bawah setiap halaman PDF. Gratis, berjalan di perangkat Anda.",
+    intro: "Tambah Header dan Footer menempatkan teks di enam posisi pada setiap halaman: kiri, tengah, dan kanan di header maupun footer. Gunakan {page} dan {pages} untuk “Halaman 3 dari 12”, {date} untuk tanggal hari ini, dan {file} untuk nama file, bersama kata-kata Anda sendiri seperti judul, nama perusahaan, atau “Rahasia”. Pilih ukuran teks, warna, dan jarak dari tepi, lewati halaman sampul, dan periksa setiap halaman di pratinjau sebelum mengunduh. Teks Jepang, Korea, Yunani, dan Sirilik didukung.",
+    seoTitle: "Tambah Header dan Footer PDF – Nomor Halaman, Gratis",
+    seoDescription: "Tambahkan header dan footer ke PDF: nomor halaman, tanggal, nama file, dan teks Anda sendiri, di kiri, tengah, atau kanan. Gratis, tanpa daftar, tanpa unggah.",
+    keywords: [
+      "header footer pdf",
+      "tambah header pdf",
+      "menambahkan footer di pdf",
+      "nomor halaman pdf",
+      "tambah tanggal di pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF."
+      },
+      {
+        title: "Tulis header dan footer",
+        description: "Ketik teks di salah satu dari enam posisi, dengan {page}, {pages}, {date}, dan {file}."
+      },
+      {
+        title: "Unduh",
+        description: "Periksa halaman di pratinjau, lalu simpan PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Enam posisi",
+        description: "Kiri, tengah, dan kanan di atas dan di bawah."
+      },
+      {
+        title: "Halaman x dari y",
+        description: "Nomor halaman, tanggal, dan nama file terisi otomatis."
+      },
+      {
+        title: "Banyak aksara",
+        description: "Latin, Yunani, Sirilik, Jepang, dan Korea."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara menulis “Halaman 1 dari 10”?",
+        answer: "Ketik Halaman {page} dari {pages}. {page} menjadi nomor tiap halaman dan {pages} menjadi nomor halaman terakhir."
+      },
+      {
+        question: "Bisakah halaman sampul dikecualikan?",
+        answer: "Bisa. Centang opsi untuk membiarkan halaman pertama apa adanya; penomoran lalu dimulai di halaman 2 dengan nomor yang Anda pilih."
+      },
+      {
+        question: "Apakah teks akan menutupi konten saya?",
+        answer: "Teks berada di margin, pada jarak yang Anda pilih. Pilih jarak yang lebih besar atau teks yang lebih kecil jika konten halaman sampai ke tepi."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "resize-pdf-pages": {
+    name: "Ubah Ukuran Halaman PDF",
+    shortName: "Ubah Ukuran PDF",
+    tagline: "Ubah halaman PDF ke A4, Letter, A3, A5, Legal, atau Tabloid, dengan konten diskalakan agar muat. Gratis, berjalan di perangkat Anda.",
+    intro: "Ubah Ukuran Halaman PDF mengganti ukuran kertas setiap halaman, misalnya dokumen US Letter ke A4 untuk dicetak di Eropa, atau A4 ke A5 untuk handout yang lebih kecil. Konten diskalakan agar muat lalu diletakkan di tengah, atau tetap 100% dengan tambahan margin. Tautan, kolom formulir, dan komentar ikut bergeser dan berubah skala bersama konten, dan teks tetap tajam, karena halaman diubah langsung, bukan diubah menjadi gambar.",
+    seoTitle: "Ubah Ukuran Kertas PDF – Letter ke A4, Gratis",
+    seoDescription: "Ubah ukuran halaman PDF ke A4, Letter, A3, A5, Legal, atau Tabloid, dengan konten diskalakan agar muat. Tautan dan formulir tetap ada. Gratis, tanpa unggah.",
+    keywords: [
+      "ubah ukuran pdf",
+      "ubah ukuran kertas pdf",
+      "ubah pdf ke a4",
+      "letter ke a4 pdf",
+      "resize pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF."
+      },
+      {
+        title: "Pilih ukuran",
+        description: "Pilih ukuran kertas, orientasi, dan apakah konten diskalakan."
+      },
+      {
+        title: "Unduh",
+        description: "Periksa pratinjau, lalu simpan PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Ukuran kertas umum",
+        description: "A4, A3, A5, Letter, Legal, dan Tabloid."
+      },
+      {
+        title: "Tidak ada yang hilang",
+        description: "Tautan, kolom formulir, dan komentar ikut bergeser bersama konten."
+      },
+      {
+        title: "Tajam",
+        description: "Halaman diubah langsung, bukan diubah menjadi gambar."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah konten akan tertarik melar?",
+        answer: "Tidak. Konten diskalakan merata agar bentuknya tetap, lalu diletakkan di tengah; selisih bentuk menjadi margin putih."
+      },
+      {
+        question: "Apa fungsi “Tetap 100%”?",
+        answer: "Konten tetap pada ukurannya dan hanya halamannya yang diubah: halaman yang lebih besar mendapat margin putih, halaman yang lebih kecil memotong tepinya."
+      },
+      {
+        question: "Bisakah Letter diubah ke A4?",
+        answer: "Bisa. Pilih A4: halaman Letter diskalakan sedikit agar muat di A4 dan diletakkan di tengah."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "add-background-to-pdf": {
+    name: "Tambah Latar Belakang ke PDF",
+    shortName: "Latar PDF",
+    tagline: "Beri warna latar pada halaman PDF, di belakang konten seperti kertas berwarna atau sebagai warna tumpang. Gratis, berjalan di perangkat Anda.",
+    intro: "Tambah Latar Belakang ke PDF mewarnai halaman-halaman PDF. “Di belakang konten” bekerja seperti kertas berwarna: teks dan gambar berada di atasnya tanpa berubah. Banyak PDF, termasuk hasil pindaian, punya halaman putih sendiri yang menutupi warna di belakangnya; untuk PDF seperti itu, “Warnai halaman” mewarnai setiap area putih sementara teks hitam tetap hitam. Pilih warna lembut atau warna apa pun, untuk semua atau sebagian halaman, lalu periksa hasilnya di pratinjau.",
+    seoTitle: "Tambah Warna Latar PDF – Gratis Online",
+    seoDescription: "Tambahkan warna latar ke halaman PDF, di belakang konten atau sebagai warna tumpang yang juga bekerja pada pindaian. Semua atau sebagian halaman. Gratis.",
+    keywords: [
+      "background pdf",
+      "warna latar pdf",
+      "ganti warna background pdf",
+      "tambah background pdf",
+      "mewarnai halaman pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF."
+      },
+      {
+        title: "Pilih warna",
+        description: "Pilih warna, lalu tentukan apakah diletakkan di belakang konten atau mewarnai halaman."
+      },
+      {
+        title: "Unduh",
+        description: "Periksa pratinjau, lalu simpan PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Di belakang atau diwarnai",
+        description: "Di belakang konten seperti kertas, atau warna tumpang yang juga bekerja pada pindaian."
+      },
+      {
+        title: "Warna apa saja",
+        description: "Nuansa kertas yang lembut atau warna pilihan Anda."
+      },
+      {
+        title: "Semua atau sebagian halaman",
+        description: "Warnai setiap halaman atau daftar seperti 1-3, 5."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa warnanya tidak terlihat?",
+        answer: "Halaman itu punya latar putih sendiri yang menutupinya. Pilih “Warnai halaman” sebagai gantinya."
+      },
+      {
+        question: "Apakah warnanya ikut tercetak?",
+        answer: "Ya, warna itu bagian dari halaman. Sebagian besar printer menyisakan tepi putih tipis di pinggir."
+      },
+      {
+        question: "Bisakah latar belakang dihapus nanti?",
+        answer: "Tidak dari file baru. Simpan file aslinya jika Anda mungkin menginginkannya tanpa warna."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "edit-pdf-metadata": {
+    name: "Edit Metadata PDF",
+    shortName: "Edit Metadata",
+    tagline: "Ubah judul, penulis, subjek, dan kata kunci PDF yang tampil di pembaca dan hasil penelusuran. Gratis, di perangkat Anda.",
+    intro: "Edit Metadata PDF mengubah properti dokumen yang tersimpan di dalam PDF: judul yang tampil di tab browser dan hasil penelusuran, penulis, subjek, kata kunci, serta nama program yang membuatnya. Kedua tempat yang dibaca pembaca PDF (informasi dokumen dan metadata XMP) diperbarui bersamaan, dan sisa XMP lainnya, seperti identifikasi PDF/A, tetap dipertahankan. Kosongkan kolom untuk menghapusnya.",
+    seoTitle: "Ubah Properti PDF – Judul, Penulis, Kata Kunci",
+    seoDescription: "Edit judul, penulis, subjek, kata kunci, dan producer PDF secara online. Kedua penyimpanan metadata diperbarui bersamaan. Gratis, tanpa daftar, tanpa unggah.",
+    keywords: [
+      "edit metadata pdf",
+      "ubah judul pdf",
+      "ganti author pdf",
+      "edit properti pdf",
+      "kata kunci pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF; properti saat ini langsung terisi."
+      },
+      {
+        title: "Edit properti",
+        description: "Ubah judul, penulis, subjek, kata kunci, dan nama program."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF dengan properti barunya."
+      }
+    ],
+    features: [
+      {
+        title: "Tampil di tempat yang penting",
+        description: "Judul muncul di tab browser, pembaca PDF, dan hasil penelusuran."
+      },
+      {
+        title: "Selalu selaras",
+        description: "Informasi dokumen dan metadata XMP diperbarui bersamaan."
+      },
+      {
+        title: "PDF/A tetap ada",
+        description: "Data XMP lainnya, termasuk identifikasi PDF/A, dipertahankan."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa PDF saya menampilkan judul yang salah?",
+        answer: "Pembaca PDF menampilkan judul yang tersimpan di file, bukan nama file. Atur judulnya di sini."
+      },
+      {
+        question: "Bagaimana cara menghapus properti?",
+        answer: "Kosongkan kolomnya. Untuk menghapus semua properti dan metadata tersembunyi sekaligus, gunakan Hapus Metadata PDF."
+      },
+      {
+        question: "Apakah isi PDF berubah?",
+        answer: "Tidak. Hanya properti dan tanggal diubah yang berubah."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "add-bookmarks-to-pdf": {
+    name: "Tambah Bookmark ke PDF",
+    shortName: "Bookmark PDF",
+    tagline: "Tambah, ganti nama, susun bertingkat, dan hapus bookmark PDF agar pembaca bisa langsung melompat ke tiap bagian. Gratis, di perangkat Anda.",
+    intro: "Tambah Bookmark ke PDF mengedit kerangka yang ditampilkan pembaca PDF di panel bookmark. Bookmark yang sudah ada ditampilkan agar bisa Anda ganti nama, urutkan ulang, susun bertingkat, atau hapus; tambahkan yang baru untuk halaman di pratinjau, atau satu untuk setiap halaman dengan sekali klik. Pilih halaman yang dibuka setiap bookmark, buat sub-bookmark untuk subbab di dalam bab, dan buat panel terbuka otomatis saat PDF dibuka.",
+    seoTitle: "Buat Bookmark PDF – Edit Kerangka PDF, Gratis",
+    seoDescription: "Tambah, ganti nama, susun bertingkat, dan hapus bookmark PDF online, serta buka panel bookmark otomatis. Gratis, tanpa daftar, file tidak diunggah.",
+    keywords: [
+      "bookmark pdf",
+      "cara membuat bookmark di pdf",
+      "tambah bookmark pdf",
+      "edit bookmark pdf",
+      "membuat daftar isi pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF; bookmark yang sudah ada akan ditampilkan."
+      },
+      {
+        title: "Edit bookmark",
+        description: "Tambahkan, ganti nama, pilih halaman, susun bertingkat, dan urutkan ulang."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF dengan bookmark barunya."
+      }
+    ],
+    features: [
+      {
+        title: "Edit yang sudah ada",
+        description: "Bookmark yang ada dibaca dan siap diubah."
+      },
+      {
+        title: "Bagian bertingkat",
+        description: "Sub-bookmark untuk subbab di dalam bab."
+      },
+      {
+        title: "Langsung siap",
+        description: "Opsional: tampilkan panel bookmark saat PDF dibuka."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apa itu bookmark PDF?",
+        answer: "Kerangka yang bisa diklik di panel samping pembaca PDF untuk melompat ke tiap bagian, seperti daftar isi."
+      },
+      {
+        question: "Mengapa sebagian bookmark dihapus?",
+        answer: "Bookmark yang menuju situs web atau menjalankan skrip, bukan halaman di file ini, tidak bisa dipertahankan oleh editor ini. Beri halaman tujuan agar tetap ada sebagai bookmark halaman."
+      },
+      {
+        question: "Apakah bookmark mengubah halaman?",
+        answer: "Tidak. Hanya kerangkanya yang diubah."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "pdf-attachments": {
+    name: "Lampiran PDF",
+    shortName: "Lampiran PDF",
+    tagline: "Lihat, simpan, tambah, dan hapus file yang terlampir di dalam PDF. Gratis, berjalan di perangkat Anda.",
+    intro: "Lampiran PDF menampilkan file yang tersimpan di dalam PDF, baik yang ada di daftar lampiran dokumen maupun yang disematkan ke halaman sebagai komentar berikon penjepit kertas. Simpan salah satunya, lampirkan file baru seperti spreadsheet, data sumber, atau gambar, atau hapus lampiran sebelum Anda membagikan PDF. File terlampir ikut tersimpan di dalam PDF dan sebagian besar pembaca menampilkannya di panel lampiran.",
+    seoTitle: "Lampiran PDF – Ekstrak, Tambah, atau Hapus File",
+    seoDescription: "Lihat, ekstrak, tambah, dan hapus file yang terlampir di PDF, termasuk lampiran penjepit kertas di halaman. Gratis, tanpa daftar, file tidak diunggah.",
+    keywords: [
+      "lampiran pdf",
+      "ekstrak lampiran pdf",
+      "melampirkan file ke pdf",
+      "hapus lampiran pdf",
+      "file tersemat pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF; file terlampirnya akan ditampilkan."
+      },
+      {
+        title: "Simpan, tambah, atau hapus",
+        description: "Simpan file terlampir, lampirkan yang baru, atau tandai yang akan dihapus."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF dengan perubahan Anda."
+      }
+    ],
+    features: [
+      {
+        title: "Temukan file tersembunyi",
+        description: "Lampiran dokumen maupun komentar penjepit kertas di halaman."
+      },
+      {
+        title: "Simpan yang mana saja",
+        description: "Setiap file terlampir bisa disimpan sendiri-sendiri."
+      },
+      {
+        title: "Bersihkan sebelum dibagikan",
+        description: "Hapus lampiran yang tidak ingin Anda kirim."
+      }
+    ],
+    faqs: [
+      {
+        question: "Di mana letak lampiran di pembaca PDF?",
+        answer: "Biasanya di panel penjepit kertas atau panel lampiran di samping. Penampil bawaan di sebagian browser tidak menampilkannya."
+      },
+      {
+        question: "Apakah file apa pun bisa dilampirkan?",
+        answer: "Ya, jenis apa pun. Berhati-hatilah membuka file terlampir dari orang yang tidak Anda kenal."
+      },
+      {
+        question: "Apakah menghapus lampiran memperkecil file?",
+        answer: "Ya. File yang dihapus benar-benar dikeluarkan dari PDF, bukan sekadar disembunyikan."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "sanitize-pdf": {
+    name: "Bersihkan PDF",
+    shortName: "Bersihkan PDF",
+    tagline: "Hapus skrip, aksi berisiko, file terlampir, dan metadata dari PDF sebelum Anda membagikan atau membukanya. Gratis, di perangkat Anda.",
+    intro: "Bersihkan PDF mengeluarkan bagian PDF yang bisa menjalankan kode, membuka program lain, mengirim data, atau menyembunyikan informasi. Alat ini terlebih dahulu menampilkan apa yang ditemukan: skrip, aksi yang membuka file atau mengirim data, media tersemat, data formulir XFA, file terlampir, tautan ke situs web, komentar, dan properti dokumen. Skrip, aksi berisiko, dan media selalu dihapus; pilih apakah lampiran, tautan, komentar, dan metadata juga dihapus. Teks dan gambar di halaman tidak diubah.",
+    seoTitle: "Bersihkan PDF – Hapus JavaScript dan Data Tersembunyi",
+    seoDescription: "Hapus JavaScript, aksi peluncuran, lampiran, tautan, dan metadata dari PDF, serta lihat apa isinya. Gratis, tanpa daftar, file tidak diunggah.",
+    keywords: [
+      "sanitize pdf",
+      "hapus javascript pdf",
+      "bersihkan pdf",
+      "hapus data tersembunyi pdf",
+      "pdf aman"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF",
+        description: "Letakkan atau pilih PDF; isinya akan ditampilkan."
+      },
+      {
+        title: "Pilih apa lagi yang dihapus",
+        description: "Lampiran, tautan ke situs web, komentar, dan properti dokumen."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF yang sudah dibersihkan."
+      }
+    ],
+    features: [
+      {
+        title: "Lihat isinya",
+        description: "Skrip, aksi, media, lampiran, dan lainnya dihitung terlebih dahulu."
+      },
+      {
+        title: "Skrip selalu dihapus",
+        description: "JavaScript serta aksi yang meluncurkan atau mengirim sesuatu dihapus."
+      },
+      {
+        title: "Halaman tidak berubah",
+        description: "Teks, gambar, dan tata letak tetap seperti semula."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF yang sudah dibersihkan aman dibuka?",
+        answer: "PDF itu tidak lagi punya skrip, aksi peluncuran, atau media tersemat, sehingga cara umum PDF berperilaku buruk dihilangkan. Ini bukan pemindaian virus: tetap perbarui pembaca PDF Anda."
+      },
+      {
+        question: "Apakah formulir yang bisa diisi masih berfungsi?",
+        answer: "Kolom formulir biasa tetap ada dan bisa diisi, tetapi skrip yang menghitung atau memeriksa jawaban dihapus. Formulir yang hanya dibuat dengan XFA bisa jadi tampil sebagai halaman kosong."
+      },
+      {
+        question: "Mengapa tautan dan metadata perlu dihapus?",
+        answer: "Tautan bisa mengarah ke situs web yang tidak diinginkan, dan properti dokumen bisa mengungkap nama, software, dan tanggal yang tidak ingin Anda bagikan."
+      },
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. PDF diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
 };
