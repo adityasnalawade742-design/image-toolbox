@@ -11,7 +11,8 @@ import { fitWithinPixels } from '../../../lib/canvas/limits';
 import { blurBackground } from '../../../lib/canvas/backgroundBlur';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
-import { removeBackground, preloadBackgroundRemoval, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
+import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
+import { HqConsent, ModelPicker, TryHqHint, isModelReady, markModelReady, saveData, saveRemovalMode, savedRemovalMode } from '../../shared/RemovalModel';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 // The blurred background is computed at this size and scaled up: blurred detail doesn't need full resolution
@@ -34,8 +35,6 @@ interface Source {
   small: { w: number; h: number; rgba: Uint8ClampedArray };
 }
 
-const saveData = () => (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
-
 /** Blur Background and Change Background: the background model finds the subject, then the background is redone */
 export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   const t = useT();
@@ -52,6 +51,68 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const bgInputRef = useRef<HTMLInputElement>(null);
   const seq = useRef(0);
+  // Fast (MODNet) or Best quality (ISNet): remembered across the background tools
+  const [model, setModel] = useState<RemovalMode>('portrait');
+  const [modelReady, setModelReady] = useState<Record<RemovalMode, boolean>>({ portrait: false, hq: false });
+  // The large model never downloads without an explicit click
+  const [awaitingHq, setAwaitingHq] = useState(false);
+
+  useEffect(() => {
+    setModel(savedRemovalMode());
+    setModelReady({ portrait: isModelReady('portrait'), hq: isModelReady('hq') });
+  }, []);
+
+  /** Find the subject in a loaded photo with the chosen model (asking first before the large model's download) */
+  const cutOut = async (base: Source, m: RemovalMode, consented = false) => {
+    const mySeq = ++seq.current;
+    setError(null);
+    setStatus('');
+    setSrc(base);
+    if (m === 'hq' && !consented && !isModelReady('hq')) {
+      setWorking(false);
+      setAwaitingHq(true);
+      return;
+    }
+    setAwaitingHq(false);
+    setWorking(true);
+    setProgress({ stage: 'downloading' });
+    try {
+      const { photo, small } = base;
+      const cut = await removeBackground(await canvasToBlob(photo, 'image/png'), m, (p) => mySeq === seq.current && setProgress(p));
+      markModelReady(m);
+      setModelReady((r) => ({ ...r, [m]: true }));
+      if (mySeq !== seq.current) return;
+      const subject = document.createElement('canvas');
+      subject.width = cut.width;
+      subject.height = cut.height;
+      subject.getContext('2d')!.putImageData(cut, 0, 0);
+      // The subject's alpha at the working size, for the blur
+      const sc = document.createElement('canvas');
+      sc.width = small.w;
+      sc.height = small.h;
+      const sctx = sc.getContext('2d', { willReadFrequently: true })!;
+      sctx.drawImage(subject, 0, 0, small.w, small.h);
+      const sd = sctx.getImageData(0, 0, small.w, small.h).data;
+      const smallAlpha = new Uint8ClampedArray(small.w * small.h);
+      for (let i = 0; i < smallAlpha.length; i++) smallAlpha[i] = sd[i * 4 + 3];
+      setSrc({ ...base, subject, smallAlpha });
+    } catch (err: any) {
+      if (mySeq === seq.current) setError(err?.message ? t('ctl.bgfx.failed', { message: err.message }) : t('ws.errDecode'));
+    } finally {
+      if (mySeq === seq.current) {
+        setWorking(false);
+        setProgress(null);
+      }
+    }
+  };
+
+  const chooseModel = (m: RemovalMode) => {
+    if (m === model) return;
+    setModel(m);
+    saveRemovalMode(m);
+    if (src) cutOut({ ...src, subject: null, smallAlpha: null }, m);
+    else if (m === 'portrait' ? !saveData() : isModelReady('hq')) preloadBackgroundRemoval(m);
+  };
 
   const load = async (file: File) => {
     const mySeq = ++seq.current;
@@ -84,29 +145,9 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
         if (prev) URL.revokeObjectURL(prev.previewUrl);
         return base;
       });
-
-      setWorking(true);
-      setProgress({ stage: 'downloading' });
-      const cut = await removeBackground(await canvasToBlob(photo, 'image/png'), 'portrait', (p) => mySeq === seq.current && setProgress(p));
-      if (mySeq !== seq.current) return;
-      const subject = document.createElement('canvas');
-      subject.width = cut.width;
-      subject.height = cut.height;
-      subject.getContext('2d')!.putImageData(cut, 0, 0);
-      // The subject's alpha at the working size, for the blur
-      sctx.clearRect(0, 0, sw, sh);
-      sctx.drawImage(subject, 0, 0, sw, sh);
-      const sd = sctx.getImageData(0, 0, sw, sh).data;
-      const smallAlpha = new Uint8ClampedArray(sw * sh);
-      for (let i = 0; i < smallAlpha.length; i++) smallAlpha[i] = sd[i * 4 + 3];
-      setSrc({ ...base, subject, smallAlpha });
-    } catch (err: any) {
-      if (mySeq === seq.current) setError(err?.message ? t('ctl.bgfx.failed', { message: err.message }) : t('ws.errDecode'));
-    } finally {
-      if (mySeq === seq.current) {
-        setWorking(false);
-        setProgress(null);
-      }
+      await cutOut(base, model);
+    } catch {
+      if (mySeq === seq.current) setError(t('ws.errDecode'));
     }
   };
   useImageIntake(load);
@@ -165,7 +206,7 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
       <div className="space-y-3">
         <ProofDropZone
           onFiles={(files) => load(files[0])}
-          onPick={() => !saveData() && preloadBackgroundRemoval('portrait')}
+          onPick={() => (model === 'portrait' ? !saveData() : isModelReady('hq')) && preloadBackgroundRemoval(model)}
           accept={ACCEPT}
           hint={t('ctl.bgfx.dropHint')}
         />
@@ -197,6 +238,7 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
 
   const panel = (
     <>
+      <ModelPicker mode={model} ready={modelReady} onChoose={chooseModel} disabled={working} />
       {mode === 'blur' ? (
         <RangeField id="bgfx-strength" label={t('ctl.bgfx.strength')} value={strength} min={1} max={100} onChange={setStrength} />
       ) : (
@@ -301,11 +343,13 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
           </div>
           {working && (
             <div className="absolute inset-x-0 bottom-0 bg-paper border-t border-ink px-4 py-3">
-              <RemovalProgressBar key={seq.current} progress={progress} mode="portrait" label={workingLabel} />
+              <RemovalProgressBar key={seq.current} progress={progress} mode={model} label={workingLabel} />
             </div>
           )}
         </div>
         {scaledTo && <p className="text-[14px] text-graphite" data-measure>{t('ctl.bg.scaledDown', { w: scaledTo.w, h: scaledTo.h })}</p>}
+        {awaitingHq && <HqConsent onDownload={() => cutOut({ ...src, subject: null, smallAlpha: null }, 'hq', true)} onUseFast={() => chooseModel('portrait')} />}
+        {src.subject && model === 'portrait' && !working && <TryHqHint onTry={() => chooseModel('hq')} />}
       </PdfToolLayout>
     </>
   );

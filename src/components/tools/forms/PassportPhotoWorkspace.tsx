@@ -9,7 +9,8 @@ import { computeCrop, cropCentre, mmToPx, sheetLayout } from '../../../lib/canva
 import { setDpi } from '../../../lib/canvas/dpi';
 import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
-import { removeBackground, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
+import { removeBackground, type RemovalMode, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
+import { HqConsent, ModelPicker, TryHqHint, isModelReady, markModelReady, saveRemovalMode, savedRemovalMode } from '../../shared/RemovalModel';
 import { RemovalProgressBar, activeDownload } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
 
@@ -50,6 +51,18 @@ export function PassportPhotoWorkspace() {
   const sourceRef = useRef<HTMLCanvasElement | null>(null);
   const cutoutRef = useRef<HTMLCanvasElement | null>(null);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number } | null>(null);
+  // Fast (MODNet) or Best quality (ISNet), for replacing the background: remembered across the background tools
+  const [model, setModel] = useState<RemovalMode>('portrait');
+  const [modelReady, setModelReady] = useState<Record<RemovalMode, boolean>>({ portrait: false, hq: false });
+  // A new background was picked but the large model needs a one-time download first
+  const [awaitingHq, setAwaitingHq] = useState<Bg | null>(null);
+  // The model that made the current cutout
+  const cutoutModel = useRef<RemovalMode | null>(null);
+
+  useEffect(() => {
+    setModel(savedRemovalMode());
+    setModelReady({ portrait: isModelReady('portrait'), hq: isModelReady('hq') });
+  }, []);
 
   const size = preset === 'custom' ? { w: customW, h: customH, top: 0.1, chin: 0.8 } : PRESETS[preset];
   const aspect = size.w / size.h;
@@ -76,6 +89,8 @@ export function PassportPhotoWorkspace() {
     try {
       const img = await loadImageFile(file);
       cutoutRef.current = null;
+      cutoutModel.current = null;
+      setAwaitingHq(null);
       setBg('keep');
       setZoom(1);
       setPos({ cx: 0.5, cy: 0.4 });
@@ -90,10 +105,16 @@ export function PassportPhotoWorkspace() {
   };
   useImageIntake(load);
 
-  const chooseBg = async (next: Bg) => {
+  const chooseBg = async (next: Bg, m: RemovalMode = model, consented = false) => {
     setBg(next);
     if (!image) return;
     const fill = BACKGROUNDS[next];
+    if (fill && cutoutModel.current !== m) cutoutRef.current = null;
+    if (fill && !cutoutRef.current && m === 'hq' && !consented && !isModelReady('hq')) {
+      setAwaitingHq(next);
+      return;
+    }
+    setAwaitingHq(null);
     if (fill && !cutoutRef.current) {
       setBgBusy(true);
       setError(null);
@@ -103,7 +124,10 @@ export function PassportPhotoWorkspace() {
         c.width = image.width;
         c.height = image.height;
         c.getContext('2d')!.drawImage(image.img, 0, 0);
-        const cut = await removeBackground(await canvasToBlob(c, 'image/png'), 'portrait', setBgProgress);
+        const cut = await removeBackground(await canvasToBlob(c, 'image/png'), m, setBgProgress);
+        markModelReady(m);
+        setModelReady((r) => ({ ...r, [m]: true }));
+        cutoutModel.current = m;
         const layer = document.createElement('canvas');
         layer.width = cut.width;
         layer.height = cut.height;
@@ -121,6 +145,15 @@ export function PassportPhotoWorkspace() {
       setBgProgress(null);
     }
     buildSource(image, fill);
+  };
+
+  const chooseModel = (m: RemovalMode) => {
+    if (m === model) return;
+    setModel(m);
+    saveRemovalMode(m);
+    // Redo the cutout with the new model if a background is being replaced
+    if (bg !== 'keep') chooseBg(bg, m);
+    else setAwaitingHq(null);
   };
 
   const crop = image ? computeCrop(image.width, image.height, aspect, zoom, pos.cx, pos.cy) : null;
@@ -287,6 +320,7 @@ export function PassportPhotoWorkspace() {
           ]}
         />
         <p className="text-[13px] text-graphite">{t('ctl.passport.bgNote')}</p>
+        {bg !== 'keep' && <ModelPicker mode={model} ready={modelReady} onChoose={chooseModel} disabled={bgBusy} />}
       </div>
       <div className="pt-4 border-t border-ink space-y-3">
         <Segmented
@@ -373,7 +407,7 @@ export function PassportPhotoWorkspace() {
               <div className="absolute inset-x-0 bottom-0 z-10 bg-paper border-t border-ink px-4 py-3">
                 <RemovalProgressBar
                   progress={bgProgress}
-                  mode="portrait"
+                  mode={model}
                   live={false}
                   label={(() => {
                     const download = activeDownload(bgProgress);
@@ -426,6 +460,8 @@ export function PassportPhotoWorkspace() {
             </div>
           )}
         </div>
+        {awaitingHq && <HqConsent onDownload={() => chooseBg(awaitingHq, 'hq', true)} onUseFast={() => chooseModel('portrait')} />}
+        {bg !== 'keep' && model === 'portrait' && !bgBusy && !awaitingHq && <TryHqHint onTry={() => chooseModel('hq')} />}
         <p className="text-[14px] text-graphite leading-relaxed">{t('ctl.passport.guideHint')}</p>
         <p className="text-[14px] text-graphite leading-relaxed">{t('ctl.passport.check')}</p>
       </PdfToolLayout>
