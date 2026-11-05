@@ -9808,4 +9808,492 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    name: "Comparer deux images",
+    shortName: "Comparer images",
+    tagline: "Comparez deux images avec un curseur avant/après, côte à côte ou avec une carte qui marque chaque différence. Gratuit, sur votre appareil.",
+    intro: "Comparer deux images affiche deux versions d’une image ensemble pour voir ce qui a changé : faites glisser un curseur sur elles, affichez-les côte à côte ou passez à une carte des différences qui marque chaque pixel modifié en rose vif. L’outil mesure aussi l’ampleur du changement, la plus grande différence et le PSNR, un indicateur de qualité standard. Utilisez-le pour vérifier une retouche, comparer deux exports ou réglages de compression, ou repérer ce qui diffère entre deux captures d’écran.",
+    seoTitle: "Comparer deux images – Curseur avant/après, gratuit",
+    seoDescription: "Comparez deux images en ligne avec un curseur avant/après, côte à côte ou une carte des différences, avec PSNR et pixels modifiés. Gratuit, sans envoi.",
+    keywords: [
+      "comparer deux images",
+      "comparateur d’images",
+      "image avant après",
+      "différence entre deux images",
+      "comparer des photos en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez les deux images",
+        description: "Déposez ou choisissez la première et la deuxième image."
+      },
+      {
+        title: "Choisissez un affichage",
+        description: "Curseur, côte à côte ou carte des différences."
+      },
+      {
+        title: "Lisez le résultat",
+        description: "Voyez ce qui a changé et téléchargez la carte des différences."
+      }
+    ],
+    features: [
+      {
+        title: "Trois affichages",
+        description: "Un curseur avant/après, côte à côte et une carte des différences."
+      },
+      {
+        title: "Mesuré",
+        description: "Pixels modifiés, plus grande différence et PSNR."
+      },
+      {
+        title: "Réglable",
+        description: "Ignorez les infimes différences comme le bruit de compression."
+      }
+    ],
+    faqs: [
+      {
+        question: "Que signifie PSNR ?",
+        answer: "Rapport signal sur bruit de crête (peak signal-to-noise ratio) : plus il est élevé, plus les images se ressemblent. Au-delà d’environ 40 dB, les différences sont très difficiles à voir ; des images identiques n’ont pas de PSNR."
+      },
+      {
+        question: "Puis-je comparer des images de tailles différentes ?",
+        answer: "Oui. La deuxième est mise à la taille de la première, ce qui compte déjà comme une petite différence."
+      },
+      {
+        question: "Pourquoi des pixels qui semblent identiques sont-ils marqués ?",
+        answer: "Les formats avec perte comme le JPG modifient légèrement les pixels. Augmentez « Ignorer les différences jusqu’à » pour les masquer."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    name: "Ajouter une ombre portée à une image",
+    shortName: "Ombre portée",
+    tagline: "Ajoutez une ombre portée douce à une image, un logo ou un PNG transparent, avec direction, douceur et coins arrondis réglables. Gratuit.",
+    intro: "Ajouter une ombre portée à une image place une ombre douce derrière une image pour la détacher de la page. Avec un PNG transparent comme un logo ou un produit détouré, l’ombre suit sa forme ; avec une photo, elle suit le rectangle, dont vous pouvez arrondir les coins. Réglez la distance, la direction, la douceur, l’intensité et la couleur, puis gardez l’arrière-plan transparent ou remplissez-le d’une couleur. Le canevas s’agrandit pour que l’ombre ne soit jamais coupée, et le téléchargement est en taille réelle.",
+    seoTitle: "Ombre portée sur une image ou un PNG – Gratuit",
+    seoDescription: "Ajoutez une ombre portée à une photo, un logo ou un PNG transparent : distance, angle, flou, couleur et coins arrondis. PNG transparent ou JPG. Gratuit.",
+    keywords: [
+      "ajouter une ombre portée à une image",
+      "ombre portée png",
+      "ajouter une ombre à une photo",
+      "ombre portée logo",
+      "effet ombre image en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez une photo ou un PNG transparent."
+      },
+      {
+        title: "Réglez l’ombre",
+        description: "Choisissez la distance, la direction, la douceur, l’intensité et la couleur."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez-la en PNG transparent ou en JPG sur une couleur."
+      }
+    ],
+    features: [
+      {
+        title: "Suit la forme",
+        description: "Les PNG transparents projettent une ombre qui suit leur propre contour."
+      },
+      {
+        title: "Jamais coupée",
+        description: "Le canevas s’agrandit pour accueillir l’ombre."
+      },
+      {
+        title: "Coins arrondis",
+        description: "Transformez une photo en carte aux coins adoucis."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi l’ombre est-elle carrée autour de mon logo ?",
+        answer: "Le logo a un fond plein. Rendez-le d’abord transparent avec Créateur de PNG transparent ou Supprimer l’arrière-plan."
+      },
+      {
+        question: "Pourquoi l’image est-elle plus grande que l’originale ?",
+        answer: "L’ombre a besoin d’espace autour de l’image ; l’image elle-même garde la même taille."
+      },
+      {
+        question: "Quel format télécharger ?",
+        answer: "Un PNG transparent à placer sur un site web ou un document ; un JPG sur une couleur si vous avez besoin d’un fichier léger."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "image-histogram": {
+    name: "Histogramme d’image",
+    shortName: "Histogramme",
+    tagline: "Affichez l’histogramme RGB et de luminosité d’une image, et voyez si les ombres ou les hautes lumières sont écrêtées. Gratuit, sur votre appareil.",
+    intro: "Histogramme d’image montre comment les tons d’une image se répartissent du noir au blanc, pour la luminosité et pour les canaux rouge, vert et bleu. D’un coup d’œil, vous voyez si une photo est sous-exposée ou surexposée, et l’outil indique quelle part est noir pur ou blanc pur, là où les détails sont perdus. Un tableau donne la moyenne, la médiane, la dispersion et la plage de chaque canal, et vous pouvez télécharger le graphique ou les valeurs en CSV.",
+    seoTitle: "Histogramme d’image – RGB et exposition, gratuit",
+    seoDescription: "Affichez l’histogramme RGB et de luminosité d’une image en ligne, avec écrêtage, moyenne et dispersion par canal. Téléchargez en PNG ou CSV. Gratuit.",
+    keywords: [
+      "histogramme image",
+      "histogramme rgb en ligne",
+      "histogramme photo",
+      "vérifier l’exposition d’une photo",
+      "répartition des couleurs d’une image"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez une photo ou une image."
+      },
+      {
+        title: "Lisez le graphique",
+        description: "Passez du RGB à la luminosité et à chaque couleur."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le graphique en PNG ou les chiffres en CSV."
+      }
+    ],
+    features: [
+      {
+        title: "L’exposition d’un coup d’œil",
+        description: "Les tons, des ombres à gauche aux hautes lumières à droite."
+      },
+      {
+        title: "Contrôle de l’écrêtage",
+        description: "La part de noir pur ou de blanc pur."
+      },
+      {
+        title: "Par canal",
+        description: "Moyenne, médiane, dispersion et plage pour chaque couleur."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment lire un histogramme ?",
+        answer: "À gauche les tons sombres, à droite les tons clairs ; la hauteur indique combien de pixels ont ce ton. Une accumulation contre l’un des bords signifie des détails perdus."
+      },
+      {
+        question: "Qu’est-ce que l’écrêtage ?",
+        answer: "Des pixels en noir pur ou en blanc pur. Un peu, c’est normal ; de grandes zones signifient que les ombres ou les hautes lumières n’ont plus de détails."
+      },
+      {
+        question: "Les pixels transparents sont-ils comptés ?",
+        answer: "Non. Les pixels entièrement transparents sont exclus."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "exif-viewer": {
+    name: "Visionneuse EXIF",
+    shortName: "Visionneuse EXIF",
+    tagline: "Affichez les métadonnées cachées d’une photo : appareil, objectif, réglages, date de prise de vue et position GPS. Gratuit, le fichier reste sur votre appareil.",
+    intro: "Visionneuse EXIF affiche les informations que les appareils photo et les téléphones enregistrent dans une photo. Un résumé indique l’appareil et l’objectif, les réglages d’exposition (ouverture, vitesse d’obturation, ISO et focale), la date de prise de vue et le logiciel utilisé, ainsi que la position GPS si elle a été enregistrée, avec un lien pour la voir sur une carte. Chaque champ est listé par section : EXIF, GPS, légendes et droits IPTC, XMP et profil colorimétrique. Téléchargez le tout en JSON, ou supprimez-le avec Supprimer les métadonnées d’une image.",
+    seoTitle: "Visionneuse EXIF – Métadonnées et GPS d’une photo",
+    seoDescription: "Affichez les métadonnées EXIF d’une photo en ligne : appareil, objectif, réglages, date et position GPS, plus IPTC et XMP. Gratuit, sans envoi de la photo.",
+    keywords: [
+      "lire les données exif",
+      "voir les métadonnées d’une photo",
+      "exif viewer en ligne",
+      "afficher exif photo",
+      "trouver le lieu d’une photo"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Déposez ou choisissez un JPG, HEIC, TIFF, PNG, WebP ou AVIF."
+      },
+      {
+        title: "Lisez les détails",
+        description: "Consultez le résumé et chaque champ de métadonnées."
+      },
+      {
+        title: "Enregistrez ou supprimez",
+        description: "Téléchargez les métadonnées en JSON, ou supprimez-les avant de partager."
+      }
+    ],
+    features: [
+      {
+        title: "Appareil et réglages",
+        description: "Appareil, objectif, ouverture, vitesse d’obturation, ISO et focale."
+      },
+      {
+        title: "Vérification du lieu",
+        description: "Affiche la position GPS que révèle une photo."
+      },
+      {
+        title: "Tous les champs",
+        description: "EXIF, GPS, IPTC, XMP et profil colorimétrique."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi n’y a-t-il aucune métadonnée ?",
+        answer: "Beaucoup d’applications et de sites les suppriment à l’enregistrement ou au partage, et les captures d’écran n’en ont généralement pas."
+      },
+      {
+        question: "Les autres peuvent-ils voir où ma photo a été prise ?",
+        answer: "Si elle contient des données GPS, oui, à partir du fichier d’origine. Supprimez-les avec Supprimer les métadonnées d’une image avant de la partager."
+      },
+      {
+        question: "Ma position est-elle envoyée quelque part ?",
+        answer: "Non. Le lien de carte n’ouvre OpenStreetMap que si vous cliquez dessus."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    name: "Créateur de PNG transparent",
+    shortName: "PNG transparent",
+    tagline: "Rendez transparente une couleur d’arrière-plan, comme le blanc derrière un logo, et enregistrez le résultat en PNG. Gratuit, sur votre appareil.",
+    intro: "Créateur de PNG transparent supprime une couleur d’arrière-plan unie et enregistre l’image en PNG avec transparence, prête à placer sur un site web, une diapositive ou une maquette. La couleur d’arrière-plan est détectée pour vous, ou choisissez n’importe quelle couleur de l’image. La tolérance définit à quel point une couleur doit être proche, la douceur des bords adoucit le contour, et « Seulement l’arrière-plan » laisse intacte la même couleur à l’intérieur de votre logo. Les pixels du bord perdent la teinte de l’ancien fond, si bien qu’aucun liseré blanc ne subsiste.",
+    seoTitle: "Créateur de PNG transparent – Supprimer une couleur",
+    seoDescription: "Rendez une couleur de fond transparente en ligne : supprimez le blanc derrière un logo, bords lissés, sans liseré. Enregistrez en PNG. Gratuit, sans envoi.",
+    keywords: [
+      "png transparent",
+      "rendre le fond transparent",
+      "supprimer fond blanc",
+      "logo fond transparent",
+      "créer un png transparent"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez un logo, une icône ou un graphisme sur fond uni."
+      },
+      {
+        title: "Choisissez la couleur",
+        description: "Gardez l’arrière-plan détecté ou choisissez une couleur, et réglez la tolérance."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PNG transparent."
+      }
+    ],
+    features: [
+      {
+        title: "Détecte l’arrière-plan",
+        description: "La couleur du pourtour est choisie pour vous."
+      },
+      {
+        title: "Seulement l’arrière-plan",
+        description: "La même couleur à l’intérieur du sujet est conservée."
+      },
+      {
+        title: "Bords nets",
+        description: "Des bords doux sans liseré résiduel."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelles images conviennent le mieux ?",
+        answer: "Les logos, icônes, signatures et graphismes sur une seule couleur unie. Pour des photos de personnes ou d’objets, utilisez Supprimer l’arrière-plan."
+      },
+      {
+        question: "Pourquoi des parties de mon logo ont-elles disparu ?",
+        answer: "Elles ont la même couleur que l’arrière-plan. Cochez « Seulement l’arrière-plan » ou baissez la tolérance."
+      },
+      {
+        question: "Pourquoi enregistrer en PNG ?",
+        answer: "Le PNG conserve la transparence ; le JPG en est incapable."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    name: "Remplacer une couleur dans une image",
+    shortName: "Remplacer couleur",
+    tagline: "Remplacez une couleur d’une image par une autre, en conservant ses nuances et sa texture. Gratuit, sur votre appareil.",
+    intro: "Remplacer une couleur dans une image change en une nouvelle couleur toutes les parties de l’image qui ont la couleur choisie : changez la couleur d’un produit, d’un logo, d’un bouton sur une capture d’écran ou d’un mur sur une photo. Cliquez sur la couleur dans l’image, choisissez la nouvelle et réglez à quel point les couleurs doivent être proches. « Conserver les nuances et la texture » décale ensemble les tons clairs et foncés pour que le résultat reste naturel ; désactivez-le pour des couleurs unies et exactes dans les graphismes. Le téléchargement garde le format d’origine et la taille réelle.",
+    seoTitle: "Remplacer une couleur dans une image – Gratuit",
+    seoDescription: "Remplacez une couleur dans une image en ligne : cliquez sur une couleur, choisissez-en une autre, gardez les nuances. Photos, logos et graphismes. Gratuit.",
+    keywords: [
+      "changer la couleur d’une image",
+      "remplacer une couleur dans une image",
+      "changer la couleur d’une photo en ligne",
+      "changer couleur logo",
+      "modifier couleur image"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez une photo, un logo ou un graphisme."
+      },
+      {
+        title: "Choisissez les couleurs",
+        description: "Cliquez sur la couleur à remplacer et choisissez la nouvelle."
+      },
+      {
+        title: "Téléchargez",
+        description: "Réglez la tolérance et enregistrez l’image."
+      }
+    ],
+    features: [
+      {
+        title: "Rendu naturel",
+        description: "Les nuances et la texture suivent la couleur."
+      },
+      {
+        title: "Exact pour les graphismes",
+        description: "Des couleurs unies pour les logos et les icônes."
+      },
+      {
+        title: "Taille réelle",
+        description: "Format et résolution d’origine."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi toute la couleur n’a-t-elle pas changé ?",
+        answer: "Les teintes trop éloignées de celle sur laquelle vous avez cliqué sont laissées telles quelles. Augmentez la tolérance."
+      },
+      {
+        question: "Pourquoi d’autres parties ont-elles aussi changé ?",
+        answer: "Elles sont proches de la couleur choisie. Baissez la tolérance ou la douceur."
+      },
+      {
+        question: "Puis-je plutôt rendre une couleur transparente ?",
+        answer: "Oui, avec Créateur de PNG transparent."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    name: "Générateur d’icônes d’application",
+    shortName: "Icônes d’app",
+    tagline: "Créez toutes les tailles d’icônes d’application pour iOS, Android et les applications web à partir d’une image, prêtes pour votre projet. Gratuit, en ZIP.",
+    intro: "Générateur d’icônes d’application transforme une image en tous les fichiers d’icône dont une application a besoin. Pour iOS, il crée l’AppIcon.appiconset de Xcode avec toutes les tailles iPhone, iPad et App Store et son Contents.json ; pour Android, les icônes de lanceur pour chaque densité d’écran, les icônes rondes, les calques d’icône adaptative avec leur XML et l’icône Play Store ; pour les applications web, les icônes de 192 et 512 px, une icône maskable et le manifeste. Le motif est redimensionné avec un rééchantillonnage de haute qualité et reste dans la zone de sécurité de chaque plateforme.",
+    seoTitle: "Générateur d’icônes d’app – iOS, Android et PWA",
+    seoDescription: "Générez des icônes d’app pour iOS (AppIcon.appiconset), Android (mipmap, adaptatives) et PWA (maskable) à partir d’une image. ZIP gratuit, sans envoi.",
+    keywords: [
+      "générateur d’icônes d’application",
+      "générateur icône ios",
+      "générateur icône android",
+      "créer une icône d’application",
+      "icône pwa"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez une image carrée de 1024 × 1024 px ou plus."
+      },
+      {
+        title: "Choisissez les plateformes",
+        description: "iOS, Android et web, l’arrière-plan et la marge."
+      },
+      {
+        title: "Téléchargez le ZIP",
+        description: "Copiez chaque dossier dans le projet de votre application."
+      }
+    ],
+    features: [
+      {
+        title: "Toutes les tailles",
+        description: "iPhone, iPad, App Store, densités Android et PWA."
+      },
+      {
+        title: "Prêt à l’emploi",
+        description: "Contents.json, XML adaptatif et manifeste web inclus."
+      },
+      {
+        title: "Zones de sécurité",
+        description: "Le motif reste à l’abri des masques arrondis et circulaires."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle taille doit faire mon image ?",
+        answer: "Au moins 1024 × 1024 px, carrée, pour une icône App Store nette."
+      },
+      {
+        question: "Pourquoi les icônes iOS ont-elles un arrière-plan ?",
+        answer: "Apple n’accepte pas les icônes d’application transparentes : la transparence est donc remplie avec la couleur d’arrière-plan."
+      },
+      {
+        question: "Que sont les icônes adaptatives et maskable ?",
+        answer: "Des icônes dont la forme est définie par le téléphone ou le navigateur (cercle, squircle). Le motif reste au centre pour que rien ne soit coupé."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "image-annotator": {
+    name: "Annoter une image",
+    shortName: "Annoter image",
+    tagline: "Ajoutez des flèches, des cadres, des cercles, du texte, des surlignages et des étapes numérotées à une capture d’écran ou une photo. Gratuit, sur votre appareil.",
+    intro: "Annoter une image vous permet de marquer une capture d’écran ou une photo pour expliquer quelque chose : pointez avec des flèches, encadrez des zones avec des rectangles ou des ellipses, dessinez à main levée, surlignez du texte, ajoutez des libellés et des étapes numérotées pour des instructions. Choisissez la couleur et l’épaisseur, déplacez ou supprimez n’importe quelle annotation, et annulez ou rétablissez. Les annotations sont proportionnées à l’image, et le téléchargement est en pleine résolution, en PNG ou JPG.",
+    seoTitle: "Annoter une image – Flèches et texte, gratuit",
+    seoDescription: "Annotez des images en ligne : flèches, cadres, cercles, texte, surlignage et étapes numérotées sur captures ou photos. PNG ou JPG en taille réelle. Gratuit.",
+    keywords: [
+      "annoter une image",
+      "annoter une capture d’écran",
+      "ajouter une flèche sur une image",
+      "ajouter du texte sur une photo",
+      "annoter photo en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Déposez ou choisissez une capture d’écran ou une photo."
+      },
+      {
+        title: "Annotez-la",
+        description: "Choisissez un outil et une couleur, puis dessinez sur l’image."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez l’image annotée en PNG ou JPG."
+      }
+    ],
+    features: [
+      {
+        title: "Toutes les annotations courantes",
+        description: "Flèches, cadres, ellipses, lignes, crayon, surligneur, texte et étapes numérotées."
+      },
+      {
+        title: "Facile à corriger",
+        description: "Sélectionnez, déplacez, supprimez, annulez et rétablissez."
+      },
+      {
+        title: "Pleine résolution",
+        description: "Les annotations sont dessinées sur l’image en taille réelle."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment ajouter du texte ?",
+        answer: "Choisissez Texte, tapez dans la zone, puis cliquez à l’endroit voulu."
+      },
+      {
+        question: "Comment déplacer ou supprimer une annotation ?",
+        answer: "Choisissez Sélectionner et déplacer, cliquez sur l’annotation, puis faites-la glisser ou appuyez sur Supprimer."
+      },
+      {
+        question: "Puis-je masquer des informations privées ?",
+        answer: "Utilisez Flouter ou pixeliser une image pour flouter ou pixeliser des parties d’une image."
+      },
+      {
+        question: "Mon image est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
 };

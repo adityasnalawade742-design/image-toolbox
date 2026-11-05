@@ -9780,4 +9780,492 @@ export const esTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    name: "Comparar imágenes",
+    shortName: "Comparar imágenes",
+    tagline: "Compara dos imágenes con un deslizador de antes y después, lado a lado o con un mapa que marca cada diferencia. Gratis y en tu dispositivo.",
+    intro: "Comparar imágenes muestra dos versiones de una imagen juntas para que veas qué ha cambiado: arrastra un deslizador sobre ellas, míralas lado a lado o cambia a un mapa de diferencias que marca cada píxel cambiado en rosa intenso. También mide cuánto ha cambiado, la mayor diferencia y el PSNR, una medida de calidad estándar. Úsalo para revisar una edición, comparar dos exportaciones o ajustes de compresión, o encontrar qué es distinto entre dos capturas de pantalla.",
+    seoTitle: "Comparar imágenes – Deslizador antes/después, gratis",
+    seoDescription: "Compara dos imágenes online con un deslizador antes/después, lado a lado o un mapa de diferencias, con PSNR y píxeles cambiados. Gratis, sin subidas.",
+    keywords: [
+      "comparar imágenes",
+      "comparar dos imágenes",
+      "imagen antes y después",
+      "encontrar diferencias entre dos imágenes",
+      "comparador de imágenes online"
+    ],
+    howToSteps: [
+      {
+        title: "Añade las dos imágenes",
+        description: "Suelta o elige la primera y la segunda imagen."
+      },
+      {
+        title: "Elige una vista",
+        description: "Deslizador, lado a lado o el mapa de diferencias."
+      },
+      {
+        title: "Lee el resultado",
+        description: "Mira cuánto ha cambiado y descarga el mapa de diferencias."
+      }
+    ],
+    features: [
+      {
+        title: "Tres vistas",
+        description: "Un deslizador de antes y después, lado a lado y un mapa de diferencias."
+      },
+      {
+        title: "Con medidas",
+        description: "Píxeles cambiados, mayor diferencia y PSNR."
+      },
+      {
+        title: "Ajustable",
+        description: "Ignora diferencias mínimas, como el ruido de compresión."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué significa PSNR?",
+        answer: "Relación señal-ruido de pico (peak signal-to-noise ratio): cuanto más alta, más parecidas son. Por encima de unos 40 dB las diferencias son muy difíciles de ver; las imágenes idénticas no tienen PSNR."
+      },
+      {
+        question: "¿Puedo comparar imágenes de distinto tamaño?",
+        answer: "Sí. La segunda se escala al tamaño de la primera, lo que en sí cuenta como una pequeña diferencia."
+      },
+      {
+        question: "¿Por qué se marcan píxeles que parecen iguales?",
+        answer: "Los formatos con pérdida, como JPG, cambian ligeramente los píxeles. Sube «Ignorar diferencias de hasta» para ocultarlos."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    name: "Añadir sombra a una imagen",
+    shortName: "Sombra paralela",
+    tagline: "Añade una sombra paralela suave a una imagen, un logotipo o un PNG transparente, con dirección, suavidad y esquinas redondeadas ajustables. Gratis.",
+    intro: "Añadir sombra a una imagen coloca una sombra suave detrás de una imagen para que se despegue de la página. Con un PNG transparente, como un logotipo o un producto recortado, la sombra sigue su forma; con una foto, sigue el rectángulo, cuyas esquinas puedes redondear. Ajusta la distancia, la dirección, la suavidad, la intensidad y el color, y deja el fondo transparente o rellénalo con un color. El lienzo crece para que la sombra nunca quede cortada, y la descarga es a tamaño completo.",
+    seoTitle: "Añadir sombra paralela a una imagen o PNG – Gratis",
+    seoDescription: "Añade una sombra paralela a una foto, un logotipo o un PNG transparente: distancia, ángulo, desenfoque, color y esquinas redondeadas. PNG o JPG. Gratis.",
+    keywords: [
+      "añadir sombra a imagen",
+      "sombra paralela png",
+      "añadir sombra a una foto online",
+      "añadir sombra a logo",
+      "efecto sombra foto"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige una foto o un PNG transparente."
+      },
+      {
+        title: "Da forma a la sombra",
+        description: "Ajusta la distancia, la dirección, la suavidad, la intensidad y el color."
+      },
+      {
+        title: "Descarga",
+        description: "Guárdala como PNG transparente o como JPG sobre un color."
+      }
+    ],
+    features: [
+      {
+        title: "Sigue la forma",
+        description: "Los PNG transparentes proyectan una sombra con su propio contorno."
+      },
+      {
+        title: "Nunca se corta",
+        description: "El lienzo crece para que quepa la sombra."
+      },
+      {
+        title: "Esquinas redondeadas",
+        description: "Convierte una foto en una tarjeta con esquinas suaves."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Por qué la sombra es cuadrada alrededor de mi logotipo?",
+        answer: "El logotipo tiene un fondo sólido. Hazlo transparente primero con Crear PNG transparente o Quitar fondo."
+      },
+      {
+        question: "¿Por qué la imagen es más grande que la original?",
+        answer: "La sombra necesita espacio alrededor de la imagen; la imagen en sí tiene el mismo tamaño."
+      },
+      {
+        question: "¿Qué formato debo descargar?",
+        answer: "Un PNG transparente para colocarlo en una web o un documento; un JPG sobre un color cuando necesites un archivo pequeño."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "image-histogram": {
+    name: "Histograma de imagen",
+    shortName: "Histograma",
+    tagline: "Mira el histograma RGB y de brillo de una imagen, y si las sombras o las luces están recortadas. Gratis y en tu dispositivo.",
+    intro: "Histograma de imagen muestra cómo se reparten los tonos de una imagen del negro al blanco, para el brillo y para los canales rojo, verde y azul. De un vistazo sabes si una foto está subexpuesta o sobreexpuesta, y la herramienta indica qué parte es negro puro o blanco puro, donde se pierde detalle. Una tabla da la media, la mediana, la dispersión y el rango de cada canal, y puedes descargar el gráfico o los recuentos como CSV.",
+    seoTitle: "Histograma de imagen online – RGB y exposición gratis",
+    seoDescription: "Mira el histograma RGB y de brillo de una imagen online, con recorte, media y dispersión de cada canal. Descarga PNG o CSV. Gratis.",
+    keywords: [
+      "histograma de imagen",
+      "histograma rgb online",
+      "histograma de una foto",
+      "comprobar exposición de una foto",
+      "distribución de color de una imagen"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige una foto o imagen."
+      },
+      {
+        title: "Lee el gráfico",
+        description: "Cambia entre RGB, brillo y cada color."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el gráfico como PNG o los números como CSV."
+      }
+    ],
+    features: [
+      {
+        title: "La exposición de un vistazo",
+        description: "Los tonos, de las sombras a la izquierda a las luces a la derecha."
+      },
+      {
+        title: "Control de recorte",
+        description: "Cuánto es negro puro o blanco puro."
+      },
+      {
+        title: "Por canal",
+        description: "Media, mediana, dispersión y rango de cada color."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cómo se lee un histograma?",
+        answer: "La izquierda es oscura, la derecha es clara y la altura indica cuántos píxeles tienen ese tono. Una acumulación en cualquiera de los extremos significa detalle perdido."
+      },
+      {
+        question: "¿Qué es el recorte?",
+        answer: "Píxeles en negro puro o blanco puro. Un poco es normal; las zonas grandes significan que las sombras o las luces ya no tienen detalle."
+      },
+      {
+        question: "¿Se cuentan los píxeles transparentes?",
+        answer: "No. Los píxeles totalmente transparentes se dejan fuera."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "exif-viewer": {
+    name: "Visor EXIF",
+    shortName: "Visor EXIF",
+    tagline: "Mira los metadatos ocultos de una foto: cámara, objetivo, ajustes, fecha de captura y ubicación GPS. Gratis, y el archivo no sale de tu dispositivo.",
+    intro: "Visor EXIF muestra la información que las cámaras y los móviles guardan dentro de una foto. Un resumen da la cámara y el objetivo, los ajustes de exposición (apertura, velocidad de obturación, ISO y distancia focal), cuándo se tomó y con qué software, y la ubicación GPS si se registró, con un enlace para verla en un mapa. Todos los campos se listan por secciones: EXIF, GPS, pies de foto y derechos IPTC, XMP y el perfil de color. Descárgalo todo como JSON o elimínalo con Eliminar metadatos de imagen.",
+    seoTitle: "Visor EXIF online – Metadatos y GPS de fotos gratis",
+    seoDescription: "Mira los metadatos EXIF de una foto online: cámara, objetivo, ajustes, fecha y ubicación GPS, además de IPTC y XMP. Gratis, tu foto no se sube.",
+    keywords: [
+      "visor exif",
+      "ver metadatos de una foto",
+      "ver datos exif online",
+      "ver ubicación de una foto",
+      "visor de metadatos de imagen"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu foto",
+        description: "Suelta o elige un JPG, HEIC, TIFF, PNG, WebP o AVIF."
+      },
+      {
+        title: "Lee los detalles",
+        description: "Mira el resumen y cada campo de metadatos."
+      },
+      {
+        title: "Guarda o elimina",
+        description: "Descarga los metadatos como JSON o elimínalos antes de compartir."
+      }
+    ],
+    features: [
+      {
+        title: "Cámara y ajustes",
+        description: "Cámara, objetivo, apertura, velocidad de obturación, ISO y distancia focal."
+      },
+      {
+        title: "Control de ubicación",
+        description: "Muestra la posición GPS que revela una foto."
+      },
+      {
+        title: "Todos los campos",
+        description: "EXIF, GPS, IPTC, XMP y el perfil de color."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Por qué no hay metadatos?",
+        answer: "Muchas apps y webs los eliminan al guardar o compartir, y las capturas de pantalla no suelen tener."
+      },
+      {
+        question: "¿Pueden otros ver dónde se tomó mi foto?",
+        answer: "Si tiene datos GPS, sí, a partir del archivo original. Elimínalos con Eliminar metadatos de imagen antes de compartirla."
+      },
+      {
+        question: "¿Se envía mi ubicación a algún sitio?",
+        answer: "No. El enlace del mapa abre OpenStreetMap solo si haces clic en él."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    name: "Crear PNG transparente",
+    shortName: "PNG transparente",
+    tagline: "Convierte en transparente un color de fondo, como el blanco detrás de un logotipo, y guárdalo como PNG. Gratis y en tu dispositivo.",
+    intro: "Crear PNG transparente quita un color de fondo liso y guarda la imagen como PNG con transparencia, lista para colocarla en cualquier web, diapositiva o diseño. El color de fondo se detecta automáticamente, o puedes elegir cualquier color de la imagen. La tolerancia fija lo parecido que debe ser un color, la suavidad del borde suaviza el contorno y «Solo el fondo» deja intacto el mismo color dentro de tu logotipo. Los píxeles del borde pierden el tono del fondo anterior, así que no queda ningún halo blanco.",
+    seoTitle: "Crear PNG transparente – Quita un color de fondo",
+    seoDescription: "Haz transparente un color de fondo online: quita el blanco detrás de un logotipo, con bordes suaves y sin halo. Guarda como PNG. Gratis, sin subidas.",
+    keywords: [
+      "png transparente",
+      "hacer fondo transparente",
+      "quitar fondo blanco",
+      "logo con fondo transparente",
+      "convertir imagen a png transparente"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige un logotipo, icono o gráfico sobre un fondo liso."
+      },
+      {
+        title: "Elige el color",
+        description: "Mantén el fondo detectado o elige un color, y ajusta la tolerancia."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el PNG transparente."
+      }
+    ],
+    features: [
+      {
+        title: "Detecta el fondo",
+        description: "El color del borde se elige automáticamente."
+      },
+      {
+        title: "Solo el fondo",
+        description: "Se conserva el mismo color dentro del motivo."
+      },
+      {
+        title: "Bordes limpios",
+        description: "Bordes suaves sin halo residual."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué imágenes funcionan mejor?",
+        answer: "Logotipos, iconos, firmas y gráficos sobre un único color plano. Para fotos de personas u objetos, usa Quitar fondo."
+      },
+      {
+        question: "¿Por qué han desaparecido partes de mi logotipo?",
+        answer: "Coinciden con el color de fondo. Marca «Solo el fondo» o baja la tolerancia."
+      },
+      {
+        question: "¿Por qué guardar como PNG?",
+        answer: "El PNG conserva la transparencia; el JPG no puede."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    name: "Reemplazar color de imagen",
+    shortName: "Reemplazar color",
+    tagline: "Reemplaza un color de una imagen por otro, conservando su sombreado y su textura. Gratis y en tu dispositivo.",
+    intro: "Reemplazar color de imagen cambia a un color nuevo cada parte de la imagen que tenga el color elegido: cambia el color de un producto, un logotipo, un botón en una captura de pantalla o una pared en una foto. Haz clic en el color de la imagen, elige el nuevo y ajusta lo parecidos que deben ser los colores. «Conservar sombreado y textura» desplaza juntos los tonos claros y oscuros para que el resultado siga pareciendo natural; desactívalo para obtener colores planos y exactos en gráficos. La descarga conserva el formato original y el tamaño completo.",
+    seoTitle: "Reemplazar color de imagen – Cambia un color gratis",
+    seoDescription: "Reemplaza un color de una imagen online: haz clic en un color, elige otro y conserva el sombreado. Para fotos, logotipos y gráficos. Gratis, sin subidas.",
+    keywords: [
+      "cambiar color de imagen",
+      "reemplazar color en imagen",
+      "cambiar color de una foto online",
+      "cambiar color de logo",
+      "cambiar un color por otro en una imagen"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige una foto, un logotipo o un gráfico."
+      },
+      {
+        title: "Elige los colores",
+        description: "Haz clic en el color que quieres reemplazar y elige el nuevo."
+      },
+      {
+        title: "Descarga",
+        description: "Ajusta la tolerancia y guarda la imagen."
+      }
+    ],
+    features: [
+      {
+        title: "Aspecto natural",
+        description: "El sombreado y la textura se mueven con el color."
+      },
+      {
+        title: "Exacto para gráficos",
+        description: "Colores planos para logotipos e iconos."
+      },
+      {
+        title: "Tamaño completo",
+        description: "El formato y la resolución originales."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Por qué no ha cambiado todo el color?",
+        answer: "Los tonos demasiado lejanos del que elegiste se dejan como están. Sube la tolerancia."
+      },
+      {
+        question: "¿Por qué han cambiado también otras partes?",
+        answer: "Están cerca del color elegido. Baja la tolerancia o la suavidad."
+      },
+      {
+        question: "¿Puedo hacer transparente un color en su lugar?",
+        answer: "Sí, con Crear PNG transparente."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    name: "Generador de iconos de app",
+    shortName: "Iconos de app",
+    tagline: "Crea todos los tamaños de icono de app para iOS, Android y apps web a partir de una imagen, listos para tu proyecto. Gratis, en un ZIP.",
+    intro: "Generador de iconos de app convierte una imagen en todos los archivos de icono que necesita una app. Para iOS crea el AppIcon.appiconset de Xcode con todos los tamaños de iPhone, iPad y App Store y su Contents.json; para Android, los iconos de launcher para cada densidad de pantalla, los iconos redondos, las capas de icono adaptativo con su XML y el icono de Play Store; para apps web, los iconos de 192 y 512 px, un icono maskable y el manifiesto. El diseño se escala con un remuestreo de alta calidad y se mantiene dentro de la zona segura de cada plataforma.",
+    seoTitle: "Generador de iconos de app – iOS, Android y PWA gratis",
+    seoDescription: "Genera iconos de app para iOS (AppIcon.appiconset), Android (mipmap, adaptativos) y PWA (maskable) desde una imagen. ZIP gratis, sin subidas.",
+    keywords: [
+      "generador de iconos de app",
+      "generador de iconos ios",
+      "generador de iconos android",
+      "crear icono de app",
+      "iconos pwa"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige una imagen cuadrada de 1024 × 1024 px o más."
+      },
+      {
+        title: "Elige las plataformas",
+        description: "iOS, Android y web, el fondo y el margen."
+      },
+      {
+        title: "Descarga el ZIP",
+        description: "Copia cada carpeta en el proyecto de tu app."
+      }
+    ],
+    features: [
+      {
+        title: "Todos los tamaños",
+        description: "iPhone, iPad, App Store, densidades de Android y PWA."
+      },
+      {
+        title: "Listo para usar",
+        description: "Incluye Contents.json, el XML adaptativo y un manifiesto web."
+      },
+      {
+        title: "Zonas seguras",
+        description: "El diseño queda a salvo de las máscaras redondeadas y circulares."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué tamaño debe tener mi imagen?",
+        answer: "Al menos 1024 × 1024 px y cuadrada, para un icono nítido en App Store."
+      },
+      {
+        question: "¿Por qué los iconos de iOS tienen fondo?",
+        answer: "Apple no acepta iconos de app transparentes, así que la transparencia se rellena con el color de fondo."
+      },
+      {
+        question: "¿Qué son los iconos adaptativos y maskable?",
+        answer: "Iconos cuya forma decide el móvil o el navegador (círculo, squircle). El diseño queda en el centro para que no se recorte nada."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "image-annotator": {
+    name: "Anotar imagen",
+    shortName: "Anotar imagen",
+    tagline: "Añade flechas, recuadros, círculos, texto, resaltados y pasos numerados a una captura de pantalla o una foto. Gratis y en tu dispositivo.",
+    intro: "Anotar imagen te permite marcar una captura de pantalla o una foto para explicar algo: señala con flechas, enmarca zonas con rectángulos o elipses, dibuja a mano alzada, resalta texto y añade etiquetas y pasos numerados para instrucciones. Elige el color y el grosor, mueve o elimina cualquier marca, y deshaz o rehaz. Las marcas se ajustan al tamaño de la imagen, y la descarga es a resolución completa en PNG o JPG.",
+    seoTitle: "Anotar imagen online – Flechas y texto en fotos, gratis",
+    seoDescription: "Anota imágenes online: flechas, recuadros, círculos, texto, resaltados y pasos numerados en capturas o fotos. PNG o JPG a tamaño completo. Gratis.",
+    keywords: [
+      "anotar imagen",
+      "anotar captura de pantalla",
+      "poner flechas en una imagen",
+      "añadir texto a una imagen online",
+      "marcar imagen online"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu imagen",
+        description: "Suelta o elige una captura de pantalla o una foto."
+      },
+      {
+        title: "Márcala",
+        description: "Elige una herramienta y un color, y dibuja sobre la imagen."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda la imagen anotada como PNG o JPG."
+      }
+    ],
+    features: [
+      {
+        title: "Todas las marcas habituales",
+        description: "Flechas, recuadros, elipses, líneas, lápiz, resaltador, texto y pasos numerados."
+      },
+      {
+        title: "Fácil de corregir",
+        description: "Selecciona, mueve, elimina, deshaz y rehaz."
+      },
+      {
+        title: "Resolución completa",
+        description: "Las marcas se dibujan sobre la imagen a tamaño completo."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cómo añado texto?",
+        answer: "Elige Texto, escribe en el cuadro y haz clic donde debe ir."
+      },
+      {
+        question: "¿Cómo muevo o elimino una marca?",
+        answer: "Elige Seleccionar y mover, haz clic en la marca y arrástrala o pulsa Eliminar."
+      },
+      {
+        question: "¿Puedo ocultar información privada?",
+        answer: "Usa Censurar imagen con desenfoque o pixelado para desenfocar o pixelar partes de una imagen."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. Se procesa en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
 };

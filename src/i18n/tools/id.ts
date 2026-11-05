@@ -9777,4 +9777,492 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    name: "Perbandingan Gambar",
+    shortName: "Bandingkan Gambar",
+    tagline: "Bandingkan dua gambar dengan slider sebelum-sesudah, berdampingan, atau peta yang menandai setiap perbedaan. Gratis, di perangkat Anda.",
+    intro: "Perbandingan Gambar menampilkan dua versi gambar sekaligus agar Anda bisa melihat apa yang berubah: geser slider di atasnya, lihat berdampingan, atau beralih ke peta perbedaan yang menandai setiap piksel yang berubah dengan merah muda terang. Alat ini juga mengukur seberapa banyak yang berubah, perbedaan terbesar, dan PSNR, skor kualitas standar. Gunakan untuk memeriksa hasil edit, membandingkan dua hasil ekspor atau pengaturan kompresi, atau menemukan perbedaan antara dua tangkapan layar.",
+    seoTitle: "Bandingkan Gambar – Slider Sebelum/Sesudah, Gratis",
+    seoDescription: "Bandingkan dua gambar online dengan slider sebelum/sesudah, berdampingan, atau peta perbedaan, plus PSNR dan piksel yang berubah. Gratis, tanpa unggah.",
+    keywords: [
+      "bandingkan gambar",
+      "perbandingan gambar online",
+      "slider before after",
+      "cari perbedaan dua gambar",
+      "bandingkan dua foto"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan kedua gambar",
+        description: "Letakkan atau pilih gambar pertama dan kedua."
+      },
+      {
+        title: "Pilih tampilan",
+        description: "Slider, berdampingan, atau peta perbedaan."
+      },
+      {
+        title: "Baca hasilnya",
+        description: "Lihat seberapa banyak yang berubah dan unduh peta perbedaannya."
+      }
+    ],
+    features: [
+      {
+        title: "Tiga tampilan",
+        description: "Slider sebelum-sesudah, berdampingan, dan peta perbedaan."
+      },
+      {
+        title: "Terukur",
+        description: "Piksel yang berubah, perbedaan terbesar, dan PSNR."
+      },
+      {
+        title: "Bisa diatur",
+        description: "Abaikan perbedaan kecil seperti noise kompresi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apa arti PSNR?",
+        answer: "Peak signal-to-noise ratio: makin tinggi, makin mirip. Di atas sekitar 40 dB perbedaannya sangat sulit dilihat; gambar yang identik tidak memiliki PSNR."
+      },
+      {
+        question: "Bisakah saya membandingkan gambar dengan ukuran berbeda?",
+        answer: "Bisa. Gambar kedua diskalakan ke ukuran gambar pertama, dan penskalaan itu sendiri terhitung sebagai perbedaan kecil."
+      },
+      {
+        question: "Kenapa ada piksel yang ditandai padahal terlihat sama?",
+        answer: "Format lossy seperti JPG sedikit mengubah piksel. Naikkan “Abaikan perbedaan hingga” untuk menyembunyikannya."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    name: "Tambah Bayangan ke Gambar",
+    shortName: "Bayangan Gambar",
+    tagline: "Tambahkan bayangan lembut ke foto, logo, atau PNG transparan, dengan arah, kelembutan, dan sudut membulat yang bisa diatur. Gratis.",
+    intro: "Tambah Bayangan ke Gambar menaruh bayangan lembut di belakang gambar agar tampak terangkat dari halaman. Pada PNG transparan seperti logo atau potongan produk, bayangan mengikuti bentuknya; pada foto, bayangan mengikuti persegi panjangnya, yang sudutnya bisa Anda bulatkan. Atur jarak, arah, kelembutan, kepekatan, dan warna, lalu biarkan background transparan atau isi dengan warna. Kanvas diperluas agar bayangan tidak pernah terpotong, dan hasil unduhannya berukuran penuh.",
+    seoTitle: "Tambah Bayangan ke Gambar atau PNG – Gratis Online",
+    seoDescription: "Tambahkan bayangan ke foto, logo, atau PNG transparan: jarak, sudut, blur, warna, dan sudut membulat. Simpan sebagai PNG transparan atau JPG. Gratis.",
+    keywords: [
+      "tambah bayangan gambar",
+      "efek bayangan foto",
+      "drop shadow png",
+      "bayangan logo online",
+      "membuat bayangan gambar"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih foto atau PNG transparan."
+      },
+      {
+        title: "Atur bayangannya",
+        description: "Tentukan jarak, arah, kelembutan, kepekatan, dan warna."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG transparan atau sebagai JPG di atas warna."
+      }
+    ],
+    features: [
+      {
+        title: "Mengikuti bentuk",
+        description: "PNG transparan menghasilkan bayangan sesuai garis bentuknya sendiri."
+      },
+      {
+        title: "Tidak pernah terpotong",
+        description: "Kanvas diperluas agar bayangan muat."
+      },
+      {
+        title: "Sudut membulat",
+        description: "Ubah foto menjadi kartu dengan sudut lembut."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kenapa bayangan di sekitar logo saya berbentuk kotak?",
+        answer: "Logonya memiliki background solid. Buat transparan dulu dengan Pembuat PNG Transparan atau Hapus Background."
+      },
+      {
+        question: "Kenapa gambarnya lebih besar dari aslinya?",
+        answer: "Bayangan butuh ruang di sekitar gambar; ukuran gambarnya sendiri tetap sama."
+      },
+      {
+        question: "Format mana yang sebaiknya saya unduh?",
+        answer: "PNG transparan untuk diletakkan di situs web atau dokumen; JPG di atas warna jika Anda butuh file kecil."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "image-histogram": {
+    name: "Histogram Gambar",
+    shortName: "Histogram",
+    tagline: "Lihat histogram RGB dan kecerahan gambar, serta apakah area gelap atau terangnya terpotong. Gratis, dan berjalan di perangkat Anda.",
+    intro: "Histogram Gambar menunjukkan sebaran tona gambar dari hitam sampai putih, untuk kecerahan dan untuk kanal merah, hijau, dan biru. Sekilas Anda bisa tahu apakah foto kurang atau kelebihan eksposur, dan alat ini memberi tahu berapa bagian yang hitam murni atau putih murni, tempat detail hilang. Tabel menampilkan rata-rata, median, sebaran, dan rentang tiap kanal, dan Anda bisa mengunduh grafiknya atau angkanya sebagai CSV.",
+    seoTitle: "Histogram Gambar – Cek RGB dan Eksposur Foto, Gratis",
+    seoDescription: "Lihat histogram RGB dan kecerahan gambar secara online, lengkap dengan clipping, rata-rata, dan sebaran tiap kanal. Unduh PNG atau CSV. Gratis.",
+    keywords: [
+      "histogram gambar",
+      "histogram rgb online",
+      "histogram foto",
+      "cek eksposur foto",
+      "distribusi warna gambar"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih foto atau gambar."
+      },
+      {
+        title: "Baca grafiknya",
+        description: "Beralih antara RGB, kecerahan, dan tiap warna."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan grafik sebagai PNG atau angkanya sebagai CSV."
+      }
+    ],
+    features: [
+      {
+        title: "Eksposur sekilas",
+        description: "Tona dari area gelap di kiri sampai area terang di kanan."
+      },
+      {
+        title: "Cek clipping",
+        description: "Berapa bagian yang hitam murni atau putih murni."
+      },
+      {
+        title: "Per kanal",
+        description: "Rata-rata, median, sebaran, dan rentang tiap warna."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara membaca histogram?",
+        answer: "Kiri gelap, kanan terang, dan tinggi menunjukkan berapa banyak piksel yang memiliki tona itu. Tumpukan di salah satu ujung berarti detail hilang."
+      },
+      {
+        question: "Apa itu clipping?",
+        answer: "Piksel yang hitam murni atau putih murni. Sedikit itu wajar; area yang luas berarti area gelap atau terang sudah tidak punya detail."
+      },
+      {
+        question: "Apakah piksel transparan ikut dihitung?",
+        answer: "Tidak. Piksel yang sepenuhnya transparan tidak dihitung."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "exif-viewer": {
+    name: "Penampil EXIF",
+    shortName: "Penampil EXIF",
+    tagline: "Lihat metadata tersembunyi di foto: kamera, lensa, pengaturan, tanggal pengambilan, dan lokasi GPS. Gratis, file tetap di perangkat Anda.",
+    intro: "Penampil EXIF menampilkan informasi yang disimpan kamera dan ponsel di dalam foto. Ringkasannya berisi kamera dan lensa, pengaturan eksposur (aperture, kecepatan rana, ISO, dan panjang fokus), kapan foto diambil dan dengan perangkat lunak apa, serta lokasi GPS jika tercatat, dengan tautan untuk melihatnya di peta. Setiap kolom dicantumkan per bagian: EXIF, GPS, keterangan dan hak cipta IPTC, XMP, dan profil warna. Unduh semuanya sebagai JSON, atau hapus dengan Hapus Metadata Gambar.",
+    seoTitle: "Penampil EXIF – Cek Metadata dan Lokasi GPS Foto, Gratis",
+    seoDescription: "Lihat metadata EXIF foto secara online: kamera, lensa, pengaturan, tanggal, dan lokasi GPS, plus IPTC dan XMP. Gratis, foto Anda tidak diunggah.",
+    keywords: [
+      "exif viewer",
+      "cek metadata foto",
+      "melihat data exif foto",
+      "cek lokasi foto",
+      "lihat info foto online"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Letakkan atau pilih JPG, HEIC, TIFF, PNG, WebP, atau AVIF."
+      },
+      {
+        title: "Baca detailnya",
+        description: "Lihat ringkasan dan setiap kolom metadata."
+      },
+      {
+        title: "Simpan atau hapus",
+        description: "Unduh metadata sebagai JSON, atau hapus sebelum dibagikan."
+      }
+    ],
+    features: [
+      {
+        title: "Kamera dan pengaturan",
+        description: "Kamera, lensa, aperture, kecepatan rana, ISO, dan panjang fokus."
+      },
+      {
+        title: "Cek lokasi",
+        description: "Menampilkan posisi GPS yang terungkap dari foto."
+      },
+      {
+        title: "Setiap kolom",
+        description: "EXIF, GPS, IPTC, XMP, dan profil warna."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kenapa tidak ada metadata?",
+        answer: "Banyak aplikasi dan situs web menghapusnya saat menyimpan atau membagikan, dan tangkapan layar biasanya tidak memilikinya."
+      },
+      {
+        question: "Bisakah orang lain melihat di mana foto saya diambil?",
+        answer: "Jika foto memiliki data GPS, ya, dari file aslinya. Hapus dengan Hapus Metadata Gambar sebelum dibagikan."
+      },
+      {
+        question: "Apakah lokasi saya dikirim ke suatu tempat?",
+        answer: "Tidak. Tautan peta hanya membuka OpenStreetMap jika Anda mengekliknya."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    name: "Pembuat PNG Transparan",
+    shortName: "PNG Transparan",
+    tagline: "Buat warna background menjadi transparan, misalnya putih di belakang logo, lalu simpan sebagai PNG. Gratis, dan berjalan di perangkat Anda.",
+    intro: "Pembuat PNG Transparan menghapus warna background polos dan menyimpan gambar sebagai PNG dengan transparansi, siap diletakkan di situs web, slide, atau desain apa pun. Warna background dideteksi otomatis, atau ambil warna mana pun dari gambar. Toleransi menentukan seberapa mirip suatu warna, kelembutan tepi menghaluskan garis luar, dan “Hanya background” membiarkan warna yang sama di dalam logo Anda tetap utuh. Piksel di tepi kehilangan rona background lama, jadi tidak ada sisa pinggiran putih.",
+    seoTitle: "Pembuat PNG Transparan – Hapus Warna Background",
+    seoDescription: "Buat warna background transparan secara online: hapus putih di belakang logo, haluskan tepi, tanpa sisa pinggiran. Simpan sebagai PNG. Gratis, tanpa unggah.",
+    keywords: [
+      "membuat png transparan",
+      "background transparan",
+      "hapus background putih",
+      "logo transparan",
+      "png tanpa background"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih logo, ikon, atau grafis dengan background polos."
+      },
+      {
+        title: "Pilih warnanya",
+        description: "Pakai background yang terdeteksi atau ambil warna, lalu atur toleransinya."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PNG transparannya."
+      }
+    ],
+    features: [
+      {
+        title: "Mendeteksi background",
+        description: "Warna di sekitar tepi dipilihkan untuk Anda."
+      },
+      {
+        title: "Hanya background",
+        description: "Warna yang sama di dalam subjek tetap dipertahankan."
+      },
+      {
+        title: "Tepi bersih",
+        description: "Tepi lembut tanpa sisa pinggiran."
+      }
+    ],
+    faqs: [
+      {
+        question: "Gambar seperti apa yang paling cocok?",
+        answer: "Logo, ikon, tanda tangan, dan grafis di atas satu warna datar. Untuk foto orang atau benda, gunakan Hapus Background."
+      },
+      {
+        question: "Kenapa sebagian logo saya hilang?",
+        answer: "Bagian itu sama dengan warna background. Centang “Hanya background” atau turunkan toleransinya."
+      },
+      {
+        question: "Kenapa disimpan sebagai PNG?",
+        answer: "PNG mempertahankan transparansi; JPG tidak bisa."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    name: "Pengganti Warna Gambar",
+    shortName: "Ganti Warna",
+    tagline: "Ganti satu warna pada gambar dengan warna lain, sambil mempertahankan bayangan dan teksturnya. Gratis, dan berjalan di perangkat Anda.",
+    intro: "Pengganti Warna Gambar mengubah setiap bagian gambar yang memiliki warna pilihan menjadi warna baru: warnai ulang produk, logo, tombol di tangkapan layar, atau dinding di foto. Klik warnanya pada gambar, pilih warna baru, dan atur seberapa mirip warna yang ikut diganti. “Pertahankan bayangan dan tekstur” menggeser tona terang dan gelap bersama-sama agar hasilnya tetap terlihat alami; matikan untuk warna datar dan tepat pada grafis. Hasil unduhan mempertahankan format asli dan ukuran penuh.",
+    seoTitle: "Pengganti Warna Gambar – Ubah Warna di Foto, Gratis",
+    seoDescription: "Ganti warna pada gambar secara online: klik warna, pilih yang baru, bayangan tetap terjaga. Untuk foto, logo, dan grafis. Gratis, tanpa unggah.",
+    keywords: [
+      "ganti warna gambar",
+      "ubah warna foto",
+      "mengganti warna objek di foto",
+      "ganti warna logo",
+      "ubah warna gambar online"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih foto, logo, atau grafis."
+      },
+      {
+        title: "Pilih warnanya",
+        description: "Klik warna yang akan diganti dan pilih warna barunya."
+      },
+      {
+        title: "Unduh",
+        description: "Atur toleransi lalu simpan gambarnya."
+      }
+    ],
+    features: [
+      {
+        title: "Tetap alami",
+        description: "Bayangan dan tekstur ikut bergeser bersama warnanya."
+      },
+      {
+        title: "Tepat untuk grafis",
+        description: "Warna datar untuk logo dan ikon."
+      },
+      {
+        title: "Ukuran penuh",
+        description: "Format dan resolusi asli."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kenapa tidak semua bagian warnanya berubah?",
+        answer: "Corak yang terlalu jauh dari warna yang Anda klik dibiarkan. Naikkan toleransinya."
+      },
+      {
+        question: "Kenapa bagian lain ikut berubah?",
+        answer: "Bagian itu mirip dengan warna yang dipilih. Turunkan toleransi atau kelembutannya."
+      },
+      {
+        question: "Bisakah saya membuat warna menjadi transparan?",
+        answer: "Bisa, dengan Pembuat PNG Transparan."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    name: "Pembuat Ikon Aplikasi",
+    shortName: "Ikon Aplikasi",
+    tagline: "Buat semua ukuran ikon aplikasi untuk iOS, Android, dan aplikasi web dari satu gambar, siap dimasukkan ke proyek Anda. Gratis, dalam ZIP.",
+    intro: "Pembuat Ikon Aplikasi mengubah satu gambar menjadi semua file ikon yang dibutuhkan aplikasi. Untuk iOS, alat ini membuat AppIcon.appiconset Xcode dengan semua ukuran iPhone, iPad, dan App Store beserta Contents.json; untuk Android, ikon launcher untuk setiap kepadatan layar, ikon bulat, lapisan ikon adaptif dengan XML-nya, dan ikon Play Store; untuk aplikasi web, ikon 192 dan 512 px, ikon maskable, dan manifest. Gambar diskalakan dengan resampling berkualitas tinggi dan dijaga di dalam zona aman tiap platform.",
+    seoTitle: "Pembuat Ikon Aplikasi – Ikon iOS, Android, dan PWA",
+    seoDescription: "Buat ikon aplikasi untuk iOS (AppIcon.appiconset), Android (mipmap, adaptif), dan PWA (maskable) dari satu gambar. ZIP gratis, tanpa unggah.",
+    keywords: [
+      "pembuat ikon aplikasi",
+      "app icon generator",
+      "membuat ikon aplikasi android",
+      "ukuran ikon aplikasi ios",
+      "ikon pwa"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih gambar persegi, 1024 × 1024 px atau lebih besar."
+      },
+      {
+        title: "Pilih platform",
+        description: "iOS, Android, dan web, serta background dan jarak tepinya."
+      },
+      {
+        title: "Unduh ZIP",
+        description: "Salin setiap folder ke proyek aplikasi Anda."
+      }
+    ],
+    features: [
+      {
+        title: "Semua ukuran",
+        description: "iPhone, iPad, App Store, kepadatan layar Android, dan PWA."
+      },
+      {
+        title: "Siap pakai",
+        description: "Termasuk Contents.json, XML adaptif, dan manifest web."
+      },
+      {
+        title: "Zona aman",
+        description: "Gambar dijaga agar tidak terpotong mask membulat atau lingkaran."
+      }
+    ],
+    faqs: [
+      {
+        question: "Berapa ukuran gambar yang sebaiknya saya pakai?",
+        answer: "Minimal 1024 × 1024 px, persegi, agar ikon App Store tajam."
+      },
+      {
+        question: "Kenapa ikon iOS memiliki background?",
+        answer: "Apple tidak menerima ikon aplikasi transparan, jadi area transparan diisi dengan warna background."
+      },
+      {
+        question: "Apa itu ikon adaptif dan maskable?",
+        answer: "Ikon yang bentuknya ditentukan oleh ponsel atau browser (lingkaran, squircle). Gambar tetap di tengah sehingga tidak ada yang terpotong."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
+  "image-annotator": {
+    name: "Anotasi Gambar",
+    shortName: "Anotasi Gambar",
+    tagline: "Tambahkan panah, kotak, lingkaran, teks, stabilo, dan langkah bernomor ke tangkapan layar atau foto. Gratis, dan berjalan di perangkat Anda.",
+    intro: "Anotasi Gambar memungkinkan Anda menandai tangkapan layar atau foto untuk menjelaskan sesuatu: menunjuk dengan panah, membingkai area dengan persegi panjang atau elips, menggambar bebas, menyorot teks, serta menambahkan label dan langkah bernomor untuk petunjuk. Pilih warna dan ketebalan, pindahkan atau hapus tanda mana pun, dan urungkan atau ulangi. Ukuran tanda menyesuaikan gambar, dan hasil unduhannya beresolusi penuh sebagai PNG atau JPG.",
+    seoTitle: "Anotasi Gambar – Tambah Panah dan Teks ke Foto, Gratis",
+    seoDescription: "Beri anotasi gambar online: panah, kotak, lingkaran, teks, stabilo, dan langkah bernomor di tangkapan layar atau foto. PNG atau JPG ukuran penuh. Gratis.",
+    keywords: [
+      "anotasi gambar",
+      "coret screenshot online",
+      "tambah panah di gambar",
+      "tambah teks di foto",
+      "tandai gambar online"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Letakkan atau pilih tangkapan layar atau foto."
+      },
+      {
+        title: "Beri tanda",
+        description: "Pilih alat dan warna, lalu gambar di atas gambar."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan gambar beranotasi sebagai PNG atau JPG."
+      }
+    ],
+    features: [
+      {
+        title: "Semua tanda yang umum",
+        description: "Panah, kotak, elips, garis, pena, stabilo, teks, dan langkah bernomor."
+      },
+      {
+        title: "Mudah diperbaiki",
+        description: "Pilih, pindahkan, hapus, urungkan, dan ulangi."
+      },
+      {
+        title: "Resolusi penuh",
+        description: "Tanda digambar pada gambar berukuran penuh."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara menambahkan teks?",
+        answer: "Pilih Teks, ketik di kotak, lalu klik tempat teks diletakkan."
+      },
+      {
+        question: "Bagaimana cara memindahkan atau menghapus tanda?",
+        answer: "Pilih alat Pilih dan pindahkan, klik tandanya, lalu seret atau tekan Delete."
+      },
+      {
+        question: "Bisakah saya menyembunyikan informasi pribadi?",
+        answer: "Gunakan Sensor Gambar dengan Blur dan Pikselasi untuk memburamkan atau memikselasi bagian gambar."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Gambar diproses di perangkat Anda dan tidak pernah keluar dari sana."
+      }
+    ]
+  },
 };

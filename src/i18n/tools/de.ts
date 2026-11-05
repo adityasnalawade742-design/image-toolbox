@@ -9802,4 +9802,492 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    name: "Bilder vergleichen",
+    shortName: "Bilder vergleichen",
+    tagline: "Vergleiche zwei Bilder mit einem Vorher-nachher-Schieberegler, nebeneinander oder mit einer Karte, die jeden Unterschied markiert. Kostenlos, auf deinem Gerät.",
+    intro: "Bilder vergleichen zeigt zwei Versionen eines Bildes gemeinsam, damit du siehst, was sich geändert hat: Zieh einen Schieberegler darüber, sieh sie dir nebeneinander an oder wechsle zu einer Unterschiedskarte, die jedes geänderte Pixel in kräftigem Pink markiert. Das Tool misst außerdem, wie viel sich geändert hat, den größten Unterschied und den PSNR, einen gängigen Qualitätswert. Nutze es, um eine Bearbeitung zu prüfen, zwei Exporte oder Komprimierungseinstellungen zu vergleichen oder zu finden, was zwei Screenshots unterscheidet.",
+    seoTitle: "Bilder vergleichen – Vorher-nachher-Slider, kostenlos",
+    seoDescription: "Vergleiche zwei Bilder online mit Vorher-nachher-Slider, nebeneinander oder als Unterschiedskarte, mit PSNR und geänderten Pixeln. Kostenlos, ohne Upload.",
+    keywords: [
+      "bilder vergleichen",
+      "zwei bilder vergleichen",
+      "vorher nachher bild",
+      "unterschiede zwischen zwei bildern finden",
+      "bildvergleich online"
+    ],
+    howToSteps: [
+      {
+        title: "Beide Bilder hinzufügen",
+        description: "Zieh das erste und das zweite Bild hierher oder wähle sie aus."
+      },
+      {
+        title: "Ansicht wählen",
+        description: "Schieberegler, nebeneinander oder die Unterschiedskarte."
+      },
+      {
+        title: "Ergebnis ablesen",
+        description: "Sieh, wie viel sich geändert hat, und lade die Unterschiedskarte herunter."
+      }
+    ],
+    features: [
+      {
+        title: "Drei Ansichten",
+        description: "Ein Vorher-nachher-Schieberegler, nebeneinander und eine Unterschiedskarte."
+      },
+      {
+        title: "Gemessen",
+        description: "Geänderte Pixel, größter Unterschied und PSNR."
+      },
+      {
+        title: "Einstellbar",
+        description: "Ignoriere winzige Unterschiede wie Komprimierungsrauschen."
+      }
+    ],
+    faqs: [
+      {
+        question: "Was bedeutet PSNR?",
+        answer: "Peak Signal-to-Noise Ratio (Spitzen-Signal-Rausch-Verhältnis): Je höher, desto ähnlicher. Ab etwa 40 dB sind Unterschiede kaum noch zu erkennen; identische Bilder haben keinen PSNR."
+      },
+      {
+        question: "Kann ich Bilder unterschiedlicher Größe vergleichen?",
+        answer: "Ja. Das zweite wird auf die Größe des ersten skaliert, was selbst als kleiner Unterschied zählt."
+      },
+      {
+        question: "Warum werden Pixel markiert, die gleich aussehen?",
+        answer: "Verlustbehaftete Formate wie JPG verändern Pixel leicht. Erhöhe „Unterschiede ignorieren bis“, um sie auszublenden."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    name: "Schlagschatten zum Bild hinzufügen",
+    shortName: "Schlagschatten",
+    tagline: "Füge einem Bild, Logo oder transparenten PNG einen weichen Schlagschatten hinzu, mit einstellbarer Richtung, Weichheit und abgerundeten Ecken. Kostenlos.",
+    intro: "Schlagschatten zum Bild hinzufügen legt einen weichen Schatten hinter ein Bild, damit es sich von der Seite abhebt. Bei einem transparenten PNG wie einem Logo oder freigestellten Produkt folgt der Schatten seiner Form; bei einem Foto folgt er dem Rechteck, dessen Ecken du abrunden kannst. Stell Abstand, Richtung, Weichheit, Stärke und Farbe ein und lass den Hintergrund transparent oder füll ihn mit einer Farbe. Die Arbeitsfläche wächst mit, damit der Schatten nie abgeschnitten wird, und der Download hat volle Größe.",
+    seoTitle: "Schlagschatten für Bild oder PNG – Kostenlos online",
+    seoDescription: "Füge einem Foto, Logo oder transparenten PNG einen Schlagschatten hinzu: Abstand, Winkel, Unschärfe, Farbe und runde Ecken. PNG oder JPG. Kostenlos.",
+    keywords: [
+      "schlagschatten bild",
+      "schatten zu bild hinzufügen",
+      "schlagschatten png",
+      "logo schatten hinzufügen",
+      "foto schatten effekt online"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein Foto oder transparentes PNG hierher oder wähle es aus."
+      },
+      {
+        title: "Schatten gestalten",
+        description: "Stell Abstand, Richtung, Weichheit, Stärke und Farbe ein."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere es als transparentes PNG oder als JPG auf einer Farbe."
+      }
+    ],
+    features: [
+      {
+        title: "Folgt der Form",
+        description: "Transparente PNGs werfen einen Schatten in ihrem eigenen Umriss."
+      },
+      {
+        title: "Nie abgeschnitten",
+        description: "Die Arbeitsfläche wächst mit dem Schatten."
+      },
+      {
+        title: "Abgerundete Ecken",
+        description: "Mach aus einem Foto eine Karte mit weichen Ecken."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum ist der Schatten um mein Logo eckig?",
+        answer: "Das Logo hat einen festen Hintergrund. Mach es zuerst mit „Transparentes PNG erstellen“ oder „Hintergrund entfernen“ transparent."
+      },
+      {
+        question: "Warum ist das Bild größer als das Original?",
+        answer: "Der Schatten braucht Platz um das Bild herum; das Bild selbst behält seine Größe."
+      },
+      {
+        question: "Welches Format sollte ich herunterladen?",
+        answer: "Ein transparentes PNG für Websites oder Dokumente; ein JPG auf einer Farbe, wenn du eine kleine Datei brauchst."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "image-histogram": {
+    name: "Bild-Histogramm",
+    shortName: "Histogramm",
+    tagline: "Sieh dir das RGB- und Helligkeitshistogramm eines Bildes an und ob Tiefen oder Lichter abgeschnitten sind. Kostenlos, auf deinem Gerät.",
+    intro: "Bild-Histogramm zeigt, wie sich die Tonwerte eines Bildes von Schwarz bis Weiß verteilen, für die Helligkeit und für den Rot-, Grün- und Blaukanal. Auf einen Blick siehst du, ob ein Foto unter- oder überbelichtet ist, und das Tool zeigt, wie viel davon reines Schwarz oder reines Weiß ist, wo Details verloren gehen. Eine Tabelle zeigt Mittelwert, Median, Streuung und Bereich jedes Kanals, und du kannst das Diagramm oder die Werte als CSV herunterladen.",
+    seoTitle: "Bild-Histogramm – RGB und Belichtung prüfen, kostenlos",
+    seoDescription: "Zeig das RGB- und Helligkeitshistogramm eines Bildes online an, mit Clipping, Mittelwert und Streuung je Kanal. Als PNG oder CSV laden. Kostenlos.",
+    keywords: [
+      "histogramm bild",
+      "rgb histogramm online",
+      "foto histogramm",
+      "belichtung prüfen foto",
+      "farbverteilung bild"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein Foto oder Bild hierher oder wähle es aus."
+      },
+      {
+        title: "Diagramm ablesen",
+        description: "Wechsle zwischen RGB, Helligkeit und den einzelnen Farben."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das Diagramm als PNG oder die Zahlen als CSV."
+      }
+    ],
+    features: [
+      {
+        title: "Belichtung auf einen Blick",
+        description: "Tonwerte von den Tiefen links bis zu den Lichtern rechts."
+      },
+      {
+        title: "Clipping-Prüfung",
+        description: "Wie viel reines Schwarz oder reines Weiß ist."
+      },
+      {
+        title: "Je Kanal",
+        description: "Mittelwert, Median, Streuung und Bereich für jede Farbe."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie lese ich ein Histogramm?",
+        answer: "Links ist dunkel, rechts hell, und die Höhe zeigt, wie viele Pixel diesen Tonwert haben. Ein Berg an einem der Ränder bedeutet verlorene Details."
+      },
+      {
+        question: "Was ist Clipping?",
+        answer: "Pixel in reinem Schwarz oder reinem Weiß. Ein wenig davon ist normal; große Flächen bedeuten, dass Tiefen oder Lichter keine Details mehr haben."
+      },
+      {
+        question: "Werden transparente Pixel mitgezählt?",
+        answer: "Nein. Vollständig transparente Pixel werden ausgelassen."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "exif-viewer": {
+    name: "EXIF-Viewer",
+    shortName: "EXIF-Viewer",
+    tagline: "Sieh dir die versteckten Metadaten eines Fotos an: Kamera, Objektiv, Einstellungen, Aufnahmedatum und GPS-Standort. Kostenlos, die Datei bleibt auf deinem Gerät.",
+    intro: "EXIF-Viewer zeigt die Informationen, die Kameras und Handys in einem Foto speichern. Eine Übersicht nennt Kamera und Objektiv, die Belichtungseinstellungen (Blende, Belichtungszeit, ISO und Brennweite), wann und mit welcher Software das Foto entstanden ist, und den GPS-Standort, falls einer gespeichert ist, mit einem Link, um ihn auf einer Karte zu sehen. Alle Felder sind nach Abschnitten aufgelistet: EXIF, GPS, IPTC-Bildunterschriften und -Rechte, XMP und das Farbprofil. Lade alles als JSON herunter oder entferne es mit „Bild-Metadaten entfernen“.",
+    seoTitle: "EXIF-Viewer – Foto-Metadaten und GPS anzeigen",
+    seoDescription: "Zeig die EXIF-Metadaten eines Fotos online an: Kamera, Objektiv, Einstellungen, Datum und GPS-Standort, dazu IPTC und XMP. Kostenlos, ohne Upload.",
+    keywords: [
+      "exif viewer",
+      "exif daten auslesen",
+      "foto metadaten anzeigen",
+      "exif daten online anzeigen",
+      "foto standort herausfinden"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh ein JPG, HEIC, TIFF, PNG, WebP oder AVIF hierher oder wähle es aus."
+      },
+      {
+        title: "Details ansehen",
+        description: "Sieh dir die Übersicht und jedes Metadatenfeld an."
+      },
+      {
+        title: "Speichern oder entfernen",
+        description: "Lade die Metadaten als JSON herunter oder entferne sie vor dem Teilen."
+      }
+    ],
+    features: [
+      {
+        title: "Kamera und Einstellungen",
+        description: "Kamera, Objektiv, Blende, Belichtungszeit, ISO und Brennweite."
+      },
+      {
+        title: "Standort-Check",
+        description: "Zeigt die GPS-Position, die ein Foto verrät."
+      },
+      {
+        title: "Jedes Feld",
+        description: "EXIF, GPS, IPTC, XMP und das Farbprofil."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum gibt es keine Metadaten?",
+        answer: "Viele Apps und Websites entfernen sie beim Speichern oder Teilen, und Screenshots haben meist keine."
+      },
+      {
+        question: "Können andere sehen, wo mein Foto aufgenommen wurde?",
+        answer: "Wenn es GPS-Daten enthält, ja, anhand der Originaldatei. Entferne sie vor dem Teilen mit „Bild-Metadaten entfernen“."
+      },
+      {
+        question: "Wird mein Standort irgendwohin gesendet?",
+        answer: "Nein. Der Kartenlink öffnet OpenStreetMap nur, wenn du ihn anklickst."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    name: "Transparentes PNG erstellen",
+    shortName: "Transparentes PNG",
+    tagline: "Mach eine Hintergrundfarbe transparent, etwa das Weiß hinter einem Logo, und speichere das Ergebnis als PNG. Kostenlos, auf deinem Gerät.",
+    intro: "Transparentes PNG erstellen entfernt einen einfarbigen Hintergrund und speichert das Bild als PNG mit Transparenz, bereit für jede Website, Folie oder jedes Design. Die Hintergrundfarbe wird automatisch erkannt, oder du nimmst eine beliebige Farbe aus dem Bild auf. Die Toleranz legt fest, wie ähnlich eine Farbe sein muss, die Kantenweichheit glättet den Umriss, und „Nur den Hintergrund“ lässt dieselbe Farbe innerhalb deines Logos unberührt. Randpixel verlieren den Farbstich des alten Hintergrunds, sodass kein weißer Saum zurückbleibt.",
+    seoTitle: "Transparentes PNG erstellen – Hintergrundfarbe entfernen",
+    seoDescription: "Mach eine Hintergrundfarbe online transparent: Entferne das Weiß hinter einem Logo, mit glatten Kanten und ohne Saum. Als PNG speichern. Kostenlos.",
+    keywords: [
+      "png transparent machen",
+      "hintergrund transparent machen",
+      "weißen hintergrund entfernen",
+      "logo transparent machen",
+      "transparentes png erstellen"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein Logo, Icon oder eine Grafik auf einfarbigem Hintergrund hierher oder wähle es aus."
+      },
+      {
+        title: "Farbe wählen",
+        description: "Behalte den erkannten Hintergrund oder nimm eine Farbe auf, und stell die Toleranz ein."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das transparente PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Erkennt den Hintergrund",
+        description: "Die Farbe am Rand wird automatisch gewählt."
+      },
+      {
+        title: "Nur den Hintergrund",
+        description: "Dieselbe Farbe im Motiv bleibt erhalten."
+      },
+      {
+        title: "Saubere Kanten",
+        description: "Weiche Kanten ohne Restsaum."
+      }
+    ],
+    faqs: [
+      {
+        question: "Welche Bilder eignen sich am besten?",
+        answer: "Logos, Icons, Unterschriften und Grafiken auf einer einzigen flachen Farbe. Für Fotos von Personen oder Gegenständen nutze „Hintergrund entfernen“."
+      },
+      {
+        question: "Warum fehlen Teile meines Logos?",
+        answer: "Sie haben die Hintergrundfarbe. Aktiviere „Nur den Hintergrund“ oder senke die Toleranz."
+      },
+      {
+        question: "Warum als PNG speichern?",
+        answer: "PNG behält Transparenz; JPG kann das nicht."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    name: "Farbe im Bild ersetzen",
+    shortName: "Farbe ersetzen",
+    tagline: "Ersetze eine Farbe in einem Bild durch eine andere und behalte dabei Schattierung und Struktur. Kostenlos, auf deinem Gerät.",
+    intro: "Farbe im Bild ersetzen ändert jeden Teil eines Bildes mit der gewählten Farbe in eine neue: Färbe ein Produkt, ein Logo, einen Button in einem Screenshot oder eine Wand auf einem Foto um. Klicke auf die Farbe im Bild, wähle die neue und stell ein, wie ähnlich Farben sein müssen. „Schattierung und Struktur erhalten“ verschiebt helle und dunkle Töne gemeinsam, damit das Ergebnis natürlich aussieht; schalte es für flache, exakte Farben in Grafiken aus. Der Download behält das Originalformat und die volle Größe.",
+    seoTitle: "Farbe im Bild ersetzen – Online umfärben, kostenlos",
+    seoDescription: "Ersetze eine Farbe in einem Bild online: Farbe anklicken, neue wählen, Schattierung behalten. Für Fotos, Logos und Grafiken. Kostenlos, ohne Upload.",
+    keywords: [
+      "farbe im bild ändern",
+      "farbe ersetzen bild",
+      "bild umfärben online",
+      "logo farbe ändern",
+      "farbe in foto ändern"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein Foto, Logo oder eine Grafik hierher oder wähle es aus."
+      },
+      {
+        title: "Farben wählen",
+        description: "Klicke auf die zu ersetzende Farbe und wähle die neue."
+      },
+      {
+        title: "Herunterladen",
+        description: "Passe die Toleranz an und speichere das Bild."
+      }
+    ],
+    features: [
+      {
+        title: "Bleibt natürlich",
+        description: "Schattierung und Struktur wandern mit der Farbe."
+      },
+      {
+        title: "Exakt für Grafiken",
+        description: "Flache Farben für Logos und Icons."
+      },
+      {
+        title: "Volle Größe",
+        description: "Originalformat und -auflösung."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum hat sich nicht die ganze Farbe geändert?",
+        answer: "Farbtöne, die zu weit von der angeklickten Farbe entfernt sind, bleiben unverändert. Erhöhe die Toleranz."
+      },
+      {
+        question: "Warum haben sich auch andere Stellen geändert?",
+        answer: "Sie liegen nah an der gewählten Farbe. Senke die Toleranz oder die Weichheit."
+      },
+      {
+        question: "Kann ich eine Farbe stattdessen transparent machen?",
+        answer: "Ja, mit „Transparentes PNG erstellen“."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    name: "App-Icon-Generator",
+    shortName: "App-Icons",
+    tagline: "Erstelle alle App-Icon-Größen für iOS, Android und Web-Apps aus einem Bild, fertig für dein Projekt. Kostenlos, als ZIP.",
+    intro: "App-Icon-Generator macht aus einem Bild alle Icon-Dateien, die eine App braucht. Für iOS erstellt er das AppIcon.appiconset für Xcode mit allen Größen für iPhone, iPad und App Store samt Contents.json; für Android die Launcher-Icons für jede Bildschirmdichte, runde Icons, adaptive Icon-Ebenen mit ihrem XML und das Icon für den Play Store; für Web-Apps die Icons in 192 und 512 px, ein maskable Icon und das Manifest. Das Motiv wird mit hochwertigem Resampling skaliert und innerhalb der sicheren Zone jeder Plattform gehalten.",
+    seoTitle: "App-Icon-Generator – Icons für iOS, Android und PWA",
+    seoDescription: "Erstelle App-Icons für iOS (AppIcon.appiconset), Android (mipmap, adaptiv) und PWA (maskable) aus einem Bild. Kostenloses ZIP, ohne Upload.",
+    keywords: [
+      "app icon generator",
+      "ios app icon erstellen",
+      "android icon generator",
+      "app icon größen",
+      "pwa icons erstellen"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein quadratisches Bild ab 1024 × 1024 px hierher oder wähle es aus."
+      },
+      {
+        title: "Plattformen wählen",
+        description: "iOS, Android und Web, Hintergrund und Abstand."
+      },
+      {
+        title: "ZIP herunterladen",
+        description: "Kopiere jeden Ordner in dein App-Projekt."
+      }
+    ],
+    features: [
+      {
+        title: "Jede Größe",
+        description: "iPhone, iPad, App Store, Android-Dichten und PWA."
+      },
+      {
+        title: "Sofort einsetzbar",
+        description: "Mit Contents.json, adaptivem XML und Web-Manifest."
+      },
+      {
+        title: "Sichere Zonen",
+        description: "Das Motiv bleibt frei von abgerundeten und runden Masken."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie groß sollte mein Bild sein?",
+        answer: "Mindestens 1024 × 1024 px und quadratisch, für ein scharfes Icon im App Store."
+      },
+      {
+        question: "Warum haben iOS-Icons einen Hintergrund?",
+        answer: "Apple akzeptiert keine transparenten App-Icons, deshalb wird Transparenz mit der Hintergrundfarbe gefüllt."
+      },
+      {
+        question: "Was sind adaptive und maskable Icons?",
+        answer: "Icons, deren Form das Handy oder der Browser festlegt (Kreis, Squircle). Das Motiv bleibt in der Mitte, damit nichts abgeschnitten wird."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "image-annotator": {
+    name: "Bild beschriften",
+    shortName: "Bild beschriften",
+    tagline: "Füge einem Screenshot oder Foto Pfeile, Rahmen, Kreise, Text, Markierungen und nummerierte Schritte hinzu. Kostenlos, auf deinem Gerät.",
+    intro: "Mit Bild beschriften markierst du einen Screenshot oder ein Foto, um etwas zu erklären: Zeig mit Pfeilen auf Stellen, rahme Bereiche mit Rechtecken oder Ellipsen ein, zeichne freihand, markiere Text und füge Beschriftungen und nummerierte Schritte für Anleitungen hinzu. Wähle Farbe und Strichstärke, verschiebe oder lösche jede Markierung, und mach Schritte rückgängig oder wiederhole sie. Die Markierungen passen sich der Bildgröße an, und der Download hat volle Auflösung als PNG oder JPG.",
+    seoTitle: "Bild beschriften – Pfeile und Text einfügen, kostenlos",
+    seoDescription: "Bilder online beschriften: Pfeile, Rahmen, Kreise, Text, Markierungen und nummerierte Schritte auf Screenshots oder Fotos. PNG oder JPG in voller Größe.",
+    keywords: [
+      "bild beschriften",
+      "screenshot beschriften",
+      "pfeil in bild einfügen",
+      "bild mit pfeilen markieren",
+      "text auf foto schreiben"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh einen Screenshot oder ein Foto hierher oder wähle es aus."
+      },
+      {
+        title: "Markieren",
+        description: "Wähle ein Werkzeug und eine Farbe und zeichne auf das Bild."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das beschriftete Bild als PNG oder JPG."
+      }
+    ],
+    features: [
+      {
+        title: "Alle üblichen Markierungen",
+        description: "Pfeile, Rahmen, Ellipsen, Linien, Stift, Textmarker, Text und nummerierte Schritte."
+      },
+      {
+        title: "Leicht zu korrigieren",
+        description: "Auswählen, verschieben, löschen, rückgängig machen und wiederholen."
+      },
+      {
+        title: "Volle Auflösung",
+        description: "Markierungen werden auf das Bild in voller Größe gezeichnet."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie füge ich Text hinzu?",
+        answer: "Wähle „Text“, tippe in das Feld und klicke dann an die gewünschte Stelle."
+      },
+      {
+        question: "Wie verschiebe oder lösche ich eine Markierung?",
+        answer: "Wähle „Auswählen und verschieben“, klicke auf die Markierung und zieh sie oder drück „Löschen“."
+      },
+      {
+        question: "Kann ich private Informationen verbergen?",
+        answer: "Nutze „Bild verpixeln & zensieren“, um Teile eines Bildes weichzuzeichnen oder zu verpixeln."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
 };

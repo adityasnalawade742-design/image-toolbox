@@ -9778,4 +9778,492 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "compare-images": {
+    name: "Resim Karşılaştırma",
+    shortName: "Resim Karşılaştır",
+    tagline: "İki resmi önce-sonra kaydırıcısıyla, yan yana veya her farkı işaretleyen bir haritayla karşılaştırın. Ücretsiz, cihazınızda.",
+    intro: "Resim Karşılaştırma, bir resmin iki sürümünü birlikte göstererek neyin değiştiğini görmenizi sağlar: üzerlerinde bir kaydırıcıyı sürükleyin, yan yana görüntüleyin veya değişen her pikseli parlak pembeyle işaretleyen fark haritasına geçin. Ayrıca ne kadarının değiştiğini, en büyük farkı ve standart bir kalite ölçüsü olan PSNR değerini ölçer. Bir düzenlemeyi kontrol etmek, iki dışa aktarımı veya sıkıştırma ayarını karşılaştırmak ya da iki ekran görüntüsü arasındaki farkı bulmak için kullanın.",
+    seoTitle: "Resim Karşılaştırma – Önce/Sonra Kaydırıcı ve Fark Bulma",
+    seoDescription: "İki resmi online karşılaştırın: önce/sonra kaydırıcı, yan yana görünüm veya fark haritası, ayrıca PSNR ve değişen pikseller. Ücretsiz, yükleme yok.",
+    keywords: [
+      "resim karşılaştırma",
+      "iki resmi karşılaştır",
+      "önce sonra karşılaştırma",
+      "iki resim arasındaki farkı bulma",
+      "fotoğraf karşılaştırma"
+    ],
+    howToSteps: [
+      {
+        title: "İki resmi ekleyin",
+        description: "Birinci ve ikinci resmi bırakın veya seçin."
+      },
+      {
+        title: "Bir görünüm seçin",
+        description: "Kaydırıcı, yan yana veya fark haritası."
+      },
+      {
+        title: "Sonucu okuyun",
+        description: "Ne kadarının değiştiğini görün ve fark haritasını indirin."
+      }
+    ],
+    features: [
+      {
+        title: "Üç görünüm",
+        description: "Önce-sonra kaydırıcısı, yan yana görünüm ve fark haritası."
+      },
+      {
+        title: "Ölçülür",
+        description: "Değişen pikseller, en büyük fark ve PSNR."
+      },
+      {
+        title: "Ayarlanabilir",
+        description: "Sıkıştırma gürültüsü gibi küçük farkları yok sayın."
+      }
+    ],
+    faqs: [
+      {
+        question: "PSNR ne demek?",
+        answer: "Tepe sinyal-gürültü oranı: değer yükseldikçe resimler birbirine daha çok benzer. Yaklaşık 40 dB üzerinde farkları görmek çok zordur; aynı resimlerin PSNR değeri olmaz."
+      },
+      {
+        question: "Farklı boyutlardaki resimleri karşılaştırabilir miyim?",
+        answer: "Evet. İkinci resim birincinin boyutuna ölçeklenir; bu ölçekleme de küçük bir fark olarak sayılır."
+      },
+      {
+        question: "Aynı görünen pikseller neden işaretleniyor?",
+        answer: "JPG gibi kayıplı formatlar pikselleri biraz değiştirir. Bunları gizlemek için “Şu değere kadar farkları yok say” ayarını yükseltin."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "add-drop-shadow": {
+    name: "Resme Gölge Ekleme",
+    shortName: "Gölge Ekle",
+    tagline: "Bir resme, logoya veya saydam PNG dosyasına yumuşak bir gölge ekleyin; yönü, yumuşaklığı ve köşeleri ayarlayın. Ücretsiz.",
+    intro: "Resme Gölge Ekleme, resmin arkasına yumuşak bir gölge koyarak sayfadan yükseliyormuş gibi görünmesini sağlar. Logo veya dekupe ürün gibi saydam bir PNG dosyasında gölge şeklin kendisini izler; bir fotoğrafta ise köşeleri yuvarlatabileceğiniz dikdörtgeni izler. Uzaklığı, yönü, yumuşaklığı, yoğunluğu ve rengi ayarlayın; arka planı saydam bırakın veya bir renkle doldurun. Gölge hiç kesilmesin diye tuval büyür ve indirilen dosya tam boyuttadır.",
+    seoTitle: "Resme Gölge Ekleme – Fotoğraf ve PNG Gölgesi, Ücretsiz",
+    seoDescription: "Fotoğrafa, logoya veya saydam PNG dosyasına gölge ekleyin: uzaklık, açı, bulanıklık, renk ve yuvarlak köşeler. Saydam PNG veya JPG. Ücretsiz.",
+    keywords: [
+      "resme gölge ekleme",
+      "fotoğrafa gölge verme",
+      "png gölge ekleme",
+      "logoya gölge ekleme",
+      "drop shadow"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir fotoğraf veya saydam PNG bırakın ya da seçin."
+      },
+      {
+        title: "Gölgeyi şekillendirin",
+        description: "Uzaklığı, yönü, yumuşaklığı, yoğunluğu ve rengi ayarlayın."
+      },
+      {
+        title: "İndirin",
+        description: "Saydam PNG olarak veya bir renk üzerinde JPG olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Şekli izler",
+        description: "Saydam PNG dosyaları kendi dış hatlarında gölge verir."
+      },
+      {
+        title: "Hiç kesilmez",
+        description: "Tuval gölgeye yer açacak kadar büyür."
+      },
+      {
+        title: "Yuvarlak köşeler",
+        description: "Bir fotoğrafı yumuşak köşeli bir karta dönüştürün."
+      }
+    ],
+    faqs: [
+      {
+        question: "Logomun etrafındaki gölge neden kare?",
+        answer: "Logonun düz renkli bir arka planı var. Önce Saydam PNG Oluşturucu veya Arka Plan Kaldırma aracıyla saydam yapın."
+      },
+      {
+        question: "Resim neden orijinalinden büyük?",
+        answer: "Gölgenin resmin çevresinde yere ihtiyacı var; resmin kendisi aynı boyutta kalır."
+      },
+      {
+        question: "Hangi formatta indirmeliyim?",
+        answer: "Bir web sitesine veya belgeye yerleştirmek için saydam PNG; küçük bir dosya gerektiğinde renk üzerinde JPG."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "image-histogram": {
+    name: "Resim Histogramı",
+    shortName: "Histogram",
+    tagline: "Bir resmin RGB ve parlaklık histogramını görün, gölgelerin veya parlak alanların kırpılıp kırpılmadığını öğrenin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Resim Histogramı, bir resmin tonlarının siyahtan beyaza nasıl dağıldığını parlaklık ve kırmızı, yeşil, mavi kanalları için gösterir. Bir bakışta fotoğrafın az mı yoksa fazla mı pozlandığını anlarsınız; araç ayrıca resmin ne kadarının ayrıntının kaybolduğu saf siyah veya saf beyaz olduğunu söyler. Bir tablo her kanalın ortalamasını, medyanını, dağılımını ve aralığını verir; grafiği veya sayıları CSV olarak indirebilirsiniz.",
+    seoTitle: "Resim Histogramı – RGB ve Pozlama Kontrolü, Ücretsiz",
+    seoDescription: "Bir resmin RGB ve parlaklık histogramını online görün; her kanal için kırpılma, ortalama ve dağılım. PNG veya CSV olarak indirin. Ücretsiz.",
+    keywords: [
+      "resim histogramı",
+      "rgb histogram",
+      "fotoğraf histogramı",
+      "fotoğraf pozlama kontrolü",
+      "resim renk dağılımı"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir fotoğraf veya resim bırakın ya da seçin."
+      },
+      {
+        title: "Grafiği okuyun",
+        description: "RGB, parlaklık ve her renk arasında geçiş yapın."
+      },
+      {
+        title: "İndirin",
+        description: "Grafiği PNG, sayıları CSV olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Bir bakışta pozlama",
+        description: "Soldaki gölgelerden sağdaki parlak alanlara kadar tonlar."
+      },
+      {
+        title: "Kırpılma kontrolü",
+        description: "Ne kadarının saf siyah veya saf beyaz olduğu."
+      },
+      {
+        title: "Kanal başına",
+        description: "Her renk için ortalama, medyan, dağılım ve aralık."
+      }
+    ],
+    faqs: [
+      {
+        question: "Histogram nasıl okunur?",
+        answer: "Sol koyu, sağ parlaktır; yükseklik o tona sahip piksel sayısını gösterir. Uçlardan birinde yığılma, ayrıntı kaybı demektir."
+      },
+      {
+        question: "Kırpılma nedir?",
+        answer: "Saf siyah veya saf beyaz olan piksellerdir. Az miktarı normaldir; geniş alanlar gölgelerde veya parlak alanlarda hiç ayrıntı kalmadığı anlamına gelir."
+      },
+      {
+        question: "Saydam pikseller sayılıyor mu?",
+        answer: "Hayır. Tamamen saydam pikseller hesaba katılmaz."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "exif-viewer": {
+    name: "EXIF Görüntüleyici",
+    shortName: "EXIF Görüntüleyici",
+    tagline: "Bir fotoğraftaki gizli meta veriyi görün: fotoğraf makinesi, lens, ayarlar, çekim tarihi ve GPS konumu. Ücretsiz, dosya cihazınızda kalır.",
+    intro: "EXIF Görüntüleyici, fotoğraf makinelerinin ve telefonların bir fotoğrafın içine kaydettiği bilgileri gösterir. Özette fotoğraf makinesi ve lens, pozlama ayarları (diyafram, enstantane hızı, ISO ve odak uzaklığı), fotoğrafın ne zaman ve hangi yazılımla çekildiği ve kaydedilmişse haritada görmek için bağlantısıyla birlikte GPS konumu yer alır. Tüm alanlar bölüm bölüm listelenir: EXIF, GPS, IPTC açıklamaları ve hakları, XMP ve renk profili. Hepsini JSON olarak indirin veya Resim Meta Verisi Silme aracıyla silin.",
+    seoTitle: "EXIF Görüntüleyici – Fotoğraf Meta Verisi ve GPS Konumu",
+    seoDescription: "Bir fotoğrafın EXIF meta verisini online görün: fotoğraf makinesi, lens, ayarlar, tarih ve GPS konumu, ayrıca IPTC ve XMP. Ücretsiz, fotoğraf yüklenmez.",
+    keywords: [
+      "exif görüntüleyici",
+      "fotoğraf exif bilgisi",
+      "fotoğraf meta verisi görüntüleme",
+      "fotoğrafın çekildiği yeri bulma",
+      "exif okuma"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Bir JPG, HEIC, TIFF, PNG, WebP veya AVIF dosyası bırakın ya da seçin."
+      },
+      {
+        title: "Ayrıntıları okuyun",
+        description: "Özeti ve tüm meta veri alanlarını görün."
+      },
+      {
+        title: "Kaydedin veya silin",
+        description: "Meta veriyi JSON olarak indirin veya paylaşmadan önce silin."
+      }
+    ],
+    features: [
+      {
+        title: "Makine ve ayarlar",
+        description: "Fotoğraf makinesi, lens, diyafram, enstantane hızı, ISO ve odak uzaklığı."
+      },
+      {
+        title: "Konum kontrolü",
+        description: "Fotoğrafın ele verdiği GPS konumunu gösterir."
+      },
+      {
+        title: "Tüm alanlar",
+        description: "EXIF, GPS, IPTC, XMP ve renk profili."
+      }
+    ],
+    faqs: [
+      {
+        question: "Neden hiç meta veri yok?",
+        answer: "Birçok uygulama ve web sitesi kaydederken veya paylaşırken meta veriyi siler; ekran görüntülerinde de genellikle hiç olmaz."
+      },
+      {
+        question: "Başkaları fotoğrafımın nerede çekildiğini görebilir mi?",
+        answer: "Fotoğrafta GPS verisi varsa evet, orijinal dosyadan görebilir. Paylaşmadan önce Resim Meta Verisi Silme aracıyla silin."
+      },
+      {
+        question: "Konumum bir yere gönderiliyor mu?",
+        answer: "Hayır. Harita bağlantısı OpenStreetMap sitesini yalnızca tıklarsanız açar."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "transparent-png-maker": {
+    name: "Saydam PNG Oluşturucu",
+    shortName: "Saydam PNG",
+    tagline: "Logonun arkasındaki beyaz gibi bir arka plan rengini saydam yapın ve PNG olarak kaydedin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Saydam PNG Oluşturucu, düz bir arka plan rengini kaldırır ve resmi saydamlık içeren bir PNG olarak kaydeder; her web sitesine, slayda veya tasarıma yerleştirmeye hazırdır. Arka plan rengi sizin için algılanır ya da resimden istediğiniz rengi seçebilirsiniz. Tolerans, bir rengin ne kadar yakın olması gerektiğini belirler; kenar yumuşaklığı dış hattı yumuşatır; “Yalnızca arka plan” ise logonuzun içindeki aynı rengi olduğu gibi bırakır. Kenar pikselleri eski arka planın renk tonunu kaybeder, böylece beyaz bir saçak kalmaz.",
+    seoTitle: "Saydam PNG Oluşturucu – Arka Plan Rengini Kaldır",
+    seoDescription: "Bir arka plan rengini online saydam yapın: logonun arkasındaki beyazı kaldırın, kenarları yumuşatın, saçak kalmasın. PNG olarak kaydedin. Ücretsiz, yükleme yok.",
+    keywords: [
+      "saydam png yapma",
+      "arka planı şeffaf yapma",
+      "beyaz arka planı kaldırma",
+      "logoyu şeffaf yapma",
+      "şeffaf png"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Düz arka plan üzerindeki bir logo, simge veya grafiği bırakın ya da seçin."
+      },
+      {
+        title: "Rengi seçin",
+        description: "Algılanan arka planı koruyun veya bir renk seçin ve toleransı ayarlayın."
+      },
+      {
+        title: "İndirin",
+        description: "Saydam PNG dosyasını kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Arka planı algılar",
+        description: "Kenarlardaki renk sizin için seçilir."
+      },
+      {
+        title: "Yalnızca arka plan",
+        description: "Konunun içindeki aynı renk korunur."
+      },
+      {
+        title: "Temiz kenarlar",
+        description: "Artık saçak bırakmayan yumuşak kenarlar."
+      }
+    ],
+    faqs: [
+      {
+        question: "Hangi resimler en iyi sonucu verir?",
+        answer: "Tek düz renk üzerindeki logolar, simgeler, imzalar ve grafikler. İnsan veya nesne fotoğrafları için Arka Plan Kaldırma aracını kullanın."
+      },
+      {
+        question: "Logomun bazı kısımları neden kayboldu?",
+        answer: "O kısımlar arka plan rengiyle aynı. “Yalnızca arka plan” seçeneğini işaretleyin veya toleransı düşürün."
+      },
+      {
+        question: "Neden PNG olarak kaydediliyor?",
+        answer: "PNG saydamlığı korur; JPG koruyamaz."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "image-color-replacer": {
+    name: "Resim Rengi Değiştirici",
+    shortName: "Renk Değiştirici",
+    tagline: "Bir resimdeki bir rengi gölgelendirmesini ve dokusunu koruyarak başka bir renkle değiştirin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Resim Rengi Değiştirici, resmin seçilen renge sahip her bölümünü yeni bir renge çevirir: bir ürünün, logonun, ekran görüntüsündeki bir düğmenin veya fotoğraftaki bir duvarın rengini değiştirin. Resimdeki renge tıklayın, yeni rengi seçin ve renklerin ne kadar yakın olması gerektiğini ayarlayın. “Gölgelendirmeyi ve dokuyu koru”, açık ve koyu tonları birlikte kaydırır, böylece sonuç doğal görünmeye devam eder; grafiklerde düz ve tam renkler için kapatın. İndirilen dosya orijinal formatı ve tam boyutu korur.",
+    seoTitle: "Resim Rengi Değiştirici – Fotoğraftaki Rengi Değiştir",
+    seoDescription: "Bir resimdeki rengi online değiştirin: renge tıklayın, yenisini seçin, gölgelendirme korunsun. Fotoğraf, logo ve grafikler için. Ücretsiz, yükleme yok.",
+    keywords: [
+      "resimdeki rengi değiştirme",
+      "fotoğraf rengi değiştirme",
+      "resim renk değiştirici",
+      "logo rengi değiştirme",
+      "online renk değiştirme"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir fotoğraf, logo veya grafik bırakın ya da seçin."
+      },
+      {
+        title: "Renkleri seçin",
+        description: "Değiştirilecek renge tıklayın ve yeni rengi seçin."
+      },
+      {
+        title: "İndirin",
+        description: "Toleransı ayarlayın ve resmi kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Doğal kalır",
+        description: "Gölgelendirme ve doku renkle birlikte kayar."
+      },
+      {
+        title: "Grafikler için tam",
+        description: "Logolar ve simgeler için düz renkler."
+      },
+      {
+        title: "Tam boyut",
+        description: "Orijinal format ve çözünürlük."
+      }
+    ],
+    faqs: [
+      {
+        question: "Rengin tamamı neden değişmedi?",
+        answer: "Tıkladığınız renkten çok uzak tonlara dokunulmaz. Toleransı yükseltin."
+      },
+      {
+        question: "Başka kısımlar neden değişti?",
+        answer: "O kısımlar seçilen renge yakın. Toleransı veya yumuşaklığı düşürün."
+      },
+      {
+        question: "Bunun yerine bir rengi saydam yapabilir miyim?",
+        answer: "Evet, Saydam PNG Oluşturucu ile."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "app-icon-generator": {
+    name: "Uygulama Simgesi Oluşturucu",
+    shortName: "Uygulama Simgeleri",
+    tagline: "Tek bir resimden iOS, Android ve web uygulamaları için tüm uygulama simgesi boyutlarını oluşturun, projenize eklemeye hazır. Ücretsiz, ZIP olarak.",
+    intro: "Uygulama Simgesi Oluşturucu, tek bir resmi bir uygulamanın ihtiyaç duyduğu tüm simge dosyalarına dönüştürür. iOS için tüm iPhone, iPad ve App Store boyutlarını ve Contents.json dosyasını içeren Xcode AppIcon.appiconset klasörünü; Android için her ekran yoğunluğuna uygun başlatıcı simgelerini, yuvarlak simgeleri, XML dosyalarıyla uyarlanabilir simge katmanlarını ve Play Store simgesini; web uygulamaları için 192 ve 512 px simgeleri, maskable simgeyi ve manifest dosyasını oluşturur. Görsel yüksek kaliteli yeniden örnekleme ile ölçeklenir ve her platformun güvenli alanı içinde tutulur.",
+    seoTitle: "Uygulama Simgesi Oluşturucu – iOS, Android ve PWA",
+    seoDescription: "Tek bir resimden iOS (AppIcon.appiconset), Android (mipmap, uyarlanabilir) ve PWA (maskable) uygulama simgeleri oluşturun. Ücretsiz ZIP, yükleme yok.",
+    keywords: [
+      "uygulama simgesi oluşturucu",
+      "app icon generator",
+      "ios uygulama ikonu boyutları",
+      "android ikon oluşturma",
+      "uygulama ikonu yapma"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "1024 × 1024 px veya daha büyük kare bir resim bırakın ya da seçin."
+      },
+      {
+        title: "Platformları seçin",
+        description: "iOS, Android ve web; ayrıca arka plan ve kenar boşluğu."
+      },
+      {
+        title: "ZIP dosyasını indirin",
+        description: "Her klasörü uygulama projenize kopyalayın."
+      }
+    ],
+    features: [
+      {
+        title: "Tüm boyutlar",
+        description: "iPhone, iPad, App Store, Android yoğunlukları ve PWA."
+      },
+      {
+        title: "Kullanıma hazır",
+        description: "Contents.json, uyarlanabilir simge XML dosyası ve web manifest dahil."
+      },
+      {
+        title: "Güvenli alanlar",
+        description: "Görsel, yuvarlatılmış ve dairesel maskelerden uzak tutulur."
+      }
+    ],
+    faqs: [
+      {
+        question: "Resmim hangi boyutta olmalı?",
+        answer: "Keskin bir App Store simgesi için en az 1024 × 1024 px ve kare."
+      },
+      {
+        question: "iOS simgelerinde neden arka plan var?",
+        answer: "Apple saydam uygulama simgelerini kabul etmez, bu yüzden saydam alanlar arka plan rengiyle doldurulur."
+      },
+      {
+        question: "Uyarlanabilir ve maskable simgeler nedir?",
+        answer: "Şekli telefon veya tarayıcı tarafından belirlenen simgelerdir (daire, squircle). Görsel ortada kalır, böylece hiçbir yeri kesilmez."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "image-annotator": {
+    name: "Resim İşaretleme Aracı",
+    shortName: "Resim İşaretle",
+    tagline: "Bir ekran görüntüsüne veya fotoğrafa oklar, kutular, daireler, metin, vurgular ve numaralı adımlar ekleyin. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Resim İşaretleme Aracı, bir şeyi açıklamak için ekran görüntüsünü veya fotoğrafı işaretlemenizi sağlar: oklarla gösterin, alanları dikdörtgen veya elipslerle çerçeveleyin, serbest çizin, metni vurgulayın, talimatlar için etiketler ve numaralı adımlar ekleyin. Rengi ve kalınlığı seçin, herhangi bir işareti taşıyın veya silin, geri alın veya yineleyin. İşaretler resme göre boyutlanır ve indirilen dosya PNG veya JPG olarak tam çözünürlüktedir.",
+    seoTitle: "Resim İşaretleme – Resme Ok ve Metin Ekle, Ücretsiz",
+    seoDescription: "Resimleri online işaretleyin: ekran görüntülerine veya fotoğraflara ok, kutu, daire, metin, vurgu ve numaralı adım. Tam boyutlu PNG veya JPG. Ücretsiz.",
+    keywords: [
+      "resim işaretleme",
+      "ekran görüntüsü işaretleme",
+      "resme ok ekleme",
+      "resme yazı ekleme",
+      "fotoğraf üzerine çizim"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir ekran görüntüsü veya fotoğraf bırakın ya da seçin."
+      },
+      {
+        title: "İşaretleyin",
+        description: "Bir araç ve renk seçin, sonra resmin üzerine çizin."
+      },
+      {
+        title: "İndirin",
+        description: "İşaretlenmiş resmi PNG veya JPG olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Tüm temel işaretler",
+        description: "Oklar, kutular, elipsler, çizgiler, kalem, fosforlu kalem, metin ve numaralı adımlar."
+      },
+      {
+        title: "Kolayca düzeltin",
+        description: "Seçin, taşıyın, silin, geri alın ve yineleyin."
+      },
+      {
+        title: "Tam çözünürlük",
+        description: "İşaretler tam boyutlu resmin üzerine çizilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "Nasıl metin eklerim?",
+        answer: "Metin aracını seçin, kutuya yazın, sonra metnin gideceği yere tıklayın."
+      },
+      {
+        question: "Bir işareti nasıl taşır veya silerim?",
+        answer: "Seç ve taşı aracını seçin, işarete tıklayın, sonra sürükleyin veya Delete tuşuna basın."
+      },
+      {
+        question: "Özel bilgileri gizleyebilir miyim?",
+        answer: "Resmin bölümlerini bulanıklaştırmak veya pikselleştirmek için Bulanıklaştırma ve Pikselleştirme Sansürü aracını kullanın."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
 };
