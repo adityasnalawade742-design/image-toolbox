@@ -7480,7 +7480,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Taranmış bir PDF'i dönüştürebilir mi?",
         answer:
-          "Taranmış bir PDF metin değil, metnin resimlerini içerir. Önce PDF OCR aracından geçirin, ardından aranabilir PDF'i Word'e dönüştürün.",
+          "Taranmış bir PDF metin değil, metnin resimlerini içerir. Önce PDF OCR aracından geçirin, ardından aranabilir PDF'i Word'e dönüştürün. Taranmış sayfalardaki fotoğraflar ve grafikler resim olarak aktarılır; metnin yanındaki küçük bir logo ve el yazısı imzalar dahil edilmez.",
       },
       {
         question: "Dosyam yükleniyor mu?",

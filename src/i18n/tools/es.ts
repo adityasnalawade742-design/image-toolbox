@@ -7472,7 +7472,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Puede convertir un PDF escaneado?",
         answer:
-          "Un PDF escaneado contiene imágenes de texto, no texto. Pásalo antes por OCR de PDF y después convierte a Word el PDF ya con búsqueda.",
+          "Un PDF escaneado contiene imágenes de texto, no texto. Pásalo antes por OCR de PDF y después convierte a Word el PDF ya con búsqueda. Las fotos y los gráficos de las páginas escaneadas se conservan como imágenes; un logotipo pequeño junto al texto y las firmas manuscritas se omiten.",
       },
       {
         question: "¿Se sube mi archivo?",

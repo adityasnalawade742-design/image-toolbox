@@ -389,6 +389,59 @@ LATIN = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 CJK = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
 # OCR puts spaces between Japanese and Chinese characters, where the languages have none
 CJK_SPACE = re.compile("(?<=[\\u3000-\\u30ff\\u3400-\\u9fff\\uff00-\\uffef]) +(?=[\\u3000-\\u30ff\\u3400-\\u9fff\\uff00-\\uffef])")
+def find_figures(page):
+    # Pictures on a scanned page: dense regions of ink or colour that recognised words don't explain. Text, table
+    # borders, underlines and specks are not pictures
+    import cv2
+    import numpy as np
+    dpi = 100
+    pix = page.get_pixmap(dpi=dpi, alpha=False)
+    img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.h, pix.w, 3).astype(np.int16)
+    H, W = pix.h, pix.w
+    s = dpi / 72
+    ink = ((img.mean(2) < 200) | (img.max(2) - img.min(2) > 40)).astype(np.uint8)
+    words = np.zeros((H, W), np.uint8)
+    for x0, y0, x1, y1, *_ in page.get_text("words"):
+        words[max(0, int(y0 * s) - 2):int(y1 * s) + 3, max(0, int(x0 * s) - 2):int(x1 * s) + 3] = 1
+    rest = ink * (1 - words)
+    k = max(3, int(0.012 * max(W, H)))
+    joined = cv2.morphologyEx(rest, cv2.MORPH_CLOSE, np.ones((k, k), np.uint8))
+    n, _, stats, _ = cv2.connectedComponentsWithStats(joined, 8)
+    found = []
+    for i in range(1, n):
+        x, y, w, h, _ = stats[i]
+        density = rest[y:y + h, x:x + w].mean()
+        big = w * h >= 0.012 * W * H and w >= 0.06 * W and h >= 0.035 * H
+        small = w * h >= 0.003 * W * H and min(w, h) >= 0.03 * min(W, H)
+        if (big and density >= 0.18 or small and density >= 0.25) and words[y:y + h, x:x + w].mean() < 0.25:
+            found.append([x, y, x + w, y + h])
+    # Trim edges that hold almost nothing but recognised text, such as a caption the joining step reached
+    for box in found:
+        x0, y0, x1, y1 = box
+        while y1 - y0 > k and rest[y0, x0:x1].mean() < 0.03 and rest[y0:y0 + k // 2, x0:x1].mean() < 0.03:
+            y0 += 1
+        while y1 - y0 > k and rest[y1 - 1, x0:x1].mean() < 0.03 and rest[y1 - k // 2:y1, x0:x1].mean() < 0.03:
+            y1 -= 1
+        while x1 - x0 > k and rest[y0:y1, x0].mean() < 0.03 and rest[y0:y1, x0:x0 + k // 2].mean() < 0.03:
+            x0 += 1
+        while x1 - x0 > k and rest[y0:y1, x1 - 1].mean() < 0.03 and rest[y0:y1, x1 - k // 2:x1].mean() < 0.03:
+            x1 -= 1
+        box[:] = [x0, y0, x1, y1]
+    merged = True
+    while merged:
+        merged = False
+        for a in range(len(found)):
+            for b in range(a + 1, len(found)):
+                A, B = found[a], found[b]
+                if A[0] <= B[2] + k and B[0] <= A[2] + k and A[1] <= B[3] + k and B[1] <= A[3] + k:
+                    found[a] = [min(A[0], B[0]), min(A[1], B[1]), max(A[2], B[2]), max(A[3], B[3])]
+                    del found[b]
+                    merged = True
+                    break
+            if merged:
+                break
+    return [pymupdf.Rect(max(0, x0 - 4) / s, max(0, y0 - 4) / s, min(W, x1 + 4) / s, min(H, y1 + 4) / s) for x0, y0, x1, y1 in found]
+
 src, out = sys.argv[1:3]
 FONTS = {"latin": pymupdf.Font(fontfile=LATIN), "cjk": pymupdf.Font(fontfile=CJK)}
 doc = pymupdf.open(src)
@@ -402,12 +455,32 @@ if any(scanned):
         new = shown.new_page(width=page.rect.width, height=page.rect.height)
         new.insert_font(fontname="latin", fontfile=LATIN)
         new.insert_font(fontname="cjk", fontfile=CJK)
+        # Pictures on the scan (photos, charts, logos) go into the document as images; text OCR read inside them
+        # (chart labels, letters in a logo) stays in the picture rather than being repeated as text
+        figures = find_figures(page)
+        # pdf2docx reads a picture and the text right beside it as one line and reorders that text, so a picture with
+        # text next to it (a logo beside a letterhead) is left out, as before; pictures on their own lines or in their
+        # own column are kept
+        def beside(rect):
+            for x0, y0, x1, y1, *_ in page.get_text("words"):
+                word = pymupdf.Rect(x0, y0, x1, y1)
+                if rect.contains(word):
+                    continue
+                overlap = min(rect.y1, y1) - max(rect.y0, y0)
+                gap = max(rect.x0 - x1, x0 - rect.x1)
+                if overlap > 0.5 * (y1 - y0) and gap < 0.1 * page.rect.width:
+                    return True
+            return False
+        figures = [rect for rect in figures if not beside(rect)]
         lines = [line["spans"] for block in page.get_text("dict")["blocks"] for line in block.get("lines", []) if line["spans"]]
         sizes = sorted(spans[0]["size"] for spans in lines)
         typical = sizes[len(sizes) // 2] if sizes else 12
         # OCR can split a line in pieces, and pdf2docx drops one that overlaps another. Far-apart pieces are columns
         rows = []
+        inside = lambda spans: any(rect.contains(pymupdf.Rect(spans[0]["bbox"][0], min(sp["bbox"][1] for sp in spans), spans[-1]["bbox"][2], max(sp["bbox"][3] for sp in spans))) for rect in figures)
         for spans in lines:
+            if inside(spans):
+                continue
             piece = {"x": spans[0]["origin"][0], "end": spans[-1]["bbox"][2], "y": spans[0]["origin"][1], "size": spans[0]["size"], "text": "".join(span["text"] for span in spans)}
             row = None
             for r in rows:
@@ -433,6 +506,8 @@ if any(scanned):
                 room = page.rect.width - row[0]["x"] - 2
                 size = min(size, room / FONTS[font].text_length(text, fontsize=1))
                 new.insert_text((row[0]["x"], row[0]["y"]), text, fontsize=size, fontname=font)
+        for rect in figures:
+            new.insert_image(rect, stream=page.get_pixmap(dpi=200, clip=rect, alpha=False).tobytes("jpeg", jpg_quality=90))
     src = out + ".pdf"
     shown.save(src)
 converter = Converter(src)

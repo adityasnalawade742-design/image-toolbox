@@ -7466,7 +7466,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Dá para converter um PDF digitalizado?",
         answer:
-          "Um PDF digitalizado contém imagens de texto, não texto. Passe-o primeiro pelo OCR PDF e depois converta o PDF pesquisável para Word.",
+          "Um PDF digitalizado contém imagens de texto, não texto. Passe-o primeiro pelo OCR PDF e depois converta o PDF pesquisável para Word. Fotos e gráficos das páginas digitalizadas são mantidos como imagens; um logotipo pequeno ao lado do texto e assinaturas à mão ficam de fora.",
       },
       {
         question: "Meu arquivo é enviado?",

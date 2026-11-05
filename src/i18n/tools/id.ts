@@ -7469,7 +7469,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah alat ini mengubah PDF hasil scan?",
         answer:
-          "PDF hasil scan berisi gambar teks, bukan teks. Proses dulu dengan OCR PDF, lalu ubah PDF yang sudah bisa dicari itu ke Word.",
+          "PDF hasil scan berisi gambar teks, bukan teks. Proses dulu dengan OCR PDF, lalu ubah PDF yang sudah bisa dicari itu ke Word. Foto dan grafik di halaman pindaian tetap ada sebagai gambar; logo kecil di samping teks dan tanda tangan tulisan tangan tidak disertakan.",
       },
       {
         question: "Apakah file saya diunggah?",
