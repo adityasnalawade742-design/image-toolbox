@@ -7481,7 +7481,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "스캔한 PDF도 변환할 수 있나요?",
         answer:
-          "스캔한 PDF에는 글자가 아니라 글자를 찍은 그림이 들어 있어요. 먼저 PDF OCR로 처리한 다음, 검색 가능해진 PDF를 워드로 변환하세요.",
+          "스캔한 PDF에는 글자가 아니라 글자를 찍은 그림이 들어 있어요. 먼저 PDF OCR로 처리한 다음, 검색 가능해진 PDF를 워드로 변환하세요. 스캔한 페이지의 사진과 차트는 그림으로 옮겨져요. 텍스트 옆의 작은 로고와 손글씨 서명은 빠져요.",
       },
       {
         question: "파일이 업로드되나요?",

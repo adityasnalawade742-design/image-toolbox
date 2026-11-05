@@ -7670,7 +7670,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can it convert a scanned PDF?",
-        "answer": "A scanned PDF contains pictures of text, not text. Run it through OCR PDF first, then convert the searchable PDF to Word."
+        "answer": "A scanned PDF contains pictures of text, not text. Run it through OCR PDF first, then convert the searchable PDF to Word. Photos and charts on the scanned pages come across as pictures; a small logo beside text and handwritten signatures are left out."
       },
       {
         "question": "Is my file uploaded?",

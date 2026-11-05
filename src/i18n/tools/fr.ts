@@ -7500,7 +7500,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Peut-il convertir un PDF scanné ?",
         answer:
-          "Un PDF scanné contient des images de texte, pas du texte. Passez-le d’abord dans OCR PDF, puis convertissez en Word le PDF devenu recherchable.",
+          "Un PDF scanné contient des images de texte, pas du texte. Passez-le d’abord dans OCR PDF, puis convertissez en Word le PDF devenu recherchable. Les photos et les graphiques des pages numérisées sont conservés en tant qu’images ; un petit logo à côté du texte et les signatures manuscrites sont omis.",
       },
       {
         question: "Mon fichier est-il envoyé ?",

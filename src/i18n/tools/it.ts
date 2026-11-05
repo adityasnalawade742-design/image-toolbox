@@ -7461,7 +7461,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Può convertire un PDF scansionato?",
         answer:
-          "Un PDF scansionato contiene immagini di testo, non testo. Passalo prima in OCR PDF, poi converti in Word il PDF ricercabile.",
+          "Un PDF scansionato contiene immagini di testo, non testo. Passalo prima in OCR PDF, poi converti in Word il PDF ricercabile. Foto e grafici delle pagine scansionate vengono mantenuti come immagini; un piccolo logo accanto al testo e le firme a mano vengono omessi.",
       },
       {
         question: "Il mio file viene caricato?",

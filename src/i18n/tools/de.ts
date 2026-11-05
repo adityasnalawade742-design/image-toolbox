@@ -7494,7 +7494,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann es ein gescanntes PDF umwandeln?",
         answer:
-          "Ein gescanntes PDF enthält Bilder von Text, keinen Text. Lass es zuerst durch PDF-OCR laufen und wandle dann das durchsuchbare PDF in Word um.",
+          "Ein gescanntes PDF enthält Bilder von Text, keinen Text. Lass es zuerst durch PDF-OCR laufen und wandle dann das durchsuchbare PDF in Word um. Fotos und Diagramme auf den gescannten Seiten werden als Bilder übernommen; ein kleines Logo neben Text und handschriftliche Unterschriften werden ausgelassen.",
       },
       {
         question: "Wird meine Datei hochgeladen?",
