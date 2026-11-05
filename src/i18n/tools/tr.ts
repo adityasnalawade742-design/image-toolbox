@@ -8802,4 +8802,248 @@ export const trTools: Record<string, LocalizedToolItem> = {
       { "question": "Tasarımımı herkes için nasıl uygun hale getiririm?", "answer": "Yalnızca renge güvenmeyin. Etiketler, desenler veya simgeler ekleyin ve yalnızca tonu değil açıklığı da farklı renkler seçin." }
     ]
   },
+  "morse-code-translator": {
+    name: "Mors Alfabesi Çevirici",
+    shortName: "Mors Alfabesi",
+    tagline: "Metni Mors koduna, Mors kodunu metne çevirin, dinleyin ve ses ya da resim olarak kaydedin. Ücretsiz, cihazınızda.",
+    intro: "Mors Alfabesi Çevirici, siz yazdıkça metni uluslararası Mors koduna, Mors kodunu da metne çevirir. Seçtiğiniz hız ve tonda ses olarak çalın, ardından WAV ses dosyası olarak ya da bir kart, poster veya bulmaca için nokta ve çizgilerin resmi olarak indirin. Harfler, rakamlar ve noktalama işaretleri için uluslararası standardı (ITU) kullanır.",
+    seoTitle: "Mors Alfabesi Çevirici – Metinden Mors’a, Ses, Resim",
+    seoDescription: "Metni Mors koduna ve geri çevirin, ses olarak çalın, WAV ses veya PNG resim olarak indirin. Ücretsiz, kayıtsız, tarayıcınızda çalışır.",
+    keywords: [
+      "mors alfabesi çevirici",
+      "mors alfabesi çeviri",
+      "metni mors alfabesine çevir",
+      "mors kodu çözücü",
+      "mors alfabesi ses"
+    ],
+    howToSteps: [
+      {
+        title: "Yazın veya yapıştırın",
+        description: "Üstteki kutuya metin yazın ya da iki kutudan birine Mors kodu yapıştırın; diğeri güncellenir."
+      },
+      {
+        title: "Dinleyin",
+        description: "Sesi çal’a basın, hızı ve tonu istediğiniz gibi ayarlayın."
+      },
+      {
+        title: "İndirin",
+        description: "Mors kodunu WAV ses dosyası veya nokta ve çizgilerden oluşan bir PNG resim olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "İki yönlü",
+        description: "Metinden Mors’a ve Mors’tan metne, siz yazdıkça güncellenir."
+      },
+      {
+        title: "Uluslararası standart",
+        description: "ITU’nun tanımladığı harfler, rakamlar ve noktalama işaretleri."
+      },
+      {
+        title: "Ses ve resim",
+        description: "Çalın, WAV dosyası indirin veya kodun PNG’sini kaydedin."
+      }
+    ],
+    faqs: [
+      {
+        question: "Burada Mors kodunu nasıl yazarım?",
+        answer: "Nokta (.) ve çizgi (-) kullanın. Harflerin arasına boşluk, kelimelerin arasına eğik çizgi (/) koyun; örneğin SOS için ... --- ..."
+      },
+      {
+        question: "Hangi hızı kullanmalıyım?",
+        answer: "Yeni başlayanlar için dakikada yaklaşık 5 ile 10 kelime uygundur; deneyimli operatörler çoğu zaman 20 veya daha fazla kelimeyle gönderir. Hız, uluslararası PARIS standardına göre hesaplanır."
+      },
+      {
+        question: "Mors alfabesinde hangi karakterler var?",
+        answer: "A’dan Z’ye harfler, 0’dan 9’a rakamlar ve yaygın noktalama işaretleri. Aksanlı harfler aksansız yazılır; Mors karşılığı olmayan karakterler listelenir ve çıkarılır."
+      },
+      {
+        question: "Metnim yükleniyor mu?",
+        answer: "Hayır. Çeviri, ses ve indirmeler tamamen cihazınızda gerçekleşir."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Resme Metin Gizleme",
+    shortName: "Metin Gizle",
+    tagline: "Bir resmin içine, isteğe bağlı parolayla gizli bir mesaj saklayın ve daha sonra geri okuyun. Ücretsiz, cihazınızda.",
+    intro: "Resme Metin Gizleme, bir mesajı resmin piksellerine yazar (steganografi). Her renk değeri en fazla 1 değiştiği için resim aynı görünür, ancak mesaj aynı araçla burada geri okunabilir. AES-256 ile şifrelemek için bir parola ekleyin. Sonuç bir PNG’dir, çünkü mesajı yalnızca kayıpsız bir dosya korur: bir JPG kopyası, yeniden boyutlandırma veya resimleri yeniden sıkıştıran bir sohbet uygulaması mesajı siler.",
+    seoTitle: "Resme Metin Gizleme – Online Steganografi, Ücretsiz",
+    seoDescription: "Bir resme gizli mesaj saklayın ve geri okuyun, isteğe bağlı parola şifrelemesiyle. Ücretsiz, kayıtsız, resminiz yüklenmez.",
+    keywords: [
+      "resme yazı gizleme",
+      "steganografi online",
+      "resimde gizli mesaj",
+      "fotoğrafa mesaj gizleme",
+      "resimdeki gizli mesajı çözme"
+    ],
+    howToSteps: [
+      {
+        title: "Bir resim ekleyin",
+        description: "Mesaj gizle’yi seçin, ardından bir fotoğraf bırakın veya seçin."
+      },
+      {
+        title: "Mesajı yazın",
+        description: "Mesajınızı ve isterseniz bir parola yazın."
+      },
+      {
+        title: "PNG’yi indirip paylaşın",
+        description: "PNG’yi dosya olarak gönderin. Okumak için burada açın ve Mesaj oku’yu seçin."
+      }
+    ],
+    features: [
+      {
+        title: "Aynı görünür",
+        description: "Her renk değeri en fazla 1 değişir; bunu göz fark edemez."
+      },
+      {
+        title: "İsteğe bağlı parola",
+        description: "AES-256 şifreleme; parola olmadan mesaj okunamaz."
+      },
+      {
+        title: "İndirmeden önce kontrol",
+        description: "Kaydedilen PNG, mesajın korunduğundan emin olmak için yeniden okunur."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mesajım neden kayboldu?",
+        answer: "Resim kaydedildikten sonra değiştirildi: JPG’ye dönüştürüldü, yeniden boyutlandırıldı veya bir sohbet ya da sosyal medya uygulaması tarafından yeniden sıkıştırıldı. PNG’yi dosya olarak veya bir zip içinde paylaşın, böylece değişmeden ulaşır."
+      },
+      {
+        question: "Mesaj ne kadar uzun olabilir?",
+        answer: "8 pikselde yaklaşık 3 bayt: 12 megapiksellik bir fotoğraf birkaç megabayt alır, bu da herhangi bir metinden çok daha fazlasıdır. Araç ne kadar yer kaldığını gösterir."
+      },
+      {
+        question: "Güvenli mi?",
+        answer: "Parola kullanırsanız mesaj AES-256 ile şifrelenir, böylece yalnızca parolayı bilen kişi okuyabilir. Parola olmadan, bunun gibi bir steganografi aracı kullanan herkes mesajı bulabilir. Mesaj gizlemek güçlü bir gizlilikle aynı şey değildir; bu yüzden özel her şey için parola kullanın."
+      },
+      {
+        question: "Resmim yükleniyor mu?",
+        answer: "Hayır. Gizleme, şifreleme ve okuma tamamen cihazınızda gerçekleşir."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Halftone ve Dither Efekti",
+    shortName: "Halftone ve Dither",
+    tagline: "Bir fotoğrafı gazete tarzı raster noktalarına veya retro bir dither resmine dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Halftone ve Dither Efekti, bir fotoğrafa baskı veya eski bilgisayarların görünümünü verir. Halftone, fotoğrafı koyuluğa göre büyüyen noktalarla yeniden çizer; siyah tek renkle ya da dört baskı mürekkebiyle (CMYK) klasik raster açılarında. Dither, fotoğrafı birkaç renge indirir ve tonları Floyd–Steinberg, Atkinson veya düzenli Bayer deseniyle dağıtır; paletler siyah beyazdan Game Boy yeşiline kadar uzanır. Ayrıntıyı, parlaklığı ve kontrastı ayarlayın, ardından tam boyutlu bir PNG indirin.",
+    seoTitle: "Halftone ve Dither Efekti – Fotoğrafı Noktalara Çevir",
+    seoDescription: "Fotoğrafı halftone noktalarına veya dither resmine dönüştürün: Floyd–Steinberg, Atkinson, Bayer, Game Boy ve CGA paletleri. Ücretsiz, yükleme yok.",
+    keywords: [
+      "halftone efekti",
+      "raster efekti",
+      "dither efekti",
+      "fotoğrafı noktalara çevirme",
+      "game boy filtresi"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Bir JPG, PNG, WebP, HEIC veya TIFF bırakın ya da seçin."
+      },
+      {
+        title: "Görünümü seçin",
+        description: "Raster noktaları veya Dither’ı, ardından renkleri, ayrıntıyı ve kontrastı seçin."
+      },
+      {
+        title: "İndirin",
+        description: "Tam boyutlu sonucu PNG olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Gerçek baskı rasterleri",
+        description: "Matbaalarda kullanılan 15°, 75°, 0° ve 45° açılarında CMYK noktaları."
+      },
+      {
+        title: "Klasik dithering",
+        description: "Retro paletlerle Floyd–Steinberg, Atkinson ve düzenli Bayer."
+      },
+      {
+        title: "Tam çözünürlük",
+        description: "Önizleme hızlıdır; indirilen dosya tam boyutta oluşturulur."
+      }
+    ],
+    faqs: [
+      {
+        question: "Halftone ile dither arasındaki fark nedir?",
+        answer: "Halftone, tonları bir gazetedeki gibi düzenli bir ızgarada farklı boyutlarda noktalar olarak basar. Dither ise birkaç sabit renkteki pikselleri kullanır ve onları göz ara tonlar olarak karıştıracak şekilde dağıtır."
+      },
+      {
+        question: "Hangi dithering yöntemini seçmeliyim?",
+        answer: "Floyd–Steinberg en yumuşak tonları verir. İlk Mac’lerde kullanılan Atkinson’ın açık ve koyu alanları daha nettir. Düzenli (Bayer) yöntem düzenli bir tarama deseni oluşturur."
+      },
+      {
+        question: "Uzaklaştırınca sonuç neden farklı görünüyor?",
+        answer: "Noktalar ve dither desenleri uzaktan bakınca birbirine karışır; tonları bu şekilde gösterirler. Yatayda daha az nokta veya daha büyük piksel boyutu, desenin görünür kalmasını sağlar."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Efekt cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Kontakt Baskı Oluşturucu",
+    shortName: "Kontakt Baskı",
+    tagline: "Çok sayıda fotoğrafı etiketli küçük resimler olarak yazdırılabilir sayfalara yerleştirin, PDF veya resim olarak. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "Kontakt Baskı Oluşturucu, bir fotoğraf grubunu tek bir sayfaya veya gerektiği kadar sayfaya, bir fotoğrafçının prova sayfası gibi dosya adlarıyla birlikte küçük resimler olarak yerleştirir. Bir çekimi gözden geçirmek, bir müşteriyle favorileri seçmek, ürünleri kataloglamak veya bir genel bakış yazdırmak için kullanın. A4 veya Letter, dikey veya yatay ve satır başına kaç fotoğraf olacağını seçin; sayfalar baskı için 300 DPI’da oluşturulur. Çok sayfalı bir PDF veya PNG ya da JPG resimler indirin.",
+    seoTitle: "Kontakt Baskı Oluşturucu – Küçük Resimleri PDF Yap",
+    seoDescription: "Çok sayıda fotoğraftan dosya adlarıyla, 300 DPI A4 veya Letter sayfalarda PDF ya da resim olarak kontakt baskı yapın. Ücretsiz, kayıtsız, yükleme yok.",
+    keywords: [
+      "kontakt baskı",
+      "fotoğraf kontakt sayfası",
+      "küçük resim sayfası",
+      "fotoğrafları tek sayfada yazdırma",
+      "fotoğraf kataloğu pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraflarınızı ekleyin",
+        description: "İstediğiniz kadar fotoğraf bırakın veya seçin, sıralamak için sürükleyin."
+      },
+      {
+        title: "Sayfayı ayarlayın",
+        description: "Kâğıdı, yönü, satır başına fotoğraf sayısını, dosya adlarını ve isteğe bağlı bir başlığı seçin."
+      },
+      {
+        title: "İndirin",
+        description: "Tüm sayfaları içeren bir PDF veya her sayfanın PNG ya da JPG resmini kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Yazdırılabilir",
+        description: "300 DPI’da A4 veya Letter sayfalar, her yazıcıya uygun kenar boşluklarıyla."
+      },
+      {
+        title: "Etiketli",
+        description: "Her fotoğrafın altında dosya adı, sayfa numaraları ve isteğe bağlı bir başlık."
+      },
+      {
+        title: "Kırpılmaz",
+        description: "Her fotoğraf çerçevesine sığdırılarak eksiksiz gösterilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kaç fotoğraf ekleyebilirim?",
+        answer: "Cihazınızın açabildiği kadar; sayfalar gerektikçe eklenir. Çok sayıda büyük fotoğraftan oluşan setler daha uzun sürer ve daha fazla bellek kullanır."
+      },
+      {
+        question: "Fotoğraflar kırpılıyor mu?",
+        answer: "Hayır. Her fotoğraf çerçevesinin içine sığdırılır, böylece dikey ve yatay fotoğrafların ikisi de eksiksiz gösterilir."
+      },
+      {
+        question: "Sayfaların çözünürlüğü nedir?",
+        answer: "Baskı için olağan kalite olan 300 DPI. A4, 2480 × 3508 pikseldir."
+      },
+      {
+        question: "Fotoğraflarım yükleniyor mu?",
+        answer: "Hayır. Sayfa cihazınızda oluşturulur."
+      }
+    ]
+  },
 };

@@ -8801,4 +8801,248 @@ export const idTools: Record<string, LocalizedToolItem> = {
       { "question": "Bagaimana agar desain saya cocok untuk semua orang?", "answer": "Jangan hanya mengandalkan warna. Tambahkan label, pola, atau ikon, dan pilih warna yang berbeda dalam kecerahan sekaligus rona." }
     ]
   },
+  "morse-code-translator": {
+    name: "Penerjemah Kode Morse",
+    shortName: "Kode Morse",
+    tagline: "Terjemahkan teks ke kode Morse dan sebaliknya, dengarkan, lalu simpan sebagai audio atau gambar. Gratis, di perangkat Anda.",
+    intro: "Penerjemah Kode Morse mengubah teks menjadi kode Morse internasional dan kode Morse kembali menjadi teks saat Anda mengetik. Putar sebagai suara dengan kecepatan dan nada pilihan Anda, lalu unduh sebagai file audio WAV atau gambar titik dan garis untuk kartu, poster, atau teka-teki. Alat ini memakai standar internasional (ITU) untuk huruf, angka, dan tanda baca.",
+    seoTitle: "Penerjemah Kode Morse – Teks ke Morse, Audio, Gambar",
+    seoDescription: "Terjemahkan teks ke kode Morse dan sebaliknya, putar sebagai suara, lalu unduh audio WAV atau gambar PNG. Gratis, tanpa daftar, langsung di browser.",
+    keywords: [
+      "penerjemah kode morse",
+      "translate sandi morse",
+      "teks ke kode morse",
+      "kode morse ke teks",
+      "suara kode morse"
+    ],
+    howToSteps: [
+      {
+        title: "Ketik atau tempel",
+        description: "Ketik teks di kotak atas, atau tempel kode Morse di kotak mana pun; kotak lainnya ikut diperbarui."
+      },
+      {
+        title: "Dengarkan",
+        description: "Tekan Putar suara, lalu atur kecepatan dan nada sesuai selera."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan kode Morse sebagai file audio WAV atau gambar PNG berisi titik dan garis."
+      }
+    ],
+    features: [
+      {
+        title: "Dua arah",
+        description: "Teks ke Morse dan Morse ke teks, diperbarui saat Anda mengetik."
+      },
+      {
+        title: "Standar internasional",
+        description: "Huruf, angka, dan tanda baca sesuai ketentuan ITU."
+      },
+      {
+        title: "Suara dan gambar",
+        description: "Putar, unduh file WAV, atau simpan kodenya sebagai PNG."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara menulis kode Morse di sini?",
+        answer: "Gunakan titik (.) dan garis (-). Beri spasi di antara huruf dan garis miring (/) di antara kata, misalnya ... --- ... untuk SOS."
+      },
+      {
+        question: "Kecepatan berapa yang sebaiknya dipakai?",
+        answer: "Sekitar 5 sampai 10 kata per menit cocok untuk pemula; operator berpengalaman sering mengirim 20 kata atau lebih. Kecepatan mengikuti standar internasional PARIS."
+      },
+      {
+        question: "Karakter apa saja yang ada dalam kode Morse?",
+        answer: "Huruf A sampai Z, angka 0 sampai 9, dan tanda baca umum. Huruf beraksen ditulis tanpa aksen, dan karakter yang tidak punya kode Morse dicantumkan lalu dilewati."
+      },
+      {
+        question: "Apakah teks saya diunggah?",
+        answer: "Tidak. Penerjemahan, suara, dan unduhan semuanya terjadi di perangkat Anda."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Sembunyikan Teks di Gambar",
+    shortName: "Sembunyikan Teks",
+    tagline: "Sembunyikan pesan rahasia di dalam gambar, dengan kata sandi opsional, dan baca kembali nanti. Gratis, di perangkat Anda.",
+    intro: "Sembunyikan Teks di Gambar menulis pesan ke dalam piksel gambar (steganografi). Gambar tetap terlihat sama, karena setiap nilai warna berubah paling banyak 1, tetapi pesannya bisa dibaca kembali di sini dengan alat yang sama. Tambahkan kata sandi untuk mengenkripsinya dengan AES-256. Hasilnya berupa PNG, karena hanya file lossless yang menjaga pesan: salinan JPG, perubahan ukuran, atau aplikasi chat yang mengompresi ulang gambar akan menghapusnya.",
+    seoTitle: "Sembunyikan Teks di Gambar – Steganografi Online Gratis",
+    seoDescription: "Sembunyikan pesan rahasia di gambar lalu baca kembali, dengan enkripsi kata sandi opsional. Gratis, tanpa daftar, gambar Anda tidak diunggah.",
+    keywords: [
+      "sembunyikan teks di gambar",
+      "steganografi online",
+      "pesan rahasia di gambar",
+      "aplikasi steganografi gambar",
+      "baca pesan tersembunyi di gambar"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar",
+        description: "Pilih Sembunyikan pesan, lalu letakkan atau pilih foto."
+      },
+      {
+        title: "Tulis pesan",
+        description: "Ketik pesan Anda dan, jika mau, kata sandi."
+      },
+      {
+        title: "Unduh dan bagikan PNG",
+        description: "Kirim PNG sebagai file. Untuk membacanya, buka di sini dan pilih Baca pesan."
+      }
+    ],
+    features: [
+      {
+        title: "Terlihat sama",
+        description: "Setiap nilai warna berubah paling banyak 1, yang tidak terlihat oleh mata."
+      },
+      {
+        title: "Kata sandi opsional",
+        description: "Enkripsi AES-256; tanpa kata sandi pesan tidak bisa dibaca."
+      },
+      {
+        title: "Diperiksa sebelum diunduh",
+        description: "PNG yang disimpan dibaca ulang untuk memastikan pesannya utuh."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kenapa pesan saya hilang?",
+        answer: "Gambar diubah setelah disimpan: dikonversi ke JPG, diubah ukurannya, atau dikompresi ulang oleh aplikasi chat atau media sosial. Bagikan PNG sebagai file, atau dalam zip, agar tiba tanpa perubahan."
+      },
+      {
+        question: "Seberapa panjang pesannya?",
+        answer: "Sekitar 3 byte per 8 piksel: foto 12 megapiksel bisa memuat beberapa megabyte, jauh lebih banyak daripada teks apa pun. Alat ini menunjukkan sisa ruang yang tersedia."
+      },
+      {
+        question: "Apakah ini aman?",
+        answer: "Dengan kata sandi, pesan dienkripsi dengan AES-256, sehingga hanya orang yang tahu kata sandinya yang bisa membacanya. Tanpa kata sandi, siapa pun yang memakai alat steganografi seperti ini bisa menemukannya. Menyembunyikan pesan tidak sama dengan kerahasiaan yang kuat, jadi gunakan kata sandi untuk hal yang bersifat pribadi."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Penyembunyian, enkripsi, dan pembacaan semuanya terjadi di perangkat Anda."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Efek Halftone dan Dither",
+    shortName: "Halftone & Dither",
+    tagline: "Ubah foto menjadi titik halftone ala koran atau gambar dither bergaya retro. Gratis dan berjalan di perangkat Anda.",
+    intro: "Efek Halftone dan Dither memberi foto tampilan seperti hasil cetak atau komputer zaman dulu. Halftone menggambar ulang foto sebagai titik yang makin besar di bagian gelap, dalam warna hitam atau empat tinta cetak (CMYK) pada sudut raster klasiknya. Dither mengurangi foto menjadi beberapa warna dan menyebarkan nuansanya dengan Floyd–Steinberg, Atkinson, atau pola Bayer teratur, dengan palet mulai dari hitam putih hingga hijau Game Boy. Atur detail, kecerahan, dan kontras, lalu unduh PNG ukuran penuh.",
+    seoTitle: "Efek Halftone dan Dither – Foto Jadi Titik, Gratis",
+    seoDescription: "Ubah foto menjadi titik halftone atau gambar dither: Floyd–Steinberg, Atkinson, Bayer, palet Game Boy dan CGA. Gratis, tanpa unggah.",
+    keywords: [
+      "efek halftone",
+      "dither gambar",
+      "foto ke halftone",
+      "dithering floyd steinberg online",
+      "filter game boy"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto",
+        description: "Letakkan atau pilih JPG, PNG, WebP, HEIC, atau TIFF."
+      },
+      {
+        title: "Pilih tampilan",
+        description: "Pilih Titik halftone atau Dither, lalu warna, detail, dan kontras."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan hasil ukuran penuh sebagai PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Raster cetak sungguhan",
+        description: "Titik CMYK pada sudut 15°, 75°, 0°, dan 45° seperti di mesin cetak."
+      },
+      {
+        title: "Dithering klasik",
+        description: "Floyd–Steinberg, Atkinson, dan Bayer teratur, dengan palet retro."
+      },
+      {
+        title: "Resolusi penuh",
+        description: "Pratinjau cepat; unduhan dibuat dalam ukuran penuh."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apa beda halftone dan dither?",
+        answer: "Halftone mencetak nuansa sebagai titik berbagai ukuran pada grid teratur, seperti koran. Dither memakai piksel dari beberapa warna tetap dan menyebarkannya sehingga mata mencampurnya menjadi nuansa di antaranya."
+      },
+      {
+        question: "Metode dithering mana yang sebaiknya dipilih?",
+        answer: "Floyd–Steinberg memberi nuansa paling halus. Atkinson, yang dipakai di Mac generasi awal, punya bagian terang dan gelap yang lebih tegas. Teratur (Bayer) membuat pola arsir silang yang rapi."
+      },
+      {
+        question: "Kenapa hasilnya terlihat berbeda saat diperkecil?",
+        answer: "Titik dan pola dither menyatu bila dilihat dari jauh; begitulah cara keduanya menampilkan nuansa. Jumlah titik per lebar yang lebih sedikit, atau ukuran piksel yang lebih besar, membuat polanya tetap terlihat."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Efeknya dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Pembuat Contact Sheet",
+    shortName: "Contact Sheet",
+    tagline: "Susun banyak foto sebagai thumbnail berlabel di halaman siap cetak, sebagai PDF atau gambar. Gratis dan berjalan di perangkat Anda.",
+    intro: "Pembuat Contact Sheet menaruh sekumpulan foto di satu halaman, atau sebanyak yang diperlukan, sebagai thumbnail beserta nama filenya, seperti lembar proof milik fotografer. Gunakan untuk meninjau hasil pemotretan, memilih foto favorit bersama klien, membuat katalog produk, atau mencetak ringkasan. Pilih A4 atau Letter, potret atau lanskap, dan jumlah foto per baris; halaman dibuat pada 300 DPI untuk dicetak. Unduh PDF multi-halaman, atau gambar PNG atau JPG.",
+    seoTitle: "Pembuat Contact Sheet – Thumbnail Foto ke PDF, Gratis",
+    seoDescription: "Buat contact sheet dari banyak foto beserta nama file, di halaman A4 atau Letter 300 DPI, sebagai PDF atau gambar. Gratis, tanpa daftar, tanpa unggah.",
+    keywords: [
+      "contact sheet foto",
+      "membuat contact sheet",
+      "cetak banyak foto dalam satu halaman",
+      "thumbnail foto pdf",
+      "lembar proof foto"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto",
+        description: "Letakkan atau pilih foto sebanyak yang Anda mau, lalu seret untuk mengatur urutannya."
+      },
+      {
+        title: "Atur halaman",
+        description: "Pilih kertas, orientasi, foto per baris, nama file, dan judul opsional."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF berisi semua halaman, atau gambar PNG atau JPG untuk tiap halaman."
+      }
+    ],
+    features: [
+      {
+        title: "Siap cetak",
+        description: "Halaman A4 atau Letter pada 300 DPI, dengan margin untuk printer apa pun."
+      },
+      {
+        title: "Berlabel",
+        description: "Nama file di bawah tiap foto, nomor halaman, dan judul opsional."
+      },
+      {
+        title: "Tanpa dipotong",
+        description: "Tiap foto ditampilkan utuh, disesuaikan dengan bingkainya."
+      }
+    ],
+    faqs: [
+      {
+        question: "Berapa banyak foto yang bisa ditambahkan?",
+        answer: "Sebanyak yang bisa dibuka perangkat Anda; halaman ditambahkan sesuai kebutuhan. Kumpulan foto besar dalam jumlah sangat banyak butuh waktu lebih lama dan memakai lebih banyak memori."
+      },
+      {
+        question: "Apakah fotonya dipotong?",
+        answer: "Tidak. Tiap foto disesuaikan di dalam bingkainya, sehingga foto potret dan lanskap sama-sama tampil utuh."
+      },
+      {
+        question: "Berapa resolusi halamannya?",
+        answer: "300 DPI, kualitas yang umum untuk cetak. A4 berukuran 2480 × 3508 piksel."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Lembarnya dibuat di perangkat Anda."
+      }
+    ]
+  },
 };

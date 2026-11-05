@@ -8783,4 +8783,248 @@ export const itTools: Record<string, LocalizedToolItem> = {
       { "question": "Come faccio a rendere il mio design adatto a tutti?", "answer": "Non affidarti solo al colore. Aggiungi etichette, motivi o icone e scegli colori che differiscano sia per luminosità sia per tonalità." }
     ]
   },
+  "morse-code-translator": {
+    name: "Traduttore di codice Morse",
+    shortName: "Codice Morse",
+    tagline: "Traduci il testo in codice Morse e il Morse in testo, ascoltalo e salvalo come audio o immagine. Gratis, sul tuo dispositivo.",
+    intro: "Traduttore di codice Morse trasforma il testo in codice Morse internazionale e il Morse in testo mentre scrivi. Riproducilo come suono alla velocità e al tono che preferisci, poi scaricalo come file audio WAV o come immagine di punti e linee per un biglietto, un poster o un rompicapo. Usa lo standard internazionale (ITU) per lettere, cifre e punteggiatura.",
+    seoTitle: "Traduttore codice Morse – Testo, audio e immagine",
+    seoDescription: "Traduci il testo in codice Morse e viceversa, ascoltalo e scarica l’audio WAV o un’immagine PNG. Gratis, senza registrazione, funziona nel browser.",
+    keywords: [
+      "traduttore codice morse",
+      "codice morse traduttore",
+      "testo in codice morse",
+      "codice morse in testo",
+      "codice morse audio"
+    ],
+    howToSteps: [
+      {
+        title: "Scrivi o incolla",
+        description: "Scrivi il testo nel riquadro in alto o incolla il codice Morse in uno dei due riquadri; l’altro si aggiorna."
+      },
+      {
+        title: "Ascolta",
+        description: "Premi Riproduci suono e regola velocità e tono come preferisci."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il Morse come file audio WAV o come immagine PNG di punti e linee."
+      }
+    ],
+    features: [
+      {
+        title: "In entrambe le direzioni",
+        description: "Da testo a Morse e da Morse a testo, aggiornato mentre scrivi."
+      },
+      {
+        title: "Standard internazionale",
+        description: "Lettere, cifre e punteggiatura come definite dall’ITU."
+      },
+      {
+        title: "Suono e immagine",
+        description: "Riproducilo, scarica un file WAV o salva un PNG del codice."
+      }
+    ],
+    faqs: [
+      {
+        question: "Come si scrive il codice Morse qui?",
+        answer: "Usa punti (.) e linee (-). Metti uno spazio tra le lettere e una barra (/) tra le parole, ad esempio ... --- ... per SOS."
+      },
+      {
+        question: "Che velocità dovrei usare?",
+        answer: "Circa 5-10 parole al minuto vanno bene per chi inizia; gli operatori esperti trasmettono spesso a 20 o più. La velocità segue lo standard internazionale PARIS."
+      },
+      {
+        question: "Quali caratteri esistono in Morse?",
+        answer: "Le lettere dalla A alla Z, le cifre da 0 a 9 e la punteggiatura più comune. Le lettere accentate vengono scritte senza accento, e i caratteri senza un codice Morse vengono elencati ed esclusi."
+      },
+      {
+        question: "Il mio testo viene caricato?",
+        answer: "No. Traduzione, suono e download avvengono tutti sul tuo dispositivo."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Nascondi testo in un’immagine",
+    shortName: "Nascondi testo",
+    tagline: "Nascondi un messaggio segreto in un’immagine, con una password facoltativa, e rileggilo in seguito. Gratis, sul tuo dispositivo.",
+    intro: "Nascondi testo in un’immagine scrive un messaggio nei pixel di un’immagine (steganografia). L’immagine sembra identica, perché ogni valore di colore cambia al massimo di 1, ma il messaggio si può rileggere qui con lo stesso strumento. Aggiungi una password per cifrarlo con AES-256. Il risultato è un PNG, perché solo un file senza perdita conserva il messaggio: una copia in JPG, un ridimensionamento o un’app di chat che ricomprime le immagini lo cancella.",
+    seoTitle: "Nascondi testo in un’immagine – Steganografia online",
+    seoDescription: "Nascondi un messaggio segreto in un’immagine e rileggilo, con cifratura facoltativa tramite password. Gratis, senza registrazione, nessun caricamento.",
+    keywords: [
+      "nascondere testo in un’immagine",
+      "steganografia online",
+      "nascondere messaggio in una foto",
+      "messaggio segreto in un’immagine",
+      "leggere messaggio nascosto in immagine"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi un’immagine",
+        description: "Scegli Nascondi un messaggio, poi trascina o scegli una foto."
+      },
+      {
+        title: "Scrivi il messaggio",
+        description: "Scrivi il messaggio e, se vuoi, una password."
+      },
+      {
+        title: "Scarica e condividi il PNG",
+        description: "Invia il PNG come file. Per leggerlo, aprilo qui e scegli Leggi un messaggio."
+      }
+    ],
+    features: [
+      {
+        title: "Aspetto identico",
+        description: "Ogni valore di colore cambia al massimo di 1, e l’occhio non lo nota."
+      },
+      {
+        title: "Password facoltativa",
+        description: "Cifratura AES-256; senza la password il messaggio non si può leggere."
+      },
+      {
+        title: "Verificato prima del download",
+        description: "Il PNG salvato viene riletto per controllare che il messaggio sia integro."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché il mio messaggio è sparito?",
+        answer: "L’immagine è stata modificata dopo il salvataggio: convertita in JPG, ridimensionata o ricompressa da un’app di chat o da un social. Condividi il PNG come file, o in uno zip, così arriva senza modifiche."
+      },
+      {
+        question: "Quanto può essere lungo il messaggio?",
+        answer: "Circa 3 byte ogni 8 pixel: una foto da 12 megapixel contiene diversi megabyte, molto più di qualsiasi testo. Lo strumento mostra quanto spazio resta."
+      },
+      {
+        question: "È sicuro?",
+        answer: "Con una password, il messaggio è cifrato con AES-256, quindi solo chi ha la password può leggerlo. Senza password, chiunque usi uno strumento di steganografia come questo potrebbe trovarlo. Nascondere un messaggio non equivale a una vera segretezza, quindi usa una password per tutto ciò che è privato."
+      },
+      {
+        question: "La mia immagine viene caricata?",
+        answer: "No. Occultamento, cifratura e lettura avvengono tutti sul tuo dispositivo."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Effetto retino e dithering",
+    shortName: "Retino e dithering",
+    tagline: "Trasforma una foto in un retino a punti stile giornale o in un’immagine retrò con dithering. Gratis e funziona sul tuo dispositivo.",
+    intro: "Effetto retino e dithering dà a una foto l’aspetto della stampa o dei primi computer. Il retino la ridisegna come punti che crescono con l’intensità dello scuro, in nero o nei quattro inchiostri di stampa (CMYK) con i loro angoli di retino classici. Il dithering la riduce a pochi colori e distribuisce i toni con Floyd–Steinberg, Atkinson o un motivo Bayer ordinato, con palette che vanno dal bianco e nero al verde del Game Boy. Regola dettaglio, luminosità e contrasto, poi scarica un PNG a grandezza piena.",
+    seoTitle: "Effetto retino e dithering – Da foto a punti, gratis",
+    seoDescription: "Trasforma una foto in un retino a punti o in un’immagine con dithering: Floyd–Steinberg, Atkinson, Bayer, palette Game Boy e CGA. Gratis, senza upload.",
+    keywords: [
+      "effetto halftone",
+      "effetto retino foto",
+      "dithering online",
+      "floyd steinberg dithering",
+      "filtro game boy"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la tua foto",
+        description: "Trascina o scegli un JPG, PNG, WebP, HEIC o TIFF."
+      },
+      {
+        title: "Scegli l’aspetto",
+        description: "Scegli Retino a punti o Dithering, poi colori, dettaglio e contrasto."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il risultato a grandezza piena come PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Veri retini di stampa",
+        description: "Punti CMYK agli angoli di 15°, 75°, 0° e 45° usati in tipografia."
+      },
+      {
+        title: "Dithering classico",
+        description: "Floyd–Steinberg, Atkinson e Bayer ordinato, con palette retrò."
+      },
+      {
+        title: "Risoluzione piena",
+        description: "L’anteprima è veloce; il file scaricato è a grandezza piena."
+      }
+    ],
+    faqs: [
+      {
+        question: "Qual è la differenza tra retino e dithering?",
+        answer: "Il retino stampa i toni come punti di dimensioni diverse su una griglia regolare, come in un giornale. Il dithering usa pixel di pochi colori fissi e li distribuisce in modo che l’occhio li mescoli in toni intermedi."
+      },
+      {
+        question: "Quale metodo di dithering dovrei scegliere?",
+        answer: "Floyd–Steinberg dà i toni più morbidi. Atkinson, usato sui primi Mac, ha luci e ombre più nitide. Ordinato (Bayer) crea un motivo regolare a tratteggio incrociato."
+      },
+      {
+        question: "Perché il risultato sembra diverso visto da lontano?",
+        answer: "Punti e motivi di dithering si fondono a distanza; è così che rendono i toni. Meno punti in larghezza, o pixel più grandi, mantengono visibile il motivo."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. L’effetto viene creato sul tuo dispositivo."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Crea provini a contatto",
+    shortName: "Provini a contatto",
+    tagline: "Disponi molte foto come miniature con il nome su pagine da stampare, in PDF o immagini. Gratis e funziona sul tuo dispositivo.",
+    intro: "Crea provini a contatto mette una serie di foto su una pagina, o su tutte quelle necessarie, come miniature con i nomi dei file, come il provino di un fotografo. Usalo per rivedere un servizio fotografico, scegliere le preferite con un cliente, catalogare prodotti o stampare una panoramica. Scegli A4 o Letter, verticale o orizzontale e quante foto per riga; le pagine sono create a 300 DPI per la stampa. Scarica un PDF di più pagine oppure immagini PNG o JPG.",
+    seoTitle: "Crea provini a contatto – Miniature foto in PDF, gratis",
+    seoDescription: "Crea un provino a contatto con molte foto e i nomi dei file, su pagine A4 o Letter a 300 DPI, in PDF o immagini. Gratis, senza registrazione né upload.",
+    keywords: [
+      "provino a contatto",
+      "provini fotografici",
+      "foglio miniature foto",
+      "stampare foto in miniatura",
+      "contact sheet online"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le tue foto",
+        description: "Trascina o scegli tutte le foto che vuoi e trascinale per riordinarle."
+      },
+      {
+        title: "Imposta la pagina",
+        description: "Scegli carta, orientamento, foto per riga, nomi dei file e un titolo facoltativo."
+      },
+      {
+        title: "Scarica",
+        description: "Salva un PDF con tutte le pagine oppure immagini PNG o JPG di ogni pagina."
+      }
+    ],
+    features: [
+      {
+        title: "Pronto da stampare",
+        description: "Pagine A4 o Letter a 300 DPI, con margini adatti a qualsiasi stampante."
+      },
+      {
+        title: "Con etichette",
+        description: "Nomi dei file sotto ogni foto, numeri di pagina e un titolo facoltativo."
+      },
+      {
+        title: "Senza ritagli",
+        description: "Ogni foto è mostrata per intero, adattata alla sua cornice."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quante foto posso aggiungere?",
+        answer: "Tutte quelle che il tuo dispositivo riesce ad aprire; le pagine vengono aggiunte quando servono. Serie molto grandi di foto pesanti richiedono più tempo e più memoria."
+      },
+      {
+        question: "Le foto vengono ritagliate?",
+        answer: "No. Ogni foto è adattata alla sua cornice, quindi le foto verticali e orizzontali sono mostrate per intero."
+      },
+      {
+        question: "Che risoluzione hanno le pagine?",
+        answer: "300 DPI, la qualità tipica per la stampa. Un A4 misura 2480 × 3508 pixel."
+      },
+      {
+        question: "Le mie foto vengono caricate?",
+        answer: "No. Il provino viene creato sul tuo dispositivo."
+      }
+    ]
+  },
 };

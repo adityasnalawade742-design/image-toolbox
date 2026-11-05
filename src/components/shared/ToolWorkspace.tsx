@@ -99,6 +99,10 @@ const SocialSizeWorkspace = standaloneTool(() => import('../tools/extras/SocialS
 const UnitConverterWorkspace = standaloneTool(() => import('../tools/extras/PrintCalcWorkspace'), 'UnitConverterWorkspace');
 const ResolutionCalcWorkspace = standaloneTool(() => import('../tools/extras/PrintCalcWorkspace'), 'ResolutionCalcWorkspace');
 const ColorBlindWorkspace = standaloneTool(() => import('../tools/extras/ColorBlindWorkspace'), 'ColorBlindWorkspace');
+const MorseWorkspace = standaloneTool(() => import('../tools/extras/MorseWorkspace'), 'MorseWorkspace');
+const HideTextWorkspace = standaloneTool(() => import('../tools/extras/HideTextWorkspace'), 'HideTextWorkspace');
+const HalftoneWorkspace = standaloneTool(() => import('../tools/extras/HalftoneWorkspace'), 'HalftoneWorkspace');
+const ContactSheetWorkspace = standaloneTool(() => import('../tools/extras/ContactSheetWorkspace'), 'ContactSheetWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -226,6 +230,10 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'cm-to-pixels': <UnitConverterWorkspace from="cm" to="px" />,
     'resolution-calculator': <ResolutionCalcWorkspace />,
     'color-blindness-simulator': <ColorBlindWorkspace />,
+    'morse-code-translator': <MorseWorkspace />,
+    'hide-text-in-image': <HideTextWorkspace />,
+    'halftone-dither-effect': <HalftoneWorkspace />,
+    'contact-sheet-maker': <ContactSheetWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,
