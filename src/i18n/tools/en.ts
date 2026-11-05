@@ -8441,4 +8441,248 @@ export const enTools: Record<string, LocalizedToolItem> = {
       { "question": "How do I make my design work for everyone?", "answer": "Don't rely on color alone. Add labels, patterns or icons, and choose colors that differ in lightness as well as hue." }
     ]
   },
+  "morse-code-translator": {
+    "name": "Morse Code Translator",
+    "shortName": "Morse Code",
+    "tagline": "Translate text to Morse code and Morse back to text, hear it, and save it as audio or an image. Free, on your device.",
+    "intro": "Morse Code Translator turns text into International Morse code and Morse back into text as you type. Play it as sound at the speed and pitch you choose, then download it as a WAV audio file or as a picture of the dots and dashes for a card, poster or puzzle. It uses the international standard (ITU) for letters, digits and punctuation.",
+    "seoTitle": "Morse Code Translator – Text to Morse, Audio, Image",
+    "seoDescription": "Translate text to Morse code and back, play it as sound, and download WAV audio or a PNG image. Free, no sign-up, works in your browser.",
+    "keywords": [
+      "morse code translator",
+      "text to morse code",
+      "morse code to text",
+      "morse code audio",
+      "morse code generator"
+    ],
+    "howToSteps": [
+      {
+        "title": "Type or paste",
+        "description": "Type text in the top box, or paste Morse code in either box; the other one updates."
+      },
+      {
+        "title": "Listen",
+        "description": "Press Play sound, and set the speed and tone to your liking."
+      },
+      {
+        "title": "Download",
+        "description": "Save the Morse as a WAV audio file or as a PNG picture of the dots and dashes."
+      }
+    ],
+    "features": [
+      {
+        "title": "Both directions",
+        "description": "Text to Morse and Morse to text, updated as you type."
+      },
+      {
+        "title": "International standard",
+        "description": "Letters, digits and punctuation as defined by the ITU."
+      },
+      {
+        "title": "Sound and picture",
+        "description": "Play it, download a WAV file, or save a PNG of the code."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I write Morse code here?",
+        "answer": "Use dots (.) and dashes (-). Put a space between letters and a slash (/) between words, for example ... --- ... for SOS."
+      },
+      {
+        "question": "What speed should I use?",
+        "answer": "About 5 to 10 words per minute suits beginners; experienced operators often send 20 or more. The speed follows the international PARIS standard."
+      },
+      {
+        "question": "Which characters does Morse have?",
+        "answer": "Letters A to Z, digits 0 to 9 and common punctuation. Accented letters are written without the accent, and characters Morse has no code for are listed and left out."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Translation, sound and downloads all happen on your device."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    "name": "Hide Text in Image",
+    "shortName": "Hide Text",
+    "tagline": "Hide a secret message inside a picture, with an optional password, and read it back later. Free, on your device.",
+    "intro": "Hide Text in Image writes a message into the pixels of a picture (steganography). The picture looks the same, because each color value changes by 1 at most, but the message can be read back here with the same tool. Add a password to encrypt it with AES-256. The result is a PNG, because only a lossless file keeps the message: a JPG copy, a resize, or a chat app that recompresses pictures wipes it out.",
+    "seoTitle": "Hide Text in Image – Steganography Online, Free",
+    "seoDescription": "Hide a secret message in a picture and read it back, with optional password encryption. Free, no sign-up, your image isn't uploaded.",
+    "keywords": [
+      "hide text in image",
+      "steganography online",
+      "hide message in picture",
+      "image steganography tool",
+      "decode hidden message in image"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add a picture",
+        "description": "Choose Hide a message, then drop or choose a photo."
+      },
+      {
+        "title": "Write the message",
+        "description": "Type your message and, if you like, a password."
+      },
+      {
+        "title": "Download and share the PNG",
+        "description": "Send the PNG as a file. To read it, open it here and choose Read a message."
+      }
+    ],
+    "features": [
+      {
+        "title": "Looks the same",
+        "description": "Each color value changes by 1 at most, which the eye can't see."
+      },
+      {
+        "title": "Optional password",
+        "description": "AES-256 encryption; without the password the message can't be read."
+      },
+      {
+        "title": "Checked before download",
+        "description": "The saved PNG is read back to make sure the message survived."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why did my message disappear?",
+        "answer": "The picture was changed after saving: converted to JPG, resized, or recompressed by a chat or social app. Share the PNG as a file, or in a zip, so it arrives unchanged."
+      },
+      {
+        "question": "How long can the message be?",
+        "answer": "About 3 bytes per 8 pixels: a 12-megapixel photo holds several megabytes, far more than any text. The tool shows how much space is left."
+      },
+      {
+        "question": "Is it secure?",
+        "answer": "With a password, the message is encrypted with AES-256, so only someone with the password can read it. Without one, anyone using a steganography tool like this could find it. Hiding a message is not the same as strong secrecy, so use a password for anything private."
+      },
+      {
+        "question": "Is my picture uploaded?",
+        "answer": "No. Hiding, encryption and reading all happen on your device."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    "name": "Halftone and Dither Effect",
+    "shortName": "Halftone & Dither",
+    "tagline": "Turn a photo into newspaper-style halftone dots or a retro dithered picture. Free, and it runs on your device.",
+    "intro": "Halftone and Dither Effect gives a photo the look of print or early computers. Halftone redraws it as dots that grow with the darkness, in black or in the four printing inks (CMYK) at their classic screen angles. Dither reduces it to a few colors and spreads the tones with Floyd–Steinberg, Atkinson or an ordered Bayer pattern, with palettes from black and white to Game Boy green. Adjust the detail, brightness and contrast, then download a full-size PNG.",
+    "seoTitle": "Halftone and Dither Effect – Photo to Dots, Free",
+    "seoDescription": "Turn a photo into halftone dots or a dithered picture: Floyd–Steinberg, Atkinson, Bayer, Game Boy and CGA palettes. Free, no upload.",
+    "keywords": [
+      "halftone effect",
+      "dither image",
+      "photo to halftone",
+      "floyd steinberg dithering online",
+      "game boy filter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "Drop or choose a JPG, PNG, WebP, HEIC or TIFF."
+      },
+      {
+        "title": "Choose the look",
+        "description": "Pick Halftone dots or Dither, then the colors, detail and contrast."
+      },
+      {
+        "title": "Download",
+        "description": "Save the full-size result as a PNG."
+      }
+    ],
+    "features": [
+      {
+        "title": "Real print screens",
+        "description": "CMYK dots at the 15°, 75°, 0° and 45° angles presses use."
+      },
+      {
+        "title": "Classic dithering",
+        "description": "Floyd–Steinberg, Atkinson and ordered Bayer, with retro palettes."
+      },
+      {
+        "title": "Full resolution",
+        "description": "The preview is quick; the download is made at full size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between halftone and dither?",
+        "answer": "Halftone prints tones as dots of different sizes on a regular grid, like a newspaper. Dither uses pixels of a few fixed colors and spreads them so the eye mixes them into in-between tones."
+      },
+      {
+        "question": "Which dithering method should I choose?",
+        "answer": "Floyd–Steinberg gives the smoothest tones. Atkinson, used on early Macs, has crisper highlights and shadows. Ordered (Bayer) makes a regular crosshatch pattern."
+      },
+      {
+        "question": "Why does the result look different when zoomed out?",
+        "answer": "Dots and dither patterns blend together at a distance; that's how they show tones. Fewer dots across, or a larger pixel size, keep the pattern visible."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. The effect is made on your device."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    "name": "Contact Sheet Maker",
+    "shortName": "Contact Sheet",
+    "tagline": "Lay out many photos as labelled thumbnails on printable pages, as a PDF or images. Free, and it runs on your device.",
+    "intro": "Contact Sheet Maker puts a set of photos on one page, or as many as needed, as thumbnails with their file names, like a photographer's proof sheet. Use it to review a shoot, pick favorites with a client, catalog products or print an overview. Choose A4 or Letter, portrait or landscape, and how many photos per row; pages are made at 300 DPI for printing. Download a multi-page PDF, or PNG or JPG images.",
+    "seoTitle": "Contact Sheet Maker – Photo Thumbnails to PDF, Free",
+    "seoDescription": "Make a contact sheet of many photos with file names, on A4 or Letter pages at 300 DPI, as a PDF or images. Free, no sign-up, no upload.",
+    "keywords": [
+      "contact sheet maker",
+      "photo contact sheet",
+      "thumbnail sheet",
+      "print photos as thumbnails",
+      "proof sheet"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photos",
+        "description": "Drop or choose as many photos as you like, and drag them into order."
+      },
+      {
+        "title": "Set up the page",
+        "description": "Choose the paper, orientation, photos per row, file names and an optional title."
+      },
+      {
+        "title": "Download",
+        "description": "Save a PDF with all pages, or PNG or JPG images of each page."
+      }
+    ],
+    "features": [
+      {
+        "title": "Printable",
+        "description": "A4 or Letter pages at 300 DPI, with margins for any printer."
+      },
+      {
+        "title": "Labelled",
+        "description": "File names under each photo, page numbers and an optional title."
+      },
+      {
+        "title": "Uncropped",
+        "description": "Each photo is shown whole, fitted into its frame."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many photos can I add?",
+        "answer": "As many as your device can open; pages are added as needed. Very large sets of big photos take longer and use more memory."
+      },
+      {
+        "question": "Are the photos cropped?",
+        "answer": "No. Each photo is fitted inside its frame, so portrait and landscape photos are both shown whole."
+      },
+      {
+        "question": "What resolution are the pages?",
+        "answer": "300 DPI, the usual quality for printing. A4 is 2480 × 3508 pixels."
+      },
+      {
+        "question": "Are my photos uploaded?",
+        "answer": "No. The sheet is made on your device."
+      }
+    ]
+  },
 };

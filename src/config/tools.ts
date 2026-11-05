@@ -1264,6 +1264,42 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'Eye',
     accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
   },
+  {
+    slug: 'morse-code-translator',
+    name: 'Morse Code Translator',
+    shortName: 'Morse Code',
+    description: 'Translate text to Morse code and back, play it as sound, and save it as audio or an image.',
+    category: 'utilities',
+    iconName: 'Radio',
+    accept: '',
+  },
+  {
+    slug: 'hide-text-in-image',
+    name: 'Hide Text in Image',
+    shortName: 'Hide Text',
+    description: 'Hide a secret message inside a picture, with an optional password, and read it back later.',
+    category: 'utilities',
+    iconName: 'EyeOff',
+    accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'halftone-dither-effect',
+    name: 'Halftone and Dither Effect',
+    shortName: 'Halftone & Dither',
+    description: 'Turn a photo into newspaper-style halftone dots or a retro dithered picture.',
+    category: 'edit-transform',
+    iconName: 'Grip',
+    accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
+  },
+  {
+    slug: 'contact-sheet-maker',
+    name: 'Contact Sheet Maker',
+    shortName: 'Contact Sheet',
+    description: 'Lay out many photos as labelled thumbnails on one sheet, as an image or a printable PDF.',
+    category: 'edit-transform',
+    iconName: 'LayoutGrid',
+    accept: 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif',
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolDefinition | undefined {

@@ -8788,4 +8788,248 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       { "question": "Como faço meu design funcionar para todos?", "answer": "Não dependa só da cor. Adicione rótulos, padrões ou ícones e escolha cores que diferem em luminosidade e também em matiz." }
     ]
   },
+  "morse-code-translator": {
+    name: "Tradutor de código Morse",
+    shortName: "Código Morse",
+    tagline: "Traduza texto para código Morse e Morse de volta para texto, ouça e salve como áudio ou imagem. Grátis, no seu dispositivo.",
+    intro: "O Tradutor de código Morse transforma texto em código Morse internacional e Morse de volta em texto enquanto você digita. Toque como som na velocidade e no tom que escolher e baixe como arquivo de áudio WAV ou como imagem dos pontos e traços para um cartão, pôster ou quebra-cabeça. Ele segue o padrão internacional (ITU) para letras, números e pontuação.",
+    seoTitle: "Tradutor de código Morse – Texto, áudio e imagem",
+    seoDescription: "Traduza texto para código Morse e vice-versa, ouça o som e baixe o áudio em WAV ou uma imagem PNG. Grátis, sem cadastro e funciona no navegador.",
+    keywords: [
+      "tradutor de código morse",
+      "código morse tradutor",
+      "texto para código morse",
+      "código morse para texto",
+      "código morse áudio"
+    ],
+    howToSteps: [
+      {
+        title: "Digite ou cole",
+        description: "Digite o texto na caixa de cima ou cole código Morse em qualquer uma das caixas; a outra é atualizada."
+      },
+      {
+        title: "Ouça",
+        description: "Toque em Tocar som e ajuste a velocidade e o tom como preferir."
+      },
+      {
+        title: "Baixe",
+        description: "Salve o Morse como arquivo de áudio WAV ou como imagem PNG dos pontos e traços."
+      }
+    ],
+    features: [
+      {
+        title: "Nos dois sentidos",
+        description: "De texto para Morse e de Morse para texto, atualizado enquanto você digita."
+      },
+      {
+        title: "Padrão internacional",
+        description: "Letras, números e pontuação conforme definidos pela ITU."
+      },
+      {
+        title: "Som e imagem",
+        description: "Toque o código, baixe um arquivo WAV ou salve um PNG."
+      }
+    ],
+    faqs: [
+      {
+        question: "Como escrevo código Morse aqui?",
+        answer: "Use pontos (.) e traços (-). Coloque um espaço entre as letras e uma barra (/) entre as palavras, por exemplo ... --- ... para SOS."
+      },
+      {
+        question: "Que velocidade devo usar?",
+        answer: "Cerca de 5 a 10 palavras por minuto é bom para iniciantes; operadores experientes costumam transmitir a 20 ou mais. A velocidade segue o padrão internacional PARIS."
+      },
+      {
+        question: "Quais caracteres existem no Morse?",
+        answer: "Letras de A a Z, números de 0 a 9 e a pontuação mais comum. Letras com acento são escritas sem o acento, e os caracteres sem código Morse são listados e deixados de fora."
+      },
+      {
+        question: "Meu texto é enviado para algum lugar?",
+        answer: "Não. A tradução, o som e os downloads acontecem no seu dispositivo."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Esconder texto em imagem",
+    shortName: "Esconder texto",
+    tagline: "Esconda uma mensagem secreta dentro de uma imagem, com senha opcional, e leia depois. Grátis, no seu dispositivo.",
+    intro: "O Esconder texto em imagem grava uma mensagem nos pixels de uma imagem (esteganografia). A imagem continua igual, porque cada valor de cor muda no máximo 1, mas a mensagem pode ser lida aqui com a mesma ferramenta. Adicione uma senha para criptografá-la com AES-256. O resultado é um PNG, porque só um arquivo sem perdas preserva a mensagem: uma cópia em JPG, um redimensionamento ou um app de mensagens que recomprime as imagens a apaga.",
+    seoTitle: "Esconder texto em imagem – Esteganografia online grátis",
+    seoDescription: "Esconda uma mensagem secreta em uma imagem e leia depois, com criptografia por senha opcional. Grátis, sem cadastro e sua imagem não é enviada.",
+    keywords: [
+      "esconder texto em imagem",
+      "esteganografia online",
+      "esconder mensagem em foto",
+      "mensagem secreta em imagem",
+      "ler mensagem escondida em imagem"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione uma imagem",
+        description: "Escolha Esconder uma mensagem e arraste ou escolha uma foto."
+      },
+      {
+        title: "Escreva a mensagem",
+        description: "Digite sua mensagem e, se quiser, uma senha."
+      },
+      {
+        title: "Baixe e compartilhe o PNG",
+        description: "Envie o PNG como arquivo. Para ler, abra-o aqui e escolha Ler uma mensagem."
+      }
+    ],
+    features: [
+      {
+        title: "Aparência igual",
+        description: "Cada valor de cor muda no máximo 1, o que o olho não percebe."
+      },
+      {
+        title: "Senha opcional",
+        description: "Criptografia AES-256; sem a senha, a mensagem não pode ser lida."
+      },
+      {
+        title: "Verificado antes do download",
+        description: "O PNG salvo é lido de novo para garantir que a mensagem foi preservada."
+      }
+    ],
+    faqs: [
+      {
+        question: "Por que minha mensagem sumiu?",
+        answer: "A imagem foi alterada depois de salva: convertida para JPG, redimensionada ou recomprimida por um app de mensagens ou rede social. Compartilhe o PNG como arquivo, ou em um zip, para que chegue sem alterações."
+      },
+      {
+        question: "Qual o tamanho máximo da mensagem?",
+        answer: "Cerca de 3 bytes a cada 8 pixels: uma foto de 12 megapixels comporta vários megabytes, muito mais do que qualquer texto. A ferramenta mostra quanto espaço ainda resta."
+      },
+      {
+        question: "É seguro?",
+        answer: "Com senha, a mensagem é criptografada com AES-256, então só quem tem a senha consegue lê-la. Sem senha, qualquer pessoa que use uma ferramenta de esteganografia como esta pode encontrá-la. Esconder uma mensagem não é o mesmo que um sigilo forte, então use uma senha para tudo o que for privado."
+      },
+      {
+        question: "Minha imagem é enviada para algum lugar?",
+        answer: "Não. Esconder, criptografar e ler acontecem no seu dispositivo."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Efeito meio-tom e dithering",
+    shortName: "Meio-tom e dithering",
+    tagline: "Transforme uma foto em pontos de meio-tom estilo jornal ou em uma imagem retrô com dithering. Grátis e roda no seu dispositivo.",
+    intro: "O Efeito meio-tom e dithering dá a uma foto a aparência de material impresso ou dos primeiros computadores. O meio-tom redesenha a imagem como pontos que crescem conforme a área fica mais escura, em preto ou nas quatro tintas de impressão (CMYK) com seus ângulos de retícula clássicos. O dithering reduz a imagem a poucas cores e distribui os tons com Floyd–Steinberg, Atkinson ou um padrão Bayer ordenado, com paletas que vão do preto e branco ao verde do Game Boy. Ajuste o detalhe, o brilho e o contraste e baixe um PNG em tamanho real.",
+    seoTitle: "Efeito meio-tom e dithering – Foto em pontos, grátis",
+    seoDescription: "Transforme uma foto em pontos de meio-tom ou em imagem com dithering: Floyd–Steinberg, Atkinson, Bayer e paletas Game Boy e CGA. Grátis, sem upload.",
+    keywords: [
+      "efeito halftone",
+      "efeito meio-tom foto",
+      "dithering online",
+      "floyd steinberg dithering",
+      "filtro game boy"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua foto",
+        description: "Arraste ou escolha um JPG, PNG, WebP, HEIC ou TIFF."
+      },
+      {
+        title: "Escolha o visual",
+        description: "Escolha Pontos de meio-tom ou Dithering e depois as cores, o detalhe e o contraste."
+      },
+      {
+        title: "Baixe",
+        description: "Salve o resultado em tamanho real como PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Retículas de impressão reais",
+        description: "Pontos CMYK nos ângulos de 15°, 75°, 0° e 45° usados nas gráficas."
+      },
+      {
+        title: "Dithering clássico",
+        description: "Floyd–Steinberg, Atkinson e Bayer ordenado, com paletas retrô."
+      },
+      {
+        title: "Resolução total",
+        description: "A prévia é rápida; o download é gerado em tamanho real."
+      }
+    ],
+    faqs: [
+      {
+        question: "Qual é a diferença entre meio-tom e dithering?",
+        answer: "O meio-tom imprime os tons como pontos de tamanhos diferentes em uma grade regular, como num jornal. O dithering usa pixels de poucas cores fixas e os distribui para que o olho os misture em tons intermediários."
+      },
+      {
+        question: "Qual método de dithering devo escolher?",
+        answer: "O Floyd–Steinberg dá os tons mais suaves. O Atkinson, usado nos primeiros Macs, tem luzes e sombras mais nítidas. O ordenado (Bayer) cria um padrão regular de hachuras cruzadas."
+      },
+      {
+        question: "Por que o resultado parece diferente de longe?",
+        answer: "Os pontos e os padrões de dithering se misturam à distância; é assim que eles mostram os tons. Menos pontos na largura, ou um pixel maior, mantêm o padrão visível."
+      },
+      {
+        question: "Minha foto é enviada para algum lugar?",
+        answer: "Não. O efeito é criado no seu dispositivo."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Criador de folha de contato",
+    shortName: "Folha de contato",
+    tagline: "Organize muitas fotos como miniaturas com nome em páginas para imprimir, em PDF ou imagens. Grátis e roda no seu dispositivo.",
+    intro: "O Criador de folha de contato coloca um conjunto de fotos em uma página, ou em quantas forem necessárias, como miniaturas com os nomes dos arquivos, como a folha de provas de um fotógrafo. Use para revisar um ensaio, escolher as favoritas com um cliente, catalogar produtos ou imprimir uma visão geral. Escolha A4 ou Carta, retrato ou paisagem e quantas fotos por linha; as páginas são criadas a 300 DPI para impressão. Baixe um PDF com várias páginas ou imagens PNG ou JPG.",
+    seoTitle: "Criador de folha de contato – Miniaturas em PDF, grátis",
+    seoDescription: "Crie uma folha de contato com muitas fotos e seus nomes, em páginas A4 ou Carta a 300 DPI, em PDF ou imagens. Grátis, sem cadastro e sem upload.",
+    keywords: [
+      "folha de contato",
+      "folha de contato fotos",
+      "criar folha de contato",
+      "imprimir fotos em miniatura",
+      "várias fotos em uma folha"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione suas fotos",
+        description: "Arraste ou escolha quantas fotos quiser e arraste para mudar a ordem."
+      },
+      {
+        title: "Configure a página",
+        description: "Escolha o papel, a orientação, as fotos por linha, os nomes dos arquivos e um título opcional."
+      },
+      {
+        title: "Baixe",
+        description: "Salve um PDF com todas as páginas ou imagens PNG ou JPG de cada página."
+      }
+    ],
+    features: [
+      {
+        title: "Pronto para imprimir",
+        description: "Páginas A4 ou Carta a 300 DPI, com margens para qualquer impressora."
+      },
+      {
+        title: "Com legendas",
+        description: "Nome do arquivo sob cada foto, números de página e um título opcional."
+      },
+      {
+        title: "Sem cortes",
+        description: "Cada foto aparece inteira, ajustada ao seu quadro."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quantas fotos posso adicionar?",
+        answer: "Quantas o seu dispositivo conseguir abrir; as páginas são adicionadas conforme necessário. Conjuntos muito grandes de fotos grandes demoram mais e usam mais memória."
+      },
+      {
+        question: "As fotos são cortadas?",
+        answer: "Não. Cada foto é ajustada dentro do seu quadro, então fotos em retrato e em paisagem aparecem inteiras."
+      },
+      {
+        question: "Qual é a resolução das páginas?",
+        answer: "300 DPI, a qualidade usual para impressão. Uma página A4 tem 2480 × 3508 pixels."
+      },
+      {
+        question: "Minhas fotos são enviadas para algum lugar?",
+        answer: "Não. A folha é criada no seu dispositivo."
+      }
+    ]
+  },
 };

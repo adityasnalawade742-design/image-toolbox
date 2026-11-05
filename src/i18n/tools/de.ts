@@ -8826,4 +8826,248 @@ export const deTools: Record<string, LocalizedToolItem> = {
       { "question": "Wie mache ich mein Design für alle nutzbar?", "answer": "Verlass dich nicht allein auf Farbe. Ergänze Beschriftungen, Muster oder Symbole und wähle Farben, die sich auch in der Helligkeit und nicht nur im Farbton unterscheiden." }
     ]
   },
+  "morse-code-translator": {
+    name: "Morsecode-Übersetzer",
+    shortName: "Morsecode",
+    tagline: "Übersetze Text in Morsecode und Morsecode zurück in Text, hör ihn dir an und speichere ihn als Audio oder Bild. Kostenlos, auf deinem Gerät.",
+    intro: "Morsecode-Übersetzer wandelt Text schon beim Tippen in internationalen Morsecode um und Morsecode zurück in Text. Spiel ihn mit dem Tempo und der Tonhöhe deiner Wahl als Ton ab und lade ihn dann als WAV-Audiodatei herunter oder als Bild der Punkte und Striche für eine Karte, ein Poster oder ein Rätsel. Für Buchstaben, Ziffern und Satzzeichen gilt der internationale Standard (ITU).",
+    seoTitle: "Morsecode-Übersetzer – Text in Morse, Audio, Bild",
+    seoDescription: "Übersetze Text in Morsecode und zurück, spiel ihn als Ton ab und lade WAV-Audio oder ein PNG-Bild herunter. Kostenlos, ohne Anmeldung, im Browser.",
+    keywords: [
+      "morsecode übersetzer",
+      "text in morsecode",
+      "morsecode in text",
+      "morsecode audio",
+      "morsecode generator"
+    ],
+    howToSteps: [
+      {
+        title: "Tippen oder einfügen",
+        description: "Gib oben Text ein oder füge Morsecode in eines der beiden Felder ein; das andere wird aktualisiert."
+      },
+      {
+        title: "Anhören",
+        description: "Tippe auf „Abspielen“ und stell Tempo und Tonhöhe nach Belieben ein."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere den Morsecode als WAV-Audiodatei oder als PNG-Bild der Punkte und Striche."
+      }
+    ],
+    features: [
+      {
+        title: "In beide Richtungen",
+        description: "Text in Morsecode und Morsecode in Text, aktualisiert beim Tippen."
+      },
+      {
+        title: "Internationaler Standard",
+        description: "Buchstaben, Ziffern und Satzzeichen nach ITU-Definition."
+      },
+      {
+        title: "Ton und Bild",
+        description: "Abspielen, als WAV-Datei herunterladen oder als PNG speichern."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie schreibe ich hier Morsecode?",
+        answer: "Verwende Punkte (.) und Striche (-). Setz ein Leerzeichen zwischen Buchstaben und einen Schrägstrich (/) zwischen Wörter, zum Beispiel ... --- ... für SOS."
+      },
+      {
+        question: "Welches Tempo sollte ich wählen?",
+        answer: "Etwa 5 bis 10 Wörter pro Minute eignen sich für Anfänger; erfahrene Funker senden oft 20 oder mehr. Das Tempo richtet sich nach dem internationalen PARIS-Standard."
+      },
+      {
+        question: "Welche Zeichen gibt es im Morsecode?",
+        answer: "Die Buchstaben A bis Z, die Ziffern 0 bis 9 und gängige Satzzeichen. Buchstaben mit Akzent werden ohne Akzent geschrieben, und Zeichen ohne Morsecode werden aufgelistet und weggelassen."
+      },
+      {
+        question: "Wird mein Text hochgeladen?",
+        answer: "Nein. Übersetzung, Ton und Downloads laufen komplett auf deinem Gerät."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Text in Bild verstecken",
+    shortName: "Text verstecken",
+    tagline: "Versteck eine geheime Nachricht in einem Bild, optional mit Passwort, und lies sie später wieder aus. Kostenlos, auf deinem Gerät.",
+    intro: "Text in Bild verstecken schreibt eine Nachricht in die Pixel eines Bildes (Steganografie). Das Bild sieht gleich aus, weil sich jeder Farbwert um höchstens 1 ändert, doch die Nachricht lässt sich hier mit demselben Tool wieder auslesen. Mit einem Passwort wird sie per AES-256 verschlüsselt. Das Ergebnis ist ein PNG, denn nur eine verlustfreie Datei behält die Nachricht: Eine JPG-Kopie, eine Größenänderung oder eine Chat-App, die Bilder neu komprimiert, löscht sie.",
+    seoTitle: "Text in Bild verstecken – Steganografie online",
+    seoDescription: "Versteck eine geheime Nachricht in einem Bild und lies sie wieder aus, optional mit Passwort verschlüsselt. Kostenlos, ohne Anmeldung, ohne Upload.",
+    keywords: [
+      "text in bild verstecken",
+      "steganographie online",
+      "nachricht in bild verstecken",
+      "versteckte nachricht in bild lesen",
+      "steganografie tool"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Wähle „Nachricht verstecken“ und zieh dann ein Foto hierher oder wähle es aus."
+      },
+      {
+        title: "Nachricht schreiben",
+        description: "Gib deine Nachricht ein und, wenn du willst, ein Passwort."
+      },
+      {
+        title: "PNG herunterladen und teilen",
+        description: "Schick das PNG als Datei. Zum Lesen öffnest du es hier und wählst „Nachricht lesen“."
+      }
+    ],
+    features: [
+      {
+        title: "Sieht gleich aus",
+        description: "Jeder Farbwert ändert sich um höchstens 1, das sieht das Auge nicht."
+      },
+      {
+        title: "Optionales Passwort",
+        description: "AES-256-Verschlüsselung; ohne Passwort lässt sich die Nachricht nicht lesen."
+      },
+      {
+        title: "Vor dem Download geprüft",
+        description: "Das gespeicherte PNG wird erneut ausgelesen, um sicherzugehen, dass die Nachricht erhalten ist."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum ist meine Nachricht verschwunden?",
+        answer: "Das Bild wurde nach dem Speichern verändert: in JPG umgewandelt, verkleinert oder von einer Chat- oder Social-Media-App neu komprimiert. Teile das PNG als Datei oder in einem ZIP, damit es unverändert ankommt."
+      },
+      {
+        question: "Wie lang darf die Nachricht sein?",
+        answer: "Etwa 3 Bytes pro 8 Pixel: Ein Foto mit 12 Megapixeln fasst mehrere Megabyte, weit mehr als jeder Text. Das Tool zeigt an, wie viel Platz noch frei ist."
+      },
+      {
+        question: "Ist das sicher?",
+        answer: "Mit Passwort wird die Nachricht per AES-256 verschlüsselt, sodass nur jemand mit dem Passwort sie lesen kann. Ohne Passwort könnte sie jeder finden, der ein Steganografie-Tool wie dieses nutzt. Eine Nachricht zu verstecken ist nicht dasselbe wie echte Geheimhaltung, also verwende für alles Private ein Passwort."
+      },
+      {
+        question: "Wird mein Bild hochgeladen?",
+        answer: "Nein. Verstecken, Verschlüsseln und Auslesen laufen komplett auf deinem Gerät."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Raster- und Dithering-Effekt",
+    shortName: "Raster & Dithering",
+    tagline: "Verwandle ein Foto in Rasterpunkte wie in der Zeitung oder in ein Retro-Bild mit Dithering. Kostenlos und direkt auf deinem Gerät.",
+    intro: "Raster- und Dithering-Effekt gibt einem Foto den Look von Druckerzeugnissen oder frühen Computern. Der Rastereffekt (Halftone) zeichnet es als Punkte neu, die mit der Dunkelheit wachsen, in Schwarz oder in den vier Druckfarben (CMYK) mit ihren klassischen Rasterwinkeln. Dithering reduziert es auf wenige Farben und verteilt die Tonwerte mit Floyd–Steinberg, Atkinson oder einem geordneten Bayer-Muster, mit Paletten von Schwarz-Weiß bis Game-Boy-Grün. Stell Detail, Helligkeit und Kontrast ein und lade dann ein PNG in voller Größe herunter.",
+    seoTitle: "Halftone- & Dithering-Effekt – Foto in Punkte, gratis",
+    seoDescription: "Verwandle ein Foto in Rasterpunkte oder ein Dithering-Bild: Floyd–Steinberg, Atkinson, Bayer, Game-Boy- und CGA-Paletten. Kostenlos, ohne Upload.",
+    keywords: [
+      "halftone effekt",
+      "rastereffekt foto",
+      "dithering online",
+      "foto in punkte umwandeln",
+      "game boy filter"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh ein JPG, PNG, WebP, HEIC oder TIFF hierher oder wähle es aus."
+      },
+      {
+        title: "Look wählen",
+        description: "Wähle „Rasterpunkte“ oder „Dithering“, dann Farben, Detail und Kontrast."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das Ergebnis in voller Größe als PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Echte Druckraster",
+        description: "CMYK-Punkte in den Winkeln 15°, 75°, 0° und 45°, wie sie Druckereien verwenden."
+      },
+      {
+        title: "Klassisches Dithering",
+        description: "Floyd–Steinberg, Atkinson und geordnetes Bayer, mit Retro-Paletten."
+      },
+      {
+        title: "Volle Auflösung",
+        description: "Die Vorschau ist schnell; der Download wird in voller Größe erstellt."
+      }
+    ],
+    faqs: [
+      {
+        question: "Was ist der Unterschied zwischen Raster und Dithering?",
+        answer: "Ein Raster druckt Tonwerte als unterschiedlich große Punkte auf einem regelmäßigen Gitter, wie bei einer Zeitung. Dithering nutzt Pixel in wenigen festen Farben und verteilt sie so, dass das Auge sie zu Zwischentönen mischt."
+      },
+      {
+        question: "Welches Dithering-Verfahren sollte ich wählen?",
+        answer: "Floyd–Steinberg liefert die weichsten Übergänge. Atkinson, das auf frühen Macs verwendet wurde, hat klarere Lichter und Schatten. Geordnet (Bayer) erzeugt ein regelmäßiges Kreuzschraffur-Muster."
+      },
+      {
+        question: "Warum sieht das Ergebnis verkleinert anders aus?",
+        answer: "Punkte und Dithering-Muster verschmelzen aus der Entfernung; so entstehen die Tonwerte. Weniger Punkte in der Breite oder eine größere Pixelgröße halten das Muster sichtbar."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Der Effekt entsteht auf deinem Gerät."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Kontaktabzug erstellen",
+    shortName: "Kontaktabzug",
+    tagline: "Ordne viele Fotos als beschriftete Miniaturen auf druckbaren Seiten an, als PDF oder Bilder. Kostenlos und direkt auf deinem Gerät.",
+    intro: "Kontaktabzug erstellen setzt eine Reihe von Fotos auf eine Seite oder auf so viele wie nötig, als Miniaturen mit ihren Dateinamen, wie der Kontaktabzug eines Fotografen. Damit kannst du ein Shooting sichten, mit Kunden Favoriten auswählen, Produkte katalogisieren oder eine Übersicht drucken. Wähle A4 oder Letter, Hoch- oder Querformat und wie viele Fotos pro Zeile; die Seiten werden mit 300 DPI für den Druck erstellt. Lade ein mehrseitiges PDF oder PNG- bzw. JPG-Bilder herunter.",
+    seoTitle: "Kontaktabzug online erstellen – Fotos als PDF-Übersicht",
+    seoDescription: "Erstelle einen Kontaktabzug aus vielen Fotos mit Dateinamen, auf A4- oder Letter-Seiten mit 300 DPI, als PDF oder Bilder. Kostenlos, ohne Anmeldung und Upload.",
+    keywords: [
+      "kontaktabzug erstellen",
+      "kontaktabzug online",
+      "kontaktbogen fotos",
+      "fotos als miniaturen drucken",
+      "bilderübersicht pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Fotos hinzufügen",
+        description: "Zieh so viele Fotos hierher, wie du willst, oder wähle sie aus, und bring sie per Ziehen in die richtige Reihenfolge."
+      },
+      {
+        title: "Seite einrichten",
+        description: "Wähle Papier, Ausrichtung, Fotos pro Zeile, Dateinamen und einen optionalen Titel."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere ein PDF mit allen Seiten oder PNG- bzw. JPG-Bilder jeder Seite."
+      }
+    ],
+    features: [
+      {
+        title: "Druckfertig",
+        description: "A4- oder Letter-Seiten mit 300 DPI und Rändern für jeden Drucker."
+      },
+      {
+        title: "Beschriftet",
+        description: "Dateinamen unter jedem Foto, Seitenzahlen und ein optionaler Titel."
+      },
+      {
+        title: "Nicht beschnitten",
+        description: "Jedes Foto wird vollständig gezeigt und in seinen Rahmen eingepasst."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie viele Fotos kann ich hinzufügen?",
+        answer: "So viele, wie dein Gerät öffnen kann; Seiten kommen nach Bedarf hinzu. Sehr große Mengen großer Fotos dauern länger und brauchen mehr Speicher."
+      },
+      {
+        question: "Werden die Fotos beschnitten?",
+        answer: "Nein. Jedes Foto wird in seinen Rahmen eingepasst, sodass Hoch- und Querformatfotos vollständig zu sehen sind."
+      },
+      {
+        question: "Welche Auflösung haben die Seiten?",
+        answer: "300 DPI, die übliche Qualität für den Druck. A4 entspricht 2480 × 3508 Pixeln."
+      },
+      {
+        question: "Werden meine Fotos hochgeladen?",
+        answer: "Nein. Der Kontaktabzug entsteht auf deinem Gerät."
+      }
+    ]
+  },
 };

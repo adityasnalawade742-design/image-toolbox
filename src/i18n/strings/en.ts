@@ -14,6 +14,7 @@ import { barcodeStrings } from './en/barcode';
 import { documentStrings } from './en/documents';
 import { socialStrings } from './en/social';
 import { pdfUtilStrings } from './en/pdf-utils';
+import { nicheStrings } from './en/niche';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -108,6 +109,7 @@ export const en = {
   ...documentStrings,
   ...socialStrings,
   ...pdfUtilStrings,
+  ...nicheStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

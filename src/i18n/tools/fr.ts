@@ -8832,4 +8832,248 @@ export const frTools: Record<string, LocalizedToolItem> = {
       { "question": "Comment rendre ma maquette accessible à tous ?", "answer": "Ne comptez pas uniquement sur la couleur. Ajoutez des libellés, des motifs ou des icônes, et choisissez des couleurs qui diffèrent aussi par la luminosité, pas seulement par la teinte." }
     ]
   },
+  "morse-code-translator": {
+    name: "Traducteur de code Morse",
+    shortName: "Code Morse",
+    tagline: "Traduisez du texte en code Morse et du Morse en texte, écoutez-le et enregistrez-le en audio ou en image. Gratuit, sur votre appareil.",
+    intro: "Traducteur de code Morse convertit le texte en code Morse international, et le Morse en texte, au fil de la saisie. Écoutez-le à la vitesse et à la tonalité de votre choix, puis téléchargez-le en fichier audio WAV ou en image des points et des traits pour une carte, une affiche ou une énigme. Il suit la norme internationale (ITU) pour les lettres, les chiffres et la ponctuation.",
+    seoTitle: "Traducteur Morse – texte en Morse, audio et image",
+    seoDescription: "Traduisez du texte en code Morse et inversement, écoutez-le, puis téléchargez l’audio WAV ou une image PNG. Gratuit, sans inscription, dans le navigateur.",
+    keywords: [
+      "traducteur morse",
+      "traduire en morse",
+      "morse en texte",
+      "code morse audio",
+      "générateur code morse"
+    ],
+    howToSteps: [
+      {
+        title: "Saisissez ou collez",
+        description: "Tapez du texte dans le champ du haut, ou collez du code Morse dans l’un ou l’autre champ ; l’autre se met à jour."
+      },
+      {
+        title: "Écoutez",
+        description: "Appuyez sur « Écouter » et réglez la vitesse et la tonalité à votre goût."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le Morse en fichier audio WAV ou en image PNG des points et des traits."
+      }
+    ],
+    features: [
+      {
+        title: "Dans les deux sens",
+        description: "Du texte au Morse et du Morse au texte, mis à jour pendant la saisie."
+      },
+      {
+        title: "Norme internationale",
+        description: "Lettres, chiffres et ponctuation tels que définis par l’ITU."
+      },
+      {
+        title: "Son et image",
+        description: "Écoutez-le, téléchargez un fichier WAV ou enregistrez un PNG du code."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment écrire du code Morse ici ?",
+        answer: "Utilisez des points (.) et des traits (-). Mettez une espace entre les lettres et une barre oblique (/) entre les mots, par exemple ... --- ... pour SOS."
+      },
+      {
+        question: "Quelle vitesse choisir ?",
+        answer: "Environ 5 à 10 mots par minute conviennent aux débutants ; les opérateurs expérimentés transmettent souvent à 20 ou plus. La vitesse suit la norme internationale PARIS."
+      },
+      {
+        question: "Quels caractères existent en Morse ?",
+        answer: "Les lettres de A à Z, les chiffres de 0 à 9 et la ponctuation courante. Les lettres accentuées sont écrites sans accent, et les caractères sans code Morse sont signalés et ignorés."
+      },
+      {
+        question: "Mon texte est-il envoyé en ligne ?",
+        answer: "Non. La traduction, le son et les téléchargements se font sur votre appareil."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Cacher du texte dans une image",
+    shortName: "Cacher du texte",
+    tagline: "Cachez un message secret dans une image, avec un mot de passe facultatif, et relisez-le plus tard. Gratuit, sur votre appareil.",
+    intro: "Cacher du texte dans une image écrit un message dans les pixels d’une image (stéganographie). L’image paraît identique, car chaque valeur de couleur change de 1 au maximum, mais le message peut être relu ici avec le même outil. Ajoutez un mot de passe pour le chiffrer en AES-256. Le résultat est un PNG, car seul un fichier sans perte conserve le message : une copie en JPG, un redimensionnement ou une messagerie qui recompresse les images l’efface.",
+    seoTitle: "Cacher un message dans une image – stéganographie",
+    seoDescription: "Cachez un message secret dans une image et relisez-le, avec chiffrement facultatif par mot de passe. Gratuit, sans inscription, sans envoi de l’image.",
+    keywords: [
+      "cacher un message dans une image",
+      "stéganographie en ligne",
+      "cacher du texte dans une image",
+      "message caché dans une image",
+      "décoder un message caché dans une image"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une image",
+        description: "Choisissez « Cacher un message », puis déposez ou choisissez une photo."
+      },
+      {
+        title: "Écrivez le message",
+        description: "Tapez votre message et, si vous le souhaitez, un mot de passe."
+      },
+      {
+        title: "Téléchargez et partagez le PNG",
+        description: "Envoyez le PNG en tant que fichier. Pour le lire, ouvrez-le ici et choisissez « Lire un message »."
+      }
+    ],
+    features: [
+      {
+        title: "Image identique",
+        description: "Chaque valeur de couleur change de 1 au maximum, ce que l’œil ne voit pas."
+      },
+      {
+        title: "Mot de passe facultatif",
+        description: "Chiffrement AES-256 ; sans le mot de passe, le message est illisible."
+      },
+      {
+        title: "Vérifié avant le téléchargement",
+        description: "Le PNG enregistré est relu pour s’assurer que le message est intact."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi mon message a-t-il disparu ?",
+        answer: "L’image a été modifiée après l’enregistrement : convertie en JPG, redimensionnée ou recompressée par une messagerie ou un réseau social. Partagez le PNG en tant que fichier, ou dans un zip, pour qu’il arrive intact."
+      },
+      {
+        question: "Quelle longueur peut avoir le message ?",
+        answer: "Environ 3 octets pour 8 pixels : une photo de 12 mégapixels peut contenir plusieurs mégaoctets, bien plus que n’importe quel texte. L’outil indique l’espace restant."
+      },
+      {
+        question: "Est-ce sûr ?",
+        answer: "Avec un mot de passe, le message est chiffré en AES-256 : seule une personne qui connaît le mot de passe peut le lire. Sans mot de passe, n’importe qui utilisant un outil de stéganographie comme celui-ci pourrait le trouver. Cacher un message ne le rend pas vraiment secret ; utilisez donc un mot de passe pour tout ce qui est privé."
+      },
+      {
+        question: "Mon image est-elle envoyée en ligne ?",
+        answer: "Non. La dissimulation, le chiffrement et la lecture se font sur votre appareil."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Effet trame et tramage",
+    shortName: "Trame et tramage",
+    tagline: "Transformez une photo en points de trame façon journal ou en image tramée rétro. Gratuit, et tout se fait sur votre appareil.",
+    intro: "Effet trame et tramage donne à une photo l’aspect de l’impression ou des premiers ordinateurs. La trame (halftone) la redessine en points qui grossissent avec l’obscurité, en noir ou dans les quatre encres d’impression (CMYK) à leurs angles de trame classiques. Le tramage (dithering) la réduit à quelques couleurs et répartit les tons avec Floyd–Steinberg, Atkinson ou un motif Bayer ordonné, avec des palettes allant du noir et blanc au vert de la Game Boy. Réglez le détail, la luminosité et le contraste, puis téléchargez un PNG en taille réelle.",
+    seoTitle: "Effet halftone et dithering – photo en points, gratuit",
+    seoDescription: "Transformez une photo en points de trame ou en image tramée : Floyd–Steinberg, Atkinson, Bayer, palettes Game Boy et CGA. Gratuit, sans envoi.",
+    keywords: [
+      "effet halftone",
+      "effet trame de points",
+      "dithering en ligne",
+      "transformer une photo en points",
+      "filtre game boy"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Déposez ou choisissez un fichier JPG, PNG, WebP, HEIC ou TIFF."
+      },
+      {
+        title: "Choisissez le rendu",
+        description: "Sélectionnez « Points de trame » ou « Tramage », puis les couleurs, le détail et le contraste."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le résultat en taille réelle au format PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Vraies trames d’impression",
+        description: "Points CMYK aux angles de 15°, 75°, 0° et 45° utilisés par les imprimeurs."
+      },
+      {
+        title: "Tramage classique",
+        description: "Floyd–Steinberg, Atkinson et Bayer ordonné, avec des palettes rétro."
+      },
+      {
+        title: "Pleine résolution",
+        description: "L’aperçu est rapide ; le téléchargement est créé en taille réelle."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle est la différence entre trame et tramage ?",
+        answer: "La trame imprime les tons sous forme de points de tailles différentes sur une grille régulière, comme dans un journal. Le tramage utilise des pixels de quelques couleurs fixes et les répartit pour que l’œil les mélange en tons intermédiaires."
+      },
+      {
+        question: "Quelle méthode de tramage choisir ?",
+        answer: "Floyd–Steinberg donne les tons les plus doux. Atkinson, utilisé sur les premiers Mac, offre des hautes lumières et des ombres plus nettes. Ordonné (Bayer) produit un motif quadrillé régulier."
+      },
+      {
+        question: "Pourquoi le résultat change-t-il vu de loin ?",
+        answer: "Les points et les motifs de tramage se fondent à distance ; c’est ainsi qu’ils rendent les tons. Moins de points en largeur, ou une plus grande taille de pixel, gardent le motif visible."
+      },
+      {
+        question: "Ma photo est-elle envoyée en ligne ?",
+        answer: "Non. L’effet est créé sur votre appareil."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Créateur de planche contact",
+    shortName: "Planche contact",
+    tagline: "Disposez de nombreuses photos en miniatures légendées sur des pages imprimables, en PDF ou en images. Gratuit, et tout se fait sur votre appareil.",
+    intro: "Créateur de planche contact place une série de photos sur une page, ou sur autant qu’il en faut, sous forme de miniatures avec leur nom de fichier, comme la planche d’épreuves d’un photographe. Utilisez-le pour passer en revue une séance, choisir les favorites avec un client, cataloguer des produits ou imprimer une vue d’ensemble. Choisissez A4 ou Letter, portrait ou paysage, et le nombre de photos par ligne ; les pages sont créées à 300 DPI pour l’impression. Téléchargez un PDF de plusieurs pages, ou des images PNG ou JPG.",
+    seoTitle: "Planche contact en ligne – miniatures photo en PDF",
+    seoDescription: "Créez une planche contact de nombreuses photos avec leur nom, sur des pages A4 ou Letter à 300 DPI, en PDF ou en images. Gratuit, sans inscription ni envoi.",
+    keywords: [
+      "planche contact",
+      "planche contact photo",
+      "créer une planche contact",
+      "planche de miniatures pdf",
+      "imprimer des photos en miniatures"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos photos",
+        description: "Déposez ou choisissez autant de photos que vous voulez, et faites-les glisser pour les mettre dans l’ordre."
+      },
+      {
+        title: "Mettez en page",
+        description: "Choisissez le papier, l’orientation, le nombre de photos par ligne, les noms de fichier et un titre facultatif."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez un PDF avec toutes les pages, ou des images PNG ou JPG de chaque page."
+      }
+    ],
+    features: [
+      {
+        title: "Prête à imprimer",
+        description: "Pages A4 ou Letter à 300 DPI, avec des marges adaptées à toute imprimante."
+      },
+      {
+        title: "Légendée",
+        description: "Nom de fichier sous chaque photo, numéros de page et titre facultatif."
+      },
+      {
+        title: "Sans recadrage",
+        description: "Chaque photo est affichée en entier, ajustée à son cadre."
+      }
+    ],
+    faqs: [
+      {
+        question: "Combien de photos puis-je ajouter ?",
+        answer: "Autant que votre appareil peut en ouvrir ; des pages sont ajoutées au besoin. Les très grandes séries de photos lourdes prennent plus de temps et utilisent plus de mémoire."
+      },
+      {
+        question: "Les photos sont-elles recadrées ?",
+        answer: "Non. Chaque photo est ajustée dans son cadre, si bien que les photos en portrait comme en paysage s’affichent en entier."
+      },
+      {
+        question: "Quelle est la résolution des pages ?",
+        answer: "300 DPI, la qualité habituelle pour l’impression. Une page A4 fait 2480 × 3508 pixels."
+      },
+      {
+        question: "Mes photos sont-elles envoyées en ligne ?",
+        answer: "Non. La planche est créée sur votre appareil."
+      }
+    ]
+  },
 };

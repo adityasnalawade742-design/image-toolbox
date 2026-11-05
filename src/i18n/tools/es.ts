@@ -8804,4 +8804,248 @@ export const esTools: Record<string, LocalizedToolItem> = {
       { "question": "¿Cómo hago que mi diseño funcione para todos?", "answer": "No dependas solo del color. Añade etiquetas, patrones o iconos, y elige colores que se diferencien también en luminosidad, no solo en tono." }
     ]
   },
+  "morse-code-translator": {
+    name: "Traductor de código Morse",
+    shortName: "Código Morse",
+    tagline: "Traduce texto a código Morse y Morse a texto, escúchalo y guárdalo como audio o imagen. Gratis y en tu dispositivo.",
+    intro: "Traductor de código Morse convierte texto en código Morse internacional, y Morse en texto, mientras escribes. Reprodúcelo como sonido a la velocidad y el tono que elijas, y descárgalo como archivo de audio WAV o como imagen de los puntos y rayas para una tarjeta, un póster o un acertijo. Usa el estándar internacional (ITU) para letras, cifras y signos de puntuación.",
+    seoTitle: "Traductor de código Morse – texto, audio e imagen",
+    seoDescription: "Traduce texto a código Morse y al revés, escúchalo y descarga el audio WAV o una imagen PNG. Gratis, sin registro y funciona en tu navegador.",
+    keywords: [
+      "traductor de código morse",
+      "texto a código morse",
+      "código morse a texto",
+      "traductor morse con sonido",
+      "generador de código morse"
+    ],
+    howToSteps: [
+      {
+        title: "Escribe o pega",
+        description: "Escribe texto en el cuadro de arriba, o pega código Morse en cualquiera de los dos; el otro se actualiza."
+      },
+      {
+        title: "Escucha",
+        description: "Pulsa «Reproducir sonido» y ajusta la velocidad y el tono a tu gusto."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el Morse como archivo de audio WAV o como imagen PNG de los puntos y rayas."
+      }
+    ],
+    features: [
+      {
+        title: "En los dos sentidos",
+        description: "De texto a Morse y de Morse a texto, actualizado mientras escribes."
+      },
+      {
+        title: "Estándar internacional",
+        description: "Letras, cifras y signos de puntuación según la ITU."
+      },
+      {
+        title: "Sonido e imagen",
+        description: "Reprodúcelo, descarga un archivo WAV o guarda un PNG del código."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cómo escribo código Morse aquí?",
+        answer: "Usa puntos (.) y rayas (-). Pon un espacio entre letras y una barra (/) entre palabras; por ejemplo, ... --- ... para SOS."
+      },
+      {
+        question: "¿Qué velocidad debo usar?",
+        answer: "Unas 5 a 10 palabras por minuto van bien para principiantes; los operadores con experiencia suelen transmitir a 20 o más. La velocidad sigue el estándar internacional PARIS."
+      },
+      {
+        question: "¿Qué caracteres tiene el Morse?",
+        answer: "Las letras de la A a la Z, las cifras del 0 al 9 y los signos de puntuación habituales. Las letras con tilde se escriben sin ella, y los caracteres que no tienen código Morse se indican y se omiten."
+      },
+      {
+        question: "¿Se sube mi texto?",
+        answer: "No. La traducción, el sonido y las descargas se hacen en tu dispositivo."
+      }
+    ]
+  },
+  "hide-text-in-image": {
+    name: "Ocultar texto en imagen",
+    shortName: "Ocultar texto",
+    tagline: "Oculta un mensaje secreto dentro de una imagen, con contraseña opcional, y léelo más tarde. Gratis y en tu dispositivo.",
+    intro: "Ocultar texto en imagen escribe un mensaje en los píxeles de una imagen (esteganografía). La imagen se ve igual, porque cada valor de color cambia como mucho en 1, pero el mensaje se puede leer aquí con la misma herramienta. Añade una contraseña para cifrarlo con AES-256. El resultado es un PNG, porque solo un archivo sin pérdida conserva el mensaje: una copia en JPG, un cambio de tamaño o una app de chat que recomprime las imágenes lo borra.",
+    seoTitle: "Ocultar texto en imagen – esteganografía online gratis",
+    seoDescription: "Oculta un mensaje secreto en una imagen y léelo después, con cifrado opcional por contraseña. Gratis, sin registro y tu imagen no se sube.",
+    keywords: [
+      "ocultar texto en imagen",
+      "esteganografía online",
+      "ocultar mensaje en una foto",
+      "esconder mensaje en imagen",
+      "descifrar mensaje oculto en imagen"
+    ],
+    howToSteps: [
+      {
+        title: "Añade una imagen",
+        description: "Elige «Ocultar un mensaje» y luego suelta o elige una foto."
+      },
+      {
+        title: "Escribe el mensaje",
+        description: "Escribe tu mensaje y, si quieres, una contraseña."
+      },
+      {
+        title: "Descarga y comparte el PNG",
+        description: "Envía el PNG como archivo. Para leerlo, ábrelo aquí y elige «Leer un mensaje»."
+      }
+    ],
+    features: [
+      {
+        title: "Se ve igual",
+        description: "Cada valor de color cambia como mucho en 1, algo que el ojo no puede ver."
+      },
+      {
+        title: "Contraseña opcional",
+        description: "Cifrado AES-256; sin la contraseña no se puede leer el mensaje."
+      },
+      {
+        title: "Comprobado antes de descargar",
+        description: "El PNG guardado se vuelve a leer para asegurarse de que el mensaje sigue ahí."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Por qué ha desaparecido mi mensaje?",
+        answer: "La imagen se modificó después de guardarla: se convirtió a JPG, se redimensionó o la recomprimió una app de chat o red social. Comparte el PNG como archivo, o dentro de un zip, para que llegue sin cambios."
+      },
+      {
+        question: "¿Qué longitud puede tener el mensaje?",
+        answer: "Unos 3 bytes por cada 8 píxeles: una foto de 12 megapíxeles admite varios megabytes, mucho más que cualquier texto. La herramienta muestra cuánto espacio queda."
+      },
+      {
+        question: "¿Es seguro?",
+        answer: "Con contraseña, el mensaje se cifra con AES-256, así que solo quien tenga la contraseña puede leerlo. Sin ella, cualquiera que use una herramienta de esteganografía como esta podría encontrarlo. Ocultar un mensaje no es lo mismo que protegerlo de verdad, así que usa una contraseña para todo lo privado."
+      },
+      {
+        question: "¿Se sube mi imagen?",
+        answer: "No. La ocultación, el cifrado y la lectura se hacen en tu dispositivo."
+      }
+    ]
+  },
+  "halftone-dither-effect": {
+    name: "Efecto semitono y tramado",
+    shortName: "Semitono y tramado",
+    tagline: "Convierte una foto en puntos de semitono como los de un periódico o en una imagen tramada de estilo retro. Gratis y funciona en tu dispositivo.",
+    intro: "Efecto semitono y tramado da a una foto el aspecto de la imprenta o de los primeros ordenadores. El semitono la vuelve a dibujar con puntos que crecen con la oscuridad, en negro o en las cuatro tintas de impresión (CMYK) con sus ángulos de trama clásicos. El tramado (dithering) la reduce a unos pocos colores y reparte los tonos con Floyd–Steinberg, Atkinson o un patrón Bayer ordenado, con paletas que van del blanco y negro al verde de la Game Boy. Ajusta el detalle, el brillo y el contraste, y descarga un PNG a tamaño completo.",
+    seoTitle: "Efecto semitono y dithering – foto a puntos, gratis",
+    seoDescription: "Convierte una foto en puntos de semitono o en una imagen tramada: Floyd–Steinberg, Atkinson, Bayer y paletas Game Boy y CGA. Gratis, sin subir nada.",
+    keywords: [
+      "efecto semitono",
+      "efecto halftone",
+      "dithering online",
+      "convertir foto en puntos",
+      "filtro game boy"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu foto",
+        description: "Suelta o elige un archivo JPG, PNG, WebP, HEIC o TIFF."
+      },
+      {
+        title: "Elige el aspecto",
+        description: "Escoge «Puntos de semitono» o «Tramado» y luego los colores, el detalle y el contraste."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda el resultado a tamaño completo como PNG."
+      }
+    ],
+    features: [
+      {
+        title: "Tramas de imprenta reales",
+        description: "Puntos CMYK a 15°, 75°, 0° y 45°, los ángulos que usan las imprentas."
+      },
+      {
+        title: "Tramado clásico",
+        description: "Floyd–Steinberg, Atkinson y Bayer ordenado, con paletas retro."
+      },
+      {
+        title: "Resolución completa",
+        description: "La vista previa es rápida; la descarga se genera a tamaño completo."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué diferencia hay entre semitono y tramado?",
+        answer: "El semitono imprime los tonos como puntos de distintos tamaños en una cuadrícula regular, como en un periódico. El tramado usa píxeles de unos pocos colores fijos y los reparte para que el ojo los mezcle en tonos intermedios."
+      },
+      {
+        question: "¿Qué método de tramado elijo?",
+        answer: "Floyd–Steinberg da los tonos más suaves. Atkinson, usado en los primeros Mac, tiene luces y sombras más nítidas. Ordenado (Bayer) crea un patrón de cuadrícula regular."
+      },
+      {
+        question: "¿Por qué el resultado se ve distinto al alejar la imagen?",
+        answer: "Los puntos y los patrones de tramado se mezclan a distancia; así es como muestran los tonos. Con menos puntos a lo ancho, o un tamaño de píxel mayor, el patrón sigue viéndose."
+      },
+      {
+        question: "¿Se sube mi foto?",
+        answer: "No. El efecto se crea en tu dispositivo."
+      }
+    ]
+  },
+  "contact-sheet-maker": {
+    name: "Crear hoja de contactos",
+    shortName: "Hoja de contactos",
+    tagline: "Coloca muchas fotos como miniaturas con su nombre en páginas listas para imprimir, en PDF o como imágenes. Gratis y funciona en tu dispositivo.",
+    intro: "Crear hoja de contactos coloca un conjunto de fotos en una página, o en tantas como haga falta, como miniaturas con su nombre de archivo, igual que la hoja de pruebas de un fotógrafo. Úsala para revisar una sesión, elegir las favoritas con un cliente, catalogar productos o imprimir una vista general. Elige A4 o Carta, vertical u horizontal, y cuántas fotos por fila; las páginas se crean a 300 DPI para imprimir. Descarga un PDF de varias páginas o imágenes PNG o JPG.",
+    seoTitle: "Hoja de contactos online – miniaturas de fotos a PDF",
+    seoDescription: "Crea una hoja de contactos con muchas fotos y sus nombres, en páginas A4 o Carta a 300 DPI, en PDF o como imágenes. Gratis, sin registro y sin subir nada.",
+    keywords: [
+      "hoja de contactos",
+      "hoja de contactos fotos",
+      "crear hoja de contactos",
+      "miniaturas de fotos en pdf",
+      "imprimir fotos en miniatura"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tus fotos",
+        description: "Suelta o elige todas las fotos que quieras y arrástralas para ordenarlas."
+      },
+      {
+        title: "Configura la página",
+        description: "Elige el papel, la orientación, las fotos por fila, los nombres de archivo y un título opcional."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda un PDF con todas las páginas, o imágenes PNG o JPG de cada página."
+      }
+    ],
+    features: [
+      {
+        title: "Lista para imprimir",
+        description: "Páginas A4 o Carta a 300 DPI, con márgenes para cualquier impresora."
+      },
+      {
+        title: "Con etiquetas",
+        description: "Nombre de archivo bajo cada foto, números de página y un título opcional."
+      },
+      {
+        title: "Sin recortes",
+        description: "Cada foto se muestra entera, ajustada a su marco."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Cuántas fotos puedo añadir?",
+        answer: "Todas las que tu dispositivo pueda abrir; se añaden páginas según haga falta. Los conjuntos muy grandes de fotos pesadas tardan más y usan más memoria."
+      },
+      {
+        question: "¿Se recortan las fotos?",
+        answer: "No. Cada foto se ajusta dentro de su marco, así que tanto las verticales como las horizontales se ven enteras."
+      },
+      {
+        question: "¿Qué resolución tienen las páginas?",
+        answer: "300 DPI, la calidad habitual para imprimir. Un A4 mide 2480 × 3508 píxeles."
+      },
+      {
+        question: "¿Se suben mis fotos?",
+        answer: "No. La hoja se crea en tu dispositivo."
+      }
+    ]
+  },
 };
