@@ -10778,4 +10778,492 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    name: "Bild schärfen",
+    shortName: "Schärfen",
+    tagline: "Mach ein weiches Foto knackiger und prüfe das Ergebnis in voller Größe, bevor du es herunterlädst. Kostenlos, auf deinem Gerät.",
+    intro: "Bild schärfen macht Kanten und feine Details in Fotos klarer, die etwas weich wirken, ob von der Handykamera, aus einem verkleinerten Bild oder durch einen knapp verfehlten Fokus. Wähle die Stärke, die Größe der Details, die hervortreten sollen, und wie stark glatte Flächen wie Haut und Himmel geschützt werden. Eine Ansicht nebeneinander bei 100 % zeigt genau, was sich ändert, denn Schärfe lässt sich in einer kleinen Vorschau nicht beurteilen. Nur die Helligkeit wird geschärft, daher entstehen keine Farbsäume, und das Foto behält sein Format.",
+    seoTitle: "Bild schärfen online – unscharfe Fotos verbessern, gratis",
+    seoDescription: "Weiche Fotos online schärfen: Stärke und Detailgröße einstellbar, Vorher-nachher in voller Größe, keine Farbsäume. Kostenlos, ohne Upload, JPG oder PNG bleibt.",
+    keywords: [
+      "bild schärfen",
+      "foto schärfen online",
+      "unscharfes foto scharf machen",
+      "bild schärfer machen",
+      "foto nachschärfen"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh ein JPG, PNG, WebP, HEIC oder anderes Foto hierher oder wähle es aus."
+      },
+      {
+        title: "Einstellen und prüfen",
+        description: "Lege die Stärke fest und klicke auf das Foto, um Details bei 100 % zu prüfen."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere es im selben Format wie das Original."
+      }
+    ],
+    features: [
+      {
+        title: "Vorschau in voller Größe",
+        description: "Vorher und nachher bei 100 %, wo man Schärfe sieht."
+      },
+      {
+        title: "Keine Farbsäume",
+        description: "Nur die Helligkeit wird geschärft."
+      },
+      {
+        title: "Glatte Flächen geschützt",
+        description: "Haut, Himmel und Rauschen können unberührt bleiben."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kann es ein sehr unscharfes Foto retten?",
+        answer: "Kein Tool kann Details zurückholen, die nie aufgenommen wurden. Schärfen hilft bei leicht weichen Fotos; ein stark unscharfes oder verwackeltes Foto wirkt danach nur etwas knackiger."
+      },
+      {
+        question: "Welche Einstellungen soll ich verwenden?",
+        answer: "Starte mit den Standardwerten. Nimm eine kleine Detailgröße für Feines wie Haare und Text, und erhöhe „Glatte Flächen schützen“, wenn Haut oder Himmel körnig wirken."
+      },
+      {
+        question: "Wird die Datei viel größer?",
+        answer: "Ein wenig: Schärfere Details brauchen in einem JPG etwas mehr Platz. Das Foto behält sein Format und seine Größe in Pixeln."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "denoise-image": {
+    name: "Bildrauschen entfernen",
+    shortName: "Entrauschen",
+    tagline: "Entferne Körnung und Farbflecken aus Nacht- und Handyfotos, während die Kanten scharf bleiben. Kostenlos, auf deinem Gerät.",
+    intro: "Bildrauschen entfernen beseitigt die Körnung und die bunten Flecken, die bei wenig Licht oder hoher ISO in Fotos entstehen. Das Tool misst, wie stark dein Foto rauscht, und schlägt passende Einstellungen vor, sodass saubere Fotos kaum verändert werden. Körnung und Farbflecken haben getrennte Regler, und Kanten bleiben scharf, während glatte Flächen geglättet werden. Eine Ansicht nebeneinander bei 100 % zeigt das Ergebnis dort, wo Rauschen wirklich sichtbar ist.",
+    seoTitle: "Bildrauschen entfernen online – Fotos entrauschen, gratis",
+    seoDescription: "Rauschen und Körnung online aus Fotos entfernen: automatische Einstellungen, getrennte Regler für Körnung und Farbe, scharfe Kanten, 100-%-Ansicht. Ohne Upload.",
+    keywords: [
+      "bildrauschen entfernen",
+      "foto entrauschen",
+      "körnung aus foto entfernen",
+      "rauschunterdrückung online",
+      "rauschen nachtfoto"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Das Rauschen wird gemessen und Einstellungen werden vorgeschlagen."
+      },
+      {
+        title: "In voller Größe prüfen",
+        description: "Klicke auf das Foto, um Details bei 100 % zu vergleichen."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere es im selben Format wie das Original."
+      }
+    ],
+    features: [
+      {
+        title: "Automatische Einstellungen",
+        description: "Vorgeschlagen anhand des gemessenen Rauschens."
+      },
+      {
+        title: "Körnung und Farbe getrennt",
+        description: "Farbflecken verschwinden, ohne Details zu glätten."
+      },
+      {
+        title: "Scharfe Kanten",
+        description: "Glatte Flächen werden geglättet, Kanten nicht."
+      }
+    ],
+    faqs: [
+      {
+        question: "Sieht mein Foto danach wie aus Plastik aus?",
+        answer: "Nicht mit den vorgeschlagenen Einstellungen: Sie sind so abgestimmt, dass das Foto einem sauberen Original näherkommt, nicht glatter wird als dieses. Sehr starke Einstellungen können feine Strukturen wie Gras oder Stoff glätten, was die 100-%-Ansicht zeigt."
+      },
+      {
+        question: "Woher kommt das Rauschen?",
+        answer: "Von wenig Licht. Kleine Handysensoren und hohe ISO-Werte erzeugen Körnung und bunte Flecken, vor allem in den Schatten."
+      },
+      {
+        question: "Warum gibt es zwei Regler für Rauschen?",
+        answer: "Farbflecken lassen sich kräftig entfernen, ohne Details zu verlieren, während Helligkeitskörnung eine sanftere Hand braucht, damit die Struktur erhalten bleibt."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    name: "Weißabgleich korrigieren",
+    shortName: "Weißabgleich",
+    tagline: "Entferne gelbe, blaue oder grüne Farbstiche aus Fotos automatisch oder per Klick auf eine graue Stelle. Kostenlos, auf deinem Gerät.",
+    intro: "Weißabgleich korrigieren repariert Fotos, deren Farben nicht stimmen: gelb bei Innenbeleuchtung, blau im Schatten, grün unter manchen Lampen. Klicke auf „Automatisch“ für eine schnelle Korrektur, oder klicke im Foto auf etwas, das grau oder weiß sein sollte, etwa eine Wand, Papier oder eine Wolke, für ein exaktes Ergebnis. Regler für Farbtemperatur, Tönung und Sättigung erlauben die Feinabstimmung, und mit einem gedrückt gehaltenen Button vergleichst du mit dem Original. Korrigiert wird in linearem Licht, wie in Kameras, damit Lichter keinen Farbstich bekommen.",
+    seoTitle: "Weißabgleich online korrigieren – Farbstich entfernen",
+    seoDescription: "Weißabgleich online korrigieren: automatisch oder per Graupunkt, dazu Farbtemperatur, Tönung und Sättigung. Entfernt Gelb- und Blaustiche. Ohne Upload.",
+    keywords: [
+      "weißabgleich korrigieren",
+      "farbkorrektur online",
+      "gelbstich aus foto entfernen",
+      "farbstich entfernen",
+      "foto zu blau"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Zieh das Foto mit dem Farbstich hierher oder wähle es aus."
+      },
+      {
+        title: "Korrigieren",
+        description: "Klicke auf „Automatisch“ oder wähle etwas, das grau sein sollte."
+      },
+      {
+        title: "Feinjustieren und herunterladen",
+        description: "Passe Farbtemperatur, Tönung und Sättigung an und speichere."
+      }
+    ],
+    features: [
+      {
+        title: "Graupunkt wählen",
+        description: "Die genaueste Art, neutrale Farben festzulegen."
+      },
+      {
+        title: "Automatische Korrektur",
+        description: "Eine schnelle Lösung für Alltagsmotive."
+      },
+      {
+        title: "Natürliche Ergebnisse",
+        description: "In linearem Licht korrigiert; Lichter bleiben sauber."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum liegt „Automatisch“ manchmal daneben?",
+        answer: "Der automatische Weißabgleich schätzt das Licht anhand der Farben im Foto. Füllt eine einzige Farbe die Szene, etwa ein Sonnenuntergang, eine grüne Wiese oder eine rote Wand, liegt die Schätzung daneben. Ein grauer oder weißer Punkt ist immer genau."
+      },
+      {
+        question: "Worauf soll ich bei „Grau wählen“ klicken?",
+        answer: "Auf alles, was neutral sein sollte: weißes Papier, eine graue Wand, ein weißes Hemd oder eine Wolke. Meide sehr helle Stellen, die im Foto reinweiß sind."
+      },
+      {
+        question: "Ändert sich das Dateiformat?",
+        answer: "Nein. Ein JPG bleibt ein JPG in hoher Qualität, und ein PNG bleibt ein verlustfreies PNG."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "perspective-correction": {
+    name: "Perspektive korrigieren",
+    shortName: "Perspektive",
+    tagline: "Richte ein schräg aufgenommenes Foto eines Dokuments, Whiteboards oder Schilds gerade aus, indem du seine vier Ecken ziehst. Kostenlos.",
+    intro: "Perspektive korrigieren entzerrt alles, was schräg fotografiert wurde, etwa ein Dokument auf dem Schreibtisch, ein Whiteboard, ein Poster, ein Gemälde oder ein Gebäudeschild. Ziehe die vier Ecken auf die Ecken des Objekts, und das Tool macht daraus ein sauberes Rechteck, mit so vielen Details, wie das Foto hergibt. Behalte die Form wie ausgewählt oder mach sie zu A4, Letter oder einem Quadrat. Die Vorschau aktualisiert sich, während du die Ecken verschiebst.",
+    seoTitle: "Perspektive korrigieren online – Fotos entzerren, gratis",
+    seoDescription: "Perspektive in Fotos online korrigieren: vier Ecken ziehen, um ein Dokument, Whiteboard oder Schild gerade zu richten, auch als A4 oder Letter. Ohne Upload.",
+    keywords: [
+      "perspektive korrigieren",
+      "foto entzerren",
+      "dokument foto gerade ausrichten",
+      "stürzende linien korrigieren",
+      "foto von papier begradigen"
+    ],
+    howToSteps: [
+      {
+        title: "Foto hinzufügen",
+        description: "Ein schräg aufgenommenes Foto."
+      },
+      {
+        title: "Ecken ziehen",
+        description: "Setze die vier Anfasser auf die Ecken des Objekts."
+      },
+      {
+        title: "Herunterladen",
+        description: "Wähle die Form und speichere das entzerrte Bild."
+      }
+    ],
+    features: [
+      {
+        title: "Vier-Ecken-Steuerung",
+        description: "Mit Maus oder Finger ziehen oder mit den Pfeiltasten verschieben."
+      },
+      {
+        title: "Details bleiben erhalten",
+        description: "Das Ergebnis ist so groß, wie es der ausgewählte Bereich zulässt."
+      },
+      {
+        title: "Papierformate",
+        description: "Form beibehalten oder A4, Letter oder Quadrat wählen."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kann ich eine entzerrte Seite als PDF speichern?",
+        answer: "Lade das entzerrte Bild herunter und nutze dann JPG in PDF, um ein PDF aus einer oder mehreren Seiten zu erstellen."
+      },
+      {
+        question: "Warum wirkt mein Ergebnis gestreckt?",
+        answer: "Wähle die richtige Form: „Wie ausgewählt“ schätzt sie anhand der Ecken, aber für eine Seite, die sehr schräg fotografiert wurde, stellst du besser A4 oder Letter ein."
+      },
+      {
+        question: "Wird es so scharf wie das Original?",
+        answer: "Bereiche, die weiter von der Kamera entfernt waren, haben weniger Pixel und werden daher etwas weicher. Je gerader du fotografierst, desto besser das Ergebnis."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    name: "Fotocollage erstellen",
+    shortName: "Collage",
+    tagline: "Kombiniere 2 bis 9 Fotos zu einer Collage mit fertigen Layouts, Abständen und abgerundeten Ecken. Kostenlos, ohne Anmeldung.",
+    intro: "Fotocollage erstellen ordnet 2 bis 9 Fotos zu einer Collage an. Wähle ein Layout, ein Format für Instagram, Stories, einen Breitbild-Post oder einen A4-Ausdruck, und lege den Abstand zwischen den Fotos, den Rand, abgerundete Ecken und die Hintergrundfarbe fest. Klicke in der Collage auf ein Foto, um es zu zoomen oder den sichtbaren Ausschnitt zu wählen. Die Collage ist an der längeren Seite 2400 Pixel groß, scharf genug zum Drucken, und entsteht komplett auf deinem Gerät.",
+    seoTitle: "Fotocollage erstellen – kostenlos online, ohne Anmeldung",
+    seoDescription: "Fotocollage online erstellen: 2 bis 9 Fotos, fertige Layouts, Formate Quadrat, 4:5, 9:16 und A4, Abstände und abgerundete Ecken. Kostenlos, ohne Upload.",
+    keywords: [
+      "fotocollage erstellen",
+      "collage online erstellen",
+      "fotocollage kostenlos",
+      "instagram collage",
+      "mehrere fotos zu einem bild"
+    ],
+    howToSteps: [
+      {
+        title: "Fotos hinzufügen",
+        description: "2 bis 9 Fotos, in der gewünschten Reihenfolge."
+      },
+      {
+        title: "Layout wählen",
+        description: "Wähle Layout, Format, Abstände und Farben."
+      },
+      {
+        title: "Ausschnitt wählen und herunterladen",
+        description: "Klicke auf ein Foto, um den Ausschnitt anzupassen, und speichere."
+      }
+    ],
+    features: [
+      {
+        title: "Fertige Layouts",
+        description: "Raster und Layouts mit Hauptfoto für 2 bis 9 Fotos."
+      },
+      {
+        title: "Formate für Social Media und Druck",
+        description: "1:1, 4:5, 9:16, 16:9 und A4."
+      },
+      {
+        title: "Ausschnitt pro Foto",
+        description: "Zoome und verschiebe jedes Foto in seinem Feld."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie groß ist die Collage?",
+        answer: "2400 Pixel an der längeren Seite, zum Beispiel 2400 × 2400 bei einer quadratischen Collage, genug für einen 20-cm-Druck mit 300 DPI."
+      },
+      {
+        question: "Kann ich einen transparenten Hintergrund verwenden?",
+        answer: "Ja: Wähle PNG und setze das Häkchen bei „Transparent“."
+      },
+      {
+        question: "Kann ich die Reihenfolge ändern?",
+        answer: "Ja. Verschiebe Fotos in der Liste nach oben oder unten; das erste Foto kommt in das erste Feld des Layouts."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    name: "Doppelte Fotos finden",
+    shortName: "Duplikate",
+    tagline: "Finde doppelte und fast identische Fotos, auch verkleinerte und neu komprimierte Kopien. Kostenlos, und nichts wird hochgeladen.",
+    intro: "Doppelte Fotos finden vergleicht eine Reihe von Fotos und gruppiert die, die Kopien voneinander sind: identische Dateien, erneut gespeicherte Kopien und verkleinerte oder neu komprimierte Versionen wie Fotos, die per Chat-App verschickt wurden. Die Einstellung „Ähnlich“ findet auch fast identische Aufnahmen wie Serienbilder. In jeder Gruppe wird standardmäßig die größte, am wenigsten komprimierte Kopie behalten, und du kannst ändern, welche du behältst. Lade die Fotos ohne Duplikate als ZIP herunter oder eine Liste, um sie selbst zu löschen. Die Fotos werden auf deinem Gerät verglichen und nie hochgeladen.",
+    seoTitle: "Doppelte Fotos finden – ähnliche Bilder suchen, gratis",
+    seoDescription: "Doppelte Fotos online finden: exakte Kopien, verkleinerte und neu komprimierte Versionen und ähnliche Aufnahmen. Beste Kopie behalten, ZIP laden. Ohne Upload.",
+    keywords: [
+      "doppelte fotos finden",
+      "doppelte bilder finden",
+      "ähnliche bilder finden",
+      "doppelte fotos löschen",
+      "duplikate finden fotos"
+    ],
+    howToSteps: [
+      {
+        title: "Fotos hinzufügen",
+        description: "Zieh die Fotos eines ganzen Ordners auf einmal hierher."
+      },
+      {
+        title: "Gruppen prüfen",
+        description: "Sieh dir jede Gruppe an und wähle, welche Kopien du behältst."
+      },
+      {
+        title: "Herunterladen",
+        description: "Hol dir die Fotos ohne Duplikate als ZIP oder die Liste."
+      }
+    ],
+    features: [
+      {
+        title: "Findet echte Kopien",
+        description: "Erkennt verkleinerte, neu komprimierte und erneut gespeicherte Fotos, nicht nur identische Dateien."
+      },
+      {
+        title: "Beste Kopie bleibt",
+        description: "Standardmäßig wird die größte, am wenigsten komprimierte Kopie gewählt."
+      },
+      {
+        title: "Privat",
+        description: "Die Fotos werden auf deinem Gerät verglichen."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kann es meine Duplikate löschen?",
+        answer: "Eine Website kann keine Dateien auf deinem Gerät löschen. Lade die Fotos ohne Duplikate als ZIP herunter oder lösche die überzähligen Kopien anhand der Liste selbst."
+      },
+      {
+        question: "Woran erkennt es, dass zwei Fotos gleich sind?",
+        answer: "Es erstellt einen kleinen Fingerabdruck davon, wie jedes Foto aussieht, sodass auch eine verkleinerte oder neu komprimierte Kopie erkannt wird. Identische Dateien werden exakt erkannt."
+      },
+      {
+        question: "Wie viele Fotos kann ich prüfen?",
+        answer: "Auf den meisten Computern Hunderte auf einmal. Jedes Foto wird direkt nach dem Einlesen auf einen winzigen Fingerabdruck reduziert, daher bleibt der Speicherbedarf gering."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    name: "Pixel-Art-Konverter",
+    shortName: "Pixel-Art",
+    tagline: "Verwandle ein Foto oder eine Zeichnung in Pixel-Art mit wählbarer Rastergröße, Farbpalette und Schattierung. Kostenlos, auf deinem Gerät.",
+    intro: "Der Pixel-Art-Konverter verwandelt jedes Bild in Pixel-Art. Wähle, wie viele Pixel breit es sein soll, von einem winzigen 8-Pixel-Icon bis zu einer detaillierten 256-Pixel-Szene, und wie viele Farben: eine auf dein Bild abgestimmte Palette, Schwarzweiß, Graustufen oder vier Retro-Grüntöne. Flache, weiche oder gemusterte Schattierung verändert den Look. Lade das Ergebnis mit scharfen, vergrößerten quadratischen Pixeln und optionalen Rasterlinien herunter oder mit 1 Pixel pro Punkt für Spiele und Pixel-Editoren.",
+    seoTitle: "Foto in Pixel-Art umwandeln – online und kostenlos",
+    seoDescription: "Foto online in Pixel-Art umwandeln: Rastergröße, Farben und Schattierung wählen, scharfe PNG-Pixel-Art oder das 1-Pixel-Original laden. Kostenlos, ohne Upload.",
+    keywords: [
+      "pixel art konverter",
+      "foto in pixel art umwandeln",
+      "bild in pixel art",
+      "bild verpixeln",
+      "8 bit bild erstellen"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Ein Foto, eine Zeichnung oder ein Logo."
+      },
+      {
+        title: "Größe und Farben wählen",
+        description: "Lege Breite in Pixeln, Palette und Schattierung fest."
+      },
+      {
+        title: "Herunterladen",
+        description: "Als PNG speichern, vergrößert oder mit 1 Pixel pro Punkt."
+      }
+    ],
+    features: [
+      {
+        title: "Abgestimmte Paletten",
+        description: "4 bis 32 Farben aus deinem Bild."
+      },
+      {
+        title: "Retro-Schattierung",
+        description: "Flaches, weiches oder gemustertes Dithering."
+      },
+      {
+        title: "Scharfes Ergebnis",
+        description: "Quadratische Pixel ohne Unschärfe, mit optionalen Rasterlinien."
+      }
+    ],
+    faqs: [
+      {
+        question: "Welche Breite soll ich wählen?",
+        answer: "16 bis 32 für Icons und Sprites, 64 für erkennbare Porträts, 128 oder mehr für detaillierte Szenen."
+      },
+      {
+        question: "Was bewirkt die Schattierung?",
+        answer: "„Weich“ und „Muster“ mischen die Palettenfarben in kleinen Punkten, um mehr Farbtöne anzudeuten, wie in alten Spielen. „Flach“ verwendet jede Farbe unverändert."
+      },
+      {
+        question: "Kann ich es in einem Spiel verwenden?",
+        answer: "Ja. „1 Pixel pro Punkt“ lädt das Bild in seiner echten Pixelgröße herunter, bereit für Game-Engines und Pixel-Editoren."
+      },
+      {
+        question: "Wird mein Foto hochgeladen?",
+        answer: "Nein. Es wird auf deinem Gerät verarbeitet und verlässt es nie."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    name: "PDF in Graustufen",
+    shortName: "PDF → Graustufen",
+    tagline: "Wandle ein farbiges PDF für den Druck in Schwarzweiß um, mit scharfem, markierbarem Text. Kostenlos.",
+    intro: "PDF in Graustufen wandelt jede Farbe in einem PDF in Grautöne um: Text, Formen, Diagramme und Fotos. Das ist praktisch, um zu prüfen, wie ein Dokument auf einem Schwarzweißdrucker aussieht, um Farbtinte zu sparen oder wenn ein Portal eine Datei in Graustufen verlangt. Text bleibt echter, markierbarer Text, und Formen bleiben scharf, weil sich nur die Farben ändern, nicht der Inhalt. Fotos werden in voller Auflösung und hoher Qualität umgewandelt.",
+    seoTitle: "PDF in Graustufen umwandeln – farbiges PDF in Schwarzweiß",
+    seoDescription: "Farbiges PDF online in Graustufen umwandeln: Text bleibt scharf und markierbar, Fotos behalten die volle Auflösung. Zum Drucken und Tintesparen. Kostenlos.",
+    keywords: [
+      "pdf in graustufen",
+      "pdf in schwarz weiß umwandeln",
+      "pdf graustufen",
+      "pdf schwarz weiß online",
+      "farbe aus pdf entfernen"
+    ],
+    howToSteps: [
+      {
+        title: "PDF hinzufügen",
+        description: "Zieh ein PDF bis 30 MB hierher oder wähle es aus."
+      },
+      {
+        title: "Umwandeln",
+        description: "Jede Farbe wird zu einem Grauton."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere das PDF in Graustufen."
+      }
+    ],
+    features: [
+      {
+        title: "Text bleibt Text",
+        description: "Markierbar und durchsuchbar, nicht in Bilder umgewandelt."
+      },
+      {
+        title: "Fotos in voller Auflösung",
+        description: "Bilder werden umgewandelt, ohne verkleinert zu werden."
+      },
+      {
+        title: "Druckfertig",
+        description: "Sieh und drucke genau das, was ein Schwarzweißdrucker ausgeben würde."
+      }
+    ],
+    faqs: [
+      {
+        question: "Lässt sich der Text weiterhin markieren?",
+        answer: "Ja. Nur die Farben ändern sich, daher bleiben Text, Links und Seitenlayout, wie sie waren. Ausfüllbare Formularfelder werden reduziert: Was darin steht, bleibt auf der Seite, aber sie lassen sich nicht mehr ausfüllen."
+      },
+      {
+        question: "Wird mein PDF größer?",
+        answer: "Das kommt darauf an. PDFs mit Fotos oder Scans werden meist kleiner, weil graue Bilder weniger Daten brauchen; ein PDF, das fast nur Text enthält, kann etwas größer werden."
+      },
+      {
+        question: "Kann ich ein passwortgeschütztes PDF umwandeln?",
+        answer: "Entferne zuerst das Passwort mit PDF entsperren und wandle es dann um."
+      },
+      {
+        question: "Wird meine Datei hochgeladen?",
+        answer: "Ja. Dieses Tool braucht unseren Server. Die Datei wird also über eine verschlüsselte Verbindung gesendet, verarbeitet und gelöscht, sobald das Ergebnis zurückgeschickt ist. Sie wird nie gespeichert, weitergegeben oder angesehen. Die meisten anderen Tools auf dieser Website laufen komplett in deinem Browser."
+      }
+    ]
+  },
 };

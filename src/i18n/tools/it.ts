@@ -10735,4 +10735,492 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    name: "Aumenta nitidezza immagine",
+    shortName: "Nitidezza",
+    tagline: "Rendi più nitida una foto morbida e controlla il risultato a dimensioni reali prima di scaricarla. Gratis, sul tuo dispositivo.",
+    intro: "Aumenta nitidezza immagine rende più definiti i bordi e i dettagli fini nelle foto che sembrano un po’ morbide, scattate con lo smartphone, ridimensionate o con la messa a fuoco leggermente sbagliata. Scegli l’intensità, la dimensione dei dettagli da far risaltare e quanto proteggere le zone uniformi come pelle e cielo. Una vista affiancata al 100% mostra esattamente cosa cambia, perché la nitidezza non si può giudicare da un’anteprima piccola. Viene resa nitida solo la luminosità, quindi non compaiono aloni colorati, e la foto mantiene il suo formato.",
+    seoTitle: "Rendere nitida una foto online – Foto sfocate, gratis",
+    seoDescription: "Aumenta la nitidezza di una foto online: intensità e dimensione dei dettagli regolabili, prima e dopo al 100%, niente aloni colorati. Gratis, senza upload.",
+    keywords: [
+      "aumentare nitidezza foto",
+      "rendere nitida una foto online",
+      "migliorare foto sfocata",
+      "nitidezza immagine online",
+      "foto più nitida"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto",
+        description: "Trascina o scegli una foto JPG, PNG, WebP, HEIC o di altro formato."
+      },
+      {
+        title: "Regola e controlla",
+        description: "Imposta l’intensità e fai clic sulla foto per controllare i dettagli al 100%."
+      },
+      {
+        title: "Scarica",
+        description: "Salvala nello stesso formato dell’originale."
+      }
+    ],
+    features: [
+      {
+        title: "Anteprima a dimensioni reali",
+        description: "Prima e dopo al 100%, dove la nitidezza si vede."
+      },
+      {
+        title: "Niente aloni colorati",
+        description: "Viene resa nitida solo la luminosità."
+      },
+      {
+        title: "Zone uniformi protette",
+        description: "Pelle, cielo e rumore possono restare come sono."
+      }
+    ],
+    faqs: [
+      {
+        question: "Può sistemare una foto molto sfocata?",
+        answer: "Nessuno strumento può recuperare dettagli mai catturati. La nitidezza aiuta le foto leggermente morbide; una foto molto sfocata o mossa sembrerà solo un po’ più definita."
+      },
+      {
+        question: "Quali impostazioni devo usare?",
+        answer: "Parti da quelle predefinite. Usa una dimensione dei dettagli piccola per elementi fini come capelli e testo, e alza “Proteggi le zone uniformi” se pelle o cielo iniziano a sembrare granulosi."
+      },
+      {
+        question: "Il file diventerà molto più grande?",
+        answer: "Di poco: i dettagli più definiti occupano un po’ più di spazio in un JPG. La foto mantiene il formato e le dimensioni in pixel."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "denoise-image": {
+    name: "Riduci rumore immagine",
+    shortName: "Riduci rumore",
+    tagline: "Elimina la grana e i puntini colorati dalle foto notturne e da smartphone mantenendo i bordi nitidi. Gratis, sul tuo dispositivo.",
+    intro: "Riduci rumore immagine pulisce la grana e i puntini colorati che compaiono nelle foto scattate con poca luce o con ISO alti. Misura quanto rumore ha la tua foto e suggerisce le impostazioni adatte, così le foto pulite vengono toccate appena. Grana e puntini colorati hanno controlli separati, e i bordi restano nitidi mentre le zone uniformi vengono levigate. Una vista affiancata al 100% mostra il risultato dove il rumore si vede davvero.",
+    seoTitle: "Ridurre il rumore delle foto online – Togli la grana, gratis",
+    seoDescription: "Elimina rumore e grana dalle foto online: impostazioni automatiche, controlli separati per grana e colore, bordi nitidi, anteprima al 100%. Gratis.",
+    keywords: [
+      "ridurre rumore foto",
+      "riduzione rumore online",
+      "togliere grana da foto",
+      "eliminare rumore immagine",
+      "rumore foto notturna"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto",
+        description: "Il livello di rumore viene misurato e le impostazioni suggerite."
+      },
+      {
+        title: "Controlla a dimensioni reali",
+        description: "Fai clic sulla foto per confrontare i dettagli al 100%."
+      },
+      {
+        title: "Scarica",
+        description: "Salvala nello stesso formato dell’originale."
+      }
+    ],
+    features: [
+      {
+        title: "Impostazioni automatiche",
+        description: "Suggerite in base al livello di rumore misurato."
+      },
+      {
+        title: "Grana e colore separati",
+        description: "I puntini colorati si possono eliminare senza levigare i dettagli."
+      },
+      {
+        title: "Bordi nitidi",
+        description: "Le zone uniformi vengono levigate, i bordi no."
+      }
+    ],
+    faqs: [
+      {
+        question: "La foto sembrerà di plastica?",
+        answer: "Non con le impostazioni suggerite: sono calibrate perché la foto si avvicini a un originale pulito, non più liscia di esso. Impostazioni molto forti possono levigare texture fini come erba o tessuto, e la vista al 100% lo mostra."
+      },
+      {
+        question: "Che cosa causa il rumore?",
+        answer: "La poca luce. I piccoli sensori degli smartphone e gli ISO alti aggiungono grana e puntini colorati, soprattutto nelle ombre."
+      },
+      {
+        question: "Perché ci sono due controlli del rumore?",
+        answer: "I puntini colorati si possono eliminare con decisione senza perdere dettagli, mentre la grana di luminosità richiede un tocco più delicato per mantenere la texture."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    name: "Correggi bilanciamento del bianco",
+    shortName: "Bilanciamento bianco",
+    tagline: "Elimina le dominanti gialle, blu o verdi dalle foto in automatico o scegliendo un punto grigio. Gratis, sul tuo dispositivo.",
+    intro: "Correggi bilanciamento del bianco sistema le foto con colori sbagliati: gialle sotto le luci di casa, blu all’ombra, verdi sotto alcune lampade. Fai clic su Automatico per una correzione rapida, oppure fai clic su qualcosa nella foto che dovrebbe essere grigio o bianco, come un muro, un foglio o una nuvola, per un risultato esatto. I cursori di temperatura, tinta e saturazione permettono di rifinirla, e puoi tenere premuto un pulsante per confrontarla con l’originale. Le correzioni avvengono in luce lineare, come nelle fotocamere, così le alte luci non si colorano.",
+    seoTitle: "Correggere il bilanciamento del bianco – Foto online gratis",
+    seoDescription: "Correggi il bilanciamento del bianco online: correzione automatica o punto grigio, più temperatura, tinta e saturazione. Elimina le dominanti. Gratis.",
+    keywords: [
+      "correggere bilanciamento del bianco",
+      "correzione colore foto online",
+      "togliere dominante gialla foto",
+      "bilanciamento del bianco online",
+      "foto troppo blu"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto",
+        description: "Trascina o scegli la foto con la dominante di colore."
+      },
+      {
+        title: "Correggila",
+        description: "Fai clic su Automatico, oppure scegli qualcosa che dovrebbe essere grigio."
+      },
+      {
+        title: "Rifinisci e scarica",
+        description: "Regola temperatura, tinta e saturazione, poi salva."
+      }
+    ],
+    features: [
+      {
+        title: "Scegli un punto grigio",
+        description: "Il modo più preciso per impostare i colori neutri."
+      },
+      {
+        title: "Correzione automatica",
+        description: "Una soluzione rapida per le scene di tutti i giorni."
+      },
+      {
+        title: "Risultati naturali",
+        description: "Corretta in luce lineare; le alte luci restano pulite."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché l’automatico a volte sbaglia?",
+        answer: "Il bilanciamento del bianco automatico stima la luce dai colori della foto. Quando un solo colore riempie la scena, come un tramonto, un prato verde o un muro rosso, la stima è sbagliata. Scegliere un punto grigio o bianco è sempre preciso."
+      },
+      {
+        question: "Dove devo fare clic con Scegli un grigio?",
+        answer: "Su qualsiasi cosa dovrebbe essere neutra: carta bianca, un muro grigio, una camicia bianca o una nuvola. Evita i punti molto chiari che nella foto sono bianco puro."
+      },
+      {
+        question: "Cambia il formato del file?",
+        answer: "No. Un JPG resta un JPG di alta qualità e un PNG resta un PNG senza perdita."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "perspective-correction": {
+    name: "Correzione prospettiva",
+    shortName: "Prospettiva",
+    tagline: "Raddrizza la foto di un documento, una lavagna o un cartello scattata di sbieco trascinando i quattro angoli. Gratis.",
+    intro: "Correzione prospettiva rende piatto qualsiasi oggetto fotografato di sbieco, come un documento sulla scrivania, una lavagna, un poster, un dipinto o l’insegna di un edificio. Trascina i quattro angoli sugli angoli dell’oggetto e lo strumento lo raddrizza in un rettangolo pulito, mantenendo tutti i dettagli che la foto contiene. Mantieni la forma come selezionata oppure scegli A4, Lettera (US) o quadrato. L’anteprima si aggiorna mentre sposti gli angoli.",
+    seoTitle: "Correggere la prospettiva di una foto – Online, gratis",
+    seoDescription: "Correggi la prospettiva delle foto online: trascina quattro angoli per raddrizzare un documento, una lavagna o un cartello in un rettangolo, anche A4. Gratis.",
+    keywords: [
+      "correzione prospettiva foto",
+      "raddrizzare foto documento",
+      "correggere prospettiva online",
+      "raddrizzare immagine storta",
+      "scansione documento da foto"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la foto",
+        description: "Una foto scattata di sbieco."
+      },
+      {
+        title: "Trascina gli angoli",
+        description: "Posiziona le quattro maniglie sugli angoli dell’oggetto."
+      },
+      {
+        title: "Scarica",
+        description: "Scegli la forma e salva l’immagine raddrizzata."
+      }
+    ],
+    features: [
+      {
+        title: "Controllo dei quattro angoli",
+        description: "Trascina con il mouse o con il dito, oppure sposta con i tasti freccia."
+      },
+      {
+        title: "Dettagli mantenuti",
+        description: "Il risultato è grande quanto l’area selezionata permette."
+      },
+      {
+        title: "Formati carta",
+        description: "Mantieni la forma, oppure scegli A4, Lettera (US) o quadrato."
+      }
+    ],
+    faqs: [
+      {
+        question: "Posso trasformare la pagina raddrizzata in un PDF?",
+        answer: "Scarica l’immagine raddrizzata, poi usa Da JPG a PDF per creare un PDF con una o più pagine."
+      },
+      {
+        question: "Perché il risultato sembra allungato?",
+        answer: "Scegli la forma giusta: “Come selezionato” la stima dagli angoli, ma per una pagina fotografata molto di sbieco è meglio impostare A4 o Lettera (US)."
+      },
+      {
+        question: "Sarà nitida come l’originale?",
+        answer: "Le parti lontane dalla fotocamera hanno meno pixel, quindi risultano un po’ più morbide. Scattare la foto il più dritta possibile dà il risultato migliore."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    name: "Crea collage di foto",
+    shortName: "Collage",
+    tagline: "Unisci da 2 a 9 foto in un collage con layout pronti, spaziatura e angoli arrotondati. Gratis, senza registrazione.",
+    intro: "Crea collage di foto dispone da 2 a 9 foto in un collage. Scegli un layout, una forma per Instagram, le Storie, un post panoramico o una stampa A4, e imposta lo spazio tra le foto, il bordo, gli angoli arrotondati e il colore di sfondo. Fai clic su qualsiasi foto del collage per ingrandirla o scegliere quale parte mostrare. Il collage misura 2400 pixel sul lato più lungo, abbastanza nitido per la stampa, e viene creato interamente sul tuo dispositivo.",
+    seoTitle: "Creare un collage di foto online – Gratis, senza account",
+    seoDescription: "Crea un collage di foto online: da 2 a 9 foto, layout pronti, formati quadrato, 4:5, 9:16 e A4, spaziatura e angoli arrotondati. Gratis, senza upload.",
+    keywords: [
+      "collage foto online",
+      "creare collage foto",
+      "fotomontaggio collage",
+      "collage per instagram",
+      "unire foto in una"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le foto",
+        description: "Da 2 a 9 foto, nell’ordine che preferisci."
+      },
+      {
+        title: "Scegli un layout",
+        description: "Scegli layout, forma, spaziatura e colori."
+      },
+      {
+        title: "Inquadra e scarica",
+        description: "Fai clic su una foto per regolarne l’inquadratura, poi salva."
+      }
+    ],
+    features: [
+      {
+        title: "Layout pronti",
+        description: "Griglie e layout con foto in evidenza per 2–9 foto."
+      },
+      {
+        title: "Formati per social e stampa",
+        description: "1:1, 4:5, 9:16, 16:9 e A4."
+      },
+      {
+        title: "Inquadratura per ogni foto",
+        description: "Ingrandisci e sposta ogni foto nel suo spazio."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quanto è grande il collage?",
+        answer: "2400 pixel sul lato più lungo, per esempio 2400 × 2400 per un collage quadrato, abbastanza per una stampa di 20 cm a 300 DPI."
+      },
+      {
+        question: "Posso usare uno sfondo trasparente?",
+        answer: "Sì: scegli PNG e seleziona Trasparente."
+      },
+      {
+        question: "Posso cambiare l’ordine?",
+        answer: "Sì. Sposta le foto in su o in giù nell’elenco; la prima foto va nel primo spazio del layout."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    name: "Trova foto duplicate",
+    shortName: "Duplicati",
+    tagline: "Trova foto duplicate e quasi identiche, comprese le copie ridimensionate e ricompresse. Gratis, e non viene caricato nulla.",
+    intro: "Trova foto duplicate confronta un gruppo di foto e raggruppa quelle che sono copie l’una dell’altra: file identici, copie salvate di nuovo e versioni ridimensionate o ricompresse, come le foto inviate tramite un’app di chat. L’opzione Simili trova anche scatti quasi identici, come le raffiche. In ogni gruppo viene tenuta per impostazione predefinita la copia più grande e meno compressa, e puoi cambiare quali tenere. Scarica le foto senza duplicati in uno ZIP, oppure un elenco per eliminarli tu stesso. Le foto vengono confrontate sul tuo dispositivo e non vengono mai caricate.",
+    seoTitle: "Trovare foto duplicate online – Immagini simili, gratis",
+    seoDescription: "Trova foto duplicate online: copie esatte, versioni ridimensionate e ricompresse e scatti simili. Tieni la copia migliore e scarica uno ZIP. Gratis.",
+    keywords: [
+      "trovare foto duplicate",
+      "cercare immagini duplicate",
+      "trovare immagini simili",
+      "eliminare foto doppie",
+      "foto doppie"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le foto",
+        description: "Trascina in una volta le foto di un’intera cartella."
+      },
+      {
+        title: "Controlla i gruppi",
+        description: "Esamina ogni gruppo e scegli quali copie tenere."
+      },
+      {
+        title: "Scarica",
+        description: "Ottieni le foto senza duplicati in uno ZIP, oppure l’elenco."
+      }
+    ],
+    features: [
+      {
+        title: "Trova le vere copie",
+        description: "Riconosce foto ridimensionate, ricompresse e salvate di nuovo, non solo file identici."
+      },
+      {
+        title: "Tenuta la copia migliore",
+        description: "Per impostazione predefinita viene scelta la copia più grande e meno compressa."
+      },
+      {
+        title: "Privato",
+        description: "Le foto vengono confrontate sul tuo dispositivo."
+      }
+    ],
+    faqs: [
+      {
+        question: "Può eliminare i miei duplicati?",
+        answer: "Un sito web non può eliminare file sul tuo dispositivo. Scarica le foto senza duplicati in uno ZIP, oppure usa l’elenco per eliminare tu stesso le copie in più."
+      },
+      {
+        question: "Come capisce che due foto sono uguali?",
+        answer: "Crea una piccola impronta dell’aspetto di ogni foto, così anche una copia ridimensionata o ricompressa viene riconosciuta. I file identici vengono confrontati in modo esatto."
+      },
+      {
+        question: "Quante foto posso controllare?",
+        answer: "Centinaia alla volta sulla maggior parte dei computer. Ogni foto viene ridotta a una minuscola impronta subito dopo la lettura, quindi la memoria usata resta bassa."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    name: "Convertitore pixel art",
+    shortName: "Pixel art",
+    tagline: "Trasforma una foto o un disegno in pixel art scegliendo dimensione della griglia, tavolozza e sfumatura. Gratis, sul tuo dispositivo.",
+    intro: "Convertitore pixel art trasforma qualsiasi immagine in pixel art. Scegli quanti pixel di larghezza deve avere, da una minuscola icona di 8 pixel a una scena dettagliata di 256 pixel, e quanti colori: una tavolozza adattata alla tua immagine, bianco e nero, grigi o quattro verdi retrò. La sfumatura piatta, morbida o a motivo cambia l’aspetto. Scaricala con pixel quadrati ingranditi e netti e linee della griglia facoltative, oppure a 1 pixel ciascuno per giochi ed editor di pixel art.",
+    seoTitle: "Convertitore pixel art – Da foto a pixel art, gratis",
+    seoDescription: "Converti una foto in pixel art online: scegli dimensione della griglia, colori e sfumatura, scarica un PNG nitido o l’originale a 1 pixel. Gratis, senza upload.",
+    keywords: [
+      "convertitore pixel art",
+      "foto in pixel art",
+      "trasformare immagine in pixel art",
+      "pixelare immagine",
+      "immagine 8 bit online"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi l’immagine",
+        description: "Una foto, un disegno o un logo."
+      },
+      {
+        title: "Scegli dimensione e colori",
+        description: "Imposta la larghezza in pixel, la tavolozza e la sfumatura."
+      },
+      {
+        title: "Scarica",
+        description: "Salvala in PNG, ingrandita o a 1 pixel ciascuno."
+      }
+    ],
+    features: [
+      {
+        title: "Tavolozze adattate",
+        description: "Da 4 a 32 colori scelti dalla tua immagine."
+      },
+      {
+        title: "Sfumatura retrò",
+        description: "Dithering piatto, morbido o a motivo."
+      },
+      {
+        title: "Risultato netto",
+        description: "Pixel quadrati senza sfocatura, con linee della griglia facoltative."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quale larghezza devo scegliere?",
+        answer: "Da 16 a 32 per icone e sprite, 64 per ritratti riconoscibili, 128 o più per scene dettagliate."
+      },
+      {
+        question: "Che cos’è l’opzione di sfumatura?",
+        answer: "Morbida e A motivo mescolano i colori della tavolozza in piccoli puntini per suggerire più tonalità, come facevano i vecchi videogiochi. Piatta usa ogni colore così com’è."
+      },
+      {
+        question: "Posso usarla in un gioco?",
+        answer: "Sì. “1 pixel ciascuno” scarica l’immagine alla sua vera dimensione in pixel, pronta per motori di gioco ed editor di pixel art."
+      },
+      {
+        question: "La mia foto viene caricata?",
+        answer: "No. Viene elaborata sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    name: "PDF in scala di grigi",
+    shortName: "PDF → Grigi",
+    tagline: "Converti un PDF a colori in bianco e nero per la stampa, con il testo nitido e selezionabile. Gratis.",
+    intro: "PDF in scala di grigi trasforma ogni colore di un PDF in tonalità di grigio: testo, forme, grafici e foto. È utile per vedere come stampa un documento su una stampante in bianco e nero, per risparmiare inchiostro a colori o quando un portale chiede un file in scala di grigi. Il testo resta testo vero e selezionabile e le forme restano nitide, perché cambiano solo i colori, non il contenuto. Le foto vengono convertite alla risoluzione originale con alta qualità.",
+    seoTitle: "PDF in scala di grigi – Da PDF a colori a bianco e nero",
+    seoDescription: "Converti un PDF a colori in scala di grigi online: il testo resta nitido e selezionabile, le foto mantengono la risoluzione. Ideale per stampare. Gratis.",
+    keywords: [
+      "pdf in scala di grigi",
+      "convertire pdf in bianco e nero",
+      "pdf bianco e nero online",
+      "pdf scala di grigi",
+      "togliere colore da pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi il PDF",
+        description: "Trascina o scegli un PDF fino a 30 MB."
+      },
+      {
+        title: "Converti",
+        description: "Ogni colore diventa una tonalità di grigio."
+      },
+      {
+        title: "Scarica",
+        description: "Salva il PDF in scala di grigi."
+      }
+    ],
+    features: [
+      {
+        title: "Il testo resta testo",
+        description: "Selezionabile e ricercabile, non trasformato in immagini."
+      },
+      {
+        title: "Foto a piena risoluzione",
+        description: "Le immagini vengono convertite senza essere ridotte."
+      },
+      {
+        title: "Pronto per la stampa",
+        description: "Vedi e stampa esattamente ciò che farebbe una stampante in bianco e nero."
+      }
+    ],
+    faqs: [
+      {
+        question: "Il testo resterà selezionabile?",
+        answer: "Sì. Cambiano solo i colori, quindi testo, link e impaginazione restano com’erano. I campi compilabili dei moduli vengono appiattiti: ciò che contengono resta sulla pagina, ma non si possono più compilare."
+      },
+      {
+        question: "Il mio PDF diventerà più grande?",
+        answer: "Dipende. I PDF con foto o scansioni di solito diventano più leggeri, perché le immagini in grigio richiedono meno dati; un PDF fatto quasi solo di testo può crescere leggermente."
+      },
+      {
+        question: "Posso convertire un PDF protetto da password?",
+        answer: "Rimuovi prima la password con Sblocca PDF, poi convertilo."
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer: "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser."
+      }
+    ]
+  },
 };

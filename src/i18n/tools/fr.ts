@@ -10784,4 +10784,492 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    name: "Rendre une image nette",
+    shortName: "Netteté",
+    tagline: "Rendez plus nette une photo un peu floue et vérifiez le résultat en taille réelle avant de la télécharger. Gratuit, sur votre appareil.",
+    intro: "Rendre une image nette accentue les contours et les détails fins des photos qui manquent un peu de piqué : photo de téléphone, image redimensionnée ou mise au point légèrement ratée. Choisissez l’intensité, la taille des détails à faire ressortir et le degré de protection des zones lisses comme la peau et le ciel. Une vue côte à côte à 100 % montre exactement ce qui change, car la netteté ne se juge pas sur un petit aperçu. Seule la luminosité est accentuée, donc aucune frange colorée n’apparaît, et la photo garde son format.",
+    seoTitle: "Améliorer la netteté d’une photo en ligne, gratuit",
+    seoDescription: "Rendez une photo plus nette en ligne : intensité et taille des détails réglables, avant/après en taille réelle, sans franges colorées. Gratuit, sans envoi.",
+    keywords: [
+      "rendre une image nette",
+      "améliorer la netteté d’une photo",
+      "déflouter une image",
+      "rendre une photo plus nette en ligne",
+      "accentuer la netteté"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Déposez ou choisissez une photo JPG, PNG, WebP, HEIC ou autre."
+      },
+      {
+        title: "Réglez et vérifiez",
+        description: "Choisissez l’intensité et cliquez sur la photo pour voir les détails à 100 %."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez-la dans le même format que l’original."
+      }
+    ],
+    features: [
+      {
+        title: "Aperçu en taille réelle",
+        description: "Avant et après à 100 %, là où la netteté se voit."
+      },
+      {
+        title: "Aucune frange colorée",
+        description: "Seule la luminosité est accentuée."
+      },
+      {
+        title: "Zones lisses protégées",
+        description: "La peau, le ciel et le bruit peuvent être épargnés."
+      }
+    ],
+    faqs: [
+      {
+        question: "Peut-il corriger une photo très floue ?",
+        answer: "Aucun outil ne peut recréer des détails jamais capturés. L’accentuation aide les photos un peu floues ; une photo très floue ou bougée paraîtra seulement un peu plus nette."
+      },
+      {
+        question: "Quels réglages utiliser ?",
+        answer: "Commencez par les valeurs par défaut. Choisissez une petite taille de détails pour les éléments fins comme les cheveux et le texte, et augmentez « Protéger les zones lisses » si la peau ou le ciel deviennent granuleux."
+      },
+      {
+        question: "Le fichier sera-t-il beaucoup plus lourd ?",
+        answer: "Un peu : des détails plus nets prennent un peu plus de place dans un JPG. La photo garde son format et sa taille en pixels."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "denoise-image": {
+    name: "Réduire le bruit d’une image",
+    shortName: "Réduire le bruit",
+    tagline: "Supprimez le grain et les taches de couleur des photos de nuit et de téléphone en gardant des contours nets. Gratuit, sur votre appareil.",
+    intro: "Réduire le bruit d’une image nettoie le grain et les taches colorées qui apparaissent sur les photos prises en faible lumière ou à ISO élevé. L’outil mesure le bruit de votre photo et suggère des réglages adaptés, si bien que les photos propres sont à peine modifiées. Le grain et les taches de couleur ont des réglages séparés, et les contours restent nets tandis que les zones unies sont lissées. Une vue côte à côte à 100 % montre le résultat là où le bruit est vraiment visible.",
+    seoTitle: "Réduire le bruit d’une photo en ligne – Gratuit",
+    seoDescription: "Supprimez le bruit et le grain de vos photos en ligne : réglages automatiques, grain et couleur séparés, contours nets, aperçu à 100 %. Gratuit, sans envoi.",
+    keywords: [
+      "réduire le bruit d’une photo",
+      "débruiter une image",
+      "enlever le grain d’une photo",
+      "réduction de bruit en ligne",
+      "bruit photo de nuit"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Le niveau de bruit est mesuré et des réglages sont suggérés."
+      },
+      {
+        title: "Vérifiez en taille réelle",
+        description: "Cliquez sur la photo pour comparer les détails à 100 %."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez-la dans le même format que l’original."
+      }
+    ],
+    features: [
+      {
+        title: "Réglages automatiques",
+        description: "Suggérés d’après le niveau de bruit mesuré."
+      },
+      {
+        title: "Grain et couleur séparés",
+        description: "Les taches de couleur disparaissent sans lisser les détails."
+      },
+      {
+        title: "Contours nets",
+        description: "Les zones unies sont lissées, pas les contours."
+      }
+    ],
+    faqs: [
+      {
+        question: "Ma photo va-t-elle avoir l’air plastique ?",
+        answer: "Pas avec les réglages suggérés : ils sont calibrés pour rapprocher la photo d’un original propre, pas pour la rendre plus lisse que lui. Des réglages très forts peuvent lisser des textures fines comme l’herbe ou un tissu, ce que montre la vue à 100 %."
+      },
+      {
+        question: "D’où vient le bruit ?",
+        answer: "Du manque de lumière. Les petits capteurs des téléphones et les réglages ISO élevés ajoutent du grain et des taches colorées, surtout dans les ombres."
+      },
+      {
+        question: "Pourquoi deux réglages de bruit ?",
+        answer: "Les taches de couleur peuvent être fortement supprimées sans perte de détails, alors que le grain de luminosité demande plus de douceur pour garder la texture."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    name: "Corriger la balance des blancs",
+    shortName: "Balance des blancs",
+    tagline: "Supprimez les dominantes jaunes, bleues ou vertes de vos photos automatiquement ou en choisissant un point gris. Gratuit, sur votre appareil.",
+    intro: "Corriger la balance des blancs rectifie les photos aux couleurs faussées : jaunes sous un éclairage intérieur, bleues à l’ombre, vertes sous certaines lampes. Cliquez sur Auto pour une correction rapide, ou cliquez sur un élément de la photo qui devrait être gris ou blanc, comme un mur, une feuille de papier ou un nuage, pour un résultat exact. Des curseurs de température, de teinte et de saturation permettent d’affiner, et vous pouvez maintenir un bouton pour comparer avec l’original. Les corrections se font en lumière linéaire, comme dans les appareils photo, pour que les hautes lumières ne se colorent pas.",
+    seoTitle: "Corriger la balance des blancs en ligne, gratuit",
+    seoDescription: "Corrigez la balance des blancs en ligne : correction auto ou point gris, plus température, teinte et saturation. Enlève les dominantes jaunes et bleues.",
+    keywords: [
+      "corriger la balance des blancs",
+      "correction couleur en ligne",
+      "enlever le jaune d’une photo",
+      "balance des blancs photo",
+      "photo trop bleue"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Déposez ou choisissez la photo qui a une dominante."
+      },
+      {
+        title: "Corrigez-la",
+        description: "Cliquez sur Auto, ou choisissez un élément qui devrait être gris."
+      },
+      {
+        title: "Affinez et téléchargez",
+        description: "Réglez la température, la teinte et la saturation, puis enregistrez."
+      }
+    ],
+    features: [
+      {
+        title: "Choisir un point gris",
+        description: "La méthode la plus précise pour fixer les couleurs neutres."
+      },
+      {
+        title: "Correction automatique",
+        description: "Une correction rapide pour les scènes courantes."
+      },
+      {
+        title: "Rendu naturel",
+        description: "Corrigé en lumière linéaire ; les hautes lumières restent propres."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi le mode Auto se trompe-t-il parfois ?",
+        answer: "La balance des blancs automatique devine l’éclairage d’après les couleurs de la photo. Quand une seule couleur remplit la scène, comme un coucher de soleil, un champ vert ou un mur rouge, elle se trompe. Choisir un point gris ou blanc est toujours précis."
+      },
+      {
+        question: "Sur quoi cliquer avec « Choisir un gris » ?",
+        answer: "Sur tout ce qui devrait être neutre : une feuille blanche, un mur gris, une chemise blanche ou un nuage. Évitez les zones très claires qui sont d’un blanc pur sur la photo."
+      },
+      {
+        question: "Le format du fichier change-t-il ?",
+        answer: "Non. Un JPG reste un JPG de haute qualité, et un PNG reste un PNG sans perte."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "perspective-correction": {
+    name: "Corriger la perspective",
+    shortName: "Perspective",
+    tagline: "Redressez la photo d’un document, d’un tableau blanc ou d’un panneau prise de biais en faisant glisser ses quatre coins. Gratuit.",
+    intro: "Corriger la perspective redresse tout ce qui a été photographié de biais : un document posé sur un bureau, un tableau blanc, une affiche, un tableau ou l’enseigne d’un bâtiment. Faites glisser les quatre coins sur ceux de l’objet, et l’outil le transforme en un rectangle propre en gardant autant de détails que la photo en contient. Gardez la forme de la sélection ou choisissez A4, Letter ou carré. L’aperçu se met à jour pendant que vous déplacez les coins.",
+    seoTitle: "Corriger la perspective d’une photo en ligne, gratuit",
+    seoDescription: "Corrigez la perspective d’une photo en ligne : faites glisser quatre coins pour redresser un document, un tableau blanc ou un panneau, en A4 ou Letter. Gratuit.",
+    keywords: [
+      "corriger la perspective",
+      "corriger la perspective d’une photo",
+      "redresser une photo de document",
+      "correction trapèze",
+      "redresser une photo de feuille"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre photo",
+        description: "Une photo prise de biais."
+      },
+      {
+        title: "Faites glisser les coins",
+        description: "Placez les quatre poignées sur les coins de l’objet."
+      },
+      {
+        title: "Téléchargez",
+        description: "Choisissez la forme et enregistrez l’image redressée."
+      }
+    ],
+    features: [
+      {
+        title: "Contrôle des quatre coins",
+        description: "À la souris ou au doigt, ou avec les flèches du clavier."
+      },
+      {
+        title: "Détails conservés",
+        description: "Le résultat est aussi grand que la zone sélectionnée le permet."
+      },
+      {
+        title: "Formats papier",
+        description: "Gardez la forme, ou choisissez A4, Letter ou carré."
+      }
+    ],
+    faqs: [
+      {
+        question: "Puis-je transformer une page redressée en PDF ?",
+        answer: "Téléchargez l’image redressée, puis utilisez JPG en PDF pour créer un PDF d’une ou plusieurs pages."
+      },
+      {
+        question: "Pourquoi mon résultat semble-t-il étiré ?",
+        answer: "Choisissez la bonne forme : « Comme la sélection » l’estime à partir des coins, mais pour une page photographiée très en biais, mieux vaut choisir A4 ou Letter."
+      },
+      {
+        question: "Sera-t-elle aussi nette que l’original ?",
+        answer: "Les parties éloignées de l’appareil ont moins de pixels et ressortent donc un peu plus floues. Prendre la photo le plus droit possible donne le meilleur résultat."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    name: "Créer un collage photo",
+    shortName: "Collage",
+    tagline: "Réunissez 2 à 9 photos dans un collage avec des dispositions prêtes, des espacements et des coins arrondis. Gratuit, sans inscription.",
+    intro: "Créer un collage photo assemble 2 à 9 photos en un collage. Choisissez une disposition, un format pour Instagram, les Stories, une publication panoramique ou une impression A4, et réglez l’espace entre les photos, la bordure, les coins arrondis et la couleur de fond. Cliquez sur une photo du collage pour zoomer ou choisir la partie visible. Le collage mesure 2400 pixels sur son plus grand côté, assez pour une impression nette, et il est créé entièrement sur votre appareil.",
+    seoTitle: "Créer un collage photo en ligne – Gratuit, sans inscription",
+    seoDescription: "Créez un collage photo en ligne : 2 à 9 photos, dispositions prêtes, formats carré, 4:5, 9:16 et A4, espacement et coins arrondis. Gratuit, sans envoi.",
+    keywords: [
+      "créer un collage photo",
+      "montage photo en ligne",
+      "collage photo gratuit",
+      "collage photo instagram",
+      "assembler plusieurs photos"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos photos",
+        description: "2 à 9 photos, dans l’ordre souhaité."
+      },
+      {
+        title: "Choisissez une disposition",
+        description: "Choisissez la disposition, le format, l’espacement et les couleurs."
+      },
+      {
+        title: "Cadrez et téléchargez",
+        description: "Cliquez sur une photo pour ajuster son cadrage, puis enregistrez."
+      }
+    ],
+    features: [
+      {
+        title: "Dispositions prêtes",
+        description: "Grilles et dispositions avec photo mise en avant, pour 2 à 9 photos."
+      },
+      {
+        title: "Formats réseaux sociaux et impression",
+        description: "1:1, 4:5, 9:16, 16:9 et A4."
+      },
+      {
+        title: "Cadrage photo par photo",
+        description: "Zoomez et déplacez chaque photo dans son emplacement."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle est la taille du collage ?",
+        answer: "2400 pixels sur son plus grand côté, par exemple 2400 × 2400 pour un collage carré, assez pour une impression de 20 cm à 300 DPI."
+      },
+      {
+        question: "Puis-je utiliser un fond transparent ?",
+        answer: "Oui : choisissez PNG et cochez Transparent."
+      },
+      {
+        question: "Puis-je changer l’ordre ?",
+        answer: "Oui. Montez ou descendez les photos dans la liste ; la première photo va dans le premier emplacement de la disposition."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    name: "Détecteur de photos en double",
+    shortName: "Doublons",
+    tagline: "Trouvez les photos en double et presque identiques, y compris les copies redimensionnées et recompressées. Gratuit, et rien n’est envoyé.",
+    intro: "Le détecteur de photos en double compare un ensemble de photos et regroupe celles qui sont des copies les unes des autres : fichiers identiques, copies réenregistrées, et versions redimensionnées ou recompressées comme les photos envoyées par une messagerie. Le réglage « Similaires » trouve aussi les prises presque identiques, comme les rafales. Dans chaque groupe, la copie la plus grande et la moins compressée est gardée par défaut, et vous pouvez changer celles à garder. Téléchargez les photos sans doublons dans un ZIP, ou une liste pour les supprimer vous-même. Les photos sont comparées sur votre appareil et jamais envoyées.",
+    seoTitle: "Trouver des photos en double – Images similaires, gratuit",
+    seoDescription: "Trouvez les photos en double en ligne : copies exactes, versions redimensionnées ou recompressées et prises similaires. Gardez la meilleure, téléchargez un ZIP.",
+    keywords: [
+      "trouver des photos en double",
+      "supprimer les doublons photos",
+      "détecteur d’images similaires",
+      "photos en double",
+      "rechercher des images en double"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos photos",
+        description: "Déposez d’un coup les photos de tout un dossier."
+      },
+      {
+        title: "Examinez les groupes",
+        description: "Vérifiez chaque groupe et choisissez les copies à garder."
+      },
+      {
+        title: "Téléchargez",
+        description: "Récupérez les photos sans doublons dans un ZIP, ou la liste."
+      }
+    ],
+    features: [
+      {
+        title: "Trouve les vraies copies",
+        description: "Repère les photos redimensionnées, recompressées et réenregistrées, pas seulement les fichiers identiques."
+      },
+      {
+        title: "Meilleure copie gardée",
+        description: "La copie la plus grande et la moins compressée est choisie par défaut."
+      },
+      {
+        title: "Confidentiel",
+        description: "Les photos sont comparées sur votre appareil."
+      }
+    ],
+    faqs: [
+      {
+        question: "Peut-il supprimer mes doublons ?",
+        answer: "Un site web ne peut pas supprimer de fichiers sur votre appareil. Téléchargez les photos sans doublons dans un ZIP, ou utilisez la liste pour supprimer vous-même les copies en trop."
+      },
+      {
+        question: "Comment sait-il que deux photos sont identiques ?",
+        answer: "Il crée une petite empreinte de l’apparence de chaque photo, si bien qu’une copie redimensionnée ou recompressée correspond toujours. Les fichiers identiques sont repérés à l’octet près."
+      },
+      {
+        question: "Combien de photos puis-je vérifier ?",
+        answer: "Des centaines à la fois sur la plupart des ordinateurs. Chaque photo est réduite à une minuscule empreinte juste après sa lecture, donc la mémoire utilisée reste faible."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    name: "Convertisseur pixel art",
+    shortName: "Pixel art",
+    tagline: "Transformez une photo ou un dessin en pixel art avec la taille de grille, la palette de couleurs et l’ombrage de votre choix. Gratuit, sur votre appareil.",
+    intro: "Le convertisseur pixel art transforme n’importe quelle image en pixel art. Choisissez sa largeur en pixels, d’une minuscule icône de 8 pixels à une scène détaillée de 256 pixels, et le nombre de couleurs : une palette adaptée à votre image, noir et blanc, niveaux de gris ou quatre verts rétro. Un ombrage en aplat, doux ou en motif change le rendu. Téléchargez-le agrandi avec des pixels carrés bien nets et une grille en option, ou à 1 pixel chacun pour les jeux et les éditeurs de pixel art.",
+    seoTitle: "Convertir une photo en pixel art en ligne, gratuit",
+    seoDescription: "Convertissez une photo en pixel art en ligne : taille de grille, couleurs et ombrage au choix, PNG net ou original à 1 pixel. Gratuit, sans envoi.",
+    keywords: [
+      "convertisseur pixel art",
+      "photo en pixel art",
+      "image en pixel art",
+      "pixeliser une image",
+      "convertir image en 8 bits"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre image",
+        description: "Une photo, un dessin ou un logo."
+      },
+      {
+        title: "Choisissez la taille et les couleurs",
+        description: "Réglez la largeur en pixels, la palette et l’ombrage."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez en PNG, agrandi ou à 1 pixel chacun."
+      }
+    ],
+    features: [
+      {
+        title: "Palettes adaptées",
+        description: "De 4 à 32 couleurs tirées de votre image."
+      },
+      {
+        title: "Ombrage rétro",
+        description: "Tramage en aplat, doux ou en motif."
+      },
+      {
+        title: "Rendu net",
+        description: "Des pixels carrés sans flou, avec une grille en option."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle largeur choisir ?",
+        answer: "16 à 32 pour les icônes et les sprites, 64 pour des portraits reconnaissables, 128 ou plus pour des scènes détaillées."
+      },
+      {
+        question: "À quoi sert l’option d’ombrage ?",
+        answer: "Doux et Motif mélangent les couleurs de la palette en petits points pour suggérer plus de nuances, comme dans les anciens jeux vidéo. Aplat utilise chaque couleur telle quelle."
+      },
+      {
+        question: "Puis-je l’utiliser dans un jeu ?",
+        answer: "Oui. « 1 pixel chacun » télécharge l’image à sa vraie taille en pixels, prête pour les moteurs de jeu et les éditeurs de pixel art."
+      },
+      {
+        question: "Ma photo est-elle envoyée ?",
+        answer: "Non. Elle est traitée sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    name: "PDF en niveaux de gris",
+    shortName: "PDF → Gris",
+    tagline: "Convertissez un PDF couleur en noir et blanc pour l’impression, avec un texte net et sélectionnable. Gratuit.",
+    intro: "PDF en niveaux de gris transforme toutes les couleurs d’un PDF en nuances de gris : texte, formes, graphiques et photos. C’est utile pour voir comment un document s’imprime sur une imprimante noir et blanc, pour économiser l’encre couleur, ou quand un portail demande un fichier en niveaux de gris. Le texte reste du vrai texte sélectionnable et les formes restent nettes, car seules les couleurs changent, pas le contenu. Les photos sont converties en pleine résolution et en haute qualité.",
+    seoTitle: "PDF en niveaux de gris – Convertir un PDF en noir et blanc",
+    seoDescription: "Convertissez un PDF couleur en niveaux de gris en ligne : texte net et sélectionnable, photos en pleine résolution. Pour imprimer et économiser l’encre.",
+    keywords: [
+      "pdf en niveaux de gris",
+      "convertir pdf en noir et blanc",
+      "pdf noir et blanc",
+      "pdf en noir et blanc en ligne",
+      "enlever la couleur d’un pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez un PDF de 30 MB maximum."
+      },
+      {
+        title: "Convertissez",
+        description: "Chaque couleur devient une nuance de gris."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF en niveaux de gris."
+      }
+    ],
+    features: [
+      {
+        title: "Le texte reste du texte",
+        description: "Sélectionnable et consultable, pas transformé en images."
+      },
+      {
+        title: "Photos en pleine résolution",
+        description: "Les images sont converties sans être réduites."
+      },
+      {
+        title: "Prêt à imprimer",
+        description: "Voyez et imprimez exactement ce que donnerait une imprimante noir et blanc."
+      }
+    ],
+    faqs: [
+      {
+        question: "Le texte sera-t-il toujours sélectionnable ?",
+        answer: "Oui. Seules les couleurs changent : le texte, les liens et la mise en page restent tels quels. Les champs de formulaire remplissables sont aplatis : ce qui y est saisi reste sur la page, mais ils ne peuvent plus être remplis."
+      },
+      {
+        question: "Mon PDF sera-t-il plus lourd ?",
+        answer: "Cela dépend. Les PDF avec des photos ou des scans deviennent souvent plus légers, car les images en gris demandent moins de données ; un PDF surtout composé de texte peut grossir légèrement."
+      },
+      {
+        question: "Puis-je convertir un PDF protégé par mot de passe ?",
+        answer: "Retirez d’abord le mot de passe avec Déverrouiller PDF, puis convertissez-le."
+      },
+      {
+        question: "Mon fichier est-il envoyé ?",
+        answer: "Oui. Cet outil a besoin de notre serveur : le fichier est donc envoyé via une connexion chiffrée, traité, puis supprimé dès que le résultat vous est renvoyé. Il n’est jamais stocké, partagé ni consulté. La plupart des autres outils de ce site fonctionnent entièrement dans votre navigateur."
+      }
+    ]
+  },
 };

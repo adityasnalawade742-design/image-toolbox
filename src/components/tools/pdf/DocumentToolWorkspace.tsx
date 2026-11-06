@@ -8,7 +8,7 @@ import { SUPPORTED_LOCALES } from '../../../i18n/locales';
 import { downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { DocError, isServiceOnline, runDocJob, type DocEndpoint, type DocErrorCode, type DocProgress } from '../../../lib/vps/docClient';
 
-export type DocTool = 'word-to-pdf' | 'excel-to-pdf' | 'powerpoint-to-pdf' | 'pdf-to-word' | 'compress-pdf' | 'protect-pdf' | 'unlock-pdf' | 'ocr-pdf' | 'pdf-to-pdfa' | 'repair-pdf';
+export type DocTool = 'word-to-pdf' | 'excel-to-pdf' | 'powerpoint-to-pdf' | 'pdf-to-word' | 'compress-pdf' | 'protect-pdf' | 'unlock-pdf' | 'ocr-pdf' | 'pdf-to-pdfa' | 'repair-pdf' | 'pdf-to-grayscale';
 
 interface ToolConfig {
   endpoint: DocEndpoint;
@@ -33,6 +33,7 @@ const CONFIG: Record<DocTool, ToolConfig> = {
   'ocr-pdf': { endpoint: 'ocr', ...PDF_IN, action: 'ctl.doc.ocr', output: (b) => `${b}-searchable.pdf` },
   'pdf-to-pdfa': { endpoint: 'pdfa', ...PDF_IN, action: 'ctl.doc.pdfa', output: (b) => `${b}-pdfa.pdf` },
   'repair-pdf': { endpoint: 'repair', ...PDF_IN, action: 'ctl.doc.repair', output: (b) => `${b}-repaired.pdf` },
+  'pdf-to-grayscale': { endpoint: 'grayscale', ...PDF_IN, action: 'ctl.doc.grayscale', output: (b) => `${b}-grayscale.pdf` },
 };
 
 // Site language → Tesseract language pack on the server

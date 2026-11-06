@@ -129,6 +129,13 @@ const AspectRatioWorkspace = standaloneTool(() => import('../tools/extras/CalcPa
 const SvgOptimizerWorkspace = standaloneTool(() => import('../tools/extras/SvgPackWorkspace'), 'SvgOptimizerWorkspace');
 const SvgToPdfWorkspace = standaloneTool(() => import('../tools/extras/SvgPackWorkspace'), 'SvgToPdfWorkspace');
 const LinkCheckerWorkspace = standaloneTool(() => import('../tools/pdf/LinkCheckerWorkspace'), 'LinkCheckerWorkspace');
+const SharpenWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'SharpenWorkspace');
+const DenoiseWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'DenoiseWorkspace');
+const WhiteBalanceWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'WhiteBalanceWorkspace');
+const PerspectiveWorkspace = standaloneTool(() => import('../tools/extras/PerspectiveWorkspace'), 'PerspectiveWorkspace');
+const CollageWorkspace = standaloneTool(() => import('../tools/extras/CollageWorkspace'), 'CollageWorkspace');
+const DuplicateFinderWorkspace = standaloneTool(() => import('../tools/extras/DuplicateFinderWorkspace'), 'DuplicateFinderWorkspace');
+const PixelArtWorkspace = standaloneTool(() => import('../tools/extras/PixelArtWorkspace'), 'PixelArtWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -288,6 +295,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'svg-to-pdf': <SvgToPdfWorkspace />,
     'webp-to-pdf': <JpgToPdfWorkspace />,
     'pdf-link-checker': <LinkCheckerWorkspace />,
+    'sharpen-image': <SharpenWorkspace />,
+    'denoise-image': <DenoiseWorkspace />,
+    'fix-white-balance': <WhiteBalanceWorkspace />,
+    'perspective-correction': <PerspectiveWorkspace />,
+    'photo-collage-maker': <CollageWorkspace />,
+    'duplicate-photo-finder': <DuplicateFinderWorkspace />,
+    'pixel-art-converter': <PixelArtWorkspace />,
+    'pdf-to-grayscale': <DocumentToolWorkspace tool="pdf-to-grayscale" />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,

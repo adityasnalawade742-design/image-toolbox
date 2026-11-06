@@ -3,7 +3,7 @@
  * Uploads use XHR so the tools can show upload progress; the server answers with the finished file.
  */
 
-export type DocEndpoint = 'convert' | 'compress' | 'protect' | 'unlock' | 'repair' | 'ocr' | 'pdfa';
+export type DocEndpoint = 'convert' | 'compress' | 'protect' | 'unlock' | 'repair' | 'ocr' | 'pdfa' | 'grayscale';
 
 export type DocErrorCode =
   | 'offline'
