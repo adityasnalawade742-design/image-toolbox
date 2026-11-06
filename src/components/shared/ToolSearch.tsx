@@ -18,11 +18,29 @@ export interface SearchItem {
 interface Props {
   locale?: string;
   strings?: Strings;
-  items: SearchItem[];
+  /** How many tools there are (shown before the index has loaded) */
+  count: number;
+  /** The search index for this language, fetched the first time search is about to open */
+  indexUrl: string;
 }
 
-export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
+let indexCache: { url: string; items: Promise<SearchItem[]> } | null = null;
+const loadIndex = (url: string) => {
+  if (indexCache?.url !== url) {
+    const items = fetch(url).then((r) => (r.ok ? (r.json() as Promise<SearchItem[]>) : []));
+    // A failed fetch (offline) is tried again next time
+    items.then((list) => !list.length && (indexCache = null), () => (indexCache = null));
+    indexCache = { url, items: items.catch(() => []) };
+  }
+  return indexCache.items;
+};
+
+export function ToolSearch({ locale = 'en', strings = {}, count, indexUrl }: Props) {
   const t = useMemo(() => createT(strings), [strings]);
+  const [items, setItems] = useState<SearchItem[]>([]);
+  const prefetch = () => {
+    loadIndex(indexUrl).then(setItems);
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -44,6 +62,7 @@ export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
 
   useEffect(() => {
     if (isOpen) {
+      prefetch();
       setSelectedIndex(0);
       requestAnimationFrame(() => inputRef.current?.focus());
     }
@@ -69,6 +88,9 @@ export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
+        onPointerEnter={prefetch}
+        onFocus={prefetch}
+        onTouchStart={prefetch}
         className="flex items-center gap-2 h-10 px-3 rounded-md whitespace-nowrap text-[15px] text-ink bg-paper-bright border border-ink hover:bg-paper-stock transition-colors"
         aria-haspopup="dialog"
       >
@@ -127,7 +149,7 @@ export function ToolSearch({ locale = 'en', strings = {}, items }: Props) {
                     go(filteredTools[selectedIndex].slug);
                   }
                 }}
-                placeholder={t('search.placeholder', { count: items.length })}
+                placeholder={t('search.placeholder', { count })}
                 className="w-full bg-transparent text-lg text-ink placeholder:text-graphite focus:outline-none [&::-webkit-search-cancel-button]:hidden"
               />
               <button type="button" onClick={close} className="w-10 h-10 -mr-2 flex items-center justify-center text-ink hover:bg-paper-stock" aria-label={t('search.close')}>
