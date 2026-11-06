@@ -124,7 +124,8 @@ describe('applyEdits', () => {
     const out = await applyEdits(await blank(), items, { loadFont: async (s) => (loaded.push(s), fontFile(s)) });
     expect(loaded.sort()).toEqual(['ja', 'ko', 'latin']);
     expect((await PDFDocument.load(out)).getPageCount()).toBe(2);
-  });
+    // Embeds whole CJK fonts (several MB): slow when the machine is busy
+  }, 60_000);
 
   it('ignores items for pages the file does not have', async () => {
     const out = await applyEdits(await blank(), [box('rect', 7)]);

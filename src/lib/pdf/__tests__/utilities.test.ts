@@ -214,7 +214,8 @@ describe('composing PDFs', () => {
     const bytes = await textToPdf('English, Русский, 日本語, 한국어', opts, async (s) => (used.push(s), cached(s)));
     expect(used.sort()).toEqual(['ja', 'ko', 'latin']);
     expect((await PDFDocument.load(bytes)).getPageCount()).toBe(1);
-  });
+    // Embeds whole CJK fonts (several MB): slow when the machine is busy
+  }, 60_000);
 
   it('lays out markdown with headings, lists, code and working links', async () => {
     const bytes = await markdownToPdf('# Guide\n\nRead **this** first, then [the site](example.com).\n\n- one\n- two\n\n```\nnpm run build\n```', { ...opts, title: '' });

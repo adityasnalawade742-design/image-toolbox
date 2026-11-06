@@ -16,6 +16,6 @@ const [first, second] = SITE_CONFIG.name.split(/(?=[A-Z])/).length === 2 ? SITE_
 
 <span class={`inline-flex items-center font-condensed font-bold uppercase tracking-[0.04em] text-ink leading-none ${className}`}>
   <span>{first}</span>
-  <span class="inline-block h-[1.3em] w-[1.46em] ml-[0.1em] mr-[0.02em] -translate-y-[0.08em] [&>svg]:h-full [&>svg]:w-full" set:html={mark} />
+  <span aria-hidden="true" class="inline-block h-[1.3em] w-[1.46em] ml-[0.1em] mr-[0.02em] -translate-y-[0.08em] [&>svg]:h-full [&>svg]:w-full" set:html={mark} />
   {second && <span>{second}</span>}
 </span>

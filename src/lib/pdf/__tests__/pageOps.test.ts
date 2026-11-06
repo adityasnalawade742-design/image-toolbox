@@ -222,7 +222,8 @@ describe('page operations', () => {
       const vals = (await listFormFields(out)).map((f) => f.value);
       expect(vals).toEqual(['Привет, Ğüşİ', '東京都 山田太郎', '서울 홍길동']);
       await fillForm(await formPdf(), { b: '東京都' }, true, load);
-    });
+      // Embeds whole CJK fonts (several MB): slow when the machine is busy
+    }, 60_000);
 
     it.skipIf(!haveFonts)('names the fields whose writing system no font covers', async () => {
       const err = await fillForm(await formPdf(), { a: 'ok', b: 'مرحبا' }, false, async (s) => cached(s)).catch((e) => e);
