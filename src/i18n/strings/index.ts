@@ -25,7 +25,13 @@ export function pickStrings(locale: string, ...prefixes: string[]): Strings {
 
 /** `t('ws.savedAs', { format: 'PNG' })` with `{format}` placeholders; falls back to English, then the key */
 export function createT(strings: Strings) {
+  // Pages send only the strings they use; one that's missing still shows (in English) and is noted for the audit
+  const partial = typeof window !== 'undefined' && Object.keys(strings).length > 0;
   return (key: StringKey, vars?: Record<string, string | number>): string => {
+    if (partial && strings[key] === undefined && en[key] !== undefined) {
+      const w = window as unknown as { __missingStrings?: Set<string> };
+      (w.__missingStrings ??= new Set()).add(key);
+    }
     let text = strings[key] ?? en[key] ?? key;
     if (vars) for (const [name, value] of Object.entries(vars)) text = text.split(`{${name}}`).join(String(value));
     return text;

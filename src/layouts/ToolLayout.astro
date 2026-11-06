@@ -1,4 +1,5 @@
 ---
+import toolStringKeys from '../i18n/toolStringKeys.json';
 import BaseLayout from './BaseLayout.astro';
 import AdSlot from '../components/layout/AdSlot.astro';
 import ToolIcon from '../components/shared/ToolIcon.astro';
@@ -64,8 +65,9 @@ const nextTools = NEXT_SLUGS.filter((s) => s !== slug)
     return { slug: s, name: allLocTools[s]?.name || next.name, inkClass: CATEGORY_INK[next.category].className };
   });
 
-// Interface strings the workspace island needs, in this page's language only
-const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', 'ctl.');
+// Interface strings the workspace island needs, in this page's language only: the shared ones and this tool's own
+// (see scripts/string-usage.mjs), not every tool's
+const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', ...toolStringKeys.generic, ...((toolStringKeys.bySlug as Record<string, string[]>)[slug] ?? []));
 ---
 
 <BaseLayout title={title} description={description} currentSlug={slug} canonicalUrl={canonicalUrl} jsonLd={jsonLd}>
