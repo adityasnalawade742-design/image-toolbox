@@ -10265,4 +10265,492 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "color-converter": {
+    name: "Konverter Warna",
+    shortName: "Konverter Warna",
+    tagline: "Konversi warna apa pun antara HEX, RGB, HSL, HSV, CMYK, Lab, dan OKLCH, lalu salin dengan sekali klik. Gratis, di perangkat Anda.",
+    intro: "Konverter Warna mengubah warna yang ditulis dalam satu format ke semua format lainnya: HEX untuk web, RGB, HSL, dan HSV untuk aplikasi desain, CMYK untuk cetak, serta CIE Lab dan OKLCH untuk CSS modern dan pengolahan warna. Ketik atau tempel salah satunya, atau nama CSS seperti tomato, atau gunakan pemilih warna. Setiap nilai punya tombol salin, dan nama warna CSS terdekat juga ditampilkan.",
+    seoTitle: "Konverter Warna – HEX, RGB, HSL, CMYK, OKLCH Gratis",
+    seoDescription: "Konversi warna antara HEX, RGB, HSL, HSV, CMYK, Lab, dan OKLCH secara instan, dengan tombol salin dan nama CSS terdekat. Gratis, langsung di browser.",
+    keywords: [
+      "konverter warna",
+      "hex ke rgb",
+      "rgb ke hex",
+      "hex ke cmyk",
+      "konversi kode warna"
+    ],
+    howToSteps: [
+      {
+        title: "Masukkan warna",
+        description: "Ketik atau tempel dalam format apa saja, atau pilih dengan pemilih warna."
+      },
+      {
+        title: "Baca hasilnya",
+        description: "Lihat warnanya dalam setiap format, beserta nama CSS terdekat."
+      },
+      {
+        title: "Salin yang Anda perlukan",
+        description: "Salin nilai mana pun dengan sekali klik."
+      }
+    ],
+    features: [
+      {
+        title: "Semua format umum",
+        description: "HEX, RGB, HSL, HSV, CMYK, CIE Lab, dan OKLCH."
+      },
+      {
+        title: "Memahami apa yang Anda tempel",
+        description: "Dengan atau tanpa #, koma, atau spasi, serta nama CSS."
+      },
+      {
+        title: "Transparansi tetap ada",
+        description: "Nilai alfa ikut terbawa ke semua format."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bagaimana cara mengonversi HEX ke RGB?",
+        answer: "Tempel kode HEX, misalnya #3366CC, lalu baca baris RGB: rgb(51 102 204). Semua format lain ditampilkan sekaligus."
+      },
+      {
+        question: "Apakah nilai CMYK-nya tepat untuk cetak?",
+        answer: "Ini konversi standar tanpa profil printer, jadi cocok sebagai titik awal. Percetakan bisa memberikan nilai yang sedikit berbeda untuk mesin cetak mereka."
+      },
+      {
+        question: "Apa itu OKLCH?",
+        answer: "Cara baru menulis warna di CSS, berdasarkan seberapa terang dan berwarna suatu warna terlihat oleh mata manusia. Berguna untuk membuat skala warna yang merata."
+      },
+      {
+        question: "Apakah perlu koneksi internet?",
+        answer: "Hanya untuk membuka halamannya. Semua dihitung di perangkat Anda, dan apa pun yang Anda ketik tidak dikirim ke mana pun."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    name: "Pemeriksa Kontras Warna",
+    shortName: "Cek Kontras",
+    tagline: "Periksa apakah warna teks dan background cukup terbaca untuk WCAG AA dan AAA, dan dapatkan warna terdekat yang lolos.",
+    intro: "Pemeriksa Kontras Warna mengukur rasio kontras antara warna teks dan background-nya dengan rumus WCAG 2.2, lalu menunjukkan apakah lolos AA dan AAA untuk teks biasa, teks besar, serta ikon dan garis tepi. Pratinjau langsung menampilkan teks sungguhan di atas background. Jika pasangan warna gagal, alat ini menyarankan warna teks terdekat yang lolos dengan hue yang sama, jadi desain Anda berubah sesedikit mungkin.",
+    seoTitle: "Cek Kontras Warna – WCAG AA & AAA Online Gratis",
+    seoDescription: "Periksa kontras warna untuk WCAG 2.2 AA dan AAA, lihat pratinjau teks di atas background, dan dapatkan warna terdekat yang lolos. Gratis, di browser.",
+    keywords: [
+      "cek kontras warna",
+      "contrast checker",
+      "rasio kontras wcag",
+      "kalkulator rasio kontras",
+      "warna aksesibel"
+    ],
+    howToSteps: [
+      {
+        title: "Pilih dua warna",
+        description: "Masukkan warna teks dan background, atau pilih keduanya."
+      },
+      {
+        title: "Baca hasilnya",
+        description: "Lihat rasionya dan apakah lolos AA dan AAA."
+      },
+      {
+        title: "Perbaiki jika perlu",
+        description: "Pakai warna saran yang lolos."
+      }
+    ],
+    features: [
+      {
+        title: "Level WCAG 2.2",
+        description: "AA dan AAA untuk teks biasa dan besar, plus ikon dan garis tepi."
+      },
+      {
+        title: "Pratinjau langsung",
+        description: "Lihat judul, teks isi, dan tombol di atas background."
+      },
+      {
+        title: "Perbaikan terdekat",
+        description: "Warna terdekat yang lolos, dengan hue yang sama."
+      }
+    ],
+    faqs: [
+      {
+        question: "Berapa rasio kontras yang saya perlukan?",
+        answer: "WCAG AA meminta 4,5:1 untuk teks biasa dan 3:1 untuk teks besar, ikon, dan garis tepi. AAA meminta 7:1 untuk teks biasa dan 4,5:1 untuk teks besar."
+      },
+      {
+        question: "Apa yang termasuk teks besar?",
+        answer: "24 px ke atas, atau teks tebal mulai sekitar 18,5 px (14 pt)."
+      },
+      {
+        question: "Apakah bisa untuk warna transparan?",
+        answer: "Bisa. Warna teks transparan diukur sesuai tampilannya di atas background."
+      },
+      {
+        question: "Apakah perlu koneksi internet?",
+        answer: "Hanya untuk membuka halamannya. Semua dihitung di perangkat Anda, dan apa pun yang Anda ketik tidak dikirim ke mana pun."
+      }
+    ]
+  },
+  "paper-size-converter": {
+    name: "Konverter Ukuran Kertas",
+    shortName: "Ukuran Kertas",
+    tagline: "Lihat semua ukuran kertas standar, A4, Letter, A3, dan lainnya, dalam mm, inci, poin, dan piksel pada DPI berapa pun. Gratis.",
+    intro: "Konverter Ukuran Kertas mencantumkan ukuran kertas standar, yaitu ISO A, B, dan C, ukuran AS seperti Letter, Legal, dan Tabloid, cetak foto, amplop, dan ukuran JIS Jepang, dalam milimeter, sentimeter, inci, poin, atau piksel. Atur DPI untuk melihat berapa piksel yang dibutuhkan satu halaman untuk dicetak, misalnya 2480 × 3508 untuk A4 pada 300 DPI. Masukkan lebar dan tinggi apa saja untuk mengonversinya dan menemukan ukuran standar terdekat.",
+    seoTitle: "Ukuran Kertas – A4, Letter dalam mm, Inci, dan Piksel",
+    seoDescription: "Semua ukuran kertas standar, A0–A10, Letter, Legal, foto, dan amplop, dalam mm, inci, poin, dan piksel pada DPI berapa pun. Tabel ukuran kertas gratis.",
+    keywords: [
+      "ukuran kertas a4",
+      "ukuran a4 dalam pixel",
+      "ukuran kertas a4 dalam inci",
+      "ukuran kertas letter",
+      "tabel ukuran kertas"
+    ],
+    howToSteps: [
+      {
+        title: "Pilih kelompok",
+        description: "Ukuran A, AS, B, C, foto, amplop, atau JIS."
+      },
+      {
+        title: "Pilih satuan",
+        description: "mm, cm, inci, poin, atau piksel, dengan DPI Anda."
+      },
+      {
+        title: "Konversi ukuran apa pun",
+        description: "Masukkan lebar dan tinggi untuk mengonversinya dan menemukan ukuran standar terdekat."
+      }
+    ],
+    features: [
+      {
+        title: "Semua ukuran umum",
+        description: "Ukuran ISO A, B, dan C, AS, foto, amplop, dan JIS."
+      },
+      {
+        title: "Piksel untuk mencetak",
+        description: "Ukuran piksel pada DPI pilihan Anda."
+      },
+      {
+        title: "Standar terdekat",
+        description: "Temukan kertas yang paling mendekati suatu ukuran."
+      }
+    ],
+    faqs: [
+      {
+        question: "Berapa piksel ukuran A4?",
+        answer: "Pada 300 DPI, A4 berukuran 2480 × 3508 piksel; pada 150 DPI, 1240 × 1754 piksel."
+      },
+      {
+        question: "Apa bedanya A4 dan Letter?",
+        answer: "A4 (210 × 297 mm) dipakai di sebagian besar dunia; Letter (8,5 × 11 in, 216 × 279 mm) di AS dan Kanada. A4 lebih sempit dan lebih tinggi."
+      },
+      {
+        question: "Kenapa ukuran ISO dibulatkan?",
+        answer: "Standarnya menetapkan ukuran dalam milimeter bulat, masing-masing setengah dari ukuran di atasnya."
+      },
+      {
+        question: "Apakah perlu koneksi internet?",
+        answer: "Hanya untuk membuka halamannya. Semua dihitung di perangkat Anda, dan apa pun yang Anda ketik tidak dikirim ke mana pun."
+      }
+    ]
+  },
+  "aspect-ratio-calculator": {
+    name: "Kalkulator Rasio Aspek",
+    shortName: "Rasio Aspek",
+    tagline: "Cari rasio aspek dari lebar dan tinggi apa pun, dan hitung ukuran yang mempertahankan rasio seperti 16:9. Gratis.",
+    intro: "Kalkulator Rasio Aspek menyederhanakan lebar dan tinggi apa pun menjadi rasionya, misalnya 1920 × 1080 menjadi 16:9, dan menyebutkan rasio umum yang cocok: video, ponsel, cetak foto, atau media sosial. Untuk mengubah ukuran sambil mempertahankan rasio, masukkan rasio dan satu sisi untuk mendapatkan sisi lainnya. Daftar rasio umum, dari 1:1 hingga 21:9 dan 9:16 untuk Stories, mengisinya dengan sekali klik.",
+    seoTitle: "Kalkulator Rasio Aspek – 16:9, 4:3, 9:16, dan Lainnya",
+    seoDescription: "Hitung rasio aspek dari ukuran apa pun dan lebar atau tinggi yang mempertahankannya: 16:9, 4:3, 3:2, 1:1, 9:16, dan lainnya. Gratis, langsung di browser.",
+    keywords: [
+      "kalkulator rasio aspek",
+      "aspect ratio calculator",
+      "menghitung rasio aspek",
+      "ukuran 16:9",
+      "rasio gambar"
+    ],
+    howToSteps: [
+      {
+        title: "Masukkan ukuran",
+        description: "Ketik lebar dan tinggi untuk mendapatkan rasionya."
+      },
+      {
+        title: "Atau pertahankan rasio",
+        description: "Masukkan rasio dan satu sisi untuk mendapatkan sisi lainnya."
+      },
+      {
+        title: "Pakai rasio umum",
+        description: "Pilih 16:9, 4:5, 9:16, dan lainnya dari daftar."
+      }
+    ],
+    features: [
+      {
+        title: "Rasio paling sederhana",
+        description: "1920 × 1080 menjadi 16:9, beserta nilai desimalnya."
+      },
+      {
+        title: "Rasio bernama",
+        description: "Mencocokkannya dengan ukuran video, ponsel, cetak, dan media sosial."
+      },
+      {
+        title: "Sisi yang hilang",
+        description: "Menghitung lebar atau tinggi yang mempertahankan rasio."
+      }
+    ],
+    faqs: [
+      {
+        question: "Berapa piksel ukuran 16:9?",
+        answer: "Ukuran 16:9 yang umum adalah 1280 × 720, 1920 × 1080, dan 3840 × 2160. Masukkan lebar apa saja untuk mendapatkan tinggi 16:9-nya."
+      },
+      {
+        question: "Rasio apa untuk Instagram?",
+        answer: "1:1 untuk postingan persegi, 4:5 untuk postingan potret, dan 9:16 untuk Stories dan Reels."
+      },
+      {
+        question: "Kenapa layar saya tidak persis 16:9?",
+        answer: "Beberapa ukuran mendekati tetapi tidak persis, misalnya 1366 × 768. Alat ini menampilkan rasio umum terdekat dan menandainya sebagai perkiraan."
+      },
+      {
+        question: "Apakah perlu koneksi internet?",
+        answer: "Hanya untuk membuka halamannya. Semua dihitung di perangkat Anda, dan apa pun yang Anda ketik tidak dikirim ke mana pun."
+      }
+    ]
+  },
+  "svg-optimizer": {
+    name: "Pengoptimal SVG",
+    shortName: "Optimalkan SVG",
+    tagline: "Perkecil file SVG tanpa mengubah tampilannya, dengan pengaturan yang menjaganya tetap bisa diskalakan. Gratis, di perangkat Anda.",
+    intro: "Pengoptimal SVG merapikan file SVG yang diekspor dari aplikasi desain, yang sering membawa data editor, komentar, desimal panjang, dan definisi yang tidak dipakai. Alat ini memakai SVGO, pengoptimal standar, dengan pengaturan aman: viewBox dipertahankan agar gambar tetap bisa diskalakan, judul tetap ada untuk pembaca layar, dan ID tidak diganti namanya kecuali Anda memintanya. Lihat versi asli dan yang dioptimalkan berdampingan beserta ukuran yang dihemat, lalu unduh file-nya atau salin kodenya.",
+    seoTitle: "Pengoptimal SVG – Perkecil Ukuran File SVG, Gratis",
+    seoDescription: "Optimalkan file SVG online dengan SVGO: hapus data editor, bulatkan desimal, dan perkecil file tanpa mengubah gambar. Gratis, tanpa unggah.",
+    keywords: [
+      "optimasi svg",
+      "kompres svg",
+      "perkecil ukuran svg",
+      "svg optimizer",
+      "svgo online"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan SVG Anda",
+        description: "Letakkan file atau tempel kodenya."
+      },
+      {
+        title: "Atur pengaturannya",
+        description: "Pilih jumlah desimal dan apa yang dipertahankan atau dihapus."
+      },
+      {
+        title: "Unduh atau salin",
+        description: "Simpan SVG yang sudah dioptimalkan atau salin kodenya."
+      }
+    ],
+    features: [
+      {
+        title: "Didukung SVGO",
+        description: "Pengoptimal SVG standar, dijalankan di browser Anda."
+      },
+      {
+        title: "Aman secara default",
+        description: "Mempertahankan viewBox, judul, dan ID kecuali Anda memilih lain."
+      },
+      {
+        title: "Berdampingan",
+        description: "Bandingkan sebelum dan sesudah, beserta ukuran yang dihemat."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah SVG yang dioptimalkan akan terlihat berbeda?",
+        answer: "Tidak dengan pengaturan default. Mengatur jumlah desimal ke 0 bisa menggeser detail kecil; bandingkan kedua pratinjaunya."
+      },
+      {
+        question: "Kenapa ID dipertahankan?",
+        answer: "Situs web dan animasi sering menargetkan bagian SVG lewat ID-nya. Persingkat ID hanya jika tidak ada yang memakainya di luar file."
+      },
+      {
+        question: "Seberapa kecil hasilnya?",
+        answer: "File dari aplikasi desain sering menyusut 30–70%; file yang ditulis manual atau sudah dioptimalkan menyusut lebih sedikit."
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. File dioptimalkan di perangkat Anda."
+      }
+    ]
+  },
+  "svg-to-pdf": {
+    name: "SVG ke PDF",
+    shortName: "SVG ke PDF",
+    tagline: "Konversi gambar SVG, logo, atau grafik ke PDF yang tetap tajam di zoom berapa pun. Gratis, dan berjalan di perangkat Anda.",
+    intro: "SVG ke PDF mengonversi SVG menjadi PDF vektor, sehingga garis dan teks tetap tajam saat dicetak atau di-zoom alih-alih berubah menjadi piksel. Jadikan halaman seukuran gambar, atau letakkan gambar di tengah halaman A4 atau Letter dengan margin, lalu periksa hasilnya di pratinjau sebelum mengunduh. Beberapa efek SVG, seperti filter blur dan konten web yang disematkan, tidak bisa digambar di PDF; halaman ini menjelaskan apa yang berubah.",
+    seoTitle: "SVG ke PDF – PDF Vektor yang Tetap Tajam, Gratis",
+    seoDescription: "Konversi SVG ke PDF vektor online: garis dan teks tetap tajam, halaman seukuran gambar atau A4/Letter. Gratis, tanpa daftar, tanpa unggah.",
+    keywords: [
+      "svg ke pdf",
+      "convert svg to pdf",
+      "ubah svg ke pdf",
+      "svg to pdf",
+      "konversi logo svg ke pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan SVG Anda",
+        description: "Letakkan file atau tempel kodenya."
+      },
+      {
+        title: "Pilih halamannya",
+        description: "Ukuran gambar, A4, atau Letter, dan marginnya."
+      },
+      {
+        title: "Unduh",
+        description: "Periksa pratinjau dan simpan PDF-nya."
+      }
+    ],
+    features: [
+      {
+        title: "Hasil vektor",
+        description: "Tetap tajam di zoom dan ukuran cetak berapa pun."
+      },
+      {
+        title: "Halaman sesuai keinginan",
+        description: "Ukuran gambar, A4, atau Letter, dengan margin."
+      },
+      {
+        title: "Pratinjau nyata",
+        description: "Pratinjaunya adalah PDF yang Anda unduh."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF-nya tajam saat dicetak?",
+        answer: "Ya. Bentuk dan teks tetap berupa vektor, jadi tercetak tajam di ukuran berapa pun."
+      },
+      {
+        question: "Kenapa sebagian gambar saya terlihat berbeda?",
+        answer: "PDF tidak bisa menggambar beberapa efek SVG, seperti filter blur dan bayangan atau HTML yang disematkan. Bentuk sederhana, gradien, dan teks terkonversi dengan baik."
+      },
+      {
+        question: "Bagaimana dengan font?",
+        answer: "Font umum berfungsi; font yang tidak umum diganti dengan font standar. Ubah teks menjadi outline di aplikasi desain Anda agar hasilnya persis sama."
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. PDF dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "webp-to-pdf": {
+    name: "WebP ke PDF",
+    shortName: "WebP ke PDF",
+    tagline: "Ubah satu atau beberapa gambar WebP menjadi satu PDF, dengan urutan pilihan Anda. Gratis, dan berjalan di perangkat Anda.",
+    intro: "WebP ke PDF menggabungkan gambar WebP, format yang dipakai banyak situs web dan ponsel untuk menyimpan gambar, menjadi satu PDF, satu gambar per halaman sesuai urutan pilihan Anda. Halaman bisa berukuran A4, Letter, atau seukuran tiap gambar, dengan margin opsional. Gambar WebP lossless dan transparan ditempatkan tanpa kehilangan kualitas dan tetap transparan; foto ditambahkan dengan kualitas tinggi. Tidak ada yang diunggah.",
+    seoTitle: "WebP ke PDF – Gabungkan Gambar WebP Jadi Satu PDF",
+    seoDescription: "Konversi gambar WebP ke PDF online: satu atau banyak gambar, sesuai urutan Anda, di halaman A4, Letter, atau seukuran gambar. Gratis, tanpa unggah.",
+    keywords: [
+      "webp ke pdf",
+      "ubah webp ke pdf",
+      "convert webp to pdf",
+      "gabungkan webp jadi pdf",
+      "konversi webp ke pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar WebP Anda",
+        description: "Letakkan atau pilih satu atau beberapa file WebP."
+      },
+      {
+        title: "Atur halamannya",
+        description: "Seret untuk mengurutkan dan pilih ukuran halaman."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF-nya."
+      }
+    ],
+    features: [
+      {
+        title: "Banyak gambar, satu PDF",
+        description: "Satu gambar per halaman, sesuai urutan yang Anda atur."
+      },
+      {
+        title: "Kualitas terjaga",
+        description: "WebP lossless dan transparan ditempatkan tanpa kehilangan kualitas."
+      },
+      {
+        title: "Ukuran halaman",
+        description: "A4, Letter, atau ukuran asli tiap gambar."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bisakah saya mencampur WebP dengan format lain?",
+        answer: "Bisa. Gambar JPG, PNG, HEIC, dan TIFF bisa masuk ke PDF yang sama."
+      },
+      {
+        question: "Apakah transparansi dipertahankan?",
+        answer: "Ya, untuk gambar WebP yang memiliki transparansi."
+      },
+      {
+        question: "Apakah ada batas jumlah gambar?",
+        answer: "Hanya memori perangkat Anda; puluhan gambar tidak masalah di sebagian besar komputer dan ponsel."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. PDF dibuat di perangkat Anda."
+      }
+    ]
+  },
+  "pdf-link-checker": {
+    name: "Pemeriksa Tautan PDF",
+    shortName: "Cek Tautan",
+    tagline: "Temukan setiap tautan di PDF dan periksa tautan web mana yang rusak, pindah, atau tidak bisa dijangkau. Gratis.",
+    intro: "Pemeriksa Tautan PDF mencantumkan setiap tautan di PDF: tautan web dan email yang bisa diklik, tautan ke halaman di dalam dokumen, dan alamat web yang tertulis di teks. Alat ini memeriksa setiap tautan web dan menunjukkan mana yang berfungsi, mana yang rusak (misalnya error 404), mana yang sudah pindah dan ke mana, serta mana yang tidak bisa dijangkau; tautan ke halaman yang tidak ada di dalam PDF juga ditandai. Saring untuk melihat yang bermasalah saja dan unduh laporan CSV. PDF Anda tetap di perangkat Anda; hanya alamat web yang dikirim ke server kami untuk diperiksa.",
+    seoTitle: "Cek Tautan PDF – Temukan Link Rusak di PDF, Gratis",
+    seoDescription: "Periksa semua tautan di PDF: temukan tautan web yang rusak, pindah, atau tidak terjangkau dan tautan ke halaman yang hilang. Laporan CSV. Gratis, tanpa unggah.",
+    keywords: [
+      "cek link pdf",
+      "periksa tautan pdf",
+      "link rusak di pdf",
+      "pdf link checker",
+      "cek hyperlink pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF-nya; tautannya langsung dicantumkan."
+      },
+      {
+        title: "Periksa tautan web",
+        description: "Lihat mana yang berfungsi, pindah, rusak, atau tidak bisa dijangkau."
+      },
+      {
+        title: "Perbaiki dan buat laporan",
+        description: "Saring yang bermasalah dan unduh laporan CSV."
+      }
+    ],
+    features: [
+      {
+        title: "Semua tautan ditemukan",
+        description: "Tautan yang bisa diklik, tautan halaman, dan alamat yang tertulis sebagai teks."
+      },
+      {
+        title: "Hasil yang jelas",
+        description: "Berfungsi, pindah, rusak dengan kode error, atau tidak terjangkau."
+      },
+      {
+        title: "Laporan CSV",
+        description: "Bagikan daftarnya atau perbaiki tautan di dokumen sumber Anda."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah PDF saya diunggah?",
+        answer: "Tidak. Tautan dibaca di perangkat Anda. Hanya alamat web yang dikirim ke server kami, yang mengunjungi tiap alamat satu kali untuk memeriksanya."
+      },
+      {
+        question: "Kenapa tautan yang berfungsi tampil tidak terjangkau?",
+        answer: "Beberapa situs memblokir pemeriksaan otomatis atau lambat merespons. Buka tautannya untuk memeriksanya sendiri."
+      },
+      {
+        question: "Apa arti “pindah”?",
+        answer: "Alamat itu meneruskan ke alamat lain. Tautannya masih berfungsi, tetapi sebaiknya diperbarui ke alamat yang baru."
+      },
+      {
+        question: "Apakah tautan email diperiksa?",
+        answer: "Tidak. Tautan email, telepon, dan file dicantumkan tetapi tidak bisa diperiksa otomatis."
+      }
+    ]
+  },
 };

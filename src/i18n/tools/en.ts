@@ -9905,4 +9905,492 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "color-converter": {
+    "name": "Color Converter",
+    "shortName": "Color Converter",
+    "tagline": "Convert any color between HEX, RGB, HSL, HSV, CMYK, Lab and OKLCH, and copy it in one click. Free, on your device.",
+    "intro": "Color Converter turns a color written in one format into all the others: HEX for the web, RGB, HSL and HSV for design apps, CMYK for print, and CIE Lab and OKLCH for modern CSS and color work. Type or paste any of them, or a CSS name such as tomato, or use the color picker. Each value has a copy button, and the nearest CSS color name is shown too.",
+    "seoTitle": "Color Converter – HEX, RGB, HSL, CMYK, OKLCH, Free",
+    "seoDescription": "Convert colors between HEX, RGB, HSL, HSV, CMYK, Lab and OKLCH instantly, with copy buttons and the nearest CSS name. Free, works in your browser.",
+    "keywords": [
+      "color converter",
+      "hex to rgb",
+      "rgb to hex",
+      "hex to cmyk",
+      "hsl to hex"
+    ],
+    "howToSteps": [
+      {
+        "title": "Enter a color",
+        "description": "Type or paste it in any format, or pick it with the color picker."
+      },
+      {
+        "title": "Read the results",
+        "description": "See it in every format, with the nearest CSS name."
+      },
+      {
+        "title": "Copy what you need",
+        "description": "Copy any value with one click."
+      }
+    ],
+    "features": [
+      {
+        "title": "Every common format",
+        "description": "HEX, RGB, HSL, HSV, CMYK, CIE Lab and OKLCH."
+      },
+      {
+        "title": "Understands what you paste",
+        "description": "With or without #, commas or spaces, and CSS names."
+      },
+      {
+        "title": "Transparency kept",
+        "description": "Alpha values carry across formats."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I convert HEX to RGB?",
+        "answer": "Paste the HEX code, such as #3366CC, and read the RGB line: rgb(51 102 204). Every other format is shown at the same time."
+      },
+      {
+        "question": "Is the CMYK value exact for printing?",
+        "answer": "It's a standard conversion without a printer profile, so it's a good starting point. A print shop may give slightly different values for their press."
+      },
+      {
+        "question": "What is OKLCH?",
+        "answer": "A newer way to write colors in CSS, based on how bright and colorful a color looks to people. It's useful for building even color scales."
+      },
+      {
+        "question": "Does it need an internet connection?",
+        "answer": "Only to open the page. Everything is calculated on your device, and nothing you type is sent anywhere."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    "name": "Color Contrast Checker",
+    "shortName": "Contrast Checker",
+    "tagline": "Check whether text and background colors are readable enough for WCAG AA and AAA, and get the nearest color that passes.",
+    "intro": "Color Contrast Checker measures the contrast ratio between a text color and its background with the WCAG 2.2 formula, and shows whether it passes AA and AAA for normal text, large text, and icons and borders. A live preview shows real text on the background. When a pair fails, the tool suggests the closest text color that passes, keeping its hue, so you change your design as little as possible.",
+    "seoTitle": "Color Contrast Checker – WCAG AA & AAA, Free",
+    "seoDescription": "Check color contrast for WCAG 2.2 AA and AAA, preview text on the background, and get the nearest passing color. Free, works in your browser.",
+    "keywords": [
+      "color contrast checker",
+      "wcag contrast checker",
+      "contrast ratio calculator",
+      "accessible colors",
+      "text contrast check"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose two colors",
+        "description": "Enter the text color and the background, or pick them."
+      },
+      {
+        "title": "Read the result",
+        "description": "See the ratio and whether it passes AA and AAA."
+      },
+      {
+        "title": "Fix it if needed",
+        "description": "Use the suggested color that passes."
+      }
+    ],
+    "features": [
+      {
+        "title": "WCAG 2.2 levels",
+        "description": "AA and AAA for normal and large text, plus icons and borders."
+      },
+      {
+        "title": "Live preview",
+        "description": "See headings, body text and a button on the background."
+      },
+      {
+        "title": "Closest fix",
+        "description": "The nearest passing color, with the same hue."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What contrast ratio do I need?",
+        "answer": "WCAG AA asks for 4.5:1 for normal text and 3:1 for large text, icons and borders. AAA asks for 7:1 for normal text and 4.5:1 for large text."
+      },
+      {
+        "question": "What counts as large text?",
+        "answer": "24 px and up, or bold text from about 18.5 px (14 pt)."
+      },
+      {
+        "question": "Does it handle see-through colors?",
+        "answer": "Yes. A transparent text color is measured as it looks on the background."
+      },
+      {
+        "question": "Does it need an internet connection?",
+        "answer": "Only to open the page. Everything is calculated on your device, and nothing you type is sent anywhere."
+      }
+    ]
+  },
+  "paper-size-converter": {
+    "name": "Paper Size Converter",
+    "shortName": "Paper Sizes",
+    "tagline": "See every standard paper size, A4, Letter, A3 and more, in mm, inches, points and pixels at any DPI. Free.",
+    "intro": "Paper Size Converter lists the standard paper sizes, ISO A, B and C, US sizes such as Letter, Legal and Tabloid, photo prints, envelopes and Japanese JIS sizes, in millimeters, centimeters, inches, points or pixels. Set the DPI to see how many pixels a page needs for printing, for example 2480 × 3508 for A4 at 300 DPI. Enter any width and height to convert it and find the nearest standard size.",
+    "seoTitle": "Paper Size Converter – A4, Letter in mm, Inches, Pixels",
+    "seoDescription": "All standard paper sizes, A0–A10, Letter, Legal, photo and envelope sizes, in mm, inches, points and pixels at any DPI. Free paper size chart.",
+    "keywords": [
+      "paper size chart",
+      "a4 size in pixels",
+      "a4 size in inches",
+      "letter size in mm",
+      "paper sizes in cm"
+    ],
+    "howToSteps": [
+      {
+        "title": "Choose a group",
+        "description": "A sizes, US, B, C, photo, envelope or JIS sizes."
+      },
+      {
+        "title": "Pick the unit",
+        "description": "mm, cm, inches, points or pixels, with your DPI."
+      },
+      {
+        "title": "Convert any size",
+        "description": "Enter a width and height to convert it and find the nearest standard size."
+      }
+    ],
+    "features": [
+      {
+        "title": "Every common size",
+        "description": "ISO A, B and C, US, photo, envelope and JIS sizes."
+      },
+      {
+        "title": "Pixels for printing",
+        "description": "Pixel sizes at the DPI you choose."
+      },
+      {
+        "title": "Nearest standard",
+        "description": "Find which paper a size is closest to."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many pixels is A4?",
+        "answer": "At 300 DPI, A4 is 2480 × 3508 pixels; at 150 DPI it's 1240 × 1754."
+      },
+      {
+        "question": "What's the difference between A4 and Letter?",
+        "answer": "A4 (210 × 297 mm) is used in most of the world; Letter (8.5 × 11 in, 216 × 279 mm) in the US and Canada. A4 is narrower and taller."
+      },
+      {
+        "question": "Why are ISO sizes rounded?",
+        "answer": "The standard defines them in whole millimeters, each half of the size above it."
+      },
+      {
+        "question": "Does it need an internet connection?",
+        "answer": "Only to open the page. Everything is calculated on your device, and nothing you type is sent anywhere."
+      }
+    ]
+  },
+  "aspect-ratio-calculator": {
+    "name": "Aspect Ratio Calculator",
+    "shortName": "Aspect Ratio",
+    "tagline": "Find the aspect ratio of any width and height, and work out the size that keeps a ratio such as 16:9. Free.",
+    "intro": "Aspect Ratio Calculator simplifies any width and height to its ratio, such as 1920 × 1080 to 16:9, and names the common ratio it matches: video, phone, photo print or social media. To resize while keeping a ratio, enter the ratio and one side to get the other. A list of common ratios, from 1:1 to 21:9 and 9:16 for Stories, fills them in with one click.",
+    "seoTitle": "Aspect Ratio Calculator – 16:9, 4:3, 9:16 and More",
+    "seoDescription": "Calculate the aspect ratio of any size and the width or height that keeps it: 16:9, 4:3, 3:2, 1:1, 9:16 and more. Free, works in your browser.",
+    "keywords": [
+      "aspect ratio calculator",
+      "16:9 calculator",
+      "calculate aspect ratio",
+      "resize keep aspect ratio",
+      "image aspect ratio"
+    ],
+    "howToSteps": [
+      {
+        "title": "Enter a size",
+        "description": "Type the width and height to get the ratio."
+      },
+      {
+        "title": "Or keep a ratio",
+        "description": "Enter a ratio and one side to get the other."
+      },
+      {
+        "title": "Use a common ratio",
+        "description": "Pick 16:9, 4:5, 9:16 and others from the list."
+      }
+    ],
+    "features": [
+      {
+        "title": "Simplest ratio",
+        "description": "1920 × 1080 becomes 16:9, with the decimal value."
+      },
+      {
+        "title": "Named ratios",
+        "description": "Matches it to video, phone, print and social sizes."
+      },
+      {
+        "title": "Missing side",
+        "description": "Works out the width or height that keeps the ratio."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is 16:9 in pixels?",
+        "answer": "Common 16:9 sizes are 1280 × 720, 1920 × 1080 and 3840 × 2160. Enter any width to get its 16:9 height."
+      },
+      {
+        "question": "Which ratio for Instagram?",
+        "answer": "1:1 for square posts, 4:5 for portrait posts and 9:16 for Stories and Reels."
+      },
+      {
+        "question": "Why isn't my screen exactly 16:9?",
+        "answer": "Some sizes are close but not exact, such as 1366 × 768. The tool shows the nearest common ratio and marks it as approximate."
+      },
+      {
+        "question": "Does it need an internet connection?",
+        "answer": "Only to open the page. Everything is calculated on your device, and nothing you type is sent anywhere."
+      }
+    ]
+  },
+  "svg-optimizer": {
+    "name": "SVG Optimizer",
+    "shortName": "SVG Optimizer",
+    "tagline": "Make SVG files smaller without changing how they look, with settings that keep them scalable. Free, on your device.",
+    "intro": "SVG Optimizer cleans up SVG files exported from design apps, which often carry editor data, comments, long decimals and unused definitions. It uses SVGO, the standard optimizer, with safe settings: the viewBox stays so the drawing still scales, titles stay for screen readers, and IDs aren't renamed unless you ask. See the original and optimized versions side by side with the size saved, then download the file or copy the code.",
+    "seoTitle": "SVG Optimizer – Make SVG Files Smaller, Free",
+    "seoDescription": "Optimize SVG files online with SVGO: remove editor data, round decimals and shrink files without changing the drawing. Free, no upload.",
+    "keywords": [
+      "svg optimizer",
+      "optimize svg",
+      "minify svg",
+      "compress svg",
+      "svgo online"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your SVG",
+        "description": "Drop a file or paste the code."
+      },
+      {
+        "title": "Adjust the settings",
+        "description": "Choose decimals and what to keep or remove."
+      },
+      {
+        "title": "Download or copy",
+        "description": "Save the optimized SVG or copy its code."
+      }
+    ],
+    "features": [
+      {
+        "title": "Powered by SVGO",
+        "description": "The standard SVG optimizer, run in your browser."
+      },
+      {
+        "title": "Safe by default",
+        "description": "Keeps the viewBox, titles and IDs unless you choose otherwise."
+      },
+      {
+        "title": "Side by side",
+        "description": "Compare before and after, with the size saved."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the optimized SVG look different?",
+        "answer": "Not with the default settings. Setting decimal places to 0 can shift small details; compare the two previews."
+      },
+      {
+        "question": "Why keep IDs?",
+        "answer": "Websites and animations often target parts of an SVG by ID. Shorten them only when nothing outside the file uses them."
+      },
+      {
+        "question": "How much smaller will it get?",
+        "answer": "Files from design apps often shrink by 30–70%; hand-written or already optimized files shrink less."
+      },
+      {
+        "question": "Is my file uploaded?",
+        "answer": "No. It's optimized on your device."
+      }
+    ]
+  },
+  "svg-to-pdf": {
+    "name": "SVG to PDF",
+    "shortName": "SVG to PDF",
+    "tagline": "Convert an SVG drawing, logo or chart to a PDF that stays sharp at any zoom. Free, and it runs on your device.",
+    "intro": "SVG to PDF converts an SVG into a vector PDF, so lines and text stay crisp when printed or zoomed instead of turning into pixels. Make the page the size of the drawing, or center it on an A4 or Letter page with a margin, and check the result in the preview before downloading. A few SVG effects, such as blur filters and embedded web content, can't be drawn in a PDF; the page explains what changes.",
+    "seoTitle": "SVG to PDF – Vector PDF That Stays Sharp, Free",
+    "seoDescription": "Convert SVG to a vector PDF online: keeps lines and text sharp, page sized to the drawing or A4/Letter. Free, no sign-up, no upload.",
+    "keywords": [
+      "svg to pdf",
+      "convert svg to pdf",
+      "svg to pdf vector",
+      "logo svg to pdf",
+      "svg pdf converter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your SVG",
+        "description": "Drop a file or paste the code."
+      },
+      {
+        "title": "Choose the page",
+        "description": "Drawing size, A4 or Letter, and the margin."
+      },
+      {
+        "title": "Download",
+        "description": "Check the preview and save the PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vector output",
+        "description": "Stays sharp at any zoom and print size."
+      },
+      {
+        "title": "Page your way",
+        "description": "Drawing size, A4 or Letter, with margins."
+      },
+      {
+        "title": "Real preview",
+        "description": "The preview is the PDF you download."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the PDF be sharp when printed?",
+        "answer": "Yes. Shapes and text stay as vectors, so they print crisply at any size."
+      },
+      {
+        "question": "Why does part of my drawing look different?",
+        "answer": "PDF can't draw some SVG effects, such as blur and shadow filters or embedded HTML. Simple shapes, gradients and text convert well."
+      },
+      {
+        "question": "What about fonts?",
+        "answer": "Common fonts work; unusual ones are replaced by a standard font. Convert text to outlines in your design app for an exact match."
+      },
+      {
+        "question": "Is my file uploaded?",
+        "answer": "No. The PDF is made on your device."
+      }
+    ]
+  },
+  "webp-to-pdf": {
+    "name": "WebP to PDF",
+    "shortName": "WebP to PDF",
+    "tagline": "Turn one or more WebP images into a single PDF, in the order you choose. Free, and it runs on your device.",
+    "intro": "WebP to PDF combines WebP images, the format many websites and phones save, into one PDF, one image per page in the order you choose. Pages can be A4, Letter or the size of each image, with optional margins. Lossless and transparent WebP images are placed losslessly, keeping their transparency; photos are added at high quality. Nothing is uploaded.",
+    "seoTitle": "WebP to PDF – Combine WebP Images Into a PDF",
+    "seoDescription": "Convert WebP images to PDF online: one or many images, in your order, on A4, Letter or image-sized pages. Free, no sign-up, no upload.",
+    "keywords": [
+      "webp to pdf",
+      "convert webp to pdf",
+      "webp images to pdf",
+      "combine webp to pdf",
+      "webp to pdf converter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your WebP images",
+        "description": "Drop or choose one or more WebP files."
+      },
+      {
+        "title": "Arrange the pages",
+        "description": "Drag them into order and choose the page size."
+      },
+      {
+        "title": "Download",
+        "description": "Save the PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Many images, one PDF",
+        "description": "One image per page, in the order you set."
+      },
+      {
+        "title": "Quality kept",
+        "description": "Lossless and transparent WebP placed losslessly."
+      },
+      {
+        "title": "Page sizes",
+        "description": "A4, Letter or each image's own size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I mix WebP with other formats?",
+        "answer": "Yes. JPG, PNG, HEIC and TIFF images can go in the same PDF."
+      },
+      {
+        "question": "Is transparency kept?",
+        "answer": "Yes, for WebP images with transparency."
+      },
+      {
+        "question": "Is there a limit on images?",
+        "answer": "Only your device's memory; dozens of images are fine on most computers and phones."
+      },
+      {
+        "question": "Are my images uploaded?",
+        "answer": "No. The PDF is made on your device."
+      }
+    ]
+  },
+  "pdf-link-checker": {
+    "name": "PDF Link Checker",
+    "shortName": "Link Checker",
+    "tagline": "Find every link in a PDF and check which web links are broken, moved or unreachable. Free.",
+    "intro": "PDF Link Checker lists every link in a PDF: clickable web and email links, links to pages inside the document, and web addresses written in the text. It checks each web link and shows which work, which are broken (such as error 404), which have moved and where to, and which can't be reached; links to missing pages inside the PDF are flagged too. Filter to problems only and download a CSV report. Your PDF stays on your device; only the web addresses are sent to our server to check them.",
+    "seoTitle": "PDF Link Checker – Find Broken Links in a PDF, Free",
+    "seoDescription": "Check all links in a PDF: find broken, moved and unreachable web links and links to missing pages. CSV report. Free, your PDF isn't uploaded.",
+    "keywords": [
+      "pdf link checker",
+      "check links in pdf",
+      "broken links in pdf",
+      "pdf hyperlink checker",
+      "validate pdf links"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose the PDF; its links are listed."
+      },
+      {
+        "title": "Check the web links",
+        "description": "See which work, moved, broke or can't be reached."
+      },
+      {
+        "title": "Fix and report",
+        "description": "Filter to problems and download a CSV report."
+      }
+    ],
+    "features": [
+      {
+        "title": "Every link found",
+        "description": "Clickable links, page links and addresses written as text."
+      },
+      {
+        "title": "Clear results",
+        "description": "Works, moved, broken with the error code, or unreachable."
+      },
+      {
+        "title": "CSV report",
+        "description": "Share the list or fix links in your source document."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is my PDF uploaded?",
+        "answer": "No. Links are read on your device. Only the web addresses are sent to our server, which visits each once to check it."
+      },
+      {
+        "question": "Why does a working link show as unreachable?",
+        "answer": "Some sites block automated checks or are slow to answer. Open the link to check it yourself."
+      },
+      {
+        "question": "What does “moved” mean?",
+        "answer": "The address forwards to another one. It still works, but updating it to the new address is better."
+      },
+      {
+        "question": "Are email links checked?",
+        "answer": "No. Email, phone and file links are listed but can't be checked automatically."
+      }
+    ]
+  },
 };

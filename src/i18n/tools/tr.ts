@@ -10266,4 +10266,492 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "color-converter": {
+    name: "Renk Dönüştürücü",
+    shortName: "Renk Dönüştürücü",
+    tagline: "Herhangi bir rengi HEX, RGB, HSL, HSV, CMYK, Lab ve OKLCH arasında dönüştürün ve tek tıkla kopyalayın. Ücretsiz, cihazınızda.",
+    intro: "Renk Dönüştürücü, bir formatta yazılmış rengi diğer tüm formatlara çevirir: web için HEX, tasarım uygulamaları için RGB, HSL ve HSV, baskı için CMYK, modern CSS ve renk çalışmaları için CIE Lab ve OKLCH. Bunlardan herhangi birini yazın veya yapıştırın, tomato gibi bir CSS adı girin ya da renk seçiciyi kullanın. Her değerin bir kopyalama düğmesi vardır ve en yakın CSS renk adı da gösterilir.",
+    seoTitle: "Renk Dönüştürücü – HEX, RGB, HSL, CMYK, OKLCH Ücretsiz",
+    seoDescription: "Renkleri HEX, RGB, HSL, HSV, CMYK, Lab ve OKLCH arasında anında dönüştürün; kopyalama düğmeleri ve en yakın CSS adı dahil. Ücretsiz, tarayıcınızda çalışır.",
+    keywords: [
+      "renk dönüştürücü",
+      "hex to rgb",
+      "hex rgb dönüştürme",
+      "rgb hex çevirme",
+      "renk kodu dönüştürme"
+    ],
+    howToSteps: [
+      {
+        title: "Bir renk girin",
+        description: "Herhangi bir formatta yazın veya yapıştırın ya da renk seçiciyle seçin."
+      },
+      {
+        title: "Sonuçları okuyun",
+        description: "Rengi her formatta, en yakın CSS adıyla birlikte görün."
+      },
+      {
+        title: "İhtiyacınız olanı kopyalayın",
+        description: "Herhangi bir değeri tek tıkla kopyalayın."
+      }
+    ],
+    features: [
+      {
+        title: "Tüm yaygın formatlar",
+        description: "HEX, RGB, HSL, HSV, CMYK, CIE Lab ve OKLCH."
+      },
+      {
+        title: "Yapıştırdığınızı anlar",
+        description: "#, virgül veya boşluk olsun ya da olmasın, CSS adları da dahil."
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "Alfa değerleri tüm formatlara aktarılır."
+      }
+    ],
+    faqs: [
+      {
+        question: "HEX’i RGB’ye nasıl dönüştürürüm?",
+        answer: "#3366CC gibi HEX kodunu yapıştırın ve RGB satırını okuyun: rgb(51 102 204). Diğer tüm formatlar da aynı anda gösterilir."
+      },
+      {
+        question: "CMYK değeri baskı için kesin mi?",
+        answer: "Yazıcı profili olmadan yapılan standart bir dönüşümdür, bu yüzden iyi bir başlangıç noktasıdır. Matbaa, kendi baskı makinesi için biraz farklı değerler verebilir."
+      },
+      {
+        question: "OKLCH nedir?",
+        answer: "Renkleri CSS’te yazmanın yeni bir yolu; bir rengin insanlara ne kadar parlak ve canlı göründüğüne dayanır. Dengeli renk skalaları oluşturmak için kullanışlıdır."
+      },
+      {
+        question: "İnternet bağlantısı gerekir mi?",
+        answer: "Yalnızca sayfayı açmak için. Her şey cihazınızda hesaplanır ve yazdığınız hiçbir şey bir yere gönderilmez."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    name: "Renk Kontrastı Denetleyici",
+    shortName: "Kontrast Denetleyici",
+    tagline: "Metin ve arka plan renklerinin WCAG AA ve AAA için yeterince okunaklı olup olmadığını kontrol edin ve geçen en yakın rengi alın.",
+    intro: "Renk Kontrastı Denetleyici, bir metin rengi ile arka planı arasındaki kontrast oranını WCAG 2.2 formülüyle ölçer ve normal metin, büyük metin ile simgeler ve kenarlıklar için AA ve AAA’yı geçip geçmediğini gösterir. Canlı önizleme, arka plan üzerinde gerçek metni gösterir. Bir renk çifti kalırsa araç, tonunu koruyarak geçen en yakın metin rengini önerir; böylece tasarımınızı olabildiğince az değiştirirsiniz.",
+    seoTitle: "Renk Kontrastı Kontrolü – WCAG AA ve AAA, Ücretsiz",
+    seoDescription: "Renk kontrastını WCAG 2.2 AA ve AAA için kontrol edin, metni arka plan üzerinde önizleyin ve geçen en yakın rengi alın. Ücretsiz, tarayıcınızda çalışır.",
+    keywords: [
+      "renk kontrastı kontrolü",
+      "kontrast oranı hesaplama",
+      "wcag kontrast kontrolü",
+      "erişilebilir renkler",
+      "contrast checker"
+    ],
+    howToSteps: [
+      {
+        title: "İki renk seçin",
+        description: "Metin rengini ve arka planı girin veya seçin."
+      },
+      {
+        title: "Sonucu okuyun",
+        description: "Oranı ve AA ile AAA’yı geçip geçmediğini görün."
+      },
+      {
+        title: "Gerekirse düzeltin",
+        description: "Önerilen, geçen rengi kullanın."
+      }
+    ],
+    features: [
+      {
+        title: "WCAG 2.2 seviyeleri",
+        description: "Normal ve büyük metin için AA ve AAA, ayrıca simgeler ve kenarlıklar."
+      },
+      {
+        title: "Canlı önizleme",
+        description: "Başlıkları, gövde metnini ve bir düğmeyi arka plan üzerinde görün."
+      },
+      {
+        title: "En yakın düzeltme",
+        description: "Aynı tonda, geçen en yakın renk."
+      }
+    ],
+    faqs: [
+      {
+        question: "Ne kadar kontrast oranına ihtiyacım var?",
+        answer: "WCAG AA, normal metin için 4,5:1, büyük metin, simgeler ve kenarlıklar için 3:1 ister. AAA, normal metin için 7:1, büyük metin için 4,5:1 ister."
+      },
+      {
+        question: "Hangi metin büyük sayılır?",
+        answer: "24 px ve üzeri ya da yaklaşık 18,5 px’ten (14 pt) itibaren kalın metin."
+      },
+      {
+        question: "Yarı saydam renklerle çalışır mı?",
+        answer: "Evet. Saydam bir metin rengi, arka plan üzerinde göründüğü gibi ölçülür."
+      },
+      {
+        question: "İnternet bağlantısı gerekir mi?",
+        answer: "Yalnızca sayfayı açmak için. Her şey cihazınızda hesaplanır ve yazdığınız hiçbir şey bir yere gönderilmez."
+      }
+    ]
+  },
+  "paper-size-converter": {
+    name: "Kâğıt Boyutu Dönüştürücü",
+    shortName: "Kâğıt Boyutları",
+    tagline: "A4, Letter, A3 ve daha fazlası; tüm standart kâğıt boyutlarını mm, inç, punto ve istediğiniz DPI’da piksel olarak görün. Ücretsiz.",
+    intro: "Kâğıt Boyutu Dönüştürücü; ISO A, B ve C, Letter, Legal ve Tabloid gibi ABD boyutları, fotoğraf baskıları, zarflar ve Japon JIS boyutları gibi standart kâğıt boyutlarını milimetre, santimetre, inç, punto veya piksel olarak listeler. Baskı için bir sayfanın kaç piksele ihtiyaç duyduğunu görmek üzere DPI’ı ayarlayın; örneğin 300 DPI’da A4 için 2480 × 3508. Herhangi bir genişlik ve yükseklik girerek dönüştürün ve en yakın standart boyutu bulun.",
+    seoTitle: "Kâğıt Boyutları – A4, Letter; mm, İnç ve Piksel Olarak",
+    seoDescription: "Tüm standart kâğıt boyutları: A0–A10, Letter, Legal, fotoğraf ve zarf boyutları; mm, inç, punto ve istediğiniz DPI’da piksel. Ücretsiz kâğıt boyutu tablosu.",
+    keywords: [
+      "kağıt boyutları",
+      "a4 kaç piksel",
+      "a4 boyutu cm",
+      "a4 kaç inç",
+      "letter kağıt boyutu"
+    ],
+    howToSteps: [
+      {
+        title: "Bir grup seçin",
+        description: "A, ABD, B, C, fotoğraf, zarf veya JIS boyutları."
+      },
+      {
+        title: "Birimi seçin",
+        description: "DPI’ınızla birlikte mm, cm, inç, punto veya piksel."
+      },
+      {
+        title: "Herhangi bir boyutu dönüştürün",
+        description: "Dönüştürmek ve en yakın standart boyutu bulmak için genişlik ve yükseklik girin."
+      }
+    ],
+    features: [
+      {
+        title: "Tüm yaygın boyutlar",
+        description: "ISO A, B ve C, ABD, fotoğraf, zarf ve JIS boyutları."
+      },
+      {
+        title: "Baskı için pikseller",
+        description: "Seçtiğiniz DPI’da piksel boyutları."
+      },
+      {
+        title: "En yakın standart",
+        description: "Bir boyutun hangi kâğıda en yakın olduğunu bulun."
+      }
+    ],
+    faqs: [
+      {
+        question: "A4 kaç pikseldir?",
+        answer: "300 DPI’da A4, 2480 × 3508 pikseldir; 150 DPI’da 1240 × 1754 pikseldir."
+      },
+      {
+        question: "A4 ile Letter arasındaki fark nedir?",
+        answer: "A4 (210 × 297 mm) dünyanın çoğunda, Letter (8,5 × 11 in, 216 × 279 mm) ABD ve Kanada’da kullanılır. A4 daha dar ve daha uzundur."
+      },
+      {
+        question: "ISO boyutları neden yuvarlanmış?",
+        answer: "Standart bunları tam milimetre olarak tanımlar; her biri bir üstündeki boyutun yarısıdır."
+      },
+      {
+        question: "İnternet bağlantısı gerekir mi?",
+        answer: "Yalnızca sayfayı açmak için. Her şey cihazınızda hesaplanır ve yazdığınız hiçbir şey bir yere gönderilmez."
+      }
+    ]
+  },
+  "aspect-ratio-calculator": {
+    name: "En Boy Oranı Hesaplayıcı",
+    shortName: "En Boy Oranı",
+    tagline: "Herhangi bir genişlik ve yüksekliğin en boy oranını bulun ve 16:9 gibi bir oranı koruyan boyutu hesaplayın. Ücretsiz.",
+    intro: "En Boy Oranı Hesaplayıcı, herhangi bir genişlik ve yüksekliği oranına sadeleştirir; örneğin 1920 × 1080’i 16:9’a. Ayrıca eşleştiği yaygın oranı adlandırır: video, telefon, fotoğraf baskısı veya sosyal medya. Bir oranı koruyarak yeniden boyutlandırmak için oranı ve bir kenarı girin, diğerini alın. 1:1’den 21:9’a ve Hikâyeler için 9:16’ya kadar yaygın oranların listesi, değerleri tek tıkla doldurur.",
+    seoTitle: "En Boy Oranı Hesaplama – 16:9, 4:3, 9:16 ve Dahası",
+    seoDescription: "Herhangi bir boyutun en boy oranını ve onu koruyan genişlik veya yüksekliği hesaplayın: 16:9, 4:3, 3:2, 1:1, 9:16 ve dahası. Ücretsiz, tarayıcınızda çalışır.",
+    keywords: [
+      "en boy oranı hesaplama",
+      "aspect ratio calculator",
+      "16:9 çözünürlük hesaplama",
+      "oranı koruyarak boyutlandırma",
+      "resim en boy oranı"
+    ],
+    howToSteps: [
+      {
+        title: "Bir boyut girin",
+        description: "Oranı almak için genişliği ve yüksekliği yazın."
+      },
+      {
+        title: "Veya bir oranı koruyun",
+        description: "Diğer kenarı almak için bir oran ve bir kenar girin."
+      },
+      {
+        title: "Yaygın bir oran kullanın",
+        description: "Listeden 16:9, 4:5, 9:16 ve diğerlerini seçin."
+      }
+    ],
+    features: [
+      {
+        title: "En sade oran",
+        description: "1920 × 1080, ondalık değeriyle birlikte 16:9 olur."
+      },
+      {
+        title: "Adlandırılmış oranlar",
+        description: "Video, telefon, baskı ve sosyal medya boyutlarıyla eşleştirir."
+      },
+      {
+        title: "Eksik kenar",
+        description: "Oranı koruyan genişliği veya yüksekliği hesaplar."
+      }
+    ],
+    faqs: [
+      {
+        question: "16:9 kaç piksel?",
+        answer: "Yaygın 16:9 boyutları 1280 × 720, 1920 × 1080 ve 3840 × 2160’tır. 16:9 yüksekliğini almak için herhangi bir genişlik girin."
+      },
+      {
+        question: "Instagram için hangi oran?",
+        answer: "Kare gönderiler için 1:1, dikey gönderiler için 4:5, Hikâyeler ve Reels için 9:16."
+      },
+      {
+        question: "Ekranım neden tam olarak 16:9 değil?",
+        answer: "Bazı boyutlar yakındır ama tam değildir; örneğin 1366 × 768. Araç en yakın yaygın oranı gösterir ve yaklaşık olarak işaretler."
+      },
+      {
+        question: "İnternet bağlantısı gerekir mi?",
+        answer: "Yalnızca sayfayı açmak için. Her şey cihazınızda hesaplanır ve yazdığınız hiçbir şey bir yere gönderilmez."
+      }
+    ]
+  },
+  "svg-optimizer": {
+    name: "SVG Optimize Edici",
+    shortName: "SVG Optimize",
+    tagline: "SVG dosyalarını görünümlerini değiştirmeden küçültün; ayarlar ölçeklenebilirliği korur. Ücretsiz, cihazınızda.",
+    intro: "SVG Optimize Edici, tasarım uygulamalarından dışa aktarılan SVG dosyalarını temizler; bu dosyalar çoğu zaman düzenleyici verileri, yorumlar, uzun ondalıklar ve kullanılmayan tanımlar taşır. Standart optimize edici SVGO’yu güvenli ayarlarla kullanır: çizim ölçeklenmeye devam etsin diye viewBox korunur, ekran okuyucular için başlıklar kalır ve siz istemedikçe ID’ler yeniden adlandırılmaz. Orijinal ve optimize edilmiş sürümleri, kazanılan boyutla birlikte yan yana görün, ardından dosyayı indirin veya kodu kopyalayın.",
+    seoTitle: "SVG Optimize Etme – SVG Dosyalarını Küçültün, Ücretsiz",
+    seoDescription: "SVG dosyalarını SVGO ile online optimize edin: düzenleyici verilerini kaldırın, ondalıkları yuvarlayın, çizimi değiştirmeden küçültün. Ücretsiz, yükleme yok.",
+    keywords: [
+      "svg optimize etme",
+      "svg küçültme",
+      "svg sıkıştırma",
+      "svg optimizer",
+      "svgo online"
+    ],
+    howToSteps: [
+      {
+        title: "SVG’nizi ekleyin",
+        description: "Bir dosya bırakın veya kodu yapıştırın."
+      },
+      {
+        title: "Ayarları düzenleyin",
+        description: "Ondalıkları ve neyin korunacağını veya kaldırılacağını seçin."
+      },
+      {
+        title: "İndirin veya kopyalayın",
+        description: "Optimize edilmiş SVG’yi kaydedin veya kodunu kopyalayın."
+      }
+    ],
+    features: [
+      {
+        title: "SVGO ile çalışır",
+        description: "Standart SVG optimize edici, tarayıcınızda çalışır."
+      },
+      {
+        title: "Varsayılan olarak güvenli",
+        description: "Siz aksini seçmedikçe viewBox, başlıklar ve ID’ler korunur."
+      },
+      {
+        title: "Yan yana",
+        description: "Öncesini ve sonrasını, kazanılan boyutla birlikte karşılaştırın."
+      }
+    ],
+    faqs: [
+      {
+        question: "Optimize edilmiş SVG farklı görünür mü?",
+        answer: "Varsayılan ayarlarla hayır. Ondalık basamağı 0 yapmak küçük ayrıntıları kaydırabilir; iki önizlemeyi karşılaştırın."
+      },
+      {
+        question: "ID’ler neden korunuyor?",
+        answer: "Web siteleri ve animasyonlar bir SVG’nin bölümlerini çoğu zaman ID ile hedefler. Yalnızca dosya dışında hiçbir şey kullanmıyorsa kısaltın."
+      },
+      {
+        question: "Ne kadar küçülür?",
+        answer: "Tasarım uygulamalarından gelen dosyalar çoğunlukla %30–70 küçülür; elle yazılmış veya zaten optimize edilmiş dosyalar daha az küçülür."
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. Cihazınızda optimize edilir."
+      }
+    ]
+  },
+  "svg-to-pdf": {
+    name: "SVG’den PDF’ye",
+    shortName: "SVG’den PDF’ye",
+    tagline: "Bir SVG çizimi, logoyu veya grafiği her yakınlaştırmada keskin kalan bir PDF’ye dönüştürün. Ücretsiz ve cihazınızda çalışır.",
+    intro: "SVG’den PDF’ye, SVG’yi vektör PDF’ye dönüştürür; böylece çizgiler ve metin, yazdırıldığında veya yakınlaştırıldığında piksellere dönüşmek yerine net kalır. Sayfayı çizim boyutunda yapın ya da çizimi kenar boşluğuyla bir A4 veya Letter sayfasının ortasına yerleştirin ve indirmeden önce sonucu önizlemede kontrol edin. Bulanıklık filtreleri ve gömülü web içeriği gibi bazı SVG efektleri PDF’de çizilemez; sayfa neyin değiştiğini açıklar.",
+    seoTitle: "SVG’yi PDF’ye Dönüştür – Keskin Vektör PDF, Ücretsiz",
+    seoDescription: "SVG’yi online olarak vektör PDF’ye dönüştürün: çizgiler ve metin keskin kalır, sayfa çizim boyutunda veya A4/Letter. Ücretsiz, kayıt yok, yükleme yok.",
+    keywords: [
+      "svg to pdf",
+      "svg pdf dönüştürme",
+      "svg’yi pdf’ye çevirme",
+      "logo svg pdf yapma",
+      "svg pdf çevirici"
+    ],
+    howToSteps: [
+      {
+        title: "SVG’nizi ekleyin",
+        description: "Bir dosya bırakın veya kodu yapıştırın."
+      },
+      {
+        title: "Sayfayı seçin",
+        description: "Çizim boyutu, A4 veya Letter ve kenar boşluğu."
+      },
+      {
+        title: "İndirin",
+        description: "Önizlemeyi kontrol edin ve PDF’yi kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Vektör çıktı",
+        description: "Her yakınlaştırmada ve baskı boyutunda keskin kalır."
+      },
+      {
+        title: "İstediğiniz sayfa",
+        description: "Çizim boyutu, A4 veya Letter, kenar boşluklarıyla."
+      },
+      {
+        title: "Gerçek önizleme",
+        description: "Önizleme, indirdiğiniz PDF’nin ta kendisidir."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF yazdırıldığında keskin olur mu?",
+        answer: "Evet. Şekiller ve metin vektör olarak kalır, bu yüzden her boyutta net basılır."
+      },
+      {
+        question: "Çizimimin bir kısmı neden farklı görünüyor?",
+        answer: "PDF, bulanıklık ve gölge filtreleri veya gömülü HTML gibi bazı SVG efektlerini çizemez. Basit şekiller, gradyanlar ve metin iyi dönüştürülür."
+      },
+      {
+        question: "Yazı tipleri ne olacak?",
+        answer: "Yaygın yazı tipleri çalışır; alışılmadık olanlar standart bir yazı tipiyle değiştirilir. Birebir eşleşme için tasarım uygulamanızda metni anahatlara dönüştürün."
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. PDF cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "webp-to-pdf": {
+    name: "WebP’den PDF’ye",
+    shortName: "WebP’den PDF’ye",
+    tagline: "Bir veya daha fazla WebP resmini, seçtiğiniz sırayla tek bir PDF’ye dönüştürün. Ücretsiz ve cihazınızda çalışır.",
+    intro: "WebP’den PDF’ye, birçok web sitesinin ve telefonun kaydettiği format olan WebP resimlerini tek bir PDF’de birleştirir; seçtiğiniz sırayla her sayfaya bir resim. Sayfalar A4, Letter veya her resmin kendi boyutunda olabilir, isteğe bağlı kenar boşluklarıyla. Kayıpsız ve saydam WebP resimleri saydamlıkları korunarak kayıpsız yerleştirilir; fotoğraflar yüksek kalitede eklenir. Hiçbir şey yüklenmez.",
+    seoTitle: "WebP’yi PDF’ye Çevir – WebP Resimlerini Tek PDF Yapın",
+    seoDescription: "WebP resimlerini online PDF’ye dönüştürün: bir veya çok sayıda resim, istediğiniz sırayla, A4, Letter veya resim boyutunda sayfalarda. Ücretsiz, yükleme yok.",
+    keywords: [
+      "webp to pdf",
+      "webp pdf dönüştürme",
+      "webp’yi pdf’ye çevirme",
+      "webp resimleri pdf yapma",
+      "webp pdf birleştirme"
+    ],
+    howToSteps: [
+      {
+        title: "WebP resimlerinizi ekleyin",
+        description: "Bir veya daha fazla WebP dosyasını bırakın veya seçin."
+      },
+      {
+        title: "Sayfaları düzenleyin",
+        description: "Sürükleyerek sıralayın ve sayfa boyutunu seçin."
+      },
+      {
+        title: "İndirin",
+        description: "PDF’yi kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Çok resim, tek PDF",
+        description: "Belirlediğiniz sırayla her sayfaya bir resim."
+      },
+      {
+        title: "Kalite korunur",
+        description: "Kayıpsız ve saydam WebP kayıpsız yerleştirilir."
+      },
+      {
+        title: "Sayfa boyutları",
+        description: "A4, Letter veya her resmin kendi boyutu."
+      }
+    ],
+    faqs: [
+      {
+        question: "WebP’yi başka formatlarla karıştırabilir miyim?",
+        answer: "Evet. JPG, PNG, HEIC ve TIFF resimleri de aynı PDF’ye eklenebilir."
+      },
+      {
+        question: "Saydamlık korunur mu?",
+        answer: "Evet, saydamlığı olan WebP resimleri için."
+      },
+      {
+        question: "Resim sayısında sınır var mı?",
+        answer: "Yalnızca cihazınızın belleği; çoğu bilgisayar ve telefonda onlarca resim sorunsuzdur."
+      },
+      {
+        question: "Resimlerim yükleniyor mu?",
+        answer: "Hayır. PDF cihazınızda oluşturulur."
+      }
+    ]
+  },
+  "pdf-link-checker": {
+    name: "PDF Bağlantı Denetleyici",
+    shortName: "Bağlantı Denetleyici",
+    tagline: "Bir PDF’deki her bağlantıyı bulun ve hangi web bağlantılarının bozuk, taşınmış veya erişilemez olduğunu kontrol edin. Ücretsiz.",
+    intro: "PDF Bağlantı Denetleyici, bir PDF’deki her bağlantıyı listeler: tıklanabilir web ve e-posta bağlantıları, belgenin içindeki sayfalara giden bağlantılar ve metinde yazılı web adresleri. Her web bağlantısını kontrol eder ve hangilerinin çalıştığını, hangilerinin bozuk olduğunu (örneğin hata 404), hangilerinin nereye taşındığını ve hangilerine erişilemediğini gösterir; PDF içinde var olmayan sayfalara giden bağlantılar da işaretlenir. Yalnızca sorunları görecek şekilde filtreleyin ve bir CSV raporu indirin. PDF’niz cihazınızda kalır; kontrol için yalnızca web adresleri sunucumuza gönderilir.",
+    seoTitle: "PDF Bağlantı Kontrolü – PDF’de Bozuk Linkleri Bulun",
+    seoDescription: "PDF’deki tüm bağlantıları kontrol edin: bozuk, taşınmış, erişilemeyen web bağlantılarını ve eksik sayfa bağlantılarını bulun. CSV rapor. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf bağlantı kontrolü",
+      "pdf link kontrol",
+      "pdf bozuk link bulma",
+      "pdf link checker",
+      "pdf köprü kontrolü"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’nizi ekleyin",
+        description: "PDF’yi bırakın veya seçin; bağlantıları listelenir."
+      },
+      {
+        title: "Web bağlantılarını kontrol edin",
+        description: "Hangilerinin çalıştığını, taşındığını, bozulduğunu veya erişilemediğini görün."
+      },
+      {
+        title: "Düzeltin ve raporlayın",
+        description: "Sorunlara göre filtreleyin ve bir CSV raporu indirin."
+      }
+    ],
+    features: [
+      {
+        title: "Her bağlantı bulunur",
+        description: "Tıklanabilir bağlantılar, sayfa bağlantıları ve metin olarak yazılmış adresler."
+      },
+      {
+        title: "Net sonuçlar",
+        description: "Çalışıyor, taşınmış, hata koduyla bozuk veya erişilemiyor."
+      },
+      {
+        title: "CSV raporu",
+        description: "Listeyi paylaşın veya kaynak belgenizdeki bağlantıları düzeltin."
+      }
+    ],
+    faqs: [
+      {
+        question: "PDF’im yükleniyor mu?",
+        answer: "Hayır. Bağlantılar cihazınızda okunur. Yalnızca web adresleri sunucumuza gönderilir; sunucu kontrol için her birini bir kez ziyaret eder."
+      },
+      {
+        question: "Çalışan bir bağlantı neden erişilemiyor görünüyor?",
+        answer: "Bazı siteler otomatik kontrolleri engeller veya geç yanıt verir. Kendiniz kontrol etmek için bağlantıyı açın."
+      },
+      {
+        question: "“Taşınmış” ne demek?",
+        answer: "Adres başka bir adrese yönlendiriyor. Hâlâ çalışır, ancak yeni adrese güncellemek daha iyidir."
+      },
+      {
+        question: "E-posta bağlantıları kontrol ediliyor mu?",
+        answer: "Hayır. E-posta, telefon ve dosya bağlantıları listelenir ancak otomatik olarak kontrol edilemez."
+      }
+    ]
+  },
 };
