@@ -3,6 +3,8 @@
 //
 // Document tools: the browser posts to /api/doc/<endpoint>; the Worker adds the shared secret and forwards to the
 // document server on Google Cloud Run.
+import { handleLinkCheck } from './linkcheck.js';
+
 const DOC_ENDPOINTS = new Set(['convert', 'compress', 'protect', 'unlock', 'repair', 'ocr', 'pdfa']);
 // Cloud Run accepts request bodies up to 32 MiB
 const MAX_BODY = 31 * 1024 * 1024;
@@ -71,6 +73,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/api/doc/')) return proxyDoc(request, env, url);
+    if (url.pathname === '/api/links') return handleLinkCheck(request, url, { json, overLimit });
     return env.ASSETS.fetch(request);
   },
 };

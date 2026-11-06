@@ -10296,4 +10296,492 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "color-converter": {
+    name: "Convertisseur de couleurs",
+    shortName: "Convertisseur couleurs",
+    tagline: "Convertissez n’importe quelle couleur entre HEX, RGB, HSL, HSV, CMYK, Lab et OKLCH, et copiez-la en un clic. Gratuit, sur votre appareil.",
+    intro: "Le convertisseur de couleurs transforme une couleur écrite dans un format en tous les autres : HEX pour le web, RGB, HSL et HSV pour les logiciels de graphisme, CMYK pour l’impression, et CIE Lab et OKLCH pour le CSS moderne et le travail de la couleur. Saisissez ou collez n’importe lequel d’entre eux, ou un nom CSS comme tomato, ou utilisez le sélecteur de couleur. Chaque valeur a un bouton pour la copier, et le nom de couleur CSS le plus proche est aussi affiché.",
+    seoTitle: "Convertisseur de couleurs – HEX, RGB, HSL, CMYK, gratuit",
+    seoDescription: "Convertissez des couleurs entre HEX, RGB, HSL, HSV, CMYK, Lab et OKLCH en un instant, avec boutons de copie et nom CSS le plus proche. Gratuit, sans envoi.",
+    keywords: [
+      "convertisseur de couleurs",
+      "hex en rgb",
+      "rgb en hex",
+      "hex en cmjn",
+      "convertir couleur hex"
+    ],
+    howToSteps: [
+      {
+        title: "Saisissez une couleur",
+        description: "Tapez-la ou collez-la dans n’importe quel format, ou choisissez-la avec le sélecteur."
+      },
+      {
+        title: "Lisez les résultats",
+        description: "Voyez-la dans tous les formats, avec le nom CSS le plus proche."
+      },
+      {
+        title: "Copiez ce qu’il vous faut",
+        description: "Copiez n’importe quelle valeur en un clic."
+      }
+    ],
+    features: [
+      {
+        title: "Tous les formats courants",
+        description: "HEX, RGB, HSL, HSV, CMYK, CIE Lab et OKLCH."
+      },
+      {
+        title: "Comprend ce que vous collez",
+        description: "Avec ou sans #, virgules ou espaces, et les noms CSS."
+      },
+      {
+        title: "Transparence conservée",
+        description: "Les valeurs alpha sont gardées d’un format à l’autre."
+      }
+    ],
+    faqs: [
+      {
+        question: "Comment convertir du HEX en RGB ?",
+        answer: "Collez le code HEX, par exemple #3366CC, et lisez la ligne RGB : rgb(51 102 204). Tous les autres formats s’affichent en même temps."
+      },
+      {
+        question: "La valeur CMYK est-elle exacte pour l’impression ?",
+        answer: "C’est une conversion standard sans profil d’imprimante, donc un bon point de départ. Un imprimeur peut donner des valeurs un peu différentes pour sa presse."
+      },
+      {
+        question: "Qu’est-ce que OKLCH ?",
+        answer: "Une façon plus récente d’écrire les couleurs en CSS, fondée sur la clarté et la vivacité qu’on perçoit dans une couleur. Elle est utile pour créer des gammes de couleurs régulières."
+      },
+      {
+        question: "Faut-il une connexion Internet ?",
+        answer: "Seulement pour ouvrir la page. Tout est calculé sur votre appareil, et rien de ce que vous saisissez n’est envoyé nulle part."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    name: "Vérificateur de contraste des couleurs",
+    shortName: "Vérifier le contraste",
+    tagline: "Vérifiez si les couleurs du texte et du fond sont assez lisibles pour WCAG AA et AAA, et obtenez la couleur la plus proche qui réussit.",
+    intro: "Le vérificateur de contraste mesure le rapport de contraste entre une couleur de texte et son fond avec la formule WCAG 2.2, et indique s’il réussit AA et AAA pour le texte normal, le grand texte, et les icônes et bordures. Un aperçu en direct montre du vrai texte sur le fond. Quand une paire échoue, l’outil propose la couleur de texte la plus proche qui réussit, avec la même teinte, pour modifier votre design le moins possible.",
+    seoTitle: "Vérifier le contraste des couleurs – WCAG AA et AAA",
+    seoDescription: "Vérifiez le contraste des couleurs pour WCAG 2.2 AA et AAA, prévisualisez le texte sur le fond et obtenez la couleur la plus proche qui réussit. Gratuit.",
+    keywords: [
+      "vérificateur de contraste",
+      "contraste couleur wcag",
+      "calcul rapport de contraste",
+      "couleurs accessibles",
+      "contraste texte fond"
+    ],
+    howToSteps: [
+      {
+        title: "Choisissez deux couleurs",
+        description: "Saisissez la couleur du texte et celle du fond, ou choisissez-les."
+      },
+      {
+        title: "Lisez le résultat",
+        description: "Voyez le rapport et s’il réussit AA et AAA."
+      },
+      {
+        title: "Corrigez si besoin",
+        description: "Utilisez la couleur proposée qui réussit."
+      }
+    ],
+    features: [
+      {
+        title: "Niveaux WCAG 2.2",
+        description: "AA et AAA pour le texte normal et le grand texte, plus les icônes et bordures."
+      },
+      {
+        title: "Aperçu en direct",
+        description: "Voyez des titres, du texte et un bouton sur le fond."
+      },
+      {
+        title: "Correction au plus près",
+        description: "La couleur la plus proche qui réussit, avec la même teinte."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quel rapport de contraste me faut-il ?",
+        answer: "WCAG AA demande 4,5:1 pour le texte normal et 3:1 pour le grand texte, les icônes et les bordures. AAA demande 7:1 pour le texte normal et 4,5:1 pour le grand texte."
+      },
+      {
+        question: "Qu’est-ce qu’un grand texte ?",
+        answer: "24 px et plus, ou du texte en gras à partir d’environ 18,5 px (14 pt)."
+      },
+      {
+        question: "Gère-t-il les couleurs transparentes ?",
+        answer: "Oui. Une couleur de texte transparente est mesurée telle qu’elle apparaît sur le fond."
+      },
+      {
+        question: "Faut-il une connexion Internet ?",
+        answer: "Seulement pour ouvrir la page. Tout est calculé sur votre appareil, et rien de ce que vous saisissez n’est envoyé nulle part."
+      }
+    ]
+  },
+  "paper-size-converter": {
+    name: "Convertisseur de formats de papier",
+    shortName: "Formats de papier",
+    tagline: "Tous les formats de papier standard, A4, Letter, A3 et plus, en mm, pouces, points et pixels à n’importe quel DPI. Gratuit.",
+    intro: "Le convertisseur de formats de papier liste les formats standard, ISO A, B et C, les formats américains comme Letter, Legal et Tabloid, les tirages photo, les enveloppes et les formats japonais JIS, en millimètres, centimètres, pouces, points ou pixels. Réglez le DPI pour voir combien de pixels une page demande à l’impression, par exemple 2480 × 3508 pour un A4 à 300 DPI. Saisissez n’importe quelle largeur et hauteur pour la convertir et trouver le format standard le plus proche.",
+    seoTitle: "Formats de papier – A4 et Letter en mm, pouces, pixels",
+    seoDescription: "Tous les formats de papier standard, A0–A10, Letter, Legal, photo et enveloppes, en mm, pouces, points et pixels à n’importe quel DPI. Tableau gratuit.",
+    keywords: [
+      "format papier",
+      "taille a4 en pixels",
+      "format a4 en cm",
+      "format letter en mm",
+      "tableau des formats de papier"
+    ],
+    howToSteps: [
+      {
+        title: "Choisissez un groupe",
+        description: "Formats A, américains, B, C, photo, enveloppes ou JIS."
+      },
+      {
+        title: "Choisissez l’unité",
+        description: "mm, cm, pouces, points ou pixels, avec votre DPI."
+      },
+      {
+        title: "Convertissez une taille",
+        description: "Saisissez une largeur et une hauteur pour la convertir et trouver le format standard le plus proche."
+      }
+    ],
+    features: [
+      {
+        title: "Tous les formats courants",
+        description: "ISO A, B et C, américains, photo, enveloppes et JIS."
+      },
+      {
+        title: "Des pixels pour imprimer",
+        description: "Les tailles en pixels au DPI de votre choix."
+      },
+      {
+        title: "Le standard le plus proche",
+        description: "Trouvez de quel papier une taille se rapproche le plus."
+      }
+    ],
+    faqs: [
+      {
+        question: "Combien de pixels fait un A4 ?",
+        answer: "À 300 DPI, un A4 fait 2480 × 3508 pixels ; à 150 DPI, 1240 × 1754."
+      },
+      {
+        question: "Quelle différence entre A4 et Letter ?",
+        answer: "L’A4 (210 × 297 mm) est utilisé presque partout dans le monde ; le Letter (8,5 × 11 in, 216 × 279 mm) aux États-Unis et au Canada. L’A4 est plus étroit et plus haut."
+      },
+      {
+        question: "Pourquoi les formats ISO sont-ils arrondis ?",
+        answer: "La norme les définit en millimètres entiers, chacun étant la moitié du format au-dessus."
+      },
+      {
+        question: "Faut-il une connexion Internet ?",
+        answer: "Seulement pour ouvrir la page. Tout est calculé sur votre appareil, et rien de ce que vous saisissez n’est envoyé nulle part."
+      }
+    ]
+  },
+  "aspect-ratio-calculator": {
+    name: "Calculateur de ratio d’aspect",
+    shortName: "Ratio d’aspect",
+    tagline: "Trouvez le ratio d’aspect de n’importe quelle largeur et hauteur, et calculez la taille qui garde un ratio comme 16:9. Gratuit.",
+    intro: "Le calculateur de ratio d’aspect simplifie n’importe quelle largeur et hauteur en ratio, par exemple 1920 × 1080 en 16:9, et indique le ratio courant correspondant : vidéo, téléphone, tirage photo ou réseaux sociaux. Pour redimensionner en gardant un ratio, saisissez le ratio et un côté pour obtenir l’autre. Une liste de ratios courants, de 1:1 à 21:9 et 9:16 pour les Stories, les remplit en un clic.",
+    seoTitle: "Calculer un ratio d’aspect – 16:9, 4:3, 9:16 et plus",
+    seoDescription: "Calculez le ratio d’aspect de n’importe quelle taille et la largeur ou la hauteur qui le garde : 16:9, 4:3, 3:2, 1:1, 9:16 et plus. Gratuit, dans le navigateur.",
+    keywords: [
+      "calculateur ratio d’aspect",
+      "calcul 16:9",
+      "calculer ratio image",
+      "redimensionner en gardant les proportions",
+      "format d’image 16:9"
+    ],
+    howToSteps: [
+      {
+        title: "Saisissez une taille",
+        description: "Tapez la largeur et la hauteur pour obtenir le ratio."
+      },
+      {
+        title: "Ou gardez un ratio",
+        description: "Saisissez un ratio et un côté pour obtenir l’autre."
+      },
+      {
+        title: "Utilisez un ratio courant",
+        description: "Choisissez 16:9, 4:5, 9:16 et d’autres dans la liste."
+      }
+    ],
+    features: [
+      {
+        title: "Le ratio le plus simple",
+        description: "1920 × 1080 devient 16:9, avec sa valeur décimale."
+      },
+      {
+        title: "Des ratios nommés",
+        description: "Le relie aux formats vidéo, téléphone, impression et réseaux sociaux."
+      },
+      {
+        title: "Le côté manquant",
+        description: "Calcule la largeur ou la hauteur qui garde le ratio."
+      }
+    ],
+    faqs: [
+      {
+        question: "Combien fait 16:9 en pixels ?",
+        answer: "Les tailles 16:9 courantes sont 1280 × 720, 1920 × 1080 et 3840 × 2160. Saisissez n’importe quelle largeur pour obtenir sa hauteur en 16:9."
+      },
+      {
+        question: "Quel ratio pour Instagram ?",
+        answer: "1:1 pour les publications carrées, 4:5 pour les publications en portrait et 9:16 pour les Stories et les Reels."
+      },
+      {
+        question: "Pourquoi mon écran n’est-il pas exactement en 16:9 ?",
+        answer: "Certaines tailles en sont proches sans être exactes, comme 1366 × 768. L’outil affiche le ratio courant le plus proche et l’indique comme approximatif."
+      },
+      {
+        question: "Faut-il une connexion Internet ?",
+        answer: "Seulement pour ouvrir la page. Tout est calculé sur votre appareil, et rien de ce que vous saisissez n’est envoyé nulle part."
+      }
+    ]
+  },
+  "svg-optimizer": {
+    name: "Optimiseur SVG",
+    shortName: "Optimiseur SVG",
+    tagline: "Allégez vos fichiers SVG sans changer leur apparence, avec des réglages qui les gardent redimensionnables. Gratuit, sur votre appareil.",
+    intro: "L’optimiseur SVG nettoie les fichiers SVG exportés depuis les logiciels de graphisme, qui contiennent souvent des données d’éditeur, des commentaires, de longues décimales et des définitions inutilisées. Il utilise SVGO, l’optimiseur de référence, avec des réglages sûrs : le viewBox est conservé pour que le dessin reste redimensionnable, les titres restent pour les lecteurs d’écran et les ID ne sont pas renommés sauf si vous le demandez. Comparez côte à côte l’original et la version optimisée avec le poids gagné, puis téléchargez le fichier ou copiez le code.",
+    seoTitle: "Optimiseur SVG – Allégez vos fichiers SVG, gratuit",
+    seoDescription: "Optimisez vos fichiers SVG en ligne avec SVGO : retirez les données d’éditeur, arrondissez les décimales et allégez sans changer le dessin. Gratuit, sans envoi.",
+    keywords: [
+      "optimiser svg",
+      "optimiseur svg",
+      "compresser svg",
+      "réduire taille svg",
+      "svgo en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre SVG",
+        description: "Déposez un fichier ou collez le code."
+      },
+      {
+        title: "Ajustez les réglages",
+        description: "Choisissez les décimales et ce qu’il faut garder ou retirer."
+      },
+      {
+        title: "Téléchargez ou copiez",
+        description: "Enregistrez le SVG optimisé ou copiez son code."
+      }
+    ],
+    features: [
+      {
+        title: "Propulsé par SVGO",
+        description: "L’optimiseur SVG de référence, dans votre navigateur."
+      },
+      {
+        title: "Sûr par défaut",
+        description: "Garde le viewBox, les titres et les ID, sauf si vous choisissez autrement."
+      },
+      {
+        title: "Côte à côte",
+        description: "Comparez avant et après, avec le poids gagné."
+      }
+    ],
+    faqs: [
+      {
+        question: "Le SVG optimisé sera-t-il différent ?",
+        answer: "Pas avec les réglages par défaut. Régler les décimales sur 0 peut décaler de petits détails ; comparez les deux aperçus."
+      },
+      {
+        question: "Pourquoi garder les ID ?",
+        answer: "Les sites web et les animations ciblent souvent des parties d’un SVG par leur ID. Ne les raccourcissez que si rien en dehors du fichier ne les utilise."
+      },
+      {
+        question: "De combien sera-t-il allégé ?",
+        answer: "Les fichiers issus de logiciels de graphisme s’allègent souvent de 30–70 % ; ceux écrits à la main ou déjà optimisés, moins."
+      },
+      {
+        question: "Mon fichier est-il envoyé ?",
+        answer: "Non. Il est optimisé sur votre appareil."
+      }
+    ]
+  },
+  "svg-to-pdf": {
+    name: "SVG en PDF",
+    shortName: "SVG → PDF",
+    tagline: "Convertissez un dessin, un logo ou un graphique SVG en PDF qui reste net à tous les niveaux de zoom. Gratuit, sur votre appareil.",
+    intro: "SVG en PDF convertit un SVG en PDF vectoriel : les lignes et le texte restent nets à l’impression ou au zoom au lieu de se pixeliser. Donnez à la page la taille du dessin, ou centrez-le sur une page A4 ou Letter avec une marge, et vérifiez le résultat dans l’aperçu avant de télécharger. Quelques effets SVG, comme les filtres de flou et le contenu web intégré, ne peuvent pas être dessinés dans un PDF ; la page explique ce qui change.",
+    seoTitle: "SVG en PDF – PDF vectoriel toujours net, gratuit",
+    seoDescription: "Convertissez un SVG en PDF vectoriel en ligne : lignes et texte nets, page à la taille du dessin ou A4/Letter. Gratuit, sans inscription, sans envoi.",
+    keywords: [
+      "svg en pdf",
+      "convertir svg en pdf",
+      "svg en pdf vectoriel",
+      "logo svg en pdf",
+      "convertisseur svg pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre SVG",
+        description: "Déposez un fichier ou collez le code."
+      },
+      {
+        title: "Choisissez la page",
+        description: "Taille du dessin, A4 ou Letter, et la marge."
+      },
+      {
+        title: "Téléchargez",
+        description: "Vérifiez l’aperçu et enregistrez le PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Sortie vectorielle",
+        description: "Reste net à tous les niveaux de zoom et à toutes les tailles d’impression."
+      },
+      {
+        title: "La page comme vous voulez",
+        description: "Taille du dessin, A4 ou Letter, avec marges."
+      },
+      {
+        title: "Vrai aperçu",
+        description: "L’aperçu est le PDF que vous téléchargez."
+      }
+    ],
+    faqs: [
+      {
+        question: "Le PDF sera-t-il net à l’impression ?",
+        answer: "Oui. Les formes et le texte restent vectoriels, ils s’impriment donc nettement à toutes les tailles."
+      },
+      {
+        question: "Pourquoi une partie de mon dessin est-elle différente ?",
+        answer: "Le PDF ne sait pas dessiner certains effets SVG, comme les filtres de flou et d’ombre ou le HTML intégré. Les formes simples, les dégradés et le texte se convertissent bien."
+      },
+      {
+        question: "Et les polices ?",
+        answer: "Les polices courantes fonctionnent ; les polices inhabituelles sont remplacées par une police standard. Convertissez le texte en tracés dans votre logiciel de graphisme pour un rendu exact."
+      },
+      {
+        question: "Mon fichier est-il envoyé ?",
+        answer: "Non. Le PDF est créé sur votre appareil."
+      }
+    ]
+  },
+  "webp-to-pdf": {
+    name: "WebP en PDF",
+    shortName: "WebP → PDF",
+    tagline: "Transformez une ou plusieurs images WebP en un seul PDF, dans l’ordre de votre choix. Gratuit, sur votre appareil.",
+    intro: "WebP en PDF réunit des images WebP, le format qu’enregistrent beaucoup de sites web et de téléphones, dans un seul PDF, une image par page, dans l’ordre de votre choix. Les pages peuvent être au format A4, Letter ou à la taille de chaque image, avec des marges si vous le souhaitez. Les images WebP sans perte et transparentes sont placées sans perte et gardent leur transparence ; les photos sont ajoutées en haute qualité. Rien n’est envoyé.",
+    seoTitle: "WebP en PDF – Assembler des images WebP, gratuit",
+    seoDescription: "Convertissez des images WebP en PDF en ligne : une ou plusieurs, dans votre ordre, en pages A4, Letter ou à la taille de l’image. Gratuit, sans envoi.",
+    keywords: [
+      "webp en pdf",
+      "convertir webp en pdf",
+      "images webp en pdf",
+      "fusionner webp en pdf",
+      "convertisseur webp pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos images WebP",
+        description: "Déposez ou choisissez un ou plusieurs fichiers WebP."
+      },
+      {
+        title: "Organisez les pages",
+        description: "Faites-les glisser dans l’ordre et choisissez le format de page."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez le PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Plusieurs images, un PDF",
+        description: "Une image par page, dans l’ordre que vous fixez."
+      },
+      {
+        title: "Qualité préservée",
+        description: "Les WebP sans perte et transparents sont placés sans perte."
+      },
+      {
+        title: "Formats de page",
+        description: "A4, Letter ou la taille propre de chaque image."
+      }
+    ],
+    faqs: [
+      {
+        question: "Puis-je mélanger des WebP avec d’autres formats ?",
+        answer: "Oui. Des images JPG, PNG, HEIC et TIFF peuvent aller dans le même PDF."
+      },
+      {
+        question: "La transparence est-elle conservée ?",
+        answer: "Oui, pour les images WebP transparentes."
+      },
+      {
+        question: "Y a-t-il une limite d’images ?",
+        answer: "Seulement la mémoire de votre appareil ; des dizaines d’images passent sans problème sur la plupart des ordinateurs et téléphones."
+      },
+      {
+        question: "Mes images sont-elles envoyées ?",
+        answer: "Non. Le PDF est créé sur votre appareil."
+      }
+    ]
+  },
+  "pdf-link-checker": {
+    name: "Vérificateur de liens PDF",
+    shortName: "Vérifier les liens",
+    tagline: "Trouvez tous les liens d’un PDF et vérifiez quels liens web sont cassés, redirigés ou injoignables. Gratuit.",
+    intro: "Le vérificateur de liens PDF liste tous les liens d’un PDF : liens web et e-mail cliquables, liens vers des pages du document et adresses web écrites dans le texte. Il vérifie chaque lien web et indique lesquels fonctionnent, lesquels sont cassés (comme l’erreur 404), lesquels sont redirigés et vers où, et lesquels sont injoignables ; les liens vers des pages qui n’existent pas dans le PDF sont aussi signalés. Affichez uniquement les problèmes et téléchargez un rapport CSV. Votre PDF reste sur votre appareil ; seules les adresses web sont envoyées à notre serveur pour les vérifier.",
+    seoTitle: "Vérifier les liens d’un PDF – Liens cassés, gratuit",
+    seoDescription: "Vérifiez tous les liens d’un PDF : liens web cassés, redirigés ou injoignables, et liens vers des pages manquantes. Rapport CSV. Gratuit, PDF non envoyé.",
+    keywords: [
+      "vérifier liens pdf",
+      "liens cassés pdf",
+      "vérificateur de liens pdf",
+      "tester les liens d’un pdf",
+      "pdf link checker"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre PDF",
+        description: "Déposez ou choisissez le PDF ; ses liens s’affichent."
+      },
+      {
+        title: "Vérifiez les liens web",
+        description: "Voyez lesquels fonctionnent, sont redirigés, cassés ou injoignables."
+      },
+      {
+        title: "Corrigez et exportez",
+        description: "Filtrez les problèmes et téléchargez un rapport CSV."
+      }
+    ],
+    features: [
+      {
+        title: "Tous les liens trouvés",
+        description: "Liens cliquables, liens vers des pages et adresses écrites dans le texte."
+      },
+      {
+        title: "Résultats clairs",
+        description: "Fonctionne, redirigé, cassé avec le code d’erreur, ou injoignable."
+      },
+      {
+        title: "Rapport CSV",
+        description: "Partagez la liste ou corrigez les liens dans votre document source."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mon PDF est-il envoyé ?",
+        answer: "Non. Les liens sont lus sur votre appareil. Seules les adresses web sont envoyées à notre serveur, qui visite chacune une fois pour la vérifier."
+      },
+      {
+        question: "Pourquoi un lien qui marche apparaît-il comme injoignable ?",
+        answer: "Certains sites bloquent les vérifications automatiques ou répondent lentement. Ouvrez le lien pour le vérifier vous-même."
+      },
+      {
+        question: "Que veut dire « redirigé » ?",
+        answer: "L’adresse renvoie vers une autre. Elle fonctionne encore, mais il vaut mieux la remplacer par la nouvelle adresse."
+      },
+      {
+        question: "Les liens e-mail sont-ils vérifiés ?",
+        answer: "Non. Les liens e-mail, téléphone et fichier sont listés, mais ne peuvent pas être vérifiés automatiquement."
+      }
+    ]
+  },
 };

@@ -122,6 +122,13 @@ const TransparentPngWorkspace = standaloneTool(() => import('../tools/extras/Tra
 const ColorReplaceWorkspace = standaloneTool(() => import('../tools/extras/ColorReplaceWorkspace'), 'ColorReplaceWorkspace');
 const AppIconWorkspace = standaloneTool(() => import('../tools/extras/AppIconWorkspace'), 'AppIconWorkspace');
 const AnnotateWorkspace = standaloneTool(() => import('../tools/extras/AnnotateWorkspace'), 'AnnotateWorkspace');
+const ColorConverterWorkspace = standaloneTool(() => import('../tools/extras/CalcPackWorkspace'), 'ColorConverterWorkspace');
+const ContrastCheckerWorkspace = standaloneTool(() => import('../tools/extras/CalcPackWorkspace'), 'ContrastCheckerWorkspace');
+const PaperSizeWorkspace = standaloneTool(() => import('../tools/extras/CalcPackWorkspace'), 'PaperSizeWorkspace');
+const AspectRatioWorkspace = standaloneTool(() => import('../tools/extras/CalcPackWorkspace'), 'AspectRatioWorkspace');
+const SvgOptimizerWorkspace = standaloneTool(() => import('../tools/extras/SvgPackWorkspace'), 'SvgOptimizerWorkspace');
+const SvgToPdfWorkspace = standaloneTool(() => import('../tools/extras/SvgPackWorkspace'), 'SvgToPdfWorkspace');
+const LinkCheckerWorkspace = standaloneTool(() => import('../tools/pdf/LinkCheckerWorkspace'), 'LinkCheckerWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -273,6 +280,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'image-color-replacer': <ColorReplaceWorkspace />,
     'app-icon-generator': <AppIconWorkspace />,
     'image-annotator': <AnnotateWorkspace />,
+    'color-converter': <ColorConverterWorkspace />,
+    'color-contrast-checker': <ContrastCheckerWorkspace />,
+    'paper-size-converter': <PaperSizeWorkspace />,
+    'aspect-ratio-calculator': <AspectRatioWorkspace />,
+    'svg-optimizer': <SvgOptimizerWorkspace />,
+    'svg-to-pdf': <SvgToPdfWorkspace />,
+    'webp-to-pdf': <JpgToPdfWorkspace />,
+    'pdf-link-checker': <LinkCheckerWorkspace />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,

@@ -35,6 +35,7 @@ const INPUT = {
   'booklet-maker': [S('doc.pdf')], 'n-up-pdf': [S('doc.pdf')], 'poster-splitter': [S('photo.jpg')], 'graph-paper-maker': [],
   'flatten-pdf': [S('form.pdf')], 'add-header-footer-pdf': [S('doc.pdf')], 'resize-pdf-pages': [S('doc.pdf')], 'add-background-to-pdf': [S('doc.pdf')], 'edit-pdf-metadata': [S('doc.pdf')], 'add-bookmarks-to-pdf': [S('doc.pdf')], 'pdf-attachments': [S('doc.pdf')], 'sanitize-pdf': [S('doc.pdf')],
   'compare-images': [S('photo.jpg'), S('photo2.png')], 'add-drop-shadow': [S('photo.png')], 'image-histogram': [S('photo.jpg')], 'exif-viewer': [S('photo.jpg')], 'transparent-png-maker': [S('photo.png')], 'image-color-replacer': [S('photo.jpg')], 'app-icon-generator': [S('photo.png')], 'image-annotator': [S('photo.jpg')],
+  'color-converter': [], 'color-contrast-checker': [], 'paper-size-converter': [], 'aspect-ratio-calculator': [], 'svg-optimizer': [S('shape.svg')], 'svg-to-pdf': [S('shape.svg')], 'webp-to-pdf': [S('photo.webp')], 'pdf-link-checker': [S('doc.pdf')],
   'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
   'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],

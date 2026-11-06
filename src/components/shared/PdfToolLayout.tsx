@@ -24,10 +24,14 @@ interface Props {
   fileSlug?: string;
   /** Extra control in the job ticket, before "Choose another" (e.g. View full size) */
   ticketAction?: React.ReactNode;
+  /** Main button icon, for actions that aren't a download (defaults to Download) */
+  actionIcon?: LucideIcon;
+  /** Button text while busy (defaults to "Preparing…") */
+  busyLabel?: string;
 }
 
 /** Shared frame for the PDF tools: proof column, ruled settings panel, download button and phone rail */
-export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText, ticketAction, fileSlug }: Props) {
+export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, panel, actionLabel, onAction, actionDisabled, busy, status, error, icon: Icon = FileText, ticketAction, fileSlug, actionIcon: ActionIcon = Download, busyLabel }: Props) {
   const t = useT();
   const button = (big: boolean) => (
     <button
@@ -36,8 +40,8 @@ export function PdfToolLayout({ fileLabel, onReplace, replaceLabel, children, pa
       disabled={actionDisabled || busy}
       className={`btn-ink w-full ${big ? 'min-h-[52px]' : 'min-h-[48px]'} text-[16px] disabled:cursor-not-allowed`}
     >
-      {busy ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Download className="w-5 h-5" aria-hidden="true" />}
-      <span>{busy ? t('ws.preparing') : actionLabel}</span>
+      {busy ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <ActionIcon className="w-5 h-5" aria-hidden="true" />}
+      <span>{busy ? busyLabel ?? t('ws.preparing') : actionLabel}</span>
     </button>
   );
 

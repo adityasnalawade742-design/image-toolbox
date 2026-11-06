@@ -53,6 +53,28 @@ async function isUpright(file: File): Promise<boolean> {
   }
 }
 
+/**
+ * What a WebP file holds, from its header: 'lossless' (VP8L, like PNG), 'alpha' (has transparency) or 'lossy'
+ * (like JPEG). Lossless and transparent ones go into the PDF as PNG, so nothing is lost; null if not WebP.
+ */
+export function webpKind(head: Uint8Array): 'lossless' | 'alpha' | 'lossy' | null {
+  const tag = (o: number) => String.fromCharCode(...head.subarray(o, o + 4));
+  if (head.length < 21 || tag(0) !== 'RIFF' || tag(8) !== 'WEBP') return null;
+  const chunk = tag(12);
+  if (chunk === 'VP8L') return 'lossless';
+  // Extended format: flag bit 4 marks an alpha channel; a VP8L chunk can follow too
+  if (chunk === 'VP8X') return head[20] & 0x10 ? 'alpha' : 'lossy';
+  return 'lossy';
+}
+
+function canvasPng(item: PdfImage): Promise<ArrayBuffer> {
+  const canvas = document.createElement('canvas');
+  canvas.width = item.width;
+  canvas.height = item.height;
+  canvas.getContext('2d')!.drawImage(item.img, 0, 0, item.width, item.height);
+  return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? b.arrayBuffer().then(resolve, reject) : reject(new Error('encode failed'))), 'image/png'));
+}
+
 function canvasJpeg(item: PdfImage): Promise<ArrayBuffer> {
   const canvas = document.createElement('canvas');
   canvas.width = item.width;
@@ -64,7 +86,7 @@ function canvasJpeg(item: PdfImage): Promise<ArrayBuffer> {
   // The browser applies the photo's EXIF rotation when drawing
   ctx.drawImage(item.img, 0, 0, item.width, item.height);
   return new Promise((resolve, reject) =>
-    canvas.toBlob((b) => (b ? b.arrayBuffer().then(resolve, reject) : reject(new Error('encode failed'))), 'image/jpeg', 0.92)
+    canvas.toBlob((b) => (b ? b.arrayBuffer().then(resolve, reject) : reject(new Error('encode failed'))), 'image/jpeg', 0.95)
   );
 }
 
@@ -79,6 +101,8 @@ export async function imagesToPdf(items: PdfImage[], opts: PdfOptions, onProgres
       embedded = await pdf.embedJpg(await item.file.arrayBuffer());
     } else if (type === 'image/png') {
       embedded = await pdf.embedPng(await item.file.arrayBuffer());
+    } else if (type === 'image/webp' && webpKind(new Uint8Array(await item.file.slice(0, 32).arrayBuffer())) !== 'lossy') {
+      embedded = await pdf.embedPng(await canvasPng(item));
     } else {
       embedded = await pdf.embedJpg(await canvasJpeg(item));
     }
