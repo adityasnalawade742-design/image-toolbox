@@ -80,7 +80,9 @@ if (process.argv.includes('--check')) {
     process.exit(1);
   }
 } else {
-  writeFileSync(OUT, json);
+  // Keep the file's line endings (git may check it out with CRLF on Windows), so a rebuild doesn't show it as changed
+  const crlf = existsSync(OUT) && readFileSync(OUT, 'utf8').includes('\r\n');
+  writeFileSync(OUT, crlf ? json.replace(/\n/g, '\r\n') : json);
   const sizes = Object.values(bySlug).map((v) => v.length);
   console.log(`[string-usage] ${data.generic.length} keys for every tool page; ${Object.keys(bySlug).length} tools add their own (up to ${Math.max(0, ...sizes)})`);
 }

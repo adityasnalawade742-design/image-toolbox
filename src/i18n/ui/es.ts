@@ -46,7 +46,7 @@ export const esUi: Record<string, string> = {
   'footer.accessibility': 'Accesibilidad',
   'footer.infoInEnglish': 'Estas páginas están en inglés.',
   'footer.source': "Código fuente (AGPL-3.0)",
-  'footer.toolCount': '{count} herramientas · 10 idiomas · sin registro',
+  'footer.toolCount': '{count} herramientas · 10 idiomas · sin registro',
   'home.moreTools': 'Ver {count} más',
   'home.fewerTools': 'Ver menos',
   'workspace.uploadNew': 'Subir otra imagen',
