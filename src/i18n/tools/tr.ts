@@ -10754,4 +10754,492 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    name: "Resim Netleştirme",
+    shortName: "Netleştir",
+    tagline: "Yumuşak bir fotoğrafı daha net hâle getirin ve indirmeden önce sonucu tam boyutta kontrol edin. Ücretsiz, cihazınızda.",
+    intro: "Resim Netleştirme, telefon kamerasından gelen, yeniden boyutlandırılmış veya odağı biraz kaçmış, hafif yumuşak görünen fotoğraflardaki kenarları ve ince ayrıntıları keskinleştirir. Gücü, öne çıkarılacak ayrıntının boyutunu ve cilt ile gökyüzü gibi pürüzsüz alanların ne kadar korunacağını seçin. Netleştirme küçük bir önizlemeden değerlendirilemeyeceği için %100 boyutta yan yana görünüm tam olarak neyin değiştiğini gösterir. Yalnızca parlaklık netleştirilir, bu yüzden renkli saçaklar oluşmaz ve fotoğraf formatını korur.",
+    seoTitle: "Resim Netleştirme – Bulanık Fotoğrafı Düzeltin, Ücretsiz",
+    seoDescription: "Yumuşak bir fotoğrafı online netleştirin: ayarlanabilir güç ve ayrıntı boyutu, tam boyutta önce-sonra, renk saçağı yok. Ücretsiz, yükleme yok, format korunur.",
+    keywords: [
+      "fotoğraf netleştirme",
+      "resim netleştirme online",
+      "bulanık fotoğrafı netleştirme",
+      "fotoğraf kalitesini artırma",
+      "resmi netleştir"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Bir JPG, PNG, WebP, HEIC veya başka bir fotoğraf bırakın ya da seçin."
+      },
+      {
+        title: "Ayarlayın ve inceleyin",
+        description: "Gücü belirleyin ve ayrıntıları %100 boyutta görmek için fotoğrafa tıklayın."
+      },
+      {
+        title: "İndirin",
+        description: "Orijinalle aynı formatta kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Tam boyutlu önizleme",
+        description: "Netleştirmenin göründüğü %100 boyutta önce ve sonra."
+      },
+      {
+        title: "Renk saçağı yok",
+        description: "Yalnızca parlaklık netleştirilir."
+      },
+      {
+        title: "Pürüzsüz alanlar korunur",
+        description: "Cilt, gökyüzü ve gürültü olduğu gibi bırakılabilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "Çok bulanık bir fotoğrafı düzeltebilir mi?",
+        answer: "Hiçbir araç, hiç yakalanmamış ayrıntıyı geri getiremez. Netleştirme hafif yumuşak fotoğraflara yardımcı olur; odağı çok kaçmış veya titremiş bir fotoğraf yalnızca biraz daha net görünür."
+      },
+      {
+        question: "Hangi ayarları kullanmalıyım?",
+        answer: "Varsayılan ayarlarla başlayın. Saç ve yazı gibi ince şeyler için küçük bir ayrıntı boyutu kullanın; cilt veya gökyüzü grenli görünmeye başlarsa “Pürüzsüz alanları koru” değerini artırın."
+      },
+      {
+        question: "Dosya çok büyür mü?",
+        answer: "Biraz: daha keskin ayrıntılar bir JPG’de biraz daha fazla yer kaplar. Fotoğraf formatını ve piksel boyutunu korur."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "denoise-image": {
+    name: "Fotoğraf Gürültüsü Giderme",
+    shortName: "Gürültü Giderme",
+    tagline: "Gece ve telefon fotoğraflarındaki grenlenmeyi ve renk beneklerini kenarları keskin tutarak giderin. Ücretsiz, cihazınızda.",
+    intro: "Fotoğraf Gürültüsü Giderme, düşük ışıkta veya yüksek ISO ile çekilen fotoğraflarda görülen grenlenmeyi ve renkli benekleri temizler. Fotoğrafınızın ne kadar gürültülü olduğunu ölçer ve buna uygun ayarlar önerir; böylece temiz fotoğraflara neredeyse dokunulmaz. Grenlenme ve renk benekleri için ayrı kontroller vardır; düz alanlar yumuşatılırken kenarlar keskin kalır. %100 boyutta yan yana görünüm, sonucu gürültünün gerçekten görüldüğü yerde gösterir.",
+    seoTitle: "Fotoğraf Gürültüsü Giderme – Online Gren Temizleme",
+    seoDescription: "Fotoğraflardaki gürültüyü ve grenlenmeyi online giderin: otomatik ayarlar, ayrı gren ve renk kontrolleri, keskin kenarlar, %100 önizleme. Ücretsiz, yükleme yok.",
+    keywords: [
+      "fotoğraf gürültü giderme",
+      "resimdeki gürültüyü azaltma",
+      "fotoğraftaki grenleri temizleme",
+      "online gürültü azaltma",
+      "gece fotoğrafı gürültü"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Gürültü seviyesi ölçülür ve ayarlar önerilir."
+      },
+      {
+        title: "Tam boyutta kontrol edin",
+        description: "Ayrıntıları %100 boyutta karşılaştırmak için fotoğrafa tıklayın."
+      },
+      {
+        title: "İndirin",
+        description: "Orijinalle aynı formatta kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Otomatik ayarlar",
+        description: "Ölçülen gürültü seviyesine göre önerilir."
+      },
+      {
+        title: "Gren ve renk ayrı ayrı",
+        description: "Renk benekleri ayrıntıyı yumuşatmadan giderilebilir."
+      },
+      {
+        title: "Kenarlar keskin kalır",
+        description: "Düz alanlar yumuşatılır, kenarlar değil."
+      }
+    ],
+    faqs: [
+      {
+        question: "Fotoğrafım plastik gibi görünür mü?",
+        answer: "Önerilen ayarlarla hayır: ayarlar, fotoğraf ondan daha pürüzsüz değil, temiz bir orijinale daha yakın çıksın diye belirlenmiştir. Çok güçlü ayarlar çimen veya kumaş gibi ince dokuları yumuşatabilir; %100 görünüm bunu gösterir."
+      },
+      {
+        question: "Gürültüye ne sebep olur?",
+        answer: "Düşük ışık. Küçük telefon sensörleri ve yüksek ISO ayarları, özellikle gölgelerde, grenlenme ve renkli benekler ekler."
+      },
+      {
+        question: "Neden iki gürültü kontrolü var?",
+        answer: "Renk benekleri ayrıntı kaybetmeden güçlü şekilde giderilebilir; parlaklık greni ise dokuyu korumak için daha hafif bir dokunuş ister."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    name: "Beyaz Dengesi Düzeltme",
+    shortName: "Beyaz Dengesi",
+    tagline: "Fotoğraflardaki sarı, mavi veya yeşil renk kaymalarını otomatik olarak ya da gri bir nokta seçerek giderin. Ücretsiz, cihazınızda.",
+    intro: "Beyaz Dengesi Düzeltme, renkleri tuhaf görünen fotoğrafları düzeltir: iç mekân ışığında sarı, gölgede mavi, bazı lambaların altında yeşil. Hızlı bir düzeltme için Otomatik’e tıklayın ya da kesin sonuç için fotoğrafta gri veya beyaz olması gereken bir şeye, örneğin bir duvara, kâğıda veya buluta tıklayın. Sıcaklık, ton ve doygunluk kaydırıcılarıyla ince ayar yapabilir, orijinalle karşılaştırmak için bir düğmeyi basılı tutabilirsiniz. Düzeltmeler, kameraların yaptığı gibi doğrusal ışıkta yapılır; bu yüzden parlak alanlar renklenmez.",
+    seoTitle: "Beyaz Dengesi Düzeltme – Renk Kaymasını Giderin, Ücretsiz",
+    seoDescription: "Beyaz dengesini online düzeltin: otomatik düzeltme veya gri nokta seçimi, artı sıcaklık, ton ve doygunluk. Sarı ve mavi tonları giderir. Ücretsiz, yüklemesiz.",
+    keywords: [
+      "beyaz dengesi düzeltme",
+      "fotoğraf renk düzeltme",
+      "fotoğraftaki sarılığı giderme",
+      "online renk düzeltme",
+      "mavi fotoğrafı düzeltme"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Renk kayması olan fotoğrafı bırakın veya seçin."
+      },
+      {
+        title: "Düzeltin",
+        description: "Otomatik’e tıklayın veya gri olması gereken bir şey seçin."
+      },
+      {
+        title: "İnce ayar yapıp indirin",
+        description: "Sıcaklığı, tonu ve doygunluğu ayarlayın, ardından kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Gri nokta seçimi",
+        description: "Nötr renkleri ayarlamanın en doğru yolu."
+      },
+      {
+        title: "Otomatik düzeltme",
+        description: "Gündelik sahneler için hızlı çözüm."
+      },
+      {
+        title: "Doğal sonuçlar",
+        description: "Doğrusal ışıkta düzeltilir; parlak alanlar temiz kalır."
+      }
+    ],
+    faqs: [
+      {
+        question: "Otomatik neden bazen yanılıyor?",
+        answer: "Otomatik beyaz dengesi, ışığı fotoğrafın renklerinden tahmin eder. Gün batımı, yeşil bir çayır veya kırmızı bir duvar gibi tek bir renk sahneyi kapladığında tahmin şaşar. Gri veya beyaz bir nokta seçmek her zaman doğru sonuç verir."
+      },
+      {
+        question: "Gri nokta seç ile neye tıklamalıyım?",
+        answer: "Nötr olması gereken herhangi bir şeye: beyaz kâğıt, gri bir duvar, beyaz bir gömlek veya bir bulut. Fotoğrafta tamamen beyaz olan çok parlak noktalardan kaçının."
+      },
+      {
+        question: "Dosya formatı değişir mi?",
+        answer: "Hayır. JPG yüksek kalitede JPG, PNG de kayıpsız PNG olarak kalır."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "perspective-correction": {
+    name: "Perspektif Düzeltme",
+    shortName: "Perspektif",
+    tagline: "Açılı çekilmiş bir belge, beyaz tahta veya tabela fotoğrafını dört köşesini sürükleyerek düzeltin. Ücretsiz.",
+    intro: "Perspektif Düzeltme, masadaki bir belge, beyaz tahta, poster, tablo veya bina tabelası gibi açılı fotoğraflanmış her şeyi düzleştirir. Dört köşeyi nesnenin köşelerine sürükleyin; araç onu, fotoğraftaki ayrıntıyı olabildiğince koruyarak düzgün bir dikdörtgene çevirir. Şekli seçildiği gibi bırakın ya da A4, Letter (ABD) veya kare yapın. Köşeleri taşıdıkça önizleme güncellenir.",
+    seoTitle: "Perspektif Düzeltme – Açılı Fotoğrafları Online Düzeltin",
+    seoDescription: "Fotoğraflarda perspektifi online düzeltin: belge, beyaz tahta veya tabelayı dört köşeyle düz bir dikdörtgene, A4’e veya Letter’a çevirin. Ücretsiz, yükleme yok.",
+    keywords: [
+      "perspektif düzeltme",
+      "fotoğraf perspektif düzeltme",
+      "belge fotoğrafını düzeltme",
+      "eğik fotoğrafı düzeltme",
+      "kâğıt fotoğrafını düzleştirme"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğrafınızı ekleyin",
+        description: "Açılı çekilmiş bir fotoğraf."
+      },
+      {
+        title: "Köşeleri sürükleyin",
+        description: "Dört tutamacı nesnenin köşelerine yerleştirin."
+      },
+      {
+        title: "İndirin",
+        description: "Şekli seçin ve düzeltilmiş resmi kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Dört köşe kontrolü",
+        description: "Fare veya parmakla sürükleyin ya da ok tuşlarıyla taşıyın."
+      },
+      {
+        title: "Ayrıntı korunur",
+        description: "Sonuç, seçilen alanın izin verdiği kadar büyük olur."
+      },
+      {
+        title: "Kâğıt şekilleri",
+        description: "Şekli koruyun ya da A4, Letter (ABD) veya kare yapın."
+      }
+    ],
+    faqs: [
+      {
+        question: "Düzeltilmiş bir sayfayı PDF’e dönüştürebilir miyim?",
+        answer: "Düzeltilmiş resmi indirin, ardından bir veya daha fazla sayfadan PDF oluşturmak için JPG’den PDF’e aracını kullanın."
+      },
+      {
+        question: "Sonuç neden gerilmiş görünüyor?",
+        answer: "Doğru şekli seçin: “Seçildiği gibi” şekli köşelerden tahmin eder, ancak çok dik bir açıyla fotoğraflanmış bir sayfa için en iyisi A4 veya Letter (ABD) seçmektir."
+      },
+      {
+        question: "Orijinal kadar net olur mu?",
+        answer: "Kameradan uzak olan kısımlarda daha az piksel bulunur, bu yüzden biraz daha yumuşak çıkarlar. Fotoğrafı olabildiğince düz çekmek en iyi sonucu verir."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    name: "Fotoğraf Kolajı Yapma",
+    shortName: "Kolaj",
+    tagline: "2 ila 9 fotoğrafı hazır düzenler, boşluklar ve yuvarlak köşelerle tek bir kolajda birleştirin. Ücretsiz, kayıt gerekmez.",
+    intro: "Fotoğraf Kolajı Yapma, 2 ila 9 fotoğrafı bir kolajda düzenler. Bir düzen ve Instagram, Hikâyeler, geniş ekran gönderi veya A4 baskı için bir şekil seçin; fotoğraflar arası boşluğu, kenar boşluğunu, yuvarlak köşeleri ve arka plan rengini ayarlayın. Yakınlaştırmak veya görünen kısmı seçmek için kolajdaki herhangi bir fotoğrafa tıklayın. Kolajın uzun kenarı 2400 pikseldir, baskı için yeterince nettir ve tamamen cihazınızda hazırlanır.",
+    seoTitle: "Fotoğraf Kolajı Yapma – Ücretsiz Online, Kayıt Yok",
+    seoDescription: "Online fotoğraf kolajı yapın: 2 ila 9 fotoğraf, hazır düzenler, kare, 4:5, 9:16 ve A4 boyutları, boşluk ve yuvarlak köşeler. Ücretsiz, kayıt ve yükleme yok.",
+    keywords: [
+      "kolaj yapma",
+      "fotoğraf kolajı yapma",
+      "online kolaj yapma",
+      "instagram kolaj",
+      "fotoğrafları birleştirme"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraflarınızı ekleyin",
+        description: "İstediğiniz sırayla 2 ila 9 fotoğraf."
+      },
+      {
+        title: "Bir düzen seçin",
+        description: "Düzeni, şekli, boşlukları ve renkleri seçin."
+      },
+      {
+        title: "Kadrajlayın ve indirin",
+        description: "Kadrajını ayarlamak için bir fotoğrafa tıklayın, ardından kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Hazır düzenler",
+        description: "2 ila 9 fotoğraf için ızgaralar ve öne çıkan fotoğraflı düzenler."
+      },
+      {
+        title: "Sosyal medya ve baskı boyutları",
+        description: "1:1, 4:5, 9:16, 16:9 ve A4."
+      },
+      {
+        title: "Fotoğraf başına kadraj",
+        description: "Her fotoğrafı kendi alanında yakınlaştırın ve kaydırın."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kolaj ne kadar büyük?",
+        answer: "Uzun kenarı 2400 piksel; örneğin kare bir kolaj için 2400 × 2400. Bu, 300 DPI’da 20 cm’lik bir baskı için yeterlidir."
+      },
+      {
+        question: "Saydam arka plan kullanabilir miyim?",
+        answer: "Evet: PNG’yi seçin ve Saydam’ı işaretleyin."
+      },
+      {
+        question: "Sırayı değiştirebilir miyim?",
+        answer: "Evet. Fotoğrafları listede yukarı veya aşağı taşıyın; ilk fotoğraf düzenin ilk alanına yerleşir."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    name: "Kopya Fotoğraf Bulucu",
+    shortName: "Kopya Bulucu",
+    tagline: "Yeniden boyutlandırılmış ve yeniden sıkıştırılmış kopyalar dahil, aynı ve neredeyse aynı fotoğrafları bulun. Ücretsiz, hiçbir şey yüklenmez.",
+    intro: "Kopya Fotoğraf Bulucu, bir grup fotoğrafı karşılaştırır ve birbirinin kopyası olanları gruplar: aynı dosyalar, yeniden kaydedilmiş kopyalar ve bir sohbet uygulamasıyla gönderilen fotoğraflar gibi yeniden boyutlandırılmış veya yeniden sıkıştırılmış sürümler. Benzer ayarı, seri çekimler gibi neredeyse aynı kareleri de bulur. Her grupta varsayılan olarak en büyük ve en az sıkıştırılmış kopya saklanır; hangilerinin saklanacağını değiştirebilirsiniz. Kopyasız fotoğrafları ZIP olarak ya da kopyaları kendiniz silmek için bir liste olarak indirin. Fotoğraflar cihazınızda karşılaştırılır ve asla yüklenmez.",
+    seoTitle: "Kopya Fotoğraf Bulucu – Benzer Resimleri Bulun, Ücretsiz",
+    seoDescription: "Kopya fotoğrafları online bulun: birebir kopyalar, boyutu değişmiş ve sıkıştırılmış sürümler, benzer kareler. En iyisini saklayın, ZIP alın. Ücretsiz.",
+    keywords: [
+      "kopya fotoğraf bulma",
+      "aynı fotoğrafları bulma",
+      "benzer fotoğraf bulma",
+      "kopya fotoğrafları silme",
+      "çift fotoğraf bulucu"
+    ],
+    howToSteps: [
+      {
+        title: "Fotoğraflarınızı ekleyin",
+        description: "Bir klasör dolusu fotoğrafı tek seferde bırakın."
+      },
+      {
+        title: "Grupları inceleyin",
+        description: "Her grubu kontrol edin ve hangi kopyaların saklanacağını seçin."
+      },
+      {
+        title: "İndirin",
+        description: "Kopyasız fotoğrafları ZIP olarak ya da listeyi alın."
+      }
+    ],
+    features: [
+      {
+        title: "Gerçek kopyaları bulur",
+        description: "Yalnızca aynı dosyaları değil, yeniden boyutlandırılmış, sıkıştırılmış ve kaydedilmiş fotoğrafları da eşleştirir."
+      },
+      {
+        title: "En iyi kopya saklanır",
+        description: "Varsayılan olarak en büyük ve en az sıkıştırılmış kopya seçilir."
+      },
+      {
+        title: "Gizli",
+        description: "Fotoğraflar cihazınızda karşılaştırılır."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kopyalarımı silebilir mi?",
+        answer: "Bir web sitesi cihazınızdaki dosyaları silemez. Kopyasız fotoğrafları ZIP olarak indirin veya fazla kopyaları kendiniz silmek için listeyi kullanın."
+      },
+      {
+        question: "İki fotoğrafın aynı olduğunu nasıl anlıyor?",
+        answer: "Her fotoğrafın görünümünden küçük bir parmak izi çıkarır; böylece yeniden boyutlandırılmış veya yeniden sıkıştırılmış bir kopya da eşleşir. Aynı dosyalar birebir eşleştirilir."
+      },
+      {
+        question: "Kaç fotoğraf kontrol edebilirim?",
+        answer: "Çoğu bilgisayarda tek seferde yüzlerce. Her fotoğraf okunur okunmaz minik bir parmak izine küçültülür, bu yüzden bellek kullanımı düşük kalır."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    name: "Pixel Art Dönüştürücü",
+    shortName: "Pixel Art",
+    tagline: "Bir fotoğrafı veya çizimi seçtiğiniz ızgara boyutu, renk paleti ve gölgelendirmeyle pixel art’a dönüştürün. Ücretsiz, cihazınızda.",
+    intro: "Pixel Art Dönüştürücü, her resmi pixel art’a dönüştürür. Kaç piksel genişliğinde olacağını, 8 piksellik minik bir simgeden 256 piksellik ayrıntılı bir sahneye kadar seçin; ardından renk sayısını belirleyin: resminize uyarlanmış bir palet, siyah beyaz, gri veya dört retro yeşil. Düz, yumuşak veya desenli gölgelendirme görünümü değiştirir. Keskin, büyütülmüş kare piksellerle ve isteğe bağlı ızgara çizgileriyle ya da oyunlar ve piksel editörleri için her biri 1 piksel olarak indirin.",
+    seoTitle: "Pixel Art Dönüştürücü – Fotoğrafı Pixel Art Yapın, Ücretsiz",
+    seoDescription: "Bir fotoğrafı online pixel art’a dönüştürün: ızgarayı, renkleri ve gölgelendirmeyi seçin, keskin PNG ya da 1 piksellik orijinali indirin. Ücretsiz, yüklemesiz.",
+    keywords: [
+      "pixel art yapma",
+      "fotoğrafı pixel art yapma",
+      "resmi piksel sanatına çevirme",
+      "resmi pikselleştirme",
+      "8 bit resim yapma"
+    ],
+    howToSteps: [
+      {
+        title: "Resminizi ekleyin",
+        description: "Bir fotoğraf, çizim veya logo."
+      },
+      {
+        title: "Boyutu ve renkleri seçin",
+        description: "Piksel cinsinden genişliği, paleti ve gölgelendirmeyi ayarlayın."
+      },
+      {
+        title: "İndirin",
+        description: "Büyütülmüş ya da her biri 1 piksel olarak PNG kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Uyarlanmış paletler",
+        description: "Resminizden seçilen 4 ila 32 renk."
+      },
+      {
+        title: "Retro gölgelendirme",
+        description: "Düz, yumuşak veya desenli dithering."
+      },
+      {
+        title: "Keskin çıktı",
+        description: "Bulanıklık olmadan kare pikseller, isteğe bağlı ızgara çizgileri."
+      }
+    ],
+    faqs: [
+      {
+        question: "Hangi genişliği seçmeliyim?",
+        answer: "Simgeler ve sprite’lar için 16 ila 32, tanınabilir portreler için 64, ayrıntılı sahneler için 128 veya daha fazlası."
+      },
+      {
+        question: "Gölgelendirme seçeneği nedir?",
+        answer: "Yumuşak ve Desen, eski oyunlarda olduğu gibi daha fazla ton varmış gibi göstermek için palet renklerini küçük noktalarla karıştırır. Düz, her rengi olduğu gibi kullanır."
+      },
+      {
+        question: "Bir oyunda kullanabilir miyim?",
+        answer: "Evet. “Her biri 1 piksel” resmi gerçek piksel boyutunda indirir; oyun motorlarına ve piksel editörlerine hazırdır."
+      },
+      {
+        question: "Fotoğrafım yükleniyor mu?",
+        answer: "Hayır. Fotoğraf cihazınızda işlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    name: "PDF’i Siyah Beyaza Çevirme",
+    shortName: "PDF → Siyah Beyaz",
+    tagline: "Renkli bir PDF’i yazdırmak için siyah beyaza dönüştürün; metin keskin ve seçilebilir kalır. Ücretsiz.",
+    intro: "PDF’i Siyah Beyaza Çevirme, bir PDF’teki her rengi gri tonlarına dönüştürür: metinler, şekiller, grafikler ve fotoğraflar. Bir belgenin siyah beyaz yazıcıda nasıl çıkacağını görmek, renkli mürekkepten tasarruf etmek veya bir portal gri tonlamalı dosya istediğinde işe yarar. Yalnızca renkler değiştiği, içerik değişmediği için metin gerçek, seçilebilir metin olarak kalır ve şekiller keskin kalır. Fotoğraflar tam çözünürlükte, yüksek kaliteyle dönüştürülür.",
+    seoTitle: "PDF Siyah Beyaz Yapma – Renkli PDF’i Gri Tonlamaya Çevirin",
+    seoDescription: "Renkli bir PDF’i online gri tonlamaya çevirin: metin keskin ve seçilebilir kalır, fotoğraflar tam çözünürlükte. Yazdırma ve mürekkep tasarrufu için. Ücretsiz.",
+    keywords: [
+      "pdf siyah beyaz yapma",
+      "pdf siyah beyaza çevirme",
+      "gri tonlamalı pdf",
+      "online pdf siyah beyaz",
+      "pdf renkli siyah beyaz yapma"
+    ],
+    howToSteps: [
+      {
+        title: "PDF’inizi ekleyin",
+        description: "30 MB’a kadar bir PDF bırakın veya seçin."
+      },
+      {
+        title: "Dönüştürün",
+        description: "Her renk bir gri tonuna dönüşür."
+      },
+      {
+        title: "İndirin",
+        description: "Gri tonlamalı PDF’i kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Metin, metin olarak kalır",
+        description: "Seçilebilir ve aranabilir; resme dönüştürülmez."
+      },
+      {
+        title: "Tam çözünürlüklü fotoğraflar",
+        description: "Resimler küçültülmeden dönüştürülür."
+      },
+      {
+        title: "Baskıya hazır",
+        description: "Siyah beyaz bir yazıcının çıkaracağını birebir görün ve yazdırın."
+      }
+    ],
+    faqs: [
+      {
+        question: "Metin yine seçilebilir olacak mı?",
+        answer: "Evet. Yalnızca renkler değişir; metin, bağlantılar ve sayfa düzeni olduğu gibi kalır. Doldurulabilir form alanları düzleştirilir: içlerine yazılanlar sayfada kalır, ancak artık doldurulamazlar."
+      },
+      {
+        question: "PDF’im büyür mü?",
+        answer: "Duruma göre değişir. Fotoğraf veya tarama içeren PDF’ler genellikle küçülür, çünkü gri görüntüler daha az veri gerektirir; çoğunlukla metinden oluşan bir PDF biraz büyüyebilir."
+      },
+      {
+        question: "Parola korumalı bir PDF’i dönüştürebilir miyim?",
+        answer: "Önce PDF Kilidi Açma ile parolayı kaldırın, ardından dönüştürün."
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır."
+      }
+    ]
+  },
 };

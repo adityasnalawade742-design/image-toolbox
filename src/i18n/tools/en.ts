@@ -10393,4 +10393,492 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    "name": "Sharpen Image",
+    "shortName": "Sharpen",
+    "tagline": "Make a soft photo crisper and check the result at full size before you download. Free, on your device.",
+    "intro": "Sharpen Image makes edges and fine detail crisper in photos that look a little soft, from a phone camera, a resized picture or a slightly missed focus. Choose the strength, the size of the detail to bring out, and how much smooth areas such as skin and sky are protected. A side-by-side view at 100% shows exactly what changes, since sharpening can't be judged from a small preview. Only brightness is sharpened, so no colored fringes appear, and the photo keeps its format.",
+    "seoTitle": "Sharpen Image Online – Fix Soft and Blurry Photos, Free",
+    "seoDescription": "Sharpen a soft photo online: adjustable strength and detail size, full-size before/after view, no color fringes. Free, no upload, keeps JPG or PNG.",
+    "keywords": [
+      "sharpen image",
+      "sharpen photo online",
+      "unblur image",
+      "make picture clearer",
+      "image sharpener"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "Drop or choose a JPG, PNG, WebP, HEIC or other photo."
+      },
+      {
+        "title": "Adjust and inspect",
+        "description": "Set the strength and click the photo to check details at 100%."
+      },
+      {
+        "title": "Download",
+        "description": "Save it in the same format as the original."
+      }
+    ],
+    "features": [
+      {
+        "title": "Full-size preview",
+        "description": "Before and after at 100%, where sharpening shows."
+      },
+      {
+        "title": "No color fringes",
+        "description": "Only brightness is sharpened."
+      },
+      {
+        "title": "Smooth areas protected",
+        "description": "Skin, sky and noise can be left alone."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can it fix a very blurry photo?",
+        "answer": "No tool can bring back detail that was never captured. Sharpening helps photos that are slightly soft; a badly out-of-focus or shaken photo will only look a little crisper."
+      },
+      {
+        "question": "What settings should I use?",
+        "answer": "Start with the defaults. Use a small detail size for fine things like hair and text, and raise “Protect smooth areas” if skin or sky starts to look grainy."
+      },
+      {
+        "question": "Will the file get much bigger?",
+        "answer": "A little: crisper detail takes slightly more space in a JPG. The photo keeps its format and size in pixels."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "denoise-image": {
+    "name": "Reduce Image Noise",
+    "shortName": "Denoise",
+    "tagline": "Remove grain and color speckles from night and phone photos while keeping edges sharp. Free, on your device.",
+    "intro": "Reduce Image Noise cleans up the grain and colored speckles that appear in photos taken in low light or with high ISO. It measures how noisy your photo is and suggests settings to match, so clean photos are barely touched. Grain and color speckles have separate controls, and edges stay sharp while flat areas are smoothed. A side-by-side view at 100% shows the result where noise is actually visible.",
+    "seoTitle": "Reduce Image Noise – Denoise Photos Online, Free",
+    "seoDescription": "Remove noise and grain from photos online: automatic settings, separate grain and color controls, edges kept sharp, 100% preview. Free, no upload.",
+    "keywords": [
+      "reduce image noise",
+      "denoise photo",
+      "remove grain from photo",
+      "noise reduction online",
+      "night photo noise"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "The noise level is measured and settings suggested."
+      },
+      {
+        "title": "Check at full size",
+        "description": "Click the photo to compare details at 100%."
+      },
+      {
+        "title": "Download",
+        "description": "Save it in the same format as the original."
+      }
+    ],
+    "features": [
+      {
+        "title": "Automatic settings",
+        "description": "Suggested from the measured noise level."
+      },
+      {
+        "title": "Grain and color separately",
+        "description": "Color speckles can be removed without smoothing detail."
+      },
+      {
+        "title": "Edges kept sharp",
+        "description": "Flat areas are smoothed, edges are not."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will it make my photo look plastic?",
+        "answer": "Not with the suggested settings: they are tuned so photos come out closer to a clean original, not smoother than it. Very strong settings can smooth fine texture like grass or fabric, which the 100% view shows."
+      },
+      {
+        "question": "What causes noise?",
+        "answer": "Low light. Small phone sensors and high ISO settings add grain and colored speckles, especially in shadows."
+      },
+      {
+        "question": "Why are there two noise controls?",
+        "answer": "Color speckles can be removed strongly without losing detail, while brightness grain needs a gentler touch to keep texture."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    "name": "Fix White Balance",
+    "shortName": "White Balance",
+    "tagline": "Remove yellow, blue or green color casts from photos automatically or by picking a gray spot. Free, on your device.",
+    "intro": "Fix White Balance corrects photos whose colors look off: yellow under indoor lights, blue in shade, green under some lamps. Click Auto for a quick correction, or click something in the photo that should be gray or white, such as a wall, paper or a cloud, for an exact result. Temperature, tint and saturation sliders fine-tune it, and you can hold a button to compare with the original. Corrections are made in linear light, as cameras do, so highlights don't turn colored.",
+    "seoTitle": "Fix White Balance Online – Correct Color Casts, Free",
+    "seoDescription": "Fix white balance online: auto correction or pick a gray spot, plus temperature, tint and saturation. Removes yellow and blue casts. Free, no upload.",
+    "keywords": [
+      "fix white balance",
+      "color correction online",
+      "remove yellow tint from photo",
+      "white balance photo",
+      "fix blue photo"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "Drop or choose the photo with the color cast."
+      },
+      {
+        "title": "Correct it",
+        "description": "Click Auto, or pick something that should be gray."
+      },
+      {
+        "title": "Fine-tune and download",
+        "description": "Adjust temperature, tint and saturation, then save."
+      }
+    ],
+    "features": [
+      {
+        "title": "Pick a gray spot",
+        "description": "The most accurate way to set neutral colors."
+      },
+      {
+        "title": "Auto correction",
+        "description": "A quick fix for everyday scenes."
+      },
+      {
+        "title": "Natural results",
+        "description": "Corrected in linear light; highlights stay clean."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does Auto sometimes get it wrong?",
+        "answer": "Automatic white balance guesses the light from the photo's colors. When one color fills the scene, such as a sunset, a green field or a red wall, the guess is off. Picking a gray or white spot is always accurate."
+      },
+      {
+        "question": "What should I click with Pick a gray?",
+        "answer": "Anything that should be neutral: white paper, a gray wall, a white shirt or a cloud. Avoid very bright spots that are pure white in the photo."
+      },
+      {
+        "question": "Does it change the file format?",
+        "answer": "No. A JPG stays a JPG at high quality, and a PNG stays a lossless PNG."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "perspective-correction": {
+    "name": "Perspective Correction",
+    "shortName": "Perspective",
+    "tagline": "Straighten a photo of a document, whiteboard or sign taken at an angle by dragging its four corners. Free.",
+    "intro": "Perspective Correction flattens anything photographed at an angle, such as a document on a desk, a whiteboard, a poster, a painting or a building sign. Drag the four corners onto the corners of the object and the tool straightens it into a clean rectangle, keeping as much detail as the photo has. Keep the shape as selected or make it A4, Letter or square. The preview updates as you move the corners.",
+    "seoTitle": "Perspective Correction – Straighten Photos Online, Free",
+    "seoDescription": "Fix perspective in photos online: drag four corners to straighten a document, whiteboard or sign into a flat rectangle, A4 or Letter. Free, no upload.",
+    "keywords": [
+      "perspective correction",
+      "fix perspective photo",
+      "straighten document photo",
+      "keystone correction",
+      "flatten photo of paper"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photo",
+        "description": "A photo taken at an angle."
+      },
+      {
+        "title": "Drag the corners",
+        "description": "Place the four handles on the object's corners."
+      },
+      {
+        "title": "Download",
+        "description": "Choose the shape and save the straightened image."
+      }
+    ],
+    "features": [
+      {
+        "title": "Four-corner control",
+        "description": "Drag with a mouse or finger, or move with the arrow keys."
+      },
+      {
+        "title": "Detail kept",
+        "description": "The result is as large as the selected area allows."
+      },
+      {
+        "title": "Paper shapes",
+        "description": "Keep the shape, or make it A4, Letter or square."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can it straighten a page into a PDF?",
+        "answer": "Download the straightened image, then use JPG to PDF to make a PDF from one or more pages."
+      },
+      {
+        "question": "Why does my result look stretched?",
+        "answer": "Choose the right shape: “As selected” estimates it from the corners, but a page photographed at a steep angle is best set to A4 or Letter."
+      },
+      {
+        "question": "Will it be as sharp as the original?",
+        "answer": "Parts that were far from the camera have fewer pixels, so they come out a little softer. Taking the photo as straight as possible gives the best result."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    "name": "Photo Collage Maker",
+    "shortName": "Collage",
+    "tagline": "Combine 2 to 9 photos into a collage with ready layouts, spacing and rounded corners. Free, no sign-up.",
+    "intro": "Photo Collage Maker arranges 2 to 9 photos into a collage. Pick a layout, a shape for Instagram, Stories, a widescreen post or an A4 print, and set the space between photos, the border, rounded corners and the background color. Click any photo in the collage to zoom it or choose which part shows. The collage is 2400 pixels on its longer side, sharp enough for printing, and is made entirely on your device.",
+    "seoTitle": "Photo Collage Maker – Free Online, No Sign-Up",
+    "seoDescription": "Make a photo collage online: 2 to 9 photos, ready layouts, square, 4:5, 9:16 and A4 sizes, spacing and rounded corners. Free, no sign-up, no upload.",
+    "keywords": [
+      "photo collage maker",
+      "collage maker online",
+      "picture collage",
+      "instagram collage",
+      "combine photos into one"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photos",
+        "description": "2 to 9 photos, in the order you want."
+      },
+      {
+        "title": "Choose a layout",
+        "description": "Pick the layout, shape, spacing and colors."
+      },
+      {
+        "title": "Frame and download",
+        "description": "Click a photo to adjust its framing, then save."
+      }
+    ],
+    "features": [
+      {
+        "title": "Ready layouts",
+        "description": "Grids and featured-photo layouts for 2 to 9 photos."
+      },
+      {
+        "title": "Social and print sizes",
+        "description": "1:1, 4:5, 9:16, 16:9 and A4."
+      },
+      {
+        "title": "Per-photo framing",
+        "description": "Zoom and move each photo within its space."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How big is the collage?",
+        "answer": "2400 pixels on its longer side, for example 2400 × 2400 for a square collage, enough for a 20 cm print at 300 DPI."
+      },
+      {
+        "question": "Can I use a transparent background?",
+        "answer": "Yes: choose PNG and tick Transparent."
+      },
+      {
+        "question": "Can I change the order?",
+        "answer": "Yes. Move photos up or down in the list; the first photo goes in the first space of the layout."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    "name": "Duplicate Photo Finder",
+    "shortName": "Duplicates",
+    "tagline": "Find duplicate and near-duplicate photos, including resized and recompressed copies. Free, and nothing is uploaded.",
+    "intro": "Duplicate Photo Finder compares a set of photos and groups the ones that are copies of each other: identical files, re-saved copies, and resized or recompressed versions such as photos sent through a chat app. The similar setting also finds near-identical shots like bursts. In each group, the largest, least compressed copy is kept by default and you can change which ones to keep. Download the photos without duplicates as a ZIP, or a list to delete them yourself. Photos are compared on your device and never uploaded.",
+    "seoTitle": "Duplicate Photo Finder – Find Similar Images Free",
+    "seoDescription": "Find duplicate photos online: exact copies, resized and recompressed versions and similar shots. Keep the best copy, download a ZIP. Free, no upload.",
+    "keywords": [
+      "duplicate photo finder",
+      "find duplicate images",
+      "similar image finder",
+      "remove duplicate photos",
+      "duplicate picture finder"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your photos",
+        "description": "Drop a folder's worth of photos at once."
+      },
+      {
+        "title": "Review the groups",
+        "description": "Check each group and choose which copies to keep."
+      },
+      {
+        "title": "Download",
+        "description": "Get the photos without duplicates as a ZIP, or the list."
+      }
+    ],
+    "features": [
+      {
+        "title": "Finds real copies",
+        "description": "Matches resized, recompressed and re-saved photos, not just identical files."
+      },
+      {
+        "title": "Best copy kept",
+        "description": "The largest, least compressed copy is chosen by default."
+      },
+      {
+        "title": "Private",
+        "description": "Photos are compared on your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can it delete my duplicates?",
+        "answer": "A website can't delete files on your device. Download the photos without duplicates as a ZIP, or use the list to delete the extra copies yourself."
+      },
+      {
+        "question": "How does it know two photos are the same?",
+        "answer": "It makes a small fingerprint of what each photo looks like, so a resized or recompressed copy still matches. Identical files are matched exactly."
+      },
+      {
+        "question": "How many photos can I check?",
+        "answer": "Hundreds at a time on most computers. Each photo is shrunk to a tiny fingerprint right after it's read, so memory stays low."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    "name": "Pixel Art Converter",
+    "shortName": "Pixel Art",
+    "tagline": "Turn a photo or drawing into pixel art with a chosen grid size, color palette and shading. Free, on your device.",
+    "intro": "Pixel Art Converter turns any picture into pixel art. Choose how many pixels wide it should be, from a tiny 8-pixel icon to a detailed 256-pixel scene, and how many colors: a palette fitted to your picture, black and white, gray, or four retro greens. Flat, smooth or patterned shading changes the look. Download it with crisp, scaled-up square pixels and optional grid lines, or at 1 pixel each for games and pixel editors.",
+    "seoTitle": "Pixel Art Converter – Turn Photos Into Pixel Art, Free",
+    "seoDescription": "Convert a photo to pixel art online: choose the grid size, colors and shading, download crisp PNG pixel art or the 1-pixel original. Free, no upload.",
+    "keywords": [
+      "pixel art converter",
+      "photo to pixel art",
+      "image to pixel art",
+      "pixelate image",
+      "8 bit image converter"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your picture",
+        "description": "A photo, drawing or logo."
+      },
+      {
+        "title": "Choose size and colors",
+        "description": "Set the width in pixels, the palette and the shading."
+      },
+      {
+        "title": "Download",
+        "description": "Save as PNG, scaled up or 1 pixel each."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fitted palettes",
+        "description": "4 to 32 colors chosen from your picture."
+      },
+      {
+        "title": "Retro shading",
+        "description": "Flat, smooth or patterned dithering."
+      },
+      {
+        "title": "Crisp output",
+        "description": "Square pixels without blur, with optional grid lines."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which width should I choose?",
+        "answer": "16 to 32 for icons and sprites, 64 for recognizable portraits, 128 or more for detailed scenes."
+      },
+      {
+        "question": "What is the shading option?",
+        "answer": "Smooth and Pattern mix the palette colors in small dots to suggest more shades, the way old games did. Flat uses each color as it is."
+      },
+      {
+        "question": "Can I use it in a game?",
+        "answer": "Yes. “1 pixel each” downloads the image at its true pixel size, ready for game engines and pixel editors."
+      },
+      {
+        "question": "Is my photo uploaded?",
+        "answer": "No. It's processed on your device and never leaves it."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    "name": "PDF to Grayscale",
+    "shortName": "PDF → Grayscale",
+    "tagline": "Convert a color PDF to black and white for printing, with text kept sharp and selectable. Free.",
+    "intro": "PDF to Grayscale turns every color in a PDF into shades of gray: text, shapes, charts and photos. It's useful to check how a document prints on a black-and-white printer, to save color ink, or when a portal asks for a grayscale file. Text stays real, selectable text and shapes stay sharp, because only the colors change, not the content. Photos are converted at full resolution with high quality.",
+    "seoTitle": "PDF to Grayscale – Convert Color PDF to Black and White",
+    "seoDescription": "Convert a color PDF to grayscale online: text stays sharp and selectable, photos keep full resolution. For printing and ink saving. Free.",
+    "keywords": [
+      "pdf to grayscale",
+      "convert pdf to black and white",
+      "grayscale pdf",
+      "pdf to black and white online",
+      "remove color from pdf"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your PDF",
+        "description": "Drop or choose a PDF up to 30 MB."
+      },
+      {
+        "title": "Convert",
+        "description": "Every color becomes a shade of gray."
+      },
+      {
+        "title": "Download",
+        "description": "Save the grayscale PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Text stays text",
+        "description": "Selectable and searchable, not turned into images."
+      },
+      {
+        "title": "Full-resolution photos",
+        "description": "Images are converted without being scaled down."
+      },
+      {
+        "title": "Print-ready",
+        "description": "See and print exactly what a black-and-white printer would."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the text still be selectable?",
+        "answer": "Yes. Only the colors change, so text, links and the page layout stay as they were. Fillable form fields are flattened: what is typed in them stays on the page, but they can no longer be filled in."
+      },
+      {
+        "question": "Will my PDF get bigger?",
+        "answer": "It depends. PDFs with photos or scans usually get smaller, since gray images need less data; a PDF that is mostly text can grow slightly."
+      },
+      {
+        "question": "Can I convert a password-protected PDF?",
+        "answer": "Remove the password first with Unlock PDF, then convert it."
+      },
+      {
+        "question": "Is my file uploaded?",
+        "answer": "Yes. This tool needs our server, so the file is sent over an encrypted connection, processed, and deleted as soon as the result is sent back. It is never stored, shared or looked at. Most other tools on this site run entirely in your browser."
+      }
+    ]
+  },
 };

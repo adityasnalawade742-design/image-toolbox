@@ -2,7 +2,7 @@
 Image Toolbox document service.
 
 Converts and repairs documents that browsers can't handle well: Office to PDF (LibreOffice), PDF to Word (pdf2docx),
-PDF compression (Ghostscript), password protect / unlock and repair (qpdf), OCR and PDF/A (ocrmypdf).
+PDF compression and grayscale (Ghostscript), password protect / unlock and repair (qpdf), OCR and PDF/A (ocrmypdf).
 
 Every job runs in its own temp directory that is deleted once the response has been sent.
 Nothing about file contents is logged. Only the Cloudflare Worker, which knows ORIGIN_SECRET, may call /v1/*.
@@ -698,6 +698,29 @@ async def compress(file: UploadFile, preset: str = "ebook"):
         # Never hand back a bigger file
         best = out if after < before else src
         return respond(best, job, PDF, "compressed.pdf", **{"X-Size-Before": str(before), "X-Size-After": str(best.stat().st_size)})
+
+
+@app.post("/v1/grayscale")
+async def grayscale(file: UploadFile):
+    """Every colour in the PDF turned to grey by Ghostscript: text and vector shapes stay as they are (selectable,
+    sharp), images are converted without downsampling and re-encoded at high quality."""
+    async with Job() as job:
+        src = await save_upload(file, job)
+        require(kind_of(src), {"pdf"})
+        await refuse_if_password_needed(src, job)
+        out = job / "out.pdf"
+        code, _ = await run(
+            "gs", "-sDEVICE=pdfwrite", "-dCompatibilityLevel=1.5", "-sColorConversionStrategy=Gray", "-dProcessColorModel=/DeviceGray",
+            "-dOverrideICC=true", "-dAutoRotatePages=/None", "-dDetectDuplicateImages=true",
+            "-dDownsampleColorImages=false", "-dDownsampleGrayImages=false", "-dDownsampleMonoImages=false",
+            "-dNOPAUSE", "-dQUIET", "-dBATCH", "-dSAFER", f"-sOutputFile={out}",
+            # Photos stay JPEG at high quality; line art and screenshots are chosen as lossless by Ghostscript's auto filter
+            "-c", "<< /GrayACSImageDict << /QFactor 0.15 /Blend 1 /HSamples [1 1 1 1] /VSamples [1 1 1 1] >> >> setdistillerparams", "-f",
+            str(src), cwd=job,
+        )
+        if code != 0 or not out.exists():
+            raise JobError(422, "grayscale_failed")
+        return respond(out, job, PDF, "grayscale.pdf")
 
 
 def check_password(password: str):

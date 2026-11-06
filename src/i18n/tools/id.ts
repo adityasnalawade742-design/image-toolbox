@@ -10753,4 +10753,492 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "sharpen-image": {
+    name: "Pertajam Gambar",
+    shortName: "Pertajam",
+    tagline: "Buat foto yang kurang tajam jadi lebih jelas dan periksa hasilnya dalam ukuran penuh sebelum diunduh. Gratis, di perangkat Anda.",
+    intro: "Pertajam Gambar membuat tepi dan detail halus lebih jelas pada foto yang terlihat sedikit buram, entah dari kamera ponsel, gambar yang diubah ukurannya, atau fokus yang sedikit meleset. Pilih kekuatannya, ukuran detail yang ingin ditonjolkan, dan seberapa banyak area halus seperti kulit dan langit dilindungi. Tampilan berdampingan 100% menunjukkan persis apa yang berubah, karena ketajaman tidak bisa dinilai dari pratinjau kecil. Hanya kecerahan yang dipertajam, jadi tidak muncul pinggiran berwarna, dan format foto tetap sama.",
+    seoTitle: "Pertajam Gambar Online – Perjelas Foto Buram, Gratis",
+    seoDescription: "Pertajam foto buram online: atur kekuatan dan ukuran detail, bandingkan sebelum-sesudah dalam ukuran penuh, tanpa pinggiran warna. Gratis, tanpa unggah.",
+    keywords: [
+      "pertajam gambar",
+      "memperjelas foto buram",
+      "cara memperjelas foto",
+      "pertajam foto online",
+      "foto blur jadi jelas"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Letakkan atau pilih foto JPG, PNG, WebP, HEIC, atau lainnya."
+      },
+      {
+        title: "Atur dan periksa",
+        description: "Tentukan kekuatannya dan klik foto untuk memeriksa detail pada 100%."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan dalam format yang sama dengan aslinya."
+      }
+    ],
+    features: [
+      {
+        title: "Pratinjau ukuran penuh",
+        description: "Sebelum dan sesudah pada 100%, tempat ketajaman terlihat."
+      },
+      {
+        title: "Tanpa pinggiran warna",
+        description: "Hanya kecerahan yang dipertajam."
+      },
+      {
+        title: "Area halus terlindungi",
+        description: "Kulit, langit, dan noise bisa dibiarkan."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bisakah memperbaiki foto yang sangat buram?",
+        answer: "Tidak ada alat yang bisa mengembalikan detail yang tidak pernah terekam. Mempertajam membantu foto yang sedikit buram; foto yang sangat tidak fokus atau goyang hanya akan terlihat sedikit lebih jelas."
+      },
+      {
+        question: "Pengaturan apa yang sebaiknya saya pakai?",
+        answer: "Mulailah dengan pengaturan default. Gunakan ukuran detail kecil untuk hal halus seperti rambut dan teks, dan naikkan “Lindungi area halus” jika kulit atau langit mulai terlihat berbutir."
+      },
+      {
+        question: "Apakah file jadi jauh lebih besar?",
+        answer: "Sedikit: detail yang lebih tajam memakan sedikit lebih banyak ruang dalam JPG. Format dan ukuran piksel foto tetap sama."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "denoise-image": {
+    name: "Kurangi Noise Foto",
+    shortName: "Hapus Noise",
+    tagline: "Hilangkan butiran dan bintik warna dari foto malam dan foto ponsel sambil menjaga tepi tetap tajam. Gratis, di perangkat Anda.",
+    intro: "Kurangi Noise Foto membersihkan butiran dan bintik berwarna yang muncul pada foto yang diambil dalam cahaya redup atau dengan ISO tinggi. Alat ini mengukur seberapa banyak noise di foto Anda dan menyarankan pengaturan yang cocok, jadi foto yang sudah bersih hampir tidak disentuh. Butiran dan bintik warna punya kontrol terpisah, dan tepi tetap tajam sementara area datar dihaluskan. Tampilan berdampingan 100% menunjukkan hasilnya di tempat noise benar-benar terlihat.",
+    seoTitle: "Kurangi Noise Foto – Hapus Butiran Foto Online, Gratis",
+    seoDescription: "Hapus noise dan butiran dari foto online: pengaturan otomatis, kontrol butiran dan warna terpisah, tepi tetap tajam, pratinjau 100%. Gratis, tanpa unggah.",
+    keywords: [
+      "hapus noise foto",
+      "mengurangi noise foto",
+      "noise reduction online",
+      "menghilangkan bintik pada foto",
+      "foto malam berbintik"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Tingkat noise diukur dan pengaturan disarankan."
+      },
+      {
+        title: "Periksa dalam ukuran penuh",
+        description: "Klik foto untuk membandingkan detail pada 100%."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan dalam format yang sama dengan aslinya."
+      }
+    ],
+    features: [
+      {
+        title: "Pengaturan otomatis",
+        description: "Disarankan dari tingkat noise yang diukur."
+      },
+      {
+        title: "Butiran dan warna terpisah",
+        description: "Bintik warna bisa dihapus tanpa menghaluskan detail."
+      },
+      {
+        title: "Tepi tetap tajam",
+        description: "Area datar dihaluskan, tepinya tidak."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah foto saya akan terlihat seperti plastik?",
+        answer: "Tidak dengan pengaturan yang disarankan: pengaturannya disetel agar hasil foto mendekati aslinya yang bersih, bukan lebih halus. Pengaturan yang sangat kuat bisa menghaluskan tekstur halus seperti rumput atau kain, dan tampilan 100% akan menunjukkannya."
+      },
+      {
+        question: "Apa penyebab noise?",
+        answer: "Cahaya redup. Sensor ponsel yang kecil dan pengaturan ISO tinggi menambah butiran dan bintik berwarna, terutama di area gelap."
+      },
+      {
+        question: "Mengapa ada dua kontrol noise?",
+        answer: "Bintik warna bisa dihapus dengan kuat tanpa kehilangan detail, sedangkan butiran kecerahan perlu sentuhan lebih lembut agar teksturnya tetap ada."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "fix-white-balance": {
+    name: "Perbaiki White Balance",
+    shortName: "White Balance",
+    tagline: "Hilangkan warna kekuningan, kebiruan, atau kehijauan dari foto secara otomatis atau dengan memilih titik abu-abu. Gratis, di perangkat Anda.",
+    intro: "Perbaiki White Balance mengoreksi foto yang warnanya terlihat aneh: kekuningan di bawah lampu ruangan, kebiruan di tempat teduh, kehijauan di bawah beberapa jenis lampu. Klik Otomatis untuk koreksi cepat, atau klik sesuatu di foto yang seharusnya abu-abu atau putih, seperti dinding, kertas, atau awan, untuk hasil yang tepat. Slider suhu, rona, dan saturasi menyempurnakannya, dan Anda bisa menahan tombol untuk membandingkan dengan aslinya. Koreksi dilakukan dalam cahaya linear, seperti di kamera, jadi bagian terang tidak berubah warna.",
+    seoTitle: "Perbaiki White Balance Foto – Koreksi Warna Online Gratis",
+    seoDescription: "Perbaiki white balance online: koreksi otomatis atau pilih titik abu-abu, plus suhu, rona, dan saturasi. Hilangkan warna kuning dan biru. Gratis, tanpa unggah.",
+    keywords: [
+      "perbaiki white balance",
+      "koreksi warna foto online",
+      "foto kekuningan",
+      "menghilangkan warna kuning pada foto",
+      "white balance foto"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Letakkan atau pilih foto yang warnanya bergeser."
+      },
+      {
+        title: "Koreksi",
+        description: "Klik Otomatis, atau pilih sesuatu yang seharusnya abu-abu."
+      },
+      {
+        title: "Sempurnakan dan unduh",
+        description: "Atur suhu, rona, dan saturasi, lalu simpan."
+      }
+    ],
+    features: [
+      {
+        title: "Pilih titik abu-abu",
+        description: "Cara paling akurat untuk menetapkan warna netral."
+      },
+      {
+        title: "Koreksi otomatis",
+        description: "Perbaikan cepat untuk pemandangan sehari-hari."
+      },
+      {
+        title: "Hasil alami",
+        description: "Dikoreksi dalam cahaya linear; bagian terang tetap bersih."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa Otomatis kadang salah?",
+        answer: "White balance otomatis menebak cahaya dari warna-warna di foto. Jika satu warna memenuhi pemandangan, seperti matahari terbenam, padang hijau, atau dinding merah, tebakannya meleset. Memilih titik abu-abu atau putih selalu akurat."
+      },
+      {
+        question: "Apa yang harus saya klik dengan Pilih titik abu-abu?",
+        answer: "Apa saja yang seharusnya netral: kertas putih, dinding abu-abu, kemeja putih, atau awan. Hindari titik yang sangat terang dan sudah putih sepenuhnya di foto."
+      },
+      {
+        question: "Apakah format file berubah?",
+        answer: "Tidak. JPG tetap JPG berkualitas tinggi, dan PNG tetap PNG lossless."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "perspective-correction": {
+    name: "Koreksi Perspektif",
+    shortName: "Perspektif",
+    tagline: "Luruskan foto dokumen, papan tulis, atau papan nama yang diambil miring dengan menggeser keempat sudutnya. Gratis.",
+    intro: "Koreksi Perspektif meratakan apa pun yang difoto dari sudut miring, seperti dokumen di meja, papan tulis, poster, lukisan, atau papan nama gedung. Geser keempat sudut ke sudut objek, dan alat ini meluruskannya menjadi persegi panjang yang rapi, dengan detail sebanyak yang ada di foto. Biarkan bentuknya sesuai pilihan, atau jadikan A4, Letter, atau persegi. Pratinjau langsung berubah saat Anda menggeser sudut.",
+    seoTitle: "Koreksi Perspektif – Luruskan Foto Dokumen Miring, Gratis",
+    seoDescription: "Perbaiki perspektif foto online: geser empat sudut untuk meluruskan dokumen, papan tulis, atau papan nama jadi persegi panjang, A4, atau Letter. Gratis.",
+    keywords: [
+      "koreksi perspektif",
+      "meluruskan foto miring",
+      "luruskan foto dokumen",
+      "perbaiki perspektif foto",
+      "foto dokumen miring"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Foto yang diambil dari sudut miring."
+      },
+      {
+        title: "Geser sudutnya",
+        description: "Tempatkan keempat pegangan di sudut objek."
+      },
+      {
+        title: "Unduh",
+        description: "Pilih bentuknya dan simpan gambar yang sudah diluruskan."
+      }
+    ],
+    features: [
+      {
+        title: "Kontrol empat sudut",
+        description: "Geser dengan mouse atau jari, atau pindahkan dengan tombol panah."
+      },
+      {
+        title: "Detail tetap terjaga",
+        description: "Hasilnya sebesar yang dimungkinkan area yang dipilih."
+      },
+      {
+        title: "Bentuk kertas",
+        description: "Pertahankan bentuknya, atau jadikan A4, Letter, atau persegi."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bisakah halaman yang diluruskan dijadikan PDF?",
+        answer: "Unduh gambar yang sudah diluruskan, lalu gunakan JPG ke PDF untuk membuat PDF dari satu halaman atau lebih."
+      },
+      {
+        question: "Mengapa hasilnya terlihat melar?",
+        answer: "Pilih bentuk yang tepat: “Sesuai pilihan” memperkirakannya dari sudut-sudutnya, tetapi halaman yang difoto dari sudut yang sangat miring sebaiknya diatur ke A4 atau Letter."
+      },
+      {
+        question: "Apakah hasilnya setajam aslinya?",
+        answer: "Bagian yang jauh dari kamera memiliki lebih sedikit piksel, jadi hasilnya sedikit kurang tajam. Memotret selurus mungkin memberi hasil terbaik."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "photo-collage-maker": {
+    name: "Pembuat Kolase Foto",
+    shortName: "Kolase",
+    tagline: "Gabungkan 2 sampai 9 foto jadi kolase dengan tata letak siap pakai, jarak, dan sudut membulat. Gratis, tanpa daftar.",
+    intro: "Pembuat Kolase Foto menyusun 2 sampai 9 foto menjadi kolase. Pilih tata letak, bentuk untuk Instagram, Stories, postingan layar lebar, atau cetak A4, lalu atur jarak antarfoto, bingkai, sudut membulat, dan warna background. Klik foto mana pun di kolase untuk memperbesarnya atau memilih bagian yang terlihat. Kolase berukuran 2400 piksel di sisi terpanjangnya, cukup tajam untuk dicetak, dan dibuat sepenuhnya di perangkat Anda.",
+    seoTitle: "Pembuat Kolase Foto – Online Gratis, Tanpa Daftar",
+    seoDescription: "Buat kolase foto online: 2 sampai 9 foto, tata letak siap pakai, ukuran persegi, 4:5, 9:16, dan A4, jarak, dan sudut membulat. Gratis, tanpa daftar dan unggah.",
+    keywords: [
+      "kolase foto",
+      "membuat kolase foto online",
+      "aplikasi kolase foto",
+      "kolase foto instagram",
+      "menggabungkan foto jadi satu"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "2 sampai 9 foto, dengan urutan yang Anda inginkan."
+      },
+      {
+        title: "Pilih tata letak",
+        description: "Pilih tata letak, bentuk, jarak, dan warna."
+      },
+      {
+        title: "Bingkai dan unduh",
+        description: "Klik foto untuk mengatur pembingkaiannya, lalu simpan."
+      }
+    ],
+    features: [
+      {
+        title: "Tata letak siap pakai",
+        description: "Grid dan tata letak dengan foto utama untuk 2 sampai 9 foto."
+      },
+      {
+        title: "Ukuran media sosial dan cetak",
+        description: "1:1, 4:5, 9:16, 16:9, dan A4."
+      },
+      {
+        title: "Pembingkaian per foto",
+        description: "Zoom dan geser setiap foto di dalam ruangnya."
+      }
+    ],
+    faqs: [
+      {
+        question: "Seberapa besar kolasenya?",
+        answer: "2400 piksel di sisi terpanjangnya, misalnya 2400 × 2400 untuk kolase persegi, cukup untuk cetakan 20 cm pada 300 DPI."
+      },
+      {
+        question: "Bisakah memakai background transparan?",
+        answer: "Bisa: pilih PNG dan centang Transparan."
+      },
+      {
+        question: "Bisakah urutannya diubah?",
+        answer: "Bisa. Pindahkan foto ke atas atau ke bawah di daftar; foto pertama masuk ke ruang pertama tata letak."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "duplicate-photo-finder": {
+    name: "Pencari Foto Duplikat",
+    shortName: "Duplikat",
+    tagline: "Temukan foto duplikat dan yang hampir sama, termasuk salinan yang diubah ukurannya dan dikompres ulang. Gratis, tidak ada yang diunggah.",
+    intro: "Pencari Foto Duplikat membandingkan sekumpulan foto dan mengelompokkan foto yang merupakan salinan satu sama lain: file identik, salinan yang disimpan ulang, serta versi yang diubah ukurannya atau dikompres ulang, seperti foto yang dikirim lewat aplikasi chat. Pengaturan Mirip juga menemukan jepretan yang hampir sama, seperti foto beruntun. Di setiap grup, salinan terbesar dengan kompresi paling sedikit disimpan secara default, dan Anda bisa mengubah mana yang disimpan. Unduh foto tanpa duplikat sebagai ZIP, atau daftarnya untuk menghapusnya sendiri. Foto dibandingkan di perangkat Anda dan tidak pernah diunggah.",
+    seoTitle: "Pencari Foto Duplikat – Temukan Gambar Mirip, Gratis",
+    seoDescription: "Temukan foto duplikat online: salinan persis, versi yang diubah ukurannya atau dikompres ulang, dan foto mirip. Simpan salinan terbaik, unduh ZIP. Gratis.",
+    keywords: [
+      "mencari foto duplikat",
+      "hapus foto duplikat",
+      "cari gambar yang sama",
+      "pencari foto mirip",
+      "foto ganda"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto Anda",
+        description: "Letakkan foto satu folder sekaligus."
+      },
+      {
+        title: "Tinjau grupnya",
+        description: "Periksa setiap grup dan pilih salinan yang disimpan."
+      },
+      {
+        title: "Unduh",
+        description: "Dapatkan foto tanpa duplikat sebagai ZIP, atau daftarnya."
+      }
+    ],
+    features: [
+      {
+        title: "Menemukan salinan sebenarnya",
+        description: "Mencocokkan foto yang diubah ukurannya, dikompres ulang, dan disimpan ulang, bukan hanya file identik."
+      },
+      {
+        title: "Salinan terbaik disimpan",
+        description: "Salinan terbesar dengan kompresi paling sedikit dipilih secara default."
+      },
+      {
+        title: "Privat",
+        description: "Foto dibandingkan di perangkat Anda."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bisakah alat ini menghapus duplikat saya?",
+        answer: "Situs web tidak bisa menghapus file di perangkat Anda. Unduh foto tanpa duplikat sebagai ZIP, atau gunakan daftarnya untuk menghapus salinan tambahan sendiri."
+      },
+      {
+        question: "Bagaimana alat ini tahu dua foto itu sama?",
+        answer: "Alat ini membuat sidik jari kecil dari tampilan setiap foto, jadi salinan yang diubah ukurannya atau dikompres ulang tetap cocok. File identik dicocokkan secara persis."
+      },
+      {
+        question: "Berapa banyak foto yang bisa diperiksa?",
+        answer: "Ratusan sekaligus di sebagian besar komputer. Setiap foto langsung diperkecil menjadi sidik jari mungil setelah dibaca, jadi pemakaian memori tetap rendah."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "pixel-art-converter": {
+    name: "Konverter Pixel Art",
+    shortName: "Pixel Art",
+    tagline: "Ubah foto atau gambar menjadi pixel art dengan ukuran grid, palet warna, dan bayangan pilihan Anda. Gratis, di perangkat Anda.",
+    intro: "Konverter Pixel Art mengubah gambar apa pun menjadi pixel art. Pilih lebarnya dalam piksel, dari ikon mungil 8 piksel hingga pemandangan detail 256 piksel, dan berapa banyak warnanya: palet yang disesuaikan dengan gambar Anda, hitam putih, abu-abu, atau empat hijau retro. Bayangan datar, halus, atau berpola mengubah tampilannya. Unduh dengan piksel persegi yang diperbesar dan tajam serta garis grid opsional, atau dengan 1 piksel per kotak untuk game dan editor piksel.",
+    seoTitle: "Konverter Pixel Art – Ubah Foto Jadi Pixel Art, Gratis",
+    seoDescription: "Ubah foto jadi pixel art online: pilih ukuran grid, warna, dan bayangan, lalu unduh pixel art PNG yang tajam atau versi asli 1 piksel. Gratis, tanpa unggah.",
+    keywords: [
+      "pixel art converter",
+      "ubah foto jadi pixel art",
+      "gambar ke pixel art",
+      "pixelate gambar",
+      "konverter gambar 8 bit"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Foto, gambar, atau logo."
+      },
+      {
+        title: "Pilih ukuran dan warna",
+        description: "Atur lebar dalam piksel, palet, dan bayangan."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan sebagai PNG, diperbesar atau 1 piksel per kotak."
+      }
+    ],
+    features: [
+      {
+        title: "Palet yang disesuaikan",
+        description: "4 sampai 32 warna yang dipilih dari gambar Anda."
+      },
+      {
+        title: "Bayangan retro",
+        description: "Dithering datar, halus, atau berpola."
+      },
+      {
+        title: "Hasil tajam",
+        description: "Piksel persegi tanpa blur, dengan garis grid opsional."
+      }
+    ],
+    faqs: [
+      {
+        question: "Lebar berapa yang sebaiknya saya pilih?",
+        answer: "16 sampai 32 untuk ikon dan sprite, 64 untuk potret yang masih bisa dikenali, 128 atau lebih untuk pemandangan detail."
+      },
+      {
+        question: "Apa itu opsi bayangan?",
+        answer: "Halus dan Pola mencampur warna palet dalam titik-titik kecil agar terlihat ada lebih banyak gradasi, seperti di game lama. Datar memakai setiap warna apa adanya."
+      },
+      {
+        question: "Bisakah saya memakainya di game?",
+        answer: "Bisa. “1 piksel per kotak” mengunduh gambar dalam ukuran piksel aslinya, siap untuk game engine dan editor piksel."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. Foto diproses di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "pdf-to-grayscale": {
+    name: "PDF ke Hitam Putih",
+    shortName: "PDF → Hitam Putih",
+    tagline: "Ubah PDF berwarna menjadi hitam putih untuk dicetak, dengan teks tetap tajam dan bisa dipilih. Gratis.",
+    intro: "PDF ke Hitam Putih mengubah setiap warna dalam PDF menjadi gradasi abu-abu: teks, bentuk, grafik, dan foto. Alat ini berguna untuk melihat bagaimana dokumen tercetak di printer hitam putih, menghemat tinta warna, atau saat portal meminta file grayscale. Teks tetap berupa teks asli yang bisa dipilih dan bentuk tetap tajam, karena hanya warnanya yang berubah, bukan isinya. Foto dikonversi dalam resolusi penuh dengan kualitas tinggi.",
+    seoTitle: "PDF ke Hitam Putih – Ubah PDF Berwarna Jadi Grayscale",
+    seoDescription: "Ubah PDF berwarna jadi hitam putih (grayscale) online: teks tetap tajam dan bisa dipilih, foto tetap resolusi penuh. Untuk mencetak dan hemat tinta. Gratis.",
+    keywords: [
+      "pdf hitam putih",
+      "ubah pdf jadi hitam putih",
+      "pdf ke grayscale",
+      "convert pdf hitam putih online",
+      "menghilangkan warna pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan PDF Anda",
+        description: "Letakkan atau pilih PDF hingga 30 MB."
+      },
+      {
+        title: "Ubah",
+        description: "Setiap warna menjadi gradasi abu-abu."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan PDF hitam putih."
+      }
+    ],
+    features: [
+      {
+        title: "Teks tetap teks",
+        description: "Bisa dipilih dan dicari, tidak diubah menjadi gambar."
+      },
+      {
+        title: "Foto resolusi penuh",
+        description: "Gambar dikonversi tanpa diperkecil."
+      },
+      {
+        title: "Siap cetak",
+        description: "Lihat dan cetak persis seperti hasil printer hitam putih."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah teksnya masih bisa dipilih?",
+        answer: "Ya. Hanya warnanya yang berubah, jadi teks, tautan, dan tata letak halaman tetap seperti semula. Kolom formulir yang bisa diisi akan diratakan: isinya tetap ada di halaman, tetapi tidak bisa diisi lagi."
+      },
+      {
+        question: "Apakah PDF saya jadi lebih besar?",
+        answer: "Tergantung isinya. PDF dengan foto atau hasil pindaian biasanya menjadi lebih kecil, karena gambar abu-abu butuh lebih sedikit data; PDF yang sebagian besar berisi teks bisa sedikit membesar."
+      },
+      {
+        question: "Bisakah mengubah PDF yang dilindungi kata sandi?",
+        answer: "Hapus dulu kata sandinya dengan Buka Kunci PDF, lalu ubah."
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda."
+      }
+    ]
+  },
 };

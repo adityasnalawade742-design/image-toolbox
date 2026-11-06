@@ -18,6 +18,7 @@ import { nicheStrings } from './en/niche';
 import { pdfPackStrings } from './en/pdfpack';
 import { imagePackStrings } from './en/imagepack';
 import { calcPackStrings } from './en/calcpack';
+import { photoFixStrings } from './en/photofix';
 
 // Source of truth for interface text in React islands. Other locales translate these keys;
 // keep placeholders like {count} intact. Grouped by prefix so pickStrings() can ship sections.
@@ -116,6 +117,7 @@ export const en = {
   ...pdfPackStrings,
   ...imagePackStrings,
   ...calcPackStrings,
+  ...photoFixStrings,
 } as const;
 
 export type StringKey = keyof typeof en;

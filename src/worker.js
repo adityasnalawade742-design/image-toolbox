@@ -5,7 +5,7 @@
 // document server on Google Cloud Run.
 import { handleLinkCheck } from './linkcheck.js';
 
-const DOC_ENDPOINTS = new Set(['convert', 'compress', 'protect', 'unlock', 'repair', 'ocr', 'pdfa']);
+const DOC_ENDPOINTS = new Set(['convert', 'compress', 'protect', 'unlock', 'repair', 'ocr', 'pdfa', 'grayscale']);
 // Cloud Run accepts request bodies up to 32 MiB
 const MAX_BODY = 31 * 1024 * 1024;
 // Best-effort per-isolate limit; Cloudflare's own protections sit in front of this
