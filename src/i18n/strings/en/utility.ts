@@ -82,6 +82,7 @@ export const utilityStrings = {
   'ctl.analyzer.removeMetadata': 'Remove metadata',
   'ctl.analyzer.noExif': 'No camera EXIF data in this file.',
   'ctl.analyzer.readingExif': 'Reading metadata…',
+  'ctl.analyzer.allMetadata': 'See all metadata in EXIF Viewer',
 
   // EXIF tag labels (mapped from the reader's English labels)
   'ctl.exif.camera': 'Camera',

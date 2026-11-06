@@ -304,6 +304,7 @@ export const strings = {
   'ctl.analyzer.removeMetadata': '메타데이터 제거',
   'ctl.analyzer.noExif': '이 파일에는 카메라 EXIF 정보가 없어요.',
   'ctl.analyzer.readingExif': '메타데이터 읽는 중…',
+  'ctl.analyzer.allMetadata': 'EXIF 뷰어에서 모든 메타데이터 보기',
 
   // EXIF tag labels
   'ctl.exif.camera': '카메라',

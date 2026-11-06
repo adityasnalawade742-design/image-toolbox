@@ -5,6 +5,8 @@
 export interface ExifSummary {
   tags: { label: string; value: string }[];
   hasGps: boolean;
+  /** Where the photo was taken, when it records it */
+  gps?: { latitude: number; longitude: number };
 }
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -56,6 +58,7 @@ export async function readExifSummary(file: Blob): Promise<ExifSummary> {
   ];
 
   return {
+    ...(hasGps ? { gps: { latitude: data.latitude, longitude: data.longitude } } : {}),
     tags: candidates
       .filter((c): c is [string, string] => typeof c[1] === 'string' && c[1].trim() !== '')
       .map(([label, value]) => ({ label, value })),

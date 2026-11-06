@@ -1,5 +1,6 @@
 {
  "generic": [
+  "ctl.analyzer.allMetadata",
   "ctl.analyzer.alphaNone",
   "ctl.analyzer.alphaPresent",
   "ctl.analyzer.aspectRatio",
@@ -116,6 +117,7 @@
   "ctl.exif.orientation",
   "ctl.exif.software",
   "ctl.exif.taken",
+  "ctl.exifv.map",
   "ctl.flip.both",
   "ctl.flip.direction",
   "ctl.flip.horizontal",
@@ -3792,7 +3794,6 @@
    "ctl.exifv.gpsWarning",
    "ctl.exifv.lens",
    "ctl.exifv.location",
-   "ctl.exifv.map",
    "ctl.exifv.none",
    "ctl.exifv.note",
    "ctl.exifv.removeLink",

@@ -570,6 +570,7 @@ export const strings = {
   'ctl.analyzer.removeMetadata': "Supprimer les métadonnées",
   'ctl.analyzer.noExif': "Aucune donnée EXIF d’appareil photo dans ce fichier.",
   'ctl.analyzer.readingExif': "Lecture des métadonnées…",
+  'ctl.analyzer.allMetadata': 'Voir toutes les métadonnées dans la Visionneuse EXIF',
 
   // EXIF tag labels
   'ctl.exif.camera': "Appareil",
