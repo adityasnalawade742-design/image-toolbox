@@ -5,6 +5,7 @@ import { CATEGORY_INK } from '../../config/inks';
 import { showDefaultLang, defaultLang } from '../../i18n/ui';
 import { createT, type Strings } from '../../i18n/strings';
 import { trapTab } from './dialogFocus';
+import { rankTools } from '../../lib/search/rank';
 
 /** One tool, in the page's language. Built by Header.astro so the full tool content of every language stays out of the bundle. */
 export interface SearchItem {
@@ -13,6 +14,7 @@ export interface SearchItem {
   name: string;
   tagline: string;
   keywords: string[];
+  popular?: boolean;
 }
 
 interface Props {
@@ -73,8 +75,8 @@ export function ToolSearch({ locale = 'en', strings = {}, count, indexUrl }: Pro
     triggerRef.current?.focus();
   };
 
-  const q = query.trim().toLowerCase();
-  const filteredTools = items.filter((tool) => !q || [tool.slug, tool.name, tool.tagline, ...tool.keywords].some((s) => s.toLowerCase().includes(q)));
+  // Best matches first: understands "image to pdf", synonyms, partial words and small typos
+  const filteredTools = useMemo(() => rankTools(items, query), [items, query]);
 
   const getToolUrl = (slug: string) => (!showDefaultLang && locale === defaultLang ? `/${slug}` : `/${locale}/${slug}`);
 
