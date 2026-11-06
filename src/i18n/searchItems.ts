@@ -7,7 +7,7 @@ export function searchItems(locale: string): SearchItem[] {
   const localized = getAllLocalizedTools(locale as never);
   return TOOLS.map((tool) => {
     const loc = localized[tool.slug];
-    return { slug: tool.slug, category: tool.category, name: loc?.name || tool.name, tagline: loc?.tagline || tool.description, keywords: loc?.keywords || [] };
+    return { slug: tool.slug, category: tool.category, name: loc?.name || tool.name, tagline: loc?.tagline || tool.description, keywords: loc?.keywords || [], ...(tool.popular ? { popular: true } : {}) };
   });
 }
 
