@@ -46,7 +46,7 @@ export const ptUi: Record<string, string> = {
   'footer.accessibility': 'Acessibilidade',
   'footer.infoInEnglish': 'Estas páginas estão em inglês.',
   'footer.source': "Código-fonte (AGPL-3.0)",
-  'footer.toolCount': '{count} ferramentas · 10 idiomas · sem cadastro',
+  'footer.toolCount': '{count} ferramentas · 10 idiomas · sem cadastro',
   'home.moreTools': 'Ver mais {count}',
   'home.fewerTools': 'Ver menos',
   'workspace.uploadNew': 'Enviar outra imagem',

@@ -46,7 +46,7 @@ export const jaUi: Record<string, string> = {
   'footer.accessibility': 'アクセシビリティ',
   'footer.infoInEnglish': 'これらのページは英語です。',
   'footer.source': "ソースコード（AGPL-3.0）",
-  'footer.toolCount': '{count}個のツール · 10言語 · 登録不要',
+  'footer.toolCount': '{count}個のツール · 10言語 · 登録不要',
   'home.moreTools': 'さらに{count}件を表示',
   'home.fewerTools': '表示を減らす',
   'workspace.uploadNew': '別の画像をアップロード',
