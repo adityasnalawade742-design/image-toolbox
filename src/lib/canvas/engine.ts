@@ -575,6 +575,24 @@ export function downloadBlob(blob: Blob, filename: string) {
   a.click();
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+  reportDownload(filename);
+}
+
+/**
+ * Count a finished download in Google Analytics as `tool_download`: which tool and the file type only. The file, its
+ * name and its contents are never sent. Does nothing when analytics isn't loaded.
+ */
+export function reportDownload(filename: string) {
+  try {
+    const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+    if (typeof gtag !== 'function') return;
+    // "/ja/crop-image" -> "crop-image"
+    const tool = location.pathname.split('/').filter(Boolean).pop() || 'home';
+    const fileType = (/\.([a-z0-9]{1,8})$/i.exec(filename)?.[1] || 'other').toLowerCase();
+    gtag('event', 'tool_download', { tool, file_type: fileType });
+  } catch {
+    // Analytics must never break a download
+  }
 }
 
 // ICO file generator that wraps PNGs in an ICO container

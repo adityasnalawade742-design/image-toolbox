@@ -178,10 +178,7 @@ export function ImageSplitterWorkspace() {
 
       setZipProgress(90);
       const content = await zip.generateAsync({ type: 'blob' });
-      const link = document.createElement('a');
-      link.download = `split-grid-${rows}x${cols}-${Date.now()}.zip`;
-      link.href = URL.createObjectURL(content);
-      link.click();
+      downloadBlob(content, `split-grid-${rows}x${cols}-${Date.now()}.zip`);
       setZipProgress(100);
     } catch (err) {
       console.error('ZIP export failed:', err);

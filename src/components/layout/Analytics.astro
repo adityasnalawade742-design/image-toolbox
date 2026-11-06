@@ -24,9 +24,16 @@ const consentRegions = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'F
         const choice = localStorage.getItem('tf-consent');
         if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', { analytics_storage: choice });
       } catch (e) {}
-      gtag('js', new Date());
-      gtag('config', gaId);
+      // Automated browsers (the site's own tests, headless crawlers) aren't visitors: don't load the tag for them
+      const automated = navigator.webdriver || /HeadlessChrome|Lighthouse/i.test(navigator.userAgent);
+      if (!automated) {
+        gtag('js', new Date());
+        gtag('config', gaId);
+        const tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(tag);
+      }
     </script>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
   </>
 )}
