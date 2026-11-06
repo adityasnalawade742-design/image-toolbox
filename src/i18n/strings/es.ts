@@ -304,6 +304,7 @@ export const strings = {
   'ctl.analyzer.removeMetadata': 'Eliminar metadatos',
   'ctl.analyzer.noExif': 'Este archivo no tiene datos EXIF de cámara.',
   'ctl.analyzer.readingExif': 'Leyendo metadatos…',
+  'ctl.analyzer.allMetadata': 'Ver todos los metadatos en el Visor EXIF',
 
   // EXIF tag labels
   'ctl.exif.camera': 'Cámara',

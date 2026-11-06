@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { CheckCircle2, XCircle, Copy, Check, MapPin } from 'lucide-react';
 import { readExifSummary, type ExifSummary } from '../../lib/canvas/exifReader';
 import type { StringKey } from '../../i18n/strings';
-import { useT } from '../shared/I18nContext';
+import { useLocale, useT } from '../shared/I18nContext';
+import { defaultLang, showDefaultLang } from '../../i18n/ui';
 
 interface Props {
   filename: string;
@@ -43,6 +44,8 @@ export function AnalyzerControls({
   onRemoveMetadata,
 }: Props) {
   const t = useT();
+  const locale = useLocale();
+  const exifViewerUrl = !showDefaultLang && locale === defaultLang ? '/exif-viewer' : `/${locale}/exif-viewer`;
   const [copied, setCopied] = useState(false);
   const [exif, setExif] = useState<ExifSummary | null>(null);
 
@@ -178,7 +181,20 @@ export function AnalyzerControls({
             {exif.tags.map((tag) => (
               <div key={tag.label} className={row}>
                 <dt className="text-graphite">{exifLabel(tag.label)}</dt>
-                <dd className="text-ink font-semibold text-right min-w-0 break-words" data-measure>{tag.value}</dd>
+                <dd className="text-ink font-semibold text-right min-w-0 break-words" data-measure>
+                  {tag.value}
+                  {tag.label === 'GPS Location' && exif.gps && (
+                    <a
+                      href={`https://www.openstreetmap.org/?mlat=${exif.gps.latitude.toFixed(5)}&mlon=${exif.gps.longitude.toFixed(5)}#map=15/${exif.gps.latitude.toFixed(5)}/${exif.gps.longitude.toFixed(5)}`}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="ml-2 inline-flex items-center gap-1 font-normal underline hover:no-underline"
+                    >
+                      <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+                      {t('ctl.exifv.map')}
+                    </a>
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
@@ -186,6 +202,11 @@ export function AnalyzerControls({
           <p className="border border-pencil bg-paper-stock px-3 py-2.5 text-[14px] text-graphite">
             {exif ? t('ctl.analyzer.noExif') : t('ctl.analyzer.readingExif')}
           </p>
+        )}
+        {exif && (
+          <a href={exifViewerUrl} className="inline-flex items-center min-h-[40px] text-[14px] text-ink underline hover:no-underline">
+            {t('ctl.analyzer.allMetadata')}
+          </a>
         )}
       </div>
     </div>
