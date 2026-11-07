@@ -32,7 +32,10 @@ export function createT(strings: Strings) {
       const w = window as unknown as { __missingStrings?: Set<string> };
       (w.__missingStrings ??= new Set()).add(key);
     }
-    let text = strings[key] ?? en[key] ?? key;
+    // A count of exactly 1 uses the `<key>.one` form when there is one ("1 page", not "1 pages")
+    const one = vars?.n === 1 ? (`${key}.one` as StringKey) : null;
+    const k = one && (strings[one] ?? en[one]) !== undefined ? one : key;
+    let text = strings[k] ?? en[k] ?? key;
     if (vars) for (const [name, value] of Object.entries(vars)) text = text.split(`{${name}}`).join(String(value));
     return text;
   };

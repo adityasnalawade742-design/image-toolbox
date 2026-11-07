@@ -19,6 +19,7 @@ export const newToolStrings = {
   'ctl.kb.formatNote': 'JPG works on almost every form. WebP is smaller but not always accepted.',
   'ctl.kb.working': 'Compressing…',
   'ctl.kb.fits': '{size}, under the {target} limit.',
+  'ctl.kb.kept': 'It was already under the limit, so the original is kept, with only its hidden metadata removed.',
   'ctl.kb.shrunk': 'The dimensions were reduced to {w} × {h} px to fit.',
   'ctl.kb.noFit': 'This can’t get under {target} at {w} × {h} px; the smallest is {size}. Choose a higher limit, or Keep size.',
   'ctl.kb.resultAlt': 'Compressed result',
@@ -50,6 +51,7 @@ export const newToolStrings = {
   'ctl.topdf.marginLarge': 'Large',
   'ctl.topdf.creating': 'Creating PDF… page {n} of {total}',
   'ctl.topdf.done': 'PDF created with {n} pages.',
+  'ctl.topdf.done.one': 'PDF created with {n} page.',
 
   // PDF to JPG
   'ctl.frompdf.dropTitle': 'Drop a PDF here',

@@ -640,6 +640,7 @@ export const strings = {
   'ctl.kb.formatNote': "Le JPG fonctionne sur presque tous les formulaires. Le WebP est plus léger mais pas toujours accepté.",
   'ctl.kb.working': "Compression…",
   'ctl.kb.fits': "{size}, sous la limite de {target}.",
+  'ctl.kb.kept': "Elle était déjà sous la limite : l’original est donc conservé, seules ses métadonnées cachées sont supprimées.",
   'ctl.kb.shrunk': "Les dimensions ont été réduites à {w} × {h} px pour tenir.",
   'ctl.kb.noFit': "Impossible de passer sous {target} à {w} × {h} px ; le minimum est {size}. Choisissez une limite plus haute, ou « Garder la taille ».",
   'ctl.kb.resultAlt': "Résultat compressé",
@@ -671,6 +672,7 @@ export const strings = {
   'ctl.topdf.marginLarge': "Grande",
   'ctl.topdf.creating': "Création du PDF… page {n} sur {total}",
   'ctl.topdf.done': "PDF créé avec {n} pages.",
+  'ctl.topdf.done.one': "PDF créé avec {n} page.",
 
   // PDF to JPG
   'ctl.frompdf.dropTitle': "Déposez un PDF ici",
@@ -716,6 +718,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': "Deux fichiers PDF ou plus. Ils sont combinés sur votre appareil et ne sont jamais envoyés.",
   'ctl.pdf.pageN': "Page {n}",
   'ctl.pdf.pagesCount': "{n} pages",
+  'ctl.pdf.pagesCount.one': "{n} page",
   'ctl.pdf.working': "Traitement…",
   'ctl.pdf.done': "Terminé : {name} est en cours de téléchargement.",
   'ctl.pdf.downloadZip': "Télécharger le ZIP",
@@ -1090,6 +1093,7 @@ export const strings = {
   'ctl.bulkcode.zipping': "Préparation du ZIP…",
   'ctl.bulkcode.download': "Télécharger le ZIP ({n})",
   'ctl.bulkcode.done': "{n} codes enregistrés dans {name}.",
+  'ctl.bulkcode.done.one': "{n} code enregistré dans {name}.",
   'ctl.qr.kind.whatsapp': "WhatsApp",
   'ctl.qr.kind.location': "Localisation",
   'ctl.qr.kind.payment': "Paiement",
@@ -1654,6 +1658,7 @@ export const strings = {
   'ctl.annot.delete': "Supprimer",
   'ctl.annot.count': "Annotations : {n}",
   'ctl.annot.canvas': "Image avec {n} annotations ; dessinez dessus avec l’outil choisi",
+  'ctl.annot.canvas.one': "Image avec {n} annotation ; dessinez dessus avec l’outil choisi",
   'ctl.appicon.download': "Télécharger les icônes (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "Couleur",
@@ -1844,6 +1849,7 @@ export const strings = {
   'ctl.dupes.dropHint': "Ajoutez d’un coup les photos de tout un dossier. Elles sont comparées sur votre appareil et jamais envoyées.",
   'ctl.dupes.reading': "Lecture des photos… {done} sur {total}",
   'ctl.dupes.count': "{n} photos",
+  'ctl.dupes.count.one': "{n} photo",
   'ctl.dupes.summary': "Groupes de doublons : {groups} · À supprimer : {remove} ({size})",
   'ctl.dupes.none': "Aucun doublon trouvé.",
   'ctl.dupes.noneLong': "Aucun doublon parmi ces {n} photos. Essayez « Similaires » si vous en attendiez.",

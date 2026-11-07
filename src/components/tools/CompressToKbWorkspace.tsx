@@ -6,6 +6,7 @@ import { useT } from '../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../lib/canvas/loadImage';
 import { compressToTarget, type TargetFormat, type TargetResult } from '../../lib/canvas/targetSize';
 import { downloadBlob } from '../../lib/canvas/engine';
+import { stripMetadata } from '../../lib/canvas/stripMetadata';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import { outputFileName } from '../../lib/storage/fileNames';
 
@@ -32,7 +33,7 @@ export function CompressToKbWorkspace() {
   const [customW, setCustomW] = useState(600);
   const [customH, setCustomH] = useState(800);
   const [format, setFormat] = useState<TargetFormat>('image/jpeg');
-  const [result, setResult] = useState<(TargetResult & { url: string }) | null>(null);
+  const [result, setResult] = useState<(TargetResult & { url: string; kept?: boolean }) | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -61,7 +62,16 @@ export function CompressToKbWorkspace() {
     setBusy(true);
     const timer = setTimeout(async () => {
       try {
-        const r = await compressToTarget(source.img, source.width, source.height, { maxBytes: targetKb * 1024, format, exactSize });
+        // Already under the limit in the chosen format: re-encoding could only make it bigger or worse, so the
+        // original is kept, with its metadata (camera, GPS) removed losslessly as the re-encoded file would have
+        const type = source.file.type === 'image/jpg' ? 'image/jpeg' : source.file.type;
+        let r: TargetResult & { kept?: boolean };
+        const clean = !exactSize && type === format && source.file.size <= targetKb * 1024 ? stripMetadata(new Uint8Array(await source.file.arrayBuffer())) : null;
+        if (clean && clean.length <= targetKb * 1024) {
+          r = { blob: new Blob([clean as BlobPart], { type: format }), quality: 1, width: source.width, height: source.height, fits: true, kept: true };
+        } else {
+          r = await compressToTarget(source.img, source.width, source.height, { maxBytes: targetKb * 1024, format, exactSize });
+        }
         if (id !== runId.current) return;
         setResult((prev) => {
           if (prev) URL.revokeObjectURL(prev.url);
@@ -139,7 +149,7 @@ export function CompressToKbWorkspace() {
               <span className="flex items-baseline gap-2">
                 <span className="slug">{t('ws.output')}</span>
                 <span className="text-ink font-semibold">{result.width} × {result.height} px</span>
-                <span className="text-graphite">{kb(result.blob.size)} · {t('ws.quality')} {Math.round(result.quality * 100)}%</span>
+                <span className="text-graphite">{kb(result.blob.size)}{result.kept ? '' : ` · ${t('ws.quality')} ${Math.round(result.quality * 100)}%`}</span>
               </span>
             )}
             {result && (
@@ -164,6 +174,7 @@ export function CompressToKbWorkspace() {
                   <span>
                     <strong className="font-semibold">{t('ctl.kb.fits', { size: kb(result.blob.size), target: kbLabel(targetKb) })}</strong>
                     {shrunk && <> {t('ctl.kb.shrunk', { w: result.width, h: result.height })}</>}
+                    {result.kept && <> {t('ctl.kb.kept')}</>}
                   </span>
                 </p>
               ) : (

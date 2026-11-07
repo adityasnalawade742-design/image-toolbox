@@ -643,6 +643,7 @@ export const strings = {
   'ctl.kb.formatNote': 'Il JPG funziona su quasi tutti i moduli. Il WebP è più leggero ma non sempre accettato.',
   'ctl.kb.working': 'Compressione…',
   'ctl.kb.fits': '{size}, sotto il limite di {target}.',
+  'ctl.kb.kept': "Era già sotto il limite, quindi l’originale viene mantenuto, solo senza i metadati nascosti.",
   'ctl.kb.shrunk': 'Le dimensioni sono state ridotte a {w} × {h} px per rientrare nel limite.',
   'ctl.kb.noFit': 'Impossibile scendere sotto {target} a {w} × {h} px; il minimo è {size}. Scegli un limite più alto, oppure Mantieni dimensioni.',
   'ctl.kb.resultAlt': 'Risultato compresso',
@@ -674,6 +675,7 @@ export const strings = {
   'ctl.topdf.marginLarge': 'Grande',
   'ctl.topdf.creating': 'Creazione del PDF… pagina {n} di {total}',
   'ctl.topdf.done': 'PDF creato con {n} pagine.',
+  'ctl.topdf.done.one': "PDF creato con {n} pagina.",
 
   // PDF to JPG
   'ctl.frompdf.dropTitle': 'Trascina qui un PDF',
@@ -719,6 +721,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': 'Due o più file PDF. Vengono uniti sul tuo dispositivo e non vengono mai caricati.',
   'ctl.pdf.pageN': 'Pagina {n}',
   'ctl.pdf.pagesCount': '{n} pagine',
+  'ctl.pdf.pagesCount.one': "{n} pagina",
   'ctl.pdf.working': 'Elaborazione…',
   'ctl.pdf.done': 'Fatto: download di {name} in corso.',
   'ctl.pdf.downloadZip': 'Scarica ZIP',
@@ -1129,6 +1132,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'Creazione dello ZIP…',
   'ctl.bulkcode.download': 'Scarica ZIP ({n})',
   'ctl.bulkcode.done': '{n} codici salvati in {name}.',
+  'ctl.bulkcode.done.one': "{n} codice salvato in {name}.",
   // QR Code Generator: WhatsApp, location and payment
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': 'Posizione',
@@ -1694,6 +1698,7 @@ export const strings = {
   'ctl.annot.delete': "Elimina",
   'ctl.annot.count': "Segni: {n}",
   'ctl.annot.canvas': "Immagine con {n} segni; disegnaci sopra con lo strumento scelto",
+  'ctl.annot.canvas.one': "Immagine con {n} segno; disegnaci sopra con lo strumento scelto",
   'ctl.appicon.download': "Scarica le icone (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "Colore",
@@ -1884,6 +1889,7 @@ export const strings = {
   'ctl.dupes.dropHint': "Aggiungi in una volta le foto di un’intera cartella. Vengono confrontate sul tuo dispositivo e non vengono mai caricate.",
   'ctl.dupes.reading': "Lettura delle foto… {done} di {total}",
   'ctl.dupes.count': "{n} foto",
+  'ctl.dupes.count.one': "{n} foto",
   'ctl.dupes.summary': "Gruppi di duplicati: {groups} · Da rimuovere: {remove} ({size})",
   'ctl.dupes.none': "Nessun duplicato trovato.",
   'ctl.dupes.noneLong': "Nessun duplicato tra queste {n} foto. Prova “Simili” se te ne aspettavi qualcuno.",

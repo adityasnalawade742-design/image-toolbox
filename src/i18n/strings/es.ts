@@ -643,6 +643,7 @@ export const strings = {
   'ctl.kb.formatNote': 'JPG funciona en casi todos los formularios. WebP pesa menos, pero no siempre se acepta.',
   'ctl.kb.working': 'Comprimiendo…',
   'ctl.kb.fits': '{size}, por debajo del límite de {target}.',
+  'ctl.kb.kept': "Ya estaba por debajo del límite, así que se conserva el original, solo sin sus metadatos ocultos.",
   'ctl.kb.shrunk': 'Las dimensiones se redujeron a {w} × {h} px para que quepa.',
   'ctl.kb.noFit': 'No se puede bajar de {target} a {w} × {h} px; lo mínimo es {size}. Elige un límite más alto o Mantener tamaño.',
   'ctl.kb.resultAlt': 'Resultado comprimido',
@@ -674,6 +675,7 @@ export const strings = {
   'ctl.topdf.marginLarge': 'Grande',
   'ctl.topdf.creating': 'Creando PDF… página {n} de {total}',
   'ctl.topdf.done': 'PDF creado con {n} páginas.',
+  'ctl.topdf.done.one': "PDF creado con {n} página.",
 
   // PDF to JPG
   'ctl.frompdf.dropTitle': 'Suelta un PDF aquí',
@@ -719,6 +721,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': 'Dos o más archivos PDF. Se unen en tu dispositivo y nunca se suben.',
   'ctl.pdf.pageN': 'Página {n}',
   'ctl.pdf.pagesCount': '{n} páginas',
+  'ctl.pdf.pagesCount.one': "{n} página",
   'ctl.pdf.working': 'Procesando…',
   'ctl.pdf.done': 'Listo: {name} se está descargando.',
   'ctl.pdf.downloadZip': 'Descargar ZIP',
@@ -1093,6 +1096,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'Preparando el ZIP…',
   'ctl.bulkcode.download': 'Descargar ZIP ({n})',
   'ctl.bulkcode.done': '{n} códigos guardados en {name}.',
+  'ctl.bulkcode.done.one': "{n} código guardado en {name}.",
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': 'Ubicación',
   'ctl.qr.kind.payment': 'Pago',
@@ -1657,6 +1661,7 @@ export const strings = {
   'ctl.annot.delete': "Eliminar",
   'ctl.annot.count': "Marcas: {n}",
   'ctl.annot.canvas': "Imagen con {n} marcas; dibuja en ella con la herramienta elegida",
+  'ctl.annot.canvas.one': "Imagen con {n} marca; dibuja en ella con la herramienta elegida",
   'ctl.appicon.download': "Descargar iconos (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "Color",
@@ -1847,6 +1852,7 @@ export const strings = {
   'ctl.dupes.dropHint': "Añade de una vez las fotos de toda una carpeta. Se comparan en tu dispositivo y nunca se suben.",
   'ctl.dupes.reading': "Leyendo fotos… {done} de {total}",
   'ctl.dupes.count': "{n} fotos",
+  'ctl.dupes.count.one': "{n} foto",
   'ctl.dupes.summary': "Grupos de duplicados: {groups} · Para quitar: {remove} ({size})",
   'ctl.dupes.none': "No se han encontrado duplicados.",
   'ctl.dupes.noneLong': "No hay duplicados entre estas {n} fotos. Prueba «Similares» si esperabas alguno.",

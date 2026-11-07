@@ -61,6 +61,7 @@ export const barcodeStrings = {
   'ctl.bulkcode.zipping': 'Packing the ZIP…',
   'ctl.bulkcode.download': 'Download ZIP ({n})',
   'ctl.bulkcode.done': '{n} codes saved in {name}.',
+  'ctl.bulkcode.done.one': '{n} code saved in {name}.',
   // New QR types
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': 'Location',

@@ -7,6 +7,7 @@ export const pdfStrings = {
   'ctl.pdf.dropHintMany': 'Two or more PDF files. They are combined on your device and never uploaded.',
   'ctl.pdf.pageN': 'Page {n}',
   'ctl.pdf.pagesCount': '{n} pages',
+  'ctl.pdf.pagesCount.one': '{n} page',
   'ctl.pdf.working': 'Working…',
   'ctl.pdf.done': 'Done: {name} is downloading.',
   'ctl.pdf.downloadZip': 'Download ZIP',

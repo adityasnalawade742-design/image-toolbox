@@ -643,6 +643,7 @@ export const strings = {
   'ctl.kb.formatNote': 'JPG bisa dipakai di hampir semua formulir. WebP lebih kecil, tetapi tidak selalu diterima.',
   'ctl.kb.working': 'Mengompres…',
   'ctl.kb.fits': '{size}, di bawah batas {target}.',
+  'ctl.kb.kept': "Ukurannya sudah di bawah batas, jadi file asli tetap dipakai, hanya metadata tersembunyinya yang dihapus.",
   'ctl.kb.shrunk': 'Dimensi diperkecil menjadi {w} × {h} px agar muat.',
   'ctl.kb.noFit': 'Foto ini tidak bisa di bawah {target} pada {w} × {h} px; ukuran terkecilnya {size}. Pilih batas yang lebih tinggi, atau Ukuran asli.',
   'ctl.kb.resultAlt': 'Hasil kompresi',
@@ -674,6 +675,7 @@ export const strings = {
   'ctl.topdf.marginLarge': 'Besar',
   'ctl.topdf.creating': 'Membuat PDF… halaman {n} dari {total}',
   'ctl.topdf.done': 'PDF berisi {n} halaman berhasil dibuat.',
+  'ctl.topdf.done.one': "PDF berisi {n} halaman berhasil dibuat.",
 
   // ===== PDF to JPG =====
   'ctl.frompdf.dropTitle': 'Letakkan PDF di sini',
@@ -719,6 +721,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': 'Dua file PDF atau lebih. Digabungkan di perangkat Anda dan tidak pernah diunggah.',
   'ctl.pdf.pageN': 'Halaman {n}',
   'ctl.pdf.pagesCount': '{n} halaman',
+  'ctl.pdf.pagesCount.one': "{n} halaman",
   'ctl.pdf.working': 'Memproses…',
   'ctl.pdf.done': 'Selesai: {name} sedang diunduh.',
   'ctl.pdf.downloadZip': 'Unduh ZIP',
@@ -1129,6 +1132,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'Mengemas ZIP…',
   'ctl.bulkcode.download': 'Unduh ZIP ({n})',
   'ctl.bulkcode.done': '{n} kode disimpan di {name}.',
+  'ctl.bulkcode.done.one': "{n} kode disimpan di {name}.",
   // QR Code Generator: WhatsApp, location and payment
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': 'Lokasi',
@@ -1694,6 +1698,7 @@ export const strings = {
   'ctl.annot.delete': "Hapus",
   'ctl.annot.count': "Tanda: {n}",
   'ctl.annot.canvas': "Gambar dengan {n} tanda; gambar di atasnya dengan alat yang dipilih",
+  'ctl.annot.canvas.one': "Gambar dengan {n} tanda; gambar di atasnya dengan alat yang dipilih",
   'ctl.appicon.download': "Unduh ikon (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "Warna",
@@ -1884,6 +1889,7 @@ export const strings = {
   'ctl.dupes.dropHint': "Tambahkan foto satu folder sekaligus. Foto dibandingkan di perangkat Anda dan tidak pernah diunggah.",
   'ctl.dupes.reading': "Membaca foto… {done} dari {total}",
   'ctl.dupes.count': "{n} foto",
+  'ctl.dupes.count.one': "{n} foto",
   'ctl.dupes.summary': "Grup duplikat: {groups} · Akan dihapus: {remove} ({size})",
   'ctl.dupes.none': "Tidak ada duplikat.",
   'ctl.dupes.noneLong': "Tidak ada duplikat di antara {n} foto ini. Coba “Mirip” jika Anda yakin ada.",

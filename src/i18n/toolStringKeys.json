@@ -566,6 +566,7 @@
    "ctl.kb.fits",
    "ctl.kb.formatNote",
    "ctl.kb.kbNote",
+   "ctl.kb.kept",
    "ctl.kb.noFit",
    "ctl.kb.resultAlt",
    "ctl.kb.shrunk",

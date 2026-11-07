@@ -643,6 +643,7 @@ export const strings = {
   'ctl.kb.formatNote': 'JPG neredeyse her formda çalışır. WebP daha küçüktür ama her zaman kabul edilmez.',
   'ctl.kb.working': 'Sıkıştırılıyor…',
   'ctl.kb.fits': '{size}, {target} sınırının altında.',
+  'ctl.kb.kept': "Zaten sınırın altındaydı, bu yüzden orijinal korunur; yalnızca gizli meta verileri kaldırılır.",
   'ctl.kb.shrunk': 'Sığması için ölçüler {w} × {h} px olarak küçültüldü.',
   'ctl.kb.noFit': '{w} × {h} px ölçüde {target} sınırının altına inilemiyor; en küçük boyut: {size}. Daha yüksek bir sınır veya Ölçüleri koru seçeneğini seçin.',
   'ctl.kb.resultAlt': 'Sıkıştırılmış sonuç',
@@ -674,6 +675,7 @@ export const strings = {
   'ctl.topdf.marginLarge': 'Büyük',
   'ctl.topdf.creating': 'PDF oluşturuluyor… sayfa {n} / {total}',
   'ctl.topdf.done': 'PDF oluşturuldu. Sayfa sayısı: {n}.',
+  'ctl.topdf.done.one': "PDF oluşturuldu. Sayfa sayısı: {n}.",
 
   // PDF to JPG
   'ctl.frompdf.dropTitle': 'Bir PDF’i buraya bırakın',
@@ -719,6 +721,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': 'İki veya daha fazla PDF dosyası. Cihazınızda birleştirilir ve asla yüklenmez.',
   'ctl.pdf.pageN': 'Sayfa {n}',
   'ctl.pdf.pagesCount': '{n} sayfa',
+  'ctl.pdf.pagesCount.one': "{n} sayfa",
   'ctl.pdf.working': 'İşleniyor…',
   'ctl.pdf.done': 'Tamamlandı, indiriliyor: {name}',
   'ctl.pdf.downloadZip': 'ZIP indir',
@@ -1126,6 +1129,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'ZIP hazırlanıyor…',
   'ctl.bulkcode.download': 'ZIP indir ({n})',
   'ctl.bulkcode.done': '{n} kod {name} dosyasına kaydedildi.',
+  'ctl.bulkcode.done.one': "{n} kod {name} dosyasına kaydedildi.",
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': 'Konum',
   'ctl.qr.kind.payment': 'Ödeme',
@@ -1690,6 +1694,7 @@ export const strings = {
   'ctl.annot.delete': "Sil",
   'ctl.annot.count': "İşaret sayısı: {n}",
   'ctl.annot.canvas': "İşaret sayısı {n} olan resim; seçilen araçla üzerine çizin",
+  'ctl.annot.canvas.one': "İşaret sayısı {n} olan resim; seçilen araçla üzerine çizin",
   'ctl.appicon.download': "Simgeleri indir (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "Renk",
@@ -1880,6 +1885,7 @@ export const strings = {
   'ctl.dupes.dropHint': "Bir klasör dolusu fotoğrafı tek seferde ekleyin. Fotoğraflar cihazınızda karşılaştırılır ve asla yüklenmez.",
   'ctl.dupes.reading': "Fotoğraflar okunuyor… {done} / {total}",
   'ctl.dupes.count': "{n} fotoğraf",
+  'ctl.dupes.count.one': "{n} fotoğraf",
   'ctl.dupes.summary': "Kopya grupları: {groups} · Kaldırılacak: {remove} ({size})",
   'ctl.dupes.none': "Kopya bulunamadı.",
   'ctl.dupes.noneLong': "Bu {n} fotoğraf arasında kopya yok. Kopya olmasını bekliyorsanız “Benzer” seçeneğini deneyin.",

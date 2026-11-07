@@ -143,4 +143,5 @@ export const imagePackStrings = {
   'ctl.annot.delete': 'Delete',
   'ctl.annot.count': 'Marks: {n}',
   'ctl.annot.canvas': 'Picture with {n} marks; draw on it with the chosen tool',
+  'ctl.annot.canvas.one': 'Picture with {n} mark; draw on it with the chosen tool',
 };
