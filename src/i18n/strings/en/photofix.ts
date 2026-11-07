@@ -83,6 +83,7 @@ export const photoFixStrings = {
   'ctl.dupes.dropHint': 'Add a folder’s worth of photos at once. They are compared on your device and never uploaded.',
   'ctl.dupes.reading': 'Reading photos… {done} of {total}',
   'ctl.dupes.count': '{n} photos',
+  'ctl.dupes.count.one': '{n} photo',
   'ctl.dupes.summary': 'Groups of duplicates: {groups} · To remove: {remove} ({size})',
   'ctl.dupes.none': 'No duplicates found.',
   'ctl.dupes.noneLong': 'No duplicates among these {n} photos. Try “Similar” if you expected some.',

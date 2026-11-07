@@ -648,6 +648,7 @@ export const strings = {
   'ctl.kb.formatNote': 'JPGはほとんどのフォームで使えます。WebPはより小さくなりますが、受け付けられないこともあります。',
   'ctl.kb.working': '圧縮中…',
   'ctl.kb.fits': '{size}。上限の{target}を下回りました。',
+  'ctl.kb.kept': "すでに上限より小さいため、元の画像をそのまま使い、隠れたメタデータだけを削除しました。",
   'ctl.kb.shrunk': '上限に収めるため、縦横サイズを{w} × {h} pxに縮小しました。',
   'ctl.kb.noFit': '{w} × {h} pxでは{target}未満にできません。最小で{size}です。上限を上げるか、「元のサイズ」を選んでください。',
   'ctl.kb.resultAlt': '圧縮結果',
@@ -679,6 +680,7 @@ export const strings = {
   'ctl.topdf.marginLarge': '大',
   'ctl.topdf.creating': 'PDFを作成中… {total}ページ中{n}ページ目',
   'ctl.topdf.done': '{n}ページのPDFを作成しました。',
+  'ctl.topdf.done.one': "{n}ページのPDFを作成しました。",
 
   // ===== PDF to JPG =====
   'ctl.frompdf.dropTitle': 'ここにPDFをドロップ',
@@ -724,6 +726,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': '2つ以上のPDFファイル。端末上で結合され、アップロードされることはありません。',
   'ctl.pdf.pageN': '{n}ページ目',
   'ctl.pdf.pagesCount': '{n}ページ',
+  'ctl.pdf.pagesCount.one': "{n}ページ",
   'ctl.pdf.working': '処理中…',
   'ctl.pdf.done': '完了：{name} をダウンロードしています。',
   'ctl.pdf.downloadZip': 'ZIPをダウンロード',
@@ -1130,6 +1133,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'ZIPにまとめています…',
   'ctl.bulkcode.download': 'ZIPをダウンロード（{n}件）',
   'ctl.bulkcode.done': '{n}件のコードを{name}に保存しました。',
+  'ctl.bulkcode.done.one': "{n}件のコードを{name}に保存しました。",
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': '位置情報',
   'ctl.qr.kind.payment': '支払い',
@@ -1694,6 +1698,7 @@ export const strings = {
   'ctl.annot.delete': "削除",
   'ctl.annot.count': "注釈：{n}",
   'ctl.annot.canvas': "{n}個の注釈がある画像。選んだツールで描き込めます",
+  'ctl.annot.canvas.one': "{n}個の注釈がある画像。選んだツールで描き込めます",
   'ctl.appicon.download': "アイコンをダウンロード（ZIP）",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "色",
@@ -1884,6 +1889,7 @@ export const strings = {
   'ctl.dupes.dropHint': "フォルダ内の写真をまとめて追加できます。比較はお使いの端末上で行われ、アップロードされることはありません。",
   'ctl.dupes.reading': "写真を読み込み中… {done} / {total}",
   'ctl.dupes.count': "{n}枚の写真",
+  'ctl.dupes.count.one': "{n}枚の写真",
   'ctl.dupes.summary': "重複グループ：{groups} · 削除対象：{remove}（{size}）",
   'ctl.dupes.none': "重複は見つかりませんでした。",
   'ctl.dupes.noneLong': "この{n}枚の写真に重複はありません。重複があるはずの場合は「類似」をお試しください。",

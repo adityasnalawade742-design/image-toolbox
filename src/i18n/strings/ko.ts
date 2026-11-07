@@ -643,6 +643,7 @@ export const strings = {
   'ctl.kb.formatNote': 'JPG는 거의 모든 양식에서 받아 줘요. WebP는 더 작지만 받지 않는 곳도 있어요.',
   'ctl.kb.working': '압축 중…',
   'ctl.kb.fits': '{size}, {target} 제한보다 작아요.',
+  'ctl.kb.kept': "이미 제한보다 작아서 원본을 그대로 두고, 숨겨진 메타데이터만 삭제했어요.",
   'ctl.kb.shrunk': '제한에 맞추려고 가로세로 크기를 {w} × {h} px로 줄였어요.',
   'ctl.kb.noFit': '{w} × {h} px로는 {target} 아래로 줄일 수 없어요. 가장 작은 크기는 {size}예요. 제한을 높이거나 ‘원래 크기’를 고르세요.',
   'ctl.kb.resultAlt': '압축 결과',
@@ -674,6 +675,7 @@ export const strings = {
   'ctl.topdf.marginLarge': '넓게',
   'ctl.topdf.creating': 'PDF 만드는 중… {total}페이지 중 {n}페이지',
   'ctl.topdf.done': '{n}페이지짜리 PDF를 만들었어요.',
+  'ctl.topdf.done.one': "{n}페이지짜리 PDF를 만들었어요.",
 
   // ===== PDF to JPG =====
   'ctl.frompdf.dropTitle': '여기에 PDF를 놓으세요',
@@ -719,6 +721,7 @@ export const strings = {
   'ctl.pdf.dropHintMany': 'PDF 파일 두 개 이상. 내 기기에서 합쳐지고 업로드되지 않아요.',
   'ctl.pdf.pageN': '{n}페이지',
   'ctl.pdf.pagesCount': '{n}페이지',
+  'ctl.pdf.pagesCount.one': "{n}페이지",
   'ctl.pdf.working': '처리 중…',
   'ctl.pdf.done': '완료: {name} 다운로드 중이에요.',
   'ctl.pdf.downloadZip': 'ZIP 다운로드',
@@ -1125,6 +1128,7 @@ export const strings = {
   'ctl.bulkcode.zipping': 'ZIP으로 묶는 중…',
   'ctl.bulkcode.download': 'ZIP 다운로드({n}개)',
   'ctl.bulkcode.done': '코드 {n}개를 {name}에 저장했어요.',
+  'ctl.bulkcode.done.one': "코드 {n}개를 {name}에 저장했어요.",
   'ctl.qr.kind.whatsapp': 'WhatsApp',
   'ctl.qr.kind.location': '위치',
   'ctl.qr.kind.payment': '결제',
@@ -1689,6 +1693,7 @@ export const strings = {
   'ctl.annot.delete': "삭제",
   'ctl.annot.count': "표시: {n}개",
   'ctl.annot.canvas': "표시 {n}개가 있는 이미지. 선택한 도구로 그 위에 그리세요",
+  'ctl.annot.canvas.one': "표시 {n}개가 있는 이미지. 선택한 도구로 그 위에 그리세요",
   'ctl.appicon.download': "아이콘 다운로드 (ZIP)",
   // Color & size pack: color converter, contrast, paper sizes, aspect ratio, SVG optimizer, SVG to PDF, link checker
   'ctl.colorconv.input': "색상",
@@ -1879,6 +1884,7 @@ export const strings = {
   'ctl.dupes.dropHint': "폴더 하나 분량의 사진을 한 번에 추가하세요. 사진은 내 기기에서 비교되며 업로드되지 않아요.",
   'ctl.dupes.reading': "사진 읽는 중… {done}/{total}",
   'ctl.dupes.count': "사진 {n}장",
+  'ctl.dupes.count.one': "사진 {n}장",
   'ctl.dupes.summary': "중복 그룹: {groups} · 삭제 대상: {remove}({size})",
   'ctl.dupes.none': "중복 사진이 없어요.",
   'ctl.dupes.noneLong': "이 사진 {n}장 중에는 중복이 없어요. 중복이 있을 것 같다면 ‘비슷한 사진’을 시도해 보세요.",
