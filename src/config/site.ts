@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   // Named in the privacy policy, terms and about page
   operator: 'Aditya Nalawade',
   operatorCountry: 'India',
-  contactEmail: (typeof process !== 'undefined' && process.env?.PUBLIC_CONTACT_EMAIL) || (import.meta.env?.PUBLIC_CONTACT_EMAIL) || 'itsdenshin@gmail.com',
+  contactEmail: (typeof process !== 'undefined' && process.env?.PUBLIC_CONTACT_EMAIL) || (import.meta.env?.PUBLIC_CONTACT_EMAIL) || 'aditya.contact142@gmail.com',
   // AGPL-3.0 section 13: the site must offer its source code to everyone who uses it over the network
   /** Google Analytics 4 measurement ID; empty turns analytics off */
   gaId: (typeof process !== 'undefined' && process.env?.PUBLIC_GA_ID) ?? (import.meta.env?.PUBLIC_GA_ID) ?? 'G-90H8NVXNYX',

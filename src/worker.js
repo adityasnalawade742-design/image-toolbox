@@ -3,7 +3,9 @@
 //
 // Document tools: the browser posts to /api/doc/<endpoint>; the Worker adds the shared secret and forwards to the
 // document server on Google Cloud Run.
+import { EmailMessage } from 'cloudflare:email';
 import { handleLinkCheck } from './linkcheck.js';
+import { handleContact } from './contact.js';
 
 const DOC_ENDPOINTS = new Set(['convert', 'compress', 'protect', 'unlock', 'repair', 'ocr', 'pdfa', 'grayscale']);
 // Cloud Run accepts request bodies up to 32 MiB
@@ -74,6 +76,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/api/doc/')) return proxyDoc(request, env, url);
     if (url.pathname === '/api/links') return handleLinkCheck(request, url, { json, overLimit });
+    if (url.pathname === '/api/contact') return handleContact(request, url, { json, env, EmailMessage });
     return env.ASSETS.fetch(request);
   },
 };
