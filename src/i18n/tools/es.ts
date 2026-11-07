@@ -11244,4 +11244,187 @@ export const esTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Escanear a PDF",
+    shortName: "Escanear a PDF",
+    tagline: "Convierte fotos de páginas en papel hechas con el móvil en un PDF limpio y recto. Los bordes se detectan solos. Gratis y sin subir nada.",
+    intro: "Escanear a PDF convierte fotos de documentos, recibos, cartas o notas en un PDF que parece escaneado. Encuentra los bordes de cada página, endereza las páginas fotografiadas en ángulo e iguala las sombras y la luz desigual para que el papel quede blanco. Elige color, escala de grises o blanco y negro, A4, Carta o la forma de la propia página, ordena las páginas y descarga un solo PDF. Si no se encuentra un borde, arrastra las esquinas a su sitio. Todo ocurre en tu dispositivo.",
+    seoTitle: "Escanear a PDF: fotos del móvil a un PDF limpio, gratis",
+    seoDescription: "Convierte fotos de documentos en un PDF limpio online: bordes detectados, ángulos enderezados, sin sombras, A4 o Carta. Gratis, sin subir nada, sin app.",
+    keywords: [
+      "escanear a pdf",
+      "escanear documento con el móvil",
+      "convertir foto de documento a pdf",
+      "escáner de documentos online",
+      "foto a pdf escáner"
+    ],
+    howToSteps: [
+      {
+        title: "Añade fotos de las páginas",
+        description: "Hazlas con el móvil o elige fotos que ya tengas."
+      },
+      {
+        title: "Revisa cada página",
+        description: "Los bordes se detectan solos; arrastra una esquina si hace falta."
+      },
+      {
+        title: "Descarga el PDF",
+        description: "Elige el aspecto y el tamaño de página, y guarda un solo PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Bordes detectados automáticamente",
+        description: "Las páginas se encuentran y se enderezan, aunque estén en ángulo."
+      },
+      {
+        title: "Sin sombras",
+        description: "La luz desigual se iguala y el papel queda blanco."
+      },
+      {
+        title: "Privado",
+        description: "Las páginas nunca salen de tu dispositivo."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Necesito una app?",
+        answer: "No. Abre esta página en el móvil, añade fotos de las páginas y descarga el PDF."
+      },
+      {
+        question: "¿Puedo buscar o copiar el texto del PDF?",
+        answer: "No directamente: las páginas son imágenes. Pasa el PDF por OCR de PDF para añadir una capa de texto que puedas buscar y copiar."
+      },
+      {
+        question: "¿Qué aspecto elijo?",
+        answer: "Color conserva sellos, firmas y resaltados. Escala de grises va bien para la mayoría de los textos. Blanco y negro da los archivos más pequeños, pero puede perder texto tenue o muy pequeño."
+      },
+      {
+        question: "¿Y si no se encuentra la página?",
+        answer: "Se usa la foto entera y no se recorta nada. Arrastra las cuatro esquinas sobre las esquinas de la página o vuelve a tocar Buscar los bordes."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Limpiar escaneo",
+    shortName: "Limpiar escaneo",
+    tagline: "Limpia un escaneo o una foto de una página: sombras igualadas, papel blanco y texto nítido. Gratis y en tu dispositivo.",
+    intro: "Limpiar escaneo hace que una página escaneada o la foto de un documento se lea y se imprima mejor. Iguala las sombras, las esquinas oscuras y la luz desigual, vuelve blanco el papel gris o amarillento y oscurece el texto, en color, escala de grises o blanco y negro. Las fotos hechas en ángulo también se pueden enderezar. Mantén pulsado el botón para comparar con el original y revisa el resultado a tamaño completo antes de descargarlo.",
+    seoTitle: "Limpiar escaneo: blanquear y mejorar escaneos, gratis",
+    seoDescription: "Limpia documentos escaneados online: quita sombras, blanquea el papel gris o amarillo, oscurece el texto y endereza fotos. Color, grises o B/N. Gratis.",
+    keywords: [
+      "limpiar documento escaneado",
+      "blanquear fondo de escaneo",
+      "quitar sombras de foto de documento",
+      "mejorar calidad de escaneo",
+      "mejorar documento escaneado"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tu escaneo o foto",
+        description: "Un escaneo o una foto de una página."
+      },
+      {
+        title: "Elige el aspecto",
+        description: "Color, escala de grises o blanco y negro, y con qué intensidad."
+      },
+      {
+        title: "Descarga",
+        description: "Guarda la página limpia en JPG, o en PNG si es en blanco y negro."
+      }
+    ],
+    features: [
+      {
+        title: "Sin sombras",
+        description: "La luz desigual y las esquinas oscuras se igualan."
+      },
+      {
+        title: "Papel blanco",
+        description: "El papel gris o amarillento queda blanco; el texto sigue oscuro."
+      },
+      {
+        title: "También endereza",
+        description: "Las fotos en ángulo se pueden enderezar a la vez."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Hará que el texto se lea mejor?",
+        answer: "Hace que la página se vea más limpia y se imprima mejor. El texto tenue, borroso o muy pequeño no se puede recuperar; para eso usa Escala de grises en lugar de Blanco y negro."
+      },
+      {
+        question: "¿Por qué el papel de mi escaneo se ve gris?",
+        answer: "Los escáneres y las cámaras casi nunca registran el papel como blanco puro. La limpieza mide el brillo del propio papel en toda la página y lo vuelve blanco."
+      },
+      {
+        question: "¿Puedo limpiar varias páginas a la vez?",
+        answer: "Limpiar escaneo trabaja con una página cada vez. Para varias páginas en un solo PDF, usa Escanear a PDF, que limpia todas las páginas."
+      },
+      {
+        question: "¿Se sube mi archivo?",
+        answer: "No. Se limpia en tu dispositivo y nunca sale de él."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR de varias imágenes",
+    shortName: "OCR de imágenes",
+    tagline: "Extrae el texto de muchas imágenes a la vez, en 10 idiomas, y descárgalo en un solo archivo de texto o en uno por imagen. Gratis.",
+    intro: "OCR de varias imágenes lee de una vez el texto de un grupo de imágenes: fotos de documentos, capturas de pantalla, escaneos o recibos. Elige el idioma y, si son fotos de páginas en papel, haz que cada página se encuentre y se enderece primero, lo que hace la lectura mucho más precisa cuando la foto se hizo en ángulo. Copia cada texto o descárgalo todo en un solo archivo de texto o en un ZIP con un archivo de texto por imagen. La lectura ocurre en tu dispositivo, así que tus imágenes no se suben.",
+    seoTitle: "OCR de varias imágenes: extraer texto de muchas fotos",
+    seoDescription: "Extrae texto de varias imágenes a la vez con OCR: 10 idiomas, fotos de páginas enderezadas antes, descarga en TXT o ZIP. Gratis y sin subir nada.",
+    keywords: [
+      "ocr de varias imágenes",
+      "ocr por lotes",
+      "extraer texto de varias imágenes",
+      "imagen a texto",
+      "convertir imágenes a texto"
+    ],
+    howToSteps: [
+      {
+        title: "Añade tus imágenes",
+        description: "Fotos, capturas de pantalla o escaneos, todas las que necesites."
+      },
+      {
+        title: "Elige el idioma",
+        description: "Y marca la casilla si son fotos de páginas en papel."
+      },
+      {
+        title: "Lee y descarga",
+        description: "Copia cada texto o descarga un TXT o un ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Muchas a la vez",
+        description: "Cada imagen se lee por turno, con el progreso a la vista."
+      },
+      {
+        title: "10 idiomas",
+        description: "Incluidos el japonés y el coreano."
+      },
+      {
+        title: "Endereza las fotos",
+        description: "Las páginas fotografiadas en ángulo se encuentran y se aplanan antes de leerlas."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿Qué precisión tiene?",
+        answer: "El texto impreso y claro se lee muy bien. La escritura a mano, el texto muy pequeño y las fotos borrosas se leen mal; revisa nombres, números e importes antes de usarlos."
+      },
+      {
+        question: "¿Cuándo marco «Son fotos de páginas en papel»?",
+        answer: "Cuando las imágenes son fotos de documentos hechas con el móvil, sobre todo en ángulo. Déjala sin marcar para capturas de pantalla y escaneos, que ya son planos."
+      },
+      {
+        question: "¿Puedo obtener un PDF en el que se pueda buscar?",
+        answer: "Sí: pon las imágenes en un PDF con Escanear a PDF o JPG a PDF y luego usa OCR de PDF."
+      },
+      {
+        question: "¿Se suben mis imágenes?",
+        answer: "No. El texto se lee en tu dispositivo; solo se descargan los datos del idioma, una vez."
+      }
+    ]
+  },
 };

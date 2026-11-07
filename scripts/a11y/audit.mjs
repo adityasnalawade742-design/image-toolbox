@@ -37,6 +37,7 @@ const INPUT = {
   'compare-images': [S('photo.jpg'), S('photo2.png')], 'add-drop-shadow': [S('photo.png')], 'image-histogram': [S('photo.jpg')], 'exif-viewer': [S('photo.jpg')], 'transparent-png-maker': [S('photo.png')], 'image-color-replacer': [S('photo.jpg')], 'app-icon-generator': [S('photo.png')], 'image-annotator': [S('photo.jpg')],
   'color-converter': [], 'color-contrast-checker': [], 'paper-size-converter': [], 'aspect-ratio-calculator': [], 'svg-optimizer': [S('shape.svg')], 'svg-to-pdf': [S('shape.svg')], 'webp-to-pdf': [S('photo.webp')], 'pdf-link-checker': [S('doc.pdf')],
   'sharpen-image': [S('photo.jpg')], 'denoise-image': [S('photo.jpg')], 'fix-white-balance': [S('photo.jpg')], 'perspective-correction': [S('photo.jpg')], 'photo-collage-maker': [S('photo.jpg'), S('photo2.png')], 'duplicate-photo-finder': [S('photo.jpg'), S('photo2.png'), S('photo.png')], 'pixel-art-converter': [S('photo.jpg')], 'pdf-to-grayscale': [S('doc.pdf')],
+  'scan-to-pdf': [S('photo.jpg')], 'scan-cleaner': [S('text.png')], 'ocr-multiple-images': [S('text.png')],
   'pdf-to-text': [S('doc.pdf')], 'pdf-to-markdown': [S('doc.pdf')], 'text-to-pdf': [], 'markdown-to-pdf': [],
   'extract-images-from-pdf': [S('doc.pdf')], 'delete-blank-pages-pdf': [S('doc.pdf')], 'compare-pdf': [S('doc.pdf')], 'overlay-pdf': [S('doc.pdf')],
   'merge-pdf': [S('doc.pdf'), S('form.pdf')], 'split-pdf': [S('doc.pdf')], 'extract-pdf-pages': [S('doc.pdf')], 'organize-pdf': [S('doc.pdf')],

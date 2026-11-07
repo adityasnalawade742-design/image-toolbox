@@ -11242,4 +11242,187 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "PDF'e Tara",
+    shortName: "PDF'e Tara",
+    tagline: "Kâğıt sayfaların telefon fotoğraflarını temiz ve düz bir PDF'e dönüştürün. Kenarlar sizin için bulunur. Ücretsiz ve hiçbir şey yüklenmez.",
+    intro: "PDF'e Tara; belge, fiş, mektup veya not fotoğraflarını taranmış gibi görünen bir PDF'e dönüştürür. Her sayfanın kenarlarını bulur, açılı çekilmiş sayfaları düzeltir, gölgeleri ve dengesiz ışığı eşitleyerek kâğıdı beyaz yapar. Renkli, gri tonlamalı veya siyah beyazı; A4, Letter (ABD) ya da sayfanın kendi şeklini seçin, sayfaları sıraya koyun ve tek bir PDF indirin. Bir kenar bulunamazsa köşeleri yerine sürükleyin. Her şey cihazınızda gerçekleşir.",
+    seoTitle: "PDF'e Tara – Telefon Fotoğrafını Temiz PDF Yapın, Ücretsiz",
+    seoDescription: "Belge fotoğraflarını online olarak temiz bir PDF'e çevirin: sayfa kenarları bulunur, açı düzeltilir, gölge silinir, A4 veya Letter. Ücretsiz, yükleme yok.",
+    keywords: [
+      "pdf'e tara",
+      "fotoğrafı pdf yapma",
+      "telefonla belge tarama",
+      "belge fotoğrafını pdf'e çevirme",
+      "online belge tarayıcı"
+    ],
+    howToSteps: [
+      {
+        title: "Sayfaların fotoğraflarını ekleyin",
+        description: "Telefonunuzla çekin veya mevcut fotoğrafları seçin."
+      },
+      {
+        title: "Her sayfayı kontrol edin",
+        description: "Kenarlar sizin için bulunur; gerekirse bir köşeyi sürükleyin."
+      },
+      {
+        title: "PDF'i indirin",
+        description: "Görünümü ve sayfa boyutunu seçin, ardından tek bir PDF kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Kenarlar otomatik bulunur",
+        description: "Sayfalar açılı çekilmiş olsa bile bulunur ve düzeltilir."
+      },
+      {
+        title: "Gölgeler silinir",
+        description: "Dengesiz ışık eşitlenir ve kâğıt beyazlaşır."
+      },
+      {
+        title: "Gizli",
+        description: "Sayfalar cihazınızdan hiç çıkmaz."
+      }
+    ],
+    faqs: [
+      {
+        question: "Bir uygulamaya ihtiyacım var mı?",
+        answer: "Hayır. Bu sayfayı telefonunuzda açın, sayfaların fotoğraflarını ekleyin ve PDF'i indirin."
+      },
+      {
+        question: "PDF'teki metni arayabilir veya kopyalayabilir miyim?",
+        answer: "Hemen değil, çünkü sayfalar resimdir. Aranabilir ve kopyalanabilir bir metin katmanı eklemek için PDF'i PDF OCR aracından geçirin."
+      },
+      {
+        question: "Hangi görünümü seçmeliyim?",
+        answer: "Renkli; mühürleri, imzaları ve fosforlu kalem işaretlerini korur. Gri tonlamalı çoğu metne uygundur. Siyah beyaz en küçük dosyaları verir, ancak soluk veya çok küçük metin kaybolabilir."
+      },
+      {
+        question: "Sayfa bulunamazsa ne olur?",
+        answer: "Fotoğrafın tamamı kullanılır ve hiçbir yer kesilmez. Dört köşeyi sayfanın köşelerine sürükleyin veya Kenarları bul düğmesine yeniden dokunun."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Tarama Temizleyici",
+    shortName: "Tarama Temizle",
+    tagline: "Bir taramayı veya sayfa fotoğrafını temizleyin: gölgeler eşitlenir, kâğıt beyazlaşır, metin netleşir. Ücretsiz, cihazınızda.",
+    intro: "Tarama Temizleyici, taranmış bir sayfayı veya belge fotoğrafını okumayı ve yazdırmayı kolaylaştırır. Gölgeleri, karanlık köşeleri ve dengesiz ışığı eşitler, gri veya sararmış kâğıdı beyaz yapar ve metni koyulaştırır; renkli, gri tonlamalı veya siyah beyaz olarak. Açılı çekilmiş fotoğraflar da düzeltilebilir. Orijinalle karşılaştırmak için düğmeyi basılı tutun ve indirmeden önce sonucu tam boyutta kontrol edin.",
+    seoTitle: "Tarama Temizleyici – Taramaları Beyazlatın, Ücretsiz",
+    seoDescription: "Taranmış belgeleri online temizleyin: gölgeyi silin, gri veya sarı kâğıdı beyazlatın, metni koyulaştırın, fotoğrafı düzeltin. Renkli, gri veya siyah beyaz.",
+    keywords: [
+      "taranmış belgeyi temizleme",
+      "tarama arka planını beyazlatma",
+      "belge fotoğrafındaki gölgeyi silme",
+      "taramayı netleştirme",
+      "taranmış belge iyileştirme"
+    ],
+    howToSteps: [
+      {
+        title: "Taramanızı veya fotoğrafınızı ekleyin",
+        description: "Bir tarama ya da bir sayfanın fotoğrafı."
+      },
+      {
+        title: "Görünümü seçin",
+        description: "Renkli, gri tonlamalı veya siyah beyaz ve ne kadar güçlü olacağı."
+      },
+      {
+        title: "İndirin",
+        description: "Temizlenen sayfayı JPG olarak, siyah beyaz için PNG olarak kaydedin."
+      }
+    ],
+    features: [
+      {
+        title: "Gölgeler silinir",
+        description: "Dengesiz ışık ve karanlık köşeler eşitlenir."
+      },
+      {
+        title: "Beyaz kâğıt",
+        description: "Gri veya sararmış kâğıt beyazlaşır; metin koyu kalır."
+      },
+      {
+        title: "Düzeltme de yapar",
+        description: "Açılı çekilmiş fotoğraflar tek seferde düzeltilebilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "Metnim daha kolay okunur hale gelir mi?",
+        answer: "Sayfa daha temiz görünür ve daha iyi yazdırılır. Soluk, bulanık veya çok küçük metin geri getirilemez; bunlar için Siyah beyaz yerine Gri tonlamalı seçeneğini kullanın."
+      },
+      {
+        question: "Taramamdaki kâğıt neden gri?",
+        answer: "Tarayıcılar ve kameralar kâğıdı nadiren saf beyaz olarak kaydeder. Temizleme, kâğıdın kendi parlaklığını sayfanın her yerinde ölçer ve onu beyaz yapar."
+      },
+      {
+        question: "Birkaç sayfayı aynı anda temizleyebilir miyim?",
+        answer: "Tarama Temizleyici bir seferde tek sayfayla çalışır. Birden fazla sayfayı tek bir PDF'te toplamak için her sayfayı temizleyen PDF'e Tara aracını kullanın."
+      },
+      {
+        question: "Dosyam yükleniyor mu?",
+        answer: "Hayır. Dosya cihazınızda temizlenir ve cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "Toplu Resim OCR",
+    shortName: "Toplu OCR",
+    tagline: "Birçok resimden aynı anda metin çıkarın, 10 dilde, ve tek bir metin dosyası ya da her resim için ayrı bir dosya olarak indirin. Ücretsiz.",
+    intro: "Toplu Resim OCR, bir grup resimdeki metni tek seferde okur: belge fotoğrafları, ekran görüntüleri, taramalar veya fişler. Dili seçin; kâğıt sayfa fotoğrafları için her sayfanın önce bulunup düzeltilmesini sağlayın, böylece açılı çekilmiş fotoğraflar çok daha doğru okunur. Her metni kopyalayın ya da hepsini tek bir metin dosyası veya her resim için bir metin dosyası içeren bir ZIP olarak indirin. Okuma cihazınızda yapılır, bu yüzden resimleriniz yüklenmez.",
+    seoTitle: "Toplu Resim OCR – Birçok Resimden Aynı Anda Metin Çıkarın",
+    seoDescription: "OCR ile birden fazla resimden aynı anda metin çıkarın: 10 dil, sayfa fotoğrafları önce düzeltilir, TXT veya ZIP olarak indirin. Ücretsiz, yükleme yok.",
+    keywords: [
+      "toplu ocr",
+      "birden fazla resimden metin çıkarma",
+      "resimden metne çevirme",
+      "toplu resimden yazı çıkarma",
+      "fotoğraftan metin çıkarma"
+    ],
+    howToSteps: [
+      {
+        title: "Resimlerinizi ekleyin",
+        description: "Fotoğraflar, ekran görüntüleri veya taramalar; ihtiyacınız kadar."
+      },
+      {
+        title: "Dili seçin",
+        description: "Kâğıt sayfa fotoğraflarıysa kutuyu da işaretleyin."
+      },
+      {
+        title: "Okuyun ve indirin",
+        description: "Her metni kopyalayın ya da tek bir TXT veya bir ZIP indirin."
+      }
+    ],
+    features: [
+      {
+        title: "Birçoğu aynı anda",
+        description: "Her resim sırayla okunur ve ilerleme gösterilir."
+      },
+      {
+        title: "10 dil",
+        description: "Japonca ve Korece dahil."
+      },
+      {
+        title: "Fotoğrafları düzeltir",
+        description: "Açılı çekilmiş sayfalar okunmadan önce bulunur ve düzleştirilir."
+      }
+    ],
+    faqs: [
+      {
+        question: "Ne kadar doğru?",
+        answer: "Net basılı metin çok iyi okunur. El yazısı, çok küçük metin ve bulanık fotoğraflar kötü okunur; kullanmadan önce adları, sayıları ve tutarları kontrol edin."
+      },
+      {
+        question: "“Bunlar kâğıt sayfa fotoğrafları” kutusunu ne zaman işaretlemeliyim?",
+        answer: "Resimler telefonla çekilmiş belge fotoğraflarıysa, özellikle de açılı çekildiyse. Zaten düz olan ekran görüntüleri ve taramalar için kapalı bırakın."
+      },
+      {
+        question: "Bunun yerine aranabilir bir PDF alabilir miyim?",
+        answer: "Evet: resimleri PDF'e Tara veya JPG'den PDF'e ile bir PDF'te toplayın, ardından PDF OCR'ı kullanın."
+      },
+      {
+        question: "Resimlerim yükleniyor mu?",
+        answer: "Hayır. Metin cihazınızda okunur; yalnızca dil verisi bir kez indirilir."
+      }
+    ]
+  },
 };

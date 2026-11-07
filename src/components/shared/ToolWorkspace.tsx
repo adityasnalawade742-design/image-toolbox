@@ -136,6 +136,9 @@ const PerspectiveWorkspace = standaloneTool(() => import('../tools/extras/Perspe
 const CollageWorkspace = standaloneTool(() => import('../tools/extras/CollageWorkspace'), 'CollageWorkspace');
 const DuplicateFinderWorkspace = standaloneTool(() => import('../tools/extras/DuplicateFinderWorkspace'), 'DuplicateFinderWorkspace');
 const PixelArtWorkspace = standaloneTool(() => import('../tools/extras/PixelArtWorkspace'), 'PixelArtWorkspace');
+const ScanToPdfWorkspace = standaloneTool(() => import('../tools/extras/ScanWorkspace'), 'ScanToPdfWorkspace');
+const ScanCleanerWorkspace = standaloneTool(() => import('../tools/extras/ScanWorkspace'), 'ScanCleanerWorkspace');
+const OcrBatchWorkspace = standaloneTool(() => import('../tools/extras/OcrBatchWorkspace'), 'OcrBatchWorkspace');
 
 export interface NextTool {
   slug: string;
@@ -302,6 +305,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'photo-collage-maker': <CollageWorkspace />,
     'duplicate-photo-finder': <DuplicateFinderWorkspace />,
     'pixel-art-converter': <PixelArtWorkspace />,
+    'scan-to-pdf': <ScanToPdfWorkspace />,
+    'scan-cleaner': <ScanCleanerWorkspace />,
+    'ocr-multiple-images': <OcrBatchWorkspace />,
     'pdf-to-grayscale': <DocumentToolWorkspace tool="pdf-to-grayscale" />,
     'word-to-pdf': <DocumentToolWorkspace tool="word-to-pdf" />,
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,

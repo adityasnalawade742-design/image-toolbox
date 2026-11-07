@@ -11241,4 +11241,187 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Scan ke PDF",
+    shortName: "Scan ke PDF",
+    tagline: "Ubah foto halaman kertas dari ponsel menjadi PDF yang bersih dan lurus. Tepinya dicari otomatis. Gratis, dan tidak ada yang diunggah.",
+    intro: "Scan ke PDF mengubah foto dokumen, struk, surat, atau catatan menjadi PDF yang terlihat seperti hasil scan. Alat ini mencari tepi setiap halaman, meluruskan halaman yang difoto miring, dan meratakan bayangan serta cahaya yang tidak rata sehingga kertasnya menjadi putih. Pilih berwarna, skala abu-abu, atau hitam putih, lalu A4, Letter, atau bentuk asli halaman, susun urutan halaman, dan unduh satu PDF. Jika tepinya tidak ditemukan, geser sudut-sudutnya ke tempatnya. Semuanya berlangsung di perangkat Anda.",
+    seoTitle: "Scan ke PDF Online – Foto Dokumen Jadi PDF Rapi, Gratis",
+    seoDescription: "Ubah foto dokumen jadi PDF rapi secara online: tepi halaman dicari otomatis, foto miring diluruskan, bayangan dihapus, A4 atau Letter. Gratis, tanpa unggah.",
+    keywords: [
+      "scan ke pdf",
+      "foto ke pdf",
+      "scan dokumen dengan hp",
+      "ubah foto dokumen jadi pdf",
+      "scanner dokumen online"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto halaman",
+        description: "Ambil dengan ponsel Anda atau pilih foto yang sudah ada."
+      },
+      {
+        title: "Periksa setiap halaman",
+        description: "Tepinya dicari otomatis; geser sudutnya jika perlu."
+      },
+      {
+        title: "Unduh PDF",
+        description: "Pilih tampilan dan ukuran halaman, lalu simpan satu PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Tepi dicari otomatis",
+        description: "Halaman ditemukan dan diluruskan, bahkan yang difoto miring."
+      },
+      {
+        title: "Bayangan dihapus",
+        description: "Cahaya yang tidak rata diratakan dan kertasnya menjadi putih."
+      },
+      {
+        title: "Privat",
+        description: "Halaman tidak pernah meninggalkan perangkat Anda."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah saya perlu aplikasi?",
+        answer: "Tidak. Buka halaman ini di ponsel Anda, tambahkan foto halaman, lalu unduh PDF-nya."
+      },
+      {
+        question: "Bisakah saya mencari atau menyalin teks di PDF?",
+        answer: "Tidak langsung, karena halamannya berupa gambar. Proses PDF dengan OCR PDF untuk menambahkan lapisan teks yang bisa dicari dan disalin."
+      },
+      {
+        question: "Tampilan mana yang sebaiknya saya pilih?",
+        answer: "Berwarna mempertahankan stempel, tanda tangan, dan stabilo. Skala abu-abu cocok untuk sebagian besar teks. Hitam putih menghasilkan file paling kecil, tetapi teks yang samar atau sangat kecil bisa hilang."
+      },
+      {
+        question: "Bagaimana jika halamannya tidak ditemukan?",
+        answer: "Seluruh foto yang dipakai, jadi tidak ada yang terpotong. Geser keempat sudut ke sudut halaman, atau ketuk Cari tepinya lagi."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Pembersih Hasil Scan",
+    shortName: "Bersihkan Scan",
+    tagline: "Bersihkan hasil scan atau foto halaman: bayangan diratakan, kertas putih, teks tajam. Gratis, di perangkat Anda.",
+    intro: "Pembersih Hasil Scan membuat halaman hasil scan atau foto dokumen lebih mudah dibaca dan dicetak. Alat ini meratakan bayangan, sudut gelap, dan cahaya yang tidak rata, membuat kertas yang abu-abu atau menguning menjadi putih, dan menebalkan teks, dalam mode berwarna, skala abu-abu, atau hitam putih. Foto yang diambil miring juga bisa diluruskan. Tahan tombolnya untuk membandingkan dengan aslinya, dan periksa hasilnya dalam ukuran penuh sebelum Anda mengunduh.",
+    seoTitle: "Pembersih Hasil Scan – Putihkan dan Rapikan Scan, Gratis",
+    seoDescription: "Bersihkan dokumen hasil scan secara online: hapus bayangan, putihkan kertas abu-abu atau kuning, pertebal teks, luruskan foto. Warna atau hitam putih. Gratis.",
+    keywords: [
+      "membersihkan hasil scan",
+      "memutihkan background scan",
+      "hapus bayangan foto dokumen",
+      "memperjelas hasil scan",
+      "edit hasil scan dokumen"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan hasil scan atau foto",
+        description: "Hasil scan, atau foto sebuah halaman."
+      },
+      {
+        title: "Pilih tampilan",
+        description: "Berwarna, skala abu-abu, atau hitam putih, dan seberapa kuat."
+      },
+      {
+        title: "Unduh",
+        description: "Simpan halaman yang sudah bersih sebagai JPG, atau PNG untuk hitam putih."
+      }
+    ],
+    features: [
+      {
+        title: "Bayangan dihapus",
+        description: "Cahaya yang tidak rata dan sudut gelap diratakan."
+      },
+      {
+        title: "Kertas putih",
+        description: "Kertas abu-abu atau menguning menjadi putih; teks tetap gelap."
+      },
+      {
+        title: "Sekaligus diluruskan",
+        description: "Foto yang miring bisa diluruskan dalam satu langkah."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apakah teks saya jadi lebih mudah dibaca?",
+        answer: "Halamannya jadi terlihat lebih bersih dan hasil cetaknya lebih baik. Teks yang samar, buram, atau sangat kecil tidak bisa dikembalikan; untuk itu gunakan Skala abu-abu, bukan Hitam putih."
+      },
+      {
+        question: "Mengapa kertas di hasil scan saya abu-abu?",
+        answer: "Scanner dan kamera jarang merekam kertas sebagai putih murni. Pembersihan mengukur kecerahan kertas itu sendiri di seluruh halaman lalu membuatnya putih."
+      },
+      {
+        question: "Bisakah saya membersihkan beberapa halaman sekaligus?",
+        answer: "Pembersih Hasil Scan memproses satu halaman setiap kali. Untuk beberapa halaman dalam satu PDF, gunakan Scan ke PDF, yang membersihkan setiap halaman."
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. File dibersihkan di perangkat Anda dan tidak pernah meninggalkannya."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR Banyak Gambar",
+    shortName: "OCR Gambar",
+    tagline: "Ambil teks dari banyak gambar sekaligus, dalam 10 bahasa, lalu unduh sebagai satu file teks atau satu file per gambar. Gratis.",
+    intro: "OCR Banyak Gambar membaca teks di sekumpulan gambar sekaligus: foto dokumen, screenshot, hasil scan, atau struk. Pilih bahasanya, dan untuk foto halaman kertas, biarkan setiap halaman dicari dan diluruskan dulu, sehingga pembacaan jauh lebih akurat jika fotonya diambil miring. Salin setiap teks, atau unduh semuanya sebagai satu file teks atau ZIP berisi satu file teks per gambar. Pembacaan berlangsung di perangkat Anda, jadi gambar Anda tidak diunggah.",
+    seoTitle: "OCR Banyak Gambar – Ambil Teks dari Banyak Foto Sekaligus",
+    seoDescription: "Ambil teks dari banyak gambar sekaligus dengan OCR: 10 bahasa, foto halaman diluruskan dulu, unduh sebagai TXT atau ZIP. Gratis, tanpa unggah.",
+    keywords: [
+      "ocr banyak gambar",
+      "batch ocr",
+      "ambil teks dari banyak gambar",
+      "gambar ke teks",
+      "ubah foto jadi teks sekaligus"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar Anda",
+        description: "Foto, screenshot, atau hasil scan, sebanyak yang Anda perlukan."
+      },
+      {
+        title: "Pilih bahasanya",
+        description: "Lalu centang kotaknya jika gambar berupa foto halaman kertas."
+      },
+      {
+        title: "Baca dan unduh",
+        description: "Salin setiap teks, atau unduh satu TXT atau ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Banyak sekaligus",
+        description: "Setiap gambar dibaca bergantian, dengan progres yang ditampilkan."
+      },
+      {
+        title: "10 bahasa",
+        description: "Termasuk bahasa Jepang dan Korea."
+      },
+      {
+        title: "Meluruskan foto",
+        description: "Halaman yang difoto miring dicari dan diratakan sebelum dibaca."
+      }
+    ],
+    faqs: [
+      {
+        question: "Seberapa akurat hasilnya?",
+        answer: "Teks cetak yang jelas terbaca sangat baik. Tulisan tangan, teks yang sangat kecil, dan foto buram terbaca kurang baik; periksa nama, angka, dan nominal sebelum Anda menggunakannya."
+      },
+      {
+        question: "Kapan saya perlu mencentang “Ini foto halaman kertas”?",
+        answer: "Saat gambarnya berupa foto dokumen yang diambil dengan ponsel, terutama jika miring. Biarkan mati untuk screenshot dan hasil scan, yang sudah datar."
+      },
+      {
+        question: "Bisakah saya mendapatkan PDF yang bisa dicari?",
+        answer: "Bisa: masukkan gambar ke PDF dengan Scan ke PDF atau JPG ke PDF, lalu gunakan OCR PDF."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Teks dibaca di perangkat Anda; hanya data bahasa yang diunduh, sekali saja."
+      }
+    ]
+  },
 };
