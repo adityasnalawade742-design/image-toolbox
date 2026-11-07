@@ -11228,4 +11228,187 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Escanear para PDF",
+    shortName: "Escanear para PDF",
+    tagline: "Transforme fotos de páginas tiradas com o celular em um PDF limpo e reto. As bordas são encontradas para você. Grátis, e nada é enviado.",
+    intro: "Escanear para PDF transforma fotos de documentos, recibos, cartas ou anotações em um PDF com cara de digitalizado. Ele encontra as bordas de cada página, endireita páginas fotografadas de lado e uniformiza sombras e luz irregular para o papel ficar branco. Escolha colorida, escala de cinza ou preto e branco, A4, Carta ou o formato da própria página, coloque as páginas em ordem e baixe um único PDF. Se uma borda não for encontrada, arraste os cantos para o lugar. Tudo acontece no seu dispositivo.",
+    seoTitle: "Escanear documento para PDF pelo celular, grátis",
+    seoDescription: "Transforme fotos de documentos em um PDF limpo online: bordas encontradas, páginas endireitadas, sombras removidas, A4 ou Carta. Grátis, sem upload e sem app.",
+    keywords: [
+      "escanear documento",
+      "digitalizar documento pelo celular",
+      "foto para pdf",
+      "scanner de documentos online",
+      "transformar foto de documento em pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione fotos das páginas",
+        description: "Tire com o celular ou escolha fotos que você já tem."
+      },
+      {
+        title: "Confira cada página",
+        description: "As bordas são encontradas para você; arraste um canto se precisar."
+      },
+      {
+        title: "Baixe o PDF",
+        description: "Escolha a aparência e o tamanho da página e salve um único PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Bordas encontradas automaticamente",
+        description: "As páginas são encontradas e endireitadas, mesmo de lado."
+      },
+      {
+        title: "Sombras removidas",
+        description: "A luz irregular é uniformizada e o papel fica branco."
+      },
+      {
+        title: "Privado",
+        description: "As páginas nunca saem do seu dispositivo."
+      }
+    ],
+    faqs: [
+      {
+        question: "Preciso de um aplicativo?",
+        answer: "Não. Abra esta página no celular, adicione fotos das páginas e baixe o PDF."
+      },
+      {
+        question: "Posso pesquisar ou copiar o texto do PDF?",
+        answer: "Não de imediato: as páginas são imagens. Passe o PDF pelo OCR PDF para adicionar uma camada de texto que você pode pesquisar e copiar."
+      },
+      {
+        question: "Qual aparência devo escolher?",
+        answer: "Colorida mantém carimbos, assinaturas e marcações. Escala de cinza serve para a maioria dos textos. Preto e branco gera os menores arquivos, mas pode perder texto fraco ou muito pequeno."
+      },
+      {
+        question: "E se a página não for encontrada?",
+        answer: "A foto inteira é usada e nada é cortado. Arraste os quatro cantos até os cantos da página ou toque em Encontrar as bordas de novo."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Limpar digitalização",
+    shortName: "Limpar digitalização",
+    tagline: "Limpe uma digitalização ou a foto de uma página: sombras uniformizadas, papel branco, texto nítido. Grátis, no seu dispositivo.",
+    intro: "Limpar digitalização deixa uma página digitalizada ou a foto de um documento mais fácil de ler e imprimir. Ele uniformiza sombras, cantos escuros e luz irregular, deixa branco o papel cinza ou amarelado e escurece o texto, em colorido, escala de cinza ou preto e branco. Fotos tiradas de lado também podem ser endireitadas. Segure o botão para comparar com a original e confira o resultado em tamanho real antes de baixar.",
+    seoTitle: "Limpar documento escaneado online – Papel branco, grátis",
+    seoDescription: "Limpe documentos escaneados online: remova sombras, deixe branco o papel cinza ou amarelo, escureça o texto, endireite fotos. Colorido, cinza ou P&B. Grátis.",
+    keywords: [
+      "melhorar documento escaneado",
+      "clarear documento escaneado",
+      "tirar sombra de foto de documento",
+      "deixar fundo do documento branco",
+      "melhorar qualidade de digitalização"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione sua digitalização ou foto",
+        description: "Uma digitalização ou uma foto de uma página."
+      },
+      {
+        title: "Escolha a aparência",
+        description: "Colorida, escala de cinza ou preto e branco, e a intensidade."
+      },
+      {
+        title: "Baixe",
+        description: "Salve a página limpa em JPG, ou em PNG para preto e branco."
+      }
+    ],
+    features: [
+      {
+        title: "Sombras removidas",
+        description: "Luz irregular e cantos escuros são uniformizados."
+      },
+      {
+        title: "Papel branco",
+        description: "Papel cinza ou amarelado fica branco; o texto continua escuro."
+      },
+      {
+        title: "Endireita também",
+        description: "Fotos tiradas de lado podem ser endireitadas de uma vez."
+      }
+    ],
+    faqs: [
+      {
+        question: "O texto vai ficar mais fácil de ler?",
+        answer: "A página fica com aspecto mais limpo e sai melhor na impressão. Texto fraco, borrado ou muito pequeno não pode ser recuperado; para esses casos, use Escala de cinza em vez de Preto e branco."
+      },
+      {
+        question: "Por que o papel da minha digitalização é cinza?",
+        answer: "Scanners e câmeras raramente registram o papel como branco puro. A limpeza mede o brilho do próprio papel em toda a página e o deixa branco."
+      },
+      {
+        question: "Posso limpar várias páginas de uma vez?",
+        answer: "Limpar digitalização trabalha com uma página por vez. Para várias páginas em um só PDF, use Escanear para PDF, que limpa todas as páginas."
+      },
+      {
+        question: "Meu arquivo é enviado?",
+        answer: "Não. Ele é limpo no seu dispositivo e nunca sai dele."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR de várias imagens",
+    shortName: "OCR de imagens",
+    tagline: "Extraia texto de várias imagens de uma vez, em 10 idiomas, e baixe tudo em um único arquivo de texto ou em um arquivo por imagem. Grátis.",
+    intro: "OCR de várias imagens lê o texto de um conjunto de imagens de uma só vez: fotos de documentos, capturas de tela, digitalizações ou recibos. Escolha o idioma e, para fotos de páginas de papel, faça cada página ser encontrada e endireitada antes, o que deixa a leitura muito mais precisa quando a foto foi tirada de lado. Copie cada texto ou baixe tudo em um único arquivo de texto ou em um ZIP com um arquivo de texto por imagem. A leitura acontece no seu dispositivo, então suas imagens não são enviadas.",
+    seoTitle: "OCR de várias imagens – Extrair texto de muitas imagens",
+    seoDescription: "Extraia texto de várias imagens de uma vez com OCR: 10 idiomas, fotos de páginas endireitadas antes, baixe em TXT ou ZIP. Grátis, sem upload.",
+    keywords: [
+      "ocr de várias imagens",
+      "extrair texto de várias imagens",
+      "ocr em lote",
+      "imagem para texto",
+      "converter imagens em texto"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione suas imagens",
+        description: "Fotos, capturas de tela ou digitalizações, quantas precisar."
+      },
+      {
+        title: "Escolha o idioma",
+        description: "E marque a caixa se forem fotos de páginas de papel."
+      },
+      {
+        title: "Leia e baixe",
+        description: "Copie cada texto ou baixe um TXT ou um ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Várias de uma vez",
+        description: "Cada imagem é lida por vez, com o progresso exibido."
+      },
+      {
+        title: "10 idiomas",
+        description: "Incluindo japonês e coreano."
+      },
+      {
+        title: "Endireita fotos",
+        description: "Páginas fotografadas de lado são encontradas e endireitadas antes da leitura."
+      }
+    ],
+    faqs: [
+      {
+        question: "Qual é a precisão?",
+        answer: "Texto impresso nítido é lido muito bem. Letra de mão, texto muito pequeno e fotos borradas são lidos mal; confira nomes, números e valores antes de usá-los."
+      },
+      {
+        question: "Quando devo marcar “São fotos de páginas de papel”?",
+        answer: "Quando as imagens são fotos de documentos tiradas com o celular, principalmente de lado. Deixe desmarcado para capturas de tela e digitalizações, que já são planas."
+      },
+      {
+        question: "Posso obter um PDF pesquisável?",
+        answer: "Sim: coloque as imagens em um PDF com Escanear para PDF ou JPG para PDF e depois use o OCR PDF."
+      },
+      {
+        question: "Minhas imagens são enviadas?",
+        answer: "Não. O texto é lido no seu dispositivo; só os dados do idioma são baixados, uma única vez."
+      }
+    ]
+  },
 };

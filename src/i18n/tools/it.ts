@@ -11223,4 +11223,187 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Scansiona in PDF",
+    shortName: "Scansiona in PDF",
+    tagline: "Trasforma le foto delle pagine fatte con il telefono in un PDF pulito e dritto. I bordi vengono trovati per te. Gratis, e non viene caricato nulla.",
+    intro: "Scansiona in PDF trasforma le foto di documenti, ricevute, lettere o appunti in un PDF che sembra scansionato. Trova i bordi di ogni pagina, raddrizza le pagine fotografate di sbieco e uniforma ombre e luce irregolare, così la carta risulta bianca. Scegli colori, scala di grigi o bianco e nero, A4, Lettera (US) o la forma della pagina stessa, metti le pagine in ordine e scarica un unico PDF. Se un bordo non viene trovato, trascina gli angoli al loro posto. Tutto avviene sul tuo dispositivo.",
+    seoTitle: "Scansionare documenti in PDF con il telefono, gratis",
+    seoDescription: "Trasforma le foto dei documenti in un PDF pulito online: bordi trovati, pagine raddrizzate, ombre rimosse, A4 o Lettera. Gratis, senza upload e senza app.",
+    keywords: [
+      "scansionare documenti con il cellulare",
+      "scanner pdf online",
+      "da foto a pdf",
+      "scansiona in pdf",
+      "trasformare foto di un documento in pdf"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le foto delle pagine",
+        description: "Scattale con il telefono o scegli foto che hai già."
+      },
+      {
+        title: "Controlla ogni pagina",
+        description: "I bordi vengono trovati per te; trascina un angolo se serve."
+      },
+      {
+        title: "Scarica il PDF",
+        description: "Scegli l’aspetto e il formato pagina, poi salva un unico PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Bordi trovati in automatico",
+        description: "Le pagine vengono trovate e raddrizzate, anche di sbieco."
+      },
+      {
+        title: "Ombre rimosse",
+        description: "La luce irregolare viene uniformata e la carta diventa bianca."
+      },
+      {
+        title: "Privato",
+        description: "Le pagine non lasciano mai il tuo dispositivo."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mi serve un’app?",
+        answer: "No. Apri questa pagina sul telefono, aggiungi le foto delle pagine e scarica il PDF."
+      },
+      {
+        question: "Posso cercare o copiare il testo nel PDF?",
+        answer: "Non subito: le pagine sono immagini. Passa il PDF in OCR PDF per aggiungere un livello di testo che puoi cercare e copiare."
+      },
+      {
+        question: "Quale aspetto devo scegliere?",
+        answer: "Colori mantiene timbri, firme ed evidenziazioni. Scala di grigi va bene per la maggior parte dei testi. Bianco e nero crea i file più piccoli, ma può perdere il testo chiaro o molto piccolo."
+      },
+      {
+        question: "E se la pagina non viene trovata?",
+        answer: "Viene usata la foto intera e non si taglia nulla. Trascina i quattro angoli sugli angoli della pagina, oppure tocca di nuovo Trova i bordi."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Pulisci scansione",
+    shortName: "Pulisci scansione",
+    tagline: "Pulisci una scansione o la foto di una pagina: ombre uniformate, carta bianca, testo nitido. Gratis, sul tuo dispositivo.",
+    intro: "Pulisci scansione rende una pagina scansionata o la foto di un documento più facile da leggere e stampare. Uniforma ombre, angoli scuri e luce irregolare, rende bianca la carta grigia o ingiallita e scurisce il testo, a colori, in scala di grigi o in bianco e nero. Anche le foto scattate di sbieco possono essere raddrizzate. Tieni premuto il pulsante per confrontare con l’originale e controlla il risultato a dimensioni reali prima di scaricarlo.",
+    seoTitle: "Pulire scansioni online – Sfondo bianco e niente ombre",
+    seoDescription: "Pulisci documenti scansionati online: rimuovi le ombre, sbianca la carta grigia o gialla, scurisci il testo, raddrizza le foto. Colori, grigi o B/N. Gratis.",
+    keywords: [
+      "migliorare documento scansionato",
+      "sbiancare sfondo scansione",
+      "togliere ombre da foto documento",
+      "rendere più leggibile una scansione",
+      "pulire scansione"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi la scansione o la foto",
+        description: "Una scansione o la foto di una pagina."
+      },
+      {
+        title: "Scegli l’aspetto",
+        description: "Colori, scala di grigi o bianco e nero, e l’intensità."
+      },
+      {
+        title: "Scarica",
+        description: "Salva la pagina pulita in JPG, o in PNG per il bianco e nero."
+      }
+    ],
+    features: [
+      {
+        title: "Ombre rimosse",
+        description: "Luce irregolare e angoli scuri vengono uniformati."
+      },
+      {
+        title: "Carta bianca",
+        description: "La carta grigia o ingiallita diventa bianca; il testo resta scuro."
+      },
+      {
+        title: "Raddrizza anche",
+        description: "Le foto di sbieco possono essere raddrizzate in un colpo solo."
+      }
+    ],
+    faqs: [
+      {
+        question: "Il testo diventerà più facile da leggere?",
+        answer: "La pagina appare più pulita e si stampa meglio. Il testo chiaro, sfocato o molto piccolo non si può recuperare; in quei casi usa Scala di grigi invece di Bianco e nero."
+      },
+      {
+        question: "Perché la carta della mia scansione è grigia?",
+        answer: "Scanner e fotocamere raramente registrano la carta come bianco puro. La pulizia misura la luminosità della carta stessa in tutta la pagina e la rende bianca."
+      },
+      {
+        question: "Posso pulire più pagine insieme?",
+        answer: "Pulisci scansione lavora su una pagina alla volta. Per più pagine in un unico PDF, usa Scansiona in PDF, che pulisce ogni pagina."
+      },
+      {
+        question: "Il mio file viene caricato?",
+        answer: "No. Viene pulito sul tuo dispositivo e non lo lascia mai."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR di più immagini",
+    shortName: "OCR immagini",
+    tagline: "Estrai il testo da molte immagini insieme, in 10 lingue, e scaricalo in un unico file di testo o in un file per immagine. Gratis.",
+    intro: "OCR di più immagini legge il testo di una serie di immagini in un colpo solo: foto di documenti, screenshot, scansioni o ricevute. Scegli la lingua e, per le foto di pagine di carta, fai prima trovare e raddrizzare ogni pagina: la lettura diventa molto più precisa quando una foto è stata scattata di sbieco. Copia ogni testo, oppure scarica tutto in un unico file di testo o in uno ZIP con un file di testo per immagine. La lettura avviene sul tuo dispositivo, quindi le tue immagini non vengono caricate.",
+    seoTitle: "OCR di più immagini – Estrai testo da tante immagini",
+    seoDescription: "Estrai il testo da più immagini insieme con l’OCR: 10 lingue, foto di pagine raddrizzate prima, download in TXT o ZIP. Gratis, senza upload.",
+    keywords: [
+      "ocr più immagini",
+      "estrarre testo da più immagini",
+      "ocr multiplo",
+      "da immagine a testo",
+      "convertire immagini in testo"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi le immagini",
+        description: "Foto, screenshot o scansioni, quante ne servono."
+      },
+      {
+        title: "Scegli la lingua",
+        description: "E spunta la casella se sono foto di pagine di carta."
+      },
+      {
+        title: "Leggi e scarica",
+        description: "Copia ogni testo, oppure scarica un TXT o uno ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Tante insieme",
+        description: "Ogni immagine viene letta a turno, con l’avanzamento mostrato."
+      },
+      {
+        title: "10 lingue",
+        description: "Compresi giapponese e coreano."
+      },
+      {
+        title: "Raddrizza le foto",
+        description: "Le pagine fotografate di sbieco vengono trovate e raddrizzate prima della lettura."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quanto è preciso?",
+        answer: "Il testo stampato e nitido viene letto molto bene. Scrittura a mano, testo molto piccolo e foto sfocate vengono letti male; controlla nomi, numeri e importi prima di usarli."
+      },
+      {
+        question: "Quando devo spuntare “Sono foto di pagine di carta”?",
+        answer: "Quando le immagini sono foto di documenti scattate con il telefono, soprattutto di sbieco. Lascia disattivato per screenshot e scansioni, che sono già piatti."
+      },
+      {
+        question: "Posso ottenere un PDF ricercabile?",
+        answer: "Sì: metti le immagini in un PDF con Scansiona in PDF o Da JPG a PDF, poi usa OCR PDF."
+      },
+      {
+        question: "Le mie immagini vengono caricate?",
+        answer: "No. Il testo viene letto sul tuo dispositivo; si scaricano solo i dati della lingua, una sola volta."
+      }
+    ]
+  },
 };

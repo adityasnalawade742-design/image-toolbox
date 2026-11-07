@@ -3,13 +3,15 @@
 import { applyColor, denoise, sharpen, tiled, type ColorOptions, type DenoiseOptions, type SharpenOptions } from './filters';
 import { pixelArt, type PixelArtOptions } from './pixelArt';
 import { warp, type Quad } from './perspective';
+import { scanPage, type ScanOptions } from '../scan/pipeline';
 
 export type PhotoJob =
   | { op: 'sharpen'; o: SharpenOptions }
   | { op: 'denoise'; o: DenoiseOptions }
   | { op: 'color'; o: ColorOptions }
   | { op: 'warp'; q: Quad; width: number; height: number }
-  | { op: 'pixel'; o: PixelArtOptions };
+  | { op: 'pixel'; o: PixelArtOptions }
+  | { op: 'scan'; o: ScanOptions };
 
 export interface PhotoRequest {
   id: number;
@@ -35,6 +37,9 @@ self.onmessage = (e: MessageEvent<PhotoRequest>) => {
     } else if (job.op === 'warp') {
       out = warp(data, w, h, job.q, job.width, job.height);
       [ow, oh] = [job.width, job.height];
+    } else if (job.op === 'scan') {
+      const r = scanPage(data, w, h, job.o);
+      [out, ow, oh] = [r.data, r.w, r.h];
     } else {
       const r = pixelArt(data, w, h, job.o);
       [out, ow, oh] = [r.data, r.w, r.h];

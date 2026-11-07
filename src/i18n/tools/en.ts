@@ -10881,4 +10881,187 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    "name": "Scan to PDF",
+    "shortName": "Scan to PDF",
+    "tagline": "Turn phone photos of paper pages into a clean, straight PDF. Edges are found for you. Free, and nothing is uploaded.",
+    "intro": "Scan to PDF turns photos of documents, receipts, letters or notes into a PDF that looks scanned. It finds the edges of each page, straightens pages photographed at an angle, and evens out shadows and uneven light so the paper comes out white. Choose color, grayscale or black and white, A4, Letter or the page's own shape, put the pages in order and download one PDF. If an edge isn't found, drag the corners into place. Everything happens on your device.",
+    "seoTitle": "Scan to PDF – Phone Photos to a Clean PDF, Free",
+    "seoDescription": "Turn photos of documents into a clean PDF online: page edges found, angles straightened, shadows removed, A4 or Letter. Free, no upload, no app.",
+    "keywords": [
+      "scan to pdf",
+      "photo to pdf scanner",
+      "scan document with phone",
+      "convert photo of document to pdf",
+      "online document scanner"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add photos of the pages",
+        "description": "Take them with your phone or choose existing photos."
+      },
+      {
+        "title": "Check each page",
+        "description": "The edges are found for you; drag a corner if needed."
+      },
+      {
+        "title": "Download the PDF",
+        "description": "Choose the look and page size, then save one PDF."
+      }
+    ],
+    "features": [
+      {
+        "title": "Edges found automatically",
+        "description": "Pages are found and straightened, even at an angle."
+      },
+      {
+        "title": "Shadows removed",
+        "description": "Uneven light is evened out and the paper turns white."
+      },
+      {
+        "title": "Private",
+        "description": "Pages never leave your device."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need an app?",
+        "answer": "No. Open this page on your phone, add photos of the pages, and download the PDF."
+      },
+      {
+        "question": "Can I search or copy the text in the PDF?",
+        "answer": "Not straight away: the pages are pictures. Run the PDF through OCR PDF to add a text layer you can search and copy."
+      },
+      {
+        "question": "Which look should I choose?",
+        "answer": "Color keeps stamps, signatures and highlights. Grayscale suits most text. Black & white makes the smallest files, but can lose faint or very small text."
+      },
+      {
+        "question": "What if the page isn't found?",
+        "answer": "The whole photo is used and nothing is cut off. Drag the four corners onto the page's corners, or tap Find the edges again."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    "name": "Scan Cleaner",
+    "shortName": "Scan Cleaner",
+    "tagline": "Clean up a scan or a photo of a page: shadows evened out, paper white, text crisp. Free, on your device.",
+    "intro": "Scan Cleaner makes a scanned page or a photo of a document easier to read and print. It evens out shadows, dark corners and uneven light, turns gray or yellowed paper white, and darkens the text, in color, grayscale or black and white. Photos taken at an angle can be straightened too. Hold the button to compare with the original and check the result at full size before you download.",
+    "seoTitle": "Scan Cleaner – Whiten and Clean Up Scans, Free",
+    "seoDescription": "Clean up scanned documents online: remove shadows, whiten gray or yellow paper, make text darker, straighten photos. Color, gray or black & white. Free.",
+    "keywords": [
+      "clean up scanned document",
+      "whiten scan background",
+      "remove shadow from document photo",
+      "make scan clearer",
+      "enhance scanned document"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your scan or photo",
+        "description": "A scan, or a photo of a page."
+      },
+      {
+        "title": "Choose the look",
+        "description": "Color, grayscale or black and white, and how strong."
+      },
+      {
+        "title": "Download",
+        "description": "Save the cleaned page as JPG, or PNG for black and white."
+      }
+    ],
+    "features": [
+      {
+        "title": "Shadows removed",
+        "description": "Uneven light and dark corners are evened out."
+      },
+      {
+        "title": "White paper",
+        "description": "Gray or yellowed paper turns white; text stays dark."
+      },
+      {
+        "title": "Straighten too",
+        "description": "Photos at an angle can be straightened in one go."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will it make my text easier to read?",
+        "answer": "It makes the page look cleaner and print better. Faint, blurry or very small text can't be brought back; use Grayscale rather than Black & white for those."
+      },
+      {
+        "question": "Why is my scan's paper gray?",
+        "answer": "Scanners and cameras rarely record paper as pure white. Cleaning measures the paper's own brightness across the page and turns it white."
+      },
+      {
+        "question": "Can I clean several pages at once?",
+        "answer": "Scan Cleaner works on one page at a time. For several pages in one PDF, use Scan to PDF, which cleans every page."
+      },
+      {
+        "question": "Is my file uploaded?",
+        "answer": "No. It's cleaned on your device and never leaves it."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    "name": "OCR Multiple Images",
+    "shortName": "OCR Images",
+    "tagline": "Extract text from many images at once, in 10 languages, and download it as one text file or a file per image. Free.",
+    "intro": "OCR Multiple Images reads the text in a set of images in one go: photos of documents, screenshots, scans or receipts. Choose the language, and for photos of paper pages, have each page found and straightened first, which makes reading far more accurate when a photo was taken at an angle. Copy each text, or download everything as one text file or a ZIP with a text file per image. The reading happens on your device, so your images aren't uploaded.",
+    "seoTitle": "OCR Multiple Images – Extract Text From Many Images",
+    "seoDescription": "Extract text from multiple images at once with OCR: 10 languages, photos of pages straightened first, download as TXT or ZIP. Free, no upload.",
+    "keywords": [
+      "ocr multiple images",
+      "batch ocr",
+      "extract text from multiple images",
+      "images to text",
+      "bulk image to text"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your images",
+        "description": "Photos, screenshots or scans, as many as you need."
+      },
+      {
+        "title": "Choose the language",
+        "description": "And tick the box if they are photos of paper pages."
+      },
+      {
+        "title": "Read and download",
+        "description": "Copy each text, or download one TXT or a ZIP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Many at once",
+        "description": "Every image is read in turn, with progress shown."
+      },
+      {
+        "title": "10 languages",
+        "description": "Including Japanese and Korean."
+      },
+      {
+        "title": "Straightens photos",
+        "description": "Pages photographed at an angle are found and flattened before reading."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How accurate is it?",
+        "answer": "Clear printed text reads very well. Handwriting, very small text and blurry photos read poorly; check names, numbers and amounts before you use them."
+      },
+      {
+        "question": "When should I tick “photos of paper pages”?",
+        "answer": "When the images are photos of documents taken with a phone, especially at an angle. Leave it off for screenshots and scans, which are already flat."
+      },
+      {
+        "question": "Can I get a searchable PDF instead?",
+        "answer": "Yes: put the images into a PDF with Scan to PDF or JPG to PDF, then use OCR PDF."
+      },
+      {
+        "question": "Are my images uploaded?",
+        "answer": "No. The text is read on your device; only the language data is downloaded, once."
+      }
+    ]
+  },
 };

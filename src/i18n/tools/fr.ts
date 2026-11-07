@@ -11272,4 +11272,187 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Scanner en PDF",
+    shortName: "Scanner en PDF",
+    tagline: "Transformez des photos de pages papier prises au téléphone en un PDF propre et droit. Les bords sont trouvés pour vous. Gratuit, rien n’est envoyé.",
+    intro: "Scanner en PDF transforme des photos de documents, de reçus, de lettres ou de notes en un PDF qui a l’air scanné. Il trouve les bords de chaque page, redresse les pages photographiées de biais et atténue les ombres et l’éclairage inégal pour que le papier ressorte blanc. Choisissez couleur, niveaux de gris ou noir et blanc, A4, Letter ou la forme de la page elle-même, mettez les pages dans l’ordre et téléchargez un seul PDF. Si un bord n’est pas trouvé, faites glisser les coins à leur place. Tout se passe sur votre appareil.",
+    seoTitle: "Scanner en PDF : photos de téléphone en PDF net, gratuit",
+    seoDescription: "Transformez des photos de documents en PDF propre en ligne : bords trouvés, angles redressés, ombres supprimées, A4 ou Letter. Gratuit, sans envoi ni appli.",
+    keywords: [
+      "scanner en pdf",
+      "scanner un document avec son téléphone",
+      "photo en pdf scanner",
+      "convertir une photo de document en pdf",
+      "scanner de documents en ligne"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez des photos des pages",
+        description: "Prenez-les avec votre téléphone ou choisissez des photos existantes."
+      },
+      {
+        title: "Vérifiez chaque page",
+        description: "Les bords sont trouvés pour vous ; faites glisser un coin si besoin."
+      },
+      {
+        title: "Téléchargez le PDF",
+        description: "Choisissez le rendu et le format de page, puis enregistrez un seul PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Bords trouvés automatiquement",
+        description: "Les pages sont trouvées et redressées, même de biais."
+      },
+      {
+        title: "Ombres supprimées",
+        description: "L’éclairage inégal est atténué et le papier devient blanc."
+      },
+      {
+        title: "Privé",
+        description: "Les pages ne quittent jamais votre appareil."
+      }
+    ],
+    faqs: [
+      {
+        question: "Faut-il une appli ?",
+        answer: "Non. Ouvrez cette page sur votre téléphone, ajoutez des photos des pages et téléchargez le PDF."
+      },
+      {
+        question: "Puis-je rechercher ou copier le texte du PDF ?",
+        answer: "Pas tout de suite : les pages sont des images. Passez le PDF dans OCR PDF pour ajouter une couche de texte que vous pourrez rechercher et copier."
+      },
+      {
+        question: "Quel rendu choisir ?",
+        answer: "Couleur conserve les tampons, les signatures et le surlignage. Niveaux de gris convient à la plupart des textes. Noir et blanc donne les fichiers les plus légers, mais peut perdre le texte pâle ou très petit."
+      },
+      {
+        question: "Et si la page n’est pas trouvée ?",
+        answer: "La photo entière est utilisée et rien n’est coupé. Faites glisser les quatre coins sur les coins de la page, ou touchez à nouveau Trouver les bords."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Nettoyer un scan",
+    shortName: "Nettoyer un scan",
+    tagline: "Nettoyez un scan ou une photo de page : ombres atténuées, papier blanc, texte net. Gratuit, sur votre appareil.",
+    intro: "Nettoyer un scan rend une page scannée ou une photo de document plus facile à lire et à imprimer. Il atténue les ombres, les coins sombres et l’éclairage inégal, blanchit le papier gris ou jauni et fonce le texte, en couleur, en niveaux de gris ou en noir et blanc. Les photos prises de biais peuvent aussi être redressées. Maintenez le bouton pour comparer avec l’original et vérifiez le résultat en taille réelle avant de télécharger.",
+    seoTitle: "Nettoyer un scan : blanchir et améliorer, gratuit",
+    seoDescription: "Nettoyez vos documents scannés en ligne : ombres supprimées, papier gris ou jauni blanchi, texte plus foncé, photos redressées. Couleur, gris ou N&B. Gratuit.",
+    keywords: [
+      "nettoyer un document scanné",
+      "blanchir le fond d’un scan",
+      "enlever l’ombre d’une photo de document",
+      "rendre un scan plus lisible",
+      "améliorer un document scanné"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez votre scan ou votre photo",
+        description: "Un scan, ou une photo d’une page."
+      },
+      {
+        title: "Choisissez le rendu",
+        description: "Couleur, niveaux de gris ou noir et blanc, et l’intensité."
+      },
+      {
+        title: "Téléchargez",
+        description: "Enregistrez la page nettoyée en JPG, ou en PNG pour le noir et blanc."
+      }
+    ],
+    features: [
+      {
+        title: "Ombres supprimées",
+        description: "L’éclairage inégal et les coins sombres sont atténués."
+      },
+      {
+        title: "Papier blanc",
+        description: "Le papier gris ou jauni devient blanc ; le texte reste foncé."
+      },
+      {
+        title: "Redressement en plus",
+        description: "Les photos prises de biais peuvent être redressées en même temps."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mon texte sera-t-il plus facile à lire ?",
+        answer: "La page paraît plus propre et s’imprime mieux. Le texte pâle, flou ou très petit ne peut pas être récupéré ; pour ces cas, utilisez Niveaux de gris plutôt que Noir et blanc."
+      },
+      {
+        question: "Pourquoi le papier de mon scan est-il gris ?",
+        answer: "Les scanners et les appareils photo enregistrent rarement le papier en blanc pur. Le nettoyage mesure la luminosité du papier lui-même sur toute la page et le rend blanc."
+      },
+      {
+        question: "Puis-je nettoyer plusieurs pages à la fois ?",
+        answer: "Nettoyer un scan traite une page à la fois. Pour plusieurs pages dans un seul PDF, utilisez Scanner en PDF, qui nettoie chaque page."
+      },
+      {
+        question: "Mon fichier est-il envoyé ?",
+        answer: "Non. Il est nettoyé sur votre appareil et ne le quitte jamais."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR de plusieurs images",
+    shortName: "OCR d’images",
+    tagline: "Extrayez le texte de nombreuses images à la fois, en 10 langues, et téléchargez-le en un seul fichier texte ou un fichier par image. Gratuit.",
+    intro: "OCR de plusieurs images lit d’un coup le texte d’une série d’images : photos de documents, captures d’écran, scans ou reçus. Choisissez la langue et, pour les photos de pages papier, faites d’abord trouver et redresser chaque page, ce qui rend la lecture bien plus précise quand une photo a été prise de biais. Copiez chaque texte, ou téléchargez le tout en un seul fichier texte ou en ZIP avec un fichier texte par image. La lecture se fait sur votre appareil : vos images ne sont pas envoyées.",
+    seoTitle: "OCR de plusieurs images : extraire le texte en lot",
+    seoDescription: "Extrayez le texte de plusieurs images à la fois par OCR : 10 langues, photos de pages redressées d’abord, téléchargement en TXT ou ZIP. Gratuit, sans envoi.",
+    keywords: [
+      "ocr plusieurs images",
+      "ocr par lot",
+      "extraire le texte de plusieurs images",
+      "image en texte",
+      "convertir des images en texte"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos images",
+        description: "Photos, captures d’écran ou scans, autant qu’il vous faut."
+      },
+      {
+        title: "Choisissez la langue",
+        description: "Et cochez la case s’il s’agit de photos de pages papier."
+      },
+      {
+        title: "Lisez et téléchargez",
+        description: "Copiez chaque texte, ou téléchargez un TXT ou un ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Plusieurs à la fois",
+        description: "Chaque image est lue à son tour, avec la progression affichée."
+      },
+      {
+        title: "10 langues",
+        description: "Dont le japonais et le coréen."
+      },
+      {
+        title: "Photos redressées",
+        description: "Les pages photographiées de biais sont trouvées et aplanies avant la lecture."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle est la précision ?",
+        answer: "Le texte imprimé net est très bien lu. L’écriture manuscrite, le texte très petit et les photos floues sont mal lus ; vérifiez les noms, les chiffres et les montants avant de les utiliser."
+      },
+      {
+        question: "Quand cocher « Ce sont des photos de pages papier » ?",
+        answer: "Quand les images sont des photos de documents prises avec un téléphone, surtout de biais. Laissez décoché pour les captures d’écran et les scans, qui sont déjà à plat."
+      },
+      {
+        question: "Puis-je obtenir un PDF consultable à la place ?",
+        answer: "Oui : mettez les images dans un PDF avec Scanner en PDF ou JPG en PDF, puis utilisez OCR PDF."
+      },
+      {
+        question: "Mes images sont-elles envoyées ?",
+        answer: "Non. Le texte est lu sur votre appareil ; seules les données de langue sont téléchargées, une fois."
+      }
+    ]
+  },
 };

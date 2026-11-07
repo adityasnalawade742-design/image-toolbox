@@ -11266,4 +11266,187 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "scan-to-pdf": {
+    name: "Scan zu PDF",
+    shortName: "Scan zu PDF",
+    tagline: "Mach aus Handyfotos von Papierseiten ein sauberes, gerades PDF. Die Ränder werden automatisch gefunden. Kostenlos, nichts wird hochgeladen.",
+    intro: "Scan zu PDF macht aus Fotos von Dokumenten, Quittungen, Briefen oder Notizen ein PDF, das wie gescannt aussieht. Es findet die Ränder jeder Seite, entzerrt schräg fotografierte Seiten und gleicht Schatten und ungleichmäßiges Licht aus, damit das Papier weiß wird. Wähle Farbe, Graustufen oder Schwarz-Weiß, A4, Letter oder die eigene Form der Seite, bring die Seiten in die richtige Reihenfolge und lade ein einziges PDF herunter. Wird ein Rand nicht gefunden, zieh die Ecken an die richtige Stelle. Alles passiert auf deinem Gerät.",
+    seoTitle: "Scan zu PDF – Handyfotos zu sauberem PDF, gratis",
+    seoDescription: "Fotos von Dokumenten online in ein sauberes PDF umwandeln: Ränder erkannt, Schräglage entzerrt, Schatten entfernt, A4 oder Letter. Gratis, ohne Upload.",
+    keywords: [
+      "scan zu pdf",
+      "dokument mit handy scannen",
+      "foto in pdf umwandeln",
+      "foto von dokument als pdf",
+      "dokumente online scannen"
+    ],
+    howToSteps: [
+      {
+        title: "Fotos der Seiten hinzufügen",
+        description: "Nimm sie mit dem Handy auf oder wähle vorhandene Fotos."
+      },
+      {
+        title: "Jede Seite prüfen",
+        description: "Die Ränder werden automatisch gefunden; zieh bei Bedarf eine Ecke."
+      },
+      {
+        title: "PDF herunterladen",
+        description: "Wähle Darstellung und Seitengröße, dann speichere ein einziges PDF."
+      }
+    ],
+    features: [
+      {
+        title: "Ränder automatisch gefunden",
+        description: "Seiten werden gefunden und entzerrt, auch wenn sie schräg sind."
+      },
+      {
+        title: "Schatten entfernt",
+        description: "Ungleichmäßiges Licht wird ausgeglichen, und das Papier wird weiß."
+      },
+      {
+        title: "Privat",
+        description: "Die Seiten verlassen nie dein Gerät."
+      }
+    ],
+    faqs: [
+      {
+        question: "Brauche ich eine App?",
+        answer: "Nein. Öffne diese Seite auf deinem Handy, füge Fotos der Seiten hinzu und lade das PDF herunter."
+      },
+      {
+        question: "Kann ich den Text im PDF durchsuchen oder kopieren?",
+        answer: "Nicht sofort: Die Seiten sind Bilder. Schick das PDF durch PDF-OCR, um eine Textebene hinzuzufügen, die du durchsuchen und kopieren kannst."
+      },
+      {
+        question: "Welche Darstellung soll ich wählen?",
+        answer: "Farbe behält Stempel, Unterschriften und Markierungen. Graustufen passt für die meisten Texte. Schwarz-Weiß ergibt die kleinsten Dateien, kann aber blassen oder sehr kleinen Text verlieren."
+      },
+      {
+        question: "Was, wenn die Seite nicht gefunden wird?",
+        answer: "Dann wird das ganze Foto verwendet und nichts abgeschnitten. Zieh die vier Ecken auf die Ecken der Seite oder tippe noch einmal auf „Ränder finden“."
+      }
+    ]
+  },
+  "scan-cleaner": {
+    name: "Scan verbessern",
+    shortName: "Scan verbessern",
+    tagline: "Bereinige einen Scan oder ein Foto einer Seite: Schatten ausgeglichen, Papier weiß, Text klar. Kostenlos, auf deinem Gerät.",
+    intro: "Scan verbessern macht eine gescannte Seite oder ein Foto eines Dokuments leichter lesbar und besser druckbar. Es gleicht Schatten, dunkle Ecken und ungleichmäßiges Licht aus, macht graues oder vergilbtes Papier weiß und dunkelt den Text ab, in Farbe, Graustufen oder Schwarz-Weiß. Schräg aufgenommene Fotos lassen sich auch entzerren. Halte die Taste gedrückt, um mit dem Original zu vergleichen, und prüfe das Ergebnis in voller Größe, bevor du es herunterlädst.",
+    seoTitle: "Scan verbessern – Scans aufhellen und bereinigen, gratis",
+    seoDescription: "Gescannte Dokumente online verbessern: Schatten entfernen, graues oder gelbes Papier weiß machen, Text dunkler, Fotos entzerren. Farbe, Grau oder S/W. Gratis.",
+    keywords: [
+      "scan verbessern",
+      "gescanntes dokument verbessern",
+      "scan hintergrund weiß machen",
+      "schatten aus dokumentfoto entfernen",
+      "scan aufhellen"
+    ],
+    howToSteps: [
+      {
+        title: "Scan oder Foto hinzufügen",
+        description: "Ein Scan oder ein Foto einer Seite."
+      },
+      {
+        title: "Darstellung wählen",
+        description: "Farbe, Graustufen oder Schwarz-Weiß, und wie stark."
+      },
+      {
+        title: "Herunterladen",
+        description: "Speichere die bereinigte Seite als JPG, oder als PNG bei Schwarz-Weiß."
+      }
+    ],
+    features: [
+      {
+        title: "Schatten entfernt",
+        description: "Ungleichmäßiges Licht und dunkle Ecken werden ausgeglichen."
+      },
+      {
+        title: "Weißes Papier",
+        description: "Graues oder vergilbtes Papier wird weiß; der Text bleibt dunkel."
+      },
+      {
+        title: "Auch entzerren",
+        description: "Schräge Fotos lassen sich im selben Schritt entzerren."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wird mein Text dadurch besser lesbar?",
+        answer: "Die Seite wirkt sauberer und lässt sich besser drucken. Blasser, unscharfer oder sehr kleiner Text lässt sich nicht zurückholen; nimm dafür Graustufen statt Schwarz-Weiß."
+      },
+      {
+        question: "Warum ist das Papier in meinem Scan grau?",
+        answer: "Scanner und Kameras nehmen Papier selten als reines Weiß auf. Die Bereinigung misst die eigene Helligkeit des Papiers über die ganze Seite und macht es weiß."
+      },
+      {
+        question: "Kann ich mehrere Seiten auf einmal bereinigen?",
+        answer: "Scan verbessern bearbeitet eine Seite nach der anderen. Für mehrere Seiten in einem PDF nimm Scan zu PDF, das jede Seite bereinigt."
+      },
+      {
+        question: "Wird meine Datei hochgeladen?",
+        answer: "Nein. Sie wird auf deinem Gerät bereinigt und verlässt es nie."
+      }
+    ]
+  },
+  "ocr-multiple-images": {
+    name: "OCR für mehrere Bilder",
+    shortName: "Bilder-OCR",
+    tagline: "Lies Text aus vielen Bildern auf einmal aus, in 10 Sprachen, und lade ihn als eine Textdatei oder eine Datei pro Bild herunter. Kostenlos.",
+    intro: "OCR für mehrere Bilder liest den Text einer ganzen Reihe von Bildern in einem Durchgang: Fotos von Dokumenten, Screenshots, Scans oder Quittungen. Wähle die Sprache und lass bei Fotos von Papierseiten jede Seite zuerst finden und entzerren, was das Lesen viel genauer macht, wenn ein Foto schräg aufgenommen wurde. Kopiere jeden Text einzeln oder lade alles als eine Textdatei oder als ZIP mit einer Textdatei pro Bild herunter. Das Lesen passiert auf deinem Gerät, deine Bilder werden also nicht hochgeladen.",
+    seoTitle: "OCR für mehrere Bilder – Text aus vielen Bildern auslesen",
+    seoDescription: "Text aus mehreren Bildern auf einmal per OCR auslesen: 10 Sprachen, Seitenfotos vorher entzerrt, Download als TXT oder ZIP. Kostenlos, ohne Upload.",
+    keywords: [
+      "ocr mehrere bilder",
+      "stapel ocr",
+      "text aus mehreren bildern extrahieren",
+      "bild in text umwandeln",
+      "bilder zu text"
+    ],
+    howToSteps: [
+      {
+        title: "Bilder hinzufügen",
+        description: "Fotos, Screenshots oder Scans, so viele du brauchst."
+      },
+      {
+        title: "Sprache wählen",
+        description: "Und setz das Häkchen, wenn es Fotos von Papierseiten sind."
+      },
+      {
+        title: "Lesen und herunterladen",
+        description: "Kopiere jeden Text oder lade ein TXT oder ein ZIP herunter."
+      }
+    ],
+    features: [
+      {
+        title: "Viele auf einmal",
+        description: "Jedes Bild wird nacheinander gelesen, mit Fortschrittsanzeige."
+      },
+      {
+        title: "10 Sprachen",
+        description: "Auch Japanisch und Koreanisch."
+      },
+      {
+        title: "Entzerrt Fotos",
+        description: "Schräg fotografierte Seiten werden vor dem Lesen gefunden und geglättet."
+      }
+    ],
+    faqs: [
+      {
+        question: "Wie genau ist es?",
+        answer: "Klarer gedruckter Text wird sehr gut gelesen. Handschrift, sehr kleiner Text und unscharfe Fotos werden schlecht gelesen; prüf Namen, Zahlen und Beträge, bevor du sie verwendest."
+      },
+      {
+        question: "Wann setze ich das Häkchen bei „Das sind Fotos von Papierseiten“?",
+        answer: "Wenn die Bilder mit dem Handy aufgenommene Fotos von Dokumenten sind, besonders wenn sie schräg sind. Für Screenshots und Scans, die schon flach sind, lass es aus."
+      },
+      {
+        question: "Kann ich stattdessen ein durchsuchbares PDF bekommen?",
+        answer: "Ja: Mach mit Scan zu PDF oder JPG in PDF ein PDF aus den Bildern und nutze dann PDF-OCR."
+      },
+      {
+        question: "Werden meine Bilder hochgeladen?",
+        answer: "Nein. Der Text wird auf deinem Gerät gelesen; nur die Sprachdaten werden einmalig heruntergeladen."
+      }
+    ]
+  },
 };

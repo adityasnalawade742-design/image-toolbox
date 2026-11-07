@@ -1624,6 +1624,33 @@ export const TOOLS: ToolDefinition[] = [
     iconName: 'FileText',
     accept: 'application/pdf,.pdf',
   },
+  {
+    slug: 'scan-to-pdf',
+    name: 'Scan to PDF',
+    shortName: 'Scan to PDF',
+    description: 'Turn phone photos of paper pages into a clean, straight PDF: edges found automatically, shadows removed.',
+    category: 'pdf-documents',
+    iconName: 'FileScan',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/tiff,.tif,.tiff',
+  },
+  {
+    slug: 'scan-cleaner',
+    name: 'Scan Cleaner',
+    shortName: 'Scan Cleaner',
+    description: 'Clean up a scan or a photo of a page: even out shadows, whiten the paper and sharpen the text, in color, gray or black and white.',
+    category: 'edit-transform',
+    iconName: 'ScanLine',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/tiff,.tif,.tiff',
+  },
+  {
+    slug: 'ocr-multiple-images',
+    name: 'OCR Multiple Images',
+    shortName: 'OCR Images',
+    description: 'Extract text from many images at once, in 10 languages, and download it as one text file or a file per image.',
+    category: 'convert-formats',
+    iconName: 'ScanText',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/tiff,.tif,.tiff',
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolDefinition | undefined {
