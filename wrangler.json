@@ -11,6 +11,7 @@
     "not_found_handling": "404-page",
     "html_handling": "drop-trailing-slash"
   },
+  "send_email": [{ "name": "CONTACT_EMAIL", "destination_address": "aditya.contact142@gmail.com" }],
   "vars": {
     "DOC_API_URL": "https://image-toolbox-docs-1025565539524.asia-south1.run.app"
   }

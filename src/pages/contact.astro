@@ -3,6 +3,7 @@ import InfoLayout from '../layouts/InfoLayout.astro';
 import { SITE_CONFIG } from '../config/site';
 
 const name = SITE_CONFIG.name;
+const field = 'w-full min-h-[44px] px-3 border border-ink bg-paper-bright text-[16px] text-ink rounded-md';
 ---
 
 <InfoLayout
@@ -11,6 +12,49 @@ const name = SITE_CONFIG.name;
   path="contact"
 >
   <p>Questions, bug reports and ideas for new tools are all welcome.</p>
+
+  <h2>Send a message</h2>
+  <!-- Shown after a form post without JavaScript, via the address's #sent / #not-sent -->
+  <p id="sent" class="form-result" role="status">Thanks, your message was sent. Replies can take a few days.</p>
+  <p id="not-sent" class="form-result" role="alert">
+    Your message couldn't be sent. Check the email address and that the message is at least 10 characters, or email us directly.
+  </p>
+  <form id="contact-form" method="post" action="/api/contact" class="not-prose space-y-4 max-w-xl" novalidate>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="block space-y-1.5">
+        <span class="text-[15px] text-ink font-semibold">Your name <span class="font-normal text-graphite">(optional)</span></span>
+        <input name="name" type="text" maxlength="100" autocomplete="name" class={field} />
+      </label>
+      <label class="block space-y-1.5">
+        <span class="text-[15px] text-ink font-semibold">Your email</span>
+        <input name="email" type="email" required maxlength="254" autocomplete="email" class={field} aria-describedby="email-hint" />
+        <span id="email-hint" class="block text-[13px] text-graphite">Only used to reply to you.</span>
+      </label>
+    </div>
+    <label class="block space-y-1.5">
+      <span class="text-[15px] text-ink font-semibold">Topic</span>
+      <select name="topic" class={field}>
+        <option value="bug">Bug report</option>
+        <option value="idea">Idea for a tool</option>
+        <option value="privacy">Privacy question</option>
+        <option value="business">Business or press</option>
+        <option value="other" selected>Something else</option>
+      </select>
+    </label>
+    <label class="block space-y-1.5">
+      <span class="text-[15px] text-ink font-semibold">Message</span>
+      <textarea name="message" required minlength="10" maxlength="5000" rows="7" class={`${field} py-2`} aria-describedby="message-hint"></textarea>
+      <span id="message-hint" class="block text-[13px] text-graphite">For a bug, please include the tool, your device and browser, and what happened.</span>
+    </label>
+    <!-- A trap for form-filling bots: hidden from people and screen readers -->
+    <div class="trap" aria-hidden="true">
+      <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <div class="flex flex-wrap items-center gap-4">
+      <button type="submit" class="btn-ink min-h-[48px] px-6 text-[16px]">Send message</button>
+      <p id="form-status" class="text-[15px]" role="status" aria-live="polite"></p>
+    </div>
+  </form>
 
   <h2>Email</h2>
   <p>
@@ -37,3 +81,59 @@ const name = SITE_CONFIG.name;
   <h2>Privacy questions</h2>
   <p>See the <a href="/privacy">privacy policy</a>, or email the address above.</p>
 </InfoLayout>
+
+<style>
+  .trap {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .form-result {
+    display: none;
+    padding: 0.75rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 0.5rem;
+  }
+  .form-result:target {
+    display: block;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+  const MESSAGES: Record<string, string> = {
+    email: 'Please enter a valid email address, so we can reply.',
+    message: 'Please write a message of at least 10 characters.',
+    rate_limited: 'Too many messages just now. Please wait a few minutes and try again.',
+    unavailable: 'The form isn’t working right now. Please email us directly.',
+    send_failed: 'The message couldn’t be sent. Please try again, or email us directly.',
+  };
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status) return;
+    const data = Object.fromEntries(new FormData(form));
+    const button = form.querySelector('button[type=submit]') as HTMLButtonElement;
+    status.className = 'text-[15px] text-ink';
+    status.textContent = 'Sending…';
+    button.disabled = true;
+    try {
+      const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const body = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (res.ok && body.ok) {
+        form.reset();
+        status.textContent = 'Thanks, your message was sent. Replies can take a few days.';
+      } else {
+        status.className = 'text-[15px] text-accent-red';
+        status.textContent = MESSAGES[body.error ?? ''] ?? MESSAGES.send_failed;
+      }
+    } catch {
+      status.className = 'text-[15px] text-accent-red';
+      status.textContent = MESSAGES.send_failed;
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
