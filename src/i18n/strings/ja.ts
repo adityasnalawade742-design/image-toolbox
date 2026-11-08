@@ -130,7 +130,7 @@ export const strings = {
   'ctl.rotate.reset': 'リセット',
   'ctl.rotate.angle': '角度を指定',
   'ctl.rotate.crop': "空白の角を切り取る",
-  'ctl.rotate.cropNote': "写真の傾きを直すときに、余白のない最大の長方形を残します。",
+  'ctl.rotate.cropNote': "傾き補正（15°まで）では自動でオンになり、余白のない最大の長方形を残します。それより大きく回すと写真が大きく欠けるためオフになります。",
 
   // Flip
   'ctl.flip.direction': '反転',

@@ -54,7 +54,7 @@ export const editStrings = {
   'ctl.rotate.reset': 'Reset',
   'ctl.rotate.angle': 'Custom angle',
   'ctl.rotate.crop': 'Crop off the empty corners',
-  'ctl.rotate.cropNote': 'For straightening a photo: keeps the largest rectangle with no blank edges.',
+  'ctl.rotate.cropNote': 'On by itself for straightening (up to 15°): keeps the largest rectangle with no blank edges. Bigger turns would lose too much of the photo.',
 
   // Flip
   'ctl.flip.direction': 'Flip',

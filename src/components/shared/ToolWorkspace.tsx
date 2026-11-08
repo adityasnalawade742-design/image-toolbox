@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
 import { toolOutputName } from '../../lib/storage/fileNames';
+import { straighteningAngle } from '../../lib/canvas/engine';
 import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload, Maximize2 } from 'lucide-react';
 import {
   loadImage,
@@ -377,7 +378,9 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
   // Rotate & Flip
   const [rotation, setRotation] = useState<number>(0);
-  const [rotateCrop, setRotateCrop] = useState(true);
+  // null: decided by the angle (on for straightening, off for big turns that would lose much of the photo)
+  const [rotateCropChoice, setRotateCropChoice] = useState<boolean | null>(null);
+  const rotateCrop = rotateCropChoice ?? straighteningAngle(rotation);
   const [flipH, setFlipH] = useState<boolean>(false);
   const [flipV, setFlipV] = useState<boolean>(false);
 
@@ -1359,7 +1362,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'rotate-image' && (
-                <RotateControls rotation={rotation} onChange={setRotation} crop={rotateCrop} onCrop={setRotateCrop} />
+                <RotateControls rotation={rotation} onChange={setRotation} crop={rotateCrop} onCrop={setRotateCropChoice} />
               )}
 
               {slug === 'flip-image' && (
