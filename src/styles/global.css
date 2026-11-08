@@ -5,6 +5,16 @@
 @import '@fontsource/barlow-semi-condensed/600.css';
 @import '@fontsource/barlow-semi-condensed/700.css';
 
+/* Wordmark only: Fredoka 700 (SIL OFL, public/fonts/Fredoka-OFL.txt) cut down to "t a d f l e" and the dotless "ı",
+   under 2 KB. Blocking briefly is fine at this size and avoids the logo flashing in another font */
+@font-face {
+  font-family: 'TadaFile Logo';
+  src: url('/fonts/tadafile-logo.woff') format('woff');
+  font-weight: 700;
+  font-display: block;
+  unicode-range: U+0061, U+0064, U+0065, U+0066, U+006C, U+0074, U+0131;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

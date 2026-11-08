@@ -39,7 +39,9 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <!-- The wordmark's tiny font file (2 KB), so the logo draws in its own lettering at once -->
+    <link rel="preload" href="/fonts/tadafile-logo.woff" as="font" type="font/woff" crossorigin />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
