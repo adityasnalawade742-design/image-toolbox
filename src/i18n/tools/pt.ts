@@ -7325,7 +7325,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Por que minha planilha foi dividida em várias páginas?",
         answer:
-          "O PDF segue as configurações de impressão salvas na planilha. Para que uma planilha caiba em uma página, defina o dimensionamento da impressão como “Ajustar à página” no Excel antes de converter.",
+          "O PDF segue as configurações de impressão salvas na planilha. Para ter cada planilha em uma página, marque “Cada planilha em uma página” antes de converter: a página cresce até caber a planilha, então planilhas grandes saem pequenas na impressão.",
       },
       {
         question: "Meu arquivo é enviado?",
@@ -7559,7 +7559,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Proteger PDF",
     tagline: "Adicione uma senha a um PDF com criptografia AES-256. Grátis e sem cadastro.",
     intro:
-      "O Proteger PDF tranca um PDF com uma senha, para que ele não possa ser aberto sem ela. Use antes de mandar por e-mail extratos bancários, holerites, documentos de identidade ou contratos. O PDF é criptografado com AES-256, a criptografia mais forte que os leitores de PDF suportam, e abre normalmente no Acrobat, em navegadores e em apps de celular depois que a senha é digitada. Escolha uma senha de pelo menos seis caracteres e guarde-a bem: ninguém consegue recuperá-la. A criptografia é feita com o qpdf no nosso servidor; o arquivo e a senha são apagados logo depois.",
+      "O Proteger PDF tranca um PDF com uma senha, para que ele não possa ser aberto sem ela. Use antes de mandar por e-mail extratos bancários, holerites, documentos de identidade ou contratos. O PDF é criptografado com AES-256, a criptografia mais forte que os leitores de PDF suportam, e abre normalmente no Acrobat, em navegadores e em apps de celular depois que a senha é digitada. Escolha uma senha de pelo menos seis caracteres e guarde-a bem: ninguém consegue recuperá-la. A criptografia é feita com o qpdf no nosso servidor; o arquivo e a senha são apagados logo depois. Você também pode impedir que ele seja impresso, copiado ou alterado.",
     seoTitle: "Proteger PDF com senha – AES-256, grátis",
     seoDescription:
       "Proteger PDF com senha online e grátis: adicione criptografia AES-256 ao arquivo. O arquivo e a senha são apagados logo depois. Sem cadastro.",
@@ -7768,7 +7768,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Converta um PDF para PDF/A para arquivamento de longo prazo e portais oficiais. Grátis e sem cadastro.",
     intro:
-      "O PDF para PDF/A converte um PDF em PDF/A-2b, a versão de arquivamento do PDF que incorpora as fontes e as informações de cor para que o documento continue com a mesma aparência daqui a décadas. Alguns tribunais, portais fiscais, universidades e sites do governo só aceitam envios em PDF/A. A conversão usa o OCRmyPDF e o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. Os links e a maioria dos campos preenchíveis são mantidos; os que não podem atender ao padrão, como campos ocultos ou assinaturas, viram conteúdo fixo da página.",
+      "O PDF para PDF/A converte um PDF em PDF/A-2b, a versão de arquivamento do PDF que incorpora as fontes e as informações de cor para que o documento continue com a mesma aparência daqui a décadas. Alguns tribunais, portais fiscais, universidades e sites do governo só aceitam envios em PDF/A. A conversão usa o OCRmyPDF e o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. Os links e a maioria dos campos preenchíveis são mantidos; os que não podem atender ao padrão, como campos ocultos ou assinaturas, viram conteúdo fixo da página. Você também pode escolher PDF/A-1b ou PDF/A-3b.",
     seoTitle: "Converter PDF para PDF/A – PDF/A-2b, grátis",
     seoDescription:
       "Converter PDF para PDF/A-2b online e grátis, para arquivamento e portais oficiais. Os arquivos são apagados logo depois. Sem cadastro.",
@@ -7815,7 +7815,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual versão de PDF/A eu recebo?",
         answer:
-          "PDF/A-2b, que a maioria dos portais aceita. Se um portal pedir especificamente PDF/A-1 ou PDF/A-3, confira as instruções dele.",
+          "PDF/A-2b por padrão, aceito pela maioria dos portais. Se um portal ou arquivo pedir PDF/A-1b ou PDF/A-3b, escolha esse nível antes de converter.",
       },
       {
         question: "Por que o arquivo PDF/A é maior?",

@@ -7330,7 +7330,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Por qué mi hoja se divide en varias páginas?",
         answer:
-          "El PDF sigue la configuración de impresión guardada en la hoja de cálculo. Para que una hoja quepa en una página, ajusta el escalado de impresión a «Ajustar hoja en una página» en Excel antes de convertir.",
+          "El PDF sigue la configuración de impresión guardada en la hoja de cálculo. Para tener cada hoja en una página, marca «Ajustar cada hoja en una página» antes de convertir: la página crece hasta abarcar la hoja, así que las hojas grandes se imprimen pequeñas.",
       },
       {
         question: "¿Se sube mi archivo?",
@@ -7568,7 +7568,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Proteger PDF",
     tagline: "Añade una contraseña a un PDF con cifrado AES-256. Gratis y sin registro.",
     intro:
-      "Proteger PDF bloquea un PDF con una contraseña, de modo que no se puede abrir sin ella. Úsalo antes de enviar por correo extractos bancarios, nóminas, documentos de identidad o contratos. El PDF se cifra con AES-256, el cifrado más fuerte que admiten los lectores de PDF, y se abre con normalidad en Acrobat, navegadores y apps del móvil una vez introducida la contraseña. Elige una contraseña de al menos seis caracteres y guárdala bien: nadie puede recuperarla. El cifrado se hace con qpdf en nuestro servidor; el archivo y la contraseña se eliminan justo después.",
+      "Proteger PDF bloquea un PDF con una contraseña, de modo que no se puede abrir sin ella. Úsalo antes de enviar por correo extractos bancarios, nóminas, documentos de identidad o contratos. El PDF se cifra con AES-256, el cifrado más fuerte que admiten los lectores de PDF, y se abre con normalidad en Acrobat, navegadores y apps del móvil una vez introducida la contraseña. Elige una contraseña de al menos seis caracteres y guárdala bien: nadie puede recuperarla. El cifrado se hace con qpdf en nuestro servidor; el archivo y la contraseña se eliminan justo después. También puedes impedir que se imprima, se copie o se modifique.",
     seoTitle: "Proteger PDF con contraseña – AES-256, gratis",
     seoDescription:
       "Proteger PDF con contraseña online y gratis, con cifrado AES-256. El archivo y la contraseña se eliminan justo después de procesarlos. Sin registro.",
@@ -7782,7 +7782,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Convierte un PDF a PDF/A para archivarlo a largo plazo y para portales oficiales. Gratis y sin registro.",
     intro:
-      "PDF a PDF/A convierte un PDF en PDF/A-2b, la versión de archivo del PDF que incrusta las fuentes y la información de color para que el documento se vea igual dentro de décadas. Algunos juzgados, portales de impuestos, universidades y sitios de la administración solo aceptan subidas en PDF/A. La conversión usa OCRmyPDF y Ghostscript en nuestro servidor y el archivo se elimina justo después. Se conservan los enlaces y la mayoría de los campos rellenables; los que no pueden cumplir la norma, como los ocultos o las firmas, pasan a ser contenido fijo de la página.",
+      "PDF a PDF/A convierte un PDF en PDF/A-2b, la versión de archivo del PDF que incrusta las fuentes y la información de color para que el documento se vea igual dentro de décadas. Algunos juzgados, portales de impuestos, universidades y sitios de la administración solo aceptan subidas en PDF/A. La conversión usa OCRmyPDF y Ghostscript en nuestro servidor y el archivo se elimina justo después. Se conservan los enlaces y la mayoría de los campos rellenables; los que no pueden cumplir la norma, como los ocultos o las firmas, pasan a ser contenido fijo de la página. También puedes elegir PDF/A-1b o PDF/A-3b.",
     seoTitle: "Convertir PDF a PDF/A – PDF/A-2b gratis",
     seoDescription:
       "Convertir PDF a PDF/A-2b online y gratis, para archivar y para portales oficiales. Los archivos se eliminan justo después. Sin registro.",
@@ -7829,7 +7829,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué versión de PDF/A obtengo?",
         answer:
-          "PDF/A-2b, que aceptan la mayoría de los portales. Si un portal pide expresamente PDF/A-1 o PDF/A-3, consulta sus instrucciones.",
+          "PDF/A-2b de forma predeterminada, que aceptan la mayoría de los portales. Si un portal o archivo pide PDF/A-1b o PDF/A-3b, elige ese nivel antes de convertir.",
       },
       {
         question: "¿Por qué el archivo PDF/A es más grande?",

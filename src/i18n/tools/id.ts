@@ -7327,7 +7327,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mengapa sheet saya terbagi ke beberapa halaman?",
         answer:
-          "PDF mengikuti pengaturan cetak yang tersimpan di spreadsheet. Agar satu sheet muat di satu halaman, atur skala cetak ke “Fit to page” (Paskan ke halaman) di Excel sebelum mengubahnya.",
+          "PDF mengikuti pengaturan cetak yang tersimpan di spreadsheet. Agar setiap sheet menjadi satu halaman, centang “Muat setiap sheet dalam satu halaman” sebelum mengonversi: halaman membesar mengikuti sheet, jadi sheet besar tercetak kecil.",
       },
       {
         question: "Apakah file saya diunggah?",
@@ -7565,7 +7565,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Lindungi PDF",
     tagline: "Tambahkan kata sandi ke PDF dengan enkripsi AES-256. Gratis, tanpa daftar.",
     intro:
-      "Lindungi PDF mengunci PDF dengan kata sandi, sehingga file tidak bisa dibuka tanpanya. Gunakan sebelum mengirim rekening koran, slip gaji, dokumen identitas, atau kontrak lewat email. PDF dienkripsi dengan AES-256, enkripsi terkuat yang didukung pembaca PDF, dan terbuka seperti biasa di Acrobat, browser, dan aplikasi ponsel setelah kata sandi dimasukkan. Pilih kata sandi minimal enam karakter dan simpan baik-baik: tidak ada yang bisa memulihkannya. Enkripsi dijalankan dengan qpdf di server kami; file dan kata sandi dihapus segera setelahnya.",
+      "Lindungi PDF mengunci PDF dengan kata sandi, sehingga file tidak bisa dibuka tanpanya. Gunakan sebelum mengirim rekening koran, slip gaji, dokumen identitas, atau kontrak lewat email. PDF dienkripsi dengan AES-256, enkripsi terkuat yang didukung pembaca PDF, dan terbuka seperti biasa di Acrobat, browser, dan aplikasi ponsel setelah kata sandi dimasukkan. Pilih kata sandi minimal enam karakter dan simpan baik-baik: tidak ada yang bisa memulihkannya. Enkripsi dijalankan dengan qpdf di server kami; file dan kata sandi dihapus segera setelahnya. Anda juga bisa mencegah orang mencetak, menyalin, atau mengubahnya.",
     seoTitle: "Lindungi PDF dengan Kata Sandi – AES-256, Gratis",
     seoDescription:
       "Lindungi PDF dengan kata sandi dan enkripsi AES-256, online dan gratis. File dan kata sandi dihapus segera setelahnya. Tanpa daftar.",
@@ -7779,7 +7779,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Ubah PDF ke PDF/A untuk arsip jangka panjang dan portal resmi. Gratis, tanpa daftar.",
     intro:
-      "PDF ke PDF/A mengubah PDF menjadi PDF/A-2b, versi arsip dari PDF yang menyematkan font dan informasi warna sehingga dokumen tetap terlihat sama selama puluhan tahun. Sebagian pengadilan, portal pajak, universitas, dan situs pemerintah hanya menerima unggahan PDF/A. Konversi memakai OCRmyPDF dan Ghostscript di server kami, dan file dihapus segera setelahnya. Tautan dan sebagian besar kolom formulir isian dipertahankan; kolom yang tidak dapat memenuhi standar, seperti kolom tersembunyi atau tanda tangan, menjadi konten tetap di halaman.",
+      "PDF ke PDF/A mengubah PDF menjadi PDF/A-2b, versi arsip dari PDF yang menyematkan font dan informasi warna sehingga dokumen tetap terlihat sama selama puluhan tahun. Sebagian pengadilan, portal pajak, universitas, dan situs pemerintah hanya menerima unggahan PDF/A. Konversi memakai OCRmyPDF dan Ghostscript di server kami, dan file dihapus segera setelahnya. Tautan dan sebagian besar kolom formulir isian dipertahankan; kolom yang tidak dapat memenuhi standar, seperti kolom tersembunyi atau tanda tangan, menjadi konten tetap di halaman. Anda juga bisa memilih PDF/A-1b atau PDF/A-3b.",
     seoTitle: "Ubah PDF ke PDF/A Online – PDF/A-2b, Gratis",
     seoDescription:
       "Ubah PDF ke PDF/A-2b untuk arsip dan portal resmi, online dan gratis. File dihapus segera setelah konversi selesai. Tanpa daftar, tanpa watermark.",
@@ -7826,7 +7826,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Versi PDF/A mana yang saya dapatkan?",
         answer:
-          "PDF/A-2b, yang diterima sebagian besar portal. Jika portal secara khusus meminta PDF/A-1 atau PDF/A-3, periksa petunjuknya.",
+          "Secara bawaan PDF/A-2b, yang diterima sebagian besar portal. Jika portal atau arsip meminta PDF/A-1b atau PDF/A-3b, pilih tingkat itu sebelum mengonversi.",
       },
       {
         question: "Mengapa file PDF/A lebih besar?",

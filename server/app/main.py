@@ -11,6 +11,7 @@ import asyncio
 import hmac
 import json
 import os
+import secrets
 import shutil
 import sys
 import tempfile
@@ -613,16 +614,18 @@ if not readable(out):
 PDF_EXPORT_FILTER = {"docx": "writer_pdf_Export", "odt": "writer_pdf_Export", "doc": "writer_pdf_Export",
                      "rtf": "writer_pdf_Export", "txt": "writer_pdf_Export", "xlsx": "calc_pdf_Export",
                      "ods": "calc_pdf_Export", "csv": "calc_pdf_Export", "pptx": "impress_pdf_Export",
-                     "odp": "impress_pdf_Export"}
-LOSSLESS_PICTURES = json.dumps({"UseLosslessCompression": {"type": "boolean", "value": "true"},
-                                "ReduceImageResolution": {"type": "boolean", "value": "false"}}, separators=(",", ":"))
+                     "odp": "impress_pdf_Export", "xls": "calc_pdf_Export", "ppt": "impress_pdf_Export"}
+LOSSLESS = {"UseLosslessCompression": {"type": "boolean", "value": "true"},
+            "ReduceImageResolution": {"type": "boolean", "value": "false"}}
+# Calc only: each sheet becomes one page as big as its content, instead of being cut across many pages
+ONE_PAGE_PER_SHEET = {"SinglePageSheets": {"type": "boolean", "value": "true"}}
 
 
 # ---------- endpoints ----------
 
 @app.post("/v1/convert")
-async def convert(file: UploadFile, to: str = "pdf"):
-    if to not in ("pdf", "docx"):
+async def convert(file: UploadFile, to: str = "pdf", fit: str = ""):
+    if to not in ("pdf", "docx") or fit not in ("", "sheet"):
         raise JobError(400, "bad_target")
     async with Job() as job:
         src = await save_upload(file, job)
@@ -630,6 +633,9 @@ async def convert(file: UploadFile, to: str = "pdf"):
         if to == "pdf":
             require(kind, {"docx", "xlsx", "pptx", "odt", "ods", "odp", "ole", "rtf", "text"})
             ext = {"text": "txt", "ole": "doc"}.get(kind, kind)
+            # Old .doc, .xls and .ppt files look alike inside; the name says which app made them
+            if kind == "ole" and (file.filename or "").lower().rsplit(".", 1)[-1] in ("xls", "ppt"):
+                ext = (file.filename or "").lower().rsplit(".", 1)[-1]
             # A .csv must keep its extension for Calc to open it as a sheet
             if kind == "text" and (file.filename or "").lower().endswith(".csv"):
                 ext = "csv"
@@ -637,7 +643,8 @@ async def convert(file: UploadFile, to: str = "pdf"):
             # LibreOffice's default export recompresses pictures as JPEG and lowers them to 300 DPI. Lossless keeps
             # every picture exact, and a camera JPEG is copied in as it is, at the cost of larger files
             export = PDF_EXPORT_FILTER.get(ext)
-            target = f"pdf:{export}:{LOSSLESS_PICTURES}" if export else "pdf"
+            options = {**LOSSLESS, **(ONE_PAGE_PER_SHEET if fit == "sheet" and export == "calc_pdf_Export" else {})}
+            target = f"pdf:{export}:{json.dumps(options, separators=(',', ':'))}" if export else "pdf"
             soffice = lambda to: run("soffice", f"-env:UserInstallation=file://{job}/profile", "--headless", "--norestore",
                                      "--convert-to", to, "--outdir", str(job / "out"), str(named), cwd=job)
             code, err = await soffice(target)
@@ -729,14 +736,26 @@ def check_password(password: str):
 
 
 @app.post("/v1/protect")
-async def protect(file: UploadFile, password: str = Form(...)):
+async def protect(file: UploadFile, password: str = Form(...), owner: str = Form(""), allow_print: str = Form("full", alias="print"),
+                  copy: str = Form("y"), edit: str = Form("y")):
     check_password(password)
+    if owner:
+        check_password(owner)
+    if allow_print not in ("full", "low", "none") or copy not in ("y", "n") or edit not in ("y", "n"):
+        raise JobError(400, "bad_options")
+    limited = allow_print != "full" or copy == "n" or edit == "n"
+    # The open password also unlocks everything when it is the owner password, so limits need a different one. Without
+    # one given, a random one nobody knows keeps the limits; Unlock PDF with the open password still removes them
+    if limited and owner == password:
+        raise JobError(400, "owner_same")
+    owner = owner or (secrets.token_urlsafe(24) if limited else password)
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
         out = job / "out.pdf"
-        # Same password to open and to change permissions; AES-256
-        code, err = await run("qpdf", "--encrypt", password, password, "256", "--", str(src), str(out), cwd=job, ok_codes=(0, 3))
+        # AES-256. Viewers enforce the limits; screen readers keep access to the text
+        rights = [f"--print={allow_print}", f"--extract={copy}", f"--modify={'all' if edit == 'y' else 'none'}"]
+        code, err = await run("qpdf", "--encrypt", password, owner, "256", *rights, "--", str(src), str(out), cwd=job, ok_codes=(0, 3))
         if code != 0 or not out.exists():
             raise JobError(422, "already_encrypted" if "password" in err.lower() else "protect_failed")
         return respond(out, job, PDF, "protected.pdf")
@@ -852,7 +871,9 @@ def ocr_confidence(temp: Path) -> list[tuple[int, int]]:
 
 
 @app.post("/v1/pdfa")
-async def pdfa(file: UploadFile):
+async def pdfa(file: UploadFile, level: str = "2"):
+    if level not in ("1", "2", "3"):
+        raise JobError(400, "bad_options")
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
@@ -860,8 +881,8 @@ async def pdfa(file: UploadFile):
         async def to_pdfa(without_fields: bool) -> tuple[int, str]:
             marked = job / "marked.pdf"
             code, _ = await run("/usr/bin/python3", "-c", MARK_ANNOTS_PRINTABLE, str(src), str(marked), *(["strip"] if without_fields else []), cwd=job)
-            # PDF/A-2b without running OCR (a zero OCR timeout skips recognition)
-            return await run("ocrmypdf", "--skip-text", "--tesseract-timeout", "0", "--output-type", "pdfa-2",
+            # PDF/A-1b, 2b or 3b without running OCR (a zero OCR timeout skips recognition)
+            return await run("ocrmypdf", "--skip-text", "--tesseract-timeout", "0", "--output-type", f"pdfa-{level}",
                              "--jobs", "1", str(marked if code == 0 else src), str(out), cwd=job)
 
         if await has_form_fields(src, job):

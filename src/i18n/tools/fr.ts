@@ -7358,7 +7358,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Pourquoi ma feuille est-elle répartie sur plusieurs pages ?",
         answer:
-          "Le PDF suit les paramètres d’impression enregistrés dans le classeur. Pour faire tenir une feuille sur une page, réglez la mise à l’échelle sur « Ajuster la feuille à une page » dans Excel avant la conversion.",
+          "Le PDF suit les réglages d’impression enregistrés dans le classeur. Pour avoir chaque feuille sur une page, cochez « Une feuille par page » avant de convertir : la page s’agrandit pour contenir la feuille, donc les grandes feuilles s’impriment en petit.",
       },
       {
         question: "Mon fichier est-il envoyé ?",
@@ -7596,7 +7596,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Protéger PDF",
     tagline: "Ajoutez un mot de passe à un PDF avec un chiffrement AES-256. Gratuit, sans inscription.",
     intro:
-      "Protéger PDF verrouille un PDF avec un mot de passe : impossible de l’ouvrir sans lui. Utilisez-le avant d’envoyer par e-mail des relevés bancaires, des fiches de paie, des pièces d’identité ou des contrats. Le PDF est chiffré en AES-256, le chiffrement le plus robuste pris en charge par les lecteurs PDF, et s’ouvre normalement dans Acrobat, les navigateurs et les applis mobiles une fois le mot de passe saisi. Choisissez un mot de passe d’au moins six caractères et conservez-le en lieu sûr : personne ne peut le récupérer. Le chiffrement est effectué avec qpdf sur notre serveur ; le fichier et le mot de passe sont supprimés juste après.",
+      "Protéger PDF verrouille un PDF avec un mot de passe : impossible de l’ouvrir sans lui. Utilisez-le avant d’envoyer par e-mail des relevés bancaires, des fiches de paie, des pièces d’identité ou des contrats. Le PDF est chiffré en AES-256, le chiffrement le plus robuste pris en charge par les lecteurs PDF, et s’ouvre normalement dans Acrobat, les navigateurs et les applis mobiles une fois le mot de passe saisi. Choisissez un mot de passe d’au moins six caractères et conservez-le en lieu sûr : personne ne peut le récupérer. Le chiffrement est effectué avec qpdf sur notre serveur ; le fichier et le mot de passe sont supprimés juste après. Vous pouvez aussi empêcher l’impression, la copie ou la modification.",
     seoTitle: "Protéger un PDF par mot de passe – AES-256, gratuit",
     seoDescription:
       "Protéger un PDF par mot de passe en ligne et gratuitement, avec un chiffrement AES-256. Fichier et mot de passe supprimés juste après. Sans inscription.",
@@ -7810,7 +7810,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Convertissez un PDF en PDF/A pour l’archivage à long terme et les portails officiels. Gratuit, sans inscription.",
     intro:
-      "PDF en PDF/A convertit un PDF au format PDF/A-2b, la version d’archivage du PDF qui intègre les polices et les informations de couleur pour que le document reste identique dans des décennies. Certains tribunaux, portails fiscaux, universités et sites administratifs n’acceptent que des dépôts au format PDF/A. La conversion utilise OCRmyPDF et Ghostscript sur notre serveur, et le fichier est supprimé juste après. Les liens et la plupart des champs à remplir sont conservés ; ceux qui ne peuvent pas respecter la norme, comme les champs masqués ou les signatures, deviennent du contenu fixe de la page.",
+      "PDF en PDF/A convertit un PDF au format PDF/A-2b, la version d’archivage du PDF qui intègre les polices et les informations de couleur pour que le document reste identique dans des décennies. Certains tribunaux, portails fiscaux, universités et sites administratifs n’acceptent que des dépôts au format PDF/A. La conversion utilise OCRmyPDF et Ghostscript sur notre serveur, et le fichier est supprimé juste après. Les liens et la plupart des champs à remplir sont conservés ; ceux qui ne peuvent pas respecter la norme, comme les champs masqués ou les signatures, deviennent du contenu fixe de la page. Vous pouvez aussi choisir PDF/A-1b ou PDF/A-3b.",
     seoTitle: "Convertir PDF en PDF/A – PDF/A-2b, gratuit",
     seoDescription:
       "Convertir un PDF en PDF/A-2b en ligne et gratuitement, pour l’archivage et les portails officiels. Fichiers supprimés juste après. Sans inscription.",
@@ -7857,7 +7857,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle version de PDF/A vais-je obtenir ?",
         answer:
-          "PDF/A-2b, accepté par la plupart des portails. Si un portail demande expressément PDF/A-1 ou PDF/A-3, consultez ses instructions.",
+          "PDF/A-2b par défaut, accepté par la plupart des portails. Si un portail ou un service d’archives demande PDF/A-1b ou PDF/A-3b, choisissez ce niveau avant de convertir.",
       },
       {
         question: "Pourquoi le fichier PDF/A est-il plus lourd ?",

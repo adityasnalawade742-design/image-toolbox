@@ -7320,7 +7320,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Perché il mio foglio è diviso su più pagine?",
         answer:
-          "Il PDF segue le impostazioni di stampa salvate nel foglio di calcolo. Per far stare un foglio in una sola pagina, imposta la scala di stampa su “Adatta alla pagina” in Excel prima di convertire.",
+          "Il PDF segue le impostazioni di stampa salvate nel foglio di calcolo. Per avere ogni foglio in una pagina, spunta «Ogni foglio in una pagina» prima di convertire: la pagina si allarga fino a contenere il foglio, quindi i fogli grandi vengono stampati in piccolo.",
       },
       {
         question: "Il mio file viene caricato?",
@@ -7554,7 +7554,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Proteggi PDF",
     tagline: "Aggiungi una password a un PDF con crittografia AES-256. Gratis, senza registrazione.",
     intro:
-      "Proteggi PDF blocca un PDF con una password, così non può essere aperto senza. Usalo prima di inviare via email estratti conto, buste paga, documenti d’identità o contratti. Il PDF viene crittografato con AES-256, la crittografia più robusta supportata dai lettori PDF, e si apre normalmente in Acrobat, nei browser e nelle app per telefono una volta inserita la password. Scegli una password di almeno sei caratteri e conservala con cura: nessuno può recuperarla. La crittografia avviene con qpdf sul nostro server; il file e la password vengono eliminati subito dopo.",
+      "Proteggi PDF blocca un PDF con una password, così non può essere aperto senza. Usalo prima di inviare via email estratti conto, buste paga, documenti d’identità o contratti. Il PDF viene crittografato con AES-256, la crittografia più robusta supportata dai lettori PDF, e si apre normalmente in Acrobat, nei browser e nelle app per telefono una volta inserita la password. Scegli una password di almeno sei caratteri e conservala con cura: nessuno può recuperarla. La crittografia avviene con qpdf sul nostro server; il file e la password vengono eliminati subito dopo. Puoi anche impedire di stamparlo, copiarlo o modificarlo.",
     seoTitle: "Proteggere PDF con password – AES-256, gratis",
     seoDescription:
       "Proteggere PDF con password online gratis: aggiungi la crittografia AES-256 al file. Il file e la password vengono eliminati subito dopo. Senza registrazione.",
@@ -7763,7 +7763,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Converti un PDF in PDF/A per l’archiviazione a lungo termine e i portali ufficiali. Gratis, senza registrazione.",
     intro:
-      "PDF in PDF/A converte un PDF in PDF/A-2b, la versione del PDF per l’archiviazione che incorpora font e informazioni sul colore, così il documento avrà lo stesso aspetto anche tra decenni. Alcuni tribunali, portali fiscali, università e siti della pubblica amministrazione accettano solo caricamenti in PDF/A. La conversione usa OCRmyPDF e Ghostscript sul nostro server e il file viene eliminato subito dopo. I link e la maggior parte dei campi compilabili vengono mantenuti; quelli che non possono rispettare lo standard, come i campi nascosti o le firme, diventano contenuto fisso della pagina.",
+      "PDF in PDF/A converte un PDF in PDF/A-2b, la versione del PDF per l’archiviazione che incorpora font e informazioni sul colore, così il documento avrà lo stesso aspetto anche tra decenni. Alcuni tribunali, portali fiscali, università e siti della pubblica amministrazione accettano solo caricamenti in PDF/A. La conversione usa OCRmyPDF e Ghostscript sul nostro server e il file viene eliminato subito dopo. I link e la maggior parte dei campi compilabili vengono mantenuti; quelli che non possono rispettare lo standard, come i campi nascosti o le firme, diventano contenuto fisso della pagina. In alternativa puoi scegliere PDF/A-1b o PDF/A-3b.",
     seoTitle: "Convertire PDF in PDF/A – PDF/A-2b, gratis",
     seoDescription:
       "Convertire PDF in PDF/A-2b online gratis, per l’archiviazione e i portali ufficiali. I file vengono eliminati subito dopo. Senza registrazione.",
@@ -7810,7 +7810,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quale versione di PDF/A ottengo?",
         answer:
-          "PDF/A-2b, accettato dalla maggior parte dei portali. Se un portale richiede specificamente PDF/A-1 o PDF/A-3, controlla le sue istruzioni.",
+          "PDF/A-2b come impostazione predefinita, accettato dalla maggior parte dei portali. Se un portale o un archivio chiede PDF/A-1b o PDF/A-3b, scegli quel livello prima di convertire.",
       },
       {
         question: "Perché il file PDF/A è più grande?",
