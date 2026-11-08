@@ -586,7 +586,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Birkaç JPG'yi aynı anda PNG'ye dönüştürebilir miyim?",
         answer:
-          "Bu sayfa dosyaları tek tek dönüştürür. Ölçeği %100'e ayarlarsanız Toplu Resim Boyutlandırma aracı 50'ye kadar resmi tek bir ZIP içinde PNG olarak kaydedebilir.",
+          "Evet. En fazla 50 JPG seçin veya sürükleyin: sırayla dönüştürülürler ve her PNG’yi tek tek ya da hepsini bir ZIP içinde indirebilirsiniz.",
       },
       {
         question: "JPG'nin EXIF verileri korunur mu?",
@@ -2888,7 +2888,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Birden fazla HEIC fotoğrafı aynı anda dönüştürebilir miyim?",
         answer:
-          "Bu araç fotoğrafları tek tek dönüştürür. Tek bir HEIC dosyası seri çekim gibi birden fazla resim içeriyorsa ilk resim dönüştürülür.",
+          "Evet. En fazla 50 fotoğraf seçin; birlikte dönüştürülür ve tek tek ya da ZIP olarak indirilebilir. Tek bir HEIC dosyasında seri çekim gibi birden fazla görsel varsa ilki dönüştürülür.",
       },
       {
         question: "iPhone'umun JPG fotoğraf çekmesini nasıl sağlarım?",

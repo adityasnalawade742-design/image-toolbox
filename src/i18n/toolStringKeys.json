@@ -41,6 +41,14 @@
   "ctl.base64.labelDataUri",
   "ctl.base64.length",
   "ctl.base64.snippets",
+  "ctl.batch.firstFrame",
+  "ctl.batch.firstImage",
+  "ctl.batch.firstPage",
+  "ctl.batch.hintMetadata",
+  "ctl.batch.run",
+  "ctl.batch.runClean",
+  "ctl.batch.running",
+  "ctl.batch.statusProcessing",
   "ctl.border.color",
   "ctl.border.inside",
   "ctl.border.insideHint",
@@ -49,6 +57,28 @@
   "ctl.border.outsideHint",
   "ctl.border.placement",
   "ctl.border.width",
+  "ctl.bulk.addMore",
+  "ctl.bulk.cancel",
+  "ctl.bulk.clearAll",
+  "ctl.bulk.downloadItem",
+  "ctl.bulk.downloadZip",
+  "ctl.bulk.dropMoreHint",
+  "ctl.bulk.errNotImage",
+  "ctl.bulk.errProcess",
+  "ctl.bulk.errTooLarge",
+  "ctl.bulk.errZip",
+  "ctl.bulk.fileCount",
+  "ctl.bulk.limitReached",
+  "ctl.bulk.progress",
+  "ctl.bulk.queue",
+  "ctl.bulk.removeItem",
+  "ctl.bulk.settings",
+  "ctl.bulk.skippedCount",
+  "ctl.bulk.statusDone",
+  "ctl.bulk.statusError",
+  "ctl.bulk.statusPending",
+  "ctl.bulk.statusRejected",
+  "ctl.bulk.zipping",
   "ctl.color.copied",
   "ctl.color.copyValue",
   "ctl.color.emptyHelp",
@@ -235,6 +265,7 @@
   "ctl.view.next",
   "ctl.view.position",
   "ctl.view.prev",
+  "ctl.view.view",
   "ctl.view.zoom",
   "ctl.watermark.bottomCenter",
   "ctl.watermark.bottomLeft",
@@ -269,31 +300,9 @@
  ],
  "bySlug": {
   "bulk-image-compressor": [
-   "ctl.bulk.addMore",
-   "ctl.bulk.cancel",
-   "ctl.bulk.clearAll",
-   "ctl.bulk.downloadItem",
-   "ctl.bulk.downloadZip",
-   "ctl.bulk.dropMoreHint",
    "ctl.bulk.dropTitle",
-   "ctl.bulk.errNotImage",
-   "ctl.bulk.errProcess",
-   "ctl.bulk.errTooLarge",
-   "ctl.bulk.errZip",
-   "ctl.bulk.fileCount",
    "ctl.bulk.format",
    "ctl.bulk.formatGroup",
-   "ctl.bulk.limitReached",
-   "ctl.bulk.progress",
-   "ctl.bulk.queue",
-   "ctl.bulk.removeItem",
-   "ctl.bulk.settings",
-   "ctl.bulk.skippedCount",
-   "ctl.bulk.statusDone",
-   "ctl.bulk.statusError",
-   "ctl.bulk.statusPending",
-   "ctl.bulk.statusRejected",
-   "ctl.bulk.zipping",
    "ctl.bulkCompress.dropHint",
    "ctl.bulkCompress.hintAvif",
    "ctl.bulkCompress.hintJpeg",
@@ -307,35 +316,12 @@
    "ctl.bulkCompress.run",
    "ctl.bulkCompress.running",
    "ctl.bulkCompress.smaller",
-   "ctl.bulkCompress.statusProcessing",
-   "ctl.view.view"
+   "ctl.bulkCompress.statusProcessing"
   ],
   "bulk-image-resizer": [
-   "ctl.bulk.addMore",
-   "ctl.bulk.cancel",
-   "ctl.bulk.clearAll",
-   "ctl.bulk.downloadItem",
-   "ctl.bulk.downloadZip",
-   "ctl.bulk.dropMoreHint",
    "ctl.bulk.dropTitle",
-   "ctl.bulk.errNotImage",
-   "ctl.bulk.errProcess",
-   "ctl.bulk.errTooLarge",
-   "ctl.bulk.errZip",
-   "ctl.bulk.fileCount",
    "ctl.bulk.format",
    "ctl.bulk.formatGroup",
-   "ctl.bulk.limitReached",
-   "ctl.bulk.progress",
-   "ctl.bulk.queue",
-   "ctl.bulk.removeItem",
-   "ctl.bulk.settings",
-   "ctl.bulk.skippedCount",
-   "ctl.bulk.statusDone",
-   "ctl.bulk.statusError",
-   "ctl.bulk.statusPending",
-   "ctl.bulk.statusRejected",
-   "ctl.bulk.zipping",
    "ctl.bulkResize.aspectHint",
    "ctl.bulkResize.dropHint",
    "ctl.bulkResize.errUnreadable",
@@ -355,8 +341,7 @@
    "ctl.bulkResize.scale",
    "ctl.bulkResize.scaleLabel",
    "ctl.bulkResize.statusProcessing",
-   "ctl.bulkResize.width",
-   "ctl.view.view"
+   "ctl.bulkResize.width"
   ],
   "base64-to-image": [
    "ctl.decode.asIs",
@@ -611,8 +596,7 @@
    "ctl.topdf.orientation",
    "ctl.topdf.pageSize",
    "ctl.topdf.pages",
-   "ctl.topdf.portrait",
-   "ctl.view.view"
+   "ctl.topdf.portrait"
   ],
   "png-to-pdf": [
    "ctl.list.add",
@@ -638,8 +622,7 @@
    "ctl.topdf.orientation",
    "ctl.topdf.pageSize",
    "ctl.topdf.pages",
-   "ctl.topdf.portrait",
-   "ctl.view.view"
+   "ctl.topdf.portrait"
   ],
   "heic-to-pdf": [
    "ctl.list.add",
@@ -665,8 +648,7 @@
    "ctl.topdf.orientation",
    "ctl.topdf.pageSize",
    "ctl.topdf.pages",
-   "ctl.topdf.portrait",
-   "ctl.view.view"
+   "ctl.topdf.portrait"
   ],
   "tiff-to-pdf": [
    "ctl.list.add",
@@ -692,8 +674,7 @@
    "ctl.topdf.orientation",
    "ctl.topdf.pageSize",
    "ctl.topdf.pages",
-   "ctl.topdf.portrait",
-   "ctl.view.view"
+   "ctl.topdf.portrait"
   ],
   "pdf-to-jpg": [
    "ctl.frompdf.choose",
@@ -756,8 +737,7 @@
    "ctl.merge.scaledDown",
    "ctl.merge.spacing",
    "ctl.merge.transparent",
-   "ctl.merge.vertical",
-   "ctl.view.view"
+   "ctl.merge.vertical"
   ],
   "merge-pdf": [
    "ctl.frompdf.choose",
@@ -784,8 +764,7 @@
    "ctl.pdf.errScript",
    "ctl.pdf.pageN",
    "ctl.pdf.pagesCount",
-   "ctl.pdf.working",
-   "ctl.view.view"
+   "ctl.pdf.working"
   ],
   "split-pdf": [
    "ctl.frompdf.choose",
@@ -1724,7 +1703,6 @@
    "ctl.pdf.selectNone",
    "ctl.pdf.working",
    "ctl.pu.reading",
-   "ctl.view.view",
    "ctl.ximg.download",
    "ctl.ximg.format",
    "ctl.ximg.found",
@@ -3396,8 +3374,7 @@
    "ctl.sheet.title",
    "ctl.sheet.titlePlaceholder",
    "ctl.sheet.working",
-   "ctl.sheet.zipNote",
-   "ctl.view.view"
+   "ctl.sheet.zipNote"
   ],
   "booklet-maker": [
    "ctl.edit.nextPage",
@@ -4271,8 +4248,7 @@
    "ctl.topdf.orientation",
    "ctl.topdf.pageSize",
    "ctl.topdf.pages",
-   "ctl.topdf.portrait",
-   "ctl.view.view"
+   "ctl.topdf.portrait"
   ],
   "pdf-link-checker": [
    "ctl.frompdf.choose",
@@ -4494,8 +4470,7 @@
    "ctl.pdf.dropHint",
    "ctl.pdf.errLocked",
    "ctl.pdf.errScript",
-   "ctl.pdf.working",
-   "ctl.view.view"
+   "ctl.pdf.working"
   ],
   "duplicate-photo-finder": [
    "ctl.dupes.",
@@ -4600,8 +4575,7 @@
    "ctl.scanclean.dropHint",
    "ctl.scanclean.note",
    "ctl.scanclean.straighten",
-   "ctl.topdf.letter",
-   "ctl.view.view"
+   "ctl.topdf.letter"
   ],
   "scan-cleaner": [
    "ctl.docscan.addPages",
@@ -4652,8 +4626,7 @@
    "ctl.scanclean.dropHint",
    "ctl.scanclean.note",
    "ctl.scanclean.straighten",
-   "ctl.topdf.letter",
-   "ctl.view.view"
+   "ctl.topdf.letter"
   ],
   "ocr-multiple-images": [
    "ctl.list.add",
@@ -4687,8 +4660,7 @@
    "ctl.ocrbatch.straightenNote",
    "ctl.ocrbatch.textOf",
    "ctl.ocrbatch.zip",
-   "ctl.pdf.done",
-   "ctl.view.view"
+   "ctl.pdf.done"
   ],
   "pdf-to-grayscale": [
    "ctl.doc.choose",

@@ -61,7 +61,8 @@ export function BulkCompressorWorkspace() {
     for (let i = 0; i < files.length; i++) {
       if (queue.length + newItems.length >= MAX_FILES) break;
       const file = files[i];
-      if (!file.type.startsWith('image/')) {
+      // Browsers give iPhone HEIC (and some TIFF) files no image type, so the name decides for those
+      if (!file.type.startsWith('image/') && !/\.(heic|heif|tiff?)$/i.test(file.name)) {
         newItems.push({
           id: `${file.name}-${Date.now()}-${Math.random()}`,
           file,

@@ -27,6 +27,7 @@ export const strings = {
   'ws.chooseImage': 'Resim seçin',
   'ws.chooseImages': 'Resimleri seçin',
   'ws.dropHint': 'JPG, PNG, WebP ve diğerleri, en fazla 50 MB. Ctrl+V ile de yapıştırabilirsiniz.',
+  'ws.dropHintMany': "Hepsini bir kerede dönüştürmek için birden fazla seçin.",
   'ws.rendering': 'Önizleme güncelleniyor…',
   'ws.pickerHelp': 'Renk seçmek için resme tıklayın. Klavyeyle resmi seçin, ok tuşlarıyla hareket edin (daha büyük adımlar için Shift tuşunu basılı tutun) ve seçmek için Enter tuşuna basın.',
   'ws.pickerPicked': 'Seçilen renk: {hex}',
@@ -540,6 +541,14 @@ export const strings = {
   'ctl.bulk.downloadItem': 'İndir: {name}',
   'ctl.bulk.removeItem': 'Kaldır: {name}',
   'ctl.bulk.dropMoreHint': 'Kuyruğa başka resimler de bırakabilirsiniz.',
+  'ctl.batch.run': "Tümünü dönüştür ({count})",
+  'ctl.batch.runClean': "Tümünü temizle ({count})",
+  'ctl.batch.running': "Dönüştürülüyor…",
+  'ctl.batch.statusProcessing': "Dönüştürülüyor",
+  'ctl.batch.firstFrame': "Yalnızca ilk kare",
+  'ctl.batch.firstPage': "Yalnızca ilk sayfa",
+  'ctl.batch.firstImage': "Yalnızca ilk görsel",
+  'ctl.batch.hintMetadata': "Her fotoğraf kendi biçimini ve kalitesini korur: yalnızca meta veriler silinir. iPhone HEIC ve TIFF dosyaları JPG ya da PNG olur.",
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG, PNG ve WebP, her biri en fazla 50 MB. Tamamen tarayıcınızda, tek tek sıkıştırılır.',

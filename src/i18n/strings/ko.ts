@@ -27,6 +27,7 @@ export const strings = {
   'ws.chooseImage': '이미지 선택',
   'ws.chooseImages': '이미지 선택',
   'ws.dropHint': 'JPG, PNG, WebP 등 최대 50 MB. Ctrl+V로 붙여넣어도 돼요.',
+  'ws.dropHintMany': "여러 개를 고르면 한 번에 변환할 수 있어요.",
   'ws.rendering': '미리보기 업데이트 중…',
   'ws.pickerHelp': '이미지를 클릭하면 색을 추출해요. 키보드로는 이미지를 선택하고 화살표 키로 이동한 뒤(Shift를 누르면 크게 이동) Enter를 눌러 추출하세요.',
   'ws.pickerPicked': '{hex} 색을 추출했어요',
@@ -540,6 +541,14 @@ export const strings = {
   'ctl.bulk.downloadItem': '{name} 다운로드',
   'ctl.bulk.removeItem': '{name} 삭제',
   'ctl.bulk.dropMoreHint': '대기열에 이미지를 더 끌어다 놓을 수도 있어요.',
+  'ctl.batch.run': "모두 변환 ({count})",
+  'ctl.batch.runClean': "모두 정리 ({count})",
+  'ctl.batch.running': "변환 중…",
+  'ctl.batch.statusProcessing': "변환 중",
+  'ctl.batch.firstFrame': "첫 프레임만",
+  'ctl.batch.firstPage': "첫 페이지만",
+  'ctl.batch.firstImage': "첫 이미지만",
+  'ctl.batch.hintMetadata': "사진마다 형식과 화질은 그대로 두고 메타데이터만 지워요. iPhone HEIC와 TIFF는 JPG나 PNG가 돼요.",
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG, PNG, WebP 파일당 최대 50 MB. 브라우저에서 하나씩 차례로 압축해요.',

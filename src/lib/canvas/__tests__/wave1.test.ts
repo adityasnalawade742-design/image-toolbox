@@ -82,5 +82,6 @@ describe('page numbers', () => {
     const texts = [];
     for (let i = 1; i <= 4; i++) texts.push((await (await pdf.getPage(i)).getTextContent()).items.map((x) => ('str' in x ? x.str : '')).join(''));
     expect(texts).toEqual(['', 'Page 1 of 3', 'Page 2 of 3', 'Page 3 of 3']);
-  });
+    // Loading pdf.js and the fonts can pass 5 s when the whole suite runs at once
+  }, 20000);
 });

@@ -30,6 +30,8 @@ import { decodeAnimation, encodeAnimation, type Animation } from '../../lib/canv
 import { stripFormat, stripMetadata } from '../../lib/canvas/stripMetadata';
 import { canvasSupportsP3, isDisplayP3, readJpegIcc } from '../../lib/canvas/iccProfile';
 import { installWindowDropGuard } from './useImageIntake';
+import { BatchConvertWorkspace } from './BatchConvertWorkspace';
+import { BATCH_TOOLS } from '../../lib/canvas/convertFile';
 import { I18nProvider } from './I18nContext';
 import { DragFrameOverlay } from './DragFrameOverlay';
 import { FullSizeView, blobImage } from './MediaViewer';
@@ -458,6 +460,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const cleanFileRef = useRef<Uint8Array | null>(null);
   const sizeTimerRef = useRef<number | null>(null);
 
+  // Converters and Remove Metadata take several files at once: more than one opens the queue
+  const batchable = BATCH_TOOLS.has(slug);
+  const [batchFiles, setBatchFiles] = useState<File[] | null>(null);
+  const intake = (list: File[]) => {
+    if (batchable && list.length > 1) setBatchFiles(list);
+    else if (list[0]) handleFile(list[0]);
+  };
+
   const handleFile = async (file: File) => {
     try {
       setErrorMessage(null);
@@ -561,7 +571,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       }
     };
     window.addEventListener('paste', handlePaste);
-    const removeDropGuard = installWindowDropGuard((file) => handleFile(file));
+    const removeDropGuard = installWindowDropGuard((_, all) => intake(all));
     return () => {
       window.removeEventListener('paste', handlePaste);
       removeDropGuard();
@@ -1116,14 +1126,17 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           ref={fileInputRef}
           type="file"
           accept={accept}
+          multiple={batchable}
           className="hidden"
           onChange={(e) => {
-            if (e.target.files?.[0]) handleFile(e.target.files[0]);
+            if (e.target.files?.length) intake(Array.from(e.target.files));
             e.target.value = '';
           }}
         />
 
-        {!imageElement ? (
+        {batchFiles ? (
+          <BatchConvertWorkspace slug={slug} files={batchFiles} accept={accept} onEmpty={() => setBatchFiles(null)} />
+        ) : !imageElement ? (
           /* Empty state: the sheet is the drop target */
           <div>
             <button
@@ -1136,7 +1149,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               onDrop={(e) => {
                 e.preventDefault();
                 setIsDraggingFile(false);
-                if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
+                if (e.dataTransfer.files?.length) intake(Array.from(e.dataTransfer.files));
               }}
               onClick={() => fileInputRef.current?.click()}
               className={`drop-target px-6 py-14 sm:py-20 ${isDraggingFile ? 'is-dragging' : ''}`}
@@ -1144,8 +1157,11 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
             >
               <span className="drop-icon" aria-hidden="true"><Upload className="w-7 h-7" strokeWidth={1.75} /></span>
               <span className="font-condensed text-[24px] sm:text-[26px] font-bold text-ink">{t('ws.dropTitle')}</span>
-              <span className="btn-ink pointer-events-none">{t('ws.chooseImage')}</span>
-              <span id="ws-drop-hint" className="text-[14px] text-graphite max-w-md">{t('ws.dropHint')}</span>
+              <span className="btn-ink pointer-events-none">{t(batchable ? 'ws.chooseImages' : 'ws.chooseImage')}</span>
+              <span id="ws-drop-hint" className="text-[14px] text-graphite max-w-md">
+                {t('ws.dropHint')}
+                {batchable && ` ${t('ws.dropHintMany')}`}
+              </span>
             </button>
           </div>
         ) : (

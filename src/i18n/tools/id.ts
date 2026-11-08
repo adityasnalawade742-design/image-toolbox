@@ -586,7 +586,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya mengubah beberapa JPG ke PNG sekaligus?",
         answer:
-          "Halaman ini mengonversi satu file sekali jalan. Ubah Ukuran Gambar Massal bisa menyimpan hingga 50 gambar sebagai PNG dalam satu ZIP jika Anda mengatur skalanya ke 100%.",
+          "Ya. Pilih atau seret hingga 50 JPG: semuanya dikonversi satu per satu, dan Anda bisa mengunduh setiap PNG atau semuanya dalam satu ZIP.",
       },
       {
         question: "Apakah data EXIF dari JPG tetap ada?",
@@ -2888,7 +2888,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya mengonversi beberapa foto HEIC sekaligus?",
         answer:
-          "Alat ini mengonversi satu foto sekali jalan. Jika satu file HEIC berisi beberapa gambar, seperti foto burst, gambar pertama yang dikonversi.",
+          "Ya. Pilih hingga 50 foto dan semuanya dikonversi bersama, siap diunduh satu per satu atau dalam ZIP. Jika satu file HEIC berisi beberapa gambar, seperti foto beruntun, gambar pertama yang dikonversi.",
       },
       {
         question: "Bagaimana agar iPhone saya memotret dalam format JPG?",

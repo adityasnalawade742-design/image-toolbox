@@ -27,6 +27,7 @@ export const strings = {
   'ws.chooseImage': 'Bild auswählen',
   'ws.chooseImages': 'Bilder auswählen',
   'ws.dropHint': 'JPG, PNG, WebP und mehr, bis 50 MB. Du kannst auch mit Ctrl+V einfügen.',
+  'ws.dropHintMany': "Wähle mehrere aus, um alle auf einmal umzuwandeln.",
   'ws.rendering': 'Vorschau wird aktualisiert …',
   'ws.pickerHelp': 'Klicke ins Bild, um eine Farbe aufzunehmen. Mit der Tastatur: Bild auswählen, mit den Pfeiltasten bewegen (mit Umschalt in größeren Schritten) und mit Enter aufnehmen.',
   'ws.pickerPicked': '{hex} aufgenommen',
@@ -540,6 +541,14 @@ export const strings = {
   'ctl.bulk.downloadItem': '{name} herunterladen',
   'ctl.bulk.removeItem': '{name} entfernen',
   'ctl.bulk.dropMoreHint': 'Du kannst weitere Bilder auch direkt auf die Warteschlange ziehen.',
+  'ctl.batch.run': "Alle umwandeln ({count})",
+  'ctl.batch.runClean': "Alle bereinigen ({count})",
+  'ctl.batch.running': "Wird umgewandelt…",
+  'ctl.batch.statusProcessing': "Wird umgewandelt",
+  'ctl.batch.firstFrame': "Nur das erste Einzelbild",
+  'ctl.batch.firstPage': "Nur die erste Seite",
+  'ctl.batch.firstImage': "Nur das erste Bild",
+  'ctl.batch.hintMetadata': "Jedes Foto behält Format und Qualität, nur die Metadaten werden entfernt. iPhone-HEIC und TIFF werden zu JPG oder PNG.",
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG, PNG und WebP, je bis 50 MB. Die Bilder werden nacheinander komprimiert, komplett in deinem Browser.',

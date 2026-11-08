@@ -27,6 +27,7 @@ export const strings = {
   'ws.chooseImage': '画像を選択',
   'ws.chooseImages': '画像を選択',
   'ws.dropHint': 'JPG、PNG、WebPなどに対応（最大50 MB）。Ctrl+Vで貼り付けることもできます。',
+  'ws.dropHintMany': "複数選ぶとまとめて変換できます。",
   'ws.rendering': 'プレビューを更新中…',
   'ws.pickerHelp': '画像をクリックすると色を取得できます。キーボードでは画像を選択し、矢印キーで移動して（Shift キーで大きく移動）、Enter キーで取得します。',
   'ws.pickerPicked': '{hex} を取得しました',
@@ -545,6 +546,14 @@ export const strings = {
   'ctl.bulk.downloadItem': '{name}をダウンロード',
   'ctl.bulk.removeItem': '{name}を削除',
   'ctl.bulk.dropMoreHint': 'キューに画像をドロップして追加することもできます。',
+  'ctl.batch.run': "すべて変換（{count}）",
+  'ctl.batch.runClean': "すべて削除（{count}）",
+  'ctl.batch.running': "変換中…",
+  'ctl.batch.statusProcessing': "変換中",
+  'ctl.batch.firstFrame': "最初のフレームのみ",
+  'ctl.batch.firstPage': "最初のページのみ",
+  'ctl.batch.firstImage': "最初の画像のみ",
+  'ctl.batch.hintMetadata': "各写真の形式と画質はそのままで、メタデータだけを削除します。iPhoneのHEICとTIFFはJPGまたはPNGになります。",
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG、PNG、WebPに対応（1枚あたり最大50 MB）。1枚ずつ、すべてブラウザ内で圧縮します。',

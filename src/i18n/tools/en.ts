@@ -586,7 +586,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "Can I convert several JPGs to PNG at once?",
         answer:
-          "This page converts one file at a time. The Bulk Image Resizer can save up to 50 images as PNG in one ZIP if you set the scale to 100%.",
+          "Yes. Choose or drop up to 50 JPGs: they are converted one after another, and you can download each PNG or all of them in one ZIP.",
       },
       {
         question: "Is the EXIF data of the JPG kept?",
@@ -2861,7 +2861,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I convert several HEIC photos at once?",
-        "answer": "This tool converts one photo at a time. If a single HEIC file holds several images, such as a burst, the first image is converted."
+        "answer": "Yes. Choose up to 50 photos and they are converted together, ready to download one by one or in a ZIP. If a single HEIC file holds several images, such as a burst, the first image is converted."
       },
       {
         "question": "How do I make my iPhone take JPG photos instead?",

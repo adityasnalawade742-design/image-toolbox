@@ -586,7 +586,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso convertire più JPG in PNG insieme?",
         answer:
-          "Questa pagina converte un file alla volta. Ridimensionamento immagini in blocco può salvare fino a 50 immagini in PNG in un unico ZIP, se imposti la scala al 100%.",
+          "Sì. Scegli o trascina fino a 50 JPG: vengono convertiti uno dopo l’altro e puoi scaricare ogni PNG oppure tutti insieme in un unico ZIP.",
       },
       {
         question: "I dati EXIF del JPG vengono mantenuti?",
@@ -2888,7 +2888,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso convertire più foto HEIC insieme?",
         answer:
-          "Questo strumento converte una foto alla volta. Se un singolo file HEIC contiene più immagini, come una raffica, viene convertita la prima immagine.",
+          "Sì. Scegli fino a 50 foto e vengono convertite insieme, pronte da scaricare una alla volta o in uno ZIP. Se un file HEIC contiene più immagini, come una raffica, viene convertita la prima.",
       },
       {
         question: "Come faccio a far scattare all’iPhone foto in JPG?",

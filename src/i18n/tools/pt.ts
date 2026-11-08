@@ -586,7 +586,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso converter vários JPGs para PNG de uma vez?",
         answer:
-          "Esta página converte um arquivo por vez. O Redimensionar imagens em lote pode salvar até 50 imagens em PNG em um único ZIP se você definir a escala em 100%.",
+          "Sim. Escolha ou arraste até 50 JPGs: eles são convertidos um após o outro, e você pode baixar cada PNG ou todos juntos em um ZIP.",
       },
       {
         question: "Os dados EXIF do JPG são mantidos?",
@@ -2888,7 +2888,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso converter várias fotos HEIC de uma vez?",
         answer:
-          "Esta ferramenta converte uma foto por vez. Se um único arquivo HEIC tiver várias imagens, como uma sequência em modo Burst, a primeira imagem é convertida.",
+          "Sim. Escolha até 50 fotos e elas são convertidas juntas, prontas para baixar uma a uma ou em um ZIP. Se um arquivo HEIC tiver várias imagens, como uma sequência, a primeira é convertida.",
       },
       {
         question: "Como faço meu iPhone tirar fotos em JPG?",

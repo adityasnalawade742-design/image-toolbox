@@ -51,6 +51,7 @@ export const en = {
   'ws.chooseImage': 'Choose image',
   'ws.chooseImages': 'Choose images',
   'ws.dropHint': 'JPG, PNG, WebP and more, up to 50 MB. You can also paste with Ctrl+V.',
+  'ws.dropHintMany': 'Choose several to convert them all at once.',
   'ws.rendering': 'Updating preview…',
   'ws.previewLabel': 'Preview of your image with the current settings',
   'ws.pickerLabel': 'Color picker on your image',

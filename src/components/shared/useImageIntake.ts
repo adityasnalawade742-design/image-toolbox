@@ -41,15 +41,16 @@ export function useImageIntake(onFile: (file: File) => void) {
  * Stops a file dropped outside a dropzone from navigating the tab away (losing the session),
  * and loads it instead. Drops already handled by a dropzone (defaultPrevented) are left alone.
  */
-export function installWindowDropGuard(onFile: (file: File) => void): () => void {
+export function installWindowDropGuard(onFile: (file: File, all: File[]) => void): () => void {
   const handleDragOver = (e: DragEvent) => {
     if (e.dataTransfer?.types.includes('Files')) e.preventDefault();
   };
   const handleDrop = (e: DragEvent) => {
     if (e.defaultPrevented || !e.dataTransfer?.files.length) return;
     e.preventDefault();
-    const file = Array.from(e.dataTransfer.files).find((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
-    if (file) onFile(file);
+    // Every image dropped, for pages that take several at once
+    const all = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith('image/') || /\.(heic|heif|tiff?)$/i.test(f.name));
+    if (all.length) onFile(all[0], all);
   };
   window.addEventListener('dragover', handleDragOver);
   window.addEventListener('drop', handleDrop);

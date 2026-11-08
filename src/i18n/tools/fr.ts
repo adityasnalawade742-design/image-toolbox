@@ -586,7 +586,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Puis-je convertir plusieurs JPG en PNG à la fois ?",
         answer:
-          "Cette page convertit un fichier à la fois. Le Redimensionneur d’images par lot peut enregistrer jusqu’à 50 images en PNG dans un seul ZIP si vous réglez l’échelle sur 100 %.",
+          "Oui. Choisissez ou déposez jusqu’à 50 JPG : ils sont convertis l’un après l’autre, et vous pouvez télécharger chaque PNG ou tous dans un seul ZIP.",
       },
       {
         question: "Les données EXIF du JPG sont-elles conservées ?",
@@ -2884,7 +2884,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Puis-je convertir plusieurs photos HEIC à la fois ?",
         answer:
-          "Cet outil convertit une photo à la fois. Si un même fichier HEIC contient plusieurs images, comme une rafale, c’est la première image qui est convertie.",
+          "Oui. Choisissez jusqu’à 50 photos : elles sont converties ensemble, prêtes à télécharger une par une ou dans un ZIP. Si un fichier HEIC contient plusieurs images, comme une rafale, la première est convertie.",
       },
       {
         question: "Comment faire pour que mon iPhone prenne des photos en JPG ?",

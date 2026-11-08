@@ -27,6 +27,7 @@ export const strings = {
   'ws.chooseImage': 'Pilih gambar',
   'ws.chooseImages': 'Pilih gambar',
   'ws.dropHint': 'JPG, PNG, WebP, dan lainnya, hingga 50 MB. Anda juga bisa menempel dengan Ctrl+V.',
+  'ws.dropHintMany': "Pilih beberapa untuk mengonversi semuanya sekaligus.",
   'ws.rendering': 'Memperbarui pratinjau…',
   'ws.pickerHelp': 'Klik gambar untuk mengambil warna. Dengan keyboard, pilih gambar, gerakkan dengan tombol panah (tahan Shift untuk langkah lebih besar), lalu tekan Enter untuk mengambil.',
   'ws.pickerPicked': 'Warna diambil: {hex}',
@@ -540,6 +541,14 @@ export const strings = {
   'ctl.bulk.downloadItem': 'Unduh {name}',
   'ctl.bulk.removeItem': 'Hapus {name}',
   'ctl.bulk.dropMoreHint': 'Anda juga bisa meletakkan gambar lain ke antrean.',
+  'ctl.batch.run': "Konversi semua ({count})",
+  'ctl.batch.runClean': "Bersihkan semua ({count})",
+  'ctl.batch.running': "Mengonversi…",
+  'ctl.batch.statusProcessing': "Mengonversi",
+  'ctl.batch.firstFrame': "Hanya frame pertama",
+  'ctl.batch.firstPage': "Hanya halaman pertama",
+  'ctl.batch.firstImage': "Hanya gambar pertama",
+  'ctl.batch.hintMetadata': "Setiap foto tetap dengan format dan kualitasnya: hanya metadata yang dihapus. HEIC iPhone dan TIFF menjadi JPG atau PNG.",
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG, PNG, dan WebP, masing-masing hingga 50 MB. Dikompres satu per satu, sepenuhnya di browser Anda.',
