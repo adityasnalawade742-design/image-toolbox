@@ -586,7 +586,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich mehrere JPGs auf einmal in PNG umwandeln?",
         answer:
-          "Diese Seite wandelt eine Datei nach der anderen um. Mit „Mehrere Bilder skalieren“ kannst du bis zu 50 Bilder als PNG in einer ZIP-Datei speichern, wenn du die Skalierung auf 100 % stellst.",
+          "Ja. Wähle bis zu 50 JPGs aus oder ziehe sie hierher: Sie werden nacheinander umgewandelt, und du kannst jedes PNG einzeln oder alle zusammen als ZIP herunterladen.",
       },
       {
         question: "Bleiben die EXIF-Daten des JPG erhalten?",
@@ -2884,7 +2884,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich mehrere HEIC-Fotos auf einmal umwandeln?",
         answer:
-          "Dieses Tool wandelt jeweils ein Foto um. Enthält eine einzelne HEIC-Datei mehrere Bilder, etwa eine Serienaufnahme, wird das erste Bild umgewandelt.",
+          "Ja. Wähle bis zu 50 Fotos aus, sie werden zusammen umgewandelt und lassen sich einzeln oder als ZIP herunterladen. Enthält eine HEIC-Datei mehrere Bilder, etwa eine Serienaufnahme, wird das erste umgewandelt.",
       },
       {
         question: "Wie bringe ich mein iPhone dazu, stattdessen JPG-Fotos aufzunehmen?",

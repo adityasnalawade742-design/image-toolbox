@@ -587,7 +587,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "여러 JPG를 한 번에 PNG로 바꿀 수 있나요?",
         answer:
-          "이 페이지는 한 번에 파일 하나를 변환해요. 이미지 일괄 크기 조절에서 배율을 100%로 설정하면 최대 50장을 PNG로 저장해 ZIP 하나로 받을 수 있어요.",
+          "네. JPG를 최대 50개까지 고르거나 끌어 놓으면 차례로 변환되고, PNG를 하나씩 또는 한 번에 ZIP으로 내려받을 수 있어요.",
       },
       {
         question: "JPG의 EXIF 정보가 유지되나요?",
@@ -2886,7 +2886,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "HEIC 사진 여러 장을 한 번에 변환할 수 있나요?",
         answer:
-          "이 도구는 한 번에 사진 한 장을 변환해요. 연속 촬영처럼 HEIC 파일 하나에 이미지가 여러 장 들어 있으면 첫 번째 이미지를 변환해요.",
+          "네. 사진을 최대 50장까지 고르면 함께 변환되고, 하나씩 또는 ZIP으로 내려받을 수 있어요. 연사처럼 HEIC 파일 하나에 이미지가 여러 장 있으면 첫 번째 이미지가 변환돼요.",
       },
       {
         question: "iPhone에서 JPG로 사진을 찍으려면 어떻게 하나요?",

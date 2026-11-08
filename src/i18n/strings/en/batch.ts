@@ -26,6 +26,14 @@ export const batchStrings = {
   'ctl.bulk.downloadItem': 'Download {name}',
   'ctl.bulk.removeItem': 'Remove {name}',
   'ctl.bulk.dropMoreHint': 'You can also drop more images onto the queue.',
+  'ctl.batch.run': 'Convert all ({count})',
+  'ctl.batch.runClean': 'Clean all ({count})',
+  'ctl.batch.running': 'Converting…',
+  'ctl.batch.statusProcessing': 'Converting',
+  'ctl.batch.firstFrame': 'First frame only',
+  'ctl.batch.firstPage': 'First page only',
+  'ctl.batch.firstImage': 'First picture only',
+  'ctl.batch.hintMetadata': 'Each photo keeps its own format and quality: only the metadata is removed. iPhone HEIC and TIFF become JPG or PNG.',
 
   // Bulk compressor
   'ctl.bulkCompress.dropHint': 'JPG, PNG and WebP, up to 50 MB each. Compressed one at a time, entirely in your browser.',

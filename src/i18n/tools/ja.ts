@@ -586,7 +586,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "複数のJPGをまとめてPNGに変換できますか？",
         answer:
-          "このページでは1ファイルずつ変換します。「画像の一括リサイズ」で倍率を100%に設定すれば、最大50枚の画像をPNGとして1つのZIPにまとめて保存できます。",
+          "はい。JPGを最大50枚まで選ぶかドロップすると順番に変換され、PNGを1枚ずつ、またはまとめてZIPでダウンロードできます。",
       },
       {
         question: "JPGのEXIFデータは残りますか？",
@@ -2885,7 +2885,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "複数のHEIC写真をまとめて変換できますか？",
         answer:
-          "このツールでは1枚ずつ変換します。連写など、1つのHEICファイルに複数の画像が入っている場合は、最初の画像が変換されます。",
+          "はい。写真を最大50枚まで選ぶとまとめて変換され、1枚ずつ、またはZIPでダウンロードできます。連写のように1つのHEICファイルに複数の画像がある場合は、最初の画像が変換されます。",
       },
       {
         question: "iPhoneでJPGの写真を撮るにはどうすればよいですか？",
