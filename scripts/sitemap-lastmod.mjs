@@ -11,6 +11,7 @@ import path from 'path';
 const DIST = path.resolve('dist');
 const SITE = (process.env.PUBLIC_SITE_URL || 'https://tadafile.com').replace(/\/$/, '');
 const STATE_FILE = 'sitemap-state.json';
+export const INDEXNOW_PENDING = path.resolve('.cache/indexnow-pending.json');
 
 function pageFile(loc) {
   const p = new URL(loc).pathname.replace(/^\/|\/$/g, '');
@@ -48,6 +49,7 @@ export async function setSitemapDates() {
   const previous = await liveState();
   const state = {};
   let changed = 0;
+  const changedUrls = [];
   xml = xml.replace(/<url>([\s\S]*?)<\/url>/g, (block, inner) => {
     const loc = (inner.match(/<loc>([^<]+)<\/loc>/) || [])[1];
     const file = loc && pageFile(loc);
@@ -55,13 +57,21 @@ export async function setSitemapDates() {
     const h = fingerprint(fs.readFileSync(file, 'utf8'));
     const before = previous && previous[loc];
     const date = before && before.h === h ? before.d : today;
-    if (!before || before.h !== h) changed++;
+    if (!before || before.h !== h) {
+      changed++;
+      changedUrls.push(loc);
+    }
     state[loc] = { h, d: date };
     const withoutDate = inner.replace(/\s*<lastmod>[^<]*<\/lastmod>/, '');
     return previous ? `<url>${withoutDate.replace(/(<\/loc>)/, `$1\n    <lastmod>${date}</lastmod>`)}</url>` : `<url>${withoutDate}</url>`;
   });
   fs.writeFileSync(sitemapPath, xml);
   fs.writeFileSync(path.join(DIST, STATE_FILE), JSON.stringify(state));
+  // Pages to tell search engines about after the deploy (scripts/indexnow.mjs). Kept outside dist, so it isn't published;
+  // unknown when the live state couldn't be read, so nothing is claimed as changed
+  fs.mkdirSync(path.dirname(INDEXNOW_PENDING), { recursive: true });
+  if (previous) fs.writeFileSync(INDEXNOW_PENDING, JSON.stringify(changedUrls));
+  else fs.rmSync(INDEXNOW_PENDING, { force: true });
   console.log(
     previous
       ? `[post-build] Sitemap dates: ${changed} of ${Object.keys(state).length} pages changed or new since the live site, the rest keep their dates`
