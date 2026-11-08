@@ -7540,7 +7540,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Why is my sheet split across several pages?",
-        "answer": "The PDF follows the print settings saved in the spreadsheet. To fit a sheet on one page, set the print scaling to “Fit to page” in Excel before converting."
+        "answer": "The PDF follows the print settings saved in the spreadsheet. To get each sheet on one page, tick “Fit each sheet on one page” before converting: the page grows to fit the sheet, so large sheets print small."
       },
       {
         "question": "Is my file uploaded?",
@@ -7756,7 +7756,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Protect PDF",
     "shortName": "Protect PDF",
     "tagline": "Add a password to a PDF with AES-256 encryption. Free, with no sign-up.",
-    "intro": "Protect PDF locks a PDF with a password, so it can't be opened without it. Use it before emailing bank statements, payslips, ID documents or contracts. The PDF is encrypted with AES-256, the strongest encryption PDF readers support, and opens normally in Acrobat, browsers and phone apps once the password is entered. Choose a password of at least six characters and keep it safe: nobody can recover it. The encryption runs with qpdf on our server; the file and the password are deleted right after.",
+    "intro": "Protect PDF locks a PDF with a password, so it can't be opened without it. Use it before emailing bank statements, payslips, ID documents or contracts. The PDF is encrypted with AES-256, the strongest encryption PDF readers support, and opens normally in Acrobat, browsers and phone apps once the password is entered. Choose a password of at least six characters and keep it safe: nobody can recover it. The encryption runs with qpdf on our server; the file and the password are deleted right after. You can also stop people printing, copying or changing it.",
     "seoTitle": "Protect PDF with Password – AES-256, Free",
     "seoDescription": "Add a password to a PDF with AES-256 encryption online for free. The file and password are deleted right after. No sign-up.",
     "keywords": [
@@ -7952,7 +7952,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "PDF to PDF/A",
     "shortName": "PDF → PDF/A",
     "tagline": "Convert a PDF to PDF/A for long-term archiving and official portals. Free, with no sign-up.",
-    "intro": "PDF to PDF/A converts a PDF into PDF/A-2b, the archival version of PDF that embeds fonts and color information so the document looks the same in decades. Some courts, tax portals, universities and government sites only accept PDF/A uploads. The conversion uses OCRmyPDF and Ghostscript on our server, and the file is deleted right after. Links and most fillable form fields are kept; fields that can’t meet the standard, such as hidden ones or signatures, become fixed content on the page.",
+    "intro": "PDF to PDF/A converts a PDF into PDF/A-2b, the archival version of PDF that embeds fonts and color information so the document looks the same in decades. Some courts, tax portals, universities and government sites only accept PDF/A uploads. The conversion uses OCRmyPDF and Ghostscript on our server, and the file is deleted right after. Links and most fillable form fields are kept; fields that can’t meet the standard, such as hidden ones or signatures, become fixed content on the page. You can choose PDF/A-1b or PDF/A-3b instead.",
     "seoTitle": "PDF to PDF/A Converter – PDF/A-2b, Free",
     "seoDescription": "Convert PDF to PDF/A-2b for archiving and official portals, online and free. Files are deleted right after. No sign-up.",
     "keywords": [
@@ -7997,7 +7997,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Which PDF/A version do I get?",
-        "answer": "PDF/A-2b, which most portals accept. If a portal asks for PDF/A-1 or PDF/A-3 specifically, check its instructions."
+        "answer": "PDF/A-2b by default, which most portals accept. If a portal or archive asks for PDF/A-1b or PDF/A-3b, choose that level before converting."
       },
       {
         "question": "Why is the PDF/A file bigger?",

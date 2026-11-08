@@ -68,6 +68,13 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [confirm, setConfirm] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [lang, setLang] = useState(OCR_LANG[locale] || 'eng');
+  // Protect PDF: what people may do once it's open, and the password that changes that
+  const [allowPrint, setAllowPrint] = useState<'full' | 'low' | 'none'>('full');
+  const [allowCopy, setAllowCopy] = useState(true);
+  const [allowEdit, setAllowEdit] = useState(true);
+  const [owner, setOwner] = useState('');
+  const [pdfaLevel, setPdfaLevel] = useState<'1' | '2' | '3'>('2');
+  const [fitSheet, setFitSheet] = useState(false);
   const [progress, setProgress] = useState<DocProgress | null>(null);
   // The server sleeps when idle; a job still processing after a few seconds is often it waking up
   const [slow, setSlow] = useState(false);
@@ -100,6 +107,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const passwordProblem =
     // Unlock may run without a password: that removes print and copy restrictions from PDFs that open freely
     tool === 'protect-pdf' ? (password.length < 6 ? 'short' : password !== confirm ? 'mismatch' : null) : null;
+  const limited = allowPrint !== 'full' || !allowCopy || !allowEdit;
 
   const run = async () => {
     if (!file || progress) return;
@@ -107,12 +115,27 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       setError(passwordProblem === 'mismatch' ? t('ctl.doc.passwordMismatch') : t('ctl.doc.passwordHint'));
       return;
     }
+    // The open password would also lift the limits if it were the owner password
+    if (tool === 'protect-pdf' && limited && owner && owner === password) {
+      setError(t('ctl.doc.ownerSame'));
+      return;
+    }
     setError(null);
     setResult(null);
     setProgress({ stage: 'uploading', fraction: 0 });
     try {
-      const params = { ...cfg.params, ...(tool === 'compress-pdf' ? { preset } : {}), ...(tool === 'ocr-pdf' ? { lang } : {}) };
+      const params = {
+        ...cfg.params,
+        ...(tool === 'compress-pdf' ? { preset } : {}),
+        ...(tool === 'ocr-pdf' ? { lang } : {}),
+        ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
+        ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
+      };
       const fields: Record<string, string> = needsPassword ? { password } : {};
+      if (tool === 'protect-pdf') {
+        Object.assign(fields, { print: allowPrint, copy: allowCopy ? 'y' : 'n', edit: allowEdit ? 'y' : 'n' });
+        if (limited && owner) fields.owner = owner;
+      }
       const r = await runDocJob(cfg.endpoint, file, params, fields, setProgress);
       const name = cfg.output(file.name.replace(/\.[^.]+$/, ''));
       setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial });
@@ -231,6 +254,71 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
           <p id="doc-pw-hint" className="text-[13px] text-graphite">
             {tool === 'protect-pdf' ? t('ctl.doc.passwordHint') : t('ctl.doc.unlockHint')}
           </p>
+        </div>
+      )}
+      {tool === 'protect-pdf' && (
+        <div className="space-y-3 pt-4 border-t border-pencil">
+          <Segmented
+            label={t('ctl.doc.permPrint')}
+            value={allowPrint}
+            onChange={setAllowPrint}
+            options={[
+              { value: 'full', label: t('ctl.doc.permAllowed') },
+              { value: 'low', label: t('ctl.doc.permLow') },
+              { value: 'none', label: t('ctl.doc.permNone') },
+            ]}
+          />
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
+            <input type="checkbox" checked={allowCopy} onChange={(e) => setAllowCopy(e.target.checked)} />
+            {t('ctl.doc.permCopy')}
+          </label>
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
+            <input type="checkbox" checked={allowEdit} onChange={(e) => setAllowEdit(e.target.checked)} />
+            {t('ctl.doc.permEdit')}
+          </label>
+          {limited && (
+            <div className="space-y-1">
+              <label htmlFor="doc-owner" className="block text-[14px] text-graphite">
+                {t('ctl.doc.ownerPassword')}
+              </label>
+              <input
+                id="doc-owner"
+                type={showPassword ? 'text' : 'password'}
+                autoComplete="new-password"
+                value={owner}
+                onChange={(e) => setOwner(e.target.value)}
+                maxLength={128}
+                aria-describedby="doc-owner-hint"
+                className={inputClass}
+              />
+              <p id="doc-owner-hint" className="text-[13px] text-graphite">{t('ctl.doc.ownerHint')}</p>
+            </div>
+          )}
+          <p className="text-[13px] text-graphite">{t('ctl.doc.permNote')}</p>
+        </div>
+      )}
+      {tool === 'pdf-to-pdfa' && (
+        <div className="space-y-2">
+          <Segmented
+            label={t('ctl.doc.pdfaLevel')}
+            value={pdfaLevel}
+            onChange={setPdfaLevel}
+            options={[
+              { value: '1', label: 'PDF/A-1b' },
+              { value: '2', label: 'PDF/A-2b' },
+              { value: '3', label: 'PDF/A-3b' },
+            ]}
+          />
+          <p className="text-[13px] text-graphite">{t('ctl.doc.pdfaLevelNote')}</p>
+        </div>
+      )}
+      {tool === 'excel-to-pdf' && (
+        <div className="space-y-1">
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
+            <input type="checkbox" checked={fitSheet} onChange={(e) => setFitSheet(e.target.checked)} aria-describedby="doc-fit-note" />
+            {t('ctl.doc.fitSheet')}
+          </label>
+          <p id="doc-fit-note" className="text-[13px] text-graphite">{t('ctl.doc.fitSheetNote')}</p>
         </div>
       )}
       {tool === 'ocr-pdf' && (

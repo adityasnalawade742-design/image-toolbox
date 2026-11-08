@@ -7340,7 +7340,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Çalışma sayfam neden birkaç sayfaya bölünüyor?",
         answer:
-          "PDF, tabloda kayıtlı yazdırma ayarlarını izler. Bir çalışma sayfasını tek sayfaya sığdırmak için dönüştürmeden önce Excel'de yazdırma ölçeklendirmesini “Sayfaya sığdır” olarak ayarlayın.",
+          "PDF, elektronik tabloda kayıtlı yazdırma ayarlarını izler. Her çalışma sayfasını tek sayfada almak için dönüştürmeden önce “Her çalışma sayfasını tek sayfaya sığdır” seçeneğini işaretleyin: sayfa, çalışma sayfasına göre büyür, bu yüzden büyük sayfalar küçük basılır.",
       },
       {
         question: "Dosyam yükleniyor mu?",
@@ -7573,7 +7573,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF Koru",
     tagline: "Bir PDF'e AES-256 şifrelemeyle parola ekleyin. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF Koruma, bir PDF'i parolayla kilitler; böylece parola olmadan açılamaz. Banka hesap özetlerini, maaş bordrolarını, kimlik belgelerini veya sözleşmeleri e-postayla göndermeden önce kullanın. PDF, PDF okuyucuların desteklediği en güçlü şifreleme olan AES-256 ile şifrelenir ve parola girildikten sonra Acrobat'ta, tarayıcılarda ve telefon uygulamalarında normal şekilde açılır. En az altı karakterli bir parola seçin ve onu güvenli bir yerde saklayın: kimse onu kurtaramaz. Şifreleme sunucumuzda qpdf ile yapılır; dosya ve parola hemen ardından silinir.",
+      "PDF Koruma, bir PDF'i parolayla kilitler; böylece parola olmadan açılamaz. Banka hesap özetlerini, maaş bordrolarını, kimlik belgelerini veya sözleşmeleri e-postayla göndermeden önce kullanın. PDF, PDF okuyucuların desteklediği en güçlü şifreleme olan AES-256 ile şifrelenir ve parola girildikten sonra Acrobat'ta, tarayıcılarda ve telefon uygulamalarında normal şekilde açılır. En az altı karakterli bir parola seçin ve onu güvenli bir yerde saklayın: kimse onu kurtaramaz. Şifreleme sunucumuzda qpdf ile yapılır; dosya ve parola hemen ardından silinir. Yazdırmayı, kopyalamayı veya değiştirmeyi de engelleyebilirsiniz.",
     seoTitle: "PDF Şifreleme – AES-256 ile Parola Koyun, Ücretsiz",
     seoDescription:
       "PDF şifreleme online ve ücretsiz: bir PDF'e AES-256 şifrelemeyle parola ekleyin. Dosya ve parola işlemden hemen sonra silinir. Kayıt gerekmez.",
@@ -7782,7 +7782,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Bir PDF'i uzun süreli arşivleme ve resmi portallar için PDF/A'ya dönüştürün. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF'ten PDF/A'ya Dönüştürme, bir PDF'i PDF/A-2b biçimine dönüştürür. PDF/A-2b, yazı tiplerini ve renk bilgilerini dosyaya gömen arşiv amaçlı PDF sürümüdür; böylece belge onlarca yıl sonra da aynı görünür. Bazı mahkemeler, vergi portalları, üniversiteler ve kamu siteleri yalnızca PDF/A yüklemelerini kabul eder. Dönüştürme sunucumuzdaki OCRmyPDF ve Ghostscript ile yapılır ve dosya hemen ardından silinir. Bağlantılar ve doldurulabilir form alanlarının çoğu korunur; gizli alanlar veya imzalar gibi standarda uyamayanlar sayfanın sabit içeriğine dönüşür.",
+      "PDF'ten PDF/A'ya Dönüştürme, bir PDF'i PDF/A-2b biçimine dönüştürür. PDF/A-2b, yazı tiplerini ve renk bilgilerini dosyaya gömen arşiv amaçlı PDF sürümüdür; böylece belge onlarca yıl sonra da aynı görünür. Bazı mahkemeler, vergi portalları, üniversiteler ve kamu siteleri yalnızca PDF/A yüklemelerini kabul eder. Dönüştürme sunucumuzdaki OCRmyPDF ve Ghostscript ile yapılır ve dosya hemen ardından silinir. Bağlantılar ve doldurulabilir form alanlarının çoğu korunur; gizli alanlar veya imzalar gibi standarda uyamayanlar sayfanın sabit içeriğine dönüşür. Bunun yerine PDF/A-1b veya PDF/A-3b de seçebilirsiniz.",
     seoTitle: "PDF'i PDF/A'ya Dönüştürme – PDF/A-2b, Ücretsiz",
     seoDescription:
       "PDF'i PDF/A'ya dönüştürme online ve ücretsiz: arşivleme ve resmi portallar için PDF/A-2b oluşturun. Dosyalar hemen ardından silinir. Kayıt gerekmez.",
@@ -7829,7 +7829,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hangi PDF/A sürümünü alırım?",
         answer:
-          "Çoğu portalın kabul ettiği PDF/A-2b. Bir portal özellikle PDF/A-1 veya PDF/A-3 istiyorsa portalın talimatlarını kontrol edin.",
+          "Varsayılan olarak çoğu portalın kabul ettiği PDF/A-2b. Bir portal veya arşiv PDF/A-1b ya da PDF/A-3b isterse dönüştürmeden önce o düzeyi seçin.",
       },
       {
         question: "PDF/A dosyası neden daha büyük?",

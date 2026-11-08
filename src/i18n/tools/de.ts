@@ -7352,7 +7352,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Warum ist mein Tabellenblatt auf mehrere Seiten verteilt?",
         answer:
-          "Das PDF folgt den Druckeinstellungen, die in der Tabelle gespeichert sind. Damit ein Blatt auf eine Seite passt, stell die Skalierung in Excel vor dem Umwandeln auf „Blatt auf einer Seite darstellen“.",
+          "Das PDF folgt den Druckeinstellungen, die in der Tabelle gespeichert sind. Damit jedes Blatt auf eine Seite kommt, aktiviere vor dem Umwandeln „Jedes Blatt auf eine Seite“: Die Seite wächst mit dem Blatt, große Blätter werden also klein gedruckt.",
       },
       {
         question: "Wird meine Datei hochgeladen?",
@@ -7590,7 +7590,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF schützen",
     tagline: "Schütze ein PDF mit einem Passwort und AES-256-Verschlüsselung. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF schützen sperrt ein PDF mit einem Passwort, sodass es sich ohne das Passwort nicht öffnen lässt. Nutze es, bevor du Kontoauszüge, Gehaltsabrechnungen, Ausweisdokumente oder Verträge per E-Mail verschickst. Das PDF wird mit AES-256 verschlüsselt, der stärksten Verschlüsselung, die PDF-Reader unterstützen, und öffnet sich nach Eingabe des Passworts ganz normal in Acrobat, Browsern und Handy-Apps. Wähle ein Passwort mit mindestens sechs Zeichen und bewahre es sicher auf: Niemand kann es wiederherstellen. Die Verschlüsselung läuft mit qpdf auf unserem Server; Datei und Passwort werden direkt danach gelöscht.",
+      "PDF schützen sperrt ein PDF mit einem Passwort, sodass es sich ohne das Passwort nicht öffnen lässt. Nutze es, bevor du Kontoauszüge, Gehaltsabrechnungen, Ausweisdokumente oder Verträge per E-Mail verschickst. Das PDF wird mit AES-256 verschlüsselt, der stärksten Verschlüsselung, die PDF-Reader unterstützen, und öffnet sich nach Eingabe des Passworts ganz normal in Acrobat, Browsern und Handy-Apps. Wähle ein Passwort mit mindestens sechs Zeichen und bewahre es sicher auf: Niemand kann es wiederherstellen. Die Verschlüsselung läuft mit qpdf auf unserem Server; Datei und Passwort werden direkt danach gelöscht. Du kannst außerdem Drucken, Kopieren oder Ändern sperren.",
     seoTitle: "PDF mit Passwort schützen – AES-256, kostenlos",
     seoDescription:
       "PDF mit Passwort schützen, kostenlos online: mit AES-256-Verschlüsselung. Datei und Passwort werden direkt danach gelöscht. Ohne Anmeldung.",
@@ -7804,7 +7804,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF → PDF/A",
     tagline: "Wandle ein PDF in PDF/A um, für die Langzeitarchivierung und offizielle Portale. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF in PDF/A wandelt ein PDF in PDF/A-2b um, die Archivversion von PDF, die Schriften und Farbinformationen einbettet, damit das Dokument auch in Jahrzehnten gleich aussieht. Manche Gerichte, Steuerportale, Hochschulen und Behördenseiten akzeptieren nur PDF/A-Uploads. Die Umwandlung läuft mit OCRmyPDF und Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. Links und die meisten ausfüllbaren Formularfelder bleiben erhalten; Felder, die den Standard nicht erfüllen können, etwa ausgeblendete Felder oder Signaturen, werden zu festem Seiteninhalt.",
+      "PDF in PDF/A wandelt ein PDF in PDF/A-2b um, die Archivversion von PDF, die Schriften und Farbinformationen einbettet, damit das Dokument auch in Jahrzehnten gleich aussieht. Manche Gerichte, Steuerportale, Hochschulen und Behördenseiten akzeptieren nur PDF/A-Uploads. Die Umwandlung läuft mit OCRmyPDF und Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. Links und die meisten ausfüllbaren Formularfelder bleiben erhalten; Felder, die den Standard nicht erfüllen können, etwa ausgeblendete Felder oder Signaturen, werden zu festem Seiteninhalt. Du kannst stattdessen PDF/A-1b oder PDF/A-3b wählen.",
     seoTitle: "PDF in PDF/A umwandeln – PDF/A-2b, kostenlos",
     seoDescription:
       "PDF in PDF/A umwandeln, kostenlos online: PDF/A-2b für die Archivierung und offizielle Portale. Dateien werden direkt danach gelöscht. Ohne Anmeldung.",
@@ -7851,7 +7851,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Welche PDF/A-Version bekomme ich?",
         answer:
-          "PDF/A-2b, das die meisten Portale akzeptieren. Wenn ein Portal ausdrücklich PDF/A-1 oder PDF/A-3 verlangt, lies seine Hinweise.",
+          "Standardmäßig PDF/A-2b, das die meisten Portale akzeptieren. Wenn ein Portal oder Archiv PDF/A-1b oder PDF/A-3b verlangt, wähle diese Stufe vor dem Umwandeln.",
       },
       {
         question: "Warum ist die PDF/A-Datei größer?",
