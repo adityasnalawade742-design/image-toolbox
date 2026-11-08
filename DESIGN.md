@@ -85,6 +85,12 @@ typography:
     fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.625
+  wordmark:
+    fontFamily: "TadaFile Logo, Barlow, system-ui, sans-serif"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.01em"
 rounded:
   none: "0"
   field: "8px"
@@ -314,7 +320,7 @@ Ink on paper: one solid action, everything else ruled.
 
 ### Navigation (masthead)
 - **Style:** sticky paper-bright bar with a 1px pencil bottom rule, topped by the 6px CMYK color bar (cyan, magenta, yellow, key in four equal blocks).
-- **Wordmark:** registration-target line glyph plus the site name as live text (Semi Condensed 700, 17px, uppercase, 0.04em). The name is swappable text, never artwork.
+- **Wordmark:** lowercase "tadafile" in "TadaFile Logo" (Fredoka 700, SIL OFL, cut down to the letters t a d f ı l e, under 2 KB; `public/fonts/`): "tada" in key ink, "file" in process magenta, and the dot of the "i" is a process-yellow sparkle with a thin key-ink edge plus a small cyan sparkle. Header 30px, footer 32px (lowercase needs more size than the old capitals to hold the same presence). The plain name is screen-reader text; the drawn word is decorative. The font is used for the wordmark only.
 - **Links:** five categories (all but Developer) as pills on their category tint, key-ink Barlow 500 15px, underline on hover; shown from xl up. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger and language selector are ruled buttons on the right.
 
 ### Lists and index

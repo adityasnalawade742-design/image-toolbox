@@ -1,21 +1,63 @@
 ---
 /**
- * The TadaFile wordmark: "TADA", the sparkle-file mark, "FILE". The words stay real text in the site font, so screen
- * readers and search engines read the name; the mark between them is decorative.
+ * The TadaFile wordmark: "tada" in ink, "file" in magenta, and the dot of the "i" is a sparkle (yellow with a thin ink
+ * edge, so it holds up on white) with a small cyan one: the "ta-da" moment inside the name, in the site's print colours.
+ * Screen readers and search engines get the plain name; the drawn word is decorative. The lettering is Fredoka (SIL OFL,
+ * public/fonts/Fredoka-OFL.txt), cut down to these seven letters, under 2 KB.
  */
 import { SITE_CONFIG } from '../../config/site';
-import mark from './logo-mark.svg?raw';
 
 interface Props {
   class?: string;
 }
 const { class: className = '' } = Astro.props;
-// "TadaFile" -> "Tada" + "File": split before the second capital
-const [first, second] = SITE_CONFIG.name.split(/(?=[A-Z])/).length === 2 ? SITE_CONFIG.name.split(/(?=[A-Z])/) : [SITE_CONFIG.name, ''];
+const STAR = 'M12 0 L14.1 9.9 L24 12 L14.1 14.1 L12 24 L9.9 14.1 L0 12 L9.9 9.9 Z';
 ---
 
-<span class={`inline-flex items-center font-condensed font-bold uppercase tracking-[0.04em] text-ink leading-none ${className}`}>
-  <span>{first}</span>
-  <span aria-hidden="true" class="inline-block h-[1.3em] w-[1.46em] ml-[0.1em] mr-[0.02em] -translate-y-[0.08em] [&>svg]:h-full [&>svg]:w-full" set:html={mark} />
-  {second && <span>{second}</span>}
+<span class={`tf-logo ${className}`}>
+  <span class="sr-only">{SITE_CONFIG.name}</span>
+  <span aria-hidden="true" class="tf-word">
+    <span class="text-ink">tada</span><span class="tf-file">f<span class="tf-i">ı<svg class="tf-spark" viewBox="-2 -2 28 28"><path d={STAR} fill="#ffe100" stroke="#141414" stroke-width="2.2" stroke-linejoin="round" paint-order="stroke" /></svg><svg class="tf-spark-c" viewBox="0 0 24 24"><path d={STAR} fill="#00a0df" /></svg></span>le</span>
+  </span>
 </span>
+
+<style>
+  .tf-logo {
+    display: inline-flex;
+    line-height: 1;
+  }
+  .tf-word {
+    display: inline-flex;
+    align-items: flex-end;
+    font-family: 'TadaFile Logo', 'Barlow', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .tf-file {
+    color: #e4007c;
+  }
+  /* The dotless i, with a little room so the sparkle clears the top of the f */
+  .tf-i {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.05em;
+  }
+  .tf-spark {
+    position: absolute;
+    left: 50%;
+    top: -0.17em;
+    width: 0.5em;
+    height: 0.5em;
+    transform: translateX(-50%);
+    overflow: visible;
+  }
+  .tf-spark-c {
+    position: absolute;
+    left: calc(50% + 0.34em);
+    top: -0.27em;
+    width: 0.2em;
+    height: 0.2em;
+    transform: translateX(-50%);
+  }
+</style>
