@@ -41,12 +41,11 @@ const navLabel = (cat: (typeof navCategories)[number]) => (cat in SHORT_NAV_KEY 
       <Logo class="text-[30px]" /><span class="sr-only">, {t('nav.allTools')}</span>
     </a>
 
-    <nav class="hidden xl:flex items-center gap-1.5" aria-label={t('nav.allTools')}>
+    <!-- Plain links, each with its category's ink dot: the colour bar and the logo already carry the colour -->
+    <nav class="hidden xl:flex items-center gap-1" aria-label={t('nav.allTools')}>
       {navCategories.map((cat) => (
-        <a
-          href={translatePath(`/#${cat}`)}
-          class:list={['whitespace-nowrap rounded-full px-3.5 py-1.5 text-[15px] font-medium !text-ink hover:underline', CATEGORY_INK[cat].tint]}
-        >
+        <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 whitespace-nowrap rounded-md px-3 py-1.5 text-[15px] font-medium !text-ink hover:bg-paper-stock">
+          <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
           {navLabel(cat)}
         </a>
       ))}

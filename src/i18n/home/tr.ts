@@ -27,7 +27,7 @@ export const trHome: LocalizedHomeData = {
     {
       title: 'Resimler asla yüklenmez',
       description:
-        'Resimler kendi cihazınızda, tarayıcınız tarafından işlenir. Bu yüzden yükleme beklemesi olmaz ve sunucuda bir kopya kalmaz. Word’den PDF’e Dönüştürme gibi birkaç belge aracı sunucumuza ihtiyaç duyar: bu araçlar işaretlidir ve dosyalar işlemden hemen sonra silinir.',
+        'Resimler kendi cihazınızda, tarayıcınız tarafından işlenir. Bu yüzden yükleme beklemesi olmaz ve sunucuda bir kopya kalmaz. Word’den PDF’e Dönüştürme gibi birkaç belge aracı sunucumuza ihtiyaç duyar: araç sayfasında bu belirtilir ve dosyalar işlemden hemen sonra silinir.',
       icon: 'ShieldCheck',
     },
     {
@@ -48,7 +48,7 @@ export const trHome: LocalizedHomeData = {
     {
       question: 'Resimlerim bir yere yükleniyor mu?',
       answer:
-        'Hayır. Tüm resim araçları tarayıcınızın içinde çalışır; resimleriniz kendi cihazınızda işlenir ve hiçbir sunucuya gönderilmez. Arka plan kaldırma aracı yapay zekâ modelini bir kez indirir, ardından o da cihazınızda çalışır. Birkaç belge aracı (Word, Excel ve PowerPoint’ten PDF’e Dönüştürme, PDF’ten Word’e Dönüştürme, PDF Sıkıştırma, PDF Koruma, PDF Kilidi Açma, PDF OCR, PDF’ten PDF/A’ya Dönüştürme ve PDF Onarma) sunucumuza ihtiyaç duyar: bu araçlar “Sunucumuzu kullanır” etiketiyle işaretlidir ve sonuç geri gönderilir gönderilmez dosyanız silinir.',
+        'Hayır. Tüm resim araçları tarayıcınızın içinde çalışır; resimleriniz kendi cihazınızda işlenir ve hiçbir sunucuya gönderilmez. Arka plan kaldırma aracı yapay zekâ modelini bir kez indirir, ardından o da cihazınızda çalışır. Birkaç belge aracı (Word, Excel ve PowerPoint’ten PDF’e Dönüştürme, PDF’ten Word’e Dönüştürme, PDF Sıkıştırma, PDF Koruma, PDF Kilidi Açma, PDF OCR, PDF’ten PDF/A’ya Dönüştürme ve PDF Onarma) sunucumuza ihtiyaç duyar: araç sayfasında bu belirtilir ve sonuç geri gönderilir gönderilmez dosyanız silinir.',
     },
     {
       question: 'Gerçekten ücretsiz mi?',

@@ -27,7 +27,7 @@ export const deHome: LocalizedHomeData = {
     {
       title: 'Bilder werden nie hochgeladen',
       description:
-        'Dein Browser verarbeitet die Bilder auf deinem eigenen Gerät. Du wartest also nicht auf einen Upload, und auf keinem Server liegt eine Kopie. Einige Dokument-Tools, etwa Word in PDF, brauchen unseren Server: Sie sind gekennzeichnet, und die Dateien werden direkt danach gelöscht.',
+        'Dein Browser verarbeitet die Bilder auf deinem eigenen Gerät. Du wartest also nicht auf einen Upload, und auf keinem Server liegt eine Kopie. Einige Dokument-Tools, etwa Word in PDF, brauchen unseren Server: Ihre Seite weist darauf hin, und die Dateien werden direkt danach gelöscht.',
       icon: 'ShieldCheck',
     },
     {
@@ -49,7 +49,7 @@ export const deHome: LocalizedHomeData = {
     {
       question: 'Werden meine Bilder irgendwo hochgeladen?',
       answer:
-        'Nein. Jedes Bildtool läuft in deinem Browser. Deine Bilder werden also auf deinem eigenen Gerät verarbeitet und nie an einen Server gesendet. Der Hintergrund-Entferner lädt sein KI-Modell einmalig herunter und arbeitet danach ebenfalls auf deinem Gerät. Einige Dokument-Tools (Word in PDF, Excel in PDF, PowerPoint in PDF, PDF in Word, PDF komprimieren, PDF schützen, PDF entsperren, PDF-OCR, PDF in PDF/A und PDF reparieren) brauchen unseren Server: Sie sind mit „Nutzt unseren Server“ gekennzeichnet, und deine Datei wird gelöscht, sobald das Ergebnis zurückgeschickt ist.',
+        'Nein. Jedes Bildtool läuft in deinem Browser. Deine Bilder werden also auf deinem eigenen Gerät verarbeitet und nie an einen Server gesendet. Der Hintergrund-Entferner lädt sein KI-Modell einmalig herunter und arbeitet danach ebenfalls auf deinem Gerät. Einige Dokument-Tools (Word in PDF, Excel in PDF, PowerPoint in PDF, PDF in Word, PDF komprimieren, PDF schützen, PDF entsperren, PDF-OCR, PDF in PDF/A und PDF reparieren) brauchen unseren Server: Ihre Seite weist darauf hin, und deine Datei wird gelöscht, sobald das Ergebnis zurückgeschickt ist.',
     },
     {
       question: 'Ist das wirklich kostenlos?',

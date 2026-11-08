@@ -64,7 +64,6 @@ export const ui = {
     'consent.decline': 'Decline',
     'consent.privacy': 'Privacy policy',
     'footer.cookieSettings': 'Cookie settings',
-    'tool.serverBadge': 'Uses our server',
     'footer.about': 'About',
     'footer.contact': 'Contact',
     'footer.privacyPolicy': 'Privacy',

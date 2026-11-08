@@ -188,7 +188,7 @@ Every number is real and set in tabular figures. That is the trust mechanism: th
 **Key Characteristics:**
 - Coated paper ground, key-black ink, graphite for secondary text.
 - Soft corners from one scale (8px fields, 10px buttons and option groups, 12px lists, 16px panels, 20px drop tray); 1px rules contain; 2px ink rules head sections.
-- Process inks (magenta, cyan, yellow, key) and a registration mark encode tool categories; their soft tints ground icon tiles and nav pills.
+- Process inks (magenta, cyan, yellow, key) and a registration mark encode tool categories; their soft tints ground icon tiles.
 - Crop marks and dimension lines on the image, and the CMYK strip, are the press vocabulary; each one also carries information.
 - Barlow / Barlow Semi Condensed with tabular figures for every measurement.
 - One solid key-ink action per page; selection is shown by a heavier rule, not a fill.
@@ -223,16 +223,16 @@ Ink on coated paper, with four flat process inks held in reserve for category ma
 - **Non-repro Blue** (`nonrepro-blue`): retired with the gridded drop sheet; kept as a token only.
 
 ### Tints (category grounds)
-- **Category tints** (`tint-edit`, `tint-optimize`, `tint-convert`, `tint-pdf`, and `tint-neutral` for Utilities and Developer): the ground of a tool's icon tile and of the masthead's category pills. Icons on a tile use the paired `-ink` shade (5.6:1 or better on its tint); pill text stays key ink.
+- **Category tints** (`tint-edit`, `tint-optimize`, `tint-convert`, `tint-pdf`, and `tint-neutral` for Utilities and Developer): the ground of a tool's icon tile. Icons on a tile use the paired `-ink` shade (5.6:1 or better on its tint); pill text stays key ink.
 - **Drop tray** (`drop-tray` ground with a 2px dashed `drop-tray-rule` at 3.5:1): the empty drop target on every tool. Hover deepens the ground; dragging a file over it makes the rule solid status blue.
 - **Checker Tint** (`checker-tint`): the 16px transparency checkerboard under images.
 
 ### Named Rules
-**The Color Quarantine Rule.** Solid process inks mark categories, the CMYK strip, focus, caret and selection. Their soft tints may ground a tool's icon tile or a category pill, and the drop tray is a pale cyan. Nothing else in the chrome is colored: buttons, panels and headings stay ink on paper.
+**The Color Quarantine Rule.** Solid process inks mark categories, the CMYK strip, focus, caret and selection. Their soft tints may ground a tool's icon tile, and the drop tray is a pale cyan. Nothing else in the chrome is colored: buttons, panels and headings stay ink on paper.
 
 **The One Solid Block Rule.** Download (`.btn-ink`) is the only solid key-ink block on a tool page. Selected options use the ruled state (2px key-ink outline inset on paper stock), never a solid fill. Small measure tags laid on the image are annotations, not controls, and are exempt.
 
-**The Tint Rule.** A tint always sits behind something that belongs to its category (a tool icon, a category pill). It is never a section background or a decorative wash.
+**The Tint Rule.** A tint always sits behind something that belongs to its category (a tool icon). It is never a section background or a decorative wash.
 
 ## Typography
 
@@ -266,11 +266,11 @@ A single 1280px measure (max-w-7xl) with 16px / 24px / 32px gutters at phone / s
 
 **Tool page.** Breadcrumb with category mark, headline and lead sit left above the workspace. Once an image is loaded the workspace is a two-column grid: the proof sheet takes the fluid column and a 23rem ruled control panel sits right, sticky at 96px from the top. Below lg the panel drops under the sheet and Download moves to a fixed bottom action rail (paper ground, 1px key-ink top rule) so it stays under the thumb. Below the workspace, content runs in a fluid column with an 18rem sticky Related tools rail.
 
-**Home.** A 5:7 split of headline plus spec chips (tools, formats, and a green "uploads 0") against the drop tray, then the full tool index in CSS columns (1 / 2 / 3): one white rounded card per category, every tool listed with its icon tile, name and one-line description, nothing folded; then a three-column ruled pillars row and FAQ.
+**Home.** A 5:7 split of headline and lead against the drop tray (no spec chips: the lead and the drop tray's hint already say what they said), then the full tool index in CSS columns (1 / 2 / 3): one white rounded card per category, the first tools of each listed with icon tile, name and a one-line description, the rest behind a native "Show N more" disclosure; then a three-column ruled pillars row and FAQ.
 
 **Translation.** Every label must fit the 23rem panel in German and survive CJK. Segmented groups use equal grid columns; text wraps rather than truncating, and controls never rely on a fixed character count.
 
-**The Full Index Rule.** The tool index shows every tool, grouped by category ink, with no accordion, carousel or "show more".
+**The Full Index Rule.** Every tool is reachable from the index, grouped by category ink: each card shows its first eight and opens the rest in place with a native "Show N more" disclosure. No carousel, no hidden category.
 
 **Ad placement.** Ad slots appear in the explanatory column below the workspace, never beside upload, download or handoff controls.
 
@@ -321,10 +321,10 @@ Ink on paper: one solid action, everything else ruled.
 ### Navigation (masthead)
 - **Style:** sticky paper-bright bar with a 1px pencil bottom rule, topped by the 6px CMYK color bar (cyan, magenta, yellow, key in four equal blocks).
 - **Wordmark:** lowercase "tadafile" in "TadaFile Logo" (Fredoka 700, SIL OFL, cut down to the letters t a d f ı l e, under 2 KB; `public/fonts/`): "tada" in key ink, "file" in process magenta, and the dot of the "i" is a process-yellow sparkle with a thin key-ink edge plus a small cyan sparkle. Header 30px, footer 32px (lowercase needs more size than the old capitals to hold the same presence). The plain name is screen-reader text; the drawn word is decorative. The font is used for the wordmark only.
-- **Links:** five categories (all but Developer) as pills on their category tint, key-ink Barlow 500 15px, underline on hover; shown from xl up. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger and language selector are ruled buttons on the right.
+- **Links:** five categories (all but Developer) as plain key-ink Barlow 500 15px links, each led by its 8px round category mark, hover grounded in paper stock; shown from xl up. No tinted pills: the color bar and the wordmark already carry the colour, so the masthead stays quiet. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger and language selector are ruled buttons on the right.
 
 ### Lists and index
-- **Tool index and Related tools:** each row is a 10px-rounded link with a 40px (36px in Related tools) icon tile on the category tint, the item-weight name and a graphite one-line description; hover grounds the row in paper stock and underlines the name. On the home page each category is a white 16px card with a pencil-soft rule, a round category mark, the category name and its count.
+- **Tool index and Related tools:** each row is a 10px-rounded link with a 40px (36px in Related tools) icon tile on the category tint, the item-weight name and a graphite description clamped to one line (the tool page says the rest); server tools carry no tag in lists: their own page shows the server notice above the drop tray; hover grounds the row in paper stock and underlines the name. On the home page each category is a white 16px card with a pencil-soft rule, a round category mark, the category name and its count.
 - **Other lists** (search results, next step, handoff choices): rows divided by pencil-soft hairlines, a round category mark and the name; handoff rows end with a line arrow.
 
 ### Proof sheet (signature)
@@ -350,7 +350,7 @@ A round dot of process ink: magenta Edit & Transform, cyan Optimize & Compress, 
 
 ### Don't:
 - **Don't** put shadows on cards or panels, or use glows, blurs or gradient fills in the chrome.
-- **Don't** fill buttons, segments, panels or headings with a process ink or a tint; tints only ground icon tiles and category pills.
+- **Don't** fill buttons, segments, panels or headings with a process ink or a tint; tints only ground icon tiles.
 - **Don't** invent radii or colors outside the scale and the tints.
 - **Don't** fill a selected option with solid key ink.
 - **Don't** put the uppercase slug style above headlines as a decorative tag.
