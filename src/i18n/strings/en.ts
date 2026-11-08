@@ -67,6 +67,8 @@ export const en = {
   'ws.quality': 'Quality',
   'ws.qualityLabel': 'Output quality',
   'ws.pngLossless': 'PNG is lossless',
+  'ws.webpLossless': 'Lossless: keep every pixel exactly (much bigger for photos)',
+  'ws.webpAuto': 'For screenshots, logos and graphics, a lossless WebP is used automatically when it’s smaller.',
   'ws.pngQuantHint': 'At 100% PNG keeps every colour. Lower values reduce the picture to at most 256 colours, which makes most PNGs several times smaller with little visible change.',
   'ws.download': 'Download {format}',
   'ws.downloadZip': 'Download favicon package (ZIP)',

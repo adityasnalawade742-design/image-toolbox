@@ -9,6 +9,9 @@ const FORMATS: DecodeFormat[] = ['image/png', 'image/jpeg', 'image/webp'];
 const FORMAT_LABEL: Record<DecodeFormat, string> = { 'image/png': 'PNG', 'image/jpeg': 'JPG', 'image/webp': 'WebP' };
 
 /** "image/svg+xml" -> "SVG", "image/jpeg" -> "JPG" */
+const EXT: Record<string, string> = { 'image/jpeg': 'jpg', 'image/svg+xml': 'svg', 'image/x-icon': 'ico', 'image/vnd.microsoft.icon': 'ico', 'image/tiff': 'tif' };
+const extFor = (mime: string) => EXT[mime] ?? (mime.replace('image/', '').replace(/[^a-z0-9]/gi, '') || 'img');
+
 function mimeLabel(mime: string): string {
   return mime.replace('image/', '').replace('svg+xml', 'svg').replace('jpeg', 'jpg').toUpperCase();
 }
@@ -18,7 +21,9 @@ export function Base64ToImageWorkspace() {
   const [inputText, setInputText] = useState('');
   const [imageElement, setImageElement] = useState<HTMLImageElement | null>(null);
   const [detected, setDetected] = useState<{ mime: string; bytes: number } | null>(null);
-  const [format, setFormat] = useState<DecodeFormat>('image/png');
+  // 'original' saves the decoded bytes as they are: no quality lost, animation and SVG kept
+  const [format, setFormat] = useState<DecodeFormat | 'original'>('original');
+  const [payload, setPayload] = useState('');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [isDecoding, setIsDecoding] = useState<boolean>(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -49,6 +54,7 @@ export function Base64ToImageWorkspace() {
       const [, mime = 'image/png', payload = ''] = cleanSrc.match(/^data:([^;]+);base64,(.*)$/) || [];
       const padding = payload.endsWith('==') ? 2 : payload.endsWith('=') ? 1 : 0;
       setDetected({ mime, bytes: Math.max(0, Math.floor((payload.length * 3) / 4) - padding) });
+      setPayload(payload);
       setImageElement(img);
       setErrorMsg(null);
     } catch {
@@ -119,7 +125,14 @@ export function Base64ToImageWorkspace() {
   }, [imageElement]);
 
   const handleDownload = async () => {
-    if (!canvasRef.current) return;
+    if (format === 'original' && detected && payload) {
+      const bin = atob(payload);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      downloadBlob(new Blob([bytes], { type: detected.mime }), `decoded-image.${extFor(detected.mime)}`);
+      return;
+    }
+    if (!canvasRef.current || format === 'original') return;
     let source = canvasRef.current;
     if (format === 'image/jpeg') {
       // JPEG has no alpha; flatten onto white so transparent areas don't turn black
@@ -249,7 +262,15 @@ export function Base64ToImageWorkspace() {
             <div className="border border-ink bg-paper-bright p-4 space-y-4 rounded-xl">
               <div className="space-y-1.5">
                 <span className="slug">{t('ctl.decode.saveAs')}</span>
-                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.decode.formatGroup')}>
+                <div className="grid grid-cols-2 sm:grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.decode.formatGroup')}>
+                  <button
+                    type="button"
+                    aria-pressed={format === 'original'}
+                    onClick={() => setFormat('original')}
+                    className={`min-h-[40px] text-[14px] font-semibold transition-colors ${format === 'original' ? 'seg-on' : 'seg-off'}`}
+                  >
+                    {t('ctl.decode.asIs', { format: detected ? mimeLabel(detected.mime) : '' })}
+                  </button>
                   {FORMATS.map((fmt) => (
                     <button
                       key={fmt}
@@ -268,7 +289,7 @@ export function Base64ToImageWorkspace() {
 
               <button type="button" onClick={handleDownload} className="btn-ink w-full min-h-[52px] text-[16px]">
                 <Download className="w-5 h-5" aria-hidden="true" />
-                <span>{t('ctl.decode.download', { format: FORMAT_LABEL[format] })}</span>
+                <span>{t('ctl.decode.download', { format: format === 'original' ? (detected ? mimeLabel(detected.mime) : '') : FORMAT_LABEL[format] })}</span>
               </button>
             </div>
           </>

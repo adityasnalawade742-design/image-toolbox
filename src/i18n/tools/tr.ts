@@ -4569,7 +4569,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Sayfa Numarası",
     tagline: "Bir PDF'in sayfalarını seçtiğiniz konum, biçim ve başlangıç numarasıyla numaralandırın. Cihazınızda çalışır.",
     intro:
-      "PDF'e Sayfa Numarası Ekleme, bir PDF'in her sayfasına numara koyar; raporlar, tezler ve basılı ders notları buna sık sık ihtiyaç duyar. Üstte veya altta altı konumdan birini, bir biçimi (1, 1 / N veya – 1 –), başlangıç numarasını, yazı boyutunu ve kenardan uzaklığı seçin. Kapak gibi ilk sayfayı numarasız da bırakabilirsiniz. Bir önizleme, numaranın nasıl görüneceğini gösterir. Numaralar tarayıcınızda eklenir, bu yüzden belge asla yüklenmez.",
+      "PDF'e Sayfa Numarası Ekleme, bir PDF'in her sayfasına numara koyar; raporlar, tezler ve basılı ders notları buna sık sık ihtiyaç duyar. Üstte veya altta altı konumdan birini, bir biçimi (1, 1 / N veya – 1 –), başlangıç numarasını, yazı boyutunu ve kenardan uzaklığı seçin. Kapak gibi ilk sayfayı numarasız da bırakabilirsiniz. Bir önizleme, numaranın nasıl görüneceğini gösterir. Numaralar tarayıcınızda eklenir, bu yüzden belge asla yüklenmez. “Sayfa 1 / 10” gibi kendi metninizi yazabilir ve yalnızca bazı sayfaları numaralandırabilirsiniz.",
     seoTitle: "PDF'e Sayfa Numarası Ekleme – Ücretsiz",
     seoDescription:
       "PDF sayfa numaralandırma tarayıcıda: konumu, biçimi ve başlangıç numarasını seçin, kapak sayfasını atlayın. Ücretsiz, gizli, yükleme yok.",
@@ -6932,7 +6932,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "vCard QR Kod",
     tagline: "Adınızı, telefonunuzu, e-postanızı ve web sitenizi telefonun kişilerine kaydeden bir QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "vCard QR kodu, kartvizitinizi tek bir taramaya dönüştürür: insanlar kameralarını koda doğrultur ve telefonları sizi adınız, telefon numaranız, e-postanız, şirketiniz ve web siteniz doldurulmuş olarak kişi olarak kaydetmeyi önerir. Bilgilerinizi girin, kodu kendi renkleriniz veya logonuzla biçimlendirin ve kartvizitiniz, e-posta imzanız, yaka kartınız veya stand için indirin. Bilgiler koda tarayıcınızda eklenir ve hiçbir yerde saklanmaz.",
+      "vCard QR kodu, kartvizitinizi tek bir taramaya dönüştürür: insanlar kameralarını koda doğrultur ve telefonları sizi adınız, telefon numaranız, e-postanız, şirketiniz ve web siteniz doldurulmuş olarak kişi olarak kaydetmeyi önerir. Bilgilerinizi girin, kodu kendi renkleriniz veya logonuzla biçimlendirin ve kartvizitiniz, e-posta imzanız, yaka kartınız veya stand için indirin. Bilgiler koda tarayıcınızda eklenir ve hiçbir yerde saklanmaz. Ad ve soyad ayrı kaydedilir; unvan, iş telefonu, adres ve not da ekleyebilirsiniz.",
     seoTitle: "vCard QR Kod Oluşturucu – Kartvizit QR Kodu, Ücretsiz",
     seoDescription:
       "İletişim bilgilerinizi tek taramada kaydeden bir vCard QR kodu oluşturun. Kartvizitler ve yaka kartları için. Renk ve logo, ücretsiz, yükleme yok.",
@@ -7688,7 +7688,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "Parolayı bilmiyorsam PDF'in kilidini açabilir mi?",
-        answer: "Hayır. Dosyayı açan parolaya ihtiyacınız var. Bu araç parola tahmin etmez veya kırmaz.",
+        answer: "Hayır. Dosyayı açan parolaya ihtiyacınız var. Bu araç parola tahmin etmez veya kırmaz. PDF parolasız açılıyor ve yalnızca yazdırmayı veya kopyalamayı engelliyorsa parolayı boş bırakın: bu kısıtlamalar kaldırılır.",
       },
       {
         question: "Neden parolanın yanlış olduğunu söylüyor?",

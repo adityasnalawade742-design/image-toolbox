@@ -5,6 +5,8 @@ import { useT } from '../shared/I18nContext';
 interface Props {
   options: BorderOptions;
   onChange: (opts: BorderOptions) => void;
+  /** The photo's longer side: the widest border offered is 15% of it (at least 100 px) */
+  longSide?: number;
 }
 
 const segButton = (selected: boolean) =>
@@ -12,7 +14,7 @@ const segButton = (selected: boolean) =>
     selected ? 'seg-on' : 'seg-off'
   }`;
 
-export function BorderControls({ options, onChange }: Props) {
+export function BorderControls({ options, onChange, longSide = 0 }: Props) {
   const t = useT();
   const idBase = useId();
   const opacityPct = Math.round((options.opacity !== undefined ? options.opacity : 1) * 100);
@@ -54,7 +56,7 @@ export function BorderControls({ options, onChange }: Props) {
           id={`${idBase}-width`}
           type="range"
           min="1"
-          max="100"
+          max={Math.max(100, Math.round(longSide * 0.15))}
           value={options.width}
           onChange={(e) => onChange({ ...options, width: parseInt(e.target.value) || 0 })}
           className="w-full"

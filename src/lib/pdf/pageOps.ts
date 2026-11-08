@@ -107,7 +107,7 @@ export async function rotatePages(bytes: Uint8Array | ArrayBuffer, indices: numb
 }
 
 export type NumberPosition = 'bottom-center' | 'bottom-right' | 'bottom-left' | 'top-center' | 'top-right' | 'top-left';
-export type NumberFormat = 'n' | 'n-of-total' | 'dash';
+export type NumberFormat = 'n' | 'n-of-total' | 'dash' | 'custom';
 
 export interface PageNumberOptions {
   position: NumberPosition;
@@ -119,9 +119,15 @@ export interface PageNumberOptions {
   margin: number;
   /** Skip numbering the first page (cover) */
   skipFirst?: boolean;
+  /** Number only these pages (1-based, inclusive); the first numbered page shows `start` */
+  from?: number;
+  to?: number;
+  /** For the 'custom' format: text with {page} and {pages}, e.g. "Page {page} of {pages}" */
+  template?: string;
 }
 
-export function pageLabel(n: number, total: number, format: NumberFormat): string {
+export function pageLabel(n: number, total: number, format: NumberFormat, template = ''): string {
+  if (format === 'custom') return template.replace(/\{page\}/gi, String(n)).replace(/\{pages\}/gi, String(total));
   if (format === 'n-of-total') return `${n} / ${total}`;
   if (format === 'dash') return `– ${n} –`;
   return String(n);
@@ -168,20 +174,37 @@ function numberCentre(page: PDFPage, pos: NumberPosition, w: number, h: number, 
   return { u, v: y };
 }
 
-export async function addPageNumbers(bytes: Uint8Array | ArrayBuffer, opts: PageNumberOptions): Promise<Uint8Array> {
+/** Which pages get a number (0-based, inclusive) */
+export function numberedRange(count: number, o: Pick<PageNumberOptions, 'skipFirst' | 'from' | 'to'>) {
+  const first = Math.max(0, (o.from ?? (o.skipFirst ? 2 : 1)) - 1);
+  const last = Math.min(count - 1, (o.to ?? count) - 1);
+  return { first, last };
+}
+
+/**
+ * Number the pages. Text the standard font can't write (Japanese, Korean, Turkish letters in a custom label) uses a
+ * font from the site, when `loadFont` is given.
+ */
+export async function addPageNumbers(bytes: Uint8Array | ArrayBuffer, opts: PageNumberOptions, loadFont?: FontLoader): Promise<Uint8Array> {
   const doc = await loadPdf(bytes);
-  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const pick = (await import('./headerFooter')).fonts(doc, loadFont);
   const pages = doc.getPages();
-  const numbered = opts.skipFirst ? pages.length - 1 : pages.length;
-  pages.forEach((page, i) => {
-    if (opts.skipFirst && i === 0) return;
-    const n = opts.start + (opts.skipFirst ? i - 1 : i);
-    const label = pageLabel(n, opts.start + numbered - 1, opts.format);
-    const w = font.widthOfTextAtSize(label, opts.fontSize);
+  const { first, last } = numberedRange(pages.length, opts);
+  const total = opts.start + (last - first);
+  for (let i = first; i <= last; i++) {
+    const page = pages[i];
+    const label = pageLabel(opts.start + (i - first), total, opts.format, opts.template);
+    if (!label.trim()) continue;
+    let text = label;
+    let font = await pick(text);
+    // No font for some characters: keep the number rather than skip the page
+    if (!font) font = await pick((text = label.replace(/[^\x20-\x7e]/g, '').trim()));
+    if (!font || !text) continue;
+    const w = font.widthOfTextAtSize(text, opts.fontSize);
     const c = numberCentre(page, opts.position, w, opts.fontSize, opts.margin);
     const { x, y, rotate } = placeCentred(page, c.u, c.v, w, opts.fontSize);
-    page.drawText(label, { x, y, rotate, size: opts.fontSize, font, color: rgb(0.08, 0.08, 0.08) });
-  });
+    page.drawText(text, { x, y, rotate, size: opts.fontSize, font, color: rgb(0.08, 0.08, 0.08) });
+  }
   return save(doc);
 }
 

@@ -4479,7 +4479,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Add Page Numbers to PDF",
     "shortName": "Page Numbers",
     "tagline": "Number the pages of a PDF, with the position, format and starting number you choose. It runs on your device.",
-    "intro": "Add Page Numbers puts a number on every page of a PDF, which reports, theses and printed handouts often need. Choose one of six positions at the top or bottom, a format (1, 1 / N or – 1 –), the starting number, the text size and the distance from the edge. You can also leave the first page, such as a cover, unnumbered. A preview shows how the number will look. The numbers are added in your browser, so the document is never uploaded.",
+    "intro": "Add Page Numbers puts a number on every page of a PDF, which reports, theses and printed handouts often need. Choose one of six positions at the top or bottom, a format (1, 1 / N or – 1 –), the starting number, the text size and the distance from the edge. You can also leave the first page, such as a cover, unnumbered. A preview shows how the number will look. The numbers are added in your browser, so the document is never uploaded. You can also write your own text, such as “Page 1 of 10”, and number only some of the pages.",
     "seoTitle": "Add Page Numbers to PDF – Free, No Upload",
     "seoDescription": "Number PDF pages in your browser: choose the position, format and start number, and skip the cover page. Free, private, no upload.",
     "keywords": [
@@ -7164,7 +7164,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "vCard QR Code Generator",
     "shortName": "vCard QR Code",
     "tagline": "Make a QR code that saves your name, phone, email and website to a phone's contacts. Free, and it runs on your device.",
-    "intro": "A vCard QR code turns a business card into one scan: people point their camera at it and their phone offers to save you as a contact, with your name, phone number, email, company and website filled in. Enter your details, style the code with your colors or logo, and download it for your business card, email signature, badge or booth. The details go into the code in your browser and are not stored anywhere.",
+    "intro": "A vCard QR code turns a business card into one scan: people point their camera at it and their phone offers to save you as a contact, with your name, phone number, email, company and website filled in. Enter your details, style the code with your colors or logo, and download it for your business card, email signature, badge or booth. The details go into the code in your browser and are not stored anywhere. First and last name are saved separately, and you can add a job title, work phone, address and a note.",
     "seoTitle": "vCard QR Code Generator – Business Card QR, Free",
     "seoDescription": "Make a vCard QR code that saves your contact details in one scan. For business cards and badges. Colors and logo, free, nothing uploaded.",
     "keywords": [
@@ -7866,7 +7866,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Can it unlock a PDF if I don't know the password?",
-        "answer": "No. You need the password that opens the file. This tool does not guess or crack passwords."
+        "answer": "No. You need the password that opens the file. This tool does not guess or crack passwords. If the PDF opens without a password and only blocks printing or copying, leave the password empty: those restrictions are removed."
       },
       {
         "question": "Why does it say the password is wrong?",

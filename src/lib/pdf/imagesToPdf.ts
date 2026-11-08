@@ -3,6 +3,8 @@
  * Upright JPGs and PNGs are embedded byte-for-byte; everything else is drawn to a canvas first.
  */
 
+import { readDpi } from '../canvas/dpi';
+
 export type PageSize = 'a4' | 'letter' | 'fit';
 export type PageOrientation = 'auto' | 'portrait' | 'landscape';
 export type PageMargin = 'none' | 'small' | 'large';
@@ -23,15 +25,20 @@ export interface PdfOptions {
 // PDF points (1/72 in)
 const PAPER: Record<Exclude<PageSize, 'fit'>, [number, number]> = { a4: [595.28, 841.89], letter: [612, 792] };
 export const MARGIN_PT: Record<PageMargin, number> = { none: 0, small: 18, large: 36 };
-// "Fit to image" pages show images at their pixel size on a 96 dpi screen
-const PX_TO_PT = 0.75;
+/**
+ * "Fit to image" pages are as large as the image is meant to print: at the DPI the file declares (a 300 DPI scan of
+ * an A4 page gives an A4 page), or at a screen's 96 DPI when it declares none or an implausible value (phone photos
+ * say 72, which would make huge pages).
+ */
+export const fitDpi = (declared?: number | null) => (declared && declared >= 96 && declared <= 1200 ? declared : 96);
 
 /** Page size in points and where the image sits on it */
-export function pageLayout(imgW: number, imgH: number, opts: PdfOptions) {
+export function pageLayout(imgW: number, imgH: number, opts: PdfOptions, dpi?: number | null) {
   const m = MARGIN_PT[opts.margin];
   if (opts.pageSize === 'fit') {
-    const w = imgW * PX_TO_PT;
-    const h = imgH * PX_TO_PT;
+    const k = 72 / fitDpi(dpi);
+    const w = imgW * k;
+    const h = imgH * k;
     return { pageW: w + 2 * m, pageH: h + 2 * m, x: m, y: m, w, h };
   }
   let [pw, ph] = PAPER[opts.pageSize];
@@ -106,7 +113,9 @@ export async function imagesToPdf(items: PdfImage[], opts: PdfOptions, onProgres
     } else {
       embedded = await pdf.embedJpg(await canvasJpeg(item));
     }
-    const l = pageLayout(item.width, item.height, opts);
+    // The DPI the file declares sizes "fit to image" pages (TIFF directories can sit anywhere, so read it all)
+    const head = new Uint8Array(await (/tiff?$/.test(type) ? item.file : item.file.slice(0, 262144)).arrayBuffer());
+    const l = pageLayout(item.width, item.height, opts, readDpi(head));
     const page = pdf.addPage([l.pageW, l.pageH]);
     // PDF's origin is bottom-left
     page.drawImage(embedded, { x: l.x, y: l.pageH - l.y - l.h, width: l.w, height: l.h });

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
+import { toolOutputName } from '../../lib/storage/fileNames';
 import { Download, Archive, Sliders, AlertCircle, Copy, Check, Code, Loader2, ArrowRight, Upload, Maximize2 } from 'lucide-react';
 import {
   loadImage,
@@ -334,6 +335,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [isDraggingFile, setIsDraggingFile] = useState(false);
   const [previewImageElement, setPreviewImageElement] = useState<HTMLImageElement | null>(null);
   const [filename, setFilename] = useState<string>('image');
+  const [inputExt, setInputExt] = useState('');
   const [fileSize, setFileSize] = useState<number>(0);
   const [mimeType, setMimeType] = useState<string>('image/png');
   const [sourceFile, setSourceFile] = useState<File | null>(null);
@@ -375,6 +377,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
   // Rotate & Flip
   const [rotation, setRotation] = useState<number>(0);
+  const [rotateCrop, setRotateCrop] = useState(true);
   const [flipH, setFlipH] = useState<boolean>(false);
   const [flipV, setFlipV] = useState<boolean>(false);
 
@@ -433,6 +436,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [format, setFormat] = useState<OutputFormat>('image/png');
   const [formatSelectable, setFormatSelectable] = useState<boolean>(false);
   const [quality, setQuality] = useState<number>(defaultQuality(slug));
+  // WebP only: keep every pixel exactly, whatever the size
+  const [webpLossless, setWebpLossless] = useState(false);
   const [isExporting, setIsExporting] = useState<boolean>(false);
   // Size of the file actually produced by the last download, for the job ticket
   const [lastExportBytes, setLastExportBytes] = useState<number | null>(null);
@@ -490,6 +495,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
 
       const sourceMime = isHeicFile(file) ? 'image/heic' : isTiffFile(file) ? 'image/tiff' : file.type || activeFile.type || 'image/png';
       setFilename(file.name.replace(/\.[^/.]+$/, ''));
+      setInputExt(file.name.match(/\.([^./]+)$/)?.[1] ?? '');
       setFileSize(file.size);
       setMimeType(sourceMime);
       setSourceFile(file);
@@ -605,8 +611,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     let targetH = height;
 
     if (slug.startsWith('svg-to-')) {
-      targetW = origW * svgScale;
-      targetH = origH * svgScale;
+      targetW = Math.max(1, Math.round(origW * svgScale));
+      targetH = Math.max(1, Math.round(origH * svgScale));
     }
 
     const isCropped = crop.width < origW || crop.height < origH || crop.x > 0 || crop.y > 0;
@@ -620,6 +626,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       width: targetW,
       height: targetH,
       rotation,
+      rotateCrop: slug === 'rotate-image' && rotateCrop,
       flipH,
       flipV,
       crop: (forExport || slug !== 'crop-image') && isCropped ? crop : undefined,
@@ -642,6 +649,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     origH,
     svgScale,
     rotation,
+    rotateCrop,
     flipH,
     flipV,
     crop,
@@ -934,7 +942,18 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     if (slug === 'remove-image-metadata' && cleanFile) return new Blob([new Uint8Array(cleanFile)], { type: format });
     // Always process from full-resolution original source image for pristine output quality, shrinking with Lanczos
     const canvas = await processCanvasBest(imageElement!, getProcessingOptions(true));
-    const blob = await canvasToBlob(canvas, format, quality / 100, undefined, encodeOptions);
+    let blob: Blob;
+    if (format === 'image/webp' && webpLossless) {
+      blob = await canvasToBlob(canvas, format, 1, undefined, { ...encodeOptions, lossless: true });
+    } else {
+      blob = await canvasToBlob(canvas, format, quality / 100, undefined, encodeOptions);
+      // Screenshots, logos and graphics (PNG, GIF, BMP, TIFF): lossless WebP is often smaller than lossy and keeps
+      // every pixel, so it's used whenever it's no bigger. For photos lossy stays far smaller.
+      if (format === 'image/webp' && /png|gif|bmp|tiff/.test(mimeType)) {
+        const exact = await canvasToBlob(canvas, format, 1, undefined, { ...encodeOptions, lossless: true }).catch(() => null);
+        if (exact && exact.size <= blob.size) blob = exact;
+      }
+    }
     const kept = keepsOriginal(blob, canvas.width, canvas.height);
     setKeptOriginal(kept);
     if (!kept) return blob;
@@ -951,7 +970,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     try {
       if (slug === 'remove-image-metadata' && cleanFile) {
         const blob = await buildOutput();
-        downloadBlob(blob, `${filename}-no-metadata.${formatExtension(format)}`);
+        downloadBlob(blob, toolOutputName(slug, filename, formatExtension(format), inputExt));
         setLastExportBytes(blob.size);
         return;
       }
@@ -967,7 +986,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
         const sameSize = made.size >= sourceFile!.size && (slug === 'compress-image' || (slug === 'resize-image' && width === origW && height === origH));
         const blob = sameSize ? sourceFile! : made;
         setKeptOriginal(sameSize);
-        downloadBlob(blob, `${filename}-processed.${animation.type === 'image/gif' ? 'gif' : 'webp'}`);
+        downloadBlob(blob, toolOutputName(slug, filename, animation.type === 'image/gif' ? 'gif' : 'webp', inputExt));
         setLastExportBytes(blob.size);
         return;
       }
@@ -978,7 +997,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       if (actualFormat !== format) {
         setExportError(t('ws.errFormatFallback', { wanted: formatExtension(format).toUpperCase(), actual: formatExtension(actualFormat).toUpperCase() }));
       }
-      downloadBlob(blob, `${filename}-processed.${formatExtension(actualFormat)}`);
+      downloadBlob(blob, toolOutputName(slug, filename, formatExtension(actualFormat), inputExt));
       setLastExportBytes(blob.size);
     } catch (err) {
       console.error('Export failed:', err);
@@ -1340,7 +1359,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'rotate-image' && (
-                <RotateControls rotation={rotation} onChange={setRotation} />
+                <RotateControls rotation={rotation} onChange={setRotation} crop={rotateCrop} onCrop={setRotateCrop} />
               )}
 
               {slug === 'flip-image' && (
@@ -1361,7 +1380,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'add-border-to-image' && (
-                <BorderControls options={borderOptions} onChange={setBorderOptions} />
+                <BorderControls options={borderOptions} onChange={setBorderOptions} longSide={Math.max(origW, origH)} />
               )}
 
               {slug === 'round-image' && (
@@ -1529,11 +1548,21 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                         min="10"
                         max="100"
                         value={quality}
+                        disabled={format === 'image/webp' && webpLossless}
                         aria-label={t('ws.qualityLabel')}
                         onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
-                        className="w-full"
+                        className="w-full disabled:opacity-40"
                       />
                     </label>
+                  )}
+                  {format === 'image/webp' && (
+                    <div className="space-y-1">
+                      <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer">
+                        <input type="checkbox" checked={webpLossless} onChange={(e) => setWebpLossless(e.target.checked)} />
+                        <span className="text-ink">{t('ws.webpLossless')}</span>
+                      </label>
+                      {!webpLossless && /png|gif|bmp|tiff/.test(mimeType) && <p className="text-[13px] text-graphite leading-relaxed">{t('ws.webpAuto')}</p>}
+                    </div>
                   )}
                 </div>
               )}

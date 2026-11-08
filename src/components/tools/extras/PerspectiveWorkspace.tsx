@@ -8,11 +8,19 @@ import { exportableFormat, formatExtension } from '../../../lib/canvas/outputFor
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { IMAGE_ACCEPT, useOneImage } from './useOneImage';
 import { isConvex, outputSize, warp, type Quad } from '../../../lib/photo/perspective';
+import { detectPage } from '../../../lib/scan/detect';
 import { previewPixels, runPhoto, toCanvas } from '../../../lib/photo/runPhoto';
 import { MAX_CANVAS_PIXELS } from '../../../lib/canvas/limits';
 
 type Shape = 'auto' | 'a4' | 'letter' | 'square';
 const RATIOS: Record<Exclude<Shape, 'auto'>, number> = { a4: 1 / Math.SQRT2, letter: 8.5 / 11, square: 1 };
+
+/** The page or sign found in the photo, when the detector is confident; otherwise a frame inset from the edges */
+function startingCorners(canvas: HTMLCanvasElement, w: number, h: number): Quad {
+  const small = previewPixels(canvas, 1200);
+  const d = detectPage(small.data, small.w, small.h);
+  return d && d.confidence >= 0.6 ? (d.quad.map((p) => ({ x: p.x / small.scale, y: p.y / small.scale })) as Quad) : inset(w, h);
+}
 
 const inset = (w: number, h: number): Quad => [
   { x: w * 0.12, y: h * 0.12 },
@@ -30,7 +38,7 @@ export function PerspectiveWorkspace() {
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState('');
   const one = useOneImage((img) => {
-    setQuad(inset(img.width, img.height));
+    setQuad(startingCorners(img.canvas, img.width, img.height));
     setStatus('');
   });
   const svgRef = useRef<SVGSVGElement>(null);
@@ -147,7 +155,10 @@ export function PerspectiveWorkspace() {
         />
       )}
       {size && valid && <p className="text-[14px] text-graphite" data-measure>{t('ctl.persp.size', { w: size.width, h: size.height })}</p>}
-      <button type="button" onClick={() => setQuad(inset(img.width, img.height))} className="btn-rule min-h-[40px] w-full text-[14px]">{t('ctl.persp.reset')}</button>
+      <div className="grid grid-cols-2 gap-2">
+        <button type="button" onClick={() => setQuad(startingCorners(img.canvas, img.width, img.height))} className="btn-rule min-h-[40px] text-[14px]">{t('ctl.docscan.findEdges')}</button>
+        <button type="button" onClick={() => setQuad(inset(img.width, img.height))} className="btn-rule min-h-[40px] text-[14px]">{t('ctl.persp.reset')}</button>
+      </div>
       <div className="border border-pencil rounded-md p-2 bg-paper-bright flex justify-center">
         <canvas ref={resultRef} role="img" aria-label={t('ctl.persp.result')} className="block max-w-full max-h-[260px]" />
       </div>

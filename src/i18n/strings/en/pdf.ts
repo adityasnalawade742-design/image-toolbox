@@ -65,6 +65,14 @@ export const pdfStrings = {
   'ctl.numbers.margin': 'Distance from the edge',
   'ctl.numbers.marginMedium': 'Medium',
   'ctl.numbers.skipFirst': 'Don’t number the first page (cover)',
+  'ctl.numbers.custom': 'Custom',
+  'ctl.numbers.template': 'Text',
+  'ctl.numbers.templateDefault': 'Page {page} of {pages}',
+  'ctl.numbers.templateHint': '{page} is the page number, {pages} the total.',
+  'ctl.numbers.pages': 'Pages to number',
+  'ctl.numbers.fromPage': 'First page to number',
+  'ctl.numbers.toPage': 'Last page to number',
+  'ctl.numbers.pagesHint': 'Start at 2 to leave a cover page unnumbered. The first numbered page shows the “Start at” number.',
 
   // Watermark PDF
   'ctl.pdfwm.size': 'Width on the page',

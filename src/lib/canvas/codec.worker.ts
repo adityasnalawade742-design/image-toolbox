@@ -17,6 +17,8 @@ interface Job {
   imageData: ImageData;
   quality: number;
   lossy: boolean;
+  /** WebP and AVIF: lossless (exact pixels) */
+  exact?: boolean;
 }
 
 // OxiPNG gets slow on huge images; beyond this the browser's own PNG is used
@@ -38,8 +40,10 @@ async function encodeJpeg(img: ImageData, quality: number) {
   });
 }
 
-async function encodeWebp(img: ImageData, quality: number) {
+async function encodeWebp(img: ImageData, quality: number, exact = false) {
   const { default: encode } = await import('@jsquash/webp/encode');
+  // Lossless keeps every pixel (and the colour under transparent ones); quality then sets the effort, not the loss
+  if (exact) return encode(img, { lossless: 1, exact: 1, quality: 75, method: 4 });
   // method 4 is libwebp's default trade-off; higher is much slower for ~1% smaller files
   return encode(img, { quality, method: 4 });
 }
@@ -76,16 +80,16 @@ async function encodePng(img: ImageData, quality: number, lossy: boolean): Promi
   return optimisePng(await quantisePng(img, quality));
 }
 
-async function run({ kind, imageData, quality, lossy }: Job): Promise<ArrayBuffer | null> {
+async function run({ kind, imageData, quality, lossy, exact }: Job): Promise<ArrayBuffer | null> {
   switch (kind) {
     case 'avif': {
       const { default: encode } = await import('@jsquash/avif/encode');
-      return encode(imageData, { quality });
+      return encode(imageData, exact ? { lossless: true } : { quality });
     }
     case 'jpeg':
       return encodeJpeg(imageData, quality);
     case 'webp':
-      return encodeWebp(imageData, quality);
+      return encodeWebp(imageData, quality, exact);
     case 'png':
       return encodePng(imageData, quality, lossy);
   }

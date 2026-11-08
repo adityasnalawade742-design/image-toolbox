@@ -30,7 +30,7 @@ export function expand(template: string, page: number, pages: number, o: Pick<He
 }
 
 /** The standard font for Latin-1 text, a font from the site for other scripts; null if neither can write it */
-function fonts(doc: PDFDocument, loadFont?: FontLoader) {
+export function fonts(doc: PDFDocument, loadFont?: FontLoader) {
   let standard: PDFFont | null = null;
   const site = new Map<FontScript, PDFFont>();
   return async (text: string): Promise<PDFFont | null> => {

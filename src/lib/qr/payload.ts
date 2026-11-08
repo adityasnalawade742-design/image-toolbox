@@ -19,11 +19,21 @@ export interface EmailFields {
 }
 
 export interface ContactFields {
+  /** Full name in one field (used when first and last aren't given) */
   name: string;
   phone: string;
   email: string;
   org: string;
   url: string;
+  first?: string;
+  last?: string;
+  title?: string;
+  workPhone?: string;
+  street?: string;
+  city?: string;
+  postcode?: string;
+  country?: string;
+  note?: string;
 }
 
 /** Special characters in WIFI: fields are escaped with a backslash */
@@ -53,11 +63,22 @@ export function phonePayload(phone: string): string {
 }
 
 export function contactPayload(f: ContactFields): string {
-  const lines = ['BEGIN:VCARD', 'VERSION:3.0', `N:${vcardEscape(f.name)};;;;`, `FN:${vcardEscape(f.name)}`];
+  const first = f.first?.trim() ?? '', last = f.last?.trim() ?? '';
+  // Separate first and last names go in their own N fields, so phones file the contact under the surname
+  const split = Boolean(first || last);
+  const full = split ? [first, last].filter(Boolean).join(' ') : f.name.trim();
+  const n = split ? `${vcardEscape(last)};${vcardEscape(first)};;;` : `${vcardEscape(full)};;;;`;
+  const lines = ['BEGIN:VCARD', 'VERSION:3.0', `N:${n}`, `FN:${vcardEscape(full)}`];
   if (f.org) lines.push(`ORG:${vcardEscape(f.org)}`);
+  if (f.title?.trim()) lines.push(`TITLE:${vcardEscape(f.title.trim())}`);
   if (f.phone) lines.push(`TEL;TYPE=CELL:${f.phone.trim()}`);
+  if (f.workPhone?.trim()) lines.push(`TEL;TYPE=WORK:${f.workPhone.trim()}`);
+  const adr = [f.street, f.city, f.postcode, f.country].map((x) => x?.trim() ?? '');
+  // ADR: post box; extended; street; city; region; postcode; country
+  if (adr.some(Boolean)) lines.push(`ADR;TYPE=WORK:;;${vcardEscape(adr[0])};${vcardEscape(adr[1])};;${vcardEscape(adr[2])};${vcardEscape(adr[3])}`);
   if (f.email) lines.push(`EMAIL:${f.email.trim()}`);
   if (f.url) lines.push(`URL:${normaliseLink(f.url)}`);
+  if (f.note?.trim()) lines.push(`NOTE:${vcardEscape(f.note.trim())}`);
   lines.push('END:VCARD');
   return lines.join('\r\n');
 }

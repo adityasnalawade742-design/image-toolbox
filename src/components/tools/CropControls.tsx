@@ -44,6 +44,8 @@ export function CropControls({
   // The exact width/height ratio of the chosen preset (or of the crop when the lock was switched on).
   // Locked edits use this instead of the rounded crop so the ratio doesn't drift.
   const [lockedRatio, setLockedRatio] = useState<number | null>(null);
+  const [customW, setCustomW] = useState('5');
+  const [customH, setCustomH] = useState('7');
   // Text being typed in a number field; committed values come back through props
   const [drafts, setDrafts] = useState<Partial<Record<Field, string>>>({});
 
@@ -107,6 +109,7 @@ export function CropControls({
         [16, 9, 'ctl.crop.wide'],
         [9, 16, 'ctl.crop.story'],
         [2, 3, 'ctl.crop.portrait'],
+        [3, 4, 'ctl.crop.phonePortrait'],
         [3, 2, 'ctl.crop.classic'],
         [21, 9, 'ctl.crop.cinema'],
       ] as Array<[number, number, StringKey]>
@@ -252,6 +255,20 @@ export function CropControls({
             </button>
           ))}
         </div>
+        <form
+          className="flex flex-wrap items-center gap-2 pt-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const w = parseFloat(customW), h = parseFloat(customH);
+            if (w > 0 && h > 0) applyPresetWithLock(w, h);
+          }}
+        >
+          <span className="text-[14px] text-graphite">{t('ctl.crop.customRatio')}</span>
+          <input type="number" inputMode="decimal" min="0.1" step="any" value={customW} onChange={(e) => setCustomW(e.target.value)} aria-label={t('ctl.crop.ratioW')} className="w-16 min-h-[40px] px-2 border border-ink bg-paper-bright text-[15px] text-ink rounded-md" />
+          <span aria-hidden="true">:</span>
+          <input type="number" inputMode="decimal" min="0.1" step="any" value={customH} onChange={(e) => setCustomH(e.target.value)} aria-label={t('ctl.crop.ratioH')} className="w-16 min-h-[40px] px-2 border border-ink bg-paper-bright text-[15px] text-ink rounded-md" />
+          <button type="submit" className="btn-rule min-h-[40px] text-[14px]">{t('ctl.crop.applyRatio')}</button>
+        </form>
       </div>
 
       {/* Social media presets */}

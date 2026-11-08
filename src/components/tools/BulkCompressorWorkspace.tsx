@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
+import { loadImageFile } from '../../lib/canvas/loadImage';
+import { exportableFormat } from '../../lib/canvas/outputFormat';
 import { formatExtension } from '../../lib/canvas/outputFormat';
 import { stripMetadata } from '../../lib/canvas/stripMetadata';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
@@ -26,10 +28,12 @@ interface QueueItem {
 
 type CompressFormat = 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif';
 
-const ACCEPT = 'image/png,image/jpeg,image/webp';
+// GIF is left to Compress Image, which keeps animation
+const ACCEPT = 'image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,.heic,.heif,image/tiff,.tif,.tiff,image/bmp';
 const MAX_FILES = 50;
-const FORMATS: CompressFormat[] = ['image/avif', 'image/webp', 'image/jpeg', 'image/png'];
+const FORMATS: (CompressFormat | 'original')[] = ['original', 'image/avif', 'image/webp', 'image/jpeg', 'image/png'];
 const FORMAT_HINT = {
+  original: 'ctl.bulkCompress.hintOriginal',
   'image/avif': 'ctl.bulkCompress.hintAvif',
   'image/webp': 'ctl.bulkCompress.hintWebp',
   'image/jpeg': 'ctl.bulkCompress.hintJpeg',
@@ -40,7 +44,8 @@ export function BulkCompressorWorkspace() {
   const t = useT();
   const [queue, setQueue] = useState<QueueItem[]>([]);
   const [quality, setQuality] = useState<number>(80);
-  const [format, setFormat] = useState<CompressFormat>('image/webp');
+  // Each file keeps its own kind of format unless another is chosen: many upload forms don't take WebP
+  const [format, setFormat] = useState<CompressFormat | 'original'>('original');
   const [isProcessing, setIsProcessing] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
   const [zipError, setZipError] = useState(false);
@@ -114,28 +119,32 @@ export function BulkCompressorWorkspace() {
       );
 
       try {
-        const img = await loadImage(item.file);
+        // iPhone HEIC and TIFF decode here too
+        const loaded = await loadImageFile(item.file);
+        const img = loaded.img;
+        const target: CompressFormat = format === 'original' ? exportableFormat(item.file.type || (/\.hei[cf]$/i.test(item.file.name) ? 'image/heic' : '')) : format;
         const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
+        canvas.width = loaded.width;
+        canvas.height = loaded.height;
         const ctx = canvas.getContext('2d');
         if (!ctx) throw new Error('Canvas 2D unavailable');
-        if (format === 'image/jpeg') {
+        if (target === 'image/jpeg') {
           // JPEG has no alpha; fill white so transparent areas don't turn black
           ctx.fillStyle = '#ffffff';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(loaded.url);
 
-        const encoded = await canvasToBlob(canvas, format, quality / 100, undefined, { best: true, lossyPng: quality < 100 });
+        const encoded = await canvasToBlob(canvas, target, quality / 100, undefined, { best: true, lossyPng: quality < 100 });
         // Never hand back a bigger file: when re-saving in the same format doesn't help, keep the original,
         // minus camera details and location (removed losslessly)
         let outputBlob: Blob = encoded;
-        if (item.file.type === format && encoded.size >= item.file.size) {
+        if (item.file.type === target && encoded.size >= item.file.size) {
           const clean = stripMetadata(new Uint8Array(await item.file.arrayBuffer()));
-          outputBlob = clean ? new Blob([new Uint8Array(clean)], { type: format }) : item.file;
+          outputBlob = clean ? new Blob([new Uint8Array(clean)], { type: target }) : item.file;
         }
-        const outputExt = formatExtension((outputBlob.type || format) as typeof format);
+        const outputExt = formatExtension((outputBlob.type || target) as CompressFormat);
 
         setQueue((prev) =>
           prev.map((q, idx) =>
@@ -385,9 +394,9 @@ export function BulkCompressorWorkspace() {
                     onClick={() => setFormat(fmt)}
                     className={`min-h-[40px] text-[14px] font-semibold transition-colors disabled:cursor-not-allowed ${
                       format === fmt ? 'seg-on' : 'seg-off'
-                    }`}
+                    } ${fmt === 'original' ? 'col-span-4 border-b border-ink' : ''}`}
                   >
-                    {formatExtension(fmt).toUpperCase()}
+                    {fmt === 'original' ? t('ctl.bulkCompress.original') : formatExtension(fmt).toUpperCase()}
                   </button>
                 ))}
               </div>
