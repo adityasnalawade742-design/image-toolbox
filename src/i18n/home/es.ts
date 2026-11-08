@@ -26,7 +26,7 @@ export const esHome: LocalizedHomeData = {
     {
       title: 'Las imágenes nunca se suben',
       description:
-        'Tu navegador procesa las imágenes en tu propio dispositivo, así que no hay que esperar a que se suban ni queda ninguna copia en un servidor. Algunas herramientas de documentos, como Word a PDF, necesitan nuestro servidor: están marcadas y los archivos se eliminan justo después.',
+        'Tu navegador procesa las imágenes en tu propio dispositivo, así que no hay que esperar a que se suban ni queda ninguna copia en un servidor. Algunas herramientas de documentos, como Word a PDF, necesitan nuestro servidor: su página lo indica y los archivos se eliminan justo después.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const esHome: LocalizedHomeData = {
     {
       question: '¿Se suben mis imágenes a algún sitio?',
       answer:
-        'No. Todas las herramientas de imagen funcionan dentro de tu navegador, así que tus imágenes se procesan en tu propio dispositivo y nunca se envían a un servidor. El quitafondos descarga su modelo de IA una vez y después también funciona en tu dispositivo. Algunas herramientas de documentos (Word a PDF, Excel a PDF, PowerPoint a PDF, PDF a Word, Comprimir PDF, Proteger PDF, Desbloquear PDF, OCR de PDF, PDF a PDF/A y Reparar PDF) necesitan nuestro servidor: están marcadas con «Usa nuestro servidor» y tu archivo se elimina en cuanto se devuelve el resultado.',
+        'No. Todas las herramientas de imagen funcionan dentro de tu navegador, así que tus imágenes se procesan en tu propio dispositivo y nunca se envían a un servidor. El quitafondos descarga su modelo de IA una vez y después también funciona en tu dispositivo. Algunas herramientas de documentos (Word a PDF, Excel a PDF, PowerPoint a PDF, PDF a Word, Comprimir PDF, Proteger PDF, Desbloquear PDF, OCR de PDF, PDF a PDF/A y Reparar PDF) necesitan nuestro servidor: su página lo indica y tu archivo se elimina en cuanto se devuelve el resultado.',
     },
     {
       question: '¿De verdad es gratis?',

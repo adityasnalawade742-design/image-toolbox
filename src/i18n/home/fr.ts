@@ -27,7 +27,7 @@ export const frHome: LocalizedHomeData = {
     {
       title: 'Les images ne sont jamais envoyées',
       description:
-        'Les images sont traitées par votre navigateur, sur votre propre appareil : pas d’attente d’envoi, et aucune copie sur un serveur. Quelques outils de documents, comme Word en PDF, ont besoin de notre serveur : ils sont signalés, et les fichiers sont supprimés juste après.',
+        'Les images sont traitées par votre navigateur, sur votre propre appareil : pas d’attente d’envoi, et aucune copie sur un serveur. Quelques outils de documents, comme Word en PDF, ont besoin de notre serveur : leur page l’indique, et les fichiers sont supprimés juste après.',
       icon: 'ShieldCheck',
     },
     {
@@ -48,7 +48,7 @@ export const frHome: LocalizedHomeData = {
     {
       question: 'Mes images sont-elles envoyées quelque part ?',
       answer:
-        'Non. Chaque outil d’image fonctionne dans votre navigateur : vos images sont traitées sur votre propre appareil et ne sont jamais envoyées sur un serveur. L’outil de suppression d’arrière-plan télécharge son modèle d’IA une seule fois, puis fonctionne lui aussi sur votre appareil. Quelques outils de documents (Word en PDF, Excel en PDF, PowerPoint en PDF, PDF en Word, Compresser PDF, Protéger PDF, Déverrouiller PDF, OCR PDF, PDF en PDF/A et Réparer PDF) ont besoin de notre serveur : ils portent la mention « Utilise notre serveur », et votre fichier est supprimé dès que le résultat est renvoyé.',
+        'Non. Chaque outil d’image fonctionne dans votre navigateur : vos images sont traitées sur votre propre appareil et ne sont jamais envoyées sur un serveur. L’outil de suppression d’arrière-plan télécharge son modèle d’IA une seule fois, puis fonctionne lui aussi sur votre appareil. Quelques outils de documents (Word en PDF, Excel en PDF, PowerPoint en PDF, PDF en Word, Compresser PDF, Protéger PDF, Déverrouiller PDF, OCR PDF, PDF en PDF/A et Réparer PDF) ont besoin de notre serveur : leur page l’indique, et votre fichier est supprimé dès que le résultat est renvoyé.',
     },
     {
       question: 'Est-ce vraiment gratuit ?',

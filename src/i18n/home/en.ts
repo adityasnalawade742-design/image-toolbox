@@ -26,7 +26,7 @@ export const enHome: LocalizedHomeData = {
     {
       title: 'Images are never uploaded',
       description:
-        'Images are processed by your browser on your own device, so there is no upload wait and no copy on a server. A few document tools, such as Word to PDF, need our server: they are marked, and files are deleted right after.',
+        'Images are processed by your browser on your own device, so there is no upload wait and no copy on a server. A few document tools, such as Word to PDF, need our server: their page says so, and files are deleted right after.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const enHome: LocalizedHomeData = {
     {
       question: 'Are my images uploaded anywhere?',
       answer:
-        'No. Every image tool runs inside your browser, so your images are processed on your own device and never sent to a server. The background remover downloads its AI model once, then also works on-device. A few document tools (Word, Excel and PowerPoint to PDF, PDF to Word, Compress, Protect, Unlock, OCR, PDF/A and Repair PDF) need our server: they are marked “Uses our server”, and your file is deleted as soon as the result is sent back.',
+        'No. Every image tool runs inside your browser, so your images are processed on your own device and never sent to a server. The background remover downloads its AI model once, then also works on-device. A few document tools (Word, Excel and PowerPoint to PDF, PDF to Word, Compress, Protect, Unlock, OCR, PDF/A and Repair PDF) need our server: their page says so, and your file is deleted as soon as the result is sent back.',
     },
     {
       question: 'Is it really free?',

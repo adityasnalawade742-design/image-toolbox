@@ -38,7 +38,6 @@ export const deUi: Record<string, string> = {
   'consent.decline': 'Ablehnen',
   'consent.privacy': 'Datenschutzerklärung',
   'footer.cookieSettings': 'Cookie-Einstellungen',
-  'tool.serverBadge': 'Nutzt unseren Server',
   'footer.about': 'Über uns',
   'footer.contact': 'Kontakt',
   'footer.privacyPolicy': 'Datenschutz',

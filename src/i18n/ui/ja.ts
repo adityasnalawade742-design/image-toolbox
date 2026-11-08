@@ -38,7 +38,6 @@ export const jaUi: Record<string, string> = {
   'consent.decline': '拒否する',
   'consent.privacy': 'プライバシーポリシー',
   'footer.cookieSettings': 'Cookie の設定',
-  'tool.serverBadge': 'サーバーを使用',
   'footer.about': '概要',
   'footer.contact': 'お問い合わせ',
   'footer.privacyPolicy': 'プライバシー',

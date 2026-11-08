@@ -36,7 +36,6 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
   const ordered = [...all.filter((t) => t.popular), ...all.filter((t) => !t.popular)];
   return { cat, count: all.length, shown: ordered.slice(0, SHOWN), more: ordered.slice(SHOWN) };
 });
-const formats = 'JPG · PNG · WebP · AVIF · GIF · TIFF · SVG · HEIC';
 ---
 
 <div class="space-y-20 sm:space-y-28">
@@ -46,21 +45,6 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · TIFF · SVG · HEIC';
         {home.hero.title}
       </h1>
       <p class="text-[18px] sm:text-[19px] leading-relaxed text-body max-w-[34rem]">{home.hero.subtitle}</p>
-      <!-- Facts as chips: the value reads first, the label after it (row-reverse keeps "label, value" for screen readers) -->
-      <dl class="flex flex-wrap gap-2 text-[14px]" data-measure>
-        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-pencil-soft bg-paper-bright px-3.5 py-1.5">
-          <dt class="text-graphite">{t('home.specTools')}</dt>
-          <dd class="font-semibold text-ink">{TOOLS.length}</dd>
-        </div>
-        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-pencil-soft bg-paper-bright px-3.5 py-1.5">
-          <dt class="text-graphite">{t('home.specFormats')}</dt>
-          <dd class="font-semibold text-ink">{formats}</dd>
-        </div>
-        <div class="flex flex-row-reverse items-baseline gap-1.5 rounded-full border border-[#c6e3cf] bg-accent-green-soft px-3.5 py-1.5">
-          <dt class="text-accent-green">{t('home.specUploads')}</dt>
-          <dd class="font-semibold text-accent-green">0</dd>
-        </div>
-      </dl>
     </div>
 
     <div>
@@ -71,7 +55,8 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · TIFF · SVG · HEIC';
   <section aria-labelledby="index-title" class="space-y-6">
     <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 border-b-2 border-ink pb-3">
       <h2 id="index-title" class="font-condensed font-bold text-[32px] sm:text-[40px] leading-none text-ink">{sections.indexTitle}</h2>
-      <p class="text-[15px] text-graphite max-w-md">{sections.indexSubtitle}</p>
+      <!-- The count alone, like each category card's: the "same workspace" point is made under How it works -->
+      <span class="text-[15px] text-graphite" data-measure>{TOOLS.length}</span>
     </div>
 
     <div class="sm:columns-2 lg:columns-3 gap-x-5">
@@ -93,8 +78,10 @@ const formats = 'JPG · PNG · WebP · AVIF · GIF · TIFF · SVG · HEIC';
                   </span>
                   <span class="min-w-0">
                     <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(tool.slug)}</span>
-                    {tool.badge === 'Server' && <span class="inline-block mt-0.5 slug border border-pencil px-1.5 py-0.5">{t('tool.serverBadge')}</span>}
-                    <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
+                    <!-- One line each: the name says what the tool is; the page says the rest -->
+                    <span class="text-[14px] leading-snug text-graphite line-clamp-1">
+                      {locTools[tool.slug]?.tagline || tool.description}
+                    </span>
                   </span>
                 </a>
               </li>

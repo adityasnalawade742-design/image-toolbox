@@ -26,7 +26,7 @@ export const ptHome: LocalizedHomeData = {
     {
       title: 'As imagens nunca são enviadas',
       description:
-        'As imagens são processadas pelo seu navegador no seu próprio dispositivo, então não há espera de envio nem cópia em um servidor. Algumas ferramentas de documentos, como o Word para PDF, precisam do nosso servidor: elas são marcadas, e os arquivos são apagados logo depois.',
+        'As imagens são processadas pelo seu navegador no seu próprio dispositivo, então não há espera de envio nem cópia em um servidor. Algumas ferramentas de documentos, como o Word para PDF, precisam do nosso servidor: a página delas avisa, e os arquivos são apagados logo depois.',
       icon: 'ShieldCheck',
     },
     {
@@ -47,7 +47,7 @@ export const ptHome: LocalizedHomeData = {
     {
       question: 'Minhas imagens são enviadas para algum lugar?',
       answer:
-        'Não. Todas as ferramentas de imagem funcionam dentro do seu navegador, então suas imagens são processadas no seu próprio dispositivo e nunca são enviadas para um servidor. O removedor de fundo baixa o modelo de IA uma vez e depois também funciona no dispositivo. Algumas ferramentas de documentos (Word, Excel e PowerPoint para PDF, PDF para Word, Comprimir PDF, Proteger PDF, Desbloquear PDF, OCR PDF, PDF para PDF/A e Reparar PDF) precisam do nosso servidor: elas são marcadas com “Usa nosso servidor”, e seu arquivo é apagado assim que o resultado é devolvido.',
+        'Não. Todas as ferramentas de imagem funcionam dentro do seu navegador, então suas imagens são processadas no seu próprio dispositivo e nunca são enviadas para um servidor. O removedor de fundo baixa o modelo de IA uma vez e depois também funciona no dispositivo. Algumas ferramentas de documentos (Word, Excel e PowerPoint para PDF, PDF para Word, Comprimir PDF, Proteger PDF, Desbloquear PDF, OCR PDF, PDF para PDF/A e Reparar PDF) precisam do nosso servidor: a página delas avisa, e seu arquivo é apagado assim que o resultado é devolvido.',
     },
     {
       question: 'É grátis mesmo?',
