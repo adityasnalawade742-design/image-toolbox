@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': 'Restablecer',
   'ctl.rotate.angle': 'Ángulo personalizado',
   'ctl.rotate.crop': "Recortar las esquinas vacías",
-  'ctl.rotate.cropNote': "Para enderezar una foto: conserva el mayor rectángulo sin bordes vacíos.",
+  'ctl.rotate.cropNote': "Se activa solo al enderezar (hasta 15°): conserva el mayor rectángulo sin bordes vacíos. En giros mayores se perdería demasiada foto.",
 
   // Flip
   'ctl.flip.direction': 'Voltear',

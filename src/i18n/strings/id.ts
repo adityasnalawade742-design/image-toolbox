@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': 'Atur ulang',
   'ctl.rotate.angle': 'Sudut khusus',
   'ctl.rotate.crop': "Potong sudut yang kosong",
-  'ctl.rotate.cropNote': "Untuk meluruskan foto: menyisakan persegi panjang terbesar tanpa tepi kosong.",
+  'ctl.rotate.cropNote': "Aktif sendiri saat meluruskan (hingga 15°): menyisakan persegi panjang terbesar tanpa tepi kosong. Putaran lebih besar akan memotong terlalu banyak foto.",
 
   // Flip
   'ctl.flip.direction': 'Balik',

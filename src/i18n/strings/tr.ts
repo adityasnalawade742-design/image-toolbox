@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': 'Sıfırla',
   'ctl.rotate.angle': 'Özel açı',
   'ctl.rotate.crop': "Boş köşeleri kırp",
-  'ctl.rotate.cropNote': "Fotoğrafı düzeltirken boş kenarı olmayan en büyük dikdörtgeni korur.",
+  'ctl.rotate.cropNote': "Düzeltme için (15°’ye kadar) kendiliğinden açılır: boş kenarı olmayan en büyük dikdörtgeni korur. Daha büyük dönüşlerde fotoğrafın çok fazlası kaybolurdu.",
 
   // Flip
   'ctl.flip.direction': 'Çevir',

@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': '초기화',
   'ctl.rotate.angle': '사용자 지정 각도',
   'ctl.rotate.crop': "빈 모서리 잘라내기",
-  'ctl.rotate.cropNote': "사진 수평을 맞출 때 빈 가장자리 없이 가장 큰 사각형을 남겨요.",
+  'ctl.rotate.cropNote': "수평 맞추기(15°까지)에서는 자동으로 켜져 빈 가장자리 없는 가장 큰 사각형을 남겨요. 더 크게 돌리면 사진이 너무 많이 잘려서 꺼져요.",
 
   // Flip
   'ctl.flip.direction': '뒤집기',

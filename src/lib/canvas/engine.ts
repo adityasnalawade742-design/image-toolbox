@@ -281,13 +281,19 @@ export async function processCanvasBest(img: HTMLImageElement, options: ImagePro
  * a straightened photo has no empty corners. Quarter turns swap the sides and need no cropping.
  */
 export function rotatedCropSize(w: number, h: number, angleDeg: number) {
-  const q = Math.round(angleDeg / 90);
+  // Nearest quarter turn; exactly halfway (45°, 135°, 315°) takes the even one, keeping the photo's own orientation
+  const x = angleDeg / 90;
+  let q = Math.round(x);
+  if (Math.abs(Math.abs(x - Math.trunc(x)) - 0.5) < 1e-9 && Math.abs(q) % 2 === 1) q -= 1;
   const rest = ((angleDeg - q * 90) * Math.PI) / 180;
   const [W, H] = Math.abs(q) % 2 === 1 ? [h, w] : [w, h];
   const c = Math.abs(Math.cos(rest)), s = Math.abs(Math.sin(rest));
   const k = Math.min(W / (W * c + H * s), H / (W * s + H * c));
   return { width: Math.max(1, Math.floor(W * k)), height: Math.max(1, Math.floor(H * k)) };
 }
+
+/** Within 15° of a quarter turn: straightening a photo, where cropping the corners loses only a thin edge */
+export const straighteningAngle = (deg: number) => Math.abs(deg - Math.round(deg / 90) * 90) <= 15;
 
 export function processCanvas(
   img: HTMLImageElement,

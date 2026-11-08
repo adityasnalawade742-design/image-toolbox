@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': 'Ripristina',
   'ctl.rotate.angle': 'Angolo personalizzato',
   'ctl.rotate.crop': "Ritaglia gli angoli vuoti",
-  'ctl.rotate.cropNote': "Per raddrizzare una foto: mantiene il rettangolo più grande senza bordi vuoti.",
+  'ctl.rotate.cropNote': "Si attiva da solo per raddrizzare (fino a 15°): mantiene il rettangolo più grande senza bordi vuoti. Con rotazioni maggiori si perderebbe troppo della foto.",
 
   // Flip
   'ctl.flip.direction': 'Capovolgi',

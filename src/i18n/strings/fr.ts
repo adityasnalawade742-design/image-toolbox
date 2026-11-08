@@ -398,7 +398,7 @@ export const strings = {
   'ctl.rotate.reset': "Réinitialiser",
   'ctl.rotate.angle': "Angle personnalisé",
   'ctl.rotate.crop': "Rogner les coins vides",
-  'ctl.rotate.cropNote': "Pour redresser une photo : garde le plus grand rectangle sans bords vides.",
+  'ctl.rotate.cropNote': "S’active tout seul pour redresser (jusqu’à 15°) : garde le plus grand rectangle sans bords vides. Au-delà, on perdrait trop de la photo.",
 
   // Flip
   'ctl.flip.direction': "Retourner",

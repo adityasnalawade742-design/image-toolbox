@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { PDFDocument } from 'pdf-lib';
 import { fitDpi, pageLayout } from '../../pdf/imagesToPdf';
 import { readDpi } from '../dpi';
-import { rotatedCropSize } from '../engine';
+import { rotatedCropSize, straighteningAngle } from '../engine';
 import { toolOutputName } from '../../storage/fileNames';
 import { addPageNumbers, numberedRange, pageLabel } from '../../pdf/pageOps';
 
@@ -61,6 +61,11 @@ describe('rotate and crop', () => {
     expect(r.width).toBeGreaterThan(3500);
     expect(rotatedCropSize(4000, 3000, 90)).toEqual({ width: 3000, height: 4000 });
     expect(rotatedCropSize(4000, 3000, 0)).toEqual({ width: 4000, height: 3000 });
+    // Exactly halfway keeps the photo's orientation, whichever way it turns
+    for (const a of [45, -45, 135, -135, 225, 315]) expect(rotatedCropSize(4000, 3000, a).width).toBeGreaterThan(rotatedCropSize(4000, 3000, a).height);
+    // Crops by default only when straightening, not for big turns
+    expect([3, -12, 15, 87, 183, 357].every(straighteningAngle)).toBe(true);
+    expect([16, 30, 45, 60, 135].some(straighteningAngle)).toBe(false);
   });
 });
 

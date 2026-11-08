@@ -129,7 +129,7 @@ export const strings = {
   'ctl.rotate.reset': 'Zurücksetzen',
   'ctl.rotate.angle': 'Eigener Winkel',
   'ctl.rotate.crop': "Leere Ecken abschneiden",
-  'ctl.rotate.cropNote': "Zum Geraderichten eines Fotos: behält das größte Rechteck ohne leere Ränder.",
+  'ctl.rotate.cropNote': "Schaltet sich beim Geraderichten (bis 15°) von selbst ein: behält das größte Rechteck ohne leere Ränder. Bei stärkeren Drehungen ginge zu viel vom Foto verloren.",
 
   // Flip
   'ctl.flip.direction': 'Spiegeln',
