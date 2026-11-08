@@ -20,6 +20,8 @@ interface AvifJob {
   kind: CodecKind;
   /** PNG only: reduce to a palette of up to 256 colours (much smaller, slightly lossy) */
   lossy: boolean;
+  /** WebP and AVIF only: lossless, the exact pixels (for screenshots, logos and graphics) */
+  exact?: boolean;
   coalesceKey?: string;
   resolve: (blob: Blob) => void;
   reject: (err: Error) => void;
@@ -46,7 +48,7 @@ export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
     if (active || queue.length === 0) return;
     active = queue.shift()!;
     const w = getWorker();
-    w.postMessage({ id: active.id, kind: active.kind, imageData: active.imageData, quality: active.quality, lossy: active.lossy }, [
+    w.postMessage({ id: active.id, kind: active.kind, imageData: active.imageData, quality: active.quality, lossy: active.lossy, exact: active.exact }, [
       active.imageData.data.buffer,
     ]);
   };
@@ -84,7 +86,7 @@ export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
    * Jobs sharing a `coalesceKey` replace each other while still queued (latest wins),
    * so rapid live-preview estimates don't pile up behind a slow encode.
    */
-  const encode = (imageData: ImageData, quality: number, coalesceKey?: string, kind: CodecKind = 'avif', lossy = false): Promise<Blob> =>
+  const encode = (imageData: ImageData, quality: number, coalesceKey?: string, kind: CodecKind = 'avif', lossy = false, exact = false): Promise<Blob> =>
     new Promise<Blob>((resolve, reject) => {
       if (coalesceKey) {
         queue = queue.filter((job) => {
@@ -93,7 +95,7 @@ export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
           return false;
         });
       }
-      queue.push({ id: nextId++, imageData, quality, kind, lossy, coalesceKey, resolve, reject });
+      queue.push({ id: nextId++, imageData, quality, kind, lossy, exact, coalesceKey, resolve, reject });
       pump();
     });
 
@@ -102,13 +104,13 @@ export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
 
 let sharedEncoder: ReturnType<typeof createAvifEncoder> | null = null;
 
-export function encodeWith(kind: CodecKind, imageData: ImageData, quality: number, coalesceKey?: string, lossy = false): Promise<Blob> {
+export function encodeWith(kind: CodecKind, imageData: ImageData, quality: number, coalesceKey?: string, lossy = false, exact = false): Promise<Blob> {
   if (!sharedEncoder) {
     sharedEncoder = createAvifEncoder(
       () => new Worker(new URL('./codec.worker.ts', import.meta.url), { type: 'module' })
     );
   }
-  return sharedEncoder.encode(imageData, quality, coalesceKey, kind, lossy);
+  return sharedEncoder.encode(imageData, quality, coalesceKey, kind, lossy, exact);
 }
 
 export const encodeAvif = (imageData: ImageData, quality: number, coalesceKey?: string) => encodeWith('avif', imageData, quality, coalesceKey);

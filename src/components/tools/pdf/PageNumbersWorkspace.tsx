@@ -3,7 +3,8 @@ import { ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowUp, ArrowUpLeft, ArrowUp
 import { usePdfDocument } from '../../shared/usePdfDocument';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
-import { addPageNumbers, pageLabel, type NumberFormat, type NumberPosition } from '../../../lib/pdf/pageOps';
+import { addPageNumbers, numberedRange, pageLabel, type NumberFormat, type NumberPosition } from '../../../lib/pdf/pageOps';
+import { loadSiteFont } from '../../../lib/pdf/unicodeFont';
 import { PagePreview } from './PagePreview';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
 
@@ -17,7 +18,10 @@ export function PageNumbersWorkspace() {
   const [start, setStart] = useState(1);
   const [fontSize, setFontSize] = useState(11);
   const [margin, setMargin] = useState<keyof typeof MARGINS>('medium');
-  const [skipFirst, setSkipFirst] = useState(false);
+  // Pages to number, 1-based; `to` 0 means the last page
+  const [from, setFrom] = useState(1);
+  const [to, setTo] = useState(0);
+  const [template, setTemplate] = useState('');
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -26,14 +30,17 @@ export function PageNumbersWorkspace() {
 
   if (!pdf.doc) return <PdfDropScreen onFile={pdf.load} error={pdf.error} loading={pdf.loading} />;
 
-  const total = start + (skipFirst ? pdf.pageCount - 1 : pdf.pageCount) - 1;
-  const previewPage = skipFirst && pdf.pageCount > 1 ? 2 : 1;
+  const last = to > 0 ? Math.min(to, pdf.pageCount) : pdf.pageCount;
+  const range = numberedRange(pdf.pageCount, { from: Math.min(from, last), to: last });
+  const total = start + (range.last - range.first);
+  const previewPage = range.first + 1;
+  const tpl = template.trim() || t('ctl.numbers.templateDefault');
   const run = async () => {
     if (!pdf.bytes) return;
     setBusy(true);
     setError(null);
     try {
-      const out = await addPageNumbers(pdf.bytes, { position, format, start, fontSize, margin: MARGINS[margin], skipFirst });
+      const out = await addPageNumbers(pdf.bytes, { position, format, start, fontSize, margin: MARGINS[margin], from: range.first + 1, to: range.last + 1, template: tpl }, loadSiteFont);
       const name = pdfName(pdf.file?.name, 'numbered');
       savePdf(out, name);
       setStatus(t('ctl.pdf.done', { name }));
@@ -74,8 +81,16 @@ export function PageNumbersWorkspace() {
             { value: 'n', label: '1' },
             { value: 'n-of-total', label: '1 / N' },
             { value: 'dash', label: '– 1 –' },
+            { value: 'custom', label: t('ctl.numbers.custom') },
           ]}
         />
+        {format === 'custom' && (
+          <div className="space-y-1 pt-3">
+            <label htmlFor="num-tpl" className="block text-[14px] text-graphite">{t('ctl.numbers.template')}</label>
+            <input id="num-tpl" type="text" value={template} placeholder={t('ctl.numbers.templateDefault')} onChange={(e) => setTemplate(e.target.value)} maxLength={80} aria-describedby="num-tpl-hint" className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink" />
+            <p id="num-tpl-hint" className="text-[13px] text-graphite">{t('ctl.numbers.templateHint')}</p>
+          </div>
+        )}
       </div>
       <div className="pt-4 border-t border-ink space-y-4">
         <div className="space-y-1">
@@ -107,10 +122,33 @@ export function PageNumbersWorkspace() {
             { value: 'large', label: t('ctl.topdf.marginLarge') },
           ]}
         />
-        <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer">
-          <input type="checkbox" checked={skipFirst} onChange={(e) => setSkipFirst(e.target.checked)} />
-          <span className="text-ink">{t('ctl.numbers.skipFirst')}</span>
-        </label>
+        <fieldset className="space-y-1">
+          <legend className="block text-[14px] text-graphite">{t('ctl.numbers.pages')}</legend>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={pdf.pageCount}
+              value={from}
+              aria-label={t('ctl.numbers.fromPage')}
+              onChange={(e) => setFrom(Math.max(1, Math.min(pdf.pageCount, parseInt(e.target.value, 10) || 1)))}
+              className="w-20 min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+            />
+            <span className="text-graphite">–</span>
+            <input
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={pdf.pageCount}
+              value={to > 0 ? to : pdf.pageCount}
+              aria-label={t('ctl.numbers.toPage')}
+              onChange={(e) => setTo(Math.max(1, Math.min(pdf.pageCount, parseInt(e.target.value, 10) || pdf.pageCount)))}
+              className="w-20 min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+            />
+          </div>
+          <p className="text-[13px] text-graphite">{t('ctl.numbers.pagesHint')}</p>
+        </fieldset>
       </div>
     </>
   );
@@ -145,7 +183,7 @@ export function PageNumbersWorkspace() {
                   ...(h === 'left' ? { left: pad } : h === 'right' ? { right: pad } : { left: '50%', transform: 'translateX(-50%)' }),
                 }}
               >
-                {pageLabel(start + (skipFirst ? previewPage - 2 : previewPage - 1), total, format)}
+                {pageLabel(start, total, format, tpl)}
               </span>
             );
           }}

@@ -84,6 +84,8 @@ export interface ImageProcessingOptions {
   quality?: number;
   format?: 'image/jpeg' | 'image/png' | 'image/webp';
   rotation?: number; // arbitrary angle in degrees (-180 to 180)
+  /** With a rotation that isn't a quarter turn: keep only the largest upright rectangle inside the picture */
+  rotateCrop?: boolean;
   flipH?: boolean;
   flipV?: boolean;
   crop?: { x: number; y: number; width: number; height: number };
@@ -274,6 +276,19 @@ export async function processCanvasBest(img: HTMLImageElement, options: ImagePro
   return canvas;
 }
 
+/**
+ * The largest rectangle with the picture's own proportions that fits inside it after turning by `angleDeg`, so
+ * a straightened photo has no empty corners. Quarter turns swap the sides and need no cropping.
+ */
+export function rotatedCropSize(w: number, h: number, angleDeg: number) {
+  const q = Math.round(angleDeg / 90);
+  const rest = ((angleDeg - q * 90) * Math.PI) / 180;
+  const [W, H] = Math.abs(q) % 2 === 1 ? [h, w] : [w, h];
+  const c = Math.abs(Math.cos(rest)), s = Math.abs(Math.sin(rest));
+  const k = Math.min(W / (W * c + H * s), H / (W * s + H * c));
+  return { width: Math.max(1, Math.floor(W * k)), height: Math.max(1, Math.floor(H * k)) };
+}
+
 export function processCanvas(
   img: HTMLImageElement,
   options: ImageProcessingOptions = {}
@@ -293,6 +308,11 @@ export function processCanvas(
 
   let rotatedW = Math.round(targetW * absCos + targetH * absSin);
   let rotatedH = Math.round(targetW * absSin + targetH * absCos);
+  if (options.rotateCrop) {
+    const inner = rotatedCropSize(targetW, targetH, angleDeg);
+    rotatedW = inner.width;
+    rotatedH = inner.height;
+  }
 
   // 4. Border Expansion if mode is 'outside'
   const borderWidth = options.border && options.border.width > 0 ? options.border.width : 0;
@@ -493,6 +513,8 @@ export interface EncodeOptions {
   lossyPng?: boolean;
   /** With `best`, JPEG from a Display P3 canvas: the original photo's colour profile, written into the file */
   icc?: Uint8Array | null;
+  /** WebP and AVIF: lossless, the exact pixels (screenshots, logos, graphics). Uses the WebAssembly encoders. */
+  lossless?: boolean;
 }
 
 const KIND = { 'image/jpeg': 'jpeg', 'image/webp': 'webp', 'image/png': 'png' } as const;
@@ -516,13 +538,14 @@ export async function canvasToBlob(
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Canvas 2D unavailable');
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    return encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
+    return opts.lossless ? encodeWith('avif', imageData, 100, avifCoalesceKey, false, true) : encodeAvif(imageData, Math.round(quality * 100), avifCoalesceKey);
   }
 
   // JPG has no transparency and browsers encode transparent pixels as black: put white behind them instead
   const source = format === 'image/jpeg' ? onWhite(canvas) : canvas;
 
-  if (opts.best && canEncodeWasm()) {
+  // Browsers can't write lossless WebP from a canvas: that always goes through libwebp
+  if ((opts.best || (opts.lossless && format === 'image/webp')) && canEncodeWasm()) {
     const ctx = source.getContext('2d');
     if (ctx) {
       try {
@@ -530,7 +553,7 @@ export async function canvasToBlob(
         // converted to sRGB, which every viewer assumes when a file has no profile
         const wide = format === 'image/jpeg' && !!opts.icc && ctx.getContextAttributes?.().colorSpace === 'display-p3';
         const imageData = ctx.getImageData(0, 0, source.width, source.height, { colorSpace: wide ? 'display-p3' : 'srgb' });
-        const blob = await encodeWith(KIND[format], imageData, Math.round(quality * 100), avifCoalesceKey, !!opts.lossyPng);
+        const blob = await encodeWith(KIND[format], imageData, Math.round(quality * 100), avifCoalesceKey, !!opts.lossyPng, !!opts.lossless && format === 'image/webp');
         if (!wide) return blob;
         return new Blob([new Uint8Array(withJpegIcc(new Uint8Array(await blob.arrayBuffer()), opts.icc!))], { type: 'image/jpeg' });
       } catch (err) {

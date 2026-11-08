@@ -4566,7 +4566,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Seitenzahlen",
     tagline: "Nummeriere die Seiten eines PDFs mit Position, Format und Startnummer deiner Wahl. Läuft auf deinem Gerät.",
     intro:
-      "Seitenzahlen einfügen setzt auf jede Seite eines PDFs eine Nummer, wie sie Berichte, Abschlussarbeiten und ausgedruckte Handouts oft brauchen. Wähle eine von sechs Positionen oben oder unten, ein Format (1, 1 / N oder – 1 –), die Startnummer, die Textgröße und den Abstand vom Rand. Die erste Seite, etwa ein Deckblatt, kannst du auch ohne Nummer lassen. Eine Vorschau zeigt, wie die Nummer aussehen wird. Die Nummern werden in deinem Browser eingefügt, das Dokument wird also nie hochgeladen.",
+      "Seitenzahlen einfügen setzt auf jede Seite eines PDFs eine Nummer, wie sie Berichte, Abschlussarbeiten und ausgedruckte Handouts oft brauchen. Wähle eine von sechs Positionen oben oder unten, ein Format (1, 1 / N oder – 1 –), die Startnummer, die Textgröße und den Abstand vom Rand. Die erste Seite, etwa ein Deckblatt, kannst du auch ohne Nummer lassen. Eine Vorschau zeigt, wie die Nummer aussehen wird. Die Nummern werden in deinem Browser eingefügt, das Dokument wird also nie hochgeladen. Du kannst auch eigenen Text schreiben, etwa „Seite 1 von 10“, und nur einen Teil der Seiten nummerieren.",
     seoTitle: "Seitenzahlen in PDF einfügen – kostenlos, ohne Upload",
     seoDescription:
       "PDF Seitenzahlen einfügen, kostenlos: Position, Format und Startnummer im Browser wählen und das Deckblatt auslassen. Privat, und nichts wird hochgeladen.",
@@ -6943,7 +6943,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "vCard-QR-Code",
     tagline: "Erstell einen QR-Code, der deinen Namen, deine Telefonnummer, E-Mail und Website in den Kontakten eines Handys speichert. Kostenlos, und es läuft auf deinem Gerät.",
     intro:
-      "Ein vCard-QR-Code macht aus einer Visitenkarte einen einzigen Scan: Leute richten ihre Kamera darauf, und ihr Handy bietet an, dich als Kontakt zu speichern, mit Name, Telefonnummer, E-Mail, Firma und Website schon ausgefüllt. Gib deine Daten ein, gestalte den Code mit deinen Farben oder deinem Logo und lade ihn für deine Visitenkarte, E-Mail-Signatur, dein Namensschild oder deinen Messestand herunter. Die Daten werden in deinem Browser in den Code geschrieben und nirgends gespeichert.",
+      "Ein vCard-QR-Code macht aus einer Visitenkarte einen einzigen Scan: Leute richten ihre Kamera darauf, und ihr Handy bietet an, dich als Kontakt zu speichern, mit Name, Telefonnummer, E-Mail, Firma und Website schon ausgefüllt. Gib deine Daten ein, gestalte den Code mit deinen Farben oder deinem Logo und lade ihn für deine Visitenkarte, E-Mail-Signatur, dein Namensschild oder deinen Messestand herunter. Die Daten werden in deinem Browser in den Code geschrieben und nirgends gespeichert. Vor- und Nachname werden getrennt gespeichert, und du kannst Position, Telefon (Arbeit), Adresse und eine Notiz hinzufügen.",
     seoTitle: "vCard-QR-Code-Generator – QR für Visitenkarten, kostenlos",
     seoDescription:
       "Einen vCard-QR-Code erstellen, der deine Kontaktdaten mit einem Scan speichert. Für Visitenkarten und Namensschilder. Farben und Logo, kostenlos, ohne Upload.",
@@ -7708,7 +7708,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann es ein PDF entsperren, wenn ich das Passwort nicht kenne?",
         answer:
-          "Nein. Du brauchst das Passwort, mit dem sich die Datei öffnet. Dieses Tool errät oder knackt keine Passwörter.",
+          "Nein. Du brauchst das Passwort, mit dem sich die Datei öffnet. Dieses Tool errät oder knackt keine Passwörter. Wenn sich das PDF ohne Passwort öffnet und nur Drucken oder Kopieren sperrt, lass das Passwort leer: Diese Sperren werden entfernt.",
       },
       {
         question: "Warum heißt es, das Passwort sei falsch?",

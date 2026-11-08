@@ -98,7 +98,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
 
   const needsPassword = tool === 'protect-pdf' || tool === 'unlock-pdf';
   const passwordProblem =
-    tool === 'protect-pdf' ? (password.length < 6 ? 'short' : password !== confirm ? 'mismatch' : null) : tool === 'unlock-pdf' && !password ? 'empty' : null;
+    // Unlock may run without a password: that removes print and copy restrictions from PDFs that open freely
+    tool === 'protect-pdf' ? (password.length < 6 ? 'short' : password !== confirm ? 'mismatch' : null) : null;
 
   const run = async () => {
     if (!file || progress) return;
@@ -119,7 +120,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     } catch (err) {
       const code = err instanceof DocError ? err.code : 'failed';
       if (code === 'offline') setOnline(false);
-      setError(t(ERROR_TEXT[code]));
+      // Tried without a password, but the PDF needs one to open
+      setError(t(code === 'wrong_password' && tool === 'unlock-pdf' && !password ? 'ctl.doc.errNeedsPassword' : ERROR_TEXT[code]));
     } finally {
       setProgress(null);
     }

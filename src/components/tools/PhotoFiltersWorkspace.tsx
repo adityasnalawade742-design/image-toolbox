@@ -99,6 +99,8 @@ export function PhotoFiltersWorkspace() {
   const handleFileSelect = (file: File) => {
     if (!file.type.startsWith('image/')) return;
     setSelectedFile(file);
+    // Save in the photo's own kind of format: a JPG photo saved as PNG would be several times bigger
+    setSaveFormat(/jpe?g|heic|heif|avif/i.test(file.type) ? 'jpeg' : /webp/i.test(file.type) ? 'webp' : 'png');
 
     const img = new Image();
     img.onload = () => setImgElement(img);
@@ -168,7 +170,8 @@ export function PhotoFiltersWorkspace() {
 
   const handleDownload = async (format: SaveFormat = 'png') => {
     const blob = await canvasToBlob(renderCanvas(), `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
-    downloadBlob(blob, `filtered-${activePreset}-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
+    const base = (selectedFile?.name || 'photo').replace(/\.[^.]+$/, '');
+    downloadBlob(blob, `${base}-${activePreset}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const handleCopyClipboard = async () => {

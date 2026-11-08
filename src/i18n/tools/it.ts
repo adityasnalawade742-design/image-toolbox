@@ -4570,7 +4570,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Numeri di pagina",
     tagline: "Numera le pagine di un PDF con la posizione, il formato e il numero iniziale che scegli. Funziona sul tuo dispositivo.",
     intro:
-      "Aggiungi numeri di pagina mette un numero su ogni pagina di un PDF, cosa che spesso serve a relazioni, tesi e dispense stampate. Scegli una delle sei posizioni in alto o in basso, un formato (1, 1 / N o – 1 –), il numero iniziale, la dimensione del testo e la distanza dal bordo. Puoi anche lasciare senza numero la prima pagina, come una copertina. Un’anteprima mostra come apparirà il numero. I numeri vengono aggiunti nel tuo browser, quindi il documento non viene mai caricato.",
+      "Aggiungi numeri di pagina mette un numero su ogni pagina di un PDF, cosa che spesso serve a relazioni, tesi e dispense stampate. Scegli una delle sei posizioni in alto o in basso, un formato (1, 1 / N o – 1 –), il numero iniziale, la dimensione del testo e la distanza dal bordo. Puoi anche lasciare senza numero la prima pagina, come una copertina. Un’anteprima mostra come apparirà il numero. I numeri vengono aggiunti nel tuo browser, quindi il documento non viene mai caricato. Puoi anche scrivere un testo tuo, come «Pagina 1 di 10», e numerare solo alcune pagine.",
     seoTitle: "Numerare pagine PDF – Gratis, senza upload",
     seoDescription:
       "Numerare le pagine di un PDF nel browser: scegli posizione, formato e numero iniziale, e salta la copertina. Gratis, privato, nessun upload.",
@@ -6912,7 +6912,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Codice QR vCard",
     tagline: "Crea un codice QR che salva il tuo nome, telefono, email e sito web nei contatti di un telefono. Gratis, e funziona sul tuo dispositivo.",
     intro:
-      "Un codice QR vCard trasforma un biglietto da visita in una sola scansione: le persone lo inquadrano con la fotocamera e il telefono propone di salvarti come contatto, con nome, numero di telefono, email, azienda e sito web già compilati. Inserisci i tuoi dati, personalizza il codice con i tuoi colori o il tuo logo e scaricalo per il biglietto da visita, la firma email, il badge o lo stand. I dati vengono inseriti nel codice nel tuo browser e non vengono salvati da nessuna parte.",
+      "Un codice QR vCard trasforma un biglietto da visita in una sola scansione: le persone lo inquadrano con la fotocamera e il telefono propone di salvarti come contatto, con nome, numero di telefono, email, azienda e sito web già compilati. Inserisci i tuoi dati, personalizza il codice con i tuoi colori o il tuo logo e scaricalo per il biglietto da visita, la firma email, il badge o lo stand. I dati vengono inseriti nel codice nel tuo browser e non vengono salvati da nessuna parte. Nome e cognome vengono salvati separatamente, e puoi aggiungere ruolo, telefono di lavoro, indirizzo e una nota.",
     seoTitle: "QR code vCard gratis – Biglietto da visita con QR",
     seoDescription:
       "Crea un codice QR vCard che salva i tuoi dati di contatto con una sola scansione. Per biglietti da visita e badge. Colori e logo, gratis, nulla viene caricato.",
@@ -7669,7 +7669,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "Può sbloccare un PDF se non conosco la password?",
-        answer: "No. Serve la password che apre il file. Questo strumento non indovina né forza le password.",
+        answer: "No. Serve la password che apre il file. Questo strumento non indovina né forza le password. Se il PDF si apre senza password e blocca solo la stampa o la copia, lascia vuota la password: quelle restrizioni vengono rimosse.",
       },
       {
         question: "Perché dice che la password è sbagliata?",

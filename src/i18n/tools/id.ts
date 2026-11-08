@@ -4569,7 +4569,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Nomor Halaman",
     tagline: "Beri nomor pada halaman PDF, dengan posisi, format, dan nomor awal pilihan Anda. Berjalan di perangkat Anda.",
     intro:
-      "Tambah Nomor Halaman menaruh nomor di setiap halaman PDF, yang sering dibutuhkan untuk laporan, skripsi, dan handout cetak. Pilih salah satu dari enam posisi di atas atau bawah, format (1, 1 / N, atau – 1 –), nomor awal, ukuran teks, dan jarak dari tepi. Anda juga bisa membiarkan halaman pertama, misalnya sampul, tanpa nomor. Pratinjau menampilkan tampilan nomornya. Nomor ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah.",
+      "Tambah Nomor Halaman menaruh nomor di setiap halaman PDF, yang sering dibutuhkan untuk laporan, skripsi, dan handout cetak. Pilih salah satu dari enam posisi di atas atau bawah, format (1, 1 / N, atau – 1 –), nomor awal, ukuran teks, dan jarak dari tepi. Anda juga bisa membiarkan halaman pertama, misalnya sampul, tanpa nomor. Pratinjau menampilkan tampilan nomornya. Nomor ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah. Anda juga bisa menulis teks sendiri, misalnya “Halaman 1 dari 10”, dan memberi nomor hanya pada sebagian halaman.",
     seoTitle: "Tambah Nomor Halaman PDF – Gratis, Tanpa Unggah",
     seoDescription:
       "Tambah nomor halaman PDF langsung di browser Anda: pilih posisi, format, dan nomor awal, serta lewati halaman sampul. Gratis, privat, dan tanpa unggah file.",
@@ -6918,7 +6918,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "QR Code vCard",
     tagline: "Buat QR code yang menyimpan nama, telepon, email, dan situs web Anda ke kontak ponsel. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "QR code vCard mengubah kartu nama menjadi satu kali pindai: orang mengarahkan kamera ke kode itu, lalu ponsel mereka menawarkan untuk menyimpan Anda sebagai kontak, dengan nama, nomor telepon, email, perusahaan, dan situs web sudah terisi. Masukkan detail Anda, atur tampilan kode dengan warna atau logo Anda, lalu unduh untuk kartu nama, tanda tangan email, ID card, atau booth Anda. Detail dimasukkan ke dalam kode di browser Anda dan tidak disimpan di mana pun.",
+      "QR code vCard mengubah kartu nama menjadi satu kali pindai: orang mengarahkan kamera ke kode itu, lalu ponsel mereka menawarkan untuk menyimpan Anda sebagai kontak, dengan nama, nomor telepon, email, perusahaan, dan situs web sudah terisi. Masukkan detail Anda, atur tampilan kode dengan warna atau logo Anda, lalu unduh untuk kartu nama, tanda tangan email, ID card, atau booth Anda. Detail dimasukkan ke dalam kode di browser Anda dan tidak disimpan di mana pun. Nama depan dan belakang disimpan terpisah, dan Anda bisa menambahkan jabatan, telepon kantor, alamat, dan catatan.",
     seoTitle: "Buat QR Code vCard Gratis – QR Kartu Nama",
     seoDescription:
       "Buat QR code vCard yang menyimpan detail kontak Anda dalam sekali pindai. Untuk kartu nama dan ID card. Warna dan logo, gratis, tidak ada yang diunggah.",
@@ -7683,7 +7683,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah alat ini membuka kunci PDF jika saya tidak tahu kata sandinya?",
         answer:
-          "Tidak. Anda memerlukan kata sandi yang membuka file. Alat ini tidak menebak atau membobol kata sandi.",
+          "Tidak. Anda memerlukan kata sandi yang membuka file. Alat ini tidak menebak atau membobol kata sandi. Jika PDF terbuka tanpa kata sandi dan hanya membatasi pencetakan atau penyalinan, kosongkan kata sandi: batasan itu akan dihapus.",
       },
       {
         question: "Mengapa muncul pesan bahwa kata sandi salah?",

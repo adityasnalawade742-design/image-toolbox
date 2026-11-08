@@ -5,11 +5,16 @@ import { useT } from '../shared/I18nContext';
 interface Props {
   rotation: number;
   onChange: (angle: number) => void;
+  crop: boolean;
+  onCrop: (on: boolean) => void;
 }
+
+/** 0–360, to one decimal */
+const norm = (a: number) => Math.round(((((a % 360) + 360) % 360) * 10)) / 10;
 
 const cellButton = 'min-h-[40px] px-2 flex items-center justify-center gap-1.5 bg-paper-bright text-ink text-[14px] font-semibold hover:bg-paper-stock transition-colors';
 
-export function RotateControls({ rotation, onChange }: Props) {
+export function RotateControls({ rotation, onChange, crop, onCrop }: Props) {
   const t = useT();
   const idBase = useId();
   const sliderValue = rotation > 180 ? rotation - 360 : rotation;
@@ -44,8 +49,23 @@ export function RotateControls({ rotation, onChange }: Props) {
           <label htmlFor={`${idBase}-angle`} className="text-ink">
             {t('ctl.rotate.angle')}
           </label>
-          <span className="font-semibold text-ink" data-measure>
-            {rotation}°
+          <span className="flex items-center gap-1">
+            <input
+              type="number"
+              inputMode="decimal"
+              step="0.1"
+              min="-180"
+              max="180"
+              value={sliderValue}
+              aria-label={t('ctl.rotate.angle')}
+              onChange={(e) => {
+                const val = parseFloat(e.target.value);
+                if (Number.isFinite(val)) onChange(norm(val));
+              }}
+              className="w-20 min-h-[36px] px-2 border border-ink bg-paper-bright text-[15px] text-ink text-right rounded-md"
+              data-measure
+            />
+            <span aria-hidden="true">°</span>
           </span>
         </div>
         <input
@@ -53,11 +73,9 @@ export function RotateControls({ rotation, onChange }: Props) {
           type="range"
           min="-180"
           max="180"
+          step="0.1"
           value={sliderValue}
-          onChange={(e) => {
-            const val = parseInt(e.target.value) || 0;
-            onChange((val + 360) % 360);
-          }}
+          onChange={(e) => onChange(norm(parseFloat(e.target.value) || 0))}
           className="w-full"
         />
         <div className="flex justify-between text-[12px] text-graphite" data-measure aria-hidden="true">
@@ -65,6 +83,13 @@ export function RotateControls({ rotation, onChange }: Props) {
           <span>0°</span>
           <span>+180°</span>
         </div>
+        <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer pt-2">
+          <input type="checkbox" checked={crop} onChange={(e) => onCrop(e.target.checked)} />
+          <span className="text-ink">
+            {t('ctl.rotate.crop')}
+            <span className="block text-[13px] text-graphite">{t('ctl.rotate.cropNote')}</span>
+          </span>
+        </label>
       </div>
     </div>
   );

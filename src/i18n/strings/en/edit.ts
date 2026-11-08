@@ -13,6 +13,11 @@ export const editStrings = {
   'ctl.crop.wide': 'Widescreen',
   'ctl.crop.story': 'Story',
   'ctl.crop.portrait': 'Portrait',
+  'ctl.crop.phonePortrait': 'Phone photo, upright',
+  'ctl.crop.customRatio': 'Custom ratio',
+  'ctl.crop.ratioW': 'Ratio width',
+  'ctl.crop.ratioH': 'Ratio height',
+  'ctl.crop.applyRatio': 'Apply',
   'ctl.crop.classic': 'Classic',
   'ctl.crop.cinema': 'Cinema',
   'ctl.crop.socialPresets': 'Social media sizes',
@@ -48,6 +53,8 @@ export const editStrings = {
   'ctl.rotate.left': 'Left 90°',
   'ctl.rotate.reset': 'Reset',
   'ctl.rotate.angle': 'Custom angle',
+  'ctl.rotate.crop': 'Crop off the empty corners',
+  'ctl.rotate.cropNote': 'For straightening a photo: keeps the largest rectangle with no blank edges.',
 
   // Flip
   'ctl.flip.direction': 'Flip',

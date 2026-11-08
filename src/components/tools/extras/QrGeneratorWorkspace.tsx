@@ -44,7 +44,7 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
   const [wifi, setWifi] = useState<WifiFields>({ ssid: '', password: '', security: 'WPA', hidden: false });
   const [email, setEmail] = useState({ to: '', subject: '', body: '' });
   const [phone, setPhone] = useState('');
-  const [contact, setContact] = useState({ name: '', phone: '', email: '', org: '', url: '' });
+  const [contact, setContact] = useState({ name: '', first: '', last: '', phone: '', email: '', org: '', url: '', title: '', workPhone: '', street: '', city: '', postcode: '', country: '', note: '' });
   const [wa, setWa] = useState({ phone: '', message: '' });
   const [place, setPlace] = useState('');
   const [scheme, setScheme] = useState<'upi' | 'sepa'>('upi');
@@ -75,7 +75,7 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
       case 'phone':
         return phone.replace(/[^\d+]/g, '') ? phonePayload(phone) : '';
       case 'contact':
-        return contact.name.trim() ? contactPayload(contact) : '';
+        return contact.first.trim() || contact.last.trim() ? contactPayload(contact) : '';
       case 'whatsapp':
         return wa.phone.replace(/\D/g, '').length >= 7 ? whatsappPayload(wa.phone, wa.message) : '';
       case 'location': {
@@ -229,11 +229,28 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
       {kind === 'phone' && input('qr-phone', t('ctl.qr.phone'), phone, setPhone, { type: 'tel', inputMode: 'tel', autoComplete: 'tel' })}
       {kind === 'contact' && (
         <>
-          {input('qr-name', t('ctl.qr.name'), contact.name, (v) => setContact({ ...contact, name: v }), { autoComplete: 'name' })}
+          <div className="grid grid-cols-2 gap-3">
+            {input('qr-first', t('ctl.qr.firstName'), contact.first, (v) => setContact({ ...contact, first: v }), { autoComplete: 'given-name' })}
+            {input('qr-last', t('ctl.qr.lastName'), contact.last, (v) => setContact({ ...contact, last: v }), { autoComplete: 'family-name' })}
+          </div>
           {input('qr-cphone', t('ctl.qr.phone'), contact.phone, (v) => setContact({ ...contact, phone: v }), { type: 'tel', inputMode: 'tel' })}
           {input('qr-cemail', t('ctl.qr.email'), contact.email, (v) => setContact({ ...contact, email: v }), { type: 'email', inputMode: 'email' })}
           {input('qr-org', t('ctl.qr.org'), contact.org, (v) => setContact({ ...contact, org: v }))}
           {input('qr-url', t('ctl.qr.website'), contact.url, (v) => setContact({ ...contact, url: v }), { type: 'url', inputMode: 'url' })}
+          <details className="border-t border-pencil-soft pt-3">
+            <summary className="cursor-pointer text-[15px] font-semibold text-ink min-h-[40px] flex items-center">{t('ctl.qr.moreFields')}</summary>
+            <div className="space-y-3 pt-2">
+              {input('qr-title', t('ctl.qr.jobTitle'), contact.title, (v) => setContact({ ...contact, title: v }), { autoComplete: 'organization-title' })}
+              {input('qr-wphone', t('ctl.qr.workPhone'), contact.workPhone, (v) => setContact({ ...contact, workPhone: v }), { type: 'tel', inputMode: 'tel' })}
+              {input('qr-street', t('ctl.qr.street'), contact.street, (v) => setContact({ ...contact, street: v }), { autoComplete: 'street-address' })}
+              <div className="grid grid-cols-2 gap-3">
+                {input('qr-city', t('ctl.qr.city'), contact.city, (v) => setContact({ ...contact, city: v }), { autoComplete: 'address-level2' })}
+                {input('qr-postcode', t('ctl.qr.postcode'), contact.postcode, (v) => setContact({ ...contact, postcode: v }), { autoComplete: 'postal-code' })}
+              </div>
+              {input('qr-country', t('ctl.qr.country'), contact.country, (v) => setContact({ ...contact, country: v }), { autoComplete: 'country-name' })}
+              {input('qr-note', t('ctl.qr.note'), contact.note, (v) => setContact({ ...contact, note: v }))}
+            </div>
+          </details>
         </>
       )}
       {kind === 'whatsapp' && (

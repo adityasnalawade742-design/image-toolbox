@@ -72,3 +72,16 @@ describe('coordinates', () => {
     expect(parseCoordinates('95.1, 10')).toBeNull();
   });
 });
+
+describe('vCard with separate names and more fields', () => {
+  it('files the contact under the surname and adds title, work phone, address and note', () => {
+    const card = contactPayload({ name: '', first: 'Ada', last: 'Lovelace', phone: '+44 1', email: '', org: 'Engines', url: '', title: 'Analyst', workPhone: '+44 2', street: '12 Square', city: 'London', postcode: 'SW1Y', country: 'UK', note: 'Met at the expo; call back' });
+    expect(card).toContain('N:Lovelace;Ada;;;');
+    expect(card).toContain('FN:Ada Lovelace');
+    expect(card).toContain('TITLE:Analyst');
+    expect(card).toContain('TEL;TYPE=WORK:+44 2');
+    expect(card).toContain('ADR;TYPE=WORK:;;12 Square;London;;SW1Y;UK');
+    expect(card).toContain('NOTE:Met at the expo\\; call back');
+    expect(decodePayload(card)).toMatchObject({ kind: 'contact', name: 'Ada Lovelace', phone: '+44 1', org: 'Engines' });
+  });
+});

@@ -14,12 +14,38 @@ export function detectFormat(b: Uint8Array): DpiFormat | null {
   return null;
 }
 
-/** The DPI a file declares, or null when it doesn't say (most apps then assume 72 or 96) */
+/** The DPI a file declares, or null when it doesn't say (most apps then assume 72 or 96). TIFF is read only. */
 export function readDpi(b: Uint8Array): number | null {
   const f = detectFormat(b);
   if (f === 'jpeg') return readJpegDpi(b);
   if (f === 'png') return readPngDpi(b);
+  if ((b[0] === 0x49 && b[1] === 0x49 && b[2] === 42) || (b[0] === 0x4d && b[1] === 0x4d && b[3] === 42)) return readTiffDpi(b);
   return null;
+}
+
+/** XResolution (tag 282) with ResolutionUnit (296: 2 = inch, 3 = cm) from a TIFF's first directory */
+function readTiffDpi(b: Uint8Array): number | null {
+  const le = b[0] === 0x49;
+  const dv = new DataView(b.buffer, b.byteOffset, b.byteLength);
+  const u16 = (o: number) => dv.getUint16(o, le), u32 = (o: number) => dv.getUint32(o, le);
+  try {
+    const ifd = u32(4);
+    const n = u16(ifd);
+    let res: number | null = null, unit = 2;
+    for (let i = 0; i < n; i++) {
+      const e = ifd + 2 + i * 12;
+      const tag = u16(e);
+      if (tag === 282) {
+        const off = u32(e + 8);
+        const den = u32(off + 4);
+        if (den) res = u32(off) / den;
+      } else if (tag === 296) unit = u16(e + 8);
+    }
+    if (!res) return null;
+    return unit === 3 ? res * 2.54 : unit === 1 ? null : res;
+  } catch {
+    return null;
+  }
 }
 
 export function setDpi(b: Uint8Array, dpi: number): Uint8Array {

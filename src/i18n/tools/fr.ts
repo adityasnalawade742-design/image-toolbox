@@ -4563,7 +4563,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Numéros de page",
     tagline: "Numérotez les pages d’un PDF avec la position, le format et le numéro de départ de votre choix. Tout se fait sur votre appareil.",
     intro:
-      "Numéroter les pages ajoute un numéro sur chaque page d’un PDF, ce dont les rapports, les mémoires et les documents imprimés ont souvent besoin. Choisissez l’une des six positions en haut ou en bas, un format (1, 1 / N ou – 1 –), le numéro de départ, la taille du texte et la distance au bord. Vous pouvez aussi laisser la première page, comme une couverture, sans numéro. Un aperçu montre l’apparence du numéro. Les numéros sont ajoutés dans votre navigateur, le document n’est donc jamais envoyé.",
+      "Numéroter les pages ajoute un numéro sur chaque page d’un PDF, ce dont les rapports, les mémoires et les documents imprimés ont souvent besoin. Choisissez l’une des six positions en haut ou en bas, un format (1, 1 / N ou – 1 –), le numéro de départ, la taille du texte et la distance au bord. Vous pouvez aussi laisser la première page, comme une couverture, sans numéro. Un aperçu montre l’apparence du numéro. Les numéros sont ajoutés dans votre navigateur, le document n’est donc jamais envoyé. Vous pouvez aussi écrire votre propre texte, comme « Page 1 sur 10 », et ne numéroter que certaines pages.",
     seoTitle: "Numéroter les pages d’un PDF – gratuit, sans envoi",
     seoDescription:
       "Numéroter un PDF gratuitement : choisissez la position, le format et le numéro de départ dans votre navigateur, et sautez la couverture. Sans envoi.",
@@ -6949,7 +6949,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "QR code vCard",
     tagline: "Créez un QR code qui enregistre votre nom, téléphone, e-mail et site web dans les contacts d’un téléphone. Gratuit, et tout se fait sur votre appareil.",
     intro:
-      "Un QR code vCard transforme une carte de visite en un seul scan : on pointe l’appareil photo dessus et le téléphone propose de vous enregistrer comme contact, avec votre nom, votre numéro, votre e-mail, votre entreprise et votre site web déjà remplis. Saisissez vos informations, personnalisez le code avec vos couleurs ou votre logo, et téléchargez-le pour votre carte de visite, votre signature e-mail, votre badge ou votre stand. Les informations sont placées dans le code par votre navigateur et ne sont conservées nulle part.",
+      "Un QR code vCard transforme une carte de visite en un seul scan : on pointe l’appareil photo dessus et le téléphone propose de vous enregistrer comme contact, avec votre nom, votre numéro, votre e-mail, votre entreprise et votre site web déjà remplis. Saisissez vos informations, personnalisez le code avec vos couleurs ou votre logo, et téléchargez-le pour votre carte de visite, votre signature e-mail, votre badge ou votre stand. Les informations sont placées dans le code par votre navigateur et ne sont conservées nulle part. Le prénom et le nom sont enregistrés séparément, et vous pouvez ajouter une fonction, un téléphone professionnel, une adresse et une note.",
     seoTitle: "Générateur de QR code vCard – Carte de visite, gratuit",
     seoDescription:
       "Créez un QR code vCard qui enregistre vos coordonnées en un scan. Pour cartes de visite et badges. Couleurs et logo, gratuit, sans envoi.",
@@ -7714,7 +7714,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Peut-il déverrouiller un PDF si je ne connais pas le mot de passe ?",
         answer:
-          "Non. Il vous faut le mot de passe qui ouvre le fichier. Cet outil ne devine pas et ne casse pas les mots de passe.",
+          "Non. Il vous faut le mot de passe qui ouvre le fichier. Cet outil ne devine pas et ne casse pas les mots de passe. Si le PDF s’ouvre sans mot de passe et bloque seulement l’impression ou la copie, laissez le mot de passe vide : ces restrictions sont supprimées.",
       },
       {
         question: "Pourquoi le mot de passe est-il indiqué comme incorrect ?",
