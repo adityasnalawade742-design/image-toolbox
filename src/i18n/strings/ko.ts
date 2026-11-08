@@ -545,7 +545,7 @@ export const strings = {
   'ctl.bulkCompress.dropHint': 'JPG, PNG, WebP 파일당 최대 50 MB. 브라우저에서 하나씩 차례로 압축해요.',
   'ctl.bulkCompress.quality': '품질',
   'ctl.bulkCompress.qualityLabel': '압축 품질',
-  'ctl.bulkCompress.pngLossless': 'PNG는 무손실이라 품질 설정이 적용되지 않아요.',
+  'ctl.bulkCompress.pngLossless': 'PNG는 무손실이라 품질 설정이 적용되지 않아요.',
   'ctl.bulkCompress.original': "원본과 같게",
   'ctl.bulkCompress.hintOriginal': "각 이미지는 원래 형식을 유지해요. JPG는 JPG, PNG는 PNG로 저장되고, iPhone HEIC와 TIFF는 JPG 또는 PNG가 돼요.",
   'ctl.bulkCompress.hintAvif': '파일이 가장 작지만 인코딩이 느려요.',

@@ -550,7 +550,7 @@ export const strings = {
   'ctl.bulkCompress.dropHint': 'JPG、PNG、WebPに対応（1枚あたり最大50 MB）。1枚ずつ、すべてブラウザ内で圧縮します。',
   'ctl.bulkCompress.quality': '画質',
   'ctl.bulkCompress.qualityLabel': '圧縮の画質',
-  'ctl.bulkCompress.pngLossless': 'PNGは可逆圧縮のため、画質の設定は適用されません。',
+  'ctl.bulkCompress.pngLossless': 'PNGは可逆圧縮のため、画質の設定は適用されません。',
   'ctl.bulkCompress.original': "元と同じ",
   'ctl.bulkCompress.hintOriginal': "各画像は元の形式のまま保存されます（JPGはJPG、PNGはPNG）。iPhoneのHEICとTIFFはJPGまたはPNGになります。",
   'ctl.bulkCompress.hintAvif': '最も小さくなりますが、エンコードに時間がかかります。',

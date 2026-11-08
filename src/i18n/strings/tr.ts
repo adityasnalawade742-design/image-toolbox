@@ -545,7 +545,7 @@ export const strings = {
   'ctl.bulkCompress.dropHint': 'JPG, PNG ve WebP, her biri en fazla 50 MB. Tamamen tarayıcınızda, tek tek sıkıştırılır.',
   'ctl.bulkCompress.quality': 'Kalite',
   'ctl.bulkCompress.qualityLabel': 'Sıkıştırma kalitesi',
-  'ctl.bulkCompress.pngLossless': 'PNG kayıpsızdır, bu yüzden kalite ayarı uygulanmaz.',
+  'ctl.bulkCompress.pngLossless': 'PNG kayıpsızdır, bu yüzden kalite ayarı uygulanmaz.',
   'ctl.bulkCompress.original': "Orijinalle aynı",
   'ctl.bulkCompress.hintOriginal': "Her görüntü kendi biçimini korur: JPG, JPG olarak; PNG, PNG olarak kalır. iPhone HEIC ve TIFF dosyaları JPG veya PNG olur.",
   'ctl.bulkCompress.hintAvif': 'En küçük dosyalar, kodlaması daha yavaş.',

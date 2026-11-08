@@ -545,7 +545,7 @@ export const strings = {
   'ctl.bulkCompress.dropHint': 'JPG, PNG und WebP, je bis 50 MB. Die Bilder werden nacheinander komprimiert, komplett in deinem Browser.',
   'ctl.bulkCompress.quality': 'Qualität',
   'ctl.bulkCompress.qualityLabel': 'Kompressionsqualität',
-  'ctl.bulkCompress.pngLossless': 'PNG ist verlustfrei, daher gilt die Qualitätseinstellung hier nicht.',
+  'ctl.bulkCompress.pngLossless': 'PNG ist verlustfrei, daher gilt die Qualitätseinstellung hier nicht.',
   'ctl.bulkCompress.original': "Wie das Original",
   'ctl.bulkCompress.hintOriginal': "Jedes Bild behält sein Format: JPG bleibt JPG, PNG bleibt PNG. iPhone-HEIC und TIFF werden zu JPG oder PNG.",
   'ctl.bulkCompress.hintAvif': 'Kleinste Dateien, langsamere Kodierung.',

@@ -545,7 +545,7 @@ export const strings = {
   'ctl.bulkCompress.dropHint': 'JPG, PNG, dan WebP, masing-masing hingga 50 MB. Dikompres satu per satu, sepenuhnya di browser Anda.',
   'ctl.bulkCompress.quality': 'Kualitas',
   'ctl.bulkCompress.qualityLabel': 'Kualitas kompresi',
-  'ctl.bulkCompress.pngLossless': 'PNG bersifat lossless, jadi pengaturan kualitas tidak berlaku.',
+  'ctl.bulkCompress.pngLossless': 'PNG bersifat lossless, jadi pengaturan kualitas tidak berlaku.',
   'ctl.bulkCompress.original': "Sama seperti asli",
   'ctl.bulkCompress.hintOriginal': "Setiap gambar tetap dalam formatnya: JPG tetap JPG, PNG tetap PNG. HEIC iPhone dan TIFF menjadi JPG atau PNG.",
   'ctl.bulkCompress.hintAvif': 'File terkecil, proses enkode lebih lambat.',

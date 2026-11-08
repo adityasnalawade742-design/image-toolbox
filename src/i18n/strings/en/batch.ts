@@ -31,7 +31,7 @@ export const batchStrings = {
   'ctl.bulkCompress.dropHint': 'JPG, PNG and WebP, up to 50 MB each. Compressed one at a time, entirely in your browser.',
   'ctl.bulkCompress.quality': 'Quality',
   'ctl.bulkCompress.qualityLabel': 'Compression quality',
-  'ctl.bulkCompress.pngLossless': 'PNG is lossless, so the quality setting does not apply.',
+  'ctl.bulkCompress.pngLossless': 'PNG is lossless, so the quality setting does not apply.',
   'ctl.bulkCompress.original': 'Same as original',
   'ctl.bulkCompress.hintOriginal': 'Each image keeps its own format: JPG stays JPG, PNG stays PNG. iPhone HEIC and TIFF become JPG or PNG.',
   'ctl.bulkCompress.hintAvif': 'Smallest files, slower to encode.',
