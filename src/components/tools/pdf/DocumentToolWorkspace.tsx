@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Server, FileText, CheckCircle2 } from 'lucide-react';
+import { Server, FileText, CheckCircle2, Download, X, Loader2, AlertCircle, Circle, Clock, Archive } from 'lucide-react';
+import { createUniqueNamer } from '../../../lib/storage/fileNames';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT, useLocale } from '../../shared/I18nContext';
@@ -55,6 +56,18 @@ const ERROR_TEXT: Record<DocErrorCode, StringKey> = {
 
 // Cloud Run accepts request bodies up to 32 MiB
 const MAX_BYTES = 30 * 1024 * 1024;
+// Server jobs cost time and money: a batch stays modest
+const MAX_FILES = 20;
+
+interface QueueItem {
+  id: string;
+  file: File;
+  status: 'pending' | 'working' | 'waiting' | 'done' | 'error';
+  rejected?: boolean;
+  error?: string;
+  progress?: DocProgress;
+  out?: { blob: Blob; name: string; before?: number; after?: number; partial?: boolean };
+}
 const inputClass = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink';
 
 export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
@@ -96,11 +109,44 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const pick = (f: File) => {
     setResult(null);
     setError(null);
+    setQueue(null);
     if (f.size > MAX_BYTES) {
       setError(t('ctl.doc.errTooLarge'));
       return;
     }
     setFile(f);
+  };
+
+  // Several files open a queue; one file works as before
+  const [queue, setQueue] = useState<QueueItem[] | null>(null);
+  const [overflow, setOverflow] = useState(0);
+  const [batchRunning, setBatchRunning] = useState(false);
+  const [zipping, setZipping] = useState(false);
+  const [zipError, setZipError] = useState(false);
+  const cancelRef = useRef(false);
+  // New settings make finished files stale, so the action button runs them again
+  useEffect(() => {
+    setQueue((q) => (q && q.some((x) => x.status === 'done') ? q.map((x) => (x.status === 'done' ? { ...x, status: 'pending', out: undefined } : x)) : q));
+  }, [preset, password, lang, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
+  const pickMany = (list: File[]) => {
+    if (list.length < 2) {
+      if (list[0]) pick(list[0]);
+      return;
+    }
+    setResult(null);
+    setError(null);
+    setZipError(false);
+    setOverflow(Math.max(0, list.length - MAX_FILES));
+    setQueue(
+      list.slice(0, MAX_FILES).map((f, i) => ({
+        id: `${i}-${f.name}-${f.size}`,
+        file: f,
+        status: f.size > MAX_BYTES ? 'error' : 'pending',
+        rejected: f.size > MAX_BYTES,
+        error: f.size > MAX_BYTES ? t('ctl.doc.errTooLarge') : undefined,
+      }))
+    );
+    setFile(list[0]);
   };
 
   const needsPassword = tool === 'protect-pdf' || tool === 'unlock-pdf';
@@ -109,33 +155,47 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     tool === 'protect-pdf' ? (password.length < 6 ? 'short' : password !== confirm ? 'mismatch' : null) : null;
   const limited = allowPrint !== 'full' || !allowCopy || !allowEdit;
 
+  /** The settings checked before any upload; an error message, or null when they're fine */
+  const settingsProblem = () => {
+    if (needsPassword && passwordProblem) return passwordProblem === 'mismatch' ? t('ctl.doc.passwordMismatch') : t('ctl.doc.passwordHint');
+    // The open password would also lift the limits if it were the owner password
+    if (tool === 'protect-pdf' && limited && owner && owner === password) return t('ctl.doc.ownerSame');
+    return null;
+  };
+
+  /** What the server is asked to do: the same for one file or for each file of a batch */
+  const jobArgs = () => {
+    const params = {
+      ...cfg.params,
+      ...(tool === 'compress-pdf' ? { preset } : {}),
+      ...(tool === 'ocr-pdf' ? { lang } : {}),
+      ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
+      ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
+    };
+    const fields: Record<string, string> = needsPassword ? { password } : {};
+    if (tool === 'protect-pdf') {
+      Object.assign(fields, { print: allowPrint, copy: allowCopy ? 'y' : 'n', edit: allowEdit ? 'y' : 'n' });
+      if (limited && owner) fields.owner = owner;
+    }
+    return { params, fields };
+  };
+
+  const errorText = (code: DocErrorCode) =>
+    // Tried without a password, but the PDF needs one to open
+    t(code === 'wrong_password' && tool === 'unlock-pdf' && !password ? 'ctl.doc.errNeedsPassword' : ERROR_TEXT[code]);
+
   const run = async () => {
     if (!file || progress) return;
-    if (needsPassword && passwordProblem) {
-      setError(passwordProblem === 'mismatch' ? t('ctl.doc.passwordMismatch') : t('ctl.doc.passwordHint'));
-      return;
-    }
-    // The open password would also lift the limits if it were the owner password
-    if (tool === 'protect-pdf' && limited && owner && owner === password) {
-      setError(t('ctl.doc.ownerSame'));
+    const problem = settingsProblem();
+    if (problem) {
+      setError(problem);
       return;
     }
     setError(null);
     setResult(null);
     setProgress({ stage: 'uploading', fraction: 0 });
     try {
-      const params = {
-        ...cfg.params,
-        ...(tool === 'compress-pdf' ? { preset } : {}),
-        ...(tool === 'ocr-pdf' ? { lang } : {}),
-        ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
-        ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
-      };
-      const fields: Record<string, string> = needsPassword ? { password } : {};
-      if (tool === 'protect-pdf') {
-        Object.assign(fields, { print: allowPrint, copy: allowCopy ? 'y' : 'n', edit: allowEdit ? 'y' : 'n' });
-        if (limited && owner) fields.owner = owner;
-      }
+      const { params, fields } = jobArgs();
       const r = await runDocJob(cfg.endpoint, file, params, fields, setProgress);
       const name = cfg.output(file.name.replace(/\.[^.]+$/, ''));
       setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial });
@@ -143,10 +203,69 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     } catch (err) {
       const code = err instanceof DocError ? err.code : 'failed';
       if (code === 'offline') setOnline(false);
-      // Tried without a password, but the PDF needs one to open
-      setError(t(code === 'wrong_password' && tool === 'unlock-pdf' && !password ? 'ctl.doc.errNeedsPassword' : ERROR_TEXT[code]));
+      setError(errorText(code));
     } finally {
       setProgress(null);
+    }
+  };
+
+  // ---- Several files: one server job after another, then one ZIP ----
+  const runBatch = async () => {
+    if (!queue || batchRunning) return;
+    const problem = settingsProblem();
+    if (problem) {
+      setError(problem);
+      return;
+    }
+    setError(null);
+    setZipError(false);
+    setBatchRunning(true);
+    cancelRef.current = false;
+    const { params, fields } = jobArgs();
+    const update = (id: string, patch: Partial<QueueItem>) => setQueue((q) => q && q.map((x) => (x.id === id ? { ...x, ...patch } : x)));
+    for (const item of queue) {
+      if (cancelRef.current) break;
+      if (item.rejected || item.status === 'done') continue;
+      update(item.id, { status: 'working', error: undefined, progress: { stage: 'uploading', fraction: 0 } });
+      for (let attempt = 1; ; attempt++) {
+        try {
+          const r = await runDocJob(cfg.endpoint, item.file, params, fields, (p) => update(item.id, { progress: p }));
+          const name = cfg.output(item.file.name.replace(/\.[^.]+$/, ''));
+          update(item.id, { status: 'done', progress: undefined, out: { blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial } });
+          break;
+        } catch (err) {
+          const code = err instanceof DocError ? err.code : 'failed';
+          // The site takes 20 server jobs a minute from one visitor, and the server may be full for a moment: wait, then go on
+          if ((code === 'rate_limited' || code === 'busy') && attempt < 4 && !cancelRef.current) {
+            update(item.id, { status: 'waiting', progress: undefined });
+            await new Promise((r) => setTimeout(r, code === 'rate_limited' ? 30000 : 10000));
+            update(item.id, { status: 'working', progress: { stage: 'uploading', fraction: 0 } });
+            continue;
+          }
+          if (code === 'offline') setOnline(false);
+          update(item.id, { status: 'error', progress: undefined, error: errorText(code) });
+          break;
+        }
+      }
+    }
+    setBatchRunning(false);
+  };
+
+  const downloadZip = async () => {
+    const done = (queue || []).filter((q) => q.out);
+    if (!done.length) return;
+    setZipping(true);
+    setZipError(false);
+    try {
+      const JSZip = (await import('jszip')).default;
+      const zip = new JSZip();
+      const unique = createUniqueNamer();
+      for (const q of done) zip.file(unique(q.out!.name), q.out!.blob);
+      downloadBlob(await zip.generateAsync({ type: 'blob' }), `${tool}.zip`);
+    } catch {
+      setZipError(true);
+    } finally {
+      setZipping(false);
     }
   };
 
@@ -171,9 +290,10 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       ref={inputRef}
       type="file"
       accept={cfg.accept}
+      multiple
       className="hidden"
       onChange={(e) => {
-        if (e.target.files?.[0]) pick(e.target.files[0]);
+        if (e.target.files?.length) pickMany(Array.from(e.target.files));
         e.target.value = '';
       }}
     />
@@ -185,7 +305,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
         {fileInput}
         {notice}
         {offlineNote}
-        <ProofDropZone onFiles={(files) => pick(files[0])} accept={cfg.accept} title={t(cfg.dropTitle)} buttonLabel={t('ctl.doc.choose')} hint={t(cfg.hint)} />
+        <ProofDropZone onFiles={pickMany} multiple accept={cfg.accept} title={t(cfg.dropTitle)} buttonLabel={t('ctl.doc.choose')} hint={`${t(cfg.hint)} ${t('ctl.doc.dropMany', { max: MAX_FILES })}`} />
         {error && (
           <p role="alert" className="text-[15px] text-accent-red">
             {error}
@@ -338,6 +458,125 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       {!['compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf'].includes(tool) && <p className="text-[14px] text-graphite leading-relaxed">{t(cfg.hint)}</p>}
     </>
   );
+
+  if (queue) {
+    const done = queue.filter((q) => q.status === 'done').length;
+    const usable = queue.filter((q) => !q.rejected).length;
+    const todo = queue.filter((q) => !q.rejected && q.status !== 'done').length;
+    const allDone = done > 0 && todo === 0;
+    const rowStatus = (q: QueueItem) => {
+      if (q.status === 'working')
+        return q.progress?.stage === 'uploading' ? t('ctl.doc.uploading', { percent: Math.round(q.progress.fraction * 100) }) : t('ctl.doc.processing');
+      if (q.status === 'waiting') return t('ctl.doc.waitLimit');
+      if (q.status === 'done') return t('ctl.bulk.statusDone');
+      if (q.status === 'error') return q.rejected ? t('ctl.bulk.statusRejected') : t('ctl.bulk.statusError');
+      return t('ctl.bulk.statusPending');
+    };
+    const zipLabel = t('ctl.bulk.downloadZip', { count: done });
+    return (
+      <>
+        {fileInput}
+        <PdfToolLayout
+          fileLabel={`${t('ctl.bulk.fileCount', { count: queue.length })} · ${formatBytes(queue.reduce((n, q) => n + q.file.size, 0))}`}
+          onReplace={() => inputRef.current?.click()}
+          replaceLabel={t('ctl.doc.replace')}
+          panel={panel}
+          actionLabel={allDone ? zipLabel : `${t(cfg.action)} (${todo})`}
+          actionIcon={allDone ? Archive : undefined}
+          onAction={allDone ? downloadZip : runBatch}
+          actionDisabled={online === false || (!allDone && todo === 0)}
+          busy={batchRunning || zipping}
+          busyLabel={zipping ? t('ctl.bulk.zipping') : t('ctl.doc.processing')}
+          status={t('ctl.bulk.progress', { done, total: usable })}
+          error={error ?? (zipError ? t('ctl.bulk.errZip') : null)}
+        >
+          {notice}
+          {offlineNote}
+          <ul className="border border-ink bg-paper-bright rounded-xl divide-y divide-pencil-soft max-h-[520px] overflow-y-auto">
+            {queue.map((q) => (
+              <li key={q.id} className="flex items-start gap-3 px-4 py-2.5 text-[14px]">
+                {q.status === 'done' ? (
+                  <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-accent-green" aria-hidden="true" />
+                ) : q.status === 'working' ? (
+                  <Loader2 className="w-4 h-4 shrink-0 mt-0.5 text-ink animate-spin" aria-hidden="true" />
+                ) : q.status === 'waiting' ? (
+                  <Clock className="w-4 h-4 shrink-0 mt-0.5 text-ink" aria-hidden="true" />
+                ) : q.status === 'error' ? (
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-accent-red" aria-hidden="true" />
+                ) : (
+                  <Circle className="w-4 h-4 shrink-0 mt-0.5 text-graphite" aria-hidden="true" />
+                )}
+                <FileText className="w-5 h-5 shrink-0 text-ink" aria-hidden="true" />
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-ink font-medium" title={q.file.name}>{q.out?.name ?? q.file.name}</p>
+                  <p className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 text-[13px] text-graphite">
+                    <span className={`font-semibold ${q.status === 'done' ? 'text-accent-green' : q.status === 'error' ? 'text-accent-red' : 'text-ink'}`}>{rowStatus(q)}</span>
+                    <span data-measure>
+                      {formatBytes(q.file.size)}
+                      {q.out && (
+                        <>
+                          {' → '}
+                          <span className="text-ink font-semibold">{formatBytes(q.out.blob.size)}</span>
+                        </>
+                      )}
+                    </span>
+                  </p>
+                  {q.out?.partial && <p className="text-[13px] text-ink">{t('ctl.doc.repairPartial')}</p>}
+                  {q.status === 'error' && q.error && <p className="text-[13px] text-accent-red">{q.error}</p>}
+                </div>
+                <div className="flex items-center gap-1 shrink-0">
+                  {q.out && (
+                    <button
+                      type="button"
+                      onClick={() => downloadBlob(q.out!.blob, q.out!.name)}
+                      className="w-9 h-9 inline-flex items-center justify-center text-ink hover:bg-paper-stock"
+                      aria-label={t('ctl.bulk.downloadItem', { name: q.out.name })}
+                      title={t('ctl.bulk.downloadItem', { name: q.out.name })}
+                    >
+                      <Download className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  )}
+                  {!batchRunning && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const left = queue.filter((x) => x.id !== q.id);
+                        if (left.length === 1) pick(left[0].file);
+                        else setQueue(left);
+                      }}
+                      className="w-9 h-9 inline-flex items-center justify-center text-graphite hover:text-ink hover:bg-paper-stock"
+                      aria-label={t('ctl.bulk.removeItem', { name: q.file.name })}
+                      title={t('ctl.bulk.removeItem', { name: q.file.name })}
+                    >
+                      <X className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+          {overflow > 0 && (
+            <p role="alert" className="text-[14px] text-accent-yellow">
+              {t('ctl.doc.batchLimit', { max: MAX_FILES, count: overflow })}
+            </p>
+          )}
+          <div className="flex flex-wrap gap-2">
+            {batchRunning && (
+              <button type="button" onClick={() => (cancelRef.current = true)} className="btn-rule">
+                {t('ctl.bulk.cancel')}
+              </button>
+            )}
+            {!batchRunning && !allDone && done > 0 && (
+              <button type="button" onClick={downloadZip} disabled={zipping} className="btn-rule disabled:opacity-60">
+                <Archive className="w-4 h-4" aria-hidden="true" />
+                <span>{zipLabel}</span>
+              </button>
+            )}
+          </div>
+        </PdfToolLayout>
+      </>
+    );
+  }
 
   const saved = result?.before && result.after !== undefined ? result.before - result.after : 0;
   return (
