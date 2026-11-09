@@ -419,6 +419,12 @@ export const strings = {
   // Add text
   'ctl.text.text': "Texte",
   'ctl.text.placeholder': "Saisissez votre texte",
+  'ctl.text.layers': "Textes sur l’image",
+  'ctl.text.addText': "Ajouter un texte",
+  'ctl.text.removeText': "Supprimer ce texte",
+  'ctl.text.newText': "Nouveau texte",
+  'ctl.text.rotation': "Rotation",
+  'ctl.text.rotationReset': "Redresser",
   'ctl.text.textHint': "Appuyez sur Entrée pour aller à la ligne.",
   'ctl.text.font': "Police",
   'ctl.text.position': "Position",

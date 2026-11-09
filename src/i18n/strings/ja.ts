@@ -143,6 +143,12 @@ export const strings = {
   // Add text
   'ctl.text.text': 'テキスト',
   'ctl.text.placeholder': 'テキストを入力',
+  'ctl.text.layers': "画像上のテキスト",
+  'ctl.text.addText': "テキストを追加",
+  'ctl.text.removeText': "このテキストを削除",
+  'ctl.text.newText': "新しいテキスト",
+  'ctl.text.rotation': "回転",
+  'ctl.text.rotationReset': "まっすぐに戻す",
   'ctl.text.textHint': 'Enterキーで改行します。',
   'ctl.text.font': 'フォント',
   'ctl.text.position': '位置',

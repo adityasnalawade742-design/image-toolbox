@@ -1459,7 +1459,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Ajouter du texte",
     tagline: "Écrivez une légende ou un titre sur une photo, avec la police, la taille, la couleur, le contour et le fond de votre choix.",
     intro:
-      "Ajouter du texte sur une image place une ou plusieurs lignes de texte sur une photo. Faites glisser le texte où vous voulez sur l’aperçu, ou placez-le en haut, au centre ou en bas, puis personnalisez-le : sept polices, gras ou italique, alignement, opacité, ombre portée, contour et fond coloré. Le texte est dessiné sur l’image en pleine résolution au moment du téléchargement.",
+      "Ajouter du texte sur une image place une ou plusieurs lignes de texte sur une photo. Faites glisser le texte où vous voulez sur l’aperçu, ou placez-le en haut, au centre ou en bas, puis personnalisez-le : sept polices, gras ou italique, alignement, opacité, ombre portée, contour et fond coloré. Le texte est dessiné sur l’image en pleine résolution au moment du téléchargement. Vous pouvez ajouter jusqu’à 10 textes distincts, chacun dans son propre style, et incliner n’importe lequel.",
     seoTitle: "Ajouter du texte sur une image en ligne – Gratuit",
     seoDescription:
       "Ajoutez du texte sur une image gratuitement : placez la légende où vous voulez, réglez police, taille, couleur, contour, ombre et fond, puis enregistrez.",
@@ -1517,7 +1517,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Puis-je ajouter plusieurs blocs de texte ?",
         answer:
-          "L’outil ajoute un seul bloc de texte, qui peut contenir plusieurs lignes. Pour ajouter du texte à un deuxième endroit, téléchargez le résultat, rouvrez-le et ajoutez le texte suivant.",
+          "Oui. Cliquez sur Ajouter un texte pour chaque nouveau texte, jusqu’à 10. Chacun a sa police, sa taille, sa couleur, sa position et sa rotation ; choisissez-le dans la liste ou faites-le glisser sur l’aperçu pour le modifier.",
       },
       {
         question: "Quelles polices puis-je utiliser ?",

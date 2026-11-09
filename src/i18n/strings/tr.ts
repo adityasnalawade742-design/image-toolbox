@@ -142,6 +142,12 @@ export const strings = {
   // Add text
   'ctl.text.text': 'Metin',
   'ctl.text.placeholder': 'Metninizi yazın',
+  'ctl.text.layers': "Görseldeki metinler",
+  'ctl.text.addText': "Metin ekle",
+  'ctl.text.removeText': "Bu metni kaldır",
+  'ctl.text.newText': "Yeni metin",
+  'ctl.text.rotation': "Döndürme",
+  'ctl.text.rotationReset': "Düzelt",
   'ctl.text.textHint': 'Yeni satır için Enter’a basın.',
   'ctl.text.font': 'Yazı tipi',
   'ctl.text.position': 'Konum',

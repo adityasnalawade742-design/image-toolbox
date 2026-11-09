@@ -1,12 +1,16 @@
-import { useId, useState } from 'react';
-import { Bold, Italic, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
+import { useId } from 'react';
+import { Bold, Italic, AlignLeft, AlignCenter, AlignRight, Plus, Trash2, RotateCcw } from 'lucide-react';
 import type { TextOverlayOptions } from '../../lib/canvas/engine';
 import { useT } from '../shared/I18nContext';
 
 interface Props {
-  options: TextOverlayOptions;
-  onChange: (opts: TextOverlayOptions) => void;
+  layers: TextOverlayOptions[];
+  active: number;
+  onSelect: (index: number) => void;
+  onChange: (layers: TextOverlayOptions[]) => void;
 }
+
+const MAX_TEXTS = 10;
 
 const segButton = (selected: boolean) =>
   `min-h-[40px] min-w-[44px] px-2 flex items-center justify-center transition-colors ${
@@ -16,11 +20,28 @@ const segButton = (selected: boolean) =>
 const fieldClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
 const swatchClass = 'w-10 h-10 shrink-0 p-0.5 border border-ink bg-paper-bright cursor-pointer';
 
-export function TextControls({ options, onChange }: Props) {
+export function TextControls({ layers, active, onSelect, onChange: setLayers }: Props) {
   const t = useT();
   const idBase = useId();
-  const [hasStroke, setHasStroke] = useState(Boolean(options.strokeWidth && options.strokeWidth > 0));
-  const [hasBg, setHasBg] = useState(Boolean(options.backgroundColor));
+  const options = layers[active] ?? layers[0];
+  // Every control below edits the selected text block
+  const onChange = (next: TextOverlayOptions) => setLayers(layers.map((l, i) => (i === active ? next : l)));
+  const hasStroke = Boolean(options.strokeWidth && options.strokeWidth > 0);
+  const hasBg = Boolean(options.backgroundColor);
+
+  // A new block takes the selected one's style and lands a little lower, so it doesn't sit on top of it
+  const addText = () => {
+    if (layers.length >= MAX_TEXTS) return;
+    const y = Math.min(90, (options.position === 'custom' ? options.customYPercent ?? 50 : 50) + 15);
+    const next: TextOverlayOptions = { ...options, text: t('ctl.text.newText'), position: 'custom', customXPercent: 50, customYPercent: y > 89 ? 20 : y, rotation: 0 };
+    setLayers([...layers, next]);
+    onSelect(layers.length);
+  };
+  const removeText = () => {
+    if (layers.length < 2) return;
+    setLayers(layers.filter((_, i) => i !== active));
+    onSelect(Math.max(0, active - 1));
+  };
 
   const fontFamilies = [
     'Inter, sans-serif',
@@ -44,6 +65,36 @@ export function TextControls({ options, onChange }: Props) {
 
   return (
     <div className="space-y-5">
+      {/* The text blocks on the image: pick one to edit, add another, or remove the selected one */}
+      <div className="space-y-2">
+        <span className="slug block" id={id('layers')}>{t('ctl.text.layers')}</span>
+        <ul className="border border-ink rounded-md divide-y divide-pencil-soft overflow-hidden" aria-labelledby={id('layers')}>
+          {layers.map((layer, i) => (
+            <li key={i}>
+              <button
+                type="button"
+                aria-pressed={i === active}
+                onClick={() => onSelect(i)}
+                className={`w-full min-h-[40px] px-3 flex items-center gap-2.5 text-left text-[15px] transition-colors ${i === active ? 'seg-on' : 'seg-off'}`}
+              >
+                <span className="text-[13px] text-graphite w-4 shrink-0" data-measure>{i + 1}</span>
+                <span className="truncate">{layer.text.trim() || t('ctl.text.placeholder')}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="grid grid-cols-2 gap-2">
+          <button type="button" onClick={addText} disabled={layers.length >= MAX_TEXTS} className="btn-rule disabled:opacity-40 disabled:cursor-not-allowed">
+            <Plus className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.text.addText')}</span>
+          </button>
+          <button type="button" onClick={removeText} disabled={layers.length < 2} className="btn-rule disabled:opacity-40 disabled:cursor-not-allowed">
+            <Trash2 className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.text.removeText')}</span>
+          </button>
+        </div>
+      </div>
+
       {/* Text */}
       <div className="space-y-1.5">
         <label htmlFor={id('text')} className="slug block">
@@ -232,6 +283,38 @@ export function TextControls({ options, onChange }: Props) {
             className="w-full"
           />
         </div>
+
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between gap-2 text-[15px]">
+            <label htmlFor={id('rotation')} className="text-ink">
+              {t('ctl.text.rotation')}
+            </label>
+            <span className="flex items-center gap-2">
+              <span className="font-semibold text-ink" data-measure>
+                {options.rotation ?? 0}°
+              </span>
+              <button
+                type="button"
+                onClick={() => onChange({ ...options, rotation: 0 })}
+                disabled={!options.rotation}
+                aria-label={t('ctl.text.rotationReset')}
+                title={t('ctl.text.rotationReset')}
+                className="w-9 h-9 inline-flex items-center justify-center rounded-md text-ink hover:bg-paper-stock disabled:opacity-30"
+              >
+                <RotateCcw className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </span>
+          </div>
+          <input
+            id={id('rotation')}
+            type="range"
+            min="-180"
+            max="180"
+            value={options.rotation ?? 0}
+            onChange={(e) => onChange({ ...options, rotation: parseInt(e.target.value) || 0 })}
+            className="w-full"
+          />
+        </div>
       </div>
 
       {/* Color and shadow */}
@@ -271,7 +354,6 @@ export function TextControls({ options, onChange }: Props) {
               type="checkbox"
               checked={hasStroke}
               onChange={(e) => {
-                setHasStroke(e.target.checked);
                 onChange({
                   ...options,
                   strokeWidth: e.target.checked ? (options.strokeWidth || 4) : 0,
@@ -325,7 +407,6 @@ export function TextControls({ options, onChange }: Props) {
               type="checkbox"
               checked={hasBg}
               onChange={(e) => {
-                setHasBg(e.target.checked);
                 onChange({
                   ...options,
                   backgroundColor: e.target.checked ? (options.backgroundColor || '#000000') : undefined,

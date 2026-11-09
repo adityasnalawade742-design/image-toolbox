@@ -1459,7 +1459,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Añadir texto",
     tagline: "Escribe pies de foto o títulos sobre una foto con la fuente, el tamaño, el color, el contorno y el fondo que elijas.",
     intro:
-      "Añadir texto a una imagen coloca una o varias líneas de texto sobre una foto. Arrastra el texto a cualquier punto de la vista previa, o colócalo arriba, en el centro o abajo, y dale estilo con siete fuentes, negrita o cursiva, alineación, opacidad, sombra, contorno y un fondo de color. El texto se dibuja sobre la imagen a resolución completa al descargarla.",
+      "Añadir texto a una imagen coloca una o varias líneas de texto sobre una foto. Arrastra el texto a cualquier punto de la vista previa, o colócalo arriba, en el centro o abajo, y dale estilo con siete fuentes, negrita o cursiva, alineación, opacidad, sombra, contorno y un fondo de color. El texto se dibuja sobre la imagen a resolución completa al descargarla. Puedes añadir hasta 10 textos separados, cada uno con su propio estilo, y girar cualquiera de ellos.",
     seoTitle: "Añadir texto a una imagen online gratis",
     seoDescription:
       "Añadir texto a una imagen online gratis. Arrastra el texto, elige fuente, tamaño, color, contorno, sombra y fondo, y guarda en JPG, PNG, WebP o AVIF.",
@@ -1517,7 +1517,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Puedo añadir más de un bloque de texto?",
         answer:
-          "La herramienta añade un bloque de texto, que puede tener varias líneas. Para añadir texto en otro sitio, descarga el resultado, vuelve a abrirlo y añade el siguiente texto.",
+          "Sí. Pulsa Añadir texto para cada texto nuevo, hasta 10. Cada uno tiene su propia fuente, tamaño, color, posición y rotación; elígelo en la lista o arrástralo en la vista previa para editarlo.",
       },
       {
         question: "¿Qué fuentes puedo usar?",

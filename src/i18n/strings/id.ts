@@ -142,6 +142,12 @@ export const strings = {
   // Add text
   'ctl.text.text': 'Teks',
   'ctl.text.placeholder': 'Ketik teks Anda',
+  'ctl.text.layers': "Teks di gambar",
+  'ctl.text.addText': "Tambah teks",
+  'ctl.text.removeText': "Hapus teks ini",
+  'ctl.text.newText': "Teks baru",
+  'ctl.text.rotation': "Rotasi",
+  'ctl.text.rotationReset': "Luruskan",
   'ctl.text.textHint': 'Tekan Enter untuk membuat baris baru.',
   'ctl.text.font': 'Font',
   'ctl.text.position': 'Posisi',

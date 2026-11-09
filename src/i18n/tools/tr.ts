@@ -1459,7 +1459,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Yazı Ekle",
     tagline: "Bir fotoğrafa istediğiniz yazı tipi, boyut, renk, dış çizgi ve arka plan kutusuyla başlık veya alt yazı yazın.",
     intro:
-      "Resme Yazı Ekleme, bir resmin üzerine bir veya daha fazla satır metin yerleştirir. Metni önizlemede istediğiniz yere sürükleyin veya üste, ortaya ya da alta yerleştirin; yedi yazı tipi, kalın veya italik, hizalama, opaklık, gölge, dış çizgi ve renkli bir arka plan kutusuyla biçimlendirin. Metin, indirdiğinizde tam çözünürlüklü resmin üzerine çizilir.",
+      "Resme Yazı Ekleme, bir resmin üzerine bir veya daha fazla satır metin yerleştirir. Metni önizlemede istediğiniz yere sürükleyin veya üste, ortaya ya da alta yerleştirin; yedi yazı tipi, kalın veya italik, hizalama, opaklık, gölge, dış çizgi ve renkli bir arka plan kutusuyla biçimlendirin. Metin, indirdiğinizde tam çözünürlüklü resmin üzerine çizilir. Her biri kendi stilinde en fazla 10 ayrı metin ekleyebilir ve herhangi birini açılı döndürebilirsiniz.",
     seoTitle: "Resme Yazı Ekleme – Ücretsiz ve Online",
     seoDescription:
       "Resme yazı ekleme, ücretsiz ve online. Yazıyı istediğiniz yere sürükleyin; yazı tipi, boyut, renk, dış çizgi, gölge ve arka plan kutusu seçip indirin.",
@@ -1517,7 +1517,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Birden fazla metin bloğu ekleyebilir miyim?",
         answer:
-          "Araç, birkaç satırdan oluşabilen tek bir metin bloğu ekler. İkinci bir yere metin eklemek için sonucu indirin, yeniden açın ve sonraki metni ekleyin.",
+          "Evet. Her yeni metin için Metin ekle’ye tıklayın, en fazla 10 metin. Her birinin kendi yazı tipi, boyutu, rengi, konumu ve dönüşü vardır; düzenlemek için listeden seçin veya önizlemede sürükleyin.",
       },
       {
         question: "Hangi yazı tiplerini kullanabilirim?",

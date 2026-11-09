@@ -142,6 +142,12 @@ export const strings = {
   // Add text
   'ctl.text.text': 'Testo',
   'ctl.text.placeholder': 'Scrivi il tuo testo',
+  'ctl.text.layers': "Testi sull’immagine",
+  'ctl.text.addText': "Aggiungi testo",
+  'ctl.text.removeText': "Rimuovi questo testo",
+  'ctl.text.newText': "Nuovo testo",
+  'ctl.text.rotation': "Rotazione",
+  'ctl.text.rotationReset': "Raddrizza",
   'ctl.text.textHint': 'Premi Invio per andare a capo.',
   'ctl.text.font': 'Carattere',
   'ctl.text.position': 'Posizione',

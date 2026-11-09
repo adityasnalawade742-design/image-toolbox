@@ -1459,7 +1459,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Aggiungi testo",
     tagline: "Scrivi didascalie o titoli su una foto scegliendo carattere, dimensione, colore, contorno e riquadro di sfondo.",
     intro:
-      "Aggiungi testo all’immagine inserisce una o più righe di testo su un’immagine. Trascina il testo in qualsiasi punto dell’anteprima, o posizionalo in alto, al centro o in basso, e personalizzalo con sette caratteri, grassetto o corsivo, allineamento, opacità, ombra, contorno e un riquadro di sfondo colorato. Il testo viene disegnato sull’immagine a piena risoluzione quando la scarichi.",
+      "Aggiungi testo all’immagine inserisce una o più righe di testo su un’immagine. Trascina il testo in qualsiasi punto dell’anteprima, o posizionalo in alto, al centro o in basso, e personalizzalo con sette caratteri, grassetto o corsivo, allineamento, opacità, ombra, contorno e un riquadro di sfondo colorato. Il testo viene disegnato sull’immagine a piena risoluzione quando la scarichi. Puoi aggiungere fino a 10 testi separati, ognuno con il suo stile, e ruotarne uno qualsiasi.",
     seoTitle: "Aggiungere testo a foto online – Scritte gratis",
     seoDescription:
       "Aggiungi testo alle immagini gratis. Trascina le scritte dove vuoi, scegli carattere, colore, contorno, ombra e riquadro, poi salva in JPG, PNG, WebP o AVIF.",
@@ -1517,7 +1517,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso aggiungere più di un blocco di testo?",
         answer:
-          "Lo strumento aggiunge un blocco di testo, che può avere più righe. Per aggiungere testo in un secondo punto, scarica il risultato, riaprilo e aggiungi il testo successivo.",
+          "Sì. Fai clic su Aggiungi testo per ogni nuovo testo, fino a 10. Ognuno ha carattere, dimensione, colore, posizione e rotazione propri; sceglilo nell’elenco o trascinalo nell’anteprima per modificarlo.",
       },
       {
         question: "Quali caratteri posso usare?",
