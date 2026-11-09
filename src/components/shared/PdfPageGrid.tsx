@@ -24,10 +24,13 @@ interface Props {
   onChange?: (pages: GridPage[]) => void;
   /** When given, each page opens large in a viewer (in this order and turn) */
   doc?: PDFDocumentProxy | null;
+  /** Pages from several files (Merge PDF): each page's own thumbnail and name, instead of thumbs[index] and "Page n" */
+  thumbOf?: (page: GridPage) => string | undefined;
+  labelOf?: (page: GridPage) => string;
 }
 
 /** Page thumbnails with keyboard-operable controls; dragging is only a shortcut for the move buttons */
-export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
+export function PdfPageGrid({ pages, thumbs, mode, onChange, doc, thumbOf, labelOf }: Props) {
   const t = useT();
   const [dragKey, setDragKey] = useState<string | null>(null);
   const [viewAt, setViewAt] = useState<number | null>(null);
@@ -49,7 +52,10 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
     <>
       <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
         {pages.map((p, i) => {
-          const label = t('ctl.pdf.pageN', { n: p.index + 1 });
+          const label = labelOf ? labelOf(p) : t('ctl.pdf.pageN', { n: p.index + 1 });
+          const src = thumbOf ? thumbOf(p) : thumbs[p.index];
+          // With pages from several files, "page 1" alone is ambiguous: button names also carry the page's own label
+          const who = labelOf ? ` (${label})` : '';
           return (
             <li
               key={p.key}
@@ -67,9 +73,9 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
               } ${mode === 'organize' ? 'cursor-grab' : ''}`}
             >
               {(() => {
-                const thumb = thumbs[p.index] ? (
+                const thumb = src ? (
                   <img
-                    src={thumbs[p.index]}
+                    src={src}
                     // The visible page label below names it already
                     alt=""
                     draggable={false}
@@ -103,18 +109,18 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
                     {label}
                   </p>
                   <div className="flex m-2 seg-group border border-ink">
-                    <button type="button" className={iconBtn} disabled={i === 0} onClick={() => move(i, i - 1)} aria-label={t('ctl.pdf.moveEarlier', { n: p.index + 1 })} title={t('ctl.pdf.moveEarlier', { n: p.index + 1 })}>
+                    <button type="button" className={iconBtn} disabled={i === 0} onClick={() => move(i, i - 1)} aria-label={t('ctl.pdf.moveEarlier', { n: p.index + 1 }) + who} title={t('ctl.pdf.moveEarlier', { n: p.index + 1 }) + who}>
                       <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                     </button>
-                    <button type="button" className={iconBtn} disabled={i === pages.length - 1} onClick={() => move(i, i + 1)} aria-label={t('ctl.pdf.moveLater', { n: p.index + 1 })} title={t('ctl.pdf.moveLater', { n: p.index + 1 })}>
+                    <button type="button" className={iconBtn} disabled={i === pages.length - 1} onClick={() => move(i, i + 1)} aria-label={t('ctl.pdf.moveLater', { n: p.index + 1 }) + who} title={t('ctl.pdf.moveLater', { n: p.index + 1 }) + who}>
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>
                     <button
                       type="button"
                       className={iconBtn}
                       onClick={() => update(pages.map((x) => (x.key === p.key ? { ...x, rotate: (x.rotate + 90) % 360 } : x)), t('ctl.pdf.pageRotated', { n: p.index + 1, deg: (p.rotate + 90) % 360 }))}
-                      aria-label={t('ctl.pdf.rotatePage', { n: p.index + 1 })}
-                      title={t('ctl.pdf.rotatePage', { n: p.index + 1 })}
+                      aria-label={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
+                      title={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
                     >
                       <RotateCw className="w-4 h-4" aria-hidden="true" />
                     </button>
@@ -123,8 +129,8 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc }: Props) {
                       className={iconBtn}
                       disabled={pages.length === 1}
                       onClick={() => update(pages.filter((x) => x.key !== p.key), t('ctl.pdf.pageDeleted', { n: p.index + 1 }))}
-                      aria-label={t('ctl.pdf.deletePage', { n: p.index + 1 })}
-                      title={t('ctl.pdf.deletePage', { n: p.index + 1 })}
+                      aria-label={t('ctl.pdf.deletePage', { n: p.index + 1 }) + who}
+                      title={t('ctl.pdf.deletePage', { n: p.index + 1 }) + who}
                     >
                       <Trash2 className="w-4 h-4" aria-hidden="true" />
                     </button>

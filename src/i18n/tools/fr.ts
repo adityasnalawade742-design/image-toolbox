@@ -4185,7 +4185,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Fusionner PDF",
     tagline: "Combinez plusieurs fichiers PDF en un seul, dans l’ordre de votre choix. Les fichiers sont fusionnés sur votre appareil.",
     intro:
-      "Fusionner PDF réunit deux fichiers PDF ou plus en un seul document. Ajoutez les fichiers, mettez-les dans l’ordre avec les boutons de déplacement, vérifiez la première page de chacun et téléchargez un seul PDF contenant toutes les pages à la suite. C’est la façon rapide d’envoyer un rapport avec ses annexes, plusieurs pages numérisées ou une série de factures en un seul fichier. La fusion se fait dans votre navigateur, vos documents ne sont donc jamais envoyés sur un serveur.",
+      "Fusionner PDF réunit deux fichiers PDF ou plus en un seul document. Ajoutez les fichiers, mettez-les dans l’ordre avec les boutons de déplacement, vérifiez la première page de chacun et téléchargez un seul PDF contenant toutes les pages à la suite. C’est la façon rapide d’envoyer un rapport avec ses annexes, plusieurs pages numérisées ou une série de factures en un seul fichier. La fusion se fait dans votre navigateur, vos documents ne sont donc jamais envoyés sur un serveur. Passez en mode Pages pour voir toutes les pages de tous les fichiers dans une grille, puis déplacer, faire pivoter ou supprimer des pages avant la fusion.",
     seoTitle: "Fusionner des PDF en ligne – gratuit, sans envoi",
     seoDescription:
       "Fusionner PDF gratuitement : combinez plusieurs fichiers PDF en un seul dans votre navigateur, dans l’ordre voulu. Privé, sans envoi, sans filigrane.",
@@ -4241,7 +4241,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Les liens et les signets fonctionnent-ils encore ?",
         answer:
-          "Les liens présents sur les pages sont conservés. La liste des signets (le plan affiché dans le panneau latéral d’un lecteur PDF) n’est pas copiée dans le fichier fusionné.",
+          "Oui. Les liens des pages et la liste des signets de chaque fichier (le plan dans le panneau latéral du lecteur PDF) sont conservés et pointent vers le fichier fusionné. Si vous retirez une page, ses liens et signets partent avec elle.",
       },
       {
         question: "La fusion réduit-elle la qualité ?",

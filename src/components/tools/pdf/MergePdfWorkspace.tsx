@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { ImageOrderList, type OrderItem } from '../../shared/ImageOrderList';
-import { PdfToolLayout } from '../../shared/PdfToolLayout';
+import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
+import { PdfPageGrid, type GridPage } from '../../shared/PdfPageGrid';
 import { THUMB_DPI } from '../../shared/usePdfDocument';
 import { useT } from '../../shared/I18nContext';
 import { openPdf, renderPage } from '../../../lib/pdf/pdfToImages';
-import { mergePdfs } from '../../../lib/pdf/pageOps';
+import { mergePages, mergePdfs } from '../../../lib/pdf/pageOps';
 import { PDF_ACCEPT, pdfName, savePdf, useEditError } from './common';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { MediaViewer } from '../../shared/MediaViewer';
@@ -13,6 +14,13 @@ import { ViewableThumb } from '../../shared/ViewableThumb';
 import { pdfPageItems } from '../../shared/pdfViewerItems';
 
 type PdfItem = OrderItem & { file: File; pages: number };
+/** A page in page mode: which file (by item id) and which of its pages */
+type MergePage = GridPage & { file: string };
+
+// Page mode draws a thumbnail of every page; past this the whole-file mode is the practical one
+const MAX_PAGE_MODE = 300;
+const pagesInFileOrder = (items: PdfItem[]): MergePage[] =>
+  items.flatMap((item) => Array.from({ length: item.pages }, (_, index) => ({ key: `${item.id}|${index}`, file: item.id, index, rotate: 0 })));
 
 export function MergePdfWorkspace() {
   const t = useT();
@@ -39,6 +47,42 @@ export function MergePdfWorkspace() {
   const itemsRef = useRef(items);
   itemsRef.current = items;
   useEffect(() => () => itemsRef.current.forEach((i) => i.url && URL.revokeObjectURL(i.url)), []);
+
+  // Arrange whole files, or every page of every file in one grid
+  const [arrange, setArrange] = useState<'files' | 'pages'>('files');
+  const [pages, setPages] = useState<MergePage[]>([]);
+  const [pageThumbs, setPageThumbs] = useState<Record<string, string[]>>({});
+  const thumbsRef = useRef(pageThumbs);
+  thumbsRef.current = pageThumbs;
+  useEffect(() => () => Object.values(thumbsRef.current).flat().forEach((u) => u && URL.revokeObjectURL(u)), []);
+  // A new file list starts the page order again, in file order
+  const fileKey = items.map((i) => i.id).join(',');
+  useEffect(() => setPages(pagesInFileOrder(items)), [fileKey]);
+  // Page thumbnails, drawn only once page mode is open, file by file
+  useEffect(() => {
+    if (arrange !== 'pages') return;
+    let cancelled = false;
+    (async () => {
+      for (const item of items) {
+        if (cancelled) return;
+        if (thumbsRef.current[item.id]) continue;
+        const urls: string[] = [];
+        try {
+          const doc = await openPdf(item.file);
+          for (let n = 1; n <= doc.numPages && !cancelled; n++) {
+            urls.push(URL.createObjectURL(await renderPage(doc, n, THUMB_DPI, 'image/jpeg')));
+            if (n % 4 === 0 || n === doc.numPages) setPageThumbs((prev) => ({ ...prev, [item.id]: [...urls] }));
+          }
+          doc.loadingTask.destroy();
+        } catch {
+          setPageThumbs((prev) => ({ ...prev, [item.id]: urls }));
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [arrange, fileKey]);
 
   const addFiles = async (files: File[]) => {
     const added: PdfItem[] = [];
@@ -87,12 +131,17 @@ export function MergePdfWorkspace() {
   }
 
   const total = items.reduce((n, i) => n + i.pages, 0);
+  const pageMode = arrange === 'pages' && total <= MAX_PAGE_MODE;
   const run = async () => {
     if (items.length < 2) return setError(t('ctl.mergepdf.needTwo'));
     setBusy(true);
     setError(null);
     try {
-      const out = await mergePdfs(await Promise.all(items.map((i) => i.file.arrayBuffer())));
+      const bytes = await Promise.all(items.map((i) => i.file.arrayBuffer()));
+      const fileIndex = new Map(items.map((i, n) => [i.id, n]));
+      const out = pageMode
+        ? await mergePages(bytes, pages.map((p) => ({ file: fileIndex.get(p.file)!, index: p.index, rotate: p.rotate })))
+        : await mergePdfs(bytes);
       const name = pdfName(items[0].name, 'merged');
       savePdf(out, name);
       setStatus(t('ctl.pdf.done', { name }));
@@ -109,7 +158,28 @@ export function MergePdfWorkspace() {
       <PdfToolLayout
         panel={
           <div className="space-y-2">
-            <span className="slug block">{t('ctl.mergepdf.files')}</span>
+            <Segmented
+              label={t('ctl.mergepdf.arrange')}
+              value={arrange}
+              onChange={setArrange}
+              options={[
+                { value: 'files', label: t('ctl.mergepdf.byFiles') },
+                { value: 'pages', label: t('ctl.mergepdf.byPages') },
+              ]}
+            />
+            {arrange === 'pages' && (
+              <div className="space-y-2 pb-2">
+                <p className="text-[14px] text-graphite leading-relaxed">
+                  {total > MAX_PAGE_MODE ? t('ctl.mergepdf.tooMany', { max: MAX_PAGE_MODE }) : t('ctl.mergepdf.pagesHint')}
+                </p>
+                {pageMode && (
+                  <button type="button" className="btn-rule w-full" onClick={() => setPages(pagesInFileOrder(items))}>
+                    {t('ctl.organize.reset')}
+                  </button>
+                )}
+              </div>
+            )}
+            <span className="slug block pt-3 border-t border-pencil">{t('ctl.mergepdf.files')}</span>
             <ImageOrderList
               items={items}
               onChange={(next) => {
@@ -122,7 +192,7 @@ export function MergePdfWorkspace() {
               view={(i) => openView(items[i])}
             />
             <p className="text-[14px] text-graphite" data-measure>
-              {t('ctl.mergepdf.total', { n: total })}
+              {t('ctl.mergepdf.total', { n: pageMode ? pages.length : total })}
             </p>
           </div>
         }
@@ -133,6 +203,19 @@ export function MergePdfWorkspace() {
         status={busy ? t('ctl.pdf.working') : items.length < 2 ? t('ctl.mergepdf.needTwo') : status}
         error={error}
       >
+        {pageMode ? (
+          <PdfPageGrid
+            pages={pages}
+            thumbs={[]}
+            mode="organize"
+            onChange={(next) => setPages(next as MergePage[])}
+            thumbOf={(p) => pageThumbs[(p as MergePage).file]?.[p.index]}
+            labelOf={(p) => {
+              const name = items.find((i) => i.id === (p as MergePage).file)?.name ?? '';
+              return `${name.replace(/\.pdf$/i, '')} · ${t('ctl.pdf.pageN', { n: p.index + 1 })}`;
+            }}
+          />
+        ) : (
         <ol className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
           {items.map((item, i) => (
             <li key={item.id} className="border border-ink bg-paper-bright flex flex-col rounded-lg overflow-hidden">
@@ -148,6 +231,7 @@ export function MergePdfWorkspace() {
             </li>
           ))}
         </ol>
+        )}
         {skippedNote}
         {view && (
           <MediaViewer

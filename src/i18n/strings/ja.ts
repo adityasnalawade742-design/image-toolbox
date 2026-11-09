@@ -780,6 +780,11 @@ export const strings = {
   'ctl.mergepdf.add': 'PDFを追加',
   'ctl.mergepdf.needTwo': '結合するには、PDFをもう1つ以上追加してください。',
   'ctl.mergepdf.total': '合計：{n}ページ',
+  'ctl.mergepdf.arrange': "並べ方",
+  'ctl.mergepdf.byFiles': "ファイル単位",
+  'ctl.mergepdf.byPages': "ページ単位",
+  'ctl.mergepdf.pagesHint': "すべてのファイルの全ページが表示されます。どのページも移動・回転・削除でき、ドラッグで並べ替えられます。ファイルの一覧を変えると、ページの順番は最初に戻ります。",
+  'ctl.mergepdf.tooMany': "ページ単位では最大{max}ページまで表示できます。ファイル単位で結合してください。",
 
   // ===== Split PDF =====
   'ctl.splitpdf.mode': '分割方法',

@@ -4135,7 +4135,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Merge PDF",
     "shortName": "Merge PDF",
     "tagline": "Combine several PDF files into one, in the order you choose. The files are merged on your device.",
-    "intro": "Merge PDF joins two or more PDF files into a single document. Add the files, put them in order with the move buttons, check the first page of each, and download one PDF with every page in sequence. It is the quick way to send a report with its appendices, several scanned pages, or a set of invoices as one file. The merging happens in your browser, so your documents are never uploaded to a server.",
+    "intro": "Merge PDF joins two or more PDF files into a single document. Add the files, put them in order with the move buttons, check the first page of each, and download one PDF with every page in sequence. It is the quick way to send a report with its appendices, several scanned pages, or a set of invoices as one file. The merging happens in your browser, so your documents are never uploaded to a server. Switch to Pages to see every page of every file in one grid, then move, rotate or delete single pages before you merge.",
     "seoTitle": "Merge PDF Files Online – Free, No Upload",
     "seoDescription": "Combine PDF files into one in your browser. Put them in any order and download a single PDF. Free, private, no upload, no watermark.",
     "keywords": [
@@ -4185,7 +4185,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Will links and bookmarks still work?",
-        "answer": "Links on the pages are kept. The bookmark list (the outline in a PDF reader's side panel) is not copied into the merged file."
+        "answer": "Yes. Links on the pages and each file’s bookmark list (the outline in a PDF reader’s side panel) are kept and point into the merged file. If you leave out a page, its links and bookmarks go with it."
       },
       {
         "question": "Does merging reduce quality?",

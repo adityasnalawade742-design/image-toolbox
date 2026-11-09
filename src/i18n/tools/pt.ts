@@ -4194,7 +4194,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Juntar PDF",
     tagline: "Combine vários arquivos PDF em um só, na ordem que você escolher. Os arquivos são juntados no seu dispositivo.",
     intro:
-      "O Juntar PDF une dois ou mais arquivos PDF em um único documento. Adicione os arquivos, coloque-os em ordem com os botões de mover, confira a primeira página de cada um e baixe um único PDF com todas as páginas em sequência. É o jeito rápido de enviar um relatório com os anexos, várias páginas digitalizadas ou um conjunto de notas fiscais como um só arquivo. A junção acontece no seu navegador, então seus documentos nunca são enviados a um servidor.",
+      "O Juntar PDF une dois ou mais arquivos PDF em um único documento. Adicione os arquivos, coloque-os em ordem com os botões de mover, confira a primeira página de cada um e baixe um único PDF com todas as páginas em sequência. É o jeito rápido de enviar um relatório com os anexos, várias páginas digitalizadas ou um conjunto de notas fiscais como um só arquivo. A junção acontece no seu navegador, então seus documentos nunca são enviados a um servidor. Mude para Páginas para ver todas as páginas de todos os arquivos em uma grade e mover, girar ou excluir páginas antes de juntar.",
     seoTitle: "Juntar PDF online – Grátis e sem upload",
     seoDescription:
       "Juntar PDF no navegador: combine vários arquivos em um só, na ordem que quiser, e baixe um único PDF. Grátis, privado, sem upload e sem marca d’água.",
@@ -4248,7 +4248,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Os links e os marcadores continuam funcionando?",
         answer:
-          "Os links nas páginas são mantidos. A lista de marcadores (o sumário no painel lateral do leitor de PDF) não é copiada para o arquivo combinado.",
+          "Sim. Os links das páginas e a lista de marcadores de cada arquivo (o sumário no painel lateral do leitor de PDF) são mantidos e apontam para o arquivo unido. Se você tirar uma página, os links e marcadores dela saem junto.",
       },
       {
         question: "Juntar reduz a qualidade?",

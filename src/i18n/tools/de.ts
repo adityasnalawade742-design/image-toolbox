@@ -4185,7 +4185,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF zusammenfügen",
     tagline: "Füge mehrere PDF-Dateien in der gewünschten Reihenfolge zu einer zusammen. Die Dateien werden auf deinem Gerät zusammengefügt.",
     intro:
-      "PDF zusammenfügen verbindet zwei oder mehr PDF-Dateien zu einem einzigen Dokument. Füge die Dateien hinzu, bring sie mit den Schaltflächen zum Verschieben in die richtige Reihenfolge, prüf jeweils die erste Seite und lade ein PDF mit allen Seiten nacheinander herunter. So verschickst du einen Bericht samt Anhängen, mehrere gescannte Seiten oder eine Reihe von Rechnungen schnell als eine Datei. Das Zusammenfügen passiert in deinem Browser, deine Dokumente werden also nie auf einen Server hochgeladen.",
+      "PDF zusammenfügen verbindet zwei oder mehr PDF-Dateien zu einem einzigen Dokument. Füge die Dateien hinzu, bring sie mit den Schaltflächen zum Verschieben in die richtige Reihenfolge, prüf jeweils die erste Seite und lade ein PDF mit allen Seiten nacheinander herunter. So verschickst du einen Bericht samt Anhängen, mehrere gescannte Seiten oder eine Reihe von Rechnungen schnell als eine Datei. Das Zusammenfügen passiert in deinem Browser, deine Dokumente werden also nie auf einen Server hochgeladen. Wechsle zu „Seiten“, um alle Seiten aller Dateien in einem Raster zu sehen und einzelne Seiten vor dem Zusammenfügen zu verschieben, zu drehen oder zu löschen.",
     seoTitle: "PDF zusammenfügen online – kostenlos, ohne Upload",
     seoDescription:
       "PDF zusammenfügen, kostenlos: mehrere PDF-Dateien im Browser in beliebiger Reihenfolge zu einem PDF verbinden. Privat, ohne Upload, ohne Wasserzeichen.",
@@ -4243,7 +4243,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Funktionieren Links und Lesezeichen noch?",
         answer:
-          "Links auf den Seiten bleiben erhalten. Die Lesezeichenliste (die Gliederung in der Seitenleiste eines PDF-Readers) wird nicht in die zusammengefügte Datei übernommen.",
+          "Ja. Links auf den Seiten und die Lesezeichenliste jeder Datei (die Gliederung in der Seitenleiste des PDF-Readers) bleiben erhalten und zeigen in die zusammengeführte Datei. Lässt du eine Seite weg, fallen ihre Links und Lesezeichen mit weg.",
       },
       {
         question: "Verschlechtert das Zusammenfügen die Qualität?",

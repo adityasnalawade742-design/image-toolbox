@@ -4193,7 +4193,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF Birleştir",
     tagline: "Birkaç PDF dosyasını seçtiğiniz sırayla tek bir dosyada birleştirin. Dosyalar cihazınızda birleştirilir.",
     intro:
-      "PDF Birleştirme, iki veya daha fazla PDF dosyasını tek bir belgede toplar. Dosyaları ekleyin, taşıma düğmeleriyle sıralayın, her birinin ilk sayfasını kontrol edin ve tüm sayfaları sırayla içeren tek bir PDF indirin. Bir raporu ekleriyle, birkaç taranmış sayfayı veya bir grup faturayı tek dosya olarak göndermenin hızlı yoludur. Birleştirme tarayıcınızda gerçekleşir, bu yüzden belgeleriniz asla bir sunucuya yüklenmez.",
+      "PDF Birleştirme, iki veya daha fazla PDF dosyasını tek bir belgede toplar. Dosyaları ekleyin, taşıma düğmeleriyle sıralayın, her birinin ilk sayfasını kontrol edin ve tüm sayfaları sırayla içeren tek bir PDF indirin. Bir raporu ekleriyle, birkaç taranmış sayfayı veya bir grup faturayı tek dosya olarak göndermenin hızlı yoludur. Birleştirme tarayıcınızda gerçekleşir, bu yüzden belgeleriniz asla bir sunucuya yüklenmez. Tüm dosyaların tüm sayfalarını tek bir ızgarada görmek için Sayfalar’a geçin; birleştirmeden önce tek tek sayfaları taşıyın, döndürün veya silin.",
     seoTitle: "PDF Birleştirme Online – Ücretsiz, Yükleme Yok",
     seoDescription:
       "PDF birleştirme tarayıcıda: birden fazla PDF dosyasını istediğiniz sırayla tek bir PDF'te toplayın. Ücretsiz, gizli, yükleme ve filigran yok.",
@@ -4247,7 +4247,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bağlantılar ve yer işaretleri çalışmaya devam eder mi?",
         answer:
-          "Sayfalardaki bağlantılar korunur. Yer işareti listesi (PDF okuyucunun yan panelindeki ana hat) birleştirilmiş dosyaya kopyalanmaz.",
+          "Evet. Sayfalardaki bağlantılar ve her dosyanın yer işareti listesi (PDF okuyucunun yan panelindeki ana hat) korunur ve birleştirilmiş dosyayı gösterir. Bir sayfayı çıkarırsanız bağlantıları ve yer işaretleri de onunla gider.",
       },
       {
         question: "Birleştirme kaliteyi düşürür mü?",

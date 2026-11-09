@@ -775,6 +775,11 @@ export const strings = {
   'ctl.mergepdf.add': 'Adicionar mais PDFs',
   'ctl.mergepdf.needTwo': 'Adicione pelo menos mais um PDF para juntar.',
   'ctl.mergepdf.total': 'Total: {n} páginas',
+  'ctl.mergepdf.arrange': "Organizar",
+  'ctl.mergepdf.byFiles': "Arquivos inteiros",
+  'ctl.mergepdf.byPages': "Páginas",
+  'ctl.mergepdf.pagesHint': "Todas as páginas de todos os arquivos aparecem. Mova, gire ou exclua qualquer página, ou arraste para reordenar. Mudar a lista de arquivos recomeça a ordem das páginas.",
+  'ctl.mergepdf.tooMany': "O modo de páginas mostra até {max} páginas. Junte estes como arquivos inteiros.",
 
   // Split PDF
   'ctl.splitpdf.mode': 'Dividir por',
