@@ -41,7 +41,7 @@ const CONFIG: Record<DocTool, ToolConfig> = {
 // first, then the others
 const OCR_LANG: Record<string, string> = {
   en: 'eng', de: 'deu', es: 'spa', fr: 'fra', pt: 'por', it: 'ita', ja: 'jpn', ko: 'kor', id: 'ind', tr: 'tur',
-  ru: 'rus', uk: 'ukr', hi: 'hin', nl: 'nld', pl: 'pol', vi: 'vie',
+  ru: 'rus', uk: 'ukr', hi: 'hin', nl: 'nld', pl: 'pol', vi: 'vie', 'zh-Hans': 'chi_sim', 'zh-Hant': 'chi_tra', th: 'tha',
 };
 
 /** A language's name in its own script: the site's own list for its languages, the browser for the others (中文, العربية…) */

@@ -7888,7 +7888,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "tagline": "Make a scanned PDF searchable and selectable by recognizing its text. Free, with no sign-up.",
     "intro": "OCR PDF recognizes the text in a scanned PDF and adds it as an invisible layer, so you can search, select and copy the text while the pages look exactly the same. It is useful for scanned contracts, receipts, books and old documents. Choose the document's language for the best results; pages that already contain text are left as they are. Recognition uses Tesseract and OCRmyPDF on our server, and the file is deleted right after.",
     "seoTitle": "OCR PDF – Make Scanned PDFs Searchable, Free",
-    "seoDescription": "Make scanned PDFs searchable and copyable with OCR, online and free. 16 languages; files are deleted right after.",
+    "seoDescription": "Make scanned PDFs searchable and copyable with OCR, online and free. 19 languages; files are deleted right after.",
     "keywords": [
       "ocr pdf",
       "searchable pdf",
@@ -7917,8 +7917,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "description": "The text layer is invisible; the scan is unchanged."
       },
       {
-        "title": "16 languages",
-        "description": "English, German, Spanish, French, Portuguese, Italian, Dutch, Polish, Russian, Ukrainian, Japanese, Korean, Hindi, Vietnamese, Indonesian and Turkish. Two at once for pages that mix them."
+        "title": "19 languages",
+        "description": "English, German, Spanish, French, Portuguese, Italian, Dutch, Polish, Russian, Ukrainian, Japanese, Korean, Chinese (Simplified and Traditional), Thai, Hindi, Vietnamese, Indonesian and Turkish. Two at once for pages that mix them."
       },
       {
         "title": "Skips text pages",
