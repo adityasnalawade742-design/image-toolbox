@@ -1459,7 +1459,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Add Text",
     tagline: "Write captions or titles on a photo with your choice of font, size, color, outline and background box.",
     intro:
-      "Add Text to Image places one or more lines of text on a picture. Drag the text to any spot on the preview, or place it at the top, center or bottom, and style it with seven fonts, bold or italic, alignment, opacity, a drop shadow, an outline and a colored background box. The text is drawn onto the full-resolution image when you download it.",
+      "Add Text to Image places one or more lines of text on a picture. Drag the text to any spot on the preview, or place it at the top, center or bottom, and style it with seven fonts, bold or italic, alignment, opacity, a drop shadow, an outline and a colored background box. The text is drawn onto the full-resolution image when you download it. You can add up to 10 separate texts, each in its own style, and turn any of them to an angle.",
     seoTitle: "Add Text to Image Online – Free Caption Maker",
     seoDescription:
       "Add text to images online for free. Drag captions anywhere, pick font, size, color, outline, shadow and a background box, then save as JPG, PNG, WebP or AVIF.",
@@ -1517,7 +1517,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "Can I add more than one text block?",
         answer:
-          "The tool adds one text block, which can have several lines. To add text in a second place, download the result, open it again and add the next text.",
+          "Yes. Click Add text for each new text, up to 10. Each one has its own font, size, color, position and rotation; choose it in the list or drag it on the preview to edit it.",
       },
       {
         question: "Which fonts can I use?",

@@ -142,6 +142,12 @@ export const strings = {
   // Add text
   'ctl.text.text': '텍스트',
   'ctl.text.placeholder': '텍스트를 입력하세요',
+  'ctl.text.layers': "이미지 위 텍스트",
+  'ctl.text.addText': "텍스트 추가",
+  'ctl.text.removeText': "이 텍스트 삭제",
+  'ctl.text.newText': "새 텍스트",
+  'ctl.text.rotation': "회전",
+  'ctl.text.rotationReset': "똑바로",
   'ctl.text.textHint': 'Enter를 누르면 줄이 바뀌어요.',
   'ctl.text.font': '글꼴',
   'ctl.text.position': '위치',

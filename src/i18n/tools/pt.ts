@@ -1459,7 +1459,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Adicionar texto",
     tagline: "Escreva legendas ou títulos em uma foto escolhendo fonte, tamanho, cor, contorno e caixa de fundo.",
     intro:
-      "Adicionar texto à imagem coloca uma ou mais linhas de texto sobre uma foto. Arraste o texto para qualquer ponto da prévia, ou coloque-o em cima, no centro ou embaixo, e estilize com sete fontes, negrito ou itálico, alinhamento, opacidade, sombra, contorno e uma caixa de fundo colorida. O texto é desenhado na imagem em resolução total quando você baixa.",
+      "Adicionar texto à imagem coloca uma ou mais linhas de texto sobre uma foto. Arraste o texto para qualquer ponto da prévia, ou coloque-o em cima, no centro ou embaixo, e estilize com sete fontes, negrito ou itálico, alinhamento, opacidade, sombra, contorno e uma caixa de fundo colorida. O texto é desenhado na imagem em resolução total quando você baixa. Você pode adicionar até 10 textos separados, cada um com seu estilo, e girar qualquer um deles.",
     seoTitle: "Escrever em foto online: adicionar texto à imagem",
     seoDescription:
       "Escrever em foto online grátis. Arraste o texto para onde quiser, escolha fonte, tamanho, cor, contorno, sombra e fundo e salve em JPG, PNG, WebP ou AVIF.",
@@ -1517,7 +1517,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso adicionar mais de um bloco de texto?",
         answer:
-          "A ferramenta adiciona um bloco de texto, que pode ter várias linhas. Para colocar texto em um segundo lugar, baixe o resultado, abra de novo e adicione o próximo texto.",
+          "Sim. Clique em Adicionar texto para cada novo texto, até 10. Cada um tem fonte, tamanho, cor, posição e rotação próprios; escolha-o na lista ou arraste-o na prévia para editar.",
       },
       {
         question: "Quais fontes posso usar?",

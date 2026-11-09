@@ -1462,7 +1462,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Tambah Teks",
     tagline: "Tulis keterangan atau judul di foto dengan font, ukuran, warna, garis tepi, dan kotak latar pilihan Anda.",
     intro:
-      "Tambah Teks ke Gambar menempatkan satu atau beberapa baris teks di atas gambar. Geser teks ke titik mana pun di pratinjau, atau letakkan di atas, tengah, atau bawah, lalu atur gayanya dengan tujuh font, tebal atau miring, perataan, opasitas, bayangan, garis tepi, dan kotak latar berwarna. Teks digambar ke gambar beresolusi penuh saat Anda mengunduhnya.",
+      "Tambah Teks ke Gambar menempatkan satu atau beberapa baris teks di atas gambar. Geser teks ke titik mana pun di pratinjau, atau letakkan di atas, tengah, atau bawah, lalu atur gayanya dengan tujuh font, tebal atau miring, perataan, opasitas, bayangan, garis tepi, dan kotak latar berwarna. Teks digambar ke gambar beresolusi penuh saat Anda mengunduhnya. Anda bisa menambahkan hingga 10 teks terpisah, masing-masing dengan gayanya sendiri, dan memutar mana pun.",
     seoTitle: "Tambah Teks ke Foto Online – Gratis",
     seoDescription:
       "Tambah tulisan di foto online gratis. Geser teks ke mana saja, atur font, ukuran, warna, garis tepi, bayangan, dan kotak latar. Simpan ke JPG, PNG, WebP, AVIF.",
@@ -1520,7 +1520,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya menambahkan lebih dari satu blok teks?",
         answer:
-          "Alat ini menambahkan satu blok teks, yang bisa berisi beberapa baris. Untuk menambahkan teks di tempat kedua, unduh hasilnya, buka lagi, lalu tambahkan teks berikutnya.",
+          "Ya. Klik Tambah teks untuk setiap teks baru, hingga 10. Masing-masing punya font, ukuran, warna, posisi, dan rotasi sendiri; pilih di daftar atau seret di pratinjau untuk mengeditnya.",
       },
       {
         question: "Font apa saja yang bisa saya pakai?",

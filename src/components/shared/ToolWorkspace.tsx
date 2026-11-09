@@ -386,8 +386,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   const [flipH, setFlipH] = useState<boolean>(false);
   const [flipV, setFlipV] = useState<boolean>(false);
 
-  // Text Overlay
-  const [textOptions, setTextOptions] = useState<TextOverlayOptions>({
+  // Add Text: one or more text blocks, each with its own style, place and turn; the panel edits the selected one
+  const [textLayers, setTextLayers] = useState<TextOverlayOptions[]>([{
     text: 'Image Caption',
     fontFamily: 'Inter, sans-serif',
     fontSize: 36,
@@ -398,7 +398,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     italic: false,
     textAlign: 'center',
     dropShadow: true,
-  });
+  }]);
+  const [activeText, setActiveText] = useState(0);
 
   // Watermark
   const [watermarkOptions, setWatermarkOptions] = useState<WatermarkOptions>({
@@ -643,7 +644,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
       flipH,
       flipV,
       crop: (forExport || slug !== 'crop-image') && isCropped ? crop : undefined,
-      textOverlay: slug === 'add-text-to-image' ? textOptions : undefined,
+      textOverlay: slug === 'add-text-to-image' ? textLayers : undefined,
       watermark: slug === 'watermark-image' ? watermarkOptions : undefined,
       border: slug === 'add-border-to-image' ? borderOptions : undefined,
       cornerRadius: slug === 'round-image' && !isCircleAvatar ? roundRadius : undefined,
@@ -666,7 +667,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     flipH,
     flipV,
     crop,
-    textOptions,
+    textLayers,
     watermarkOptions,
     borderOptions,
     roundRadius,
@@ -1231,7 +1232,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                     />
                   )}
                   {slug === 'add-text-to-image' && canvasRef.current && (
-                    <InteractiveTextOverlay canvasElement={canvasRef.current} options={textOptions} onChange={setTextOptions} />
+                    <InteractiveTextOverlay canvasElement={canvasRef.current} layers={textLayers} active={activeText} onSelect={setActiveText} onChange={setTextLayers} />
                   )}
                   {slug === 'watermark-image' && canvasRef.current && !(watermarkOptions.repeat && !watermarkOptions.imageElement) && (() => {
                     const c = canvasRef.current;
@@ -1391,7 +1392,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'add-text-to-image' && (
-                <TextControls options={textOptions} onChange={setTextOptions} />
+                <TextControls layers={textLayers} active={activeText} onSelect={setActiveText} onChange={setTextLayers} />
               )}
 
               {slug === 'watermark-image' && (

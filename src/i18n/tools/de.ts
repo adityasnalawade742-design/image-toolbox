@@ -1459,7 +1459,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Text einfügen",
     tagline: "Schreib Bildunterschriften oder Titel auf ein Foto, mit Schriftart, Größe, Farbe, Kontur und Hintergrundbox nach Wahl.",
     intro:
-      "Text in Bild einfügen setzt eine oder mehrere Textzeilen auf ein Bild. Zieh den Text an eine beliebige Stelle der Vorschau oder platziere ihn oben, in der Mitte oder unten. Gestalte ihn mit sieben Schriftarten, fett oder kursiv, Ausrichtung, Deckkraft, Schlagschatten, Kontur und einer farbigen Hintergrundbox. Beim Download wird der Text auf das Bild in voller Auflösung gezeichnet.",
+      "Text in Bild einfügen setzt eine oder mehrere Textzeilen auf ein Bild. Zieh den Text an eine beliebige Stelle der Vorschau oder platziere ihn oben, in der Mitte oder unten. Gestalte ihn mit sieben Schriftarten, fett oder kursiv, Ausrichtung, Deckkraft, Schlagschatten, Kontur und einer farbigen Hintergrundbox. Beim Download wird der Text auf das Bild in voller Auflösung gezeichnet. Du kannst bis zu 10 einzelne Texte hinzufügen, jeden in eigenem Stil, und jeden davon schräg stellen.",
     seoTitle: "Text in Bild einfügen – online und kostenlos",
     seoDescription:
       "Text in Bild einfügen, kostenlos: Text frei verschieben, Schrift, Größe, Farbe, Kontur, Schatten und Hintergrundbox wählen, als JPG, PNG, WebP oder AVIF.",
@@ -1517,7 +1517,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich mehr als einen Textblock einfügen?",
         answer:
-          "Das Tool fügt einen Textblock ein, der mehrere Zeilen haben kann. Für Text an einer zweiten Stelle lädst du das Ergebnis herunter, öffnest es erneut und fügst den nächsten Text hinzu.",
+          "Ja. Klicke für jeden neuen Text auf „Text hinzufügen“, bis zu 10. Jeder hat eigene Schrift, Größe, Farbe, Position und Drehung; wähle ihn in der Liste oder zieh ihn in der Vorschau, um ihn zu bearbeiten.",
       },
       {
         question: "Welche Schriftarten kann ich nutzen?",

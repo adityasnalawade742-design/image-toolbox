@@ -142,6 +142,12 @@ export const strings = {
   // Add text
   'ctl.text.text': 'Texto',
   'ctl.text.placeholder': 'Escribe tu texto',
+  'ctl.text.layers': "Textos en la imagen",
+  'ctl.text.addText': "Añadir texto",
+  'ctl.text.removeText': "Quitar este texto",
+  'ctl.text.newText': "Texto nuevo",
+  'ctl.text.rotation': "Rotación",
+  'ctl.text.rotationReset': "Enderezar",
   'ctl.text.textHint': 'Pulsa Enter para empezar una nueva línea.',
   'ctl.text.font': 'Fuente',
   'ctl.text.position': 'Posición',

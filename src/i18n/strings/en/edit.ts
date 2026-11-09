@@ -66,6 +66,12 @@ export const editStrings = {
   // Add text
   'ctl.text.text': 'Text',
   'ctl.text.placeholder': 'Type your text',
+  'ctl.text.layers': 'Text on the image',
+  'ctl.text.addText': 'Add text',
+  'ctl.text.removeText': 'Remove this text',
+  'ctl.text.newText': 'New text',
+  'ctl.text.rotation': 'Rotation',
+  'ctl.text.rotationReset': 'Straighten',
   'ctl.text.textHint': 'Press Enter to start a new line.',
   'ctl.text.font': 'Font',
   'ctl.text.position': 'Position',
