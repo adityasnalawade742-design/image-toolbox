@@ -32,7 +32,8 @@ JOB_TIMEOUT = int(os.environ.get("JOB_TIMEOUT_S", "240"))
 CONCURRENCY = int(os.environ.get("CONCURRENCY", "2"))
 MAX_WAITING = int(os.environ.get("MAX_WAITING", "4"))
 JOBS_DIR = Path(os.environ.get("JOBS_DIR", "/tmp/jobs"))
-OCR_LANGS = {"eng", "deu", "spa", "fra", "por", "ita", "jpn", "kor", "ind", "tur"}
+OCR_LANGS = {"eng", "deu", "spa", "fra", "por", "ita", "jpn", "kor", "ind", "tur",
+             "rus", "ukr", "hin", "nld", "pol", "vie"}
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 slots = asyncio.Semaphore(CONCURRENCY)
@@ -808,7 +809,8 @@ async def repair(file: UploadFile):
 
 
 def parse_langs(lang: str) -> str:
-    langs = [l for l in lang.split("+") if l in OCR_LANGS]
+    # Up to two languages for pages that mix them; each one more makes recognition slower
+    langs = list(dict.fromkeys(l for l in lang.split("+") if l in OCR_LANGS))[:2]
     return "+".join(langs or ["eng"])
 
 

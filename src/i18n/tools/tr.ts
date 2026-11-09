@@ -7714,7 +7714,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "PDF OCR, taranmış bir PDF'teki metni tanır ve görünmez bir katman olarak ekler; böylece sayfalar tamamen aynı görünürken metni arayabilir, seçebilir ve kopyalayabilirsiniz. Taranmış sözleşmeler, fişler, kitaplar ve eski belgeler için kullanışlıdır. En iyi sonuç için belgenin dilini seçin; zaten metin içeren sayfalar olduğu gibi bırakılır. Tanıma sunucumuzdaki Tesseract ve OCRmyPDF ile yapılır ve dosya hemen ardından silinir.",
     seoTitle: "PDF OCR – Taranmış PDF'leri Aranabilir Yapın, Ücretsiz",
     seoDescription:
-      "PDF OCR online ve ücretsiz: taranmış PDF'leri OCR ile aranabilir hale getirin ve metnini kopyalanabilir yapın. 10 dil; dosyalar hemen ardından silinir.",
+      "PDF OCR online ve ücretsiz: taranmış PDF'leri OCR ile aranabilir hale getirin ve metnini kopyalanabilir yapın. 16 dil; dosyalar hemen ardından silinir.",
     keywords: [
       "pdf ocr",
       "aranabilir pdf",
@@ -7730,7 +7730,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Dili seçin",
-        description: "Belgenin yazıldığı dili seçin.",
+        description: "Belgenin yazıldığı dili seçin; iki dil karışıksa ikisini birden seçebilirsiniz.",
       },
       {
         title: "Aranabilir hale getirin",
@@ -7743,8 +7743,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Metin katmanı görünmezdir; tarama değişmez.",
       },
       {
-        title: "On dil",
-        description: "İngilizce, Almanca, İspanyolca, Fransızca, Portekizce, İtalyanca, Japonca, Korece, Endonezce ve Türkçe.",
+        title: "16 dil",
+        description: "İngilizce, Almanca, İspanyolca, Fransızca, Portekizce, İtalyanca, Felemenkçe, Lehçe, Rusça, Ukraynaca, Japonca, Korece, Hintçe, Vietnamca, Endonezce ve Türkçe. Dilleri karışık sayfalar için iki dil birlikte seçilebilir.",
       },
       {
         title: "Metinli sayfaları atlar",

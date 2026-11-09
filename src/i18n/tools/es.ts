@@ -7713,7 +7713,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       "OCR de PDF reconoce el texto de un PDF escaneado y lo añade como una capa invisible, para que puedas buscar, seleccionar y copiar el texto mientras las páginas se ven exactamente igual. Es útil para contratos, recibos, libros y documentos antiguos escaneados. Elige el idioma del documento para obtener los mejores resultados; las páginas que ya contienen texto se dejan como están. El reconocimiento usa Tesseract y OCRmyPDF en nuestro servidor y el archivo se elimina justo después.",
     seoTitle: "OCR de PDF – hacer buscables los PDF escaneados gratis",
     seoDescription:
-      "OCR de PDF online y gratis: haz que los PDF escaneados se puedan buscar y copiar. 10 idiomas; los archivos se eliminan justo después de procesarlos.",
+      "OCR de PDF online y gratis: haz que los PDF escaneados se puedan buscar y copiar. 16 idiomas; los archivos se eliminan justo después de procesarlos.",
     keywords: [
       "ocr pdf",
       "ocr pdf online gratis",
@@ -7729,7 +7729,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Elige el idioma",
-        description: "Elige el idioma en que está escrito el documento.",
+        description: "Elige el idioma en que está escrito el documento, o dos si los mezcla.",
       },
       {
         title: "Hazlo buscable",
@@ -7742,8 +7742,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "La capa de texto es invisible; el escaneo no cambia.",
       },
       {
-        title: "Diez idiomas",
-        description: "Inglés, alemán, español, francés, portugués, italiano, japonés, coreano, indonesio y turco.",
+        title: "16 idiomas",
+        description: "Inglés, alemán, español, francés, portugués, italiano, neerlandés, polaco, ruso, ucraniano, japonés, coreano, hindi, vietnamita, indonesio y turco. Dos a la vez para páginas que los mezclan.",
       },
       {
         title: "Omite páginas con texto",
