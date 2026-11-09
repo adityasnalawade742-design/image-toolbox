@@ -4727,7 +4727,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF unterschreiben",
     tagline: "Zeichne oder tippe deine Unterschrift oder lade sie als Bild hoch und platziere sie auf einer beliebigen Seite eines PDFs. Läuft auf deinem Gerät.",
     intro:
-      "PDF unterschreiben setzt deine handschriftliche Unterschrift auf ein Dokument, ohne dass du es ausdrucken und einscannen musst. Zeichne die Unterschrift mit Maus, Finger oder Stift, tippe deinen Namen oder nutze ein Foto deiner Unterschrift, dessen weißer Hintergrund transparent gemacht werden kann. Wähle dann die Seite, stell die Größe ein und zieh die Unterschrift an ihren Platz, oder nutze die Positionsregler. Die Unterschrift wird in deinem Browser eingefügt, das Dokument und deine Unterschrift werden also nie hochgeladen.",
+      "PDF unterschreiben setzt deine handschriftliche Unterschrift auf ein Dokument, ohne dass du es ausdrucken und einscannen musst. Zeichne die Unterschrift mit Maus, Finger oder Stift, tippe deinen Namen oder nutze ein Foto deiner Unterschrift, dessen weißer Hintergrund transparent gemacht werden kann. Wähle dann die Seite, stell die Größe ein und zieh die Unterschrift an ihren Platz, oder nutze die Positionsregler. Die Unterschrift wird in deinem Browser eingefügt, das Dokument und deine Unterschrift werden also nie hochgeladen. Du kannst auch Initialen, das Datum oder anderen Text hinzufügen, auf so vielen Seiten wie nötig.",
     seoTitle: "PDF unterschreiben online – kostenlos, ohne Upload",
     seoDescription:
       "PDF unterschreiben, kostenlos: Unterschrift im Browser zeichnen, tippen oder als Bild einfügen und auf jeder Seite platzieren. Privat, nichts wird hochgeladen.",
@@ -4785,7 +4785,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich auf mehr als einer Seite unterschreiben?",
         answer:
-          "Unterschreibe eine Seite und lade das PDF herunter, öffne dann das unterschriebene PDF erneut und platziere die Unterschrift auf der nächsten Seite.",
+          "Ja. Füge Unterschrift, Initialen, Datum oder eine Textzeile so oft hinzu, wie du brauchst, auf jeder Seite; „Auf jede Seite kopieren“ setzt Initialen auf einmal auf alle Seiten. Alles wird in einem Download gespeichert.",
       },
       {
         question: "Wird meine Unterschrift irgendwo gespeichert?",

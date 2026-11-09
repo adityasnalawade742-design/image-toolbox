@@ -4732,7 +4732,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Assinar PDF",
     tagline: "Desenhe ou digite sua assinatura, ou use uma imagem dela, e coloque-a em qualquer página de um PDF. Funciona no seu dispositivo.",
     intro:
-      "O Assinar PDF coloca sua assinatura manuscrita em um documento sem precisar imprimir e digitalizar. Desenhe a assinatura com o mouse, o dedo ou uma caneta stylus, digite seu nome ou use uma foto da sua assinatura, cujo fundo branco pode ficar transparente. Depois escolha a página, defina o tamanho e arraste a assinatura para o lugar ou use os controles deslizantes de posição. A assinatura é adicionada no seu navegador, então o documento e a sua assinatura nunca são enviados.",
+      "O Assinar PDF coloca sua assinatura manuscrita em um documento sem precisar imprimir e digitalizar. Desenhe a assinatura com o mouse, o dedo ou uma caneta stylus, digite seu nome ou use uma foto da sua assinatura, cujo fundo branco pode ficar transparente. Depois escolha a página, defina o tamanho e arraste a assinatura para o lugar ou use os controles deslizantes de posição. A assinatura é adicionada no seu navegador, então o documento e a sua assinatura nunca são enviados. Também dá para adicionar iniciais, a data ou outro texto, em quantas páginas precisar.",
     seoTitle: "Assinar PDF online – Grátis e sem upload",
     seoDescription:
       "Assinar PDF no navegador: desenhe ou digite sua assinatura, ou use uma imagem dela, e coloque-a em qualquer página. Grátis, privado e nada é enviado.",
@@ -4790,7 +4790,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso assinar mais de uma página?",
         answer:
-          "Assine uma página, baixe, depois abra o PDF assinado de novo e coloque a assinatura na próxima página.",
+          "Sim. Adicione sua assinatura, iniciais, a data ou uma linha de texto quantas vezes precisar, em qualquer página; “Copiar em todas as páginas” coloca as iniciais em cada página de uma vez. Tudo é salvo em um só download.",
       },
       {
         question: "Minha assinatura fica salva em algum lugar?",
