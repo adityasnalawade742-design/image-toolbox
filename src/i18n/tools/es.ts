@@ -5661,7 +5661,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Foto de pasaporte",
     tagline: "Haz una foto de pasaporte o visado del tamaño correcto, con fondo liso opcional, e imprime varias en una sola hoja.",
     intro:
-      "Crear foto de pasaporte convierte una foto normal en una foto de pasaporte, visado o documento de identidad del tamaño exacto que necesitas: 35 × 45 mm, 2 × 2 pulgadas, 33 × 48 mm o un tamaño personalizado. Mueve y amplía la foto hasta que la coronilla y la barbilla queden sobre las líneas guía, cambia el fondo por blanco, gris claro o azul claro si lo necesitas, y descarga una foto a 300 DPI o una hoja para imprimir en papel fotográfico de 4 × 6 pulgadas o A4, con líneas de corte. Todo ocurre en tu navegador, así que tu foto nunca se sube.",
+      "Crear foto de pasaporte convierte una foto normal en una foto de pasaporte, visado o documento de identidad del tamaño exacto que necesitas: 35 × 45 mm, 2 × 2 pulgadas, 33 × 48 mm o un tamaño personalizado. Mueve y amplía la foto hasta que la coronilla y la barbilla queden sobre las líneas guía, cambia el fondo por blanco, gris claro o azul claro si lo necesitas, y descarga una foto a 300 DPI o una hoja para imprimir en papel fotográfico de 4 × 6 pulgadas o A4, con líneas de corte. Todo ocurre en tu navegador, así que tu foto nunca se sube. Elige tu país para obtener su tamaño de foto y el fondo que pide.",
     seoTitle: "Foto de pasaporte online – 35×45 mm y 2×2 in, gratis",
     seoDescription:
       "Foto de pasaporte online: crea fotos de pasaporte y visado de 35×45 mm, 2×2 in o a medida, con fondo blanco y hoja para imprimir 4×6 o A4. Gratis y privado.",
@@ -6125,7 +6125,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Generador QR",
     tagline: "Crea un código QR para un enlace, texto, red Wi-Fi, correo, teléfono o contacto, con tus colores y tu logotipo, en PNG o SVG.",
     intro:
-      "Generador de códigos QR crea un código QR para un enlace web, texto sin formato, el acceso a una red Wi-Fi, un correo, un número de teléfono o una tarjeta de contacto. Elige los colores, el tamaño y la corrección de errores, añade tu logotipo en el centro y descárgalo como imagen PNG o como archivo SVG, que se ve nítido a cualquier tamaño. Cada código se comprueba leyéndolo de nuevo, así sabes que se escanea antes de imprimirlo. Los códigos se crean en tu navegador, gratis, sin registro y sin caducidad.",
+      "Generador de códigos QR crea un código QR para un enlace web, texto sin formato, el acceso a una red Wi-Fi, un correo, un número de teléfono o una tarjeta de contacto. Elige los colores, el tamaño y la corrección de errores, añade tu logotipo en el centro y descárgalo como imagen PNG o como archivo SVG, que se ve nítido a cualquier tamaño. Cada código se comprueba leyéndolo de nuevo, así sabes que se escanea antes de imprimirlo. Los códigos se crean en tu navegador, gratis, sin registro y sin caducidad. Añade una línea de texto bajo el código, como «Escanea para ver la carta», y para el Wi-Fi descarga una tarjeta para imprimir con el nombre de la red y la contraseña.",
     seoTitle: "Generador de códigos QR gratis – Logo, colores, PNG y SVG",
     seoDescription:
       "Generador de códigos QR para enlaces, Wi-Fi, correo, teléfono o contactos, con tus colores y logotipo. En PNG o SVG. Gratis, sin registro, sin caducidad.",
@@ -6206,7 +6206,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Lector QR",
     tagline: "Lee un código QR desde una imagen o con tu cámara y mira el enlace, la contraseña Wi-Fi o el contacto que contiene antes de abrirlo.",
     intro:
-      "Lector de códigos QR descifra códigos QR de una foto, una captura de pantalla o tu cámara. Muestra lo que contiene el código antes de que pase nada: la dirección web completa, una red Wi-Fi y su contraseña, un correo, un número de teléfono o una tarjeta de contacto que puedes guardar. Los enlaces nunca se abren solos, así que puedes revisarlos antes, una buena costumbre porque los códigos QR se usan a menudo para llevar a la gente a sitios falsos. Las imágenes y los fotogramas de la cámara se leen en tu dispositivo.",
+      "Lector de códigos QR descifra códigos QR de una foto, una captura de pantalla o tu cámara. Muestra lo que contiene el código antes de que pase nada: la dirección web completa, una red Wi-Fi y su contraseña, un correo, un número de teléfono o una tarjeta de contacto que puedes guardar. Los enlaces nunca se abren solos, así que puedes revisarlos antes, una buena costumbre porque los códigos QR se usan a menudo para llevar a la gente a sitios falsos. Las imágenes y los fotogramas de la cámara se leen en tu dispositivo. Activa «Seguir escaneando» para leer muchos códigos seguidos en una lista que puedes copiar o guardar como CSV.",
     seoTitle: "Lector de códigos QR online – Desde imagen o cámara",
     seoDescription:
       "Escanear código QR desde una imagen, una captura o la cámara en tu navegador. Mira el enlace, la contraseña Wi-Fi o el contacto antes de abrirlo. Gratis.",
@@ -6708,7 +6708,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Lector de códigos",
     tagline: "Lee EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR y más desde una foto o con tu cámara. Gratis y funciona en tu dispositivo.",
     intro:
-      "Lector de códigos de barras lee códigos de barras de una foto, una captura de pantalla o tu cámara: códigos de producto (EAN y UPC), ISBN de libros, etiquetas Code 128 y Code 39, cajas ITF, GS1 DataBar y códigos 2D como Data Matrix, PDF417, Aztec y códigos QR. Encuentra varios códigos en una misma imagen y muestra cada uno con su tipo, listo para copiar. La imagen de la cámara y las fotos se procesan en tu navegador y nunca se suben.",
+      "Lector de códigos de barras lee códigos de barras de una foto, una captura de pantalla o tu cámara: códigos de producto (EAN y UPC), ISBN de libros, etiquetas Code 128 y Code 39, cajas ITF, GS1 DataBar y códigos 2D como Data Matrix, PDF417, Aztec y códigos QR. Encuentra varios códigos en una misma imagen y muestra cada uno con su tipo, listo para copiar. La imagen de la cámara y las fotos se procesan en tu navegador y nunca se suben. Activa «Seguir escaneando» para leer muchos códigos seguidos en una lista que puedes copiar o guardar como CSV.",
     seoTitle: "Lector de códigos de barras online – Foto o cámara",
     seoDescription:
       "Escanea códigos EAN, UPC, Code 128, Data Matrix, PDF417 y QR desde una foto o con tu cámara, en tu navegador. Gratis, privado, sin subir nada.",
@@ -6779,7 +6779,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "QR de Wi-Fi",
     tagline: "Crea un código QR que tus invitados escanean para conectarse a tu Wi-Fi sin escribir la contraseña. Gratis y funciona en tu dispositivo.",
     intro:
-      "Un código QR de Wi-Fi permite que invitados, clientes y familia se conecten a tu red apuntando la cámara del móvil: sin deletrear una contraseña larga. Escribe el nombre de la red y la contraseña, elige el tipo de seguridad y el código aparece al instante. Los iPhone y los móviles Android lo entienden con la cámara integrada. Imprímelo para la nevera, una mesa de cafetería o una sala de reuniones. Tu contraseña se mete en el código dentro de tu navegador y nunca se sube.",
+      "Un código QR de Wi-Fi permite que invitados, clientes y familia se conecten a tu red apuntando la cámara del móvil: sin deletrear una contraseña larga. Escribe el nombre de la red y la contraseña, elige el tipo de seguridad y el código aparece al instante. Los iPhone y los móviles Android lo entienden con la cámara integrada. Imprímelo para la nevera, una mesa de cafetería o una sala de reuniones. Tu contraseña se mete en el código dentro de tu navegador y nunca se sube. O descarga una tarjeta para imprimir con el código, el nombre de la red y la contraseña.",
     seoTitle: "Código QR de Wi-Fi – Comparte el Wi-Fi sin contraseña",
     seoDescription:
       "Crea un código QR de Wi-Fi en tu navegador para que tus invitados se conecten escaneándolo. Funciona con la cámara de iPhone y Android. Gratis, sin subir nada.",
@@ -7063,7 +7063,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "QR masivos",
     tagline: "Crea cientos de códigos QR a la vez desde una lista o un CSV y descárgalos en un solo ZIP. Gratis y funciona en tu dispositivo.",
     intro:
-      "Generador masivo de códigos QR convierte una lista en códigos QR: enlaces para cada página de producto, códigos para cada mesa, etiquetas de activos para todo un almacén. Pega un enlace o un texto por línea, o carga un archivo CSV, y si quieres pon un nombre de archivo delante de cada uno para identificar los archivos fácilmente. Elige PNG o SVG y un tamaño, y descárgalos todos en un solo ZIP. Se crean hasta 1.000 códigos en tu navegador; tu lista nunca se sube.",
+      "Generador masivo de códigos QR convierte una lista en códigos QR: enlaces para cada página de producto, códigos para cada mesa, etiquetas de activos para todo un almacén. Pega un enlace o un texto por línea, o carga un archivo CSV, y si quieres pon un nombre de archivo delante de cada uno para identificar los archivos fácilmente. Elige PNG o SVG y un tamaño, y descárgalos todos en un solo ZIP. Se crean hasta 1.000 códigos en tu navegador; tu lista nunca se sube. O colócalos todos en una hoja A4 o Carta para imprimir, con cada nombre bajo su código, listos para recortar.",
     seoTitle: "Generador masivo de códigos QR – Gratis, de CSV a ZIP",
     seoDescription:
       "Crea hasta 1.000 códigos QR a la vez desde una lista o un CSV en tu navegador. Tus propios nombres de archivo, PNG o SVG, un solo ZIP. Gratis, sin subir nada.",
@@ -7134,7 +7134,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Códigos de barras en lote",
     tagline: "Crea cientos de códigos de barras a la vez desde una lista o un CSV, comprobados y guardados en un solo ZIP. Gratis y funciona en tu dispositivo.",
     intro:
-      "Generador masivo de códigos de barras crea un código de barras para cada línea de una lista: códigos de producto para un catálogo, etiquetas Code 128 para un almacén, ISBN para una colección de libros. Elige el tipo de código, pega los números o carga un CSV, y cada línea se comprueba mientras escribes: las longitudes incorrectas, las letras en códigos solo numéricos y los dígitos de control erróneos se listan por línea, y los dígitos de control que faltan se añaden. Descarga los válidos como PNG o SVG en un solo ZIP. Se crean hasta 1.000 códigos de barras en tu navegador y no se sube nada.",
+      "Generador masivo de códigos de barras crea un código de barras para cada línea de una lista: códigos de producto para un catálogo, etiquetas Code 128 para un almacén, ISBN para una colección de libros. Elige el tipo de código, pega los números o carga un CSV, y cada línea se comprueba mientras escribes: las longitudes incorrectas, las letras en códigos solo numéricos y los dígitos de control erróneos se listan por línea, y los dígitos de control que faltan se añaden. Descarga los válidos como PNG o SVG en un solo ZIP. Se crean hasta 1.000 códigos de barras en tu navegador y no se sube nada. O colócalos todos en una hoja A4 o Carta para imprimir, con cada nombre bajo su código, listos para recortar.",
     seoTitle: "Generador masivo de códigos de barras – CSV a ZIP",
     seoDescription:
       "Crea hasta 1.000 códigos de barras a la vez desde una lista o un CSV: Code 128, EAN, UPC, ISBN, Data Matrix y más. Comprobados, ZIP en PNG o SVG. Gratis.",
@@ -10211,7 +10211,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     name: "Anotar imagen",
     shortName: "Anotar imagen",
     tagline: "Añade flechas, recuadros, círculos, texto, resaltados y pasos numerados a una captura de pantalla o una foto. Gratis y en tu dispositivo.",
-    intro: "Anotar imagen te permite marcar una captura de pantalla o una foto para explicar algo: señala con flechas, enmarca zonas con rectángulos o elipses, dibuja a mano alzada, resalta texto y añade etiquetas y pasos numerados para instrucciones. Elige el color y el grosor, mueve o elimina cualquier marca, y deshaz o rehaz. Las marcas se ajustan al tamaño de la imagen, y la descarga es a resolución completa en PNG o JPG.",
+    intro: "Anotar imagen te permite marcar una captura de pantalla o una foto para explicar algo: señala con flechas, enmarca zonas con rectángulos o elipses, dibuja a mano alzada, resalta texto y añade etiquetas y pasos numerados para instrucciones. Elige el color y el grosor, mueve o elimina cualquier marca, y deshaz o rehaz. Las marcas se ajustan al tamaño de la imagen, y la descarga es a resolución completa en PNG o JPG. Desenfoca o pixela lo que sea privado, como nombres, caras o matrículas.",
     seoTitle: "Anotar imagen online – Flechas y texto en fotos, gratis",
     seoDescription: "Anota imágenes online: flechas, recuadros, círculos, texto, resaltados y pasos numerados en capturas o fotos. PNG o JPG a tamaño completo. Gratis.",
     keywords: [
@@ -10260,7 +10260,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "¿Puedo ocultar información privada?",
-        answer: "Usa Censurar imagen con desenfoque o pixelado para desenfocar o pixelar partes de una imagen."
+        answer: "Sí. Elige Desenfocar o Pixelar y arrastra sobre la zona. El efecto se crea a partir de la propia imagen, así que el detalle oculto desaparece de la descarga en lugar de quedar tapado por una capa que se podría quitar."
       },
       {
         question: "¿Se sube mi imagen?",

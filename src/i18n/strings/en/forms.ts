@@ -24,6 +24,9 @@ export const formStrings = {
   // Passport photo maker
   'ctl.passport.dropHint': 'A clear, front-facing photo with even light. JPG, PNG, WebP, TIFF or iPhone HEIC.',
   'ctl.passport.size': 'Photo size',
+  'ctl.passport.country': 'Country',
+  'ctl.passport.anyCountry': 'Any: choose the size below',
+  'ctl.passport.countryNote': 'Passport photo: {size} · Background: {bg}. Check the official rules before you apply.',
   'ctl.passport.custom': 'Custom',
   'ctl.passport.widthMm': 'Width (mm)',
   'ctl.passport.heightMm': 'Height (mm)',

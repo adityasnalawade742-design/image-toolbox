@@ -1,5 +1,5 @@
-import React, { useMemo, useRef, useState } from 'react';
-import { Archive, Upload } from 'lucide-react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Archive, Printer, Upload } from 'lucide-react';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { RangeField } from '../pdf/common';
@@ -7,6 +7,7 @@ import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
 import { createUniqueNamer } from '../../../lib/storage/fileNames';
 import { checkBarcode, SYMBOLOGIES, SYMBOLOGY_ORDER, type Symbology } from '../../../lib/barcode/symbologies';
 import { useProblemText } from './BarcodeGeneratorWorkspace';
+import type { Paper } from '../../../lib/qr/sheet';
 
 type CodeType = 'qr' | Symbology;
 const MAX_LINES = 1000;
@@ -37,6 +38,12 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
   const [scale, setScale] = useState(3);
   const [heightMm, setHeightMm] = useState(15);
   const [showText, setShowText] = useState(true);
+  const [paper, setPaper] = useState<Paper>('a4');
+  // US Letter where it is the usual paper; set after the first render so the page matches what was built
+  useEffect(() => {
+    if (/^en-(US|CA)|^es-(MX|US)|^fil/.test(navigator.language)) setPaper('letter');
+  }, []);
+  const [perRow, setPerRow] = useState(4);
   const [busy, setBusy] = useState<string | null>(null);
   const [status, setStatus] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -124,6 +131,42 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
     }
   };
 
+  /** Every code on A4 or Letter pages, with its name (or content) underneath, ready to print and cut */
+  const printSheet = async () => {
+    if (!good.length) return;
+    setError(null);
+    setStatus('');
+    try {
+      const [{ default: QRCode }, r, { codeSheet, cellPixels }] = await Promise.all([import('qrcode'), type === 'qr' ? null : import('../../../lib/barcode/render'), import('../../../lib/qr/sheet')]);
+      // Barcodes already print their digits underneath, so they get a label only when they were given a name
+      const style = { scale: 4, heightMm, showText, bar: '#000000', background: '#ffffff' };
+      const px = cellPixels(paper, perRow);
+      const total = good.length;
+      async function* cells() {
+        for (let i = 0; i < total; i++) {
+          const l = good[i];
+          if (i % 10 === 0) {
+            setBusy(t('ctl.bulkcode.making', { n: i + 1, total }));
+            await new Promise((res) => setTimeout(res, 0));
+          }
+          const code = document.createElement('canvas');
+          if (type === 'qr') await QRCode.toCanvas(code, l.encode!.data, { errorCorrectionLevel: 'M', margin: 2, width: px });
+          else r!.drawBarcode(code, l.encode!, style);
+          // bwip-js draws at 72 dpi times the scale, so this is the barcode's true printed width
+          yield { code, label: l.name || (type === 'qr' ? l.data : ''), widthPt: type === 'qr' ? undefined : code.width / style.scale };
+        }
+      }
+      const bytes = await codeSheet(cells(), paper, perRow);
+      const name = `${type === 'qr' ? 'qr-codes' : `barcodes-${type}`}-sheet.pdf`;
+      downloadBlob(new Blob([new Uint8Array(bytes)], { type: 'application/pdf' }), name);
+      setStatus(t('ctl.pdf.done', { name }));
+    } catch {
+      setError(t('ws.errExport'));
+    } finally {
+      setBusy(null);
+    }
+  };
+
   const panel = (
     <>
       <div className="space-y-1">
@@ -164,6 +207,23 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
           )}
         </>
       )}
+      <div className="pt-4 border-t border-ink space-y-3">
+        <span className="slug block">{t('ctl.bulkcode.sheet')}</span>
+        <Segmented
+          label={t('ctl.bulkcode.paper')}
+          value={paper}
+          onChange={setPaper}
+          options={[
+            { value: 'a4', label: 'A4' },
+            { value: 'letter', label: t('ctl.bulkcode.letter') },
+          ]}
+        />
+        <RangeField id="bulk-per-row" label={t('ctl.bulkcode.perRow')} value={perRow} min={1} max={8} onChange={setPerRow} />
+        <button type="button" onClick={printSheet} disabled={!good.length || !!busy} className="btn-rule w-full disabled:opacity-40">
+          <Printer className="w-4 h-4" aria-hidden="true" />
+          <span>{t('ctl.bulkcode.sheetDownload')}</span>
+        </button>
+      </div>
     </>
   );
 

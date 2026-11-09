@@ -5672,7 +5672,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Vesikalık Fotoğraf",
     tagline: "Doğru boyutta, isteğe bağlı düz arka planlı bir pasaport veya vize fotoğrafı oluşturun ve tek sayfaya birkaç tane basın.",
     intro:
-      "Vesikalık Fotoğraf Oluşturucu, sıradan bir fotoğrafı tam ihtiyacınız olan boyutta pasaport, vize veya kimlik fotoğrafına dönüştürür: 35 × 45 mm, 2 × 2 inç, 33 × 48 mm ya da özel bir boyut. Başın üstü ve çene kılavuz çizgilerine oturana kadar fotoğrafı taşıyıp yakınlaştırın, gerekirse arka planı düz beyaz, açık gri veya açık mavi ile değiştirin; ardından 300 DPI'da tek bir fotoğraf ya da 4 × 6 inç fotoğraf kâğıdı veya A4 için kesim çizgili bir baskı sayfası indirin. Her şey tarayıcınızda gerçekleşir, bu yüzden fotoğrafınız asla yüklenmez.",
+      "Vesikalık Fotoğraf Oluşturucu, sıradan bir fotoğrafı tam ihtiyacınız olan boyutta pasaport, vize veya kimlik fotoğrafına dönüştürür: 35 × 45 mm, 2 × 2 inç, 33 × 48 mm ya da özel bir boyut. Başın üstü ve çene kılavuz çizgilerine oturana kadar fotoğrafı taşıyıp yakınlaştırın, gerekirse arka planı düz beyaz, açık gri veya açık mavi ile değiştirin; ardından 300 DPI'da tek bir fotoğraf ya da 4 × 6 inç fotoğraf kâğıdı veya A4 için kesim çizgili bir baskı sayfası indirin. Her şey tarayıcınızda gerçekleşir, bu yüzden fotoğrafınız asla yüklenmez. Ülkenizi seçerek fotoğraf boyutunu ve istenen arka planı öğrenin.",
     seoTitle: "Vesikalık Fotoğraf Yapma – 35×45 mm, 2×2 in, Ücretsiz",
     seoDescription:
       "Vesikalık fotoğraf ve pasaport fotoğrafı yapın: 35×45 mm, 2×2 in veya özel boyut, beyaz arka plan, 4×6 ya da A4 baskı sayfası. Ücretsiz ve gizli.",
@@ -6136,7 +6136,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "QR Oluşturucu",
     tagline: "Bağlantı, metin, Wi-Fi ağı, e-posta, telefon numarası veya kişi için kendi renkleriniz ve logonuzla PNG ya da SVG QR kod oluşturun.",
     intro:
-      "QR Kod Oluşturucu; bir web bağlantısı, düz metin, Wi-Fi girişi, e-posta, telefon numarası veya kişi kartı için QR kod oluşturur. Renkleri, boyutu ve hata düzeltmeyi seçin, ortaya logonuzu ekleyin ve kodu PNG resmi ya da her boyutta keskin kalan bir SVG dosyası olarak indirin. Her kod geri okunarak kontrol edilir; böylece yazdırmadan önce okunduğunu bilirsiniz. Kodlar tarayıcınızda, ücretsiz, kayıt olmadan ve süre sınırı olmadan oluşturulur.",
+      "QR Kod Oluşturucu; bir web bağlantısı, düz metin, Wi-Fi girişi, e-posta, telefon numarası veya kişi kartı için QR kod oluşturur. Renkleri, boyutu ve hata düzeltmeyi seçin, ortaya logonuzu ekleyin ve kodu PNG resmi ya da her boyutta keskin kalan bir SVG dosyası olarak indirin. Her kod geri okunarak kontrol edilir; böylece yazdırmadan önce okunduğunu bilirsiniz. Kodlar tarayıcınızda, ücretsiz, kayıt olmadan ve süre sınırı olmadan oluşturulur. Kodun altına “Menü için tarayın” gibi bir metin ekleyin; Wi-Fi için ağ adı ve şifreyi içeren yazdırılabilir bir kart indirin.",
     seoTitle: "Ücretsiz QR Kod Oluşturucu – Logo, Renk, PNG ve SVG",
     seoDescription:
       "QR kod oluşturucu: bağlantı, Wi-Fi, e-posta, telefon veya kişiler için renkli ve logolu QR kodlar yapın. PNG veya SVG indirin. Ücretsiz, kayıtsız, süresiz.",
@@ -6217,7 +6217,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "QR Okuyucu",
     tagline: "Bir resimden veya kameranızdan QR kod okuyun; açmadan önce içindeki bağlantıyı, Wi-Fi şifresini veya kişiyi görün.",
     intro:
-      "QR Kod Okuyucu, QR kodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan çözer. Herhangi bir şey olmadan önce kodun içeriğini gösterir: tam web adresi, bir Wi-Fi ağı ve şifresi, bir e-posta, bir telefon numarası veya kaydedebileceğiniz bir kişi kartı. Bağlantılar asla kendiliğinden açılmaz, böylece önce kontrol edebilirsiniz. Bu yararlı bir alışkanlıktır, çünkü QR kodlar insanları sahte sitelere yönlendirmek için sıkça kullanılır. Resimler ve kamera kareleri cihazınızda okunur.",
+      "QR Kod Okuyucu, QR kodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan çözer. Herhangi bir şey olmadan önce kodun içeriğini gösterir: tam web adresi, bir Wi-Fi ağı ve şifresi, bir e-posta, bir telefon numarası veya kaydedebileceğiniz bir kişi kartı. Bağlantılar asla kendiliğinden açılmaz, böylece önce kontrol edebilirsiniz. Bu yararlı bir alışkanlıktır, çünkü QR kodlar insanları sahte sitelere yönlendirmek için sıkça kullanılır. Resimler ve kamera kareleri cihazınızda okunur. “Taramaya devam et” seçeneğiyle art arda birçok kodu, kopyalayabileceğiniz ya da CSV olarak kaydedebileceğiniz bir listeye okuyun.",
     seoTitle: "Online QR Kod Okuyucu – Resimden veya Kameradan Okuyun",
     seoDescription:
       "QR kod okuyucu: tarayıcınızda resimden, ekran görüntüsünden veya kameradan QR kod okuyun. Açmadan önce bağlantıyı, Wi-Fi şifresini veya kişiyi görün.",
@@ -6719,7 +6719,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Barkod Okuyucu",
     tagline: "EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR ve daha fazlasını bir fotoğraftan veya kameranızdan okuyun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Barkod Okuyucu, barkodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan okur: ürün kodları (EAN ve UPC), kitaplardaki ISBN'ler, Code 128 ve Code 39 etiketleri, ITF koli kodları, GS1 DataBar ve Data Matrix, PDF417, Aztec ile QR kodlar gibi 2D kodlar. Tek bir resimde birden çok kod bulur ve her birini türüyle birlikte, kopyalanmaya hazır olarak gösterir. Kamera görüntüsü ve fotoğraflar tarayıcınızda işlenir ve asla yüklenmez.",
+      "Barkod Okuyucu, barkodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan okur: ürün kodları (EAN ve UPC), kitaplardaki ISBN'ler, Code 128 ve Code 39 etiketleri, ITF koli kodları, GS1 DataBar ve Data Matrix, PDF417, Aztec ile QR kodlar gibi 2D kodlar. Tek bir resimde birden çok kod bulur ve her birini türüyle birlikte, kopyalanmaya hazır olarak gösterir. Kamera görüntüsü ve fotoğraflar tarayıcınızda işlenir ve asla yüklenmez. “Taramaya devam et” seçeneğiyle art arda birçok kodu, kopyalayabileceğiniz ya da CSV olarak kaydedebileceğiniz bir listeye okuyun.",
     seoTitle: "Online Barkod Okuyucu – Fotoğraftan veya Kameradan Okuyun",
     seoDescription:
       "EAN, UPC, Code 128, Data Matrix, PDF417 ve QR kodları tarayıcınızda bir fotoğraftan veya kameranızdan okuyun. Ücretsiz, gizli, hiçbir şey yüklenmez.",
@@ -6790,7 +6790,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Wi-Fi QR Kod",
     tagline: "Misafirlerin şifre yazmadan Wi-Fi ağınıza katılmak için taradığı bir QR kod oluşturun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Wi-Fi QR kodu, misafirlerin, müşterilerin ve ailenin telefon kamerasını koda doğrultarak ağınıza katılmasını sağlar: uzun bir şifreyi harf harf söylemeye gerek kalmaz. Ağ adını ve şifreyi girin, güvenlik türünü seçin; kod hemen görünür. iPhone'lar ve Android telefonlar yerleşik kamerayla bunu anlar. Buzdolabı, kafe masası veya toplantı odası için yazdırın. Şifreniz koda tarayıcınızda eklenir ve asla yüklenmez.",
+      "Wi-Fi QR kodu, misafirlerin, müşterilerin ve ailenin telefon kamerasını koda doğrultarak ağınıza katılmasını sağlar: uzun bir şifreyi harf harf söylemeye gerek kalmaz. Ağ adını ve şifreyi girin, güvenlik türünü seçin; kod hemen görünür. iPhone'lar ve Android telefonlar yerleşik kamerayla bunu anlar. Buzdolabı, kafe masası veya toplantı odası için yazdırın. Şifreniz koda tarayıcınızda eklenir ve asla yüklenmez. Ya da kodu, ağ adını ve şifreyi içeren yazdırılabilir bir kart indirin.",
     seoTitle: "Wi-Fi QR Kod Oluşturucu – Wi-Fi Ağınızı Şifresiz Paylaşın",
     seoDescription:
       "Misafirlerin tarayarak ağınıza katılması için tarayıcınızda bir Wi-Fi QR kodu oluşturun. iPhone ve Android kameralarıyla çalışır. Ücretsiz, yükleme yok.",
@@ -7074,7 +7074,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Toplu QR Kod",
     tagline: "Bir listeden veya CSV'den yüzlerce QR kodu tek seferde oluşturun ve tek bir ZIP olarak indirin. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Toplu QR Kod Oluşturucu bir listeyi QR kodlara dönüştürür: her ürün sayfası için bağlantılar, her masa için kodlar, koca bir depo için demirbaş etiketleri. Her satıra bir bağlantı veya metin yapıştırın ya da bir CSV dosyası yükleyin; dosyaları kolayca eşleştirmek için isterseniz her birinin önüne bir dosya adı yazın. PNG veya SVG ile bir boyut seçin, ardından hepsini tek bir ZIP olarak indirin. 1.000'e kadar kod tarayıcınızda oluşturulur; listeniz asla yüklenmez.",
+      "Toplu QR Kod Oluşturucu bir listeyi QR kodlara dönüştürür: her ürün sayfası için bağlantılar, her masa için kodlar, koca bir depo için demirbaş etiketleri. Her satıra bir bağlantı veya metin yapıştırın ya da bir CSV dosyası yükleyin; dosyaları kolayca eşleştirmek için isterseniz her birinin önüne bir dosya adı yazın. PNG veya SVG ile bir boyut seçin, ardından hepsini tek bir ZIP olarak indirin. 1.000'e kadar kod tarayıcınızda oluşturulur; listeniz asla yüklenmez. Ya da hepsini, her adı kendi kodunun altında olacak şekilde, kesmeye hazır yazdırılabilir bir A4 veya US Letter sayfasına koyun.",
     seoTitle: "Toplu QR Kod Oluşturucu – Ücretsiz, CSV'den ZIP'e",
     seoDescription:
       "Tarayıcınızda bir listeden veya CSV'den tek seferde 1.000'e kadar QR kod oluşturun. Kendi dosya adlarınız, PNG veya SVG, tek ZIP. Ücretsiz, yükleme yok.",
@@ -7145,7 +7145,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Toplu Barkod",
     tagline: "Bir listeden veya CSV'den yüzlerce barkodu tek seferde oluşturun, kontrol edin ve tek bir ZIP olarak kaydedin. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Toplu Barkod Oluşturucu bir listenin her satırı için bir barkod oluşturur: bir katalog için ürün kodları, bir depo için Code 128 etiketleri, bir kitap dizisi için ISBN'ler. Barkod türünü seçin, numaraları yapıştırın veya bir CSV yükleyin; her satır siz yazarken kontrol edilir: yanlış uzunluklar, yalnızca rakam alan kodlardaki harfler ve yanlış kontrol basamakları satır satır listelenir, eksik kontrol basamakları eklenir. Geçerli olanları PNG veya SVG olarak tek bir ZIP'te indirin. 1.000'e kadar barkod tarayıcınızda oluşturulur ve hiçbir şey yüklenmez.",
+      "Toplu Barkod Oluşturucu bir listenin her satırı için bir barkod oluşturur: bir katalog için ürün kodları, bir depo için Code 128 etiketleri, bir kitap dizisi için ISBN'ler. Barkod türünü seçin, numaraları yapıştırın veya bir CSV yükleyin; her satır siz yazarken kontrol edilir: yanlış uzunluklar, yalnızca rakam alan kodlardaki harfler ve yanlış kontrol basamakları satır satır listelenir, eksik kontrol basamakları eklenir. Geçerli olanları PNG veya SVG olarak tek bir ZIP'te indirin. 1.000'e kadar barkod tarayıcınızda oluşturulur ve hiçbir şey yüklenmez. Ya da hepsini, her adı kendi kodunun altında olacak şekilde, kesmeye hazır yazdırılabilir bir A4 veya US Letter sayfasına koyun.",
     seoTitle: "Toplu Barkod Oluşturucu – CSV'den ZIP'e, Ücretsiz",
     seoDescription:
       "Bir listeden veya CSV'den tek seferde 1.000'e kadar barkod: Code 128, EAN, UPC, ISBN, Data Matrix ve daha fazlası. Kontrol edilir, PNG veya SVG ZIP. Ücretsiz.",
@@ -10209,7 +10209,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     name: "Resim İşaretleme Aracı",
     shortName: "Resim İşaretle",
     tagline: "Bir ekran görüntüsüne veya fotoğrafa oklar, kutular, daireler, metin, vurgular ve numaralı adımlar ekleyin. Ücretsizdir ve cihazınızda çalışır.",
-    intro: "Resim İşaretleme Aracı, bir şeyi açıklamak için ekran görüntüsünü veya fotoğrafı işaretlemenizi sağlar: oklarla gösterin, alanları dikdörtgen veya elipslerle çerçeveleyin, serbest çizin, metni vurgulayın, talimatlar için etiketler ve numaralı adımlar ekleyin. Rengi ve kalınlığı seçin, herhangi bir işareti taşıyın veya silin, geri alın veya yineleyin. İşaretler resme göre boyutlanır ve indirilen dosya PNG veya JPG olarak tam çözünürlüktedir.",
+    intro: "Resim İşaretleme Aracı, bir şeyi açıklamak için ekran görüntüsünü veya fotoğrafı işaretlemenizi sağlar: oklarla gösterin, alanları dikdörtgen veya elipslerle çerçeveleyin, serbest çizin, metni vurgulayın, talimatlar için etiketler ve numaralı adımlar ekleyin. Rengi ve kalınlığı seçin, herhangi bir işareti taşıyın veya silin, geri alın veya yineleyin. İşaretler resme göre boyutlanır ve indirilen dosya PNG veya JPG olarak tam çözünürlüktedir. İsimler, yüzler veya plakalar gibi özel bilgileri bulanıklaştırın ya da pikselleştirin.",
     seoTitle: "Resim İşaretleme – Resme Ok ve Metin Ekle, Ücretsiz",
     seoDescription: "Resimleri online işaretleyin: ekran görüntülerine veya fotoğraflara ok, kutu, daire, metin, vurgu ve numaralı adım. Tam boyutlu PNG veya JPG. Ücretsiz.",
     keywords: [
@@ -10258,7 +10258,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Özel bilgileri gizleyebilir miyim?",
-        answer: "Resmin bölümlerini bulanıklaştırmak veya pikselleştirmek için Bulanıklaştırma ve Pikselleştirme Sansürü aracını kullanın."
+        answer: "Evet. Bulanıklaştır veya Pikselleştir’i seçip alanın üzerine sürükleyin. Efekt resmin kendisinden oluşturulur; gizlenen ayrıntı, kaldırılabilecek bir katmanla örtülmek yerine indirilen dosyadan tamamen çıkar."
       },
       {
         question: "Resmim yükleniyor mu?",

@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import QRCode from 'qrcode';
-import { QrCode, CheckCircle2, AlertTriangle, ImagePlus, X, FileCode2 } from 'lucide-react';
+import { QrCode, CheckCircle2, AlertTriangle, ImagePlus, X, FileCode2, Printer } from 'lucide-react';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { RangeField } from '../pdf/common';
 import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
 import { loadImageFile } from '../../../lib/canvas/loadImage';
 import { decodeWithJsQr } from '../../../lib/qr/decode';
+import { svgWithCaption, wifiCard, withCaption } from '../../../lib/qr/caption';
 import {
   cleanIban,
   contactPayload,
@@ -56,6 +57,8 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
   const [dark, setDark] = useState('#141414');
   const [light, setLight] = useState('#ffffff');
   const [logo, setLogo] = useState<{ img: HTMLImageElement; name: string } | null>(null);
+  // Text under the code, such as "Scan me" or the Wi-Fi name
+  const [caption, setCaption] = useState('');
   const [scans, setScans] = useState<boolean | null>(null);
   const [status, setStatus] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -107,6 +110,8 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
     const id = window.setTimeout(async () => {
       try {
         await QRCode.toCanvas(canvas, payload, { errorCorrectionLevel: effectiveLevel, margin, width: size, color: { dark, light } });
+        // The library pins the canvas to its pixel size in inline styles; the page sizes it instead, keeping its shape
+        canvas.style.width = canvas.style.height = '';
         if (logo) {
           const ctx = canvas.getContext('2d')!;
           const box = Math.round(canvas.width * LOGO_SHARE);
@@ -118,6 +123,12 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
           const w = logo.img.naturalWidth * s;
           const h = logo.img.naturalHeight * s;
           ctx.drawImage(logo.img, x + (box - w) / 2, x + (box - h) / 2, w, h);
+        }
+        if (caption.trim()) {
+          const withText = withCaption(canvas, caption, dark, light);
+          canvas.width = withText.width;
+          canvas.height = withText.height;
+          canvas.getContext('2d')!.drawImage(withText, 0, 0);
         }
         if (cancelled) return;
         setError(null);
@@ -131,7 +142,7 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
       cancelled = true;
       window.clearTimeout(id);
     };
-  }, [payload, effectiveLevel, margin, size, dark, light, logo, t]);
+  }, [payload, effectiveLevel, margin, size, dark, light, logo, caption, t]);
 
   const baseName = 'qr-code';
   const downloadPng = async () => {
@@ -161,8 +172,31 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
         `<rect x="${x - pad}" y="${x - pad}" width="${box + pad * 2}" height="${box + pad * 2}" fill="${light}"/><image x="${x + (box - w) / 2}" y="${x + (box - h) / 2}" width="${w}" height="${h}" href="${c.toDataURL('image/png')}"/></svg>`
       );
     }
+    svg = svgWithCaption(svg, caption, dark, light);
     downloadBlob(new Blob([svg], { type: 'image/svg+xml' }), `${baseName}.svg`);
     setStatus(t('ctl.pdf.done', { name: `${baseName}.svg` }));
+  };
+
+  /** A printable A6 card with the code, network name and password (drawn by the browser, so any script prints) */
+  const downloadWifiCard = async () => {
+    if (!payload) return;
+    const qr = document.createElement('canvas');
+    await QRCode.toCanvas(qr, payload, { errorCorrectionLevel: 'M', margin: 2, width: 760, color: { dark: '#141414', light: '#ffffff' } });
+    const card = wifiCard(qr, wifi.ssid, wifi.security === 'nopass' ? '' : wifi.password, {
+      title: t('ctl.qr.cardTitle'),
+      network: t('ctl.qr.cardNetwork'),
+      password: t('ctl.qr.cardPassword'),
+      noPassword: t('ctl.qr.cardNoPassword'),
+      scan: t('ctl.qr.cardScan'),
+    });
+    const { PDFDocument } = await import('pdf-lib');
+    const doc = await PDFDocument.create();
+    // A6 portrait, the card filling the page
+    const page = doc.addPage([297.64, 419.53]);
+    const png = await doc.embedPng(await (await canvasToBlob(card, 'image/png')).arrayBuffer());
+    page.drawImage(png, { x: 0, y: 0, width: 297.64, height: 419.53 });
+    downloadBlob(new Blob([new Uint8Array(await doc.save())], { type: 'application/pdf' }), 'wifi-card.pdf');
+    setStatus(t('ctl.pdf.done', { name: 'wifi-card.pdf' }));
   };
 
   const chooseLogo = async (file: File) => {
@@ -358,6 +392,7 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
         )}
         <RangeField id="qr-size" label={t('ctl.qr.size')} value={size} min={256} max={2048} step={64} unit=" px" onChange={setSize} />
         <RangeField id="qr-margin" label={t('ctl.qr.margin')} value={margin} min={0} max={8} onChange={setMargin} />
+        {input('qr-caption', t('ctl.qr.caption'), caption, setCaption, { placeholder: t('ctl.qr.captionPlaceholder'), maxLength: 60 })}
       </div>
     </>
   );
@@ -404,10 +439,18 @@ export function QrGeneratorWorkspace({ defaultKind = 'link' }: { defaultKind?: Q
               </p>
             )}
             {margin < 2 && <p className="text-[14px] text-accent-yellow">{t('ctl.qr.smallMargin')}</p>}
-            <button type="button" onClick={downloadSvg} className="btn-rule">
-              <FileCode2 className="w-4 h-4" aria-hidden="true" />
-              <span>{t('ws.download', { format: 'SVG' })}</span>
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button type="button" onClick={downloadSvg} className="btn-rule">
+                <FileCode2 className="w-4 h-4" aria-hidden="true" />
+                <span>{t('ws.download', { format: 'SVG' })}</span>
+              </button>
+              {kind === 'wifi' && (
+                <button type="button" onClick={downloadWifiCard} className="btn-rule">
+                  <Printer className="w-4 h-4" aria-hidden="true" />
+                  <span>{t('ctl.qr.wifiCard')}</span>
+                </button>
+              )}
+            </div>
           </div>
         )}
       </PdfToolLayout>

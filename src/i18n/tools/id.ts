@@ -5658,7 +5658,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Pas Foto",
     tagline: "Buat foto paspor atau visa dengan ukuran yang tepat, dengan background polos jika perlu, dan cetak beberapa foto dalam satu lembar.",
     intro:
-      "Pembuat Pas Foto mengubah foto biasa menjadi foto paspor, visa, atau kartu identitas dengan ukuran persis yang Anda butuhkan: 35 × 45 mm, 2 × 2 in, 33 × 48 mm, atau ukuran kustom. Geser dan zoom foto sampai puncak kepala dan dagu berada di garis panduan, ganti background dengan putih, abu-abu muda, atau biru muda polos jika perlu, lalu unduh satu foto beresolusi 300 DPI atau lembar cetak untuk kertas foto 4 × 6 in atau A4, lengkap dengan garis potong. Semuanya terjadi di browser Anda, jadi foto Anda tidak pernah diunggah.",
+      "Pembuat Pas Foto mengubah foto biasa menjadi foto paspor, visa, atau kartu identitas dengan ukuran persis yang Anda butuhkan: 35 × 45 mm, 2 × 2 in, 33 × 48 mm, atau ukuran kustom. Geser dan zoom foto sampai puncak kepala dan dagu berada di garis panduan, ganti background dengan putih, abu-abu muda, atau biru muda polos jika perlu, lalu unduh satu foto beresolusi 300 DPI atau lembar cetak untuk kertas foto 4 × 6 in atau A4, lengkap dengan garis potong. Semuanya terjadi di browser Anda, jadi foto Anda tidak pernah diunggah. Pilih negara Anda untuk mendapatkan ukuran foto dan latar yang diminta.",
     seoTitle: "Pas Foto Online – Ukuran 35×45 mm & 2×2 in, Gratis",
     seoDescription:
       "Pas foto online untuk paspor dan visa: 35×45 mm, 2×2 in, atau ukuran kustom, background putih, dan lembar cetak 4×6 atau A4. Gratis, privat, tanpa unggah file.",
@@ -6122,7 +6122,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Buat QR Code",
     tagline: "Buat QR code untuk link, teks, jaringan Wi-Fi, email, nomor telepon, atau kontak, dengan warna dan logo Anda, sebagai PNG atau SVG.",
     intro:
-      "Buat QR Code membuat QR code untuk link web, teks biasa, login Wi-Fi, email, nomor telepon, atau kartu kontak. Pilih warna, ukuran, dan koreksi kesalahan, tambahkan logo Anda di tengah, lalu unduh sebagai gambar PNG atau file SVG yang tetap tajam di ukuran berapa pun. Setiap kode diperiksa dengan membacanya kembali, jadi Anda tahu kode itu bisa dipindai sebelum dicetak. Kode dibuat di browser Anda, gratis, tanpa daftar akun, dan tidak pernah kedaluwarsa.",
+      "Buat QR Code membuat QR code untuk link web, teks biasa, login Wi-Fi, email, nomor telepon, atau kartu kontak. Pilih warna, ukuran, dan koreksi kesalahan, tambahkan logo Anda di tengah, lalu unduh sebagai gambar PNG atau file SVG yang tetap tajam di ukuran berapa pun. Setiap kode diperiksa dengan membacanya kembali, jadi Anda tahu kode itu bisa dipindai sebelum dicetak. Kode dibuat di browser Anda, gratis, tanpa daftar akun, dan tidak pernah kedaluwarsa. Tambahkan sebaris teks di bawah kode, misalnya “Pindai untuk melihat menu”, dan untuk Wi-Fi unduh kartu siap cetak berisi nama jaringan dan kata sandi.",
     seoTitle: "Buat QR Code Gratis – Logo, Warna, PNG & SVG",
     seoDescription:
       "Buat QR code untuk link, Wi-Fi, email, telepon, atau kontak, dengan warna dan logo Anda. Unduh PNG atau SVG. Gratis, tanpa daftar, tidak pernah kedaluwarsa.",
@@ -6203,7 +6203,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Scan QR",
     tagline: "Baca QR code dari gambar atau kamera, dan lihat link, kata sandi Wi-Fi, atau kontak di dalamnya sebelum Anda membukanya.",
     intro:
-      "Scan QR Code membaca QR code dari foto, screenshot, atau kamera Anda. Alat ini menampilkan isi kode sebelum terjadi apa pun: alamat web lengkap, jaringan Wi-Fi dan kata sandinya, email, nomor telepon, atau kartu kontak yang bisa Anda simpan. Link tidak pernah terbuka dengan sendirinya, jadi Anda bisa memeriksanya terlebih dahulu. Ini kebiasaan yang berguna, karena QR code sering dipakai untuk mengarahkan orang ke situs palsu. Gambar dan frame kamera dibaca di perangkat Anda.",
+      "Scan QR Code membaca QR code dari foto, screenshot, atau kamera Anda. Alat ini menampilkan isi kode sebelum terjadi apa pun: alamat web lengkap, jaringan Wi-Fi dan kata sandinya, email, nomor telepon, atau kartu kontak yang bisa Anda simpan. Link tidak pernah terbuka dengan sendirinya, jadi Anda bisa memeriksanya terlebih dahulu. Ini kebiasaan yang berguna, karena QR code sering dipakai untuk mengarahkan orang ke situs palsu. Gambar dan frame kamera dibaca di perangkat Anda. Aktifkan “Terus memindai” untuk memindai banyak kode berturut-turut ke dalam daftar yang bisa disalin atau disimpan sebagai CSV.",
     seoTitle: "Scan QR Code Online – dari Gambar atau Kamera",
     seoDescription:
       "Scan QR code dari gambar, screenshot, atau kamera di browser Anda. Lihat link, kata sandi Wi-Fi, atau kontak sebelum membukanya. Gratis dan privat.",
@@ -6705,7 +6705,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Scan Barcode",
     tagline: "Baca EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR code, dan lainnya dari foto atau kamera. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "Scan Barcode membaca barcode dari foto, screenshot, atau kamera Anda: kode produk (EAN dan UPC), ISBN pada buku, label Code 128 dan Code 39, karton ITF, GS1 DataBar, serta kode 2D seperti Data Matrix, PDF417, Aztec, dan QR code. Alat ini menemukan beberapa kode dalam satu gambar dan menampilkan masing-masing beserta jenisnya, siap disalin. Gambar kamera dan foto diproses di browser Anda dan tidak pernah diunggah.",
+      "Scan Barcode membaca barcode dari foto, screenshot, atau kamera Anda: kode produk (EAN dan UPC), ISBN pada buku, label Code 128 dan Code 39, karton ITF, GS1 DataBar, serta kode 2D seperti Data Matrix, PDF417, Aztec, dan QR code. Alat ini menemukan beberapa kode dalam satu gambar dan menampilkan masing-masing beserta jenisnya, siap disalin. Gambar kamera dan foto diproses di browser Anda dan tidak pernah diunggah. Aktifkan “Terus memindai” untuk memindai banyak kode berturut-turut ke dalam daftar yang bisa disalin atau disimpan sebagai CSV.",
     seoTitle: "Scan Barcode Online – dari Foto atau Kamera",
     seoDescription:
       "Scan barcode EAN, UPC, Code 128, Data Matrix, PDF417, dan QR code dari foto atau kamera di browser Anda. Gratis, privat, tidak ada yang diunggah.",
@@ -6776,7 +6776,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "QR Code Wi-Fi",
     tagline: "Buat QR code yang dipindai tamu untuk terhubung ke Wi-Fi Anda tanpa mengetik kata sandi. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "QR code Wi-Fi memungkinkan tamu, pelanggan, dan keluarga terhubung ke jaringan Anda cukup dengan mengarahkan kamera ponsel ke kode itu, tanpa perlu mengeja kata sandi yang panjang. Masukkan nama jaringan dan kata sandi, pilih jenis keamanan, dan kode langsung muncul. iPhone dan ponsel Android memahaminya lewat kamera bawaan. Cetak untuk ditempel di kulkas, meja kafe, atau ruang rapat. Kata sandi Anda dimasukkan ke dalam kode di browser Anda dan tidak pernah diunggah.",
+      "QR code Wi-Fi memungkinkan tamu, pelanggan, dan keluarga terhubung ke jaringan Anda cukup dengan mengarahkan kamera ponsel ke kode itu, tanpa perlu mengeja kata sandi yang panjang. Masukkan nama jaringan dan kata sandi, pilih jenis keamanan, dan kode langsung muncul. iPhone dan ponsel Android memahaminya lewat kamera bawaan. Cetak untuk ditempel di kulkas, meja kafe, atau ruang rapat. Kata sandi Anda dimasukkan ke dalam kode di browser Anda dan tidak pernah diunggah. Atau unduh kartu siap cetak berisi kode, nama jaringan, dan kata sandi.",
     seoTitle: "Buat QR Code Wi-Fi – Bagikan Wi-Fi Tanpa Kata Sandi",
     seoDescription:
       "Buat QR code Wi-Fi di browser agar tamu terhubung ke jaringan Anda cukup dengan memindai. Bisa dengan kamera iPhone dan Android. Gratis, tanpa unggah.",
@@ -7060,7 +7060,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "QR Code Massal",
     tagline: "Buat ratusan QR code sekaligus dari daftar atau CSV dan unduh semuanya dalam satu ZIP. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "Buat QR Code Massal mengubah daftar menjadi QR code: link untuk setiap halaman produk, kode untuk setiap meja, label aset untuk seluruh gudang. Tempel satu link atau teks per baris, atau muat file CSV, dan jika mau, tulis nama file sebelum masing-masing agar file mudah dicocokkan. Pilih PNG atau SVG dan ukurannya, lalu unduh semuanya dalam satu ZIP. Hingga 1.000 kode dibuat di browser Anda; daftar Anda tidak pernah diunggah.",
+      "Buat QR Code Massal mengubah daftar menjadi QR code: link untuk setiap halaman produk, kode untuk setiap meja, label aset untuk seluruh gudang. Tempel satu link atau teks per baris, atau muat file CSV, dan jika mau, tulis nama file sebelum masing-masing agar file mudah dicocokkan. Pilih PNG atau SVG dan ukurannya, lalu unduh semuanya dalam satu ZIP. Hingga 1.000 kode dibuat di browser Anda; daftar Anda tidak pernah diunggah. Atau letakkan semuanya di lembar A4 atau Letter siap cetak, dengan nama di bawah tiap kode, siap digunting.",
     seoTitle: "Buat QR Code Massal Gratis – dari CSV ke ZIP",
     seoDescription:
       "Buat hingga 1.000 QR code sekaligus dari daftar atau CSV di browser. Nama file sendiri, PNG atau SVG, satu ZIP. Gratis, tidak ada yang diunggah.",
@@ -7131,7 +7131,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Barcode Massal",
     tagline: "Buat ratusan barcode sekaligus dari daftar atau CSV, sudah diperiksa dan disimpan dalam satu ZIP. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "Buat Barcode Massal membuat barcode untuk setiap baris dalam daftar: kode produk untuk katalog, label Code 128 untuk gudang, ISBN untuk serial buku. Pilih jenis barcode, tempel nomornya atau muat CSV, dan setiap baris diperiksa saat Anda mengetik: panjang yang salah, huruf di kode khusus angka, dan digit periksa yang salah dicantumkan per baris, dan digit periksa yang belum ada ditambahkan. Unduh yang valid sebagai PNG atau SVG dalam satu ZIP. Hingga 1.000 barcode dibuat di browser Anda dan tidak ada yang diunggah.",
+      "Buat Barcode Massal membuat barcode untuk setiap baris dalam daftar: kode produk untuk katalog, label Code 128 untuk gudang, ISBN untuk serial buku. Pilih jenis barcode, tempel nomornya atau muat CSV, dan setiap baris diperiksa saat Anda mengetik: panjang yang salah, huruf di kode khusus angka, dan digit periksa yang salah dicantumkan per baris, dan digit periksa yang belum ada ditambahkan. Unduh yang valid sebagai PNG atau SVG dalam satu ZIP. Hingga 1.000 barcode dibuat di browser Anda dan tidak ada yang diunggah. Atau letakkan semuanya di lembar A4 atau Letter siap cetak, dengan nama di bawah tiap kode, siap digunting.",
     seoTitle: "Buat Barcode Massal – dari CSV ke ZIP, Gratis",
     seoDescription:
       "Buat hingga 1.000 barcode sekaligus dari daftar atau CSV: Code 128, EAN, UPC, ISBN, Data Matrix, dan lainnya. Diperiksa, ZIP PNG atau SVG. Gratis.",
@@ -10208,7 +10208,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     name: "Anotasi Gambar",
     shortName: "Anotasi Gambar",
     tagline: "Tambahkan panah, kotak, lingkaran, teks, stabilo, dan langkah bernomor ke tangkapan layar atau foto. Gratis, dan berjalan di perangkat Anda.",
-    intro: "Anotasi Gambar memungkinkan Anda menandai tangkapan layar atau foto untuk menjelaskan sesuatu: menunjuk dengan panah, membingkai area dengan persegi panjang atau elips, menggambar bebas, menyorot teks, serta menambahkan label dan langkah bernomor untuk petunjuk. Pilih warna dan ketebalan, pindahkan atau hapus tanda mana pun, dan urungkan atau ulangi. Ukuran tanda menyesuaikan gambar, dan hasil unduhannya beresolusi penuh sebagai PNG atau JPG.",
+    intro: "Anotasi Gambar memungkinkan Anda menandai tangkapan layar atau foto untuk menjelaskan sesuatu: menunjuk dengan panah, membingkai area dengan persegi panjang atau elips, menggambar bebas, menyorot teks, serta menambahkan label dan langkah bernomor untuk petunjuk. Pilih warna dan ketebalan, pindahkan atau hapus tanda mana pun, dan urungkan atau ulangi. Ukuran tanda menyesuaikan gambar, dan hasil unduhannya beresolusi penuh sebagai PNG atau JPG. Buramkan atau pikselkan hal pribadi, seperti nama, wajah, atau pelat nomor.",
     seoTitle: "Anotasi Gambar – Tambah Panah dan Teks ke Foto, Gratis",
     seoDescription: "Beri anotasi gambar online: panah, kotak, lingkaran, teks, stabilo, dan langkah bernomor di tangkapan layar atau foto. PNG atau JPG ukuran penuh. Gratis.",
     keywords: [
@@ -10257,7 +10257,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Bisakah saya menyembunyikan informasi pribadi?",
-        answer: "Gunakan Sensor Gambar dengan Blur dan Pikselasi untuk memburamkan atau memikselasi bagian gambar."
+        answer: "Ya. Pilih Buramkan atau Pikselkan lalu seret di atas area tersebut. Efeknya dibuat dari gambar itu sendiri, jadi detail yang disembunyikan hilang dari unduhan, bukan sekadar ditutup lapisan yang bisa dilepas."
       },
       {
         question: "Apakah gambar saya diunggah?",
