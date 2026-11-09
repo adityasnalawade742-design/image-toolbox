@@ -9,6 +9,7 @@ import { loadImageFile } from '../../../lib/canvas/loadImage';
 import { PagePreview } from './PagePreview';
 import { EditorOverlay, bounds, moveBy, toolFor, type Draft, type EditorTool, type MarkStyle, type ShapeKind } from './EditorOverlay';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
+import { RedactSearch, type FoundBox } from './RedactSearch';
 
 const inputClass = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink';
 
@@ -514,7 +515,33 @@ export function PdfEditorWorkspace({ startTool = 'text' }: { startTool?: EditorT
         <p className="text-[13px] text-graphite">{t('ctl.edit.whiteoutNote')}</p>
       </>
     ),
-    redact: <p className="text-[13px] text-graphite">{t('ctl.edit.redactNote')}</p>,
+    redact: (
+      <>
+        <p className="text-[13px] text-graphite">{t('ctl.edit.redactNote')}</p>
+        <RedactSearch
+          doc={pdf.doc}
+          onMark={(found: FoundBox[]) => {
+            // One undo step for all of them; the boxes are ordinary redactions, checked and adjusted like hand-drawn ones
+            const boxes: BoxItem[] = found.map(({ page: p, box }) => ({
+              id: newId(),
+              page: p,
+              kind: 'redact',
+              x: Math.max(0, box.x),
+              y: Math.max(0, box.y),
+              w: box.w,
+              h: box.h,
+              color: '#000000',
+              width: style.shapeWidth,
+              fill: false,
+              url: '',
+            }));
+            commit([...itemsRef.current, ...boxes]);
+            setSelectedId(null);
+            if (found.length) setPage(found[0].page + 1);
+          }}
+        />
+      </>
+    ),
     link:
       selected?.kind === 'link' ? (
         <div className="space-y-1">
