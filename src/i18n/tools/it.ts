@@ -4195,7 +4195,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Unisci PDF",
     tagline: "Combina più file PDF in uno solo, nell’ordine che scegli. I file vengono uniti sul tuo dispositivo.",
     intro:
-      "Unisci PDF mette insieme due o più file PDF in un unico documento. Aggiungi i file, mettili in ordine con i pulsanti di spostamento, controlla la prima pagina di ciascuno e scarica un solo PDF con tutte le pagine in sequenza. È il modo rapido per inviare una relazione con i suoi allegati, varie pagine scansionate o un gruppo di fatture come un unico file. L’unione avviene nel tuo browser, quindi i tuoi documenti non vengono mai caricati su un server.",
+      "Unisci PDF mette insieme due o più file PDF in un unico documento. Aggiungi i file, mettili in ordine con i pulsanti di spostamento, controlla la prima pagina di ciascuno e scarica un solo PDF con tutte le pagine in sequenza. È il modo rapido per inviare una relazione con i suoi allegati, varie pagine scansionate o un gruppo di fatture come un unico file. L’unione avviene nel tuo browser, quindi i tuoi documenti non vengono mai caricati su un server. Passa a Pagine per vedere tutte le pagine di tutti i file in una griglia e spostare, ruotare o eliminare singole pagine prima di unire.",
     seoTitle: "Unire PDF online – Gratis, senza upload",
     seoDescription:
       "Unire PDF nel browser: combina più file in uno solo, nell’ordine che vuoi, e scarica un unico PDF. Gratis, privato, senza upload e senza filigrana.",
@@ -4249,7 +4249,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "I link e i segnalibri continueranno a funzionare?",
         answer:
-          "I link nelle pagine vengono mantenuti. L’elenco dei segnalibri (la struttura nel pannello laterale del lettore PDF) non viene copiato nel file unito.",
+          "Sì. I link nelle pagine e l’elenco dei segnalibri di ogni file (lo schema nel pannello laterale del lettore PDF) vengono mantenuti e puntano al file unito. Se togli una pagina, i suoi link e segnalibri vengono rimossi con lei.",
       },
       {
         question: "L’unione riduce la qualità?",

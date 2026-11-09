@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRef } from 'pdf-lib';
-import { buildFromPages, extractPages, mergePdfs } from '../pageOps';
+import { buildFromPages, extractPages, mergePages, mergePdfs } from '../pageOps';
 
 const N = (k: string) => PDFName.of(k);
 
@@ -97,5 +97,43 @@ describe('page tools keep the document structure', () => {
     expect(bookmarks(out).map((b) => `${b.title}@${b.page}`)).toEqual(['One@0', 'Two@1', 'Three@2', 'One@3', 'Two@4', 'Three@5']);
     expect(linkTargets(out, 3)).toEqual([5]);
     expect(pageObjects(out)).toBe(6);
+  });
+});
+
+describe('Merge PDF page mode', () => {
+  const widths = (doc: PDFDocument) => doc.getPages().map((p) => Math.round(p.getWidth()));
+  async function twoPager() {
+    const doc = await PDFDocument.create();
+    doc.addPage([301, 200]);
+    doc.addPage([302, 200]);
+    return doc.save();
+  }
+
+  it('every page in file order gives the same document as merging the files', async () => {
+    const [a, b] = [await makeSource(), await twoPager()];
+    const files = await PDFDocument.load(await mergePdfs([a, b]));
+    const pages = await PDFDocument.load(await mergePages([a, b], [0, 1, 2].map((index) => ({ file: 0, index })).concat([0, 1].map((index) => ({ file: 1, index })))));
+    expect(widths(pages)).toEqual(widths(files));
+    expect(bookmarks(pages)).toEqual(bookmarks(files));
+    expect(linkTargets(pages, 0)).toEqual(linkTargets(files, 0));
+    expect(pages.getForm().getFields().map((f) => f.getName())).toEqual(files.getForm().getFields().map((f) => f.getName()));
+  });
+
+  it('mixes pages of several files in any order, turned as asked', async () => {
+    const [a, b] = [await makeSource(), await twoPager()];
+    const order = [
+      { file: 0, index: 0 },
+      { file: 1, index: 1 },
+      { file: 0, index: 2, rotate: 90 },
+      { file: 1, index: 0 },
+    ];
+    const out = await PDFDocument.load(await mergePages([a, b], order));
+    expect(widths(out)).toEqual([101, 302, 103, 301]);
+    expect(out.getPages().map((p) => p.getRotation().angle)).toEqual([0, 0, 90, 0]);
+    // Bookmarks follow their pages; "Two" pointed to a page that was left out
+    expect(bookmarks(out).map((b) => `${b.title}@${b.page}`)).toEqual(['One@0', 'Three@2']);
+    // A link may only point at a page of the result, never at a dropped one
+    for (let i = 0; i < 4; i++) for (const target of linkTargets(out, i)) expect(target).toBeGreaterThanOrEqual(0);
+    expect(pageObjects(out)).toBe(4);
   });
 });

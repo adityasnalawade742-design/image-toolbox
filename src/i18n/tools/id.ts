@@ -4192,7 +4192,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Gabung PDF",
     tagline: "Gabungkan beberapa file PDF menjadi satu, sesuai urutan pilihan Anda. File digabungkan di perangkat Anda.",
     intro:
-      "Gabungkan PDF menyatukan dua file PDF atau lebih menjadi satu dokumen. Tambahkan file, susun urutannya dengan tombol pindah, periksa halaman pertama setiap file, lalu unduh satu PDF berisi semua halaman secara berurutan. Ini cara cepat untuk mengirim laporan beserta lampirannya, beberapa halaman hasil scan, atau sekumpulan invoice dalam satu file. Penggabungan dilakukan di browser Anda, jadi dokumen Anda tidak pernah diunggah ke server.",
+      "Gabungkan PDF menyatukan dua file PDF atau lebih menjadi satu dokumen. Tambahkan file, susun urutannya dengan tombol pindah, periksa halaman pertama setiap file, lalu unduh satu PDF berisi semua halaman secara berurutan. Ini cara cepat untuk mengirim laporan beserta lampirannya, beberapa halaman hasil scan, atau sekumpulan invoice dalam satu file. Penggabungan dilakukan di browser Anda, jadi dokumen Anda tidak pernah diunggah ke server. Beralih ke Halaman untuk melihat semua halaman dari semua file dalam satu kisi, lalu pindahkan, putar, atau hapus halaman satu per satu sebelum menggabungkan.",
     seoTitle: "Gabung PDF Online – Gratis, Tanpa Unggah File",
     seoDescription:
       "Gabung PDF jadi satu file langsung di browser Anda. Susun file dalam urutan apa pun, lalu unduh satu PDF. Gratis, privat, tanpa unggah file, tanpa watermark.",
@@ -4245,7 +4245,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah tautan dan bookmark tetap berfungsi?",
         answer:
-          "Tautan di halaman tetap dipertahankan. Daftar bookmark (kerangka di panel samping pembaca PDF) tidak disalin ke file gabungan.",
+          "Ya. Tautan di halaman dan daftar bookmark tiap file (kerangka di panel samping pembaca PDF) tetap ada dan menunjuk ke file gabungan. Jika Anda membuang satu halaman, tautan dan bookmark-nya ikut terbuang.",
       },
       {
         question: "Apakah penggabungan menurunkan kualitas?",

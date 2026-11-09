@@ -775,6 +775,11 @@ export const strings = {
   'ctl.mergepdf.add': 'PDF 더 추가',
   'ctl.mergepdf.needTwo': '합치려면 PDF를 하나 이상 더 추가하세요.',
   'ctl.mergepdf.total': '전체: {n}페이지',
+  'ctl.mergepdf.arrange': "정렬 방식",
+  'ctl.mergepdf.byFiles': "파일 단위",
+  'ctl.mergepdf.byPages': "페이지 단위",
+  'ctl.mergepdf.pagesHint': "모든 파일의 모든 페이지가 표시돼요. 어느 페이지든 이동, 회전, 삭제하거나 끌어서 순서를 바꿀 수 있어요. 파일 목록을 바꾸면 페이지 순서가 처음으로 돌아가요.",
+  'ctl.mergepdf.tooMany': "페이지 단위는 최대 {max}페이지까지 보여 줘요. 파일 단위로 병합하세요.",
 
   // ===== Split PDF =====
   'ctl.splitpdf.mode': '분할 방법',

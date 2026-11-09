@@ -81,6 +81,28 @@ export async function mergePdfs(files: (Uint8Array | ArrayBuffer)[]): Promise<Ui
   return save(out);
 }
 
+/**
+ * Several PDFs merged page by page in any order (Merge PDF's page mode): `order` lists pages as { file, index }, each
+ * optionally turned. Consecutive pages from the same file are copied together, keeping their links, bookmarks and form
+ * fields as `mergePdfs` does; each run gets a fresh copy of its file, because copying edits the source's link entries.
+ */
+export async function mergePages(
+  files: (Uint8Array | ArrayBuffer)[],
+  order: { file: number; index: number; rotate?: number }[]
+): Promise<Uint8Array> {
+  const runs: { file: number; pages: { index: number; rotate?: number }[] }[] = [];
+  for (const p of order) {
+    const last = runs[runs.length - 1];
+    if (last && last.file === p.file) last.pages.push({ index: p.index, rotate: p.rotate });
+    else runs.push({ file: p.file, pages: [{ index: p.index, rotate: p.rotate }] });
+  }
+  const sources = [];
+  for (const run of runs) sources.push({ doc: await loadPdf(files[run.file]), pages: run.pages });
+  const out = await assemblePages(sources);
+  dropUnreachable(out);
+  return save(out);
+}
+
 /** A new PDF with the given pages (0-based) in the given order, each optionally turned by extra degrees */
 export async function buildFromPages(bytes: Uint8Array | ArrayBuffer, pages: { index: number; rotate?: number }[]): Promise<Uint8Array> {
   const out = await assemblePages([{ doc: await loadPdf(bytes), pages }]);

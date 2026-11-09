@@ -775,6 +775,11 @@ export const strings = {
   'ctl.mergepdf.add': 'Tambah PDF lagi',
   'ctl.mergepdf.needTwo': 'Tambahkan setidaknya satu PDF lagi untuk digabungkan.',
   'ctl.mergepdf.total': 'Total: {n} halaman',
+  'ctl.mergepdf.arrange': "Susun",
+  'ctl.mergepdf.byFiles': "Seluruh file",
+  'ctl.mergepdf.byPages': "Halaman",
+  'ctl.mergepdf.pagesHint': "Semua halaman dari semua file ditampilkan. Pindahkan, putar, atau hapus halaman mana pun, atau seret untuk mengurutkan ulang. Mengubah daftar file akan mengulang urutan halaman.",
+  'ctl.mergepdf.tooMany': "Mode halaman menampilkan hingga {max} halaman. Gabungkan sebagai seluruh file saja.",
 
   // ===== Split PDF =====
   'ctl.splitpdf.mode': 'Pisahkan berdasarkan',

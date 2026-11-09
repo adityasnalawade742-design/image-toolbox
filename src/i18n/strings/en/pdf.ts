@@ -34,6 +34,11 @@ export const pdfStrings = {
   'ctl.mergepdf.add': 'Add more PDFs',
   'ctl.mergepdf.needTwo': 'Add at least one more PDF to merge.',
   'ctl.mergepdf.total': 'Total: {n} pages',
+  'ctl.mergepdf.arrange': 'Arrange',
+  'ctl.mergepdf.byFiles': 'Whole files',
+  'ctl.mergepdf.byPages': 'Pages',
+  'ctl.mergepdf.pagesHint': 'Every page of every file is shown. Move, rotate or delete any page, or drag pages to reorder them. Changing the file list starts the page order again.',
+  'ctl.mergepdf.tooMany': 'Page mode shows up to {max} pages. Merge these as whole files instead.',
 
   // Split
   'ctl.splitpdf.mode': 'Split by',

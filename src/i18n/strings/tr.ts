@@ -775,6 +775,11 @@ export const strings = {
   'ctl.mergepdf.add': 'Daha fazla PDF ekle',
   'ctl.mergepdf.needTwo': 'Birleştirmek için en az bir PDF daha ekleyin.',
   'ctl.mergepdf.total': 'Toplam: {n} sayfa',
+  'ctl.mergepdf.arrange': "Düzen",
+  'ctl.mergepdf.byFiles': "Dosyaların tamamı",
+  'ctl.mergepdf.byPages': "Sayfalar",
+  'ctl.mergepdf.pagesHint': "Tüm dosyaların tüm sayfaları gösterilir. Herhangi bir sayfayı taşıyın, döndürün veya silin ya da sürükleyerek yeniden sıralayın. Dosya listesini değiştirmek sayfa sırasını baştan başlatır.",
+  'ctl.mergepdf.tooMany': "Sayfa modu en fazla {max} sayfa gösterir. Bunları dosyaların tamamı olarak birleştirin.",
 
   // Split PDF
   'ctl.splitpdf.mode': 'Bölme yöntemi',

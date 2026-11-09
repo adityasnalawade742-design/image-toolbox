@@ -775,6 +775,11 @@ export const strings = {
   'ctl.mergepdf.add': 'Aggiungi altri PDF',
   'ctl.mergepdf.needTwo': 'Aggiungi almeno un altro PDF da unire.',
   'ctl.mergepdf.total': 'Totale: {n} pagine',
+  'ctl.mergepdf.arrange': "Disponi",
+  'ctl.mergepdf.byFiles': "File interi",
+  'ctl.mergepdf.byPages': "Pagine",
+  'ctl.mergepdf.pagesHint': "Sono mostrate tutte le pagine di tutti i file. Sposta, ruota o elimina qualsiasi pagina, oppure trascinale per riordinarle. Modificare l’elenco dei file fa ripartire l’ordine delle pagine.",
+  'ctl.mergepdf.tooMany': "La modalità pagine mostra fino a {max} pagine. Unisci questi file interi.",
 
   // Split PDF
   'ctl.splitpdf.mode': 'Dividi per',

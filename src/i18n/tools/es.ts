@@ -4185,7 +4185,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Unir PDF",
     tagline: "Combina varios archivos PDF en uno, en el orden que elijas. Los archivos se unen en tu dispositivo.",
     intro:
-      "Unir PDF junta dos o más archivos PDF en un solo documento. Añade los archivos, ordénalos con los botones de mover, revisa la primera página de cada uno y descarga un PDF con todas las páginas seguidas. Es la forma rápida de enviar un informe con sus anexos, varias páginas escaneadas o un conjunto de facturas en un solo archivo. La unión se hace en tu navegador, así que tus documentos nunca se suben a un servidor.",
+      "Unir PDF junta dos o más archivos PDF en un solo documento. Añade los archivos, ordénalos con los botones de mover, revisa la primera página de cada uno y descarga un PDF con todas las páginas seguidas. Es la forma rápida de enviar un informe con sus anexos, varias páginas escaneadas o un conjunto de facturas en un solo archivo. La unión se hace en tu navegador, así que tus documentos nunca se suben a un servidor. Cambia a Páginas para ver todas las páginas de todos los archivos en una cuadrícula y mover, girar o eliminar páginas sueltas antes de combinar.",
     seoTitle: "Unir PDF online – gratis y sin subir archivos",
     seoDescription:
       "Unir PDF gratis: combina varios archivos PDF en uno desde tu navegador, en el orden que quieras. Privado, sin subir archivos y sin marca de agua.",
@@ -4239,7 +4239,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Siguen funcionando los enlaces y los marcadores?",
         answer:
-          "Los enlaces de las páginas se conservan. La lista de marcadores (el índice del panel lateral de un lector de PDF) no se copia al archivo unido.",
+          "Sí. Los enlaces de las páginas y la lista de marcadores de cada archivo (el esquema del panel lateral del lector de PDF) se conservan y apuntan al archivo combinado. Si quitas una página, sus enlaces y marcadores se van con ella.",
       },
       {
         question: "¿Unir reduce la calidad?",
