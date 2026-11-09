@@ -6008,7 +6008,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Passport Photo Maker",
     "shortName": "Passport Photo",
     "tagline": "Make a passport or visa photo at the right size, with an optional plain background, and print several on one sheet.",
-    "intro": "Passport Photo Maker turns an ordinary photo into a passport, visa or ID photo at the exact size you need: 35 × 45 mm, 2 × 2 inches, 33 × 48 mm, or a custom size. Move and zoom the photo until the top of the head and the chin sit on the guide lines, replace the background with plain white, light grey or light blue if you need to, and download one photo at 300 DPI or a print sheet for 4 × 6 inch photo paper or A4, with lines to cut along. Everything happens in your browser, so your photo is never uploaded.",
+    "intro": "Passport Photo Maker turns an ordinary photo into a passport, visa or ID photo at the exact size you need: 35 × 45 mm, 2 × 2 inches, 33 × 48 mm, or a custom size. Move and zoom the photo until the top of the head and the chin sit on the guide lines, replace the background with plain white, light grey or light blue if you need to, and download one photo at 300 DPI or a print sheet for 4 × 6 inch photo paper or A4, with lines to cut along. Everything happens in your browser, so your photo is never uploaded. Pick your country to get its photo size and the background it asks for.",
     "seoTitle": "Passport Photo Maker – 35×45 mm, 2×2 in, Free",
     "seoDescription": "Make passport and visa photos online: 35×45 mm, 2×2 in or custom, white background, and a 4×6 or A4 print sheet. Free and private.",
     "keywords": [
@@ -6435,7 +6435,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "QR Code Generator",
     "shortName": "QR Generator",
     "tagline": "Make a QR code for a link, text, Wi-Fi network, email, phone number or contact, with your colors and logo, as PNG or SVG.",
-    "intro": "QR Code Generator makes a QR code for a web link, plain text, Wi-Fi login, email, phone number or contact card. Choose the colors, the size and the error correction, add your logo in the middle, and download it as a PNG image or an SVG file that stays sharp at any size. Every code is checked by reading it back, so you know it scans before you print it. Codes are made in your browser, free, with no sign-up and no expiry.",
+    "intro": "QR Code Generator makes a QR code for a web link, plain text, Wi-Fi login, email, phone number or contact card. Choose the colors, the size and the error correction, add your logo in the middle, and download it as a PNG image or an SVG file that stays sharp at any size. Every code is checked by reading it back, so you know it scans before you print it. Codes are made in your browser, free, with no sign-up and no expiry. Add a line of text under the code, such as “Scan for the menu”, and for Wi-Fi download a printable card with the network name and password.",
     "seoTitle": "Free QR Code Generator – Logo, Colors, PNG & SVG",
     "seoDescription": "Create QR codes for links, Wi-Fi, email, phone or contacts, with your colors and logo. Download PNG or SVG. Free, no sign-up, codes never expire.",
     "keywords": [
@@ -6509,7 +6509,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "QR Code Reader",
     "shortName": "QR Reader",
     "tagline": "Read a QR code from an image or your camera and see the link, Wi-Fi password or contact it holds before you open it.",
-    "intro": "QR Code Reader decodes QR codes from a photo, a screenshot or your camera. It shows what the code holds before anything happens: the full web address, a Wi-Fi network and password, an email, a phone number or a contact card you can save. Links never open on their own, so you can check them first, a useful habit because QR codes are often used to send people to fake sites. Images and camera frames are read on your device.",
+    "intro": "QR Code Reader decodes QR codes from a photo, a screenshot or your camera. It shows what the code holds before anything happens: the full web address, a Wi-Fi network and password, an email, a phone number or a contact card you can save. Links never open on their own, so you can check them first, a useful habit because QR codes are often used to send people to fake sites. Images and camera frames are read on your device. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file.",
     "seoTitle": "QR Code Reader Online – Scan from Image or Camera",
     "seoDescription": "Scan a QR code from an image, screenshot or camera in your browser. See the link, Wi-Fi password or contact before opening it. Free and private.",
     "keywords": [
@@ -6969,7 +6969,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Barcode Scanner",
     "shortName": "Barcode Scanner",
     "tagline": "Read EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR and more from a photo or your camera. Free, and it runs on your device.",
-    "intro": "Barcode Scanner reads barcodes from a photo, a screenshot or your camera: product codes (EAN and UPC), ISBNs on books, Code 128 and Code 39 labels, ITF cartons, GS1 DataBar, and 2D codes like Data Matrix, PDF417, Aztec and QR codes. It finds several codes in one picture and shows each one with its type, ready to copy. The camera picture and photos are processed in your browser and never uploaded.",
+    "intro": "Barcode Scanner reads barcodes from a photo, a screenshot or your camera: product codes (EAN and UPC), ISBNs on books, Code 128 and Code 39 labels, ITF cartons, GS1 DataBar, and 2D codes like Data Matrix, PDF417, Aztec and QR codes. It finds several codes in one picture and shows each one with its type, ready to copy. The camera picture and photos are processed in your browser and never uploaded. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file.",
     "seoTitle": "Barcode Scanner Online – Read From Photo or Camera",
     "seoDescription": "Scan EAN, UPC, Code 128, Data Matrix, PDF417 and QR codes from a photo or your camera, in your browser. Free, private, nothing uploaded.",
     "keywords": [
@@ -7034,7 +7034,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Wi-Fi QR Code Generator",
     "shortName": "Wi-Fi QR Code",
     "tagline": "Make a QR code guests scan to join your Wi-Fi without typing the password. Free, and it runs on your device.",
-    "intro": "A Wi-Fi QR code lets guests, customers and family join your network by pointing their phone camera at it: no spelling out a long password. Enter the network name and password, pick the security type, and the code appears straight away. iPhones and Android phones understand it with the built-in camera. Print it for the fridge, a café table or a meeting room. Your password is put into the code in your browser and never uploaded.",
+    "intro": "A Wi-Fi QR code lets guests, customers and family join your network by pointing their phone camera at it: no spelling out a long password. Enter the network name and password, pick the security type, and the code appears straight away. iPhones and Android phones understand it with the built-in camera. Print it for the fridge, a café table or a meeting room. Your password is put into the code in your browser and never uploaded. Or download a printable card with the code, the network name and the password.",
     "seoTitle": "Wi-Fi QR Code Generator – Share Wi-Fi Without Password",
     "seoDescription": "Make a Wi-Fi QR code in your browser so guests join your network by scanning. Works with iPhone and Android cameras. Free, nothing uploaded.",
     "keywords": [
@@ -7294,7 +7294,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Bulk QR Code Generator",
     "shortName": "Bulk QR Codes",
     "tagline": "Make hundreds of QR codes at once from a list or CSV and download them in one ZIP. Free, and it runs on your device.",
-    "intro": "Bulk QR Code Generator turns a list into QR codes: links for every product page, codes for every table, asset tags for a whole stock room. Paste one link or text per line, or load a CSV file, and optionally put a file name before each one so the files are easy to match. Choose PNG or SVG and a size, then download them all in one ZIP. Up to 1,000 codes are made in your browser; your list is never uploaded.",
+    "intro": "Bulk QR Code Generator turns a list into QR codes: links for every product page, codes for every table, asset tags for a whole stock room. Paste one link or text per line, or load a CSV file, and optionally put a file name before each one so the files are easy to match. Choose PNG or SVG and a size, then download them all in one ZIP. Up to 1,000 codes are made in your browser; your list is never uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out.",
     "seoTitle": "Bulk QR Code Generator – Free, CSV to ZIP",
     "seoDescription": "Make up to 1,000 QR codes at once from a list or CSV in your browser. Your own file names, PNG or SVG, one ZIP. Free, nothing uploaded.",
     "keywords": [
@@ -7359,7 +7359,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Bulk Barcode Generator",
     "shortName": "Bulk Barcodes",
     "tagline": "Make hundreds of barcodes at once from a list or CSV, checked and saved in one ZIP. Free, and it runs on your device.",
-    "intro": "Bulk Barcode Generator makes a barcode for every line of a list: product codes for a catalogue, Code 128 labels for a warehouse, ISBNs for a book series. Choose the barcode type, paste the numbers or load a CSV, and each line is checked as you type: wrong lengths, letters in number-only codes and wrong check digits are listed by line, and missing check digits are added. Download the valid ones as PNG or SVG in one ZIP. Up to 1,000 barcodes are made in your browser and nothing is uploaded.",
+    "intro": "Bulk Barcode Generator makes a barcode for every line of a list: product codes for a catalogue, Code 128 labels for a warehouse, ISBNs for a book series. Choose the barcode type, paste the numbers or load a CSV, and each line is checked as you type: wrong lengths, letters in number-only codes and wrong check digits are listed by line, and missing check digits are added. Download the valid ones as PNG or SVG in one ZIP. Up to 1,000 barcodes are made in your browser and nothing is uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out.",
     "seoTitle": "Bulk Barcode Generator – CSV to ZIP, Free",
     "seoDescription": "Make up to 1,000 barcodes at once from a list or CSV: Code 128, EAN, UPC, ISBN, Data Matrix and more. Checked, PNG or SVG ZIP. Free.",
     "keywords": [
@@ -9848,7 +9848,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Image Annotator",
     "shortName": "Annotate Image",
     "tagline": "Add arrows, boxes, circles, text, highlights and numbered steps to a screenshot or photo. Free, and it runs on your device.",
-    "intro": "Image Annotator lets you mark up a screenshot or photo to explain something: point with arrows, frame areas with rectangles or ellipses, draw freehand, highlight text, add labels and numbered steps for instructions. Choose the color and thickness, move or delete any mark, and undo or redo. Marks are sized to the picture, and the download is full resolution as PNG or JPG.",
+    "intro": "Image Annotator lets you mark up a screenshot or photo to explain something: point with arrows, frame areas with rectangles or ellipses, draw freehand, highlight text, add labels and numbered steps for instructions. Choose the color and thickness, move or delete any mark, and undo or redo. Marks are sized to the picture, and the download is full resolution as PNG or JPG. Blur or pixelate anything private, such as names, faces or number plates.",
     "seoTitle": "Image Annotator – Add Arrows and Text to Images",
     "seoDescription": "Annotate images online: arrows, boxes, circles, text, highlights and numbered steps on screenshots or photos. Full-size PNG or JPG. Free.",
     "keywords": [
@@ -9897,7 +9897,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I hide private information?",
-        "answer": "Use Censor Image to blur or pixelate parts of a picture."
+        "answer": "Yes. Choose Blur or Pixelate and drag across the area. The effect is made from the picture itself, so the hidden detail is gone from the download rather than covered by a layer that could be removed."
       },
       {
         "question": "Is my picture uploaded?",

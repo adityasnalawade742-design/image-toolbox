@@ -5683,7 +5683,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Passfoto",
     tagline: "Erstelle ein Pass- oder Visumfoto in der richtigen Größe, auf Wunsch mit einfarbigem Hintergrund, und drucke mehrere auf einem Bogen.",
     intro:
-      "Passfoto erstellen macht aus einem normalen Foto ein Pass-, Visum- oder Ausweisfoto in genau der Größe, die du brauchst: 35 × 45 mm, 2 × 2 Zoll, 33 × 48 mm oder eine eigene Größe. Verschieb und zoom das Foto, bis Scheitel und Kinn auf den Hilfslinien liegen, ersetz den Hintergrund bei Bedarf durch schlichtes Weiß, Hellgrau oder Hellblau und lade ein Foto mit 300 DPI herunter oder einen Druckbogen für 4 × 6 Zoll großes Fotopapier oder A4, mit Schnittlinien. Alles passiert in deinem Browser, dein Foto wird also nie hochgeladen.",
+      "Passfoto erstellen macht aus einem normalen Foto ein Pass-, Visum- oder Ausweisfoto in genau der Größe, die du brauchst: 35 × 45 mm, 2 × 2 Zoll, 33 × 48 mm oder eine eigene Größe. Verschieb und zoom das Foto, bis Scheitel und Kinn auf den Hilfslinien liegen, ersetz den Hintergrund bei Bedarf durch schlichtes Weiß, Hellgrau oder Hellblau und lade ein Foto mit 300 DPI herunter oder einen Druckbogen für 4 × 6 Zoll großes Fotopapier oder A4, mit Schnittlinien. Alles passiert in deinem Browser, dein Foto wird also nie hochgeladen. Wähle dein Land, um seine Fotogröße und den verlangten Hintergrund zu erhalten.",
     seoTitle: "Passfoto selbst erstellen – 35×45 mm, kostenlos",
     seoDescription:
       "Passfoto selbst erstellen: Pass- und Visumfotos in 35×45 mm, 2×2 in oder eigener Größe, weißer Hintergrund, Druckbogen für 4×6 oder A4. Kostenlos, privat.",
@@ -6147,7 +6147,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "QR-Generator",
     tagline: "Erstell einen QR-Code für einen Link, Text, ein Wi-Fi-Netzwerk, eine E-Mail, Telefonnummer oder einen Kontakt, mit deinen Farben und Logo, als PNG oder SVG.",
     intro:
-      "QR-Code-Generator erstellt einen QR-Code für einen Weblink, einfachen Text, Wi-Fi-Zugangsdaten (WLAN), eine E-Mail, eine Telefonnummer oder eine Visitenkarte. Wähle die Farben, die Größe und die Fehlerkorrektur, setz dein Logo in die Mitte und lade den Code als PNG-Bild oder als SVG-Datei herunter, die in jeder Größe scharf bleibt. Jeder Code wird geprüft, indem er wieder ausgelesen wird, so weißt du vor dem Drucken, dass er sich scannen lässt. Die Codes entstehen in deinem Browser, kostenlos, ohne Anmeldung und ohne Ablaufdatum.",
+      "QR-Code-Generator erstellt einen QR-Code für einen Weblink, einfachen Text, Wi-Fi-Zugangsdaten (WLAN), eine E-Mail, eine Telefonnummer oder eine Visitenkarte. Wähle die Farben, die Größe und die Fehlerkorrektur, setz dein Logo in die Mitte und lade den Code als PNG-Bild oder als SVG-Datei herunter, die in jeder Größe scharf bleibt. Jeder Code wird geprüft, indem er wieder ausgelesen wird, so weißt du vor dem Drucken, dass er sich scannen lässt. Die Codes entstehen in deinem Browser, kostenlos, ohne Anmeldung und ohne Ablaufdatum. Füge eine Textzeile unter dem Code hinzu, etwa „Scannen für die Speisekarte“, und lade für WLAN eine Karte zum Drucken mit Netzwerkname und Passwort herunter.",
     seoTitle: "QR-Code erstellen – kostenlos, mit Logo, PNG & SVG",
     seoDescription:
       "QR-Code erstellen für Links, Wi-Fi, E-Mail, Telefon oder Kontakte, mit deinen Farben und Logo. Als PNG oder SVG. Kostenlos, ohne Anmeldung, ohne Ablauf.",
@@ -6228,7 +6228,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "QR-Leser",
     tagline: "Lies einen QR-Code aus einem Bild oder mit deiner Kamera und sieh den Link, das Wi-Fi-Passwort oder den Kontakt darin, bevor du ihn öffnest.",
     intro:
-      "QR-Code-Leser entschlüsselt QR-Codes aus einem Foto, einem Screenshot oder mit deiner Kamera. Es zeigt, was der Code enthält, bevor irgendetwas passiert: die vollständige Webadresse, ein Wi-Fi-Netzwerk mit Passwort, eine E-Mail, eine Telefonnummer oder eine Visitenkarte, die du speichern kannst. Links öffnen sich nie von selbst, du kannst sie also zuerst prüfen. Das ist eine gute Gewohnheit, denn QR-Codes werden oft genutzt, um Leute auf gefälschte Seiten zu schicken. Bilder und Kamerabilder werden auf deinem Gerät gelesen.",
+      "QR-Code-Leser entschlüsselt QR-Codes aus einem Foto, einem Screenshot oder mit deiner Kamera. Es zeigt, was der Code enthält, bevor irgendetwas passiert: die vollständige Webadresse, ein Wi-Fi-Netzwerk mit Passwort, eine E-Mail, eine Telefonnummer oder eine Visitenkarte, die du speichern kannst. Links öffnen sich nie von selbst, du kannst sie also zuerst prüfen. Das ist eine gute Gewohnheit, denn QR-Codes werden oft genutzt, um Leute auf gefälschte Seiten zu schicken. Bilder und Kamerabilder werden auf deinem Gerät gelesen. Mit „Weiter scannen“ liest du viele Codes nacheinander in eine Liste, die du kopieren oder als CSV speichern kannst.",
     seoTitle: "QR-Code scannen online – aus Bild oder mit Kamera",
     seoDescription:
       "QR-Code scannen aus einem Bild, Screenshot oder mit der Kamera, direkt im Browser. Sieh Link, Wi-Fi-Passwort oder Kontakt vor dem Öffnen. Kostenlos und privat.",
@@ -6730,7 +6730,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Barcode-Scanner",
     tagline: "Lies EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR und mehr aus einem Foto oder mit deiner Kamera. Kostenlos, und es läuft auf deinem Gerät.",
     intro:
-      "Barcode-Scanner liest Barcodes aus einem Foto, einem Screenshot oder mit deiner Kamera: Produktcodes (EAN und UPC), ISBNs auf Büchern, Etiketten in Code 128 und Code 39, ITF-Kartons, GS1 DataBar und 2D-Codes wie Data Matrix, PDF417, Aztec und QR-Codes. Er findet mehrere Codes in einem Bild und zeigt jeden mit seinem Typ an, bereit zum Kopieren. Kamerabild und Fotos werden in deinem Browser verarbeitet und nie hochgeladen.",
+      "Barcode-Scanner liest Barcodes aus einem Foto, einem Screenshot oder mit deiner Kamera: Produktcodes (EAN und UPC), ISBNs auf Büchern, Etiketten in Code 128 und Code 39, ITF-Kartons, GS1 DataBar und 2D-Codes wie Data Matrix, PDF417, Aztec und QR-Codes. Er findet mehrere Codes in einem Bild und zeigt jeden mit seinem Typ an, bereit zum Kopieren. Kamerabild und Fotos werden in deinem Browser verarbeitet und nie hochgeladen. Mit „Weiter scannen“ liest du viele Codes nacheinander in eine Liste, die du kopieren oder als CSV speichern kannst.",
     seoTitle: "Barcode-Scanner online – aus Foto oder mit Kamera",
     seoDescription:
       "EAN, UPC, Code 128, Data Matrix, PDF417 und QR-Codes aus einem Foto oder mit der Kamera scannen, direkt im Browser. Kostenlos, privat, ohne Upload.",
@@ -6801,7 +6801,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "WLAN-QR-Code",
     tagline: "Erstell einen QR-Code, mit dem Gäste deinem WLAN beitreten, ohne das Passwort einzutippen. Kostenlos, und es läuft auf deinem Gerät.",
     intro:
-      "Mit einem WLAN-QR-Code treten Gäste, Kunden und Familie deinem Netzwerk bei, indem sie die Handykamera darauf richten: Niemand muss mehr ein langes Passwort buchstabieren. Gib Netzwerkname und Passwort ein, wähl die Verschlüsselung, und der Code erscheint sofort. iPhones und Android-Handys verstehen ihn mit der eingebauten Kamera. Druck ihn für den Kühlschrank, einen Cafétisch oder einen Besprechungsraum aus. Dein Passwort wird in deinem Browser in den Code geschrieben und nie hochgeladen.",
+      "Mit einem WLAN-QR-Code treten Gäste, Kunden und Familie deinem Netzwerk bei, indem sie die Handykamera darauf richten: Niemand muss mehr ein langes Passwort buchstabieren. Gib Netzwerkname und Passwort ein, wähl die Verschlüsselung, und der Code erscheint sofort. iPhones und Android-Handys verstehen ihn mit der eingebauten Kamera. Druck ihn für den Kühlschrank, einen Cafétisch oder einen Besprechungsraum aus. Dein Passwort wird in deinem Browser in den Code geschrieben und nie hochgeladen. Oder lade eine Karte zum Drucken mit Code, Netzwerkname und Passwort herunter.",
     seoTitle: "WLAN-QR-Code erstellen – WLAN ohne Passwort teilen",
     seoDescription:
       "Einen WLAN-QR-Code im Browser erstellen, damit Gäste deinem Netzwerk per Scan beitreten. Funktioniert mit iPhone- und Android-Kameras. Kostenlos, ohne Upload.",
@@ -7085,7 +7085,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Massen-QR-Codes",
     tagline: "Erstell Hunderte QR-Codes auf einmal aus einer Liste oder CSV und lade sie in einer ZIP-Datei herunter. Kostenlos, und es läuft auf deinem Gerät.",
     intro:
-      "Massen-QR-Code-Generator macht aus einer Liste QR-Codes: Links zu jeder Produktseite, Codes für jeden Tisch, Inventaretiketten für ein ganzes Lager. Füg einen Link oder Text pro Zeile ein oder lade eine CSV-Datei, und setz auf Wunsch einen Dateinamen davor, damit sich die Dateien leicht zuordnen lassen. Wähl PNG oder SVG und eine Größe und lade dann alle in einer ZIP-Datei herunter. Bis zu 1.000 Codes werden in deinem Browser erstellt; deine Liste wird nie hochgeladen.",
+      "Massen-QR-Code-Generator macht aus einer Liste QR-Codes: Links zu jeder Produktseite, Codes für jeden Tisch, Inventaretiketten für ein ganzes Lager. Füg einen Link oder Text pro Zeile ein oder lade eine CSV-Datei, und setz auf Wunsch einen Dateinamen davor, damit sich die Dateien leicht zuordnen lassen. Wähl PNG oder SVG und eine Größe und lade dann alle in einer ZIP-Datei herunter. Bis zu 1.000 Codes werden in deinem Browser erstellt; deine Liste wird nie hochgeladen. Oder setze alle auf einen Druckbogen in A4 oder US-Letter, jeden Namen unter seinem Code, fertig zum Ausschneiden.",
     seoTitle: "Massen-QR-Code-Generator – kostenlos, aus CSV als ZIP",
     seoDescription:
       "Bis zu 1.000 QR-Codes auf einmal aus einer Liste oder CSV im Browser erstellen. Eigene Dateinamen, PNG oder SVG, eine ZIP-Datei. Kostenlos, ohne Upload.",
@@ -7156,7 +7156,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Massen-Barcodes",
     tagline: "Erstell Hunderte Barcodes auf einmal aus einer Liste oder CSV, geprüft und in einer ZIP-Datei gespeichert. Kostenlos, und es läuft auf deinem Gerät.",
     intro:
-      "Massen-Barcode-Generator erstellt einen Barcode für jede Zeile einer Liste: Produktcodes für einen Katalog, Code-128-Etiketten für ein Lager, ISBNs für eine Buchreihe. Wähl den Barcode-Typ, füg die Nummern ein oder lade eine CSV, und jede Zeile wird beim Tippen geprüft: Falsche Längen, Buchstaben in reinen Zifferncodes und falsche Prüfziffern werden nach Zeile aufgelistet, fehlende Prüfziffern werden ergänzt. Lade die gültigen als PNG oder SVG in einer ZIP-Datei herunter. Bis zu 1.000 Barcodes werden in deinem Browser erstellt, und nichts wird hochgeladen.",
+      "Massen-Barcode-Generator erstellt einen Barcode für jede Zeile einer Liste: Produktcodes für einen Katalog, Code-128-Etiketten für ein Lager, ISBNs für eine Buchreihe. Wähl den Barcode-Typ, füg die Nummern ein oder lade eine CSV, und jede Zeile wird beim Tippen geprüft: Falsche Längen, Buchstaben in reinen Zifferncodes und falsche Prüfziffern werden nach Zeile aufgelistet, fehlende Prüfziffern werden ergänzt. Lade die gültigen als PNG oder SVG in einer ZIP-Datei herunter. Bis zu 1.000 Barcodes werden in deinem Browser erstellt, und nichts wird hochgeladen. Oder setze alle auf einen Druckbogen in A4 oder US-Letter, jeden Namen unter seinem Code, fertig zum Ausschneiden.",
     seoTitle: "Massen-Barcode-Generator – aus CSV als ZIP, kostenlos",
     seoDescription:
       "Bis zu 1.000 Barcodes auf einmal aus einer Liste oder CSV erstellen: Code 128, EAN, UPC, ISBN, Data Matrix und mehr. Geprüft, als PNG- oder SVG-ZIP. Kostenlos.",
@@ -10233,7 +10233,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     name: "Bild beschriften",
     shortName: "Bild beschriften",
     tagline: "Füge einem Screenshot oder Foto Pfeile, Rahmen, Kreise, Text, Markierungen und nummerierte Schritte hinzu. Kostenlos, auf deinem Gerät.",
-    intro: "Mit Bild beschriften markierst du einen Screenshot oder ein Foto, um etwas zu erklären: Zeig mit Pfeilen auf Stellen, rahme Bereiche mit Rechtecken oder Ellipsen ein, zeichne freihand, markiere Text und füge Beschriftungen und nummerierte Schritte für Anleitungen hinzu. Wähle Farbe und Strichstärke, verschiebe oder lösche jede Markierung, und mach Schritte rückgängig oder wiederhole sie. Die Markierungen passen sich der Bildgröße an, und der Download hat volle Auflösung als PNG oder JPG.",
+    intro: "Mit Bild beschriften markierst du einen Screenshot oder ein Foto, um etwas zu erklären: Zeig mit Pfeilen auf Stellen, rahme Bereiche mit Rechtecken oder Ellipsen ein, zeichne freihand, markiere Text und füge Beschriftungen und nummerierte Schritte für Anleitungen hinzu. Wähle Farbe und Strichstärke, verschiebe oder lösche jede Markierung, und mach Schritte rückgängig oder wiederhole sie. Die Markierungen passen sich der Bildgröße an, und der Download hat volle Auflösung als PNG oder JPG. Zeichne Privates weich oder verpixle es, etwa Namen, Gesichter oder Kennzeichen.",
     seoTitle: "Bild beschriften – Pfeile und Text einfügen, kostenlos",
     seoDescription: "Bilder online beschriften: Pfeile, Rahmen, Kreise, Text, Markierungen und nummerierte Schritte auf Screenshots oder Fotos. PNG oder JPG in voller Größe.",
     keywords: [
@@ -10282,7 +10282,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Kann ich private Informationen verbergen?",
-        answer: "Nutze „Bild verpixeln & zensieren“, um Teile eines Bildes weichzuzeichnen oder zu verpixeln."
+        answer: "Ja. Wähle Weichzeichnen oder Verpixeln und zieh über den Bereich. Der Effekt entsteht aus dem Bild selbst, das verborgene Detail ist also im Download weg und nicht nur von einer Ebene verdeckt, die man entfernen könnte."
       },
       {
         question: "Wird mein Bild hochgeladen?",

@@ -3,7 +3,7 @@ import { UserSquare2 } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useImageIntake } from '../../shared/useImageIntake';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
-import { useT } from '../../shared/I18nContext';
+import { useLocale, useT } from '../../shared/I18nContext';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { computeCrop, cropCentre, mmToPx, sheetLayout } from '../../../lib/canvas/passport';
 import { setDpi } from '../../../lib/canvas/dpi';
@@ -21,16 +21,36 @@ const PRESETS = {
   p35x45: { w: 35, h: 45, top: 0.09, chin: 0.84, label: '35 × 45 mm' },
   us2x2: { w: 50.8, h: 50.8, top: 0.12, chin: 0.72, label: '2 × 2 in' },
   p33x48: { w: 33, h: 48, top: 0.1, chin: 0.73, label: '33 × 48 mm' },
+  // Canada: face 31-36 mm from chin to crown
+  p50x70: { w: 50, h: 70, top: 0.17, chin: 0.65, label: '50 × 70 mm' },
 } as const;
 type PresetId = keyof typeof PRESETS | 'custom';
 const PAPER = { '4x6': { w: 101.6, h: 152.4 }, a4: { w: 210, h: 297 } } as const;
 const BACKGROUNDS = { keep: null, white: '#ffffff', grey: '#eeeeee', blue: '#dbe8f4' } as const;
 type Bg = keyof typeof BACKGROUNDS;
+/** Passport photo size and background by country, from each government's published rules (photos you can take yourself) */
+const COUNTRIES: Record<string, { preset: keyof typeof PRESETS; bg: 'white' | 'grey' }> = {
+  US: { preset: 'us2x2', bg: 'white' },
+  GB: { preset: 'p35x45', bg: 'grey' },
+  CA: { preset: 'p50x70', bg: 'white' },
+  AU: { preset: 'p35x45', bg: 'white' },
+  IN: { preset: 'p35x45', bg: 'white' },
+  DE: { preset: 'p35x45', bg: 'grey' },
+  FR: { preset: 'p35x45', bg: 'grey' },
+  ES: { preset: 'p35x45', bg: 'white' },
+  IT: { preset: 'p35x45', bg: 'white' },
+  JP: { preset: 'p35x45', bg: 'white' },
+  KR: { preset: 'p35x45', bg: 'white' },
+  CN: { preset: 'p33x48', bg: 'white' },
+};
+const BG_LABEL = { white: 'ctl.passport.bgWhite', grey: 'ctl.passport.bgGrey' } as const;
 
 export function PassportPhotoWorkspace() {
   const t = useT();
   const [image, setImage] = useState<LoadedImage | null>(null);
+  const locale = useLocale();
   const [preset, setPreset] = useState<PresetId>('p35x45');
+  const [country, setCountry] = useState('');
   const [customW, setCustomW] = useState(35);
   const [customH, setCustomH] = useState(45);
   const [zoom, setZoom] = useState(1);
@@ -274,21 +294,63 @@ export function PassportPhotoWorkspace() {
     </div>
   );
 
+  const regionName = (() => {
+    try {
+      const names = new Intl.DisplayNames([locale], { type: 'region' });
+      return (code: string) => names.of(code) ?? code;
+    } catch {
+      return (code: string) => code;
+    }
+  })();
+  const countries = Object.keys(COUNTRIES).sort((a, b) => regionName(a).localeCompare(regionName(b), locale));
+  const rule = country ? COUNTRIES[country] : null;
   const panel = (
     <>
       <div className="space-y-2">
+        <div className="space-y-1">
+          <label htmlFor="pp-country" className="block text-[14px] text-graphite">
+            {t('ctl.passport.country')}
+          </label>
+          <select
+            id="pp-country"
+            value={country}
+            onChange={(e) => {
+              const c = e.target.value;
+              setCountry(c);
+              if (c) {
+                setPreset(COUNTRIES[c].preset);
+                setZoom(1);
+              }
+            }}
+            className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+          >
+            <option value="">{t('ctl.passport.anyCountry')}</option>
+            {countries.map((c) => (
+              <option key={c} value={c}>
+                {regionName(c)}
+              </option>
+            ))}
+          </select>
+          {rule && (
+            <p className="text-[13px] text-graphite">
+              {t('ctl.passport.countryNote', { size: PRESETS[rule.preset].label, bg: t(BG_LABEL[rule.bg]) })}
+            </p>
+          )}
+        </div>
         <Segmented
           label={t('ctl.passport.size')}
           value={preset}
           onChange={(v) => {
             setPreset(v);
             setZoom(1);
+            if (country && COUNTRIES[country].preset !== v) setCountry('');
           }}
           cols={2}
           options={[
             { value: 'p35x45', label: PRESETS.p35x45.label },
             { value: 'us2x2', label: PRESETS.us2x2.label },
             { value: 'p33x48', label: PRESETS.p33x48.label },
+            { value: 'p50x70', label: PRESETS.p50x70.label },
             { value: 'custom', label: t('ctl.passport.custom') },
           ]}
         />

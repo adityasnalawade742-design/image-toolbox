@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Circle, Hash, Highlighter, Minus, MousePointer2, PenLine, Redo2, Square, Trash2, Type, Undo2 } from 'lucide-react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpRight, Circle, Droplet, Grid3x3, Hash, Highlighter, Minus, MousePointer2, PenLine, Redo2, Square, Trash2, Type, Undo2 } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
 import { canvasToBlob, downloadBlob, forDownload } from '../../../lib/canvas/engine';
-import { arrowHead, arrowShaftEnd, bounds, defaultSize, moved, type Shape, type Tool } from '../../../lib/canvas/annotate';
+import { arrowHead, arrowShaftEnd, bounds, defaultSize, isObscure, moved, obscureBox, obscureRegion, type Shape, type Tool } from '../../../lib/canvas/annotate';
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { IMAGE_ACCEPT, useOneImage } from './useOneImage';
 
@@ -18,10 +18,20 @@ const light = (hex: string) => {
 };
 
 /** Draw shapes onto a canvas the size of the picture (the download); must match the SVG below */
-function drawShapes(ctx: CanvasRenderingContext2D, shapes: Shape[]) {
+function drawShapes(ctx: CanvasRenderingContext2D, shapes: Shape[], photo?: CanvasImageSource) {
+  if (photo) {
+    for (const s of shapes.filter((x) => isObscure(x.tool))) {
+      const region = obscureRegion(photo, s, ctx.canvas.width, ctx.canvas.height);
+      if (region) {
+        const b = obscureBox(s, ctx.canvas.width, ctx.canvas.height);
+        ctx.drawImage(region, b.x, b.y);
+      }
+    }
+  }
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
   for (const s of shapes) {
+    if (isObscure(s.tool)) continue;
     ctx.save();
     ctx.strokeStyle = ctx.fillStyle = s.color;
     ctx.lineWidth = s.size;
@@ -80,6 +90,17 @@ function drawShapes(ctx: CanvasRenderingContext2D, shapes: Shape[]) {
   }
 }
 
+/** A blurred or pixelated area on screen, drawn by the same code as the download at preview size */
+function ObscureSvg({ s, photo, w, h }: { s: Shape; photo: CanvasImageSource; w: number; h: number }) {
+  const b = obscureBox(s, w, h);
+  const url = useMemo(() => {
+    const region = obscureRegion(photo, s, w, h, Math.min(1, 900 / Math.max(b.w, b.h, 1)));
+    return region?.toDataURL('image/png') ?? null;
+  }, [photo, s.tool, s.size, b.x, b.y, b.w, b.h, w, h]);
+  if (!url) return null;
+  return <image href={url} x={b.x} y={b.y} width={b.w} height={b.h} preserveAspectRatio="none" />;
+}
+
 function ShapeSvg({ s, selected }: { s: Shape; selected: boolean }) {
   const common = { stroke: s.color, strokeWidth: s.size, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   let el: React.ReactNode = null;
@@ -115,6 +136,7 @@ function ShapeSvg({ s, selected }: { s: Shape; selected: boolean }) {
       </text>
     ));
   }
+  else if (isObscure(s.tool) && !selected) return null;
   const b = bounds(s);
   return (
     <g>
@@ -271,7 +293,7 @@ export function AnnotateWorkspace() {
       ctx.fillRect(0, 0, W, H);
     }
     ctx.drawImage(one.img!.canvas, 0, 0);
-    drawShapes(ctx, shapes);
+    drawShapes(ctx, shapes, one.img!.canvas);
     const type = format === 'jpg' ? 'image/jpeg' : 'image/png';
     return canvasToBlob(c, type, 0.95, undefined, forDownload(type));
   };
@@ -299,6 +321,8 @@ export function AnnotateWorkspace() {
     ['highlight', Highlighter, t('ctl.annot.highlight')],
     ['text', Type, t('ctl.annot.text')],
     ['number', Hash, t('ctl.annot.number')],
+    ['blur', Droplet, t('ctl.annot.blur')],
+    ['pixelate', Grid3x3, t('ctl.annot.pixelate')],
   ];
   const panel = (
     <>
@@ -311,7 +335,7 @@ export function AnnotateWorkspace() {
             </button>
           ))}
         </div>
-        <p className="text-[13px] text-graphite">{tools.find(([m]) => m === mode)?.[2]}{mode === 'text' ? ` · ${t('ctl.annot.textHint')}` : mode === 'select' ? ` · ${t('ctl.annot.selectHint')}` : ''}</p>
+        <p className="text-[13px] text-graphite">{tools.find(([m]) => m === mode)?.[2]}{mode === 'text' ? ` · ${t('ctl.annot.textHint')}` : mode === 'select' ? ` · ${t('ctl.annot.selectHint')}` : isObscure(mode) ? ` · ${t('ctl.annot.obscureHint')}` : ''}</p>
       </div>
       {mode === 'text' && (
         <div className="space-y-1">
@@ -403,10 +427,15 @@ export function AnnotateWorkspace() {
               role="img"
               aria-label={t('ctl.annot.canvas', { n: shapes.length })}
             >
+              {[...shapes, ...(draft ? [draft] : [])]
+                .filter((s) => isObscure(s.tool))
+                .map((s) => (
+                  <ObscureSvg key={`o${s.id}`} s={s} photo={one.img!.canvas} w={W} h={H} />
+                ))}
               {shapes.map((s) => (
                 <ShapeSvg key={s.id} s={s} selected={s.id === selected} />
               ))}
-              {draft && <ShapeSvg s={draft} selected={false} />}
+              {draft && !isObscure(draft.tool) && <ShapeSvg s={draft} selected={false} />}
             </svg>
           </div>
         </div>

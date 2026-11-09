@@ -38,6 +38,10 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
     if (barcodes) warmUpReader();
   }, [barcodes]);
   const [scanning, setScanning] = useState(false);
+  // Keep the camera on and gather every new code into a list (stock counts, tickets, parcels)
+  const [keepScanning, setKeepScanning] = useState(false);
+  const [collected, setCollected] = useState<Found[]>([]);
+  const [copiedAll, setCopiedAll] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -101,7 +105,14 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         frame.height = video.videoHeight;
         frame.getContext('2d')!.drawImage(video, 0, 0);
         const found = await scan(frame, true);
-        if (found.length && !stopped) {
+        if (found.length && !stopped && keepScanning) {
+          setCollected((list) => {
+            const fresh = found.filter((f) => !list.some((c) => c.raw === f.raw && c.format === f.format));
+            if (!fresh.length) return list;
+            navigator.vibrate?.(60);
+            return [...fresh.reverse(), ...list];
+          });
+        } else if (found.length && !stopped) {
           setPreview((prev) => {
             if (prev) URL.revokeObjectURL(prev);
             return null;
@@ -117,7 +128,29 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
     return () => {
       stopped = true;
     };
-  }, [scanning]);
+  }, [scanning, keepScanning]);
+
+  const csvCell = (v: string) => (/[",\r\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
+  const copyAll = async () => {
+    try {
+      await navigator.clipboard.writeText(collected.map((c) => c.raw).reverse().join('\n'));
+      setCopiedAll(true);
+      window.setTimeout(() => setCopiedAll(false), 1500);
+    } catch {
+      /* the codes are still on screen to copy one by one */
+    }
+  };
+  const downloadCsv = () => {
+    const rows = [barcodes ? 'text,type' : 'text', ...collected.slice().reverse().map((c) => (barcodes ? `${csvCell(c.raw)},${csvCell(c.format ?? '')}` : csvCell(c.raw)))];
+    // A byte-order mark so spreadsheet apps read accents and non-Latin text correctly
+    downloadBlob(new Blob(['\ufeff' + rows.join('\r\n')], { type: 'text/csv;charset=utf-8' }), 'scanned-codes.csv');
+  };
+  const keepToggle = (
+    <label className="flex items-center gap-2 min-h-[40px] text-[15px] text-ink cursor-pointer">
+      <input type="checkbox" checked={keepScanning} onChange={(e) => setKeepScanning(e.target.checked)} className="w-5 h-5" />
+      {t('ctl.qrread.keepScanning')}
+    </label>
+  );
 
   const view = scanning ? (
     <div className="space-y-3">
@@ -126,8 +159,9 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         <div className="absolute inset-[18%] border-2 border-paper-bright rounded-lg pointer-events-none" aria-hidden="true" />
       </div>
       <p role="status" className="text-[15px] text-ink">
-        {t('ctl.qrread.looking')}
+        {keepScanning ? t('ctl.qrread.collecting', { n: collected.length }) : t('ctl.qrread.looking')}
       </p>
+      {keepToggle}
       <button type="button" onClick={stopCamera} className="btn-rule">
         <CameraOff className="w-4 h-4" aria-hidden="true" />
         <span>{t('ctl.qrread.stopCamera')}</span>
@@ -154,6 +188,7 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
           </button>
         )}
       </div>
+      {keepToggle}
       <p className="text-[13px] text-graphite">{t('ctl.qrread.privacy')}</p>
     </div>
   );
@@ -180,6 +215,27 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         )}
         {results && results.length === 0 && <p className="p-3 rounded-md border border-ink bg-paper-bright text-[15px] text-ink">{barcodes ? t('ctl.scan.none') : t('ctl.qrread.none')}</p>}
         {results?.map((r, i) => <ResultCard key={i} found={r} />)}
+        {collected.length > 0 && (
+          <div className="space-y-2">
+            <span className="slug block">{t('ctl.qrread.collected', { n: collected.length })}</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <button type="button" onClick={copyAll} className="btn-rule">
+                {copiedAll ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+                <span>{copiedAll ? t('ctl.qrread.copiedAll') : t('ctl.qrread.copyAll')}</span>
+              </button>
+              <button type="button" onClick={downloadCsv} className="btn-rule">
+                <Download className="w-4 h-4" aria-hidden="true" />
+                <span>CSV</span>
+              </button>
+              <button type="button" onClick={() => setCollected([])} className="btn-rule">
+                <span>{t('ctl.qrread.clearList')}</span>
+              </button>
+            </div>
+            {collected.map((r) => (
+              <ResultCard key={`${r.format ?? ''}:${r.raw}`} found={r} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
