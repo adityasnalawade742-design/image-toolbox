@@ -4730,7 +4730,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF İmzala",
     tagline: "İmzanızı çizin, yazın veya bir resmini kullanın ve bir PDF'in herhangi bir sayfasına yerleştirin. Cihazınızda çalışır.",
     intro:
-      "PDF İmzalama, el yazısı imzanızı yazdırıp taramaya gerek kalmadan bir belgeye ekler. İmzayı fare, parmak veya kalemle çizin, adınızı yazın ya da imzanızın bir fotoğrafını kullanın; fotoğrafın beyaz arka planı saydam yapılabilir. Ardından sayfayı seçin, boyutu ayarlayın ve imzayı sürükleyerek yerleştirin ya da konum kaydırıcılarını kullanın. İmza tarayıcınızda eklenir, bu yüzden belge de imzanız da asla yüklenmez.",
+      "PDF İmzalama, el yazısı imzanızı yazdırıp taramaya gerek kalmadan bir belgeye ekler. İmzayı fare, parmak veya kalemle çizin, adınızı yazın ya da imzanızın bir fotoğrafını kullanın; fotoğrafın beyaz arka planı saydam yapılabilir. Ardından sayfayı seçin, boyutu ayarlayın ve imzayı sürükleyerek yerleştirin ya da konum kaydırıcılarını kullanın. İmza tarayıcınızda eklenir, bu yüzden belge de imzanız da asla yüklenmez. Paraf, tarih veya başka bir metni de istediğiniz kadar sayfaya ekleyebilirsiniz.",
     seoTitle: "PDF İmzalama Online – Ücretsiz, Yükleme Yok",
     seoDescription:
       "PDF imzalama tarayıcıda: imzanızı çizin, yazın veya bir resmini kullanın ve herhangi bir sayfaya yerleştirin. Ücretsiz, gizli ve hiçbir şey yüklenmez.",
@@ -4788,7 +4788,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Birden fazla sayfayı imzalayabilir miyim?",
         answer:
-          "Bir sayfayı imzalayıp indirin, sonra imzalı PDF'i yeniden açın ve imzayı sonraki sayfaya yerleştirin.",
+          "Evet. İmzanızı, parafınızı, tarihi veya bir satır metni istediğiniz kadar, istediğiniz sayfaya ekleyin; “Her sayfaya kopyala” parafı tek seferde tüm sayfalara koyar. Hepsi tek bir indirmede kaydedilir.",
       },
       {
         question: "İmzam bir yere kaydediliyor mu?",

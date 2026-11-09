@@ -4729,7 +4729,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Firma PDF",
     tagline: "Disegna o scrivi la tua firma, o usane un’immagine, e posizionala su qualsiasi pagina di un PDF. Funziona sul tuo dispositivo.",
     intro:
-      "Firma PDF mette la tua firma autografa su un documento senza stamparlo e scansionarlo. Disegna la firma con il mouse, il dito o un pennino, scrivi il tuo nome, oppure usa una foto della tua firma, il cui sfondo bianco può diventare trasparente. Poi scegli la pagina, imposta la dimensione e trascina la firma al suo posto, oppure usa i cursori di posizione. La firma viene aggiunta nel tuo browser, quindi né il documento né la tua firma vengono mai caricati.",
+      "Firma PDF mette la tua firma autografa su un documento senza stamparlo e scansionarlo. Disegna la firma con il mouse, il dito o un pennino, scrivi il tuo nome, oppure usa una foto della tua firma, il cui sfondo bianco può diventare trasparente. Poi scegli la pagina, imposta la dimensione e trascina la firma al suo posto, oppure usa i cursori di posizione. La firma viene aggiunta nel tuo browser, quindi né il documento né la tua firma vengono mai caricati. Puoi aggiungere anche iniziali, la data o altro testo, su tutte le pagine che servono.",
     seoTitle: "Firmare PDF online – Gratis, senza upload",
     seoDescription:
       "Firmare un PDF nel browser: disegna o scrivi la tua firma, o usane un’immagine, e posizionala su qualsiasi pagina. Gratis, privato, niente viene caricato.",
@@ -4786,7 +4786,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso firmare più di una pagina?",
         answer:
-          "Firma una pagina, scarica, poi apri di nuovo il PDF firmato e posiziona la firma sulla pagina successiva.",
+          "Sì. Aggiungi firma, iniziali, data o una riga di testo tutte le volte che serve, su qualsiasi pagina; «Copia su ogni pagina» mette le iniziali su tutte le pagine in un colpo. Tutto viene salvato in un solo download.",
       },
       {
         question: "La mia firma viene salvata da qualche parte?",

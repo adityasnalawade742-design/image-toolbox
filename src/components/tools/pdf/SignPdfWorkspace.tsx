@@ -1,13 +1,37 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { CalendarDays, Copy, PenLine, Plus, Type as TypeIcon, X } from 'lucide-react';
+import { DragFrameOverlay } from '../../shared/DragFrameOverlay';
+import { useLocale } from '../../shared/I18nContext';
 import { usePdfDocument } from '../../shared/usePdfDocument';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
-import { stampImage } from '../../../lib/pdf/pageOps';
+import { stampMany } from '../../../lib/pdf/pageOps';
 import { PagePreview } from './PagePreview';
-import { PositionSliders, StampOverlay, dataUrlBytes, textToPng, type Placement, type Stamp } from './StampPlacer';
+import { PositionSliders, dataUrlBytes, textToPng, type Stamp } from './StampPlacer';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
 
 const INK = { black: '#141414', blue: '#1a3d9c' } as const;
+const SCRIPT = ['italic 500', '"Georgia", "Times New Roman", serif'] as const;
+const PLAIN = ['normal 400', '"Helvetica", "Arial", sans-serif'] as const;
+
+/** Something placed on the document: the signature, initials, a date or a line of text */
+type ItemKind = 'signature' | 'initials' | 'date' | 'text';
+interface Item {
+  id: string;
+  kind: ItemKind;
+  /** 0-based page */
+  page: number;
+  /** Centre and width as fractions of the page */
+  cx: number;
+  cy: number;
+  w: number;
+  text: string;
+}
+let seq = 0;
+const newId = () => `s${Date.now().toString(36)}${(seq++).toString(36)}`;
+const KIND_LABEL = { signature: 'ctl.sign.kindSignature', initials: 'ctl.sign.kindInitials', date: 'ctl.sign.kindDate', text: 'ctl.sign.kindText' } as const;
+// A text item's starting width, so a short date and a long name come out at a similar letter size
+const widthFor = (text: string, script: boolean) => Math.min(0.6, Math.max(0.06, text.length * (script ? 0.014 : 0.011)));
 const inputClass = 'w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink';
 
 /** Trim transparent edges so the signature box hugs the ink */
@@ -101,8 +125,12 @@ export function SignPdfWorkspace() {
   const [name, setName] = useState('');
   const [uploaded, setUploaded] = useState<HTMLImageElement | null>(null);
   const [removeWhite, setRemoveWhite] = useState(true);
+  const locale = useLocale();
   const [page, setPage] = useState(1);
-  const [place, setPlace] = useState<Placement>({ cx: 0.72, cy: 0.85, w: 0.28, rotate: 0, opacity: 1 });
+  const [items, setItems] = useState<Item[]>([]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  // The first signature goes where it always did, so drawing and downloading still works in one go
+  const placedFirst = useRef(false);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -110,7 +138,12 @@ export function SignPdfWorkspace() {
   const editError = useEditError();
   const replace = usePdfReplace(pdf.load);
 
-  useEffect(() => setPage(1), [pdf.doc]);
+  useEffect(() => {
+    setPage(1);
+    setItems([]);
+    setSelectedId(null);
+    placedFirst.current = false;
+  }, [pdf.doc]);
 
   const typed = useMemo(() => (source === 'type' ? textToPng(name, INK[ink], 'italic 500', '"Georgia", "Times New Roman", serif') : null), [source, name, ink]);
   const image = useMemo<Stamp | null>(() => {
@@ -133,15 +166,79 @@ export function SignPdfWorkspace() {
   }, [source, uploaded, removeWhite]);
   const stamp = source === 'draw' ? drawn : source === 'type' ? typed : image;
 
+  useEffect(() => {
+    if (!stamp || placedFirst.current || items.some((i) => i.kind === 'signature')) return;
+    placedFirst.current = true;
+    const first: Item = { id: newId(), kind: 'signature', page: page - 1, cx: 0.72, cy: 0.85, w: 0.28, text: '' };
+    setItems((list) => [...list, first]);
+    setSelectedId(first.id);
+  }, [stamp]);
+
+  // What each item looks like: the signature itself, or its text in the signature's ink
+  const looks = useMemo(() => {
+    const out = new Map<string, Stamp | null>();
+    for (const item of items) {
+      if (item.kind === 'signature') out.set(item.id, stamp);
+      else {
+        const [style, family] = item.kind === 'initials' ? SCRIPT : PLAIN;
+        out.set(item.id, textToPng(item.text, INK[ink], style, family));
+      }
+    }
+    return out;
+  }, [items, stamp, ink]);
+  const selected = items.find((i) => i.id === selectedId) ?? null;
+  const update = (id: string, patch: Partial<Item>) => setItems((list) => list.map((i) => (i.id === id ? { ...i, ...patch } : i)));
+
+  const initialsOf = (n: string) =>
+    n.trim().split(/\s+/).filter(Boolean).map((w) => w[0]).join('').toUpperCase().slice(0, 4);
+  const add = (kind: ItemKind) => {
+    const text =
+      kind === 'date'
+        ? new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(new Date())
+        : kind === 'initials'
+          ? initialsOf(name)
+          : kind === 'text'
+            ? name.trim()
+            : '';
+    // Where people expect each: initials in the bottom corner, the date under the signature, text at the bottom left;
+    // another of the same kind on this page goes a step higher, so they don't pile up
+    const START = { signature: [0.72, 0.85], initials: [0.9, 0.95], date: [0.72, 0.93], text: [0.3, 0.88] } as const;
+    const same = items.filter((i) => i.page === page - 1 && i.kind === kind).length;
+    const item: Item = {
+      id: newId(),
+      kind,
+      page: page - 1,
+      cx: START[kind][0],
+      cy: Math.max(0.05, START[kind][1] - same * 0.07),
+      w: kind === 'signature' ? 0.28 : widthFor(text || 'AB', kind === 'initials'),
+      text,
+    };
+    setItems((list) => [...list, item]);
+    setSelectedId(item.id);
+  };
+  const copyToEveryPage = (item: Item) => {
+    const copies = Array.from({ length: pdf.pageCount }, (_, p) => p)
+      .filter((p) => p !== item.page && !items.some((i) => i.page === p && i.kind === item.kind && i.text === item.text && Math.abs(i.cx - item.cx) < 0.01 && Math.abs(i.cy - item.cy) < 0.01))
+      .map((p) => ({ ...item, id: newId(), page: p }));
+    setItems((list) => [...list, ...copies]);
+  };
+
   if (!pdf.doc) return <PdfDropScreen onFile={pdf.load} error={pdf.error} loading={pdf.loading} />;
 
   const run = async () => {
     if (!pdf.bytes) return;
-    if (!stamp) return setError(t('ctl.sign.needSignature'));
+    const ready = items.filter((i) => looks.get(i.id));
+    if (!ready.length) return setError(t('ctl.sign.needSignature'));
     setBusy(true);
     setError(null);
     try {
-      const out = await stampImage(pdf.bytes, { png: dataUrlBytes(stamp.url), cx: place.cx, cy: place.cy, widthFraction: place.w, opacity: 1, rotate: 0, pages: [page - 1] });
+      // One set of bytes per distinct image, so a signature placed five times is stored once
+      const bytesOf = new Map<string, Uint8Array>();
+      const png = (url: string) => bytesOf.get(url) ?? (bytesOf.set(url, dataUrlBytes(url)), bytesOf.get(url)!);
+      const out = await stampMany(
+        pdf.bytes,
+        ready.map((i) => ({ png: png(looks.get(i.id)!.url), page: i.page, cx: i.cx, cy: i.cy, widthFraction: i.w }))
+      );
       const fileName = pdfName(pdf.file?.name, 'signed');
       savePdf(out, fileName);
       setStatus(t('ctl.pdf.done', { name: fileName }));
@@ -210,12 +307,73 @@ export function SignPdfWorkspace() {
         </div>
       )}
       <div className="pt-4 border-t border-ink space-y-3">
+        <span className="slug block">{t('ctl.sign.placed')}</span>
+        {items.length > 0 && (
+          <ul className="border border-ink rounded-md divide-y divide-pencil-soft overflow-hidden">
+            {items.map((item) => (
+              <li key={item.id} className="flex items-stretch">
+                <button
+                  type="button"
+                  aria-pressed={item.id === selectedId}
+                  onClick={() => {
+                    setSelectedId(item.id);
+                    setPage(item.page + 1);
+                  }}
+                  className={`flex-1 min-h-[40px] px-3 text-left text-[15px] truncate transition-colors ${item.id === selectedId ? 'seg-on' : 'seg-off'}`}
+                >
+                  {t(KIND_LABEL[item.kind])}
+                  {item.kind !== 'signature' && item.text ? `: ${item.text}` : ''} <span className="text-graphite">· {t('ctl.pdf.pageN', { n: item.page + 1 })}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setItems((list) => list.filter((i) => i.id !== item.id));
+                    if (selectedId === item.id) setSelectedId(null);
+                  }}
+                  aria-label={t('ctl.sign.removeItem', { name: `${t(KIND_LABEL[item.kind])}, ${t('ctl.pdf.pageN', { n: item.page + 1 })}` })}
+                  title={t('ctl.sign.removeItem', { name: t(KIND_LABEL[item.kind]) })}
+                  className="w-10 shrink-0 flex items-center justify-center seg-off border-l border-pencil-soft"
+                >
+                  <X className="w-4 h-4" aria-hidden="true" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="grid grid-cols-2 gap-2">
+          <button type="button" className="btn-rule" onClick={() => add('signature')} disabled={!stamp}>
+            <PenLine className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.sign.addSignature')}</span>
+          </button>
+          <button type="button" className="btn-rule" onClick={() => add('initials')}>
+            <Plus className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.sign.addInitials')}</span>
+          </button>
+          <button type="button" className="btn-rule" onClick={() => add('date')}>
+            <CalendarDays className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.sign.addDate')}</span>
+          </button>
+          <button type="button" className="btn-rule" onClick={() => add('text')}>
+            <TypeIcon className="w-4 h-4" aria-hidden="true" />
+            <span>{t('ctl.sign.addText')}</span>
+          </button>
+        </div>
         {pdf.pageCount > 1 && (
           <div className="space-y-1">
             <label htmlFor="sign-page" className="block text-[14px] text-graphite">
               {t('ctl.sign.page')}
             </label>
-            <select id="sign-page" value={page} onChange={(e) => setPage(Number(e.target.value))} className={inputClass}>
+            <select
+              id="sign-page"
+              value={page}
+              onChange={(e) => {
+                const n = Number(e.target.value);
+                setPage(n);
+                // The selected item goes with the page it is shown on
+                if (selected) update(selected.id, { page: n - 1 });
+              }}
+              className={inputClass}
+            >
               {Array.from({ length: pdf.pageCount }, (_, i) => (
                 <option key={i} value={i + 1}>
                   {t('ctl.pdf.pageN', { n: i + 1 })}
@@ -224,8 +382,30 @@ export function SignPdfWorkspace() {
             </select>
           </div>
         )}
-        <RangeField id="sign-w" label={t('ctl.sign.size')} value={Math.round(place.w * 100)} min={5} max={80} unit="%" onChange={(v) => setPlace({ ...place, w: v / 100 })} />
-        <PositionSliders place={place} onChange={setPlace} labels={{ x: t('ctl.text.horizontalPosition'), y: t('ctl.text.verticalPosition') }} />
+        {selected && (
+          <div className="space-y-3 p-3 bg-paper-stock border border-pencil rounded-md">
+            {selected.kind !== 'signature' && (
+              <div className="space-y-1">
+                <label htmlFor="sign-item-text" className="block text-[14px] text-graphite">
+                  {t('ctl.sign.itemText')}
+                </label>
+                <input id="sign-item-text" type="text" value={selected.text} onChange={(e) => update(selected.id, { text: e.target.value })} className={inputClass} />
+              </div>
+            )}
+            <RangeField id="sign-w" label={t('ctl.sign.width')} value={Math.round(selected.w * 100)} min={3} max={80} unit="%" onChange={(v) => update(selected.id, { w: v / 100 })} />
+            <PositionSliders
+              place={{ cx: selected.cx, cy: selected.cy, w: selected.w, rotate: 0, opacity: 1 }}
+              onChange={(pl) => update(selected.id, { cx: pl.cx, cy: pl.cy })}
+              labels={{ x: t('ctl.text.horizontalPosition'), y: t('ctl.text.verticalPosition') }}
+            />
+            {pdf.pageCount > 1 && (
+              <button type="button" className="btn-rule w-full" onClick={() => copyToEveryPage(selected)}>
+                <Copy className="w-4 h-4" aria-hidden="true" />
+                <span>{t('ctl.sign.copyAll')}</span>
+              </button>
+            )}
+          </div>
+        )}
         <p className="text-[13px] text-graphite">{t('ctl.sign.placeHint')}</p>
       </div>
     </>
@@ -246,7 +426,36 @@ export function SignPdfWorkspace() {
         error={error}
       >
         <PagePreview doc={pdf.doc} page={page}>
-          {(canvas) => stamp && <StampOverlay canvas={canvas} stamp={stamp} place={place} onMove={(cx, cy) => setPlace((p) => ({ ...p, cx, cy }))} hint={t('ctl.sign.placeHint')} />}
+          {(canvas) => {
+            const here = items.filter((i) => i.page === page - 1 && looks.get(i.id));
+            return (
+              <>
+                {here.map((i) => (
+                  <img
+                    key={i.id}
+                    src={looks.get(i.id)!.url}
+                    alt=""
+                    aria-hidden="true"
+                    className={`absolute pointer-events-none ${i.id === selectedId ? 'outline outline-2 outline-offset-2 outline-[#0072b0]' : ''}`}
+                    style={{ left: `${i.cx * 100}%`, top: `${i.cy * 100}%`, width: `${i.w * 100}%`, transform: 'translate(-50%, -50%)' }}
+                  />
+                ))}
+                <DragFrameOverlay
+                  canvasElement={canvas}
+                  boxes={here.map((i) => {
+                    const look = looks.get(i.id)!;
+                    const w = i.w * canvas.width;
+                    return { id: i.id, box: { cx: i.cx * canvas.width, cy: i.cy * canvas.height, w, h: (w / look.width) * look.height }, label: t(KIND_LABEL[i.kind]) };
+                  })}
+                  onMove={(id, x, y) => {
+                    setSelectedId(id);
+                    update(id, { cx: x / 100, cy: y / 100 });
+                  }}
+                  hint={t('ctl.sign.placeHint')}
+                />
+              </>
+            );
+          }}
         </PagePreview>
       </PdfToolLayout>
     </>

@@ -4730,7 +4730,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Tanda Tangan PDF",
     tagline: "Gambar, ketik, atau unggah tanda tangan Anda dan tempatkan di halaman mana pun dalam PDF. Berjalan di perangkat Anda.",
     intro:
-      "Tanda Tangani PDF membubuhkan tanda tangan tulisan tangan Anda pada dokumen tanpa perlu mencetak dan memindainya. Gambar tanda tangan dengan mouse, jari, atau stylus, ketik nama Anda, atau gunakan foto tanda tangan Anda, yang latar putihnya bisa dibuat transparan. Lalu pilih halamannya, atur ukurannya, dan seret tanda tangan ke posisinya atau gunakan slider posisi. Tanda tangan ditambahkan di browser Anda, jadi dokumen dan tanda tangan Anda tidak pernah diunggah.",
+      "Tanda Tangani PDF membubuhkan tanda tangan tulisan tangan Anda pada dokumen tanpa perlu mencetak dan memindainya. Gambar tanda tangan dengan mouse, jari, atau stylus, ketik nama Anda, atau gunakan foto tanda tangan Anda, yang latar putihnya bisa dibuat transparan. Lalu pilih halamannya, atur ukurannya, dan seret tanda tangan ke posisinya atau gunakan slider posisi. Tanda tangan ditambahkan di browser Anda, jadi dokumen dan tanda tangan Anda tidak pernah diunggah. Tambahkan juga paraf, tanggal, atau teks lain, di halaman sebanyak yang Anda perlukan.",
     seoTitle: "Tanda Tangan PDF Online – Gratis, Tanpa Unggah",
     seoDescription:
       "Tanda tangan PDF langsung di browser Anda: gambar, ketik, atau unggah tanda tangan, lalu tempatkan di halaman mana pun. Gratis, privat, tanpa unggah file.",
@@ -4787,7 +4787,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya menandatangani lebih dari satu halaman?",
         answer:
-          "Tandatangani satu halaman, unduh, lalu buka lagi PDF yang sudah ditandatangani dan tempatkan tanda tangan di halaman berikutnya.",
+          "Ya. Tambahkan tanda tangan, paraf, tanggal, atau sebaris teks sebanyak yang Anda perlukan, di halaman mana pun; “Salin ke setiap halaman” menaruh paraf di semua halaman sekaligus. Semuanya tersimpan dalam satu unduhan.",
       },
       {
         question: "Apakah tanda tangan saya disimpan di suatu tempat?",

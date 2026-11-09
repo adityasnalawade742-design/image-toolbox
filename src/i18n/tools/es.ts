@@ -4722,7 +4722,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Firmar PDF",
     tagline: "Dibuja, escribe o sube tu firma y colócala en cualquier página de un PDF. Funciona en tu dispositivo.",
     intro:
-      "Firmar PDF pone tu firma manuscrita en un documento sin imprimirlo ni escanearlo. Dibuja la firma con el ratón, el dedo o un lápiz óptico, escribe tu nombre o usa una foto de tu firma, cuyo fondo blanco se puede volver transparente. Después elige la página, ajusta el tamaño y arrastra la firma a su sitio o usa los controles deslizantes de posición. La firma se añade en tu navegador, así que ni el documento ni tu firma se suben nunca.",
+      "Firmar PDF pone tu firma manuscrita en un documento sin imprimirlo ni escanearlo. Dibuja la firma con el ratón, el dedo o un lápiz óptico, escribe tu nombre o usa una foto de tu firma, cuyo fondo blanco se puede volver transparente. Después elige la página, ajusta el tamaño y arrastra la firma a su sitio o usa los controles deslizantes de posición. La firma se añade en tu navegador, así que ni el documento ni tu firma se suben nunca. También puedes añadir iniciales, la fecha u otro texto, en todas las páginas que necesites.",
     seoTitle: "Firmar PDF online – gratis y sin subir archivos",
     seoDescription:
       "Firmar PDF gratis: dibuja, escribe o usa una imagen de tu firma y colócala en cualquier página desde tu navegador. Privado y sin subir nada.",
@@ -4780,7 +4780,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Puedo firmar en más de una página?",
         answer:
-          "Firma una página, descarga el PDF, vuelve a abrir el PDF firmado y coloca la firma en la siguiente página.",
+          "Sí. Añade tu firma, iniciales, la fecha o una línea de texto tantas veces como necesites, en cualquier página; «Copiar en todas las páginas» pone las iniciales en cada página de una vez. Todo se guarda en una sola descarga.",
       },
       {
         question: "¿Se guarda mi firma en algún sitio?",

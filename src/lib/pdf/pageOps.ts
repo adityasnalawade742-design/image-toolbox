@@ -245,6 +245,38 @@ export interface StampOptions {
 }
 
 /** Place an image on pages (watermarks and signatures) */
+/** One image placed on one page (Sign PDF: signatures, initials, dates, text), positioned like StampOptions */
+export interface Placed {
+  png: Uint8Array | ArrayBuffer;
+  /** 0-based page */
+  page: number;
+  cx: number;
+  cy: number;
+  widthFraction: number;
+}
+
+/** Several images on several pages. The same image (same bytes object) is stored in the PDF once, however often it is placed */
+export async function stampMany(bytes: Uint8Array | ArrayBuffer, items: Placed[]): Promise<Uint8Array> {
+  const doc = await loadPdf(bytes);
+  const pages = doc.getPages();
+  const embedded = new Map<Uint8Array | ArrayBuffer, Awaited<ReturnType<typeof doc.embedPng>>>();
+  for (const item of items) {
+    const page = pages[item.page];
+    if (!page) continue;
+    let img = embedded.get(item.png);
+    if (!img) {
+      img = await doc.embedPng(item.png);
+      embedded.set(item.png, img);
+    }
+    const { width, height } = visualPage(page);
+    const w = width * item.widthFraction;
+    const h = (w / img.width) * img.height;
+    const { x, y, rotate } = placeCentred(page, width * item.cx, height * item.cy, w, h, 0);
+    page.drawImage(img, { x, y, width: w, height: h, opacity: 1, rotate });
+  }
+  return save(doc);
+}
+
 export async function stampImage(bytes: Uint8Array | ArrayBuffer, opts: StampOptions): Promise<Uint8Array> {
   const doc = await loadPdf(bytes);
   const img = await doc.embedPng(opts.png);

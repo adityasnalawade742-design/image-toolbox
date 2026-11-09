@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import assets from '../../ai/modelAssets.json';
 import type { FontScript } from '../unicodeFont';
 import { PdfUnsupportedTextError } from '../errors';
-import { PDFDocument, StandardFonts, degrees } from 'pdf-lib';
+import { PDFDocument, PDFName, PDFRawStream, StandardFonts, degrees } from 'pdf-lib';
 import {
   parseRanges,
   chunkRanges,
@@ -21,6 +21,7 @@ import {
   listFormFields,
   fillForm,
   stampImage,
+  stampMany,
   loadPdf,
   visualPage,
   placeCentred,
@@ -95,6 +96,23 @@ describe('page operations', () => {
     expect((await PDFDocument.load(out)).getPageCount()).toBe(3);
     expect(pageLabel(2, 5, 'n-of-total')).toBe('2 / 5');
     expect(pageLabel(3, 5, 'dash')).toBe('– 3 –');
+  });
+
+  it('places several images on several pages, storing a repeated image once', async () => {
+    const imageObjects = (doc: PDFDocument) =>
+      doc.context.enumerateIndirectObjects().filter(([, o]) => o instanceof PDFRawStream && o.dict.get(PDFName.of('Subtype')) === PDFName.of('Image')).length;
+    const one = await PDFDocument.load(await stampMany(await makePdf(3), [{ png: PNG, page: 0, cx: 0.7, cy: 0.9, widthFraction: 0.3 }]));
+    const three = await PDFDocument.load(
+      await stampMany(await makePdf(3), [
+        { png: PNG, page: 0, cx: 0.7, cy: 0.9, widthFraction: 0.3 },
+        { png: PNG, page: 2, cx: 0.7, cy: 0.9, widthFraction: 0.3 },
+        { png: PNG, page: 1, cx: 0.2, cy: 0.1, widthFraction: 0.1 },
+      ])
+    );
+    expect(three.getPageCount()).toBe(3);
+    // Placed three times, stored as often as when placed once (an image with transparency is two objects: picture and mask)
+    expect(imageObjects(three)).toBe(imageObjects(one));
+    expect(imageObjects(one)).toBeGreaterThan(0);
   });
 
   it('stamps an image on chosen pages', async () => {

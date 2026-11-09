@@ -4626,7 +4626,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Sign PDF",
     "shortName": "Sign PDF",
     "tagline": "Draw, type or upload your signature and place it on any page of a PDF. It runs on your device.",
-    "intro": "Sign PDF puts your handwritten signature on a document without printing and scanning it. Draw the signature with a mouse, finger or stylus, type your name, or use a photo of your signature, whose white background can be made transparent. Then choose the page, set the size, and drag the signature into place or use the position sliders. The signature is added in your browser, so the document and your signature are never uploaded.",
+    "intro": "Sign PDF puts your handwritten signature on a document without printing and scanning it. Draw the signature with a mouse, finger or stylus, type your name, or use a photo of your signature, whose white background can be made transparent. Then choose the page, set the size, and drag the signature into place or use the position sliders. The signature is added in your browser, so the document and your signature are never uploaded. Add initials, the date or other text too, on as many pages as you need.",
     "seoTitle": "Sign PDF Online – Free, No Upload",
     "seoDescription": "Sign a PDF in your browser: draw, type or upload your signature and place it on any page. Free, private, and nothing is uploaded.",
     "keywords": [
@@ -4680,7 +4680,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I sign on more than one page?",
-        "answer": "Sign one page, download, then open the signed PDF again and place the signature on the next page."
+        "answer": "Yes. Add your signature, initials, the date or a line of text as many times as you need, on any page; “Copy to every page” puts initials on each page in one go. Everything is saved in one download."
       },
       {
         "question": "Is my signature saved anywhere?",

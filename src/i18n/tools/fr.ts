@@ -4726,7 +4726,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Signer PDF",
     tagline: "Dessinez, saisissez ou importez votre signature et placez-la sur n’importe quelle page d’un PDF. Tout se fait sur votre appareil.",
     intro:
-      "Signer un PDF appose votre signature manuscrite sur un document sans l’imprimer ni le numériser. Dessinez la signature à la souris, au doigt ou au stylet, saisissez votre nom, ou utilisez une photo de votre signature, dont le fond blanc peut être rendu transparent. Choisissez ensuite la page, réglez la taille, puis faites glisser la signature à sa place ou utilisez les curseurs de position. La signature est ajoutée dans votre navigateur, le document et votre signature ne sont donc jamais envoyés.",
+      "Signer un PDF appose votre signature manuscrite sur un document sans l’imprimer ni le numériser. Dessinez la signature à la souris, au doigt ou au stylet, saisissez votre nom, ou utilisez une photo de votre signature, dont le fond blanc peut être rendu transparent. Choisissez ensuite la page, réglez la taille, puis faites glisser la signature à sa place ou utilisez les curseurs de position. La signature est ajoutée dans votre navigateur, le document et votre signature ne sont donc jamais envoyés. Ajoutez aussi des initiales, la date ou un autre texte, sur autant de pages que nécessaire.",
     seoTitle: "Signer un PDF en ligne – gratuit, sans envoi",
     seoDescription:
       "Signer un PDF gratuitement : dessinez, saisissez ou importez votre signature et placez-la sur n’importe quelle page, dans votre navigateur. Sans envoi.",
@@ -4783,7 +4783,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Puis-je signer sur plusieurs pages ?",
-        answer: "Signez une page, téléchargez, puis rouvrez le PDF signé et placez la signature sur la page suivante.",
+        answer: "Oui. Ajoutez votre signature, vos initiales, la date ou une ligne de texte autant de fois que nécessaire, sur n’importe quelle page ; « Copier sur chaque page » met vos initiales sur toutes les pages d’un coup. Tout est enregistré dans un seul téléchargement.",
       },
       {
         question: "Ma signature est-elle enregistrée quelque part ?",
