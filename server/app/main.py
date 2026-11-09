@@ -33,7 +33,9 @@ CONCURRENCY = int(os.environ.get("CONCURRENCY", "2"))
 MAX_WAITING = int(os.environ.get("MAX_WAITING", "4"))
 JOBS_DIR = Path(os.environ.get("JOBS_DIR", "/tmp/jobs"))
 OCR_LANGS = {"eng", "deu", "spa", "fra", "por", "ita", "jpn", "kor", "ind", "tur",
-             "rus", "ukr", "hin", "nld", "pol", "vie"}
+             "rus", "ukr", "hin", "nld", "pol", "vie", "chi_sim", "chi_tra", "tha"}
+# Languages written without spaces between words, whose OCR text layer is rewritten by OCR_JOIN
+NO_SPACE_LANGS = {"jpn", "chi_sim", "chi_tra", "tha"}
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 slots = asyncio.Semaphore(CONCURRENCY)
@@ -558,6 +560,174 @@ def require(kind: str, allowed: set[str]):
         raise JobError(415, "unsupported_type")
 
 
+OCR_JOIN = r"""
+import re
+import statistics
+import sys
+from pathlib import Path
+
+import pymupdf
+
+pymupdf.TOOLS.mupdf_display_errors(False)
+path, temp = sys.argv[1], Path(sys.argv[2])
+# Tesseract writes each word as its own run of text followed by a space glyph, stretched (Tz) to an estimate of the
+# word's width. Chinese, Japanese and Thai don't put spaces between words, so a reader gets "年 度 预算" and can't find
+# "年度预算"; Thai is even split into single letters, with each vowel sign and tone mark on a baseline of its own. Words
+# that belong together are merged into one run that spans from the first to where the next word starts
+
+
+def nospace(ch):
+    c = ord(ch)
+    return (0x0E00 <= c <= 0x0E7F or 0x3000 <= c <= 0x30FF or 0x3400 <= c <= 0x4DBF or 0x4E00 <= c <= 0x9FFF
+            or 0xF900 <= c <= 0xFAFF or 0xFF00 <= c <= 0xFFEF or 0x31F0 <= c <= 0x31FF or 0xD800 <= c <= 0xDFFF)
+
+
+def thai(ch):
+    return 0x0E00 <= ord(ch) <= 0x0E7F
+
+
+# Thai vowel signs and tone marks sit above or below a letter: one on its own is never a word, and they take no width
+MARK_CODES = [0x0E31, *range(0x0E34, 0x0E3B), *range(0x0E47, 0x0E4F)]
+MARKS = set(chr(c) for c in MARK_CODES)
+# Font widths (PDF /W) giving those marks no advance, so readers don't see a gap after each one
+MARK_WIDTHS = "[3633 [0] 3636 [0 0 0 0 0 0 0] 3655 [0 0 0 0 0 0 0 0]]"
+
+
+def tsv_words(page_no):
+    # Word boxes from Tesseract's own table for this page: (left, right, line height, line), in reading order
+    for table in temp.rglob("*_ocr_tess.tsv"):
+        number = re.match(r"\d+", table.name)
+        if not number or int(number.group()) != page_no:
+            continue
+        rows = [l.split("\t") for l in table.read_text(encoding="utf-8", errors="ignore").splitlines()[1:]]
+        lines, words = {}, []
+        for r in rows:
+            if len(r) < 12:
+                continue
+            key = tuple(r[1:5])
+            if r[0] == "4":
+                lines[key] = int(r[9])
+            elif r[0] == "5" and r[11].strip():
+                words.append((int(r[6]), int(r[6]) + int(r[8]), lines.get(key, int(r[9])), key))
+        return words
+    return None
+
+
+def glyphs(text):
+    return len(text.encode("utf-16-be")) // 2
+
+
+TOKEN = re.compile(rb"/\S+ ([\d.]+) Tf|([-\d.]+) Tz \[ <([0-9A-Fa-f]*)> \] TJ|([-\d.]+) ([-\d.]+) Td")
+doc = pymupdf.open(path)
+changed = 0
+for page in doc:
+    boxes_all = None
+    for xref, name, *_ in page.get_xobjects():
+        if not name.startswith("OCR-"):
+            continue
+        stream = doc.xref_stream(xref)
+        if b"Tz [ <" not in stream:
+            continue
+        words, size = [], 0.0
+        for m in TOKEN.finditer(stream):
+            if m.group(1):
+                size = float(m.group(1))
+            elif m.group(3) is not None:
+                text = bytes.fromhex(m.group(3).decode()).decode("utf-16-be", "replace")
+                words.append({"m": m, "text": text, "size": size, "tz": float(m.group(2)), "td": None})
+            elif words and words[-1]["td"] is None:
+                words[-1]["td"] = m
+        if boxes_all is None:
+            boxes_all = tsv_words(page.number + 1)
+        boxes = boxes_all if boxes_all is not None and len(boxes_all) == len(words) else None
+        # The usual gap between two Thai letters on this page, to tell it from a space between phrases
+        letter_gaps = [boxes[k + 1][0] - boxes[k][1] for k in range(len(words) - 1)
+                       if boxes and boxes[k][3] == boxes[k + 1][3] and boxes[k + 1][0] > boxes[k][1]
+                       and thai(words[k]["text"].rstrip(" ")[-1:] or "a") and thai(words[k + 1]["text"][:1] or "a")]
+        usual = statistics.median(letter_gaps) if letter_gaps else 0
+        thai_joined = False
+
+        def joins(i, rise):
+            # Whether word i and the next one are parts of one word; `rise` is how far the next word's baseline sits
+            # from the first word of the group
+            w, nxt = words[i], words[i + 1]
+            a, b = w["text"].rstrip(" "), nxt["text"].rstrip(" ")
+            if not a or not b or not (nospace(a[-1]) and nospace(b[0])) or w["td"] is None:
+                return False
+            dx = float(w["td"].group(4))
+            # Thai vowel signs and tone marks are boxed on their own, above or below the letter, so their baseline moves
+            limit = 1.5 if b[0] in MARKS else 0.6
+            if dx <= 0 or abs(rise) > limit * max(w["size"], 1) or nxt["size"] != w["size"]:
+                return False  # The next word starts a new line
+            between = stream[w["m"].end():nxt["m"].start()]
+            if between.replace(w["td"].group(0), b"").strip():
+                return False  # Something other than a move sits between them
+            if thai(a[-1]) or thai(b[0]):
+                # Thai does use spaces, between phrases: join where the letters are no further apart than usual. Measured
+                # on four fonts at 20-44 px, clean and scanned: no stray spaces, and 5 of 48 phrase spaces lost
+                if b[0] in MARKS or a[-1] in MARKS:
+                    return True
+                if not boxes:
+                    return False
+                (l0, r0, h0, _), (l1, _, h1, _) = boxes[i], boxes[i + 1]
+                return l1 - r0 <= max(0.2 * max(h0, h1), 2.5 * usual)
+            return True
+
+        edits, i = [], 0
+        while i < len(words) - 1:
+            j, rise = i, 0.0
+            while j < len(words) - 1 and words[j]["td"] is not None:
+                rise += float(words[j]["td"].group(5))
+                if not joins(j, rise):
+                    break
+                j += 1
+            if j == i:
+                i += 1
+                continue
+            group = words[i:j + 1]
+            first, last = group[0], group[-1]
+            text = "".join(w["text"].rstrip(" ") for w in group) + (" " if last["text"].endswith(" ") else "")
+            moves = [(float(w["td"].group(4)), float(w["td"].group(5))) for w in group[:-1]]
+            # From the first word to the start of the last, then the last word's own width
+            span = sum(dx for dx, _ in moves) + glyphs(last["text"]) * 0.5 * last["size"] * last["tz"] / 100
+            has_thai = any(thai(c) for c in text)
+            # Glyphs that take up width: all but Thai marks, which get none below
+            n = glyphs(text) - (sum(c in MARKS for c in text) if has_thai else 0)
+            if first["size"] <= 0 or span <= 0 or n <= 0:
+                i = j + 1
+                continue
+            thai_joined = thai_joined or has_thai
+            tz = span * 100 / (n * 0.5 * first["size"])
+            run = b"%.3f Tz [ <%s> ] TJ" % (tz, text.encode("utf-16-be").hex().upper().encode())
+            end = last["m"].end()
+            if last["td"] is not None:
+                # The move after the group is now made from the first word, so it adds up the moves taken out
+                dx = sum(dx for dx, _ in moves) + float(last["td"].group(4))
+                dy = sum(dy for _, dy in moves) + float(last["td"].group(5))
+                run += b" %.3f %.3f Td" % (dx, dy)
+                end = last["td"].end()
+            edits.append((first["m"].start(), end, run))
+            i = j + 1
+        if edits:
+            out = bytearray(stream)
+            for s, e, rep in reversed(edits):
+                out[s:e] = rep
+            doc.update_stream(xref, bytes(out))
+            changed += len(edits)
+        if thai_joined:
+            # The text layer's font is Tesseract's GlyphLessFont, a CID font whose codes are Unicode code points
+            kind, font = doc.xref_get_key(xref, "Resources/Font/f-0-0")
+            if kind == "xref":
+                kind, desc = doc.xref_get_key(int(font.split()[0]), "DescendantFonts")
+                found = re.match(r"\[\s*(\d+) 0 R", desc) if kind == "array" else None
+                if found:
+                    doc.xref_set_key(int(found.group(1)), "W", MARK_WIDTHS)
+if changed:
+    # Added to the end of the file, so everything else in it stays exactly as it was
+    doc.save(path, incremental=True, encryption=pymupdf.PDF_ENCRYPT_KEEP)
+print(changed)
+"""
+
 MUPDF_RESCUE = """
 import sys
 import pymupdf
@@ -853,6 +1023,14 @@ async def ocr(file: UploadFile, lang: str = "eng"):
             code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola")
             if code == 0 and second.exists() and sum(s for _, s in ocr_confidence(job / "second")) > sum(s for _, s in first):
                 out = second
+        if NO_SPACE_LANGS & set(langs.split("+")):
+            # Words of Chinese, Japanese and Thai are joined up, so they can be searched and copied as written. On a copy,
+            # kept only if the rewrite finishes
+            joined = job / "joined.pdf"
+            shutil.copy(out, joined)
+            code, _ = await run(sys.executable, "-c", OCR_JOIN, str(joined), str(job / ("second" if out.name == "second.pdf" else "first")), cwd=job)
+            if code == 0:
+                out = joined
         return respond(out, job, PDF, "searchable.pdf")
 
 

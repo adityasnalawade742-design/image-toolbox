@@ -7700,7 +7700,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "O OCR PDF reconhece o texto de um PDF digitalizado e o adiciona como uma camada invisível, para que você possa pesquisar, selecionar e copiar o texto enquanto as páginas continuam exatamente iguais. É útil para contratos digitalizados, recibos, livros e documentos antigos. Escolha o idioma do documento para ter os melhores resultados; páginas que já contêm texto ficam como estão. O reconhecimento usa o Tesseract e o OCRmyPDF no nosso servidor, e o arquivo é apagado logo depois.",
     seoTitle: "OCR PDF – Torne PDFs digitalizados pesquisáveis, grátis",
     seoDescription:
-      "OCR PDF online e grátis: torne PDFs digitalizados pesquisáveis e com texto copiável. 16 idiomas; os arquivos são apagados logo depois.",
+      "OCR PDF online e grátis: torne PDFs digitalizados pesquisáveis e com texto copiável. 19 idiomas; os arquivos são apagados logo depois.",
     keywords: [
       "ocr pdf",
       "pdf pesquisável",
@@ -7729,8 +7729,8 @@ export const ptTools: Record<string, LocalizedToolItem> = {
         description: "A camada de texto é invisível; a digitalização não muda.",
       },
       {
-        title: "16 idiomas",
-        description: "Inglês, alemão, espanhol, francês, português, italiano, holandês, polonês, russo, ucraniano, japonês, coreano, hindi, vietnamita, indonésio e turco. Dois ao mesmo tempo para páginas que os misturam.",
+        title: "19 idiomas",
+        description: "Inglês, alemão, espanhol, francês, português, italiano, holandês, polonês, russo, ucraniano, japonês, coreano, chinês (simplificado e tradicional), tailandês, hindi, vietnamita, indonésio e turco. Dois ao mesmo tempo para páginas que os misturam.",
       },
       {
         title: "Pula páginas com texto",

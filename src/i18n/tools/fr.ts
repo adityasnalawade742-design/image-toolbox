@@ -7741,7 +7741,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       "OCR PDF reconnaît le texte d’un PDF scanné et l’ajoute sous forme de couche invisible : vous pouvez rechercher, sélectionner et copier le texte, tandis que les pages restent exactement les mêmes. C’est utile pour les contrats, reçus, livres et anciens documents scannés. Choisissez la langue du document pour de meilleurs résultats ; les pages qui contiennent déjà du texte restent telles quelles. La reconnaissance utilise Tesseract et OCRmyPDF sur notre serveur, et le fichier est supprimé juste après.",
     seoTitle: "OCR PDF – rendre un PDF scanné recherchable, gratuit",
     seoDescription:
-      "OCR PDF en ligne et gratuit : rendez vos PDF scannés recherchables et copiables. 16 langues reconnues ; fichiers supprimés juste après le traitement.",
+      "OCR PDF en ligne et gratuit : rendez vos PDF scannés recherchables et copiables. 19 langues reconnues ; fichiers supprimés juste après le traitement.",
     keywords: [
       "ocr pdf",
       "pdf recherchable",
@@ -7770,8 +7770,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "La couche de texte est invisible ; le scan reste inchangé.",
       },
       {
-        title: "16 langues",
-        description: "Anglais, allemand, espagnol, français, portugais, italien, néerlandais, polonais, russe, ukrainien, japonais, coréen, hindi, vietnamien, indonésien et turc. Deux à la fois pour les pages qui les mélangent.",
+        title: "19 langues",
+        description: "Anglais, allemand, espagnol, français, portugais, italien, néerlandais, polonais, russe, ukrainien, japonais, coréen, chinois (simplifié et traditionnel), thaï, hindi, vietnamien, indonésien et turc. Deux à la fois pour les pages qui les mélangent.",
       },
       {
         title: "Ignore les pages texte",

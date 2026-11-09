@@ -7735,7 +7735,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       "PDF-OCR erkennt den Text in einem gescannten PDF und fügt ihn als unsichtbare Ebene hinzu, sodass du den Text durchsuchen, markieren und kopieren kannst, während die Seiten genau gleich aussehen. Das ist praktisch für gescannte Verträge, Belege, Bücher und alte Dokumente. Wähle für die besten Ergebnisse die Sprache des Dokuments; Seiten, die schon Text enthalten, bleiben unverändert. Die Erkennung läuft mit Tesseract und OCRmyPDF auf unserem Server, und die Datei wird direkt danach gelöscht.",
     seoTitle: "PDF-OCR – gescannte PDFs durchsuchbar machen, kostenlos",
     seoDescription:
-      "PDF durchsuchbar machen mit OCR, kostenlos online: Text in gescannten PDFs markierbar und kopierbar machen. 16 Sprachen; Dateien werden direkt danach gelöscht.",
+      "PDF durchsuchbar machen mit OCR, kostenlos online: Text in gescannten PDFs markierbar und kopierbar machen. 19 Sprachen; Dateien werden direkt danach gelöscht.",
     keywords: [
       "pdf ocr",
       "pdf durchsuchbar machen",
@@ -7764,8 +7764,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Die Textebene ist unsichtbar; der Scan bleibt unverändert.",
       },
       {
-        title: "16 Sprachen",
-        description: "Englisch, Deutsch, Spanisch, Französisch, Portugiesisch, Italienisch, Niederländisch, Polnisch, Russisch, Ukrainisch, Japanisch, Koreanisch, Hindi, Vietnamesisch, Indonesisch und Türkisch. Zwei auf einmal für Seiten, die sie mischen.",
+        title: "19 Sprachen",
+        description: "Englisch, Deutsch, Spanisch, Französisch, Portugiesisch, Italienisch, Niederländisch, Polnisch, Russisch, Ukrainisch, Japanisch, Koreanisch, Chinesisch (vereinfacht und traditionell), Thailändisch, Hindi, Vietnamesisch, Indonesisch und Türkisch. Zwei auf einmal für Seiten, die sie mischen.",
       },
       {
         title: "Überspringt Textseiten",
