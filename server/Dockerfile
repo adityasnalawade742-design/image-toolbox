@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       ghostscript qpdf ocrmypdf pngquant \
       tesseract-ocr tesseract-ocr-eng tesseract-ocr-deu tesseract-ocr-spa tesseract-ocr-fra tesseract-ocr-por \
       tesseract-ocr-ita tesseract-ocr-jpn tesseract-ocr-kor tesseract-ocr-ind tesseract-ocr-tur \
+      tesseract-ocr-rus tesseract-ocr-ukr tesseract-ocr-hin tesseract-ocr-nld tesseract-ocr-pol tesseract-ocr-vie \
       fonts-liberation fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto-core fonts-noto-cjk \
       fonts-dejavu-core fonts-dejavu-extra fonts-wine \
       ca-certificates \

@@ -7710,7 +7710,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "OCR PDF mengenali teks dalam PDF hasil scan dan menambahkannya sebagai lapisan tak terlihat, sehingga Anda bisa mencari, memilih, dan menyalin teks sementara halamannya tetap terlihat sama persis. Alat ini berguna untuk kontrak, struk, buku, dan dokumen lama hasil scan. Pilih bahasa dokumen untuk hasil terbaik; halaman yang sudah berisi teks dibiarkan apa adanya. Pengenalan teks memakai Tesseract dan OCRmyPDF di server kami, dan file dihapus segera setelahnya.",
     seoTitle: "OCR PDF Online – Buat PDF Scan Bisa Dicari, Gratis",
     seoDescription:
-      "OCR PDF online dan gratis: buat PDF hasil scan bisa dicari dan disalin teksnya. Mendukung 10 bahasa; file dihapus segera setelah diproses. Tanpa daftar.",
+      "OCR PDF online dan gratis: buat PDF hasil scan bisa dicari dan disalin teksnya. Mendukung 16 bahasa; file dihapus segera setelah diproses. Tanpa daftar.",
     keywords: [
       "ocr pdf",
       "ocr pdf online",
@@ -7726,7 +7726,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilih bahasanya",
-        description: "Pilih bahasa yang dipakai dalam dokumen.",
+        description: "Pilih bahasa yang dipakai dalam dokumen, atau dua jika dokumennya mencampur bahasa.",
       },
       {
         title: "Buat bisa dicari",
@@ -7739,8 +7739,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Lapisan teksnya tak terlihat; hasil scan tidak berubah.",
       },
       {
-        title: "Sepuluh bahasa",
-        description: "Inggris, Jerman, Spanyol, Prancis, Portugis, Italia, Jepang, Korea, Indonesia, dan Turki.",
+        title: "16 bahasa",
+        description: "Inggris, Jerman, Spanyol, Prancis, Portugis, Italia, Belanda, Polandia, Rusia, Ukraina, Jepang, Korea, Hindi, Vietnam, Indonesia, dan Turki. Dua sekaligus untuk halaman yang mencampurnya.",
       },
       {
         title: "Lewati halaman berteks",

@@ -7695,7 +7695,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       "OCR PDF riconosce il testo in un PDF scansionato e lo aggiunge come livello invisibile, così puoi cercare, selezionare e copiare il testo mentre le pagine restano identiche. È utile per contratti scansionati, ricevute, libri e documenti vecchi. Scegli la lingua del documento per ottenere i risultati migliori; le pagine che contengono già testo restano come sono. Il riconoscimento usa Tesseract e OCRmyPDF sul nostro server e il file viene eliminato subito dopo.",
     seoTitle: "OCR PDF – Rendi ricercabili i PDF scansionati, gratis",
     seoDescription:
-      "OCR PDF online gratis: rendi i PDF scansionati ricercabili e il loro testo copiabile. 10 lingue; i file vengono eliminati subito dopo.",
+      "OCR PDF online gratis: rendi i PDF scansionati ricercabili e il loro testo copiabile. 16 lingue; i file vengono eliminati subito dopo.",
     keywords: [
       "ocr pdf",
       "pdf ricercabile",
@@ -7711,7 +7711,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Scegli la lingua",
-        description: "Scegli la lingua in cui è scritto il documento.",
+        description: "Scegli la lingua in cui è scritto il documento, o due se le mescola.",
       },
       {
         title: "Rendilo ricercabile",
@@ -7724,8 +7724,8 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "Il livello di testo è invisibile; la scansione non cambia.",
       },
       {
-        title: "Dieci lingue",
-        description: "Inglese, tedesco, spagnolo, francese, portoghese, italiano, giapponese, coreano, indonesiano e turco.",
+        title: "16 lingue",
+        description: "Inglese, tedesco, spagnolo, francese, portoghese, italiano, olandese, polacco, russo, ucraino, giapponese, coreano, hindi, vietnamita, indonesiano e turco. Due insieme per le pagine che le mescolano.",
       },
       {
         title: "Salta le pagine con testo",

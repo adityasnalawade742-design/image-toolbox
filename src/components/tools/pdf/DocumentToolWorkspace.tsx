@@ -37,8 +37,25 @@ const CONFIG: Record<DocTool, ToolConfig> = {
   'pdf-to-grayscale': { endpoint: 'grayscale', ...PDF_IN, action: 'ctl.doc.grayscale', output: (b) => `${b}-grayscale.pdf` },
 };
 
-// Site language → Tesseract language pack on the server
-const OCR_LANG: Record<string, string> = { en: 'eng', de: 'deu', es: 'spa', fr: 'fra', pt: 'por', it: 'ita', ja: 'jpn', ko: 'kor', id: 'ind', tr: 'tur' };
+// Language (BCP 47, for its name and the default) → Tesseract language pack on the server. The site's own languages
+// first, then the others
+const OCR_LANG: Record<string, string> = {
+  en: 'eng', de: 'deu', es: 'spa', fr: 'fra', pt: 'por', it: 'ita', ja: 'jpn', ko: 'kor', id: 'ind', tr: 'tur',
+  ru: 'rus', uk: 'ukr', hi: 'hin', nl: 'nld', pl: 'pol', vi: 'vie',
+};
+
+/** A language's name in its own script: the site's own list for its languages, the browser for the others (中文, العربية…) */
+function nativeName(code: string): string {
+  const own = SUPPORTED_LOCALES[code as keyof typeof SUPPORTED_LOCALES]?.nativeName;
+  if (own) return own;
+  try {
+    const name = new Intl.DisplayNames([code], { type: 'language' }).of(code);
+    if (name && name !== code) return name.charAt(0).toLocaleUpperCase(code) + name.slice(1);
+  } catch {
+    // older browsers
+  }
+  return code;
+}
 
 const ERROR_TEXT: Record<DocErrorCode, StringKey> = {
   offline: 'ctl.doc.offline',
@@ -81,6 +98,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [confirm, setConfirm] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [lang, setLang] = useState(OCR_LANG[locale] || 'eng');
+  // A second language for pages that mix two, such as English and Chinese; empty for none
+  const [lang2, setLang2] = useState('');
   // Protect PDF: what people may do once it's open, and the password that changes that
   const [allowPrint, setAllowPrint] = useState<'full' | 'low' | 'none'>('full');
   const [allowCopy, setAllowCopy] = useState(true);
@@ -127,7 +146,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   // New settings make finished files stale, so the action button runs them again
   useEffect(() => {
     setQueue((q) => (q && q.some((x) => x.status === 'done') ? q.map((x) => (x.status === 'done' ? { ...x, status: 'pending', out: undefined } : x)) : q));
-  }, [preset, password, lang, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
+  }, [preset, password, lang, lang2, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
   const pickMany = (list: File[]) => {
     if (list.length < 2) {
       if (list[0]) pick(list[0]);
@@ -168,7 +187,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     const params = {
       ...cfg.params,
       ...(tool === 'compress-pdf' ? { preset } : {}),
-      ...(tool === 'ocr-pdf' ? { lang } : {}),
+      ...(tool === 'ocr-pdf' ? { lang: lang2 && lang2 !== lang ? `${lang}+${lang2}` : lang } : {}),
       ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
       ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
     };
@@ -449,10 +468,24 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
           <select id="doc-lang" value={lang} onChange={(e) => setLang(e.target.value)} className={inputClass}>
             {Object.entries(OCR_LANG).map(([code, tess]) => (
               <option key={tess} value={tess} lang={code}>
-                {SUPPORTED_LOCALES[code as keyof typeof SUPPORTED_LOCALES]?.nativeName || code}
+                {nativeName(code)}
               </option>
             ))}
           </select>
+          <label htmlFor="doc-lang2" className="block text-[14px] text-graphite pt-2">
+            {t('ctl.doc.ocrLang2')}
+          </label>
+          <select id="doc-lang2" value={lang2} onChange={(e) => setLang2(e.target.value)} aria-describedby="doc-lang2-hint" className={inputClass}>
+            <option value="">{t('ctl.doc.ocrLangNone')}</option>
+            {Object.entries(OCR_LANG)
+              .filter(([, tess]) => tess !== lang)
+              .map(([code, tess]) => (
+                <option key={tess} value={tess} lang={code}>
+                  {nativeName(code)}
+                </option>
+              ))}
+          </select>
+          <p id="doc-lang2-hint" className="text-[13px] text-graphite">{t('ctl.doc.ocrLang2Hint')}</p>
         </div>
       )}
       {!['compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf'].includes(tool) && <p className="text-[14px] text-graphite leading-relaxed">{t(cfg.hint)}</p>}
