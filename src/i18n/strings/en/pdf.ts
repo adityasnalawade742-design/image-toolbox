@@ -115,6 +115,9 @@ export const pdfStrings = {
   'ctl.sign.itemText': 'Text',
   'ctl.sign.width': 'Width',
   'ctl.sign.copyAll': 'Copy to every page',
+  'ctl.sign.itemPage': 'Page',
+  'ctl.sign.typeIt': 'type it in',
+  'ctl.sign.emptyItems': 'Some initials or text have nothing in them yet: type it in the list, or remove them.',
 
   // Fill form
   'ctl.form.fields': 'Form fields',

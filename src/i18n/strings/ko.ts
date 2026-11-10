@@ -557,7 +557,7 @@ export const strings = {
   'ctl.batch.hintMetadata': "사진마다 형식과 화질은 그대로 두고 메타데이터만 지워요. iPhone HEIC와 TIFF는 JPG나 PNG가 돼요.",
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG, PNG, WebP 파일당 최대 50 MB. 브라우저에서 하나씩 차례로 압축해요.',
+  'ctl.bulkCompress.dropHint': "JPG, PNG, WebP, AVIF, HEIC, TIFF, BMP를 장당 50MB까지. 브라우저에서 한 장씩 압축해요. 움직이는 이미지는 첫 프레임만 남아요.",
   'ctl.bulkCompress.quality': '품질',
   'ctl.bulkCompress.qualityLabel': '압축 품질',
   'ctl.bulkCompress.pngLossless': 'PNG는 무손실이라 품질 설정이 적용되지 않아요.',
@@ -566,7 +566,7 @@ export const strings = {
   'ctl.bulkCompress.hintAvif': '파일이 가장 작지만 인코딩이 느려요.',
   'ctl.bulkCompress.hintWebp': '작은 파일, 모든 최신 브라우저에서 열려요.',
   'ctl.bulkCompress.hintJpeg': '어디서나 열려요. 투명한 영역은 흰색이 돼요.',
-  'ctl.bulkCompress.hintPng': '무손실, 파일이 가장 커요.',
+  'ctl.bulkCompress.hintPng': "가장자리가 선명하고 투명도도 유지돼요. 남길 색 수는 품질 설정으로 정해져요.",
   'ctl.bulkCompress.run': '모두 압축 ({count})',
   'ctl.bulkCompress.running': '압축 중…',
   'ctl.bulkCompress.statusProcessing': '압축 중',
@@ -648,6 +648,7 @@ export const strings = {
   'ctl.refine.eraseHint': "남은 배경을 칠하면 지워져요.",
   'ctl.refine.restoreHint': "빠진 머리카락이나 가장자리를 칠하면 사진에서 되살아나요.",
   'ctl.refine.faint': "지워진 부분은 흐리게 보여요.",
+  'ctl.refine.loseFixes': "다른 모델로 다시 잘라내므로 브러시로 다듬은 내용이 사라져요. 그래도 바꿀까요?",
   'ctl.refine.undo': "실행 취소",
   'ctl.refine.reset': "처음부터",
   'ctl.refine.done': "완료",
@@ -869,6 +870,9 @@ export const strings = {
   'ctl.sign.itemText': "텍스트",
   'ctl.sign.width': "너비",
   'ctl.sign.copyAll': "모든 페이지에 복사",
+  'ctl.sign.itemPage': "페이지",
+  'ctl.sign.typeIt': "입력하세요",
+  'ctl.sign.emptyItems': "비어 있는 이니셜이나 텍스트가 있어요. 목록에서 입력하거나 삭제하세요.",
 
   // ===== Fill PDF form =====
   'ctl.form.fields': '양식 항목',
@@ -1195,7 +1199,7 @@ export const strings = {
   'ctl.barcode.white': '흰색',
   'ctl.barcode.preview': '{type} 바코드 미리보기',
   'ctl.barcode.empty': '숫자나 텍스트를 입력하세요. 예: {example}. 여기에 바코드가 나타나요.',
-  'ctl.barcode.printSize': '300dpi 기준 {w} × {h}mm',
+  'ctl.barcode.printSize': '{dpi}dpi 기준 {w} × {h}mm',
   'ctl.barcode.scansOk': '{format}(으)로 제대로 스캔돼요: {text}',
   'ctl.barcode.scansBad': '스캐너가 이 바코드를 다시 읽지 못했어요. 막대를 더 넓게, 더 진하게 하거나 배경을 흰색으로 해 보세요.',
   'ctl.barcode.gs1Note': '매장에서 판매하는 상품에는 EAN·UPC 번호를 발급하는 기관인 GS1에 등록된 번호가 필요해요. 이 도구는 바코드를 그려 줄 뿐, 번호를 등록해 주지는 않아요.',

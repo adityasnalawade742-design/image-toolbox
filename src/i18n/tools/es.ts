@@ -8518,7 +8518,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "name": "Crear miniaturas de YouTube",
     "shortName": "Miniatura de YouTube",
     "tagline": "Convierte una imagen en una miniatura de YouTube en 16:9 que respeta los límites de subida de YouTube. Gratis y funciona en tu dispositivo.",
-    "intro": "Crear miniaturas de YouTube encuadra una imagen en la forma 16:9 que pide YouTube. Elige 1280 × 720, que se mantiene por debajo del límite de 2 MB para subir desde el móvil, o 3840 × 2160, el tamaño grande que recomienda YouTube, para subir desde un ordenador. Arrastra la imagen para encuadrarla, acerca lo importante y descárgala. Para añadir texto, usa Añadir texto a una imagen. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas.",
+    "intro": "Crear miniaturas de YouTube encuadra una imagen en la forma 16:9 que pide YouTube. Elige 1280 × 720, que se mantiene por debajo del límite de 2 MB para subir desde el móvil, o 3840 × 2160, el tamaño grande que recomienda YouTube, para subir desde un ordenador. Arrastra la imagen para encuadrarla, acerca lo importante y descárgala. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas.",
     "seoTitle": "Crear miniaturas de YouTube – 16:9, hasta 4K, gratis",
     "seoDescription": "Crea una miniatura de YouTube en 16:9 con cualquier imagen: 1280×720 con menos de 2 MB para móviles, o 4K. Encuadra, acerca y descarga. Gratis, sin subir nada.",
     "keywords": ["crear miniaturas de youtube", "tamaño de miniatura de youtube", "miniatura 1280x720", "redimensionar imagen para miniatura de youtube", "miniatura de youtube 2mb"],

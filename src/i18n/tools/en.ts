@@ -8155,7 +8155,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "YouTube Thumbnail Maker",
     "shortName": "YouTube Thumbnail",
     "tagline": "Turn a picture into a 16:9 YouTube thumbnail that stays within YouTube's upload limits. Free, and it runs on your device.",
-    "intro": "YouTube Thumbnail Maker frames a picture in the 16:9 shape YouTube asks for. Choose 1280 × 720, which stays under the 2 MB limit for uploading from a phone, or 3840 × 2160, the large size YouTube recommends, for uploading from a computer. Drag the picture to frame it, zoom in on what matters, and download it. To add text, use Add Text to Image. You can also add text, such as a title or a name, with your choice of font, colour and outline.",
+    "intro": "YouTube Thumbnail Maker frames a picture in the 16:9 shape YouTube asks for. Choose 1280 × 720, which stays under the 2 MB limit for uploading from a phone, or 3840 × 2160, the large size YouTube recommends, for uploading from a computer. Drag the picture to frame it, zoom in on what matters, and download it. You can also add text, such as a title or a name, with your choice of font, colour and outline.",
     "seoTitle": "YouTube Thumbnail Maker – 16:9, Up to 4K, Free",
     "seoDescription": "Make a 16:9 YouTube thumbnail from any picture: 1280×720 under 2 MB for phones, or 4K. Drag to frame, zoom, download. Free, no sign-up, no upload.",
     "keywords": ["youtube thumbnail maker", "youtube thumbnail size", "1280x720 thumbnail", "resize image for youtube thumbnail", "youtube thumbnail 2mb"],

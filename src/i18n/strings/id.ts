@@ -557,7 +557,7 @@ export const strings = {
   'ctl.batch.hintMetadata': "Setiap foto tetap dengan format dan kualitasnya: hanya metadata yang dihapus. HEIC iPhone dan TIFF menjadi JPG atau PNG.",
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG, PNG, dan WebP, masing-masing hingga 50 MB. Dikompres satu per satu, sepenuhnya di browser Anda.',
+  'ctl.bulkCompress.dropHint': "JPG, PNG, WebP, AVIF, HEIC, TIFF, dan BMP, hingga 50 MB per file. Dikompres satu per satu, sepenuhnya di browser Anda. Gambar animasi hanya menyimpan bingkai pertamanya.",
   'ctl.bulkCompress.quality': 'Kualitas',
   'ctl.bulkCompress.qualityLabel': 'Kualitas kompresi',
   'ctl.bulkCompress.pngLossless': 'PNG bersifat lossless, jadi pengaturan kualitas tidak berlaku.',
@@ -566,7 +566,7 @@ export const strings = {
   'ctl.bulkCompress.hintAvif': 'File terkecil, proses enkode lebih lambat.',
   'ctl.bulkCompress.hintWebp': 'File kecil yang bisa dibuka di semua browser modern.',
   'ctl.bulkCompress.hintJpeg': 'Bisa dibuka di mana saja. Area transparan menjadi putih.',
-  'ctl.bulkCompress.hintPng': 'Lossless, dengan ukuran file terbesar.',
+  'ctl.bulkCompress.hintPng': "Tepi tajam dan transparansi; pengaturan kualitas menentukan berapa banyak warna yang dipertahankan.",
   'ctl.bulkCompress.run': 'Kompres semua ({count})',
   'ctl.bulkCompress.running': 'Mengompres…',
   'ctl.bulkCompress.statusProcessing': 'Mengompres',
@@ -648,6 +648,7 @@ export const strings = {
   'ctl.refine.eraseHint': "Sapukan pada sisa latar untuk menghapusnya.",
   'ctl.refine.restoreHint': "Sapukan pada rambut atau tepi yang hilang untuk mengembalikannya dari foto.",
   'ctl.refine.faint': "Bagian yang terhapus tampak samar.",
+  'ctl.refine.loseFixes': "Model lain membuat potongan baru, jadi perbaikan kuas Anda akan hilang. Tetap ganti?",
   'ctl.refine.undo': "Urungkan",
   'ctl.refine.reset': "Mulai lagi",
   'ctl.refine.done': "Selesai",
@@ -869,6 +870,9 @@ export const strings = {
   'ctl.sign.itemText': "Teks",
   'ctl.sign.width': "Lebar",
   'ctl.sign.copyAll': "Salin ke setiap halaman",
+  'ctl.sign.itemPage': "Halaman",
+  'ctl.sign.typeIt': "ketik dulu",
+  'ctl.sign.emptyItems': "Ada paraf atau teks yang masih kosong: ketik di daftar, atau hapus.",
 
   // ===== Fill PDF form =====
   'ctl.form.fields': 'Kolom formulir',
@@ -1197,7 +1201,7 @@ export const strings = {
   'ctl.barcode.white': 'Putih',
   'ctl.barcode.preview': 'Pratinjau barcode {type}',
   'ctl.barcode.empty': 'Ketik angka atau teks, misalnya {example}. Barcode akan muncul di sini.',
-  'ctl.barcode.printSize': '{w} × {h} mm pada 300 dpi',
+  'ctl.barcode.printSize': '{w} × {h} mm pada {dpi} dpi',
   'ctl.barcode.scansOk': 'Terbaca dengan benar sebagai {format}: {text}',
   'ctl.barcode.scansBad': 'Pemindai tidak bisa membaca ulang barcode ini. Coba batang yang lebih lebar, batang yang lebih gelap, atau background putih.',
   'ctl.barcode.gs1Note': 'Produk yang dijual di toko memerlukan nomor yang terdaftar di GS1, organisasi yang menerbitkan nomor EAN dan UPC. Alat ini hanya menggambar barcode; alat ini tidak mendaftarkan nomor.',

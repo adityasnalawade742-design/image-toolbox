@@ -562,7 +562,7 @@ export const strings = {
   'ctl.batch.hintMetadata': "各写真の形式と画質はそのままで、メタデータだけを削除します。iPhoneのHEICとTIFFはJPGまたはPNGになります。",
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG、PNG、WebPに対応（1枚あたり最大50 MB）。1枚ずつ、すべてブラウザ内で圧縮します。',
+  'ctl.bulkCompress.dropHint': "JPG・PNG・WebP・AVIF・HEIC・TIFF・BMP、1枚50 MBまで。ブラウザ内で1枚ずつ圧縮します。アニメーション画像は最初のコマだけになります。",
   'ctl.bulkCompress.quality': '画質',
   'ctl.bulkCompress.qualityLabel': '圧縮の画質',
   'ctl.bulkCompress.pngLossless': 'PNGは可逆圧縮のため、画質の設定は適用されません。',
@@ -571,7 +571,7 @@ export const strings = {
   'ctl.bulkCompress.hintAvif': '最も小さくなりますが、エンコードに時間がかかります。',
   'ctl.bulkCompress.hintWebp': '小さなファイルで、最新のブラウザならどれでも開けます。',
   'ctl.bulkCompress.hintJpeg': 'どこでも開けます。透明部分は白になります。',
-  'ctl.bulkCompress.hintPng': '可逆圧縮で、ファイルは最も大きくなります。',
+  'ctl.bulkCompress.hintPng': "輪郭がくっきりし、透明も保てます。残す色の数は品質の設定で決まります。",
   'ctl.bulkCompress.run': 'すべて圧縮（{count}）',
   'ctl.bulkCompress.running': '圧縮中…',
   'ctl.bulkCompress.statusProcessing': '圧縮中',
@@ -653,6 +653,7 @@ export const strings = {
   'ctl.refine.eraseHint': "残った背景をなぞると消えます。",
   'ctl.refine.restoreHint': "欠けた髪や輪郭をなぞると写真から戻ります。",
   'ctl.refine.faint': "消えた部分は薄く表示されます。",
+  'ctl.refine.loseFixes': "別のモデルで切り抜き直すため、ブラシでの修正は失われます。切り替えますか？",
   'ctl.refine.undo': "元に戻す",
   'ctl.refine.reset': "やり直す",
   'ctl.refine.done': "完了",
@@ -874,6 +875,9 @@ export const strings = {
   'ctl.sign.itemText': "テキスト",
   'ctl.sign.width': "幅",
   'ctl.sign.copyAll': "すべてのページにコピー",
+  'ctl.sign.itemPage': "ページ",
+  'ctl.sign.typeIt': "未入力",
+  'ctl.sign.emptyItems': "空のイニシャルやテキストがあります。一覧で入力するか、削除してください。",
 
   // ===== Fill PDF form =====
   'ctl.form.fields': 'フォームの項目',
@@ -1200,7 +1204,7 @@ export const strings = {
   'ctl.barcode.white': '白',
   'ctl.barcode.preview': '{type}バーコードのプレビュー',
   'ctl.barcode.empty': '番号またはテキストを入力してください（例：{example}）。ここにバーコードが表示されます。',
-  'ctl.barcode.printSize': '300 dpiで{w} × {h} mm',
+  'ctl.barcode.printSize': '{dpi} dpiで{w} × {h} mm',
   'ctl.barcode.scansOk': '{format}として正しく読み取れます：{text}',
   'ctl.barcode.scansBad': 'スキャナーで読み取れませんでした。バーを太くする、バーの色を濃くする、背景を白にするなどを試してください。',
   'ctl.barcode.gs1Note': '店頭で販売する商品には、EANやUPCの番号を発行する機関であるGS1に登録された番号が必要です。このツールはバーコードを描画するだけで、番号の登録は行いません。',

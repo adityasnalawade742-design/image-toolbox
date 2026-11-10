@@ -143,6 +143,8 @@ export function RemoveBackgroundWorkspace() {
 
   const chooseMode = (m: RemovalMode) => {
     if (m === mode) return;
+    // Another model makes a new cutout, which the brush fixes don't carry over to
+    if (brush.edited && !window.confirm(t('ctl.refine.loseFixes'))) return;
     setMode(m);
     saveRemovalMode(m);
     if (file) {

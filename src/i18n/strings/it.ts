@@ -557,7 +557,7 @@ export const strings = {
   'ctl.batch.hintMetadata': "Ogni foto mantiene formato e qualità: vengono rimossi solo i metadati. HEIC di iPhone e TIFF diventano JPG o PNG.",
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG, PNG e WebP, fino a 50 MB ciascuna. Compresse una alla volta, tutto nel browser.',
+  'ctl.bulkCompress.dropHint': "JPG, PNG, WebP, AVIF, HEIC, TIFF e BMP, fino a 50 MB ciascuna. Compresse una alla volta, interamente nel browser. Le immagini animate mantengono il primo fotogramma.",
   'ctl.bulkCompress.quality': 'Qualità',
   'ctl.bulkCompress.qualityLabel': 'Qualità di compressione',
   'ctl.bulkCompress.pngLossless': 'PNG è senza perdita, quindi l’impostazione di qualità non si applica.',
@@ -566,7 +566,7 @@ export const strings = {
   'ctl.bulkCompress.hintAvif': 'File più leggeri, codifica più lenta.',
   'ctl.bulkCompress.hintWebp': 'File leggeri che si aprono in ogni browser moderno.',
   'ctl.bulkCompress.hintJpeg': 'Si apre ovunque. Le aree trasparenti diventano bianche.',
-  'ctl.bulkCompress.hintPng': 'Senza perdita, con i file più pesanti.',
+  'ctl.bulkCompress.hintPng': "Bordi nitidi e trasparenza; la qualità decide quanti colori vengono mantenuti.",
   'ctl.bulkCompress.run': 'Comprimi tutto ({count})',
   'ctl.bulkCompress.running': 'Compressione…',
   'ctl.bulkCompress.statusProcessing': 'Compressione',
@@ -648,6 +648,7 @@ export const strings = {
   'ctl.refine.eraseHint': "Dipingi sui resti di sfondo per toglierli.",
   'ctl.refine.restoreHint': "Dipingi su capelli o bordi mancanti per riprenderli dalla foto.",
   'ctl.refine.faint': "Le parti tolte si vedono in trasparenza.",
+  'ctl.refine.loseFixes': "Un altro modello crea un nuovo ritaglio e i tuoi ritocchi col pennello andranno persi. Cambiare comunque?",
   'ctl.refine.undo': "Annulla",
   'ctl.refine.reset': "Ricomincia",
   'ctl.refine.done': "Fatto",
@@ -869,6 +870,9 @@ export const strings = {
   'ctl.sign.itemText': "Testo",
   'ctl.sign.width': "Larghezza",
   'ctl.sign.copyAll': "Copia su ogni pagina",
+  'ctl.sign.itemPage': "Pagina",
+  'ctl.sign.typeIt': "da scrivere",
+  'ctl.sign.emptyItems': "Alcune iniziali o testi sono ancora vuoti: scrivili nell’elenco o rimuovili.",
 
   // Fill PDF form
   'ctl.form.fields': 'Campi del modulo',
@@ -1197,7 +1201,7 @@ export const strings = {
   'ctl.barcode.white': 'Bianco',
   'ctl.barcode.preview': 'Anteprima del codice a barre {type}',
   'ctl.barcode.empty': 'Scrivi il numero o il testo, per esempio {example}. Il codice a barre comparirà qui.',
-  'ctl.barcode.printSize': '{w} × {h} mm a 300 dpi',
+  'ctl.barcode.printSize': '{w} × {h} mm a {dpi} dpi',
   'ctl.barcode.scansOk': 'Letto correttamente come {format}: {text}',
   'ctl.barcode.scansBad': 'Uno scanner non è riuscito a rileggerlo. Prova barre più larghe, barre più scure o uno sfondo bianco.',
   'ctl.barcode.gs1Note': 'I prodotti venduti nei negozi richiedono un numero registrato presso GS1, l’organizzazione che rilascia i numeri EAN e UPC. Questo strumento disegna il codice a barre; non registra numeri.',

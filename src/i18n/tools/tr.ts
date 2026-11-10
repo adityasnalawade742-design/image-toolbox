@@ -8516,7 +8516,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "name": "YouTube Küçük Resim Oluşturucu",
     "shortName": "YouTube Küçük Resim",
     "tagline": "Bir resmi YouTube’un yükleme sınırları içinde kalan 16:9 küçük resme dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "YouTube Küçük Resim Oluşturucu, bir resmi YouTube’un istediği 16:9 şekline oturtur. Telefondan yükleme için 2 MB sınırının altında kalan 1280 × 720’yi ya da bilgisayardan yükleme için YouTube’un önerdiği büyük boyut olan 3840 × 2160’ı seçin. Resmi sürükleyerek çerçeveleyin, önemli yere yakınlaştırın ve indirin. Yazı eklemek için Resme Yazı Ekleme aracını kullanın. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz.",
+    "intro": "YouTube Küçük Resim Oluşturucu, bir resmi YouTube’un istediği 16:9 şekline oturtur. Telefondan yükleme için 2 MB sınırının altında kalan 1280 × 720’yi ya da bilgisayardan yükleme için YouTube’un önerdiği büyük boyut olan 3840 × 2160’ı seçin. Resmi sürükleyerek çerçeveleyin, önemli yere yakınlaştırın ve indirin. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz.",
     "seoTitle": "YouTube Küçük Resim Oluşturucu – 16:9, 4K’ya Kadar, Ücretsiz",
     "seoDescription": "Herhangi bir resimden 16:9 YouTube küçük resmi yapın: telefon için 2 MB altında 1280×720 veya 4K. Sürükleyin, yakınlaştırın, indirin. Ücretsiz, yüklemesiz.",
     "keywords": ["youtube küçük resim oluşturma", "youtube küçük resim boyutu", "1280x720 küçük resim", "youtube kapak fotoğrafı boyutu", "youtube küçük resim 2mb"],

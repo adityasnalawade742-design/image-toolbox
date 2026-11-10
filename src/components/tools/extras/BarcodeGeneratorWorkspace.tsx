@@ -5,6 +5,7 @@ import { useT } from '../../shared/I18nContext';
 import type { StringKey } from '../../../i18n/strings';
 import { RangeField } from '../pdf/common';
 import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
+import { setDpi } from '../../../lib/canvas/dpi';
 import { FullSizeView, blobImage } from '../../shared/MediaViewer';
 import { checkBarcode, expandUpce, SYMBOLOGIES, SYMBOLOGY_ORDER, type BarcodeProblem, type Symbology } from '../../../lib/barcode/symbologies';
 import type { BarcodeStyle } from '../../../lib/barcode/render';
@@ -126,9 +127,14 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
   }, [type, value, styleKey]);
 
   const fileBase = `barcode-${type}-${(checked.ok ? value.trim() : 'code').replace(/[^\p{L}\p{N}-]+/gu, '-').slice(0, 40)}`;
+  // bwip-js draws 1 module = 1 pixel at 72 dpi, times the bar width: that is the resolution it prints at as set
+  const dpi = 72 * scale;
   const downloadPng = async () => {
     if (!canvasRef.current || !size) return;
-    downloadBlob(await canvasToBlob(canvasRef.current, 'image/png'), `${fileBase}.png`);
+    // The image says how big it is meant to print, so the bar height and width come out as set (and EAN/UPC at
+    // about 107% of their nominal size, inside the 80-200% scanners are made for)
+    const png = new Uint8Array(await (await canvasToBlob(canvasRef.current, 'image/png')).arrayBuffer());
+    downloadBlob(new Blob([new Uint8Array(setDpi(png, dpi))], { type: 'image/png' }), `${fileBase}.png`);
     setStatus(t('ctl.pdf.done', { name: `${fileBase}.png` }));
   };
   const downloadSvg = async () => {
@@ -138,7 +144,7 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
     setStatus(t('ctl.pdf.done', { name: `${fileBase}.svg` }));
   };
 
-  const mm = (px: number) => Math.round((px / 300) * 25.4 * 10) / 10;
+  const mm = (px: number) => Math.round((px / dpi) * 25.4 * 10) / 10;
   const error = problem || encodeError;
 
   const panel = (
@@ -231,7 +237,7 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
         ) : undefined
       }
       fileSlug={t('ws.output')}
-      fileLabel={size && !error ? `${info.label} · ${size.w} × ${size.h} px · ${t('ctl.barcode.printSize', { w: mm(size.w), h: mm(size.h) })}` : undefined}
+      fileLabel={size && !error ? `${info.label} · ${size.w} × ${size.h} px · ${t('ctl.barcode.printSize', { w: mm(size.w), h: mm(size.h), dpi })}` : undefined}
     >
       <div className="bg-paper-bright border border-ink flex items-center justify-center min-h-[220px] sm:min-h-[320px] p-6 sm:p-10 rounded-xl overflow-auto">
         <canvas

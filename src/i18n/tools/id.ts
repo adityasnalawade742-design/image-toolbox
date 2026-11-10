@@ -8515,7 +8515,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "name": "Pembuat Thumbnail YouTube",
     "shortName": "Thumbnail YouTube",
     "tagline": "Ubah gambar menjadi thumbnail YouTube 16:9 yang tetap dalam batas unggah YouTube. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Thumbnail YouTube membingkai gambar dalam bentuk 16:9 yang diminta YouTube. Pilih 1280 × 720, yang tetap di bawah batas 2 MB untuk mengunggah dari ponsel, atau 3840 × 2160, ukuran besar yang disarankan YouTube, untuk mengunggah dari komputer. Seret gambar untuk membingkainya, perbesar bagian yang penting, lalu unduh. Untuk menambahkan teks, gunakan Tambah Teks ke Gambar. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda.",
+    "intro": "Pembuat Thumbnail YouTube membingkai gambar dalam bentuk 16:9 yang diminta YouTube. Pilih 1280 × 720, yang tetap di bawah batas 2 MB untuk mengunggah dari ponsel, atau 3840 × 2160, ukuran besar yang disarankan YouTube, untuk mengunggah dari komputer. Seret gambar untuk membingkainya, perbesar bagian yang penting, lalu unduh. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda.",
     "seoTitle": "Buat Thumbnail YouTube – 16:9, Hingga 4K, Gratis",
     "seoDescription": "Buat thumbnail YouTube 16:9 dari gambar apa pun: 1280×720 di bawah 2 MB untuk ponsel, atau 4K. Seret, zoom, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
     "keywords": ["buat thumbnail youtube", "ukuran thumbnail youtube", "thumbnail 1280x720", "ubah ukuran gambar untuk thumbnail youtube", "thumbnail youtube 2mb"],

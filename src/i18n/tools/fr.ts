@@ -8546,7 +8546,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "name": "Créer une miniature YouTube",
     "shortName": "Miniature YouTube",
     "tagline": "Transformez une image en miniature YouTube 16:9 qui respecte les limites d’envoi de YouTube. Gratuit, et tout se fait sur votre appareil.",
-    "intro": "Créer une miniature YouTube cadre une image au format 16:9 demandé par YouTube. Choisissez 1280 × 720, qui reste sous la limite de 2 MB pour un envoi depuis un téléphone, ou 3840 × 2160, la grande taille recommandée par YouTube, pour un envoi depuis un ordinateur. Faites glisser l’image pour la cadrer, zoomez sur l’essentiel et téléchargez-la. Pour ajouter du texte, utilisez Ajouter du texte sur une image. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix.",
+    "intro": "Créer une miniature YouTube cadre une image au format 16:9 demandé par YouTube. Choisissez 1280 × 720, qui reste sous la limite de 2 MB pour un envoi depuis un téléphone, ou 3840 × 2160, la grande taille recommandée par YouTube, pour un envoi depuis un ordinateur. Faites glisser l’image pour la cadrer, zoomez sur l’essentiel et téléchargez-la. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix.",
     "seoTitle": "Créer une miniature YouTube – 16:9, jusqu’à 4K, gratuit",
     "seoDescription": "Créez une miniature YouTube 16:9 depuis toute image : 1280×720 sous 2 MB pour téléphone, ou 4K. Cadrez, zoomez, téléchargez. Gratuit, sans envoi.",
     "keywords": ["créer miniature youtube", "taille miniature youtube", "miniature 1280x720", "redimensionner image pour miniature youtube", "miniature youtube 2mb"],

@@ -119,6 +119,8 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
 
   const chooseModel = (m: RemovalMode) => {
     if (m === model) return;
+    // Another model makes a new cutout, which the brush fixes don't carry over to
+    if (brush.edited && !window.confirm(t('ctl.refine.loseFixes'))) return;
     setModel(m);
     saveRemovalMode(m);
     if (src) cutOut({ ...src, subject: null, smallAlpha: null }, m);

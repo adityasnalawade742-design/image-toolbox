@@ -8540,7 +8540,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     "name": "YouTube-Thumbnail erstellen",
     "shortName": "YouTube-Thumbnail",
     "tagline": "Mach aus einem Bild ein YouTube-Thumbnail im Format 16:9, das innerhalb der Upload-Limits von YouTube bleibt. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "YouTube-Thumbnail erstellen bringt ein Bild in das von YouTube verlangte Format 16:9. Wähle 1280 × 720, das unter dem Limit von 2 MB für den Upload vom Smartphone bleibt, oder 3840 × 2160, die große von YouTube empfohlene Größe, für den Upload vom Computer. Zieh das Bild in den Rahmen, zoome auf das Wichtige und lade es herunter. Um Text hinzuzufügen, nutze Text in Bild einfügen. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl.",
+    "intro": "YouTube-Thumbnail erstellen bringt ein Bild in das von YouTube verlangte Format 16:9. Wähle 1280 × 720, das unter dem Limit von 2 MB für den Upload vom Smartphone bleibt, oder 3840 × 2160, die große von YouTube empfohlene Größe, für den Upload vom Computer. Zieh das Bild in den Rahmen, zoome auf das Wichtige und lade es herunter. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl.",
     "seoTitle": "YouTube-Thumbnail erstellen – 16:9, bis 4K, gratis",
     "seoDescription": "Erstelle aus jedem Bild ein YouTube-Thumbnail in 16:9: 1280×720 unter 2 MB fürs Smartphone oder 4K. Ziehen, zoomen, herunterladen. Gratis, ohne Upload.",
     "keywords": ["youtube thumbnail erstellen", "youtube thumbnail größe", "thumbnail 1280x720", "bild für youtube thumbnail anpassen", "youtube thumbnail 2mb"],
