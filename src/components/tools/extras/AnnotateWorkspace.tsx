@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpRight, Circle, Droplet, Grid3x3, Hash, Highlighter, Minus, MousePointer2, PenLine, Redo2, Square, Trash2, Type, Undo2 } from 'lucide-react';
+import { ArrowUpRight, Check, Circle, Copy, Droplet, Grid3x3, Hash, Highlighter, Minus, MousePointer2, PenLine, Redo2, Square, Trash2, Type, Undo2 } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT } from '../../shared/I18nContext';
@@ -160,6 +160,9 @@ export function AnnotateWorkspace() {
   const [format, setFormat] = useState<'png' | 'jpg'>('png');
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState('');
+  // Copy to clipboard: shown briefly after a copy, or why the browser refused
+  const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState<string | null>(null);
   const one = useOneImage((im) => {
     setShapes([]);
     setHistory([]);
@@ -283,19 +286,19 @@ export function AnnotateWorkspace() {
     drag.current = null;
   };
 
-  const build = async () => {
+  const build = async (as: 'png' | 'jpg' = format, fast = false) => {
     const c = document.createElement('canvas');
     c.width = W;
     c.height = H;
     const ctx = c.getContext('2d')!;
-    if (format === 'jpg') {
+    if (as === 'jpg') {
       ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, W, H);
     }
     ctx.drawImage(one.img!.canvas, 0, 0);
     drawShapes(ctx, shapes, one.img!.canvas);
-    const type = format === 'jpg' ? 'image/jpeg' : 'image/png';
-    return canvasToBlob(c, type, 0.95, undefined, forDownload(type));
+    const type = as === 'jpg' ? 'image/jpeg' : 'image/png';
+    return canvasToBlob(c, type, 0.95, undefined, fast ? undefined : forDownload(type));
   };
   const fileName = () => `${one.img!.file.name.replace(/\.[^.]+$/, '')}-annotated.${format}`;
   const run = async () => {
@@ -308,6 +311,18 @@ export function AnnotateWorkspace() {
       one.setError(t('ws.errExport'));
     } finally {
       setBusy(false);
+    }
+  };
+
+  // Clipboards take PNG; the blob is passed as a promise so Safari still counts the click as the user's action
+  const copy = async () => {
+    setCopyError(null);
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': build('png', true) })]);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      setCopyError(t('ctl.censor.errCopy'));
     }
   };
 
@@ -393,6 +408,19 @@ export function AnnotateWorkspace() {
           { value: 'jpg', label: 'JPG' },
         ]}
       />
+      {typeof ClipboardItem !== 'undefined' && (
+        <div className="space-y-2">
+          <button type="button" onClick={copy} className="btn-rule w-full min-h-[44px]">
+            {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+            <span aria-live="polite">{copied ? t('ctl.censor.copied') : t('ctl.censor.copy')}</span>
+          </button>
+          {copyError && (
+            <p role="alert" className="text-[14px] text-accent-red">
+              {copyError}
+            </p>
+          )}
+        </div>
+      )}
     </>
   );
 

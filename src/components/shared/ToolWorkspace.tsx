@@ -45,6 +45,7 @@ import { RotateControls } from '../tools/RotateControls';
 import { FlipControls } from '../tools/FlipControls';
 import { TextControls } from '../tools/TextControls';
 import { WatermarkControls } from '../tools/WatermarkControls';
+import { WatermarkBatch } from '../tools/WatermarkBatch';
 import { BorderControls } from '../tools/BorderControls';
 import { RoundControls } from '../tools/RoundControls';
 import { CompressControls } from '../tools/CompressControls';
@@ -464,9 +465,14 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   // Converters and Remove Metadata take several files at once: more than one opens the queue
   const batchable = BATCH_TOOLS.has(slug);
   const [batchFiles, setBatchFiles] = useState<File[] | null>(null);
+  // Watermark Image: the first photo opens in the editor, the others get the same watermark in a ZIP
+  const [watermarkMore, setWatermarkMore] = useState<File[]>([]);
   const intake = (list: File[]) => {
     if (batchable && list.length > 1) setBatchFiles(list);
-    else if (list[0]) handleFile(list[0]);
+    else if (list[0]) {
+      if (slug === 'watermark-image' && list.length > 1) setWatermarkMore(list.slice(1));
+      handleFile(list[0]);
+    }
   };
 
   const handleFile = async (file: File) => {
@@ -1127,7 +1133,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
           ref={fileInputRef}
           type="file"
           accept={accept}
-          multiple={batchable}
+          multiple={batchable || slug === 'watermark-image'}
           className="hidden"
           onChange={(e) => {
             if (e.target.files?.length) intake(Array.from(e.target.files));
@@ -1396,7 +1402,19 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               )}
 
               {slug === 'watermark-image' && (
-                <WatermarkControls options={watermarkOptions} onChange={setWatermarkOptions} />
+                <>
+                  <WatermarkControls options={watermarkOptions} onChange={setWatermarkOptions} />
+                  <WatermarkBatch
+                    current={sourceFile}
+                    files={watermarkMore}
+                    onFiles={setWatermarkMore}
+                    accept={accept}
+                    options={watermarkOptions}
+                    quality={quality}
+                    format={sourceFile && format !== getOutputFormatPolicy(slug, sourceFile.type || 'image/png').format ? format : undefined}
+                    background={bgFillColor}
+                  />
+                </>
               )}
 
               {slug === 'add-border-to-image' && (

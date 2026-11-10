@@ -1536,7 +1536,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Marca de agua",
     tagline: "Protege tus fotos con una marca de agua de texto o logotipo, en un solo punto o repetida por toda la imagen.",
     intro:
-      "Poner marca de agua añade un aviso de copyright, el nombre de una web o un logotipo encima de una foto. Coloca una marca de agua de texto o de logotipo en una de nueve posiciones y ajusta su tamaño y opacidad, o repite el texto por toda la imagen, algo mucho más difícil de eliminar recortando. Los logotipos pueden ser archivos PNG, WebP, JPG o SVG; un logotipo con fondo transparente queda mejor.",
+      "Poner marca de agua añade un aviso de copyright, el nombre de una web o un logotipo encima de una foto. Coloca una marca de agua de texto o de logotipo en una de nueve posiciones y ajusta su tamaño y opacidad, o repite el texto por toda la imagen, algo mucho más difícil de eliminar recortando. Los logotipos pueden ser archivos PNG, WebP, JPG o SVG; un logotipo con fondo transparente queda mejor. Añade más fotos para ponerles a todas la misma marca de agua y descargarlas juntas en un ZIP.",
     seoTitle: "Poner marca de agua a una foto: texto o logotipo",
     seoDescription:
       "Poner marca de agua a fotos online gratis. Usa texto o tu logotipo en nueve posiciones, ajusta la opacidad y la rotación, o repite el texto por toda la imagen.",
@@ -1566,7 +1566,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Descarga",
-        description: "Mantén el formato original o elige otro, y haz clic en Descargar.",
+        description: "Mantén el formato original o elige otro, y haz clic en Descargar. Para más fotos, añádelas en Más fotos y descárgalas todas en un ZIP.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Filtros",
     tagline: "Aplica estilos listos como Vintage, Noir o Cinematográfico, y ajusta el brillo, el contraste, el color y la viñeta.",
     intro:
-      "Filtros y efectos de fotos cambia el aspecto y el ambiente de una foto. Empieza con uno de los ocho estilos, como Cinematográfico, Vintage 70, Noir sombrío o Atardecer cálido, y después ajusta con controles deslizantes el brillo, el contraste, la saturación, el sepia, el blanco y negro, el tono, la claridad, la viñeta y el desenfoque suave. Una vista dividida te permite comparar la foto editada con la original antes de descargarla en PNG, JPG o WebP.",
+      "Filtros y efectos de fotos cambia el aspecto y el ambiente de una foto. Empieza con uno de los ocho estilos, como Cinematográfico, Vintage 70, Noir sombrío o Atardecer cálido, y después ajusta con controles deslizantes el brillo, el contraste, la saturación, el sepia, el blanco y negro, el tono, la claridad, la viñeta y el desenfoque suave. Una vista dividida te permite comparar la foto editada con la original antes de descargarla en PNG, JPG o WebP. Calidez y Matiz corrigen un tono amarillo, azul o verde, y un control de intensidad suaviza cualquier filtro.",
     seoTitle: "Filtros para fotos online: efectos y estilos gratis",
     seoDescription:
       "Aplicar filtros a fotos online gratis. Prueba Vintage, Noir, Cinematográfico y más, ajusta brillo, contraste, saturación y viñeta, y compara antes y después.",
@@ -2339,12 +2339,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         title: "Elige un estilo",
         description:
-          "Prueba Cinematográfico, Vintage 70, Cyberpunk, Noir sombrío, Atardecer cálido, Frío suave, HDR dramático o Negativo. Original quita todos los efectos.",
+          "Prueba Cinematográfico, Vintage 70, Cyberpunk, Noir sombrío, Atardecer cálido, Frío suave, HDR dramático o Negativo. Original quita todos los efectos. Baja la intensidad del filtro para un efecto más sutil.",
       },
       {
         title: "Afina con los controles",
         description:
-          "Ajusta el brillo, el contraste, la saturación, el sepia, el blanco y negro, el cambio de tono, la claridad, la viñeta y el enfoque suave hasta que la foto se vea bien.",
+          "Ajusta el brillo, el contraste, la saturación, el sepia, el blanco y negro, el cambio de tono, la claridad, la viñeta y el enfoque suave hasta que la foto se vea bien. Calidez y Matiz corrigen un tono de color no deseado.",
       },
       {
         title: "Compara y descarga",
@@ -2357,8 +2357,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "Aspectos listos para usar, desde tonos vintage cálidos hasta un blanco y negro de alto contraste.",
       },
       {
-        title: "Nueve controles de ajuste",
-        description: "Brillo, contraste y saturación hasta el 200%, además de sepia, blanco y negro, tono, claridad, viñeta y desenfoque.",
+        title: "Once controles de ajuste",
+        description: "Brillo, contraste y saturación hasta el 200 %, además de calidez, matiz, sepia, monocromo, tono, claridad, viñeta y desenfoque.",
       },
       {
         title: "Vista de antes y después",
@@ -10232,7 +10232,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Descarga",
-        description: "Guarda la imagen anotada como PNG o JPG."
+        description: "Guarda la imagen anotada como PNG o JPG. O cópiala para pegarla directamente en un chat, correo o documento."
       }
     ],
     features: [

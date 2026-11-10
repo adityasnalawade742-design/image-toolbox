@@ -1536,7 +1536,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Watermark",
     tagline: "Protect your photos with a text or logo watermark, placed in one spot or repeated across the whole image.",
     intro:
-      "Watermark Image adds a copyright notice, website name or logo on top of a photo. Place a text or logo watermark at one of nine positions and set its size and opacity, or repeat the text across the entire image, which is much harder to crop out. Logos can be PNG, WebP, JPG or SVG files; a logo with a transparent background looks best.",
+      "Watermark Image adds a copyright notice, website name or logo on top of a photo. Place a text or logo watermark at one of nine positions and set its size and opacity, or repeat the text across the entire image, which is much harder to crop out. Logos can be PNG, WebP, JPG or SVG files; a logo with a transparent background looks best. Add more photos to give them all the same watermark and download them together as a ZIP.",
     seoTitle: "Watermark Image Online – Add Text or Logo",
     seoDescription:
       "Add a watermark to photos online for free. Use text or your logo, choose from nine positions, set opacity and rotation, or tile the text across the whole image.",
@@ -1566,7 +1566,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Download",
-        description: "Keep the original format or choose another one, then click Download.",
+        description: "Keep the original format or choose another one, then click Download. For more photos, add them under More photos and download them all as a ZIP.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Filters",
     tagline: "Apply ready-made looks such as Vintage, Noir or Cinematic, then adjust brightness, contrast, color and vignette.",
     intro:
-      "Photo Filters & Effects changes the look and mood of a photo. Start with one of eight presets, such as Cinematic, Vintage 70s, Moody Noir or Sunset Warm, and then adjust brightness, contrast, saturation, sepia, black and white, hue, clarity, vignette and soft blur with sliders. A split view lets you compare the edited photo with the original before you download it as PNG, JPG or WebP.",
+      "Photo Filters & Effects changes the look and mood of a photo. Start with one of eight presets, such as Cinematic, Vintage 70s, Moody Noir or Sunset Warm, and then adjust brightness, contrast, saturation, sepia, black and white, hue, clarity, vignette and soft blur with sliders. A split view lets you compare the edited photo with the original before you download it as PNG, JPG or WebP. Warmth and Tint correct a yellow, blue or green cast, and a strength slider tones any preset down.",
     seoTitle: "Photo Filters Online – Free Effects & Presets",
     seoDescription:
       "Apply photo filters online for free. Try Vintage, Noir, Cinematic and more, adjust brightness, contrast, saturation and vignette, and compare before and after.",
@@ -2339,12 +2339,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         title: "Choose a preset",
         description:
-          "Try Cinematic, Vintage 70s, Cyberpunk, Moody Noir, Sunset Warm, Cool Fade, Dramatic HDR or Negative. Original removes all effects.",
+          "Try Cinematic, Vintage 70s, Cyberpunk, Moody Noir, Sunset Warm, Cool Fade, Dramatic HDR or Negative. Original removes all effects. Lower Preset strength for a subtler look.",
       },
       {
         title: "Fine-tune with sliders",
         description:
-          "Adjust brightness, contrast, saturation, sepia, monochrome, hue shift, clarity, vignette and soft focus until the photo looks right.",
+          "Adjust brightness, contrast, saturation, sepia, monochrome, hue shift, clarity, vignette and soft focus until the photo looks right. Warmth and Tint fix a colour cast.",
       },
       {
         title: "Compare and download",
@@ -2357,8 +2357,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
         description: "Ready-made looks from warm vintage tones to high-contrast black and white.",
       },
       {
-        title: "Nine adjustment sliders",
-        description: "Brightness, contrast and saturation up to 200%, plus sepia, monochrome, hue, clarity, vignette and blur.",
+        title: "Eleven adjustment sliders",
+        description: "Brightness, contrast and saturation up to 200%, plus warmth, tint, sepia, monochrome, hue, clarity, vignette and blur.",
       },
       {
         title: "Before and after view",
@@ -9869,7 +9869,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Download",
-        "description": "Save the annotated picture as PNG or JPG."
+        "description": "Save the annotated picture as PNG or JPG. Or copy it to paste straight into a chat, email or document."
       }
     ],
     "features": [

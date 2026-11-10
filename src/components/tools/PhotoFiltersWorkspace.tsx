@@ -6,6 +6,7 @@ import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
 import { formatBytes, canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
+import { applyMatrices, canvasFilterWorks, chainMatrices, cssFilter, gainMatrix, gaussianBlur, whiteBalanceGains, type FilterValues } from '../../lib/canvas/filterChain';
 
 interface FilterPreset {
   id: string;
@@ -38,6 +39,33 @@ const PRESETS: FilterPreset[] = [
 type SaveFormat = 'png' | 'jpeg' | 'webp';
 const SAVE_FORMATS: SaveFormat[] = ['png', 'jpeg', 'webp'];
 const formatLabel = (f: SaveFormat) => (f === 'jpeg' ? 'JPG' : f.toUpperCase());
+
+// Checked once: Safari draws canvases without ctx.filter, so the filters are applied pixel by pixel there
+let nativeFilter: boolean | null = null;
+const hasNativeFilter = () => (nativeFilter ??= canvasFilterWorks());
+
+/** The image (drawn at w × h) with its edge pixels stretched outward by `pad`, for blurring without a faded border */
+function edgePadded(img: HTMLImageElement, w: number, h: number, pad: number) {
+  const c = document.createElement('canvas');
+  c.width = w + 2 * pad;
+  c.height = h + 2 * pad;
+  const x = c.getContext('2d')!;
+  const W = img.naturalWidth || w;
+  const H = img.naturalHeight || h;
+  const sx = W / w;
+  const sy = H / h;
+  x.drawImage(img, pad, pad, w, h);
+  // One-pixel edge strips stretched into the margins, then the corner pixels
+  x.drawImage(img, 0, 0, W, sy, pad, 0, w, pad);
+  x.drawImage(img, 0, H - sy, W, sy, pad, pad + h, w, pad);
+  x.drawImage(img, 0, 0, sx, H, 0, pad, pad, h);
+  x.drawImage(img, W - sx, 0, sx, H, pad + w, pad, pad, h);
+  x.drawImage(img, 0, 0, sx, sy, 0, 0, pad, pad);
+  x.drawImage(img, W - sx, 0, sx, sy, pad + w, 0, pad, pad);
+  x.drawImage(img, 0, H - sy, sx, sy, 0, pad + h, pad, pad);
+  x.drawImage(img, W - sx, H - sy, sx, sy, pad + w, pad + h, pad, pad);
+  return c;
+}
 
 function RangeField({
   label,
@@ -85,6 +113,11 @@ export function PhotoFiltersWorkspace() {
   const [blur, setBlur] = useState<number>(0);
   const [vignette, setVignette] = useState<number>(0);
   const [clarity, setClarity] = useState<number>(0);
+  // White balance: −100 cool … +100 warm; −100 green … +100 magenta
+  const [warmth, setWarmth] = useState<number>(0);
+  const [tint, setTint] = useState<number>(0);
+  // How strongly the chosen preset applies, in percent
+  const [strength, setStrength] = useState<number>(100);
 
   const [sliderPos, setSliderPos] = useState<number>(50);
   const [showComparison, setShowComparison] = useState<boolean>(false);
@@ -110,18 +143,27 @@ export function PhotoFiltersWorkspace() {
   // Images handed off from other tools / the homepage, and Ctrl+V paste
   useImageIntake(handleFileSelect);
 
-  const applyPreset = (preset: FilterPreset) => {
+  // A preset at `pct` percent strength: each value moves that far from Original toward the preset
+  const applyPreset = (preset: FilterPreset, pct = 100) => {
+    const n = PRESETS[0];
+    const k = pct / 100;
+    const at = (from: number, to: number) => Math.round(from + (to - from) * k);
+    // Hue turns the short way round (345° is 15° back)
+    const dh = ((preset.hueRotate + 180) % 360) - 180;
     setActivePreset(preset.id);
-    setBrightness(preset.brightness);
-    setContrast(preset.contrast);
-    setSaturate(preset.saturate);
-    setSepia(preset.sepia);
-    setGrayscale(preset.grayscale);
-    setHueRotate(preset.hueRotate);
-    setInvert(preset.invert);
-    setBlur(preset.blur);
-    setVignette(preset.vignette);
-    setClarity(preset.clarity || 0);
+    setStrength(pct);
+    setBrightness(at(n.brightness, preset.brightness));
+    setContrast(at(n.contrast, preset.contrast));
+    setSaturate(at(n.saturate, preset.saturate));
+    setSepia(at(n.sepia, preset.sepia));
+    setGrayscale(at(n.grayscale, preset.grayscale));
+    setHueRotate((((Math.round(dh * k)) % 360) + 360) % 360);
+    setInvert(at(n.invert, preset.invert));
+    setBlur(at(n.blur, preset.blur));
+    setVignette(at(n.vignette, preset.vignette));
+    setClarity(at(n.clarity || 0, preset.clarity || 0));
+    setWarmth(0);
+    setTint(0);
   };
 
   const handleReset = () => {
@@ -143,9 +185,38 @@ export function PhotoFiltersWorkspace() {
     const shownWidth = previewImgRef.current?.clientWidth || splitContainerRef.current?.clientWidth || canvas.width;
     const blurPx = blur * (canvas.width / shownWidth);
 
-    // Apply CSS Filters
-    ctx.filter = `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blurPx}px)`;
-    ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+    const values: FilterValues = { brightness, contrast: effectiveContrast, saturate, sepia, grayscale, hueRotate, invert };
+    const gains = whiteBalanceGains(warmth, tint);
+    const balanced = gains.some((g) => g !== 1);
+    if (hasNativeFilter()) {
+      ctx.filter = cssFilter(values, blurPx);
+      if (blurPx >= 0.5) {
+        // Blur the photo with its edges extended, so the border doesn't fade into a light frame
+        const pad = Math.ceil(blurPx * 3);
+        const padded = edgePadded(imgElement, canvas.width, canvas.height, pad);
+        ctx.drawImage(padded, -pad, -pad);
+        padded.width = padded.height = 0;
+      } else {
+        ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+      }
+      ctx.filter = 'none';
+      if (balanced) {
+        const px = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        applyMatrices(px.data, [gainMatrix(gains)]);
+        ctx.putImageData(px, 0, 0);
+      }
+    } else {
+      // The same chain by its spec formulas, then the blur
+      ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+      const steps = chainMatrices(values);
+      if (balanced) steps.push(gainMatrix(gains));
+      if (steps.length || blurPx >= 0.5) {
+        const px = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        applyMatrices(px.data, steps);
+        gaussianBlur(px.data, canvas.width, canvas.height, blurPx);
+        ctx.putImageData(px, 0, 0);
+      }
+    }
 
     // Vignette: the same geometry as the preview's CSS radial-gradient(circle, transparent X%, black 100%), whose
     // radius reaches the farthest corner
@@ -191,8 +262,11 @@ export function PhotoFiltersWorkspace() {
   };
 
   const effectiveContrast = contrast + Math.round(clarity * 0.35);
+  // Warmth and tint have no CSS function: the preview uses an SVG colour matrix between the colour steps and the blur
+  const [gr, gg, gb] = whiteBalanceGains(warmth, tint);
+  const balanced = gr !== 1 || gg !== 1 || gb !== 1;
   const filterStyle = {
-    filter: `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%) blur(${blur}px)`,
+    filter: `brightness(${brightness}%) contrast(${effectiveContrast}%) saturate(${saturate}%) sepia(${sepia}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) invert(${invert}%)${balanced ? ' url(#pf-white-balance)' : ''} blur(${blur}px)`,
     willChange: 'filter',
   };
 
@@ -255,6 +329,12 @@ export function PhotoFiltersWorkspace() {
           e.target.value = '';
         }}
       />
+
+      <svg aria-hidden="true" focusable="false" width="0" height="0" className="absolute">
+        <filter id="pf-white-balance" colorInterpolationFilters="sRGB">
+          <feColorMatrix type="matrix" values={`${gr} 0 0 0 0  0 ${gg} 0 0 0  0 0 ${gb} 0 0  0 0 0 1 0`} />
+        </filter>
+      </svg>
 
       {!selectedFile && <ProofDropZone onFiles={(files) => handleFileSelect(files[0])} accept="image/*" />}
 
@@ -423,6 +503,11 @@ export function PhotoFiltersWorkspace() {
                       </button>
                     ))}
                   </div>
+                  {activePresetDef && activePreset !== 'normal' && (
+                    <div className="pt-2">
+                      <RangeField label={t('ctl.filters.strength')} value={strength} unit="%" min={0} max={100} onChange={(v) => applyPreset(activePresetDef, v)} />
+                    </div>
+                  )}
                 </div>
 
                 {/* Fine adjustments */}
@@ -431,6 +516,8 @@ export function PhotoFiltersWorkspace() {
                   <RangeField label={t('ctl.filters.brightness')} value={brightness} unit="%" min={0} max={200} onChange={adjust(setBrightness)} />
                   <RangeField label={t('ctl.filters.contrast')} value={contrast} unit="%" min={0} max={200} onChange={adjust(setContrast)} />
                   <RangeField label={t('ctl.filters.saturation')} value={saturate} unit="%" min={0} max={200} onChange={adjust(setSaturate)} />
+                  <RangeField label={t('ctl.filters.warmth')} value={warmth} unit="" min={-100} max={100} onChange={adjust(setWarmth)} />
+                  <RangeField label={t('ctl.filters.tint')} value={tint} unit="" min={-100} max={100} onChange={adjust(setTint)} />
                   <RangeField label={t('ctl.filters.sepia')} value={sepia} unit="%" min={0} max={100} onChange={adjust(setSepia)} />
                   <RangeField label={t('ctl.filters.grayscale')} value={grayscale} unit="%" min={0} max={100} onChange={adjust(setGrayscale)} />
                   <RangeField label={t('ctl.filters.hue')} value={hueRotate} unit="°" min={0} max={360} onChange={adjust(setHueRotate)} />
