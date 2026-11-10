@@ -6069,12 +6069,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Bild in Text",
     shortName: "Bild in Text",
-    tagline: "Kopier den Text aus einem Foto, Screenshot oder Scan (OCR) in 10 Sprachen. Das Bild wird auf deinem Gerät gelesen.",
+    tagline: "Kopier den Text aus einem Foto, Screenshot oder Scan (OCR) in 19 Sprachen. Das Bild wird auf deinem Gerät gelesen.",
     intro:
-      "Bild in Text liest die Wörter in einem Foto, Screenshot oder gescannten Dokument und gibt sie dir als Text, den du kopieren, bearbeiten oder als TXT-Datei speichern kannst. Dafür läuft Tesseract OCR in deinem Browser, mit Englisch, Spanisch, Französisch, Deutsch, Portugiesisch, Italienisch, Japanisch, Koreanisch, Indonesisch und Türkisch. Ein Fortschrittsbalken zeigt, wie weit es ist, und wenn das Bild für ein verlässliches Ergebnis zu unscharf ist, sagt die Seite es dir. Das Bild wird nie hochgeladen.",
+      "Bild in Text liest die Wörter in einem Foto, Screenshot oder gescannten Dokument und gibt sie dir als Text, den du kopieren, bearbeiten oder als TXT-Datei speichern kannst. Dafür läuft Tesseract OCR in deinem Browser, mit Englisch, Spanisch, Französisch, Deutsch, Portugiesisch, Italienisch, Japanisch, Koreanisch, Indonesisch, Türkisch, Russisch, Ukrainisch, Hindi, Niederländisch, Polnisch, Vietnamesisch, Chinesisch (vereinfacht und traditionell) und Thailändisch. Ein Fortschrittsbalken zeigt, wie weit es ist, und wenn das Bild für ein verlässliches Ergebnis zu unscharf ist, sagt die Seite es dir. Das Bild wird nie hochgeladen.",
     seoTitle: "Bild in Text umwandeln – kostenlose OCR online",
     seoDescription:
-      "Bild in Text umwandeln: Lies Text aus Bildern, Screenshots und Scans mit kostenloser OCR in 10 Sprachen aus, kopier oder speichere ihn. Im Browser, ohne Upload.",
+      "Bild in Text umwandeln: Lies Text aus Bildern, Screenshots und Scans mit kostenloser OCR in 19 Sprachen aus, kopier oder speichere ihn. Im Browser, ohne Upload.",
     keywords: [
       "bild in text umwandeln",
       "text aus bild extrahieren",
@@ -6103,8 +6103,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 Sprachen",
-        description: "Darunter Japanisch und Koreanisch. Jede Sprache lädt einmalig 1 bis 4 MB herunter.",
+        title: "19 Sprachen",
+        description: "Darunter Chinesisch, Japanisch, Koreanisch, Thailändisch, Hindi und Russisch. Jede Sprache lädt einmalig 0,5 bis 6 MB herunter.",
       },
       {
         title: "Bearbeitbares Ergebnis",
@@ -11391,10 +11391,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "OCR für mehrere Bilder",
     shortName: "Bilder-OCR",
-    tagline: "Lies Text aus vielen Bildern auf einmal aus, in 10 Sprachen, und lade ihn als eine Textdatei oder eine Datei pro Bild herunter. Kostenlos.",
+    tagline: "Lies Text aus vielen Bildern auf einmal aus, in 19 Sprachen, und lade ihn als eine Textdatei oder eine Datei pro Bild herunter. Kostenlos.",
     intro: "OCR für mehrere Bilder liest den Text einer ganzen Reihe von Bildern in einem Durchgang: Fotos von Dokumenten, Screenshots, Scans oder Quittungen. Wähle die Sprache und lass bei Fotos von Papierseiten jede Seite zuerst finden und entzerren, was das Lesen viel genauer macht, wenn ein Foto schräg aufgenommen wurde. Kopiere jeden Text einzeln oder lade alles als eine Textdatei oder als ZIP mit einer Textdatei pro Bild herunter. Das Lesen passiert auf deinem Gerät, deine Bilder werden also nicht hochgeladen.",
     seoTitle: "OCR für mehrere Bilder – Text aus vielen Bildern auslesen",
-    seoDescription: "Text aus mehreren Bildern auf einmal per OCR auslesen: 10 Sprachen, Seitenfotos vorher entzerrt, Download als TXT oder ZIP. Kostenlos, ohne Upload.",
+    seoDescription: "Text aus mehreren Bildern auf einmal per OCR auslesen: 19 Sprachen, Seitenfotos vorher entzerrt, Download als TXT oder ZIP. Kostenlos, ohne Upload.",
     keywords: [
       "ocr mehrere bilder",
       "stapel ocr",
@@ -11422,8 +11422,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Jedes Bild wird nacheinander gelesen, mit Fortschrittsanzeige."
       },
       {
-        title: "10 Sprachen",
-        description: "Auch Japanisch und Koreanisch."
+        title: "19 Sprachen",
+        description: "Darunter Chinesisch, Japanisch, Koreanisch, Thailändisch, Hindi und Russisch."
       },
       {
         title: "Entzerrt Fotos",

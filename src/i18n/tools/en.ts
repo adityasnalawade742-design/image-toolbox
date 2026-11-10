@@ -6364,10 +6364,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     "name": "Image to Text",
     "shortName": "Image to Text",
-    "tagline": "Copy the text out of a photo, screenshot or scan (OCR) in 10 languages. The image is read on your device.",
-    "intro": "Image to Text reads the words in a photo, screenshot or scanned page and gives them to you as text you can copy, edit or save as a TXT file. It uses Tesseract OCR running in your browser, with English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian and Turkish. A progress bar shows how far it has got, and if the image is too blurry for a reliable result, the page says so. The image is never uploaded.",
+    "tagline": "Copy the text out of a photo, screenshot or scan (OCR) in 19 languages. The image is read on your device.",
+    "intro": "Image to Text reads the words in a photo, screenshot or scanned page and gives them to you as text you can copy, edit or save as a TXT file. It uses Tesseract OCR running in your browser, with English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish, Russian, Ukrainian, Hindi, Dutch, Polish, Vietnamese, Chinese (Simplified and Traditional) and Thai. A progress bar shows how far it has got, and if the image is too blurry for a reliable result, the page says so. The image is never uploaded.",
     "seoTitle": "Image to Text Converter – Free OCR Online",
-    "seoDescription": "Extract text from images, screenshots and scans with free OCR in 10 languages. Copy or download the text. Runs in your browser; nothing is uploaded.",
+    "seoDescription": "Extract text from images, screenshots and scans with free OCR in 19 languages. Copy or download the text. Runs in your browser; nothing is uploaded.",
     "keywords": [
       "image to text",
       "extract text from image",
@@ -6396,8 +6396,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "features": [
       {
-        "title": "10 languages",
-        "description": "Including Japanese and Korean. Each language downloads 1 to 4 MB once."
+        "title": "19 languages",
+        "description": "Including Chinese, Japanese, Korean, Thai, Hindi and Russian. Each language downloads 0.5 to 6 MB once."
       },
       {
         "title": "Editable result",
@@ -11006,10 +11006,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     "name": "OCR Multiple Images",
     "shortName": "OCR Images",
-    "tagline": "Extract text from many images at once, in 10 languages, and download it as one text file or a file per image. Free.",
+    "tagline": "Extract text from many images at once, in 19 languages, and download it as one text file or a file per image. Free.",
     "intro": "OCR Multiple Images reads the text in a set of images in one go: photos of documents, screenshots, scans or receipts. Choose the language, and for photos of paper pages, have each page found and straightened first, which makes reading far more accurate when a photo was taken at an angle. Copy each text, or download everything as one text file or a ZIP with a text file per image. The reading happens on your device, so your images aren't uploaded.",
     "seoTitle": "OCR Multiple Images – Extract Text From Many Images",
-    "seoDescription": "Extract text from multiple images at once with OCR: 10 languages, photos of pages straightened first, download as TXT or ZIP. Free, no upload.",
+    "seoDescription": "Extract text from multiple images at once with OCR: 19 languages, photos of pages straightened first, download as TXT or ZIP. Free, no upload.",
     "keywords": [
       "ocr multiple images",
       "batch ocr",
@@ -11037,8 +11037,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "description": "Every image is read in turn, with progress shown."
       },
       {
-        "title": "10 languages",
-        "description": "Including Japanese and Korean."
+        "title": "19 languages",
+        "description": "Including Chinese, Japanese, Korean, Thai, Hindi and Russian."
       },
       {
         "title": "Straightens photos",

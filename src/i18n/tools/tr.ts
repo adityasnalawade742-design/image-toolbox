@@ -6058,12 +6058,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Resimden Metne",
     shortName: "Resimden Metne",
-    tagline: "Bir fotoğraf, ekran görüntüsü veya taramadaki metni 10 dilde OCR ile kopyalayın. Resim cihazınızda okunur.",
+    tagline: "Bir fotoğraf, ekran görüntüsü veya taramadaki metni 19 dilde OCR ile kopyalayın. Resim cihazınızda okunur.",
     intro:
-      "Resimden Metne, bir fotoğraftaki, ekran görüntüsündeki veya taranmış bir sayfadaki kelimeleri okur ve size kopyalayabileceğiniz, düzenleyebileceğiniz ya da TXT dosyası olarak kaydedebileceğiniz metin olarak verir. Tarayıcınızda çalışan Tesseract OCR'ı kullanır; İngilizce, İspanyolca, Fransızca, Almanca, Portekizce, İtalyanca, Japonca, Korece, Endonezce ve Türkçe desteklenir. Bir ilerleme çubuğu işin ne kadar ilerlediğini gösterir ve resim güvenilir bir sonuç için fazla bulanıksa sayfa bunu söyler. Resim asla yüklenmez.",
+      "Resimden Metne, bir fotoğraftaki, ekran görüntüsündeki veya taranmış bir sayfadaki kelimeleri okur ve size kopyalayabileceğiniz, düzenleyebileceğiniz ya da TXT dosyası olarak kaydedebileceğiniz metin olarak verir. Tarayıcınızda çalışan Tesseract OCR'ı kullanır; İngilizce, İspanyolca, Fransızca, Almanca, Portekizce, İtalyanca, Japonca, Korece, Endonezce, Türkçe, Rusça, Ukraynaca, Hintçe, Felemenkçe, Lehçe, Vietnamca, Çince (Basitleştirilmiş ve Geleneksel) ve Tayca desteklenir. Bir ilerleme çubuğu işin ne kadar ilerlediğini gösterir ve resim güvenilir bir sonuç için fazla bulanıksa sayfa bunu söyler. Resim asla yüklenmez.",
     seoTitle: "Resimden Metne Çevirme – Ücretsiz Online OCR",
     seoDescription:
-      "Resimden metne: resim, ekran görüntüsü ve taramalardaki metni 10 dilde ücretsiz OCR ile çıkarın. Metni kopyalayın veya indirin. Hiçbir şey yüklenmez.",
+      "Resimden metne: resim, ekran görüntüsü ve taramalardaki metni 19 dilde ücretsiz OCR ile çıkarın. Metni kopyalayın veya indirin. Hiçbir şey yüklenmez.",
     keywords: [
       "resimden metne",
       "resimden yazı çıkarma",
@@ -6092,8 +6092,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 dil",
-        description: "Japonca ve Korece dahil. Her dil bir kez 1 ila 4 MB indirir.",
+        title: "19 dil",
+        description: "Çince, Japonca, Korece, Tayca, Hintçe ve Rusça dahil. Her dil bir kez 0,5 ila 6 MB indirir.",
       },
       {
         title: "Düzenlenebilir sonuç",
@@ -11367,10 +11367,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "Toplu Resim OCR",
     shortName: "Toplu OCR",
-    tagline: "Birçok resimden aynı anda metin çıkarın, 10 dilde, ve tek bir metin dosyası ya da her resim için ayrı bir dosya olarak indirin. Ücretsiz.",
+    tagline: "Birçok resimden aynı anda metin çıkarın, 19 dilde, ve tek bir metin dosyası ya da her resim için ayrı bir dosya olarak indirin. Ücretsiz.",
     intro: "Toplu Resim OCR, bir grup resimdeki metni tek seferde okur: belge fotoğrafları, ekran görüntüleri, taramalar veya fişler. Dili seçin; kâğıt sayfa fotoğrafları için her sayfanın önce bulunup düzeltilmesini sağlayın, böylece açılı çekilmiş fotoğraflar çok daha doğru okunur. Her metni kopyalayın ya da hepsini tek bir metin dosyası veya her resim için bir metin dosyası içeren bir ZIP olarak indirin. Okuma cihazınızda yapılır, bu yüzden resimleriniz yüklenmez.",
     seoTitle: "Toplu Resim OCR – Birçok Resimden Aynı Anda Metin Çıkarın",
-    seoDescription: "OCR ile birden fazla resimden aynı anda metin çıkarın: 10 dil, sayfa fotoğrafları önce düzeltilir, TXT veya ZIP olarak indirin. Ücretsiz, yükleme yok.",
+    seoDescription: "OCR ile birden fazla resimden aynı anda metin çıkarın: 19 dil, sayfa fotoğrafları önce düzeltilir, TXT veya ZIP olarak indirin. Ücretsiz, yükleme yok.",
     keywords: [
       "toplu ocr",
       "birden fazla resimden metin çıkarma",
@@ -11398,8 +11398,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Her resim sırayla okunur ve ilerleme gösterilir."
       },
       {
-        title: "10 dil",
-        description: "Japonca ve Korece dahil."
+        title: "19 dil",
+        description: "Çince, Japonca, Korece, Tayca, Hintçe ve Rusça dahil."
       },
       {
         title: "Fotoğrafları düzeltir",

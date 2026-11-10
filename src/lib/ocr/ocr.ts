@@ -4,16 +4,22 @@
  */
 import { createWorker, type Worker } from 'tesseract.js';
 import assets from '../ai/modelAssets.json';
+import { tidyCjk } from './tidyCjk';
 
-/** Tesseract codes for the site's languages; the language data is ~1-4 MB each and cached after the first use */
-export const OCR_LANGS = ['eng', 'spa', 'fra', 'deu', 'por', 'ita', 'jpn', 'kor', 'ind', 'tur'] as const;
+/** Tesseract codes: the site's languages, then others; the language data is ~0.5-6 MB each and cached after the first use */
+export const OCR_LANGS = ['eng', 'spa', 'fra', 'deu', 'por', 'ita', 'jpn', 'kor', 'ind', 'tur', 'rus', 'ukr', 'hin', 'nld', 'pol', 'vie', 'chi_sim', 'chi_tra', 'tha'] as const;
 export type OcrLang = (typeof OCR_LANGS)[number];
 
 /** Each language in its own name, for the language lists */
 export const OCR_LANG_NAMES: Record<OcrLang, string> = {
   eng: 'English', spa: 'Español', fra: 'Français', deu: 'Deutsch', por: 'Português',
   ita: 'Italiano', jpn: '日本語', kor: '한국어', ind: 'Bahasa Indonesia', tur: 'Türkçe',
+  rus: 'Русский', ukr: 'Українська', hin: 'हिन्दी', nld: 'Nederlands', pol: 'Polski', vie: 'Tiếng Việt',
+  chi_sim: '简体中文', chi_tra: '繁體中文', tha: 'ไทย',
 };
+
+// Chinese and Japanese: Tesseract's stray spaces next to punctuation are taken out (see tidyCjk)
+const CJK_LANGS: readonly OcrLang[] = ['jpn', 'chi_sim', 'chi_tra'];
 
 /** The OCR language that matches a site locale */
 export const OCR_LANG_FOR_LOCALE: Record<string, OcrLang> = {
@@ -123,7 +129,7 @@ export async function recognizeText(image: HTMLCanvasElement, lang: OcrLang, onP
       if (sauvola) await w.setParameters({ thresholding_method: '2' });
       try {
         const { data } = await w.recognize(src);
-        return { text: clean(data.text), confidence: data.confidence };
+        return { text: clean(CJK_LANGS.includes(lang) ? tidyCjk(data.text) : data.text), confidence: data.confidence };
       } finally {
         if (sauvola) await w.setParameters({ thresholding_method: '0' });
       }

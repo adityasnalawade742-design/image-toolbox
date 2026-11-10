@@ -6038,12 +6038,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Da immagine a testo",
     shortName: "Immagine in testo",
-    tagline: "Copia il testo da una foto, uno screenshot o una scansione (OCR) in 10 lingue. L’immagine viene letta sul tuo dispositivo.",
+    tagline: "Copia il testo da una foto, uno screenshot o una scansione (OCR) in 19 lingue. L’immagine viene letta sul tuo dispositivo.",
     intro:
-      "Da immagine a testo legge le parole in una foto, uno screenshot o una pagina scansionata e te le restituisce come testo da copiare, modificare o salvare in un file TXT. Usa Tesseract OCR nel tuo browser, con inglese, spagnolo, francese, tedesco, portoghese, italiano, giapponese, coreano, indonesiano e turco. Una barra di avanzamento mostra a che punto è arrivato e, se l’immagine è troppo sfocata per un risultato affidabile, la pagina te lo dice. L’immagine non viene mai caricata.",
+      "Da immagine a testo legge le parole in una foto, uno screenshot o una pagina scansionata e te le restituisce come testo da copiare, modificare o salvare in un file TXT. Usa Tesseract OCR nel tuo browser, con inglese, spagnolo, francese, tedesco, portoghese, italiano, giapponese, coreano, indonesiano, turco, russo, ucraino, hindi, olandese, polacco, vietnamita, cinese (semplificato e tradizionale) e thailandese. Una barra di avanzamento mostra a che punto è arrivato e, se l’immagine è troppo sfocata per un risultato affidabile, la pagina te lo dice. L’immagine non viene mai caricata.",
     seoTitle: "Immagine in testo – OCR online gratis",
     seoDescription:
-      "Immagine in testo: estrai il testo da immagini, screenshot e scansioni con OCR gratis in 10 lingue. Copia o scarica il testo. Nel browser, nulla viene caricato.",
+      "Immagine in testo: estrai il testo da immagini, screenshot e scansioni con OCR gratis in 19 lingue. Copia o scarica il testo. Nel browser, nulla viene caricato.",
     keywords: [
       "immagine in testo",
       "estrarre testo da immagine",
@@ -6072,8 +6072,8 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 lingue",
-        description: "Inclusi giapponese e coreano. Ogni lingua scarica da 1 a 4 MB una sola volta.",
+        title: "19 lingue",
+        description: "Inclusi cinese, giapponese, coreano, thailandese, hindi e russo. Ogni lingua scarica da 0,5 a 6 MB una sola volta.",
       },
       {
         title: "Risultato modificabile",
@@ -11348,10 +11348,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "OCR di più immagini",
     shortName: "OCR immagini",
-    tagline: "Estrai il testo da molte immagini insieme, in 10 lingue, e scaricalo in un unico file di testo o in un file per immagine. Gratis.",
+    tagline: "Estrai il testo da molte immagini insieme, in 19 lingue, e scaricalo in un unico file di testo o in un file per immagine. Gratis.",
     intro: "OCR di più immagini legge il testo di una serie di immagini in un colpo solo: foto di documenti, screenshot, scansioni o ricevute. Scegli la lingua e, per le foto di pagine di carta, fai prima trovare e raddrizzare ogni pagina: la lettura diventa molto più precisa quando una foto è stata scattata di sbieco. Copia ogni testo, oppure scarica tutto in un unico file di testo o in uno ZIP con un file di testo per immagine. La lettura avviene sul tuo dispositivo, quindi le tue immagini non vengono caricate.",
     seoTitle: "OCR di più immagini – Estrai testo da tante immagini",
-    seoDescription: "Estrai il testo da più immagini insieme con l’OCR: 10 lingue, foto di pagine raddrizzate prima, download in TXT o ZIP. Gratis, senza upload.",
+    seoDescription: "Estrai il testo da più immagini insieme con l’OCR: 19 lingue, foto di pagine raddrizzate prima, download in TXT o ZIP. Gratis, senza upload.",
     keywords: [
       "ocr più immagini",
       "estrarre testo da più immagini",
@@ -11379,8 +11379,8 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "Ogni immagine viene letta a turno, con l’avanzamento mostrato."
       },
       {
-        title: "10 lingue",
-        description: "Compresi giapponese e coreano."
+        title: "19 lingue",
+        description: "Inclusi cinese, giapponese, coreano, thailandese, hindi e russo."
       },
       {
         title: "Raddrizza le foto",
