@@ -77,6 +77,12 @@ describe('headers and footers', () => {
     expect((await contentText(r.bytes, 0)).match(/Tj/g)?.length).toBe(1);
     expect((await contentText(r.bytes, 1)).match(/Tj/g)?.length).toBe(2);
   });
+  it('writes only on the chosen pages and counts from the first of them', async () => {
+    const r = await addHeaderFooter(await (await base(4)).save(), { text: { bottomCenter: 'p{page}/{pages}' }, fontSize: 10, margin: 30, color: [0, 0, 0], from: 2, to: 3, start: 1, fileName: 'x.pdf', date: 'today' });
+    const tj = await Promise.all([0, 1, 2, 3].map(async (i) => (await contentText(r.bytes, i)).match(/Tj/g)?.length));
+    expect(tj).toEqual([1, 2, 2, 1]);
+    expect(await contentText(r.bytes, 1)).toContain('<70312F32>');
+  });
 });
 
 describe('resize pages', () => {

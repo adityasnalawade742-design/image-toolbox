@@ -3973,7 +3973,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       "O PDF para JPG transforma as páginas de um PDF em imagens que você pode postar, compartilhar em um chat, inserir em um slide ou enviar a um formulário que só aceita imagens. Escolha JPG para arquivos pequenos ou PNG para textos nítidos, e defina a resolução: 72 dpi para telas, 150 dpi para a maioria dos usos ou 300 dpi para impressão. Baixe uma única página ou todas de uma vez em um arquivo ZIP. O PDF é aberto pelo seu navegador no seu dispositivo, então documentos privados nunca são enviados.",
     seoTitle: "Converter PDF para JPG – Todas as páginas, grátis",
     seoDescription:
-      "Converter PDF para JPG ou PNG no navegador. Escolha 72, 150 ou 300 dpi e baixe uma página ou todas em um ZIP. Grátis e sem upload.",
+      "Converta páginas PDF em imagens JPG ou PNG no navegador. Escolha de 72 a 600 dpi e baixe uma página, as escolhidas ou todas em ZIP. Grátis, sem upload.",
     keywords: [
       "pdf para jpg",
       "pdf para imagem",
@@ -3989,7 +3989,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Escolha o formato e a resolução",
-        description: "Selecione JPG ou PNG e 72, 150 ou 300 dpi.",
+        description: "Escolha JPG ou PNG, e 72, 150, 300 ou 600 dpi.",
       },
       {
         title: "Baixe",
@@ -3999,11 +3999,11 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Todas as páginas ou só uma",
-        description: "Baixe a página de que precisa, ou todas de uma vez em um ZIP.",
+        description: "Baixe a página que precisa, páginas digitadas como 2-5, ou todas de uma vez em ZIP.",
       },
       {
         title: "Resolução para impressão",
-        description: "Renderize em até 300 dpi para textos nítidos e impressão.",
+        description: "Até 600 dpi para texto nítido, impressão e OCR.",
       },
       {
         title: "JPG ou PNG",
@@ -4018,7 +4018,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual resolução devo escolher?",
         answer:
-          "150 dpi serve para a maioria dos usos, de compartilhar a slides. Escolha 300 dpi para imprimir ou dar zoom em textos pequenos, e 72 dpi para os menores arquivos. Resoluções maiores demoram mais e geram arquivos maiores.",
+          "150 dpi serve para quase tudo, de compartilhar a slides. Escolha 300 dpi para imprimir, 600 dpi para letras miúdas ou OCR, e 72 dpi para os menores arquivos. Resoluções maiores demoram mais e geram arquivos maiores; no celular, páginas muito grandes podem sair um pouco menores.",
       },
       {
         question: "JPG ou PNG?",
@@ -4048,7 +4048,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     tagline: "Salve cada página de um PDF como imagem PNG nítida e sem perdas, uma por vez ou todas em um ZIP. A conversão acontece no seu dispositivo.",
     intro: "PDF para PNG transforma cada página de um PDF em uma imagem PNG. O PNG é sem perdas, então textos, linhas e diagramas ficam perfeitamente nítidos, o que faz dele a escolha certa para slides, documentos e gráficos que você quer colocar em uma apresentação, um design ou uma página web. Escolha a resolução e baixe páginas avulsas ou todas juntas em um ZIP. O PDF é aberto no seu navegador e nunca é enviado.",
     seoTitle: "Converter PDF para PNG – Páginas nítidas, grátis",
-    seoDescription: "Converta páginas de PDF em imagens PNG nítidas no navegador. Escolha 72, 150 ou 300 dpi e baixe uma página ou todas. Grátis e privado.",
+    seoDescription: "Converta páginas PDF em imagens PNG nítidas no navegador. De 72 a 600 DPI; baixe uma página, as escolhidas ou todas. Grátis e privado.",
     keywords: [
       "pdf para png",
       "converter pdf para png",
@@ -4063,7 +4063,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Escolha a resolução",
-        description: "150 dpi serve para telas. Use 300 dpi para imprimir ou dar zoom.",
+        description: "150 DPI serve para telas. Use 300 DPI para imprimir e 600 DPI para detalhes finos.",
       },
       {
         title: "Baixe as páginas",
@@ -4077,7 +4077,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Resolução à escolha",
-        description: "72, 150 ou 300 dpi, de prévias para a web até impressão.",
+        description: "72, 150, 300 ou 600 DPI, de prévias para a web a letras miúdas.",
       },
       {
         title: "Todas as páginas de uma vez",
@@ -4095,7 +4095,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Qual resolução devo escolher?",
-        answer: "150 dpi fica bom na tela. 300 dpi é para imprimir ou quando você precisa dar zoom, e gera arquivos maiores.",
+        answer: "150 DPI fica bom na tela. 300 DPI é para imprimir, e 600 DPI para detalhes finos ou OCR; valores mais altos geram arquivos bem maiores.",
       },
       {
         question: "Posso converter um PDF protegido por senha?",
@@ -4371,11 +4371,11 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         title: "Marque as páginas que quiser",
         description:
-          "Use a caixa de seleção abaixo de cada página, ou Selecionar tudo e desmarque as que não precisar.",
+          "Use a caixa abaixo de cada página ou digite números de página como 1-3, 5.",
       },
       {
         title: "Baixe",
-        description: "Salve um novo PDF só com essas páginas, na ordem original.",
+        description: "Salve um novo PDF com essas páginas na ordem original, ou um PDF por página em um ZIP.",
       },
     ],
     features: [
@@ -4500,7 +4500,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "Girar PDF",
     shortName: "Girar PDF",
-    tagline: "Gire todas as páginas, ou só as que você escolher, em 90 ou 180 graus. Funciona no seu dispositivo.",
+    tagline: "Gire todas as páginas, as que você escolher ou cada uma do seu jeito. Funciona no seu dispositivo.",
     intro:
       "O Girar PDF corrige páginas que abrem de lado ou de cabeça para baixo, um problema comum em documentos digitalizados e fotos salvas como PDF. Escolha 90 graus à direita, 180 graus ou 90 graus à esquerda e aplique a todas as páginas ou só às páginas que você marcar. As prévias mostram o resultado antes do download. A rotação é guardada como uma configuração da página, então textos e imagens mantêm a qualidade total, e nada sai do seu navegador.",
     seoTitle: "Girar PDF online – Grátis e permanente",
@@ -4520,7 +4520,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Escolha a rotação",
-        description: "Selecione 90° à direita, 180° ou 90° à esquerda, para todas as páginas ou para as que você marcar.",
+        description: "Escolha 90° à direita, 180° ou 90° à esquerda para todas ou as marcadas, ou escolha Uma a uma e gire cada página.",
       },
       {
         title: "Baixe",
@@ -4529,8 +4529,8 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Todas ou só as selecionadas",
-        description: "Corrija uma digitalização de lado sem mexer no resto.",
+        title: "Todas, algumas ou uma a uma",
+        description: "Corrija uma digitalização de lado sem mexer no resto, ou gire cada página do seu jeito.",
       },
       {
         title: "Prévia ao vivo",
@@ -4552,7 +4552,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Posso girar páginas em ângulos diferentes?",
-        answer: "Use o Organizar PDF, em que cada página tem seu próprio botão de girar.",
+        answer: "Sim. Escolha Uma a uma e toque no botão de girar abaixo de cada página até ela ficar na posição certa; depois baixe.",
       },
       {
         question: "Posso usar um PDF protegido por senha?",
@@ -4962,7 +4962,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "Cortar PDF",
     shortName: "Cortar PDF",
-    tagline: "Apare as margens de todas as páginas de um PDF. Funciona no seu dispositivo.",
+    tagline: "Corte as margens de todas as páginas de um PDF, ou só das que você escolher. Funciona no seu dispositivo.",
     intro:
       "O Cortar PDF apara as bordas de todas as páginas, removendo margens brancas largas, bordas do scanner ou marcas de impressão para que o conteúdo ocupe a tela ao ler no celular. Defina quanto aparar no topo, à direita, embaixo e à esquerda, e a prévia mostra qual parte da página fica. O corte é guardado como uma configuração da página, então o texto mantém a qualidade total. Tudo acontece no seu navegador, então o documento nunca é enviado.",
     seoTitle: "Cortar PDF online – Aparar margens, grátis",
@@ -4986,7 +4986,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Baixe",
-        description: "Salve o PDF com todas as páginas cortadas.",
+        description: "Escolha todas as páginas, a da prévia ou números de página e salve o PDF.",
       },
     ],
     features: [
@@ -5016,7 +5016,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso cortar as páginas de formas diferentes?",
         answer:
-          "As mesmas margens valem para todas as páginas. Para cortar páginas de formas diferentes, divida o PDF, corte cada parte e junte tudo de novo.",
+          "Sim. Em Aplicar a, escolha Esta página, ou Páginas e digite números como 1-3, 5. Para dar outras margens a outras páginas, corte de novo o PDF baixado.",
       },
       {
         question: "Posso usar um PDF protegido por senha?",
@@ -9386,7 +9386,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Posso deixar a capa de fora?",
-        answer: "Sim. Marque a opção para deixar a primeira página como está; a numeração então começa na página 2 com o número que você escolher."
+        answer: "Sim. Em Páginas com cabeçalho e rodapé, comece na página 2. Você também pode parar antes das últimas páginas; {page} na primeira página incluída mostra o número de “Começar em”."
       },
       {
         question: "O texto vai cobrir meu conteúdo?",

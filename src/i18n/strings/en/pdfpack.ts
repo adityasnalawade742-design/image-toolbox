@@ -18,7 +18,10 @@ export const pdfPackStrings = {
   'ctl.hf.tokens': 'Use {page} for the page number, {pages} for the last page number, {date} for today’s date and {file} for the file name.',
   'ctl.hf.defaultFooter': 'Page {page} of {pages}',
   'ctl.hf.color': 'Text color',
-  'ctl.hf.skipFirst': 'Leave the first page (cover) as it is',
+  'ctl.hf.pages': 'Pages with header and footer',
+  'ctl.hf.fromPage': 'First page',
+  'ctl.hf.toPage': 'Last page',
+  'ctl.hf.pagesHint': 'Start at 2 to leave a cover page as it is. {page} on the first of these pages shows the “Start at” number.',
   'ctl.hf.unsupported': 'Some text uses characters the PDF fonts can’t write and was left out: {text}',
 
   // Resize PDF pages

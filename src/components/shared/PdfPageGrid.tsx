@@ -19,8 +19,8 @@ export interface GridPage {
 interface Props {
   pages: GridPage[];
   thumbs: string[];
-  /** 'select': checkbox per page; 'organize': move, rotate and delete per page, plus drag to reorder */
-  mode: 'select' | 'organize' | 'view';
+  /** 'select': checkbox per page; 'organize': move, rotate and delete per page, plus drag to reorder; 'rotate': a turn button per page */
+  mode: 'select' | 'organize' | 'view' | 'rotate';
   onChange?: (pages: GridPage[]) => void;
   /** When given, each page opens large in a viewer (in this order and turn) */
   doc?: PDFDocumentProxy | null;
@@ -56,6 +56,17 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc, thumbOf, label
           const src = thumbOf ? thumbOf(p) : thumbs[p.index];
           // With pages from several files, "page 1" alone is ambiguous: button names also carry the page's own label
           const who = labelOf ? ` (${label})` : '';
+          const rotateButton = (
+            <button
+              type="button"
+              className={iconBtn}
+              onClick={() => update(pages.map((x) => (x.key === p.key ? { ...x, rotate: (x.rotate + 90) % 360 } : x)), t('ctl.pdf.pageRotated', { n: p.index + 1, deg: (p.rotate + 90) % 360 }))}
+              aria-label={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
+              title={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
+            >
+              <RotateCw className="w-4 h-4" aria-hidden="true" />
+            </button>
+          );
           return (
             <li
               key={p.key}
@@ -115,15 +126,7 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc, thumbOf, label
                     <button type="button" className={iconBtn} disabled={i === pages.length - 1} onClick={() => move(i, i + 1)} aria-label={t('ctl.pdf.moveLater', { n: p.index + 1 }) + who} title={t('ctl.pdf.moveLater', { n: p.index + 1 }) + who}>
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>
-                    <button
-                      type="button"
-                      className={iconBtn}
-                      onClick={() => update(pages.map((x) => (x.key === p.key ? { ...x, rotate: (x.rotate + 90) % 360 } : x)), t('ctl.pdf.pageRotated', { n: p.index + 1, deg: (p.rotate + 90) % 360 }))}
-                      aria-label={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
-                      title={t('ctl.pdf.rotatePage', { n: p.index + 1 }) + who}
-                    >
-                      <RotateCw className="w-4 h-4" aria-hidden="true" />
-                    </button>
+                    {rotateButton}
                     <button
                       type="button"
                       className={iconBtn}
@@ -135,6 +138,15 @@ export function PdfPageGrid({ pages, thumbs, mode, onChange, doc, thumbOf, label
                       <Trash2 className="w-4 h-4" aria-hidden="true" />
                     </button>
                   </div>
+                </div>
+              )}
+              {mode === 'rotate' && (
+                <div className="border-t border-ink flex items-center gap-2 pl-3">
+                  <p className="flex-1 min-w-0 text-[13px] font-semibold text-ink" data-measure>
+                    {label}
+                    {p.rotate ? ` · ${p.rotate}°` : ''}
+                  </p>
+                  <div className="flex m-2 seg-group border border-ink">{rotateButton}</div>
                 </div>
               )}
               {mode === 'view' && <p className="border-t border-ink px-3 py-2 text-[13px] font-semibold text-ink">{label}</p>}

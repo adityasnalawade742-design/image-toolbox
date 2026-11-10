@@ -5,6 +5,7 @@ export const documentStrings = {
   'ctl.doc.offline': 'This tool is unavailable right now. Please try again later; every other tool on the site still works.',
   'ctl.doc.choose': 'Choose file',
   'ctl.doc.replace': 'Choose another file',
+  'ctl.doc.addMore': 'Add more files',
   'ctl.doc.dropWord': 'Drop a Word document here',
   'ctl.doc.dropExcel': 'Drop a spreadsheet here',
   'ctl.doc.dropPpt': 'Drop a presentation here',

@@ -3928,7 +3928,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "tagline": "Save every page of a PDF as a JPG or PNG image, one page at a time or all together in a ZIP. Nothing is uploaded.",
     "intro": "PDF to JPG turns the pages of a PDF into images you can post, share in a chat, insert into a slide or upload to a form that only accepts pictures. Choose JPG for small files or PNG for sharp text, and pick the resolution: 72 dpi for screens, 150 dpi for most uses, or 300 dpi for printing. Download a single page or every page at once in a ZIP file. The PDF is opened by your browser on your device, so private documents are never uploaded.",
     "seoTitle": "PDF to JPG Converter – Every Page, Free",
-    "seoDescription": "Convert PDF pages to JPG or PNG images in your browser. Choose 72, 150 or 300 dpi and download one page or all as a ZIP. Free, no upload.",
+    "seoDescription": "Convert PDF pages to JPG or PNG images in your browser. Choose 72 to 600 dpi and download one page, chosen pages or all as a ZIP. Free, no upload.",
     "keywords": [
       "pdf to jpg",
       "pdf to image",
@@ -3944,7 +3944,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Choose format and resolution",
-        "description": "Pick JPG or PNG, and 72, 150 or 300 dpi."
+        "description": "Pick JPG or PNG, and 72, 150, 300 or 600 dpi."
       },
       {
         "title": "Download",
@@ -3954,11 +3954,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "features": [
       {
         "title": "Every page or just one",
-        "description": "Download the page you need, or all pages at once as a ZIP."
+        "description": "Download the page you need, typed pages such as 2-5, or all pages at once as a ZIP."
       },
       {
         "title": "Print-quality resolution",
-        "description": "Render at up to 300 dpi for sharp text and printing."
+        "description": "Render at up to 600 dpi for sharp text, printing and OCR."
       },
       {
         "title": "JPG or PNG",
@@ -3972,7 +3972,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Which resolution should I pick?",
-        "answer": "150 dpi suits most uses, from sharing to slides. Choose 300 dpi to print or to zoom into small text, and 72 dpi for the smallest files. Higher resolutions take longer and make larger files."
+        "answer": "150 dpi suits most uses, from sharing to slides. Choose 300 dpi to print, 600 dpi for fine print or OCR, and 72 dpi for the smallest files. Higher resolutions take longer and make larger files; on phones, very large pages may come out a little smaller."
       },
       {
         "question": "JPG or PNG?",
@@ -3998,7 +3998,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "tagline": "Save every page of a PDF as a sharp, lossless PNG image, one page at a time or all in a ZIP. The conversion runs on your device.",
     "intro": "PDF to PNG turns each page of a PDF into a PNG image. PNG is lossless, so text, lines and diagrams stay perfectly sharp, which makes it the right choice for slides, documents and charts you want to put into a presentation, a design or a web page. Choose the resolution, then download single pages or every page together in a ZIP. The PDF is opened inside your browser and never uploaded.",
     "seoTitle": "PDF to PNG Converter – Sharp Pages, Free",
-    "seoDescription": "Convert PDF pages to sharp PNG images in your browser. Choose 72, 150 or 300 DPI, download one page or all. Free and private.",
+    "seoDescription": "Convert PDF pages to sharp PNG images in your browser. Choose 72 to 600 DPI, download one page, chosen pages or all. Free and private.",
     "keywords": [
       "pdf to png",
       "convert pdf to png",
@@ -4013,7 +4013,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Choose the resolution",
-        "description": "150 DPI suits screens. Use 300 DPI for printing or zooming in."
+        "description": "150 DPI suits screens. Use 300 DPI for printing, 600 DPI for fine detail."
       },
       {
         "title": "Download the pages",
@@ -4027,7 +4027,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Choice of resolution",
-        "description": "72, 150 or 300 DPI, for anything from web previews to print."
+        "description": "72, 150, 300 or 600 DPI, for anything from web previews to fine print."
       },
       {
         "title": "Every page at once",
@@ -4045,7 +4045,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Which resolution should I choose?",
-        "answer": "150 DPI looks good on screen. 300 DPI is for printing or when you need to zoom in, and makes larger files."
+        "answer": "150 DPI looks good on screen. 300 DPI is for printing, and 600 DPI for fine detail or OCR; higher settings make much larger files."
       },
       {
         "question": "Can I convert a password-protected PDF?",
@@ -4296,11 +4296,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Tick the pages you want",
-        "description": "Use the checkbox under each page, or Select all and clear the ones you don't need."
+        "description": "Use the checkbox under each page, or type page numbers such as 1-3, 5."
       },
       {
         "title": "Download",
-        "description": "Save a new PDF with just those pages, in their original order."
+        "description": "Save one new PDF with those pages in their original order, or one PDF per page in a ZIP."
       }
     ],
     "features": [
@@ -4413,7 +4413,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     "name": "Rotate PDF",
     "shortName": "Rotate PDF",
-    "tagline": "Turn every page, or only the pages you choose, by 90 or 180 degrees. It runs on your device.",
+    "tagline": "Turn every page, the pages you choose, or each page its own way. It runs on your device.",
     "intro": "Rotate PDF fixes pages that open sideways or upside down, a common problem with scanned documents and photos saved as PDF. Choose 90 degrees right, 180 degrees or 90 degrees left, and apply it to all pages or only to the pages you tick. The previews show the result before you download. The rotation is stored as a page setting, so text and images keep their full quality, and nothing leaves your browser.",
     "seoTitle": "Rotate PDF Pages Online – Free, Permanent",
     "seoDescription": "Rotate all pages or selected pages of a PDF by 90 or 180 degrees in your browser, and save it permanently. Free, private, no upload.",
@@ -4431,7 +4431,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Choose the rotation",
-        "description": "Pick 90° right, 180° or 90° left, for all pages or the pages you tick."
+        "description": "Pick 90° right, 180° or 90° left for all or ticked pages, or choose Page by page and turn each one."
       },
       {
         "title": "Download",
@@ -4440,8 +4440,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "features": [
       {
-        "title": "All or selected pages",
-        "description": "Fix one sideways scan without touching the rest."
+        "title": "All, selected or each page",
+        "description": "Fix one sideways scan without touching the rest, or turn each page its own way."
       },
       {
         "title": "Live preview",
@@ -4463,7 +4463,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I rotate pages by different amounts?",
-        "answer": "Use Organize PDF, where each page has its own rotate button."
+        "answer": "Yes. Choose Page by page and press the rotate button under each page until it is the right way up, then download."
       },
       {
         "question": "Can I use a password-protected PDF?",
@@ -4837,7 +4837,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     "name": "Crop PDF",
     "shortName": "Crop PDF",
-    "tagline": "Trim the margins of every page in a PDF. It runs on your device.",
+    "tagline": "Trim the margins of every page in a PDF, or only the pages you choose. It runs on your device.",
     "intro": "Crop PDF trims the edges of every page, removing wide white margins, scanner borders or printer marks so the content fills the screen when reading on a phone. Set how much to trim from the top, right, bottom and left, and the preview shows which part of the page stays. The crop is stored as a page setting, so text keeps its full quality. Everything happens in your browser, so the document is never uploaded.",
     "seoTitle": "Crop PDF Online – Trim Page Margins, Free",
     "seoDescription": "Trim PDF page margins in your browser with a live preview. Remove white borders and scanner edges. Free, private, nothing is uploaded.",
@@ -4859,7 +4859,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Download",
-        "description": "Save the PDF with every page cropped."
+        "description": "Choose all pages, the page in the preview or page numbers, then save the PDF."
       }
     ],
     "features": [
@@ -4887,7 +4887,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I crop pages differently?",
-        "answer": "The same margins apply to every page. To crop pages differently, split the PDF, crop each part, and merge them again."
+        "answer": "Yes. Under Apply to, choose This page, or Pages and type numbers such as 1-3, 5. To give other pages different margins, crop the downloaded PDF again."
       },
       {
         "question": "Can I use a password-protected PDF?",
@@ -9039,7 +9039,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I leave the cover page out?",
-        "answer": "Yes. Tick the option to leave the first page as it is; numbering then starts on page 2 with the number you choose."
+        "answer": "Yes. Under Pages with header and footer, start at page 2. You can also stop before the last pages; {page} on the first page you include shows the “Start at” number."
       },
       {
         "question": "Will it cover my content?",

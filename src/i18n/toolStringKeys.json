@@ -700,6 +700,7 @@
    "ctl.frompdf.choose",
    "ctl.frompdf.downloadAll",
    "ctl.frompdf.downloadPage",
+   "ctl.frompdf.downloadSome",
    "ctl.frompdf.dpiNote",
    "ctl.frompdf.dropHint",
    "ctl.frompdf.dropTitle",
@@ -711,13 +712,19 @@
    "ctl.frompdf.rendering",
    "ctl.frompdf.replace",
    "ctl.frompdf.resolution",
+   "ctl.frompdf.which",
    "ctl.pdf.pageN",
+   "ctl.pdf.rangePlaceholder",
+   "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeRange",
+   "ctl.splitpdf.noRanges",
    "ctl.view.viewPage"
   ],
   "pdf-to-png": [
    "ctl.frompdf.choose",
    "ctl.frompdf.downloadAll",
    "ctl.frompdf.downloadPage",
+   "ctl.frompdf.downloadSome",
    "ctl.frompdf.dpiNote",
    "ctl.frompdf.dropHint",
    "ctl.frompdf.dropTitle",
@@ -729,7 +736,12 @@
    "ctl.frompdf.rendering",
    "ctl.frompdf.replace",
    "ctl.frompdf.resolution",
+   "ctl.frompdf.which",
    "ctl.pdf.pageN",
+   "ctl.pdf.rangePlaceholder",
+   "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeRange",
+   "ctl.splitpdf.noRanges",
    "ctl.view.viewPage"
   ],
   "merge-images": [
@@ -835,6 +847,9 @@
    "ctl.view.viewPage"
   ],
   "extract-pdf-pages": [
+   "ctl.extract.each",
+   "ctl.extract.one",
+   "ctl.extract.typeRange",
    "ctl.frompdf.choose",
    "ctl.frompdf.dropTitle",
    "ctl.frompdf.errInvalid",
@@ -844,6 +859,7 @@
    "ctl.organize.reset",
    "ctl.pdf.deletePage",
    "ctl.pdf.done",
+   "ctl.pdf.downloadZip",
    "ctl.pdf.dropHint",
    "ctl.pdf.errLocked",
    "ctl.pdf.errScript",
@@ -855,21 +871,28 @@
    "ctl.pdf.pageN",
    "ctl.pdf.pageRotated",
    "ctl.pdf.pagesCount",
+   "ctl.pdf.rangePlaceholder",
    "ctl.pdf.rotatePage",
    "ctl.pdf.scope",
    "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeEach",
    "ctl.pdf.scopeSelected",
    "ctl.pdf.selectAll",
    "ctl.pdf.selectNone",
    "ctl.pdf.selectedCount",
    "ctl.pdf.working",
    "ctl.rotatepdf.angle",
+   "ctl.rotatepdf.eachHint",
    "ctl.rotatepdf.half",
    "ctl.rotatepdf.left",
+   "ctl.rotatepdf.noTurn",
    "ctl.rotatepdf.right",
    "ctl.view.viewPage"
   ],
   "organize-pdf": [
+   "ctl.extract.each",
+   "ctl.extract.one",
+   "ctl.extract.typeRange",
    "ctl.frompdf.choose",
    "ctl.frompdf.dropTitle",
    "ctl.frompdf.errInvalid",
@@ -879,6 +902,7 @@
    "ctl.organize.reset",
    "ctl.pdf.deletePage",
    "ctl.pdf.done",
+   "ctl.pdf.downloadZip",
    "ctl.pdf.dropHint",
    "ctl.pdf.errLocked",
    "ctl.pdf.errScript",
@@ -890,21 +914,28 @@
    "ctl.pdf.pageN",
    "ctl.pdf.pageRotated",
    "ctl.pdf.pagesCount",
+   "ctl.pdf.rangePlaceholder",
    "ctl.pdf.rotatePage",
    "ctl.pdf.scope",
    "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeEach",
    "ctl.pdf.scopeSelected",
    "ctl.pdf.selectAll",
    "ctl.pdf.selectNone",
    "ctl.pdf.selectedCount",
    "ctl.pdf.working",
    "ctl.rotatepdf.angle",
+   "ctl.rotatepdf.eachHint",
    "ctl.rotatepdf.half",
    "ctl.rotatepdf.left",
+   "ctl.rotatepdf.noTurn",
    "ctl.rotatepdf.right",
    "ctl.view.viewPage"
   ],
   "rotate-pdf": [
+   "ctl.extract.each",
+   "ctl.extract.one",
+   "ctl.extract.typeRange",
    "ctl.frompdf.choose",
    "ctl.frompdf.dropTitle",
    "ctl.frompdf.errInvalid",
@@ -914,6 +945,7 @@
    "ctl.organize.reset",
    "ctl.pdf.deletePage",
    "ctl.pdf.done",
+   "ctl.pdf.downloadZip",
    "ctl.pdf.dropHint",
    "ctl.pdf.errLocked",
    "ctl.pdf.errScript",
@@ -925,17 +957,21 @@
    "ctl.pdf.pageN",
    "ctl.pdf.pageRotated",
    "ctl.pdf.pagesCount",
+   "ctl.pdf.rangePlaceholder",
    "ctl.pdf.rotatePage",
    "ctl.pdf.scope",
    "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeEach",
    "ctl.pdf.scopeSelected",
    "ctl.pdf.selectAll",
    "ctl.pdf.selectNone",
    "ctl.pdf.selectedCount",
    "ctl.pdf.working",
    "ctl.rotatepdf.angle",
+   "ctl.rotatepdf.eachHint",
    "ctl.rotatepdf.half",
    "ctl.rotatepdf.left",
+   "ctl.rotatepdf.noTurn",
    "ctl.rotatepdf.right",
    "ctl.view.viewPage"
   ],
@@ -1099,6 +1135,7 @@
    "ctl.croppdf.left",
    "ctl.croppdf.note",
    "ctl.croppdf.right",
+   "ctl.croppdf.thisPage",
    "ctl.croppdf.top",
    "ctl.croppdf.trim",
    "ctl.edit.nextPage",
@@ -1115,7 +1152,13 @@
    "ctl.pdf.pageN",
    "ctl.pdf.pagesCount",
    "ctl.pdf.previewLabel",
+   "ctl.pdf.rangePlaceholder",
+   "ctl.pdf.scope",
+   "ctl.pdf.scopeAll",
+   "ctl.pdf.scopeRange",
+   "ctl.pdf.scopeThis",
    "ctl.pdf.working",
+   "ctl.splitpdf.noRanges",
    "ctl.view.previewPage"
   ],
   "edit-pdf": [
@@ -3866,9 +3909,12 @@
    "ctl.hf.color",
    "ctl.hf.defaultFooter",
    "ctl.hf.footer",
+   "ctl.hf.fromPage",
    "ctl.hf.header",
    "ctl.hf.left",
-   "ctl.hf.skipFirst",
+   "ctl.hf.pages",
+   "ctl.hf.pagesHint",
+   "ctl.hf.toPage",
    "ctl.hf.tokens",
    "ctl.hf.unsupported",
    "ctl.numbers.margin",
@@ -4975,6 +5021,7 @@
    "ctl.pdf.done"
   ],
   "pdf-to-grayscale": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5049,6 +5096,7 @@
    "ctl.pdf.done"
   ],
   "word-to-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5123,6 +5171,7 @@
    "ctl.pdf.done"
   ],
   "excel-to-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5197,6 +5246,7 @@
    "ctl.pdf.done"
   ],
   "powerpoint-to-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5271,6 +5321,7 @@
    "ctl.pdf.done"
   ],
   "pdf-to-word": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5345,6 +5396,7 @@
    "ctl.pdf.done"
   ],
   "compress-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5419,6 +5471,7 @@
    "ctl.pdf.done"
   ],
   "protect-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5493,6 +5546,7 @@
    "ctl.pdf.done"
   ],
   "unlock-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5567,6 +5621,7 @@
    "ctl.pdf.done"
   ],
   "ocr-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5641,6 +5696,7 @@
    "ctl.pdf.done"
   ],
   "pdf-to-pdfa": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",
@@ -5715,6 +5771,7 @@
    "ctl.pdf.done"
   ],
   "repair-pdf": [
+   "ctl.doc.addMore",
    "ctl.doc.batchLimit",
    "ctl.doc.choose",
    "ctl.doc.compress",

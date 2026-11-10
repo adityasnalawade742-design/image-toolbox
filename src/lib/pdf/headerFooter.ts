@@ -1,6 +1,6 @@
 /** Headers and footers: text at the top and bottom of every page, with page numbers, date and file name */
 import { StandardFonts, rgb, type PDFDocument, type PDFFont } from 'pdf-lib';
-import { dropUnreachable, loadPdf, placeCentred, visualPage, type FontLoader } from './pageOps';
+import { dropUnreachable, loadPdf, numberedRange, placeCentred, visualPage, type FontLoader } from './pageOps';
 import { isolateContent } from './pageContent';
 import { fontScriptFor, type FontScript } from './unicodeFont';
 
@@ -13,7 +13,11 @@ export interface HeaderFooterOptions {
   /** Distance from the page edge, in points */
   margin: number;
   color: [number, number, number];
-  skipFirst: boolean;
+  /** Leave the first page as it is (same as from: 2) */
+  skipFirst?: boolean;
+  /** Pages that get the header and footer, 1-based and inclusive (default: all) */
+  from?: number;
+  to?: number;
   /** Number the first page with this */
   start: number;
   fileName: string;
@@ -58,14 +62,14 @@ export async function addHeaderFooter(bytes: Uint8Array | ArrayBuffer, o: Header
   const doc = await loadPdf(bytes);
   const pick = fonts(doc, loadFont);
   const pages = doc.getPages();
-  const numbered = o.skipFirst ? pages.length - 1 : pages.length;
-  const last = o.start + numbered - 1;
+  const range = numberedRange(pages.length, o);
+  const last = o.start + range.last - range.first;
   const unsupported = new Set<string>();
   const color = rgb(o.color[0] / 255, o.color[1] / 255, o.color[2] / 255);
   for (let i = 0; i < pages.length; i++) {
-    if (o.skipFirst && i === 0) continue;
+    if (i < range.first || i > range.last) continue;
     const page = pages[i];
-    const n = o.start + (o.skipFirst ? i - 1 : i);
+    const n = o.start + i - range.first;
     const { width, height } = visualPage(page);
     let isolated = false;
     for (const slot of SLOTS) {

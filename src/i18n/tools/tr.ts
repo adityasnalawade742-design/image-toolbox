@@ -3972,7 +3972,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       "PDF'ten JPG'ye aracı, bir PDF'in sayfalarını paylaşabileceğiniz, sohbette gönderebileceğiniz, bir slayta ekleyebileceğiniz veya yalnızca resim kabul eden bir forma yükleyebileceğiniz resimlere dönüştürür. Küçük dosyalar için JPG'yi, keskin metin için PNG'yi seçin ve çözünürlüğü belirleyin: ekranlar için 72 dpi, çoğu kullanım için 150 dpi, baskı için 300 dpi. Tek bir sayfayı veya tüm sayfaları tek seferde bir ZIP dosyası olarak indirin. PDF cihazınızda tarayıcınız tarafından açılır, bu yüzden özel belgeler asla yüklenmez.",
     seoTitle: "PDF JPG Çevirme – Tüm Sayfalar, Ücretsiz",
     seoDescription:
-      "PDF JPG çevirme tarayıcıda: sayfaları JPG veya PNG yapın. 72, 150 ya da 300 dpi seçin, bir sayfayı veya hepsini ZIP olarak indirin. Ücretsiz, yükleme yok.",
+      "PDF sayfalarını tarayıcınızda JPG veya PNG resimlere dönüştürün. 72–600 dpi seçin; bir sayfayı, seçtiklerinizi ya da hepsini ZIP olarak indirin. Ücretsiz, yükleme yok.",
     keywords: [
       "pdf jpg çevirme",
       "pdf'i resme dönüştürme",
@@ -3988,7 +3988,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Format ve çözünürlük seçin",
-        description: "JPG veya PNG ile 72, 150 ya da 300 dpi seçin.",
+        description: "JPG veya PNG ile 72, 150, 300 ya da 600 dpi seçin.",
       },
       {
         title: "İndirin",
@@ -3998,11 +3998,11 @@ export const trTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Tüm sayfalar ya da yalnızca biri",
-        description: "İhtiyacınız olan sayfayı ya da tüm sayfaları tek seferde ZIP olarak indirin.",
+        description: "İhtiyacınız olan sayfayı, 2-5 gibi yazdığınız sayfaları ya da tüm sayfaları tek ZIP olarak indirin.",
       },
       {
         title: "Baskı kalitesinde çözünürlük",
-        description: "Keskin metin ve baskı için en fazla 300 dpi ile işleyin.",
+        description: "Keskin metin, baskı ve OCR için 600 dpi’ye kadar.",
       },
       {
         title: "JPG veya PNG",
@@ -4017,7 +4017,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hangi çözünürlüğü seçmeliyim?",
         answer:
-          "150 dpi, paylaşımdan slaytlara kadar çoğu kullanıma uygundur. Yazdırmak veya küçük metinleri yakınlaştırmak için 300 dpi'yı, en küçük dosyalar için 72 dpi'yı seçin. Daha yüksek çözünürlükler daha uzun sürer ve daha büyük dosyalar oluşturur.",
+          "150 dpi, paylaşımdan sunumlara çoğu kullanıma uygundur. Baskı için 300 dpi, küçük yazılar veya OCR için 600 dpi, en küçük dosyalar için 72 dpi seçin. Yüksek çözünürlük daha uzun sürer ve dosyaları büyütür; telefonlarda çok büyük sayfalar biraz küçülebilir.",
       },
       {
         question: "JPG mi PNG mi?",
@@ -4047,7 +4047,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     tagline: "Bir PDF'in her sayfasını keskin, kayıpsız bir PNG resim olarak kaydedin; tek tek ya da hepsini bir ZIP içinde. Dönüştürme cihazınızda çalışır.",
     intro: "PDF'ten PNG'ye aracı, bir PDF'in her sayfasını PNG resmine dönüştürür. PNG kayıpsızdır, bu yüzden yazılar, çizgiler ve diyagramlar kusursuz keskinlikte kalır; bu da onu bir sunuma, tasarıma veya web sayfasına koymak istediğiniz slaytlar, belgeler ve grafikler için doğru seçim yapar. Çözünürlüğü seçin, ardından sayfaları tek tek ya da tüm sayfaları birlikte bir ZIP içinde indirin. PDF tarayıcınızın içinde açılır ve asla yüklenmez.",
     seoTitle: "PDF PNG Dönüştürme – Keskin Sayfalar, Ücretsiz",
-    seoDescription: "PDF sayfalarını tarayıcınızda keskin PNG resimlerine dönüştürün. 72, 150 veya 300 DPI seçin, bir sayfayı ya da hepsini indirin. Ücretsiz ve gizli.",
+    seoDescription: "PDF sayfalarını tarayıcınızda keskin PNG resimlere dönüştürün. 72–600 DPI; bir sayfayı, seçtiklerinizi ya da hepsini indirin. Ücretsiz ve gizli.",
     keywords: [
       "pdf png dönüştürme",
       "pdf'i png'ye çevirme",
@@ -4062,7 +4062,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Çözünürlüğü seçin",
-        description: "Ekranlar için 150 DPI uygundur. Baskı veya yakınlaştırma için 300 DPI kullanın.",
+        description: "Ekranlar için 150 DPI yeterlidir. Baskı için 300 DPI, ince ayrıntılar için 600 DPI kullanın.",
       },
       {
         title: "Sayfaları indirin",
@@ -4076,7 +4076,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Çözünürlük seçimi",
-        description: "Web önizlemelerinden baskıya kadar her şey için 72, 150 veya 300 DPI.",
+        description: "Web önizlemelerinden küçük yazılara kadar 72, 150, 300 veya 600 DPI.",
       },
       {
         title: "Tüm sayfalar tek seferde",
@@ -4094,7 +4094,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Hangi çözünürlüğü seçmeliyim?",
-        answer: "150 DPI ekranda iyi görünür. 300 DPI baskı içindir ya da yakınlaştırmanız gerektiğinde kullanılır ve daha büyük dosyalar oluşturur.",
+        answer: "150 DPI ekranda iyi görünür. 300 DPI baskı içindir, 600 DPI ise ince ayrıntılar veya OCR için; yüksek ayarlar çok daha büyük dosyalar oluşturur.",
       },
       {
         question: "Parola korumalı bir PDF'i dönüştürebilir miyim?",
@@ -4370,11 +4370,11 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         title: "İstediğiniz sayfaları işaretleyin",
         description:
-          "Her sayfanın altındaki onay kutusunu kullanın ya da Tümünü seç düğmesine basıp ihtiyacınız olmayanların işaretini kaldırın.",
+          "Her sayfanın altındaki kutuyu kullanın ya da 1-3, 5 gibi sayfa numaraları yazın.",
       },
       {
         title: "İndirin",
-        description: "Yalnızca bu sayfaları orijinal sıralarıyla içeren yeni bir PDF kaydedin.",
+        description: "Bu sayfaları özgün sırasıyla yeni bir PDF olarak ya da her sayfayı ayrı bir PDF olarak ZIP içinde kaydedin.",
       },
     ],
     features: [
@@ -4498,7 +4498,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "PDF Döndürme",
     shortName: "PDF Döndür",
-    tagline: "Tüm sayfaları ya da yalnızca seçtiğiniz sayfaları 90 veya 180 derece döndürün. Cihazınızda çalışır.",
+    tagline: "Tüm sayfaları, seçtiklerinizi ya da her sayfayı ayrı ayrı döndürün. Cihazınızda çalışır.",
     intro:
       "PDF Döndürme, yan veya ters açılan sayfaları düzeltir; bu, taranmış belgelerde ve PDF olarak kaydedilmiş fotoğraflarda sık görülen bir sorundur. Sağa 90 derece, 180 derece veya sola 90 derece seçin ve bunu tüm sayfalara ya da yalnızca işaretlediğiniz sayfalara uygulayın. Önizlemeler, indirmeden önce sonucu gösterir. Döndürme bir sayfa ayarı olarak saklanır, bu yüzden metin ve resimler tam kalitesini korur ve hiçbir şey tarayıcınızdan çıkmaz.",
     seoTitle: "PDF Döndürme Online – Ücretsiz, Kalıcı",
@@ -4518,7 +4518,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Döndürme açısını seçin",
-        description: "Tüm sayfalar veya işaretlediğiniz sayfalar için sağa 90°, 180° ya da sola 90° seçin.",
+        description: "Tüm veya işaretli sayfalar için 90° sağa, 180° ya da 90° sola seçin ya da Sayfa sayfa’yı seçip her birini döndürün.",
       },
       {
         title: "İndirin",
@@ -4527,8 +4527,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Tüm veya seçili sayfalar",
-        description: "Geri kalanına dokunmadan yan duran tek bir taramayı düzeltin.",
+        title: "Tümü, seçili ya da sayfa sayfa",
+        description: "Yan duran tek bir taramayı diğerlerine dokunmadan düzeltin ya da her sayfayı ayrı döndürün.",
       },
       {
         title: "Canlı önizleme",
@@ -4550,7 +4550,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Sayfaları farklı açılarla döndürebilir miyim?",
-        answer: "Her sayfanın kendi döndürme düğmesi olan PDF Sayfa Düzenleme aracını kullanın.",
+        answer: "Evet. Sayfa sayfa’yı seçin, her sayfanın altındaki döndürme düğmesine sayfa düzelene kadar basın ve indirin.",
       },
       {
         question: "Parola korumalı bir PDF kullanabilir miyim?",
@@ -4960,7 +4960,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "PDF Kırpma",
     shortName: "PDF Kırp",
-    tagline: "Bir PDF'teki her sayfanın kenar boşluklarını kırpın. Cihazınızda çalışır.",
+    tagline: "Bir PDF’in tüm sayfalarının ya da yalnızca seçtiğiniz sayfaların kenar boşluklarını kırpın. Cihazınızda çalışır.",
     intro:
       "PDF Kırpma, her sayfanın kenarlarını kırparak geniş beyaz kenar boşluklarını, tarama kenarlıklarını veya baskı işaretlerini kaldırır; böylece telefonda okurken içerik ekranı doldurur. Üstten, sağdan, alttan ve soldan ne kadar kırpılacağını ayarlayın; önizleme sayfanın hangi kısmının kalacağını gösterir. Kırpma bir sayfa ayarı olarak saklanır, bu yüzden metin tam kalitesini korur. Her şey tarayıcınızda gerçekleşir, bu yüzden belge asla yüklenmez.",
     seoTitle: "PDF Kırpma Online – Kenar Boşluklarını Kırpın, Ücretsiz",
@@ -4984,7 +4984,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "İndirin",
-        description: "Tüm sayfaları kırpılmış PDF'i kaydedin.",
+        description: "Tüm sayfaları, önizlemedeki sayfayı ya da sayfa numaralarını seçin ve PDF’i kaydedin.",
       },
     ],
     features: [
@@ -5014,7 +5014,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Sayfaları farklı şekilde kırpabilir miyim?",
         answer:
-          "Aynı kenar boşlukları her sayfaya uygulanır. Sayfaları farklı kırpmak için PDF'i bölün, her parçayı kırpın ve sonra yeniden birleştirin.",
+          "Evet. Uygulanacak sayfalar bölümünde Bu sayfa’yı seçin ya da Sayfalar’ı seçip 1-3, 5 gibi numaralar yazın. Başka sayfalara farklı kenar boşlukları için indirilen PDF’i yeniden kırpın.",
       },
       {
         question: "Parola korumalı bir PDF kullanabilir miyim?",
@@ -9400,7 +9400,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Kapak sayfası dışarıda bırakılabilir mi?",
-        answer: "Evet. İlk sayfayı olduğu gibi bırakma seçeneğini işaretleyin; numaralandırma bu durumda 2. sayfada, seçtiğiniz numarayla başlar."
+        answer: "Evet. Üst ve alt bilgi olacak sayfalar bölümünde 2. sayfadan başlayın. Son sayfalardan önce de durabilirsiniz; dahil edilen ilk sayfada {page}, “Başlangıç numarası” değerini gösterir."
       },
       {
         question: "Metin içeriğimi kapatır mı?",

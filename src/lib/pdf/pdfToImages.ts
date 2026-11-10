@@ -45,13 +45,17 @@ export async function openPdf(file: File): Promise<PDFDocumentProxy> {
   }
 }
 
-/** Render one page (1-based) at the given dpi; pages are white like on paper. `rotation` turns it further (degrees clockwise). */
-export async function renderPage(doc: PDFDocumentProxy, pageNumber: number, dpi: number, format: PageImageFormat, maxSide = 10000, rotation = 0): Promise<Blob> {
+/**
+ * Render one page (1-based) at the given dpi; pages are white like on paper. `rotation` turns it further (degrees clockwise).
+ * `maxPixels` (0 = no limit) keeps the picture inside a phone browser's largest canvas.
+ */
+export async function renderPage(doc: PDFDocumentProxy, pageNumber: number, dpi: number, format: PageImageFormat, maxSide = 10000, rotation = 0, maxPixels = 0): Promise<Blob> {
   const page = await doc.getPage(pageNumber);
   let scale = dpi / 72;
   const base = page.getViewport({ scale: 1 });
   // Keep huge pages (posters, drawings) inside browser canvas limits
   scale = Math.min(scale, maxSide / Math.max(base.width, base.height));
+  if (maxPixels) scale = Math.min(scale, Math.sqrt(maxPixels / (base.width * base.height)));
   const viewport = page.getViewport({ scale, rotation: (((page.rotate + rotation) % 360) + 360) % 360 });
   const canvas = document.createElement('canvas');
   canvas.width = Math.round(viewport.width);
