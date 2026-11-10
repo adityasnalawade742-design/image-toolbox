@@ -135,5 +135,30 @@ describe('Merge PDF page mode', () => {
     // A link may only point at a page of the result, never at a dropped one
     for (let i = 0; i < 4; i++) for (const target of linkTargets(out, i)) expect(target).toBeGreaterThanOrEqual(0);
     expect(pageObjects(out)).toBe(4);
+    // Page 1's link to page 3 still works although another file's page now sits between them
+    expect(linkTargets(out, 0)).toEqual([2]);
+  });
+
+  it('stores a file’s shared image once however its pages are spread through the result', async () => {
+    // Three pages drawing one image
+    const src = await PDFDocument.create();
+    const png = await src.embedPng(
+      Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='), (c) => c.charCodeAt(0))
+    );
+    for (let i = 0; i < 3; i++) src.addPage([100, 100]).drawImage(png, { x: 10, y: 10, width: 50, height: 50 });
+    const [a, b] = [await src.save(), await twoPager()];
+    const images = (doc: PDFDocument) =>
+      doc.context.enumerateIndirectObjects().filter(([, o]) => (o as { dict?: PDFDict }).dict?.get(N('Subtype')) === N('Image')).length;
+    const interleaved = [
+      { file: 0, index: 0 },
+      { file: 1, index: 0 },
+      { file: 0, index: 1 },
+      { file: 1, index: 1 },
+      { file: 0, index: 2 },
+    ];
+    const out = await PDFDocument.load(await mergePages([a, b], interleaved));
+    const together = await PDFDocument.load(await mergePdfs([a, b]));
+    expect(widths(out)).toEqual([100, 301, 100, 302, 100]);
+    expect(images(out)).toBe(images(together));
   });
 });
