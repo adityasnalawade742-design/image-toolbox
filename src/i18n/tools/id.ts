@@ -1539,7 +1539,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Watermark",
     tagline: "Lindungi foto Anda dengan watermark teks atau logo, di satu titik atau diulang di seluruh gambar.",
     intro:
-      "Watermark Gambar menambahkan keterangan hak cipta, nama situs web, atau logo di atas foto. Letakkan watermark teks atau logo di salah satu dari sembilan posisi dan atur ukuran serta opasitasnya, atau ulangi teks di seluruh gambar, yang jauh lebih sulit dihilangkan dengan cara dipotong. Logo bisa berupa file PNG, WebP, JPG, atau SVG; logo dengan latar transparan memberi hasil terbaik.",
+      "Watermark Gambar menambahkan keterangan hak cipta, nama situs web, atau logo di atas foto. Letakkan watermark teks atau logo di salah satu dari sembilan posisi dan atur ukuran serta opasitasnya, atau ulangi teks di seluruh gambar, yang jauh lebih sulit dihilangkan dengan cara dipotong. Logo bisa berupa file PNG, WebP, JPG, atau SVG; logo dengan latar transparan memberi hasil terbaik. Tambahkan foto lain untuk memberi semuanya watermark yang sama dan mengunduhnya sekaligus dalam ZIP.",
     seoTitle: "Watermark Foto Online – Tambah Teks atau Logo",
     seoDescription:
       "Tambah watermark ke foto online gratis. Pakai teks atau logo Anda, pilih dari sembilan posisi, atur opasitas dan rotasi, atau ulangi teks di seluruh gambar.",
@@ -1569,7 +1569,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Unduh",
-        description: "Pertahankan format asli atau pilih format lain, lalu klik Unduh.",
+        description: "Pertahankan format asli atau pilih format lain, lalu klik Unduh. Untuk foto lain, tambahkan di Foto lainnya lalu unduh semuanya dalam ZIP.",
       },
     ],
     features: [
@@ -2321,7 +2321,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Filter",
     tagline: "Terapkan tampilan siap pakai seperti Vintage, Noir, atau Sinematik, lalu atur kecerahan, kontras, warna, dan vinyet.",
     intro:
-      "Filter dan Efek Foto mengubah tampilan dan suasana sebuah foto. Mulai dari salah satu dari delapan preset, seperti Sinematik, Vintage 70-an, Noir Muram, atau Senja Hangat, lalu atur kecerahan, kontras, saturasi, sepia, hitam putih, rona, kejernihan, vinyet, dan blur lembut dengan slider. Tampilan terbagi memungkinkan Anda membandingkan foto yang diedit dengan aslinya sebelum mengunduhnya sebagai PNG, JPG, atau WebP.",
+      "Filter dan Efek Foto mengubah tampilan dan suasana sebuah foto. Mulai dari salah satu dari delapan preset, seperti Sinematik, Vintage 70-an, Noir Muram, atau Senja Hangat, lalu atur kecerahan, kontras, saturasi, sepia, hitam putih, rona, kejernihan, vinyet, dan blur lembut dengan slider. Tampilan terbagi memungkinkan Anda membandingkan foto yang diedit dengan aslinya sebelum mengunduhnya sebagai PNG, JPG, atau WebP. Kehangatan dan Rona memperbaiki warna yang terlalu kuning, biru, atau hijau, dan penggeser kekuatan melembutkan filter apa pun.",
     seoTitle: "Filter Foto Online – Efek dan Preset Gratis",
     seoDescription:
       "Pasang filter foto online gratis. Coba Vintage, Noir, Sinematik, dan lainnya, atur kecerahan, kontras, saturasi, dan vinyet, lalu bandingkan sebelum-sesudah.",
@@ -2342,12 +2342,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         title: "Pilih preset",
         description:
-          "Coba Sinematik, Vintage 70-an, Cyberpunk, Noir Muram, Senja Hangat, Pudar Sejuk, HDR Dramatis, atau Negatif. Asli menghapus semua efek.",
+          "Coba Sinematik, Vintage 70-an, Cyberpunk, Noir Muram, Senja Hangat, Pudar Sejuk, HDR Dramatis, atau Negatif. Asli menghapus semua efek. Turunkan kekuatan filter untuk tampilan yang lebih halus.",
       },
       {
         title: "Sempurnakan dengan slider",
         description:
-          "Atur kecerahan, kontras, saturasi, sepia, hitam putih, geser rona, kejernihan, vinyet, dan fokus lembut sampai foto terlihat pas.",
+          "Atur kecerahan, kontras, saturasi, sepia, hitam putih, geser rona, kejernihan, vinyet, dan fokus lembut sampai foto terlihat pas. Kehangatan dan Rona memperbaiki warna yang bergeser.",
       },
       {
         title: "Bandingkan dan unduh",
@@ -2360,8 +2360,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Tampilan siap pakai, dari nuansa vintage yang hangat hingga hitam putih berkontras tinggi.",
       },
       {
-        title: "Sembilan slider penyesuaian",
-        description: "Kecerahan, kontras, dan saturasi hingga 200%, ditambah sepia, hitam putih, rona, kejernihan, vinyet, dan blur.",
+        title: "Sebelas penggeser penyesuaian",
+        description: "Kecerahan, kontras, dan saturasi hingga 200%, ditambah kehangatan, rona, sepia, monokrom, hue, kejernihan, vinyet, dan blur.",
       },
       {
         title: "Tampilan sebelum dan sesudah",
@@ -10229,7 +10229,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Unduh",
-        description: "Simpan gambar beranotasi sebagai PNG atau JPG."
+        description: "Simpan gambar beranotasi sebagai PNG atau JPG. Atau salin untuk langsung ditempel di chat, email, atau dokumen."
       }
     ],
     features: [

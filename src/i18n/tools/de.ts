@@ -1536,7 +1536,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Wasserzeichen",
     tagline: "Schütze deine Fotos mit einem Wasserzeichen aus Text oder Logo, an einer Stelle oder über das ganze Bild wiederholt.",
     intro:
-      "Wasserzeichen einfügen legt einen Copyright-Hinweis, einen Website-Namen oder ein Logo über ein Foto. Platziere ein Text- oder Logo-Wasserzeichen an einer von neun Positionen und stelle Größe und Deckkraft ein, oder wiederhole den Text über das ganze Bild, was sich viel schwerer wegschneiden lässt. Logos können PNG-, WebP-, JPG- oder SVG-Dateien sein. Ein Logo mit transparentem Hintergrund sieht am besten aus.",
+      "Wasserzeichen einfügen legt einen Copyright-Hinweis, einen Website-Namen oder ein Logo über ein Foto. Platziere ein Text- oder Logo-Wasserzeichen an einer von neun Positionen und stelle Größe und Deckkraft ein, oder wiederhole den Text über das ganze Bild, was sich viel schwerer wegschneiden lässt. Logos können PNG-, WebP-, JPG- oder SVG-Dateien sein. Ein Logo mit transparentem Hintergrund sieht am besten aus. Füge weitere Fotos hinzu, um allen dasselbe Wasserzeichen zu geben und sie zusammen als ZIP herunterzuladen.",
     seoTitle: "Wasserzeichen einfügen online – Text oder Logo",
     seoDescription:
       "Wasserzeichen auf Fotos einfügen, kostenlos: Text oder Logo nutzen, aus neun Positionen wählen, Deckkraft und Drehung einstellen oder Text wiederholen.",
@@ -1566,7 +1566,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Herunterladen",
-        description: "Behalte das Originalformat oder wähle ein anderes und klicke dann auf „Herunterladen“.",
+        description: "Behalte das Originalformat oder wähle ein anderes und klicke dann auf „Herunterladen“. Für weitere Fotos füge sie unter „Weitere Fotos“ hinzu und lade alle als ZIP herunter.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Filter",
     tagline: "Nutze fertige Looks wie Vintage, Noir oder Kino-Look und passe dann Helligkeit, Kontrast, Farbe und Vignette an.",
     intro:
-      "Fotofilter & Effekte verändert Look und Stimmung eines Fotos. Starte mit einem von acht Presets wie „Kino-Look“, „Vintage 70er“, „Düsteres Noir“ oder „Warmer Abend“ und passe dann Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner mit Reglern an. In einer geteilten Ansicht vergleichst du das bearbeitete Foto mit dem Original, bevor du es als PNG, JPG oder WebP herunterlädst.",
+      "Fotofilter & Effekte verändert Look und Stimmung eines Fotos. Starte mit einem von acht Presets wie „Kino-Look“, „Vintage 70er“, „Düsteres Noir“ oder „Warmer Abend“ und passe dann Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner mit Reglern an. In einer geteilten Ansicht vergleichst du das bearbeitete Foto mit dem Original, bevor du es als PNG, JPG oder WebP herunterlädst. Wärme und Tönung korrigieren einen gelben, blauen oder grünen Farbstich, und ein Stärkeregler schwächt jeden Filter ab.",
     seoTitle: "Fotofilter online – kostenlose Effekte und Presets",
     seoDescription:
       "Fotofilter online, kostenlos: Vintage, Noir, Kino-Look und mehr testen, Helligkeit, Kontrast, Sättigung und Vignette anpassen, vorher und nachher vergleichen.",
@@ -2339,12 +2339,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         title: "Preset wählen",
         description:
-          "Probier „Kino-Look“, „Vintage 70er“, „Cyberpunk“, „Düsteres Noir“, „Warmer Abend“, „Kühl & blass“, „Dramatisches HDR“ oder „Negativ“. „Original“ entfernt alle Effekte.",
+          "Probier „Kino-Look“, „Vintage 70er“, „Cyberpunk“, „Düsteres Noir“, „Warmer Abend“, „Kühl & blass“, „Dramatisches HDR“ oder „Negativ“. „Original“ entfernt alle Effekte. Senke die Stärke des Filters für einen dezenteren Look.",
       },
       {
         title: "Mit Reglern verfeinern",
         description:
-          "Passe Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner an, bis das Foto passt.",
+          "Passe Helligkeit, Kontrast, Sättigung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner an, bis das Foto passt. Wärme und Tönung beheben einen Farbstich.",
       },
       {
         title: "Vergleichen und herunterladen",
@@ -2357,8 +2357,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
         description: "Fertige Looks von warmen Vintage-Tönen bis zu kontrastreichem Schwarzweiß.",
       },
       {
-        title: "Neun Regler",
-        description: "Helligkeit, Kontrast und Sättigung bis 200 %, dazu Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner.",
+        title: "Elf Regler",
+        description: "Helligkeit, Kontrast und Sättigung bis 200 %, dazu Wärme, Tönung, Sepia, Schwarzweiß, Farbton, Klarheit, Vignette und Weichzeichner.",
       },
       {
         title: "Vorher-nachher-Ansicht",
@@ -10254,7 +10254,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Herunterladen",
-        description: "Speichere das beschriftete Bild als PNG oder JPG."
+        description: "Speichere das beschriftete Bild als PNG oder JPG. Oder kopiere es, um es direkt in einen Chat, eine E-Mail oder ein Dokument einzufügen."
       }
     ],
     features: [

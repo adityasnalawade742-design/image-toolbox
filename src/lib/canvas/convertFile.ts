@@ -1,4 +1,4 @@
-import { canvasToBlob, loadImage, processCanvasBest } from './engine';
+import { canvasToBlob, loadImage, processCanvasBest, type WatermarkOptions } from './engine';
 import { isHeicFile, convertHeic } from './heicLoader';
 import { isTiffFile, convertTiff } from './tiffLoader';
 import { isAnimatedImage } from './animated';
@@ -24,6 +24,8 @@ export interface ConvertSettings {
   background: string;
   /** SVG converters: output size as a multiple of the drawing's own size */
   svgScale: number;
+  /** Watermark Image on several photos: the same watermark on each */
+  watermark?: WatermarkOptions;
 }
 
 export interface Converted {
@@ -87,6 +89,7 @@ export async function convertImageFile(file: File, s: ConvertSettings): Promise<
     isCircle: false,
     backgroundColor: format === 'image/jpeg' ? s.background : undefined,
     colorSpace: format === 'image/jpeg' && icc ? 'display-p3' : undefined,
+    watermark: s.watermark,
   });
   const encodeOptions = { best: true, lossyPng: false, icc };
   let blob: Blob;

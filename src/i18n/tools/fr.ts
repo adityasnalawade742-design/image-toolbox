@@ -1536,7 +1536,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Filigrane",
     tagline: "Protégez vos photos avec un filigrane texte ou logo, placé à un endroit ou répété sur toute l’image.",
     intro:
-      "Ajouter un filigrane place une mention de copyright, le nom d’un site ou un logo par-dessus une photo. Placez un filigrane texte ou logo à l’une des neuf positions et réglez sa taille et son opacité, ou répétez le texte sur toute l’image, ce qui le rend bien plus difficile à supprimer en rognant. Le logo peut être un fichier PNG, WebP, JPG ou SVG ; un logo sur fond transparent donne le meilleur résultat.",
+      "Ajouter un filigrane place une mention de copyright, le nom d’un site ou un logo par-dessus une photo. Placez un filigrane texte ou logo à l’une des neuf positions et réglez sa taille et son opacité, ou répétez le texte sur toute l’image, ce qui le rend bien plus difficile à supprimer en rognant. Le logo peut être un fichier PNG, WebP, JPG ou SVG ; un logo sur fond transparent donne le meilleur résultat. Ajoutez d’autres photos pour leur appliquer le même filigrane et les télécharger ensemble dans un ZIP.",
     seoTitle: "Ajouter un filigrane sur une photo – Texte ou logo",
     seoDescription:
       "Ajoutez un filigrane sur vos photos gratuitement : texte ou logo, neuf positions, opacité et rotation réglables, ou texte répété sur toute l’image.",
@@ -1566,7 +1566,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Téléchargez",
-        description: "Gardez le format d’origine ou choisissez-en un autre, puis cliquez sur Télécharger.",
+        description: "Gardez le format d’origine ou choisissez-en un autre, puis cliquez sur Télécharger. Pour d’autres photos, ajoutez-les sous Autres photos et téléchargez-les toutes dans un ZIP.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Filtres",
     tagline: "Appliquez des styles prêts à l’emploi comme Vintage, Noir ou Cinématique, puis réglez la luminosité, le contraste, les couleurs et le vignettage.",
     intro:
-      "Filtres et effets photo change le style et l’ambiance d’une photo. Commencez par l’un des huit préréglages, comme Cinématique, Vintage années 70, Noir intense ou Coucher de soleil, puis réglez avec des curseurs la luminosité, le contraste, la saturation, le sépia, le noir et blanc, la teinte, la clarté, le vignettage et le flou doux. Une vue partagée vous permet de comparer la photo retouchée avec l’original avant de la télécharger en PNG, JPG ou WebP.",
+      "Filtres et effets photo change le style et l’ambiance d’une photo. Commencez par l’un des huit préréglages, comme Cinématique, Vintage années 70, Noir intense ou Coucher de soleil, puis réglez avec des curseurs la luminosité, le contraste, la saturation, le sépia, le noir et blanc, la teinte, la clarté, le vignettage et le flou doux. Une vue partagée vous permet de comparer la photo retouchée avec l’original avant de la télécharger en PNG, JPG ou WebP. Chaleur et Teinte corrigent une dominante jaune, bleue ou verte, et un curseur d’intensité adoucit n’importe quel filtre.",
     seoTitle: "Filtres photo en ligne – Effets et préréglages gratuits",
     seoDescription:
       "Filtres photo gratuits en ligne : Vintage, Noir, Cinématique et plus, réglage de la luminosité, du contraste, de la saturation et du vignettage, avant/après.",
@@ -2339,12 +2339,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         title: "Choisissez un préréglage",
         description:
-          "Essayez Cinématique, Vintage années 70, Cyberpunk, Noir intense, Coucher de soleil, Fondu froid, HDR dramatique ou Négatif. Original retire tous les effets.",
+          "Essayez Cinématique, Vintage années 70, Cyberpunk, Noir intense, Coucher de soleil, Fondu froid, HDR dramatique ou Négatif. Original retire tous les effets. Baissez l’intensité du filtre pour un rendu plus discret.",
       },
       {
         title: "Affinez avec les curseurs",
         description:
-          "Réglez la luminosité, le contraste, la saturation, le sépia, le noir et blanc, la teinte, la clarté, le vignettage et le flou doux jusqu’à obtenir le rendu voulu.",
+          "Réglez la luminosité, le contraste, la saturation, le sépia, le noir et blanc, la teinte, la clarté, le vignettage et le flou doux jusqu’à obtenir le rendu voulu. Chaleur et Teinte corrigent une dominante de couleur.",
       },
       {
         title: "Comparez et téléchargez",
@@ -2357,8 +2357,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "Des styles prêts à l’emploi, des tons vintage chauds au noir et blanc très contrasté.",
       },
       {
-        title: "Neuf curseurs de réglage",
-        description: "Luminosité, contraste et saturation jusqu’à 200 %, plus sépia, noir et blanc, teinte, clarté, vignettage et flou.",
+        title: "Onze curseurs de réglage",
+        description: "Luminosité, contraste et saturation jusqu’à 200 %, plus chaleur, teinte, sépia, monochrome, nuance, clarté, vignette et flou.",
       },
       {
         title: "Vue avant/après",
@@ -10260,7 +10260,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Téléchargez",
-        description: "Enregistrez l’image annotée en PNG ou JPG."
+        description: "Enregistrez l’image annotée en PNG ou JPG. Ou copiez-la pour la coller directement dans une discussion, un e-mail ou un document."
       }
     ],
     features: [

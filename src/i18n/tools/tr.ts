@@ -1536,7 +1536,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Filigran",
     tagline: "Fotoğraflarınızı tek bir noktaya yerleştirilen veya resim boyunca tekrarlanan bir metin ya da logo filigranıyla koruyun.",
     intro:
-      "Resme Filigran Ekleme, bir fotoğrafın üzerine telif hakkı notu, web sitesi adı veya logo ekler. Bir metin veya logo filigranını dokuz konumdan birine yerleştirip boyutunu ve opaklığını ayarlayın ya da metni resmin tamamında tekrarlayın; bu, kırparak çıkarmayı çok daha zorlaştırır. Logolar PNG, WebP, JPG veya SVG dosyası olabilir; saydam arka planlı bir logo en iyi görünür.",
+      "Resme Filigran Ekleme, bir fotoğrafın üzerine telif hakkı notu, web sitesi adı veya logo ekler. Bir metin veya logo filigranını dokuz konumdan birine yerleştirip boyutunu ve opaklığını ayarlayın ya da metni resmin tamamında tekrarlayın; bu, kırparak çıkarmayı çok daha zorlaştırır. Logolar PNG, WebP, JPG veya SVG dosyası olabilir; saydam arka planlı bir logo en iyi görünür. Hepsine aynı filigranı eklemek ve birlikte ZIP olarak indirmek için başka fotoğraflar da ekleyin.",
     seoTitle: "Resme Filigran Ekleme – Yazı veya Logo",
     seoDescription:
       "Fotoğrafa filigran ekleme, ücretsiz. Metin veya logonuzu kullanın, dokuz konumdan birini seçin, opaklığı ve açıyı ayarlayın ya da metni resimde tekrarlayın.",
@@ -1566,7 +1566,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "İndirin",
-        description: "Orijinal formatı koruyun veya başka bir format seçin, ardından İndir'e tıklayın.",
+        description: "Orijinal formatı koruyun veya başka bir format seçin, ardından İndir'e tıklayın. Başka fotoğraflar için Diğer fotoğraflar bölümüne ekleyip hepsini ZIP olarak indirin.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Filtreler",
     tagline: "Vintage, Noir veya Sinematik gibi hazır görünümler uygulayın, ardından parlaklığı, kontrastı, rengi ve vinyeti ayarlayın.",
     intro:
-      "Fotoğraf Filtreleri ve Efektleri, bir fotoğrafın görünümünü ve havasını değiştirir. Sinematik, Vintage 70'ler, Karanlık Noir veya Sıcak Gün Batımı gibi sekiz hazır filtreden biriyle başlayın; ardından parlaklığı, kontrastı, doygunluğu, sepyayı, siyah beyazı, tonu, netliği, vinyeti ve yumuşak bulanıklığı kaydırıcılarla ayarlayın. Bölünmüş görünüm, düzenlenen fotoğrafı PNG, JPG veya WebP olarak indirmeden önce orijinalle karşılaştırmanızı sağlar.",
+      "Fotoğraf Filtreleri ve Efektleri, bir fotoğrafın görünümünü ve havasını değiştirir. Sinematik, Vintage 70'ler, Karanlık Noir veya Sıcak Gün Batımı gibi sekiz hazır filtreden biriyle başlayın; ardından parlaklığı, kontrastı, doygunluğu, sepyayı, siyah beyazı, tonu, netliği, vinyeti ve yumuşak bulanıklığı kaydırıcılarla ayarlayın. Bölünmüş görünüm, düzenlenen fotoğrafı PNG, JPG veya WebP olarak indirmeden önce orijinalle karşılaştırmanızı sağlar. Sıcaklık ve Ton, sarı, mavi veya yeşil renk kaymasını düzeltir; güç kaydırıcısı her filtreyi yumuşatır.",
     seoTitle: "Fotoğraf Filtreleri – Ücretsiz Efektler ve Hazır Ayarlar",
     seoDescription:
       "Fotoğrafa filtre ekleme, ücretsiz. Vintage, Noir, Sinematik ve fazlasını deneyin; parlaklık, kontrast, doygunluk ve vinyeti ayarlayın, önce-sonrayı kıyaslayın.",
@@ -2339,12 +2339,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         title: "Hazır bir filtre seçin",
         description:
-          "Sinematik, Vintage 70'ler, Cyberpunk, Karanlık Noir, Sıcak Gün Batımı, Soğuk Solgun, Dramatik HDR veya Negatif'i deneyin. Orijinal tüm efektleri kaldırır.",
+          "Sinematik, Vintage 70'ler, Cyberpunk, Karanlık Noir, Sıcak Gün Batımı, Soğuk Solgun, Dramatik HDR veya Negatif'i deneyin. Orijinal tüm efektleri kaldırır. Daha hafif bir görünüm için filtre gücünü düşürün.",
       },
       {
         title: "Kaydırıcılarla ince ayar yapın",
         description:
-          "Fotoğraf doğru görünene kadar parlaklığı, kontrastı, doygunluğu, sepyayı, siyah beyazı, ton kaydırmayı, netliği, vinyeti ve yumuşak odağı ayarlayın.",
+          "Fotoğraf doğru görünene kadar parlaklığı, kontrastı, doygunluğu, sepyayı, siyah beyazı, ton kaydırmayı, netliği, vinyeti ve yumuşak odağı ayarlayın. Sıcaklık ve Ton renk kaymasını düzeltir.",
       },
       {
         title: "Karşılaştırın ve indirin",
@@ -2357,8 +2357,8 @@ export const trTools: Record<string, LocalizedToolItem> = {
         description: "Sıcak vintage tonlardan yüksek kontrastlı siyah beyaza kadar hazır görünümler.",
       },
       {
-        title: "Dokuz ayar kaydırıcısı",
-        description: "%200'e kadar parlaklık, kontrast ve doygunluk; ayrıca sepya, siyah beyaz, ton, netlik, vinyet ve bulanıklık.",
+        title: "On bir ayar kaydırıcısı",
+        description: "Parlaklık, kontrast ve doygunluk %200’e kadar; ayrıca sıcaklık, ton, sepya, siyah-beyaz, renk tonu, netlik, vinyet ve bulanıklık.",
       },
       {
         title: "Önce ve sonra görünümü",
@@ -10230,7 +10230,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "İndirin",
-        description: "İşaretlenmiş resmi PNG veya JPG olarak kaydedin."
+        description: "İşaretlenmiş resmi PNG veya JPG olarak kaydedin. Ya da kopyalayıp doğrudan bir sohbete, e-postaya veya belgeye yapıştırın."
       }
     ],
     features: [

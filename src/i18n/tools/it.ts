@@ -1536,7 +1536,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Filigrana",
     tagline: "Proteggi le tue foto con una filigrana di testo o un logo, in un solo punto o ripetuta su tutta l’immagine.",
     intro:
-      "Filigrana immagine aggiunge sopra una foto un avviso di copyright, il nome di un sito o un logo. Posiziona una filigrana di testo o un logo in uno dei nove punti e impostane dimensione e opacità, oppure ripeti il testo su tutta l’immagine, che così è molto più difficile da eliminare con un ritaglio. I loghi possono essere file PNG, WebP, JPG o SVG; un logo con sfondo trasparente dà il risultato migliore.",
+      "Filigrana immagine aggiunge sopra una foto un avviso di copyright, il nome di un sito o un logo. Posiziona una filigrana di testo o un logo in uno dei nove punti e impostane dimensione e opacità, oppure ripeti il testo su tutta l’immagine, che così è molto più difficile da eliminare con un ritaglio. I loghi possono essere file PNG, WebP, JPG o SVG; un logo con sfondo trasparente dà il risultato migliore. Aggiungi altre foto per dare a tutte la stessa filigrana e scaricarle insieme in uno ZIP.",
     seoTitle: "Filigrana foto online – Aggiungi testo o logo",
     seoDescription:
       "Aggiungi gratis una filigrana alle foto. Usa un testo o il tuo logo, scegli tra nove posizioni, imposta opacità e rotazione o ripeti il testo sull’immagine.",
@@ -1566,7 +1566,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Scarica",
-        description: "Mantieni il formato originale o scegline un altro, poi clicca Scarica.",
+        description: "Mantieni il formato originale o scegline un altro, poi clicca Scarica. Per altre foto, aggiungile in Altre foto e scaricale tutte in uno ZIP.",
       },
     ],
     features: [
@@ -2318,7 +2318,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Filtri",
     tagline: "Applica stili già pronti come Vintage, Noir o Cinematografico, poi regola luminosità, contrasto, colore e vignettatura.",
     intro:
-      "Filtri ed effetti foto cambia l’aspetto e l’atmosfera di una foto. Parti da uno degli otto preset, come Cinematografico, Vintage anni 70, Noir intenso o Tramonto caldo, poi regola con i cursori luminosità, contrasto, saturazione, seppia, bianco e nero, tonalità, nitidezza, vignettatura ed effetto flou. Una vista divisa ti permette di confrontare la foto modificata con l’originale prima di scaricarla in PNG, JPG o WebP.",
+      "Filtri ed effetti foto cambia l’aspetto e l’atmosfera di una foto. Parti da uno degli otto preset, come Cinematografico, Vintage anni 70, Noir intenso o Tramonto caldo, poi regola con i cursori luminosità, contrasto, saturazione, seppia, bianco e nero, tonalità, nitidezza, vignettatura ed effetto flou. Una vista divisa ti permette di confrontare la foto modificata con l’originale prima di scaricarla in PNG, JPG o WebP. Calore e Tinta correggono una dominante gialla, blu o verde, e un cursore di intensità attenua qualsiasi filtro.",
     seoTitle: "Filtri per foto online – Effetti e preset gratis",
     seoDescription:
       "Applica filtri alle foto online gratis. Prova Vintage, Noir, Cinematografico e altri, regola luminosità, contrasto e vignettatura e confronta prima e dopo.",
@@ -2339,12 +2339,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         title: "Scegli un preset",
         description:
-          "Prova Cinematografico, Vintage anni 70, Cyberpunk, Noir intenso, Tramonto caldo, Sbiadito freddo, HDR drammatico o Negativo. Originale rimuove tutti gli effetti.",
+          "Prova Cinematografico, Vintage anni 70, Cyberpunk, Noir intenso, Tramonto caldo, Sbiadito freddo, HDR drammatico o Negativo. Originale rimuove tutti gli effetti. Abbassa l’intensità del filtro per un effetto più delicato.",
       },
       {
         title: "Perfeziona con i cursori",
         description:
-          "Regola luminosità, contrasto, saturazione, seppia, bianco e nero, tonalità, nitidezza, vignettatura ed effetto flou finché la foto non ti convince.",
+          "Regola luminosità, contrasto, saturazione, seppia, bianco e nero, tonalità, nitidezza, vignettatura ed effetto flou finché la foto non ti convince. Calore e Tinta correggono una dominante di colore.",
       },
       {
         title: "Confronta e scarica",
@@ -2357,8 +2357,8 @@ export const itTools: Record<string, LocalizedToolItem> = {
         description: "Stili già pronti, dai toni vintage caldi al bianco e nero ad alto contrasto.",
       },
       {
-        title: "Nove cursori di regolazione",
-        description: "Luminosità, contrasto e saturazione fino al 200%, più seppia, bianco e nero, tonalità, nitidezza, vignettatura e sfocatura.",
+        title: "Undici cursori di regolazione",
+        description: "Luminosità, contrasto e saturazione fino al 200%, più calore, tinta, seppia, bianco e nero, tonalità, chiarezza, vignettatura e sfocatura.",
       },
       {
         title: "Vista prima e dopo",
@@ -10211,7 +10211,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Scarica",
-        description: "Salva l’immagine annotata in PNG o JPG."
+        description: "Salva l’immagine annotata in PNG o JPG. Oppure copiala per incollarla direttamente in una chat, un’e-mail o un documento."
       }
     ],
     features: [
