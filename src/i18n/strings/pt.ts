@@ -827,6 +827,13 @@ export const strings = {
   // Organize PDF
   'ctl.organize.hint': 'Use os botões abaixo de cada página para movê-la, girá-la ou excluí-la. Você também pode arrastar as páginas para reordená-las.',
   'ctl.organize.reset': 'Desfazer todas as alterações',
+  'ctl.organize.insertAfter': "Inserir novas páginas após a página",
+  'ctl.organize.insertHint': "0 coloca no início; {n}, no fim.",
+  'ctl.organize.addBlank': "Adicionar uma página em branco",
+  'ctl.organize.addPdf': "Adicionar páginas de outro PDF",
+  'ctl.organize.blankPage': "Página em branco",
+  'ctl.organize.inserted': "{n} páginas adicionadas.",
+  'ctl.organize.inserted.one': "1 página adicionada.",
 
   // Rotate PDF
   'ctl.rotatepdf.angle': 'Girar em',
@@ -857,6 +864,10 @@ export const strings = {
   'ctl.pdfwm.size': 'Largura na página',
   'ctl.pdfwm.text': 'Texto da marca d’água',
   'ctl.pdfwm.dragHint': 'Arraste a marca d’água na página ou use os controles deslizantes.',
+  'ctl.pdfwm.tile': "Repetir pela página inteira",
+  'ctl.pdfwm.gap': "Espaçamento",
+  'ctl.pdfwm.behind': "Atrás do texto e das imagens",
+  'ctl.pdfwm.behindHint': "O texto fica por cima, totalmente legível. Uma página digitalizada é uma só imagem e esconde a marca d’água atrás dela.",
 
   // Sign PDF
   'ctl.sign.source': 'Assinatura',

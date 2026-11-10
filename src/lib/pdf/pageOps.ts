@@ -26,6 +26,7 @@ import {
 
 import { PdfEncryptedError, PdfUnsupportedTextError } from './errors';
 import { assemblePages } from './structure';
+import { sendDrawingToBack } from './pageContent';
 import { fontScriptFor, type FontScript } from './unicodeFont';
 
 export { PdfEncryptedError, PdfUnsupportedTextError };
@@ -91,6 +92,13 @@ export async function mergePages(
   files: (Uint8Array | ArrayBuffer)[],
   order: { file: number; index: number; rotate?: number }[]
 ): Promise<Uint8Array> {
+  const out = await assembleOrder(files, order);
+  dropUnreachable(out);
+  return save(out);
+}
+
+async function assembleOrder(files: (Uint8Array | ArrayBuffer)[], order: { file: number; index: number; rotate?: number }[]): Promise<PDFDocument> {
+  if (!order.length) return PDFDocument.create({ updateMetadata: false });
   // Files in the order they first appear, each with its pages and where each page goes
   const byFile = new Map<number, { index: number; rotate?: number; pos: number }[]>();
   order.forEach((p, pos) => {
@@ -103,7 +111,29 @@ export async function mergePages(
     sources.push({ doc: await loadPdf(files[file]), pages: pages.map(({ index, rotate }) => ({ index, rotate })) });
     finalOrder.push(...pages.map((p) => p.pos));
   }
-  const out = await assemblePages(sources, finalOrder);
+  return assemblePages(sources, finalOrder);
+}
+
+/** A page in Organize PDF's result: a page of one of the files, or a new blank page */
+export type OrganizedPage = { file: number; index: number; rotate?: number } | { blank: true; rotate?: number };
+
+/**
+ * Organize PDF: pages of the opened PDF and of added PDFs in any order, plus blank pages. A blank page takes the
+ * size the page before it shows on screen (the next page's when it comes first; A4 when there are no others).
+ */
+export async function organizePages(files: (Uint8Array | ArrayBuffer)[], order: OrganizedPage[]): Promise<Uint8Array> {
+  const out = await assembleOrder(
+    files,
+    order.filter((p): p is { file: number; index: number; rotate?: number } => !('blank' in p))
+  );
+  order.forEach((p, pos) => {
+    if (!('blank' in p)) return;
+    const pages = out.getPages();
+    const near = pages[pos - 1] ?? pages[pos];
+    const size: [number, number] = near ? [visualPage(near).width, visualPage(near).height] : [595.28, 841.89];
+    const page = out.insertPage(pos, size);
+    if (p.rotate) page.setRotation(degrees(((p.rotate % 360) + 360) % 360));
+  });
   dropUnreachable(out);
   return save(out);
 }
@@ -258,6 +288,38 @@ export interface StampOptions {
   rotate?: number;
   /** 0-based pages; 'all' for every page */
   pages: number[] | 'all';
+  /** Repeat the image over the whole page, in rows along its angle; the gap is a fraction of its width */
+  tile?: { gap: number };
+  /** Draw under the page's text and pictures instead of on top (a page that is one scanned image hides it) */
+  behind?: boolean;
+}
+
+/**
+ * Centres for a w × h stamp repeated over a W × H page (screen units, y down): rows run along the stamp's angle
+ * (anticlockwise, degrees), every other row shifted by half a step, starting from (u0, v0).
+ */
+export function tileCentres(W: number, H: number, w: number, h: number, angle: number, gap: number, u0 = W / 2, v0 = H / 2) {
+  const a = (angle * Math.PI) / 180;
+  const along = [Math.cos(a), -Math.sin(a)];
+  const across = [Math.sin(a), Math.cos(a)];
+  const stepAlong = w * (1 + gap);
+  const stepAcross = h + w * gap * 0.5;
+  const reach = Math.hypot(W, H) + Math.max(w, h);
+  const ni = Math.ceil(reach / stepAlong) + 1;
+  const nj = Math.ceil(reach / stepAcross) + 1;
+  const pad = Math.max(w, h) / 2;
+  const out: { u: number; v: number }[] = [];
+  for (let j = -nj; j <= nj; j++) {
+    for (let i = -ni; i <= ni; i++) {
+      const s = i * stepAlong + (Math.abs(j) % 2 ? stepAlong / 2 : 0);
+      const t = j * stepAcross;
+      const u = u0 + s * along[0] + t * across[0];
+      const v = v0 + s * along[1] + t * across[1];
+      if (u >= -pad && u <= W + pad && v >= -pad && v <= H + pad) out.push({ u, v });
+    }
+  }
+  // A tiny stamp on a big page could make thousands; each is one short drawing command, but keep files sensible
+  return out.slice(0, 600);
 }
 
 /** Place an image on pages (watermarks and signatures) */
@@ -303,8 +365,12 @@ export async function stampImage(bytes: Uint8Array | ArrayBuffer, opts: StampOpt
     const { width, height } = visualPage(page);
     const w = width * opts.widthFraction;
     const h = (w / img.width) * img.height;
-    const { x, y, rotate } = placeCentred(page, width * opts.cx, height * opts.cy, w, h, opts.rotate || 0);
-    page.drawImage(img, { x, y, width: w, height: h, opacity: opts.opacity ?? 1, rotate });
+    const centres = opts.tile ? tileCentres(width, height, w, h, opts.rotate || 0, opts.tile.gap, width * opts.cx, height * opts.cy) : [{ u: width * opts.cx, v: height * opts.cy }];
+    for (const c of centres) {
+      const { x, y, rotate } = placeCentred(page, c.u, c.v, w, h, opts.rotate || 0);
+      page.drawImage(img, { x, y, width: w, height: h, opacity: opts.opacity ?? 1, rotate });
+    }
+    if (opts.behind) sendDrawingToBack(page);
   });
   return save(doc);
 }

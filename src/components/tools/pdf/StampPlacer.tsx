@@ -21,7 +21,7 @@ export interface Placement {
 }
 
 /** Shows a stamp (watermark or signature) on the page preview and lets it be dragged */
-export function StampOverlay({ canvas, stamp, place, onMove, hint }: { canvas: HTMLCanvasElement; stamp: Stamp; place: Placement; onMove: (cx: number, cy: number) => void; hint: string }) {
+export function StampOverlay({ canvas, stamp, place, onMove, hint, behind = false }: { canvas: HTMLCanvasElement; stamp: Stamp; place: Placement; onMove: (cx: number, cy: number) => void; hint: string; behind?: boolean }) {
   const wPx = place.w * canvas.width;
   const hPx = (wPx / stamp.width) * stamp.height;
   return (
@@ -36,6 +36,8 @@ export function StampOverlay({ canvas, stamp, place, onMove, hint }: { canvas: H
           top: `${place.cy * 100}%`,
           width: `${place.w * 100}%`,
           opacity: place.opacity,
+          // Behind the content: multiplying keeps the page's dark text on top, as in the saved PDF
+          mixBlendMode: behind ? 'multiply' : undefined,
           transform: `translate(-50%, -50%) rotate(${-place.rotate}deg)`,
         }}
       />

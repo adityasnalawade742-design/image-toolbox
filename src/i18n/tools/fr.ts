@@ -4414,9 +4414,9 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "Organiser PDF",
     shortName: "Organiser PDF",
-    tagline: "Réordonnez, faites pivoter et supprimez des pages PDF, puis enregistrez le nouveau PDF. Tout se fait sur votre appareil.",
+    tagline: "Réorganisez, faites pivoter et supprimez des pages PDF, ajoutez des pages blanches ou d’un autre PDF, puis enregistrez. Tout se fait sur votre appareil.",
     intro:
-      "Organiser PDF affiche toutes les pages d’un PDF pour que vous puissiez le remettre en forme : avancer ou reculer des pages, redresser des scans couchés et supprimer les pages blanches ou indésirables. Chaque page a ses propres boutons, utilisables aussi au clavier, et à la souris vous pouvez faire glisser les pages à leur place. « Annuler toutes les modifications » remet tout en l’état. Quand le résultat vous convient, téléchargez le nouveau PDF. Tout cela se passe dans votre navigateur, le document n’est donc jamais envoyé.",
+      "Organiser PDF affiche toutes les pages d’un PDF pour que vous puissiez le remettre en forme : avancer ou reculer des pages, redresser des scans couchés et supprimer les pages blanches ou indésirables. Chaque page a ses propres boutons, utilisables aussi au clavier, et à la souris vous pouvez faire glisser les pages à leur place. « Annuler toutes les modifications » remet tout en l’état. Quand le résultat vous convient, téléchargez le nouveau PDF. Tout cela se passe dans votre navigateur, le document n’est donc jamais envoyé. Vous pouvez aussi insérer des pages blanches, ou les pages d’un autre PDF, après n’importe quelle page.",
     seoTitle: "Organiser un PDF – réordonner, pivoter, supprimer",
     seoDescription:
       "Organiser PDF gratuitement : réordonnez, faites pivoter et supprimez des pages dans votre navigateur avec aperçus, puis téléchargez le PDF. Sans envoi.",
@@ -4475,7 +4475,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Puis-je ajouter des pages d’un autre PDF ?",
-        answer: "Combinez d’abord les fichiers avec Fusionner PDF, puis organisez ici le fichier fusionné.",
+        answer: "Oui. Indiquez où les placer dans Insérer les nouvelles pages après la page, puis choisissez Ajouter les pages d’un autre PDF. Ses pages y sont ajoutées, et vous pouvez les déplacer, les faire pivoter ou les supprimer comme les autres.",
       },
       {
         question: "Puis-je utiliser un PDF protégé par mot de passe ?",
@@ -4643,7 +4643,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Filigrane PDF",
     tagline: "Apposez un texte ou un logo sur les pages d’un PDF, puis faites-le glisser à sa place. Tout se fait sur votre appareil.",
     intro:
-      "Filigrane PDF ajoute un tampon comme CONFIDENTIEL, BROUILLON, votre nom ou votre logo sur les pages d’un PDF. Saisissez le texte dans n’importe quelle langue ou choisissez une image de logo, réglez sa taille, son opacité et son angle, puis faites-le glisser où vous voulez sur l’aperçu de la page, ou utilisez les curseurs de position. Appliquez-le à toutes les pages ou à une plage de pages. Le filigrane est ajouté dans votre navigateur, le document n’est donc jamais envoyé.",
+      "Filigrane PDF ajoute un tampon comme CONFIDENTIEL, BROUILLON, votre nom ou votre logo sur les pages d’un PDF. Saisissez le texte dans n’importe quelle langue ou choisissez une image de logo, réglez sa taille, son opacité et son angle, puis faites-le glisser où vous voulez sur l’aperçu de la page, ou utilisez les curseurs de position. Appliquez-le à toutes les pages ou à une plage de pages. Le filigrane est ajouté dans votre navigateur, le document n’est donc jamais envoyé. Répétez-le sur toute la page, ou placez-le derrière le texte pour qu’il reste parfaitement lisible.",
     seoTitle: "Ajouter un filigrane à un PDF – texte ou logo",
     seoDescription:
       "Ajouter un filigrane PDF gratuitement : apposez un texte ou un logo sur les pages dans votre navigateur, réglez taille, opacité et angle. Sans envoi.",
@@ -4667,7 +4667,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         title: "Placez-le",
         description:
-          "Réglez la taille, l’opacité et l’angle, puis faites-le glisser sur l’aperçu ou utilisez les curseurs.",
+          "Réglez la taille, l’opacité et l’angle, puis faites-le glisser sur l’aperçu ou utilisez les curseurs. Cochez Répéter sur toute la page pour un motif sur toute la page.",
       },
       {
         title: "Téléchargez",
@@ -4698,7 +4698,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Le filigrane peut-il être retiré plus tard ?",
         answer:
-          "Il est ajouté sous forme d’image par-dessus la page. Quelqu’un disposant d’un éditeur PDF pourrait encore le retirer, donc un filigrane dissuade la copie plus qu’il ne l’empêche.",
+          "Il est ajouté comme une image sur la page, au-dessus ou derrière le texte. Quelqu’un avec un éditeur de PDF pourrait encore le retirer : un filigrane dissuade de copier plus qu’il ne l’empêche.",
       },
       {
         question: "Puis-je mettre un filigrane sur certaines pages seulement ?",
@@ -4707,7 +4707,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Le filigrane cache-t-il le texte ?",
         answer:
-          "Baissez l’opacité pour que la page reste lisible. 15 à 30 % est courant pour les filigranes en diagonale.",
+          "Pas si vous cochez Derrière le texte et les images : le texte reste au-dessus. Au-dessus de la page, baissez l’opacité pour qu’elle reste lisible ; 15 à 30 % est courant pour un filigrane en diagonale. Une page numérisée est une seule image : pour les scans, placez le filigrane au-dessus.",
       },
       {
         question: "Puis-je utiliser un PDF protégé par mot de passe ?",

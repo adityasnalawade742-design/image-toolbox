@@ -4422,9 +4422,9 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "Organizza PDF",
     shortName: "Organizza PDF",
-    tagline: "Riordina, ruota ed elimina le pagine di un PDF, poi salva il nuovo PDF. Funziona sul tuo dispositivo.",
+    tagline: "Riordina, ruota ed elimina pagine PDF, aggiungi pagine vuote o da un altro PDF, poi salva. Funziona sul tuo dispositivo.",
     intro:
-      "Organizza PDF mostra tutte le pagine di un PDF così puoi sistemarlo: sposta le pagine prima o dopo, raddrizza le scansioni di lato ed elimina le pagine bianche o indesiderate. Ogni pagina ha i suoi pulsanti, che funzionano anche da tastiera, e con il mouse puoi trascinare le pagine al loro posto. Annulla tutte le modifiche rimette tutto com’era. Quando è a posto, scarica il nuovo PDF. Tutto questo avviene nel tuo browser, quindi il documento non viene mai caricato.",
+      "Organizza PDF mostra tutte le pagine di un PDF così puoi sistemarlo: sposta le pagine prima o dopo, raddrizza le scansioni di lato ed elimina le pagine bianche o indesiderate. Ogni pagina ha i suoi pulsanti, che funzionano anche da tastiera, e con il mouse puoi trascinare le pagine al loro posto. Annulla tutte le modifiche rimette tutto com’era. Quando è a posto, scarica il nuovo PDF. Tutto questo avviene nel tuo browser, quindi il documento non viene mai caricato. Puoi anche inserire pagine vuote, o le pagine di un altro PDF, dopo qualsiasi pagina.",
     seoTitle: "Organizzare pagine PDF – Riordina, ruota, elimina",
     seoDescription:
       "Organizzare PDF nel browser: riordina, ruota ed elimina le pagine con le anteprime e scarica il nuovo PDF. Gratis, privato, nessun upload.",
@@ -4482,7 +4482,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Posso aggiungere pagine da un altro PDF?",
-        answer: "Prima combina i file con Unisci PDF, poi organizza qui il file unito.",
+        answer: "Sì. Indica dove vanno in Inserisci le nuove pagine dopo la pagina, poi scegli Aggiungi pagine da un altro PDF. Le sue pagine vengono aggiunte lì e puoi spostarle, ruotarle o eliminarle come le altre.",
       },
       {
         question: "Posso usare un PDF protetto da password?",
@@ -4649,7 +4649,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Filigrana PDF",
     tagline: "Applica un testo o un logo sulle pagine di un PDF, poi trascinalo al suo posto. Funziona sul tuo dispositivo.",
     intro:
-      "Filigrana PDF aggiunge alle pagine di un PDF un timbro come RISERVATO, BOZZA, il tuo nome o il tuo logo. Scrivi il testo in qualsiasi lingua o scegli un’immagine del logo, poi imposta dimensione, opacità e angolo e trascinalo dove vuoi sull’anteprima della pagina, oppure usa i cursori di posizione. Applicalo a tutte le pagine o a un intervallo di pagine. La filigrana viene aggiunta nel tuo browser, quindi il documento non viene mai caricato.",
+      "Filigrana PDF aggiunge alle pagine di un PDF un timbro come RISERVATO, BOZZA, il tuo nome o il tuo logo. Scrivi il testo in qualsiasi lingua o scegli un’immagine del logo, poi imposta dimensione, opacità e angolo e trascinalo dove vuoi sull’anteprima della pagina, oppure usa i cursori di posizione. Applicalo a tutte le pagine o a un intervallo di pagine. La filigrana viene aggiunta nel tuo browser, quindi il documento non viene mai caricato. Ripetila su tutta la pagina o mettila dietro il testo, così resta perfettamente leggibile.",
     seoTitle: "Filigrana PDF online – Testo o logo, gratis",
     seoDescription:
       "Aggiungere una filigrana a un PDF nel browser: testo o logo, con dimensione, opacità e angolo, da trascinare al suo posto. Gratis, privato, nessun upload.",
@@ -4672,7 +4672,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Posizionala",
-        description: "Imposta dimensione, opacità e angolo, poi trascinala sull’anteprima o usa i cursori.",
+        description: "Imposta dimensione, opacità e angolo, poi trascinala sull’anteprima o usa i cursori. Spunta Ripeti su tutta la pagina per un motivo su tutta la pagina.",
       },
       {
         title: "Scarica",
@@ -4701,7 +4701,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "La filigrana si può rimuovere in seguito?",
         answer:
-          "Viene aggiunta come immagine sopra la pagina. Chi ha un editor PDF potrebbe comunque rimuoverla, quindi una filigrana scoraggia la copia più che impedirla.",
+          "Viene aggiunta come immagine sulla pagina, sopra o dietro il testo. Con un editor PDF si potrebbe ancora rimuovere: una filigrana scoraggia la copia, non la impedisce.",
       },
       {
         question: "Posso applicare la filigrana solo ad alcune pagine?",
@@ -4710,7 +4710,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "La filigrana copre il testo?",
         answer:
-          "Abbassa l’opacità per mantenere la pagina leggibile. Il 15–30% è il valore tipico per le filigrane diagonali.",
+          "No, se spunti Dietro testo e immagini: il testo resta sopra. Sopra la pagina, abbassa l’opacità per mantenerla leggibile; 15–30% è tipico per le filigrane diagonali. Una pagina scansionata è un’unica immagine, quindi per le scansioni mettila sopra.",
       },
       {
         question: "Posso usare un PDF protetto da password?",

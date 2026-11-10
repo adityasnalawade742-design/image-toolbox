@@ -832,6 +832,13 @@ export const strings = {
   // ===== Organize PDF =====
   'ctl.organize.hint': '各ページの下のボタンで、移動、回転、削除ができます。ページをドラッグして並べ替えることもできます。',
   'ctl.organize.reset': 'すべての変更を元に戻す',
+  'ctl.organize.insertAfter': "新しいページを挿入する位置（このページの後）",
+  'ctl.organize.insertHint': "0なら先頭、{n}なら末尾に入ります。",
+  'ctl.organize.addBlank': "白紙のページを追加",
+  'ctl.organize.addPdf': "別のPDFからページを追加",
+  'ctl.organize.blankPage': "白紙のページ",
+  'ctl.organize.inserted': "{n}ページを追加しました。",
+  'ctl.organize.inserted.one': "1ページを追加しました。",
 
   // ===== Rotate PDF =====
   'ctl.rotatepdf.angle': '回転角度',
@@ -862,6 +869,10 @@ export const strings = {
   'ctl.pdfwm.size': 'ページ上の幅',
   'ctl.pdfwm.text': '透かしの文字',
   'ctl.pdfwm.dragHint': 'ページ上の透かしをドラッグするか、スライダーを使ってください。',
+  'ctl.pdfwm.tile': "ページ全体に繰り返す",
+  'ctl.pdfwm.gap': "間隔",
+  'ctl.pdfwm.behind': "文字や画像の背面に置く",
+  'ctl.pdfwm.behindHint': "文字は前面に残り、読みやすいままです。スキャンしたページは1枚の画像なので、背面の透かしは隠れます。",
 
   // ===== Sign PDF =====
   'ctl.sign.source': '署名',

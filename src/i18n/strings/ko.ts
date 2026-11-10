@@ -827,6 +827,13 @@ export const strings = {
   // ===== Organize PDF =====
   'ctl.organize.hint': '각 페이지 아래의 버튼으로 옮기거나, 회전하거나, 삭제하세요. 페이지를 끌어서 순서를 바꿀 수도 있어요.',
   'ctl.organize.reset': '모든 변경 취소',
+  'ctl.organize.insertAfter': "새 페이지를 넣을 위치 (이 페이지 뒤)",
+  'ctl.organize.insertHint': "0이면 맨 앞, {n}이면 맨 뒤에 들어가요.",
+  'ctl.organize.addBlank': "빈 페이지 추가",
+  'ctl.organize.addPdf': "다른 PDF에서 페이지 추가",
+  'ctl.organize.blankPage': "빈 페이지",
+  'ctl.organize.inserted': "{n}페이지를 추가했어요.",
+  'ctl.organize.inserted.one': "1페이지를 추가했어요.",
 
   // ===== Rotate PDF =====
   'ctl.rotatepdf.angle': '회전 각도',
@@ -857,6 +864,10 @@ export const strings = {
   'ctl.pdfwm.size': '페이지에서의 너비',
   'ctl.pdfwm.text': '워터마크 텍스트',
   'ctl.pdfwm.dragHint': '페이지에서 워터마크를 끌거나 슬라이더를 쓰세요.',
+  'ctl.pdfwm.tile': "페이지 전체에 반복",
+  'ctl.pdfwm.gap': "간격",
+  'ctl.pdfwm.behind': "글자와 그림 뒤에 놓기",
+  'ctl.pdfwm.behindHint': "글자는 위에 그대로 있어 잘 읽혀요. 스캔한 페이지는 그림 한 장이라 뒤에 놓은 워터마크가 가려져요.",
 
   // ===== Sign PDF =====
   'ctl.sign.source': '서명',
