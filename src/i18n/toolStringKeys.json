@@ -3023,7 +3023,9 @@
    "ctl.qr.size"
   ],
   "social-media-image-resizer": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3059,11 +3061,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "instagram-post-resizer": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3099,11 +3104,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "instagram-story-resizer": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3139,11 +3147,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "youtube-thumbnail-maker": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3179,11 +3190,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "youtube-banner-maker": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3219,11 +3233,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "facebook-cover-maker": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3259,11 +3276,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "linkedin-banner-maker": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3299,11 +3319,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "pinterest-pin-resizer": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3339,11 +3362,14 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],
   "open-graph-image-maker": [
+   "ctl.social.addText",
    "ctl.social.background",
+   "ctl.social.badgeHint",
    "ctl.social.bgBlur",
    "ctl.social.bgColor",
    "ctl.social.dragHint",
@@ -3379,6 +3405,7 @@
    "ctl.social.saved",
    "ctl.social.size",
    "ctl.social.soft",
+   "ctl.social.textDefault",
    "ctl.social.whole",
    "ctl.social.zoom"
   ],

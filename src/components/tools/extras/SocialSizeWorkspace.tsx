@@ -6,7 +6,9 @@ import { PdfToolLayout } from '../../shared/PdfToolLayout';
 import { FullSizeView, blobImage, formatKB, urlImage } from '../../shared/MediaViewer';
 import { useT } from '../../shared/I18nContext';
 import type { StringKey } from '../../../i18n/strings';
-import { canvasToBlob, downloadBlob } from '../../../lib/canvas/engine';
+import { canvasToBlob, downloadBlob, drawTextOverlay, type TextOverlayOptions } from '../../../lib/canvas/engine';
+import { TextControls } from '../TextControls';
+import { InteractiveTextOverlay } from '../InteractiveTextOverlay';
 import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { searchQuality } from '../../../lib/canvas/targetSize';
 import { outputFileName } from '../../../lib/storage/fileNames';
@@ -52,6 +54,10 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
   const [bg, setBg] = useState<'blur' | 'color'>('blur');
   const [color, setColor] = useState('#ffffff');
   const [guides, setGuides] = useState(true);
+  // Text on the picture: a title for a thumbnail, a channel name on a banner. Off until asked for
+  const [textOn, setTextOn] = useState(false);
+  const [texts, setTexts] = useState<TextOverlayOptions[]>([]);
+  const [activeText, setActiveText] = useState(0);
   const [format, setFormat] = useState<SaveFormat>('image/jpeg');
   const [quality, setQuality] = useState(90);
   const [busy, setBusy] = useState(false);
@@ -83,15 +89,49 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
   };
   useImageIntake(load);
 
+  const shownTexts = textOn ? texts : [];
+  // Text sizes are in the saved picture's pixels; the preview draws them at its own scale
+  const drawTexts = (c: HTMLCanvasElement, layers: TextOverlayOptions[]) => {
+    const ctx = c.getContext('2d')!;
+    const scale = c.width / W;
+    for (const layer of layers) drawTextOverlay(ctx, c.width, c.height, { ...layer, scale });
+  };
+
   // The preview is a smaller copy; guides are drawn over it in the page and never reach the saved picture
   useEffect(() => {
     if (!src || !canvasRef.current) return;
     const scale = Math.min(1, PREVIEW_MAX / Math.max(W, H));
     renderSocial(canvasRef.current, src.img, Math.round(W * scale), Math.round(H * scale), options);
+    drawTexts(canvasRef.current, shownTexts);
     setStatus('');
     // options is rebuilt from these values every render
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [src, W, H, mode, zoom, fx, fy, bg, color]);
+  }, [src, W, H, mode, zoom, fx, fy, bg, color, textOn, texts]);
+
+  /** A first title: big, bold, white with a dark outline, sized to the picture so it reads at thumbnail size */
+  const startText = () => {
+    if (!texts.length) {
+      const size = Math.max(24, Math.min(240, Math.round(Math.min(H, W) * (H > W ? 0.07 : 0.12))));
+      setTexts([{
+        text: t('ctl.social.textDefault'),
+        fontFamily: 'Impact, sans-serif',
+        fontSize: size,
+        color: '#ffffff',
+        opacity: 1,
+        position: 'custom',
+        customXPercent: 50,
+        customYPercent: 50,
+        bold: true,
+        italic: false,
+        textAlign: 'center',
+        dropShadow: true,
+        strokeColor: '#000000',
+        strokeWidth: Math.max(2, Math.round(size * 0.08)),
+      }]);
+      setActiveText(0);
+    }
+    setTextOn(true);
+  };
 
   if (!src) {
     return (
@@ -111,6 +151,7 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
   const build = async (): Promise<Blob> => {
     const c = document.createElement('canvas');
     renderSocial(c, src.img, W, H, options);
+    drawTexts(c, shownTexts);
     const encode = (q: number) => canvasToBlob(c, format, q, undefined, { best: true });
     if (!preset.maxBytes || format === 'image/png') return encode(quality / 100);
     const { fit, smallest } = await searchQuality(encode, preset.maxBytes, { max: quality / 100 });
@@ -207,7 +248,15 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
         {slider('social-y', t('ctl.social.posY'), fy, setFy, 0, 100)}
       </div>
 
-      {preset.safe && (
+      <div className="space-y-3 pt-4 border-t border-ink">
+        <label className="flex items-center gap-2 min-h-[40px] text-[15px] text-ink cursor-pointer">
+          <input type="checkbox" checked={textOn} onChange={(e) => (e.target.checked ? startText() : setTextOn(false))} className="w-5 h-5" />
+          {t('ctl.social.addText')}
+        </label>
+        {textOn && texts.length > 0 && <TextControls layers={texts} active={activeText} onSelect={setActiveText} onChange={setTexts} />}
+      </div>
+
+      {(preset.safe || preset.badge) && (
         <label className="flex items-center gap-2 min-h-[40px] text-[15px] text-ink cursor-pointer">
           <input type="checkbox" checked={guides} onChange={(e) => setGuides(e.target.checked)} className="w-5 h-5" />
           {t('ctl.social.guides')}
@@ -283,9 +332,39 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
                 aria-hidden="true"
               />
             )}
+            {guides && preset.badge && (
+              <div
+                className="absolute border-2 border-dashed border-white pointer-events-none flex items-center justify-center"
+                style={{
+                  left: `${(preset.badge.x / W) * 100}%`,
+                  top: `${(preset.badge.y / H) * 100}%`,
+                  width: `${(preset.badge.w / W) * 100}%`,
+                  height: `${(preset.badge.h / H) * 100}%`,
+                  boxShadow: '0 0 0 1px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.6)',
+                  background: 'rgba(0,0,0,.35)',
+                }}
+                aria-hidden="true"
+              >
+                <span className="text-white text-[11px] font-semibold tabular-nums">12:34</span>
+              </div>
+            )}
+            {textOn && canvasRef.current && (
+              <InteractiveTextOverlay
+                canvasElement={canvasRef.current}
+                layers={texts.map((l) => ({ ...l, scale: canvasRef.current!.width / W }))}
+                active={activeText}
+                onSelect={setActiveText}
+                // Dragging changes only where a text sits; its sizes stay in the saved picture's pixels
+                onChange={(next) => setTexts(next.map(({ scale: _scale, ...l }) => l))}
+              />
+            )}
           </div>
         </div>
-        <p className="text-[14px] text-graphite">{t('ctl.social.dragHint')}{guides && preset.safe ? ` ${t('ctl.social.guideHint')}` : ''}</p>
+        <p className="text-[14px] text-graphite">
+          {t('ctl.social.dragHint')}
+          {guides && preset.safe ? ` ${t('ctl.social.guideHint')}` : ''}
+          {guides && preset.badge ? ` ${t('ctl.social.badgeHint')}` : ''}
+        </p>
         {soft && <p className="text-[14px] text-accent-yellow">{t('ctl.social.soft', { width: src.width, height: src.height })}</p>}
       </PdfToolLayout>
     </>
