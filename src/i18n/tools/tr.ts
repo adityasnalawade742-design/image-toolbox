@@ -2650,7 +2650,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Arka Planı Sil",
     tagline: "Cihazınızda çalışan yapay zekâ ile fotoğrafın arka planını kaldırın ve saydam bir PNG kaydedin.",
     intro:
-      "Arka Plan Kaldırma, bir fotoğrafın ana konusunu keser ve arkasındaki her şeyi kaldırır. Tarayıcınızda çalışan bir yapay zekâ modeli kullanır, bu yüzden resimleriniz cihazınızdan asla çıkmaz. İki model arasından seçim yapabilirsiniz: Hızlı, çabuk çalışan ve insan fotoğrafları için en uygun olan daha küçük bir modeldir; En iyi kalite ise ürünler, evcil hayvanlar ve nesneler dahil her konuda daha iyi sonuç veren daha büyük bir modeldir. Sonucu saydam bir PNG olarak kaydedin veya düz bir rengin üzerine yerleştirin.",
+      "Arka Plan Kaldırma, bir fotoğrafın ana konusunu keser ve arkasındaki her şeyi kaldırır. Tarayıcınızda çalışan bir yapay zekâ modeli kullanır, bu yüzden resimleriniz cihazınızdan asla çıkmaz. İki model arasından seçim yapabilirsiniz: Hızlı, çabuk çalışan ve insan fotoğrafları için en uygun olan daha küçük bir modeldir; En iyi kalite ise ürünler, evcil hayvanlar ve nesneler dahil her konuda daha iyi sonuç veren daha büyük bir modeldir. Sonucu saydam bir PNG olarak kaydedin veya düz bir rengin üzerine yerleştirin. Yapay zekâ bir tutam saçı kaçırır ya da arka plandan bir parça bırakırsa, silme ve geri getirme fırçasıyla düzeltin.",
     seoTitle: "Arka Plan Silme – Ücretsiz, Cihazınızda Çalışır",
     seoDescription:
       "Arka plan silme ücretsiz; yapay zekâ tarayıcınızda çalışır. Hızlı modeli veya en iyi kaliteyi seçin, saydam PNG kaydedin. Fotoğraflarınız cihazınızda kalır.",
@@ -2730,7 +2730,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bazı kenarlar neden kusursuz değil?",
         answer:
-          "İnce saçlar, tüyler, cam ve arka planla benzer renklere sahip konular her model için zordur. En iyi kalite seçeneğini deneyin veya konu ile arka plan arasında belirgin kontrast olan bir fotoğraf kullanın.",
+          "İnce saçlar, tüyler, cam ve arka planla benzer renklere sahip konular her model için zordur. En iyi kalite seçeneğini deneyin veya konu ile arka plan arasında belirgin kontrast olan bir fotoğraf kullanın. Bunları elle de düzeltebilirsiniz: “Fırçayla sil veya geri getir”i seçerek kalan arka planı silin ya da eksik saçları ve kenarları fotoğraftan geri getirin; geri alma da var.",
       },
     ],
   },
@@ -5908,7 +5908,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Arka Planı Bulanıklaştır",
     tagline: "Bir fotoğrafın arka planını portre modundaki bir kamera gibi bulanıklaştırın, kişiyi net tutun. Cihazınızda çalışır.",
     intro:
-      "Arka Plan Bulanıklaştırma, her fotoğrafa portre modundaki bir kameranın yumuşak, odak dışı arka planını verir. Bir yapay zekâ modeli kişiyi cihazınızda bulur, ardından özne net kalırken arka plan bulanıklaştırılır ve kenarlarda bulanık bir hale oluşmaz. Bir kaydırıcı bulanıklığın gücünü ayarlar; sonucu JPG veya PNG olarak kaydedersiniz. Hiçbir şey yüklenmez: fotoğraf da model de tarayıcınızda kalır.",
+      "Arka Plan Bulanıklaştırma, her fotoğrafa portre modundaki bir kameranın yumuşak, odak dışı arka planını verir. Bir yapay zekâ modeli kişiyi cihazınızda bulur, ardından özne net kalırken arka plan bulanıklaştırılır ve kenarlarda bulanık bir hale oluşmaz. Bir kaydırıcı bulanıklığın gücünü ayarlar; sonucu JPG veya PNG olarak kaydedersiniz. Hiçbir şey yüklenmez: fotoğraf da model de tarayıcınızda kalır. Yapay zekâ bir tutam saçı kaçırır ya da arka plandan bir parça bırakırsa, silme ve geri getirme fırçasıyla düzeltin.",
     seoTitle: "Arka Planı Bulanıklaştırma – Ücretsiz Portre Efekti",
     seoDescription:
       "Arka planı bulanıklaştırma: fotoğrafın arka planını online bulanıklaştırın, kişiyi portre modundaki gibi net tutun. Güç ayarlanabilir, ücretsiz ve gizli.",
@@ -5984,7 +5984,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Arka Planı Değiştir",
     tagline: "Bir fotoğrafın arka planını bir renkle veya başka bir resimle değiştirin. Özne cihazınızda kesilip çıkarılır.",
     intro:
-      "Arka Plan Değiştirme, bir fotoğrafın arka planını düz bir renkle veya seçtiğiniz bir resimle değiştirir. Bir yapay zekâ modeli kişiyi cihazınızda kesip çıkarır, ardından onu çerçeveyi dolduracak şekilde ölçeklenen yeni arka planın üzerine yerleştirir. Temiz bir ürün veya profil görünümü için beyazı, renk seçiciden herhangi bir rengi ya da kendi arka plan resminizi seçin ve JPG veya PNG olarak indirin. Fotoğraf asla yüklenmez.",
+      "Arka Plan Değiştirme, bir fotoğrafın arka planını düz bir renkle veya seçtiğiniz bir resimle değiştirir. Bir yapay zekâ modeli kişiyi cihazınızda kesip çıkarır, ardından onu çerçeveyi dolduracak şekilde ölçeklenen yeni arka planın üzerine yerleştirir. Temiz bir ürün veya profil görünümü için beyazı, renk seçiciden herhangi bir rengi ya da kendi arka plan resminizi seçin ve JPG veya PNG olarak indirin. Fotoğraf asla yüklenmez. Yapay zekâ bir tutam saçı kaçırır ya da arka plandan bir parça bırakırsa, silme ve geri getirme fırçasıyla düzeltin.",
     seoTitle: "Fotoğraf Arka Planı Değiştirme – Renk veya Resim",
     seoDescription:
       "Arka plan değiştirme: fotoğrafın arka planını beyaz, istediğiniz bir renk veya kendi resminiz yapın. Özne tarayıcıda kesilir. Ücretsiz, gizli, kayıt yok.",

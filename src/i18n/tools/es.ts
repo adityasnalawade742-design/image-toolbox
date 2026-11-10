@@ -2650,7 +2650,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Quitar fondo",
     tagline: "Quita el fondo de una foto con IA que funciona en tu dispositivo y guarda un PNG transparente.",
     intro:
-      "Quitar fondo recorta el sujeto principal de una foto y elimina todo lo que hay detrás. Usa un modelo de IA que funciona en tu navegador, así que tus imágenes nunca salen de tu dispositivo. Elige Rápido, un modelo más pequeño, ágil e ideal para fotos de personas, o Máxima calidad, un modelo más grande con mejores resultados en cualquier sujeto, incluidos productos, mascotas y objetos. Guarda el resultado como PNG transparente o ponlo sobre un color sólido.",
+      "Quitar fondo recorta el sujeto principal de una foto y elimina todo lo que hay detrás. Usa un modelo de IA que funciona en tu navegador, así que tus imágenes nunca salen de tu dispositivo. Elige Rápido, un modelo más pequeño, ágil e ideal para fotos de personas, o Máxima calidad, un modelo más grande con mejores resultados en cualquier sujeto, incluidos productos, mascotas y objetos. Guarda el resultado como PNG transparente o ponlo sobre un color sólido. Si la IA se deja un mechón de pelo o un trozo de fondo, corrígelo con el pincel de borrar y recuperar.",
     seoTitle: "Quitar fondo de imagen gratis, en tu dispositivo",
     seoDescription:
       "Quitar fondo de imagen gratis con IA en tu navegador: elige modelo rápido o máxima calidad y guarda un PNG transparente. Tus fotos no salen de tu dispositivo.",
@@ -2730,7 +2730,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Por qué algunos bordes no quedan perfectos?",
         answer:
-          "El pelo fino, el pelaje, el cristal y los sujetos con colores parecidos al fondo son difíciles para cualquier modelo. Prueba Máxima calidad o usa una foto con un contraste claro entre el sujeto y el fondo.",
+          "El pelo fino, el pelaje, el cristal y los sujetos con colores parecidos al fondo son difíciles para cualquier modelo. Prueba Máxima calidad o usa una foto con un contraste claro entre el sujeto y el fondo. También puedes corregirlos a mano: elige «Borrar o recuperar con un pincel» para quitar restos de fondo o recuperar de la foto el pelo y los bordes que falten, con opción de deshacer.",
       },
     ],
   },
@@ -5897,7 +5897,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Desenfocar fondo",
     tagline: "Desenfoca el fondo de una foto como el modo retrato de una cámara y mantén a la persona nítida. Funciona en tu dispositivo.",
     intro:
-      "Desenfocar fondo da a cualquier foto el fondo suave y desenfocado del modo retrato de una cámara. Un modelo de IA encuentra a la persona en tu dispositivo y luego desenfoca el fondo mientras el sujeto se mantiene nítido, sin halo borroso alrededor de los bordes. Un control deslizante ajusta la intensidad del desenfoque, y guardas el resultado como JPG o PNG. No se sube nada: la foto y el modelo se quedan en tu navegador.",
+      "Desenfocar fondo da a cualquier foto el fondo suave y desenfocado del modo retrato de una cámara. Un modelo de IA encuentra a la persona en tu dispositivo y luego desenfoca el fondo mientras el sujeto se mantiene nítido, sin halo borroso alrededor de los bordes. Un control deslizante ajusta la intensidad del desenfoque, y guardas el resultado como JPG o PNG. No se sube nada: la foto y el modelo se quedan en tu navegador. Si la IA se deja un mechón de pelo o un trozo de fondo, corrígelo con el pincel de borrar y recuperar.",
     seoTitle: "Desenfocar fondo de foto online – Efecto retrato gratis",
     seoDescription:
       "Desenfocar fondo de una foto online y mantener a la persona nítida, como en modo retrato. Intensidad ajustable, funciona en tu navegador, gratis y privado.",
@@ -5973,7 +5973,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Cambiar fondo",
     tagline: "Sustituye el fondo de una foto por un color u otra imagen. El sujeto se recorta en tu dispositivo.",
     intro:
-      "Cambiar fondo sustituye el fondo de una foto por un color sólido o una imagen que elijas. Un modelo de IA recorta a la persona en tu dispositivo y luego la coloca sobre el nuevo fondo, escalado para llenar todo el encuadre. Elige blanco para un aspecto limpio de producto o de perfil, cualquier color del selector o tu propia imagen de fondo, y descarga el resultado como JPG o PNG. La foto nunca se sube.",
+      "Cambiar fondo sustituye el fondo de una foto por un color sólido o una imagen que elijas. Un modelo de IA recorta a la persona en tu dispositivo y luego la coloca sobre el nuevo fondo, escalado para llenar todo el encuadre. Elige blanco para un aspecto limpio de producto o de perfil, cualquier color del selector o tu propia imagen de fondo, y descarga el resultado como JPG o PNG. La foto nunca se sube. Si la IA se deja un mechón de pelo o un trozo de fondo, corrígelo con el pincel de borrar y recuperar.",
     seoTitle: "Cambiar fondo de foto online – Color o imagen, gratis",
     seoDescription:
       "Cambiar fondo de una foto a blanco, a cualquier color o a tu propia imagen. El sujeto se recorta en tu navegador. Gratis, privado y sin registro.",

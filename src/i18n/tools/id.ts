@@ -2653,7 +2653,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Hapus BG",
     tagline: "Hapus background foto dengan AI yang berjalan di perangkat Anda, lalu simpan sebagai PNG transparan.",
     intro:
-      "Hapus Background memisahkan subjek utama foto dan menghapus semua yang ada di belakangnya. Alat ini memakai model AI yang berjalan di browser Anda, jadi gambar Anda tidak pernah meninggalkan perangkat. Pilih Cepat, model lebih kecil yang cepat dan paling cocok untuk foto orang, atau Kualitas terbaik, model lebih besar dengan hasil lebih baik untuk subjek apa pun, termasuk produk, hewan peliharaan, dan objek. Simpan hasilnya sebagai PNG transparan, atau taruh di atas warna polos.",
+      "Hapus Background memisahkan subjek utama foto dan menghapus semua yang ada di belakangnya. Alat ini memakai model AI yang berjalan di browser Anda, jadi gambar Anda tidak pernah meninggalkan perangkat. Pilih Cepat, model lebih kecil yang cepat dan paling cocok untuk foto orang, atau Kualitas terbaik, model lebih besar dengan hasil lebih baik untuk subjek apa pun, termasuk produk, hewan peliharaan, dan objek. Simpan hasilnya sebagai PNG transparan, atau taruh di atas warna polos. Jika AI melewatkan helai rambut atau menyisakan sedikit latar, perbaiki dengan kuas hapus dan pulihkan.",
     seoTitle: "Hapus Background Foto – Gratis, di Perangkat Anda",
     seoDescription:
       "Hapus background foto gratis dengan AI di browser Anda. Pilih model Cepat atau Kualitas terbaik, lalu simpan PNG transparan. Foto tetap di perangkat Anda.",
@@ -2733,7 +2733,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kenapa beberapa tepian tidak sempurna?",
         answer:
-          "Rambut halus, bulu, kaca, dan subjek dengan warna yang mirip dengan background sulit bagi model mana pun. Coba Kualitas terbaik, atau pakai foto dengan kontras yang jelas antara subjek dan background.",
+          "Rambut halus, bulu, kaca, dan subjek dengan warna yang mirip dengan background sulit bagi model mana pun. Coba Kualitas terbaik, atau pakai foto dengan kontras yang jelas antara subjek dan background. Anda juga bisa memperbaikinya secara manual: pilih “Hapus atau pulihkan dengan kuas” untuk menghapus sisa latar atau mengembalikan rambut dan tepi yang hilang dari foto, dengan fitur urungkan.",
       },
     ],
   },
@@ -5894,7 +5894,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Blur Background",
     tagline: "Blur background foto seperti kamera mode potret, dengan orangnya tetap tajam. Berjalan di perangkat Anda.",
     intro:
-      "Blur Background memberi foto apa pun background lembut yang tidak fokus, seperti hasil kamera mode potret. Model AI menemukan orang di foto langsung di perangkat Anda, lalu background di-blur sementara subjeknya tetap tajam, tanpa lingkaran kabur (halo) di sekitar tepinya. Slider mengatur seberapa kuat blur-nya, dan Anda menyimpan hasilnya sebagai JPG atau PNG. Tidak ada yang diunggah: foto dan modelnya tetap berada di browser Anda.",
+      "Blur Background memberi foto apa pun background lembut yang tidak fokus, seperti hasil kamera mode potret. Model AI menemukan orang di foto langsung di perangkat Anda, lalu background di-blur sementara subjeknya tetap tajam, tanpa lingkaran kabur (halo) di sekitar tepinya. Slider mengatur seberapa kuat blur-nya, dan Anda menyimpan hasilnya sebagai JPG atau PNG. Tidak ada yang diunggah: foto dan modelnya tetap berada di browser Anda. Jika AI melewatkan helai rambut atau menyisakan sedikit latar, perbaiki dengan kuas hapus dan pulihkan.",
     seoTitle: "Blur Background Foto Online – Efek Potret Gratis",
     seoDescription:
       "Blur background foto online dan biarkan orangnya tetap tajam, seperti mode potret. Kekuatan blur bisa diatur, berjalan di browser Anda, gratis dan privat.",
@@ -5970,7 +5970,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Ganti Background",
     tagline: "Ganti background foto dengan warna atau gambar lain. Subjeknya dipotong di perangkat Anda.",
     intro:
-      "Ganti Background menukar background foto dengan warna polos atau gambar pilihan Anda. Model AI memotong orang di foto langsung di perangkat Anda, lalu menempatkannya di atas background baru yang diskalakan untuk memenuhi bingkai. Pilih putih untuk tampilan produk atau foto profil yang bersih, warna apa pun dari pemilih warna, atau gambar background Anda sendiri, lalu unduh sebagai JPG atau PNG. Foto tidak pernah diunggah.",
+      "Ganti Background menukar background foto dengan warna polos atau gambar pilihan Anda. Model AI memotong orang di foto langsung di perangkat Anda, lalu menempatkannya di atas background baru yang diskalakan untuk memenuhi bingkai. Pilih putih untuk tampilan produk atau foto profil yang bersih, warna apa pun dari pemilih warna, atau gambar background Anda sendiri, lalu unduh sebagai JPG atau PNG. Foto tidak pernah diunggah. Jika AI melewatkan helai rambut atau menyisakan sedikit latar, perbaiki dengan kuas hapus dan pulihkan.",
     seoTitle: "Ganti Background Foto Online – Warna atau Gambar, Gratis",
     seoDescription:
       "Ganti background foto jadi putih, warna apa pun, atau gambar Anda sendiri. Subjek dipotong di browser Anda. Gratis, privat, tanpa perlu daftar akun.",

@@ -2650,7 +2650,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Freistellen",
     tagline: "Entferne den Hintergrund eines Fotos mit KI, die auf deinem Gerät läuft, und speichere ein transparentes PNG.",
     intro:
-      "Hintergrund entfernen stellt das Hauptmotiv eines Fotos frei und entfernt alles dahinter. Dafür nutzt es ein KI-Modell, das in deinem Browser läuft, deine Bilder verlassen also nie dein Gerät. Wähle „Schnell“, ein kleineres Modell, das flott arbeitet und sich am besten für Fotos von Menschen eignet, oder „Beste Qualität“, ein größeres Modell mit besseren Ergebnissen bei jedem Motiv, auch bei Produkten, Haustieren und Objekten. Speichere das Ergebnis als transparentes PNG oder setze es auf eine Volltonfarbe.",
+      "Hintergrund entfernen stellt das Hauptmotiv eines Fotos frei und entfernt alles dahinter. Dafür nutzt es ein KI-Modell, das in deinem Browser läuft, deine Bilder verlassen also nie dein Gerät. Wähle „Schnell“, ein kleineres Modell, das flott arbeitet und sich am besten für Fotos von Menschen eignet, oder „Beste Qualität“, ein größeres Modell mit besseren Ergebnissen bei jedem Motiv, auch bei Produkten, Haustieren und Objekten. Speichere das Ergebnis als transparentes PNG oder setze es auf eine Volltonfarbe. Übersieht die KI eine Haarsträhne oder lässt ein Stück Hintergrund stehen, korrigierst du das mit dem Pinsel zum Radieren und Zurückholen.",
     seoTitle: "Hintergrund entfernen – kostenlos, auf deinem Gerät",
     seoDescription:
       "Hintergrund entfernen, kostenlos mit KI im Browser: schnelles Modell oder beste Qualität wählen, transparentes PNG speichern. Fotos bleiben auf deinem Gerät.",
@@ -2730,7 +2730,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Warum sind manche Kanten nicht perfekt?",
         answer:
-          "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch „Beste Qualität“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund.",
+          "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch „Beste Qualität“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund. Du kannst sie auch von Hand korrigieren: Wähle „Mit dem Pinsel radieren oder zurückholen“, um Hintergrundreste zu entfernen oder fehlende Haare und Kanten aus dem Foto zurückzuholen, mit Rückgängig.",
       },
     ],
   },
@@ -5919,7 +5919,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Hintergrund unscharf",
     tagline: "Mach den Hintergrund eines Fotos unscharf wie mit dem Porträtmodus einer Kamera, die Person bleibt scharf. Läuft auf deinem Gerät.",
     intro:
-      "Hintergrund unscharf machen gibt jedem Foto den weichen, unscharfen Hintergrund des Porträtmodus einer Kamera. Ein KI-Modell findet die Person auf deinem Gerät, dann wird der Hintergrund weichgezeichnet, während das Motiv scharf bleibt, ohne verschwommenen Lichthof an den Kanten. Mit einem Regler stellst du ein, wie stark die Unschärfe ist, und speicherst das Ergebnis als JPG oder PNG. Nichts wird hochgeladen: Das Foto und das Modell bleiben beide in deinem Browser.",
+      "Hintergrund unscharf machen gibt jedem Foto den weichen, unscharfen Hintergrund des Porträtmodus einer Kamera. Ein KI-Modell findet die Person auf deinem Gerät, dann wird der Hintergrund weichgezeichnet, während das Motiv scharf bleibt, ohne verschwommenen Lichthof an den Kanten. Mit einem Regler stellst du ein, wie stark die Unschärfe ist, und speicherst das Ergebnis als JPG oder PNG. Nichts wird hochgeladen: Das Foto und das Modell bleiben beide in deinem Browser. Übersieht die KI eine Haarsträhne oder lässt ein Stück Hintergrund stehen, korrigierst du das mit dem Pinsel zum Radieren und Zurückholen.",
     seoTitle: "Hintergrund unscharf machen – Porträt-Effekt online",
     seoDescription:
       "Hintergrund unscharf machen: Verwisch den Hintergrund eines Fotos online, die Person bleibt scharf wie im Porträtmodus. Stärke einstellbar, kostenlos, privat.",
@@ -5995,7 +5995,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Hintergrund ändern",
     tagline: "Ersetz den Hintergrund eines Fotos durch eine Farbe oder ein anderes Bild. Das Motiv wird auf deinem Gerät freigestellt.",
     intro:
-      "Hintergrund ändern tauscht den Hintergrund eines Fotos gegen eine Volltonfarbe oder ein Bild deiner Wahl. Ein KI-Modell stellt die Person auf deinem Gerät frei und setzt sie dann auf den neuen Hintergrund, so skaliert, dass er das ganze Bild füllt. Wähl Weiß für einen sauberen Produkt- oder Profil-Look, eine beliebige Farbe aus der Farbauswahl oder ein eigenes Hintergrundbild, und lade das Ergebnis als JPG oder PNG herunter. Das Foto wird nie hochgeladen.",
+      "Hintergrund ändern tauscht den Hintergrund eines Fotos gegen eine Volltonfarbe oder ein Bild deiner Wahl. Ein KI-Modell stellt die Person auf deinem Gerät frei und setzt sie dann auf den neuen Hintergrund, so skaliert, dass er das ganze Bild füllt. Wähl Weiß für einen sauberen Produkt- oder Profil-Look, eine beliebige Farbe aus der Farbauswahl oder ein eigenes Hintergrundbild, und lade das Ergebnis als JPG oder PNG herunter. Das Foto wird nie hochgeladen. Übersieht die KI eine Haarsträhne oder lässt ein Stück Hintergrund stehen, korrigierst du das mit dem Pinsel zum Radieren und Zurückholen.",
     seoTitle: "Foto-Hintergrund ändern – Farbe oder Bild, kostenlos",
     seoDescription:
       "Hintergrund ändern: Setz dein Foto online auf Weiß, eine beliebige Farbe oder ein eigenes Bild. Das Motiv wird im Browser freigestellt. Kostenlos und privat.",

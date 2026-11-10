@@ -2649,7 +2649,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Remove Background",
     "shortName": "Remove BG",
     "tagline": "Remove the background from a photo with AI that runs on your device, and save a transparent PNG.",
-    "intro": "Remove Background cuts out the main subject of a photo and removes everything behind it, using an AI model that runs in your browser, so your images never leave your device. Choose Fast, a smaller model that is quick and best for photos of people, or Best quality, a larger model with better results on any subject, including products, pets and objects. Save the result as a transparent PNG, or put it on a solid color.",
+    "intro": "Remove Background cuts out the main subject of a photo and removes everything behind it, using an AI model that runs in your browser, so your images never leave your device. Choose Fast, a smaller model that is quick and best for photos of people, or Best quality, a larger model with better results on any subject, including products, pets and objects. Save the result as a transparent PNG, or put it on a solid color. If the AI misses a strand of hair or leaves a bit of background, fix it with the erase and restore brush.",
     "seoTitle": "Remove Background from Image – Free, On-Device",
     "seoDescription": "Remove image backgrounds for free with AI that runs in your browser. Pick a fast model or best quality, then save a transparent PNG. Photos stay on your device.",
     "keywords": [
@@ -2720,7 +2720,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Why are some edges not perfect?",
-        "answer": "Fine hair, fur, glass, and subjects with colors similar to the background are hard for any model. Try Best quality, or use a photo with clear contrast between the subject and the background."
+        "answer": "Fine hair, fur, glass, and subjects with colors similar to the background are hard for any model. Try Best quality, or use a photo with clear contrast between the subject and the background. You can also fix them by hand: choose “Erase or restore with a brush” to remove leftover background or paint back missed hair and edges from the photo, with undo."
       }
     ]
   },
@@ -6225,7 +6225,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Blur Background",
     "shortName": "Blur Background",
     "tagline": "Blur the background of a photo like a portrait-mode camera, keeping the person sharp. Runs on your device.",
-    "intro": "Blur Background gives any photo the soft, out-of-focus background of a portrait-mode camera. An AI model finds the person on your device, then the background is blurred while the subject stays sharp, with no blurry halo around the edges. A slider sets how strong the blur is, and you save the result as JPG or PNG. Nothing is uploaded: the photo and the model both stay in your browser.",
+    "intro": "Blur Background gives any photo the soft, out-of-focus background of a portrait-mode camera. An AI model finds the person on your device, then the background is blurred while the subject stays sharp, with no blurry halo around the edges. A slider sets how strong the blur is, and you save the result as JPG or PNG. Nothing is uploaded: the photo and the model both stay in your browser. If the AI misses a strand of hair or leaves a bit of background, fix it with the erase and restore brush.",
     "seoTitle": "Blur Background of Photo Online – Free Portrait Effect",
     "seoDescription": "Blur the background of a photo online and keep the person sharp, like portrait mode. Adjustable strength, runs in your browser, free and private.",
     "keywords": [
@@ -6295,7 +6295,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Change Background",
     "shortName": "Change Background",
     "tagline": "Replace the background of a photo with a color or another picture. The subject is cut out on your device.",
-    "intro": "Change Background swaps the background of a photo for a plain color or a picture of your choice. An AI model cuts out the person on your device, then places them on the new background, scaled to fill the frame. Pick white for a clean product or profile look, any color from the picker, or upload your own background image, and download as JPG or PNG. The photo is never uploaded.",
+    "intro": "Change Background swaps the background of a photo for a plain color or a picture of your choice. An AI model cuts out the person on your device, then places them on the new background, scaled to fill the frame. Pick white for a clean product or profile look, any color from the picker, or upload your own background image, and download as JPG or PNG. The photo is never uploaded. If the AI misses a strand of hair or leaves a bit of background, fix it with the erase and restore brush.",
     "seoTitle": "Change Photo Background Online – Color or Image, Free",
     "seoDescription": "Change the background of a photo to white, any color or your own picture. The subject is cut out in your browser. Free, private, no sign-up.",
     "keywords": [

@@ -2650,7 +2650,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Supprimer le fond",
     tagline: "Supprimez l’arrière-plan d’une photo avec une IA qui fonctionne sur votre appareil, et enregistrez un PNG transparent.",
     intro:
-      "Supprimer l’arrière-plan détoure le sujet principal d’une photo et retire tout ce qui se trouve derrière. L’outil utilise un modèle d’IA qui fonctionne dans votre navigateur : vos images ne quittent jamais votre appareil. Choisissez « Rapide », un modèle plus petit, rapide et idéal pour les photos de personnes, ou « Qualité maximale », un modèle plus grand qui donne de meilleurs résultats sur tous les sujets, y compris les produits, les animaux et les objets. Enregistrez le résultat en PNG transparent, ou placez-le sur une couleur unie.",
+      "Supprimer l’arrière-plan détoure le sujet principal d’une photo et retire tout ce qui se trouve derrière. L’outil utilise un modèle d’IA qui fonctionne dans votre navigateur : vos images ne quittent jamais votre appareil. Choisissez « Rapide », un modèle plus petit, rapide et idéal pour les photos de personnes, ou « Qualité maximale », un modèle plus grand qui donne de meilleurs résultats sur tous les sujets, y compris les produits, les animaux et les objets. Enregistrez le résultat en PNG transparent, ou placez-le sur une couleur unie. Si l’IA oublie une mèche ou laisse un bout de fond, corrigez-le avec le pinceau pour effacer et restaurer.",
     seoTitle: "Supprimer l’arrière-plan d’une image – Gratuit, en local",
     seoDescription:
       "Supprimer l’arrière-plan d’une image gratuitement, par IA dans le navigateur : modèle rapide ou qualité maximale, PNG transparent. Vos photos restent en local.",
@@ -2730,7 +2730,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Pourquoi certains contours ne sont-ils pas parfaits ?",
         answer:
-          "Les cheveux fins, la fourrure, le verre et les sujets de couleur proche de l’arrière-plan sont difficiles pour tous les modèles. Essayez « Qualité maximale », ou utilisez une photo avec un contraste net entre le sujet et l’arrière-plan.",
+          "Les cheveux fins, la fourrure, le verre et les sujets de couleur proche de l’arrière-plan sont difficiles pour tous les modèles. Essayez « Qualité maximale », ou utilisez une photo avec un contraste net entre le sujet et l’arrière-plan. Vous pouvez aussi les corriger à la main : choisissez « Effacer ou restaurer au pinceau » pour retirer des restes de fond ou reprendre de la photo les cheveux et bords manquants, avec annulation.",
       },
     ],
   },
@@ -5925,7 +5925,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Flouter le fond",
     tagline: "Floutez l’arrière-plan d’une photo comme le mode portrait d’un appareil photo, en gardant la personne nette. Fonctionne sur votre appareil.",
     intro:
-      "Flouter l’arrière-plan donne à n’importe quelle photo l’arrière-plan doux et flou du mode portrait d’un appareil photo. Un modèle d’IA repère la personne sur votre appareil, puis l’arrière-plan est flouté tandis que le sujet reste net, sans halo flou autour des contours. Un curseur règle l’intensité du flou, et vous enregistrez le résultat en JPG ou en PNG. Rien n’est envoyé : la photo et le modèle restent tous deux dans votre navigateur.",
+      "Flouter l’arrière-plan donne à n’importe quelle photo l’arrière-plan doux et flou du mode portrait d’un appareil photo. Un modèle d’IA repère la personne sur votre appareil, puis l’arrière-plan est flouté tandis que le sujet reste net, sans halo flou autour des contours. Un curseur règle l’intensité du flou, et vous enregistrez le résultat en JPG ou en PNG. Rien n’est envoyé : la photo et le modèle restent tous deux dans votre navigateur. Si l’IA oublie une mèche ou laisse un bout de fond, corrigez-le avec le pinceau pour effacer et restaurer.",
     seoTitle: "Flouter l’arrière-plan d’une photo – Effet portrait gratuit",
     seoDescription:
       "Flouter l’arrière-plan d’une photo en ligne en gardant la personne nette, comme en mode portrait. Intensité réglable, dans le navigateur, gratuit et privé.",
@@ -6001,7 +6001,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Changer le fond",
     tagline: "Remplacez l’arrière-plan d’une photo par une couleur ou une autre image. Le sujet est détouré sur votre appareil.",
     intro:
-      "Changer l’arrière-plan remplace le fond d’une photo par une couleur unie ou une image de votre choix. Un modèle d’IA détoure la personne sur votre appareil, puis la place sur le nouveau fond, mis à l’échelle pour remplir tout le cadre. Choisissez le blanc pour un rendu net de produit ou de profil, n’importe quelle couleur du sélecteur ou votre propre image de fond, puis téléchargez le résultat en JPG ou en PNG. La photo n’est jamais envoyée.",
+      "Changer l’arrière-plan remplace le fond d’une photo par une couleur unie ou une image de votre choix. Un modèle d’IA détoure la personne sur votre appareil, puis la place sur le nouveau fond, mis à l’échelle pour remplir tout le cadre. Choisissez le blanc pour un rendu net de produit ou de profil, n’importe quelle couleur du sélecteur ou votre propre image de fond, puis téléchargez le résultat en JPG ou en PNG. La photo n’est jamais envoyée. Si l’IA oublie une mèche ou laisse un bout de fond, corrigez-le avec le pinceau pour effacer et restaurer.",
     seoTitle: "Changer l’arrière-plan d’une photo – Couleur ou image",
     seoDescription:
       "Changer l’arrière-plan d’une photo : fond blanc, n’importe quelle couleur ou votre propre image. Le sujet est détouré dans le navigateur. Gratuit et privé.",
