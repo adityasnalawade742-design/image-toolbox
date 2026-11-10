@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Aperture, Wallpaper } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useImageIntake } from '../../shared/useImageIntake';
@@ -13,6 +13,7 @@ import { canvasToBlob, downloadBlob, formatBytes } from '../../../lib/canvas/eng
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../../lib/ai/backgroundRemover';
 import { HqConsent, ModelPicker, TryHqHint, isModelReady, markModelReady, saveData, saveRemovalMode, savedRemovalMode } from '../../shared/RemovalModel';
+import { RefinePanel, RefineSurface, useRefineBrush } from '../../shared/RefineBrush';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 // The blurred background is computed at this size and scaled up: blurred detail doesn't need full resolution
@@ -28,11 +29,26 @@ interface Source {
   previewUrl: string;
   /** The photo (capped at the canvas limit) */
   photo: HTMLCanvasElement;
-  /** The subject cut out, background transparent, same size */
+  /** The subject cut out, background transparent, same size (the refine brush edits it) */
   subject: HTMLCanvasElement | null;
+  /** The model's own cutout, for starting over */
+  pristine?: HTMLCanvasElement | null;
   /** Subject alpha at the blur working size */
   smallAlpha: Uint8ClampedArray | null;
   small: { w: number; h: number; rgba: Uint8ClampedArray };
+}
+
+/** The subject's alpha at the blur's working size */
+function alphaAt(subject: HTMLCanvasElement, small: { w: number; h: number }) {
+  const sc = document.createElement('canvas');
+  sc.width = small.w;
+  sc.height = small.h;
+  const sctx = sc.getContext('2d', { willReadFrequently: true })!;
+  sctx.drawImage(subject, 0, 0, small.w, small.h);
+  const sd = sctx.getImageData(0, 0, small.w, small.h).data;
+  const alpha = new Uint8ClampedArray(small.w * small.h);
+  for (let i = 0; i < alpha.length; i++) alpha[i] = sd[i * 4 + 3];
+  return alpha;
 }
 
 /** Blur Background and Change Background: the background model finds the subject, then the background is redone */
@@ -86,16 +102,11 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
       subject.width = cut.width;
       subject.height = cut.height;
       subject.getContext('2d')!.putImageData(cut, 0, 0);
-      // The subject's alpha at the working size, for the blur
-      const sc = document.createElement('canvas');
-      sc.width = small.w;
-      sc.height = small.h;
-      const sctx = sc.getContext('2d', { willReadFrequently: true })!;
-      sctx.drawImage(subject, 0, 0, small.w, small.h);
-      const sd = sctx.getImageData(0, 0, small.w, small.h).data;
-      const smallAlpha = new Uint8ClampedArray(small.w * small.h);
-      for (let i = 0; i < smallAlpha.length; i++) smallAlpha[i] = sd[i * 4 + 3];
-      setSrc({ ...base, subject, smallAlpha });
+      const pristine = document.createElement('canvas');
+      pristine.width = cut.width;
+      pristine.height = cut.height;
+      pristine.getContext('2d')!.drawImage(subject, 0, 0);
+      setSrc({ ...base, subject, pristine, smallAlpha: alphaAt(subject, small) });
     } catch (err: any) {
       if (mySeq === seq.current) setError(err?.message ? t('ctl.bgfx.failed', { message: err.message }) : t('ws.errDecode'));
     } finally {
@@ -152,6 +163,9 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   };
   useImageIntake(load);
 
+  // The background as last drawn, so painting with the brush only redraws the subject over it
+  const backdrop = useRef<HTMLCanvasElement | null>(null);
+
   // Draw the result for the current settings
   const paint = () => {
     if (!src?.subject || !canvasRef.current) return;
@@ -160,7 +174,11 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
       const { photo, subject, small, smallAlpha } = src;
       canvas.width = photo.width;
       canvas.height = photo.height;
-      const ctx = canvas.getContext('2d')!;
+      backdrop.current ??= document.createElement('canvas');
+      const back = backdrop.current;
+      back.width = photo.width;
+      back.height = photo.height;
+      const ctx = back.getContext('2d')!;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (mode === 'blur') {
         const radius = (strength / 100) * Math.min(small.w, small.h) * 0.06;
@@ -181,9 +199,29 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
         const h = fill.img.naturalHeight * s;
         ctx.drawImage(fill.img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
       }
-      ctx.drawImage(subject!, 0, 0);
+      const out = canvas.getContext('2d')!;
+      out.drawImage(back, 0, 0);
+      out.drawImage(subject!, 0, 0);
     }
   };
+  // While a stroke is under way: the cached background, then the edited subject
+  const paintSubject = () => {
+    const canvas = canvasRef.current;
+    if (!src?.subject || !canvas || !backdrop.current) return;
+    const ctx = canvas.getContext('2d')!;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(backdrop.current, 0, 0);
+    ctx.drawImage(src.subject, 0, 0);
+  };
+  const refineTarget = useMemo(
+    () => (src?.subject && src.pristine ? { subject: src.subject, original: src.photo, pristine: src.pristine } : null),
+    [src?.subject, src?.pristine, src?.photo]
+  );
+  // The blur follows the subject's edge, so it is worked out again once a stroke is finished
+  const brush = useRefineBrush(refineTarget, paintSubject, () => {
+    if (mode === 'blur') setSrc((cur) => (cur?.subject ? { ...cur, smallAlpha: alphaAt(cur.subject, cur.small) } : cur));
+    else paint();
+  });
 
   // Redraw whenever a setting changes (lightly debounced so the blur slider stays smooth)
   useEffect(() => {
@@ -239,6 +277,12 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
   const panel = (
     <>
       <ModelPicker mode={model} ready={modelReady} onChoose={chooseModel} disabled={working} />
+      {src.subject && (
+        <div className="space-y-2 pt-4 border-t border-ink">
+          <span className="slug block">{t('ctl.refine.title')}</span>
+          <RefinePanel brush={brush} disabled={working} />
+        </div>
+      )}
       {mode === 'blur' ? (
         <RangeField id="bgfx-strength" label={t('ctl.bgfx.strength')} value={strength} min={1} max={100} onChange={setStrength} />
       ) : (
@@ -336,7 +380,10 @@ export function BackgroundEffectsWorkspace({ mode }: { mode: Mode }) {
         <div className="relative overflow-hidden bg-paper-bright border border-ink flex items-center justify-center min-h-[260px] sm:min-h-[420px] px-6 py-8 sm:px-12 sm:py-10 rounded-xl">
           <div className="relative inline-flex max-w-full canvas-checkerboard crop-marks">
             {src.subject ? (
-              <canvas ref={canvasRef} role="img" aria-label={t('ctl.bgfx.result')} className="block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain" />
+              <>
+                <canvas ref={canvasRef} role="img" aria-label={t('ctl.bgfx.result')} className="block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain" />
+                <RefineSurface brush={brush} canvas={canvasRef.current} />
+              </>
             ) : (
               <img src={src.previewUrl} alt="" className="block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain opacity-60" />
             )}

@@ -2650,7 +2650,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Remover fundo",
     tagline: "Remova o fundo de uma foto com IA que roda no seu dispositivo e salve um PNG transparente.",
     intro:
-      "Remover fundo recorta o assunto principal de uma foto e remove tudo o que está atrás dele, usando um modelo de IA que roda no seu navegador, então suas imagens nunca saem do seu dispositivo. Escolha Rápido, um modelo menor que é ágil e melhor para fotos de pessoas, ou Melhor qualidade, um modelo maior com resultados melhores em qualquer assunto, incluindo produtos, animais de estimação e objetos. Salve o resultado como PNG transparente ou coloque-o sobre uma cor sólida.",
+      "Remover fundo recorta o assunto principal de uma foto e remove tudo o que está atrás dele, usando um modelo de IA que roda no seu navegador, então suas imagens nunca saem do seu dispositivo. Escolha Rápido, um modelo menor que é ágil e melhor para fotos de pessoas, ou Melhor qualidade, um modelo maior com resultados melhores em qualquer assunto, incluindo produtos, animais de estimação e objetos. Salve o resultado como PNG transparente ou coloque-o sobre uma cor sólida. Se a IA deixar escapar uma mecha de cabelo ou sobrar um pedaço do fundo, corrija com o pincel de apagar e restaurar.",
     seoTitle: "Remover fundo de imagem grátis, no seu aparelho",
     seoDescription:
       "Remover fundo de imagem grátis com IA que roda no navegador. Use um modelo rápido ou a melhor qualidade e salve um PNG transparente. As fotos ficam no aparelho.",
@@ -2730,7 +2730,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Por que algumas bordas não ficam perfeitas?",
         answer:
-          "Cabelos finos, pelos, vidro e assuntos com cores parecidas com as do fundo são difíceis para qualquer modelo. Experimente o Melhor qualidade, ou use uma foto com contraste claro entre o assunto e o fundo.",
+          "Cabelos finos, pelos, vidro e assuntos com cores parecidas com as do fundo são difíceis para qualquer modelo. Experimente o Melhor qualidade, ou use uma foto com contraste claro entre o assunto e o fundo. Você também pode corrigi-las à mão: escolha “Apagar ou restaurar com um pincel” para tirar restos do fundo ou trazer de volta da foto cabelos e bordas que faltaram, com opção de desfazer.",
       },
     ],
   },
@@ -5893,7 +5893,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Desfocar fundo",
     tagline: "Desfoque o fundo de uma foto como no modo retrato da câmera, mantendo a pessoa nítida. Roda no seu dispositivo.",
     intro:
-      "O Desfocar fundo dá a qualquer foto o fundo suave e fora de foco do modo retrato de uma câmera. Um modelo de IA encontra a pessoa no seu dispositivo e, então, o fundo é desfocado enquanto o assunto continua nítido, sem halo borrado em volta das bordas. Um controle deslizante define a intensidade do desfoque, e você salva o resultado como JPG ou PNG. Nada é enviado: a foto e o modelo ficam no seu navegador.",
+      "O Desfocar fundo dá a qualquer foto o fundo suave e fora de foco do modo retrato de uma câmera. Um modelo de IA encontra a pessoa no seu dispositivo e, então, o fundo é desfocado enquanto o assunto continua nítido, sem halo borrado em volta das bordas. Um controle deslizante define a intensidade do desfoque, e você salva o resultado como JPG ou PNG. Nada é enviado: a foto e o modelo ficam no seu navegador. Se a IA deixar escapar uma mecha de cabelo ou sobrar um pedaço do fundo, corrija com o pincel de apagar e restaurar.",
     seoTitle: "Desfocar fundo de foto online – efeito retrato grátis",
     seoDescription:
       "Desfocar fundo de foto online e manter a pessoa nítida, como no modo retrato. Intensidade ajustável, roda no seu navegador, grátis e privado.",
@@ -5969,7 +5969,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Trocar fundo",
     tagline: "Substitua o fundo de uma foto por uma cor ou outra imagem. O assunto é recortado no seu dispositivo.",
     intro:
-      "O Trocar fundo substitui o fundo de uma foto por uma cor sólida ou uma imagem à sua escolha. Um modelo de IA recorta a pessoa no seu dispositivo e a coloca sobre o novo fundo, ajustado para preencher o quadro. Escolha branco para um visual limpo de produto ou de perfil, qualquer cor do seletor, ou use sua própria imagem de fundo, e baixe como JPG ou PNG. A foto nunca é enviada.",
+      "O Trocar fundo substitui o fundo de uma foto por uma cor sólida ou uma imagem à sua escolha. Um modelo de IA recorta a pessoa no seu dispositivo e a coloca sobre o novo fundo, ajustado para preencher o quadro. Escolha branco para um visual limpo de produto ou de perfil, qualquer cor do seletor, ou use sua própria imagem de fundo, e baixe como JPG ou PNG. A foto nunca é enviada. Se a IA deixar escapar uma mecha de cabelo ou sobrar um pedaço do fundo, corrija com o pincel de apagar e restaurar.",
     seoTitle: "Trocar fundo de foto online – cor ou imagem, grátis",
     seoDescription:
       "Trocar fundo de foto para branco, qualquer cor ou uma imagem sua. O assunto é recortado no seu navegador. Grátis, privado e sem cadastro.",

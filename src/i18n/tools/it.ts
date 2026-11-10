@@ -2650,7 +2650,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Rimuovi sfondo",
     tagline: "Rimuovi lo sfondo da una foto con un’IA che funziona sul tuo dispositivo, e salva un PNG trasparente.",
     intro:
-      "Rimuovi sfondo ritaglia il soggetto principale di una foto ed elimina tutto ciò che c’è dietro, usando un modello di IA che funziona nel browser, quindi le tue immagini non lasciano mai il dispositivo. Scegli Veloce, un modello più piccolo, rapido e ideale per le foto di persone, oppure Massima qualità, un modello più grande con risultati migliori su qualsiasi soggetto, compresi prodotti, animali e oggetti. Salva il risultato come PNG trasparente, oppure mettilo su un colore pieno.",
+      "Rimuovi sfondo ritaglia il soggetto principale di una foto ed elimina tutto ciò che c’è dietro, usando un modello di IA che funziona nel browser, quindi le tue immagini non lasciano mai il dispositivo. Scegli Veloce, un modello più piccolo, rapido e ideale per le foto di persone, oppure Massima qualità, un modello più grande con risultati migliori su qualsiasi soggetto, compresi prodotti, animali e oggetti. Salva il risultato come PNG trasparente, oppure mettilo su un colore pieno. Se l’IA perde una ciocca di capelli o lascia un pezzo di sfondo, correggilo con il pennello per cancellare e ripristinare.",
     seoTitle: "Rimuovere sfondo immagine – Gratis, sul dispositivo",
     seoDescription:
       "Rimuovere sfondo immagine gratis con un’IA nel browser. Scegli il modello veloce o la massima qualità e salva un PNG trasparente. Foto sempre sul dispositivo.",
@@ -2730,7 +2730,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Perché alcuni bordi non sono perfetti?",
         answer:
-          "Capelli sottili, pelo, vetro e soggetti con colori simili allo sfondo sono difficili per qualsiasi modello. Prova Massima qualità, oppure usa una foto con un contrasto netto tra soggetto e sfondo.",
+          "Capelli sottili, pelo, vetro e soggetti con colori simili allo sfondo sono difficili per qualsiasi modello. Prova Massima qualità, oppure usa una foto con un contrasto netto tra soggetto e sfondo. Puoi anche correggerli a mano: scegli «Cancella o ripristina col pennello» per togliere resti di sfondo o riprendere dalla foto capelli e bordi mancanti, con annulla.",
       },
     ],
   },
@@ -5888,7 +5888,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Sfoca sfondo",
     tagline: "Sfoca lo sfondo di una foto come la modalità ritratto della fotocamera, mantenendo nitida la persona. Funziona sul tuo dispositivo.",
     intro:
-      "Sfoca sfondo dà a qualsiasi foto lo sfondo morbido e fuori fuoco della modalità ritratto di una fotocamera. Un modello di IA trova la persona sul tuo dispositivo, poi lo sfondo viene sfocato mentre il soggetto resta nitido, senza aloni sfocati attorno ai bordi. Un cursore regola l’intensità della sfocatura e salvi il risultato in JPG o PNG. Non viene caricato nulla: la foto e il modello restano nel tuo browser.",
+      "Sfoca sfondo dà a qualsiasi foto lo sfondo morbido e fuori fuoco della modalità ritratto di una fotocamera. Un modello di IA trova la persona sul tuo dispositivo, poi lo sfondo viene sfocato mentre il soggetto resta nitido, senza aloni sfocati attorno ai bordi. Un cursore regola l’intensità della sfocatura e salvi il risultato in JPG o PNG. Non viene caricato nulla: la foto e il modello restano nel tuo browser. Se l’IA perde una ciocca di capelli o lascia un pezzo di sfondo, correggilo con il pennello per cancellare e ripristinare.",
     seoTitle: "Sfocare lo sfondo di una foto online – Effetto ritratto",
     seoDescription:
       "Sfocare lo sfondo di una foto online mantenendo nitida la persona, come in modalità ritratto. Intensità regolabile, nel browser, gratis e privato.",
@@ -5964,7 +5964,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Cambia sfondo",
     tagline: "Sostituisci lo sfondo di una foto con un colore o un’altra immagine. Il soggetto viene ritagliato sul tuo dispositivo.",
     intro:
-      "Cambia sfondo sostituisce lo sfondo di una foto con un colore pieno o un’immagine a tua scelta. Un modello di IA ritaglia la persona sul tuo dispositivo, poi la posiziona sul nuovo sfondo, adattato per riempire l’inquadratura. Scegli il bianco per un aspetto pulito da prodotto o da profilo, qualsiasi colore dal selettore, oppure usa una tua immagine come sfondo, e scarica in JPG o PNG. La foto non viene mai caricata.",
+      "Cambia sfondo sostituisce lo sfondo di una foto con un colore pieno o un’immagine a tua scelta. Un modello di IA ritaglia la persona sul tuo dispositivo, poi la posiziona sul nuovo sfondo, adattato per riempire l’inquadratura. Scegli il bianco per un aspetto pulito da prodotto o da profilo, qualsiasi colore dal selettore, oppure usa una tua immagine come sfondo, e scarica in JPG o PNG. La foto non viene mai caricata. Se l’IA perde una ciocca di capelli o lascia un pezzo di sfondo, correggilo con il pennello per cancellare e ripristinare.",
     seoTitle: "Cambiare sfondo foto online – Colore o immagine, gratis",
     seoDescription:
       "Cambiare lo sfondo di una foto con il bianco, un colore o una tua immagine. Il soggetto viene ritagliato nel browser. Gratis, privato, senza registrazione.",

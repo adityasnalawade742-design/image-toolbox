@@ -11,6 +11,7 @@ import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine
 import { FullSizeView, blobImage, urlImage } from '../shared/MediaViewer';
 import { formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName } from '../../lib/storage/fileNames';
+import { RefinePanel, RefineSurface, useRefineBrush, type RefineTarget } from '../shared/RefineBrush';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp';
 const loadImage = (url: string) =>
@@ -42,6 +43,8 @@ export function RemoveBackgroundWorkspace() {
   // Set when a very large photo was reduced before processing
   const [scaledTo, setScaledTo] = useState<{ w: number; h: number } | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // The cutout as a canvas the refine brush edits, with the photo at the same size and the AI's own result
+  const [refine, setRefine] = useState<RefineTarget | null>(null);
   const runSeq = useRef(0);
   const fileSeq = useRef(0);
 
@@ -153,31 +156,77 @@ export function RemoveBackgroundWorkspace() {
 
   useImageIntake(handleFile);
 
-  // Composite the cutout over the chosen background
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || !cutout) return;
-    canvas.width = cutout.width;
-    canvas.height = cutout.height;
+    setRefine(null);
+    if (!cutout || !sourceUrl) return;
+    let cancelled = false;
+    const make = () => {
+      const c = document.createElement('canvas');
+      c.width = cutout.width;
+      c.height = cutout.height;
+      return c;
+    };
+    const subject = make();
+    subject.getContext('2d')!.putImageData(cutout, 0, 0);
+    const pristine = make();
+    pristine.getContext('2d')!.drawImage(subject, 0, 0);
+    loadImage(sourceUrl)
+      .then((img) => {
+        if (cancelled) return;
+        const original = make();
+        original.getContext('2d')!.drawImage(img, 0, 0, cutout.width, cutout.height);
+        setRefine({ subject, original, pristine });
+      })
+      .catch(() => {
+        // Without the photo the result still shows; only the brush is unavailable
+        if (!cancelled) setRefine({ subject, original: subject, pristine });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [cutout, sourceUrl]);
+
+  /**
+   * The cutout over the chosen background. While the brush is in use, the parts taken away show faintly underneath,
+   * so it is clear what Restore brings back; the saved picture never has them
+   */
+  const compose = (canvas: HTMLCanvasElement, showRemoved: boolean) => {
+    if (!refine) return;
+    const { subject, original } = refine;
+    canvas.width = subject.width;
+    canvas.height = subject.height;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    const layer = document.createElement('canvas');
-    layer.width = cutout.width;
-    layer.height = cutout.height;
-    layer.getContext('2d')?.putImageData(cutout, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (background === 'color' || format === 'image/jpeg') {
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
-    ctx.drawImage(layer, 0, 0);
-  }, [cutout, background, bgColor, format]);
+    if (showRemoved && original !== subject) {
+      ctx.globalAlpha = 0.3;
+      ctx.drawImage(original, 0, 0);
+      ctx.globalAlpha = 1;
+    }
+    ctx.drawImage(subject, 0, 0);
+  };
+  const result = () => {
+    const c = document.createElement('canvas');
+    compose(c, false);
+    return c;
+  };
+  const brush = useRefineBrush(refine, () => canvasRef.current && compose(canvasRef.current, brush.active));
+
+  useEffect(() => {
+    if (canvasRef.current) compose(canvasRef.current, brush.active);
+    // compose reads these values
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refine, background, bgColor, format, brush.active]);
 
   const handleDownload = async () => {
     if (!canvasRef.current || !file || isExporting) return;
     setIsExporting(true);
     try {
-      const blob = await canvasToBlob(canvasRef.current, format, 0.92);
+      const blob = await canvasToBlob(result(), format, 0.92);
       downloadBlob(blob, outputFileName(file.name, 'no-background', formatExtension((blob.type || format) as OutputFormat)));
     } catch {
       setError(t('ws.errExport'));
@@ -209,6 +258,7 @@ export function RemoveBackgroundWorkspace() {
                 <img src={sourceUrl} alt="" className={`block max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${isRunning ? 'opacity-60' : ''}`} />
               )}
               <canvas ref={canvasRef} role="img" aria-label={t('ctl.bg.result')} className={`max-h-[55vh] sm:max-h-[540px] max-w-full object-contain ${cutout && !showOriginal ? 'block' : 'hidden'}`} />
+              {cutout && !showOriginal && <RefineSurface brush={brush} canvas={canvasRef.current} />}
             </div>
 
             {isRunning && (
@@ -234,7 +284,7 @@ export function RemoveBackgroundWorkspace() {
               <FullSizeView
                 className="ml-auto"
                 label={outputFileName(file.name, 'no-background', formatExtension(format))}
-                load={async () => blobImage(await canvasToBlob(canvasRef.current!, format, 0.92))}
+                load={async () => blobImage(await canvasToBlob(result(), format, 0.92))}
                 original={sourceUrl ? () => urlImage(sourceUrl, file.size) : undefined}
               />
             )}
@@ -282,6 +332,13 @@ export function RemoveBackgroundWorkspace() {
                   </button>
                 )}
               </div>
+
+              {cutout && (
+                <div className="space-y-2 pt-4 border-t border-ink">
+                  <span className="slug block">{t('ctl.refine.title')}</span>
+                  <RefinePanel brush={brush} disabled={isRunning} showsRemoved />
+                </div>
+              )}
 
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug">{t('ctl.bg.background')}</span>
