@@ -989,6 +989,17 @@ async def ocr(file: UploadFile, lang: str = "eng"):
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
+        # A PDF that opens without a password but forbids printing or copying is still encrypted, and ocrmypdf refuses
+        # any encryption. Those restrictions come off first (qpdf exits 3: encrypted, no password needed); a PDF that
+        # needs a password to open is refused as before (exit 0)
+        code, _ = await run("qpdf", "--requires-password", str(src), cwd=job)
+        if code == 0:
+            raise JobError(422, "encrypted")
+        if code == 3:
+            plain = job / "plain.pdf"
+            code, _ = await run("qpdf", "--decrypt", str(src), str(plain), cwd=job, ok_codes=(0, 3))
+            if code == 0 and plain.exists():
+                src = plain
         out = job / "out.pdf"
         langs = parse_langs(lang)
         # A plain PDF, not the default PDF/A: that conversion drops fillable form fields
