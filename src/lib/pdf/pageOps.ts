@@ -83,22 +83,27 @@ export async function mergePdfs(files: (Uint8Array | ArrayBuffer)[]): Promise<Ui
 
 /**
  * Several PDFs merged page by page in any order (Merge PDF's page mode): `order` lists pages as { file, index }, each
- * optionally turned. Consecutive pages from the same file are copied together, keeping their links, bookmarks and form
- * fields as `mergePdfs` does; each run gets a fresh copy of its file, because copying edits the source's link entries.
+ * optionally turned. All the pages used from one file are copied together, so its fonts and images are stored once
+ * however its pages are spread through the result, and links between them keep working; then the pages are put in
+ * the chosen order. Links, bookmarks and form fields carry over as in `mergePdfs`.
  */
 export async function mergePages(
   files: (Uint8Array | ArrayBuffer)[],
   order: { file: number; index: number; rotate?: number }[]
 ): Promise<Uint8Array> {
-  const runs: { file: number; pages: { index: number; rotate?: number }[] }[] = [];
-  for (const p of order) {
-    const last = runs[runs.length - 1];
-    if (last && last.file === p.file) last.pages.push({ index: p.index, rotate: p.rotate });
-    else runs.push({ file: p.file, pages: [{ index: p.index, rotate: p.rotate }] });
-  }
+  // Files in the order they first appear, each with its pages and where each page goes
+  const byFile = new Map<number, { index: number; rotate?: number; pos: number }[]>();
+  order.forEach((p, pos) => {
+    if (!byFile.has(p.file)) byFile.set(p.file, []);
+    byFile.get(p.file)!.push({ index: p.index, rotate: p.rotate, pos });
+  });
   const sources = [];
-  for (const run of runs) sources.push({ doc: await loadPdf(files[run.file]), pages: run.pages });
-  const out = await assemblePages(sources);
+  const finalOrder: number[] = [];
+  for (const [file, pages] of byFile) {
+    sources.push({ doc: await loadPdf(files[file]), pages: pages.map(({ index, rotate }) => ({ index, rotate })) });
+    finalOrder.push(...pages.map((p) => p.pos));
+  }
+  const out = await assemblePages(sources, finalOrder);
   dropUnreachable(out);
   return save(out);
 }

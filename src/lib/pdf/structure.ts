@@ -224,8 +224,12 @@ function pruneKids(field: PDFDict, keptWidgets: Set<string>, depth = 0): boolean
 
 const INFO_KEYS = ['Title', 'Author', 'Subject', 'Keywords', 'Creator'];
 
-/** A new PDF made of the given pages, in order, with bookmarks, links, form fields and document info carried over */
-export async function assemblePages(sources: SourcePages[]): Promise<PDFDocument> {
+/**
+ * A new PDF made of the given pages, in order, with bookmarks, links, form fields and document info carried over.
+ * `finalOrder`, when given, says where each assembled page ends up (assembled index → position), so pages copied
+ * together from one file can be spread through the result: copied together, they share their fonts and images.
+ */
+export async function assemblePages(sources: SourcePages[], finalOrder?: number[]): Promise<PDFDocument> {
   const out = await PDFDocument.create({ updateMetadata: false });
   const outline: Pruned[] = [];
   const fieldRoots: PDFRef[] = [];
@@ -312,6 +316,19 @@ export async function assemblePages(sources: SourcePages[]): Promise<PDFDocument
       const lang = doc.catalog.lookup(N('Lang'));
       if (lang instanceof PDFString || lang instanceof PDFHexString) out.catalog.set(N('Lang'), copier.copy(lang));
     }
+  }
+
+  if (finalOrder && finalOrder.some((pos, k) => pos !== k)) {
+    const pages = out.getPages();
+    const placed: PDFPage[] = new Array(pages.length);
+    finalOrder.forEach((pos, k) => (placed[pos] = pages[k]));
+    for (let i = pages.length - 1; i >= 0; i--) out.removePage(i);
+    for (const page of placed) out.addPage(page);
+    // Bookmarks follow the pages: each top-level one by where its first page now sits
+    const position = new Map(placed.map((p, i) => [p.ref.toString(), i]));
+    const first = (item: Pruned): number =>
+      item.ref ? position.get(item.ref.toString()) ?? Infinity : Math.min(Infinity, ...item.children.map(first));
+    outline.sort((a, b) => first(a) - first(b));
   }
 
   writeOutline(out, outline);
