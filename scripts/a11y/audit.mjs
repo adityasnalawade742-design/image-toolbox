@@ -62,7 +62,15 @@ ws.addEventListener('message', (e) => { const m = JSON.parse(e.data); if (m.id &
 const send = (method, params = {}) => new Promise((r) => { const id = ++seq; pending.set(id, r); ws.send(JSON.stringify({ id, method, params })); });
 const ev = async (x) => { const r = await send('Runtime.evaluate', { expression: x, awaitPromise: true, returnByValue: true }); if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description || 'eval error'); return r.result?.result?.value; };
 await send('Runtime.enable'); await send('Page.enable'); await send('DOM.enable');
-const viewport = (w, h, mobile) => send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 1, mobile });
+// Waits until the page really has the new width: a measurement taken before it lands reads the previous size
+const viewport = async (w, h, mobile) => {
+  await send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 1, mobile });
+  for (let i = 0; i < 50 && (await ev('innerWidth')) !== w; i++) await sleep(100);
+};
+// Waits for the page's heading, so checks never run on a page still loading (a slow server or a busy machine)
+const ready = async () => {
+  for (let i = 0; i < 150 && !(await ev(`!!document.querySelector('main h1') && document.readyState === 'complete'`)); i++) await sleep(100);
+};
 
 const runAxe = async () => {
   if (!(await ev('!!window.axe'))) await ev(AXE + ';0');
@@ -148,7 +156,9 @@ for (const slug of list) {
   try {
     await viewport(1366, 900, false);
     await send('Page.navigate', { url: `${BASE}/${slug}/` });
-    await sleep(2500);
+    await sleep(1000);
+    await ready();
+    await sleep(1500);
     r.emptyAxe = await runAxe();
     r.loaded = await loadInput(slug);
     await sleep(slug === 'remove-background' ? 2000 : 3500);
