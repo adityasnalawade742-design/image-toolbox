@@ -5723,7 +5723,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Come funziona la sostituzione dello sfondo?",
         answer:
-          "Un modello di IA viene scaricato una volta (circa 16 MB) e funziona nel tuo browser per separarti dallo sfondo. Controlla i bordi intorno ai capelli prima di stampare.",
+          "Un modello di IA viene scaricato una volta (circa 16 MB) e funziona nel tuo browser per separarti dallo sfondo. Controlla i bordi intorno ai capelli prima di stampare. Se un bordo, come i capelli, non è pulito, scegli «Cancella o ripristina col pennello» per correggerlo a mano.",
       },
       {
         question: "La mia foto viene caricata?",

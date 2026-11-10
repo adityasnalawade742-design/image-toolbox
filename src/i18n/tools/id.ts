@@ -5729,7 +5729,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bagaimana cara kerja penggantian background?",
         answer:
-          "Model AI diunduh sekali (sekitar 16 MB) dan berjalan di browser Anda untuk memisahkan Anda dari background. Periksa tepi di sekitar rambut sebelum mencetak.",
+          "Model AI diunduh sekali (sekitar 16 MB) dan berjalan di browser Anda untuk memisahkan Anda dari background. Periksa tepi di sekitar rambut sebelum mencetak. Jika tepi seperti rambut kurang rapi, pilih “Hapus atau pulihkan dengan kuas” untuk memperbaikinya secara manual.",
       },
       {
         question: "Apakah foto saya diunggah?",

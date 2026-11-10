@@ -2076,7 +2076,20 @@
    "ctl.pdf.dropHint",
    "ctl.pdf.errLocked",
    "ctl.pdf.errScript",
-   "ctl.pdf.working"
+   "ctl.pdf.working",
+   "ctl.refine.done",
+   "ctl.refine.edited",
+   "ctl.refine.erase",
+   "ctl.refine.eraseHint",
+   "ctl.refine.faint",
+   "ctl.refine.reset",
+   "ctl.refine.restore",
+   "ctl.refine.restoreHint",
+   "ctl.refine.size",
+   "ctl.refine.start",
+   "ctl.refine.title",
+   "ctl.refine.tool",
+   "ctl.refine.undo"
   ],
   "blur-background": [
    "ctl.bg.downloaded",

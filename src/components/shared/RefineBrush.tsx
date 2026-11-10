@@ -142,10 +142,19 @@ export function RefinePanel({ brush, disabled, showsRemoved }: { brush: RefineBr
 }
 
 /**
- * The drawing surface: placed over the preview canvas (`canvas`, shown at any size; its pixels match the cutout's).
- * Pointer only, like any painting tool; the panel says what each mode does.
+ * The drawing surface: placed over the preview canvas (`canvas`, shown at any size). The canvas shows the whole cutout,
+ * or only `view`, a part of it in the cutout's pixels (a zoomed crop, as in the passport photo). Pointer only, like
+ * any painting tool; the panel says what each mode does.
  */
-export function RefineSurface({ brush, canvas }: { brush: RefineBrushState; canvas: HTMLCanvasElement | null }) {
+export function RefineSurface({
+  brush,
+  canvas,
+  view,
+}: {
+  brush: RefineBrushState;
+  canvas: HTMLCanvasElement | null;
+  view?: { x: number; y: number; w: number; h: number };
+}) {
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
   const stroke = useRef<{ last: { x: number; y: number }; box: DirtyBox; snapshot: HTMLCanvasElement; r: number } | null>(null);
   const scratch = useRef<HTMLCanvasElement | null>(null);
@@ -154,8 +163,11 @@ export function RefineSurface({ brush, canvas }: { brush: RefineBrushState; canv
 
   const toImage = (e: React.PointerEvent) => {
     const rect = canvas.getBoundingClientRect();
-    const k = subject.width / rect.width;
-    return { x: (e.clientX - rect.left) * k, y: (e.clientY - rect.top) * k, r: (brush.size / 2) * k, local: { x: e.clientX - rect.left, y: e.clientY - rect.top } };
+    const v = view ?? { x: 0, y: 0, w: subject.width, h: subject.height };
+    const kx = v.w / rect.width;
+    const ky = v.h / rect.height;
+    const local = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    return { x: v.x + local.x * kx, y: v.y + local.y * ky, r: (brush.size / 2) * kx, local };
   };
   const dab = (x: number, y: number, r: number) => {
     scratch.current ??= document.createElement('canvas');
@@ -166,6 +178,8 @@ export function RefineSurface({ brush, canvas }: { brush: RefineBrushState; canv
   const down = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!e.isPrimary || e.button > 0) return;
     e.preventDefault();
+    // The brush, not whatever lies under it (such as dragging the photo to frame it)
+    e.stopPropagation();
     e.currentTarget.setPointerCapture(e.pointerId);
     const p = toImage(e);
     // The whole cutout before the stroke; only the part the stroke touches is kept for undo
@@ -178,6 +192,7 @@ export function RefineSurface({ brush, canvas }: { brush: RefineBrushState; canv
     brush.repaint();
   };
   const move = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     const p = toImage(e);
     setCursor(p.local);
     const s = stroke.current;
@@ -208,7 +223,10 @@ export function RefineSurface({ brush, canvas }: { brush: RefineBrushState; canv
       style={{ touchAction: 'none' }}
       onPointerDown={down}
       onPointerMove={move}
-      onPointerUp={up}
+      onPointerUp={(e) => {
+        e.stopPropagation();
+        up();
+      }}
       onPointerCancel={up}
       onPointerLeave={() => setCursor(null)}
     >

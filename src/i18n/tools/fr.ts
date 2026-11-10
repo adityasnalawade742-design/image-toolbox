@@ -5760,7 +5760,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Comment fonctionne le remplacement du fond ?",
         answer:
-          "Un modèle d’IA est téléchargé une seule fois (environ 16 MB) et s’exécute dans votre navigateur pour vous séparer du fond. Vérifiez les contours autour des cheveux avant d’imprimer.",
+          "Un modèle d’IA est téléchargé une seule fois (environ 16 MB) et s’exécute dans votre navigateur pour vous séparer du fond. Vérifiez les contours autour des cheveux avant d’imprimer. Si un bord, comme les cheveux, n’est pas net, choisissez « Effacer ou restaurer au pinceau » pour le corriger à la main.",
       },
       {
         question: "Ma photo est-elle envoyée ?",
