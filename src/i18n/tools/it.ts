@@ -6344,7 +6344,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Codice EAN",
     tagline: "Crea codici a barre EAN-13 ed EAN-8 per i prodotti, con la cifra di controllo aggiunta per te. Gratis, e funziona sul tuo dispositivo.",
     intro:
-      "EAN-13 è il codice a barre presente sui prodotti nei negozi di tutto il mondo, ed EAN-8 è la sua versione corta per le confezioni piccole. Scrivi le prime 12 cifre (o 7 per EAN-8) e la cifra di controllo viene calcolata e aggiunta; se le scrivi tutte e 13, lo strumento conferma che l’ultima cifra è corretta. Il codice a barre viene disegnato secondo lo standard, con le cifre sotto, e riletto con un motore di scansione prima che tu lo salvi in PNG o SVG. Non viene caricato nulla.",
+      "EAN-13 è il codice a barre presente sui prodotti nei negozi di tutto il mondo, ed EAN-8 è la sua versione corta per le confezioni piccole. Scrivi le prime 12 cifre (o 7 per EAN-8) e la cifra di controllo viene calcolata e aggiunta; se le scrivi tutte e 13, lo strumento conferma che l’ultima cifra è corretta. Il codice a barre viene disegnato secondo lo standard, con le cifre sotto, e riletto con un motore di scansione prima che tu lo salvi in PNG o SVG. Non viene caricato nulla. A destra si può aggiungere un codice di 2 o 5 cifre, come il numero di una rivista.",
     seoTitle: "Generatore EAN-13 gratis – Cifra di controllo inclusa",
     seoDescription:
       "Crea codici a barre EAN-13 ed EAN-8 nel browser. Cifra di controllo calcolata per te, scansione verificata, PNG o SVG per la stampa. Gratis, nulla caricato.",
@@ -6415,7 +6415,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Codice UPC",
     tagline: "Crea codici a barre UPC-A e UPC-E per i prodotti destinati a Stati Uniti e Canada, con la cifra di controllo aggiunta. Gratis, e funziona sul tuo dispositivo.",
     intro:
-      "UPC-A è il codice a barre a 12 cifre dei prodotti venduti negli Stati Uniti e in Canada, e UPC-E è la sua forma compressa per articoli piccoli come lattine e cosmetici. Scrivi le prime 11 cifre di un UPC-A e la cifra di controllo viene aggiunta; scrivile tutte e 12 e viene verificata. UPC-E accetta 6 cifre, oppure da 7 a 8 che iniziano con 0 o 1. Ogni codice a barre viene disegnato secondo lo standard, riletto con un motore di scansione e salvato in PNG o SVG. Tutto avviene nel tuo browser.",
+      "UPC-A è il codice a barre a 12 cifre dei prodotti venduti negli Stati Uniti e in Canada, e UPC-E è la sua forma compressa per articoli piccoli come lattine e cosmetici. Scrivi le prime 11 cifre di un UPC-A e la cifra di controllo viene aggiunta; scrivile tutte e 12 e viene verificata. UPC-E accetta 6 cifre, oppure da 7 a 8 che iniziano con 0 o 1. Ogni codice a barre viene disegnato secondo lo standard, riletto con un motore di scansione e salvato in PNG o SVG. Tutto avviene nel tuo browser. A destra si può aggiungere un codice di 2 o 5 cifre, come il numero di una rivista.",
     seoTitle: "Generatore di codici a barre UPC – UPC-A e UPC-E gratis",
     seoDescription:
       "Crea codici a barre UPC-A e UPC-E nel browser con la cifra di controllo aggiunta. Scansione verificata, PNG o SVG per le confezioni. Gratis, nulla caricato.",
@@ -6486,7 +6486,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Codice ISBN",
     tagline: "Crea il codice a barre per la quarta di copertina di un libro dal suo ISBN-13 o ISBN-10. Gratis, e funziona sul tuo dispositivo.",
     intro:
-      "Il codice a barre sul retro di un libro è il suo ISBN scritto come EAN-13. Scrivi il tuo ISBN-13, o un vecchio ISBN-10 che viene convertito per te, e il codice a barre compare con la cifra di controllo verificata. Scrivi l’ISBN con i trattini, come è stampato nella pagina del copyright, e la riga dell’ISBN viene stampata sopra le barre come si aspettano editori e librerie. Scaricalo in SVG per chi progetta la copertina, oppure in PNG. Tutto avviene nel tuo browser.",
+      "Il codice a barre sul retro di un libro è il suo ISBN scritto come EAN-13. Scrivi il tuo ISBN-13, o un vecchio ISBN-10 che viene convertito per te, e il codice a barre compare con la cifra di controllo verificata. Scrivi l’ISBN con i trattini, come è stampato nella pagina del copyright, e la riga dell’ISBN viene stampata sopra le barre come si aspettano editori e librerie. Scaricalo in SVG per chi progetta la copertina, oppure in PNG. Tutto avviene nel tuo browser. Se serve, aggiungi il codice di prezzo a 5 cifre per le librerie statunitensi.",
     seoTitle: "Generatore codice a barre ISBN gratis – Per libri, in SVG",
     seoDescription:
       "Crea nel browser il codice a barre ISBN per la copertina del libro: ISBN-13 o ISBN-10, cifra di controllo verificata, SVG per la stampa. Gratis, nulla caricato.",
@@ -6538,7 +6538,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso aggiungere il prezzo (il piccolo codice a barre a destra)?",
         answer:
-          "Non ancora. L’add-on di prezzo a 5 cifre usato negli Stati Uniti non è incluso.",
+          "Sì. Scrivi 5 cifre in Codice aggiuntivo: 5 seguito dal prezzo USA (51299 per 12,99 $), oppure 90000 senza prezzo. Viene disegnato a destra del codice ISBN, come si aspettano le librerie statunitensi.",
       },
       {
         question: "Quanto grande devo stamparlo?",
@@ -6699,7 +6699,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Lettore codici a barre",
     tagline: "Leggi EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, codici QR e altri da una foto o dalla fotocamera. Gratis, e funziona sul tuo dispositivo.",
     intro:
-      "Lettore di codici a barre legge i codici a barre da una foto, da uno screenshot o dalla tua fotocamera: codici prodotto (EAN e UPC), ISBN sui libri, etichette Code 128 e Code 39, cartoni ITF, GS1 DataBar e codici 2D come Data Matrix, PDF417, Aztec e codici QR. Trova più codici in un’unica immagine e mostra ciascuno con il suo tipo, pronto da copiare. L’immagine della fotocamera e le foto vengono elaborate nel tuo browser e non vengono mai caricate. Attiva «Continua a scansionare» per leggere molti codici di seguito in un elenco da copiare o salvare come CSV.",
+      "Lettore di codici a barre legge i codici a barre da una foto, da uno screenshot o dalla tua fotocamera: codici prodotto (EAN e UPC), ISBN sui libri, etichette Code 128 e Code 39, cartoni ITF, GS1 DataBar e codici 2D come Data Matrix, PDF417, Aztec e codici QR. Trova più codici in un’unica immagine e mostra ciascuno con il suo tipo, pronto da copiare. L’immagine della fotocamera e le foto vengono elaborate nel tuo browser e non vengono mai caricate. Attiva «Continua a scansionare» per leggere molti codici di seguito in un elenco da copiare o salvare come CSV. L’elenco conta ogni codice, con − e + per correggere, quindi serve anche per l’inventario; il CSV ha una colonna con la quantità.",
     seoTitle: "Lettore di codici a barre online – Da foto o fotocamera",
     seoDescription:
       "Scansiona codici EAN, UPC, Code 128, Data Matrix, PDF417 e QR da una foto o dalla fotocamera, nel browser. Gratis, privato, nulla viene caricato.",

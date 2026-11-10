@@ -6350,7 +6350,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Barcode EAN",
     tagline: "Buat barcode produk EAN-13 dan EAN-8 dengan digit periksa yang ditambahkan otomatis. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "EAN-13 adalah barcode pada produk di toko di seluruh dunia, dan EAN-8 adalah versi pendeknya untuk kemasan kecil. Ketik 12 digit pertama (atau 7 untuk EAN-8), lalu digit periksa dihitung dan ditambahkan; jika Anda mengetik ke-13 digitnya, alat ini memastikan digit terakhir sudah benar. Barcode digambar sesuai standar, dengan angka di bawahnya, lalu dibaca ulang dengan mesin pemindai sebelum Anda menyimpannya sebagai PNG atau SVG. Tidak ada yang diunggah.",
+      "EAN-13 adalah barcode pada produk di toko di seluruh dunia, dan EAN-8 adalah versi pendeknya untuk kemasan kecil. Ketik 12 digit pertama (atau 7 untuk EAN-8), lalu digit periksa dihitung dan ditambahkan; jika Anda mengetik ke-13 digitnya, alat ini memastikan digit terakhir sudah benar. Barcode digambar sesuai standar, dengan angka di bawahnya, lalu dibaca ulang dengan mesin pemindai sebelum Anda menyimpannya sebagai PNG atau SVG. Tidak ada yang diunggah. Kode tambahan 2 atau 5 digit, seperti nomor edisi majalah, bisa ditambahkan di kanan.",
     seoTitle: "Buat Barcode EAN-13 Gratis – Digit Periksa Otomatis",
     seoDescription:
       "Buat barcode EAN-13 dan EAN-8 di browser. Digit periksa dihitung otomatis, sudah diuji pindai, PNG atau SVG untuk dicetak. Gratis, tidak ada yang diunggah.",
@@ -6421,7 +6421,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Barcode UPC",
     tagline: "Buat barcode produk UPC-A dan UPC-E untuk Amerika Serikat dan Kanada, dengan digit periksa ditambahkan. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "UPC-A adalah barcode 12 digit pada produk yang dijual di Amerika Serikat dan Kanada, dan UPC-E adalah bentuk ringkasnya untuk barang kecil seperti kaleng dan kosmetik. Ketik 11 digit pertama UPC-A dan digit periksa ditambahkan; ketik ke-12 digitnya dan digit itu diperiksa. UPC-E memakai 6 digit, atau 7 sampai 8 digit yang diawali 0 atau 1. Setiap barcode digambar sesuai standar, dibaca ulang dengan mesin pemindai, dan disimpan sebagai PNG atau SVG. Semuanya berlangsung di browser Anda.",
+      "UPC-A adalah barcode 12 digit pada produk yang dijual di Amerika Serikat dan Kanada, dan UPC-E adalah bentuk ringkasnya untuk barang kecil seperti kaleng dan kosmetik. Ketik 11 digit pertama UPC-A dan digit periksa ditambahkan; ketik ke-12 digitnya dan digit itu diperiksa. UPC-E memakai 6 digit, atau 7 sampai 8 digit yang diawali 0 atau 1. Setiap barcode digambar sesuai standar, dibaca ulang dengan mesin pemindai, dan disimpan sebagai PNG atau SVG. Semuanya berlangsung di browser Anda. Kode tambahan 2 atau 5 digit, seperti nomor edisi majalah, bisa ditambahkan di kanan.",
     seoTitle: "Buat Barcode UPC – UPC-A dan UPC-E, Gratis",
     seoDescription:
       "Buat barcode UPC-A dan UPC-E di browser dengan digit periksa ditambahkan. Sudah diuji pindai, PNG atau SVG untuk kemasan. Gratis, tidak ada yang diunggah.",
@@ -6492,7 +6492,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Barcode ISBN",
     tagline: "Buat barcode untuk sampul belakang buku dari ISBN-13 atau ISBN-10. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "Barcode di sampul belakang buku adalah ISBN buku tersebut yang ditulis sebagai EAN-13. Ketik ISBN-13 Anda, atau ISBN-10 lama yang akan dikonversi otomatis, dan barcode muncul dengan digit periksa yang sudah diverifikasi. Ketik ISBN beserta tanda hubungnya, seperti yang tercetak di halaman hak cipta, maka baris ISBN dicetak di atas batang sesuai yang diharapkan penerbit dan toko buku. Unduh sebagai SVG untuk desainer sampul Anda, atau PNG. Semuanya berlangsung di browser Anda.",
+      "Barcode di sampul belakang buku adalah ISBN buku tersebut yang ditulis sebagai EAN-13. Ketik ISBN-13 Anda, atau ISBN-10 lama yang akan dikonversi otomatis, dan barcode muncul dengan digit periksa yang sudah diverifikasi. Ketik ISBN beserta tanda hubungnya, seperti yang tercetak di halaman hak cipta, maka baris ISBN dicetak di atas batang sesuai yang diharapkan penerbit dan toko buku. Unduh sebagai SVG untuk desainer sampul Anda, atau PNG. Semuanya berlangsung di browser Anda. Tambahkan kode harga 5 digit untuk toko buku AS jika perlu.",
     seoTitle: "Buat Barcode ISBN Gratis – Barcode Buku, SVG",
     seoDescription:
       "Buat barcode ISBN untuk sampul buku Anda di browser. ISBN-13 atau ISBN-10, digit periksa diverifikasi, SVG untuk dicetak. Gratis, tidak ada yang diunggah.",
@@ -6544,7 +6544,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya menambahkan harga (barcode kecil di sebelah kanan)?",
         answer:
-          "Belum. Add-on harga 5 digit yang dipakai di Amerika Serikat belum tersedia.",
+          "Ya. Ketik 5 digit di Kode tambahan: 5 diikuti harga AS (51299 untuk $12,99), atau 90000 jika tanpa harga. Kode ini digambar di kanan barcode ISBN, sesuai harapan toko buku AS.",
       },
       {
         question: "Seberapa besar sebaiknya dicetak?",
@@ -6705,7 +6705,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Scan Barcode",
     tagline: "Baca EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR code, dan lainnya dari foto atau kamera. Gratis, dan berjalan di perangkat Anda.",
     intro:
-      "Scan Barcode membaca barcode dari foto, screenshot, atau kamera Anda: kode produk (EAN dan UPC), ISBN pada buku, label Code 128 dan Code 39, karton ITF, GS1 DataBar, serta kode 2D seperti Data Matrix, PDF417, Aztec, dan QR code. Alat ini menemukan beberapa kode dalam satu gambar dan menampilkan masing-masing beserta jenisnya, siap disalin. Gambar kamera dan foto diproses di browser Anda dan tidak pernah diunggah. Aktifkan “Terus memindai” untuk memindai banyak kode berturut-turut ke dalam daftar yang bisa disalin atau disimpan sebagai CSV.",
+      "Scan Barcode membaca barcode dari foto, screenshot, atau kamera Anda: kode produk (EAN dan UPC), ISBN pada buku, label Code 128 dan Code 39, karton ITF, GS1 DataBar, serta kode 2D seperti Data Matrix, PDF417, Aztec, dan QR code. Alat ini menemukan beberapa kode dalam satu gambar dan menampilkan masing-masing beserta jenisnya, siap disalin. Gambar kamera dan foto diproses di browser Anda dan tidak pernah diunggah. Aktifkan “Terus memindai” untuk memindai banyak kode berturut-turut ke dalam daftar yang bisa disalin atau disimpan sebagai CSV. Daftar menghitung setiap kode, dengan − dan + untuk mengoreksi, jadi cocok juga untuk stok opname; CSV punya kolom jumlah.",
     seoTitle: "Scan Barcode Online – dari Foto atau Kamera",
     seoDescription:
       "Scan barcode EAN, UPC, Code 128, Data Matrix, PDF417, dan QR code dari foto atau kamera di browser Anda. Gratis, privat, tidak ada yang diunggah.",

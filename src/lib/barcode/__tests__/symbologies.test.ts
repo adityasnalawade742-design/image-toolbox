@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { checkBarcode, expandUpce, gs1CheckDigit, SYMBOLOGY_ORDER, SYMBOLOGIES } from '../symbologies';
-import { barcodeSvg } from '../render';
+import { barcodeSvg, validAddon } from '../render';
 
 const style = { scale: 2, heightMm: 15, showText: true, bar: '#000000', background: '#ffffff' };
 
@@ -79,6 +79,25 @@ describe('barcode drawing', () => {
     const svg = barcodeSvg(c, { ...style, bar: '#1a3d9c', background: null });
     expect(svg).toContain('#1a3d9c');
     expect(svg).not.toMatch(/<rect[^>]*fill="#ffffff"/i);
+  });
+});
+
+describe('EAN/UPC/ISBN add-ons', () => {
+  it('takes 2 or 5 digits only', () => {
+    expect(['05', '51299'].map(validAddon)).toEqual([true, true]);
+    expect(['', '1', '123', '5129', '512999', '5a'].some(validAddon)).toBe(false);
+  });
+  it('draws a wider barcode with the add-on on ISBN, EAN-13 and UPC-A', () => {
+    for (const [type, data, addon] of [['isbn', '978-1-56581-231-4', '51299'], ['ean13', '5901234123457', '12'], ['upca', '036000291452', '05']] as const) {
+      const c = checkBarcode(type, data);
+      if (!c.ok) throw new Error(type);
+      const width = (svg: string) => Number(svg.match(/viewBox="0 0 (\d+)/)?.[1]);
+      const plain = barcodeSvg(c, style);
+      const withAddon = barcodeSvg({ ...c, addon }, style);
+      expect(width(withAddon), type).toBeGreaterThan(width(plain) + 20);
+      // The add-on's digits are printed too
+      expect(withAddon.length, type).toBeGreaterThan(plain.length);
+    }
   });
 });
 

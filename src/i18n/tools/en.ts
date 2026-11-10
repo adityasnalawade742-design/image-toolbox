@@ -6644,7 +6644,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "EAN Barcode Generator",
     "shortName": "EAN Barcode",
     "tagline": "Make EAN-13 and EAN-8 product barcodes with the check digit added for you. Free, and it runs on your device.",
-    "intro": "EAN-13 is the barcode on products in shops across the world, and EAN-8 is its short version for small packages. Type the first 12 digits (or 7 for EAN-8) and the check digit is worked out and added; if you type all 13, the tool confirms the last digit is right. The barcode is drawn to the standard, with the digits underneath, and read back with a scanner engine before you save it as PNG or SVG. Nothing is uploaded.",
+    "intro": "EAN-13 is the barcode on products in shops across the world, and EAN-8 is its short version for small packages. Type the first 12 digits (or 7 for EAN-8) and the check digit is worked out and added; if you type all 13, the tool confirms the last digit is right. The barcode is drawn to the standard, with the digits underneath, and read back with a scanner engine before you save it as PNG or SVG. Nothing is uploaded. A 2- or 5-digit add-on, such as a magazine’s issue number, can go to the right.",
     "seoTitle": "EAN-13 Barcode Generator – Free, Check Digit Added",
     "seoDescription": "Make EAN-13 and EAN-8 barcodes in your browser. Check digit calculated for you, scan-tested, PNG or SVG for print. Free, nothing uploaded.",
     "keywords": [
@@ -6709,7 +6709,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "UPC Barcode Generator",
     "shortName": "UPC Barcode",
     "tagline": "Make UPC-A and UPC-E product barcodes for the USA and Canada, with the check digit added. Free, and it runs on your device.",
-    "intro": "UPC-A is the 12-digit barcode on products sold in the USA and Canada, and UPC-E is its compressed form for small items like cans and cosmetics. Type the first 11 digits of a UPC-A and the check digit is added; type all 12 and it is checked. UPC-E takes 6 digits, or 7 to 8 starting with 0 or 1. Each barcode is drawn to the standard, read back with a scanner engine and saved as PNG or SVG. Everything happens in your browser.",
+    "intro": "UPC-A is the 12-digit barcode on products sold in the USA and Canada, and UPC-E is its compressed form for small items like cans and cosmetics. Type the first 11 digits of a UPC-A and the check digit is added; type all 12 and it is checked. UPC-E takes 6 digits, or 7 to 8 starting with 0 or 1. Each barcode is drawn to the standard, read back with a scanner engine and saved as PNG or SVG. Everything happens in your browser. A 2- or 5-digit add-on, such as a magazine’s issue number, can go to the right.",
     "seoTitle": "UPC Barcode Generator – UPC-A and UPC-E, Free",
     "seoDescription": "Make UPC-A and UPC-E barcodes in your browser with the check digit added. Scan-tested, PNG or SVG for packaging. Free, nothing uploaded.",
     "keywords": [
@@ -6774,7 +6774,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "ISBN Barcode Generator",
     "shortName": "ISBN Barcode",
     "tagline": "Make the barcode for the back cover of a book from its ISBN-13 or ISBN-10. Free, and it runs on your device.",
-    "intro": "The barcode on the back of a book is the book's ISBN written as an EAN-13. Type your ISBN-13, or an older ISBN-10 that is converted for you, and the barcode appears with the check digit verified. Type the ISBN with its hyphens, as printed on the copyright page, and the ISBN line is printed above the bars the way publishers and bookshops expect. Download it as SVG for your cover designer, or PNG. Everything happens in your browser.",
+    "intro": "The barcode on the back of a book is the book's ISBN written as an EAN-13. Type your ISBN-13, or an older ISBN-10 that is converted for you, and the barcode appears with the check digit verified. Type the ISBN with its hyphens, as printed on the copyright page, and the ISBN line is printed above the bars the way publishers and bookshops expect. Download it as SVG for your cover designer, or PNG. Everything happens in your browser. Add the 5-digit price add-on for US bookshops if you need it.",
     "seoTitle": "ISBN Barcode Generator – Free Book Barcode, SVG",
     "seoDescription": "Make the ISBN barcode for your book cover in your browser. ISBN-13 or ISBN-10, check digit verified, SVG for print. Free, nothing uploaded.",
     "keywords": [
@@ -6823,7 +6823,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I add the price (the small barcode to the right)?",
-        "answer": "Not yet. The 5-digit price add-on used in the USA is not included."
+        "answer": "Yes. Type 5 digits under Add-on: 5 followed by the US price (51299 for $12.99), or 90000 when there is no price. It is drawn to the right of the ISBN barcode, the way US bookshops expect."
       },
       {
         "question": "How big should I print it?",
@@ -6969,7 +6969,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Barcode Scanner",
     "shortName": "Barcode Scanner",
     "tagline": "Read EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR and more from a photo or your camera. Free, and it runs on your device.",
-    "intro": "Barcode Scanner reads barcodes from a photo, a screenshot or your camera: product codes (EAN and UPC), ISBNs on books, Code 128 and Code 39 labels, ITF cartons, GS1 DataBar, and 2D codes like Data Matrix, PDF417, Aztec and QR codes. It finds several codes in one picture and shows each one with its type, ready to copy. The camera picture and photos are processed in your browser and never uploaded. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file.",
+    "intro": "Barcode Scanner reads barcodes from a photo, a screenshot or your camera: product codes (EAN and UPC), ISBNs on books, Code 128 and Code 39 labels, ITF cartons, GS1 DataBar, and 2D codes like Data Matrix, PDF417, Aztec and QR codes. It finds several codes in one picture and shows each one with its type, ready to copy. The camera picture and photos are processed in your browser and never uploaded. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file. The list counts each code, with − and + to correct it, so it also works for stock-taking; the CSV has a count column.",
     "seoTitle": "Barcode Scanner Online – Read From Photo or Camera",
     "seoDescription": "Scan EAN, UPC, Code 128, Data Matrix, PDF417 and QR codes from a photo or your camera, in your browser. Free, private, nothing uploaded.",
     "keywords": [

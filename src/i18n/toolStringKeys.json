@@ -2348,10 +2348,14 @@
    "ctl.qrread.copy",
    "ctl.qrread.copyAll",
    "ctl.qrread.copyPassword",
+   "ctl.qrread.count",
+   "ctl.qrread.countHint",
    "ctl.qrread.dropHint",
    "ctl.qrread.dropTitle",
    "ctl.qrread.keepScanning",
+   "ctl.qrread.less",
    "ctl.qrread.looking",
+   "ctl.qrread.more",
    "ctl.qrread.noCamera",
    "ctl.qrread.none",
    "ctl.qrread.open",
@@ -2368,6 +2372,9 @@
    "ctl.scan.none"
   ],
   "barcode-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2407,6 +2414,9 @@
    "ctl.pdf.working"
   ],
   "ean-barcode-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2446,6 +2456,9 @@
    "ctl.pdf.working"
   ],
   "upc-barcode-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2485,6 +2498,9 @@
    "ctl.pdf.working"
   ],
   "isbn-barcode-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2524,6 +2540,9 @@
    "ctl.pdf.working"
   ],
   "data-matrix-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2563,6 +2582,9 @@
    "ctl.pdf.working"
   ],
   "pdf417-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -2633,10 +2655,14 @@
    "ctl.qrread.copy",
    "ctl.qrread.copyAll",
    "ctl.qrread.copyPassword",
+   "ctl.qrread.count",
+   "ctl.qrread.countHint",
    "ctl.qrread.dropHint",
    "ctl.qrread.dropTitle",
    "ctl.qrread.keepScanning",
+   "ctl.qrread.less",
    "ctl.qrread.looking",
+   "ctl.qrread.more",
    "ctl.qrread.noCamera",
    "ctl.qrread.none",
    "ctl.qrread.open",
@@ -2969,6 +2995,9 @@
    "ctl.qr.workPhone"
   ],
   "bulk-qr-code-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
@@ -3029,6 +3058,9 @@
    "ctl.qr.size"
   ],
   "bulk-barcode-generator": [
+   "ctl.barcode.addon",
+   "ctl.barcode.addonBad",
+   "ctl.barcode.addonHint",
    "ctl.barcode.background",
    "ctl.barcode.barColor",
    "ctl.barcode.barWidth",
