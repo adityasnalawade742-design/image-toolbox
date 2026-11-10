@@ -187,6 +187,14 @@ export function SignPdfWorkspace() {
     return out;
   }, [items, stamp, ink]);
   const selected = items.find((i) => i.id === selectedId) ?? null;
+  const textRef = useRef<HTMLInputElement>(null);
+  const focusText = useRef(false);
+  useEffect(() => {
+    if (focusText.current && textRef.current) {
+      focusText.current = false;
+      textRef.current.focus();
+    }
+  });
   const update = (id: string, patch: Partial<Item>) => setItems((list) => list.map((i) => (i.id === id ? { ...i, ...patch } : i)));
 
   const initialsOf = (n: string) =>
@@ -215,6 +223,7 @@ export function SignPdfWorkspace() {
     };
     setItems((list) => [...list, item]);
     setSelectedId(item.id);
+    if (kind !== 'signature' && !text) focusText.current = true;
   };
   const copyToEveryPage = (item: Item) => {
     const copies = Array.from({ length: pdf.pageCount }, (_, p) => p)
@@ -227,6 +236,8 @@ export function SignPdfWorkspace() {
 
   const run = async () => {
     if (!pdf.bytes) return;
+    // An initials or text item still empty would otherwise just be left out
+    if (items.some((i) => i.kind !== 'signature' && !i.text.trim())) return setError(t('ctl.sign.emptyItems'));
     const ready = items.filter((i) => looks.get(i.id));
     if (!ready.length) return setError(t('ctl.sign.needSignature'));
     setBusy(true);
@@ -316,13 +327,15 @@ export function SignPdfWorkspace() {
                   type="button"
                   aria-pressed={item.id === selectedId}
                   onClick={() => {
+                    // A second click lets go of it
+                    if (item.id === selectedId) return setSelectedId(null);
                     setSelectedId(item.id);
                     setPage(item.page + 1);
                   }}
                   className={`flex-1 min-h-[40px] px-3 text-left text-[15px] truncate transition-colors ${item.id === selectedId ? 'seg-on' : 'seg-off'}`}
                 >
                   {t(KIND_LABEL[item.kind])}
-                  {item.kind !== 'signature' && item.text ? `: ${item.text}` : ''} <span className="text-graphite">· {t('ctl.pdf.pageN', { n: item.page + 1 })}</span>
+                  {item.kind !== 'signature' ? `: ${item.text.trim() || t('ctl.sign.typeIt')}` : ''} <span className="text-graphite">· {t('ctl.pdf.pageN', { n: item.page + 1 })}</span>
                 </button>
                 <button
                   type="button"
@@ -369,8 +382,8 @@ export function SignPdfWorkspace() {
               onChange={(e) => {
                 const n = Number(e.target.value);
                 setPage(n);
-                // The selected item goes with the page it is shown on
-                if (selected) update(selected.id, { page: n - 1 });
+                // Only the page shown changes; an item on another page is let go, never moved
+                if (selected && selected.page !== n - 1) setSelectedId(null);
               }}
               className={inputClass}
             >
@@ -389,7 +402,30 @@ export function SignPdfWorkspace() {
                 <label htmlFor="sign-item-text" className="block text-[14px] text-graphite">
                   {t('ctl.sign.itemText')}
                 </label>
-                <input id="sign-item-text" type="text" value={selected.text} onChange={(e) => update(selected.id, { text: e.target.value })} className={inputClass} />
+                <input id="sign-item-text" ref={textRef} type="text" value={selected.text} onChange={(e) => update(selected.id, { text: e.target.value })} className={inputClass} />
+              </div>
+            )}
+            {pdf.pageCount > 1 && (
+              <div className="space-y-1">
+                <label htmlFor="sign-item-page" className="block text-[14px] text-graphite">
+                  {t('ctl.sign.itemPage')}
+                </label>
+                <select
+                  id="sign-item-page"
+                  value={selected.page + 1}
+                  onChange={(e) => {
+                    const n = Number(e.target.value);
+                    update(selected.id, { page: n - 1 });
+                    setPage(n);
+                  }}
+                  className={inputClass}
+                >
+                  {Array.from({ length: pdf.pageCount }, (_, i) => (
+                    <option key={i} value={i + 1}>
+                      {t('ctl.pdf.pageN', { n: i + 1 })}
+                    </option>
+                  ))}
+                </select>
               </div>
             )}
             <RangeField id="sign-w" label={t('ctl.sign.width')} value={Math.round(selected.w * 100)} min={3} max={80} unit="%" onChange={(v) => update(selected.id, { w: v / 100 })} />

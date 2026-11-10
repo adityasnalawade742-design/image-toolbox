@@ -134,6 +134,8 @@ export function MemeGeneratorWorkspace() {
     if (!file.type.startsWith('image/')) return;
     setSelectedFile(file);
     setTemplateId(null);
+    // Save in the photo's own kind of format: a JPG photo saved as PNG would be several times bigger
+    setSaveFormat(/jpe?g|heic|heif|avif/i.test(file.type) ? 'jpeg' : /webp/i.test(file.type) ? 'webp' : 'png');
 
     setCaptionPos({});
     const img = new Image();
@@ -244,7 +246,7 @@ export function MemeGeneratorWorkspace() {
   const handleDownload = async (format: SaveFormat = 'png') => {
     if (!canvasRef.current) return;
     const blob = await canvasToBlob(canvasRef.current, `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
-    downloadBlob(blob, `meme-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
+    downloadBlob(blob, `${selectedFile ? `${selectedFile.name.replace(/\.[^.]+$/, '')}-meme` : 'meme'}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const handleCopyClipboard = async () => {

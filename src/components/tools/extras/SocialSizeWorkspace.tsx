@@ -108,10 +108,30 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src, W, H, mode, zoom, fx, fy, bg, color, textOn, texts]);
 
+  // The sliders reach far enough for a big picture's title
+  const maxSize = Math.max(240, Math.round(Math.min(W, H) * 0.3));
+  const maxStroke = Math.max(20, Math.round(Math.min(W, H) * 0.03));
+  // Text sizes are in the picture's pixels: when it changes size (1280 × 720 to 4K), the texts change with it
+  const lastShort = useRef(Math.min(W, H));
+  useEffect(() => {
+    const short = Math.min(W, H);
+    const k = short / lastShort.current;
+    lastShort.current = short;
+    if (k === 1) return;
+    setTexts((list) =>
+      list.map((l) => ({
+        ...l,
+        fontSize: Math.max(8, Math.round(l.fontSize * k)),
+        strokeWidth: l.strokeWidth ? Math.max(1, Math.round(l.strokeWidth * k)) : l.strokeWidth,
+        backgroundPadding: l.backgroundPadding !== undefined ? Math.round(l.backgroundPadding * k) : l.backgroundPadding,
+      }))
+    );
+  }, [W, H]);
+
   /** A first title: big, bold, white with a dark outline, sized to the picture so it reads at thumbnail size */
   const startText = () => {
     if (!texts.length) {
-      const size = Math.max(24, Math.min(240, Math.round(Math.min(H, W) * (H > W ? 0.07 : 0.12))));
+      const size = Math.max(24, Math.min(maxSize, Math.round(Math.min(H, W) * (H > W ? 0.07 : 0.12))));
       setTexts([{
         text: t('ctl.social.textDefault'),
         fontFamily: 'Impact, sans-serif',
@@ -253,7 +273,7 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
           <input type="checkbox" checked={textOn} onChange={(e) => (e.target.checked ? startText() : setTextOn(false))} className="w-5 h-5" />
           {t('ctl.social.addText')}
         </label>
-        {textOn && texts.length > 0 && <TextControls layers={texts} active={activeText} onSelect={setActiveText} onChange={setTexts} />}
+        {textOn && texts.length > 0 && <TextControls layers={texts} active={activeText} onSelect={setActiveText} onChange={setTexts} maxSize={maxSize} maxStroke={maxStroke} />}
       </div>
 
       {(preset.safe || preset.badge) && (

@@ -8502,7 +8502,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     "name": "Criador de miniatura do YouTube",
     "shortName": "Miniatura do YouTube",
     "tagline": "Transforme uma imagem em uma miniatura do YouTube em 16:9 que fica dentro dos limites de envio do YouTube. Grátis e roda no seu dispositivo.",
-    "intro": "O Criador de miniatura do YouTube enquadra a imagem no formato 16:9 que o YouTube pede. Escolha 1280 × 720, que fica abaixo do limite de 2 MB para enviar pelo celular, ou 3840 × 2160, o tamanho grande que o YouTube recomenda, para enviar pelo computador. Arraste a imagem para enquadrar, dê zoom no que importa e baixe. Para adicionar texto, use o Adicionar texto à imagem. Você também pode adicionar texto, como um título ou um nome, com a fonte, a cor e o contorno que escolher.",
+    "intro": "O Criador de miniatura do YouTube enquadra a imagem no formato 16:9 que o YouTube pede. Escolha 1280 × 720, que fica abaixo do limite de 2 MB para enviar pelo celular, ou 3840 × 2160, o tamanho grande que o YouTube recomenda, para enviar pelo computador. Arraste a imagem para enquadrar, dê zoom no que importa e baixe. Você também pode adicionar texto, como um título ou um nome, com a fonte, a cor e o contorno que escolher.",
     "seoTitle": "Criar miniatura do YouTube – 16:9, até 4K, grátis",
     "seoDescription": "Crie uma miniatura do YouTube em 16:9 com qualquer imagem: 1280×720 abaixo de 2 MB para celular, ou 4K. Arraste, dê zoom e baixe. Grátis, sem upload.",
     "keywords": ["criar miniatura do youtube", "tamanho de miniatura do youtube", "thumbnail 1280x720", "redimensionar imagem para thumbnail do youtube", "thumbnail do youtube 2mb"],

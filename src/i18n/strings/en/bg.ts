@@ -29,6 +29,7 @@ export const bgStrings = {
   'ctl.refine.eraseHint': 'Paint over leftover background to remove it.',
   'ctl.refine.restoreHint': 'Paint over missing hair or edges to bring them back from the photo.',
   'ctl.refine.faint': 'The parts taken away show faintly.',
+  'ctl.refine.loseFixes': 'Another model makes a new cutout, so your brush fixes will be lost. Switch anyway?',
   'ctl.refine.undo': 'Undo',
   'ctl.refine.reset': 'Start over',
   'ctl.refine.done': 'Done',

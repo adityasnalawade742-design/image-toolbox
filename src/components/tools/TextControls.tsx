@@ -8,6 +8,9 @@ interface Props {
   active: number;
   onSelect: (index: number) => void;
   onChange: (layers: TextOverlayOptions[]) => void;
+  /** Largest font size and outline on the sliders (a 4K picture needs more than a photo caption) */
+  maxSize?: number;
+  maxStroke?: number;
 }
 
 const MAX_TEXTS = 10;
@@ -20,7 +23,7 @@ const segButton = (selected: boolean) =>
 const fieldClass = 'w-full border border-ink bg-paper-bright px-2.5 min-h-[40px] text-[15px] text-ink';
 const swatchClass = 'w-10 h-10 shrink-0 p-0.5 border border-ink bg-paper-bright cursor-pointer';
 
-export function TextControls({ layers, active, onSelect, onChange: setLayers }: Props) {
+export function TextControls({ layers, active, onSelect, onChange: setLayers, maxSize = 240, maxStroke = 20 }: Props) {
   const t = useT();
   const idBase = useId();
   const options = layers[active] ?? layers[0];
@@ -257,7 +260,7 @@ export function TextControls({ layers, active, onSelect, onChange: setLayers }: 
             id={id('size')}
             type="range"
             min="12"
-            max="240"
+            max={maxSize}
             value={options.fontSize}
             onChange={(e) => onChange({ ...options, fontSize: parseInt(e.target.value) || 36 })}
             className="w-full"
@@ -390,7 +393,7 @@ export function TextControls({ layers, active, onSelect, onChange: setLayers }: 
               id={id('stroke')}
               type="range"
               min="1"
-              max="20"
+              max={maxStroke}
               value={options.strokeWidth || 4}
               onChange={(e) => onChange({ ...options, strokeWidth: parseInt(e.target.value) || 4 })}
               className="w-full"

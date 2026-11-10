@@ -56,6 +56,8 @@ export function ImageSplitterWorkspace() {
     if (!file.type.startsWith('image/')) return;
     setSelectedFile(file);
     setZipError(null);
+    // Save in the photo's own kind of format: a JPG photo saved as PNG would be several times bigger
+    setFormat(/jpe?g|heic|heif|avif/i.test(file.type) ? 'jpeg' : 'png');
 
     const img = new Image();
     img.onload = () => setImgElement(img);
@@ -149,7 +151,7 @@ export function ImageSplitterWorkspace() {
   // Download a single slice
   const downloadSingleSlice = async (r: number, c: number, index: number, format: TileFormat = 'png') => {
     const blob = await canvasToBlob(getSliceCanvas(r, c), `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
-    downloadBlob(blob, `tile-${index + 1}-${r + 1}x${c + 1}.${format === 'jpeg' ? 'jpg' : format}`);
+    downloadBlob(blob, `${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-tile-${index + 1}.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   // Download all slices as ZIP
@@ -178,7 +180,7 @@ export function ImageSplitterWorkspace() {
 
       setZipProgress(90);
       const content = await zip.generateAsync({ type: 'blob' });
-      downloadBlob(content, `split-grid-${rows}x${cols}-${Date.now()}.zip`);
+      downloadBlob(content, `${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-grid-${rows}x${cols}.zip`);
       setZipProgress(100);
     } catch (err) {
       console.error('ZIP export failed:', err);

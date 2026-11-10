@@ -557,7 +557,7 @@ export const strings = {
   'ctl.batch.hintMetadata': "Her fotoğraf kendi biçimini ve kalitesini korur: yalnızca meta veriler silinir. iPhone HEIC ve TIFF dosyaları JPG ya da PNG olur.",
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG, PNG ve WebP, her biri en fazla 50 MB. Tamamen tarayıcınızda, tek tek sıkıştırılır.',
+  'ctl.bulkCompress.dropHint': "JPG, PNG, WebP, AVIF, HEIC, TIFF ve BMP, her biri en fazla 50 MB. Tamamen tarayıcınızda tek tek sıkıştırılır. Hareketli resimlerde yalnızca ilk kare kalır.",
   'ctl.bulkCompress.quality': 'Kalite',
   'ctl.bulkCompress.qualityLabel': 'Sıkıştırma kalitesi',
   'ctl.bulkCompress.pngLossless': 'PNG kayıpsızdır, bu yüzden kalite ayarı uygulanmaz.',
@@ -566,7 +566,7 @@ export const strings = {
   'ctl.bulkCompress.hintAvif': 'En küçük dosyalar, kodlaması daha yavaş.',
   'ctl.bulkCompress.hintWebp': 'Tüm modern tarayıcılarda açılan küçük dosyalar.',
   'ctl.bulkCompress.hintJpeg': 'Her yerde açılır. Saydam alanlar beyaz olur.',
-  'ctl.bulkCompress.hintPng': 'Kayıpsız, en büyük dosyalar.',
+  'ctl.bulkCompress.hintPng': "Keskin kenarlar ve saydamlık; kaç rengin korunacağını kalite ayarı belirler.",
   'ctl.bulkCompress.run': 'Tümünü sıkıştır ({count})',
   'ctl.bulkCompress.running': 'Sıkıştırılıyor…',
   'ctl.bulkCompress.statusProcessing': 'Sıkıştırılıyor',
@@ -648,6 +648,7 @@ export const strings = {
   'ctl.refine.eraseHint': "Kalan arka planın üzerini boyayarak silin.",
   'ctl.refine.restoreHint': "Eksik saç veya kenarların üzerini boyayarak fotoğraftan geri getirin.",
   'ctl.refine.faint': "Kaldırılan kısımlar soluk görünür.",
+  'ctl.refine.loseFixes': "Başka bir model yeni bir kesim yapar, fırçayla yaptığınız düzeltmeler kaybolur. Yine de değiştirilsin mi?",
   'ctl.refine.undo': "Geri al",
   'ctl.refine.reset': "Baştan başla",
   'ctl.refine.done': "Bitti",
@@ -869,6 +870,9 @@ export const strings = {
   'ctl.sign.itemText': "Metin",
   'ctl.sign.width': "Genişlik",
   'ctl.sign.copyAll': "Her sayfaya kopyala",
+  'ctl.sign.itemPage': "Sayfa",
+  'ctl.sign.typeIt': "yazın",
+  'ctl.sign.emptyItems': "Bazı paraf veya metinler henüz boş: listeden yazın ya da kaldırın.",
 
   // Fill PDF form
   'ctl.form.fields': 'Form alanları',
@@ -1196,7 +1200,7 @@ export const strings = {
   'ctl.barcode.white': 'Beyaz',
   'ctl.barcode.preview': '{type} barkod önizlemesi',
   'ctl.barcode.empty': 'Sayıyı veya metni yazın, örneğin {example}. Barkod burada görünür.',
-  'ctl.barcode.printSize': '{w} × {h} mm (300 dpi)',
+  'ctl.barcode.printSize': '{w} × {h} mm ({dpi} dpi)',
   'ctl.barcode.scansOk': '{format} olarak doğru okunuyor: {text}',
   'ctl.barcode.scansBad': 'Bir okuyucu bunu geri okuyamadı. Daha geniş çubuklar, daha koyu çubuklar veya beyaz bir arka plan deneyin.',
   'ctl.barcode.gs1Note': 'Mağazalarda satılan ürünler, EAN ve UPC numaralarını veren kuruluş olan GS1’e kayıtlı bir numaraya ihtiyaç duyar. Bu araç barkodu çizer; numara kaydı yapmaz.',

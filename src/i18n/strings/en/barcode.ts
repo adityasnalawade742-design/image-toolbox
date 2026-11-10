@@ -15,7 +15,7 @@ export const barcodeStrings = {
   'ctl.barcode.white': 'White',
   'ctl.barcode.preview': 'Preview of the {type} barcode',
   'ctl.barcode.empty': 'Type the number or text, for example {example}. The barcode appears here.',
-  'ctl.barcode.printSize': '{w} × {h} mm at 300 dpi',
+  'ctl.barcode.printSize': '{w} × {h} mm at {dpi} dpi',
   'ctl.barcode.scansOk': 'Scans correctly as {format}: {text}',
   'ctl.barcode.scansBad': 'A scanner couldn’t read this back. Try wider bars, darker bars or a white background.',
   'ctl.barcode.gs1Note': 'Products sold in shops need a number registered with GS1, the organisation that issues EAN and UPC numbers. This tool draws the barcode; it doesn’t register numbers.',

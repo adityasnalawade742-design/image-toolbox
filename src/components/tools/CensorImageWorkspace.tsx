@@ -66,6 +66,8 @@ export function CensorImageWorkspace() {
     if (!file.type.startsWith('image/')) return;
     setSelectedFile(file);
     setBoxes([]);
+    // Save in the photo's own kind of format: a JPG photo saved as PNG would be several times bigger
+    setFormat(/jpe?g|heic|heif|avif/i.test(file.type) ? 'jpeg' : /webp/i.test(file.type) ? 'webp' : 'png');
 
     const img = new Image();
     img.onload = () => setImgElement(img);
@@ -404,7 +406,7 @@ export function CensorImageWorkspace() {
   const handleDownload = async (format: OutputFormat = 'png') => {
     if (!imgElement) return;
     const blob = await exportBlob(format, 0.95, true);
-    if (blob) downloadBlob(blob, `redacted-${Date.now()}.${format === 'jpeg' ? 'jpg' : format}`);
+    if (blob) downloadBlob(blob, `${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-redacted.${format === 'jpeg' ? 'jpg' : format}`);
   };
 
   const [copiedToast, setCopiedToast] = useState(false);
@@ -485,7 +487,7 @@ export function CensorImageWorkspace() {
               </span>
               <FullSizeView
                 className="ml-auto"
-                label={`redacted.${format === 'jpeg' ? 'jpg' : format}`}
+                label={`${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-redacted.${format === 'jpeg' ? 'jpg' : format}`}
                 load={async () => {
                   const blob = await exportBlob(format);
                   if (!blob) throw new Error('encode failed');

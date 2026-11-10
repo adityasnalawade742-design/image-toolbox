@@ -36,7 +36,7 @@ export const batchStrings = {
   'ctl.batch.hintMetadata': 'Each photo keeps its own format and quality: only the metadata is removed. iPhone HEIC and TIFF become JPG or PNG.',
 
   // Bulk compressor
-  'ctl.bulkCompress.dropHint': 'JPG, PNG and WebP, up to 50 MB each. Compressed one at a time, entirely in your browser.',
+  'ctl.bulkCompress.dropHint': 'JPG, PNG, WebP, AVIF, HEIC, TIFF and BMP, up to 50 MB each. Compressed one at a time, entirely in your browser. Animated images keep their first frame.',
   'ctl.bulkCompress.quality': 'Quality',
   'ctl.bulkCompress.qualityLabel': 'Compression quality',
   'ctl.bulkCompress.pngLossless': 'PNG is lossless, so the quality setting does not apply.',
@@ -45,7 +45,7 @@ export const batchStrings = {
   'ctl.bulkCompress.hintAvif': 'Smallest files, slower to encode.',
   'ctl.bulkCompress.hintWebp': 'Small files that open in every modern browser.',
   'ctl.bulkCompress.hintJpeg': 'Opens everywhere. Transparent areas become white.',
-  'ctl.bulkCompress.hintPng': 'Lossless, with the largest files.',
+  'ctl.bulkCompress.hintPng': 'Sharp edges and transparency; the quality setting decides how many colours it keeps.',
   'ctl.bulkCompress.run': 'Compress all ({count})',
   'ctl.bulkCompress.running': 'Compressing…',
   'ctl.bulkCompress.statusProcessing': 'Compressing',
