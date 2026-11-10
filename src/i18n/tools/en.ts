@@ -4343,8 +4343,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     "name": "Organize PDF",
     "shortName": "Organize PDF",
-    "tagline": "Reorder, rotate and delete PDF pages, then save the new PDF. It runs on your device.",
-    "intro": "Organize PDF shows every page of a PDF so you can put it in shape: move pages earlier or later, turn sideways scans upright, and delete blank or unwanted pages. Each page has its own buttons, which also work from the keyboard, and with a mouse you can drag pages into place. Undo all changes puts everything back. When it looks right, download the new PDF. All of this happens in your browser, so the document is never uploaded.",
+    "tagline": "Reorder, rotate and delete PDF pages, add blank pages or pages from another PDF, then save. It runs on your device.",
+    "intro": "Organize PDF shows every page of a PDF so you can put it in shape: move pages earlier or later, turn sideways scans upright, and delete blank or unwanted pages. Each page has its own buttons, which also work from the keyboard, and with a mouse you can drag pages into place. Undo all changes puts everything back. When it looks right, download the new PDF. All of this happens in your browser, so the document is never uploaded. You can also insert blank pages, or the pages of another PDF, after any page.",
     "seoTitle": "Organize PDF Pages – Reorder, Rotate, Delete",
     "seoDescription": "Reorder, rotate and delete PDF pages in your browser, with page previews. Download the new PDF. Free, private, nothing is uploaded.",
     "keywords": [
@@ -4398,7 +4398,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Can I add pages from another PDF?",
-        "answer": "Combine the files with Merge PDF first, then organize the merged file here."
+        "answer": "Yes. Set where they go under Insert new pages after page, then choose Add pages from another PDF. Its pages are added there, and you can move, rotate or delete them like the others."
       },
       {
         "question": "Can I use a password-protected PDF?",
@@ -4552,7 +4552,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Watermark PDF",
     "shortName": "Watermark PDF",
     "tagline": "Stamp text or a logo on PDF pages, then drag it into place. It runs on your device.",
-    "intro": "Watermark PDF adds a stamp such as CONFIDENTIAL, DRAFT, your name or your logo to the pages of a PDF. Type the text in any language or choose a logo image, then set its size, opacity and angle and drag it to where you want it on the page preview, or use the position sliders. Apply it to every page or to a range of pages. The watermark is added in your browser, so the document is never uploaded.",
+    "intro": "Watermark PDF adds a stamp such as CONFIDENTIAL, DRAFT, your name or your logo to the pages of a PDF. Type the text in any language or choose a logo image, then set its size, opacity and angle and drag it to where you want it on the page preview, or use the position sliders. Apply it to every page or to a range of pages. The watermark is added in your browser, so the document is never uploaded. Repeat it across the whole page, or put it behind the text so the words stay fully readable.",
     "seoTitle": "Watermark PDF Online – Text or Logo, Free",
     "seoDescription": "Add a text or logo watermark to PDF pages in your browser. Set size, opacity and angle, and drag it into place. Free, private, no upload.",
     "keywords": [
@@ -4574,7 +4574,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Place it",
-        "description": "Set the size, opacity and angle, then drag it on the preview or use the sliders."
+        "description": "Set the size, opacity and angle, then drag it on the preview or use the sliders. Tick Repeat across the page for a pattern over the whole page."
       },
       {
         "title": "Download",
@@ -4602,7 +4602,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Can the watermark be removed later?",
-        "answer": "It is added as an image on top of the page. Someone with a PDF editor could still remove it, so a watermark discourages copying rather than preventing it."
+        "answer": "It is added as an image on the page, on top of the text or behind it. Someone with a PDF editor could still remove it, so a watermark discourages copying rather than preventing it."
       },
       {
         "question": "Can I watermark only some pages?",
@@ -4610,7 +4610,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "Does the watermark cover the text?",
-        "answer": "Lower the opacity to keep the page readable. 15–30% is typical for diagonal watermarks."
+        "answer": "Not if you tick Behind the text and pictures: the text stays on top. On top of the page, lower the opacity to keep it readable; 15–30% is typical for diagonal watermarks. A scanned page is one picture, so use the on-top option for scans."
       },
       {
         "question": "Can I use a password-protected PDF?",

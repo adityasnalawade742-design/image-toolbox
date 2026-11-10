@@ -4411,9 +4411,9 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "Organizar PDF",
     shortName: "Organizar PDF",
-    tagline: "Reordena, gira y elimina páginas de un PDF y guarda el PDF nuevo. Funciona en tu dispositivo.",
+    tagline: "Reordena, gira y elimina páginas de un PDF, añade páginas en blanco o de otro PDF, y guarda. Funciona en tu dispositivo.",
     intro:
-      "Organizar PDF muestra todas las páginas de un PDF para que lo pongas en orden: mueve páginas antes o después, endereza escaneos que están de lado y elimina páginas en blanco o que no quieras. Cada página tiene sus propios botones, que también funcionan con el teclado, y con el ratón puedes arrastrar las páginas a su sitio. Deshacer todos los cambios lo devuelve todo a como estaba. Cuando esté bien, descarga el PDF nuevo. Todo esto ocurre en tu navegador, así que el documento nunca se sube.",
+      "Organizar PDF muestra todas las páginas de un PDF para que lo pongas en orden: mueve páginas antes o después, endereza escaneos que están de lado y elimina páginas en blanco o que no quieras. Cada página tiene sus propios botones, que también funcionan con el teclado, y con el ratón puedes arrastrar las páginas a su sitio. Deshacer todos los cambios lo devuelve todo a como estaba. Cuando esté bien, descarga el PDF nuevo. Todo esto ocurre en tu navegador, así que el documento nunca se sube. También puedes insertar páginas en blanco, o las páginas de otro PDF, después de cualquier página.",
     seoTitle: "Organizar PDF – reordenar, girar y eliminar páginas",
     seoDescription:
       "Organizar PDF gratis: reordena, gira y elimina páginas de un PDF en tu navegador con vistas previas y descarga el PDF nuevo. Privado y sin subir nada.",
@@ -4473,7 +4473,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "¿Puedo añadir páginas de otro PDF?",
-        answer: "Combina primero los archivos con Unir PDF y luego organiza aquí el archivo unido.",
+        answer: "Sí. Indica dónde van en Insertar páginas nuevas tras la página y elige Añadir páginas de otro PDF. Sus páginas se añaden ahí y puedes moverlas, girarlas o eliminarlas como las demás.",
       },
       {
         question: "¿Puedo usar un PDF protegido con contraseña?",
@@ -4640,7 +4640,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Marca de agua PDF",
     tagline: "Estampa un texto o un logotipo en las páginas de un PDF y arrástralo a su sitio. Funciona en tu dispositivo.",
     intro:
-      "Marca de agua en PDF añade un sello como CONFIDENCIAL, BORRADOR, tu nombre o tu logotipo a las páginas de un PDF. Escribe el texto en cualquier idioma o elige una imagen de logotipo, ajusta su tamaño, opacidad y ángulo, y arrástralo donde quieras en la vista previa de la página, o usa los controles deslizantes de posición. Aplícalo a todas las páginas o a un rango de páginas. La marca de agua se añade en tu navegador, así que el documento nunca se sube.",
+      "Marca de agua en PDF añade un sello como CONFIDENCIAL, BORRADOR, tu nombre o tu logotipo a las páginas de un PDF. Escribe el texto en cualquier idioma o elige una imagen de logotipo, ajusta su tamaño, opacidad y ángulo, y arrástralo donde quieras en la vista previa de la página, o usa los controles deslizantes de posición. Aplícalo a todas las páginas o a un rango de páginas. La marca de agua se añade en tu navegador, así que el documento nunca se sube. Repítela por toda la página o ponla detrás del texto para que se lea entero.",
     seoTitle: "Poner marca de agua a un PDF – texto o logotipo",
     seoDescription:
       "Marca de agua PDF gratis: añade un texto o un logotipo a las páginas en tu navegador, ajusta tamaño, opacidad y ángulo y arrástralo. Sin subir nada.",
@@ -4664,7 +4664,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         title: "Colócala",
         description:
-          "Ajusta el tamaño, la opacidad y el ángulo, y arrástrala en la vista previa o usa los controles deslizantes.",
+          "Ajusta el tamaño, la opacidad y el ángulo, y arrástrala en la vista previa o usa los controles deslizantes. Marca Repetir por toda la página para cubrirla con un patrón.",
       },
       {
         title: "Descarga",
@@ -4694,7 +4694,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Se puede quitar la marca de agua más tarde?",
         answer:
-          "Se añade como una imagen encima de la página. Alguien con un editor de PDF podría quitarla, así que una marca de agua disuade de copiar más que impedirlo.",
+          "Se añade como imagen en la página, encima o detrás del texto. Alguien con un editor de PDF podría quitarla, así que una marca de agua disuade de copiar más que impedirlo.",
       },
       {
         question: "¿Puedo poner marca de agua solo en algunas páginas?",
@@ -4703,7 +4703,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿La marca de agua tapa el texto?",
         answer:
-          "Baja la opacidad para que la página siga siendo legible. Lo habitual en marcas de agua diagonales es un 15–30%.",
+          "No, si marcas Detrás del texto y las imágenes: el texto queda encima. Encima de la página, baja la opacidad para que se lea; lo habitual es 15–30 % en marcas diagonales. Una página escaneada es una sola imagen, así que para escaneos usa la opción de encima.",
       },
       {
         question: "¿Puedo usar un PDF protegido con contraseña?",

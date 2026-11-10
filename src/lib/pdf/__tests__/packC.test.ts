@@ -8,6 +8,7 @@ import { updateXmp, writeMetadata } from '../metadataEdit';
 import { listBookmarks, normaliseLevels, writeBookmarks } from '../outline';
 import { listAttachments, readAttachment, updateAttachments } from '../attachments';
 import { sanitizePdf } from '../sanitize';
+import { organizePages, stampImage, tileCentres } from '../pageOps';
 
 async function base(pages = 3) {
   const doc = await PDFDocument.create();
@@ -210,5 +211,52 @@ describe('sanitize', () => {
     expect(doc.getPage(0).node.Annots()?.size()).toBe(1);
     expect(doc.getTitle()).toBeUndefined();
     expect(new TextDecoder('latin1').decode(r.bytes!)).not.toMatch(/Secret|example\.com/);
+  });
+});
+
+// 1×1 PNG for stamping
+const PNG1 = Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='), (c) => c.charCodeAt(0));
+const hex = (t: string) => '<' + [...t].map((c) => c.charCodeAt(0).toString(16).toUpperCase().padStart(2, '0')).join('') + '>';
+
+describe('watermark: tiled and behind the content', () => {
+  it('lays tiles over the whole page, fewer with a bigger gap', () => {
+    const near = tileCentres(600, 800, 120, 30, 30, 0.3);
+    const far = tileCentres(600, 800, 120, 30, 30, 1.5);
+    expect(near.length).toBeGreaterThan(far.length);
+    expect(far.length).toBeGreaterThan(4);
+    for (const c of near) {
+      expect(c.u).toBeGreaterThanOrEqual(-60);
+      expect(c.u).toBeLessThanOrEqual(660);
+      expect(c.v).toBeGreaterThanOrEqual(-60);
+      expect(c.v).toBeLessThanOrEqual(860);
+    }
+  });
+  it('draws many copies when tiled, and puts them under the text when asked', async () => {
+    const src = await (await base(1)).save();
+    const on = await contentText(await stampImage(src, { png: PNG1, cx: 0.5, cy: 0.5, widthFraction: 0.2, rotate: 30, pages: 'all', tile: { gap: 0.6 } }));
+    expect(on.match(/ Do/g)!.length).toBeGreaterThan(10);
+    expect(on.indexOf(' Do')).toBeGreaterThan(on.indexOf('Tj'));
+    const under = await contentText(await stampImage(src, { png: PNG1, cx: 0.5, cy: 0.5, widthFraction: 0.2, pages: 'all', behind: true }));
+    expect(under.match(/ Do/g)!.length).toBe(1);
+    expect(under.indexOf(' Do')).toBeLessThan(under.indexOf('Tj'));
+  });
+});
+
+describe('organize: blank pages and pages from another PDF', () => {
+  it('mixes pages of two files with a blank page sized like the page before it', async () => {
+    const a = await (await base(2)).save();
+    const other = await PDFDocument.create();
+    const font = await other.embedFont(StandardFonts.Helvetica);
+    other.addPage([300, 300]).drawText('Other', { x: 20, y: 150, size: 20, font });
+    const out = await organizePages([a, await other.save()], [{ file: 1, index: 0 }, { blank: true }, { file: 0, index: 1 }, { file: 0, index: 0, rotate: 90 }, { blank: true }]);
+    const doc = await PDFDocument.load(out);
+    expect(doc.getPageCount()).toBe(5);
+    expect(await contentText(out, 0)).toContain(hex('Other'));
+    expect(doc.getPage(1).getSize()).toEqual({ width: 300, height: 300 });
+    expect((await contentText(out, 1)).trim()).toBe('');
+    expect(await contentText(out, 2)).toContain(hex('Page 2'));
+    expect(doc.getPage(3).getRotation().angle).toBe(90);
+    // After a page shown sideways, a blank page takes its on-screen shape
+    expect(doc.getPage(4).getSize()).toEqual({ width: 842, height: 595 });
   });
 });

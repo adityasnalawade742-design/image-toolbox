@@ -4416,9 +4416,9 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "PDF organisieren",
     shortName: "PDF organisieren",
-    tagline: "Sortiere, drehe und lösche PDF-Seiten und speichere dann das neue PDF. Läuft auf deinem Gerät.",
+    tagline: "PDF-Seiten neu ordnen, drehen und löschen, leere Seiten oder Seiten aus einem anderen PDF einfügen und speichern. Läuft auf deinem Gerät.",
     intro:
-      "PDF organisieren zeigt alle Seiten eines PDFs, damit du es in Form bringen kannst: Seiten nach vorne oder hinten verschieben, quer liegende Scans aufrichten und leere oder unerwünschte Seiten löschen. Jede Seite hat eigene Schaltflächen, die auch mit der Tastatur funktionieren, und mit der Maus kannst du Seiten an ihren Platz ziehen. „Alle Änderungen zurücksetzen“ stellt den Ausgangszustand wieder her. Wenn alles passt, lade das neue PDF herunter. All das passiert in deinem Browser, das Dokument wird also nie hochgeladen.",
+      "PDF organisieren zeigt alle Seiten eines PDFs, damit du es in Form bringen kannst: Seiten nach vorne oder hinten verschieben, quer liegende Scans aufrichten und leere oder unerwünschte Seiten löschen. Jede Seite hat eigene Schaltflächen, die auch mit der Tastatur funktionieren, und mit der Maus kannst du Seiten an ihren Platz ziehen. „Alle Änderungen zurücksetzen“ stellt den Ausgangszustand wieder her. Wenn alles passt, lade das neue PDF herunter. All das passiert in deinem Browser, das Dokument wird also nie hochgeladen. Du kannst auch leere Seiten oder die Seiten eines anderen PDFs nach jeder beliebigen Seite einfügen.",
     seoTitle: "PDF-Seiten sortieren, drehen und löschen",
     seoDescription:
       "PDF Seiten sortieren, drehen und löschen, kostenlos: Seiten im Browser mit Vorschau neu anordnen und das neue PDF herunterladen. Privat, ohne Upload.",
@@ -4478,7 +4478,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich Seiten aus einem anderen PDF hinzufügen?",
         answer:
-          "Füge die Dateien zuerst mit PDF zusammenfügen zusammen und organisiere dann die zusammengefügte Datei hier.",
+          "Ja. Lege unter „Neue Seiten einfügen nach Seite“ fest, wohin sie kommen, und wähle „Seiten aus einem anderen PDF einfügen“. Die Seiten landen dort und lassen sich wie die anderen verschieben, drehen oder löschen.",
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF verwenden?",
@@ -4645,7 +4645,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF-Wasserzeichen",
     tagline: "Setze Text oder ein Logo als Stempel auf PDF-Seiten und zieh ihn an die richtige Stelle. Läuft auf deinem Gerät.",
     intro:
-      "Wasserzeichen in PDF einfügen setzt einen Stempel wie VERTRAULICH, ENTWURF, deinen Namen oder dein Logo auf die Seiten eines PDFs. Gib den Text in einer beliebigen Sprache ein oder wähle ein Logo-Bild, stell dann Größe, Deckkraft und Winkel ein und zieh das Wasserzeichen in der Seitenvorschau an die gewünschte Stelle, oder nutze die Positionsregler. Wende es auf alle Seiten oder auf einen Seitenbereich an. Das Wasserzeichen wird in deinem Browser eingefügt, das Dokument wird also nie hochgeladen.",
+      "Wasserzeichen in PDF einfügen setzt einen Stempel wie VERTRAULICH, ENTWURF, deinen Namen oder dein Logo auf die Seiten eines PDFs. Gib den Text in einer beliebigen Sprache ein oder wähle ein Logo-Bild, stell dann Größe, Deckkraft und Winkel ein und zieh das Wasserzeichen in der Seitenvorschau an die gewünschte Stelle, oder nutze die Positionsregler. Wende es auf alle Seiten oder auf einen Seitenbereich an. Das Wasserzeichen wird in deinem Browser eingefügt, das Dokument wird also nie hochgeladen. Wiederhole es über die ganze Seite oder lege es hinter den Text, damit er voll lesbar bleibt.",
     seoTitle: "Wasserzeichen in PDF einfügen – Text oder Logo",
     seoDescription:
       "PDF Wasserzeichen einfügen, kostenlos: Text oder Logo im Browser auf PDF-Seiten setzen, Größe, Deckkraft und Winkel wählen, an die Stelle ziehen. Ohne Upload.",
@@ -4669,7 +4669,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         title: "Platzieren",
         description:
-          "Stell Größe, Deckkraft und Winkel ein und zieh es dann in der Vorschau an seinen Platz, oder nutze die Regler.",
+          "Stell Größe, Deckkraft und Winkel ein und zieh es dann in der Vorschau an seinen Platz, oder nutze die Regler. Hake „Über die ganze Seite wiederholen“ an für ein Muster über die ganze Seite.",
       },
       {
         title: "Herunterladen",
@@ -4699,7 +4699,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann das Wasserzeichen später entfernt werden?",
         answer:
-          "Es wird als Bild über der Seite eingefügt. Wer einen PDF-Editor hat, könnte es trotzdem entfernen; ein Wasserzeichen erschwert das Kopieren also eher, als dass es das Kopieren verhindert.",
+          "Es wird als Bild auf der Seite eingefügt, über oder hinter dem Text. Mit einem PDF-Editor ließe es sich entfernen; ein Wasserzeichen schreckt vom Kopieren ab, verhindert es aber nicht.",
       },
       {
         question: "Kann ich nur einige Seiten mit einem Wasserzeichen versehen?",
@@ -4708,7 +4708,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Verdeckt das Wasserzeichen den Text?",
         answer:
-          "Verringere die Deckkraft, damit die Seite lesbar bleibt. 15–30 % sind für diagonale Wasserzeichen üblich.",
+          "Nicht, wenn du „Hinter Text und Bildern“ anhakst: Der Text bleibt obenauf. Darüber senkst du die Deckkraft, damit alles lesbar bleibt; 15–30 % sind bei diagonalen Wasserzeichen üblich. Eine gescannte Seite ist ein einziges Bild, also lege es bei Scans darüber.",
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF verwenden?",

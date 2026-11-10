@@ -827,6 +827,13 @@ export const strings = {
   // Organize PDF
   'ctl.organize.hint': 'Her sayfanın altındaki düğmelerle sayfayı taşıyın, döndürün veya silin. Sayfaları sürükleyerek de yeniden sıralayabilirsiniz.',
   'ctl.organize.reset': 'Tüm değişiklikleri geri al',
+  'ctl.organize.insertAfter': "Yeni sayfaları şu sayfadan sonra ekle",
+  'ctl.organize.insertHint': "0 en başa, {n} en sona ekler.",
+  'ctl.organize.addBlank': "Boş sayfa ekle",
+  'ctl.organize.addPdf': "Başka bir PDF’ten sayfa ekle",
+  'ctl.organize.blankPage': "Boş sayfa",
+  'ctl.organize.inserted': "{n} sayfa eklendi.",
+  'ctl.organize.inserted.one': "1 sayfa eklendi.",
 
   // Rotate PDF
   'ctl.rotatepdf.angle': 'Döndürme açısı',
@@ -857,6 +864,10 @@ export const strings = {
   'ctl.pdfwm.size': 'Sayfadaki genişlik',
   'ctl.pdfwm.text': 'Filigran metni',
   'ctl.pdfwm.dragHint': 'Filigranı sayfada sürükleyin veya kaydırıcıları kullanın.',
+  'ctl.pdfwm.tile': "Sayfa boyunca tekrarla",
+  'ctl.pdfwm.gap': "Aralık",
+  'ctl.pdfwm.behind': "Metin ve resimlerin arkasında",
+  'ctl.pdfwm.behindHint': "Metin üstte kalır ve rahatça okunur. Taranmış bir sayfa tek bir resimdir, arkasındaki filigranı gizler.",
 
   // Sign PDF
   'ctl.sign.source': 'İmza',

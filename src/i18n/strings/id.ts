@@ -827,6 +827,13 @@ export const strings = {
   // ===== Organize PDF =====
   'ctl.organize.hint': 'Gunakan tombol di bawah setiap halaman untuk memindahkan, memutar, atau menghapusnya. Anda juga bisa menyeret halaman untuk mengubah urutannya.',
   'ctl.organize.reset': 'Batalkan semua perubahan',
+  'ctl.organize.insertAfter': "Sisipkan halaman baru setelah halaman",
+  'ctl.organize.insertHint': "0 menaruhnya di awal; {n} di akhir.",
+  'ctl.organize.addBlank': "Tambah halaman kosong",
+  'ctl.organize.addPdf': "Tambah halaman dari PDF lain",
+  'ctl.organize.blankPage': "Halaman kosong",
+  'ctl.organize.inserted': "{n} halaman ditambahkan.",
+  'ctl.organize.inserted.one': "1 halaman ditambahkan.",
 
   // ===== Rotate PDF =====
   'ctl.rotatepdf.angle': 'Putar sebesar',
@@ -857,6 +864,10 @@ export const strings = {
   'ctl.pdfwm.size': 'Lebar di halaman',
   'ctl.pdfwm.text': 'Teks watermark',
   'ctl.pdfwm.dragHint': 'Seret watermark di halaman, atau gunakan slider.',
+  'ctl.pdfwm.tile': "Ulangi di seluruh halaman",
+  'ctl.pdfwm.gap': "Jarak",
+  'ctl.pdfwm.behind': "Di belakang teks dan gambar",
+  'ctl.pdfwm.behindHint': "Teks tetap di atas dan terbaca jelas. Halaman hasil pindai adalah satu gambar, jadi watermark di belakangnya tertutup.",
 
   // ===== Sign PDF =====
   'ctl.sign.source': 'Tanda tangan',

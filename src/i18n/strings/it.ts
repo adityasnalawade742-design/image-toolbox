@@ -827,6 +827,13 @@ export const strings = {
   // Organize PDF
   'ctl.organize.hint': 'Usa i pulsanti sotto ogni pagina per spostarla, ruotarla o eliminarla. Puoi anche trascinare le pagine per riordinarle.',
   'ctl.organize.reset': 'Annulla tutte le modifiche',
+  'ctl.organize.insertAfter': "Inserisci le nuove pagine dopo la pagina",
+  'ctl.organize.insertHint': "0 le mette all’inizio; {n} alla fine.",
+  'ctl.organize.addBlank': "Aggiungi una pagina vuota",
+  'ctl.organize.addPdf': "Aggiungi pagine da un altro PDF",
+  'ctl.organize.blankPage': "Pagina vuota",
+  'ctl.organize.inserted': "{n} pagine aggiunte.",
+  'ctl.organize.inserted.one': "1 pagina aggiunta.",
 
   // Rotate PDF
   'ctl.rotatepdf.angle': 'Ruota di',
@@ -857,6 +864,10 @@ export const strings = {
   'ctl.pdfwm.size': 'Larghezza sulla pagina',
   'ctl.pdfwm.text': 'Testo della filigrana',
   'ctl.pdfwm.dragHint': 'Trascina la filigrana sulla pagina o usa i cursori.',
+  'ctl.pdfwm.tile': "Ripeti su tutta la pagina",
+  'ctl.pdfwm.gap': "Spaziatura",
+  'ctl.pdfwm.behind': "Dietro testo e immagini",
+  'ctl.pdfwm.behindHint': "Il testo resta sopra e perfettamente leggibile. Una pagina scansionata è un’unica immagine e nasconde la filigrana dietro.",
 
   // Sign PDF
   'ctl.sign.source': 'Firma',

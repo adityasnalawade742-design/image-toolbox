@@ -4419,9 +4419,9 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "Atur Halaman PDF",
     shortName: "Atur PDF",
-    tagline: "Ubah urutan, putar, dan hapus halaman PDF, lalu simpan PDF barunya. Berjalan di perangkat Anda.",
+    tagline: "Atur ulang, putar, dan hapus halaman PDF, tambahkan halaman kosong atau dari PDF lain, lalu simpan. Berjalan di perangkat Anda.",
     intro:
-      "Atur Halaman PDF menampilkan setiap halaman PDF agar Anda bisa merapikannya: pindahkan halaman ke depan atau ke belakang, tegakkan hasil scan yang miring ke samping, dan hapus halaman kosong atau yang tidak diinginkan. Setiap halaman punya tombolnya sendiri, yang juga bisa dipakai dari keyboard, dan dengan mouse Anda bisa menyeret halaman ke tempatnya. Batalkan semua perubahan mengembalikan semuanya seperti semula. Jika sudah pas, unduh PDF barunya. Semua ini terjadi di browser Anda, jadi dokumen tidak pernah diunggah.",
+      "Atur Halaman PDF menampilkan setiap halaman PDF agar Anda bisa merapikannya: pindahkan halaman ke depan atau ke belakang, tegakkan hasil scan yang miring ke samping, dan hapus halaman kosong atau yang tidak diinginkan. Setiap halaman punya tombolnya sendiri, yang juga bisa dipakai dari keyboard, dan dengan mouse Anda bisa menyeret halaman ke tempatnya. Batalkan semua perubahan mengembalikan semuanya seperti semula. Jika sudah pas, unduh PDF barunya. Semua ini terjadi di browser Anda, jadi dokumen tidak pernah diunggah. Anda juga bisa menyisipkan halaman kosong, atau halaman dari PDF lain, setelah halaman mana pun.",
     seoTitle: "Atur Halaman PDF – Ubah Urutan, Putar, Hapus",
     seoDescription:
       "Atur halaman PDF di browser Anda: ubah urutan, putar, dan hapus halaman dengan pratinjau, lalu unduh PDF barunya. Gratis, privat, dan tidak ada yang diunggah.",
@@ -4479,7 +4479,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya menambahkan halaman dari PDF lain?",
         answer:
-          "Gabungkan file dengan Gabungkan PDF terlebih dahulu, lalu atur file gabungannya di sini.",
+          "Ya. Atur posisinya di Sisipkan halaman baru setelah halaman, lalu pilih Tambah halaman dari PDF lain. Halamannya ditambahkan di sana dan bisa dipindah, diputar, atau dihapus seperti halaman lain.",
       },
       {
         question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
@@ -4649,7 +4649,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Watermark PDF",
     tagline: "Bubuhkan teks atau logo di halaman PDF, lalu seret ke posisinya. Berjalan di perangkat Anda.",
     intro:
-      "Watermark PDF menambahkan cap seperti RAHASIA, DRAF, nama Anda, atau logo Anda ke halaman PDF. Ketik teks dalam bahasa apa pun atau pilih gambar logo, lalu atur ukuran, opasitas, dan sudutnya, dan seret ke posisi yang Anda inginkan di pratinjau halaman, atau gunakan slider posisi. Terapkan ke semua halaman atau ke rentang halaman tertentu. Watermark ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah.",
+      "Watermark PDF menambahkan cap seperti RAHASIA, DRAF, nama Anda, atau logo Anda ke halaman PDF. Ketik teks dalam bahasa apa pun atau pilih gambar logo, lalu atur ukuran, opasitas, dan sudutnya, dan seret ke posisi yang Anda inginkan di pratinjau halaman, atau gunakan slider posisi. Terapkan ke semua halaman atau ke rentang halaman tertentu. Watermark ditambahkan di browser Anda, jadi dokumen tidak pernah diunggah. Ulangi di seluruh halaman, atau taruh di belakang teks agar tulisan tetap terbaca jelas.",
     seoTitle: "Watermark PDF Online – Teks atau Logo, Gratis",
     seoDescription:
       "Tambah watermark PDF berupa teks atau logo di browser Anda. Atur ukuran, opasitas, dan sudut, lalu seret ke posisinya. Gratis, privat, tanpa unggah file.",
@@ -4672,7 +4672,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Tempatkan",
-        description: "Atur ukuran, opasitas, dan sudut, lalu seret di pratinjau atau gunakan slider.",
+        description: "Atur ukuran, opasitas, dan sudut, lalu seret di pratinjau atau gunakan slider. Centang Ulangi di seluruh halaman untuk pola di seluruh halaman.",
       },
       {
         title: "Unduh",
@@ -4701,7 +4701,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah watermark dihapus nanti?",
         answer:
-          "Watermark ditambahkan sebagai gambar di atas halaman. Orang yang punya editor PDF masih bisa menghapusnya, jadi watermark lebih untuk mencegah orang menyalin daripada benar-benar menghalanginya.",
+          "Watermark ditambahkan sebagai gambar di halaman, di atas atau di belakang teks. Orang dengan editor PDF masih bisa menghapusnya, jadi watermark mencegah penyalinan, bukan menghalanginya sepenuhnya.",
       },
       {
         question: "Bisakah saya memberi watermark hanya pada beberapa halaman?",
@@ -4711,7 +4711,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah watermark menutupi teks?",
         answer:
-          "Turunkan opasitasnya agar halaman tetap mudah dibaca. 15–30% umum dipakai untuk watermark diagonal.",
+          "Tidak, jika Anda mencentang Di belakang teks dan gambar: teks tetap di atas. Di atas halaman, turunkan opasitas agar tetap terbaca; 15–30% umum untuk watermark diagonal. Halaman hasil pindai adalah satu gambar, jadi untuk pindaian taruh di atas.",
       },
       {
         question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",

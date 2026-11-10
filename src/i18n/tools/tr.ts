@@ -4420,9 +4420,9 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "organize-pdf": {
     name: "PDF Sayfa Düzenleme",
     shortName: "PDF Düzenle",
-    tagline: "PDF sayfalarını yeniden sıralayın, döndürün ve silin, ardından yeni PDF'i kaydedin. Cihazınızda çalışır.",
+    tagline: "PDF sayfalarını yeniden sıralayın, döndürün, silin; boş sayfa ya da başka bir PDF’ten sayfa ekleyip kaydedin. Cihazınızda çalışır.",
     intro:
-      "PDF Sayfa Düzenleme, bir PDF'in tüm sayfalarını göstererek belgeyi toparlamanızı sağlar: sayfaları öne veya geriye taşıyın, yan duran taramaları düzeltin, boş veya istenmeyen sayfaları silin. Her sayfanın klavyeyle de çalışan kendi düğmeleri vardır; fareyle sayfaları sürükleyerek de yerine koyabilirsiniz. Tüm değişiklikleri geri al düğmesi her şeyi eski haline getirir. Her şey doğru göründüğünde yeni PDF'i indirin. Bunların hepsi tarayıcınızda gerçekleşir, bu yüzden belge asla yüklenmez.",
+      "PDF Sayfa Düzenleme, bir PDF'in tüm sayfalarını göstererek belgeyi toparlamanızı sağlar: sayfaları öne veya geriye taşıyın, yan duran taramaları düzeltin, boş veya istenmeyen sayfaları silin. Her sayfanın klavyeyle de çalışan kendi düğmeleri vardır; fareyle sayfaları sürükleyerek de yerine koyabilirsiniz. Tüm değişiklikleri geri al düğmesi her şeyi eski haline getirir. Her şey doğru göründüğünde yeni PDF'i indirin. Bunların hepsi tarayıcınızda gerçekleşir, bu yüzden belge asla yüklenmez. Boş sayfaları ya da başka bir PDF’in sayfalarını istediğiniz sayfadan sonra da ekleyebilirsiniz.",
     seoTitle: "PDF Sayfa Düzenleme – Sırala, Döndür, Sil",
     seoDescription:
       "PDF sayfa düzenleme tarayıcıda: sayfaları önizlemelerle yeniden sıralayın, döndürün ve silin, yeni PDF'i indirin. Ücretsiz, gizli, yükleme yok.",
@@ -4481,7 +4481,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Başka bir PDF'ten sayfa ekleyebilir miyim?",
-        answer: "Önce dosyaları PDF Birleştirme ile birleştirin, sonra birleştirilmiş dosyayı burada düzenleyin.",
+        answer: "Evet. Yeni sayfaları şu sayfadan sonra ekle alanında yerini belirleyin, sonra Başka bir PDF’ten sayfa ekle’yi seçin. Sayfaları oraya eklenir; diğerleri gibi taşıyabilir, döndürebilir ya da silebilirsiniz.",
       },
       {
         question: "Parola korumalı bir PDF kullanabilir miyim?",
@@ -4649,7 +4649,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF Filigran",
     tagline: "PDF sayfalarına metin veya logo damgası ekleyin, ardından sürükleyerek yerleştirin. Cihazınızda çalışır.",
     intro:
-      "PDF'e Filigran Ekleme, bir PDF'in sayfalarına GİZLİ, TASLAK, adınız veya logonuz gibi bir damga ekler. Metni herhangi bir dilde yazın veya bir logo resmi seçin; ardından boyutunu, opaklığını ve açısını ayarlayıp sayfa önizlemesinde istediğiniz yere sürükleyin ya da konum kaydırıcılarını kullanın. Filigranı tüm sayfalara veya bir sayfa aralığına uygulayın. Filigran tarayıcınızda eklenir, bu yüzden belge asla yüklenmez.",
+      "PDF'e Filigran Ekleme, bir PDF'in sayfalarına GİZLİ, TASLAK, adınız veya logonuz gibi bir damga ekler. Metni herhangi bir dilde yazın veya bir logo resmi seçin; ardından boyutunu, opaklığını ve açısını ayarlayıp sayfa önizlemesinde istediğiniz yere sürükleyin ya da konum kaydırıcılarını kullanın. Filigranı tüm sayfalara veya bir sayfa aralığına uygulayın. Filigran tarayıcınızda eklenir, bu yüzden belge asla yüklenmez. Tüm sayfa boyunca tekrarlayın ya da yazılar rahatça okunsun diye metnin arkasına koyun.",
     seoTitle: "PDF'e Filigran Ekleme – Metin veya Logo, Ücretsiz",
     seoDescription:
       "PDF filigran ekleme tarayıcıda: metin veya logo filigranı ekleyin; boyutu, opaklığı ve açıyı ayarlayıp sürükleyerek yerleştirin. Ücretsiz, gizli, yükleme yok.",
@@ -4673,7 +4673,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         title: "Yerleştirin",
         description:
-          "Boyutu, opaklığı ve açıyı ayarlayın, ardından önizlemede sürükleyin veya kaydırıcıları kullanın.",
+          "Boyutu, opaklığı ve açıyı ayarlayın, ardından önizlemede sürükleyin veya kaydırıcıları kullanın. Tüm sayfaya desen için Sayfa boyunca tekrarla’yı işaretleyin.",
       },
       {
         title: "İndirin",
@@ -4702,7 +4702,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Filigran daha sonra kaldırılabilir mi?",
         answer:
-          "Filigran, sayfanın üzerine bir resim olarak eklenir. PDF düzenleyicisi olan biri yine de kaldırabilir; yani filigran kopyalamayı engellemekten çok caydırır.",
+          "Sayfaya, metnin üstüne ya da arkasına resim olarak eklenir. PDF düzenleyicisi olan biri yine de kaldırabilir; filigran kopyalamayı engellemez, caydırır.",
       },
       {
         question: "Yalnızca bazı sayfalara filigran ekleyebilir miyim?",
@@ -4711,7 +4711,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Filigran metni kapatır mı?",
         answer:
-          "Sayfanın okunabilir kalması için opaklığı düşürün. Çapraz filigranlar için genellikle %15–30 kullanılır.",
+          "Metin ve resimlerin arkasında seçeneğini işaretlerseniz kapatmaz: metin üstte kalır. Sayfanın üstündeyken okunabilir kalsın diye opaklığı düşürün; çapraz filigranlarda %15–30 yaygındır. Taranmış sayfa tek bir resimdir, taramalar için üstte seçeneğini kullanın.",
       },
       {
         question: "Parola korumalı bir PDF kullanabilir miyim?",

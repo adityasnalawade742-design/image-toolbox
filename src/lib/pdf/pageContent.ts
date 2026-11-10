@@ -13,6 +13,20 @@ export function isolateContent(doc: PDFDocument, page: PDFPage, before = '') {
   page.node.wrapContentStreams(start, end);
 }
 
+/**
+ * Move what pdf-lib drew on this page (its own content stream, added last) underneath the page's existing content.
+ * pdf-lib wraps its drawing in q … Q, so the original content still starts from a clean graphics state.
+ */
+export function sendDrawingToBack(page: PDFPage) {
+  const ref = (page as unknown as { contentStreamRef?: PDFRef }).contentStreamRef;
+  const contents = page.node.Contents();
+  if (!ref || !(contents instanceof PDFArray)) return;
+  const i = contents.asArray().findIndex((x) => x === ref);
+  if (i <= 0) return;
+  contents.remove(i);
+  contents.insert(0, ref);
+}
+
 /** The page's annotations as dictionaries, with their references */
 export function annotations(page: PDFPage): { ref: PDFRef | null; dict: PDFDict }[] {
   const annots = page.node.Annots();

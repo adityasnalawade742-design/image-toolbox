@@ -60,6 +60,13 @@ export const pdfStrings = {
   // Organize
   'ctl.organize.hint': 'Use the buttons under each page to move, rotate or delete it. You can also drag pages to reorder them.',
   'ctl.organize.reset': 'Undo all changes',
+  'ctl.organize.insertAfter': 'Insert new pages after page',
+  'ctl.organize.insertHint': '0 puts them first; {n} puts them at the end.',
+  'ctl.organize.addBlank': 'Add a blank page',
+  'ctl.organize.addPdf': 'Add pages from another PDF',
+  'ctl.organize.blankPage': 'Blank page',
+  'ctl.organize.inserted': 'Added {n} pages.',
+  'ctl.organize.inserted.one': 'Added 1 page.',
 
   // Rotate
   'ctl.rotatepdf.angle': 'Rotate by',
@@ -90,6 +97,10 @@ export const pdfStrings = {
   'ctl.pdfwm.size': 'Width on the page',
   'ctl.pdfwm.text': 'Watermark text',
   'ctl.pdfwm.dragHint': 'Drag the watermark on the page, or use the sliders.',
+  'ctl.pdfwm.tile': 'Repeat across the page',
+  'ctl.pdfwm.gap': 'Spacing',
+  'ctl.pdfwm.behind': 'Behind the text and pictures',
+  'ctl.pdfwm.behindHint': 'Text stays fully readable on top. A scanned page is one picture, so it hides a watermark placed behind it.',
 
   // Sign
   'ctl.sign.source': 'Signature',
