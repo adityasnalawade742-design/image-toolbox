@@ -60,6 +60,8 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
   const problemText = useProblemText();
   const [type, setType] = useState<Symbology>(defaultType);
   const [value, setValue] = useState('');
+  // EAN/UPC/ISBN add-on: 2 digits (magazine issue) or 5 (book price)
+  const [addon, setAddon] = useState('');
   const [scale, setScale] = useState(3);
   const [heightMm, setHeightMm] = useState(15);
   const [showText, setShowText] = useState(true);
@@ -72,8 +74,12 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const info = SYMBOLOGIES[type];
-  const checked = checkBarcode(type, value);
-  const problem = checked.ok ? null : problemText(checked, type);
+  const base = checkBarcode(type, value);
+  const retail = /^(ean13|ean8|upca|upce|isbn)$/.test(type);
+  const addonText = retail ? addon.replace(/\s/g, '') : '';
+  const addonBad = !!addonText && !/^(\d{2}|\d{5})$/.test(addonText);
+  const checked = base.ok && addonText && !addonBad ? { ...base, addon: addonText } : base;
+  const problem = base.ok ? (addonBad ? t('ctl.barcode.addonBad') : null) : problemText(base, type);
   const style: BarcodeStyle = { scale, heightMm, showText, bar, background: bg === 'white' ? '#ffffff' : null };
   const styleKey = JSON.stringify(style);
 
@@ -81,7 +87,7 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
     let live = true;
     setScan(null);
     setEncodeError(null);
-    if (!checked.ok) {
+    if (!checked.ok || addonBad) {
       setSize(null);
       return;
     }
@@ -124,9 +130,9 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
     };
     // checked is derived from type and value
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [type, value, styleKey]);
+  }, [type, value, addonText, styleKey]);
 
-  const fileBase = `barcode-${type}-${(checked.ok ? value.trim() : 'code').replace(/[^\p{L}\p{N}-]+/gu, '-').slice(0, 40)}`;
+  const fileBase = `barcode-${type}-${(checked.ok ? value.trim() : 'code').replace(/[^\p{L}\p{N}-]+/gu, '-').slice(0, 40)}${checked.ok && !addonBad && addonText ? `-${addonText}` : ''}`;
   // bwip-js draws 1 module = 1 pixel at 72 dpi, times the bar width: that is the resolution it prints at as set
   const dpi = 72 * scale;
   const downloadPng = async () => {
@@ -138,7 +144,7 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
     setStatus(t('ctl.pdf.done', { name: `${fileBase}.png` }));
   };
   const downloadSvg = async () => {
-    if (!checked.ok) return;
+    if (!checked.ok || addonBad) return;
     const r = await render();
     downloadBlob(new Blob([r.barcodeSvg(checked, style)], { type: 'image/svg+xml' }), `${fileBase}.svg`);
     setStatus(t('ctl.pdf.done', { name: `${fileBase}.svg` }));
@@ -195,6 +201,28 @@ export function BarcodeGeneratorWorkspace({ defaultType = 'code128' }: { default
           {error}
         </p>
       </div>
+      {retail && (
+        <div className="space-y-1">
+          <label htmlFor="bc-addon" className="block text-[14px] text-ink">
+            {t('ctl.barcode.addon')}
+          </label>
+          <input
+            id="bc-addon"
+            value={addon}
+            onChange={(e) => setAddon(e.target.value)}
+            placeholder={type === 'isbn' ? '51299' : '05'}
+            inputMode="numeric"
+            autoComplete="off"
+            maxLength={6}
+            aria-invalid={addonBad}
+            aria-describedby="bc-addon-hint bc-error"
+            className={field}
+          />
+          <p id="bc-addon-hint" className="text-[13px] text-graphite">
+            {t('ctl.barcode.addonHint')}
+          </p>
+        </div>
+      )}
       <div className="pt-4 border-t border-ink space-y-4">
         <RangeField id="bc-scale" label={t('ctl.barcode.barWidth')} value={scale} min={1} max={8} unit=" px" onChange={setScale} />
         {!info.twoD && <RangeField id="bc-height" label={t('ctl.barcode.height')} value={heightMm} min={5} max={40} unit=" mm" onChange={setHeightMm} />}

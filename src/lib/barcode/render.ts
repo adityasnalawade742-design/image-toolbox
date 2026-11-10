@@ -29,12 +29,19 @@ export interface CheckedCode {
   bwipType: string;
   data: string;
   parse?: boolean;
+  /** EAN/UPC/ISBN: a 2- or 5-digit add-on printed to the right (issue number, book price) */
+  addon?: string;
 }
 
-function options({ bwipType, data, parse }: CheckedCode, style: BarcodeStyle) {
+/** Add-ons go on EAN, UPC and ISBN barcodes only, and have 2 or 5 digits */
+export const addonAllowed = (bwipType: string) => RETAIL.has(bwipType);
+export const validAddon = (addon: string) => /^(\d{2}|\d{5})$/.test(addon);
+
+function options({ bwipType, data, parse, addon }: CheckedCode, style: BarcodeStyle) {
   const twoD = TWO_D.has(bwipType);
   return {
-    text: data,
+    // bwip-js reads an add-on as a second group after a space
+    text: addon && addonAllowed(bwipType) && validAddon(addon) ? `${data} ${addon}` : data,
     // parsefnc reads the ^ECI marker (see checkBarcode)
     ...(parse ? { parsefnc: true } : {}),
     scale: style.scale,

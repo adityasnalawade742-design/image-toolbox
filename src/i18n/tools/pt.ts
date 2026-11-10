@@ -6349,7 +6349,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Código EAN",
     tagline: "Crie códigos de barras de produto EAN-13 e EAN-8 com o dígito verificador adicionado para você. Grátis e roda no seu dispositivo.",
     intro:
-      "O EAN-13 é o código de barras dos produtos nas lojas do mundo todo, e o EAN-8 é sua versão curta para embalagens pequenas. Digite os 12 primeiros dígitos (ou 7 para EAN-8) e o dígito verificador é calculado e adicionado; se você digitar os 13, a ferramenta confirma que o último dígito está certo. O código de barras é desenhado conforme o padrão, com os dígitos embaixo, e lido de volta por um mecanismo de leitura antes de você salvá-lo em PNG ou SVG. Nada é enviado.",
+      "O EAN-13 é o código de barras dos produtos nas lojas do mundo todo, e o EAN-8 é sua versão curta para embalagens pequenas. Digite os 12 primeiros dígitos (ou 7 para EAN-8) e o dígito verificador é calculado e adicionado; se você digitar os 13, a ferramenta confirma que o último dígito está certo. O código de barras é desenhado conforme o padrão, com os dígitos embaixo, e lido de volta por um mecanismo de leitura antes de você salvá-lo em PNG ou SVG. Nada é enviado. Um complemento de 2 ou 5 dígitos, como o número de uma revista, pode ir à direita.",
     seoTitle: "Gerador de código de barras EAN-13 grátis e online",
     seoDescription:
       "Crie códigos de barras EAN-13 e EAN-8 no navegador. Dígito verificador calculado para você, leitura testada, PNG ou SVG para impressão. Grátis, nada é enviado.",
@@ -6420,7 +6420,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Código UPC",
     tagline: "Crie códigos de barras de produto UPC-A e UPC-E para os EUA e o Canadá, com o dígito verificador adicionado. Grátis e roda no seu dispositivo.",
     intro:
-      "O UPC-A é o código de barras de 12 dígitos dos produtos vendidos nos EUA e no Canadá, e o UPC-E é sua forma compactada para itens pequenos, como latas e cosméticos. Digite os 11 primeiros dígitos de um UPC-A e o dígito verificador é adicionado; digite os 12 e ele é conferido. O UPC-E aceita 6 dígitos, ou 7 a 8 começando com 0 ou 1. Cada código de barras é desenhado conforme o padrão, lido de volta por um mecanismo de leitura e salvo em PNG ou SVG. Tudo acontece no seu navegador.",
+      "O UPC-A é o código de barras de 12 dígitos dos produtos vendidos nos EUA e no Canadá, e o UPC-E é sua forma compactada para itens pequenos, como latas e cosméticos. Digite os 11 primeiros dígitos de um UPC-A e o dígito verificador é adicionado; digite os 12 e ele é conferido. O UPC-E aceita 6 dígitos, ou 7 a 8 começando com 0 ou 1. Cada código de barras é desenhado conforme o padrão, lido de volta por um mecanismo de leitura e salvo em PNG ou SVG. Tudo acontece no seu navegador. Um complemento de 2 ou 5 dígitos, como o número de uma revista, pode ir à direita.",
     seoTitle: "Gerador de código de barras UPC – UPC-A e UPC-E grátis",
     seoDescription:
       "Crie códigos de barras UPC-A e UPC-E no navegador com o dígito verificador adicionado. Leitura testada, PNG ou SVG para embalagens. Grátis, nada é enviado.",
@@ -6491,7 +6491,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Código ISBN",
     tagline: "Crie o código de barras da contracapa de um livro a partir do ISBN-13 ou ISBN-10. Grátis e roda no seu dispositivo.",
     intro:
-      "O código de barras na contracapa de um livro é o ISBN do livro escrito como um EAN-13. Digite seu ISBN-13, ou um ISBN-10 mais antigo, que é convertido para você, e o código de barras aparece com o dígito verificador conferido. Digite o ISBN com os hifens, como aparece na página de créditos, e a linha do ISBN é impressa acima das barras do jeito que editoras e livrarias esperam. Baixe em SVG para quem faz a capa, ou em PNG. Tudo acontece no seu navegador.",
+      "O código de barras na contracapa de um livro é o ISBN do livro escrito como um EAN-13. Digite seu ISBN-13, ou um ISBN-10 mais antigo, que é convertido para você, e o código de barras aparece com o dígito verificador conferido. Digite o ISBN com os hifens, como aparece na página de créditos, e a linha do ISBN é impressa acima das barras do jeito que editoras e livrarias esperam. Baixe em SVG para quem faz a capa, ou em PNG. Tudo acontece no seu navegador. Adicione o complemento de preço de 5 dígitos para livrarias dos EUA, se precisar.",
     seoTitle: "Gerador de código de barras ISBN grátis para livros – SVG",
     seoDescription:
       "Crie o código de barras ISBN da capa do seu livro no navegador. ISBN-13 ou ISBN-10, dígito verificador conferido, SVG para impressão. Grátis, nada é enviado.",
@@ -6543,7 +6543,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Posso adicionar o preço (o pequeno código de barras à direita)?",
         answer:
-          "Ainda não. O complemento de preço de 5 dígitos usado nos EUA não está incluído.",
+          "Sim. Digite 5 dígitos em Complemento: 5 seguido do preço nos EUA (51299 para US$ 12,99), ou 90000 sem preço. Ele aparece à direita do código ISBN, como as livrarias dos EUA esperam.",
       },
       {
         question: "Em que tamanho devo imprimir?",
@@ -6704,7 +6704,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "Leitor de código de barras",
     tagline: "Leia EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR Code e outros a partir de uma foto ou da câmera. Grátis e roda no seu dispositivo.",
     intro:
-      "O Leitor de código de barras lê códigos de barras de uma foto, de uma captura de tela ou da sua câmera: códigos de produto (EAN e UPC), ISBNs de livros, etiquetas Code 128 e Code 39, caixas com ITF, GS1 DataBar e códigos 2D como Data Matrix, PDF417, Aztec e QR Codes. Ele encontra vários códigos em uma mesma imagem e mostra cada um com seu tipo, pronto para copiar. A imagem da câmera e as fotos são processadas no seu navegador e nunca são enviadas. Ative “Continuar escaneando” para ler muitos códigos seguidos numa lista que você pode copiar ou salvar como CSV.",
+      "O Leitor de código de barras lê códigos de barras de uma foto, de uma captura de tela ou da sua câmera: códigos de produto (EAN e UPC), ISBNs de livros, etiquetas Code 128 e Code 39, caixas com ITF, GS1 DataBar e códigos 2D como Data Matrix, PDF417, Aztec e QR Codes. Ele encontra vários códigos em uma mesma imagem e mostra cada um com seu tipo, pronto para copiar. A imagem da câmera e as fotos são processadas no seu navegador e nunca são enviadas. Ative “Continuar escaneando” para ler muitos códigos seguidos numa lista que você pode copiar ou salvar como CSV. A lista conta cada código, com − e + para corrigir, então também serve para inventário; o CSV tem uma coluna de quantidade.",
     seoTitle: "Leitor de código de barras online – por foto ou câmera",
     seoDescription:
       "Leia códigos EAN, UPC, Code 128, Data Matrix, PDF417 e QR Codes de uma foto ou da câmera, no navegador. Grátis, privado, nada é enviado.",

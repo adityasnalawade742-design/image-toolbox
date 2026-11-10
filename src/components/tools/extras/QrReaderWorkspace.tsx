@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Camera, CameraOff, Copy, Check, ExternalLink, Download, ScanLine, MapPin, AlertTriangle } from 'lucide-react';
+import { Camera, CameraOff, Copy, Check, ExternalLink, Download, ScanLine, MapPin, AlertTriangle, Minus, Plus } from 'lucide-react';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { useImageIntake } from '../../shared/useImageIntake';
 import { useT } from '../../shared/I18nContext';
@@ -15,6 +15,14 @@ interface Found {
   format?: string;
   product?: boolean;
 }
+
+/** A code in the list, with how many times it was scanned */
+interface Collected extends Found {
+  count: number;
+}
+const codeKey = (f: Found) => `${f.format ?? ''}:${f.raw}`;
+// The camera sees a code in many frames while it is held up: it counts again only after leaving the view this long
+const REPEAT_GAP_MS = 1500;
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/gif,image/bmp,image/heic,image/heif,.heic,.heif';
 const QR_FORMATS = ['QR code', 'Micro QR', 'rMQR'];
@@ -40,7 +48,27 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
   const [scanning, setScanning] = useState(false);
   // Keep the camera on and gather every new code into a list (stock counts, tickets, parcels)
   const [keepScanning, setKeepScanning] = useState(false);
-  const [collected, setCollected] = useState<Found[]>([]);
+  const [collected, setCollected] = useState<Collected[]>([]);
+  // When each code was last seen by the camera
+  const lastSeen = useRef(new Map<string, number>());
+  /** Add codes to the list: new ones at the top, a repeat adds 1 (from the camera only after it left the view) */
+  const collect = (found: Found[], always: boolean) => {
+    const now = Date.now();
+    const counted = found.filter((f) => {
+      const last = lastSeen.current.get(codeKey(f));
+      lastSeen.current.set(codeKey(f), now);
+      return always || last === undefined || now - last > REPEAT_GAP_MS;
+    });
+    if (!counted.length) return;
+    navigator.vibrate?.(60);
+    setCollected((list) => {
+      const next = list.map((c) => (counted.some((f) => codeKey(f) === codeKey(c)) ? { ...c, count: c.count + 1 } : c));
+      const fresh = counted.filter((f) => !list.some((c) => codeKey(c) === codeKey(f))).map((f) => ({ ...f, count: 1 }));
+      return [...fresh.reverse(), ...next];
+    });
+  };
+  const changeCount = (key: string, by: number) =>
+    setCollected((list) => list.map((c) => (codeKey(c) === key ? { ...c, count: Math.max(1, c.count + by) } : c)));
   const [copiedAll, setCopiedAll] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -65,7 +93,12 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         if (prev) URL.revokeObjectURL(prev);
         return image.url;
       });
-      setResults(await scan(image.img));
+      const found = await scan(image.img);
+      // With the list on, a photo's codes join it (each photo is one more scan)
+      if (keepScanning) {
+        collect(found, true);
+        setResults(found.length ? null : []);
+      } else setResults(found);
     } catch {
       setError(t('ws.errDecode'));
     } finally {
@@ -106,12 +139,7 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         frame.getContext('2d')!.drawImage(video, 0, 0);
         const found = await scan(frame, true);
         if (found.length && !stopped && keepScanning) {
-          setCollected((list) => {
-            const fresh = found.filter((f) => !list.some((c) => c.raw === f.raw && c.format === f.format));
-            if (!fresh.length) return list;
-            navigator.vibrate?.(60);
-            return [...fresh.reverse(), ...list];
-          });
+          collect(found, false);
         } else if (found.length && !stopped) {
           setPreview((prev) => {
             if (prev) URL.revokeObjectURL(prev);
@@ -141,7 +169,13 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
     }
   };
   const downloadCsv = () => {
-    const rows = [barcodes ? 'text,type' : 'text', ...collected.slice().reverse().map((c) => (barcodes ? `${csvCell(c.raw)},${csvCell(c.format ?? '')}` : csvCell(c.raw)))];
+    const rows = [
+      barcodes ? 'text,type,count' : 'text,count',
+      ...collected
+        .slice()
+        .reverse()
+        .map((c) => (barcodes ? `${csvCell(c.raw)},${csvCell(c.format ?? '')},${c.count}` : `${csvCell(c.raw)},${c.count}`)),
+    ];
     // A byte-order mark so spreadsheet apps read accents and non-Latin text correctly
     downloadBlob(new Blob(['\ufeff' + rows.join('\r\n')], { type: 'text/csv;charset=utf-8' }), 'scanned-codes.csv');
   };
@@ -151,6 +185,7 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
       {t('ctl.qrread.keepScanning')}
     </label>
   );
+  const scans = collected.reduce((n, c) => n + c.count, 0);
 
   const view = scanning ? (
     <div className="space-y-3">
@@ -217,7 +252,8 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
         {results?.map((r, i) => <ResultCard key={i} found={r} />)}
         {collected.length > 0 && (
           <div className="space-y-2">
-            <span className="slug block">{t('ctl.qrread.collected', { n: collected.length })}</span>
+            <span className="slug block">{t('ctl.qrread.collected', { n: scans })}</span>
+            <p className="text-[13px] text-graphite">{t('ctl.qrread.countHint')}</p>
             <div className="flex flex-wrap items-center gap-2">
               <button type="button" onClick={copyAll} className="btn-rule">
                 {copiedAll ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
@@ -227,12 +263,47 @@ export function QrReaderWorkspace({ mode = 'qr' }: { mode?: 'qr' | 'barcode' } =
                 <Download className="w-4 h-4" aria-hidden="true" />
                 <span>CSV</span>
               </button>
-              <button type="button" onClick={() => setCollected([])} className="btn-rule">
+              <button
+                type="button"
+                onClick={() => {
+                  setCollected([]);
+                  lastSeen.current.clear();
+                }}
+                className="btn-rule"
+              >
                 <span>{t('ctl.qrread.clearList')}</span>
               </button>
             </div>
             {collected.map((r) => (
-              <ResultCard key={`${r.format ?? ''}:${r.raw}`} found={r} />
+              <div key={codeKey(r)} className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[15px] font-semibold text-ink" data-measure>
+                    {t('ctl.qrread.count', { n: r.count })}
+                  </span>
+                  <div className="ml-auto flex seg-group border border-ink">
+                    <button
+                      type="button"
+                      onClick={() => changeCount(codeKey(r), -1)}
+                      disabled={r.count <= 1}
+                      className="w-10 h-10 flex items-center justify-center seg-off disabled:opacity-30"
+                      aria-label={t('ctl.qrread.less', { code: r.raw.slice(0, 40) })}
+                      title={t('ctl.qrread.less', { code: r.raw.slice(0, 40) })}
+                    >
+                      <Minus className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => changeCount(codeKey(r), 1)}
+                      className="w-10 h-10 flex items-center justify-center seg-off border-l border-ink"
+                      aria-label={t('ctl.qrread.more', { code: r.raw.slice(0, 40) })}
+                      title={t('ctl.qrread.more', { code: r.raw.slice(0, 40) })}
+                    >
+                      <Plus className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+                <ResultCard found={r} />
+              </div>
             ))}
           </div>
         )}

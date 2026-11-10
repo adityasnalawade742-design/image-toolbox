@@ -6364,7 +6364,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "EAN Barkod",
     tagline: "Kontrol basamağı sizin için eklenen EAN-13 ve EAN-8 ürün barkodları oluşturun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "EAN-13, dünyanın her yerinde mağazalardaki ürünlerin üzerinde bulunan barkoddur; EAN-8 ise küçük ambalajlar için kısa sürümüdür. İlk 12 haneyi (EAN-8 için 7) yazın; kontrol basamağı hesaplanıp eklenir. 13 hanenin tamamını yazarsanız araç son basamağın doğru olduğunu doğrular. Barkod, rakamlar altında olacak şekilde standarda uygun çizilir ve PNG veya SVG olarak kaydetmeden önce bir tarayıcı motoruyla geri okunur. Hiçbir şey yüklenmez.",
+      "EAN-13, dünyanın her yerinde mağazalardaki ürünlerin üzerinde bulunan barkoddur; EAN-8 ise küçük ambalajlar için kısa sürümüdür. İlk 12 haneyi (EAN-8 için 7) yazın; kontrol basamağı hesaplanıp eklenir. 13 hanenin tamamını yazarsanız araç son basamağın doğru olduğunu doğrular. Barkod, rakamlar altında olacak şekilde standarda uygun çizilir ve PNG veya SVG olarak kaydetmeden önce bir tarayıcı motoruyla geri okunur. Hiçbir şey yüklenmez. Bir derginin sayı numarası gibi 2 veya 5 haneli bir ek kod sağa eklenebilir.",
     seoTitle: "EAN-13 Barkod Oluşturucu – Ücretsiz, Kontrol Basamaklı",
     seoDescription:
       "Tarayıcınızda EAN-13 ve EAN-8 barkodları oluşturun. Kontrol basamağı sizin için hesaplanır, okuma testi yapılır, baskı için PNG veya SVG. Ücretsiz, yükleme yok.",
@@ -6435,7 +6435,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "UPC Barkod",
     tagline: "ABD ve Kanada için UPC-A ve UPC-E ürün barkodlarını kontrol basamağı eklenmiş olarak oluşturun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "UPC-A, ABD ve Kanada'da satılan ürünlerdeki 12 haneli barkoddur; UPC-E ise kutu içecekler ve kozmetikler gibi küçük ürünler için sıkıştırılmış biçimidir. Bir UPC-A'nın ilk 11 hanesini yazın, kontrol basamağı eklenir; 12 hanenin tamamını yazarsanız kontrol edilir. UPC-E için 6 hane ya da 0 veya 1 ile başlayan 7–8 hane girin. Her barkod standarda uygun çizilir, bir tarayıcı motoruyla geri okunur ve PNG veya SVG olarak kaydedilir. Her şey tarayıcınızda gerçekleşir.",
+      "UPC-A, ABD ve Kanada'da satılan ürünlerdeki 12 haneli barkoddur; UPC-E ise kutu içecekler ve kozmetikler gibi küçük ürünler için sıkıştırılmış biçimidir. Bir UPC-A'nın ilk 11 hanesini yazın, kontrol basamağı eklenir; 12 hanenin tamamını yazarsanız kontrol edilir. UPC-E için 6 hane ya da 0 veya 1 ile başlayan 7–8 hane girin. Her barkod standarda uygun çizilir, bir tarayıcı motoruyla geri okunur ve PNG veya SVG olarak kaydedilir. Her şey tarayıcınızda gerçekleşir. Bir derginin sayı numarası gibi 2 veya 5 haneli bir ek kod sağa eklenebilir.",
     seoTitle: "UPC Barkod Oluşturucu – UPC-A ve UPC-E, Ücretsiz",
     seoDescription:
       "Tarayıcınızda kontrol basamağı eklenmiş UPC-A ve UPC-E barkodları oluşturun. Okuma testi yapılır, ambalaj için PNG veya SVG. Ücretsiz, yükleme yok.",
@@ -6506,7 +6506,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "ISBN Barkod",
     tagline: "Kitabın arka kapağı için barkodu ISBN-13 veya ISBN-10 numarasından oluşturun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Bir kitabın arka kapağındaki barkod, kitabın EAN-13 olarak yazılmış ISBN'idir. ISBN-13'ünüzü ya da sizin için dönüştürülen eski bir ISBN-10'u yazın; barkod, kontrol basamağı doğrulanmış olarak görünür. ISBN'i künye sayfasında basıldığı gibi tireleriyle yazarsanız, yayıncıların ve kitapçıların beklediği şekilde çubukların üstüne ISBN satırı basılır. Kapak tasarımcınız için SVG ya da PNG olarak indirin. Her şey tarayıcınızda gerçekleşir.",
+      "Bir kitabın arka kapağındaki barkod, kitabın EAN-13 olarak yazılmış ISBN'idir. ISBN-13'ünüzü ya da sizin için dönüştürülen eski bir ISBN-10'u yazın; barkod, kontrol basamağı doğrulanmış olarak görünür. ISBN'i künye sayfasında basıldığı gibi tireleriyle yazarsanız, yayıncıların ve kitapçıların beklediği şekilde çubukların üstüne ISBN satırı basılır. Kapak tasarımcınız için SVG ya da PNG olarak indirin. Her şey tarayıcınızda gerçekleşir. Gerekirse ABD kitapçıları için 5 haneli fiyat ek kodunu ekleyin.",
     seoTitle: "ISBN Barkod Oluşturucu – Ücretsiz Kitap Barkodu, SVG",
     seoDescription:
       "Kitap kapağınız için ISBN barkodunu tarayıcınızda oluşturun. ISBN-13 veya ISBN-10, kontrol basamağı doğrulanır, baskı için SVG. Ücretsiz, yükleme yok.",
@@ -6558,7 +6558,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Fiyatı (sağdaki küçük barkodu) ekleyebilir miyim?",
         answer:
-          "Henüz değil. ABD'de kullanılan 5 haneli fiyat eki dahil değildir.",
+          "Evet. Ek kod alanına 5 hane yazın: 5 ve ardından ABD fiyatı (12,99 $ için 51299) ya da fiyatsız için 90000. ABD kitapçılarının beklediği gibi ISBN barkodunun sağına çizilir.",
       },
       {
         question: "Ne büyüklükte yazdırmalıyım?",
@@ -6719,7 +6719,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Barkod Okuyucu",
     tagline: "EAN, UPC, Code 128, Code 39, Data Matrix, PDF417, QR ve daha fazlasını bir fotoğraftan veya kameranızdan okuyun. Ücretsiz ve cihazınızda çalışır.",
     intro:
-      "Barkod Okuyucu, barkodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan okur: ürün kodları (EAN ve UPC), kitaplardaki ISBN'ler, Code 128 ve Code 39 etiketleri, ITF koli kodları, GS1 DataBar ve Data Matrix, PDF417, Aztec ile QR kodlar gibi 2D kodlar. Tek bir resimde birden çok kod bulur ve her birini türüyle birlikte, kopyalanmaya hazır olarak gösterir. Kamera görüntüsü ve fotoğraflar tarayıcınızda işlenir ve asla yüklenmez. “Taramaya devam et” seçeneğiyle art arda birçok kodu, kopyalayabileceğiniz ya da CSV olarak kaydedebileceğiniz bir listeye okuyun.",
+      "Barkod Okuyucu, barkodları bir fotoğraftan, ekran görüntüsünden veya kameranızdan okur: ürün kodları (EAN ve UPC), kitaplardaki ISBN'ler, Code 128 ve Code 39 etiketleri, ITF koli kodları, GS1 DataBar ve Data Matrix, PDF417, Aztec ile QR kodlar gibi 2D kodlar. Tek bir resimde birden çok kod bulur ve her birini türüyle birlikte, kopyalanmaya hazır olarak gösterir. Kamera görüntüsü ve fotoğraflar tarayıcınızda işlenir ve asla yüklenmez. “Taramaya devam et” seçeneğiyle art arda birçok kodu, kopyalayabileceğiniz ya da CSV olarak kaydedebileceğiniz bir listeye okuyun. Liste her kodu sayar, düzeltmek için − ve + vardır; bu yüzden sayım için de uygundur. CSV’de adet sütunu bulunur.",
     seoTitle: "Online Barkod Okuyucu – Fotoğraftan veya Kameradan Okuyun",
     seoDescription:
       "EAN, UPC, Code 128, Data Matrix, PDF417 ve QR kodları tarayıcınızda bir fotoğraftan veya kameranızdan okuyun. Ücretsiz, gizli, hiçbir şey yüklenmez.",
