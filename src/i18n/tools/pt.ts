@@ -5728,7 +5728,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Como funciona a troca de fundo?",
         answer:
-          "Um modelo de IA é baixado uma vez (cerca de 16 MB) e roda no seu navegador para separar você do fundo. Confira as bordas ao redor do cabelo antes de imprimir.",
+          "Um modelo de IA é baixado uma vez (cerca de 16 MB) e roda no seu navegador para separar você do fundo. Confira as bordas ao redor do cabelo antes de imprimir. Se uma borda, como o cabelo, não ficar limpa, escolha “Apagar ou restaurar com um pincel” para corrigi-la à mão.",
       },
       {
         question: "Minha foto é enviada?",

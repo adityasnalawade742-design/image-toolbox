@@ -5732,7 +5732,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Cómo funciona el cambio de fondo?",
         answer:
-          "Un modelo de IA se descarga una vez (unos 16 MB) y se ejecuta en tu navegador para separarte del fondo. Revisa los bordes alrededor del pelo antes de imprimir.",
+          "Un modelo de IA se descarga una vez (unos 16 MB) y se ejecuta en tu navegador para separarte del fondo. Revisa los bordes alrededor del pelo antes de imprimir. Si un borde, como el pelo, no queda limpio, elige «Borrar o recuperar con un pincel» para corregirlo a mano.",
       },
       {
         question: "¿Se sube mi foto?",

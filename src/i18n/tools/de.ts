@@ -5754,7 +5754,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Wie funktioniert das Ersetzen des Hintergrunds?",
         answer:
-          "Ein KI-Modell wird einmal heruntergeladen (etwa 16 MB) und läuft in deinem Browser, um dich vom Hintergrund zu trennen. Prüf vor dem Drucken die Kanten um die Haare.",
+          "Ein KI-Modell wird einmal heruntergeladen (etwa 16 MB) und läuft in deinem Browser, um dich vom Hintergrund zu trennen. Prüf vor dem Drucken die Kanten um die Haare. Ist eine Kante, etwa bei den Haaren, nicht sauber, wähle „Mit dem Pinsel radieren oder zurückholen“, um sie von Hand zu korrigieren.",
       },
       {
         question: "Wird mein Foto hochgeladen?",

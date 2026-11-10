@@ -6074,7 +6074,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "How does the background replacement work?",
-        "answer": "An AI model downloads once (about 16 MB) and runs in your browser to separate you from the background. Check the edges around the hair before printing."
+        "answer": "An AI model downloads once (about 16 MB) and runs in your browser to separate you from the background. Check the edges around the hair before printing. If an edge, such as hair, isn’t clean, choose “Erase or restore with a brush” to fix it by hand."
       },
       {
         "question": "Is my photo uploaded?",

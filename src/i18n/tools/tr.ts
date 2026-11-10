@@ -5743,7 +5743,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Arka plan değiştirme nasıl çalışır?",
         answer:
-          "Bir yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve sizi arka plandan ayırmak için tarayıcınızda çalışır. Yazdırmadan önce saçların çevresindeki kenarları kontrol edin.",
+          "Bir yapay zekâ modeli bir kez indirilir (yaklaşık 16 MB) ve sizi arka plandan ayırmak için tarayıcınızda çalışır. Yazdırmadan önce saçların çevresindeki kenarları kontrol edin. Saç gibi bir kenar temiz değilse “Fırçayla sil veya geri getir”i seçerek elle düzeltin.",
       },
       {
         question: "Fotoğrafım yükleniyor mu?",

@@ -13,6 +13,7 @@ import { removeBackground, type RemovalMode, type RemovalProgress } from '../../
 import { HqConsent, ModelPicker, TryHqHint, isModelReady, markModelReady, saveRemovalMode, savedRemovalMode } from '../../shared/RemovalModel';
 import { RemovalProgressBar, activeDownload } from '../../shared/RemovalProgressBar';
 import { RangeField } from '../pdf/common';
+import { RefinePanel, RefineSurface, useRefineBrush, type RefineTarget } from '../../shared/RefineBrush';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif';
 
@@ -70,6 +71,8 @@ export function PassportPhotoWorkspace() {
   // The picture we crop from: the photo itself, or the photo with its background replaced
   const sourceRef = useRef<HTMLCanvasElement | null>(null);
   const cutoutRef = useRef<HTMLCanvasElement | null>(null);
+  // The cutout, the photo and the model's own result, for fixing the background by hand
+  const [refine, setRefine] = useState<RefineTarget | null>(null);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number } | null>(null);
   // Fast (MODNet) or Best quality (ISNet), for replacing the background: remembered across the background tools
   const [model, setModel] = useState<RemovalMode>('portrait');
@@ -109,6 +112,7 @@ export function PassportPhotoWorkspace() {
     try {
       const img = await loadImageFile(file);
       cutoutRef.current = null;
+      setRefine(null);
       cutoutModel.current = null;
       setAwaitingHq(null);
       setBg('keep');
@@ -153,6 +157,11 @@ export function PassportPhotoWorkspace() {
         layer.height = cut.height;
         layer.getContext('2d')!.putImageData(cut, 0, 0);
         cutoutRef.current = layer;
+        const pristine = document.createElement('canvas');
+        pristine.width = cut.width;
+        pristine.height = cut.height;
+        pristine.getContext('2d')!.drawImage(layer, 0, 0);
+        setRefine({ subject: layer, original: c, pristine });
       } catch (err: any) {
         setError(t('ctl.passport.bgFailed', { message: err?.message || '' }));
         setBg('keep');
@@ -177,6 +186,9 @@ export function PassportPhotoWorkspace() {
   };
 
   const crop = image ? computeCrop(image.width, image.height, aspect, zoom, pos.cx, pos.cy) : null;
+  // Brush strokes go straight into the cutout; the photo is rebuilt on the chosen background as they are drawn
+  const brushTarget = bg !== 'keep' && cutoutRef.current && refine?.subject === cutoutRef.current ? refine : null;
+  const brush = useRefineBrush(brushTarget, () => image && buildSource(image, BACKGROUNDS[bg]));
   const photoPx = { w: mmToPx(size.w), h: mmToPx(size.h) };
 
   const drawPhoto = (canvas: HTMLCanvasElement) => {
@@ -382,6 +394,12 @@ export function PassportPhotoWorkspace() {
           ]}
         />
         <p className="text-[13px] text-graphite">{t('ctl.passport.bgNote')}</p>
+        {brushTarget && !bgBusy && (
+          <div className="space-y-2 pt-3">
+            <span className="slug block">{t('ctl.refine.title')}</span>
+            <RefinePanel brush={brush} />
+          </div>
+        )}
         {bg !== 'keep' && <ModelPicker mode={model} ready={modelReady} onChoose={chooseModel} disabled={bgBusy} />}
       </div>
       <div className="pt-4 border-t border-ink space-y-3">
@@ -502,6 +520,7 @@ export function PassportPhotoWorkspace() {
               onPointerCancel={() => (drag.current = null)}
             >
               <canvas ref={previewRef} role="img" aria-label={t('ctl.passport.previewLabel')} className="block w-full h-auto border border-pencil" />
+              {crop && <RefineSurface brush={brush} canvas={previewRef.current} view={crop} />}
               {/* Head guides: top of head and chin */}
               <span aria-hidden="true" className="absolute inset-x-0 border-t-2 border-dashed border-process-magenta pointer-events-none" style={{ top: `${size.top * 100}%` }}>
                 <span className="absolute right-1 -top-5 bg-process-key text-paper text-[11px] px-1">{t('ctl.passport.guideTop')}</span>
