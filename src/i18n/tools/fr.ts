@@ -6075,12 +6075,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Image en texte",
     shortName: "Image en texte",
-    tagline: "Copiez le texte d’une photo, d’une capture d’écran ou d’un scan (OCR) en 10 langues. L’image est lue sur votre appareil.",
+    tagline: "Copiez le texte d’une photo, d’une capture d’écran ou d’un scan (OCR) en 19 langues. L’image est lue sur votre appareil.",
     intro:
-      "Image en texte lit les mots d’une photo, d’une capture d’écran ou d’une page scannée et vous les donne sous forme de texte à copier, modifier ou enregistrer en fichier TXT. L’outil utilise Tesseract OCR dans votre navigateur, avec l’anglais, l’espagnol, le français, l’allemand, le portugais, l’italien, le japonais, le coréen, l’indonésien et le turc. Une barre de progression indique où en est la lecture, et si l’image est trop floue pour un résultat fiable, la page vous le signale. L’image n’est jamais envoyée.",
+      "Image en texte lit les mots d’une photo, d’une capture d’écran ou d’une page scannée et vous les donne sous forme de texte à copier, modifier ou enregistrer en fichier TXT. L’outil utilise Tesseract OCR dans votre navigateur, avec l’anglais, espagnol, français, allemand, portugais, italien, japonais, coréen, indonésien, turc, russe, ukrainien, hindi, néerlandais, polonais, vietnamien, chinois (simplifié et traditionnel) et thaï. Une barre de progression indique où en est la lecture, et si l’image est trop floue pour un résultat fiable, la page vous le signale. L’image n’est jamais envoyée.",
     seoTitle: "Image en texte – OCR en ligne gratuit",
     seoDescription:
-      "Image en texte : extrayez le texte d’images, de captures d’écran et de scans avec un OCR gratuit en 10 langues. Copiez ou téléchargez le texte, sans envoi.",
+      "Image en texte : extrayez le texte d’images, de captures d’écran et de scans avec un OCR gratuit en 19 langues. Copiez ou téléchargez le texte, sans envoi.",
     keywords: [
       "image en texte",
       "extraire le texte d’une image",
@@ -6109,8 +6109,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 langues",
-        description: "Dont le japonais et le coréen. Chaque langue télécharge 1 à 4 MB une seule fois.",
+        title: "19 langues",
+        description: "Dont le chinois, le japonais, le coréen, le thaï, le hindi et le russe. Chaque langue télécharge 0,5 à 6 Mo une seule fois.",
       },
       {
         title: "Résultat modifiable",
@@ -11397,10 +11397,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "OCR de plusieurs images",
     shortName: "OCR d’images",
-    tagline: "Extrayez le texte de nombreuses images à la fois, en 10 langues, et téléchargez-le en un seul fichier texte ou un fichier par image. Gratuit.",
+    tagline: "Extrayez le texte de nombreuses images à la fois, en 19 langues, et téléchargez-le en un seul fichier texte ou un fichier par image. Gratuit.",
     intro: "OCR de plusieurs images lit d’un coup le texte d’une série d’images : photos de documents, captures d’écran, scans ou reçus. Choisissez la langue et, pour les photos de pages papier, faites d’abord trouver et redresser chaque page, ce qui rend la lecture bien plus précise quand une photo a été prise de biais. Copiez chaque texte, ou téléchargez le tout en un seul fichier texte ou en ZIP avec un fichier texte par image. La lecture se fait sur votre appareil : vos images ne sont pas envoyées.",
     seoTitle: "OCR de plusieurs images : extraire le texte en lot",
-    seoDescription: "Extrayez le texte de plusieurs images à la fois par OCR : 10 langues, photos de pages redressées d’abord, téléchargement en TXT ou ZIP. Gratuit, sans envoi.",
+    seoDescription: "Extrayez le texte de plusieurs images à la fois par OCR : 19 langues, photos de pages redressées d’abord, téléchargement en TXT ou ZIP. Gratuit, sans envoi.",
     keywords: [
       "ocr plusieurs images",
       "ocr par lot",
@@ -11428,8 +11428,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
         description: "Chaque image est lue à son tour, avec la progression affichée."
       },
       {
-        title: "10 langues",
-        description: "Dont le japonais et le coréen."
+        title: "19 langues",
+        description: "Dont le chinois, le japonais, le coréen, le thaï, le hindi et le russe."
       },
       {
         title: "Photos redressées",

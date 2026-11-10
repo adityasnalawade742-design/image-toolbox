@@ -6044,12 +6044,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Gambar ke Teks",
     shortName: "Gambar ke Teks",
-    tagline: "Salin teks dari foto, screenshot, atau hasil scan (OCR) dalam 10 bahasa. Gambar dibaca di perangkat Anda.",
+    tagline: "Salin teks dari foto, screenshot, atau hasil scan (OCR) dalam 19 bahasa. Gambar dibaca di perangkat Anda.",
     intro:
-      "Gambar ke Teks membaca kata-kata di foto, screenshot, atau halaman hasil scan dan memberikannya sebagai teks yang bisa Anda salin, edit, atau simpan sebagai file TXT. Alat ini memakai Tesseract OCR yang berjalan di browser Anda, dengan bahasa Inggris, Spanyol, Prancis, Jerman, Portugis, Italia, Jepang, Korea, Indonesia, dan Turki. Bilah progres menunjukkan sejauh mana prosesnya, dan jika gambar terlalu buram untuk hasil yang andal, halaman akan memberi tahu Anda. Gambar tidak pernah diunggah.",
+      "Gambar ke Teks membaca kata-kata di foto, screenshot, atau halaman hasil scan dan memberikannya sebagai teks yang bisa Anda salin, edit, atau simpan sebagai file TXT. Alat ini memakai Tesseract OCR yang berjalan di browser Anda, dengan bahasa Inggris, Spanyol, Prancis, Jerman, Portugis, Italia, Jepang, Korea, Indonesia, Turki, Rusia, Ukraina, Hindi, Belanda, Polandia, Vietnam, Tionghoa (Sederhana dan Tradisional), dan Thai. Bilah progres menunjukkan sejauh mana prosesnya, dan jika gambar terlalu buram untuk hasil yang andal, halaman akan memberi tahu Anda. Gambar tidak pernah diunggah.",
     seoTitle: "Gambar ke Teks – OCR Online Gratis",
     seoDescription:
-      "Gambar ke teks dengan OCR gratis: ambil teks dari gambar, screenshot, dan hasil scan dalam 10 bahasa. Salin atau unduh teksnya. Tidak ada yang diunggah.",
+      "Gambar ke teks dengan OCR gratis: ambil teks dari gambar, screenshot, dan hasil scan dalam 19 bahasa. Salin atau unduh teksnya. Tidak ada yang diunggah.",
     keywords: [
       "gambar ke teks",
       "ocr online",
@@ -6078,8 +6078,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 bahasa",
-        description: "Termasuk Jepang dan Korea. Setiap bahasa mengunduh 1 hingga 4 MB sekali saja.",
+        title: "19 bahasa",
+        description: "Termasuk Tionghoa, Jepang, Korea, Thai, Hindi, dan Rusia. Setiap bahasa mengunduh 0,5 hingga 6 MB sekali saja.",
       },
       {
         title: "Hasil bisa diedit",
@@ -11366,10 +11366,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "OCR Banyak Gambar",
     shortName: "OCR Gambar",
-    tagline: "Ambil teks dari banyak gambar sekaligus, dalam 10 bahasa, lalu unduh sebagai satu file teks atau satu file per gambar. Gratis.",
+    tagline: "Ambil teks dari banyak gambar sekaligus, dalam 19 bahasa, lalu unduh sebagai satu file teks atau satu file per gambar. Gratis.",
     intro: "OCR Banyak Gambar membaca teks di sekumpulan gambar sekaligus: foto dokumen, screenshot, hasil scan, atau struk. Pilih bahasanya, dan untuk foto halaman kertas, biarkan setiap halaman dicari dan diluruskan dulu, sehingga pembacaan jauh lebih akurat jika fotonya diambil miring. Salin setiap teks, atau unduh semuanya sebagai satu file teks atau ZIP berisi satu file teks per gambar. Pembacaan berlangsung di perangkat Anda, jadi gambar Anda tidak diunggah.",
     seoTitle: "OCR Banyak Gambar – Ambil Teks dari Banyak Foto Sekaligus",
-    seoDescription: "Ambil teks dari banyak gambar sekaligus dengan OCR: 10 bahasa, foto halaman diluruskan dulu, unduh sebagai TXT atau ZIP. Gratis, tanpa unggah.",
+    seoDescription: "Ambil teks dari banyak gambar sekaligus dengan OCR: 19 bahasa, foto halaman diluruskan dulu, unduh sebagai TXT atau ZIP. Gratis, tanpa unggah.",
     keywords: [
       "ocr banyak gambar",
       "batch ocr",
@@ -11397,8 +11397,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
         description: "Setiap gambar dibaca bergantian, dengan progres yang ditampilkan."
       },
       {
-        title: "10 bahasa",
-        description: "Termasuk bahasa Jepang dan Korea."
+        title: "19 bahasa",
+        description: "Termasuk Tionghoa, Jepang, Korea, Thai, Hindi, dan Rusia."
       },
       {
         title: "Meluruskan foto",

@@ -6047,12 +6047,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "image-to-text": {
     name: "Imagen a texto",
     shortName: "Imagen a texto",
-    tagline: "Copia el texto de una foto, captura de pantalla o escaneo (OCR) en 10 idiomas. La imagen se lee en tu dispositivo.",
+    tagline: "Copia el texto de una foto, captura de pantalla o escaneo (OCR) en 19 idiomas. La imagen se lee en tu dispositivo.",
     intro:
-      "Imagen a texto lee las palabras de una foto, una captura de pantalla o una página escaneada y te las da como texto que puedes copiar, editar o guardar como archivo TXT. Usa Tesseract OCR en tu navegador, con inglés, español, francés, alemán, portugués, italiano, japonés, coreano, indonesio y turco. Una barra de progreso muestra cuánto lleva, y si la imagen está demasiado borrosa para un resultado fiable, la página te lo dice. La imagen nunca se sube.",
+      "Imagen a texto lee las palabras de una foto, una captura de pantalla o una página escaneada y te las da como texto que puedes copiar, editar o guardar como archivo TXT. Usa Tesseract OCR en tu navegador, con inglés, español, francés, alemán, portugués, italiano, japonés, coreano, indonesio, turco, ruso, ucraniano, hindi, neerlandés, polaco, vietnamita, chino (simplificado y tradicional) y tailandés. Una barra de progreso muestra cuánto lleva, y si la imagen está demasiado borrosa para un resultado fiable, la página te lo dice. La imagen nunca se sube.",
     seoTitle: "Imagen a texto – OCR online gratis",
     seoDescription:
-      "Imagen a texto: extrae el texto de imágenes, capturas y escaneos con OCR gratis en 10 idiomas. Copia o descarga el texto. En tu navegador, sin subir nada.",
+      "Imagen a texto: extrae el texto de imágenes, capturas y escaneos con OCR gratis en 19 idiomas. Copia o descarga el texto. En tu navegador, sin subir nada.",
     keywords: [
       "imagen a texto",
       "extraer texto de imagen",
@@ -6081,8 +6081,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "10 idiomas",
-        description: "Incluidos japonés y coreano. Cada idioma descarga de 1 a 4 MB una sola vez.",
+        title: "19 idiomas",
+        description: "Incluidos chino, japonés, coreano, tailandés, hindi y ruso. Cada idioma descarga de 0,5 a 6 MB una sola vez.",
       },
       {
         title: "Resultado editable",
@@ -11369,10 +11369,10 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "ocr-multiple-images": {
     name: "OCR de varias imágenes",
     shortName: "OCR de imágenes",
-    tagline: "Extrae el texto de muchas imágenes a la vez, en 10 idiomas, y descárgalo en un solo archivo de texto o en uno por imagen. Gratis.",
+    tagline: "Extrae el texto de muchas imágenes a la vez, en 19 idiomas, y descárgalo en un solo archivo de texto o en uno por imagen. Gratis.",
     intro: "OCR de varias imágenes lee de una vez el texto de un grupo de imágenes: fotos de documentos, capturas de pantalla, escaneos o recibos. Elige el idioma y, si son fotos de páginas en papel, haz que cada página se encuentre y se enderece primero, lo que hace la lectura mucho más precisa cuando la foto se hizo en ángulo. Copia cada texto o descárgalo todo en un solo archivo de texto o en un ZIP con un archivo de texto por imagen. La lectura ocurre en tu dispositivo, así que tus imágenes no se suben.",
     seoTitle: "OCR de varias imágenes: extraer texto de muchas fotos",
-    seoDescription: "Extrae texto de varias imágenes a la vez con OCR: 10 idiomas, fotos de páginas enderezadas antes, descarga en TXT o ZIP. Gratis y sin subir nada.",
+    seoDescription: "Extrae texto de varias imágenes a la vez con OCR: 19 idiomas, fotos de páginas enderezadas antes, descarga en TXT o ZIP. Gratis y sin subir nada.",
     keywords: [
       "ocr de varias imágenes",
       "ocr por lotes",
@@ -11400,8 +11400,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
         description: "Cada imagen se lee por turno, con el progreso a la vista."
       },
       {
-        title: "10 idiomas",
-        description: "Incluidos el japonés y el coreano."
+        title: "19 idiomas",
+        description: "Incluidos chino, japonés, coreano, tailandés, hindi y ruso."
       },
       {
         title: "Endereza las fotos",
