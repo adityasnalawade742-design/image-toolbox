@@ -25,7 +25,9 @@ export function HeaderFooterWorkspace() {
   const [fontSize, setFontSize] = useState(10);
   const [margin, setMargin] = useState<keyof typeof MARGINS>('medium');
   const [color, setColor] = useState(0);
-  const [skipFirst, setSkipFirst] = useState(false);
+  // Pages that get the header and footer, 1-based; `to` 0 means the last page
+  const [from, setFrom] = useState(1);
+  const [to, setTo] = useState(0);
   const [start, setStart] = useState(1);
   const [page, setPage] = useState(1);
   const [status, setStatus] = useState('');
@@ -35,17 +37,19 @@ export function HeaderFooterWorkspace() {
   const replace = usePdfReplace(pdf.load);
   const date = new Date().toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
 
+  const lastPage = to > 0 ? Math.min(to, pdf.pageCount) : pdf.pageCount;
+  const firstPage = Math.min(from, lastPage);
   const build = async () => {
     if (!pdf.bytes) return null;
     const r = await addHeaderFooter(
       pdf.bytes,
-      { text, fontSize, margin: MARGINS[margin], color: COLORS[color][1], skipFirst, start, fileName: pdf.file?.name ?? '', date },
+      { text, fontSize, margin: MARGINS[margin], color: COLORS[color][1], from: firstPage, to: lastPage, start, fileName: pdf.file?.name ?? '', date },
       loadSiteFont
     );
     setUnsupported(r.unsupported);
     return r.bytes;
   };
-  const { out, building } = useOutputPreview(build, [pdf.bytes, JSON.stringify(text), fontSize, margin, color, skipFirst, start], (err) => setError(editError(err)), 400);
+  const { out, building } = useOutputPreview(build, [pdf.bytes, JSON.stringify(text), fontSize, margin, color, firstPage, lastPage, start], (err) => setError(editError(err)), 400);
 
   if (!pdf.doc) return <PdfDropScreen onFile={pdf.load} error={pdf.error} loading={pdf.loading} />;
 
@@ -124,10 +128,33 @@ export function HeaderFooterWorkspace() {
             className={field}
           />
         </div>
-        <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer">
-          <input type="checkbox" checked={skipFirst} onChange={(e) => setSkipFirst(e.target.checked)} />
-          <span className="text-ink">{t('ctl.hf.skipFirst')}</span>
-        </label>
+        <fieldset className="space-y-1">
+          <legend className="block text-[14px] text-graphite">{t('ctl.hf.pages')}</legend>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={pdf.pageCount}
+              value={from}
+              aria-label={t('ctl.hf.fromPage')}
+              onChange={(e) => setFrom(Math.max(1, Math.min(pdf.pageCount, parseInt(e.target.value, 10) || 1)))}
+              className="w-20 min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink rounded-md"
+            />
+            <span className="text-graphite">–</span>
+            <input
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={pdf.pageCount}
+              value={to > 0 ? to : pdf.pageCount}
+              aria-label={t('ctl.hf.toPage')}
+              onChange={(e) => setTo(Math.max(1, Math.min(pdf.pageCount, parseInt(e.target.value, 10) || pdf.pageCount)))}
+              className="w-20 min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink rounded-md"
+            />
+          </div>
+          <p className="text-[13px] text-graphite">{t('ctl.hf.pagesHint')}</p>
+        </fieldset>
       </div>
     </>
   );

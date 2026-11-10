@@ -3966,7 +3966,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       "PDF a JPG convierte las páginas de un PDF en imágenes que puedes publicar, compartir en un chat, insertar en una diapositiva o subir a un formulario que solo acepta imágenes. Elige JPG para archivos pequeños o PNG para texto nítido, y elige la resolución: 72 dpi para pantallas, 150 dpi para la mayoría de los usos o 300 dpi para imprimir. Descarga una sola página o todas a la vez en un archivo ZIP. Tu navegador abre el PDF en tu dispositivo, así que los documentos privados nunca se suben.",
     seoTitle: "PDF a JPG: convierte todas las páginas gratis",
     seoDescription:
-      "PDF a JPG gratis: convierte las páginas de un PDF en imágenes JPG o PNG. Elige 72, 150 o 300 dpi y descarga una página o todas en un ZIP. Sin subir nada.",
+      "Convierte páginas PDF en imágenes JPG o PNG en tu navegador. Elige de 72 a 600 dpi y descarga una página, las que elijas o todas en un ZIP. Gratis, sin subir nada.",
     keywords: [
       "pdf a jpg",
       "pdf a imagen",
@@ -3982,7 +3982,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Elige formato y resolución",
-        description: "Elige JPG o PNG, y 72, 150 o 300 dpi.",
+        description: "Elige JPG o PNG, y 72, 150, 300 o 600 dpi.",
       },
       {
         title: "Descarga",
@@ -3992,11 +3992,11 @@ export const esTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Todas las páginas o solo una",
-        description: "Descarga la página que necesites, o todas a la vez en un ZIP.",
+        description: "Descarga la página que necesitas, las que escribas (como 2-5) o todas a la vez en un ZIP.",
       },
       {
         title: "Resolución para imprimir",
-        description: "Renderiza hasta 300 dpi para un texto nítido y para imprimir.",
+        description: "Hasta 600 dpi para texto nítido, impresión y OCR.",
       },
       {
         title: "JPG o PNG",
@@ -4011,7 +4011,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué resolución elijo?",
         answer:
-          "150 dpi sirve para la mayoría de los usos, desde compartir hasta diapositivas. Elige 300 dpi para imprimir o ampliar texto pequeño, y 72 dpi para los archivos más pequeños. Las resoluciones más altas tardan más y generan archivos más grandes.",
+          "150 dpi sirve para casi todo, de compartir a diapositivas. Elige 300 dpi para imprimir, 600 dpi para letra pequeña u OCR, y 72 dpi para los archivos más pequeños. Más resolución tarda más y pesa más; en el móvil, las páginas muy grandes pueden salir algo más pequeñas.",
       },
       {
         question: "¿JPG o PNG?",
@@ -4041,7 +4041,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     tagline: "Guarda cada página de un PDF como imagen PNG nítida y sin pérdida, de una en una o todas en un ZIP. La conversión se hace en tu dispositivo.",
     intro: "PDF a PNG convierte cada página de un PDF en una imagen PNG. PNG es sin pérdida, así que el texto, las líneas y los diagramas se mantienen perfectamente nítidos, lo que lo convierte en la opción adecuada para diapositivas, documentos y gráficos que quieras meter en una presentación, un diseño o una página web. Elige la resolución y descarga páginas sueltas o todas juntas en un ZIP. Tu navegador abre el PDF, que nunca se sube.",
     seoTitle: "Convertir PDF a PNG gratis: páginas nítidas",
-    seoDescription: "Convierte las páginas de un PDF en imágenes PNG nítidas en tu navegador. Elige 72, 150 o 300 dpi y descarga una página o todas. Gratis y privado.",
+    seoDescription: "Convierte páginas PDF en imágenes PNG nítidas en tu navegador. De 72 a 600 DPI; descarga una página, las que elijas o todas. Gratis y privado.",
     keywords: [
       "pdf a png",
       "convertir pdf a png",
@@ -4056,7 +4056,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Elige la resolución",
-        description: "150 dpi va bien para pantallas. Usa 300 dpi para imprimir o ampliar.",
+        description: "150 DPI va bien para pantallas. Usa 300 DPI para imprimir y 600 DPI para el detalle fino.",
       },
       {
         title: "Descarga las páginas",
@@ -4070,7 +4070,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Resolución a elegir",
-        description: "72, 150 o 300 dpi, desde vistas previas para la web hasta impresión.",
+        description: "72, 150, 300 o 600 DPI, de vistas previas web a letra pequeña.",
       },
       {
         title: "Todas las páginas a la vez",
@@ -4088,7 +4088,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "¿Qué resolución elijo?",
-        answer: "150 dpi se ve bien en pantalla. 300 dpi es para imprimir o cuando necesitas ampliar, y genera archivos más grandes.",
+        answer: "150 DPI se ve bien en pantalla. 300 DPI es para imprimir y 600 DPI para el detalle fino u OCR; cuanto más alto, mucho más pesan los archivos.",
       },
       {
         question: "¿Puedo convertir un PDF protegido con contraseña?",
@@ -4361,11 +4361,11 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Marca las páginas que quieras",
-        description: "Usa la casilla bajo cada página, o Seleccionar todo y desmarca las que no necesites.",
+        description: "Usa la casilla bajo cada página o escribe números de página como 1-3, 5.",
       },
       {
         title: "Descarga",
-        description: "Guarda un PDF nuevo solo con esas páginas, en su orden original.",
+        description: "Guarda un PDF nuevo con esas páginas en su orden original, o un PDF por página en un ZIP.",
       },
     ],
     features: [
@@ -4490,7 +4490,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "Girar PDF",
     shortName: "Girar PDF",
-    tagline: "Gira todas las páginas, o solo las que elijas, 90 o 180 grados. Funciona en tu dispositivo.",
+    tagline: "Gira todas las páginas, las que elijas o cada una a su manera. Funciona en tu dispositivo.",
     intro:
       "Girar PDF corrige páginas que se abren de lado o del revés, un problema habitual en documentos escaneados y fotos guardadas como PDF. Elige 90 grados a la derecha, 180 grados o 90 grados a la izquierda, y aplícalo a todas las páginas o solo a las que marques. Las vistas previas muestran el resultado antes de descargar. El giro se guarda como un ajuste de la página, así que el texto y las imágenes conservan toda su calidad, y nada sale de tu navegador.",
     seoTitle: "Girar PDF online – rotar páginas para siempre, gratis",
@@ -4510,7 +4510,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Elige el giro",
-        description: "Elige 90° a la derecha, 180° o 90° a la izquierda, para todas las páginas o las que marques.",
+        description: "Elige 90° a la derecha, 180° o 90° a la izquierda para todas o las marcadas, o elige Una a una y gira cada página.",
       },
       {
         title: "Descarga",
@@ -4519,8 +4519,8 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Todas o solo algunas páginas",
-        description: "Corrige un escaneo de lado sin tocar el resto.",
+        title: "Todas, algunas o una a una",
+        description: "Corrige un escaneo de lado sin tocar el resto, o gira cada página a su manera.",
       },
       {
         title: "Vista previa en directo",
@@ -4542,7 +4542,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "¿Puedo girar páginas en ángulos distintos?",
-        answer: "Usa Organizar PDF, donde cada página tiene su propio botón de girar.",
+        answer: "Sí. Elige Una a una y pulsa el botón de girar bajo cada página hasta que quede derecha; después descarga.",
       },
       {
         question: "¿Puedo usar un PDF protegido con contraseña?",
@@ -4952,7 +4952,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "Recortar PDF",
     shortName: "Recortar PDF",
-    tagline: "Recorta los márgenes de todas las páginas de un PDF. Funciona en tu dispositivo.",
+    tagline: "Recorta los márgenes de todas las páginas de un PDF o solo de las que elijas. Funciona en tu dispositivo.",
     intro:
       "Recortar PDF recorta los bordes de todas las páginas y quita márgenes blancos anchos, bordes del escáner o marcas de impresión para que el contenido llene la pantalla al leer en el móvil. Indica cuánto recortar por arriba, la derecha, abajo y la izquierda, y la vista previa muestra qué parte de la página se queda. El recorte se guarda como un ajuste de la página, así que el texto conserva toda su calidad. Todo ocurre en tu navegador, así que el documento nunca se sube.",
     seoTitle: "Recortar PDF online – quitar márgenes, gratis",
@@ -4976,7 +4976,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Descarga",
-        description: "Guarda el PDF con todas las páginas recortadas.",
+        description: "Elige todas las páginas, la de la vista previa o números de página, y guarda el PDF.",
       },
     ],
     features: [
@@ -5006,7 +5006,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Puedo recortar páginas de forma distinta?",
         answer:
-          "Se aplican los mismos márgenes a todas las páginas. Para recortar páginas de forma distinta, divide el PDF, recorta cada parte y vuelve a unirlas.",
+          "Sí. En Aplicar a, elige Esta página, o Páginas y escribe números como 1-3, 5. Para dar otros márgenes a otras páginas, recorta de nuevo el PDF descargado.",
       },
       {
         question: "¿Puedo usar un PDF protegido con contraseña?",
@@ -9402,7 +9402,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "¿Puedo dejar fuera la portada?",
-        answer: "Sí. Marca la opción para dejar la primera página como está; la numeración empieza entonces en la página 2 con el número que elijas."
+        answer: "Sí. En Páginas con encabezado y pie, empieza en la página 2. También puedes parar antes de las últimas páginas; {page} en la primera página incluida muestra el número de «Empezar en»."
       },
       {
         question: "¿Tapará mi contenido?",

@@ -3966,7 +3966,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       "PDF en JPG transforme les pages d’un PDF en images que vous pouvez publier, partager dans une discussion, insérer dans une diapositive ou envoyer via un formulaire qui n’accepte que des images. Choisissez le JPG pour des fichiers légers ou le PNG pour un texte net, puis la résolution : 72 dpi pour les écrans, 150 dpi pour la plupart des usages ou 300 dpi pour l’impression. Téléchargez une seule page ou toutes les pages d’un coup dans un fichier ZIP. Le PDF est ouvert par votre navigateur sur votre appareil, donc les documents privés ne sont jamais envoyés.",
     seoTitle: "PDF en JPG – Toutes les pages, gratuit",
     seoDescription:
-      "PDF en JPG gratuit : convertissez les pages d’un PDF en images JPG ou PNG. Choisissez 72, 150 ou 300 dpi, téléchargez une page ou tout en ZIP. Sans envoi.",
+      "Convertissez des pages PDF en images JPG ou PNG dans votre navigateur. De 72 à 600 dpi, une page, les pages choisies ou toutes en ZIP. Gratuit, sans envoi.",
     keywords: [
       "pdf en jpg",
       "pdf en image",
@@ -3982,7 +3982,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Choisissez le format et la résolution",
-        description: "Choisissez JPG ou PNG, et 72, 150 ou 300 dpi.",
+        description: "Choisissez JPG ou PNG, et 72, 150, 300 ou 600 dpi.",
       },
       {
         title: "Téléchargez",
@@ -3992,11 +3992,11 @@ export const frTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Toutes les pages ou une seule",
-        description: "Téléchargez la page dont vous avez besoin, ou toutes les pages d’un coup en ZIP.",
+        description: "Téléchargez la page voulue, des pages tapées comme 2-5, ou toutes les pages d’un coup en ZIP.",
       },
       {
         title: "Résolution qualité impression",
-        description: "Rendu jusqu’à 300 dpi pour un texte net et l’impression.",
+        description: "Jusqu’à 600 dpi pour un texte net, l’impression et l’OCR.",
       },
       {
         title: "JPG ou PNG",
@@ -4011,7 +4011,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle résolution choisir ?",
         answer:
-          "150 dpi convient à la plupart des usages, du partage aux diapositives. Choisissez 300 dpi pour imprimer ou zoomer sur un petit texte, et 72 dpi pour les fichiers les plus légers. Les résolutions plus élevées prennent plus de temps et donnent des fichiers plus lourds.",
+          "150 dpi convient à la plupart des usages, du partage aux diapositives. Choisissez 300 dpi pour imprimer, 600 dpi pour les petits caractères ou l’OCR, et 72 dpi pour les fichiers les plus légers. Plus la résolution est haute, plus c’est long et lourd ; sur mobile, les très grandes pages peuvent être un peu réduites.",
       },
       {
         question: "JPG ou PNG ?",
@@ -4041,7 +4041,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     tagline: "Enregistrez chaque page d’un PDF en image PNG nette et sans perte, page par page ou toutes ensemble dans un ZIP. La conversion se fait sur votre appareil.",
     intro: "PDF en PNG transforme chaque page d’un PDF en image PNG. Le PNG est sans perte : le texte, les traits et les schémas restent parfaitement nets, ce qui en fait le bon choix pour les diapositives, documents et graphiques que vous voulez insérer dans une présentation, une création ou une page web. Choisissez la résolution, puis téléchargez des pages une par une ou toutes ensemble dans un ZIP. Le PDF est ouvert dans votre navigateur et n’est jamais envoyé.",
     seoTitle: "Convertir PDF en PNG – Pages nettes, gratuit",
-    seoDescription: "Convertissez les pages d’un PDF en images PNG nettes dans votre navigateur. 72, 150 ou 300 dpi, une page ou toutes. Gratuit et privé.",
+    seoDescription: "Convertissez des pages PDF en images PNG nettes dans votre navigateur. De 72 à 600 DPI ; une page, les pages choisies ou toutes. Gratuit et privé.",
     keywords: [
       "pdf en png",
       "convertir pdf en png",
@@ -4056,7 +4056,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Choisissez la résolution",
-        description: "150 dpi convient aux écrans. Utilisez 300 dpi pour l’impression ou pour zoomer.",
+        description: "150 DPI convient aux écrans. Utilisez 300 DPI pour imprimer, 600 DPI pour les détails fins.",
       },
       {
         title: "Téléchargez les pages",
@@ -4070,7 +4070,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Résolution au choix",
-        description: "72, 150 ou 300 dpi, de l’aperçu web à l’impression.",
+        description: "72, 150, 300 ou 600 DPI, des aperçus web aux petits caractères.",
       },
       {
         title: "Toutes les pages d’un coup",
@@ -4088,7 +4088,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Quelle résolution choisir ?",
-        answer: "150 dpi rend bien à l’écran. 300 dpi sert à l’impression ou quand vous devez zoomer, et donne des fichiers plus lourds.",
+        answer: "150 DPI rend bien à l’écran. 300 DPI sert à imprimer, et 600 DPI aux détails fins ou à l’OCR ; plus c’est haut, plus les fichiers sont lourds.",
       },
       {
         question: "Puis-je convertir un PDF protégé par mot de passe ?",
@@ -4364,11 +4364,11 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         title: "Cochez les pages voulues",
         description:
-          "Utilisez la case sous chaque page, ou « Tout sélectionner » puis décochez celles dont vous n’avez pas besoin.",
+          "Cochez la case sous chaque page, ou tapez des numéros de page comme 1-3, 5.",
       },
       {
         title: "Téléchargez",
-        description: "Enregistrez un nouveau PDF avec uniquement ces pages, dans leur ordre d’origine.",
+        description: "Enregistrez un nouveau PDF avec ces pages dans leur ordre d’origine, ou un PDF par page dans un ZIP.",
       },
     ],
     features: [
@@ -4492,7 +4492,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "Faire pivoter un PDF",
     shortName: "Pivoter PDF",
-    tagline: "Faites pivoter toutes les pages, ou seulement celles de votre choix, de 90 ou 180 degrés. Tout se fait sur votre appareil.",
+    tagline: "Faites pivoter toutes les pages, celles que vous choisissez, ou chacune à sa façon. Tout se fait sur votre appareil.",
     intro:
       "Faire pivoter un PDF corrige les pages qui s’ouvrent de travers ou à l’envers, un problème fréquent avec les documents numérisés et les photos enregistrées en PDF. Choisissez 90 degrés à droite, 180 degrés ou 90 degrés à gauche, et appliquez la rotation à toutes les pages ou seulement aux pages cochées. Les aperçus montrent le résultat avant le téléchargement. La rotation est enregistrée comme un réglage de la page, donc le texte et les images gardent toute leur qualité, et rien ne quitte votre navigateur.",
     seoTitle: "Faire pivoter un PDF en ligne – gratuit et définitif",
@@ -4512,7 +4512,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Choisissez la rotation",
-        description: "Choisissez 90° à droite, 180° ou 90° à gauche, pour toutes les pages ou les pages cochées.",
+        description: "Choisissez 90° à droite, 180° ou 90° à gauche pour toutes les pages ou celles cochées, ou choisissez Page par page et tournez chacune.",
       },
       {
         title: "Téléchargez",
@@ -4521,8 +4521,8 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Toutes les pages ou une sélection",
-        description: "Corrigez un seul scan de travers sans toucher au reste.",
+        title: "Toutes, certaines ou page par page",
+        description: "Corrigez un scan couché sans toucher au reste, ou tournez chaque page à sa façon.",
       },
       {
         title: "Aperçu en direct",
@@ -4544,7 +4544,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Puis-je faire pivoter les pages de façons différentes ?",
-        answer: "Utilisez Organiser PDF, où chaque page a son propre bouton de rotation.",
+        answer: "Oui. Choisissez Page par page et appuyez sur le bouton de rotation sous chaque page jusqu’à ce qu’elle soit à l’endroit, puis téléchargez.",
       },
       {
         question: "Puis-je utiliser un PDF protégé par mot de passe ?",
@@ -4957,7 +4957,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "Rogner un PDF",
     shortName: "Rogner PDF",
-    tagline: "Rognez les marges de toutes les pages d’un PDF. Tout se fait sur votre appareil.",
+    tagline: "Rognez les marges de toutes les pages d’un PDF, ou seulement de celles que vous choisissez. Tout se fait sur votre appareil.",
     intro:
       "Rogner un PDF coupe les bords de chaque page pour retirer les larges marges blanches, les bordures de scanner ou les repères d’impression, afin que le contenu remplisse l’écran quand vous lisez sur un téléphone. Indiquez combien rogner en haut, à droite, en bas et à gauche, et l’aperçu montre la partie de la page qui reste. Le rognage est enregistré comme un réglage de la page, donc le texte garde toute sa qualité. Tout se passe dans votre navigateur, le document n’est donc jamais envoyé.",
     seoTitle: "Rogner un PDF en ligne – réduire les marges, gratuit",
@@ -4981,7 +4981,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Téléchargez",
-        description: "Enregistrez le PDF avec toutes les pages rognées.",
+        description: "Choisissez toutes les pages, celle de l’aperçu ou des numéros de page, puis enregistrez le PDF.",
       },
     ],
     features: [
@@ -5011,7 +5011,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Puis-je rogner les pages différemment ?",
         answer:
-          "Les mêmes marges s’appliquent à toutes les pages. Pour rogner des pages différemment, divisez le PDF, rognez chaque partie, puis fusionnez-les à nouveau.",
+          "Oui. Dans Appliquer à, choisissez Cette page, ou Pages et tapez des numéros comme 1-3, 5. Pour donner d’autres marges à d’autres pages, rognez à nouveau le PDF téléchargé.",
       },
       {
         question: "Puis-je utiliser un PDF protégé par mot de passe ?",
@@ -9430,7 +9430,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Puis-je laisser la couverture de côté ?",
-        answer: "Oui. Cochez l’option pour laisser la première page telle quelle ; la numérotation commence alors à la page 2 avec le numéro de votre choix."
+        answer: "Oui. Dans Pages avec en-tête et pied de page, commencez à la page 2. Vous pouvez aussi vous arrêter avant les dernières pages ; {page} sur la première page incluse affiche le numéro de « Commencer à »."
       },
       {
         question: "Le texte va-t-il couvrir mon contenu ?",

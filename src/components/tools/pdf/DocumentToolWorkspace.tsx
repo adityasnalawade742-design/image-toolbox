@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Server, FileText, CheckCircle2, Download, X, Loader2, AlertCircle, Circle, Clock, Archive } from 'lucide-react';
+import { Server, FileText, CheckCircle2, Download, X, Loader2, AlertCircle, Circle, Clock, Archive, Plus } from 'lucide-react';
 import { createUniqueNamer } from '../../../lib/storage/fileNames';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
@@ -168,6 +168,30 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     setFile(list[0]);
   };
 
+  // More files join the list instead of replacing it; the same file twice is skipped
+  const addRef = useRef<HTMLInputElement>(null);
+  const sameFile = (a: File, b: File) => a.name === b.name && a.size === b.size && a.lastModified === b.lastModified;
+  const addMore = (list: File[]) => {
+    const current = queue ? queue.map((q) => q.file) : file ? [file] : [];
+    const fresh = list.filter((f) => !current.some((c) => sameFile(c, f)));
+    if (!fresh.length) return;
+    if (!queue) return pickMany([...current, ...fresh]);
+    const room = Math.max(0, MAX_FILES - queue.length);
+    setOverflow(Math.max(0, fresh.length - room));
+    setZipError(false);
+    const stamp = Date.now();
+    setQueue([
+      ...queue,
+      ...fresh.slice(0, room).map((f, i): QueueItem => ({
+        id: `${stamp}-${i}-${f.name}-${f.size}`,
+        file: f,
+        status: f.size > MAX_BYTES ? 'error' : 'pending',
+        rejected: f.size > MAX_BYTES,
+        error: f.size > MAX_BYTES ? t('ctl.doc.errTooLarge') : undefined,
+      })),
+    ]);
+  };
+
   const needsPassword = tool === 'protect-pdf' || tool === 'unlock-pdf';
   const passwordProblem =
     // Unlock may run without a password: that removes print and copy restrictions from PDFs that open freely
@@ -316,6 +340,25 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
         e.target.value = '';
       }}
     />
+  );
+  const addInput = (
+    <input
+      ref={addRef}
+      type="file"
+      accept={cfg.accept}
+      multiple
+      className="hidden"
+      onChange={(e) => {
+        if (e.target.files?.length) addMore(Array.from(e.target.files));
+        e.target.value = '';
+      }}
+    />
+  );
+  const addButton = (
+    <button type="button" onClick={() => addRef.current?.click()} className="btn-rule">
+      <Plus className="w-4 h-4" aria-hidden="true" />
+      <span>{t('ctl.doc.addMore')}</span>
+    </button>
   );
 
   if (!file) {
@@ -509,6 +552,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     return (
       <>
         {fileInput}
+        {addInput}
         <PdfToolLayout
           fileLabel={`${t('ctl.bulk.fileCount', { count: queue.length })} · ${formatBytes(queue.reduce((n, q) => n + q.file.size, 0))}`}
           onReplace={() => inputRef.current?.click()}
@@ -594,6 +638,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
             </p>
           )}
           <div className="flex flex-wrap gap-2">
+            {!batchRunning && queue.length < MAX_FILES && addButton}
             {batchRunning && (
               <button type="button" onClick={() => (cancelRef.current = true)} className="btn-rule">
                 {t('ctl.bulk.cancel')}
@@ -615,6 +660,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   return (
     <>
       {fileInput}
+      {addInput}
       <PdfToolLayout
         fileLabel={`${file.name} · ${formatBytes(file.size)}`}
         onReplace={() => inputRef.current?.click()}
@@ -656,6 +702,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
             {t('ctl.doc.repairPartial')}
           </p>
         )}
+        {!progress && <div>{addButton}</div>}
       </PdfToolLayout>
     </>
   );

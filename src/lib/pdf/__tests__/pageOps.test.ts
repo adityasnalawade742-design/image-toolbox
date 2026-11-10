@@ -13,6 +13,7 @@ import {
   extractPages,
   splitPdf,
   rotatePages,
+  rotateEach,
   addPageNumbers,
   pageLabel,
   readMetadata,
@@ -26,6 +27,15 @@ import {
   visualPage,
   placeCentred,
 } from '../pageOps';
+
+describe('rotateEach', () => {
+  it('turns each page by its own amount and leaves the others alone', async () => {
+    const src = await PDFDocument.load(await makePdf(3));
+    src.getPage(2).setRotation(degrees(90));
+    const out = await PDFDocument.load(await rotateEach(await src.save(), [{ index: 0, by: 90 }, { index: 2, by: 270 }, { index: 7, by: 90 }]));
+    expect(out.getPages().map((p) => p.getRotation().angle)).toEqual([90, 0, 0]);
+  });
+});
 
 // A PDF with `n` pages; page i is (100 + i) points wide, so pages can be told apart after reordering
 async function makePdf(n: number, meta = false) {

@@ -4,13 +4,17 @@ import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import { openPdf, renderPage, PdfPasswordError, PdfInvalidError, type PageImageFormat } from '../../lib/pdf/pdfToImages';
+import { parseRanges } from '../../lib/pdf/pageOps';
 import { downloadBlob } from '../../lib/canvas/engine';
 import { MediaViewer } from '../shared/MediaViewer';
 import { ViewableThumb } from '../shared/ViewableThumb';
 import { pdfPageItems } from '../shared/pdfViewerItems';
 
 const ACCEPT = 'application/pdf,.pdf';
-const DPIS = [72, 150, 300] as const;
+const DPIS = [72, 150, 300, 600] as const;
+// Phone browsers (iOS Safari) refuse canvases over about 16.7 million pixels; 600 dpi on A4 is about 35 million
+const TOUCH_MAX_PIXELS = 16_777_216;
+const maxPixels = () => (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0 ? TOUCH_MAX_PIXELS : 0);
 // Thumbnails render at a fixed low resolution, independent of the export setting
 const THUMB_DPI = 36;
 
@@ -21,6 +25,9 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
   const [thumbs, setThumbs] = useState<string[]>([]);
   const [format, setFormat] = useState<PageImageFormat>(defaultFormat);
   const [dpi, setDpi] = useState<(typeof DPIS)[number]>(150);
+  // Every page, or only typed page numbers
+  const [scope, setScope] = useState<'all' | 'range'>('all');
+  const [range, setRange] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   // Exporting blocks other downloads; preview loading doesn't
   const [exporting, setExporting] = useState(false);
@@ -93,7 +100,7 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
     setExporting(true);
     setBusy(t('ctl.frompdf.rendering', { n, total: doc.numPages }));
     try {
-      downloadBlob(await renderPage(doc, n, dpi, format), pageName(n));
+      downloadBlob(await renderPage(doc, n, dpi, format, undefined, 0, maxPixels()), pageName(n));
     } catch {
       setError(t('ws.errExport'));
     } finally {
@@ -102,16 +109,26 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
     }
   };
 
+  // Page numbers (1-based) the main button saves
+  const chosen = (): number[] => {
+    const count = doc?.numPages ?? 0;
+    if (scope === 'all') return Array.from({ length: count }, (_, i) => i + 1);
+    return [...new Set(parseRanges(range, count).flat())].sort((a, b) => a - b).map((i) => i + 1);
+  };
+
   const downloadAll = async () => {
     if (!doc || exporting) return;
-    if (doc.numPages === 1) return downloadPage(1);
+    const list = chosen();
+    if (!list.length) return setError(t('ctl.splitpdf.noRanges'));
+    setError(null);
+    if (list.length === 1) return downloadPage(list[0]);
     setExporting(true);
     try {
       const JSZip = (await import('jszip')).default;
       const zip = new JSZip();
-      for (let n = 1; n <= doc.numPages; n++) {
-        setBusy(t('ctl.frompdf.rendering', { n, total: doc.numPages }));
-        zip.file(pageName(n), await renderPage(doc, n, dpi, format));
+      for (const [i, n] of list.entries()) {
+        setBusy(t('ctl.frompdf.rendering', { n: i + 1, total: list.length }));
+        zip.file(pageName(n), await renderPage(doc, n, dpi, format, undefined, 0, maxPixels()));
       }
       downloadBlob(await zip.generateAsync({ type: 'blob' }), `${base}-pages.zip`);
     } catch {
@@ -152,7 +169,13 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
 
   const seg = (on: boolean) => `min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${on ? 'seg-on' : 'seg-off'}`;
   const pages = doc?.numPages ?? 0;
-  const allLabel = pages === 1 ? t('ws.download', { format: ext.toUpperCase() }) : t('ctl.frompdf.downloadAll');
+  const count = doc ? chosen().length : 0;
+  const allLabel =
+    pages === 1 || (scope === 'range' && count === 1)
+      ? t('ws.download', { format: ext.toUpperCase() })
+      : scope === 'range' && count > 1
+        ? t('ctl.frompdf.downloadSome', { n: count })
+        : t('ctl.frompdf.downloadAll');
 
   return (
     <div className="pb-20 lg:pb-0">
@@ -233,7 +256,7 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
               </div>
               <div className="space-y-2 pt-4 border-t border-ink">
                 <span className="slug block" id="pdf-dpi">{t('ctl.frompdf.resolution')}</span>
-                <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-dpi">
+                <div className="grid grid-cols-4 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-dpi">
                   {DPIS.map((d) => (
                     <button key={d} type="button" aria-pressed={dpi === d} onClick={() => setDpi(d)} className={seg(dpi === d)} data-measure>
                       {d} dpi
@@ -242,6 +265,29 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
                 </div>
                 <p className="text-[13px] text-graphite">{t('ctl.frompdf.dpiNote')}</p>
               </div>
+              {pages > 1 && (
+                <div className="space-y-2 pt-4 border-t border-ink">
+                  <span className="slug block" id="pdf-which">{t('ctl.frompdf.which')}</span>
+                  <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="pdf-which">
+                    {(['all', 'range'] as const).map((s) => (
+                      <button key={s} type="button" aria-pressed={scope === s} onClick={() => setScope(s)} className={seg(scope === s)}>
+                        {s === 'all' ? t('ctl.pdf.scopeAll') : t('ctl.pdf.scopeRange')}
+                      </button>
+                    ))}
+                  </div>
+                  {scope === 'range' && (
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      aria-label={t('ctl.pdf.scopeRange')}
+                      placeholder={t('ctl.pdf.rangePlaceholder')}
+                      value={range}
+                      onChange={(e) => setRange(e.target.value)}
+                      className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+                    />
+                  )}
+                </div>
+              )}
             </div>
           </div>
 

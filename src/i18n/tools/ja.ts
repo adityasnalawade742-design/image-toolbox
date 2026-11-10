@@ -3969,7 +3969,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       "「PDFをJPGに変換」は、PDFのページを画像に変換します。SNSへの投稿、チャットでの共有、スライドへの挿入や、画像しか受け付けないフォームへのアップロードに使えます。ファイルを小さくしたいならJPG、文字をくっきりさせたいならPNGを選び、解像度を選びます。画面用は72 dpi、ほとんどの用途は150 dpi、印刷用は300 dpiです。1ページだけ、またはすべてのページをZIPファイルでまとめてダウンロードできます。PDFは端末上のブラウザで開かれるため、個人的な書類がアップロードされることはありません。",
     seoTitle: "PDF JPG 変換 – 全ページを画像に、無料",
     seoDescription:
-      "PDFをJPGに無料で変換。PDFのページをブラウザ内でJPGまたはPNG画像にします。72・150・300 dpiから選び、1ページずつでも全ページをZIPでも保存できます。アップロード不要。",
+      "PDFのページをブラウザでJPGやPNG画像に変換。72〜600 dpiを選び、1ページ、選んだページ、または全ページをZIPで保存。無料、アップロード不要。",
     keywords: [
       "PDF JPG 変換",
       "PDF 画像 変換",
@@ -3985,7 +3985,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "形式と解像度を選ぶ",
-        description: "JPGかPNG、そして72、150、300 dpiから選びます。",
+        description: "JPGかPNG、そして72・150・300・600 dpiから選びます。",
       },
       {
         title: "ダウンロードする",
@@ -3995,11 +3995,11 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "全ページでも1ページでも",
-        description: "必要なページだけ、またはすべてのページをまとめてZIPでダウンロードできます。",
+        description: "必要なページだけ、2-5のように入力したページ、または全ページをまとめてZIPで保存できます。",
       },
       {
         title: "印刷にも使える解像度",
-        description: "最大300 dpiで変換でき、文字がくっきりして印刷にも使えます。",
+        description: "最大600 dpiで、くっきりした文字、印刷、OCRに対応します。",
       },
       {
         title: "JPGまたはPNG",
@@ -4014,7 +4014,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "解像度はどれを選べばよいですか？",
         answer:
-          "共有からスライドまで、ほとんどの用途には150 dpiが適しています。印刷する場合や小さな文字を拡大したい場合は300 dpi、ファイルを最も小さくしたい場合は72 dpiを選んでください。解像度が高いほど時間がかかり、ファイルも大きくなります。",
+          "ほとんどの用途には150 dpiが向いています。印刷には300 dpi、細かい文字やOCRには600 dpi、いちばん小さいファイルには72 dpiを選びます。解像度が高いほど時間がかかりファイルも大きくなります。スマホでは、とても大きなページが少し小さくなることがあります。",
       },
       {
         question: "JPGとPNG、どちらがよいですか？",
@@ -4044,7 +4044,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     tagline: "PDFの各ページを、くっきりした可逆圧縮のPNG画像として保存します。1ページずつでも、ZIPでまとめてでも保存できます。変換は端末上で行われます。",
     intro: "「PDFをPNGに変換」は、PDFの各ページをPNG画像にします。PNGは可逆圧縮なので、文字や線、図が完全にくっきりしたままです。そのため、プレゼンテーションやデザイン、Webページに入れたいスライドや書類、グラフに最適です。解像度を選び、1ページずつ、またはすべてのページをまとめてZIPでダウンロードできます。PDFはブラウザ内で開かれ、アップロードされることはありません。",
     seoTitle: "PDF PNG 変換 – くっきりしたページ画像、無料",
-    seoDescription: "PDFのページをブラウザでくっきりしたPNG画像に変換。72・150・300 DPIから選び、1ページずつでも全ページでも保存できます。無料で安全。",
+    seoDescription: "PDFのページをブラウザでくっきりしたPNG画像に変換。72〜600 DPIで、1ページ、選んだページ、または全ページを保存。無料でプライベート。",
     keywords: [
       "pdf png 変換",
       "pdf を png に変換",
@@ -4059,7 +4059,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "解像度を選ぶ",
-        description: "画面用には150 DPIで十分です。印刷や拡大表示には300 DPIを使ってください。",
+        description: "画面用は150 DPI。印刷には300 DPI、細部まで残すなら600 DPIを使います。",
       },
       {
         title: "ページをダウンロード",
@@ -4073,7 +4073,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "解像度を選べる",
-        description: "Webのプレビューから印刷まで、72・150・300 DPIから選べます。",
+        description: "72・150・300・600 DPIから選べ、Web用プレビューから細かい文字まで対応します。",
       },
       {
         title: "全ページを一度に",
@@ -4091,7 +4091,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "解像度はどれを選べばよいですか？",
-        answer: "画面で見るなら150 DPIできれいに見えます。300 DPIは印刷や拡大が必要なとき向けで、ファイルは大きくなります。",
+        answer: "画面で見るなら150 DPIで十分です。印刷には300 DPI、細部やOCRには600 DPIを。高くするほどファイルはかなり大きくなります。",
       },
       {
         question: "パスワード付きのPDFも変換できますか？",
@@ -4365,11 +4365,11 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "必要なページにチェックを入れる",
-        description: "各ページの下にあるチェックボックスを使うか、「すべて選択」を押して不要なページのチェックを外します。",
+        description: "各ページの下のチェックボックスを使うか、1-3, 5のようにページ番号を入力します。",
       },
       {
         title: "ダウンロードする",
-        description: "選んだページだけを元の順番で含む新しいPDFを保存します。",
+        description: "選んだページを元の順番で1つの新しいPDFに、またはページごとのPDFをZIPにまとめて保存します。",
       },
     ],
     features: [
@@ -4493,7 +4493,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "PDF回転",
     shortName: "PDF回転",
-    tagline: "すべてのページ、または選んだページだけを90度または180度回転します。端末上で動作します。",
+    tagline: "全ページ、選んだページ、または1ページずつ別々に回転できます。処理はお使いの端末で行われます。",
     intro:
       "PDF回転は、横向きや上下逆さまに開いてしまうページを直すツールです。スキャンした文書や、PDFとして保存した写真によくある問題です。右に90°、180°、左に90°から選び、すべてのページか、チェックを入れたページだけに適用します。ダウンロードの前に、プレビューで結果を確認できます。回転はページの設定として保存されるため、文字や画像の画質はそのままで、何もブラウザの外に出ません。",
     seoTitle: "PDF 回転 – ページの向きを直して保存、無料",
@@ -4513,7 +4513,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "回転を選ぶ",
-        description: "右に90°、180°、左に90°から選び、すべてのページかチェックを入れたページに適用します。",
+        description: "全ページまたはチェックしたページに右90°・180°・左90°を選ぶか、「1ページずつ」で各ページを回転します。",
       },
       {
         title: "ダウンロードする",
@@ -4522,8 +4522,8 @@ export const jaTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "全ページでも選んだページでも",
-        description: "横向きのスキャン1枚だけを、ほかのページに触れずに直せます。",
+        title: "全ページ・選択ページ・1ページずつ",
+        description: "横向きのスキャン1枚だけを直したり、ページごとに違う向きに回したりできます。",
       },
       {
         title: "リアルタイムプレビュー",
@@ -4547,7 +4547,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "ページごとに違う角度で回転できますか？",
         answer:
-          "「PDFページ整理」をお使いください。各ページに専用の回転ボタンがあります。",
+          "はい。「1ページずつ」を選び、各ページの下の回転ボタンを正しい向きになるまで押してから、ダウンロードします。",
       },
       {
         question: "パスワード付きのPDFも使えますか？",
@@ -4957,7 +4957,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "PDFトリミング",
     shortName: "PDFトリミング",
-    tagline: "PDFの全ページの余白を切り取ります。端末上で動作します。",
+    tagline: "PDFの全ページ、または選んだページだけの余白を切り取ります。処理はお使いの端末で行われます。",
     intro:
       "PDFトリミングは、全ページの端を切り取って、広い白い余白、スキャナーの縁、トンボなどを取り除き、スマートフォンで読むときに内容が画面いっぱいに表示されるようにします。上、右、下、左からどれだけ切り取るかを設定すると、ページのどの部分が残るかがプレビューに表示されます。トリミングはページの設定として保存されるため、文字の画質はそのままです。すべてブラウザ内で行われるため、文書がアップロードされることはありません。",
     seoTitle: "PDF トリミング – ページの余白を切り取る、無料",
@@ -4981,7 +4981,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "ダウンロードする",
-        description: "全ページをトリミングしたPDFを保存します。",
+        description: "全ページ、プレビュー中のページ、またはページ番号を選んでPDFを保存します。",
       },
     ],
     features: [
@@ -5011,7 +5011,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       {
         question: "ページごとに違うトリミングができますか？",
         answer:
-          "同じ余白がすべてのページに適用されます。ページごとに変えたい場合は、PDFを分割して各部分をトリミングし、もう一度結合してください。",
+          "はい。「適用先」で「このページ」を選ぶか、「ページ指定」で1-3, 5のように番号を入力します。別のページに別の余白を付けるには、ダウンロードしたPDFをもう一度切り抜きます。",
       },
       {
         question: "パスワード付きのPDFも使えますか？",
@@ -9410,7 +9410,7 @@ export const jaTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "表紙を除外できますか？",
-        answer: "はい。1ページ目をそのままにするオプションにチェックを入れると、2ページ目から、選んだ番号で番号付けが始まります。"
+        answer: "はい。「ヘッダーとフッターを入れるページ」を2ページ目から始めます。最後の数ページを外すこともできます。含めた最初のページで{page}は「開始番号」の数字になります。"
       },
       {
         question: "内容に重なりませんか？",

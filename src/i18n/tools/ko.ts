@@ -3970,7 +3970,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       "PDF JPG 변환은 PDF 페이지를 이미지로 바꿔서 게시하거나, 채팅으로 공유하거나, 슬라이드에 넣거나, 사진만 받는 양식에 업로드할 수 있게 해 줘요. 파일을 작게 하려면 JPG, 글자를 선명하게 하려면 PNG를 고르고, 해상도를 정하세요. 화면용은 72 dpi, 대부분의 용도는 150 dpi, 인쇄용은 300 dpi예요. 한 페이지만 받거나 모든 페이지를 ZIP 파일로 한 번에 받을 수 있어요. PDF는 내 기기의 브라우저에서 열리므로 개인 문서가 업로드되지 않아요.",
     seoTitle: "PDF JPG 변환 – 모든 페이지를 이미지로, 무료",
     seoDescription:
-      "PDF JPG 변환을 브라우저에서. PDF 페이지를 JPG나 PNG 이미지로 바꿔요. 72, 150, 300 dpi 중에서 고르고 한 페이지 또는 전체를 ZIP으로 받으세요. 무료, 업로드 없음.",
+      "PDF 페이지를 브라우저에서 JPG나 PNG 이미지로 변환하세요. 72~600 dpi를 고르고 한 페이지, 고른 페이지 또는 전체를 ZIP으로 받으세요. 무료, 업로드 없음.",
     keywords: [
       "pdf jpg 변환",
       "pdf 이미지 변환",
@@ -3986,7 +3986,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "형식과 해상도 선택",
-        description: "JPG나 PNG, 그리고 72, 150, 300 dpi 중에서 고르세요.",
+        description: "JPG 또는 PNG, 그리고 72, 150, 300, 600 dpi 중에서 고르세요.",
       },
       {
         title: "다운로드",
@@ -3996,11 +3996,11 @@ export const koTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "모든 페이지 또는 한 페이지만",
-        description: "필요한 페이지만 받거나, 모든 페이지를 ZIP으로 한 번에 받을 수 있어요.",
+        description: "필요한 페이지만, 2-5처럼 입력한 페이지, 또는 모든 페이지를 한 번에 ZIP으로 받을 수 있어요.",
       },
       {
         title: "인쇄용 해상도",
-        description: "최대 300 dpi로 변환해 글자가 선명하고 인쇄에도 좋아요.",
+        description: "최대 600 dpi로 선명한 글자, 인쇄, OCR에 알맞아요.",
       },
       {
         title: "JPG 또는 PNG",
@@ -4015,7 +4015,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "해상도는 무엇을 골라야 하나요?",
         answer:
-          "공유부터 슬라이드까지 대부분의 용도에는 150 dpi가 알맞아요. 인쇄하거나 작은 글자를 확대해 보려면 300 dpi, 가장 작은 파일을 원하면 72 dpi를 고르세요. 해상도가 높을수록 시간이 오래 걸리고 파일도 커져요.",
+          "대부분의 용도에는 150 dpi가 알맞아요. 인쇄에는 300 dpi, 작은 글씨나 OCR에는 600 dpi, 가장 작은 파일에는 72 dpi를 고르세요. 해상도가 높을수록 오래 걸리고 파일이 커져요. 휴대폰에서는 아주 큰 페이지가 조금 작아질 수 있어요.",
       },
       {
         question: "JPG와 PNG 중 무엇이 좋나요?",
@@ -4045,7 +4045,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
     tagline: "PDF의 모든 페이지를 선명한 무손실 PNG 이미지로 저장하세요. 한 페이지씩 받거나 ZIP으로 한 번에 받을 수 있어요. 변환은 내 기기에서 이루어져요.",
     intro: "PDF PNG 변환은 PDF의 각 페이지를 PNG 이미지로 바꿔요. PNG는 무손실이라 글자, 선, 도표가 완벽하게 선명하게 유지되므로, 프레젠테이션이나 디자인, 웹페이지에 넣을 슬라이드, 문서, 차트에 알맞아요. 해상도를 고른 다음, 페이지를 하나씩 받거나 모든 페이지를 ZIP으로 한 번에 다운로드하세요. PDF는 브라우저 안에서 열리고 업로드되지 않아요.",
     seoTitle: "PDF PNG 변환 – 선명한 페이지 이미지, 무료",
-    seoDescription: "브라우저에서 PDF 페이지를 선명한 PNG 이미지로 바꾸세요. 72, 150, 300 DPI 중에서 고르고 한 페이지 또는 전체를 받으세요. 무료, 안전.",
+    seoDescription: "PDF 페이지를 브라우저에서 선명한 PNG 이미지로 변환하세요. 72~600 DPI, 한 페이지, 고른 페이지 또는 전체를 받을 수 있어요. 무료, 비공개.",
     keywords: [
       "pdf png 변환",
       "pdf를 png로",
@@ -4060,7 +4060,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "해상도 선택",
-        description: "화면용은 150 DPI면 충분해요. 인쇄하거나 확대해서 보려면 300 DPI를 쓰세요.",
+        description: "화면용은 150 DPI면 충분해요. 인쇄에는 300 DPI, 세밀한 부분에는 600 DPI를 쓰세요.",
       },
       {
         title: "페이지 다운로드",
@@ -4074,7 +4074,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "해상도 선택",
-        description: "웹 미리보기부터 인쇄까지, 72, 150, 300 DPI 중에서 고를 수 있어요.",
+        description: "72, 150, 300, 600 DPI 중에서 골라 웹 미리보기부터 작은 글씨까지 대응해요.",
       },
       {
         title: "모든 페이지를 한 번에",
@@ -4092,7 +4092,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "해상도는 무엇을 골라야 하나요?",
-        answer: "화면에서 볼 때는 150 DPI면 보기 좋아요. 300 DPI는 인쇄하거나 확대해야 할 때 쓰고, 파일이 더 커져요.",
+        answer: "화면에서는 150 DPI면 충분해요. 인쇄에는 300 DPI, 세밀한 부분이나 OCR에는 600 DPI를 쓰세요. 높을수록 파일이 훨씬 커져요.",
       },
       {
         question: "비밀번호로 보호된 PDF도 변환할 수 있나요?",
@@ -4366,11 +4366,11 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "원하는 페이지 체크",
-        description: "각 페이지 아래의 체크박스를 쓰거나, 모두 선택을 누른 다음 필요 없는 페이지를 해제하세요.",
+        description: "각 페이지 아래 체크박스를 쓰거나 1-3, 5처럼 페이지 번호를 입력하세요.",
       },
       {
         title: "다운로드",
-        description: "고른 페이지만 원래 순서대로 담은 새 PDF를 저장하세요.",
+        description: "고른 페이지를 원래 순서대로 새 PDF 하나로, 또는 페이지마다 PDF로 만들어 ZIP으로 저장하세요.",
       },
     ],
     features: [
@@ -4494,7 +4494,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "PDF 회전",
     shortName: "PDF 회전",
-    tagline: "모든 페이지나 고른 페이지만 90도 또는 180도 돌려요. 내 기기에서 실행돼요.",
+    tagline: "모든 페이지, 고른 페이지, 또는 페이지마다 따로 돌릴 수 있어요. 기기에서 처리돼요.",
     intro:
       "PDF 회전은 옆으로 눕거나 거꾸로 열리는 페이지를 바로잡아 줘요. 스캔한 문서나 PDF로 저장한 사진에서 자주 생기는 문제예요. 오른쪽 90°, 180°, 왼쪽 90° 중에서 고르고, 모든 페이지나 체크한 페이지에만 적용하세요. 다운로드하기 전에 미리보기로 결과를 확인할 수 있어요. 회전은 페이지 설정으로 저장되므로 글자와 이미지 품질이 그대로이고, 아무것도 브라우저 밖으로 나가지 않아요.",
     seoTitle: "PDF 회전 – 페이지 방향 바꿔 저장, 무료",
@@ -4514,7 +4514,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "회전 선택",
-        description: "오른쪽 90°, 180°, 왼쪽 90° 중에서 고르고, 모든 페이지나 체크한 페이지에 적용하세요.",
+        description: "모든 페이지나 체크한 페이지에 오른쪽 90°, 180°, 왼쪽 90°를 고르거나, ‘페이지별로’를 골라 하나씩 돌리세요.",
       },
       {
         title: "다운로드",
@@ -4523,8 +4523,8 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "모든 페이지 또는 고른 페이지",
-        description: "옆으로 누운 스캔 한 장만 다른 페이지는 건드리지 않고 고칠 수 있어요.",
+        title: "전체, 선택, 페이지별",
+        description: "옆으로 누운 스캔 한 장만 고치거나, 페이지마다 다르게 돌릴 수 있어요.",
       },
       {
         title: "실시간 미리보기",
@@ -4548,7 +4548,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "페이지마다 다른 각도로 회전할 수 있나요?",
         answer:
-          "PDF 페이지 정리를 사용하세요. 페이지마다 회전 버튼이 따로 있어요.",
+          "네. ‘페이지별로’를 고르고 각 페이지 아래 회전 버튼을 바른 방향이 될 때까지 누른 뒤 내려받으세요.",
       },
       {
         question: "비밀번호로 보호된 PDF도 쓸 수 있나요?",
@@ -4958,7 +4958,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "PDF 자르기",
     shortName: "PDF 자르기",
-    tagline: "PDF 모든 페이지의 여백을 잘라요. 내 기기에서 실행돼요.",
+    tagline: "PDF의 모든 페이지 또는 고른 페이지만 여백을 잘라내요. 기기에서 처리돼요.",
     intro:
       "PDF 자르기는 모든 페이지의 가장자리를 잘라 넓은 흰 여백, 스캐너 테두리, 재단선 같은 인쇄 표시를 없애서, 휴대폰으로 읽을 때 내용이 화면을 가득 채우게 해 줘요. 위, 오른쪽, 아래, 왼쪽에서 얼마나 자를지 정하면 페이지의 어느 부분이 남는지 미리보기로 보여 줘요. 자르기는 페이지 설정으로 저장되므로 글자 품질이 그대로예요. 모든 작업이 브라우저에서 이루어지므로 문서가 업로드되지 않아요.",
     seoTitle: "PDF 자르기 – 페이지 여백 잘라내기, 무료",
@@ -4982,7 +4982,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "다운로드",
-        description: "모든 페이지를 자른 PDF를 저장하세요.",
+        description: "모든 페이지, 미리보기 중인 페이지 또는 페이지 번호를 고른 뒤 PDF를 저장하세요.",
       },
     ],
     features: [
@@ -5012,7 +5012,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "페이지마다 다르게 자를 수 있나요?",
         answer:
-          "모든 페이지에 같은 여백이 적용돼요. 페이지마다 다르게 자르려면 PDF를 분할하고, 각 부분을 자른 다음, 다시 합치세요.",
+          "네. ‘적용 범위’에서 ‘이 페이지’를 고르거나, ‘페이지 지정’에서 1-3, 5처럼 번호를 입력하세요. 다른 페이지에 다른 여백을 주려면 내려받은 PDF를 다시 잘라내면 돼요.",
       },
       {
         question: "비밀번호로 보호된 PDF도 쓸 수 있나요?",
@@ -9411,7 +9411,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "표지는 빼도 되나요?",
-        answer: "네. 첫 페이지를 그대로 두는 옵션을 체크하세요. 그러면 번호 매기기는 2페이지부터 원하는 번호로 시작돼요."
+        answer: "네. ‘머리글과 바닥글을 넣을 페이지’를 2페이지부터 시작하세요. 마지막 몇 페이지를 빼는 것도 돼요. 포함한 첫 페이지의 {page}에는 ‘시작 번호’가 들어가요."
       },
       {
         question: "내용을 가리지 않나요?",

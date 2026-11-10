@@ -15,10 +15,15 @@ export const pdfStrings = {
   'ctl.pdf.selectNone': 'Clear selection',
   'ctl.pdf.selectedCount': '{n} of {total} pages selected',
   'ctl.pdf.needOne': 'Select at least one page.',
+  'ctl.extract.typeRange': 'Or select pages by number',
+  'ctl.extract.one': 'One PDF',
+  'ctl.extract.each': 'A PDF per page',
   'ctl.pdf.scope': 'Apply to',
   'ctl.pdf.scopeAll': 'All pages',
   'ctl.pdf.scopeSelected': 'Selected pages',
   'ctl.pdf.scopeRange': 'Pages',
+  'ctl.pdf.scopeThis': 'This page',
+  'ctl.pdf.scopeEach': 'Page by page',
   'ctl.pdf.rangePlaceholder': 'e.g. 1-3, 5',
   'ctl.pdf.moveEarlier': 'Move page {n} earlier',
   'ctl.pdf.moveLater': 'Move page {n} later',
@@ -61,6 +66,8 @@ export const pdfStrings = {
   'ctl.rotatepdf.right': '90° right',
   'ctl.rotatepdf.half': '180°',
   'ctl.rotatepdf.left': '90° left',
+  'ctl.rotatepdf.eachHint': 'Use the button under each page: every press turns it a quarter clockwise.',
+  'ctl.rotatepdf.noTurn': 'Turn at least one page first.',
 
   // Page numbers
   'ctl.numbers.position': 'Position',
@@ -150,4 +157,5 @@ export const pdfStrings = {
   'ctl.croppdf.bottom': 'Bottom',
   'ctl.croppdf.left': 'Left',
   'ctl.croppdf.note': 'The trimmed area is hidden, not deleted, so a PDF editor can still restore it.',
+  'ctl.croppdf.thisPage': 'Crops page {n}, the one in the preview.',
 } as const;

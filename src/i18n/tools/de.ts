@@ -3966,7 +3966,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       "PDF in JPG macht aus den Seiten eines PDFs Bilder, die du posten, in einem Chat teilen, in eine Folie einfügen oder in ein Formular hochladen kannst, das nur Bilder annimmt. Wähle JPG für kleine Dateien oder PNG für scharfen Text und lege die Auflösung fest: 72 dpi für Bildschirme, 150 dpi für die meisten Zwecke oder 300 dpi zum Drucken. Lade eine einzelne Seite oder alle Seiten auf einmal in einer ZIP-Datei herunter. Das PDF wird von deinem Browser auf deinem Gerät geöffnet, private Dokumente werden also nie hochgeladen.",
     seoTitle: "PDF in JPG umwandeln – alle Seiten, kostenlos",
     seoDescription:
-      "PDF in JPG umwandeln, kostenlos: PDF-Seiten als JPG oder PNG speichern, 72, 150 oder 300 dpi wählen, eine Seite oder alle als ZIP laden. Ohne Upload.",
+      "PDF-Seiten im Browser in JPG- oder PNG-Bilder umwandeln. 72 bis 600 dpi, eine Seite, ausgewählte Seiten oder alle als ZIP. Kostenlos, ohne Upload.",
     keywords: [
       "pdf in jpg umwandeln",
       "pdf in bild umwandeln",
@@ -3982,7 +3982,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Format und Auflösung wählen",
-        description: "Wähle JPG oder PNG und 72, 150 oder 300 dpi.",
+        description: "Wähle JPG oder PNG und 72, 150, 300 oder 600 dpi.",
       },
       {
         title: "Herunterladen",
@@ -3992,11 +3992,11 @@ export const deTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Alle Seiten oder nur eine",
-        description: "Lade die Seite herunter, die du brauchst, oder alle Seiten auf einmal als ZIP.",
+        description: "Lade die Seite, die du brauchst, eingegebene Seiten wie 2-5 oder alle Seiten auf einmal als ZIP herunter.",
       },
       {
         title: "Auflösung in Druckqualität",
-        description: "Rendere mit bis zu 300 dpi für scharfen Text und zum Drucken.",
+        description: "Bis zu 600 dpi für scharfen Text, Druck und OCR.",
       },
       {
         title: "JPG oder PNG",
@@ -4011,7 +4011,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Welche Auflösung soll ich wählen?",
         answer:
-          "150 dpi passt für die meisten Zwecke, vom Teilen bis zu Präsentationsfolien. Wähle 300 dpi zum Drucken oder zum Hineinzoomen in kleinen Text und 72 dpi für die kleinsten Dateien. Höhere Auflösungen dauern länger und ergeben größere Dateien.",
+          "150 dpi passt für fast alles, vom Teilen bis zu Folien. Wähle 300 dpi zum Drucken, 600 dpi für Kleingedrucktes oder OCR und 72 dpi für die kleinsten Dateien. Höhere Auflösungen dauern länger und ergeben größere Dateien; auf Handys werden sehr große Seiten eventuell etwas kleiner.",
       },
       {
         question: "JPG oder PNG?",
@@ -4041,7 +4041,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     tagline: "Speichere jede Seite eines PDFs als scharfes, verlustfreies PNG-Bild, einzeln oder alle zusammen in einer ZIP-Datei. Die Umwandlung läuft auf deinem Gerät.",
     intro: "PDF in PNG macht aus jeder Seite eines PDFs ein PNG-Bild. PNG ist verlustfrei, Text, Linien und Diagramme bleiben also perfekt scharf. Damit ist es die richtige Wahl für Folien, Dokumente und Diagramme, die du in eine Präsentation, ein Design oder eine Webseite einbauen willst. Wähle die Auflösung und lade dann einzelne Seiten oder alle Seiten zusammen in einer ZIP-Datei herunter. Das PDF wird in deinem Browser geöffnet und nie hochgeladen.",
     seoTitle: "PDF in PNG umwandeln – scharfe Seiten, kostenlos",
-    seoDescription: "PDF-Seiten im Browser in scharfe PNG-Bilder umwandeln. 72, 150 oder 300 dpi wählen, eine Seite oder alle herunterladen. Kostenlos und privat.",
+    seoDescription: "PDF-Seiten im Browser in scharfe PNG-Bilder umwandeln. 72 bis 600 DPI, eine Seite, ausgewählte Seiten oder alle. Kostenlos und privat.",
     keywords: [
       "pdf in png umwandeln",
       "pdf in png",
@@ -4056,7 +4056,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Auflösung wählen",
-        description: "150 dpi passt für Bildschirme. Nimm 300 dpi zum Drucken oder zum Hineinzoomen.",
+        description: "150 DPI passt für Bildschirme. Nimm 300 DPI zum Drucken und 600 DPI für feine Details.",
       },
       {
         title: "Seiten herunterladen",
@@ -4070,7 +4070,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Auflösung nach Wahl",
-        description: "72, 150 oder 300 dpi, von der Webvorschau bis zum Druck.",
+        description: "72, 150, 300 oder 600 DPI, von Webvorschauen bis zu Kleingedrucktem.",
       },
       {
         title: "Alle Seiten auf einmal",
@@ -4088,7 +4088,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Welche Auflösung soll ich wählen?",
-        answer: "150 dpi sieht auf dem Bildschirm gut aus. 300 dpi ist zum Drucken oder zum Hineinzoomen gedacht und ergibt größere Dateien.",
+        answer: "150 DPI sieht auf dem Bildschirm gut aus. 300 DPI ist zum Drucken, 600 DPI für feine Details oder OCR; höhere Werte ergeben deutlich größere Dateien.",
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF umwandeln?",
@@ -4366,11 +4366,11 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         title: "Gewünschte Seiten anhaken",
         description:
-          "Nutze das Kästchen unter jeder Seite oder „Alle auswählen“ und entferne die Haken bei denen, die du nicht brauchst.",
+          "Nutze das Kästchen unter jeder Seite oder gib Seitenzahlen wie 1-3, 5 ein.",
       },
       {
         title: "Herunterladen",
-        description: "Speichere ein neues PDF nur mit diesen Seiten, in ihrer ursprünglichen Reihenfolge.",
+        description: "Speichere ein neues PDF mit diesen Seiten in ihrer Reihenfolge oder ein PDF pro Seite in einer ZIP-Datei.",
       },
     ],
     features: [
@@ -4495,7 +4495,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "PDF drehen",
     shortName: "PDF drehen",
-    tagline: "Drehe alle Seiten oder nur die ausgewählten um 90 oder 180 Grad. Läuft auf deinem Gerät.",
+    tagline: "Drehe alle Seiten, ausgewählte Seiten oder jede Seite einzeln. Läuft auf deinem Gerät.",
     intro:
       "PDF drehen korrigiert Seiten, die sich quer oder auf dem Kopf stehend öffnen, ein häufiges Problem bei gescannten Dokumenten und als PDF gespeicherten Fotos. Wähle 90 Grad nach rechts, 180 Grad oder 90 Grad nach links und wende das auf alle Seiten oder nur auf die angehakten Seiten an. Die Vorschauen zeigen das Ergebnis vor dem Herunterladen. Die Drehung wird als Seiteneinstellung gespeichert, Text und Bilder behalten also ihre volle Qualität, und nichts verlässt deinen Browser.",
     seoTitle: "PDF drehen online – dauerhaft speichern, kostenlos",
@@ -4515,7 +4515,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Drehung wählen",
-        description: "Wähle 90° rechts, 180° oder 90° links, für alle Seiten oder die angehakten Seiten.",
+        description: "Wähle 90° rechts, 180° oder 90° links für alle oder die angehakten Seiten, oder wähle Seitenweise und drehe jede einzeln.",
       },
       {
         title: "Herunterladen",
@@ -4524,8 +4524,8 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Alle oder ausgewählte Seiten",
-        description: "Korrigiere einen einzelnen quer liegenden Scan, ohne den Rest anzurühren.",
+        title: "Alle, ausgewählte oder einzelne Seiten",
+        description: "Korrigiere einen quer liegenden Scan, ohne den Rest anzurühren, oder drehe jede Seite einzeln.",
       },
       {
         title: "Live-Vorschau",
@@ -4547,7 +4547,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Kann ich Seiten unterschiedlich weit drehen?",
-        answer: "Nutze PDF organisieren, dort hat jede Seite eine eigene Schaltfläche zum Drehen.",
+        answer: "Ja. Wähle Seitenweise und drück die Drehen-Schaltfläche unter jeder Seite, bis sie richtig steht, und lade dann herunter.",
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF verwenden?",
@@ -4959,7 +4959,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "PDF zuschneiden",
     shortName: "PDF zuschneiden",
-    tagline: "Schneide die Ränder jeder Seite eines PDFs ab. Läuft auf deinem Gerät.",
+    tagline: "Schneide die Ränder aller Seiten eines PDFs zu, oder nur die der Seiten, die du wählst. Läuft auf deinem Gerät.",
     intro:
       "PDF zuschneiden kürzt die Kanten jeder Seite und entfernt breite weiße Ränder, Scannerkanten oder Druckermarken, damit der Inhalt beim Lesen auf dem Smartphone den Bildschirm füllt. Leg fest, wie viel oben, rechts, unten und links abgeschnitten wird, und die Vorschau zeigt, welcher Teil der Seite bleibt. Der Zuschnitt wird als Seiteneinstellung gespeichert, Text behält also seine volle Qualität. Alles passiert in deinem Browser, das Dokument wird also nie hochgeladen.",
     seoTitle: "PDF zuschneiden online – Seitenränder entfernen",
@@ -4983,7 +4983,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Herunterladen",
-        description: "Speichere das PDF mit allen Seiten zugeschnitten.",
+        description: "Wähle alle Seiten, die Seite in der Vorschau oder Seitenzahlen und speichere das PDF.",
       },
     ],
     features: [
@@ -5013,7 +5013,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kann ich Seiten unterschiedlich zuschneiden?",
         answer:
-          "Für alle Seiten gelten dieselben Ränder. Um Seiten unterschiedlich zuzuschneiden, teile das PDF, schneide jeden Teil zu und füge die Teile wieder zusammen.",
+          "Ja. Wähle unter „Anwenden auf“ Diese Seite, oder Seiten und gib Nummern wie 1-3, 5 ein. Für andere Ränder auf anderen Seiten schneide das heruntergeladene PDF noch einmal zu.",
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF verwenden?",
@@ -9424,7 +9424,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Kann ich das Deckblatt auslassen?",
-        answer: "Ja. Aktiviere die Option, die erste Seite unverändert zu lassen; die Nummerierung beginnt dann auf Seite 2 mit der Zahl, die du wählst."
+        answer: "Ja. Beginne unter „Seiten mit Kopf- und Fußzeile“ bei Seite 2. Du kannst auch vor den letzten Seiten aufhören; {page} zeigt auf der ersten einbezogenen Seite die Zahl aus „Beginnen bei“."
       },
       {
         question: "Verdeckt der Text meinen Inhalt?",

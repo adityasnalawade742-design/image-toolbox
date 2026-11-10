@@ -3972,7 +3972,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       "PDF ke JPG mengubah halaman PDF menjadi gambar yang bisa Anda posting, bagikan di chat, masukkan ke slide, atau unggah ke formulir yang hanya menerima gambar. Pilih JPG untuk file kecil atau PNG untuk teks yang tajam, lalu pilih resolusinya: 72 dpi untuk layar, 150 dpi untuk sebagian besar keperluan, atau 300 dpi untuk mencetak. Unduh satu halaman atau semua halaman sekaligus dalam file ZIP. PDF dibuka oleh browser di perangkat Anda, jadi dokumen pribadi tidak pernah diunggah.",
     seoTitle: "PDF ke JPG – Ubah Setiap Halaman Jadi Gambar, Gratis",
     seoDescription:
-      "Ubah PDF ke JPG atau PNG langsung di browser Anda. Pilih 72, 150, atau 300 dpi, lalu unduh satu halaman atau semuanya dalam ZIP. Gratis dan tanpa unggah file.",
+      "Ubah halaman PDF menjadi gambar JPG atau PNG di browser. Pilih 72 hingga 600 dpi dan unduh satu halaman, halaman pilihan, atau semuanya dalam ZIP. Gratis, tanpa unggah.",
     keywords: [
       "pdf ke jpg",
       "pdf ke gambar",
@@ -3988,7 +3988,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilih format dan resolusi",
-        description: "Pilih JPG atau PNG, dan 72, 150, atau 300 dpi.",
+        description: "Pilih JPG atau PNG, dan 72, 150, 300, atau 600 dpi.",
       },
       {
         title: "Unduh",
@@ -3998,11 +3998,11 @@ export const idTools: Record<string, LocalizedToolItem> = {
     features: [
       {
         title: "Semua halaman atau satu saja",
-        description: "Unduh halaman yang Anda perlukan, atau semua halaman sekaligus sebagai ZIP.",
+        description: "Unduh halaman yang Anda perlukan, halaman yang diketik seperti 2-5, atau semua halaman sekaligus dalam ZIP.",
       },
       {
         title: "Resolusi kualitas cetak",
-        description: "Render hingga 300 dpi untuk teks yang tajam dan siap cetak.",
+        description: "Hingga 600 dpi untuk teks tajam, pencetakan, dan OCR.",
       },
       {
         title: "JPG atau PNG",
@@ -4017,7 +4017,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Resolusi mana yang sebaiknya saya pilih?",
         answer:
-          "150 dpi cocok untuk sebagian besar keperluan, dari berbagi hingga slide. Pilih 300 dpi untuk mencetak atau memperbesar teks kecil, dan 72 dpi untuk file paling kecil. Resolusi yang lebih tinggi butuh waktu lebih lama dan menghasilkan file lebih besar.",
+          "150 dpi cocok untuk sebagian besar keperluan, dari berbagi hingga slide. Pilih 300 dpi untuk mencetak, 600 dpi untuk tulisan kecil atau OCR, dan 72 dpi untuk file terkecil. Resolusi lebih tinggi butuh waktu lebih lama dan file lebih besar; di ponsel, halaman yang sangat besar bisa sedikit lebih kecil.",
       },
       {
         question: "JPG atau PNG?",
@@ -4047,7 +4047,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     tagline: "Simpan setiap halaman PDF sebagai gambar PNG yang tajam dan lossless, satu per satu atau semuanya dalam ZIP. Konversi berjalan di perangkat Anda.",
     intro: "PDF ke PNG mengubah setiap halaman PDF menjadi gambar PNG. PNG bersifat lossless, jadi teks, garis, dan diagram tetap tajam sempurna, sehingga cocok untuk slide, dokumen, dan grafik yang ingin Anda masukkan ke presentasi, desain, atau halaman web. Pilih resolusinya, lalu unduh halaman satu per satu atau semua halaman sekaligus dalam ZIP. PDF dibuka di browser Anda dan tidak pernah diunggah.",
     seoTitle: "Ubah PDF ke PNG – Halaman Tajam, Gratis",
-    seoDescription: "Ubah halaman PDF menjadi gambar PNG yang tajam di browser. Pilih 72, 150, atau 300 dpi, lalu unduh satu halaman atau semuanya. Gratis dan privat.",
+    seoDescription: "Ubah halaman PDF menjadi gambar PNG yang tajam di browser. 72 hingga 600 DPI; unduh satu halaman, halaman pilihan, atau semuanya. Gratis dan privat.",
     keywords: [
       "pdf ke png",
       "ubah pdf ke png",
@@ -4062,7 +4062,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilih resolusi",
-        description: "150 dpi cocok untuk layar. Pakai 300 dpi untuk mencetak atau memperbesar tampilan.",
+        description: "150 DPI cocok untuk layar. Gunakan 300 DPI untuk mencetak, 600 DPI untuk detail halus.",
       },
       {
         title: "Unduh halaman",
@@ -4076,7 +4076,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilihan resolusi",
-        description: "72, 150, atau 300 dpi, untuk apa saja mulai dari pratinjau web hingga cetak.",
+        description: "72, 150, 300, atau 600 DPI, dari pratinjau web hingga tulisan kecil.",
       },
       {
         title: "Semua halaman sekaligus",
@@ -4094,7 +4094,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Resolusi mana yang sebaiknya saya pilih?",
-        answer: "150 dpi terlihat bagus di layar. 300 dpi untuk mencetak atau saat Anda perlu memperbesar tampilan, dan menghasilkan file yang lebih besar.",
+        answer: "150 DPI tampak bagus di layar. 300 DPI untuk mencetak, dan 600 DPI untuk detail halus atau OCR; makin tinggi, file makin besar.",
       },
       {
         question: "Bisakah saya mengonversi PDF yang dilindungi kata sandi?",
@@ -4368,11 +4368,11 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Centang halaman yang Anda inginkan",
-        description: "Gunakan kotak centang di bawah setiap halaman, atau Pilih semua lalu hapus centang yang tidak Anda perlukan.",
+        description: "Gunakan kotak centang di bawah tiap halaman, atau ketik nomor halaman seperti 1-3, 5.",
       },
       {
         title: "Unduh",
-        description: "Simpan PDF baru yang hanya berisi halaman itu, dalam urutan aslinya.",
+        description: "Simpan satu PDF baru berisi halaman itu sesuai urutan aslinya, atau satu PDF per halaman dalam ZIP.",
       },
     ],
     features: [
@@ -4496,7 +4496,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "rotate-pdf": {
     name: "Putar PDF",
     shortName: "Putar PDF",
-    tagline: "Putar semua halaman, atau hanya halaman yang Anda pilih, sebesar 90 atau 180 derajat. Berjalan di perangkat Anda.",
+    tagline: "Putar semua halaman, halaman pilihan, atau tiap halaman sendiri-sendiri. Berjalan di perangkat Anda.",
     intro:
       "Putar PDF memperbaiki halaman yang terbuka miring ke samping atau terbalik, masalah umum pada dokumen hasil scan dan foto yang disimpan sebagai PDF. Pilih 90 derajat ke kanan, 180 derajat, atau 90 derajat ke kiri, lalu terapkan ke semua halaman atau hanya ke halaman yang Anda centang. Pratinjau menampilkan hasilnya sebelum Anda mengunduh. Rotasi disimpan sebagai pengaturan halaman, jadi teks dan gambar tetap dalam kualitas penuh, dan tidak ada yang keluar dari browser Anda.",
     seoTitle: "Putar PDF Online – Simpan Permanen, Gratis",
@@ -4516,7 +4516,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilih rotasinya",
-        description: "Pilih 90° kanan, 180°, atau 90° kiri, untuk semua halaman atau halaman yang Anda centang.",
+        description: "Pilih 90° kanan, 180°, atau 90° kiri untuk semua halaman atau yang dicentang, atau pilih Per halaman dan putar satu per satu.",
       },
       {
         title: "Unduh",
@@ -4525,8 +4525,8 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Semua halaman atau yang dipilih",
-        description: "Perbaiki satu hasil scan yang miring tanpa menyentuh halaman lain.",
+        title: "Semua, pilihan, atau per halaman",
+        description: "Perbaiki satu pindaian yang miring tanpa mengubah yang lain, atau putar tiap halaman sendiri-sendiri.",
       },
       {
         title: "Pratinjau langsung",
@@ -4550,7 +4550,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya memutar halaman dengan sudut berbeda?",
         answer:
-          "Gunakan Atur Halaman PDF, di mana setiap halaman punya tombol putarnya sendiri.",
+          "Ya. Pilih Per halaman, tekan tombol putar di bawah tiap halaman sampai posisinya benar, lalu unduh.",
       },
       {
         question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
@@ -4960,7 +4960,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "crop-pdf": {
     name: "Potong PDF",
     shortName: "Potong PDF",
-    tagline: "Pangkas margin setiap halaman dalam PDF. Berjalan di perangkat Anda.",
+    tagline: "Pangkas margin semua halaman PDF, atau hanya halaman yang Anda pilih. Berjalan di perangkat Anda.",
     intro:
       "Potong PDF memangkas tepi setiap halaman, menghilangkan margin putih yang lebar, tepi hasil scanner, atau tanda cetak agar konten memenuhi layar saat dibaca di ponsel. Atur seberapa banyak yang dipangkas dari atas, kanan, bawah, dan kiri, dan pratinjau menunjukkan bagian halaman yang tersisa. Pemotongan disimpan sebagai pengaturan halaman, jadi teks tetap dalam kualitas penuh. Semuanya terjadi di browser Anda, jadi dokumen tidak pernah diunggah.",
     seoTitle: "Potong PDF Online – Pangkas Margin Halaman, Gratis",
@@ -4984,7 +4984,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Unduh",
-        description: "Simpan PDF dengan setiap halaman yang sudah dipotong.",
+        description: "Pilih semua halaman, halaman di pratinjau, atau nomor halaman, lalu simpan PDF.",
       },
     ],
     features: [
@@ -5014,7 +5014,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Bisakah saya memotong halaman secara berbeda?",
         answer:
-          "Margin yang sama diterapkan ke setiap halaman. Untuk memotong halaman secara berbeda, pisahkan PDF, potong setiap bagian, lalu gabungkan lagi.",
+          "Ya. Di Terapkan ke, pilih Halaman ini, atau Halaman lalu ketik nomor seperti 1-3, 5. Untuk margin berbeda di halaman lain, pangkas lagi PDF yang sudah diunduh.",
       },
       {
         question: "Bisakah saya memakai PDF yang dilindungi kata sandi?",
@@ -9399,7 +9399,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         question: "Bisakah halaman sampul dikecualikan?",
-        answer: "Bisa. Centang opsi untuk membiarkan halaman pertama apa adanya; penomoran lalu dimulai di halaman 2 dengan nomor yang Anda pilih."
+        answer: "Ya. Di Halaman dengan header dan footer, mulai dari halaman 2. Anda juga bisa berhenti sebelum halaman terakhir; {page} di halaman pertama yang disertakan memakai angka “Mulai dari”."
       },
       {
         question: "Apakah teks akan menutupi konten saya?",

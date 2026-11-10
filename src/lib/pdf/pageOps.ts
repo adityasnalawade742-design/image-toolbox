@@ -133,6 +133,17 @@ export async function rotatePages(bytes: Uint8Array | ArrayBuffer, indices: numb
   return save(doc);
 }
 
+/** Turn each listed page (0-based) by its own amount in degrees clockwise; everything else in the file stays as it is */
+export async function rotateEach(bytes: Uint8Array | ArrayBuffer, turns: { index: number; by: number }[]): Promise<Uint8Array> {
+  const doc = await loadPdf(bytes);
+  const pages = doc.getPages();
+  for (const { index, by } of turns) {
+    const p = pages[index];
+    if (p && by % 360) p.setRotation(degrees((((p.getRotation().angle + by) % 360) + 360) % 360));
+  }
+  return save(doc);
+}
+
 export type NumberPosition = 'bottom-center' | 'bottom-right' | 'bottom-left' | 'top-center' | 'top-right' | 'top-left';
 export type NumberFormat = 'n' | 'n-of-total' | 'dash' | 'custom';
 
