@@ -21,6 +21,8 @@ export interface TextOverlayOptions {
   backgroundPadding?: number;
   /** Turn in degrees around the block's centre, clockwise (-180 to 180) */
   rotation?: number;
+  /** For a scaled-down preview: sizes, outline, padding, shadow and edge margins are multiplied by this (default 1) */
+  scale?: number;
 }
 
 export interface WatermarkOptions {
@@ -303,24 +305,28 @@ export const straighteningAngle = (deg: number) => Math.abs(deg - Math.round(deg
  * 30px from the edges; the anchor's x follows the alignment. Shared by the drawing and the on-screen drag handles.
  */
 export function textAnchor(width: number, height: number, tOpt: TextOverlayOptions) {
-  const lineHeight = tOpt.fontSize * 1.25;
+  const s = tOpt.scale ?? 1;
+  const edge = 30 * s;
+  const lineHeight = tOpt.fontSize * s * 1.25;
   const totalHeight = tOpt.text.split('\n').length * lineHeight;
   let y: number;
-  if (tOpt.position === 'top') y = 30 + lineHeight / 2;
-  else if (tOpt.position === 'bottom') y = height - 30 - totalHeight + lineHeight / 2;
+  if (tOpt.position === 'top') y = edge + lineHeight / 2;
+  else if (tOpt.position === 'bottom') y = height - edge - totalHeight + lineHeight / 2;
   else if (tOpt.position === 'custom' && tOpt.customYPercent !== undefined) y = (height * tOpt.customYPercent) / 100;
   else y = (height - totalHeight) / 2 + lineHeight / 2;
   let x = width / 2;
   if (tOpt.position === 'custom' && tOpt.customXPercent !== undefined) x = (width * tOpt.customXPercent) / 100;
-  else if (tOpt.textAlign === 'left') x = 30;
-  else if (tOpt.textAlign === 'right') x = width - 30;
+  else if (tOpt.textAlign === 'left') x = edge;
+  else if (tOpt.textAlign === 'right') x = width - edge;
   return { x, y, lineHeight, totalHeight };
 }
 
-function drawTextOverlay(ctx: CanvasRenderingContext2D, width: number, height: number, tOpt: TextOverlayOptions) {
+/** Draw one text block (Add Text to Image, the social makers) */
+export function drawTextOverlay(ctx: CanvasRenderingContext2D, width: number, height: number, tOpt: TextOverlayOptions) {
   if (!tOpt.text.trim()) return;
+  const s = tOpt.scale ?? 1;
   ctx.save();
-  ctx.font = `${tOpt.italic ? 'italic ' : ''}${tOpt.bold ? 'bold ' : ''}${tOpt.fontSize}px ${tOpt.fontFamily || 'Inter, sans-serif'}`;
+  ctx.font = `${tOpt.italic ? 'italic ' : ''}${tOpt.bold ? 'bold ' : ''}${tOpt.fontSize * s}px ${tOpt.fontFamily || 'Inter, sans-serif'}`;
   ctx.globalAlpha = tOpt.opacity !== undefined ? tOpt.opacity : 1.0;
   ctx.textAlign = tOpt.textAlign || 'center';
   ctx.textBaseline = 'middle';
@@ -340,7 +346,7 @@ function drawTextOverlay(ctx: CanvasRenderingContext2D, width: number, height: n
   }
 
   if (tOpt.backgroundColor) {
-    const pad = tOpt.backgroundPadding ?? 16;
+    const pad = (tOpt.backgroundPadding ?? 16) * s;
     const bgW = maxLineWidth + pad * 2;
     const bgH = totalHeight + pad * 2;
     let bgX = posX - bgW / 2;
@@ -351,23 +357,23 @@ function drawTextOverlay(ctx: CanvasRenderingContext2D, width: number, height: n
     ctx.fillStyle = tOpt.backgroundColor;
     ctx.globalAlpha = (tOpt.opacity !== undefined ? tOpt.opacity : 1.0) * (tOpt.backgroundOpacity ?? 0.85);
     ctx.beginPath();
-    ctx.roundRect(bgX, bgY, bgW, bgH, 8);
+    ctx.roundRect(bgX, bgY, bgW, bgH, 8 * s);
     ctx.fill();
     ctx.restore();
   }
 
   if (tOpt.dropShadow) {
     ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
-    ctx.shadowBlur = 8;
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 8 * s;
+    ctx.shadowOffsetX = 2 * s;
+    ctx.shadowOffsetY = 2 * s;
   }
 
   lines.forEach((line, i) => {
     const lineY = startY + i * lineHeight;
     if (tOpt.strokeWidth && tOpt.strokeWidth > 0) {
       ctx.strokeStyle = tOpt.strokeColor || '#000000';
-      ctx.lineWidth = tOpt.strokeWidth;
+      ctx.lineWidth = tOpt.strokeWidth * s;
       ctx.lineJoin = 'round';
       ctx.strokeText(line, posX, lineY);
     }

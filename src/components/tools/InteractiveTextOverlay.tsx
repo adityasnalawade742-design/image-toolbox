@@ -15,6 +15,16 @@ interface Props {
  * A drag handle for each text block, placed where the engine draws its first line (`textAnchor`). Grabbing a handle
  * selects that block for the panel; dragging moves it.
  */
+/** Width of the widest line, in the picture's pixels, as the engine measures it */
+let measureCtx: CanvasRenderingContext2D | null = null;
+function measureBlock(layer: TextOverlayOptions): number {
+  measureCtx ??= document.createElement('canvas').getContext('2d');
+  if (!measureCtx) return 0;
+  const s = layer.scale ?? 1;
+  measureCtx.font = `${layer.italic ? 'italic ' : ''}${layer.bold ? 'bold ' : ''}${layer.fontSize * s}px ${layer.fontFamily || 'Inter, sans-serif'}`;
+  return Math.max(...layer.text.split('\n').map((line) => measureCtx!.measureText(line).width));
+}
+
 export function InteractiveTextOverlay({ canvasElement, layers, active, onSelect, onChange }: Props) {
   const t = useT();
   // Pointer position relative to the text anchor when the drag started, so the text doesn't jump
@@ -52,12 +62,22 @@ export function InteractiveTextOverlay({ canvasElement, layers, active, onSelect
     >
       {layers.map((layer, index) => {
         if (!layer.text.trim()) return null;
-        const { x, y } = textAnchor(canvasW, canvasH, layer);
+        const { x, y, lineHeight, totalHeight } = textAnchor(canvasW, canvasH, layer);
         const leftPx = (x / canvasW) * dims.width;
         const topPx = (y / canvasH) * dims.height;
         const selected = index === active;
-        // The engine aligns text to the anchor, so the handle does too
-        const alignShift = layer.textAlign === 'left' ? 'translate-x-0' : layer.textAlign === 'right' ? '-translate-x-full' : '-translate-x-1/2';
+        // The whole block, measured like the engine draws it, so the frame sits around the text and not on top of it
+        const k = dims.width / canvasW;
+        const blockW = measureBlock(layer) * k;
+        const blockH = totalHeight * k;
+        const pad = 6;
+        const blockLeft = (layer.textAlign === 'left' ? leftPx : layer.textAlign === 'right' ? leftPx - blockW : leftPx - blockW / 2) - pad;
+        const blockTop = topPx - (lineHeight * k) / 2 - pad;
+        // The label goes above the frame, or below it when the text is at the very top
+        const labelBelow = blockTop < 44;
+        // Centred on the frame, unless that would push it past the picture's edge
+        const centre = blockLeft + blockW / 2 + pad;
+        const labelSide = centre < 120 ? 'left-0' : centre > dims.width - 120 ? 'right-0' : 'left-1/2 -translate-x-1/2';
 
         const down = (e: React.PointerEvent<HTMLDivElement>) => {
           // A second finger is a pinch-zoom of the page, not a drag
@@ -102,11 +122,24 @@ export function InteractiveTextOverlay({ canvasElement, layers, active, onSelect
             // Pointer shortcut only: the text list and position sliders in the panel are the accessible route
             aria-hidden="true"
             title={t('ctl.textOverlay.hint')}
-            className={`absolute ${alignShift} -translate-y-1/2 pointer-events-auto cursor-move touch-pinch-zoom group ${selected ? 'z-10' : 'opacity-80'}`}
-            style={{ left: `${leftPx}px`, top: `${topPx}px` }}
+            className={`absolute pointer-events-auto cursor-move touch-pinch-zoom group ${selected ? 'z-10' : ''}`}
+            style={{
+              left: `${blockLeft}px`,
+              top: `${blockTop}px`,
+              width: `${blockW + pad * 2}px`,
+              height: `${blockH + pad * 2}px`,
+              transform: layer.rotation ? `rotate(${layer.rotation}deg)` : undefined,
+            }}
           >
+            {/* The frame is the grab area; the text itself shows through */}
+            <div
+              className={`absolute inset-0 border-dashed ${selected ? 'border-2 border-white' : 'border border-white/70'}`}
+              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,.55), inset 0 0 0 1px rgba(0,0,0,.55)' }}
+            />
             {selected ? (
-              <div className="min-h-[40px] px-2.5 py-1.5 border-2 border-ink seg-on flex items-center gap-2 transition-colors">
+              <div
+                className={`absolute ${labelSide} ${labelBelow ? 'top-full mt-1' : 'bottom-full mb-1'} min-h-[40px] px-2.5 py-1.5 border-2 border-ink seg-on flex items-center gap-2 transition-colors`}
+              >
                 <Move className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span className="text-[13px] font-semibold whitespace-nowrap select-none">
                   {layer.text.length > 24 ? `${layer.text.slice(0, 24)}…` : layer.text}
@@ -116,13 +149,13 @@ export function InteractiveTextOverlay({ canvasElement, layers, active, onSelect
                 </span>
               </div>
             ) : (
-              // The others stay small, so the handles don't hide the texts being placed
-              <div className="h-8 px-1.5 border border-ink seg-off flex items-center gap-1 transition-colors">
+              // The others stay small, at the frame's corner, so the handles don't hide the texts being placed
+              <div className="absolute -top-px -left-px -translate-y-full h-8 px-1.5 border border-ink seg-off flex items-center gap-1 transition-colors">
                 <Move className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                 <span className="text-[12px] font-semibold" data-measure>{index + 1}</span>
               </div>
             )}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-process-key text-paper text-[12px] font-medium px-2 py-0.5">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-12 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap bg-process-key text-paper text-[12px] font-medium px-2 py-0.5">
               {t('ctl.textOverlay.hint')}
             </div>
           </div>

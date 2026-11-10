@@ -20,6 +20,8 @@ export interface SocialPreset {
   height: number;
   /** What every device shows, in output pixels: a guide only, never part of the saved picture */
   safe?: { x: number; y: number; w: number; h: number };
+  /** Covered by something the network draws on top, such as YouTube's video length in the bottom-right corner */
+  badge?: { x: number; y: number; w: number; h: number };
   /** The network's upload limit */
   maxBytes?: number;
 }
@@ -35,8 +37,8 @@ export const SOCIAL_PRESETS: Record<SocialPresetId, SocialPreset> = {
   // The app's own buttons and caption cover the top and bottom; Reels need more room at the bottom than Stories
   story: { id: 'story', width: 1080, height: 1920, safe: { x: 0, y: 250, w: 1080, h: 1330 } },
   // YouTube asks for as large as possible (3840 × 2160); uploads from a phone are limited to 2 MB, from a computer 50 MB
-  'yt-thumb': { id: 'yt-thumb', width: 1280, height: 720, maxBytes: 2 * MB },
-  'yt-thumb-4k': { id: 'yt-thumb-4k', width: 3840, height: 2160, maxBytes: 50 * MB },
+  'yt-thumb': { id: 'yt-thumb', width: 1280, height: 720, badge: { x: 1075, y: 612, w: 192, h: 96 }, maxBytes: 2 * MB },
+  'yt-thumb-4k': { id: 'yt-thumb-4k', width: 3840, height: 2160, badge: { x: 3225, y: 1836, w: 576, h: 288 }, maxBytes: 50 * MB },
   // Phones and computers only show the middle strip; TVs show all of it
   'yt-banner': { id: 'yt-banner', width: 2560, height: 1440, safe: { x: 507, y: 508, w: 1546, h: 423 }, maxBytes: 6 * MB },
   // Facebook crops covers differently per device (2.4:1 on phones) without saying exactly where, so no guide is drawn
