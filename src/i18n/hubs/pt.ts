@@ -9,7 +9,7 @@ export const ptHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Ferramentas PDF grátis: juntar, converter, editar e assinar',
-      description: '57 ferramentas PDF grátis em um só lugar: junte, divida e comprima PDFs, converta de e para Word ou imagens, edite, assine e proteja. Sem cadastro e sem marca d’água.',
+      description: '57 ferramentas PDF grátis: junte, divida e comprima PDFs, converta de e para Word ou imagens, edite, assine e proteja. Sem cadastro.',
       h1: 'Ferramentas PDF',
       intro:
         'Tudo para trabalhar com PDFs, grátis e sem conta: junte e divida arquivos, transforme Word, Excel, PowerPoint e imagens em PDF e vice-versa, edite, preencha, assine e proteja. A maioria das ferramentas funciona no seu navegador, então o PDF não sai do seu dispositivo; as poucas que precisam do nosso servidor estão marcadas, e os arquivos delas são apagados logo depois.',
@@ -32,7 +32,7 @@ export const ptHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Ferramentas grátis para editar imagens: cortar, redimensionar',
-      description: '42 ferramentas grátis para editar fotos no navegador: corte, redimensione e gire, remova ou troque o fundo, adicione texto e marca d’água, corrija cores e ajuste imagens para redes sociais.',
+      description: '42 ferramentas grátis para editar fotos: corte, redimensione, remova ou troque o fundo, adicione texto e marca d’água e ajuste para redes sociais.',
       h1: 'Ferramentas para editar imagens',
       intro:
         'Edições rápidas sem instalar nada: corte e redimensione, remova ou troque o fundo, adicione texto, marcas d’água e bordas, deixe mais nítido e corrija as cores, ou ajuste uma imagem para Instagram, YouTube e outras redes. Todas funcionam no seu navegador, então suas fotos nunca são enviadas e mantêm o formato sempre que possível.',
@@ -95,7 +95,7 @@ export const ptHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitários de imagem grátis: EXIF, conta-gotas, DPI e mais',
-      description: '21 ferramentas grátis para analisar e medir imagens: veja e remova metadados, capture cores, altere o DPI, converta pixels em polegadas ou cm, compare fotos e copie o texto de imagens.',
+      description: '21 ferramentas grátis para analisar imagens: veja e remova metadados, capture cores, altere DPI, converta pixels em polegadas ou cm e copie texto.',
       h1: 'Utilitários de imagem',
       intro:
         'Pequenas ferramentas para as dúvidas que surgem com imagens: o que os metadados de uma foto revelam e como removê-los, quais cores ela usa, de que tamanho ela sai impressa em certo DPI, se duas fotos são diferentes ou que texto ela contém. Todas funcionam no seu navegador, então suas imagens ficam no seu dispositivo.',

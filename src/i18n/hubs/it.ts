@@ -9,7 +9,7 @@ export const itHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Strumenti PDF gratis: unisci, converti, modifica e firma',
-      description: '57 strumenti PDF gratuiti in un unico posto: unisci, dividi e comprimi PDF, converti da e verso Word o immagini, modifica, firma e proteggi. Senza registrazione né filigrane.',
+      description: '57 strumenti PDF gratuiti: unisci, dividi e comprimi PDF, converti da e verso Word o immagini, modifica, firma e proteggi. Senza registrazione.',
       h1: 'Strumenti PDF',
       intro:
         'Tutto per lavorare con i PDF, gratis e senza account: unisci e dividi file, trasforma Word, Excel, PowerPoint e immagini in PDF e viceversa, modifica, compila, firma e proteggi. La maggior parte degli strumenti funziona nel browser, quindi il PDF non lascia il tuo dispositivo; i pochi che richiedono il nostro server sono segnalati, e i loro file vengono eliminati subito dopo.',
@@ -32,7 +32,7 @@ export const itHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Strumenti gratis per modificare immagini: ritaglia e ridimensiona',
-      description: '42 strumenti gratuiti per modificare foto nel browser: ritaglia, ridimensiona e ruota, rimuovi o cambia lo sfondo, aggiungi testo e filigrane, correggi i colori e adatta le immagini ai social.',
+      description: '42 strumenti gratuiti per modificare foto: ritaglia, ridimensiona, rimuovi o cambia lo sfondo, aggiungi testo e filigrane, adatta ai social.',
       h1: 'Strumenti per modificare immagini',
       intro:
         'Modifiche rapide senza installare nulla: ritaglia e ridimensiona, scontorna o sostituisci lo sfondo, aggiungi testo, filigrane e bordi, aumenta la nitidezza e correggi i colori, oppure adatta un’immagine a Instagram, YouTube e altri social. Tutti gli strumenti funzionano nel browser, quindi le tue foto non vengono mai caricate e mantengono il formato quando possibile.',
@@ -76,7 +76,7 @@ export const itHubs: HubTexts = {
     },
     'qr-code-and-barcode-tools': {
       title: 'Generatore e lettore di QR code e codici a barre gratis',
-      description: '15 strumenti gratuiti per creare QR code di link, Wi-Fi, contatti, WhatsApp e pagamenti, generare codici a barre EAN, UPC e ISBN e leggere codici con la fotocamera.',
+      description: '15 strumenti gratuiti: QR code per link, Wi-Fi, contatti, WhatsApp e pagamenti, codici a barre EAN, UPC e ISBN e lettura dei codici con la fotocamera.',
       h1: 'Strumenti per QR code e codici a barre',
       intro:
         'Crea un QR code per un link, una rete Wi-Fi, un biglietto da visita, una chat WhatsApp o un pagamento, genera codici a barre EAN, UPC, ISBN, Data Matrix e PDF417, oppure creane centinaia da un elenco e stampali su un foglio. Puoi anche leggere codici da una foto o con la fotocamera. Tutto funziona nel browser, senza registrazione.',
@@ -95,7 +95,7 @@ export const itHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilità per immagini gratis: EXIF, contagocce, DPI e altro',
-      description: '21 strumenti gratuiti per analizzare e misurare immagini: vedi e rimuovi i metadati, preleva colori, cambia i DPI, converti pixel in pollici o cm, confronta foto e copia il testo dalle immagini.',
+      description: '21 strumenti gratuiti per analizzare immagini: metadati, colori, DPI, pixel in pollici o cm, confronto di foto e testo dalle immagini.',
       h1: 'Utilità per immagini',
       intro:
         'Piccoli strumenti per le domande che nascono con le immagini: cosa rivelano i metadati di una foto e come rimuoverli, quali colori usa, quanto viene grande in stampa a certi DPI, se due foto sono diverse o che testo contiene. Funzionano tutti nel browser, quindi le tue immagini restano sul tuo dispositivo.',
