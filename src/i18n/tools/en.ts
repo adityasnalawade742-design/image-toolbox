@@ -6509,7 +6509,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "QR Code Reader",
     "shortName": "QR Reader",
     "tagline": "Read a QR code from an image or your camera and see the link, Wi-Fi password or contact it holds before you open it.",
-    "intro": "QR Code Reader decodes QR codes from a photo, a screenshot or your camera. It shows what the code holds before anything happens: the full web address, a Wi-Fi network and password, an email, a phone number or a contact card you can save. Links never open on their own, so you can check them first, a useful habit because QR codes are often used to send people to fake sites. Images and camera frames are read on your device. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file.",
+    "intro": "QR Code Reader decodes QR codes from a photo, a screenshot or your camera. It shows what the code holds before anything happens: the full web address, a Wi-Fi network and password, an email, a phone number or a contact card you can save. Links never open on their own, so you can check them first, a useful habit because QR codes are often used to send people to fake sites. Images and camera frames are read on your device. Turn on “Keep scanning” to scan many codes in a row into a list you can copy or save as a CSV file. A contact card shows every field it holds, including job title, work phone, address and note.",
     "seoTitle": "QR Code Reader Online – Scan from Image or Camera",
     "seoDescription": "Scan a QR code from an image, screenshot or camera in your browser. See the link, Wi-Fi password or contact before opening it. Free and private.",
     "keywords": [
@@ -7294,7 +7294,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Bulk QR Code Generator",
     "shortName": "Bulk QR Codes",
     "tagline": "Make hundreds of QR codes at once from a list or CSV and download them in one ZIP. Free, and it runs on your device.",
-    "intro": "Bulk QR Code Generator turns a list into QR codes: links for every product page, codes for every table, asset tags for a whole stock room. Paste one link or text per line, or load a CSV file, and optionally put a file name before each one so the files are easy to match. Choose PNG or SVG and a size, then download them all in one ZIP. Up to 1,000 codes are made in your browser; your list is never uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out.",
+    "intro": "Bulk QR Code Generator turns a list into QR codes: links for every product page, codes for every table, asset tags for a whole stock room. Paste one link or text per line, or load a CSV file, and optionally put a file name before each one so the files are easy to match. Choose PNG or SVG and a size, then download them all in one ZIP. Up to 1,000 codes are made in your browser; your list is never uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out. Pick the code and background colours, the error correction and the margin, the same as for a single code.",
     "seoTitle": "Bulk QR Code Generator – Free, CSV to ZIP",
     "seoDescription": "Make up to 1,000 QR codes at once from a list or CSV in your browser. Your own file names, PNG or SVG, one ZIP. Free, nothing uploaded.",
     "keywords": [
@@ -7359,7 +7359,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Bulk Barcode Generator",
     "shortName": "Bulk Barcodes",
     "tagline": "Make hundreds of barcodes at once from a list or CSV, checked and saved in one ZIP. Free, and it runs on your device.",
-    "intro": "Bulk Barcode Generator makes a barcode for every line of a list: product codes for a catalogue, Code 128 labels for a warehouse, ISBNs for a book series. Choose the barcode type, paste the numbers or load a CSV, and each line is checked as you type: wrong lengths, letters in number-only codes and wrong check digits are listed by line, and missing check digits are added. Download the valid ones as PNG or SVG in one ZIP. Up to 1,000 barcodes are made in your browser and nothing is uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out.",
+    "intro": "Bulk Barcode Generator makes a barcode for every line of a list: product codes for a catalogue, Code 128 labels for a warehouse, ISBNs for a book series. Choose the barcode type, paste the numbers or load a CSV, and each line is checked as you type: wrong lengths, letters in number-only codes and wrong check digits are listed by line, and missing check digits are added. Download the valid ones as PNG or SVG in one ZIP. Up to 1,000 barcodes are made in your browser and nothing is uploaded. Or put them all on a printable A4 or US Letter sheet, with each name under its code, ready to cut out. On the sheet, barcodes print at their standard size; if one is too wide for its column, you are told how many were shrunk and how many per row fit them full size.",
     "seoTitle": "Bulk Barcode Generator – CSV to ZIP, Free",
     "seoDescription": "Make up to 1,000 barcodes at once from a list or CSV: Code 128, EAN, UPC, ISBN, Data Matrix and more. Checked, PNG or SVG ZIP. Free.",
     "keywords": [

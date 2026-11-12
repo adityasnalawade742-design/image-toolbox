@@ -152,7 +152,7 @@ export type Decoded =
   | { kind: 'wifi'; ssid: string; password: string; security: string; hidden: boolean }
   | { kind: 'email'; to: string; subject: string; body: string }
   | { kind: 'phone'; phone: string }
-  | { kind: 'contact'; name: string; phone: string; email: string; org: string; url: string }
+  | { kind: 'contact'; name: string; phone: string; email: string; org: string; url: string; title: string; workPhone: string; address: string; note: string }
   | { kind: 'location'; lat: number; lng: number }
   | { kind: 'payment'; scheme: 'upi' | 'sepa'; name: string; account: string; amount: string; note: string }
   | { kind: 'text'; text: string };
@@ -197,7 +197,31 @@ export function decodePayload(raw: string): Decoded {
       const m = s.match(new RegExp(`^${name}(?:;[^:\\r\\n]*)?:(.*)$`, 'im'));
       return m ? vcardUnescape(m[1].trim()) : '';
     };
-    return { kind: 'contact', name: get('FN') || get('N').replace(/;+/g, ' ').trim(), phone: get('TEL'), email: get('EMAIL'), org: get('ORG'), url: get('URL') };
+    // Every phone line with its type: the work number gets its own row, any other is the main phone
+    const tels = [...s.matchAll(/^TEL((?:;[^:\r\n]*)?):(.*)$/gim)].map((m) => ({ work: /WORK/i.test(m[1]), number: m[2].trim() }));
+    const phone = tels.find((x) => !x.work)?.number ?? '';
+    const workPhone = tels.find((x) => x.work)?.number ?? '';
+    // ADR: post box; extended; street; city; region; postcode; country, shown as one line
+    const adrLine = s.match(/^ADR(?:;[^:\r\n]*)?:(.*)$/im);
+    const address = adrLine
+      ? adrLine[1]
+          .split(/(?<!\\);/)
+          .map((part) => vcardUnescape(part.trim()))
+          .filter(Boolean)
+          .join(', ')
+      : '';
+    return {
+      kind: 'contact',
+      name: get('FN') || get('N').replace(/;+/g, ' ').trim(),
+      phone,
+      email: get('EMAIL'),
+      org: get('ORG'),
+      url: get('URL'),
+      title: get('TITLE'),
+      workPhone,
+      address,
+      note: get('NOTE'),
+    };
   }
   if (/^mailto:/i.test(s)) {
     const [addr, query = ''] = s.slice(7).split('?');

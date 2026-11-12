@@ -69,6 +69,8 @@ export const barcodeStrings = {
   'ctl.bulkcode.zipping': 'Packing the ZIP…',
   'ctl.bulkcode.download': 'Download ZIP ({n})',
   'ctl.bulkcode.done': '{n} codes saved in {name}.',
+  'ctl.bulkcode.shrunk': '{n} barcodes were wider than the column and were shrunk to {percent}% of their standard size, which can make them hard to scan. With {perRow} per row they print full size.',
+  'ctl.bulkcode.shrunkNoFit': '{n} barcodes were wider than even one column and were shrunk to {percent}% of their standard size, which can make them hard to scan. Shorter values make narrower barcodes.',
   'ctl.bulkcode.done.one': '{n} code saved in {name}.',
   // New QR types
   'ctl.qr.kind.whatsapp': 'WhatsApp',

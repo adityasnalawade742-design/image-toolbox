@@ -8,6 +8,7 @@ import { createUniqueNamer } from '../../../lib/storage/fileNames';
 import { checkBarcode, SYMBOLOGIES, SYMBOLOGY_ORDER, type Symbology } from '../../../lib/barcode/symbologies';
 import { useProblemText } from './BarcodeGeneratorWorkspace';
 import type { Paper } from '../../../lib/qr/sheet';
+import { colorProblem } from '../../../lib/qr/colors';
 
 type CodeType = 'qr' | Symbology;
 const MAX_LINES = 1000;
@@ -35,6 +36,11 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
   const [named, setNamed] = useState(false);
   const [format, setFormat] = useState<'png' | 'svg'>('png');
   const [qrSize, setQrSize] = useState(512);
+  // The same choices as the single QR generator; the defaults are what bulk codes always used
+  const [dark, setDark] = useState('#000000');
+  const [light, setLight] = useState('#ffffff');
+  const [level, setLevel] = useState<'L' | 'M' | 'Q' | 'H'>('M');
+  const [margin, setMargin] = useState(4);
   const [scale, setScale] = useState(3);
   const [heightMm, setHeightMm] = useState(15);
   const [showText, setShowText] = useState(true);
@@ -108,9 +114,10 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
         const base = safeName(l.name) || `${String(i + 1).padStart(width, '0')}-${safeName(l.data).slice(0, 30) || 'code'}`;
         const name = unique(`${base}.${format}`);
         if (type === 'qr') {
-          if (format === 'svg') zip.file(name, await QRCode.toString(l.encode!.data, { type: 'svg', errorCorrectionLevel: 'M', margin: 4, width: qrSize }));
+          const qr = { errorCorrectionLevel: level, margin, width: qrSize, color: { dark, light } };
+          if (format === 'svg') zip.file(name, await QRCode.toString(l.encode!.data, { type: 'svg', ...qr }));
           else {
-            await QRCode.toCanvas(canvas, l.encode!.data, { errorCorrectionLevel: 'M', margin: 4, width: qrSize });
+            await QRCode.toCanvas(canvas, l.encode!.data, qr);
             zip.file(name, await canvasToBlob(canvas, 'image/png'));
           }
         } else if (format === 'svg') zip.file(name, r!.barcodeSvg(l.encode!, style));
@@ -137,11 +144,15 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
     setError(null);
     setStatus('');
     try {
-      const [{ default: QRCode }, r, { codeSheet, cellPixels }] = await Promise.all([import('qrcode'), type === 'qr' ? null : import('../../../lib/barcode/render'), import('../../../lib/qr/sheet')]);
+      const [{ default: QRCode }, r, { codeSheet, cellPixels, cellWidth }] = await Promise.all([import('qrcode'), type === 'qr' ? null : import('../../../lib/barcode/render'), import('../../../lib/qr/sheet')]);
       // Barcodes already print their digits underneath, so they get a label only when they were given a name
       const style = { scale: 4, heightMm, showText, bar: '#000000', background: '#ffffff' };
       const px = cellPixels(paper, perRow);
       const total = good.length;
+      // Barcodes wider than a column are shrunk to fit it: count them, and the widest, to say so afterwards
+      const column = cellWidth(paper, perRow);
+      let shrunk = 0;
+      let widest = 0;
       async function* cells() {
         for (let i = 0; i < total; i++) {
           const l = good[i];
@@ -150,15 +161,27 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
             await new Promise((res) => setTimeout(res, 0));
           }
           const code = document.createElement('canvas');
-          if (type === 'qr') await QRCode.toCanvas(code, l.encode!.data, { errorCorrectionLevel: 'M', margin: 2, width: px });
+          if (type === 'qr') await QRCode.toCanvas(code, l.encode!.data, { errorCorrectionLevel: level, margin, width: px, color: { dark, light } });
           else r!.drawBarcode(code, l.encode!, style);
           // bwip-js draws at 72 dpi times the scale, so this is the barcode's true printed width
-          yield { code, label: l.name || (type === 'qr' ? l.data : ''), widthPt: type === 'qr' ? undefined : code.width / style.scale };
+          const widthPt = type === 'qr' ? undefined : code.width / style.scale;
+          if (widthPt && widthPt > column + 0.5) {
+            shrunk++;
+            widest = Math.max(widest, widthPt);
+          }
+          yield { code, label: l.name || (type === 'qr' ? l.data : ''), widthPt };
         }
       }
       const bytes = await codeSheet(cells(), paper, perRow);
       const name = `${type === 'qr' ? 'qr-codes' : `barcodes-${type}`}-sheet.pdf`;
       downloadBlob(new Blob([new Uint8Array(bytes)], { type: 'application/pdf' }), name);
+      if (shrunk) {
+        // Thinner bars than the standard size can stop scanners reading them: say how many, and what fits
+        let fits = 0;
+        for (let c = perRow - 1; c >= 1 && !fits; c--) if (cellWidth(paper, c) >= widest) fits = c;
+        const percent = Math.round((column / widest) * 100);
+        setError(fits ? t('ctl.bulkcode.shrunk', { n: shrunk, percent, perRow: fits }) : t('ctl.bulkcode.shrunkNoFit', { n: shrunk, percent }));
+      }
       setStatus(t('ctl.pdf.done', { name }));
     } catch {
       setError(t('ws.errExport'));
@@ -192,7 +215,22 @@ export function BulkCodesWorkspace({ defaultType = 'qr' }: { defaultType?: CodeT
         onChange={setFormat}
       />
       {type === 'qr' ? (
-        <RangeField id="bulk-qr-size" label={t('ctl.qr.size')} value={qrSize} min={128} max={2048} step={64} unit=" px" onChange={setQrSize} />
+        <>
+          <RangeField id="bulk-qr-size" label={t('ctl.qr.size')} value={qrSize} min={128} max={2048} step={64} unit=" px" onChange={setQrSize} />
+          <div className="grid grid-cols-2 gap-3">
+            <label className="space-y-1 text-[14px] text-ink">
+              <span className="block">{t('ctl.qr.dark')}</span>
+              <input type="color" value={dark} onChange={(e) => setDark(e.target.value)} className="w-full h-10 border border-ink rounded-md cursor-pointer bg-paper-bright" />
+            </label>
+            <label className="space-y-1 text-[14px] text-ink">
+              <span className="block">{t('ctl.qr.light')}</span>
+              <input type="color" value={light} onChange={(e) => setLight(e.target.value)} className="w-full h-10 border border-ink rounded-md cursor-pointer bg-paper-bright" />
+            </label>
+          </div>
+          {colorProblem(dark, light) && <p className="text-[13px] text-accent-yellow leading-relaxed">{t(colorProblem(dark, light) === 'inverted' ? 'ctl.qr.inverted' : 'ctl.qr.lowContrast')}</p>}
+          <Segmented label={t('ctl.qr.correction')} value={level} options={(['L', 'M', 'Q', 'H'] as const).map((l) => ({ value: l, label: l }))} onChange={setLevel} />
+          <RangeField id="bulk-qr-margin" label={t('ctl.qr.margin')} value={margin} min={0} max={8} onChange={setMargin} />
+        </>
       ) : (
         <>
           <RangeField id="bulk-scale" label={t('ctl.barcode.barWidth')} value={scale} min={1} max={8} unit=" px" onChange={setScale} />
