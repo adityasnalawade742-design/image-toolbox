@@ -7474,6 +7474,33 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF in Excel",
+    shortName: "PDF → Excel",
+    tagline: "Trasforma le tabelle di un PDF in un foglio Excel (XLSX), con numeri e date come valori veri. Gratis, senza registrazione.",
+    intro: "PDF in Excel trova le tabelle di un PDF e le mette in un foglio XLSX che puoi ordinare, filtrare e usare nelle formule con Excel, Google Fogli o LibreOffice. Gestisce tabelle con linee e tabelle fatte solo di testo allineato, come estratti conto e report, e unisce in una sola la tabella che continua su più pagine, senza ripeterne l’intestazione. Numeri, importi e percentuali diventano numeri veri con lo stesso aspetto, e le date diventano date vere quando la colonna rende chiaro l’ordine di giorno e mese. Un PDF senza tabelle dà una riga per ogni riga di testo. I PDF scansionati sono solo immagini di pagine, quindi passali prima in OCR PDF. La conversione avviene sul nostro server e il file viene eliminato subito dopo.",
+    seoTitle: "PDF in Excel – tabelle in XLSX, gratis",
+    seoDescription: "Converti le tabelle di un PDF in un file Excel XLSX modificabile, gratis. Estratti conto e report, con i numeri come numeri. Senza registrazione.",
+    keywords: ["pdf in excel", "convertire pdf in excel", "pdf in xlsx", "tabella pdf in excel", "estratto conto pdf in excel"],
+    howToSteps: [
+      { title: "Scegli il PDF", description: "Trascina o scegli un PDF fino a 30 MB." },
+      { title: "Converti", description: "Fai clic su Converti in Excel. Se vuoi, prima metti ogni tabella in un foglio separato." },
+      { title: "Usa il foglio", description: "Apri il file XLSX scaricato in Excel, Google Fogli o LibreOffice." },
+    ],
+    features: [
+      { title: "Numeri e date veri", description: "Importi e percentuali funzionano nelle formule e le date si possono ordinare." },
+      { title: "Tabelle su più pagine", description: "Una tabella che continua nella pagina successiva resta una sola, senza l’intestazione ripetuta." },
+      { title: "Con o senza linee", description: "Trova tabelle con bordi e tabelle fatte solo di colonne di testo allineate." },
+      { title: "File eliminati subito", description: "Dopo la conversione non viene conservato nulla." },
+    ],
+    faqs: [
+      { question: "I numeri funzionano nelle formule?", answer: "Sì. Importi come 1.234,56, (45,00) o 12% diventano numeri con lo stesso aspetto, quindi puoi sommarli e ordinarli. I codici con zeri iniziali, come 0042, e i numeri di conto lunghi restano testo, così non si perde nulla." },
+      { question: "Può convertire un PDF scansionato?", answer: "Un PDF scansionato contiene immagini del testo, non testo. Passalo prima in OCR PDF, poi converti in Excel il PDF ricercabile." },
+      { question: "Cosa succede alle date?", answer: "Le date diventano date vere quando la colonna rende chiaro l’ordine: 2025-03-17, oppure 17/03/2025 quando un giorno della colonna supera 12. Una colonna con sole date come 01/02/2025, leggibili in due modi, resta testo, così nessuna data viene cambiata per errore." },
+      { question: "Il mio file viene caricato?", answer: "Sì. Questo strumento ha bisogno del nostro server, quindi il file viene inviato tramite una connessione crittografata, elaborato ed eliminato non appena il risultato viene restituito. Non viene mai conservato, condiviso né visionato. La maggior parte degli altri strumenti di questo sito funziona interamente nel tuo browser." },
+      { question: "C’è un limite di dimensione?", answer: "I file possono arrivare a 30 MB. I file molto grandi o complessi possono richiedere fino a un paio di minuti." },
+    ],
+  },
   "compress-pdf": {
     name: "Comprimi PDF",
     shortName: "Comprimi PDF",

@@ -20,8 +20,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
+# PyMuPDF is pinned: a new major version changed how it reads text and tables, and PDF to Excel, PDF to Word
+# and OCR straightening are measured on this one
 RUN python3 -m venv /opt/venv && /opt/venv/bin/pip install --no-cache-dir \
-      "fastapi==0.115.*" "uvicorn==0.32.*" "python-multipart==0.0.*" "pdf2docx==0.5.13" "pikepdf==9.*"
+      "fastapi==0.115.*" "uvicorn==0.32.*" "python-multipart==0.0.*" "pdf2docx==0.5.13" "PyMuPDF==2.1.*" "pikepdf==9.*" "openpyxl==3.1.*"
 
 # Free stand-ins for Microsoft fonts, so Word files keep their layout
 COPY fonts/*.ttf /usr/local/share/fonts/office/

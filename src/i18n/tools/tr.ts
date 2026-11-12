@@ -7493,6 +7493,33 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF'ten Excel'e Dönüştürme",
+    shortName: "PDF → Excel",
+    tagline: "Bir PDF'teki tabloları Excel tablosuna (XLSX) dönüştürün; sayılar ve tarihler gerçek değer olur. Ücretsiz, kayıt gerekmez.",
+    intro: "PDF'ten Excel'e Dönüştürme, bir PDF'teki tabloları bulur ve bunları Excel, Google E-Tablolar veya LibreOffice'te sıralayıp filtreleyebileceğiniz, formüllerde kullanabileceğiniz bir XLSX dosyasına koyar. Çizgili tabloları ve banka hesap dökümleri ile raporlar gibi yalnızca hizalı metinden oluşan tabloları tanır; birkaç sayfaya yayılan bir tabloyu, tekrarlanan başlık satırı olmadan tek tabloda birleştirir. Sayılar, tutarlar ve yüzdeler aynı görünümle gerçek sayılara, tarihler ise sütun gün ve ay sırasını açıkça gösterdiğinde gerçek tarihlere dönüşür. Tablo içermeyen bir PDF, her metin satırı için bir satır verir. Taranmış PDF'ler yalnızca sayfa görüntüleridir; önce PDF OCR'dan geçirin. Dönüştürme sunucumuzda yapılır ve dosya hemen ardından silinir.",
+    seoTitle: "PDF Excel Çevirme – Tablolar XLSX'e, Ücretsiz",
+    seoDescription: "PDF'teki tabloları ücretsiz olarak düzenlenebilir bir Excel XLSX dosyasına çevirin. Hesap dökümleri ve raporlar, sayılar sayı olarak kalır.",
+    keywords: ["pdf excel çevirme", "pdf'ten excel'e dönüştürme", "pdf xlsx çevirme", "pdf tablo excel", "hesap dökümü pdf excel"],
+    howToSteps: [
+      { title: "PDF seçin", description: "30 MB’a kadar bir PDF’i sürükleyin veya seçin." },
+      { title: "Dönüştürün", description: "“Excel’e dönüştür” düğmesine tıklayın. İsterseniz önce her tabloyu ayrı bir sayfaya koymayı seçin." },
+      { title: "Tabloyu kullanın", description: "İndirilen XLSX dosyasını Excel, Google E-Tablolar veya LibreOffice'te açın." },
+    ],
+    features: [
+      { title: "Gerçek sayılar ve tarihler", description: "Tutarlar ve yüzdeler formüllerde çalışır, tarihler sıralanabilir." },
+      { title: "Birkaç sayfalık tablolar", description: "Sonraki sayfada devam eden bir tablo, tekrarlanan başlık olmadan tek tablo kalır." },
+      { title: "Çizgili ya da çizgisiz", description: "Kenarlıklı tabloları ve yalnızca hizalı metin sütunlarından oluşan tabloları bulur." },
+      { title: "Dosyalar hemen silinir", description: "Dönüştürmeden sonra hiçbir şey saklanmaz." },
+    ],
+    faqs: [
+      { question: "Sayılar formüllerde çalışır mı?", answer: "Evet. 1.234,56, (45,00) veya %12 gibi tutarlar aynı görünümle sayıya dönüşür; toplayabilir ve sıralayabilirsiniz. 0042 gibi başında sıfır olan kodlar ve uzun hesap numaraları, hiçbir şey kaybolmasın diye metin olarak kalır." },
+      { question: "Taranmış bir PDF’i dönüştürebilir mi?", answer: "Taranmış bir PDF metin değil, metnin görüntülerini içerir. Önce PDF OCR'dan geçirin, ardından aranabilir PDF'i Excel'e dönüştürün." },
+      { question: "Tarihlere ne olur?", answer: "Sütun sırayı açıkça gösterdiğinde tarihler gerçek tarihe dönüşür: 2025-03-17 veya sütunda 12’den büyük bir gün varsa 17.03.2025. Yalnızca 01.02.2025 gibi iki şekilde okunabilen tarihler içeren bir sütun, hiçbir tarih yanlışlıkla değişmesin diye metin olarak kalır." },
+      { question: "Dosyam yükleniyor mu?", answer: "Evet. Bu araç sunucumuza ihtiyaç duyar; dosya şifreli bir bağlantı üzerinden gönderilir, işlenir ve sonuç geri gönderilir gönderilmez silinir. Asla saklanmaz, paylaşılmaz veya incelenmez. Bu sitedeki diğer araçların çoğu tamamen tarayıcınızda çalışır." },
+      { question: "Boyut sınırı var mı?", answer: "Dosyalar en fazla 30 MB olabilir. Çok büyük veya karmaşık dosyaların işlenmesi bir iki dakikayı bulabilir." },
+    ],
+  },
   "compress-pdf": {
     name: "PDF Sıkıştırma",
     shortName: "PDF Sıkıştır",

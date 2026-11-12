@@ -9,7 +9,7 @@ export const enHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Free PDF Tools: Merge, Convert, Edit and Sign PDFs',
-      description: '57 free PDF tools in one place: merge, split and compress PDFs, convert to and from Word or images, edit, sign and protect them. No sign-up, no watermarks.',
+      description: '58 free PDF tools in one place: merge, split and compress PDFs, convert to and from Word or images, edit, sign and protect them. No sign-up, no watermarks.',
       h1: 'PDF tools',
       intro:
         'Everything for working with PDFs, free and without an account: combine and split files, turn Word, Excel, PowerPoint and images into PDFs and back, edit, fill in, sign and protect them. Most tools run in your browser, so the PDF never leaves your device; the few that need our server are marked, and their files are deleted right after.',

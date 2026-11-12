@@ -7514,6 +7514,33 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF en Excel",
+    shortName: "PDF → Excel",
+    tagline: "Transformez les tableaux d’un PDF en feuille Excel (XLSX), avec les nombres et les dates comme vraies valeurs. Gratuit, sans inscription.",
+    intro: "PDF en Excel repère les tableaux d’un PDF et les place dans une feuille XLSX que vous pouvez trier, filtrer et utiliser dans des formules avec Excel, Google Sheets ou LibreOffice. Il gère les tableaux avec des lignes et ceux faits uniquement de texte aligné, comme les relevés bancaires et les rapports, et réunit en un seul un tableau qui continue sur plusieurs pages, sans son en-tête répété. Les nombres, montants et pourcentages deviennent de vrais nombres qui gardent leur présentation, et les dates deviennent de vraies dates quand la colonne indique clairement l’ordre du jour et du mois. Un PDF sans tableau donne une ligne par ligne de texte. Les PDF scannés ne sont que des images de pages : passez-les d’abord dans OCR PDF. La conversion se fait sur notre serveur et le fichier est supprimé juste après.",
+    seoTitle: "PDF en Excel – tableaux en XLSX, gratuit",
+    seoDescription: "Convertissez les tableaux d’un PDF en fichier Excel XLSX modifiable, gratuitement. Relevés bancaires et rapports, nombres gardés en nombres.",
+    keywords: ["pdf en excel", "convertir pdf en excel", "pdf en xlsx", "tableau pdf en excel", "relevé bancaire pdf en excel"],
+    howToSteps: [
+      { title: "Choisissez votre PDF", description: "Déposez ou choisissez un PDF de 30 Mo maximum." },
+      { title: "Convertissez", description: "Cliquez sur Convertir en Excel. Si vous voulez, mettez d’abord chaque tableau sur sa propre feuille." },
+      { title: "Utilisez la feuille", description: "Ouvrez le fichier XLSX téléchargé dans Excel, Google Sheets ou LibreOffice." },
+    ],
+    features: [
+      { title: "Vrais nombres et dates", description: "Les montants et pourcentages fonctionnent dans les formules, et les dates peuvent être triées." },
+      { title: "Tableaux sur plusieurs pages", description: "Un tableau qui continue sur la page suivante reste un seul tableau, sans l’en-tête répété." },
+      { title: "Avec ou sans lignes", description: "Trouve les tableaux avec bordures et ceux faits uniquement de colonnes de texte alignées." },
+      { title: "Fichiers supprimés aussitôt", description: "Rien n’est conservé après la conversion." },
+    ],
+    faqs: [
+      { question: "Les nombres fonctionnent-ils dans les formules ?", answer: "Oui. Des montants comme 1 234,56, (45,00) ou 12 % deviennent des nombres avec la même présentation : vous pouvez les additionner et les trier. Les codes avec des zéros devant, comme 0042, et les longs numéros de compte restent du texte, pour ne rien perdre." },
+      { question: "Peut-il convertir un PDF scanné ?", answer: "Un PDF scanné contient des images du texte, pas du texte. Passez-le d’abord dans OCR PDF, puis convertissez le PDF interrogeable en Excel." },
+      { question: "Que deviennent les dates ?", answer: "Les dates deviennent de vraies dates quand la colonne indique clairement l’ordre : 2025-03-17, ou 17/03/2025 si un jour de la colonne dépasse 12. Une colonne de dates comme 01/02/2025, lisibles de deux façons, reste du texte, pour qu’aucune date ne soit changée par erreur." },
+      { question: "Mon fichier est-il envoyé ?", answer: "Oui. Cet outil a besoin de notre serveur : le fichier est donc envoyé via une connexion chiffrée, traité, puis supprimé dès que le résultat vous est renvoyé. Il n’est jamais stocké, partagé ni consulté. La plupart des autres outils de ce site fonctionnent entièrement dans votre navigateur." },
+      { question: "Y a-t-il une limite de taille ?", answer: "Les fichiers peuvent peser jusqu’à 30 MB. Les fichiers très volumineux ou complexes peuvent prendre jusqu’à quelques minutes." },
+    ],
+  },
   "compress-pdf": {
     name: "Compresser PDF",
     shortName: "Compresser PDF",

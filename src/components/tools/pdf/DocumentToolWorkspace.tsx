@@ -11,7 +11,7 @@ import { downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { DocError, isServiceOnline, runDocJob, type DocEndpoint, type DocErrorCode, type DocProgress } from '../../../lib/vps/docClient';
 import { RangeField } from './common';
 
-export type DocTool = 'word-to-pdf' | 'excel-to-pdf' | 'powerpoint-to-pdf' | 'pdf-to-word' | 'compress-pdf' | 'protect-pdf' | 'unlock-pdf' | 'ocr-pdf' | 'pdf-to-pdfa' | 'repair-pdf' | 'pdf-to-grayscale';
+export type DocTool = 'word-to-pdf' | 'excel-to-pdf' | 'powerpoint-to-pdf' | 'pdf-to-word' | 'pdf-to-excel' | 'compress-pdf' | 'protect-pdf' | 'unlock-pdf' | 'ocr-pdf' | 'pdf-to-pdfa' | 'repair-pdf' | 'pdf-to-grayscale';
 
 interface ToolConfig {
   endpoint: DocEndpoint;
@@ -30,6 +30,7 @@ const CONFIG: Record<DocTool, ToolConfig> = {
   'excel-to-pdf': { endpoint: 'convert', params: { to: 'pdf' }, accept: '.xls,.xlsx,.ods,.csv', dropTitle: 'ctl.doc.dropExcel', hint: 'ctl.doc.hintExcel', action: 'ctl.doc.toPdf', output: (b) => `${b}.pdf` },
   'powerpoint-to-pdf': { endpoint: 'convert', params: { to: 'pdf' }, accept: '.ppt,.pptx,.odp', dropTitle: 'ctl.doc.dropPpt', hint: 'ctl.doc.hintPpt', action: 'ctl.doc.toPdf', output: (b) => `${b}.pdf` },
   'pdf-to-word': { endpoint: 'convert', params: { to: 'docx' }, ...PDF_IN, action: 'ctl.doc.toWord', output: (b) => `${b}.docx` },
+  'pdf-to-excel': { endpoint: 'convert', params: { to: 'xlsx' }, ...PDF_IN, action: 'ctl.doc.toExcel', output: (b) => `${b}.xlsx` },
   'compress-pdf': { endpoint: 'compress', ...PDF_IN, action: 'ctl.doc.compress', output: (b) => `${b}-compressed.pdf` },
   'protect-pdf': { endpoint: 'protect', ...PDF_IN, action: 'ctl.doc.protect', output: (b) => `${b}-protected.pdf` },
   'unlock-pdf': { endpoint: 'unlock', ...PDF_IN, action: 'ctl.doc.unlock', output: (b) => `${b}-unlocked.pdf` },
@@ -70,6 +71,7 @@ const ERROR_TEXT: Record<DocErrorCode, StringKey> = {
   encrypted: 'ctl.doc.errEncrypted',
   incomplete: 'ctl.doc.errIncomplete',
   timeout: 'ctl.doc.errTimeout',
+  no_text: 'ctl.doc.errNoText',
   failed: 'ctl.doc.errFailed',
 };
 
@@ -115,6 +117,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [owner, setOwner] = useState('');
   const [pdfaLevel, setPdfaLevel] = useState<'1' | '2' | '3'>('2');
   const [fitSheet, setFitSheet] = useState(false);
+  // PDF to Excel: every table on one sheet in page order, or each on its own sheet
+  const [sheetEach, setSheetEach] = useState(false);
   const [progress, setProgress] = useState<DocProgress | null>(null);
   // The server sleeps when idle; a job still processing after a few seconds is often it waking up
   const [slow, setSlow] = useState(false);
@@ -159,7 +163,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   // New settings make finished files stale, so the action button runs them again
   useEffect(() => {
     setQueue((q) => (q && q.some((x) => x.status === 'done') ? q.map((x) => (x.status === 'done' ? { ...x, status: 'pending', out: undefined } : x)) : q));
-  }, [preset, dpi, jpegQuality, gray, password, lang, lang2, straighten, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
+  }, [preset, dpi, jpegQuality, gray, password, lang, lang2, straighten, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet, sheetEach]);
   const pickMany = (list: File[]) => {
     if (list.length < 2) {
       if (list[0]) pick(list[0]);
@@ -227,6 +231,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       ...(tool === 'ocr-pdf' ? { lang: lang2 && lang2 !== lang ? `${lang}+${lang2}` : lang, ...(straighten ? { straighten: 'y' } : {}) } : {}),
       ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
       ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
+      // Sheets are named in the page's language (Table 1, Tabelle 1…)
+      ...(tool === 'pdf-to-excel' ? { sheets: sheetEach ? 'each' : 'one', word: t('ctl.doc.sheetWord') } : {}),
     };
     const fields: Record<string, string> = needsPassword ? { password } : {};
     if (tool === 'protect-pdf') {
@@ -531,6 +537,15 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
             {t('ctl.doc.fitSheet')}
           </label>
           <p id="doc-fit-note" className="text-[13px] text-graphite">{t('ctl.doc.fitSheetNote')}</p>
+        </div>
+      )}
+      {tool === 'pdf-to-excel' && (
+        <div className="space-y-1">
+          <label className="flex items-center gap-2.5 min-h-[40px] cursor-pointer text-ink">
+            <input type="checkbox" checked={sheetEach} onChange={(e) => setSheetEach(e.target.checked)} aria-describedby="doc-sheets-note" />
+            {t('ctl.doc.sheetEach')}
+          </label>
+          <p id="doc-sheets-note" className="text-[13px] text-graphite">{t('ctl.doc.sheetEachNote')}</p>
         </div>
       )}
       {tool === 'ocr-pdf' && (

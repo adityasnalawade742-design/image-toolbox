@@ -46,7 +46,7 @@ export const CATEGORIES: Record<ToolCategory, { name: string; description: strin
 };
 
 /** Document tools that send the file to our server (everything else runs in the browser); see DocumentToolWorkspace */
-export const SERVER_TOOLS = new Set(['word-to-pdf', 'excel-to-pdf', 'powerpoint-to-pdf', 'pdf-to-word', 'compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf', 'pdf-to-pdfa', 'repair-pdf', 'pdf-to-grayscale']);
+export const SERVER_TOOLS = new Set(['word-to-pdf', 'excel-to-pdf', 'powerpoint-to-pdf', 'pdf-to-word', 'pdf-to-excel', 'compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf', 'pdf-to-pdfa', 'repair-pdf', 'pdf-to-grayscale']);
 
 export const TOOLS: ToolDefinition[] = [
   // Edit & Transform (9)
@@ -815,6 +815,16 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'application/pdf,.pdf',
     badge: 'Server',
     popular: true,
+  },
+  {
+    slug: 'pdf-to-excel',
+    name: 'PDF to Excel',
+    shortName: 'PDF → Excel',
+    description: 'Turn the tables in a PDF into an Excel spreadsheet (XLSX), with numbers and dates as real values.',
+    category: 'pdf-documents',
+    iconName: 'FileSpreadsheet',
+    accept: 'application/pdf,.pdf',
+    badge: 'Server',
   },
   {
     slug: 'compress-pdf',

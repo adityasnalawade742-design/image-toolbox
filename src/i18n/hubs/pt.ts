@@ -9,7 +9,7 @@ export const ptHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Ferramentas PDF grátis: juntar, converter, editar e assinar',
-      description: '57 ferramentas PDF grátis: junte, divida e comprima PDFs, converta de e para Word ou imagens, edite, assine e proteja. Sem cadastro.',
+      description: '58 ferramentas PDF grátis: junte, divida e comprima PDFs, converta de e para Word ou imagens, edite, assine e proteja. Sem cadastro.',
       h1: 'Ferramentas PDF',
       intro:
         'Tudo para trabalhar com PDFs, grátis e sem conta: junte e divida arquivos, transforme Word, Excel, PowerPoint e imagens em PDF e vice-versa, edite, preencha, assine e proteja. A maioria das ferramentas funciona no seu navegador, então o PDF não sai do seu dispositivo; as poucas que precisam do nosso servidor estão marcadas, e os arquivos delas são apagados logo depois.',
