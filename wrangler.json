@@ -9,7 +9,8 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "drop-trailing-slash"
+    "html_handling": "drop-trailing-slash",
+    "run_worker_first": ["/*/"]
   },
   "send_email": [{ "name": "CONTACT_EMAIL", "destination_address": "aditya.contact142@gmail.com" }],
   "vars": {
