@@ -32,7 +32,10 @@ export function SplitPdfWorkspace() {
 
   const run = async () => {
     if (!pdf.bytes) return;
-    if (!groups.length) return setError(t('ctl.splitpdf.noRanges'));
+    if (!groups.length) {
+      setStatus('');
+      return setError(t('ctl.splitpdf.noRanges'));
+    }
     setBusy(true);
     setError(null);
     try {

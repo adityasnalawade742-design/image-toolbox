@@ -78,7 +78,10 @@ export function ExtractImagesWorkspace() {
 
   const chosen = (images || []).filter((_, i) => selected.has(i));
   const run = async () => {
-    if (!chosen.length) return setError(t('ctl.ximg.needOne'));
+    if (!chosen.length) {
+      setStatus('');
+      return setError(t('ctl.ximg.needOne'));
+    }
     setError(null);
     try {
       const file = (im: Shown) => (format === 'png' ? Promise.resolve(im.blob) : asJpeg(im.blob));

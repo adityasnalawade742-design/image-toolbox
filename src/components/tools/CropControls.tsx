@@ -133,12 +133,11 @@ export function CropControls({
 
   // Apply a parsed value for one field; the other side follows the locked ratio
   const commit = (field: Field, val: number) => {
+    // A position moves the box without resizing it (as dragging does), so a locked ratio stays exact
     if (field === 'x') {
-      const x = Math.max(0, Math.min(imgWidth - 1, val));
-      onChange({ x, y: cropY, width: Math.min(cropW, imgWidth - x), height: cropH });
+      onChange({ x: Math.max(0, Math.min(imgWidth - cropW, val)), y: cropY, width: cropW, height: cropH });
     } else if (field === 'y') {
-      const y = Math.max(0, Math.min(imgHeight - 1, val));
-      onChange({ x: cropX, y, width: cropW, height: Math.min(cropH, imgHeight - y) });
+      onChange({ x: cropX, y: Math.max(0, Math.min(imgHeight - cropH, val)), width: cropW, height: cropH });
     } else if (field === 'w') {
       let w = Math.max(1, Math.min(imgWidth - cropX, val));
       if (lockAspect) {
@@ -183,8 +182,8 @@ export function CropControls({
   };
 
   const fields: Array<{ field: Field; label: string; value: number; min: number; max: number }> = [
-    { field: 'x', label: t('ctl.crop.offsetX'), value: cropX, min: 0, max: Math.max(0, imgWidth - 1) },
-    { field: 'y', label: t('ctl.crop.offsetY'), value: cropY, min: 0, max: Math.max(0, imgHeight - 1) },
+    { field: 'x', label: t('ctl.crop.offsetX'), value: cropX, min: 0, max: Math.max(0, imgWidth - cropW) },
+    { field: 'y', label: t('ctl.crop.offsetY'), value: cropY, min: 0, max: Math.max(0, imgHeight - cropH) },
     { field: 'w', label: t('ctl.crop.width'), value: cropW, min: 1, max: imgWidth - cropX },
     { field: 'h', label: t('ctl.crop.height'), value: cropH, min: 1, max: imgHeight - cropY },
   ];

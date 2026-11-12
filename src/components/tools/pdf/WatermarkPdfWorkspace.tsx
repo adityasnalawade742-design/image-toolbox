@@ -40,7 +40,10 @@ export function WatermarkPdfWorkspace() {
   const run = async () => {
     if (!pdf.bytes || !stamp) return;
     const pages = scope === 'all' ? 'all' : parseRanges(range, pdf.pageCount).flat();
-    if (pages !== 'all' && !pages.length) return setError(t('ctl.splitpdf.noRanges'));
+    if (pages !== 'all' && !pages.length) {
+      setStatus('');
+      return setError(t('ctl.splitpdf.noRanges'));
+    }
     setBusy(true);
     setError(null);
     try {

@@ -74,7 +74,10 @@ export function BlankPagesWorkspace() {
   const toDelete = pages.filter((p) => p.selected);
   const run = async () => {
     if (!pdf.bytes || !toDelete.length) return;
-    if (toDelete.length === pages.length) return setError(t('ctl.blank.keepOne'));
+    if (toDelete.length === pages.length) {
+      setStatus('');
+      return setError(t('ctl.blank.keepOne'));
+    }
     setBusy(true);
     setError(null);
     try {

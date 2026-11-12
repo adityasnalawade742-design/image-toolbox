@@ -112,7 +112,8 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
   // Page numbers (1-based) the main button saves
   const chosen = (): number[] => {
     const count = doc?.numPages ?? 0;
-    if (scope === 'all') return Array.from({ length: count }, (_, i) => i + 1);
+    // A one-page PDF hides the page choice, so a range picked for an earlier file must not apply to it
+    if (scope === 'all' || count <= 1) return Array.from({ length: count }, (_, i) => i + 1);
     return [...new Set(parseRanges(range, count).flat())].sort((a, b) => a - b).map((i) => i + 1);
   };
 

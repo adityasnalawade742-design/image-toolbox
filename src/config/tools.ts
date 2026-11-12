@@ -45,6 +45,9 @@ export const CATEGORIES: Record<ToolCategory, { name: string; description: strin
   },
 };
 
+/** Document tools that send the file to our server (everything else runs in the browser); see DocumentToolWorkspace */
+export const SERVER_TOOLS = new Set(['word-to-pdf', 'excel-to-pdf', 'powerpoint-to-pdf', 'pdf-to-word', 'compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf', 'pdf-to-pdfa', 'repair-pdf', 'pdf-to-grayscale']);
+
 export const TOOLS: ToolDefinition[] = [
   // Edit & Transform (9)
   {
