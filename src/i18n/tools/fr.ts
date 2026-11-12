@@ -7252,7 +7252,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convertissez",
-        description: "Cliquez sur « Convertir en PDF ». Le fichier est converti sur notre serveur, généralement en quelques secondes.",
+        description: "Cliquez sur Convertir en PDF. Titres, liens, tableaux, en-têtes et pieds de page sont conservés ; cela prend en général quelques secondes.",
       },
       {
         title: "Téléchargez le PDF",
@@ -7261,12 +7261,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Mise en page conservée",
-        description: "Le texte, les tableaux, les images et les sauts de page restent à leur place.",
+        title: "Les titres deviennent des signets",
+        description: "Les titres Word deviennent des signets PDF pour aller directement à une section, et les liens restent cliquables.",
       },
       {
-        title: "Polices courantes incluses",
-        description: "Des polices métriquement compatibles avec Calibri, Cambria, Arial et Times, ainsi que des polices Noto pour la plupart des langues.",
+        title: "Mêmes retours à la ligne",
+        description: "Calibri, Cambria, Arial et Times sont remplacées par des polices de même largeur exacte : le texte et les pages se coupent comme dans Word.",
       },
       {
         title: "Fichiers supprimés aussitôt",
@@ -7281,12 +7281,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mon PDF sera-t-il identique à l’original ?",
         answer:
-          "Pour la plupart des documents, oui. Les polices rares qui ne sont pas installées sur le serveur sont remplacées par des polices similaires, et certaines mises en page très complexes peuvent se décaler légèrement. Vérifiez le PDF avant de l’envoyer.",
+          "En général, oui. Calibri, Cambria, Arial et Times sont remplacées par des polices de même largeur, donc le texte se répartit de la même façon. Une police rare absente de notre serveur est remplacée par une police proche et peut décaler une ligne : vérifiez le PDF avant de l’envoyer.",
       },
       {
         question: "Les modifications suivies et les commentaires apparaissent-ils dans le PDF ?",
         answer:
-          "Le document est converti tel qu’il s’affiche à l’ouverture : acceptez ou refusez d’abord les modifications suivies si vous ne voulez pas qu’elles soient visibles.",
+          "Le document est converti tel qu’il s’affiche à l’ouverture : acceptez ou refusez d’abord les modifications suivies. Les commentaires sont ajoutés comme commentaires PDF, les notes visibles dans le volet de commentaires du lecteur : supprimez-les avant s’ils ne doivent pas être partagés.",
       },
       {
         question: "Mon fichier est-il envoyé ?",
@@ -7324,7 +7324,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convertissez",
-        description: "Cliquez sur « Convertir en PDF ». Le fichier est converti sur notre serveur, généralement en quelques secondes.",
+        description: "Cochez Une feuille par page si vous voulez chaque feuille sur une seule page, puis cliquez sur Convertir en PDF.",
       },
       {
         title: "Téléchargez le PDF",
@@ -7333,12 +7333,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Mise en page conservée",
-        description: "Le texte, les tableaux, les images et les sauts de page restent à leur place.",
+        title: "Le masqué reste caché",
+        description: "Les feuilles et colonnes masquées sont exclues, et la zone d’impression définie dans le classeur est respectée.",
       },
       {
-        title: "Polices courantes incluses",
-        description: "Des polices métriquement compatibles avec Calibri, Cambria, Arial et Times, ainsi que des polices Noto pour la plupart des langues.",
+        title: "Une feuille par page",
+        description: "Cochez Une feuille par page pour réduire chaque feuille à une seule page, comme le réglage d’impression d’Excel.",
       },
       {
         title: "Fichiers supprimés aussitôt",
@@ -7353,12 +7353,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mon PDF sera-t-il identique à l’original ?",
         answer:
-          "Pour la plupart des documents, oui. Les polices rares qui ne sont pas installées sur le serveur sont remplacées par des polices similaires, et certaines mises en page très complexes peuvent se décaler légèrement. Vérifiez le PDF avant de l’envoyer.",
+          "Le plus souvent, oui. Le PDF suit la mise en page enregistrée dans le classeur (format, orientation, marges et sauts de page), et les polices comme Calibri sont remplacées par des polices de même largeur. Les feuilles très larges sont réparties sur plusieurs pages, sauf si vous mettez une feuille par page.",
       },
       {
         question: "Pourquoi ma feuille est-elle répartie sur plusieurs pages ?",
         answer:
-          "Le PDF suit les réglages d’impression enregistrés dans le classeur. Pour avoir chaque feuille sur une page, cochez « Une feuille par page » avant de convertir : la page s’agrandit pour contenir la feuille, donc les grandes feuilles s’impriment en petit.",
+          "Le PDF suit les réglages d’impression enregistrés dans le classeur. Pour avoir chaque feuille sur une page, cochez « Une feuille par page » : chaque feuille est réduite pour tenir sur une page, donc les grandes feuilles s’impriment en petit. Les feuilles et colonnes masquées restent exclues dans tous les cas, et la zone d’impression est respectée.",
       },
       {
         question: "Mon fichier est-il envoyé ?",
@@ -7395,7 +7395,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convertissez",
-        description: "Cliquez sur « Convertir en PDF ». Le fichier est converti sur notre serveur, généralement en quelques secondes.",
+        description: "Cliquez sur Convertir en PDF. Chaque diapositive visible devient une page et les diapositives masquées sont ignorées.",
       },
       {
         title: "Téléchargez le PDF",
@@ -7404,12 +7404,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Mise en page conservée",
-        description: "Le texte, les tableaux, les images et les sauts de page restent à leur place.",
+        title: "Une diapositive par page",
+        description: "Chaque diapositive visible devient une page au format de la présentation ; les diapositives masquées sont exclues.",
       },
       {
-        title: "Polices courantes incluses",
-        description: "Des polices métriquement compatibles avec Calibri, Cambria, Arial et Times, ainsi que des polices Noto pour la plupart des langues.",
+        title: "Le texte reste dans ses cadres",
+        description: "Les polices Office courantes sont remplacées par des polices de même largeur : titres et puces ne débordent pas de leurs cadres.",
       },
       {
         title: "Fichiers supprimés aussitôt",
@@ -7424,12 +7424,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mon PDF sera-t-il identique à l’original ?",
         answer:
-          "Pour la plupart des documents, oui. Les polices rares qui ne sont pas installées sur le serveur sont remplacées par des polices similaires, et certaines mises en page très complexes peuvent se décaler légèrement. Vérifiez le PDF avant de l’envoyer.",
+          "En général, oui. Chaque diapositive devient une page avec ses images, formes et textes à leur place, et les polices Office courantes sont remplacées par des polices de même largeur. Une police rare peut être remplacée par une police proche et couper une ligne autrement : vérifiez le PDF.",
       },
       {
         question: "Les animations et les vidéos sont-elles conservées ?",
         answer:
-          "Non. Un PDF affiche chaque diapositive comme une page fixe : les animations, les transitions et les vidéos intégrées sont donc omises.",
+          "Non. Un PDF affiche chaque diapositive comme une page fixe : animations, transitions et vidéos intégrées sont exclues. Les diapositives masquées aussi.",
       },
       {
         question: "Mon fichier est-il envoyé ?",

@@ -7442,7 +7442,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Convert",
-        "description": "Click Convert to PDF. The file is converted on our server, usually in a few seconds."
+        "description": "Click Convert to PDF. Headings, links, tables, headers and footers come along; it usually takes a few seconds."
       },
       {
         "title": "Download the PDF",
@@ -7451,12 +7451,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "features": [
       {
-        "title": "Layout kept",
-        "description": "Text, tables, images and page breaks stay where they were."
+        "title": "Headings become bookmarks",
+        "description": "Word headings turn into PDF bookmarks you can click to jump to a section, and links stay clickable."
       },
       {
-        "title": "Common fonts included",
-        "description": "Metric-compatible fonts for Calibri, Cambria, Arial and Times, plus Noto fonts for most languages."
+        "title": "Same line breaks",
+        "description": "Calibri, Cambria, Arial and Times are replaced by fonts with exactly the same widths, so text wraps and pages break as in Word."
       },
       {
         "title": "Files deleted right away",
@@ -7470,11 +7470,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Will my PDF look exactly like the original?",
-        "answer": "For most documents, yes. Rare fonts that aren't installed on the server are replaced by similar ones, and some very complex layouts can shift slightly. Check the PDF before sending it."
+        "answer": "Usually, yes. Calibri, Cambria, Arial and Times are swapped for fonts with the same character widths, so text wraps the same way. A rare font that isn’t on our server is replaced by a similar one and can move a line, so check the PDF before sending it."
       },
       {
         "question": "Do tracked changes and comments appear in the PDF?",
-        "answer": "The document is converted as it is shown when opened, so accept or reject tracked changes first if you don't want them visible."
+        "answer": "The document is converted as it shows when opened, so accept or reject tracked changes first. Comments are added as PDF comments, the notes shown in a PDF reader’s comment panel, so delete them first if they shouldn’t be shared."
       },
       {
         "question": "Is my file uploaded?",
@@ -7508,7 +7508,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Convert",
-        "description": "Click Convert to PDF. The file is converted on our server, usually in a few seconds."
+        "description": "Tick Fit each sheet on one page if you want every sheet on a single page, then click Convert to PDF."
       },
       {
         "title": "Download the PDF",
@@ -7517,12 +7517,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "features": [
       {
-        "title": "Layout kept",
-        "description": "Text, tables, images and page breaks stay where they were."
+        "title": "Hidden data stays out",
+        "description": "Hidden sheets and hidden columns are left out, and a print area set in the spreadsheet is respected."
       },
       {
-        "title": "Common fonts included",
-        "description": "Metric-compatible fonts for Calibri, Cambria, Arial and Times, plus Noto fonts for most languages."
+        "title": "Each sheet on one page",
+        "description": "Tick Fit each sheet on one page to scale every sheet down to a single page, the way Excel’s own fit-to-page print setting does."
       },
       {
         "title": "Files deleted right away",
@@ -7536,11 +7536,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Will my PDF look exactly like the original?",
-        "answer": "For most documents, yes. Rare fonts that aren't installed on the server are replaced by similar ones, and some very complex layouts can shift slightly. Check the PDF before sending it."
+        "answer": "Mostly, yes. The PDF follows the page setup saved in the spreadsheet (paper size, orientation, margins and page breaks), and fonts such as Calibri are swapped for ones with the same widths. Very wide sheets are split across pages unless you fit each sheet on one page."
       },
       {
         "question": "Why is my sheet split across several pages?",
-        "answer": "The PDF follows the print settings saved in the spreadsheet. To get each sheet on one page, tick “Fit each sheet on one page” before converting: the page grows to fit the sheet, so large sheets print small."
+        "answer": "The PDF follows the print settings saved in the spreadsheet. To get each sheet on one page, tick “Fit each sheet on one page”: each sheet is scaled down to fit one page, so large sheets print small. Hidden sheets and columns stay out either way, and a print area is respected."
       },
       {
         "question": "Is my file uploaded?",
@@ -7573,7 +7573,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Convert",
-        "description": "Click Convert to PDF. The file is converted on our server, usually in a few seconds."
+        "description": "Click Convert to PDF. Every visible slide becomes a page, and hidden slides are skipped."
       },
       {
         "title": "Download the PDF",
@@ -7582,12 +7582,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "features": [
       {
-        "title": "Layout kept",
-        "description": "Text, tables, images and page breaks stay where they were."
+        "title": "One slide per page",
+        "description": "Each visible slide becomes one PDF page in the presentation’s own shape; hidden slides are left out."
       },
       {
-        "title": "Common fonts included",
-        "description": "Metric-compatible fonts for Calibri, Cambria, Arial and Times, plus Noto fonts for most languages."
+        "title": "Text stays in its boxes",
+        "description": "Common Office fonts are replaced by ones with the same widths, so titles and bullet points don’t spill out of their boxes."
       },
       {
         "title": "Files deleted right away",
@@ -7601,11 +7601,11 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Will my PDF look exactly like the original?",
-        "answer": "For most documents, yes. Rare fonts that aren't installed on the server are replaced by similar ones, and some very complex layouts can shift slightly. Check the PDF before sending it."
+        "answer": "Usually, yes. Each slide becomes one page with its pictures, shapes and text in place, and common Office fonts are replaced by ones with the same widths. A rare font can be swapped for a similar one and make a line wrap differently, so check the PDF."
       },
       {
         "question": "Are animations and videos kept?",
-        "answer": "No. A PDF shows each slide as a still page, so animations, transitions and embedded videos are left out."
+        "answer": "No. A PDF shows each slide as a still page, so animations, transitions and embedded videos are left out. Hidden slides are left out too."
       },
       {
         "question": "Is my file uploaded?",

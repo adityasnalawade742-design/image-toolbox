@@ -1410,7 +1410,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "Livello PDF/A",
   'ctl.doc.pdfaLevelNote': "2b va bene quasi sempre. Scegli 1b solo se un portale o un archivio lo richiede (la trasparenza viene appiattita). 3b consente anche file allegati.",
   'ctl.doc.fitSheet': "Ogni foglio in una pagina",
-  'ctl.doc.fitSheetNote': "Ogni foglio diventa una pagina grande quanto tutte le sue celle, così i fogli larghi non vengono tagliati. I fogli grandi vengono stampati in piccolo.",
+  'ctl.doc.fitSheetNote': 'Ogni foglio viene ridotto per stare in una pagina, così i fogli larghi non vengono tagliati. I fogli grandi escono piccoli; quelli nascosti restano fuori.',
   'ctl.doc.unlockHint': 'Inserisci la password che apre questo PDF. Se si apre senza password ma non permette di stampare o copiare, lascia vuoto questo campo.',
   'ctl.doc.ocrLang': 'Lingua del documento',
   'ctl.doc.ocrLang2': "Seconda lingua (facoltativa)",

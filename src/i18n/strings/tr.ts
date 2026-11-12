@@ -1406,7 +1406,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "PDF/A düzeyi",
   'ctl.doc.pdfaLevelNote': "2b çoğu kullanım için uygundur. 1b’yi yalnızca bir portal veya arşiv isterse seçin (saydamlık düzleştirilir). 3b dosya eklerine de izin verir.",
   'ctl.doc.fitSheet': "Her çalışma sayfasını tek sayfaya sığdır",
-  'ctl.doc.fitSheetNote': "Her çalışma sayfası tüm hücrelerini içeren tek bir PDF sayfası olur, böylece geniş sayfalar bölünmez. Büyük sayfalar küçük basılır.",
+  'ctl.doc.fitSheetNote': 'Her çalışma sayfası tek sayfaya sığacak şekilde küçültülür; geniş sayfalar bölünmez. Büyük sayfalar küçük basılır, gizli sayfalar dışarıda kalır.',
   'ctl.doc.unlockHint': 'Bu PDF’i açan parolayı girin. Parolasız açılıyor ama yazdırmaya veya kopyalamaya izin vermiyorsa bu alanı boş bırakın.',
   'ctl.doc.ocrLang': 'Belgenin dili',
   'ctl.doc.ocrLang2': "İkinci dil (isteğe bağlı)",

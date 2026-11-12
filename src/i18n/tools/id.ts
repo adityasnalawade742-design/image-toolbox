@@ -7221,7 +7221,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Ubah",
-        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+        description: "Klik Ubah ke PDF. Judul, tautan, tabel, header, dan footer ikut terbawa; biasanya hanya beberapa detik.",
       },
       {
         title: "Unduh PDF-nya",
@@ -7230,12 +7230,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Tata letak terjaga",
-        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+        title: "Judul menjadi penanda",
+        description: "Judul Word menjadi penanda PDF untuk melompat ke tiap bagian, dan tautan tetap bisa diklik.",
       },
       {
-        title: "Font umum tersedia",
-        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+        title: "Pemenggalan baris sama",
+        description: "Calibri, Cambria, Arial, dan Times diganti huruf dengan lebar yang persis sama, sehingga baris dan halaman terpotong seperti di Word.",
       },
       {
         title: "File langsung dihapus",
@@ -7250,12 +7250,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
         answer:
-          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+          "Biasanya ya. Calibri, Cambria, Arial, dan Times diganti huruf dengan lebar karakter yang sama, jadi teks terpotong dengan cara yang sama. Huruf langka yang tidak ada di server kami diganti yang mirip dan bisa menggeser satu baris, jadi periksa PDF sebelum mengirimnya.",
       },
       {
         question: "Apakah lacak perubahan dan komentar muncul di PDF?",
         answer:
-          "Dokumen diubah seperti tampilannya saat dibuka, jadi terima atau tolak lacak perubahan terlebih dahulu jika Anda tidak ingin perubahan itu terlihat.",
+          "Dokumen dikonversi seperti tampilannya saat dibuka, jadi terima atau tolak dulu perubahan terlacak. Komentar ditambahkan sebagai komentar PDF, yaitu catatan yang muncul di panel komentar pembaca PDF, jadi hapus dulu jika tidak boleh dibagikan.",
       },
       {
         question: "Apakah file saya diunggah?",
@@ -7293,7 +7293,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Ubah",
-        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+        description: "Centang Muat setiap sheet dalam satu halaman jika ingin tiap sheet di satu halaman, lalu klik Ubah ke PDF.",
       },
       {
         title: "Unduh PDF-nya",
@@ -7302,12 +7302,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Tata letak terjaga",
-        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+        title: "Data tersembunyi tidak ikut",
+        description: "Sheet dan kolom tersembunyi tidak ikut, dan area cetak yang diatur di file dipatuhi.",
       },
       {
-        title: "Font umum tersedia",
-        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+        title: "Satu sheet satu halaman",
+        description: "Centang Muat setiap sheet dalam satu halaman untuk mengecilkan tiap sheet menjadi satu halaman, seperti pengaturan cetak Excel.",
       },
       {
         title: "File langsung dihapus",
@@ -7322,12 +7322,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
         answer:
-          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+          "Sebagian besar ya. PDF mengikuti pengaturan halaman yang tersimpan di file (ukuran kertas, orientasi, margin, dan pemisah halaman), dan huruf seperti Calibri diganti yang sama lebarnya. Sheet yang sangat lebar dibagi ke beberapa halaman, kecuali Anda memuat tiap sheet dalam satu halaman.",
       },
       {
         question: "Mengapa sheet saya terbagi ke beberapa halaman?",
         answer:
-          "PDF mengikuti pengaturan cetak yang tersimpan di spreadsheet. Agar setiap sheet menjadi satu halaman, centang “Muat setiap sheet dalam satu halaman” sebelum mengonversi: halaman membesar mengikuti sheet, jadi sheet besar tercetak kecil.",
+          "PDF mengikuti pengaturan cetak yang tersimpan di file. Agar tiap sheet di satu halaman, centang “Muat setiap sheet dalam satu halaman”: tiap sheet dikecilkan agar muat satu halaman, jadi sheet besar tercetak kecil. Sheet dan kolom tersembunyi tetap tidak ikut, dan area cetak dipatuhi.",
       },
       {
         question: "Apakah file saya diunggah?",
@@ -7364,7 +7364,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Ubah",
-        description: "Klik Ubah ke PDF. File diubah di server kami, biasanya dalam beberapa detik.",
+        description: "Klik Ubah ke PDF. Setiap slide yang terlihat menjadi satu halaman, dan slide tersembunyi dilewati.",
       },
       {
         title: "Unduh PDF-nya",
@@ -7373,12 +7373,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Tata letak terjaga",
-        description: "Teks, tabel, gambar, dan pemisah halaman tetap di tempatnya.",
+        title: "Satu slide satu halaman",
+        description: "Setiap slide yang terlihat menjadi satu halaman dengan bentuk presentasinya; slide tersembunyi tidak ikut.",
       },
       {
-        title: "Font umum tersedia",
-        description: "Font dengan ukuran yang kompatibel untuk Calibri, Cambria, Arial, dan Times, ditambah font Noto untuk sebagian besar bahasa.",
+        title: "Teks tetap di kotaknya",
+        description: "Huruf Office yang umum diganti dengan yang sama lebarnya, jadi judul dan poin tidak keluar dari kotaknya.",
       },
       {
         title: "File langsung dihapus",
@@ -7393,12 +7393,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah PDF saya akan terlihat persis seperti aslinya?",
         answer:
-          "Untuk sebagian besar dokumen, ya. Font langka yang tidak terpasang di server diganti dengan font yang mirip, dan beberapa tata letak yang sangat rumit bisa sedikit bergeser. Periksa PDF sebelum mengirimnya.",
+          "Biasanya ya. Setiap slide menjadi satu halaman dengan gambar, bentuk, dan teks di tempatnya, dan huruf Office yang umum diganti dengan yang sama lebarnya. Huruf langka bisa diganti yang mirip dan memotong baris secara berbeda, jadi periksa PDF-nya.",
       },
       {
         question: "Apakah animasi dan video tetap ada?",
         answer:
-          "Tidak. PDF menampilkan setiap slide sebagai halaman diam, jadi animasi, transisi, dan video yang disematkan tidak disertakan.",
+          "Tidak. PDF menampilkan tiap slide sebagai halaman diam, jadi animasi, transisi, dan video tertanam tidak ikut. Slide tersembunyi juga tidak.",
       },
       {
         question: "Apakah file saya diunggah?",
