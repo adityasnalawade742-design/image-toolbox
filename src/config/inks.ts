@@ -10,4 +10,6 @@ export const CATEGORY_INK: Record<ToolCategory, { className: string; tint: strin
   developer: { className: 'ink-developer', tint: 'tint-developer', ink: 'registration' },
 };
 
-export const CATEGORY_ORDER: ToolCategory[] = ['edit-transform', 'optimize-compress', 'convert-formats', 'pdf-documents', 'utilities', 'developer'];
+// Most wanted first: shrinking a photo is the most common job, then editing, converting and PDFs. The home page cards,
+// the masthead and the footer all follow this order.
+export const CATEGORY_ORDER: ToolCategory[] = ['optimize-compress', 'edit-transform', 'convert-formats', 'pdf-documents', 'utilities', 'developer'];

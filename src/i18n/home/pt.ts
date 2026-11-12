@@ -4,9 +4,9 @@ export const ptHome: LocalizedHomeData = {
   hero: {
     seoTitle: 'Ferramentas de imagem e PDF grátis',
     badge: '',
-    title: 'Todas as ferramentas de imagem que você precisa, em um só lugar',
+    title: 'Ferramentas grátis para imagens e PDFs',
     subtitle:
-      'Corte, redimensione, comprima, converta, remova fundos e limpe fotos de graça. Sem cadastro, sem marca d’água, e suas imagens ficam no seu dispositivo.',
+      'Comprima, redimensione, converta e edite fotos e PDFs. Sem cadastro e sem marca d’água, e suas imagens nunca saem do seu dispositivo.',
     dropzoneTitle: 'Arraste uma imagem para começar',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG ou HEIC do iPhone, até 50 MB',
   },

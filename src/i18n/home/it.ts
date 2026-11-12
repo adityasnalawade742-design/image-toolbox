@@ -5,9 +5,9 @@ export const itHome: LocalizedHomeData = {
     seoDescription: 'Ritaglia, ridimensiona, comprimi, converti e rimuovi lo sfondo dalle foto gratis. Senza registrazione né filigrana: le immagini restano sul tuo dispositivo.',
     seoTitle: 'Strumenti gratuiti per immagini e PDF',
     badge: '',
-    title: 'Tutti gli strumenti per le immagini, in un unico posto',
+    title: 'Strumenti gratuiti per immagini e PDF',
     subtitle:
-      'Ritaglia, ridimensiona, comprimi, converti, rimuovi lo sfondo e ritocca le tue foto gratis. Nessuna registrazione, nessuna filigrana, e le immagini restano sul tuo dispositivo.',
+      'Comprimi, ridimensiona, converti e modifica foto e PDF. Senza registrazione né filigrane, e le tue immagini non lasciano mai il dispositivo.',
     dropzoneTitle: 'Trascina qui un’immagine per iniziare',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG o HEIC di iPhone, fino a 50 MB',
   },

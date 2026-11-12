@@ -1,11 +1,13 @@
 ---
 import { HomeDropZone, type QuickTool } from '../shared/HomeDropZone';
+import { HomeSearch } from '../shared/HomeSearch';
 import ToolIcon from '../shared/ToolIcon.astro';
 import { TOOLS } from '../../config/tools';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
 import { getLocalizedHomeData } from '../../i18n/home';
 import { enHome } from '../../i18n/home/en';
 import { getAllLocalizedTools } from '../../i18n/tools';
+import { searchIndexUrl } from '../../i18n/searchItems';
 import { useTranslatedPath, useTranslations } from '../../i18n/utils';
 import { pickStrings } from '../../i18n/strings';
 import type { ui } from '../../i18n/ui';
@@ -20,48 +22,97 @@ const sections = home.sections || enHome.sections!;
 const locTools = getAllLocalizedTools(locale);
 const translatePath = useTranslatedPath(locale);
 const t = useTranslations(locale);
+const searchStrings = pickStrings(locale, 'search.');
 const nameOf = (slug: string) => locTools[slug]?.name || TOOLS.find((t) => t.slug === slug)?.name || slug;
+const toolOf = (slug: string) => TOOLS.find((t) => t.slug === slug);
 
-// Offered right after an image is dropped: the everyday jobs first
-const QUICK = ['crop-image', 'remove-background', 'compress-image', 'resize-image', 'convert-image', 'remove-image-metadata', 'photo-filters', 'censor-image', 'round-image', 'image-analyzer'];
-const quickTools: QuickTool[] = QUICK.flatMap((slug) => {
-  const tool = TOOLS.find((t) => t.slug === slug);
-  return tool ? [{ slug, name: nameOf(slug), inkClass: CATEGORY_INK[tool.category].className }] : [];
-});
+const quick = (slugs: string[]): QuickTool[] =>
+  slugs.flatMap((slug) => {
+    const tool = toolOf(slug);
+    return tool ? [{ slug, name: nameOf(slug), inkClass: CATEGORY_INK[tool.category].className }] : [];
+  });
+// Offered right after an image is chosen: the everyday jobs first
+const quickTools = quick(['crop-image', 'remove-background', 'compress-image', 'resize-image', 'convert-image', 'remove-image-metadata', 'photo-filters', 'censor-image', 'round-image', 'image-analyzer']);
+// Offered right after a PDF is chosen: each of these opens the PDF straight away
+const pdfTools = quick(['compress-pdf', 'pdf-to-word', 'merge-pdf', 'split-pdf', 'pdf-to-jpg', 'edit-pdf', 'sign-pdf', 'organize-pdf']);
+// The jobs most visitors come for, one tap from the first screen (image and PDF alike)
+const tasks = ['compress-image', 'remove-background', 'heic-to-jpg', 'resize-image', 'crop-image', 'pdf-to-word', 'merge-pdf', 'jpg-to-pdf'].filter((s) => toolOf(s));
 
-// Each category shows its most used tools first; the rest open with "Show N more" (still in the page for search engines)
+// Each card opens with the jobs people ask for most; the rest open with "Show N more" (still in the page for search engines)
 const SHOWN = 8;
+const FIRST: Partial<Record<(typeof CATEGORY_ORDER)[number], string[]>> = {
+  'convert-formats': ['convert-image', 'heic-to-jpg', 'png-to-jpg', 'jpg-to-png', 'webp-to-jpg', 'jpg-to-webp', 'heic-to-png', 'svg-to-png'],
+  'pdf-documents': ['merge-pdf', 'compress-pdf', 'pdf-to-word', 'jpg-to-pdf', 'split-pdf', 'edit-pdf', 'sign-pdf', 'pdf-to-jpg'],
+  utilities: ['image-to-text', 'remove-image-metadata', 'qr-code-generator', 'image-color-picker', 'barcode-generator', 'barcode-scanner'],
+};
 const byCategory = CATEGORY_ORDER.map((cat) => {
   const all = TOOLS.filter((t) => t.category === cat);
-  const ordered = [...all.filter((t) => t.popular), ...all.filter((t) => !t.popular)];
+  const first = (FIRST[cat] ?? []).flatMap((s) => all.filter((t) => t.slug === s));
+  const rest = all.filter((t) => !first.includes(t));
+  const ordered = [...first, ...rest.filter((t) => t.popular), ...rest.filter((t) => !t.popular)];
   return { cat, count: all.length, shown: ordered.slice(0, SHOWN), more: ordered.slice(SHOWN) };
 });
 ---
 
-<div class="space-y-20 sm:space-y-28">
-  <section class="grid gap-10 lg:gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-center pt-2 sm:pt-6">
-    <div class="space-y-6">
-      <h1 class="font-condensed font-bold text-[40px] leading-[1.02] sm:text-[56px] lg:text-[64px] tracking-[-0.01em] text-ink">
+<div class="space-y-16 sm:space-y-24">
+  <section class="grid gap-8 lg:gap-14 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] items-center pt-1 sm:pt-6">
+    <div class="space-y-5 sm:space-y-6">
+      <h1 class="font-condensed font-bold text-[40px] leading-[1.02] sm:text-[56px] lg:text-[64px] tracking-[-0.01em] text-ink text-balance">
         {home.hero.title}
       </h1>
-      <p class="text-[18px] sm:text-[19px] leading-relaxed text-body max-w-[34rem]">{home.hero.subtitle}</p>
+      <p class="text-[17px] sm:text-[19px] leading-relaxed text-body max-w-[34rem]">{home.hero.subtitle}</p>
+      <div class="space-y-3 max-w-[36rem]">
+        <HomeSearch client:load locale={locale} strings={searchStrings} count={TOOLS.length} indexUrl={searchIndexUrl(locale)} />
+        <!-- Straight to the most common jobs, before any scrolling -->
+        <nav aria-label={t('footer.popular')}>
+          <ul class="flex flex-wrap gap-2">
+            {tasks.map((slug) => (
+              <li>
+                <a
+                  href={translatePath(`/${slug}`)}
+                  data-track="home_task_click"
+                  data-tool={slug}
+                  class="inline-flex items-center gap-2 min-h-[40px] px-3 rounded-md border border-pencil bg-paper-bright text-[15px] font-semibold !text-ink hover:border-ink hover:bg-paper-stock transition-colors"
+                >
+                  <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', CATEGORY_INK[toolOf(slug)!.category].className]} aria-hidden="true"></span>
+                  {nameOf(slug)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <div>
-      <HomeDropZone client:load locale={locale} strings={pickStrings(locale, 'home.')} quickTools={quickTools} />
+      <HomeDropZone client:load locale={locale} strings={pickStrings(locale, 'home.')} quickTools={quickTools} pdfTools={pdfTools} />
     </div>
   </section>
 
   <section aria-labelledby="index-title" class="space-y-6">
     <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 border-b-2 border-ink pb-3">
       <h2 id="index-title" class="font-condensed font-bold text-[32px] sm:text-[40px] leading-none text-ink">{sections.indexTitle}</h2>
-      <!-- The count alone, like each category card's: the "same workspace" point is made under How it works -->
-      <span class="text-[15px] text-graphite" data-measure>{TOOLS.length}</span>
+      <span class="text-[15px] text-graphite" data-measure>{(searchStrings['search.count'] ?? '{count}').replace('{count}', String(TOOLS.length))}</span>
     </div>
 
-    <div class="sm:columns-2 lg:columns-3 gap-x-5">
+    <!-- The masthead lists the categories from 1280px up; narrower screens get them here -->
+    <nav aria-label={t('nav.allTools')} class="xl:hidden -mt-1">
+      <ul class="flex flex-wrap gap-2">
+        {byCategory.map(({ cat }) => (
+          <li>
+            <a href={`#${cat}`} data-track="home_category_click" data-category={cat} class="inline-flex items-center gap-2 min-h-[40px] px-3 rounded-md border border-pencil bg-paper-bright text-[15px] font-medium !text-ink hover:border-ink hover:bg-paper-stock transition-colors">
+              <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
+              {home.categoryNames[cat]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- A grid, not columns: cards read left to right in the same order as the masthead -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
       {byCategory.map(({ cat, count, shown, more }) => (
-        <div id={cat} class="scroll-mt-24 break-inside-avoid mb-5 rounded-xl border border-pencil-soft bg-paper-bright p-2 sm:p-3">
+        <div id={cat} class="scroll-mt-24 rounded-xl border border-pencil-soft bg-paper-bright p-2 sm:p-3">
           <h3 class="flex items-center gap-2.5 px-3 pt-2 pb-2.5">
             <span class:list={['w-3 h-3 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
             <span class="text-[17px] font-bold text-ink">{home.categoryNames[cat]}</span>
@@ -72,7 +123,7 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
           <ul>
             {list.map((tool) => (
               <li>
-                <a href={translatePath(`/${tool.slug}`)} class="group flex items-start gap-3.5 rounded-md p-3 hover:bg-paper-stock transition-colors">
+                <a href={translatePath(`/${tool.slug}`)} data-track="home_tool_click" data-tool={tool.slug} class="group flex items-start gap-3.5 rounded-md p-3 hover:bg-paper-stock transition-colors">
                   <span class:list={['w-10 h-10 shrink-0 rounded-md flex items-center justify-center', CATEGORY_INK[cat].tint]} aria-hidden="true">
                     <ToolIcon name={tool.iconName} class="w-5 h-5" />
                   </span>
@@ -91,7 +142,7 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
             if (part === 0) return items;
             if (!list.length) return null;
             return (
-              <details class="group/more">
+              <details class="group/more" data-track-open="show_more" data-category={cat}>
                 <summary class="list-none [&::-webkit-details-marker]:hidden cursor-pointer mx-3 my-1.5 min-h-[44px] inline-flex items-center gap-1.5 text-[15px] font-semibold text-ink underline underline-offset-4 hover:no-underline">
                   <span class="group-open/more:hidden">{t('home.moreTools').replace('{count}', String(list.length))}</span>
                   <span class="hidden group-open/more:inline">{t('home.fewerTools')}</span>
@@ -139,3 +190,22 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
     </div>
   </section>
 </div>
+
+<script>
+  import { track } from '../../lib/analytics/track';
+
+  // Which way into a tool visitors take from the home page (links still navigate as usual)
+  document.addEventListener('click', (e) => {
+    const link = (e.target as Element | null)?.closest<HTMLElement>('[data-track]');
+    if (!link) return;
+    const params: Record<string, string> = {};
+    if (link.dataset.tool) params.tool = link.dataset.tool;
+    if (link.dataset.category) params.category = link.dataset.category;
+    track(link.dataset.track!, params);
+  });
+  for (const el of document.querySelectorAll<HTMLDetailsElement>('details[data-track-open]')) {
+    el.addEventListener('toggle', () => {
+      if (el.open) track(el.dataset.trackOpen!, { category: el.dataset.category || '' });
+    });
+  }
+</script>

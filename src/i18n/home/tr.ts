@@ -5,9 +5,9 @@ export const trHome: LocalizedHomeData = {
     seoDescription: 'Fotoğrafları ücretsiz kırpın, boyutlandırın, sıkıştırın, dönüştürün ve arka planını kaldırın. Kayıt ve filigran yok, resimleriniz cihazınızda kalır.',
     seoTitle: 'Ücretsiz çevrimiçi resim ve PDF araçları',
     badge: '',
-    title: 'İhtiyacınız olan tüm resim araçları tek bir yerde',
+    title: 'Resimler ve PDF’ler için ücretsiz araçlar',
     subtitle:
-      'Fotoğrafları ücretsiz olarak kırpın, boyutlandırın, sıkıştırın, dönüştürün, arka planlarını kaldırın ve temizleyin. Kayıt yok, filigran yok ve resimleriniz cihazınızda kalır.',
+      'Fotoğrafları ve PDF’leri sıkıştırın, boyutlandırın, dönüştürün ve düzenleyin. Kayıt yok, filigran yok; resimleriniz cihazınızdan hiç çıkmaz.',
     dropzoneTitle: 'Başlamak için bir resim bırakın',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG veya iPhone HEIC, en fazla 50 MB',
   },

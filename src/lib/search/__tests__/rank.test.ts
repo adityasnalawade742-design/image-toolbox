@@ -68,6 +68,25 @@ describe('tool search', () => {
     expect(rankTools(items, '  ').length).toBe(items.length);
   });
 
+  it('finds HEIC for the swapped-letter typo "hiec", and nothing unrelated', () => {
+    const found = rankTools(items, 'hiec').map((t) => t.slug);
+    expect(found[0]).toBe('heic-to-jpg');
+    // Convert Image opens HEIC too; nothing else belongs here
+    expect(found.every((s) => s.includes('heic') || s === 'convert-image')).toBe(true);
+  });
+
+  it('lists nothing (not the popular tools) when no word matches', () => {
+    expect(rankTools(items, 'zzzqqq')).toEqual([]);
+  });
+
+  it.each([
+    ['pdf word', 'pdf-to-word'],
+    ['word pdf', 'word-to-pdf'],
+    ['png jpg', 'png-to-jpg'],
+  ])('reads the word order of "%s" as the conversion direction', (q, slug) => {
+    expect(top(q, 1)[0]).toBe(slug);
+  });
+
   it('still answers when not every word matches', () => {
     expect(rankTools(items, 'pdf zzzqqq').length).toBeGreaterThan(0);
   });
@@ -83,9 +102,11 @@ describe('tool search', () => {
     ['ja', 'pdfから画像', ['pdf-to-jpg', 'pdf-to-png']],
     ['ko', '이미지를 pdf로', ['jpg-to-pdf', 'png-to-pdf', 'heic-to-pdf', 'tiff-to-pdf']],
     ['ko', '사진을 png로 변환', ['convert-image', 'jpg-to-png']],
+    ['ja', '圧縮', ['compress-image']],
+    ['ja', 'pdf word', ['pdf-to-word']],
   ])('%s: "%s" puts a matching conversion first', (lang, q, expected) => {
     const loc = getAllLocalizedTools(lang as never);
-    const list = TOOLS.map((t) => ({ slug: t.slug, name: loc[t.slug]?.name || t.name, tagline: loc[t.slug]?.tagline || '', keywords: loc[t.slug]?.keywords || [] }));
+    const list = TOOLS.map((t) => ({ slug: t.slug, name: loc[t.slug]?.name || t.name, tagline: loc[t.slug]?.tagline || '', keywords: loc[t.slug]?.keywords || [], popular: !!t.popular }));
     expect(expected).toContain(rankTools(list, q)[0]?.slug);
   });
 });

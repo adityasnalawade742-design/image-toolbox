@@ -9,6 +9,7 @@ import { downloadBlob } from '../../lib/canvas/engine';
 import { MediaViewer } from '../shared/MediaViewer';
 import { ViewableThumb } from '../shared/ViewableThumb';
 import { pdfPageItems } from '../shared/pdfViewerItems';
+import { consumeHandoffFile } from '../../lib/storage/handoffStorage';
 
 const ACCEPT = 'application/pdf,.pdf';
 const DPIS = [72, 150, 300, 600] as const;
@@ -61,6 +62,11 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
       setError(err instanceof PdfPasswordError ? t('ctl.frompdf.errPassword') : err instanceof PdfInvalidError ? t('ctl.frompdf.errInvalid') : t('ctl.frompdf.errInvalid'));
     }
   };
+
+  // A PDF chosen on the home page for this tool opens straight away
+  useEffect(() => {
+    consumeHandoffFile().then((f) => f && handleFile(f));
+  }, []);
 
   // Page previews, one after another so the first ones appear quickly
   useEffect(() => {

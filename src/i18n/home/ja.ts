@@ -4,9 +4,9 @@ export const jaHome: LocalizedHomeData = {
   hero: {
     seoTitle: '無料のオンライン画像・PDFツール',
     badge: '',
-    title: '必要な画像ツールが、ここにすべて',
+    title: '画像とPDFの無料ツール',
     subtitle:
-      '切り抜き、リサイズ、圧縮、形式変換、背景削除、写真の整理がすべて無料。登録不要、透かしなしで、画像はお使いの端末から外に出ません。',
+      '写真やPDFの圧縮、サイズ変更、変換、編集ができます。登録不要、透かしなし。画像がお使いの端末の外に出ることはありません。',
     dropzoneTitle: '画像をドロップして開始',
     dropzoneSubtitle: 'JPG、PNG、WebP、AVIF、GIF、TIFF、SVG、iPhoneのHEICに対応（最大50 MB）',
   },

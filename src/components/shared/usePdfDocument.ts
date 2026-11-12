@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { openPdf, renderPage, PdfPasswordError } from '../../lib/pdf/pdfToImages';
+import { consumeHandoffFile } from '../../lib/storage/handoffStorage';
 
 // Thumbnails render at a fixed low resolution
 export const THUMB_DPI = 36;
@@ -74,6 +75,11 @@ export function usePdfDocument() {
   }, [doc]);
 
   useEffect(() => () => clear(), []);
+
+  // A PDF chosen on the home page for this tool opens straight away
+  useEffect(() => {
+    consumeHandoffFile().then((f) => f && load(f));
+  }, []);
 
   const reset = () => {
     loadId.current++;
