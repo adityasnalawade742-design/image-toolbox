@@ -113,6 +113,8 @@ export function MemeGeneratorWorkspace() {
   const [strokeWidth, setStrokeWidth] = useState<number>(4);
   const [isUppercase, setIsUppercase] = useState<boolean>(true);
   const [textAlign, setTextAlign] = useState<'left' | 'center' | 'right'>('center');
+  // Captions on the picture (classic), or the top and bottom ones in white bars above and below it (modern)
+  const [captionStyle, setCaptionStyle] = useState<'overlay' | 'bars'>('overlay');
   // Captions dragged off their default spot: centre as a percentage of the image
   const [captionPos, setCaptionPos] = useState<Partial<Record<CaptionId, { x: number; y: number }>>>({});
   // Where each caption was drawn (canvas pixels), for the drag frames and the position sliders
@@ -169,22 +171,52 @@ export function MemeGeneratorWorkspace() {
     const w = imgElement.naturalWidth || imgElement.width || 800;
     const h = imgElement.naturalHeight || imgElement.height || 600;
 
-    canvas.width = w;
-    canvas.height = h;
-
-    // Draw background image
-    ctx.drawImage(imgElement, 0, 0, w, h);
-
-    // Text Style Setup
+    // Text Style Setup (set again after the canvas is resized, which clears it)
     const computedFontSize = (fontSize / 600) * h;
     const fontSpec = `${font.weight} ${computedFontSize}px "${font.family}"`;
-    ctx.font = `${fontSpec}, Impact, sans-serif`;
-    ctx.textAlign = textAlign;
-    ctx.fillStyle = textColor;
-    ctx.strokeStyle = strokeColor;
-    ctx.lineWidth = (strokeWidth / 600) * h;
-    ctx.lineJoin = 'round';
-    ctx.miterLimit = 2;
+    const applyStyle = () => {
+      ctx.font = `${fontSpec}, Impact, sans-serif`;
+      ctx.textAlign = textAlign;
+      ctx.fillStyle = textColor;
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = (strokeWidth / 600) * h;
+      ctx.lineJoin = 'round';
+      ctx.miterLimit = 2;
+      ctx.textBaseline = 'middle';
+    };
+    applyStyle();
+
+    // Caption bars: the top and bottom captions go in white strips that grow the picture instead of covering it
+    const bars = captionStyle === 'bars';
+    const barMargin = Math.max(30, Math.round(w * 0.04));
+    const barLineHeight = computedFontSize * 1.15;
+    const barPad = computedFontSize * 0.45;
+    const barLines = (text: string) =>
+      bars && text.trim() ? wrapTextLines(isUppercase ? text.toUpperCase() : text, w - barMargin * 2, (str) => ctx.measureText(str).width) : [];
+    const topLines = barLines(topText);
+    const bottomLines = barLines(bottomText);
+    const topBar = topLines.length ? Math.round(topLines.length * barLineHeight + barPad * 2) : 0;
+    const bottomBar = bottomLines.length ? Math.round(bottomLines.length * barLineHeight + barPad * 2) : 0;
+
+    canvas.width = w;
+    canvas.height = topBar + h + bottomBar;
+    const H = canvas.height;
+    applyStyle();
+
+    if (bars) {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, w, H);
+    }
+    // Draw background image
+    ctx.drawImage(imgElement, 0, topBar, w, h);
+    if (bars) {
+      ctx.save();
+      ctx.fillStyle = '#000000';
+      const barX = textAlign === 'center' ? w / 2 : textAlign === 'left' ? barMargin : w - barMargin;
+      topLines.forEach((line, i) => ctx.fillText(line, barX, barPad + (i + 0.5) * barLineHeight));
+      bottomLines.forEach((line, i) => ctx.fillText(line, barX, topBar + h + barPad + (i + 0.5) * barLineHeight));
+      ctx.restore();
+    }
 
     // Canvas never triggers web-font downloads itself: fetch the glyphs, then redraw once
     const allText = `${topText}${middleText}${bottomText}`;
@@ -207,7 +239,6 @@ export function MemeGeneratorWorkspace() {
     const textX = textAlign === 'center' ? w / 2 : textAlign === 'left' ? sideMargin : w - sideMargin;
 
     // Lay out each caption as a block: wrapped lines centred on one point, either its default spot or where it was dragged
-    ctx.textBaseline = 'middle';
     const lineHeight = computedFontSize * 1.15;
     const boxes: { id: CaptionId; box: FrameBox }[] = [];
     const captions: [CaptionId, string][] = [
@@ -217,6 +248,8 @@ export function MemeGeneratorWorkspace() {
     ];
     for (const [id, text] of captions) {
       if (!text.trim()) continue;
+      // In bar style the top and bottom captions are already in their bars
+      if (bars && id !== 'middle') continue;
       const finalStr = isUppercase ? text.toUpperCase() : text;
       // Wrap long captions to the image width instead of letting them run off the edges
       const lines = wrapTextLines(finalStr, w - sideMargin * 2, (str) => ctx.measureText(str).width);
@@ -227,10 +260,10 @@ export function MemeGeneratorWorkspace() {
       let cy: number;
       if (custom) {
         cx = (custom.x / 100) * w;
-        cy = (custom.y / 100) * h;
+        cy = (custom.y / 100) * H;
       } else {
         cx = textAlign === 'center' ? w / 2 : textAlign === 'left' ? sideMargin + blockW / 2 : w - sideMargin - blockW / 2;
-        cy = id === 'top' ? 20 + computedFontSize * 0.1 + blockH / 2 : id === 'middle' ? h / 2 : h - 30 + computedFontSize * 0.2 - blockH / 2;
+        cy = topBar + (id === 'top' ? 20 + computedFontSize * 0.1 + blockH / 2 : id === 'middle' ? h / 2 : h - 30 + computedFontSize * 0.2 - blockH / 2);
       }
       const x = textAlign === 'center' ? cx : textAlign === 'left' ? cx - blockW / 2 : cx + blockW / 2;
       lines.forEach((line, i) => {
@@ -241,7 +274,7 @@ export function MemeGeneratorWorkspace() {
       boxes.push({ id, box: { cx, cy, w: blockW, h: blockH } });
     }
     setCaptionBoxes(boxes);
-  }, [imgElement, topText, middleText, bottomText, fontSize, font, textColor, strokeColor, strokeWidth, isUppercase, textAlign, fontTick, captionPos]);
+  }, [imgElement, topText, middleText, bottomText, fontSize, font, textColor, strokeColor, strokeWidth, isUppercase, textAlign, fontTick, captionPos, captionStyle]);
 
   const handleDownload = async (format: SaveFormat = 'png') => {
     if (!canvasRef.current) return;
@@ -276,6 +309,7 @@ export function MemeGeneratorWorkspace() {
     setStrokeWidth(4);
     setIsUppercase(true);
     setTextAlign('center');
+    setCaptionStyle('overlay');
   };
 
   const activeTemplate = MEME_TEMPLATES.find((tpl) => tpl.id === templateId);
@@ -418,6 +452,24 @@ export function MemeGeneratorWorkspace() {
               </div>
 
               <div className="p-4 space-y-4 text-[15px]">
+                <div className="space-y-1.5">
+                  <span className="slug block" id="meme-style">{t('ctl.meme.style')}</span>
+                  <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="meme-style">
+                    {(['overlay', 'bars'] as const).map((st) => (
+                      <button
+                        key={st}
+                        type="button"
+                        aria-pressed={captionStyle === st}
+                        onClick={() => setCaptionStyle(st)}
+                        className={`min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${captionStyle === st ? 'seg-on' : 'seg-off'}`}
+                      >
+                        {t(st === 'overlay' ? 'ctl.meme.styleOverlay' : 'ctl.meme.styleBars')}
+                      </button>
+                    ))}
+                  </div>
+                  {captionStyle === 'bars' && <p className="text-[13px] text-graphite">{t('ctl.meme.styleBarsNote')}</p>}
+                </div>
+
                 {/* Captions */}
                 <label className="block space-y-1.5">
                   <span className="slug block">{t('ctl.meme.topText')}</span>
@@ -474,8 +526,8 @@ export function MemeGeneratorWorkspace() {
                     {(() => {
                       const current = captionBoxes.find((b) => b.id === activeCaption);
                       if (!current) return null;
-                      const W = imgElement.naturalWidth || imgElement.width;
-                      const H = imgElement.naturalHeight || imgElement.height;
+                      const W = canvasRef.current?.width || imgElement.naturalWidth || imgElement.width;
+                      const H = canvasRef.current?.height || imgElement.naturalHeight || imgElement.height;
                       const pos = captionPos[activeCaption] ?? { x: (current.box.cx / W) * 100, y: (current.box.cy / H) * 100 };
                       return (['x', 'y'] as const).map((axis) => (
                         <div key={axis} className="space-y-1">

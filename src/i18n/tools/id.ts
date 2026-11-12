@@ -964,7 +964,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Resize Massal",
     tagline: "Ubah ukuran hingga 50 gambar sekaligus dengan persentase, lebar pasti, atau kotak maksimum, lalu unduh dalam satu ZIP.",
     intro:
-      "Ubah Ukuran Gambar Massal menerapkan aturan ukuran yang sama ke banyak gambar dalam satu langkah. Anda bisa mengubah skala setiap file dengan persentase, mengatur lebar yang pasti, atau memuatkan setiap gambar ke dalam kotak seperti 1200 × 800 agar tidak ada sisi yang melebihi kotak itu. Setiap file bisa mempertahankan format aslinya, dan semua hasil diunduh bersama dalam satu ZIP.",
+      "Ubah Ukuran Gambar Massal menerapkan aturan ukuran yang sama ke banyak gambar dalam satu langkah. Anda bisa mengubah skala setiap file dengan persentase, mengatur lebar yang pasti, atau memuatkan setiap gambar ke dalam kotak seperti 1200 × 800 agar tidak ada sisi yang melebihi kotak itu. Setiap file bisa mempertahankan format aslinya, dan semua hasil diunduh bersama dalam satu ZIP. Dengan lebar dan tinggi diatur, pilih cara gambar berbentuk lain dimuat: potong agar penuh, tambahkan bingkai dengan warna pilihan Anda, atau regangkan. Penggeser kualitas mengatur kualitas JPG dan WebP.",
     seoTitle: "Resize Foto Sekaligus – Ubah Ukuran Banyak Gambar",
     seoDescription:
       "Ubah ukuran banyak gambar sekaligus, gratis. Atur hingga 50 file JPG, PNG, atau WebP dengan persen, lebar pasti, atau kotak maksimum, lalu unduh satu ZIP.",
@@ -1024,7 +1024,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apakah gambar saya akan melar?",
         answer:
-          "Tidak di mode Persentase atau Muat dalam kotak, yang selalu mempertahankan proporsi. Di mode Piksel pasti, jika Anda membuka kunci rasio aspek dan mengatur kedua sisi, gambar dengan bentuk berbeda akan melar.",
+          "Tidak, kecuali Anda memilih Regangkan. Persentase dan Muat dalam kotak selalu mempertahankan proporsi. Dengan lebar dan tinggi diatur, Potong (bawaan) memotong tepi secara merata dan Bingkai memuat seluruh gambar dengan bingkai berwarna.",
       },
       {
         question: "Format file apa saja yang didukung?",
@@ -1034,7 +1034,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Kualitas berapa yang dipakai untuk file JPG dan WebP?",
         answer:
-          "File JPG dan WebP hasil ubah ukuran disimpan dengan kualitas 90%. Saat Anda mengubah gambar transparan ke JPG, area transparan menjadi putih.",
+          "File JPG dan WebP disimpan dengan kualitas 95% secara bawaan; ubah dengan penggeser Kualitas. File PNG selalu lossless. Saat mengonversi gambar transparan ke JPG, area transparan menjadi putih.",
       },
       {
         question: "Apakah file saya diunggah ke suatu tempat?",
@@ -2115,7 +2115,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Ubah file vektor SVG menjadi gambar PNG yang tajam dengan ukuran 1x, 2x, 4x, atau 8x, dengan transparansi tetap terjaga.",
     intro:
-      "SVG ke PNG mengubah grafik vektor, seperti logo atau ikon, menjadi gambar PNG untuk tempat yang tidak menerima file SVG. Pilih 1x, 2x, 4x, atau 8x dari ukuran asli SVG; karena vektor digambar ulang pada ukuran itu, skala yang lebih besar menghasilkan gambar yang lebih tajam, bukan buram. Background transparan tetap transparan di PNG.",
+      "SVG ke PNG mengubah grafik vektor, seperti logo atau ikon, menjadi gambar PNG untuk tempat yang tidak menerima file SVG. Pilih 1x, 2x, 4x, atau 8x dari ukuran asli SVG; karena vektor digambar ulang pada ukuran itu, skala yang lebih besar menghasilkan gambar yang lebih tajam, bukan buram. Background transparan tetap transparan di PNG. Saat mengonversi beberapa SVG sekaligus, setiap file bisa dibuat dengan lebar atau tinggi yang sama.",
     seoTitle: "Ubah SVG ke PNG – Resolusi Tinggi, Transparan",
     seoDescription:
       "Ubah SVG ke PNG online gratis. Ekspor pada 1x, 2x, 4x, atau 8x untuk gambar tajam beresolusi tinggi dengan background transparan. Dikonversi di browser Anda.",
@@ -2190,7 +2190,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     name: "SVG ke JPG",
     shortName: "SVG → JPG",
     tagline: "Ubah grafis SVG menjadi gambar JPG dengan skala berapa pun, dengan warna background pilihan Anda. Konversi berjalan di perangkat Anda.",
-    intro: "Grafis SVG tetap tajam di ukuran berapa pun, tetapi banyak aplikasi, media sosial, dan formulir unggah hanya menerima gambar biasa. SVG ke JPG menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai JPG. JPG tidak mendukung transparansi, jadi area transparan diisi dengan putih atau warna pilihan Anda. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    intro: "Grafis SVG tetap tajam di ukuran berapa pun, tetapi banyak aplikasi, media sosial, dan formulir unggah hanya menerima gambar biasa. SVG ke JPG menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai JPG. JPG tidak mendukung transparansi, jadi area transparan diisi dengan putih atau warna pilihan Anda. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda. Saat mengonversi beberapa SVG sekaligus, setiap file bisa dibuat dengan lebar atau tinggi yang sama.",
     seoTitle: "Ubah SVG ke JPG – Ukuran Berapa Pun, Gratis",
     seoDescription: "Ubah grafis SVG ke JPG di browser dengan skala 1x hingga 8x dan warna background pilihan Anda. Gratis dan tidak ada yang diunggah.",
     keywords: [
@@ -2255,7 +2255,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     name: "SVG ke WebP",
     shortName: "SVG → WebP",
     tagline: "Ubah grafis SVG menjadi gambar WebP yang kecil dengan skala berapa pun, termasuk transparansinya. Konversi berjalan di perangkat Anda.",
-    intro: "Kadang situs web, aplikasi, atau pembuat email membutuhkan gambar biasa, bukan SVG. SVG ke WebP menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai WebP, format kecil yang ditampilkan semua browser saat ini dan tetap mempertahankan transparansi. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda.",
+    intro: "Kadang situs web, aplikasi, atau pembuat email membutuhkan gambar biasa, bukan SVG. SVG ke WebP menggambar ulang SVG pada skala pilihan Anda, dari 1x hingga 8x, lalu menyimpannya sebagai WebP, format kecil yang ditampilkan semua browser saat ini dan tetap mempertahankan transparansi. Konversi berlangsung di browser Anda, jadi file tidak pernah meninggalkan perangkat Anda. Saat mengonversi beberapa SVG sekaligus, setiap file bisa dibuat dengan lebar atau tinggi yang sama.",
     seoTitle: "Ubah SVG ke WebP – File Kecil, Transparansi Terjaga",
     seoDescription: "Ubah grafis SVG ke WebP di browser dengan skala 1x hingga 8x, dengan transparansi tetap terjaga. Gratis dan tidak ada yang diunggah.",
     keywords: [
@@ -2405,7 +2405,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Buat Meme",
     tagline: "Buat meme dari foto Anda sendiri atau template awal, dengan teks tebal di atas, tengah, dan bawah.",
     intro:
-      "Pembuat Meme menambahkan teks meme klasik ke sebuah gambar. Unggah gambar Anda sendiri atau mulai dari salah satu dari delapan template bawaan yang sederhana, lalu ketik teks atas, tengah, dan bawah; baris yang panjang otomatis turun ke baris baru agar muat. Pilih font (Impact secara default), ukuran, warna teks dan garis tepi, perataan, serta huruf kapital, lalu unduh meme sebagai PNG, JPG, atau WebP tanpa watermark.",
+      "Pembuat Meme menambahkan teks meme klasik ke sebuah gambar. Unggah gambar Anda sendiri atau mulai dari salah satu dari delapan template bawaan yang sederhana, lalu ketik teks atas, tengah, dan bawah; baris yang panjang otomatis turun ke baris baru agar muat. Pilih font (Impact secara default), ukuran, warna teks dan garis tepi, perataan, serta huruf kapital, lalu unduh meme sebagai PNG, JPG, atau WebP tanpa watermark. Pilih Bilah teks untuk gaya modern: teks hitam di bilah putih di atas dan di bawah gambar, tanpa menutupi apa pun.",
     seoTitle: "Pembuat Meme Online – Tambah Teks ke Gambar",
     seoDescription:
       "Buat meme online gratis. Tambahkan teks atas, tengah, dan bawah ke foto Anda atau template, pilih font, ukuran, dan garis tepi, lalu unduh tanpa watermark.",
@@ -2471,7 +2471,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Teks saya menutupi terlalu banyak bagian gambar. Apa yang bisa saya lakukan?",
         answer:
-          "Kecilkan ukuran font, atau pindahkan sebagian teks ke teks tengah atau bawah. Teks yang panjang otomatis terbagi ke beberapa baris.",
+          "Pilih Bilah teks untuk menaruh teks atas dan bawah di atas dan di bawah gambar, bukan di atasnya. Atau kecilkan ukuran huruf, atau pindahkan sebagian teks ke kolom lain; teks panjang otomatis dibagi menjadi beberapa baris.",
       },
       {
         question: "Bisakah saya membuat meme di HP?",
@@ -2485,7 +2485,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "Bagi Grid",
     tagline: "Potong satu gambar menjadi grid potongan, seperti grid Instagram 3×3 atau carousel panorama, lalu unduh sebagai ZIP.",
     intro:
-      "Pemotong Gambar Jadi Grid membagi gambar menjadi baris dan kolom berupa file gambar terpisah. Pakai preset Instagram 3×3 untuk grid profil, Panorama 3×1 atau Carousel 2×1 untuk postingan geser, 2×2 untuk empat bagian sama besar, atau atur grid sendiri hingga 12 baris dan 12 kolom. Semua potongan diunduh bersama sebagai file PNG bernomor dalam satu ZIP, atau Anda bisa mengklik satu potongan untuk menyimpan potongan itu saja.",
+      "Pemotong Gambar Jadi Grid membagi gambar menjadi baris dan kolom berupa file gambar terpisah. Pakai preset Instagram 3×3 untuk grid profil, Panorama 3×1 atau Carousel 2×1 untuk postingan geser, 2×2 untuk empat bagian sama besar, atau atur grid sendiri hingga 12 baris dan 12 kolom. Semua potongan diunduh bersama sebagai file PNG bernomor dalam satu ZIP, atau Anda bisa mengklik satu potongan untuk menyimpan potongan itu saja. Instagram kini menampilkan grid profil dalam 3:4, jadi preset Grid Instagram 3×3 (3:4) memotong ubin dalam bentuk itu, dengan nomor sesuai urutan posting.",
     seoTitle: "Potong Gambar Jadi Grid – Instagram 3×3 dan Panorama",
     seoDescription:
       "Potong gambar jadi grid online gratis. Buat grid Instagram 3x3, potongan carousel panorama, atau grid khusus hingga 12x12, lalu unduh semua sebagai ZIP.",
@@ -2539,12 +2539,12 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Dalam urutan apa saya harus memposting potongan di Instagram?",
         answer:
-          "Potongan diberi nomor dari kiri ke kanan dan dari atas ke bawah, dimulai dari tile_01. Instagram menampilkan postingan terbaru lebih dulu, jadi unggah potongan terakhir lebih dulu (tile_09 untuk grid 3×3) dan akhiri dengan tile_01.",
+          "Dengan preset grid Instagram, ubin diberi nama sesuai urutan posting: post-01 adalah ubin kanan bawah dan diunggah pertama, nomor terbesar, ubin kiri atas, diunggah terakhir. Nomor di pratinjau menunjukkan urutan yang sama.",
       },
       {
         question: "Gambar seperti apa yang sebaiknya dipakai untuk grid 3×3?",
         answer:
-          "Untuk potongan persegi, mulai dari gambar persegi; potong dulu ke 1:1 jika perlu. Instagram mungkin menampilkan thumbnail profil dengan potongan berbeda, jadi periksa hasilnya setelah memposting.",
+          "Instagram kini menampilkan posting profil sebagai ubin 3:4, jadi gunakan preset Grid Instagram 3×3 (3:4) dengan gambar berbentuk kira-kira 3:4. Untuk grid persegi lama, gunakan preset persegi dengan gambar persegi.",
       },
       {
         question: "Bagaimana cara membagi panorama untuk postingan carousel?",
@@ -3282,7 +3282,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "Apakah AVIF lossless seperti PNG?",
-        answer: "Tidak di sini. AVIF dikompres dengan kualitas pilihan Anda, jadi detail yang sangat kecil bisa berubah. Pada 85% atau lebih, sebagian besar gambar terlihat sama dengan PNG-nya.",
+        answer: "Hanya jika Anda mencentang Lossless, yang menjaga setiap piksel persis tetapi menghasilkan file lebih besar. Selain itu, AVIF dikompres dengan kualitas pilihan Anda sehingga detail kecil bisa berubah; pada 85% atau lebih, sebagian besar gambar terlihat sama dengan PNG.",
       },
       {
         question: "Apakah AVIF mempertahankan transparansi?",
@@ -8564,7 +8564,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "name": "Pembuat Sampul Facebook",
     "shortName": "Sampul Facebook",
     "tagline": "Buat gambar berukuran tepat untuk sampul atau post Facebook. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Sampul Facebook menyesuaikan gambar ke ukuran 851 × 315 yang disarankan Facebook untuk sampul. Facebook menampilkan sampul dalam bentuk berbeda di komputer dan ponsel, jadi letakkan wajah dan teks di dekat bagian tengah. Tersedia juga ukuran umum 1200 × 630 untuk post link dan gambar. Seret gambar sampai posisinya pas, lalu unduh. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda.",
+    "intro": "Pembuat Sampul Facebook menyesuaikan gambar ke ukuran 851 × 315 yang disarankan Facebook untuk sampul. Facebook menampilkan sampul dalam bentuk berbeda di komputer dan ponsel, jadi letakkan wajah dan teks di dekat bagian tengah. Tersedia juga ukuran umum 1200 × 630 untuk post link dan gambar. Seret gambar sampai posisinya pas, lalu unduh. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda. Tampilkan area aman menandai kira-kira bagian yang terlihat di ponsel.",
     "seoTitle": "Buat Sampul Facebook – 851×315, Gratis",
     "seoDescription": "Ubah ukuran gambar untuk sampul (851×315) atau post (1200×630) Facebook. Seret untuk mengatur posisi, lalu unduh. Gratis, tanpa daftar, tanpa unggah.",
     "keywords": ["ukuran foto sampul facebook", "buat sampul facebook", "ubah ukuran gambar untuk sampul facebook", "851x315", "ukuran gambar post facebook"],
@@ -8588,7 +8588,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "name": "Pembuat Banner LinkedIn",
     "shortName": "Banner LinkedIn",
     "tagline": "Buat banner profil LinkedIn 1584 × 396 dari gambar apa pun. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Banner LinkedIn memotong gambar ke bentuk sangat lebar 1584 × 396 untuk banner profil LinkedIn. Seret gambar ke atas dan ke bawah untuk memilih jalur yang Anda inginkan, dan zoom jika perlu. Tersedia juga ukuran 1200 × 627 untuk post link dan gambar. Foto profil menutupi sebagian kiri bawah banner, jadi jauhkan detail penting dari sana. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda.",
+    "intro": "Pembuat Banner LinkedIn memotong gambar ke bentuk sangat lebar 1584 × 396 untuk banner profil LinkedIn. Seret gambar ke atas dan ke bawah untuk memilih jalur yang Anda inginkan, dan zoom jika perlu. Tersedia juga ukuran 1200 × 627 untuk post link dan gambar. Foto profil menutupi sebagian kiri bawah banner, jadi jauhkan detail penting dari sana. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda. Aktifkan Tampilkan area aman untuk melihat kira-kira letak foto.",
     "seoTitle": "Buat Banner LinkedIn – 1584×396, Gratis",
     "seoDescription": "Buat banner profil LinkedIn 1584×396 atau gambar post 1200×627 dari gambar apa pun. Seret untuk mengatur posisi. Gratis, tanpa daftar, tanpa unggah.",
     "keywords": ["ukuran banner linkedin", "ukuran foto latar linkedin", "buat banner linkedin", "1584x396", "gambar sampul linkedin"],
@@ -8636,7 +8636,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     "name": "Pembuat Gambar Open Graph",
     "shortName": "Gambar Open Graph",
     "tagline": "Buat gambar 1200 × 630 yang tampil saat link dibagikan. Gratis dan berjalan di perangkat Anda.",
-    "intro": "Pembuat Gambar Open Graph menyiapkan gambar yang muncul saat seseorang membagikan halaman Anda di media sosial atau aplikasi chat. Alat ini menyesuaikan gambar apa pun ke ukuran 1200 × 630 yang banyak dipakai. Setelah gambar ada di situs Anda, arahkan tag og:image halaman Anda ke gambar itu. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda.",
+    "intro": "Pembuat Gambar Open Graph menyiapkan gambar yang muncul saat seseorang membagikan halaman Anda di media sosial atau aplikasi chat. Alat ini menyesuaikan gambar apa pun ke ukuran 1200 × 630 yang banyak dipakai. Setelah gambar ada di situs Anda, arahkan tag og:image halaman Anda ke gambar itu. Anda juga bisa menambahkan teks, seperti judul atau nama, dengan font, warna, dan garis tepi pilihan Anda. Tampilkan area aman menandai persegi di tengah yang ditampilkan sebagian aplikasi chat.",
     "seoTitle": "Buat Gambar Open Graph – 1200×630 og:image, Gratis",
     "seoDescription": "Buat gambar Open Graph 1200×630 untuk pratinjau link di media sosial dan aplikasi chat. Seret untuk mengatur posisi, lalu unduh. Gratis, tanpa unggah.",
     "keywords": ["ukuran gambar open graph", "generator gambar og", "ukuran og:image", "1200x630", "gambar pratinjau link"],

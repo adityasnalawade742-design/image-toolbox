@@ -1,4 +1,5 @@
 import { canvasToBlob, loadImage, processCanvasBest, type WatermarkOptions } from './engine';
+import { scaleToSide } from './limits';
 import { isHeicFile, convertHeic } from './heicLoader';
 import { isTiffFile, convertTiff } from './tiffLoader';
 import { isAnimatedImage } from './animated';
@@ -24,6 +25,8 @@ export interface ConvertSettings {
   background: string;
   /** SVG converters: output size as a multiple of the drawing's own size */
   svgScale: number;
+  /** SVG converters: instead of the multiple, every file at this exact width or height (the other side follows) */
+  svgSize?: { side: 'width' | 'height'; px: number };
   /** Watermark Image on several photos: the same watermark on each */
   watermark?: WatermarkOptions;
 }
@@ -80,9 +83,15 @@ export async function convertImageFile(file: File, s: ConvertSettings): Promise<
   }
 
   const svg = s.slug.startsWith('svg-to-');
+  // Large drawings at 8x, or a big exact size, would exceed the canvas a browser can draw: capped like the single page
+  const svgScale = !svg
+    ? 1
+    : s.svgSize && s.svgSize.px > 0
+      ? s.svgSize.side === 'width' ? scaleToSide(s.svgSize.px, w, h) : scaleToSide(s.svgSize.px, h, w)
+      : scaleToSide(w * s.svgScale, w, h);
   const canvas = await processCanvasBest(img, {
-    width: svg ? Math.max(1, Math.round(w * s.svgScale)) : w,
-    height: svg ? Math.max(1, Math.round(h * s.svgScale)) : h,
+    width: svg ? Math.max(1, Math.round(w * svgScale)) : w,
+    height: svg ? Math.max(1, Math.round(h * svgScale)) : h,
     rotation: 0,
     flipH: false,
     flipV: false,
@@ -93,7 +102,7 @@ export async function convertImageFile(file: File, s: ConvertSettings): Promise<
   });
   const encodeOptions = { best: true, lossyPng: false, icc };
   let blob: Blob;
-  if (format === 'image/webp' && s.webpLossless) {
+  if ((format === 'image/webp' || format === 'image/avif') && s.webpLossless) {
     blob = await canvasToBlob(canvas, format, 1, undefined, { ...encodeOptions, lossless: true });
   } else {
     blob = await canvasToBlob(canvas, format, s.quality / 100, undefined, encodeOptions);

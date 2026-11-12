@@ -962,7 +962,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Redimensionar en lote",
     tagline: "Cambia el tamaño de hasta 50 imágenes a la vez por porcentaje, ancho exacto o un marco máximo, y descárgalas en un solo ZIP.",
     intro:
-      "El Redimensionador de imágenes por lotes aplica la misma regla de tamaño a muchas imágenes en un solo paso. Puedes escalar cada archivo por un porcentaje, fijar un ancho exacto o ajustar cada imagen dentro de un marco, como 1200 × 800, para que ningún lado sea más grande que el marco. Cada archivo puede conservar su formato original, y todos los resultados se descargan juntos en un ZIP.",
+      "El Redimensionador de imágenes por lotes aplica la misma regla de tamaño a muchas imágenes en un solo paso. Puedes escalar cada archivo por un porcentaje, fijar un ancho exacto o ajustar cada imagen dentro de un marco, como 1200 × 800, para que ningún lado sea más grande que el marco. Cada archivo puede conservar su formato original, y todos los resultados se descargan juntos en un ZIP. Con ancho y alto definidos, elige cómo encajan las imágenes de otra forma: recortar para llenar, añadir bordes del color que elijas o estirar. Un control de calidad ajusta la calidad de JPG y WebP.",
     seoTitle: "Redimensionar imágenes por lotes: varias a la vez",
     seoDescription:
       "Redimensionar varias imágenes a la vez gratis. Escala hasta 50 archivos JPG, PNG o WebP por porcentaje, ancho exacto o un marco máximo, y descárgalos en un ZIP.",
@@ -1022,7 +1022,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Se deformarán mis imágenes?",
         answer:
-          "No en los modos Porcentaje o Ajustar a un marco, que siempre mantienen las proporciones. En el modo Píxeles exactos, si desbloqueas la proporción y fijas ambos lados, las imágenes con otra forma se deformarán.",
+          "Solo si eliges Estirar. Porcentaje y Ajustar a un marco siempre mantienen la proporción. Con ancho y alto definidos, Recortar (la opción predeterminada) recorta los bordes por igual y Bordes encaja la imagen entera con un borde de color.",
       },
       {
         question: "¿Qué formatos de archivo se admiten?",
@@ -1032,7 +1032,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué calidad se usa para los archivos JPG y WebP?",
         answer:
-          "Los archivos JPG y WebP redimensionados se guardan con una calidad del 90%. Cuando conviertes imágenes transparentes a JPG, las zonas transparentes quedan blancas.",
+          "Los JPG y WebP se guardan al 95 % de calidad de forma predeterminada; cámbiala con el control Calidad. Los PNG siempre son sin pérdida. Al convertir imágenes transparentes a JPG, las zonas transparentes quedan blancas.",
       },
       {
         question: "¿Se suben mis archivos a algún sitio?",
@@ -2112,7 +2112,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Convierte archivos vectoriales SVG en imágenes PNG nítidas a tamaño 1x, 2x, 4x u 8x, conservando la transparencia.",
     intro:
-      "SVG a PNG convierte un gráfico vectorial, como un logotipo o un icono, en una imagen PNG para los sitios que no aceptan archivos SVG. Elige 1x, 2x, 4x u 8x el tamaño propio del SVG; como el vector se vuelve a dibujar a ese tamaño, una escala mayor da una imagen más nítida, no más borrosa. Los fondos transparentes siguen siéndolo en el PNG.",
+      "SVG a PNG convierte un gráfico vectorial, como un logotipo o un icono, en una imagen PNG para los sitios que no aceptan archivos SVG. Elige 1x, 2x, 4x u 8x el tamaño propio del SVG; como el vector se vuelve a dibujar a ese tamaño, una escala mayor da una imagen más nítida, no más borrosa. Los fondos transparentes siguen siéndolo en el PNG. Si conviertes varios SVG a la vez, todos pueden salir con el mismo ancho o alto.",
     seoTitle: "Convertir SVG a PNG en alta resolución y transparente",
     seoDescription:
       "Convertir SVG a PNG online gratis. Exporta a 1x, 2x, 4x u 8x para obtener imágenes nítidas de alta resolución con fondo transparente. En tu navegador.",
@@ -2187,7 +2187,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     name: "SVG a JPG",
     shortName: "SVG → JPG",
     tagline: "Convierte gráficos SVG en imágenes JPG a cualquier escala, con el color de fondo que elijas. La conversión se hace en tu dispositivo.",
-    intro: "Los gráficos SVG se ven nítidos a cualquier tamaño, pero muchas apps, redes sociales y formularios de subida solo aceptan imágenes normales. SVG a JPG vuelve a dibujar el SVG a la escala que elijas, de 1x a 8x, y lo guarda como JPG. JPG no admite transparencia, así que las zonas transparentes se rellenan de blanco o del color que elijas. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo.",
+    intro: "Los gráficos SVG se ven nítidos a cualquier tamaño, pero muchas apps, redes sociales y formularios de subida solo aceptan imágenes normales. SVG a JPG vuelve a dibujar el SVG a la escala que elijas, de 1x a 8x, y lo guarda como JPG. JPG no admite transparencia, así que las zonas transparentes se rellenan de blanco o del color que elijas. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo. Si conviertes varios SVG a la vez, todos pueden salir con el mismo ancho o alto.",
     seoTitle: "Convertir SVG a JPG gratis y a cualquier tamaño",
     seoDescription: "Convierte gráficos SVG a JPG en tu navegador a escala de 1x a 8x, con el color de fondo que elijas. Gratis y sin subir nada.",
     keywords: [
@@ -2252,7 +2252,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     name: "SVG a WebP",
     shortName: "SVG → WebP",
     tagline: "Convierte gráficos SVG en imágenes WebP ligeras a cualquier escala, con transparencia incluida. La conversión se hace en tu dispositivo.",
-    intro: "A veces una web, una app o un editor de emails necesita una imagen normal en lugar de un SVG. SVG a WebP vuelve a dibujar el SVG a la escala que elijas, de 1x a 8x, y lo guarda como WebP, un formato ligero que muestran todos los navegadores actuales y que conserva la transparencia. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo.",
+    intro: "A veces una web, una app o un editor de emails necesita una imagen normal en lugar de un SVG. SVG a WebP vuelve a dibujar el SVG a la escala que elijas, de 1x a 8x, y lo guarda como WebP, un formato ligero que muestran todos los navegadores actuales y que conserva la transparencia. La conversión ocurre en tu navegador, así que el archivo nunca sale de tu dispositivo. Si conviertes varios SVG a la vez, todos pueden salir con el mismo ancho o alto.",
     seoTitle: "Convertir SVG a WebP: archivos ligeros con transparencia",
     seoDescription: "Convierte gráficos SVG a WebP en tu navegador a escala de 1x a 8x, conservando la transparencia. Gratis y sin subir nada.",
     keywords: [
@@ -2402,7 +2402,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Crear meme",
     tagline: "Haz un meme con tu propia foto o una plantilla, con textos llamativos arriba, en el centro y abajo.",
     intro:
-      "El Generador de memes añade los textos clásicos de meme a una imagen. Sube tu propia imagen o empieza con una de las ocho plantillas sencillas incluidas, y escribe los textos superior, central e inferior; las líneas largas se ajustan solas al ancho. Elige la fuente (Impact por defecto), el tamaño, los colores del texto y del contorno, la alineación y las mayúsculas, y descarga el meme en PNG, JPG o WebP sin ninguna marca de agua.",
+      "El Generador de memes añade los textos clásicos de meme a una imagen. Sube tu propia imagen o empieza con una de las ocho plantillas sencillas incluidas, y escribe los textos superior, central e inferior; las líneas largas se ajustan solas al ancho. Elige la fuente (Impact por defecto), el tamaño, los colores del texto y del contorno, la alineación y las mayúsculas, y descarga el meme en PNG, JPG o WebP sin ninguna marca de agua. Elige Barras de texto para el estilo moderno: texto negro en barras blancas encima y debajo de la imagen, sin tapar nada.",
     seoTitle: "Generador de memes: pon texto a cualquier imagen",
     seoDescription:
       "Crear memes online gratis. Añade textos arriba, en el centro y abajo a tu foto o a una plantilla, elige fuente, tamaño y contorno. Sin marca de agua.",
@@ -2468,7 +2468,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mi texto tapa demasiado la imagen. ¿Qué puedo hacer?",
         answer:
-          "Reduce el tamaño de fuente o pasa parte del texto al texto central o inferior. Los textos largos se reparten solos en varias líneas.",
+          "Elige Barras de texto para poner los textos superior e inferior encima y debajo de la imagen en vez de sobre ella. También puedes bajar el tamaño de letra o pasar parte del texto a otro campo; los textos largos se dividen en varias líneas solos.",
       },
       {
         question: "¿Puedo hacer memes en el teléfono?",
@@ -2482,7 +2482,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "Dividir imagen",
     tagline: "Corta una imagen en una cuadrícula de partes, como una cuadrícula 3×3 de Instagram o un carrusel panorámico, y descarga un ZIP.",
     intro:
-      "Dividir imagen en cuadrícula reparte una imagen en filas y columnas de archivos de imagen independientes. Usa el valor Cuadrícula 3×3 de Instagram para un perfil en cuadrícula, Panorámica 3×1 o Carrusel 2×1 para publicaciones que se deslizan, 2×2 para cuatro partes iguales, o define tu propia cuadrícula de hasta 12 filas y 12 columnas. Todas las partes se descargan juntas como archivos PNG numerados en un ZIP, o puedes hacer clic en una sola parte para guardar solo esa.",
+      "Dividir imagen en cuadrícula reparte una imagen en filas y columnas de archivos de imagen independientes. Usa el valor Cuadrícula 3×3 de Instagram para un perfil en cuadrícula, Panorámica 3×1 o Carrusel 2×1 para publicaciones que se deslizan, 2×2 para cuatro partes iguales, o define tu propia cuadrícula de hasta 12 filas y 12 columnas. Todas las partes se descargan juntas como archivos PNG numerados en un ZIP, o puedes hacer clic en una sola parte para guardar solo esa. Instagram muestra ahora la cuadrícula del perfil en 3:4, así que el ajuste Cuadrícula 3×3 de Instagram (3:4) corta los mosaicos con esa forma, numerados en el orden de publicación.",
     seoTitle: "Dividir imagen en cuadrícula: Instagram 3×3 y panorámica",
     seoDescription:
       "Dividir una imagen en cuadrícula gratis. Crea una cuadrícula 3x3 para Instagram, un carrusel panorámico o una cuadrícula de hasta 12x12 en un ZIP.",
@@ -2536,12 +2536,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿En qué orden debo publicar las partes en Instagram?",
         answer:
-          "Las partes se numeran de izquierda a derecha y de arriba abajo, empezando por tile_01. Instagram muestra primero la publicación más reciente, así que sube primero la última parte (tile_09 en una cuadrícula 3×3) y termina con tile_01.",
+          "Con un ajuste de cuadrícula de Instagram, los mosaicos se nombran en orden de publicación: post-01 es el de abajo a la derecha y se publica primero, y el número más alto, el de arriba a la izquierda, se publica al final. Los números de la vista previa muestran el mismo orden.",
       },
       {
         question: "¿Qué imagen debo usar para una cuadrícula 3×3?",
         answer:
-          "Para partes cuadradas, empieza con una imagen cuadrada; recórtala antes a 1:1 si hace falta. Instagram puede mostrar las miniaturas del perfil con otro recorte, así que revisa el resultado después de publicar.",
+          "Instagram muestra ahora las publicaciones del perfil como mosaicos 3:4, así que usa el ajuste Cuadrícula 3×3 de Instagram (3:4) con una imagen de forma aproximada 3:4. Para la cuadrícula cuadrada antigua, usa el ajuste cuadrado con una imagen cuadrada.",
       },
       {
         question: "¿Cómo divido una panorámica para una publicación en carrusel?",
@@ -3276,7 +3276,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "¿AVIF es sin pérdida como PNG?",
-        answer: "Aquí no. El AVIF se comprime con la calidad que elijas, así que pueden cambiar detalles muy pequeños. Con un 85% o más, la mayoría de las imágenes se ven igual que el PNG.",
+        answer: "Solo si marcas Sin pérdida, que conserva cada píxel exacto pero da un archivo más grande. Si no, el AVIF se comprime con la calidad que elijas, así que pueden cambiar detalles mínimos; al 85 % o más, la mayoría de las imágenes se ven igual que el PNG.",
       },
       {
         question: "¿AVIF conserva la transparencia?",
@@ -8567,7 +8567,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "name": "Crear portadas de Facebook",
     "shortName": "Portada de Facebook",
     "tagline": "Da a una imagen el tamaño correcto para una portada o publicación de Facebook. Gratis y funciona en tu dispositivo.",
-    "intro": "Crear portadas de Facebook ajusta una imagen al tamaño de 851 × 315 que Facebook recomienda para las portadas. Facebook muestra las portadas con formas distintas en ordenadores y móviles, así que deja las caras y el texto cerca del centro. También incluye el tamaño habitual de 1200 × 630 para publicaciones con enlace o imagen. Arrastra la imagen hasta que quede bien y descárgala. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas.",
+    "intro": "Crear portadas de Facebook ajusta una imagen al tamaño de 851 × 315 que Facebook recomienda para las portadas. Facebook muestra las portadas con formas distintas en ordenadores y móviles, así que deja las caras y el texto cerca del centro. También incluye el tamaño habitual de 1200 × 630 para publicaciones con enlace o imagen. Arrastra la imagen hasta que quede bien y descárgala. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas. Mostrar la zona segura marca aproximadamente la parte que muestran los teléfonos.",
     "seoTitle": "Crear portadas de Facebook – tamaño 851×315, gratis",
     "seoDescription": "Redimensiona una imagen para una portada (851×315) o publicación de Facebook (1200×630). Arrastra para colocarla y descárgala. Gratis, sin subir nada.",
     "keywords": ["tamaño de foto de portada de facebook", "crear portada de facebook", "redimensionar imagen para portada de facebook", "851x315", "tamaño de imagen para publicación de facebook"],
@@ -8591,7 +8591,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "name": "Crear banners de LinkedIn",
     "shortName": "Banner de LinkedIn",
     "tagline": "Crea un banner de perfil de LinkedIn de 1584 × 396 a partir de cualquier imagen. Gratis y funciona en tu dispositivo.",
-    "intro": "Crear banners de LinkedIn recorta una imagen a la forma muy ancha de 1584 × 396 de un banner de perfil de LinkedIn. Arrastra la imagen arriba y abajo para elegir la franja que quieres, y acércala si hace falta. También incluye el tamaño de 1200 × 627 para publicaciones con enlace o imagen. Tu foto de perfil tapa parte de la zona inferior izquierda del banner, así que deja los detalles importantes lejos de ahí. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas.",
+    "intro": "Crear banners de LinkedIn recorta una imagen a la forma muy ancha de 1584 × 396 de un banner de perfil de LinkedIn. Arrastra la imagen arriba y abajo para elegir la franja que quieres, y acércala si hace falta. También incluye el tamaño de 1200 × 627 para publicaciones con enlace o imagen. Tu foto de perfil tapa parte de la zona inferior izquierda del banner, así que deja los detalles importantes lejos de ahí. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas. Activa Mostrar la zona segura para ver aproximadamente dónde queda la foto.",
     "seoTitle": "Crear banners de LinkedIn – 1584×396, gratis",
     "seoDescription": "Crea un banner de perfil de LinkedIn de 1584×396 o una imagen de publicación de 1200×627 a partir de cualquier imagen. Gratis, sin subir nada.",
     "keywords": ["tamaño de banner de linkedin", "tamaño de foto de fondo de linkedin", "crear banner de linkedin", "1584x396", "imagen de portada de linkedin"],
@@ -8639,7 +8639,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     "name": "Crear imágenes Open Graph",
     "shortName": "Imagen Open Graph",
     "tagline": "Crea la imagen de 1200 × 630 que se muestra al compartir un enlace. Gratis y funciona en tu dispositivo.",
-    "intro": "Crear imágenes Open Graph prepara la imagen que aparece cuando alguien comparte tu página en redes sociales o en una app de mensajería. Deja cualquier imagen en el tamaño de 1200 × 630, muy extendido. Cuando esté en tu sitio, apunta a ella la etiqueta og:image de tu página. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas.",
+    "intro": "Crear imágenes Open Graph prepara la imagen que aparece cuando alguien comparte tu página en redes sociales o en una app de mensajería. Deja cualquier imagen en el tamaño de 1200 × 630, muy extendido. Cuando esté en tu sitio, apunta a ella la etiqueta og:image de tu página. También puedes añadir texto, como un título o un nombre, con la fuente, el color y el contorno que elijas. Mostrar la zona segura marca el cuadrado central que muestran algunas apps de chat.",
     "seoTitle": "Crear imágenes Open Graph – 1200×630 og:image, gratis",
     "seoDescription": "Crea una imagen Open Graph de 1200×630 para vistas previas de enlaces en redes sociales y apps de mensajería. Gratis, sin subir nada.",
     "keywords": ["tamaño de imagen open graph", "generador de imagen og", "tamaño de og:image", "1200x630", "imagen de vista previa de enlace"],

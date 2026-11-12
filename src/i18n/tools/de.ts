@@ -962,7 +962,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Stapel skalieren",
     tagline: "Ändere die Größe von bis zu 50 Bildern auf einmal, in Prozent, auf eine exakte Breite oder in einen Rahmen, und lade sie als ZIP herunter.",
     intro:
-      "Mehrere Bilder skalieren wendet dieselbe Größenregel in einem Schritt auf viele Bilder an. Du kannst jede Datei um einen Prozentwert skalieren, eine exakte Breite festlegen oder jedes Bild in einen Rahmen wie 1200 × 800 einpassen, sodass keine Seite größer als der Rahmen ist. Jede Datei kann ihr Originalformat behalten, und alle Ergebnisse lädst du zusammen als ZIP herunter.",
+      "Mehrere Bilder skalieren wendet dieselbe Größenregel in einem Schritt auf viele Bilder an. Du kannst jede Datei um einen Prozentwert skalieren, eine exakte Breite festlegen oder jedes Bild in einen Rahmen wie 1200 × 800 einpassen, sodass keine Seite größer als der Rahmen ist. Jede Datei kann ihr Originalformat behalten, und alle Ergebnisse lädst du zusammen als ZIP herunter. Mit Breite und Höhe wählst du, wie Bilder mit anderer Form hineinpassen: zuschneiden, Ränder in einer Farbe deiner Wahl hinzufügen oder strecken. Ein Regler legt die Qualität von JPG und WebP fest.",
     seoTitle: "Mehrere Bilder verkleinern – Größe stapelweise ändern",
     seoDescription:
       "Mehrere Bilder auf einmal verkleinern, kostenlos: bis zu 50 JPG-, PNG- oder WebP-Dateien in Prozent, auf eine Breite oder in einen Rahmen skalieren, als ZIP.",
@@ -1022,7 +1022,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Werden meine Bilder verzerrt?",
         answer:
-          "Nicht in den Modi „Prozent“ oder „Einpassen“, die immer die Proportionen beibehalten. Löst du im Modus „Exakte Pixel“ das Seitenverhältnis und legst beide Seiten fest, werden Bilder mit anderer Form verzerrt.",
+          "Nur wenn du Strecken wählst. Prozent und Einpassen behalten immer die Proportionen. Mit Breite und Höhe schneidet Zuschneiden (die Voreinstellung) die Ränder gleichmäßig ab, und Ränder setzt das ganze Bild mit einem farbigen Rand hinein.",
       },
       {
         question: "Welche Dateiformate werden unterstützt?",
@@ -1032,7 +1032,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mit welcher Qualität werden JPG- und WebP-Dateien gespeichert?",
         answer:
-          "Skalierte JPG- und WebP-Dateien werden mit 90 % Qualität gespeichert. Wandelst du transparente Bilder in JPG um, werden transparente Bereiche weiß.",
+          "JPG- und WebP-Dateien werden standardmäßig mit 95 % Qualität gespeichert; ändere das mit dem Regler Qualität. PNG-Dateien bleiben immer verlustfrei. Beim Umwandeln transparenter Bilder in JPG werden transparente Bereiche weiß.",
       },
       {
         question: "Werden meine Dateien irgendwo hochgeladen?",
@@ -2112,7 +2112,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Wandle SVG-Vektordateien in scharfe PNG-Bilder in 1-, 2-, 4- oder 8-facher Größe um, mit erhaltener Transparenz.",
     intro:
-      "SVG in PNG macht aus einer Vektorgrafik, etwa einem Logo oder Icon, ein PNG-Bild für Stellen, die keine SVG-Dateien annehmen. Wähle 1x, 2x, 4x oder 8x die eigene Größe des SVG. Weil die Vektorgrafik in dieser Größe neu gezeichnet wird, ergibt eine höhere Skalierung ein schärferes statt eines unscharfen Bildes. Transparente Hintergründe bleiben im PNG transparent.",
+      "SVG in PNG macht aus einer Vektorgrafik, etwa einem Logo oder Icon, ein PNG-Bild für Stellen, die keine SVG-Dateien annehmen. Wähle 1x, 2x, 4x oder 8x die eigene Größe des SVG. Weil die Vektorgrafik in dieser Größe neu gezeichnet wird, ergibt eine höhere Skalierung ein schärferes statt eines unscharfen Bildes. Transparente Hintergründe bleiben im PNG transparent. Wenn du mehrere SVGs auf einmal umwandelst, kann jede Datei dieselbe Breite oder Höhe bekommen.",
     seoTitle: "SVG in PNG umwandeln – hochauflösend, transparent",
     seoDescription:
       "SVG in PNG umwandeln, kostenlos: in 1x, 2x, 4x oder 8x exportieren und scharfe, hochauflösende Bilder mit transparentem Hintergrund erhalten.",
@@ -2187,7 +2187,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     name: "SVG in JPG",
     shortName: "SVG → JPG",
     tagline: "Wandle SVG-Grafiken in JPG-Bilder in jeder Skalierung um, mit der Hintergrundfarbe deiner Wahl. Die Umwandlung läuft auf deinem Gerät.",
-    intro: "SVG-Grafiken bleiben in jeder Größe scharf, doch viele Apps, soziale Netzwerke und Upload-Formulare nehmen nur normale Bilder an. SVG in JPG zeichnet das SVG in der gewählten Skalierung von 1x bis 8x neu und speichert es als JPG. JPG kennt keine Transparenz, deshalb werden transparente Bereiche mit Weiß oder einer Farbe deiner Wahl gefüllt. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät.",
+    intro: "SVG-Grafiken bleiben in jeder Größe scharf, doch viele Apps, soziale Netzwerke und Upload-Formulare nehmen nur normale Bilder an. SVG in JPG zeichnet das SVG in der gewählten Skalierung von 1x bis 8x neu und speichert es als JPG. JPG kennt keine Transparenz, deshalb werden transparente Bereiche mit Weiß oder einer Farbe deiner Wahl gefüllt. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät. Wenn du mehrere SVGs auf einmal umwandelst, kann jede Datei dieselbe Breite oder Höhe bekommen.",
     seoTitle: "SVG in JPG umwandeln – jede Größe, kostenlos",
     seoDescription: "SVG-Grafiken im Browser in JPG umwandeln, in 1x bis 8x Skalierung und mit Hintergrundfarbe nach Wahl. Kostenlos, nichts wird hochgeladen.",
     keywords: [
@@ -2252,7 +2252,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     name: "SVG in WebP",
     shortName: "SVG → WebP",
     tagline: "Wandle SVG-Grafiken in kleine WebP-Bilder in jeder Skalierung um, Transparenz inklusive. Die Umwandlung läuft auf deinem Gerät.",
-    intro: "Manchmal braucht eine Website, eine App oder ein E-Mail-Baukasten ein normales Bild statt eines SVG. SVG in WebP zeichnet das SVG in der gewählten Skalierung von 1x bis 8x neu und speichert es als WebP, ein kleines Format, das jeder aktuelle Browser anzeigt und das Transparenz behält. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät.",
+    intro: "Manchmal braucht eine Website, eine App oder ein E-Mail-Baukasten ein normales Bild statt eines SVG. SVG in WebP zeichnet das SVG in der gewählten Skalierung von 1x bis 8x neu und speichert es als WebP, ein kleines Format, das jeder aktuelle Browser anzeigt und das Transparenz behält. Die Umwandlung passiert in deinem Browser, die Datei verlässt also nie dein Gerät. Wenn du mehrere SVGs auf einmal umwandelst, kann jede Datei dieselbe Breite oder Höhe bekommen.",
     seoTitle: "SVG in WebP umwandeln – kleine Dateien, transparent",
     seoDescription: "SVG-Grafiken im Browser in WebP umwandeln, in 1x bis 8x Skalierung, die Transparenz bleibt erhalten. Kostenlos, nichts wird hochgeladen.",
     keywords: [
@@ -2402,7 +2402,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Meme-Maker",
     tagline: "Erstelle ein Meme aus deinem eigenen Foto oder einer Vorlage, mit fetten Texten oben, in der Mitte und unten.",
     intro:
-      "Der Meme-Generator setzt klassische Meme-Texte auf ein Bild. Lade dein eigenes Bild hoch oder starte mit einer von acht einfachen Vorlagen und gib dann die Texte für oben, Mitte und unten ein. Lange Zeilen werden automatisch umbrochen, damit sie in die Breite passen. Wähle Schriftart (standardmäßig Impact), Größe, Text- und Konturfarbe, Ausrichtung und Großbuchstaben und lade das Meme ohne Wasserzeichen als PNG, JPG oder WebP herunter.",
+      "Der Meme-Generator setzt klassische Meme-Texte auf ein Bild. Lade dein eigenes Bild hoch oder starte mit einer von acht einfachen Vorlagen und gib dann die Texte für oben, Mitte und unten ein. Lange Zeilen werden automatisch umbrochen, damit sie in die Breite passen. Wähle Schriftart (standardmäßig Impact), Größe, Text- und Konturfarbe, Ausrichtung und Großbuchstaben und lade das Meme ohne Wasserzeichen als PNG, JPG oder WebP herunter. Wähle Textbalken für den modernen Stil: schwarzer Text in weißen Balken über und unter dem Bild, ohne etwas zu verdecken.",
     seoTitle: "Meme-Generator – Text auf jedes Bild setzen",
     seoDescription:
       "Memes online erstellen, kostenlos: Text oben, in der Mitte und unten auf dein Foto oder eine Vorlage setzen, Schrift und Kontur wählen, ohne Wasserzeichen.",
@@ -2468,7 +2468,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mein Text verdeckt zu viel vom Bild. Was kann ich tun?",
         answer:
-          "Verringere die Schriftgröße oder verschiebe einen Teil des Textes in den Text für die Mitte oder unten. Lange Texte werden automatisch auf mehrere Zeilen umbrochen.",
+          "Wähle Textbalken, dann stehen oberer und unterer Text über und unter dem Bild statt darauf. Oder verkleinere die Schrift oder verschiebe einen Teil in ein anderes Feld; lange Texte brechen automatisch um.",
       },
       {
         question: "Kann ich Memes auf dem Handy erstellen?",
@@ -2482,7 +2482,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "Raster teilen",
     tagline: "Teile ein Bild in ein Raster aus Kacheln, etwa ein 3×3-Instagram-Raster oder ein Panorama-Karussell, und lade eine ZIP-Datei herunter.",
     intro:
-      "Bild in Raster teilen zerlegt ein Bild in Zeilen und Spalten aus einzelnen Bilddateien. Nutze die Vorlage „Instagram-Raster 3×3“ für ein Profilraster, Panorama 3×1 oder Karussell 2×1 für Beiträge zum Wischen, 2×2 für vier gleiche Teile, oder lege ein eigenes Raster mit bis zu 12 Zeilen und 12 Spalten fest. Alle Kacheln werden zusammen als nummerierte PNG-Dateien in einer ZIP-Datei heruntergeladen, oder du klickst auf eine einzelne Kachel, um nur diese zu speichern.",
+      "Bild in Raster teilen zerlegt ein Bild in Zeilen und Spalten aus einzelnen Bilddateien. Nutze die Vorlage „Instagram-Raster 3×3“ für ein Profilraster, Panorama 3×1 oder Karussell 2×1 für Beiträge zum Wischen, 2×2 für vier gleiche Teile, oder lege ein eigenes Raster mit bis zu 12 Zeilen und 12 Spalten fest. Alle Kacheln werden zusammen als nummerierte PNG-Dateien in einer ZIP-Datei heruntergeladen, oder du klickst auf eine einzelne Kachel, um nur diese zu speichern. Instagram zeigt das Profilraster inzwischen in 3:4, darum schneidet die Vorgabe Instagram-Raster 3×3 (3:4) die Kacheln in dieser Form und nummeriert sie in der Reihenfolge zum Posten.",
     seoTitle: "Bild teilen – Instagram-Raster 3×3 und Panorama",
     seoDescription:
       "Bild online in ein Raster teilen, kostenlos: 3x3-Instagram-Raster, Panorama-Karussell oder eigenes Raster bis 12x12 erstellen, alle Kacheln als ZIP laden.",
@@ -2536,12 +2536,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "In welcher Reihenfolge poste ich die Kacheln auf Instagram?",
         answer:
-          "Die Kacheln sind von links nach rechts und von oben nach unten nummeriert, beginnend mit tile_01. Instagram zeigt den neuesten Beitrag zuerst. Lade also die letzte Kachel zuerst hoch (bei einem 3×3-Raster tile_09) und ende mit tile_01.",
+          "Mit einer Instagram-Raster-Vorgabe heißen die Kacheln in der Reihenfolge zum Posten: post-01 ist die Kachel unten rechts und kommt zuerst, die höchste Zahl oben links kommt zuletzt. Die Zahlen in der Vorschau zeigen dieselbe Reihenfolge.",
       },
       {
         question: "Welches Bild eignet sich für ein 3×3-Raster?",
         answer:
-          "Für quadratische Kacheln startest du mit einem quadratischen Bild. Schneide es bei Bedarf zuerst auf 1:1 zu. Instagram zeigt Profil-Vorschaubilder eventuell mit anderem Ausschnitt, prüfe das Ergebnis also nach dem Posten.",
+          "Instagram zeigt Profilbeiträge jetzt als 3:4-Kacheln, also nimm die Vorgabe Instagram-Raster 3×3 (3:4) mit einem Bild in ungefähr 3:4. Für das alte quadratische Raster nimm die quadratische Vorgabe mit einem quadratischen Bild.",
       },
       {
         question: "Wie teile ich ein Panorama für einen Karussell-Beitrag?",
@@ -3276,7 +3276,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "Ist AVIF verlustfrei wie PNG?",
-        answer: "Hier nicht. Das AVIF wird mit der Qualität deiner Wahl komprimiert, feine Details können sich also leicht verändern. Ab 85 % sehen die meisten Bilder genauso aus wie das PNG.",
+        answer: "Nur wenn du Verlustfrei anhakst: Dann bleibt jedes Pixel exakt, die Datei wird aber größer. Sonst wird das AVIF mit der gewählten Qualität komprimiert, und winzige Details können sich ändern; ab 85 % sehen die meisten Bilder aus wie das PNG.",
       },
       {
         question: "Behält AVIF die Transparenz?",
@@ -8589,7 +8589,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     "name": "Facebook-Titelbild erstellen",
     "shortName": "Facebook-Titelbild",
     "tagline": "Bring ein Bild auf die richtige Größe für ein Facebook-Titelbild oder einen Post. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "Facebook-Titelbild erstellen passt ein Bild in die von Facebook für Titelbilder empfohlene Größe 851 × 315 ein. Facebook zeigt Titelbilder auf Computern und Smartphones in unterschiedlichen Formaten, halte Gesichter und Text also nahe der Mitte. Außerdem gibt es die gängige Größe 1200 × 630 für Link- und Bild-Posts. Zieh das Bild, bis es richtig sitzt, und lade es herunter. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl.",
+    "intro": "Facebook-Titelbild erstellen passt ein Bild in die von Facebook für Titelbilder empfohlene Größe 851 × 315 ein. Facebook zeigt Titelbilder auf Computern und Smartphones in unterschiedlichen Formaten, halte Gesichter und Text also nahe der Mitte. Außerdem gibt es die gängige Größe 1200 × 630 für Link- und Bild-Posts. Zieh das Bild, bis es richtig sitzt, und lade es herunter. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl. „Sicheren Bereich anzeigen“ markiert ungefähr den Teil, den Handys zeigen.",
     "seoTitle": "Facebook-Titelbild erstellen – Größe 851×315, kostenlos",
     "seoDescription": "Passe ein Bild für ein Facebook-Titelbild (851×315) oder einen Post (1200×630) an. Ziehen, positionieren, herunterladen. Gratis, ohne Anmeldung, ohne Upload.",
     "keywords": ["facebook titelbild größe", "facebook titelbild erstellen", "bild für facebook titelbild anpassen", "851x315", "facebook post bildgröße"],
@@ -8613,7 +8613,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     "name": "LinkedIn-Banner erstellen",
     "shortName": "LinkedIn-Banner",
     "tagline": "Erstelle aus jedem Bild ein LinkedIn-Profilbanner mit 1584 × 396. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "LinkedIn-Banner erstellen schneidet ein Bild auf das sehr breite Format 1584 × 396 eines LinkedIn-Profilbanners zu. Zieh das Bild nach oben und unten, um den gewünschten Streifen zu wählen, und zoome bei Bedarf hinein. Außerdem gibt es die Größe 1200 × 627 für Link- und Bild-Posts. Dein Profilfoto verdeckt einen Teil des Banners unten links, halte wichtige Details also davon fern. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl.",
+    "intro": "LinkedIn-Banner erstellen schneidet ein Bild auf das sehr breite Format 1584 × 396 eines LinkedIn-Profilbanners zu. Zieh das Bild nach oben und unten, um den gewünschten Streifen zu wählen, und zoome bei Bedarf hinein. Außerdem gibt es die Größe 1200 × 627 für Link- und Bild-Posts. Dein Profilfoto verdeckt einen Teil des Banners unten links, halte wichtige Details also davon fern. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl. Schalte „Sicheren Bereich anzeigen“ ein, um ungefähr zu sehen, wo das Foto liegt.",
     "seoTitle": "LinkedIn-Banner erstellen – 1584×396, kostenlos",
     "seoDescription": "Erstelle aus jedem Bild ein LinkedIn-Profilbanner mit 1584×396 oder ein Post-Bild mit 1200×627. Positionieren per Ziehen. Kostenlos, ohne Upload.",
     "keywords": ["linkedin banner größe", "linkedin hintergrundbild größe", "linkedin banner erstellen", "1584x396", "linkedin titelbild"],
@@ -8661,7 +8661,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     "name": "Open-Graph-Bild erstellen",
     "shortName": "Open-Graph-Bild",
     "tagline": "Erstelle das Bild mit 1200 × 630, das beim Teilen eines Links erscheint. Kostenlos und direkt auf deinem Gerät.",
-    "intro": "Open-Graph-Bild erstellen bereitet das Bild vor, das erscheint, wenn jemand deine Seite in sozialen Netzwerken oder in einer Chat-App teilt. Es bringt jedes Bild auf die weit verbreitete Größe 1200 × 630. Sobald es auf deiner Website liegt, lass das og:image-Tag deiner Seite darauf verweisen. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl.",
+    "intro": "Open-Graph-Bild erstellen bereitet das Bild vor, das erscheint, wenn jemand deine Seite in sozialen Netzwerken oder in einer Chat-App teilt. Es bringt jedes Bild auf die weit verbreitete Größe 1200 × 630. Sobald es auf deiner Website liegt, lass das og:image-Tag deiner Seite darauf verweisen. Du kannst auch Text hinzufügen, etwa einen Titel oder Namen, mit Schrift, Farbe und Kontur deiner Wahl. „Sicheren Bereich anzeigen“ markiert das mittlere Quadrat, das manche Chat-Apps zeigen.",
     "seoTitle": "Open-Graph-Bild erstellen – 1200×630 og:image, kostenlos",
     "seoDescription": "Erstelle ein Open-Graph-Bild mit 1200×630 für Linkvorschauen in sozialen Netzwerken und Chat-Apps. Positionieren, herunterladen. Kostenlos, ohne Upload.",
     "keywords": ["open graph bild größe", "og image generator", "og:image größe", "1200x630", "bild für linkvorschau"],

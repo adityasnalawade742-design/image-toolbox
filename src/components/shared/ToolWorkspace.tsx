@@ -963,7 +963,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     // Always process from full-resolution original source image for pristine output quality, shrinking with Lanczos
     const canvas = await processCanvasBest(imageElement!, getProcessingOptions(true));
     let blob: Blob;
-    if (format === 'image/webp' && webpLossless) {
+    // WebP and AVIF both have a true lossless mode (the encoders write the exact pixels)
+    if ((format === 'image/webp' || format === 'image/avif') && webpLossless) {
       blob = await canvasToBlob(canvas, format, 1, undefined, { ...encodeOptions, lossless: true });
     } else {
       blob = await canvasToBlob(canvas, format, quality / 100, undefined, encodeOptions);
@@ -1586,20 +1587,20 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                         min="10"
                         max="100"
                         value={quality}
-                        disabled={format === 'image/webp' && webpLossless}
+                        disabled={(format === 'image/webp' || format === 'image/avif') && webpLossless}
                         aria-label={t('ws.qualityLabel')}
                         onChange={(e) => setQuality(parseInt(e.target.value) || 85)}
                         className="w-full disabled:opacity-40"
                       />
                     </label>
                   )}
-                  {format === 'image/webp' && (
+                  {(format === 'image/webp' || format === 'image/avif') && (
                     <div className="space-y-1">
                       <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer">
                         <input type="checkbox" checked={webpLossless} onChange={(e) => setWebpLossless(e.target.checked)} />
                         <span className="text-ink">{t('ws.webpLossless')}</span>
                       </label>
-                      {!webpLossless && /png|gif|bmp|tiff/.test(mimeType) && <p className="text-[13px] text-graphite leading-relaxed">{t('ws.webpAuto')}</p>}
+                      {format === 'image/webp' && !webpLossless && /png|gif|bmp|tiff/.test(mimeType) && <p className="text-[13px] text-graphite leading-relaxed">{t('ws.webpAuto')}</p>}
                     </div>
                   )}
                 </div>

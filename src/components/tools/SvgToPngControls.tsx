@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useT } from '../shared/I18nContext';
-import { MAX_CANVAS_PIXELS } from '../../lib/canvas/limits';
+import { scaleToSide } from '../../lib/canvas/limits';
 
 interface Props {
   /** Output format name, e.g. PNG */
@@ -12,11 +12,7 @@ interface Props {
 }
 
 /** The scale that gives this width or height, kept within what a browser canvas can hold */
-export function scaleFor(px: number, side: number, otherSide: number) {
-  if (!(px > 0) || !(side > 0)) return 1;
-  const max = Math.sqrt(MAX_CANVAS_PIXELS / Math.max(1, side * otherSide));
-  return Math.min(px / side, max);
-}
+export const scaleFor = (px: number, side: number, otherSide: number) => scaleToSide(px, side, otherSide);
 
 export function SvgToPngControls({ format, originalWidth, originalHeight, scale, onScaleChange }: Props) {
   const t = useT();

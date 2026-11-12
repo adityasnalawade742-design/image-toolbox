@@ -41,6 +41,10 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
   const [webpLossless, setWebpLossless] = useState(false);
   const [background, setBackground] = useState('#ffffff');
   const [svgScale, setSvgScale] = useState(2);
+  // Or every SVG at one exact width or height (icon sets); empty means the multiple above is used
+  const [svgSide, setSvgSide] = useState<'width' | 'height'>('width');
+  const [svgPx, setSvgPx] = useState('');
+  const svgSize = parseInt(svgPx, 10) > 0 ? { side: svgSide, px: parseInt(svgPx, 10) } : undefined;
   // Only Convert Image lets you pick; the others have a fixed target, and Remove Metadata keeps each file's format
   const [chosen, setChosen] = useState<OutputFormat | undefined>(undefined);
   const cancelled = useRef(false);
@@ -72,13 +76,15 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
   // New settings make finished results stale, so "Convert all" runs them again
   useEffect(() => {
     setQueue((prev) => (prev.some((q) => q.status === 'done') ? prev.map((q) => (q.status === 'done' ? { ...q, status: 'pending', out: undefined } : q)) : prev));
-  }, [quality, webpLossless, background, svgScale, chosen]);
+  }, [quality, webpLossless, background, svgScale, svgSide, svgPx, chosen]);
 
   const usable = queue.filter((q) => !q.rejected);
   const targets = useMemo(() => new Set(usable.map((q) => batchFormat(slug, q.file, chosen))), [usable, slug, chosen]);
   const metadata = slug === 'remove-image-metadata';
   const showWebp = targets.has('image/webp');
-  const lossy = !metadata && [...targets].some((f) => f !== 'image/png') && !(targets.size === 1 && showWebp && webpLossless);
+  // The lossless option covers WebP and AVIF; quality still matters while any other lossy format comes out
+  const showLossless = showWebp || targets.has('image/avif');
+  const lossy = !metadata && [...targets].some((f) => f !== 'image/png' && !(webpLossless && (f === 'image/webp' || f === 'image/avif')));
 
   const run = async () => {
     setRunning(true);
@@ -89,7 +95,7 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
       if (item.rejected || item.status === 'done') continue;
       setQueue((prev) => prev.map((q) => (q.id === item.id ? { ...q, status: 'processing' } : q)));
       try {
-        const out = await convertImageFile(item.file, { slug, format: chosen, quality, webpLossless, background, svgScale });
+        const out = await convertImageFile(item.file, { slug, format: chosen, quality, webpLossless, background, svgScale, svgSize });
         setQueue((prev) => prev.map((q) => (q.id === item.id ? { ...q, status: 'done', out } : q)));
       } catch (err) {
         console.error(`Converting ${item.file.name} failed:`, err);
@@ -286,14 +292,45 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
                     <button
                       key={s}
                       type="button"
-                      aria-pressed={svgScale === s}
+                      aria-pressed={!svgSize && svgScale === s}
                       disabled={running}
-                      onClick={() => setSvgScale(s)}
-                      className={`min-h-[40px] text-[14px] font-semibold transition-colors ${svgScale === s ? 'seg-on' : 'seg-off'}`}
+                      onClick={() => {
+                        setSvgScale(s);
+                        setSvgPx('');
+                      }}
+                      className={`min-h-[40px] text-[14px] font-semibold transition-colors ${!svgSize && svgScale === s ? 'seg-on' : 'seg-off'}`}
                     >
                       {s}x
                     </button>
                   ))}
+                </div>
+                <div className="pt-2 space-y-1.5">
+                  <span className="text-[14px] text-graphite block" id="svg-exact">{t('ctl.svg.exactBatch')}</span>
+                  <div className="grid grid-cols-2 gap-2" role="group" aria-labelledby="svg-exact">
+                    <select
+                      value={svgSide}
+                      disabled={running}
+                      onChange={(e) => setSvgSide(e.target.value as 'width' | 'height')}
+                      aria-label={t('ctl.svg.exactSide')}
+                      className="min-h-[40px] px-2 border border-ink bg-paper-bright text-[15px] text-ink rounded-md"
+                    >
+                      <option value="width">{t('ctl.paper.width')}</option>
+                      <option value="height">{t('ctl.paper.height')}</option>
+                    </select>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      min={1}
+                      value={svgPx}
+                      disabled={running}
+                      placeholder="px"
+                      aria-label={`${svgSide === 'width' ? t('ctl.paper.width') : t('ctl.paper.height')} (px)`}
+                      onChange={(e) => setSvgPx(e.target.value)}
+                      className="min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink rounded-md"
+                      data-measure
+                    />
+                  </div>
+                  <p className="text-[13px] text-graphite">{t('ctl.svg.exactBatchHint')}</p>
                 </div>
               </div>
             )}
@@ -309,13 +346,13 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
                 />
               </label>
             )}
-            {!metadata && showWebp && (
+            {!metadata && showLossless && (
               <div className="space-y-1">
                 <label className="flex items-start gap-2.5 cursor-pointer text-ink">
                   <input type="checkbox" className="mt-1" checked={webpLossless} disabled={running} onChange={(e) => setWebpLossless(e.target.checked)} />
                   <span>{t('ws.webpLossless')}</span>
                 </label>
-                <p className="text-[13px] text-graphite">{t('ws.webpAuto')}</p>
+                {showWebp && <p className="text-[13px] text-graphite">{t('ws.webpAuto')}</p>}
               </div>
             )}
             {!metadata && targets.size === 1 && targets.has('image/png') && <p className="text-[14px] text-graphite">{t('ws.pngLossless')}</p>}

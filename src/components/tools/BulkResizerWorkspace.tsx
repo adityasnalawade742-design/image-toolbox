@@ -5,6 +5,7 @@ import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
+import type { StringKey } from '../../i18n/strings';
 import { MediaViewer, blobImage, formatKB, type ViewerItem } from '../shared/MediaViewer';
 import { FileThumb } from '../shared/ViewableThumb';
 
@@ -26,6 +27,13 @@ interface QueueItem {
 }
 
 type ResizeMode = 'percentage' | 'pixels' | 'fit';
+/** Both sides given and the shape differs: trim to fill, fit with borders, or stretch */
+type ExactFit = 'crop' | 'pad' | 'stretch';
+const EXACT_FITS: { id: ExactFit; label: StringKey; hint: StringKey }[] = [
+  { id: 'crop', label: 'ctl.bulkResize.exactCrop', hint: 'ctl.bulkResize.exactCropHint' },
+  { id: 'pad', label: 'ctl.bulkResize.exactPad', hint: 'ctl.bulkResize.exactPadHint' },
+  { id: 'stretch', label: 'ctl.bulkResize.exactStretch', hint: 'ctl.bulkResize.exactStretchHint' },
+];
 type ResizeFormat = 'original' | 'image/jpeg' | 'image/png' | 'image/webp';
 
 const ACCEPT = 'image/png,image/jpeg,image/webp';
@@ -48,6 +56,12 @@ export function BulkResizerWorkspace() {
   const [preventUpscale, setPreventUpscale] = useState<boolean>(true);
   // 'original' keeps each file's own format (resizing a JPEG photo into PNG would bloat it)
   const [format, setFormat] = useState<ResizeFormat>('original');
+  // Exact width and height: crop to fill keeps every image undistorted, so it's the default
+  const [exactFit, setExactFit] = useState<ExactFit>('crop');
+  const [padColour, setPadColour] = useState('#ffffff');
+  const [padTransparent, setPadTransparent] = useState(false);
+  // JPG and WebP quality; 95 was the fixed value before this setting existed
+  const [quality, setQuality] = useState(95);
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
@@ -122,7 +136,7 @@ export function BulkResizerWorkspace() {
         ? prev.map((q) => (q.status === 'done' ? { ...q, status: 'pending', outputBlob: undefined } : q))
         : prev
     );
-  }, [mode, percentage, fixedWidth, fixedHeight, lockAspect, preventUpscale, format]);
+  }, [mode, percentage, fixedWidth, fixedHeight, lockAspect, preventUpscale, format, exactFit, padColour, padTransparent, quality]);
 
   const processQueue = async () => {
     setIsProcessing(true);
@@ -162,8 +176,41 @@ export function BulkResizerWorkspace() {
           }
         }
 
+        const iw = img.naturalWidth || img.width;
+        const ih = img.naturalHeight || img.height;
+        // The part of the image that is used, and the box on the canvas it is drawn into (the whole canvas unless padded)
+        let src = { x: 0, y: 0, w: iw, h: ih };
+        let dest: { x: number; y: number; w: number; h: number } | null = null;
+        const shaped = mode === 'pixels' && !lockAspect && exactFit !== 'stretch';
+        if (shaped) {
+          let W = fixedWidth;
+          let H = fixedHeight;
+          if (exactFit === 'crop') {
+            // Cover the whole size, then trim what sticks out, evenly from both sides
+            let scale = Math.max(W / iw, H / ih);
+            if (preventUpscale && scale > 1) {
+              // Too small to fill it without enlarging: the same shape, smaller
+              W = Math.max(1, Math.round(W / scale));
+              H = Math.max(1, Math.round(H / scale));
+              scale = Math.max(W / iw, H / ih);
+            }
+            const sw = Math.min(iw, W / scale);
+            const sh = Math.min(ih, H / scale);
+            src = { x: (iw - sw) / 2, y: (ih - sh) / 2, w: sw, h: sh };
+          } else {
+            // The whole picture inside the size; the canvas stays exactly W x H and the rest is border
+            const fit = Math.min(W / iw, H / ih);
+            const scale = preventUpscale ? Math.min(1, fit) : fit;
+            const dw = Math.max(1, Math.min(W, Math.round(iw * scale)));
+            const dh = Math.max(1, Math.min(H, Math.round(ih * scale)));
+            dest = { x: Math.floor((W - dw) / 2), y: Math.floor((H - dh) / 2), w: dw, h: dh };
+          }
+          targetW = W;
+          targetH = H;
+        }
+
         // An explicit percentage is the user's choice; only cap exact-pixel targets, scaling both sides together
-        if (preventUpscale && mode === 'pixels') {
+        if (preventUpscale && mode === 'pixels' && !shaped) {
           const cap = Math.min(1, item.originalWidth / targetW, item.originalHeight / targetH);
           targetW = Math.round(targetW * cap);
           targetH = Math.round(targetH * cap);
@@ -175,20 +222,23 @@ export function BulkResizerWorkspace() {
         const ctx = canvas.getContext('2d');
         if (!ctx) throw new Error('Canvas 2D context unavailable');
         const outFormat: OutputFormat = format === 'original' ? exportableFormat(item.file.type) : format;
-        if (outFormat === 'image/jpeg') {
+        if (dest && !(padTransparent && outFormat !== 'image/jpeg')) {
+          // Borders in the chosen colour (JPEG can't be transparent, so it always gets the colour)
+          ctx.fillStyle = padColour;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        } else if (outFormat === 'image/jpeg') {
           // JPEG has no alpha; fill white so transparent areas don't turn black
           ctx.fillStyle = '#ffffff';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
-        const iw = img.naturalWidth || img.width;
-        const ih = img.naturalHeight || img.height;
+        const box = dest ?? { x: 0, y: 0, w: canvas.width, h: canvas.height };
         // Lanczos shrinking (sharper, no moiré or fringes); the browser's stepped shrinking if it isn't available
-        const pre = await lanczosDownscale(img, 0, 0, iw, ih, canvas.width, canvas.height);
-        const down = pre ? { source: pre, sx: 0, sy: 0, sw: pre.width, sh: pre.height } : stepDown(img, 0, 0, iw, ih, canvas.width, canvas.height);
+        const pre = await lanczosDownscale(img, src.x, src.y, src.w, src.h, box.w, box.h);
+        const down = pre ? { source: pre, sx: 0, sy: 0, sw: pre.width, sh: pre.height } : stepDown(img, src.x, src.y, src.w, src.h, box.w, box.h);
         ctx.imageSmoothingQuality = 'high';
-        ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(down.source, down.sx, down.sy, down.sw, down.sh, box.x, box.y, box.w, box.h);
 
-        const blob = await canvasToBlob(canvas, outFormat, 0.95, undefined, forDownload(outFormat));
+        const blob = await canvasToBlob(canvas, outFormat, quality / 100, undefined, forDownload(outFormat));
         const outputExt = formatExtension((blob.type || outFormat) as OutputFormat);
 
         setQueue((prev) =>
@@ -498,7 +548,46 @@ export function BulkResizerWorkspace() {
                       />
                       <span>{t('ctl.bulkResize.keepAspect')}</span>
                     </label>
-                    {lockAspect && <p className="text-[14px] text-graphite">{t('ctl.bulkResize.aspectHint')}</p>}
+                    {lockAspect ? (
+                      <p className="text-[14px] text-graphite">{t('ctl.bulkResize.aspectHint')}</p>
+                    ) : (
+                      <div className="space-y-2 pt-1">
+                        <span className="slug block" id="resize-exact">{t('ctl.bulkResize.exactBy')}</span>
+                        <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="resize-exact">
+                          {EXACT_FITS.map((f) => (
+                            <button
+                              key={f.id}
+                              type="button"
+                              aria-pressed={exactFit === f.id}
+                              disabled={isProcessing}
+                              onClick={() => setExactFit(f.id)}
+                              className={`min-h-[40px] px-1 text-[14px] font-semibold leading-tight transition-colors disabled:cursor-not-allowed ${exactFit === f.id ? 'seg-on' : 'seg-off'}`}
+                            >
+                              {t(f.label)}
+                            </button>
+                          ))}
+                        </div>
+                        <p className="text-[14px] text-graphite">{t(EXACT_FITS.find((f) => f.id === exactFit)!.hint)}</p>
+                        {exactFit === 'pad' && (
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <label className="flex items-center gap-2 text-ink">
+                              <input
+                                type="color"
+                                value={padColour}
+                                disabled={isProcessing || (padTransparent && format !== 'image/jpeg')}
+                                onChange={(e) => setPadColour(e.target.value)}
+                                className="w-10 h-10 rounded-md border border-ink bg-paper-bright p-0.5 disabled:opacity-40"
+                              />
+                              <span>{t('ctl.bulkResize.padColour')}</span>
+                            </label>
+                            <label className="flex items-center gap-2 cursor-pointer select-none text-ink">
+                              <input type="checkbox" checked={padTransparent} disabled={isProcessing || format === 'image/jpeg'} onChange={(e) => setPadTransparent(e.target.checked)} />
+                              <span>{t('ctl.bulkResize.padTransparent')}</span>
+                            </label>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </>
                 ) : (
                   <p className="text-[14px] text-graphite">{t('ctl.bulkResize.fitHint')}</p>
@@ -526,6 +615,27 @@ export function BulkResizerWorkspace() {
               </div>
               {format === 'original' && <p className="text-[14px] text-graphite">{t('ctl.bulkResize.formatOriginalHint')}</p>}
             </div>
+
+            {/* PNG is lossless, so quality only matters when JPG or WebP files come out */}
+            {format !== 'image/png' && (
+              <label className="block space-y-1.5 pt-4 border-t border-ink">
+                <span className="flex items-center justify-between">
+                  <span className="slug">{t('ctl.bulkResize.quality')}</span>
+                  <span className="font-semibold text-ink" data-measure>{quality}%</span>
+                </span>
+                <input
+                  type="range"
+                  min="40"
+                  max="100"
+                  value={quality}
+                  disabled={isProcessing}
+                  aria-label={t('ctl.bulkResize.quality')}
+                  onChange={(e) => setQuality(parseInt(e.target.value) || 95)}
+                  className="w-full"
+                />
+                <span className="block text-[14px] text-graphite">{t('ctl.bulkResize.qualityHint')}</span>
+              </label>
+            )}
 
             <label className="flex items-center gap-2 cursor-pointer select-none text-ink pt-4 border-t border-ink">
               <input

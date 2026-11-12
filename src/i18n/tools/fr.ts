@@ -962,7 +962,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Redimensionner par lot",
     tagline: "Redimensionnez jusqu’à 50 images à la fois, en pourcentage, à une largeur exacte ou dans un cadre maximal, et téléchargez-les dans un seul ZIP.",
     intro:
-      "Le redimensionneur d’images par lot applique la même règle de taille à de nombreuses images en une seule fois. Vous pouvez redimensionner chaque fichier en pourcentage, définir une largeur exacte, ou faire tenir chaque image dans un cadre, par exemple 1200 × 800, pour qu’aucun côté ne le dépasse. Chaque fichier peut garder son format d’origine, et tous les résultats se téléchargent ensemble dans un seul ZIP.",
+      "Le redimensionneur d’images par lot applique la même règle de taille à de nombreuses images en une seule fois. Vous pouvez redimensionner chaque fichier en pourcentage, définir une largeur exacte, ou faire tenir chaque image dans un cadre, par exemple 1200 × 800, pour qu’aucun côté ne le dépasse. Chaque fichier peut garder son format d’origine, et tous les résultats se téléchargent ensemble dans un seul ZIP. Avec une largeur et une hauteur, choisissez comment s’adaptent les images d’une autre forme : rogner pour remplir, ajouter des bordures de la couleur choisie ou étirer. Un curseur règle la qualité des JPG et WebP.",
     seoTitle: "Redimensionner plusieurs images à la fois – En lot",
     seoDescription:
       "Redimensionnez jusqu’à 50 images JPG, PNG ou WebP à la fois : en pourcentage, à une largeur exacte ou dans un cadre, formats conservés, dans un seul ZIP.",
@@ -1022,7 +1022,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mes images seront-elles déformées ?",
         answer:
-          "Pas en modes Pourcentage ou Dans un cadre, qui gardent toujours les proportions. En mode Pixels exacts, si vous déverrouillez les proportions et définissez les deux côtés, les images de forme différente seront déformées.",
+          "Seulement si vous choisissez Étirer. Pourcentage et Dans un cadre gardent toujours les proportions. Avec une largeur et une hauteur, Rogner (par défaut) coupe les bords de façon égale et Bordures place l’image entière avec une bordure de couleur.",
       },
       {
         question: "Quels formats de fichier sont pris en charge ?",
@@ -1032,7 +1032,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle qualité est utilisée pour les fichiers JPG et WebP ?",
         answer:
-          "Les fichiers JPG et WebP redimensionnés sont enregistrés à 90 % de qualité. Quand vous convertissez des images transparentes en JPG, les zones transparentes deviennent blanches.",
+          "Les JPG et WebP sont enregistrés à 95 % de qualité par défaut ; modifiez-la avec le curseur Qualité. Les PNG restent toujours sans perte. En convertissant des images transparentes en JPG, les zones transparentes deviennent blanches.",
       },
       {
         question: "Mes fichiers sont-ils envoyés quelque part ?",
@@ -2112,7 +2112,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Convertissez des fichiers vectoriels SVG en images PNG nettes en taille 1x, 2x, 4x ou 8x, avec la transparence conservée.",
     intro:
-      "SVG en PNG transforme un graphique vectoriel, comme un logo ou une icône, en image PNG pour les endroits qui n’acceptent pas les fichiers SVG. Choisissez 1x, 2x, 4x ou 8x la taille du SVG ; comme le vecteur est redessiné à cette taille, une échelle plus grande donne une image plus nette, et non plus floue. Les fonds transparents restent transparents dans le PNG.",
+      "SVG en PNG transforme un graphique vectoriel, comme un logo ou une icône, en image PNG pour les endroits qui n’acceptent pas les fichiers SVG. Choisissez 1x, 2x, 4x ou 8x la taille du SVG ; comme le vecteur est redessiné à cette taille, une échelle plus grande donne une image plus nette, et non plus floue. Les fonds transparents restent transparents dans le PNG. Si vous convertissez plusieurs SVG à la fois, chaque fichier peut sortir avec la même largeur ou hauteur.",
     seoTitle: "Convertir SVG en PNG – Haute résolution, transparent",
     seoDescription:
       "Convertissez un SVG en PNG gratuitement : export en 1x, 2x, 4x ou 8x pour des images nettes en haute résolution, avec fond transparent. Dans votre navigateur.",
@@ -2187,7 +2187,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     name: "SVG en JPG",
     shortName: "SVG → JPG",
     tagline: "Transformez des graphiques SVG en images JPG à n’importe quelle échelle, avec la couleur de fond de votre choix. La conversion se fait sur votre appareil.",
-    intro: "Les graphiques SVG restent nets à toutes les tailles, mais beaucoup d’applications, de réseaux sociaux et de formulaires d’envoi n’acceptent que des images classiques. SVG en JPG redessine le SVG à l’échelle de votre choix, de 1x à 8x, et l’enregistre en JPG. Le JPG ne gère pas la transparence : les zones transparentes sont remplies de blanc ou d’une couleur que vous choisissez. La conversion se fait dans votre navigateur, donc le fichier ne quitte jamais votre appareil.",
+    intro: "Les graphiques SVG restent nets à toutes les tailles, mais beaucoup d’applications, de réseaux sociaux et de formulaires d’envoi n’acceptent que des images classiques. SVG en JPG redessine le SVG à l’échelle de votre choix, de 1x à 8x, et l’enregistre en JPG. Le JPG ne gère pas la transparence : les zones transparentes sont remplies de blanc ou d’une couleur que vous choisissez. La conversion se fait dans votre navigateur, donc le fichier ne quitte jamais votre appareil. Si vous convertissez plusieurs SVG à la fois, chaque fichier peut sortir avec la même largeur ou hauteur.",
     seoTitle: "Convertir SVG en JPG – Toutes tailles, gratuit",
     seoDescription: "Convertissez des graphiques SVG en JPG dans votre navigateur, à l’échelle 1x à 8x, avec la couleur de fond de votre choix. Gratuit, rien n’est envoyé.",
     keywords: [
@@ -2252,7 +2252,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     name: "SVG en WebP",
     shortName: "SVG → WebP",
     tagline: "Transformez des graphiques SVG en images WebP légères à n’importe quelle échelle, transparence comprise. La conversion se fait sur votre appareil.",
-    intro: "Il arrive qu’un site, une application ou un outil de création d’e-mails ait besoin d’une image classique plutôt que d’un SVG. SVG en WebP redessine le SVG à l’échelle de votre choix, de 1x à 8x, et l’enregistre en WebP, un format léger que tous les navigateurs actuels affichent et qui conserve la transparence. La conversion se fait dans votre navigateur, donc le fichier ne quitte jamais votre appareil.",
+    intro: "Il arrive qu’un site, une application ou un outil de création d’e-mails ait besoin d’une image classique plutôt que d’un SVG. SVG en WebP redessine le SVG à l’échelle de votre choix, de 1x à 8x, et l’enregistre en WebP, un format léger que tous les navigateurs actuels affichent et qui conserve la transparence. La conversion se fait dans votre navigateur, donc le fichier ne quitte jamais votre appareil. Si vous convertissez plusieurs SVG à la fois, chaque fichier peut sortir avec la même largeur ou hauteur.",
     seoTitle: "Convertir SVG en WebP – Fichiers légers, transparence",
     seoDescription: "Convertissez des graphiques SVG en WebP dans votre navigateur, à l’échelle 1x à 8x, transparence conservée. Gratuit, rien n’est envoyé.",
     keywords: [
@@ -2402,7 +2402,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Créer un mème",
     tagline: "Créez un mème à partir de votre photo ou d’un modèle, avec du texte bien visible en haut, au milieu et en bas.",
     intro:
-      "Le générateur de mèmes ajoute des légendes de mème classiques sur une image. Importez votre propre image ou partez de l’un des huit modèles simples intégrés, puis saisissez les légendes du haut, du milieu et du bas ; les lignes longues passent automatiquement à la ligne pour tenir dans la largeur. Choisissez la police (Impact par défaut), la taille, la couleur du texte et du contour, l’alignement et les majuscules, puis téléchargez le mème en PNG, JPG ou WebP, sans filigrane.",
+      "Le générateur de mèmes ajoute des légendes de mème classiques sur une image. Importez votre propre image ou partez de l’un des huit modèles simples intégrés, puis saisissez les légendes du haut, du milieu et du bas ; les lignes longues passent automatiquement à la ligne pour tenir dans la largeur. Choisissez la police (Impact par défaut), la taille, la couleur du texte et du contour, l’alignement et les majuscules, puis téléchargez le mème en PNG, JPG ou WebP, sans filigrane. Choisissez Bandeaux pour le style moderne : des légendes noires dans des bandeaux blancs au-dessus et au-dessous de l’image, sans rien masquer.",
     seoTitle: "Générateur de mèmes – Ajoutez du texte à une image",
     seoDescription:
       "Créez un mème gratuitement : texte en haut, au milieu et en bas d’une photo ou d’un modèle, police, taille et contour au choix, téléchargement sans filigrane.",
@@ -2468,7 +2468,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Ma légende couvre trop l’image. Que faire ?",
         answer:
-          "Réduisez la taille du texte, ou déplacez une partie du texte dans la légende du milieu ou du bas. Les légendes longues passent automatiquement sur plusieurs lignes.",
+          "Choisissez Bandeaux pour placer les légendes du haut et du bas au-dessus et au-dessous de l’image plutôt que dessus. Vous pouvez aussi réduire la taille du texte ou en déplacer une partie dans une autre légende ; les longues légendes passent à la ligne automatiquement.",
       },
       {
         question: "Puis-je créer des mèmes sur mon téléphone ?",
@@ -2482,7 +2482,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "Découper en grille",
     tagline: "Découpez une image en grille de tuiles, comme une grille Instagram 3×3 ou un carrousel panoramique, et téléchargez un ZIP.",
     intro:
-      "Découper une image en grille divise une image en lignes et en colonnes de fichiers séparés. Utilisez le préréglage Instagram 3×3 pour une grille de profil, Panorama 3×1 ou Carrousel 2×1 pour des publications à faire défiler, 2×2 pour quatre parts égales, ou définissez votre propre grille jusqu’à 12 lignes et 12 colonnes. Toutes les tuiles se téléchargent ensemble sous forme de fichiers PNG numérotés dans un ZIP, ou vous pouvez cliquer sur une tuile pour n’enregistrer qu’elle.",
+      "Découper une image en grille divise une image en lignes et en colonnes de fichiers séparés. Utilisez le préréglage Instagram 3×3 pour une grille de profil, Panorama 3×1 ou Carrousel 2×1 pour des publications à faire défiler, 2×2 pour quatre parts égales, ou définissez votre propre grille jusqu’à 12 lignes et 12 colonnes. Toutes les tuiles se téléchargent ensemble sous forme de fichiers PNG numérotés dans un ZIP, ou vous pouvez cliquer sur une tuile pour n’enregistrer qu’elle. Instagram affiche désormais la grille du profil en 3:4 : le préréglage Grille Instagram 3×3 (3:4) découpe les tuiles dans cette forme, numérotées dans l’ordre de publication.",
     seoTitle: "Découper une image en grille – Instagram 3×3, panorama",
     seoDescription:
       "Découpez une image en grille gratuitement : grille Instagram 3x3, carrousel panoramique ou grille jusqu’à 12x12, et toutes les tuiles dans un seul ZIP.",
@@ -2536,12 +2536,12 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Dans quel ordre publier les tuiles sur Instagram ?",
         answer:
-          "Les tuiles sont numérotées de gauche à droite et de haut en bas, à partir de tile_01. Instagram affiche la publication la plus récente en premier : publiez d’abord la dernière tuile (tile_09 pour une grille 3×3) et terminez par tile_01.",
+          "Avec un préréglage de grille Instagram, les tuiles sont nommées dans l’ordre de publication : post-01 est la tuile en bas à droite, publiée en premier, et le plus grand numéro, en haut à gauche, est publié en dernier. Les numéros de l’aperçu suivent le même ordre.",
       },
       {
         question: "Quelle image utiliser pour une grille 3×3 ?",
         answer:
-          "Pour des tuiles carrées, partez d’une image carrée ; rognez-la d’abord en 1:1 si besoin. Instagram peut afficher les miniatures du profil avec un recadrage différent : vérifiez le résultat après la publication.",
+          "Instagram affiche désormais les publications du profil en tuiles 3:4 : utilisez le préréglage Grille Instagram 3×3 (3:4) avec une image d’environ 3:4. Pour l’ancienne grille carrée, utilisez le préréglage carré avec une image carrée.",
       },
       {
         question: "Comment découper un panorama pour un carrousel ?",
@@ -3276,7 +3276,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "L’AVIF est-il sans perte comme le PNG ?",
-        answer: "Pas ici. L’AVIF est compressé avec la qualité que vous choisissez, donc de petits détails peuvent changer. À 85 % ou plus, la plupart des images paraissent identiques au PNG.",
+        answer: "Seulement si vous cochez Sans perte, qui conserve chaque pixel mais donne un fichier plus lourd. Sinon, l’AVIF est compressé avec la qualité choisie, et de petits détails peuvent changer ; à 85 % ou plus, la plupart des images sont identiques au PNG.",
       },
       {
         question: "L’AVIF conserve-t-il la transparence ?",
@@ -8595,7 +8595,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "name": "Créer une couverture Facebook",
     "shortName": "Couverture Facebook",
     "tagline": "Donnez à une image la bonne taille pour une couverture ou un post Facebook. Gratuit, et tout se fait sur votre appareil.",
-    "intro": "Créer une couverture Facebook adapte une image à la taille 851 × 315 recommandée par Facebook pour les couvertures. Facebook affiche les couvertures dans des formats différents sur ordinateur et sur téléphone : gardez donc les visages et le texte près du milieu. L’outil propose aussi la taille courante 1200 × 630 pour les posts avec lien ou image. Faites glisser l’image jusqu’à ce qu’elle soit bien placée, puis téléchargez-la. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix.",
+    "intro": "Créer une couverture Facebook adapte une image à la taille 851 × 315 recommandée par Facebook pour les couvertures. Facebook affiche les couvertures dans des formats différents sur ordinateur et sur téléphone : gardez donc les visages et le texte près du milieu. L’outil propose aussi la taille courante 1200 × 630 pour les posts avec lien ou image. Faites glisser l’image jusqu’à ce qu’elle soit bien placée, puis téléchargez-la. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix. Afficher la zone de sécurité indique à peu près la partie visible sur les téléphones.",
     "seoTitle": "Créer une couverture Facebook – 851×315, gratuit",
     "seoDescription": "Redimensionnez une image pour une couverture (851×315) ou un post Facebook (1200×630). Faites glisser, puis téléchargez. Gratuit, sans inscription, sans envoi.",
     "keywords": ["taille photo de couverture facebook", "créer couverture facebook", "redimensionner image couverture facebook", "851x315", "taille image post facebook"],
@@ -8619,7 +8619,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "name": "Créer une bannière LinkedIn",
     "shortName": "Bannière LinkedIn",
     "tagline": "Créez une bannière de profil LinkedIn 1584 × 396 à partir de n’importe quelle image. Gratuit, et tout se fait sur votre appareil.",
-    "intro": "Créer une bannière LinkedIn recadre une image au format très large 1584 × 396 d’une bannière de profil LinkedIn. Faites glisser l’image vers le haut ou le bas pour choisir la bande voulue, et zoomez si besoin. L’outil propose aussi la taille 1200 × 627 pour les posts avec lien ou image. Votre photo de profil recouvre une partie du bas à gauche de la bannière : gardez-en les détails importants à l’écart. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix.",
+    "intro": "Créer une bannière LinkedIn recadre une image au format très large 1584 × 396 d’une bannière de profil LinkedIn. Faites glisser l’image vers le haut ou le bas pour choisir la bande voulue, et zoomez si besoin. L’outil propose aussi la taille 1200 × 627 pour les posts avec lien ou image. Votre photo de profil recouvre une partie du bas à gauche de la bannière : gardez-en les détails importants à l’écart. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix. Activez Afficher la zone de sécurité pour voir à peu près où se place la photo.",
     "seoTitle": "Créer une bannière LinkedIn – 1584×396, gratuit",
     "seoDescription": "Créez une bannière de profil LinkedIn 1584×396 ou une image de post 1200×627 à partir de n’importe quelle image. Faites glisser. Gratuit, sans envoi.",
     "keywords": ["taille bannière linkedin", "taille photo d’arrière-plan linkedin", "créer bannière linkedin", "1584x396", "image de couverture linkedin"],
@@ -8667,7 +8667,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     "name": "Créer une image Open Graph",
     "shortName": "Image Open Graph",
     "tagline": "Créez l’image 1200 × 630 affichée quand un lien est partagé. Gratuit, et tout se fait sur votre appareil.",
-    "intro": "Créer une image Open Graph prépare l’image qui apparaît quand quelqu’un partage votre page sur les réseaux sociaux ou dans une application de messagerie. L’outil met n’importe quelle image à la taille très répandue 1200 × 630. Une fois l’image sur votre site, faites-la pointer par la balise og:image de votre page. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix.",
+    "intro": "Créer une image Open Graph prépare l’image qui apparaît quand quelqu’un partage votre page sur les réseaux sociaux ou dans une application de messagerie. L’outil met n’importe quelle image à la taille très répandue 1200 × 630. Une fois l’image sur votre site, faites-la pointer par la balise og:image de votre page. Vous pouvez aussi ajouter du texte, comme un titre ou un nom, avec la police, la couleur et le contour de votre choix. Afficher la zone de sécurité indique le carré central qu’affichent certaines applis de messagerie.",
     "seoTitle": "Créer une image Open Graph – 1200×630 og:image, gratuit",
     "seoDescription": "Créez une image Open Graph 1200×630 pour les aperçus de liens sur les réseaux sociaux et messageries. Faites glisser, téléchargez. Gratuit, sans envoi.",
     "keywords": ["taille image open graph", "générateur image og", "taille og:image", "1200x630", "image aperçu de lien"],

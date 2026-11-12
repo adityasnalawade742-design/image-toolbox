@@ -962,7 +962,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Toplu Boyutlandır",
     tagline: "50'ye kadar resmi yüzdeyle, tam genişlikle veya en büyük kutu ölçüsüyle aynı anda boyutlandırın ve tek bir ZIP olarak indirin.",
     intro:
-      "Toplu Resim Boyutlandırma, aynı boyut kuralını tek adımda birçok resme uygular. Tüm dosyaları bir yüzdeyle ölçekleyebilir, tam bir genişlik belirleyebilir veya her resmi 1200 × 800 gibi bir kutunun içine sığdırarak hiçbir kenarın kutudan büyük olmamasını sağlayabilirsiniz. Her dosya orijinal formatını koruyabilir ve tüm sonuçlar tek bir ZIP içinde birlikte indirilir.",
+      "Toplu Resim Boyutlandırma, aynı boyut kuralını tek adımda birçok resme uygular. Tüm dosyaları bir yüzdeyle ölçekleyebilir, tam bir genişlik belirleyebilir veya her resmi 1200 × 800 gibi bir kutunun içine sığdırarak hiçbir kenarın kutudan büyük olmamasını sağlayabilirsiniz. Her dosya orijinal formatını koruyabilir ve tüm sonuçlar tek bir ZIP içinde birlikte indirilir. Genişlik ve yükseklik birlikte verildiğinde, farklı şekildeki resimlerin nasıl sığacağını seçin: doldurmak için kırpın, seçtiğiniz renkte kenarlık ekleyin ya da uzatın. Bir kaydırıcı JPG ve WebP kalitesini ayarlar.",
     seoTitle: "Toplu Resim Boyutlandırma – Birden Fazla Resim",
     seoDescription:
       "Toplu resim boyutlandırma, ücretsiz. 50'ye kadar JPG, PNG veya WebP dosyasını yüzdeyle, tam genişlikle ya da en büyük kutuyla ölçekleyin, tek ZIP alın.",
@@ -1022,7 +1022,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Resimlerim gerilir mi?",
         answer:
-          "Oranları her zaman koruyan Yüzde ve Kutuya sığdır modlarında gerilmez. Tam piksel modunda en boy oranının kilidini açıp iki kenarı da belirlerseniz, farklı şekildeki resimler gerilir.",
+          "Yalnızca Uzat’ı seçerseniz. Yüzde ve Kutuya sığdır her zaman oranı korur. Genişlik ve yükseklik birlikte verildiğinde Kırp (varsayılan) kenarları eşit kırpar, Kenarlık ise resmin tamamını renkli bir kenarlıkla sığdırır.",
       },
       {
         question: "Hangi dosya formatları destekleniyor?",
@@ -1032,7 +1032,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "JPG ve WebP dosyaları için hangi kalite kullanılır?",
         answer:
-          "Boyutlandırılan JPG ve WebP dosyaları %90 kalitede kaydedilir. Saydam resimleri JPG'ye dönüştürdüğünüzde saydam alanlar beyaz olur.",
+          "JPG ve WebP dosyaları varsayılan olarak %95 kaliteyle kaydedilir; Kalite kaydırıcısıyla değiştirebilirsiniz. PNG dosyaları her zaman kayıpsızdır. Saydam resimleri JPG’ye dönüştürünce saydam alanlar beyaz olur.",
       },
       {
         question: "Dosyalarım bir yere yükleniyor mu?",
@@ -2112,7 +2112,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "SVG vektör dosyalarını saydamlığı koruyarak 1x, 2x, 4x veya 8x boyutunda keskin PNG resimlerine dönüştürün.",
     intro:
-      "SVG'den PNG'ye aracı, logo veya simge gibi bir vektör grafiği, SVG dosyası kabul etmeyen yerler için PNG resmine dönüştürür. SVG'nin kendi boyutunun 1x, 2x, 4x veya 8x katını seçin; vektör bu boyutta yeniden çizildiği için daha büyük ölçek bulanık değil, daha keskin bir resim verir. Saydam arka planlar PNG'de de saydam kalır.",
+      "SVG'den PNG'ye aracı, logo veya simge gibi bir vektör grafiği, SVG dosyası kabul etmeyen yerler için PNG resmine dönüştürür. SVG'nin kendi boyutunun 1x, 2x, 4x veya 8x katını seçin; vektör bu boyutta yeniden çizildiği için daha büyük ölçek bulanık değil, daha keskin bir resim verir. Saydam arka planlar PNG'de de saydam kalır. Birden çok SVG’yi aynı anda dönüştürürken tüm dosyalar aynı genişlik ya da yükseklikte çıkabilir.",
     seoTitle: "SVG'yi PNG'ye Dönüştürme – Yüksek Çözünürlük",
     seoDescription:
       "SVG'yi PNG'ye dönüştürme, ücretsiz. Saydam arka planlı, keskin ve yüksek çözünürlüklü resimler için 1x, 2x, 4x veya 8x dışa aktarın. Tarayıcınızda dönüştürülür.",
@@ -2187,7 +2187,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     name: "SVG'den JPG'ye",
     shortName: "SVG → JPG",
     tagline: "SVG grafiklerini istediğiniz ölçekte ve seçtiğiniz arka plan rengiyle JPG resimlerine dönüştürün. Dönüştürme cihazınızda çalışır.",
-    intro: "SVG grafikleri her boyutta keskin kalır, ancak birçok uygulama, sosyal ağ ve yükleme formu yalnızca normal resimleri kabul eder. SVG'den JPG'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve JPG olarak kaydeder. JPG saydamlığı desteklemediği için saydam alanlar beyazla veya seçtiğiniz bir renkle doldurulur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    intro: "SVG grafikleri her boyutta keskin kalır, ancak birçok uygulama, sosyal ağ ve yükleme formu yalnızca normal resimleri kabul eder. SVG'den JPG'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve JPG olarak kaydeder. JPG saydamlığı desteklemediği için saydam alanlar beyazla veya seçtiğiniz bir renkle doldurulur. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz. Birden çok SVG’yi aynı anda dönüştürürken tüm dosyalar aynı genişlik ya da yükseklikte çıkabilir.",
     seoTitle: "SVG JPG Dönüştürme – Her Boyutta, Ücretsiz",
     seoDescription: "SVG grafiklerini tarayıcınızda 1x ile 8x arası ölçekte, istediğiniz arka plan rengiyle JPG'ye dönüştürün. Ücretsiz ve hiçbir şey yüklenmez.",
     keywords: [
@@ -2252,7 +2252,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     name: "SVG'den WebP'ye",
     shortName: "SVG → WebP",
     tagline: "SVG grafiklerini saydamlık dahil, istediğiniz ölçekte küçük WebP resimlerine dönüştürün. Dönüştürme cihazınızda çalışır.",
-    intro: "Bazen bir web sitesi, uygulama veya e-posta oluşturucu SVG yerine normal bir resim ister. SVG'den WebP'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve WebP olarak kaydeder. WebP, tüm güncel tarayıcıların gösterdiği ve saydamlığı koruyan küçük bir biçimdir. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz.",
+    intro: "Bazen bir web sitesi, uygulama veya e-posta oluşturucu SVG yerine normal bir resim ister. SVG'den WebP'ye aracı, SVG'yi 1x ile 8x arasında seçtiğiniz ölçekte yeniden çizer ve WebP olarak kaydeder. WebP, tüm güncel tarayıcıların gösterdiği ve saydamlığı koruyan küçük bir biçimdir. Dönüştürme tarayıcınızın içinde gerçekleşir, bu yüzden dosya cihazınızdan hiç çıkmaz. Birden çok SVG’yi aynı anda dönüştürürken tüm dosyalar aynı genişlik ya da yükseklikte çıkabilir.",
     seoTitle: "SVG WebP Dönüştürme – Küçük Dosya, Saydamlık Korunur",
     seoDescription: "SVG grafiklerini tarayıcınızda 1x ile 8x arası ölçekte, saydamlığı koruyarak WebP'ye dönüştürün. Ücretsiz ve hiçbir şey yüklenmez.",
     keywords: [
@@ -2402,7 +2402,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Meme Yap",
     tagline: "Kendi fotoğrafınızdan veya hazır bir şablondan, üstte, ortada ve altta kalın yazılarla bir meme yapın.",
     intro:
-      "Meme Oluşturucu, bir resme klasik meme yazıları ekler. Kendi resminizi yükleyin veya sekiz basit hazır şablondan biriyle başlayın, ardından üst, orta ve alt yazıları yazın; uzun satırlar genişliğe sığacak şekilde otomatik olarak kaydırılır. Yazı tipini (varsayılan Impact), boyutu, yazı ve dış çizgi renklerini, hizalamayı ve büyük harf kullanımını seçin; meme'i filigran olmadan PNG, JPG veya WebP olarak indirin.",
+      "Meme Oluşturucu, bir resme klasik meme yazıları ekler. Kendi resminizi yükleyin veya sekiz basit hazır şablondan biriyle başlayın, ardından üst, orta ve alt yazıları yazın; uzun satırlar genişliğe sığacak şekilde otomatik olarak kaydırılır. Yazı tipini (varsayılan Impact), boyutu, yazı ve dış çizgi renklerini, hizalamayı ve büyük harf kullanımını seçin; meme'i filigran olmadan PNG, JPG veya WebP olarak indirin. Modern stil için Yazı şeritleri’ni seçin: resmin üstünde ve altında beyaz şeritlerde siyah yazılar, hiçbir yeri kapatmadan.",
     seoTitle: "Meme Oluşturucu – Caps Yapma, Resme Yazı Ekleme",
     seoDescription:
       "Ücretsiz online meme ve caps yapma. Fotoğrafınıza veya bir şablona üst, orta ve alt yazı ekleyin; yazı tipini, boyutu ve dış çizgiyi seçin, filigransız indirin.",
@@ -2468,7 +2468,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Yazım resmin çok fazla kısmını kaplıyor. Ne yapabilirim?",
         answer:
-          "Yazı boyutunu küçültün veya metnin bir kısmını orta ya da alt yazıya taşıyın. Uzun yazılar otomatik olarak birkaç satıra kaydırılır.",
+          "Üst ve alt yazıları resmin üstüne değil, üstüne ve altına yerleştirmek için Yazı şeritleri’ni seçin. Ya da yazı boyutunu küçültün veya metnin bir kısmını başka bir yazıya taşıyın; uzun yazılar kendiliğinden alt satıra geçer.",
       },
       {
         question: "Telefonumda meme yapabilir miyim?",
@@ -2482,7 +2482,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "Izgara Böl",
     tagline: "Bir resmi 3×3 Instagram ızgarası veya panorama kaydırmalı gönderi gibi parçalara bölün ve ZIP olarak indirin.",
     intro:
-      "Resim Bölme ve Izgara Kesici, bir resmi satır ve sütunlar hâlinde ayrı resim dosyalarına böler. Profil ızgarası için Instagram 3×3 hazır ayarını, kaydırmalı gönderiler için Panorama 3×1 veya Kaydırmalı gönderi 2×1'i, dört eşit parça için 2×2'yi kullanın ya da en fazla 12 satır ve 12 sütunluk kendi ızgaranızı belirleyin. Tüm parçalar numaralı PNG dosyaları olarak bir ZIP içinde birlikte indirilir veya yalnızca birini kaydetmek için tek bir parçaya tıklayabilirsiniz.",
+      "Resim Bölme ve Izgara Kesici, bir resmi satır ve sütunlar hâlinde ayrı resim dosyalarına böler. Profil ızgarası için Instagram 3×3 hazır ayarını, kaydırmalı gönderiler için Panorama 3×1 veya Kaydırmalı gönderi 2×1'i, dört eşit parça için 2×2'yi kullanın ya da en fazla 12 satır ve 12 sütunluk kendi ızgaranızı belirleyin. Tüm parçalar numaralı PNG dosyaları olarak bir ZIP içinde birlikte indirilir veya yalnızca birini kaydetmek için tek bir parçaya tıklayabilirsiniz. Instagram artık profil ızgarasını 3:4 gösteriyor; Instagram 3×3 ızgara (3:4) ön ayarı parçaları bu şekilde keser ve paylaşım sırasına göre numaralar.",
     seoTitle: "Resmi Parçalara Bölme – Instagram 3×3 ve Panorama",
     seoDescription:
       "Resmi parçalara bölme, ücretsiz. 3x3 Instagram ızgarası, panorama kaydırmalı gönderi dilimleri veya 12x12'ye kadar özel ızgara yapın, ZIP olarak indirin.",
@@ -2536,12 +2536,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Parçaları Instagram'da hangi sırayla paylaşmalıyım?",
         answer:
-          "Parçalar tile_01'den başlayarak soldan sağa ve yukarıdan aşağıya numaralandırılır. Instagram en yeni gönderiyi önce gösterir; bu yüzden önce son parçayı (3×3 ızgarada tile_09) yükleyin ve tile_01 ile bitirin.",
+          "Instagram ızgara ön ayarında parçalar paylaşım sırasına göre adlandırılır: post-01 sağ alttaki parçadır ve ilk paylaşılır, en büyük numara olan sol üst parça en son paylaşılır. Önizlemedeki numaralar da aynı sırayı gösterir.",
       },
       {
         question: "3×3 ızgara için hangi resmi kullanmalıyım?",
         answer:
-          "Kare parçalar için kare bir resimle başlayın; gerekirse önce 1:1 oranında kırpın. Instagram profil küçük resimlerini farklı bir kırpmayla gösterebilir, bu yüzden paylaştıktan sonra sonucu kontrol edin.",
+          "Instagram artık profil gönderilerini 3:4 parçalar olarak gösteriyor; yaklaşık 3:4 şeklinde bir resimle Instagram 3×3 ızgara (3:4) ön ayarını kullanın. Eski kare ızgara için kare bir resimle kare ön ayarı kullanın.",
       },
       {
         question: "Kaydırmalı gönderi için panoramayı nasıl bölerim?",
@@ -3281,7 +3281,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "AVIF de PNG gibi kayıpsız mı?",
-        answer: "Burada değil. AVIF seçtiğiniz kalitede sıkıştırılır, bu yüzden çok küçük ayrıntılar değişebilir. %85 veya üstünde çoğu resim PNG ile aynı görünür.",
+        answer: "Yalnızca Kayıpsız’ı işaretlerseniz; her piksel aynen korunur ama dosya büyür. Aksi hâlde AVIF seçtiğiniz kaliteyle sıkıştırılır ve küçük ayrıntılar değişebilir; %85 ve üzerinde çoğu resim PNG ile aynı görünür.",
       },
       {
         question: "AVIF saydamlığı korur mu?",
@@ -8565,7 +8565,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "name": "Facebook Kapak Fotoğrafı Oluşturucu",
     "shortName": "Facebook Kapak",
     "tagline": "Bir resmi Facebook kapak fotoğrafı veya gönderisi için doğru boyuta getirin. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "Facebook Kapak Fotoğrafı Oluşturucu, bir resmi Facebook’un kapaklar için önerdiği 851 × 315 boyutuna sığdırır. Facebook kapakları bilgisayarda ve telefonda farklı şekillerde gösterir, bu yüzden yüzleri ve yazıları ortaya yakın tutun. Bağlantı ve resim gönderileri için yaygın 1200 × 630 boyutu da vardır. Resmi yerine oturana kadar sürükleyin, sonra indirin. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz.",
+    "intro": "Facebook Kapak Fotoğrafı Oluşturucu, bir resmi Facebook’un kapaklar için önerdiği 851 × 315 boyutuna sığdırır. Facebook kapakları bilgisayarda ve telefonda farklı şekillerde gösterir, bu yüzden yüzleri ve yazıları ortaya yakın tutun. Bağlantı ve resim gönderileri için yaygın 1200 × 630 boyutu da vardır. Resmi yerine oturana kadar sürükleyin, sonra indirin. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz. Güvenli alanı göster, telefonların yaklaşık olarak gösterdiği kısmı işaretler.",
     "seoTitle": "Facebook Kapak Fotoğrafı Boyutu – 851×315, Ücretsiz",
     "seoDescription": "Bir resmi Facebook kapağı (851×315) veya gönderisi (1200×630) için boyutlandırın. Sürükleyerek konumlandırın, sonra indirin. Ücretsiz, kayıtsız, yüklemesiz.",
     "keywords": ["facebook kapak fotoğrafı boyutu", "facebook kapak fotoğrafı oluşturma", "facebook kapak için resim boyutlandırma", "851x315", "facebook gönderi resim boyutu"],
@@ -8589,7 +8589,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "name": "LinkedIn Banner Oluşturucu",
     "shortName": "LinkedIn Banner",
     "tagline": "Herhangi bir resimden 1584 × 396 LinkedIn profil banner’ı yapın. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "LinkedIn Banner Oluşturucu, bir resmi LinkedIn profil banner’ının çok geniş 1584 × 396 şekline keser. İstediğiniz şeridi seçmek için resmi yukarı aşağı sürükleyin, gerekirse yakınlaştırın. Bağlantı ve resim gönderileri için 1200 × 627 boyutu da vardır. Profil fotoğrafınız banner’ın sol altının bir kısmını kapatır, bu yüzden önemli ayrıntıları oradan uzak tutun. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz.",
+    "intro": "LinkedIn Banner Oluşturucu, bir resmi LinkedIn profil banner’ının çok geniş 1584 × 396 şekline keser. İstediğiniz şeridi seçmek için resmi yukarı aşağı sürükleyin, gerekirse yakınlaştırın. Bağlantı ve resim gönderileri için 1200 × 627 boyutu da vardır. Profil fotoğrafınız banner’ın sol altının bir kısmını kapatır, bu yüzden önemli ayrıntıları oradan uzak tutun. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz. Fotoğrafın yaklaşık nereye geldiğini görmek için Güvenli alanı göster’i açın.",
     "seoTitle": "LinkedIn Banner Oluşturucu – 1584×396 Arka Plan, Ücretsiz",
     "seoDescription": "Herhangi bir resimden 1584×396 LinkedIn profil banner’ı veya 1200×627 gönderi resmi yapın. Sürükleyerek konumlandırın. Ücretsiz, kayıtsız, yüklemesiz.",
     "keywords": ["linkedin banner boyutu", "linkedin arka plan fotoğrafı boyutu", "linkedin banner oluşturma", "1584x396", "linkedin kapak fotoğrafı"],
@@ -8637,7 +8637,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     "name": "Open Graph Resmi Oluşturucu",
     "shortName": "Open Graph Resmi",
     "tagline": "Bir bağlantı paylaşıldığında gösterilen 1200 × 630 resmi yapın. Ücretsizdir ve cihazınızda çalışır.",
-    "intro": "Open Graph Resmi Oluşturucu, biri sayfanızı sosyal medyada veya bir sohbet uygulamasında paylaştığında görünen resmi hazırlar. Herhangi bir resmi yaygın olarak kullanılan 1200 × 630 boyutuna getirir. Resim sitenize yüklendikten sonra sayfanızın og:image etiketini ona yönlendirin. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz.",
+    "intro": "Open Graph Resmi Oluşturucu, biri sayfanızı sosyal medyada veya bir sohbet uygulamasında paylaştığında görünen resmi hazırlar. Herhangi bir resmi yaygın olarak kullanılan 1200 × 630 boyutuna getirir. Resim sitenize yüklendikten sonra sayfanızın og:image etiketini ona yönlendirin. Başlık veya isim gibi bir metni de dilediğiniz yazı tipi, renk ve dış çizgiyle ekleyebilirsiniz. Güvenli alanı göster, bazı sohbet uygulamalarının gösterdiği ortadaki kareyi işaretler.",
     "seoTitle": "Open Graph Resmi Oluşturucu – 1200×630 og:image",
     "seoDescription": "Sosyal medya ve sohbet uygulamalarındaki bağlantı önizlemeleri için 1200×630 Open Graph resmi yapın. Sürükleyin, indirin. Ücretsiz, kayıtsız, yüklemesiz.",
     "keywords": ["open graph resim boyutu", "og resim oluşturucu", "og:image boyutu", "1200x630", "bağlantı önizleme resmi"],

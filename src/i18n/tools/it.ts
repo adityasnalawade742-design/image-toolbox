@@ -962,7 +962,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Ridimensiona in blocco",
     tagline: "Ridimensiona fino a 50 immagini insieme in percentuale, a una larghezza esatta o entro un riquadro massimo, e scaricale in un unico ZIP.",
     intro:
-      "Ridimensionamento immagini in blocco applica la stessa regola di dimensione a molte immagini in un solo passaggio. Puoi scalare ogni file in percentuale, impostare una larghezza esatta o adattare ogni immagine a un riquadro come 1200 × 800, così nessun lato supera il riquadro. Ogni file può mantenere il suo formato originale, e tutti i risultati si scaricano insieme in un unico ZIP.",
+      "Ridimensionamento immagini in blocco applica la stessa regola di dimensione a molte immagini in un solo passaggio. Puoi scalare ogni file in percentuale, impostare una larghezza esatta o adattare ogni immagine a un riquadro come 1200 × 800, così nessun lato supera il riquadro. Ogni file può mantenere il suo formato originale, e tutti i risultati si scaricano insieme in un unico ZIP. Con larghezza e altezza impostate, scegli come si adattano le immagini di forma diversa: ritagliare per riempire, aggiungere bordi del colore che vuoi o allungare. Un cursore regola la qualità di JPG e WebP.",
     seoTitle: "Ridimensionare più immagini insieme – In blocco",
     seoDescription:
       "Ridimensiona più immagini insieme, gratis. Scala fino a 50 file JPG, PNG o WebP in percentuale, a larghezza esatta o entro un riquadro e ottieni uno ZIP.",
@@ -1022,7 +1022,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Le mie immagini verranno deformate?",
         answer:
-          "Non nelle modalità Percentuale e Adatta al riquadro, che mantengono sempre le proporzioni. In modalità Pixel esatti, se sblocchi le proporzioni e imposti entrambi i lati, le immagini con una forma diversa verranno deformate.",
+          "Solo se scegli Allunga. Percentuale e Adatta al riquadro mantengono sempre le proporzioni. Con larghezza e altezza impostate, Ritaglia (predefinito) taglia i bordi in modo uniforme e Bordi inserisce l’immagine intera con un bordo colorato.",
       },
       {
         question: "Quali formati di file sono supportati?",
@@ -1032,7 +1032,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quale qualità si usa per i file JPG e WebP?",
         answer:
-          "I file JPG e WebP ridimensionati vengono salvati con qualità al 90%. Quando converti immagini trasparenti in JPG, le aree trasparenti diventano bianche.",
+          "I file JPG e WebP vengono salvati al 95% di qualità per impostazione predefinita; puoi cambiarla con il cursore Qualità. I PNG sono sempre senza perdita. Convertendo immagini trasparenti in JPG, le aree trasparenti diventano bianche.",
       },
       {
         question: "I miei file vengono caricati da qualche parte?",
@@ -2112,7 +2112,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Converti file vettoriali SVG in immagini PNG nitide a 1x, 2x, 4x o 8x, mantenendo la trasparenza.",
     intro:
-      "Da SVG a PNG trasforma una grafica vettoriale, come un logo o un’icona, in un’immagine PNG per i casi in cui i file SVG non sono accettati. Scegli 1x, 2x, 4x o 8x la dimensione propria dell’SVG; poiché il vettore viene ridisegnato a quella dimensione, una scala maggiore dà un’immagine più nitida, non sfocata. Gli sfondi trasparenti restano trasparenti nel PNG.",
+      "Da SVG a PNG trasforma una grafica vettoriale, come un logo o un’icona, in un’immagine PNG per i casi in cui i file SVG non sono accettati. Scegli 1x, 2x, 4x o 8x la dimensione propria dell’SVG; poiché il vettore viene ridisegnato a quella dimensione, una scala maggiore dà un’immagine più nitida, non sfocata. Gli sfondi trasparenti restano trasparenti nel PNG. Se converti più SVG insieme, ogni file può uscire con la stessa larghezza o altezza.",
     seoTitle: "Convertire SVG in PNG – Alta risoluzione, trasparente",
     seoDescription:
       "Converti SVG in PNG online gratis. Esporta a 1x, 2x, 4x o 8x per immagini nitide ad alta risoluzione con sfondo trasparente. Conversione nel browser.",
@@ -2187,7 +2187,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     name: "Da SVG a JPG",
     shortName: "SVG → JPG",
     tagline: "Trasforma le grafiche SVG in immagini JPG a qualsiasi scala, con il colore di sfondo che scegli. La conversione avviene sul tuo dispositivo.",
-    intro: "Le grafiche SVG restano nitide a qualsiasi dimensione, ma molte app, social network e moduli di caricamento accettano solo immagini normali. Da SVG a JPG ridisegna l’SVG alla scala che scegli, da 1x a 8x, e lo salva in JPG. Il JPG non supporta la trasparenza, quindi le aree trasparenti vengono riempite di bianco o di un colore a tua scelta. La conversione avviene nel tuo browser, quindi il file non lascia mai il tuo dispositivo.",
+    intro: "Le grafiche SVG restano nitide a qualsiasi dimensione, ma molte app, social network e moduli di caricamento accettano solo immagini normali. Da SVG a JPG ridisegna l’SVG alla scala che scegli, da 1x a 8x, e lo salva in JPG. Il JPG non supporta la trasparenza, quindi le aree trasparenti vengono riempite di bianco o di un colore a tua scelta. La conversione avviene nel tuo browser, quindi il file non lascia mai il tuo dispositivo. Se converti più SVG insieme, ogni file può uscire con la stessa larghezza o altezza.",
     seoTitle: "Convertire SVG in JPG – Qualsiasi dimensione, gratis",
     seoDescription: "Converti le grafiche SVG in JPG nel browser, con scala da 1x a 8x e il colore di sfondo che preferisci. Gratis e niente viene caricato.",
     keywords: [
@@ -2252,7 +2252,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     name: "Da SVG a WebP",
     shortName: "SVG → WebP",
     tagline: "Trasforma le grafiche SVG in immagini WebP leggere a qualsiasi scala, trasparenza inclusa. La conversione avviene sul tuo dispositivo.",
-    intro: "A volte un sito, un’app o un editor di email ha bisogno di un’immagine normale invece di un SVG. Da SVG a WebP ridisegna l’SVG alla scala che scegli, da 1x a 8x, e lo salva in WebP, un formato leggero che tutti i browser attuali mostrano e che mantiene la trasparenza. La conversione avviene nel tuo browser, quindi il file non lascia mai il tuo dispositivo.",
+    intro: "A volte un sito, un’app o un editor di email ha bisogno di un’immagine normale invece di un SVG. Da SVG a WebP ridisegna l’SVG alla scala che scegli, da 1x a 8x, e lo salva in WebP, un formato leggero che tutti i browser attuali mostrano e che mantiene la trasparenza. La conversione avviene nel tuo browser, quindi il file non lascia mai il tuo dispositivo. Se converti più SVG insieme, ogni file può uscire con la stessa larghezza o altezza.",
     seoTitle: "Convertire SVG in WebP – File leggeri, trasparenza",
     seoDescription: "Converti le grafiche SVG in WebP nel browser, con scala da 1x a 8x e trasparenza mantenuta. Gratis e niente viene caricato.",
     keywords: [
@@ -2402,7 +2402,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Crea meme",
     tagline: "Crea un meme dalla tua foto o da un modello di partenza, con scritte grandi in alto, al centro e in basso.",
     intro:
-      "Generatore di meme aggiunge a un’immagine le classiche scritte dei meme. Carica una tua immagine o parti da uno degli otto semplici modelli integrati, poi scrivi il testo in alto, al centro e in basso; le righe lunghe vanno a capo in automatico per stare nella larghezza. Scegli il carattere (Impact per impostazione predefinita), la dimensione, i colori del testo e del contorno, l’allineamento e il maiuscolo, e scarica il meme in PNG, JPG o WebP senza alcuna filigrana.",
+      "Generatore di meme aggiunge a un’immagine le classiche scritte dei meme. Carica una tua immagine o parti da uno degli otto semplici modelli integrati, poi scrivi il testo in alto, al centro e in basso; le righe lunghe vanno a capo in automatico per stare nella larghezza. Scegli il carattere (Impact per impostazione predefinita), la dimensione, i colori del testo e del contorno, l’allineamento e il maiuscolo, e scarica il meme in PNG, JPG o WebP senza alcuna filigrana. Scegli Barre di testo per lo stile moderno: testo nero in barre bianche sopra e sotto l’immagine, senza coprire nulla.",
     seoTitle: "Creare meme online – Aggiungi scritte a ogni immagine",
     seoDescription:
       "Crea meme online gratis. Aggiungi testo in alto, al centro e in basso a una foto o a un modello, scegli carattere e contorno e scarica senza filigrana.",
@@ -2468,7 +2468,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "La scritta copre troppo l’immagine. Cosa posso fare?",
         answer:
-          "Riduci la dimensione del carattere, o sposta parte del testo nella scritta al centro o in basso. Le scritte lunghe vanno a capo su più righe in automatico.",
+          "Scegli Barre di testo per mettere il testo in alto e in basso sopra e sotto l’immagine invece che su di essa. Oppure riduci la dimensione del carattere o sposta parte del testo in un’altra didascalia; i testi lunghi vanno a capo da soli.",
       },
       {
         question: "Posso creare meme dal telefono?",
@@ -2482,7 +2482,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "Dividi in griglia",
     tagline: "Taglia un’immagine in una griglia di riquadri, come una griglia Instagram 3×3 o un carosello panoramico, e scarica uno ZIP.",
     intro:
-      "Dividi immagine in griglia suddivide un’immagine in righe e colonne di file separati. Usa il preset Instagram 3×3 per una griglia del profilo, Panorama 3×1 o Carosello 2×1 per post da scorrere, 2×2 per quattro parti uguali, o imposta una griglia personalizzata fino a 12 righe e 12 colonne. Tutti i riquadri si scaricano insieme come file PNG numerati in uno ZIP, oppure puoi cliccare un singolo riquadro per salvare solo quello.",
+      "Dividi immagine in griglia suddivide un’immagine in righe e colonne di file separati. Usa il preset Instagram 3×3 per una griglia del profilo, Panorama 3×1 o Carosello 2×1 per post da scorrere, 2×2 per quattro parti uguali, o imposta una griglia personalizzata fino a 12 righe e 12 colonne. Tutti i riquadri si scaricano insieme come file PNG numerati in uno ZIP, oppure puoi cliccare un singolo riquadro per salvare solo quello. Instagram ora mostra la griglia del profilo in 3:4: il preset Griglia Instagram 3×3 (3:4) taglia i riquadri in quella forma, numerati nell’ordine di pubblicazione.",
     seoTitle: "Dividere immagine in griglia – Instagram 3×3",
     seoDescription:
       "Dividi un’immagine in griglia online gratis. Crea una griglia Instagram 3x3, un carosello panoramico o una griglia fino a 12x12 e scarica tutto in uno ZIP.",
@@ -2536,12 +2536,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "In che ordine devo pubblicare i riquadri su Instagram?",
         answer:
-          "I riquadri sono numerati da sinistra a destra e dall’alto in basso, a partire da tile_01. Instagram mostra per primo il post più recente, quindi carica per primo l’ultimo riquadro (tile_09 per una griglia 3×3) e finisci con tile_01.",
+          "Con un preset a griglia di Instagram, i riquadri sono nominati nell’ordine di pubblicazione: post-01 è quello in basso a destra e va pubblicato per primo, il numero più alto, in alto a sinistra, per ultimo. I numeri nell’anteprima mostrano lo stesso ordine.",
       },
       {
         question: "Quale immagine devo usare per una griglia 3×3?",
         answer:
-          "Per riquadri quadrati, parti da un’immagine quadrata; se serve, ritagliala prima in 1:1. Instagram può mostrare le miniature del profilo con un ritaglio diverso, quindi controlla il risultato dopo la pubblicazione.",
+          "Instagram ora mostra i post del profilo come riquadri 3:4: usa il preset Griglia Instagram 3×3 (3:4) con un’immagine di forma circa 3:4. Per la vecchia griglia quadrata, usa il preset quadrato con un’immagine quadrata.",
       },
       {
         question: "Come divido un panorama per un post a carosello?",
@@ -3281,7 +3281,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     faqs: [
       {
         question: "AVIF è senza perdita come PNG?",
-        answer: "Non qui. L’AVIF viene compresso con la qualità che scegli, quindi i dettagli più minuti possono cambiare. Dall’85% in su, la maggior parte delle immagini appare identica al PNG.",
+        answer: "Solo se spunti Senza perdita, che mantiene ogni pixel identico ma crea un file più grande. Altrimenti l’AVIF è compresso con la qualità che scegli e piccoli dettagli possono cambiare; dall’85% in su la maggior parte delle immagini appare uguale al PNG.",
       },
       {
         question: "AVIF mantiene la trasparenza?",
@@ -8546,7 +8546,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     "name": "Crea copertine Facebook",
     "shortName": "Copertina Facebook",
     "tagline": "Dai a un’immagine la dimensione giusta per una copertina o un post di Facebook. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Crea copertine Facebook adatta un’immagine alla dimensione 851 × 315 consigliata da Facebook per le copertine. Facebook mostra le copertine con forme diverse su computer e telefoni, quindi tieni volti e testi vicino al centro. C’è anche la dimensione comune 1200 × 630 per i post con link e immagini. Trascina l’immagine finché non è al posto giusto, poi scaricala. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci.",
+    "intro": "Crea copertine Facebook adatta un’immagine alla dimensione 851 × 315 consigliata da Facebook per le copertine. Facebook mostra le copertine con forme diverse su computer e telefoni, quindi tieni volti e testi vicino al centro. C’è anche la dimensione comune 1200 × 630 per i post con link e immagini. Trascina l’immagine finché non è al posto giusto, poi scaricala. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci. Mostra l’area sicura indica più o meno la parte visibile sui telefoni.",
     "seoTitle": "Creare copertina Facebook – 851×315, gratis",
     "seoDescription": "Ridimensiona un’immagine per una copertina (851×315) o un post (1200×630) di Facebook. Trascina per posizionarla, poi scaricala. Gratis, senza upload.",
     "keywords": ["dimensioni copertina facebook", "creare copertina facebook", "ridimensionare immagine per copertina facebook", "851x315", "dimensioni immagine post facebook"],
@@ -8570,7 +8570,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     "name": "Crea banner LinkedIn",
     "shortName": "Banner LinkedIn",
     "tagline": "Crea un banner del profilo LinkedIn da 1584 × 396 da qualsiasi immagine. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Crea banner LinkedIn taglia un’immagine nella forma molto larga 1584 × 396 del banner del profilo LinkedIn. Trascina l’immagine in alto e in basso per scegliere la fascia che vuoi e ingrandisci se serve. C’è anche la dimensione 1200 × 627 per i post con link e immagini. La foto del profilo copre parte dell’angolo in basso a sinistra del banner, quindi tieni i dettagli importanti lontani da lì. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci.",
+    "intro": "Crea banner LinkedIn taglia un’immagine nella forma molto larga 1584 × 396 del banner del profilo LinkedIn. Trascina l’immagine in alto e in basso per scegliere la fascia che vuoi e ingrandisci se serve. C’è anche la dimensione 1200 × 627 per i post con link e immagini. La foto del profilo copre parte dell’angolo in basso a sinistra del banner, quindi tieni i dettagli importanti lontani da lì. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci. Attiva Mostra l’area sicura per vedere più o meno dove si trova la foto.",
     "seoTitle": "Creare banner LinkedIn – 1584×396, gratis",
     "seoDescription": "Crea un banner del profilo LinkedIn da 1584×396 o un’immagine per i post da 1200×627 da qualsiasi immagine. Trascina per posizionare. Gratis, senza upload.",
     "keywords": ["dimensioni banner linkedin", "dimensioni immagine di sfondo linkedin", "creare banner linkedin", "1584x396", "immagine di copertina linkedin"],
@@ -8618,7 +8618,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     "name": "Crea immagini Open Graph",
     "shortName": "Immagine Open Graph",
     "tagline": "Crea l’immagine da 1200 × 630 mostrata quando viene condiviso un link. Gratis e funziona sul tuo dispositivo.",
-    "intro": "Crea immagini Open Graph prepara l’immagine che appare quando qualcuno condivide la tua pagina sui social o in un’app di messaggistica. Porta qualsiasi immagine alla dimensione molto diffusa 1200 × 630. Quando è sul tuo sito, fai puntare a essa il tag og:image della pagina. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci.",
+    "intro": "Crea immagini Open Graph prepara l’immagine che appare quando qualcuno condivide la tua pagina sui social o in un’app di messaggistica. Porta qualsiasi immagine alla dimensione molto diffusa 1200 × 630. Quando è sul tuo sito, fai puntare a essa il tag og:image della pagina. Puoi anche aggiungere testo, come un titolo o un nome, con il carattere, il colore e il contorno che preferisci. Mostra l’area sicura indica il quadrato centrale che mostrano alcune app di chat.",
     "seoTitle": "Creare immagine Open Graph – 1200×630 og:image, gratis",
     "seoDescription": "Crea un’immagine Open Graph da 1200×630 per le anteprime dei link su social e app di messaggistica. Trascina e scarica. Gratis, senza registrazione né upload.",
     "keywords": ["dimensioni immagine open graph", "generatore immagine og", "dimensioni og:image", "1200x630", "immagine anteprima link"],

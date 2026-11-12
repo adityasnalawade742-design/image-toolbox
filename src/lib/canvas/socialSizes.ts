@@ -20,6 +20,10 @@ export interface SocialPreset {
   height: number;
   /** What every device shows, in output pixels: a guide only, never part of the saved picture */
   safe?: { x: number; y: number; w: number; h: number };
+  /** What the safe box means, for its hint: shown everywhere, roughly what phones show, or the square some apps show */
+  safeKind?: 'all' | 'phone' | 'square';
+  /** Roughly where the profile photo sits on top of a banner */
+  photo?: { x: number; y: number; w: number; h: number };
   /** Covered by something the network draws on top, such as YouTube's video length in the bottom-right corner */
   badge?: { x: number; y: number; w: number; h: number };
   /** The network's upload limit */
@@ -41,13 +45,17 @@ export const SOCIAL_PRESETS: Record<SocialPresetId, SocialPreset> = {
   'yt-thumb-4k': { id: 'yt-thumb-4k', width: 3840, height: 2160, badge: { x: 3225, y: 1836, w: 576, h: 288 }, maxBytes: 50 * MB },
   // Phones and computers only show the middle strip; TVs show all of it
   'yt-banner': { id: 'yt-banner', width: 2560, height: 1440, safe: { x: 507, y: 508, w: 1546, h: 423 }, maxBytes: 6 * MB },
-  // Facebook crops covers differently per device (2.4:1 on phones) without saying exactly where, so no guide is drawn
-  'fb-cover': { id: 'fb-cover', width: 851, height: 315 },
+  // Facebook shows the cover at 851 × 315 on computers and 640 × 360 on phones, which keeps only the middle: 560
+  // of the 851 pixels at full height. Devices vary, so the guide is labelled as approximate.
+  'fb-cover': { id: 'fb-cover', width: 851, height: 315, safe: { x: 146, y: 0, w: 560, h: 315 }, safeKind: 'phone' },
   'fb-post': { id: 'fb-post', width: 1200, height: 630 },
-  'li-banner': { id: 'li-banner', width: 1584, height: 396, maxBytes: 8 * MB },
+  // On a computer the round profile photo (about 152 of the banner's 804 shown pixels, 24 from the left) covers the
+  // lower left and hangs below it
+  'li-banner': { id: 'li-banner', width: 1584, height: 396, photo: { x: 47, y: 191, w: 300, h: 300 }, maxBytes: 8 * MB },
   'li-post': { id: 'li-post', width: 1200, height: 627 },
   pin: { id: 'pin', width: 1000, height: 1500 },
-  og: { id: 'og', width: 1200, height: 630 },
+  // Some chat apps show a link's picture as a square cut from the middle
+  og: { id: 'og', width: 1200, height: 630, safe: { x: 285, y: 0, w: 630, h: 630 }, safeKind: 'square' },
   'x-header': { id: 'x-header', width: 1500, height: 500 },
   'x-post': { id: 'x-post', width: 1600, height: 900 },
 };
