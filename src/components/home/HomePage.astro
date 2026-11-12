@@ -4,6 +4,8 @@ import { HomeSearch } from '../shared/HomeSearch';
 import ToolIcon from '../shared/ToolIcon.astro';
 import { TOOLS } from '../../config/tools';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
+import { HUB_FOR_CATEGORY } from '../../config/hubs';
+import { getHubTexts } from '../../i18n/hubs';
 import { getLocalizedHomeData } from '../../i18n/home';
 import { enHome } from '../../i18n/home/en';
 import { getAllLocalizedTools } from '../../i18n/tools';
@@ -115,7 +117,11 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
         <div id={cat} class="scroll-mt-24 rounded-xl border border-pencil-soft bg-paper-bright p-2 sm:p-3">
           <h3 class="flex items-center gap-2.5 px-3 pt-2 pb-2.5">
             <span class:list={['w-3 h-3 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
-            <span class="text-[17px] font-bold text-ink">{home.categoryNames[cat]}</span>
+            {HUB_FOR_CATEGORY[cat] ? (
+              <a href={translatePath(`/${HUB_FOR_CATEGORY[cat]}`)} class="text-[17px] font-bold !text-ink underline decoration-pencil underline-offset-4 hover:decoration-ink">{home.categoryNames[cat]}</a>
+            ) : (
+              <span class="text-[17px] font-bold text-ink">{home.categoryNames[cat]}</span>
+            )}
             <span class="ml-auto text-[13px] text-graphite" data-measure>{count}</span>
           </h3>
           {[shown, more].map((list, part) => {
@@ -152,6 +158,13 @@ const byCategory = CATEGORY_ORDER.map((cat) => {
               </details>
             );
           })}
+          {cat === 'utilities' && (
+            // The QR and barcode tools are part of this category and have their own collection page
+            <a href={translatePath('/qr-code-and-barcode-tools')} class="mx-3 my-1.5 min-h-[44px] inline-flex items-center gap-1.5 text-[15px] font-semibold !text-ink underline underline-offset-4 hover:no-underline">
+              {getHubTexts(locale).pages['qr-code-and-barcode-tools'].h1}
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+          )}
         </div>
       ))}
     </div>

@@ -7,6 +7,7 @@ import { TOOLS } from '../../config/tools';
 import { useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { getLocalizedHomeData } from '../../i18n/home';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
+import { HUB_FOR_CATEGORY } from '../../config/hubs';
 import { ui } from '../../i18n/ui';
 import { pickStrings } from '../../i18n/strings';
 
@@ -44,7 +45,7 @@ const navLabel = (cat: (typeof navCategories)[number]) => (cat in SHORT_NAV_KEY 
     <!-- Plain links, each with its category's ink dot: the colour bar and the logo already carry the colour -->
     <nav class="hidden xl:flex items-center gap-1" aria-label={t('nav.allTools')}>
       {navCategories.map((cat) => (
-        <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 whitespace-nowrap rounded-md px-3 py-1.5 text-[15px] font-medium !text-ink hover:bg-paper-stock">
+        <a href={translatePath(HUB_FOR_CATEGORY[cat] ? `/${HUB_FOR_CATEGORY[cat]}` : `/#${cat}`)} class="flex items-center gap-2 whitespace-nowrap rounded-md px-3 py-1.5 text-[15px] font-medium !text-ink hover:bg-paper-stock">
           <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
           {navLabel(cat)}
         </a>

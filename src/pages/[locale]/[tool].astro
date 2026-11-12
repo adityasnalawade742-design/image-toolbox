@@ -1,5 +1,7 @@
 ---
 import ToolLayout from '../../layouts/ToolLayout.astro';
+import HubPage from '../../components/hub/HubPage.astro';
+import { HUBS, isHub, type HubSlug } from '../../config/hubs';
 import { TOOLS } from '../../config/tools';
 import { SUPPORTED_LOCALES } from '../../i18n/locales';
 import type { SupportedLocale } from '../../i18n/types';
@@ -10,11 +12,11 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const locale of nonDefaultLocales) {
-    for (const tool of TOOLS) {
+    for (const slug of [...TOOLS.map((tool) => tool.slug), ...HUBS.map((hub) => hub.slug)]) {
       paths.push({
         params: {
           locale,
-          tool: tool.slug,
+          tool: slug,
         },
       });
     }
@@ -26,4 +28,8 @@ export async function getStaticPaths() {
 const { locale, tool } = Astro.params;
 ---
 
-<ToolLayout slug={tool as string} locale={locale as keyof typeof ui} />
+{isHub(tool as string) ? (
+  <HubPage slug={tool as HubSlug} locale={locale as keyof typeof ui} />
+) : (
+  <ToolLayout slug={tool as string} locale={locale as keyof typeof ui} />
+)}

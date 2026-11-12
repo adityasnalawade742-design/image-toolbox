@@ -9,6 +9,8 @@ import { CATEGORY_INK } from '../config/inks';
 import { getLocalizedToolContent, getAllLocalizedTools } from '../i18n/tools';
 import { getLocalizedHomeData } from '../i18n/home';
 import { getWebApplicationSchema, getBreadcrumbSchema, getFAQSchema } from '../lib/seo/schema';
+import { hubForTool } from '../config/hubs';
+import { getHubTexts } from '../i18n/hubs';
 import { SITE_CONFIG } from '../config/site';
 import { useTranslatedPath, useTranslations } from '../i18n/utils';
 import { pickStrings } from '../i18n/strings';
@@ -31,6 +33,9 @@ const allLocTools = getAllLocalizedTools(locale);
 const translatePath = useTranslatedPath(locale);
 const t = useTranslations(locale);
 const categoryName = getLocalizedHomeData(locale).categoryNames[tool.category];
+// The breadcrumb's middle step: the collection page listing this tool, or its category on the home page
+const hub = hubForTool(slug);
+const crumb = hub ? { name: getHubTexts(locale).pages[hub.slug].h1, path: `/${hub.slug}` } : { name: categoryName, path: `/#${tool.category}` };
 const toolName = locContent.name || tool.name;
 
 // seoTitle carries no site name (older translations may still end with one)
@@ -45,6 +50,7 @@ const appSchema = getWebApplicationSchema(toolName, description, canonicalUrl, l
 const homeUrl = `${SITE_CONFIG.url}${translatePath('/')}`;
 const breadcrumbSchema = getBreadcrumbSchema([
   { name: t('tool.home'), url: homeUrl },
+  ...(hub ? [{ name: crumb.name, url: `${SITE_CONFIG.url}${translatePath(crumb.path)}` }] : []),
   { name: toolName, url: canonicalUrl },
 ]);
 const faqSchema = getFAQSchema(locContent.faqs || []);
@@ -85,9 +91,9 @@ const workspaceStrings = pickStrings(locale, 'ws.', 'tool.', ...toolStringKeys.g
         <nav aria-label="Breadcrumb" class="-my-1.5 flex items-center gap-2 text-[14px] text-graphite">
           <a href={translatePath('/')} class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('tool.home')}</a>
           <span aria-hidden="true">/</span>
-          <a href={translatePath(`/#${tool.category}`)} class="flex items-center gap-1.5 min-h-[36px] text-ink hover:underline">
+          <a href={translatePath(crumb.path)} class="flex items-center gap-1.5 min-h-[36px] text-ink hover:underline">
             <span class:list={['w-2.5 h-2.5 rounded-full', CATEGORY_INK[tool.category].className]} aria-hidden="true"></span>
-            {categoryName}
+            {crumb.name}
           </a>
         </nav>
         <h1 class="font-condensed font-bold text-[34px] sm:text-[48px] leading-[1.02] tracking-[-0.01em] text-ink">{toolName}</h1>

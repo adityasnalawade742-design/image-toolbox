@@ -1,0 +1,133 @@
+---
+/**
+ * A collection page: every tool of a hub, grouped by job, with each tool's one-line description. Built from
+ * config/hubs.ts and the hub texts, in the page's language.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ToolIcon from '../shared/ToolIcon.astro';
+import { TOOLS, SERVER_TOOLS } from '../../config/tools';
+import { CATEGORY_INK } from '../../config/inks';
+import { HUBS, getHub, type HubSlug } from '../../config/hubs';
+import { SITE_CONFIG } from '../../config/site';
+import { getHubTexts } from '../../i18n/hubs';
+import { getAllLocalizedTools } from '../../i18n/tools';
+import { getLocalizedHomeData } from '../../i18n/home';
+import { enHome } from '../../i18n/home/en';
+import { useTranslatedPath, useTranslations } from '../../i18n/utils';
+import { getBreadcrumbSchema, getCollectionSchema, getFAQSchema } from '../../lib/seo/schema';
+import type { ui } from '../../i18n/ui';
+
+interface Props {
+  slug: HubSlug;
+  locale: keyof typeof ui;
+}
+
+const { slug, locale } = Astro.props;
+const hub = getHub(slug)!;
+const texts = getHubTexts(locale);
+const page = texts.pages[slug];
+const locTools = getAllLocalizedTools(locale);
+const translatePath = useTranslatedPath(locale);
+const t = useTranslations(locale);
+const sections = getLocalizedHomeData(locale).sections || enHome.sections!;
+const toolOf = (s: string) => TOOLS.find((x) => x.slug === s)!;
+const nameOf = (s: string) => locTools[s]?.name || toolOf(s).name;
+const abs = (path: string) => `${SITE_CONFIG.url}${translatePath(path)}`;
+
+const branded = `${page.title} | ${SITE_CONFIG.name}`;
+const title = branded.length <= 60 ? branded : page.title;
+const canonicalUrl = abs(`/${slug}`);
+const allSlugs = hub.groups.flatMap((g) => g.slugs);
+const jsonLd = [
+  getCollectionSchema(page.h1, page.description, canonicalUrl, locale, allSlugs.map((s) => ({ name: nameOf(s), url: abs(`/${s}`) }))),
+  getBreadcrumbSchema([
+    { name: t('tool.home'), url: abs('/') },
+    { name: page.h1, url: canonicalUrl },
+  ]),
+  getFAQSchema(page.faqs),
+].filter(Boolean);
+const others = HUBS.filter((h) => h.slug !== slug);
+---
+
+<BaseLayout title={title} description={page.description} currentSlug={slug} canonicalUrl={canonicalUrl} jsonLd={jsonLd}>
+  <div class="space-y-14 sm:space-y-20">
+    <section class="space-y-3 max-w-[75ch]">
+      <nav aria-label="Breadcrumb" class="-my-1.5 flex items-center gap-2 text-[14px] text-graphite">
+        <a href={translatePath('/')} class="inline-flex items-center min-h-[36px] text-ink hover:underline">{t('tool.home')}</a>
+        <span aria-hidden="true">/</span>
+        <span class="flex items-center gap-1.5 min-h-[36px]" aria-current="page">
+          <span class:list={['w-2.5 h-2.5 rounded-full', CATEGORY_INK[hub.category].className]} aria-hidden="true"></span>
+          {page.h1}
+        </span>
+      </nav>
+      <h1 class="font-condensed font-bold text-[36px] sm:text-[52px] leading-[1.02] tracking-[-0.01em] text-ink text-balance">{page.h1}</h1>
+      <p class="text-[17px] sm:text-[18px] text-body leading-relaxed text-pretty">{page.intro}</p>
+    </section>
+
+    <div class="space-y-12">
+      {hub.groups.map((group) => (
+        <section aria-labelledby={`group-${group.key}`} class="space-y-4">
+          <div class="flex items-end justify-between gap-4 border-b-2 border-ink pb-2.5">
+            <h2 id={`group-${group.key}`} class="font-condensed font-bold text-[26px] sm:text-[30px] leading-none text-ink">{page.groups[group.key]}</h2>
+            <span class="text-[14px] text-graphite" data-measure>{group.slugs.length}</span>
+          </div>
+          <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-1">
+            {group.slugs.map((s) => {
+              const tool = toolOf(s);
+              return (
+                <li>
+                  <a href={translatePath(`/${s}`)} class="group flex items-start gap-3.5 rounded-md p-3 hover:bg-paper-stock transition-colors">
+                    <span class:list={['w-10 h-10 shrink-0 rounded-md flex items-center justify-center', CATEGORY_INK[tool.category].tint]} aria-hidden="true">
+                      <ToolIcon name={tool.iconName} class="w-5 h-5" />
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block text-[16px] font-semibold text-ink group-hover:underline">{nameOf(s)}</span>
+                      <span class="block text-[14px] leading-snug text-graphite">{locTools[s]?.tagline || tool.description}</span>
+                      {SERVER_TOOLS.has(s) && <span class="mt-1 inline-block rounded-xs border border-pencil px-1.5 text-[12px] text-graphite">{texts.labels.server}</span>}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))}
+    </div>
+
+    <section aria-labelledby="hub-faq" class="max-w-3xl space-y-4">
+      <h2 id="hub-faq" class="font-condensed font-bold text-[28px] sm:text-[32px] leading-none text-ink border-b-2 border-ink pb-3">{sections.faqTitle}</h2>
+      <div class="divide-y divide-pencil border-b border-pencil">
+        {page.faqs.map((faq) => (
+          <details class="group py-1">
+            <summary class="flex items-center justify-between gap-4 py-3 cursor-pointer list-none text-[17px] font-semibold text-ink">
+              <span>{faq.question}</span>
+              <svg class="w-4 h-4 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M8 2v12M2 8h12" />
+              </svg>
+            </summary>
+            <p class="pb-4 text-[16px] leading-relaxed text-body max-w-prose">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <nav aria-labelledby="hub-more" class="space-y-3">
+      <h2 id="hub-more" class="slug">{texts.labels.more}</h2>
+      <ul class="flex flex-wrap gap-2">
+        {others.map((h) => (
+          <li>
+            <a href={translatePath(`/${h.slug}`)} class="inline-flex items-center gap-2 min-h-[40px] px-3 rounded-md border border-pencil bg-paper-bright text-[15px] font-medium !text-ink hover:border-ink hover:bg-paper-stock transition-colors">
+              <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', CATEGORY_INK[h.category].className]} aria-hidden="true"></span>
+              {texts.pages[h.slug].h1}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href={translatePath('/')} class="inline-flex items-center min-h-[40px] px-3 rounded-md border border-pencil bg-paper-bright text-[15px] font-medium !text-ink hover:border-ink hover:bg-paper-stock transition-colors">
+            {texts.labels.allTools.replace('{count}', String(TOOLS.length))}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</BaseLayout>

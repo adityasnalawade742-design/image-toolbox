@@ -1,14 +1,14 @@
 ---
+import HubPage from '../components/hub/HubPage.astro';
+import { HUBS, isHub, type HubSlug } from '../config/hubs';
 import ToolLayout from '../layouts/ToolLayout.astro';
 import { TOOLS } from '../config/tools';
 
 export async function getStaticPaths() {
-  return TOOLS.map((tool) => ({
-    params: { tool: tool.slug },
-  }));
+  return [...TOOLS.map((tool) => tool.slug), ...HUBS.map((hub) => hub.slug)].map((slug) => ({ params: { tool: slug } }));
 }
 
 const { tool } = Astro.params;
 ---
 
-<ToolLayout slug={tool as string} locale="en" />
+{isHub(tool as string) ? <HubPage slug={tool as HubSlug} locale="en" /> : <ToolLayout slug={tool as string} locale="en" />}
