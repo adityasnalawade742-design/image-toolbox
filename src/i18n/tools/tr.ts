@@ -7496,9 +7496,9 @@ export const trTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "PDF Sıkıştırma",
     shortName: "PDF Sıkıştır",
-    tagline: "Bir PDF'i e-posta ve yükleme formları için üç kalite seviyesiyle küçültün. Ücretsiz, kayıt gerekmez.",
+    tagline: "Bir PDF'i e-posta ve yükleme formları için üç kalite seviyesiyle ya da kendi ayarlarınızla küçültün. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF Sıkıştırma, bir PDF'in dosya boyutunu e-posta eklerine ve yükleme portallarının boyut sınırlarına sığacak şekilde küçültür. En iyi sonucu fotoğraf ve tarama içeren PDF'lerde verir; bu PDF'lerdeki resimler yeniden sıkıştırılır ve küçültülür. Ekranlar ve e-posta için En küçük, çoğu kullanım için Dengeli, baskıda ayrıntıyı korumak için Yüksek kalite seçeneğini seçin. Sonuç, dosyanın ne kadar küçüldüğünü gösterir; bir PDF zaten kompaktsa daha büyük bir dosya yerine orijinalini geri alırsınız. Sıkıştırma sunucumuzdaki Ghostscript ile yapılır ve dosya hemen ardından silinir. Doldurulabilir formlu PDF'ler alanlarını korur ama daha az küçülür.",
+      "PDF Sıkıştırma, bir PDF'in dosya boyutunu e-posta eklerine ve yükleme portallarının boyut sınırlarına sığacak şekilde küçültür. En iyi sonucu fotoğraf ve tarama içeren PDF'lerde verir; bu PDF'lerdeki resimler yeniden sıkıştırılır ve küçültülür. Ekranlar ve e-posta için En küçük, çoğu kullanım için Dengeli, baskıda ayrıntıyı korumak için Yüksek kalite seçeneğini seçin. Sonuç, dosyanın ne kadar küçüldüğünü gösterir; bir PDF zaten kompaktsa daha büyük bir dosya yerine orijinalini geri alırsınız. Sıkıştırma sunucumuzdaki Ghostscript ile yapılır ve dosya hemen ardından silinir. Doldurulabilir formlu PDF'ler alanlarını korur ama daha az küçülür. Görüntü çözünürlüğünü ve kalitesini kendiniz ayarlamak için Özel’i seçin; tüm renkleri griye çevirmek için Siyah beyaz’ı işaretleyin.",
     seoTitle: "PDF Sıkıştırma – PDF Boyutunu Küçültün, Ücretsiz",
     seoDescription:
       "PDF sıkıştırma online ve ücretsiz: üç kalite seviyesiyle PDF dosya boyutunu küçültün ve kazancı görün. Dosyalar hemen ardından silinir. Kayıt gerekmez.",
@@ -7517,7 +7517,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Bir seviye seçin",
-        description: "En küçük, Dengeli veya Yüksek kalite.",
+        description: "En küçük, Dengeli veya Yüksek kalite. Ya da çözünürlüğü ve kaliteyi kendiniz ayarlamak için Özel.",
       },
       {
         title: "Sıkıştırın ve indirin",
@@ -7555,7 +7555,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF'imin belirli bir boyutun altında olması gerekiyor. Ne yapmalıyım?",
         answer:
-          "Önce En küçük seçeneğini deneyin. Hâlâ çok büyükse PDF Bölme aracıyla PDF'i parçalara ayırın ve her parçayı ayrı ayrı sıkıştırın.",
+          "Önce En küçük’ü deneyin. Hâlâ büyükse Özel’i seçip çözünürlüğü ve kaliteyi düşürün ya da Siyah beyaz’ı işaretleyin. PDF’i PDF Bölme ile parçalara ayırıp her parçayı ayrı da sıkıştırabilirsiniz.",
       },
       {
         question: "Dosyam yükleniyor mu?",

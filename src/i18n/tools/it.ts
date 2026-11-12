@@ -7477,9 +7477,9 @@ export const itTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "Comprimi PDF",
     shortName: "Comprimi PDF",
-    tagline: "Rendi un PDF più leggero per email e moduli di caricamento, con tre livelli di qualità. Gratis, senza registrazione.",
+    tagline: "Rendi un PDF più leggero per email e moduli di caricamento, con tre livelli di qualità o impostazioni tue. Gratis, senza registrazione.",
     intro:
-      "Comprimi PDF riduce il peso di un PDF perché rientri negli allegati email e nei limiti di dimensione dei portali di caricamento. Funziona al meglio con i PDF che contengono foto e scansioni, le cui immagini vengono ricompresse e ridimensionate; scegli Minimo per schermi ed email, Bilanciato per la maggior parte degli usi o Alta qualità per mantenere i dettagli in stampa. Il risultato mostra di quanto si è ridotto il file e, se un PDF è già compatto, riottieni l’originale invece di un file più grande. La compressione usa Ghostscript sul nostro server e il file viene eliminato subito dopo. I PDF con moduli compilabili mantengono i campi, ma si riducono di meno.",
+      "Comprimi PDF riduce il peso di un PDF perché rientri negli allegati email e nei limiti di dimensione dei portali di caricamento. Funziona al meglio con i PDF che contengono foto e scansioni, le cui immagini vengono ricompresse e ridimensionate; scegli Minimo per schermi ed email, Bilanciato per la maggior parte degli usi o Alta qualità per mantenere i dettagli in stampa. Il risultato mostra di quanto si è ridotto il file e, se un PDF è già compatto, riottieni l’originale invece di un file più grande. La compressione usa Ghostscript sul nostro server e il file viene eliminato subito dopo. I PDF con moduli compilabili mantengono i campi, ma si riducono di meno. Scegli Personalizzato per impostare tu risoluzione e qualità delle immagini, e spunta Bianco e nero per rendere grigi tutti i colori.",
     seoTitle: "Comprimere PDF – Riduci il peso del PDF, gratis",
     seoDescription:
       "Comprimere PDF online gratis: riduci il peso del file con tre livelli di qualità e vedi il risparmio. File eliminati subito dopo. Senza registrazione.",
@@ -7498,7 +7498,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Scegli un livello",
-        description: "Minimo, Bilanciato o Alta qualità.",
+        description: "Minimo, Bilanciato o Alta qualità. Oppure Personalizzato, per impostare tu risoluzione e qualità.",
       },
       {
         title: "Comprimi e scarica",
@@ -7536,7 +7536,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Il mio PDF deve stare sotto una certa dimensione. Cosa faccio?",
         answer:
-          "Prova prima Minimo. Se è ancora troppo grande, dividi il PDF in parti con Dividi PDF e comprimi ogni parte.",
+          "Prova prima Minimo. Se è ancora troppo grande, scegli Personalizzato con risoluzione e qualità più basse, oppure spunta Bianco e nero. Puoi anche dividere il PDF con Dividi PDF e comprimere ogni parte.",
       },
       {
         question: "Il mio file viene caricato?",

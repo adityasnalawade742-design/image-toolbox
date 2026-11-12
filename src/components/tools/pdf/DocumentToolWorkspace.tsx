@@ -9,6 +9,7 @@ import type { StringKey } from '../../../i18n/strings';
 import { SUPPORTED_LOCALES } from '../../../i18n/locales';
 import { downloadBlob, formatBytes } from '../../../lib/canvas/engine';
 import { DocError, isServiceOnline, runDocJob, type DocEndpoint, type DocErrorCode, type DocProgress } from '../../../lib/vps/docClient';
+import { RangeField } from './common';
 
 export type DocTool = 'word-to-pdf' | 'excel-to-pdf' | 'powerpoint-to-pdf' | 'pdf-to-word' | 'compress-pdf' | 'protect-pdf' | 'unlock-pdf' | 'ocr-pdf' | 'pdf-to-pdfa' | 'repair-pdf' | 'pdf-to-grayscale';
 
@@ -94,7 +95,11 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const cfg = CONFIG[tool];
   const [online, setOnline] = useState<boolean | null>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [preset, setPreset] = useState<'screen' | 'ebook' | 'printer'>('ebook');
+  const [preset, setPreset] = useState<'screen' | 'ebook' | 'printer' | 'custom'>('ebook');
+  // Custom: image resolution and JPEG quality; they start where Balanced is (150 dpi, quality 62)
+  const [dpi, setDpi] = useState(150);
+  const [jpegQuality, setJpegQuality] = useState(62);
+  const [gray, setGray] = useState(false);
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -111,7 +116,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [progress, setProgress] = useState<DocProgress | null>(null);
   // The server sleeps when idle; a job still processing after a few seconds is often it waking up
   const [slow, setSlow] = useState(false);
-  const [result, setResult] = useState<{ blob: Blob; name: string; before?: number; after?: number; partial?: boolean } | null>(null);
+  const [result, setResult] = useState<{ blob: Blob; name: string; before?: number; after?: number; partial?: boolean; keptForms?: boolean } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -152,7 +157,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   // New settings make finished files stale, so the action button runs them again
   useEffect(() => {
     setQueue((q) => (q && q.some((x) => x.status === 'done') ? q.map((x) => (x.status === 'done' ? { ...x, status: 'pending', out: undefined } : x)) : q));
-  }, [preset, password, lang, lang2, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
+  }, [preset, dpi, jpegQuality, gray, password, lang, lang2, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
   const pickMany = (list: File[]) => {
     if (list.length < 2) {
       if (list[0]) pick(list[0]);
@@ -216,7 +221,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const jobArgs = () => {
     const params = {
       ...cfg.params,
-      ...(tool === 'compress-pdf' ? { preset } : {}),
+      ...(tool === 'compress-pdf' ? { preset, ...(preset === 'custom' ? { dpi: String(dpi), quality: String(jpegQuality) } : {}), ...(gray ? { gray: 'y' } : {}) } : {}),
       ...(tool === 'ocr-pdf' ? { lang: lang2 && lang2 !== lang ? `${lang}+${lang2}` : lang } : {}),
       ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
       ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
@@ -247,7 +252,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
       const { params, fields } = jobArgs();
       const r = await runDocJob(cfg.endpoint, file, params, fields, setProgress);
       const name = cfg.output(file.name.replace(/\.[^.]+$/, ''));
-      setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial });
+      setResult({ blob: r.blob, name, before: r.sizeBefore, after: r.sizeAfter, partial: r.partial, keptForms: r.keptForms });
       downloadBlob(r.blob, name);
     } catch (err) {
       const code = err instanceof DocError ? err.code : 'failed';
@@ -401,13 +406,30 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
             label={t('ctl.doc.preset')}
             value={preset}
             onChange={setPreset}
+            cols={2}
             options={[
               { value: 'screen', label: t('ctl.doc.presetScreen') },
               { value: 'ebook', label: t('ctl.doc.presetEbook') },
               { value: 'printer', label: t('ctl.doc.presetPrinter') },
+              { value: 'custom', label: t('ctl.doc.presetCustom') },
             ]}
           />
-          <p className="text-[13px] text-graphite">{t('ctl.doc.presetNote')}</p>
+          {preset === 'custom' ? (
+            <div className="space-y-3">
+              <RangeField id="doc-dpi" label={t('ctl.doc.dpi')} value={dpi} min={72} max={300} step={6} unit=" dpi" onChange={setDpi} />
+              <RangeField id="doc-quality" label={t('ctl.doc.quality')} value={jpegQuality} min={10} max={95} unit="%" onChange={setJpegQuality} />
+              <p className="text-[13px] text-graphite">{t('ctl.doc.customNote')}</p>
+            </div>
+          ) : (
+            <p className="text-[13px] text-graphite">{t('ctl.doc.presetNote')}</p>
+          )}
+          <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer text-ink pt-1">
+            <input type="checkbox" className="mt-1" checked={gray} onChange={(e) => setGray(e.target.checked)} />
+            <span>
+              <span className="block">{t('ctl.doc.gray')}</span>
+              <span className="block text-[13px] text-graphite">{t('ctl.doc.grayNote')}</span>
+            </span>
+          </label>
         </div>
       )}
       {needsPassword && (
@@ -700,9 +722,13 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
           <p className="text-[16px] text-ink" data-measure>
             {saved > 0
               ? t('ctl.doc.sizeResult', { before: formatBytes(result.before!), after: formatBytes(result.after!), percent: Math.round((saved / result.before!) * 100) })
-              : t('ctl.doc.noGain')}
+              : gray && !result.keptForms
+                ? // A grey copy is returned even when it isn't smaller: grey is what was asked for
+                  t('ctl.doc.grayResult', { before: formatBytes(result.before!), after: formatBytes(result.after!) })
+                : t('ctl.doc.noGain')}
           </p>
         )}
+        {tool === 'compress-pdf' && result?.keptForms && <p className="text-[14px] text-graphite">{t('ctl.doc.keptForms')}</p>}
         {result?.partial && (
           <p role="status" className="text-[16px] text-ink">
             {t('ctl.doc.repairPartial')}

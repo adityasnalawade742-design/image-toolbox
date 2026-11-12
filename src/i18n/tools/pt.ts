@@ -7482,9 +7482,9 @@ export const ptTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "Comprimir PDF",
     shortName: "Comprimir PDF",
-    tagline: "Deixe um PDF menor para e-mail e formulários de envio, com três níveis de qualidade. Grátis e sem cadastro.",
+    tagline: "Deixe um PDF menor para e-mail e formulários de envio, com três níveis de qualidade ou seus próprios ajustes. Grátis e sem cadastro.",
     intro:
-      "O Comprimir PDF reduz o tamanho de um PDF para que ele caiba em anexos de e-mail e nos limites de tamanho dos portais de envio. Funciona melhor com PDFs que têm fotos e digitalizações, cujas imagens são recomprimidas e reduzidas; escolha Menor para telas e e-mail, Equilibrado para a maioria dos usos ou Alta qualidade para manter os detalhes na impressão. O resultado mostra quanto o arquivo diminuiu e, se um PDF já for compacto, você recebe o original de volta em vez de um arquivo maior. A compressão usa o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. PDFs com formulários preenchíveis mantêm os campos, mas diminuem menos.",
+      "O Comprimir PDF reduz o tamanho de um PDF para que ele caiba em anexos de e-mail e nos limites de tamanho dos portais de envio. Funciona melhor com PDFs que têm fotos e digitalizações, cujas imagens são recomprimidas e reduzidas; escolha Menor para telas e e-mail, Equilibrado para a maioria dos usos ou Alta qualidade para manter os detalhes na impressão. O resultado mostra quanto o arquivo diminuiu e, se um PDF já for compacto, você recebe o original de volta em vez de um arquivo maior. A compressão usa o Ghostscript no nosso servidor, e o arquivo é apagado logo depois. PDFs com formulários preenchíveis mantêm os campos, mas diminuem menos. Escolha Personalizado para definir você mesmo a resolução e a qualidade das imagens, e marque Preto e branco para deixar todas as cores em cinza.",
     seoTitle: "Comprimir PDF – Reduza o tamanho do PDF, grátis",
     seoDescription:
       "Comprimir PDF online e grátis: reduza o tamanho do arquivo com três níveis de qualidade e veja a economia. Os arquivos são apagados logo depois. Sem cadastro.",
@@ -7503,7 +7503,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Escolha um nível",
-        description: "Menor, Equilibrado ou Alta qualidade.",
+        description: "Menor, Equilibrado ou Alta qualidade. Ou Personalizado, para definir você mesmo a resolução e a qualidade.",
       },
       {
         title: "Comprima e baixe",
@@ -7541,7 +7541,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Meu PDF precisa ficar abaixo de um tamanho específico. O que eu faço?",
         answer:
-          "Tente primeiro o Menor. Se ainda estiver grande demais, divida o PDF em partes com o Dividir PDF e comprima cada parte.",
+          "Tente primeiro Menor. Se ainda ficar grande demais, escolha Personalizado com resolução e qualidade menores, ou marque Preto e branco. Você também pode dividir o PDF com Dividir PDF e comprimir cada parte.",
       },
       {
         question: "Meu arquivo é enviado?",

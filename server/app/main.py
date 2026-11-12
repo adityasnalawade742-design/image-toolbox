@@ -207,6 +207,12 @@ PDF = "application/pdf"
 COMPRESS_IMAGES = {"screen": (96, 0.76), "ebook": (150, 0.76), "printer": (220, 0.5)}
 # How hard OCRmyPDF recompresses the JPEGs of a PDF with form fields, by Compress PDF preset
 FORM_JPEG_QUALITY = {"screen": "40", "ebook": "60", "printer": "80"}
+
+
+def jpeg_qfactor(quality: int) -> float:
+    """Ghostscript's JPEG QFactor for a 1-100 quality, with libjpeg's scaling (QFactor 1.0 is quality 50). The presets
+    above are quality 62 (0.76) and 75 (0.5) on this scale."""
+    return round(50 / quality if quality < 50 else (200 - 2 * quality) / 100, 3)
 # PDF/A only keeps annotations marked for printing, and most links aren't
 MARK_ANNOTS_PRINTABLE = """
 import sys, pikepdf
@@ -847,23 +853,36 @@ async def convert(file: UploadFile, to: str = "pdf", fit: str = ""):
 
 
 @app.post("/v1/compress")
-async def compress(file: UploadFile, preset: str = "ebook"):
-    if preset not in ("screen", "ebook", "printer"):
+async def compress(file: UploadFile, preset: str = "ebook", dpi: int = 150, quality: int = 62, gray: str = "n"):
+    """A preset, or custom: image resolution 50-600 dpi and JPEG quality 10-95. gray=y also turns every colour grey."""
+    if preset not in ("screen", "ebook", "printer", "custom"):
+        raise JobError(400, "bad_preset")
+    if preset == "custom" and not (50 <= dpi <= 600 and 10 <= quality <= 95):
+        raise JobError(400, "bad_preset")
+    if gray not in ("y", "n"):
         raise JobError(400, "bad_preset")
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
         await refuse_if_password_needed(src, job)
         out = job / "out.pdf"
+        extra_headers = {}
         if await has_form_fields(src, job):
-            # Ghostscript flattens form fields, so these only get their images recompressed (a zero OCR timeout skips recognition)
+            # Ghostscript flattens form fields, so these only get their images recompressed (a zero OCR timeout skips
+            # recognition). Resolution and grey can't be applied this way; the response says the fields were kept
+            jpeg = str(quality) if preset == "custom" else FORM_JPEG_QUALITY[preset]
             code, _ = await run("ocrmypdf", "--skip-text", "--tesseract-timeout", "0", "--output-type", "pdf", "--optimize", "3",
-                                "--jpeg-quality", FORM_JPEG_QUALITY[preset], "--jobs", "1", str(src), str(out), cwd=job)
+                                "--jpeg-quality", jpeg, "--jobs", "1", str(src), str(out), cwd=job)
+            if preset == "custom" or gray == "y":
+                extra_headers["X-Kept-Forms"] = "1"
         else:
-            dpi, q = COMPRESS_IMAGES[preset]
+            dpi, q = (dpi, jpeg_qfactor(quality)) if preset == "custom" else COMPRESS_IMAGES[preset]
+            # Custom settings start from the ebook preset; only the images are set differently
+            base = "ebook" if preset == "custom" else preset
+            grey = ["-sColorConversionStrategy=Gray", "-dProcessColorModel=/DeviceGray", "-dOverrideICC=true"] if gray == "y" else []
             # AutoRotatePages off: the screen preset otherwise turns pages to suit the direction of their text
             code, _ = await run(
-                "gs", "-sDEVICE=pdfwrite", "-dCompatibilityLevel=1.5", f"-dPDFSETTINGS=/{preset}", "-dAutoRotatePages=/None",
+                "gs", "-sDEVICE=pdfwrite", "-dCompatibilityLevel=1.5", f"-dPDFSETTINGS=/{base}", "-dAutoRotatePages=/None", *grey,
                 "-dDetectDuplicateImages=true", "-dNOPAUSE", "-dQUIET", "-dBATCH", "-dSAFER",
                 f"-sOutputFile={out}",
                 f"-dColorImageResolution={dpi}", f"-dGrayImageResolution={dpi}", "-dColorImageDownsampleType=/Bicubic", "-dGrayImageDownsampleType=/Bicubic",
@@ -873,9 +892,10 @@ async def compress(file: UploadFile, preset: str = "ebook"):
         if code != 0 or not out.exists():
             raise JobError(422, "compress_failed")
         before, after = src.stat().st_size, out.stat().st_size
-        # Never hand back a bigger file
-        best = out if after < before else src
-        return respond(best, job, PDF, "compressed.pdf", **{"X-Size-Before": str(before), "X-Size-After": str(best.stat().st_size)})
+        # Never hand back a bigger file, unless it was turned grey: then the grey one is what was asked for
+        greyed = gray == "y" and "X-Kept-Forms" not in extra_headers
+        best = out if after < before or greyed else src
+        return respond(best, job, PDF, "compressed.pdf", **{"X-Size-Before": str(before), "X-Size-After": str(best.stat().st_size), **extra_headers})
 
 
 @app.post("/v1/grayscale")
@@ -985,7 +1005,7 @@ def parse_langs(lang: str) -> str:
 
 
 @app.post("/v1/ocr")
-async def ocr(file: UploadFile, lang: str = "eng"):
+async def ocr(file: UploadFile, lang: str = "eng", deskew: str = "n"):
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
@@ -1016,14 +1036,17 @@ async def ocr(file: UploadFile, lang: str = "eng"):
                        "--output-type", "pdf", "--optimize", "1", "--jobs", "1", "-l", langs, str(src), str(target),
                        cwd=job, env={"TMPDIR": str(temp)})
         # --redo-ocr reads the pictures on every page and keeps real text. Not --skip-text: that skips a whole scanned
-        # page when anything on it, like a stamp or header, is already text
-        mode = "--redo-ocr"
-        code, err = await ocr_with(mode, out, "first")
+        # page when anything on it, like a stamp or header, is already text.
+        # Straightening (--deskew) changes the page pictures, which --redo-ocr refuses: asked for, it runs with
+        # --skip-text, so pages that already have text are left as they are
+        straighten = ["--deskew"] if deskew == "y" else []
+        mode = "--skip-text" if straighten else "--redo-ocr"
+        code, err = await ocr_with(mode, out, "first", *straighten)
         # It refuses some PDFs, such as fillable forms; --skip-text still reads their pages that have no text
         if code != 0 and "encrypt" not in err.lower():
             mode = "--skip-text"
             shutil.rmtree(job / "first", ignore_errors=True)
-            code, err = await ocr_with(mode, out, "first")
+            code, err = await ocr_with(mode, out, "first", *straighten)
         if code != 0 or not out.exists():
             raise JobError(422, "encrypted" if "encrypt" in err.lower() else "ocr_failed")
         # Photos with uneven light come back empty or as garbage. If Tesseract is unsure of any page, read the file
@@ -1031,7 +1054,7 @@ async def ocr(file: UploadFile, lang: str = "eng"):
         first = ocr_confidence(job / "first")
         if any(sure < 40 or sure < 0.6 * total for total, sure in first):
             second = job / "second.pdf"
-            code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola")
+            code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola", *straighten)
             if code == 0 and second.exists() and sum(s for _, s in ocr_confidence(job / "second")) > sum(s for _, s in first):
                 out = second
         if NO_SPACE_LANGS & set(langs.split("+")):

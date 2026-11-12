@@ -7489,9 +7489,9 @@ export const esTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "Comprimir PDF",
     shortName: "Comprimir PDF",
-    tagline: "Reduce el tamaño de un PDF para correos y formularios de subida, con tres niveles de calidad. Gratis y sin registro.",
+    tagline: "Reduce el tamaño de un PDF para correos y formularios de subida, con tres niveles de calidad o tus propios ajustes. Gratis y sin registro.",
     intro:
-      "Comprimir PDF reduce el tamaño de archivo de un PDF para que quepa en los adjuntos de correo y en los límites de tamaño de los portales de subida. Funciona mejor con PDF con fotos y escaneos, cuyas imágenes se vuelven a comprimir y se reducen; elige «Más pequeño» para pantallas y correo, «Equilibrado» para la mayoría de los usos o «Alta calidad» para conservar el detalle al imprimir. El resultado muestra cuánto se ha reducido el archivo, y si un PDF ya es compacto recibes el original en lugar de un archivo más grande. La compresión usa Ghostscript en nuestro servidor y el archivo se elimina justo después. Los PDF con formularios rellenables conservan sus campos, pero se reducen menos.",
+      "Comprimir PDF reduce el tamaño de archivo de un PDF para que quepa en los adjuntos de correo y en los límites de tamaño de los portales de subida. Funciona mejor con PDF con fotos y escaneos, cuyas imágenes se vuelven a comprimir y se reducen; elige «Más pequeño» para pantallas y correo, «Equilibrado» para la mayoría de los usos o «Alta calidad» para conservar el detalle al imprimir. El resultado muestra cuánto se ha reducido el archivo, y si un PDF ya es compacto recibes el original en lugar de un archivo más grande. La compresión usa Ghostscript en nuestro servidor y el archivo se elimina justo después. Los PDF con formularios rellenables conservan sus campos, pero se reducen menos. Elige Personalizado para fijar tú mismo la resolución y la calidad de las imágenes, y marca Blanco y negro para pasar todos los colores a grises.",
     seoTitle: "Comprimir PDF – reducir el tamaño de un PDF gratis",
     seoDescription:
       "Comprimir PDF online y gratis con tres niveles de calidad. Muestra cuánto se reduce; los archivos se eliminan justo después. Sin registro.",
@@ -7510,7 +7510,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Elige un nivel",
-        description: "Más pequeño, Equilibrado o Alta calidad.",
+        description: "Más pequeño, Equilibrado o Alta calidad. O Personalizado, para fijar tú la resolución y la calidad.",
       },
       {
         title: "Comprime y descarga",
@@ -7549,7 +7549,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mi PDF debe pesar menos de un tamaño concreto. ¿Qué hago?",
         answer:
-          "Prueba primero con «Más pequeño». Si sigue siendo demasiado grande, divide el PDF en partes con Dividir PDF y comprime cada parte.",
+          "Prueba primero Más pequeño. Si sigue siendo demasiado grande, elige Personalizado con menos resolución y calidad, o marca Blanco y negro. También puedes dividir el PDF con Dividir PDF y comprimir cada parte.",
       },
       {
         question: "¿Se sube mi archivo?",

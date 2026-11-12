@@ -7486,9 +7486,9 @@ export const idTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "Kompres PDF",
     shortName: "Kompres PDF",
-    tagline: "Perkecil PDF untuk email dan formulir unggah, dengan tiga tingkat kualitas. Gratis, tanpa daftar.",
+    tagline: "Perkecil PDF untuk email dan formulir unggah, dengan tiga tingkat kualitas atau pengaturan Anda sendiri. Gratis, tanpa daftar.",
     intro:
-      "Kompres PDF memperkecil ukuran file PDF agar muat sebagai lampiran email dan memenuhi batas ukuran portal unggah. Alat ini paling efektif pada PDF berisi foto dan hasil scan, karena gambarnya dikompres ulang dan diperkecil; pilih Terkecil untuk layar dan email, Seimbang untuk sebagian besar kebutuhan, atau Kualitas tinggi untuk menjaga detail saat dicetak. Hasilnya menunjukkan seberapa kecil file menjadi, dan jika PDF sudah ringkas, Anda mendapatkan file aslinya kembali, bukan file yang lebih besar. Kompresi memakai Ghostscript di server kami, dan file dihapus segera setelahnya. PDF dengan formulir isian tetap mempertahankan kolomnya, tetapi ukurannya berkurang lebih sedikit.",
+      "Kompres PDF memperkecil ukuran file PDF agar muat sebagai lampiran email dan memenuhi batas ukuran portal unggah. Alat ini paling efektif pada PDF berisi foto dan hasil scan, karena gambarnya dikompres ulang dan diperkecil; pilih Terkecil untuk layar dan email, Seimbang untuk sebagian besar kebutuhan, atau Kualitas tinggi untuk menjaga detail saat dicetak. Hasilnya menunjukkan seberapa kecil file menjadi, dan jika PDF sudah ringkas, Anda mendapatkan file aslinya kembali, bukan file yang lebih besar. Kompresi memakai Ghostscript di server kami, dan file dihapus segera setelahnya. PDF dengan formulir isian tetap mempertahankan kolomnya, tetapi ukurannya berkurang lebih sedikit. Pilih Kustom untuk mengatur sendiri resolusi dan kualitas gambar, dan centang Hitam putih untuk mengubah semua warna menjadi abu-abu.",
     seoTitle: "Kompres PDF Online – Perkecil Ukuran PDF, Gratis",
     seoDescription:
       "Kompres PDF online secara gratis dengan tiga tingkat kualitas. Lihat berapa banyak ukuran yang dihemat; file dihapus segera setelahnya. Tanpa daftar.",
@@ -7507,7 +7507,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Pilih tingkat",
-        description: "Terkecil, Seimbang, atau Kualitas tinggi.",
+        description: "Terkecil, Seimbang, atau Kualitas tinggi. Atau Kustom, untuk mengatur sendiri resolusi dan kualitas.",
       },
       {
         title: "Kompres dan unduh",
@@ -7546,7 +7546,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF saya harus di bawah ukuran tertentu. Apa yang harus saya lakukan?",
         answer:
-          "Coba Terkecil terlebih dahulu. Jika masih terlalu besar, pisahkan PDF menjadi beberapa bagian dengan Pisahkan PDF, lalu kompres setiap bagian.",
+          "Coba Terkecil dulu. Jika masih terlalu besar, pilih Kustom dengan resolusi dan kualitas lebih rendah, atau centang Hitam putih. Anda juga bisa membagi PDF dengan Pisahkan PDF lalu mengompres tiap bagian.",
       },
       {
         question: "Apakah file saya diunggah?",

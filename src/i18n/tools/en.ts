@@ -7685,8 +7685,8 @@ export const enTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     "name": "Compress PDF",
     "shortName": "Compress PDF",
-    "tagline": "Make a PDF smaller for email and upload forms, with three quality levels. Free, with no sign-up.",
-    "intro": "Compress PDF reduces the file size of a PDF so it fits email attachments and the size limits of upload portals. It works best on PDFs with photos and scans, whose images are re-compressed and scaled down; choose Smallest for screens and email, Balanced for most uses, or High quality to keep detail for printing. The result shows how much smaller the file became, and if a PDF is already compact you get the original back rather than a bigger file. Compression uses Ghostscript on our server, and the file is deleted right after. PDFs with fillable forms keep their fields but shrink less.",
+    "tagline": "Make a PDF smaller for email and upload forms, with three quality levels or your own settings. Free, with no sign-up.",
+    "intro": "Compress PDF reduces the file size of a PDF so it fits email attachments and the size limits of upload portals. It works best on PDFs with photos and scans, whose images are re-compressed and scaled down; choose Smallest for screens and email, Balanced for most uses, or High quality to keep detail for printing. The result shows how much smaller the file became, and if a PDF is already compact you get the original back rather than a bigger file. Compression uses Ghostscript on our server, and the file is deleted right after. PDFs with fillable forms keep their fields but shrink less. Choose Custom to set the image resolution and quality yourself, and tick Black and white to turn every colour grey.",
     "seoTitle": "Compress PDF – Reduce PDF File Size, Free",
     "seoDescription": "Reduce PDF file size online for free with three quality levels. Shows the saving; files are deleted right after. No sign-up.",
     "keywords": [
@@ -7704,7 +7704,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "title": "Pick a level",
-        "description": "Smallest, Balanced or High quality."
+        "description": "Smallest, Balanced or High quality. Or Custom, to set the resolution and quality yourself."
       },
       {
         "title": "Compress and download",
@@ -7740,7 +7740,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "My PDF must be under a specific size. What do I do?",
-        "answer": "Try Smallest first. If it is still too big, split the PDF into parts with Split PDF and compress each part."
+        "answer": "Try Smallest first. If it is still too big, choose Custom with a lower resolution and quality, or tick Black and white. You can also split the PDF into parts with Split PDF and compress each part."
       },
       {
         "question": "Is my file uploaded?",
