@@ -1136,6 +1136,8 @@ export const strings = {
   'ctl.qrread.writeEmail': 'Scrivi email',
   'ctl.qrread.call': 'Chiama',
   'ctl.qrread.saveContact': 'Salva contatto (VCF)',
+  'ctl.qrread.address': 'Indirizzo',
+  'ctl.qrread.note': 'Nota',
   'ctl.qrread.copy': 'Copia',
   'ctl.qrread.copyPassword': 'Copia password',
 
@@ -1319,6 +1321,8 @@ export const strings = {
   'ctl.bulkcode.zipping': 'Creazione dello ZIP…',
   'ctl.bulkcode.download': 'Scarica ZIP ({n})',
   'ctl.bulkcode.done': '{n} codici salvati in {name}.',
+  'ctl.bulkcode.shrunk': '{n} codici a barre erano più larghi della colonna e sono stati ridotti al {percent}% della dimensione standard, il che può renderne difficile la lettura. Con {perRow} per riga vengono stampati a grandezza piena.',
+  'ctl.bulkcode.shrunkNoFit': '{n} codici a barre erano più larghi persino di una sola colonna e sono stati ridotti al {percent}% della dimensione standard, il che può renderne difficile la lettura. Valori più corti danno codici più stretti.',
   'ctl.bulkcode.done.one': "{n} codice salvato in {name}.",
   // QR Code Generator: WhatsApp, location and payment
   'ctl.qr.kind.whatsapp': 'WhatsApp',

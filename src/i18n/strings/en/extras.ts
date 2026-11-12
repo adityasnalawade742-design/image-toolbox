@@ -116,6 +116,8 @@ export const extraStrings = {
   'ctl.qrread.writeEmail': 'Write email',
   'ctl.qrread.call': 'Call',
   'ctl.qrread.saveContact': 'Save contact (VCF)',
+  'ctl.qrread.address': 'Address',
+  'ctl.qrread.note': 'Note',
   'ctl.qrread.copy': 'Copy',
   'ctl.qrread.copyPassword': 'Copy password',
 } as const;

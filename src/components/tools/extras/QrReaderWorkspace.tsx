@@ -382,10 +382,14 @@ function ResultCard({ found }: { found: Found }) {
           <>
             <dl className="divide-y divide-pencil-soft">
               {row(t('ctl.qr.name'), d.name)}
-              {row(t('ctl.qr.phone'), d.phone)}
-              {row(t('ctl.qr.email'), d.email)}
+              {row(t('ctl.qr.jobTitle'), d.title)}
               {row(t('ctl.qr.org'), d.org)}
+              {row(t('ctl.qr.phone'), d.phone)}
+              {row(t('ctl.qr.workPhone'), d.workPhone)}
+              {row(t('ctl.qr.email'), d.email)}
               {row(t('ctl.qr.website'), d.url)}
+              {row(t('ctl.qrread.address'), d.address)}
+              {row(t('ctl.qrread.note'), d.note)}
             </dl>
             <button type="button" onClick={() => downloadBlob(new Blob([raw], { type: 'text/vcard' }), `${(d.name || 'contact').replace(/[^\p{L}\p{N} _-]/gu, '')}.vcf`)} className="btn-rule w-full">
               <Download className="w-4 h-4" aria-hidden="true" />
@@ -411,7 +415,7 @@ function ResultCard({ found }: { found: Found }) {
               {row(t('ctl.qr.payName'), d.name)}
               {row(d.scheme === 'upi' ? t('ctl.qr.upiId') : 'IBAN', d.account)}
               {row(t('ctl.qr.amount'), d.amount)}
-              {row(t('ctl.qr.note'), d.note)}
+              {row(t('ctl.qrread.note'), d.note)}
             </dl>
             <p className="flex items-start gap-2 text-[13px] text-graphite">
               <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />

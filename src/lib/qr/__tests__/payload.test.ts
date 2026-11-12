@@ -29,7 +29,43 @@ describe('QR payloads', () => {
     const card = contactPayload({ name: 'Ada, Countess', phone: '+44 20 7946 0000', email: 'ada@example.org', org: 'Engines; Ltd', url: 'example.org' });
     expect(card).toContain('FN:Ada\\, Countess');
     expect(card).toContain('URL:https://example.org');
-    expect(decodePayload(card)).toEqual({ kind: 'contact', name: 'Ada, Countess', phone: '+44 20 7946 0000', email: 'ada@example.org', org: 'Engines; Ltd', url: 'https://example.org' });
+    expect(decodePayload(card)).toEqual({ kind: 'contact', name: 'Ada, Countess', phone: '+44 20 7946 0000', email: 'ada@example.org', org: 'Engines; Ltd', url: 'https://example.org', title: '', workPhone: '', address: '', note: '' });
+  });
+
+  it('reads back every field the vCard generator writes', () => {
+    const card = contactPayload({
+      name: '',
+      first: 'Grace',
+      last: 'Hopper',
+      title: 'Rear Admiral; Navy',
+      org: 'US Navy',
+      phone: '+1 555 0100',
+      workPhone: '+1 555 0199',
+      street: '1 Main St, Suite 5',
+      city: 'Arlington',
+      postcode: '22201',
+      country: 'USA',
+      email: 'grace@example.org',
+      url: 'example.org',
+      note: 'Met at the conference',
+    });
+    expect(decodePayload(card)).toEqual({
+      kind: 'contact',
+      name: 'Grace Hopper',
+      title: 'Rear Admiral; Navy',
+      org: 'US Navy',
+      phone: '+1 555 0100',
+      workPhone: '+1 555 0199',
+      address: '1 Main St, Suite 5, Arlington, 22201, USA',
+      email: 'grace@example.org',
+      url: 'https://example.org',
+      note: 'Met at the conference',
+    });
+  });
+
+  it('treats a lone work number as the work phone, not the main one', () => {
+    const d = decodePayload('BEGIN:VCARD\r\nVERSION:3.0\r\nFN:A\r\nTEL;TYPE=WORK:123\r\nEND:VCARD');
+    expect(d).toMatchObject({ kind: 'contact', phone: '', workPhone: '123' });
   });
 
   it('treats web addresses as links and anything else as text', () => {

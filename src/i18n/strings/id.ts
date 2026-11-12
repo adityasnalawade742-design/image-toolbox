@@ -1136,6 +1136,8 @@ export const strings = {
   'ctl.qrread.writeEmail': 'Tulis email',
   'ctl.qrread.call': 'Telepon',
   'ctl.qrread.saveContact': 'Simpan kontak (VCF)',
+  'ctl.qrread.address': 'Alamat',
+  'ctl.qrread.note': 'Catatan',
   'ctl.qrread.copy': 'Salin',
   'ctl.qrread.copyPassword': 'Salin kata sandi',
 
@@ -1319,6 +1321,8 @@ export const strings = {
   'ctl.bulkcode.zipping': 'Mengemas ZIP…',
   'ctl.bulkcode.download': 'Unduh ZIP ({n})',
   'ctl.bulkcode.done': '{n} kode disimpan di {name}.',
+  'ctl.bulkcode.shrunk': '{n} barcode lebih lebar dari kolom dan dikecilkan menjadi {percent}% dari ukuran standarnya, sehingga bisa sulit dipindai. Dengan {perRow} per baris, barcode dicetak dalam ukuran penuh.',
+  'ctl.bulkcode.shrunkNoFit': '{n} barcode bahkan lebih lebar dari satu kolom dan dikecilkan menjadi {percent}% dari ukuran standarnya, sehingga bisa sulit dipindai. Nilai yang lebih pendek menghasilkan barcode yang lebih sempit.',
   'ctl.bulkcode.done.one': "{n} kode disimpan di {name}.",
   // QR Code Generator: WhatsApp, location and payment
   'ctl.qr.kind.whatsapp': 'WhatsApp',
