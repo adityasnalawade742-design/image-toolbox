@@ -1410,7 +1410,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "Tingkat PDF/A",
   'ctl.doc.pdfaLevelNote': "2b cocok untuk sebagian besar keperluan. Pilih 1b hanya jika portal atau arsip memintanya (transparansi diratakan). 3b juga mengizinkan lampiran file.",
   'ctl.doc.fitSheet': "Muat setiap sheet dalam satu halaman",
-  'ctl.doc.fitSheetNote': "Setiap sheet menjadi satu halaman seukuran semua selnya, sehingga sheet lebar tidak terpotong. Sheet besar tercetak kecil.",
+  'ctl.doc.fitSheetNote': 'Setiap sheet dikecilkan agar muat satu halaman, jadi sheet lebar tidak terpotong. Sheet besar tercetak kecil; sheet tersembunyi tidak ikut.',
   'ctl.doc.unlockHint': 'Masukkan kata sandi yang membuka PDF ini. Jika PDF terbuka tanpa kata sandi tetapi tidak bisa dicetak atau disalin, kosongkan kolom ini.',
   'ctl.doc.ocrLang': 'Bahasa dokumen',
   'ctl.doc.ocrLang2': "Bahasa kedua (opsional)",

@@ -1405,7 +1405,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "PDF/A 수준",
   'ctl.doc.pdfaLevelNote': "대부분은 2b면 충분해요. 포털이나 보관 기관이 요구할 때만 1b를 고르세요(투명 효과가 평면화돼요). 3b는 첨부 파일도 허용해요.",
   'ctl.doc.fitSheet': "시트마다 한 페이지에 맞추기",
-  'ctl.doc.fitSheetNote': "각 시트가 모든 셀이 들어가는 크기의 한 페이지가 되어, 넓은 시트도 잘리지 않아요. 큰 시트는 작게 인쇄돼요.",
+  'ctl.doc.fitSheetNote': '시트마다 한 페이지에 들어가도록 줄여서 넓은 시트도 페이지 사이에서 잘리지 않아요. 큰 시트는 작게 인쇄되고, 숨긴 시트는 빠져요.',
   'ctl.doc.unlockHint': '이 PDF를 여는 비밀번호를 입력하세요. 비밀번호 없이 열리지만 인쇄나 복사가 막혀 있다면 비워 두세요.',
   'ctl.doc.ocrLang': '문서 언어',
   'ctl.doc.ocrLang2': "두 번째 언어(선택)",

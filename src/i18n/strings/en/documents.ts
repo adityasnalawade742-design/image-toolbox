@@ -60,7 +60,7 @@ export const documentStrings = {
   'ctl.doc.pdfaLevel': 'PDF/A level',
   'ctl.doc.pdfaLevelNote': '2b suits most uses. Choose 1b only when a portal or archive asks for it (transparency is flattened). 3b also allows attached files.',
   'ctl.doc.fitSheet': 'Fit each sheet on one page',
-  'ctl.doc.fitSheetNote': 'Each sheet becomes one page sized to all its cells, so wide sheets aren’t cut across pages. Large sheets print small.',
+  'ctl.doc.fitSheetNote': 'Each sheet is scaled down to fit one page, so wide sheets aren’t cut across pages. Large sheets print small; hidden sheets stay out.',
   'ctl.doc.unlockHint': 'Enter the password that opens this PDF. If it opens without one but won’t let you print or copy, leave this empty.',
   'ctl.doc.ocrLang': 'Language of the document',
   'ctl.doc.ocrLang2': 'Second language (optional)',

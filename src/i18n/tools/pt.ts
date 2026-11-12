@@ -7220,7 +7220,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converta",
-        description: "Clique em Converter para PDF. O arquivo é convertido no nosso servidor, normalmente em poucos segundos.",
+        description: "Clique em Converter para PDF. Títulos, links, tabelas, cabeçalhos e rodapés são mantidos; costuma levar poucos segundos.",
       },
       {
         title: "Baixe o PDF",
@@ -7229,12 +7229,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantido",
-        description: "Textos, tabelas, imagens e quebras de página ficam onde estavam.",
+        title: "Títulos viram marcadores",
+        description: "Os títulos do Word viram marcadores do PDF para ir direto a cada seção, e os links continuam clicáveis.",
       },
       {
-        title: "Fontes comuns incluídas",
-        description: "Fontes com métricas compatíveis com Calibri, Cambria, Arial e Times, além das fontes Noto para a maioria dos idiomas.",
+        title: "Mesmas quebras de linha",
+        description: "Calibri, Cambria, Arial e Times são trocadas por fontes com a mesma largura exata, então o texto e as páginas quebram como no Word.",
       },
       {
         title: "Arquivos apagados na hora",
@@ -7249,12 +7249,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Meu PDF vai ficar exatamente igual ao original?",
         answer:
-          "Na maioria dos documentos, sim. Fontes raras que não estão instaladas no servidor são substituídas por outras parecidas, e alguns layouts muito complexos podem se deslocar um pouco. Confira o PDF antes de enviá-lo.",
+          "Normalmente, sim. Calibri, Cambria, Arial e Times são trocadas por fontes com a mesma largura de caractere, então o texto se distribui do mesmo jeito. Uma fonte rara que não está no nosso servidor é trocada por uma parecida e pode mover uma linha, por isso confira o PDF antes de enviar.",
       },
       {
         question: "As alterações controladas e os comentários aparecem no PDF?",
         answer:
-          "O documento é convertido do jeito que aparece ao ser aberto, então aceite ou rejeite as alterações controladas antes se não quiser que elas fiquem visíveis.",
+          "O documento é convertido como aparece ao abrir, então aceite ou rejeite antes as alterações controladas. Os comentários entram como comentários de PDF, as notas que aparecem no painel de comentários do leitor, então apague-os antes se não devem ser compartilhados.",
       },
       {
         question: "Meu arquivo é enviado?",
@@ -7291,7 +7291,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converta",
-        description: "Clique em Converter para PDF. O arquivo é convertido no nosso servidor, normalmente em poucos segundos.",
+        description: "Marque Cada planilha em uma página se quiser cada planilha em uma só página e clique em Converter para PDF.",
       },
       {
         title: "Baixe o PDF",
@@ -7300,12 +7300,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantido",
-        description: "Textos, tabelas, imagens e quebras de página ficam onde estavam.",
+        title: "O que está oculto fica de fora",
+        description: "Planilhas e colunas ocultas ficam de fora, e a área de impressão definida no arquivo é respeitada.",
       },
       {
-        title: "Fontes comuns incluídas",
-        description: "Fontes com métricas compatíveis com Calibri, Cambria, Arial e Times, além das fontes Noto para a maioria dos idiomas.",
+        title: "Cada planilha em uma página",
+        description: "Marque Cada planilha em uma página para reduzir cada planilha a uma única página, como o ajuste de impressão do Excel.",
       },
       {
         title: "Arquivos apagados na hora",
@@ -7320,12 +7320,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Meu PDF vai ficar exatamente igual ao original?",
         answer:
-          "Na maioria dos documentos, sim. Fontes raras que não estão instaladas no servidor são substituídas por outras parecidas, e alguns layouts muito complexos podem se deslocar um pouco. Confira o PDF antes de enviá-lo.",
+          "Quase sempre, sim. O PDF segue a configuração de página salva na planilha (tamanho do papel, orientação, margens e quebras de página), e fontes como Calibri são trocadas por outras da mesma largura. Planilhas muito largas são divididas em várias páginas, a não ser que você coloque cada planilha em uma página.",
       },
       {
         question: "Por que minha planilha foi dividida em várias páginas?",
         answer:
-          "O PDF segue as configurações de impressão salvas na planilha. Para ter cada planilha em uma página, marque “Cada planilha em uma página” antes de converter: a página cresce até caber a planilha, então planilhas grandes saem pequenas na impressão.",
+          "O PDF segue as configurações de impressão salvas na planilha. Para ter cada planilha em uma página, marque “Cada planilha em uma página”: cada planilha é reduzida para caber em uma página, então planilhas grandes saem pequenas. Planilhas e colunas ocultas ficam de fora nos dois casos, e a área de impressão é respeitada.",
       },
       {
         question: "Meu arquivo é enviado?",
@@ -7361,7 +7361,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converta",
-        description: "Clique em Converter para PDF. O arquivo é convertido no nosso servidor, normalmente em poucos segundos.",
+        description: "Clique em Converter para PDF. Cada slide visível vira uma página, e os ocultos são pulados.",
       },
       {
         title: "Baixe o PDF",
@@ -7370,12 +7370,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantido",
-        description: "Textos, tabelas, imagens e quebras de página ficam onde estavam.",
+        title: "Um slide por página",
+        description: "Cada slide visível vira uma página no formato da apresentação; slides ocultos ficam de fora.",
       },
       {
-        title: "Fontes comuns incluídas",
-        description: "Fontes com métricas compatíveis com Calibri, Cambria, Arial e Times, além das fontes Noto para a maioria dos idiomas.",
+        title: "O texto fica nas caixas",
+        description: "Fontes comuns do Office são trocadas por outras da mesma largura, então títulos e marcadores não saem das caixas.",
       },
       {
         title: "Arquivos apagados na hora",
@@ -7390,12 +7390,12 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Meu PDF vai ficar exatamente igual ao original?",
         answer:
-          "Na maioria dos documentos, sim. Fontes raras que não estão instaladas no servidor são substituídas por outras parecidas, e alguns layouts muito complexos podem se deslocar um pouco. Confira o PDF antes de enviá-lo.",
+          "Normalmente, sim. Cada slide vira uma página com imagens, formas e textos no lugar, e as fontes comuns do Office são trocadas por outras da mesma largura. Uma fonte rara pode ser trocada por uma parecida e quebrar uma linha de outro jeito, então confira o PDF.",
       },
       {
         question: "As animações e os vídeos são mantidos?",
         answer:
-          "Não. Um PDF mostra cada slide como uma página estática, então animações, transições e vídeos incorporados ficam de fora.",
+          "Não. Um PDF mostra cada slide como uma página fixa, então animações, transições e vídeos incorporados ficam de fora. Slides ocultos também.",
       },
       {
         question: "Meu arquivo é enviado?",

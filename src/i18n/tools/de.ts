@@ -7246,7 +7246,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Umwandeln",
-        description: "Klick auf „In PDF umwandeln“. Die Datei wird auf unserem Server umgewandelt, meist in wenigen Sekunden.",
+        description: "Klicke auf In PDF umwandeln. Überschriften, Links, Tabellen, Kopf- und Fußzeilen bleiben erhalten; das dauert meist nur Sekunden.",
       },
       {
         title: "PDF herunterladen",
@@ -7255,12 +7255,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout bleibt erhalten",
-        description: "Text, Tabellen, Bilder und Seitenumbrüche bleiben, wo sie waren.",
+        title: "Überschriften werden Lesezeichen",
+        description: "Word-Überschriften werden zu PDF-Lesezeichen, mit denen du zu jedem Abschnitt springst, und Links bleiben anklickbar.",
       },
       {
-        title: "Gängige Schriften dabei",
-        description: "Metrisch kompatible Schriften für Calibri, Cambria, Arial und Times, dazu Noto-Schriften für die meisten Sprachen.",
+        title: "Gleiche Zeilenumbrüche",
+        description: "Calibri, Cambria, Arial und Times werden durch Schriften mit genau gleicher Breite ersetzt, sodass Zeilen und Seiten wie in Word umbrechen.",
       },
       {
         title: "Dateien sofort gelöscht",
@@ -7275,12 +7275,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Sieht mein PDF genau wie das Original aus?",
         answer:
-          "Bei den meisten Dokumenten ja. Seltene Schriften, die auf dem Server nicht installiert sind, werden durch ähnliche ersetzt, und manche sehr komplexe Layouts können sich leicht verschieben. Prüf das PDF, bevor du es verschickst.",
+          "Meist ja. Calibri, Cambria, Arial und Times werden durch Schriften mit gleicher Zeichenbreite ersetzt, also bricht der Text genauso um. Eine seltene Schrift, die nicht auf unserem Server ist, wird durch eine ähnliche ersetzt und kann eine Zeile verschieben, also prüfe das PDF vor dem Versenden.",
       },
       {
         question: "Erscheinen nachverfolgte Änderungen und Kommentare im PDF?",
         answer:
-          "Das Dokument wird so umgewandelt, wie es beim Öffnen angezeigt wird. Nimm nachverfolgte Änderungen also vorher an oder lehne sie ab, wenn sie nicht sichtbar sein sollen.",
+          "Das Dokument wird so umgewandelt, wie es beim Öffnen aussieht, also nimm Änderungen vorher an oder lehne sie ab. Kommentare werden als PDF-Kommentare übernommen, also als Notizen im Kommentarbereich des PDF-Readers; lösche sie vorher, wenn sie nicht weitergegeben werden sollen.",
       },
       {
         question: "Wird meine Datei hochgeladen?",
@@ -7318,7 +7318,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Umwandeln",
-        description: "Klick auf „In PDF umwandeln“. Die Datei wird auf unserem Server umgewandelt, meist in wenigen Sekunden.",
+        description: "Hake „Jedes Blatt auf eine Seite“ an, wenn jedes Blatt auf eine Seite soll, und klicke auf In PDF umwandeln.",
       },
       {
         title: "PDF herunterladen",
@@ -7327,12 +7327,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout bleibt erhalten",
-        description: "Text, Tabellen, Bilder und Seitenumbrüche bleiben, wo sie waren.",
+        title: "Ausgeblendetes bleibt draußen",
+        description: "Ausgeblendete Blätter und Spalten werden weggelassen, und ein festgelegter Druckbereich wird beachtet.",
       },
       {
-        title: "Gängige Schriften dabei",
-        description: "Metrisch kompatible Schriften für Calibri, Cambria, Arial und Times, dazu Noto-Schriften für die meisten Sprachen.",
+        title: "Jedes Blatt auf eine Seite",
+        description: "Hake „Jedes Blatt auf eine Seite“ an, um jedes Blatt auf eine einzige Seite zu verkleinern, wie es die Druckeinstellung von Excel macht.",
       },
       {
         title: "Dateien sofort gelöscht",
@@ -7347,12 +7347,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Sieht mein PDF genau wie das Original aus?",
         answer:
-          "Bei den meisten Dokumenten ja. Seltene Schriften, die auf dem Server nicht installiert sind, werden durch ähnliche ersetzt, und manche sehr komplexe Layouts können sich leicht verschieben. Prüf das PDF, bevor du es verschickst.",
+          "Meistens ja. Das PDF folgt der im Arbeitsblatt gespeicherten Seiteneinrichtung (Papierformat, Ausrichtung, Ränder und Seitenumbrüche), und Schriften wie Calibri werden durch gleich breite ersetzt. Sehr breite Blätter werden auf mehrere Seiten verteilt, außer du setzt jedes Blatt auf eine Seite.",
       },
       {
         question: "Warum ist mein Tabellenblatt auf mehrere Seiten verteilt?",
         answer:
-          "Das PDF folgt den Druckeinstellungen, die in der Tabelle gespeichert sind. Damit jedes Blatt auf eine Seite kommt, aktiviere vor dem Umwandeln „Jedes Blatt auf eine Seite“: Die Seite wächst mit dem Blatt, große Blätter werden also klein gedruckt.",
+          "Das PDF folgt den im Arbeitsblatt gespeicherten Druckeinstellungen. Für jedes Blatt auf einer Seite hake „Jedes Blatt auf eine Seite“ an: Jedes Blatt wird auf eine Seite verkleinert, große Blätter werden also klein gedruckt. Ausgeblendete Blätter und Spalten bleiben in beiden Fällen draußen, und ein Druckbereich wird beachtet.",
       },
       {
         question: "Wird meine Datei hochgeladen?",
@@ -7389,7 +7389,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Umwandeln",
-        description: "Klick auf „In PDF umwandeln“. Die Datei wird auf unserem Server umgewandelt, meist in wenigen Sekunden.",
+        description: "Klicke auf In PDF umwandeln. Jede sichtbare Folie wird eine Seite, ausgeblendete Folien werden übersprungen.",
       },
       {
         title: "PDF herunterladen",
@@ -7398,12 +7398,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout bleibt erhalten",
-        description: "Text, Tabellen, Bilder und Seitenumbrüche bleiben, wo sie waren.",
+        title: "Eine Folie pro Seite",
+        description: "Jede sichtbare Folie wird eine PDF-Seite im Format der Präsentation; ausgeblendete Folien werden weggelassen.",
       },
       {
-        title: "Gängige Schriften dabei",
-        description: "Metrisch kompatible Schriften für Calibri, Cambria, Arial und Times, dazu Noto-Schriften für die meisten Sprachen.",
+        title: "Text bleibt in seinen Feldern",
+        description: "Gängige Office-Schriften werden durch gleich breite ersetzt, damit Titel und Aufzählungen nicht aus ihren Feldern laufen.",
       },
       {
         title: "Dateien sofort gelöscht",
@@ -7418,12 +7418,12 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Sieht mein PDF genau wie das Original aus?",
         answer:
-          "Bei den meisten Dokumenten ja. Seltene Schriften, die auf dem Server nicht installiert sind, werden durch ähnliche ersetzt, und manche sehr komplexe Layouts können sich leicht verschieben. Prüf das PDF, bevor du es verschickst.",
+          "Meist ja. Jede Folie wird eine Seite mit Bildern, Formen und Text an ihrem Platz, und gängige Office-Schriften werden durch gleich breite ersetzt. Eine seltene Schrift kann durch eine ähnliche ersetzt werden und eine Zeile anders umbrechen, also prüfe das PDF.",
       },
       {
         question: "Bleiben Animationen und Videos erhalten?",
         answer:
-          "Nein. Ein PDF zeigt jede Folie als unbewegte Seite, Animationen, Übergänge und eingebettete Videos fallen also weg.",
+          "Nein. Ein PDF zeigt jede Folie als feste Seite, Animationen, Übergänge und eingebettete Videos fehlen also. Ausgeblendete Folien ebenfalls.",
       },
       {
         question: "Wird meine Datei hochgeladen?",

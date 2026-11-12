@@ -7235,7 +7235,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Dönüştürün",
-        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+        description: "PDF’e dönüştür’e tıklayın. Başlıklar, bağlantılar, tablolar, üst ve alt bilgiler korunur; genellikle birkaç saniye sürer.",
       },
       {
         title: "PDF'i indirin",
@@ -7244,12 +7244,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Düzen korunur",
-        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+        title: "Başlıklar yer imi olur",
+        description: "Word başlıkları, bölümlere atlamanızı sağlayan PDF yer imlerine dönüşür; bağlantılar tıklanabilir kalır.",
       },
       {
-        title: "Yaygın yazı tipleri dahil",
-        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+        title: "Aynı satır sonları",
+        description: "Calibri, Cambria, Arial ve Times, genişliği tam aynı yazı tipleriyle değiştirilir; böylece satırlar ve sayfalar Word’deki gibi bölünür.",
       },
       {
         title: "Dosyalar hemen silinir",
@@ -7264,12 +7264,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
         answer:
-          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+          "Genellikle evet. Calibri, Cambria, Arial ve Times, karakter genişliği aynı yazı tipleriyle değiştirilir; metin aynı şekilde satıra bölünür. Sunucumuzda olmayan nadir bir yazı tipi benzeriyle değiştirilir ve bir satırı kaydırabilir; göndermeden önce PDF’i kontrol edin.",
       },
       {
         question: "İzlenen değişiklikler ve yorumlar PDF'te görünür mü?",
         answer:
-          "Belge, açıldığında göründüğü haliyle dönüştürülür; bu yüzden görünmelerini istemiyorsanız izlenen değişiklikleri önce kabul edin veya reddedin.",
+          "Belge açıldığındaki görünümüyle dönüştürülür; izlenen değişiklikleri önce kabul edin ya da reddedin. Yorumlar, PDF okuyucunun yorum panelinde görünen notlar olarak PDF yorumu şeklinde eklenir; paylaşılmaması gerekiyorsa önce silin.",
       },
       {
         question: "Dosyam yükleniyor mu?",
@@ -7306,7 +7306,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Dönüştürün",
-        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+        description: "Her çalışma sayfasının tek sayfada olmasını istiyorsanız Her çalışma sayfasını tek sayfaya sığdır’ı işaretleyip PDF’e dönüştür’e tıklayın.",
       },
       {
         title: "PDF'i indirin",
@@ -7315,12 +7315,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Düzen korunur",
-        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+        title: "Gizli veriler girmez",
+        description: "Gizli çalışma sayfaları ve sütunlar dışarıda kalır; dosyada ayarlanan yazdırma alanına uyulur.",
       },
       {
-        title: "Yaygın yazı tipleri dahil",
-        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+        title: "Her sayfa tek sayfada",
+        description: "Her çalışma sayfasını tek sayfaya sığdır’ı işaretleyin; Excel’in yazdırma ayarı gibi her sayfa tek sayfaya küçültülür.",
       },
       {
         title: "Dosyalar hemen silinir",
@@ -7335,12 +7335,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
         answer:
-          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+          "Çoğunlukla evet. PDF, dosyada kayıtlı sayfa ayarlarını (kâğıt boyutu, yön, kenar boşlukları ve sayfa sonları) izler; Calibri gibi yazı tipleri aynı genişlikteki tiplerle değiştirilir. Çok geniş sayfalar, her birini tek sayfaya sığdırmadığınız sürece birkaç sayfaya bölünür.",
       },
       {
         question: "Çalışma sayfam neden birkaç sayfaya bölünüyor?",
         answer:
-          "PDF, elektronik tabloda kayıtlı yazdırma ayarlarını izler. Her çalışma sayfasını tek sayfada almak için dönüştürmeden önce “Her çalışma sayfasını tek sayfaya sığdır” seçeneğini işaretleyin: sayfa, çalışma sayfasına göre büyür, bu yüzden büyük sayfalar küçük basılır.",
+          "PDF, dosyada kayıtlı yazdırma ayarlarını izler. Her sayfayı tek sayfada görmek için “Her çalışma sayfasını tek sayfaya sığdır”ı işaretleyin: her sayfa tek sayfaya sığacak şekilde küçültülür, büyük sayfalar küçük basılır. Gizli sayfalar ve sütunlar her iki durumda da dışarıda kalır, yazdırma alanına uyulur.",
       },
       {
         question: "Dosyam yükleniyor mu?",
@@ -7376,7 +7376,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Dönüştürün",
-        description: "PDF'e dönüştür düğmesine tıklayın. Dosya sunucumuzda, genellikle birkaç saniyede dönüştürülür.",
+        description: "PDF’e dönüştür’e tıklayın. Görünen her slayt bir sayfa olur, gizli slaytlar atlanır.",
       },
       {
         title: "PDF'i indirin",
@@ -7385,12 +7385,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Düzen korunur",
-        description: "Metin, tablolar, resimler ve sayfa sonları yerinde kalır.",
+        title: "Her slayt bir sayfa",
+        description: "Görünen her slayt, sunumun kendi biçiminde bir PDF sayfası olur; gizli slaytlar dışarıda kalır.",
       },
       {
-        title: "Yaygın yazı tipleri dahil",
-        description: "Calibri, Cambria, Arial ve Times ile ölçü uyumlu yazı tipleri, ayrıca çoğu dil için Noto yazı tipleri.",
+        title: "Metin kutularında kalır",
+        description: "Yaygın Office yazı tipleri aynı genişlikteki tiplerle değiştirilir; başlıklar ve maddeler kutularından taşmaz.",
       },
       {
         title: "Dosyalar hemen silinir",
@@ -7405,12 +7405,12 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF'im orijinalinin tıpatıp aynısı mı olacak?",
         answer:
-          "Çoğu belgede evet. Sunucuda yüklü olmayan nadir yazı tipleri benzerleriyle değiştirilir ve bazı çok karmaşık düzenler biraz kayabilir. Göndermeden önce PDF'i kontrol edin.",
+          "Genellikle evet. Her slayt, resimleri, şekilleri ve metinleri yerinde kalarak bir sayfa olur; yaygın Office yazı tipleri aynı genişlikteki tiplerle değiştirilir. Nadir bir yazı tipi benzeriyle değişip bir satırı farklı bölebilir; PDF’i kontrol edin.",
       },
       {
         question: "Animasyonlar ve videolar korunur mu?",
         answer:
-          "Hayır. PDF her slaydı sabit bir sayfa olarak gösterir; bu yüzden animasyonlar, geçişler ve gömülü videolar dahil edilmez.",
+          "Hayır. PDF her slaytı sabit bir sayfa olarak gösterir; animasyonlar, geçişler ve gömülü videolar dışarıda kalır. Gizli slaytlar da.",
       },
       {
         question: "Dosyam yükleniyor mu?",

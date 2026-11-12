@@ -7233,7 +7233,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "변환",
-        description: "PDF로 변환을 누르세요. 파일은 저희 서버에서 변환되며, 보통 몇 초면 끝나요.",
+        description: "‘PDF로 변환’을 누르세요. 제목, 링크, 표, 머리글과 바닥글이 그대로 들어가고 보통 몇 초면 끝나요.",
       },
       {
         title: "PDF 다운로드",
@@ -7242,12 +7242,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "레이아웃 유지",
-        description: "글자, 표, 이미지, 페이지 나누기가 원래 자리에 그대로 있어요.",
+        title: "제목이 책갈피로",
+        description: "Word 제목은 PDF 책갈피가 되어 클릭하면 해당 부분으로 이동하고, 링크도 그대로 클릭할 수 있어요.",
       },
       {
-        title: "주요 글꼴 포함",
-        description: "Calibri, Cambria, Arial, Times와 글자 폭이 같은 호환 글꼴과, 대부분의 언어를 위한 Noto 글꼴을 갖추고 있어요.",
+        title: "줄바꿈도 그대로",
+        description: "Calibri, Cambria, Arial, Times는 글자 폭이 똑같은 글꼴로 바뀌어서 줄과 페이지가 Word와 똑같이 나뉘어요.",
       },
       {
         title: "파일 즉시 삭제",
@@ -7262,12 +7262,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF가 원본과 똑같이 보이나요?",
         answer:
-          "대부분의 문서는 그래요. 서버에 설치되지 않은 드문 글꼴은 비슷한 글꼴로 바뀌고, 아주 복잡한 레이아웃은 조금 어긋날 수 있어요. 보내기 전에 PDF를 확인하세요.",
+          "대부분 그래요. Calibri, Cambria, Arial, Times는 글자 폭이 같은 글꼴로 바뀌어서 줄바꿈이 똑같아요. 서버에 없는 드문 글꼴은 비슷한 글꼴로 바뀌어 줄이 밀릴 수 있으니 보내기 전에 PDF를 확인하세요.",
       },
       {
         question: "변경 내용 추적과 메모가 PDF에 나타나나요?",
         answer:
-          "문서는 열었을 때 보이는 그대로 변환돼요. 변경 내용이 보이지 않게 하려면 먼저 변경 내용을 적용하거나 거부하세요.",
+          "문서는 열었을 때 보이는 그대로 변환되니 변경 내용 추적은 먼저 적용하거나 거부하세요. 메모는 PDF 주석(PDF 뷰어의 주석 창에 보이는 메모)으로 들어가니, 공유하면 안 되는 메모는 먼저 지우세요.",
       },
       {
         question: "파일이 업로드되나요?",
@@ -7305,7 +7305,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "변환",
-        description: "PDF로 변환을 누르세요. 파일은 저희 서버에서 변환되며, 보통 몇 초면 끝나요.",
+        description: "시트마다 한 페이지로 만들려면 ‘시트마다 한 페이지에 맞추기’를 켜고 ‘PDF로 변환’을 누르세요.",
       },
       {
         title: "PDF 다운로드",
@@ -7314,12 +7314,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "레이아웃 유지",
-        description: "글자, 표, 이미지, 페이지 나누기가 원래 자리에 그대로 있어요.",
+        title: "숨긴 데이터는 빠져요",
+        description: "숨긴 시트와 열은 빠지고, 파일에 정한 인쇄 영역도 그대로 지켜져요.",
       },
       {
-        title: "주요 글꼴 포함",
-        description: "Calibri, Cambria, Arial, Times와 글자 폭이 같은 호환 글꼴과, 대부분의 언어를 위한 Noto 글꼴을 갖추고 있어요.",
+        title: "시트마다 한 페이지",
+        description: "‘시트마다 한 페이지에 맞추기’를 켜면 Excel 인쇄 설정처럼 시트마다 한 페이지로 줄여요.",
       },
       {
         title: "파일 즉시 삭제",
@@ -7334,12 +7334,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF가 원본과 똑같이 보이나요?",
         answer:
-          "대부분의 문서는 그래요. 서버에 설치되지 않은 드문 글꼴은 비슷한 글꼴로 바뀌고, 아주 복잡한 레이아웃은 조금 어긋날 수 있어요. 보내기 전에 PDF를 확인하세요.",
+          "대부분 그래요. PDF는 파일에 저장된 페이지 설정(용지 크기, 방향, 여백, 페이지 나누기)을 따르고, Calibri 같은 글꼴은 폭이 같은 글꼴로 바뀌어요. 아주 넓은 시트는 한 페이지에 맞추지 않으면 여러 페이지로 나뉘어요.",
       },
       {
         question: "시트가 여러 페이지로 나뉘는 이유는 뭔가요?",
         answer:
-          "PDF는 스프레드시트에 저장된 인쇄 설정을 따라요. 시트마다 한 페이지로 만들려면 변환 전에 “시트마다 한 페이지에 맞추기”를 켜세요. 페이지가 시트에 맞게 커져서 큰 시트는 작게 인쇄돼요.",
+          "PDF는 파일에 저장된 인쇄 설정을 따라요. 시트마다 한 페이지로 만들려면 ‘시트마다 한 페이지에 맞추기’를 켜세요. 시트가 한 페이지에 들어가도록 줄어들어서 큰 시트는 작게 인쇄돼요. 어느 경우든 숨긴 시트와 열은 빠지고 인쇄 영역도 지켜져요.",
       },
       {
         question: "파일이 업로드되나요?",
@@ -7376,7 +7376,7 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "변환",
-        description: "PDF로 변환을 누르세요. 파일은 저희 서버에서 변환되며, 보통 몇 초면 끝나요.",
+        description: "‘PDF로 변환’을 누르세요. 보이는 슬라이드마다 한 페이지가 되고 숨긴 슬라이드는 건너뛰어요.",
       },
       {
         title: "PDF 다운로드",
@@ -7385,12 +7385,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "레이아웃 유지",
-        description: "글자, 표, 이미지, 페이지 나누기가 원래 자리에 그대로 있어요.",
+        title: "슬라이드마다 한 페이지",
+        description: "보이는 슬라이드마다 프레젠테이션과 같은 모양의 PDF 한 페이지가 되고, 숨긴 슬라이드는 빠져요.",
       },
       {
-        title: "주요 글꼴 포함",
-        description: "Calibri, Cambria, Arial, Times와 글자 폭이 같은 호환 글꼴과, 대부분의 언어를 위한 Noto 글꼴을 갖추고 있어요.",
+        title: "글자가 상자 안에 그대로",
+        description: "흔한 Office 글꼴은 폭이 같은 글꼴로 바뀌어서 제목과 글머리 기호가 상자 밖으로 넘치지 않아요.",
       },
       {
         title: "파일 즉시 삭제",
@@ -7405,12 +7405,12 @@ export const koTools: Record<string, LocalizedToolItem> = {
       {
         question: "PDF가 원본과 똑같이 보이나요?",
         answer:
-          "대부분의 문서는 그래요. 서버에 설치되지 않은 드문 글꼴은 비슷한 글꼴로 바뀌고, 아주 복잡한 레이아웃은 조금 어긋날 수 있어요. 보내기 전에 PDF를 확인하세요.",
+          "대부분 그래요. 슬라이드마다 그림, 도형, 글자가 제자리에 있는 한 페이지가 되고, 흔한 Office 글꼴은 폭이 같은 글꼴로 바뀌어요. 드문 글꼴은 비슷한 글꼴로 바뀌어 줄바꿈이 달라질 수 있으니 PDF를 확인하세요.",
       },
       {
         question: "애니메이션과 동영상도 유지되나요?",
         answer:
-          "아니요. PDF는 각 슬라이드를 정지된 페이지로 보여 주므로 애니메이션, 화면 전환, 삽입된 동영상은 빠져요.",
+          "아니요. PDF는 슬라이드를 멈춘 페이지로 보여 주므로 애니메이션, 화면 전환, 삽입된 동영상은 빠져요. 숨긴 슬라이드도 빠져요.",
       },
       {
         question: "파일이 업로드되나요?",

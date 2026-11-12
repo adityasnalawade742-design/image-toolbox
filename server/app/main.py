@@ -794,8 +794,73 @@ PDF_EXPORT_FILTER = {"docx": "writer_pdf_Export", "odt": "writer_pdf_Export", "d
                      "odp": "impress_pdf_Export", "xls": "calc_pdf_Export", "ppt": "impress_pdf_Export"}
 LOSSLESS = {"UseLosslessCompression": {"type": "boolean", "value": "true"},
             "ReduceImageResolution": {"type": "boolean", "value": "false"}}
-# Calc only: each sheet becomes one page as big as its content, instead of being cut across many pages
-ONE_PAGE_PER_SHEET = {"SinglePageSheets": {"type": "boolean", "value": "true"}}
+# Calc, "Fit each sheet on one page": every worksheet of an .xlsx gets Excel's own print setting "fit to 1 page wide by
+# 1 tall" (sheetPr/pageSetUpPr fitToPage and pageSetup fitToWidth/fitToHeight). The normal export then puts each sheet on
+# one page and still leaves out hidden sheets, hidden rows and columns, and cells outside a print area. LibreOffice's
+# SinglePageSheets option would export hidden sheets and ignore print areas, putting data in the PDF that was meant to
+# stay out. python -c FIT_SHEETS in.xlsx out.xlsx
+FIT_SHEETS = r'''
+import re, sys, zipfile
+
+src, dst = sys.argv[1], sys.argv[2]
+# Worksheet parts that may follow pageSetup, in the order Excel requires: a new pageSetup goes before the first one
+AFTER = ('headerFooter', 'rowBreaks', 'colBreaks', 'customProperties', 'cellWatches', 'ignoredErrors', 'smartTags',
+         'drawing', 'legacyDrawing', 'legacyDrawingHF', 'drawingHF', 'picture', 'oleObjects', 'controls',
+         'webPublishItems', 'tableParts', 'extLst')
+
+
+def set_attrs(tag, attrs):
+    """A start tag with these attributes set (replacing any old values), keeping it self-closing or not"""
+    for name in attrs:
+        tag = re.sub(r'\s' + name + r'="[^"]*"', '', tag)
+    end = '/>' if tag.endswith('/>') else '>'
+    return tag[:-len(end)].rstrip() + ''.join(f' {k}="{v}"' for k, v in attrs.items()) + end
+
+
+def fit(xml):
+    s = xml.decode('utf-8')
+    root = re.search(r'<(\w+:)?worksheet\b', s)
+    if not root:
+        return xml
+    p = root.group(1) or ''
+    # sheetPr/pageSetUpPr fitToPage="1": scale the sheet to the page count in pageSetup
+    pr = re.search(r'<' + p + r'sheetPr\b[^>]*>', s)
+    if pr and pr.group(0).endswith('/>'):
+        s = s[:pr.start()] + pr.group(0)[:-2].rstrip() + '><' + p + 'pageSetUpPr fitToPage="1"/></' + p + 'sheetPr>' + s[pr.end():]
+    elif pr:
+        ps = re.search(r'<' + p + r'pageSetUpPr\b[^>]*>', s)
+        if ps:
+            s = s[:ps.start()] + set_attrs(ps.group(0), {'fitToPage': '1'}) + s[ps.end():]
+        else:
+            close = s.index('</' + p + 'sheetPr>')
+            s = s[:close] + '<' + p + 'pageSetUpPr fitToPage="1"/>' + s[close:]
+    else:
+        start = s.index('>', root.end()) + 1
+        s = s[:start] + '<' + p + 'sheetPr><' + p + 'pageSetUpPr fitToPage="1"/></' + p + 'sheetPr>' + s[start:]
+    # pageSetup: one page wide and one page tall
+    ps = re.search(r'<' + p + r'pageSetup\b[^>]*>', s)
+    if ps:
+        s = s[:ps.start()] + set_attrs(ps.group(0), {'fitToWidth': '1', 'fitToHeight': '1'}) + s[ps.end():]
+    else:
+        new = '<' + p + 'pageSetup fitToWidth="1" fitToHeight="1"/>'
+        margins = re.search(r'<' + p + r'pageMargins\b[^>]*/>', s)
+        if margins:
+            at = margins.end()
+        else:
+            later = [m.start() for m in (re.search(r'<' + p + name + r'\b', s) for name in AFTER) if m]
+            at = min(later) if later else s.rindex('</' + p + 'worksheet>')
+        s = s[:at] + new + s[at:]
+    return s.encode('utf-8')
+
+
+zin = zipfile.ZipFile(src)
+with zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED) as out:
+    for item in zin.infolist():
+        data = zin.read(item.filename)
+        if re.fullmatch(r'xl/worksheets/sheet\d+\.xml', item.filename):
+            data = fit(data)
+        out.writestr(item, data)
+'''
 
 
 # ---------- endpoints ----------
@@ -820,7 +885,21 @@ async def convert(file: UploadFile, to: str = "pdf", fit: str = ""):
             # LibreOffice's default export recompresses pictures as JPEG and lowers them to 300 DPI. Lossless keeps
             # every picture exact, and a camera JPEG is copied in as it is, at the cost of larger files
             export = PDF_EXPORT_FILTER.get(ext)
-            options = {**LOSSLESS, **(ONE_PAGE_PER_SHEET if fit == "sheet" and export == "calc_pdf_Export" else {})}
+            if fit == "sheet" and export == "calc_pdf_Export":
+                # Other spreadsheet types are saved as .xlsx first, so the same print setting can be written into them.
+                # If any step fails, the sheets are exported as they are (still without hidden sheets)
+                book = named
+                if ext != "xlsx":
+                    await run("soffice", f"-env:UserInstallation=file://{job}/profile", "--headless", "--norestore",
+                              "--convert-to", "xlsx", "--outdir", str(job / "book"), str(named), cwd=job)
+                    book = job / "book" / "input.xlsx"
+                fitted = job / "fit" / "input.xlsx"
+                fitted.parent.mkdir(exist_ok=True)
+                if book.exists():
+                    code, _ = await run(sys.executable, "-c", FIT_SHEETS, str(book), str(fitted), cwd=job)
+                    if code == 0 and fitted.exists():
+                        named, ext = fitted, "xlsx"
+            options = LOSSLESS
             target = f"pdf:{export}:{json.dumps(options, separators=(',', ':'))}" if export else "pdf"
             soffice = lambda to: run("soffice", f"-env:UserInstallation=file://{job}/profile", "--headless", "--norestore",
                                      "--convert-to", to, "--outdir", str(job / "out"), str(named), cwd=job)

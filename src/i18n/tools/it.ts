@@ -7215,7 +7215,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converti",
-        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+        description: "Fai clic su Converti in PDF. Titoli, link, tabelle, intestazioni e piè di pagina restano; di solito bastano pochi secondi.",
       },
       {
         title: "Scarica il PDF",
@@ -7224,12 +7224,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantenuto",
-        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+        title: "I titoli diventano segnalibri",
+        description: "I titoli di Word diventano segnalibri del PDF per saltare a ogni sezione, e i link restano cliccabili.",
       },
       {
-        title: "Font comuni inclusi",
-        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+        title: "Stessi a capo",
+        description: "Calibri, Cambria, Arial e Times sono sostituiti da caratteri con la stessa identica larghezza, così righe e pagine vanno a capo come in Word.",
       },
       {
         title: "File eliminati subito",
@@ -7244,12 +7244,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Il PDF sarà identico all’originale?",
         answer:
-          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+          "Di solito sì. Calibri, Cambria, Arial e Times sono sostituiti da caratteri con la stessa larghezza, quindi il testo va a capo allo stesso modo. Un carattere raro che non è sul nostro server viene sostituito da uno simile e può spostare una riga, quindi controlla il PDF prima di inviarlo.",
       },
       {
         question: "Le revisioni e i commenti compaiono nel PDF?",
         answer:
-          "Il documento viene convertito così come appare quando lo apri, quindi accetta o rifiuta prima le revisioni se non vuoi che siano visibili.",
+          "Il documento viene convertito come appare all’apertura, quindi accetta o rifiuta prima le revisioni. I commenti vengono aggiunti come commenti PDF, le note visibili nel pannello commenti del lettore, quindi eliminali prima se non vanno condivisi.",
       },
       {
         question: "Il mio file viene caricato?",
@@ -7286,7 +7286,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converti",
-        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+        description: "Spunta Ogni foglio in una pagina se vuoi ogni foglio su una sola pagina, poi fai clic su Converti in PDF.",
       },
       {
         title: "Scarica il PDF",
@@ -7295,12 +7295,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantenuto",
-        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+        title: "Ciò che è nascosto resta fuori",
+        description: "Fogli e colonne nascosti restano fuori, e l’area di stampa impostata nel file viene rispettata.",
       },
       {
-        title: "Font comuni inclusi",
-        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+        title: "Ogni foglio in una pagina",
+        description: "Spunta Ogni foglio in una pagina per ridurre ogni foglio a una sola pagina, come l’impostazione di stampa di Excel.",
       },
       {
         title: "File eliminati subito",
@@ -7315,12 +7315,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Il PDF sarà identico all’originale?",
         answer:
-          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+          "Quasi sempre sì. Il PDF segue l’impostazione di pagina salvata nel file (formato, orientamento, margini e interruzioni di pagina), e caratteri come Calibri sono sostituiti da altri della stessa larghezza. I fogli molto larghi vengono divisi su più pagine, a meno che tu non metta ogni foglio in una pagina.",
       },
       {
         question: "Perché il mio foglio è diviso su più pagine?",
         answer:
-          "Il PDF segue le impostazioni di stampa salvate nel foglio di calcolo. Per avere ogni foglio in una pagina, spunta «Ogni foglio in una pagina» prima di convertire: la pagina si allarga fino a contenere il foglio, quindi i fogli grandi vengono stampati in piccolo.",
+          "Il PDF segue le impostazioni di stampa salvate nel file. Per avere ogni foglio in una pagina, spunta “Ogni foglio in una pagina”: ogni foglio viene ridotto per stare in una pagina, quindi i fogli grandi vengono stampati piccoli. Fogli e colonne nascosti restano fuori in entrambi i casi, e l’area di stampa viene rispettata.",
       },
       {
         question: "Il mio file viene caricato?",
@@ -7356,7 +7356,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Converti",
-        description: "Fai clic su Converti in PDF. Il file viene convertito sul nostro server, di solito in pochi secondi.",
+        description: "Fai clic su Converti in PDF. Ogni diapositiva visibile diventa una pagina e quelle nascoste vengono saltate.",
       },
       {
         title: "Scarica il PDF",
@@ -7365,12 +7365,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Layout mantenuto",
-        description: "Testo, tabelle, immagini e interruzioni di pagina restano dove erano.",
+        title: "Una diapositiva per pagina",
+        description: "Ogni diapositiva visibile diventa una pagina nel formato della presentazione; quelle nascoste restano fuori.",
       },
       {
-        title: "Font comuni inclusi",
-        description: "Font con metriche compatibili con Calibri, Cambria, Arial e Times, più i font Noto per la maggior parte delle lingue.",
+        title: "Il testo resta nelle sue caselle",
+        description: "I caratteri Office più comuni sono sostituiti da altri della stessa larghezza, così titoli ed elenchi non escono dalle caselle.",
       },
       {
         title: "File eliminati subito",
@@ -7385,12 +7385,12 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Il PDF sarà identico all’originale?",
         answer:
-          "Per la maggior parte dei documenti, sì. I font rari non installati sul server vengono sostituiti da font simili e alcuni layout molto complessi possono spostarsi leggermente. Controlla il PDF prima di inviarlo.",
+          "Di solito sì. Ogni diapositiva diventa una pagina con immagini, forme e testi al loro posto, e i caratteri Office più comuni sono sostituiti da altri della stessa larghezza. Un carattere raro può essere sostituito da uno simile e mandare a capo una riga in modo diverso, quindi controlla il PDF.",
       },
       {
         question: "Animazioni e video vengono mantenuti?",
         answer:
-          "No. Un PDF mostra ogni diapositiva come una pagina statica, quindi animazioni, transizioni e video incorporati vengono esclusi.",
+          "No. Un PDF mostra ogni diapositiva come una pagina fissa, quindi animazioni, transizioni e video incorporati restano fuori. Anche le diapositive nascoste.",
       },
       {
         question: "Il mio file viene caricato?",

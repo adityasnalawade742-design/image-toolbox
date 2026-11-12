@@ -1373,7 +1373,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "Nivel de PDF/A",
   'ctl.doc.pdfaLevelNote': "2b sirve para casi todo. Elige 1b solo si un portal o archivo lo pide (se aplana la transparencia). 3b también admite archivos adjuntos.",
   'ctl.doc.fitSheet': "Ajustar cada hoja en una página",
-  'ctl.doc.fitSheetNote': "Cada hoja se convierte en una página del tamaño de todas sus celdas, así las hojas anchas no se cortan. Las hojas grandes se imprimen pequeñas.",
+  'ctl.doc.fitSheetNote': 'Cada hoja se reduce hasta caber en una página, así las hojas anchas no se cortan entre páginas. Las hojas grandes se imprimen pequeñas; las ocultas no se incluyen.',
   'ctl.doc.unlockHint': 'Introduce la contraseña que abre este PDF. Si se abre sin contraseña pero no te deja imprimir ni copiar, deja esto vacío.',
   'ctl.doc.ocrLang': 'Idioma del documento',
   'ctl.doc.ocrLang2': "Segundo idioma (opcional)",

@@ -1370,7 +1370,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "Niveau PDF/A",
   'ctl.doc.pdfaLevelNote': "2b convient à la plupart des usages. Choisissez 1b seulement si un portail ou un service d’archives le demande (la transparence est aplatie). 3b accepte aussi les fichiers joints.",
   'ctl.doc.fitSheet': "Une feuille par page",
-  'ctl.doc.fitSheetNote': "Chaque feuille devient une page à la taille de toutes ses cellules : les feuilles larges ne sont plus coupées. Les grandes feuilles s’impriment en petit.",
+  'ctl.doc.fitSheetNote': 'Chaque feuille est réduite pour tenir sur une page, donc les feuilles larges ne sont pas coupées. Les grandes feuilles s’impriment en petit ; les feuilles masquées restent exclues.',
   'ctl.doc.unlockHint': "Saisissez le mot de passe qui ouvre ce PDF. S’il s’ouvre sans mot de passe mais bloque l’impression ou la copie, laissez ce champ vide.",
   'ctl.doc.ocrLang': "Langue du document",
   'ctl.doc.ocrLang2': "Deuxième langue (facultatif)",

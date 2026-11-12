@@ -1410,7 +1410,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "Nível do PDF/A",
   'ctl.doc.pdfaLevelNote': "2b serve para quase tudo. Escolha 1b só quando um portal ou arquivo pedir (a transparência é achatada). 3b também aceita arquivos anexados.",
   'ctl.doc.fitSheet': "Cada planilha em uma página",
-  'ctl.doc.fitSheetNote': "Cada planilha vira uma página do tamanho de todas as suas células, então planilhas largas não são cortadas. Planilhas grandes saem pequenas na impressão.",
+  'ctl.doc.fitSheetNote': 'Cada planilha é reduzida para caber em uma página, então planilhas largas não são cortadas. Planilhas grandes saem pequenas; as ocultas ficam de fora.',
   'ctl.doc.unlockHint': 'Digite a senha que abre este PDF. Se ele abre sem senha, mas não deixa imprimir nem copiar, deixe este campo vazio.',
   'ctl.doc.ocrLang': 'Idioma do documento',
   'ctl.doc.ocrLang2': "Segundo idioma (opcional)",

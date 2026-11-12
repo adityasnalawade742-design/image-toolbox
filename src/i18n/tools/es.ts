@@ -7224,7 +7224,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convierte",
-        description: "Haz clic en «Convertir a PDF». El archivo se convierte en nuestro servidor, normalmente en unos segundos.",
+        description: "Pulsa Convertir a PDF. Se conservan títulos, enlaces, tablas, encabezados y pies de página; suele tardar unos segundos.",
       },
       {
         title: "Descarga el PDF",
@@ -7233,12 +7233,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Diseño intacto",
-        description: "El texto, las tablas, las imágenes y los saltos de página se quedan donde estaban.",
+        title: "Los títulos pasan a marcadores",
+        description: "Los títulos de Word se convierten en marcadores del PDF para saltar a cada sección, y los enlaces siguen funcionando.",
       },
       {
-        title: "Fuentes comunes incluidas",
-        description: "Fuentes métricamente compatibles con Calibri, Cambria, Arial y Times, además de fuentes Noto para la mayoría de los idiomas.",
+        title: "Mismos saltos de línea",
+        description: "Calibri, Cambria, Arial y Times se sustituyen por fuentes con el mismo ancho exacto, así el texto y las páginas se cortan igual que en Word.",
       },
       {
         title: "Archivos eliminados al momento",
@@ -7253,12 +7253,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Mi PDF se verá exactamente igual que el original?",
         answer:
-          "En la mayoría de los documentos, sí. Las fuentes poco comunes que no están instaladas en el servidor se sustituyen por otras parecidas, y algunos diseños muy complejos pueden desplazarse ligeramente. Revisa el PDF antes de enviarlo.",
+          "Normalmente, sí. Calibri, Cambria, Arial y Times se cambian por fuentes con el mismo ancho de letra, así el texto se distribuye igual. Una fuente poco común que no está en nuestro servidor se sustituye por otra parecida y puede mover una línea, así que revisa el PDF antes de enviarlo.",
       },
       {
         question: "¿Aparecen los cambios controlados y los comentarios en el PDF?",
         answer:
-          "El documento se convierte tal como se muestra al abrirlo, así que acepta o rechaza antes los cambios controlados si no quieres que se vean.",
+          "El documento se convierte tal como se ve al abrirlo, así que acepta o rechaza antes los cambios con control. Los comentarios se añaden como comentarios de PDF, las notas que aparecen en el panel de comentarios del lector, así que bórralos antes si no deben compartirse.",
       },
       {
         question: "¿Se sube mi archivo?",
@@ -7296,7 +7296,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convierte",
-        description: "Haz clic en «Convertir a PDF». El archivo se convierte en nuestro servidor, normalmente en unos segundos.",
+        description: "Marca Ajustar cada hoja en una página si quieres cada hoja en una sola página y pulsa Convertir a PDF.",
       },
       {
         title: "Descarga el PDF",
@@ -7305,12 +7305,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Diseño intacto",
-        description: "El texto, las tablas, las imágenes y los saltos de página se quedan donde estaban.",
+        title: "Lo oculto no se incluye",
+        description: "Las hojas y columnas ocultas no se incluyen, y se respeta el área de impresión definida en la hoja.",
       },
       {
-        title: "Fuentes comunes incluidas",
-        description: "Fuentes métricamente compatibles con Calibri, Cambria, Arial y Times, además de fuentes Noto para la mayoría de los idiomas.",
+        title: "Cada hoja en una página",
+        description: "Marca Ajustar cada hoja en una página para reducir cada hoja a una sola página, como el ajuste de impresión de Excel.",
       },
       {
         title: "Archivos eliminados al momento",
@@ -7325,12 +7325,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Mi PDF se verá exactamente igual que el original?",
         answer:
-          "En la mayoría de los documentos, sí. Las fuentes poco comunes que no están instaladas en el servidor se sustituyen por otras parecidas, y algunos diseños muy complejos pueden desplazarse ligeramente. Revisa el PDF antes de enviarlo.",
+          "Casi siempre, sí. El PDF sigue la configuración de página guardada en la hoja (tamaño de papel, orientación, márgenes y saltos de página), y fuentes como Calibri se cambian por otras del mismo ancho. Las hojas muy anchas se reparten en varias páginas, salvo que ajustes cada hoja a una página.",
       },
       {
         question: "¿Por qué mi hoja se divide en varias páginas?",
         answer:
-          "El PDF sigue la configuración de impresión guardada en la hoja de cálculo. Para tener cada hoja en una página, marca «Ajustar cada hoja en una página» antes de convertir: la página crece hasta abarcar la hoja, así que las hojas grandes se imprimen pequeñas.",
+          "El PDF sigue la configuración de impresión guardada en la hoja. Para tener cada hoja en una página, marca «Ajustar cada hoja en una página»: cada hoja se reduce hasta caber en una página, así que las hojas grandes se imprimen pequeñas. Las hojas y columnas ocultas quedan fuera en ambos casos, y se respeta el área de impresión.",
       },
       {
         question: "¿Se sube mi archivo?",
@@ -7367,7 +7367,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Convierte",
-        description: "Haz clic en «Convertir a PDF». El archivo se convierte en nuestro servidor, normalmente en unos segundos.",
+        description: "Pulsa Convertir a PDF. Cada diapositiva visible se convierte en una página y las ocultas se omiten.",
       },
       {
         title: "Descarga el PDF",
@@ -7376,12 +7376,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     features: [
       {
-        title: "Diseño intacto",
-        description: "El texto, las tablas, las imágenes y los saltos de página se quedan donde estaban.",
+        title: "Una diapositiva por página",
+        description: "Cada diapositiva visible se convierte en una página con la forma de la presentación; las ocultas no se incluyen.",
       },
       {
-        title: "Fuentes comunes incluidas",
-        description: "Fuentes métricamente compatibles con Calibri, Cambria, Arial y Times, además de fuentes Noto para la mayoría de los idiomas.",
+        title: "El texto no se sale de sus cuadros",
+        description: "Las fuentes habituales de Office se sustituyen por otras del mismo ancho, así títulos y viñetas no se salen de sus cuadros.",
       },
       {
         title: "Archivos eliminados al momento",
@@ -7396,12 +7396,12 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Mi PDF se verá exactamente igual que el original?",
         answer:
-          "En la mayoría de los documentos, sí. Las fuentes poco comunes que no están instaladas en el servidor se sustituyen por otras parecidas, y algunos diseños muy complejos pueden desplazarse ligeramente. Revisa el PDF antes de enviarlo.",
+          "Normalmente, sí. Cada diapositiva se convierte en una página con sus imágenes, formas y textos en su sitio, y las fuentes habituales de Office se sustituyen por otras del mismo ancho. Una fuente poco común puede cambiarse por una parecida y cortar una línea de otra forma, así que revisa el PDF.",
       },
       {
         question: "¿Se conservan las animaciones y los vídeos?",
         answer:
-          "No. Un PDF muestra cada diapositiva como una página estática, así que las animaciones, las transiciones y los vídeos incrustados se omiten.",
+          "No. Un PDF muestra cada diapositiva como una página fija, así que las animaciones, transiciones y vídeos incrustados no se incluyen. Las diapositivas ocultas tampoco.",
       },
       {
         question: "¿Se sube mi archivo?",

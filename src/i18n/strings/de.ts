@@ -1373,7 +1373,7 @@ export const strings = {
   'ctl.doc.pdfaLevel': "PDF/A-Stufe",
   'ctl.doc.pdfaLevelNote': "2b passt für die meisten Zwecke. Wähle 1b nur, wenn ein Portal oder Archiv es verlangt (Transparenz wird reduziert). 3b erlaubt außerdem Dateianhänge.",
   'ctl.doc.fitSheet': "Jedes Blatt auf eine Seite",
-  'ctl.doc.fitSheetNote': "Jedes Tabellenblatt wird eine Seite in der Größe aller seiner Zellen, breite Blätter werden also nicht zerschnitten. Große Blätter werden klein gedruckt.",
+  'ctl.doc.fitSheetNote': 'Jedes Blatt wird auf eine Seite verkleinert, breite Blätter werden also nicht zerschnitten. Große Blätter werden klein gedruckt; ausgeblendete Blätter bleiben draußen.',
   'ctl.doc.unlockHint': 'Gib das Passwort ein, mit dem sich dieses PDF öffnet. Wenn es sich ohne Passwort öffnet, aber Drucken oder Kopieren sperrt, lass das Feld leer.',
   'ctl.doc.ocrLang': 'Sprache des Dokuments',
   'ctl.doc.ocrLang2': "Zweite Sprache (optional)",
