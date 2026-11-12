@@ -10,6 +10,7 @@ import { getLocalizedToolContent, getAllLocalizedTools } from '../i18n/tools';
 import { getLocalizedHomeData } from '../i18n/home';
 import { getWebApplicationSchema, getBreadcrumbSchema, getFAQSchema } from '../lib/seo/schema';
 import { hubForTool } from '../config/hubs';
+import { brandedTitle } from '../lib/seo/title';
 import { getHubTexts } from '../i18n/hubs';
 import { SITE_CONFIG } from '../config/site';
 import { useTranslatedPath, useTranslations } from '../i18n/utils';
@@ -40,9 +41,9 @@ const toolName = locContent.name || tool.name;
 
 // seoTitle carries no site name (older translations may still end with one)
 const baseTitle = (locContent.seoTitle || toolName).replace(/\s+[—|-]\s+(Image Toolbox|TadaFile)$/, '');
-// Search results cut titles off at about 60 characters; the site name goes only where it fits
-const branded = `${baseTitle} | ${SITE_CONFIG.name}`;
-const title = branded.length <= 60 ? branded : baseTitle;
+// Search results cut titles off at about 60 Latin letters (Japanese and Korean characters take twice the space);
+// the site name goes only where it fits
+const title = brandedTitle(baseTitle, SITE_CONFIG.name);
 const description = locContent.seoDescription || tool.description;
 const canonicalUrl = `${SITE_CONFIG.url}${locale === 'en' ? `/${slug}` : `/${locale}/${slug}`}`;
 

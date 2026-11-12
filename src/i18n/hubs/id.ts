@@ -9,7 +9,7 @@ export const idHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Alat PDF Gratis: Gabung, Konversi, Edit, dan Tanda Tangan',
-      description: '57 alat PDF gratis di satu tempat: gabungkan, pisahkan, dan kompres PDF, konversi dari dan ke Word atau gambar, edit, tanda tangani, dan lindungi. Tanpa daftar dan tanpa watermark.',
+      description: '57 alat PDF gratis: gabungkan, pisahkan, kompres, konversi dari dan ke Word atau gambar, edit, tanda tangani, dan lindungi. Tanpa daftar.',
       h1: 'Alat PDF',
       intro:
         'Semua untuk bekerja dengan PDF, gratis dan tanpa akun: gabungkan dan pisahkan file, ubah Word, Excel, PowerPoint, dan gambar menjadi PDF dan sebaliknya, edit, isi, tanda tangani, dan lindungi. Sebagian besar alat berjalan di browser, jadi PDF tidak meninggalkan perangkat Anda; beberapa alat yang memerlukan server kami diberi tanda, dan filenya langsung dihapus setelah selesai.',
@@ -32,7 +32,7 @@ export const idHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Alat Edit Gambar Gratis: Potong, Ubah Ukuran, Hapus Latar',
-      description: '42 alat edit foto gratis di browser: potong, ubah ukuran, dan putar, hapus atau ganti latar belakang, tambahkan teks dan watermark, perbaiki warna, dan sesuaikan gambar untuk media sosial.',
+      description: '42 alat edit foto gratis: potong, ubah ukuran, hapus atau ganti latar, tambahkan teks dan watermark, serta sesuaikan untuk media sosial.',
       h1: 'Alat edit gambar',
       intro:
         'Edit cepat tanpa memasang apa pun: potong dan ubah ukuran, hapus atau ganti latar belakang, tambahkan teks, watermark, dan bingkai, pertajam dan perbaiki warna, atau sesuaikan gambar untuk Instagram, YouTube, dan jaringan lain. Semua alat berjalan di browser, jadi foto Anda tidak pernah diunggah dan formatnya dipertahankan bila memungkinkan.',
@@ -95,7 +95,7 @@ export const idHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitas Gambar Gratis: Penampil EXIF, Pengambil Warna, DPI',
-      description: '21 alat gratis untuk memeriksa dan mengukur gambar: lihat dan hapus metadata, ambil warna, ubah DPI, ubah piksel ke inci atau cm, bandingkan foto, dan salin teks dari gambar.',
+      description: '21 alat gratis untuk memeriksa gambar: lihat dan hapus metadata, ambil warna, ubah DPI, ubah piksel ke inci atau cm, dan salin teks dari gambar.',
       h1: 'Utilitas gambar',
       intro:
         'Alat kecil untuk pertanyaan seputar gambar: apa yang terungkap dari metadata foto dan cara menghapusnya, warna apa yang dipakai, seberapa besar hasil cetaknya pada DPI tertentu, apakah dua foto berbeda, atau teks apa yang ada di dalamnya. Semuanya berjalan di browser, jadi gambar Anda tetap di perangkat.',

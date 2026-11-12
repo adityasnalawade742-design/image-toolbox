@@ -33,6 +33,8 @@ describe('collection pages', () => {
         // The description states the number of tools: it must match the page
         const count = hub.groups.reduce((n, g) => n + g.slugs.length, 0);
         expect(Number(page.description.match(/\d+/)?.[0]), `${lang} ${hub.slug}`).toBe(count);
+        // Short enough to show whole in search results (Japanese and Korean characters are about twice as wide)
+        expect(page.description.length, `${lang} ${hub.slug} description`).toBeLessThanOrEqual(['ja', 'ko'].includes(lang) ? 90 : 160);
       }
     }
   });

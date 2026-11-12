@@ -32,7 +32,7 @@ export const enHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Free Image Editing Tools: Crop, Resize, Remove Backgrounds',
-      description: '42 free photo editing tools in your browser: crop, resize and rotate, remove or change backgrounds, add text and watermarks, fix colours and size images for social media.',
+      description: '42 free photo editing tools in your browser: crop, resize, rotate, remove or change backgrounds, add text and watermarks, and size images for social media.',
       h1: 'Image editing tools',
       intro:
         'Quick edits without installing anything: crop and resize, cut out or replace backgrounds, add text, watermarks and borders, sharpen and fix colours, or size a picture for Instagram, YouTube and other networks. Every tool runs in your browser, so your photos are never uploaded, and they keep their format where possible.',
@@ -95,7 +95,7 @@ export const enHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Free Image Utilities: EXIF Viewer, Color Picker, DPI and More',
-      description: '21 free tools to inspect and measure images: view and remove photo metadata, pick colours, change DPI, convert pixels to inches or cm, compare photos and copy text from images.',
+      description: '21 free tools to inspect images: view and remove metadata, pick colours, change DPI, convert pixels to inches or cm, compare photos and copy text.',
       h1: 'Image utilities',
       intro:
         'Small tools for the questions that come up around pictures: what a photo’s metadata reveals and how to remove it, which colours it uses, how big it prints at a given DPI, whether two photos differ, or what text it contains. They all run in your browser, so your images stay on your device.',

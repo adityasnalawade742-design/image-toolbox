@@ -9,7 +9,7 @@ export const trHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Ücretsiz PDF Araçları: Birleştir, Dönüştür, Düzenle, İmzala',
-      description: 'Tek yerde 57 ücretsiz PDF aracı: PDF birleştirin, bölün ve sıkıştırın, Word ya da resimlerden ve onlara dönüştürün, düzenleyin, imzalayın ve koruyun. Kayıt yok, filigran yok.',
+      description: '57 ücretsiz PDF aracı: birleştirin, bölün, sıkıştırın, Word ya da resimlere ve onlardan dönüştürün, düzenleyin, imzalayın, koruyun. Kayıt yok.',
       h1: 'PDF araçları',
       intro:
         'PDF’lerle çalışmak için gereken her şey, ücretsiz ve hesapsız: dosyaları birleştirin ve bölün, Word, Excel, PowerPoint ve resimleri PDF’e, PDF’leri de onlara dönüştürün; düzenleyin, doldurun, imzalayın ve koruyun. Araçların çoğu tarayıcınızda çalışır, yani PDF cihazınızdan çıkmaz; sunucumuza ihtiyaç duyan birkaç araç işaretlidir ve dosyaları hemen ardından silinir.',
@@ -32,7 +32,7 @@ export const trHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Ücretsiz Resim Düzenleme Araçları: Kırp, Boyutlandır',
-      description: 'Tarayıcıda 42 ücretsiz fotoğraf düzenleme aracı: kırpın, boyutlandırın ve döndürün, arka planı kaldırın ya da değiştirin, metin ve filigran ekleyin, renkleri düzeltin, resimleri sosyal medyaya uyarlayın.',
+      description: '42 ücretsiz fotoğraf düzenleme aracı: kırpın, boyutlandırın, arka planı kaldırın ya da değiştirin, metin ve filigran ekleyin, sosyal medyaya uyarlayın.',
       h1: 'Resim düzenleme araçları',
       intro:
         'Hiçbir şey kurmadan hızlı düzenlemeler: kırpın ve boyutlandırın, arka planı kesip çıkarın ya da değiştirin, metin, filigran ve kenarlık ekleyin, keskinleştirip renkleri düzeltin veya bir resmi Instagram, YouTube ve diğer ağlar için boyutlandırın. Tüm araçlar tarayıcınızda çalışır; fotoğraflarınız asla yüklenmez ve mümkün olduğunda biçimlerini korur.',
@@ -95,7 +95,7 @@ export const trHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Ücretsiz Resim Araçları: EXIF Görüntüleyici, Renk Seçici, DPI',
-      description: 'Resimleri incelemek ve ölçmek için 21 ücretsiz araç: meta verileri görün ve silin, renk seçin, DPI değiştirin, pikseli inç ya da cm’ye çevirin, fotoğrafları karşılaştırın ve resimlerdeki metni kopyalayın.',
+      description: '21 ücretsiz araç: meta verileri görün ve silin, renk seçin, DPI değiştirin, pikseli inç ya da cm’ye çevirin, fotoğrafları karşılaştırın, metni kopyalayın.',
       h1: 'Resim yardımcı araçları',
       intro:
         'Resimlerle ilgili akla gelen sorular için küçük araçlar: bir fotoğrafın meta verileri neyi ortaya koyar ve nasıl silinir, hangi renkleri kullanır, belirli bir DPI’da ne büyüklükte basılır, iki fotoğraf farklı mı ya da içinde hangi metin var. Hepsi tarayıcınızda çalışır; resimleriniz cihazınızda kalır.',

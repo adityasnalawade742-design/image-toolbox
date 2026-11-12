@@ -54,7 +54,7 @@ export const koHubs: HubTexts = {
     },
     'image-format-converters': {
       title: '무료 이미지 변환기: HEIC, JPG, PNG, WebP, AVIF',
-      description: '브라우저에서 쓰는 무료 이미지 변환기 26개. HEIC를 JPG로, JPG를 PNG·WebP·AVIF로, GIF·BMP·TIFF·SVG를 흔한 형식으로. 여러 파일도 한 번에 변환해요.',
+      description: '무료 이미지 변환기 26개. HEIC를 JPG로, JPG를 PNG·WebP·AVIF로, GIF·BMP·TIFF·SVG도 여러 파일을 한 번에 변환해요.',
       h1: '이미지 형식 변환기',
       intro:
         '이미지를 필요한 형식으로 바꾸세요. iPhone의 HEIC 사진을 JPG로, PNG를 더 가벼운 JPG나 WebP로, 웹용 AVIF로, GIF·BMP·TIFF·SVG를 흔히 쓰는 형식으로 바꿀 수 있어요. 대부분의 변환기는 여러 파일을 한 번에 받고, 모두 브라우저에서 동작해서 아무것도 업로드되지 않아요. 어떤 걸 쓸지 모르겠다면 ‘이미지 형식 변환기’가 거의 모든 이미지를 열어 JPG, PNG, WebP, AVIF로 저장해요.',

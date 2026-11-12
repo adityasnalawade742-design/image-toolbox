@@ -9,7 +9,7 @@ export const frHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Outils PDF gratuits : fusionner, convertir, modifier, signer',
-      description: '57 outils PDF gratuits au même endroit : fusionnez, divisez et compressez des PDF, convertissez depuis et vers Word ou des images, modifiez, signez et protégez. Sans inscription ni filigrane.',
+      description: '57 outils PDF gratuits : fusionner, diviser, compresser, convertir depuis et vers Word ou des images, modifier, signer et protéger. Sans inscription.',
       h1: 'Outils PDF',
       intro:
         'Tout pour travailler avec des PDF, gratuitement et sans compte : fusionnez et divisez des fichiers, transformez Word, Excel, PowerPoint et des images en PDF et inversement, modifiez, remplissez, signez et protégez-les. La plupart des outils fonctionnent dans votre navigateur, donc le PDF ne quitte pas votre appareil ; les quelques outils qui ont besoin de notre serveur sont signalés, et leurs fichiers sont supprimés aussitôt.',
@@ -32,7 +32,7 @@ export const frHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Outils de retouche photo gratuits : rogner, redimensionner',
-      description: '42 outils gratuits de retouche photo dans votre navigateur : rognez, redimensionnez et faites pivoter, supprimez ou changez le fond, ajoutez du texte et des filigranes, corrigez les couleurs et adaptez vos images aux réseaux sociaux.',
+      description: '42 outils gratuits de retouche photo : rogner, redimensionner, détourer ou changer le fond, ajouter texte et filigrane, adapter aux réseaux sociaux.',
       h1: 'Outils de retouche d’images',
       intro:
         'Des retouches rapides sans rien installer : rognez et redimensionnez, détourez ou remplacez le fond, ajoutez du texte, des filigranes et des bordures, améliorez la netteté et les couleurs, ou adaptez une image à Instagram, YouTube et d’autres réseaux. Tous les outils fonctionnent dans votre navigateur : vos photos ne sont jamais envoyées et gardent leur format dès que possible.',
@@ -54,7 +54,7 @@ export const frHubs: HubTexts = {
     },
     'image-format-converters': {
       title: 'Convertisseur d’images gratuit : HEIC, JPG, PNG, WebP, AVIF',
-      description: '26 convertisseurs d’images gratuits dans votre navigateur : HEIC en JPG, JPG en PNG, WebP et AVIF, GIF, BMP, TIFF et SVG vers des formats courants, plusieurs fichiers à la fois.',
+      description: '26 convertisseurs d’images gratuits : HEIC en JPG, JPG en PNG, WebP et AVIF, GIF, BMP, TIFF et SVG vers des formats courants, plusieurs à la fois.',
       h1: 'Convertisseurs de format d’image',
       intro:
         'Passez une image au format qu’il vous faut : photos HEIC de l’iPhone en JPG, PNG en JPG ou WebP pour des fichiers plus légers, AVIF pour le web, ou GIF, BMP, TIFF et SVG vers des formats courants. La plupart des convertisseurs acceptent plusieurs fichiers à la fois, et tous fonctionnent dans votre navigateur : rien n’est envoyé. Vous hésitez ? Le Convertisseur d’image universel ouvre presque toutes les images et les enregistre en JPG, PNG, WebP ou AVIF.',
@@ -76,7 +76,7 @@ export const frHubs: HubTexts = {
     },
     'qr-code-and-barcode-tools': {
       title: 'Générateur et lecteur de QR codes et codes-barres gratuit',
-      description: '15 outils gratuits pour créer des QR codes de liens, Wi-Fi, contacts, WhatsApp et paiements, générer des codes-barres EAN, UPC et ISBN, et lire des codes avec la caméra.',
+      description: '15 outils gratuits : QR codes pour liens, Wi-Fi, contacts, WhatsApp et paiements, codes-barres EAN, UPC et ISBN, et lecture de codes par caméra.',
       h1: 'Outils QR code et codes-barres',
       intro:
         'Créez un QR code pour un lien, un réseau Wi-Fi, une fiche contact, une discussion WhatsApp ou un paiement, générez des codes-barres EAN, UPC, ISBN, Data Matrix et PDF417, ou créez-en des centaines d’un coup à partir d’une liste et imprimez-les sur une feuille. Vous pouvez aussi lire des codes depuis une photo ou la caméra. Tout fonctionne dans votre navigateur, sans inscription.',
@@ -95,7 +95,7 @@ export const frHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitaires d’image gratuits : EXIF, pipette, DPI et plus',
-      description: '21 outils gratuits pour analyser et mesurer des images : voyez et supprimez les métadonnées, prélevez des couleurs, changez le DPI, convertissez pixels en pouces ou cm, comparez des photos et copiez le texte d’une image.',
+      description: '21 outils gratuits pour analyser des images : métadonnées, couleurs, DPI, pixels en pouces ou cm, comparaison de photos et texte des images.',
       h1: 'Utilitaires d’image',
       intro:
         'De petits outils pour les questions qu’on se pose sur les images : ce que révèlent les métadonnées d’une photo et comment les supprimer, quelles couleurs elle utilise, à quelle taille elle s’imprime selon le DPI, si deux photos diffèrent ou quel texte elle contient. Tous fonctionnent dans votre navigateur : vos images restent sur votre appareil.',

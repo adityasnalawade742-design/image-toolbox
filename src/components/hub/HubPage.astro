@@ -15,6 +15,7 @@ import { getLocalizedHomeData } from '../../i18n/home';
 import { enHome } from '../../i18n/home/en';
 import { useTranslatedPath, useTranslations } from '../../i18n/utils';
 import { getBreadcrumbSchema, getCollectionSchema, getFAQSchema } from '../../lib/seo/schema';
+import { brandedTitle } from '../../lib/seo/title';
 import type { ui } from '../../i18n/ui';
 
 interface Props {
@@ -34,8 +35,7 @@ const toolOf = (s: string) => TOOLS.find((x) => x.slug === s)!;
 const nameOf = (s: string) => locTools[s]?.name || toolOf(s).name;
 const abs = (path: string) => `${SITE_CONFIG.url}${translatePath(path)}`;
 
-const branded = `${page.title} | ${SITE_CONFIG.name}`;
-const title = branded.length <= 60 ? branded : page.title;
+const title = brandedTitle(page.title, SITE_CONFIG.name);
 const canonicalUrl = abs(`/${slug}`);
 const allSlugs = hub.groups.flatMap((g) => g.slugs);
 const jsonLd = [

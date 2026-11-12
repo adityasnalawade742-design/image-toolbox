@@ -9,7 +9,7 @@ export const esHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Herramientas PDF gratis: unir, convertir, editar y firmar',
-      description: '57 herramientas PDF gratis en un solo lugar: une, divide y comprime PDF, convierte a y desde Word o imágenes, edita, firma y protege. Sin registro ni marcas de agua.',
+      description: '57 herramientas PDF gratis: une, divide y comprime PDF, convierte a y desde Word o imágenes, edita, firma y protege. Sin registro ni marcas de agua.',
       h1: 'Herramientas PDF',
       intro:
         'Todo para trabajar con PDF, gratis y sin cuenta: une y divide archivos, pasa Word, Excel, PowerPoint e imágenes a PDF y al revés, edita, rellena, firma y protege. La mayoría de las herramientas funcionan en tu navegador, así que el PDF no sale de tu dispositivo; las pocas que necesitan nuestro servidor están marcadas, y sus archivos se borran justo después.',
@@ -32,7 +32,7 @@ export const esHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Herramientas gratis para editar imágenes: recortar, redimensionar',
-      description: '42 herramientas gratis para editar fotos en tu navegador: recorta, redimensiona y gira, quita o cambia el fondo, añade texto y marcas de agua, corrige colores y adapta imágenes a redes sociales.',
+      description: '42 herramientas gratis para editar fotos: recorta, redimensiona, gira, quita o cambia el fondo, añade texto y marcas de agua y adapta imágenes a redes.',
       h1: 'Herramientas para editar imágenes',
       intro:
         'Ediciones rápidas sin instalar nada: recorta y redimensiona, quita o cambia el fondo, añade texto, marcas de agua y bordes, mejora la nitidez y los colores, o adapta una imagen a Instagram, YouTube y otras redes. Todas funcionan en tu navegador, así que tus fotos nunca se suben y conservan su formato siempre que es posible.',
@@ -76,7 +76,7 @@ export const esHubs: HubTexts = {
     },
     'qr-code-and-barcode-tools': {
       title: 'Generador y lector de códigos QR y de barras gratis',
-      description: '15 herramientas gratis para crear códigos QR de enlaces, wifi, contactos, WhatsApp y pagos, generar códigos de barras EAN, UPC e ISBN, y leer códigos con la cámara.',
+      description: '15 herramientas gratis: códigos QR de enlaces, wifi, contactos, WhatsApp y pagos, códigos de barras EAN, UPC e ISBN, y lectura de códigos con la cámara.',
       h1: 'Herramientas de códigos QR y de barras',
       intro:
         'Crea un código QR para un enlace, una red wifi, una tarjeta de contacto, un chat de WhatsApp o un pago, genera códigos de barras EAN, UPC, ISBN, Data Matrix y PDF417, o crea cientos a la vez desde una lista e imprímelos en una hoja. También puedes leer códigos desde una foto o la cámara. Todo funciona en tu navegador y sin registro.',
@@ -95,7 +95,7 @@ export const esHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilidades de imagen gratis: visor EXIF, cuentagotas, DPI',
-      description: '21 herramientas gratis para analizar y medir imágenes: ve y borra los metadatos, toma colores, cambia los DPI, pasa píxeles a pulgadas o cm, compara fotos y copia texto de imágenes.',
+      description: '21 herramientas gratis para analizar imágenes: ve y borra metadatos, toma colores, cambia DPI, pasa píxeles a pulgadas o cm y copia texto de imágenes.',
       h1: 'Utilidades de imagen',
       intro:
         'Pequeñas herramientas para las dudas que surgen con las imágenes: qué revelan los metadatos de una foto y cómo quitarlos, qué colores usa, a qué tamaño se imprime con ciertos DPI, si dos fotos son distintas o qué texto contiene. Todas funcionan en tu navegador, así que tus imágenes se quedan en tu dispositivo.',

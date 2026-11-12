@@ -9,7 +9,7 @@ export const deHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Kostenlose PDF-Tools: zusammenfügen, umwandeln, signieren',
-      description: '57 kostenlose PDF-Tools an einem Ort: PDFs zusammenfügen, teilen und komprimieren, aus und in Word oder Bilder umwandeln, bearbeiten, signieren und schützen. Ohne Anmeldung, ohne Wasserzeichen.',
+      description: '57 kostenlose PDF-Tools: zusammenfügen, teilen, komprimieren, aus und in Word oder Bilder umwandeln, bearbeiten, signieren und schützen. Ohne Anmeldung.',
       h1: 'PDF-Tools',
       intro:
         'Alles für die Arbeit mit PDFs, kostenlos und ohne Konto: Dateien zusammenfügen und teilen, Word, Excel, PowerPoint und Bilder in PDFs umwandeln und zurück, bearbeiten, ausfüllen, signieren und schützen. Die meisten Tools laufen in deinem Browser, das PDF bleibt also auf deinem Gerät; die wenigen, die unseren Server brauchen, sind gekennzeichnet, und ihre Dateien werden gleich danach gelöscht.',
@@ -32,7 +32,7 @@ export const deHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Kostenlose Bildbearbeitung: zuschneiden, Größe ändern',
-      description: '42 kostenlose Tools zur Bildbearbeitung im Browser: zuschneiden, Größe ändern und drehen, Hintergrund entfernen oder ändern, Text und Wasserzeichen hinzufügen, Farben korrigieren und Bilder für soziale Netzwerke anpassen.',
+      description: '42 kostenlose Bildbearbeitungs-Tools: zuschneiden, skalieren, Hintergrund entfernen oder ändern, Text und Wasserzeichen, Größen für soziale Netze.',
       h1: 'Tools zur Bildbearbeitung',
       intro:
         'Schnelle Bearbeitungen ohne Installation: zuschneiden und skalieren, Hintergrund freistellen oder ersetzen, Text, Wasserzeichen und Rahmen hinzufügen, schärfen und Farben korrigieren oder ein Bild für Instagram, YouTube und andere Netzwerke zuschneiden. Alle Tools laufen in deinem Browser, deine Fotos werden also nie hochgeladen und behalten nach Möglichkeit ihr Format.',
@@ -95,7 +95,7 @@ export const deHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Kostenlose Bild-Tools: EXIF-Viewer, Farbwähler, DPI',
-      description: '21 kostenlose Tools zum Prüfen und Messen von Bildern: Metadaten ansehen und entfernen, Farben aufnehmen, DPI ändern, Pixel in Zoll oder cm umrechnen, Fotos vergleichen und Text aus Bildern kopieren.',
+      description: '21 kostenlose Bild-Tools: Metadaten ansehen und entfernen, Farben aufnehmen, DPI ändern, Pixel in Zoll oder cm umrechnen, Text aus Bildern kopieren.',
       h1: 'Bild-Werkzeuge',
       intro:
         'Kleine Tools für die Fragen rund um Bilder: was die Metadaten eines Fotos verraten und wie du sie entfernst, welche Farben es nutzt, wie groß es bei einer bestimmten DPI gedruckt wird, ob zwei Fotos sich unterscheiden oder welchen Text es enthält. Alle laufen in deinem Browser, deine Bilder bleiben also auf deinem Gerät.',
