@@ -21,8 +21,13 @@ interface Job {
   exact?: boolean;
 }
 
-// OxiPNG gets slow on huge images; beyond this the browser's own PNG is used
+// OxiPNG gets slow on huge images: above this it runs at its fastest level (lossless only), and above the
+// second limit the browser's own PNG is used. Measured on A4 pages at 600 dpi (34.8 MP): level 0 took 5-7 s and was
+// 54-92% smaller than the browser's PNG, against 8-28 s at level 2 for only ~10% more saving. Phones never get here:
+// PDF pages are capped at 16.7 MP on touch devices.
 const OXIPNG_MAX_PIXELS = 24_000_000;
+// A4, Letter and Legal at 600 dpi
+const OXIPNG_FAST_MAX_PIXELS = 48_000_000;
 
 async function encodeJpeg(img: ImageData, quality: number) {
   const { default: encode } = await import('@jsquash/jpeg/encode');
@@ -48,9 +53,9 @@ async function encodeWebp(img: ImageData, quality: number, exact = false) {
   return encode(img, { quality, method: 4 });
 }
 
-async function optimisePng(png: ArrayBuffer | ImageData) {
+async function optimisePng(png: ArrayBuffer | ImageData, level = 2) {
   const { default: optimise } = await import('@jsquash/oxipng/optimise');
-  return optimise(png, { level: 2, interlace: false, optimiseAlpha: true });
+  return optimise(png, { level, interlace: false, optimiseAlpha: true });
 }
 
 let quantizer: Promise<typeof import('./imagequantGlue')> | null = null;
@@ -75,7 +80,9 @@ async function quantisePng(img: ImageData, quality: number): Promise<ArrayBuffer
 }
 
 async function encodePng(img: ImageData, quality: number, lossy: boolean): Promise<ArrayBuffer | null> {
-  if (img.width * img.height > OXIPNG_MAX_PIXELS) return null;
+  const pixels = img.width * img.height;
+  if (!lossy && pixels > OXIPNG_MAX_PIXELS && pixels <= OXIPNG_FAST_MAX_PIXELS) return optimisePng(img, 0);
+  if (pixels > OXIPNG_MAX_PIXELS) return null;
   if (!lossy) return optimisePng(img);
   return optimisePng(await quantisePng(img, quality));
 }
