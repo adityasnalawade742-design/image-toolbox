@@ -7511,9 +7511,9 @@ export const deTools: Record<string, LocalizedToolItem> = {
   "compress-pdf": {
     name: "PDF komprimieren",
     shortName: "PDF komprimieren",
-    tagline: "Mach ein PDF kleiner für E-Mails und Upload-Formulare, mit drei Qualitätsstufen. Kostenlos, ohne Anmeldung.",
+    tagline: "Mach ein PDF kleiner für E-Mails und Upload-Formulare, mit drei Qualitätsstufen oder eigenen Einstellungen. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF komprimieren verringert die Dateigröße eines PDFs, damit es in E-Mail-Anhänge und unter die Größenlimits von Upload-Portalen passt. Am besten funktioniert es bei PDFs mit Fotos und Scans, deren Bilder neu komprimiert und verkleinert werden; wähle „Am kleinsten“ für Bildschirme und E-Mail, „Ausgewogen“ für die meisten Zwecke oder „Hohe Qualität“, um Details für den Druck zu erhalten. Das Ergebnis zeigt, wie viel kleiner die Datei geworden ist, und wenn ein PDF schon kompakt ist, bekommst du das Original zurück statt einer größeren Datei. Die Komprimierung läuft mit Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. PDFs mit ausfüllbaren Formularen behalten ihre Felder, werden aber weniger stark verkleinert.",
+      "PDF komprimieren verringert die Dateigröße eines PDFs, damit es in E-Mail-Anhänge und unter die Größenlimits von Upload-Portalen passt. Am besten funktioniert es bei PDFs mit Fotos und Scans, deren Bilder neu komprimiert und verkleinert werden; wähle „Am kleinsten“ für Bildschirme und E-Mail, „Ausgewogen“ für die meisten Zwecke oder „Hohe Qualität“, um Details für den Druck zu erhalten. Das Ergebnis zeigt, wie viel kleiner die Datei geworden ist, und wenn ein PDF schon kompakt ist, bekommst du das Original zurück statt einer größeren Datei. Die Komprimierung läuft mit Ghostscript auf unserem Server, und die Datei wird direkt danach gelöscht. PDFs mit ausfüllbaren Formularen behalten ihre Felder, werden aber weniger stark verkleinert. Wähle Eigene, um Bildauflösung und Qualität selbst festzulegen, und hake Schwarz-Weiß an, um alle Farben grau zu machen.",
     seoTitle: "PDF komprimieren – PDF-Dateigröße verringern, kostenlos",
     seoDescription:
       "PDF komprimieren, kostenlos online: Dateigröße mit drei Qualitätsstufen verringern. Zeigt die Ersparnis; Dateien werden direkt danach gelöscht. Ohne Anmeldung.",
@@ -7532,7 +7532,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
       {
         title: "Stufe wählen",
-        description: "Am kleinsten, Ausgewogen oder Hohe Qualität.",
+        description: "Am kleinsten, Ausgewogen oder Hohe Qualität. Oder Eigene, um Auflösung und Qualität selbst festzulegen.",
       },
       {
         title: "Komprimieren und herunterladen",
@@ -7571,7 +7571,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Mein PDF muss unter einer bestimmten Größe bleiben. Was tun?",
         answer:
-          "Probier zuerst „Am kleinsten“. Ist es dann noch zu groß, teile das PDF mit „PDF teilen“ in Teile und komprimiere jeden Teil.",
+          "Versuch zuerst Am kleinsten. Ist es noch zu groß, wähle Eigene mit niedrigerer Auflösung und Qualität oder hake Schwarz-Weiß an. Du kannst das PDF auch mit PDF teilen aufteilen und jeden Teil komprimieren.",
       },
       {
         question: "Wird meine Datei hochgeladen?",

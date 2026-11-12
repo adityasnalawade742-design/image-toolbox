@@ -30,6 +30,8 @@ export interface DocResult {
   sizeAfter?: number;
   /** Repair PDF: the file was cut off, so only part of it came back */
   partial?: boolean;
+  /** Compress PDF: the fillable fields were kept, so only the picture quality could change */
+  keptForms?: boolean;
 }
 
 export type DocProgress = { stage: 'uploading'; fraction: number } | { stage: 'processing' };
@@ -89,7 +91,7 @@ export function runDocJob(
           const v = xhr.getResponseHeader(h);
           return v ? Number(v) : undefined;
         };
-        resolve({ blob: xhr.response, sizeBefore: num('X-Size-Before'), sizeAfter: num('X-Size-After'), partial: xhr.getResponseHeader('X-Repair') === 'partial' });
+        resolve({ blob: xhr.response, sizeBefore: num('X-Size-Before'), sizeAfter: num('X-Size-After'), partial: xhr.getResponseHeader('X-Repair') === 'partial', keptForms: xhr.getResponseHeader('X-Kept-Forms') === '1' });
         return;
       }
       let code: DocErrorCode = xhr.status === 413 ? 'too_large' : xhr.status === 503 ? 'busy' : 'failed';
