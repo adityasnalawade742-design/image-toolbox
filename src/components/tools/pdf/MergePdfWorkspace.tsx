@@ -12,6 +12,7 @@ import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { MediaViewer } from '../../shared/MediaViewer';
 import { ViewableThumb } from '../../shared/ViewableThumb';
 import { pdfPageItems } from '../../shared/pdfViewerItems';
+import { consumeHandoffFile } from '../../../lib/storage/handoffStorage';
 
 type PdfItem = OrderItem & { file: File; pages: number };
 /** A page in page mode: which file (by item id) and which of its pages */
@@ -83,6 +84,11 @@ export function MergePdfWorkspace() {
       cancelled = true;
     };
   }, [arrange, fileKey]);
+
+  // A PDF chosen on the home page joins the list; the visitor adds the others
+  useEffect(() => {
+    consumeHandoffFile().then((f) => f && addFiles([f]));
+  }, []);
 
   const addFiles = async (files: File[]) => {
     const added: PdfItem[] = [];

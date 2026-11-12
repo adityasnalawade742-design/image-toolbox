@@ -4,9 +4,9 @@ export const enHome: LocalizedHomeData = {
   hero: {
     seoTitle: 'Free Online Image and PDF Tools',
     badge: '',
-    title: 'Every image tool you need, in one place',
+    title: 'Free tools for images and PDFs',
     subtitle:
-      'Crop, resize, compress, convert, remove backgrounds and clean up photos for free. No sign-up, no watermarks, and your images stay on your device.',
+      'Compress, resize, convert and edit photos and PDFs. No sign-up and no watermarks, and your images never leave your device.',
     dropzoneTitle: 'Drop an image to start',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG or iPhone HEIC, up to 50 MB',
   },
@@ -61,7 +61,7 @@ export const enHome: LocalizedHomeData = {
     {
       question: 'Which formats can I open and save?',
       answer:
-        'You can open JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG and iPhone HEIC photos. You can save as JPG, PNG, WebP or AVIF, depending on the tool.',
+        'You can open JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG and iPhone HEIC photos. You can save as JPG, PNG, WebP or AVIF, depending on the tool.',
     },
     {
       question: 'Does it work on my phone?',

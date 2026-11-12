@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Server, FileText, CheckCircle2, Download, X, Loader2, AlertCircle, Circle, Clock, Archive, Plus } from 'lucide-react';
 import { createUniqueNamer } from '../../../lib/storage/fileNames';
+import { consumeHandoffFile } from '../../../lib/storage/handoffStorage';
 import { ProofDropZone } from '../../shared/ProofDropZone';
 import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useT, useLocale } from '../../shared/I18nContext';
@@ -123,6 +124,11 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
 
   useEffect(() => {
     isServiceOnline().then(setOnline);
+  }, []);
+
+  // A PDF chosen on the home page for this tool is staged; it is only sent when the visitor presses the button
+  useEffect(() => {
+    consumeHandoffFile().then((f) => f && pick(f));
   }, []);
 
   const pick = (f: File) => {

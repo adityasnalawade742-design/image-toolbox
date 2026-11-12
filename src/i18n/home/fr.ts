@@ -5,9 +5,9 @@ export const frHome: LocalizedHomeData = {
     seoDescription: 'Rognez, redimensionnez, compressez, convertissez et détourez vos photos gratuitement. Sans inscription ni filigrane, vos images restent sur votre appareil.',
     seoTitle: 'Outils d’image et PDF gratuits en ligne',
     badge: '',
-    title: 'Tous les outils d’image dont vous avez besoin, au même endroit',
+    title: 'Outils gratuits pour vos images et PDF',
     subtitle:
-      'Rognez, redimensionnez, compressez, convertissez, supprimez l’arrière-plan et nettoyez vos photos gratuitement. Sans inscription, sans filigrane, et vos images restent sur votre appareil.',
+      'Compressez, redimensionnez, convertissez et modifiez vos photos et PDF. Sans inscription ni filigrane, et vos images ne quittent jamais votre appareil.',
     dropzoneTitle: 'Déposez une image pour commencer',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG ou HEIC d’iPhone, jusqu’à 50 MB',
   },
@@ -62,7 +62,7 @@ export const frHome: LocalizedHomeData = {
     {
       question: 'Quels formats puis-je ouvrir et enregistrer ?',
       answer:
-        'Vous pouvez ouvrir des photos JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG et HEIC d’iPhone. Vous pouvez enregistrer en JPG, PNG, WebP ou AVIF, selon l’outil.',
+        'Vous pouvez ouvrir des photos JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG et HEIC d’iPhone. Vous pouvez enregistrer en JPG, PNG, WebP ou AVIF, selon l’outil.',
     },
     {
       question: 'Est-ce que ça fonctionne sur mon téléphone ?',

@@ -4,9 +4,9 @@ export const esHome: LocalizedHomeData = {
   hero: {
     seoTitle: 'Herramientas de imagen y PDF gratis',
     badge: '',
-    title: 'Todas las herramientas de imagen que necesitas, en un solo lugar',
+    title: 'Herramientas gratis para imágenes y PDF',
     subtitle:
-      'Recorta, cambia el tamaño, comprime, convierte, quita fondos y retoca fotos gratis. Sin registro, sin marcas de agua y tus imágenes no salen de tu dispositivo.',
+      'Comprime, redimensiona, convierte y edita fotos y PDF. Sin registro ni marcas de agua, y tus imágenes nunca salen de tu dispositivo.',
     dropzoneTitle: 'Suelta una imagen para empezar',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG o HEIC de iPhone, hasta 50 MB',
   },
@@ -61,7 +61,7 @@ export const esHome: LocalizedHomeData = {
     {
       question: '¿Qué formatos puedo abrir y guardar?',
       answer:
-        'Puedes abrir fotos JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG y HEIC de iPhone. Puedes guardar en JPG, PNG, WebP o AVIF, según la herramienta.',
+        'Puedes abrir fotos JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG y HEIC de iPhone. Puedes guardar en JPG, PNG, WebP o AVIF, según la herramienta.',
     },
     {
       question: '¿Funciona en mi teléfono?',

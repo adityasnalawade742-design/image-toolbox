@@ -5,9 +5,9 @@ export const deHome: LocalizedHomeData = {
     seoDescription: 'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln und freistellen. Ohne Anmeldung, ohne Wasserzeichen, deine Bilder bleiben auf dem Gerät.',
     seoTitle: 'Kostenlose Bild- und PDF-Tools online',
     badge: '',
-    title: 'Alle Bildtools, die du brauchst, an einem Ort',
+    title: 'Kostenlose Tools für Bilder und PDFs',
     subtitle:
-      'Bilder kostenlos zuschneiden, verkleinern, komprimieren, umwandeln, Hintergründe entfernen und Fotos bereinigen. Ohne Anmeldung, ohne Wasserzeichen, und deine Bilder bleiben auf deinem Gerät.',
+      'Fotos und PDFs komprimieren, verkleinern, umwandeln und bearbeiten. Ohne Anmeldung, ohne Wasserzeichen, und deine Bilder verlassen nie dein Gerät.',
     dropzoneTitle: 'Bild ablegen und loslegen',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG oder iPhone-HEIC, bis 50 MB',
   },
@@ -63,7 +63,7 @@ export const deHome: LocalizedHomeData = {
     {
       question: 'Welche Formate kann ich öffnen und speichern?',
       answer:
-        'Du kannst JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG und iPhone-HEIC-Fotos öffnen. Je nach Tool speicherst du als JPG, PNG, WebP oder AVIF.',
+        'Du kannst JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG und iPhone-HEIC-Fotos öffnen. Je nach Tool speicherst du als JPG, PNG, WebP oder AVIF.',
     },
     {
       question: 'Funktioniert das auf meinem Handy?',

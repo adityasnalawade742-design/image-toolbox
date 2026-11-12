@@ -106,6 +106,14 @@ function editDistanceAtMostOne(a: string, b: string): boolean {
   return edits + (a.length - i) + (b.length - j) <= 1;
 }
 
+// Two neighbouring letters swapped ("hiec" for "heic"): a common slip even in short words
+function swappedOnce(a: string, b: string): boolean {
+  if (a.length !== b.length || a === b) return false;
+  const diff: number[] = [];
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i] && diff.push(i) > 2) return false;
+  return diff.length === 2 && diff[1] === diff[0] + 1 && a[diff[0]] === b[diff[1]] && a[diff[1]] === b[diff[0]];
+}
+
 interface Prepared {
   item: Searchable;
   index: number;
@@ -143,9 +151,11 @@ function termScore(p: Prepared, alts: string[]): number {
       let s = 0;
       if (f.words.includes(term)) s = 1;
       else if (term.length >= 2 && f.words.some((w) => w.startsWith(term))) s = 0.8;
-      // Scripts written without spaces (Japanese) match inside the text
-      else if (/[^\x00-\x7f]/.test(term) && f.text.includes(term)) s = 0.75;
+      // Scripts written without spaces (Japanese) match inside the text: a whole word there (圧縮 in 画像の圧縮) counts
+      // as fully as a separate one (圧縮 in PDF圧縮), so it doesn't lose to names that happen to contain a Latin word
+      else if (/[^\x00-\x7f]/.test(term) && f.text.includes(term)) s = term.length >= 2 ? 1 : 0.75;
       else if (term.length >= 5 && f.words.some((w) => w.length >= 4 && editDistanceAtMostOne(w, term))) s = 0.5;
+      else if (term.length >= 4 && f.words.some((w) => swappedOnce(w, term))) s = 0.5;
       best = Math.max(best, s * f.weight * synonym);
     }
   });
@@ -195,7 +205,13 @@ export function rankTools<T extends Searchable>(items: T[], query: string): T[] 
       // Right result, wrong source: "image to text" also suits "pdf to text" tools a little
       else if (p.to && toGroup.includes(p.to)) total += 3;
     }
-    if (p.item.popular) total += 0.5;
+    // Without "to", the order of the words still says which way a conversion goes: "pdf word" is PDF to Word
+    else if (p.from && p.to) {
+      const at = (f: string) => terms.findIndex((alts) => alts.includes(f));
+      const i = at(p.from), j = at(p.to);
+      if (i >= 0 && j > i) total += 1;
+    }
+    if (p.item.popular && matched > 0) total += 0.5;
     return { p, total, matched };
   });
   const need = terms.length;

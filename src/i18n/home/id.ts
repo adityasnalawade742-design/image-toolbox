@@ -5,9 +5,9 @@ export const idHome: LocalizedHomeData = {
     seoDescription: 'Potong, ubah ukuran, kompres, konversi, hapus background, dan rapikan foto gratis. Tanpa daftar, tanpa watermark, gambar tetap di perangkat Anda.',
     seoTitle: 'Alat gambar dan PDF gratis online',
     badge: '',
-    title: 'Semua alat gambar yang Anda butuhkan, di satu tempat',
+    title: 'Alat gratis untuk gambar dan PDF',
     subtitle:
-      'Potong, ubah ukuran, kompres, konversi, hapus background, dan rapikan foto secara gratis. Tanpa daftar, tanpa watermark, dan gambar Anda tetap di perangkat Anda.',
+      'Kompres, ubah ukuran, konversi, dan edit foto serta PDF. Tanpa daftar dan tanpa watermark, dan gambar Anda tidak pernah meninggalkan perangkat.',
     dropzoneTitle: 'Letakkan gambar untuk memulai',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG, atau HEIC dari iPhone, hingga 50 MB',
   },
@@ -63,7 +63,7 @@ export const idHome: LocalizedHomeData = {
     {
       question: 'Format apa saja yang bisa saya buka dan simpan?',
       answer:
-        'Anda bisa membuka foto JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, TIFF, SVG, dan HEIC dari iPhone. Anda bisa menyimpan sebagai JPG, PNG, WebP, atau AVIF, tergantung alatnya.',
+        'Anda bisa membuka foto JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, dan HEIC dari iPhone. Anda bisa menyimpan sebagai JPG, PNG, WebP, atau AVIF, tergantung alatnya.',
     },
     {
       question: 'Apakah bisa dipakai di HP saya?',

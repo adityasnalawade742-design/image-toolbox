@@ -4,9 +4,9 @@ export const koHome: LocalizedHomeData = {
   hero: {
     seoTitle: '무료 온라인 이미지·PDF 도구',
     badge: '',
-    title: '필요한 이미지 도구를 한곳에서',
+    title: '이미지와 PDF를 위한 무료 도구',
     subtitle:
-      '사진 자르기, 크기 조절, 압축, 형식 변환, 배경 제거, 정리까지 무료로 할 수 있어요. 가입도 워터마크도 없고, 이미지는 내 기기에만 머물러요.',
+      '사진과 PDF를 압축하고, 크기를 바꾸고, 변환하고, 편집하세요. 가입도 워터마크도 없고, 이미지는 기기 밖으로 나가지 않아요.',
     dropzoneTitle: '이미지를 끌어다 놓아 시작하세요',
     dropzoneSubtitle: 'JPG, PNG, WebP, AVIF, GIF, TIFF, SVG, iPhone HEIC, 최대 50 MB',
   },
