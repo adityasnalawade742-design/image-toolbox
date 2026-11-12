@@ -7692,7 +7692,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
     shortName: "OCR PDF",
     tagline: "Rendi un PDF scansionato ricercabile e selezionabile riconoscendone il testo. Gratis, senza registrazione.",
     intro:
-      "OCR PDF riconosce il testo in un PDF scansionato e lo aggiunge come livello invisibile, così puoi cercare, selezionare e copiare il testo mentre le pagine restano identiche. È utile per contratti scansionati, ricevute, libri e documenti vecchi. Scegli la lingua del documento per ottenere i risultati migliori; le pagine che contengono già testo restano come sono. Il riconoscimento usa Tesseract e OCRmyPDF sul nostro server e il file viene eliminato subito dopo.",
+      "OCR PDF riconosce il testo in un PDF scansionato e lo aggiunge come livello invisibile, così puoi cercare, selezionare e copiare il testo mentre le pagine restano identiche. È utile per contratti scansionati, ricevute, libri e documenti vecchi. Scegli la lingua del documento per ottenere i risultati migliori; le pagine che contengono già testo restano come sono. Il riconoscimento usa Tesseract e OCRmyPDF sul nostro server e il file viene eliminato subito dopo. Le pagine scansionate storte, come la foto di un foglio fatta col telefono, vengono prima raddrizzate (fino a 15°), il che rende il testo molto più preciso; togli la spunta da Raddrizza le pagine storte per lasciare ogni pagina com’era.",
     seoTitle: "OCR PDF – Rendi ricercabili i PDF scansionati, gratis",
     seoDescription:
       "OCR PDF online gratis: rendi i PDF scansionati ricercabili e il loro testo copiabile. 19 lingue; i file vengono eliminati subito dopo.",
@@ -7740,7 +7740,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quanto è preciso?",
         answer:
-          "Scansioni pulite e dritte a 300 dpi danno ottimi risultati. Scrittura a mano, foto a bassa risoluzione e font insoliti vengono riconosciuti in modo meno affidabile.",
+          "Scansioni pulite a 300 dpi danno ottimi risultati, e le pagine inclinate fino a 15° vengono prima raddrizzate. Scrittura a mano, foto a bassa risoluzione e caratteri insoliti sono riconosciuti in modo meno affidabile.",
       },
       {
         question: "Posso convertire il risultato in Word?",

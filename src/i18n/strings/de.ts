@@ -1379,6 +1379,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "Zweite Sprache (optional)",
   'ctl.doc.ocrLangNone': "Keine",
   'ctl.doc.ocrLang2Hint': "Für Seiten, die zwei Sprachen mischen, etwa Englisch und Russisch. Die Erkennung dauert etwas länger.",
+  'ctl.doc.straighten': 'Schiefe Seiten gerade richten',
+  'ctl.doc.straightenNote': 'Gescannte Seiten mit bis zu 15° Schräglage werden vor dem Lesen gerade gerichtet, was den Text viel genauer macht. Abwählen, um die Seiten genau so zu lassen.',
   'ctl.doc.errBusy': 'Der Server ist gerade ausgelastet. Bitte versuch es in einer Minute noch einmal.',
   'ctl.doc.errTooLarge': 'Diese Datei ist größer als 30 MB.',
   'ctl.doc.errRate': 'Zu viele Anfragen in kurzer Zeit. Bitte warte eine Minute und versuch es dann noch einmal.',

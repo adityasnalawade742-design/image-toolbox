@@ -1416,6 +1416,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "2つ目の言語（任意）",
   'ctl.doc.ocrLangNone': "なし",
   'ctl.doc.ocrLang2Hint': "英語とロシア語のように2つの言語が混ざったページ向けです。認識に少し時間がかかります。",
+  'ctl.doc.straighten': '傾いたページをまっすぐにする',
+  'ctl.doc.straightenNote': '最大15°まで傾いたスキャンページを、文字を読み取る前にまっすぐにします。認識の精度が大きく上がります。ページをそのまま残したい場合はオフにしてください。',
   'ctl.doc.errBusy': '現在サーバーが混み合っています。1分ほどしてからもう一度お試しください。',
   'ctl.doc.errTooLarge': 'このファイルは30 MBを超えています。',
   'ctl.doc.errRate': '短時間にリクエストが多すぎます。1分ほど待ってからもう一度お試しください。',
