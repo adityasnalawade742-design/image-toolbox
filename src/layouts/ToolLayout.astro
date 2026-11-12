@@ -50,10 +50,18 @@ const breadcrumbSchema = getBreadcrumbSchema([
 const faqSchema = getFAQSchema(locContent.faqs || []);
 const jsonLd = [appSchema, breadcrumbSchema, faqSchema].filter(Boolean);
 
-// Next tools: same category first, then popular ones
+// Related tools: the neighbours of this tool in its category (the list is grouped by job, so neighbours are close
+// relatives such as JPG to PNG and PNG to JPG). Taking the tools on either side, wrapping round, links every tool
+// from six others; always taking the first six of a category left most tools linked from no other tool page
+const sameCategory = TOOLS.filter((x) => x.category === tool.category);
+const at = sameCategory.findIndex((x) => x.slug === slug);
+const around = [1, -1, 2, -2, 3, -3]
+  .map((d) => sameCategory[(at + d + sameCategory.length * 6) % sameCategory.length])
+  .filter((x, i, list) => x.slug !== slug && list.findIndex((y) => y.slug === x.slug) === i);
 const relatedTools = [
-  ...TOOLS.filter((x) => x.slug !== slug && x.category === tool.category),
-  ...TOOLS.filter((x) => x.slug !== slug && x.category !== tool.category && x.popular),
+  ...around,
+  // A small category tops up with popular tools from the others
+  ...TOOLS.filter((x) => x.category !== tool.category && x.popular),
 ].slice(0, 6);
 
 // Next-step handoffs offered after editing (everyday follow-ups first)

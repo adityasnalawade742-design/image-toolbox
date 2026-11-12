@@ -74,6 +74,11 @@ async function proxyDoc(request, env, url) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    // An address ending in a slash goes permanently (301) to the canonical one without it. The asset handler's own
+    // redirect is temporary (307), which search engines don't treat as moving a page's links to the canonical address
+    if (url.pathname.length > 1 && url.pathname.endsWith('/')) {
+      return Response.redirect(`${url.origin}${url.pathname.replace(/\/+$/, '')}${url.search}`, 301);
+    }
     if (url.pathname.startsWith('/api/doc/')) return proxyDoc(request, env, url);
     if (url.pathname === '/api/links') return handleLinkCheck(request, url, { json, overLimit });
     if (url.pathname === '/api/contact') return handleContact(request, url, { json, env, EmailMessage });

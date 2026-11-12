@@ -17,7 +17,9 @@ const t = useTranslations(locale);
 const translatePath = useTranslatedPath(locale);
 const categoryNames = getLocalizedHomeData(locale).categoryNames;
 const locTools = getAllLocalizedTools(locale);
-const popularTools = TOOLS.filter((tool) => tool.popular).slice(0, 6);
+// The jobs most people come for, across image and PDF: this list is on every page, so these get the most links
+const POPULAR = ['compress-image', 'resize-image', 'remove-background', 'heic-to-jpg', 'merge-pdf', 'compress-pdf', 'pdf-to-word', 'jpg-to-pdf'];
+const popularTools = POPULAR.flatMap((slug) => TOOLS.filter((tool) => tool.slug === slug));
 // Information pages exist in English only; other languages link to them
 const infoLinks = [
   { href: '/about', key: 'footer.about' },
