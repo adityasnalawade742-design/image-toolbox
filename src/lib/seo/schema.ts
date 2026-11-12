@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from '../../config/site';
+
 export function getWebApplicationSchema(toolName: string, description: string, url: string, locale: string = 'en') {
   return {
     '@context': 'https://schema.org',
@@ -14,6 +16,37 @@ export function getWebApplicationSchema(toolName: string, description: string, u
       price: '0',
       priceCurrency: 'USD',
     },
+    publisher: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_CONFIG.name, url: SITE_CONFIG.url },
+  };
+}
+
+const ORGANIZATION_ID = `${SITE_CONFIG.url}/#organization`;
+
+/** Who runs the site: helps search engines and AI assistants recognise the brand (homepage) */
+export function getOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: SITE_CONFIG.name,
+    url: `${SITE_CONFIG.url}/`,
+    logo: { '@type': 'ImageObject', url: `${SITE_CONFIG.url}/icon-512.png`, width: 512, height: 512 },
+    description: SITE_CONFIG.description,
+    sameAs: [SITE_CONFIG.sourceUrl],
+  };
+}
+
+/** The site itself, in the page's language, published by the organization (homepage) */
+export function getWebSiteSchema(locale: string, description: string, url: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_CONFIG.url}/#website`,
+    name: SITE_CONFIG.name,
+    url,
+    description,
+    inLanguage: locale,
+    publisher: { '@id': ORGANIZATION_ID },
   };
 }
 

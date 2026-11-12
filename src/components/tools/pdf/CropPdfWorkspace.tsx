@@ -33,6 +33,7 @@ export function CropPdfWorkspace() {
   const run = async () => {
     if (!pdf.bytes) return;
     if (targets !== 'all' && !targets.length) {
+      setStatus('');
       setError(t('ctl.splitpdf.noRanges'));
       return;
     }

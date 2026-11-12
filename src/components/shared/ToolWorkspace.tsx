@@ -1411,7 +1411,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
                     accept={accept}
                     options={watermarkOptions}
                     quality={quality}
-                    format={sourceFile && format !== getOutputFormatPolicy(slug, sourceFile.type || 'image/png').format ? format : undefined}
+                    format={sourceFile && format !== getOutputFormatPolicy(slug, mimeType).format ? format : undefined}
                     background={bgFillColor}
                   />
                 </>

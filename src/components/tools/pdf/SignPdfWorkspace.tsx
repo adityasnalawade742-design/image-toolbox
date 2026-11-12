@@ -237,9 +237,15 @@ export function SignPdfWorkspace() {
   const run = async () => {
     if (!pdf.bytes) return;
     // An initials or text item still empty would otherwise just be left out
-    if (items.some((i) => i.kind !== 'signature' && !i.text.trim())) return setError(t('ctl.sign.emptyItems'));
+    if (items.some((i) => i.kind !== 'signature' && !i.text.trim())) {
+      setStatus('');
+      return setError(t('ctl.sign.emptyItems'));
+    }
     const ready = items.filter((i) => looks.get(i.id));
-    if (!ready.length) return setError(t('ctl.sign.needSignature'));
+    if (!ready.length) {
+      setStatus('');
+      return setError(t('ctl.sign.needSignature'));
+    }
     setBusy(true);
     setError(null);
     try {

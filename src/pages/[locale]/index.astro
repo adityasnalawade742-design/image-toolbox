@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomePage from '../../components/home/HomePage.astro';
 import { getLocalizedHomeData } from '../../i18n/home';
 import { SUPPORTED_LOCALES } from '../../i18n/locales';
-import { getFAQSchema } from '../../lib/seo/schema';
+import { getFAQSchema, getOrganizationSchema, getWebSiteSchema } from '../../lib/seo/schema';
 import { SITE_CONFIG } from '../../config/site';
 import type { SupportedLocale } from '../../i18n/types';
 
@@ -22,7 +22,7 @@ const faqSchema = getFAQSchema(homeData.faqs);
   description={homeData.hero.seoDescription || homeData.hero.subtitle}
   currentSlug=""
   canonicalUrl={`${SITE_CONFIG.url}/${locale}`}
-  jsonLd={faqSchema ? [faqSchema] : undefined}
+  jsonLd={[getOrganizationSchema(), getWebSiteSchema(locale, homeData.hero.seoDescription || homeData.hero.subtitle, `${SITE_CONFIG.url}/${locale}`), ...(faqSchema ? [faqSchema] : [])]}
 >
   <HomePage locale={locale} />
 </BaseLayout>

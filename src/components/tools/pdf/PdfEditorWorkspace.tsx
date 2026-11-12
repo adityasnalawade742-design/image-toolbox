@@ -381,12 +381,16 @@ export function PdfEditorWorkspace({ startTool = 'text' }: { startTool?: EditorT
   const run = async () => {
     if (!pdf.bytes) return;
     const list = itemsRef.current.filter((i) => i.kind !== 'text' || i.text.trim());
-    if (!list.length) return setError(t('ctl.edit.needEdit'));
+    if (!list.length) {
+      setStatus('');
+      return setError(t('ctl.edit.needEdit'));
+    }
     const badLink = list.find((i) => i.kind === 'link' && !normalizeUrl(i.url));
     if (badLink) {
       setPage(badLink.page + 1);
       setTool('link');
       select(badLink.id);
+      setStatus('');
       return setError(t('ctl.edit.needLink'));
     }
     const redacting = list.some((i) => i.kind === 'redact');

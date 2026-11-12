@@ -68,10 +68,12 @@ export function PdfPagesWorkspace({ mode }: { mode: Mode }) {
   const run = async () => {
     if (!pdf.bytes) return;
     if ((mode === 'extract' || (mode === 'rotate' && scope === 'selected')) && !selected.length) {
+      setStatus('');
       setError(t('ctl.pdf.needOne'));
       return;
     }
     if (mode === 'rotate' && scope === 'each' && !turned.length) {
+      setStatus('');
       setError(t('ctl.rotatepdf.noTurn'));
       return;
     }

@@ -133,7 +133,10 @@ export function MergePdfWorkspace() {
   const total = items.reduce((n, i) => n + i.pages, 0);
   const pageMode = arrange === 'pages' && total <= MAX_PAGE_MODE;
   const run = async () => {
-    if (items.length < 2) return setError(t('ctl.mergepdf.needTwo'));
+    if (items.length < 2) {
+      setStatus('');
+      return setError(t('ctl.mergepdf.needTwo'));
+    }
     setBusy(true);
     setError(null);
     try {
