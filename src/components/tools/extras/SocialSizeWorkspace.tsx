@@ -276,7 +276,7 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
         {textOn && texts.length > 0 && <TextControls layers={texts} active={activeText} onSelect={setActiveText} onChange={setTexts} maxSize={maxSize} maxStroke={maxStroke} />}
       </div>
 
-      {(preset.safe || preset.badge) && (
+      {(preset.safe || preset.badge || preset.photo) && (
         <label className="flex items-center gap-2 min-h-[40px] text-[15px] text-ink cursor-pointer">
           <input type="checkbox" checked={guides} onChange={(e) => setGuides(e.target.checked)} className="w-5 h-5" />
           {t('ctl.social.guides')}
@@ -368,6 +368,22 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
                 <span className="text-white text-[11px] font-semibold tabular-nums">12:34</span>
               </div>
             )}
+            {guides && preset.photo && (
+              // The photo hangs below the banner: only the part over the picture is drawn
+              <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+              <div
+                className="absolute rounded-full border-2 border-dashed border-white"
+                style={{
+                  left: `${(preset.photo.x / W) * 100}%`,
+                  top: `${(preset.photo.y / H) * 100}%`,
+                  width: `${(preset.photo.w / W) * 100}%`,
+                  aspectRatio: '1',
+                  boxShadow: '0 0 0 1px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.6)',
+                  background: 'rgba(0,0,0,.35)',
+                }}
+              />
+              </div>
+            )}
             {textOn && canvasRef.current && (
               <InteractiveTextOverlay
                 canvasElement={canvasRef.current}
@@ -382,7 +398,8 @@ export function SocialSizeWorkspace({ presets = ALL_SOCIAL_PRESETS }: { presets?
         </div>
         <p className="text-[14px] text-graphite">
           {t('ctl.social.dragHint')}
-          {guides && preset.safe ? ` ${t('ctl.social.guideHint')}` : ''}
+          {guides && preset.safe ? ` ${t(preset.safeKind === 'phone' ? 'ctl.social.phoneHint' : preset.safeKind === 'square' ? 'ctl.social.squareHint' : 'ctl.social.guideHint')}` : ''}
+          {guides && preset.photo ? ` ${t('ctl.social.photoHint')}` : ''}
           {guides && preset.badge ? ` ${t('ctl.social.badgeHint')}` : ''}
         </p>
         {soft && <p className="text-[14px] text-accent-yellow">{t('ctl.social.soft', { width: src.width, height: src.height })}</p>}

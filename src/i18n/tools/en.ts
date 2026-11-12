@@ -962,7 +962,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Bulk Resize",
     tagline: "Resize up to 50 images at once by percentage, exact width, or a maximum box, and download them as one ZIP.",
     intro:
-      "Bulk Image Resizer applies the same size rule to many images in one step. You can scale every file by a percentage, set an exact width, or fit each image inside a box such as 1200 × 800 so that no side is larger than the box. Each file can keep its original format, and all results download together in one ZIP.",
+      "Bulk Image Resizer applies the same size rule to many images in one step. You can scale every file by a percentage, set an exact width, or fit each image inside a box such as 1200 × 800 so that no side is larger than the box. Each file can keep its original format, and all results download together in one ZIP. With both a width and a height set, choose how pictures of another shape fit: crop to fill, add borders in a colour you pick, or stretch. A quality slider sets the JPG and WebP quality.",
     seoTitle: "Bulk Image Resizer – Resize Multiple Images",
     seoDescription:
       "Resize multiple images at once for free. Scale up to 50 JPG, PNG or WebP files by percent, exact width or a maximum box, keep their formats, and get one ZIP.",
@@ -1022,7 +1022,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "Will my images be stretched?",
         answer:
-          "Not in Percentage Scale or Fit Within Box mode, which always keep the proportions. In Exact Pixels mode, if you unlock the aspect ratio and set both sides, images with a different shape will be stretched.",
+          "Not unless you choose Stretch. Percentage and Fit in box always keep the proportions. With both a width and a height set, Crop (the default) trims the edges evenly and Borders fits the whole picture with a coloured border instead.",
       },
       {
         question: "Which file formats are supported?",
@@ -1032,7 +1032,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "What quality is used for JPG and WebP files?",
         answer:
-          "Resized JPG and WebP files are saved at 90% quality. When you convert transparent images to JPG, transparent areas become white.",
+          "JPG and WebP files are saved at 95% quality by default; change it with the Quality slider. PNG files are always lossless. When you convert transparent images to JPG, transparent areas become white.",
       },
       {
         question: "Are my files uploaded anywhere?",
@@ -2112,7 +2112,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "SVG → PNG",
     tagline: "Convert SVG vector files to sharp PNG images at 1x, 2x, 4x or 8x size, with transparency kept.",
     intro:
-      "SVG to PNG turns a vector graphic, such as a logo or icon, into a PNG image for places that do not accept SVG files. Choose 1x, 2x, 4x or 8x the SVG's own size; because the vector is drawn again at that size, a larger scale gives a sharper image instead of a blurry one. Transparent backgrounds stay transparent in the PNG.",
+      "SVG to PNG turns a vector graphic, such as a logo or icon, into a PNG image for places that do not accept SVG files. Choose 1x, 2x, 4x or 8x the SVG's own size; because the vector is drawn again at that size, a larger scale gives a sharper image instead of a blurry one. Transparent backgrounds stay transparent in the PNG. When you convert several SVGs at once, every file can come out at the same width or height.",
     seoTitle: "SVG to PNG Converter – High Resolution, Transparent",
     seoDescription:
       "Convert SVG to PNG online for free. Export at 1x, 2x, 4x or 8x for sharp, high-resolution images with a transparent background. Converted in your browser.",
@@ -2187,7 +2187,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "SVG to JPG",
     "shortName": "SVG → JPG",
     "tagline": "Turn SVG graphics into JPG images at any scale, with the background color you choose. The conversion runs on your device.",
-    "intro": "SVG graphics stay sharp at any size, but many apps, social networks and upload forms accept only regular images. SVG to JPG redraws the SVG at the scale you choose, from 1x to 8x, and saves it as a JPG. JPG has no transparency, so transparent areas are filled with white or a color you pick. The conversion happens inside your browser, so the file never leaves your device.",
+    "intro": "SVG graphics stay sharp at any size, but many apps, social networks and upload forms accept only regular images. SVG to JPG redraws the SVG at the scale you choose, from 1x to 8x, and saves it as a JPG. JPG has no transparency, so transparent areas are filled with white or a color you pick. The conversion happens inside your browser, so the file never leaves your device. When you convert several SVGs at once, every file can come out at the same width or height.",
     "seoTitle": "SVG to JPG Converter – Any Size, Free",
     "seoDescription": "Convert SVG graphics to JPG in your browser at 1x to 8x scale, with your choice of background color. Free and nothing is uploaded.",
     "keywords": [
@@ -2252,7 +2252,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "SVG to WebP",
     "shortName": "SVG → WebP",
     "tagline": "Turn SVG graphics into small WebP images at any scale, transparency included. The conversion runs on your device.",
-    "intro": "Sometimes a website, app or email builder needs a regular image instead of an SVG. SVG to WebP redraws the SVG at the scale you choose, from 1x to 8x, and saves it as WebP, a small format that every current browser shows and that keeps transparency. The conversion happens inside your browser, so the file never leaves your device.",
+    "intro": "Sometimes a website, app or email builder needs a regular image instead of an SVG. SVG to WebP redraws the SVG at the scale you choose, from 1x to 8x, and saves it as WebP, a small format that every current browser shows and that keeps transparency. The conversion happens inside your browser, so the file never leaves your device. When you convert several SVGs at once, every file can come out at the same width or height.",
     "seoTitle": "SVG to WebP Converter – Small Files, Transparency Kept",
     "seoDescription": "Convert SVG graphics to WebP in your browser at 1x to 8x scale, with transparency kept. Free and nothing is uploaded.",
     "keywords": [
@@ -2402,7 +2402,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Meme Maker",
     tagline: "Make a meme from your own photo or a starter template, with bold captions at the top, middle and bottom.",
     intro:
-      "Meme Generator adds classic meme captions to a picture. Upload your own image or start from one of eight simple built-in templates, then type the top, middle and bottom captions; long lines wrap automatically to fit the width. Choose the font (Impact by default), size, text and outline colors, alignment and uppercase, and download the meme as PNG, JPG or WebP without any watermark.",
+      "Meme Generator adds classic meme captions to a picture. Upload your own image or start from one of eight simple built-in templates, then type the top, middle and bottom captions; long lines wrap automatically to fit the width. Choose the font (Impact by default), size, text and outline colors, alignment and uppercase, and download the meme as PNG, JPG or WebP without any watermark. Choose Caption bars for the modern style: black captions in white bars above and below the picture, so nothing is covered.",
     seoTitle: "Meme Generator – Add Captions to Any Image",
     seoDescription:
       "Make memes online for free. Add top, middle and bottom captions to your photo or a template, choose font, size and outline, and download with no watermark.",
@@ -2468,7 +2468,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "My caption covers too much of the picture. What can I do?",
         answer:
-          "Lower the font size, or move part of the text to the middle or bottom caption. Long captions wrap onto several lines automatically.",
+          "Choose Caption bars to put the top and bottom captions above and below the picture instead of on it. Or lower the font size, or move part of the text to another caption; long captions wrap onto several lines automatically.",
       },
       {
         question: "Can I make memes on my phone?",
@@ -2482,7 +2482,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     shortName: "Split Grid",
     tagline: "Cut one image into a grid of tiles, such as a 3×3 Instagram grid or a panorama carousel, and download a ZIP.",
     intro:
-      "Image Splitter & Grid Cutter divides a picture into rows and columns of separate image files. Use the Instagram 3×3 preset for a profile grid, Panorama 3×1 or Carousel 2×1 for swipeable posts, 2×2 for four equal parts, or set your own grid of up to 12 rows and 12 columns. All tiles download together as numbered PNG files in a ZIP, or you can click a single tile to save only that one.",
+      "Image Splitter & Grid Cutter divides a picture into rows and columns of separate image files. Use the Instagram 3×3 preset for a profile grid, Panorama 3×1 or Carousel 2×1 for swipeable posts, 2×2 for four equal parts, or set your own grid of up to 12 rows and 12 columns. All tiles download together as numbered PNG files in a ZIP, or you can click a single tile to save only that one. Instagram now shows the profile grid in 3:4, so the Instagram 3×3 grid (3:4) preset cuts tiles in that shape, and grid tiles are numbered in the order to post them.",
     seoTitle: "Split Image into Grid – Instagram 3×3 & Panorama",
     seoDescription:
       "Split an image into a grid online for free. Make a 3x3 Instagram grid, panorama carousel slices or a custom grid up to 12x12, and download all tiles as a ZIP.",
@@ -2536,12 +2536,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         question: "In which order should I post the tiles on Instagram?",
         answer:
-          "Tiles are numbered from left to right and top to bottom, starting with tile_01. Instagram shows the newest post first, so upload the last tile first (tile_09 for a 3×3 grid) and finish with tile_01.",
+          "With an Instagram grid preset, tiles are named in posting order: post-01 is the bottom-right tile and goes up first, and the highest number, the top-left tile, goes up last. The numbers on the preview show the same order.",
       },
       {
         question: "What image should I use for a 3×3 grid?",
         answer:
-          "For square tiles, start with a square image; crop it to 1:1 first if needed. Instagram may show profile thumbnails with a different crop, so check the result after posting.",
+          "Instagram now shows profile posts as 3:4 tiles, so use the Instagram 3×3 grid (3:4) preset with a picture in roughly 3:4 shape. For the older square grid, use the square preset with a square picture.",
       },
       {
         question: "How do I split a panorama for a carousel post?",
@@ -3247,7 +3247,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "Is AVIF lossless like PNG?",
-        "answer": "Not here. The AVIF is compressed with the quality you choose, so tiny details can change. At 85% or more, most images look the same as the PNG."
+        "answer": "Only if you tick Lossless, which keeps every pixel exactly but makes a bigger file. Otherwise the AVIF is compressed with the quality you choose, so tiny details can change; at 85% or more, most images look the same as the PNG."
       },
       {
         "question": "Does AVIF keep transparency?",
@@ -8204,7 +8204,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Facebook Cover Maker",
     "shortName": "Facebook Cover",
     "tagline": "Make a picture the right size for a Facebook cover or post. Free, and it runs on your device.",
-    "intro": "Facebook Cover Maker fits a picture to the 851 × 315 size Facebook recommends for covers. Facebook shows covers in different shapes on computers and phones, so keep faces and text near the middle. It also has the common 1200 × 630 size for link and image posts. Drag the picture until it sits right, then download it. You can also add text, such as a title or a name, with your choice of font, colour and outline.",
+    "intro": "Facebook Cover Maker fits a picture to the 851 × 315 size Facebook recommends for covers. Facebook shows covers in different shapes on computers and phones, so keep faces and text near the middle. It also has the common 1200 × 630 size for link and image posts. Drag the picture until it sits right, then download it. You can also add text, such as a title or a name, with your choice of font, colour and outline. Show the safe area marks roughly the part that phones show.",
     "seoTitle": "Facebook Cover Maker – 851×315 Photo Size, Free",
     "seoDescription": "Resize a picture for a Facebook cover (851×315) or post (1200×630). Drag to position, then download. Free, no sign-up, no upload.",
     "keywords": ["facebook cover photo size", "facebook cover maker", "resize image for facebook cover", "851x315", "facebook post image size"],
@@ -8228,7 +8228,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "LinkedIn Banner Maker",
     "shortName": "LinkedIn Banner",
     "tagline": "Make a 1584 × 396 LinkedIn profile banner from any picture. Free, and it runs on your device.",
-    "intro": "LinkedIn Banner Maker cuts a picture to the very wide 1584 × 396 shape of a LinkedIn profile banner. Drag the picture up and down to choose the strip you want, and zoom in if needed. It also has the 1200 × 627 size for link and image posts. Your profile photo covers part of the lower left of the banner, so keep important details away from there. You can also add text, such as a title or a name, with your choice of font, colour and outline.",
+    "intro": "LinkedIn Banner Maker cuts a picture to the very wide 1584 × 396 shape of a LinkedIn profile banner. Drag the picture up and down to choose the strip you want, and zoom in if needed. It also has the 1200 × 627 size for link and image posts. Your profile photo covers part of the lower left of the banner, so keep important details away from there. You can also add text, such as a title or a name, with your choice of font, colour and outline. Turn on Show the safe area to see roughly where the photo sits.",
     "seoTitle": "LinkedIn Banner Maker – 1584×396 Background, Free",
     "seoDescription": "Make a 1584×396 LinkedIn profile banner or a 1200×627 post image from any picture. Drag to position. Free, no sign-up, no upload.",
     "keywords": ["linkedin banner size", "linkedin background photo size", "linkedin banner maker", "1584x396", "linkedin cover image"],
@@ -8276,7 +8276,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "Open Graph Image Maker",
     "shortName": "Open Graph Image",
     "tagline": "Make the 1200 × 630 picture shown when a link is shared. Free, and it runs on your device.",
-    "intro": "Open Graph Image Maker prepares the picture that appears when someone shares your page on social media or in a chat app. It sizes any picture to the widely used 1200 × 630. Once it's on your site, point your page's og:image tag at it. You can also add text, such as a title or a name, with your choice of font, colour and outline.",
+    "intro": "Open Graph Image Maker prepares the picture that appears when someone shares your page on social media or in a chat app. It sizes any picture to the widely used 1200 × 630. Once it's on your site, point your page's og:image tag at it. You can also add text, such as a title or a name, with your choice of font, colour and outline. Show the safe area marks the middle square that some chat apps show.",
     "seoTitle": "Open Graph Image Maker – 1200×630 og:image, Free",
     "seoDescription": "Make a 1200×630 Open Graph image for link previews on social media and chat apps. Drag to position, download. Free, no sign-up, no upload.",
     "keywords": ["open graph image size", "og image generator", "og:image size", "1200x630", "link preview image"],

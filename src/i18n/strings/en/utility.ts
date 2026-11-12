@@ -48,6 +48,9 @@ export const utilityStrings = {
   // SVG to PNG
   'ctl.svg.scale': 'Output scale',
   'ctl.svg.help': 'The SVG is redrawn at this size, so edges stay sharp at any scale.',
+  'ctl.svg.exactBatch': 'Or every file at the same size:',
+  'ctl.svg.exactSide': 'Which side',
+  'ctl.svg.exactBatchHint': 'Each drawing keeps its proportions; the other side follows. Very large sizes are reduced to what the browser can draw.',
   'ctl.svg.size': 'Size',
   'ctl.svg.original': 'Original',
   'ctl.svg.output': '{format} output',

@@ -7,15 +7,29 @@ import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
 import { canvasToBlob, downloadBlob, forDownload } from '../../lib/canvas/engine';
 
+/** Square tiles, 3:4 tiles (Instagram's profile grid since 2025), or the whole photo cut into equal parts */
+type TileShape = 'square' | 'portrait' | 'free';
+const SHAPE_RATIO: Record<Exclude<TileShape, 'free'>, [number, number]> = { square: [1, 1], portrait: [3, 4] };
+const SHAPES: { id: TileShape; label: StringKey; note: StringKey }[] = [
+  { id: 'square', label: 'ctl.split.shapeSquare', note: 'ctl.split.squareNote' },
+  { id: 'portrait', label: 'ctl.split.shapePortrait', note: 'ctl.split.portraitNote' },
+  { id: 'free', label: 'ctl.split.shapeFree', note: 'ctl.split.freeNote' },
+];
+
 interface SplitPreset {
   id: string;
   nameKey: StringKey;
   rows: number;
   cols: number;
+  /** The tile shape this preset needs; presets without one leave the shape as it is */
+  shape?: TileShape;
+  /** A profile grid: Instagram shows the newest post first, so the bottom-right tile is posted first */
+  postingOrder?: boolean;
 }
 
 const PRESETS: SplitPreset[] = [
-  { id: 'insta-3x3', nameKey: 'ctl.split.presetInsta3x3', rows: 3, cols: 3 },
+  { id: 'insta-3x4', nameKey: 'ctl.split.presetInsta34', rows: 3, cols: 3, shape: 'portrait', postingOrder: true },
+  { id: 'insta-3x3', nameKey: 'ctl.split.presetInsta3x3', rows: 3, cols: 3, shape: 'square', postingOrder: true },
   { id: 'insta-3x1', nameKey: 'ctl.split.presetPanorama', rows: 1, cols: 3 },
   { id: 'insta-2x1', nameKey: 'ctl.split.presetCarousel', rows: 1, cols: 2 },
   { id: 'grid-2x2', nameKey: 'ctl.split.presetQuad', rows: 2, cols: 2 },
@@ -44,8 +58,8 @@ export function ImageSplitterWorkspace() {
   const [rowsInput, setRowsInput] = useState<string>('3');
   const [colsInput, setColsInput] = useState<string>('3');
   const [format, setFormat] = useState<TileFormat>('png');
-  // Square tiles trim the edges evenly, so a profile grid or carousel lines up the way Instagram shows it
-  const [squareTiles, setSquareTiles] = useState(true);
+  // Shaped tiles trim the edges evenly, so a profile grid or carousel lines up the way Instagram shows it
+  const [shape, setShape] = useState<TileShape>('square');
   const [isZipping, setIsZipping] = useState<boolean>(false);
   const [zipProgress, setZipProgress] = useState<number>(0);
   const [zipError, setZipError] = useState<string | null>(null);
@@ -69,6 +83,7 @@ export function ImageSplitterWorkspace() {
 
   const handlePresetSelect = (preset: SplitPreset) => {
     setActivePreset(preset.id);
+    if (preset.shape) setShape(preset.shape);
     setRows(preset.rows);
     setCols(preset.cols);
     setRowsInput(String(preset.rows));
@@ -102,13 +117,23 @@ export function ImageSplitterWorkspace() {
     }
   };
 
-  /** The part of the photo that is cut: all of it, or the centred area that makes every tile square */
+  /** The part of the photo that is cut: all of it, or the centred area that gives every tile the chosen shape */
   const cutRegion = (fullW: number, fullH: number) => {
-    if (!squareTiles) return { x: 0, y: 0, w: fullW, h: fullH };
-    const side = Math.max(1, Math.floor(Math.min(fullW / cols, fullH / rows)));
-    const w = side * cols;
-    const h = side * rows;
+    if (shape === 'free') return { x: 0, y: 0, w: fullW, h: fullH };
+    const [rw, rh] = SHAPE_RATIO[shape];
+    // Whole multiples of the ratio, so every tile is exactly square or exactly 3:4
+    const k = Math.max(1, Math.floor(Math.min(fullW / (cols * rw), fullH / (rows * rh))));
+    const w = Math.min(fullW, k * rw * cols);
+    const h = Math.min(fullH, k * rh * rows);
     return { x: Math.floor((fullW - w) / 2), y: Math.floor((fullH - h) / 2), w, h };
+  };
+
+  /** A profile grid is posted bottom-right first; anything else is numbered in reading order */
+  const postingOrder = !!PRESETS.find((p) => p.id === activePreset)?.postingOrder;
+  const tileNumber = (r: number, c: number) => (postingOrder ? rows * cols - (r * cols + c) : r * cols + c + 1);
+  const tileName = (r: number, c: number, ext: string) => {
+    const n = String(tileNumber(r, c)).padStart(2, '0');
+    return `${postingOrder ? 'post' : 'tile'}-${n}_r${r + 1}c${c + 1}.${ext}`;
   };
 
   // Extract individual slice as a canvas with exact pixel boundary coverage
@@ -149,9 +174,9 @@ export function ImageSplitterWorkspace() {
   };
 
   // Download a single slice
-  const downloadSingleSlice = async (r: number, c: number, index: number, format: TileFormat = 'png') => {
+  const downloadSingleSlice = async (r: number, c: number, format: TileFormat = 'png') => {
     const blob = await canvasToBlob(getSliceCanvas(r, c), `image/${format}`, 0.95, undefined, forDownload(`image/${format}`));
-    downloadBlob(blob, `${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-tile-${index + 1}.${format === 'jpeg' ? 'jpg' : format}`);
+    downloadBlob(blob, `${(selectedFile?.name || 'image').replace(/\.[^.]+$/, '')}-${tileName(r, c, format === 'jpeg' ? 'jpg' : format)}`);
   };
 
   // Download all slices as ZIP
@@ -168,10 +193,9 @@ export function ImageSplitterWorkspace() {
 
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
-          const tileIndex = r * cols + c + 1;
           const canvas = getSliceCanvas(r, c);
 
-          zip.file(`tile_${String(tileIndex).padStart(2, '0')}.${format === 'jpeg' ? 'jpg' : format}`, await canvasToBlob(canvas, `image/${format}`, 0.95, undefined, forDownload(`image/${format}`)));
+          zip.file(tileName(r, c, format === 'jpeg' ? 'jpg' : format), await canvasToBlob(canvas, `image/${format}`, 0.95, undefined, forDownload(`image/${format}`)));
 
           completed++;
           setZipProgress(Math.round((completed / totalTiles) * 80));
@@ -237,7 +261,7 @@ export function ImageSplitterWorkspace() {
                 />
 
                 {/* The trimmed edges, dimmed */}
-                {squareTiles && (region.w < imgW || region.h < imgH) && (
+                {shape !== 'free' && (region.w < imgW || region.h < imgH) && (
                   <>
                     <div className="absolute inset-x-0 top-0 bg-process-key/55 pointer-events-none" style={{ height: pct(region.y, imgH) }} aria-hidden="true" />
                     <div className="absolute inset-x-0 bottom-0 bg-process-key/55 pointer-events-none" style={{ height: pct(imgH - region.y - region.h, imgH) }} aria-hidden="true" />
@@ -258,12 +282,13 @@ export function ImageSplitterWorkspace() {
                 >
                   {Array.from({ length: rows }).map((_, r) =>
                     Array.from({ length: cols }).map((_, c) => {
-                      const tileNum = r * cols + c + 1;
+                      // A profile grid shows its posting order on the tiles: 1 is posted first
+                      const tileNum = tileNumber(r, c);
                       return (
                         <button
                           key={`${r}-${c}`}
                           type="button"
-                          onClick={() => downloadSingleSlice(r, c, tileNum - 1, format)}
+                          onClick={() => downloadSingleSlice(r, c, format)}
                           aria-label={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
                           title={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
                           className="relative flex items-center justify-center border border-process-magenta/80 hover:bg-process-key/20 focus-visible:bg-process-key/20 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-process-magenta transition-colors"
@@ -302,7 +327,10 @@ export function ImageSplitterWorkspace() {
                 {t('ws.replace')}
               </button>
             </div>
-            <p className="text-[14px] text-graphite">{t('ctl.split.tapHint')}</p>
+            <p className="text-[14px] text-graphite">
+              {t('ctl.split.tapHint')}
+              {postingOrder ? ` ${t('ctl.split.postingNote')}` : ''}
+            </p>
           </div>
 
           {/* Ruled control panel */}
@@ -373,13 +401,28 @@ export function ImageSplitterWorkspace() {
                     </label>
                   </div>
                   <p className="text-[13px] text-graphite">{t('ctl.split.gridLimit')}</p>
-                  <label className="flex items-start gap-2.5 pt-2 cursor-pointer">
-                    <input type="checkbox" checked={squareTiles} onChange={(e) => setSquareTiles(e.target.checked)} className="w-5 h-5 mt-0.5 shrink-0" />
-                    <span>
-                      <span className="block text-[15px] text-ink">{t('ctl.split.square')}</span>
-                      <span className="block text-[13px] text-graphite">{t('ctl.split.squareNote')}</span>
-                    </span>
-                  </label>
+                  <div className="space-y-1.5 pt-2">
+                    <span className="text-[14px] text-ink block" id="split-shape">{t('ctl.split.shape')}</span>
+                    <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-labelledby="split-shape">
+                      {SHAPES.map((sh) => (
+                        <button
+                          key={sh.id}
+                          type="button"
+                          aria-pressed={shape === sh.id}
+                          onClick={() => {
+                            setShape(sh.id);
+                            // A preset that needs another shape no longer applies
+                            const preset = PRESETS.find((p) => p.id === activePreset);
+                            if (preset?.shape && preset.shape !== sh.id) setActivePreset('custom');
+                          }}
+                          className={`min-h-[40px] text-[14px] font-semibold transition-colors ${shape === sh.id ? 'seg-on' : 'seg-off'}`}
+                        >
+                          {t(sh.label)}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="text-[13px] text-graphite">{t(SHAPES.find((sh) => sh.id === shape)!.note)}</p>
+                  </div>
                 </div>
 
                 {/* Tile format */}
