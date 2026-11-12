@@ -7886,7 +7886,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "name": "OCR PDF",
     "shortName": "OCR PDF",
     "tagline": "Make a scanned PDF searchable and selectable by recognizing its text. Free, with no sign-up.",
-    "intro": "OCR PDF recognizes the text in a scanned PDF and adds it as an invisible layer, so you can search, select and copy the text while the pages look exactly the same. It is useful for scanned contracts, receipts, books and old documents. Choose the document's language for the best results; pages that already contain text are left as they are. Recognition uses Tesseract and OCRmyPDF on our server, and the file is deleted right after.",
+    "intro": "OCR PDF recognizes the text in a scanned PDF and adds it as an invisible layer, so you can search, select and copy the text while the pages look exactly the same. It is useful for scanned contracts, receipts, books and old documents. Choose the document's language for the best results; pages that already contain text are left as they are. Recognition uses Tesseract and OCRmyPDF on our server, and the file is deleted right after. Scanned pages that are tilted, such as a phone photo of a page, are turned straight first (up to 15°), which makes the text far more accurate; untick Straighten tilted pages to keep every page exactly as it was.",
     "seoTitle": "OCR PDF – Make Scanned PDFs Searchable, Free",
     "seoDescription": "Make scanned PDFs searchable and copyable with OCR, online and free. 19 languages; files are deleted right after.",
     "keywords": [
@@ -7932,7 +7932,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "faqs": [
       {
         "question": "How accurate is it?",
-        "answer": "Clean, straight scans at 300 dpi give very good results. Handwriting, low-resolution photos and unusual fonts are recognized less reliably."
+        "answer": "Clean scans at 300 dpi give very good results, and pages tilted up to 15° are turned straight first. Handwriting, low-resolution photos and unusual fonts are recognized less reliably."
       },
       {
         "question": "Can I convert the result to Word?",

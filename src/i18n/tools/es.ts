@@ -7710,7 +7710,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
     shortName: "OCR PDF",
     tagline: "Haz que un PDF escaneado se pueda buscar y seleccionar reconociendo su texto. Gratis y sin registro.",
     intro:
-      "OCR de PDF reconoce el texto de un PDF escaneado y lo añade como una capa invisible, para que puedas buscar, seleccionar y copiar el texto mientras las páginas se ven exactamente igual. Es útil para contratos, recibos, libros y documentos antiguos escaneados. Elige el idioma del documento para obtener los mejores resultados; las páginas que ya contienen texto se dejan como están. El reconocimiento usa Tesseract y OCRmyPDF en nuestro servidor y el archivo se elimina justo después.",
+      "OCR de PDF reconoce el texto de un PDF escaneado y lo añade como una capa invisible, para que puedas buscar, seleccionar y copiar el texto mientras las páginas se ven exactamente igual. Es útil para contratos, recibos, libros y documentos antiguos escaneados. Elige el idioma del documento para obtener los mejores resultados; las páginas que ya contienen texto se dejan como están. El reconocimiento usa Tesseract y OCRmyPDF en nuestro servidor y el archivo se elimina justo después. Las páginas escaneadas torcidas, como la foto de una hoja hecha con el móvil, se enderezan primero (hasta 15°), lo que hace el texto mucho más preciso; desmarca Enderezar páginas torcidas para dejar cada página exactamente como estaba.",
     seoTitle: "OCR de PDF – hacer buscables los PDF escaneados gratis",
     seoDescription:
       "OCR de PDF online y gratis: haz que los PDF escaneados se puedan buscar y copiar. 19 idiomas; los archivos se eliminan justo después de procesarlos.",
@@ -7758,7 +7758,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué precisión tiene?",
         answer:
-          "Los escaneos limpios y rectos a 300 ppp dan muy buenos resultados. La escritura a mano, las fotos de baja resolución y las fuentes poco comunes se reconocen con menos fiabilidad.",
+          "Los escaneos limpios a 300 ppp dan muy buenos resultados, y las páginas inclinadas hasta 15° se enderezan primero. La escritura a mano, las fotos de baja resolución y las fuentes poco comunes se reconocen peor.",
       },
       {
         question: "¿Puedo convertir el resultado a Word?",

@@ -1004,8 +1004,152 @@ def parse_langs(lang: str) -> str:
     return "+".join(langs or ["eng"])
 
 
+# Straightens tilted scanned pages before OCR. Prints one JSON line: the tilt found on each scanned page and whether
+# it was corrected. Exit code 0 always when the PDF could be read; out.pdf is written only when at least one page was
+# turned. A scanned page is one picture covering (nearly) the whole page. Its tilt is the angle at which the rows of
+# dark pixels line up best (text lines give sharp peaks), searched up to 15 degrees either way. Pages are only turned
+# when the lines are clear (a photo or drawing has no such peak) and the tilt is at least 0.3 degrees.
+STRAIGHTEN = r'''
+import io, json, sys
+import numpy as np
+import pymupdf
+from PIL import Image, JpegImagePlugin
+
+MAX_TILT = 15.0
+MIN_TILT = 0.3
+# How much sharper the best angle must be than a typical one before a page counts as lined text
+MIN_SHARPNESS = 1.6
+
+
+def otsu(a):
+    hist = np.bincount(a.ravel(), minlength=256).astype(float)
+    total = a.size
+    sum_all = np.dot(np.arange(256), hist)
+    w0 = np.cumsum(hist)
+    s0 = np.cumsum(np.arange(256) * hist)
+    w1 = total - w0
+    with np.errstate(divide='ignore', invalid='ignore'):
+        between = (s0 / w0 - (sum_all - s0) / w1) ** 2 * w0 * w1
+    return int(np.nanargmax(between))
+
+
+def tilt_of(gray):
+    """(angle in degrees to turn the picture counter-clockwise to straighten it, sharpness); None when no lines"""
+    scale = 1200 / max(gray.size)
+    if scale < 1:
+        gray = gray.resize((max(1, int(gray.width * scale)), max(1, int(gray.height * scale))), Image.BILINEAR)
+    a = np.asarray(gray, dtype=np.uint8)
+    ink = a < otsu(a)
+    share = ink.mean()
+    if share < 0.002 or share > 0.4:
+        return None
+    ys, xs = np.nonzero(ink)
+    if len(ys) > 80000:
+        pick = np.random.default_rng(0).choice(len(ys), 80000, replace=False)
+        ys, xs = ys[pick], xs[pick]
+    ys = ys.astype(float) - a.shape[0] / 2
+    xs = xs.astype(float) - a.shape[1] / 2
+
+    def score(deg):
+        t = np.radians(deg)
+        rows = np.round(ys * np.cos(t) - xs * np.sin(t)).astype(int)
+        h = np.bincount(rows - rows.min())
+        return float(np.dot(h, h))
+
+    coarse = np.arange(-MAX_TILT, MAX_TILT + 0.001, 0.5)
+    sc = np.array([score(d) for d in coarse])
+    best = coarse[int(np.argmax(sc))]
+    fine = np.arange(best - 0.5, best + 0.5001, 0.05)
+    sf = np.array([score(d) for d in fine])
+    angle = float(fine[int(np.argmax(sf))])
+    sharpness = float(sf.max() / np.median(sc))
+    return angle, sharpness
+
+
+def page_picture(doc, page):
+    """The xref of the one picture covering the page, or None"""
+    imgs = page.get_images(full=True)
+    if len(imgs) != 1:
+        return None
+    xref = imgs[0][0]
+    rects = page.get_image_rects(xref)
+    if len(rects) != 1:
+        return None
+    area = abs(rects[0] & page.rect)
+    # Pictures with transparency or used as a stencil are left alone
+    if doc.xref_get_key(xref, 'SMask')[0] != 'null' or doc.xref_get_key(xref, 'ImageMask')[1] == 'true':
+        return None
+    return xref if area >= 0.9 * abs(page.rect) else None
+
+
+def put_back(doc, xref, turned, info):
+    """Write the straightened pixels into the same picture object: the page keeps one picture, in its place"""
+    for key in ('DecodeParms', 'Decode', 'JBIG2Globals'):
+        doc.xref_set_key(xref, key, 'null')
+    if info.get('bpc') == 1:
+        # Black-and-white scans stay black and white (1 bit per pixel, 1 = white as in DeviceGray)
+        bw = turned.convert('L').point(lambda v: 255 if v >= 128 else 0).convert('1')
+        doc.update_stream(xref, bw.tobytes(), compress=True)
+        doc.xref_set_key(xref, 'Filter', '/FlateDecode')
+        doc.xref_set_key(xref, 'ColorSpace', '/DeviceGray')
+        doc.xref_set_key(xref, 'BitsPerComponent', '1')
+    elif info.get('ext') == 'jpeg':
+        # The scan's own JPEG tables and colour sampling: the same quality and about the same size
+        out = io.BytesIO()
+        try:
+            orig = Image.open(io.BytesIO(info['image']))
+            turned.save(out, 'JPEG', qtables=orig.quantization, subsampling=JpegImagePlugin.get_sampling(orig), optimize=True)
+        except Exception:
+            out = io.BytesIO()
+            turned.save(out, 'JPEG', quality=85, optimize=True)
+        doc.update_stream(xref, out.getvalue(), compress=False)
+        doc.xref_set_key(xref, 'Filter', '/DCTDecode')
+    else:
+        doc.update_stream(xref, turned.tobytes(), compress=True)
+        doc.xref_set_key(xref, 'Filter', '/FlateDecode')
+        doc.xref_set_key(xref, 'ColorSpace', '/DeviceGray' if turned.mode == 'L' else '/DeviceRGB')
+        doc.xref_set_key(xref, 'BitsPerComponent', '8')
+
+
+def main(src, dst):
+    doc = pymupdf.open(src)
+    report = []
+    changed = False
+    for page in doc:
+        xref = page_picture(doc, page)
+        if not xref:
+            continue
+        info = doc.extract_image(xref)
+        pix = pymupdf.Pixmap(doc, xref)
+        if pix.alpha or pix.n - pix.alpha not in (1, 3):
+            continue
+        mode = 'L' if pix.n == 1 else 'RGB'
+        im = Image.frombytes(mode, (pix.width, pix.height), pix.samples)
+        found = tilt_of(im.convert('L'))
+        if not found:
+            report.append({'page': page.number + 1, 'tilt': None})
+            continue
+        angle, sharp = found
+        apply = sharp >= MIN_SHARPNESS and MIN_TILT <= abs(angle) <= MAX_TILT - 0.5
+        report.append({'page': page.number + 1, 'tilt': round(angle, 2), 'sharpness': round(sharp, 2), 'turned': apply})
+        if not apply:
+            continue
+        white = 255 if mode == 'L' else (255, 255, 255)
+        turned = im.rotate(angle, resample=Image.BICUBIC, expand=False, fillcolor=white)
+        put_back(doc, xref, turned, info)
+        changed = True
+    if changed:
+        doc.save(dst, garbage=3, deflate=True)
+    print(json.dumps({'changed': changed, 'pages': report}))
+
+
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2])
+'''
+
+
 @app.post("/v1/ocr")
-async def ocr(file: UploadFile, lang: str = "eng", deskew: str = "n"):
+async def ocr(file: UploadFile, lang: str = "eng", straighten: str = "n"):
     async with Job() as job:
         src = await save_upload(file, job)
         require(kind_of(src), {"pdf"})
@@ -1020,6 +1164,13 @@ async def ocr(file: UploadFile, lang: str = "eng", deskew: str = "n"):
             code, _ = await run("qpdf", "--decrypt", str(src), str(plain), cwd=job, ok_codes=(0, 3))
             if code == 0 and plain.exists():
                 src = plain
+        # Tilted scans (a phone photo of a page is often 5-10 degrees off) are read badly; their pages are turned
+        # straight first, up to 15 degrees. Only pages that are one scanned picture, and only when the text lines are clear
+        if straighten == "y":
+            straight = job / "straight.pdf"
+            code, _ = await run(sys.executable, "-c", STRAIGHTEN, str(src), str(straight), cwd=job)
+            if code == 0 and straight.exists():
+                src = straight
         out = job / "out.pdf"
         langs = parse_langs(lang)
         # A plain PDF, not the default PDF/A: that conversion drops fillable form fields
@@ -1036,17 +1187,14 @@ async def ocr(file: UploadFile, lang: str = "eng", deskew: str = "n"):
                        "--output-type", "pdf", "--optimize", "1", "--jobs", "1", "-l", langs, str(src), str(target),
                        cwd=job, env={"TMPDIR": str(temp)})
         # --redo-ocr reads the pictures on every page and keeps real text. Not --skip-text: that skips a whole scanned
-        # page when anything on it, like a stamp or header, is already text.
-        # Straightening (--deskew) changes the page pictures, which --redo-ocr refuses: asked for, it runs with
-        # --skip-text, so pages that already have text are left as they are
-        straighten = ["--deskew"] if deskew == "y" else []
-        mode = "--skip-text" if straighten else "--redo-ocr"
-        code, err = await ocr_with(mode, out, "first", *straighten)
+        # page when anything on it, like a stamp or header, is already text
+        mode = "--redo-ocr"
+        code, err = await ocr_with(mode, out, "first")
         # It refuses some PDFs, such as fillable forms; --skip-text still reads their pages that have no text
         if code != 0 and "encrypt" not in err.lower():
             mode = "--skip-text"
             shutil.rmtree(job / "first", ignore_errors=True)
-            code, err = await ocr_with(mode, out, "first", *straighten)
+            code, err = await ocr_with(mode, out, "first")
         if code != 0 or not out.exists():
             raise JobError(422, "encrypted" if "encrypt" in err.lower() else "ocr_failed")
         # Photos with uneven light come back empty or as garbage. If Tesseract is unsure of any page, read the file
@@ -1054,7 +1202,7 @@ async def ocr(file: UploadFile, lang: str = "eng", deskew: str = "n"):
         first = ocr_confidence(job / "first")
         if any(sure < 40 or sure < 0.6 * total for total, sure in first):
             second = job / "second.pdf"
-            code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola", *straighten)
+            code, _ = await ocr_with(mode, second, "second", "--tesseract-thresholding", "sauvola")
             if code == 0 and second.exists() and sum(s for _, s in ocr_confidence(job / "second")) > sum(s for _, s in first):
                 out = second
         if NO_SPACE_LANGS & set(langs.split("+")):

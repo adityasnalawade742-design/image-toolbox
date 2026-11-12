@@ -106,6 +106,8 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   const [lang, setLang] = useState(OCR_LANG[locale] || 'eng');
   // A second language for pages that mix two, such as English and Chinese; empty for none
   const [lang2, setLang2] = useState('');
+  // Tilted scans are read far better once turned straight (5-15 degrees went from about half to 99% of the text)
+  const [straighten, setStraighten] = useState(true);
   // Protect PDF: what people may do once it's open, and the password that changes that
   const [allowPrint, setAllowPrint] = useState<'full' | 'low' | 'none'>('full');
   const [allowCopy, setAllowCopy] = useState(true);
@@ -157,7 +159,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
   // New settings make finished files stale, so the action button runs them again
   useEffect(() => {
     setQueue((q) => (q && q.some((x) => x.status === 'done') ? q.map((x) => (x.status === 'done' ? { ...x, status: 'pending', out: undefined } : x)) : q));
-  }, [preset, dpi, jpegQuality, gray, password, lang, lang2, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
+  }, [preset, dpi, jpegQuality, gray, password, lang, lang2, straighten, allowPrint, allowCopy, allowEdit, owner, pdfaLevel, fitSheet]);
   const pickMany = (list: File[]) => {
     if (list.length < 2) {
       if (list[0]) pick(list[0]);
@@ -222,7 +224,7 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
     const params = {
       ...cfg.params,
       ...(tool === 'compress-pdf' ? { preset, ...(preset === 'custom' ? { dpi: String(dpi), quality: String(jpegQuality) } : {}), ...(gray ? { gray: 'y' } : {}) } : {}),
-      ...(tool === 'ocr-pdf' ? { lang: lang2 && lang2 !== lang ? `${lang}+${lang2}` : lang } : {}),
+      ...(tool === 'ocr-pdf' ? { lang: lang2 && lang2 !== lang ? `${lang}+${lang2}` : lang, ...(straighten ? { straighten: 'y' } : {}) } : {}),
       ...(tool === 'pdf-to-pdfa' ? { level: pdfaLevel } : {}),
       ...(tool === 'excel-to-pdf' && fitSheet ? { fit: 'sheet' } : {}),
     };
@@ -557,6 +559,13 @@ export function DocumentToolWorkspace({ tool }: { tool: DocTool }) {
               ))}
           </select>
           <p id="doc-lang2-hint" className="text-[13px] text-graphite">{t('ctl.doc.ocrLang2Hint')}</p>
+          <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer text-ink pt-3">
+            <input type="checkbox" className="mt-1" checked={straighten} onChange={(e) => setStraighten(e.target.checked)} />
+            <span>
+              <span className="block">{t('ctl.doc.straighten')}</span>
+              <span className="block text-[13px] text-graphite">{t('ctl.doc.straightenNote')}</span>
+            </span>
+          </label>
         </div>
       )}
       {!['compress-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf'].includes(tool) && <p className="text-[14px] text-graphite leading-relaxed">{t(cfg.hint)}</p>}

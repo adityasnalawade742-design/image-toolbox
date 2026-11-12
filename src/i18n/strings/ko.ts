@@ -1411,6 +1411,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "두 번째 언어(선택)",
   'ctl.doc.ocrLangNone': "없음",
   'ctl.doc.ocrLang2Hint': "영어와 러시아어처럼 두 언어가 섞인 페이지에 쓰세요. 인식에 시간이 조금 더 걸려요.",
+  'ctl.doc.straighten': '기울어진 페이지 바로 세우기',
+  'ctl.doc.straightenNote': '최대 15°까지 기울어진 스캔 페이지를 글자를 읽기 전에 바로 세워서 훨씬 정확해져요. 페이지를 그대로 두려면 선택을 해제하세요.',
   'ctl.doc.errBusy': '지금은 서버가 바빠요. 1분 뒤에 다시 시도해 주세요.',
   'ctl.doc.errTooLarge': '이 파일은 30 MB보다 커요.',
   'ctl.doc.errRate': '짧은 시간에 요청이 너무 많아요. 1분 정도 기다린 뒤 다시 시도해 주세요.',

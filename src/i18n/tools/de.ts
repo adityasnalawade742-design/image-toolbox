@@ -7732,7 +7732,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF-OCR",
     tagline: "Mach ein gescanntes PDF durchsuchbar und markierbar, indem sein Text erkannt wird. Kostenlos, ohne Anmeldung.",
     intro:
-      "PDF-OCR erkennt den Text in einem gescannten PDF und fügt ihn als unsichtbare Ebene hinzu, sodass du den Text durchsuchen, markieren und kopieren kannst, während die Seiten genau gleich aussehen. Das ist praktisch für gescannte Verträge, Belege, Bücher und alte Dokumente. Wähle für die besten Ergebnisse die Sprache des Dokuments; Seiten, die schon Text enthalten, bleiben unverändert. Die Erkennung läuft mit Tesseract und OCRmyPDF auf unserem Server, und die Datei wird direkt danach gelöscht.",
+      "PDF-OCR erkennt den Text in einem gescannten PDF und fügt ihn als unsichtbare Ebene hinzu, sodass du den Text durchsuchen, markieren und kopieren kannst, während die Seiten genau gleich aussehen. Das ist praktisch für gescannte Verträge, Belege, Bücher und alte Dokumente. Wähle für die besten Ergebnisse die Sprache des Dokuments; Seiten, die schon Text enthalten, bleiben unverändert. Die Erkennung läuft mit Tesseract und OCRmyPDF auf unserem Server, und die Datei wird direkt danach gelöscht. Schiefe gescannte Seiten, etwa ein Handyfoto einer Seite, werden zuerst gerade gerichtet (bis 15°), was den Text viel genauer macht; wähle „Schiefe Seiten gerade richten“ ab, um jede Seite genau so zu lassen.",
     seoTitle: "PDF-OCR – gescannte PDFs durchsuchbar machen, kostenlos",
     seoDescription:
       "PDF durchsuchbar machen mit OCR, kostenlos online: Text in gescannten PDFs markierbar und kopierbar machen. 19 Sprachen; Dateien werden direkt danach gelöscht.",
@@ -7780,7 +7780,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Wie genau ist die Erkennung?",
         answer:
-          "Saubere, gerade Scans mit 300 dpi liefern sehr gute Ergebnisse. Handschrift, Fotos mit niedriger Auflösung und ungewöhnliche Schriften werden weniger zuverlässig erkannt.",
+          "Saubere Scans mit 300 dpi liefern sehr gute Ergebnisse, und Seiten mit bis zu 15° Schräglage werden zuerst gerade gerichtet. Handschrift, Fotos mit geringer Auflösung und ungewöhnliche Schriften werden weniger zuverlässig erkannt.",
       },
       {
         question: "Kann ich das Ergebnis in Word umwandeln?",

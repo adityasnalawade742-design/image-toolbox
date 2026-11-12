@@ -1412,6 +1412,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "İkinci dil (isteğe bağlı)",
   'ctl.doc.ocrLangNone': "Yok",
   'ctl.doc.ocrLang2Hint': "İngilizce ve Rusça gibi iki dilin karıştığı sayfalar için. Tanıma biraz daha uzun sürer.",
+  'ctl.doc.straighten': 'Eğik sayfaları düzelt',
+  'ctl.doc.straightenNote': '15°’ye kadar eğik taranmış sayfalar, metin okunmadan önce düzeltilir; bu, sonucu çok daha doğru yapar. Sayfaları olduğu gibi bırakmak için işareti kaldırın.',
   'ctl.doc.errBusy': 'Sunucu şu anda meşgul. Lütfen bir dakika sonra tekrar deneyin.',
   'ctl.doc.errTooLarge': 'Bu dosya 30 MB sınırını aşıyor.',
   'ctl.doc.errRate': 'Kısa sürede çok fazla istek gönderildi. Lütfen bir dakika bekleyip tekrar deneyin.',

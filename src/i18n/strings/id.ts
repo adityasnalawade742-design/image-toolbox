@@ -1416,6 +1416,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "Bahasa kedua (opsional)",
   'ctl.doc.ocrLangNone': "Tidak ada",
   'ctl.doc.ocrLang2Hint': "Untuk halaman yang mencampur dua bahasa, seperti Inggris dan Rusia. Pengenalan sedikit lebih lama.",
+  'ctl.doc.straighten': 'Luruskan halaman miring',
+  'ctl.doc.straightenNote': 'Halaman pindaian yang miring hingga 15° diluruskan sebelum teksnya dibaca, sehingga jauh lebih akurat. Hapus centang untuk membiarkan halaman persis seperti semula.',
   'ctl.doc.errBusy': 'Server sedang sibuk. Silakan coba lagi dalam satu menit.',
   'ctl.doc.errTooLarge': 'File ini lebih besar dari 30 MB.',
   'ctl.doc.errRate': 'Terlalu banyak permintaan dalam waktu singkat. Tunggu satu menit, lalu coba lagi.',

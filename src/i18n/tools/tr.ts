@@ -7711,7 +7711,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
     shortName: "PDF OCR",
     tagline: "Taranmış bir PDF'teki metni tanıyarak onu aranabilir ve seçilebilir hale getirin. Ücretsiz, kayıt gerekmez.",
     intro:
-      "PDF OCR, taranmış bir PDF'teki metni tanır ve görünmez bir katman olarak ekler; böylece sayfalar tamamen aynı görünürken metni arayabilir, seçebilir ve kopyalayabilirsiniz. Taranmış sözleşmeler, fişler, kitaplar ve eski belgeler için kullanışlıdır. En iyi sonuç için belgenin dilini seçin; zaten metin içeren sayfalar olduğu gibi bırakılır. Tanıma sunucumuzdaki Tesseract ve OCRmyPDF ile yapılır ve dosya hemen ardından silinir.",
+      "PDF OCR, taranmış bir PDF'teki metni tanır ve görünmez bir katman olarak ekler; böylece sayfalar tamamen aynı görünürken metni arayabilir, seçebilir ve kopyalayabilirsiniz. Taranmış sözleşmeler, fişler, kitaplar ve eski belgeler için kullanışlıdır. En iyi sonuç için belgenin dilini seçin; zaten metin içeren sayfalar olduğu gibi bırakılır. Tanıma sunucumuzdaki Tesseract ve OCRmyPDF ile yapılır ve dosya hemen ardından silinir. Telefonla çekilmiş bir sayfa gibi eğik taranmış sayfalar önce düzeltilir (15°’ye kadar); bu, metni çok daha doğru yapar. Her sayfayı olduğu gibi bırakmak için Eğik sayfaları düzelt işaretini kaldırın.",
     seoTitle: "PDF OCR – Taranmış PDF'leri Aranabilir Yapın, Ücretsiz",
     seoDescription:
       "PDF OCR online ve ücretsiz: taranmış PDF'leri OCR ile aranabilir hale getirin ve metnini kopyalanabilir yapın. 19 dil; dosyalar hemen ardından silinir.",
@@ -7759,7 +7759,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Ne kadar doğru?",
         answer:
-          "300 dpi çözünürlükte temiz ve düz taramalar çok iyi sonuç verir. El yazısı, düşük çözünürlüklü fotoğraflar ve alışılmadık yazı tipleri daha az güvenilir şekilde tanınır.",
+          "300 dpi temiz taramalar çok iyi sonuç verir; 15°’ye kadar eğik sayfalar önce düzeltilir. El yazısı, düşük çözünürlüklü fotoğraflar ve alışılmadık yazı tipleri daha az güvenilir tanınır.",
       },
       {
         question: "Sonucu Word'e dönüştürebilir miyim?",

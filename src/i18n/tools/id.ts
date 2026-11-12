@@ -7707,7 +7707,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
     shortName: "OCR PDF",
     tagline: "Buat PDF hasil scan bisa dicari dan dipilih dengan mengenali teksnya. Gratis, tanpa daftar.",
     intro:
-      "OCR PDF mengenali teks dalam PDF hasil scan dan menambahkannya sebagai lapisan tak terlihat, sehingga Anda bisa mencari, memilih, dan menyalin teks sementara halamannya tetap terlihat sama persis. Alat ini berguna untuk kontrak, struk, buku, dan dokumen lama hasil scan. Pilih bahasa dokumen untuk hasil terbaik; halaman yang sudah berisi teks dibiarkan apa adanya. Pengenalan teks memakai Tesseract dan OCRmyPDF di server kami, dan file dihapus segera setelahnya.",
+      "OCR PDF mengenali teks dalam PDF hasil scan dan menambahkannya sebagai lapisan tak terlihat, sehingga Anda bisa mencari, memilih, dan menyalin teks sementara halamannya tetap terlihat sama persis. Alat ini berguna untuk kontrak, struk, buku, dan dokumen lama hasil scan. Pilih bahasa dokumen untuk hasil terbaik; halaman yang sudah berisi teks dibiarkan apa adanya. Pengenalan teks memakai Tesseract dan OCRmyPDF di server kami, dan file dihapus segera setelahnya. Halaman pindaian yang miring, seperti foto halaman dari ponsel, diluruskan dulu (hingga 15°), sehingga teksnya jauh lebih akurat; hapus centang Luruskan halaman miring untuk membiarkan setiap halaman persis seperti semula.",
     seoTitle: "OCR PDF Online – Buat PDF Scan Bisa Dicari, Gratis",
     seoDescription:
       "OCR PDF online dan gratis: buat PDF hasil scan bisa dicari dan disalin teksnya. Mendukung 19 bahasa; file dihapus segera setelah diproses. Tanpa daftar.",
@@ -7755,7 +7755,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Seberapa akurat hasilnya?",
         answer:
-          "Hasil scan yang bersih dan lurus pada 300 dpi memberikan hasil yang sangat baik. Tulisan tangan, foto beresolusi rendah, dan font yang tidak biasa dikenali dengan kurang andal.",
+          "Pindaian bersih 300 dpi memberi hasil sangat baik, dan halaman yang miring hingga 15° diluruskan dulu. Tulisan tangan, foto beresolusi rendah, dan huruf yang tidak umum dikenali kurang andal.",
       },
       {
         question: "Bisakah saya mengubah hasilnya ke Word?",

@@ -7738,7 +7738,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
     shortName: "OCR PDF",
     tagline: "Rendez un PDF scanné recherchable et sélectionnable grâce à la reconnaissance de texte. Gratuit, sans inscription.",
     intro:
-      "OCR PDF reconnaît le texte d’un PDF scanné et l’ajoute sous forme de couche invisible : vous pouvez rechercher, sélectionner et copier le texte, tandis que les pages restent exactement les mêmes. C’est utile pour les contrats, reçus, livres et anciens documents scannés. Choisissez la langue du document pour de meilleurs résultats ; les pages qui contiennent déjà du texte restent telles quelles. La reconnaissance utilise Tesseract et OCRmyPDF sur notre serveur, et le fichier est supprimé juste après.",
+      "OCR PDF reconnaît le texte d’un PDF scanné et l’ajoute sous forme de couche invisible : vous pouvez rechercher, sélectionner et copier le texte, tandis que les pages restent exactement les mêmes. C’est utile pour les contrats, reçus, livres et anciens documents scannés. Choisissez la langue du document pour de meilleurs résultats ; les pages qui contiennent déjà du texte restent telles quelles. La reconnaissance utilise Tesseract et OCRmyPDF sur notre serveur, et le fichier est supprimé juste après. Les pages numérisées inclinées, comme la photo d’une feuille prise au téléphone, sont d’abord redressées (jusqu’à 15°), ce qui rend le texte bien plus exact ; décochez Redresser les pages inclinées pour garder chaque page telle quelle.",
     seoTitle: "OCR PDF – rendre un PDF scanné recherchable, gratuit",
     seoDescription:
       "OCR PDF en ligne et gratuit : rendez vos PDF scannés recherchables et copiables. 19 langues reconnues ; fichiers supprimés juste après le traitement.",
@@ -7786,7 +7786,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle est sa précision ?",
         answer:
-          "Des scans nets et droits à 300 dpi donnent de très bons résultats. L’écriture manuscrite, les photos basse résolution et les polices inhabituelles sont reconnues de façon moins fiable.",
+          "Des numérisations nettes à 300 ppp donnent de très bons résultats, et les pages inclinées jusqu’à 15° sont d’abord redressées. L’écriture manuscrite, les photos en basse résolution et les polices inhabituelles sont moins bien reconnues.",
       },
       {
         question: "Puis-je convertir le résultat en Word ?",

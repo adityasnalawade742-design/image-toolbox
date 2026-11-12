@@ -7697,7 +7697,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
     shortName: "OCR PDF",
     tagline: "Torne um PDF digitalizado pesquisável e selecionável reconhecendo o texto. Grátis e sem cadastro.",
     intro:
-      "O OCR PDF reconhece o texto de um PDF digitalizado e o adiciona como uma camada invisível, para que você possa pesquisar, selecionar e copiar o texto enquanto as páginas continuam exatamente iguais. É útil para contratos digitalizados, recibos, livros e documentos antigos. Escolha o idioma do documento para ter os melhores resultados; páginas que já contêm texto ficam como estão. O reconhecimento usa o Tesseract e o OCRmyPDF no nosso servidor, e o arquivo é apagado logo depois.",
+      "O OCR PDF reconhece o texto de um PDF digitalizado e o adiciona como uma camada invisível, para que você possa pesquisar, selecionar e copiar o texto enquanto as páginas continuam exatamente iguais. É útil para contratos digitalizados, recibos, livros e documentos antigos. Escolha o idioma do documento para ter os melhores resultados; páginas que já contêm texto ficam como estão. O reconhecimento usa o Tesseract e o OCRmyPDF no nosso servidor, e o arquivo é apagado logo depois. Páginas digitalizadas tortas, como a foto de uma folha tirada no celular, são endireitadas primeiro (até 15°), o que deixa o texto muito mais preciso; desmarque Endireitar páginas tortas para manter cada página exatamente como estava.",
     seoTitle: "OCR PDF – Torne PDFs digitalizados pesquisáveis, grátis",
     seoDescription:
       "OCR PDF online e grátis: torne PDFs digitalizados pesquisáveis e com texto copiável. 19 idiomas; os arquivos são apagados logo depois.",
@@ -7745,7 +7745,7 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual é a precisão?",
         answer:
-          "Digitalizações limpas e retas em 300 dpi dão resultados muito bons. Letra à mão, fotos de baixa resolução e fontes incomuns são reconhecidas com menos confiabilidade.",
+          "Digitalizações limpas a 300 dpi dão ótimos resultados, e páginas inclinadas até 15° são endireitadas primeiro. Letra cursiva, fotos de baixa resolução e fontes incomuns são reconhecidas com menos precisão.",
       },
       {
         question: "Posso converter o resultado para Word?",

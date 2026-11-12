@@ -40,7 +40,8 @@ describe('numbers split into pieces', () => {
   });
 });
 
-describe('redaction boxes cover the words completely', () => {
+// These render real PDF pages with pdf.js, which can take over 5 s when the whole suite runs at once
+describe('redaction boxes cover the words completely', { timeout: 15000 }, () => {
   // A real PDF, read back with pdf.js the way the editor reads it
   async function boxesFor(draw: (page: import('pdf-lib').PDFPage, font: import('pdf-lib').PDFFont) => void, opts: Parameters<typeof findBoxes>[2], rotate = 0) {
     const doc = await PDFDocument.create();

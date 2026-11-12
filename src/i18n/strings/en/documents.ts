@@ -66,6 +66,8 @@ export const documentStrings = {
   'ctl.doc.ocrLang2': 'Second language (optional)',
   'ctl.doc.ocrLangNone': 'None',
   'ctl.doc.ocrLang2Hint': 'For pages that mix two languages, such as English and Russian. Reading takes a little longer.',
+  'ctl.doc.straighten': 'Straighten tilted pages',
+  'ctl.doc.straightenNote': 'Scanned pages tilted up to 15° are turned straight before the text is read, which makes it far more accurate. Untick to keep the pages exactly as they are.',
   'ctl.doc.errBusy': 'The server is busy right now. Please try again in a minute.',
   'ctl.doc.errTooLarge': 'This file is larger than 30 MB.',
   'ctl.doc.errRate': 'Too many requests in a short time. Please wait a minute and try again.',

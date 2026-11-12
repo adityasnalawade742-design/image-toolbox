@@ -1416,6 +1416,8 @@ export const strings = {
   'ctl.doc.ocrLang2': "Seconda lingua (facoltativa)",
   'ctl.doc.ocrLangNone': "Nessuna",
   'ctl.doc.ocrLang2Hint': "Per pagine che mescolano due lingue, come inglese e russo. Il riconoscimento richiede un po’ più di tempo.",
+  'ctl.doc.straighten': 'Raddrizza le pagine storte',
+  'ctl.doc.straightenNote': 'Le pagine scansionate inclinate fino a 15° vengono raddrizzate prima di leggere il testo, che risulta molto più preciso. Togli la spunta per lasciare le pagine come sono.',
   'ctl.doc.errBusy': 'Il server è occupato al momento. Riprova tra un minuto.',
   'ctl.doc.errTooLarge': 'Questo file supera i 30 MB.',
   'ctl.doc.errRate': 'Troppe richieste in poco tempo. Attendi un minuto e riprova.',
