@@ -50,6 +50,24 @@ export function getWebSiteSchema(locale: string, description: string, url: strin
   };
 }
 
+/** A collection page listing tools: what the page is, and the tools on it in order */
+export function getCollectionSchema(name: string, description: string, url: string, locale: string, items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url,
+    inLanguage: locale,
+    isPartOf: { '@id': `${SITE_CONFIG.url}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, url: item.url })),
+    },
+  };
+}
+
 export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',

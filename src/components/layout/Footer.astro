@@ -2,6 +2,8 @@
 import Logo from './Logo.astro';
 import { TOOLS } from '../../config/tools';
 import { CATEGORY_INK, CATEGORY_ORDER } from '../../config/inks';
+import { HUB_FOR_CATEGORY } from '../../config/hubs';
+import { getHubTexts } from '../../i18n/hubs';
 import { SITE_CONFIG } from '../../config/site';
 import { useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { getLocalizedHomeData } from '../../i18n/home';
@@ -57,12 +59,18 @@ const infoLinks = [
       <ul class="text-[15px]">
         {CATEGORY_ORDER.map((cat) => (
           <li>
-            <a href={translatePath(`/#${cat}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
+            <a href={translatePath(HUB_FOR_CATEGORY[cat] ? `/${HUB_FOR_CATEGORY[cat]}` : `/#${cat}`)} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
               <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK[cat].className]} aria-hidden="true"></span>
               {categoryNames[cat]}
             </a>
           </li>
         ))}
+        <li>
+          <a href={translatePath('/qr-code-and-barcode-tools')} class="flex items-center gap-2 min-h-[36px] text-ink hover:underline">
+            <span class:list={['w-2 h-2 shrink-0 rounded-full', CATEGORY_INK.utilities.className]} aria-hidden="true"></span>
+            {getHubTexts(locale).pages['qr-code-and-barcode-tools'].h1}
+          </a>
+        </li>
       </ul>
     </div>
   </div>

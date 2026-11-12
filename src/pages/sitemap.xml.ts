@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE_CONFIG } from '../config/site';
 import { TOOLS } from '../config/tools';
+import { HUBS } from '../config/hubs';
 import { SUPPORTED_LOCALES } from '../i18n/locales';
 import type { SupportedLocale } from '../i18n/types';
 
@@ -27,6 +28,14 @@ export const GET: APIRoute = async () => {
       changefreq: 'weekly',
       priority: tool.popular ? '0.9' : '0.8',
     });
+  }
+
+  // Collection pages, in every language
+  for (const hub of HUBS) {
+    urls.push({ loc: `${baseUrl}/${hub.slug}`, lastmod: now, changefreq: 'weekly', priority: '0.9' });
+    for (const locale of nonDefaultLocales) {
+      urls.push({ loc: `${baseUrl}/${locale}/${hub.slug}`, lastmod: now, changefreq: 'weekly', priority: '0.8' });
+    }
   }
 
   // Information pages (English only)

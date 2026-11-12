@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 import { SITE_CONFIG } from '../config/site';
 import { CATEGORIES, SERVER_TOOLS, TOOLS, type ToolCategory } from '../config/tools';
 import { getLocalizedToolContent } from '../i18n/tools';
+import { HUBS } from '../config/hubs';
+import { enHubs } from '../i18n/hubs/en';
 import { SUPPORTED_LOCALES } from '../i18n/locales';
 
 /**
@@ -21,6 +23,9 @@ export const GET: APIRoute = async () => {
     `Every tool page is available in ${languages.length} languages (${languages.join(', ')}); add the language code to the address, for example ${base}/es/compress-image.`,
     '',
   ];
+  lines.push('## Collections', '', 'Pages that list related tools together, grouped by task:', '');
+  for (const hub of HUBS) lines.push(`- [${enHubs.pages[hub.slug].h1}](${base}/${hub.slug}): ${enHubs.pages[hub.slug].description}`);
+  lines.push('');
   for (const [id, cat] of Object.entries(CATEGORIES) as [ToolCategory, (typeof CATEGORIES)[ToolCategory]][]) {
     const tools = TOOLS.filter((t) => t.category === id);
     if (!tools.length) continue;
