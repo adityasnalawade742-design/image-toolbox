@@ -9,7 +9,7 @@ export const frHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Outils PDF gratuits : fusionner, convertir, modifier, signer',
-      description: '57 outils PDF gratuits : fusionner, diviser, compresser, convertir depuis et vers Word ou des images, modifier, signer et protéger. Sans inscription.',
+      description: '58 outils PDF gratuits : fusionner, diviser, compresser, convertir depuis et vers Word ou des images, modifier, signer et protéger. Sans inscription.',
       h1: 'Outils PDF',
       intro:
         'Tout pour travailler avec des PDF, gratuitement et sans compte : fusionnez et divisez des fichiers, transformez Word, Excel, PowerPoint et des images en PDF et inversement, modifiez, remplissez, signez et protégez-les. La plupart des outils fonctionnent dans votre navigateur, donc le PDF ne quitte pas votre appareil ; les quelques outils qui ont besoin de notre serveur sont signalés, et leurs fichiers sont supprimés aussitôt.',

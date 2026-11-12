@@ -9,7 +9,7 @@ export const idHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Alat PDF Gratis: Gabung, Konversi, Edit, dan Tanda Tangan',
-      description: '57 alat PDF gratis: gabungkan, pisahkan, kompres, konversi dari dan ke Word atau gambar, edit, tanda tangani, dan lindungi. Tanpa daftar.',
+      description: '58 alat PDF gratis: gabungkan, pisahkan, kompres, konversi dari dan ke Word atau gambar, edit, tanda tangani, dan lindungi. Tanpa daftar.',
       h1: 'Alat PDF',
       intro:
         'Semua untuk bekerja dengan PDF, gratis dan tanpa akun: gabungkan dan pisahkan file, ubah Word, Excel, PowerPoint, dan gambar menjadi PDF dan sebaliknya, edit, isi, tanda tangani, dan lindungi. Sebagian besar alat berjalan di browser, jadi PDF tidak meninggalkan perangkat Anda; beberapa alat yang memerlukan server kami diberi tanda, dan filenya langsung dihapus setelah selesai.',

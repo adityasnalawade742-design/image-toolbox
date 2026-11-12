@@ -7682,6 +7682,33 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "pdf-to-excel": {
+    "name": "PDF to Excel",
+    "shortName": "PDF → Excel",
+    "tagline": "Turn the tables in a PDF into an Excel spreadsheet (XLSX), with numbers and dates as real values. Free, with no sign-up.",
+    "intro": "PDF to Excel finds the tables in a PDF and puts them in an XLSX spreadsheet you can sort, filter and calculate with in Excel, Google Sheets or LibreOffice. It handles tables with lines and tables made only of aligned text, such as bank statements and reports, and joins a table that continues over several pages into one, without its repeated header. Numbers, amounts and percentages become real numbers that keep their look, and dates become real dates when the column makes the order of day and month clear. A PDF without tables gives one row per line of text. Scanned PDFs are only pictures of pages, so run them through OCR PDF first. The conversion runs on our server, and the file is deleted right after.",
+    "seoTitle": "PDF to Excel Converter – Tables to XLSX, Free",
+    "seoDescription": "Convert PDF tables to an editable Excel XLSX file for free. Bank statements and reports, with numbers kept as numbers. No sign-up.",
+    "keywords": ["pdf to excel", "convert pdf to excel", "pdf to xlsx", "pdf table to excel", "bank statement pdf to excel"],
+    "howToSteps": [
+      { "title": "Choose your PDF", "description": "Drop or choose a PDF up to 30 MB." },
+      { "title": "Convert", "description": "Click Convert to Excel. If you like, put each table on its own sheet first." },
+      { "title": "Use the spreadsheet", "description": "Open the downloaded XLSX in Excel, Google Sheets or LibreOffice." },
+    ],
+    "features": [
+      { "title": "Real numbers and dates", "description": "Amounts and percentages work in formulas, and dates can be sorted." },
+      { "title": "Tables over several pages", "description": "A table that continues on the next page stays one table, without the repeated header." },
+      { "title": "With or without lines", "description": "Finds tables with borders and tables made only of aligned columns of text." },
+      { "title": "Files deleted right away", "description": "Nothing is kept after the conversion." },
+    ],
+    "faqs": [
+      { "question": "Will the numbers work in formulas?", "answer": "Yes. Amounts such as 1,234.56, (45.00) or 12% become numbers that look the same, so you can add them up and sort them. Codes with leading zeros, such as 0042, and long account numbers stay text, so nothing is lost." },
+      { "question": "Can it convert a scanned PDF?", "answer": "A scanned PDF contains pictures of text, not text. Run it through OCR PDF first, then convert the searchable PDF to Excel." },
+      { "question": "What happens to dates?", "answer": "Dates become real dates when the column makes the order clear: 2025-03-17, or 17/03/2025 when some day in the column is above 12. A column with only dates such as 01/02/2025, which can be read two ways, stays text, so no date is changed by mistake." },
+      { "question": "Is my file uploaded?", "answer": "Yes. This tool needs our server, so the file is sent over an encrypted connection, processed, and deleted as soon as the result is sent back. It is never stored, shared or looked at. Most other tools on this site run entirely in your browser." },
+      { "question": "Is there a size limit?", "answer": "Files can be up to 30 MB. Very large or complex files can take up to a couple of minutes." },
+    ],
+  },
   "compress-pdf": {
     "name": "Compress PDF",
     "shortName": "Compress PDF",

@@ -9,7 +9,7 @@ export const deHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Kostenlose PDF-Tools: zusammenfügen, umwandeln, signieren',
-      description: '57 kostenlose PDF-Tools: zusammenfügen, teilen, komprimieren, aus und in Word oder Bilder umwandeln, bearbeiten, signieren und schützen. Ohne Anmeldung.',
+      description: '58 kostenlose PDF-Tools: zusammenfügen, teilen, komprimieren, aus und in Word oder Bilder umwandeln, bearbeiten, signieren und schützen. Ohne Anmeldung.',
       h1: 'PDF-Tools',
       intro:
         'Alles für die Arbeit mit PDFs, kostenlos und ohne Konto: Dateien zusammenfügen und teilen, Word, Excel, PowerPoint und Bilder in PDFs umwandeln und zurück, bearbeiten, ausfüllen, signieren und schützen. Die meisten Tools laufen in deinem Browser, das PDF bleibt also auf deinem Gerät; die wenigen, die unseren Server brauchen, sind gekennzeichnet, und ihre Dateien werden gleich danach gelöscht.',

@@ -9,7 +9,7 @@ export const esHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Herramientas PDF gratis: unir, convertir, editar y firmar',
-      description: '57 herramientas PDF gratis: une, divide y comprime PDF, convierte a y desde Word o imágenes, edita, firma y protege. Sin registro ni marcas de agua.',
+      description: '58 herramientas PDF gratis: une, divide y comprime PDF, convierte a y desde Word o imágenes, edita, firma y protege. Sin registro ni marcas de agua.',
       h1: 'Herramientas PDF',
       intro:
         'Todo para trabajar con PDF, gratis y sin cuenta: une y divide archivos, pasa Word, Excel, PowerPoint e imágenes a PDF y al revés, edita, rellena, firma y protege. La mayoría de las herramientas funcionan en tu navegador, así que el PDF no sale de tu dispositivo; las pocas que necesitan nuestro servidor están marcadas, y sus archivos se borran justo después.',

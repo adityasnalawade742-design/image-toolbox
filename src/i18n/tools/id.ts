@@ -7483,6 +7483,33 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF ke Excel",
+    shortName: "PDF → Excel",
+    tagline: "Ubah tabel di PDF menjadi spreadsheet Excel (XLSX), dengan angka dan tanggal sebagai nilai asli. Gratis, tanpa daftar.",
+    intro: "PDF ke Excel menemukan tabel di dalam PDF dan memasukkannya ke file XLSX yang bisa diurutkan, difilter, dan dipakai dalam rumus di Excel, Google Sheets, atau LibreOffice. Alat ini menangani tabel bergaris dan tabel yang hanya berupa teks rata, seperti rekening koran dan laporan, serta menggabungkan tabel yang berlanjut ke beberapa halaman menjadi satu, tanpa judul kolom yang berulang. Angka, nominal, dan persentase menjadi angka asli dengan tampilan yang sama, dan tanggal menjadi tanggal asli bila kolomnya menunjukkan urutan hari dan bulan dengan jelas. PDF tanpa tabel menghasilkan satu baris untuk setiap baris teks. PDF hasil pindaian hanyalah gambar halaman, jadi jalankan dulu lewat OCR PDF. Konversi berjalan di server kami, dan file langsung dihapus sesudahnya.",
+    seoTitle: "PDF ke Excel – Ubah Tabel ke XLSX, Gratis",
+    seoDescription: "Ubah tabel di PDF menjadi file Excel XLSX yang bisa diedit, gratis. Rekening koran dan laporan, angka tetap angka. Tanpa daftar.",
+    keywords: ["pdf ke excel", "ubah pdf ke excel", "pdf ke xlsx", "tabel pdf ke excel", "rekening koran pdf ke excel"],
+    howToSteps: [
+      { title: "Pilih PDF", description: "Letakkan atau pilih PDF hingga 30 MB." },
+      { title: "Ubah", description: "Klik Ubah ke Excel. Jika mau, aktifkan dulu Taruh setiap tabel di sheet sendiri." },
+      { title: "Pakai spreadsheet-nya", description: "Buka file XLSX yang diunduh di Excel, Google Sheets, atau LibreOffice." },
+    ],
+    features: [
+      { title: "Angka dan tanggal asli", description: "Nominal dan persentase bisa dipakai dalam rumus, dan tanggal bisa diurutkan." },
+      { title: "Tabel beberapa halaman", description: "Tabel yang berlanjut ke halaman berikutnya tetap menjadi satu, tanpa judul kolom yang berulang." },
+      { title: "Bergaris atau tidak", description: "Menemukan tabel berbingkai maupun tabel yang hanya berupa kolom teks rata." },
+      { title: "File langsung dihapus", description: "Tidak ada yang disimpan setelah konversi." },
+    ],
+    faqs: [
+      { question: "Apakah angkanya bisa dipakai dalam rumus?", answer: "Bisa. Nominal seperti 1.234,56, (45,00), atau 12% menjadi angka dengan tampilan yang sama, jadi bisa dijumlahkan dan diurutkan. Kode dengan nol di depan, seperti 0042, dan nomor rekening yang panjang tetap berupa teks agar tidak ada yang hilang." },
+      { question: "Bisakah mengubah PDF hasil pindaian?", answer: "PDF hasil pindaian berisi gambar teks, bukan teks. Jalankan dulu lewat OCR PDF, lalu ubah PDF yang sudah bisa dicari ke Excel." },
+      { question: "Bagaimana dengan tanggal?", answer: "Tanggal menjadi tanggal asli bila kolomnya menunjukkan urutan dengan jelas: 2025-03-17, atau 17/03/2025 bila ada hari di kolom itu yang lebih dari 12. Kolom yang hanya berisi tanggal seperti 01/02/2025, yang bisa dibaca dua cara, tetap berupa teks agar tidak ada tanggal yang tertukar." },
+      { question: "Apakah file saya diunggah?", answer: "Ya. Alat ini memerlukan server kami, jadi file dikirim melalui koneksi terenkripsi, diproses, lalu dihapus begitu hasilnya dikirim kembali. File tidak pernah disimpan, dibagikan, atau dilihat. Sebagian besar alat lain di situs ini berjalan sepenuhnya di browser Anda." },
+      { question: "Apakah ada batas ukuran?", answer: "File bisa berukuran hingga 30 MB. File yang sangat besar atau rumit bisa memakan waktu hingga sekitar dua menit." },
+    ],
+  },
   "compress-pdf": {
     name: "Kompres PDF",
     shortName: "Kompres PDF",

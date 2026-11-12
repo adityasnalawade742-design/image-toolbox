@@ -15,6 +15,7 @@ export const documentStrings = {
   'ctl.doc.hintPdf': 'A PDF file, up to 30 MB.',
   'ctl.doc.toPdf': 'Convert to PDF',
   'ctl.doc.toWord': 'Convert to Word',
+  'ctl.doc.toExcel': "Convert to Excel",
   'ctl.doc.compress': 'Compress PDF',
   'ctl.doc.protect': 'Protect PDF',
   'ctl.doc.unlock': 'Unlock PDF',
@@ -61,6 +62,9 @@ export const documentStrings = {
   'ctl.doc.pdfaLevelNote': '2b suits most uses. Choose 1b only when a portal or archive asks for it (transparency is flattened). 3b also allows attached files.',
   'ctl.doc.fitSheet': 'Fit each sheet on one page',
   'ctl.doc.fitSheetNote': 'Each sheet is scaled down to fit one page, so wide sheets aren’t cut across pages. Large sheets print small; hidden sheets stay out.',
+  'ctl.doc.sheetEach': "Put each table on its own sheet",
+  'ctl.doc.sheetEachNote': "Off: every table goes on one sheet, in the order of the PDF.",
+  'ctl.doc.sheetWord': "Table",
   'ctl.doc.unlockHint': 'Enter the password that opens this PDF. If it opens without one but won’t let you print or copy, leave this empty.',
   'ctl.doc.ocrLang': 'Language of the document',
   'ctl.doc.ocrLang2': 'Second language (optional)',
@@ -80,4 +84,5 @@ export const documentStrings = {
   'ctl.doc.errIncomplete': 'This PDF is incomplete: it was cut off, usually by a failed download or copy, and none of its pages can be recovered. Download it again from where you got it.',
   'ctl.doc.repairPartial': 'Only part of this PDF could be recovered. It was cut off before the end, so some pages or content are missing. If you can, download the original again.',
   'ctl.doc.errFailed': 'The file couldn’t be processed. It may be damaged or in an unusual format.',
+  'ctl.doc.errNoText': "This PDF has no text, only pictures of pages (a scan). Make it searchable with OCR PDF first, then convert that file.",
 } as const;

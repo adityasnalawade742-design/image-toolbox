@@ -15,6 +15,7 @@ export type DocErrorCode =
   | 'already_encrypted'
   | 'encrypted'
   | 'incomplete'
+  | 'no_text'
   | 'timeout'
   | 'failed';
 
@@ -62,6 +63,7 @@ const KNOWN: Record<string, DocErrorCode> = {
   already_encrypted: 'already_encrypted',
   encrypted: 'encrypted',
   incomplete: 'incomplete',
+  no_text: 'no_text',
   timeout: 'timeout',
 };
 

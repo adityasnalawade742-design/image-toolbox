@@ -9,7 +9,7 @@ export const trHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Ücretsiz PDF Araçları: Birleştir, Dönüştür, Düzenle, İmzala',
-      description: '57 ücretsiz PDF aracı: birleştirin, bölün, sıkıştırın, Word ya da resimlere ve onlardan dönüştürün, düzenleyin, imzalayın, koruyun. Kayıt yok.',
+      description: '58 ücretsiz PDF aracı: birleştirin, bölün, sıkıştırın, Word ya da resimlere ve onlardan dönüştürün, düzenleyin, imzalayın, koruyun. Kayıt yok.',
       h1: 'PDF araçları',
       intro:
         'PDF’lerle çalışmak için gereken her şey, ücretsiz ve hesapsız: dosyaları birleştirin ve bölün, Word, Excel, PowerPoint ve resimleri PDF’e, PDF’leri de onlara dönüştürün; düzenleyin, doldurun, imzalayın ve koruyun. Araçların çoğu tarayıcınızda çalışır, yani PDF cihazınızdan çıkmaz; sunucumuza ihtiyaç duyan birkaç araç işaretlidir ve dosyaları hemen ardından silinir.',

@@ -9,7 +9,7 @@ export const itHubs: HubTexts = {
   pages: {
     'pdf-tools': {
       title: 'Strumenti PDF gratis: unisci, converti, modifica e firma',
-      description: '57 strumenti PDF gratuiti: unisci, dividi e comprimi PDF, converti da e verso Word o immagini, modifica, firma e proteggi. Senza registrazione.',
+      description: '58 strumenti PDF gratuiti: unisci, dividi e comprimi PDF, converti da e verso Word o immagini, modifica, firma e proteggi. Senza registrazione.',
       h1: 'Strumenti PDF',
       intro:
         'Tutto per lavorare con i PDF, gratis e senza account: unisci e dividi file, trasforma Word, Excel, PowerPoint e immagini in PDF e viceversa, modifica, compila, firma e proteggi. La maggior parte degli strumenti funziona nel browser, quindi il PDF non lascia il tuo dispositivo; i pochi che richiedono il nostro server sono segnalati, e i loro file vengono eliminati subito dopo.',

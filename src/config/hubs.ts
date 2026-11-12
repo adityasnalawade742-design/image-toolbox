@@ -26,7 +26,7 @@ export const HUBS: Hub[] = [
     category: 'pdf-documents',
     groups: [
       { key: 'toPdf', slugs: ['word-to-pdf', 'excel-to-pdf', 'powerpoint-to-pdf', 'jpg-to-pdf', 'png-to-pdf', 'heic-to-pdf', 'tiff-to-pdf', 'scan-to-pdf', 'text-to-pdf', 'markdown-to-pdf'] },
-      { key: 'fromPdf', slugs: ['pdf-to-word', 'pdf-to-jpg', 'pdf-to-png', 'pdf-to-text', 'pdf-to-markdown', 'extract-images-from-pdf', 'pdf-to-pdfa', 'pdf-to-grayscale', 'ocr-pdf'] },
+      { key: 'fromPdf', slugs: ['pdf-to-word', 'pdf-to-excel', 'pdf-to-jpg', 'pdf-to-png', 'pdf-to-text', 'pdf-to-markdown', 'extract-images-from-pdf', 'pdf-to-pdfa', 'pdf-to-grayscale', 'ocr-pdf'] },
       { key: 'edit', slugs: ['edit-pdf', 'add-text-to-pdf', 'add-image-to-pdf', 'highlight-pdf', 'draw-on-pdf', 'add-shapes-to-pdf', 'add-links-to-pdf', 'whiteout-pdf', 'watermark-pdf', 'add-page-numbers-pdf', 'add-header-footer-pdf', 'add-background-to-pdf', 'add-bookmarks-to-pdf', 'fill-pdf-form'] },
       { key: 'pages', slugs: ['merge-pdf', 'split-pdf', 'extract-pdf-pages', 'organize-pdf', 'rotate-pdf', 'crop-pdf', 'delete-blank-pages-pdf', 'resize-pdf-pages', 'booklet-maker', 'n-up-pdf', 'overlay-pdf', 'flatten-pdf'] },
       { key: 'secure', slugs: ['sign-pdf', 'protect-pdf', 'unlock-pdf', 'redact-pdf', 'remove-pdf-metadata', 'edit-pdf-metadata', 'sanitize-pdf'] },

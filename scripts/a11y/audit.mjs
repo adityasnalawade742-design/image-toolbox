@@ -47,7 +47,7 @@ const INPUT = {
   'barcode-scanner': [S('qr.png')], 'add-shapes-to-pdf': [S('doc.pdf')], 'add-links-to-pdf': [S('doc.pdf')], 'whiteout-pdf': [S('doc.pdf')], 'redact-pdf': [S('doc.pdf')],
   'change-image-dpi': [S('photo.jpg')], 'signature-extractor': [S('signature-photo.jpg')], 'passport-photo-maker': [S('portrait.jpg')],
   'blur-background': [S('portrait.jpg')], 'change-background': [S('portrait.jpg')], 'image-to-text': [S('text.png')], 'qr-code-reader': [S('qr.png')],
-  'word-to-pdf': [S('sample.docx')], 'excel-to-pdf': [S('sample.xlsx')], 'powerpoint-to-pdf': [S('sample.pptx')], 'pdf-to-word': [S('doc.pdf')],
+  'word-to-pdf': [S('sample.docx')], 'excel-to-pdf': [S('sample.xlsx')], 'powerpoint-to-pdf': [S('sample.pptx')], 'pdf-to-word': [S('doc.pdf')], 'pdf-to-excel': [S('doc.pdf')],
   'compress-pdf': [S('doc.pdf')], 'protect-pdf': [S('doc.pdf')], 'unlock-pdf': [S('protected.pdf')], 'ocr-pdf': [S('scan.pdf')], 'pdf-to-pdfa': [S('doc.pdf')], 'repair-pdf': [S('doc.pdf')],
 };
 const PORT = 9433;

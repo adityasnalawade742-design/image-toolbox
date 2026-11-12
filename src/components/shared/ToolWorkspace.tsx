@@ -318,6 +318,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'excel-to-pdf': <DocumentToolWorkspace tool="excel-to-pdf" />,
     'powerpoint-to-pdf': <DocumentToolWorkspace tool="powerpoint-to-pdf" />,
     'pdf-to-word': <DocumentToolWorkspace tool="pdf-to-word" />,
+    'pdf-to-excel': <DocumentToolWorkspace tool="pdf-to-excel" />,
     'compress-pdf': <DocumentToolWorkspace tool="compress-pdf" />,
     'protect-pdf': <DocumentToolWorkspace tool="protect-pdf" />,
     'unlock-pdf': <DocumentToolWorkspace tool="unlock-pdf" />,

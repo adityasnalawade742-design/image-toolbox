@@ -11,6 +11,7 @@ import asyncio
 import hmac
 import json
 import os
+import re
 import secrets
 import shutil
 import sys
@@ -559,6 +560,11 @@ with zipfile.ZipFile(out) as z, zipfile.ZipFile(small, "w", zipfile.ZIP_DEFLATED
 __import__("os").replace(small, out)
 """
 DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+# PDF to Excel runs as its own script next to this file
+PDF_TO_XLSX = str(Path(__file__).with_name("pdf_to_xlsx.py"))
+# The word sheets are named with ("Table", "Tabelle"...): letters and spaces only, so it is a valid sheet name
+SHEET_WORD = re.compile(r"[^\W\d_][^\W_]*(?: [^\W\d_][^\W_]*)*")
 
 
 def require(kind: str, allowed: set[str]):
@@ -866,8 +872,10 @@ with zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED) as out:
 # ---------- endpoints ----------
 
 @app.post("/v1/convert")
-async def convert(file: UploadFile, to: str = "pdf", fit: str = ""):
-    if to not in ("pdf", "docx") or fit not in ("", "sheet"):
+async def convert(file: UploadFile, to: str = "pdf", fit: str = "", sheets: str = "one", word: str = "Table"):
+    if to not in ("pdf", "docx", "xlsx") or fit not in ("", "sheet") or sheets not in ("one", "each"):
+        raise JobError(400, "bad_target")
+    if len(word) > 20 or not SHEET_WORD.fullmatch(word):
         raise JobError(400, "bad_target")
     async with Job() as job:
         src = await save_upload(file, job)
@@ -911,6 +919,18 @@ async def convert(file: UploadFile, to: str = "pdf", fit: str = ""):
             if code != 0 or not out.exists():
                 raise JobError(422, "convert_failed")
             return respond(out, job, PDF, "converted.pdf")
+        elif to == "xlsx":
+            # Tables become cells: ruled and text-aligned tables, joined across pages, numbers and dates as values
+            require(kind, {"pdf"})
+            await refuse_if_password_needed(src, job)
+            named = src.rename(job / "input.pdf")
+            out = job / "tables.xlsx"
+            code, _ = await run(sys.executable, PDF_TO_XLSX, str(named), str(out), sheets, word, cwd=job)
+            if code == 3:
+                raise JobError(422, "no_text")
+            if code != 0 or not out.exists():
+                raise JobError(422, "convert_failed")
+            return respond(out, job, XLSX, "converted.xlsx")
         else:
             require(kind, {"pdf"})
             await refuse_if_password_needed(src, job)

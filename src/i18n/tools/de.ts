@@ -7508,6 +7508,33 @@ export const deTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF in Excel",
+    shortName: "PDF → Excel",
+    tagline: "Mach aus den Tabellen eines PDFs eine Excel-Tabelle (XLSX), mit Zahlen und Datumsangaben als echte Werte. Kostenlos, ohne Anmeldung.",
+    intro: "PDF in Excel findet die Tabellen in einem PDF und legt sie in einer XLSX-Datei ab, die du in Excel, Google Sheets oder LibreOffice sortieren, filtern und für Formeln nutzen kannst. Es erkennt Tabellen mit Linien und Tabellen, die nur aus ausgerichtetem Text bestehen, etwa Kontoauszüge und Berichte, und fügt eine Tabelle, die über mehrere Seiten geht, zu einer zusammen, ohne ihre wiederholte Kopfzeile. Zahlen, Beträge und Prozentwerte werden zu echten Zahlen in ihrer gewohnten Darstellung, und Datumsangaben werden zu echten Daten, wenn die Spalte die Reihenfolge von Tag und Monat eindeutig macht. Ein PDF ohne Tabellen ergibt eine Zeile pro Textzeile. Gescannte PDFs sind nur Bilder von Seiten; mach sie zuerst mit PDF-OCR durchsuchbar. Die Umwandlung läuft auf unserem Server, und die Datei wird gleich danach gelöscht.",
+    seoTitle: "PDF in Excel umwandeln – Tabellen als XLSX, kostenlos",
+    seoDescription: "Wandle die Tabellen eines PDFs kostenlos in eine bearbeitbare Excel-Datei (XLSX) um. Kontoauszüge und Berichte, Zahlen bleiben Zahlen.",
+    keywords: ["pdf in excel umwandeln", "pdf in excel", "pdf in xlsx", "pdf tabelle in excel", "kontoauszug pdf in excel"],
+    howToSteps: [
+      { title: "PDF wählen", description: "Zieh ein PDF bis 30 MB hierher oder wähle es aus." },
+      { title: "Umwandeln", description: "Klick auf „In Excel umwandeln“. Wenn du willst, leg vorher jede Tabelle auf ein eigenes Blatt." },
+      { title: "Tabelle nutzen", description: "Öffne die heruntergeladene XLSX-Datei in Excel, Google Sheets oder LibreOffice." },
+    ],
+    features: [
+      { title: "Echte Zahlen und Daten", description: "Beträge und Prozentwerte funktionieren in Formeln, und Daten lassen sich sortieren." },
+      { title: "Tabellen über mehrere Seiten", description: "Eine Tabelle, die auf der nächsten Seite weitergeht, bleibt eine Tabelle, ohne die wiederholte Kopfzeile." },
+      { title: "Mit oder ohne Linien", description: "Findet Tabellen mit Rahmen und Tabellen aus ausgerichteten Textspalten." },
+      { title: "Dateien sofort gelöscht", description: "Nach der Umwandlung wird nichts aufbewahrt." },
+    ],
+    faqs: [
+      { question: "Funktionieren die Zahlen in Formeln?", answer: "Ja. Beträge wie 1.234,56, (45,00) oder 12 % werden zu Zahlen, die genauso aussehen, sodass du sie addieren und sortieren kannst. Kennungen mit führenden Nullen wie 0042 und lange Kontonummern bleiben Text, damit nichts verloren geht." },
+      { question: "Kann es ein gescanntes PDF umwandeln?", answer: "Ein gescanntes PDF enthält Bilder von Text, keinen Text. Mach es zuerst mit PDF-OCR durchsuchbar und wandle dann das durchsuchbare PDF in Excel um." },
+      { question: "Was passiert mit Datumsangaben?", answer: "Datumsangaben werden zu echten Daten, wenn die Spalte die Reihenfolge eindeutig macht: 2025-03-17, oder 17.03.2025, wenn ein Tag in der Spalte größer als 12 ist. Eine Spalte nur mit Daten wie 01.02.2025, die man auf zwei Arten lesen kann, bleibt Text, damit kein Datum versehentlich vertauscht wird." },
+      { question: "Wird meine Datei hochgeladen?", answer: "Ja. Dieses Tool braucht unseren Server. Die Datei wird also über eine verschlüsselte Verbindung gesendet, verarbeitet und gelöscht, sobald das Ergebnis zurückgeschickt ist. Sie wird nie gespeichert, weitergegeben oder angesehen. Die meisten anderen Tools auf dieser Website laufen komplett in deinem Browser." },
+      { question: "Gibt es eine Größenbeschränkung?", answer: "Dateien dürfen bis zu 30 MB groß sein. Sehr große oder komplexe Dateien können bis zu ein paar Minuten dauern." },
+    ],
+  },
   "compress-pdf": {
     name: "PDF komprimieren",
     shortName: "PDF komprimieren",

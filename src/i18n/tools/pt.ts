@@ -7479,6 +7479,33 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "pdf-to-excel": {
+    name: "PDF para Excel",
+    shortName: "PDF → Excel",
+    tagline: "Transforme as tabelas de um PDF em uma planilha do Excel (XLSX), com números e datas como valores reais. Grátis e sem cadastro.",
+    intro: "PDF para Excel encontra as tabelas de um PDF e as coloca em uma planilha XLSX que você pode ordenar, filtrar e usar em fórmulas no Excel, no Google Planilhas ou no LibreOffice. Funciona com tabelas com linhas e com tabelas feitas só de texto alinhado, como extratos bancários e relatórios, e junta em uma só a tabela que continua em várias páginas, sem repetir o cabeçalho. Números, valores e porcentagens viram números de verdade com a mesma aparência, e as datas viram datas quando a coluna deixa clara a ordem de dia e mês. Um PDF sem tabelas gera uma linha para cada linha de texto. PDFs digitalizados são só imagens de páginas, então passe-os antes pelo OCR PDF. A conversão é feita no nosso servidor e o arquivo é apagado logo em seguida.",
+    seoTitle: "PDF para Excel – tabelas em XLSX, grátis",
+    seoDescription: "Converta as tabelas de um PDF em um arquivo Excel XLSX editável, grátis. Extratos bancários e relatórios, com números como números. Sem cadastro.",
+    keywords: ["pdf para excel", "converter pdf para excel", "pdf para xlsx", "tabela pdf para excel", "extrato bancário pdf para excel"],
+    howToSteps: [
+      { title: "Escolha seu PDF", description: "Solte ou escolha um PDF de até 30 MB." },
+      { title: "Converta", description: "Clique em Converter para Excel. Se quiser, coloque antes cada tabela em sua própria planilha." },
+      { title: "Use a planilha", description: "Abra o XLSX baixado no Excel, no Google Planilhas ou no LibreOffice." },
+    ],
+    features: [
+      { title: "Números e datas reais", description: "Valores e porcentagens funcionam em fórmulas, e as datas podem ser ordenadas." },
+      { title: "Tabelas em várias páginas", description: "Uma tabela que continua na página seguinte fica unida, sem o cabeçalho repetido." },
+      { title: "Com ou sem linhas", description: "Encontra tabelas com bordas e tabelas feitas só de colunas de texto alinhado." },
+      { title: "Arquivos apagados na hora", description: "Nada fica guardado depois da conversão." },
+    ],
+    faqs: [
+      { question: "Os números funcionam em fórmulas?", answer: "Sim. Valores como 1.234,56, (45,00) ou 12% viram números com a mesma aparência, então você pode somá-los e ordená-los. Códigos com zeros à esquerda, como 0042, e números de conta longos continuam como texto, para nada se perder." },
+      { question: "Dá para converter um PDF digitalizado?", answer: "Um PDF digitalizado contém imagens do texto, não texto. Passe-o primeiro pelo OCR PDF e depois converta o PDF pesquisável para Excel." },
+      { question: "O que acontece com as datas?", answer: "As datas viram datas de verdade quando a coluna deixa a ordem clara: 2025-03-17, ou 17/03/2025 quando algum dia da coluna passa de 12. Uma coluna só com datas como 01/02/2025, que podem ser lidas de dois jeitos, continua como texto, para nenhuma data ser trocada por engano." },
+      { question: "Meu arquivo é enviado?", answer: "Sim. Esta ferramenta precisa do nosso servidor, então o arquivo é enviado por uma conexão criptografada, processado e apagado assim que o resultado é devolvido. Ele nunca é armazenado, compartilhado nem visualizado. A maioria das outras ferramentas deste site funciona inteiramente no seu navegador." },
+      { question: "Há um limite de tamanho?", answer: "Os arquivos podem ter até 30 MB. Arquivos muito grandes ou complexos podem levar um ou dois minutos." },
+    ],
+  },
   "compress-pdf": {
     name: "Comprimir PDF",
     shortName: "Comprimir PDF",
