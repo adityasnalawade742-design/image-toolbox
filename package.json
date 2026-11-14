@@ -10,7 +10,7 @@
     "check": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "wrangler deploy && node scripts/indexnow.mjs",
+    "deploy": "wrangler deploy && node scripts/smoke.mjs && node scripts/indexnow.mjs",
     "indexnow:all": "node scripts/indexnow.mjs --all",
     "deploy:redirect": "wrangler deploy --config redirect/wrangler.json",
     "a11y": "node scripts/a11y/audit.mjs",

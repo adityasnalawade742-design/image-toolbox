@@ -1,0 +1,25 @@
+# Every 2 hours: pages, redirects and real server jobs on tadafile.com. A failed run emails the repo owner (GitHub's
+# default for failed scheduled workflows), so an outage is noticed within two hours.
+name: Live site check
+
+on:
+  schedule:
+    - cron: '23 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/smoke.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/smoke.mjs https://tadafile.com
