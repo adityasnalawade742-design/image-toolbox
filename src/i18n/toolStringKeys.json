@@ -2269,6 +2269,9 @@
    "ctl.refine.undo"
   ],
   "image-to-text": [
+   "ctl.doc.ocrLang2",
+   "ctl.doc.ocrLang2Hint",
+   "ctl.doc.ocrLangNone",
    "ctl.ocr.copy",
    "ctl.ocr.copyFailed",
    "ctl.ocr.download",
@@ -5048,6 +5051,9 @@
    "ctl.topdf.letter"
   ],
   "ocr-multiple-images": [
+   "ctl.doc.ocrLang2",
+   "ctl.doc.ocrLang2Hint",
+   "ctl.doc.ocrLangNone",
    "ctl.list.add",
    "ctl.list.moveDown",
    "ctl.list.moveUp",

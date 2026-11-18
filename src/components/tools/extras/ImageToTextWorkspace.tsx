@@ -8,7 +8,8 @@ import { loadImageFile, type LoadedImage } from '../../../lib/canvas/loadImage';
 import { FullSizeView, urlImage } from '../../shared/MediaViewer';
 import { fitWithinPixels } from '../../../lib/canvas/limits';
 import { downloadBlob } from '../../../lib/canvas/engine';
-import { OCR_LANGS, OCR_LANG_NAMES, OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang, type OcrProgress } from '../../../lib/ocr/ocr';
+import { OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang, type OcrLangs, type OcrProgress } from '../../../lib/ocr/ocr';
+import { OcrLanguages, ocrLangs } from './OcrLanguages';
 
 const ACCEPT = 'image/jpeg,image/png,image/webp,image/tiff,.tif,.tiff,image/heic,image/heif,.heic,.heif,image/bmp,image/gif';
 // Below this mean confidence the text usually has mistakes worth warning about
@@ -19,6 +20,7 @@ export function ImageToTextWorkspace() {
   const locale = useLocale();
   const [image, setImage] = useState<LoadedImage | null>(null);
   const [lang, setLang] = useState<OcrLang>(OCR_LANG_FOR_LOCALE[locale] || 'eng');
+  const [lang2, setLang2] = useState<OcrLang | null>(null);
   const [text, setText] = useState('');
   const [confidence, setConfidence] = useState<number | null>(null);
   const [progress, setProgress] = useState<OcrProgress | null>(null);
@@ -28,7 +30,7 @@ export function ImageToTextWorkspace() {
   const inputRef = useRef<HTMLInputElement>(null);
   const seq = useRef(0);
 
-  const read = async (img: LoadedImage, l: OcrLang) => {
+  const read = async (img: LoadedImage, l: OcrLangs) => {
     const mySeq = ++seq.current;
     setError(null);
     setStatus('');
@@ -61,7 +63,7 @@ export function ImageToTextWorkspace() {
         if (prev) URL.revokeObjectURL(prev.url);
         return img;
       });
-      read(img, lang);
+      read(img, ocrLangs(lang, lang2));
     } catch {
       setError(t('ws.errDecode'));
     }
@@ -77,7 +79,7 @@ export function ImageToTextWorkspace() {
   if (!image) {
     return (
       <div className="space-y-3">
-        <ProofDropZone onFiles={(files) => load(files[0])} onPick={() => preloadOcr(lang)} accept={ACCEPT} hint={t('ctl.ocr.dropHint')} />
+        <ProofDropZone onFiles={(files) => load(files[0])} onPick={() => preloadOcr(ocrLangs(lang, lang2))} accept={ACCEPT} hint={t('ctl.ocr.dropHint')} />
         {error && (
           <p role="alert" className="text-[15px] text-accent-red">
             {error}
@@ -105,29 +107,18 @@ export function ImageToTextWorkspace() {
 
   const panel = (
     <>
-      <div className="space-y-2">
-        <label htmlFor="ocr-lang" className="slug block">
-          {t('ctl.ocr.language')}
-        </label>
-        <select
-          id="ocr-lang"
-          value={lang}
-          disabled={busy}
-          onChange={(e) => {
-            const l = e.target.value as OcrLang;
-            setLang(l);
-            read(image, l);
-          }}
-          className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
-        >
-          {OCR_LANGS.map((l) => (
-            <option key={l} value={l}>
-              {OCR_LANG_NAMES[l]}
-            </option>
-          ))}
-        </select>
-        <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.ocr.languageNote')}</p>
-      </div>
+      <OcrLanguages
+        id="ocr-lang"
+        lang={lang}
+        lang2={lang2}
+        disabled={busy}
+        onChange={(l, l2) => {
+          setLang(l);
+          setLang2(l2);
+          read(image, ocrLangs(l, l2));
+        }}
+        selectClass="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink"
+      />
       <button type="button" onClick={copy} disabled={busy || !text} className="btn-rule w-full disabled:opacity-60">
         {copied ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
         <span>{copied ? t('ws.copiedShort') : t('ctl.ocr.copy')}</span>
