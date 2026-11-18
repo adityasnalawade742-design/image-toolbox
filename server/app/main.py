@@ -214,6 +214,68 @@ def jpeg_qfactor(quality: int) -> float:
     """Ghostscript's JPEG QFactor for a 1-100 quality, with libjpeg's scaling (QFactor 1.0 is quality 50). The presets
     above are quality 62 (0.76) and 75 (0.5) on this scale."""
     return round(50 / quality if quality < 50 else (200 - 2 * quality) / 100, 3)
+
+
+def jpeg_quality(qfactor: float) -> int:
+    """The 1-100 quality for a Ghostscript QFactor (the inverse of jpeg_qfactor)"""
+    return round(50 / qfactor if qfactor > 1 else 100 - 50 * qfactor)
+
+
+# Ghostscript picks JPEG or lossless for each picture by how it looks, and now and then takes a photo for line art (a
+# product shot on a plain background): stored lossless at the new resolution, that one picture can be most of the file
+# (1.5 MB of 1.2 MB measured, against 60-80 KB for each other photo). A picture that was a JPEG in the original is
+# already lossy, so it goes back to JPEG at the preset's quality, like the other photos. Pictures are matched to the
+# original by where they sit on the page; masks, transparency and palettes are left alone. Prints how many were changed
+# and writes <out>.jpeg if any were. python -c JPEG_AGAIN original.pdf out.pdf quality
+JPEG_AGAIN = """
+import sys
+import pymupdf
+
+pymupdf.TOOLS.mupdf_display_errors(False)
+source, path, quality = sys.argv[1], sys.argv[2], int(sys.argv[3])
+src = pymupdf.open(source)
+doc = pymupdf.open(path)
+if src.page_count != doc.page_count:
+    print(0)
+    sys.exit(0)
+
+
+def is_jpeg(d, xref):
+    f = d.xref_get_key(xref, "Filter")[1]
+    return "DCTDecode" in f or "JPXDecode" in f
+
+
+def same(a, b):
+    return all(abs(u - v) < 1 for u, v in zip(a, b))
+
+
+changed = 0
+for page, before in zip(doc, src):
+    jpegs = [i["bbox"] for i in before.get_image_info(xrefs=True) if i["xref"] and is_jpeg(src, i["xref"])]
+    if not jpegs:
+        continue
+    for info in page.get_image_info(xrefs=True):
+        xref = info["xref"]
+        if not xref or is_jpeg(doc, xref) or not any(same(info["bbox"], r) for r in jpegs):
+            continue
+        get = lambda key: doc.xref_get_key(xref, key)
+        if (get("SMask")[0] != "null" or get("Mask")[0] != "null" or get("Decode")[0] != "null"
+                or get("BitsPerComponent")[1] != "8" or "Indexed" in get("ColorSpace")[1]):
+            continue
+        pix = pymupdf.Pixmap(doc, xref)
+        if pix.alpha or pix.n not in (1, 3):
+            continue
+        jpeg = pix.tobytes("jpeg", jpg_quality=quality)
+        if len(jpeg) >= 0.8 * len(doc.xref_stream_raw(xref)):
+            continue
+        doc.update_stream(xref, jpeg, compress=False)
+        doc.xref_set_key(xref, "Filter", "/DCTDecode")
+        doc.xref_set_key(xref, "DecodeParms", "null")
+        changed += 1
+if changed:
+    doc.save(path + ".jpeg", garbage=1)
+print(changed)
+"""
 # PDF/A only keeps annotations marked for printing, and most links aren't
 MARK_ANNOTS_PRINTABLE = """
 import sys, pikepdf
@@ -988,6 +1050,12 @@ async def compress(file: UploadFile, preset: str = "ebook", dpi: int = 150, qual
                 "-c", f"<< /ColorACSImageDict << /QFactor {q} /Blend 1 /HSamples [2 1 1 2] /VSamples [2 1 1 2] >> /GrayACSImageDict << /QFactor {q} /Blend 1 /HSamples [1 1 1 1] /VSamples [1 1 1 1] >> >> setdistillerparams", "-f",
                 str(src), cwd=job,
             )
+            if code == 0 and out.exists():
+                # A photo Ghostscript kept lossless goes back to JPEG; if this step fails, Ghostscript's file is used
+                again, _ = await run(sys.executable, "-c", JPEG_AGAIN, str(src), str(out), str(jpeg_quality(q)), cwd=job)
+                smaller = Path(str(out) + ".jpeg")
+                if again == 0 and smaller.exists():
+                    smaller.replace(out)
         if code != 0 or not out.exists():
             raise JobError(422, "compress_failed")
         before, after = src.stat().st_size, out.stat().st_size
