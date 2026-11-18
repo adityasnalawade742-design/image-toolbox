@@ -69,8 +69,12 @@ async function quantisePng(img: ImageData, quality: number): Promise<ArrayBuffer
   const image = new ImagequantImage(new Uint8Array(img.data.buffer, img.data.byteOffset, img.data.byteLength), img.width, img.height, 0);
   const iq = new Imagequant();
   try {
-    // Best effort up to the target: never aborts, uses fewer colours when the picture allows
-    iq.set_quality(0, Math.max(1, Math.min(100, Math.round(quality))));
+    // Best effort up to the target: never aborts, uses fewer colours when the picture allows. libimagequant's scale
+    // judges the average error, which barely counts the bands and dither grain a smooth gradient gets from too few
+    // colours, so the target is set 10 above the quality asked for. Measured at the default (85, so 95 here): a graphic
+    // with gradients kept 108 colours instead of 39 (SSIM 0.965 -> 0.997) in a file no larger; a screenshot went from
+    // SSIM 0.9993 to 0.9998 and grew 14%; a photo that needs all 256 colours was unchanged
+    iq.set_quality(0, Math.max(1, Math.min(100, Math.round(quality) + 10)));
     iq.set_speed(4);
     const png = iq.process(image);
     return png.buffer.slice(png.byteOffset, png.byteOffset + png.byteLength) as ArrayBuffer;
