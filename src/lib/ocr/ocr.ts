@@ -4,6 +4,7 @@
  */
 import { createWorker, type Worker } from 'tesseract.js';
 import assets from '../ai/modelAssets.json';
+import { findColumns, type OcrLine } from './columns';
 import { tidyCjk } from './tidyCjk';
 
 /** Tesseract codes: the site's languages, then others; the language data is ~0.5-6 MB each and cached after the first use */
@@ -124,18 +125,39 @@ export async function recognizeText(image: HTMLCanvasElement, lang: OcrLang, onP
       await w.reinitialize(lang, 1);
       workerLang = lang;
     }
+    const tidy = (text: string) => clean(CJK_LANGS.includes(lang) ? tidyCjk(text) : text);
     const read = async (src: HTMLCanvasElement, sauvola = false): Promise<OcrResult> => {
       // Tesseract's thresholding_method: 0 is its default Otsu, 2 is Sauvola
       if (sauvola) await w.setParameters({ thresholding_method: '2' });
       try {
         const { data } = await w.recognize(src);
-        return { text: clean(CJK_LANGS.includes(lang) ? tidyCjk(data.text) : data.text), confidence: data.confidence };
+        return { text: tidy(data.text), confidence: data.confidence };
       } finally {
         if (sauvola) await w.setParameters({ thresholding_method: '0' });
       }
     };
-    let best = await read(image);
-    if (best.confidence >= RETRY_BELOW) return best;
+    // The first reading also keeps its word boxes, to tell whether the text is set in columns (see columns.ts)
+    const first = (await w.recognize(image, {}, { text: true, blocks: true })).data;
+    let best: OcrResult = { text: tidy(first.text), confidence: first.confidence };
+    if (best.confidence >= RETRY_BELOW) {
+      const lines: OcrLine[] = (first.blocks || []).flatMap((b) => b.paragraphs.flatMap((p) => p.lines));
+      const layout = findColumns(lines, image.width, image.height);
+      if (!layout) return best;
+      // Columns read one at a time; a heading over them and a footer under them keep their first reading
+      listener = null;
+      onProgress?.({ stage: 'recognizing', fraction: 1 });
+      const columns: OcrResult[] = [];
+      for (const rectangle of layout.columns) {
+        const { data } = await w.recognize(image, { rectangle });
+        columns.push({ text: tidy(data.text), confidence: data.confidence });
+      }
+      const confidence = columns.reduce((sum, c) => sum + c.confidence, 0) / columns.length;
+      // A clearly less confident reading by columns is a sign the split was wrong: the first reading stands
+      if (confidence < best.confidence - RETRY_MARGIN) return best;
+      const edge = (ls: OcrLine[]) => tidy(ls.map((l) => l.text).join('\n'));
+      const text = [edge(layout.before), ...columns.map((c) => c.text), edge(layout.after)].filter(Boolean).join('\n\n');
+      return { text, confidence };
+    }
     // Further passes keep the bar full rather than restarting it
     listener = null;
     onProgress?.({ stage: 'recognizing', fraction: 1 });
