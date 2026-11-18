@@ -7,7 +7,8 @@ import { PdfToolLayout, Segmented } from '../../shared/PdfToolLayout';
 import { useLocale, useT } from '../../shared/I18nContext';
 import { downloadBlob } from '../../../lib/canvas/engine';
 import { fitWithinPixels } from '../../../lib/canvas/limits';
-import { OCR_LANGS, OCR_LANG_NAMES, OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang } from '../../../lib/ocr/ocr';
+import { OCR_LANG_FOR_LOCALE, preloadOcr, recognizeText, type OcrLang } from '../../../lib/ocr/ocr';
+import { OcrLanguages, ocrLangs } from './OcrLanguages';
 import { detectPage } from '../../../lib/scan/detect';
 import { scanPage } from '../../../lib/scan/pipeline';
 import { toCanvas } from '../../../lib/photo/runPhoto';
@@ -43,6 +44,7 @@ export function OcrBatchWorkspace() {
   const locale = useLocale();
   const { items, setOrdered, addFiles, skipped, loading } = useImageList();
   const [lang, setLang] = useState<OcrLang>(OCR_LANG_FOR_LOCALE[locale] || 'eng');
+  const [lang2, setLang2] = useState<OcrLang | null>(null);
   const [straighten, setStraighten] = useState(false);
   const [results, setResults] = useState<Record<string, Result>>({});
   const [progress, setProgress] = useState<{ done: number; total: number; fraction: number } | null>(null);
@@ -51,7 +53,7 @@ export function OcrBatchWorkspace() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const settingsKey = `${lang}|${straighten}`;
+  const settingsKey = `${lang}|${lang2}|${straighten}`;
   const [readWith, setReadWith] = useState('');
 
   const fileInput = (
@@ -72,7 +74,7 @@ export function OcrBatchWorkspace() {
     return (
       <div className="space-y-3">
         {fileInput}
-        <ProofDropZone onFiles={addFiles} onPick={() => preloadOcr(lang)} accept={IMAGE_ACCEPT} multiple hint={t('ctl.ocrbatch.dropHint')} />
+        <ProofDropZone onFiles={addFiles} onPick={() => preloadOcr(ocrLangs(lang, lang2))} accept={IMAGE_ACCEPT} multiple hint={t('ctl.ocrbatch.dropHint')} />
         {loading && <p role="status" className="text-[15px] text-ink">{t('ws.rendering')}</p>}
         {skipped.length > 0 && <p role="alert" className="text-[15px] text-accent-red">{t('ctl.list.skipped', { names: skipped.join(', ') })}</p>}
       </div>
@@ -94,7 +96,7 @@ export function OcrBatchWorkspace() {
       for (const [i, it] of todo.entries()) {
         setProgress({ done: i, total: todo.length, fraction: 0 });
         try {
-          const r = await recognizeText(source(it, straighten), lang, (p) => setProgress({ done: i, total: todo.length, fraction: p.stage === 'recognizing' ? p.fraction : 0 }));
+          const r = await recognizeText(source(it, straighten), ocrLangs(lang, lang2), (p) => setProgress({ done: i, total: todo.length, fraction: p.stage === 'recognizing' ? p.fraction : 0 }));
           next[it.id] = { text: r.text, confidence: r.confidence };
         } catch {
           next[it.id] = { text: '', confidence: 0, error: true };
@@ -144,15 +146,17 @@ export function OcrBatchWorkspace() {
   const panel = (
     <>
       <ImageOrderList items={items} onChange={setOrdered} onAdd={() => inputRef.current?.click()} view />
-      <div className="space-y-2">
-        <label htmlFor="ocrb-lang" className="slug block">{t('ctl.ocr.language')}</label>
-        <select id="ocrb-lang" value={lang} disabled={!!progress} onChange={(e) => setLang(e.target.value as OcrLang)} className="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink rounded-md">
-          {OCR_LANGS.map((l) => (
-            <option key={l} value={l}>{OCR_LANG_NAMES[l]}</option>
-          ))}
-        </select>
-        <p className="text-[13px] text-graphite leading-relaxed">{t('ctl.ocr.languageNote')}</p>
-      </div>
+      <OcrLanguages
+        id="ocrb-lang"
+        lang={lang}
+        lang2={lang2}
+        disabled={!!progress}
+        onChange={(l, l2) => {
+          setLang(l);
+          setLang2(l2);
+        }}
+        selectClass="w-full min-h-[40px] px-2.5 border border-ink bg-paper-bright text-[15px] text-ink rounded-md"
+      />
       <label className="flex items-start gap-2.5 min-h-[40px] cursor-pointer">
         <input type="checkbox" checked={straighten} disabled={!!progress} onChange={(e) => setStraighten(e.target.checked)} />
         <span className="text-ink">
