@@ -166,12 +166,123 @@ def cell_text(table, words):
 
 
 def rules_of(page):
-    """Ruling lines on the page: stroked paths, and the thin filled bars some programs draw borders with"""
+    """Ruling lines on the page, each as a thin rectangle with some area: the straight lines and rectangle edges of
+    stroked paths, and the thin filled bars some programs (browsers) draw borders with. A stroked line on its own has
+    no area, and an empty rectangle never intersects anything"""
     out = []
     for d in page.get_drawings():
         r = d["rect"]
-        if (d.get("color") is not None and d.get("width")) or (d.get("fill") is not None and (r.width < 3 or r.height < 3)):
+        if d.get("color") is not None and d.get("width"):
+            h = max(d["width"], 0.5) / 2
+            for item in d["items"]:
+                if item[0] == "l":
+                    a, b = item[1], item[2]
+                    out.append(pymupdf.Rect(min(a.x, b.x) - h, min(a.y, b.y) - h, max(a.x, b.x) + h, max(a.y, b.y) + h))
+                elif item[0] in ("re", "qu"):
+                    q = item[1] if item[0] == "re" else item[1].rect
+                    out += [pymupdf.Rect(q.x0 - h, q.y0 - h, q.x1 + h, q.y0 + h), pymupdf.Rect(q.x0 - h, q.y1 - h, q.x1 + h, q.y1 + h),
+                            pymupdf.Rect(q.x0 - h, q.y0 - h, q.x0 + h, q.y1 + h), pymupdf.Rect(q.x1 - h, q.y0 - h, q.x1 + h, q.y1 + h)]
+        elif d.get("fill") is not None and (r.width < 3 or r.height < 3):
             out.append(r)
+    return out
+
+
+def merge_xs(xs, tol=2.0):
+    out = []
+    for x in sorted(xs):
+        if out and x - out[-1] <= tol:
+            continue
+        out.append(x)
+    return out
+
+
+def near(x, xs, tol=2.0):
+    return any(abs(x - y) <= tol for y in xs)
+
+
+def ruled_tables(t, words, rules):
+    """A ruled table's cells from the rules actually drawn, or None to keep PyMuPDF's own cells. PyMuPDF 2.x also places
+    column edges where text alone suggests one (a right-aligned number under a left-aligned heading), and joins a table
+    to a differently ruled one just below it (an invoice's totals under its line items), so values land in the wrong
+    column. Here each row's cells are the spaces between the vertical rules that cross it; rows whose rules don't fit
+    with the rows above start a new table, and columns no horizontal rule runs over (the space between two tables side
+    by side) split one. A merged cell's text goes in its first column"""
+    box = pymupdf.Rect(t.bbox)
+    # PyMuPDF's box can sit a few points inside the outer border (measured 6 pt on a browser-printed invoice)
+    pad = 10
+    vs = [r for r in rules if r.width < 3 and r.height > 2 * r.width
+          and box.x0 - pad <= (r.x0 + r.x1) / 2 <= box.x1 + pad and r.y1 > box.y0 - 2 and r.y0 < box.y1 + 2]
+    hs = [r for r in rules if r.height < 3 and r.width > 2 * r.height and r.x1 > box.x0 - pad and r.x0 < box.x1 + pad]
+    if not vs:
+        return None
+    groups = []
+    for row in t.rows:
+        # A row's box also covers cells merged down from it; its own band ends where its shortest cell does
+        y0 = row.bbox[1]
+        y1 = min((c[3] for c in row.cells if c is not None), default=row.bbox[3])
+        ym = (y0 + y1) / 2
+        xs = merge_xs((r.x0 + r.x1) / 2 for r in vs if r.y0 - 1 <= ym <= r.y1 + 1)
+        xs = xs if len(xs) >= 2 else None
+        g = groups[-1] if groups else None
+        if g is not None and xs is not None and g["xs"] is not None:
+            # Fits when one row's rules are all among the other's (a merged cell leaves some out) and the outer edges agree
+            a, b = g["xs"], xs
+            fits = abs(a[0] - b[0]) <= 2 and abs(a[-1] - b[-1]) <= 2 and (all(near(x, a) for x in b) or all(near(x, b) for x in a))
+            if not fits:
+                g = None
+        if g is None:
+            g = {"xs": None, "rows": []}
+            groups.append(g)
+        if xs is not None:
+            g["xs"] = merge_xs((g["xs"] or []) + xs)
+        g["rows"].append((y0, y1, xs))
+    if any(g["xs"] is None for g in groups):
+        return None
+    out = []
+    # Each word goes in one cell only: a cell merged across rows sits on the line between them
+    used = set()
+    for g in groups:
+        U = g["xs"]
+        if U is None:
+            continue
+        gy0, gy1 = g["rows"][0][0], g["rows"][-1][1]
+        # Columns no horizontal rule runs over, inside the group: a gap between tables, where the group is split
+        def ruled_over(a, b):
+            m = (a + b) / 2
+            return any(h.x0 - 1 <= m <= h.x1 + 1 and gy0 - 2 <= (h.y0 + h.y1) / 2 <= gy1 + 2 for h in hs)
+        cols = [(U[k], U[k + 1]) for k in range(len(U) - 1)]
+        void = [not ruled_over(a, b) for a, b in cols] if hs else [False] * len(cols)
+        parts, cur = [], []
+        for k, c in enumerate(cols):
+            if void[k]:
+                if cur:
+                    parts.append(cur)
+                cur = []
+            else:
+                cur.append(c)
+        if cur:
+            parts.append(cur)
+        for part in parts:
+            px0, px1 = part[0][0], part[-1][1]
+            starts = [a for a, _ in part]
+            rows = []
+            for y0, y1, xs in g["rows"]:
+                edges = [x for x in (xs or U) if px0 - 2 <= x <= px1 + 2]
+                if len(edges) < 2:
+                    edges = [px0, px1]
+                row = [""] * len(part)
+                for a, b in zip(edges, edges[1:]):
+                    picked = [i for i, w in enumerate(words) if i not in used
+                              and a - 1 <= (w[0] + w[2]) / 2 <= b + 1 and y0 - 1 <= (w[1] + w[3]) / 2 <= y1 + 1]
+                    if not picked:
+                        continue
+                    used.update(picked)
+                    inside_cell = [words[i] for i in picked]
+                    k = min(range(len(starts)), key=lambda c: abs(starts[c] - a))
+                    text = " ".join(" ".join(s["text"] for s in ln["segs"]) for ln in lines_of(inside_cell))
+                    row[k] = (row[k] + " " + text).strip()
+                rows.append(row)
+            out.append(((px0, gy0, px1, gy1), rows))
     return out
 
 
@@ -185,10 +296,12 @@ def page_tables(page, carry=None):
         box = pymupdf.Rect(t.bbox) + (-2, -2, 2, 2)
         if sum(1 for r in rules if box.intersects(r)) < 2:
             continue
-        rows = clean(cell_text(t, all_words))
-        # One column is usually a box or rules around text, not a grid
-        if rows and len(rows[0]) >= 2:
-            found.append((tuple(t.bbox), rows, None))
+        parts = ruled_tables(t, all_words, rules) or [(tuple(t.bbox), cell_text(t, all_words))]
+        for bbox, rows in parts:
+            rows = clean(rows)
+            # One column is usually a box or rules around text, not a grid
+            if rows and len(rows[0]) >= 2:
+                found.append((bbox, rows, None))
     words = [w for w in all_words if not any(inside(w, t[0]) for t in found)]
     for bbox, rows, cols in borderless(words, carry, page.rect.height * 0.2):
         # Rows continuing the previous page's table keep its columns, even ones empty here
