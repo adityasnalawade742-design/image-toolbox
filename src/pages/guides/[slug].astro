@@ -1,0 +1,86 @@
+---
+// One guide: an English article, with the tools it is about linked at the end
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ToolIcon from '../../components/shared/ToolIcon.astro';
+import { TOOLS, SERVER_TOOLS } from '../../config/tools';
+import { CATEGORY_INK } from '../../config/inks';
+import { SITE_CONFIG } from '../../config/site';
+import { getAllLocalizedTools } from '../../i18n/tools';
+import { getBreadcrumbSchema } from '../../lib/seo/schema';
+import { guideDate } from '../../lib/guides';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const { title, description, published, updated, tools } = guide.data;
+const url = `${SITE_CONFIG.url}/guides/${guide.id}`;
+const locTools = getAllLocalizedTools('en');
+const linked = tools.map((slug) => TOOLS.find((t) => t.slug === slug)!);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published.toISOString().split('T')[0],
+    dateModified: (updated ?? published).toISOString().split('T')[0],
+    author: { '@type': 'Person', name: SITE_CONFIG.operator, url: `${SITE_CONFIG.url}/about` },
+    publisher: { '@type': 'Organization', name: SITE_CONFIG.name, url: SITE_CONFIG.url },
+    mainEntityOfPage: url,
+    inLanguage: 'en',
+  },
+  getBreadcrumbSchema([
+    { name: 'Home', url: `${SITE_CONFIG.url}/` },
+    { name: 'Guides', url: `${SITE_CONFIG.url}/guides` },
+    { name: title, url },
+  ]),
+];
+---
+
+<BaseLayout title={`${title} | ${SITE_CONFIG.name}`} description={description} canonicalUrl={url} alternates={false} jsonLd={jsonLd}>
+  <article class="max-w-[46rem] space-y-8">
+    <header class="space-y-3">
+      <nav aria-label="Breadcrumb" class="-my-1.5 flex flex-wrap items-center gap-x-2 text-[14px] text-graphite">
+        <a href="/" class="inline-flex items-center min-h-[36px] text-ink hover:underline">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/guides" class="inline-flex items-center min-h-[36px] text-ink hover:underline">Guides</a>
+      </nav>
+      <h1 class="font-condensed font-bold text-[34px] sm:text-[48px] leading-[1.02] tracking-[-0.01em] text-ink">{title}</h1>
+      <p class="text-[14px] text-graphite" data-measure>
+        By <a href="/about" class="text-ink underline hover:no-underline">{SITE_CONFIG.operator}</a> ·
+        {updated ? <>Updated <time datetime={updated.toISOString().split('T')[0]}>{guideDate(updated)}</time></> : <time datetime={published.toISOString().split('T')[0]}>{guideDate(published)}</time>}
+      </p>
+    </header>
+    <div class="prose-sheet">
+      <Content />
+    </div>
+    {linked.length > 0 && (
+      <section aria-labelledby="guide-tools" class="space-y-3">
+        <h2 id="guide-tools" class="font-condensed font-bold text-[26px] leading-tight text-ink border-b-2 border-ink pb-2">Tools in this guide</h2>
+        <ul class="grid sm:grid-cols-2 gap-x-5 gap-y-1">
+          {linked.map((tool) => (
+            <li>
+              <a href={`/${tool.slug}`} class="group flex items-start gap-3.5 rounded-md p-3 hover:bg-paper-stock transition-colors">
+                <span class:list={['w-10 h-10 shrink-0 rounded-md flex items-center justify-center', CATEGORY_INK[tool.category].tint]} aria-hidden="true">
+                  <ToolIcon name={tool.iconName} class="w-5 h-5" />
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[16px] font-semibold text-ink group-hover:underline">{locTools[tool.slug]?.name || tool.name}</span>
+                  <span class="block text-[14px] leading-snug text-graphite">{locTools[tool.slug]?.tagline || tool.description}</span>
+                  {SERVER_TOOLS.has(tool.slug) && <span class="mt-1 inline-block rounded-xs border border-pencil px-1.5 text-[12px] text-graphite">Uses our server</span>}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+    <p class="text-[15px]"><a href="/guides" class="text-ink underline hover:no-underline">More guides</a></p>
+  </article>
+</BaseLayout>

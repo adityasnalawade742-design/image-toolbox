@@ -38,6 +38,7 @@ export const trUi: Record<string, string> = {
   'consent.decline': 'Reddet',
   'consent.privacy': 'Gizlilik politikası',
   'footer.cookieSettings': 'Çerez ayarları',
+  'footer.guides': 'Rehberler',
   'footer.about': 'Hakkında',
   'footer.contact': 'İletişim',
   'footer.privacyPolicy': 'Gizlilik',

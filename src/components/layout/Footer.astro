@@ -24,6 +24,7 @@ const POPULAR = ['compress-image', 'resize-image', 'remove-background', 'heic-to
 const popularTools = POPULAR.flatMap((slug) => TOOLS.filter((tool) => tool.slug === slug));
 // Information pages exist in English only; other languages link to them
 const infoLinks = [
+  { href: '/guides', key: 'footer.guides' },
   { href: '/about', key: 'footer.about' },
   { href: '/contact', key: 'footer.contact' },
   { href: '/privacy', key: 'footer.privacyPolicy' },
