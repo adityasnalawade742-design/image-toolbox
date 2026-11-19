@@ -38,6 +38,7 @@ export const idUi: Record<string, string> = {
   'consent.decline': 'Tolak',
   'consent.privacy': 'Kebijakan privasi',
   'footer.cookieSettings': 'Pengaturan cookie',
+  'footer.guides': 'Panduan',
   'footer.about': 'Tentang',
   'footer.contact': 'Kontak',
   'footer.privacyPolicy': 'Privasi',

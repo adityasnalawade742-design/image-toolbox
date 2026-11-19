@@ -38,6 +38,7 @@ export const koUi: Record<string, string> = {
   'consent.decline': '거부',
   'consent.privacy': '개인정보처리방침',
   'footer.cookieSettings': '쿠키 설정',
+  'footer.guides': '가이드',
   'footer.about': '소개',
   'footer.contact': '문의',
   'footer.privacyPolicy': '개인정보 처리방침',

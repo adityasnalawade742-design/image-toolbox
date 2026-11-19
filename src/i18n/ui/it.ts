@@ -38,6 +38,7 @@ export const itUi: Record<string, string> = {
   'consent.decline': 'Rifiuta',
   'consent.privacy': 'Informativa sulla privacy',
   'footer.cookieSettings': 'Impostazioni cookie',
+  'footer.guides': 'Guide',
   'footer.about': 'Chi siamo',
   'footer.contact': 'Contatti',
   'footer.privacyPolicy': 'Privacy',

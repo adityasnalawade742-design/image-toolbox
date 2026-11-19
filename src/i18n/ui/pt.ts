@@ -38,6 +38,7 @@ export const ptUi: Record<string, string> = {
   'consent.decline': 'Recusar',
   'consent.privacy': 'Política de privacidade',
   'footer.cookieSettings': 'Configurações de cookies',
+  'footer.guides': 'Guias',
   'footer.about': 'Sobre',
   'footer.contact': 'Contato',
   'footer.privacyPolicy': 'Privacidade',

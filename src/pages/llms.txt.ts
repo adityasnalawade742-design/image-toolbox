@@ -5,6 +5,7 @@ import { getLocalizedToolContent } from '../i18n/tools';
 import { HUBS } from '../config/hubs';
 import { enHubs } from '../i18n/hubs/en';
 import { SUPPORTED_LOCALES } from '../i18n/locales';
+import { allGuides } from '../lib/guides';
 
 /**
  * /llms.txt (llmstxt.org): a plain summary of the site for AI assistants and answer engines, built from the same
@@ -35,6 +36,12 @@ export const GET: APIRoute = async () => {
       const summary = (text.tagline || t.description).trim();
       lines.push(`- [${text.name || t.name}](${base}/${t.slug}): ${summary}${SERVER_TOOLS.has(t.slug) ? ' (server)' : ''}`);
     }
+    lines.push('');
+  }
+  const guides = await allGuides();
+  if (guides.length) {
+    lines.push('## Guides', '');
+    for (const g of guides) lines.push(`- [${g.data.title}](${base}/guides/${g.id}): ${g.data.description}`);
     lines.push('');
   }
   lines.push(

@@ -38,6 +38,7 @@ export const esUi: Record<string, string> = {
   'consent.decline': 'Rechazar',
   'consent.privacy': 'Política de privacidad',
   'footer.cookieSettings': 'Configuración de cookies',
+  'footer.guides': 'Guías',
   'footer.about': 'Acerca de',
   'footer.contact': 'Contacto',
   'footer.privacyPolicy': 'Privacidad',

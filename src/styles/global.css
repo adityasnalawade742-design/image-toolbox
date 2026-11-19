@@ -142,6 +142,27 @@
   .prose-sheet code {
     @apply font-code text-[15px] text-ink bg-paper-stock px-1;
   }
+  .prose-sheet ol {
+    @apply list-decimal pl-6 space-y-2;
+  }
+  /* Guides: tables of measurements scroll sideways on a phone rather than widening the page */
+  .prose-sheet table {
+    @apply block w-full overflow-x-auto text-[15px] leading-snug border-collapse;
+  }
+  .prose-sheet th,
+  .prose-sheet td {
+    @apply border-b border-pencil px-3 py-2 text-left align-top;
+  }
+  .prose-sheet th {
+    @apply font-semibold text-ink border-b-2 border-ink whitespace-nowrap;
+  }
+  .prose-sheet td:first-child,
+  .prose-sheet th:first-child {
+    @apply pl-0;
+  }
+  .prose-sheet blockquote {
+    @apply border-l-2 border-ink pl-4 text-ink;
+  }
   /* Crop marks drawn just outside the element's corners (needs a little padding around it) */
   .crop-marks {
     --mark: 14px;

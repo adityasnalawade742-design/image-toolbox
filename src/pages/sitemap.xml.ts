@@ -4,6 +4,7 @@ import { TOOLS } from '../config/tools';
 import { HUBS } from '../config/hubs';
 import { SUPPORTED_LOCALES } from '../i18n/locales';
 import type { SupportedLocale } from '../i18n/types';
+import { allGuides } from '../lib/guides';
 
 export const GET: APIRoute = async () => {
   const baseUrl = SITE_CONFIG.url.replace(/\/$/, '');
@@ -41,6 +42,13 @@ export const GET: APIRoute = async () => {
   // Information pages (English only)
   for (const page of ['about', 'contact', 'privacy', 'terms', 'accessibility']) {
     urls.push({ loc: `${baseUrl}/${page}`, lastmod: now, changefreq: 'monthly', priority: '0.3' });
+  }
+
+  // Guides (English only), dated by their last update
+  const guides = await allGuides();
+  if (guides.length) urls.push({ loc: `${baseUrl}/guides`, lastmod: now, changefreq: 'weekly', priority: '0.6' });
+  for (const g of guides) {
+    urls.push({ loc: `${baseUrl}/guides/${g.id}`, lastmod: (g.data.updated ?? g.data.published).toISOString().split('T')[0], changefreq: 'monthly', priority: '0.6' });
   }
 
   // 3. Localized Homepages (8 locales)
