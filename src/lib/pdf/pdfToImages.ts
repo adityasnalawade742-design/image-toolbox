@@ -14,9 +14,11 @@ async function pdfjs() {
     // Even the legacy build needs this (Chrome 119, Firefox 121, Safari 17.4); without it PDFs hang instead of failing
     if (typeof Promise.withResolvers !== 'function') throw new Error('This browser is too old for pdf.js');
     // The legacy build includes polyfills: the standard one stops loading altogether on older phones and browsers
-    lib = (await import('pdfjs-dist/legacy/build/pdf.mjs')) as unknown as typeof import('pdfjs-dist');
+    // Kept only once both parts have loaded: a library without its worker setting would fail on every later PDF
+    const loaded = (await import('pdfjs-dist/legacy/build/pdf.mjs')) as unknown as typeof import('pdfjs-dist');
     const worker = await import('pdfjs-dist/legacy/build/pdf.worker.min.mjs?url');
-    lib.GlobalWorkerOptions.workerSrc = worker.default;
+    loaded.GlobalWorkerOptions.workerSrc = worker.default;
+    lib = loaded;
   }
   return lib;
 }

@@ -61,10 +61,18 @@ async function optimisePng(png: ArrayBuffer | ImageData, level = 2) {
 let quantizer: Promise<typeof import('./imagequantGlue')> | null = null;
 
 async function quantisePng(img: ImageData, quality: number): Promise<ArrayBuffer> {
-  quantizer ??= import('./imagequantGlue').then(async (glue) => {
-    await glue.ready();
-    return glue;
-  });
+  if (!quantizer) {
+    const loading = import('./imagequantGlue').then(async (glue) => {
+      await glue.ready();
+      return glue;
+    });
+    quantizer = loading;
+    // A failed download (a network blip) is tried again next time. Kept, it would leave every later PNG of the visit
+    // unreduced: the caller falls back to the browser's lossless PNG
+    loading.catch(() => {
+      if (quantizer === loading) quantizer = null;
+    });
+  }
   const { Imagequant, ImagequantImage } = (await quantizer).api();
   const image = new ImagequantImage(new Uint8Array(img.data.buffer, img.data.byteOffset, img.data.byteLength), img.width, img.height, 0);
   const iq = new Imagequant();
