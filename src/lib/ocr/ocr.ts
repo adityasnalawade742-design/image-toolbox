@@ -128,7 +128,9 @@ const clean = (text: string) =>
 export async function recognizeText(image: HTMLCanvasElement, langs: OcrLangs, onProgress?: (p: OcrProgress) => void): Promise<OcrResult> {
   listener = onProgress || null;
   try {
-    const w = await getWorker(langs);
+    // A failed start (the engine's script didn't download: a network blip) is tried once more before giving up.
+    // getWorker forgets a failed start, so the second call starts afresh
+    const w = await getWorker(langs).catch(() => getWorker(langs));
     if (workerLang !== langKey(langs)) {
       onProgress?.({ stage: 'loading', fraction: 0 });
       await w.reinitialize(langKey(langs), 1);

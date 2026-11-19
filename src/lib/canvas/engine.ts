@@ -226,7 +226,14 @@ export async function lanczosDownscale(
 ): Promise<HTMLCanvasElement | null> {
   if (colorSpace !== 'srgb' || (targetW >= sw && targetH >= sh)) return null;
   try {
-    if (!picaInstance) picaInstance = import('pica').then(({ default: Pica }) => new Pica({ features: ['js', 'wasm'] }));
+    if (!picaInstance) {
+      const loading = import('pica').then(({ default: Pica }) => new Pica({ features: ['js', 'wasm'] }));
+      picaInstance = loading;
+      // A failed download is tried again next time, rather than leaving every later resize of the visit to the browser
+      loading.catch(() => {
+        if (picaInstance === loading) picaInstance = null;
+      });
+    }
     const pica = await picaInstance;
     const from = document.createElement('canvas');
     from.width = Math.round(sw);

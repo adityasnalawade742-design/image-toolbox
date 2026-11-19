@@ -19,12 +19,19 @@ export interface Imagequant {
 let loading: Promise<void> | null = null;
 
 export function ready(): Promise<void> {
-  loading ??= (async () => {
-    const res = await fetch(wasmUrl);
-    if (!res.ok) throw new Error(`imagequant download failed (${res.status})`);
-    const { instance } = await WebAssembly.instantiate(await res.arrayBuffer(), { './imagequant_bg.js': glue });
-    glue.__wbg_set_wasm(instance.exports);
-  })();
+  if (!loading) {
+    const attempt = (async () => {
+      const res = await fetch(wasmUrl);
+      if (!res.ok) throw new Error(`imagequant download failed (${res.status})`);
+      const { instance } = await WebAssembly.instantiate(await res.arrayBuffer(), { './imagequant_bg.js': glue });
+      glue.__wbg_set_wasm(instance.exports);
+    })();
+    loading = attempt;
+    // A failed download may be tried again
+    attempt.catch(() => {
+      if (loading === attempt) loading = null;
+    });
+  }
   return loading;
 }
 
