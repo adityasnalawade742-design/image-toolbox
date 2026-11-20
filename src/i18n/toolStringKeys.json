@@ -4764,6 +4764,26 @@
    "ctl.pdf.pagesCount",
    "ctl.pdf.working"
   ],
+  "upscale-image": [
+   "ctl.photofix.overview",
+   "ctl.photofix.pickSpot",
+   "ctl.upscale.ai",
+   "ctl.upscale.dropHint",
+   "ctl.upscale.errDevice",
+   "ctl.upscale.errDownload",
+   "ctl.upscale.estimateMinutes",
+   "ctl.upscale.estimateSeconds",
+   "ctl.upscale.note",
+   "ctl.upscale.only2x",
+   "ctl.upscale.plain",
+   "ctl.upscale.result",
+   "ctl.upscale.scale",
+   "ctl.upscale.timeUnknown",
+   "ctl.upscale.tooLarge",
+   "ctl.upscale.unsupported",
+   "ctl.upscale.useResize",
+   "ctl.upscale.working"
+  ],
   "sharpen-image": [
    "ctl.denoise.chroma",
    "ctl.denoise.detail",

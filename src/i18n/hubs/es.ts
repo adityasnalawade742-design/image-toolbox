@@ -32,7 +32,7 @@ export const esHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Herramientas gratis para editar imágenes: recortar, redimensionar',
-      description: '43 herramientas gratis para editar fotos: recorta, redimensiona, gira, quita o cambia el fondo, añade texto y marcas de agua y adapta imágenes a redes.',
+      description: '44 herramientas gratis para editar fotos: recorta, redimensiona, gira, quita o cambia el fondo, añade texto y marcas de agua y adapta imágenes a redes.',
       h1: 'Herramientas para editar imágenes',
       intro:
         'Ediciones rápidas sin instalar nada: recorta y redimensiona, quita o cambia el fondo, añade texto, marcas de agua y bordes, mejora la nitidez y los colores, o adapta una imagen a Instagram, YouTube y otras redes. Todas funcionan en tu navegador, así que tus fotos nunca se suben y conservan su formato siempre que es posible.',

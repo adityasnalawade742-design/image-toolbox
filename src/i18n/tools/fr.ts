@@ -10950,6 +10950,85 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Agrandir une image avec l’IA",
+    shortName: "Agrandir avec l’IA",
+    tagline: "Agrandissez une image petite ou floue en 2x ou 4x avec une IA qui fonctionne sur votre appareil, pour des détails nets au lieu du flou.",
+    intro: "Agrandir une image avec l’IA rend une image à la fois plus grande et plus nette. Un redimensionnement classique ne fait qu’étirer les pixels, si bien qu’une photo agrandie paraît floue. Cet outil utilise Real-ESRGAN, un modèle d’IA entraîné sur de vraies photos, pour redessiner les contours et les détails fins à la nouvelle taille, et pour nettoyer le flou et les blocs JPEG. Il fonctionne sur la carte graphique de votre appareil dans Chrome ou Edge, sur un ordinateur ou un téléphone Android : vos images ne sont donc jamais envoyées. Choisissez 2x ou 4x, comparez n’importe quelle zone en taille réelle avec un agrandissement classique, puis téléchargez le résultat dans le format d’origine de l’image.",
+    seoTitle: "Agrandir une image avec l’IA en 2x ou 4x – Gratuit",
+    seoDescription: "Agrandissez vos images en 2x ou 4x par IA, gratuitement : contours et détails plus nets qu’un redimensionnement classique. Sans envoi, dans Chrome ou Edge.",
+    keywords: [
+      "agrandir une image avec l’ia",
+      "upscale image ia",
+      "augmenter la résolution d’une image",
+      "agrandir une image sans perte de qualité",
+      "améliorer la qualité d’une image gratuit",
+      "upscaler photo en ligne gratuit",
+      "rendre une image floue plus nette"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez une image",
+        description: "Déposez une image JPG, PNG, WebP, HEIC, AVIF ou TIFF, ou cliquez pour en choisir une. Les images petites et floues y gagnent le plus."
+      },
+      {
+        title: "Choisissez 2x ou 4x",
+        description: "4x rend l’image quatre fois plus large et quatre fois plus haute. Le résultat est limité à 16,7 mégapixels : les images plus grandes peuvent donc être agrandies en 2x."
+      },
+      {
+        title: "Vérifiez une zone en taille réelle",
+        description: "Cliquez sur l’image pour choisir une zone, puis comparez l’agrandissement classique avec la version de l’IA à 100 %."
+      },
+      {
+        title: "Téléchargez",
+        description: "Cliquez sur Télécharger. L’image entière est agrandie sur votre carte graphique, avec l’avancement affiché, puis enregistrée dans son propre format."
+      }
+    ],
+    features: [
+      {
+        title: "De vrais détails, pas juste des pixels plus gros",
+        description: "L’IA redessine les contours, le texte et les textures à la nouvelle taille, et supprime le flou et les blocs JPEG qu’un redimensionnement classique ne ferait qu’agrandir."
+      },
+      {
+        title: "Aucun envoi",
+        description: "Le modèle d’IA (2,4 MB) est téléchargé une seule fois et fonctionne dans votre navigateur. Vos images restent sur votre appareil."
+      },
+      {
+        title: "Voyez le résultat avant de télécharger",
+        description: "Comparez n’importe quelle zone de l’image en taille réelle, l’agrandissement classique à côté de la version de l’IA, avant que l’image entière soit agrandie."
+      },
+      {
+        title: "Transparence conservée",
+        description: "Les images PNG et WebP avec des zones transparentes restent transparentes, avec des contours lisses."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quelle différence avec Redimensionner une image ?",
+        answer: "Redimensionner une image agrandit une image en étalant les pixels qu’elle contient déjà, si bien que le résultat paraît flou. Cet outil utilise l’IA pour ajouter des détails nets et crédibles. Pour de petits agrandissements d’images déjà nettes, Redimensionner une image est plus rapide."
+      },
+      {
+        question: "Sur quels navigateurs et appareils fonctionne-t-il ?",
+        answer: "Chrome et Edge sur ordinateur et sur téléphone Android, en passant par la carte graphique grâce à WebGPU, que la plupart des appareils de ces dernières années prennent en charge. Safari, y compris sur iPhone, et Firefox ne peuvent pas encore l’exécuter. La page vous prévient quand votre navigateur ne le peut pas, et Redimensionner une image fonctionne partout."
+      },
+      {
+        question: "Combien de temps cela prend-il ?",
+        answer: "Cela dépend de la carte graphique et de la taille de l’image. Une image de 1 mégapixel prend environ 40 secondes avec la puce graphique intégrée d’un ordinateur portable, et environ une minute sur un téléphone récent. Après le premier aperçu, la page affiche une estimation pour votre appareil."
+      },
+      {
+        question: "Quelle taille peut atteindre le résultat ?",
+        answer: "Jusqu’à 16,7 mégapixels, le maximum qu’un navigateur de téléphone peut afficher dans une seule image. Le 4x fonctionne donc pour les images d’environ 1 mégapixel au plus, comme 1150 × 860 pixels, et le 2x pour les images d’environ 4 mégapixels au plus."
+      },
+      {
+        question: "Peut-il restaurer des visages ou des détails manquants ?",
+        answer: "Il rend plus net ce qui est là : contours, texte, cheveux et textures. Il ne reconstruit pas les visages ni les détails complètement absents, et les textures très fines comme l’herbe ou un tissu peuvent ressortir un peu lissées."
+      },
+      {
+        question: "Mes images sont-elles envoyées ?",
+        answer: "Non. Seul le modèle d’IA est téléchargé dans votre navigateur. Vos images sont traitées sur votre appareil et ne sont envoyées nulle part."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Réduire le bruit d’une image",
     shortName: "Réduire le bruit",

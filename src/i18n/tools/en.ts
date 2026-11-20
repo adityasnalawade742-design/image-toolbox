@@ -10559,6 +10559,85 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "AI Image Upscaler",
+    shortName: "AI Upscale",
+    tagline: "Enlarge a small or blurry picture 2x or 4x with AI that runs on your device, for sharp detail instead of blur.",
+    intro: "AI Image Upscaler makes a picture bigger and sharper at the same time. Ordinary resizing only stretches the pixels, so an enlarged photo looks soft. This tool uses Real-ESRGAN, an AI model trained on real photos, to redraw edges and fine detail at the new size and to clean up blur and JPEG blocks. It runs on your device's graphics card in Chrome or Edge, on a computer or an Android phone, so your pictures are never uploaded. Choose 2x or 4x, compare any part at full size against ordinary enlarging, and download the result in the picture's own format.",
+    seoTitle: "AI Image Upscaler – Upscale Photos 2x or 4x, Free",
+    seoDescription: "Upscale images 2x or 4x with AI, for free. Sharper edges and detail than ordinary resizing, and no upload: it runs on your device in Chrome or Edge.",
+    keywords: [
+      "ai image upscaler",
+      "upscale image",
+      "image upscaler free",
+      "enlarge image without losing quality",
+      "increase image resolution",
+      "upscale photo 4x",
+      "make a blurry picture clearer"
+    ],
+    howToSteps: [
+      {
+        "title": "Add a picture",
+        "description": "Drop a JPG, PNG, WebP, HEIC, AVIF or TIFF picture, or click to choose one. Small and blurry pictures gain the most."
+      },
+      {
+        "title": "Choose 2x or 4x",
+        "description": "4x makes the picture four times as wide and four times as tall. Results are limited to 16.7 megapixels, so larger pictures can be enlarged 2x."
+      },
+      {
+        "title": "Check a part at full size",
+        "description": "Click the picture to choose a part, and compare ordinary enlarging with the AI's version at 100%."
+      },
+      {
+        "title": "Download",
+        "description": "Click Download. The whole picture is upscaled on your graphics card, with its progress shown, and saved in its own format."
+      }
+    ],
+    features: [
+      {
+        "title": "Real detail, not just bigger pixels",
+        "description": "The AI redraws edges, text and texture at the new size, and removes the blur and JPEG blocks that ordinary resizing would only make bigger."
+      },
+      {
+        "title": "Nothing is uploaded",
+        "description": "The AI model (2.4 MB) downloads once and runs in your browser. Your pictures stay on your device."
+      },
+      {
+        "title": "See it before you download",
+        "description": "Compare any part of the picture at full size, ordinary enlarging beside the AI's version, before the whole picture is upscaled."
+      },
+      {
+        "title": "Transparency is kept",
+        "description": "PNG and WebP pictures with transparent areas stay transparent, with smooth edges."
+      }
+    ],
+    faqs: [
+      {
+        "question": "How is this different from Resize Image?",
+        "answer": "Resize Image enlarges a picture by spreading out the pixels it already has, so the result looks soft. The upscaler uses AI to add sharp, believable detail. For small enlargements of pictures that are already sharp, Resize Image is quicker."
+      },
+      {
+        "question": "Which browsers and devices does it work on?",
+        "answer": "Chrome and Edge on computers and Android phones, using the graphics card through WebGPU, which most devices from the last few years support. Safari, including on iPhone, and Firefox can't run it yet. The page tells you when your browser can't, and Resize Image works everywhere."
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "It depends on the graphics card and the size of the picture. A 1 megapixel picture takes about 40 seconds on a laptop's built-in graphics and about a minute on a recent phone. After the first preview, the page shows an estimate for your device."
+      },
+      {
+        "question": "How big can the result be?",
+        "answer": "Up to 16.7 megapixels, the most a phone browser can draw in one picture. So 4x works for pictures of up to about 1 megapixel, such as 1150 × 860 pixels, and 2x for pictures of up to about 4 megapixels."
+      },
+      {
+        "question": "Can it restore faces or detail that is missing?",
+        "answer": "It sharpens what is there: edges, text, hair and texture. It doesn't rebuild faces or details that are completely missing, and very fine textures such as grass or fabric can come out a little smooth."
+      },
+      {
+        "question": "Are my pictures uploaded?",
+        "answer": "No. Only the AI model is downloaded to your browser. Your pictures are processed on your device and are not sent anywhere."
+      }
+    ],
+  },
   "denoise-image": {
     "name": "Reduce Image Noise",
     "shortName": "Denoise",

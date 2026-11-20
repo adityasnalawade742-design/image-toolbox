@@ -10919,6 +10919,85 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Perbesar Gambar dengan AI",
+    shortName: "Upscale AI",
+    tagline: "Perbesar gambar yang kecil atau buram 2x atau 4x dengan AI yang berjalan di perangkat Anda, agar detailnya tajam, bukan buram.",
+    intro: "Perbesar Gambar dengan AI membuat gambar lebih besar sekaligus lebih tajam. Mengubah ukuran biasa hanya meregangkan piksel, jadi foto yang diperbesar terlihat kurang tajam. Alat ini memakai Real-ESRGAN, model AI yang dilatih dengan foto sungguhan, untuk menggambar ulang tepi dan detail halus pada ukuran baru serta membersihkan keburaman dan kotak-kotak JPEG. Alat ini berjalan di kartu grafis perangkat Anda di Chrome atau Edge, di komputer atau ponsel Android, jadi gambar Anda tidak pernah diunggah. Pilih 2x atau 4x, bandingkan bagian mana pun dalam ukuran penuh dengan pembesaran biasa, lalu unduh hasilnya dalam format asli gambar.",
+    seoTitle: "Upscale Foto dengan AI – Perbesar Gambar 2x atau 4x, Gratis",
+    seoDescription: "Upscale gambar 2x atau 4x dengan AI, gratis. Tepi dan detail lebih tajam dari ubah ukuran biasa, tanpa unggah: berjalan di perangkat Anda di Chrome atau Edge.",
+    keywords: [
+      "upscale foto",
+      "ai upscaler gambar",
+      "upscale gambar gratis",
+      "memperbesar gambar tanpa pecah",
+      "meningkatkan resolusi foto",
+      "upscale foto 4x",
+      "hd kan foto"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan gambar",
+        description: "Letakkan gambar JPG, PNG, WebP, HEIC, AVIF, atau TIFF, atau klik untuk memilihnya. Gambar kecil dan buram paling banyak terbantu."
+      },
+      {
+        title: "Pilih 2x atau 4x",
+        description: "4x membuat gambar empat kali lebih lebar dan empat kali lebih tinggi. Hasil dibatasi hingga 16,7 megapiksel, jadi gambar yang lebih besar bisa diperbesar 2x."
+      },
+      {
+        title: "Periksa bagian dalam ukuran penuh",
+        description: "Klik gambar untuk memilih bagian, lalu bandingkan pembesaran biasa dengan versi AI pada 100%."
+      },
+      {
+        title: "Unduh",
+        description: "Klik Unduh. Seluruh gambar diperbesar di kartu grafis Anda, dengan progresnya ditampilkan, lalu disimpan dalam formatnya sendiri."
+      }
+    ],
+    features: [
+      {
+        title: "Detail nyata, bukan sekadar piksel lebih besar",
+        description: "AI menggambar ulang tepi, teks, dan tekstur pada ukuran baru, serta menghapus keburaman dan kotak-kotak JPEG yang justru ikut membesar jika ukurannya diubah dengan cara biasa."
+      },
+      {
+        title: "Tidak ada yang diunggah",
+        description: "Model AI (2,4 MB) diunduh sekali dan berjalan di browser Anda. Gambar Anda tetap di perangkat Anda."
+      },
+      {
+        title: "Lihat dulu sebelum mengunduh",
+        description: "Bandingkan bagian mana pun dari gambar dalam ukuran penuh, pembesaran biasa di samping versi AI, sebelum seluruh gambar diperbesar."
+      },
+      {
+        title: "Transparansi tetap terjaga",
+        description: "Gambar PNG dan WebP dengan area transparan tetap transparan, dengan tepi yang halus."
+      }
+    ],
+    faqs: [
+      {
+        question: "Apa bedanya dengan Ubah Ukuran Gambar?",
+        answer: "Ubah Ukuran Gambar memperbesar gambar dengan menyebarkan piksel yang sudah ada, jadi hasilnya terlihat kurang tajam. Alat ini memakai AI untuk menambahkan detail yang tajam dan meyakinkan. Untuk pembesaran kecil pada gambar yang sudah tajam, Ubah Ukuran Gambar lebih cepat."
+      },
+      {
+        question: "Di browser dan perangkat apa alat ini berfungsi?",
+        answer: "Chrome dan Edge di komputer dan ponsel Android, dengan memakai kartu grafis melalui WebGPU, yang didukung sebagian besar perangkat dari beberapa tahun terakhir. Safari, termasuk di iPhone, dan Firefox belum bisa menjalankannya. Halaman ini akan memberi tahu Anda jika browser Anda tidak bisa, dan Ubah Ukuran Gambar berfungsi di mana saja."
+      },
+      {
+        question: "Berapa lama prosesnya?",
+        answer: "Tergantung pada kartu grafis dan ukuran gambar. Gambar 1 megapiksel butuh sekitar 40 detik dengan grafis bawaan laptop dan sekitar satu menit di ponsel terbaru. Setelah pratinjau pertama, halaman menampilkan perkiraan untuk perangkat Anda."
+      },
+      {
+        question: "Seberapa besar hasilnya?",
+        answer: "Hingga 16,7 megapiksel, batas terbesar yang bisa digambar browser ponsel dalam satu gambar. Jadi 4x bisa dipakai untuk gambar hingga sekitar 1 megapiksel, misalnya 1.150 × 860 piksel, dan 2x untuk gambar hingga sekitar 4 megapiksel."
+      },
+      {
+        question: "Bisakah alat ini memulihkan wajah atau detail yang hilang?",
+        answer: "Alat ini mempertajam apa yang sudah ada: tepi, teks, rambut, dan tekstur. Alat ini tidak membangun ulang wajah atau detail yang benar-benar hilang, dan tekstur yang sangat halus seperti rumput atau kain bisa jadi sedikit terlalu mulus."
+      },
+      {
+        question: "Apakah gambar saya diunggah?",
+        answer: "Tidak. Hanya model AI yang diunduh ke browser Anda. Gambar Anda diproses di perangkat Anda dan tidak dikirim ke mana pun."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Kurangi Noise Foto",
     shortName: "Hapus Noise",
