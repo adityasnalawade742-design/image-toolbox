@@ -22,6 +22,18 @@
       "/onnxruntime-web/ort-wasm-simd-threaded.jsep.mjs"
     ]
   },
+  "birefnet": {
+    "source": "ZhengPeng7/BiRefNet_lite",
+    "sourceRevision": "model.safetensors from https://huggingface.co/ZhengPeng7/BiRefNet_lite",
+    "license": "MIT",
+    "note": "Re-exported for browsers at 512x512 (deformable convolution as grid_sample, ONNX Runtime basic optimization, fp16). How: scripts/birefnet-export/README.md",
+    "url": "https://github.com/adityasnalawade742-design/image-toolbox/releases/download/models-birefnet-lite-512-v2/birefnet_lite_512_fp16.onnx",
+    "sha256": "6e1f328a8bd9726b4e1b9c5b609bb470962b349695ab66cc8f2ba79cc7236a84",
+    "bytes": 93077539,
+    "chunkBytes": 20971520,
+    "size": 512,
+    "ortVersion": "1.31.1"
+  },
   "ort": {
     "files": [
       "ort-wasm-simd-threaded.mjs",
