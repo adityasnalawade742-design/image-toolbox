@@ -123,4 +123,22 @@ export const photoFixStrings = {
 
   // PDF to grayscale (document tool)
   'ctl.doc.grayscale': 'Convert to grayscale',
+
+  // AI Image Upscaler
+  'ctl.upscale.dropHint': 'JPG, PNG, WebP, HEIC, AVIF or TIFF. Small and blurry pictures gain the most. It stays on your device.',
+  'ctl.upscale.scale': 'Enlarge',
+  'ctl.upscale.result': 'Result: {w} × {h} px',
+  'ctl.upscale.only2x': '4× would make a picture over 16.7 megapixels, so this one can be enlarged 2×.',
+  'ctl.upscale.tooLarge': 'This picture is already {mp} megapixels. AI upscaling makes pictures of up to 16.7 megapixels, so it takes pictures of up to about 4 megapixels.',
+  'ctl.upscale.useResize': 'Resize Image enlarges it without AI.',
+  'ctl.upscale.unsupported': 'AI upscaling runs on the graphics card and needs Chrome or Edge on a computer or Android phone. This browser can’t run it.',
+  'ctl.upscale.plain': 'Ordinary enlarging',
+  'ctl.upscale.ai': 'AI upscaled',
+  'ctl.upscale.timeUnknown': 'The time depends on your graphics card. An estimate appears once the preview is ready.',
+  'ctl.upscale.estimateSeconds': 'About {seconds} seconds on this device.',
+  'ctl.upscale.estimateMinutes': 'About {minutes} minutes on this device.',
+  'ctl.upscale.working': 'Upscaling… {percent}%',
+  'ctl.upscale.note': 'Runs on your graphics card with Real-ESRGAN. The AI model (2.4 MB) downloads the first time.',
+  'ctl.upscale.errDownload': 'The AI model didn’t download. Check your connection and try again.',
+  'ctl.upscale.errDevice': 'Your graphics card couldn’t finish the upscaling, possibly for lack of memory. Try 2×, or close other tabs and try again.',
 };

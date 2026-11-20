@@ -37,6 +37,9 @@ describe('tool search', () => {
     ['qr code', 'qr-code-generator'],
     ['crop', 'crop-image'],
     ['sign pdf', 'sign-pdf'],
+    ['upscale image', 'upscale-image'],
+    ['ai upscaler', 'upscale-image'],
+    ['increase image resolution', 'upscale-image'],
   ])('"%s" finds %s first', (q, slug) => {
     expect(top(q, 1)[0]).toBe(slug);
   });

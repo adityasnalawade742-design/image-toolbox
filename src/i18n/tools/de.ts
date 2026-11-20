@@ -10944,6 +10944,85 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Bild mit KI vergrößern",
+    shortName: "KI-Vergrößerung",
+    tagline: "Vergrößere ein kleines oder unscharfes Bild 2x oder 4x mit KI, die auf deinem Gerät läuft, für scharfe Details statt Unschärfe.",
+    intro: "Bild mit KI vergrößern macht ein Bild gleichzeitig größer und schärfer. Normales Vergrößern streckt nur die Pixel, deshalb wirkt ein vergrößertes Foto weich. Dieses Tool nutzt Real-ESRGAN, ein KI-Modell, das mit echten Fotos trainiert wurde, um Kanten und feine Details in der neuen Größe neu zu zeichnen und Unschärfe und JPEG-Blöcke zu entfernen. Es läuft in Chrome oder Edge auf der Grafikkarte deines Geräts, ob Computer oder Android-Handy, deine Bilder werden also nie hochgeladen. Wähle 2x oder 4x, vergleiche einen beliebigen Bereich in voller Größe mit normalem Vergrößern und lade das Ergebnis im Format des Bildes herunter.",
+    seoTitle: "Bild mit KI vergrößern – Fotos 2x oder 4x, gratis",
+    seoDescription: "Bilder kostenlos mit KI 2x oder 4x vergrößern: schärfere Kanten und Details als beim normalen Skalieren. Ohne Upload, läuft in Chrome oder Edge.",
+    keywords: [
+      "bild hochskalieren",
+      "ki bild vergrößern",
+      "bild vergrößern ohne qualitätsverlust",
+      "bildauflösung erhöhen",
+      "ai upscaler kostenlos",
+      "foto 4x hochskalieren",
+      "unscharfes bild verbessern"
+    ],
+    howToSteps: [
+      {
+        title: "Bild hinzufügen",
+        description: "Zieh ein JPG, PNG, WebP, HEIC, AVIF oder TIFF hierher oder klicke, um eins auszuwählen. Kleine und unscharfe Bilder profitieren am meisten."
+      },
+      {
+        title: "2x oder 4x wählen",
+        description: "4x macht das Bild viermal so breit und viermal so hoch. Ergebnisse sind auf 16,7 Megapixel begrenzt, größere Bilder lassen sich daher 2x vergrößern."
+      },
+      {
+        title: "Einen Bereich in voller Größe prüfen",
+        description: "Klicke auf das Bild, um einen Bereich zu wählen, und vergleiche normales Vergrößern mit der KI-Version bei 100 %."
+      },
+      {
+        title: "Herunterladen",
+        description: "Klicke auf „Herunterladen“. Das ganze Bild wird auf deiner Grafikkarte vergrößert, mit Fortschrittsanzeige, und in seinem eigenen Format gespeichert."
+      }
+    ],
+    features: [
+      {
+        title: "Echte Details statt nur größerer Pixel",
+        description: "Die KI zeichnet Kanten, Text und Strukturen in der neuen Größe neu und entfernt Unschärfe und JPEG-Blöcke, die normales Vergrößern nur mitvergrößern würde."
+      },
+      {
+        title: "Kein Upload",
+        description: "Das KI-Modell (2,4 MB) wird einmal heruntergeladen und läuft in deinem Browser. Deine Bilder bleiben auf deinem Gerät."
+      },
+      {
+        title: "Vor dem Download prüfen",
+        description: "Vergleiche einen beliebigen Bereich des Bildes in voller Größe, normales Vergrößern neben der KI-Version, bevor das ganze Bild vergrößert wird."
+      },
+      {
+        title: "Transparenz bleibt erhalten",
+        description: "PNG- und WebP-Bilder mit transparenten Bereichen bleiben transparent, mit glatten Kanten."
+      }
+    ],
+    faqs: [
+      {
+        question: "Was ist der Unterschied zu „Bildgröße ändern“?",
+        answer: "„Bildgröße ändern“ vergrößert ein Bild, indem es die vorhandenen Pixel auseinanderzieht, daher wirkt das Ergebnis weich. Dieses Tool fügt mit KI scharfe, glaubwürdige Details hinzu. Für kleine Vergrößerungen von Bildern, die schon scharf sind, ist „Bildgröße ändern“ schneller."
+      },
+      {
+        question: "Mit welchen Browsern und Geräten funktioniert es?",
+        answer: "Mit Chrome und Edge auf Computern und Android-Handys. Es nutzt die Grafikkarte über WebGPU, das die meisten Geräte der letzten Jahre unterstützen. Safari, auch auf dem iPhone, und Firefox können es noch nicht ausführen. Die Seite sagt dir, wenn dein Browser es nicht kann, und „Bildgröße ändern“ funktioniert überall."
+      },
+      {
+        question: "Wie lange dauert es?",
+        answer: "Das hängt von der Grafikkarte und der Größe des Bildes ab. Ein Bild mit 1 Megapixel braucht mit der eingebauten Grafik eines Laptops etwa 40 Sekunden und auf einem aktuellen Handy etwa eine Minute. Nach der ersten Vorschau zeigt die Seite eine Schätzung für dein Gerät."
+      },
+      {
+        question: "Wie groß kann das Ergebnis werden?",
+        answer: "Bis zu 16,7 Megapixel, mehr kann ein Handybrowser nicht in einem Bild darstellen. 4x funktioniert daher für Bilder bis etwa 1 Megapixel, zum Beispiel 1150 × 860 Pixel, und 2x für Bilder bis etwa 4 Megapixel."
+      },
+      {
+        question: "Kann es Gesichter oder fehlende Details wiederherstellen?",
+        answer: "Es schärft, was vorhanden ist: Kanten, Text, Haare und Strukturen. Gesichter oder Details, die komplett fehlen, baut es nicht neu auf, und sehr feine Strukturen wie Gras oder Stoff können etwas glatt wirken."
+      },
+      {
+        question: "Werden meine Bilder hochgeladen?",
+        answer: "Nein. Nur das KI-Modell wird in deinen Browser geladen. Deine Bilder werden auf deinem Gerät verarbeitet und nirgendwohin gesendet."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Bildrauschen entfernen",
     shortName: "Entrauschen",

@@ -10901,6 +10901,85 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Ingrandisci immagine con IA",
+    shortName: "Upscale IA",
+    tagline: "Ingrandisci 2x o 4x un’immagine piccola o sfocata con un’IA che funziona sul tuo dispositivo, per dettagli nitidi invece che sfocati.",
+    intro: "Ingrandisci immagine con IA rende un’immagine più grande e più nitida allo stesso tempo. Il normale ridimensionamento si limita a stirare i pixel, quindi una foto ingrandita appare morbida. Questo strumento usa Real-ESRGAN, un modello di IA addestrato su foto reali, per ridisegnare bordi e dettagli fini alla nuova dimensione e per ripulire sfocatura e blocchi JPEG. Funziona sulla scheda grafica del tuo dispositivo in Chrome o Edge, su un computer o un telefono Android, quindi le tue immagini non vengono mai caricate. Scegli 2x o 4x, confronta qualsiasi parte a dimensioni reali con l’ingrandimento normale e scarica il risultato nel formato originale dell’immagine.",
+    seoTitle: "Upscale immagini con IA – Ingrandisci foto 2x o 4x, gratis",
+    seoDescription: "Ingrandisci immagini 2x o 4x con l’IA, gratis. Bordi e dettagli più nitidi del normale ridimensionamento e nessun upload: funziona sul tuo dispositivo.",
+    keywords: [
+      "upscale immagini",
+      "upscaler ia gratis",
+      "aumentare risoluzione foto",
+      "ingrandire foto senza perdere qualità",
+      "migliorare qualità foto",
+      "upscale foto 4x",
+      "migliorare foto sfocata con ia"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi un’immagine",
+        description: "Trascina un’immagine JPG, PNG, WebP, HEIC, AVIF o TIFF, o fai clic per sceglierla. Le immagini piccole e sfocate sono quelle che migliorano di più."
+      },
+      {
+        title: "Scegli 2x o 4x",
+        description: "4x rende l’immagine quattro volte più larga e quattro volte più alta. I risultati sono limitati a 16,7 megapixel, quindi le immagini più grandi si possono ingrandire 2x."
+      },
+      {
+        title: "Controlla una parte a dimensioni reali",
+        description: "Fai clic sull’immagine per scegliere una parte e confronta l’ingrandimento normale con la versione dell’IA al 100%."
+      },
+      {
+        title: "Scarica",
+        description: "Fai clic su Scarica. L’intera immagine viene ingrandita sulla tua scheda grafica, con l’avanzamento mostrato a schermo, e salvata nel suo formato."
+      }
+    ],
+    features: [
+      {
+        title: "Dettagli veri, non solo pixel più grandi",
+        description: "L’IA ridisegna bordi, testo e texture alla nuova dimensione, e rimuove la sfocatura e i blocchi JPEG che il normale ridimensionamento renderebbe solo più grandi."
+      },
+      {
+        title: "Nessun caricamento",
+        description: "Il modello di IA (2,4 MB) viene scaricato una volta e funziona nel tuo browser. Le tue immagini restano sul tuo dispositivo."
+      },
+      {
+        title: "Guardalo prima di scaricare",
+        description: "Confronta qualsiasi parte dell’immagine a dimensioni reali, con l’ingrandimento normale accanto alla versione dell’IA, prima che l’intera immagine venga ingrandita."
+      },
+      {
+        title: "La trasparenza resta",
+        description: "Le immagini PNG e WebP con aree trasparenti restano trasparenti, con bordi lisci."
+      }
+    ],
+    faqs: [
+      {
+        question: "In cosa è diverso da Ridimensiona immagine?",
+        answer: "Ridimensiona immagine ingrandisce un’immagine distribuendo i pixel che ha già, quindi il risultato appare morbido. Questo strumento usa l’IA per aggiungere dettagli nitidi e credibili. Per piccoli ingrandimenti di immagini già nitide, Ridimensiona immagine è più veloce."
+      },
+      {
+        question: "Su quali browser e dispositivi funziona?",
+        answer: "Chrome ed Edge su computer e telefoni Android, usando la scheda grafica tramite WebGPU, supportato dalla maggior parte dei dispositivi degli ultimi anni. Safari, anche su iPhone, e Firefox non possono ancora eseguirlo. La pagina ti avvisa quando il tuo browser non può, e Ridimensiona immagine funziona ovunque."
+      },
+      {
+        question: "Quanto tempo ci vuole?",
+        answer: "Dipende dalla scheda grafica e dalle dimensioni dell’immagine. Un’immagine da 1 megapixel richiede circa 40 secondi con la grafica integrata di un portatile e circa un minuto su un telefono recente. Dopo la prima anteprima, la pagina mostra una stima per il tuo dispositivo."
+      },
+      {
+        question: "Quanto può essere grande il risultato?",
+        answer: "Fino a 16,7 megapixel, il massimo che il browser di un telefono può disegnare in un’unica immagine. Quindi 4x funziona per immagini fino a circa 1 megapixel, come 1.150 × 860 pixel, e 2x per immagini fino a circa 4 megapixel."
+      },
+      {
+        question: "Può ricostruire volti o dettagli mancanti?",
+        answer: "Rende più nitido ciò che c’è: bordi, testo, capelli e texture. Non ricostruisce volti o dettagli del tutto mancanti, e le texture molto fini come erba o tessuto possono risultare un po’ levigate."
+      },
+      {
+        question: "Le mie immagini vengono caricate?",
+        answer: "No. Nel browser viene scaricato solo il modello di IA. Le tue immagini vengono elaborate sul tuo dispositivo e non vengono inviate da nessuna parte."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Riduci rumore immagine",
     shortName: "Riduci rumore",

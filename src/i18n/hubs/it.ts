@@ -32,7 +32,7 @@ export const itHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Strumenti gratis per modificare immagini: ritaglia e ridimensiona',
-      description: '43 strumenti gratuiti per modificare foto: ritaglia, ridimensiona, rimuovi o cambia lo sfondo, aggiungi testo e filigrane, adatta ai social.',
+      description: '44 strumenti gratuiti per modificare foto: ritaglia, ridimensiona, rimuovi o cambia lo sfondo, aggiungi testo e filigrane, adatta ai social.',
       h1: 'Strumenti per modificare immagini',
       intro:
         'Modifiche rapide senza installare nulla: ritaglia e ridimensiona, scontorna o sostituisci lo sfondo, aggiungi testo, filigrane e bordi, aumenta la nitidezza e correggi i colori, oppure adatta un’immagine a Instagram, YouTube e altri social. Tutti gli strumenti funzionano nel browser, quindi le tue foto non vengono mai caricate e mantengono il formato quando possibile.',

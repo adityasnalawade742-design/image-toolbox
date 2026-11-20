@@ -94,6 +94,14 @@ export async function selfHostModels() {
   if (ortJspiVersion !== birefnet.ortVersion) throw new Error(`[models] onnxruntime-web-1.31 is ${ortJspiVersion}, BiRefNet needs ${birefnet.ortVersion}`);
   put(`ort/${ortJspiVersion}/ort-wasm-simd-threaded.jspi.wasm`, count(fs.readFileSync(path.join(ortJspiDir, 'dist/ort-wasm-simd-threaded.jspi.wasm'))));
 
+  // AI Image Upscaler: Real-ESRGAN's compact general model converted for browsers (scripts/upscaler-export), pinned
+  // by SHA-256, one file (2.4 MB); it runs on the same JSPI WebGPU runtime as BiRefNet
+  const { upscaler } = assets;
+  if (upscaler.ortVersion !== ortJspiVersion) throw new Error(`[models] onnxruntime-web-1.31 is ${ortJspiVersion}, the upscaler needs ${upscaler.ortVersion}`);
+  const upscalerModel = count(await pinned(upscaler.url, upscaler.sha256));
+  if (upscalerModel.length !== upscaler.bytes) throw new Error(`[models] Upscaler model is ${upscalerModel.length} bytes, modelAssets.json says ${upscaler.bytes}`);
+  put(`upscaler/${upscaler.sha256.slice(0, 12)}/model.onnx`, upscalerModel);
+
   // ONNX Runtime for transformers.js: the plain WebAssembly build (MODNet runs on the CPU), from the exact
   // version transformers.js depends on
   const wanted = JSON.parse(fs.readFileSync(path.resolve('node_modules/@huggingface/transformers/package.json'), 'utf8')).dependencies['onnxruntime-web'];
@@ -132,7 +140,8 @@ export async function selfHostModels() {
       `- MODNet, ${modnet.repo} on Hugging Face at revision ${modnet.revision}: ${modnet.license} (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- IMG.LY background removal data ${imgly.version} (${imgly.package}): ${imgly.license} (https://www.gnu.org/licenses/agpl-3.0.html)`,
       `- BiRefNet-lite (${birefnet.source}, by Peng Zheng et al.), re-exported for browsers at ${birefnet.size} px: ${birefnet.license} (https://github.com/ZhengPeng7/BiRefNet/blob/main/LICENSE)`,
-      `- ONNX Runtime Web ${ortJspiVersion} (JSPI WebGPU build, for BiRefNet-lite): MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
+      `- Real-ESRGAN ${upscaler.source.split(' ').pop()} (${upscaler.source.split(' ')[0]}, by Xintao Wang et al.), converted for browsers: ${upscaler.license} (https://github.com/xinntao/Real-ESRGAN/blob/master/LICENSE)`,
+      `- ONNX Runtime Web ${ortJspiVersion} (JSPI WebGPU build, for BiRefNet-lite and the upscaler): MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
       `- ONNX Runtime Web ${wanted}: MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
       `- Tesseract.js ${tjsVersion} and tesseract.js-core ${coreVersion}: Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- Tesseract fast language data (${td.repo} at ${td.commit}): ${td.license}`,

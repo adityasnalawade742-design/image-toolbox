@@ -25,6 +25,14 @@ describe('self-hosted model assets', () => {
     expect(assets.birefnet.bytes).toBeGreaterThan(assets.birefnet.chunkBytes);
   });
 
+  it('serves the upscaler on the same ONNX Runtime as BiRefNet, in one file under the 25 MiB limit', () => {
+    expect(assets.upscaler.ortVersion).toBe(pkg('onnxruntime-web-1.31').version);
+    expect(assets.upscaler.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(assets.upscaler.bytes).toBeLessThan(25 * 1024 * 1024);
+    // Tiles the size it was timed at, with the margin that hides seams
+    expect(assets.upscaler.tile - 2 * assets.upscaler.margin).toBeGreaterThan(0);
+  });
+
   it('pins every file by revision and SHA-256', () => {
     expect(assets.modnet.revision).toMatch(/^[0-9a-f]{40}$/);
     expect(assets.imgly.resourcesSha256).toMatch(/^[0-9a-f]{64}$/);

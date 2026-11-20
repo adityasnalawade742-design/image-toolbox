@@ -10906,6 +10906,85 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Ampliar imagem com IA",
+    shortName: "Ampliar com IA",
+    tagline: "Amplie em 2x ou 4x uma imagem pequena ou borrada com IA que roda no seu dispositivo, para ter detalhes nítidos em vez de borrões.",
+    intro: "Ampliar imagem com IA deixa uma imagem maior e mais nítida ao mesmo tempo. O redimensionamento comum só estica os pixels, então uma foto ampliada fica suave. Esta ferramenta usa o Real-ESRGAN, um modelo de IA treinado com fotos reais, para redesenhar bordas e detalhes finos no novo tamanho e limpar o desfoque e os blocos de JPEG. Ela roda na placa de vídeo do seu dispositivo, no Chrome ou no Edge, em um computador ou celular Android, então suas imagens nunca são enviadas. Escolha 2x ou 4x, compare qualquer parte em tamanho real com a ampliação comum e baixe o resultado no formato original da imagem.",
+    seoTitle: "Ampliar imagem com IA – Upscale de fotos 2x ou 4x, grátis",
+    seoDescription: "Amplie imagens em 2x ou 4x com IA, grátis. Bordas e detalhes mais nítidos que no redimensionamento comum, sem envio: roda no seu aparelho, no Chrome ou Edge.",
+    keywords: [
+      "upscale de imagem",
+      "aumentar qualidade da imagem",
+      "ampliar imagem sem perder qualidade",
+      "aumentar resolução de foto",
+      "melhorar qualidade de foto com ia",
+      "upscale de foto grátis",
+      "deixar foto em hd"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione uma imagem",
+        description: "Arraste uma imagem JPG, PNG, WebP, HEIC, AVIF ou TIFF, ou clique para escolher uma. Imagens pequenas e borradas são as que mais ganham."
+      },
+      {
+        title: "Escolha 2x ou 4x",
+        description: "4x deixa a imagem quatro vezes mais larga e quatro vezes mais alta. Os resultados são limitados a 16,7 megapixels, então imagens maiores podem ser ampliadas em 2x."
+      },
+      {
+        title: "Confira uma parte em tamanho real",
+        description: "Clique na imagem para escolher uma parte e compare a ampliação comum com a versão da IA em 100%."
+      },
+      {
+        title: "Baixe",
+        description: "Clique em Baixar. A imagem inteira é ampliada na sua placa de vídeo, com o progresso na tela, e salva no formato original."
+      }
+    ],
+    features: [
+      {
+        title: "Detalhes de verdade, não só pixels maiores",
+        description: "A IA redesenha bordas, texto e texturas no novo tamanho e remove o desfoque e os blocos de JPEG que o redimensionamento comum só deixaria maiores."
+      },
+      {
+        title: "Nada é enviado",
+        description: "O modelo de IA (2,4 MB) é baixado uma vez e roda no seu navegador. Suas imagens ficam no seu dispositivo."
+      },
+      {
+        title: "Veja antes de baixar",
+        description: "Compare qualquer parte da imagem em tamanho real, com a ampliação comum ao lado da versão da IA, antes de ampliar a imagem inteira."
+      },
+      {
+        title: "A transparência é mantida",
+        description: "Imagens PNG e WebP com áreas transparentes continuam transparentes, com bordas suaves."
+      }
+    ],
+    faqs: [
+      {
+        question: "Qual a diferença para o Redimensionar imagem?",
+        answer: "O Redimensionar imagem amplia uma imagem espalhando os pixels que ela já tem, então o resultado fica suave. Esta ferramenta usa IA para adicionar detalhes nítidos e convincentes. Para pequenas ampliações de imagens que já são nítidas, o Redimensionar imagem é mais rápido."
+      },
+      {
+        question: "Em quais navegadores e dispositivos funciona?",
+        answer: "No Chrome e no Edge em computadores e celulares Android, usando a placa de vídeo por meio do WebGPU, que a maioria dos dispositivos dos últimos anos suporta. O Safari, inclusive no iPhone, e o Firefox ainda não conseguem rodar a ferramenta. A página avisa quando o seu navegador não consegue, e o Redimensionar imagem funciona em qualquer lugar."
+      },
+      {
+        question: "Quanto tempo leva?",
+        answer: "Depende da placa de vídeo e do tamanho da imagem. Uma imagem de 1 megapixel leva cerca de 40 segundos com a placa de vídeo integrada de um notebook e cerca de um minuto em um celular recente. Depois da primeira prévia, a página mostra uma estimativa para o seu dispositivo."
+      },
+      {
+        question: "Qual o tamanho máximo do resultado?",
+        answer: "Até 16,7 megapixels, o máximo que o navegador de um celular consegue desenhar em uma única imagem. Então 4x funciona para imagens de até cerca de 1 megapixel, como 1.150 × 860 pixels, e 2x para imagens de até cerca de 4 megapixels."
+      },
+      {
+        question: "Ela consegue restaurar rostos ou detalhes que faltam?",
+        answer: "Ela deixa mais nítido o que já existe: bordas, texto, cabelo e texturas. Ela não reconstrói rostos nem detalhes que estão totalmente ausentes, e texturas muito finas, como grama ou tecido, podem ficar um pouco suavizadas."
+      },
+      {
+        question: "Minhas imagens são enviadas?",
+        answer: "Não. Só o modelo de IA é baixado para o seu navegador. Suas imagens são processadas no seu dispositivo e não são enviadas para lugar nenhum."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Reduzir ruído da imagem",
     shortName: "Reduzir ruído",

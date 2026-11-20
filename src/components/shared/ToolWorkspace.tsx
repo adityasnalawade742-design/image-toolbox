@@ -136,6 +136,7 @@ const SvgOptimizerWorkspace = standaloneTool(() => import('../tools/extras/SvgPa
 const SvgToPdfWorkspace = standaloneTool(() => import('../tools/extras/SvgPackWorkspace'), 'SvgToPdfWorkspace');
 const LinkCheckerWorkspace = standaloneTool(() => import('../tools/pdf/LinkCheckerWorkspace'), 'LinkCheckerWorkspace');
 const SharpenWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'SharpenWorkspace');
+const UpscaleWorkspace = standaloneTool(() => import('../tools/extras/UpscaleWorkspace'), 'UpscaleWorkspace');
 const DenoiseWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'DenoiseWorkspace');
 const WhiteBalanceWorkspace = standaloneTool(() => import('../tools/extras/PhotoFixWorkspace'), 'WhiteBalanceWorkspace');
 const PerspectiveWorkspace = standaloneTool(() => import('../tools/extras/PerspectiveWorkspace'), 'PerspectiveWorkspace');
@@ -305,6 +306,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'svg-to-pdf': <SvgToPdfWorkspace />,
     'webp-to-pdf': <JpgToPdfWorkspace />,
     'pdf-link-checker': <LinkCheckerWorkspace />,
+    'upscale-image': <UpscaleWorkspace />,
     'sharpen-image': <SharpenWorkspace />,
     'denoise-image': <DenoiseWorkspace />,
     'fix-white-balance': <WhiteBalanceWorkspace />,

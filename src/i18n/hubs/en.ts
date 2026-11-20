@@ -32,7 +32,7 @@ export const enHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Free Image Editing Tools: Crop, Resize, Remove Backgrounds',
-      description: '43 free photo editing tools in your browser: crop, resize, rotate, remove or change backgrounds, add text and watermarks, and size images for social media.',
+      description: '44 free photo editing tools in your browser: crop, resize, rotate, remove or change backgrounds, add text and watermarks, and size images for social media.',
       h1: 'Image editing tools',
       intro:
         'Quick edits without installing anything: crop and resize, cut out or replace backgrounds, add text, watermarks and borders, sharpen and fix colours, or size a picture for Instagram, YouTube and other networks. Every tool runs in your browser, so your photos are never uploaded, and they keep their format where possible.',

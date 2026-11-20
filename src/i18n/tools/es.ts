@@ -10922,6 +10922,85 @@ export const esTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Ampliar imagen con IA",
+    shortName: "Ampliar con IA",
+    tagline: "Amplía una imagen pequeña o borrosa 2x o 4x con IA que funciona en tu dispositivo, para lograr detalles nítidos en lugar de desenfoque.",
+    intro: "Ampliar imagen con IA hace una imagen más grande y más nítida a la vez. Al cambiar el tamaño de la forma habitual solo se estiran los píxeles, así que una foto ampliada se ve blanda. Esta herramienta usa Real-ESRGAN, un modelo de IA entrenado con fotos reales, para redibujar los bordes y los detalles finos al nuevo tamaño y limpiar el desenfoque y los bloques de JPEG. Funciona con la tarjeta gráfica de tu dispositivo en Chrome o Edge, en un ordenador o un móvil Android, así que tus imágenes nunca se suben. Elige 2x o 4x, compara cualquier parte a tamaño completo con la ampliación normal y descarga el resultado en el formato original de la imagen.",
+    seoTitle: "Ampliar imagen con IA: escala fotos 2x o 4x, gratis",
+    seoDescription: "Amplía imágenes 2x o 4x con IA, gratis. Bordes y detalles más nítidos que al cambiar el tamaño, sin subir nada: funciona en tu dispositivo con Chrome o Edge.",
+    keywords: [
+      "ampliar imagen con ia",
+      "escalar imagen con ia",
+      "aumentar resolución de imagen",
+      "ampliar imagen sin perder calidad",
+      "mejorar calidad de imagen gratis",
+      "upscaler de imágenes gratis",
+      "mejorar foto borrosa"
+    ],
+    howToSteps: [
+      {
+        title: "Añade una imagen",
+        description: "Suelta una imagen JPG, PNG, WebP, HEIC, AVIF o TIFF, o haz clic para elegirla. Las imágenes pequeñas y borrosas son las que más mejoran."
+      },
+      {
+        title: "Elige 2x o 4x",
+        description: "4x hace la imagen cuatro veces más ancha y cuatro veces más alta. El resultado tiene un límite de 16,7 megapíxeles, así que las imágenes más grandes se pueden ampliar 2x."
+      },
+      {
+        title: "Revisa una parte a tamaño completo",
+        description: "Haz clic en la imagen para elegir una parte y compara la ampliación normal con la versión de la IA al 100 %."
+      },
+      {
+        title: "Descarga",
+        description: "Haz clic en Descargar. La imagen entera se amplía en tu tarjeta gráfica, con el progreso a la vista, y se guarda en su propio formato."
+      }
+    ],
+    features: [
+      {
+        title: "Detalle real, no solo píxeles más grandes",
+        description: "La IA redibuja bordes, texto y texturas al nuevo tamaño, y elimina el desenfoque y los bloques de JPEG que un cambio de tamaño normal solo haría más grandes."
+      },
+      {
+        title: "No se sube nada",
+        description: "El modelo de IA (2,4 MB) se descarga una vez y funciona en tu navegador. Tus imágenes se quedan en tu dispositivo."
+      },
+      {
+        title: "Míralo antes de descargar",
+        description: "Compara cualquier parte de la imagen a tamaño completo, con la ampliación normal junto a la versión de la IA, antes de ampliar la imagen entera."
+      },
+      {
+        title: "Se conserva la transparencia",
+        description: "Las imágenes PNG y WebP con zonas transparentes siguen siendo transparentes, con bordes suaves."
+      }
+    ],
+    faqs: [
+      {
+        question: "¿En qué se diferencia de Cambiar tamaño de imagen?",
+        answer: "Cambiar tamaño de imagen amplía una imagen repartiendo los píxeles que ya tiene, así que el resultado se ve blando. Esta herramienta usa IA para añadir detalles nítidos y creíbles. Para ampliaciones pequeñas de imágenes que ya son nítidas, Cambiar tamaño de imagen es más rápido."
+      },
+      {
+        question: "¿En qué navegadores y dispositivos funciona?",
+        answer: "En Chrome y Edge, en ordenadores y móviles Android, usando la tarjeta gráfica mediante WebGPU, que admiten la mayoría de los dispositivos de los últimos años. Safari, también en iPhone, y Firefox todavía no pueden ejecutarlo. La página te avisa cuando tu navegador no puede, y Cambiar tamaño de imagen funciona en todas partes."
+      },
+      {
+        question: "¿Cuánto tarda?",
+        answer: "Depende de la tarjeta gráfica y del tamaño de la imagen. Una imagen de 1 megapíxel tarda unos 40 segundos con la gráfica integrada de un portátil y alrededor de un minuto en un móvil reciente. Después de la primera vista previa, la página muestra una estimación para tu dispositivo."
+      },
+      {
+        question: "¿Qué tamaño puede tener el resultado?",
+        answer: "Hasta 16,7 megapíxeles, lo máximo que un navegador de móvil puede dibujar en una sola imagen. Por eso 4x funciona con imágenes de hasta 1 megapíxel aproximadamente, como 1150 × 860 píxeles, y 2x con imágenes de hasta unos 4 megapíxeles."
+      },
+      {
+        question: "¿Puede recuperar caras o detalles que faltan?",
+        answer: "Hace más nítido lo que ya está: bordes, texto, pelo y texturas. No reconstruye caras ni detalles que faltan por completo, y las texturas muy finas, como el césped o la tela, pueden quedar un poco lisas."
+      },
+      {
+        question: "¿Se suben mis imágenes?",
+        answer: "No. Solo se descarga el modelo de IA en tu navegador. Tus imágenes se procesan en tu dispositivo y no se envían a ningún sitio."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Reducir ruido de imagen",
     shortName: "Reducir ruido",

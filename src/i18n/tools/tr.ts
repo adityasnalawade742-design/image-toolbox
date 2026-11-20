@@ -10920,6 +10920,85 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "upscale-image": {
+    name: "Yapay Zekâ ile Resim Büyütme",
+    shortName: "Yapay Zekâyla Büyüt",
+    tagline: "Küçük veya bulanık bir resmi cihazınızda çalışan yapay zekâ ile 2x veya 4x büyütün; bulanıklık yerine keskin ayrıntılar elde edin.",
+    intro: "Yapay Zekâ ile Resim Büyütme, bir resmi aynı anda hem büyütür hem de netleştirir. Normal boyutlandırma yalnızca pikselleri gerer, bu yüzden büyütülen fotoğraf yumuşak görünür. Bu araç, gerçek fotoğraflarla eğitilmiş bir yapay zekâ modeli olan Real-ESRGAN'ı kullanarak kenarları ve ince ayrıntıları yeni boyutta yeniden çizer; bulanıklığı ve JPEG bloklarını da temizler. Bilgisayarda veya Android telefonda Chrome ya da Edge ile cihazınızın ekran kartında çalışır, bu yüzden resimleriniz asla yüklenmez. 2x veya 4x'i seçin, herhangi bir kısmı tam boyutta normal büyütmeyle karşılaştırın ve sonucu resmin kendi formatında indirin.",
+    seoTitle: "Yapay Zekâ ile Resim Büyütme – 2x veya 4x, Ücretsiz",
+    seoDescription: "Resimleri yapay zekâ ile ücretsiz 2x veya 4x büyütün. Normal boyutlandırmadan daha keskin kenarlar ve ayrıntılar; yükleme yok, Chrome veya Edge'de cihazınızda çalışır.",
+    keywords: [
+      "yapay zeka ile resim büyütme",
+      "resim kalitesini artırma",
+      "fotoğraf kalitesi yükseltme",
+      "resim çözünürlüğü artırma",
+      "kalite kaybı olmadan resim büyütme",
+      "bulanık fotoğrafı netleştirme",
+      "ai upscale"
+    ],
+    howToSteps: [
+      {
+        title: "Resim ekleyin",
+        description: "JPG, PNG, WebP, HEIC, AVIF veya TIFF bir resmi bırakın ya da seçmek için tıklayın. En çok küçük ve bulanık resimler fayda görür."
+      },
+      {
+        title: "2x veya 4x'i seçin",
+        description: "4x, resmi dört kat geniş ve dört kat yüksek yapar. Sonuçlar 16,7 megapikselle sınırlıdır; bu yüzden daha büyük resimler 2x büyütülebilir."
+      },
+      {
+        title: "Bir kısmı tam boyutta kontrol edin",
+        description: "Bir kısım seçmek için resme tıklayın ve normal büyütmeyle yapay zekânın sonucunu %100 boyutta karşılaştırın."
+      },
+      {
+        title: "İndirin",
+        description: "İndir'e tıklayın. Resmin tamamı ekran kartınızda büyütülür, ilerleme gösterilir ve resim kendi formatında kaydedilir."
+      }
+    ],
+    features: [
+      {
+        title: "Yalnızca daha büyük pikseller değil, gerçek ayrıntı",
+        description: "Yapay zekâ kenarları, yazıları ve dokuyu yeni boyutta yeniden çizer; normal boyutlandırmanın yalnızca büyüteceği bulanıklığı ve JPEG bloklarını giderir."
+      },
+      {
+        title: "Hiçbir şey yüklenmez",
+        description: "Yapay zekâ modeli (2,4 MB) bir kez indirilir ve tarayıcınızda çalışır. Resimleriniz cihazınızda kalır."
+      },
+      {
+        title: "İndirmeden önce görün",
+        description: "Resmin tamamı büyütülmeden önce herhangi bir kısmını tam boyutta, normal büyütme ile yapay zekânın sonucu yan yana olacak şekilde karşılaştırın."
+      },
+      {
+        title: "Saydamlık korunur",
+        description: "Saydam alanları olan PNG ve WebP resimler, pürüzsüz kenarlarla saydam kalır."
+      }
+    ],
+    faqs: [
+      {
+        question: "Resim Boyutlandırma'dan farkı nedir?",
+        answer: "Resim Boyutlandırma, resmi zaten sahip olduğu pikselleri yayarak büyütür, bu yüzden sonuç yumuşak görünür. Bu araç ise yapay zekâ ile keskin ve inandırıcı ayrıntılar ekler. Zaten keskin olan resimleri biraz büyütmek için Resim Boyutlandırma daha hızlıdır."
+      },
+      {
+        question: "Hangi tarayıcılarda ve cihazlarda çalışır?",
+        answer: "Bilgisayarlarda ve Android telefonlarda Chrome ile Edge'de, son birkaç yılın çoğu cihazının desteklediği WebGPU üzerinden ekran kartını kullanarak çalışır. iPhone dahil Safari ve Firefox henüz çalıştıramıyor. Tarayıcınız çalıştıramadığında sayfa bunu size bildirir; Resim Boyutlandırma ise her yerde çalışır."
+      },
+      {
+        question: "Ne kadar sürer?",
+        answer: "Ekran kartına ve resmin boyutuna bağlıdır. 1 megapiksellik bir resim, bir dizüstü bilgisayarın dahili grafik biriminde yaklaşık 40 saniye, yeni bir telefonda yaklaşık bir dakika sürer. İlk önizlemeden sonra sayfa cihazınız için bir tahmin gösterir."
+      },
+      {
+        question: "Sonuç en fazla ne kadar büyük olabilir?",
+        answer: "En fazla 16,7 megapiksel; bu, bir telefon tarayıcısının tek bir resimde çizebileceği en büyük boyuttur. Bu yüzden 4x, 1150 × 860 piksel gibi yaklaşık 1 megapiksele kadar olan resimlerde, 2x ise yaklaşık 4 megapiksele kadar olan resimlerde çalışır."
+      },
+      {
+        question: "Yüzleri veya kaybolan ayrıntıları geri getirebilir mi?",
+        answer: "Var olanı netleştirir: kenarları, yazıları, saçları ve dokuyu. Yüzleri veya tamamen kaybolmuş ayrıntıları yeniden oluşturmaz; çimen veya kumaş gibi çok ince dokular biraz yumuşak çıkabilir."
+      },
+      {
+        question: "Resimlerim yükleniyor mu?",
+        answer: "Hayır. Tarayıcınıza yalnızca yapay zekâ modeli indirilir. Resimleriniz cihazınızda işlenir ve hiçbir yere gönderilmez."
+      }
+    ]
+  },
   "denoise-image": {
     name: "Fotoğraf Gürültüsü Giderme",
     shortName: "Gürültü Giderme",

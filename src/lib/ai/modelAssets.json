@@ -34,6 +34,18 @@
     "size": 512,
     "ortVersion": "1.31.1"
   },
+  "upscaler": {
+    "source": "xinntao/Real-ESRGAN realesr-general-x4v3",
+    "sourceRevision": "realesr-general-x4v3.pth from https://github.com/xinntao/Real-ESRGAN/releases/tag/v0.2.5.0 (sha256 8dc7edb9ac80ccdc30c3a5dca6616509367f05fbc184ad95b731f05bece96292)",
+    "license": "BSD-3-Clause",
+    "note": "Converted for browsers: ONNX, fp16 weights with float32 input and output, any size. How: scripts/upscaler-export/README.md",
+    "url": "https://github.com/adityasnalawade742-design/image-toolbox/releases/download/models-upscaler-x4-v1/upscaler_x4_fp16.onnx",
+    "sha256": "df808c05b6c7b9ba15e29f5bcc2e2ef46e51da68e07619f3ec26474af78129ee",
+    "bytes": 2444968,
+    "tile": 256,
+    "margin": 24,
+    "ortVersion": "1.31.1"
+  },
   "ort": {
     "files": [
       "ort-wasm-simd-threaded.mjs",

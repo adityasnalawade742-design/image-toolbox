@@ -1585,6 +1585,15 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/avif,image/tiff,.tif,.tiff',
   },
   {
+    slug: 'upscale-image',
+    name: 'AI Image Upscaler',
+    shortName: 'AI Upscale',
+    description: 'Enlarge small or blurry photos 2x or 4x with an AI model that runs on your device, adding sharp detail instead of blur.',
+    category: 'edit-transform',
+    iconName: 'Maximize2',
+    accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/avif,image/tiff,.tif,.tiff',
+  },
+  {
     slug: 'denoise-image',
     name: 'Reduce Image Noise',
     shortName: 'Denoise',
