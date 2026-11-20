@@ -5,6 +5,7 @@ import { batchFormat, convertImageFile, type Converted } from '../../lib/canvas/
 import { defaultQuality, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { createUniqueNamer, toolOutputName } from '../../lib/storage/fileNames';
 import { useT } from './I18nContext';
+import { snapshotFile } from '../../lib/storage/snapshotFile';
 import { MediaViewer, blobImage, formatKB, type ViewerItem } from './MediaViewer';
 import { FileThumb } from './ViewableThumb';
 
@@ -51,16 +52,18 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
   const addRef = useRef<HTMLInputElement>(null);
   const added = useRef(false);
 
-  const add = (list: File[]) => {
+  const add = async (list: File[]) => {
     const room = Math.max(0, MAX_FILES - queue.length);
     setOverflow(Math.max(0, list.length - room));
-    const items: Item[] = list.slice(0, room).map((file) => {
+    const items: Item[] = await Promise.all(list.slice(0, room).map(async (file): Promise<Item> => {
       const id = `${file.name}-${file.size}-${Math.random().toString(36).slice(2)}`;
       const notImage = !file.type.startsWith('image/') && !/\.(heic|heif|tiff?|svg)$/i.test(file.name);
       if (notImage) return { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errNotImage') };
       if (file.size > MAX_BYTES) return { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errTooLarge') };
-      return { id, file, status: 'pending' };
-    });
+      // Read now: an Android photo picker file may no longer be readable when the queue gets to it
+      const copy = await snapshotFile(file);
+      return copy ? { id, file: copy, status: 'pending' } : { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errProcess') };
+    }));
     setQueue((prev) => [...prev, ...items]);
   };
 

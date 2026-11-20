@@ -3,6 +3,7 @@ import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, 
 import { loadImage, canvasToBlob, downloadBlob, stepDown, forDownload, lanczosDownscale } from '../../lib/canvas/engine';
 import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
+import { snapshotFile } from '../../lib/storage/snapshotFile';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import type { StringKey } from '../../i18n/strings';
@@ -102,10 +103,13 @@ export function BulkResizerWorkspace() {
         });
       } else {
         try {
-          const img = await loadImage(file);
+          // Read now: an Android photo picker file may no longer be readable when the queue gets to it
+          const copy = await snapshotFile(file);
+          if (!copy) throw new Error('unreadable');
+          const img = await loadImage(copy);
           newItems.push({
             id: `${file.name}-${Date.now()}-${Math.random()}`,
-            file,
+            file: copy,
             name: file.name,
             originalWidth: img.naturalWidth || img.width,
             originalHeight: img.naturalHeight || img.height,
