@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { createAvifEncoder, isAvifSuperseded, type AvifWorkerLike } from '../avifEncoder';
 
 class FakeWorker implements AvifWorkerLike {
@@ -17,21 +17,28 @@ class FakeWorker implements AvifWorkerLike {
   crash() {
     this.onerror?.({ message: 'wasm failed to load' } as ErrorEvent);
   }
+
+  terminated = false;
+  terminate() {
+    this.terminated = true;
+  }
 }
 
 function fakeImageData(): ImageData {
   return { width: 1, height: 1, data: new Uint8ClampedArray(4) } as unknown as ImageData;
 }
 
-function setup() {
+function setup(maxWorkers = 1) {
   const workers: FakeWorker[] = [];
   const encoder = createAvifEncoder(() => {
     const w = new FakeWorker();
     workers.push(w);
     return w;
-  });
+  }, maxWorkers);
   return { encoder, workers };
 }
+
+const done = (w: FakeWorker, n = 0, bytes = 1) => w.reply({ id: w.posted[n].id, buffer: new ArrayBuffer(bytes) });
 
 describe('AVIF Encoder Queue', () => {
   it('posts the job to the worker and resolves to an image/avif Blob', async () => {
@@ -106,5 +113,91 @@ describe('AVIF Encoder Queue', () => {
     expect(workers).toHaveLength(2);
     workers[1].reply({ id: workers[1].posted[0].id, buffer: new ArrayBuffer(1) });
     await expect(c).resolves.toBeInstanceOf(Blob);
+  });
+});
+
+describe('Encoder pool (several images at once)', () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('runs waiting jobs side by side, up to the limit', async () => {
+    const { encoder, workers } = setup(3);
+    const jobs = [50, 60, 70, 80].map((q) => encoder.encode(fakeImageData(), q, undefined, 'png'));
+    expect(workers).toHaveLength(3);
+    expect(workers.map((w) => w.posted.map((p) => p.quality))).toEqual([[50], [60], [70]]);
+
+    // The fourth goes to whichever worker frees up first
+    done(workers[1], 0, 2);
+    expect((await jobs[1]).size).toBe(2);
+    expect(workers[1].posted.map((p) => p.quality)).toEqual([60, 80]);
+
+    done(workers[0]);
+    done(workers[2]);
+    done(workers[1], 1, 4);
+    const blobs = await Promise.all(jobs);
+    expect(blobs.map((b) => b.type)).toEqual(['image/png', 'image/png', 'image/png', 'image/png']);
+    expect(blobs[3].size).toBe(4);
+  });
+
+  it('starts a second worker only while jobs are waiting', async () => {
+    const { encoder, workers } = setup(4);
+    const a = encoder.encode(fakeImageData(), 50);
+    done(workers[0]);
+    await a;
+    const b = encoder.encode(fakeImageData(), 60);
+    done(workers[0], 1);
+    await b;
+    expect(workers).toHaveLength(1);
+  });
+
+  it('closes extra workers once idle, keeping the first', async () => {
+    vi.useFakeTimers();
+    const { encoder, workers } = setup(2);
+    const jobs = [encoder.encode(fakeImageData(), 50), encoder.encode(fakeImageData(), 60)];
+    done(workers[0]);
+    done(workers[1]);
+    await Promise.all(jobs);
+    vi.advanceTimersByTime(20_000);
+    expect(workers[0].terminated).toBe(false);
+    expect(workers[1].terminated).toBe(true);
+
+    // The next pair starts a fresh second worker
+    const more = [encoder.encode(fakeImageData(), 70), encoder.encode(fakeImageData(), 80)];
+    expect(workers).toHaveLength(3);
+    expect(workers[0].posted.at(-1)?.quality).toBe(70);
+    expect(workers[2].posted[0].quality).toBe(80);
+    done(workers[0], 1);
+    done(workers[2]);
+    await Promise.all(more);
+  });
+
+  it('a worker busy again before the idle time is kept', async () => {
+    vi.useFakeTimers();
+    const { encoder, workers } = setup(2);
+    const first = [encoder.encode(fakeImageData(), 50), encoder.encode(fakeImageData(), 60)];
+    done(workers[0]);
+    done(workers[1]);
+    await Promise.all(first);
+    vi.advanceTimersByTime(5_000);
+    const again = [encoder.encode(fakeImageData(), 70), encoder.encode(fakeImageData(), 80)];
+    vi.advanceTimersByTime(20_000);
+    expect(workers).toHaveLength(2);
+    expect(workers[1].terminated).toBe(false);
+    done(workers[0], 1);
+    done(workers[1], 1);
+    await Promise.all(again);
+  });
+
+  it("a crash fails that worker's job and the waiting ones, while other workers finish theirs", async () => {
+    const { encoder, workers } = setup(2);
+    const a = encoder.encode(fakeImageData(), 50);
+    const b = encoder.encode(fakeImageData(), 60);
+    const c = encoder.encode(fakeImageData(), 70);
+    workers[1].crash();
+    await expect(b).rejects.toThrow('wasm failed to load');
+    await expect(c).rejects.toThrow('wasm failed to load');
+    done(workers[0]);
+    await expect(a).resolves.toBeInstanceOf(Blob);
   });
 });
