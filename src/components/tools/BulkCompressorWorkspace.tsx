@@ -6,6 +6,7 @@ import { exportableFormat } from '../../lib/canvas/outputFormat';
 import { formatExtension } from '../../lib/canvas/outputFormat';
 import { stripMetadata } from '../../lib/canvas/stripMetadata';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
+import { snapshotFile } from '../../lib/storage/snapshotFile';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
 import { MediaViewer, blobImage, formatKB, type ViewerItem } from '../shared/MediaViewer';
@@ -54,7 +55,7 @@ export function BulkCompressorWorkspace() {
   const isCancelledRef = useRef(false);
   const addMoreInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFilesAdded = (files: FileList | File[]) => {
+  const handleFilesAdded = async (files: FileList | File[]) => {
     const newItems: QueueItem[] = [];
     const maxSizeBytes = 50 * 1024 * 1024; // 50 MB
 
@@ -83,12 +84,14 @@ export function BulkCompressorWorkspace() {
           errorMsg: t('ctl.bulk.errTooLarge'),
         });
       } else {
+        // Read now: an Android photo picker file may no longer be readable when the queue gets to it
+        const copy = await snapshotFile(file);
         newItems.push({
           id: `${file.name}-${Date.now()}-${Math.random()}`,
-          file,
+          file: copy ?? file,
           name: file.name,
           originalSize: file.size,
-          status: 'pending',
+          ...(copy ? { status: 'pending' as const } : { status: 'error' as const, rejected: true, errorMsg: t('ctl.bulk.errProcess') }),
         });
       }
     }

@@ -4,6 +4,7 @@ import { canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine
 import { fitWithinPixels } from '../../lib/canvas/limits';
 import { formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
+import { snapshotFile } from '../../lib/storage/snapshotFile';
 import { removeBackground, preloadBackgroundRemoval, type RemovalMode, type RemovalProgress } from '../../lib/ai/backgroundRemover';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
@@ -94,15 +95,17 @@ export function BulkRemoveBackgroundWorkspace() {
     preloadBackgroundRemoval(m);
   };
 
-  const handleFilesAdded = (files: FileList | File[]) => {
+  const handleFilesAdded = async (files: FileList | File[]) => {
     const list = Array.from(files);
     const room = Math.max(0, MAX_FILES - queue.length);
-    const added: QueueItem[] = list.slice(0, room).map((file) => {
+    const added: QueueItem[] = await Promise.all(list.slice(0, room).map(async (file) => {
       const item: QueueItem = { id: `${file.name}-${Date.now()}-${Math.random()}`, file, name: file.name, originalSize: file.size, status: 'pending' };
       if (!TYPES.includes(file.type)) return { ...item, status: 'error', rejected: true, errorMsg: t('ctl.bulk.errNotImage') };
       if (file.size > MAX_BYTES) return { ...item, status: 'error', rejected: true, errorMsg: t('ctl.bulk.errTooLarge') };
-      return item;
-    });
+      // Read now: an Android photo picker file may no longer be readable when the queue gets to it
+      const copy = await snapshotFile(file);
+      return copy ? { ...item, file: copy } : { ...item, status: 'error', rejected: true, errorMsg: t('ctl.bulk.errProcess') };
+    }));
     setOverflowCount(list.length - added.length);
     setQueue((prev) => [...prev, ...added]);
     warmUp();
