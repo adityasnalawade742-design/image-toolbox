@@ -70,6 +70,7 @@ const MemeGeneratorWorkspace = standaloneTool(() => import('../tools/MemeGenerat
 const ImageSplitterWorkspace = standaloneTool(() => import('../tools/ImageSplitterWorkspace'), 'ImageSplitterWorkspace');
 const CensorImageWorkspace = standaloneTool(() => import('../tools/CensorImageWorkspace'), 'CensorImageWorkspace');
 const RemoveBackgroundWorkspace = standaloneTool(() => import('../tools/RemoveBackgroundWorkspace'), 'RemoveBackgroundWorkspace');
+const BulkRemoveBackgroundWorkspace = standaloneTool(() => import('../tools/BulkRemoveBackgroundWorkspace'), 'BulkRemoveBackgroundWorkspace');
 const CompressToKbWorkspace = standaloneTool(() => import('../tools/CompressToKbWorkspace'), 'CompressToKbWorkspace');
 const JpgToPdfWorkspace = standaloneTool(() => import('../tools/JpgToPdfWorkspace'), 'JpgToPdfWorkspace');
 const PdfToJpgWorkspace = standaloneTool(() => import('../tools/PdfToJpgWorkspace'), 'PdfToJpgWorkspace');
@@ -199,6 +200,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
     'split-image': <ImageSplitterWorkspace />,
     'censor-image': <CensorImageWorkspace />,
     'remove-background': <RemoveBackgroundWorkspace />,
+    'bulk-remove-background': <BulkRemoveBackgroundWorkspace />,
     'compress-image-to-kb': <CompressToKbWorkspace />,
     'jpg-to-pdf': <JpgToPdfWorkspace />,
     'png-to-pdf': <JpgToPdfWorkspace />,

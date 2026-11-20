@@ -2704,7 +2704,7 @@ export const enTools: Record<string, LocalizedToolItem> = {
       },
       {
         "question": "What is the difference between Fast and Best quality?",
-        "answer": "Fast uses a smaller model (about 16 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 15–30 seconds, with better results on products, pets, objects and people."
+        "answer": "Fast uses a smaller model (about 16 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 5–10 seconds in Chrome or Edge on recent computers and phones with 8 GB of memory, and about 20–45 seconds on other devices, with better results on products, pets, objects and people."
       },
       {
         "question": "Why does the first use take longer?",
@@ -2723,6 +2723,84 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "answer": "Fine hair, fur, glass, and subjects with colors similar to the background are hard for any model. Try Best quality, or use a photo with clear contrast between the subject and the background. You can also fix them by hand: choose “Erase or restore with a brush” to remove leftover background or paint back missed hair and edges from the photo, with undo."
       }
     ]
+  },
+  "bulk-remove-background": {
+    name: "Bulk Remove Background",
+    shortName: "Bulk Remove BG",
+    tagline: "Remove the background from up to 50 photos at once with AI that runs on your device, and download them in one ZIP.",
+    intro: "Bulk Remove Background removes the background from many photos in one go, such as a set of product shots for an online shop or a team's profile photos. It uses the same AI models as Remove Background and runs in your browser, so the photos are never uploaded. Add up to 50 photos, choose Fast or Best quality, and they are processed one after another. Keep the results transparent or put them on a solid color, then save each one separately or all of them in one ZIP.",
+    seoTitle: "Bulk Background Remover – Up to 50 Photos, Free",
+    seoDescription: "Remove the background from up to 50 photos at once, for free. The AI runs in your browser, so photos stay on your device. Transparent PNG or a color, in one ZIP.",
+    keywords: [
+      "bulk background remover",
+      "remove background from multiple images",
+      "batch remove background",
+      "remove background from many photos at once",
+      "bulk transparent background",
+      "remove background product photos in bulk"
+    ],
+    howToSteps: [
+      {
+        "title": "Add your photos",
+        "description": "Drop up to 50 JPG, PNG or WebP photos of up to 50 MB each, or click to choose them."
+      },
+      {
+        "title": "Choose a model",
+        "description": "Fast suits photos of people. Best quality gives cleaner results on products, pets and objects; its larger model downloads once, after you agree."
+      },
+      {
+        "title": "Remove the backgrounds",
+        "description": "Click Remove backgrounds. The photos are processed one at a time, and each result appears in the list as soon as it is ready."
+      },
+      {
+        "title": "Download",
+        "description": "Choose a transparent background or a color and the format, then download single photos or all of them with Download ZIP."
+      }
+    ],
+    features: [
+      {
+        "title": "Up to 50 photos at a time",
+        "description": "Add a whole set of photos and let them run, with the status of each one in the list."
+      },
+      {
+        "title": "Photos stay on your device",
+        "description": "The AI runs in your browser and the photos are never uploaded, which matters for unreleased products, ID photos and pictures of people."
+      },
+      {
+        "title": "Change the output without redoing the work",
+        "description": "Switch between a transparent background and a color, or between PNG, WebP and JPG, after the backgrounds are removed. Only choosing another model runs the AI again."
+      },
+      {
+        "title": "One ZIP with the original names",
+        "description": "Each file keeps its name with -no-background added, and duplicate names are numbered."
+      }
+    ],
+    faqs: [
+      {
+        "question": "How many photos can I process at once?",
+        "answer": "Up to 50 photos per batch, each up to 50 MB. Very large photos are first reduced to a size every browser can handle."
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "It depends on the device and the model. Fast takes a few seconds per photo. Best quality takes about 5–10 seconds per photo in Chrome or Edge on recent computers and on phones with 8 GB of memory, and about 20–45 seconds on other devices. The first photo also includes downloading the model."
+      },
+      {
+        "question": "Are my photos uploaded to a server?",
+        "answer": "No. Only the AI model is downloaded to your browser. The photos are processed on your device and are not sent anywhere."
+      },
+      {
+        "question": "Can I fix a photo the AI got wrong?",
+        "answer": "This tool has no brush. Open that photo in Remove Background, which has an erase and restore brush for hair and edges."
+      },
+      {
+        "question": "Which format should I choose?",
+        "answer": "PNG keeps the transparent background and opens everywhere. WebP keeps transparency in a smaller file. JPG cannot be transparent, so it always gets the background color you choose."
+      },
+      {
+        "question": "Does it work on a phone?",
+        "answer": "Yes. Keep the screen on and the page open while a batch runs, because phones pause pages in the background. On phones, Fast gets through a large batch much sooner."
+      }
+    ],
   },
   "compress-image-to-kb": {
     "name": "Compress Image to KB",

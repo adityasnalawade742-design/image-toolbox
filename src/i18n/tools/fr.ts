@@ -2710,7 +2710,7 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle est la différence entre « Rapide » et « Qualité maximale » ?",
         answer:
-          "« Rapide » utilise un modèle plus petit (environ 16 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 15 à 30 secondes, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
+          "« Rapide » utilise un modèle plus petit (environ 16 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 5 à 10 secondes dans Chrome ou Edge sur les ordinateurs récents et les téléphones avec 8 Go de mémoire, et environ 20 à 45 secondes sur les autres appareils, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
       },
       {
         question: "Pourquoi la première utilisation prend-elle plus de temps ?",
@@ -2732,6 +2732,84 @@ export const frTools: Record<string, LocalizedToolItem> = {
         answer:
           "Les cheveux fins, la fourrure, le verre et les sujets de couleur proche de l’arrière-plan sont difficiles pour tous les modèles. Essayez « Qualité maximale », ou utilisez une photo avec un contraste net entre le sujet et l’arrière-plan. Vous pouvez aussi les corriger à la main : choisissez « Effacer ou restaurer au pinceau » pour retirer des restes de fond ou reprendre de la photo les cheveux et bords manquants, avec annulation.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Supprimer l’arrière-plan par lot",
+    shortName: "Détourer par lot",
+    tagline: "Supprimez l’arrière-plan d’un maximum de 50 photos à la fois avec une IA qui fonctionne sur votre appareil, puis téléchargez-les dans un ZIP.",
+    intro: "Cet outil supprime l’arrière-plan de nombreuses photos en une seule fois, par exemple une série de photos produit pour une boutique en ligne ou les photos de profil d’une équipe. Il utilise les mêmes modèles d’IA que Supprimer l’arrière-plan et fonctionne dans votre navigateur : les photos ne sont jamais envoyées. Ajoutez jusqu’à 50 photos, choisissez Rapide ou Qualité maximale, et elles sont traitées l’une après l’autre. Gardez un fond transparent ou une couleur unie, puis enregistrez chaque photo séparément ou toutes dans un ZIP.",
+    seoTitle: "Supprimer l’arrière-plan de plusieurs images – Gratuit",
+    seoDescription: "Supprimez l’arrière-plan de 50 photos à la fois, gratuitement. L’IA tourne dans votre navigateur : vos photos restent chez vous. PNG transparent ou en couleur, en ZIP.",
+    keywords: [
+      "supprimer arrière-plan plusieurs images",
+      "détourer plusieurs photos",
+      "supprimer fond par lot",
+      "détourage en masse",
+      "fond transparent plusieurs photos",
+      "détourer photos produit"
+    ],
+    howToSteps: [
+      {
+        "title": "Ajoutez vos photos",
+        "description": "Déposez jusqu’à 50 photos JPG, PNG ou WebP de 50 Mo maximum chacune, ou cliquez pour les choisir."
+      },
+      {
+        "title": "Choisissez un modèle",
+        "description": "Rapide convient aux photos de personnes. Qualité maximale donne des résultats plus nets pour les produits, les animaux et les objets ; son modèle, plus lourd, se télécharge une fois, après votre accord."
+      },
+      {
+        "title": "Supprimez les arrière-plans",
+        "description": "Cliquez sur Supprimer les arrière-plans. Les photos sont traitées une à une, et chaque résultat apparaît dans la liste dès qu’il est prêt."
+      },
+      {
+        "title": "Téléchargez",
+        "description": "Choisissez un fond transparent ou une couleur et le format, puis téléchargez les photos une par une ou toutes avec Télécharger le ZIP."
+      }
+    ],
+    features: [
+      {
+        "title": "Jusqu’à 50 photos à la fois",
+        "description": "Ajoutez toute une série de photos et laissez tourner, avec l’état de chacune dans la liste."
+      },
+      {
+        "title": "Vos photos restent sur votre appareil",
+        "description": "L’IA fonctionne dans votre navigateur et les photos ne sont jamais envoyées, ce qui compte pour des produits pas encore lancés, des photos d’identité et des photos de personnes."
+      },
+      {
+        "title": "Changez le résultat sans tout refaire",
+        "description": "Passez d’un fond transparent à une couleur, ou de PNG à WebP ou JPG, une fois les arrière-plans supprimés. Seul un autre modèle relance l’IA."
+      },
+      {
+        "title": "Un ZIP avec les noms d’origine",
+        "description": "Chaque fichier garde son nom suivi de -no-background, et les noms en double sont numérotés."
+      }
+    ],
+    faqs: [
+      {
+        "question": "Combien de photos puis-je traiter à la fois ?",
+        "answer": "Jusqu’à 50 photos par lot, de 50 Mo maximum chacune. Les très grandes photos sont d’abord réduites à une taille que tout navigateur peut gérer."
+      },
+      {
+        "question": "Combien de temps cela prend-il ?",
+        "answer": "Cela dépend de l’appareil et du modèle. Rapide prend quelques secondes par photo. Qualité maximale prend environ 5 à 10 secondes par photo dans Chrome ou Edge sur les ordinateurs récents et les téléphones avec 8 Go de mémoire, et environ 20 à 45 secondes sur les autres appareils. La première photo comprend aussi le téléchargement du modèle."
+      },
+      {
+        "question": "Mes photos sont-elles envoyées sur un serveur ?",
+        "answer": "Non. Seul le modèle d’IA est téléchargé dans votre navigateur. Les photos sont traitées sur votre appareil et ne sont envoyées nulle part."
+      },
+      {
+        "question": "Puis-je corriger une photo ratée par l’IA ?",
+        "answer": "Cet outil n’a pas de pinceau. Ouvrez cette photo dans Supprimer l’arrière-plan, qui propose un pinceau pour effacer et restaurer les cheveux et les contours."
+      },
+      {
+        "question": "Quel format choisir ?",
+        "answer": "Le PNG garde le fond transparent et s’ouvre partout. Le WebP garde la transparence dans un fichier plus léger. Le JPG ne gère pas la transparence : il reçoit toujours la couleur de fond choisie."
+      },
+      {
+        "question": "Est-ce que ça marche sur un téléphone ?",
+        "answer": "Oui. Gardez l’écran allumé et la page ouverte pendant le traitement d’un lot, car les téléphones mettent en pause les pages en arrière-plan. Sur téléphone, Rapide termine un grand lot bien plus tôt."
+      }
     ],
   },
   "compress-image-to-kb": {

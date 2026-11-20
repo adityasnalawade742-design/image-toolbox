@@ -135,6 +135,16 @@ export const TOOLS: ToolDefinition[] = [
     popular: true,
   },
   {
+    slug: 'bulk-remove-background',
+    name: 'Bulk Remove Background',
+    shortName: 'Bulk Remove BG',
+    description: 'Remove the background from up to 50 photos at once with an AI that runs on your device, and download them in one ZIP.',
+    category: 'edit-transform',
+    iconName: 'Layers',
+    accept: 'image/png,image/jpeg,image/webp',
+    badge: 'Batch',
+  },
+  {
     slug: 'blur-background',
     name: 'Blur Background',
     shortName: 'Blur Background',

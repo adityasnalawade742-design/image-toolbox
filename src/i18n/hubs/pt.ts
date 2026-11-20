@@ -32,7 +32,7 @@ export const ptHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Ferramentas grátis para editar imagens: cortar, redimensionar',
-      description: '42 ferramentas grátis para editar fotos: corte, redimensione, remova ou troque o fundo, adicione texto e marca d’água e ajuste para redes sociais.',
+      description: '43 ferramentas grátis para editar fotos: corte, redimensione, remova ou troque o fundo, adicione texto e marca d’água e ajuste para redes sociais.',
       h1: 'Ferramentas para editar imagens',
       intro:
         'Edições rápidas sem instalar nada: corte e redimensione, remova ou troque o fundo, adicione texto, marcas d’água e bordas, deixe mais nítido e corrija as cores, ou ajuste uma imagem para Instagram, YouTube e outras redes. Todas funcionam no seu navegador, então suas fotos nunca são enviadas e mantêm o formato sempre que possível.',

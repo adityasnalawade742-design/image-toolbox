@@ -38,7 +38,7 @@ export const HUBS: Hub[] = [
     category: 'edit-transform',
     groups: [
       { key: 'basics', slugs: ['crop-image', 'resize-image', 'rotate-image', 'flip-image', 'bulk-image-resizer', 'perspective-correction', 'round-image', 'add-border-to-image'] },
-      { key: 'background', slugs: ['remove-background', 'blur-background', 'change-background', 'transparent-png-maker', 'signature-extractor', 'passport-photo-maker', 'add-drop-shadow'] },
+      { key: 'background', slugs: ['remove-background', 'bulk-remove-background', 'blur-background', 'change-background', 'transparent-png-maker', 'signature-extractor', 'passport-photo-maker', 'add-drop-shadow'] },
       { key: 'text', slugs: ['add-text-to-image', 'watermark-image', 'meme-generator', 'image-annotator', 'censor-image'] },
       { key: 'enhance', slugs: ['sharpen-image', 'denoise-image', 'fix-white-balance', 'scan-cleaner', 'photo-filters', 'image-color-replacer', 'halftone-dither-effect', 'pixel-art-converter'] },
       { key: 'social', slugs: ['social-media-image-resizer', 'instagram-post-resizer', 'instagram-story-resizer', 'youtube-thumbnail-maker', 'youtube-banner-maker', 'facebook-cover-maker', 'linkedin-banner-maker', 'pinterest-pin-resizer', 'open-graph-image-maker'] },
