@@ -163,6 +163,16 @@
   .prose-sheet blockquote {
     @apply border-l-2 border-ink pl-4 text-ink;
   }
+  /* Guides: pictures fill the column (they never widen the page on a phone), with a caption below */
+  .prose-sheet figure {
+    margin-top: 1.5rem;
+  }
+  .prose-sheet img {
+    @apply block w-full h-auto rounded-lg border border-ink;
+  }
+  .prose-sheet figcaption {
+    @apply mt-2 text-[14px] leading-snug text-graphite;
+  }
   /* Crop marks drawn just outside the element's corners (needs a little padding around it) */
   .crop-marks {
     --mark: 14px;
