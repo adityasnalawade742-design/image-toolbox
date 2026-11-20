@@ -10,6 +10,7 @@
  *   colours with libimagequant (what pngquant/TinyPNG do), then OxiPNG
  */
 import type { CodecKind } from './avifEncoder';
+import { pngLevel } from './pngLevel';
 
 interface Job {
   id: number;
@@ -21,12 +22,9 @@ interface Job {
   exact?: boolean;
 }
 
-// OxiPNG gets slow on huge images: above this it runs at its fastest level (lossless only), and above the
-// second limit the browser's own PNG is used. Measured on A4 pages at 600 dpi (34.8 MP): level 0 took 5-7 s and was
-// 54-92% smaller than the browser's PNG, against 8-28 s at level 2 for only ~10% more saving. Phones never get here:
-// PDF pages are capped at 16.7 MP on touch devices.
+// Lossy (palette) PNGs, where small files are the point, keep level 2 up to this size; above it, and above the
+// second limit for lossless ones, the browser's own PNG is used. A4, Letter and Legal at 600 dpi fit the second.
 const OXIPNG_MAX_PIXELS = 24_000_000;
-// A4, Letter and Legal at 600 dpi
 const OXIPNG_FAST_MAX_PIXELS = 48_000_000;
 
 async function encodeJpeg(img: ImageData, quality: number) {
@@ -93,9 +91,11 @@ async function quantisePng(img: ImageData, quality: number): Promise<ArrayBuffer
 
 async function encodePng(img: ImageData, quality: number, lossy: boolean): Promise<ArrayBuffer | null> {
   const pixels = img.width * img.height;
-  if (!lossy && pixels > OXIPNG_MAX_PIXELS && pixels <= OXIPNG_FAST_MAX_PIXELS) return optimisePng(img, 0);
+  if (!lossy) {
+    if (pixels > OXIPNG_FAST_MAX_PIXELS) return null;
+    return optimisePng(img, pngLevel(pixels));
+  }
   if (pixels > OXIPNG_MAX_PIXELS) return null;
-  if (!lossy) return optimisePng(img);
   return optimisePng(await quantisePng(img, quality));
 }
 
