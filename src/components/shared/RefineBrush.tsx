@@ -1,12 +1,16 @@
 /**
- * Fix an AI cutout by hand: erase leftover background or restore missed hair and hands. One hook holds the brush, and
- * two pieces use it: the controls in the settings panel and the drawing surface over the preview. Shared by Remove,
- * Blur and Change Background.
+ * Fix an AI cutout by hand: erase leftover background, restore missed hair and hands, or keep only the subjects painted
+ * over (keepMarked.ts: everything else in the cutout is removed, such as the other people in a group photo). One hook
+ * holds the brush, and two pieces use it: the controls in the settings panel and the drawing surface over the preview.
+ * Shared by Remove, Blur and Change Background and Passport Photo.
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { Brush, Eraser, Undo2, RotateCcw, Check } from 'lucide-react';
+import { Brush, Eraser, Undo2, RotateCcw, Check, Target } from 'lucide-react';
 import { useT } from './I18nContext';
 import { DirtyBox, dabsAlong, paintDab, type BrushMode } from '../../lib/canvas/refineBrush';
+import { keepMarked, type Mark } from '../../lib/canvas/keepMarked';
+
+export type RefineMode = BrushMode | 'keep';
 
 const MAX_UNDO = 20;
 
@@ -31,7 +35,13 @@ interface Step {
  */
 export function useRefineBrush(target: RefineTarget | null, onPaint: () => void, onCommit?: () => void) {
   const [active, setActive] = useState(false);
-  const [mode, setMode] = useState<BrushMode>('erase');
+  const [mode, setModeState] = useState<RefineMode>('erase');
+  // The last Keep stroke touched no part of the cutout
+  const [keepMissed, setKeepMissed] = useState(false);
+  const setMode = (m: RefineMode) => {
+    setModeState(m);
+    setKeepMissed(false);
+  };
   const [size, setSize] = useState(40);
   const [steps, setSteps] = useState(0);
   const [edited, setEdited] = useState(false);
@@ -81,7 +91,7 @@ export function useRefineBrush(target: RefineTarget | null, onPaint: () => void,
     onPaint();
     onCommit?.();
   };
-  return { target, active, setActive, mode, setMode, size, setSize, steps, edited, undo, reset, repaint, push, onCommit };
+  return { target, active, setActive, mode, setMode, size, setSize, steps, edited, undo, reset, repaint, push, onCommit, onPaint, keepMissed, setKeepMissed };
 }
 
 export type RefineBrushState = ReturnType<typeof useRefineBrush>;
@@ -105,7 +115,7 @@ export function RefinePanel({ brush, disabled, showsRemoved }: { brush: RefineBr
   const seg = (on: boolean) => `min-h-[40px] flex items-center justify-center gap-1.5 text-[14px] font-semibold transition-colors ${on ? 'seg-on' : 'seg-off'}`;
   return (
     <div className="space-y-3">
-      <div className="grid grid-cols-2 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.refine.tool')}>
+      <div className="grid grid-cols-3 seg-group border border-ink divide-x divide-ink" role="group" aria-label={t('ctl.refine.tool')}>
         <button type="button" aria-pressed={brush.mode === 'erase'} onClick={() => brush.setMode('erase')} className={seg(brush.mode === 'erase')}>
           <Eraser className="w-4 h-4" aria-hidden="true" />
           {t('ctl.refine.erase')}
@@ -113,6 +123,10 @@ export function RefinePanel({ brush, disabled, showsRemoved }: { brush: RefineBr
         <button type="button" aria-pressed={brush.mode === 'restore'} onClick={() => brush.setMode('restore')} className={seg(brush.mode === 'restore')}>
           <Brush className="w-4 h-4" aria-hidden="true" />
           {t('ctl.refine.restore')}
+        </button>
+        <button type="button" aria-pressed={brush.mode === 'keep'} onClick={() => brush.setMode('keep')} className={seg(brush.mode === 'keep')}>
+          <Target className="w-4 h-4" aria-hidden="true" />
+          {t('ctl.refine.keep')}
         </button>
       </div>
       <label htmlFor="refine-size" className="block space-y-1.5">
@@ -122,7 +136,18 @@ export function RefinePanel({ brush, disabled, showsRemoved }: { brush: RefineBr
         </span>
         <input id="refine-size" type="range" min={6} max={150} value={brush.size} onChange={(e) => brush.setSize(parseInt(e.target.value, 10))} className="w-full" />
       </label>
-      <p className="text-[13px] text-graphite">{brush.mode === 'erase' ? t('ctl.refine.eraseHint') : showsRemoved ? `${t('ctl.refine.restoreHint')} ${t('ctl.refine.faint')}` : t('ctl.refine.restoreHint')}</p>
+      <p className="text-[13px] text-graphite">
+        {brush.mode === 'keep'
+          ? t('ctl.refine.keepHint')
+          : brush.mode === 'erase'
+            ? t('ctl.refine.eraseHint')
+            : showsRemoved
+              ? `${t('ctl.refine.restoreHint')} ${t('ctl.refine.faint')}`
+              : t('ctl.refine.restoreHint')}
+      </p>
+      {brush.mode === 'keep' && brush.keepMissed && (
+        <p role="status" className="text-[13px] text-accent-yellow">{t('ctl.refine.keepNothing')}</p>
+      )}
       <div className="grid grid-cols-2 gap-2">
         <button type="button" onClick={brush.undo} disabled={!brush.steps} className="btn-rule disabled:opacity-40">
           <Undo2 className="w-4 h-4" aria-hidden="true" />
@@ -158,6 +183,10 @@ export function RefineSurface({
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
   const stroke = useRef<{ last: { x: number; y: number }; box: DirtyBox; snapshot: HTMLCanvasElement; r: number } | null>(null);
   const scratch = useRef<HTMLCanvasElement | null>(null);
+  // Keep: the stroke is only marked (on screen, and as points in the cutout's pixels) until it ends
+  const marks = useRef<Mark[] | null>(null);
+  const trail = useRef<HTMLCanvasElement | null>(null);
+  const lastLocal = useRef<{ x: number; y: number } | null>(null);
   if (!brush.active || !brush.target || !canvas) return null;
   const { subject, original } = brush.target;
 
@@ -171,8 +200,46 @@ export function RefineSurface({
   };
   const dab = (x: number, y: number, r: number) => {
     scratch.current ??= document.createElement('canvas');
-    paintDab(subject.getContext('2d')!, original, x, y, r, brush.mode, scratch.current);
+    // Keep strokes are only marked, never painted (see down), so the mode here is erase or restore
+    paintDab(subject.getContext('2d')!, original, x, y, r, brush.mode as BrushMode, scratch.current);
     stroke.current!.box.add(x, y, r);
+  };
+
+  const drawTrail = (from: { x: number; y: number }, to: { x: number; y: number }) => {
+    const c = trail.current;
+    if (!c) return;
+    const ctx = c.getContext('2d')!;
+    ctx.strokeStyle = 'rgba(40, 110, 220, 0.45)';
+    ctx.lineWidth = brush.size;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(from.x, from.y);
+    ctx.lineTo(to.x, to.y);
+    ctx.stroke();
+  };
+  const finishKeep = () => {
+    const points = marks.current;
+    marks.current = null;
+    lastLocal.current = null;
+    const c = trail.current;
+    if (c) c.getContext('2d')!.clearRect(0, 0, c.width, c.height);
+    if (!points?.length) return;
+    const ctx = subject.getContext('2d', { willReadFrequently: true })!;
+    const image = ctx.getImageData(0, 0, subject.width, subject.height);
+    const before = document.createElement('canvas');
+    before.width = subject.width;
+    before.height = subject.height;
+    before.getContext('2d')!.drawImage(subject, 0, 0);
+    if (!keepMarked(image.data, image.width, image.height, points)) {
+      brush.setKeepMissed(true);
+      return;
+    }
+    brush.setKeepMissed(false);
+    ctx.putImageData(image, 0, 0);
+    brush.push({ x: 0, y: 0, before });
+    brush.onPaint();
+    brush.onCommit?.();
   };
 
   const down = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -182,6 +249,17 @@ export function RefineSurface({
     e.stopPropagation();
     e.currentTarget.setPointerCapture(e.pointerId);
     const p = toImage(e);
+    if (brush.mode === 'keep') {
+      const c = trail.current;
+      if (c) {
+        c.width = e.currentTarget.clientWidth;
+        c.height = e.currentTarget.clientHeight;
+      }
+      marks.current = [{ x: p.x, y: p.y, r: p.r }];
+      lastLocal.current = p.local;
+      drawTrail(p.local, p.local);
+      return;
+    }
     // The whole cutout before the stroke; only the part the stroke touches is kept for undo
     const snapshot = document.createElement('canvas');
     snapshot.width = subject.width;
@@ -195,6 +273,14 @@ export function RefineSurface({
     e.stopPropagation();
     const p = toImage(e);
     setCursor(p.local);
+    if (marks.current && e.isPrimary) {
+      const last = marks.current[marks.current.length - 1];
+      for (const q of dabsAlong(last, p, p.r)) marks.current.push({ x: q.x, y: q.y, r: p.r });
+      marks.current.push({ x: p.x, y: p.y, r: p.r });
+      drawTrail(lastLocal.current ?? p.local, p.local);
+      lastLocal.current = p.local;
+      return;
+    }
     const s = stroke.current;
     if (!s || !e.isPrimary) return;
     for (const q of dabsAlong(s.last, p, p.r)) dab(q.x, q.y, p.r);
@@ -202,6 +288,7 @@ export function RefineSurface({
     brush.repaint();
   };
   const up = () => {
+    if (marks.current) return finishKeep();
     const s = stroke.current;
     stroke.current = null;
     if (!s) return;
@@ -230,6 +317,7 @@ export function RefineSurface({
       onPointerCancel={up}
       onPointerLeave={() => setCursor(null)}
     >
+      <canvas ref={trail} className="absolute inset-0 w-full h-full pointer-events-none" />
       {cursor && (
         <div
           className="absolute rounded-full pointer-events-none border-2 border-white"
@@ -239,7 +327,7 @@ export function RefineSurface({
             width: brush.size,
             height: brush.size,
             boxShadow: '0 0 0 1px rgba(0,0,0,.7), inset 0 0 0 1px rgba(0,0,0,.7)',
-            background: brush.mode === 'erase' ? 'rgba(220,40,40,.18)' : 'rgba(40,160,80,.18)',
+            background: brush.mode === 'erase' ? 'rgba(220,40,40,.18)' : brush.mode === 'keep' ? 'rgba(40,110,220,.18)' : 'rgba(40,160,80,.18)',
           }}
         />
       )}
