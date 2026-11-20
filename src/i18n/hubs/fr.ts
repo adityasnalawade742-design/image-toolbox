@@ -32,7 +32,7 @@ export const frHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Outils de retouche photo gratuits : rogner, redimensionner',
-      description: '42 outils gratuits de retouche photo : rogner, redimensionner, détourer ou changer le fond, ajouter texte et filigrane, adapter aux réseaux sociaux.',
+      description: '43 outils gratuits de retouche photo : rogner, redimensionner, détourer ou changer le fond, ajouter texte et filigrane, adapter aux réseaux sociaux.',
       h1: 'Outils de retouche d’images',
       intro:
         'Des retouches rapides sans rien installer : rognez et redimensionnez, détourez ou remplacez le fond, ajoutez du texte, des filigranes et des bordures, améliorez la netteté et les couleurs, ou adaptez une image à Instagram, YouTube et d’autres réseaux. Tous les outils fonctionnent dans votre navigateur : vos photos ne sont jamais envoyées et gardent leur format dès que possible.',

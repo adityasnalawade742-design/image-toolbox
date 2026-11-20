@@ -2710,7 +2710,7 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué diferencia hay entre Rápido y Máxima calidad?",
         answer:
-          "Rápido usa un modelo más pequeño (unos 16 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 15–30 segundos, con mejores resultados en productos, mascotas, objetos y personas.",
+          "Rápido usa un modelo más pequeño (unos 16 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 5–10 segundos en Chrome o Edge en ordenadores recientes y móviles con 8 GB de memoria, y unos 20–45 segundos en otros dispositivos, con mejores resultados en productos, mascotas, objetos y personas.",
       },
       {
         question: "¿Por qué el primer uso tarda más?",
@@ -2732,6 +2732,84 @@ export const esTools: Record<string, LocalizedToolItem> = {
         answer:
           "El pelo fino, el pelaje, el cristal y los sujetos con colores parecidos al fondo son difíciles para cualquier modelo. Prueba Máxima calidad o usa una foto con un contraste claro entre el sujeto y el fondo. También puedes corregirlos a mano: elige «Borrar o recuperar con un pincel» para quitar restos de fondo o recuperar de la foto el pelo y los bordes que falten, con opción de deshacer.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Quitar fondo por lotes",
+    shortName: "Quitar fondos en lote",
+    tagline: "Quita el fondo de hasta 50 fotos a la vez con una IA que funciona en tu dispositivo y descárgalas en un ZIP.",
+    intro: "Quitar fondo por lotes elimina el fondo de muchas fotos de una vez, por ejemplo una serie de fotos de producto para una tienda online o las fotos de perfil de un equipo. Usa los mismos modelos de IA que Quitar fondo y funciona en tu navegador, así que las fotos nunca se suben. Añade hasta 50 fotos, elige Rápido o Máxima calidad y se procesan una tras otra. Deja los resultados transparentes o ponles un color de fondo, y guárdalos uno a uno o todos en un ZIP.",
+    seoTitle: "Quitar fondo de varias imágenes a la vez – Gratis",
+    seoDescription: "Quita el fondo de hasta 50 fotos a la vez, gratis. La IA funciona en tu navegador, así que las fotos se quedan en tu dispositivo. PNG transparente o con color, en un ZIP.",
+    keywords: [
+      "quitar fondo varias imagenes",
+      "quitar fondo por lotes",
+      "eliminar fondo de muchas fotos",
+      "quitar fondo masivo",
+      "fondo transparente varias fotos",
+      "quitar fondo fotos de producto"
+    ],
+    howToSteps: [
+      {
+        "title": "Añade tus fotos",
+        "description": "Suelta hasta 50 fotos JPG, PNG o WebP de hasta 50 MB cada una, o haz clic para elegirlas."
+      },
+      {
+        "title": "Elige un modelo",
+        "description": "Rápido va bien para fotos de personas. Máxima calidad da resultados más limpios con productos, mascotas y objetos; su modelo, más grande, se descarga una vez, después de que aceptes."
+      },
+      {
+        "title": "Quita los fondos",
+        "description": "Haz clic en Quitar fondos. Las fotos se procesan una a una y cada resultado aparece en la lista en cuanto está listo."
+      },
+      {
+        "title": "Descarga",
+        "description": "Elige un fondo transparente o un color y el formato, y descarga las fotos una a una o todas con Descargar ZIP."
+      }
+    ],
+    features: [
+      {
+        "title": "Hasta 50 fotos a la vez",
+        "description": "Añade una serie entera de fotos y déjalas en marcha, con el estado de cada una en la lista."
+      },
+      {
+        "title": "Las fotos no salen de tu dispositivo",
+        "description": "La IA funciona en tu navegador y las fotos nunca se suben, algo importante con productos sin lanzar, fotos de documentos y fotos de personas."
+      },
+      {
+        "title": "Cambia el resultado sin repetir el trabajo",
+        "description": "Cambia entre fondo transparente y color, o entre PNG, WebP y JPG, después de quitar los fondos. Solo al elegir otro modelo se vuelve a usar la IA."
+      },
+      {
+        "title": "Un ZIP con los nombres originales",
+        "description": "Cada archivo conserva su nombre con -no-background añadido, y los nombres repetidos se numeran."
+      }
+    ],
+    faqs: [
+      {
+        "question": "¿Cuántas fotos puedo procesar a la vez?",
+        "answer": "Hasta 50 fotos por lote, de hasta 50 MB cada una. Las fotos muy grandes se reducen antes a un tamaño que cualquier navegador puede manejar."
+      },
+      {
+        "question": "¿Cuánto tarda?",
+        "answer": "Depende del dispositivo y del modelo. Rápido tarda unos segundos por foto. Máxima calidad tarda unos 5–10 segundos por foto en Chrome o Edge en ordenadores recientes y en móviles con 8 GB de memoria, y unos 20–45 segundos en otros dispositivos. La primera foto incluye además la descarga del modelo."
+      },
+      {
+        "question": "¿Se suben mis fotos a un servidor?",
+        "answer": "No. Solo se descarga el modelo de IA a tu navegador. Las fotos se procesan en tu dispositivo y no se envían a ningún sitio."
+      },
+      {
+        "question": "¿Puedo corregir una foto en la que la IA se equivocó?",
+        "answer": "Esta herramienta no tiene pincel. Abre esa foto en Quitar fondo, que tiene un pincel para borrar y restaurar pelo y bordes."
+      },
+      {
+        "question": "¿Qué formato elijo?",
+        "answer": "PNG conserva el fondo transparente y se abre en cualquier sitio. WebP conserva la transparencia en un archivo más pequeño. JPG no admite transparencia, así que siempre lleva el color de fondo que elijas."
+      },
+      {
+        "question": "¿Funciona en el móvil?",
+        "answer": "Sí. Mantén la pantalla encendida y la página abierta mientras se procesa un lote, porque los móviles pausan las páginas en segundo plano. En el móvil, Rápido termina mucho antes un lote grande."
+      }
     ],
   },
   "compress-image-to-kb": {

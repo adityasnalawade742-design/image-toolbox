@@ -32,7 +32,7 @@ export const deHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Kostenlose Bildbearbeitung: zuschneiden, Größe ändern',
-      description: '42 kostenlose Bildbearbeitungs-Tools: zuschneiden, skalieren, Hintergrund entfernen oder ändern, Text und Wasserzeichen, Größen für soziale Netze.',
+      description: '43 kostenlose Bildbearbeitungs-Tools: zuschneiden, skalieren, Hintergrund entfernen oder ändern, Text und Wasserzeichen, Größen für soziale Netze.',
       h1: 'Tools zur Bildbearbeitung',
       intro:
         'Schnelle Bearbeitungen ohne Installation: zuschneiden und skalieren, Hintergrund freistellen oder ersetzen, Text, Wasserzeichen und Rahmen hinzufügen, schärfen und Farben korrigieren oder ein Bild für Instagram, YouTube und andere Netzwerke zuschneiden. Alle Tools laufen in deinem Browser, deine Fotos werden also nie hochgeladen und behalten nach Möglichkeit ihr Format.',

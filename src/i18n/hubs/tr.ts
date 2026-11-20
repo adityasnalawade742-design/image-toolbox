@@ -32,7 +32,7 @@ export const trHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Ücretsiz Resim Düzenleme Araçları: Kırp, Boyutlandır',
-      description: '42 ücretsiz fotoğraf düzenleme aracı: kırpın, boyutlandırın, arka planı kaldırın ya da değiştirin, metin ve filigran ekleyin, sosyal medyaya uyarlayın.',
+      description: '43 ücretsiz fotoğraf düzenleme aracı: kırpın, boyutlandırın, arka planı kaldırın ya da değiştirin, metin ve filigran ekleyin, sosyal medyaya uyarlayın.',
       h1: 'Resim düzenleme araçları',
       intro:
         'Hiçbir şey kurmadan hızlı düzenlemeler: kırpın ve boyutlandırın, arka planı kesip çıkarın ya da değiştirin, metin, filigran ve kenarlık ekleyin, keskinleştirip renkleri düzeltin veya bir resmi Instagram, YouTube ve diğer ağlar için boyutlandırın. Tüm araçlar tarayıcınızda çalışır; fotoğraflarınız asla yüklenmez ve mümkün olduğunda biçimlerini korur.',

@@ -2710,7 +2710,7 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Was ist der Unterschied zwischen „Schnell“ und „Beste Qualität“?",
         answer:
-          "„Schnell“ nutzt ein kleineres Modell (etwa 16 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht etwa 15–30 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
+          "„Schnell“ nutzt ein kleineres Modell (etwa 16 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht in Chrome oder Edge auf aktuellen Computern und Handys mit 8 GB Arbeitsspeicher etwa 5–10 Sekunden, auf anderen Geräten etwa 20–45 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
       },
       {
         question: "Warum dauert die erste Nutzung länger?",
@@ -2732,6 +2732,84 @@ export const deTools: Record<string, LocalizedToolItem> = {
         answer:
           "Feine Haare, Fell, Glas und Motive mit ähnlichen Farben wie der Hintergrund sind für jedes Modell schwierig. Versuch „Beste Qualität“ oder nutze ein Foto mit klarem Kontrast zwischen Motiv und Hintergrund. Du kannst sie auch von Hand korrigieren: Wähle „Mit dem Pinsel radieren oder zurückholen“, um Hintergrundreste zu entfernen oder fehlende Haare und Kanten aus dem Foto zurückzuholen, mit Rückgängig.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Hintergründe mehrerer Bilder entfernen",
+    shortName: "Stapel freistellen",
+    tagline: "Entferne den Hintergrund von bis zu 50 Fotos auf einmal mit einer KI auf deinem Gerät und lade alle in einer ZIP-Datei herunter.",
+    intro: "Damit entfernst du den Hintergrund vieler Fotos in einem Durchgang, etwa bei Produktfotos für einen Onlineshop oder den Profilbildern eines Teams. Es nutzt dieselben KI-Modelle wie „Hintergrund entfernen“ und läuft in deinem Browser, die Fotos werden also nie hochgeladen. Füge bis zu 50 Fotos hinzu, wähle „Schnell“ oder „Beste Qualität“, und sie werden nacheinander bearbeitet. Lass die Ergebnisse transparent oder setze eine Farbe dahinter und speichere sie einzeln oder alle in einer ZIP-Datei.",
+    seoTitle: "Hintergrund von vielen Bildern entfernen – kostenlos",
+    seoDescription: "Entferne den Hintergrund von bis zu 50 Fotos auf einmal, kostenlos. Die KI läuft in deinem Browser, die Fotos bleiben auf deinem Gerät. Transparent oder farbig, als ZIP.",
+    keywords: [
+      "hintergrund entfernen mehrere bilder",
+      "hintergrund entfernen stapelverarbeitung",
+      "viele bilder freistellen",
+      "bilder freistellen batch",
+      "hintergrund transparent mehrere fotos",
+      "produktfotos freistellen"
+    ],
+    howToSteps: [
+      {
+        "title": "Fotos hinzufügen",
+        "description": "Zieh bis zu 50 JPG-, PNG- oder WebP-Fotos mit je bis zu 50 MB hierher oder klicke, um sie auszuwählen."
+      },
+      {
+        "title": "Modell wählen",
+        "description": "„Schnell“ passt zu Fotos von Personen. „Beste Qualität“ liefert sauberere Ergebnisse bei Produkten, Tieren und Gegenständen; das größere Modell wird einmal geladen, nachdem du zugestimmt hast."
+      },
+      {
+        "title": "Hintergründe entfernen",
+        "description": "Klicke auf „Hintergründe entfernen“. Die Fotos werden nacheinander bearbeitet, und jedes Ergebnis erscheint in der Liste, sobald es fertig ist."
+      },
+      {
+        "title": "Herunterladen",
+        "description": "Wähle einen transparenten Hintergrund oder eine Farbe und das Format, dann lade einzelne Fotos herunter oder alle mit „ZIP herunterladen“."
+      }
+    ],
+    features: [
+      {
+        "title": "Bis zu 50 Fotos auf einmal",
+        "description": "Füge eine ganze Fotoreihe hinzu und lass sie durchlaufen; die Liste zeigt den Stand jedes Fotos."
+      },
+      {
+        "title": "Fotos bleiben auf deinem Gerät",
+        "description": "Die KI läuft in deinem Browser und die Fotos werden nie hochgeladen. Das zählt bei unveröffentlichten Produkten, Ausweisfotos und Bildern von Menschen."
+      },
+      {
+        "title": "Ausgabe ändern, ohne neu zu rechnen",
+        "description": "Wechsle nach dem Entfernen zwischen transparent und farbig oder zwischen PNG, WebP und JPG. Nur ein anderes Modell lässt die KI erneut laufen."
+      },
+      {
+        "title": "Eine ZIP-Datei mit den Originalnamen",
+        "description": "Jede Datei behält ihren Namen mit dem Zusatz -no-background, doppelte Namen werden durchnummeriert."
+      }
+    ],
+    faqs: [
+      {
+        "question": "Wie viele Fotos kann ich auf einmal bearbeiten?",
+        "answer": "Bis zu 50 Fotos pro Durchgang mit je bis zu 50 MB. Sehr große Fotos werden vorher auf eine Größe verkleinert, die jeder Browser schafft."
+      },
+      {
+        "question": "Wie lange dauert es?",
+        "answer": "Das hängt vom Gerät und vom Modell ab. „Schnell“ braucht ein paar Sekunden pro Foto. „Beste Qualität“ braucht in Chrome oder Edge auf aktuellen Computern und auf Handys mit 8 GB Arbeitsspeicher etwa 5–10 Sekunden pro Foto, auf anderen Geräten etwa 20–45 Sekunden. Beim ersten Foto wird außerdem das Modell geladen."
+      },
+      {
+        "question": "Werden meine Fotos auf einen Server hochgeladen?",
+        "answer": "Nein. Nur das KI-Modell wird in deinen Browser geladen. Die Fotos werden auf deinem Gerät bearbeitet und nirgendwohin gesendet."
+      },
+      {
+        "question": "Kann ich ein Foto korrigieren, bei dem die KI danebenlag?",
+        "answer": "Dieses Werkzeug hat keinen Pinsel. Öffne das Foto in „Hintergrund entfernen“: Dort gibt es einen Pinsel zum Entfernen und Wiederherstellen für Haare und Kanten."
+      },
+      {
+        "question": "Welches Format soll ich wählen?",
+        "answer": "PNG behält den transparenten Hintergrund und lässt sich überall öffnen. WebP behält die Transparenz bei kleinerer Datei. JPG kann nicht transparent sein und bekommt daher immer die gewählte Hintergrundfarbe."
+      },
+      {
+        "question": "Funktioniert es auf dem Handy?",
+        "answer": "Ja. Lass den Bildschirm an und die Seite offen, solange ein Durchgang läuft, denn Handys pausieren Seiten im Hintergrund. Auf Handys ist „Schnell“ bei vielen Fotos deutlich eher fertig."
+      }
     ],
   },
   "compress-image-to-kb": {
