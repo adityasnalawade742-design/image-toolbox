@@ -8,7 +8,7 @@ export const bgStrings = {
   'ctl.bg.modePortrait': 'Fast',
   'ctl.bg.modeHq': 'Best quality',
   'ctl.bg.modePortraitNote': 'Smaller model, about 5 seconds per photo. Best for photos of people.',
-  'ctl.bg.modeHqNote': 'Larger model with better results on any subject: products, pets, objects and people. Slower, about 15–30 seconds.',
+  'ctl.bg.modeHqNote': 'Larger model with better results on any subject: products, pets, objects and people. Slower: 5–45 seconds a photo, depending on the device.',
   'ctl.bg.sizeOnce': 'One-time download: {size}',
   'ctl.bg.downloaded': 'Downloaded in this browser',
   'ctl.bg.hqPromptTitle': 'Download the best-quality model first',

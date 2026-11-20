@@ -17,6 +17,14 @@ describe('self-hosted model assets', () => {
     expect(assets.ocr.coreVersion).toBe(pkg('tesseract.js-core').version);
   });
 
+  it('serves BiRefNet with the ONNX Runtime it was verified on, in pieces under the 25 MiB limit', () => {
+    // On older ONNX Runtime versions WebGPU returns wrong masks for this model, without an error
+    expect(assets.birefnet.ortVersion).toBe(pkg('onnxruntime-web-1.31').version);
+    expect(assets.birefnet.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(assets.birefnet.chunkBytes).toBeLessThan(25 * 1024 * 1024);
+    expect(assets.birefnet.bytes).toBeGreaterThan(assets.birefnet.chunkBytes);
+  });
+
   it('pins every file by revision and SHA-256', () => {
     expect(assets.modnet.revision).toMatch(/^[0-9a-f]{40}$/);
     expect(assets.imgly.resourcesSha256).toMatch(/^[0-9a-f]{64}$/);

@@ -32,7 +32,7 @@ export const idHubs: HubTexts = {
     },
     'image-editing-tools': {
       title: 'Alat Edit Gambar Gratis: Potong, Ubah Ukuran, Hapus Latar',
-      description: '42 alat edit foto gratis: potong, ubah ukuran, hapus atau ganti latar, tambahkan teks dan watermark, serta sesuaikan untuk media sosial.',
+      description: '43 alat edit foto gratis: potong, ubah ukuran, hapus atau ganti latar, tambahkan teks dan watermark, serta sesuaikan untuk media sosial.',
       h1: 'Alat edit gambar',
       intro:
         'Edit cepat tanpa memasang apa pun: potong dan ubah ukuran, hapus atau ganti latar belakang, tambahkan teks, watermark, dan bingkai, pertajam dan perbaiki warna, atau sesuaikan gambar untuk Instagram, YouTube, dan jaringan lain. Semua alat berjalan di browser, jadi foto Anda tidak pernah diunggah dan formatnya dipertahankan bila memungkinkan.',

@@ -1,6 +1,7 @@
 /**
  * On-device background removal in Web Workers; images never leave the browser.
- * "Fast" (portrait): MODNet via transformers.js. "Best quality" (hq): IMG.LY's ISNet via @imgly/background-removal.
+ * "Fast" (portrait): MODNet via transformers.js. "Best quality" (hq): BiRefNet-lite on the graphics card where the
+ * device can run it (see canUseBirefnet), otherwise IMG.LY's ISNet via @imgly/background-removal.
  * Models download once and are then served from the browser cache.
  */
 import type { RemovalDevice, RemovalMode } from './backgroundRemoval.worker';
@@ -43,6 +44,7 @@ function recordProcessingMs(mode: RemovalMode, ms: number) {
 
 let worker: Worker | null = null;
 let imglyWorker: Worker | null = null;
+let birefnetWorker: Worker | null = null;
 let nextId = 1;
 
 function getWorker(): Worker {
@@ -55,13 +57,86 @@ function getImglyWorker(): Worker {
   return imglyWorker;
 }
 
+function getBirefnetWorker(): Worker {
+  if (!birefnetWorker) birefnetWorker = new Worker(new URL('./birefnetRemoval.worker.ts', import.meta.url), { type: 'module' });
+  return birefnetWorker;
+}
+
+// BiRefNet-lite needs more memory than ISNet (about 1 GB more at its peak on a phone), and a phone that runs out closes
+// the tab rather than throwing an error. So it is used only where all of these hold, and is switched off on a device
+// where it failed: with an error, or by the tab closing mid-run (the marker below is still set on the next visit).
+const FAILED_KEY = 'bg-birefnet-failed';
+const RUNNING_KEY = 'bg-birefnet-running';
+const store = {
+  get: (k: string) => {
+    try {
+      return localStorage.getItem(k);
+    } catch {
+      return null;
+    }
+  },
+  set: (k: string, v: string | null) => {
+    try {
+      if (v === null) localStorage.removeItem(k);
+      else localStorage.setItem(k, v);
+    } catch {
+      // storage unavailable: the checks still hold for this visit
+    }
+  },
+};
+let birefnetUsable: Promise<boolean> | null = null;
+
+/**
+ * Whether "Best quality" runs BiRefNet-lite here: WebGPU with an adapter (it runs on the graphics card), JSPI (the
+ * ONNX Runtime build that fits Cloudflare's file limit needs it; Chrome and Edge have it, Safari doesn't) and at least
+ * 8 GB of memory as the browser reports it (Chrome rounds down: a 6 GB phone reports 4). Decided once per visit.
+ */
+export function canUseBirefnet(): Promise<boolean> {
+  birefnetUsable ??= (async () => {
+    if (store.get(RUNNING_KEY)) {
+      // The last run never finished: the tab was most likely closed for lack of memory
+      store.set(FAILED_KEY, 'crashed');
+      store.set(RUNNING_KEY, null);
+    }
+    if (store.get(FAILED_KEY)) return false;
+    const nav = navigator as Navigator & { deviceMemory?: number; gpu?: { requestAdapter(): Promise<unknown> } };
+    if (typeof (WebAssembly as unknown as { Suspending?: unknown }).Suspending !== 'function') return false;
+    if (!((nav.deviceMemory ?? 0) >= 8)) return false;
+    if (!nav.gpu) return false;
+    try {
+      return !!(await nav.gpu.requestAdapter());
+    } catch {
+      return false;
+    }
+  })();
+  return birefnetUsable;
+}
+
 /** Remove the background. Returns RGBA pixels at the input image's size, with the background transparent. */
 export async function removeBackground(
   image: Blob,
   mode: RemovalMode,
   onProgress?: (p: RemovalProgress) => void
 ): Promise<ImageData> {
-  if (mode === 'hq') return run(image, mode, 'wasm', onProgress, getImglyWorker());
+  if (mode === 'hq') {
+    if (await canUseBirefnet()) {
+      store.set(RUNNING_KEY, String(Date.now()));
+      try {
+        const result = await run(image, mode, 'webgpu', onProgress, getBirefnetWorker());
+        store.set(RUNNING_KEY, null);
+        return result;
+      } catch (err) {
+        store.set(RUNNING_KEY, null);
+        // The model itself failed on this device: use ISNet here from now on. A failed download is only retried
+        if ((err as { stage?: string }).stage !== 'download') {
+          store.set(FAILED_KEY, 'error');
+          birefnetUsable = Promise.resolve(false);
+        }
+        console.warn('BiRefNet failed, using ISNet:', err);
+      }
+    }
+    return run(image, mode, 'wasm', onProgress, getImglyWorker());
+  }
   // MODNet always runs on WebAssembly: ONNX Runtime's WebGPU backend returns corrupted mattes on common
   // Intel integrated GPUs (verified on UHD Gen 12), and was ~4x slower there
   return run(image, mode, 'wasm', onProgress);
@@ -72,8 +147,9 @@ export async function removeBackground(
  * A removal that follows reuses it, and shows the download's progress if it is still running.
  */
 export function preloadBackgroundRemoval(mode: RemovalMode) {
-  if (mode === 'hq') getImglyWorker().postMessage({ type: 'preload' });
-  else getWorker().postMessage({ type: 'preload', mode, device: 'wasm' });
+  if (mode === 'hq') {
+    canUseBirefnet().then((ok) => (ok ? getBirefnetWorker() : getImglyWorker()).postMessage({ type: 'preload' }));
+  } else getWorker().postMessage({ type: 'preload', mode, device: 'wasm' });
 }
 
 function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?: (p: RemovalProgress) => void, target?: Worker) {
@@ -102,7 +178,7 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
         resolve(new ImageData(msg.data, msg.width, msg.height));
       } else if (msg.type === 'error') {
         cleanup();
-        reject(new Error(msg.message));
+        reject(Object.assign(new Error(msg.message), { stage: msg.stage }));
       }
     };
     const onError = (e: ErrorEvent) => {
@@ -110,6 +186,7 @@ function run(image: Blob, mode: RemovalMode, device: RemovalDevice, onProgress?:
       // a crashed worker is replaced on the next call
       if (w === worker) worker = null;
       if (w === imglyWorker) imglyWorker = null;
+      if (w === birefnetWorker) birefnetWorker = null;
       reject(new Error(e.message || 'Background removal worker failed'));
     };
     const cleanup = () => {

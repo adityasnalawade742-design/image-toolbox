@@ -2710,7 +2710,7 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Qual è la differenza tra Veloce e Massima qualità?",
         answer:
-          "Veloce usa un modello più piccolo (circa 16 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 15–30 secondi, con risultati migliori su prodotti, animali, oggetti e persone.",
+          "Veloce usa un modello più piccolo (circa 16 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 5–10 secondi in Chrome o Edge sui computer recenti e sui telefoni con 8 GB di memoria, e circa 20–45 secondi sugli altri dispositivi, con risultati migliori su prodotti, animali, oggetti e persone.",
       },
       {
         question: "Perché il primo utilizzo richiede più tempo?",
@@ -2732,6 +2732,84 @@ export const itTools: Record<string, LocalizedToolItem> = {
         answer:
           "Capelli sottili, pelo, vetro e soggetti con colori simili allo sfondo sono difficili per qualsiasi modello. Prova Massima qualità, oppure usa una foto con un contrasto netto tra soggetto e sfondo. Puoi anche correggerli a mano: scegli «Cancella o ripristina col pennello» per togliere resti di sfondo o riprendere dalla foto capelli e bordi mancanti, con annulla.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Rimuovi sfondo in blocco",
+    shortName: "Sfondi in blocco",
+    tagline: "Rimuovi lo sfondo da un massimo di 50 foto alla volta con un’IA che funziona sul tuo dispositivo e scaricale in un unico ZIP.",
+    intro: "Rimuovi sfondo in blocco elimina lo sfondo di molte foto in una volta sola, per esempio una serie di foto prodotto per un negozio online o le foto profilo di un team. Usa gli stessi modelli di IA di Rimuovi sfondo e funziona nel browser, quindi le foto non vengono mai caricate. Aggiungi fino a 50 foto, scegli Veloce o Massima qualità e vengono elaborate una dopo l’altra. Lascia il risultato trasparente o mettici dietro un colore, poi salva le foto una per una o tutte in un unico ZIP.",
+    seoTitle: "Rimuovi lo sfondo da più immagini – Gratis",
+    seoDescription: "Rimuovi lo sfondo da un massimo di 50 foto alla volta, gratis. L’IA funziona nel browser, quindi le foto restano sul tuo dispositivo. PNG trasparente o a colori, in un ZIP.",
+    keywords: [
+      "rimuovere sfondo più immagini",
+      "rimuovere sfondo in blocco",
+      "scontornare più foto",
+      "rimuovere sfondo foto multiple",
+      "sfondo trasparente più foto",
+      "scontornare foto prodotto"
+    ],
+    howToSteps: [
+      {
+        "title": "Aggiungi le foto",
+        "description": "Trascina fino a 50 foto JPG, PNG o WebP da massimo 50 MB ciascuna, oppure fai clic per sceglierle."
+      },
+      {
+        "title": "Scegli un modello",
+        "description": "Veloce va bene per le foto di persone. Massima qualità dà risultati più puliti con prodotti, animali e oggetti; il suo modello, più grande, si scarica una sola volta, dopo il tuo consenso."
+      },
+      {
+        "title": "Rimuovi gli sfondi",
+        "description": "Fai clic su Rimuovi gli sfondi. Le foto vengono elaborate una alla volta e ogni risultato compare nell’elenco appena è pronto."
+      },
+      {
+        "title": "Scarica",
+        "description": "Scegli uno sfondo trasparente o un colore e il formato, poi scarica le foto una per una o tutte con Scarica ZIP."
+      }
+    ],
+    features: [
+      {
+        "title": "Fino a 50 foto alla volta",
+        "description": "Aggiungi un’intera serie di foto e lasciala lavorare, con lo stato di ciascuna nell’elenco."
+      },
+      {
+        "title": "Le foto restano sul tuo dispositivo",
+        "description": "L’IA funziona nel browser e le foto non vengono mai caricate: conta per prodotti non ancora lanciati, foto per documenti e foto di persone."
+      },
+      {
+        "title": "Cambia il risultato senza rifare il lavoro",
+        "description": "Passa da sfondo trasparente a colore, o tra PNG, WebP e JPG, dopo aver rimosso gli sfondi. Solo scegliendo un altro modello l’IA viene eseguita di nuovo."
+      },
+      {
+        "title": "Un unico ZIP con i nomi originali",
+        "description": "Ogni file mantiene il suo nome con l’aggiunta di -no-background, e i nomi doppi vengono numerati."
+      }
+    ],
+    faqs: [
+      {
+        "question": "Quante foto posso elaborare alla volta?",
+        "answer": "Fino a 50 foto per volta, ciascuna fino a 50 MB. Le foto molto grandi vengono prima ridotte a una dimensione che ogni browser può gestire."
+      },
+      {
+        "question": "Quanto tempo ci vuole?",
+        "answer": "Dipende dal dispositivo e dal modello. Veloce impiega pochi secondi per foto. Massima qualità impiega circa 5–10 secondi per foto in Chrome o Edge sui computer recenti e sui telefoni con 8 GB di memoria, e circa 20–45 secondi sugli altri dispositivi. La prima foto comprende anche il download del modello."
+      },
+      {
+        "question": "Le mie foto vengono caricate su un server?",
+        "answer": "No. Nel browser viene scaricato solo il modello di IA. Le foto vengono elaborate sul tuo dispositivo e non vengono inviate da nessuna parte."
+      },
+      {
+        "question": "Posso correggere una foto in cui l’IA ha sbagliato?",
+        "answer": "Questo strumento non ha un pennello. Apri quella foto in Rimuovi sfondo, che ha un pennello per cancellare e ripristinare capelli e bordi."
+      },
+      {
+        "question": "Quale formato scegliere?",
+        "answer": "Il PNG mantiene lo sfondo trasparente e si apre ovunque. Il WebP mantiene la trasparenza in un file più piccolo. Il JPG non supporta la trasparenza, quindi prende sempre il colore di sfondo che scegli."
+      },
+      {
+        "question": "Funziona sul telefono?",
+        "answer": "Sì. Tieni lo schermo acceso e la pagina aperta mentre l’elaborazione è in corso, perché i telefoni mettono in pausa le pagine in background. Sul telefono, Veloce finisce molto prima una serie lunga."
+      }
     ],
   },
   "compress-image-to-kb": {

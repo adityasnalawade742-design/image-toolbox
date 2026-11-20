@@ -79,6 +79,21 @@ export async function selfHostModels() {
   })));
   put(`imgly/${imgly.version}/resources.json`, Buffer.from(JSON.stringify(kept)));
 
+  // BiRefNet-lite ("Best quality" on devices that can run it): our 512 px browser export (scripts/birefnet-export),
+  // pinned by SHA-256 and served in pieces under the 25 MiB limit; birefnetRemoval.worker.ts joins them
+  const { birefnet } = assets;
+  const birefnetModel = count(await pinned(birefnet.url, birefnet.sha256));
+  if (birefnetModel.length !== birefnet.bytes) throw new Error(`[models] BiRefNet model is ${birefnetModel.length} bytes, modelAssets.json says ${birefnet.bytes}`);
+  for (let k = 0; k * birefnet.chunkBytes < birefnetModel.length; k++) {
+    put(`birefnet/${birefnet.sha256.slice(0, 12)}/model.${k}`, birefnetModel.subarray(k * birefnet.chunkBytes, (k + 1) * birefnet.chunkBytes));
+  }
+  // ONNX Runtime for it: the JSPI WebGPU build (16 MiB; the other WebGPU builds are over 25 MiB). The model gives wrong
+  // results on WebGPU with older versions, so the installed version must be the one modelAssets.json names
+  const ortJspiDir = path.resolve('node_modules/onnxruntime-web-1.31');
+  const ortJspiVersion = JSON.parse(fs.readFileSync(path.join(ortJspiDir, 'package.json'), 'utf8')).version;
+  if (ortJspiVersion !== birefnet.ortVersion) throw new Error(`[models] onnxruntime-web-1.31 is ${ortJspiVersion}, BiRefNet needs ${birefnet.ortVersion}`);
+  put(`ort/${ortJspiVersion}/ort-wasm-simd-threaded.jspi.wasm`, count(fs.readFileSync(path.join(ortJspiDir, 'dist/ort-wasm-simd-threaded.jspi.wasm'))));
+
   // ONNX Runtime for transformers.js: the plain WebAssembly build (MODNet runs on the CPU), from the exact
   // version transformers.js depends on
   const wanted = JSON.parse(fs.readFileSync(path.resolve('node_modules/@huggingface/transformers/package.json'), 'utf8')).dependencies['onnxruntime-web'];
@@ -116,6 +131,8 @@ export async function selfHostModels() {
       'AI models and runtimes served with this site:',
       `- MODNet, ${modnet.repo} on Hugging Face at revision ${modnet.revision}: ${modnet.license} (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- IMG.LY background removal data ${imgly.version} (${imgly.package}): ${imgly.license} (https://www.gnu.org/licenses/agpl-3.0.html)`,
+      `- BiRefNet-lite (${birefnet.source}, by Peng Zheng et al.), re-exported for browsers at ${birefnet.size} px: ${birefnet.license} (https://github.com/ZhengPeng7/BiRefNet/blob/main/LICENSE)`,
+      `- ONNX Runtime Web ${ortJspiVersion} (JSPI WebGPU build, for BiRefNet-lite): MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
       `- ONNX Runtime Web ${wanted}: MIT (https://github.com/microsoft/onnxruntime/blob/main/LICENSE)`,
       `- Tesseract.js ${tjsVersion} and tesseract.js-core ${coreVersion}: Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0)`,
       `- Tesseract fast language data (${td.repo} at ${td.commit}): ${td.license}`,

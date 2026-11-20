@@ -2713,7 +2713,7 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Apa bedanya Cepat dan Kualitas terbaik?",
         answer:
-          "Cepat memakai model lebih kecil (sekitar 16 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 15–30 detik, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
+          "Cepat memakai model lebih kecil (sekitar 16 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 5–10 detik di Chrome atau Edge pada komputer terbaru dan ponsel dengan memori 8 GB, dan sekitar 20–45 detik di perangkat lain, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
       },
       {
         question: "Kenapa pemakaian pertama lebih lama?",
@@ -2735,6 +2735,84 @@ export const idTools: Record<string, LocalizedToolItem> = {
         answer:
           "Rambut halus, bulu, kaca, dan subjek dengan warna yang mirip dengan background sulit bagi model mana pun. Coba Kualitas terbaik, atau pakai foto dengan kontras yang jelas antara subjek dan background. Anda juga bisa memperbaikinya secara manual: pilih “Hapus atau pulihkan dengan kuas” untuk menghapus sisa latar atau mengembalikan rambut dan tepi yang hilang dari foto, dengan fitur urungkan.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Hapus Background Massal",
+    shortName: "Hapus BG Massal",
+    tagline: "Hapus background hingga 50 foto sekaligus dengan AI yang berjalan di perangkat Anda, lalu unduh semuanya dalam satu ZIP.",
+    intro: "Hapus Background Massal menghapus background banyak foto sekaligus, misalnya serangkaian foto produk untuk toko online atau foto profil sebuah tim. Alat ini memakai model AI yang sama dengan Hapus Background dan berjalan di browser Anda, jadi foto tidak pernah diunggah. Tambahkan hingga 50 foto, pilih Cepat atau Kualitas terbaik, lalu foto diproses satu per satu. Biarkan hasilnya transparan atau beri warna polos, lalu simpan satu per satu atau semuanya dalam satu ZIP.",
+    seoTitle: "Hapus Background Banyak Foto Sekaligus – Gratis",
+    seoDescription: "Hapus background hingga 50 foto sekaligus, gratis. AI berjalan di browser Anda, jadi foto tetap di perangkat Anda. PNG transparan atau berwarna, dalam satu ZIP.",
+    keywords: [
+      "hapus background banyak foto",
+      "hapus background massal",
+      "remove background banyak gambar sekaligus",
+      "hapus latar belakang foto sekaligus",
+      "background transparan banyak foto",
+      "hapus background foto produk"
+    ],
+    howToSteps: [
+      {
+        "title": "Tambahkan foto",
+        "description": "Letakkan hingga 50 foto JPG, PNG, atau WebP masing-masing hingga 50 MB, atau klik untuk memilihnya."
+      },
+      {
+        "title": "Pilih model",
+        "description": "Cepat cocok untuk foto orang. Kualitas terbaik memberi hasil lebih rapi untuk produk, hewan, dan benda; modelnya yang lebih besar diunduh sekali, setelah Anda setuju."
+      },
+      {
+        "title": "Hapus background",
+        "description": "Klik Hapus background. Foto diproses satu per satu, dan setiap hasil muncul di daftar begitu selesai."
+      },
+      {
+        "title": "Unduh",
+        "description": "Pilih background transparan atau warna serta formatnya, lalu unduh foto satu per satu atau semuanya dengan Unduh ZIP."
+      }
+    ],
+    features: [
+      {
+        "title": "Hingga 50 foto sekaligus",
+        "description": "Tambahkan satu set foto dan biarkan berjalan, dengan status tiap foto di daftar."
+      },
+      {
+        "title": "Foto tetap di perangkat Anda",
+        "description": "AI berjalan di browser Anda dan foto tidak pernah diunggah, hal penting untuk produk yang belum dirilis, foto identitas, dan foto orang."
+      },
+      {
+        "title": "Ubah hasil tanpa mengulang",
+        "description": "Ganti antara background transparan dan warna, atau antara PNG, WebP, dan JPG, setelah background dihapus. Hanya memilih model lain yang menjalankan AI lagi."
+      },
+      {
+        "title": "Satu ZIP dengan nama asli",
+        "description": "Setiap file mempertahankan namanya dengan tambahan -no-background, dan nama ganda diberi nomor."
+      }
+    ],
+    faqs: [
+      {
+        "question": "Berapa banyak foto yang bisa diproses sekaligus?",
+        "answer": "Hingga 50 foto per batch, masing-masing hingga 50 MB. Foto yang sangat besar diperkecil dulu ke ukuran yang bisa ditangani semua browser."
+      },
+      {
+        "question": "Berapa lama prosesnya?",
+        "answer": "Tergantung perangkat dan modelnya. Cepat butuh beberapa detik per foto. Kualitas terbaik butuh sekitar 5–10 detik per foto di Chrome atau Edge pada komputer terbaru dan ponsel dengan memori 8 GB, dan sekitar 20–45 detik di perangkat lain. Foto pertama juga mencakup pengunduhan model."
+      },
+      {
+        "question": "Apakah foto saya diunggah ke server?",
+        "answer": "Tidak. Hanya model AI yang diunduh ke browser Anda. Foto diproses di perangkat Anda dan tidak dikirim ke mana pun."
+      },
+      {
+        "question": "Bisakah saya memperbaiki foto yang hasilnya salah?",
+        "answer": "Alat ini tidak punya kuas. Buka foto itu di Hapus Background, yang punya kuas hapus dan pulihkan untuk rambut dan tepi."
+      },
+      {
+        "question": "Format apa yang sebaiknya dipilih?",
+        "answer": "PNG mempertahankan background transparan dan bisa dibuka di mana saja. WebP mempertahankan transparansi dengan file lebih kecil. JPG tidak bisa transparan, jadi selalu memakai warna background yang Anda pilih."
+      },
+      {
+        "question": "Apakah bisa dipakai di ponsel?",
+        "answer": "Bisa. Biarkan layar menyala dan halaman tetap terbuka selama batch berjalan, karena ponsel menjeda halaman yang ada di latar belakang. Di ponsel, Cepat menyelesaikan batch besar jauh lebih cepat."
+      }
     ],
   },
   "compress-image-to-kb": {

@@ -49,6 +49,11 @@ export const batchStrings = {
   'ctl.bulkCompress.run': 'Compress all ({count})',
   'ctl.bulkCompress.running': 'Compressing…',
   'ctl.bulkCompress.statusProcessing': 'Compressing',
+  'ctl.bulkBg.dropHint': 'JPG, PNG and WebP, up to 50 photos of 50 MB each. Done one at a time by an AI that runs on your device: the photos are never uploaded.',
+  'ctl.bulkBg.run': 'Remove backgrounds ({count})',
+  'ctl.bulkBg.running': 'Removing backgrounds…',
+  'ctl.bulkBg.statusProcessing': 'Removing background',
+  'ctl.bulkBg.changeLater': 'You can still change the background and format afterwards. Only switching the model runs the AI again.',
   'ctl.bulkCompress.smaller': '{pct}% smaller',
   'ctl.bulkCompress.larger': '{pct}% larger',
 

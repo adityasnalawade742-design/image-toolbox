@@ -41,6 +41,7 @@
     "jszip": "^3.10.1",
     "libheif-js": "1.23.5",
     "lucide-react": "^0.475.0",
+    "onnxruntime-web-1.31": "npm:onnxruntime-web@1.31.1",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^6.4.299",
     "pica": "10.0.3",

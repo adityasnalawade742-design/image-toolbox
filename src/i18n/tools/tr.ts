@@ -2710,7 +2710,7 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hızlı ile En iyi kalite arasındaki fark nedir?",
         answer:
-          "Hızlı daha küçük bir model (yaklaşık 16 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yaklaşık 15–30 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
+          "Hızlı daha küçük bir model (yaklaşık 16 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yeni bilgisayarlarda ve 8 GB belleğe sahip telefonlarda Chrome veya Edge ile yaklaşık 5–10 saniye, diğer cihazlarda yaklaşık 20–45 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
       },
       {
         question: "İlk kullanım neden daha uzun sürüyor?",
@@ -2732,6 +2732,84 @@ export const trTools: Record<string, LocalizedToolItem> = {
         answer:
           "İnce saçlar, tüyler, cam ve arka planla benzer renklere sahip konular her model için zordur. En iyi kalite seçeneğini deneyin veya konu ile arka plan arasında belirgin kontrast olan bir fotoğraf kullanın. Bunları elle de düzeltebilirsiniz: “Fırçayla sil veya geri getir”i seçerek kalan arka planı silin ya da eksik saçları ve kenarları fotoğraftan geri getirin; geri alma da var.",
       },
+    ],
+  },
+  "bulk-remove-background": {
+    name: "Toplu Arka Plan Kaldırma",
+    shortName: "Toplu Arka Plan Sil",
+    tagline: "Cihazınızda çalışan bir yapay zekâyla 50 fotoğrafa kadar arka planı bir kerede kaldırın ve hepsini tek bir ZIP olarak indirin.",
+    intro: "Toplu Arka Plan Kaldırma, bir internet mağazasının ürün fotoğrafları ya da bir ekibin profil fotoğrafları gibi çok sayıda fotoğrafın arka planını tek seferde kaldırır. Arka Plan Kaldırma ile aynı yapay zekâ modellerini tarayıcınızda çalıştırır; fotoğraflar hiçbir zaman yüklenmez. 50 fotoğrafa kadar ekleyin, Hızlı veya En iyi kalite'yi seçin; fotoğraflar sırayla tek tek işlenir. Sonuçları saydam bırakın ya da düz bir renk ekleyin, ardından tek tek veya hepsini tek bir ZIP olarak kaydedin.",
+    seoTitle: "Birden Çok Resmin Arka Planını Kaldırın – Ücretsiz",
+    seoDescription: "50 fotoğrafa kadar arka planı bir kerede, ücretsiz kaldırın. Yapay zekâ tarayıcınızda çalışır, fotoğraflar cihazınızda kalır. Saydam PNG veya renkli, tek ZIP'te.",
+    keywords: [
+      "toplu arka plan kaldırma",
+      "birden fazla resmin arka planını kaldırma",
+      "çoklu fotoğraf arka plan silme",
+      "toplu dekupe",
+      "toplu saydam arka plan",
+      "ürün fotoğrafı arka plan kaldırma"
+    ],
+    howToSteps: [
+      {
+        "title": "Fotoğraflarınızı ekleyin",
+        "description": "Her biri en fazla 50 MB olan 50 adede kadar JPG, PNG veya WebP fotoğrafı sürükleyip bırakın ya da tıklayarak seçin."
+      },
+      {
+        "title": "Bir model seçin",
+        "description": "Hızlı, insan fotoğrafları için uygundur. En iyi kalite; ürünlerde, evcil hayvanlarda ve nesnelerde daha temiz sonuç verir. Daha büyük olan modeli, onay verdikten sonra bir kez indirilir."
+      },
+      {
+        "title": "Arka planları kaldırın",
+        "description": "Arka planları kaldır'a tıklayın. Fotoğraflar tek tek işlenir ve her sonuç hazır olur olmaz listede görünür."
+      },
+      {
+        "title": "İndirin",
+        "description": "Saydam arka plan ya da bir renk ve biçimi seçin, ardından fotoğrafları tek tek veya ZIP indir ile hepsini birden indirin."
+      }
+    ],
+    features: [
+      {
+        "title": "Bir kerede 50 fotoğrafa kadar",
+        "description": "Bütün bir fotoğraf grubunu ekleyip çalıştırın; listede her fotoğrafın durumunu görürsünüz."
+      },
+      {
+        "title": "Fotoğraflar cihazınızda kalır",
+        "description": "Yapay zekâ tarayıcınızda çalışır ve fotoğraflar hiçbir zaman yüklenmez; bu, henüz piyasaya çıkmamış ürünler, vesikalık fotoğraflar ve insan fotoğrafları için önemlidir."
+      },
+      {
+        "title": "Yeniden işlemeden çıktıyı değiştirin",
+        "description": "Arka planlar kaldırıldıktan sonra da saydam ile renk ya da PNG, WebP ve JPG arasında geçiş yapabilirsiniz. Yapay zekâ yalnızca başka bir model seçildiğinde yeniden çalışır."
+      },
+      {
+        "title": "Özgün adlarla tek bir ZIP",
+        "description": "Her dosya adının sonuna -no-background eklenir ve aynı adlar numaralandırılır."
+      }
+    ],
+    faqs: [
+      {
+        "question": "Bir kerede kaç fotoğraf işleyebilirim?",
+        "answer": "Her seferde her biri en fazla 50 MB olan 50 fotoğrafa kadar. Çok büyük fotoğraflar önce her tarayıcının işleyebileceği bir boyuta küçültülür."
+      },
+      {
+        "question": "Ne kadar sürer?",
+        "answer": "Cihaza ve modele bağlıdır. Hızlı, fotoğraf başına birkaç saniye sürer. En iyi kalite; yeni bilgisayarlarda ve 8 GB belleğe sahip telefonlarda Chrome veya Edge ile fotoğraf başına yaklaşık 5–10 saniye, diğer cihazlarda yaklaşık 20–45 saniye sürer. İlk fotoğrafa modelin indirilmesi de dahildir."
+      },
+      {
+        "question": "Fotoğraflarım bir sunucuya yükleniyor mu?",
+        "answer": "Hayır. Tarayıcınıza yalnızca yapay zekâ modeli indirilir. Fotoğraflar cihazınızda işlenir ve hiçbir yere gönderilmez."
+      },
+      {
+        "question": "Yapay zekânın yanlış yaptığı bir fotoğrafı düzeltebilir miyim?",
+        "answer": "Bu araçta fırça yoktur. O fotoğrafı Arka Plan Kaldırma'da açın; orada saç ve kenarlar için silme ve geri getirme fırçası vardır."
+      },
+      {
+        "question": "Hangi biçimi seçmeliyim?",
+        "answer": "PNG saydam arka planı korur ve her yerde açılır. WebP saydamlığı daha küçük bir dosyada korur. JPG saydam olamaz, bu yüzden her zaman seçtiğiniz arka plan rengini alır."
+      },
+      {
+        "question": "Telefonda çalışır mı?",
+        "answer": "Evet. Bir grup işlenirken ekranı açık ve sayfayı açık tutun, çünkü telefonlar arka plandaki sayfaları duraklatır. Telefonda Hızlı, büyük bir grubu çok daha erken bitirir."
+      }
     ],
   },
   "compress-image-to-kb": {
