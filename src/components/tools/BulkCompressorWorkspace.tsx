@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob, formatBytes } from '../../lib/canvas/engine';
+import { runInLanes, bulkLanes } from '../../lib/canvas/lanes';
 import { loadImageFile } from '../../lib/canvas/loadImage';
 import { exportableFormat } from '../../lib/canvas/outputFormat';
 import { formatExtension } from '../../lib/canvas/outputFormat';
@@ -113,10 +114,9 @@ export function BulkCompressorWorkspace() {
     setZipError(false);
     isCancelledRef.current = false;
 
-    for (let i = 0; i < queue.length; i++) {
-      if (isCancelledRef.current) break;
-      const item = queue[i];
-      if (item.status === 'done' || item.rejected) continue;
+    // Several photos at once (lanes.ts); each is marked processing when it actually starts
+    const todo = queue.map((item, i) => ({ item, i })).filter(({ item }) => item.status !== 'done' && !item.rejected);
+    await runInLanes(todo, bulkLanes(({ item }) => item.file, () => isCancelledRef.current), async ({ item, i }) => {
 
       setQueue((prev) =>
         prev.map((q, idx) => (idx === i ? { ...q, status: 'processing' } : q))
@@ -171,12 +171,12 @@ export function BulkCompressorWorkspace() {
           )
         );
       }
-    }
+    });
 
     setIsProcessing(false);
   };
 
-  // The loop stops after the current file and clears isProcessing itself, so a second run can't overlap
+  // No new photo starts after this; the ones in progress finish, then isProcessing clears, so a second run can't overlap
   const cancelProcessing = () => {
     isCancelledRef.current = true;
   };

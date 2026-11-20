@@ -6,6 +6,7 @@ import { defaultQuality, formatExtension, type OutputFormat } from '../../lib/ca
 import { createUniqueNamer, toolOutputName } from '../../lib/storage/fileNames';
 import { useT } from './I18nContext';
 import { snapshotFile } from '../../lib/storage/snapshotFile';
+import { runInLanes, bulkLanes } from '../../lib/canvas/lanes';
 import { MediaViewer, blobImage, formatKB, type ViewerItem } from './MediaViewer';
 import { FileThumb } from './ViewableThumb';
 
@@ -93,9 +94,9 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
     setRunning(true);
     setZipError(false);
     cancelled.current = false;
-    for (const item of queue) {
-      if (cancelled.current) break;
-      if (item.rejected || item.status === 'done') continue;
+    // Several photos at once (lanes.ts); each is marked processing when it actually starts
+    const todo = queue.filter((item) => !item.rejected && item.status !== 'done');
+    await runInLanes(todo, bulkLanes((item) => item.file, () => cancelled.current), async (item) => {
       setQueue((prev) => prev.map((q) => (q.id === item.id ? { ...q, status: 'processing' } : q)));
       try {
         const out = await convertImageFile(item.file, { slug, format: chosen, quality, webpLossless, background, svgScale, svgSize });
@@ -104,7 +105,7 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
         console.error(`Converting ${item.file.name} failed:`, err);
         setQueue((prev) => prev.map((q) => (q.id === item.id ? { ...q, status: 'error', error: t('ctl.bulk.errProcess') } : q)));
       }
-    }
+    });
     setRunning(false);
   };
 

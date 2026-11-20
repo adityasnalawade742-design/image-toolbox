@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Download, Archive, Trash2, CheckCircle2, AlertCircle, Loader2, Circle, Ban, Plus, X, Sliders } from 'lucide-react';
 import { loadImage, canvasToBlob, downloadBlob, stepDown, forDownload, lanczosDownscale } from '../../lib/canvas/engine';
+import { runInLanes, bulkLanes } from '../../lib/canvas/lanes';
 import { exportableFormat, formatExtension, type OutputFormat } from '../../lib/canvas/outputFormat';
 import { outputFileName, createUniqueNamer } from '../../lib/storage/fileNames';
 import { snapshotFile } from '../../lib/storage/snapshotFile';
@@ -147,10 +148,18 @@ export function BulkResizerWorkspace() {
     setZipError(false);
     isCancelledRef.current = false;
 
-    for (let i = 0; i < queue.length; i++) {
-      if (isCancelledRef.current) break;
-      const item = queue[i];
-      if (item.status === 'done' || item.rejected) continue;
+    // Several photos at once (lanes.ts); each is marked processing when it actually starts. A photo needs memory
+    // for the larger of its own size and the size it is resized to.
+    const todo = queue.map((item, i) => ({ item, i })).filter(({ item }) => item.status !== 'done' && !item.rejected);
+    const lanes = bulkLanes<(typeof todo)[number]>(({ item }) => item.file, () => isCancelledRef.current);
+    lanes.cost = ({ item }) => {
+      const w = item.originalWidth;
+      const h = item.originalHeight;
+      const target =
+        mode === 'percentage' ? w * h * (percentage / 100) ** 2 : fixedWidth * Math.max(fixedHeight, (fixedWidth * h) / Math.max(1, w));
+      return w > 0 && h > 0 ? Math.max(w * h, target) : null;
+    };
+    await runInLanes(todo, lanes, async ({ item, i }) => {
 
       setQueue((prev) =>
         prev.map((q, idx) => (idx === i ? { ...q, status: 'processing' } : q))
@@ -267,12 +276,12 @@ export function BulkResizerWorkspace() {
           )
         );
       }
-    }
+    });
 
     setIsProcessing(false);
   };
 
-  // The loop stops after the current file and clears isProcessing itself, so a second run can't overlap
+  // No new photo starts after this; the ones in progress finish, then isProcessing clears, so a second run can't overlap
   const cancelProcessing = () => {
     isCancelledRef.current = true;
   };
