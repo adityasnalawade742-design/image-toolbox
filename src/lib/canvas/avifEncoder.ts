@@ -11,6 +11,7 @@ export interface AvifWorkerLike {
   postMessage(message: unknown, transfer?: Transferable[]): void;
   onmessage: ((e: MessageEvent) => void) | null;
   onerror: ((e: ErrorEvent) => void) | null;
+  terminate?(): void;
 }
 
 interface AvifJob {
@@ -38,47 +39,79 @@ export function isAvifSuperseded(err: unknown): boolean {
   return err instanceof AvifSupersededError;
 }
 
-export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
-  let worker: AvifWorkerLike | null = null;
-  let active: AvifJob | null = null;
+// An extra worker left idle this long closes: WebAssembly memory never shrinks, so idle workers would hold on to it
+const IDLE_CLOSE_MS = 15_000;
+
+interface Slot {
+  worker: AvifWorkerLike;
+  job: AvifJob | null;
+  idle?: ReturnType<typeof setTimeout>;
+}
+
+/**
+ * Each worker runs one encode at a time. Up to `maxWorkers` run side by side, but a second one starts only while
+ * jobs are waiting (such as the pages of a PDF saved as PNGs), so a single encode costs no more than before.
+ */
+export function createAvifEncoder(createWorker: () => AvifWorkerLike, maxWorkers = 1) {
+  const slots: Slot[] = [];
   let queue: AvifJob[] = [];
   let nextId = 1;
 
   const pump = () => {
-    if (active || queue.length === 0) return;
-    active = queue.shift()!;
-    const w = getWorker();
-    w.postMessage({ id: active.id, kind: active.kind, imageData: active.imageData, quality: active.quality, lossy: active.lossy, exact: active.exact }, [
-      active.imageData.data.buffer,
-    ]);
+    while (queue.length) {
+      let slot = slots.find((s) => !s.job);
+      if (!slot) {
+        if (slots.length >= maxWorkers) break;
+        slot = addWorker();
+      }
+      clearTimeout(slot.idle);
+      slot.idle = undefined;
+      const job = queue.shift()!;
+      slot.job = job;
+      slot.worker.postMessage({ id: job.id, kind: job.kind, imageData: job.imageData, quality: job.quality, lossy: job.lossy, exact: job.exact }, [
+        job.imageData.data.buffer,
+      ]);
+    }
+    // The first worker stays; extra ones close once they have been idle for a while
+    for (const s of slots.slice(1)) {
+      if (s.job || s.idle) continue;
+      s.idle = setTimeout(() => {
+        const i = slots.indexOf(s);
+        if (i < 1 || s.job) return;
+        slots.splice(i, 1);
+        s.worker.terminate?.();
+      }, IDLE_CLOSE_MS);
+    }
   };
 
-  const getWorker = (): AvifWorkerLike => {
-    if (worker) return worker;
-    const w = createWorker();
+  const addWorker = (): Slot => {
+    const slot: Slot = { worker: createWorker(), job: null };
 
-    w.onmessage = (e: MessageEvent) => {
+    slot.worker.onmessage = (e: MessageEvent) => {
       const { id, buffer, error } = e.data as { id: number; buffer?: ArrayBuffer; error?: string };
-      if (!active || active.id !== id) return;
-      const job = active;
-      active = null;
+      const job = slot.job;
+      if (!job || job.id !== id) return;
+      slot.job = null;
       if (error || !buffer) job.reject(new Error(error || 'Encoder returned no data'));
       else job.resolve(new Blob([buffer], { type: MIME[job.kind] }));
       pump();
     };
 
-    // A crashed worker (e.g. WASM failed to download) fails everything pending; the next call starts fresh
-    w.onerror = (e: ErrorEvent) => {
+    // A crashed worker (e.g. WASM failed to download) fails its own job and everything waiting; the next call
+    // starts a fresh worker. Encodes already running in other workers carry on.
+    slot.worker.onerror = (e: ErrorEvent) => {
       const err = new Error(e.message || 'AVIF encoder worker failed');
-      const pending = active ? [active, ...queue] : queue;
-      active = null;
+      const pending = slot.job ? [slot.job, ...queue] : queue;
+      slot.job = null;
       queue = [];
-      worker = null;
+      clearTimeout(slot.idle);
+      const i = slots.indexOf(slot);
+      if (i >= 0) slots.splice(i, 1);
       pending.forEach((job) => job.reject(err));
     };
 
-    worker = w;
-    return w;
+    slots.push(slot);
+    return slot;
   };
 
   /**
@@ -104,10 +137,25 @@ export function createAvifEncoder(createWorker: () => AvifWorkerLike) {
 
 let sharedEncoder: ReturnType<typeof createAvifEncoder> | null = null;
 
+/**
+ * How many encodes run side by side: one per spare core, at most 4, and at most 2 on devices with 4 GB of memory or
+ * less. The encoders can't use threads inside one worker (that needs a cross-origin isolated page), so separate
+ * workers are how several images use several cores. Measured on an 8-core Android phone: OxiPNG on three 150 dpi
+ * pages took 8.5 s side by side against 25 s one after another.
+ */
+export function encoderPoolSize(): number {
+  if (typeof navigator === 'undefined') return 1;
+  const cores = navigator.hardwareConcurrency || 2;
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+  const size = Math.min(4, Math.max(1, cores - 1));
+  return memory && memory <= 4 ? Math.min(size, 2) : size;
+}
+
 export function encodeWith(kind: CodecKind, imageData: ImageData, quality: number, coalesceKey?: string, lossy = false, exact = false): Promise<Blob> {
   if (!sharedEncoder) {
     sharedEncoder = createAvifEncoder(
-      () => new Worker(new URL('./codec.worker.ts', import.meta.url), { type: 'module' })
+      () => new Worker(new URL('./codec.worker.ts', import.meta.url), { type: 'module' }),
+      encoderPoolSize()
     );
   }
   return sharedEncoder.encode(imageData, quality, coalesceKey, kind, lossy, exact);

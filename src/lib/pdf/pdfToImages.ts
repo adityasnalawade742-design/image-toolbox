@@ -51,13 +51,23 @@ export async function openPdf(file: File): Promise<PDFDocumentProxy> {
  * Render one page (1-based) at the given dpi; pages are white like on paper. `rotation` turns it further (degrees clockwise).
  * `maxPixels` (0 = no limit) keeps the picture inside a phone browser's largest canvas.
  */
+function pageScale(base: { width: number; height: number }, dpi: number, maxSide: number, maxPixels: number): number {
+  // Keep huge pages (posters, drawings) inside browser canvas limits
+  let scale = Math.min(dpi / 72, maxSide / Math.max(base.width, base.height));
+  if (maxPixels) scale = Math.min(scale, Math.sqrt(maxPixels / (base.width * base.height)));
+  return scale;
+}
+
+/** How many pixels renderPage makes of a page with the same settings */
+export async function pagePixels(doc: PDFDocumentProxy, pageNumber: number, dpi: number, maxSide = 10000, maxPixels = 0): Promise<number> {
+  const base = (await doc.getPage(pageNumber)).getViewport({ scale: 1 });
+  const scale = pageScale(base, dpi, maxSide, maxPixels);
+  return Math.round(base.width * scale) * Math.round(base.height * scale);
+}
+
 export async function renderPage(doc: PDFDocumentProxy, pageNumber: number, dpi: number, format: PageImageFormat, maxSide = 10000, rotation = 0, maxPixels = 0): Promise<Blob> {
   const page = await doc.getPage(pageNumber);
-  let scale = dpi / 72;
-  const base = page.getViewport({ scale: 1 });
-  // Keep huge pages (posters, drawings) inside browser canvas limits
-  scale = Math.min(scale, maxSide / Math.max(base.width, base.height));
-  if (maxPixels) scale = Math.min(scale, Math.sqrt(maxPixels / (base.width * base.height)));
+  const scale = pageScale(page.getViewport({ scale: 1 }), dpi, maxSide, maxPixels);
   const viewport = page.getViewport({ scale, rotation: (((page.rotate + rotation) % 360) + 360) % 360 });
   const canvas = document.createElement('canvas');
   canvas.width = Math.round(viewport.width);

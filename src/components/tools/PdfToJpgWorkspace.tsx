@@ -3,7 +3,8 @@ import { Download, Loader2, AlertCircle, FileImage } from 'lucide-react';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { ProofDropZone } from '../shared/ProofDropZone';
 import { useT } from '../shared/I18nContext';
-import { openPdf, renderPage, PdfPasswordError, PdfInvalidError, type PageImageFormat } from '../../lib/pdf/pdfToImages';
+import { openPdf, renderPage, pagePixels, PdfPasswordError, PdfInvalidError, type PageImageFormat } from '../../lib/pdf/pdfToImages';
+import { encoderPoolSize } from '../../lib/canvas/avifEncoder';
 import { parseRanges } from '../../lib/pdf/pageOps';
 import { downloadBlob } from '../../lib/canvas/engine';
 import { MediaViewer } from '../shared/MediaViewer';
@@ -18,6 +19,9 @@ const TOUCH_MAX_PIXELS = 16_777_216;
 const maxPixels = () => (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0 ? TOUCH_MAX_PIXELS : 0);
 // Thumbnails render at a fixed low resolution, independent of the export setting
 const THUMB_DPI = 36;
+// PNG pages encode side by side (OxiPNG takes seconds a page on phones); this many pixels may be in progress at once.
+// A page in progress holds its canvas, the copy sent to the encoder and the encoder's own memory.
+const PIXELS_IN_FLIGHT = () => ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) <= 4 ? 12_000_000 : 24_000_000;
 
 export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFormat?: PageImageFormat } = {}) {
   const t = useT();
@@ -133,10 +137,32 @@ export function PdfToJpgWorkspace({ defaultFormat = 'image/jpeg' }: { defaultFor
     try {
       const JSZip = (await import('jszip')).default;
       const zip = new JSZip();
-      for (const [i, n] of list.entries()) {
-        setBusy(t('ctl.frompdf.rendering', { n: i + 1, total: list.length }));
-        zip.file(pageName(n), await renderPage(doc, n, dpi, format, undefined, 0, maxPixels()));
-      }
+      // JPG pages are encoded by the browser in a moment; PNG pages go through OxiPNG, several at once when they fit
+      const lanes =
+        format === 'image/png'
+          ? Math.max(1, Math.min(encoderPoolSize(), list.length, Math.floor(PIXELS_IN_FLIGHT() / (await pagePixels(doc, list[0], dpi, undefined, maxPixels())))))
+          : 1;
+      const pages: Blob[] = [];
+      let next = 0;
+      let done = 0;
+      let failed = false;
+      setBusy(t('ctl.frompdf.rendering', { n: 1, total: list.length }));
+      const lane = async () => {
+        while (next < list.length && !failed) {
+          const i = next++;
+          try {
+            pages[i] = await renderPage(doc, list[i], dpi, format, undefined, 0, maxPixels());
+          } catch (err) {
+            failed = true;
+            throw err;
+          }
+          done++;
+          setBusy(t('ctl.frompdf.rendering', { n: Math.min(done + 1, list.length), total: list.length }));
+        }
+      };
+      await Promise.all(Array.from({ length: lanes }, lane));
+      // In page order, whichever finished first
+      list.forEach((n, i) => zip.file(pageName(n), pages[i]));
       downloadBlob(await zip.generateAsync({ type: 'blob' }), `${base}-pages.zip`);
     } catch {
       setError(t('ws.errExport'));
