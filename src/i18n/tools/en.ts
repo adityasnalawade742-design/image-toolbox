@@ -2659,7 +2659,9 @@ export const enTools: Record<string, LocalizedToolItem> = {
       "make background transparent",
       "transparent background maker",
       "cut out image background",
-      "remove background online"
+      "remove background online",
+      "remove white background from image",
+      "free ai background remover"
     ],
     "howToSteps": [
       {
@@ -2703,6 +2705,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "answer": "No. Only the AI model is downloaded to your browser. Your photos are processed on your device and are not sent anywhere."
       },
       {
+        "question": "Is there a free AI tool to remove backgrounds?",
+        "answer": "Yes, this one. It is free, with no sign-up, no watermark and no limit on the number of photos. The AI runs in your browser, so your photos are not uploaded."
+      },
+      {
         "question": "What is the difference between Fast and Best quality?",
         "answer": "Fast uses a smaller model (about 16 MB) and takes about 5 seconds per photo; it works well for people but can miss parts of objects. Best quality uses a larger model (about 100 MB) and takes about 5–10 seconds in Chrome or Edge on recent computers and phones with 8 GB of memory, and about 20–45 seconds on other devices, with better results on products, pets, objects and people."
       },
@@ -2717,6 +2723,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
       {
         "question": "Can I put a new background color behind the subject?",
         "answer": "Yes. Choose a solid color, then save as PNG or JPG. For a transparent background, save as PNG."
+      },
+      {
+        "question": "How do I remove a white background?",
+        "answer": "Add the photo and the AI removes the white background like any other. For logos, icons and drawings on plain white, Transparent PNG Maker often works better: it makes exactly the white, or any color you pick, transparent and keeps edges sharp. Save as PNG to keep the transparency."
       },
       {
         "question": "Why are some edges not perfect?",
@@ -4075,14 +4085,16 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "shortName": "PDF → PNG",
     "tagline": "Save every page of a PDF as a sharp, lossless PNG image, one page at a time or all in a ZIP. The conversion runs on your device.",
     "intro": "PDF to PNG turns each page of a PDF into a PNG image. PNG is lossless, so text, lines and diagrams stay perfectly sharp, which makes it the right choice for slides, documents and charts you want to put into a presentation, a design or a web page. Choose the resolution, then download single pages or every page together in a ZIP. The PDF is opened inside your browser and never uploaded.",
-    "seoTitle": "PDF to PNG Converter – Sharp Pages, Free",
+    "seoTitle": "PDF to PNG Converter – Free, High Quality",
     "seoDescription": "Convert PDF pages to sharp PNG images in your browser. Choose 72 to 600 DPI, download one page, chosen pages or all. Free and private.",
     "keywords": [
       "pdf to png",
       "convert pdf to png",
       "pdf to png converter",
       "pdf page to image",
-      "pdf to high resolution png"
+      "pdf to high resolution png",
+      "pdf to png high quality",
+      "pdf to png converter free"
     ],
     "howToSteps": [
       {
@@ -4122,8 +4134,12 @@ export const enTools: Record<string, LocalizedToolItem> = {
         "answer": "PNG keeps text and diagrams perfectly sharp. JPG makes smaller files and suits pages that are mostly photos. You can switch to JPG in the same tool."
       },
       {
-        "question": "Which resolution should I choose?",
-        "answer": "150 DPI looks good on screen. 300 DPI is for printing, and 600 DPI for fine detail or OCR; higher settings make much larger files."
+        "question": "How do I convert a PDF to a high-quality PNG?",
+        "answer": "Choose 300 DPI, or 600 DPI for fine detail or OCR; 150 DPI looks good on screen. PNG is lossless, so text and lines are not blurred by compression. Higher settings make larger files."
+      },
+      {
+        "question": "How do I convert a PDF to PNG on a Mac?",
+        "answer": "Open this page in Safari, Chrome or any other browser and add the PDF; every page is converted at once. Preview can also save a PNG with File › Export, but only of the page you are on."
       },
       {
         "question": "Can I convert a password-protected PDF?",
@@ -8734,14 +8750,17 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "shortName": "Contact Sheet",
     "tagline": "Lay out many photos as labelled thumbnails on printable pages, as a PDF or images. Free, and it runs on your device.",
     "intro": "Contact Sheet Maker puts a set of photos on one page, or as many as needed, as thumbnails with their file names, like a photographer's proof sheet. Use it to review a shoot, pick favorites with a client, catalog products or print an overview. Choose A4 or Letter, portrait or landscape, and how many photos per row; pages are made at 300 DPI for printing. Download a multi-page PDF, or PNG or JPG images.",
-    "seoTitle": "Contact Sheet Maker – Photo Thumbnails to PDF, Free",
+    "seoTitle": "Contact Sheet Maker – Make a Photo Contact Sheet, Free",
     "seoDescription": "Make a contact sheet of many photos with file names, on A4 or Letter pages at 300 DPI, as a PDF or images. Free, no sign-up, no upload.",
     "keywords": [
       "contact sheet maker",
       "photo contact sheet",
       "thumbnail sheet",
       "print photos as thumbnails",
-      "proof sheet"
+      "proof sheet",
+      "what is a contact sheet",
+      "how to make a contact sheet",
+      "contact sheet template"
     ],
     "howToSteps": [
       {
@@ -8772,6 +8791,18 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ],
     "faqs": [
+      {
+        "question": "What is a contact sheet?",
+        "answer": "A page of small prints of every photo from a shoot or a roll of film, so you can compare them side by side and pick the best. Film photographers made them by laying the negatives directly on photo paper, which is where the name comes from. Today a contact sheet is usually a printed page or a PDF of thumbnails, often with each file name underneath."
+      },
+      {
+        "question": "How do I make a contact sheet without Photoshop or Lightroom?",
+        "answer": "Add your photos here, choose the paper and how many photos per row, and download the PDF. No software or account is needed. If you do use Adobe apps, Photoshop makes them with File › Automate › Contact Sheet II, Lightroom Classic in the Print module, and Bridge in its Output workspace."
+      },
+      {
+        "question": "Can I use it as a contact sheet template?",
+        "answer": "Yes. Instead of filling in a template by hand, you set the paper size, orientation, photos per row, file names and title, and the tool lays out the photos for you. Add more photos and pages are added automatically."
+      },
       {
         "question": "How many photos can I add?",
         "answer": "As many as your device can open; pages are added as needed. Very large sets of big photos take longer and use more memory."
@@ -8863,7 +8894,9 @@ export const enTools: Record<string, LocalizedToolItem> = {
       "multiple pages per sheet pdf",
       "2 pages per sheet pdf",
       "4 pages per sheet",
-      "print slides as handouts"
+      "print slides as handouts",
+      "print multiple pages per sheet pdf",
+      "multiple pages per sheet pdf online free"
     ],
     "howToSteps": [
       {
@@ -8895,6 +8928,10 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       {
+        "question": "How do I print multiple pages per sheet?",
+        "answer": "Add your PDF here, choose how many pages per sheet, download the new PDF and print it at actual size. You can also do it in the print settings: in Adobe Acrobat Reader, choose Multiple under Page Sizing & Handling; on a Mac, choose Layout › Pages per Sheet in the print dialog. A new PDF is handier when you want to share the file, send it to a print shop, or add spacing and borders."
+      },
+      {
         "question": "Which layout should I use for slides?",
         "answer": "2 per sheet keeps slides readable; 4 or 6 per sheet suits handouts. The tool turns the sheet to fit wide slides best."
       },
@@ -8917,14 +8954,16 @@ export const enTools: Record<string, LocalizedToolItem> = {
     "shortName": "Poster Splitter",
     "tagline": "Split a picture over several pages and print it on a normal printer to make a large poster. Free, on your device.",
     "intro": "Poster Splitter enlarges a picture across several A4, Letter or A3 pages, so you can print a big poster on an ordinary printer and assemble it. Choose how many pages across; the number of rows follows from the picture’s shape. Pages overlap by the amount you choose so you can glue them, and each page has cut marks and a label such as A1 or B2 to show where it goes. The tool shows the final poster size and warns when the picture will look soft at that size.",
-    "seoTitle": "Poster Splitter – Print a Big Poster on A4 Pages",
+    "seoTitle": "Poster Splitter – Print a Poster on Multiple A4 Pages",
     "seoDescription": "Split an image over multiple A4, Letter or A3 pages to print a large poster, with overlap, cut marks and labels. Free, no upload.",
     "keywords": [
       "poster splitter",
       "print poster on multiple pages",
       "split image into pages",
       "large poster from a4",
-      "tile image for printing"
+      "tile image for printing",
+      "how to print a poster on multiple pages",
+      "print poster on multiple a4 pages"
     ],
     "howToSteps": [
       {
@@ -8956,8 +8995,16 @@ export const enTools: Record<string, LocalizedToolItem> = {
     ],
     "faqs": [
       {
+        "question": "How do I print a poster on multiple pages?",
+        "answer": "Add your picture, choose the paper and how many pages across, and download the PDF. Print it at actual size (not “Fit to page”), trim the overlapping edges and glue the pages together following the labels A1, A2, B1… The tool shows the finished poster size before you print."
+      },
+      {
         "question": "How do I put the poster together?",
         "answer": "Print at actual size. Trim the white border on the edges that overlap a neighbour, line up the overlap and glue or tape the pages: A1, A2… along the top row, B1, B2… below."
+      },
+      {
+        "question": "Can I make a poster from a Word, Canva or PDF design?",
+        "answer": "Yes, as a picture. Save the design as a PNG or JPG first: in Canva, download it as PNG; save a Word file as a PDF, then turn the page into an image with PDF to PNG at 300 DPI. Then add that picture here."
       },
       {
         "question": "How big can the poster be?",

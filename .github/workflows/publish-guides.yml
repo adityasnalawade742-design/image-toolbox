@@ -1,0 +1,73 @@
+# Every morning (09:00 in India): if a guide's publish date has come and the live site doesn't have it yet, build the
+# site from main and deploy it. Guides are written ahead with future dates (src/lib/guides.ts keeps them off the site
+# until then). Deploying needs two repository secrets: CLOUDFLARE_API_TOKEN (a token allowed to edit Workers) and
+# CLOUDFLARE_ACCOUNT_ID.
+#
+# Run it by hand from the Actions tab: "build only" checks that the site builds here without deploying; "deploy" builds
+# and deploys main now even when no guide is due.
+name: Publish scheduled guides
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to do
+        type: choice
+        options: [if a guide is due, build only, deploy]
+        default: if a guide is due
+
+permissions:
+  contents: read
+
+# Never two deploys at once
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - id: due
+        run: node scripts/guides-due.mjs
+
+      - id: plan
+        env:
+          MODE: ${{ inputs.mode || 'if a guide is due' }}
+          DUE: ${{ steps.due.outputs.due }}
+        run: |
+          build=false; deploy=false
+          if [ "$MODE" = "build only" ]; then build=true; fi
+          if [ "$MODE" = "deploy" ] || [ "$DUE" = "true" ]; then build=true; deploy=true; fi
+          echo "build=$build" >> "$GITHUB_OUTPUT"
+          echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
+
+      # The AI models and fonts the build self-hosts (about 300 MB), pinned by hash
+      - if: steps.plan.outputs.build == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .cache/models
+          key: models-${{ hashFiles('src/lib/ai/modelAssets.json', 'scripts/self-host-models.mjs') }}
+          restore-keys: models-
+
+      - if: steps.plan.outputs.build == 'true'
+        run: npm ci
+
+      - if: steps.plan.outputs.build == 'true'
+        run: npm run build
+
+      - if: steps.plan.outputs.deploy == 'true'
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

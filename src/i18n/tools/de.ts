@@ -2708,6 +2708,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
           "Nein. Nur das KI-Modell wird in deinen Browser geladen. Deine Fotos werden auf deinem Gerät verarbeitet und nirgendwohin gesendet.",
       },
       {
+        question: "Gibt es ein kostenloses KI-Tool zum Entfernen von Hintergründen?",
+        answer: "Ja, dieses hier. Es ist kostenlos, ohne Anmeldung, ohne Wasserzeichen und ohne Begrenzung der Fotoanzahl. Die KI läuft in deinem Browser, deine Fotos werden also nicht hochgeladen."
+      },
+      {
         question: "Was ist der Unterschied zwischen „Schnell“ und „Beste Qualität“?",
         answer:
           "„Schnell“ nutzt ein kleineres Modell (etwa 16 MB) und braucht etwa 5 Sekunden pro Foto. Es funktioniert gut bei Menschen, kann aber Teile von Objekten übersehen. „Beste Qualität“ nutzt ein größeres Modell (etwa 100 MB) und braucht in Chrome oder Edge auf aktuellen Computern und Handys mit 8 GB Arbeitsspeicher etwa 5–10 Sekunden, auf anderen Geräten etwa 20–45 Sekunden, mit besseren Ergebnissen bei Produkten, Haustieren, Objekten und Menschen.",
@@ -2726,6 +2730,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
         question: "Kann ich eine neue Hintergrundfarbe hinter das Motiv setzen?",
         answer:
           "Ja. Wähle eine Volltonfarbe und speichere als PNG oder JPG. Für einen transparenten Hintergrund speicherst du als PNG.",
+      },
+      {
+        question: "Wie entferne ich einen weißen Hintergrund?",
+        answer: "Füge das Foto hinzu, und die KI entfernt den weißen Hintergrund wie jeden anderen. Für Logos, Symbole und Zeichnungen auf reinem Weiß ist „Transparentes PNG erstellen“ oft besser: Es macht genau das Weiß oder eine andere gewählte Farbe transparent und hält die Kanten scharf. Speichere als PNG, damit die Transparenz erhalten bleibt."
       },
       {
         question: "Warum sind manche Kanten nicht perfekt?",
@@ -4167,6 +4175,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
       {
         question: "Welche Auflösung soll ich wählen?",
         answer: "150 DPI sieht auf dem Bildschirm gut aus. 300 DPI ist zum Drucken, 600 DPI für feine Details oder OCR; höhere Werte ergeben deutlich größere Dateien.",
+      },
+      {
+        question: "Wie wandle ich auf dem Mac ein PDF in PNG um?",
+        answer: "Öffne diese Seite in Safari, Chrome oder einem anderen Browser und füge das PDF hinzu; alle Seiten werden auf einmal umgewandelt. Die Vorschau kann über „Exportieren“ ebenfalls ein PNG speichern, aber nur von der gerade angezeigten Seite."
       },
       {
         question: "Kann ich ein passwortgeschütztes PDF umwandeln?",
@@ -9158,6 +9170,18 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Was ist ein Kontaktabzug?",
+        answer: "Eine Seite mit kleinen Abzügen aller Fotos eines Shootings oder eines Films, damit du sie nebeneinander vergleichen und die besten auswählen kannst. Früher legte man dafür die Negative direkt auf Fotopapier, daher der Name. Heute ist ein Kontaktabzug meist eine gedruckte Seite oder ein PDF mit Miniaturen, oft mit dem Dateinamen unter jedem Bild."
+      },
+      {
+        question: "Wie erstelle ich einen Kontaktabzug ohne Photoshop oder Lightroom?",
+        answer: "Füge deine Fotos hier hinzu, wähle das Papier und die Fotos pro Zeile und lade das PDF herunter. Du brauchst weder Software noch Konto. Photoshop, Lightroom Classic und Bridge können ebenfalls Kontaktabzüge erstellen, setzen aber ein Adobe-Abo voraus."
+      },
+      {
+        question: "Kann ich das Tool als Vorlage für Kontaktabzüge nutzen?",
+        answer: "Ja. Statt eine Vorlage von Hand zu füllen, stellst du Papierformat, Ausrichtung, Fotos pro Zeile, Dateinamen und Titel ein, und das Tool ordnet die Fotos für dich an. Kommen weitere Fotos dazu, werden automatisch Seiten ergänzt."
+      },
+      {
         question: "Wie viele Fotos kann ich hinzufügen?",
         answer: "So viele, wie dein Gerät öffnen kann; Seiten kommen nach Bedarf hinzu. Sehr große Mengen großer Fotos dauern länger und brauchen mehr Speicher."
       },
@@ -9280,6 +9304,10 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Wie drucke ich mehrere Seiten auf ein Blatt?",
+        answer: "Füge dein PDF hier hinzu, wähle die Seiten pro Blatt, lade das neue PDF herunter und drucke es in Originalgröße. Viele Druckdialoge, etwa im Adobe Acrobat Reader oder auf dem Mac, können ebenfalls mehrere Seiten pro Blatt drucken. Ein neues PDF ist praktischer, wenn du die Datei teilen, an eine Druckerei schicken oder Abstände und Rahmen hinzufügen möchtest."
+      },
+      {
         question: "Welches Layout eignet sich für Folien?",
         answer: "Mit 2 pro Blatt bleiben Folien gut lesbar; 4 oder 6 pro Blatt passen für Handouts. Das Tool dreht das Blatt so, dass breite Folien am besten passen."
       },
@@ -9341,8 +9369,16 @@ export const deTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Wie drucke ich ein Poster auf mehreren Seiten?",
+        answer: "Füge dein Bild hinzu, wähle das Papier und die Anzahl der Seiten nebeneinander und lade das PDF herunter. Drucke es in Originalgröße (nicht „An Seite anpassen“), schneide die überlappenden Ränder ab und klebe die Seiten nach den Beschriftungen A1, A2, B1 … zusammen. Das Tool zeigt die fertige Postergröße schon vor dem Druck."
+      },
+      {
         question: "Wie setze ich das Poster zusammen?",
         answer: "Drucke in tatsächlicher Größe. Schneide den weißen Rand an den Kanten ab, die eine Nachbarseite überlappen, richte die Überlappung aus und klebe die Seiten mit Kleber oder Klebeband zusammen: A1, A2 … in der oberen Reihe, B1, B2 … darunter."
+      },
+      {
+        question: "Kann ich ein Poster aus einem Word-, Canva- oder PDF-Entwurf machen?",
+        answer: "Ja, als Bild. Speichere den Entwurf zuerst als PNG oder JPG: In Canva lädst du ihn als PNG herunter; eine Word-Datei speicherst du als PDF und wandelst die Seite mit „PDF in PNG“ bei 300 DPI in ein Bild um. Dieses Bild fügst du dann hier hinzu."
       },
       {
         question: "Wie groß kann das Poster werden?",

@@ -2711,6 +2711,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
           "Tidak. Hanya model AI yang diunduh ke browser Anda. Foto Anda diproses di perangkat Anda dan tidak dikirim ke mana pun.",
       },
       {
+        question: "Adakah alat AI gratis untuk menghapus latar belakang?",
+        answer: "Ada, alat ini. Gratis, tanpa daftar, tanpa watermark, dan tanpa batas jumlah foto. AI-nya berjalan di browser Anda, jadi foto tidak diunggah."
+      },
+      {
         question: "Apa bedanya Cepat dan Kualitas terbaik?",
         answer:
           "Cepat memakai model lebih kecil (sekitar 16 MB) dan butuh sekitar 5 detik per foto; hasilnya bagus untuk orang, tetapi bisa melewatkan sebagian objek. Kualitas terbaik memakai model lebih besar (sekitar 100 MB) dan butuh sekitar 5–10 detik di Chrome atau Edge pada komputer terbaru dan ponsel dengan memori 8 GB, dan sekitar 20–45 detik di perangkat lain, dengan hasil lebih baik untuk produk, hewan peliharaan, objek, dan orang.",
@@ -2729,6 +2733,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
         question: "Bisakah saya memberi warna background baru di belakang subjek?",
         answer:
           "Bisa. Pilih warna polos, lalu simpan sebagai PNG atau JPG. Untuk background transparan, simpan sebagai PNG.",
+      },
+      {
+        question: "Bagaimana cara menghapus latar belakang putih?",
+        answer: "Tambahkan fotonya dan AI akan menghapus latar putih seperti latar lainnya. Untuk logo, ikon, dan gambar di atas putih polos, “Pembuat PNG Transparan” sering lebih baik: alat itu membuat warna putih, atau warna yang Anda pilih, menjadi transparan dan menjaga tepinya tetap tajam. Simpan sebagai PNG agar transparansinya tetap ada."
       },
       {
         question: "Kenapa beberapa tepian tidak sempurna?",
@@ -4173,6 +4181,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
       {
         question: "Resolusi mana yang sebaiknya saya pilih?",
         answer: "150 DPI tampak bagus di layar. 300 DPI untuk mencetak, dan 600 DPI untuk detail halus atau OCR; makin tinggi, file makin besar.",
+      },
+      {
+        question: "Bagaimana cara mengubah PDF ke PNG di Mac?",
+        answer: "Buka halaman ini di Safari, Chrome, atau browser lain lalu tambahkan PDF-nya; semua halaman diubah sekaligus. Preview juga bisa menyimpan PNG lewat Export, tetapi hanya untuk halaman yang sedang dibuka."
       },
       {
         question: "Bisakah saya mengonversi PDF yang dilindungi kata sandi?",
@@ -9133,6 +9145,18 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Apa itu contact sheet?",
+        answer: "Halaman berisi cetakan kecil semua foto dari satu sesi pemotretan atau satu rol film, agar bisa dibandingkan berdampingan dan dipilih yang terbaik. Fotografer film dulu membuatnya dengan meletakkan negatif langsung di atas kertas foto, dari situlah namanya. Kini contact sheet biasanya berupa halaman cetak atau PDF berisi thumbnail, sering dengan nama file di bawah setiap foto."
+      },
+      {
+        question: "Bagaimana cara membuat contact sheet tanpa Photoshop atau Lightroom?",
+        answer: "Tambahkan foto di sini, pilih kertas dan jumlah foto per baris, lalu unduh PDF-nya. Tidak perlu software atau akun. Photoshop, Lightroom Classic, dan Bridge juga bisa membuatnya, tetapi memerlukan langganan Adobe."
+      },
+      {
+        question: "Bisakah alat ini dipakai sebagai template contact sheet?",
+        answer: "Bisa. Daripada mengisi template secara manual, Anda cukup mengatur ukuran kertas, orientasi, jumlah foto per baris, nama file, dan judul, lalu alat ini menata fotonya. Jika foto ditambah, halaman ikut bertambah secara otomatis."
+      },
+      {
         question: "Berapa banyak foto yang bisa ditambahkan?",
         answer: "Sebanyak yang bisa dibuka perangkat Anda; halaman ditambahkan sesuai kebutuhan. Kumpulan foto besar dalam jumlah sangat banyak butuh waktu lebih lama dan memakai lebih banyak memori."
       },
@@ -9255,6 +9279,10 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Bagaimana cara mencetak beberapa halaman dalam satu lembar?",
+        answer: "Tambahkan PDF di sini, pilih jumlah halaman per lembar, unduh PDF barunya, lalu cetak pada ukuran sebenarnya. Banyak jendela cetak, seperti di Adobe Acrobat Reader atau Mac, juga bisa mencetak beberapa halaman per lembar. PDF baru lebih praktis jika Anda ingin membagikan file, mengirimnya ke percetakan, atau menambahkan jarak dan garis tepi."
+      },
+      {
         question: "Tata letak apa yang cocok untuk slide?",
         answer: "2 per lembar membuat slide tetap mudah dibaca; 4 atau 6 per lembar cocok untuk handout. Alat ini memutar lembar agar slide lebar paling pas."
       },
@@ -9316,8 +9344,16 @@ export const idTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Bagaimana cara mencetak poster di beberapa halaman?",
+        answer: "Tambahkan gambar, pilih kertas dan jumlah halaman ke samping, lalu unduh PDF-nya. Cetak pada ukuran sebenarnya (bukan “Fit to page”), potong tepi yang bertumpuk, lalu tempelkan halaman sesuai label A1, A2, B1… Alat ini menampilkan ukuran akhir poster sebelum Anda mencetak."
+      },
+      {
         question: "Bagaimana cara merangkai poster?",
         answer: "Cetak pada ukuran sebenarnya. Potong tepi putih di sisi yang bertumpuk dengan halaman sebelahnya, sejajarkan bagian yang bertumpuk, lalu lem atau rekatkan dengan selotip: A1, A2… di baris atas, B1, B2… di bawahnya."
+      },
+      {
+        question: "Bisakah saya membuat poster dari desain Word, Canva, atau PDF?",
+        answer: "Bisa, sebagai gambar. Simpan dulu desainnya sebagai PNG atau JPG: di Canva, unduh sebagai PNG; simpan file Word sebagai PDF, lalu ubah halamannya menjadi gambar dengan “PDF ke PNG” pada 300 DPI. Setelah itu tambahkan gambar tersebut di sini."
       },
       {
         question: "Seberapa besar posternya?",

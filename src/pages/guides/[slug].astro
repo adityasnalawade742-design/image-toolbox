@@ -1,6 +1,6 @@
 ---
 // One guide: an English article, with the tools it is about linked at the end
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ToolIcon from '../../components/shared/ToolIcon.astro';
 import { TOOLS, SERVER_TOOLS } from '../../config/tools';
@@ -8,10 +8,11 @@ import { CATEGORY_INK } from '../../config/inks';
 import { SITE_CONFIG } from '../../config/site';
 import { getAllLocalizedTools } from '../../i18n/tools';
 import { getBreadcrumbSchema } from '../../lib/seo/schema';
-import { guideDate } from '../../lib/guides';
+import { allGuides, guideDate } from '../../lib/guides';
 
 export async function getStaticPaths() {
-  const guides = await getCollection('guides');
+  // Guides dated in the future get no page until their day
+  const guides = await allGuides();
   return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
 }
 
