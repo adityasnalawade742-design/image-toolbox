@@ -7,13 +7,15 @@
 import { SITE_CONFIG } from '../../config/site';
 
 const gaId = SITE_CONFIG.gaId;
+// Only the live site counts visits: local copies and previews (localhost, 127.0.0.1, test builds) don't
+const siteHost = new URL(SITE_CONFIG.url).hostname;
 // EEA countries, the UK and Switzerland (ISO 3166-1 alpha-2), where consent is needed before cookies are set
 const consentRegions = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'];
 ---
 
 {gaId && (
   <>
-    <script is:inline define:vars={{ gaId, consentRegions }}>
+    <script is:inline define:vars={{ gaId, consentRegions, siteHost }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       window.gtag = gtag;
@@ -24,9 +26,24 @@ const consentRegions = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'F
         const choice = localStorage.getItem('tf-consent');
         if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', { analytics_storage: choice });
       } catch (e) {}
+      // The site owner's own devices: opening any page with ?notrack stops counting this browser, ?track counts it again
+      let ownDevice = false;
+      try {
+        const params = new URLSearchParams(location.search);
+        if (params.has('notrack')) localStorage.setItem('tf-notrack', '1');
+        if (params.has('track')) localStorage.removeItem('tf-notrack');
+        if (params.has('notrack') || params.has('track')) {
+          params.delete('notrack');
+          params.delete('track');
+          const rest = params.toString();
+          history.replaceState(history.state, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+        }
+        ownDevice = localStorage.getItem('tf-notrack') === '1';
+      } catch (e) {}
       // Automated browsers (the site's own tests, headless crawlers) aren't visitors: don't load the tag for them
       const automated = navigator.webdriver || /HeadlessChrome|Lighthouse/i.test(navigator.userAgent);
-      if (!automated) {
+      const liveSite = location.hostname === siteHost || location.hostname === 'www.' + siteHost;
+      if (liveSite && !automated && !ownDevice) {
         gtag('js', new Date());
         gtag('config', gaId);
         const tag = document.createElement('script');
