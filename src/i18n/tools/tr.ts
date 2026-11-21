@@ -2708,6 +2708,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
           "Hayır. Tarayıcınıza yalnızca yapay zekâ modeli indirilir. Fotoğraflarınız cihazınızda işlenir ve hiçbir yere gönderilmez.",
       },
       {
+        question: "Arka planı kaldıran ücretsiz bir yapay zekâ aracı var mı?",
+        answer: "Evet, bu araç. Ücretsizdir; kayıt, filigran ve fotoğraf sayısı sınırı yoktur. Yapay zekâ tarayıcınızda çalışır, bu yüzden fotoğraflarınız yüklenmez."
+      },
+      {
         question: "Hızlı ile En iyi kalite arasındaki fark nedir?",
         answer:
           "Hızlı daha küçük bir model (yaklaşık 16 MB) kullanır ve fotoğraf başına yaklaşık 5 saniye sürer; insanlarda iyi çalışır ancak nesnelerin bazı kısımlarını atlayabilir. En iyi kalite daha büyük bir model (yaklaşık 100 MB) kullanır ve yeni bilgisayarlarda ve 8 GB belleğe sahip telefonlarda Chrome veya Edge ile yaklaşık 5–10 saniye, diğer cihazlarda yaklaşık 20–45 saniye sürer; ürünlerde, evcil hayvanlarda, nesnelerde ve insanlarda daha iyi sonuç verir.",
@@ -2726,6 +2730,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
         question: "Konunun arkasına yeni bir arka plan rengi koyabilir miyim?",
         answer:
           "Evet. Düz bir renk seçin, ardından PNG veya JPG olarak kaydedin. Saydam bir arka plan için PNG olarak kaydedin.",
+      },
+      {
+        question: "Beyaz arka plan nasıl kaldırılır?",
+        answer: "Fotoğrafı ekleyin; yapay zekâ beyaz arka planı da diğerleri gibi kaldırır. Düz beyaz üzerindeki logo, simge ve çizimler için “Saydam PNG Oluşturucu” çoğu zaman daha iyi sonuç verir: tam olarak beyazı ya da seçtiğiniz rengi saydam yapar ve kenarları keskin tutar. Saydamlığı korumak için PNG olarak kaydedin."
       },
       {
         question: "Bazı kenarlar neden kusursuz değil?",
@@ -4173,6 +4181,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
       {
         question: "Hangi çözünürlüğü seçmeliyim?",
         answer: "150 DPI ekranda iyi görünür. 300 DPI baskı içindir, 600 DPI ise ince ayrıntılar veya OCR için; yüksek ayarlar çok daha büyük dosyalar oluşturur.",
+      },
+      {
+        question: "Mac’te PDF nasıl PNG’ye dönüştürülür?",
+        answer: "Bu sayfayı Safari, Chrome ya da başka bir tarayıcıda açıp PDF’i ekleyin; tüm sayfalar tek seferde dönüştürülür. Önizleme de Dışa Aktar ile PNG kaydedebilir, ancak yalnızca açık olan sayfayı."
       },
       {
         question: "Parola korumalı bir PDF'i dönüştürebilir miyim?",
@@ -9134,6 +9146,18 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Kontakt baskı nedir?",
+        answer: "Bir çekimin ya da bir film rulosunun tüm fotoğraflarının küçük baskılarını içeren sayfadır; fotoğrafları yan yana karşılaştırıp en iyilerini seçmek için kullanılır. Film döneminde negatifler doğrudan fotoğraf kâğıdının üzerine konarak basıldığı için bu adı almıştır. Bugün genellikle küçük resimlerden oluşan basılı bir sayfa ya da PDF’tir ve her fotoğrafın altında çoğu zaman dosya adı bulunur."
+      },
+      {
+        question: "Photoshop veya Lightroom olmadan kontakt baskı nasıl yapılır?",
+        answer: "Fotoğraflarınızı buraya ekleyin, kâğıdı ve satır başına fotoğraf sayısını seçin, PDF’i indirin. Program ya da hesap gerekmez. Photoshop, Lightroom Classic ve Bridge de kontakt baskı yapabilir, ancak Adobe aboneliği gerektirir."
+      },
+      {
+        question: "Kontakt baskı şablonu olarak kullanabilir miyim?",
+        answer: "Evet. Bir şablonu elle doldurmak yerine kâğıt boyutunu, yönü, satır başına fotoğraf sayısını, dosya adlarını ve başlığı seçersiniz; araç fotoğrafları sizin için yerleştirir. Daha fazla fotoğraf eklediğinizde sayfalar otomatik olarak eklenir."
+      },
+      {
         question: "Kaç fotoğraf ekleyebilirim?",
         answer: "Cihazınızın açabildiği kadar; sayfalar gerektikçe eklenir. Çok sayıda büyük fotoğraftan oluşan setler daha uzun sürer ve daha fazla bellek kullanır."
       },
@@ -9256,6 +9280,10 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Bir sayfaya birden fazla sayfa nasıl yazdırılır?",
+        answer: "PDF’inizi buraya ekleyin, kâğıt başına sayfa sayısını seçin, yeni PDF’i indirin ve gerçek boyutta yazdırın. Adobe Acrobat Reader ya da Mac’teki gibi birçok yazdırma penceresi de bir kâğıda birden fazla sayfa yazdırabilir. Dosyayı paylaşmak, matbaaya göndermek ya da boşluk ve kenarlık eklemek istediğinizde yeni bir PDF daha kullanışlıdır."
+      },
+      {
         question: "Slaytlar için hangi düzeni kullanmalıyım?",
         answer: "Yaprak başına 2 slaytları okunaklı tutar; 4 veya 6 ders notlarına uygundur. Araç, geniş slaytlara en iyi uyması için yaprağı döndürür."
       },
@@ -9317,8 +9345,16 @@ export const trTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Poster birden fazla sayfaya nasıl yazdırılır?",
+        answer: "Resminizi ekleyin, kâğıdı ve yatayda kaç sayfa olacağını seçin, PDF’i indirin. “Sayfaya sığdır” yerine gerçek boyutta yazdırın, örtüşen kenarları kesin ve sayfaları A1, A2, B1… etiketlerine göre yapıştırın. Araç, yazdırmadan önce posterin son boyutunu gösterir."
+      },
+      {
         question: "Posteri nasıl birleştiririm?",
         answer: "Gerçek boyutta yazdırın. Komşu sayfayla örtüşen kenarlardaki beyaz payı kesin, örtüşen kısımları hizalayın ve sayfaları yapıştırın ya da bantlayın: üst sırada A1, A2…, altında B1, B2…"
+      },
+      {
+        question: "Word, Canva veya PDF tasarımından poster yapabilir miyim?",
+        answer: "Evet, resim olarak. Tasarımı önce PNG ya da JPG olarak kaydedin: Canva’da PNG olarak indirin; Word dosyasını PDF olarak kaydedin ve sayfayı “PDF'ten PNG'ye” aracıyla 300 DPI resme dönüştürün. Sonra bu resmi buraya ekleyin."
       },
       {
         question: "Poster ne kadar büyük olabilir?",

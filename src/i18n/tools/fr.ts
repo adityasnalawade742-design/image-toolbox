@@ -2708,6 +2708,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
           "Non. Seul le modèle d’IA est téléchargé dans votre navigateur. Vos photos sont traitées sur votre appareil et ne sont envoyées nulle part.",
       },
       {
+        question: "Existe-t-il un outil IA gratuit pour supprimer l’arrière-plan ?",
+        answer: "Oui, celui-ci. Il est gratuit, sans inscription, sans filigrane et sans limite de photos. L’IA fonctionne dans votre navigateur, vos photos ne sont donc pas envoyées."
+      },
+      {
         question: "Quelle est la différence entre « Rapide » et « Qualité maximale » ?",
         answer:
           "« Rapide » utilise un modèle plus petit (environ 16 MB) et prend environ 5 secondes par photo ; il fonctionne bien pour les personnes, mais peut manquer certaines parties des objets. « Qualité maximale » utilise un modèle plus grand (environ 100 MB) et prend environ 5 à 10 secondes dans Chrome ou Edge sur les ordinateurs récents et les téléphones avec 8 Go de mémoire, et environ 20 à 45 secondes sur les autres appareils, avec de meilleurs résultats sur les produits, les animaux, les objets et les personnes.",
@@ -2726,6 +2730,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
         question: "Puis-je mettre une nouvelle couleur de fond derrière le sujet ?",
         answer:
           "Oui. Choisissez une couleur unie, puis enregistrez en PNG ou JPG. Pour un fond transparent, enregistrez en PNG.",
+      },
+      {
+        question: "Comment supprimer un fond blanc ?",
+        answer: "Ajoutez la photo : l’IA supprime le fond blanc comme n’importe quel autre. Pour les logos, icônes et dessins sur fond blanc uni, le « Créateur de PNG transparent » donne souvent un meilleur résultat : il rend transparent exactement le blanc, ou la couleur choisie, et garde des bords nets. Enregistrez en PNG pour conserver la transparence."
       },
       {
         question: "Pourquoi certains contours ne sont-ils pas parfaits ?",
@@ -4167,6 +4175,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quelle résolution choisir ?",
         answer: "150 DPI rend bien à l’écran. 300 DPI sert à imprimer, et 600 DPI aux détails fins ou à l’OCR ; plus c’est haut, plus les fichiers sont lourds.",
+      },
+      {
+        question: "Comment convertir un PDF en PNG sur Mac ?",
+        answer: "Ouvrez cette page dans Safari, Chrome ou un autre navigateur et ajoutez le PDF ; toutes les pages sont converties d’un coup. Aperçu peut aussi enregistrer un PNG avec Exporter, mais seulement pour la page affichée."
       },
       {
         question: "Puis-je convertir un PDF protégé par mot de passe ?",
@@ -9164,6 +9176,18 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Qu’est-ce qu’une planche contact ?",
+        answer: "Une page avec de petits tirages de toutes les photos d’une séance ou d’une pellicule, pour les comparer côte à côte et choisir les meilleures. Les photographes argentiques les réalisaient en posant les négatifs directement sur le papier photo, d’où le nom. Aujourd’hui, c’est généralement une page imprimée ou un PDF de miniatures, souvent avec le nom de chaque fichier en dessous."
+      },
+      {
+        question: "Comment faire une planche contact sans Photoshop ni Lightroom ?",
+        answer: "Ajoutez vos photos ici, choisissez le papier et le nombre de photos par ligne, puis téléchargez le PDF. Aucun logiciel ni compte n’est nécessaire. Photoshop, Lightroom Classic et Bridge savent aussi en faire, mais demandent un abonnement Adobe."
+      },
+      {
+        question: "Puis-je m’en servir comme modèle de planche contact ?",
+        answer: "Oui. Au lieu de remplir un modèle à la main, vous choisissez le format du papier, l’orientation, le nombre de photos par ligne, les noms de fichiers et le titre, et l’outil place les photos pour vous. Si vous ajoutez des photos, des pages sont ajoutées automatiquement."
+      },
+      {
         question: "Combien de photos puis-je ajouter ?",
         answer: "Autant que votre appareil peut en ouvrir ; des pages sont ajoutées au besoin. Les très grandes séries de photos lourdes prennent plus de temps et utilisent plus de mémoire."
       },
@@ -9286,6 +9310,10 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Comment imprimer plusieurs pages par feuille ?",
+        answer: "Ajoutez votre PDF ici, choisissez le nombre de pages par feuille, téléchargez le nouveau PDF et imprimez-le en taille réelle. Beaucoup de fenêtres d’impression, comme celle d’Adobe Acrobat Reader ou du Mac, savent aussi imprimer plusieurs pages par feuille. Un nouveau PDF est plus pratique pour partager le fichier, l’envoyer à un imprimeur ou ajouter des espaces et des bordures."
+      },
+      {
         question: "Quelle disposition choisir pour des diapositives ?",
         answer: "2 par feuille garde les diapositives lisibles ; 4 ou 6 par feuille conviennent aux polycopiés. L’outil fait pivoter la feuille pour que les diapositives larges tiennent au mieux."
       },
@@ -9347,8 +9375,16 @@ export const frTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Comment imprimer un poster sur plusieurs pages ?",
+        answer: "Ajoutez votre image, choisissez le papier et le nombre de pages en largeur, puis téléchargez le PDF. Imprimez-le en taille réelle (pas « Ajuster à la page »), coupez les bords qui se chevauchent et collez les pages en suivant les repères A1, A2, B1… L’outil affiche la taille finale du poster avant l’impression."
+      },
+      {
         question: "Comment assembler le poster ?",
         answer: "Imprimez en taille réelle. Coupez la marge blanche sur les bords qui chevauchent une page voisine, alignez le chevauchement et collez les pages ou fixez-les avec du ruban adhésif : A1, A2… sur la rangée du haut, B1, B2… en dessous."
+      },
+      {
+        question: "Puis-je faire un poster à partir d’un document Word, Canva ou PDF ?",
+        answer: "Oui, sous forme d’image. Enregistrez d’abord le document en PNG ou JPG : dans Canva, téléchargez-le en PNG ; enregistrez un fichier Word en PDF, puis transformez la page en image avec « PDF en PNG » à 300 DPI. Ajoutez ensuite cette image ici."
       },
       {
         question: "Quelle taille peut faire le poster ?",

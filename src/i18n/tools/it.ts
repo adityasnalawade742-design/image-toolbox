@@ -2708,6 +2708,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
           "No. Nel browser viene scaricato solo il modello di IA. Le foto vengono elaborate sul tuo dispositivo e non vengono inviate da nessuna parte.",
       },
       {
+        question: "Esiste uno strumento IA gratuito per rimuovere lo sfondo?",
+        answer: "Sì, questo. È gratuito, senza registrazione, senza filigrana e senza limiti sul numero di foto. L’IA funziona nel tuo browser, quindi le foto non vengono caricate."
+      },
+      {
         question: "Qual è la differenza tra Veloce e Massima qualità?",
         answer:
           "Veloce usa un modello più piccolo (circa 16 MB) e impiega circa 5 secondi per foto; funziona bene per le persone, ma può tralasciare parti degli oggetti. Massima qualità usa un modello più grande (circa 100 MB) e impiega circa 5–10 secondi in Chrome o Edge sui computer recenti e sui telefoni con 8 GB di memoria, e circa 20–45 secondi sugli altri dispositivi, con risultati migliori su prodotti, animali, oggetti e persone.",
@@ -2726,6 +2730,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
         question: "Posso mettere un nuovo colore di sfondo dietro il soggetto?",
         answer:
           "Sì. Scegli un colore pieno, poi salva in PNG o JPG. Per uno sfondo trasparente, salva in PNG.",
+      },
+      {
+        question: "Come rimuovo uno sfondo bianco?",
+        answer: "Aggiungi la foto e l’IA rimuove lo sfondo bianco come qualsiasi altro. Per loghi, icone e disegni su bianco uniforme, “Crea PNG trasparente” spesso funziona meglio: rende trasparente esattamente il bianco, o il colore che scegli, e mantiene i bordi netti. Salva in PNG per conservare la trasparenza."
       },
       {
         question: "Perché alcuni bordi non sono perfetti?",
@@ -4174,6 +4182,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
       {
         question: "Quale risoluzione scegliere?",
         answer: "150 DPI va bene sullo schermo. 300 DPI serve per stampare e 600 DPI per i dettagli fini o l’OCR; valori più alti danno file molto più grandi.",
+      },
+      {
+        question: "Come converto un PDF in PNG su Mac?",
+        answer: "Apri questa pagina in Safari, Chrome o un altro browser e aggiungi il PDF; tutte le pagine vengono convertite insieme. Anteprima può salvare un PNG con Esporta, ma solo della pagina visualizzata."
       },
       {
         question: "Posso convertire un PDF protetto da password?",
@@ -9115,6 +9127,18 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Che cos’è un provino a contatto?",
+        answer: "Una pagina con piccole stampe di tutte le foto di un servizio o di un rullino, per confrontarle una accanto all’altra e scegliere le migliori. I fotografi su pellicola lo realizzavano appoggiando i negativi direttamente sulla carta fotografica, da cui il nome. Oggi è di solito una pagina stampata o un PDF di miniature, spesso con il nome di ogni file sotto la foto."
+      },
+      {
+        question: "Come faccio un provino a contatto senza Photoshop o Lightroom?",
+        answer: "Aggiungi qui le tue foto, scegli il foglio e quante foto per riga, poi scarica il PDF. Non servono programmi né account. Anche Photoshop, Lightroom Classic e Bridge possono crearli, ma richiedono un abbonamento Adobe."
+      },
+      {
+        question: "Posso usarlo come modello per provini a contatto?",
+        answer: "Sì. Invece di compilare un modello a mano, imposti formato del foglio, orientamento, foto per riga, nomi dei file e titolo, e lo strumento dispone le foto per te. Se aggiungi altre foto, le pagine vengono aggiunte automaticamente."
+      },
+      {
         question: "Quante foto posso aggiungere?",
         answer: "Tutte quelle che il tuo dispositivo riesce ad aprire; le pagine vengono aggiunte quando servono. Serie molto grandi di foto pesanti richiedono più tempo e più memoria."
       },
@@ -9237,6 +9261,10 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Come stampo più pagine per foglio?",
+        answer: "Aggiungi qui il tuo PDF, scegli quante pagine per foglio, scarica il nuovo PDF e stampalo a dimensioni effettive. Molte finestre di stampa, come quella di Adobe Acrobat Reader o del Mac, sanno stampare più pagine per foglio. Un nuovo PDF è più comodo se vuoi condividere il file, mandarlo in tipografia o aggiungere spazi e bordi."
+      },
+      {
         question: "Quale layout conviene per le slide?",
         answer: "2 per foglio mantiene le slide leggibili; 4 o 6 per foglio vanno bene per le dispense. Lo strumento ruota il foglio per adattare al meglio le slide larghe."
       },
@@ -9298,8 +9326,16 @@ export const itTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "Come stampo un poster su più fogli?",
+        answer: "Aggiungi l’immagine, scegli il foglio e quante pagine in larghezza, poi scarica il PDF. Stampalo a dimensioni effettive (non “Adatta alla pagina”), rifila i bordi che si sovrappongono e incolla le pagine seguendo le etichette A1, A2, B1… Lo strumento mostra la dimensione finale del poster prima della stampa."
+      },
+      {
         question: "Come monto il poster?",
         answer: "Stampa a dimensioni effettive. Rifila il bordo bianco sui lati che si sovrappongono alla pagina vicina, allinea la sovrapposizione e incolla o fissa con il nastro adesivo le pagine: A1, A2… nella fila in alto, B1, B2… sotto."
+      },
+      {
+        question: "Posso fare un poster da un progetto Word, Canva o PDF?",
+        answer: "Sì, come immagine. Salva prima il progetto come PNG o JPG: in Canva scaricalo come PNG; salva un file Word come PDF e trasforma la pagina in immagine con “Da PDF a PNG” a 300 DPI. Poi aggiungi qui quell’immagine."
       },
       {
         question: "Quanto può essere grande il poster?",

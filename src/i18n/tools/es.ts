@@ -2708,6 +2708,10 @@ export const esTools: Record<string, LocalizedToolItem> = {
           "No. Solo se descarga el modelo de IA en tu navegador. Tus fotos se procesan en tu dispositivo y no se envían a ningún sitio.",
       },
       {
+        question: "¿Hay alguna herramienta de IA gratis para quitar fondos?",
+        answer: "Sí, esta. Es gratis, sin registro, sin marca de agua y sin límite de fotos. La IA funciona en tu navegador, así que tus fotos no se suben."
+      },
+      {
         question: "¿Qué diferencia hay entre Rápido y Máxima calidad?",
         answer:
           "Rápido usa un modelo más pequeño (unos 16 MB) y tarda unos 5 segundos por foto; funciona bien con personas, pero puede pasar por alto partes de objetos. Máxima calidad usa un modelo más grande (unos 100 MB) y tarda unos 5–10 segundos en Chrome o Edge en ordenadores recientes y móviles con 8 GB de memoria, y unos 20–45 segundos en otros dispositivos, con mejores resultados en productos, mascotas, objetos y personas.",
@@ -2726,6 +2730,10 @@ export const esTools: Record<string, LocalizedToolItem> = {
         question: "¿Puedo poner un nuevo color de fondo detrás del sujeto?",
         answer:
           "Sí. Elige un color sólido y guarda en PNG o JPG. Para un fondo transparente, guarda en PNG.",
+      },
+      {
+        question: "¿Cómo quito un fondo blanco?",
+        answer: "Añade la foto y la IA quita el fondo blanco como cualquier otro. Para logotipos, iconos y dibujos sobre blanco liso, «Crear PNG transparente» suele funcionar mejor: vuelve transparente exactamente el blanco, o el color que elijas, y mantiene los bordes nítidos. Guarda en PNG para conservar la transparencia."
       },
       {
         question: "¿Por qué algunos bordes no quedan perfectos?",
@@ -4167,6 +4175,10 @@ export const esTools: Record<string, LocalizedToolItem> = {
       {
         question: "¿Qué resolución elijo?",
         answer: "150 DPI se ve bien en pantalla. 300 DPI es para imprimir y 600 DPI para el detalle fino u OCR; cuanto más alto, mucho más pesan los archivos.",
+      },
+      {
+        question: "¿Cómo convierto un PDF a PNG en un Mac?",
+        answer: "Abre esta página en Safari, Chrome o cualquier otro navegador y añade el PDF; todas las páginas se convierten a la vez. Vista Previa también puede guardar un PNG con Exportar, pero solo de la página que estás viendo."
       },
       {
         question: "¿Puedo convertir un PDF protegido con contraseña?",
@@ -9136,6 +9148,18 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "¿Qué es una hoja de contactos?",
+        answer: "Una página con copias pequeñas de todas las fotos de una sesión o de un carrete, para compararlas una al lado de otra y elegir las mejores. Los fotógrafos de película las hacían colocando los negativos directamente sobre el papel fotográfico, de ahí el nombre. Hoy suele ser una página impresa o un PDF con miniaturas, a menudo con el nombre de cada archivo debajo."
+      },
+      {
+        question: "¿Cómo hago una hoja de contactos sin Photoshop ni Lightroom?",
+        answer: "Añade tus fotos aquí, elige el papel y cuántas fotos por fila, y descarga el PDF. No necesitas ningún programa ni cuenta. Photoshop, Lightroom Classic y Bridge también pueden crearlas, pero requieren una suscripción de Adobe."
+      },
+      {
+        question: "¿Puedo usarla como plantilla de hoja de contactos?",
+        answer: "Sí. En lugar de rellenar una plantilla a mano, eliges el tamaño del papel, la orientación, las fotos por fila, los nombres de archivo y el título, y la herramienta coloca las fotos por ti. Si añades más fotos, se añaden páginas automáticamente."
+      },
+      {
         question: "¿Cuántas fotos puedo añadir?",
         answer: "Todas las que tu dispositivo pueda abrir; se añaden páginas según haga falta. Los conjuntos muy grandes de fotos pesadas tardan más y usan más memoria."
       },
@@ -9258,6 +9282,10 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "¿Cómo imprimo varias páginas por hoja?",
+        answer: "Añade tu PDF aquí, elige cuántas páginas por hoja, descarga el nuevo PDF e imprímelo a tamaño real. Muchos cuadros de impresión, como el de Adobe Acrobat Reader o el del Mac, también pueden imprimir varias páginas por hoja. Un PDF nuevo es más práctico si quieres compartir el archivo, enviarlo a una imprenta o añadir espacios y bordes."
+      },
+      {
         question: "¿Qué distribución uso para diapositivas?",
         answer: "2 por hoja mantiene las diapositivas legibles; 4 o 6 por hoja va bien para apuntes. La herramienta gira la hoja para que las diapositivas anchas quepan mejor."
       },
@@ -9319,8 +9347,16 @@ export const esTools: Record<string, LocalizedToolItem> = {
     ],
     faqs: [
       {
+        question: "¿Cómo imprimo un póster en varias hojas?",
+        answer: "Añade tu imagen, elige el papel y cuántas páginas a lo ancho, y descarga el PDF. Imprímelo a tamaño real (no «Ajustar a la página»), recorta los bordes que se solapan y pega las páginas siguiendo las etiquetas A1, A2, B1… La herramienta muestra el tamaño final del póster antes de imprimir."
+      },
+      {
         question: "¿Cómo monto el póster?",
         answer: "Imprime a tamaño real. Recorta el borde blanco en los lados que se solapan con la página vecina, alinea el solapamiento y pega las páginas con pegamento o cinta: A1, A2… en la fila de arriba, B1, B2… debajo."
+      },
+      {
+        question: "¿Puedo hacer un póster con un diseño de Word, Canva o PDF?",
+        answer: "Sí, como imagen. Guarda primero el diseño como PNG o JPG: en Canva, descárgalo como PNG; un archivo de Word guárdalo como PDF y convierte la página en imagen con «PDF a PNG» a 300 DPI. Luego añade esa imagen aquí."
       },
       {
         question: "¿Qué tamaño puede tener el póster?",
