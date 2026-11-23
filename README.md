@@ -6,11 +6,11 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**[TadaFile](https://tadafile.com)** is a free collection of **175 image and PDF tools** in **10 languages**: compress,
+**[TadaFile](https://tadafile.com)** is a free collection of **177 image and PDF tools** in **10 languages**: compress,
 convert, resize and edit images, remove backgrounds and upscale photos with AI, merge, split, sign and edit PDFs, and
 more. There is no sign-up, no watermark and no daily limit.
 
-**163 of the tools run entirely in your browser**, so your files never leave your device. The other 12, Office and PDF
+**165 of the tools run entirely in your browser**, so your files never leave your device. The other 12, Office and PDF
 conversions that need desktop software (Word, Excel and PowerPoint to PDF and back, PDF compression, OCR, PDF/A,
 protect, unlock and repair), send the file over an encrypted connection to a small server that processes it in memory
 and deletes it as soon as the result is sent back. Each of those tools says so on its page.
@@ -25,9 +25,9 @@ and deletes it as soon as the result is sent back. Each of those tools says so o
 | :--- | :--- | :--- |
 | [Edit & Transform](https://tadafile.com/image-editing-tools) | 44 | Crop, resize, rotate, add text, watermark, [remove background](https://tadafile.com/remove-background) (single or up to 50 at once), blur or change background, passport photos, collage, perspective correction, sharpen, reduce noise, [AI image upscaler](https://tadafile.com/upscale-image) |
 | Optimize & Compress | 4 | [Compress image](https://tadafile.com/compress-image), compress to an exact size in KB, bulk compressor, remove metadata |
-| [Convert Formats](https://tadafile.com/image-format-converters) | 26 | JPG, PNG, WebP, AVIF, HEIC, GIF, BMP, TIFF and SVG in every useful direction |
+| [Convert Formats](https://tadafile.com/image-format-converters) | 27 | JPG, PNG, WebP, AVIF, HEIC, GIF, BMP, TIFF and SVG in every useful direction, and [camera RAW to JPG](https://tadafile.com/raw-to-jpg) |
 | [PDF & Documents](https://tadafile.com/pdf-tools) | 58 | Merge, split, organize, compress, sign, fill forms, edit, redact, OCR, compare, PDF to and from Word, Excel, PowerPoint, JPG and PNG, booklets, [N-up](https://tadafile.com/n-up-pdf) and [poster printing](https://tadafile.com/poster-splitter) |
-| [Inspect & Utilities](https://tadafile.com/image-utilities) | 36 | QR codes and barcodes (make, read, in bulk), EXIF viewer, color picker, [contact sheets](https://tadafile.com/contact-sheet-maker), graph paper, unit and paper-size calculators |
+| [Inspect & Utilities](https://tadafile.com/image-utilities) | 37 | QR codes and barcodes (make, read, in bulk), EXIF viewer, color picker, [batch rename files](https://tadafile.com/batch-rename-files), [contact sheets](https://tadafile.com/contact-sheet-maker), graph paper, unit and paper-size calculators |
 | Developer Tools | 7 | Favicon and app icon generators, Base64 and data URIs, SVG optimizer |
 
 There are also [guides](https://tadafile.com/guides) on common questions, such as why a PDF is so large or how to make

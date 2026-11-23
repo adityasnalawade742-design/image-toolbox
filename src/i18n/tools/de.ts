@@ -11440,6 +11440,80 @@ export const deTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Mehrere Dateien umbenennen",
+    shortName: "Umbenennen",
+    tagline: "Benenne viele Dateien auf einmal um, mit Nummern, Datum oder Suchen und Ersetzen, und lade sie als ZIP herunter. Kostenlos, auf deinem Gerät.",
+    intro: "Mehrere Dateien umbenennen gibt einer ganzen Reihe von Dateien in einem Rutsch neue Namen: die Fotos einer Reise als Urlaub-001.jpg, Urlaub-002.jpg und so weiter, Scans benannt nach dem Datum, an dem sie entstanden sind, oder ein Wort, das in jedem Namen ersetzt wird. Setze den neuen Namen aus dem Originalnamen, einer Nummer, Datum und Uhrzeit der Aufnahme (aus dem Foto selbst gelesen) und eigenem Text zusammen und prüfe jeden neuen Namen, bevor du herunterlädst. Browser können die Dateien auf deinem Computer nicht umbenennen, daher bekommst du umbenannte Kopien als ZIP, und deine Originale bleiben unverändert. Dateien jeder Art funktionieren, und nichts wird hochgeladen.",
+    seoTitle: "Mehrere Dateien gleichzeitig umbenennen – online, gratis",
+    seoDescription: "Viele Dateien auf einmal umbenennen: Nummern, Aufnahmedatum von Fotos oder Suchen und Ersetzen, dann als ZIP laden. Jeder Dateityp, kostenlos, ohne Upload.",
+    keywords: [
+      "mehrere dateien umbenennen",
+      "dateien gleichzeitig umbenennen",
+      "dateien massenhaft umbenennen",
+      "fotos nach datum umbenennen",
+      "dateien fortlaufend nummerieren",
+      "bilder umbenennen online"
+    ],
+    howToSteps: [
+      {
+        title: "Dateien hinzufügen",
+        description: "Zieh bis zu 500 Dateien jeder Art hierher oder wähle sie aus: Fotos, Scans, Dokumente."
+      },
+      {
+        title: "Neuen Namen bauen",
+        description: "Kombiniere eigenen Text mit dem Originalnamen, einer Nummer und dem Aufnahmedatum, und nutze bei Bedarf Suchen und Ersetzen."
+      },
+      {
+        title: "Prüfen und herunterladen",
+        description: "Alle alten und neuen Namen stehen nebeneinander. Lade die umbenannten Kopien in einer ZIP-Datei herunter."
+      }
+    ],
+    features: [
+      {
+        title: "Nummern und Datum",
+        description: "Nummeriert in der Reihenfolge deiner Wahl, mit führenden Nullen, oder benannt nach Datum und Uhrzeit, zu der jedes Foto aufgenommen wurde."
+      },
+      {
+        title: "Suchen und Ersetzen",
+        description: "Ändere ein Wort in allen Namen auf einmal oder entferne es."
+      },
+      {
+        title: "Jeder Name vorab sichtbar",
+        description: "Die vollständige Liste der neuen Namen, Duplikate werden nummeriert, damit nichts überschrieben wird."
+      },
+      {
+        title: "Jeder Dateityp",
+        description: "Fotos, RAW-Dateien, PDFs, Dokumente oder Musik. Die Dateiendung bleibt immer erhalten."
+      }
+    ],
+    faqs: [
+      {
+        question: "Warum bekomme ich eine ZIP-Datei statt umbenannter Dateien?",
+        answer: "Zu deiner Sicherheit können Websites die Dateien auf deinem Computer oder Handy nicht ändern oder umbenennen. Du bekommst umbenannte Kopien als ZIP: Entpacke sie dort, wo du die Dateien haben willst, und lösche die Originale, wenn du sie nicht mehr brauchst. Die Dateien selbst werden unverändert kopiert, Fotos verlieren also keine Qualität."
+      },
+      {
+        question: "Wie nummeriere ich Dateien der Reihe nach?",
+        answer: "Setz {n} in den Namen, zum Beispiel Urlaub-{n}, und wähle die erste Nummer und die Anzahl der Stellen (3 Stellen ergeben 001, 002…). Wähle, ob die Dateien in der Reihenfolge nummeriert werden, in der du sie hinzugefügt hast, nach Name oder nach dem Datum, an dem die Fotos aufgenommen wurden."
+      },
+      {
+        question: "Woher kommt das Datum?",
+        answer: "Bei Fotos aus Datum und Uhrzeit, die die Kamera im Foto gespeichert hat (seinen EXIF-Daten), in JPG-, HEIC- und TIFF-Dateien und vielen RAW-Dateien. Hat eine Datei kein solches Datum, wird stattdessen das Datum ihrer letzten Änderung verwendet."
+      },
+      {
+        question: "Kann ich auch Dateien umbenennen, die keine Fotos sind?",
+        answer: "Ja. Dateien jeder Art funktionieren: PDFs, Dokumente, Musik oder Videos. Das Aufnahmedatum gibt es nur bei Fotos, die anderen Platzhalter funktionieren bei allem. Die Endung (.pdf, .mp3) bleibt immer erhalten."
+      },
+      {
+        question: "Was passiert, wenn zwei Dateien denselben Namen bekommen?",
+        answer: "An die spätere wird eine Nummer angehängt, zum Beispiel „Urlaub (2).jpg“, damit keine Datei in der ZIP verloren geht. Die Liste markiert diese Namen, sodass du das Muster ändern kannst, wenn du möchtest."
+      },
+      {
+        question: "Werden meine Dateien hochgeladen?",
+        answer: "Nein. Die Dateien werden in deinem Browser gelesen und gezippt und verlassen nie dein Gerät."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Pixel-Art-Konverter",
     shortName: "Pixel-Art",

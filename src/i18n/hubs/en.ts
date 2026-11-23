@@ -96,12 +96,13 @@ export const enHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Free Image Utilities: EXIF Viewer, Color Picker, DPI and More',
-      description: '21 free tools to inspect images: view and remove metadata, pick colours, change DPI, convert pixels to inches or cm, compare photos and copy text.',
+      description: '22 free tools to inspect images: view and remove metadata, pick colours, change DPI, convert pixels to inches or cm, compare photos and copy text.',
       h1: 'Image utilities',
       intro:
         'Small tools for the questions that come up around pictures: what a photo’s metadata reveals and how to remove it, which colours it uses, how big it prints at a given DPI, whether two photos differ, or what text it contains. They all run in your browser, so your images stay on your device.',
       groups: {
         inspect: 'Inspect photos',
+        files: 'Organize files',
         colour: 'Colours',
         size: 'Sizes, DPI and print',
         text: 'Text and hidden messages',

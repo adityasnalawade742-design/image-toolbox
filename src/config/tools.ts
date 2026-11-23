@@ -1649,6 +1649,15 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/png,image/jpeg,image/webp,image/heic,image/heif,.heic,.heif,image/avif,image/tiff,.tif,.tiff',
   },
   {
+    slug: 'batch-rename-files',
+    name: 'Batch Rename Files',
+    shortName: 'Batch Rename',
+    description: 'Rename many files at once with numbers, dates or find and replace, and download them in a ZIP.',
+    category: 'utilities',
+    iconName: 'FilePen',
+    accept: '*/*',
+  },
+  {
     slug: 'pixel-art-converter',
     name: 'Pixel Art Converter',
     shortName: 'Pixel Art',

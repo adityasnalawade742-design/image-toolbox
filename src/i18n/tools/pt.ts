@@ -11402,6 +11402,80 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Renomear arquivos em lote",
+    shortName: "Renomear em lote",
+    tagline: "Renomeie vários arquivos de uma vez com números, datas ou localizar e substituir, e baixe tudo em um ZIP. Grátis, no seu dispositivo.",
+    intro: "O Renomear arquivos em lote dá novos nomes a um conjunto inteiro de arquivos de uma só vez: as fotos de uma viagem como Férias-001.jpg, Férias-002.jpg e assim por diante, digitalizações com o nome da data em que foram feitas, ou uma palavra substituída em todos os nomes. Monte o novo nome com o nome original, um número, a data e a hora em que uma foto foi tirada (lidas da própria foto) e seu próprio texto, e confira cada novo nome antes de baixar. Os navegadores não conseguem renomear os arquivos no seu computador, então você recebe cópias renomeadas em um ZIP e seus originais ficam como estão. Funciona com qualquer tipo de arquivo, e nada é enviado.",
+    seoTitle: "Renomear arquivos em lote online – Números e datas grátis",
+    seoDescription: "Renomeie vários arquivos de uma vez: adicione números, a data da foto ou localize e substitua texto, e baixe um ZIP. Qualquer arquivo, grátis, sem envio.",
+    keywords: [
+      "renomear arquivos em lote",
+      "renomear vários arquivos de uma vez",
+      "renomear arquivos online",
+      "renomear fotos por data",
+      "renomear fotos em massa",
+      "renomear arquivos em sequência"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione seus arquivos",
+        description: "Arraste ou escolha até 500 arquivos de qualquer tipo: fotos, digitalizações, documentos."
+      },
+      {
+        title: "Monte o novo nome",
+        description: "Combine seu próprio texto com o nome original, um número e a data da foto, e use localizar e substituir se precisar."
+      },
+      {
+        title: "Confira e baixe",
+        description: "Cada nome antigo e novo aparece lado a lado. Baixe as cópias renomeadas em um único ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Números e datas",
+        description: "Numerados na ordem que você escolher, com zeros à esquerda, ou com o nome da data e hora em que cada foto foi tirada."
+      },
+      {
+        title: "Localizar e substituir",
+        description: "Troque uma palavra em todos os nomes de uma vez, ou remova-a."
+      },
+      {
+        title: "Todos os nomes antes",
+        description: "A lista completa dos novos nomes, com as duplicatas numeradas para que nada seja substituído."
+      },
+      {
+        title: "Qualquer tipo de arquivo",
+        description: "Fotos, arquivos RAW, PDFs, documentos ou músicas. A extensão do arquivo é sempre mantida."
+      }
+    ],
+    faqs: [
+      {
+        question: "Por que recebo um ZIP em vez dos arquivos renomeados?",
+        answer: "Por segurança, sites não podem alterar nem renomear os arquivos do seu computador ou celular. Você recebe cópias renomeadas em um ZIP: descompacte-o onde quiser os arquivos e apague os originais se não precisar mais deles. Os arquivos em si são copiados sem alterações, então as fotos não perdem qualidade."
+      },
+      {
+        question: "Como numerar arquivos em ordem?",
+        answer: "Coloque {n} no nome, por exemplo Férias-{n}, e escolha o primeiro número e quantos dígitos usar (3 dígitos dá 001, 002…). Escolha se os arquivos são numerados na ordem em que você os adicionou, por nome ou pela data em que as fotos foram tiradas."
+      },
+      {
+        question: "De onde vem a data?",
+        answer: "Nas fotos, da data e hora que a câmera registrou na própria foto (os dados EXIF), em arquivos JPG, HEIC, TIFF e muitos arquivos RAW. Quando um arquivo não tem essa data, é usada a data da última modificação."
+      },
+      {
+        question: "Posso renomear arquivos que não são fotos?",
+        answer: "Sim. Funciona com qualquer tipo de arquivo: PDFs, documentos, músicas ou vídeos. A data da foto só está disponível para fotos; os outros marcadores funcionam com tudo. A extensão (.pdf, .mp3) é sempre mantida."
+      },
+      {
+        question: "O que acontece se dois arquivos ficarem com o mesmo nome?",
+        answer: "O seguinte recebe um número, por exemplo “Férias (2).jpg”, para que nenhum arquivo se perca no ZIP. A lista marca esses nomes para que você possa mudar o padrão se preferir."
+      },
+      {
+        question: "Meus arquivos são enviados?",
+        answer: "Não. Os arquivos são lidos e compactados no seu navegador e nunca saem do seu dispositivo."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Conversor de pixel art",
     shortName: "Pixel art",

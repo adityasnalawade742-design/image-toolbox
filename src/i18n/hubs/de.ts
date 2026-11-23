@@ -96,12 +96,13 @@ export const deHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Kostenlose Bild-Tools: EXIF-Viewer, Farbwähler, DPI',
-      description: '21 kostenlose Bild-Tools: Metadaten ansehen und entfernen, Farben aufnehmen, DPI ändern, Pixel in Zoll oder cm umrechnen, Text aus Bildern kopieren.',
+      description: '22 kostenlose Bild-Tools: Metadaten ansehen und entfernen, Farben aufnehmen, DPI ändern, Pixel in Zoll oder cm umrechnen, Text aus Bildern kopieren.',
       h1: 'Bild-Werkzeuge',
       intro:
         'Kleine Tools für die Fragen rund um Bilder: was die Metadaten eines Fotos verraten und wie du sie entfernst, welche Farben es nutzt, wie groß es bei einer bestimmten DPI gedruckt wird, ob zwei Fotos sich unterscheiden oder welchen Text es enthält. Alle laufen in deinem Browser, deine Bilder bleiben also auf deinem Gerät.',
       groups: {
         inspect: 'Fotos prüfen',
+        files: 'Dateien ordnen',
         colour: 'Farben',
         size: 'Größen, DPI und Druck',
         text: 'Text und versteckte Nachrichten',

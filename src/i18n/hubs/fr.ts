@@ -96,12 +96,13 @@ export const frHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitaires d’image gratuits : EXIF, pipette, DPI et plus',
-      description: '21 outils gratuits pour analyser des images : métadonnées, couleurs, DPI, pixels en pouces ou cm, comparaison de photos et texte des images.',
+      description: '22 outils gratuits pour analyser des images : métadonnées, couleurs, DPI, pixels en pouces ou cm, comparaison de photos et texte des images.',
       h1: 'Utilitaires d’image',
       intro:
         'De petits outils pour les questions qu’on se pose sur les images : ce que révèlent les métadonnées d’une photo et comment les supprimer, quelles couleurs elle utilise, à quelle taille elle s’imprime selon le DPI, si deux photos diffèrent ou quel texte elle contient. Tous fonctionnent dans votre navigateur : vos images restent sur votre appareil.',
       groups: {
         inspect: 'Analyser des photos',
+        files: 'Organiser les fichiers',
         colour: 'Couleurs',
         size: 'Tailles, DPI et impression',
         text: 'Texte et messages cachés',

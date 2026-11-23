@@ -72,6 +72,7 @@ export const HUBS: Hub[] = [
     category: 'utilities',
     groups: [
       { key: 'inspect', slugs: ['image-analyzer', 'exif-viewer', 'image-histogram', 'compare-images', 'duplicate-photo-finder', 'remove-image-metadata'] },
+      { key: 'files', slugs: ['batch-rename-files'] },
       { key: 'colour', slugs: ['image-color-picker', 'image-palette-generator', 'color-blindness-simulator'] },
       { key: 'size', slugs: ['change-image-dpi', 'pixels-to-inches', 'inches-to-pixels', 'pixels-to-cm', 'cm-to-pixels', 'resolution-calculator', 'paper-size-converter', 'aspect-ratio-calculator', 'graph-paper-maker'] },
       { key: 'text', slugs: ['image-to-text', 'hide-text-in-image', 'morse-code-translator'] },

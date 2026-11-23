@@ -96,12 +96,13 @@ export const idHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitas Gambar Gratis: Penampil EXIF, Pengambil Warna, DPI',
-      description: '21 alat gratis untuk memeriksa gambar: lihat dan hapus metadata, ambil warna, ubah DPI, ubah piksel ke inci atau cm, dan salin teks dari gambar.',
+      description: '22 alat gratis untuk memeriksa gambar: lihat dan hapus metadata, ambil warna, ubah DPI, ubah piksel ke inci atau cm, dan salin teks dari gambar.',
       h1: 'Utilitas gambar',
       intro:
         'Alat kecil untuk pertanyaan seputar gambar: apa yang terungkap dari metadata foto dan cara menghapusnya, warna apa yang dipakai, seberapa besar hasil cetaknya pada DPI tertentu, apakah dua foto berbeda, atau teks apa yang ada di dalamnya. Semuanya berjalan di browser, jadi gambar Anda tetap di perangkat.',
       groups: {
         inspect: 'Periksa foto',
+        files: 'Atur file',
         colour: 'Warna',
         size: 'Ukuran, DPI, dan cetak',
         text: 'Teks dan pesan tersembunyi',

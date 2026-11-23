@@ -96,12 +96,13 @@ export const ptHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilitários de imagem grátis: EXIF, conta-gotas, DPI e mais',
-      description: '21 ferramentas grátis para analisar imagens: veja e remova metadados, capture cores, altere DPI, converta pixels em polegadas ou cm e copie texto.',
+      description: '22 ferramentas grátis para analisar imagens: veja e remova metadados, capture cores, altere DPI, converta pixels em polegadas ou cm e copie texto.',
       h1: 'Utilitários de imagem',
       intro:
         'Pequenas ferramentas para as dúvidas que surgem com imagens: o que os metadados de uma foto revelam e como removê-los, quais cores ela usa, de que tamanho ela sai impressa em certo DPI, se duas fotos são diferentes ou que texto ela contém. Todas funcionam no seu navegador, então suas imagens ficam no seu dispositivo.',
       groups: {
         inspect: 'Analisar fotos',
+        files: 'Organizar arquivos',
         colour: 'Cores',
         size: 'Tamanhos, DPI e impressão',
         text: 'Texto e mensagens ocultas',

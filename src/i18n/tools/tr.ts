@@ -11416,6 +11416,80 @@ export const trTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Toplu Dosya Yeniden Adlandırma",
+    shortName: "Toplu Adlandırma",
+    tagline: "Birçok dosyayı numaralar, tarihler veya bul ve değiştir ile tek seferde yeniden adlandırın ve ZIP olarak indirin. Ücretsiz, cihazınızda.",
+    intro: "Toplu Dosya Yeniden Adlandırma, bir dosya grubuna tek seferde yeni adlar verir: bir gezinin fotoğraflarını Tatil-001.jpg, Tatil-002.jpg şeklinde, taramaları oluşturuldukları tarihe göre adlandırabilir ya da tüm adlardaki bir kelimeyi değiştirebilirsiniz. Yeni adı orijinal ad, bir numara, fotoğrafın çekildiği tarih ve saat (fotoğrafın kendisinden okunur) ve kendi metninizle oluşturun; indirmeden önce her yeni adı kontrol edin. Tarayıcılar bilgisayarınızdaki dosyaları yeniden adlandıramaz; bu yüzden yeniden adlandırılmış kopyaları ZIP olarak alırsınız ve orijinalleriniz olduğu gibi kalır. Her türlü dosya çalışır ve hiçbir şey yüklenmez.",
+    seoTitle: "Toplu Dosya Adı Değiştirme – Numara, Tarih, Ücretsiz",
+    seoDescription: "Birden fazla dosyayı tek seferde yeniden adlandırın: numara veya fotoğrafın çekim tarihini ekleyin, metni bul ve değiştirin, ZIP indirin. Ücretsiz, yüklemesiz.",
+    keywords: [
+      "toplu dosya adı değiştirme",
+      "dosya isimlerini toplu değiştirme",
+      "toplu yeniden adlandırma",
+      "dosyaları sırayla numaralandırma",
+      "fotoğrafları tarihe göre adlandırma",
+      "online dosya adı değiştirme"
+    ],
+    howToSteps: [
+      {
+        title: "Dosyalarınızı ekleyin",
+        description: "Her türden en fazla 500 dosyayı bırakın veya seçin: fotoğraflar, taramalar, belgeler."
+      },
+      {
+        title: "Yeni adı oluşturun",
+        description: "Kendi metninizi orijinal ad, bir numara ve çekim tarihiyle birleştirin; gerekirse bul ve değiştir’i kullanın."
+      },
+      {
+        title: "Kontrol edin ve indirin",
+        description: "Her eski ve yeni ad yan yana listelenir. Yeniden adlandırılmış kopyaları tek bir ZIP olarak indirin."
+      }
+    ],
+    features: [
+      {
+        title: "Numaralar ve tarihler",
+        description: "Seçtiğiniz sırayla, başında sıfırlarla numaralandırın ya da her fotoğrafı çekildiği tarih ve saate göre adlandırın."
+      },
+      {
+        title: "Bul ve değiştir",
+        description: "Tüm adlardaki bir kelimeyi tek seferde değiştirin veya kaldırın."
+      },
+      {
+        title: "Önce tüm adlar gösterilir",
+        description: "Yeni adların tam listesi; aynı olan adlar numaralandırılır, böylece hiçbir şeyin üzerine yazılmaz."
+      },
+      {
+        title: "Her dosya türü",
+        description: "Fotoğraflar, RAW dosyaları, PDF’ler, belgeler veya müzik. Dosya uzantısı her zaman korunur."
+      }
+    ],
+    faqs: [
+      {
+        question: "Neden yeniden adlandırılmış dosyalar yerine bir ZIP alıyorum?",
+        answer: "Güvenliğiniz için web siteleri bilgisayarınızdaki veya telefonunuzdaki dosyaları değiştiremez ya da yeniden adlandıramaz. Yeniden adlandırılmış kopyaları bir ZIP içinde alırsınız: ZIP’i dosyaların olmasını istediğiniz yere çıkarın ve artık ihtiyacınız yoksa orijinalleri silin. Dosyaların kendisi değiştirilmeden kopyalanır, bu yüzden fotoğraflar kalite kaybetmez."
+      },
+      {
+        question: "Dosyaları sırayla nasıl numaralandırırım?",
+        answer: "Ada {n} ekleyin, örneğin Tatil-{n}, ardından ilk numarayı ve basamak sayısını seçin (3 basamak 001, 002… verir). Dosyaların eklediğiniz sıraya, ada veya fotoğrafların çekim tarihine göre numaralandırılacağını seçin."
+      },
+      {
+        question: "Tarih nereden alınıyor?",
+        answer: "Fotoğraflarda, kameranın fotoğrafa kaydettiği tarih ve saatten (EXIF verisi) alınır; JPG, HEIC, TIFF ve birçok RAW dosyasında. Dosyada böyle bir tarih yoksa bunun yerine son değiştirilme tarihi kullanılır."
+      },
+      {
+        question: "Fotoğraf olmayan dosyaları da yeniden adlandırabilir miyim?",
+        answer: "Evet. Her türlü dosya çalışır: PDF’ler, belgeler, müzik veya videolar. Çekim tarihi yalnızca fotoğraflarda vardır; diğer alanlar her dosyada çalışır. Uzantı (.pdf, .mp3) her zaman korunur."
+      },
+      {
+        question: "İki dosya aynı adı alırsa ne olur?",
+        answer: "Sonraki dosyaya bir numara eklenir, örneğin “Tatil (2).jpg”; böylece ZIP içinde hiçbir dosya kaybolmaz. Liste bu adları işaretler, isterseniz adlandırma kalıbını değiştirebilirsiniz."
+      },
+      {
+        question: "Dosyalarım yükleniyor mu?",
+        answer: "Hayır. Dosyalar tarayıcınızda okunur ve ZIP’lenir, cihazınızdan hiç çıkmaz."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Pixel Art Dönüştürücü",
     shortName: "Pixel Art",

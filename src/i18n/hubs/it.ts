@@ -96,12 +96,13 @@ export const itHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilità per immagini gratis: EXIF, contagocce, DPI e altro',
-      description: '21 strumenti gratuiti per analizzare immagini: metadati, colori, DPI, pixel in pollici o cm, confronto di foto e testo dalle immagini.',
+      description: '22 strumenti gratuiti per analizzare immagini: metadati, colori, DPI, pixel in pollici o cm, confronto di foto e testo dalle immagini.',
       h1: 'Utilità per immagini',
       intro:
         'Piccoli strumenti per le domande che nascono con le immagini: cosa rivelano i metadati di una foto e come rimuoverli, quali colori usa, quanto viene grande in stampa a certi DPI, se due foto sono diverse o che testo contiene. Funzionano tutti nel browser, quindi le tue immagini restano sul tuo dispositivo.',
       groups: {
         inspect: 'Analizza le foto',
+        files: 'Organizzare i file',
         colour: 'Colori',
         size: 'Dimensioni, DPI e stampa',
         text: 'Testo e messaggi nascosti',

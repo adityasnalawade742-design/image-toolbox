@@ -53,6 +53,8 @@ const SYNONYMS: Record<string, string[]> = {
   upscaling: ['upscale'],
   resolution: ['upscale', 'resize'],
   hd: ['upscale'],
+  renamer: ['rename'],
+  renaming: ['rename'],
   // Camera RAW endings all lead to RAW to JPG
   cr2: ['raw'],
   cr3: ['raw'],

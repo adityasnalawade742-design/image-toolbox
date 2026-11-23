@@ -96,12 +96,13 @@ export const trHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Ücretsiz Resim Araçları: EXIF Görüntüleyici, Renk Seçici, DPI',
-      description: '21 ücretsiz araç: meta verileri görün ve silin, renk seçin, DPI değiştirin, pikseli inç ya da cm’ye çevirin, fotoğrafları karşılaştırın, metni kopyalayın.',
+      description: '22 ücretsiz araç: meta verileri görün ve silin, renk seçin, DPI değiştirin, pikseli inç ya da cm’ye çevirin, fotoğrafları karşılaştırın, metni kopyalayın.',
       h1: 'Resim yardımcı araçları',
       intro:
         'Resimlerle ilgili akla gelen sorular için küçük araçlar: bir fotoğrafın meta verileri neyi ortaya koyar ve nasıl silinir, hangi renkleri kullanır, belirli bir DPI’da ne büyüklükte basılır, iki fotoğraf farklı mı ya da içinde hangi metin var. Hepsi tarayıcınızda çalışır; resimleriniz cihazınızda kalır.',
       groups: {
         inspect: 'Fotoğrafları incele',
+        files: 'Dosyaları düzenle',
         colour: 'Renkler',
         size: 'Boyutlar, DPI ve baskı',
         text: 'Metin ve gizli mesajlar',
