@@ -8,6 +8,7 @@ import { useT } from './I18nContext';
 import { snapshotFile } from '../../lib/storage/snapshotFile';
 import { runInLanes, bulkLanes } from '../../lib/canvas/lanes';
 import { MediaViewer, blobImage, formatKB, type ViewerItem } from './MediaViewer';
+import { isRawFile } from '../../lib/canvas/rawLoader';
 import { FileThumb } from './ViewableThumb';
 
 interface Item {
@@ -21,8 +22,10 @@ interface Item {
 
 const MAX_FILES = 50;
 const MAX_BYTES = 50 * 1024 * 1024;
+// Camera RAW files are big (a 45 MP uncompressed RAW is about 90 MB)
+const MAX_RAW_BYTES = 150 * 1024 * 1024;
 const PICKABLE: OutputFormat[] = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
-const PARTIAL = { animation: 'ctl.batch.firstFrame', pages: 'ctl.batch.firstPage', images: 'ctl.batch.firstImage' } as const;
+const PARTIAL = { animation: 'ctl.batch.firstFrame', pages: 'ctl.batch.firstPage', images: 'ctl.batch.firstImage', half: 'ctl.batch.rawHalf' } as const;
 
 const base = (name: string) => name.replace(/\.[^/.]+$/, '');
 const extOf = (name: string) => name.match(/\.([^./]+)$/)?.[1] ?? '';
@@ -58,9 +61,10 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
     setOverflow(Math.max(0, list.length - room));
     const items: Item[] = await Promise.all(list.slice(0, room).map(async (file): Promise<Item> => {
       const id = `${file.name}-${file.size}-${Math.random().toString(36).slice(2)}`;
-      const notImage = !file.type.startsWith('image/') && !/\.(heic|heif|tiff?|svg)$/i.test(file.name);
-      if (notImage) return { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errNotImage') };
-      if (file.size > MAX_BYTES) return { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errTooLarge') };
+      const raw = isRawFile(file);
+      const notImage = slug === 'raw-to-jpg' ? !raw : !file.type.startsWith('image/') && !/\.(heic|heif|tiff?|svg)$/i.test(file.name);
+      if (notImage) return { id, file, status: 'error', rejected: true, error: t(slug === 'raw-to-jpg' ? 'ctl.batch.errNotRaw' : 'ctl.bulk.errNotImage') };
+      if (file.size > (raw ? MAX_RAW_BYTES : MAX_BYTES)) return { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errTooLarge') };
       // Read now: an Android photo picker file may no longer be readable when the queue gets to it
       const copy = await snapshotFile(file);
       return copy ? { id, file: copy, status: 'pending' } : { id, file, status: 'error', rejected: true, error: t('ctl.bulk.errProcess') };
@@ -96,7 +100,9 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
     cancelled.current = false;
     // Several photos at once (lanes.ts); each is marked processing when it actually starts
     const todo = queue.filter((item) => !item.rejected && item.status !== 'done');
-    await runInLanes(todo, bulkLanes((item) => item.file, () => cancelled.current), async (item) => {
+    // A RAW photo takes several hundred MB while it is developed: one at a time
+    const lanes = bulkLanes((item: Item) => item.file, () => cancelled.current);
+    await runInLanes(todo, slug === 'raw-to-jpg' ? { ...lanes, lanes: 1 } : lanes, async (item) => {
       setQueue((prev) => prev.map((q) => (q.id === item.id ? { ...q, status: 'processing' } : q)));
       try {
         const out = await convertImageFile(item.file, { slug, format: chosen, quality, webpLossless, background, svgScale, svgSize });
@@ -237,8 +243,8 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
               label: item.file.name,
               detail: item.out ? `${formatKB(item.file.size)} → ${formatKB(item.out.blob.size)}` : formatKB(item.file.size),
               load: () => blobImage(item.out?.blob ?? item.file),
-              // Only originals the browser can show (not HEIC or TIFF)
-              original: item.out && !/\.(heic|heif|tiff?)$/i.test(item.file.name) ? () => blobImage(item.file) : undefined,
+              // Only originals the browser can show (not HEIC, TIFF or camera RAW)
+              original: item.out && !/\.(heic|heif|tiff?)$/i.test(item.file.name) && !isRawFile(item.file) ? () => blobImage(item.file) : undefined,
               transparent: true,
             }));
             const at = usable.findIndex((q) => q.id === viewId);
@@ -269,6 +275,7 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
           </h2>
           <div className="p-4 space-y-4 text-[15px]">
             {metadata && <p className="text-[14px] text-graphite">{t('ctl.batch.hintMetadata')}</p>}
+            {slug === 'raw-to-jpg' && <p className="text-[14px] text-graphite">{t('ctl.batch.hintRaw')}</p>}
             {slug === 'convert-image' && (
               <div className="space-y-1.5">
                 <span className="slug">{t('ws.saveAs')}</span>
@@ -338,7 +345,7 @@ export function BatchConvertWorkspace({ slug, files, accept, onEmpty }: { slug: 
                 </div>
               </div>
             )}
-            {!metadata && targets.has('image/jpeg') && (
+            {!metadata && slug !== 'raw-to-jpg' && targets.has('image/jpeg') && (
               <label className="flex items-center justify-between gap-3">
                 <span>{t('ws.fillTransparent')}</span>
                 <input

@@ -3774,6 +3774,82 @@ export const idTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "raw-to-jpg": {
+    name: "RAW ke JPG",
+    shortName: "RAW → JPG",
+    tagline: "Ubah foto RAW kamera (CR2, CR3, NEF, ARW, DNG, dan lainnya) ke JPG ukuran penuh. Gratis, dan konversi berjalan di perangkat Anda.",
+    intro: "RAW ke JPG mengubah file RAW dari kamera menjadi foto JPG yang bisa dibuka di mana saja: di HP, di email, atau di situs web. Alat ini membaca Canon CR2 dan CR3, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Pentax PEF, DNG, dan lainnya, lalu memproses setiap foto seperti yang dilakukan kamera secara default, dengan white balance yang direkam kamera, kecerahan otomatis, dan warna sRGB. JPG mempertahankan ukuran penuh sensor. Tambahkan beberapa file RAW sekaligus dan unduh satu per satu atau dalam ZIP. Foto diproses di browser Anda, jadi tidak pernah diunggah.",
+    seoTitle: "Ubah RAW ke JPG – CR2, NEF, ARW, DNG, Gratis",
+    seoDescription: "Ubah foto RAW ke JPG online gratis: Canon CR2 dan CR3, Nikon NEF, Sony ARW, DNG, dan lainnya, ukuran penuh dan banyak sekaligus. Tanpa unggah, tanpa daftar.",
+    keywords: [
+      "raw ke jpg",
+      "ubah raw ke jpg",
+      "convert raw to jpg",
+      "cr2 ke jpg",
+      "nef ke jpg",
+      "arw ke jpg",
+      "dng ke jpg",
+      "konverter raw ke jpg"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan foto RAW",
+        description: "Seret atau pilih satu atau beberapa file RAW dari kamera Anda, hingga 50 sekaligus."
+      },
+      {
+        title: "Pilih kualitas",
+        description: "Kualitas awalnya 92%, mendekati pengaturan JPG terbaik pada kamera. Turunkan untuk file yang lebih kecil."
+      },
+      {
+        title: "Konversi dan unduh",
+        description: "Foto diproses secara bergiliran. Unduh satu per satu atau semuanya sekaligus dalam ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Ukuran penuh",
+        description: "JPG berisi setiap piksel sensor: RAW 24 MP menjadi JPG 24 MP."
+      },
+      {
+        title: "Sebagian besar kamera",
+        description: "File Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, Pentax, Leica, dan DNG, dibaca oleh LibRaw."
+      },
+      {
+        title: "Banyak sekaligus",
+        description: "Hingga 50 file RAW dalam sekali jalan, dengan ZIP berisi semua JPG."
+      },
+      {
+        title: "Konversi privat",
+        description: "Foto diproses di browser Anda dan tidak pernah diunggah."
+      }
+    ],
+    faqs: [
+      {
+        question: "Kamera dan format RAW apa saja yang didukung?",
+        answer: "Sebagian besar kamera dari dua puluh tahun terakhir: Canon CR2, CR3, dan CRW, Nikon NEF dan NRW, Sony ARW, Fujifilm RAF, Olympus dan OM System ORF, Panasonic RW2, Pentax PEF, Samsung SRW, serta file DNG dari Leica, Ricoh, Pentax, dan HP. Dekodernya adalah LibRaw, yang juga dipakai banyak editor foto. Kamera yang baru dirilis dalam beberapa bulan terakhir mungkin belum didukung."
+      },
+      {
+        question: "Apakah JPG-nya akan terlihat sama dengan JPG dari kamera?",
+        answer: "Mirip, tetapi tidak identik. Warna dan white balance berasal dari kamera, tetapi kamera juga menambahkan gaya gambarnya sendiri (kontras, ketajaman, dan pengurangan noise) saat membuat JPG. Konverter ini memproses RAW secara netral, jadi hasilnya bisa terlihat sedikit lebih lembut atau lebih datar daripada JPG dari kamera."
+      },
+      {
+        question: "Apakah resolusi penuh dipertahankan?",
+        answer: "Ya. JPG memiliki ukuran penuh sensor. Hanya jika HP kehabisan memori saat memproses file yang sangat besar, JPG disimpan dengan setengah lebar dan tinggi, dan daftar menampilkan keterangan itu di samping foto tersebut."
+      },
+      {
+        question: "Apakah detail kamera (EXIF) ikut disimpan?",
+        answer: "Tidak. JPG tidak menyertakan tanggal, kamera, lensa, atau lokasi dari file RAW. Karena itu, JPG aman untuk dibagikan, tetapi jika Anda membutuhkan detail tersebut, simpan juga file RAW-nya."
+      },
+      {
+        question: "Bisakah saya mengatur eksposur atau white balance?",
+        answer: "Tidak di sini: alat ini mengonversi dengan pengaturan kamera itu sendiri. Untuk mengedit foto RAW sebelum mengonversinya, gunakan editor RAW seperti darktable atau RawTherapee (keduanya gratis) atau Adobe Lightroom."
+      },
+      {
+        question: "Apakah foto saya diunggah?",
+        answer: "Tidak. File RAW diproses di browser Anda oleh LibRaw, yang berjalan di perangkat Anda. Saat pertama kali, browser Anda mengunduh dekoder (sekitar 1,5 MB); foto tetap di perangkat Anda."
+      }
+    ]
+  },
   "jpg-to-pdf": {
     name: "JPG ke PDF",
     shortName: "JPG → PDF",

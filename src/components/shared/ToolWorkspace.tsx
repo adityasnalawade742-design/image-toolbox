@@ -473,7 +473,8 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
   // Watermark Image: the first photo opens in the editor, the others get the same watermark in a ZIP
   const [watermarkMore, setWatermarkMore] = useState<File[]>([]);
   const intake = (list: File[]) => {
-    if (batchable && list.length > 1) setBatchFiles(list);
+    // RAW to JPG always uses the queue: it encodes the developed pixels directly, at full size (convertFile.ts)
+    if (batchable && (list.length > 1 || slug === 'raw-to-jpg')) setBatchFiles(list);
     else if (list[0]) {
       if (slug === 'watermark-image' && list.length > 1) setWatermarkMore(list.slice(1));
       handleFile(list[0]);
@@ -1172,7 +1173,7 @@ export function ToolWorkspace({ slug, toolName, accept = 'image/*', locale = 'en
               <span className="font-condensed text-[24px] sm:text-[26px] font-bold text-ink">{t('ws.dropTitle')}</span>
               <span className="btn-ink pointer-events-none">{t(batchable ? 'ws.chooseImages' : 'ws.chooseImage')}</span>
               <span id="ws-drop-hint" className="text-[14px] text-graphite max-w-md">
-                {t('ws.dropHint')}
+                {t(slug === 'raw-to-jpg' ? 'ws.dropHintRaw' : 'ws.dropHint')}
                 {batchable && ` ${t('ws.dropHintMany')}`}
               </span>
             </button>

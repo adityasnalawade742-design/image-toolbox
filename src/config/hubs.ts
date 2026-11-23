@@ -51,6 +51,7 @@ export const HUBS: Hub[] = [
     groups: [
       { key: 'any', slugs: ['convert-image'] },
       { key: 'heic', slugs: ['heic-to-jpg', 'heic-to-png', 'heic-to-webp'] },
+      { key: 'raw', slugs: ['raw-to-jpg'] },
       { key: 'jpgPng', slugs: ['jpg-to-png', 'png-to-jpg'] },
       { key: 'web', slugs: ['jpg-to-webp', 'png-to-webp', 'webp-to-jpg', 'webp-to-png', 'avif-to-jpg', 'avif-to-png', 'jpg-to-avif', 'png-to-avif'] },
       { key: 'other', slugs: ['gif-to-png', 'gif-to-jpg', 'bmp-to-jpg', 'bmp-to-png', 'tiff-to-jpg', 'tiff-to-png', 'svg-to-png', 'svg-to-jpg', 'svg-to-webp'] },

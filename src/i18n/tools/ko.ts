@@ -3772,6 +3772,82 @@ export const koTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "raw-to-jpg": {
+    name: "RAW JPG 변환",
+    shortName: "RAW → JPG",
+    tagline: "카메라 RAW 사진(CR2, CR3, NEF, ARW, DNG 등)을 원본 크기 JPG로 바꾸세요. 무료이고, 변환은 내 기기에서 이루어져요.",
+    intro: "RAW JPG 변환은 카메라의 RAW 파일을 휴대폰, 이메일, 웹사이트 등 어디서나 열리는 JPG 사진으로 바꿔요. 캐논 CR2와 CR3, 니콘 NEF, 소니 ARW, 후지필름 RAF, 올림푸스 ORF, 파나소닉 RW2, 펜탁스 PEF, DNG 등을 읽고, 카메라가 기록한 화이트 밸런스, 자동 밝기, sRGB 색상으로 카메라 기본 설정처럼 사진을 하나씩 현상해요. JPG는 센서의 원본 크기를 그대로 유지해요. RAW 파일 여러 개를 한 번에 추가하고 하나씩 또는 ZIP으로 내려받을 수 있어요. 사진은 브라우저에서 현상되므로 업로드되지 않아요.",
+    seoTitle: "RAW JPG 변환 – CR2, NEF, ARW, DNG 무료 변환",
+    seoDescription: "RAW 사진을 무료로 JPG로 변환하세요. 캐논 CR2·CR3, 니콘 NEF, 소니 ARW, DNG 등을 원본 크기로 여러 장 한 번에 바꿔요. 업로드 없음, 가입 없음.",
+    keywords: [
+      "raw jpg 변환",
+      "cr2 jpg 변환",
+      "cr3 jpg 변환",
+      "nef jpg 변환",
+      "arw jpg 변환",
+      "dng jpg 변환",
+      "raw 파일 jpg로 변환",
+      "raw 사진 변환기"
+    ],
+    howToSteps: [
+      {
+        title: "RAW 사진 추가",
+        description: "카메라의 RAW 파일을 하나 이상 끌어다 놓거나 선택하세요. 한 번에 최대 50개까지 추가할 수 있어요."
+      },
+      {
+        title: "품질 선택",
+        description: "처음에는 92%가 선택되어 있어요. 카메라의 가장 높은 JPG 화질 설정에 가까운 값이에요. 파일을 더 작게 하려면 낮추세요."
+      },
+      {
+        title: "변환 및 다운로드",
+        description: "사진이 차례로 하나씩 현상돼요. 하나씩 또는 한 번에 ZIP으로 내려받으세요."
+      }
+    ],
+    features: [
+      {
+        title: "원본 크기",
+        description: "JPG에 센서의 모든 픽셀이 담겨요. 2400만 화소(24 MP) RAW는 2400만 화소 JPG가 돼요."
+      },
+      {
+        title: "대부분의 카메라 지원",
+        description: "캐논, 니콘, 소니, 후지필름, 올림푸스, 파나소닉, 펜탁스, 라이카 파일과 DNG 파일을 LibRaw로 읽어요."
+      },
+      {
+        title: "한 번에 여러 장",
+        description: "RAW 파일을 최대 50개까지 한 번에 변환하고, 모든 JPG를 ZIP 하나로 받을 수 있어요."
+      },
+      {
+        title: "안전한 현상",
+        description: "사진은 브라우저에서 현상되고 업로드되지 않아요."
+      }
+    ],
+    faqs: [
+      {
+        question: "어떤 카메라와 RAW 형식을 지원하나요?",
+        answer: "지난 20년 동안 나온 대부분의 카메라를 지원해요. 캐논 CR2, CR3, CRW, 니콘 NEF, NRW, 소니 ARW, 후지필름 RAF, 올림푸스와 OM System ORF, 파나소닉 RW2, 펜탁스 PEF, 삼성 SRW, 그리고 라이카, 리코, 펜탁스, 휴대폰의 DNG 파일이에요. 디코더는 많은 사진 편집 프로그램이 쓰는 LibRaw예요. 최근 몇 달 안에 출시된 카메라는 아직 지원되지 않을 수 있어요."
+      },
+      {
+        question: "카메라에서 만든 JPG와 똑같아 보이나요?",
+        answer: "비슷하지만 똑같지는 않아요. 색상과 화이트 밸런스는 카메라에서 가져오지만, 카메라는 JPG를 만들 때 자체 사진 스타일(대비, 선명도, 노이즈 감소)도 더해요. 이 변환기는 RAW를 중립적으로 현상하므로 결과가 카메라의 JPG보다 조금 더 부드럽거나 밋밋해 보일 수 있어요."
+      },
+      {
+        question: "원본 해상도가 유지되나요?",
+        answer: "네. JPG는 센서의 원본 크기를 그대로 유지해요. 아주 큰 파일에서 휴대폰의 메모리가 부족할 때만 너비와 높이를 절반으로 줄여 저장하고, 목록에서 해당 사진 옆에 그렇게 표시돼요."
+      },
+      {
+        question: "카메라 정보(EXIF)가 유지되나요?",
+        answer: "아니요. JPG에는 RAW 파일의 날짜, 카메라, 렌즈, 위치 정보가 들어가지 않아요. 그래서 공유하기에 안전하지만, 이 정보가 필요하다면 RAW 파일도 함께 보관하세요."
+      },
+      {
+        question: "노출이나 화이트 밸런스를 조정할 수 있나요?",
+        answer: "여기서는 안 돼요. 이 도구는 카메라 자체 설정으로 변환해요. 변환하기 전에 RAW 사진을 편집하려면 darktable이나 RawTherapee(둘 다 무료), Adobe Lightroom 같은 RAW 편집기를 사용하세요."
+      },
+      {
+        question: "사진이 업로드되나요?",
+        answer: "아니요. RAW 파일은 내 기기에서 실행되는 LibRaw가 브라우저 안에서 현상해요. 처음 한 번은 브라우저가 디코더(약 1.5 MB)를 내려받지만, 사진은 내 기기에 그대로 있어요."
+      }
+    ]
+  },
   "jpg-to-pdf": {
     name: "JPG PDF 변환",
     shortName: "JPG → PDF",

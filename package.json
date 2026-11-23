@@ -40,6 +40,7 @@
     "jsqr": "^1.4.0",
     "jszip": "^3.10.1",
     "libheif-js": "1.23.5",
+    "libraw-wasm": "1.6.0",
     "lucide-react": "^0.475.0",
     "onnxruntime-web-1.31": "npm:onnxruntime-web@1.31.1",
     "pdf-lib": "^1.17.1",

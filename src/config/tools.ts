@@ -466,6 +466,16 @@ export const TOOLS: ToolDefinition[] = [
     accept: 'image/tiff,.tif,.tiff',
   },
   {
+    slug: 'raw-to-jpg',
+    name: 'RAW to JPG',
+    shortName: 'RAW → JPG',
+    description: 'Convert camera RAW photos (CR2, CR3, NEF, ARW, DNG and more) to full-size JPG in your browser.',
+    category: 'convert-formats',
+    iconName: 'Camera',
+    // Browsers filter RAW files by ending: their MIME types are not standard (rawLoader.ts RAW_ACCEPT)
+    accept: '.cr2,.cr3,.crw,.nef,.nrw,.arw,.srf,.sr2,.dng,.raf,.orf,.rw2,.rwl,.pef,.srw,.x3f,.3fr,.fff,.iiq,.erf,.mef,.mos,.mrw,.kdc,.dcr,.raw',
+  },
+  {
     slug: 'jpg-to-pdf',
     name: 'JPG to PDF',
     shortName: 'JPG → PDF',
