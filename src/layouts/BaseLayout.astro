@@ -59,6 +59,48 @@ const currentCanonical = canonicalUrl || `${SITE_CONFIG.url}${Astro.url.pathname
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#fbfbf9" />
+    <!-- Light or dark before the first paint, so the page never flashes the wrong one: the visitor's own choice (the
+         header switch, kept in localStorage as tf-theme), otherwise the device setting, followed live. The switch in
+         Header.astro calls window.tfTheme.set(). -->
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        var meta = document.querySelector('meta[name="theme-color"]');
+        function stored() {
+          try {
+            var v = localStorage.getItem('tf-theme');
+            return v === 'light' || v === 'dark' ? v : null;
+          } catch (e) {
+            return null;
+          }
+        }
+        function apply() {
+          var theme = stored() || (media.matches ? 'dark' : 'light');
+          root.dataset.theme = theme;
+          if (meta) meta.content = theme === 'dark' ? '#16181c' : '#fbfbf9';
+          document.dispatchEvent(new CustomEvent('tf-theme', { detail: theme }));
+        }
+        apply();
+        media.addEventListener('change', apply);
+        window.tfTheme = {
+          get: function () {
+            return root.dataset.theme;
+          },
+          // Choosing what the device already shows means "follow the device" again
+          set: function (theme) {
+            var system = media.matches ? 'dark' : 'light';
+            try {
+              if (theme === system) localStorage.removeItem('tf-theme');
+              else localStorage.setItem('tf-theme', theme);
+            } catch (e) {}
+            root.dataset.theme = theme;
+            if (meta) meta.content = theme === 'dark' ? '#16181c' : '#fbfbf9';
+            document.dispatchEvent(new CustomEvent('tf-theme', { detail: theme }));
+          },
+        };
+      })();
+    </script>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />

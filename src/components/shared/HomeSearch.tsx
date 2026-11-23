@@ -47,7 +47,7 @@ export function HomeSearch({ locale = 'en', strings = {}, count, indexUrl }: Pro
 
   return (
     <div className="relative" role="search">
-      <div className="flex items-center gap-3 h-[52px] pl-4 pr-1.5 rounded-md border border-ink bg-paper-bright focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#0072b0]">
+      <div className="flex items-center gap-3 h-[52px] pl-4 pr-1.5 rounded-md border border-ink bg-paper-bright focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus">
         <Search className="w-5 h-5 shrink-0 text-ink" aria-hidden="true" />
         <input
           ref={inputRef}

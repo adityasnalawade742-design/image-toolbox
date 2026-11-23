@@ -234,6 +234,18 @@ Ink on coated paper, with four flat process inks held in reserve for category ma
 
 **The Tint Rule.** A tint always sits behind something that belongs to its category (a tool icon). It is never a section background or a decorative wash.
 
+### Dark theme (cool graphite)
+Chosen by the owner on 2026-11-23 over a warm "negative proof" variant. Every color is a CSS variable (RGB channels) in `src/styles/global.css`, light under `:root` and dark under `:root[data-theme='dark']`; Tailwind reads them (`tailwind.config.ts`), so components use the same token classes in both themes and `dark:` variants are rarely needed.
+
+- **Ground and sheets:** page `#16181c`, sheet and panels (`paper-bright`) `#1d2025`, hover and selected (`paper-stock`) `#252830`. The sheet is lighter than the page, as the paper-bright sheet is in light.
+- **Ink:** key ink and rules `#e6e8eb`, body `#cfd3d8`, graphite `#9aa1ab` (6.3:1 on the sheet), pencil dividers `#3a3e46`.
+- **The one solid block** (Download, "Choose a file") becomes the light `#e6e8eb` block with dark text: the rule holds, inverted.
+- **Process inks stay** (magenta lifted slightly to `#f02891`), so the colour bar, the category marks and the wordmark read the same in both themes. Status colors and category-tint inks are lighter shades that keep 6.7:1 or more on their grounds; tints are deep shades of the same hues.
+- **Focus** is `#5cc6f0` (9:1). Registration plates blend with `screen` instead of `multiply`.
+- **Not themed:** anything that represents the user's output stays true to it: PDF page previews and white page backgrounds, default text and stroke colors, and overlays drawn on the image. The text selection stays process yellow with key-black text.
+
+**Choosing the theme.** An inline script in `BaseLayout.astro` sets `data-theme` before first paint: the visitor's choice (`localStorage` `tf-theme`) or else `prefers-color-scheme`, followed live. The header's ruled sun/moon button (`aria-pressed` = dark) flips it; choosing what the device already shows clears the stored choice, so the page follows the device again. `theme-color` follows the theme.
+
 ## Typography
 
 **Display Font:** Barlow Semi Condensed (with Barlow, system-ui)
@@ -321,7 +333,7 @@ Ink on paper: one solid action, everything else ruled.
 ### Navigation (masthead)
 - **Style:** sticky paper-bright bar with a 1px pencil bottom rule, topped by the 6px CMYK color bar (cyan, magenta, yellow, key in four equal blocks).
 - **Wordmark:** lowercase "tadafile" in "TadaFile Logo" (Fredoka 700, SIL OFL, cut down to the letters t a d f ı l e, under 2 KB; `public/fonts/`): "tada" in key ink, "file" in process magenta, and the dot of the "i" is a process-yellow sparkle with a thin key-ink edge plus a small cyan sparkle. Header 30px, footer 32px (lowercase needs more size than the old capitals to hold the same presence). The plain name is screen-reader text; the drawn word is decorative. The font is used for the wordmark only.
-- **Links:** five categories (all but Developer) as plain key-ink Barlow 500 15px links, each led by its 8px round category mark, hover grounded in paper stock; shown from xl up. No tinted pills: the color bar and the wordmark already carry the colour, so the masthead stays quiet. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger and language selector are ruled buttons on the right.
+- **Links:** five categories (all but Developer) as plain key-ink Barlow 500 15px links, each led by its 8px round category mark, hover grounded in paper stock; shown from xl up. No tinted pills: the color bar and the wordmark already carry the colour, so the masthead stays quiet. They use the short category names (Edit, Compress, Convert, PDF, Utilities) in every language: the full names of five categories overflow the 1280px masthead next to search and language. Tool search trigger, the light/dark switch (a 40px square with a moon or sun) and the language selector are ruled buttons on the right.
 
 ### Lists and index
 - **Tool index and Related tools:** each row is a 10px-rounded link with a 40px (36px in Related tools) icon tile on the category tint, the item-weight name and a graphite description clamped to one line (the tool page says the rest); server tools carry no tag in lists: their own page shows the server notice above the drop tray; hover grounds the row in paper stock and underlines the name. On the home page each category is a white 16px card with a pencil-soft rule, a round category mark, the category name and its count.
