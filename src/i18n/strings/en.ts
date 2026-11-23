@@ -55,6 +55,7 @@ export const en = {
   'ws.chooseImages': 'Choose images',
   'ws.dropHint': 'JPG, PNG, WebP and more, up to 50 MB. You can also paste with Ctrl+V.',
   'ws.dropHintMany': 'Choose several to convert them all at once.',
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2 and more, up to 150 MB each. Developed at full size on your device.',
   'ws.rendering': 'Updating preview…',
   'ws.previewLabel': 'Preview of your image with the current settings',
   'ws.pickerLabel': 'Color picker on your image',

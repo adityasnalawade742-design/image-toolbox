@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': "Choisir des images",
   'ws.dropHint': "JPG, PNG, WebP et plus, jusqu’à 50 MB. Vous pouvez aussi coller avec Ctrl+V.",
   'ws.dropHintMany': "Choisissez-en plusieurs pour tout convertir d’un coup.",
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2 et plus, jusqu’à 150 Mo chacun. Développé en taille réelle sur votre appareil.',
   'ws.rendering': "Mise à jour de l’aperçu…",
   'ws.pickerHelp': "Cliquez sur l’image pour prendre une couleur. Au clavier, sélectionnez l’image, déplacez-vous avec les flèches (maintenez Maj pour aller plus vite) et appuyez sur Entrée pour prendre la couleur.",
   'ws.pickerPicked': "Couleur prise : {hex}",
@@ -112,6 +113,9 @@ export const strings = {
   'ctl.batch.firstFrame': "Première image de l’animation seulement",
   'ctl.batch.firstPage': "Première page seulement",
   'ctl.batch.firstImage': "Première image seulement",
+  'ctl.batch.hintRaw': 'Développé comme le ferait l’appareil photo : sa propre balance des blancs, une luminosité automatique et des couleurs sRGB, en taille réelle.',
+  'ctl.batch.rawHalf': 'Enregistré à moitié de la taille : la taille réelle demande plus de mémoire que cet appareil n’en a',
+  'ctl.batch.errNotRaw': 'Ce n’est pas un fichier RAW d’appareil photo',
   'ctl.batch.hintMetadata': "Chaque photo garde son format et sa qualité : seules les métadonnées sont retirées. Les HEIC d’iPhone et les TIFF deviennent JPG ou PNG.",
 
   'ctl.bulkCompress.dropHint': "JPG, PNG, WebP, AVIF, HEIC, TIFF et BMP, jusqu’à 50 Mo chacune. Compressées une à une, entièrement dans votre navigateur. Les images animées gardent leur première image.",

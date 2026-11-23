@@ -2,6 +2,8 @@ import { canvasToBlob, loadImage, processCanvasBest, type WatermarkOptions } fro
 import { scaleToSide } from './limits';
 import { isHeicFile, convertHeic } from './heicLoader';
 import { isTiffFile, convertTiff } from './tiffLoader';
+import { isRawFile, decodeRaw } from './rawLoader';
+import { encodeWith, type CodecKind } from './avifEncoder';
 import { isAnimatedImage } from './animated';
 import { stripFormat, stripMetadata } from './stripMetadata';
 import { canvasSupportsP3, isDisplayP3, readJpegIcc } from './iccProfile';
@@ -12,6 +14,7 @@ export const BATCH_TOOLS = new Set([
   'jpg-to-png', 'webp-to-png', 'svg-to-png', 'png-to-jpg', 'webp-to-jpg', 'jpg-to-webp', 'png-to-webp', 'heic-to-jpg',
   'heic-to-png', 'heic-to-webp', 'avif-to-jpg', 'avif-to-png', 'jpg-to-avif', 'png-to-avif', 'gif-to-png', 'gif-to-jpg',
   'bmp-to-jpg', 'bmp-to-png', 'tiff-to-jpg', 'tiff-to-png', 'svg-to-jpg', 'svg-to-webp', 'convert-image', 'remove-image-metadata',
+  'raw-to-jpg',
 ]);
 
 export interface ConvertSettings {
@@ -34,8 +37,8 @@ export interface ConvertSettings {
 export interface Converted {
   blob: Blob;
   ext: string;
-  /** Only the first frame, page or picture of the file was used */
-  partial?: 'animation' | 'pages' | 'images';
+  /** Only the first frame, page or picture of the file was used; or a RAW photo came out at half size (memory) */
+  partial?: 'animation' | 'pages' | 'images' | 'half';
 }
 
 /**
@@ -44,7 +47,21 @@ export interface Converted {
  * their colours as JPG; WebP from graphics is lossless whenever that's no bigger. Remove Metadata cuts the metadata
  * out of a JPG, PNG or WebP without re-encoding it.
  */
+const CODEC: Record<OutputFormat, CodecKind> = { 'image/jpeg': 'jpeg', 'image/png': 'png', 'image/webp': 'webp', 'image/avif': 'avif' };
+
+/**
+ * A camera RAW file: developed by LibRaw and encoded straight from its pixels, so it keeps its full size (no canvas,
+ * whose limit is 16.7 MP on iPhones).
+ */
+async function convertRawFile(file: File, format: OutputFormat, s: ConvertSettings): Promise<Converted> {
+  const { image, half } = await decodeRaw(file);
+  const lossless = (format === 'image/webp' || format === 'image/avif') && s.webpLossless;
+  const blob = await encodeWith(CODEC[format], image, lossless ? 100 : s.quality, undefined, false, lossless);
+  return { blob, ext: formatExtension((blob.type || format) as OutputFormat), partial: half ? 'half' : undefined };
+}
+
 export async function convertImageFile(file: File, s: ConvertSettings): Promise<Converted> {
+  if (isRawFile(file)) return convertRawFile(file, s.format ?? getOutputFormatPolicy(s.slug, 'image/x-raw').format, s);
   const heic = isHeicFile(file);
   const tiff = isTiffFile(file);
   const sourceMime = heic ? 'image/heic' : tiff ? 'image/tiff' : file.type || 'image/png';

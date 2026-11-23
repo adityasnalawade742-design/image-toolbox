@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': 'Resimleri seçin',
   'ws.dropHint': 'JPG, PNG, WebP ve diğerleri, en fazla 50 MB. Ctrl+V ile de yapıştırabilirsiniz.',
   'ws.dropHintMany': "Hepsini bir kerede dönüştürmek için birden fazla seçin.",
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2 ve daha fazlası, her biri en fazla 150 MB. Cihazınızda tam boyutta işlenir.',
   'ws.rendering': 'Önizleme güncelleniyor…',
   'ws.pickerHelp': 'Renk seçmek için resme tıklayın. Klavyeyle resmi seçin, ok tuşlarıyla hareket edin (daha büyük adımlar için Shift tuşunu basılı tutun) ve seçmek için Enter tuşuna basın.',
   'ws.pickerPicked': 'Seçilen renk: {hex}',
@@ -582,6 +583,9 @@ export const strings = {
   'ctl.batch.firstFrame': "Yalnızca ilk kare",
   'ctl.batch.firstPage': "Yalnızca ilk sayfa",
   'ctl.batch.firstImage': "Yalnızca ilk görsel",
+  'ctl.batch.hintRaw': 'Fotoğraf makinesinin yapacağı gibi işlenir: makinenin kendi beyaz dengesi, otomatik parlaklık ve sRGB renkleri, tam boyutta.',
+  'ctl.batch.rawHalf': 'Yarı boyutta kaydedildi: tam boyut, bu cihazın belleğinden fazlasını gerektiriyor',
+  'ctl.batch.errNotRaw': 'Fotoğraf makinesi RAW dosyası değil',
   'ctl.batch.hintMetadata': "Her fotoğraf kendi biçimini ve kalitesini korur: yalnızca meta veriler silinir. iPhone HEIC ve TIFF dosyaları JPG ya da PNG olur.",
 
   // Bulk compressor

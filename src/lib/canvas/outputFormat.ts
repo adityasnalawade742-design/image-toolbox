@@ -31,6 +31,7 @@ const FIXED_TARGETS: Record<string, OutputFormat> = {
   'tiff-to-png': 'image/png',
   'svg-to-jpg': 'image/jpeg',
   'svg-to-webp': 'image/webp',
+  'raw-to-jpg': 'image/jpeg',
 };
 
 // Editors that should hand back the same kind of file they were given
@@ -47,7 +48,8 @@ const KEEP_INPUT_FORMAT = new Set([
 
 /** The quality an image is saved at to begin with: editing shouldn't cost a photo as much as compressing it does */
 export function defaultQuality(slug: string): number {
-  return KEEP_INPUT_FORMAT.has(slug) ? 92 : 85;
+  // RAW to JPG: a photographer's own photo, saved once at a quality close to the camera's "fine" JPG
+  return KEEP_INPUT_FORMAT.has(slug) || slug === 'raw-to-jpg' ? 92 : 85;
 }
 
 /** Map an input MIME type to the closest format the browser can export */

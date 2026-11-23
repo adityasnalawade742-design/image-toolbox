@@ -3773,6 +3773,82 @@ export const trTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "raw-to-jpg": {
+    name: "RAW'dan JPG'ye",
+    shortName: "RAW → JPG",
+    tagline: "Kamera RAW fotoğraflarını (CR2, CR3, NEF, ARW, DNG ve daha fazlası) tam boyutlu JPG'ye dönüştürün. Ücretsizdir ve cihazınızda çalışır.",
+    intro: "RAW'dan JPG'ye aracı, kameranızdan gelen RAW dosyalarını her yerde açılan JPG fotoğraflara dönüştürür: telefonda, e-postada ya da bir web sitesinde. Canon CR2 ve CR3, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Pentax PEF, DNG ve daha fazlasını okur; her fotoğrafı, kameranın varsayılan olarak yapacağı gibi, kaydettiği beyaz dengesi, otomatik parlaklık ve sRGB renklerle işler. JPG, sensörün tam boyutunu korur. Birkaç RAW dosyasını aynı anda ekleyin ve tek tek ya da bir ZIP içinde indirin. Fotoğraflar tarayıcınızda işlenir, bu yüzden hiçbir zaman yüklenmez.",
+    seoTitle: "RAW JPG Dönüştürme – CR2, NEF, ARW, DNG, Ücretsiz",
+    seoDescription: "RAW fotoğrafları ücretsiz olarak JPG'ye dönüştürün: Canon CR2 ve CR3, Nikon NEF, Sony ARW, DNG ve fazlası, tam boyutta ve toplu. Yükleme yok, kayıt yok.",
+    keywords: [
+      "raw jpg dönüştürme",
+      "raw jpg çevirme",
+      "cr2 jpg çevirme",
+      "cr3 jpg çevirme",
+      "nef jpg çevirme",
+      "arw jpg dönüştürme",
+      "dng jpg çevirme",
+      "raw fotoğraf dönüştürücü"
+    ],
+    howToSteps: [
+      {
+        title: "RAW fotoğraflarınızı ekleyin",
+        description: "Kameranızdan bir veya daha fazla RAW dosyası bırakın ya da seçin; tek seferde en fazla 50 dosya."
+      },
+      {
+        title: "Kaliteyi seçin",
+        description: "Başlangıçta %92 seçilidir; bu, bir kameranın en yüksek JPG kalite ayarına yakındır. Daha küçük dosyalar için düşürün."
+      },
+      {
+        title: "Dönüştürün ve indirin",
+        description: "Her fotoğraf sırayla işlenir. Tek tek ya da hepsini bir ZIP içinde indirin."
+      }
+    ],
+    features: [
+      {
+        title: "Tam boyut",
+        description: "JPG, sensörün her pikselini içerir: 24 MP'lik bir RAW, 24 MP'lik bir JPG olur."
+      },
+      {
+        title: "Çoğu kamera",
+        description: "Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, Pentax, Leica ve DNG dosyaları LibRaw ile okunur."
+      },
+      {
+        title: "Aynı anda birçok dosya",
+        description: "Tek seferde en fazla 50 RAW dosyası ve tüm JPG'leri içeren bir ZIP."
+      },
+      {
+        title: "Gizli",
+        description: "Fotoğraflar tarayıcınızda işlenir ve asla yüklenmez."
+      }
+    ],
+    faqs: [
+      {
+        question: "Hangi kameralar ve RAW biçimleri çalışır?",
+        answer: "Son yirmi yılın çoğu kamerası: Canon CR2, CR3 ve CRW, Nikon NEF ve NRW, Sony ARW, Fujifilm RAF, Olympus ve OM System ORF, Panasonic RW2, Pentax PEF, Samsung SRW ile Leica, Ricoh, Pentax ve telefonlardan gelen DNG dosyaları. Kod çözücü, birçok fotoğraf düzenleyicisinin de kullandığı LibRaw'dır. Son birkaç ay içinde çıkan bir kamera henüz desteklenmiyor olabilir."
+      },
+      {
+        question: "JPG, kameranın kendi JPG'siyle aynı mı görünür?",
+        answer: "Yakın, ama birebir aynı değil. Renkler ve beyaz dengesi kameradan gelir; ancak kamera JPG oluştururken kendi resim stilini de (kontrast, keskinleştirme ve gürültü azaltma) ekler. Bu dönüştürücü RAW'ı nötr biçimde işler, bu yüzden sonuç kameranın JPG'sinden biraz daha yumuşak veya düz görünebilir."
+      },
+      {
+        question: "Tam çözünürlük korunur mu?",
+        answer: "Evet. JPG, sensörün tam boyutundadır. Yalnızca çok büyük bir dosyada telefonun belleği yetmezse genişlik ve yükseklik yarıya indirilerek kaydedilir ve listede o fotoğrafın yanında bu belirtilir."
+      },
+      {
+        question: "Kamera bilgileri (EXIF) korunur mu?",
+        answer: "Hayır. JPG, RAW dosyasındaki tarihi, kamerayı, objektifi veya konumu içermez. Bu da paylaşmayı güvenli hale getirir; ancak bu bilgilere ihtiyacınız varsa RAW dosyasını da saklayın."
+      },
+      {
+        question: "Pozlamayı veya beyaz dengesini ayarlayabilir miyim?",
+        answer: "Burada hayır: bu araç kameranın kendi ayarlarıyla dönüştürür. Bir RAW fotoğrafı dönüştürmeden önce düzenlemek için darktable veya RawTherapee (ikisi de ücretsiz) ya da Adobe Lightroom gibi bir RAW düzenleyici kullanın."
+      },
+      {
+        question: "Fotoğraflarım yükleniyor mu?",
+        answer: "Hayır. RAW dosyaları, cihazınızda çalışan LibRaw tarafından tarayıcınızda işlenir. İlk seferde tarayıcınız kod çözücüyü (yaklaşık 1,5 MB) indirir; fotoğraflar cihazınızda kalır."
+      }
+    ]
+  },
   "jpg-to-pdf": {
     name: "JPG'den PDF'e",
     shortName: "JPG → PDF",

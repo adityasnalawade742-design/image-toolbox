@@ -54,13 +54,14 @@ export const frHubs: HubTexts = {
     },
     'image-format-converters': {
       title: 'Convertisseur d’images gratuit : HEIC, JPG, PNG, WebP, AVIF',
-      description: '26 convertisseurs d’images gratuits : HEIC en JPG, JPG en PNG, WebP et AVIF, GIF, BMP, TIFF et SVG vers des formats courants, plusieurs à la fois.',
+      description: '27 convertisseurs d’images gratuits : HEIC en JPG, JPG en PNG, WebP et AVIF, GIF, BMP, TIFF et SVG vers des formats courants, plusieurs à la fois.',
       h1: 'Convertisseurs de format d’image',
       intro:
         'Passez une image au format qu’il vous faut : photos HEIC de l’iPhone en JPG, PNG en JPG ou WebP pour des fichiers plus légers, AVIF pour le web, ou GIF, BMP, TIFF et SVG vers des formats courants. La plupart des convertisseurs acceptent plusieurs fichiers à la fois, et tous fonctionnent dans votre navigateur : rien n’est envoyé. Vous hésitez ? Le Convertisseur d’image universel ouvre presque toutes les images et les enregistre en JPG, PNG, WebP ou AVIF.',
       groups: {
         any: 'Tous formats',
         heic: 'Photos d’iPhone (HEIC)',
+        raw: 'Photos RAW d’appareil photo',
         jpgPng: 'JPG et PNG',
         web: 'WebP et AVIF',
         other: 'GIF, BMP, TIFF et SVG',

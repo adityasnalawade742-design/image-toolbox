@@ -33,6 +33,9 @@ export const batchStrings = {
   'ctl.batch.firstFrame': 'First frame only',
   'ctl.batch.firstPage': 'First page only',
   'ctl.batch.firstImage': 'First picture only',
+  'ctl.batch.hintRaw': 'Developed the way the camera would: its own white balance, automatic brightness and sRGB colours, at full size.',
+  'ctl.batch.rawHalf': 'Saved at half size: the full size needs more memory than this device has',
+  'ctl.batch.errNotRaw': 'Not a camera RAW file',
   'ctl.batch.hintMetadata': 'Each photo keeps its own format and quality: only the metadata is removed. iPhone HEIC and TIFF become JPG or PNG.',
 
   // Bulk compressor
