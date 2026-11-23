@@ -95,12 +95,13 @@ export const esHubs: HubTexts = {
     },
     'image-utilities': {
       title: 'Utilidades de imagen gratis: visor EXIF, cuentagotas, DPI',
-      description: '21 herramientas gratis para analizar imágenes: ve y borra metadatos, toma colores, cambia DPI, pasa píxeles a pulgadas o cm y copia texto de imágenes.',
+      description: '22 herramientas gratis para analizar imágenes: ve y borra metadatos, toma colores, cambia DPI, pasa píxeles a pulgadas o cm y copia texto de imágenes.',
       h1: 'Utilidades de imagen',
       intro:
         'Pequeñas herramientas para las dudas que surgen con las imágenes: qué revelan los metadatos de una foto y cómo quitarlos, qué colores usa, a qué tamaño se imprime con ciertos DPI, si dos fotos son distintas o qué texto contiene. Todas funcionan en tu navegador, así que tus imágenes se quedan en tu dispositivo.',
       groups: {
         inspect: 'Analizar fotos',
+        files: 'Organizar archivos',
         colour: 'Colores',
         size: 'Tamaños, DPI e impresión',
         text: 'Texto y mensajes ocultos',

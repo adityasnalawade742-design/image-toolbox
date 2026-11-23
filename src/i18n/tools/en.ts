@@ -10990,6 +10990,80 @@ export const enTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    "name": "Batch Rename Files",
+    "shortName": "Batch Rename",
+    "tagline": "Rename many files at once with numbers, dates or find and replace, and download them in a ZIP. Free, on your device.",
+    "intro": "Batch Rename Files gives a whole set of files new names in one go: the photos from a trip as Holiday-001.jpg, Holiday-002.jpg and so on, scans named by the date they were made, or one word replaced in every name. Build the new name from the original name, a number, the date and time a photo was taken (read from the photo itself) and your own text, and check every new name before you download. Browsers can't rename the files on your computer, so you get renamed copies in a ZIP and your originals stay as they are. Any kind of file works, and nothing is uploaded.",
+    "seoTitle": "Batch Rename Files Online – Numbers, Dates, Free",
+    "seoDescription": "Rename multiple files at once: add numbers, the date a photo was taken, or find and replace text, then download a ZIP. Any file type, free, no upload.",
+    "keywords": [
+      "batch rename files",
+      "bulk rename files online",
+      "rename multiple files at once",
+      "rename photos by date",
+      "bulk rename photos",
+      "sequential file renamer"
+    ],
+    "howToSteps": [
+      {
+        "title": "Add your files",
+        "description": "Drop or choose up to 500 files of any kind: photos, scans, documents."
+      },
+      {
+        "title": "Build the new name",
+        "description": "Combine your own text with the original name, a number and the date taken, and use find and replace if you need it."
+      },
+      {
+        "title": "Check and download",
+        "description": "Every old and new name is listed side by side. Download the renamed copies in one ZIP."
+      }
+    ],
+    "features": [
+      {
+        "title": "Numbers and dates",
+        "description": "Numbered in the order you choose, with leading zeros, or named by the date and time each photo was taken."
+      },
+      {
+        "title": "Find and replace",
+        "description": "Change a word in every name at once, or remove it."
+      },
+      {
+        "title": "Every name shown first",
+        "description": "The full list of new names, with duplicates numbered so nothing is overwritten."
+      },
+      {
+        "title": "Any file type",
+        "description": "Photos, RAW files, PDFs, documents or music. The file ending is always kept."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why do I get a ZIP instead of renamed files?",
+        "answer": "For your safety, websites can't change or rename the files on your computer or phone. You get renamed copies in a ZIP: unzip it where you want the files, and delete the originals if you no longer need them. The files themselves are copied unchanged, so photos lose no quality."
+      },
+      {
+        "question": "How do I number files in order?",
+        "answer": "Put {n} in the name, for example Holiday-{n}, and choose the first number and how many digits (3 digits gives 001, 002…). Choose whether the files are numbered in the order you added them, by name, or by the date the photos were taken."
+      },
+      {
+        "question": "Where does the date come from?",
+        "answer": "For photos, from the date and time the camera recorded in the photo (its EXIF data), in JPG, HEIC, TIFF and many RAW files. When a file has no such date, the date it was last changed is used instead."
+      },
+      {
+        "question": "Can I rename files that aren't photos?",
+        "answer": "Yes. Any kind of file works: PDFs, documents, music or videos. The date taken is only available for photos; the other placeholders work for everything. The ending (.pdf, .mp3) is always kept."
+      },
+      {
+        "question": "What happens if two files get the same name?",
+        "answer": "The later one gets a number added, for example \"Holiday (2).jpg\", so no file is lost in the ZIP. The list marks those names so you can change the pattern if you prefer."
+      },
+      {
+        "question": "Are my files uploaded?",
+        "answer": "No. The files are read and zipped in your browser and never leave your device."
+      }
+    ]
+  },
   "pixel-art-converter": {
     "name": "Pixel Art Converter",
     "shortName": "Pixel Art",

@@ -11339,6 +11339,80 @@ export const idTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Ganti Nama File Massal",
+    shortName: "Ganti Nama Massal",
+    tagline: "Ganti nama banyak file sekaligus dengan nomor, tanggal, atau cari dan ganti, lalu unduh dalam ZIP. Gratis, di perangkat Anda.",
+    intro: "Ganti Nama File Massal memberi nama baru untuk sekumpulan file sekaligus: foto perjalanan menjadi Liburan-001.jpg, Liburan-002.jpg, dan seterusnya, hasil scan diberi nama sesuai tanggal dibuatnya, atau satu kata diganti di setiap nama. Susun nama baru dari nama asli, nomor, tanggal dan jam foto diambil (dibaca dari foto itu sendiri), dan teks Anda sendiri, lalu periksa setiap nama baru sebelum mengunduh. Browser tidak bisa mengganti nama file di komputer Anda, jadi Anda mendapat salinan dengan nama baru dalam ZIP dan file asli tetap seperti semula. Semua jenis file bisa dipakai, dan tidak ada yang diunggah.",
+    seoTitle: "Ganti Nama File Massal Online – Nomor dan Tanggal, Gratis",
+    seoDescription: "Ganti nama banyak file sekaligus: tambahkan nomor, tanggal foto diambil, atau cari dan ganti teks, lalu unduh ZIP. Semua jenis file, gratis, tanpa unggah.",
+    keywords: [
+      "ganti nama file massal",
+      "rename file sekaligus",
+      "cara rename banyak file",
+      "ganti nama foto sesuai tanggal",
+      "rename file online",
+      "ganti nama file berurutan"
+    ],
+    howToSteps: [
+      {
+        title: "Tambahkan file Anda",
+        description: "Letakkan atau pilih hingga 500 file jenis apa pun: foto, hasil scan, dokumen."
+      },
+      {
+        title: "Susun nama baru",
+        description: "Gabungkan teks Anda sendiri dengan nama asli, nomor, dan tanggal diambil, lalu gunakan cari dan ganti jika perlu."
+      },
+      {
+        title: "Periksa dan unduh",
+        description: "Setiap nama lama dan baru ditampilkan berdampingan. Unduh salinan dengan nama baru dalam satu ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Nomor dan tanggal",
+        description: "Diberi nomor sesuai urutan pilihan Anda, dengan nol di depan, atau diberi nama sesuai tanggal dan jam setiap foto diambil."
+      },
+      {
+        title: "Cari dan ganti",
+        description: "Ubah satu kata di semua nama sekaligus, atau hapus kata itu."
+      },
+      {
+        title: "Semua nama ditampilkan dulu",
+        description: "Daftar lengkap nama baru, dengan nama duplikat diberi nomor agar tidak ada yang tertimpa."
+      },
+      {
+        title: "Semua jenis file",
+        description: "Foto, file RAW, PDF, dokumen, atau musik. Ekstensi file selalu dipertahankan."
+      }
+    ],
+    faqs: [
+      {
+        question: "Mengapa saya mendapat ZIP, bukan file yang sudah diganti namanya?",
+        answer: "Demi keamanan Anda, situs web tidak bisa mengubah atau mengganti nama file di komputer atau ponsel Anda. Anda mendapat salinan dengan nama baru dalam ZIP: ekstrak di tempat Anda ingin menyimpan file, lalu hapus file asli jika tidak diperlukan lagi. File itu sendiri disalin tanpa perubahan, jadi kualitas foto tidak berkurang."
+      },
+      {
+        question: "Bagaimana cara memberi nomor file secara berurutan?",
+        answer: "Masukkan {n} ke nama, misalnya Liburan-{n}, lalu pilih nomor awal dan jumlah digit (3 digit menghasilkan 001, 002…). Pilih apakah file diberi nomor sesuai urutan Anda menambahkannya, menurut nama, atau menurut tanggal foto diambil."
+      },
+      {
+        question: "Dari mana tanggalnya diambil?",
+        answer: "Untuk foto, dari tanggal dan jam yang dicatat kamera di dalam foto (data EXIF-nya), pada file JPG, HEIC, TIFF, dan banyak file RAW. Jika file tidak punya tanggal itu, tanggal terakhir diubah yang dipakai."
+      },
+      {
+        question: "Bisakah saya mengganti nama file yang bukan foto?",
+        answer: "Bisa. Semua jenis file bisa dipakai: PDF, dokumen, musik, atau video. Tanggal diambil hanya tersedia untuk foto; penanda lainnya bisa dipakai untuk semua file. Ekstensinya (.pdf, .mp3) selalu dipertahankan."
+      },
+      {
+        question: "Apa yang terjadi jika dua file mendapat nama yang sama?",
+        answer: "File yang belakangan diberi nomor tambahan, misalnya “Liburan (2).jpg”, jadi tidak ada file yang hilang di ZIP. Nama-nama itu ditandai di daftar agar Anda bisa mengubah polanya jika mau."
+      },
+      {
+        question: "Apakah file saya diunggah?",
+        answer: "Tidak. File dibaca dan dijadikan ZIP di browser Anda dan tidak pernah meninggalkan perangkat Anda."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Konverter Pixel Art",
     shortName: "Pixel Art",

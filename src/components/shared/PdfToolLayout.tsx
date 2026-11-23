@@ -113,7 +113,7 @@ export function Segmented<T extends string | number>({ label, value, options, on
             style={short && i === options.length - 1 ? { gridColumn: `span ${columns - short + 1}` } : undefined}
             aria-pressed={value === o.value}
             onClick={() => onChange(o.value)}
-            className={`min-h-[40px] px-2 text-[14px] font-semibold transition-colors ${value === o.value ? 'seg-on' : 'seg-off'}`}
+            className={`min-h-[40px] px-2 text-[14px] leading-tight font-semibold hyphens-auto transition-colors ${value === o.value ? 'seg-on' : 'seg-off'}`}
           >
             {o.label}
           </button>

@@ -11370,6 +11370,80 @@ export const frTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Renommer des fichiers par lot",
+    shortName: "Renommer",
+    tagline: "Renommez de nombreux fichiers d’un coup avec des numéros, des dates ou rechercher-remplacer, et téléchargez-les dans un ZIP. Gratuit, sur votre appareil.",
+    intro: "Renommer des fichiers par lot donne de nouveaux noms à tout un ensemble de fichiers en une seule fois : les photos d’un voyage en Vacances-001.jpg, Vacances-002.jpg et ainsi de suite, des numérisations nommées d’après leur date de création, ou un mot remplacé dans tous les noms. Composez le nouveau nom à partir du nom d’origine, d’un numéro, de la date et de l’heure de prise de vue d’une photo (lues dans la photo elle-même) et de votre propre texte, et vérifiez chaque nouveau nom avant de télécharger. Les navigateurs ne peuvent pas renommer les fichiers sur votre ordinateur : vous obtenez donc des copies renommées dans un ZIP, et vos originaux restent tels quels. Tous les types de fichiers sont acceptés, et rien n’est envoyé.",
+    seoTitle: "Renommer plusieurs fichiers à la fois en ligne, gratuit",
+    seoDescription: "Renommez plusieurs fichiers d’un coup : numéros, date de prise de vue des photos ou rechercher-remplacer, puis téléchargez un ZIP. Tout format, sans envoi.",
+    keywords: [
+      "renommer plusieurs fichiers",
+      "renommer des fichiers en masse",
+      "renommer fichiers par lot",
+      "renommer photos par date",
+      "renommer plusieurs fichiers en même temps",
+      "numéroter des fichiers"
+    ],
+    howToSteps: [
+      {
+        title: "Ajoutez vos fichiers",
+        description: "Déposez ou choisissez jusqu’à 500 fichiers de tout type : photos, numérisations, documents."
+      },
+      {
+        title: "Composez le nouveau nom",
+        description: "Combinez votre propre texte avec le nom d’origine, un numéro et la date de prise de vue, et utilisez rechercher-remplacer si besoin."
+      },
+      {
+        title: "Vérifiez et téléchargez",
+        description: "Les anciens et les nouveaux noms sont affichés côte à côte. Téléchargez les copies renommées dans un seul ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Numéros et dates",
+        description: "Numérotés dans l’ordre de votre choix, avec des zéros devant, ou nommés d’après la date et l’heure de prise de vue de chaque photo."
+      },
+      {
+        title: "Rechercher et remplacer",
+        description: "Changez un mot dans tous les noms à la fois, ou supprimez-le."
+      },
+      {
+        title: "Tous les noms affichés d’abord",
+        description: "La liste complète des nouveaux noms, avec les doublons numérotés pour que rien ne soit écrasé."
+      },
+      {
+        title: "Tout type de fichier",
+        description: "Photos, fichiers RAW, PDF, documents ou musique. L’extension du fichier est toujours conservée."
+      }
+    ],
+    faqs: [
+      {
+        question: "Pourquoi est-ce que j’obtiens un ZIP au lieu de fichiers renommés ?",
+        answer: "Pour votre sécurité, les sites web ne peuvent pas modifier ni renommer les fichiers de votre ordinateur ou de votre téléphone. Vous obtenez des copies renommées dans un ZIP : décompressez-le là où vous voulez les fichiers, et supprimez les originaux si vous n’en avez plus besoin. Les fichiers eux-mêmes sont copiés sans modification, donc les photos ne perdent pas en qualité."
+      },
+      {
+        question: "Comment numéroter des fichiers dans l’ordre ?",
+        answer: "Mettez {n} dans le nom, par exemple Vacances-{n}, et choisissez le premier numéro et le nombre de chiffres (3 chiffres donnent 001, 002…). Choisissez si les fichiers sont numérotés dans l’ordre où vous les avez ajoutés, par nom ou par date de prise de vue des photos."
+      },
+      {
+        question: "D’où vient la date ?",
+        answer: "Pour les photos, de la date et de l’heure enregistrées par l’appareil photo dans la photo (ses données EXIF), dans les fichiers JPG, HEIC, TIFF et de nombreux fichiers RAW. Si un fichier n’a pas cette date, c’est la date de sa dernière modification qui est utilisée."
+      },
+      {
+        question: "Puis-je renommer des fichiers qui ne sont pas des photos ?",
+        answer: "Oui. Tous les types de fichiers sont acceptés : PDF, documents, musique ou vidéos. La date de prise de vue n’est disponible que pour les photos ; les autres balises fonctionnent pour tout. L’extension (.pdf, .mp3) est toujours conservée."
+      },
+      {
+        question: "Que se passe-t-il si deux fichiers reçoivent le même nom ?",
+        answer: "Le second reçoit un numéro, par exemple « Vacances (2).jpg », pour qu’aucun fichier ne soit perdu dans le ZIP. La liste signale ces noms pour que vous puissiez modifier le modèle si vous préférez."
+      },
+      {
+        question: "Mes fichiers sont-ils envoyés ?",
+        answer: "Non. Les fichiers sont lus et compressés dans votre navigateur et ne quittent jamais votre appareil."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Convertisseur pixel art",
     shortName: "Pixel art",

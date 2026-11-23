@@ -11321,6 +11321,80 @@ export const itTools: Record<string, LocalizedToolItem> = {
       }
     ]
   },
+  "batch-rename-files": {
+    name: "Rinomina file in blocco",
+    shortName: "Rinomina file",
+    tagline: "Rinomina molti file in una volta con numeri, date o trova e sostituisci, e scaricali in uno ZIP. Gratis, sul tuo dispositivo.",
+    intro: "Rinomina file in blocco dà nuovi nomi a un intero gruppo di file in un colpo solo: le foto di un viaggio come Vacanza-001.jpg, Vacanza-002.jpg e così via, scansioni chiamate con la data in cui sono state fatte, oppure una parola sostituita in ogni nome. Componi il nuovo nome con il nome originale, un numero, la data e l’ora in cui una foto è stata scattata (lette dalla foto stessa) e il tuo testo, e controlla ogni nuovo nome prima di scaricare. I browser non possono rinominare i file sul tuo computer, quindi ottieni copie rinominate in uno ZIP e gli originali restano come sono. Funziona con qualsiasi tipo di file, e non viene caricato nulla.",
+    seoTitle: "Rinominare file in blocco online – Numeri e date, gratis",
+    seoDescription: "Rinomina più file insieme: aggiungi numeri, la data di scatto delle foto o trova e sostituisci testo, poi scarica uno ZIP. Ogni formato, gratis, senza upload.",
+    keywords: [
+      "rinominare file in blocco",
+      "rinominare più file contemporaneamente",
+      "rinominare file online",
+      "rinominare foto per data",
+      "rinomina file in serie",
+      "rinominare file con numeri progressivi"
+    ],
+    howToSteps: [
+      {
+        title: "Aggiungi i file",
+        description: "Trascina o scegli fino a 500 file di qualsiasi tipo: foto, scansioni, documenti."
+      },
+      {
+        title: "Componi il nuovo nome",
+        description: "Unisci il tuo testo al nome originale, a un numero e alla data di scatto, e usa trova e sostituisci se ti serve."
+      },
+      {
+        title: "Controlla e scarica",
+        description: "Ogni nome vecchio e nuovo è elencato fianco a fianco. Scarica le copie rinominate in un unico ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Numeri e date",
+        description: "Numerati nell’ordine che scegli, con zeri iniziali, oppure chiamati con la data e l’ora in cui ogni foto è stata scattata."
+      },
+      {
+        title: "Trova e sostituisci",
+        description: "Cambia una parola in tutti i nomi in una volta, oppure eliminala."
+      },
+      {
+        title: "Ogni nome visibile prima",
+        description: "L’elenco completo dei nuovi nomi, con i duplicati numerati così niente viene sovrascritto."
+      },
+      {
+        title: "Qualsiasi tipo di file",
+        description: "Foto, file RAW, PDF, documenti o musica. L’estensione del file viene sempre mantenuta."
+      }
+    ],
+    faqs: [
+      {
+        question: "Perché ottengo uno ZIP invece dei file rinominati?",
+        answer: "Per la tua sicurezza, i siti web non possono modificare o rinominare i file sul tuo computer o telefono. Ottieni copie rinominate in uno ZIP: estrailo dove vuoi i file ed elimina gli originali se non ti servono più. I file vengono copiati senza modifiche, quindi le foto non perdono qualità."
+      },
+      {
+        question: "Come numero i file in ordine?",
+        answer: "Inserisci {n} nel nome, per esempio Vacanza-{n}, e scegli il primo numero e quante cifre usare (3 cifre danno 001, 002…). Scegli se numerare i file nell’ordine in cui li hai aggiunti, per nome o per data di scatto delle foto."
+      },
+      {
+        question: "Da dove viene la data?",
+        answer: "Per le foto, dalla data e dall’ora che la fotocamera ha registrato nella foto (i suoi dati EXIF), nei file JPG, HEIC, TIFF e in molti file RAW. Se un file non ha questa data, viene usata quella dell’ultima modifica."
+      },
+      {
+        question: "Posso rinominare file che non sono foto?",
+        answer: "Sì. Funziona con qualsiasi tipo di file: PDF, documenti, musica o video. La data di scatto è disponibile solo per le foto; gli altri segnaposto funzionano con tutto. L’estensione (.pdf, .mp3) viene sempre mantenuta."
+      },
+      {
+        question: "Cosa succede se due file ottengono lo stesso nome?",
+        answer: "A quello successivo viene aggiunto un numero, per esempio “Vacanza (2).jpg”, così nessun file va perso nello ZIP. L’elenco segnala questi nomi, così puoi cambiare lo schema se preferisci."
+      },
+      {
+        question: "I miei file vengono caricati?",
+        answer: "No. I file vengono letti e compressi nello ZIP nel tuo browser e non lasciano mai il tuo dispositivo."
+      }
+    ]
+  },
   "pixel-art-converter": {
     name: "Convertitore pixel art",
     shortName: "Pixel art",

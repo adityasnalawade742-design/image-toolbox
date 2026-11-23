@@ -53,6 +53,8 @@ const SYNONYMS: Record<string, string[]> = {
   upscaling: ['upscale'],
   resolution: ['upscale', 'resize'],
   hd: ['upscale'],
+  renamer: ['rename'],
+  renaming: ['rename'],
   enhance: ['upscale', 'sharpen'],
   turn: ['rotate'],
   mirror: ['flip'],
