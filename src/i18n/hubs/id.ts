@@ -54,13 +54,14 @@ export const idHubs: HubTexts = {
     },
     'image-format-converters': {
       title: 'Konverter Gambar Gratis: HEIC, JPG, PNG, WebP, AVIF',
-      description: '26 konverter gambar gratis di browser: HEIC ke JPG, JPG ke PNG, WebP, dan AVIF, serta GIF, BMP, TIFF, dan SVG ke format umum, beberapa file sekaligus.',
+      description: '27 konverter gambar gratis di browser: HEIC ke JPG, JPG ke PNG, WebP, dan AVIF, serta GIF, BMP, TIFF, dan SVG ke format umum, beberapa file sekaligus.',
       h1: 'Konverter format gambar',
       intro:
         'Ubah gambar ke format yang Anda perlukan: foto HEIC iPhone ke JPG, PNG ke JPG atau WebP agar lebih kecil, AVIF untuk web, atau GIF, BMP, TIFF, dan SVG ke format sehari-hari. Sebagian besar konverter menerima beberapa file sekaligus, dan semuanya berjalan di browser, jadi tidak ada yang diunggah. Bingung memilih? Konverter Gambar Universal membuka hampir semua gambar dan menyimpannya sebagai JPG, PNG, WebP, atau AVIF.',
       groups: {
         any: 'Format apa pun',
         heic: 'Foto iPhone (HEIC)',
+        raw: 'Foto RAW kamera',
         jpgPng: 'JPG dan PNG',
         web: 'WebP dan AVIF',
         other: 'GIF, BMP, TIFF, dan SVG',

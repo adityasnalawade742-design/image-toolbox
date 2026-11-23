@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': 'Elegir imágenes',
   'ws.dropHint': 'JPG, PNG, WebP y más, hasta 50 MB. También puedes pegarla con Ctrl+V.',
   'ws.dropHintMany': "Elige varias para convertirlas todas a la vez.",
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2 y más, hasta 150 MB cada uno. Se revela a tamaño completo en tu dispositivo.',
   'ws.rendering': 'Actualizando vista previa…',
   'ws.pickerHelp': 'Haz clic en la imagen para elegir un color. Con el teclado, selecciona la imagen, muévete con las flechas (mantén Mayús para pasos más grandes) y pulsa Intro para elegir.',
   'ws.pickerPicked': 'Color elegido: {hex}',
@@ -621,6 +622,9 @@ export const strings = {
   'ctl.batch.firstFrame': "Solo el primer fotograma",
   'ctl.batch.firstPage': "Solo la primera página",
   'ctl.batch.firstImage': "Solo la primera imagen",
+  'ctl.batch.hintRaw': 'Revelado como lo haría la cámara: su propio balance de blancos, brillo automático y colores sRGB, a tamaño completo.',
+  'ctl.batch.rawHalf': 'Guardado a la mitad de tamaño: el tamaño completo necesita más memoria de la que tiene este dispositivo',
+  'ctl.batch.errNotRaw': 'No es un archivo RAW de cámara',
   'ctl.batch.hintMetadata': "Cada foto conserva su formato y su calidad: solo se quitan los metadatos. Los HEIC de iPhone y los TIFF pasan a JPG o PNG.",
 
   // Bulk compressor

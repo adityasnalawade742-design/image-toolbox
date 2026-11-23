@@ -54,13 +54,14 @@ export const trHubs: HubTexts = {
     },
     'image-format-converters': {
       title: 'Ücretsiz Resim Dönüştürücü: HEIC, JPG, PNG, WebP, AVIF',
-      description: 'Tarayıcıda 26 ücretsiz resim dönüştürücü: HEIC’ten JPG’ye, JPG’den PNG, WebP ve AVIF’e, GIF, BMP, TIFF ve SVG’den yaygın biçimlere; birden çok dosya aynı anda.',
+      description: 'Tarayıcıda 27 ücretsiz resim dönüştürücü: HEIC’ten JPG’ye, JPG’den PNG, WebP ve AVIF’e, GIF, BMP, TIFF ve SVG’den yaygın biçimlere; birden çok dosya aynı anda.',
       h1: 'Resim biçimi dönüştürücüler',
       intro:
         'Bir resmi ihtiyacınız olan biçime çevirin: iPhone’un HEIC fotoğraflarını JPG’ye, PNG’yi daha küçük dosyalar için JPG ya da WebP’ye, web için AVIF’e veya GIF, BMP, TIFF ve SVG’yi günlük biçimlere. Dönüştürücülerin çoğu birden çok dosyayı aynı anda alır ve hepsi tarayıcınızda çalışır, hiçbir şey yüklenmez. Hangisini seçeceğinizden emin değil misiniz? Evrensel Resim Dönüştürücü neredeyse her resmi açar ve JPG, PNG, WebP ya da AVIF olarak kaydeder.',
       groups: {
         any: 'Her biçim',
         heic: 'iPhone fotoğrafları (HEIC)',
+        raw: 'Kamera RAW fotoğrafları',
         jpgPng: 'JPG ve PNG',
         web: 'WebP ve AVIF',
         other: 'GIF, BMP, TIFF ve SVG',

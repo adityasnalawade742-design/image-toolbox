@@ -3,8 +3,13 @@ import type { Config } from 'tailwindcss';
 // Press proof sheet, friendly edition: coated paper, key-black ink, process inks as category marks and soft tints.
 // Legacy token names (surface, hairline, mute, accent-*) are kept and remapped so every
 // component inherits the world; accent-* text colors are text-safe (≥4.5:1 on paper).
+/** A theme color: RGB channels from a CSS variable, with Tailwind's opacity modifier */
+const v = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  // dark: styles follow the theme the page script sets (data-theme on <html>), not only the device setting
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     // Friendly proof sheet: soft corners on surfaces and controls, one soft lift for floating pieces
     borderRadius: {
@@ -19,55 +24,61 @@ export default {
       '3xl': '24px',
       full: '9999px',
     },
+    // Soft lift for floating pieces only; the values live in global.css so dark mode can deepen them
     boxShadow: {
       none: 'none',
-      sm: '0 1px 2px rgba(20, 20, 20, 0.08)',
-      DEFAULT: '0 1px 3px rgba(20, 20, 20, 0.08), 0 1px 2px rgba(20, 20, 20, 0.04)',
-      md: '0 4px 12px rgba(20, 20, 20, 0.08)',
-      lg: '0 8px 24px rgba(20, 20, 20, 0.10)',
+      sm: 'var(--shadow-sm)',
+      DEFAULT: 'var(--shadow)',
+      md: 'var(--shadow-md)',
+      lg: 'var(--shadow-lg)',
       xl: 'none',
       '2xl': 'none',
       inner: 'none',
     },
     extend: {
+      // Every color is a CSS variable (RGB channels) set in global.css: light by default, dark (cool graphite)
+      // under [data-theme='dark']. Channels keep Tailwind's opacity modifiers working (bg-ink/40)
       colors: {
-        paper: { DEFAULT: '#fbfbf9', stock: '#f1f1ec', bright: '#ffffff' },
-        graphite: '#5b5b58',
-        pencil: { DEFAULT: '#cfcfc8', soft: '#e4e4de' },
-        nonrepro: '#9fd3e6',
+        paper: { DEFAULT: v('paper'), stock: v('paper-stock'), bright: v('paper-bright') },
+        graphite: v('graphite'),
+        pencil: { DEFAULT: v('pencil'), soft: v('pencil-soft') },
+        nonrepro: v('nonrepro'),
         process: {
-          cyan: '#00a0df',
-          magenta: '#e4007c',
-          yellow: '#ffe100',
-          key: '#141414',
+          cyan: v('process-cyan'),
+          magenta: v('process-magenta'),
+          yellow: v('process-yellow'),
+          key: v('process-key'),
         },
+        focus: v('focus'),
+        // Dimming over images and behind dialogs: always dark, in both themes
+        shade: v('shade'),
 
-        canvas: '#fbfbf9',
+        canvas: v('paper'),
         surface: {
-          DEFAULT: '#fbfbf9',
-          elevated: '#f1f1ec',
-          card: '#ffffff',
+          DEFAULT: v('paper'),
+          elevated: v('paper-stock'),
+          card: v('paper-bright'),
         },
         hairline: {
-          DEFAULT: '#cfcfc8',
-          soft: '#e4e4de',
-          strong: '#141414',
+          DEFAULT: v('pencil'),
+          soft: v('pencil-soft'),
+          strong: v('ink'),
         },
-        ink: '#141414',
-        body: '#2b2b29',
-        charcoal: '#2b2b29',
-        mute: '#5b5b58',
-        ash: '#6d6d69',
-        stone: '#9a9a93',
+        ink: v('ink'),
+        body: v('body'),
+        charcoal: v('body'),
+        mute: v('graphite'),
+        ash: v('ash'),
+        stone: v('stone'),
         accent: {
-          blue: '#00729e',
-          'blue-soft': '#dff2f9',
-          red: '#c2006a',
-          'red-soft': '#fbe3ef',
-          green: '#1d7440',
-          'green-soft': '#e1f1e6',
-          yellow: '#7d6300',
-          'yellow-soft': '#fff6bf',
+          blue: v('accent-blue'),
+          'blue-soft': v('accent-blue-soft'),
+          red: v('accent-red'),
+          'red-soft': v('accent-red-soft'),
+          green: v('accent-green'),
+          'green-soft': v('accent-green-soft'),
+          yellow: v('accent-yellow'),
+          'yellow-soft': v('accent-yellow-soft'),
         },
       },
       fontFamily: {

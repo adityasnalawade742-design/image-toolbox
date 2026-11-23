@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': '이미지 선택',
   'ws.dropHint': 'JPG, PNG, WebP 등 최대 50 MB. Ctrl+V로 붙여넣어도 돼요.',
   'ws.dropHintMany': "여러 개를 고르면 한 번에 변환할 수 있어요.",
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2 등, 파일당 최대 150MB. 기기에서 원본 크기 그대로 현상해요.',
   'ws.rendering': '미리보기 업데이트 중…',
   'ws.pickerHelp': '이미지를 클릭하면 색을 추출해요. 키보드로는 이미지를 선택하고 화살표 키로 이동한 뒤(Shift를 누르면 크게 이동) Enter를 눌러 추출하세요.',
   'ws.pickerPicked': '{hex} 색을 추출했어요',
@@ -621,6 +622,9 @@ export const strings = {
   'ctl.batch.firstFrame': "첫 프레임만",
   'ctl.batch.firstPage': "첫 페이지만",
   'ctl.batch.firstImage': "첫 이미지만",
+  'ctl.batch.hintRaw': '카메라처럼 현상해요. 카메라의 화이트 밸런스, 자동 밝기, sRGB 색으로 원본 크기 그대로 저장해요.',
+  'ctl.batch.rawHalf': '절반 크기로 저장했어요. 원본 크기에는 이 기기의 메모리가 부족해요',
+  'ctl.batch.errNotRaw': '카메라 RAW 파일이 아니에요',
   'ctl.batch.hintMetadata': "사진마다 형식과 화질은 그대로 두고 메타데이터만 지워요. iPhone HEIC와 TIFF는 JPG나 PNG가 돼요.",
 
   // Bulk compressor

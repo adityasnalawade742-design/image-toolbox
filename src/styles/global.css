@@ -15,24 +15,136 @@
   unicode-range: U+0061, U+0064, U+0065, U+0066, U+006C, U+0074, U+0131;
 }
 
+/* Theme tokens: RGB channels, read by tailwind.config.ts and the rules below.
+   Light is the proof sheet: key-black ink on coated paper. Dark is cool graphite (chosen by the owner, 2026-11-23):
+   blue-grey ground, a lifted sheet for panels, off-white ink; the process inks stay as they are, so the category marks,
+   the colour bar and the wordmark read the same in both. The theme is chosen before first paint by the script in
+   BaseLayout: the visitor's own choice, or else the device setting. */
+:root {
+  color-scheme: light;
+  --paper: 251 251 249;
+  --paper-stock: 241 241 236;
+  --paper-bright: 255 255 255;
+  --graphite: 91 91 88;
+  --pencil: 207 207 200;
+  --pencil-soft: 228 228 222;
+  --nonrepro: 159 211 230;
+  --process-cyan: 0 160 223;
+  --process-magenta: 228 0 124;
+  --process-yellow: 255 225 0;
+  --process-key: 20 20 20;
+  --ink: 20 20 20;
+  --body: 43 43 41;
+  --ash: 109 109 105;
+  --stone: 154 154 147;
+  --focus: 0 114 176;
+  --shade: 20 20 20;
+  --accent-blue: 0 114 158;
+  --accent-blue-soft: 223 242 249;
+  --accent-red: 194 0 106;
+  --accent-red-soft: 251 227 239;
+  --accent-green: 29 116 64;
+  --accent-green-soft: 225 241 230;
+  --accent-yellow: 125 99 0;
+  --accent-yellow-soft: 255 246 191;
+  /* Category tints: icon-tile ground and its text-safe ink */
+  --tint-edit: 253 230 242;
+  --tint-edit-ink: 163 0 90;
+  --tint-optimize: 224 243 251;
+  --tint-optimize-ink: 0 101 140;
+  --tint-convert: 255 245 184;
+  --tint-convert-ink: 102 82 0;
+  --tint-pdf: 246 232 220;
+  --tint-pdf-ink: 138 45 0;
+  --tint-neutral: 236 236 230;
+  --tint-neutral-ink: 20 20 20;
+  /* Drop tray */
+  --tray: 238 248 252;
+  --tray-hover: 227 243 250;
+  --tray-drag: 212 237 248;
+  --tray-rule: 47 140 181;
+  --tray-rule-hover: 0 160 223;
+  --tray-rule-drag: 0 114 158;
+  /* Transparency checkerboard */
+  --checker: 255 255 255;
+  --checker-square: 235 235 229;
+  --shadow-sm: 0 1px 2px rgba(20, 20, 20, 0.08);
+  --shadow: 0 1px 3px rgba(20, 20, 20, 0.08), 0 1px 2px rgba(20, 20, 20, 0.04);
+  --shadow-md: 0 4px 12px rgba(20, 20, 20, 0.08);
+  --shadow-lg: 0 8px 24px rgba(20, 20, 20, 0.1);
+  /* The registration plates overprint the image: multiply on paper, screen on dark */
+  --plate-blend: multiply;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: 22 24 28;
+  --paper-stock: 37 40 48;
+  --paper-bright: 29 32 37;
+  --graphite: 154 161 171;
+  --pencil: 58 62 70;
+  --pencil-soft: 44 47 54;
+  --nonrepro: 60 110 130;
+  --process-cyan: 0 160 223;
+  --process-magenta: 240 40 145;
+  --process-yellow: 255 225 0;
+  --process-key: 230 232 235;
+  --ink: 230 232 235;
+  --body: 207 211 216;
+  --ash: 160 166 175;
+  --stone: 112 118 128;
+  --focus: 92 198 240;
+  --shade: 8 9 11;
+  --accent-blue: 92 198 240;
+  --accent-blue-soft: 13 40 54;
+  --accent-red: 255 120 188;
+  --accent-red-soft: 56 18 40;
+  --accent-green: 111 208 150;
+  --accent-green-soft: 16 46 32;
+  --accent-yellow: 240 201 58;
+  --accent-yellow-soft: 48 40 12;
+  --tint-edit: 56 18 44;
+  --tint-edit-ink: 255 140 200;
+  --tint-optimize: 12 42 58;
+  --tint-optimize-ink: 111 208 245;
+  --tint-convert: 48 42 10;
+  --tint-convert-ink: 245 214 61;
+  --tint-pdf: 54 36 30;
+  --tint-pdf-ink: 255 171 122;
+  --tint-neutral: 37 40 48;
+  --tint-neutral-ink: 230 232 235;
+  --tray: 16 36 48;
+  --tray-hover: 19 46 60;
+  --tray-drag: 22 56 72;
+  --tray-rule: 58 156 196;
+  --tray-rule-hover: 0 160 223;
+  --tray-rule-drag: 92 198 240;
+  --checker: 32 34 39;
+  --checker-square: 44 47 54;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --plate-blend: screen;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    background-color: #fbfbf9;
-    color-scheme: light;
+    background-color: rgb(var(--paper));
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: #fbfbf9;
-    color: #141414;
+    background-color: rgb(var(--paper));
+    color: rgb(var(--ink));
     font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
     font-feature-settings: 'kern' 1, 'liga' 1;
     -webkit-font-smoothing: antialiased;
-    caret-color: #e4007c;
+    caret-color: rgb(var(--process-magenta));
   }
 
   /* Highlighter: selection is a stroke of process yellow */
@@ -56,7 +168,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid #0072b0;
+    outline: 2px solid rgb(var(--focus));
     outline-offset: 2px;
   }
 
@@ -81,14 +193,14 @@
 
   /* Sliders and checkboxes keep a 24px+ hit area (WCAG 2.5.8); the native track stays centred */
   input[type='range'] {
-    accent-color: #141414;
+    accent-color: rgb(var(--ink));
     min-height: 28px;
     cursor: pointer;
   }
 
   input[type='checkbox'],
   input[type='radio'] {
-    accent-color: #141414;
+    accent-color: rgb(var(--ink));
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
@@ -102,8 +214,8 @@
     top: -100px;
     z-index: 60;
     padding: 0.75rem 1rem;
-    background: #141414;
-    color: #fbfbf9;
+    background: rgb(var(--process-key));
+    color: rgb(var(--paper));
     font-weight: 600;
   }
   .skip-link:focus {
@@ -186,10 +298,10 @@
     inset: calc(-1 * (var(--mark) + var(--gap)));
     pointer-events: none;
     background:
-      linear-gradient(#141414, #141414) left calc(var(--mark) + var(--gap)) top 0 / 1px var(--mark) no-repeat,
-      linear-gradient(#141414, #141414) left 0 top calc(var(--mark) + var(--gap)) / var(--mark) 1px no-repeat,
-      linear-gradient(#141414, #141414) right calc(var(--mark) + var(--gap)) top 0 / 1px var(--mark) no-repeat,
-      linear-gradient(#141414, #141414) right 0 top calc(var(--mark) + var(--gap)) / var(--mark) 1px no-repeat;
+      linear-gradient(rgb(var(--ink)), rgb(var(--ink))) left calc(var(--mark) + var(--gap)) top 0 / 1px var(--mark) no-repeat,
+      linear-gradient(rgb(var(--ink)), rgb(var(--ink))) left 0 top calc(var(--mark) + var(--gap)) / var(--mark) 1px no-repeat,
+      linear-gradient(rgb(var(--ink)), rgb(var(--ink))) right calc(var(--mark) + var(--gap)) top 0 / 1px var(--mark) no-repeat,
+      linear-gradient(rgb(var(--ink)), rgb(var(--ink))) right 0 top calc(var(--mark) + var(--gap)) / var(--mark) 1px no-repeat;
   }
   .crop-marks::after {
     transform: scaleY(-1);
@@ -197,12 +309,12 @@
 
   /* Transparency checkerboard on paper */
   .canvas-checkerboard {
-    background-color: #ffffff;
+    background-color: rgb(var(--checker));
     background-image:
-      linear-gradient(45deg, #ebebe5 25%, transparent 25%),
-      linear-gradient(-45deg, #ebebe5 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, #ebebe5 75%),
-      linear-gradient(-45deg, transparent 75%, #ebebe5 75%);
+      linear-gradient(45deg, rgb(var(--checker-square)) 25%, transparent 25%),
+      linear-gradient(-45deg, rgb(var(--checker-square)) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgb(var(--checker-square)) 75%),
+      linear-gradient(-45deg, transparent 75%, rgb(var(--checker-square)) 75%);
     background-size: 16px 16px;
     background-position: 0 0, 0 8px, 8px -8px, -8px 0;
   }
@@ -213,10 +325,10 @@
     grid-template-columns: repeat(4, 1fr);
     height: 6px;
   }
-  .color-bar > span:nth-child(1) { background: #00a0df; }
-  .color-bar > span:nth-child(2) { background: #e4007c; }
-  .color-bar > span:nth-child(3) { background: #ffe100; }
-  .color-bar > span:nth-child(4) { background: #141414; }
+  .color-bar > span:nth-child(1) { background: rgb(var(--process-cyan)); }
+  .color-bar > span:nth-child(2) { background: rgb(var(--process-magenta)); }
+  .color-bar > span:nth-child(3) { background: rgb(var(--process-yellow)); }
+  .color-bar > span:nth-child(4) { background: rgb(var(--process-key)); }
 
   /* Buttons: one solid ink action, ruled secondary actions */
   .btn-ink {
@@ -240,7 +352,7 @@
   .seg-on,
   .btn-rule[aria-pressed='true'] {
     @apply bg-paper-stock text-ink font-bold;
-    outline: 2px solid #141414;
+    outline: 2px solid rgb(var(--ink));
     outline-offset: -2px;
   }
   .seg-off {
@@ -273,21 +385,21 @@
   /* Drop target: a tinted, dashed tray that is a real button */
   .drop-target {
     @apply w-full flex flex-col items-center justify-center gap-3 text-center rounded-2xl border-2 border-dashed transition-colors;
-    background-color: #eef8fc;
-    border-color: #2f8cb5;
+    background-color: rgb(var(--tray));
+    border-color: rgb(var(--tray-rule));
   }
   .drop-target:hover {
-    background-color: #e3f3fa;
-    border-color: #00a0df;
+    background-color: rgb(var(--tray-hover));
+    border-color: rgb(var(--tray-rule-hover));
   }
   .drop-target.is-dragging {
-    background-color: #d4edf8;
+    background-color: rgb(var(--tray-drag));
     border-style: solid;
-    border-color: #00729e;
+    border-color: rgb(var(--tray-rule-drag));
   }
   .drop-icon {
     @apply w-16 h-16 rounded-full bg-paper-bright shadow-sm flex items-center justify-center;
-    color: #00729e;
+    color: rgb(var(--accent-blue));
   }
 
   /* Small-caps labels for slug lines, tickets and section rules */
@@ -296,26 +408,26 @@
   }
 
   /* Category tints: soft backgrounds with a text-safe ink (≥4.5:1) for icons and pills */
-  .tint-edit { background-color: #fde6f2; color: #a3005a; }
-  .tint-optimize { background-color: #e0f3fb; color: #00658c; }
-  .tint-convert { background-color: #fff5b8; color: #665200; }
-  .tint-pdf { background-color: #f6e8dc; color: #8a2d00; }
-  .tint-inspect { background-color: #ecece6; color: #141414; }
-  .tint-developer { background-color: #ecece6; color: #141414; }
+  .tint-edit { background-color: rgb(var(--tint-edit)); color: rgb(var(--tint-edit-ink)); }
+  .tint-optimize { background-color: rgb(var(--tint-optimize)); color: rgb(var(--tint-optimize-ink)); }
+  .tint-convert { background-color: rgb(var(--tint-convert)); color: rgb(var(--tint-convert-ink)); }
+  .tint-pdf { background-color: rgb(var(--tint-pdf)); color: rgb(var(--tint-pdf-ink)); }
+  .tint-inspect { background-color: rgb(var(--tint-neutral)); color: rgb(var(--tint-neutral-ink)); }
+  .tint-developer { background-color: rgb(var(--tint-neutral)); color: rgb(var(--tint-neutral-ink)); }
 
   /* Category ink marks */
-  .ink-edit { background-color: #e4007c; }
-  .ink-optimize { background-color: #00a0df; }
-  .ink-convert { background-color: #ffe100; }
-  .ink-inspect { background-color: #141414; }
+  .ink-edit { background-color: rgb(var(--process-magenta)); }
+  .ink-optimize { background-color: rgb(var(--process-cyan)); }
+  .ink-convert { background-color: rgb(var(--process-yellow)); }
+  .ink-inspect { background-color: rgb(var(--process-key)); }
   /* PDF & Documents: magenta and yellow printed over each other (process red) */
-  .ink-pdf { background: linear-gradient(135deg, #e4007c 50%, #ffe100 50%); }
+  .ink-pdf { background: linear-gradient(135deg, rgb(var(--process-magenta)) 50%, rgb(var(--process-yellow)) 50%); }
   .ink-developer {
     background:
-      linear-gradient(#141414, #141414) center / 100% 1px no-repeat,
-      linear-gradient(#141414, #141414) center / 1px 100% no-repeat,
-      #ffffff;
-    box-shadow: inset 0 0 0 1px #141414;
+      linear-gradient(rgb(var(--process-key)), rgb(var(--process-key))) center / 100% 1px no-repeat,
+      linear-gradient(rgb(var(--process-key)), rgb(var(--process-key))) center / 1px 100% no-repeat,
+      rgb(var(--paper-bright));
+    box-shadow: inset 0 0 0 1px rgb(var(--process-key));
   }
 }
 
@@ -340,13 +452,13 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  mix-blend-mode: multiply;
+  mix-blend-mode: var(--plate-blend);
   z-index: 2;
   opacity: 0;
 }
-.registration-snap.is-registering > .plate-c { outline: 2px solid #0072b0; animation: register-cyan 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-.registration-snap.is-registering > .plate-m { outline: 2px solid #e4007c; animation: register-magenta 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-.registration-snap.is-registering > .plate-y { outline: 2px solid #ffe100; animation: register-yellow 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.registration-snap.is-registering > .plate-c { outline: 2px solid rgb(var(--focus)); animation: register-cyan 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.registration-snap.is-registering > .plate-m { outline: 2px solid rgb(var(--process-magenta)); animation: register-magenta 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.registration-snap.is-registering > .plate-y { outline: 2px solid rgb(var(--process-yellow)); animation: register-yellow 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
 /* Progress: a soft shine sweeps across the half that is working, so the bar visibly moves even between updates */
 @keyframes progress-shine {
@@ -374,7 +486,7 @@
 
 /* Ink scrollbars */
 * {
-  scrollbar-color: #5b5b58 transparent;
+  scrollbar-color: rgb(var(--graphite)) transparent;
   scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
@@ -385,8 +497,8 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #5b5b58;
+  background: rgb(var(--graphite));
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #141414;
+  background: rgb(var(--ink));
 }

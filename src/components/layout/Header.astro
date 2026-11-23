@@ -54,7 +54,28 @@ const navLabel = (cat: (typeof navCategories)[number]) => (cat in SHORT_NAV_KEY 
 
     <div class="flex items-center gap-2">
       <ToolSearch client:idle locale={locale} strings={searchStrings} count={TOOLS.length} indexUrl={searchIndexUrl(locale)} />
+      <!-- Light / dark switch: a moon on the paper, a sun on the negative. Pressed = dark. The page script in BaseLayout
+           sets the theme before paint; this only flips it and keeps the button's state in step -->
+      <button type="button" class="theme-switch btn-rule w-10 h-10 min-h-[40px] px-0 shrink-0" aria-pressed="false" aria-label={t('nav.darkTheme')} title={t('nav.darkTheme')}>
+        <svg class="theme-moon w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
+        <svg class="theme-sun w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+      </button>
       <LanguageSelector client:idle currentLocale={locale} currentSlug={currentSlug} languageLabel={langStrings['lang.label']} />
     </div>
   </div>
 </header>
+
+<script>
+  const switches = document.querySelectorAll<HTMLButtonElement>('.theme-switch');
+  const theme = window as unknown as { tfTheme?: { get(): string; set(t: string): void } };
+  const sync = () => switches.forEach((b) => b.setAttribute('aria-pressed', String(theme.tfTheme?.get() === 'dark')));
+  sync();
+  document.addEventListener('tf-theme', sync);
+  switches.forEach((b) => b.addEventListener('click', () => theme.tfTheme?.set(theme.tfTheme.get() === 'dark' ? 'light' : 'dark')));
+</script>
+
+<style>
+  .theme-sun { display: none; }
+  :global([data-theme='dark']) .theme-sun { display: block; }
+  :global([data-theme='dark']) .theme-moon { display: none; }
+</style>

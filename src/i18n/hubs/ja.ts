@@ -54,13 +54,14 @@ export const jaHubs: HubTexts = {
     },
     'image-format-converters': {
       title: '無料画像変換：HEIC・JPG・PNG・WebP・AVIFなど',
-      description: 'ブラウザーで使える26の無料画像変換ツール。HEICからJPG、JPGからPNG・WebP・AVIF、GIF・BMP・TIFF・SVGを一般的な形式へ。複数ファイルもまとめて変換。',
+      description: 'ブラウザーで使える27の無料画像変換ツール。HEICからJPG、JPGからPNG・WebP・AVIF、GIF・BMP・TIFF・SVGを一般的な形式へ。複数ファイルもまとめて変換。',
       h1: '画像形式の変換ツール',
       intro:
         '画像を必要な形式に変えましょう。iPhoneのHEIC写真をJPGに、PNGを軽いJPGやWebPに、Web向けにAVIFに、GIF・BMP・TIFF・SVGを一般的な形式に変換できます。ほとんどの変換ツールは複数のファイルをまとめて扱え、すべてブラウザー内で動くので何もアップロードされません。迷ったら「画像形式の変換」を使えば、ほぼどんな画像も開いてJPG・PNG・WebP・AVIFで保存できます。',
       groups: {
         any: 'どの形式でも',
         heic: 'iPhoneの写真（HEIC）',
+        raw: 'カメラのRAW写真',
         jpgPng: 'JPGとPNG',
         web: 'WebPとAVIF',
         other: 'GIF・BMP・TIFF・SVG',

@@ -54,13 +54,14 @@ export const enHubs: HubTexts = {
     },
     'image-format-converters': {
       title: 'Free Image Converter: HEIC, JPG, PNG, WebP, AVIF and More',
-      description: '26 free image converters in your browser: HEIC to JPG, JPG to PNG, WebP and AVIF, GIF, BMP, TIFF and SVG to everyday formats, several files at once.',
+      description: '27 free image converters in your browser: HEIC to JPG, JPG to PNG, WebP and AVIF, GIF, BMP, TIFF and SVG to everyday formats, several files at once.',
       h1: 'Image format converters',
       intro:
         'Change a picture to the format you need: iPhone HEIC photos to JPG, PNG to JPG or WebP for smaller files, AVIF for the web, or GIF, BMP, TIFF and SVG to everyday formats. Most converters take several files at once, and all of them run in your browser, so nothing is uploaded. Not sure which to use? The universal converter opens almost any image and saves it as JPG, PNG, WebP or AVIF.',
       groups: {
         any: 'Any format',
         heic: 'iPhone photos (HEIC)',
+        raw: 'Camera RAW photos',
         jpgPng: 'JPG and PNG',
         web: 'WebP and AVIF',
         other: 'GIF, BMP, TIFF and SVG',

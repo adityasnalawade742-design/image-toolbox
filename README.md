@@ -1,136 +1,93 @@
-# TadaFile — Free Image and PDF Tools (formerly Image Toolbox)
+# TadaFile: free image and PDF tools that run in your browser
 
-[![Astro](https://img.shields.io/badge/Astro-5.4-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
-[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Astro](https://img.shields.io/badge/Astro-7-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**TadaFile** (formerly Image Toolbox) is a lightning-fast, privacy-first web application featuring **23 comprehensive image manipulation and conversion tools**. Built with Astro 5, React, HTML5 Canvas, and IndexedDB, all image processing occurs 100% locally in your browser with zero server uploads.
+**[TadaFile](https://tadafile.com)** is a free collection of **177 image and PDF tools** in **10 languages**: compress,
+convert, resize and edit images, remove backgrounds and upscale photos with AI, merge, split, sign and edit PDFs, and
+more. There is no sign-up, no watermark and no daily limit.
 
-🌐 **Live Demo:** [https://tadafile.com/](https://tadafile.com/)
+**165 of the tools run entirely in your browser**, so your files never leave your device. The other 12, Office and PDF
+conversions that need desktop software (Word, Excel and PowerPoint to PDF and back, PDF compression, OCR, PDF/A,
+protect, unlock and repair), send the file over an encrypted connection to a small server that processes it in memory
+and deletes it as soon as the result is sent back. Each of those tools says so on its page.
 
----
-
-## ✨ Features & Tool Catalog
-
-### ✂️ 1. Edit & Transform
-- **Crop Image** — Interactive 8-point drag handles, freeform aspect ratios, and social media presets (Instagram, YouTube, Twitter/X, TikTok, LinkedIn).
-- **Resize Image** — Exact pixel dimensions, aspect ratio locking, and percentage scaling.
-- **Rotate & Flip Image** — Arbitrary angle rotation with live preview, 90° snapping, and horizontal/vertical mirroring.
-- **Add Text to Image** — Interactive 2D draggable text captions, outline/stroke, Google Fonts, and background badge styling.
-- **Watermark Image** — Text and custom image watermarks with opacity and grid-repeat tiling.
-- **Add Border & Frames** — Solid, inset, double borders, and custom frame padding.
-- **Round Image Corners** — Precise corner radius rounding and 1-click circular avatar generator.
-- **Blur / Censor** — Drag or add censor boxes (with exact position and size fields) using Pixelate, Gaussian Blur, and Blackout redaction modes.
-- **Passport Photo Maker** — 35×45 mm, 2×2 in, 33×48 mm or custom; head guides; white / grey / blue background (on-device AI); 4×6 in or A4 print sheets as JPG or exact-size PDF, 300 DPI.
-- **Signature Extractor** — Photo of a signature to a transparent PNG (adaptive threshold handles shadows), ink recolor, auto crop.
-- **Merge Images** — Join photos side by side, stacked, or in a grid, with spacing, background color, and matched sizes.
-- **Remove Background** — On-device AI: Fast (MODNet) or Best quality (IMG.LY), transparent or colored background.
-- **Meme Generator** — Impact typography and 8 viral illustrated vector templates with instant captioning.
-- **Split Image Grid** — Split images into Instagram 3×3 grids, multi-post carousels, and download as clean ZIP archives.
-
-### 🗜️ 2. Compress & Optimize
-- **Compress Image** — Smart client-side lossy/lossless compression with target size estimator and before/after slider.
-- **Compress Image to KB** — Guaranteed under an exact limit (10 KB to 1 MB or custom), with passport and custom dimension presets.
-- **Bulk Image Compressor** — Batch-compress up to 50 images in parallel with instant ZIP packaging.
-- **Bulk Image Resizer** — Batch-scale images by dimension or percentage.
-- **Remove EXIF Metadata** — Strip GPS location, camera model, and timestamp data for privacy protection.
-
-### 🔄 3. Format Converters
-- **PNG to JPG** (with custom background color replacement)
-- **JPG to PNG** (lossless conversion)
-- **PNG to WebP** & **JPG to WebP** (modern next-gen compression)
-- **WebP to PNG** & **WebP to JPG**
-- **SVG to PNG** (high-DPI rasterization up to 4×)
-- **HEIC to JPG** & **HEIC to PNG** (iPhone photos)
-- **Universal Convert** (convert to PNG, JPEG, WebP, or AVIF)
-
-### 📄 4. PDF & Documents (in the browser, pdf-lib + pdf.js)
-- **JPG to PDF** (several images, reorderable, A4 / Letter / fit) & **PDF to JPG** (72–300 dpi, single page or ZIP)
-- **Merge PDF**, **Split PDF** (ranges, every N pages, every page), **Extract PDF Pages**
-- **Organize PDF** (reorder, rotate, delete with keyboard buttons or drag) & **Rotate PDF**
-- **Add Page Numbers**, **Watermark PDF** (text in any language or logo, draggable), **Sign PDF** (draw, type or upload)
-- **Fill PDF Form** (AcroForm, optional flatten), **Remove PDF Metadata**, **Crop PDF**
-
-### 🎨 5. Color & Analysis
-- **Image Color Picker** — Live 7×7 pixel magnifying loupe, reticle crosshair, and multi-format color copying (HEX, RGB, HSL, HSV, CMYK).
-- **Palette Generator** — Dominant color palette extraction with 1-click CSS/HEX copy.
-- **Photo Filters** — 14 real-time visual presets (Cyberpunk, Cinematic, Vintage, Noir, Sunset, Emerald, etc.) + custom adjustment sliders.
-- **Change Image DPI** — Sets JFIF + EXIF density (JPG) or pHYs (PNG) without re-encoding; shows print size.
-- **Image Analyzer** — Detailed image inspection (dimensions, megapixels, aspect ratio, color depth, transparency).
-
-### 🛠️ 6. Developer Utilities
-- **Favicon Generator** — Generates complete multi-resolution bundle (`favicon.ico`, `16x16`, `32x32`, `180x180` Apple Touch, `192x192`, `512x512` Android, and `manifest.json`) inside a single ZIP with HTML install tags.
-- **Image to Base64** & **Base64 to Image** — Bidirectional converter with CSS and HTML Data URI generators.
+🌐 **Use it:** [tadafile.com](https://tadafile.com)
 
 ---
 
-## 🔒 Privacy & Architecture
+## What's in it
 
-1. **Zero-Server Processing**: Images are processed directly within the user's browser using HTML5 Canvas 2D and WebAssembly. No files are uploaded to third-party servers.
-2. **IndexedDB Cross-Tool Cache**: High-resolution and 4K images are handed off between tools via client-side IndexedDB (`handoffStorage.ts`), bypassing browser `sessionStorage` limitations.
-3. **Multi-Language Internationalization**: Fully localized into **10 languages** (English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian, Turkish) across 1735 statically-generated routes (172 tools in every language, plus English information pages).
-4. **Pro Desktop UX**:
-   - `Ctrl+V` / `Cmd+V`: Instant paste image from clipboard.
-   - `Ctrl+S` / `Cmd+S`: 1-click save/download processed image.
-   - `Ctrl+C` / `Cmd+C`: 1-click copy processed output to clipboard.
-   - `Esc`: Clear image workspace.
+| Group | Tools | Examples |
+| :--- | :--- | :--- |
+| [Edit & Transform](https://tadafile.com/image-editing-tools) | 44 | Crop, resize, rotate, add text, watermark, [remove background](https://tadafile.com/remove-background) (single or up to 50 at once), blur or change background, passport photos, collage, perspective correction, sharpen, reduce noise, [AI image upscaler](https://tadafile.com/upscale-image) |
+| Optimize & Compress | 4 | [Compress image](https://tadafile.com/compress-image), compress to an exact size in KB, bulk compressor, remove metadata |
+| [Convert Formats](https://tadafile.com/image-format-converters) | 27 | JPG, PNG, WebP, AVIF, HEIC, GIF, BMP, TIFF and SVG in every useful direction, and [camera RAW to JPG](https://tadafile.com/raw-to-jpg) |
+| [PDF & Documents](https://tadafile.com/pdf-tools) | 58 | Merge, split, organize, compress, sign, fill forms, edit, redact, OCR, compare, PDF to and from Word, Excel, PowerPoint, JPG and PNG, booklets, [N-up](https://tadafile.com/n-up-pdf) and [poster printing](https://tadafile.com/poster-splitter) |
+| [Inspect & Utilities](https://tadafile.com/image-utilities) | 37 | QR codes and barcodes (make, read, in bulk), EXIF viewer, color picker, [batch rename files](https://tadafile.com/batch-rename-files), [contact sheets](https://tadafile.com/contact-sheet-maker), graph paper, unit and paper-size calculators |
+| Developer Tools | 7 | Favicon and app icon generators, Base64 and data URIs, SVG optimizer |
+
+There are also [guides](https://tadafile.com/guides) on common questions, such as why a PDF is so large or how to make
+a blurry photo clearer.
+
+Every tool is available in English, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Indonesian and
+Turkish.
 
 ---
 
-## 🚀 Quick Start
+## How it works
 
-### Prerequisites
-- Node.js 18+ or 20+
-- npm or pnpm
+- **Images** are decoded and edited with Canvas and saved with WebAssembly encoders: MozJPEG, libwebp, libavif and
+  OxiPNG (via jSquash), and libimagequant for smaller PNGs. HEIC files are decoded in the browser.
+- **PDFs** are read with pdf.js and written with pdf-lib, so pages stay as sharp vector content.
+- **AI tools** run on your device with ONNX Runtime Web:
+  - background removal with MODNet (Fast), and BiRefNet-lite or IMG.LY's ISNet (Best quality);
+  - the 2× and 4× upscaler with Real-ESRGAN (realesr-general-x4v3), on the graphics card through WebGPU.
+- **Text recognition** in images uses Tesseract.js in the browser. Searchable PDFs use OCRmyPDF on the server.
+- **Server tools** run on Google Cloud Run with LibreOffice, Ghostscript, qpdf, OCRmyPDF and pdf2docx. See
+  [`server/README.md`](server/README.md). Jobs run in a temporary folder in memory, inside a read-only container,
+  and are deleted once the result is sent. No request logs are kept.
+- **The site** is static: [Astro](https://astro.build/) with React islands, served by a Cloudflare Worker, which also
+  forwards the server tools' requests.
+- AI models, OCR data and fonts are downloaded at build time from pinned sources, checked by SHA-256 and served from
+  the site itself, so the browser doesn't fetch them from third parties.
 
-### Installation
+---
+
+## Development
+
+Requires Node.js 22 or later.
 
 ```bash
-# Clone repository
 git clone https://github.com/adityasnalawade742-design/image-toolbox.git
 cd image-toolbox
-
-# Install dependencies
 npm install
-
-# Start local development server
-npm run dev
+npm run dev          # http://localhost:4321
 ```
 
-Visit `http://localhost:4321` in your browser.
-
----
-
-## 📦 Scripts
-
-| Command | Description |
+| Command | What it does |
 | :--- | :--- |
-| `npm run dev` | Starts local Astro dev server with hot-module reload |
-| `npm run check` | Runs full TypeScript and Astro template type verification |
-| `npm run build` | Builds every localized static route (172 tools × 10 languages, plus home and information pages) and prunes redundant WASM files |
-| `npm run preview` | Previews the production build locally |
-| `npm run deploy` | Deploys static assets and edge worker to Cloudflare Workers |
-| `npm run a11y` | Audits every tool, empty and with an image loaded: axe-core (WCAG 2.2 AA), keyboard focus walk, 24px targets, 320px reflow |
-| `npm run a11y:keys` | Walks the keyboard-only flows: skip link, search dialog, language list, color picker, censor boxes, text position |
+| `npm run dev` | Local dev server with hot reload. Guides dated in the future are shown here |
+| `npm test` | Unit tests (Vitest), including checks that every language is complete |
+| `npm run check` | TypeScript and Astro type checks |
+| `npm run build` | Builds every page in every language and self-hosts the AI models (about 300 MB, cached in `.cache/models`) |
+| `npm run preview` | Serves the production build locally |
+| `npm run deploy` | Deploys to Cloudflare Workers, runs live smoke checks and notifies search engines (IndexNow) |
+| `npm run a11y` | Accessibility audit of every tool with axe-core (WCAG 2.2 AA), keyboard focus, target sizes and reflow |
+| `npm run a11y:keys` | Keyboard-only walk through the main flows |
 
-Both a11y scripts need `npm run build && npm run preview` running (pass another address as `npm run a11y -- http://host:port`). Set `CHROME_PATH` if Chrome is not in the default Windows location. Reports go to `.a11y-report/`.
+The a11y scripts need `npm run build && npm run preview` running. Set `CHROME_PATH` if Chrome is not in the default
+Windows location. Reports go to `.a11y-report/`.
 
----
-
-## 🛡️ Edge Deployment (Cloudflare Workers)
-
-The application is deployed to Cloudflare Workers with asset binding and strict security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`):
-
-```bash
-npm run deploy
-```
+Guides are Markdown files in `src/content/guides/`. A guide with a future `published` date stays off the site until
+that day, when a scheduled GitHub workflow (`.github/workflows/publish-guides.yml`) builds and deploys the site.
 
 ---
 
-## 📄 License
+## License
 
 Copyright © 2026 Aditya Nalawade.
 
@@ -140,12 +97,11 @@ Licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0). See [`
 - **Name and identity (7(e)):** the licence does not grant rights to the names "TadaFile" or "Image Toolbox" (its former name), its logo or the site's domain. Copies and modified versions must use their own name and must not present themselves as this site or as connected to it.
 - **Marking changes (7(c)):** modified versions must be clearly marked as changed from the original, and must keep the copyright and licence notices (7(b)).
 
-The background remover's "Best quality" mode uses [@imgly/background-removal](https://github.com/imgly/background-removal-js), which is AGPL-3.0; because of that, the whole site is distributed under AGPL-3.0, and anyone who uses the hosted site can get its source code from this repository (linked in the site footer). If you deploy a modified version, you must offer your modified source to its users in the same way.
+The background remover's "Best quality" mode can use [@imgly/background-removal](https://github.com/imgly/background-removal-js), which is AGPL-3.0; because of that, the whole site is distributed under AGPL-3.0, and anyone who uses the hosted site can get its source code from this repository (linked in the site footer). If you deploy a modified version, you must offer your modified source to its users in the same way.
 
-Third-party models, downloaded by the browser at runtime and not redistributed here:
-- MODNet ("Fast" background removal), Apache-2.0, via [Xenova/modnet](https://huggingface.co/Xenova/modnet)
-- IMG.LY ISNet ("Best quality" background removal), AGPL-3.0, served from IMG.LY's CDN
-
-Image encoders (WebAssembly, bundled and loaded only when an image is saved):
-- [libimagequant](https://github.com/ImageOptim/libimagequant) via [imagequant](https://github.com/valterkraemer/imagequant-wasm) (PNG colour reduction), GPL-3.0, which can be combined with AGPL-3.0 code
-- MozJPEG, libwebp, libavif and OxiPNG via [jSquash](https://github.com/jamsinclair/jSquash), Apache-2.0
+Third-party components with their own licences (the full list, with versions, is published with the site as
+`/models/THIRD-PARTY.txt`):
+- **AI models:** MODNet (Apache-2.0), IMG.LY background removal data (AGPL-3.0), BiRefNet-lite (MIT), Real-ESRGAN realesr-general-x4v3 (BSD-3-Clause)
+- **Runtimes:** ONNX Runtime Web (MIT), Tesseract.js and tesseract.js-core (Apache-2.0)
+- **Image encoders:** MozJPEG, libwebp, libavif and OxiPNG via [jSquash](https://github.com/jamsinclair/jSquash) (Apache-2.0), [libimagequant](https://github.com/ImageOptim/libimagequant) via [imagequant](https://github.com/valterkraemer/imagequant-wasm) (GPL-3.0, which can be combined with AGPL-3.0 code)
+- **Fonts:** Noto Sans, M PLUS 1p and Nanum Gothic (SIL Open Font License)

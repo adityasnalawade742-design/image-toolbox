@@ -117,10 +117,10 @@ export function CropPdfWorkspace() {
             affected && (
             <span aria-hidden="true" className="absolute inset-0 pointer-events-none">
               {/* Dim what will be trimmed; outline what stays */}
-              <span className="absolute inset-x-0 top-0 bg-process-key/45" style={{ height: `${m.top}%` }} />
-              <span className="absolute inset-x-0 bottom-0 bg-process-key/45" style={{ height: `${m.bottom}%` }} />
-              <span className="absolute left-0 bg-process-key/45" style={{ top: `${m.top}%`, bottom: `${m.bottom}%`, width: `${m.left}%` }} />
-              <span className="absolute right-0 bg-process-key/45" style={{ top: `${m.top}%`, bottom: `${m.bottom}%`, width: `${m.right}%` }} />
+              <span className="absolute inset-x-0 top-0 bg-shade/45" style={{ height: `${m.top}%` }} />
+              <span className="absolute inset-x-0 bottom-0 bg-shade/45" style={{ height: `${m.bottom}%` }} />
+              <span className="absolute left-0 bg-shade/45" style={{ top: `${m.top}%`, bottom: `${m.bottom}%`, width: `${m.left}%` }} />
+              <span className="absolute right-0 bg-shade/45" style={{ top: `${m.top}%`, bottom: `${m.bottom}%`, width: `${m.right}%` }} />
               <span className="absolute border-2 border-dashed border-process-magenta" style={{ top: `${m.top}%`, bottom: `${m.bottom}%`, left: `${m.left}%`, right: `${m.right}%` }} />
             </span>
             )

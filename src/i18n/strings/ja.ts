@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': '画像を選択',
   'ws.dropHint': 'JPG、PNG、WebPなどに対応（最大50 MB）。Ctrl+Vで貼り付けることもできます。',
   'ws.dropHintMany': "複数選ぶとまとめて変換できます。",
+  'ws.dropHintRaw': 'CR2・CR3・NEF・ARW・DNG・RAF・ORF・RW2など、1ファイル150 MBまで。お使いの端末上でフルサイズのまま現像します。',
   'ws.rendering': 'プレビューを更新中…',
   'ws.pickerHelp': '画像をクリックすると色を取得できます。キーボードでは画像を選択し、矢印キーで移動して（Shift キーで大きく移動）、Enter キーで取得します。',
   'ws.pickerPicked': '{hex} を取得しました',
@@ -626,6 +627,9 @@ export const strings = {
   'ctl.batch.firstFrame': "最初のフレームのみ",
   'ctl.batch.firstPage': "最初のページのみ",
   'ctl.batch.firstImage': "最初の画像のみ",
+  'ctl.batch.hintRaw': 'カメラと同じように現像します。カメラのホワイトバランス、明るさの自動調整、sRGBの色で、フルサイズのまま保存します。',
+  'ctl.batch.rawHalf': '半分のサイズで保存しました。フルサイズにはこの端末のメモリーが足りません',
+  'ctl.batch.errNotRaw': 'カメラのRAWファイルではありません',
   'ctl.batch.hintMetadata': "各写真の形式と画質はそのままで、メタデータだけを削除します。iPhoneのHEICとTIFFはJPGまたはPNGになります。",
 
   // Bulk compressor

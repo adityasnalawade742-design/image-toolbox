@@ -6,6 +6,7 @@ export const koUi: Record<string, string> = {
   'nav.compress': '압축',
   'nav.convert': '변환',
   'nav.utilities': '유틸리티',
+  'nav.darkTheme': '다크 모드',
   'nav.pdf': 'PDF',
   'search.placeholder': '이미지 도구 27개 검색... (Ctrl+K)',
   'search.noResults': '일치하는 도구가 없어요.',

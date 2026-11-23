@@ -31,6 +31,7 @@ export const strings = {
   'ws.chooseImages': 'Pilih gambar',
   'ws.dropHint': 'JPG, PNG, WebP, dan lainnya, hingga 50 MB. Anda juga bisa menempel dengan Ctrl+V.',
   'ws.dropHintMany': "Pilih beberapa untuk mengonversi semuanya sekaligus.",
+  'ws.dropHintRaw': 'CR2, CR3, NEF, ARW, DNG, RAF, ORF, RW2, dan lainnya, maksimal 150 MB per file. Diproses dalam ukuran penuh di perangkat Anda.',
   'ws.rendering': 'Memperbarui pratinjau…',
   'ws.pickerHelp': 'Klik gambar untuk mengambil warna. Dengan keyboard, pilih gambar, gerakkan dengan tombol panah (tahan Shift untuk langkah lebih besar), lalu tekan Enter untuk mengambil.',
   'ws.pickerPicked': 'Warna diambil: {hex}',
@@ -621,6 +622,9 @@ export const strings = {
   'ctl.batch.firstFrame': "Hanya frame pertama",
   'ctl.batch.firstPage': "Hanya halaman pertama",
   'ctl.batch.firstImage': "Hanya gambar pertama",
+  'ctl.batch.hintRaw': 'Diproses seperti oleh kamera: white balance kamera itu sendiri, kecerahan otomatis, dan warna sRGB, dalam ukuran penuh.',
+  'ctl.batch.rawHalf': 'Disimpan setengah ukuran: ukuran penuh butuh memori lebih besar daripada yang dimiliki perangkat ini',
+  'ctl.batch.errNotRaw': 'Bukan file RAW kamera',
   'ctl.batch.hintMetadata': "Setiap foto tetap dengan format dan kualitasnya: hanya metadata yang dihapus. HEIC iPhone dan TIFF menjadi JPG atau PNG.",
 
   // Bulk compressor

@@ -3773,6 +3773,82 @@ export const ptTools: Record<string, LocalizedToolItem> = {
       },
     ],
   },
+  "raw-to-jpg": {
+    name: "RAW para JPG",
+    shortName: "RAW → JPG",
+    tagline: "Converta fotos RAW da câmera (CR2, CR3, NEF, ARW, DNG e outros) para JPG em tamanho total. Grátis, e a conversão roda no seu dispositivo.",
+    intro: "O RAW para JPG transforma os arquivos RAW da câmera em fotos JPG que abrem em qualquer lugar: no celular, em um e-mail ou em um site. Ele lê Canon CR2 e CR3, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Pentax PEF, DNG e outros, e revela cada foto como a câmera faria por padrão, com o balanço de branco que ela registrou, brilho automático e cores sRGB. O JPG mantém o tamanho total do sensor. Adicione vários arquivos RAW de uma vez e baixe um a um ou em um ZIP. As fotos são reveladas no seu navegador, então nunca são enviadas.",
+    seoTitle: "Converter RAW para JPG – CR2, NEF, ARW, DNG, grátis",
+    seoDescription: "Converta fotos RAW para JPG online e grátis: Canon CR2 e CR3, Nikon NEF, Sony ARW, DNG e outros, em tamanho total e várias de uma vez. Sem upload, sem cadastro.",
+    keywords: [
+      "raw para jpg",
+      "converter raw para jpg",
+      "cr2 para jpg",
+      "nef para jpg",
+      "arw para jpg",
+      "dng para jpg",
+      "converter raw para jpeg",
+      "conversor raw"
+    ],
+    howToSteps: [
+      {
+        title: "Adicione suas fotos RAW",
+        description: "Arraste ou escolha um ou mais arquivos RAW da sua câmera, até 50 de uma vez."
+      },
+      {
+        title: "Escolha a qualidade",
+        description: "A qualidade começa em 92%, perto da configuração de JPG de maior qualidade de uma câmera. Diminua para ter arquivos menores."
+      },
+      {
+        title: "Converta e baixe",
+        description: "As fotos são reveladas uma após a outra. Baixe uma a uma ou todas juntas em um ZIP."
+      }
+    ],
+    features: [
+      {
+        title: "Tamanho total",
+        description: "O JPG tem todos os pixels do sensor: um RAW de 24 MP vira um JPG de 24 MP."
+      },
+      {
+        title: "A maioria das câmeras",
+        description: "Arquivos Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, Pentax, Leica e DNG, lidos pelo LibRaw."
+      },
+      {
+        title: "Várias de uma vez",
+        description: "Até 50 arquivos RAW de uma só vez, com um ZIP de todos os JPGs."
+      },
+      {
+        title: "Conversão privada",
+        description: "As fotos são reveladas no seu navegador e nunca são enviadas."
+      }
+    ],
+    faqs: [
+      {
+        question: "Quais câmeras e formatos RAW funcionam?",
+        answer: "A maioria das câmeras dos últimos vinte anos: Canon CR2, CR3 e CRW, Nikon NEF e NRW, Sony ARW, Fujifilm RAF, Olympus e OM System ORF, Panasonic RW2, Pentax PEF, Samsung SRW e arquivos DNG de Leica, Ricoh, Pentax e celulares. O decodificador é o LibRaw, o mesmo que muitos editores de fotos usam. Uma câmera lançada nos últimos meses pode ainda não ser compatível."
+      },
+      {
+        question: "O JPG vai ficar igual ao JPG da própria câmera?",
+        answer: "Parecido, mas não idêntico. As cores e o balanço de branco vêm da câmera, mas a câmera também aplica o próprio estilo de imagem (contraste, nitidez e redução de ruído) quando gera um JPG. Este conversor revela o RAW de forma neutra, então o resultado pode parecer um pouco mais suave ou mais chapado que o JPG da câmera."
+      },
+      {
+        question: "A resolução total é mantida?",
+        answer: "Sim. O JPG tem o tamanho total do sensor. Só se um celular ficar sem memória com um arquivo muito grande a foto é salva com metade da largura e da altura, e a lista avisa ao lado dessa foto."
+      },
+      {
+        question: "Os dados da câmera (EXIF) são mantidos?",
+        answer: "Não. O JPG não inclui a data, a câmera, a lente nem a localização do arquivo RAW. Isso o torna seguro para compartilhar, mas se você precisa desses dados, guarde também o arquivo RAW."
+      },
+      {
+        question: "Posso ajustar a exposição ou o balanço de branco?",
+        answer: "Aqui não: esta ferramenta converte com as configurações da própria câmera. Para editar uma foto RAW antes de convertê-la, use um editor de RAW como darktable ou RawTherapee (ambos gratuitos) ou o Adobe Lightroom."
+      },
+      {
+        question: "Minhas fotos são enviadas?",
+        answer: "Não. Os arquivos RAW são revelados no seu navegador pelo LibRaw, que roda no seu dispositivo. Na primeira vez, seu navegador baixa o decodificador (cerca de 1,5 MB); as fotos ficam no seu dispositivo."
+      }
+    ]
+  },
   "jpg-to-pdf": {
     name: "JPG para PDF",
     shortName: "JPG → PDF",
