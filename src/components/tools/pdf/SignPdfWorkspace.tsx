@@ -9,6 +9,7 @@ import { stampMany } from '../../../lib/pdf/pageOps';
 import { PagePreview } from './PagePreview';
 import { PositionSliders, dataUrlBytes, textToPng, type Stamp } from './StampPlacer';
 import { PdfDropScreen, RangeField, pdfName, savePdf, useEditError, usePdfReplace } from './common';
+import { pressureFactor, smoothFactor } from '../../../lib/canvas/penPressure';
 
 const INK = { black: '#141414', blue: '#1a3d9c' } as const;
 const SCRIPT = ['italic 500', '"Georgia", "Times New Roman", serif'] as const;
@@ -59,10 +60,13 @@ function trimToInk(canvas: HTMLCanvasElement): Stamp | null {
   return { url: out.toDataURL('image/png'), width: w, height: h };
 }
 
-/** Freehand signature pad (pointer events: mouse, touch and stylus) */
+/** Signature line width in pad pixels; a stylus draws from about a third of this to half as wide again (penPressure.ts) */
+const PAD_LINE = 6;
+
+/** Freehand signature pad (pointer events: mouse, touch and stylus, whose pressure varies the line like ink) */
 function SignaturePad({ color, onChange, label, clearLabel }: { color: string; onChange: (s: Stamp | null) => void; label: string; clearLabel: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
-  const last = useRef<{ x: number; y: number } | null>(null);
+  const last = useRef<{ x: number; y: number; w: number } | null>(null);
   const point = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
     return { x: ((e.clientX - r.left) / r.width) * e.currentTarget.width, y: ((e.clientY - r.top) / r.height) * e.currentTarget.height };
@@ -78,21 +82,28 @@ function SignaturePad({ color, onChange, label, clearLabel }: { color: string; o
         className="w-full h-auto border border-ink bg-white touch-none cursor-crosshair"
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
-          last.current = point(e);
+          last.current = { ...point(e), w: PAD_LINE * (pressureFactor(e) ?? 1) };
         }}
         onPointerMove={(e) => {
           if (!last.current) return;
-          const p = point(e);
           const ctx = e.currentTarget.getContext('2d')!;
           ctx.strokeStyle = color;
-          ctx.lineWidth = 6;
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
-          ctx.beginPath();
-          ctx.moveTo(last.current.x, last.current.y);
-          ctx.lineTo(p.x, p.y);
-          ctx.stroke();
-          last.current = p;
+          // A pen reports many more points than one move event carries: draw them all for a smooth, even line
+          const events = e.pointerType === 'pen' && typeof e.nativeEvent.getCoalescedEvents === 'function' ? e.nativeEvent.getCoalescedEvents() : [];
+          for (const ev of events.length ? events : [e.nativeEvent]) {
+            const r = e.currentTarget.getBoundingClientRect();
+            const p = { x: ((ev.clientX - r.left) / r.width) * e.currentTarget.width, y: ((ev.clientY - r.top) / r.height) * e.currentTarget.height };
+            const f = pressureFactor(ev);
+            const w: number = f === null ? last.current.w : smoothFactor(last.current.w / PAD_LINE, f) * PAD_LINE;
+            ctx.lineWidth = (last.current.w + w) / 2;
+            ctx.beginPath();
+            ctx.moveTo(last.current.x, last.current.y);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+            last.current = { ...p, w };
+          }
         }}
         onPointerUp={() => {
           last.current = null;

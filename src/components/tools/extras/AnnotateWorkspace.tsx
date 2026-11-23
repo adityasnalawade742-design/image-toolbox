@@ -7,6 +7,7 @@ import { canvasToBlob, downloadBlob, forDownload } from '../../../lib/canvas/eng
 import { arrowHead, arrowShaftEnd, bounds, defaultSize, isObscure, moved, obscureBox, obscureRegion, type Shape, type Tool } from '../../../lib/canvas/annotate';
 import { FullSizeView, blobImage, urlImage } from '../../shared/MediaViewer';
 import { IMAGE_ACCEPT, useOneImage } from './useOneImage';
+import { pressureFactor, smoothFactor } from '../../../lib/canvas/penPressure';
 
 type Mode = Tool | 'select';
 const COLORS = ['#e5262b', '#f5b800', '#1f9d55', '#1f6fe0', '#111111', '#ffffff'];
@@ -16,6 +17,17 @@ const light = (hex: string) => {
   const n = parseInt(hex.slice(1), 16);
   return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255) > 160;
 };
+
+/** A pressure-drawn pen line as segments, each as wide as the average of its two ends (a single dot is one segment) */
+function pressureSegments(s: Shape) {
+  const p = s.points ?? [];
+  const w = s.widths ?? [];
+  const at = (i: number) => s.size * (w[i] ?? w[w.length - 1] ?? 1);
+  if (p.length < 4) return [{ x1: p[0], y1: p[1], x2: p[0], y2: p[1], width: at(0) }];
+  const out: { x1: number; y1: number; x2: number; y2: number; width: number }[] = [];
+  for (let i = 1; i < p.length / 2; i++) out.push({ x1: p[2 * i - 2], y1: p[2 * i - 1], x2: p[2 * i], y2: p[2 * i + 1], width: (at(i - 1) + at(i)) / 2 });
+  return out;
+}
 
 /** Draw shapes onto a canvas the size of the picture (the download); must match the SVG below */
 function drawShapes(ctx: CanvasRenderingContext2D, shapes: Shape[], photo?: CanvasImageSource) {
@@ -40,7 +52,16 @@ function drawShapes(ctx: CanvasRenderingContext2D, shapes: Shape[], photo?: Canv
       ctx.globalCompositeOperation = 'multiply';
       ctx.lineWidth = s.size * 5;
     }
-    if (s.tool === 'pen' || s.tool === 'highlight') {
+    if (s.tool === 'pen' && s.widths) {
+      // Pressure: each piece of the line as wide as the pen was pressed there; round caps join them smoothly
+      for (const seg of pressureSegments(s)) {
+        ctx.lineWidth = seg.width;
+        ctx.beginPath();
+        ctx.moveTo(seg.x1, seg.y1);
+        ctx.lineTo(seg.x2, seg.y2);
+        ctx.stroke();
+      }
+    } else if (s.tool === 'pen' || s.tool === 'highlight') {
       const p = s.points ?? [];
       ctx.beginPath();
       ctx.moveTo(p[0], p[1]);
@@ -104,7 +125,15 @@ function ObscureSvg({ s, photo, w, h }: { s: Shape; photo: CanvasImageSource; w:
 function ShapeSvg({ s, selected }: { s: Shape; selected: boolean }) {
   const common = { stroke: s.color, strokeWidth: s.size, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   let el: React.ReactNode = null;
-  if (s.tool === 'pen' || s.tool === 'highlight') {
+  if (s.tool === 'pen' && s.widths) {
+    el = (
+      <g stroke={s.color} strokeLinecap="round" fill="none">
+        {pressureSegments(s).map((seg, i) => (
+          <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2} strokeWidth={seg.width} />
+        ))}
+      </g>
+    );
+  } else if (s.tool === 'pen' || s.tool === 'highlight') {
     const p = s.points ?? [];
     const d = p.reduce((acc, v, i) => (i % 2 ? acc : acc + `${i ? 'L' : 'M'}${v} ${p[i + 1]} `), '');
     el = <path d={d} {...common} {...(s.tool === 'highlight' ? { strokeWidth: s.size * 5, opacity: 0.38, style: { mixBlendMode: 'multiply' as const } } : {})} />;
@@ -258,7 +287,9 @@ export function AnnotateWorkspace() {
       return;
     }
     drag.current = { start: [x, y] };
-    setDraft({ ...base, points: mode === 'pen' || mode === 'highlight' ? [x, y] : undefined });
+    // A stylus on the pen tool: the line follows its pressure; mouse and touch keep an even width
+    const f = mode === 'pen' ? pressureFactor(e) : null;
+    setDraft({ ...base, points: mode === 'pen' || mode === 'highlight' ? [x, y] : undefined, widths: f === null ? undefined : [f] });
   };
   const move = (e: React.PointerEvent<SVGSVGElement>) => {
     if (!drag.current) return;
@@ -268,7 +299,14 @@ export function AnnotateWorkspace() {
       setShapes((list) => list.map((s) => (s.id === o.id ? moved(o, x - drag.current!.start[0], y - drag.current!.start[1]) : s)));
       return;
     }
-    setDraft((d) => (d ? (d.points ? { ...d, points: [...d.points, x, y] } : { ...d, x2: x, y2: y }) : d));
+    const f = pressureFactor(e);
+    setDraft((d) =>
+      d
+        ? d.points
+          ? { ...d, points: [...d.points, x, y], widths: d.widths && f !== null ? [...d.widths, smoothFactor(d.widths[d.widths.length - 1], f)] : d.widths ? [...d.widths, d.widths[d.widths.length - 1]] : undefined }
+          : { ...d, x2: x, y2: y }
+        : d,
+    );
   };
   const up = () => {
     if (mode === 'select' && drag.current?.orig) {
