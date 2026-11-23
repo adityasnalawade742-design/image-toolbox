@@ -6,6 +6,7 @@ export const itUi: Record<string, string> = {
   'nav.compress': 'Comprimi',
   'nav.convert': 'Converti',
   'nav.utilities': 'Utilità',
+  'nav.darkTheme': 'Tema scuro',
   'nav.pdf': 'PDF',
   'search.placeholder': 'Cerca tra 27 strumenti per immagini... (Ctrl+K)',
   'search.noResults': 'Nessuno strumento trovato.',

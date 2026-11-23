@@ -6,6 +6,7 @@ export const idUi: Record<string, string> = {
   'nav.compress': 'Kompres',
   'nav.convert': 'Konversi',
   'nav.utilities': 'Utilitas',
+  'nav.darkTheme': 'Tema gelap',
   'nav.pdf': 'PDF',
   'search.placeholder': 'Cari di antara 27 alat gambar presisi... (Ctrl+K)',
   'search.noResults': 'Tidak ada alat yang cocok.',

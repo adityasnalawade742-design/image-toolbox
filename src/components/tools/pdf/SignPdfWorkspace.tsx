@@ -478,7 +478,7 @@ export function SignPdfWorkspace() {
                     src={looks.get(i.id)!.url}
                     alt=""
                     aria-hidden="true"
-                    className={`absolute pointer-events-none ${i.id === selectedId ? 'outline outline-2 outline-offset-2 outline-[#0072b0]' : ''}`}
+                    className={`absolute pointer-events-none ${i.id === selectedId ? 'outline outline-2 outline-offset-2 outline-focus' : ''}`}
                     style={{ left: `${i.cx * 100}%`, top: `${i.cy * 100}%`, width: `${i.w * 100}%`, transform: 'translate(-50%, -50%)' }}
                   />
                 ))}

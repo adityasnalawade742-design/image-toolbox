@@ -122,7 +122,7 @@ export function ToolSearch({ locale = 'en', strings = {}, count, indexUrl }: Pro
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center pt-[12vh] px-4 bg-process-key/40"
+          className="fixed inset-0 z-50 flex items-start justify-center pt-[12vh] px-4 bg-shade/40 dark:bg-shade/70"
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) close();
           }}
@@ -142,7 +142,7 @@ export function ToolSearch({ locale = 'en', strings = {}, count, indexUrl }: Pro
             }}
           >
             <div className="color-bar" aria-hidden="true"><span /><span /><span /><span /></div>
-            <div className="flex items-center gap-3 px-4 h-14 border-b border-ink focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-[#0072b0]">
+            <div className="flex items-center gap-3 px-4 h-14 border-b border-ink focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-focus">
               <Search className="w-5 h-5 text-ink shrink-0" aria-hidden="true" />
               <input
                 ref={inputRef}

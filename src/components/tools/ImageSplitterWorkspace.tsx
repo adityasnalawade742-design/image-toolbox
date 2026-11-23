@@ -263,10 +263,10 @@ export function ImageSplitterWorkspace() {
                 {/* The trimmed edges, dimmed */}
                 {shape !== 'free' && (region.w < imgW || region.h < imgH) && (
                   <>
-                    <div className="absolute inset-x-0 top-0 bg-process-key/55 pointer-events-none" style={{ height: pct(region.y, imgH) }} aria-hidden="true" />
-                    <div className="absolute inset-x-0 bottom-0 bg-process-key/55 pointer-events-none" style={{ height: pct(imgH - region.y - region.h, imgH) }} aria-hidden="true" />
-                    <div className="absolute left-0 bg-process-key/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(region.x, imgW) }} aria-hidden="true" />
-                    <div className="absolute right-0 bg-process-key/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(imgW - region.x - region.w, imgW) }} aria-hidden="true" />
+                    <div className="absolute inset-x-0 top-0 bg-shade/55 pointer-events-none" style={{ height: pct(region.y, imgH) }} aria-hidden="true" />
+                    <div className="absolute inset-x-0 bottom-0 bg-shade/55 pointer-events-none" style={{ height: pct(imgH - region.y - region.h, imgH) }} aria-hidden="true" />
+                    <div className="absolute left-0 bg-shade/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(region.x, imgW) }} aria-hidden="true" />
+                    <div className="absolute right-0 bg-shade/55 pointer-events-none" style={{ top: pct(region.y, imgH), height: pct(region.h, imgH), width: pct(imgW - region.x - region.w, imgW) }} aria-hidden="true" />
                   </>
                 )}
                 <div
@@ -291,7 +291,7 @@ export function ImageSplitterWorkspace() {
                           onClick={() => downloadSingleSlice(r, c, format)}
                           aria-label={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
                           title={t('ctl.split.downloadTile', { n: tileNum, row: r + 1, col: c + 1 })}
-                          className="relative flex items-center justify-center border border-process-magenta/80 hover:bg-process-key/20 focus-visible:bg-process-key/20 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-process-magenta transition-colors"
+                          className="relative flex items-center justify-center border border-process-magenta/80 hover:bg-shade/20 focus-visible:bg-shade/20 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-process-magenta transition-colors"
                         >
                           <span
                             className="inline-flex items-center justify-center min-w-[24px] h-6 px-1 bg-process-key text-paper text-[12px] font-semibold"
