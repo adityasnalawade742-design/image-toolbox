@@ -11,6 +11,8 @@ export interface Shape {
   x2: number;
   y2: number;
   points?: number[];
+  /** Pen drawn with a stylus: a width factor per point from its pressure (penPressure.ts); absent = even width */
+  widths?: number[];
   color: string;
   /** Stroke width or text size, in image pixels */
   size: number;
